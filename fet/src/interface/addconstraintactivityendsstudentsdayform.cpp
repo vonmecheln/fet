@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivityendsstudentsdayform.h"
@@ -32,10 +30,6 @@ AddConstraintActivityEndsStudentsDayForm::AddConstraintActivityEndsStudentsDayFo
 
 	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -76,22 +70,21 @@ AddConstraintActivityEndsStudentsDayForm::AddConstraintActivityEndsStudentsDayFo
 	activityTagsComboBox->setCurrentIndex(0);
 
 	populateStudentsComboBox(studentsComboBox, QString(""), true);
-	/*studentsComboBox->addItem("");
-	for(int i=0; i<gt.rules.yearsList.size(); i++){
-		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->addItem(sty->name);
-		for(int j=0; j<sty->groupsList.size(); j++){
-			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->addItem(stg->name);
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int k=0; k<stg->subgroupsList.size(); k++){
-				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->addItem(sts->name);
-			}
-		}
-	}*/
 	studentsComboBox->setCurrentIndex(0);
 	
 	updateActivitiesComboBox();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+#else
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+#endif
 }
 
 AddConstraintActivityEndsStudentsDayForm::~AddConstraintActivityEndsStudentsDayForm()
@@ -110,7 +103,7 @@ bool AddConstraintActivityEndsStudentsDayForm::filterOk(Activity* act)
 	//teacher
 	if(tn!=""){
 		bool ok2=false;
-		for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++)
+		for(QStringList::const_iterator it=act->teachersNames.constBegin(); it!=act->teachersNames.constEnd(); it++)
 			if(*it == tn){
 				ok2=true;
 				break;
@@ -130,7 +123,7 @@ bool AddConstraintActivityEndsStudentsDayForm::filterOk(Activity* act)
 	//students
 	if(stn!=""){
 		bool ok2=false;
-		for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
+		for(QStringList::const_iterator it=act->studentsNames.constBegin(); it!=act->studentsNames.constEnd(); it++)
 			if(*it == stn){
 				ok2=true;
 				break;
@@ -141,7 +134,6 @@ bool AddConstraintActivityEndsStudentsDayForm::filterOk(Activity* act)
 	
 	return ok;
 }
-
 
 void AddConstraintActivityEndsStudentsDayForm::updateActivitiesComboBox(){
 	activitiesComboBox->clear();

@@ -35,7 +35,6 @@ public:
 	void updateEndHoursComboBox();
 
 public slots:
-	void constraintChanged();
 	void addCurrentConstraint();
 };
 

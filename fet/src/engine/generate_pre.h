@@ -30,8 +30,9 @@ File generate_pre.h
 #include <QSet>
 #include <QHash>
 #include <QList>
-#include <QLinkedList>
 #include <QPair>
+
+#include <list>
 
 #include <QTextStream>
 
@@ -558,10 +559,11 @@ public:
 	int maxOccupiedTimeSlots;
 };
 
+//Update: in newer Qt it is recommended to use std::list instead of QLinkedList
 //The next variable should not be a QVector!!!
 //We need the references to the elements to be valid, so we need this to be a QLinkedList
 //(or a QList, but make sure it allocates on the heap, which might not be always true).
-extern QLinkedList<ActivitiesOccupyMaxTimeSlotsFromSelection_item> aomtsList;
+extern std::list<ActivitiesOccupyMaxTimeSlotsFromSelection_item> aomtsList;
 extern Matrix1D<QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item*> > aomtsListForActivity;
 
 bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent);
@@ -579,10 +581,11 @@ public:
 	int minOccupiedTimeSlots;
 };
 
+//Update: in newer Qt it is recommended to use std::list instead of QLinkedList
 //The next variable should not be a QVector!!!
 //We need the references to the elements to be valid, so we need this to be a QLinkedList
 //(or a QList, but make sure it allocates on the heap, which might not be always true).
-extern QLinkedList<ActivitiesOccupyMinTimeSlotsFromSelection_item> aomintsList;
+extern std::list<ActivitiesOccupyMinTimeSlotsFromSelection_item> aomintsList;
 extern Matrix1D<QList<ActivitiesOccupyMinTimeSlotsFromSelection_item*> > aomintsListForActivity;
 
 bool computeActivitiesOccupyMinTimeSlotsFromSelection(QWidget* parent);
@@ -600,10 +603,11 @@ public:
 	int maxSimultaneous;
 };
 
+//Update: in newer Qt it is recommended to use std::list instead of QLinkedList
 //The next variable should not be a QVector!!!
 //We need the references to the elements to be valid, so we need this to be a QLinkedList
 //(or a QList, but make sure it allocates on the heap, which might not be always true).
-extern QLinkedList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item> amsistsList;
+extern std::list<ActivitiesMaxSimultaneousInSelectedTimeSlots_item> amsistsList;
 extern Matrix1D<QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item*> > amsistsListForActivity;
 
 bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent);
@@ -623,10 +627,11 @@ public:
 	bool allowEmptySlots;
 };
 
+//Update: in newer Qt it is recommended to use std::list instead of QLinkedList
 //The next variable should not be a QVector!!!
 //We need the references to the elements to be valid, so we need this to be a QLinkedList
 //(or a QList, but make sure it allocates on the heap, which might not be always true).
-extern QLinkedList<ActivitiesMinSimultaneousInSelectedTimeSlots_item> aminsistsList;
+extern std::list<ActivitiesMinSimultaneousInSelectedTimeSlots_item> aminsistsList;
 extern Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*> > aminsistsListForActivity;
 
 bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent);
@@ -648,10 +653,11 @@ public:
 	int secondActivityTag;
 };
 
+//Update: in newer Qt it is recommended to use std::list instead of QLinkedList
 //The next variable should not be a QVector!!!
 //We need the references to the elements to be valid, so we need this to be a QLinkedList
 //(or a QList, but make sure it allocates on the heap, which might not be always true).
-extern QLinkedList<StudentsMinGapsBetweenOrderedPairOfActivityTags_item> smgbopoatList;
+extern std::list<StudentsMinGapsBetweenOrderedPairOfActivityTags_item> smgbopoatList;
 extern Matrix1D<QList<StudentsMinGapsBetweenOrderedPairOfActivityTags_item*> > smgbopoatListForActivity;
 
 bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent);
@@ -667,10 +673,11 @@ public:
 	int secondActivityTag;
 };
 
+//Update: in newer Qt it is recommended to use std::list instead of QLinkedList
 //The next variable should not be a QVector!!!
 //We need the references to the elements to be valid, so we need this to be a QLinkedList
 //(or a QList, but make sure it allocates on the heap, which might not be always true).
-extern QLinkedList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item> tmgbopoatList;
+extern std::list<TeachersMinGapsBetweenOrderedPairOfActivityTags_item> tmgbopoatList;
 extern Matrix1D<QList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item*> > tmgbopoatListForActivity;
 
 bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent);
@@ -686,10 +693,11 @@ public:
 	int maxDifferentRooms;
 };
 
+//Update: in newer Qt it is recommended to use std::list instead of QLinkedList
 //The next variable should not be a QVector!!!
 //We need the references to the elements to be valid, so we need this to be a QLinkedList
 //(or a QList, but make sure it allocates on the heap, which might not be always true).
-extern QLinkedList<ActivitiesOccupyMaxDifferentRooms_item> aomdrList;
+extern std::list<ActivitiesOccupyMaxDifferentRooms_item> aomdrList;
 extern Matrix1D<QList<ActivitiesOccupyMaxDifferentRooms_item*> > aomdrListForActivity;
 
 bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent);
@@ -704,10 +712,11 @@ public:
 	QSet<int> activitiesSet;
 };
 
+//Update: in newer Qt it is recommended to use std::list instead of QLinkedList
 //The next variable should not be a QVector!!!
 //We need the references to the elements to be valid, so we need this to be a QLinkedList
 //(or a QList, but make sure it allocates on the heap, which might not be always true).
-extern QLinkedList<ActivitiesSameRoomIfConsecutive_item> asricList;
+extern std::list<ActivitiesSameRoomIfConsecutive_item> asricList;
 extern Matrix1D<QList<ActivitiesSameRoomIfConsecutive_item*> > asricListForActivity;
 
 bool computeActivitiesSameRoomIfConsecutive(QWidget* parent);
@@ -724,10 +733,11 @@ public:
 	int durationOfActivitiesWithActivityTagForSubgroup;
 };
 
+//Update: in newer Qt it is recommended to use std::list instead of QLinkedList
 //The next variable should not be a QVector!!!
 //We need the references to the elements to be valid, so we need this to be a QLinkedList
 //(or a QList, but make sure it allocates on the heap, which might not be always true).
-extern QLinkedList<SubgroupActivityTagMinHoursDaily_item> satmhdList;
+extern std::list<SubgroupActivityTagMinHoursDaily_item> satmhdList;
 extern Matrix1D<QList<SubgroupActivityTagMinHoursDaily_item*> > satmhdListForSubgroup;
 extern bool haveStudentsActivityTagMinHoursDaily;
 
@@ -743,10 +753,11 @@ public:
 	int durationOfActivitiesWithActivityTagForTeacher;
 };
 
+//Update: in newer Qt it is recommended to use std::list instead of QLinkedList
 //The next variable should not be a QVector!!!
 //We need the references to the elements to be valid, so we need this to be a QLinkedList
 //(or a QList, but make sure it allocates on the heap, which might not be always true).
-extern QLinkedList<TeacherActivityTagMinHoursDaily_item> tatmhdList;
+extern std::list<TeacherActivityTagMinHoursDaily_item> tatmhdList;
 extern Matrix1D<QList<TeacherActivityTagMinHoursDaily_item*> > tatmhdListForTeacher;
 extern bool haveTeachersActivityTagMinHoursDaily;
 

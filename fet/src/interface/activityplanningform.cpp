@@ -94,7 +94,7 @@ const QString showTeachersState="/show-teachers-check-box-state";
 const QString showActivityTagsState="/show-activity-tags-check-box-state";
 const QString showDuplicatesState="/show-duplicates-check-box-state";
 const QString hideEmptyLinesState="/hide-empty-lines-check-box-state";
-const QString swapAxisState="/swap-axes-check-box-state";
+const QString swapAxesState="/swap-axes-check-box-state";
 const QString hideFullTeachersState="/hide-full-teachers-state";
 
 //maybe put following in timetable_defs.h? (start)
@@ -180,7 +180,7 @@ void StartActivityPlanning::startActivityPlanning(QWidget* parent){
 		}
 	}
 	
-	statisticValues.allTeachersNames.clear();		// just needed, because I don't need to care about correct iTeacherList if I do it this way.
+	statisticValues.allTeachersNames.clear();		// just needed, because I don't need to care about correct iTeachersList if I do it this way.
 	for(Teacher* t : qAsConst(gt.rules.teachersList)){		// So I don't need gt.rules.computeInternalStructure();
 		statisticValues.allTeachersNames << t->name;
 		teachersTargetNumberOfHours << t->targetNumberOfHours;
@@ -301,8 +301,8 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 	hideEmptyLines->setChecked(false);
 	hideUsedTeachers=new QCheckBox(tr("Hide full teachers", "It refers to teachers who have their number of hours fulfilled. Please keep translation short"));
 	hideUsedTeachers->setChecked(false); //important to not hide teachers without activities, if target number of hours is deactivated
-	swapAxis=new QCheckBox(tr("Swap axes", "Please keep translation short"));
-	swapAxis->setChecked(false);
+	swapAxes=new QCheckBox(tr("Swap axes", "Please keep translation short"));
+	swapAxes->setChecked(false);
 	pbPseudoActivities=new QPushButton(tr("Pseudo activities", "Please keep translation short. It means activities without teachers and/or students sets"));
 	//set auto default all buttons, so that the user can press Enter on a cell and have the action for the cell, not the auto default button
 	pbPseudoActivities->setAutoDefault(false);
@@ -331,7 +331,7 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 	optionsBoxVertical->addWidget(showDuplicates);
 	optionsBoxVertical->addWidget(hideEmptyLines);
 	optionsBoxVertical->addWidget(hideUsedTeachers);
-	optionsBoxVertical->addWidget(swapAxis);
+	optionsBoxVertical->addWidget(swapAxes);
 	//optionsBoxVertical->addWidget(pbPseudoActivities);
 	optionsBox->setLayout(optionsBoxVertical);
 	
@@ -425,8 +425,8 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 		showDuplicates->setChecked(settings.value(this->metaObject()->className()+showDuplicatesState).toBool());
 	if(settings.contains(this->metaObject()->className()+hideEmptyLinesState))
 		hideEmptyLines->setChecked(settings.value(this->metaObject()->className()+hideEmptyLinesState).toBool());
-	if(settings.contains(this->metaObject()->className()+swapAxisState))
-		swapAxis->setChecked(settings.value(this->metaObject()->className()+swapAxisState).toBool());
+	if(settings.contains(this->metaObject()->className()+swapAxesState))
+		swapAxes->setChecked(settings.value(this->metaObject()->className()+swapAxesState).toBool());
 	if(settings.contains(this->metaObject()->className()+hideFullTeachersState))
 		hideUsedTeachers->setChecked(settings.value(this->metaObject()->className()+hideFullTeachersState).toBool());
 	
@@ -450,26 +450,30 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 
 	connect(teachersTableView->horizontalHeader(), SIGNAL(sectionDoubleClicked(int)), this, SLOT(teachersTableHorizontalHeaderClicked(int)));
 	
-	connect(CBActive, SIGNAL(currentIndexChanged(int)), this, SLOT(updateTables(int)));
-	connect(showDuplicates, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual(int)));
-	connect(showYears, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual(int)));
-	connect(showGroups, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual(int)));
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(CBActive, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(updateTables()));
+#else
+	connect(CBActive, SIGNAL(currentIndexChanged(int)), this, SLOT(updateTables()));
+#endif
+	connect(showDuplicates, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
+	connect(showYears, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
+	connect(showGroups, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
 	if(SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING)
-		connect(showSubgroups, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual(int)));
-	connect(showTeachers, SIGNAL(stateChanged(int)), this, SLOT(updateTables(int)));
-	connect(showActivityTags, SIGNAL(stateChanged(int)), this, SLOT(updateTables(int)));
-	connect(hideEmptyLines, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual(int)));
-	connect(hideUsedTeachers, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual(int)));
-	connect(swapAxis, SIGNAL(stateChanged(int)), this, SLOT(updateTables(int)));
+		connect(showSubgroups, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
+	connect(showTeachers, SIGNAL(stateChanged(int)), this, SLOT(updateTables()));
+	connect(showActivityTags, SIGNAL(stateChanged(int)), this, SLOT(updateTables()));
+	connect(hideEmptyLines, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
+	connect(hideUsedTeachers, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
+	connect(swapAxes, SIGNAL(stateChanged(int)), this, SLOT(updateTables()));
 	connect(pbDeleteAll, SIGNAL(clicked()), this, SLOT(deleteAll()));
 	connect(pbPseudoActivities, SIGNAL(clicked()), this, SLOT(pseudoActivities()));
 	//connect(pbHelp, SIGNAL(clicked()), this, SLOT(help()));
 	connect(showHideButton, SIGNAL(clicked()), this, SLOT(showHide()));
 	connect(pbClose, SIGNAL(clicked()), this, SLOT(close()));
 	
-	connect(&planningCommunicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateTables(int)));
+	connect(&planningCommunicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateTables()));
 
-	updateTables(0);
+	updateTables();
 }
 
 ActivityPlanningForm::~ActivityPlanningForm()
@@ -502,15 +506,12 @@ ActivityPlanningForm::~ActivityPlanningForm()
 	settings.setValue(this->metaObject()->className()+showActivityTagsState, showActivityTags->isChecked());
 	settings.setValue(this->metaObject()->className()+showDuplicatesState, showDuplicates->isChecked());
 	settings.setValue(this->metaObject()->className()+hideEmptyLinesState, hideEmptyLines->isChecked());
-	settings.setValue(this->metaObject()->className()+swapAxisState, swapAxis->isChecked());
+	settings.setValue(this->metaObject()->className()+swapAxesState, swapAxes->isChecked());
 	settings.setValue(this->metaObject()->className()+hideFullTeachersState, hideUsedTeachers->isChecked());
 }
 
 void ActivityPlanningForm::showHide()
 {
-	/*cout<<"hpol=="<<showHidePushButton->sizePolicy().horizontalPolicy()<<" ";
-	cout<<"vpol=="<<showHidePushButton->sizePolicy().verticalPolicy()<<endl;*/
-
 	if(buttonsVisible){
 		pbPseudoActivities->hide();
 		pbDeleteAll->hide();
@@ -1280,7 +1281,7 @@ void ActivityPlanningForm::swapStudents(int studentsActivity1, int subjectActivi
 
 
 void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
-	if(swapAxis->checkState()==Qt::Checked){
+	if(swapAxes->checkState()==Qt::Checked){
 		if(column<0 || column>=statisticValues.allStudentsNames.count()){
 			return;
 		}
@@ -1291,7 +1292,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 		}
 	}
 	if(RBActivity->isChecked()){
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			ActivitiesForm form(this, "", statisticValues.allStudentsNames[column], "", "");
 			setParentAndOtherThings(&form, this);
 			form.exec();
@@ -1301,7 +1302,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 			form.exec();
 		}
 	} else if(RBSubactivity->isChecked()) {
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			SubactivitiesForm form(this, "", statisticValues.allStudentsNames[column], "", "");
 			setParentAndOtherThings(&form, this);
 			form.exec();
@@ -1311,7 +1312,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 			form.exec();
 		}
 	} else if(RBAdd->isChecked()) {
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			AddActivityForm addActivityForm(this, "", statisticValues.allStudentsNames[column], "", "");
 			setParentAndOtherThings(&addActivityForm, this);
 			addActivityForm.exec();
@@ -1322,7 +1323,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 		}
 	} else if(RBModify->isChecked()) {
 		//Normaly there are too many activities. So just entering the activity form
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			ActivitiesForm form(this, "", statisticValues.allStudentsNames[column], "", "");
 			setParentAndOtherThings(&form, this);
 			form.exec();
@@ -1334,7 +1335,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 	} else if(RBDelete->isChecked()) {
 		int students=-1;
 		int subject=column;
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			students=column;
 			subject=-1;
 		}
@@ -1391,7 +1392,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 			QList<bool> _affectOtherSubjectsToBeRemoved;
 			bool _affectOtherSubjectsOverall;
 
-			if(swapAxis->checkState()==Qt::Checked){
+			if(swapAxes->checkState()==Qt::Checked){
 				computeActivitiesForDeletion("", statisticValues.allStudentsNames[column], "",
 					tmpID, tmpGroupID,
 					nTotalActsDeleted,
@@ -1464,7 +1465,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 		//following source is nearly the same code as if(RBDelete->isChecked()). So do similar changes there too
 		int students=-1;
 		int subject=column;
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			students=column;
 			subject=-1;
 		}
@@ -1521,7 +1522,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 			QList<bool> _affectOtherSubjectsToBeModified;
 			bool _affectOtherSubjectsOverall;
 
-			if(swapAxis->checkState()==Qt::Checked){
+			if(swapAxes->checkState()==Qt::Checked){
 				computeActivitiesForModification("", statisticValues.allStudentsNames[column], "",
 					tmpID, tmpGroupID,
 					nTotalActsModified,
@@ -1648,7 +1649,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 			}
 		}
 	} else if(RBSwapTeachers->isChecked()) {
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			bool ok;
 			QStringList items=statisticValues.allStudentsNames;
 			QString s=tr("You have selected %1. Please select other students to swap teachers.", "%1 is a students set name.").arg(statisticValues.allStudentsNames[column]);
@@ -1672,7 +1673,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 			}
 		}
 	} else if(RBSwapStudents->isChecked()) {
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			bool ok;
 			QStringList items=statisticValues.allStudentsNames;
 			QString s=tr("You have selected %1. Please select other students to swap students.", "%1 is a students set name.").arg(statisticValues.allStudentsNames[column]);
@@ -1700,7 +1701,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 }
 
 void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
-	if(swapAxis->checkState()==Qt::Checked){
+	if(swapAxes->checkState()==Qt::Checked){
 		if(row<0 || row>=statisticValues.allSubjectsNames.count()){
 			return;
 		}
@@ -1711,7 +1712,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 		}
 	}
 	if(RBActivity->isChecked()){
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			ActivitiesForm form(this, "", "", statisticValues.allSubjectsNames[row], "");
 			setParentAndOtherThings(&form, this);
 			form.exec();
@@ -1721,7 +1722,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 			form.exec();
 		}
 	} else if(RBSubactivity->isChecked()) {
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			SubactivitiesForm form(this, "", "", statisticValues.allSubjectsNames[row], "");
 			setParentAndOtherThings(&form, this);
 			form.exec();
@@ -1731,7 +1732,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 			form.exec();
 		}
 	} else if(RBAdd->isChecked()) {
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			AddActivityForm addActivityForm(this, "", "", statisticValues.allSubjectsNames[row], "");
 			setParentAndOtherThings(&addActivityForm, this);
 			addActivityForm.exec();
@@ -1742,7 +1743,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 		}
 	} else if(RBModify->isChecked()) {
 		//Normaly there are too many activities. So just entering the activity form
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			ActivitiesForm form(this, "", "", statisticValues.allSubjectsNames[row], "");
 			setParentAndOtherThings(&form, this);
 			form.exec();
@@ -1754,7 +1755,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 	} else if(RBDelete->isChecked()) {
 		int students=row;
 		int subject=-1;
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			students=-1;
 			subject=row;
 		}
@@ -1811,7 +1812,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 			QList<bool> _affectOtherSubjectsToBeRemoved;
 			bool _affectOtherSubjectsOverall;
 
-			if(swapAxis->checkState()==Qt::Checked){
+			if(swapAxes->checkState()==Qt::Checked){
 				computeActivitiesForDeletion("", "", statisticValues.allSubjectsNames[row],
 					tmpID, tmpGroupID,
 					nTotalActsDeleted,
@@ -1884,7 +1885,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 		//following source is nearly the same code as if(RBDelete->isChecked()). So do similar changes there too.
 		int students=row;
 		int subject=-1;
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			students=-1;
 			subject=row;
 		}
@@ -1941,7 +1942,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 			QList<bool> _affectOtherSubjectsToBeModified;
 			bool _affectOtherSubjectsOverall;
 
-			if(swapAxis->checkState()==Qt::Checked){
+			if(swapAxes->checkState()==Qt::Checked){
 				computeActivitiesForModification("", "", statisticValues.allSubjectsNames[row],
 					tmpID, tmpGroupID,
 					nTotalActsModified,
@@ -2068,7 +2069,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 			}
 		}
 	} else if(RBSwapTeachers->isChecked()) {
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			bool ok;
 			QStringList items=statisticValues.allSubjectsNames;
 			QString s=tr("You have selected %1. Please select other subject to swap teachers.", "%1 is a subject name.").arg(statisticValues.allSubjectsNames[row]);
@@ -2092,7 +2093,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 			}
 		}
 	} else if(RBSwapStudents->isChecked()) {
-		if(swapAxis->checkState()==Qt::Checked){
+		if(swapAxes->checkState()==Qt::Checked){
 			//no function. following code is unneeded, since the students are always the same; so no need to swap
 			/*bool ok;
 			QStringList items=statisticValues.allSubjectsNames;
@@ -2128,7 +2129,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 
 	int students=row;
 	int subject=column;
-	if(swapAxis->checkState()==Qt::Checked){
+	if(swapAxes->checkState()==Qt::Checked){
 		students=column;
 		subject=row;
 	}
@@ -2360,7 +2361,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 			bool _affectOtherSubjectsOverall;
 
 			QString s;
-			if(swapAxis->checkState()==Qt::Checked){
+			if(swapAxes->checkState()==Qt::Checked){
 				computeActivitiesForDeletion("", statisticValues.allStudentsNames[column], statisticValues.allSubjectsNames[row],
 					tmpID, tmpGroupID,
 					nTotalActsDeleted,
@@ -2485,7 +2486,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 			bool _affectOtherSubjectsOverall;
 
 			QString s;
-			if(swapAxis->checkState()==Qt::Checked){
+			if(swapAxes->checkState()==Qt::Checked){
 				computeActivitiesForModification("", statisticValues.allStudentsNames[column], statisticValues.allSubjectsNames[row],
 					tmpID, tmpGroupID,
 					nTotalActsModified,
@@ -2588,7 +2589,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 		}
 	} else if(RBSwapTeachers->isChecked()) {
 		if(storeStudentsForSwap==-1){
-			if(swapAxis->checkState()==Qt::Checked){
+			if(swapAxes->checkState()==Qt::Checked){
 				storeStudentsForSwap=column;
 				storeSubjectForSwap=row;
 			} else {
@@ -2603,7 +2604,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				storeSubjectForSwap=-1;
 			}
 		} else {
-			if(swapAxis->checkState()==Qt::Checked){
+			if(swapAxes->checkState()==Qt::Checked){
 				swapTeachers(storeStudentsForSwap, storeSubjectForSwap, column, row);
 			} else {
 				swapTeachers(storeStudentsForSwap, storeSubjectForSwap, row, column);
@@ -2614,7 +2615,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 		}
 	} else if(RBSwapStudents->isChecked()) {
 		if(storeStudentsForSwap==-1){
-			if(swapAxis->checkState()==Qt::Checked){
+			if(swapAxes->checkState()==Qt::Checked){
 				storeStudentsForSwap=column;
 				storeSubjectForSwap=row;
 			} else {
@@ -2629,7 +2630,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				storeSubjectForSwap=-1;
 			}
 		} else {
-			if(swapAxis->checkState()==Qt::Checked){
+			if(swapAxes->checkState()==Qt::Checked){
 				swapStudents(storeStudentsForSwap, storeSubjectForSwap, column, row);
 			} else {
 				swapStudents(storeStudentsForSwap, storeSubjectForSwap, row, column);
@@ -3112,7 +3113,7 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 			
 			//currently using not fast, but safe calculation
 			updateTables_Teachers();
-			updateTablesVisual(0);
+			updateTablesVisual();
 			
 			gt.rules.internalStructureComputed=false;
 			setRulesModifiedAndOtherThings(&gt.rules);
@@ -3537,13 +3538,11 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 	}
 }
 
-void ActivityPlanningForm::updateTables(int unneeded){
-	Q_UNUSED(unneeded);
-
+void ActivityPlanningForm::updateTables(){
 	updateTables_Students_Subjects();
 	updateTables_Teachers();
 
-	updateTablesVisual(0);
+	updateTablesVisual();
 }
 
 void ActivityPlanningForm::updateTables_Students_Subjects(){	//similar to statisticsexport.cpp
@@ -3589,7 +3588,7 @@ void ActivityPlanningForm::updateTables_Students_Subjects(){	//similar to statis
 	
 	activitiesTableView->model.clearDataAndHeaders();
 
-	if(swapAxis->checkState()==Qt::Checked){
+	if(swapAxes->checkState()==Qt::Checked){
 		/*activitiesTable->setRowCount(statisticValues.allSubjectsNames.count());
 		activitiesTable->setColumnCount(statisticValues.allStudentsNames.count());*/
 		activitiesTableView->model.resize(statisticValues.allSubjectsNames.count(), statisticValues.allStudentsNames.count());
@@ -3630,9 +3629,9 @@ void ActivityPlanningForm::updateTables_Students_Subjects(){	//similar to statis
 					QString tmpIdent;
 					if(showTeachers->checkState()==Qt::Checked){
 						if(act->teachersNames.size()>0){
-							for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++){
+							for(QStringList::const_iterator it=act->teachersNames.constBegin(); it!=act->teachersNames.constEnd(); it++){
 								tmpIdent+=*it;
-								if(it!=act->teachersNames.end()-1)
+								if(it!=act->teachersNames.constEnd()-1)
 									tmpIdent+=", ";
 							}
 						}
@@ -3640,9 +3639,9 @@ void ActivityPlanningForm::updateTables_Students_Subjects(){	//similar to statis
 					tmpIdent+=" ";
 					if(showActivityTags->checkState()==Qt::Checked){
 						if(act->activityTagsNames.size()>0){
-							for(QStringList::Iterator it=act->activityTagsNames.begin(); it!=act->activityTagsNames.end(); it++){
+							for(QStringList::const_iterator it=act->activityTagsNames.constBegin(); it!=act->activityTagsNames.constEnd(); it++){
 								tmpIdent+=*it;
-								if(it!=act->activityTagsNames.end()-1)
+								if(it!=act->activityTagsNames.constEnd()-1)
 									tmpIdent+=", ";
 							}
 						}
@@ -3650,20 +3649,20 @@ void ActivityPlanningForm::updateTables_Students_Subjects(){	//similar to statis
 					tmpD+=tmpIdentDuration.value(tmpIdent);
 					tmpIdentDuration.insert(tmpIdent, tmpD);
 				}
-				QMapIterator<LocaleString, int> it(tmpIdentDuration);
-				while(it.hasNext()){
-					it.next();
+				QMap<LocaleString, int>::const_iterator it=tmpIdentDuration.constBegin();
+				while(it!=tmpIdentDuration.constEnd()){
 					tmpString+=CustomFETString::number(it.value());
 					tmpString+=" "+it.key();
-					if(it.hasNext())
+					if(it!=tmpIdentDuration.constEnd()-1)
 						tmpString+="\n";
+					it++;
 				}
 			}
 			if(!tmpActivities.isEmpty()){
 				/*QTableWidgetItem* newItem=new QTableWidgetItem(tmpString);
 				newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);*/
 				QPair<int, int> pair;
-				if(swapAxis->checkState()==Qt::Checked){
+				if(swapAxes->checkState()==Qt::Checked){
 					pair.first=subject;
 					pair.second=students;
 					//activitiesTable->setItem(subject, students, newItem);
@@ -3684,7 +3683,7 @@ void ActivityPlanningForm::updateTables_Students_Subjects(){	//similar to statis
 			tmpSubjectLabel+=" ("+CustomFETString::number(statisticValues.subjectsTotalNumberOfHours4.value(subjects))+")";
 		subjectsLabels<<tmpSubjectLabel;
 	}
-	if(swapAxis->checkState()==Qt::Checked){
+	if(swapAxes->checkState()==Qt::Checked){
 		/*activitiesTableView->setHorizontalHeaderLabels(studentsLabels);
 		activitiesTableView->setVerticalHeaderLabels(subjectsLabels);*/
 		activitiesTableView->model.horizontalHeaderItems=studentsLabels;
@@ -3786,18 +3785,18 @@ void ActivityPlanningForm::updateTables_Teachers(){	//similar to statisticsexpor
 			int tmpD=act->duration;
 			QString tmpIdent;
 			if(act->studentsNames.size()>0){
-				for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++){
+				for(QStringList::const_iterator it=act->studentsNames.constBegin(); it!=act->studentsNames.constEnd(); it++){
 					tmpIdent+=*it;
-					if(it!=act->studentsNames.end()-1)
+					if(it!=act->studentsNames.constEnd()-1)
 						tmpIdent+=", ";
 				}
 			}
 			tmpIdent+=" ";
 			if(showActivityTags->checkState()==Qt::Checked){
 				if(act->activityTagsNames.size()>0){
-					for(QStringList::Iterator it=act->activityTagsNames.begin(); it!=act->activityTagsNames.end(); it++){
+					for(QStringList::const_iterator it=act->activityTagsNames.constBegin(); it!=act->activityTagsNames.constEnd(); it++){
 						tmpIdent+=*it;
-						if(it!=act->activityTagsNames.end()-1)
+						if(it!=act->activityTagsNames.constEnd()-1)
 							tmpIdent+=", ";
 					}
 				}
@@ -3812,9 +3811,9 @@ void ActivityPlanningForm::updateTables_Teachers(){	//similar to statisticsexpor
 			tmpIdent+=" ";
 			if(showActivityTags->checkState()==Qt::Checked){
 				if(act->activityTagsNames.size()>0){
-					for(QStringList::Iterator it=act->activityTagsNames.begin(); it!=act->activityTagsNames.end(); it++){
+					for(QStringList::const_iterator it=act->activityTagsNames.constBegin(); it!=act->activityTagsNames.constEnd(); it++){
 						tmpIdent+=*it;
-						if(it!=act->activityTagsNames.end()-1)
+						if(it!=act->activityTagsNames.constEnd()-1)
 							tmpIdent+=", ";
 					}
 				}
@@ -3826,10 +3825,10 @@ void ActivityPlanningForm::updateTables_Teachers(){	//similar to statisticsexpor
 		
 		QString tmpItem;
 		tmpItem.clear();
-		QMapIterator<LocaleString, int> it(tmpSubjectsNumberOfHours);
-		while(it.hasNext()){
-			it.next();
+		QMap<LocaleString, int>::const_iterator it=tmpSubjectsNumberOfHours.constBegin();
+		while(it!=tmpSubjectsNumberOfHours.constEnd()){
 			tmpItem+=CustomFETString::number(it.value())+" "+it.key()+"\n";
+			it++;
 		}
 		//
 		/*QTableWidgetItem* newItem3=new QTableWidgetItem(tmpItem);
@@ -3841,10 +3840,10 @@ void ActivityPlanningForm::updateTables_Teachers(){	//similar to statisticsexpor
 		teachersTableView->model.items.insert(pair, tmpItem);
 		
 		tmpItem.clear();
-		QMapIterator<LocaleString, int> it2(tmpStudentsNumberOfHours);
-		while(it2.hasNext()){
-			it2.next();
+		QMap<LocaleString, int>::const_iterator it2=tmpStudentsNumberOfHours.constBegin();
+		while(it2!=tmpStudentsNumberOfHours.constEnd()){
 			tmpItem+=CustomFETString::number(it2.value())+" "+it2.key()+"\n";
+			it2++;
 		}
 		//
 		/*QTableWidgetItem* newItem4=new QTableWidgetItem(tmpItem);
@@ -3865,9 +3864,7 @@ void ActivityPlanningForm::updateTables_Teachers(){	//similar to statisticsexpor
 	teachersTableView->allTableChanged();
 }
 
-void ActivityPlanningForm::updateTablesVisual(int unneeded){
-	Q_UNUSED(unneeded);
-
+void ActivityPlanningForm::updateTablesVisual(){
 	assert(studentsDuplicates.count()==statisticValues.allStudentsNames.count());
 	assert(studentsDuplicates.count()==yearORgroupORsubgroup.count());
 	
@@ -3883,7 +3880,7 @@ void ActivityPlanningForm::updateTablesVisual(int unneeded){
 	activitiesTableView->model.clear();
 	activitiesTableView->model.resize(trc, tcc);*/
 
-	if(swapAxis->checkState()==Qt::Checked){
+	if(swapAxes->checkState()==Qt::Checked){
 		for(int students=0; students<statisticValues.allStudentsNames.count(); students++){
 			bool show=true;
 			int tmpInt=yearORgroupORsubgroup.at(students);
@@ -4000,7 +3997,7 @@ void ActivityPlanningForm::updateTablesVisual(int unneeded){
 }
 
 void ActivityPlanningForm::deleteAll(){
-	int ret=QMessageBox::question(this, tr("Delete all?", "It refers to activities"), tr("Are you sure you want to remove ALL the %1 activities and related constraints?", "%1 is the number of total activities")
+	int ret=QMessageBox::question(this, tr("Delete all?", "It refers to activities"), tr("Are you sure you want to remove ALL the %1 activities and related constraints?", "%1 is the total number of activities")
 		.arg(gt.rules.activitiesList.count()), QMessageBox::Yes | QMessageBox::No);
 	if(ret==QMessageBox::Yes){
 		ret=QMessageBox::question(this, tr("Delete all?", "It refers to activities"), tr("Are you absolutely sure you want to remove ALL activities and related constraints from your data?"), QMessageBox::Yes | QMessageBox::No);

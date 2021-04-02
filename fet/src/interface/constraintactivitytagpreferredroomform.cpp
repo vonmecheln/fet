@@ -42,9 +42,7 @@ ConstraintActivityTagPreferredRoomForm::ConstraintActivityTagPreferredRoomForm(Q
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(roomsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -68,6 +66,14 @@ ConstraintActivityTagPreferredRoomForm::ConstraintActivityTagPreferredRoomForm(Q
 	}
 
 	this->filterChanged();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(roomsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+#else
+	connect(roomsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+#endif
 }
 
 ConstraintActivityTagPreferredRoomForm::~ConstraintActivityTagPreferredRoomForm()

@@ -49,7 +49,7 @@ QModelIndex SparseItemModel::parent ( const QModelIndex & index ) const
 int SparseItemModel::rowCount ( const QModelIndex & parent ) const
 {
 	if(parent!=QModelIndex())
-		return 0; //qt doc says that
+		return 0; //Qt documentation says that
 
 	return n_rows;
 }
@@ -57,7 +57,7 @@ int SparseItemModel::rowCount ( const QModelIndex & parent ) const
 int SparseItemModel::columnCount ( const QModelIndex & parent ) const
 {
 	if(parent!=QModelIndex())
-		return 0; //qt doc says that
+		return 0; //Qt documentation says that
 
 	return n_columns;
 }

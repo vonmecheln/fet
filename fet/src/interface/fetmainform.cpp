@@ -1036,7 +1036,11 @@ void FetMainForm::on_studentsComboBoxesStyleAction_triggered()
 
 void FetMainForm::replyFinished(QNetworkReply* networkReply)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	if(networkReply->networkError()!=QNetworkReply::NoError){
+#else
 	if(networkReply->error()!=QNetworkReply::NoError){
+#endif
 		QString s=QString("");
 		s+=tr("Could not search for possible updates on the internet - error message is: %1.").arg(networkReply->errorString());
 		s+=QString("\n\n");
@@ -1136,7 +1140,7 @@ void FetMainForm::closeEvent(QCloseEvent* event)
 	MAIN_FORM_SHORTCUTS_TAB_POSITION=tabWidget->currentIndex();
 	
 	if(gt.rules.modified){
-		QMessageBox::StandardButton res=QMessageBox::question( this, tr("FET - exiting"),
+		QMessageBox::StandardButton res=QMessageBox::question( this, tr("FET question"),
 		 tr("Your data file has been modified - do you want to save it?"), QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel);
 
 		if(res==QMessageBox::Yes){
@@ -1192,7 +1196,7 @@ FetMainForm::~FetMainForm()
 	delete shortcutTimetableAdvancedMenu;
 }
 
-void FetMainForm::on_fileExitAction_triggered()
+void FetMainForm::on_fileQuitAction_triggered()
 {
 	if(simulation_running){
 		QMessageBox::information(this, tr("FET information"),
@@ -1232,11 +1236,11 @@ void FetMainForm::setCurrentFile(const QString& fileName)
 
 void FetMainForm::updateRecentFileActions()
 {
-	QMutableStringListIterator i(recentFiles);
-	while(i.hasNext()){
-		if(!QFile::exists(i.next()))
-			i.remove();
-	}
+	QStringList existingNames;
+	for(const QString& tn : qAsConst(recentFiles))
+		if(QFile::exists(tn))
+			existingNames.append(tn);
+	recentFiles=existingNames;
 	
 	for(int j=0; j<MAX_RECENT_FILES; j++){
 		if(j<recentFiles.count()){
@@ -4578,19 +4582,20 @@ void FetMainForm::on_languageAction_triggered()
 	
 	//assert(languagesMap.count()==N_LANGUAGES);
 	
-	QMapIterator<QString, QString> it(languagesMap);
+	QMap<QString, QString>::const_iterator it=languagesMap.constBegin();
 	int i=0;
 	int j=-1;
 	int eng=-1;
-	while(it.hasNext()){
-		it.next();
+	while(it!=languagesMap.constEnd()){
 		languagesComboBox->addItem( it.key() + " (" + it.value() + ")" );
 		if(it.key()==FET_LANGUAGE)
 			j=i;
 		if(it.key()=="en_US")
 			eng=i;
 		i++;
+		it++;
 	}
+	
 	assert(eng>=0);
 	if(j==-1){
 		QMessageBox::warning(this, tr("FET warning"), tr("Invalid current language - making it en_US (US English)"));
@@ -4640,15 +4645,17 @@ void FetMainForm::on_languageAction_triggered()
 	int k=languagesComboBox->currentIndex();
 	i=0;
 	bool found=false;
-	QMapIterator<QString, QString> it2(languagesMap);
-	while(it2.hasNext()){
-		it2.next();
+
+	QMap<QString, QString>::const_iterator it2=languagesMap.constBegin();
+	while(it2!=languagesMap.constEnd()){
 		if(i==k){
 			FET_LANGUAGE=it2.key();
 			found=true;
 		}
 		i++;
+		it2++;
 	}
+
 	if(!found){
 		QMessageBox::warning(this, tr("FET warning"), tr("Invalid language selected - making it en_US (US English)"));
 		FET_LANGUAGE="en_US";
@@ -4701,14 +4708,14 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	QString NEW_FET_LANGUAGE=QLocale::system().name();
 	
 	bool ok=false;
-	QMapIterator<QString, QString> i(languagesMap);
-	while(i.hasNext()){
-		i.next();
+	QMap<QString, QString>::const_iterator i=languagesMap.constBegin();
+	while(i!=languagesMap.constEnd()){
 		if(NEW_FET_LANGUAGE.left(i.key().length())==i.key()){
 			NEW_FET_LANGUAGE=i.key();
 			ok=true;
 			break;
 		}
+		i++;
 	}
 	if(!ok)
 		NEW_FET_LANGUAGE="en_US";

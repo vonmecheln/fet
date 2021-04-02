@@ -40,10 +40,6 @@ AddConstraintBasicCompulsorySpaceForm::~AddConstraintBasicCompulsorySpaceForm()
 	saveFETDialogGeometry(this);
 }
 
-void AddConstraintBasicCompulsorySpaceForm::constraintChanged()
-{
-}
-
 void AddConstraintBasicCompulsorySpaceForm::addCurrentConstraint()
 {
 	SpaceConstraint *ctr=NULL;

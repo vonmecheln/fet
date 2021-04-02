@@ -24,8 +24,9 @@
 
 #include <QString>
 #include <QList>
-#include <QLinkedList>
 #include <QHash>
+
+#include <list>
 
 class Teacher;
 class Rules;
@@ -48,8 +49,8 @@ public:
 	
 	int targetNumberOfHours;
 	
-	QLinkedList<QString> qualifiedSubjectsList;
-	QHash<QString, QLinkedList<QString>::Iterator> qualifiedSubjectsHash; //index in the above list, useful when removing/renaming subjects
+	std::list<QString> qualifiedSubjectsList;
+	QHash<QString, std::list<QString>::iterator> qualifiedSubjectsHash; //index in the above list, useful when removing/renaming subjects
 
 	Teacher();
 	~Teacher();

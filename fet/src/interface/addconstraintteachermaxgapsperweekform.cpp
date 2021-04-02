@@ -46,17 +46,11 @@ AddConstraintTeacherMaxGapsPerWeekForm::AddConstraintTeacherMaxGapsPerWeekForm(Q
 		Teacher* tch=gt.rules.teachersList[i];
 		teachersComboBox->addItem(tch->name);
 	}
-
-	constraintChanged();
 }
 
 AddConstraintTeacherMaxGapsPerWeekForm::~AddConstraintTeacherMaxGapsPerWeekForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void AddConstraintTeacherMaxGapsPerWeekForm::constraintChanged()
-{
 }
 
 void AddConstraintTeacherMaxGapsPerWeekForm::addCurrentConstraint()

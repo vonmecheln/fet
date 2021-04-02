@@ -80,14 +80,6 @@ void AddConstraintActivityTagPreferredRoomForm::addConstraint()
 		return;
 	}
 
-/*	int i=subjectsComboBox->currentIndex();
-	if(i<0 || subjectsComboBox->count()<=0){
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Invalid subject"));
-		return;
-	}
-	QString subject=subjectsComboBox->currentText();*/
-
 	int i=activityTagsComboBox->currentIndex();
 	if(i<0 || activityTagsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
@@ -104,7 +96,7 @@ void AddConstraintActivityTagPreferredRoomForm::addConstraint()
 	}
 	QString room=roomsComboBox->currentText();
 
-	ctr=new ConstraintActivityTagPreferredRoom(weight/*, subject*/, activityTag, room);
+	ctr=new ConstraintActivityTagPreferredRoom(weight, activityTag, room);
 
 	bool tmp2=gt.rules.addSpaceConstraint(ctr);
 	if(tmp2){

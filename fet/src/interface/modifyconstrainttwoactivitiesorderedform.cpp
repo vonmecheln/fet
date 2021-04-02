@@ -47,8 +47,6 @@ ModifyConstraintTwoActivitiesOrderedForm::ModifyConstraintTwoActivitiesOrderedFo
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 
 	updateActivitiesComboBox();
-
-	constraintChanged();
 }
 
 ModifyConstraintTwoActivitiesOrderedForm::~ModifyConstraintTwoActivitiesOrderedForm()
@@ -90,7 +88,7 @@ void ModifyConstraintTwoActivitiesOrderedForm::updateActivitiesComboBox(){
 			i++;
 		}
 	}
-	//assert(j>=0); only first time
+	//assert(j>=0); only the first time
 	firstActivitiesComboBox->setCurrentIndex(j);
 
 	i=0, j=-1;
@@ -106,14 +104,8 @@ void ModifyConstraintTwoActivitiesOrderedForm::updateActivitiesComboBox(){
 			i++;
 		}
 	}
-	//assert(j>=0); only first time
+	//assert(j>=0); only the first time
 	secondActivitiesComboBox->setCurrentIndex(j);
-
-	constraintChanged();
-}
-
-void ModifyConstraintTwoActivitiesOrderedForm::constraintChanged()
-{
 }
 
 void ModifyConstraintTwoActivitiesOrderedForm::ok()

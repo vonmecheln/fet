@@ -31,8 +31,6 @@ public:
 	ConstraintActivitiesSameStartingDayForm(QWidget* parent);
 	~ConstraintActivitiesSameStartingDayForm();
 
-	void refreshConstraintsListWidget();
-
 	bool filterOk(TimeConstraint* ctr);
 	
 public slots:

@@ -43,10 +43,6 @@ AddConstraintActivityPreferredStartingTimesForm::AddConstraintActivityPreferredS
 	connect(preferredTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
 	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 	connect(setAllAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllSlotsAllowed()));
 	connect(setAllNotAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllSlotsNotAllowed()));
 
@@ -89,22 +85,9 @@ AddConstraintActivityPreferredStartingTimesForm::AddConstraintActivityPreferredS
 	activityTagsComboBox->setCurrentIndex(0);
 
 	populateStudentsComboBox(studentsComboBox, QString(""), true);
-	/*studentsComboBox->addItem("");
-	for(int i=0; i<gt.rules.yearsList.size(); i++){
-		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->addItem(sty->name);
-		for(int j=0; j<sty->groupsList.size(); j++){
-			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->addItem(stg->name);
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int k=0; k<stg->subgroupsList.size(); k++){
-				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->addItem(sts->name);
-			}
-		}
-	}*/
 	studentsComboBox->setCurrentIndex(0);
 	
-	updateActivitiesComboBox();
+	filterChanged();
 
 	preferredTimesTable->setRowCount(gt.rules.nHoursPerDay);
 	preferredTimesTable->setColumnCount(gt.rules.nDaysPerWeek);
@@ -139,6 +122,18 @@ AddConstraintActivityPreferredStartingTimesForm::AddConstraintActivityPreferredS
 	tableWidgetUpdateBug(preferredTimesTable);
 	
 	setStretchAvailabilityTableNicely(preferredTimesTable);
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+#else
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+#endif
 }
 
 AddConstraintActivityPreferredStartingTimesForm::~AddConstraintActivityPreferredStartingTimesForm()
@@ -240,7 +235,7 @@ bool AddConstraintActivityPreferredStartingTimesForm::filterOk(Activity* act)
 	//teacher
 	if(tn!=""){
 		bool ok2=false;
-		for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++)
+		for(QStringList::const_iterator it=act->teachersNames.constBegin(); it!=act->teachersNames.constEnd(); it++)
 			if(*it == tn){
 				ok2=true;
 				break;
@@ -261,7 +256,7 @@ bool AddConstraintActivityPreferredStartingTimesForm::filterOk(Activity* act)
 	//students
 	if(stn!=""){
 		bool ok2=false;
-		for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
+		for(QStringList::const_iterator it=act->studentsNames.constBegin(); it!=act->studentsNames.constEnd(); it++)
 			if(*it == stn){
 				ok2=true;
 				break;
@@ -271,11 +266,6 @@ bool AddConstraintActivityPreferredStartingTimesForm::filterOk(Activity* act)
 	}
 	
 	return ok;
-}
-
-void AddConstraintActivityPreferredStartingTimesForm::filterChanged()
-{
-	this->updateActivitiesComboBox();
 }
 
 void AddConstraintActivityPreferredStartingTimesForm::itemClicked(QTableWidgetItem* item)
@@ -294,7 +284,7 @@ void AddConstraintActivityPreferredStartingTimesForm::itemClicked(QTableWidgetIt
 	tableWidgetUpdateBug(preferredTimesTable);
 }
 
-void AddConstraintActivityPreferredStartingTimesForm::updateActivitiesComboBox(){
+void AddConstraintActivityPreferredStartingTimesForm::filterChanged(){
 	activitiesComboBox->clear();
 	activitiesList.clear();
 	
@@ -321,10 +311,6 @@ void AddConstraintActivityPreferredStartingTimesForm::addConstraint()
 		return;
 	}
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
 	int i=activitiesComboBox->currentIndex();
 	assert(i<activitiesList.size());
 	if(i<0 || activitiesComboBox->count()<=0){
@@ -337,23 +323,10 @@ void AddConstraintActivityPreferredStartingTimesForm::addConstraint()
 	
 	QList<int> days_L;
 	QList<int> hours_L;
-	//int days[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES];
-	//int hours[MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES];
 	int n=0;
 	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 		for(i=0; i<gt.rules.nHoursPerDay; i++)
 			if(preferredTimesTable->item(i, j)->text()==YES){
-				/*if(n>=MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
-					QString s=tr("Not enough slots (too many \"Yes\" values).");
-					s+="\n";
-					s+=tr("Please increase the variable MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES");
-					s+="\n";
-					s+=tr("Currently, it is %1").arg(MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES);
-					QMessageBox::warning(this, tr("FET information"), s);
-					
-					return;
-				}*/
-				
 				days_L.append(j);
 				hours_L.append(i);
 				n++;
@@ -381,7 +354,7 @@ void AddConstraintActivityPreferredStartingTimesForm::addConstraint()
 		}
 	}*/
 
-	ctr=new ConstraintActivityPreferredStartingTimes(weight, /*compulsory,*/ /*act->*/id, n, days_L, hours_L);
+	ctr=new ConstraintActivityPreferredStartingTimes(weight, id, n, days_L, hours_L);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2){

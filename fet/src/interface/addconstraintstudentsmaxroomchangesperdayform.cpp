@@ -37,17 +37,11 @@ AddConstraintStudentsMaxRoomChangesPerDayForm::AddConstraintStudentsMaxRoomChang
 	maxChangesSpinBox->setMinimum(0);
 	maxChangesSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxChangesSpinBox->setValue(1);
-	
-	constraintChanged();
 }
 
 AddConstraintStudentsMaxRoomChangesPerDayForm::~AddConstraintStudentsMaxRoomChangesPerDayForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void AddConstraintStudentsMaxRoomChangesPerDayForm::constraintChanged()
-{
 }
 
 void AddConstraintStudentsMaxRoomChangesPerDayForm::addCurrentConstraint()

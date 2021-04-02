@@ -54,13 +54,47 @@ TEMPLATE = app
 
 DEFINES += \
 	FET_COMMAND_LINE \
-	QT_DEPRECATED_WARNINGS \
-	QT_NO_FOREACH
+	QT_NO_FOREACH \
+	QT_NO_JAVA_STYLE_ITERATORS \
+	QT_NO_LINKED_LIST \
+	QT_STRICT_ITERATORS
 
 CONFIG += release warn_on c++11
-win32 {
-	CONFIG += console
+
+# The "cmdline" value was introduced in Qt 5.12.2.
+greaterThan(QT_MAJOR_VERSION, 5) {
+	CONFIG += cmdline
 }
+else {
+	greaterThan(QT_MAJOR_VERSION, 4) {
+		greaterThan(QT_MINOR_VERSION, 12) {
+			CONFIG += cmdline
+		}
+		else {
+			equals(QT_MINOR_VERSION, 12) {
+				greaterThan(QT_PATCH_VERSION, 1) {
+					CONFIG += cmdline
+				}
+				else {
+					win32 {
+						CONFIG += console
+					}
+				}
+			}
+			else {
+				win32 {
+					CONFIG += console
+				}
+			}
+		}
+	}
+	else {
+		win32 {
+			CONFIG += console
+		}
+	}
+}
+
 QT -= gui
 
 DESTDIR = ..

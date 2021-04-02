@@ -34,7 +34,6 @@ public:
 	void updateSecondActivityTagComboBox();
 
 public slots:
-	void constraintChanged();
 	void addCurrentConstraint();
 };
 

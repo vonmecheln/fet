@@ -560,50 +560,49 @@ the user can change
 (i) longer run time to generate time table (with crossing finger) hehe... Others setting is not change
 (ii) longer run time to generate time table with increasing value for remaining soft conflicts (0.5, 1.0, 1.5 etc)
 
-As you can see in timetable --> generate multiple variants, features in (A)(i) and (A)(iii) are already there. I hope that you 
-
+As you can see in timetable --> generate multiple variants, features in (A)(i) and (A)(iii) are already there. I hope that you
 can figure it out on how to implement the feature in (A)(ii). It would be marvelous.
 
 34---------------------------------------------------------
 From kdsayang:
 
-If a user want to add "an activity have a set of preferred rooms", the user will need to click one 
-by one to add right???... So, I would like to suggest that we group them like when user want to add 
-an "activity". There (activity), we can select by years, groups and subgroup for students. Instead of 
+If a user want to add "an activity have a set of preferred rooms", the user will need to click one
+by one to add right???... So, I would like to suggest that we group them like when user want to add
+an "activity". There (activity), we can select by years, groups and subgroup for students. Instead of
 clicking all the student groups in years 1, user can just click year 1 to include them all into students....
- 
+
 For example for rooms (room group then room subgroup)
- 
+
 HALL
 Hall A
 Hall B
 Hall C
- 
+
 TUTORIAL
 A-A1
 A-A2
 B-A1
- 
+
 COMPUTER LAB
 Lab 1
 Lab 2
 Lab 3
- 
-So when user want to add "an activity have a set of preferred rooms" for all the tutorial room, instead 
+
+So when user want to add "an activity have a set of preferred rooms" for all the tutorial room, instead
 of clicking 20 tutorial room one by one, user just click the group that is Tutorial. Easy right???
 
 35---------------------------------------------------------
 From kdsayang:
 
-What I meant is in Data --> Time Constraints --> Teacher Time Constraints --> A Teachers not available time, 
-1. If you double clicked Afida, 
-2. It will show Afida not available time right. 
-3. Then if you want to change Sambilan not available time by choosing Teacher drop down menu, nothing happen. In fact, It still shows Afida not available time. 
-4. So, if you want to change Sambilan not available time, you have to clicked Cancel button first, 
-5. then double clicked Sambilan. 
+What I meant is in Data --> Time Constraints --> Teacher Time Constraints --> A Teachers not available time,
+1. If you double clicked Afida,
+2. It will show Afida not available time right.
+3. Then if you want to change Sambilan not available time by choosing Teacher drop down menu, nothing happen. In fact, It still shows Afida not available time.
+4. So, if you want to change Sambilan not available time, you have to clicked Cancel button first,
+5. then double clicked Sambilan.
 6. Now you can see that Sambilan not available time is updated.
 
-My suggestion is that It will be better If FET can update to Sambilan from Afida in Step no 3. 
+My suggestion is that It will be better If FET can update to Sambilan from Afida in Step no 3.
 
 36---------------------------------------------------------
 From kdsayang:
@@ -617,7 +616,7 @@ I have some other suggestion.
 From kdsayang:
 
 If I want to change many teacher not available time, I need to add one by one although the teacher not available time is the SAME.
- 
+
 So, I suggest that you can add a set of teachers not available time. Same as rooms not available time feature.
 
 38---------------------------------------------------------
@@ -5397,7 +5396,7 @@ Please note that max gaps per week/day for students/teachers constraints can onl
 323---------------------------------------------------------
 From Vangelis Karafillidis:
 
-He suggest that all the constraints teacher not available could be presented in a teachers time horizontal manner (teacher as row, day/hour as column).
+He suggests that all the constraints teacher not available could be presented in a teachers time horizontal manner (teacher as row, day+hour as column).
 
 Further suggestions:
 
@@ -6899,6 +6898,7 @@ do like you suggest. Maybe you can follow what Volker said.
 
 400---------------------------------------------------------
 From Cyrus (on forum):
+(see also entry #403)
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=4373.0
 
@@ -6920,3 +6920,63 @@ all teachers. That would be better.
 Also suggested by Vangelis Karafillidis:
 
 For the max hours continuously constraints, add the possibility to except the breaks.
+
+401---------------------------------------------------------
+From Volker Dirr:
+
+(inspired by this paper: https://www.herrmann-online.info/documents/bachelorarbeit.pdf)
+
+Write the rooms' free periods timetables in the HTML results. The rooms should be grouped by buildings.
+
+402---------------------------------------------------------
+From Eric de Quartel:
+
+Is it possible to get the numbers of the activities in the HTML timetable. It makes it easier to communicate when changes have to be made.
+
+(Eric refers to writing the id-s of the activities in the HTML timetables, and maybe adding a check box for this.)
+
+Volker Dirr:
+
+print it in the first line or the last line?
+
+Eric de Quartel:
+
+Second line I think. Is very helpful.
+
+Volker Dirr:
+
+hmmm...
+that id's might help the timetablemaker who use the fet gui. but i guess
+it will only do trouble for students and "normal" teachers. those guys
+can always say "in table x, day y and hour z" (of course that are 3
+numbers/names, but it 100% clear. no wasting space on sheet, no swapping
+id number with room number or students year, no explaining need why
+there is that strange number, ...)
+so shouldn't it be in the GUI only, but not in html table?!
+
+403---------------------------------------------------------
+From Cyrus (on forum):
+(see also entry #400)
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4391.0
+
+I have used the constrain on 'a set of activities occupies max/min slots from selection' and its amazing though tedious more so when you
+have putting all teachers and classes. Is it possible we have a general constrain for all teachers and students such that it will be easier
+to put constrains revolving around all teachers and students? If it can be there, it can really help alot
+
+404---------------------------------------------------------
+From Volker Dirr:
+
+(since i am currently doing again a very difficult timetable and i think it will be useful for those very difficult tables):
+
+optional enable in the settings "write highest stage solution if running out of generation time".
+
+405---------------------------------------------------------
+From Liviu Lalescu and Zsolt Udvari (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4399.0
+
+Maybe "fet-cl --version" should not create a new directory and a log file in it in which to write the FET version, but should output this information only
+on the screen. Maybe this should also be the behavior when the generation of the timetable does not begin because of incorrect command-line arguments.
+FET command-line creates the "logs" and possibly the "timetables" directories in the output directory (which is the current working directory if none given
+as an argument) and some logs files in these directories.

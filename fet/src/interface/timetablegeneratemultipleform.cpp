@@ -38,6 +38,7 @@
 #include <QDir>
 
 #include <QApplication>
+#include <QtGlobal>
 
 extern QMutex myMutex;
 
@@ -454,16 +455,22 @@ void TimetableGenerateMultipleForm::simulationFinished()
 	
 	TimetableExport::writeReportForMultiple(this, QString("\n")+ms, false);
 
-#ifndef Q_WS_QWS
+//On Windows we do not beep for Qt >= 5.14.1, because the QMessageBox below beeps itself.
+//It would be better to test at runtime, not at compile time, but it is easier/safer this way.
+//(The alternative would be to develop a parser for the function qVersion(), but I am not sure it will always respect the exact format "vM.vm.vp".)
+//We test the macro Q_OS_WIN32 because on the old Qt 4 it is the only available macro from these three below,
+//Q_OS_WIN, Q_OS_WIN32, and Q_OS_WIN64 (which are available on Qt 5.14.1).
+#if (!defined(Q_OS_WIN) && !defined(Q_OS_WIN32) && !defined(Q_OS_WIN64)) || (QT_VERSION < QT_VERSION_CHECK(5,14,1))
 	QApplication::beep();
 #endif
 	
+	//Old comment below. From Qt 5.14.1 on Windows all QMessageBox-es emit a sound.
 	//Trick so that the message box will be silent (the only sound is thus the beep above).
-	QMessageBox msgBox(this);
+	/*QMessageBox msgBox(this);
 	msgBox.setWindowTitle(TimetableGenerateMultipleForm::tr("FET information"));
 	msgBox.setText(ms);
-	msgBox.exec();
-	//QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"), ms);
+	msgBox.exec();*/
+	QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"), ms);
 	
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);

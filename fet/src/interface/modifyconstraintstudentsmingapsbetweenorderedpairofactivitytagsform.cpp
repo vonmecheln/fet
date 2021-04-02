@@ -51,8 +51,6 @@ ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::ModifyConst
 	minGapsSpinBox->setMinimum(1);
 	minGapsSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minGapsSpinBox->setValue(ctr->minGaps);
-
-	constraintChanged();
 }
 
 ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::~ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm()
@@ -72,8 +70,6 @@ void ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::update
 	}
 	assert(j>=0);
 	firstActivityTagComboBox->setCurrentIndex(j);
-
-	constraintChanged();
 }
 
 void ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::updateSecondActivityTagComboBox()
@@ -88,12 +84,6 @@ void ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::update
 	}
 	assert(j>=0);
 	secondActivityTagComboBox->setCurrentIndex(j);
-
-	constraintChanged();
-}
-
-void ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::constraintChanged()
-{
 }
 
 void ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::ok()

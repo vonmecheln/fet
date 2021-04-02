@@ -47,7 +47,7 @@ ConstraintActivitiesPreferredStartingTimesForm::ConstraintActivitiesPreferredSta
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
 }
 
 ConstraintActivitiesPreferredStartingTimesForm::~ConstraintActivitiesPreferredStartingTimesForm()
@@ -55,7 +55,7 @@ ConstraintActivitiesPreferredStartingTimesForm::~ConstraintActivitiesPreferredSt
 	saveFETDialogGeometry(this);
 }
 
-void ConstraintActivitiesPreferredStartingTimesForm::refreshConstraintsListWidget()
+void ConstraintActivitiesPreferredStartingTimesForm::filterChanged()
 {
 	this->visibleConstraintsList.clear();
 	constraintsListWidget->clear();
@@ -103,7 +103,7 @@ void ConstraintActivitiesPreferredStartingTimesForm::addConstraint()
 	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
 
 	constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
 }
@@ -124,7 +124,7 @@ void ConstraintActivitiesPreferredStartingTimesForm::modifyConstraint()
 	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
 	
 	constraintsListWidget->verticalScrollBar()->setValue(valv);
 	constraintsListWidget->horizontalScrollBar()->setValue(valh);

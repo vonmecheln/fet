@@ -31,8 +31,6 @@ public:
 	ConstraintTeacherHomeRoomsForm(QWidget* parent);
 	~ConstraintTeacherHomeRoomsForm();
 
-	void refreshConstraintsListWidget();
-
 	bool filterOk(SpaceConstraint* ctr);
 	
 public slots:

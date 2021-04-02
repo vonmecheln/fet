@@ -32,7 +32,6 @@ public:
 	~ModifyConstraintStudentsMaxRoomChangesPerWeekForm();
 
 public slots:
-	void constraintChanged();
 	void ok();
 	void cancel();
 };

@@ -30,7 +30,6 @@ public:
 	~AddConstraintBasicCompulsorySpaceForm();
 
 public slots:
-	void constraintChanged();
 	void addCurrentConstraint();
 };
 

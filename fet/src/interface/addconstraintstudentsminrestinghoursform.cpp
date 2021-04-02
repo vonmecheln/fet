@@ -39,17 +39,11 @@ AddConstraintStudentsMinRestingHoursForm::AddConstraintStudentsMinRestingHoursFo
 	minRestingHoursSpinBox->setMinimum(1);
 	minRestingHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minRestingHoursSpinBox->setValue(1);
-	
-	constraintChanged();
 }
 
 AddConstraintStudentsMinRestingHoursForm::~AddConstraintStudentsMinRestingHoursForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void AddConstraintStudentsMinRestingHoursForm::constraintChanged()
-{
 }
 
 void AddConstraintStudentsMinRestingHoursForm::addCurrentConstraint()

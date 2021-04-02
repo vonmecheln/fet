@@ -43,8 +43,6 @@ ConstraintTeacherHomeRoomsForm::ConstraintTeacherHomeRoomsForm(QWidget* parent):
 	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-	connect(roomsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -63,7 +61,15 @@ ConstraintTeacherHomeRoomsForm::ConstraintTeacherHomeRoomsForm(QWidget* parent):
 	for(Room* rm : qAsConst(gt.rules.roomsList))
 		roomsComboBox->addItem(rm->name);
 
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(roomsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+#else
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(roomsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+#endif
 }
 
 ConstraintTeacherHomeRoomsForm::~ConstraintTeacherHomeRoomsForm()
@@ -71,7 +77,7 @@ ConstraintTeacherHomeRoomsForm::~ConstraintTeacherHomeRoomsForm()
 	saveFETDialogGeometry(this);
 }
 
-void ConstraintTeacherHomeRoomsForm::refreshConstraintsListWidget()
+void ConstraintTeacherHomeRoomsForm::filterChanged()
 {
 	this->visibleConstraintsList.clear();
 	constraintsListWidget->clear();
@@ -89,11 +95,6 @@ void ConstraintTeacherHomeRoomsForm::refreshConstraintsListWidget()
 		constraintsListWidget->setCurrentRow(0);
 	else
 		this->constraintChanged(-1);
-}
-
-void ConstraintTeacherHomeRoomsForm::filterChanged()
-{
-	this->refreshConstraintsListWidget();
 }
 
 bool ConstraintTeacherHomeRoomsForm::filterOk(SpaceConstraint* ctr)
@@ -127,7 +128,7 @@ void ConstraintTeacherHomeRoomsForm::addConstraint()
 	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
 	
 	constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
 }
@@ -148,7 +149,7 @@ void ConstraintTeacherHomeRoomsForm::modifyConstraint()
 	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
 	
 	constraintsListWidget->verticalScrollBar()->setValue(valv);
 	constraintsListWidget->horizontalScrollBar()->setValue(valh);

@@ -48,17 +48,11 @@ AddConstraintTeacherMinRestingHoursForm::AddConstraintTeacherMinRestingHoursForm
 		Teacher* tch=gt.rules.teachersList[i];
 		teachersComboBox->addItem(tch->name);
 	}
-
-	constraintChanged();
 }
 
 AddConstraintTeacherMinRestingHoursForm::~AddConstraintTeacherMinRestingHoursForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void AddConstraintTeacherMinRestingHoursForm::constraintChanged()
-{
 }
 
 void AddConstraintTeacherMinRestingHoursForm::addCurrentConstraint()

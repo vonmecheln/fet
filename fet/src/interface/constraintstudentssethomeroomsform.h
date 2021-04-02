@@ -33,8 +33,6 @@ public:
 
 	bool filterOk(SpaceConstraint* ctr);
 	
-	void refreshConstraintsListWidget();
-
 public slots:
 	void constraintChanged(int index);
 	void addConstraint();

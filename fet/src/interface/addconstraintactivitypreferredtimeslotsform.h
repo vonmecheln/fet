@@ -32,8 +32,6 @@ public:
 	AddConstraintActivityPreferredTimeSlotsForm(QWidget* parent);
 	~AddConstraintActivityPreferredTimeSlotsForm();
 
-	void updateActivitiesComboBox();
-
 	bool filterOk(Activity* a);
 
 	void colorItem(QTableWidgetItem* item);

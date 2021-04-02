@@ -32,8 +32,6 @@ public:
 	AddGroupActivitiesInInitialOrderItemForm(QWidget* parent);
 	~AddGroupActivitiesInInitialOrderItemForm();
 
-	void updateActivitiesListWidget();
-
 	bool filterOk(Activity* a);
 
 public slots:

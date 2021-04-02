@@ -34,6 +34,8 @@ File solution.cpp
 #include <QMap>
 #include <QMultiMap>
 
+#include <algorithm>
+
 //extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern Matrix2D<bool> breakDayHour;
 //extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
@@ -172,12 +174,14 @@ double Solution::fitness(Rules& r, FakeString* conflictsString){
 	conflictsWeightList.clear();
 	conflictsDescriptionList.clear();
 	
-	QMapIterator<double, QString> i(map);
-	while (i.hasNext()) {
-		i.next();
-		conflictsWeightList.prepend(i.key());
-		conflictsDescriptionList.prepend(i.value());
+	QMap<double, QString>::const_iterator i=map.constBegin();
+	while(i!=map.constEnd()){
+		conflictsWeightList.append(i.key());
+		conflictsDescriptionList.append(i.value());
+		i++;
 	}
+	std::reverse(conflictsWeightList.begin(), conflictsWeightList.end());
+	std::reverse(conflictsDescriptionList.begin(), conflictsDescriptionList.end());
 	
 	for(int i=0; i<conflictsWeightList.count()-1; i++)
 		assert(conflictsWeightList.at(i) >= conflictsWeightList.at(i+1));

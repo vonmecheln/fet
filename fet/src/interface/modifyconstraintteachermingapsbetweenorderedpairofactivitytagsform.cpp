@@ -51,8 +51,6 @@ ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::ModifyConstr
 	minGapsSpinBox->setMinimum(1);
 	minGapsSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minGapsSpinBox->setValue(ctr->minGaps);
-
-	constraintChanged();
 }
 
 ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::~ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm()
@@ -71,8 +69,6 @@ void ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::updateT
 	}
 	assert(j>=0);
 	teacherComboBox->setCurrentIndex(j);
-
-	constraintChanged();
 }
 
 void ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::updateFirstActivityTagComboBox()
@@ -87,8 +83,6 @@ void ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::updateF
 	}
 	assert(j>=0);
 	firstActivityTagComboBox->setCurrentIndex(j);
-
-	constraintChanged();
 }
 
 void ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::updateSecondActivityTagComboBox()
@@ -103,12 +97,6 @@ void ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::updateS
 	}
 	assert(j>=0);
 	secondActivityTagComboBox->setCurrentIndex(j);
-
-	constraintChanged();
-}
-
-void ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::constraintChanged()
-{
 }
 
 void ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::ok()

@@ -389,6 +389,7 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString sa
 	tos<<"/* "<<StatisticsExport::tr("To hide an element just write the following phrase into the element: %1 (without quotes).",
 		"%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes").arg("\"display:none;\"")<<" */\n\n";
 	tos<<"table {\n  text-align: center;\n}\n\n";
+	tos<<"table.detailed {\n  margin-left:auto; margin-right:auto;\n  text-align: center;\n  border: 0px;\n  border-spacing: 0;\n  border-collapse: collapse;\n}\n\n";
 	tos<<"caption {\n\n}\n\n";
 	tos<<"thead {\n\n}\n\n";
 
@@ -781,44 +782,46 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 					if(htmlLevel>=3)
 						tmp+="<tr class=\"duration line1\">";
 					else	tmp+="<tr>";
-					QMapIterator<StringListPair, int> it(durationMap);
-					while(it.hasNext()){
-						it.next();
+
+					QMap<StringListPair, int>::const_iterator it=durationMap.constBegin();
+					while(it!=durationMap.constEnd()){
 						if(htmlLevel>=1)
 							tmp+="<td class=\"detailed\">";
 						else
 							tmp+="<td>";
 						tmp+=QString::number(it.value())+"</td>";
+						it++;
 					}
+
 					tmp+="</tr>";
 					if(htmlLevel>=3)
 						tmp+="<tr class=\"studentsset line2\">";
 					else	tmp+="<tr>";
-					QMapIterator<StringListPair, int> it2(durationMap);	//do it with the same iterator
-					while(it2.hasNext()){
-						it2.next();
+
+					it=durationMap.constBegin();
+					while(it!=durationMap.constEnd()){
 						if(htmlLevel>=1)
 							tmp+="<td class=\"detailed\">";
 						else
 							tmp+="<td>";
 						
-						StringListPair slp=it2.key();
+						StringListPair slp=it.key();
 						QStringList studentsNames=slp.list1;
 						QStringList activityTagsNames=slp.list2;
 						QString tmpSt=QString("");
 						if(studentsNames.size()>0||activityTagsNames.size()>0){
-							for(QStringList::Iterator st=studentsNames.begin(); st!=studentsNames.end(); st++){
+							for(QStringList::const_iterator st=studentsNames.constBegin(); st!=studentsNames.constEnd(); st++){
 								switch(htmlLevel){
 									case 4 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\">"+protect2(*st)+"</span>"; break;
 									case 5 : ;
 									case 6 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
 									default: tmpSt+=protect2(*st); break;
 									}
-								if(st!=studentsNames.end()-1)
+								if(st!=studentsNames.constEnd()-1)
 									tmpSt+=", ";
 							}
 							if(printActivityTags){
-								for(QStringList::Iterator atn=activityTagsNames.begin(); atn!=activityTagsNames.end(); atn++){
+								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
 									assert(statisticValues.hashActivityTagIDsStatistics.contains(*atn));
 									int id=statisticValues.hashActivityTagIDsStatistics.value(*atn, "0").toInt()-1;
 									assert(id>=0);
@@ -845,7 +848,9 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 
 						tmp+=tmpSt;
 						tmp+="</td>";
+						it++;
 					}
+					
 					tmp+="</tr>";
 					tmp+="</table></td>\n";
 				}
@@ -1077,44 +1082,46 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 					if(htmlLevel>=3)
 						tmp+="<tr class=\"duration line1\">";
 					else	tmp+="<tr>";
-					QMapIterator<StringListPair, int> it(durationMap);
-					while(it.hasNext()){
-						it.next();
+					
+					QMap<StringListPair, int>::const_iterator it=durationMap.constBegin();
+					while(it!=durationMap.constEnd()){
 						if(htmlLevel>=1)
 							tmp+="<td class=\"detailed\">";
 						else
 							tmp+="<td>";
 						tmp+=QString::number(it.value())+"</td>";
+						it++;
 					}
+					
 					tmp+="</tr>";
 					if(htmlLevel>=3)
 						tmp+="<tr class=\"studentsset line2\">";
 					else	tmp+="<tr>";
-					QMapIterator<StringListPair, int> it2(durationMap);	//do it with the same iterator
-					while(it2.hasNext()){
-						it2.next();
+					
+					it=durationMap.constBegin();
+					while(it!=durationMap.constEnd()){
 						if(htmlLevel>=1)
 							tmp+="<td class=\"detailed\">";
 						else
 							tmp+="<td>";
 						
-						StringListPair slp=it2.key();
+						StringListPair slp=it.key();
 						QStringList studentsNames=slp.list1;
 						QStringList activityTagsNames=slp.list2;
 						QString tmpSt=QString("");
 						if(studentsNames.size()>0||activityTagsNames.size()>0){
-							for(QStringList::Iterator st=studentsNames.begin(); st!=studentsNames.end(); st++){
+							for(QStringList::const_iterator st=studentsNames.constBegin(); st!=studentsNames.constEnd(); st++){
 								switch(htmlLevel){
 									case 4 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\">"+protect2(*st)+"</span>"; break;
 									case 5 : ;
 									case 6 : tmpSt+="<span class=\"ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"\" onmouseover=\"highlight('ss_"+statisticValues.hashStudentIDsStatistics.value(*st)+"')\">"+protect2(*st)+"</span>"; break;
 									default: tmpSt+=protect2(*st); break;
 									}
-								if(st!=studentsNames.end()-1)
+								if(st!=studentsNames.constEnd()-1)
 									tmpSt+=", ";
 							}
 							if(printActivityTags){
-								for(QStringList::Iterator atn=activityTagsNames.begin(); atn!=activityTagsNames.end(); atn++){
+								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
 									assert(statisticValues.hashActivityTagIDsStatistics.contains(*atn));
 									int id=statisticValues.hashActivityTagIDsStatistics.value(*atn, "0").toInt()-1;
 									assert(id>=0);
@@ -1141,7 +1148,9 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 						tmp+=tmpSt;
 						
 						tmp+="</td>";
+						it++;
 					}
+					
 					tmp+="</tr>";
 					tmp+="</table></td>\n";
 				}
@@ -1375,28 +1384,30 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 					if(htmlLevel>=3)
 						tmp+="<tr class=\"duration line1\">";
 					else	tmp+="<tr>";
-					QMapIterator<StringListPair, int> it(durationMap);
-					while(it.hasNext()){
-						it.next();
+					
+					QMap<StringListPair, int>::const_iterator it=durationMap.constBegin();
+					while(it!=durationMap.constEnd()){
 						if(htmlLevel>=1)
 							tmp+="<td class=\"detailed\">";
 						else
 							tmp+="<td>";
 						tmp+=QString::number(it.value())+"</td>";
+						it++;
 					}
+					
 					tmp+="</tr>";
 					if(htmlLevel>=3)
 						tmp+="<tr class=\"subject line2\">";
 					else	tmp+="<tr>";
-					QMapIterator<StringListPair, int> it2(durationMap);	//do it with the same iterator
-					while(it2.hasNext()){
-						it2.next();
+
+					it=durationMap.constBegin();
+					while(it!=durationMap.constEnd()){
 						if(htmlLevel>=1)
 							tmp+="<td class=\"detailed\">";
 						else
 							tmp+="<td>";
 
-						StringListPair slp=it2.key();
+						StringListPair slp=it.key();
 						assert(slp.list1.count()==1);
 						QString subjectName=slp.list1.at(0);
 						QStringList activityTagsNames=slp.list2;
@@ -1411,7 +1422,7 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 									default: tmpS+=protect2(subjectName); break;
 								}
 							if(printActivityTags){
-								for(QStringList::Iterator atn=activityTagsNames.begin(); atn!=activityTagsNames.end(); atn++){
+								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
 									assert(statisticValues.hashActivityTagIDsStatistics.contains(*atn));
 									int id=statisticValues.hashActivityTagIDsStatistics.value(*atn, "0").toInt()-1;
 									assert(id>=0);
@@ -1438,7 +1449,9 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 
 						tmp+=tmpS;
 						tmp+="</td>";
+						it++;
 					}
+					
 					tmp+="</tr>";
 					tmp+="</table></td>\n";
 				}
@@ -1672,28 +1685,30 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 					if(htmlLevel>=3)
 						tmp+="<tr class=\"duration line1\">";
 					else	tmp+="<tr>";
-					QMapIterator<StringListPair, int> it(durationMap);
-					while(it.hasNext()){
-						it.next();
+					
+					QMap<StringListPair, int>::const_iterator it=durationMap.constBegin();
+					while(it!=durationMap.constEnd()){
 						if(htmlLevel>=1)
 							tmp+="<td class=\"detailed\">";
 						else
 							tmp+="<td>";
 						tmp+=QString::number(it.value())+"</td>";
+						it++;
 					}
+					
 					tmp+="</tr>";
 					if(htmlLevel>=3)
 						tmp+="<tr class=\"subject line2\">";
 					else	tmp+="<tr>";
-					QMapIterator<StringListPair, int> it2(durationMap);	//do it with the same iterator
-					while(it2.hasNext()){
-						it2.next();
+					
+					it=durationMap.constBegin();
+					while(it!=durationMap.constEnd()){
 						if(htmlLevel>=1)
 							tmp+="<td class=\"detailed\">";
 						else
 							tmp+="<td>";
 							
-						StringListPair slp=it2.key();
+						StringListPair slp=it.key();
 						assert(slp.list1.count()==1);
 						QString subjectName=slp.list1.at(0);
 						QStringList activityTagsNames=slp.list2;
@@ -1708,7 +1723,7 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 									default: tmpS+=protect2(subjectName); break;
 								}
 							if(printActivityTags){
-								for(QStringList::Iterator atn=activityTagsNames.begin(); atn!=activityTagsNames.end(); atn++){
+								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
 									assert(statisticValues.hashActivityTagIDsStatistics.contains(*atn));
 									int id=statisticValues.hashActivityTagIDsStatistics.value(*atn, "0").toInt()-1;
 									assert(id>=0);
@@ -1735,7 +1750,9 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 						tmp+=tmpS;
 						
 						tmp+="</td>";
+						it++;
 					}
+					
 					tmp+="</tr>";
 					tmp+="</table></td>\n";
 				}
@@ -1967,45 +1984,47 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 					if(htmlLevel>=3)
 						tmp+="<tr class=\"duration line1\">";
 					else	tmp+="<tr>";
-					QMapIterator<StringListPair, int> it(durationMap);
-					while(it.hasNext()){
-						it.next();
+
+					QMap<StringListPair, int>::const_iterator it=durationMap.constBegin();
+					while(it!=durationMap.constEnd()){
 						if(htmlLevel>=1)
 							tmp+="<td class=\"detailed\">";
 						else
 							tmp+="<td>";
 						tmp+=QString::number(it.value())+"</td>";
+						it++;
 					}
+
 					tmp+="</tr>";
 					if(htmlLevel>=3)
 						tmp+="<tr class=\"teacher line2\">";
 					else	tmp+="<tr>";
-					QMapIterator<StringListPair, int> it2(durationMap);	//do it with the same iterator
-					while(it2.hasNext()){
-						it2.next();
+					
+					it=durationMap.constBegin();
+					while(it!=durationMap.constEnd()){
 						if(htmlLevel>=1)
 							tmp+="<td class=\"detailed\">";
 						else
 							tmp+="<td>";
 
-						StringListPair slp=it2.key();
+						StringListPair slp=it.key();
 						QStringList teachersNames=slp.list1;
 						QStringList activityTagsNames=slp.list2;
 						QString tmpT=QString("");
 
 						if(teachersNames.size()>0||activityTagsNames.size()>0){
-							for(QStringList::Iterator it=teachersNames.begin(); it!=teachersNames.end(); it++){
+							for(QStringList::const_iterator it=teachersNames.constBegin(); it!=teachersNames.constEnd(); it++){
 								switch(htmlLevel){
 									case 4 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\">"+protect2(*it)+"</span>"; break;
 									case 5 : ;
 									case 6 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
 									default: tmpT+=protect2(*it); break;
 								}
-								if(it!=teachersNames.end()-1)
+								if(it!=teachersNames.constEnd()-1)
 									tmpT+=", ";
 							}
 							if(printActivityTags){
-								for(QStringList::Iterator atn=activityTagsNames.begin(); atn!=activityTagsNames.end(); atn++){
+								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
 									assert(statisticValues.hashActivityTagIDsStatistics.contains(*atn));
 									int id=statisticValues.hashActivityTagIDsStatistics.value(*atn, "0").toInt()-1;
 									assert(id>=0);
@@ -2032,7 +2051,9 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 						tmp+=tmpT;
 						
 						tmp+="</td>";
+						it++;
 					}
+					
 					tmp+="</tr>";
 					tmp+="</table></td>\n";
 				}
@@ -2265,45 +2286,47 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 					if(htmlLevel>=3)
 						tmp+="<tr class=\"duration line1\">";
 					else	tmp+="<tr>";
-					QMapIterator<StringListPair, int> it(durationMap);
-					while(it.hasNext()){
-						it.next();
+
+					QMap<StringListPair, int>::const_iterator it=durationMap.constBegin();
+					while(it!=durationMap.constEnd()){
 						if(htmlLevel>=1)
 							tmp+="<td class=\"detailed\">";
 						else
 							tmp+="<td>";
 						tmp+=QString::number(it.value())+"</td>";
+						it++;
 					}
+
 					tmp+="</tr>";
 					if(htmlLevel>=3)
 						tmp+="<tr class=\"teacher line2\">";
 					else	tmp+="<tr>";
-					QMapIterator<StringListPair, int> it2(durationMap);	//do it with the same iterator
-					while(it2.hasNext()){
-						it2.next();
+
+					it=durationMap.constBegin();
+					while(it!=durationMap.constEnd()){
 						if(htmlLevel>=1)
 							tmp+="<td class=\"detailed\">";
 						else
 							tmp+="<td>";
 
-						StringListPair slp=it2.key();
+						StringListPair slp=it.key();
 						QStringList teachersNames=slp.list1;
 						QStringList activityTagsNames=slp.list2;
 						QString tmpT=QString("");
 
 						if(teachersNames.size()>0||activityTagsNames.size()>0){
-							for(QStringList::Iterator it=teachersNames.begin(); it!=teachersNames.end(); it++){
+							for(QStringList::const_iterator it=teachersNames.constBegin(); it!=teachersNames.constEnd(); it++){
 								switch(htmlLevel){
 									case 4 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\">"+protect2(*it)+"</span>"; break;
 									case 5 : ;
 									case 6 : tmpT+="<span class=\"t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"\" onmouseover=\"highlight('t_"+statisticValues.hashTeacherIDsStatistics.value(*it)+"')\">"+protect2(*it)+"</span>"; break;
 									default: tmpT+=protect2(*it); break;
 								}
-								if(it!=teachersNames.end()-1)
+								if(it!=teachersNames.constEnd()-1)
 									tmpT+=", ";
 							}
 							if(printActivityTags){
-								for(QStringList::Iterator atn=activityTagsNames.begin(); atn!=activityTagsNames.end(); atn++){
+								for(QStringList::const_iterator atn=activityTagsNames.constBegin(); atn!=activityTagsNames.constEnd(); atn++){
 									assert(statisticValues.hashActivityTagIDsStatistics.contains(*atn));
 									int id=statisticValues.hashActivityTagIDsStatistics.value(*atn, "0").toInt()-1;
 									assert(id>=0);
@@ -2330,7 +2353,9 @@ QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, 
 						tmp+=tmpT;
 						
 						tmp+="</td>";
+						it++;
 					}
+					
 					tmp+="</tr>";
 					tmp+="</table></td>\n";
 				}

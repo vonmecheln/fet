@@ -220,20 +220,6 @@ void AddConstraintActivitiesPreferredStartingTimesForm::updateTeachersComboBox()
 
 void AddConstraintActivitiesPreferredStartingTimesForm::updateStudentsComboBox(){
 	populateStudentsComboBox(studentsComboBox, QString(""), true);
-	/*studentsComboBox->clear();
-	studentsComboBox->addItem("");
-	for(int i=0; i<gt.rules.yearsList.size(); i++){
-		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->addItem(sty->name);
-		for(int j=0; j<sty->groupsList.size(); j++){
-			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->addItem(stg->name);
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int k=0; k<stg->subgroupsList.size(); k++){
-				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->addItem(sts->name);
-			}
-		}
-	}*/
 }
 
 void AddConstraintActivitiesPreferredStartingTimesForm::updateSubjectsComboBox(){
@@ -272,10 +258,6 @@ void AddConstraintActivitiesPreferredStartingTimesForm::addConstraint()
 			tr("Invalid weight (percentage)"));
 		return;
 	}
-
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
 
 	QString teacher=teachersComboBox->currentText();
 	if(teacher!="")
@@ -347,23 +329,10 @@ void AddConstraintActivitiesPreferredStartingTimesForm::addConstraint()
 
 	QList<int> days_L;
 	QList<int> hours_L;
-	//int days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES];
-	//int hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES];
 	int n=0;
 	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 		for(int i=0; i<gt.rules.nHoursPerDay; i++)
 			if(preferredTimesTable->item(i, j)->text()==YES){
-				/*if(n>=MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
-					QString s=tr("Not enough slots (too many \"Yes\" values).");
-					s+="\n";
-					s+=tr("Please increase the variable MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES");
-					s+="\n";
-					s+=tr("Currently, it is %1").arg(MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES);
-					QMessageBox::warning(this, tr("FET information"), s);
-					
-					return;
-				}*/
-				
 				days_L.append(j);
 				hours_L.append(i);
 				n++;
@@ -378,7 +347,7 @@ void AddConstraintActivitiesPreferredStartingTimesForm::addConstraint()
 				return;
 	}
 
-	ctr=new ConstraintActivitiesPreferredStartingTimes(weight, /*compulsory,*/ teacher, students, subject, activityTag, duration, n, days_L, hours_L);
+	ctr=new ConstraintActivitiesPreferredStartingTimes(weight, teacher, students, subject, activityTag, duration, n, days_L, hours_L);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2){

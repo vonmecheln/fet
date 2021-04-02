@@ -15,9 +15,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "modifystudentsgroupform.h"
-
 #include <QMessageBox>
+
+#include "modifystudentsgroupform.h"
 
 ModifyStudentsGroupForm::ModifyStudentsGroupForm(QWidget* parent, const QString& yearName, const QString& initialGroupName, int initialNumberOfStudents): QDialog(parent)
 {

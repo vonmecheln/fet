@@ -48,10 +48,6 @@ void AddConstraintStudentsMaxDaysPerWeekForm::updateMaxDaysSpinBox(){
 	maxDaysSpinBox->setValue(gt.rules.nDaysPerWeek);
 }
 
-void AddConstraintStudentsMaxDaysPerWeekForm::constraintChanged()
-{
-}
-
 void AddConstraintStudentsMaxDaysPerWeekForm::addCurrentConstraint()
 {
 	TimeConstraint *ctr=NULL;

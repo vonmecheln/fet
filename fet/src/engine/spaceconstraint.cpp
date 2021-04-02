@@ -1138,7 +1138,7 @@ QString ConstraintActivityPreferredRooms::getXmlDescription(Rules& r){
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
 	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -1163,7 +1163,7 @@ QString ConstraintActivityPreferredRooms::getDescription(Rules& r){
 		.arg(this->activityId)
 		.arg(getActivityDetailedDescription(r, this->activityId));
 
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++){
 		s+=", ";
 		s+=tr("R:%1", "Room").arg(*it);
 	}
@@ -1181,7 +1181,7 @@ QString ConstraintActivityPreferredRooms::getDetailedDescription(Rules& r){
 		.arg(getActivityDetailedDescription(r, this->activityId));
 	s+="\n";
 	
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++){
 		s+=tr("Room=%1").arg(*it);
 		s+="\n";
 	}
@@ -1658,7 +1658,7 @@ QString ConstraintStudentsSetHomeRooms::getXmlDescription(Rules& r){
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
 	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -1684,7 +1684,7 @@ QString ConstraintStudentsSetHomeRooms::getDescription(Rules& r){
 
 	s+=tr("St:%1", "St means students").arg(this->studentsName);
 
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++){
 		s+=", ";
 		s+=tr("R:%1", "R means Room").arg(*it);
 	}
@@ -1701,7 +1701,7 @@ QString ConstraintStudentsSetHomeRooms::getDetailedDescription(Rules& r){
 
 	s+=tr("Students=%1").arg(this->studentsName);s+="\n";
 
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++){
 		s+=tr("Room=%1").arg(*it);
 		s+="\n";
 	}
@@ -2193,7 +2193,7 @@ QString ConstraintTeacherHomeRooms::getXmlDescription(Rules& r){
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -2219,7 +2219,7 @@ QString ConstraintTeacherHomeRooms::getDescription(Rules& r){
 
 	s+=tr("T:%1", "T means teacher").arg(this->teacherName);
 
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++){
 		s+=", ";
 		s+=tr("R:%1", "R means Room").arg(*it);
 	}
@@ -2236,7 +2236,7 @@ QString ConstraintTeacherHomeRooms::getDetailedDescription(Rules& r){
 
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++){
 		s+=tr("Room=%1").arg(*it);
 		s+="\n";
 	}
@@ -2677,7 +2677,7 @@ QString ConstraintSubjectPreferredRooms::getXmlDescription(Rules& r){
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
 	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -2701,7 +2701,7 @@ QString ConstraintSubjectPreferredRooms::getDescription(Rules& r){
 	QString s=tr("Subject preferred rooms"); s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("S:%1", "Subject").arg(this->subjectName);
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++){
 		s+=", ";
 		s+=tr("R:%1", "Room").arg(*it);
 	}
@@ -2716,7 +2716,7 @@ QString ConstraintSubjectPreferredRooms::getDetailedDescription(Rules& r){
 	s+=tr("Subject preferred rooms"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Subject=%1").arg(this->subjectName);s+="\n";
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++){
 		s+=tr("Room=%1").arg(*it);
 		s+="\n";
 	}
@@ -3157,7 +3157,7 @@ QString ConstraintSubjectActivityTagPreferredRooms::getXmlDescription(Rules& r){
 	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
 	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -3182,7 +3182,7 @@ QString ConstraintSubjectActivityTagPreferredRooms::getDescription(Rules& r){
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("S:%1", "Subject").arg(this->subjectName);s+=", ";
 	s+=tr("AT:%1", "Activity tag").arg(this->activityTagName);
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++){
 		s+=", ";
 		s+=tr("R:%1", "Room").arg(*it);
 	}
@@ -3198,7 +3198,7 @@ QString ConstraintSubjectActivityTagPreferredRooms::getDetailedDescription(Rules
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Subject=%1").arg(this->subjectName);s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++){
 		s+=tr("Room=%1").arg(*it);
 		s+="\n";
 	}
@@ -3632,7 +3632,7 @@ QString ConstraintActivityTagPreferredRooms::getXmlDescription(Rules& r){
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -3656,7 +3656,7 @@ QString ConstraintActivityTagPreferredRooms::getDescription(Rules& r){
 	QString s=tr("Activity tag preferred rooms"); s+=", ";
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("AT:%1", "Activity tag").arg(this->activityTagName);
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++){
 		s+=", ";
 		s+=tr("R:%1", "Room").arg(*it);
 	}
@@ -3671,7 +3671,7 @@ QString ConstraintActivityTagPreferredRooms::getDetailedDescription(Rules& r){
 	s+=tr("Activity tag preferred rooms"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
+	for(QStringList::const_iterator it=this->roomsNames.constBegin(); it!=this->roomsNames.constEnd(); it++){
 		s+=tr("Room=%1").arg(*it);
 		s+="\n";
 	}

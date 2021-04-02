@@ -30,7 +30,6 @@ public:
 	~AddConstraintTeacherMinRestingHoursForm();
 
 public slots:
-	void constraintChanged();
 	void addCurrentConstraint();
 };
 

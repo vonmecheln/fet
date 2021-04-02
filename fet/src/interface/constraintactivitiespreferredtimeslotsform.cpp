@@ -47,7 +47,7 @@ ConstraintActivitiesPreferredTimeSlotsForm::ConstraintActivitiesPreferredTimeSlo
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
 }
 
 ConstraintActivitiesPreferredTimeSlotsForm::~ConstraintActivitiesPreferredTimeSlotsForm()
@@ -55,7 +55,7 @@ ConstraintActivitiesPreferredTimeSlotsForm::~ConstraintActivitiesPreferredTimeSl
 	saveFETDialogGeometry(this);
 }
 
-void ConstraintActivitiesPreferredTimeSlotsForm::refreshConstraintsListWidget()
+void ConstraintActivitiesPreferredTimeSlotsForm::filterChanged()
 {
 	this->visibleConstraintsList.clear();
 	constraintsListWidget->clear();
@@ -103,7 +103,7 @@ void ConstraintActivitiesPreferredTimeSlotsForm::addConstraint()
 	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
 
 	constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
 }
@@ -124,7 +124,7 @@ void ConstraintActivitiesPreferredTimeSlotsForm::modifyConstraint()
 	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
 	
 	constraintsListWidget->verticalScrollBar()->setValue(valv);
 	constraintsListWidget->horizontalScrollBar()->setValue(valh);

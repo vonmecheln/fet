@@ -565,7 +565,11 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	
 	updateNamesList();
 	
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(CBTables, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(updateNamesList()));
+#else
 	connect(CBTables, SIGNAL(currentIndexChanged(int)), this, SLOT(updateNamesList()));
+#endif
 	connect(pbSelectAll, SIGNAL(clicked()), this, SLOT(selectAll()));
 	connect(pbUnselectAll, SIGNAL(clicked()), this, SLOT(unselectAll()));
 	connect(pbPrint, SIGNAL(clicked()), this, SLOT(print()));
@@ -869,7 +873,7 @@ void TimetablePrintForm::updateNamesList(){
 		RBTimeHorizontalDay->setDisabled(false);
 		RBTimeVerticalDay->setDisabled(false);
 	} else if(CBTables->currentIndex()==9){
-		QString name = tr("All activities");
+		QString name = tr("All students");
 		namesList->addItem(name);
 		QListWidgetItem* tmpItem=namesList->item(0);
 		tmpItem->setSelected(true);
@@ -888,7 +892,7 @@ void TimetablePrintForm::updateNamesList(){
 		RBTimeHorizontalDay->setDisabled(true);
 		RBTimeVerticalDay->setDisabled(true);
 	} else if(CBTables->currentIndex()==10){
-		QString name = tr("All activities");
+		QString name = tr("All teachers");
 		namesList->addItem(name);
 		QListWidgetItem* tmpItem=namesList->item(0);
 		tmpItem->setSelected(true);

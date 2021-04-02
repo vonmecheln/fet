@@ -43,7 +43,6 @@ ConstraintActivityTagPreferredRoomsForm::ConstraintActivityTagPreferredRoomsForm
 	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -57,7 +56,13 @@ ConstraintActivityTagPreferredRoomsForm::ConstraintActivityTagPreferredRoomsForm
 		activityTagsComboBox->addItem(sb->name);
 	}
 
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+#else
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+#endif
 }
 
 ConstraintActivityTagPreferredRoomsForm::~ConstraintActivityTagPreferredRoomsForm()
@@ -65,7 +70,7 @@ ConstraintActivityTagPreferredRoomsForm::~ConstraintActivityTagPreferredRoomsFor
 	saveFETDialogGeometry(this);
 }
 
-void ConstraintActivityTagPreferredRoomsForm::refreshConstraintsListWidget()
+void ConstraintActivityTagPreferredRoomsForm::filterChanged()
 {
 	visibleConstraintsList.clear();
 	constraintsListWidget->clear();
@@ -82,12 +87,7 @@ void ConstraintActivityTagPreferredRoomsForm::refreshConstraintsListWidget()
 	if(constraintsListWidget->count()>0)
 		constraintsListWidget->setCurrentRow(0);
 	else
-		currentConstraintTextEdit->setPlainText(QString(""));
-}
-
-void ConstraintActivityTagPreferredRoomsForm::filterChanged()
-{
-	this->refreshConstraintsListWidget();
+		constraintChanged(-1);
 }
 
 bool ConstraintActivityTagPreferredRoomsForm::filterOk(SpaceConstraint* ctr)
@@ -120,7 +120,7 @@ void ConstraintActivityTagPreferredRoomsForm::addConstraint()
 	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
 	
 	constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
 }
@@ -141,7 +141,7 @@ void ConstraintActivityTagPreferredRoomsForm::modifyConstraint()
 	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
 	
 	constraintsListWidget->verticalScrollBar()->setValue(valv);
 	constraintsListWidget->horizontalScrollBar()->setValue(valh);

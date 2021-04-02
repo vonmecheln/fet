@@ -38,7 +38,7 @@ Versions 2.7.0 - 2.7.8 - Liviu Lalescu
 -------------------------------------------------------------------------------
 Versions 2.8.0 - 2.8.5 - Liviu Lalescu
 - Version 2.8.0 - bug fixes
-	- added CSRActivityPreferredTime (user may specify for each activity a preferred 
+	- added CSRActivityPreferredTime (user may specify for each activity a preferred
 	time) - (suggested by Sajith V. K.)
 - Version 2.8.1 - bug fixes
 - Version 2.8.2 - added CHRActivitiesSameTime (idea by Sajith V. K., to handle activities
@@ -54,7 +54,7 @@ Versions 2.8.0 - 2.8.5 - Liviu Lalescu
 -------------------------------------------------------------------------------
 Versions 2.9.0 - 2.9.6 - Liviu Lalescu
 - Version 2.9.0 - bug fix in ConstraintStudentsYearNotAvailable
-	- changed Restriction into Constraint, now you can implement any constraint 
+	- changed Restriction into Constraint, now you can implement any constraint
 	as compulsory or not
 - Version 2.9.1 - small crash bug fixed (when erasing a year and pressing Cancel)
 	- added ConstraintActivitiesNotSameTime
@@ -74,7 +74,7 @@ Versions 2.9.0 - 2.9.6 - Liviu Lalescu
 	- constraints list is now a qt list (QPtrList)
 	- bug fixes
 	- max hours per week is now short integer (instead of char)
-	- removed population initialization method from the ini file and added it 
+	- removed population initialization method from the ini file and added it
 	into the GUI
 	- made the simulation somewhat faster, by getting rid of function realTimes(i)
 - Version 3.0.0 pre2 - Liviu Lalescu
@@ -2192,7 +2192,7 @@ Version 5.41.0
 	- Various other code improvements/cleanup.
 	- Added a new example file from Algeria, by Lysso.
 ---------------------------------------------------------------------------------
-Versions 5.42.0 - 5.42.v
+Versions 5.42.0 - 5.42.3
 - Version 5.42.0
 	- Updated to Qt 5.14.0.
 	- Corrected many warnings appearing with the new Qt 5.14.0 (about using deprecated Qt functions).
@@ -2211,3 +2211,20 @@ Versions 5.42.0 - 5.42.v
 	- Added more proper acknowledgments and references for the used libraries.
 - Version 5.42.2
 	- Minor improvements.
+- Version 5.42.3
+	- Updated to Qt 5.14.1.
+	- When opening a file containing unrecognized XML tags, FET will issue a warning and indicate their locations. Reported by math.
+	- Minor fix/improvement for the Mac OS X version: the "About FET" menu item was shown/executed incorrectly (reported by Darren McDonald and math).
+	Also, with this occasion, the "Quit" menu item was linked to the specific recommended menu place for this platform.
+	- Minor improvements.
+	- Updated the Spanish translation, by Emiliano Llano Díaz.
+---------------------------------------------------------------------------------
+Versions 5.43.0 - 5.43.v
+- Version 5.43.0
+	- Updated the code for the future Qt versions: removed usage of QLinkedList, of Java-style iterators, of the soon-to-be obsolete function
+	QNetworkReply::error(), and of some obsolete Qt signals, and changed from endl to Qt::endl in the necessary places.
+	These changes are not visible to the user.
+	- Many code improvements/cleanup in the interface part.
+	- Exporting of the advanced statistics to the disk now centers the text contents of the table cells.
+	- Improved the command-line usage instructions (suggested by Zsolt Udvari). They are now easier to read. Also, running the command-line executable
+	version will create log/results files/directories only if an input file is given.

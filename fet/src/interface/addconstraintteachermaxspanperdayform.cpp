@@ -48,17 +48,11 @@ AddConstraintTeacherMaxSpanPerDayForm::AddConstraintTeacherMaxSpanPerDayForm(QWi
 	}
 	
 	exceptionCheckBox->setChecked(false);
-
-	constraintChanged();
 }
 
 AddConstraintTeacherMaxSpanPerDayForm::~AddConstraintTeacherMaxSpanPerDayForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void AddConstraintTeacherMaxSpanPerDayForm::constraintChanged()
-{
 }
 
 void AddConstraintTeacherMaxSpanPerDayForm::addCurrentConstraint()

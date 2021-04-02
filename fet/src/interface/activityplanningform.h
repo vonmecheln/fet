@@ -86,7 +86,7 @@ private:
 	QCheckBox* showActivityTags;
 	QCheckBox* hideEmptyLines;
 	QCheckBox* hideUsedTeachers;
-	QCheckBox* swapAxis;
+	QCheckBox* swapAxes;
 	QPushButton* pbPseudoActivities;
 	QPushButton* pbDeleteAll;
 	//QPushButton* pbHelp;
@@ -124,13 +124,13 @@ private slots:
 	//void ActivtiesCellEntered(int, int);
 	//void TeachersCellEntered(int, int);
 	//mouseTracking (end 1/4)
-	void activitiesTableHorizontalHeaderClicked(int);
-	void activitiesTableVerticalHeaderClicked(int);
-	void teachersTableHorizontalHeaderClicked(int);
-	void updateTables(int);
+	void activitiesTableHorizontalHeaderClicked(int column);
+	void activitiesTableVerticalHeaderClicked(int row);
+	void teachersTableHorizontalHeaderClicked(int column);
+	void updateTables();
 	void updateTables_Students_Subjects();
 	void updateTables_Teachers();
-	void updateTablesVisual(int);
+	void updateTablesVisual();
 	//void help();
 	void pseudoActivities();
 	void deleteAll();

@@ -50,29 +50,6 @@ ModifyConstraintStudentsSetHomeRoomsForm::ModifyConstraintStudentsSetHomeRoomsFo
 /////////
 	//students
 	int j=populateStudentsComboBox(studentsComboBox, this->_ctr->studentsName);
-	/*int i=0, j=-1;
-	studentsComboBox->clear();
-	for(int m=0; m<gt.rules.yearsList.size(); m++){
-		StudentsYear* sty=gt.rules.yearsList[m];
-		studentsComboBox->addItem(sty->name);
-		if(sty->name==this->_ctr->studentsName)
-			j=i;
-		i++;
-		for(int n=0; n<sty->groupsList.size(); n++){
-			StudentsGroup* stg=sty->groupsList[n];
-			studentsComboBox->addItem(stg->name);
-			if(stg->name==this->_ctr->studentsName)
-				j=i;
-			i++;
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int p=0; p<stg->subgroupsList.size(); p++){
-				StudentsSubgroup* sts=stg->subgroupsList[p];
-				studentsComboBox->addItem(sts->name);
-				if(sts->name==this->_ctr->studentsName)
-					j=i;
-				i++;
-			}
-		}
-	}*/
 	if(j<0)
 		showWarningForInvisibleSubgroupConstraint(parent, this->_ctr->studentsName);
 	else
@@ -82,7 +59,7 @@ ModifyConstraintStudentsSetHomeRoomsForm::ModifyConstraintStudentsSetHomeRoomsFo
 	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 	
-	for(QStringList::Iterator it=ctr->roomsNames.begin(); it!=ctr->roomsNames.end(); it++)
+	for(QStringList::const_iterator it=ctr->roomsNames.constBegin(); it!=ctr->roomsNames.constEnd(); it++)
 		selectedRoomsListWidget->addItem(*it);
 }
 

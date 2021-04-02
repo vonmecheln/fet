@@ -30,7 +30,6 @@ public:
 	~AddConstraintTeachersMaxRoomChangesPerDayForm();
 
 public slots:
-	void constraintChanged();
 	void addCurrentConstraint();
 };
 

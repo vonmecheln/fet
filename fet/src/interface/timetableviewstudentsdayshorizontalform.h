@@ -53,7 +53,7 @@ public slots:
 
 	void help();
 	
-	void shownComboBoxChanged(QString shownCategory);
+	void shownComboBoxChanged();
 
 protected:
 	void resizeEvent(QResizeEvent* event);

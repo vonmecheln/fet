@@ -32,8 +32,6 @@ public:
 	ModifyConstraintActivitiesSameRoomIfConsecutiveForm(QWidget* parent, ConstraintActivitiesSameRoomIfConsecutive* ctr);
 	~ModifyConstraintActivitiesSameRoomIfConsecutiveForm();
 
-	void updateActivitiesListWidget();
-	
 	bool filterOk(Activity* act);
 
 public slots:

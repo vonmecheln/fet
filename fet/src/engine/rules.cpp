@@ -48,6 +48,9 @@ using namespace std;
 #include <QSet>
 #include <QHash>
 
+#include <list>
+#include <iterator>
+
 //#include <QApplication>
 #ifndef FET_COMMAND_LINE
 #include <QProgressDialog>
@@ -1387,7 +1390,7 @@ bool Rules::removeSubject(const QString& subjectName)
 	//check the qualified subjects for teachers
 	for(Teacher* tch : qAsConst(teachersList)){
 		if(tch->qualifiedSubjectsHash.contains(subjectName)){
-			QLinkedList<QString>::Iterator it=tch->qualifiedSubjectsHash.value(subjectName);
+			std::list<QString>::iterator it=tch->qualifiedSubjectsHash.value(subjectName);
 			assert((*it)==subjectName);
 			
 			tch->qualifiedSubjectsList.erase(it);
@@ -1432,7 +1435,7 @@ bool Rules::modifySubject(const QString& initialSubjectName, const QString& fina
 	//check the qualified subjects for teachers
 	for(Teacher* tch : qAsConst(teachersList)){
 		if(tch->qualifiedSubjectsHash.contains(initialSubjectName)){
-			QLinkedList<QString>::Iterator it=tch->qualifiedSubjectsHash.value(initialSubjectName);
+			std::list<QString>::iterator it=tch->qualifiedSubjectsHash.value(initialSubjectName);
 			assert((*it)==initialSubjectName);
 			
 			(*it)=finalSubjectName;
@@ -2538,9 +2541,8 @@ bool Rules::modifyStudentsSets(const QHash<QString, QString>& oldAndNewStudentsS
 		}
 	}
 
-	QHashIterator<QString, QString> i(oldAndNewStudentsSetNames);
-	while (i.hasNext()) {
-		i.next();
+	QHash<QString, QString>::const_iterator i=oldAndNewStudentsSetNames.constBegin();
+	while (i!=oldAndNewStudentsSetNames.constEnd()) {
 		StudentsSet* studentsSet=searchStudentsSet(i.key());
 		assert(studentsSet!=NULL);
 		studentsSet->name=i.value();
@@ -2556,6 +2558,7 @@ bool Rules::modifyStudentsSets(const QHash<QString, QString>& oldAndNewStudentsS
 			assert(!ssnatHash.contains(i.value()));
 			ssnatHash.insert(i.value(), cs);
 		}
+		i++;
 	}
 	
 	this->internalStructureComputed=false;
@@ -3465,7 +3468,7 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 		else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOMS){
 			ConstraintActivityPreferredRooms* c=(ConstraintActivityPreferredRooms*)ctr;
 			int t=0;
-			for(QStringList::Iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
+			for(QStringList::iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
 				if((*it)==initialRoomName){
 					*it=finalRoomName;
 					t++;
@@ -3481,7 +3484,7 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_HOME_ROOMS){
 			ConstraintStudentsSetHomeRooms* c=(ConstraintStudentsSetHomeRooms*)ctr;
 			int t=0;
-			for(QStringList::Iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
+			for(QStringList::iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
 				if((*it)==initialRoomName){
 					*it=finalRoomName;
 					t++;
@@ -3497,7 +3500,7 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 		else if(ctr->type==CONSTRAINT_TEACHER_HOME_ROOMS){
 			ConstraintTeacherHomeRooms* c=(ConstraintTeacherHomeRooms*)ctr;
 			int t=0;
-			for(QStringList::Iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
+			for(QStringList::iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
 				if((*it)==initialRoomName){
 					*it=finalRoomName;
 					t++;
@@ -3513,7 +3516,7 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 		else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOMS){
 			ConstraintSubjectPreferredRooms* c=(ConstraintSubjectPreferredRooms*)ctr;
 			int t=0;
-			for(QStringList::Iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
+			for(QStringList::iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
 				if((*it)==initialRoomName){
 					*it=finalRoomName;
 					t++;
@@ -3529,7 +3532,7 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 		else if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS){
 			ConstraintSubjectActivityTagPreferredRooms* c=(ConstraintSubjectActivityTagPreferredRooms*)ctr;
 			int t=0;
-			for(QStringList::Iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
+			for(QStringList::iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
 				if((*it)==initialRoomName){
 					*it=finalRoomName;
 					t++;
@@ -3545,7 +3548,7 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 		else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS){
 			ConstraintActivityTagPreferredRooms* c=(ConstraintActivityTagPreferredRooms*)ctr;
 			int t=0;
-			for(QStringList::Iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
+			for(QStringList::iterator it=c->roomsNames.begin(); it!=c->roomsNames.end(); it++){
 				if((*it)==initialRoomName){
 					*it=finalRoomName;
 					t++;
@@ -4932,6 +4935,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 	
 	xmlReaderNumberOfUnrecognizedFields=0;
 	
+	unrecognizedXmlTags.clear();
+	unrecognizedXmlLineNumbers.clear();
+	unrecognizedXmlColumnNumbers.clear();
+	
 	QXmlStreamReader xmlReader(&file);
 	
 	////////////////////////////////////////
@@ -5174,7 +5181,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 	}
 	
 	if(warning){
-		RulesReconcilableMessage::warning(parent, tr("FET information"), 
+		RulesReconcilableMessage::warning(parent, tr("FET information"),
 		 tr("Opening a file generated with a newer version than your current FET software ... file will be opened but it is recommended to update your FET software to the latest version")
 		 +"\n\n"+tr("Your FET version: %1, file version: %2").arg(FET_VERSION).arg(file_version));
 	}
@@ -5287,12 +5294,20 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							}
 						}
 						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 							xmlReader.skipCurrentElement();
 							xmlReaderNumberOfUnrecognizedFields++;
 						}
 					}
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -5368,12 +5383,20 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							}
 						}
 						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 							xmlReader.skipCurrentElement();
 							xmlReaderNumberOfUnrecognizedFields++;
 						}
 					}
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -5444,11 +5467,15 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 										 .arg(teacher->name).arg(text).arg("5.30.0"));
 									}
 									else{
-										teacher->qualifiedSubjectsList.append(text);
-										teacher->qualifiedSubjectsHash.insert(text, teacher->qualifiedSubjectsList.end()-1);
+										teacher->qualifiedSubjectsList.push_back(text);
+										teacher->qualifiedSubjectsHash.insert(text, std::prev(teacher->qualifiedSubjectsList.end()));
 									}
 								}
 								else{
+									unrecognizedXmlTags.append(xmlReader.name().toString());
+									unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+									unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 									xmlReader.skipCurrentElement();
 									xmlReaderNumberOfUnrecognizedFields++;
 								}
@@ -5460,6 +5487,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							xmlReadingLog+="    Crt. teacher comments="+teacher->comments+"\n";
 						}
 						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 							xmlReader.skipCurrentElement();
 							xmlReaderNumberOfUnrecognizedFields++;
 						}
@@ -5480,6 +5511,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					}
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -5515,6 +5550,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							xmlReadingLog+="    Crt. subject comments="+subject->comments+"\n";
 						}
 						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 							xmlReader.skipCurrentElement();
 							xmlReaderNumberOfUnrecognizedFields++;
 						}
@@ -5535,6 +5574,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					}
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -5573,6 +5616,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							xmlReadingLog+="    Crt. activity tag comments="+activityTag->comments+"\n";
 						}
 						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 							xmlReader.skipCurrentElement();
 							xmlReaderNumberOfUnrecognizedFields++;
 						}
@@ -5593,6 +5640,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					}
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -5636,6 +5687,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							xmlReadingLog+="    Crt. activity tag comments="+activityTag->comments+"\n";
 						}
 						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 							xmlReader.skipCurrentElement();
 							xmlReaderNumberOfUnrecognizedFields++;
 						}
@@ -5656,6 +5711,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					}
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -5972,12 +6031,20 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 											xmlReadingLog+="    Crt. subgroup comments="+sts->comments+"\n";
 										}
 										else{
+											unrecognizedXmlTags.append(xmlReader.name().toString());
+											unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+											unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 											xmlReader.skipCurrentElement();
 											xmlReaderNumberOfUnrecognizedFields++;
 										}
 									}
 								}
 								else{
+									unrecognizedXmlTags.append(xmlReader.name().toString());
+									unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+									unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 									xmlReader.skipCurrentElement();
 									xmlReaderNumberOfUnrecognizedFields++;
 								}
@@ -5989,6 +6056,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							}
 						}
 						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 							xmlReader.skipCurrentElement();
 							xmlReaderNumberOfUnrecognizedFields++;
 						}
@@ -6000,6 +6071,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					}
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -6256,6 +6331,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							xmlReadingLog+="    Crt. activity number of students="+CustomFETString::number(nos)+"\n";
 						}
 						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 							xmlReader.skipCurrentElement();
 							xmlReaderNumberOfUnrecognizedFields++;
 						}
@@ -6308,6 +6387,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					}
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -6346,6 +6429,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							xmlReadingLog+="    Crt. building comments="+bu->comments+"\n";
 						}
 						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 							xmlReader.skipCurrentElement();
 							xmlReaderNumberOfUnrecognizedFields++;
 						}
@@ -6367,6 +6454,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					}
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -6443,6 +6534,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 									rl.append(text);
 								}
 								else{
+									unrecognizedXmlTags.append(xmlReader.name().toString());
+									unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+									unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 									xmlReader.skipCurrentElement();
 									xmlReaderNumberOfUnrecognizedFields++;
 								}
@@ -6478,6 +6573,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							xmlReadingLog+="    Crt. room comments="+rm->comments+"\n";
 						}
 						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 							xmlReader.skipCurrentElement();
 							xmlReaderNumberOfUnrecognizedFields++;
 						}
@@ -6523,6 +6622,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					}
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -7071,6 +7174,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				}
 				/////////  end 2017-02-07
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -7402,6 +7509,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				}
 ////////////////
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -7465,6 +7576,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							item->comments=text;
 						}
 						else{
+							unrecognizedXmlTags.append(xmlReader.name().toString());
+							unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+							unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 							xmlReader.skipCurrentElement();
 							xmlReaderNumberOfUnrecognizedFields++;
 						}
@@ -7479,6 +7594,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					}
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -7487,6 +7606,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 			reducedXmlLog+="Added "+CustomFETString::number(tgol)+" timetable generation options\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -7503,6 +7626,30 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 		return false;
 	}
 	file.close();
+	
+	if(unrecognizedXmlTags.count()>0){
+		QString s;
+		if(unrecognizedXmlTags.count()>=2){
+			s+=tr("There are %1 unrecognized XML tags in your input file. They are written below. Your file will be opened, but"
+			 " these tags will be ignored and they probably represent mistakes in your input file:", "You can assume that %1 is at least 2")
+			 .arg(unrecognizedXmlTags.count());
+		}
+		else{
+			assert(unrecognizedXmlTags.count()==1);
+			s+=tr("There is an unrecognized XML tag in your input file. It is written below. Your file will be opened, but"
+			 " this tag will be ignored and it probably represents a mistake in your input file:");
+		}
+		s+="\n\n";
+		
+		for(int i=0; i<unrecognizedXmlTags.count(); i++){
+			s+=tr("Line %1, column %2: %3", "%3 is the unrecognized XML tag which is met in the .fet input file in line %1, column %2")
+			 .arg(unrecognizedXmlLineNumbers.at(i)).arg(unrecognizedXmlColumnNumbers.at(i)).arg(unrecognizedXmlTags.at(i));
+			s+="\n";
+		}
+		s.chop(1);
+		
+		RulesReconcilableMessage::warning(parent, tr("FET information"), s);
+	}
 
 	this->internalStructureComputed=false;
 	
@@ -8010,6 +8157,10 @@ TimeConstraint* Rules::readBasicCompulsoryTime(QXmlStreamReader& xmlReader, Fake
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -8122,6 +8273,10 @@ TimeConstraint* Rules::readTeacherNotAvailable(QXmlStreamReader& xmlReader, Fake
 			xmlReadingLog+="    Read teacher name="+teacher+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -8265,6 +8420,10 @@ TimeConstraint* Rules::readTeacherNotAvailableTimes(QXmlStreamReader& xmlReader,
 					xmlReadingLog+="    Hour="+this->hoursOfTheDay[h]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -8287,6 +8446,10 @@ TimeConstraint* Rules::readTeacherNotAvailableTimes(QXmlStreamReader& xmlReader,
 			xmlReadingLog+="    Read teacher name="+cn->teacher+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -8365,6 +8528,10 @@ TimeConstraint* Rules::readTeacherMaxDaysPerWeek(QXmlStreamReader& xmlReader, Fa
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -8409,6 +8576,10 @@ TimeConstraint* Rules::readTeachersMaxDaysPerWeek(QXmlStreamReader& xmlReader, F
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -8459,6 +8630,10 @@ TimeConstraint* Rules::readTeacherMinDaysPerWeek(QXmlStreamReader& xmlReader, Fa
 			xmlReadingLog+="    Min. days per week="+CustomFETString::number(cn->minDaysPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -8503,6 +8678,10 @@ TimeConstraint* Rules::readTeachersMinDaysPerWeek(QXmlStreamReader& xmlReader, F
 			xmlReadingLog+="    Min. days per week="+CustomFETString::number(cn->minDaysPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -8620,6 +8799,10 @@ TimeConstraint* Rules::readTeacherIntervalMaxDaysPerWeek(QWidget* parent, QXmlSt
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -8736,6 +8919,10 @@ TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(QWidget* parent, QXmlS
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -8781,6 +8968,10 @@ TimeConstraint* Rules::readStudentsSetMaxDaysPerWeek(QWidget* parent, QXmlStream
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -8820,6 +9011,10 @@ TimeConstraint* Rules::readStudentsMaxDaysPerWeek(QWidget* parent, QXmlStreamRea
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -8937,6 +9132,10 @@ TimeConstraint* Rules::readStudentsSetIntervalMaxDaysPerWeek(QWidget* parent, QX
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -9052,6 +9251,10 @@ TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(QWidget* parent, QXmlS
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -9162,6 +9365,10 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QXmlStreamReader& xmlReader, 
 			xmlReadingLog+="    Read students name="+students+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -9306,6 +9513,10 @@ TimeConstraint* Rules::readStudentsSetNotAvailableTimes(QXmlStreamReader& xmlRea
 					xmlReadingLog+="    Hour="+this->hoursOfTheDay[h]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -9328,6 +9539,10 @@ TimeConstraint* Rules::readStudentsSetNotAvailableTimes(QXmlStreamReader& xmlRea
 			xmlReadingLog+="    Read students name="+cn->students+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -9432,6 +9647,10 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, QXmlStream
 			xmlReadingLog+="    Read MinDays="+CustomFETString::number(cn->minDays)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -9571,6 +9790,10 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, QXmlStreamR
 			xmlReadingLog+="    Read MinDays="+CustomFETString::number(cn->minDays)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -9665,6 +9888,10 @@ TimeConstraint* Rules::readMaxDaysBetweenActivities(QXmlStreamReader& xmlReader,
 			xmlReadingLog+="    Read MaxDays="+CustomFETString::number(cn->maxDays)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -9720,6 +9947,10 @@ TimeConstraint* Rules::readMinGapsBetweenActivities(QXmlStreamReader& xmlReader,
 			xmlReadingLog+="    Read MinGaps="+CustomFETString::number(cn->minGaps)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -9790,6 +10021,10 @@ TimeConstraint* Rules::readActivitiesNotOverlapping(QXmlStreamReader& xmlReader,
 			n_act++;
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -9872,6 +10107,10 @@ TimeConstraint* Rules::readActivityTagsNotOverlapping(QXmlStreamReader& xmlReade
 			xmlReadingLog+="    Read activity tag="+cn->activityTagsNames.at(cn->activityTagsNames.count()-1)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -9942,6 +10181,10 @@ TimeConstraint* Rules::readActivitiesSameStartingTime(QXmlStreamReader& xmlReade
 			n_act++;
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10012,6 +10255,10 @@ TimeConstraint* Rules::readActivitiesSameStartingHour(QXmlStreamReader& xmlReade
 			n_act++;
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10063,6 +10310,10 @@ TimeConstraint* Rules::readActivitiesSameStartingDay(QXmlStreamReader& xmlReader
 			n_act++;
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10122,6 +10373,10 @@ TimeConstraint* Rules::readTeachersMaxHoursDaily(QXmlStreamReader& xmlReader, Fa
 			xmlReadingLog+="    Read maxHoursDaily="+CustomFETString::number(cn->maxHoursDaily)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10179,6 +10434,10 @@ TimeConstraint* Rules::readTeacherMaxHoursDaily(QXmlStreamReader& xmlReader, Fak
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10231,6 +10490,10 @@ TimeConstraint* Rules::readTeachersMaxHoursContinuously(QXmlStreamReader& xmlRea
 			xmlReadingLog+="    Read maxHoursContinuously="+CustomFETString::number(cn->maxHoursContinuously)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10288,6 +10551,10 @@ TimeConstraint* Rules::readTeacherMaxHoursContinuously(QXmlStreamReader& xmlRead
 			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10331,6 +10598,10 @@ TimeConstraint* Rules::readTeacherActivityTagMaxHoursContinuously(QXmlStreamRead
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10369,6 +10640,10 @@ TimeConstraint* Rules::readTeachersActivityTagMaxHoursContinuously(QXmlStreamRea
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10412,6 +10687,10 @@ TimeConstraint* Rules::readTeacherActivityTagMaxHoursDaily(QXmlStreamReader& xml
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10450,6 +10729,10 @@ TimeConstraint* Rules::readTeachersActivityTagMaxHoursDaily(QXmlStreamReader& xm
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10500,6 +10783,10 @@ TimeConstraint* Rules::readTeacherActivityTagMinHoursDaily(QXmlStreamReader& xml
 				cn->allowEmptyDays=false;
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10545,6 +10832,10 @@ TimeConstraint* Rules::readTeachersActivityTagMinHoursDaily(QXmlStreamReader& xm
 				cn->allowEmptyDays=false;
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10617,6 +10908,10 @@ TimeConstraint* Rules::readTeachersMinHoursDaily(QWidget* parent, QXmlStreamRead
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10694,6 +10989,10 @@ TimeConstraint* Rules::readTeacherMinHoursDaily(QWidget* parent, QXmlStreamReade
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10753,6 +11052,10 @@ TimeConstraint* Rules::readStudentsMaxHoursDaily(QXmlStreamReader& xmlReader, Fa
 			xmlReadingLog+="    Read maxHoursDaily="+CustomFETString::number(cn->maxHoursDaily)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10824,6 +11127,10 @@ TimeConstraint* Rules::readStudentsSetMaxHoursDaily(QXmlStreamReader& xmlReader,
 			xmlReadingLog+="    Read students name="+cn->students+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10890,6 +11197,10 @@ TimeConstraint* Rules::readStudentsMaxHoursContinuously(QXmlStreamReader& xmlRea
 			xmlReadingLog+="    Read maxHoursContinuously="+CustomFETString::number(cn->maxHoursContinuously)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -10961,6 +11272,10 @@ TimeConstraint* Rules::readStudentsSetMaxHoursContinuously(QXmlStreamReader& xml
 			xmlReadingLog+="    Read students name="+cn->students+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -11018,6 +11333,10 @@ TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursContinuously(QXmlStream
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -11070,6 +11389,10 @@ TimeConstraint* Rules::readStudentsActivityTagMaxHoursContinuously(QXmlStreamRea
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -11127,6 +11450,10 @@ TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursDaily(QXmlStreamReader&
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -11179,6 +11506,10 @@ TimeConstraint* Rules::readStudentsActivityTagMaxHoursDaily(QXmlStreamReader& xm
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -11243,6 +11574,10 @@ TimeConstraint* Rules::readStudentsSetActivityTagMinHoursDaily(QXmlStreamReader&
 				cn->allowEmptyDays=false;
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -11302,6 +11637,10 @@ TimeConstraint* Rules::readStudentsActivityTagMinHoursDaily(QXmlStreamReader& xm
 				cn->allowEmptyDays=false;
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -11388,6 +11727,10 @@ TimeConstraint* Rules::readStudentsMinHoursDaily(QWidget* parent, QXmlStreamRead
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -11479,6 +11822,10 @@ TimeConstraint* Rules::readStudentsSetMinHoursDaily(QWidget* parent, QXmlStreamR
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -11541,6 +11888,10 @@ TimeConstraint* Rules::readStudentsSetMinGapsBetweenOrderedPairOfActivityTags(QX
 			xmlReadingLog+="    Read second activity name="+cn->secondActivityTag+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -11598,6 +11949,10 @@ TimeConstraint* Rules::readStudentsMinGapsBetweenOrderedPairOfActivityTags(QXmlS
 			xmlReadingLog+="    Read second activity name="+cn->secondActivityTag+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -11660,6 +12015,10 @@ TimeConstraint* Rules::readTeacherMinGapsBetweenOrderedPairOfActivityTags(QXmlSt
 			xmlReadingLog+="    Read second activity name="+cn->secondActivityTag+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -11717,6 +12076,10 @@ TimeConstraint* Rules::readTeachersMinGapsBetweenOrderedPairOfActivityTags(QXmlS
 			xmlReadingLog+="    Read second activity name="+cn->secondActivityTag+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -11839,6 +12202,10 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 			xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hour]+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12017,6 +12384,10 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 			xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hour]+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12114,6 +12485,10 @@ TimeConstraint* Rules::readActivityEndsStudentsDay(QXmlStreamReader& xmlReader, 
 			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activityId)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12173,6 +12548,10 @@ TimeConstraint* Rules::readActivitiesEndStudentsDay(QXmlStreamReader& xmlReader,
 			xmlReadingLog+="    Read activity tag name="+cn->activityTagName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12230,6 +12609,10 @@ TimeConstraint* Rules::read2ActivitiesConsecutive(QXmlStreamReader& xmlReader, F
 			xmlReadingLog+="    Read second activity id="+CustomFETString::number(cn->secondActivityId)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12287,6 +12670,10 @@ TimeConstraint* Rules::read2ActivitiesGrouped(QXmlStreamReader& xmlReader, FakeS
 			xmlReadingLog+="    Read second activity id="+CustomFETString::number(cn->secondActivityId)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12330,6 +12717,10 @@ TimeConstraint* Rules::read3ActivitiesGrouped(QXmlStreamReader& xmlReader, FakeS
 			xmlReadingLog+="    Read third activity id="+CustomFETString::number(cn->thirdActivityId)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12387,6 +12778,10 @@ TimeConstraint* Rules::read2ActivitiesOrdered(QXmlStreamReader& xmlReader, FakeS
 			xmlReadingLog+="    Read second activity id="+CustomFETString::number(cn->secondActivityId)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12444,6 +12839,10 @@ TimeConstraint* Rules::readTwoActivitiesConsecutive(QXmlStreamReader& xmlReader,
 			xmlReadingLog+="    Read second activity id="+CustomFETString::number(cn->secondActivityId)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12501,6 +12900,10 @@ TimeConstraint* Rules::readTwoActivitiesGrouped(QXmlStreamReader& xmlReader, Fak
 			xmlReadingLog+="    Read second activity id="+CustomFETString::number(cn->secondActivityId)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12544,6 +12947,10 @@ TimeConstraint* Rules::readThreeActivitiesGrouped(QXmlStreamReader& xmlReader, F
 			xmlReadingLog+="    Read third activity id="+CustomFETString::number(cn->thirdActivityId)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12601,6 +13008,10 @@ TimeConstraint* Rules::readTwoActivitiesOrdered(QXmlStreamReader& xmlReader, Fak
 			xmlReadingLog+="    Read second activity id="+CustomFETString::number(cn->secondActivityId)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12658,6 +13069,10 @@ TimeConstraint* Rules::readTwoActivitiesOrderedIfSameDay(QXmlStreamReader& xmlRe
 			xmlReadingLog+="    Read second activity id="+CustomFETString::number(cn->secondActivityId)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12774,6 +13189,10 @@ TimeConstraint* Rules::readActivityPreferredTimes(QXmlStreamReader& xmlReader, F
 					xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -12790,6 +13209,10 @@ TimeConstraint* Rules::readActivityPreferredTimes(QXmlStreamReader& xmlReader, F
 			assert(i==cn->hours_L.count());
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -12912,6 +13335,10 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(QXmlStreamReader& xmlReade
 					xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours_L[i]]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -12929,6 +13356,10 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(QXmlStreamReader& xmlReade
 			assert(i==cn->p_hours_L.count());
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13051,6 +13482,10 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(QXmlStreamReader& xmlR
 					xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -13068,6 +13503,10 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(QXmlStreamReader& xmlR
 			assert(i==cn->hours_L.count());
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13175,6 +13614,10 @@ TimeConstraint* Rules::readBreak(QXmlStreamReader& xmlReader, FakeString& xmlRea
 			xmlReadingLog+="    End hour="+this->hoursOfTheDay[h2]+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13315,6 +13758,10 @@ TimeConstraint* Rules::readBreakTimes(QXmlStreamReader& xmlReader, FakeString& x
 					xmlReadingLog+="    Hour="+this->hoursOfTheDay[h]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -13332,6 +13779,10 @@ TimeConstraint* Rules::readBreakTimes(QXmlStreamReader& xmlReader, FakeString& x
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13388,6 +13839,10 @@ TimeConstraint* Rules::readTeachersNoGaps(QXmlStreamReader& xmlReader, FakeStrin
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13440,6 +13895,10 @@ TimeConstraint* Rules::readTeachersMaxGapsPerWeek(QXmlStreamReader& xmlReader, F
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13497,6 +13956,10 @@ TimeConstraint* Rules::readTeacherMaxGapsPerWeek(QXmlStreamReader& xmlReader, Fa
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13549,6 +14012,10 @@ TimeConstraint* Rules::readTeachersMaxGapsPerDay(QXmlStreamReader& xmlReader, Fa
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13606,6 +14073,10 @@ TimeConstraint* Rules::readTeacherMaxGapsPerDay(QXmlStreamReader& xmlReader, Fak
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13659,6 +14130,10 @@ TimeConstraint* Rules::readStudentsNoGaps(QXmlStreamReader& xmlReader, FakeStrin
 			//compulsory_read=true;
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13717,6 +14192,10 @@ TimeConstraint* Rules::readStudentsSetNoGaps(QXmlStreamReader& xmlReader, FakeSt
 			xmlReadingLog+="    Read students name="+cn->students+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13772,6 +14251,10 @@ TimeConstraint* Rules::readStudentsMaxGapsPerWeek(QXmlStreamReader& xmlReader, F
 			//compulsory_read=true;
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13832,6 +14315,10 @@ TimeConstraint* Rules::readStudentsSetMaxGapsPerWeek(QXmlStreamReader& xmlReader
 			xmlReadingLog+="    Read students name="+cn->students+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13887,6 +14374,10 @@ TimeConstraint* Rules::readStudentsMaxGapsPerDay(QXmlStreamReader& xmlReader, Fa
 			//compulsory_read=true;
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13947,6 +14438,10 @@ TimeConstraint* Rules::readStudentsSetMaxGapsPerDay(QXmlStreamReader& xmlReader,
 			xmlReadingLog+="    Read students name="+cn->students+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -13997,6 +14492,10 @@ TimeConstraint* Rules::readStudentsEarly(QXmlStreamReader& xmlReader, FakeString
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -14056,6 +14555,10 @@ TimeConstraint* Rules::readStudentsEarlyMaxBeginningsAtSecondHour(QXmlStreamRead
 			}
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -14118,6 +14621,10 @@ TimeConstraint* Rules::readStudentsSetEarly(QXmlStreamReader& xmlReader, FakeStr
 			xmlReadingLog+="    Read students name="+cn->students+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -14182,6 +14689,10 @@ TimeConstraint* Rules::readStudentsSetEarlyMaxBeginningsAtSecondHour(QXmlStreamR
 			xmlReadingLog+="    Read students name="+cn->students+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -14337,6 +14848,10 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QXmlStreamReader& xmlReader,
 					xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -14354,6 +14869,10 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QXmlStreamReader& xmlReader,
 			assert(i==cn->hours_L.count());
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -14518,6 +15037,10 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QXmlStreamReader& xmlRea
 					xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours_L[i]]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -14535,6 +15058,10 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QXmlStreamReader& xmlRea
 			assert(i==cn->p_hours_L.count());
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -14699,6 +15226,10 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QXmlStreamReader& xm
 					xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -14716,6 +15247,10 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QXmlStreamReader& xm
 			assert(i==cn->hours_L.count());
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -14887,6 +15422,10 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QXmlStreamReader& xml
 					xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->p_hours_L[i]]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -14904,6 +15443,10 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QXmlStreamReader& xml
 			assert(i==cn->p_hours_L.count());
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -15074,6 +15617,10 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QXmlStreamReader&
 					xmlReadingLog+="    Preferred starting hour="+this->hoursOfTheDay[cn->hours_L[i]]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -15091,6 +15638,10 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QXmlStreamReader&
 			assert(i==cn->hours_L.count());
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -15198,6 +15749,10 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamR
 					xmlReadingLog+="    Selected hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -15220,6 +15775,10 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamR
 			xmlReadingLog+="    Read max number of occupied time slots="+CustomFETString::number(cn->maxOccupiedTimeSlots)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -15338,6 +15897,10 @@ TimeConstraint* Rules::readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamR
 					xmlReadingLog+="    Selected hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -15360,6 +15923,10 @@ TimeConstraint* Rules::readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamR
 			xmlReadingLog+="    Read min number of occupied time slots="+CustomFETString::number(cn->minOccupiedTimeSlots)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -15478,6 +16045,10 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStre
 					xmlReadingLog+="    Selected hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -15500,6 +16071,10 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStre
 			xmlReadingLog+="    Read max number of simultaneous activities="+CustomFETString::number(cn->maxSimultaneous)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -15620,6 +16195,10 @@ TimeConstraint* Rules::readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStre
 					xmlReadingLog+="    Selected hour="+this->hoursOfTheDay[cn->selectedHours[i]]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -15649,6 +16228,10 @@ TimeConstraint* Rules::readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStre
 				cn->allowEmptySlots=false;
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -15713,6 +16296,10 @@ TimeConstraint* Rules::readTeacherMaxSpanPerDay(QXmlStreamReader& xmlReader, Fak
 			xmlReadingLog+="    Adding max span per day="+CustomFETString::number(cn->maxSpanPerDay)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -15753,6 +16340,10 @@ TimeConstraint* Rules::readTeachersMaxSpanPerDay(QXmlStreamReader& xmlReader, Fa
 			xmlReadingLog+="    Adding max span per day="+CustomFETString::number(cn->maxSpanPerDay)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -15791,6 +16382,10 @@ TimeConstraint* Rules::readStudentsSetMaxSpanPerDay(QXmlStreamReader& xmlReader,
 			xmlReadingLog+="    Adding max span per day="+CustomFETString::number(cn->maxSpanPerDay)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -15824,6 +16419,10 @@ TimeConstraint* Rules::readStudentsMaxSpanPerDay(QXmlStreamReader& xmlReader, Fa
 			xmlReadingLog+="    Adding max span per day="+CustomFETString::number(cn->maxSpanPerDay)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -15869,6 +16468,10 @@ TimeConstraint* Rules::readTeacherMinRestingHours(QXmlStreamReader& xmlReader, F
 			xmlReadingLog+="    Adding min resting hours="+CustomFETString::number(cn->minRestingHours)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -15909,6 +16512,10 @@ TimeConstraint* Rules::readTeachersMinRestingHours(QXmlStreamReader& xmlReader, 
 			xmlReadingLog+="    Adding min resting hours="+CustomFETString::number(cn->minRestingHours)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -15954,6 +16561,10 @@ TimeConstraint* Rules::readStudentsSetMinRestingHours(QXmlStreamReader& xmlReade
 			xmlReadingLog+="    Adding min resting hours="+CustomFETString::number(cn->minRestingHours)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -15994,6 +16605,10 @@ TimeConstraint* Rules::readStudentsMinRestingHours(QXmlStreamReader& xmlReader, 
 			xmlReadingLog+="    Adding min resting hours="+CustomFETString::number(cn->minRestingHours)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -16058,6 +16673,10 @@ SpaceConstraint* Rules::readBasicCompulsorySpace(QXmlStreamReader& xmlReader, Fa
 			}
 		}*/
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -16159,6 +16778,10 @@ SpaceConstraint* Rules::readRoomNotAvailable(QXmlStreamReader& xmlReader, FakeSt
 			xmlReadingLog+="    Read room name="+room+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -16301,6 +16924,10 @@ SpaceConstraint* Rules::readRoomNotAvailableTimes(QXmlStreamReader& xmlReader, F
 					xmlReadingLog+="    Hour="+this->hoursOfTheDay[h]+"\n";
 				}
 				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 					xmlReader.skipCurrentElement();
 					xmlReaderNumberOfUnrecognizedFields++;
 				}
@@ -16323,6 +16950,10 @@ SpaceConstraint* Rules::readRoomNotAvailableTimes(QXmlStreamReader& xmlReader, F
 			xmlReadingLog+="    Read room name="+cn->room+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -16437,6 +17068,10 @@ bool& reportUnspecifiedPermanentlyLockedSpace){
 			xmlReadingLog+="    Read real room="+text+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -16558,6 +17193,10 @@ SpaceConstraint* Rules::readActivityPreferredRooms(QXmlStreamReader& xmlReader, 
 			xmlReadingLog+="    Read room="+text+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -16622,6 +17261,10 @@ SpaceConstraint* Rules::readSubjectPreferredRoom(QXmlStreamReader& xmlReader, Fa
 			xmlReadingLog+="    Read room="+cn->roomName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -16686,6 +17329,10 @@ SpaceConstraint* Rules::readSubjectPreferredRooms(QXmlStreamReader& xmlReader, F
 			xmlReadingLog+="    Read room="+text+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -16755,6 +17402,10 @@ SpaceConstraint* Rules::readSubjectSubjectTagPreferredRoom(QXmlStreamReader& xml
 			xmlReadingLog+="    Read room="+cn->roomName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -16824,6 +17475,10 @@ SpaceConstraint* Rules::readSubjectSubjectTagPreferredRooms(QXmlStreamReader& xm
 			xmlReadingLog+="    Read room="+text+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -16893,6 +17548,10 @@ SpaceConstraint* Rules::readSubjectActivityTagPreferredRoom(QXmlStreamReader& xm
 			xmlReadingLog+="    Read room="+cn->roomName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -16962,6 +17621,10 @@ SpaceConstraint* Rules::readSubjectActivityTagPreferredRooms(QXmlStreamReader& x
 			xmlReadingLog+="    Read room="+text+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17008,6 +17671,10 @@ SpaceConstraint* Rules::readActivityTagPreferredRoom(QXmlStreamReader& xmlReader
 			xmlReadingLog+="    Read room="+cn->roomName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17053,6 +17720,10 @@ SpaceConstraint* Rules::readActivityTagPreferredRooms(QXmlStreamReader& xmlReade
 			xmlReadingLog+="    Read room="+text+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17098,6 +17769,10 @@ SpaceConstraint* Rules::readStudentsSetHomeRoom(QXmlStreamReader& xmlReader, Fak
 			xmlReadingLog+="    Read room="+cn->roomName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17143,6 +17818,10 @@ SpaceConstraint* Rules::readStudentsSetHomeRooms(QXmlStreamReader& xmlReader, Fa
 			xmlReadingLog+="    Read room="+text+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17188,6 +17867,10 @@ SpaceConstraint* Rules::readTeacherHomeRoom(QXmlStreamReader& xmlReader, FakeStr
 			xmlReadingLog+="    Read room="+cn->roomName+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17233,6 +17916,10 @@ SpaceConstraint* Rules::readTeacherHomeRooms(QXmlStreamReader& xmlReader, FakeSt
 			xmlReadingLog+="    Read room="+text+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17278,6 +17965,10 @@ SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerDay(QXmlStreamReader& xm
 			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17311,6 +18002,10 @@ SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerDay(QXmlStreamReader& x
 			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17349,6 +18044,10 @@ SpaceConstraint* Rules::readTeacherMaxBuildingChangesPerWeek(QXmlStreamReader& x
 			xmlReadingLog+="    Max. building changes per week="+CustomFETString::number(cn->maxBuildingChangesPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17382,6 +18081,10 @@ SpaceConstraint* Rules::readTeachersMaxBuildingChangesPerWeek(QXmlStreamReader& 
 			xmlReadingLog+="    Max. building changes per week="+CustomFETString::number(cn->maxBuildingChangesPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17420,6 +18123,10 @@ SpaceConstraint* Rules::readTeacherMinGapsBetweenBuildingChanges(QXmlStreamReade
 			xmlReadingLog+="    Min gaps between building changes="+CustomFETString::number(cn->minGapsBetweenBuildingChanges)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17453,6 +18160,10 @@ SpaceConstraint* Rules::readTeachersMinGapsBetweenBuildingChanges(QXmlStreamRead
 			xmlReadingLog+="    Min gaps between building changes="+CustomFETString::number(cn->minGapsBetweenBuildingChanges)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17491,6 +18202,10 @@ SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerDay(QXmlStreamReader
 			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17524,6 +18239,10 @@ SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerDay(QXmlStreamReader& x
 			xmlReadingLog+="    Max. building changes per day="+CustomFETString::number(cn->maxBuildingChangesPerDay)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17562,6 +18281,10 @@ SpaceConstraint* Rules::readStudentsSetMaxBuildingChangesPerWeek(QXmlStreamReade
 			xmlReadingLog+="    Max. building changes per week="+CustomFETString::number(cn->maxBuildingChangesPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17595,6 +18318,10 @@ SpaceConstraint* Rules::readStudentsMaxBuildingChangesPerWeek(QXmlStreamReader& 
 			xmlReadingLog+="    Max. building changes per week="+CustomFETString::number(cn->maxBuildingChangesPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17633,6 +18360,10 @@ SpaceConstraint* Rules::readStudentsSetMinGapsBetweenBuildingChanges(QXmlStreamR
 			xmlReadingLog+="    min gaps between building changes="+CustomFETString::number(cn->minGapsBetweenBuildingChanges)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17666,6 +18397,10 @@ SpaceConstraint* Rules::readStudentsMinGapsBetweenBuildingChanges(QXmlStreamRead
 			xmlReadingLog+="    min gaps between building changes="+CustomFETString::number(cn->minGapsBetweenBuildingChanges)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17705,6 +18440,10 @@ SpaceConstraint* Rules::readTeacherMaxRoomChangesPerDay(QXmlStreamReader& xmlRea
 			xmlReadingLog+="    Max. room changes per day="+CustomFETString::number(cn->maxRoomChangesPerDay)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17738,6 +18477,10 @@ SpaceConstraint* Rules::readTeachersMaxRoomChangesPerDay(QXmlStreamReader& xmlRe
 			xmlReadingLog+="    Max. room changes per day="+CustomFETString::number(cn->maxRoomChangesPerDay)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17776,6 +18519,10 @@ SpaceConstraint* Rules::readTeacherMaxRoomChangesPerWeek(QXmlStreamReader& xmlRe
 			xmlReadingLog+="    Max. room changes per week="+CustomFETString::number(cn->maxRoomChangesPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17809,6 +18556,10 @@ SpaceConstraint* Rules::readTeachersMaxRoomChangesPerWeek(QXmlStreamReader& xmlR
 			xmlReadingLog+="    Max. room changes per week="+CustomFETString::number(cn->maxRoomChangesPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17847,6 +18598,10 @@ SpaceConstraint* Rules::readTeacherMinGapsBetweenRoomChanges(QXmlStreamReader& x
 			xmlReadingLog+="    Min gaps between room changes="+CustomFETString::number(cn->minGapsBetweenRoomChanges)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17880,6 +18635,10 @@ SpaceConstraint* Rules::readTeachersMinGapsBetweenRoomChanges(QXmlStreamReader& 
 			xmlReadingLog+="    Min gaps between room changes="+CustomFETString::number(cn->minGapsBetweenRoomChanges)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17918,6 +18677,10 @@ SpaceConstraint* Rules::readStudentsSetMaxRoomChangesPerDay(QXmlStreamReader& xm
 			xmlReadingLog+="    Max. room changes per day="+CustomFETString::number(cn->maxRoomChangesPerDay)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17951,6 +18714,10 @@ SpaceConstraint* Rules::readStudentsMaxRoomChangesPerDay(QXmlStreamReader& xmlRe
 			xmlReadingLog+="    Max. room changes per day="+CustomFETString::number(cn->maxRoomChangesPerDay)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -17989,6 +18756,10 @@ SpaceConstraint* Rules::readStudentsSetMaxRoomChangesPerWeek(QXmlStreamReader& x
 			xmlReadingLog+="    Max. room changes per week="+CustomFETString::number(cn->maxRoomChangesPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -18022,6 +18793,10 @@ SpaceConstraint* Rules::readStudentsMaxRoomChangesPerWeek(QXmlStreamReader& xmlR
 			xmlReadingLog+="    Max. room changes per week="+CustomFETString::number(cn->maxRoomChangesPerWeek)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -18060,6 +18835,10 @@ SpaceConstraint* Rules::readStudentsSetMinGapsBetweenRoomChanges(QXmlStreamReade
 			xmlReadingLog+="    min gaps between room changes="+CustomFETString::number(cn->minGapsBetweenRoomChanges)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -18093,6 +18872,10 @@ SpaceConstraint* Rules::readStudentsMinGapsBetweenRoomChanges(QXmlStreamReader& 
 			xmlReadingLog+="    min gaps between room changes="+CustomFETString::number(cn->minGapsBetweenRoomChanges)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -18141,6 +18924,10 @@ SpaceConstraint* Rules::readActivitiesOccupyMaxDifferentRooms(QXmlStreamReader& 
 			xmlReadingLog+="    Read max number of different rooms="+CustomFETString::number(cn->maxDifferentRooms)+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
@@ -18195,6 +18982,10 @@ SpaceConstraint* Rules::readActivitiesSameRoomIfConsecutive(QXmlStreamReader& xm
 			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[cn->activitiesIds.count()-1])+"\n";
 		}
 		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}

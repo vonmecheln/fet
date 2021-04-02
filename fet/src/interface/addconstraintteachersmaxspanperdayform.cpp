@@ -39,17 +39,11 @@ AddConstraintTeachersMaxSpanPerDayForm::AddConstraintTeachersMaxSpanPerDayForm(Q
 	maxSpanSpinBox->setValue(gt.rules.nHoursPerDay);
 
 	exceptionCheckBox->setChecked(false);
-	
-	constraintChanged();
 }
 
 AddConstraintTeachersMaxSpanPerDayForm::~AddConstraintTeachersMaxSpanPerDayForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void AddConstraintTeachersMaxSpanPerDayForm::constraintChanged()
-{
 }
 
 void AddConstraintTeachersMaxSpanPerDayForm::addCurrentConstraint()

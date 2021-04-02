@@ -124,7 +124,7 @@ public slots:
 	void on_fileNewAction_triggered();
 	void on_fileSaveAction_triggered();
 	void on_fileSaveAsAction_triggered();
-	void on_fileExitAction_triggered();
+	void on_fileQuitAction_triggered();
 	void on_fileOpenAction_triggered();
 	void on_fileClearRecentFilesListAction_triggered();
 	void openRecentFile();

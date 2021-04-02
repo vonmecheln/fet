@@ -44,8 +44,6 @@ AddConstraintTeacherMaxHoursDailyForm::AddConstraintTeacherMaxHoursDailyForm(QWi
 		Teacher* tch=gt.rules.teachersList[i];
 		teachersComboBox->addItem(tch->name);
 	}
-
-	constraintChanged();
 }
 
 AddConstraintTeacherMaxHoursDailyForm::~AddConstraintTeacherMaxHoursDailyForm()
@@ -57,10 +55,6 @@ void AddConstraintTeacherMaxHoursDailyForm::updateMaxHoursSpinBox(){
 	maxHoursSpinBox->setMinimum(1);
 	maxHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxHoursSpinBox->setValue(gt.rules.nHoursPerDay);
-}
-
-void AddConstraintTeacherMaxHoursDailyForm::constraintChanged()
-{
 }
 
 void AddConstraintTeacherMaxHoursDailyForm::addCurrentConstraint()

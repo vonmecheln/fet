@@ -24,7 +24,7 @@
 
 void tableWidgetUpdateBug(QTableWidget* table)
 {
-	//this is for a bug appeared in Qt 4.5.3. The bug seems to be solved in Qt subsequent versions.
+	//this is for a bug appeared in Qt 4.5.3. The bug seems to be solved in subsequent Qt versions.
 
 	QString buggy1=QString("4.5.3");
 	QString crtVersion=qVersion();

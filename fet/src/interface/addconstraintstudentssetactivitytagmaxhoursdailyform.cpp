@@ -56,34 +56,12 @@ AddConstraintStudentsSetActivityTagMaxHoursDailyForm::~AddConstraintStudentsSetA
 void AddConstraintStudentsSetActivityTagMaxHoursDailyForm::updateStudentsSetComboBox()
 {
 	populateStudentsComboBox(studentsComboBox);
-	/*studentsComboBox->clear();
-	for(int i=0; i<gt.rules.yearsList.size(); i++){
-		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->addItem(sty->name);
-		for(int j=0; j<sty->groupsList.size(); j++){
-			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->addItem(stg->name);
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int k=0; k<stg->subgroupsList.size(); k++){
-				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->addItem(sts->name);
-			}
-		}
-	}*/
-
-	constraintChanged();
 }
 
 void AddConstraintStudentsSetActivityTagMaxHoursDailyForm::updateActivityTagsComboBox()
 {
 	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
 		activityTagsComboBox->addItem(at->name);
-
-	constraintChanged();
-}
-
-void AddConstraintStudentsSetActivityTagMaxHoursDailyForm::constraintChanged()
-{
-	//nothing
 }
 
 void AddConstraintStudentsSetActivityTagMaxHoursDailyForm::addCurrentConstraint()

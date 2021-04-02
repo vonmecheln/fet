@@ -88,7 +88,7 @@ void ModifyRoomForm::ok()
 		return;
 	}
 	
-	bool t=gt.rules.modifyRoom(this->_initialRoomName, nameLineEdit->text()/*, typesComboBox->currentText()*/, buildingsComboBox->currentText(), capacitySpinBox->value());
+	bool t=gt.rules.modifyRoom(this->_initialRoomName, nameLineEdit->text(), buildingsComboBox->currentText(), capacitySpinBox->value());
 	assert(t);
 	
 	this->close();

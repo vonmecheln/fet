@@ -30,7 +30,6 @@ public:
 	~AddConstraintTeachersMinGapsBetweenRoomChangesForm();
 
 public slots:
-	void constraintChanged();
 	void addCurrentConstraint();
 };
 

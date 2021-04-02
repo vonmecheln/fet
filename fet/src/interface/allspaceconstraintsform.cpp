@@ -100,7 +100,7 @@
 #include <QtAlgorithms>
 
 #include <algorithm>
-using namespace std;
+//using namespace std;
 
 extern const QString COMPANY;
 extern const QString PROGRAM;

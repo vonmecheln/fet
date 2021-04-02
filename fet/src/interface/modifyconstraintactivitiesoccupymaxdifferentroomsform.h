@@ -32,8 +32,6 @@ public:
 	ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm(QWidget* parent, ConstraintActivitiesOccupyMaxDifferentRooms* ctr);
 	~ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm();
 
-	void updateActivitiesListWidget();
-	
 	bool filterOk(Activity* act);
 
 public slots:

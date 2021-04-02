@@ -31,15 +31,15 @@ public:
 	ConstraintActivitiesEndStudentsDayForm(QWidget* parent);
 	~ConstraintActivitiesEndStudentsDayForm();
 
-	void refreshConstraintsListWidget();
-
 	bool filterOk(TimeConstraint* ctr);
+
 public slots:
 	void constraintChanged(int index);
 	void addConstraint();
 	void modifyConstraint();
 	void removeConstraint();
 	
+	void filterChanged();
 };
 
 #endif

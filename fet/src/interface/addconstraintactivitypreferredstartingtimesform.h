@@ -32,8 +32,6 @@ public:
 	AddConstraintActivityPreferredStartingTimesForm(QWidget* parent);
 	~AddConstraintActivityPreferredStartingTimesForm();
 
-	void updateActivitiesComboBox();
-
 	bool filterOk(Activity* a);
 
 	void colorItem(QTableWidgetItem* item);

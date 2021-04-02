@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-
-
 #include "modifyconstraintstudentsmaxhourscontinuouslyform.h"
 #include "timeconstraint.h"
 
@@ -46,10 +44,6 @@ ModifyConstraintStudentsMaxHoursContinuouslyForm::ModifyConstraintStudentsMaxHou
 ModifyConstraintStudentsMaxHoursContinuouslyForm::~ModifyConstraintStudentsMaxHoursContinuouslyForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void ModifyConstraintStudentsMaxHoursContinuouslyForm::constraintChanged()
-{
 }
 
 void ModifyConstraintStudentsMaxHoursContinuouslyForm::ok()

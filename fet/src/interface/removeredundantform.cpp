@@ -35,7 +35,7 @@ extern Timetable gt;
 #include <QVBoxLayout>
 
 #include <algorithm>
-using namespace std;
+//using namespace std;
 
 RemoveRedundantForm::RemoveRedundantForm(QWidget* parent): QDialog(parent)
 {
@@ -111,9 +111,10 @@ void RemoveRedundantForm::wasAccepted()
 	
 	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList)){
 		if(tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
-			mdcList.prepend((ConstraintMinDaysBetweenActivities*)tc); //inverse order, so earlier activities are not removed (the older ones are)
+			mdcList.append((ConstraintMinDaysBetweenActivities*)tc);
 		}
 	}
+	std::reverse(mdcList.begin(), mdcList.end()); //inverse order, so earlier constraints are not removed (remove the older ones)
 
 	QList<ConstraintMinDaysBetweenActivities*> toBeRemovedList;
 	
@@ -153,7 +154,7 @@ void RemoveRedundantForm::wasAccepted()
 				equal=false;
 				
 			//if(c1->weightPercentage!=c2->weightPercentage)
-			//	equal=false;			
+			//	equal=false;
 			//if(c1->consecutiveIfSameDay!=c2->consecutiveIfSameDay)
 			//	equal=false;
 			if(c1->weightPercentage > c2->weightPercentage){

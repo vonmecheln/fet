@@ -227,7 +227,11 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 	updateActivityTagsListWidget();
 
 	//after updateSubjectsComboBox
-	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(updateAllTeachersListWidget()));
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(updateAllTeachersListWidget()));
+#else
+	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updateAllTeachersListWidget()));
+#endif
 	connect(allTeachersRadioButton, SIGNAL(toggled(bool)), this, SLOT(allTeachersRadioButtonToggled(bool)));
 	connect(qualifiedTeachersRadioButton, SIGNAL(toggled(bool)), this, SLOT(qualifiedTeachersRadioButtonToggled(bool)));
 	updateAllTeachersListWidget();
@@ -874,7 +878,7 @@ void AddActivityForm::help()
 	 "double click it to add it to the selected teachers for current activity. "
 	 "You can then choose to remove a teacher from the selected teachers. You can highlight it "
 	 "with the mouse or with the keyboard, then double click it to remove this teacher from the selected teachers.");
-	 
+	
 	s+="\n\n";
 	
 	s+=tr("The same procedure (double click) applies to students sets and activity tags.");

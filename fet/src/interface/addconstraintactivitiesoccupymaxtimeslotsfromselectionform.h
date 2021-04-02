@@ -25,7 +25,7 @@
 
 #include <QList>
 
-class AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm : public QDialog, Ui::AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm_template  {
+class AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm : public QDialog, Ui::AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm_template {
 	Q_OBJECT
 	
 public:
@@ -33,8 +33,6 @@ public:
 	~AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm();
 
 	void colorItem(QTableWidgetItem* item);
-	
-	void updateActivitiesListWidget();
 	
 	bool filterOk(Activity* act);
 

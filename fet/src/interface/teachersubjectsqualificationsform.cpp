@@ -26,7 +26,9 @@
 #include <QListWidget>
 #include <QAbstractItemView>
 #include <QSet>
-#include <QLinkedList>
+
+#include <list>
+#include <iterator>
 
 TeacherSubjectsQualificationsForm::TeacherSubjectsQualificationsForm(QWidget* parent, Teacher* teacher): QDialog(parent)
 {
@@ -70,15 +72,25 @@ TeacherSubjectsQualificationsForm::~TeacherSubjectsQualificationsForm()
 
 void TeacherSubjectsQualificationsForm::ok()
 {
-	QLinkedList<QString> newSubjectsList;
-	QHash<QString, QLinkedList<QString>::Iterator> newSubjectsHash;
+	//!!!Do not use the commented code below!!!
+	//!!!If we used the commented code below (which worked well with QLinkedList, but not with std::list) we would get segmentation fault.
+	//Possible steps to reproduce: press OK in this dialog, then rename or remove a subject from this list of qualified subjects.
+	/*std::list<QString> newSubjectsList;
+	QHash<QString, std::list<QString>::iterator> newSubjectsHash;
 	for(int i=0; i<selectedSubjectsListWidget->count(); i++){
-		newSubjectsList.append(selectedSubjectsListWidget->item(i)->text());
-		newSubjectsHash.insert(selectedSubjectsListWidget->item(i)->text(), newSubjectsList.end()-1);
+		newSubjectsList.push_back(selectedSubjectsListWidget->item(i)->text());
+		newSubjectsHash.insert(selectedSubjectsListWidget->item(i)->text(), std::prev(newSubjectsList.end()));
 	}
 	
 	_teacher->qualifiedSubjectsList=newSubjectsList;
-	_teacher->qualifiedSubjectsHash=newSubjectsHash;
+	_teacher->qualifiedSubjectsHash=newSubjectsHash;*/
+
+	_teacher->qualifiedSubjectsList.clear();
+	_teacher->qualifiedSubjectsHash.clear();
+	for(int i=0; i<selectedSubjectsListWidget->count(); i++){
+		_teacher->qualifiedSubjectsList.push_back(selectedSubjectsListWidget->item(i)->text());
+		_teacher->qualifiedSubjectsHash.insert(selectedSubjectsListWidget->item(i)->text(), std::prev(_teacher->qualifiedSubjectsList.end()));
+	}
 	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

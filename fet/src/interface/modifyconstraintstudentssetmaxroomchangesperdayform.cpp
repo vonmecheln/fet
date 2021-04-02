@@ -31,7 +31,7 @@ ModifyConstraintStudentsSetMaxRoomChangesPerDayForm::ModifyConstraintStudentsSet
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
 
@@ -43,9 +43,7 @@ ModifyConstraintStudentsSetMaxRoomChangesPerDayForm::ModifyConstraintStudentsSet
 
 	maxChangesSpinBox->setMinimum(0);
 	maxChangesSpinBox->setMaximum(gt.rules.nHoursPerDay);
-	maxChangesSpinBox->setValue(ctr->maxRoomChangesPerDay);	
-		
-	constraintChanged();
+	maxChangesSpinBox->setValue(ctr->maxRoomChangesPerDay);
 }
 
 ModifyConstraintStudentsSetMaxRoomChangesPerDayForm::~ModifyConstraintStudentsSetMaxRoomChangesPerDayForm()
@@ -56,40 +54,11 @@ ModifyConstraintStudentsSetMaxRoomChangesPerDayForm::~ModifyConstraintStudentsSe
 void ModifyConstraintStudentsSetMaxRoomChangesPerDayForm::updateStudentsComboBox(QWidget* parent)
 {
 	int j=populateStudentsComboBox(studentsComboBox, this->_ctr->studentsName);
-	/*studentsComboBox->clear();
-	int i=0, j=-1;
-	for(int m=0; m<gt.rules.yearsList.size(); m++){
-		StudentsYear* sty=gt.rules.yearsList[m];
-		studentsComboBox->addItem(sty->name);
-		if(sty->name==this->_ctr->studentsName)
-			j=i;
-		i++;
-		for(int n=0; n<sty->groupsList.size(); n++){
-			StudentsGroup* stg=sty->groupsList[n];
-			studentsComboBox->addItem(stg->name);
-			if(stg->name==this->_ctr->studentsName)
-				j=i;
-			i++;
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int p=0; p<stg->subgroupsList.size(); p++){
-				StudentsSubgroup* sts=stg->subgroupsList[p];
-				studentsComboBox->addItem(sts->name);
-				if(sts->name==this->_ctr->studentsName)
-					j=i;
-				i++;
-			}
-		}
-	}*/
 	if(j<0)
 		showWarningForInvisibleSubgroupConstraint(parent, this->_ctr->studentsName);
 	else
 		assert(j>=0);
 	studentsComboBox->setCurrentIndex(j);
-
-	constraintChanged();
-}
-
-void ModifyConstraintStudentsSetMaxRoomChangesPerDayForm::constraintChanged()
-{
 }
 
 void ModifyConstraintStudentsSetMaxRoomChangesPerDayForm::ok()

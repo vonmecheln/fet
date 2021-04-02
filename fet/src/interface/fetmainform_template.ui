@@ -922,7 +922,7 @@
     <addaction name="menuImport"/>
     <addaction name="menuExport"/>
     <addaction name="separator"/>
-    <addaction name="fileExitAction"/>
+    <addaction name="fileQuitAction"/>
    </widget>
    <widget class="QMenu" name="timetableMenu">
     <property name="title">
@@ -1417,12 +1417,15 @@
     <string/>
    </property>
   </action>
-  <action name="fileExitAction">
+  <action name="fileQuitAction">
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">&amp;Quit</string>
    </property>
    <property name="shortcut">
     <string extracomment="This is the shortcut for menu item File-&gt;Quit. It is recommended to translate with Ctrl+Q, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print), Ctrl+A (Activity planning). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+Q', the same as the English original, to keep things standard.">Ctrl+Q</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
    </property>
   </action>
   <action name="helpFAQAction">
@@ -1439,6 +1442,9 @@
    </property>
    <property name="shortcut">
     <string/>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
    </property>
   </action>
   <action name="dataTeachersAction">
@@ -2787,10 +2793,16 @@
    <property name="text">
     <string>About Qt</string>
    </property>
+   <property name="menuRole">
+    <enum>QAction::AboutQtRole</enum>
+   </property>
   </action>
   <action name="helpAboutLibrariesAction">
    <property name="text">
     <string>About libraries</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
    </property>
   </action>
  </widget>

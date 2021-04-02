@@ -35,8 +35,6 @@ AddConstraintTeachersMaxHoursDailyForm::AddConstraintTeachersMaxHoursDailyForm(Q
 	restoreFETDialogGeometry(this);
 	
 	updateMaxHoursSpinBox();
-	
-	constraintChanged();
 }
 
 AddConstraintTeachersMaxHoursDailyForm::~AddConstraintTeachersMaxHoursDailyForm()
@@ -48,10 +46,6 @@ void AddConstraintTeachersMaxHoursDailyForm::updateMaxHoursSpinBox(){
 	maxHoursSpinBox->setMinimum(1);
 	maxHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxHoursSpinBox->setValue(gt.rules.nHoursPerDay);
-}
-
-void AddConstraintTeachersMaxHoursDailyForm::constraintChanged()
-{
 }
 
 void AddConstraintTeachersMaxHoursDailyForm::addCurrentConstraint()

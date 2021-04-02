@@ -32,8 +32,6 @@ public:
 	AddConstraintMinDaysBetweenActivitiesForm(QWidget* parent);
 	~AddConstraintMinDaysBetweenActivitiesForm();
 
-	void updateActivitiesListWidget();
-
 	bool filterOk(Activity* a);
 
 public slots:

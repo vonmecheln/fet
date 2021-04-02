@@ -44,8 +44,6 @@ ConstraintActivityTagsNotOverlappingForm::ConstraintActivityTagsNotOverlappingFo
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
 
-	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 
@@ -61,6 +59,12 @@ ConstraintActivityTagsNotOverlappingForm::ConstraintActivityTagsNotOverlappingFo
 	activityTagsComboBox->setCurrentIndex(0);
 
 	this->filterChanged();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+#else
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+#endif
 }
 
 ConstraintActivityTagsNotOverlappingForm::~ConstraintActivityTagsNotOverlappingForm()
@@ -101,7 +105,7 @@ void ConstraintActivityTagsNotOverlappingForm::filterChanged()
 	if(constraintsListWidget->count()>0)
 		constraintsListWidget->setCurrentRow(0);
 	else
-		currentConstraintTextEdit->setPlainText(QString(""));
+		constraintChanged(-1);
 }
 
 void ConstraintActivityTagsNotOverlappingForm::constraintChanged(int index)

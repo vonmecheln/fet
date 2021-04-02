@@ -54,12 +54,6 @@ void AddConstraintTeacherMaxRoomChangesPerWeekForm::updateTeachersComboBox()
 	teachersComboBox->clear();
 	for(Teacher* tch : qAsConst(gt.rules.teachersList))
 		teachersComboBox->addItem(tch->name);
-
-	constraintChanged();
-}
-
-void AddConstraintTeacherMaxRoomChangesPerWeekForm::constraintChanged()
-{
 }
 
 void AddConstraintTeacherMaxRoomChangesPerWeekForm::addCurrentConstraint()

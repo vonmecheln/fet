@@ -34,8 +34,6 @@ AddConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::AddConstraintS
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
-	//QSize tmp2=studentsComboBox->minimumSizeHint();
-	//Q_UNUSED(tmp2);
 	QSize tmp4=firstActivityTagComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
 	QSize tmp5=secondActivityTagComboBox->minimumSizeHint();
@@ -58,20 +56,12 @@ void AddConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::updateFir
 {
 	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
 		firstActivityTagComboBox->addItem(at->name);
-
-	constraintChanged();
 }
 
 void AddConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::updateSecondActivityTagComboBox()
 {
 	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
 		secondActivityTagComboBox->addItem(at->name);
-
-	constraintChanged();
-}
-
-void AddConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::constraintChanged()
-{
 }
 
 void AddConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::addCurrentConstraint()

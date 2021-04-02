@@ -131,17 +131,21 @@ ModifySubactivityForm::ModifySubactivityForm(QWidget* parent, int id, int activi
 	updateActivityTagsListWidget();
 
 	//after updateSubjectsComboBox
-	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(updateAllTeachersListWidget()));
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(updateAllTeachersListWidget()));
+#else
+	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updateAllTeachersListWidget()));
+#endif
 	connect(allTeachersRadioButton, SIGNAL(toggled(bool)), this, SLOT(allTeachersRadioButtonToggled(bool)));
 	connect(qualifiedTeachersRadioButton, SIGNAL(toggled(bool)), this, SLOT(qualifiedTeachersRadioButtonToggled(bool)));
 	updateAllTeachersListWidget();
 	
 	selectedTeachersListWidget->clear();
-	for(QStringList::Iterator it=this->_teachers.begin(); it!=this->_teachers.end(); it++)
+	for(QStringList::const_iterator it=this->_teachers.constBegin(); it!=this->_teachers.constEnd(); it++)
 		selectedTeachersListWidget->addItem(*it);
 
 	selectedStudentsListWidget->clear();
-	for(QStringList::Iterator it=this->_students.begin(); it!=this->_students.end(); it++)
+	for(QStringList::const_iterator it=this->_students.constBegin(); it!=this->_students.constEnd(); it++)
 		selectedStudentsListWidget->addItem(*it);
 	
 	okPushButton->setDefault(true);
@@ -307,7 +311,7 @@ void ModifySubactivityForm::updateActivityTagsListWidget()
 	}
 		
 	selectedActivityTagsListWidget->clear();
-	for(QStringList::Iterator it=this->_activityTags.begin(); it!=this->_activityTags.end(); it++)
+	for(QStringList::const_iterator it=this->_activityTags.constBegin(); it!=this->_activityTags.constEnd(); it++)
 		selectedActivityTagsListWidget->addItem(*it);
 }
 

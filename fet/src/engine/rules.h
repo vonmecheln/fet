@@ -156,7 +156,7 @@ public:
 	
 	//For faster operation
 	//not internal, based on activity id / teacher name / students set name and constraints list
-	QHash<int, Activity*> activitiesPointerHash; //first is id, second is pointer to Rules::activitiesList
+	QHash<int, Activity*> activitiesPointerHash; //first is the id, second is the pointer to the activity in Rules::activitiesList
 	QSet<ConstraintBasicCompulsoryTime*> bctSet;
 	QSet<ConstraintBreakTimes*> btSet;
 	QSet<ConstraintBasicCompulsorySpace*> bcsSet;
@@ -709,6 +709,10 @@ public:
 	bool removeSpaceConstraints(QList<SpaceConstraint*> _scl);
 
 	int xmlReaderNumberOfUnrecognizedFields;
+
+	QList<QString> unrecognizedXmlTags;
+	QList<int> unrecognizedXmlLineNumbers;
+	QList<int> unrecognizedXmlColumnNumbers;
 
 	/**
 	Reads the rules from the xml input file "filename".

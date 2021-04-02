@@ -37,18 +37,11 @@ AddConstraintTeachersMinGapsBetweenRoomChangesForm::AddConstraintTeachersMinGaps
 	minGapsSpinBox->setMinimum(1);
 	minGapsSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minGapsSpinBox->setValue(1);
-
-	constraintChanged();
 }
 
 AddConstraintTeachersMinGapsBetweenRoomChangesForm::~AddConstraintTeachersMinGapsBetweenRoomChangesForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-
-void AddConstraintTeachersMinGapsBetweenRoomChangesForm::constraintChanged()
-{
 }
 
 void AddConstraintTeachersMinGapsBetweenRoomChangesForm::addCurrentConstraint()

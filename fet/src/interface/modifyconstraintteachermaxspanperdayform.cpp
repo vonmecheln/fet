@@ -55,17 +55,11 @@ ModifyConstraintTeacherMaxSpanPerDayForm::ModifyConstraintTeacherMaxSpanPerDayFo
 	teachersComboBox->setCurrentIndex(j);
 	
 	exceptionCheckBox->setChecked(ctr->allowOneDayExceptionPlusOne);
-
-	constraintChanged();
 }
 
 ModifyConstraintTeacherMaxSpanPerDayForm::~ModifyConstraintTeacherMaxSpanPerDayForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void ModifyConstraintTeacherMaxSpanPerDayForm::constraintChanged()
-{
 }
 
 void ModifyConstraintTeacherMaxSpanPerDayForm::ok()

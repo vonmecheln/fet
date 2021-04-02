@@ -54,12 +54,6 @@ void AddConstraintTeacherMinGapsBetweenRoomChangesForm::updateTeachersComboBox()
 	teachersComboBox->clear();
 	for(Teacher* tch : qAsConst(gt.rules.teachersList))
 		teachersComboBox->addItem(tch->name);
-
-	constraintChanged();
-}
-
-void AddConstraintTeacherMinGapsBetweenRoomChangesForm::constraintChanged()
-{
 }
 
 void AddConstraintTeacherMinGapsBetweenRoomChangesForm::addCurrentConstraint()

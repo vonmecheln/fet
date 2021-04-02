@@ -42,7 +42,7 @@ ConstraintTeacherMinRestingHoursForm::ConstraintTeacherMinRestingHoursForm(QWidg
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
 
 	centerWidgetOnScreen(this);
@@ -58,6 +58,12 @@ ConstraintTeacherMinRestingHoursForm::ConstraintTeacherMinRestingHoursForm(QWidg
 	}
 
 	this->filterChanged();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+#else
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+#endif
 }
 
 ConstraintTeacherMinRestingHoursForm::~ConstraintTeacherMinRestingHoursForm()

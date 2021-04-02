@@ -43,8 +43,6 @@ ConstraintTeacherHomeRoomForm::ConstraintTeacherHomeRoomForm(QWidget* parent): Q
 	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-	connect(roomsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -64,6 +62,14 @@ ConstraintTeacherHomeRoomForm::ConstraintTeacherHomeRoomForm(QWidget* parent): Q
 		roomsComboBox->addItem(rm->name);
 
 	this->filterChanged();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(roomsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+#else
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(roomsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+#endif
 }
 
 ConstraintTeacherHomeRoomForm::~ConstraintTeacherHomeRoomForm()

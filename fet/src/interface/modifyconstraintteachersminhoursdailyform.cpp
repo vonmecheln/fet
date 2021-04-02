@@ -52,11 +52,7 @@ ModifyConstraintTeachersMinHoursDailyForm::~ModifyConstraintTeachersMinHoursDail
 
 void ModifyConstraintTeachersMinHoursDailyForm::updateMinHoursSpinBox(){
 	minHoursSpinBox->setMinimum(2);
-	minHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);	
-}
-
-void ModifyConstraintTeachersMinHoursDailyForm::constraintChanged()
-{
+	minHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 }
 
 void ModifyConstraintTeachersMinHoursDailyForm::ok()

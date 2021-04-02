@@ -43,7 +43,6 @@ ConstraintTeachersActivityTagMaxHoursContinuouslyForm::ConstraintTeachersActivit
 	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -57,6 +56,12 @@ ConstraintTeachersActivityTagMaxHoursContinuouslyForm::ConstraintTeachersActivit
 		activityTagsComboBox->addItem(at->name);
 
 	this->filterChanged();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+#else
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+#endif
 }
 
 ConstraintTeachersActivityTagMaxHoursContinuouslyForm::~ConstraintTeachersActivityTagMaxHoursContinuouslyForm()

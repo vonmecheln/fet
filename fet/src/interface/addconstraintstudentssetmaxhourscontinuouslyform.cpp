@@ -22,7 +22,6 @@
 #include "addconstraintstudentssetmaxhourscontinuouslyform.h"
 #include "timeconstraint.h"
 
-
 AddConstraintStudentsSetMaxHoursContinuouslyForm::AddConstraintStudentsSetMaxHoursContinuouslyForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
@@ -53,25 +52,6 @@ AddConstraintStudentsSetMaxHoursContinuouslyForm::~AddConstraintStudentsSetMaxHo
 void AddConstraintStudentsSetMaxHoursContinuouslyForm::updateStudentsSetComboBox()
 {
 	populateStudentsComboBox(studentsComboBox);
-	/*studentsComboBox->clear();
-	for(int i=0; i<gt.rules.yearsList.size(); i++){
-		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->addItem(sty->name);
-		for(int j=0; j<sty->groupsList.size(); j++){
-			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->addItem(stg->name);
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int k=0; k<stg->subgroupsList.size(); k++){
-				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->addItem(sts->name);
-			}
-		}
-	}*/
-
-	constraintChanged();
-}
-
-void AddConstraintStudentsSetMaxHoursContinuouslyForm::constraintChanged()
-{
 }
 
 void AddConstraintStudentsSetMaxHoursContinuouslyForm::addCurrentConstraint()

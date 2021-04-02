@@ -33,23 +33,17 @@ AddConstraintTeachersMinRestingHoursForm::AddConstraintTeachersMinRestingHoursFo
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	circularCheckBox->setChecked(true);
 	
 	minRestingHoursSpinBox->setMinimum(1);
 	minRestingHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minRestingHoursSpinBox->setValue(1);
-	
-	constraintChanged();
 }
 
 AddConstraintTeachersMinRestingHoursForm::~AddConstraintTeachersMinRestingHoursForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void AddConstraintTeachersMinRestingHoursForm::constraintChanged()
-{
 }
 
 void AddConstraintTeachersMinRestingHoursForm::addCurrentConstraint()

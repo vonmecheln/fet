@@ -53,8 +53,6 @@ ModifyConstraintTeacherMaxHoursContinuouslyForm::ModifyConstraintTeacherMaxHours
 	}
 	assert(j>=0);
 	teachersComboBox->setCurrentIndex(j);
-
-	constraintChanged();
 }
 
 ModifyConstraintTeacherMaxHoursContinuouslyForm::~ModifyConstraintTeacherMaxHoursContinuouslyForm()
@@ -64,11 +62,7 @@ ModifyConstraintTeacherMaxHoursContinuouslyForm::~ModifyConstraintTeacherMaxHour
 
 void ModifyConstraintTeacherMaxHoursContinuouslyForm::updateMaxHoursSpinBox(){
 	maxHoursSpinBox->setMinimum(1);
-	maxHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);	
-}
-
-void ModifyConstraintTeacherMaxHoursContinuouslyForm::constraintChanged()
-{
+	maxHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 }
 
 void ModifyConstraintTeacherMaxHoursContinuouslyForm::ok()

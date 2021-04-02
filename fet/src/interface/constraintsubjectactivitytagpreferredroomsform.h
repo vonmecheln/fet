@@ -31,8 +31,6 @@ public:
 	ConstraintSubjectActivityTagPreferredRoomsForm(QWidget* parent);
 	~ConstraintSubjectActivityTagPreferredRoomsForm();
 
-	void refreshConstraintsListWidget();
-
 	bool filterOk(SpaceConstraint* ctr);
 	
 public slots:

@@ -44,10 +44,6 @@ AddConstraintTeachersMaxBuildingChangesPerWeekForm::~AddConstraintTeachersMaxBui
 	saveFETDialogGeometry(this);
 }
 
-void AddConstraintTeachersMaxBuildingChangesPerWeekForm::constraintChanged()
-{
-}
-
 void AddConstraintTeachersMaxBuildingChangesPerWeekForm::addCurrentConstraint()
 {
 	SpaceConstraint *ctr=NULL;

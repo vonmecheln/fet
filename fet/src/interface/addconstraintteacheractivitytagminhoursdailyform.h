@@ -32,7 +32,6 @@ public:
 	void updateMinHoursSpinBox();
 
 public slots:
-	void constraintChanged();
 	void addCurrentConstraint();
 };
 

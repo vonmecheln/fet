@@ -32,7 +32,6 @@ public:
 	void updateTeachersComboBox();
 
 public slots:
-	void constraintChanged();
 	void addCurrentConstraint();
 };
 

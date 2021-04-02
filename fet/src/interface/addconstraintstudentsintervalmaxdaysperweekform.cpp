@@ -61,8 +61,6 @@ void AddConstraintStudentsIntervalMaxDaysPerWeekForm::updateStartHoursComboBox()
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		startHourComboBox->addItem(gt.rules.hoursOfTheDay[i]);
 	startHourComboBox->setCurrentIndex(gt.rules.nHoursPerDay-1);
-	
-	constraintChanged();
 }
 
 void AddConstraintStudentsIntervalMaxDaysPerWeekForm::updateEndHoursComboBox()
@@ -72,12 +70,6 @@ void AddConstraintStudentsIntervalMaxDaysPerWeekForm::updateEndHoursComboBox()
 		endHourComboBox->addItem(gt.rules.hoursOfTheDay[i]);
 	endHourComboBox->addItem(tr("End of day"));
 	endHourComboBox->setCurrentIndex(gt.rules.nHoursPerDay);
-	
-	constraintChanged();
-}
-
-void AddConstraintStudentsIntervalMaxDaysPerWeekForm::constraintChanged()
-{
 }
 
 void AddConstraintStudentsIntervalMaxDaysPerWeekForm::addCurrentConstraint()
@@ -118,7 +110,7 @@ void AddConstraintStudentsIntervalMaxDaysPerWeekForm::addCurrentConstraint()
 		return;
 	}
 
-	ctr=new ConstraintStudentsIntervalMaxDaysPerWeek(weight, /*compulsory,*/ max_days, /*students_name,*/ startHour, endHour);
+	ctr=new ConstraintStudentsIntervalMaxDaysPerWeek(weight, max_days, startHour, endHour);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

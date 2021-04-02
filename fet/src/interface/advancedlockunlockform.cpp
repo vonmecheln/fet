@@ -28,7 +28,7 @@
 #include <QMessageBox>
 
 #include <algorithm>
-using namespace std;
+//using namespace std;
 
 #include "lockunlock.h"
 #include "advancedlockunlockform.h"

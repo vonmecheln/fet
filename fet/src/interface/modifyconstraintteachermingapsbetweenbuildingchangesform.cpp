@@ -34,7 +34,7 @@ ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm::ModifyConstraintTeache
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
-		
+	
 	this->_ctr=ctr;
 	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
@@ -43,9 +43,7 @@ ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm::ModifyConstraintTeache
 
 	minGapsSpinBox->setMinimum(1);
 	minGapsSpinBox->setMaximum(gt.rules.nHoursPerDay);
-	minGapsSpinBox->setValue(ctr->minGapsBetweenBuildingChanges);	
-		
-	constraintChanged();
+	minGapsSpinBox->setValue(ctr->minGapsBetweenBuildingChanges);
 }
 
 ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm::~ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm()
@@ -65,12 +63,6 @@ void ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm::updateTeachersCom
 	}
 	assert(j>=0);
 	teachersComboBox->setCurrentIndex(j);
-
-	constraintChanged();
-}
-
-void ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm::constraintChanged()
-{
 }
 
 void ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm::ok()

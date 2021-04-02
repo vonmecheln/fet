@@ -43,10 +43,6 @@ ConstraintActivityPreferredTimeSlotsForm::ConstraintActivityPreferredTimeSlotsFo
 	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -83,23 +79,22 @@ ConstraintActivityPreferredTimeSlotsForm::ConstraintActivityPreferredTimeSlotsFo
 	activityTagsComboBox->setCurrentIndex(0);
 
 	populateStudentsComboBox(studentsComboBox, QString(""), true);
-	/*studentsComboBox->addItem("");
-	for(int i=0; i<gt.rules.yearsList.size(); i++){
-		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->addItem(sty->name);
-		for(int j=0; j<sty->groupsList.size(); j++){
-			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->addItem(stg->name);
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int k=0; k<stg->subgroupsList.size(); k++){
-				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->addItem(sts->name);
-			}
-		}
-	}*/
 	studentsComboBox->setCurrentIndex(0);
 ///////////////
 
 	this->filterChanged();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+#else
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+#endif
 }
 
 ConstraintActivityPreferredTimeSlotsForm::~ConstraintActivityPreferredTimeSlotsForm()
@@ -122,18 +117,19 @@ bool ConstraintActivityPreferredTimeSlotsForm::filterOk(TimeConstraint* ctr)
 	bool found=true;
 	
 	int id=c->p_activityId;
-	Activity* act=NULL;
+	/*Activity* act=NULL;
 	for(Activity* a : qAsConst(gt.rules.activitiesList))
 		if(a->id==id)
-			act=a;
-
+			act=a;*/
+	Activity* act=gt.rules.activitiesPointerHash.value(id, NULL);
+	
 	found=true;
 	
 	if(act!=NULL){
 		//teacher
 		if(tn!=""){
 			bool ok2=false;
-			for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++)
+			for(QStringList::const_iterator it=act->teachersNames.constBegin(); it!=act->teachersNames.constEnd(); it++)
 				if(*it == tn){
 					ok2=true;
 					break;
@@ -153,7 +149,7 @@ bool ConstraintActivityPreferredTimeSlotsForm::filterOk(TimeConstraint* ctr)
 		//students
 		if(stn!=""){
 			bool ok2=false;
-			for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
+			for(QStringList::const_iterator it=act->studentsNames.constBegin(); it!=act->studentsNames.constEnd(); it++)
 				if(*it == stn){
 					ok2=true;
 					break;
@@ -184,7 +180,7 @@ void ConstraintActivityPreferredTimeSlotsForm::filterChanged()
 	if(constraintsListWidget->count()>0)
 		constraintsListWidget->setCurrentRow(0);
 	else
-		currentConstraintTextEdit->setPlainText(QString(""));
+		constraintChanged(-1);
 }
 
 void ConstraintActivityPreferredTimeSlotsForm::constraintChanged(int index)

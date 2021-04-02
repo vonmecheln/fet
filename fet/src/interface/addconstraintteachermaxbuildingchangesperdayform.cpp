@@ -54,12 +54,6 @@ void AddConstraintTeacherMaxBuildingChangesPerDayForm::updateTeachersComboBox()
 	teachersComboBox->clear();
 	for(Teacher* tch : qAsConst(gt.rules.teachersList))
 		teachersComboBox->addItem(tch->name);
-
-	constraintChanged();
-}
-
-void AddConstraintTeacherMaxBuildingChangesPerDayForm::constraintChanged()
-{
 }
 
 void AddConstraintTeacherMaxBuildingChangesPerDayForm::addCurrentConstraint()

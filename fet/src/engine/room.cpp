@@ -19,8 +19,8 @@
 #include "rules.h"
 #include "messageboxes.h"
 
-#include <iostream>
-using namespace std;
+//#include <iostream>
+//using namespace std;
 
 static QString trueFalse(bool x)
 {

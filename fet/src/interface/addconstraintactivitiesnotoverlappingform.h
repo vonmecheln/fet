@@ -31,8 +31,6 @@ public:
 	AddConstraintActivitiesNotOverlappingForm(QWidget* parent);
 	~AddConstraintActivitiesNotOverlappingForm();
 
-	void updateActivitiesListWidget();
-	
 	bool filterOk(Activity* a);
 
 public slots:

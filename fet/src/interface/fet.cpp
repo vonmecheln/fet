@@ -1,5 +1,5 @@
 /*
-File fet.cpp - this is where the program FET starts
+File fet.cpp - this is where FET starts
 */
 
 /***************************************************************************
@@ -90,6 +90,7 @@ static QSet<QString> languagesSet;
 
 #ifdef FET_COMMAND_LINE
 #include <csignal>
+#include <Qt>
 #include <QtGlobal>
 #endif
 
@@ -204,82 +205,130 @@ void usage(QTextStream* out, const QString& error)
 {
 	QString s="";
 	
-	s+=QString("Incorrect command-line parameters (%1).").arg(error);
+	if(!error.isEmpty()){
+		s+=QString("Incorrect command-line parameters (%1).").arg(error);
 	
-	s+="\n\n";
+		s+="\n\n";
+	}
 	
 	s+=QString(
-		"Command line usage: \"fet-cl --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t] "
-		"[--writetimetableconflicts=wt1] "
-		"[--writetimetablesstatistics=wt2] "
-		"[--writetimetablesxml=wt3] "
-		"[--writetimetablesdayshorizontal=wt4] "
-		"[--writetimetablesdaysvertical=wt5] "
-		"[--writetimetablestimehorizontal=wt6] "
-		"[--writetimetablestimevertical=wt7] "
-		"[--writetimetablessubgroups=wt8] "
-		"[--writetimetablesgroups=wt9] "
-		"[--writetimetablesyears=wt10] "
-		"[--writetimetablesteachers=wt11] "
-		"[--writetimetablesteachersfreeperiods=wt12] "
-		"[--writetimetablesrooms=wt13] "
-		"[--writetimetablessubjects=wt14] "
-		"[--writetimetablesactivitytags=wt15] "
-		"[--writetimetablesactivities=wt16] "
-		"[--printactivitytags=a] [--printnotavailable=u] [--printbreak=b] [--dividetimeaxisbydays=v] [--duplicateverticalheaders=e] "
-		"[--printsimultaneousactivities=w] [--randomseedx=rx --randomseedy=ry] [--warnifusingnotperfectconstraints=s] "
-		"[--warnifusingstudentsminhoursdailywithallowemptydays=p] [--warnifusinggroupactivitiesininitialorder=g] [--warnsubgroupswiththesameactivities=ssa]\n"
-		"[--printdetailedtimetables=pdt] [--printdetailedteachersfreeperiodstimetables=pdtfp] "
-		"[--exportcsv=ecsv] [--overwritecsv=ocsv] [--firstlineisheadingcsv=flhcsv] [--quotescsv=qcsv] [--fieldseparatorcsv=fscsv] "
-		"[--showvirtualrooms=svr] "
-		"[--warnifusingactivitiesnotfixedtimefixedspacevirtualroomsrealrooms=wanftfs] "
-		"[--verbose=r]\",\n"
-		"where:\nx is the input file, for instance \"data.fet\"\n"
-		"d is the path to results directory, without trailing slash or backslash (default is current working path). "
+		"Usage: fet-cl --inputfile=FILE [other options]\n"
+		"\t\tFILE is the input file, for instance \"data.fet\"\n"
+		"\n"
+		"Other options are:\n"
+		"\n"
+		"\t--outputdir=DIR\n"
+		"\t\tDIR is the path to results directory, without trailing slash or backslash (default is current working path). "
 		"Make sure you have write permissions there.\n"
-		"y is integer (seconds) (default 2000000000, which is practically infinite).\n"
-		"z is integer from 0 to 7 and represents the detail level for the generated HTML timetables "
+		"\n"
+		"\t--timelimitseconds=TLS\n"
+		"\t\tTLS is an integer representing the time limit, in seconds, after which the program will stop the generation "
+		"(default 2000000000, which is practically infinite).\n"
+		"\n"
+		"\t--htmllevel=LEVEL\n"
+		"\t\tLEVEL is an integer from 0 to 7 and represents the detail level for the generated HTML timetables "
 		"(default 2, larger values have more details/facilities and larger file sizes).\n"
-		"t is one of ar, ca, cs, da, de, el, en_GB, en_US, es, eu, fa, fr, gl, he, hu, id, it, ja, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sq, sr, tr, "
+		"\n"
+		"\t--language=LANG\n"
+		"\t\tLANG is one of: ar, ca, cs, da, de, el, en_GB, en_US, es, eu, fa, fr, gl, he, hu, id, it, ja, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sq, sr, tr, "
 		"uk, uz, vi, zh_CN, zh_TW (default en_US).\n"
-		"wt1 to wt16 are either true or false and represent whether you want the corresponding timetables to be written on the disk (default true).\n"
-		"a is either true or false and represets if you want activity tags to be present in the final HTML timetables (default true).\n"
-		"u is either true or false and represents if you want -x- (for true) or --- (for false) in the generated timetables for the "
+		"\n"
+		"\t--writetimetableconflicts=WT1\n"
+		"\t--writetimetablesstatistics=WT2\n"
+		"\t--writetimetablesxml=WT3\n"
+		"\t--writetimetablesdayshorizontal=WT4\n"
+		"\t--writetimetablesdaysvertical=WT5\n"
+		"\t--writetimetablestimehorizontal=WT6\n"
+		"\t--writetimetablestimevertical=WT7\n"
+		"\t--writetimetablessubgroups=WT8\n"
+		"\t--writetimetablesgroups=WT9\n"
+		"\t--writetimetablesyears=WT10\n"
+		"\t--writetimetablesteachers=WT11\n"
+		"\t--writetimetablesteachersfreeperiods=WT12\n"
+		"\t--writetimetablesrooms=WT13\n"
+		"\t--writetimetablessubjects=WT14\n"
+		"\t--writetimetablesactivitytags=WT15\n"
+		"\t--writetimetablesactivities=WT16\n"
+		"\t\tWT1 to WT16 are either true or false and represent whether you want the corresponding timetables to be written on the disk (default true).\n"
+		"\n"
+		"\t--printactivitytags=PAT\n"
+		"\t\tPAT is either true or false and represets if you want activity tags to be present in the final HTML timetables (default true).\n"
+		"\n"
+		"\t--printnotavailable=PNA\n"
+		"\t\tPNA is either true or false and represents if you want -x- (for true) or --- (for false) in the generated timetables for the "
 		"not available slots (default true).\n"
-		"b is either true or false and represents if you want -X- (for true) or --- (for false) in the generated timetables for the "
+		"\n"
+		"\t--printbreak=PB\n"
+		"\t\tPB is either true or false and represents if you want -X- (for true) or --- (for false) in the generated timetables for the "
 		"break slots (default true).\n"
-		"v is either true or false, represents if you want the HTML timetables with time-axis divided by days (default false).\n"
-		"e is either true or false, represents if you want the HTML timetables to duplicate vertical headers to the right of the tables, for easier reading (default false).\n"
-		"w is either true or false, represents if you want the HTML timetables to show related activities which have constraints with same starting time (default false).\n"
+		"\n"
+		"\t--dividetimeaxisbydays=DTAD\n"
+		"\t\tDTAD is either true or false, represents if you want the HTML timetables with time-axis divided by days (default false).\n"
+		"\n"
+		"\t--duplicateverticalheaders=DVH\n"
+		"\t\tDVH is either true or false, represents if you want the HTML timetables to duplicate vertical headers to the right of the tables, for easier reading (default false).\n"
+		"\n"
+		"\t--printsimultaneousactivities=PSA\n"
+		"\t\tPSA is either true or false, represents if you want the HTML timetables to show related activities which have constraints with same starting time (default false). "
 		"(for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's timetable will appear also A2, at the same slot "
 		"as A1).\n"
-		"rx is the random seed X component, minimum 1 to maximum 2147483646, ry is the random seed Y component, minimum 1 to maximum 2147483398"
-		" (you can get the same timetable if the input file is identical, if the FET version is the same and if the random seed X and Y components are the same).\n"
-		"s is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect constraints "
+		"\n"
+		"\t--randomseedx=RANDX --randomseedy=RANDY\n"
+		"\t\tRANDX is the random seed X component, minimum 1 to maximum 2147483646, RANDY is the random seed Y component, minimum 1 to maximum 2147483398"
+		" (you can get the same timetable if the input file is identical, if the FET version is the same, and if the random seed X and Y components are the same).\n"
+		"\n"
+		"\t--warnifusingnotperfectconstraints=WNP\n"
+		"\t\tWNP is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect constraints "
 		"(activity tag max hours daily or students max gaps per day) (default true).\n"
-		"p is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard constraints "
+		"\n"
+		"\t--warnifusingstudentsminhoursdailywithallowemptydays=WSMHDAED\n"
+		"\t\tSMHDAEDP is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard constraints "
 		"students min hours daily with allow empty days (default true).\n"
-		"g is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard timetable "
+		"\n"
+		"\t--warnifusinggroupactivitiesininitialorder=WGA\n"
+		"\t\tWGA is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard timetable "
 		"generation options to group activities in the initial order (default true).\n"
-		"ssa is either true or false, represents whether you want a message box to be show, with a warning, if your input file contains subgroups which have "
+		"\n"
+		"\t--warnsubgroupswiththesameactivities=WSSA\n"
+		"\t\tWSSA is either true or false, represents whether you want a message box to be show, with a warning, if your input file contains subgroups which have "
 		"the same activities (default true).\n"
-		"pdt is either true or false, represents whether you want to show the detailed (true) or less detailed (false) years and groups timetables (default true).\n"
-		"pdtfp is either true or false, represents whether you want to show the detailed (true) or less detailed (false) teachers free periods timetables (default true).\n"
-		"ecsv is either true or false, represents whether you want to export the CSV file and timetables (default false).\n"
-		"ocsv is either true or false, represents whether you want to overwrite old CSV files, if they exist (default false).\n"
-		"flhcsv is either true or false, represents whether you want the heading of the CSV files to be header (true) or data (false). The default value is true.\n"
-		"qcsv is one value from the set [doublequotes|singlequotes|none] (write a single value from these three exactly as it is written here). The default value is "
+		"\n"
+		"\t--printdetailedtimetables=PDT\n"
+		"\t\tPDT is either true or false, represents whether you want to show the detailed (true) or less detailed (false) years and groups timetables (default true).\n"
+		"\n"
+		"\t--printdetailedteachersfreeperiodstimetables=PDTFP\n"
+		"\t\tPDTFP is either true or false, represents whether you want to show the detailed (true) or less detailed (false) teachers free periods timetables (default true).\n"
+		"\n"
+		"\t--exportcsv=ECSV\n"
+		"\t\tECSV is either true or false, represents whether you want to export the CSV file and timetables (default false).\n"
+		"\n"
+		"\t--overwritecsv=OCSV\n"
+		"\t\tOCSV is either true or false, represents whether you want to overwrite old CSV files, if they exist (default false).\n"
+		"\n"
+		"\t--firstlineisheadingcsv=FLHCSV\n"
+		"\t\tFLHCSV is either true or false, represents whether you want the heading of the CSV files to be header (true) or data (false). The default value is true.\n"
+		"\n"
+		"\t--quotescsv=QCSV\n"
+		"\t\tQCSV is one value from the set [doublequotes|singlequotes|none] (write a single value from these three exactly as it is written here). The default value is "
 		"doublequotes.\n"
-		"fscsv is one value from the set [comma|semicolon|verticalbar] (write a single value from these three exactly as it is written here). The default value is "
+		"\n"
+		"\t--fieldseparatorcsv=FSCSV\n"
+		"\t\tFSCSV is one value from the set [comma|semicolon|verticalbar] (write a single value from these three exactly as it is written here). The default value is "
 		"comma.\n"
-		"svr is either true or false, represents whether you want to show virtual rooms in the timetables (default false).\n"
-		"wanftfs is either true or false, represents whether you want the program to issue a warning if you are using activites which are not fixed in time, "
+		"\n"
+		"\t--showvirtualrooms=SVR\n"
+		"\t\tSVR is either true or false, represents whether you want to show virtual rooms in the timetables (default false).\n"
+		"\n"
+		"\t--warnifusingactivitiesnotfixedtimefixedspacevirtualroomsrealrooms=WANFTFS\n"
+		"\t\tWANFTFS is either true or false, represents whether you want the program to issue a warning if you are using activites which are not fixed in time, "
 		"but are fixed in space in a virtual room, specifying also the real rooms (which is not recommended) (default true).\n"
-		"r is either true or false, represents whether you want additional generation messages and other messages to be shown on the command line (default false).\n"
-		"Alternatively, you can run \"fet-cl --version [--outputdir=d]\" to get the current FET version, "
-		"where\nd is the path to results directory, without trailing slash or backslash (default is current working path). "
-		"Make sure you have write permissions there.\n"
-		"(If you specify the \"--version\" argument, FET just prints version number on the command line prompt and in the output directory and exits.)\n"
+		"\n"
+		"\t--verbose=VBS\n"
+		"\t\tVBS is either true or false, represents whether you want additional generation messages and other messages to be shown on the command line (default false).\n"
+		"\n"
+		"Run \"fet-cl --help\" to get usage information.\n"
+		"\n"
+		"Run \"fet-cl --version\" to get version information.\n"
 		"\n"
 		"You can ask the FET command line process to stop the timetable generation, by sending it the SIGTERM (or SIGBREAK, on Windows) signal. "
 		"FET will then write the current timetable and the highest stage timetable and exit. "
@@ -288,7 +337,11 @@ void usage(QTextStream* out, const QString& error)
 	
 	cout<<qPrintable(s)<<endl;
 	if(out!=NULL)
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		(*out)<<qPrintable(s)<<Qt::endl;
+#else
 		(*out)<<qPrintable(s)<<endl;
+#endif
 }
 #endif
 
@@ -889,6 +942,8 @@ int main(int argc, char **argv)
 	/////////////////////////////////////////////////
 	//begin command line
 	if(_args.count()>1){
+		bool showHelp=false;
+	
 		int randomSeedX=-1;
 		int randomSeedY=-1;
 		bool randomSeedXSpecified=false;
@@ -1047,6 +1102,9 @@ int main(int argc, char **argv)
 				if(s.right(4)=="true")
 					VERBOSE=true;
 			}
+			else if(s=="--help"){
+				showHelp=true;
+			}
 			else if(s=="--version"){
 				showVersion=true;
 			}
@@ -1147,6 +1205,46 @@ int main(int argc, char **argv)
 				unrecognizedOptions.append(s);
 		}
 		
+		if(filename==""){
+			if(unrecognizedOptions.count()>0){
+				for(const QString& s : qAsConst(unrecognizedOptions)){
+					cout<<"Unrecognized option: "<<qPrintable(s)<<endl;
+				}
+				cout<<endl;
+			}
+
+			if(showHelp){
+				usage(NULL, QString(""));
+				return 0;
+			}
+			else if(showVersion){
+				cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
+				cout<<"Free timetabling software, licensed under the GNU Affero General Public License version 3 or later"<<endl;
+				cout<<"Copyright (C) 2002-2020 Liviu Lalescu, Volker Dirr"<<endl;
+				cout<<"Homepage: https://lalescu.ro/liviu/fet/"<<endl;
+				cout<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<endl;
+				cout<<"Depending on the platform and compiler, this program may use libraries from:"<<endl;
+				cout<<"  gcc, Copyright (C) Free Software Foundation, Inc."<<endl;
+				cout<<"  mingw-w64, Copyright (c) by the mingw-w64 project"<<endl;
+				return 0;
+			}
+			else{
+				usage(NULL, QString("Input file not specified"));
+				return 1;
+			}
+		}
+		else if(!QFile::exists(filename)){
+			if(unrecognizedOptions.count()>0){
+				for(const QString& s : qAsConst(unrecognizedOptions)){
+					cout<<"Unrecognized option: "<<qPrintable(s)<<endl;
+				}
+				cout<<endl;
+			}
+
+			cout<<"Error: the specified input file "<<qPrintable(filename)<<" is not existing"<<endl;
+			return 1;
+		}
+		
 		INPUT_FILENAME_XML=filename;
 		
 		QString initialDir=outputDirectory;
@@ -1195,65 +1293,51 @@ int main(int argc, char **argv)
 		QTextStream out(&logFile);
 		///////
 		
+		if(unrecognizedOptions.count()>0){
+			for(const QString& s : qAsConst(unrecognizedOptions)){
+				cout<<"Unrecognized option: "<<qPrintable(s)<<endl;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				out<<"Unrecognized option: "<<qPrintable(s)<<Qt::endl;
+#else
+				out<<"Unrecognized option: "<<qPrintable(s)<<endl;
+#endif
+			}
+			cout<<endl;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			out<<Qt::endl;
+#else
+			out<<endl;
+#endif
+		}
+		
 		//Cleanup the previous unsuccessful generation, if any. No need to remove the other files, they are overwritten.
 		QFile oldDifficultActivitiesFile(logsDir+"difficult_activities.txt");
 		if(oldDifficultActivitiesFile.exists()){
 			bool t=oldDifficultActivitiesFile.remove();
 			if(!t){
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				out<<"Cannot remove the old existing file "<<qPrintable(logsDir)<<"difficult_activities.txt"<<Qt::endl;
+#else
 				out<<"Cannot remove the old existing file "<<qPrintable(logsDir)<<"difficult_activities.txt"<<endl;
+#endif
 				cout<<"Cannot remove the old existing file "<<qPrintable(logsDir)<<"difficult_activities.txt"<<endl;
 			}
 		}
 		
 		setLanguage(qCoreApplication, NULL);
 		
-		if(showVersion){
-			out<<"This file contains the result (log) of last operation"<<endl<<endl;
-		
-			QDate dat=QDate::currentDate();
-			QTime tim=QTime::currentTime();
-			QLocale loc(FET_LANGUAGE);
-			QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
-			out<<"FET command line request for version started on "<<qPrintable(sTime)<<endl<<endl;
-	
-			out<<"FET version "<<qPrintable(FET_VERSION)<<endl;
-			out<<"Free timetabling software, licensed under the GNU Affero General Public License version 3 or later"<<endl;
-			out<<"Copyright (C) 2002-2020 Liviu Lalescu, Volker Dirr"<<endl;
-			out<<"Homepage: https://lalescu.ro/liviu/fet/"<<endl;
-			out<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<endl;
-			out<<"Depending on the platform and compiler, this program may use libraries from:"<<endl;
-			out<<"  gcc, Copyright (C) Free Software Foundation, Inc."<<endl;
-			out<<"  mingw-w64, Copyright (c) by the mingw-w64 project"<<endl;
-
-			cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
-			cout<<"Free timetabling software, licensed under the GNU Affero General Public License version 3 or later"<<endl;
-			cout<<"Copyright (C) 2002-2020 Liviu Lalescu, Volker Dirr"<<endl;
-			cout<<"Homepage: https://lalescu.ro/liviu/fet/"<<endl;
-			cout<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<endl;
-			cout<<"Depending on the platform and compiler, this program may use libraries from:"<<endl;
-			cout<<"  gcc, Copyright (C) Free Software Foundation, Inc."<<endl;
-			cout<<"  mingw-w64, Copyright (c) by the mingw-w64 project"<<endl;
-
-			if(unrecognizedOptions.count()>0){
-				out<<endl;
-				cout<<endl;
-				for(const QString& s : qAsConst(unrecognizedOptions)){
-					cout<<"Unrecognized option: "<<qPrintable(s)<<endl;
-					out<<"Unrecognized option: "<<qPrintable(s)<<endl;
-				}
-			}
-
-			logFile.close();
-			return 0;
-		}
-		
 		QFile maxPlacedActivityFile(logsDir+"max_placed_activities.txt");
 		maxPlacedActivityFile.open(QIODevice::WriteOnly);
 		QTextStream maxPlacedActivityStream(&maxPlacedActivityFile);
 		maxPlacedActivityStream.setCodec("UTF-8");
 		maxPlacedActivityStream.setGenerateByteOrderMark(true);
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		maxPlacedActivityStream<<FetTranslate::tr("This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity"
+			" in the initial order of the activities")<<Qt::endl<<Qt::endl;
+#else
 		maxPlacedActivityStream<<FetTranslate::tr("This is the list of max placed activities, chronologically. If FET could reach maximum n-th activity, look at the n+1-st activity"
 			" in the initial order of the activities")<<endl<<endl;
+#endif
 				
 		QFile initialOrderFile(logsDir+"initial_order.txt");
 		initialOrderFile.open(QIODevice::WriteOnly);
@@ -1261,22 +1345,21 @@ int main(int argc, char **argv)
 		initialOrderStream.setCodec("UTF-8");
 		initialOrderStream.setGenerateByteOrderMark(true);
 						
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		out<<"This file contains the result (log) of last operation"<<Qt::endl<<Qt::endl;
+#else
 		out<<"This file contains the result (log) of last operation"<<endl<<endl;
+#endif
 		
 		QDate dat=QDate::currentDate();
 		QTime tim=QTime::currentTime();
 		QLocale loc(FET_LANGUAGE);
 		QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		out<<"FET command line simulation started on "<<qPrintable(sTime)<<Qt::endl<<Qt::endl;
+#else
 		out<<"FET command line simulation started on "<<qPrintable(sTime)<<endl<<endl;
-		
-		if(unrecognizedOptions.count()>0){
-			for(const QString& s : qAsConst(unrecognizedOptions)){
-				cout<<"Unrecognized option: "<<qPrintable(s)<<endl;
-				out<<"Unrecognized option: "<<qPrintable(s)<<endl;
-			}
-			cout<<endl;
-			out<<endl;
-		}
+#endif
 		
 		if(outputDirectory!="")
 			if(!dir.exists(outputDirectory))
@@ -1291,8 +1374,13 @@ int main(int argc, char **argv)
 		if(!t_t){
 			cout<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(outputDirectory)<<"test_write_permissions_2.tmp)."
 			 " If this is a bug - please report it."<<endl;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			out<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(outputDirectory)<<"test_write_permissions_2.tmp)."
+			 " If this is a bug - please report it."<<Qt::endl;
+#else
 			out<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(outputDirectory)<<"test_write_permissions_2.tmp)."
 			 " If this is a bug - please report it."<<endl;
+#endif
 			return 1;
 		}
 		else{
@@ -1301,28 +1389,28 @@ int main(int argc, char **argv)
 				test.remove();
 		}
 
-		if(filename==""){
-			usage(&out, QString("Input file not specified"));
-			logFile.close();
-			return 1;
-		}
+//		if(filename==""){
+//			usage(/*&out*/NULL, QString("Input file not specified"));
+//			logFile.close();
+//			return 1;
+//		}
 		if(secondsLimit==0){
-			usage(&out, QString("Time limit is 0 seconds"));
+			usage(/*&out*/NULL, QString("Time limit is 0 seconds"));
 			logFile.close();
 			return 1;
 		}
 		if(TIMETABLE_HTML_LEVEL>7 || TIMETABLE_HTML_LEVEL<0){
-			usage(&out, QString("Html level must be 0, 1, 2, 3, 4, 5, 6, or 7"));
+			usage(/*&out*/NULL, QString("Html level must be 0, 1, 2, 3, 4, 5, 6, or 7"));
 			logFile.close();
 			return 1;
 		}
 		if(randomSeedXSpecified != randomSeedYSpecified){
 			if(randomSeedXSpecified){
-				usage(&out, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the X component"));
+				usage(/*&out*/NULL, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the X component"));
 			}
 			else{
 				assert(randomSeedYSpecified);
-				usage(&out, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the Y component"));
+				usage(/*&out*/NULL, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the Y component"));
 			}
 			logFile.close();
 			return 1;
@@ -1330,14 +1418,14 @@ int main(int argc, char **argv)
 		assert(randomSeedXSpecified==randomSeedYSpecified);
 		if(randomSeedXSpecified){
 			if(randomSeedX<=0 || randomSeedX>=MM){
-				usage(&out, QString("Random seed X component must be at least 1 and at most %1").arg(MM-1));
+				usage(/*&out*/NULL, QString("Random seed X component must be at least 1 and at most %1").arg(MM-1));
 				logFile.close();
 				return 1;
 			}
 		}
 		if(randomSeedYSpecified){
 			if(randomSeedY<=0 || randomSeedY>=MMM){
-				usage(&out, QString("Random seed Y component must be at least 1 and at most %1").arg(MMM-1));
+				usage(/*&out*/NULL, QString("Random seed Y component must be at least 1 and at most %1").arg(MMM-1));
 				logFile.close();
 				return 1;
 			}
@@ -1357,7 +1445,11 @@ int main(int argc, char **argv)
 		bool t=gt.rules.read(NULL, filename, true, initialDir);
 		if(!t){
 			cout<<"fet-cl: cannot read input file (not existing, in use, or incorrect file) - aborting"<<endl;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			out<<"Cannot read input file (not existing, in use, or incorrect file) - aborting"<<Qt::endl;
+#else
 			out<<"Cannot read input file (not existing, in use, or incorrect file) - aborting"<<endl;
+#endif
 			logFile.close();
 			return 1;
 		}
@@ -1371,7 +1463,11 @@ int main(int argc, char **argv)
 		}
 		if(count<1){
 			cout<<"Please input at least one active activity before generating"<<endl;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			out<<"Please input at least one active activity before generating"<<Qt::endl;
+#else
 			out<<"Please input at least one active activity before generating"<<endl;
+#endif
 			logFile.close();
 			return 1;
 		}
@@ -1379,7 +1475,11 @@ int main(int argc, char **argv)
 		t=gt.rules.computeInternalStructure(NULL);
 		if(!t){
 			cout<<"Cannot compute internal structure - aborting"<<endl;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			out<<"Cannot compute internal structure - aborting"<<Qt::endl;
+#else
 			out<<"Cannot compute internal structure - aborting"<<endl;
+#endif
 			logFile.close();
 			return 1;
 		}
@@ -1399,7 +1499,11 @@ int main(int argc, char **argv)
 		
 		if(!ok){
 			cout<<"Cannot precompute - data is wrong - aborting"<<endl;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			out<<"Cannot precompute - data is wrong - aborting"<<Qt::endl;
+#else
 			out<<"Cannot precompute - data is wrong - aborting"<<endl;
+#endif
 			logFile.close();
 			return 1;
 		}
@@ -1407,7 +1511,11 @@ int main(int argc, char **argv)
 		bool impossible, timeExceeded;
 		
 		cout<<"Starting timetable generation..."<<endl;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		out<<"Starting timetable generation..."<<Qt::endl;
+#else
 		out<<"Starting timetable generation..."<<endl;
+#endif
 		if(VERBOSE){
 			cout<<"secondsLimit=="<<secondsLimit<<endl;
 		}
@@ -1421,7 +1529,11 @@ int main(int argc, char **argv)
 	
 		if(impossible){
 			cout<<"Impossible"<<endl;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			out<<"Impossible"<<Qt::endl;
+#else
 			out<<"Impossible"<<endl;
+#endif
 			
 			//2016-11-17 - suggested by thanhnambkhn, FET will write the impossible activity and the current and highest-stage timetables
 			//(which should be identical)
@@ -1481,7 +1593,11 @@ int main(int argc, char **argv)
 			difficultActivitiesOut.setCodec("UTF-8");
 			difficultActivitiesOut.setGenerateByteOrderMark(true);
 			
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			difficultActivitiesOut<<s<<Qt::endl;
+#else
 			difficultActivitiesOut<<s<<endl;
+#endif
 			
 			//2011-11-11 (2)
 			//write highest stage timetable
@@ -1521,11 +1637,19 @@ int main(int argc, char **argv)
 		else if(timeExceeded || gen.abortOptimization){
 			if(timeExceeded){
 				cout<<"Time exceeded"<<endl;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				out<<"Time exceeded"<<Qt::endl;
+#else
 				out<<"Time exceeded"<<endl;
+#endif
 			}
 			else if(gen.abortOptimization){
 				cout<<"Simulation stopped"<<endl;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				out<<"Simulation stopped"<<Qt::endl;
+#else
 				out<<"Simulation stopped"<<endl;
+#endif
 			}
 			//by Ian Holden (end)
 			
@@ -1605,7 +1729,11 @@ int main(int argc, char **argv)
 			difficultActivitiesOut.setCodec("UTF-8");
 			difficultActivitiesOut.setGenerateByteOrderMark(true);
 			
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			difficultActivitiesOut<<s<<Qt::endl;
+#else
 			difficultActivitiesOut<<s<<endl;
+#endif
 			
 			//2011-11-11 (2)
 			//write highest stage timetable
@@ -1641,7 +1769,11 @@ int main(int argc, char **argv)
 		}
 		else{
 			cout<<"Simulation successful"<<endl;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			out<<"Simulation successful"<<Qt::endl;
+#else
 			out<<"Simulation successful"<<endl;
+#endif
 		
 			TimetableExport::writeRandomSeedCommandLine(NULL, outputDirectory, false); //false represents 'before' state
 

@@ -207,20 +207,6 @@ void AddConstraintSubactivitiesPreferredStartingTimesForm::updateTeachersComboBo
 
 void AddConstraintSubactivitiesPreferredStartingTimesForm::updateStudentsComboBox(){
 	populateStudentsComboBox(studentsComboBox, QString(""), true);
-	/*studentsComboBox->clear();
-	studentsComboBox->addItem("");
-	for(int i=0; i<gt.rules.yearsList.size(); i++){
-		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->addItem(sty->name);
-		for(int j=0; j<sty->groupsList.size(); j++){
-			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->addItem(stg->name);
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int k=0; k<stg->subgroupsList.size(); k++){
-				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->addItem(sts->name);
-			}
-		}
-	}*/
 }
 
 void AddConstraintSubactivitiesPreferredStartingTimesForm::updateSubjectsComboBox(){
@@ -278,8 +264,6 @@ void AddConstraintSubactivitiesPreferredStartingTimesForm::addConstraint()
 		
 	QList<int> days_L;
 	QList<int> hours_L;
-	//int days[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];
-	//int hours[MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES];
 	int n=0;
 	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 		for(int i=0; i<gt.rules.nHoursPerDay; i++)
@@ -298,7 +282,7 @@ void AddConstraintSubactivitiesPreferredStartingTimesForm::addConstraint()
 				return;
 	}
 
-	ctr=new ConstraintSubactivitiesPreferredStartingTimes(weight, componentNumberSpinBox->value(),/*compulsory,*/ teacher, students, subject, activityTag, duration, n, days_L, hours_L);
+	ctr=new ConstraintSubactivitiesPreferredStartingTimes(weight, componentNumberSpinBox->value(), teacher, students, subject, activityTag, duration, n, days_L, hours_L);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2){

@@ -40,10 +40,6 @@ AddConstraintBasicCompulsoryTimeForm::~AddConstraintBasicCompulsoryTimeForm()
 	saveFETDialogGeometry(this);
 }
 
-void AddConstraintBasicCompulsoryTimeForm::constraintChanged()
-{
-}
-
 void AddConstraintBasicCompulsoryTimeForm::addCurrentConstraint()
 {
 	TimeConstraint *ctr=NULL;

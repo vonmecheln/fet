@@ -61,17 +61,14 @@ SubactivitiesForm::SubactivitiesForm(QWidget* parent, const QString& teacherName
 	QSettings settings(COMPANY, PROGRAM);
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
-	recursiveCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/show-related-check-box-state"), "false").toBool());
+	showRelatedCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/show-related-check-box-state"), "false").toBool());
 
 	connect(subactivitiesListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(subactivityChanged()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(studentsFilterChanged()));
-	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+
 	connect(modifySubactivityPushButton, SIGNAL(clicked()), this, SLOT(modifySubactivity()));
-	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 	connect(subactivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifySubactivity()));
-	connect(recursiveCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
+	connect(showRelatedCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
 	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
 	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(subactivityComments()));
 
@@ -115,30 +112,6 @@ SubactivitiesForm::SubactivitiesForm(QWidget* parent, const QString& teacherName
 	activityTagsComboBox->setCurrentIndex(ciat);
 
 	int cist=populateStudentsComboBox(studentsComboBox, studentsSetName, true);
-	/*studentsComboBox->addItem("");
-	int cist=0;
-	int currentID=0;
-	for(int i=0; i<gt.rules.yearsList.size(); i++){
-		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->addItem(sty->name);
-		currentID++;
-		if(sty->name==studentsSetName)
-			cist=currentID;
-		for(int j=0; j<sty->groupsList.size(); j++){
-			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->addItem(stg->name);
-			currentID++;
-			if(stg->name==studentsSetName)
-				cist=currentID;
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int k=0; k<stg->subgroupsList.size(); k++){
-				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->addItem(sts->name);
-				currentID++;
-				if(sts->name==studentsSetName)
-					cist=currentID;
-			}
-		}
-	}*/
 	if(studentsSetName==""){
 		assert(cist==0);
 		studentsComboBox->setCurrentIndex(0);
@@ -189,6 +162,18 @@ SubactivitiesForm::SubactivitiesForm(QWidget* parent, const QString& teacherName
 
 		this->filterChanged();
 	}*/
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(studentsFilterChanged()));
+	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+#else
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(studentsFilterChanged()));
+	connect(subjectsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+#endif
 }
 
 SubactivitiesForm::~SubactivitiesForm()
@@ -198,7 +183,7 @@ SubactivitiesForm::~SubactivitiesForm()
 	QSettings settings(COMPANY, PROGRAM);
 	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
 
-	settings.setValue(this->metaObject()->className()+QString("/show-related-check-box-state"), recursiveCheckBox->isChecked());
+	settings.setValue(this->metaObject()->className()+QString("/show-related-check-box-state"), showRelatedCheckBox->isChecked());
 }
 
 bool SubactivitiesForm::filterOk(Activity* act)
@@ -212,7 +197,7 @@ bool SubactivitiesForm::filterOk(Activity* act)
 	//teacher
 	if(tn!=""){
 		bool ok2=false;
-		for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++)
+		for(QStringList::const_iterator it=act->teachersNames.constBegin(); it!=act->teachersNames.constEnd(); it++)
 			if(*it == tn){
 				ok2=true;
 				break;
@@ -233,7 +218,7 @@ bool SubactivitiesForm::filterOk(Activity* act)
 	//students
 	if(stn!=""){
 		bool ok2=false;
-		for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
+		for(QStringList::const_iterator it=act->studentsNames.constBegin(); it!=act->studentsNames.constEnd(); it++)
 			if(showedStudents.contains(*it)){
 				//if(*it == stn){
 				ok2=true;
@@ -252,11 +237,11 @@ bool SubactivitiesForm::filterOk(Activity* act)
 
 void SubactivitiesForm::studentsFilterChanged()
 {
-	bool showContained=recursiveCheckBox->isChecked();
+	bool showRelated=showRelatedCheckBox->isChecked();
 	
 	showedStudents.clear();
 	
-	if(!showContained){
+	if(!showRelated){
 		showedStudents.insert(studentsComboBox->currentText());
 	}
 	else{
@@ -345,9 +330,9 @@ void SubactivitiesForm::filterChanged()
 	
 	assert(nsubacts-ninact>=0);
 	assert(nh-ninacth>=0);
-	activeTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the number of total activities."
+	activeTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active subactivities, %2 is the total number of subactivities."
 		"Please leave space between fields, so that they are better visible").arg(nsubacts-ninact).arg(nsubacts));
-	totalTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the duration of total activities."
+	totalTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active subactivities, %2 is the total duration of subactivities."
 		"Please leave space between fields, so that they are better visible").arg(nh-ninacth).arg(nh));
 	
 	if(subactivitiesListWidget->count()>0)

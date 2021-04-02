@@ -31,25 +31,19 @@ ModifyConstraintTeachersMaxBuildingChangesPerDayForm::ModifyConstraintTeachersMa
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	this->_ctr=ctr;
 	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 	
 	maxChangesSpinBox->setMinimum(0);
 	maxChangesSpinBox->setMaximum(gt.rules.nHoursPerDay);
-	maxChangesSpinBox->setValue(ctr->maxBuildingChangesPerDay);	
-		
-	constraintChanged();
+	maxChangesSpinBox->setValue(ctr->maxBuildingChangesPerDay);
 }
 
 ModifyConstraintTeachersMaxBuildingChangesPerDayForm::~ModifyConstraintTeachersMaxBuildingChangesPerDayForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void ModifyConstraintTeachersMaxBuildingChangesPerDayForm::constraintChanged()
-{
 }
 
 void ModifyConstraintTeachersMaxBuildingChangesPerDayForm::ok()

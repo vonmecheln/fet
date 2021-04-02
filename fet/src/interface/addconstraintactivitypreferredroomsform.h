@@ -30,7 +30,6 @@ public:
 	~AddConstraintActivityPreferredRoomsForm();
 
 	void updateRoomsListWidget();
-	void updateActivitiesComboBox();
 	
 	bool filterOk(Activity* a);
 

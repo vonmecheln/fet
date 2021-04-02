@@ -32,8 +32,6 @@ public:
 	AddConstraintMaxDaysBetweenActivitiesForm(QWidget* parent);
 	~AddConstraintMaxDaysBetweenActivitiesForm();
 
-	void updateActivitiesListWidget();
-
 	bool filterOk(Activity* a);
 
 public slots:

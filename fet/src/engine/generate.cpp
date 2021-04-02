@@ -45,6 +45,7 @@ So at least for now FET will use QList.*/
 
 #include <ctime>
 
+#include <Qt>
 #include <QtAlgorithms>
 
 #include <iostream>
@@ -4064,7 +4065,11 @@ if(threaded){
 					//QString s=QString("At time ")+CustomFETString::number(hh)+QString(" h ")+CustomFETString::number(mm)+QString(" m ")+CustomFETString::number(sec)
 					//	+QString(" s, FET reached ")+CustomFETString::number(maxActivitiesPlaced)+QString(" activities placed\n");
 					
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+					(*maxPlacedActivityStream)<<s<<Qt::endl;
+#else
 					(*maxPlacedActivityStream)<<s<<endl;
+#endif
 					//(*maxPlacedActivityStream).flush();
 				}
 			}

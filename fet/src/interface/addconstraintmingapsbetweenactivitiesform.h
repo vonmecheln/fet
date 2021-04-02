@@ -32,8 +32,6 @@ public:
 	AddConstraintMinGapsBetweenActivitiesForm(QWidget* parent);
 	~AddConstraintMinGapsBetweenActivitiesForm();
 
-	void updateActivitiesListWidget();
-
 	bool filterOk(Activity* a);
 
 public slots:

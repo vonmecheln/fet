@@ -30,10 +30,8 @@ public:
 	~AddConstraintTeachersMinDaysPerWeekForm();
 
 	void updateMinDaysSpinBox();
-	//void updateTeachersComboBox();
 
 public slots:
-	//void constraintChanged();
 	void addCurrentConstraint();
 };
 

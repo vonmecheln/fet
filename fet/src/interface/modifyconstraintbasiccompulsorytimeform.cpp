@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-
-
 #include "modifyconstraintbasiccompulsorytimeform.h"
 #include "timeconstraint.h"
 
@@ -42,10 +40,6 @@ ModifyConstraintBasicCompulsoryTimeForm::ModifyConstraintBasicCompulsoryTimeForm
 ModifyConstraintBasicCompulsoryTimeForm::~ModifyConstraintBasicCompulsoryTimeForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void ModifyConstraintBasicCompulsoryTimeForm::constraintChanged()
-{
 }
 
 void ModifyConstraintBasicCompulsoryTimeForm::ok()

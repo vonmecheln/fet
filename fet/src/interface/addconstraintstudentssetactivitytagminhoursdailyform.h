@@ -33,7 +33,6 @@ public:
 	void updateActivityTagsComboBox();
 
 public slots:
-	void constraintChanged();
 	void addCurrentConstraint();
 };
 

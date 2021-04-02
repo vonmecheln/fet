@@ -36,7 +36,7 @@
 #include "timetable.h"
 
 #include <algorithm>
-using namespace std;
+//using namespace std;
 
 extern Timetable gt;
 
@@ -60,7 +60,6 @@ SpreadMinDaysConstraintsFiveDaysForm::SpreadMinDaysConstraintsFiveDaysForm(QWidg
 SpreadMinDaysConstraintsFiveDaysForm::~SpreadMinDaysConstraintsFiveDaysForm()
 {
 	saveFETDialogGeometry(this);
-
 }
 
 void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
@@ -91,7 +90,6 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 		 tr("Invalid weight (percentage) for activities split into 3 components - must be real number >=0.0 and <=100.0"));
 		return;
 	}
-
 
 	bool spread2=spread2CheckBox->isChecked();
 	bool spread3=spread3CheckBox->isChecked();
@@ -252,18 +250,18 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 			//int acts[10];
 			QList<int> acts;
 			
-			n_acts=2;			
+			n_acts=2;
 			acts.clear();
 			//acts[0]=cl.at(aloneComponent);
 			acts.append(cl.at(aloneComponent));
 			//acts[1]=cl.at(notAloneComp1);
 			acts.append(cl.at(notAloneComp1));
-				
+			
 			c2=new ConstraintMinDaysBetweenActivities(weight3, consecutiveIfSameDay, n_acts, acts, 2);
 
 			//////////
 
-			n_acts=2;			
+			n_acts=2;
 			acts.clear();
 			//acts[0]=cl.at(aloneComponent);
 			acts.append(cl.at(aloneComponent));
@@ -388,7 +386,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 			 "but it is already existing. Please report error. FET will now continue operation").arg(tc->getDetailedDescription(gt.rules)));
 		}
 	}
-		
+	
 	addedConstraints.clear();
 	
 	QString s2=tr("Spreading of activities operation completed successfully");

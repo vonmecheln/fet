@@ -39,7 +39,7 @@ File timeconstraint.cpp
 
 //for min max functions
 #include <algorithm>
-using namespace std;
+//using namespace std;
 
 static QString trueFalse(bool x){
 	if(!x)
@@ -1655,8 +1655,8 @@ double ConstraintActivitiesNotOverlapping::fitness(Solution& c, Rules& r, QList<
 						//the number of overlapping hours
 						int tt=0;
 						if(day1==day2){
-							int start=max(hour1, hour2);
-							int stop=min(hour1+duration1, hour2+duration2);
+							int start=std::max(hour1, hour2);
+							int stop=std::min(hour1+duration1, hour2+duration2);
 							if(stop>start)
 								tt+=stop-start;
 						}
@@ -1687,8 +1687,8 @@ double ConstraintActivitiesNotOverlapping::fitness(Solution& c, Rules& r, QList<
 						//the number of overlapping hours
 						int tt=0;
 						if(day1==day2){
-							int start=max(hour1, hour2);
-							int stop=min(hour1+duration1, hour2+duration2);
+							int start=std::max(hour1, hour2);
+							int stop=std::min(hour1+duration1, hour2+duration2);
 							if(stop>start)
 								tt+=stop-start;
 						}
@@ -1948,8 +1948,8 @@ double ConstraintActivityTagsNotOverlapping::fitness(Solution& c, Rules& r, QLis
 							//the number of overlapping hours
 							int tt=0;
 							if(day1==day2){
-								int start=max(hour1, hour2);
-								int stop=min(hour1+duration1, hour2+duration2);
+								int start=std::max(hour1, hour2);
+								int stop=std::min(hour1+duration1, hour2+duration2);
 								if(stop>start)
 									tt+=stop-start;
 							}

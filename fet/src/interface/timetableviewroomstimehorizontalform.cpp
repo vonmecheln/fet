@@ -782,7 +782,7 @@ void TimetableViewRoomsTimeHorizontalForm::updateRoomsTimetableTable(){
 					}
 					if(descr!=""){
 						descr.prepend("\n(");
-						descr.prepend(" ");
+						//descr.prepend(" ");
 						descr.append(")");
 					}
 

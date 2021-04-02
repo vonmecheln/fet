@@ -52,18 +52,12 @@ void AddConstraintTeacherMaxDaysPerWeekForm::updateTeachersComboBox(){
 		Teacher* tch=gt.rules.teachersList[i];
 		teachersComboBox->addItem(tch->name);
 	}
-
-	constraintChanged();
 }
 
 void AddConstraintTeacherMaxDaysPerWeekForm::updateMaxDaysSpinBox(){
 	maxDaysSpinBox->setMinimum(1);
 	maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);
 	maxDaysSpinBox->setValue(gt.rules.nDaysPerWeek);
-}
-
-void AddConstraintTeacherMaxDaysPerWeekForm::constraintChanged()
-{
 }
 
 void AddConstraintTeacherMaxDaysPerWeekForm::addCurrentConstraint()

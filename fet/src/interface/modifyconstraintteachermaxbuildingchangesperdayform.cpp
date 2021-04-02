@@ -34,7 +34,7 @@ ModifyConstraintTeacherMaxBuildingChangesPerDayForm::ModifyConstraintTeacherMaxB
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
-		
+	
 	this->_ctr=ctr;
 	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
@@ -43,9 +43,7 @@ ModifyConstraintTeacherMaxBuildingChangesPerDayForm::ModifyConstraintTeacherMaxB
 
 	maxChangesSpinBox->setMinimum(0);
 	maxChangesSpinBox->setMaximum(gt.rules.nHoursPerDay);
-	maxChangesSpinBox->setValue(ctr->maxBuildingChangesPerDay);	
-		
-	constraintChanged();
+	maxChangesSpinBox->setValue(ctr->maxBuildingChangesPerDay);
 }
 
 ModifyConstraintTeacherMaxBuildingChangesPerDayForm::~ModifyConstraintTeacherMaxBuildingChangesPerDayForm()
@@ -65,12 +63,6 @@ void ModifyConstraintTeacherMaxBuildingChangesPerDayForm::updateTeachersComboBox
 	}
 	assert(j>=0);
 	teachersComboBox->setCurrentIndex(j);
-
-	constraintChanged();
-}
-
-void ModifyConstraintTeacherMaxBuildingChangesPerDayForm::constraintChanged()
-{
 }
 
 void ModifyConstraintTeacherMaxBuildingChangesPerDayForm::ok()

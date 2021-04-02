@@ -228,12 +228,16 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 	else
 		shownComboBox->setCurrentIndex(0);
 
-	connect(shownComboBox, SIGNAL(activated(QString)), this, SLOT(shownComboBoxChanged(QString)));
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(shownComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(shownComboBoxChanged()));
+#else
+	connect(shownComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(shownComboBoxChanged()));
+#endif
 
 	//added by Volker Dirr
 	connect(&communicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateStudentsTimetableTable()));
 
-	shownComboBoxChanged(shownComboBox->currentText());
+	shownComboBoxChanged();
 }
 
 void TimetableViewStudentsDaysHorizontalForm::newTimetableGenerated()
@@ -381,7 +385,7 @@ void TimetableViewStudentsDaysHorizontalForm::newTimetableGenerated()
 	//added by Volker Dirr
 	//connect(&communicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateStudentsTimetableTable()));
 
-	shownComboBoxChanged(shownComboBox->currentText());
+	shownComboBoxChanged();
 }
 
 TimetableViewStudentsDaysHorizontalForm::~TimetableViewStudentsDaysHorizontalForm()
@@ -409,10 +413,8 @@ void TimetableViewStudentsDaysHorizontalForm::resizeRowsAfterShow()
 //	tableWidgetUpdateBug(studentsTimetableTable);
 }
 
-void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged(QString shownCategory)
+void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 {
-	Q_UNUSED(shownCategory);
-
 	if(shownComboBox->currentIndex()==0){
 		//years, groups, and subgroups shown
 		yearsListWidget->show();

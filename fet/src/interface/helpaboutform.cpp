@@ -74,11 +74,11 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	QString about=QString("");
 	about+=tr("FET is free software for automatically scheduling the timetable of a school, high-school or university.");
 	about+="<br /><br />";
-	about+=tr("Copyright (C) %1-%2 %3.", "%1 is the year of the first FET release, %2 is the current release year, %3 are the FET authors")
-	 .arg(2002).arg(2020).arg("Liviu Lalescu, Volker Dirr");
+	about+=tr("Copyright (C) %1 %2.", "%1 is the copyright period (a range between two years, more years separated by commas, "
+	 "or a combination of these), %2 are the copyright holders").arg("2002-2020").arg("Liviu Lalescu, Volker Dirr");
 	about+="<br /><br />";
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "January")).arg(2020);
+	 .arg(QCoreApplication::translate("MonthsNames", "February")).arg("2020");
 	about+="<br /><br />";
 	about+=tr("Licensed under the GNU Affero General Public License version 3 or later.");
 	about+="<br /><br />";
@@ -954,6 +954,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("khatou1973");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("nachrach111");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Eric de Quartel");
 	thanksTo+=QString("<br />");
 
 	thanksToTextBrowser->setHtml(thanksTo);

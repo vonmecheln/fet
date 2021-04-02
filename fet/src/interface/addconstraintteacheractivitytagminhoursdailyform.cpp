@@ -52,8 +52,6 @@ AddConstraintTeacherActivityTagMinHoursDailyForm::AddConstraintTeacherActivityTa
 	activityTagsComboBox->clear();
 	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
 		activityTagsComboBox->addItem(at->name);
-
-	constraintChanged();
 }
 
 AddConstraintTeacherActivityTagMinHoursDailyForm::~AddConstraintTeacherActivityTagMinHoursDailyForm()
@@ -65,11 +63,6 @@ void AddConstraintTeacherActivityTagMinHoursDailyForm::updateMinHoursSpinBox(){
 	minHoursSpinBox->setMinimum(1);
 	minHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minHoursSpinBox->setValue(1);
-}
-
-void AddConstraintTeacherActivityTagMinHoursDailyForm::constraintChanged()
-{
-	//nothing
 }
 
 void AddConstraintTeacherActivityTagMinHoursDailyForm::addCurrentConstraint()

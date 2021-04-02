@@ -32,7 +32,6 @@ public:
 	~ModifyConstraintStudentsMinGapsBetweenRoomChangesForm();
 
 public slots:
-	void constraintChanged();
 	void ok();
 	void cancel();
 };

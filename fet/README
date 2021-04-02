@@ -1,4 +1,4 @@
-This is FET version 5.42.2
+This is FET version 5.43.0
 
 
 Program description:
@@ -14,9 +14,10 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.3.12, Xfce 4.14,
-	Midnight Commander 4.8.23, KDiff3 0.9.98, Qt 5.14.0, gcc 9.2.1, g++ 9.2.1, make 4.2.1, sed 4.7,
-	Valgrind 3.15.0, Coverity Scan 2019.03, Cppcheck 1.90, other great free tools.
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.5.2, Xfce 4.14,
+	Midnight Commander 4.8.23, Kate 19.12.1, KDiff3 0.9.98, sed 4.8, Qt 5.14.1, gcc 9.2.1, g++ 9.2.1, make 4.2.1,
+	gdb 8.3.1, Valgrind 3.15.0, Coverity Scan 2019.03, Cppcheck 1.90, tar 1.32, gzip 1.10, bzip2 1.0.8, other great software
+	(most of them are free software, in the sense defined by The Free Software Foundation).
 
 	FET is a C++ application and uses Qt, a C++ toolkit for cross-platform application development.
 	FET can be run on any platform supported by Qt (GNU/Linux, Windows, Mac OS X, and maybe others).
@@ -28,7 +29,7 @@ Requirements:
 		make 4.2.1 or similar (GNU Make)
 		gcc 9.2.1 or similar.
 		g++ 9.2.1 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package).
-		Qt 5.14.0 or compatible (The authors also tried to maintain backwards source compatibility with Qt 4.v.v).
+		Qt 5.14.1 or compatible (The authors also tried to maintain backwards source compatibility with Qt 4.v.v).
 
 		Note: You need a C++11 compliant C++ compiler. You might be able to use the Clang C++ compiler or other C++ compiler instead of gcc and g++.
 
@@ -56,14 +57,14 @@ Getting - compiling - installing the GNU tools: make, gcc and g++ (or gcc-g++, o
 
 	Windows: you need a Qt compatible C++ compiler.
 	Maybe an easy option is the MinGW compiler, available optionally with the Qt distribution or on the Qt download page.
-	(You might also download MinGW from the internet. There might be more variants, but we are not sure which are working correctly with Qt.)
+	(You might also download MinGW from the internet. There might be more variants. One of them is on: http://mingw-w64.org/)
 
 
 Getting - compiling - installing Qt:
 
 	Qt homepage: https://www.qt.io/
 
-	You will need Qt 5.14.0 or compatible to compile FET (The authors also tried to maintain backwards source compatibility with Qt 4.v.v).
+	You will need Qt 5.14.1 or compatible to compile FET (The authors also tried to maintain backwards source compatibility with Qt 4.v.v).
 	You can get the corresponding version of Qt with your package manager or from the internet (preferably from the Qt homepage).
 	Qt can be used with the GNU (L)GPL or commercial license (The authors chose the GNU (L)GPL license).
 
@@ -86,7 +87,7 @@ Getting - compiling - installing Qt:
 	Note about the Qt "QMAKESPEC" variable: advanced topic, read this if you get Qt errors about the environment not being set, or environment
 	variable QMAKESPEC not being set, or if the Qt environment is not set correctly: Qt needs to know the environment you are using. It is usually
 	something like: linux-g++, macx-g++ or win32-g++ (platform-compiler). You can find all the supported platforms in the directory "mkspecs" of Qt
-	(some usual locations are /usr/share/qt5/mkspecs or /usr/lib/qt5/mkspecs on GNU/Linux or C:\Qt\5.14.0\mkspecs on Windows).
+	(some usual locations are /usr/share/qt5/mkspecs or /usr/lib/qt5/mkspecs on GNU/Linux or C:\Qt\5.14.1\mkspecs on Windows).
 	It seems that Qt automatically finds the platform (there is a default configuration in the "default" subdirectory of the "mkspecs" directory,
 	which is created automatically when you install Qt). If the default configuration is not working or is wrong, you may need to set the
 	correct QMAKESPEC variable for your platform. Under Windows, you can create an environment variable QMAKESPEC equal to win32-g++
@@ -141,7 +142,7 @@ Compiling FET:
 	to keep a core free for other tasks, write "make -j 3"). This is proven to work under GNU/Linux and Mac OS X. Under Windows it depends on the C++ compiler (you
 	may try it to see if it works).
 
-	Currently FET can be compiled with a C++ compiler, using Qt version 5.14.0 or compatible.
+	Currently FET can be compiled with a C++ compiler, using Qt version 5.14.1 or compatible.
 
 	Note NUseSystemLocale: If you want FET to autodetect the system locale language, type <<qmake fet.pro "DEFINES+=USE_SYSTEM_LOCALE">>
 	or simply <<qmake "DEFINES+=USE_SYSTEM_LOCALE">>. This will work if you recompile from the beginning all the FET package (remove
@@ -166,7 +167,7 @@ Compiling FET:
 
 
 	GNU/Linux:
-	- You will need Qt 5.14.0 or compatible to compile this program.
+	- You will need Qt 5.14.1 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 5 series, which on some systems
 	might be named qmake-qt5 (this command is executed very fast, so don't worry if you get immediate return from it)
 	See also notes NUseSystemLocale and Note4 above.
@@ -178,7 +179,7 @@ Compiling FET:
 	3 Variants:
 
 	1. First variant, if you use the gcc compiler:
-	- You will need Qt 5.14.0 or compatible to compile this program.
+	- You will need Qt 5.14.1 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 5 series.
 	(this command is executed very fast, so don't worry if you get immediate return from it)
 	- IMPORTANT: you might need to write: "qmake -spec macx-g++ fet.pro", if "qmake fet.pro"
@@ -190,15 +191,15 @@ Compiling FET:
 	2. Another variant:
 	- Type "qmake fet.pro" and then "xcodebuild".
 
-	3. Another variant, if you use the Clang C++ compiler (which seems to be the default for Qt 5.14.0 on Mac):
+	3. Another variant, if you use the Clang C++ compiler (which seems to be the default for Qt 5.14.1 on Mac):
 	It seems that you need to type:
-	"/Users/Yourname/Qt5.14.0/5.14.0/clang_64/bin/qmake -r -spec /Users/Yourname/Qt5.14.0/5.14.0/clang_64/mkspecs/macx-clang", then "make"
+	"/Users/Yourname/Qt5.14.1/5.14.1/clang_64/bin/qmake -r -spec /Users/Yourname/Qt5.14.1/5.14.1/clang_64/mkspecs/macx-clang", then "make"
 	(the -r parameter might not be necessary.)
 	Please see: https://lalescu.ro/liviu/fet/forum/index.php?topic=2488.msg13425#msg13425 (and also see the whole topic there.)
 
 
-	Windows: MinGW C++ compiler: you need Qt 5.14.0 or compatible, and MinGW.
-	You might use other compilers if you want, please see the Qt documentation.
+	Windows: MinGW C++ compiler: you need Qt 5.14.1 or compatible, and MinGW.
+	You might use other C++ compilers if you want, please see the Qt documentation.
 	for other variants. Any C++ compiler that supports Qt should be good.
 	You need to run "qmake fet.pro" or "qmake" (this command is executed very fast, so don't worry if you get
 	immediate return from it) and then, if you are using MinGW, "mingw32-make" (this takes a long time, maybe even 1 hour)
@@ -247,70 +248,133 @@ Running FET:
 	Windows:
 	Run the executable fet.exe (its location is inside the fet-v.v.v directory, you can find it there if you have FET precompiled for Windows or after you compiled it).
 
-	COMMAND LINE: no GUI, just run "fet-cl --inputfile=x [--outputdir=d] [--timelimitseconds=y] [--htmllevel=z] [--language=t]
-	 [--writetimetableconflicts=wt1] [--writetimetablesstatistics=wt2] [--writetimetablesxml=wt3] [--writetimetablesdayshorizontal=wt4]
-	 [--writetimetablesdaysvertical=wt5] [--writetimetablestimehorizontal=wt6] [--writetimetablestimevertical=wt7] [--writetimetablessubgroups=wt8]
-	 [--writetimetablesgroups=wt9] [--writetimetablesyears=wt10] [--writetimetablesteachers=wt11] [--writetimetablesteachersfreeperiods=wt12]
-	 [--writetimetablesrooms=wt13] [--writetimetablessubjects=wt14] [--writetimetablesactivitytags=wt15] [--writetimetablesactivities=wt16]
-	 [--printactivitytags=a] [--printnotavailable=u] [--printbreak=b] [--dividetimeaxisbydays=v] [--duplicateverticalheaders=e]
-	 [--printsimultaneousactivities=w] [--randomseedx=rx --randomseedy=ry] [--warnifusingnotperfectconstraints=s]
-	 [--warnifusingstudentsminhoursdailywithallowemptydays=p] [--warnifusinggroupactivitiesininitialorder=g] [--warnsubgroupswiththesameactivities=ssa]
-	 [--printdetailedtimetables=pdt] [--printdetailedteachersfreeperiodstimetables=pdtfp]
-	 [--exportcsv=ecsv] [--overwritecsv=ocsv] [--firstlineisheadingcsv=flhcsv] [--quotescsv=qcsv] [--fieldseparatorcsv=fscsv]
-	 [--showvirtualrooms=svr] [--warnifusingactivitiesnotfixedtimefixedspacevirtualroomsrealrooms=wanftfs] [--verbose=r]",
-	where	x is the input file, for instance "data.fet"
-			d is the path to results directory, without trailing slash or backslash (default is current working path).
-				Make sure you have write permissions there.
-			y is integer (seconds) (default 2000000000, which is practically infinite).
-			z is integer from 0 to 7 and represents the detail level for the generated HTML timetables
-				(default 2, larger values have more details/facilities and larger file sizes).
-			t is one of ar, ca, cs, da, de, el, en_GB, en_US, es, eu, fa, fr, gl, he, hu, id, it, ja, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sq, sr, tr,
-				uk, uz, vi, zh_CN, zh_TW (default en_US).
-			wt1 to wt16 are either true or false and represent whether you want the corresponding timetables to be written on the disk (default true).
-			a is either true or false and represets if you want activity tags to be present in the final HTML timetables (default true).
-			u is either true or false and represents if you want -x- (for true) or --- (for false) in the generated timetables for the
-				not available slots (default true).
-			b is either true or false and represents if you want -X- (for true) or --- (for false) in the generated timetables for the
-				break slots (default true).
-			v is either true or false, represents if you want the HTML timetables with time-axis divided by days (default false).
-			e is either true or false, represents if you want the HTML timetables to duplicate vertical headers to the right of the tables,
-				for easier reading (default false).
-			w is either true or false, represents if you want the HTML timetables to show related activities which have constraints with same starting time (default false).
-				(for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's timetable will appear also A2, at the same slot
-				as A1).
-			rx is the random seed X component, minimum 1 to maximum 2147483646, ry is the random seed Y component, minimum 1 to maximum 2147483398
-				(you can get the same timetable if the input file is identical, if the FET version is the same and if the random seed X and Y components are the same).
-			s is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect constraints
-				(activity tag max hours daily or students max gaps per day) (default true).
-			p is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard constraints
-				students min hours daily with allow empty days (default true).
-			g is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard timetable
-				generation options to group activities in the initial order (default true).
-			ssa is either true or false, represents whether you want a message box to be show, with a warning, if your input file contains subgroups which have
-				the same activities (default true).
-			pdt is either true or false, represents whether you want to show the detailed (true) or less detailed (false) years and groups timetables (default true).
-			pdtfp is either true or false, represents whether you want to show the detailed (true) or less detailed (false) teachers free periods timetables (default true).
-			ecsv is either true or false, represents whether you want to export the CSV file and timetables (default false).
-			ocsv is either true or false, represents whether you want to overwrite old CSV files, if they exist (default false).
-			flhcsv is either true or false, represents whether you want the heading of the CSV files to be header (true) or data (false). The default value is true.
-			qcsv is one value from the set [doublequotes|singlequotes|none] (write a single value from these three exactly as it is written here). The default value
-				is doublequotes.
-			fscsv is one value from the set [comma|semicolon|verticalbar] (write a single value from these three exactly as it is written here). The default value is comma.
-			svr is either true or false, represents whether you want to show virtual rooms in the timetables (default false).
-			wanftfs is either true or false, represents whether you want the program to issue a warning if you are using activites which are not fixed in time,
-				but are fixed in space in a virtual room, specifying also the real rooms (which is not recommended) (default true).
-			r is either true or false, represents whether you want additional generation messages and other messages to be shown on the command line (default false).
+	Command line version usage: fet-cl --inputfile=FILE [other options]
+		FILE is the input file, for instance "data.fet"
 
-	Alternatively, you can run "fet-cl --version [--outputdir=d]" to get the current FET version.
-	where d is the path to results directory, without trailing slash or backslash (default is current working path).
-	Make sure you have write permissions there.
-	(If you specify the "--version" argument, FET just prints version number on the command line prompt and in the output directory and exits.)
-	
-	You can ask the FET command line process to stop the timetable generation, by sending it the SIGTERM (or SIGBREAK, on Windows) signal.
-	FET will then write the current timetable and the highest stage timetable and exit.
-	(If you send the FET command line the SIGINT signal it will stop immediately, without writing the timetable.)
+	Other options are:
 
-	The result of the operation is logged into file outputdir/logs/result.txt.
+		--outputdir=DIR
+			DIR is the path to results directory, without trailing slash or backslash (default is current working path). Make sure you have write
+			permissions there.
+
+		--timelimitseconds=TLS
+			TLS is an integer representing the time limit, in seconds, after which the program will stop the generation (default 2000000000, which is
+			practically infinite).
+
+		--htmllevel=LEVEL
+			LEVEL is an integer from 0 to 7 and represents the detail level for the generated HTML timetables (default 2, larger values have more
+			details/facilities and larger file sizes).
+
+		--language=LANG
+			LANG is one of: ar, ca, cs, da, de, el, en_GB, en_US, es, eu, fa, fr, gl, he, hu, id, it, ja, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk,
+			sq, sr, tr, uk, uz, vi, zh_CN, zh_TW (default en_US).
+
+		--writetimetableconflicts=WT1
+		--writetimetablesstatistics=WT2
+		--writetimetablesxml=WT3
+		--writetimetablesdayshorizontal=WT4
+		--writetimetablesdaysvertical=WT5
+		--writetimetablestimehorizontal=WT6
+		--writetimetablestimevertical=WT7
+		--writetimetablessubgroups=WT8
+		--writetimetablesgroups=WT9
+		--writetimetablesyears=WT10
+		--writetimetablesteachers=WT11
+		--writetimetablesteachersfreeperiods=WT12
+		--writetimetablesrooms=WT13
+		--writetimetablessubjects=WT14
+		--writetimetablesactivitytags=WT15
+		--writetimetablesactivities=WT16
+			WT1 to WT16 are either true or false and represent whether you want the corresponding timetables to be written on the disk (default true).
+
+		--printactivitytags=PAT
+			PAT is either true or false and represets if you want activity tags to be present in the final HTML timetables (default true).
+
+		--printnotavailable=PNA
+			PNA is either true or false and represents if you want -x- (for true) or --- (for false) in the generated timetables for the not available
+			slots (default true).
+
+		--printbreak=PB
+			PB is either true or false and represents if you want -X- (for true) or --- (for false) in the generated timetables for the break slots
+			(default true).
+
+		--dividetimeaxisbydays=DTAD
+			DTAD is either true or false, represents if you want the HTML timetables with time-axis divided by days (default false).
+
+		--duplicateverticalheaders=DVH
+			DVH is either true or false, represents if you want the HTML timetables to duplicate vertical headers to the right of the tables, for
+			easier reading (default false).
+
+		--printsimultaneousactivities=PSA
+			PSA is either true or false, represents if you want the HTML timetables to show related activities which have constraints with same
+			starting time (default false). (for instance, if A1 (T1, G1) and A2 (T2, G2) have constraint activities same starting time, then in T1's
+			timetable will appear also A2, at the same slot as A1).
+
+		--randomseedx=RANDX --randomseedy=RANDY
+			RANDX is the random seed X component, minimum 1 to maximum 2147483646, RANDY is the random seed Y component, minimum 1 to maximum 2147483398
+			(you can get the same timetable if the input file is identical, if the FET version is the same, and if the random seed X and Y components are the same).
+
+		--warnifusingnotperfectconstraints=WNP
+			WNP is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect
+			constraints (activity tag max hours daily or students max gaps per day) (default true).
+
+		--warnifusingstudentsminhoursdailywithallowemptydays=WSMHDAED
+			SMHDAEDP is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard
+			constraints students min hours daily with allow empty days (default true).
+
+		--warnifusinggroupactivitiesininitialorder=WGA
+			WGA is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard
+			timetable generation options to group activities in the initial order (default true).
+
+		--warnsubgroupswiththesameactivities=WSSA
+			WSSA is either true or false, represents whether you want a message box to be show, with a warning, if your input file contains subgroups
+			which have the same activities (default true).
+
+		--printdetailedtimetables=PDT
+			PDT is either true or false, represents whether you want to show the detailed (true) or less detailed (false) years and groups timetables (default true).
+
+		--printdetailedteachersfreeperiodstimetables=PDTFP
+			PDTFP is either true or false, represents whether you want to show the detailed (true) or less detailed (false) teachers free periods
+			timetables (default true).
+
+		--exportcsv=ECSV
+			ECSV is either true or false, represents whether you want to export the CSV file and timetables (default false).
+
+		--overwritecsv=OCSV
+			OCSV is either true or false, represents whether you want to overwrite old CSV files, if they exist (default false).
+
+		--firstlineisheadingcsv=FLHCSV
+			FLHCSV is either true or false, represents whether you want the heading of the CSV files to be header (true) or data (false). The default
+			value is true.
+
+		--quotescsv=QCSV
+			QCSV is one value from the set [doublequotes|singlequotes|none] (write a single value from these three exactly as it is written here).
+			The default value is doublequotes.
+
+		--fieldseparatorcsv=FSCSV
+			FSCSV is one value from the set [comma|semicolon|verticalbar] (write a single value from these three exactly as it is written here).
+			The default value is comma.
+
+		--showvirtualrooms=SVR
+			SVR is either true or false, represents whether you want to show virtual rooms in the timetables (default false).
+
+		--warnifusingactivitiesnotfixedtimefixedspacevirtualroomsrealrooms=WANFTFS
+			WANFTFS is either true or false, represents whether you want the program to issue a warning if you are using activites which are not
+			fixed in time, but are fixed in space in a virtual room, specifying also the real rooms (which is not recommended) (default true).
+
+		--verbose=VBS
+			VBS is either true or false, represents whether you want additional generation messages and other messages to be shown on the command
+			line (default false).
+
+	Run "fet-cl --help" to get usage information.
+
+	Run "fet-cl --version" to get version information.
+
+	You can ask the FET command line process to stop the timetable generation, by sending it the SIGTERM (or SIGBREAK, on Windows) signal. FET will then
+	write the current timetable and the highest stage timetable and exit. (If you send the FET command line the SIGINT signal it will stop immediately,
+	without writing the timetable.)
+
+	The result of the operation is logged in the file outputdir/logs/result.txt.
 
 	Also, you have in logs the initial order of activities and a list of maximum placed number of activities. If your timetable is impossible, say it stops
 	at maximum n placed activities, look at the n+1-st activity in the initial order, for it or its students/teachers may be the problem.
@@ -325,8 +389,8 @@ Running FET:
 	the file src/interface/fet.cpp, in the command-line code part.
 	
 	If you want to be completely independent from Qt, using only standard C++, you can remove all the Qt includes and
-	reimplement the used Qt classes QString, QList, QSet, and others (only the member functions which are necessary). Or just get the corresponding
-	code from Qt (Please review the Qt licensing options, in this case. Currently, they include GNU (L)GPL and commercial).
+	reimplement the used Qt classes QString, QList, QSet, QHash, and maybe others (only the member functions which are necessary). Or just get
+	the corresponding code from Qt (Please review the Qt licensing options, in this case. Currently, they include GNU (L)GPL and commercial).
 	The program should have independence of a particular implementation of QSet and QHash so, if you reimplement these two containers,
 	any order of elements should lead to the same generation results. Contrary behavior should be reported as a bug.
 

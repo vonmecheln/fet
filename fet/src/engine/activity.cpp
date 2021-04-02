@@ -321,7 +321,7 @@ void Activity::computeInternalStructure(Rules& r)
 	//this->nTeachers=0;
 	this->iTeachersList.clear();
 	QSet<int> iTeachersSet;
-	for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++){
+	for(QStringList::const_iterator it=this->teachersNames.constBegin(); it!=this->teachersNames.constEnd(); it++){
 		int tmp=r.teachersHash.value(*it, -1);
 		/*for(tmp=0; tmp<r.nInternalTeachers; tmp++){
 			if(r.internalTeachersList[tmp]->name == (*it))
@@ -355,7 +355,7 @@ void Activity::computeInternalStructure(Rules& r)
 	//this->nSubgroups=0;
 	this->iSubgroupsList.clear();
 	QSet<int> iSubgroupsSet;
-	for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++){
+	for(QStringList::const_iterator it=this->studentsNames.constBegin(); it!=this->studentsNames.constEnd(); it++){
 		StudentsSet* ss=r.studentsHash.value(*it, NULL); //r.searchAugmentedStudentsSet(*it);
 		assert(ss);
 		if(ss->type==STUDENTS_SUBGROUP){
@@ -461,7 +461,7 @@ QString Activity::getXmlDescription(Rules& r)
 
 	QString s="<Activity>\n";
 
-	for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++)
+	for(QStringList::const_iterator it=this->teachersNames.constBegin(); it!=this->teachersNames.constEnd(); it++)
 		s+="	<Teacher>" + protect(*it) + "</Teacher>\n";
 
 	s+="	<Subject>" + protect(this->subjectName) + "</Subject>\n";
@@ -469,7 +469,7 @@ QString Activity::getXmlDescription(Rules& r)
 	for(const QString& tag : qAsConst(this->activityTagsNames))
 		s+="	<Activity_Tag>" + protect(tag) + "</Activity_Tag>\n";
 
-	for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++)
+	for(QStringList::const_iterator it=this->studentsNames.constBegin(); it!=this->studentsNames.constEnd(); it++)
 		s+="	<Students>" + protect(*it) + "</Students>\n";
 
 	s+="	<Duration>"+CustomFETString::number(this->duration)+"</Duration>\n";
@@ -627,7 +627,7 @@ QString Activity::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 	else
-		for(QStringList::Iterator it=this->teachersNames.begin(); it!=this->teachersNames.end(); it++){
+		for(QStringList::const_iterator it=this->teachersNames.constBegin(); it!=this->teachersNames.constEnd(); it++){
 			s+=tr("Teacher=%1").arg(*it);
 			s+="\n";
 		}
@@ -645,7 +645,7 @@ QString Activity::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 	else
-		for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++){
+		for(QStringList::const_iterator it=this->studentsNames.constBegin(); it!=this->studentsNames.constEnd(); it++){
 			s += tr("Students=%1").arg(*it);
 			s+="\n";
 		}

@@ -42,9 +42,8 @@ ConstraintTeacherActivityTagMaxHoursDailyForm::ConstraintTeacherActivityTagMaxHo
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
-	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+
 	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
 
 	centerWidgetOnScreen(this);
@@ -67,6 +66,14 @@ ConstraintTeacherActivityTagMaxHoursDailyForm::ConstraintTeacherActivityTagMaxHo
 		activityTagsComboBox->addItem(at->name);
 
 	this->filterChanged();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+#else
+	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+#endif
 }
 
 ConstraintTeacherActivityTagMaxHoursDailyForm::~ConstraintTeacherActivityTagMaxHoursDailyForm()

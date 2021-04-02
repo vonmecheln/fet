@@ -43,8 +43,6 @@ ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::ConstraintTeacher
 	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
-	connect(firstActivityTagComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-	connect(secondActivityTagComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -65,6 +63,14 @@ ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::ConstraintTeacher
 		secondActivityTagComboBox->addItem(at->name);
 
 	this->filterChanged();
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+	connect(firstActivityTagComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+	connect(secondActivityTagComboBox, SIGNAL(currentIndexChanged(int, QString)), this, SLOT(filterChanged()));
+#else
+	connect(firstActivityTagComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+	connect(secondActivityTagComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
+#endif
 }
 
 ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::~ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm()

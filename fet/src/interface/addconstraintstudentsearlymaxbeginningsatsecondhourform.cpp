@@ -37,17 +37,11 @@ AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::AddConstraintStudentsEa
 	maxBeginningsSpinBox->setMinimum(0);
 	maxBeginningsSpinBox->setMaximum(gt.rules.nDaysPerWeek);
 	maxBeginningsSpinBox->setValue(0);
-	
-	constraintChanged();
 }
 
 AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::~AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::constraintChanged()
-{
 }
 
 void AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::addCurrentConstraint()
@@ -68,7 +62,7 @@ void AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::addCurrentConstrai
 		return;
 	}
 
-	ctr=new ConstraintStudentsEarlyMaxBeginningsAtSecondHour(weight/*, compulsory*/, maxBeginningsSpinBox->value());
+	ctr=new ConstraintStudentsEarlyMaxBeginningsAtSecondHour(weight, maxBeginningsSpinBox->value());
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

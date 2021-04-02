@@ -30,7 +30,6 @@ public:
 	~AddConstraintTeacherMaxGapsPerDayForm();
 
 public slots:
-	void constraintChanged();
 	void addCurrentConstraint();
 };
 

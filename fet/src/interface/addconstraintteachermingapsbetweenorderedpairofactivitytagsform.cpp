@@ -60,28 +60,18 @@ void AddConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::updateTeac
 {
 	for(Teacher* tch : qAsConst(gt.rules.teachersList))
 		teacherComboBox->addItem(tch->name);
-
-	constraintChanged();
 }
 
 void AddConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::updateFirstActivityTagComboBox()
 {
 	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
 		firstActivityTagComboBox->addItem(at->name);
-
-	constraintChanged();
 }
 
 void AddConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::updateSecondActivityTagComboBox()
 {
 	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
 		secondActivityTagComboBox->addItem(at->name);
-
-	constraintChanged();
-}
-
-void AddConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::constraintChanged()
-{
 }
 
 void AddConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::addCurrentConstraint()

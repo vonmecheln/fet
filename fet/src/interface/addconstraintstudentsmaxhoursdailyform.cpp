@@ -44,11 +44,6 @@ AddConstraintStudentsMaxHoursDailyForm::~AddConstraintStudentsMaxHoursDailyForm(
 	saveFETDialogGeometry(this);
 }
 
-void AddConstraintStudentsMaxHoursDailyForm::constraintChanged()
-{
-
-}
-
 void AddConstraintStudentsMaxHoursDailyForm::addCurrentConstraint()
 {
 	TimeConstraint *ctr=NULL;

@@ -30,7 +30,6 @@ public:
 	~AddConstraintBasicCompulsoryTimeForm();
 
 public slots:
-	void constraintChanged();
 	void addCurrentConstraint();
 };
 

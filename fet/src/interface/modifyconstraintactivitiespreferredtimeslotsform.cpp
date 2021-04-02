@@ -240,33 +240,6 @@ void ModifyConstraintActivitiesPreferredTimeSlotsForm::updateTeachersComboBox(){
 
 void ModifyConstraintActivitiesPreferredTimeSlotsForm::updateStudentsComboBox(QWidget* parent){
 	int j=populateStudentsComboBox(studentsComboBox, this->_ctr->p_studentsName, true);
-	/*int i=0, j=-1;
-	studentsComboBox->clear();
-	studentsComboBox->addItem("");
-	if(this->_ctr->p_studentsName=="")
-		j=i;
-	i++;
-	for(int m=0; m<gt.rules.yearsList.size(); m++){
-		StudentsYear* sty=gt.rules.yearsList[m];
-		studentsComboBox->addItem(sty->name);
-		if(sty->name==this->_ctr->p_studentsName)
-			j=i;
-		i++;
-		for(int n=0; n<sty->groupsList.size(); n++){
-			StudentsGroup* stg=sty->groupsList[n];
-			studentsComboBox->addItem(stg->name);
-			if(stg->name==this->_ctr->p_studentsName)
-				j=i;
-			i++;
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int p=0; p<stg->subgroupsList.size(); p++){
-				StudentsSubgroup* sts=stg->subgroupsList[p];
-				studentsComboBox->addItem(sts->name);
-				if(sts->name==this->_ctr->p_studentsName)
-					j=i;
-				i++;
-			}
-		}
-	}*/
 	if(j<0)
 		showWarningForInvisibleSubgroupConstraint(parent, this->_ctr->p_studentsName);
 	else
@@ -402,8 +375,6 @@ void ModifyConstraintActivitiesPreferredTimeSlotsForm::ok()
 
 	QList<int> days_L;
 	QList<int> hours_L;
-	//int days[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
-	//int hours[MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS];
 	int n=0;
 	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 		for(int i=0; i<gt.rules.nHoursPerDay; i++)

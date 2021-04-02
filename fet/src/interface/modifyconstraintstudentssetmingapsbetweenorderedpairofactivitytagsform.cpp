@@ -51,8 +51,6 @@ ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::ModifyCo
 	minGapsSpinBox->setMinimum(1);
 	minGapsSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minGapsSpinBox->setValue(ctr->minGaps);
-
-	constraintChanged();
 }
 
 ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::~ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm()
@@ -62,36 +60,11 @@ ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::~ModifyC
 
 void ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::updateStudentsComboBox(QWidget* parent){
 	int j=populateStudentsComboBox(studentsComboBox, this->_ctr->students);
-	/*studentsComboBox->clear();
-	int i=0, j=-1;
-	for(int m=0; m<gt.rules.yearsList.size(); m++){
-		StudentsYear* sty=gt.rules.yearsList[m];
-		studentsComboBox->addItem(sty->name);
-		if(sty->name==this->_ctr->students)
-			j=i;
-		i++;
-		for(int n=0; n<sty->groupsList.size(); n++){
-			StudentsGroup* stg=sty->groupsList[n];
-			studentsComboBox->addItem(stg->name);
-			if(stg->name==this->_ctr->students)
-				j=i;
-			i++;
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int p=0; p<stg->subgroupsList.size(); p++){
-				StudentsSubgroup* sts=stg->subgroupsList[p];
-				studentsComboBox->addItem(sts->name);
-				if(sts->name==this->_ctr->students)
-					j=i;
-				i++;
-			}
-		}
-	}*/
 	if(j<0)
 		showWarningForInvisibleSubgroupConstraint(parent, this->_ctr->students);
 	else
 		assert(j>=0);
 	studentsComboBox->setCurrentIndex(j);
-
-	constraintChanged();
 }
 
 void ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::updateFirstActivityTagComboBox()
@@ -106,8 +79,6 @@ void ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::upd
 	}
 	assert(j>=0);
 	firstActivityTagComboBox->setCurrentIndex(j);
-
-	constraintChanged();
 }
 
 void ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::updateSecondActivityTagComboBox()
@@ -122,12 +93,6 @@ void ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::upd
 	}
 	assert(j>=0);
 	secondActivityTagComboBox->setCurrentIndex(j);
-
-	constraintChanged();
-}
-
-void ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::constraintChanged()
-{
 }
 
 void ModifyConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::ok()

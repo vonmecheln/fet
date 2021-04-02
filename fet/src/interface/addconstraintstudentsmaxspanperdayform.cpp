@@ -37,17 +37,11 @@ AddConstraintStudentsMaxSpanPerDayForm::AddConstraintStudentsMaxSpanPerDayForm(Q
 	maxSpanSpinBox->setMinimum(1);
 	maxSpanSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxSpanSpinBox->setValue(gt.rules.nHoursPerDay);
-	
-	constraintChanged();
 }
 
 AddConstraintStudentsMaxSpanPerDayForm::~AddConstraintStudentsMaxSpanPerDayForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void AddConstraintStudentsMaxSpanPerDayForm::constraintChanged()
-{
 }
 
 void AddConstraintStudentsMaxSpanPerDayForm::addCurrentConstraint()

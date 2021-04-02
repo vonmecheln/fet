@@ -29,7 +29,6 @@ public:
 	AddConstraintActivityPreferredRoomForm(QWidget* parent);
 	~AddConstraintActivityPreferredRoomForm();
 
-	void updateActivitiesComboBox();
 	void updateRoomsComboBox();
 
 	bool filterOk(Activity* a);

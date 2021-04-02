@@ -33,10 +33,7 @@ public:
 
 	bool filterOk(Activity* a);
 
-	void updateActivitiesComboBox();
-
 public slots:
-//	void constraintChanged();
 	void addCurrentConstraint();
 	
 	void filterChanged();

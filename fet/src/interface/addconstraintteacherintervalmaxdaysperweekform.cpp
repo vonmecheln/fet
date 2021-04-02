@@ -59,8 +59,6 @@ void AddConstraintTeacherIntervalMaxDaysPerWeekForm::updateTeachersComboBox(){
 		Teacher* tch=gt.rules.teachersList[i];
 		teachersComboBox->addItem(tch->name);
 	}
-
-	constraintChanged();
 }
 
 void AddConstraintTeacherIntervalMaxDaysPerWeekForm::updateMaxDaysSpinBox(){
@@ -75,8 +73,6 @@ void AddConstraintTeacherIntervalMaxDaysPerWeekForm::updateStartHoursComboBox()
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		startHourComboBox->addItem(gt.rules.hoursOfTheDay[i]);
 	startHourComboBox->setCurrentIndex(gt.rules.nHoursPerDay-1);
-	
-	constraintChanged();
 }
 
 void AddConstraintTeacherIntervalMaxDaysPerWeekForm::updateEndHoursComboBox()
@@ -86,12 +82,6 @@ void AddConstraintTeacherIntervalMaxDaysPerWeekForm::updateEndHoursComboBox()
 		endHourComboBox->addItem(gt.rules.hoursOfTheDay[i]);
 	endHourComboBox->addItem(tr("End of day"));
 	endHourComboBox->setCurrentIndex(gt.rules.nHoursPerDay);
-	
-	constraintChanged();
-}
-
-void AddConstraintTeacherIntervalMaxDaysPerWeekForm::constraintChanged()
-{
 }
 
 void AddConstraintTeacherIntervalMaxDaysPerWeekForm::addCurrentConstraint()

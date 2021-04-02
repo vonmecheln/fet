@@ -37,17 +37,11 @@ AddConstraintTeachersMaxGapsPerWeekForm::AddConstraintTeachersMaxGapsPerWeekForm
 	maxGapsSpinBox->setMinimum(0);
 	maxGapsSpinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	maxGapsSpinBox->setValue(3);
-	
-	constraintChanged();
 }
 
 AddConstraintTeachersMaxGapsPerWeekForm::~AddConstraintTeachersMaxGapsPerWeekForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void AddConstraintTeachersMaxGapsPerWeekForm::constraintChanged()
-{
 }
 
 void AddConstraintTeachersMaxGapsPerWeekForm::addCurrentConstraint()

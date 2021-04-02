@@ -34,8 +34,6 @@ public:
 
 	void colorItem(QTableWidgetItem* item);
 	
-	void updateActivitiesListWidget();
-	
 	bool filterOk(Activity* act);
 
 public slots:

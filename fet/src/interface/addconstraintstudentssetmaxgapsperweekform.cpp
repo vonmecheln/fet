@@ -22,7 +22,6 @@
 #include "addconstraintstudentssetmaxgapsperweekform.h"
 #include "timeconstraint.h"
 
-
 AddConstraintStudentsSetMaxGapsPerWeekForm::AddConstraintStudentsSetMaxGapsPerWeekForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
@@ -37,14 +36,12 @@ AddConstraintStudentsSetMaxGapsPerWeekForm::AddConstraintStudentsSetMaxGapsPerWe
 
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
-		
+	
 	maxGapsSpinBox->setMinimum(0);
 	maxGapsSpinBox->setMaximum(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek);
 	maxGapsSpinBox->setValue(0);
 
 	updateStudentsSetComboBox();
-	
-	constraintChanged();
 }
 
 AddConstraintStudentsSetMaxGapsPerWeekForm::~AddConstraintStudentsSetMaxGapsPerWeekForm()
@@ -55,25 +52,6 @@ AddConstraintStudentsSetMaxGapsPerWeekForm::~AddConstraintStudentsSetMaxGapsPerW
 void AddConstraintStudentsSetMaxGapsPerWeekForm::updateStudentsSetComboBox()
 {
 	populateStudentsComboBox(studentsComboBox);
-	/*studentsComboBox->clear();
-	for(int i=0; i<gt.rules.yearsList.size(); i++){
-		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->addItem(sty->name);
-		for(int j=0; j<sty->groupsList.size(); j++){
-			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->addItem(stg->name);
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int k=0; k<stg->subgroupsList.size(); k++){
-				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->addItem(sts->name);
-			}
-		}
-	}*/
-
-	constraintChanged();
-}
-
-void AddConstraintStudentsSetMaxGapsPerWeekForm::constraintChanged()
-{
 }
 
 void AddConstraintStudentsSetMaxGapsPerWeekForm::addCurrentConstraint()

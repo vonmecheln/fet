@@ -68,14 +68,13 @@ ModifyConstraintTeacherNotAvailableTimesForm::ModifyConstraintTeacherNotAvailabl
 		notAllowedTimesTable->setVerticalHeaderItem(i, item);
 	}
 
-	//bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
 	Matrix2D<bool> currentMatrix;
 	currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
 
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
-			currentMatrix[i][j]=false;			
-	assert(ctr->days.count()==ctr->hours.count());	
+			currentMatrix[i][j]=false;
+	assert(ctr->days.count()==ctr->hours.count());
 	for(int k=0; k<ctr->days.count(); k++){
 		if(ctr->hours.at(k)==-1 || ctr->days.at(k)==-1)
 			assert(0);

@@ -44,8 +44,6 @@ ModifyConstraintStudentsSetMaxHoursDailyForm::ModifyConstraintStudentsSetMaxHour
 	maxHoursSpinBox->setMinimum(1);
 	maxHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxHoursSpinBox->setValue(ctr->maxHoursDaily);
-
-	constraintChanged();
 }
 
 ModifyConstraintStudentsSetMaxHoursDailyForm::~ModifyConstraintStudentsSetMaxHoursDailyForm()
@@ -55,40 +53,11 @@ ModifyConstraintStudentsSetMaxHoursDailyForm::~ModifyConstraintStudentsSetMaxHou
 
 void ModifyConstraintStudentsSetMaxHoursDailyForm::updateStudentsComboBox(QWidget* parent){
 	int j=populateStudentsComboBox(studentsComboBox, this->_ctr->students);
-	/*studentsComboBox->clear();
-	int i=0, j=-1;
-	for(int m=0; m<gt.rules.yearsList.size(); m++){
-		StudentsYear* sty=gt.rules.yearsList[m];
-		studentsComboBox->addItem(sty->name);
-		if(sty->name==this->_ctr->students)
-			j=i;
-		i++;
-		for(int n=0; n<sty->groupsList.size(); n++){
-			StudentsGroup* stg=sty->groupsList[n];
-			studentsComboBox->addItem(stg->name);
-			if(stg->name==this->_ctr->students)
-				j=i;
-			i++;
-			if(SHOW_SUBGROUPS_IN_COMBO_BOXES) for(int p=0; p<stg->subgroupsList.size(); p++){
-				StudentsSubgroup* sts=stg->subgroupsList[p];
-				studentsComboBox->addItem(sts->name);
-				if(sts->name==this->_ctr->students)
-					j=i;
-				i++;
-			}
-		}
-	}*/
 	if(j<0)
 		showWarningForInvisibleSubgroupConstraint(parent, this->_ctr->students);
 	else
 		assert(j>=0);
 	studentsComboBox->setCurrentIndex(j);
-
-	constraintChanged();
-}
-
-void ModifyConstraintStudentsSetMaxHoursDailyForm::constraintChanged()
-{
 }
 
 void ModifyConstraintStudentsSetMaxHoursDailyForm::ok()

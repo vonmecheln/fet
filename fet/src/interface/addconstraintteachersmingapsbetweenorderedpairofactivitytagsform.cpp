@@ -56,20 +56,12 @@ void AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::updateFir
 {
 	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
 		firstActivityTagComboBox->addItem(at->name);
-
-	constraintChanged();
 }
 
 void AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::updateSecondActivityTagComboBox()
 {
 	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
 		secondActivityTagComboBox->addItem(at->name);
-
-	constraintChanged();
-}
-
-void AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::constraintChanged()
-{
 }
 
 void AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::addCurrentConstraint()

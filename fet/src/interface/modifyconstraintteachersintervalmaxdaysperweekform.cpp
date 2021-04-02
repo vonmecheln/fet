@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-
-
 #include "modifyconstraintteachersintervalmaxdaysperweekform.h"
 #include "timeconstraint.h"
 
@@ -56,8 +54,6 @@ ModifyConstraintTeachersIntervalMaxDaysPerWeekForm::ModifyConstraintTeachersInte
 	}
 	endHourComboBox->addItem(tr("End of day"));
 	endHourComboBox->setCurrentIndex(ctr->endHour);
-
-	constraintChanged();
 }
 
 ModifyConstraintTeachersIntervalMaxDaysPerWeekForm::~ModifyConstraintTeachersIntervalMaxDaysPerWeekForm()
@@ -67,11 +63,7 @@ ModifyConstraintTeachersIntervalMaxDaysPerWeekForm::~ModifyConstraintTeachersInt
 
 void ModifyConstraintTeachersIntervalMaxDaysPerWeekForm::updateMaxDaysSpinBox(){
 	maxDaysSpinBox->setMinimum(0);
-	maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);	
-}
-
-void ModifyConstraintTeachersIntervalMaxDaysPerWeekForm::constraintChanged()
-{
+	maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);
 }
 
 void ModifyConstraintTeachersIntervalMaxDaysPerWeekForm::ok()

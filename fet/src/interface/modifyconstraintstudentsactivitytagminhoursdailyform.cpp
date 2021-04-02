@@ -46,8 +46,6 @@ ModifyConstraintStudentsActivityTagMinHoursDailyForm::ModifyConstraintStudentsAc
 	minHoursSpinBox->setValue(ctr->minHoursDaily);
 	
 	allowEmptyDaysCheckBox->setChecked(ctr->allowEmptyDays);
-
-	constraintChanged();
 }
 
 ModifyConstraintStudentsActivityTagMinHoursDailyForm::~ModifyConstraintStudentsActivityTagMinHoursDailyForm()
@@ -67,13 +65,6 @@ void ModifyConstraintStudentsActivityTagMinHoursDailyForm::updateActivityTagsCom
 	}
 	assert(j>=0);
 	activityTagsComboBox->setCurrentIndex(j);
-	
-	constraintChanged();
-}
-
-void ModifyConstraintStudentsActivityTagMinHoursDailyForm::constraintChanged()
-{
-	//nothing
 }
 
 void ModifyConstraintStudentsActivityTagMinHoursDailyForm::ok()

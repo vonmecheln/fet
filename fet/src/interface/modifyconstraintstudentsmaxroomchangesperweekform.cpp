@@ -31,7 +31,7 @@ ModifyConstraintStudentsMaxRoomChangesPerWeekForm::ModifyConstraintStudentsMaxRo
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	this->_ctr=ctr;
 	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
@@ -39,17 +39,11 @@ ModifyConstraintStudentsMaxRoomChangesPerWeekForm::ModifyConstraintStudentsMaxRo
 	maxChangesSpinBox->setMinimum(0);
 	maxChangesSpinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	maxChangesSpinBox->setValue(ctr->maxRoomChangesPerWeek);
-		
-	constraintChanged();
 }
 
 ModifyConstraintStudentsMaxRoomChangesPerWeekForm::~ModifyConstraintStudentsMaxRoomChangesPerWeekForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void ModifyConstraintStudentsMaxRoomChangesPerWeekForm::constraintChanged()
-{
 }
 
 void ModifyConstraintStudentsMaxRoomChangesPerWeekForm::ok()

@@ -47,7 +47,7 @@ ConstraintActivitiesEndStudentsDayForm::ConstraintActivitiesEndStudentsDayForm(Q
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
 }
 
 ConstraintActivitiesEndStudentsDayForm::~ConstraintActivitiesEndStudentsDayForm()
@@ -55,7 +55,7 @@ ConstraintActivitiesEndStudentsDayForm::~ConstraintActivitiesEndStudentsDayForm(
 	saveFETDialogGeometry(this);
 }
 
-void ConstraintActivitiesEndStudentsDayForm::refreshConstraintsListWidget()
+void ConstraintActivitiesEndStudentsDayForm::filterChanged()
 {
 	this->visibleConstraintsList.clear();
 	constraintsListWidget->clear();
@@ -103,7 +103,7 @@ void ConstraintActivitiesEndStudentsDayForm::addConstraint()
 	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
 	
 	constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
 }
@@ -124,7 +124,7 @@ void ConstraintActivitiesEndStudentsDayForm::modifyConstraint()
 	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListWidget();
+	this->filterChanged();
 	
 	constraintsListWidget->verticalScrollBar()->setValue(valv);
 	constraintsListWidget->horizontalScrollBar()->setValue(valh);

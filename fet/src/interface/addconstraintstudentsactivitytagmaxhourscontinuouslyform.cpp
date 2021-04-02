@@ -53,12 +53,6 @@ void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::updateActivityTag
 {
 	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
 		activityTagsComboBox->addItem(at->name);
-
-	constraintChanged();
-}
-
-void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::constraintChanged()
-{
 }
 
 void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::addCurrentConstraint()

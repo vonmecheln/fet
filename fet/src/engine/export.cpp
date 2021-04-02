@@ -28,6 +28,7 @@ File export.cpp
 //TODO: count skipped min days constraints?
 //TODO: add cancel button
 
+#include <Qt>
 #include <QtGlobal>
 #include <QFile>
 #include <QDir>
@@ -585,10 +586,18 @@ bool Export::exportCSVActivityTags(QString& lastWarnings, const QString& textquo
 	tosExport.setGenerateByteOrderMark(true);
 
 	if(head)
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		tosExport<<textquote<<"Activity Tag"<<textquote<<Qt::endl;
+#else
 		tosExport<<textquote<<"Activity Tag"<<textquote<<endl;
+#endif
 
 	for(ActivityTag* a : qAsConst(gt.rules.activityTagsList)){
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		tosExport<<textquote<<protectCSV(a->name)<<textquote<<Qt::endl;
+#else
 		tosExport<<textquote<<protectCSV(a->name)<<textquote<<endl;
+#endif
 		if(!checkSetSeparator(a->name, setSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(a->name)+"\n";
 	}
@@ -656,13 +665,21 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString& te
 	if(head)
 		tosExport	<<textquote<<"Room"<<textquote<<fieldSeparator
 				<<textquote<<"Room Capacity"<<textquote<<fieldSeparator
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				<<textquote<<"Building"<<textquote<<Qt::endl;
+#else
 				<<textquote<<"Building"<<textquote<<endl;
+#endif
 				
 	QStringList checkBuildings;
 	for(Room* r : qAsConst(gt.rules.roomsList)){
 		tosExport	<<textquote<<protectCSV(r->name)<<textquote<<fieldSeparator
 				<<CustomFETString::number(r->capacity)<<fieldSeparator
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				<<textquote<<protectCSV(r->building)<<textquote<<Qt::endl;
+#else
 				<<textquote<<protectCSV(r->building)<<textquote<<endl;
+#endif
 		if(!checkBuildings.contains(r->building)&&!r->building.isEmpty())
 			checkBuildings<<r->building;
 	}
@@ -715,10 +732,18 @@ bool Export::exportCSVSubjects(QString& lastWarnings, const QString& textquote, 
 	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		tosExport<<textquote<<"Subject"<<textquote<<Qt::endl;
+#else
 		tosExport<<textquote<<"Subject"<<textquote<<endl;
+#endif
 
 	for(Subject* s : qAsConst(gt.rules.subjectsList)){
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		tosExport<<textquote<<protectCSV(s->name)<<textquote<<Qt::endl;
+#else
 		tosExport<<textquote<<protectCSV(s->name)<<textquote<<endl;
+#endif
 	}
 
 	lastWarnings+=Export::tr("%1 subjects exported.").arg(gt.rules.subjectsList.size())+"\n";
@@ -764,10 +789,18 @@ bool Export::exportCSVTeachers(QString& lastWarnings, const QString& textquote, 
 	tosExport.setGenerateByteOrderMark(true);
 	
 	if(head)
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		tosExport<<textquote<<"Teacher"<<textquote<<Qt::endl;
+#else
 		tosExport<<textquote<<"Teacher"<<textquote<<endl;
+#endif
 
 	for(Teacher* t : qAsConst(gt.rules.teachersList)){
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		tosExport<<textquote<<protectCSV(t->name)<<textquote<<Qt::endl;
+#else
 		tosExport<<textquote<<protectCSV(t->name)<<textquote<<endl;
+#endif
 		if(!checkSetSeparator(t->name, setSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(t->name)+"\n";
 	}
@@ -820,13 +853,21 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 				<<textquote<<"Group"<<textquote<<fieldSeparator
 				<<textquote<<"Number of Students per Group"<<textquote<<fieldSeparator
 				<<textquote<<"Subgroup"<<textquote<<fieldSeparator
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				<<textquote<<"Number of Students per Subgroup"<<textquote<<Qt::endl;
+#else
 				<<textquote<<"Number of Students per Subgroup"<<textquote<<endl;
+#endif
 
 	int ig=0;
 	int is=0;
 	for(StudentsYear* sty : qAsConst(gt.rules.yearsList)){
 		tosExport<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+					<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<Qt::endl;
+#else
 					<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<endl;
+#endif
 		if(!checkSetSeparator(sty->name, setSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(sty->name)+"\n";
 		for(StudentsGroup* stg : qAsConst(sty->groupsList)){
@@ -834,7 +875,11 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 			tosExport	<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
 					<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator
 					<<textquote<<protectCSV(stg->name)<<textquote<<fieldSeparator
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+					<<CustomFETString::number(stg->numberOfStudents)<<fieldSeparator<<fieldSeparator<<Qt::endl;
+#else
 					<<CustomFETString::number(stg->numberOfStudents)<<fieldSeparator<<fieldSeparator<<endl;
+#endif
 			if(!checkSetSeparator(stg->name, setSeparator))
 				lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(stg->name)+"\n";
 			for(StudentsSubgroup* sts : qAsConst(stg->subgroupsList)){
@@ -844,7 +889,11 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 						<<textquote<<protectCSV(stg->name)<<textquote<<fieldSeparator
 						<<CustomFETString::number(stg->numberOfStudents)<<fieldSeparator
 						<<textquote<<protectCSV(sts->name)<<textquote<<fieldSeparator
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+						<<CustomFETString::number(sts->numberOfStudents)<<Qt::endl;
+#else
 						<<CustomFETString::number(sts->numberOfStudents)<<endl;
+#endif
 				if(!checkSetSeparator(sts->name, setSeparator))
 					lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(sts->name)+"\n";
 			}
@@ -904,7 +953,11 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 				<<textquote<<"Split Duration"<<textquote<<fieldSeparator
 				<<textquote<<"Min Days"<<textquote<<fieldSeparator
 				<<textquote<<"Weight"<<textquote<<fieldSeparator
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				<<textquote<<"Consecutive"<<textquote<<Qt::endl;
+#else
 				<<textquote<<"Consecutive"<<textquote<<endl;
+#endif
 
 	//code by Liviu Lalescu (begin)
 	//better detection of min days constraint
@@ -1119,7 +1172,11 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 				//min days consecutive
 				if(careAboutMinDay)
 					tosExport<<tcmd->consecutiveIfSameDay;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				tosExport<<Qt::endl;
+#else
 				tosExport<<endl;
+#endif
 			}
 		//}
 	}
@@ -1202,17 +1259,17 @@ bool Export::exportCSVActivitiesStatistic(QString& lastWarnings, const QString& 
 			int tmpD=acti->duration;
 			QString tmpIdent=textquote;
 			if(acti->studentsNames.size()>0){
-				for(QStringList::Iterator it=acti->studentsNames.begin(); it!=acti->studentsNames.end(); it++){
+				for(QStringList::const_iterator it=acti->studentsNames.constBegin(); it!=acti->studentsNames.constEnd(); it++){
 					tmpIdent+=protectCSV(*it);
-					if(it!=acti->studentsNames.end()-1)
+					if(it!=acti->studentsNames.constEnd()-1)
 						tmpIdent+="+";
 				}
 			}
 			tmpIdent+=textquote+fieldSeparator+textquote+protectCSV(acti->subjectName)+textquote+fieldSeparator+textquote;
 			if(acti->teachersNames.size()>0){
-				for(QStringList::Iterator it=acti->teachersNames.begin(); it!=acti->teachersNames.end(); it++){
+				for(QStringList::const_iterator it=acti->teachersNames.constBegin(); it!=acti->teachersNames.constEnd(); it++){
 					tmpIdent+=protectCSV(*it);
-					if(it!=acti->teachersNames.end()-1)
+					if(it!=acti->teachersNames.constEnd()-1)
 						tmpIdent+="+";
 				}
 			}
@@ -1221,12 +1278,13 @@ bool Export::exportCSVActivitiesStatistic(QString& lastWarnings, const QString& 
 			tmpIdentDuration.insert(tmpIdent, tmpD);
 		}
 	}
-	QMapIterator<LocaleString, int> it(tmpIdentDuration);
-	while(it.hasNext()){
+
+	QMap<LocaleString, int>::const_iterator it=tmpIdentDuration.constBegin();
+	while(it!=tmpIdentDuration.constEnd()){
 		countExportedActivities++;
-		it.next();
 		tosExport<<it.key();
 		tosExport<<textquote<<CustomFETString::number(it.value())<<textquote<<"\n";
+		it++;
 	}
 
 	lastWarnings+=Export::tr("%1 active activities statistics exported.").arg(countExportedActivities)+"\n";
@@ -1282,7 +1340,11 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString& textquote,
 				<<textquote<<"Teachers"<<textquote<<fieldSeparator
 				<<textquote<<"Activity Tags"<<textquote<<fieldSeparator
 				<<textquote<<"Room"<<textquote<<fieldSeparator
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				<<textquote<<"Comments"<<textquote<<Qt::endl;
+#else
 				<<textquote<<"Comments"<<textquote<<endl;
+#endif
 
 	if(gt.rules.initialized && gt.rules.internalStructureComputed
 	 && students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready){
@@ -1349,7 +1411,11 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString& textquote,
 					//Comments
 					QString tmpString=protectCSV(act->comments);
 					tmpString.replace("\n", " ");
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+					tosExport<<tmpString<<textquote<<Qt::endl;
+#else
 					tosExport<<tmpString<<textquote<<endl;
+#endif
 				}
 			}
 		}	

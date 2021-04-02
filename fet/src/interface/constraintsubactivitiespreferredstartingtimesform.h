@@ -31,8 +31,6 @@ public:
 	ConstraintSubactivitiesPreferredStartingTimesForm(QWidget* parent);
 	~ConstraintSubactivitiesPreferredStartingTimesForm();
 
-	void refreshConstraintsListWidget();
-
 	bool filterOk(TimeConstraint* ctr);
 
 public slots:
@@ -40,6 +38,8 @@ public slots:
 	void addConstraint();
 	void modifyConstraint();
 	void removeConstraint();
+	
+	void filterChanged();
 
 	void help();
 };

@@ -15,11 +15,11 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QMessageBox>
+
 #include "modifystudentsyearform.h"
 
 #include "longtextmessagebox.h"
-
-#include <QMessageBox>
 
 ModifyStudentsYearForm::ModifyStudentsYearForm(QWidget* parent, const QString& initialYearName, int initialNumberOfStudents): QDialog(parent)
 {

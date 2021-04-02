@@ -85,12 +85,12 @@ void AddRoomForm::help()
 	QString s;
 	
 	s=tr("It is advisable to generate the timetable without the rooms (or without rooms' constraints), then, if a solution is possible, to add rooms or rooms' constraints");
-	 
+	
 	s+="\n\n";
 	
 	s+=tr("Please note that each room can hold a single activity at a specified period. If you"
 	 " have a very large room, which can hold more activities at one time, please add more rooms,"
 	 " representing this larger room");
-	 
+	
 	LongTextMessageBox::largeInformation(this, tr("FET - help on adding room(s)"), s);
 }

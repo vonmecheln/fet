@@ -44,10 +44,8 @@ void SparseTableView::resizeToFit()
 	QHash<int, int> columnSizes;
 	QHash<int, int> rowSizes;
 	
-	QHashIterator<QPair<int, int>, QString> i(model.items);
-	while(i.hasNext()){
-		i.next();
-		
+	QHash<QPair<int, int>, QString>::const_iterator i=model.items.constBegin();
+	while(i!=model.items.constEnd()){
 		QPair<int, int> pair=i.key();
 		
 		if(this->isRowHidden(pair.first))
@@ -65,6 +63,8 @@ void SparseTableView::resizeToFit()
 			columnSizes.insert(pair.second, size.width());
 		if(size.height() > rowSizes.value(pair.first, 0))
 			rowSizes.insert(pair.first, size.height());
+			
+		i++;
 	}
 	
 	horizontalSizesUntruncated.clear();

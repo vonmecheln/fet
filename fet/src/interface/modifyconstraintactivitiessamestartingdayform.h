@@ -31,8 +31,6 @@ public:
 	ModifyConstraintActivitiesSameStartingDayForm(QWidget* parent, ConstraintActivitiesSameStartingDay* ctr);
 	~ModifyConstraintActivitiesSameStartingDayForm();
 
-	void updateActivitiesListWidget();
-	
 	bool filterOk(Activity* a);
 
 public slots:

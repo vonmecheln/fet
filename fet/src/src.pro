@@ -1662,13 +1662,15 @@ TRANSLATIONS += \
 TEMPLATE = app
 
 DEFINES += \
-	QT_DEPRECATED_WARNINGS \
-	QT_NO_FOREACH
+	QT_NO_FOREACH \
+	QT_NO_JAVA_STYLE_ITERATORS \
+	QT_NO_LINKED_LIST \
+	QT_STRICT_ITERATORS
 
 CONFIG += release warn_on c++11
 QT += network
 
-greaterThan(QT_MAJOR_VERSION, 4){
+greaterThan(QT_MAJOR_VERSION, 4) {
 	QT += widgets
 	!isEmpty(QT.printsupport.name): QT += printsupport
 }

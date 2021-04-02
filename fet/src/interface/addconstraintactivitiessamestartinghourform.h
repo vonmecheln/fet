@@ -31,8 +31,6 @@ public:
 	AddConstraintActivitiesSameStartingHourForm(QWidget* parent);
 	~AddConstraintActivitiesSameStartingHourForm();
 
-	void updateActivitiesListWidget();
-	
 	bool filterOk(Activity* a);
 
 public slots:

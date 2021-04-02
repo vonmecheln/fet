@@ -32,7 +32,6 @@ public:
 	~AddConstraintActivityPreferredStartingTimeForm();
 
 	void updatePeriodGroupBox();
-	void updateActivitiesComboBox();
 
 	bool filterOk(Activity* a);
 

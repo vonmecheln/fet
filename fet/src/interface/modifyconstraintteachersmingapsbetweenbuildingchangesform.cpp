@@ -31,25 +31,19 @@ ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm::ModifyConstraintTeach
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	this->_ctr=ctr;
 	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 	
 	minGapsSpinBox->setMinimum(1);
 	minGapsSpinBox->setMaximum(gt.rules.nHoursPerDay);
-	minGapsSpinBox->setValue(ctr->minGapsBetweenBuildingChanges);	
-		
-	constraintChanged();
+	minGapsSpinBox->setValue(ctr->minGapsBetweenBuildingChanges);
 }
 
 ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm::~ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm()
 {
 	saveFETDialogGeometry(this);
-}
-
-void ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm::constraintChanged()
-{
 }
 
 void ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm::ok()
