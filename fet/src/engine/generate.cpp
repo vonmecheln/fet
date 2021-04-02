@@ -3,7 +3,7 @@ File generate.cpp
 */
 
 /*
-Copyright 2002, 2003 Lalescu Liviu.
+Copyright 2007 Lalescu Liviu.
 
 This file is part of FET.
 
@@ -35,7 +35,7 @@ using namespace std;
 
 #include <QMutex>
 
-extern QMutex mutex; //timetableallocatehoursform.cpp
+extern QMutex mutex; //timetablegenerateform.cpp
 
 #include <QList>
 #include <QSet>
@@ -234,6 +234,7 @@ void Generate::optimize()
 		 ", from nInternalActivities=="<<gt.rules.nInternalActivities<<endl;
 	 
 		assert(c.times[permutation[added_act]]==UNALLOCATED_TIME);
+		assert(c.rooms[permutation[added_act]]==UNALLOCATED_SPACE);
 
 		/*for(int i=0; i<gt.rules.nHoursPerWeek; i++)
 			tlistSet[i].clear();*/
@@ -1291,6 +1292,8 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 	}
 }
 
+#if 1
+
 static int nMinDaysBrokenL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 static int selectedRoomL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 static int permL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
@@ -1307,12 +1310,25 @@ static int roomSlotsL[MAX_LEVEL][MAX_HOURS_PER_WEEK];
 #define nConflActivities		(nConflActivitiesL[level])
 #define roomSlots				(roomSlotsL[level])
 
+#endif
+
 void Generate::randomswap(int ai, int level){
 	//cout<<"level=="<<level<<endl;
 
 	if(level==0){
 		conflActivitiesTimeSlot.clear();
 		timeSlot=-1;
+
+		/*for(int l=0; l<level_limit; l++)
+			for(int i=0; i<gt.rules.nHoursPerWeek; i++){
+				nMinDaysBrokenL[l][i]=0;
+				selectedRoomL[l][i]=-1;
+				permL[l][i]=-1;
+				conflActivitiesL[l][i].clear();
+				conflPermL[l][i]=-1;
+				nConflActivitiesL[l][i]=0;
+				roomSlotsL[l][i]=-1;
+			}*/
 	}
 
 	if(level>=level_limit){
@@ -1326,19 +1342,33 @@ void Generate::randomswap(int ai, int level){
 	if(ncallsrandomswap>=limitcallsrandomswap)
 		return;
 		
+	/*for(int i=0; i<gt.rules.nHoursPerWeek; i++){
+		nMinDaysBroken[i]=0;
+		selectedRoom[i]=-1;
+		perm[i]=-1;
+		conflActivities[i].clear();
+		conflPerm[i]=-1;
+		nConflActivities[i]=0;
+		roomSlots[i]=-1;
+	}*/
+		
 	ncallsrandomswap++;
 	
 	Activity* act=&gt.rules.internalActivitiesList[ai];
 	
-	//int nMinDaysBroken[MAX_HOURS_PER_WEEK]; //to count for broken min n days between activities constraints
+#if 0
+	int nMinDaysBroken[MAX_HOURS_PER_WEEK]; //to count for broken min n days between activities constraints
 	
-	//int selectedRoom[MAX_HOURS_PER_WEEK];
+	int selectedRoom[MAX_HOURS_PER_WEEK];
+#endif
 		
 	//cout<<"ai=="<<ai<<", corresponding to id=="<<gt.rules.internalActivitiesList[ai].id<<", level=="<<level<<endl;
 
 	//generate random permutation like in CLR second edition
 	//this is used to scan times in random order
-	//int perm[MAX_HOURS_PER_WEEK];
+#if 0
+	int perm[MAX_HOURS_PER_WEEK];
+#endif
 	
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
 		perm[i]=i;
@@ -1365,11 +1395,13 @@ void Generate::randomswap(int ai, int level){
 	*/
 	
 	//record the conflicting activities for each timeslot
-	/*QList<int> conflActivities[MAX_HOURS_PER_WEEK];
+#if 0
+	QList<int> conflActivities[MAX_HOURS_PER_WEEK];
 	int conflPerm[MAX_HOURS_PER_WEEK]; //the permutation in increasing order of number of conflicting activities
 	int nConflActivities[MAX_HOURS_PER_WEEK];
 	
-	int roomSlots[MAX_HOURS_PER_WEEK];*/
+	int roomSlots[MAX_HOURS_PER_WEEK];
+#endif
 	
 	for(int n=0; n<gt.rules.nHoursPerWeek; n++){
 		int newtime=perm[n];
@@ -2531,9 +2563,13 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 								if(optNConflActs>conflActs1[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 								if(optNWrong>nWrong1[d2]
 								 || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()){
+#endif*/
+#if 1
+								if((level==0 && (optNWrong>nWrong1[d2] || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()))
+								 || (level>0 && optNConflActs>conflActs1[d2].count())){
 #endif
 /*#if 1&0
 								if(optNWrong>nWrong1[d2]
@@ -2593,9 +2629,13 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 								if(optNConflActs>conflActs1[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 								if(optNWrong>nWrong1[d2]
 								 || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()){
+#endif*/
+#if 1
+								if((level==0 && (optNWrong>nWrong1[d2] || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()))
+								 || (level>0 && optNConflActs>conflActs1[d2].count())){
 #endif
 /*#if 1&0
 								if(optNWrong>nWrong1[d2]
@@ -2671,9 +2711,13 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 								if(optNConflActs>conflActs2[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 								if(optNWrong>nWrong2[d2]
 								 || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()){
+#endif*/
+#if 1
+								if((level==0 && (optNWrong>nWrong2[d2] || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()))
+								 || (level>0 && optNConflActs>conflActs2[d2].count())){
 #endif
 /*#if 1&0
 								if(optNWrong>nWrong2[d2]
@@ -2733,9 +2777,13 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 								if(optNConflActs>conflActs2[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 								if(optNWrong>nWrong2[d2]
 								 || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()){
+#endif*/
+#if 1
+								if((level==0 && (optNWrong>nWrong2[d2] || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()))
+								 || (level>0 && optNConflActs>conflActs2[d2].count())){
 #endif
 /*#if 1&0
 								if(optNWrong>nWrong2[d2]
@@ -2798,8 +2846,12 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 								if(optNConflActs==conflActs1[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 								if(optNWrong==nWrong1[d2] && optNConflActs==conflActs1[d2].count()){
+#endif*/
+#if 1
+								if(level==0 && optNWrong==nWrong1[d2] && optNConflActs==conflActs1[d2].count()
+								 || level>0 && optNConflActs==conflActs1[d2].count()){
 #endif
 /*#if 0
 								if(optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs==conflActs1[d2].count()){
@@ -2812,8 +2864,12 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 								if(optNConflActs==conflActs2[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 								if(optNWrong==nWrong2[d2] && optNConflActs==conflActs2[d2].count()){
+#endif*/
+#if 1
+								if(level==0 && optNWrong==nWrong2[d2] && optNConflActs==conflActs2[d2].count()
+								 || level>0 && optNConflActs==conflActs2[d2].count()){
 #endif
 /*#if 0
 								if(optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs==conflActs2[d2].count()){
@@ -2988,9 +3044,13 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 										if(optNConflActs>conflActs[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 										if(optNWrong>nWrong[d2]
 										 || optNWrong==nWrong[d2] && optNConflActs>conflActs[d2].count()){
+#endif*/
+#if 1
+										if(level==0 && (optNWrong>nWrong[d2] || optNWrong==nWrong[d2] && optNConflActs>conflActs[d2].count())
+										 || level>0 && optNConflActs>conflActs[d2].count()){
 #endif
 /*#if 1&0
 										if(optNWrong>nWrong[d2]
@@ -3043,9 +3103,13 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 										if(optNConflActs>conflActs[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 										if(optNWrong>nWrong[d2]
 										 || optNWrong==nWrong[d2] && optNConflActs>conflActs[d2].count()){
+#endif*/
+#if 1
+										if(level==0 && (optNWrong>nWrong[d2] || optNWrong==nWrong[d2] && optNConflActs>conflActs[d2].count())
+										 || level>0 && optNConflActs>conflActs[d2].count()){
 #endif
 /*#if 1&0
 										if(optNWrong>nWrong[d2]
@@ -3079,8 +3143,12 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 									if(optNConflActs==conflActs[d2].count())
 #endif*/
-#if 1
+/*#if 1
 									if(optNWrong==nWrong[d2] && optNConflActs==conflActs[d2].count())
+#endif*/
+#if 1
+									if(level==0 && optNWrong==nWrong[d2] && optNConflActs==conflActs[d2].count()
+									 || level>0 && optNConflActs==conflActs[d2].count())
 #endif
 /*#if 0
 									if(optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs==conflActs[d2].count())
@@ -3249,9 +3317,13 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 										if(optNConflActs>conflActs1[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 										if(optNWrong>nWrong1[d2]
 										 || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()){
+#endif*/
+#if 1
+										if(level==0 && (optNWrong>nWrong1[d2] || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count())
+										 || level>0 && optNConflActs>conflActs1[d2].count()){
 #endif
 /*#if 1&0
 										if(optNWrong>nWrong1[d2]
@@ -3310,9 +3382,13 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 										if(optNConflActs>conflActs1[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 										if(optNWrong>nWrong1[d2]
 										 || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()){
+#endif*/
+#if 1
+										if(level==0 && (optNWrong>nWrong1[d2] || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count())
+										 || level>0 && optNConflActs>conflActs1[d2].count()){
 #endif
 /*#if 1&0
 										if(optNWrong>nWrong1[d2]
@@ -3387,9 +3463,13 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 										if(optNConflActs>conflActs2[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 										if(optNWrong>nWrong2[d2]
 										 || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()){
+#endif*/
+#if 1
+										if(level==0 && (optNWrong>nWrong2[d2] || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count())
+										 || level>0 && optNConflActs>conflActs2[d2].count()){
 #endif
 /*#if 1&0
 										if(optNWrong>nWrong2[d2]
@@ -3448,9 +3528,13 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 										if(optNConflActs>conflActs2[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 										if(optNWrong>nWrong2[d2]
 										 || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()){
+#endif*/
+#if 1
+										if(level==0 && (optNWrong>nWrong2[d2] || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count())
+										 || level>0 && optNConflActs>conflActs2[d2].count()){
 #endif
 /*#if 1&0
 										if(optNWrong>nWrong2[d2]
@@ -3494,8 +3578,12 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 									if(optNConflActs==conflActs1[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 									if(optNWrong==nWrong1[d2] && optNConflActs==conflActs1[d2].count()){
+#endif*/
+#if 1
+									if(level==0 && optNWrong==nWrong1[d2] && optNConflActs==conflActs1[d2].count()
+									 || level>0 && optNConflActs==conflActs1[d2].count()){
 #endif
 /*#if 0
 									if(optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs==conflActs1[d2].count()){
@@ -3508,8 +3596,12 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 									if(optNConflActs==conflActs2[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 									if(optNWrong==nWrong2[d2] && optNConflActs==conflActs2[d2].count()){
+#endif*/
+#if 1
+									if(level==0 && optNWrong==nWrong2[d2] && optNConflActs==conflActs2[d2].count()
+									 || level>0 && optNConflActs==conflActs2[d2].count()){
 #endif
 /*#if 0
 									if(optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs==conflActs2[d2].count()){
@@ -3655,9 +3747,13 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 								if(optNConflActs>conflActs[d2].count()){
 #endif*/
-#if 1
+/*#if 1
 								if(optNWrong>nWrong[d2]
 								 || optNWrong==nWrong[d2] && optNConflActs>conflActs[d2].count()){
+#endif*/
+#if 1
+								if(level==0 && (optNWrong>nWrong[d2] || optNWrong==nWrong[d2] && optNConflActs>conflActs[d2].count())
+								 || level>0 && optNConflActs>conflActs[d2].count()){
 #endif
 /*#if 1&0
 								if(optNWrong>nWrong[d2]
@@ -3691,8 +3787,12 @@ impossibleteachersmaxhoursdaily:
 /*#if 1
 							if(optNConflActs==conflActs[d2].count())
 #endif*/
-#if 1
+/*#if 1
 							if(optNWrong==nWrong[d2] && optNConflActs==conflActs[d2].count())
+#endif*/
+#if 1
+							if(level==0 && optNWrong==nWrong[d2] && optNConflActs==conflActs[d2].count()
+							 || level>0 && optNConflActs==conflActs[d2].count())
 #endif
 /*#if 0
 							if(optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs==conflActs[d2].count())
@@ -3907,7 +4007,7 @@ impossibleroomnotavailable:
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
 		conflPerm[perm[i]]=perm[i];
 		
-	//sorting - stable (not needed?) - O(n^2) - should be improved?
+	//sorting - O(n^2) - should be improved?
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
 		for(int j=i+1; j<gt.rules.nHoursPerWeek; j++)
 #if 1
@@ -4267,7 +4367,7 @@ impossibleroomnotavailable:
 			
 			assert(!foundGoodSwap);
 			
-			if(level>=7)
+			if(level>=7) //7 originally
 				return;
 		}
 	}

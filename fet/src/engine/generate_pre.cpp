@@ -76,8 +76,6 @@ double subgroupsEarlyPercentage[MAX_TOTAL_SUBGROUPS];
 double subgroupsNoGapsPercentage[MAX_TOTAL_SUBGROUPS];
 
 //TEACHERS MAX DAYS PER WEEK
-//activities indices (in 0..gt.rules.nInternalActivities-1) for each teacher
-QList<int> activitiesForTeachers[MAX_TEACHERS];
 int teachersMaxDaysPerWeekMaxDays[MAX_TEACHERS];
 double teachersMaxDaysPerWeekWeightPercentages[MAX_TEACHERS];
 QList<int> teacherActivitiesOfTheDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
@@ -156,7 +154,6 @@ bool processTimeConstraints()
 	//////////////////////////////////
 	
 	/////5. TEACHER MAX DAYS PER WEEK
-	computeActivitiesForTeachers();
 	t=computeMaxDaysPerWeekForTeachers();
 	if(!t)
 		return false;
@@ -205,12 +202,7 @@ bool processTimeConstraints()
 		return false;
 	//////////////////
 	
-	//check for not implemented constraints in FET 5
 	bool ok=true;
-	/*for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
-		TimeConstraint* tc=gt.rules.internalTimeConstraintsList[i];
-		}
-	}*/
 	
 	return ok;
 }
@@ -752,22 +744,6 @@ void computeNHoursPerSubgroup()
 	}
 }*/
 
-void computeActivitiesForTeachers()
-{
-	assert(gt.rules.internalStructureComputed);
-	
-	for(int j=0; j<gt.rules.nInternalTeachers; j++)
-		activitiesForTeachers[j].clear();
-
-	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		Activity* act=&gt.rules.internalActivitiesList[i];
-		for(int j=0; j<act->nTeachers; j++){
-			int t=act->teachers[j];
-			if(activitiesForTeachers[t].indexOf(i)==-1)
-				activitiesForTeachers[t].append(i);
-		}
-	}
-}
 
 bool computeMaxDaysPerWeekForTeachers()
 {

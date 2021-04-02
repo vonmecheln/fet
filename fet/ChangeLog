@@ -940,4 +940,6 @@ Versions 5.1.0 -
 	- Students not available does not induce gaps or early unrespected
 	- Teachers not available does not induce gaps
 	- Improvement in automatic generation (cycles avoided better)
+- Version 5.1.7
+	- I hope improvements in automatic generation
 	

@@ -105,7 +105,6 @@ extern QList<int> teacherActivitiesOfTheDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
 
 extern QList<int> teachersWithMaxDaysPerWeekForActivities[MAX_ACTIVITIES];
 
-void computeActivitiesForTeachers();
 bool computeMaxDaysPerWeekForTeachers();
 ////////END   teachers max days per week
 
