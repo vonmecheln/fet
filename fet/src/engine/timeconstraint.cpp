@@ -863,7 +863,7 @@ bool ConstraintActivitiesSameStartingTime::computeInternalStructure(Rules &r)
 	
 	if(this->_n_activities<=1){
 		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject ::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QObject ::tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
 	}
@@ -1154,7 +1154,7 @@ bool ConstraintActivitiesNotOverlapping::computeInternalStructure(Rules &r)
 	
 	if(this->_n_activities<=1){
 		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject ::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QObject ::tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
 	}
@@ -1509,7 +1509,7 @@ bool ConstraintMinNDaysBetweenActivities::computeInternalStructure(Rules &r)
 	
 	if(this->_n_activities<=1){
 		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject ::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QObject ::tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
 	}
@@ -4581,7 +4581,7 @@ bool ConstraintActivityPreferredTime::computeInternalStructure(Rules& r)
 	if(i==r.nInternalActivities){	
 		//assert(0);
 		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject ::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QObject ::tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
@@ -4847,7 +4847,7 @@ bool ConstraintActivityPreferredTimes::computeInternalStructure(Rules& r)
 
 	if(i==r.nInternalActivities){
 		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject ::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QObject ::tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
 	}
@@ -5174,7 +5174,7 @@ bool ConstraintActivitiesPreferredTimes::computeInternalStructure(Rules& r)
 		return true;
 	else{
 		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject ::tr("Following constraint is wrong (refers to no activities):\n%1").arg(this->getDetailedDescription(r)));
+			QObject ::tr("Following constraint is wrong (refers to no activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 }
@@ -5492,7 +5492,7 @@ bool ConstraintActivitiesSameStartingHour::computeInternalStructure(Rules &r)
 	
 	if(this->_n_activities<=1){
 		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject ::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QObject ::tr("Following constraint is wrong (because you need 2 or more activities. Please correct it):\n%1").arg(this->getDetailedDescription(r)));
 		//assert(0);
 		return false;
 	}
@@ -5776,7 +5776,7 @@ bool Constraint2ActivitiesConsecutive::computeInternalStructure(Rules& r)
 	if(i==r.nInternalActivities){	
 		//assert(0);
 		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject ::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QObject ::tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
@@ -5793,12 +5793,18 @@ bool Constraint2ActivitiesConsecutive::computeInternalStructure(Rules& r)
 	if(i==r.nInternalActivities){	
 		//assert(0);
 		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
-			QObject ::tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
+			QObject ::tr("Following constraint is wrong (refers to inexistent activity ids):\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
 	this->secondActivityIndex=i;
 	
+	if(firstActivityIndex==secondActivityIndex){	
+		//assert(0);
+		QMessageBox::warning(NULL, QObject::tr("FET error in data"), 
+			QObject ::tr("Following constraint is wrong (refers to same activities):\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
 	assert(firstActivityIndex!=secondActivityIndex);
 	
 	return true;

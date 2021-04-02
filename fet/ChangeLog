@@ -994,4 +994,6 @@ Versions 5.2.0 - 5.2.
 - Version 5.2.8
 	- Added a test to see if teachers or students have enough slots, from not available constraints
 	- Small bug fixes
+- Version 5.2.9
+	- Small improvements in interface
 	

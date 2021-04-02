@@ -164,7 +164,8 @@ void TimetableViewTeachersForm::detailActivity(int row, int col){
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 				assert(act!=NULL);
-				s += act->getDetailedDescriptionWithConstraints(gt.rules);
+				//s += act->getDetailedDescriptionWithConstraints(gt.rules);
+				s += act->getDetailedDescription(gt.rules);
 
 				//int r=rooms_timetable_weekly[teacher][k][j];
 				int r=best_solution.rooms[ai];

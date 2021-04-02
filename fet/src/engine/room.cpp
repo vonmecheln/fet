@@ -61,7 +61,7 @@ QString Room::getDescription()
 	s+=",";*/
 	s+=QObject::tr("C:");
 	s+=QString::number(this->capacity);
-	s+=",";
+	//s+=",";
 
 	/*for(QStringList::Iterator it=this->equipments.begin(); it!=this->equipments.end(); it++)
 		s+="E:"+(*it)+", ";*/

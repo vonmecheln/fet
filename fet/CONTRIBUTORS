@@ -1,7 +1,7 @@
 Code contributors:
 
 Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/) - implemented and tested 
-	two-point and uniform crossover. Currently, FET uses only two-point crossover. This is clearly 
+	two-point and uniform crossover. Two-point crossover is clearly 
 	an improvement over the 1-point crossover, originally implemented in FET 
 	--------- 30 June 2007 - evolutionary algorithm is deprecated by Liviu Lalescu (so no crossover anymore)
 

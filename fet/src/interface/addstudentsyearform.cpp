@@ -57,7 +57,8 @@ void AddStudentsYearForm::addStudentsYear()
 		assert(tmp);
 
 		QMessageBox::information(this, QObject::tr("Year insertion dialog"),
-			QObject::tr("Year added"));
+			QObject::tr("Year added. You might want to divide it into sections - this is done the easiest way in the years "
+			"dialog - button 'Divide year ...', or more difficult by manually adding groups and subgroups"));
 	}
 
 	nameLineEdit->selectAll();

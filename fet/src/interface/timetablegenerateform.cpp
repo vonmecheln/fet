@@ -477,6 +477,7 @@ void TimetableGenerateForm::help()
 	QString s="";
 	
 	s+=TimetableGenerateForm::tr("Please wait. It might take 5 to 20 minutes or even more for very difficult timetables")+"\n";
+	s+=TimetableGenerateForm::tr("Activities are placed in order, most difficult ones first"); s+="\n";
 	s+=TimetableGenerateForm::tr("The process of searching is semi-randomized, which means that "
 	 "you will get different timetables and running times each time. You can choose the best timetable from several runs");
 	s+="\n";
