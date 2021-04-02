@@ -266,6 +266,15 @@ void FetMainForm::httpDone(bool error)
 		 ).arg(getter.http.errorString()));
 	}
 	else{
+		//internetVersion="Service_discontinued_for_FET_5_version.Please_visit_FET_web_page_for_latest_version";
+
+		QString s;
+		for(int c=0; c<internetVersion.count(); c++){
+			s+=internetVersion[c];
+			if((c+1)%64==0)
+				s+=" ";
+		}
+	
 		if(internetVersion!=FET_VERSION){
 			QMessageBox::information(this, QObject::tr("FET information"),
 			 QObject::tr("Another version: %1, is available on FET webpage: http://www.lalescu.ro/liviu/fet/ .\n\n"
@@ -273,7 +282,7 @@ void FetMainForm::httpDone(bool error)
 			 "Please read the information on web page regarding the newer version and choose whether to keep you current version or upgrade."
 			 " You might need to hit Refresh in your web browser if links do not work"
 			 "\n\nYou can choose to disable automatic search for updates in the Settings menu")
-			 .arg(internetVersion));
+			 .arg(s));
 		}
 	}
 	

@@ -886,3 +886,7 @@ Versions 5.0.0 -
 	- Improved Romanian translation.
 - Version 5.0.0-preview26
 	- Improved documentation.
+- Version 5.0.0-preview27
+	- Possible improvement in the optimization algorithm
+	- Improved saving the xhtml of timetable by Volker Dirr
+	- Small bug fix

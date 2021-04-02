@@ -373,6 +373,10 @@ arranged in xml format
 */
 const QString ROOMS_TIMETABLE_FILENAME_XML="roomstimetable.xml";
 
+
+
+const QString STYLESHEET_CSS="stylesheet.css";
+
 /**
 An output file containing the timetable for each subgroup,
 arranged in html format. Version 1 - flyers for each subgroup

@@ -41,8 +41,8 @@ class TimeSolvingThread: public QThread{
 
 public:
 	void run();
-	
-signals: 
+
+signals:
 	void generationComputed(int generation);
 };
 
@@ -62,7 +62,7 @@ public:
 	void write();
 
 	void closePressed();
-	
+
 	void generationLogging(int generation);
 
 	void writeSimulationResults(TimeChromosome& c);
@@ -76,6 +76,9 @@ public:
 	Function writing the teachers' timetable in xml format
 	*/
 	void writeTeachersTimetableXml(const QString& xmlfilename);
+
+
+	void writeStylesheetCss(const QString& htmlfilename);
 
 	/**
 	Function writing the students' timetable html format, to a file
@@ -131,9 +134,9 @@ public:
 
 private slots:
 	void activityPlaced(int na);
-	
+
 	void simulationFinished();
-	
+
 	void impossibleToSolve();
 };
 

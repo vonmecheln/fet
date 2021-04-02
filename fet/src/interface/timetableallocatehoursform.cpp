@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-//Code contributed by Volker Dirr (timetabling.de) for xhtml saving timetables
+//xhtml saving timetables code contributed by Volker Dirr (timetabling.de)
 
 #include "optimizetime.h"
 
@@ -112,10 +112,10 @@ TimetableAllocateHoursForm::TimetableAllocateHoursForm()
 TimetableAllocateHoursForm::~TimetableAllocateHoursForm()
 {
 	//timeSolvingThread.quit();
-	
+
 	if(simulation_running)
 		this->stop();
-	
+
 /*	mutex.lock();
 	ot.abortOptimization=true;
 	mutex.unlock();
@@ -195,10 +195,10 @@ void TimetableAllocateHoursForm::start(){
 void TimetableAllocateHoursForm::stop()
 {
 	if(!simulation_running){
-		QMessageBox::critical(this, QObject::tr("FET information"), 
+		QMessageBox::critical(this, QObject::tr("FET information"),
 		 QObject::tr("Simulation stopped but the simulation is not running."
 		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
-		 
+
 		return;
 	}
 
@@ -246,12 +246,12 @@ void TimetableAllocateHoursForm::stop()
 
 	QString s=QObject::tr("Simulation interrupted. FET could not find a perfect timetable. "
 	 "Maybe you can consider lowering the constraints.");
-	 
+
 	s+=" ";
-	
+
 	s+=QObject::tr("The partial results are saved in the directory %1 in html and xml mode"
 	 " and the conflicts in txt mode").arg(OUTPUT_DIR);
-	 
+
 	s+="\n\n";
 
 	s+=QObject::tr("Additional information relating impossible to schedule activities:\n\n");
@@ -330,10 +330,10 @@ void TimetableAllocateHoursForm::stop()
 void TimetableAllocateHoursForm::impossibleToSolve()
 {
 	if(!simulation_running){
-		QMessageBox::critical(this, QObject::tr("FET information"), 
+		QMessageBox::critical(this, QObject::tr("FET information"),
 		 QObject::tr("Simulation impossible to solve, but the simulation is not running."
 		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
-		 
+
 		return;
 	}
 
@@ -347,10 +347,14 @@ void TimetableAllocateHoursForm::impossibleToSolve()
 
 	QString s=QObject::tr("FET could not find a timetable. "
 	 "Maybe you can consider lowering the constraints.");
+
 	s+=" ";
+
 	s+=QObject::tr("The partial results are saved in the directory %1 in html and xml mode"
 	 " and the conflicts in txt mode").arg(OUTPUT_DIR);
+
 	s+="\n\n";
+
 	s+=QObject::tr("Additional information relating impossible to schedule activities:\n\n");
 	/*s+=QObject::tr("Maybe your constraints are too high. Especially check your students (set) early constraint, "
 	 "because if you enter partial data there might be impossible to respect early, so you might "
@@ -424,13 +428,13 @@ void TimetableAllocateHoursForm::impossibleToSolve()
 void TimetableAllocateHoursForm::simulationFinished()
 {
 	if(!simulation_running){
-		QMessageBox::critical(this, QObject::tr("FET information"), 
+		QMessageBox::critical(this, QObject::tr("FET information"),
 		 QObject::tr("Simulation finished but the simulation is not running."
 		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
-		 
+
 		return;
 	}
-	
+
 	assert(simulation_running);
 
 	finishedSemaphore.acquire();
@@ -481,11 +485,11 @@ void TimetableAllocateHoursForm::simulationFinished()
 void TimetableAllocateHoursForm::activityPlaced(int na){
 	/*if(!simulation_running){
 		assert(0);
-		
-		QMessageBox::critical(this, QObject::tr("FET information"), 
+
+		QMessageBox::critical(this, QObject::tr("FET information"),
 		 QObject::tr("Activity placed but the simulation is not running."
 		 " Maybe you aborted simulation previously. Please report possible bug to author"));
-		 
+
 		return;
 	}*/
 
@@ -502,7 +506,7 @@ void TimetableAllocateHoursForm::activityPlaced(int na){
 	//s = QObject::tr("Population number:"); s+=QString::number(gt.timePopulation.n); s+="\n";
 	//s += QObject::tr("Generation:"); s+=QString::number(generation+1)+"\n";
 	s+=QObject::tr("%1 out of %2 activities placed").arg(na).arg(gt.rules.nInternalActivities)+"\n";
-	
+
 	/*double d1=c.fitness(gt.rules);
 	double d2 = d1 - floor(d1/10000)*10000;
 	s+=QObject::tr("Constraints conflicts (without unallocated):"); s+=QString::number(d2)+"\n";*/
@@ -628,6 +632,8 @@ void TimetableAllocateHoursForm::writeSimulationResults(TimeChromosome &c){
 	writeTeachersTimetableXml(s);
 
 	//now write the solution in html files
+	s=OUTPUT_DIR+FILE_SEP+s2+"_"+STYLESHEET_CSS;
+	writeStylesheetCss(s);
 	//students
 	s=OUTPUT_DIR+FILE_SEP+s2+"_"+STUDENTS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	writeStudentsTimetableDaysHorizontalHtml(s);
@@ -796,10 +802,49 @@ void TimetableAllocateHoursForm::writeTeachersTimetableXml(const QString& xmlfil
 
 //**********************************************************************************************************************/
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
+//(old code by Liviu Lalescu)
 //added features: - xhtml 1.0 strict valide
 //                - span using
 //                - times vertical
 //                - table of content with hyperlinks
+
+
+/**
+Function writing the stylesheet in css format to a file by Volker Dirr.
+*/
+void TimetableAllocateHoursForm::writeStylesheetCss(const QString& htmlfilename){
+	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
+	//assert(gt.timePopulation.initialized);
+	assert(students_schedule_ready && teachers_schedule_ready);
+
+	//Now we print the results to an CSS file
+	QFile file(htmlfilename);
+	if(!file.open(QIODevice::WriteOnly))
+		assert(0);
+	QTextStream tos(&file);
+	tos.setEncoding(QTextStream::UnicodeUTF8);
+
+	time_t ltime;
+	tzset();
+	time(&ltime);
+
+	tos<<"/* "<<QObject::tr("CSS Stylesheet of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
+	tos<<"   "<<QObject::tr("Stylesheet generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<" */\n\n";
+
+	tos<<"table {\n  page-break-before: always;\n  text-align: center;\n  border: 1px outset black;\n}\n\n\n";
+	tos<<"caption {\n\n}\n\n\n";
+	tos<<"thead {\n\n}\n\n\n";
+	tos<<"tfoot {\n\n}\n\n\n";
+	tos<<"tbody {\n\n}\n\n\n";
+	tos<<"th {\n  border: 1px inset black;\n}\n\n\n";
+	tos<<"td {\n  border: 1px inset black;\n}\n\n\n";
+
+	file.close();
+}
+
+
+//XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
+//(old code by Liviu Lalescu)
 
 /**
 Function writing the students' timetable in html format to a file.
@@ -835,16 +880,8 @@ void TimetableAllocateHoursForm::writeStudentsTimetableDaysHorizontalHtml(const 
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-
-	//////////////
-	//Added by Liviu Lalescu
-	tos<<"    <style type=\"text/css\">\n";
-	tos<<"        table{\n";
-	tos<<"            page-break-before: always;\n";
-	tos<<"        }\n";
-	tos<<"    </style>\n";
-	//////////////
-
+	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n";
@@ -899,7 +936,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableDaysHorizontalHtml(const 
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_time_chromosome.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td align=\"center\"";
+						tos<<"          <td";
 						if(act->duration==1)
 							tos<<">";
 						else
@@ -914,7 +951,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableDaysHorizontalHtml(const 
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td align=\"center\">---</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
@@ -934,6 +971,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableDaysHorizontalHtml(const 
 
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
+//(old code by Liviu Lalescu)
 /**
 Function writing the students' timetable in html format to a file.
 Days vertical
@@ -968,16 +1006,8 @@ void TimetableAllocateHoursForm::writeStudentsTimetableDaysVerticalHtml(const QS
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-
-	//////////////
-	//Added by Liviu Lalescu
-	tos<<"    <style type=\"text/css\">\n";
-	tos<<"        table{\n";
-	tos<<"            page-break-before: always;\n";
-	tos<<"        }\n";
-	tos<<"    </style>\n";
-	//////////////
-
+	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n\n";
@@ -1032,7 +1062,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableDaysVerticalHtml(const QS
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_time_chromosome.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td align=\"center\"";
+						tos<<"          <td";
 						if(act->duration==1)
 							tos<<">";
 						else
@@ -1048,7 +1078,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableDaysVerticalHtml(const QS
 						tos<<"          <!-- span -->\n";
 				}
 				else
-					tos<<"          <td align=\"center\">---</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
@@ -1070,6 +1100,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableDaysVerticalHtml(const QS
 
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
+//(old code by Liviu Lalescu)
 /**
 Function writing the students' timetable html format to a file
 Time vertical
@@ -1101,6 +1132,8 @@ void TimetableAllocateHoursForm::writeStudentsTimetableTimeVerticalHtml(const QS
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body>\n";
@@ -1137,7 +1170,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableTimeVerticalHtml(const QS
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_time_chromosome.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td align=\"center\"";
+						tos<<"          <td";
 						if(act->duration==1)
 							tos<<">";
 						else
@@ -1152,7 +1185,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableTimeVerticalHtml(const QS
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td align=\"center\">---</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
@@ -1163,6 +1196,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableTimeVerticalHtml(const QS
 }
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
+//(old code by Liviu Lalescu)
 /**
 Function writing the students' timetable in html format to a file.
 Time horizontal
@@ -1193,6 +1227,8 @@ void TimetableAllocateHoursForm::writeStudentsTimetableTimeHorizontalHtml(const 
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body>\n";
@@ -1231,7 +1267,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableTimeHorizontalHtml(const 
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_time_chromosome.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td align=\"center\"";
+						tos<<"          <td";
 						if(act->duration==1)
 							tos<<">";
 						else
@@ -1246,7 +1282,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableTimeHorizontalHtml(const 
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td align=\"center\">---</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 		}
 		tos<<"        </tr>\n";
@@ -1259,6 +1295,7 @@ void TimetableAllocateHoursForm::writeStudentsTimetableTimeHorizontalHtml(const 
 
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
+//(old code by Liviu Lalescu)
 /**
 Function writing the teachers' timetable html format to a file.
 Days horizontal.
@@ -1293,16 +1330,8 @@ void TimetableAllocateHoursForm::writeTeachersTimetableDaysHorizontalHtml(const 
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-
-	//////////////
-	//Added by Liviu Lalescu
-	tos<<"    <style type=\"text/css\">\n";
-	tos<<"        table{\n";
-	tos<<"            page-break-before: always;\n";
-	tos<<"        }\n";
-	tos<<"    </style>\n";
-	//////////////
-
+	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n";
@@ -1347,7 +1376,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableDaysHorizontalHtml(const 
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_time_chromosome.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td align=\"center\"";
+						tos<<"          <td";
 						if(act->duration==1)
 							tos<<">";
 						else
@@ -1363,7 +1392,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableDaysHorizontalHtml(const 
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td align=\"center\">---</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
@@ -1382,6 +1411,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableDaysHorizontalHtml(const 
 }
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
+//(old code by Liviu Lalescu)
 /**
 Function writing the teachers' timetable html format to a file.
 Days vertical.
@@ -1416,16 +1446,8 @@ void TimetableAllocateHoursForm::writeTeachersTimetableDaysVerticalHtml(const QS
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
-
-	//////////////
-	//Added by Liviu Lalescu
-	tos<<"    <style type=\"text/css\">\n";
-	tos<<"        table{\n";
-	tos<<"            page-break-before: always;\n";
-	tos<<"        }\n";
-	tos<<"    </style>\n";
-	//////////////
-
+	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body id=\"top\">\n";
@@ -1471,7 +1493,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableDaysVerticalHtml(const QS
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_time_chromosome.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td align=\"center\"";
+						tos<<"          <td";
 						if(act->duration==1)
 							tos<<">";
 						else
@@ -1488,7 +1510,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableDaysVerticalHtml(const QS
 						tos<<"          <!-- span -->\n";
 				}
 				else
-					tos<<"          <td align=\"center\">---</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
@@ -1507,6 +1529,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableDaysVerticalHtml(const QS
 }
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
+//(old code was done by Liviu Lalescu)
 /**
 Function writing the teachers' timetable html format to a file
 Time vertical
@@ -1538,6 +1561,8 @@ void TimetableAllocateHoursForm::writeTeachersTimetableTimeVerticalHtml(const QS
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body>\n";
@@ -1573,7 +1598,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableTimeVerticalHtml(const QS
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_time_chromosome.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td align=\"center\"";
+						tos<<"          <td";
 						if(act->duration==1)
 							tos<<">";
 						else
@@ -1589,7 +1614,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableTimeVerticalHtml(const QS
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td align=\"center\">---</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 			tos<<"        </tr>\n";
 		}
@@ -1600,6 +1625,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableTimeVerticalHtml(const QS
 }
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
+//(old code by Liviu Lalescu)
 /**
 Function writing the teachers' timetable html format to a file.
 Time horizontal
@@ -1632,6 +1658,8 @@ void TimetableAllocateHoursForm::writeTeachersTimetableTimeHorizontalHtml(const 
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n";
+	QString cssfilename=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1)+"_"+STYLESHEET_CSS;
+	tos<<"    <link rel=\"stylesheet\" media=\"all\" href=\""<<cssfilename<<"\" type=\"text/css\" />\n";
 	tos<<"  </head>\n\n";
 
 	tos<<"  <body>\n";
@@ -1670,7 +1698,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableTimeHorizontalHtml(const 
 				if(ai!=UNALLOCATED_ACTIVITY){
 					if(best_time_chromosome.times[ai]==currentTime){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tos<<"          <td align=\"center\"";
+						tos<<"          <td";
 						if(act->duration==1)
 							tos<<">";
 						else
@@ -1686,7 +1714,7 @@ void TimetableAllocateHoursForm::writeTeachersTimetableTimeHorizontalHtml(const 
 					} else
 						tos<<"          <!-- span -->\n";
 				} else
-					tos<<"          <td align=\"center\">---</td>\n";
+					tos<<"          <td>---</td>\n";
 			}
 		}
 		tos<<"        </tr>\n";
