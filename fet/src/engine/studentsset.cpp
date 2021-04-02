@@ -38,6 +38,8 @@ StudentsYear::StudentsYear()
 	: StudentsSet()
 {
 	this->type=STUDENTS_YEAR;
+
+	indexInAugmentedYearsList=-1;
 }
 
 StudentsYear::~StudentsYear()
@@ -134,6 +136,8 @@ StudentsGroup::StudentsGroup()
 	: StudentsSet()
 {
 	this->type=STUDENTS_GROUP;
+
+	indexInInternalGroupsList=-1;
 }
 
 StudentsGroup::~StudentsGroup()

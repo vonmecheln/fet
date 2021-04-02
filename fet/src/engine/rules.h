@@ -168,6 +168,8 @@ public:
 	int nInternalSubgroups;
 	Matrix1D<StudentsSubgroup*> internalSubgroupsList;
 	
+	StudentsGroupsList internalGroupsList;
+	
 	StudentsYearsList augmentedYearsList;
 
 	/**
@@ -453,6 +455,7 @@ public:
 	number of activities was reached.
 	*/
 	bool addSimpleActivity(
+		QWidget* parent,
 		int _id,
 		int _activityGroupId,
 		const QStringList& _teachersNames,
@@ -469,6 +472,7 @@ public:
 	Faster, when reading rules (no need to recompute the number of students in activity constructor
 	*/
 	bool addSimpleActivityRulesFast(
+		QWidget* parent,
 		int _id,
 		int _activityGroupId,
 		const QStringList& _teachersNames,
@@ -490,6 +494,7 @@ public:
 	ConstraintMinDaysBetweenActivities.
 	*/
 	bool addSplitActivity(
+		QWidget* parent,
 		int _firstActivityId,
 		int _activityGroupId,
 		const QStringList& _teachersNames,

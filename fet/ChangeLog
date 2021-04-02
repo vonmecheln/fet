@@ -1584,7 +1584,7 @@ Version 5.15.0
 	- Added a new sample file, by Silver.
 	- Improved the Morocco sample file and the Morocco instructions (by Liviu Lalescu and Chafik Graiguer).
 ---------------------------------------------------------------------------------
-Versions 5.16.0 - 5.16.x
+Versions 5.16.0 - 5.16.1
 - Version 5.16.0
 	- Each constraint can be activated/deactivated and also each constraint may have an optional comment. The user can sort the constraints
 	based on their comment. These special functions can only be accessed from all time/space constraints dialogs (suggested by George Miliotis,
@@ -1597,9 +1597,16 @@ Versions 5.16.0 - 5.16.x
 	- Updated the Saudi Arabia examination timetable file, by Silver.
 - Version 5.16.1
 	- Updated to Qt 4.8.0.
-	- Bug fix: command line interface now accepts backslash native characters under Windows (reported by Sarwan Bangar).
+	- Bug fix: command line interface now accepts native file separator characters (reported by Sarwan Bangar).
 	- When using command line with a time limit, and the time limit is exceeded, FET will save the highest stage and the current timetable.
 	Suggestion and code by Ian Holden.
 	- Exporting of the timetable as a CSV file now saves also the activities comments (suggested by m, implemented by Volker Dirr).
 	- Minor bug fix in HTML timetables, by Volker Dirr.
 	- Minor interface bug fixes.
+---------------------------------------------------------------------------------
+Versions 5.17.0 - 5.17.x
+- Version 5.17.0
+	- Printing of the timetables (directly from the interface), by Volker Dirr (suggested by Bobby Wise, Anwarul Alam, daviodan and maybe other users).
+	- Updated to Qt 4.8.1.
+	- Minor interface improvements and bug fixes.
+	- Added a new Greek sample file, by Petros Nouvakis.

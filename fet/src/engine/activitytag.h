@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef ACTIVITYTAG_H
 #define ACTIVITYTAG_H

@@ -764,7 +764,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 								tmp+=textquote;
 								tmpLine.remove(0,1);
 							} else {
-								QMessageBox::critical(newParent, tr("FET Warning"), Import::tr("Missing field separator or text quote in first line. Import might be incorrect.")+"\n");
+								QMessageBox::critical(newParent, tr("FET warning"), Import::tr("Missing field separator or text quote in first line. Import might be incorrect.")+"\n");
 							}
 						}
 						tmpLine.remove(0,1);
@@ -773,7 +773,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 						if(tmpLine.left(1)==textquote){
 							tmpLine.remove(0,1);
 						} else {
-							QMessageBox::critical(newParent, tr("FET Warning"), Import::tr("Missing closing text quote in first line. Import might be incorrect.")+"\n");
+							QMessageBox::critical(newParent, tr("FET warning"), Import::tr("Missing closing text quote in first line. Import might be incorrect.")+"\n");
 							tmp+=tmpLine.left(1);
 							tmpLine.remove(0,1);
 						}
@@ -2319,7 +2319,7 @@ void Import::importCSVActivities(QWidget* parent){
 			if(already_existing){
 				lastWarning+=Import::tr("Activity %1 already exists. A duplicate activity is imported. Please check the dataset!").arg(activityid)+"\n";
 			}
-			bool tmp=gt.rules.addSimpleActivity(activityid, 0, teachers_names, subject_name, activity_tags_names,
+			bool tmp=gt.rules.addSimpleActivity(newParent, activityid, 0, teachers_names, subject_name, activity_tags_names,
 				students_names,	duration, duration, active, true, -1);
 			activityid++;
 			if(tmp){
@@ -2371,7 +2371,7 @@ void Import::importCSVActivities(QWidget* parent){
 			/*QStringList activity_tag_names;
 			activity_tag_names<<activity_tag_name;*/
 			//workaround only. Please rethink. (end)
-			bool tmp=gt.rules.addSplitActivity(activityid, activityid,
+			bool tmp=gt.rules.addSplitActivity(newParent, activityid, activityid,
 				teachers_names, subject_name, activity_tags_names, students_names,
 				nsplit, totalduration, durations,
 				active, minD, weight, force, true, -1);

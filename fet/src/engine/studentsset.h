@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef STUDENTSSET_H
 #define STUDENTSSET_H
@@ -68,6 +66,8 @@ class StudentsYear: public StudentsSet
 public:
 	StudentsGroupsList groupsList;
 
+	int indexInAugmentedYearsList; //internal
+
 	StudentsYear();
 	~StudentsYear();
 
@@ -84,6 +84,8 @@ class StudentsGroup: public StudentsSet
 public:
 	StudentsSubgroupsList subgroupsList;
 
+	int indexInInternalGroupsList; //internal
+	
 	StudentsGroup();
 	~StudentsGroup();
 

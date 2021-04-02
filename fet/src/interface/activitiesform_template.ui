@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="This is the title of the activities dialog">List of activities (lectures, courses, seminars, etc.)</string>
+   <string extracomment="This is the title of the activities dialog">Activities dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
    <item row="0" column="0">

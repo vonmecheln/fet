@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef TEACHER_H
 #define TEACHER_H

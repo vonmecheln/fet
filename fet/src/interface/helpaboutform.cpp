@@ -25,11 +25,11 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	
 	closePushButton->setDefault(true);
 	
+	aboutTextBrowser->setReadOnly(true);
 	authorsTextBrowser->setReadOnly(true);
-	contributorsTextBrowser->setReadOnly(true);
 	translatorsTextBrowser->setReadOnly(true);
 	referencesTextBrowser->setReadOnly(true);
-	thanksTextBrowser->setReadOnly(true);
+	thanksToTextBrowser->setReadOnly(true);
 	
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 	
@@ -38,7 +38,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	
 	tabWidget->setCurrentIndex(0);
 	
-	authorsTextBrowser->setOpenExternalLinks(true);
+	aboutTextBrowser->setOpenExternalLinks(true);
 	referencesTextBrowser->setOpenExternalLinks(true);
 }
 

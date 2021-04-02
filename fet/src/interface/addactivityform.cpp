@@ -438,7 +438,7 @@ SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialo
 	 ("You selected min days between activities %1 (above 1) and weight %2 (under 100.0). "
 	  "Would you like to add also a second constraint to ensure that almost certainly the "
 	  "distance between activities is at least %3 (%1-1) days? If yes, please select weight (recommended "
-	  "95.0%-100.0%) and click Yes. If no, please click No (only one constraint will be added)").arg(CustomFETString::number(minD).arg(w)).arg(minD-1);
+	  "95.0%-100.0%) and click Yes. If no, please click No (only one constraint will be added)").arg(CustomFETString::number(minD)).arg(w).arg(minD-1);
 	l+="\n\n";
 	l+=tr("(Yes means to add an additional constraint min %1 days between activities, weight 0.0%-100.0%. "
 	  "If you say Yes, you will have 2 constraints min days added for current activities. "
@@ -520,7 +520,7 @@ SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialo
 	if(hh<380)
 		hh=380;
 	
-	this->setGeometry(0, 0, ww, hh);
+	this->resize(ww, hh);
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 }
@@ -645,7 +645,7 @@ void AddActivityForm::addActivity()
 				return;
 		}
 
-		bool tmp=gt.rules.addSimpleActivity(activityid, 0, teachers_names, subject_name, activity_tags_names,
+		bool tmp=gt.rules.addSimpleActivity(this, activityid, 0, teachers_names, subject_name, activity_tags_names,
 			students_names, duration, duration, active,
 			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 		if(tmp)
@@ -706,7 +706,7 @@ void AddActivityForm::addActivity()
 		firstactivityid++;
 
 		int minD=minDayDistanceSpinBox->value();
-		bool tmp=gt.rules.addSplitActivity(firstactivityid, firstactivityid,
+		bool tmp=gt.rules.addSplitActivity(this, firstactivityid, firstactivityid,
 			teachers_names, subject_name, activity_tags_names, students_names,
 			nsplit, totalduration, durations,
 			active, minD, weight, forceConsecutiveCheckBox->isChecked(),

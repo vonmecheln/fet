@@ -31,8 +31,9 @@ using namespace std;
 
 #include "timetableviewstudentsform.h"
 #include "timetableviewteachersform.h"
-#include "timetableshowconflictsform.h"
 #include "timetableviewroomsform.h"
+#include "timetableshowconflictsform.h"
+#include "timetableprintform.h"
 
 #include "export.h"
 #include "import.h"
@@ -3195,6 +3196,24 @@ void FetMainForm::on_timetableViewRoomsAction_activated()
 	form->resizeRowsAfterShow();
 }
 
+void FetMainForm::on_timetablePrintAction_activated()
+{
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		return;
+	}
+
+	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
+		return;
+	}
+	if(gt.rules.nInternalTeachers!=gt.rules.teachersList.count()){
+		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it"));
+		return;
+	}
+	
+	StartTimetablePrint::startTimetablePrint(this);
+}
 
 void FetMainForm::on_timetableLockAllActivitiesAction_activated()
 {

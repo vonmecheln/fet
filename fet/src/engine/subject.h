@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef SUBJECT_H
 #define SUBJECT_H

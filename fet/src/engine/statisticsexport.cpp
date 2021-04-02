@@ -537,7 +537,7 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, QString saveTime){
 		tos<<"    <script type=\"text/javascript\">\n";
 		tos<<"      function highlight(classval) {\n";
 		tos<<"        var spans = document.getElementsByTagName('span');\n";
-		tos<<"        for(var i=0;spans.length>i;i++) {\n";
+		tos<<"        for(var i=0; spans.length>i; i++) {\n";
 		tos<<"          if (spans[i].className == classval) {\n";
 		tos<<"            spans[i].style.backgroundColor = 'lime';\n";
 		tos<<"          } else {\n";

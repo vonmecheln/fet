@@ -1,7 +1,0 @@
-Volker Dirr (http://www.timetabling.de/)
-	- XHTML timetable export.
-	- CSV import and export.
-	- Advanced statistics export.
-	- Speed improvements in the timetable generation.
-	- Locking the activities.
-	- Activity planning dialog.

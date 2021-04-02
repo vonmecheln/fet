@@ -880,6 +880,8 @@
     <addaction name="timetableViewRoomsAction"/>
     <addaction name="timetableShowConflictsAction"/>
     <addaction name="separator"/>
+    <addaction name="timetablePrintAction"/>
+    <addaction name="separator"/>
     <addaction name="menuAdvancedLockUnlock"/>
     <addaction name="separator"/>
     <addaction name="timetableSaveTimetableAsAction"/>
@@ -1226,7 +1228,7 @@
     <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">&amp;New</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;New. It is recommended to translate with Ctrl+N, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+N', the same as the English original, to keep things standard.">Ctrl+N</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;New. It is recommended to translate with Ctrl+N, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+N', the same as the English original, to keep things standard.">Ctrl+N</string>
    </property>
   </action>
   <action name="fileOpenAction">
@@ -1234,7 +1236,7 @@
     <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">&amp;Open...</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;Open. It is recommended to translate with Ctrl+O, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+O', the same as the English original, to keep things standard.">Ctrl+O</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;Open. It is recommended to translate with Ctrl+O, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+O', the same as the English original, to keep things standard.">Ctrl+O</string>
    </property>
   </action>
   <action name="fileSaveAction">
@@ -1242,7 +1244,7 @@
     <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">&amp;Save</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;Save. It is recommended to translate with Ctrl+S, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+S', the same as the English original, to keep things standard.">Ctrl+S</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;Save. It is recommended to translate with Ctrl+S, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+S', the same as the English original, to keep things standard.">Ctrl+S</string>
    </property>
   </action>
   <action name="fileSaveAsAction">
@@ -1258,7 +1260,7 @@
     <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">&amp;Quit</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;Quit. It is recommended to translate with Ctrl+Q, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+Q', the same as the English original, to keep things standard.">Ctrl+Q</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;Quit. It is recommended to translate with Ctrl+Q, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+Q', the same as the English original, to keep things standard.">Ctrl+Q</string>
    </property>
   </action>
   <action name="helpFAQAction">
@@ -1312,7 +1314,7 @@
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, Generate &amp;multiple, must be different">&amp;Generate new</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item Timetable-&gt;Generate. It is recommended to translate with Ctrl+G, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+G', the same as the English original, to keep things standard.">Ctrl+G</string>
+    <string extracomment="This is the shortcut for menu item Timetable-&gt;Generate. It is recommended to translate with Ctrl+G, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+G', the same as the English original, to keep things standard.">Ctrl+G</string>
    </property>
   </action>
   <action name="timetableViewStudentsAction">
@@ -2224,6 +2226,14 @@
   <action name="dataActivitiesRoomsStatisticsAction">
    <property name="text">
     <string extracomment="It refers to the statistics of each activity's possible room(s)">Activities rooms statistics</string>
+   </property>
+  </action>
+  <action name="timetablePrintAction">
+   <property name="text">
+    <string>Print</string>
+   </property>
+   <property name="shortcut">
+    <string extracomment="This is the shortcut for menu item Timetable-&gt;Print. It is recommended to translate with Ctrl+P, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+P', the same as the English original, to keep things standard.">Ctrl+P</string>
    </property>
   </action>
  </widget>

@@ -405,7 +405,9 @@ SOURCES += \
 	interface/activityplanningconfirmationform.cpp \
 	\
 	interface/sparsetableview.cpp \
-	interface/sparseitemmodel.cpp
+	interface/sparseitemmodel.cpp \
+	\
+	interface/timetableprintform.cpp
 
 HEADERS += \
 	engine/timetableexport.h \
@@ -816,7 +818,9 @@ HEADERS += \
 	interface/activityplanningconfirmationform.h \
 	\
 	interface/sparsetableview.h \
-	interface/sparseitemmodel.h
+	interface/sparseitemmodel.h \
+	\
+	interface/timetableprintform.h
 
 FORMS += \
 	interface/fetmainform_template.ui \

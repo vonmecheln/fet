@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef ROOM_H
 #define ROOM_H
@@ -43,9 +41,7 @@ class Room{ /*classroom :-)*/
 
 public:
 	QString name;
-	//QString type;
 	int capacity;
-	//QStringList equipments;
 	
 	/**
 	If empty string, it is ignored

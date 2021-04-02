@@ -33,6 +33,15 @@ File timetableexport.cpp
 //            - teachers free periods
 //            - daily timetable
 //            - activities with same starting time
+//            - reorganized functions. now they can be also used for printing
+//            - split times tables after X names (TIMETABLE_HTML_SPLIT?) and choose if activity tags should be printed (TIMETABLE_HTML_PRINT_ACTIVITY_TAGS?)
+
+//TODO: all must be internal here. so maybe also do daysOfTheWeek and hoursPerDay also internal
+//maybe TODO: use back_odd and back_even (or back0 and back1, because easier to code!) like in printing. so don't use the table_odd and table_even anymore
+//maybe TODO: make printActivityTags as a global setting in FET for html export? (TIMETABLE_HTML_PRINT_ACTIVITY_TAGS?)
+//maybe TODO: make TIMETABLE_HTML_SPLIT? (similar to TIMETABLE_HTML_LEVEL)
+//maybe TODO: rename augmentedYearsList into internalYearsList to have it similar to others?
+//maybe TODO: some "stg" stuff can be replaced by gt.rules.internalGroupsList. I don't want to do that now, because id-s will change. That is not critical, but I want to diff tables with old release.
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -180,6 +189,8 @@ const QString RANDOM_SEED_FILENAME="random_seed.txt";
 extern int XX;
 extern int YY;
 
+QString generationLocalizedTime=QString(""); //to be used in timetableprintform.cpp
+
 TimetableExport::TimetableExport()
 {
 }
@@ -210,6 +221,19 @@ void TimetableExport::getRoomsTimetable(Solution &c){
 	c.getRoomsTimetable(gt.rules, rooms_timetable_weekly);
 	best_solution.copy(gt.rules, c);
 	rooms_schedule_ready=true;
+}
+
+void TimetableExport::getNumberOfPlacedActivities(int& number1, int& number2)
+{
+	number1=0;
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		if(best_solution.times[i]!=UNALLOCATED_TIME)
+			number1++;
+
+	number2=0;
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		if(best_solution.rooms[i]!=UNALLOCATED_SPACE)
+			number2++;
 }
 
 void TimetableExport::writeSimulationResults(QWidget* parent){
@@ -270,17 +294,12 @@ void TimetableExport::writeSimulationResults(QWidget* parent){
 	QTime tim=QTime::currentTime();
 	QLocale loc(FET_LANGUAGE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
-
+	generationLocalizedTime=sTime;
+	
 	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
 	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-			na++;
-			
 	int na2=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.rooms[i]!=UNALLOCATED_SPACE)
-			na2++;
+	getNumberOfPlacedActivities(na, na2);
 	
 	if(na==gt.rules.nInternalActivities && na==na2){
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
@@ -488,17 +507,12 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	QTime tim=QTime::currentTime();
 	QLocale loc(FET_LANGUAGE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
-
+	generationLocalizedTime=sTime;
+	
 	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
 	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-			na++;
-			
 	int na2=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.rooms[i]!=UNALLOCATED_SPACE)
-			na2++;
+	getNumberOfPlacedActivities(na, na2);
 	
 	if(na==gt.rules.nInternalActivities && na==na2){
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
@@ -966,12 +980,12 @@ void TimetableExport::writeSimulationResults(QWidget* parent, int n){
 	QTime tim=QTime::currentTime();
 	QLocale loc(FET_LANGUAGE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
+	generationLocalizedTime=sTime;
 
 	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
 	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-			na++;
+	int na2=0;
+	getNumberOfPlacedActivities(na, na2);
 	
 	//write the conflicts in txt mode
 	s=finalDestDir+CONFLICTS_FILENAME;
@@ -1179,31 +1193,24 @@ void TimetableExport::writeSimulationResultsCommandLine(QWidget* parent, const Q
 	TimetableExport::writeSubgroupsTimetableXml(parent, outputDirectory+add+SUBGROUPS_TIMETABLE_FILENAME_XML);
 	TimetableExport::writeTeachersTimetableXml(parent, outputDirectory+add+TEACHERS_TIMETABLE_FILENAME_XML);
 	TimetableExport::writeActivitiesTimetableXml(parent, outputDirectory+add+ACTIVITIES_TIMETABLE_FILENAME_XML);
-			
+	
 	//get the time
 	QDate dat=QDate::currentDate();
 	QTime tim=QTime::currentTime();
 	QLocale loc(FET_LANGUAGE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
-							
+	generationLocalizedTime=sTime; //really unneeded, but just to be similar to the other parts
+	
 	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
 	int na=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.times[i]!=UNALLOCATED_TIME)
-			na++;
-
-	///////
 	int na2=0;
-	for(int i=0; i<gt.rules.nInternalActivities; i++)
-		if(best_solution.rooms[i]!=UNALLOCATED_SPACE)
-			na2++;
+	getNumberOfPlacedActivities(na, na2);
 	
 	if(na==gt.rules.nInternalActivities && na==na2){
 		QString s=outputDirectory+add+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
 		cout<<"Since simulation is complete, FET will write also the timetable data file"<<endl;
 		writeTimetableDataFile(parent, s);
 	}
-	///////
 
 	//write the conflicts in txt mode
 	QString s=add+CONFLICTS_FILENAME;
@@ -1973,55 +1980,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent,
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-		QString subgroup_name = gt.rules.internalSubgroupsList[subgroup]->name;
-		tos<<"    <table id=\"table_"<<hashStudentIDsTimetable.value(subgroup_name)<<"\" border=\"1\"";
-		if(subgroup%2==0) tos<<" class=\"odd_table\"";
-		else tos<<" class=\"even_table\"";
-		tos<<">\n";
-				
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(subgroup_name)<<"</th></tr>\n";
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-		}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-
-		tos<<"      <tbody>\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			tos<<"        <tr>\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][day][hour];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityStudents(students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], false, true);
-				} else{
-					tos<<writeActivitiesStudents(allActivities);
-				}
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
+		tos<<singleSubgroupsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, subgroup, saveTime, true);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos<<"  </body>\n</html>\n";
@@ -2071,55 +2030,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n";
 
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-		QString subgroup_name = gt.rules.internalSubgroupsList[subgroup]->name;
-		tos<<"    <table id=\"table_"<<hashStudentIDsTimetable.value(subgroup_name)<<"\" border=\"1\"";
-		if(subgroup%2==0) tos<<" class=\"odd_table\"";
-		else tos<<" class=\"even_table\"";
-		tos<<">\n";
-		
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(subgroup_name)<<"</th></tr>\n";
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-		}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			tos<<"        <tr>\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][day][hour];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityStudents(students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], true, false);
-				} else{
-					tos<<writeActivitiesStudents(allActivities);
-				}
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
+		tos<<singleSubgroupsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, subgroup, saveTime, true);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 
@@ -2151,52 +2062,9 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 
 	tos<<writeHead(true, placedActivities, false);
 	
-	tos<<"    <table border=\"1\">\n";
-	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
+	QSet<int> tmp;
+	tos << singleSubgroupsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubgroups, tmp, saveTime, true);
 
-	tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
-		if(TIMETABLE_HTML_LEVEL>=2)
-			tos<<"          <th class=\"xAxis\">";
-		else
-			tos<<"          <th>";
-		tos << gt.rules.internalSubgroupsList[i]->name << "</th>";
-	}
-	tos<<"</tr>\n      </thead>\n";
-	/*workaround
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-	*/
-	tos<<"      <tbody>\n";
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			tos << "        <tr>\n";
-			if(hour==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-			else tos <<"          <!-- span -->\n";
-
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][day][hour];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityStudents(students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], false, true);
-				} else{
-					tos<<writeActivitiesStudents(allActivities);
-				}
-			}
-			tos<<"        </tr>\n";
-		}
-	}
-	//workaround begin.
-	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-	//workaround end.
-	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -2225,54 +2093,9 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 
 	tos<<writeHead(true, placedActivities, false);
 	
-	tos<<"    <table border=\"1\">\n";
-	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
+	QSet<int> tmp;
+	tos << singleSubgroupsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubgroups, tmp, saveTime, true);
 
-	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-	tos<<"        </tr>\n";
-	tos<<"        <tr>\n          <!-- span -->\n";
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-		}
-	tos<<"        </tr>\n";
-	tos<<"      </thead>\n";
-	/*workaround
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-	*/
-	tos<<"      <tbody>\n";
-	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-		tos << "        <tr>\n";
-		if(TIMETABLE_HTML_LEVEL>=2)
-			tos<<"          <th class=\"yAxis\">";
-		else
-			tos<<"          <th>";
-		tos << gt.rules.internalSubgroupsList[subgroup]->name << "</th>\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][day][hour];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityStudents(students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], true, false);
-				} else{
-					tos<<writeActivitiesStudents(allActivities);
-				}
-			}
-		}
-		tos<<"        </tr>\n";
-	}
-	//workaround begin.
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-	//workaround end.
-	tos << "      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -2303,52 +2126,8 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 	tos<<writeTOCDays(false);
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	
-		tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-		for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos << gt.rules.internalSubgroupsList[subgroup]->name << "</th>";
-		}
-		tos<<"</tr>\n      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			tos << "        <tr>\n";
-			if(hour==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-			else tos <<"          <!-- span -->\n";
-
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][day][hour];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityStudents(students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], false, true);
-				} else{
-					tos<<writeActivitiesStudents(allActivities);
-				}
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
+		QSet<int> tmp;
+		tos<<singleSubgroupsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubgroups, tmp, saveTime, true);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 
@@ -2382,51 +2161,8 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* pa
 	tos<<writeTOCDays(false);
 	
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	
-		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-		tos<<"        </tr>\n";
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-			}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-			tos << "        <tr>\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos << gt.rules.internalSubgroupsList[subgroup]->name << "</th>\n";
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][day][hour];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityStudents(students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], true, false);
-				} else{
-					tos<<writeActivitiesStudents(allActivities);
-				}
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
+		QSet<int> tmp;
+		tos<<singleSubgroupsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubgroups, tmp, saveTime, true);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos << "  </body>\n</html>\n";
@@ -2476,79 +2212,13 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(QWidget* parent, co
 
 	bool PRINT_DETAILED=true;
 	do{
-		int group=0;
-		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-			StudentsYear* sty=gt.rules.augmentedYearsList[i];
-			for(int g=0; g<sty->groupsList.size(); g++){
-				StudentsGroup* stg=sty->groupsList[g];
-				tos<<"    <table id=\"table_"<<hashStudentIDsTimetable.value(stg->name);
-				if(PRINT_DETAILED==true) tos<<"_DETAILED";
-				tos<<"\" border=\"1\"";
-				if(group%2==0) tos<<" class=\"odd_table\"";
-				else tos<<" class=\"even_table\"";
-				tos<<">\n";
-						
-				tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-				tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(stg->name)<<"</th></tr>\n";
-				tos<<"        <tr>\n          <!-- span -->\n";
-				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-					if(TIMETABLE_HTML_LEVEL>=2)
-						tos<<"          <th class=\"xAxis\">";
-					else
-						tos<<"          <th>";
-					tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-				}
-				tos<<"        </tr>\n";
-				tos<<"      </thead>\n";
-				/*workaround
-				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-				*/
-				tos<<"      <tbody>\n";
-				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-					tos<<"        <tr>\n";
-					if(TIMETABLE_HTML_LEVEL>=2)
-						tos<<"          <th class=\"yAxis\">";
-					else
-						tos<<"          <th>";
-					tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-					for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-						QList<int> allActivities;
-						allActivities.clear();
-						bool isNotAvailable=true;
-						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
-							StudentsSubgroup* sts=stg->subgroupsList[sg];
-							int subgroup=sts->indexInInternalSubgroupsList;
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
-								allActivities<<students_timetable_weekly[subgroup][day][hour];
-							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
-								isNotAvailable=false;
-						}
-						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, false, true);
-						} else{
-							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
-							else{
-								tos<<writeActivitiesStudents(allActivities);
-							}
-						}
-					}
-					tos<<"        </tr>\n";
-				}
-				//workaround begin.
-				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-				//workaround end.
-				tos<<"      </tbody>\n";
-				tos<<"    </table>\n\n";
-				tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
-				group++;
-			}
+		for(int group=0; group<gt.rules.internalGroupsList.size(); group++){
+			tos << singleGroupsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, group, saveTime, true, PRINT_DETAILED);
+			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -2595,79 +2265,13 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(QWidget* parent, cons
 
 	bool PRINT_DETAILED=true;
 	do{
-		int group=0;
-		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-			StudentsYear* sty=gt.rules.augmentedYearsList[i];
-			for(int g=0; g<sty->groupsList.size(); g++){
-				StudentsGroup* stg=sty->groupsList[g];
-				tos<<"    <table id=\"table_"<<hashStudentIDsTimetable.value(stg->name);
-				if(PRINT_DETAILED==true) tos<<"_DETAILED";
-				tos<<"\" border=\"1\"";
-				if(group%2==0) tos<<" class=\"odd_table\"";
-				else tos<<" class=\"even_table\"";
-				tos<<">\n";
-						
-				tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-				tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(stg->name)<<"</th></tr>\n";
-				tos<<"        <tr>\n          <!-- span -->\n";
-				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-					if(TIMETABLE_HTML_LEVEL>=2)
-						tos<<"          <th class=\"xAxis\">";
-					else
-						tos<<"          <th>";
-					tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-				}
-				tos<<"        </tr>\n";
-				tos<<"      </thead>\n";
-				/*workaround
-				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-				*/
-				tos<<"      <tbody>\n";
-				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-					tos<<"        <tr>\n";
-					if(TIMETABLE_HTML_LEVEL>=2)
-						tos<<"          <th class=\"yAxis\">";
-					else
-						tos<<"          <th>";
-					tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-					for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-						QList<int> allActivities;
-						allActivities.clear();
-						bool isNotAvailable=true;
-						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
-							StudentsSubgroup* sts=stg->subgroupsList[sg];
-							int subgroup=sts->indexInInternalSubgroupsList;
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
-								allActivities<<students_timetable_weekly[subgroup][day][hour];
-							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
-								isNotAvailable=false;
-						}
-						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, true, false);
-						} else{
-							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
-							else{
-								tos<<writeActivitiesStudents(allActivities);
-							}
-						}
-					}
-					tos<<"        </tr>\n";
-				}
-				//workaround begin.
-				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-				//workaround end.
-				tos<<"      </tbody>\n";
-				tos<<"    </table>\n\n";
-				tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
-				group++;
-			}
+		for(int group=0; group<gt.rules.internalGroupsList.size(); group++){
+			tos<<singleGroupsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, group, saveTime, true, PRINT_DETAILED);
+			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -2698,84 +2302,13 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(QWidget* parent, cons
 	
 	bool PRINT_DETAILED=true;
 	do{
-		tos<<"    <table id=\"table";
-		if(PRINT_DETAILED==false)
-			tos<<"_LESS";
-		tos<<"_DETAILED";
-		tos<<"\" border=\"1\">\n";
+		QSet<int> tmp;
+		tos<<singleGroupsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.internalGroupsList.size(), tmp, saveTime, true, PRINT_DETAILED);
 
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-		tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-		int group=0;
-		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-			StudentsYear* sty=gt.rules.augmentedYearsList[i];
-			for(int g=0; g<sty->groupsList.size(); g++){
-				group++;
-				StudentsGroup* stg=sty->groupsList[g];
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"xAxis\">";
-				else
-					tos<<"          <th>";
-				tos << stg->name << "</th>";
-			}
-		}
-		
-		tos<<"</tr>\n      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				tos << "        <tr>\n";
-				if(hour==0)
-					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-				else tos <<"          <!-- span -->\n";
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"yAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-				for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-					StudentsYear* sty=gt.rules.augmentedYearsList[i];
-					for(int g=0; g<sty->groupsList.size(); g++){
-						StudentsGroup* stg=sty->groupsList[g];
-						QList<int> allActivities;
-						allActivities.clear();
-						bool isNotAvailable=true;
-						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
-							StudentsSubgroup* sts=stg->subgroupsList[sg];
-							int subgroup=sts->indexInInternalSubgroupsList;
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
-								allActivities<<students_timetable_weekly[subgroup][day][hour];
-							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
-								isNotAvailable=false;
-						}
-						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, false, true);
-						} else{
-							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
-							else{
-								tos<<writeActivitiesStudents(allActivities);
-							}
-						}
-					}
-				}
-				tos<<"        </tr>\n";
-			}
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -2806,81 +2339,12 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, co
 	
 	bool PRINT_DETAILED=true;
 	do{
-		tos<<"    <table id=\"table";
-		if(PRINT_DETAILED==false)
-			tos<<"_LESS";
-		tos<<"_DETAILED";
-		tos<<"\" border=\"1\">\n";
-
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-		tos <<"</tr>\n";
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"xAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-			}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		
-		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-			StudentsYear* sty=gt.rules.augmentedYearsList[i];
-			for(int g=0; g<sty->groupsList.size(); g++){
-				StudentsGroup* stg=sty->groupsList[g];
-				tos << "        <tr>\n";
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"yAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(stg->name) << "</th>\n";
-				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-					for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-						QList<int> allActivities;
-						allActivities.clear();
-						bool isNotAvailable=true;
-						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
-							StudentsSubgroup* sts=stg->subgroupsList[sg];
-							int subgroup=sts->indexInInternalSubgroupsList;
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
-								allActivities<<students_timetable_weekly[subgroup][day][hour];
-							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
-								isNotAvailable=false;
-						}
-						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, true, false);
-						} else{
-							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
-							else{
-								tos<<writeActivitiesStudents(allActivities);
-							}
-						}
-					}
-				}
-				tos<<"        </tr>\n";
-			}
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
+		QSet<int> tmp;
+		tos<<singleGroupsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.internalGroupsList.size(), tmp, saveTime, true, PRINT_DETAILED);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -2913,82 +2377,14 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 	bool PRINT_DETAILED=true;
 	do{
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day]);
-			if(PRINT_DETAILED==true) tos<<"_DETAILED";
-			tos<<"\" border=\"1\">\n";
-	
-			tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	
-			tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-			int group=0;
-			for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-				StudentsYear* sty=gt.rules.augmentedYearsList[i];
-				for(int g=0; g<sty->groupsList.size(); g++){
-					group++;
-					StudentsGroup* stg=sty->groupsList[g];
-					if(TIMETABLE_HTML_LEVEL>=2)
-						tos<<"          <th class=\"xAxis\">";
-					else
-						tos<<"          <th>";
-					tos << stg->name << "</th>";
-				}
-			}
-			
-			tos<<"</tr>\n      </thead>\n";
-			/*workaround
-			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-			*/
-			tos<<"      <tbody>\n";
+			QSet<int> tmp;
+			tos<<singleGroupsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.internalGroupsList.size(), tmp, saveTime, true, PRINT_DETAILED);
 
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				tos << "        <tr>\n";
-				if(hour==0)
-					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-				else tos <<"          <!-- span -->\n";
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"yAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-				for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-					StudentsYear* sty=gt.rules.augmentedYearsList[i];
-					for(int g=0; g<sty->groupsList.size(); g++){
-						StudentsGroup* stg=sty->groupsList[g];
-						QList<int> allActivities;
-						allActivities.clear();
-						bool isNotAvailable=true;
-						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
-							StudentsSubgroup* sts=stg->subgroupsList[sg];
-							int subgroup=sts->indexInInternalSubgroupsList;
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
-								allActivities<<students_timetable_weekly[subgroup][day][hour];
-							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
-								isNotAvailable=false;
-						}
-						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, false, true);
-						} else{
-							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
-							else{
-								tos<<writeActivitiesStudents(allActivities);
-							}
-						}
-					}
-				}
-				tos<<"        </tr>\n";
-			}
-			//workaround begin.
-			tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<group<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-			//workaround end.
-			tos<<"      </tbody>\n";
-			tos<<"    </table>\n\n";
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3021,77 +2417,14 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(QWidget* paren
 	bool PRINT_DETAILED=true;
 	do{
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day]);
-			if(PRINT_DETAILED==true) tos<<"_DETAILED";
-			tos<<"\" border=\"1\">\n";
-	
-			tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	
-			tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-			tos <<"</tr>\n";
-			tos<<"        <tr>\n          <!-- span -->\n";
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"xAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-			}
-			tos<<"        </tr>\n";
-			tos<<"      </thead>\n";
-			/*workaround
-			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-			*/
-			tos<<"      <tbody>\n";
-			
-			for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-				StudentsYear* sty=gt.rules.augmentedYearsList[i];
-				for(int g=0; g<sty->groupsList.size(); g++){
-					StudentsGroup* stg=sty->groupsList[g];
-					tos << "        <tr>\n";
-					if(TIMETABLE_HTML_LEVEL>=2)
-						tos<<"          <th class=\"yAxis\">";
-					else
-						tos<<"          <th>";
-					tos << protect2(stg->name) << "</th>\n";
-				
-					for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-						QList<int> allActivities;
-						allActivities.clear();
-						bool isNotAvailable=true;
-						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
-							StudentsSubgroup* sts=stg->subgroupsList[sg];
-							int subgroup=sts->indexInInternalSubgroupsList;
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
-								allActivities<<students_timetable_weekly[subgroup][day][hour];
-							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
-								isNotAvailable=false;
-						}
-						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, true, false);
-						} else{
-							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
-							else{
-								tos<<writeActivitiesStudents(allActivities);
-							}
-						}
-					}
-					tos<<"        </tr>\n";
-				}
-			}
-			//workaround begin.
-			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-			//workaround end.
-			tos<<"      </tbody>\n";
-			tos<<"    </table>\n\n";
+			QSet<int> tmp;
+			tos<<singleGroupsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.internalGroupsList.size(), tmp, saveTime, true, PRINT_DETAILED);
+
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3124,8 +2457,8 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(QWidget* parent, con
 		
 	tos<<"    <p><strong>"<<TimetableExport::tr("Table of contents")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
-	for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-		StudentsYear* sty=gt.rules.augmentedYearsList[i];
+	for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
+		StudentsYear* sty=gt.rules.augmentedYearsList[year];
 		tos<<"      <li>\n        "<<TimetableExport::tr("Year");
 		tos<<" <a href=\""<<"#table_"<<hashStudentIDsTimetable.value(sty->name)<<"_DETAILED\">"<<protect2(sty->name)<<" ("<<tr("Detailed")<<")</a> /";
 		tos<<" <a href=\""<<"#table_"<<hashStudentIDsTimetable.value(sty->name)<<"\">"<<protect2(sty->name)<<" ("<<tr("Less detailed")<<")</a>\n";
@@ -3136,76 +2469,12 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(QWidget* parent, con
 	bool PRINT_DETAILED=true;
 	do{
 		for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
-			StudentsYear* sty=gt.rules.augmentedYearsList[year];
-				tos<<"    <table id=\"table_"<<hashStudentIDsTimetable.value(sty->name);
-				if(PRINT_DETAILED==true) tos<<"_DETAILED";
-				tos<<"\" border=\"1\"";
-				if(year%2==0)  tos<<" class=\"odd_table\"";
-				else tos<<" class=\"even_table\"";
-				tos<<">\n";
-						
-				tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-				tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(sty->name)<<"</th></tr>\n";
-				tos<<"        <tr>\n          <!-- span -->\n";
-				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-					if(TIMETABLE_HTML_LEVEL>=2)
-						tos<<"          <th class=\"xAxis\">";
-					else
-						tos<<"          <th>";
-					tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-				}
-				tos<<"        </tr>\n";
-				tos<<"      </thead>\n";
-				/*workaround
-				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-				*/
-				tos<<"      <tbody>\n";
-				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-					tos<<"        <tr>\n";
-					if(TIMETABLE_HTML_LEVEL>=2)
-						tos<<"          <th class=\"yAxis\">";
-					else
-						tos<<"          <th>";
-					tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-					for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-						QList<int> allActivities;
-						allActivities.clear();
-						bool isNotAvailable=true;
-						for(int g=0; g<sty->groupsList.size(); g++){
-							StudentsGroup* stg=sty->groupsList[g];
-							for(int sg=0; sg<stg->subgroupsList.size(); sg++){
-								StudentsSubgroup* sts=stg->subgroupsList[sg];
-								int subgroup=sts->indexInInternalSubgroupsList;
-								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
-									allActivities<<students_timetable_weekly[subgroup][day][hour];
-								if(!subgroupNotAvailableDayHour[subgroup][day][hour])
-									isNotAvailable=false;
-							}
-						}
-						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, false, true);
-						} else{
-							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
-							else{
-								tos<<writeActivitiesStudents(allActivities);
-							}
-						}
-					}
-					tos<<"        </tr>\n";
-				}
-				//workaround begin.
-				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-				//workaround end.
-				tos<<"      </tbody>\n";
-				tos<<"    </table>\n\n";
-				tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
+			tos << singleYearsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, year, saveTime, true, PRINT_DETAILED);
+			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3236,8 +2505,8 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(QWidget* parent, const
 		
 	tos<<"    <p><strong>"<<TimetableExport::tr("Table of contents")<<"</strong></p>\n";
 	tos<<"    <ul>\n";
-	for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-		StudentsYear* sty=gt.rules.augmentedYearsList[i];
+	for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
+		StudentsYear* sty=gt.rules.augmentedYearsList[year];
 		tos<<"      <li>\n        "<<TimetableExport::tr("Year");
 		tos<<" <a href=\""<<"#table_"<<hashStudentIDsTimetable.value(sty->name)<<"_DETAILED\">"<<protect2(sty->name)<<" ("<<tr("Detailed")<<")</a> /";
 		tos<<" <a href=\""<<"#table_"<<hashStudentIDsTimetable.value(sty->name)<<"\">"<<protect2(sty->name)<<" ("<<tr("Less detailed")<<")</a>\n";
@@ -3248,77 +2517,12 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(QWidget* parent, const
 	bool PRINT_DETAILED=true;
 	do{
 		for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
-				StudentsYear* sty=gt.rules.augmentedYearsList[year];
-				tos<<"    <table id=\"table_"<<hashStudentIDsTimetable.value(sty->name);
-				if(PRINT_DETAILED==true) tos<<"_DETAILED";
-				tos<<"\" border=\"1\"";
-				if(year%2==0)  tos<<" class=\"odd_table\"";
-				else tos<<" class=\"even_table\"";
-				tos<<">\n";
-						
-				tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-				tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(sty->name)<<"</th></tr>\n";
-				tos<<"        <tr>\n          <!-- span -->\n";
-				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-					if(TIMETABLE_HTML_LEVEL>=2)
-						tos<<"          <th class=\"xAxis\">";
-					else
-						tos<<"          <th>";
-					tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-				}
-				tos<<"        </tr>\n";
-				tos<<"      </thead>\n";
-				/*workaround
-				tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-				*/
-				tos<<"      <tbody>\n";
-				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-					tos<<"        <tr>\n";
-					if(TIMETABLE_HTML_LEVEL>=2)
-						tos<<"          <th class=\"yAxis\">";
-					else
-						tos<<"          <th>";
-					tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-
-					for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-						QList<int> allActivities;
-						allActivities.clear();
-						bool isNotAvailable=true;
-						for(int g=0; g<sty->groupsList.size(); g++){
-							StudentsGroup* stg=sty->groupsList[g];
-							for(int sg=0; sg<stg->subgroupsList.size(); sg++){
-								StudentsSubgroup* sts=stg->subgroupsList[sg];
-								int subgroup=sts->indexInInternalSubgroupsList;
-								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
-									allActivities<<students_timetable_weekly[subgroup][day][hour];
-								if(!subgroupNotAvailableDayHour[subgroup][day][hour])
-									isNotAvailable=false;
-							}
-						}
-						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, true, false);
-						} else{
-							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
-							else{
-								tos<<writeActivitiesStudents(allActivities);
-							}
-						}
-					}
-					tos<<"        </tr>\n";
-				}
-				//workaround begin.
-				tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-				//workaround end.
-				tos<<"      </tbody>\n";
-				tos<<"    </table>\n\n";
-				tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
+			tos << singleYearsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, year, saveTime, true, PRINT_DETAILED);
+			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3349,79 +2553,13 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(QWidget* parent, const
 	
 	bool PRINT_DETAILED=true;
 	do{
-		tos<<"    <table id=\"table";
-		if(PRINT_DETAILED==false)
-			tos<<"_LESS";
-		tos<<"_DETAILED";
-		tos<<"\" border=\"1\">\n";
+		QSet<int> tmp;
+		tos<<singleYearsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.augmentedYearsList.size(), tmp, saveTime, true, PRINT_DETAILED);
 
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-		tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-			StudentsYear* sty=gt.rules.augmentedYearsList[i];
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"xAxis\">";
-				else
-					tos<<"          <th>";
-				tos << sty->name << "</th>";
-		}
-		
-		tos<<"</tr>\n      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				tos << "        <tr>\n";
-				if(hour==0)
-					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-				else tos <<"          <!-- span -->\n";
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"yAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-				for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
-						StudentsYear* sty=gt.rules.augmentedYearsList[year];
-						QList<int> allActivities;
-						allActivities.clear();
-						bool isNotAvailable=true;
-						for(int g=0; g<sty->groupsList.size(); g++){
-							StudentsGroup* stg=sty->groupsList[g];
-							for(int sg=0; sg<stg->subgroupsList.size(); sg++){
-								StudentsSubgroup* sts=stg->subgroupsList[sg];
-								int subgroup=sts->indexInInternalSubgroupsList;
-								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
-									allActivities<<students_timetable_weekly[subgroup][day][hour];
-								if(!subgroupNotAvailableDayHour[subgroup][day][hour])
-									isNotAvailable=false;
-							}
-						}
-						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, false, true);
-						} else{
-							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
-							else{
-								tos<<writeActivitiesStudents(allActivities);
-							}
-					}
-				}
-				tos<<"        </tr>\n";
-			}
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3452,81 +2590,13 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 	
 	bool PRINT_DETAILED=true;
 	do{
-		tos<<"    <table id=\"table";
-		if(PRINT_DETAILED==false)
-			tos<<"_LESS";
-		tos<<"_DETAILED";
-		tos<<"\" border=\"1\">\n";
+		QSet<int> tmp;
+		tos<<singleYearsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.augmentedYearsList.size(), tmp, saveTime, true, PRINT_DETAILED);
 
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-		tos <<"</tr>\n";
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"xAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-			}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		
-		for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
-			StudentsYear* sty=gt.rules.augmentedYearsList[year];
-				tos << "        <tr>\n";
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"yAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(sty->name) << "</th>\n";
-				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-					for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-						QList<int> allActivities;
-						allActivities.clear();
-						bool isNotAvailable=true;
-						for(int g=0; g<sty->groupsList.size(); g++){
-							StudentsGroup* stg=sty->groupsList[g];
-							for(int sg=0; sg<stg->subgroupsList.size(); sg++){
-								StudentsSubgroup* sts=stg->subgroupsList[sg];
-								int subgroup=sts->indexInInternalSubgroupsList;
-								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
-									allActivities<<students_timetable_weekly[subgroup][day][hour];
-								if(!subgroupNotAvailableDayHour[subgroup][day][hour])
-									isNotAvailable=false;
-							}
-						}
-						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, true, false);
-						} else{
-							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
-							else{
-								tos<<writeActivitiesStudents(allActivities);
-							}
-						}
-					}
-				}
-				tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3559,77 +2629,14 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 	bool PRINT_DETAILED=true;
 	do{
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day]);
-			if(PRINT_DETAILED==true) tos<<"_DETAILED";
-			tos<<"\" border=\"1\">\n";
-	
-			tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	
-			tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-			for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
-				StudentsYear* sty=gt.rules.augmentedYearsList[i];
-					if(TIMETABLE_HTML_LEVEL>=2)
-						tos<<"          <th class=\"xAxis\">";
-					else
-						tos<<"          <th>";
-					tos << sty->name << "</th>";
-			}
-			
-			tos<<"</tr>\n      </thead>\n";
-			/*workaround
-			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-			*/
-			tos<<"      <tbody>\n";
+			QSet<int> tmp;
+			tos<<singleYearsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.augmentedYearsList.size(), tmp, saveTime, true, PRINT_DETAILED);
 
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				tos << "        <tr>\n";
-				if(hour==0)
-					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-				else tos <<"          <!-- span -->\n";
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"yAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-				for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
-						StudentsYear* sty=gt.rules.augmentedYearsList[year];
-						QList<int> allActivities;
-						allActivities.clear();
-						bool isNotAvailable=true;
-						for(int g=0; g<sty->groupsList.size(); g++){
-							StudentsGroup* stg=sty->groupsList[g];
-							for(int sg=0; sg<stg->subgroupsList.size(); sg++){
-								StudentsSubgroup* sts=stg->subgroupsList[sg];
-								int subgroup=sts->indexInInternalSubgroupsList;
-								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
-									allActivities<<students_timetable_weekly[subgroup][day][hour];
-								if(!subgroupNotAvailableDayHour[subgroup][day][hour])
-									isNotAvailable=false;
-							}
-						}
-						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, false, true);
-						} else{
-							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
-							else{
-								tos<<writeActivitiesStudents(allActivities);
-							}
-					}
-				}
-				tos<<"        </tr>\n";
-			}
-			//workaround begin.
-			tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.augmentedYearsList.size()<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-			//workaround end.
-			tos<<"      </tbody>\n";
-			tos<<"    </table>\n\n";
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3662,78 +2669,14 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	bool PRINT_DETAILED=true;
 	do{
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day]);
-			if(PRINT_DETAILED==true) tos<<"_DETAILED";
-			tos<<"\" border=\"1\">\n";
-	
-			tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	
-			tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
+			QSet<int> tmp;
+			tos<<singleYearsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.augmentedYearsList.size(), tmp, saveTime, true, PRINT_DETAILED);
 
-			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-			tos <<"</tr>\n";
-			tos<<"        <tr>\n          <!-- span -->\n";
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"xAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-			}
-			tos<<"        </tr>\n";
-			tos<<"      </thead>\n";
-			/*workaround
-			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-			*/
-			tos<<"      <tbody>\n";
-			
-			for(int year=0; year<gt.rules.augmentedYearsList.size(); year++){
-				StudentsYear* sty=gt.rules.augmentedYearsList[year];
-					tos << "        <tr>\n";
-					if(TIMETABLE_HTML_LEVEL>=2)
-						tos<<"          <th class=\"yAxis\">";
-					else
-						tos<<"          <th>";
-					tos << protect2(sty->name) << "</th>\n";
-
-					for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-						QList<int> allActivities;
-						allActivities.clear();
-						bool isNotAvailable=true;
-						for(int g=0; g<sty->groupsList.size(); g++){
-							StudentsGroup* stg=sty->groupsList[g];
-							for(int sg=0; sg<stg->subgroupsList.size(); sg++){
-								StudentsSubgroup* sts=stg->subgroupsList[sg];
-								int subgroup=sts->indexInInternalSubgroupsList;
-								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
-									allActivities<<students_timetable_weekly[subgroup][day][hour];
-								if(!subgroupNotAvailableDayHour[subgroup][day][hour])
-									isNotAvailable=false;
-							}
-						}
-						assert(!allActivities.isEmpty());
-						bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-						if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-							tos<<writeActivityStudents(allActivities[0], day, hour, isNotAvailable, true, false);
-						} else{
-							if(PRINT_DETAILED==false) tos<<"          <td>"<<protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)<<"</td>\n";
-							else{
-								tos<<writeActivitiesStudents(allActivities);
-							}
-						}
-					}
-					tos<<"        </tr>\n";
-				}
-			//workaround begin.
-			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-			//workaround end.
-			tos<<"      </tbody>\n";
-			tos<<"    </table>\n\n";
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3763,49 +2706,7 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(QWidget* par
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
-
-	tos<<"    <table border=\"1\">\n";	
-	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<tr("All Activities")<<"</th></tr>\n";
-	tos<<"        <tr>\n          <!-- span -->\n";
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		if(TIMETABLE_HTML_LEVEL>=2)
-			tos<<"          <th class=\"xAxis\">";
-		else
-			tos<<"          <th>";
-		tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-	}
-	tos<<"        </tr>\n";
-	tos<<"      </thead>\n";
-	/*workaround
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-	*/
-	tos<<"      <tbody>\n";
-	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-		tos<<"        <tr>\n";
-		if(TIMETABLE_HTML_LEVEL>=2)
-			tos<<"          <th class=\"yAxis\">";
-		else
-			tos<<"          <th>";
-		tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			if(activitiesAtTime[day][hour].isEmpty()){
-				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
-					tos<<writeBreakSlot("");
-				} else {
-					tos<<writeEmpty();
-				}
-			} else {
-				tos<<writeActivitiesStudents(activitiesAtTime[day][hour]);
-			}
-		}
-		tos<<"        </tr>\n";
-	}
-	//workaround begin.
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-	//workaround end.
-	tos<<"      </tbody>\n";
-	tos<<"    </table>\n";
+	tos<<singleAllActivitiesTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, saveTime, true);
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3833,49 +2734,7 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(QWidget* paren
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, true);
-
-	tos<<"    <table border=\"1\">\n";
-	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<tr("All Activities")<<"</th></tr>\n";
-	tos<<"        <tr>\n          <!-- span -->\n";
-	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-		if(TIMETABLE_HTML_LEVEL>=2)
-			tos<<"          <th class=\"xAxis\">";
-		else
-			tos<<"          <th>";
-		tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-	}
-	tos<<"        </tr>\n";
-	tos<<"      </thead>\n";
-	/*workaround
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-	*/
-	tos<<"      <tbody>\n";
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		tos<<"        <tr>\n";
-		if(TIMETABLE_HTML_LEVEL>=2)
-			tos<<"          <th class=\"yAxis\">";
-		else
-			tos<<"          <th>";
-		tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(activitiesAtTime[day][hour].isEmpty()){
-				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
-					tos<<writeBreakSlot("");
-				} else {
-					tos<<writeEmpty();
-				}
-			} else {
-				tos<<writeActivitiesStudents(activitiesAtTime[day][hour]);
-			}
-		}
-		tos<<"        </tr>\n";
-	}
-	//workaround begin.
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-	//workaround end.
-	tos<<"      </tbody>\n";
-	tos<<"    </table>\n";
+	tos<<singleAllActivitiesTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, saveTime, true);
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3904,47 +2763,8 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(QWidget* paren
 
 	tos<<writeHead(true, placedActivities, false);
 
-	tos<<"    <table border=\"1\">\n";
-	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-	if(TIMETABLE_HTML_LEVEL>=2)
-		tos<<"          <th class=\"xAxis\">";
-	else
-		tos<<"          <th>";
-	tos << tr("All Activities");
-	tos<<"</th></tr>\n      </thead>\n";
-	/*workaround
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-	*/
-	tos<<"      <tbody>\n";
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			tos << "        <tr>\n";
-			if(hour==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-			else tos <<"          <!-- span -->\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-			if(activitiesAtTime[day][hour].isEmpty()){
-				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
-					tos<<writeBreakSlot("");
-				} else {
-					tos<<writeEmpty();
-				}
-			} else {
-				tos<<writeActivitiesStudents(activitiesAtTime[day][hour]);
-			}
-			tos<<"        </tr>\n";
-		}
-	}
-	//workaround begin.
-	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-	//workaround end.
-	tos<<"      </tbody>\n";
-	tos<<"    </table>\n";
+tos<<singleAllActivitiesTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, saveTime, true);
+
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -3973,53 +2793,8 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(QWidget* par
 
 	tos<<writeHead(true, placedActivities, false);
 
-	tos<<"    <table border=\"1\">\n";
-	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-	tos <<"</tr>\n";
-	tos<<"        <tr>\n          <!-- span -->\n";
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-		}
-	tos<<"        </tr>\n";
-	tos<<"      </thead>\n";
-	/*workaround
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-	*/
-	tos<<"      <tbody>\n";
-		
-	tos << "        <tr>\n";
-	if(TIMETABLE_HTML_LEVEL>=2)
-		tos<<"          <th class=\"yAxis\">";
-	else
-		tos<<"          <th>";
-	tos << tr("All Activities") << "</th>\n";
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(activitiesAtTime[day][hour].isEmpty()){
-				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
-					tos<<writeBreakSlot("");
-				} else {
-					tos<<writeEmpty();
-				}
-			} else {
-				tos<<writeActivitiesStudents(activitiesAtTime[day][hour]);
-			}
-		}
-	}
-	tos<<"        </tr>\n";
-	//workaround begin.
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-	//workaround end.
-	tos<<"      </tbody>\n";
-	tos<<"    </table>\n";
+	tos<<singleAllActivitiesTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, saveTime, true);
+
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -4050,46 +2825,7 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(QWidget* 
 	tos<<writeTOCDays(false);
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-		tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-		if(TIMETABLE_HTML_LEVEL>=2)
-			tos<<"          <th class=\"xAxis\">";
-		else
-			tos<<"          <th>";
-		tos << tr("All Activities");
-		tos<<"</th></tr>\n      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			tos << "        <tr>\n";
-			if(hour==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-			else tos <<"          <!-- span -->\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-			if(activitiesAtTime[day][hour].isEmpty()){
-				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
-					tos<<writeBreakSlot("");
-				} else {
-					tos<<writeEmpty();
-				}
-			} else {
-				tos<<writeActivitiesStudents(activitiesAtTime[day][hour]);
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td>"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
+		tos<<singleAllActivitiesTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, saveTime, true);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos<<"  </body>\n</html>\n";
@@ -4122,49 +2858,8 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(QWidget
 	tos<<writeTOCDays(false);
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-		tos <<"</tr>\n";
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-		}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-			
-		tos << "        <tr>\n";
-		if(TIMETABLE_HTML_LEVEL>=2)
-			tos<<"          <th class=\"yAxis\">";
-		else
-			tos<<"          <th>";
-		tos << tr("All Activities") << "</th>\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(activitiesAtTime[day][hour].isEmpty()){
-				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
-					tos<<writeBreakSlot("");
-				} else {
-					tos<<writeEmpty();
-				}
-			} else {
-				tos<<writeActivitiesStudents(activitiesAtTime[day][hour]);
-			}
-		}
-		tos<<"        </tr>\n";
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
+		tos<<singleAllActivitiesTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, saveTime, true);
+
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 
@@ -4207,54 +2902,8 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(QWidget* parent, 
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
-		tos<<"    <table id=\"table_"<<hashTeacherIDsTimetable.value(teacher_name)<<"\" border=\"1\"";
-		if(teacher%2==0)  tos<<" class=\"odd_table\"";
-		else tos<<" class=\"even_table\"";
-		tos<<">\n";
-		
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
+		tos<<singleTeachersTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, teacher, saveTime, true);
 
-		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(teacher_name)<<"</th></tr>\n";
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-		}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			tos<<"        <tr>\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<teachers_timetable_weekly[teacher][day][hour];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityTeacher(teacher, day, hour, false, true);
-				} else{
-					tos<<writeActivitiesTeachers(allActivities);
-				}
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos<<"  </body>\n</html>\n";
@@ -4294,55 +2943,7 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(QWidget* parent, co
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
-		tos<<"    <table id=\"table_"<<hashTeacherIDsTimetable.value(teacher_name)<<"\" border=\"1\"";
-		if(teacher%2==0) tos<<" class=\"odd_table\"";
-		else tos<<" class=\"even_table\"";
-		tos<<">\n";
-		
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-		tos<<"      <thead>\n";
-		tos<<"        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(teacher_name)<<"</th></tr>\n";
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-		}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			tos<<"        <tr>\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<teachers_timetable_weekly[teacher][day][hour];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityTeacher(teacher, day, hour, true, false);
-				} else{
-					tos<<writeActivitiesTeachers(allActivities);
-				}
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
+		tos<<singleTeachersTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, teacher, saveTime, true);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos<<"  </body>\n</html>\n";
@@ -4372,52 +2973,8 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(QWidget* parent, co
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
-	
-	tos<<"    <table border=\"1\">\n";
-	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-	tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-	for(int i=0; i<gt.rules.nInternalTeachers; i++){
-		if(TIMETABLE_HTML_LEVEL>=2)
-			tos<<"          <th class=\"xAxis\">";
-		else
-			tos<<"          <th>";
-		tos << gt.rules.internalTeachersList[i]->name << "</th>";
-	}
-	tos<<"</tr>\n      </thead>\n";
-	/*workaround
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-	*/
-	tos<<"      <tbody>\n";
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			tos << "        <tr>\n";
-			if(hour==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-			else tos <<"          <!-- span -->\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-			for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<teachers_timetable_weekly[teacher][day][hour];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityTeacher(teacher, day, hour, false, true);
-				} else {
-					tos<<writeActivitiesTeachers(allActivities);
-				}
-			}
-			tos<<"        </tr>\n";
-		}
-	}
-	//workaround begin.
-	tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-	//workaround end.
-	tos << "      </tbody>\n    </table>\n";
+	QSet<int> tmp;
+	tos<<singleTeachersTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalTeachers, tmp, saveTime, true);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -4445,55 +3002,8 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(QWidget* parent, 
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<writeHead(true, placedActivities, false);
-	
-	tos<<"    <table border=\"1\">\n";
-	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-	tos <<"</tr>\n";
-	tos<<"        <tr>\n          <!-- span -->\n";
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-		}
-	tos<<"        </tr>\n";
-	tos<<"      </thead>\n";
-	/*workaround
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-	*/
-	tos<<"      <tbody>\n";
-	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-		tos << "        <tr>\n";
-		if(TIMETABLE_HTML_LEVEL>=2)
-			tos<<"          <th class=\"yAxis\">";
-		else
-			tos<<"          <th>";
-		tos << gt.rules.internalTeachersList[teacher]->name << "</th>\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<teachers_timetable_weekly[teacher][day][hour];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityTeacher(teacher, day, hour, true, false);
-				} else {
-					tos<<writeActivitiesTeachers(allActivities);
-				}
-			}
-		}
-		tos<<"        </tr>\n";
-	}
-	//workaround begin.
-	tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-	//workaround end.
-	tos << "      </tbody>\n    </table>\n";
+	QSet<int> tmp;
+	tos<<singleTeachersTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalTeachers, tmp, saveTime, true);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -4524,51 +3034,8 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(QWidget* paren
 	tos<<writeTOCDays(false);
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	
-		tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-		for(int i=0; i<gt.rules.nInternalTeachers; i++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos << gt.rules.internalTeachersList[i]->name << "</th>";
-		}
-		tos<<"</tr>\n      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			tos << "        <tr>\n";
-			if(hour==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-			else tos <<"          <!-- span -->\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-			for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<teachers_timetable_weekly[teacher][day][hour];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityTeacher(teacher, day, hour, false, true);
-				} else {
-					tos<<writeActivitiesTeachers(allActivities);
-				}
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
+		QSet<int> tmp;
+		tos<<singleTeachersTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalTeachers, tmp, saveTime, true);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos << "  </body>\n</html>\n";
@@ -4601,52 +3068,8 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(QWidget* par
 	tos<<writeTOCDays(false);
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	
-		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-		tos <<"</tr>\n";
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-		}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-			tos << "        <tr>\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos << gt.rules.internalTeachersList[teacher]->name << "</th>\n";
-		
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				QList<int> allActivities;
-				allActivities.clear();
-				allActivities<<teachers_timetable_weekly[teacher][day][hour];
-				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tos<<writeActivityTeacher(teacher, day, hour, true, false);
-				} else {
-					tos<<writeActivitiesTeachers(allActivities);
-				}
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
+		QSet<int> tmp;
+		tos<<singleTeachersTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalTeachers, tmp, saveTime, true);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 
@@ -4690,54 +3113,7 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(QWidget* parent, con
 		tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
-			QString room_name = gt.rules.internalRoomsList[room]->name;
-			tos<<"    <table id=\"table_"<<hashRoomIDsTimetable.value(room_name)<<"\" border=\"1\"";
-			if(room%2==0)  tos<<" class=\"odd_table\"";
-			else tos<<" class=\"even_table\"";
-			tos<<">\n";
-		
-			tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-			tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(room_name)<<"</th></tr>\n";
-			tos<<"        <tr>\n          <!-- span -->\n";
-			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"xAxis\">";
-				else
-					tos<<"          <th>";
-				tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-			}
-			tos<<"        </tr>\n";
-			tos<<"      </thead>\n";
-			/*workaround
-			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-			*/
-			tos<<"      <tbody>\n";
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				tos<<"        <tr>\n";
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"yAxis\">";
-				else
-					tos<<"          <th>";
-				tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-				for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-					QList<int> allActivities;
-					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][day][hour];
-					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tos<<writeActivityRoom(room, day, hour, false, true);
-					} else {
-						tos<<writeActivitiesRooms(allActivities);
-					}
-				}
-				tos<<"        </tr>\n";
-			}
-			//workaround begin.
-			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-			//workaround end.
-			tos<<"      </tbody>\n";
-			tos<<"    </table>\n\n";
+			tos<<singleRoomsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, room, saveTime, true);
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
 	}
@@ -4782,55 +3158,7 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(QWidget* parent, const
 		tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
-			QString room_name = gt.rules.internalRoomsList[room]->name;
-			tos<<"    <table id=\"table_"<<hashRoomIDsTimetable.value(room_name)<<"\" border=\"1\"";
-			if(room%2==0)  tos<<" class=\"odd_table\"";
-			else tos<<" class=\"even_table\"";
-			tos<<">\n";
-			
-			tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-			tos<<"      <thead>\n";
-			tos<<"        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(room_name)<<"</th></tr>\n";
-			tos<<"        <tr>\n          <!-- span -->\n";
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"xAxis\">";
-					else
-						tos<<"          <th>";
-					tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-			}
-			tos<<"        </tr>\n";
-			tos<<"      </thead>\n";
-			/*workaround
-			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-			*/
-			tos<<"      <tbody>\n";
-			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-				tos<<"        <tr>\n";
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"yAxis\">";
-				else
-					tos<<"          <th>";
-				tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-					QList<int> allActivities;
-					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][day][hour];
-					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tos<<writeActivityRoom(room, day, hour, true, false);
-					} else {
-						tos<<writeActivitiesRooms(allActivities);
-					}
-				}
-				tos<<"        </tr>\n";
-			}
-			//workaround begin.
-			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-			//workaround end.
-			tos<<"      </tbody>\n";
-			tos<<"    </table>\n\n";
+			tos<<singleRoomsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, room, saveTime, true);
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
 	}
@@ -4865,51 +3193,8 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(QWidget* parent, const
 	if(gt.rules.nInternalRooms==0)
 		tos<<"    <h1>"<<TimetableExport::tr("No rooms recorded in FET for %1.", "%1 is the institution name").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
-		tos<<"    <table border=\"1\">\n";
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-		tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-		for(int i=0; i<gt.rules.nInternalRooms; i++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos << gt.rules.internalRoomsList[i]->name << "</th>";
-		}
-		tos<<"</tr>\n      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				tos << "        <tr>\n";
-				if(hour==0)
-					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-				else tos <<"          <!-- span -->\n";
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"yAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-				for(int room=0; room<gt.rules.nInternalRooms; room++){
-					QList<int> allActivities;
-					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][day][hour];
-					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tos<<writeActivityRoom(room, day, hour, false, true);
-					} else {
-						tos<<writeActivitiesRooms(allActivities);
-					}
-				}
-				tos<<"        </tr>\n";
-			}
-		}
-		//workaround begin.
-		tos<<"      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos << "      </tbody>\n    </table>\n";
+		QSet<int> tmp;
+		tos<<singleRoomsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalRooms, tmp, saveTime, true);
 	}
 	tos << "  </body>\n</html>\n";
 
@@ -4942,54 +3227,9 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, con
 	if(gt.rules.nInternalRooms==0)
 		tos<<"    <h1>"<<TimetableExport::tr("No rooms recorded in FET for %1.", "%1 is the institution name").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
-		tos<<"    <table border=\"1\">\n";
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
+		QSet<int> tmp;
+		tos<<singleRoomsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalRooms, tmp, saveTime, true);
 
-		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-		tos <<"</tr>\n";
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"xAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-			}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int room=0; room<gt.rules.nInternalRooms; room++){
-			tos << "        <tr>\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos << gt.rules.internalRoomsList[room]->name << "</th>\n";
-			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-					QList<int> allActivities;
-					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][day][hour];
-					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tos<<writeActivityRoom(room, day, hour, true, false);
-					} else {
-						tos<<writeActivitiesRooms(allActivities);
-					}
-				}
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"      <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos << "      </tbody>\n    </table>\n";
 	}
 	tos << "  </body>\n</html>\n";
 
@@ -5024,51 +3264,9 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 		tos<<"    <h1>"<<TimetableExport::tr("No rooms recorded in FET for %1.", "%1 is the institution name").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
-			tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	
-			tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-			for(int i=0; i<gt.rules.nInternalRooms; i++){
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"xAxis\">";
-				else
-					tos<<"          <th>";
-				tos << gt.rules.internalRoomsList[i]->name << "</th>";
-			}
-			tos<<"</tr>\n      </thead>\n";
-			/*workaround
-			tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-			*/
-			tos<<"      <tbody>\n";
-		
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				tos << "        <tr>\n";
-				if(hour==0)
-					tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-				else tos <<"          <!-- span -->\n";
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"yAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-				for(int room=0; room<gt.rules.nInternalRooms; room++){
-					QList<int> allActivities;
-					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][day][hour];
-					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tos<<writeActivityRoom(room, day, hour, false, true);
-					} else {
-						tos<<writeActivitiesRooms(allActivities);
-					}
-				}
-				tos<<"        </tr>\n";
-			}
-			//workaround begin.
-			tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-			//workaround end.
-			tos<<"      </tbody>\n";
-			tos<<"    </table>\n\n";
+			QSet<int> tmp;
+			tos<<singleRoomsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalRooms, tmp, saveTime, true);
+
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
 	}
@@ -5105,51 +3303,9 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(QWidget* parent
 		tos<<"    <h1>"<<TimetableExport::tr("No rooms recorded in FET for %1.", "%1 is the institution name").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
-			tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-	
-			tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-			tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-			tos <<"</tr>\n";
-			tos<<"        <tr>\n          <!-- span -->\n";
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"xAxis\">";
-				else
-					tos<<"          <th>";
-				tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-			}
-			tos<<"        </tr>\n";
-			tos<<"      </thead>\n";
-			/*workaround
-			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-			*/
-			tos<<"      <tbody>\n";
-			for(int room=0; room<gt.rules.nInternalRooms; room++){
-				tos << "        <tr>\n";
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"yAxis\">";
-				else
-					tos<<"          <th>";
-				tos << gt.rules.internalRoomsList[room]->name << "</th>\n";
-				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-					QList<int> allActivities;
-					allActivities.clear();
-					allActivities<<rooms_timetable_weekly[room][day][hour];
-					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
-					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tos<<writeActivityRoom(room, day, hour, true, false);
-					} else {
-						tos<<writeActivitiesRooms(allActivities);
-					}
-				}
-				tos<<"        </tr>\n";
-			}
-			//workaround begin.
-			tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-			//workaround end.
-			tos<<"      </tbody>\n";
-			tos<<"    </table>\n\n";
+			QSet<int> tmp;
+			tos<<singleRoomsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalRooms, tmp, saveTime, true);
+
 			tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 		}
 
@@ -5195,88 +3351,7 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(QWidget* parent, 
 
 
 	for(int subject=0; subject<gt.rules.nInternalSubjects; subject++){
-		///////by Liviu Lalescu
-		for(int d=0; d<gt.rules.nDaysPerWeek; d++)
-			for(int h=0; h<gt.rules.nHoursPerDay; h++)
-				activitiesForCurrentSubject[d][h].clear();
-		foreach(int ai, gt.rules.activitiesForSubject[subject])
-			if(best_solution.times[ai]!=UNALLOCATED_TIME){
-				int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
-				int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
-				Activity* act=&gt.rules.internalActivitiesList[ai];
-				for(int dd=0; dd < act->duration && h+dd < gt.rules.nHoursPerDay; dd++)
-					activitiesForCurrentSubject[d][h+dd].append(ai);
-			}
-		///////end Liviu Lalescu
-	
-		tos<<"    <table id=\"table_"<<hashSubjectIDsTimetable.value(gt.rules.internalSubjectsList[subject]->name);
-		tos<<"\" border=\"1\"";
-		if(subject%2==0)  tos<<" class=\"odd_table\"";
-		else tos<<" class=\"even_table\"";
-		tos<<">\n";
-
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<protect2(gt.rules.internalSubjectsList[subject]->name)<<"</th></tr>\n";
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-		}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			tos<<"        <tr>\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-				QList<int> allActivities;
-				
-				allActivities=activitiesForCurrentSubject[day][hour];
-				
-				/*
-				allActivities.clear();
-				//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
-				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
-						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
-								allActivities<<students_timetable_weekly[subgroup][day][hour];
-							}
-					}
-				}
-				//Now run through the teachers timetable, because activities without a students set are still missing.
-				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
-						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
-								assert(act->studentsNames.isEmpty());
-								allActivities<<teachers_timetable_weekly[teacher][day][hour];
-							}
-					}
-				}*/
-				addActivitiesWithSameStartingTime(allActivities, hour);
-				tos<<writeActivitiesSubjects(allActivities);
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
+		tos<<singleSubjectsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, subject, saveTime, true);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos<<"  </body>\n</html>\n";
@@ -5317,89 +3392,7 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(QWidget* parent, co
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 	for(int subject=0; subject<gt.rules.nInternalSubjects; subject++){
-		///////by Liviu Lalescu
-		for(int d=0; d<gt.rules.nDaysPerWeek; d++)
-			for(int h=0; h<gt.rules.nHoursPerDay; h++)
-				activitiesForCurrentSubject[d][h].clear();
-		foreach(int ai, gt.rules.activitiesForSubject[subject])
-			if(best_solution.times[ai]!=UNALLOCATED_TIME){
-				int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
-				int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
-				Activity* act=&gt.rules.internalActivitiesList[ai];
-				for(int dd=0; dd < act->duration && h+dd < gt.rules.nHoursPerDay; dd++)
-					activitiesForCurrentSubject[d][h+dd].append(ai);
-			}
-		///////end Liviu Lalescu
-
-		tos<<"    <table id=\"table_"<<hashSubjectIDsTimetable.value(gt.rules.internalSubjectsList[subject]->name);
-		tos<<"\" border=\"1\"";
-		if(subject%2==0) tos<<" class=\"odd_table\"";
-		else tos<<" class=\"even_table\"";
-		tos<<">\n";
-
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<protect2(gt.rules.internalSubjectsList[subject]->name)<<"</th></tr>\n";
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-		}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			tos<<"        <tr>\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				QList<int> allActivities;
-
-				allActivities=activitiesForCurrentSubject[day][hour];
-
-				/*
-				allActivities.clear();
-				//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
-				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
-						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
-								allActivities<<students_timetable_weekly[subgroup][day][hour];
-							}
-					}
-				}
-				//Now run through the teachers timetable, because activities without a students set are still missing.
-				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
-						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
-								assert(act->studentsNames.isEmpty());
-								allActivities<<teachers_timetable_weekly[teacher][day][hour];
-							}
-					}
-				}
-				*/
-				addActivitiesWithSameStartingTime(allActivities, hour);
-				tos<<writeActivitiesSubjects(allActivities);
-			}
-		tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
+		tos<<singleSubjectsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, subject, saveTime, true);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos << "  </body>\n</html>\n";
@@ -5430,94 +3423,8 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(QWidget* parent, co
 
 	tos<<writeHead(true, placedActivities, false);
 
-	tos<<"    <table id=\"table\" border=\"1\">\n";
-
-	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-	tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-	for(int i=0; i<gt.rules.nInternalSubjects; i++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos << gt.rules.internalSubjectsList[i]->name << "</th>";
-	}
-		
-	tos<<"</tr>\n      </thead>\n";
-	/*workaround
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubjects<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-	*/
-	tos<<"      <tbody>\n";
-
-	//already computed
-	/*for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++)
-			activitiesAtTime[day][hour].clear();
-	for(int i=0; i<gt.rules.nInternalActivities; i++) {
-		Activity* act=&gt.rules.internalActivitiesList[i];
-		if(best_solution.times[i]!=UNALLOCATED_TIME) {
-			int hour=best_solution.times[i]/gt.rules.nDaysPerWeek;
-			int day=best_solution.times[i]%gt.rules.nDaysPerWeek;
-			for(int dd=0; dd < act->duration && hour+dd < gt.rules.nHoursPerDay; dd++)
-				activitiesAtTime[day][hour+dd].append(i);
-		}
-	}*/
-	///////
-
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			tos << "        <tr>\n";
-			if(hour==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-			else tos <<"          <!-- span -->\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-
-
-			for(int subject=0; subject<gt.rules.nInternalSubjects; subject++){
-				QList<int> allActivities;
-				allActivities.clear();
-				
-				foreach(int ai, gt.rules.activitiesForSubject[subject])
-					if(activitiesAtTime[day][hour].contains(ai)){
-						assert(!allActivities.contains(ai));
-						allActivities.append(ai);
-					}
-				
-				/* //Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
-				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
-						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
-								allActivities<<students_timetable_weekly[subgroup][day][hour];
-							}
-					}
-				}
-				//Now run through the teachers timetable, because activities without a students set are still missing.
-				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
-						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
-								assert(act->studentsNames.isEmpty());
-								allActivities<<teachers_timetable_weekly[teacher][day][hour];
-							}
-					}
-				}*/
-				addActivitiesWithSameStartingTime(allActivities, hour);
-				tos<<writeActivitiesSubjects(allActivities);
-			}
-			tos<<"        </tr>\n";
-		}
-	}
-	//workaround begin.
-	tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubjects<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-	//workaround end.
-	tos<<"      </tbody>\n    </table>\n";
+	QSet<int> tmp;
+	tos<<singleSubjectsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubjects, tmp, saveTime, true);
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -5546,90 +3453,9 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(QWidget* parent, 
 
 	tos<<writeHead(true, placedActivities, false);
 
-	tos<<"    <table id=\"table\" border=\"1\">\n";
+	QSet<int> tmp;
+	tos<<singleSubjectsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubjects, tmp, saveTime, true);
 
-	tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-	tos <<"</tr>\n";
-	tos<<"        <tr>\n          <!-- span -->\n";
-	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-		}
-	tos<<"        </tr>\n";
-	tos<<"      </thead>\n";
-	/*workaround
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-	*/
-	tos<<"      <tbody>\n";
-	for(int subject=0; subject<gt.rules.nInternalSubjects; subject++){
-		tos << "        <tr>\n";
-		if(TIMETABLE_HTML_LEVEL>=2)
-			tos << "        <th class=\"yAxis\">" << protect2(gt.rules.internalSubjectsList[subject]->name) << "</th>\n";
-		else
-			tos << "        <th>" << protect2(gt.rules.internalSubjectsList[subject]->name) << "</th>\n";
-
-		///////by Liviu Lalescu
-		for(int d=0; d<gt.rules.nDaysPerWeek; d++)
-			for(int h=0; h<gt.rules.nHoursPerDay; h++)
-				activitiesForCurrentSubject[d][h].clear();
-		foreach(int ai, gt.rules.activitiesForSubject[subject])
-			if(best_solution.times[ai]!=UNALLOCATED_TIME){
-				int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
-				int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
-				Activity* act=&gt.rules.internalActivitiesList[ai];
-				for(int dd=0; dd < act->duration && h+dd < gt.rules.nHoursPerDay; dd++)
-					activitiesForCurrentSubject[d][h+dd].append(ai);
-			}
-		///////end Liviu Lalescu
-
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				QList<int> allActivities;
-
-				allActivities=activitiesForCurrentSubject[day][hour];
-
-
-				/*allActivities.clear();
-				//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
-				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
-						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
-								allActivities<<students_timetable_weekly[subgroup][day][hour];
-							}
-					}
-				}
-				//Now run through the teachers timetable, because activities without a students set are still missing.
-				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
-						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
-								assert(act->studentsNames.isEmpty());
-								allActivities<<teachers_timetable_weekly[teacher][day][hour];
-							}
-					}
-				}*/
-				addActivitiesWithSameStartingTime(allActivities, hour);
-				tos<<writeActivitiesSubjects(allActivities);
-			}
-		}
-		tos<<"        </tr>\n";
-	}
-	//workaround begin.
-	tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-	//workaround end.
-	tos<<"      </tbody>\n    </table>\n";
 	tos << "  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -5659,90 +3485,10 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 	tos<<writeHead(true, placedActivities, true);
 	tos<<writeTOCDays(false);
 
-	//already computed
-	/*for(int day=0; day<gt.rules.nDaysPerWeek; day++)
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++)
-			activitiesAtTime[day][hour].clear();
-	for(int i=0; i<gt.rules.nInternalActivities; i++) {
-		Activity* act=&gt.rules.internalActivitiesList[i];
-		if(best_solution.times[i]!=UNALLOCATED_TIME) {
-			int hour=best_solution.times[i]/gt.rules.nDaysPerWeek;
-			int day=best_solution.times[i]%gt.rules.nDaysPerWeek;
-			for(int dd=0; dd < act->duration && hour+dd < gt.rules.nHoursPerDay; dd++)
-				activitiesAtTime[day][hour+dd].append(i);
-		}
-	}*/
-	///////
-
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-		tos<<"      <thead>\n        <tr><td colspan=\"2\"></td>";
-		for(int i=0; i<gt.rules.nInternalSubjects; i++){
-				if(TIMETABLE_HTML_LEVEL>=2)
-					tos<<"          <th class=\"xAxis\">";
-				else
-					tos<<"          <th>";
-				tos << gt.rules.internalSubjectsList[i]->name << "</th>";
-		}
-		tos<<"</tr>\n      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubjects<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			tos << "        <tr>\n";
-			if(hour==0)
-				tos << "        <th rowspan=\"" << gt.rules.nHoursPerDay  << "\">" << protect2vert(gt.rules.daysOfTheWeek[day]) << "</th>\n";
-			else tos <<"          <!-- span -->\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
+		QSet<int> tmp;
+		tos<<singleSubjectsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubjects, tmp, saveTime, true);
 
-
-			for(int subject=0; subject<gt.rules.nInternalSubjects; subject++){
-				QList<int> allActivities;
-				allActivities.clear();
-				
-				foreach(int ai, gt.rules.activitiesForSubject[subject])
-					if(activitiesAtTime[day][hour].contains(ai)){
-						assert(!allActivities.contains(ai));
-						allActivities.append(ai);
-					}
-				
-				/*//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
-				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
-						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
-								allActivities<<students_timetable_weekly[subgroup][day][hour];
-							}
-					}
-				}
-				//Now run through the teachers timetable, because activities without a students set are still missing.
-				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
-						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
-								assert(act->studentsNames.isEmpty());
-								allActivities<<teachers_timetable_weekly[teacher][day][hour];
-							}
-					}
-				}*/
-				addActivitiesWithSameStartingTime(allActivities, hour);
-				tos<<writeActivitiesSubjects(allActivities);
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubjects<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 
@@ -5776,85 +3522,9 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(QWidget* par
 	tos<<writeTOCDays(false);
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-		tos<<"    <table id=\"table_"<<hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])<<"\" border=\"1\">\n";
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td>";
-	
-		tos << "<th colspan=\"" << gt.rules.nHoursPerDay <<"\">" << protect2(gt.rules.daysOfTheWeek[day]) << "</th>";
-		tos <<"</tr>\n";
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos << protect2(gt.rules.hoursOfTheDay[hour]) << "</th>\n";
-		}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int subject=0; subject<gt.rules.nInternalSubjects; subject++){
-			tos << "        <tr>\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos << "        <th class=\"yAxis\">" << protect2(gt.rules.internalSubjectsList[subject]->name) << "</th>\n";
-			else
-				tos << "        <th>" << protect2(gt.rules.internalSubjectsList[subject]->name) << "</th>\n";
-	
-			///////by Liviu Lalescu
-			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
-				for(int h=0; h<gt.rules.nHoursPerDay; h++)
-					activitiesForCurrentSubject[d][h].clear();
-			foreach(int ai, gt.rules.activitiesForSubject[subject])
-				if(best_solution.times[ai]!=UNALLOCATED_TIME){
-					int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
-					int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
-					Activity* act=&gt.rules.internalActivitiesList[ai];
-					for(int dd=0; dd < act->duration && h+dd < gt.rules.nHoursPerDay; dd++)
-						activitiesForCurrentSubject[d][h+dd].append(ai);
-				}
-			///////end Liviu Lalescu
+		QSet<int> tmp;
+		tos<<singleSubjectsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubjects, tmp, saveTime, true);
 
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				QList<int> allActivities;
-
-				allActivities=activitiesForCurrentSubject[day][hour];
-
-
-				/*allActivities.clear();
-				//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
-				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
-						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
-								allActivities<<students_timetable_weekly[subgroup][day][hour];
-							}
-					}
-				}
-				//Now run through the teachers timetable, because activities without a students set are still missing.
-				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
-					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
-						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
-						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
-							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
-								assert(act->studentsNames.isEmpty());
-								allActivities<<teachers_timetable_weekly[teacher][day][hour];
-							}
-					}
-				}*/
-				addActivitiesWithSameStartingTime(allActivities, hour);
-				tos<<writeActivitiesSubjects(allActivities);
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos << "  </body>\n</html>\n";
@@ -5904,112 +3574,11 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(QWidge
 	
 	bool PRINT_DETAILED=true;
 	do{
-		if(PRINT_DETAILED==true)
-			tos<<"    <table id=\"table_DETAILED\" border=\"1\">\n";
-		else
-			tos<<"    <table id=\"table_LESS_DETAILED\" border=\"1\">\n";
-		
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
-
-		if(PRINT_DETAILED==true)
-			tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Detailed")<<")</th></tr>\n";
-		else	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Less detailed")<<")</th></tr>\n";
-
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-		}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			tos<<"        <tr>\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-				bool empty_slot;
-				empty_slot=true;
-				for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
-					if(teachers_free_periods_timetable_weekly[tfp][day][hour].size()>0){
-						empty_slot=false;
-					}
-					if(PRINT_DETAILED==false&&tfp>=TEACHER_MUST_COME_EARLIER) break;
-				}
-				if(!empty_slot) tos<<"          <td>";
-				for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
-					if(teachers_free_periods_timetable_weekly[tfp][day][hour].size()>0){
-						if(TIMETABLE_HTML_LEVEL>=2)
-							tos<<"<div class=\"DESCRIPTION\">";
-						switch(tfp){
-							case TEACHER_HAS_SINGLE_GAP		: tos<<TimetableExport::tr("Single gap"); break;
-							case TEACHER_HAS_BORDER_GAP		: tos<<TimetableExport::tr("Border gap"); break;
-							case TEACHER_HAS_BIG_GAP		: tos<<TimetableExport::tr("Big gap"); break;
-							case TEACHER_MUST_COME_EARLIER		: tos<<TimetableExport::tr("Must come earlier"); break;
-							case TEACHER_MUST_STAY_LONGER		: tos<<TimetableExport::tr("Must stay longer"); break;
-							case TEACHER_MUST_COME_MUCH_EARLIER	: tos<<TimetableExport::tr("Must come much earlier"); break;
-							case TEACHER_MUST_STAY_MUCH_LONGER	: tos<<TimetableExport::tr("Must stay much longer"); break;
-							case TEACHER_HAS_A_FREE_DAY		: tos<<TimetableExport::tr("Free day"); break;
-							case TEACHER_IS_NOT_AVAILABLE		: tos<<TimetableExport::tr("Not available"); break;
-							default: assert(0==1); break;
-						}
-						if(TIMETABLE_HTML_LEVEL>=2)
-							tos<<":</div>";
-						else tos<<":<br />";
-						if(TIMETABLE_HTML_LEVEL>=3)
-							switch(tfp){
-								case TEACHER_HAS_SINGLE_GAP		: tos<<"<div class=\"TEACHER_HAS_SINGLE_GAP\">"; break;
-								case TEACHER_HAS_BORDER_GAP		: tos<<"<div class=\"TEACHER_HAS_BORDER_GAP\">"; break;
-								case TEACHER_HAS_BIG_GAP		: tos<<"<div class=\"TEACHER_HAS_BIG_GAP\">"; break;
-								case TEACHER_MUST_COME_EARLIER		: tos<<"<div class=\"TEACHER_MUST_COME_EARLIER\">"; break;
-								case TEACHER_MUST_STAY_LONGER		: tos<<"<div class=\"TEACHER_MUST_STAY_LONGER\">"; break;
-								case TEACHER_MUST_COME_MUCH_EARLIER	: tos<<"<div class=\"TEACHER_MUST_COME_MUCH_EARLIER\">"; break;
-								case TEACHER_MUST_STAY_MUCH_LONGER	: tos<<"<div class=\"TEACHER_MUST_STAY_MUCH_LONGER\">"; break;
-								case TEACHER_HAS_A_FREE_DAY		: tos<<"<div class=\"TEACHER_HAS_A_FREE_DAY\">"; break;
-								case TEACHER_IS_NOT_AVAILABLE		: tos<<"<div class=\"TEACHER_IS_NOT_AVAILABLE\">"; break;
-								default: assert(0==1); break;
-							}
-						for(int t=0; t<teachers_free_periods_timetable_weekly[tfp][day][hour].size(); t++){
-							QString teacher_name = gt.rules.internalTeachersList[teachers_free_periods_timetable_weekly[tfp][day][hour].at(t)]->name;
-								switch(TIMETABLE_HTML_LEVEL){
-									case 4 : tos<<"<span class=\"t_"<<hashTeacherIDsTimetable.value(teacher_name)<<"\">"<<protect2(teacher_name)<<"</span>"; break;
-									case 5 : ;
-									case 6 : tos<<"<span class=\"t_"<<hashTeacherIDsTimetable.value(teacher_name)<<"\" onmouseover=\"highlight('t_"<<hashTeacherIDsTimetable.value(teacher_name)<<"')\">"<<protect2(teacher_name)<<"</span>"; break;
-									default: tos<<protect2(teacher_name); break;
-								}
-							tos<<"<br />";
-						}
-						if(TIMETABLE_HTML_LEVEL>=3)
-							tos<<"</div>";
-					}
-					if(PRINT_DETAILED==false&&tfp>=TEACHER_MUST_COME_EARLIER) break;
-				}
-				if(!empty_slot){
-					tos<<"</td>\n";
-				} else {
-					tos<<writeEmpty();
-				}
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
+		tos<<singleTeachersFreePeriodsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, saveTime, PRINT_DETAILED);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -6057,111 +3626,12 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(QWidget*
 
 	bool PRINT_DETAILED=true;
 	do{
-		if(PRINT_DETAILED==true)
-			tos<<"    <table id=\"table_DETAILED\" border=\"1\">\n";
-		else
-			tos<<"    <table id=\"table_LESS_DETAILED\" border=\"1\">\n";
-		
-		tos<<"      <caption>"<<protect2(gt.rules.institutionName)<<"</caption>\n";
+		tos<<singleTeachersFreePeriodsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, saveTime, PRINT_DETAILED);
 
-		if(PRINT_DETAILED==true)
-			tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Detailed")<<")</th></tr>\n";
-		else	tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Teachers' Free Periods")<<" ("<<tr("Less detailed")<<")</th></tr>\n";
-
-		tos<<"        <tr>\n          <!-- span -->\n";
-		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"xAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.hoursOfTheDay[hour])<<"</th>\n";
-		}
-		tos<<"        </tr>\n";
-		tos<<"      </thead>\n";
-		/*workaround
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr></tfoot>\n";
-		*/
-		tos<<"      <tbody>\n";
-		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
-			tos<<"        <tr>\n";
-			if(TIMETABLE_HTML_LEVEL>=2)
-				tos<<"          <th class=\"yAxis\">";
-			else
-				tos<<"          <th>";
-			tos<<protect2(gt.rules.daysOfTheWeek[day])<<"</th>\n";
-			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
-				bool empty_slot;
-				empty_slot=true;
-				for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
-					if(teachers_free_periods_timetable_weekly[tfp][day][hour].size()>0){
-						empty_slot=false;
-					}
-					if(PRINT_DETAILED==false&&tfp>=TEACHER_MUST_COME_EARLIER) break;
-				}
-				if(!empty_slot) tos<<"          <td>";
-				for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
-					if(teachers_free_periods_timetable_weekly[tfp][day][hour].size()>0){
-						if(TIMETABLE_HTML_LEVEL>=2)
-							tos<<"<div class=\"DESCRIPTION\">";
-						switch(tfp){
-							case TEACHER_HAS_SINGLE_GAP		: tos<<TimetableExport::tr("Single gap"); break;
-							case TEACHER_HAS_BORDER_GAP		: tos<<TimetableExport::tr("Border gap"); break;
-							case TEACHER_HAS_BIG_GAP		: tos<<TimetableExport::tr("Big gap"); break;
-							case TEACHER_MUST_COME_EARLIER		: tos<<TimetableExport::tr("Must come earlier"); break;
-							case TEACHER_MUST_STAY_LONGER		: tos<<TimetableExport::tr("Must stay longer"); break;
-							case TEACHER_MUST_COME_MUCH_EARLIER	: tos<<TimetableExport::tr("Must come much earlier"); break;
-							case TEACHER_MUST_STAY_MUCH_LONGER	: tos<<TimetableExport::tr("Must stay much longer"); break;
-							case TEACHER_HAS_A_FREE_DAY		: tos<<TimetableExport::tr("Free day"); break;
-							case TEACHER_IS_NOT_AVAILABLE		: tos<<TimetableExport::tr("Not available"); break;
-							default: assert(0==1); break;
-						}
-						if(TIMETABLE_HTML_LEVEL>=2)
-							tos<<":</div>";
-						else tos<<":<br />";
-						if(TIMETABLE_HTML_LEVEL>=3)
-							switch(tfp){
-								case TEACHER_HAS_SINGLE_GAP		: tos<<"<div class=\"TEACHER_HAS_SINGLE_GAP\">"; break;
-								case TEACHER_HAS_BORDER_GAP		: tos<<"<div class=\"TEACHER_HAS_BORDER_GAP\">"; break;
-								case TEACHER_HAS_BIG_GAP		: tos<<"<div class=\"TEACHER_HAS_BIG_GAP\">"; break;
-								case TEACHER_MUST_COME_EARLIER		: tos<<"<div class=\"TEACHER_MUST_COME_EARLIER\">"; break;
-								case TEACHER_MUST_STAY_LONGER		: tos<<"<div class=\"TEACHER_MUST_STAY_LONGER\">"; break;
-								case TEACHER_MUST_COME_MUCH_EARLIER	: tos<<"<div class=\"TEACHER_MUST_COME_MUCH_EARLIER\">"; break;
-								case TEACHER_MUST_STAY_MUCH_LONGER	: tos<<"<div class=\"TEACHER_MUST_STAY_MUCH_LONGER\">"; break;
-								case TEACHER_HAS_A_FREE_DAY		: tos<<"<div class=\"TEACHER_HAS_A_FREE_DAY\">"; break;
-								case TEACHER_IS_NOT_AVAILABLE		: tos<<"<div class=\"TEACHER_IS_NOT_AVAILABLE\">"; break;
-								default: assert(0==1); break;
-							}
-						for(int t=0; t<teachers_free_periods_timetable_weekly[tfp][day][hour].size(); t++){
-							QString teacher_name = gt.rules.internalTeachersList[teachers_free_periods_timetable_weekly[tfp][day][hour].at(t)]->name;
-								switch(TIMETABLE_HTML_LEVEL){
-									case 4 : tos<<"<span class=\"t_"<<hashTeacherIDsTimetable.value(teacher_name)<<"\">"<<protect2(teacher_name)<<"</span>"; break;
-									case 5 : ;
-									case 6 : tos<<"<span class=\"t_"<<hashTeacherIDsTimetable.value(teacher_name)<<"\" onmouseover=\"highlight('t_"<<hashTeacherIDsTimetable.value(teacher_name)<<"')\">"<<protect2(teacher_name)<<"</span>"; break;
-									default: tos<<protect2(teacher_name); break;
-								}
-							tos<<"<br />";
-						}
-						if(TIMETABLE_HTML_LEVEL>=3)
-							tos<<"</div>";
-					}
-					if(PRINT_DETAILED==false&&tfp>=TEACHER_MUST_COME_EARLIER) break;
-				}
-				if(!empty_slot){
-					tos<<"</td>\n";
-				} else
-					tos<<writeEmpty();
-			}
-			tos<<"        </tr>\n";
-		}
-		//workaround begin.
-		tos<<"        <tr class=\"foot\"><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)<<"</td></tr>\n";
-		//workaround end.
-		tos<<"      </tbody>\n";
-		tos<<"    </table>\n\n";
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
-		if(PRINT_DETAILED==true) PRINT_DETAILED=false;
+		if(PRINT_DETAILED) PRINT_DETAILED=false;
 		else PRINT_DETAILED=true;
-	} while(PRINT_DETAILED!=true);
+	} while(!PRINT_DETAILED);
 	tos<<"  </body>\n</html>\n";
 
 	if(file.error()>0){
@@ -6336,7 +3806,7 @@ QString TimetableExport::writeHead(bool java, int placedActivities, bool printIn
 	tmp+="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
 	tmp+="  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
-	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
+	if(!LANGUAGE_STYLE_RIGHT_TO_LEFT)
 		tmp+="<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\">\n";
 	else
 		tmp+="<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\" dir=\"rtl\">\n";
@@ -6362,7 +3832,7 @@ QString TimetableExport::writeHead(bool java, int placedActivities, bool printIn
 			tmp+="    <script type=\"text/javascript\">\n";
 			tmp+="      function highlight(classval) {\n";
 			tmp+="        var spans = document.getElementsByTagName('span');\n";
-			tmp+="        for(var i=0;spans.length>i;i++) {\n";
+			tmp+="        for(var i=0; spans.length>i; i++) {\n";
 			tmp+="          if (spans[i].className == classval) {\n";
 			tmp+="            spans[i].style.backgroundColor = 'lime';\n";
 			tmp+="          } else {\n";
@@ -6407,7 +3877,7 @@ QString TimetableExport::writeTOCDays(bool detailed){
 }
 
 // by Volker Dirr
-QString TimetableExport::writeStartTagTDofActivities(const Activity* act, bool detailed, bool colspan, bool rowspan){
+QString TimetableExport::writeStartTagTDofActivities(int htmlLevel, const Activity* act, bool detailed, bool colspan, bool rowspan){
 	QString tmp;
 	assert(!(colspan && rowspan));
 	if(detailed)
@@ -6419,7 +3889,7 @@ QString TimetableExport::writeStartTagTDofActivities(const Activity* act, bool d
 		tmp+=" rowspan=\""+CustomFETString::number(act->duration)+"\"";
 	if(colspan && act->duration>1)
 		tmp+=" colspan=\""+CustomFETString::number(act->duration)+"\"";
-	if(TIMETABLE_HTML_LEVEL==6){
+	if(htmlLevel==6){
 		tmp+=" class=\"";
 		if(act->subjectName.size()>0){
 			tmp+="s_"+hashSubjectIDsTimetable.value(act->subjectName);
@@ -6445,38 +3915,38 @@ QString TimetableExport::writeStartTagTDofActivities(const Activity* act, bool d
 			tmp+=" detailed";
 		tmp+="\"";
 	}
-	if(detailed && TIMETABLE_HTML_LEVEL>=1 && TIMETABLE_HTML_LEVEL<=5)
+	if(detailed && htmlLevel>=1 && htmlLevel<=5)
 		tmp+=" class=\"detailed\"";
 	tmp+=">";
 	return tmp;
 }
 
 // by Volker Dirr
-QString TimetableExport::writeSubjectAndActivityTags(const Activity* act, const QString& startTag, const QString& startTagAttribute, bool activityTagsOnly){
+QString TimetableExport::writeSubjectAndActivityTags(int htmlLevel, const Activity* act, const QString& startTag, const QString& startTagAttribute, bool activityTagsOnly, bool printActivityTags){
 	QString tmp;
 	if(act->subjectName.size()>0||act->activityTagsNames.size()>0){
-		if(startTag=="div" && TIMETABLE_HTML_LEVEL>=3)
+		if(startTag=="div" && htmlLevel>=3)
 			tmp+="<"+startTag+startTagAttribute+">";
 		if(act->subjectName.size()>0 && !activityTagsOnly){
-			switch(TIMETABLE_HTML_LEVEL){
+			switch(htmlLevel){
 				case 3 : tmp+="<span class=\"subject\">"+protect2(act->subjectName)+"</span>"; break;
 				case 4 : tmp+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsTimetable.value(act->subjectName)+"\">"+protect2(act->subjectName)+"</span></span>"; break;
 				case 5 : ;
 				case 6 : tmp+="<span class=\"subject\"><span class=\"s_"+hashSubjectIDsTimetable.value(act->subjectName)+"\" onmouseover=\"highlight('s_"+hashSubjectIDsTimetable.value(act->subjectName)+"')\">"+protect2(act->subjectName)+"</span></span>"; break;
 				default: tmp+=protect2(act->subjectName); break;
 			}
-			if(act->activityTagsNames.size()>0){
+			if(act->activityTagsNames.size()>0 && printActivityTags){
 				tmp+=" ";
 			}
 		}
-		if(act->activityTagsNames.size()>0){
+		if(act->activityTagsNames.size()>0 && printActivityTags){
 			if(!activityTagsOnly){
-				if(TIMETABLE_HTML_LEVEL>=3){
+				if(htmlLevel>=3){
 					tmp+="<span class=\"activitytag\">";
 				}
 			}
 			foreach(QString atn, act->activityTagsNames){
-				switch(TIMETABLE_HTML_LEVEL){
+				switch(htmlLevel){
 					case 3 : tmp+=protect2(atn); break;
 					case 4 : tmp+="<span class=\"at_"+hashActivityTagIDsTimetable.value(atn)+"\">"+protect2(atn)+"</span>"; break;
 					case 5 : ;
@@ -6487,13 +3957,13 @@ QString TimetableExport::writeSubjectAndActivityTags(const Activity* act, const 
 			}
 			tmp.remove(tmp.size()-2, 2);
 			if(!activityTagsOnly){
-				if(TIMETABLE_HTML_LEVEL>=3){
+				if(htmlLevel>=3){
 					tmp+="</span>";
 				}
 			}
 		}
 		if(startTag=="div"){
-			if(TIMETABLE_HTML_LEVEL>=3)
+			if(htmlLevel>=3)
 				tmp+="</div>";
 			else tmp+="<br />";
 		}
@@ -6502,13 +3972,13 @@ QString TimetableExport::writeSubjectAndActivityTags(const Activity* act, const 
 }
 
 // by Volker Dirr
-QString TimetableExport::writeStudents(const Activity* act, const QString& startTag, const QString& startTagAttribute){
+QString TimetableExport::writeStudents(int htmlLevel, const Activity* act, const QString& startTag, const QString& startTagAttribute){
 	QString tmp;
 	if(act->studentsNames.size()>0){
-		if(startTag=="div" && TIMETABLE_HTML_LEVEL>=3)
+		if(startTag=="div" && htmlLevel>=3)
 			tmp+="<"+startTag+startTagAttribute+">";
 		foreach(QString st, act->studentsNames){
-			switch(TIMETABLE_HTML_LEVEL){
+			switch(htmlLevel){
 				case 4 : tmp+="<span class=\"ss_"+hashStudentIDsTimetable.value(st)+"\">"+protect2(st)+"</span>"; break;
 				case 5 : ;
 				case 6 : tmp+="<span class=\"ss_"+hashStudentIDsTimetable.value(st)+"\" onmouseover=\"highlight('ss_"+hashStudentIDsTimetable.value(st)+"')\">"+protect2(st)+"</span>"; break;
@@ -6518,7 +3988,7 @@ QString TimetableExport::writeStudents(const Activity* act, const QString& start
 		}
 		tmp.remove(tmp.size()-2, 2);
 		if(startTag=="div"){
-			if(TIMETABLE_HTML_LEVEL>=3)
+			if(htmlLevel>=3)
 				tmp+="</div>";
 			else tmp+="<br />";
 		}
@@ -6527,13 +3997,13 @@ QString TimetableExport::writeStudents(const Activity* act, const QString& start
 }
 
 // by Volker Dirr
-QString TimetableExport::writeTeachers(const Activity* act, const QString& startTag, const QString& startTagAttribute){
+QString TimetableExport::writeTeachers(int htmlLevel, const Activity* act, const QString& startTag, const QString& startTagAttribute){
 	QString tmp;
 	if(act->teachersNames.size()>0){
-		if(startTag=="div" && TIMETABLE_HTML_LEVEL>=3)
+		if(startTag=="div" && htmlLevel>=3)
 			tmp+="<"+startTag+startTagAttribute+">";
 		foreach(QString t, act->teachersNames){
-			switch(TIMETABLE_HTML_LEVEL){
+			switch(htmlLevel){
 				case 4 : tmp+="<span class=\"t_"+hashTeacherIDsTimetable.value(t)+"\">"+protect2(t)+"</span>"; break;
 				case 5 : ;
 				case 6 : tmp+="<span class=\"t_"+hashTeacherIDsTimetable.value(t)+"\" onmouseover=\"highlight('t_"+hashTeacherIDsTimetable.value(t)+"')\">"+protect2(t)+"</span>"; break;
@@ -6543,7 +4013,7 @@ QString TimetableExport::writeTeachers(const Activity* act, const QString& start
 		}
 		tmp.remove(tmp.size()-2, 2);
 		if(startTag=="div"){
-			if(TIMETABLE_HTML_LEVEL>=3)
+			if(htmlLevel>=3)
 				tmp+="</div>";
 			else tmp+="<br />";
 		}
@@ -6552,20 +4022,20 @@ QString TimetableExport::writeTeachers(const Activity* act, const QString& start
 }
 
 // by Volker Dirr
-QString TimetableExport::writeRoom(int ai, const QString& startTag, const QString& startTagAttribute){
+QString TimetableExport::writeRoom(int htmlLevel, int ai, const QString& startTag, const QString& startTagAttribute){
 	QString tmp;
 	int r=best_solution.rooms[ai];
 	if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
-		if(startTag=="div" && TIMETABLE_HTML_LEVEL>=3)
+		if(startTag=="div" && htmlLevel>=3)
 			tmp+="<"+startTag+startTagAttribute+">";
-		switch(TIMETABLE_HTML_LEVEL){
+		switch(htmlLevel){
 			case 4 : tmp+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"\">"+protect2(gt.rules.internalRoomsList[r]->name)+"</span>"; break;
 			case 5 : ;
 			case 6 : tmp+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"\" onmouseover=\"highlight('r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[r]->name)+"')\">"+protect2(gt.rules.internalRoomsList[r]->name)+"</span>"; break;
 			default: tmp+=protect2(gt.rules.internalRoomsList[r]->name); break;
 		}
 		if(startTag=="div"){
-			if(TIMETABLE_HTML_LEVEL>=3)
+			if(htmlLevel>=3)
 				tmp+="</div>";
 			else tmp+="<br />";
 		}
@@ -6574,10 +4044,10 @@ QString TimetableExport::writeRoom(int ai, const QString& startTag, const QStrin
 }
 
 // by Volker Dirr
-QString TimetableExport::writeNotAvailableSlot(const QString& weight){
+QString TimetableExport::writeNotAvailableSlot(int htmlLevel, const QString& weight){
 	QString tmp;
 	//weight=" "+weight;
-	switch(TIMETABLE_HTML_LEVEL){
+	switch(htmlLevel){
 		case 3 : ;
 		case 4 : tmp="          <td class=\"notAvailable\"><span class=\"notAvailable\">"+protect2(STRING_NOT_AVAILABLE_TIME_SLOT)+weight+"</span></td>\n"; break;
 		case 5 : ;
@@ -6588,10 +4058,10 @@ QString TimetableExport::writeNotAvailableSlot(const QString& weight){
 }
 
 // by Volker Dirr
-QString TimetableExport::writeBreakSlot(const QString& weight){
+QString TimetableExport::writeBreakSlot(int htmlLevel, const QString& weight){
 	QString tmp;
 	//weight=" "+weight;
-	switch(TIMETABLE_HTML_LEVEL){
+	switch(htmlLevel){
 		case 3 : ;
 		case 4 : tmp="          <td class=\"break\"><span class=\"break\">"+protect2(STRING_BREAK_SLOT)+weight+"</span></td>\n"; break;
 		case 5 : ;
@@ -6602,9 +4072,9 @@ QString TimetableExport::writeBreakSlot(const QString& weight){
 }
 
 // by Volker Dirr
-QString TimetableExport::writeEmpty(){
+QString TimetableExport::writeEmpty(int htmlLevel){
 	QString tmp;
-	switch(TIMETABLE_HTML_LEVEL){
+	switch(htmlLevel){
 		case 3 : ;
 		case 4 : tmp="          <td class=\"empty\"><span class=\"empty\">"+protect2(STRING_EMPTY_SLOT)+"</span></td>\n"; break;
 		case 5 : ;
@@ -6615,81 +4085,81 @@ QString TimetableExport::writeEmpty(){
 }
 
 //by Volker Dirr
-QString TimetableExport::writeActivityStudents(int ai, int day, int hour, bool notAvailable, bool colspan, bool rowspan){
+QString TimetableExport::writeActivityStudents(int htmlLevel, int ai, int day, int hour, bool notAvailable, bool colspan, bool rowspan, bool printActivityTags){
 	QString tmp;
 	int currentTime=day+gt.rules.nDaysPerWeek*hour;
 	if(ai!=UNALLOCATED_ACTIVITY){
 		if(best_solution.times[ai]==currentTime){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, false, colspan, rowspan);
-			tmp+=writeSubjectAndActivityTags(act, "div", " class=\"line1\"", false);
-			tmp+=writeTeachers(act, "div", " class=\"teacher line2\"");
-			tmp+=writeRoom(ai, "div", " class=\"room line3\"");
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, false, colspan, rowspan);
+			tmp+=writeSubjectAndActivityTags(htmlLevel, act, "div", " class=\"line1\"", false, printActivityTags);
+			tmp+=writeTeachers(htmlLevel, act, "div", " class=\"teacher line2\"");
+			tmp+=writeRoom(htmlLevel, ai, "div", " class=\"room line3\"");
 			tmp+="</td>\n";
 		} else
 			tmp+="          <!-- span -->\n";
 	} else {
 		if(notAvailable && PRINT_NOT_AVAILABLE_TIME_SLOTS){
-			tmp+=writeNotAvailableSlot("");
+			tmp+=writeNotAvailableSlot(htmlLevel, "");
 		}
 		else if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
-			tmp+=writeBreakSlot("");
+			tmp+=writeBreakSlot(htmlLevel, "");
 		}
 		else{
-			tmp+=writeEmpty();
+			tmp+=writeEmpty(htmlLevel);
 		}
 	}
 	return tmp;
 }
 
 //by Volker Dirr
-QString TimetableExport::writeActivitiesStudents(const QList<int>& allActivities){
+QString TimetableExport::writeActivitiesStudents(int htmlLevel, const QList<int>& allActivities, bool printActivityTags){
 	QString tmp;
-	if(TIMETABLE_HTML_LEVEL>=1)
+	if(htmlLevel>=1)
 		tmp+="          <td><table class=\"detailed\">";
 	else
 		tmp+="          <td><table>";
-	if(TIMETABLE_HTML_LEVEL>=3)
+	if(htmlLevel>=3)
 		tmp+="<tr class=\"student line0\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeStudents(act, "", "")+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeStudents(htmlLevel, act, "", "")+"</td>";
 		}
 	}
 	tmp+="</tr>";
-	if(TIMETABLE_HTML_LEVEL>=3)
+	if(htmlLevel>=3)
 		tmp+="<tr class=\"line1\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeSubjectAndActivityTags(act, "", "", false)+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeSubjectAndActivityTags(htmlLevel, act, "", "", false, printActivityTags)+"</td>";
 		}
 	}
 	tmp+="</tr>";
-	if(TIMETABLE_HTML_LEVEL>=3)
+	if(htmlLevel>=3)
 		tmp+="<tr class=\"teacher line2\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeTeachers(act, "", "")+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeTeachers(htmlLevel, act, "", "")+"</td>";
 		}
 	}
 	tmp+="</tr>";
-	if(TIMETABLE_HTML_LEVEL>=3)
+	if(htmlLevel>=3)
 		tmp+="<tr class=\"room line3\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeRoom(ai, "", "")+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeRoom(htmlLevel, ai, "", "")+"</td>";
 		}
 	}
 	tmp+="</tr>";
@@ -6698,83 +4168,83 @@ QString TimetableExport::writeActivitiesStudents(const QList<int>& allActivities
 }
 
 //by Volker Dirr
-QString TimetableExport::writeActivityTeacher(int teacher, int day, int hour, bool colspan, bool rowspan){
+QString TimetableExport::writeActivityTeacher(int htmlLevel, int teacher, int day, int hour, bool colspan, bool rowspan, bool printActivityTags){
 	QString tmp;
 	int ai=teachers_timetable_weekly[teacher][day][hour];
 	int currentTime=day+gt.rules.nDaysPerWeek*hour;
 	if(ai!=UNALLOCATED_ACTIVITY){
 		if(best_solution.times[ai]==currentTime){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, false, colspan, rowspan);
-			tmp+=writeStudents(act, "div", " class=\"student line1\"");
-			tmp+=writeSubjectAndActivityTags(act, "div", " class=\"line2\"", false);
-			tmp+=writeRoom(ai, "div", " class=\"room line3\"");
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, false, colspan, rowspan);
+			tmp+=writeStudents(htmlLevel, act, "div", " class=\"student line1\"");
+			tmp+=writeSubjectAndActivityTags(htmlLevel, act, "div", " class=\"line2\"", false, printActivityTags);
+			tmp+=writeRoom(htmlLevel, ai, "div", " class=\"room line3\"");
 			tmp+="</td>\n";
 		} else
 			tmp+="          <!-- span -->\n";
 	} else {
 		if(teacherNotAvailableDayHour[teacher][day][hour] && PRINT_NOT_AVAILABLE_TIME_SLOTS){
-			tmp+=writeNotAvailableSlot("");
+			tmp+=writeNotAvailableSlot(htmlLevel, "");
 		}
 		else if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
-			tmp+=writeBreakSlot("");
+			tmp+=writeBreakSlot(htmlLevel, "");
 		}
 		else{
-			tmp+=writeEmpty();
+			tmp+=writeEmpty(htmlLevel);
 		}
 	}
 	return tmp;
 }
 
 //by Volker Dirr
-QString TimetableExport::writeActivitiesTeachers(const QList<int>& allActivities){
+QString TimetableExport::writeActivitiesTeachers(int htmlLevel, const QList<int>& allActivities, bool printActivityTags){
 	QString tmp;
-	if(TIMETABLE_HTML_LEVEL>=1)
+	if(htmlLevel>=1)
 		tmp+="          <td><table class=\"detailed\">";
 	else
 		tmp+="          <td><table>";
-	if(TIMETABLE_HTML_LEVEL>=3)
+	if(htmlLevel>=3)
 		tmp+="<tr class=\"teacher line0\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeTeachers(act, "", "")+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeTeachers(htmlLevel, act, "", "")+"</td>";
 		}
 	}
 	tmp+="</tr>";
-	if(TIMETABLE_HTML_LEVEL>=3)
+	if(htmlLevel>=3)
 		tmp+="<tr class=\"student line1\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeStudents(act, "", "")+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeStudents(htmlLevel, act, "", "")+"</td>";
 		}
 	}
 	tmp+="</tr>";
-	if(TIMETABLE_HTML_LEVEL>=3)
+	if(htmlLevel>=3)
 		tmp+="<tr class=\"line2\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeSubjectAndActivityTags(act, "", "", false)+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeSubjectAndActivityTags(htmlLevel, act, "", "", false, printActivityTags)+"</td>";
 		}
 	}
 	tmp+="</tr>";
 
-	if(TIMETABLE_HTML_LEVEL>=3)
+	if(htmlLevel>=3)
 		tmp+="<tr class=\"room line3\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeRoom(ai, "", "")+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeRoom(htmlLevel, ai, "", "")+"</td>";
 		}
 	}
 	tmp+="</tr>";
@@ -6783,82 +4253,82 @@ QString TimetableExport::writeActivitiesTeachers(const QList<int>& allActivities
 }
 
 //by Volker Dirr
-QString TimetableExport::writeActivityRoom(int room, int day, int hour, bool colspan, bool rowspan){
+QString TimetableExport::writeActivityRoom(int htmlLevel, int room, int day, int hour, bool colspan, bool rowspan, bool printActivityTags){
 	QString tmp;
 	int ai=rooms_timetable_weekly[room][day][hour];
 	int currentTime=day+gt.rules.nDaysPerWeek*hour;
 	if(ai!=UNALLOCATED_ACTIVITY){
 		if(best_solution.times[ai]==currentTime){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, false, colspan, rowspan);
-			tmp+=writeStudents(act, "div", " class=\"student line1\"");
-			tmp+=writeTeachers(act, "div", " class=\"teacher line2\"");
-			tmp+=writeSubjectAndActivityTags(act, "div", " class=\"line3\"", false);
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, false, colspan, rowspan);
+			tmp+=writeStudents(htmlLevel, act, "div", " class=\"student line1\"");
+			tmp+=writeTeachers(htmlLevel, act, "div", " class=\"teacher line2\"");
+			tmp+=writeSubjectAndActivityTags(htmlLevel, act, "div", " class=\"line3\"", false, printActivityTags);
 			tmp+="</td>\n";
 		} else
 			tmp+="          <!-- span -->\n";
 	} else {
 		if(notAllowedRoomTimePercentages[room][day+hour*gt.rules.nDaysPerWeek]>=0 && PRINT_NOT_AVAILABLE_TIME_SLOTS){
-			tmp+=writeNotAvailableSlot("");
+			tmp+=writeNotAvailableSlot(htmlLevel, "");
 		}
 		else if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
-			tmp+=writeBreakSlot("");
+			tmp+=writeBreakSlot(htmlLevel, "");
 		}
 		else{
-			tmp+=writeEmpty();
+			tmp+=writeEmpty(htmlLevel);
 		}
 	}
 	return tmp;
 }
 
 //by Volker Dirr
-QString TimetableExport::writeActivitiesRooms(const QList<int>& allActivities){
+QString TimetableExport::writeActivitiesRooms(int htmlLevel, const QList<int>& allActivities, bool printActivityTags){
 	QString tmp;
-	if(TIMETABLE_HTML_LEVEL>=1)
+	if(htmlLevel>=1)
 		tmp+="          <td><table class=\"detailed\">";
 	else
 		tmp+="          <td><table>";
-	if(TIMETABLE_HTML_LEVEL>=3)
+	if(htmlLevel>=3)
 		tmp+="<tr class=\"room line0\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeRoom(ai, "", "")+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeRoom(htmlLevel, ai, "", "")+"</td>";
 		}
 	}
 	tmp+="</tr>";
-	if(TIMETABLE_HTML_LEVEL>=3)
+	if(htmlLevel>=3)
 		tmp+="<tr class=\"student line1\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeStudents(act, "", "")+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeStudents(htmlLevel, act, "", "")+"</td>";
 		}
 	}
 	tmp+="</tr>";
-	if(TIMETABLE_HTML_LEVEL>=3)
+	if(htmlLevel>=3)
 		tmp+="<tr class=\"teacher line2\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeTeachers(act, "", "")+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeTeachers(htmlLevel, act, "", "")+"</td>";
 		}
 	}
 	tmp+="</tr>";
-	if(TIMETABLE_HTML_LEVEL>=3)
+	if(htmlLevel>=3)
 		tmp+="<tr class=\"line3\">";
 	else	tmp+="<tr>";
 	for(int a=0; a<allActivities.size(); a++){
 		int ai=allActivities[a];
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeSubjectAndActivityTags(act, "", "", false)+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeSubjectAndActivityTags(htmlLevel, act, "", "", false, printActivityTags)+"</td>";
 		}
 	}
 	tmp+="</tr>";
@@ -6868,49 +4338,3087 @@ QString TimetableExport::writeActivitiesRooms(const QList<int>& allActivities){
 }
 
 //by Volker Dirr
-QString TimetableExport::writeActivitiesSubjects(const QList<int>& allActivities){
+QString TimetableExport::writeActivitiesSubjects(int htmlLevel, const QList<int>& allActivities, bool printActivityTags){
 	QString tmp;
 	if(allActivities.isEmpty()){
-		tmp+=writeEmpty();
+		tmp+=writeEmpty(htmlLevel);
 	} else {
-		if(TIMETABLE_HTML_LEVEL>=1)
+		if(htmlLevel>=1)
 			tmp+="          <td><table class=\"detailed\">";
 		else
 						tmp+="          <td><table>";
-		if(TIMETABLE_HTML_LEVEL>=3)
-			tmp+="<tr class=\"line0 activitytag\">";
-		else	tmp+="<tr>";
-		for(int a=0; a<allActivities.size(); a++){
-			Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeSubjectAndActivityTags(act, "", "", true)+"</td>";
+		if(printActivityTags){
+			if(htmlLevel>=3)
+				tmp+="<tr class=\"line0 activitytag\">";
+			else	tmp+="<tr>";
+			for(int a=0; a<allActivities.size(); a++){
+				Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeSubjectAndActivityTags(htmlLevel, act, "", "", true, printActivityTags)+"</td>";
+			}
+			tmp+="</tr>";
 		}
-		tmp+="</tr>";
-		if(TIMETABLE_HTML_LEVEL>=3)
+		if(htmlLevel>=3)
 			tmp+="<tr class=\"student line1\">";
 		else	tmp+="<tr>";
 		for(int a=0; a<allActivities.size(); a++){
 			Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeStudents(act, "", "")+"</td>";	
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeStudents(htmlLevel, act, "", "")+"</td>";	
 		}
 		tmp+="</tr>";
-		if(TIMETABLE_HTML_LEVEL>=3)
+		if(htmlLevel>=3)
 			tmp+="<tr class=\"teacher line2\">";
 		else	tmp+="<tr>";
 		for(int a=0; a<allActivities.size(); a++){
 			Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeTeachers(act, "", "")+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeTeachers(htmlLevel, act, "", "")+"</td>";
 		}
 		tmp+="</tr>";
-		if(TIMETABLE_HTML_LEVEL>=3)
+		if(htmlLevel>=3)
 			tmp+="<tr class=\"room line3\">";
 		else	tmp+="<tr>";
 		for(int a=0; a<allActivities.size(); a++){
 			int ai=allActivities[a];
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(act, true, false, false)+writeRoom(ai, "", "")+"</td>";
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false)+writeRoom(htmlLevel, ai, "", "")+"</td>";
 		}
 		tmp+="</tr>";
 		tmp+="</table></td>\n";
 	}
 	return tmp;
+}
+
+//the following functions return a single html table (needed for html file export and printing)
+
+//by Volker Dirr
+QString TimetableExport::singleSubgroupsTimetableDaysHorizontalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags){
+	assert(subgroup>=0);
+	assert(subgroup<gt.rules.nInternalSubgroups);
+	QString tmpString;
+	QString subgroup_name = gt.rules.internalSubgroupsList[subgroup]->name;
+	tmpString+="    <table id=\"table_"+hashStudentIDsTimetable.value(subgroup_name)+"\" border=\"1\"";
+	if(subgroup%2==0) tmpString+=" class=\"odd_table\"";
+	else tmpString+=" class=\"even_table\"";
+	tmpString+=">\n";
+		
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+protect2(subgroup_name)+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+	tmpString+="        <tr>\n";
+	if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			QList<int> allActivities;
+			allActivities.clear();
+			allActivities<<students_timetable_weekly[subgroup][day][hour];
+			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+				tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], false, true, printActivityTags);
+			} else{
+				tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags){
+	assert(subgroup>=0);
+	assert(subgroup<gt.rules.nInternalSubgroups);
+	QString tmpString;
+	QString subgroup_name = gt.rules.internalSubgroupsList[subgroup]->name;
+	tmpString+="    <table id=\"table_"+hashStudentIDsTimetable.value(subgroup_name)+"\" border=\"1\"";
+	if(subgroup%2==0) tmpString+=" class=\"odd_table\"";
+	else tmpString+=" class=\"even_table\"";
+	tmpString+=">\n";
+	
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+		tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(subgroup_name)+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			QList<int> allActivities;
+			allActivities.clear();
+			allActivities<<students_timetable_weekly[subgroup][day][hour];
+			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+				tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], true, false, printActivityTags);
+			} else{
+				tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleSubgroupsTimetableTimeVerticalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	QString tmpString;
+	tmpString+="    <table border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	
+	int currentCount=0;
+	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups && currentCount<maxSubgroups; subgroup++){
+		if(!excludedNames.contains(subgroup)){
+			currentCount++;
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalSubgroupsList[subgroup]->name+"</th>";
+		}
+	}
+	tmpString+="</tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			tmpString+="        <tr>\n";
+			if(hour==0)
+				tmpString+="        <th rowspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+			else tmpString+="          <!-- span -->\n";
+
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+			currentCount=0;
+			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups && currentCount<maxSubgroups; subgroup++){
+				if(!excludedNames.contains(subgroup)){
+					currentCount++;
+					if(day+1==gt.rules.nDaysPerWeek && hour+1==gt.rules.nHoursPerDay)
+						excludedNames<<subgroup;
+					QList<int> allActivities;
+					allActivities.clear();
+					allActivities<<students_timetable_weekly[subgroup][day][hour];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], false, true, printActivityTags);
+					} else{
+						tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+					}
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n    </table>\n";
+	return tmpString;
+}
+
+//by Volker Dirr
+QString TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	QString tmpString;
+	tmpString+="    <table border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		tmpString+="<th colspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="        </tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	
+	int currentCount=0;
+	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups && currentCount<maxSubgroups; subgroup++){
+		if(!excludedNames.contains(subgroup)){
+			currentCount++;
+			excludedNames<<subgroup;
+			tmpString+="        <tr>\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalSubgroupsList[subgroup]->name+"</th>\n";
+			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+					QList<int> allActivities;
+					allActivities.clear();
+					allActivities<<students_timetable_weekly[subgroup][day][hour];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], true, false, printActivityTags);
+					} else{
+						tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+					}
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n    </table>\n";
+	return tmpString;
+}
+
+//by Volker Dirr
+QString TimetableExport::singleSubgroupsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])+"\" border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	
+	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	int currentCount=0;
+	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups && currentCount<maxSubgroups; subgroup++){
+		if(!excludedNames.contains(subgroup)){
+			currentCount++;
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalSubgroupsList[subgroup]->name+"</th>";
+		}
+	}
+	tmpString+="</tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		tmpString+="        <tr>\n";
+		if(hour==0)
+			tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+		else tmpString+="          <!-- span -->\n";
+			if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		currentCount=0;
+		for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups && currentCount<maxSubgroups; subgroup++){
+			if(!excludedNames.contains(subgroup)){
+				currentCount++;
+				if(hour+1==gt.rules.nHoursPerDay)
+					excludedNames<<subgroup;
+				QList<int> allActivities;
+				allActivities.clear();
+				allActivities<<students_timetable_weekly[subgroup][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], false, true, printActivityTags);
+				} else{
+					tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+				}
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+
+//by Volker Dirr
+QString TimetableExport::singleSubgroupsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])+"\" border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+	tmpString+="<th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="        </tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	int currentCount=0;
+	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups && currentCount<maxSubgroups; subgroup++){
+		if(!excludedNames.contains(subgroup)){
+			currentCount++;
+			excludedNames<<subgroup;
+
+			tmpString+="        <tr>\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalSubgroupsList[subgroup]->name+"</th>\n";
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+				QList<int> allActivities;
+				allActivities.clear();
+				allActivities<<students_timetable_weekly[subgroup][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], true, false, printActivityTags);
+				} else{
+					tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleGroupsTimetableDaysHorizontalHtml(int htmlLevel, int group, const QString& saveTime, bool printActivityTags, bool detailed){
+	assert(group>=0);
+	assert(group<gt.rules.internalGroupsList.size());
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashStudentIDsTimetable.value(gt.rules.internalGroupsList[group]->name);
+	if(detailed) tmpString+="_DETAILED";
+	tmpString+="\" border=\"1\"";
+	if(group%2) tmpString+=" class=\"even_table\"";
+	else tmpString+=" class=\"odd_table\"";
+	tmpString+=">\n";
+			
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+protect2(gt.rules.internalGroupsList[group]->name)+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			QList<int> allActivities;
+			allActivities.clear();
+			bool isNotAvailable=true;
+			for(int sg=0; sg<gt.rules.internalGroupsList[group]->subgroupsList.size(); sg++){
+				StudentsSubgroup* sts=gt.rules.internalGroupsList[group]->subgroupsList[sg];
+				int subgroup=sts->indexInInternalSubgroupsList;
+				if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+					allActivities<<students_timetable_weekly[subgroup][day][hour];
+				if(!subgroupNotAvailableDayHour[subgroup][day][hour])
+					isNotAvailable=false;
+				}
+			assert(!allActivities.isEmpty());
+			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+				tmpString+=writeActivityStudents(htmlLevel, allActivities[0], day, hour, isNotAvailable, false, true, printActivityTags);
+			} else{
+				if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+				else{
+					tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+				}
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleGroupsTimetableDaysVerticalHtml(int htmlLevel, int group, const QString& saveTime, bool printActivityTags, bool detailed){
+	assert(group>=0);
+	assert(group<gt.rules.internalGroupsList.size());
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashStudentIDsTimetable.value(gt.rules.internalGroupsList.at(group)->name);
+	if(detailed) tmpString+="_DETAILED";
+	tmpString+="\" border=\"1\"";
+	if(group%2) tmpString+=" class=\"even_table\"";
+	else tmpString+=" class=\"odd_table\"";
+	tmpString+=">\n";
+			
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.internalGroupsList.at(group)->name)+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			QList<int> allActivities;
+			allActivities.clear();
+			bool isNotAvailable=true;
+			for(int sg=0; sg<gt.rules.internalGroupsList.at(group)->subgroupsList.size(); sg++){
+				StudentsSubgroup* sts=gt.rules.internalGroupsList.at(group)->subgroupsList[sg];
+				int subgroup=sts->indexInInternalSubgroupsList;
+				if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+					allActivities<<students_timetable_weekly[subgroup][day][hour];
+				if(!subgroupNotAvailableDayHour[subgroup][day][hour])
+					isNotAvailable=false;
+			}
+			assert(!allActivities.isEmpty());
+			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+				tmpString+=writeActivityStudents(htmlLevel, allActivities[0], day, hour, isNotAvailable, true, false, printActivityTags);
+			} else{
+				if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+				else{
+					tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+				}
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleGroupsTimetableTimeVerticalHtml(int htmlLevel, int maxGroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed){
+	QString tmpString;
+	tmpString+="    <table id=\"table";
+	if(!detailed)
+		tmpString+="_LESS";
+	tmpString+="_DETAILED";
+	tmpString+="\" border=\"1\">\n";
+		tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+		tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	int currentCount=0;
+	for(int group=0; group<gt.rules.internalGroupsList.size() && currentCount<maxGroups; group++){
+		if(!excludedNames.contains(group)){
+			currentCount++;
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.internalGroupsList.at(group)->name)+"</th>";
+		}
+	}
+	
+	tmpString+="</tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			currentCount=0;
+			tmpString+="        <tr>\n";
+			if(hour==0)
+				tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+			else tmpString+="          <!-- span -->\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+			for(int group=0; group<gt.rules.internalGroupsList.size() && currentCount<maxGroups; group++){
+				if(!excludedNames.contains(group)){
+					currentCount++;
+					if(day+1==gt.rules.nDaysPerWeek && hour+1==gt.rules.nHoursPerDay)
+						excludedNames<<group;
+					QList<int> allActivities;
+					allActivities.clear();
+					bool isNotAvailable=true;
+					for(int sg=0; sg<gt.rules.internalGroupsList.at(group)->subgroupsList.size(); sg++){
+						StudentsSubgroup* sts=gt.rules.internalGroupsList.at(group)->subgroupsList[sg];
+						int subgroup=sts->indexInInternalSubgroupsList;
+						if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+							allActivities<<students_timetable_weekly[subgroup][day][hour];
+						if(!subgroupNotAvailableDayHour[subgroup][day][hour])
+							isNotAvailable=false;
+					}
+					assert(!allActivities.isEmpty());
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tmpString+=writeActivityStudents(htmlLevel, allActivities[0], day, hour, isNotAvailable, false, true, printActivityTags);
+					} else{
+						if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+						else{
+							tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+						}
+					}
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+
+//by Volker Dirr
+QString TimetableExport::singleGroupsTimetableTimeHorizontalHtml(int htmlLevel, int maxGroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed){
+	QString tmpString;
+	tmpString+="    <table id=\"table";
+	if(!detailed)
+		tmpString+="_LESS";
+	tmpString+="_DETAILED";
+	tmpString+="\" border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		tmpString+="<th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="</tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	
+	int currentCount=0;
+	for(int group=0; group<gt.rules.internalGroupsList.size() && currentCount<maxGroups; group++){
+		if(!excludedNames.contains(group)){
+			currentCount++;
+			excludedNames<<group;
+
+			tmpString+="        <tr>\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.internalGroupsList.at(group)->name)+"</th>\n";
+			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+					QList<int> allActivities;
+					allActivities.clear();
+					bool isNotAvailable=true;
+					for(int sg=0; sg<gt.rules.internalGroupsList.at(group)->subgroupsList.size(); sg++){
+						StudentsSubgroup* sts=gt.rules.internalGroupsList.at(group)->subgroupsList[sg];
+						int subgroup=sts->indexInInternalSubgroupsList;
+						if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+							allActivities<<students_timetable_weekly[subgroup][day][hour];
+						if(!subgroupNotAvailableDayHour[subgroup][day][hour])
+							isNotAvailable=false;
+					}
+					assert(!allActivities.isEmpty());
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tmpString+=writeActivityStudents(htmlLevel, allActivities[0], day, hour, isNotAvailable, true, false, printActivityTags);
+					} else{
+						if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+						else{
+							tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+						}
+					}
+				}
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+
+//by Volker Dirr
+QString TimetableExport::singleGroupsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxGroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day]);
+	if(detailed) tmpString+="_DETAILED";
+	tmpString+="\" border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	int currentCount=0;
+	for(int group=0; group<gt.rules.internalGroupsList.size() && currentCount<maxGroups; group++){
+		if(!excludedNames.contains(group)){
+			currentCount++;
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalGroupsList.at(group)->name+"</th>";
+		}
+	}
+	
+	tmpString+="</tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		currentCount=0;
+		tmpString+="        <tr>\n";
+		if(hour==0)
+			tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">" + protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+		else tmpString+="          <!-- span -->\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		for(int group=0; group<gt.rules.internalGroupsList.size() && currentCount<maxGroups; group++){
+			if(!excludedNames.contains(group)){
+				currentCount++;
+				if(hour+1==gt.rules.nHoursPerDay)
+					excludedNames<<group;
+				QList<int> allActivities;
+				allActivities.clear();
+				bool isNotAvailable=true;
+				for(int sg=0; sg<gt.rules.internalGroupsList.at(group)->subgroupsList.size(); sg++){
+					StudentsSubgroup* sts=gt.rules.internalGroupsList.at(group)->subgroupsList[sg];
+					int subgroup=sts->indexInInternalSubgroupsList;
+					if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+						allActivities<<students_timetable_weekly[subgroup][day][hour];
+					if(!subgroupNotAvailableDayHour[subgroup][day][hour])
+						isNotAvailable=false;
+				}
+				assert(!allActivities.isEmpty());
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tmpString+=writeActivityStudents(htmlLevel, allActivities[0], day, hour, isNotAvailable, false, true, printActivityTags);
+				} else{
+					if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+					else{
+						tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+					}
+				}
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+
+//by Volker Dirr
+QString TimetableExport::singleGroupsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxGroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day]);
+	if(detailed) tmpString+="_DETAILED";
+	tmpString+="\" border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+	tmpString+="<th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="</tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	
+	int currentCount=0;
+	for(int group=0; group<gt.rules.internalGroupsList.size() && currentCount<maxGroups; group++){
+		if(!excludedNames.contains(group)){
+			currentCount++;
+			excludedNames<<group;
+
+			tmpString+="        <tr>\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.internalGroupsList.at(group)->name)+"</th>\n";
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+				QList<int> allActivities;
+				allActivities.clear();
+				bool isNotAvailable=true;
+				for(int sg=0; sg<gt.rules.internalGroupsList.at(group)->subgroupsList.size(); sg++){
+					StudentsSubgroup* sts=gt.rules.internalGroupsList.at(group)->subgroupsList[sg];
+					int subgroup=sts->indexInInternalSubgroupsList;
+					if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+						allActivities<<students_timetable_weekly[subgroup][day][hour];
+					if(!subgroupNotAvailableDayHour[subgroup][day][hour])
+						isNotAvailable=false;
+				}
+				assert(!allActivities.isEmpty());
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tmpString+=writeActivityStudents(htmlLevel, allActivities[0], day, hour, isNotAvailable, true, false, printActivityTags);
+				} else{
+					if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+					else{
+						tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+					}
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleYearsTimetableDaysHorizontalHtml(int htmlLevel, int year, const QString& saveTime, bool printActivityTags, bool detailed){
+	assert(year>=0);
+	assert(year<gt.rules.augmentedYearsList.size());
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashStudentIDsTimetable.value(gt.rules.augmentedYearsList.at(year)->name);
+	if(detailed) tmpString+="_DETAILED";
+	tmpString+="\" border=\"1\"";
+	if(year%2)  tmpString+=" class=\"even_table\"";
+	else tmpString+=" class=\"odd_table\"";
+	tmpString+=">\n";
+				
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+protect2(gt.rules.augmentedYearsList.at(year)->name)+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			QList<int> allActivities;
+			allActivities.clear();
+			bool isNotAvailable=true;
+			for(int g=0; g<gt.rules.augmentedYearsList.at(year)->groupsList.size(); g++){
+				StudentsGroup* stg=gt.rules.augmentedYearsList.at(year)->groupsList[g];
+				for(int sg=0; sg<stg->subgroupsList.size(); sg++){
+					StudentsSubgroup* sts=stg->subgroupsList[sg];
+					int subgroup=sts->indexInInternalSubgroupsList;
+					if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+						allActivities<<students_timetable_weekly[subgroup][day][hour];
+					if(!subgroupNotAvailableDayHour[subgroup][day][hour])
+						isNotAvailable=false;
+				}
+			}
+			assert(!allActivities.isEmpty());
+			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+				tmpString+=writeActivityStudents(htmlLevel, allActivities[0], day, hour, isNotAvailable, false, true, printActivityTags);
+			} else{
+				if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+				else{
+					tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+				}
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleYearsTimetableDaysVerticalHtml(int htmlLevel, int year, const QString& saveTime, bool printActivityTags, bool detailed){
+	assert(year>=0);
+	assert(year<gt.rules.augmentedYearsList.size());
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashStudentIDsTimetable.value(gt.rules.augmentedYearsList.at(year)->name);
+	if(detailed) tmpString+="_DETAILED";
+	tmpString+="\" border=\"1\"";
+	if(year%2)  tmpString+=" class=\"even_table\"";
+	else tmpString+=" class=\"odd_table\"";
+	tmpString+=">\n";
+			
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.augmentedYearsList.at(year)->name)+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			QList<int> allActivities;
+			allActivities.clear();
+			bool isNotAvailable=true;
+			for(int g=0; g<gt.rules.augmentedYearsList.at(year)->groupsList.size(); g++){
+				StudentsGroup* stg=gt.rules.augmentedYearsList.at(year)->groupsList[g];
+				for(int sg=0; sg<stg->subgroupsList.size(); sg++){
+					StudentsSubgroup* sts=stg->subgroupsList[sg];
+					int subgroup=sts->indexInInternalSubgroupsList;
+					if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+						allActivities<<students_timetable_weekly[subgroup][day][hour];
+					if(!subgroupNotAvailableDayHour[subgroup][day][hour])
+						isNotAvailable=false;
+				}
+			}
+			assert(!allActivities.isEmpty());
+			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+				tmpString+=writeActivityStudents(htmlLevel, allActivities[0], day, hour, isNotAvailable, true, false, printActivityTags);
+			} else{
+				if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+				else{
+					tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+				}
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleYearsTimetableTimeVerticalHtml(int htmlLevel, int maxYears, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed){
+	QString tmpString;
+	tmpString+="    <table id=\"table";
+	if(!detailed)
+		tmpString+="_LESS";
+	tmpString+="_DETAILED";
+	tmpString+="\" border=\"1\">\n";
+
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	int currentCount=0;
+	for(int year=0; year<gt.rules.augmentedYearsList.size() && currentCount<maxYears; year++){
+		if(!excludedNames.contains(year)){
+			currentCount++;
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.augmentedYearsList.at(year)->name)+"</th>";
+		}
+	}
+	
+	tmpString+="</tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			tmpString+="        <tr>\n";
+			if(hour==0)
+				tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+			else tmpString+="          <!-- span -->\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour]) + "</th>\n";
+			currentCount=0;
+			for(int year=0; year<gt.rules.augmentedYearsList.size() && currentCount<maxYears; year++){
+				if(!excludedNames.contains(year)){
+					currentCount++;
+					if(day+1==gt.rules.nDaysPerWeek && hour+1==gt.rules.nHoursPerDay)
+						excludedNames<<year;
+					QList<int> allActivities;
+					allActivities.clear();
+					bool isNotAvailable=true;
+					StudentsYear* sty=gt.rules.augmentedYearsList[year];
+					for(int g=0; g<sty->groupsList.size(); g++){
+						StudentsGroup* stg=sty->groupsList[g];
+						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
+							StudentsSubgroup* sts=stg->subgroupsList[sg];
+							int subgroup=sts->indexInInternalSubgroupsList;
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
+							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
+								isNotAvailable=false;
+						}
+					}
+					assert(!allActivities.isEmpty());
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tmpString+=writeActivityStudents(htmlLevel, allActivities[0], day, hour, isNotAvailable, false, true, printActivityTags);
+					} else{
+						if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+						else{
+							tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+						}
+					}
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+
+//by Volker Dirr
+QString TimetableExport::singleYearsTimetableTimeHorizontalHtml(int htmlLevel, int maxYears, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed){
+	QString tmpString;
+	tmpString+="    <table id=\"table";
+	if(!detailed)
+		tmpString+="_LESS";
+	tmpString+="_DETAILED";
+	tmpString+="\" border=\"1\">\n";
+
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		tmpString+="<th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="</tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	
+	int currentCount=0;
+	for(int year=0; year<gt.rules.augmentedYearsList.size() && currentCount<maxYears; year++){
+		StudentsYear* sty=gt.rules.augmentedYearsList[year];
+		if(!excludedNames.contains(year)){
+			currentCount++;
+			excludedNames<<year;
+			tmpString+="        <tr>\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(sty->name)+"</th>\n";
+			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+					QList<int> allActivities;
+					allActivities.clear();
+					bool isNotAvailable=true;
+					for(int g=0; g<sty->groupsList.size(); g++){
+						StudentsGroup* stg=sty->groupsList[g];
+						for(int sg=0; sg<stg->subgroupsList.size(); sg++){
+							StudentsSubgroup* sts=stg->subgroupsList[sg];
+							int subgroup=sts->indexInInternalSubgroupsList;
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+								allActivities<<students_timetable_weekly[subgroup][day][hour];
+							if(!subgroupNotAvailableDayHour[subgroup][day][hour])
+								isNotAvailable=false;
+						}
+					}
+					assert(!allActivities.isEmpty());
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tmpString+=writeActivityStudents(htmlLevel, allActivities[0], day, hour, isNotAvailable, true, false, printActivityTags);
+					} else{
+						if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+						else{
+							tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+						}
+					}
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleYearsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxYears, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day]);
+	if(detailed) tmpString+="_DETAILED";
+	tmpString+="\" border=\"1\">\n";
+
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	int currentCount=0;
+	for(int year=0; year<gt.rules.augmentedYearsList.size() && currentCount<maxYears; year++){
+		if(!excludedNames.contains(year)){
+			currentCount++;
+
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.augmentedYearsList.at(year)->name)+"</th>";
+		}
+	}
+	
+	tmpString+="</tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		tmpString+="        <tr>\n";
+		if(hour==0)
+			tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+		else tmpString+="          <!-- span -->\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		currentCount=0;
+		for(int year=0; year<gt.rules.augmentedYearsList.size() && currentCount<maxYears; year++){
+			StudentsYear* sty=gt.rules.augmentedYearsList[year];
+			if(!excludedNames.contains(year)){
+				currentCount++;
+				if(hour+1==gt.rules.nHoursPerDay)
+					excludedNames<<year;
+				QList<int> allActivities;
+				allActivities.clear();
+				bool isNotAvailable=true;
+				for(int g=0; g<sty->groupsList.size(); g++){
+					StudentsGroup* stg=sty->groupsList[g];
+					for(int sg=0; sg<stg->subgroupsList.size(); sg++){
+						StudentsSubgroup* sts=stg->subgroupsList[sg];
+						int subgroup=sts->indexInInternalSubgroupsList;
+						if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+							allActivities<<students_timetable_weekly[subgroup][day][hour];
+						if(!subgroupNotAvailableDayHour[subgroup][day][hour])
+							isNotAvailable=false;
+					}
+				}
+				assert(!allActivities.isEmpty());
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tmpString+=writeActivityStudents(htmlLevel, allActivities[0], day, hour, isNotAvailable, false, true, printActivityTags);
+				} else{
+					if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+					else{
+						tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+					}
+				}
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleYearsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxYears, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day]);
+	if(detailed) tmpString+="_DETAILED";
+	tmpString+="\" border=\"1\">\n";
+
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+
+	tmpString+="<th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="</tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	int currentCount=0;
+	for(int year=0; year<gt.rules.augmentedYearsList.size() && currentCount<maxYears; year++){
+		if(!excludedNames.contains(year)){
+			currentCount++;
+			excludedNames<<year;
+			tmpString+="        <tr>\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			StudentsYear* sty=gt.rules.augmentedYearsList[year];
+			tmpString+=protect2(sty->name)+"</th>\n";
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+				QList<int> allActivities;
+				allActivities.clear();
+				bool isNotAvailable=true;
+				for(int g=0; g<sty->groupsList.size(); g++){
+					StudentsGroup* stg=sty->groupsList[g];
+					for(int sg=0; sg<stg->subgroupsList.size(); sg++){
+						StudentsSubgroup* sts=stg->subgroupsList[sg];
+						int subgroup=sts->indexInInternalSubgroupsList;
+						if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour])))
+							allActivities<<students_timetable_weekly[subgroup][day][hour];
+						if(!subgroupNotAvailableDayHour[subgroup][day][hour])
+							isNotAvailable=false;
+					}
+				}
+				assert(!allActivities.isEmpty());
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tmpString+=writeActivityStudents(htmlLevel, allActivities[0], day, hour, isNotAvailable, true, false, printActivityTags);
+				} else{
+					if(!detailed) tmpString+="          <td>"+protect2(STRING_SEVERAL_ACTIVITIES_IN_LESS_DETAILED_TABLES)+"</td>\n";
+					else{
+						tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
+					}
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleAllActivitiesTimetableDaysHorizontalHtml(int htmlLevel, const QString& saveTime, bool printActivityTags){
+	QString tmpString;
+	tmpString+="    <table border=\"1\">\n";	
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+tr("All Activities")+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			if(activitiesAtTime[day][hour].isEmpty()){
+				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
+					tmpString+=writeBreakSlot(htmlLevel, "");
+				} else {
+					tmpString+=writeEmpty(htmlLevel);
+				}
+			} else {
+				tmpString+=writeActivitiesStudents(htmlLevel, activitiesAtTime[day][hour], printActivityTags);
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleAllActivitiesTimetableDaysVerticalHtml(int htmlLevel, const QString& saveTime, bool printActivityTags){
+	QString tmpString;
+	tmpString+="    <table border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+tr("All Activities")+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			if(activitiesAtTime[day][hour].isEmpty()){
+				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
+					tmpString+=writeBreakSlot(htmlLevel, "");
+				} else {
+					tmpString+=writeEmpty(htmlLevel);
+				}
+			} else {
+				tmpString+=writeActivitiesStudents(htmlLevel, activitiesAtTime[day][hour], printActivityTags);
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n";
+	return tmpString;
+}
+
+	
+//by Volker Dirr
+QString TimetableExport::singleAllActivitiesTimetableTimeVerticalHtml(int htmlLevel, const QString& saveTime, bool printActivityTags){
+QString tmpString;
+	tmpString+="    <table border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	if(htmlLevel>=2)
+		tmpString+="          <th class=\"xAxis\">";
+	else
+		tmpString+="          <th>";
+	tmpString+=tr("All Activities");
+	tmpString+="</th></tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td>"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			tmpString+="        <tr>\n";
+			if(hour==0)
+				tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+ "\">"+protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+			else tmpString+="          <!-- span -->\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+			if(activitiesAtTime[day][hour].isEmpty()){
+				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
+					tmpString+=writeBreakSlot(htmlLevel, "");
+				} else {
+					tmpString+=writeEmpty(htmlLevel);
+				}
+			} else {
+				tmpString+=writeActivitiesStudents(htmlLevel, activitiesAtTime[day][hour], printActivityTags);
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="      <tr class=\"foot\"><td colspan=\"2\"></td><td>"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n";
+	return tmpString;
+}
+
+//by Volker Dirr
+QString TimetableExport::singleAllActivitiesTimetableTimeHorizontalHtml(int htmlLevel, const QString& saveTime, bool printActivityTags){
+
+	QString tmpString;
+	tmpString+="    <table border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		tmpString+="<th colspan=\""+QString::number(gt.rules.nHoursPerDay) +"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="</tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+		
+	tmpString+="        <tr>\n";
+	if(htmlLevel>=2)
+		tmpString+="          <th class=\"yAxis\">";
+	else
+		tmpString+="          <th>";
+	tmpString+=tr("All Activities")+"</th>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			if(activitiesAtTime[day][hour].isEmpty()){
+				if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
+					tmpString+=writeBreakSlot(htmlLevel, "");
+				} else {
+					tmpString+=writeEmpty(htmlLevel);
+				}
+			} else {
+				tmpString+=writeActivitiesStudents(htmlLevel, activitiesAtTime[day][hour], printActivityTags);
+			}
+		}
+	}
+	tmpString+="        </tr>\n";
+	//workaround begin.
+	tmpString+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleAllActivitiesTimetableTimeVerticalDailyHtml(int htmlLevel, int day, const QString& saveTime, bool printActivityTags){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])+"\" border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	if(htmlLevel>=2)
+		tmpString+="          <th class=\"xAxis\">";
+	else
+		tmpString+="          <th>";
+	tmpString+=tr("All Activities");
+	tmpString+="</th></tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td>"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		tmpString+="        <tr>\n";
+		if(hour==0)
+			tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+ "\">"+protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+		else tmpString+="          <!-- span -->\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		if(activitiesAtTime[day][hour].isEmpty()){
+			if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
+				tmpString+=writeBreakSlot(htmlLevel, "");
+			} else {
+				tmpString+=writeEmpty(htmlLevel);
+			}
+		} else {
+			tmpString+=writeActivitiesStudents(htmlLevel, activitiesAtTime[day][hour], printActivityTags);
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td colspan=\"2\"></td><td>"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleAllActivitiesTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, const QString& saveTime, bool printActivityTags){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])+"\" border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+	tmpString+="<th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="</tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+		
+	tmpString+="        <tr>\n";
+	if(htmlLevel>=2)
+		tmpString+="          <th class=\"yAxis\">";
+	else
+		tmpString+="          <th>";
+	tmpString+=tr("All Activities")+"</th>\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(activitiesAtTime[day][hour].isEmpty()){
+			if(breakDayHour[day][hour] && PRINT_BREAK_TIME_SLOTS){
+				tmpString+=writeBreakSlot(htmlLevel, "");
+			} else {
+				tmpString+=writeEmpty(htmlLevel);
+			}
+		} else {
+			tmpString+=writeActivitiesStudents(htmlLevel, activitiesAtTime[day][hour], printActivityTags);
+		}
+	}
+	tmpString+="        </tr>\n";
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleTeachersTimetableDaysHorizontalHtml(int htmlLevel, int teacher, const QString& saveTime, bool printActivityTags){
+	assert(teacher>=0);
+	assert(teacher<gt.rules.nInternalTeachers);
+	QString tmpString;
+	QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
+	tmpString+="    <table id=\"table_"+hashTeacherIDsTimetable.value(teacher_name)+"\" border=\"1\"";
+	if(teacher%2==0)  tmpString+=" class=\"odd_table\"";
+	else tmpString+=" class=\"even_table\"";
+	tmpString+=">\n";
+	
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+protect2(teacher_name)+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			QList<int> allActivities;
+			allActivities.clear();
+			allActivities<<teachers_timetable_weekly[teacher][day][hour];
+			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+				tmpString+=writeActivityTeacher(htmlLevel, teacher, day, hour, false, true, printActivityTags);
+			} else{
+				tmpString+=writeActivitiesTeachers(htmlLevel, allActivities, printActivityTags);
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+
+
+//by Volker Dirr
+QString TimetableExport::singleTeachersTimetableDaysVerticalHtml(int htmlLevel, int teacher, const QString& saveTime, bool printActivityTags){
+	assert(teacher>=0);
+	assert(teacher<gt.rules.nInternalTeachers);
+	QString tmpString;
+	QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
+	tmpString+="    <table id=\"table_"+hashTeacherIDsTimetable.value(teacher_name)+"\" border=\"1\"";
+	if(teacher%2==0) tmpString+=" class=\"odd_table\"";
+	else tmpString+=" class=\"even_table\"";
+	tmpString+=">\n";
+	
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n";
+	tmpString+="        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(teacher_name)+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			QList<int> allActivities;
+			allActivities.clear();
+			allActivities<<teachers_timetable_weekly[teacher][day][hour];
+			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+				tmpString+=writeActivityTeacher(htmlLevel, teacher, day, hour, true, false, printActivityTags);
+			} else{
+				tmpString+=writeActivitiesTeachers(htmlLevel, allActivities, printActivityTags);
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+
+	
+//by Volker Dirr
+QString TimetableExport::singleTeachersTimetableTimeVerticalHtml(int htmlLevel, int maxTeachers, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+QString tmpString;
+	tmpString+="    <table border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	int currentCount=0;
+	for(int teacher=0; teacher<gt.rules.nInternalTeachers && currentCount<maxTeachers; teacher++){
+		if(!excludedNames.contains(teacher)){
+			currentCount++;
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalTeachersList[teacher]->name+"</th>";
+		}
+	}
+	tmpString+="</tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			tmpString+="        <tr>\n";
+			if(hour==0)
+				tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+			else tmpString+="          <!-- span -->\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+			currentCount=0;
+			for(int teacher=0; teacher<gt.rules.nInternalTeachers && currentCount<maxTeachers; teacher++){
+				if(!excludedNames.contains(teacher)){
+					currentCount++;
+					if(day+1==gt.rules.nDaysPerWeek && hour+1==gt.rules.nHoursPerDay)
+						excludedNames<<teacher;
+					QList<int> allActivities;
+					allActivities.clear();
+					allActivities<<teachers_timetable_weekly[teacher][day][hour];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tmpString+=writeActivityTeacher(htmlLevel, teacher, day, hour, false, true, printActivityTags);
+					} else {
+						tmpString+=writeActivitiesTeachers(htmlLevel, allActivities, printActivityTags);
+					}
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n    </table>\n";
+	return tmpString;
+}
+
+//by Volker Dirr
+QString TimetableExport::singleTeachersTimetableTimeHorizontalHtml(int htmlLevel, int maxTeachers, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	QString tmpString;
+	tmpString+="    <table border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		tmpString+="<th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="</tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	int currentCount=0;
+	for(int teacher=0; teacher<gt.rules.nInternalTeachers && currentCount<maxTeachers; teacher++){
+		if(!excludedNames.contains(teacher)){
+			currentCount++;
+			excludedNames<<teacher;
+			tmpString+="        <tr>\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalTeachersList[teacher]->name+"</th>\n";
+			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+					QList<int> allActivities;
+					allActivities.clear();
+					allActivities<<teachers_timetable_weekly[teacher][day][hour];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tmpString+=writeActivityTeacher(htmlLevel, teacher, day, hour, true, false, printActivityTags);
+					} else {
+						tmpString+=writeActivitiesTeachers(htmlLevel, allActivities, printActivityTags);
+					}
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n    </table>\n";
+	return tmpString;
+}
+
+//by Volker Dirr
+QString TimetableExport::singleTeachersTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxTeachers, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])+"\" border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	int currentCount=0;
+	for(int teacher=0; teacher<gt.rules.nInternalTeachers && currentCount<maxTeachers; teacher++){
+		if(!excludedNames.contains(teacher)){
+			currentCount++;
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalTeachersList[teacher]->name+"</th>";
+		}
+	}
+	tmpString+="</tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		tmpString+="        <tr>\n";
+		if(hour==0)
+			tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+ "\">"+protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+		else tmpString+="          <!-- span -->\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		currentCount=0;
+		for(int teacher=0; teacher<gt.rules.nInternalTeachers && currentCount<maxTeachers; teacher++){
+			if(!excludedNames.contains(teacher)){
+				currentCount++;
+				if(hour+1==gt.rules.nHoursPerDay)
+					excludedNames<<teacher;
+				QList<int> allActivities;
+				allActivities.clear();
+				allActivities<<teachers_timetable_weekly[teacher][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tmpString+=writeActivityTeacher(htmlLevel, teacher, day, hour, false, true, printActivityTags);
+				} else {
+					tmpString+=writeActivitiesTeachers(htmlLevel, allActivities, printActivityTags);
+				}
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleTeachersTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxTeachers, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])+"\" border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+	tmpString+="<th colspan=\"" +QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="</tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	int currentCount=0;
+	for(int teacher=0; teacher<gt.rules.nInternalTeachers && currentCount<maxTeachers; teacher++){
+		if(!excludedNames.contains(teacher)){
+			currentCount++;
+			excludedNames<<teacher;
+			tmpString+="        <tr>\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalTeachersList[teacher]->name+"</th>\n";
+		
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+				QList<int> allActivities;
+				allActivities.clear();
+				allActivities<<teachers_timetable_weekly[teacher][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tmpString+=writeActivityTeacher(htmlLevel, teacher, day, hour, true, false, printActivityTags);
+				} else {
+					tmpString+=writeActivitiesTeachers(htmlLevel, allActivities, printActivityTags);
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleRoomsTimetableDaysHorizontalHtml(int htmlLevel, int room, const QString& saveTime, bool printActivityTags){
+	assert(room>=0);
+	assert(room<gt.rules.nInternalRooms);
+	QString tmpString;
+	QString room_name = gt.rules.internalRoomsList[room]->name;
+	tmpString+="    <table id=\"table_"+hashRoomIDsTimetable.value(room_name)+"\" border=\"1\"";
+	if(room%2==0)  tmpString+=" class=\"odd_table\"";
+	else tmpString+=" class=\"even_table\"";
+	tmpString+=">\n";
+
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+protect2(room_name)+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			QList<int> allActivities;
+			allActivities.clear();
+			allActivities<<rooms_timetable_weekly[room][day][hour];
+			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+				tmpString+=writeActivityRoom(htmlLevel, room, day, hour, false, true, printActivityTags);
+			} else {
+				tmpString+=writeActivitiesRooms(htmlLevel, allActivities, printActivityTags);
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleRoomsTimetableDaysVerticalHtml(int htmlLevel, int room, const QString& saveTime, bool printActivityTags){
+	assert(room>=0);
+	assert(room<gt.rules.nInternalRooms);
+	QString tmpString;
+	QString room_name = gt.rules.internalRoomsList[room]->name;
+	tmpString+="    <table id=\"table_"+hashRoomIDsTimetable.value(room_name)+"\" border=\"1\"";
+	if(room%2==0)  tmpString+=" class=\"odd_table\"";
+	else tmpString+=" class=\"even_table\"";
+	tmpString+=">\n";
+	
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n";
+	tmpString+="        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(room_name)+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			QList<int> allActivities;
+			allActivities.clear();
+			allActivities<<rooms_timetable_weekly[room][day][hour];
+			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+				tmpString+=writeActivityRoom(htmlLevel, room, day, hour, true, false, printActivityTags);
+			} else {
+				tmpString+=writeActivitiesRooms(htmlLevel, allActivities, printActivityTags);
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+
+	
+//by Volker Dirr
+QString TimetableExport::singleRoomsTimetableTimeVerticalHtml(int htmlLevel, int maxRooms, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	QString tmpString;
+	tmpString+="    <table border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	int currentCount=0;
+	for(int room=0; room<gt.rules.nInternalRooms && currentCount<maxRooms; room++){
+		if(!excludedNames.contains(room)){
+			currentCount++;
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalRoomsList[room]->name+"</th>";	
+		}
+	}
+	tmpString+="</tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			tmpString+="        <tr>\n";
+			if(hour==0)
+				tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+ "\">"+protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+			else tmpString+="          <!-- span -->\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+			currentCount=0;
+			for(int room=0; room<gt.rules.nInternalRooms && currentCount<maxRooms; room++){
+				if(!excludedNames.contains(room)){
+					currentCount++;
+					if(day+1==gt.rules.nDaysPerWeek && hour+1==gt.rules.nHoursPerDay)
+						excludedNames<<room;
+					QList<int> allActivities;
+					allActivities.clear();
+					allActivities<<rooms_timetable_weekly[room][day][hour];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tmpString+=writeActivityRoom(htmlLevel, room, day, hour, false, true, printActivityTags);
+					} else {
+						tmpString+=writeActivitiesRooms(htmlLevel, allActivities, printActivityTags);
+					}
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="      <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n    </table>\n";
+	return tmpString;
+}
+
+//by Volker Dirr
+QString TimetableExport::singleRoomsTimetableTimeHorizontalHtml(int htmlLevel, int maxRooms, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	QString tmpString;
+	tmpString+="    <table border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		tmpString+="<th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="</tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour]) + "</th>\n";
+		}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	int currentCount=0;
+	for(int room=0; room<gt.rules.nInternalRooms && currentCount<maxRooms; room++){
+		if(!excludedNames.contains(room)){
+			currentCount++;
+			excludedNames<<room;
+
+			tmpString+="        <tr>\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalRoomsList[room]->name+"</th>\n";
+			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+					QList<int> allActivities;
+					allActivities.clear();
+					allActivities<<rooms_timetable_weekly[room][day][hour];
+					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+						tmpString+=writeActivityRoom(htmlLevel, room, day, hour, true, false, printActivityTags);
+					} else {
+						tmpString+=writeActivitiesRooms(htmlLevel, allActivities, printActivityTags);
+					}
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="      <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n    </table>\n";
+	return tmpString;
+}
+
+
+//by Volker Dirr
+QString TimetableExport::singleRoomsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxRooms, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])+"\" border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	int currentCount=0;
+	for(int room=0; room<gt.rules.nInternalRooms && currentCount<maxRooms; room++){
+		if(!excludedNames.contains(room)){
+			currentCount++;
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalRoomsList[room]->name+"</th>";
+		}
+	}
+	tmpString+="</tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		tmpString+="        <tr>\n";
+		if(hour==0)
+			tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+ "\">"+protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+		else tmpString+="          <!-- span -->\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		currentCount=0;
+		for(int room=0; room<gt.rules.nInternalRooms && currentCount<maxRooms; room++){
+			if(!excludedNames.contains(room)){
+				currentCount++;
+				if(hour+1==gt.rules.nHoursPerDay)
+					excludedNames<<room;
+				QList<int> allActivities;
+				allActivities.clear();
+				allActivities<<rooms_timetable_weekly[room][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tmpString+=writeActivityRoom(htmlLevel, room, day, hour, false, true, printActivityTags);
+				} else {
+					tmpString+=writeActivitiesRooms(htmlLevel, allActivities, printActivityTags);
+				}
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+
+//by Volker Dirr
+QString TimetableExport::singleRoomsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxRooms, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])+"\" border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+	tmpString+="<th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="</tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	int currentCount=0;
+	for(int room=0; room<gt.rules.nInternalRooms && currentCount<maxRooms; room++){
+		if(!excludedNames.contains(room)){
+			currentCount++;
+			excludedNames<<room;
+			tmpString+="        <tr>\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalRoomsList[room]->name+"</th>\n";
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+				QList<int> allActivities;
+				allActivities.clear();
+				allActivities<<rooms_timetable_weekly[room][day][hour];
+				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
+				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
+					tmpString+=writeActivityRoom(htmlLevel, room, day, hour, true, false, printActivityTags);
+				} else {
+					tmpString+=writeActivitiesRooms(htmlLevel, allActivities, printActivityTags);
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleSubjectsTimetableDaysHorizontalHtml(int htmlLevel, int subject, const QString& saveTime, bool printActivityTags){
+	assert(subject>=0);
+	assert(subject<gt.rules.nInternalSubjects);
+	QString tmpString;
+	///////by Liviu Lalescu
+	for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+		for(int h=0; h<gt.rules.nHoursPerDay; h++)
+			activitiesForCurrentSubject[d][h].clear();
+	foreach(int ai, gt.rules.activitiesForSubject[subject])
+		if(best_solution.times[ai]!=UNALLOCATED_TIME){
+			int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
+			int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
+			Activity* act=&gt.rules.internalActivitiesList[ai];
+			for(int dd=0; dd < act->duration && h+dd < gt.rules.nHoursPerDay; dd++)
+				activitiesForCurrentSubject[d][h+dd].append(ai);
+		}
+	///////end Liviu Lalescu
+	tmpString+="    <table id=\"table_"+hashSubjectIDsTimetable.value(gt.rules.internalSubjectsList[subject]->name);
+	tmpString+="\" border=\"1\"";
+	if(subject%2==0)  tmpString+=" class=\"odd_table\"";
+	else tmpString+=" class=\"even_table\"";
+	tmpString+=">\n";
+
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+protect2(gt.rules.internalSubjectsList[subject]->name)+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			QList<int> allActivities;
+			
+			allActivities=activitiesForCurrentSubject[day][hour];
+			
+			/*
+			allActivities.clear();
+			//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
+			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
+				if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
+					Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
+					if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
+						if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
+							allActivities+students_timetable_weekly[subgroup][day][hour];
+						}
+				}
+			}
+			//Now run through the teachers timetable, because activities without a students set are still missing.
+			for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
+				if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
+					Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
+					if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
+						if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
+							assert(act->studentsNames.isEmpty());
+							allActivities+teachers_timetable_weekly[teacher][day][hour];
+						}
+				}
+			}*/
+			addActivitiesWithSameStartingTime(allActivities, hour);
+			tmpString+=writeActivitiesSubjects(htmlLevel, allActivities, printActivityTags);
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr	
+QString TimetableExport::singleSubjectsTimetableDaysVerticalHtml(int htmlLevel, int subject, const QString& saveTime, bool printActivityTags){
+	assert(subject>=0);
+	assert(subject<gt.rules.nInternalSubjects);
+	QString tmpString;
+	///////by Liviu Lalescu
+	for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+		for(int h=0; h<gt.rules.nHoursPerDay; h++)
+			activitiesForCurrentSubject[d][h].clear();
+	foreach(int ai, gt.rules.activitiesForSubject[subject])
+		if(best_solution.times[ai]!=UNALLOCATED_TIME){
+			int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
+			int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
+			Activity* act=&gt.rules.internalActivitiesList[ai];
+			for(int dd=0; dd < act->duration && h+dd < gt.rules.nHoursPerDay; dd++)
+				activitiesForCurrentSubject[d][h+dd].append(ai);
+		}
+	///////end Liviu Lalescu
+	tmpString+="    <table id=\"table_"+hashSubjectIDsTimetable.value(gt.rules.internalSubjectsList[subject]->name);
+	tmpString+="\" border=\"1\"";
+	if(subject%2==0) tmpString+=" class=\"odd_table\"";
+	else tmpString+=" class=\"even_table\"";
+	tmpString+=">\n";
+
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.internalSubjectsList[subject]->name)+"</th></tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			QList<int> allActivities;
+
+			allActivities=activitiesForCurrentSubject[day][hour];
+
+			/*
+			allActivities.clear();
+			//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
+			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
+				if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
+					Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
+					if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
+						if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
+							allActivities+students_timetable_weekly[subgroup][day][hour];
+						}
+				}
+			}
+			//Now run through the teachers timetable, because activities without a students set are still missing.
+			for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
+				if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
+					Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
+					if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
+						if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
+							assert(act->studentsNames.isEmpty());
+							allActivities+teachers_timetable_weekly[teacher][day][hour];
+						}
+				}
+			}
+			*/
+			addActivitiesWithSameStartingTime(allActivities, hour);
+			tmpString+=writeActivitiesSubjects(htmlLevel, allActivities, printActivityTags);
+		}
+	tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+
+	
+//by Volker Dirr	
+QString TimetableExport::singleSubjectsTimetableTimeVerticalHtml(int htmlLevel, int maxSubjects, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	QString tmpString;
+	tmpString+="    <table id=\"table\" border=\"1\">\n";
+
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	int currentCount=0;
+	for(int subject=0; subject<gt.rules.nInternalSubjects && currentCount<maxSubjects; subject++){
+		if(!excludedNames.contains(subject)){	
+			currentCount++;
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalSubjectsList[subject]->name+"</th>";
+		}
+	}
+		
+	tmpString+="</tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			tmpString+="        <tr>\n";
+			if(hour==0)
+				tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+ "\">"+protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+			else tmpString+="          <!-- span -->\n";
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"yAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+
+			currentCount=0;
+			for(int subject=0; subject<gt.rules.nInternalSubjects && currentCount<maxSubjects; subject++){
+				currentCount++;
+				if(!excludedNames.contains(subject)){	
+					if(day+1==gt.rules.nDaysPerWeek && hour+1==gt.rules.nHoursPerDay)
+						excludedNames<<subject;	
+					QList<int> allActivities;
+					allActivities.clear();
+					
+					foreach(int ai, gt.rules.activitiesForSubject[subject])
+						if(activitiesAtTime[day][hour].contains(ai)){
+							assert(!allActivities.contains(ai));
+							allActivities.append(ai);
+						}
+					
+					/* //Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
+					for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
+						if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
+							Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
+							if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
+								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
+									allActivities+students_timetable_weekly[subgroup][day][hour];
+								}
+						}
+					}
+					//Now run through the teachers timetable, because activities without a students set are still missing.
+					for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
+						if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
+							Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
+							if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
+								if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
+									assert(act->studentsNames.isEmpty());
+									allActivities+teachers_timetable_weekly[teacher][day][hour];
+								}
+						}
+					}*/
+					addActivitiesWithSameStartingTime(allActivities, hour);
+					tmpString+=writeActivitiesSubjects(htmlLevel, allActivities, printActivityTags);
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n    </table>\n";
+	return tmpString;
+}
+
+//by Volker Dirr	
+QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel, int maxSubjects, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	QString tmpString;
+	tmpString+="    <table id=\"table\" border=\"1\">\n";
+
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		tmpString+="<th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="</tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	int currentCount=0;
+	for(int subject=0; subject<gt.rules.nInternalSubjects && currentCount<maxSubjects; subject++){
+		if(!excludedNames.contains(subject)){	
+			currentCount++;
+			excludedNames<<subject;	
+			tmpString+="        <tr>\n";
+			if(htmlLevel>=2)
+				tmpString+="        <th class=\"yAxis\">"+protect2(gt.rules.internalSubjectsList[subject]->name)+"</th>\n";
+			else
+				tmpString+="        <th>"+protect2(gt.rules.internalSubjectsList[subject]->name)+"</th>\n";
+
+			///////by Liviu Lalescu
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+				for(int h=0; h<gt.rules.nHoursPerDay; h++)
+					activitiesForCurrentSubject[d][h].clear();
+			foreach(int ai, gt.rules.activitiesForSubject[subject])
+				if(best_solution.times[ai]!=UNALLOCATED_TIME){
+					int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
+					int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
+					Activity* act=&gt.rules.internalActivitiesList[ai];
+					for(int dd=0; dd < act->duration && h+dd < gt.rules.nHoursPerDay; dd++)
+						activitiesForCurrentSubject[d][h+dd].append(ai);
+				}
+			///////end Liviu Lalescu
+
+			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+					QList<int> allActivities;
+
+					allActivities=activitiesForCurrentSubject[day][hour];
+
+
+					/*allActivities.clear();
+					//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
+					for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
+						if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
+							Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
+							if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
+								if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
+									allActivities+students_timetable_weekly[subgroup][day][hour];
+								}
+						}
+					}
+					//Now run through the teachers timetable, because activities without a students set are still missing.
+					for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
+						if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
+							Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
+							if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
+								if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
+									assert(act->studentsNames.isEmpty());
+									allActivities+teachers_timetable_weekly[teacher][day][hour];
+								}
+						}
+					}*/
+					addActivitiesWithSameStartingTime(allActivities, hour);
+					tmpString+=writeActivitiesSubjects(htmlLevel, allActivities, printActivityTags);
+				}
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n    </table>\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleSubjectsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxSubjects, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])+"\" border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
+	int currentCount=0;
+	for(int subject=0; subject<gt.rules.nInternalSubjects && currentCount<maxSubjects; subject++){
+		if(!excludedNames.contains(subject)){	
+			currentCount++;
+
+			if(htmlLevel>=2)
+				tmpString+="          <th class=\"xAxis\">";
+			else
+				tmpString+="          <th>";
+			tmpString+=gt.rules.internalSubjectsList[subject]->name+"</th>";
+		}
+	}
+	tmpString+="</tr>\n      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		tmpString+="        <tr>\n";
+		if(hour==0)
+			tmpString+="        <th rowspan=\""+QString::number(gt.rules.nHoursPerDay)+ "\">"+protect2vert(gt.rules.daysOfTheWeek[day])+"</th>\n";
+		else tmpString+="          <!-- span -->\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+
+		currentCount=0;
+		for(int subject=0; subject<gt.rules.nInternalSubjects && currentCount<maxSubjects; subject++){
+			currentCount++;
+			if(!excludedNames.contains(subject)){	
+				if(hour+1==gt.rules.nHoursPerDay)
+					excludedNames<<subject;	
+				QList<int> allActivities;
+				allActivities.clear();
+				
+				foreach(int ai, gt.rules.activitiesForSubject[subject])
+					if(activitiesAtTime[day][hour].contains(ai)){
+						assert(!allActivities.contains(ai));
+						allActivities.append(ai);
+					}
+				
+				/*//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
+				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
+					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
+						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
+								allActivities+students_timetable_weekly[subgroup][day][hour];
+							}
+					}
+				}
+				//Now run through the teachers timetable, because activities without a students set are still missing.
+				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
+					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
+						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
+							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
+								assert(act->studentsNames.isEmpty());
+								allActivities+teachers_timetable_weekly[teacher][day][hour];
+							}
+					}
+				}*/
+				addActivitiesWithSameStartingTime(allActivities, hour);
+				tmpString+=writeActivitiesSubjects(htmlLevel, allActivities, printActivityTags);
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td colspan=\"2\"></td><td colspan=\""+QString::number(currentCount)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleSubjectsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxSubjects, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags){
+	assert(day>=0);
+	assert(day<gt.rules.nDaysPerWeek);
+	QString tmpString;
+	tmpString+="    <table id=\"table_"+hashDayIDsTimetable.value(gt.rules.daysOfTheWeek[day])+"\" border=\"1\">\n";
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td>";
+
+	tmpString+="<th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+protect2(gt.rules.daysOfTheWeek[day])+"</th>";
+	tmpString+="</tr>\n";
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	int currentCount=0;
+	for(int subject=0; subject<gt.rules.nInternalSubjects && currentCount<maxSubjects; subject++){
+		currentCount++;
+		if(!excludedNames.contains(subject)){
+			excludedNames<<subject;
+			tmpString+="        <tr>\n";
+			if(htmlLevel>=2)
+				tmpString+="        <th class=\"yAxis\">"+protect2(gt.rules.internalSubjectsList[subject]->name)+"</th>\n";
+			else
+				tmpString+="        <th>"+protect2(gt.rules.internalSubjectsList[subject]->name)+"</th>\n";
+
+			///////by Liviu Lalescu
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+				for(int h=0; h<gt.rules.nHoursPerDay; h++)
+					activitiesForCurrentSubject[d][h].clear();
+			foreach(int ai, gt.rules.activitiesForSubject[subject])
+				if(best_solution.times[ai]!=UNALLOCATED_TIME){
+					int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
+					int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
+					Activity* act=&gt.rules.internalActivitiesList[ai];
+					for(int dd=0; dd < act->duration && h+dd < gt.rules.nHoursPerDay; dd++)
+						activitiesForCurrentSubject[d][h+dd].append(ai);
+				}
+			///////end Liviu Lalescu
+
+			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+				QList<int> allActivities;
+
+				allActivities=activitiesForCurrentSubject[day][hour];
+
+
+				/*allActivities.clear();
+				//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
+				for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
+					if(students_timetable_weekly[subgroup][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[students_timetable_weekly[subgroup][day][hour]];
+						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
+							if(!(allActivities.contains(students_timetable_weekly[subgroup][day][hour]))){
+								allActivities+students_timetable_weekly[subgroup][day][hour];
+							}
+					}
+				}
+				//Now run through the teachers timetable, because activities without a students set are still missing.
+				for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
+					if(teachers_timetable_weekly[teacher][day][hour]!=UNALLOCATED_ACTIVITY){
+						Activity* act=&gt.rules.internalActivitiesList[teachers_timetable_weekly[teacher][day][hour]];
+						if(act->subjectName==gt.rules.internalSubjectsList[subject]->name)
+							if(!(allActivities.contains(teachers_timetable_weekly[teacher][day][hour]))){
+								assert(act->studentsNames.isEmpty());
+								allActivities+teachers_timetable_weekly[teacher][day][hour];
+							}
+					}
+				}*/
+				addActivitiesWithSameStartingTime(allActivities, hour);
+				tmpString+=writeActivitiesSubjects(htmlLevel, allActivities, printActivityTags);
+			}
+			tmpString+="        </tr>\n";
+		}
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleTeachersFreePeriodsTimetableDaysHorizontalHtml(int htmlLevel, const QString& saveTime, bool detailed){
+	QString tmpString;
+	if(detailed)
+		tmpString+="    <table id=\"table_DETAILED\" border=\"1\">\n";
+	else
+		tmpString+="    <table id=\"table_LESS_DETAILED\" border=\"1\">\n";
+	
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	if(detailed)
+		tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Teachers' Free Periods")+" ("+tr("Detailed")+")</th></tr>\n";
+	else	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Teachers' Free Periods")+" ("+tr("Less detailed")+")</th></tr>\n";
+
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nDaysPerWeek+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+			bool empty_slot;
+			empty_slot=true;
+			for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
+				if(teachers_free_periods_timetable_weekly[tfp][day][hour].size()>0){
+					empty_slot=false;
+				}
+				if(!detailed&&tfp>=TEACHER_MUST_COME_EARLIER) break;
+			}
+			if(!empty_slot) tmpString+="          <td>";
+			for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
+				if(teachers_free_periods_timetable_weekly[tfp][day][hour].size()>0){
+					if(htmlLevel>=2)
+						tmpString+="<div class=\"DESCRIPTION\">";
+					switch(tfp){
+						case TEACHER_HAS_SINGLE_GAP		: tmpString+=TimetableExport::tr("Single gap"); break;
+						case TEACHER_HAS_BORDER_GAP		: tmpString+=TimetableExport::tr("Border gap"); break;
+						case TEACHER_HAS_BIG_GAP		: tmpString+=TimetableExport::tr("Big gap"); break;
+						case TEACHER_MUST_COME_EARLIER		: tmpString+=TimetableExport::tr("Must come earlier"); break;
+						case TEACHER_MUST_STAY_LONGER		: tmpString+=TimetableExport::tr("Must stay longer"); break;
+						case TEACHER_MUST_COME_MUCH_EARLIER	: tmpString+=TimetableExport::tr("Must come much earlier"); break;
+						case TEACHER_MUST_STAY_MUCH_LONGER	: tmpString+=TimetableExport::tr("Must stay much longer"); break;
+						case TEACHER_HAS_A_FREE_DAY		: tmpString+=TimetableExport::tr("Free day"); break;
+						case TEACHER_IS_NOT_AVAILABLE		: tmpString+=TimetableExport::tr("Not available"); break;
+						default: assert(0==1); break;
+					}
+					if(htmlLevel>=2)
+						tmpString+=":</div>";
+					else tmpString+=":<br />";
+					if(htmlLevel>=3)
+						switch(tfp){
+							case TEACHER_HAS_SINGLE_GAP		: tmpString+="<div class=\"TEACHER_HAS_SINGLE_GAP\">"; break;
+							case TEACHER_HAS_BORDER_GAP		: tmpString+="<div class=\"TEACHER_HAS_BORDER_GAP\">"; break;
+							case TEACHER_HAS_BIG_GAP		: tmpString+="<div class=\"TEACHER_HAS_BIG_GAP\">"; break;
+							case TEACHER_MUST_COME_EARLIER		: tmpString+="<div class=\"TEACHER_MUST_COME_EARLIER\">"; break;
+							case TEACHER_MUST_STAY_LONGER		: tmpString+="<div class=\"TEACHER_MUST_STAY_LONGER\">"; break;
+							case TEACHER_MUST_COME_MUCH_EARLIER	: tmpString+="<div class=\"TEACHER_MUST_COME_MUCH_EARLIER\">"; break;
+							case TEACHER_MUST_STAY_MUCH_LONGER	: tmpString+="<div class=\"TEACHER_MUST_STAY_MUCH_LONGER\">"; break;
+							case TEACHER_HAS_A_FREE_DAY		: tmpString+="<div class=\"TEACHER_HAS_A_FREE_DAY\">"; break;
+							case TEACHER_IS_NOT_AVAILABLE		: tmpString+="<div class=\"TEACHER_IS_NOT_AVAILABLE\">"; break;
+							default: assert(0==1); break;
+						}
+					for(int t=0; t<teachers_free_periods_timetable_weekly[tfp][day][hour].size(); t++){
+						QString teacher_name = gt.rules.internalTeachersList[teachers_free_periods_timetable_weekly[tfp][day][hour].at(t)]->name;
+							switch(htmlLevel){
+								case 4 : tmpString+="<span class=\"t_"+hashTeacherIDsTimetable.value(teacher_name)+"\">"+protect2(teacher_name)+"</span>"; break;
+								case 5 : ;
+								case 6 : tmpString+="<span class=\"t_"+hashTeacherIDsTimetable.value(teacher_name)+"\" onmouseover=\"highlight('t_"+hashTeacherIDsTimetable.value(teacher_name)+"')\">"+protect2(teacher_name)+"</span>"; break;
+								default: tmpString+=protect2(teacher_name); break;
+							}
+						tmpString+="<br />";
+					}
+					if(htmlLevel>=3)
+						tmpString+="</div>";
+				}
+				if(!detailed&&tfp>=TEACHER_MUST_COME_EARLIER) break;
+			}
+			if(!empty_slot){
+				tmpString+="</td>\n";
+			} else {
+				tmpString+=writeEmpty(htmlLevel);
+			}
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
+}
+	
+//by Volker Dirr
+QString TimetableExport::singleTeachersFreePeriodsTimetableDaysVerticalHtml(int htmlLevel, const QString& saveTime, bool detailed){
+	QString tmpString;
+	if(detailed)
+		tmpString+="    <table id=\"table_DETAILED\" border=\"1\">\n";
+	else
+		tmpString+="    <table id=\"table_LESS_DETAILED\" border=\"1\">\n";
+	
+	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
+
+	if(detailed)
+		tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Teachers' Free Periods")+" ("+tr("Detailed")+")</th></tr>\n";
+	else	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Teachers' Free Periods")+" ("+tr("Less detailed")+")</th></tr>\n";
+
+	tmpString+="        <tr>\n          <!-- span -->\n";
+	for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"xAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
+	}
+	tmpString+="        </tr>\n";
+	tmpString+="      </thead>\n";
+	/*workaround
+	tmpString+="      <tfoot><tr><td></td><td colspan=\""+gt.rules.nHoursPerDay+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr></tfoot>\n";
+	*/
+	tmpString+="      <tbody>\n";
+	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
+		tmpString+="        <tr>\n";
+		if(htmlLevel>=2)
+			tmpString+="          <th class=\"yAxis\">";
+		else
+			tmpString+="          <th>";
+		tmpString+=protect2(gt.rules.daysOfTheWeek[day])+"</th>\n";
+		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
+			bool empty_slot;
+			empty_slot=true;
+			for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
+				if(teachers_free_periods_timetable_weekly[tfp][day][hour].size()>0){
+					empty_slot=false;
+				}
+				if(!detailed&&tfp>=TEACHER_MUST_COME_EARLIER) break;
+			}
+			if(!empty_slot) tmpString+="          <td>";
+			for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
+				if(teachers_free_periods_timetable_weekly[tfp][day][hour].size()>0){
+					if(htmlLevel>=2)
+						tmpString+="<div class=\"DESCRIPTION\">";
+					switch(tfp){
+						case TEACHER_HAS_SINGLE_GAP		: tmpString+=TimetableExport::tr("Single gap"); break;
+						case TEACHER_HAS_BORDER_GAP		: tmpString+=TimetableExport::tr("Border gap"); break;
+						case TEACHER_HAS_BIG_GAP		: tmpString+=TimetableExport::tr("Big gap"); break;
+						case TEACHER_MUST_COME_EARLIER		: tmpString+=TimetableExport::tr("Must come earlier"); break;
+						case TEACHER_MUST_STAY_LONGER		: tmpString+=TimetableExport::tr("Must stay longer"); break;
+						case TEACHER_MUST_COME_MUCH_EARLIER	: tmpString+=TimetableExport::tr("Must come much earlier"); break;
+						case TEACHER_MUST_STAY_MUCH_LONGER	: tmpString+=TimetableExport::tr("Must stay much longer"); break;
+						case TEACHER_HAS_A_FREE_DAY		: tmpString+=TimetableExport::tr("Free day"); break;
+						case TEACHER_IS_NOT_AVAILABLE		: tmpString+=TimetableExport::tr("Not available"); break;
+						default: assert(0==1); break;
+					}
+					if(htmlLevel>=2)
+						tmpString+=":</div>";
+					else tmpString+=":<br />";
+					if(htmlLevel>=3)
+						switch(tfp){
+							case TEACHER_HAS_SINGLE_GAP		: tmpString+="<div class=\"TEACHER_HAS_SINGLE_GAP\">"; break;
+							case TEACHER_HAS_BORDER_GAP		: tmpString+="<div class=\"TEACHER_HAS_BORDER_GAP\">"; break;
+							case TEACHER_HAS_BIG_GAP		: tmpString+="<div class=\"TEACHER_HAS_BIG_GAP\">"; break;
+							case TEACHER_MUST_COME_EARLIER		: tmpString+="<div class=\"TEACHER_MUST_COME_EARLIER\">"; break;
+							case TEACHER_MUST_STAY_LONGER		: tmpString+="<div class=\"TEACHER_MUST_STAY_LONGER\">"; break;
+							case TEACHER_MUST_COME_MUCH_EARLIER	: tmpString+="<div class=\"TEACHER_MUST_COME_MUCH_EARLIER\">"; break;
+							case TEACHER_MUST_STAY_MUCH_LONGER	: tmpString+="<div class=\"TEACHER_MUST_STAY_MUCH_LONGER\">"; break;
+							case TEACHER_HAS_A_FREE_DAY		: tmpString+="<div class=\"TEACHER_HAS_A_FREE_DAY\">"; break;
+							case TEACHER_IS_NOT_AVAILABLE		: tmpString+="<div class=\"TEACHER_IS_NOT_AVAILABLE\">"; break;
+							default: assert(0==1); break;
+						}
+					for(int t=0; t<teachers_free_periods_timetable_weekly[tfp][day][hour].size(); t++){
+						QString teacher_name = gt.rules.internalTeachersList[teachers_free_periods_timetable_weekly[tfp][day][hour].at(t)]->name;
+							switch(htmlLevel){
+								case 4 : tmpString+="<span class=\"t_"+hashTeacherIDsTimetable.value(teacher_name)+"\">"+protect2(teacher_name)+"</span>"; break;
+								case 5 : ;
+								case 6 : tmpString+="<span class=\"t_"+hashTeacherIDsTimetable.value(teacher_name)+"\" onmouseover=\"highlight('t_"+hashTeacherIDsTimetable.value(teacher_name)+"')\">"+protect2(teacher_name)+"</span>"; break;
+								default: tmpString+=protect2(teacher_name); break;
+							}
+						tmpString+="<br />";
+					}
+					if(htmlLevel>=3)
+						tmpString+="</div>";
+				}
+				if(!detailed&&tfp>=TEACHER_MUST_COME_EARLIER) break;
+			}
+			if(!empty_slot){
+				tmpString+="</td>\n";
+			} else
+				tmpString+=writeEmpty(htmlLevel);
+		}
+		tmpString+="        </tr>\n";
+	}
+	//workaround begin.
+	tmpString+="        <tr class=\"foot\"><td></td><td colspan=\""+QString::number(gt.rules.nHoursPerDay)+"\">"+TimetableExport::tr("Timetable generated with FET %1 on %2", "%1 is FET version, %2 is the date and time of generation").arg(FET_VERSION).arg(saveTime)+"</td></tr>\n";
+	//workaround end.
+	tmpString+="      </tbody>\n";
+	tmpString+="    </table>\n\n";
+	return tmpString;
 }

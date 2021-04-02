@@ -30,7 +30,6 @@ File statisticsexport.h
 #include "timetable.h"		//needed?
 #include "timetable_defs.h"	//needed?
 
-
 class StatisticsExport: public QObject{
 	Q_OBJECT
 

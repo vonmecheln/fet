@@ -294,8 +294,9 @@ public slots:
 	void on_timetableGenerateAction_activated();
 	void on_timetableViewStudentsAction_activated();
 	void on_timetableViewTeachersAction_activated();
-	void on_timetableShowConflictsAction_activated();
 	void on_timetableViewRoomsAction_activated();
+	void on_timetableShowConflictsAction_activated();
+	void on_timetablePrintAction_activated();
 	void on_timetableGenerateMultipleAction_activated();
 
 	void on_timetableLockAllActivitiesAction_activated();

@@ -186,9 +186,9 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	foreach(StudentsSubgroup* subgroup, asubgroups){
 		assert(subgroup!=NULL);
 		delete subgroup;
-	}	
+	}
 	augmentedYearsList.clear();
-	//////////////////	
+	//////////////////
 	
 	//copy list of students sets into augmented list
 	QHash<QString, StudentsSet*> augmentedHash;
@@ -269,21 +269,32 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	}
 	//////////
 	
-	QSet<QString> allSubgroups;
+	QSet<StudentsGroup*> allGroupsSet;
+	QSet<StudentsSubgroup*> allSubgroupsSet;
+	QList<StudentsGroup*> allGroupsList;
+	QList<StudentsSubgroup*> allSubgroupsList;
 	
-	int tmpNSubgroups;
 	for(int i=0; i<this->augmentedYearsList.size(); i++){
 		StudentsYear* sty=this->augmentedYearsList.at(i);
+		sty->indexInAugmentedYearsList=i;
 
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList.at(j);
+			if(!allGroupsSet.contains(stg)){
+				allGroupsSet.insert(stg);
+				allGroupsList.append(stg);
+				stg->indexInInternalGroupsList=allGroupsSet.count()-1;
+			}
 			
 			for(int k=0; k<stg->subgroupsList.size(); k++)
-				if(!allSubgroups.contains(stg->subgroupsList.at(k)->name))
-					allSubgroups.insert(stg->subgroupsList.at(k)->name);
+				if(!allSubgroupsSet.contains(stg->subgroupsList.at(k))){
+					allSubgroupsSet.insert(stg->subgroupsList.at(k));
+					allSubgroupsList.append(stg->subgroupsList.at(k));
+					stg->subgroupsList.at(k)->indexInInternalSubgroupsList=allSubgroupsSet.count()-1;
+				}
 		}
 	}
-	tmpNSubgroups=allSubgroups.count();
+	int tmpNSubgroups=allSubgroupsList.count();
 	if(tmpNSubgroups>MAX_TOTAL_SUBGROUPS){
 		QMessageBox::warning(parent, tr("FET information"),
 		 tr("You have too many total subgroups. You need to increase the variable MAX_TOTAL_SUBGROUPS (which is currently %1).")
@@ -341,7 +352,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	//subjects
 	Subject* sbj;
 	this->nInternalSubjects=this->subjectsList.size();
-	assert(this->nInternalSubjects<=MAX_SUBJECTS);	
+	assert(this->nInternalSubjects<=MAX_SUBJECTS);
 	this->internalSubjectsList.resize(this->nInternalSubjects);
 	for(i=0; i<this->subjectsList.size(); i++){
 		sbj=this->subjectsList[i];
@@ -361,7 +372,19 @@ bool Rules::computeInternalStructure(QWidget* parent)
 
 	//students
 	this->nInternalSubgroups=0;
-	for(int i=0; i<this->augmentedYearsList.size(); i++){
+	for(int i=0; i<allSubgroupsList.count(); i++){
+		assert(allSubgroupsList.at(i)->indexInInternalSubgroupsList==i);
+		this->internalSubgroupsList[this->nInternalSubgroups]=allSubgroupsList.at(i);
+		this->nInternalSubgroups++;
+	}
+
+	this->internalGroupsList.clear();
+	for(int i=0; i<allGroupsList.count(); i++){
+		assert(allGroupsList.at(i)->indexInInternalGroupsList==i);
+		this->internalGroupsList.append(allGroupsList.at(i));
+	}
+	
+/*	for(int i=0; i<this->augmentedYearsList.size(); i++){
 		StudentsYear* sty=this->augmentedYearsList[i];
 		
 		assert(sty->groupsList.count()>0);
@@ -389,7 +412,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 				}
 			}
 		}
-	}
+	}*/
 	assert(this->nInternalSubgroups==tmpNSubgroups);
 
 	//buildings
@@ -3686,6 +3709,7 @@ void Rules::sortSubgroupsAlphabetically(const QString& yearName, const QString& 
 }
 
 bool Rules::addSimpleActivity(
+	QWidget* parent,
 	int _id,
 	int _activityGroupId,
 	const QStringList& _teachersNames,
@@ -3694,25 +3718,30 @@ bool Rules::addSimpleActivity(
 	const QStringList& _studentsNames,
 	int _duration, /*duration, in hours*/
 	int _totalDuration,
-	//int _parity, /*parity: PARITY_WEEKLY or PARITY_FORTNIGHTLY*/
 	bool _active,
-	//int _preferredDay,
-	//int _preferredHour,
 	bool _computeNTotalStudents,
 	int _nTotalStudents)
 {
-	//assert(_parity==PARITY_WEEKLY || _parity==PARITY_FORTNIGHTLY); //weekly or fortnightly
+	//check for duplicates - idea and code by Volker Dirr
+	int t=QStringList(_teachersNames).removeDuplicates();
+	if(t>0)
+		QMessageBox::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate teachers - please correct that")
+		 .arg(_id).arg(t));
+
+	t=QStringList(_studentsNames).removeDuplicates();
+	if(t>0)
+		QMessageBox::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate students sets - please correct that")
+		 .arg(_id).arg(t));
+
+	t=QStringList(_activityTagsNames).removeDuplicates();
+	if(t>0)
+		QMessageBox::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate activity tags - please correct that")
+		 .arg(_id).arg(t));
 
 	Activity *act=new Activity(*this, _id, _activityGroupId, _teachersNames, _subjectName, _activityTagsNames,
-		_studentsNames, _duration, _totalDuration, /*_parity,*/ _active, _computeNTotalStudents, _nTotalStudents);
+		_studentsNames, _duration, _totalDuration, _active, _computeNTotalStudents, _nTotalStudents);
 
 	this->activitiesList << act; //append
-
-	/*if(_preferredDay>=0 || _preferredHour>=0){
-		TimeConstraint *ctr=new ConstraintActivityPreferredTime(0.0, _id, _preferredDay, _preferredHour);
-		bool tmp=this->addTimeConstraint(ctr);
-		assert(tmp);
-	}*/
 
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
@@ -3721,6 +3750,7 @@ bool Rules::addSimpleActivity(
 }
 
 bool Rules::addSimpleActivityRulesFast(
+	QWidget* parent,
 	int _id,
 	int _activityGroupId,
 	const QStringList& _teachersNames,
@@ -3729,26 +3759,31 @@ bool Rules::addSimpleActivityRulesFast(
 	const QStringList& _studentsNames,
 	int _duration, /*duration, in hours*/
 	int _totalDuration,
-	//int _parity, /*parity: PARITY_WEEKLY or PARITY_FORTNIGHTLY*/
 	bool _active,
-	//int _preferredDay,
-	//int _preferredHour,
 	bool _computeNTotalStudents,
 	int _nTotalStudents,
 	int _computedNumberOfStudents)
 {
-	//assert(_parity==PARITY_WEEKLY || _parity==PARITY_FORTNIGHTLY); //weekly or fortnightly
+	//check for duplicates - idea and code by Volker Dirr
+	int t=QStringList(_teachersNames).removeDuplicates();
+	if(t>0)
+		QMessageBox::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate teachers - please correct that")
+		 .arg(_id).arg(t));
+
+	t=QStringList(_studentsNames).removeDuplicates();
+	if(t>0)
+		QMessageBox::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate students sets - please correct that")
+		 .arg(_id).arg(t));
+
+	t=QStringList(_activityTagsNames).removeDuplicates();
+	if(t>0)
+		QMessageBox::warning(parent, tr("FET warning"), tr("Activity with Id=%1 contains %2 duplicate activity tags - please correct that")
+		 .arg(_id).arg(t));
 
 	Activity *act=new Activity(*this, _id, _activityGroupId, _teachersNames, _subjectName, _activityTagsNames,
-		_studentsNames, _duration, _totalDuration, /*_parity,*/ _active, _computeNTotalStudents, _nTotalStudents, _computedNumberOfStudents);
+		_studentsNames, _duration, _totalDuration, _active, _computeNTotalStudents, _nTotalStudents, _computedNumberOfStudents);
 
 	this->activitiesList << act; //append
-
-	/*if(_preferredDay>=0 || _preferredHour>=0){
-		TimeConstraint *ctr=new ConstraintActivityPreferredTime(0.0, _id, _preferredDay, _preferredHour);
-		bool tmp=this->addTimeConstraint(ctr);
-		assert(tmp);
-	}*/
 
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
@@ -3757,6 +3792,7 @@ bool Rules::addSimpleActivityRulesFast(
 }
 
 bool Rules::addSplitActivity(
+	QWidget* parent,
 	int _firstActivityId,
 	int _activityGroupId,
 	const QStringList& _teachersNames,
@@ -3766,24 +3802,32 @@ bool Rules::addSplitActivity(
 	int _nSplits,
 	int _totalDuration,
 	int _durations[],
-	//int _parities[],
 	bool _active[],
 	int _minDayDistance,
 	double _weightPercentage,
 	bool _consecutiveIfSameDay,
-	//int _preferredDays[],
-	//int _preferredHours[],
 	bool _computeNTotalStudents,
 	int _nTotalStudents)
 {
+	//check for duplicates - idea and code by Volker Dirr
+	int t=QStringList(_teachersNames).removeDuplicates();
+	if(t>0)
+		QMessageBox::warning(parent, tr("FET warning"), tr("Activities with group_Id=%1 contain %2 duplicate teachers - please correct that")
+		 .arg(_activityGroupId).arg(t));
+
+	t=QStringList(_studentsNames).removeDuplicates();
+	if(t>0)
+		QMessageBox::warning(parent, tr("FET warning"), tr("Activities with group_Id=%1 contain %2 duplicate students sets - please correct that")
+		 .arg(_activityGroupId).arg(t));
+
+	t=QStringList(_activityTagsNames).removeDuplicates();
+	if(t>0)
+		QMessageBox::warning(parent, tr("FET warning"), tr("Activities with group_Id=%1 contain %2 duplicate activity tags - please correct that")
+		 .arg(_activityGroupId).arg(t));
+
 	assert(_firstActivityId==_activityGroupId);
 
 	QList<int> acts;
-	//int acts[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
-	//assert(_nSplits<=MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES);
-
-	//for(int i=0; i<_nSplits; i++)
-	//	assert(_parities[i]==PARITY_WEEKLY || _parities[i]==PARITY_FORTNIGHTLY); //weekly or fortnightly
 
 	acts.clear();
 	for(int i=0; i<_nSplits; i++){
@@ -3791,26 +3835,18 @@ bool Rules::addSplitActivity(
 		if(i==0)
 			act=new Activity(*this, _firstActivityId+i, _activityGroupId,
 				_teachersNames, _subjectName, _activityTagsNames, _studentsNames,
-				_durations[i], _totalDuration, /*_parities[i],*/ _active[i], _computeNTotalStudents, _nTotalStudents);
+				_durations[i], _totalDuration, _active[i], _computeNTotalStudents, _nTotalStudents);
 		else
 			act=new Activity(*this, _firstActivityId+i, _activityGroupId,
 				_teachersNames, _subjectName, _activityTagsNames, _studentsNames,
-				_durations[i], _totalDuration, /*_parities[i],*/ _active[i], _computeNTotalStudents, _nTotalStudents);
+				_durations[i], _totalDuration, _active[i], _computeNTotalStudents, _nTotalStudents);
 
 		this->activitiesList << act; //append
 
 		acts.append(_firstActivityId+i);
-		//acts[i]=_firstActivityId+i;
-
-		/*if(_preferredDays[i]>=0 || _preferredHours[i]>=0){
-			TimeConstraint *constr=new ConstraintActivityPreferredTime(0.0, act->id, _preferredDays[i], _preferredHours[i]); //non-compulsory constraint
-			bool tmp = this->addTimeConstraint(constr);
-			assert(tmp);
-		}*/
 	}
 
 	if(_minDayDistance>0){
-		//TimeConstraint *constr=new ConstraintMinDaysBetweenActivities(1.0, true, _nSplits, acts, _minDayDistance); //compulsory constraint
 		TimeConstraint *constr=new ConstraintMinDaysBetweenActivities(_weightPercentage, _consecutiveIfSameDay, _nSplits, acts, _minDayDistance);
 		bool tmp=this->addTimeConstraint(constr);
 		assert(tmp);
@@ -6225,11 +6261,11 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 								assert(studentsSetsCount.contains(_s));
 								_ns+=studentsSetsCount.value(_s);
 							}
-							this->addSimpleActivityRulesFast(id, gid, tl, sjn, atl, stl,
+							this->addSimpleActivityRulesFast(parent, id, gid, tl, sjn, atl, stl,
 								d, td, ac, cnos, nos, _ns);
 						}
 						else{
-							this->addSimpleActivity(id, gid, tl, sjn, atl, stl,
+							this->addSimpleActivity(parent, id, gid, tl, sjn, atl, stl,
 								d, td, ac, cnos, nos);
 						}
 						
