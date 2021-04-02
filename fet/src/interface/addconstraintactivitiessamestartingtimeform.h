@@ -37,6 +37,8 @@
 #include <QList>
 
 class AddConstraintActivitiesSameStartingTimeForm : public AddConstraintActivitiesSameStartingTimeForm_template  {
+	Q_OBJECT
+	
 public:
 	AddConstraintActivitiesSameStartingTimeForm();
 	~AddConstraintActivitiesSameStartingTimeForm();

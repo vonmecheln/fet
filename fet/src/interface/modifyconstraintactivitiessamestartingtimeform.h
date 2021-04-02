@@ -41,13 +41,17 @@ public:
 	ModifyConstraintActivitiesSameStartingTimeForm(ConstraintActivitiesSameStartingTime* ctr);
 	~ModifyConstraintActivitiesSameStartingTimeForm();
 
-	void updateActivitiesListBox();
+	//void updateActivitiesListBox();
 	
 	void addActivity();
 	void removeActivity();
 
 	void ok();
 	void cancel();
+	
+	bool filterOk(Activity* ac);
+	
+	void filterChanged();
 	
 private:
 	ConstraintActivitiesSameStartingTime* _ctr;

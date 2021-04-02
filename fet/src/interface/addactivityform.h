@@ -74,4 +74,20 @@ public:
 	void help();
 };
 
+class SecondMinDaysDialog: public QDialog
+{
+	Q_OBJECT
+public:
+	SecondMinDaysDialog(QWidget* p, int minD, double weight);
+	~SecondMinDaysDialog();
+	
+	double weight;
+	QLineEdit percText;
+
+public slots:
+	void yesPressed();
+	
+};
+
+
 #endif

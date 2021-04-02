@@ -1,0 +1,74 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>HelpTipsForm_template</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>HelpTipsForm_template</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>540</width>
+            <height>439</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>FET - important tips</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>11</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QPushButton" row="1" column="0">
+            <property name="name">
+                <cstring>closePushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Close</string>
+            </property>
+        </widget>
+        <widget class="QTextBrowser" row="0" column="0">
+            <property name="name">
+                <cstring>textBrowser3_2</cstring>
+            </property>
+            <property name="text">
+                <string>FET Important optimization tips - please read them carefully and try to comply
+Modified 15 June 2008.
+
+1) Say you add a split activity or you add a constraint min n days between activities (say na activities), when your week has nd days. Do not add a constraint with na&gt;nd (number of activities strictly greater than number of days per week).
+
+The correct way: if you want consecutive if same day, consider activities having a longer duration. Instead of adding activities 1+1+1+1+1+1+1 in a 5 days week, add them as 2+2+1+1+1. If you don't want consecutive if same day, add 1+1+1+1+1 firstly and 1+1 after that.
+
+The generation will be much faster and easier using this approach (more than 10 times faster sometimes).
+
+2) When adding constraints activities same starting time (or day), please remove redundant min n days constraints. For instance, A1 (at same time with B1 and C1), A2 (same time with B2 and C2) and A3 (same time with B3 and C3). You will normally have 3 or 6 constraints min n days between activities (first one or two with A1,A2,A3 and then with B1,B2,B3 and then with C1,C2,C3). These 3 or 6 constraints min n days will result in a much stronger constraint, which will make the timetable much harder to find. If you have say 4 groups of activities (A, B, C, D), things will be even harder.
+
+The correct way is to leave only the constraints min n days referring to the first group of activities (A). You will have a much faster generation (maybe 10 times faster or more).
+
+PS: Suppose there are 2 constraints for activities A1,2,3 and 2 constraints for activities B1,2,3 and 2 constraints for activities C1,2,3. If A and B and C are simultaneous, remove only the constraints referring to B and C (but leave both for A, if for instance you have min 2 days with 95% and min 1 day with 100%).
+
+More details: the combination of 2 or more redundant constraints min n days between activities gives another resultant constraint, much stronger. From 3 redundant constraints with 95%, you get one with 100%-5%*5%*5%=99.9875%, which is not what you want.
+
+Do not consider redundant constraints with the same activities but different number of days (you may want to add min 2 days 95% and min 1 day 95%, which gives in 95% cases the 2 days will be respected and in 99.75% cases the 1 day will be respected).
+
+Preferred time(s) constraints do not have the problem of redundancy like min days constraints.</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>closePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>HelpTipsForm_template</receiver>
+        <slot>close()</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

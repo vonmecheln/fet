@@ -30,7 +30,47 @@ ConstraintActivitiesSameStartingTimeForm::ConstraintActivitiesSameStartingTimeFo
 	int yy=desktop->height()/2 - frameGeometry().height()/2;
 	move(xx, yy);
 
-	this->refreshConstraintsListBox();
+	//this->refreshConstraintsListBox();
+
+/////////////
+	teachersComboBox->insertItem("");
+	for(int i=0; i<gt.rules.teachersList.size(); i++){
+		Teacher* tch=gt.rules.teachersList[i];
+		teachersComboBox->insertItem(tch->name);
+	}
+	teachersComboBox->setCurrentItem(0);
+
+	subjectsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.subjectsList.size(); i++){
+		Subject* sb=gt.rules.subjectsList[i];
+		subjectsComboBox->insertItem(sb->name);
+	}
+	subjectsComboBox->setCurrentItem(0);
+
+	activityTagsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
+		ActivityTag* st=gt.rules.activityTagsList[i];
+		activityTagsComboBox->insertItem(st->name);
+	}
+	activityTagsComboBox->setCurrentItem(0);
+
+	studentsComboBox->insertItem("");
+	for(int i=0; i<gt.rules.yearsList.size(); i++){
+		StudentsYear* sty=gt.rules.yearsList[i];
+		studentsComboBox->insertItem(sty->name);
+		for(int j=0; j<sty->groupsList.size(); j++){
+			StudentsGroup* stg=sty->groupsList[j];
+			studentsComboBox->insertItem(stg->name);
+			for(int k=0; k<stg->subgroupsList.size(); k++){
+				StudentsSubgroup* sts=stg->subgroupsList[k];
+				studentsComboBox->insertItem(sts->name);
+			}
+		}
+	}
+	studentsComboBox->setCurrentItem(0);
+///////////////
+
+	this->filterChanged();
 }
 
 ConstraintActivitiesSameStartingTimeForm::~ConstraintActivitiesSameStartingTimeForm()
@@ -55,12 +95,110 @@ void ConstraintActivitiesSameStartingTimeForm::refreshConstraintsListBox()
 	this->constraintChanged(constraintsListBox->currentItem());
 }
 
-bool ConstraintActivitiesSameStartingTimeForm::filterOk(TimeConstraint* ctr)
+/*bool ConstraintActivitiesSameStartingTimeForm::filterOk(TimeConstraint* ctr)
 {
 	if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME)
 		return true;
 	else
 		return false;
+}*/
+
+bool ConstraintActivitiesSameStartingTimeForm::filterOk(TimeConstraint* ctr)
+{
+	if(ctr->type!=CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME)
+		return false;
+		
+	ConstraintActivitiesSameStartingTime* c=(ConstraintActivitiesSameStartingTime*) ctr;
+	
+	QString tn=teachersComboBox->currentText();
+	QString sbn=subjectsComboBox->currentText();
+	QString sbtn=activityTagsComboBox->currentText();
+	QString stn=studentsComboBox->currentText();
+	
+	bool foundTeacher=false, foundStudents=false, foundSubject=false, foundActivityTag=false;
+		
+	for(int i=0; i<c->n_activities; i++){
+		//bool found=true;
+	
+		int id=c->activitiesId[i];
+		Activity* act=NULL;
+		foreach(Activity* a, gt.rules.activitiesList)
+			if(a->id==id)
+				act=a;
+		
+		if(act!=NULL){
+			//teacher
+			if(tn!=""){
+				bool ok2=false;
+				for(QStringList::Iterator it=act->teachersNames.begin(); it!=act->teachersNames.end(); it++)
+					if(*it == tn){
+						ok2=true;
+						break;
+					}
+				if(ok2)
+					foundTeacher=true;
+				//if(!ok2)
+				//	found=false;
+			}
+			else
+				foundTeacher=true;
+
+			//subject
+			if(sbn!="" && sbn!=act->subjectName)
+				;
+			else
+				//found=false;
+				foundSubject=true;
+		
+			//activity tag
+			if(sbtn!="" && sbtn!=act->activityTagName)
+				;
+			else
+				//found=false;
+				foundActivityTag=true;
+		
+			//students
+			if(stn!=""){
+				bool ok2=false;
+				for(QStringList::Iterator it=act->studentsNames.begin(); it!=act->studentsNames.end(); it++)
+					if(*it == stn){
+						ok2=true;
+						break;
+				}
+				//if(!ok2)
+				//	found=false;
+				if(ok2)
+					foundStudents=true;
+			}
+			else
+				foundStudents=true;
+		}
+		
+		//if(found)
+		//	return true;
+	}
+	
+	if(foundTeacher && foundStudents && foundSubject && foundActivityTag)
+		return true;
+	else
+		return false;
+}
+
+void ConstraintActivitiesSameStartingTimeForm::filterChanged()
+{
+	this->visibleConstraintsList.clear();
+	constraintsListBox->clear();
+	for(int i=0; i<gt.rules.timeConstraintsList.size(); i++){
+		TimeConstraint* ctr=gt.rules.timeConstraintsList[i];
+		if(filterOk(ctr)){
+			visibleConstraintsList.append(ctr);
+			constraintsListBox->insertItem(ctr->getDescription(gt.rules));
+		}
+	}
+	if(visibleConstraintsList.count()>0)
+		constraintChanged(0);
+	else
+		constraintChanged(-1);
 }
 
 void ConstraintActivitiesSameStartingTimeForm::constraintChanged(int index)

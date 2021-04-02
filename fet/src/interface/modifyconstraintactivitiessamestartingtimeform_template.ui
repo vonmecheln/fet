@@ -19,7 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout4</cstring>
             </property>
@@ -51,7 +51,33 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="0" column="0">
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout2</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>okPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Ok</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>cancelPushButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QLayoutWidget" row="1" column="0">
             <property name="name">
                 <cstring>layout10</cstring>
             </property>
@@ -85,7 +111,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="0" column="1">
+        <widget class="QLayoutWidget" row="1" column="1">
             <property name="name">
                 <cstring>layout9</cstring>
             </property>
@@ -119,31 +145,80 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
+        <widget class="QGroupBox" row="0" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>layout2</cstring>
+                <cstring>groupBox2</cstring>
             </property>
-            <hbox>
+            <property name="title">
+                <string>Filter</string>
+            </property>
+            <grid>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QPushButton">
+                <widget class="QLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>okPushButton</cstring>
+                        <cstring>layout3</cstring>
                     </property>
-                    <property name="text">
-                        <string>Ok</string>
-                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel" row="0" column="3">
+                            <property name="name">
+                                <cstring>activityTagsTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Activity tag</string>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="1">
+                            <property name="name">
+                                <cstring>studentsComboBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="3">
+                            <property name="name">
+                                <cstring>activityTagsComboBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="1">
+                            <property name="name">
+                                <cstring>studentsTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Students set</string>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="2">
+                            <property name="name">
+                                <cstring>subjectsComboBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="2">
+                            <property name="name">
+                                <cstring>subjectsTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Subject</string>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="0">
+                            <property name="name">
+                                <cstring>teachersComboBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="0">
+                            <property name="name">
+                                <cstring>teachersTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Teacher</string>
+                            </property>
+                        </widget>
+                    </grid>
                 </widget>
-                <widget class="QPushButton">
-                    <property name="name">
-                        <cstring>cancelPushButton</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Cancel</string>
-                    </property>
-                </widget>
-            </hbox>
+            </grid>
         </widget>
     </grid>
 </widget>
@@ -172,6 +247,30 @@
         <receiver>ModifyConstraintActivitiesSameStartingTimeForm_template</receiver>
         <slot>removeActivity()</slot>
     </connection>
+    <connection>
+        <sender>teachersComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ModifyConstraintActivitiesSameStartingTimeForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>studentsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ModifyConstraintActivitiesSameStartingTimeForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ModifyConstraintActivitiesSameStartingTimeForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>activityTagsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ModifyConstraintActivitiesSameStartingTimeForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>activitiesListBox</tabstop>
@@ -185,6 +284,7 @@
     <slot>removeActivity()</slot>
     <slot>ok()</slot>
     <slot>cancel()</slot>
+    <slot>filterChanged()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 8 June 2008 (see the end for most recent additions)
+this documentation by Liviu Lalescu, reviewed and modified - 14 June 2008 (see the end for most recent additions)
 
 --------
 
@@ -243,6 +243,8 @@ Activities 1 and 2, min days 1, consecutive if same day=true, weight=100%-5%*5%=
 You may however add 2 constraints for the same activities if you want 100% with min 2 days and 95% with min 1 day. These are not duplicates.
 
 You might get an impossible timetable with duplicates, so beware.
+
+New, 14 June: if you need to balance 3 activities in a 5 days week, you can add, in the new version 5.5.8 and higher, directly from the add activity dialog, 2 constraints. You just have to input min days 2, and FET will ask if you want to add a second constraint with min days 1. This way, you can ensure that the activities are balanced better (at least one day apart, usually 2 days apart)
 
 ------------------------------------------------------------------------------
 
@@ -501,7 +503,11 @@ A: I have a very good solution for you, but it is a bit complicated to add.
 
 Suppose you have activities A1 and A2. Add dummy A3, with duration 1, no teachers and no students. Add constraint 2 activities consecutive, A2 and A3 (A2 followed by A3). Add constraint activities not overlapping, A1 and A3.
 
-There is only a small problem: A2 cannot be put in the last period. To correct that: increase the number of hours with 1 and constraint all the real activities (without A3) to take place in the first periods. You can do that by adding a subject tag to A1 and A2 named Early and a subject tag to A3 named Any, and constraint activities preferred times for subject tag Early to be in the first n-1 slots of each day.</string>
+There is only a small problem: A2 cannot be put in the last period. To correct that: increase the number of hours with 1 and constraint all the real activities (without A3) to take place in the first periods. You can do that by adding a subject tag to A1 and A2 named Early and a subject tag to A3 named Any, and constraint activities preferred times for subject tag Early to be in the first n-1 slots of each day.
+
+-------------------------------------------------------------------------------
+
+New - Added 14 June 2008: it was added a possibility to add 2 constraints min n days between activities when adding a split activity. Please read above the documentation related to constrain min n days between activities (basically, if you add min days 2 (or 3), you get the possibility to add a second constraint with min days 1 (or 2).</string>
             </property>
         </widget>
     </grid>

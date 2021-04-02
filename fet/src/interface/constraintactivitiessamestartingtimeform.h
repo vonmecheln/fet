@@ -49,6 +49,8 @@ public:
 	void refreshConstraintsListBox();
 
 	bool filterOk(TimeConstraint* ctr);
+	
+	void filterChanged();
 };
 
 #endif

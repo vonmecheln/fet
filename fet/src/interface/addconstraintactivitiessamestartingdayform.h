@@ -36,6 +36,8 @@
 #include <QList>
 
 class AddConstraintActivitiesSameStartingDayForm : public AddConstraintActivitiesSameStartingDayForm_template  {
+	Q_OBJECT
+
 public:
 	AddConstraintActivitiesSameStartingDayForm();
 	~AddConstraintActivitiesSameStartingDayForm();

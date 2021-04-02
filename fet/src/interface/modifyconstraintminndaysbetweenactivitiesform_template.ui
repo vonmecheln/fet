@@ -19,75 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QLayoutWidget" row="0" column="0">
-            <property name="name">
-                <cstring>layout10</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>activitiesTextLabel</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
-                    </property>
-                    <property name="text">
-                        <string>All activities (dbl. click or Enter adds)</string>
-                    </property>
-                </widget>
-                <widget class="QListBox">
-                    <item>
-                        <property name="text">
-                            <string>New Item</string>
-                        </property>
-                    </item>
-                    <property name="name">
-                        <cstring>activitiesListBox</cstring>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="0" column="1">
-            <property name="name">
-                <cstring>layout9</cstring>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
-                </property>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>selectedActivitiesTextLabel</cstring>
-                    </property>
-                    <property name="frameShape">
-                        <enum>NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                        <enum>Plain</enum>
-                    </property>
-                    <property name="text">
-                        <string>Selected (dbl. click or Enter removes)</string>
-                    </property>
-                </widget>
-                <widget class="QListBox">
-                    <item>
-                        <property name="text">
-                            <string>New Item</string>
-                        </property>
-                    </item>
-                    <property name="name">
-                        <cstring>selectedActivitiesListBox</cstring>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout6</cstring>
             </property>
@@ -116,7 +48,7 @@
                 </widget>
             </grid>
         </widget>
-        <widget class="QLayoutWidget" row="2" column="1">
+        <widget class="QLayoutWidget" row="3" column="1">
             <property name="name">
                 <cstring>layout4</cstring>
             </property>
@@ -148,7 +80,7 @@
                 </widget>
             </vbox>
         </widget>
-        <widget class="QCheckBox" row="2" column="0">
+        <widget class="QCheckBox" row="3" column="0">
             <property name="name">
                 <cstring>consecutiveIfSameDayCheckBox</cstring>
             </property>
@@ -160,7 +92,7 @@ force activities consecutive</string>
                 <bool>true</bool>
             </property>
         </widget>
-        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
+        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout2</cstring>
             </property>
@@ -183,6 +115,159 @@ force activities consecutive</string>
                     <property name="text">
                         <string>Cancel</string>
                     </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QGroupBox" row="0" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>groupBox3</cstring>
+            </property>
+            <property name="title">
+                <string>Filter</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget" row="0" column="0">
+                    <property name="name">
+                        <cstring>layout3</cstring>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel" row="0" column="3">
+                            <property name="name">
+                                <cstring>activityTagsTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Activity tag</string>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="1">
+                            <property name="name">
+                                <cstring>studentsComboBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="3">
+                            <property name="name">
+                                <cstring>activityTagsComboBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="1">
+                            <property name="name">
+                                <cstring>studentsTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Students set</string>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="2">
+                            <property name="name">
+                                <cstring>subjectsComboBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="2">
+                            <property name="name">
+                                <cstring>subjectsTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Subject</string>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="0">
+                            <property name="name">
+                                <cstring>teachersComboBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="0" column="0">
+                            <property name="name">
+                                <cstring>teachersTextLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Teacher</string>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>layout20</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout10</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>activitiesTextLabel</cstring>
+                            </property>
+                            <property name="frameShape">
+                                <enum>NoFrame</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Plain</enum>
+                            </property>
+                            <property name="text">
+                                <string>All activities (dbl. click or Enter adds)</string>
+                            </property>
+                        </widget>
+                        <widget class="QListBox">
+                            <item>
+                                <property name="text">
+                                    <string>New Item</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>activitiesListBox</cstring>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout9</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>selectedActivitiesTextLabel</cstring>
+                            </property>
+                            <property name="frameShape">
+                                <enum>NoFrame</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Plain</enum>
+                            </property>
+                            <property name="text">
+                                <string>Selected (dbl. click or Enter removes)</string>
+                            </property>
+                        </widget>
+                        <widget class="QListBox">
+                            <item>
+                                <property name="text">
+                                    <string>New Item</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>selectedActivitiesListBox</cstring>
+                            </property>
+                        </widget>
+                    </vbox>
                 </widget>
             </hbox>
         </widget>
@@ -213,6 +298,30 @@ force activities consecutive</string>
         <receiver>ModifyConstraintMinNDaysBetweenActivitiesForm_template</receiver>
         <slot>removeActivity()</slot>
     </connection>
+    <connection>
+        <sender>teachersComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ModifyConstraintMinNDaysBetweenActivitiesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>studentsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ModifyConstraintMinNDaysBetweenActivitiesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ModifyConstraintMinNDaysBetweenActivitiesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>activityTagsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ModifyConstraintMinNDaysBetweenActivitiesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>activitiesListBox</tabstop>
@@ -228,6 +337,7 @@ force activities consecutive</string>
     <slot>removeActivity()</slot>
     <slot>ok()</slot>
     <slot>cancel()</slot>
+    <slot>filterChanged()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

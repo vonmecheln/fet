@@ -1083,10 +1083,16 @@ void ConstraintActivitiesSameStartingTime::removeUseless(Rules& r)
 
 bool ConstraintActivitiesSameStartingTime::hasInactiveActivities(Rules& r)
 {
+	int count=0;
+
 	for(int i=0; i<this->n_activities; i++)
 		if(r.inactiveActivities.contains(this->activitiesId[i]))
-			return true;
-	return false;
+			count++;
+
+	if(this->n_activities-count<=1)
+		return true;
+	else
+		return false;
 }
 
 QString ConstraintActivitiesSameStartingTime::getXmlDescription(Rules& r){
@@ -1402,10 +1408,16 @@ void ConstraintActivitiesNotOverlapping::removeUseless(Rules& r)
 
 bool ConstraintActivitiesNotOverlapping::hasInactiveActivities(Rules& r)
 {
+	int count=0;
+
 	for(int i=0; i<this->n_activities; i++)
 		if(r.inactiveActivities.contains(this->activitiesId[i]))
-			return true;
-	return false;
+			count++;
+
+	if(this->n_activities-count<=1)
+		return true;
+	else
+		return false;
 }
 
 QString ConstraintActivitiesNotOverlapping::getXmlDescription(Rules& r){
@@ -1779,10 +1791,16 @@ void ConstraintMinNDaysBetweenActivities::removeUseless(Rules& r)
 
 bool ConstraintMinNDaysBetweenActivities::hasInactiveActivities(Rules& r)
 {
+	int count=0;
+
 	for(int i=0; i<this->n_activities; i++)
 		if(r.inactiveActivities.contains(this->activitiesId[i]))
-			return true;
-	return false;
+			count++;
+
+	if(this->n_activities-count<=1)
+		return true;
+	else
+		return false;
 }
 
 QString ConstraintMinNDaysBetweenActivities::getXmlDescription(Rules& r){
@@ -7690,10 +7708,16 @@ void ConstraintActivitiesSameStartingHour::removeUseless(Rules& r)
 
 bool ConstraintActivitiesSameStartingHour::hasInactiveActivities(Rules& r)
 {
+	int count=0;
+
 	for(int i=0; i<this->n_activities; i++)
 		if(r.inactiveActivities.contains(this->activitiesId[i]))
-			return true;
-	return false;
+			count++;
+
+	if(this->n_activities-count<=1)
+		return true;
+	else
+		return false;
 }
 
 QString ConstraintActivitiesSameStartingHour::getXmlDescription(Rules& r){
@@ -8009,10 +8033,16 @@ void ConstraintActivitiesSameStartingDay::removeUseless(Rules& r)
 
 bool ConstraintActivitiesSameStartingDay::hasInactiveActivities(Rules& r)
 {
+	int count=0;
+
 	for(int i=0; i<this->n_activities; i++)
 		if(r.inactiveActivities.contains(this->activitiesId[i]))
-			return true;
-	return false;
+			count++;
+
+	if(this->n_activities-count<=1)
+		return true;
+	else
+		return false;
 }
 
 QString ConstraintActivitiesSameStartingDay::getXmlDescription(Rules& r){

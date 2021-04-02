@@ -311,7 +311,8 @@ extern bool mustComputeTimetableTeacher[MAX_TEACHERS];
 bool homeRoomsAreOk();
 
 
-extern bool fixedActivity[MAX_ACTIVITIES];
+extern bool fixedTimeActivity[MAX_ACTIVITIES]; //this is in fact time fixed, not both time and space
+extern bool fixedSpaceActivity[MAX_ACTIVITIES];
 bool computeFixedActivities();
 
 

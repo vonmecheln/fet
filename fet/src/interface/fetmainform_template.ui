@@ -30,6 +30,7 @@
      <string>&amp;Help</string>
     </property>
     <addaction name="helpInstructionsAction" />
+    <addaction name="helpTipsAction" />
     <addaction name="helpFAQAction" />
     <addaction name="separator" />
     <addaction name="helpInOtherLanguagesAction" />
@@ -1191,6 +1192,11 @@
   <action name="dataTimeConstraintsStudentsMaxHoursContinuouslyAction" >
    <property name="text" >
     <string>Max hours continuously for all students</string>
+   </property>
+  </action>
+  <action name="helpTipsAction" >
+   <property name="text" >
+    <string>Important tips</string>
    </property>
   </action>
  </widget>

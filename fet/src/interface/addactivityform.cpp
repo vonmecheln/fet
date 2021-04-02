@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+#include <QDialog>
+
 #include "addactivityform.h"
 #include "teacher.h"
 #include "subject.h"
@@ -405,6 +407,79 @@ void AddActivityForm::activityChanged()
 	currentActivityTextEdit->setText(s);
 }
 
+SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialog(p)
+{
+	weight=-1;
+
+	QString l=tr
+	 ("You selected min days between activities %1 (above 1) and weight %2 (under 100.0). "
+	  "Would you like to add also a second constraint to ensure that almost certainly the "
+	  "distance between activities is at least %3 (%1-1) days? If yes, please select weight (recommended "
+	  "95.0%-100.0%) and click Yes. If no, please click No (only one constraint will be added)").arg(minD).arg(w).arg(minD-1);
+	l+="\n\n";
+	l+=tr("(Yes means to add an additional constraint min %1 days between activities, weight 0.0%-100.0%. "
+	  "If you say Yes, you will have 2 constraints min days added for current activities. "
+	  "Adding the second constraint might lead to impossible timetables if the condition is "
+	  "too tight, but you can remove the second constraint at any time).").arg(minD-1);
+	l+="\n\n";
+	l+=tr("Note: 95% is usually enough for min days constraints referring to same activities. "
+	  "The weights are cumulated if referring to the same activities. If you have 2 constraints with say 95%"
+	  " (say min n days and min n-1 days), "
+	  "the min n days constraint is skipped with probability 5%, then min n-1 days constraint is skipped with "
+	  "probability 0.25%=5%*5%, so you'll get in 99.75% cases the min n-1 days constraint respected.");
+	l+="\n\n";
+	l+=tr("Recommended answer is Yes, 95% (or higher).");
+	l+="\n\n";
+
+	setWindowTitle(tr("Add a second constraint or not?"));
+				
+	QVBoxLayout* vl=new QVBoxLayout(this);
+				
+	QLabel* la=new QLabel(this);
+	la->setWordWrap(true);
+	la->setText(l);
+
+	vl->addWidget(la);
+				
+	QPushButton* yes=new QPushButton(tr("Yes"));
+	yes->setDefault(true);				
+				
+	QPushButton* no=new QPushButton(tr("No"));
+
+	QLabel* percLabel=new QLabel(this);
+	percLabel->setText("Percentage");
+	percText.setText("95.0");
+	QHBoxLayout* hl2=new QHBoxLayout(vl);
+	hl2->addWidget(percLabel);
+	hl2->addWidget(&percText);
+
+	QHBoxLayout* hl=new QHBoxLayout(vl);
+	hl->addStretch(1);
+	hl->addWidget(yes);
+	hl->addWidget(no);
+				
+	connect(yes, SIGNAL(clicked()), this, SLOT(yesPressed()));
+	connect(no, SIGNAL(clicked()), this, SLOT(reject()));
+}
+
+SecondMinDaysDialog::~SecondMinDaysDialog()
+{
+}
+
+void SecondMinDaysDialog::yesPressed()
+{
+	double wt;
+	QString tmp=percText.text();
+	sscanf(tmp, "%lf", &wt);
+	if(wt<0.0 || wt>100.0){
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - must be >=0 and <=100.0"));
+		return;
+	}
+	weight=wt;
+	accept();
+}
+
 void AddActivityForm::addActivity()
 {
 	double weight;
@@ -588,10 +663,74 @@ void AddActivityForm::addActivity()
 			nsplit, totalduration, durations,
 			/*parities,*/ active, minD, /*percentageSpinBox->value()*/weight, forceAdjacentCheckBox->isChecked(), /*preferred_days, preferred_hours,*/
 			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
-		if(tmp)
+		if(tmp){
+			if(minD>1 && weight<100.0){
+				SecondMinDaysDialog second(this, minD, weight);
+				int code=second.exec();
+
+				if(code==QDialog::Accepted){
+					assert(second.weight>=0 && second.weight<=100.0);
+					int acts[MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES];
+					for(int i=0; i<nsplit; i++)
+						acts[i]=firstactivityid+i;
+					TimeConstraint* c=new ConstraintMinNDaysBetweenActivities(second.weight, forceAdjacentCheckBox->isChecked(), nsplit, acts, minD-1);
+					bool tmp=gt.rules.addTimeConstraint(c);
+					assert(tmp);
+				}
+				
+			/*
+			    bool ok;
+				
+				QString s=tr
+				 ("You selected min days between activities %1 (above 1) and weight %2 (under 100.0).\n"
+				  "Would you like to add also a second constraint to ensure that almost certainly the\n"
+				  "distance between activities is at least 1 day? If yes, please select weight (recommended\n"
+				  "95%-100%) and click OK. If no, please click Cancel (only one constraint will be added)\n\n"
+				  "(OK means to add an additional constraint min 1 day between activities, weight 0%-100%.\n"
+				  "If you say OK, you will have 2 constraints min n days added for current activities.\n"
+				  "Adding the second constraint might lead to impossible timetables if the condition is\n"
+				  "too tight, but you can remove the second constraint at any time).\n\n"
+				  "Note: 95% is usually enough for min n days constraints referring to same activities.\n"
+				  "The weights are cumulated (only in such cases). If you have 2 constraints with say 95%\n"
+				  "first constraint is skipped with probability 5%, then second constraint is skipped with\n"
+				  "probability 0.25%=5%*5%, so you'll get in 99.75% cases second constraint respected\n\n"
+				  "Recommended answer is Yes (OK), 95%.").arg(minD).arg(weight);
+				
+			    double d = QInputDialog::getDouble(this, tr("FET question"),
+				 s, 95.0, 0.0, 100.0, 10, &ok);
+
+ 				if(ok){ //yes
+					int acts[MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES];
+					for(int i=0; i<nsplit; i++)
+						acts[i]=firstactivityid+i;
+					TimeConstraint* c=new ConstraintMinNDaysBetweenActivities(d, forceAdjacentCheckBox->isChecked(), nsplit, acts, 1);
+					bool tmp=gt.rules.addTimeConstraint(c);
+					assert(tmp);
+				}*/
+			
+				/*int t=QMessageBox::question(this, tr("FET question"), tr("You selected min days between activities %1 (above 1) and weight %2 (under 100.0). Would you"
+				 " like to add also a second constraint to ensure that always the distance between activities is at least 1 day?\n\n"
+				 "(This means to add an additional constraint min 1 day between activities, weight 100.0%. If you say yes, you will have 2 constraints"
+				 " min n days added for these activities. Adding the second constraint might lead to impossible timetables"
+				 " if the condition is too tight, but you can remove the second constraint at any time).\n\n"
+				 "Safest answer is No, recommended answer is Yes.").arg(minD).arg(weight),
+				 tr("Yes"), tr("No"), QString(),
+ 				 0, 1 );
+														 				 	
+ 				if(t==0){ //yes
+					int acts[MAX_CONSTRAINT_MIN_N_DAYS_BETWEEN_ACTIVITIES];
+					for(int i=0; i<nsplit; i++)
+						acts[i]=firstactivityid+i;
+					TimeConstraint* c=new ConstraintMinNDaysBetweenActivities(100.0, forceAdjacentCheckBox->isChecked(), nsplit, acts, 1);
+					bool tmp=gt.rules.addTimeConstraint(c);
+					assert(tmp);
+				}*/
+			}
+		
 			QMessageBox::information(this, tr("FET information"), tr("Split activity added."
 			 " Please note that FET currently cannot check for duplicates when adding split activities"
 			 ". It is advisable to check the statistics after adding all the activities"));
+		}
 		else
 			QMessageBox::critical(this, tr("FET information"), tr("Split activity NOT added - error???"));
 	}
@@ -614,7 +753,7 @@ void AddActivityForm::help()
 	QString s;
 	
 	s=tr(	
-	 "This help by Liviu Lalescu, modified 19 September 2007\n\n"
+	 "This help by Liviu Lalescu, modified 14 June 2008\n\n"
 	
 	 "You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then "
 	 "double click it or press Enter to add it to the selected teachers for current activity. "
@@ -631,12 +770,17 @@ void AddActivityForm::help()
 	 "a minimum distance of 2 means that the activities must be separated by one day (distance from Monday "
 	 " to Wednesday for instance is 2 days), etc.\n\n"
 	 
-	 " If you have for instance an activity with 2 lessons per week and you want to spread them to at least 2 days distance, "
-	 "you can add a constraint min n days with min days = 2 and weight 100%. But if you are not sure that "
-	 " a timetable exists with this condition, you can lower it by the following procedure: "
-	 "add a constraint min n days with minimum days = 1 and weight 100% and another constraint "
-	 "(which has to be added manually, because the add activity dialog has only one constraint possible) "
-	 "with min days 2 and weight for instance 95% or lower\n\n"
+	 "Modification on 14 June 2008: If you have for instance an activity with 2 lessons per week and you want to spread them to at "
+	 "least 2 days distance, you can add a constraint min n days with min days = 2 and weight 95% "
+	 "(or higher). If you want also to ensure that activities will "
+	 "be separated by at least one day, you can use the new version's 5.5.8 feature: "
+	 "add a constraint min n days with minimum days 2 and weight 95% or lower, and after that you'll get "
+	 "the possibility to add another constraint with min 1 days and weight 95% or higher. "
+	 "It works if you first select in the dialog the min days >= 2 and click Add activities. Or you can add manually the constraints "
+	 "(difficult this way). "
+	 "Important: it is best practice to consider both constraints to have 95% weight. The combination assures that "
+	 "the resultant is 99.75% weight"
+	 "\n\n"
 	 
 	 "Please note that the min days distance is a time constraint and you can only see/modify it in the "
 	 "time constraints dialogs, not in the modify activity dialog. Additionally, you can see the constraints "
@@ -669,7 +813,11 @@ void AddActivityForm::help()
 	 "Note: You cannot add 'consecutive if same day' with min n days=0. If you want this, you have to add "
 	 "min days at least 1 (and any weight percentage).\n\n"
 	 
-	 "Starting with version 5.0.0, it is possible to add activities with no students or no teachers"
+	 "Starting with version 5.0.0, it is possible to add activities with no students or no teachers\n\n"
+	 
+	 "Addition 14 June 2008: if you select a number of min days above 1, you will get the possibility "
+	 "to add a second constraint min n days between activities, with min days 1 and a percentage of your choice. Just click "
+	 "Add activities"
 	 );
 	 
 	//show the message in a dialog

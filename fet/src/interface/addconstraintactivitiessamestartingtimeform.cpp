@@ -291,6 +291,10 @@ if(blockCheckBox->isChecked()){ //block constraints
 			QString s=QObject::tr("Constraint added:");
 			s+="\n";
 			s+=ctr->getDetailedDescription(gt.rules);
+			s+="\n";
+			s+=tr("IMPORTANT: when adding this constraint, it is necessary (otherwise generation might be impossible) to remove redundant constraints"
+			" min n days between activities. Only if after adding this constraint you will have redundant min n days constraints."
+			" Please read Help/Important tips - tip number 2 for details");
 			QMessageBox::information(this, QObject::tr("FET information"), s);
 		}
 		else{
@@ -316,6 +320,10 @@ else{
 		QString s=QObject::tr("Constraint added:");
 		s+="\n";
 		s+=ctr->getDetailedDescription(gt.rules);
+		s+="\n";
+		s+=tr("IMPORTANT: when adding this constraint, it is necessary (otherwise generation might be impossible) to remove redundant constraints"
+		" min n days between activities. Only if after adding this constraint you will have redundant min n days constraints."
+		" Please read Help/Important tips - tip number 2 for details");
 		QMessageBox::information(this, QObject::tr("FET information"), s);
 	}
 	else{

@@ -231,7 +231,8 @@ extern QString initialOrderOfActivities;
 extern int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
 
 
-bool fixedActivity[MAX_ACTIVITIES];
+bool fixedTimeActivity[MAX_ACTIVITIES];
+bool fixedSpaceActivity[MAX_ACTIVITIES];
 
 
 #define max(x,y)		((x)>=(y)?(x):(y))
@@ -4487,9 +4488,17 @@ bool computeFixedActivities()
 				return false;
 		}
 		else if(notAllowedSlots==gt.rules.nHoursPerWeek-1)
-			fixedActivity[ai]=true;
+			fixedTimeActivity[ai]=true;
 		else
-			fixedActivity[ai]=false;
+			fixedTimeActivity[ai]=false;
+			
+		//space
+		fixedSpaceActivity[ai]=false;
+		foreach(PreferredRoomsItem it, activitiesPreferredRoomsList[ai])
+			if(it.percentage==100.0 && it.preferredRooms.count()==1){
+				fixedSpaceActivity[ai]=true;
+				break;
+			}
 	}
 	
 	return ok;
@@ -4658,7 +4667,8 @@ bool homeRoomsAreOk()
 
 void sortActivities()
 {
-	const int INF=2000000000;
+	const int INF  = 2000000000;
+	const int INF2 = 2000000001;
 	
 	//I should take care of home rooms, but I don't want to change the routine below which works well
 
@@ -4751,8 +4761,12 @@ void sortActivities()
 
 		nIncompatible[i]*=gt.rules.internalActivitiesList[i].duration;
 		
-		if(fixedActivity[i])
+		if(fixedTimeActivity[i]){
 			nIncompatible[i]=INF;
+			
+			if(fixedSpaceActivity[i])
+				nIncompatible[i]=INF2;
+		}
 	}
 
 	//same starting time - not computing, the algo takes care even without correct sorting

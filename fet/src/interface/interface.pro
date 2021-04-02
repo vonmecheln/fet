@@ -6,6 +6,7 @@
 SOURCES += fet.cpp \
            helpaboutform.cpp \
            helpfaqform.cpp \
+           helptipsform.cpp \
            helpinstructionsform.cpp \
            activitiesform.cpp \
            addactivityform.cpp \
@@ -260,6 +261,7 @@ SOURCES += fet.cpp \
 HEADERS += fet.h \
            helpaboutform.h \
            helpfaqform.h \
+           helptipsform.h \
            helpinstructionsform.h \
            activitiesform.h \
            addactivityform.h \
@@ -536,6 +538,7 @@ FORMS+=  fetmainform_template.ui \
 	settingstimetablehtmllevelform_template.ui
 #The following line was changed from FORMS to FORMS3 by qt3to4
 FORMS3 += helpfaqform_template.ui \
+		 helptipsform_template.ui \
 		 helpinstructionsform_template.ui \
          activitiesform_template.ui \
          addactivityform_template.ui \

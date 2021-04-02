@@ -133,6 +133,7 @@ public slots:
 
 	void on_helpAboutAction_activated();
 	void on_helpFAQAction_activated();
+	void on_helpTipsAction_activated();
 	void on_helpInstructionsAction_activated();
 	void on_helpInOtherLanguagesAction_activated();
 

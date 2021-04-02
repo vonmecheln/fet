@@ -767,9 +767,10 @@ Bobby
 18---------------------------------------------------------
 From Yush Yuen
 
-i am encountering a problem with de-activating
-subjects. when i de-activate a set of activities belonging to a subject. all
-the time constrains would give errora and therefore cannot generate a
-timetable.
+also, all activities of the same block are set with a same day+hour
+constraint
 
-any way to get around that?
+it is pretty difficult to find them form the list of constraint. it would be
+nice if there are filters on the dialog as well.
+
+(He is referring to min n days between activities constraints)

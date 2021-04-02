@@ -1204,4 +1204,14 @@ Versions 5.5.0 - 5.5.x
 	these activities are ignored (suggested by Yush Yuen).
 	- Improvement - activating/deactivating activities for a year/group considers also the activities of included groups/subgroups
 	(suggested by Yush Yuen).
+- Version 5.5.8
+	- Bug fix - when saving a timetable, regenerating it might give an impossible timetable - reported by Yush Yuen.
+	This bug solved other possible important bug (I doubt someone observed this bug. What happens: if an
+	activity has a fixed time, then when FET allocates it it fixes a room for this activity and consequent
+	changes are not possible to reschedule this activity to another room - might give impossible timetable in extreme cases).
+	Now it is possible to reallocate the room to another slot.
+	- Improved add activity dialog - if min days is x (greater than 1) and weight is lower than 100.0%, user can add
+	a second constraint with x-1 min days, to ensure activities are better separated.
+	- Added advice to remove redundant min n days constraints when adding same starting time constraints.
+	- Added another sample by Yush Yuen.
 	

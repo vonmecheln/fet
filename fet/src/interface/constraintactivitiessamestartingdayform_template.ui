@@ -9,7 +9,7 @@
             <x>0</x>
             <y>0</y>
             <width>539</width>
-            <height>509</height>
+            <height>540</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,15 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QTextEdit" row="1" column="2" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>currentConstraintTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="3" column="1" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="4" column="1" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>closePushButton</cstring>
             </property>
@@ -35,7 +27,7 @@
                 <string>Close</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="2" column="0">
+        <widget class="QPushButton" row="3" column="0">
             <property name="name">
                 <cstring>addConstraintPushButton</cstring>
             </property>
@@ -43,7 +35,33 @@
                 <string>Add</string>
             </property>
         </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="3" column="3">
+            <property name="name">
+                <cstring>removeConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Remove</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="3" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>modifyConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Modify</string>
+            </property>
+        </widget>
+        <widget class="QListBox" row="2" column="0" rowspan="1" colspan="2">
+            <item>
+                <property name="text">
+                    <string>New Item</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>constraintsListBox</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>constraintsTextLabel</cstring>
             </property>
@@ -57,7 +75,15 @@
                 <string>Constraints</string>
             </property>
         </widget>
-        <widget class="QLabel" row="0" column="2" rowspan="1" colspan="2">
+        <widget class="QTextEdit" row="2" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>currentConstraintTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="2" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>currentConstraintTextLabel</cstring>
             </property>
@@ -65,30 +91,20 @@
                 <string>Current constraint</string>
             </property>
         </widget>
-        <widget class="QListBox" row="1" column="0" rowspan="1" colspan="2">
-            <item>
-                <property name="text">
-                    <string>New Item</string>
-                </property>
-            </item>
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="4">
             <property name="name">
-                <cstring>constraintsListBox</cstring>
+                <cstring>constraintsTextLabel_2</cstring>
             </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="3">
-            <property name="name">
-                <cstring>removeConstraintPushButton</cstring>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
             </property>
             <property name="text">
-                <string>Remove</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="1" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>modifyConstraintPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Modify</string>
+                <string>Please try to read Help/Important tips, advice 2).
+It is IMPORTANT to remove redundant min days
+constraints if adding constraints same starting day</string>
             </property>
         </widget>
     </grid>

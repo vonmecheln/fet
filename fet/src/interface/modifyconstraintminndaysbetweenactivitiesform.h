@@ -43,13 +43,15 @@ public:
 	ModifyConstraintMinNDaysBetweenActivitiesForm(ConstraintMinNDaysBetweenActivities* ctr);
 	~ModifyConstraintMinNDaysBetweenActivitiesForm();
 
-	void updateActivitiesListBox();
+	void filterChanged();
 	
 	void addActivity();
 	void removeActivity();
 
 	void ok();
 	void cancel();
+	
+	bool filterOk(Activity* ac);
 	
 private:
 	ConstraintMinNDaysBetweenActivities* _ctr;

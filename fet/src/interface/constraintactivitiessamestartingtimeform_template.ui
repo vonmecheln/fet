@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>539</width>
-            <height>509</height>
+            <width>581</width>
+            <height>559</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,15 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QTextEdit" row="1" column="2" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>currentConstraintTextEdit</cstring>
-            </property>
-            <property name="readOnly">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="3" column="1" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="5" column="1" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>closePushButton</cstring>
             </property>
@@ -35,7 +27,7 @@
                 <string>Close</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="2" column="0">
+        <widget class="QPushButton" row="4" column="0">
             <property name="name">
                 <cstring>addConstraintPushButton</cstring>
             </property>
@@ -43,7 +35,41 @@
                 <string>Add</string>
             </property>
         </widget>
-        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+        <widget class="QPushButton" row="4" column="3">
+            <property name="name">
+                <cstring>removeConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Remove</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="4" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>modifyConstraintPushButton</cstring>
+            </property>
+            <property name="text">
+                <string>Modify</string>
+            </property>
+        </widget>
+        <widget class="QListBox" row="2" column="0" rowspan="2" colspan="2">
+            <item>
+                <property name="text">
+                    <string>New Item</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>constraintsListBox</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>currentConstraintTextLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Current constraint</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>constraintsTextLabel</cstring>
             </property>
@@ -57,39 +83,94 @@
                 <string>Constraints</string>
             </property>
         </widget>
-        <widget class="QLabel" row="0" column="2" rowspan="1" colspan="2">
+        <widget class="QLabel" row="0" column="0" rowspan="1" colspan="4">
             <property name="name">
-                <cstring>currentConstraintTextLabel</cstring>
+                <cstring>constraintsTextLabel_2</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
             </property>
             <property name="text">
-                <string>Current constraint</string>
+                <string>Please try to read Help/Important tips, advice 2).
+It is IMPORTANT to remove redundant min days
+constraints if adding constraints same starting time</string>
             </property>
         </widget>
-        <widget class="QListBox" row="1" column="0" rowspan="1" colspan="2">
-            <item>
-                <property name="text">
-                    <string>New Item</string>
+        <widget class="QTextEdit" row="2" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>currentConstraintTextEdit</cstring>
+            </property>
+            <property name="readOnly">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QGroupBox" row="3" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>filterGroupBox</cstring>
+            </property>
+            <property name="title">
+                <string>Filter</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
                 </property>
-            </item>
-            <property name="name">
-                <cstring>constraintsListBox</cstring>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="3">
-            <property name="name">
-                <cstring>removeConstraintPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Remove</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="1" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>modifyConstraintPushButton</cstring>
-            </property>
-            <property name="text">
-                <string>Modify</string>
-            </property>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>teachersTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Teacher</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="1" column="0">
+                    <property name="name">
+                        <cstring>teachersComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="6" column="0">
+                    <property name="name">
+                        <cstring>activityTagsTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Activity tag</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="7" column="0">
+                    <property name="name">
+                        <cstring>activityTagsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="5" column="0">
+                    <property name="name">
+                        <cstring>subjectsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="0">
+                    <property name="name">
+                        <cstring>subjectsTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Subject</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="3" column="0">
+                    <property name="name">
+                        <cstring>studentsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>studentsTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Students set</string>
+                    </property>
+                </widget>
+            </grid>
         </widget>
     </grid>
 </widget>
@@ -130,6 +211,30 @@
         <receiver>ConstraintActivitiesSameStartingTimeForm_template</receiver>
         <slot>modifyConstraint()</slot>
     </connection>
+    <connection>
+        <sender>teachersComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ConstraintActivitiesSameStartingTimeForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>studentsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ConstraintActivitiesSameStartingTimeForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ConstraintActivitiesSameStartingTimeForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>activityTagsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ConstraintActivitiesSameStartingTimeForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>constraintsListBox</tabstop>
@@ -144,6 +249,7 @@
     <slot>constraintChanged(int)</slot>
     <slot>removeConstraint()</slot>
     <slot>modifyConstraint()</slot>
+    <slot>filterChanged()</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

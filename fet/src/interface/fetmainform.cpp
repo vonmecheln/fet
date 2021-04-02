@@ -47,6 +47,7 @@ using namespace std;
 #include "allspaceconstraintsform.h"
 #include "helpaboutform.h"
 #include "helpfaqform.h"
+#include "helptipsform.h"
 #include "helpinstructionsform.h"
 
 #include "fet.h"
@@ -1747,6 +1748,12 @@ void FetMainForm::on_helpAboutAction_activated()
 void FetMainForm::on_helpFAQAction_activated()
 {
 	HelpFaqForm* form=new HelpFaqForm();
+	form->show();
+}
+
+void FetMainForm::on_helpTipsAction_activated()
+{
+	HelpTipsForm* form=new HelpTipsForm();
 	form->show();
 }
 
