@@ -31,7 +31,7 @@
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="476"/>
         <source>There will also be removed the related activities from the same larger split activity</source>
-        <translation>Vor fi şterse de asemenea şi activitaţile înrudite din aceeaşi activitate împarţită mai mare</translation>
+        <translation>Vor fi şterse de asemenea şi activităţile înrudite din aceeaşi activitate împărţită mai mare</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="481"/>
@@ -88,12 +88,12 @@
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="419"/>
         <source>different number of students</source>
-        <translation>numar de studenţi diferit</translation>
+        <translation>număr de studenţi diferit</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="422"/>
         <source>The current split activity has subactivities which were individually modified. It is recommended to abort now and modify individual subactivities from the corresponding menu. Otherwise you will modify the fields for all the subactivities from this larger split activity.</source>
-        <translation>Activitatea imparţită curentă are subactivităţi care au fost modificate individual. Este recomandat să abandonaţi acum şi să modificaţi individual subactivităţile din meniul corespunzator. Altfel veţi modifica campurile pentru toate subactivităţile din această activitate mai mare imparţită.</translation>
+        <translation>Activitatea împărţită curentă are subactivităţi care au fost modificate individual. Este recomandat să abandonaţi acum şi să modificaţi individual subactivităţile din meniul corespunzător. Altfel veţi modifica câmpurile pentru toate subactivităţile din această activitate mai mare împărţită.</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="426"/>
@@ -123,7 +123,7 @@
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="529"/>
         <source>Above the (sub)activities list, we have 2 labels, containing 4 numbers. The first label contains text: No: a / b. The first number a is the number of active (sub)activities (we number each individual subactivity as 1), while the second number b is the number of total (sub)activities. The second label contains text: Dur: c / d. The third number c is the duration of active (sub)activities, in periods (or FET hours), while the fourth number d is the duration of total (sub)activities, in periods (or FET hours). So, No means number and Dur means duration.</source>
-        <translation>Deasupra listei (sub)activităţilor, avem 2 etichete, conţinând 4 numere. Prima etichetă conţine textul: Nr: a / b. Primul număr a este numărul de (sub)activităţi active (numărăm fiecare subactivitate individuală ca 1), în timp ce al doilea număr b este numărul de (sub)activităţi totale. A doua etichetă conţine textul: Dur: c / d. Al treilea număr c este durata (sub)activităţilor active, în perioade (sau ore FET), în timp ce al patrulea număr d este durata totală a (sub)activităţilor, in perioade (sau ore FET). Deci, Nr înseamnă număr şi Dur înseamnă durata.</translation>
+        <translation>Deasupra listei (sub)activităţilor, avem 2 etichete, conţinând 4 numere. Prima etichetă conţine textul: Nr: a / b. Primul număr a este numărul de (sub)activităţi active (numărăm fiecare subactivitate individuală ca 1), în timp ce al doilea număr b este numărul de (sub)activităţi totale. A doua etichetă conţine textul: Dur: c / d. Al treilea număr c este durata (sub)activităţilor active, în perioade (sau ore FET), în timp ce al patrulea număr d este durata totală a (sub)activităţilor, în perioade (sau ore FET). Deci, Nr înseamnă număr şi Dur înseamnă durată.</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="535"/>
@@ -151,7 +151,7 @@
         <location filename="../src/interface/activitiesform.cpp" line="551"/>
         <source>if you use colors in interface (see Settings/Interface menu), they will appear with different background color.</source>
         <comment>It refers to inactive activities</comment>
-        <translation>daca folosiţi culori în interfaţă (vedeţi meniul Setări/Interfaţă), ele vor apărea cu o culoare de fond diferită.</translation>
+        <translation>dacă folosiţi culori în interfaţă (vedeţi meniul Setări/Interfaţă), ele vor apărea cu o culoare de fond diferită.</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="553"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="555"/>
         <source>Show related: if you select this, there will be listed activities for groups and subgroups contained also in the current set (if the current set is a year or a group) and also higher ranked year or group (if the current set is a group or a subgroup).</source>
-        <translation>Arată înrudite: dacă selectaţi aceasta, vor fi listate activităţile pentru grupuri şi subgrupuri conţinute de asemenea in setul curent (dacă setul curent este un an sau un grup) şi de asemenea anul sau grupul cu rang mai înalt (dacă setul curent este un grup sau un subgrup).</translation>
+        <translation>Arată înrudite: dacă selectaţi aceasta, vor fi listate activităţile pentru grupuri şi subgrupuri conţinute de asemenea în setul curent (dacă setul curent este un an sau un grup) şi de asemenea anul sau grupul cu rang mai înalt (dacă setul curent este un grup sau un subgrup).</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="558"/>
@@ -470,17 +470,17 @@
     <message>
         <location filename="../src/interface/activityplanningconfirmationform.cpp" line="61"/>
         <source>Pseudo activities are (sometimes) difficult to see in the tables, so you can view them quickly with the corresponding push button.</source>
-        <translation>Pseudo activităţile sunt (câteodata) dificil de vazut în tabele, aşa că puteţi să le vedeţi rapid cu butonul corespunzător.</translation>
+        <translation>Pseudo activităţile sunt (câteodată) dificil de văzut în tabele, aşa că puteţi să le vedeţi rapid cu butonul corespunzător.</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningconfirmationform.cpp" line="64"/>
         <source>You have also a facility to hide/show the buttons on the right. This is useful if you need more space for the tables. With the buttons shown (default), there is available a &apos;Hide buttons&apos; command. When you press it, all the other buttons will be hidden and you will have only one small button remaining. Press it and all the buttons will be shown again.</source>
-        <translation>Aveţi de asemenea o facilitate de a afişa/ascunde butoanele din dreapta. Aceasta este folositoare dacă aveţi nevoie de mai mult spaţiu pentru tabele. Cu butoanele afişate (predefinit), există disponibilă o comandă &apos;Ascunde butoanele&apos;. Când o apăsaţi, toate celelalte comenzi vor fi ascunse şi veţi avea doar un buton mic ramas. Apăsaţi-l şi toate butoanele vor fi afişate din nou.</translation>
+        <translation>Aveţi de asemenea o facilitate de a afişa/ascunde butoanele din dreapta. Aceasta este folositoare dacă aveţi nevoie de mai mult spaţiu pentru tabele. Cu butoanele afişate (predefinit), există disponibilă o comandă &apos;Ascunde butoanele&apos;. Când o apăsaţi, toate celelalte comenzi vor fi ascunse şi veţi avea doar un buton mic rămas. Apăsaţi-l şi toate butoanele vor fi afişate din nou.</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningconfirmationform.cpp" line="69"/>
         <source>If the buttons are hidden, when you will double-click or click the mouse on the tables or press Enter on a table cell, the command that will be done is the one which was selected when the buttons were not hidden.</source>
-        <translation>Dacă butoanele sunt ascunse, când veţi face dublu click sau click cu mouse-ul pe tabele sau apăsaţi Enter pe o celulă a tabelei, commanda care va fi făcută este cea care a fost selectată când butoanele nu erau ascunse.</translation>
+        <translation>Dacă butoanele sunt ascunse, când veţi face dublu click sau click cu mouse-ul pe tabele sau apăsaţi Enter pe o celulă a tabelei, comanda care va fi făcută este cea care a fost selectată când butoanele nu erau ascunse.</translation>
     </message>
 </context>
 <context>
@@ -750,7 +750,7 @@
         <location filename="../src/interface/activityplanningform.cpp" line="1387"/>
         <location filename="../src/interface/activityplanningform.cpp" line="1523"/>
         <source>There are activities affecting other teachers. Should the related activities also be deleted?</source>
-        <translation>Sunt activităţi care afecteaza alţi profesori. Trebuie şterse de asemenea şi activităţile aferente?</translation>
+        <translation>Sunt activităţi care afectează alţi profesori. Trebuie şterse de asemenea şi activităţile aferente?</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1960"/>
@@ -777,7 +777,7 @@
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1266"/>
         <source>This cell contains activities that relate to other students. Should the related activities also be deleted?</source>
-        <translation>Această celulă conţine activităţi care sunt în legătură cu alţi studenţi. Trebuie şterse de asemenea şi aceste activităţi inrudite?</translation>
+        <translation>Această celulă conţine activităţi care sunt în legătură cu alţi studenţi. Trebuie şterse de asemenea şi aceste activităţi înrudite?</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningform.cpp" line="1376"/>
@@ -877,7 +877,7 @@
     <message>
         <location filename="../src/engine/activitytag.cpp" line="64"/>
         <source>Space constraints directly related to this activity tag:</source>
-        <translation>Constrângeri de spaţiu în legatură directă cu această etichetă activitate:</translation>
+        <translation>Constrângeri de spaţiu în legătură directă cu această etichetă activitate:</translation>
     </message>
 </context>
 <context>
@@ -984,7 +984,7 @@
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="241"/>
         <source>Activity tag is a field which can be used or not, depending on your wish (optional field). It is designed to help you with some constraints. Each activity has a possible empty list of activity tags (if you don&apos;t use activity tags, the list will be empty)</source>
-        <translation>Eticheta activitate este un câmp care poate fi folosit sau nu, dupa dorinţă (câmp opţional). Este făcut să vă ajute cu nişte constrângeri. Fiecare activitate are o (posibil vidă) listă de etichete activitate (daca nu folosiţi etichete activitate, lista va fi vidă)</translation>
+        <translation>Eticheta activitate este un câmp care poate fi folosit sau nu, după dorinţă (câmp opţional). Este făcut să vă ajute cu nişte constrângeri. Fiecare activitate are o (posibil vidă) listă de etichete activitate (dacă nu folosiţi etichete activitate, lista va fi vidă)</translation>
     </message>
 </context>
 <context>
@@ -1085,22 +1085,22 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="658"/>
         <source>Activity added</source>
-        <translation>Activitate adaugată</translation>
+        <translation>Activitate adăugată</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="660"/>
         <source>Activity NOT added - please report error</source>
-        <translation>Activitate NEadaugată - vă rugăm raportaţi eroarea</translation>
+        <translation>Activitate NEadăugată - vă rugăm raportaţi eroarea</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="738"/>
         <source>Split activity added. Please note that FET currently cannot check for duplicates when adding split activities. It is advisable to check the statistics after adding all the activities</source>
-        <translation>Activitate împarţită adaugată. Vă rugăm să luaţi aminte că FET în versiunea actuală nu poate verifica duplicatele când adăugaţi activităţi imparţite. Este recomandat să vedeţi statisticile după ce aţi adăugat toate activităţile</translation>
+        <translation>Activitate împărţită adăugată. Vă rugăm să luaţi aminte că FET în versiunea actuală nu poate verifica duplicatele când adăugaţi activităţi împărţite. Este recomandat să vedeţi statisticile după ce aţi adăugat toate activităţile</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="743"/>
         <source>Split activity NOT added - error???</source>
-        <translation>Activitate împarţită NEadaugată - eroare???</translation>
+        <translation>Activitate împărţită NEadăugată - eroare???</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="768"/>
@@ -1140,7 +1140,7 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="784"/>
         <source>A first notice: If you use a 5 days week: when adding an activity split into only 2 components per week, the best practice is to add min days between activities to be 2. If you split an activity into 3 components per week - please read FAQ question Q1-5-September-2008</source>
-        <translation>O primă notificare: Dacă folosiţi o săptămână de 5 zile: când adăugaţi o activitate împărţită in doar 2 componente pe săptămână, cea mai bună practică este să adăugaţi min zile între activităţi să fie 2. Dacă împărţiţi activitatea in 3 componente pe săptămână - vă rugăm citiţi întrebarea din FAQ Q1-5-Septembrie-2008</translation>
+        <translation>O primă notificare: Dacă folosiţi o săptămână de 5 zile: când adăugaţi o activitate împărţită în doar 2 componente pe săptămână, cea mai bună practică este să adăugaţi min zile între activităţi să fie 2. Dacă împărţiţi activitatea în 3 componente pe săptămână - vă rugăm citiţi întrebarea din FAQ Q1-5-Septembrie-2008</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="791"/>
@@ -1162,12 +1162,12 @@
         <source>If you split a larger activity into more activities per week, you have a multitude of choices:
 You can choose the minimum distance in days between each pair of activities. Please note that a minimum distance of 1 means that the activities must not be in the same day, a minimum distance of 2 means that the activities must be separated by one day (distance from Monday to Wednesday for instance is 2 days), etc.</source>
         <translation>Dacă împărţiţi o activitate mai mare în mai multe activităţi pe săptămână, aveţi o multitudine de alegeri:
-Puteţi alege distanţa minimă in zile între fiecare pereche de activităţi. Va rugăm luaţi aminte că o distanţa minimă 1 înseamnă că activităţile nu trebuie să fie în aceeaşi zi, o distanţa minimă 2 înseamnă că activităţile trebuie să fie separate de o zi (distanţa de la luni la miercuri de exemplu este 2 zile), etc.</translation>
+Puteţi alege distanţa minimă în zile între fiecare pereche de activităţi. Vă rugăm luaţi aminte că o distanţa minimă 1 înseamnă că activităţile nu trebuie să fie în aceeaşi zi, o distanţa minimă 2 înseamnă că activităţile trebuie să fie separate de o zi (distanţa de la luni la miercuri de exemplu este 2 zile), etc.</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="813"/>
         <source>If you have for instance an activity with 2 lessons per week and you want to spread them to at least 2 days distance, you can add a constraint min days with min days = 2 and weight 95% (or higher). If you want also to ensure that activities will be separated by at least one day, you can use this feature: add a constraint min days with minimum days 2 and weight 95% or lower, and after that you&apos;ll get the possibility to add another constraint with min 1 days and weight 95% or higher. It works if you first select in the dialog the min days &gt;= 2 and click Add activities. Or you can add manually the constraints (difficult this way). Important: it is best practice to consider both constraints to have 95% weight. The combination assures that the resultant is 99.75% weight</source>
-        <translation>Dacă aveţi de exemplu o activitate cu 2 componente pe săptămână şi doriţi să le „împrăştiaţi” la cel puţin 2 zile distanţă, puteţi adăuga o constrângere min zile cu min zile = 2 şi importanţa 95% (sau mai mare). Dacă de asemenea doriţi să vă asiguraţi ca activităţile vor fi separate de cel puţin o zi, puteţi folosi această facilitate: adăugaţi o  constrângere min zile cu minimum zile 2 şi importanţa 95% sau mai puţin, şi după aceasta veţi avea posibilitatea să adăugaţi o altă constrângere cu min 1 zile şi importanţa 95% sau mai mare. Funcţionează dacă întâi selectaţi în dialog min zile &gt;= 2 şi faceţi click pe Adaugă activităţi. Sau puteţi să adăugaţi manual constrângerile (dificil în acest fel). Important: este cea mai bună practică să consideraţi amândouă constrângerile având importanţa 95%. Această combinaţie asigură ca rezultanta are importanţa 99.75%</translation>
+        <translation>Dacă aveţi de exemplu o activitate cu 2 componente pe săptămână şi doriţi să le „împrăştiaţi” la cel puţin 2 zile distanţă, puteţi adăuga o constrângere min zile cu min zile = 2 şi importanţa 95% (sau mai mare). Dacă de asemenea doriţi să vă asiguraţi ca activităţile vor fi separate de cel puţin o zi, puteţi folosi această facilitate: adăugaţi o  constrângere min zile cu minimum zile 2 şi importanţa 95% sau mai puţin, şi după aceasta veţi avea posibilitatea să adăugaţi o altă constrângere cu min 1 zile şi importanţa 95% sau mai mare. Funcţionează dacă întâi selectaţi în dialog min zile &gt;= 2 şi faceţi click pe Adaugă activităţi. Sau puteţi să adăugaţi manual constrângerile (dificil în acest fel). Important: este cea mai bună practică să consideraţi amândouă constrângerile având importanţa 95%. Această combinaţie asigură că rezultanta are importanţa 99.75%</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="826"/>
@@ -1187,7 +1187,7 @@ Puteţi alege distanţa minimă in zile între fiecare pereche de activităţi. 
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="855"/>
         <source>Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, and select &apos;force consecutive if same day&apos;, you will get an imposssible timetable. But these are extremely unlikely cases).</source>
-        <translation>Algoritmul curent nu poate să programeze 3 activităţi în aceeaşi zi dacă consecutive este selectat, aşa că nu veţi obţine soluţie în aceste cazuri extreme (de exemplu, dacă aveţi 3 lecţii şi un profesor care lucrează doar 1 zi pe săptămână, şi selectaţi &apos;forţează consecutive dacă în aceeaşi zi&apos;, veţi obţine un orar imposibil. Dar aceastea sunt cazuri extrem de improbabile).</translation>
+        <translation>Algoritmul curent nu poate să programeze 3 activităţi în aceeaşi zi dacă consecutive este selectat, aşa că nu veţi obţine soluţie în aceste cazuri extreme (de exemplu, dacă aveţi 3 lecţii şi un profesor care lucrează doar 1 zi pe săptămână, şi selectaţi &apos;forţează consecutive dacă în aceeaşi zi&apos;, veţi obţine un orar imposibil. Dar acestea sunt cazuri extrem de improbabile).</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="861"/>
@@ -1242,7 +1242,7 @@ Puteţi alege distanţa minimă in zile între fiecare pereche de activităţi. 
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="560"/>
         <source>Invalid weight (percentage) for added constraint min days between activities</source>
-        <translation>Importanţă (procentaj) invalidă pentru constrângerea min zile între activităţi adaugată</translation>
+        <translation>Importanţă (procentaj) invalidă pentru constrângerea min zile între activităţi adăugată</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="568"/>
@@ -1262,12 +1262,12 @@ Puteţi alege distanţa minimă in zile între fiecare pereche de activităţi. 
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="671"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)</source>
-        <translation>1. Dacă adăugaţi &apos;forţează consecutiv dacă în aceeaşi zi&apos;, atunci cuplaţi activităţile în plus în perechi pentru a obţine un număr de activităţi egal cu numărul de zile pe săptămână. Exemplu: 7 activităţi cu durata 1 într-o săptămână cu 5 zile, atunci transformaţi în 5 activităţi cu duratele: 2,2,1,1,1 şi adăugaţi o singură activitate container cu aceste 5 componente (posibil mărind importanţa constrângerii min zile între activităţi adaugate până la 100%)</translation>
+        <translation>1. Dacă adăugaţi &apos;forţează consecutiv dacă în aceeaşi zi&apos;, atunci cuplaţi activităţile în plus în perechi pentru a obţine un număr de activităţi egal cu numărul de zile pe săptămână. Exemplu: 7 activităţi cu durata 1 într-o săptămână cu 5 zile, atunci transformaţi în 5 activităţi cu duratele: 2,2,1,1,1 şi adăugaţi o singură activitate container cu aceste 5 componente (posibil mărind importanţa constrângerii min zile între activităţi adăugate până la 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="675"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
-        <translation>2. Dacă nu adăugaţi &apos;forţează consecutive dacă în aceeaşi zi&apos;, atunci adăugaţi o activitate mai mare împărţită într-un număr de activităţi egale cu numărul de zile pe săptămână şi restul componentelor în altă activitate mai mare împărţită. De exemplu, presupunem că trebuie adăugate 7 activităţi cu durata 1 într-o săptămână de 5 zile. Adăugaţi 2 activităţi mai mari, prima împărţită în 5 activităţi cu durata 1 şi a doua împărţită în 2 activităţi cu durata 1 (posibil mărind importanţa constrângerilor min zile între activităţi adaugate pentru fiecare dintre cele 2 containere până la 100%)</translation>
+        <translation>2. Dacă nu adăugaţi &apos;forţează consecutive dacă în aceeaşi zi&apos;, atunci adăugaţi o activitate mai mare împărţită într-un număr de activităţi egale cu numărul de zile pe săptămână şi restul componentelor în altă activitate mai mare împărţită. De exemplu, presupunem că trebuie adăugate 7 activităţi cu durata 1 într-o săptămână de 5 zile. Adăugaţi 2 activităţi mai mari, prima împărţită în 5 activităţi cu durata 1 şi a doua împărţită în 2 activităţi cu durata 1 (posibil mărind importanţa constrângerilor min zile între activităţi adăugate pentru fiecare dintre cele 2 containere până la 100%)</translation>
     </message>
 </context>
 <context>
@@ -1669,7 +1669,7 @@ Puteţi alege distanţa minimă in zile între fiecare pereche de activităţi. 
     <message>
         <location filename="../src/interface/addbuildingform.cpp" line="55"/>
         <source>Building added</source>
-        <translation>Cladire adăugată</translation>
+        <translation>Clădire adăugată</translation>
     </message>
 </context>
 <context>
@@ -1794,7 +1794,7 @@ Puteţi alege distanţa minimă in zile între fiecare pereche de activităţi. 
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="272"/>
         <source>You specified max simultaneous activities to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
-        <translatorcomment>Aţi specificat max activităţi simultane să fie 0. Acest lucru nu este perfect din punct de vedere al eficienţei, deoarece puteţi folosi în loc constrângerea activitate(activităţi) sloturi de timp preferate, şi astfel să ajutaţi FET să găsească mai usor şi mai rapid un orar, cu un rezultat echivalent. Vă rugăm corectaţi.</translatorcomment>
+        <translatorcomment>Aţi specificat max activităţi simultane să fie 0. Acest lucru nu este perfect din punct de vedere al eficienţei, deoarece puteţi folosi în loc constrângerea activitate(activităţi) sloturi de timp preferate, şi astfel să ajutaţi FET să găsească mai uşor şi mai rapid un orar, cu un rezultat echivalent. Vă rugăm corectaţi.</translatorcomment>
         <translation></translation>
     </message>
     <message>
@@ -2141,7 +2141,7 @@ Puteţi alege distanţa minimă in zile între fiecare pereche de activităţi. 
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="272"/>
         <source>You specified max occupied time slots to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
-        <translation>Aţi specificat un numar maxim de sloturi ocupate fiind 0. Acest lucru nu este perfect din punct de vedere al eficienţei, pentru că puteţi folosi în loc constrângerea activitate(activităţi) sloturi de timp preferate, ajutând FET să găsească mai uşor şi mai rapid un orar, cu rezultat echivalent. Vă rog corectaţi.</translation>
+        <translation>Aţi specificat un număr maxim de sloturi ocupate fiind 0. Acest lucru nu este perfect din punct de vedere al eficienţei, pentru că puteţi folosi în loc constrângerea activitate(activităţi) sloturi de timp preferate, ajutând FET să găsească mai uşor şi mai rapid un orar, cu rezultat echivalent. Vă rog corectaţi.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="280"/>
@@ -2272,9 +2272,9 @@ Puteţi alege distanţa minimă in zile între fiecare pereche de activităţi. 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
         <translation>Aţi specificat toate activităţile. Aceasta s-ar putea să fie o mică problemă: dacă specificaţi un slot nepermis între două sloturi permise, acest slot nepermis va fi numărat ca o fereastră în orarul profesorilor şi studenţilor.
 
-Cea mai buna practica ar fi să folosiţi constrângerea timpi de pauză.
+Cea mai bună practică ar fi să folosiţi constrângerea timpi de pauză.
 
-Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineţi un orar imposibil (dacă un profesor/set de studenţi sunt constrânşi pe ferestre sau ferestre devreme şi lăsaţi un slot nepermis între 2 sloturi permise sau un slot nepermis devreme în zi şi mai multe sloturi permise dupa el, această posibilă fereastră poate fi numărată în orarul profesorilor şi studenţilor)</translation>
+Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineţi un orar imposibil (dacă un profesor/set de studenţi sunt constrânşi pe ferestre sau ferestre devreme şi lăsaţi un slot nepermis între 2 sloturi permise sau un slot nepermis devreme în zi şi mai multe sloturi permise după el, această posibilă fereastră poate fi numărată în orarul profesorilor şi studenţilor)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="292"/>
@@ -2290,11 +2290,11 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation>Aţi specificat doar profesorul. Aceasta s-ar putea să fie o mica problemă: dacă specificaţi un slot nepermis între două sloturi permise, acest slot nepermis va fi numărat ca o fereastră în orarul profesorului.
+        <translation>Aţi specificat doar profesorul. Aceasta s-ar putea să fie o mică problemă: dacă specificaţi un slot nepermis între două sloturi permise, acest slot nepermis va fi numărat ca o fereastră în orarul profesorului.
 
 Cea mai bună practică ar fi să folosiţi constrângerea profesor timpi indisponibili.
 
-Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineti orar imposibil (dacă profesorul este constrâns pe ferestre şi lăsaţi un slot nepermis între 2 sloturi permise, această posibilă fereastră poate fi numărata în orarul profesorului)</translation>
+Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineţi orar imposibil (dacă profesorul este constrâns pe ferestre şi lăsaţi un slot nepermis între 2 sloturi permise, această posibilă fereastră poate fi numărata în orarul profesorului)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="317"/>
@@ -2305,7 +2305,7 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
         <translation>Aţi specificat doar setul de studenţi. Aceasta s-ar putea să fie o mică problemă: dacă specificaţi un slot nepermis între două sloturi permise (sau un slot nepermis înainte de sloturi permise), acest slot nepermis va fi numărat ca o fereastră (sau fereastră devreme) în orarul studenţilor.
 
-Cea mai buna practică ar fi să folosiţi constrângerea set de studenţi timpi indisponibili.
+Cea mai bună practică ar fi să folosiţi constrângerea set de studenţi timpi indisponibili.
 
 Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineţi orar imposibil (dacă setul de studenţi este constrâns pe ferestre sau ferestre devreme şi lăsaţi un slot nepermis între 2 sloturi permise (sau un slot nepermis înainte de sloturi permise), această posibilă fereastră poate fi numărată în orarul studenţilor)</translation>
     </message>
@@ -2423,9 +2423,9 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
         <translation>Aţi specificat toate activităţile. Aceasta s-ar putea să fie o mică problemă: dacă specificaţi un slot nepermis între două sloturi permise, acest slot nepermis va fi numărat ca o fereastră în orarul profesorilor şi studenţilor.
 
-Cea mai buna practică ar fi să folosiţi constrângerea timpi de pauză.
+Cea mai bună practică ar fi să folosiţi constrângerea timpi de pauză.
 
-Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineţi un orar imposibil (dacă un profesor/set de studenţi sunt constrânşi pe ferestre sau ferestre devreme şi lăsaţi un slot nepermis între 2 sloturi permise sau un slot nepermis devreme în zi şi mai multe sloturi permise dupa el, această posibilă fereastră poate fi numărată în orarul profesorilor şi studenţilor)</translation>
+Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineţi un orar imposibil (dacă un profesor/set de studenţi sunt constrânşi pe ferestre sau ferestre devreme şi lăsaţi un slot nepermis între 2 sloturi permise sau un slot nepermis devreme în zi şi mai multe sloturi permise după el, această posibilă fereastră poate fi numărată în orarul profesorilor şi studenţilor)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="292"/>
@@ -2443,7 +2443,7 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
         <translation>Aţi specificat doar profesorul. Aceasta s-ar putea să fie o mică problemă: dacă specificaţi un slot nepermis între două sloturi permise, acest slot nepermis va fi numărat ca o fereastră în orarul profesorului.
 
-Cea mai buna practică ar fi să folosiţi constrângerea profesor timpi indisponibili.
+Cea mai bună practică ar fi să folosiţi constrângerea profesor timpi indisponibili.
 
 Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineţi orar imposibil (dacă profesorul este constrâns pe ferestre şi lăsaţi un slot nepermis între 2 sloturi permise, această posibilă fereastră poate fi numărată în orarul profesorului)</translation>
     </message>
@@ -3348,7 +3348,7 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="218"/>
         <source>Select this if you want this constraint not to be unlockable from the &apos;Timetable&apos; menu (recommended). You can always remove this constraint from the constraints dialogs or uncheck &quot;permanently locked&quot; checkbox by editing this constraint</source>
-        <translation>Selectaţi aceasta dacă vreţi ca această constrângere să nu fie deblocabilă din meniul &apos;Orar&apos; (recomandat). Puteţi oricând să ştergeti această constrângere din dialogul constrângerilor sau să deselectaţi căsuţa „permanent blocată” prin editarea acestei constrângeri</translation>
+        <translation>Selectaţi aceasta dacă vreţi ca această constrângere să nu fie deblocabilă din meniul &apos;Orar&apos; (recomandat). Puteţi oricând să ştergeţi această constrângere din dialogul constrângerilor sau să deselectaţi căsuţa „permanent blocată” prin editarea acestei constrângeri</translation>
     </message>
 </context>
 <context>
@@ -4065,7 +4065,7 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="204"/>
         <source>You want to add a constraint min days between activities for more activities than the number of days per week. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
-        <translation>Doriţi să adăugaţi o constrângere min zile între activităţi pentru mai multe activităţi decât numărul de zile pe saptămâna. Aceasta este o practică foarte proastă din punctul de vedere al operaţiunii algoritmului (încetineşte generarea şi face soluţia mai greu de găsit).</translation>
+        <translation>Doriţi să adăugaţi o constrângere min zile între activităţi pentru mai multe activităţi decât numărul de zile pe săptămână. Aceasta este o practică foarte proastă din punctul de vedere al operaţiunii algoritmului (încetineşte generarea şi face soluţia mai greu de găsit).</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="207"/>
@@ -4075,12 +4075,12 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="210"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)</source>
-        <translation>1. Dacă adăugaţi &apos;forţeaza consecutiv dacă în aceeaşi zi&apos;, atunci cuplaţi activităţile în plus în perechi pentru a obţine un număr de activităţi egal cu numărul de zile pe săptămână. Exemplu: 7 activităţi cu durata 1 într-o săptămână cu 5 zile, atunci transformaţi în 5 activităţi cu duratele: 2,2,1,1,1 şi adăugaţi o singură activitate container cu aceste 5 componente (posibil mărind importanţa constrângerii min zile între activităţi adăugate până la 100%)</translation>
+        <translation>1. Dacă adăugaţi &apos;forţează consecutiv dacă în aceeaşi zi&apos;, atunci cuplaţi activităţile în plus în perechi pentru a obţine un număr de activităţi egal cu numărul de zile pe săptămână. Exemplu: 7 activităţi cu durata 1 într-o săptămână cu 5 zile, atunci transformaţi în 5 activităţi cu duratele: 2,2,1,1,1 şi adăugaţi o singură activitate container cu aceste 5 componente (posibil mărind importanţa constrângerii min zile între activităţi adăugate până la 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="216"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
-        <translation>2. Dacă nu adăugaţi &apos;forţeaza consecutive dacă în aceeaşi zi&apos;, atunci adăugaţi o activitate mai mare împărţită într-un număr de activităţi egale cu numărul de zile pe săptămână şi restul componentelor în altă activitate mai mare împarţită. De exemplu, presupunem că trebuie adăugate 7 activităţi cu durata 1 într-o săptămână de 5 zile. Adăugaţi 2 activităţi mai mari, prima împarţită în 5 activităţi cu durata 1 şi a doua împarţită în 2 activităţi cu durata 1 (posibil mărind importanţa constrângerilor min zile între activităţi adăugate pentru fiecare dintre cele 2 containere până la 100%)</translation>
+        <translation>2. Dacă nu adăugaţi &apos;forţează consecutive dacă în aceeaşi zi&apos;, atunci adăugaţi o activitate mai mare împărţită într-un număr de activităţi egale cu numărul de zile pe săptămână şi restul componentelor în altă activitate mai mare împărţită. De exemplu, presupunem că trebuie adăugate 7 activităţi cu durata 1 într-o săptămână de 5 zile. Adăugaţi 2 activităţi mai mari, prima împărţită în 5 activităţi cu durata 1 şi a doua împărţită în 2 activităţi cu durata 1 (posibil mărind importanţa constrângerilor min zile între activităţi adăugate pentru fiecare dintre cele 2 containere până la 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform.cpp" line="224"/>
@@ -4480,7 +4480,7 @@ zi, forţează consecutive</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform.cpp" line="91"/>
         <source>Constraint added:</source>
-        <translation>Constrângere adaugată:</translation>
+        <translation>Constrângere adăugată:</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform.cpp" line="94"/>
@@ -4547,7 +4547,7 @@ zi, forţează consecutive</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="79"/>
         <source>Constraint NOT added - please report error</source>
-        <translation>Constrângere NEadaugată - vă rog raportaţi eroarea</translation>
+        <translation>Constrângere NEadăugată - vă rog raportaţi eroarea</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp" line="76"/>
@@ -4586,7 +4586,7 @@ zi, forţează consecutive</translation>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="32"/>
         <source>This represents the maximum allowed beginnings at the second available hour (in a week). You might want to allow your students to begin in some days later, at the second available hour, so you might put &quot;max beginnings at second hour&quot; greater than 0 (the timetable will be easier for FET). Default 0 is given for students which need to begin all classes at the first available hour. You might want to choose a greater value and lower it as you find new timetables</source>
-        <translation>Aceasta reprezintă maximum permis de începeri la a doua oră disponibilă (pe săptămână). Poate veţi vrea să permiteţi studeţilor să înceapa mai târziu în câteva zile, la a doua oră disponibilă, aşa că veţi putea pune „max începeri la ora a doua” mai mare ca 0 (orarul va fi mai uşor pentru FET). Valoarea 0 este implicită pentru studenţii care trebuie să înceapă toate clasele la prima oră disponibilă. Poate veţi vrea să alegeţi o valoare mai mare şi să o scădeţi când gasiti orare noi</translation>
+        <translation>Aceasta reprezintă maximum permis de începeri la a doua oră disponibilă (pe săptămână). Poate veţi vrea să permiteţi studenţilor să înceapă mai târziu în câteva zile, la a doua oră disponibilă, aşa că veţi putea pune „max începeri la ora a doua” mai mare ca 0 (orarul va fi mai uşor pentru FET). Valoarea 0 este implicită pentru studenţii care trebuie să înceapă toate clasele la prima oră disponibilă. Poate veţi vrea să alegeţi o valoare mai mare şi să o scădeţi când găsiţi orare noi</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="70"/>
@@ -4851,7 +4851,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
         <translation>Trebuie să folosiţi importanţa procentuală 100%
 Notă: set de studenţi indisponibil şi pauză nu sunt socotite ferestre.
 
-IMPORTANT: daca vreţi 0 ferestre în total, este puternic recomandat să NU folosiţi această constrângere, ci folosiţi în loc mai sigura/mai buna constrângere max ferestre pe săptămână.</translation>
+IMPORTANT: dacă vreţi 0 ferestre în total, este puternic recomandat să NU folosiţi această constrângere, ci folosiţi în loc mai sigura/mai buna constrângere max ferestre pe săptămână.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxgapsperdayform_template.ui" line="67"/>
@@ -5170,7 +5170,7 @@ Notă: set de studenţi indisponibil şi pauzele nu sunt numărate ca ferestre.<
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="105"/>
         <source>Advanced usage is not enabled. To be able to select &apos;Allow empty days&apos; for the constraints of type min hours daily for students, you must enable the option from the Settings-&gt;Advanced menu.</source>
         <comment>&apos;Allow empty days&apos; is an option which the user can enable and then he can select it.</comment>
-        <translation>Utilizarea avansată nu este activată. Pentru a putea selecta &apos;Permite zile libere&apos; pentru constrâgerile de tip min ore zilnic pentru studenţi, trebuie să activaţi opţiunea din meniul Setări-&gt;Avansat.</translation>
+        <translation>Utilizarea avansată nu este activată. Pentru a putea selecta &apos;Permite zile libere&apos; pentru constrângerile de tip min ore zilnic pentru studenţi, trebuie să activaţi opţiunea din meniul Setări-&gt;Avansat.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsminhoursdailyform.cpp" line="111"/>
@@ -5449,14 +5449,14 @@ Notă: set de studenţi indisponibil şi pauzele nu sunt numărate ca ferestre.<
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="32"/>
         <source>This represents the maximum allowed beginnings at the second available hour (in a week). You might want to allow your students to begin in some days later, at the second available hour, so you might put &quot;max beginnings at second hour&quot; greater than 0 (the timetable will be easier for FET). Default 0 is given for students which need to begin all classes at the first available hour. You might want to choose a greater value and lower it as you find new timetables</source>
-        <translation>Aceasta reprezintă maximum permis de începeri la a doua oră disponibilă (pe săptămână). Poate veţi vrea să permiteţi studenţilor să înceapă mai târziu în câteva zile, la a doua oră disponibilă, aşa că veţi putea pune „max începeri la ora a doua” mai mare ca 0 (orarul va fi mai uşor pentru FET). Valoarea 0 este implicită pentru studenţii care trebuie să inceapă toate clasele la prima oră disponibilă. Poate veţi vrea să alegeţi o valoare mai mare şi să o scadeţi când gasiţi orare noi</translation>
+        <translation>Aceasta reprezintă maximum permis de începeri la a doua oră disponibilă (pe săptămână). Poate veţi vrea să permiteţi studenţilor să înceapă mai târziu în câteva zile, la a doua oră disponibilă, aşa că veţi putea pune „max începeri la ora a doua” mai mare ca 0 (orarul va fi mai uşor pentru FET). Valoarea 0 este implicită pentru studenţii care trebuie să înceapă toate clasele la prima oră disponibilă. Poate veţi vrea să alegeţi o valoare mai mare şi să o scădeţi când găsiţi orare noi</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="70"/>
         <source>You have to use weight percentage 100%, because otherwise you will get poor timetables. Currently, the algorithm only accepts 100% weight percentage for this constraint (or no constraint).
 Note: students set not available and break are not counted as gaps (early gaps).</source>
         <translation>Trebuie să folosiţi importanţa procentuală 100%, deoarece altfel veţi obţine orare slabe. În prezent, algoritmul acceptă doar 100% importanţă pentru această constrângere (sau fără constrângere).
-Notă: set de studenţi indisponibil şi pauzele nu sunt numarate ca ferestre (ferestre „devreme”).</translation>
+Notă: set de studenţi indisponibil şi pauzele nu sunt numărate ca ferestre (ferestre „devreme”).</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="173"/>
@@ -5653,7 +5653,7 @@ Notă: set de studenţi indisponibil şi pauzele nu sunt numarate ca ferestre (f
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="143"/>
         <source>End hour invalid</source>
-        <translation>Oră de sfarşit invalidă</translation>
+        <translation>Oră de sfârşit invalidă</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform.cpp" line="148"/>
@@ -5707,7 +5707,7 @@ Notă: set de studenţi indisponibil şi pauzele nu sunt numarate ca ferestre (f
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="164"/>
         <source>Interval end hour</source>
-        <translation>Interval oră de sfarşit</translation>
+        <translation>Interval oră de sfârşit</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetintervalmaxdaysperweekform_template.ui" line="200"/>
@@ -6271,7 +6271,7 @@ Notă: set de studenţi indisponibil şi pauzele nu sunt numărate ca ferestre.<
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="137"/>
         <source>Advanced usage is not enabled. To be able to select &apos;Allow empty days&apos; for the constraints of type min hours daily for students, you must enable the option from the Settings-&gt;Advanced menu.</source>
         <comment>&apos;Allow empty days&apos; is an option which the user can enable and then he can select it.</comment>
-        <translation>Utilizarea avansată nu este activată. Pentru a putea selecta &apos;Permite zile libere&apos; pentru constrâgerile de tip min ore zilnic pentru studenţi, trebuie să activaţi opţiunea din meniul Setări-&gt;Avansat.</translation>
+        <translation>Utilizarea avansată nu este activată. Pentru a putea selecta &apos;Permite zile libere&apos; pentru constrângerile de tip min ore zilnic pentru studenţi, trebuie să activaţi opţiunea din meniul Setări-&gt;Avansat.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="143"/>
@@ -6281,7 +6281,7 @@ Notă: set de studenţi indisponibil şi pauzele nu sunt numărate ca ferestre.<
     <message>
         <location filename="../src/interface/addconstraintstudentssetminhoursdailyform.cpp" line="140"/>
         <source>Explanation: only select this option if your institution allows empty days for students and a timetable is possible with empty days for students. Otherwise, it is IMPERATIVE (for performance reasons) to not select this option (or FET may not be able to find a timetable).</source>
-        <translation>Explicaţie: selectaţi această opţiune doar dacă instituţia dvs. permite zile libere pentru studenţi şi un orar este posibil cu zile libere pentru studenţi. Altfel, este IMPERATIV (pentru motivul de performanţă) să nu selectaţi această opţiune (sau FET se poate să nu gasească un orar).</translation>
+        <translation>Explicaţie: selectaţi această opţiune doar dacă instituţia dvs. permite zile libere pentru studenţi şi un orar este posibil cu zile libere pentru studenţi. Altfel, este IMPERATIV (pentru motivul de performanţă) să nu selectaţi această opţiune (sau FET se poate să nu găsească un orar).</translation>
     </message>
 </context>
 <context>
@@ -6346,7 +6346,7 @@ Notă: set de studenţi indisponibil şi pauzele nu sunt numărate ca ferestre.<
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="234"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same students set. Please edit that one</source>
-        <translation>Constrângere NE-adăugată - trebuie că există altă constrâgere de acest tip care se referă la acelaşi set de studenţi. Vă rog editaţi pe aceea</translation>
+        <translation>Constrângere NE-adăugată - trebuie că există altă constrângere de acest tip care se referă la acelaşi set de studenţi. Vă rog editaţi pe aceea</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="244"/>
@@ -7677,7 +7677,7 @@ Notă: set de studenţi indisponibil şi pauzele nu sunt numărate ca ferestre.<
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="32"/>
         <source>You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per day and lower it as you find new timetables. The default 1 given here might be too low for your school, in which case you need to use higher values.
 Note: teacher not available and break are not counted as gaps.</source>
-        <translation>Trebuie să folosiţi importanţa procentuală 100%, pentru că altfel veţi obţine orare proaste. Încercati să fixaţi întâi o valoare mare pentru max ferestre pe zi şi apoi să o micşoraţi când găsiţi orare noi. Valoarea 1 implicită poate fi prea mica pentru şcoala dvs., în care caz va trebui să folosiţi valori mai mari.
+        <translation>Trebuie să folosiţi importanţa procentuală 100%, pentru că altfel veţi obţine orare proaste. Încercaţi să fixaţi întâi o valoare mare pentru max ferestre pe zi şi apoi să o micşoraţi când găsiţi orare noi. Valoarea 1 implicită poate fi prea mică pentru şcoala dvs., în care caz va trebui să folosiţi valori mai mari.
 Notă: profesor indisponibil şi pauzele nu sunt socotite ca ferestre.</translation>
     </message>
     <message>
@@ -7755,7 +7755,7 @@ Notă: profesor indisponibil şi pauzele nu sunt socotite ca ferestre.</translat
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="32"/>
         <source>You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per week and lower it as you find new timetables. The default 3 given here might be too low for your school, in which case you need to use higher values.
 Note: teacher not available and break are not counted as gaps.</source>
-        <translation>Trebuie să folosiţi importanţa procentuală 100%, pentru că altfel veţi obţine orare proaste. Încercaţi să fixaţi întâi o valoare mare pentru max ferestre pe săptămână şi apoi să o micşorati când găsiţi orare noi. Valoarea 3 implicită poate fi prea mică pentru şcoala dvs., în care caz va trebui să folosiţi valori mai mari.
+        <translation>Trebuie să folosiţi importanţa procentuală 100%, pentru că altfel veţi obţine orare proaste. Încercaţi să fixaţi întâi o valoare mare pentru max ferestre pe săptămână şi apoi să o micşoraţi când găsiţi orare noi. Valoarea 3 implicită poate fi prea mică pentru şcoala dvs., în care caz va trebui să folosiţi valori mai mari.
 Notă: profesor indisponibil şi pauzele nu sunt socotite ca ferestre.</translation>
     </message>
     <message>
@@ -8229,7 +8229,7 @@ Notă: profesor indisponibil şi pauzele nu sunt socotite ca ferestre.</translat
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="26"/>
         <source>Note: this constraint does not induce gaps for teachers. If a teacher has lessons before and after a not available period, there will be no gaps counted</source>
-        <translation>Notă: această constrângere nu induce ferestre pentru profesori. Dacă un profesor are lecţii înainte şi după o perioadă „indisponibil”, nu vor fi numarate ferestre</translation>
+        <translation>Notă: această constrângere nu induce ferestre pentru profesori. Dacă un profesor are lecţii înainte şi după o perioadă „indisponibil”, nu vor fi numărate ferestre</translation>
     </message>
 </context>
 <context>
@@ -8682,7 +8682,7 @@ Notă: profesor indisponibil şi pauzele nu sunt socotite ca ferestre.</translat
         <location filename="../src/interface/addconstraintteachersmaxgapsperdayform_template.ui" line="32"/>
         <source>It is recommended to use only one constraint of this type. You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per day and lower it as you find new timetables. The default given here, 1, might be too low for your school and you might need to use higher values.
 Note: teacher not available and break are not counted as gaps.</source>
-        <translation>Este recomandat să folosiţi doar o singura constrângere de acest tip. Trebuie să folosiţi importanţa 100%, altfel veţi obţine orare proaste. Încercaţi să fixaţi o valoare mare pentru max ferestre şi să o micşoraţi când obţineţi noi orare. Valoarea implicită 1 poate fi prea mică pentru şcoala dvs. şi poate va trebui să folosiţi valori mai mari.
+        <translation>Este recomandat să folosiţi doar o singură constrângere de acest tip. Trebuie să folosiţi importanţa 100%, altfel veţi obţine orare proaste. Încercaţi să fixaţi o valoare mare pentru max ferestre şi să o micşoraţi când obţineţi noi orare. Valoarea implicită 1 poate fi prea mică pentru şcoala dvs. şi poate va trebui să folosiţi valori mai mari.
 Notă: profesor indisponibil şi pauzele nu sunt socotite ferestre.</translation>
     </message>
     <message>
@@ -8760,7 +8760,7 @@ Notă: profesor indisponibil şi pauzele nu sunt socotite ferestre.</translation
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="32"/>
         <source>It is recommended to use only one constraint of this type. You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per week and lower it as you find new timetables. The default given here, 3, might be too low for your school and you might need to use higher values.
 Note: teacher not available and break are not counted as gaps.</source>
-        <translation>Este recomandat să folosiţi doar o singură constrângere de acest tip. Trebuie să folosiţi importanţa 100%, altfel veţi obţine orare proaste. Încercaţi să fixaţi o valoare mare pentru max ferestre şi să o micşoraţi când obţineţi noi orare. Valoarea implicită 3 poate fi prea mica pentru şcoala dvs. şi poate va trebui să folosiţi valori mai mari.
+        <translation>Este recomandat să folosiţi doar o singură constrângere de acest tip. Trebuie să folosiţi importanţa 100%, altfel veţi obţine orare proaste. Încercaţi să fixaţi o valoare mare pentru max ferestre şi să o micşoraţi când obţineţi noi orare. Valoarea implicită 3 poate fi prea mică pentru şcoala dvs. şi poate va trebui să folosiţi valori mai mari.
 Notă: profesor indisponibil şi pauzele nu sunt socotite ferestre.</translation>
     </message>
     <message>
@@ -9020,7 +9020,7 @@ Notă: profesor indisponibil şi pauzele nu sunt socotite ferestre.</translation
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform.cpp" line="76"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for the teachers, please use the constraint teachers min days per week</source>
-        <translation>Check box-ul permite zile libere trebuie să fie selectat. Daca aveţi nevoie să nu permiteţi zile libere pentru profesori, vă rugăm folosiţi constrângerea profesori min zile pe săptămână</translation>
+        <translation>Check box-ul permite zile libere trebuie să fie selectat. Dacă aveţi nevoie să nu permiteţi zile libere pentru profesori, vă rugăm folosiţi constrângerea profesori min zile pe săptămână</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform.cpp" line="88"/>
@@ -9035,7 +9035,7 @@ Notă: profesor indisponibil şi pauzele nu sunt socotite ferestre.</translation
     <message>
         <location filename="../src/interface/addconstraintteachersminhoursdailyform.cpp" line="102"/>
         <source>This check box must remain checked. If you really need to not allow empty days for the teachers, please use constraint teachers min days per week</source>
-        <translation>Acest check-box trebuie să ramână selectat. Daca chiar aveţi nevoie să nu permiteţi zile libere pentru profesori, vă rugăm folosiţi constrângerea profesori min zile pe săptămână</translation>
+        <translation>Acest check-box trebuie să rămână selectat. Dacă chiar aveţi nevoie să nu permiteţi zile libere pentru profesori, vă rugăm folosiţi constrângerea profesori min zile pe săptămână</translation>
     </message>
 </context>
 <context>
@@ -9621,7 +9621,7 @@ Notă: profesor indisponibil şi pauzele nu sunt socotite ferestre.</translation
     <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="83"/>
         <source>Note: the number of students for the added group will be the number of students of the already existing group (you can modify the number of students in the modify group dialog).</source>
-        <translation>Notă: numărul de studenţi pentru grupul adăugat va fi numărul de studenţi al grupului deja existent (puteti să modificaţi numărul de studenţi în dialogul modificare grup).</translation>
+        <translation>Notă: numărul de studenţi pentru grupul adăugat va fi numărul de studenţi al grupului deja existent (puteţi să modificaţi numărul de studenţi în dialogul modificare grup).</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="85"/>
@@ -9824,9 +9824,9 @@ Notă: profesor indisponibil şi pauzele nu sunt socotite ferestre.</translation
         <source>Year added. You might want to divide it into sections - this is done in the years dialog - button &apos;Divide year ...&apos;, or by manually adding groups and subgroups in the groups or subgroups menus
 
  Important note: if you plan to use option &apos;divide&apos;, please try to use it only once for each year at the beginning, because a second use of option &apos;divide&apos; for the same year will remove all activities and constraints referring to old groups and subgroups from this year.</source>
-        <translation>An adăugat. Poate veţi dori să îl impărţiţi în secţii - aceasta se face în dialogul ani - butonul &apos;Împarte an...&apos;, sau prin adăugare manuală de grupuri şi subgrupuri în meniul grupuri sau subgrupuri￼
+        <translation>An adăugat. Poate veţi dori să îl împărţiţi în secţii - aceasta se face în dialogul ani - butonul &apos;Împarte an...&apos;, sau prin adăugare manuală de grupuri şi subgrupuri în meniul grupuri sau subgrupuri
 
-￼ Notă importantă: dacă planificaţi să utilizaţi opţiunea &apos;divide&apos;, vă rog încercaţi să o folosiţi doar o dată pentru fiecare an la început, deoarece a doua folosire a acestei facilităţi pentru acelaşi an va şterge toate activităţile şi constrângerile care se referă la vechile grupuri şi subgrupuri din acest an.</translation>
+ Notă importantă: dacă planificaţi să utilizaţi opţiunea &apos;divide&apos;, vă rog încercaţi să o folosiţi doar o dată pentru fiecare an la început, deoarece a doua folosire a acestei facilităţi pentru acelaşi an va şterge toate activităţile şi constrângerile care se referă la vechile grupuri şi subgrupuri din acest an.</translation>
     </message>
 </context>
 <context>
@@ -10640,7 +10640,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/changemindaysselectivelyform.cpp" line="116"/>
         <source>Old n_acts must be -1 or &gt;=1</source>
-        <translation>Vechiul numar n_activităţi trebuie să fie -1 sau &gt;=1</translation>
+        <translation>Vechiul număr n_activităţi trebuie să fie -1 sau &gt;=1</translation>
     </message>
 </context>
 <context>
@@ -11558,7 +11558,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="302"/>
         <source>To use this constraint, you need to specify a set of activities and the maximum number of different rooms which can be occupied by these activities. Note that each activity can take place in a single room, and a single room can hold a single activity at a certain moment. This constraint may be used for instance to constrain all activities of type Physics of a certain students set to be in the same room throughout the week, by adding all Physics activities for this students set and making max different rooms = 1.</source>
-        <translation>Pentru a folosi această constrângere, trebuie să specificaţi un set de activităţi şi numărul maxim de săli diferite care pot fi ocupate de aceste activităţi. Luaţi aminte că fiecare activitate poate avea loc într-o singură sală, şi o singurăă sală poate ţine o singură activitate la un moment dat. Această constrângere poate fi folosită de exemplu să constrângeţi toate activităţile de tip fizică ale unui set de studenţi specificat să fie în aceeaşi sală de-a lungul săptămânii, adăugând toate activităţile fizică pentru acest set de studenţi şi setând max săli diferite = 1.</translation>
+        <translation>Pentru a folosi această constrângere, trebuie să specificaţi un set de activităţi şi numărul maxim de săli diferite care pot fi ocupate de aceste activităţi. Luaţi aminte că fiecare activitate poate avea loc într-o singură sală, şi o singură sală poate ţine o singură activitate la un moment dat. Această constrângere poate fi folosită de exemplu să constrângeţi toate activităţile de tip fizică ale unui set de studenţi specificat să fie în aceeaşi sală de-a lungul săptămânii, adăugând toate activităţile fizică pentru acest set de studenţi şi setând max săli diferite = 1.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="307"/>
@@ -11577,7 +11577,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="26"/>
         <source>IMPORTANT: Please be careful with this constraint, because the generation may become too slow or impossible if you overuse it. Press Help for more details.</source>
-        <translation>IMPORTANT: Vă rugăm fiţi atent cu această constrângere, deoarece generarea ar putea să devină prea lentă sau imposibilă daca o folosiţi excesiv. Apasaţi Ajutor pentru mai multe detalii.</translation>
+        <translation>IMPORTANT: Vă rugăm fiţi atent cu această constrângere, deoarece generarea ar putea să devină prea lentă sau imposibilă dacă o folosiţi excesiv. Apăsaţi Ajutor pentru mai multe detalii.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="44"/>
@@ -12541,7 +12541,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform.cpp" line="184"/>
         <source>IMPORTANT: after adding such constraints, it is necessary (otherwise generation might be impossible) to remove redundant constraints min days between activities. If you are sure that you don&apos;t have redundant constraints, you can skip this step, but it doesn&apos;t hurt to do it as a precaution. Also, you don&apos;t have to do that after each added constraint, but only once after adding more constraints of this type. Please read Help/Important tips - tip number 2 for details</source>
-        <translation>IMPORTANT: după ce adăugaţi asemenea constrângeri, este necesar (altfel generarea s-ar putea să fie imposibilă) să ştergeţi constrângerile redundante min zile între activităţi. Dacă sunteţi sigur că nu aveţi constrângeri redundante, puteţi să săriţi peste acest pas, dar nu strică să îl faceţi ca o precauţie. De asemenea, nu trebuie să faceţi aceasta după fiecare constrângere adăugată, ci doar o dată dupa ce aţi adăugat mai multe constrângeri de acest tip. Vă rugăm citiţi Ajutor/Sfaturi importante - sfatul numărul 2 pentru detalii</translation>
+        <translation>IMPORTANT: după ce adăugaţi asemenea constrângeri, este necesar (altfel generarea s-ar putea să fie imposibilă) să ştergeţi constrângerile redundante min zile între activităţi. Dacă sunteţi sigur că nu aveţi constrângeri redundante, puteţi să săriţi peste acest pas, dar nu strică să îl faceţi ca o precauţie. De asemenea, nu trebuie să faceţi aceasta după fiecare constrângere adăugată, ci doar o dată după ce aţi adăugat mai multe constrângeri de acest tip. Vă rugăm citiţi Ajutor/Sfaturi importante - sfatul numărul 2 pentru detalii</translation>
     </message>
 </context>
 <context>
@@ -12590,7 +12590,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="32"/>
         <source>Please try to read Help/Important tips, advice 2). It is IMPORTANT to remove redundant min days constraints after adding constraints same starting day. Please also click Help button here for information.</source>
-        <translation>Vă rog încercati să citiţi Ajutor/Sfaturi importante, sfatul 2). Este IMPORTANT să ştergeţi constrângerile redundante min zile după ce adăugaţi constrângeri aceeaşi zi de început. Vă rog de asemenea apăsaţi butonul Ajutor de aici pentru informaţii.</translation>
+        <translation>Vă rog încercaţi să citiţi Ajutor/Sfaturi importante, sfatul 2). Este IMPORTANT să ştergeţi constrângerile redundante min zile după ce adăugaţi constrângeri aceeaşi zi de început. Vă rog de asemenea apăsaţi butonul Ajutor de aici pentru informaţii.</translation>
     </message>
 </context>
 <context>
@@ -13153,7 +13153,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="780"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation>Contrângerea următoare este greşita:
+        <translation>Constrângerea următoare este greşita:
 %1</translation>
     </message>
     <message>
@@ -13363,7 +13363,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1030"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation>Contrângerea următoare este greşită:
+        <translation>Constrângerea următoare este greşită:
 %1</translation>
     </message>
     <message>
@@ -14355,7 +14355,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3500"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation>Contrângerea următoare este greşită:
+        <translation>Constrângerea următoare este greşită:
 %1</translation>
     </message>
     <message>
@@ -14542,12 +14542,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="168"/>
         <source>The basic space constraints try to avoid:</source>
-        <translation>Constrângerile de bază spaţiu încearca să evite:</translation>
+        <translation>Constrângerile de bază spaţiu încearcă să evite:</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="169"/>
         <source>rooms assigned to more than one activity simultaneously</source>
-        <translation>săli alocate mai multor activitaţi, simultan</translation>
+        <translation>săli alocate mai multor activităţi, simultan</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="170"/>
@@ -14635,7 +14635,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="158"/>
         <source>Do you really want to remove the basic compulsory space constraint?</source>
-        <translation>Vreţi într-adevar să ştergeţi constrângerea de bază obligatorie de spaţiu?</translation>
+        <translation>Vreţi într-adevăr să ştergeţi constrângerea de bază obligatorie de spaţiu?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsoryspaceform.cpp" line="160"/>
@@ -14718,7 +14718,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="199"/>
         <source>The basic time constraints try to avoid:</source>
-        <translation>Constrângerile de bază temporale încearca să evite:</translation>
+        <translation>Constrângerile de bază temporale încearcă să evite:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="200"/>
@@ -14825,7 +14825,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="160"/>
         <source>Do you really want to remove the basic compulsory time constraint?</source>
-        <translation>Vreţi într-adevar să ştergeţi constrângerea de bază obligatorie de timp?</translation>
+        <translation>Vreţi într-adevăr să ştergeţi constrângerea de bază obligatorie de timp?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbasiccompulsorytimeform.cpp" line="162"/>
@@ -15199,7 +15199,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform.cpp" line="299"/>
         <source>This constraint was suggested for the following situation: a user needed that activities A1, A2 and A3 to be in follower days (like: A1 on Tuesday, A2 on Wednesday and A3 on Thursday. So, they must be in 3 consecutive days). This is simple: add a constraint max days between activities for A1, A2 and A3, with max 2 days between them. It is supposed that these activities are constrained not to be in the same day by a constraint min days between activities.</source>
-        <translation>Această constrângere a fost sugerată pentru situaţia următoare: un utilizator are nevoie ca activităţile A1, A2 si A3 să fie în zile următoare (ca: A1 marti, A2 miercuri şi A3 joi. Ele trebuie să fie în 3 zile consecutive). Aceasta este simplu: adăugaţi o constrângere max zile între activităţi pentru A1, A2 şi A3, cu max 2 zile între ele. Este presupus că activităţile aceastea sunt constrânse să nu fie în aceeaşi zi printr-o constrângere min zile între activităţi.</translation>
+        <translation>Această constrângere a fost sugerată pentru situaţia următoare: un utilizator are nevoie ca activităţile A1, A2 si A3 să fie în zile următoare (ca: A1 marţi, A2 miercuri şi A3 joi. Ele trebuie să fie în 3 zile consecutive). Aceasta este simplu: adăugaţi o constrângere max zile între activităţi pentru A1, A2 şi A3, cu max 2 zile între ele. Este presupus că activităţile acestea sunt constrânse să nu fie în aceeaşi zi printr-o constrângere min zile între activităţi.</translation>
     </message>
 </context>
 <context>
@@ -15609,7 +15609,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2536"/>
         <source>Minimum gaps between activities (if activities on the same day)</source>
-        <translation>Minimum de ferestre între activităţi (dacă activitaţile sunt în aceeaşi zi)</translation>
+        <translation>Minimum de ferestre între activităţi (dacă activităţile sunt în aceeaşi zi)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2537"/>
@@ -15697,7 +15697,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform.cpp" line="296"/>
         <source>Please make sure that the selected activities are not forced to be consecutive by some other constraint &apos;min days between activities&apos; (with &apos;consecutive if same day&apos; true), by a constraint &apos;two activities consecutive&apos;, or by a constraint &apos;two activities grouped&apos; (also, if you have a constraint &apos;three activities grouped&apos; related to the selected activities, make sure that the constraints do not contradict).</source>
-        <translation>Vă rog să verificaţi că activităţile selectate nu sunt forţate să fie consecutive de o altă constrângere &apos;min zile între activităţi&apos; (cu &apos;consecutive dacă în aceeaşi zi&apos; adevarat), de o constrângere &apos;două activităţi consecutive&apos;, sau de o constrângere &apos;două activităţi grupate&apos; (de asemenea, dacă aveţi o constrângere &apos;trei activităţi grupate&apos; în legatură cu activităţile selectate, verificaţi ca constrângerile nu se contrazic).</translation>
+        <translation>Vă rog să verificaţi că activităţile selectate nu sunt forţate să fie consecutive de o altă constrângere &apos;min zile între activităţi&apos; (cu &apos;consecutive dacă în aceeaşi zi&apos; adevărat), de o constrângere &apos;două activităţi consecutive&apos;, sau de o constrângere &apos;două activităţi grupate&apos; (de asemenea, dacă aveţi o constrângere &apos;trei activităţi grupate&apos; în legătură cu activităţile selectate, verificaţi ca constrângerile nu se contrazic).</translation>
     </message>
 </context>
 <context>
@@ -15766,7 +15766,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="42"/>
         <source>Note: please click Help for important advice</source>
-        <translation>Notă: vă rog apasaţi Ajutor pentru sfaturi importante</translation>
+        <translation>Notă: vă rog apăsaţi Ajutor pentru sfaturi importante</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="168"/>
@@ -17018,7 +17018,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="26"/>
         <source>IMPORTANT: this constraint is not perfectly optimized. Press Help button for more information. Use with caution, as explained.</source>
-        <translation>IMPORTANT: această constrângere nu este perfect optimizată. Apasaţi butonul Ajutor pentru informaţie. Folosiţi cu precauţie, cum a fost explicat.</translation>
+        <translation>IMPORTANT: această constrângere nu este perfect optimizată. Apăsaţi butonul Ajutor pentru informaţie. Folosiţi cu precauţie, cum a fost explicat.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxgapsperdayform_template.ui" line="44"/>
@@ -17535,7 +17535,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5204"/>
         <source>Space constraint students min gaps between building changes broken for students=%1 on day %2</source>
-        <translation>Constrângere de spaţiu studenţi min ferestre între schimbări de cladire nerespectată pentru studenţii=%1 în ziua %2</translation>
+        <translation>Constrângere de spaţiu studenţi min ferestre între schimbări de clădire nerespectată pentru studenţii=%1 în ziua %2</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="5208"/>
@@ -17761,7 +17761,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="26"/>
         <source>IMPORTANT: allow empty days for students is a nonstandard option. Only select it if your institution permits that and if a timetable with empty days for students exists. Otherwise do not  select it, for a good performance of generation. Press Help button for more information.</source>
-        <translation>IMPORTANT: permite zile libere pentru studenţi este o opţiune nestandard. Selectaţi doar dacă instituţia dvs. permite aceasta şi dacă un orar cu zile libere pentru studenţi există. Altfel nu selectaţi, pentru o buna performanţă a generării. Apăsaţi butonul Ajutor pentru mai multe informaţii.</translation>
+        <translation>IMPORTANT: permite zile libere pentru studenţi este o opţiune nestandard. Selectaţi doar dacă instituţia dvs. permite aceasta şi dacă un orar cu zile libere pentru studenţi există. Altfel nu selectaţi, pentru o bună performanţă a generării. Apăsaţi butonul Ajutor pentru mai multe informaţii.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsminhoursdailyform_template.ui" line="61"/>
@@ -18212,7 +18212,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6589"/>
         <source>Constraint students set early max %1 beginnings at second hour broken for subgroup %2, on day %3, because students have an illegal gap, increases conflicts total by %4</source>
-        <translation>Constrângere set de studenţi devreme max %1 începeri la ora a doua nerespectată pentru subgrupul %2, în ziua %3, pentru că studenţii au o fereastră ilegală, mareşte conflictele totale cu %4</translation>
+        <translation>Constrângere set de studenţi devreme max %1 începeri la ora a doua nerespectată pentru subgrupul %2, în ziua %3, pentru că studenţii au o fereastră ilegală, măreşte conflictele totale cu %4</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6614"/>
@@ -18469,7 +18469,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="1543"/>
         <source>Following constraint is wrong:
 %1</source>
-        <translation>Contrângerea următoare este greşita:
+        <translation>Constrângerea următoare este greşita:
 %1</translation>
     </message>
     <message>
@@ -20631,22 +20631,22 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="182"/>
         <source>This constraint is used to specify that for some components of a type of activities, for instance for Mathematics activities, you need that from say 4-5 per week, at least the first 2 to start early (say in the first 4 hours).</source>
-        <translation>Această constrângere este folosită pentru a specifica că pentru nişte componente ale unui tip de activităţi, de exemplu activităţile matematică, aveţi nevoie ca din să zicem 4-5 pe săptămână, cel puţin 2 să înceapa devreme (să zicem în primele 4 ore).</translation>
+        <translation>Această constrângere este folosită pentru a specifica că pentru nişte componente ale unui tip de activităţi, de exemplu activităţile matematică, aveţi nevoie ca din să zicem 4-5 pe săptămână, cel puţin 2 să înceapă devreme (să zicem în primele 4 ore).</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="187"/>
         <source>This is simple: just add 2 constraints of this type, with the component number 1, (then 2) and the corresponding subject (you can also define teacher, students set and activity tag, of course).</source>
-        <translation>Aceasta este simplu: doar adaugaţi 2 constrângeri de acest tip, cu numărul componentei 1, (apoi 2) şi disciplina corespunzătoare (puteţi de asemenea defini profesorul, setul de studenţi şi eticheta activitate, desigur).</translation>
+        <translation>Aceasta este simplu: doar adăugaţi 2 constrângeri de acest tip, cu numărul componentei 1, (apoi 2) şi disciplina corespunzătoare (puteţi de asemenea defini profesorul, setul de studenţi şi eticheta activitate, desigur).</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="192"/>
         <source>Note: if you have Maths with 4 and 5 splits and want to constrain 2 subactivities for those with 4 per week and 3 subactivities for those with 5 per week, you can add constraints only for Maths with components 3, 4 and 5 (nice trick)</source>
-        <translation>Notă: dacă aveţi matematică cu 4 si 5 împarţiri şi doriţi să constrângeţi 2 subactivităţi pentru acelea cu 4 pe săptămână şi 3 subactivităţi pentru acelea cu 5 pe săptămână, puteţi adăuga constrângeri doar pentru matematică cu componentele 3, 4 şi 5 (truc frumos)</translation>
+        <translation>Notă: dacă aveţi matematică cu 4 si 5 împărţiri şi doriţi să constrângeţi 2 subactivităţi pentru acelea cu 4 pe săptămână şi 3 subactivităţi pentru acelea cu 5 pe săptămână, puteţi adăuga constrângeri doar pentru matematică cu componentele 3, 4 şi 5 (truc frumos)</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="195"/>
         <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say Biology splitted into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2</source>
-        <translation>Notă: dacă o activitate nu aparţine unui grup mai mare (este singură), este considerată că are numărul de împărţire 1. Ca sfat, dacă aveţi activităţi să zicem de biologie împartite în 1 sau 2 pe săptămână şi vreţi să constrângeţi doar o componentă când sunt 2 pe săptămână, adăugaţi o constrângere pentru biologie cu numărul componentei=2</translation>
+        <translation>Notă: dacă o activitate nu aparţine unui grup mai mare (este singură), este considerată că are numărul de împărţire 1. Ca sfat, dacă aveţi activităţi să zicem de biologie împărţite în 1 sau 2 pe săptămână şi vreţi să constrângeţi doar o componentă când sunt 2 pe săptămână, adăugaţi o constrângere pentru biologie cu numărul componentei=2</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="199"/>
@@ -20941,22 +20941,22 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="182"/>
         <source>This constraint is used to specify that for some components of a type of activities, for instance for Mathematics activities, you need that from say 4-5 per week, at least the first 2 to be early (say in the first 4 hours).</source>
-        <translation>Această constrângere este folosită pentru a specifica că pentru nişte componente ale unui tip de activităţi, de exemplu activităţile matematică, aveţi nevoie ca din să zicem 4-5 pe săptămână, cel puţin 2 să înceapa devreme (să zicem în primele 4 ore).</translation>
+        <translation>Această constrângere este folosită pentru a specifica că pentru nişte componente ale unui tip de activităţi, de exemplu activităţile matematică, aveţi nevoie ca din să zicem 4-5 pe săptămână, cel puţin 2 să înceapă devreme (să zicem în primele 4 ore).</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="187"/>
         <source>This is simple: just add 2 constraints of this type, with the component number 1, (then 2) and the corresponding subject (you can also define teacher, students set and activity tag, of course).</source>
-        <translation>Aceasta este simplu: doar adaugaţi 2 constrângeri de acest tip, cu numărul componentei 1, (apoi 2) şi disciplina corespunzătoare (puteţi de asemenea defini profesorul, setul de studenţi şi eticheta activitate, desigur).</translation>
+        <translation>Aceasta este simplu: doar adăugaţi 2 constrângeri de acest tip, cu numărul componentei 1, (apoi 2) şi disciplina corespunzătoare (puteţi de asemenea defini profesorul, setul de studenţi şi eticheta activitate, desigur).</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="193"/>
         <source>Note: if you have Maths with 4 and 5 splits and want to constrain 2 subactivities for those with 4 per week and 3 subactivities for those with 5 per week, you can add constraints only for Maths with components 3, 4 and 5 (nice trick)</source>
-        <translation>Notă: dacă aveţi matematică cu 4 si 5 împarţiri şi doriţi să constrângeţi 2 subactivităţi pentru acelea cu 4 pe săptămână şi 3 subactivităţi pentru acelea cu 5 pe săptămână, puteţi adăuga constrângeri doar pentru matematică cu componentele 3, 4 şi 5 (truc frumos)</translation>
+        <translation>Notă: dacă aveţi matematică cu 4 si 5 împărţiri şi doriţi să constrângeţi 2 subactivităţi pentru acelea cu 4 pe săptămână şi 3 subactivităţi pentru acelea cu 5 pe săptămână, puteţi adăuga constrângeri doar pentru matematică cu componentele 3, 4 şi 5 (truc frumos)</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="196"/>
         <source>Note: if an activity does not belong to a larger group (is a single activity), it is considered to have component number 1. As an advice, if you have activities of say Biology splitted into 1 or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2</source>
-        <translation>Notă: dacă o activitate nu aparţine unui grup mai mare (este singură), este considerată că are numărul de împărţire 1. Ca sfat, dacă aveţi activităţi să zicem de biologie împartite în 1 sau 2 pe săptămână şi vreţi să constrângeţi doar o componentă când sunt 2 pe săptămână, adăugaţi o constrângere pentru biologie cu numărul componentei=2</translation>
+        <translation>Notă: dacă o activitate nu aparţine unui grup mai mare (este singură), este considerată că are numărul de împărţire 1. Ca sfat, dacă aveţi activităţi să zicem de biologie împărţite în 1 sau 2 pe săptămână şi vreţi să constrângeţi doar o componentă când sunt 2 pe săptămână, adăugaţi o constrângere pentru biologie cu numărul componentei=2</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="200"/>
@@ -21041,7 +21041,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform_template.ui" line="26"/>
         <source>This constraint is useful to constrain only the n-th component for activities. Please click Help button for details.</source>
-        <translation>Această constrângere este folositoare pentru a constrânge doar a n-a componentă pentru activităţi. Vă rog apasaţi butonul Ajutor pentru detalii.</translation>
+        <translation>Această constrângere este folositoare pentru a constrânge doar a n-a componentă pentru activităţi. Vă rog apăsaţi butonul Ajutor pentru detalii.</translation>
     </message>
 </context>
 <context>
@@ -22385,7 +22385,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteacherhomeroomsform_template.ui" line="26"/>
         <source>Note: home rooms for a teacher means that every activity which has this and ONLY this teacher will have these home rooms. Preferred rooms override the home rooms.</source>
-        <translation>Notă: săli proprii pentru un profesor înseamna că fiecare activitate care are acest şi NUMAI acest profesor va avea pe acestea ca săli proprii. Săli preferate suprascriu sălile proprii.</translation>
+        <translation>Notă: săli proprii pentru un profesor înseamnă că fiecare activitate care are acest şi NUMAI acest profesor va avea pe acestea ca săli proprii. Săli preferate suprascriu sălile proprii.</translation>
     </message>
 </context>
 <context>
@@ -24070,7 +24070,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13797"/>
         <source>Cannot generate a timetable with a constraint teacher min hours daily with allow empty days=false. Please modify it, so that it allows empty days. If you need a facility like that, please use constraint teacher min days per week</source>
-        <translation>Nu pot genera un orar cu o constrângere profesor min ore zilnic cu permite zile libere=fals. Vă rog modificaţi-o, aşa încat să permită zile libere. Dacă aveţi nevoie de o facilitate ca aceasta, vă rugăm folosiţi constrângerea profesor min zile pe săptămână</translation>
+        <translation>Nu pot genera un orar cu o constrângere profesor min ore zilnic cu permite zile libere=fals. Vă rog modificaţi-o, aşa încât să permită zile libere. Dacă aveţi nevoie de o facilitate ca aceasta, vă rugăm folosiţi constrângerea profesor min zile pe săptămână</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13800"/>
@@ -24276,7 +24276,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="582"/>
         <source>A teacher is not available</source>
-        <translation>Un profesor nu este diponibil</translation>
+        <translation>Un profesor nu este disponibil</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="583"/>
@@ -26235,7 +26235,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13558"/>
         <source>Cannot generate a timetable with a constraint teachers min hours daily with allow empty days=false. Please modify it, so that it allows empty days. If you need a facility like that, please use constraint teachers min days per week</source>
-        <translation>Nu pot genera un orar cu o constrângere profesori min ore zilnic cu permite zile libere=fals. Vă rog modificaţi-o, aşa încat să permită zile libere. Dacă aveţi nevoie de o facilitate ca aceasta, vă rugăm folosiţi constrângerea profesori min zile pe săptămână</translation>
+        <translation>Nu pot genera un orar cu o constrângere profesori min ore zilnic cu permite zile libere=fals. Vă rog modificaţi-o, aşa încât să permită zile libere. Dacă aveţi nevoie de o facilitate ca aceasta, vă rugăm folosiţi constrângerea profesori min zile pe săptămână</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13561"/>
@@ -26456,7 +26456,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12840"/>
         <source>Constraint three activities grouped (the activities must be placed in the same day, one immediately following the other, as a block of three activities, in any order, possibly separated by breaks)</source>
-        <translation>Constrângere trei activităţi grupate (activităţile trebuie plasate în aceeaşi zi, una imediat dupa cealaltă, ca un bloc de trei activităţi, în orice ordine, posibil separate de pauze)</translation>
+        <translation>Constrângere trei activităţi grupate (activităţile trebuie plasate în aceeaşi zi, una imediat după cealaltă, ca un bloc de trei activităţi, în orice ordine, posibil separate de pauze)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12843"/>
@@ -26939,7 +26939,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="26"/>
         <source>This constraint forces two activities to be in the same day, one immediately following the other, in any order, possibly separated by breaks</source>
-        <translation>Această constrângere forţează două activităţi să fie în aceeaşi zi, una imediat după cealalta, în orice ordine, posibil separate de pauze</translation>
+        <translation>Această constrângere forţează două activităţi să fie în aceeaşi zi, una imediat după cealaltă, în orice ordine, posibil separate de pauze</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="42"/>
@@ -27421,7 +27421,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/export.cpp" line="475"/>
         <source>%1 activity tags exported.</source>
-        <translation>%1 etichete activititate exportate.</translation>
+        <translation>%1 etichete activitate exportate.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="477"/>
@@ -27501,7 +27501,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/export.cpp" line="823"/>
         <location filename="../src/engine/export.cpp" line="829"/>
         <source>was skipped, because there exists another constraint of this type with same weight percentage and same number of min days and consecutive if same day true, referring to the same activities</source>
-        <translation>a fost ignorată, pentru că există o altă constrângere de acest tip cu aceeaşi importanţă procentuală şi acelaşi număr de min zile şi consecutiv dacă aceeaşi zi adevarat, care se referă la aceleaşi activităţi</translation>
+        <translation>a fost ignorată, pentru că există o altă constrângere de acest tip cu aceeaşi importanţă procentuală şi acelaşi număr de min zile şi consecutiv dacă aceeaşi zi adevărat, care se referă la aceleaşi activităţi</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="869"/>
@@ -27521,7 +27521,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/export.cpp" line="970"/>
         <source>%1 activities exported.</source>
-        <translation>%1 activitaţi exportate.</translation>
+        <translation>%1 activităţi exportate.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="330"/>
@@ -27590,7 +27590,7 @@ Importul datelor va fi mai simplu cu aceste setări.</translation>
     <message>
         <location filename="../src/engine/export.cpp" line="857"/>
         <source>different teachers</source>
-        <translation>profesori diferiti</translation>
+        <translation>profesori diferiţi</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="859"/>
@@ -27600,7 +27600,7 @@ Importul datelor va fi mai simplu cu aceste setări.</translation>
     <message>
         <location filename="../src/engine/export.cpp" line="863"/>
         <source>different students</source>
-        <translation>studenţi diferiti</translation>
+        <translation>studenţi diferiţi</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="867"/>
@@ -27724,7 +27724,7 @@ Each subgroup should have a number of hours per week close to the average of all
 Please read FAQ for detailed description on how divisions work. The key is that the subgroups are independent and represent the smallest unit of students. Each subgroup receives the activities of the parent year and parent group and of itself.
 
 Having a subgroup with too little working hours per week means that you inputted activities in a wrong manner, and also that some constraints like no gaps, early or min hours daily for this subgroup are interpreted in a wrong manner (if subgroup has only 2 activities, then these must be placed in the first hours, which is too hard and wrong).</source>
-        <translation>Statisticile pentru studenţi ar putea fi cele mai greu de înţeles. Dacă folosiţi diviziunea anilor: probabil cele mai relevante statistici sunt cele pentru fiecare subgrup (aşa că puteţi marca doar check box-ul subgrupuri). Puteţi vedea mai multe ore pentru ani sau grupuri, dar aceastea nu sunt semnificative, vă rog ignoraţi-le, pentru că fiecare an sau grup va număra de asemenea activităţile subgrupurilor conţinute.
+        <translation>Statisticile pentru studenţi ar putea fi cele mai greu de înţeles. Dacă folosiţi diviziunea anilor: probabil cele mai relevante statistici sunt cele pentru fiecare subgrup (aşa că puteţi marca doar check box-ul subgrupuri). Puteţi vedea mai multe ore pentru ani sau grupuri, dar acestea nu sunt semnificative, vă rog ignoraţi-le, pentru că fiecare an sau grup va număra de asemenea activităţile subgrupurilor conţinute.
 
 Fiecare subgrup trebuie să aibă un număr de ore pe săptămână apropiat de media tuturor subgrupurilor şi apropiat de numărul normal de ore de lucru pentru fiecare set de studenţi. Dacă un subgrup are o valoare mult mai mică, poate aţi folosit incorect anii/grupurile/subgrupurile pentru activităţi.
 
@@ -28204,7 +28204,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1369"/>
         <source>Your current data file remained untouched (no locking constraints were added), so you can save it also, or generate different timetables.</source>
-        <translation>Fişierul dvs. curent de date a rămas neatins (nu au fost adăugate constrângeri de blocare), aşa încât puteţi să il salvaţi şi pe el, sau să generaţi orare diferite.</translation>
+        <translation>Fişierul dvs. curent de date a rămas neatins (nu au fost adăugate constrângeri de blocare), aşa încât puteţi să îl salvaţi şi pe el, sau să generaţi orare diferite.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1604"/>
@@ -28270,7 +28270,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1691"/>
         <source>Activities rooms statistics: this menu will show the activities which may be scheduled in an unspecified room, if they are referred to by space constraints with weight under 100.0%, and the activities which will certainly be scheduled in an unspecified room, if they are not referred to by any space constraints. Remember that home rooms constraints are effective only on activities which have only the exact specified teacher or students set (activities with more teachers or students sets are not affected by home rooms constraints, you need to have preferred rooms constraints for such activities to ensure they will not end up in an unspecified room).</source>
-        <translation>Statisticile activităţi săli: acest meniu va arăta activităţile care pot fi programate într-o sală nespecificată, dacă ele sunt afectate de constrângeri de spaţiu cu importanţa sub 100.0%, şi activitaţile care sigur vor fi programate într-o sală nespecificată, dacă ele nu sunt afectate de nicio constrângere de spaţiu. Ţineţi minte că constrângerile săli proprii au efect doar pe activităţile care au doar exact profesorul sau setul de studenţi specificat (activităţile cu mai mulţi profesori sau seturi de studenţi nu sunt afectate de constrângerile săli proprii, trebuie să aveţi constrângeri săli preferate pentru asemenea activităţi pentru a vă asigura că ele nu vor ajunge într-o sală nespecificată).</translation>
+        <translation>Statisticile activităţi săli: acest meniu va arăta activităţile care pot fi programate într-o sală nespecificată, dacă ele sunt afectate de constrângeri de spaţiu cu importanţa sub 100.0%, şi activităţile care sigur vor fi programate într-o sală nespecificată, dacă ele nu sunt afectate de nicio constrângere de spaţiu. Ţineţi minte că constrângerile săli proprii au efect doar pe activităţile care au doar exact profesorul sau setul de studenţi specificat (activităţile cu mai mulţi profesori sau seturi de studenţi nu sunt afectate de constrângerile săli proprii, trebuie să aveţi constrângeri săli preferate pentru asemenea activităţi pentru a vă asigura că ele nu vor ajunge într-o sală nespecificată).</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3038"/>
@@ -28297,7 +28297,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3048"/>
         <source>In case these addresses do not function, maybe the FET webpage has temporary problems, so try again later. Or maybe the FET webpage has changed, so search for the new page on the Internet.</source>
-        <translation>În caz că aceste adrese nu funcţionează, poate pagina de start FET are probleme temporare, aşa că încercaţi mai târziu. Sau poate pagina de start FET s-a schimbat, aşa că trebuie să căutaţi noua pagina pe internet.</translation>
+        <translation>În caz că aceste adrese nu funcţionează, poate pagina de start FET are probleme temporare, aşa că încercaţi mai târziu. Sau poate pagina de start FET s-a schimbat, aşa că trebuie să căutaţi noua pagină pe internet.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3142"/>
@@ -28432,7 +28432,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
         <location filename="../src/interface/fetmainform.cpp" line="3905"/>
         <location filename="../src/interface/fetmainform.cpp" line="3954"/>
         <source>It is recommended to keep this warning active, but if you really want, you can disable it.</source>
-        <translation>Este recomandat să pastraţi acest avertisment activ, dar dacă chiar vreţi, puteţi să îl dezactivaţi.</translation>
+        <translation>Este recomandat să păstraţi acest avertisment activ, dar dacă chiar vreţi, puteţi să îl dezactivaţi.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3907"/>
@@ -28687,7 +28687,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="690"/>
         <source>You may need to hit Refresh in your web browser.</source>
-        <translation>S-ar putea să trebuiască să apasaţi „Reîncărcare” în navigatorul dvs. de internet.</translation>
+        <translation>S-ar putea să trebuiască să apăsaţi „Reîncărcare” în navigatorul dvs. de internet.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="731"/>
@@ -28702,12 +28702,12 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="938"/>
         <source>Your current data file has been modified. Are you sure you want to open another data file?</source>
-        <translation>Fişierul de date curent al dvs. a fost modificat. Sunteţi sigur că doriţi să încarcaţi alt fişier de date?</translation>
+        <translation>Fişierul de date curent al dvs. a fost modificat. Sunteţi sigur că doriţi să încărcaţi alt fişier de date?</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="959"/>
         <source>Choose a file to open</source>
-        <translation>Alegeţi un fisier pe care să îl deschideţi</translation>
+        <translation>Alegeţi un fişier pe care să îl deschideţi</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="996"/>
@@ -28932,7 +28932,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1684"/>
         <source>Students&apos; statistics form contains a check box named &apos;%1&apos;. This has effect only if you have overlapping groups/years, and means that FET will show the complete tree structure, even if that means that some subgroups/groups will appear twice or more in the table, with the same information. For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 will appear twice in the table</source>
-        <translation>Statisticile pentru studenţi conţin un check box numit &apos;%1&apos;. Aceasta are efect doar dacă aveţi grupuri/ani suprapuse şi înseamnă că FET va arăta structura completa a arborelui, chiar dacă aceasta înseamnă că unele subgrupuri/grupuri vor apărea de două sau mai multe ori în tabela, cu aceeaşi informaţie. De exemplu, dacă aveţi anul Y1, grupurile G1 şi G2, subgrupurile S1, S2, S3, cu structura: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 va apărea de doua ori în tabelă</translation>
+        <translation>Statisticile pentru studenţi conţin un check box numit &apos;%1&apos;. Aceasta are efect doar dacă aveţi grupuri/ani suprapuse şi înseamnă că FET va arăta structura completa a arborelui, chiar dacă aceasta înseamnă că unele subgrupuri/grupuri vor apărea de două sau mai multe ori în tabela, cu aceeaşi informaţie. De exemplu, dacă aveţi anul Y1, grupurile G1 şi G2, subgrupurile S1, S2, S3, cu structura: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 va apărea de două ori în tabelă</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="1688"/>
@@ -30044,7 +30044,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2265"/>
         <source>Confirm save data and timetable as</source>
-        <translation>Confimă salvarea datelor şi a orarului ca</translation>
+        <translation>Confirmă salvarea datelor şi a orarului ca</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2270"/>
@@ -30899,7 +30899,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="3149"/>
         <source>The activities with ids %1 and %2 must be simultaneous (request determined indirectly), but they have common teachers and/or students sets or must be not overlapping</source>
-        <translation>Activitaţile cu id-urile %1 şi %2 trebuie să fie simultane (cerere determinată indirect), dar ele au în comun profesori şi/sau seturi de studenţi sau trebuie să nu se suprapună</translation>
+        <translation>Activităţile cu id-urile %1 şi %2 trebuie să fie simultane (cerere determinată indirect), dar ele au în comun profesori şi/sau seturi de studenţi sau trebuie să nu se suprapună</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="3322"/>
@@ -31059,7 +31059,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="744"/>
         <source>These constraints are good, but they are not perfectly optimized for speed. You may obtain a long generation time or even impossible timetables.</source>
-        <translation>Aceste constrângeri sunt bune, dar nu sunt perfect optimizate pentru viteză. S-ar putea să obtineţi un timp lung de generare sau chiar orare imposibile.</translation>
+        <translation>Aceste constrângeri sunt bune, dar nu sunt perfect optimizate pentru viteză. S-ar putea să obţineţi un timp lung de generare sau chiar orare imposibile.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="748"/>
@@ -31270,7 +31270,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
         <location filename="../src/engine/generate_pre.cpp" line="3949"/>
         <source>Cannot optimize for subgroup %1, because early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of days per week is %3 which is less. It must be that the number of days per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
-        <translation>Nu pot optimiza pentru subgrupul %1, deoarece constrângerea devreme max începeri la ora a doua are max inceperi la ora a doua %2, şi numărul de zile pe săptămână este %3, care este mai mic. Trebuie ca numărul de zile pe săptămână să fie mai mare sau egal cu max începeri la ora a doua
+        <translation>Nu pot optimiza pentru subgrupul %1, deoarece constrângerea devreme max începeri la ora a doua are max începeri la ora a doua %2, şi numărul de zile pe săptămână este %3, care este mai mic. Trebuie ca numărul de zile pe săptămână să fie mai mare sau egal cu max începeri la ora a doua
 Vă rog modificaţi datele dvs. corespunzător şi încercaţi din nou</translation>
     </message>
     <message>
@@ -31346,13 +31346,13 @@ Vă rog modificaţi datele dvs. corespunzător şi încercaţi din nou</translat
         <location filename="../src/engine/generate_pre.cpp" line="5336"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration).</source>
         <comment>%1 is the detailed description of a constraint</comment>
-        <translation>%1 nu poate fi respectată deoarece profesorul %2 are cel mult %3 zile disponibile. Aţi specificat pentru această constrângere consecutiv dacă aceeaşi zi=adevărat. În implementarea actuală FET nu poate pune mai mult de 2 activităţi în aceeaşi zi dacă consecutiv dacă aceeaşi zi este adevărat. Aveţi 2*zile disponibile&lt;numărul de activităţi în această constrângere. Aceasta este o situaţie foarte improbabilă, de aceea nu m-am preocupat prea mult de ea. Daca o întâlniţi, vă rog modificaţi fişierul dvs. (deselectaţi consecutiv dacă aceeaşi zi sau adăugaţi alte activităţi cu durată mai lungă).</translation>
+        <translation>%1 nu poate fi respectată deoarece profesorul %2 are cel mult %3 zile disponibile. Aţi specificat pentru această constrângere consecutiv dacă aceeaşi zi=adevărat. În implementarea actuală FET nu poate pune mai mult de 2 activităţi în aceeaşi zi dacă consecutiv dacă aceeaşi zi este adevărat. Aveţi 2*zile disponibile&lt;numărul de activităţi în această constrângere. Aceasta este o situaţie foarte improbabilă, de aceea nu m-am preocupat prea mult de ea. Dacă o întâlniţi, vă rog modificaţi fişierul dvs. (deselectaţi consecutiv dacă aceeaşi zi sau adăugaţi alte activităţi cu durată mai lungă).</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="5372"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration).</source>
         <comment>%1 is the detailed description of a constraint</comment>
-        <translation>%1 nu poate fi respectată deoarece subgrupul %2 are cel mult %3 zile disponibile. Aţi specificat pentru această constrângere consecutiv dacă aceeaşi zi=adevărat. În implementarea actuală FET nu poate pune mai mult de 2 activităţi în aceeaşi zi dacă consecutiv dacă aceeaşi zi este adevărat. Aveţi 2*zile disponibile&lt;numărul de activităţi în această constrângere. Aceasta este o situaţie foarte improbabilă, de aceea nu m-am preocupat prea mult de ea. Daca o întâlniţi, vă rog modificaţi fişierul dvs. (deselectaţi consecutiv dacă aceeaşi zi sau adăugaţi alte activităţi cu durată mai lungă).</translation>
+        <translation>%1 nu poate fi respectată deoarece subgrupul %2 are cel mult %3 zile disponibile. Aţi specificat pentru această constrângere consecutiv dacă aceeaşi zi=adevărat. În implementarea actuală FET nu poate pune mai mult de 2 activităţi în aceeaşi zi dacă consecutiv dacă aceeaşi zi este adevărat. Aveţi 2*zile disponibile&lt;numărul de activităţi în această constrângere. Aceasta este o situaţie foarte improbabilă, de aceea nu m-am preocupat prea mult de ea. Dacă o întâlniţi, vă rog modificaţi fişierul dvs. (deselectaţi consecutiv dacă aceeaşi zi sau adăugaţi alte activităţi cu durată mai lungă).</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="5427"/>
@@ -31377,12 +31377,12 @@ Vă rog modificaţi datele dvs. corespunzător şi încercaţi din nou</translat
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="5683"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities occupy max time slots from selection&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
-        <translation>Nu pot optimiza, deoarece aveţi constrangere(-i) de tipul &apos;activităţi ocupă max sloturi de timp din selecţie&apos; cu importanţa (procentuală) sub 100.0%. Vă rog faceţi importanţa 100.0% şi încercaţi din nou</translation>
+        <translation>Nu pot optimiza, deoarece aveţi constrângere(-i) de tipul &apos;activităţi ocupă max sloturi de timp din selecţie&apos; cu importanţa (procentuală) sub 100.0%. Vă rog faceţi importanţa 100.0% şi încercaţi din nou</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="5731"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities max simultaneous in selected time slots&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
-        <translation>Nu pot optimiza, deoarece aveţi constrangere(-i) de tipul &apos;activităţi max simultane in sloturile de timp selectate&apos; cu importanţa (procentuală) sub 100.0%. Vă rog faceţi importanţa 100.0% şi încercaţi din nou</translation>
+        <translation>Nu pot optimiza, deoarece aveţi constrângere(-i) de tipul &apos;activităţi max simultane în sloturile de timp selectate&apos; cu importanţa (procentuală) sub 100.0%. Vă rog faceţi importanţa 100.0% şi încercaţi din nou</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="5893"/>
@@ -31494,7 +31494,7 @@ Vă rog modificaţi datele dvs. corespunzător şi încercaţi din nou</translat
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="7718"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
-        <translation>Aceasta este ordinea iniţială de evaluare a activităţilor în FET. Dacă generarea se împotmoleşte după un anumit număr de activităţi, vă rog verificaţi activitatea corespunzătoare acestui numar+1. Poate găsiţi erori în date.</translation>
+        <translation>Aceasta este ordinea iniţială de evaluare a activităţilor în FET. Dacă generarea se împotmoleşte după un anumit număr de activităţi, vă rog verificaţi activitatea corespunzătoare acestui număr+1. Poate găsiţi erori în date.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="7722"/>
@@ -31589,7 +31589,7 @@ Vă rog modificaţi datele dvs. corespunzător şi încercaţi din nou</translat
     <message>
         <location filename="../src/interface/groupsform.cpp" line="130"/>
         <source>Are you sure you want to delete group %1 and all related subgroups, activities and constraints?</source>
-        <translation>Sunteti sigur că vreţi să ştergeţi grupul %1 şi toate subgrupurile, activităţile şi constrângerile aferente?</translation>
+        <translation>Sunteţi sigur că vreţi să ştergeţi grupul %1 şi toate subgrupurile, activităţile şi constrângerile aferente?</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="131"/>
@@ -31682,6 +31682,24 @@ Vă rog modificaţi datele dvs. corespunzător şi încercaţi din nou</translat
         <location filename="../src/interface/helpaboutform_template.ui" line="27"/>
         <source>About</source>
         <translation>Despre</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="39"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2013 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.19.3 (June 2013).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="94"/>
@@ -32130,24 +32148,6 @@ p, li { white-space: pre-wrap; }
         <translation>Referinţe</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="39"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2013 Liviu Lalescu, Volker Dirr&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.19.2 (June 2013).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under GNU GPL v2 or later.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="60"/>
         <source>Authors</source>
         <translation>Autori</translation>
@@ -32298,7 +32298,7 @@ A: One possible approach: in FET you can have each activity with more teachers a
 Another possible approach: you may choose to define students into sections (see question below).</source>
         <translation>Î: Ce puteţi spune despre discipline opţionale sau seturi de studenţi care sunt divizate conform opţiunilor?
 
-R: O abordare posibilă: în FET puteţi avea fiecare activitate cu mai mulţi profesori şi seturi de studenţi. Dacă aveţi de exemplu setul de studenţi S care trebuie să participe la disciplina limba1, engleză (cu profesorul TE) sau franceză (profesorul TF), aţi putea să alegeţi să nu împărţiţi S şi să adăugaţi o activitate cu limba1, S şi TE şi TF. Dezavantajul: fiecare activitate poate fi ţinută într-o singură sală, aşa că nu puteţi spune FET că această activitate trebuie să fie în 2 sau mai multe săli în acelaşi timp, şi de aici derivă alte probleme: daca o sală nu este disponibilă, dacă capacitatea sălii este prea mică pentru numărul de studenţi în S FET nu poate găsi un orar, şi poate altele.
+R: O abordare posibilă: în FET puteţi avea fiecare activitate cu mai mulţi profesori şi seturi de studenţi. Dacă aveţi de exemplu setul de studenţi S care trebuie să participe la disciplina limba1, engleză (cu profesorul TE) sau franceză (profesorul TF), aţi putea să alegeţi să nu împărţiţi S şi să adăugaţi o activitate cu limba1, S şi TE şi TF. Dezavantajul: fiecare activitate poate fi ţinută într-o singură sală, aşa că nu puteţi spune FET că această activitate trebuie să fie în 2 sau mai multe săli în acelaşi timp, şi de aici derivă alte probleme: dacă o sală nu este disponibilă, dacă capacitatea sălii este prea mică pentru numărul de studenţi în S FET nu poate găsi un orar, şi poate altele.
 
 Altă abordare posibilă: puteţi alege să definiţi studenţii în secţiuni (vedeţi întrebarea de mai jos).</translation>
     </message>
@@ -32315,7 +32315,7 @@ Altă abordare posibilă: puteţi alege să definiţi studenţii în secţiuni (
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="178"/>
         <source>Important note: please do the correct division of a year from the beginning. Each time you divide a year, the corresponding activities and constraints referring to year&apos;s groups and subgroups will be removed, along with groups and subgroups. This is not elegant, I know, I will try to find a better solution in the future. If you already inputted a lot of constraints and activities referring to a year&apos;s groups/subgroups, you might want to manually change the division of a year by the groups/subgroups menus.</source>
-        <translation>Notă importantă: vă rog faceţi împărţirea corectă a unui an de la început. De fiecare dată când divizaţi un an, activităţile şi constrângerile corespunzătoare care se referă la grupurile şi subgrupurile anului vor fi şterse, împreună cu grupurile şi subgrupurile. Aceasta nu este elegant, ştiu, voi încerca să găsesc o soluţie mai bună în viitor. Dacă deja aţi introdus o mulţime de constrângeri şi activităţi referitoarea la grupurile/subgrupurile anului, aţi putea dori să schimbaţi manual diviziarea anului din meniurile grupuri/subgrupuri.</translation>
+        <translation>Notă importantă: vă rog faceţi împărţirea corectă a unui an de la început. De fiecare dată când divizaţi un an, activităţile şi constrângerile corespunzătoare care se referă la grupurile şi subgrupurile anului vor fi şterse, împreună cu grupurile şi subgrupurile. Aceasta nu este elegant, ştiu, voi încerca să găsesc o soluţie mai bună în viitor. Dacă deja aţi introdus o mulţime de constrângeri şi activităţi referitoarea la grupurile/subgrupurile anului, aţi putea dori să schimbaţi manual divizarea anului din meniurile grupuri/subgrupuri.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="184"/>
@@ -32511,7 +32511,7 @@ Practical solution to case 2)? Reduce weights of constraints which have weight b
 R: Într-adevăr, aceasta este o problemă potenţială în FET (dar probabil nu va apărea niciodată în practică). Se poate întâmpla dacă aveţi constrângeri cu importanţa sub 100%, care pot fi încălcate când generaţi orarul.
 
 Iată un exemplu care să explice aceasta (este un exemplu nepractic, dar este mai bun căci este foarte simplu): aveţi 4 seturi de studenţi (Y1, Y2, Y3, Y4). 5 activităţi: A1 (Y1,Y2,Y3,Y4), A2 (Y1), A3 (Y2), A4 (Y3), A5 (Y4). Aveţi o singură zi pe săptămână şi 2 ore pe zi. Adăugaţi o constrângere studenţi max ore zilnic, max 1 oră, 95% importanţa procentuală.
-1) Începeţi generarea. După un timp (poate câteva minute), FET va putea găsi o soluţie (cu max ore zilnic incălcată pentru toate seturile de studenţi).
+1) Începeţi generarea. După un timp (poate câteva minute), FET va putea găsi o soluţie (cu max ore zilnic încălcată pentru toate seturile de studenţi).
 2) Apoi, blocaţi A2, A3, A4 şi A5 şi încercaţi să generaţi din nou. În unele cazuri FET va raporta activitate imposibilă A1.
 3) Dacă blocaţi A1, A2, A3, A4 şi A5, FET va putea găsi un orar foarte rapid.
 
@@ -32598,7 +32598,7 @@ Adăugaţi altă constrângere: min 1 zi între activităţile cu id-urile 2 şi
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="894"/>
         <source>Q: The students and/or teachers should have in each day some activities without interruption, then some continuous gaps, then again some activities without interruption. This situation can appear in these cases: schools in Morocco and Algeria, which have morning and afternoon shifts, and also in some universities in which students would prefer to have at most a single cluster of gaps, no matter how long, in each day. How to treat such situations in FET?</source>
-        <translation>Î: Studenţii şi/sau profesorii trebuie să aibă în fiecare zi cîteva activităţi fără întrerupere, apoi câteva ferestre continue, apoi din nou câteva activităţi fără întrerupere. Această situaţie poate apărea în aceste cazuri: şcolile din Maroc şi din Algeria, care au schimburi de dimineaţă şi de după-amiază, şi de asemenea în unele universităţi în care studenţii ar prefera să aibă cel mult un singur grup de ferestre. nu contează cât de lung, în fiecare zi. Cum să tratăm asemenea situaţii în FET?</translation>
+        <translation>Î: Studenţii şi/sau profesorii trebuie să aibă în fiecare zi câteva activităţi fără întrerupere, apoi câteva ferestre continue, apoi din nou câteva activităţi fără întrerupere. Această situaţie poate apărea în aceste cazuri: şcolile din Maroc şi din Algeria, care au schimburi de dimineaţă şi de după-amiază, şi de asemenea în unele universităţi în care studenţii ar prefera să aibă cel mult un singur grup de ferestre. nu contează cât de lung, în fiecare zi. Cum să tratăm asemenea situaţii în FET?</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="900"/>
@@ -32613,17 +32613,17 @@ Adăugaţi altă constrângere: min 1 zi între activităţile cu id-urile 2 şi
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="910"/>
         <source>A: You can add a comment to a (sub)activity by clicking the &apos;Comments&apos; button in the (sub)activities dialog. You can add a comment to a constraint by clicking the &apos;Comments&apos; button in the all time/space constraints dialogs.</source>
-        <translation>R: Puteţi adăuga un comentariu unei (sub)activităţi facând click pe butonul &apos;Comentarii&apos; în dialogul (sub)activităţilor. Puteţi adăuga un comentariu unei constrângeri facând click pe butonul &apos;Comentarii&apos; în dialogurile toate constrângerile de timp/spaţiu.</translation>
+        <translation>R: Puteţi adăuga un comentariu unei (sub)activităţi făcând click pe butonul &apos;Comentarii&apos; în dialogul (sub)activităţilor. Puteţi adăuga un comentariu unei constrângeri făcând click pe butonul &apos;Comentarii&apos; în dialogurile toate constrângerile de timp/spaţiu.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="917"/>
         <source>Q: How can I activate/deactivate a constraint?</source>
-        <translation>Î: Cum pot activa/deactiva o constrângere?</translation>
+        <translation>Î: Cum pot activa/dezactiva o constrângere?</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="919"/>
         <source>A: You can activate/deactivate a constraint by clicking the &apos;Activate&apos;/&apos;Deactivate&apos; buttons in the all time/space constraints dialogs.</source>
-        <translation>R: Puteţi activa/deactiva o constrângere facând click pe butoanele &apos;Activează&apos;/&apos;Dezactivează&apos; în dialogurile toate constrângerile de timp/spaţiu.</translation>
+        <translation>R: Puteţi activa/dezactiva o constrângere făcând click pe butoanele &apos;Activează&apos;/&apos;Dezactivează&apos; în dialogurile toate constrângerile de timp/spaţiu.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="926"/>
@@ -32733,7 +32733,7 @@ Add years and the option &apos;Divide ...&apos; in the years dialog is the easie
 If each year (for instance 9) is divided by at most 4 categories, you can add year 9 and divide it in 4 categories. If a year is divided by 5 categories (for instance, year 9 is divided by: section (a, b, c, d), first language (en, fr), religion, boys/girls and second language (de, it)), you might consider years: 9a, 9b, 9c, 9d, each divided into 4 categories, and divide each year in the dialog. For more than 5 categories, very unlikely case, you will need to manually adjust groups/subgroups.</source>
         <translation>Î: Cum se definesc studenţii în secţiuni?
 
-R: FET poate divide automat anii prin cel mult 4 categorii de opţiuni. Dacă trebuie să impărţiţi un an în 5 categorii, puteţi folosi un mic truc (vedeţi mai jos).
+R: FET poate divide automat anii prin cel mult 4 categorii de opţiuni. Dacă trebuie să împărţiţi un an în 5 categorii, puteţi folosi un mic truc (vedeţi mai jos).
 
 Adăugarea anilor şi opţiunea &apos;Divide ...&apos; în dialogul anilor este cel mai uşor mod. Puteţi de asemenea adăuga manual anii, grupurile şi subgrupurile.
 
@@ -33160,7 +33160,7 @@ R: Dacă aveţi activităţi pe care doriţi să le puneţi în ultimele sloturi
 A: I have a nice trick: add a dummy activity, 1 hour duration, with only this teacher (no students sets, any subject), additional to the real activity.
 
 This trick just passed through my mind as I was trying to write you that you have to do it the hard way (add constraints for each teacher)</source>
-        <translation>Î: La şcoala noastră sunt o mulţime de profesori care lucrează doar câteva ore pe zăptămână. Desigur, este neplăcut să conduci pentru o oră la şcoală. Aşa că am setat constrângerea că fiecare profesor ar trebui să predea cel puţin 2 ore pe zi. Din nefericire avem în acest an un profesor care lucrează doar 1h pe săptămână. Ca rezultat, FET nu începe să creeze un orar. Aveţi o sugestie pentru cum să reparăm problema fără a defini o constrângere pentru fiecare profesor singular?
+        <translation>Î: La şcoala noastră sunt o mulţime de profesori care lucrează doar câteva ore pe săptămână. Desigur, este neplăcut să conduci pentru o oră la şcoală. Aşa că am setat constrângerea că fiecare profesor ar trebui să predea cel puţin 2 ore pe zi. Din nefericire avem în acest an un profesor care lucrează doar 1h pe săptămână. Ca rezultat, FET nu începe să creeze un orar. Aveţi o sugestie pentru cum să reparăm problema fără a defini o constrângere pentru fiecare profesor singular?
 
 R: Am un truc drăguţ: adăugaţi o activitate fictivă, durata 1 oră, cu doar acest profesor (fără seturi de studenţi, orice disciplină), adiţional la activitatea reală.
 
@@ -33193,7 +33193,7 @@ Acest truc tocmai mi-a trecut prin minte pe când încercam să vă scriu că tr
 A: It is recommended to enable automatic search for updates. I didn&apos;t set it as default because people might be annoyed if I release too fast new versions. But if you can cope with that, it is recommended to always have the latest version and enable searching for updates at startup.</source>
         <translation>Î: Ce ne puteţi spune despre căutarea automată pentru aduceri la zi? Ar trebui să o activez?
 
-R: Este recomandat să activaţi căutarea automată pentru aduceri la zi. Nu am setat-o predefinit deoarece utilizatorii ar putea fi deranjaţi dacă fac prea des release-uri de noi versiuni. Dar dacă puteţi aceepta aceasta, este recomandat ca întotdeauna să aveţi ultima versiune şi să activaţi cautarea de aduceri la zi la pornire.</translation>
+R: Este recomandat să activaţi căutarea automată pentru aduceri la zi. Nu am setat-o predefinit deoarece utilizatorii ar putea fi deranjaţi dacă fac prea des release-uri de noi versiuni. Dar dacă puteţi accepta aceasta, este recomandat ca întotdeauna să aveţi ultima versiune şi să activaţi căutarea de aduceri la zi la pornire.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="288"/>
@@ -33255,7 +33255,7 @@ Since I started working on our school&apos;s timetable I had a problem with a sp
 ...Not that I will fall again for it but based on the difficulty to diagnose on my part it will help others that might face the same problem.</source>
         <translation>Î şi R de la Anestis Vovos. Un caz nerezolvat foarte dificil de diagnosticat
 
-De când am început să lucrez la orarul şcolii noastre am avut o problemă cu o zi specificăă şi un profesor. Indiferent ce am încercat în FET nu am putut reduce orele de prezenţă în şcoală pentru acest profesor specific şi zi specifică sub 7 (7 ore are ziua întreagă, aşa că el avea 6 ore de predare şi o fereastră). Era prea mult (alţi profesori au 5 ore maximum) dar el nu a fost deranjat aşa că am păstrat soluţia FET. Doar cu o lună în urmă acest profesor a avut o operaţie majoră şi nu a mai putut preda atât de multe ore într-o zi. Aşa că am început din nou să experimentez cu orarul şi cu ce era greşit. După o mulţime de teste şi nereuşite ideea mi-a venit chiar când mă trezeam să merg la şcoală; nu aveam destui profesori pentru orele devreme şi târziu! Am verificat şi era adevărat! Lăsaţi-mă să vă explic. Avem 6 clase în total şi fiecare clasă are 7 ore pe zi. Aceasta înseamnă că am nevoie de 6 profesori pentru prima oră şi de 6 profesori pentru a 7-a oră, un total de 12 profesori. Dar aveam doar 11 profesori pentru a acoperi prima şi ultima oră! Aveam 16 profesori în total pentru acea zi dar constrângerile lor împiedicau 6 dintre ei să predea prima şi ultima oră (şi nu erau doar cazuri de profesori indisponibil ci constrângeri uzuale de predare pentru ore specifice şi max ferestre, aşa că era foarte dificil de văzut). Aşa că acest profesor specificat (din cauza constrângerile celorlalţi profesori şi a constrângerilor relaxate aplicate lui însuşi) trebuia să predea 6 ore cu o fereastră pentru ca el să poată acoperi o primă şi o ultimă oră!
+De când am început să lucrez la orarul şcolii noastre am avut o problemă cu o zi specifică şi un profesor. Indiferent ce am încercat în FET nu am putut reduce orele de prezenţă în şcoală pentru acest profesor specific şi zi specifică sub 7 (7 ore are ziua întreagă, aşa că el avea 6 ore de predare şi o fereastră). Era prea mult (alţi profesori au 5 ore maximum) dar el nu a fost deranjat aşa că am păstrat soluţia FET. Doar cu o lună în urmă acest profesor a avut o operaţie majoră şi nu a mai putut preda atât de multe ore într-o zi. Aşa că am început din nou să experimentez cu orarul şi cu ce era greşit. După o mulţime de teste şi nereuşite ideea mi-a venit chiar când mă trezeam să merg la şcoală; nu aveam destui profesori pentru orele devreme şi târziu! Am verificat şi era adevărat! Lăsaţi-mă să vă explic. Avem 6 clase în total şi fiecare clasă are 7 ore pe zi. Aceasta înseamnă că am nevoie de 6 profesori pentru prima oră şi de 6 profesori pentru a 7-a oră, un total de 12 profesori. Dar aveam doar 11 profesori pentru a acoperi prima şi ultima oră! Aveam 16 profesori în total pentru acea zi dar constrângerile lor împiedicau 6 dintre ei să predea prima şi ultima oră (şi nu erau doar cazuri de profesori indisponibil ci constrângeri uzuale de predare pentru ore specifice şi max ferestre, aşa că era foarte dificil de văzut). Aşa că acest profesor specificat (din cauza constrângerile celorlalţi profesori şi a constrângerilor relaxate aplicate lui însuşi) trebuia să predea 6 ore cu o fereastră pentru ca el să poată acoperi o primă şi o ultimă oră!
 
 ...Nu că voi mai cădea din nou în capcana ei dar, bazându-mă pe dificultatea de a o diagnostica din partea mea, va ajuta pe alţii care ar putea avea aceeaşi problemă.</translation>
     </message>
@@ -33264,7 +33264,7 @@ De când am început să lucrez la orarul şcolii noastre am avut o problemă cu
         <source>Q: I want to define hard subjects (Math, Physics and Chemistry) and I want students not to have more than 1 (or another variant 2) difficult subjects in a row.
 
 A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH lessons. Then add constraint maximum 1 (or 2) hours continuously for all students and an activity tag &apos;Difficult&apos;. Please take care if you may have double lessons.</source>
-        <translation>Î: Doresc să definesc disciplinele dificile (matematică, fizică şi chimie) şi doresc ca studenţii sa nu aibă mai mult decât 1 (sau în altă variantă 2) discipline la rând.
+        <translation>Î: Doresc să definesc disciplinele dificile (matematică, fizică şi chimie) şi doresc ca studenţii să nu aibă mai mult decât 1 (sau în altă variantă 2) discipline la rând.
 
 R: Definiţi etichetele activitate &apos;Dificil&apos; şi adăugaţi-le tuturor lecţiilor matematică, fizică şi chimie. Apoi adăugaţi constrângerea maximum 1 (sau 2) ore continuu pentru toţi studenţii şi o etichetă activitate &apos;Dificil&apos;. Vă rog aveţi grijă dacă puteţi avea lecţii duble.</translation>
     </message>
@@ -33347,9 +33347,9 @@ Pentru cazurile extreme, generarea orarului ar putea fi mai lungă sau mult mai 
 
 De exemplu, dacă studenţii S au 20 de ore de activităţi cu eticheta activitate AT şi alte 4 ore de activităţi fără eticheta activitate (au 24 de ore în total, fracţia este 20/24=0.80), şi îi constrângeţi la 0 ferestre pe săptămână şi 0 începeri la ora a doua şi de asemenea numărul de ore pe zi este mare, să zicem 12. Atunci adăugarea unei constrângeri studenţi etichetă activitate AT max 4 ore pe zi - singură - nu va fi de bună de ajuns (timpul pentru a genera un orar ar putea fi mai lung sau mult mai lung decât necesar). O soluţie mai bună va avea nevoie ca dvs. să adăugaţi de asemenea o constrângere studenţi max 5 ore zilnic (dacă e posibil) şi/sau să faceţi sloturile târzii indisponibile pentru studenţi (este un mod de a ghida FET către soluţie), sau să găsiţi alte moduri bune de a compensa situaţia.
 
-Concluzia: dacă, pentru ATS, fracţia &apos;durata etichetă&apos;/&apos;durata totală&apos; este peste 0.50 - 0.75 ŞI folosiţi, pentru ATS, constrăngeri pentru ferestre sau devreme ŞI pentru ATS numărul de sloturi disponibile pe săptămână este mult mai mare decât numărul total de ore de lucru pe săptămână ale ATS, atunci s-ar putea să aveţi nevoie să rezolvaţi această problemă (adăugaţi constrângeri ATS max ore zilnic sau ATS indisponibil sau găsiţi alte metode de a ghida FET).
+Concluzia: dacă, pentru ATS, fracţia &apos;durata etichetă&apos;/&apos;durata totală&apos; este peste 0.50 - 0.75 ŞI folosiţi, pentru ATS, constrângeri pentru ferestre sau devreme ŞI pentru ATS numărul de sloturi disponibile pe săptămână este mult mai mare decât numărul total de ore de lucru pe săptămână ale ATS, atunci s-ar putea să aveţi nevoie să rezolvaţi această problemă (adăugaţi constrângeri ATS max ore zilnic sau ATS indisponibil sau găsiţi alte metode de a ghida FET).
 
-Aşadar, este o foarte proastă idee să faceţi toate activităţile (ale unui profesor sau set de studenţi) să aibă o etichetă activitate şi să adăugaţi constrâgerea profesor(i) sau (set de) studenţi etichetă activitate max ore zilnic. Ar trebui să folosiţi în acest caz constrângerea profesor(i) sau (set de) studenţi max ore zilnic.
+Aşadar, este o foarte proastă idee să faceţi toate activităţile (ale unui profesor sau set de studenţi) să aibă o etichetă activitate şi să adăugaţi constrângerea profesor(i) sau (set de) studenţi etichetă activitate max ore zilnic. Ar trebui să folosiţi în acest caz constrângerea profesor(i) sau (set de) studenţi max ore zilnic.
 
 Probabil, în practică această problemă nu va apărea şi nu trebuie să vă îngrijoraţi. Dar teoretic ea există.</translation>
     </message>
@@ -33410,7 +33410,7 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
         <location filename="../src/interface/helpfaqform_template.ui" line="14"/>
         <source>Frequently asked questions</source>
         <extracomment>This is the title of the dialog for FAQ help</extracomment>
-        <translation>Intrebări frecvente</translation>
+        <translation>Întrebări frecvente</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform_template.ui" line="23"/>
@@ -33443,7 +33443,7 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="53"/>
         <source>If you get an impossible timetable and your institution allows beginning later for students, please reconsider your students (set) early constraints to allow more beginnings at second hour. Also, removing or weakening other constraints might help. If FET cannot find a good timetable for your school, make sure to report this, as FET needs to be improved. Maybe small changes to your datafile can bring good solutions, or maybe there are aspects which have to be changed in FET.</source>
-        <translation>Dacă obţineţi un orar imposibil şi instituţia dvs. permite începerile mai devreme pentru studenţi, vă rog reconsideraţi constrângerile dvs. (set de) stundenţi devreme pentru a permite mai multe începeri la ora a doua. De asemenea, ştergerea sau slăbirea altor constrângeri ar putea să ajute. Dacă FET nu poate găsi un orar bun pentru şcoala dvs., asiguraţi-vă că raportaţi aceasta, căci FET trebuie îmbunătăţit. Poate mici schimbări în fişierul dvs. de date pot aduce soluţii bune, sau sunt aspecte care trebuie schimbate în FET.</translation>
+        <translation>Dacă obţineţi un orar imposibil şi instituţia dvs. permite începerile mai devreme pentru studenţi, vă rog reconsideraţi constrângerile dvs. (set de) studenţi devreme pentru a permite mai multe începeri la ora a doua. De asemenea, ştergerea sau slăbirea altor constrângeri ar putea să ajute. Dacă FET nu poate găsi un orar bun pentru şcoala dvs., asiguraţi-vă că raportaţi aceasta, căci FET trebuie îmbunătăţit. Poate mici schimbări în fişierul dvs. de date pot aduce soluţii bune, sau sunt aspecte care trebuie schimbate în FET.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="58"/>
@@ -33458,7 +33458,7 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="68"/>
         <source>1) To say that component activities of a larger split activity are not in the same day, FET automatically adds a constraint min days between activities with default 95% weight. If you want to ensure no two activities of same type are in the same day, you will have to modify the weight from 95% to higher values (see these constraints in the Time constraints menu-&gt;Activities-&gt;Min days between a set of activities constraints. You have there a powerful filter to change many constraints with a few clicks).</source>
-        <translation>1) Pentru a spune că activitaţile componente ale unei activităţi împărţite mai mare nu sunt în aceeaşi zi, FET adaugă automat o constrângere min zile între activităţicu importanţa predefinită 95%. Dacă doriţi să vă asiguraţi că două activităţi de acelaşi tip nu sunt în aceeaşi zi, trebuie să modificaţi importanţa de la 95% la valori mai mari (vedeţi constrângerile în meniul Constrângeri de timp-&gt;Activităţi-&gt;Constrângeri min zile între un set de activităţi. Aveţi acolo un filtru puternic pentru a schimba mai multe constrângeri cu câteva click-uri).</translation>
+        <translation>1) Pentru a spune că activităţile componente ale unei activităţi împărţite mai mare nu sunt în aceeaşi zi, FET adaugă automat o constrângere min zile între activităţi cu importanţa predefinită 95%. Dacă doriţi să vă asiguraţi că două activităţi de acelaşi tip nu sunt în aceeaşi zi, trebuie să modificaţi importanţa de la 95% la valori mai mari (vedeţi constrângerile în meniul Constrângeri de timp-&gt;Activităţi-&gt;Constrângeri min zile între un set de activităţi. Aveţi acolo un filtru puternic pentru a schimba mai multe constrângeri cu câteva click-uri).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="82"/>
@@ -33483,12 +33483,12 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="94"/>
         <source>In versions 5.5.8 and higher, you can add 2 constraints min days for the same split activity. In add activity dialog, select min days 2 (or 3) and you get the chance to add another constraint min 1 days (or 2). For instance, if you have 3 activities per week from the same group, you can add 2 constraints, min 2 days and min 1 day, both with 95%. This will ensure that in 99.75% of cases the min 1 day will be respected.</source>
-        <translation>În versiunile 5.5.8 şi mai mari, puteţi adăuga 2 constrângeri min zile pentru aceeaşi activitate împărţită. În dialogul de adăugare activitate, selectaţi min zile 2 (sau 3) şi veţi avea opţiunea de a adăuga altp constrângere min 1 zile (sau 2). De exemplu, dacă aveţi 3 activităţi pe săptămână din acelaşi grup, puteţi adăuga 2 constrângeri, min 2 zile şi min 1 zi, amândouă cu 95%. Aceasta va asigura faptul că în 99.75% din cazuri min 1 zi va fi respectată.</translation>
+        <translation>În versiunile 5.5.8 şi mai mari, puteţi adăuga 2 constrângeri min zile pentru aceeaşi activitate împărţită. În dialogul de adăugare activitate, selectaţi min zile 2 (sau 3) şi veţi avea opţiunea de a adăuga altă constrângere min 1 zile (sau 2). De exemplu, dacă aveţi 3 activităţi pe săptămână din acelaşi grup, puteţi adăuga 2 constrângeri, min 2 zile şi min 1 zi, amândouă cu 95%. Aceasta va asigura faptul că în 99.75% din cazuri min 1 zi va fi respectată.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="99"/>
         <source>2) If you have a course lesson with say 4-5 activities per week, difficult lessons (Maths), which you would like to schedule in the beginning of the day (say 3 out of 4-5 need to be in the first half of the day), the best approach is to use constraint subactivities preferred time slots or starting times, specifying possibly the subject and component number: 1, 2 and maybe 3, adding 3 constraints for this subject (see FAQ for more details). You can also add constraints for component numbers 3, 4 and 5 for subject Maths (this way, if activity is split into 4 it will get 2 early, if it is split into 5 it will get 3 early - a nice trick). Similarly, if you have say Bio with 1 or 2 splits per week, you can add constraint with component number = 2.</source>
-        <translation>2) Dacă aveţi o lecţie de curs cu să zicem 4-5 activităţi pe săptămână, lecţii dificile (matematică), pe care aţi dori să le programaţi la începutul zilei (să zicem 3 dintre cele 4-5 trebuie să fie în prima jumătate a zilei), cea mai bună metodă este să folosiţi constrângerea subactivităţi sloturi de timp preferate sau timpi de început, specificând posibil disciplina şi numărul componentei: 1, 2 şi poate 3, adăugând 3 constrângeri pentru această disciplină (vedeţi FAQ pentru mai multe detalii). Puteţi adăuga de asemenea constrângeri pentru componentele numerele 3, 4 şi 5 pentru disciplina matematică (în acest fel ,dacă activitatea este împărţită în 4 va primi 2 devreme, dacă e împărţită în 5 ea va primi 3 devreme - un truc frumos). Similar, daca aveţi să zicem biologie cu 1 sau 2 împărţiri pe săptămână, puteţi adăuga o constrângere cu numărul componentei = 2.</translation>
+        <translation>2) Dacă aveţi o lecţie de curs cu să zicem 4-5 activităţi pe săptămână, lecţii dificile (matematică), pe care aţi dori să le programaţi la începutul zilei (să zicem 3 dintre cele 4-5 trebuie să fie în prima jumătate a zilei), cea mai bună metodă este să folosiţi constrângerea subactivităţi sloturi de timp preferate sau timpi de început, specificând posibil disciplina şi numărul componentei: 1, 2 şi poate 3, adăugând 3 constrângeri pentru această disciplină (vedeţi FAQ pentru mai multe detalii). Puteţi adăuga de asemenea constrângeri pentru componentele numerele 3, 4 şi 5 pentru disciplina matematică (în acest fel ,dacă activitatea este împărţită în 4 va primi 2 devreme, dacă e împărţită în 5 ea va primi 3 devreme - un truc frumos). Similar, dacă aveţi să zicem biologie cu 1 sau 2 împărţiri pe săptămână, puteţi adăuga o constrângere cu numărul componentei = 2.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="106"/>
@@ -33518,7 +33518,7 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="122"/>
         <source>7) It is possible to work with institutions in which the students work in shifts (for instance, lowest forms in the morning and highest forms in the afternoon). Please see in the Help/Frequently Asked Questions the solution to how to do that (the essence is to add corresponding constraints students set not available).</source>
-        <translation>7) Este posibil să lucraţi cu instituţii în care studenţii lucrează în schimburi (de exemplu, anii inferiori dimineaţa şi anii superiori dupa-amiaza). Vă rog vedeţi în Ajutor/Întrebări frecvente soluţia la cum să faceţi aceasta (esenţa este să adăugaţi constrângerile corespunzătoare set de studenţi indisponibil).</translation>
+        <translation>7) Este posibil să lucraţi cu instituţii în care studenţii lucrează în schimburi (de exemplu, anii inferiori dimineaţa şi anii superiori după-amiaza). Vă rog vedeţi în Ajutor/Întrebări frecvente soluţia la cum să faceţi aceasta (esenţa este să adăugaţi constrângerile corespunzătoare set de studenţi indisponibil).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="126"/>
@@ -33533,7 +33533,7 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="134"/>
         <source>10) If a constraint is allowed values under 100%, you can use any weight, even fractional numbers like 99.75%. It might help in constraints like min days, preferred rooms or max hours daily.</source>
-        <translation>10) Dacă pentru o constrângere sunt permise valori sub 100%, puteţi folosi orive importanţă, chiar numere fracţionare precum 99.75%. Ar putea ajuta în constrângeri precum min zile, săli preferate sau max ore zilnic.</translation>
+        <translation>10) Dacă pentru o constrângere sunt permise valori sub 100%, puteţi folosi orice importanţă, chiar numere fracţionare precum 99.75%. Ar putea ajuta în constrângeri precum min zile, săli preferate sau max ore zilnic.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="137"/>
@@ -33543,7 +33543,7 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="141"/>
         <source>12) If teachers are getting days with only one hour of work, you might want to add constraint teacher(s) min hours daily (probably with 2 hours), but please make sure your timetable is possible. This constraint is smart, it only considers non-empty days.</source>
-        <translation>12) Dacă profesorii au zile cu doar o oră de lucru, aţi putea dori să adăugaţi constrangerea profesor(i) min ore zilnic (probabil cu 2 ore), dar vă rog fiţi sigur că orarul dvs. este posibil. Constrângerea este inteligentă, consideră doar zilele nevide.</translation>
+        <translation>12) Dacă profesorii au zile cu doar o oră de lucru, aţi putea dori să adăugaţi constrângerea profesor(i) min ore zilnic (probabil cu 2 ore), dar vă rog fiţi sigur că orarul dvs. este posibil. Constrângerea este inteligentă, consideră doar zilele nevide.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="145"/>
@@ -34410,12 +34410,12 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
     <message>
         <location filename="../src/engine/import.cpp" line="1210"/>
         <source>FET noticed %1 warning with the current data.</source>
-        <translation>FET a gasit %1 avertisment în datele curente.</translation>
+        <translation>FET a găsit %1 avertisment în datele curente.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1212"/>
         <source>FET noticed %1 warnings with the current data.</source>
-        <translation>FET a gasit %1 avertismente în datele curente.</translation>
+        <translation>FET a găsit %1 avertismente în datele curente.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1223"/>
@@ -34461,7 +34461,7 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
         <location filename="../src/engine/import.cpp" line="1622"/>
         <location filename="../src/engine/import.cpp" line="2228"/>
         <source>%1 teachers added. Please check teachers form.</source>
-        <translation>%1 profesori adăugati. Vă rog verificaţi dialogul profesorilor.</translation>
+        <translation>%1 profesori adăugaţi. Vă rog verificaţi dialogul profesorilor.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1678"/>
@@ -34554,12 +34554,12 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
     <message>
         <location filename="../src/engine/import.cpp" line="2338"/>
         <source>Activity NOT added - please report error</source>
-        <translation>Activitate NEadaugată - eroare</translation>
+        <translation>Activitate NEadăugată - eroare</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2392"/>
         <source>Split activity NOT added - error???</source>
-        <translation>Activitatea împarţită NU poate fi adăugată - eroare???</translation>
+        <translation>Activitatea împărţită NU poate fi adăugată - eroare???</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="681"/>
@@ -34636,7 +34636,7 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
         <location filename="../src/engine/import.cpp" line="1395"/>
         <location filename="../src/engine/import.cpp" line="1403"/>
         <source>Skipped line %1: Field &apos;%2&apos; is already in a previous line.</source>
-        <translation>Ignorat linia %1: câmpul &apos;%2&apos; există deja pe o linie precendentă.</translation>
+        <translation>Ignorat linia %1: câmpul &apos;%2&apos; există deja pe o linie precedentă.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1481"/>
@@ -34708,7 +34708,7 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
     <message>
         <location filename="../src/engine/import.cpp" line="2122"/>
         <source>Student set %1 doesn&apos;t exist. You must add (or import) years, groups and subgroups first.</source>
-        <translation>Setul de studenţi %1 nu există. Trebuie să adăugaţi (sau importaţi) ani, grupuri şi subgrupuri intâi.</translation>
+        <translation>Setul de studenţi %1 nu există. Trebuie să adăugaţi (sau importaţi) ani, grupuri şi subgrupuri întâi.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2258"/>
@@ -34746,7 +34746,7 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
         <location filename="../src/engine/import.cpp" line="2198"/>
         <source>%1 %2 will be added.</source>
         <comment>For instance &apos;Subject Math will be added&apos;, so use singular</comment>
-        <translation>%1 %2 va fi adaugat.</translation>
+        <translation>%1 %2 va fi adăugat.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="113"/>
@@ -34771,17 +34771,17 @@ Probabil, în practică această problemă nu va apărea şi nu trebuie să vă 
     <message>
         <location filename="../src/engine/import.cpp" line="102"/>
         <source>Number of Students per Year</source>
-        <translation>Numar de studenţi pe an</translation>
+        <translation>Număr de studenţi pe an</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="104"/>
         <source>Number of Students per Group</source>
-        <translation>Numar de studenţi pe grup</translation>
+        <translation>Număr de studenţi pe grup</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="106"/>
         <source>Number of Students per Subgroup</source>
-        <translation>Numar de studenţi pe subgrup</translation>
+        <translation>Număr de studenţi pe subgrup</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1026"/>
@@ -34864,7 +34864,7 @@ este:</translation>
     <message>
         <location filename="../src/engine/import.cpp" line="2400"/>
         <source>Warning: found tags for the &apos;consecutive&apos; field of min days which are not a valid boolean value (%1) - making them %2</source>
-        <translation>Atenţie: am gasit taguri pentru câmpul &apos;consecutiv&apos; al constrângerilor min zile care nu sunt o valoare booleană validă (%1) - le facem %2</translation>
+        <translation>Atenţie: am găsit taguri pentru câmpul &apos;consecutiv&apos; al constrângerilor min zile care nu sunt o valoare booleană validă (%1) - le facem %2</translation>
     </message>
 </context>
 <context>
@@ -34998,7 +34998,7 @@ Vă rog opriţi simularea înainte de aceasta</translation>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="545"/>
         <source>FET - help on modifying activity(ies)</source>
-        <translation>FET - ajutor la modicarea activităţii(lor)</translation>
+        <translation>FET - ajutor la modificarea activităţii(lor)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="551"/>
@@ -35479,7 +35479,7 @@ Vă rog opriţi simularea înainte de aceasta</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="321"/>
         <source>You specified max simultaneous activities to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
-        <translation>Aţi specificat max activităţi simultane să fie 0. Aceasta nu este perfect din punct de vedere al eficienţei, deoarece puteţi folosi în loc constrângerea activitate(activităţi) sloturi de timp preferate, şi astfel să ajutaţi FET să găseasca mai uşor şi mai rapid un orar, cu un rezultat echivalent. Vă rugăm corectaţi.</translation>
+        <translation>Aţi specificat max activităţi simultane să fie 0. Aceasta nu este perfect din punct de vedere al eficienţei, deoarece puteţi folosi în loc constrângerea activitate(activităţi) sloturi de timp preferate, şi astfel să ajutaţi FET să găsească mai uşor şi mai rapid un orar, cu un rezultat echivalent. Vă rugăm corectaţi.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="331"/>
@@ -35789,7 +35789,7 @@ Vă rog opriţi simularea înainte de aceasta</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="321"/>
         <source>You specified max occupied time slots to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
-        <translation>Aţi specificat un număr maxim de sloturi ocupate fiind 0. Aceasta nu este perfect din punct de vedere al eficienţei, pentru că puteţi folosi în loc constrângerea activitate(activităţi) sloturi de timp preferate, ajutând FET să găseasca mai uşor şi mai rapid un orar, cu rezultat echivalent. Vă rog corectaţi.</translation>
+        <translation>Aţi specificat un număr maxim de sloturi ocupate fiind 0. Aceasta nu este perfect din punct de vedere al eficienţei, pentru că puteţi folosi în loc constrângerea activitate(activităţi) sloturi de timp preferate, ajutând FET să găsească mai uşor şi mai rapid un orar, cu rezultat echivalent. Vă rog corectaţi.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="331"/>
@@ -35910,9 +35910,9 @@ Vă rog opriţi simularea înainte de aceasta</translation>
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
         <translation>Aţi specificat toate activităţile. Aceasta s-ar putea să fie o mică problemă: dacă specificaţi un slot nepermis între două sloturi permise, acest slot nepermis va fi numărat ca o fereastra în orarul profesorilor şi studenţilor.
 
-Cea mai bună practică ar fi să folositi constrângerea timpi de pauză.
+Cea mai bună practică ar fi să folosiţi constrângerea timpi de pauză.
 
-Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineţi un orar imposibil (dacă un profesor/studenţi sunt constrânsi pe ferestre sau ferestre devreme şi lăsaţi un slot nepermis între 2 sloturi permise sau un slot nepermis devreme în zi şi mai multe sloturi permise după el, această posibilă fereastră poate fi numărată în orarul profesorilor şi studenţilor)</translation>
+Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineţi un orar imposibil (dacă un profesor/studenţi sunt constrânşi pe ferestre sau ferestre devreme şi lăsaţi un slot nepermis între 2 sloturi permise sau un slot nepermis devreme în zi şi mai multe sloturi permise după el, această posibilă fereastră poate fi numărată în orarul profesorilor şi studenţilor)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="336"/>
@@ -36044,9 +36044,9 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
         <translation>Aţi specificat toate activităţile. Aceasta s-ar putea să fie o mică problemă: dacă specificaţi un slot nepermis între două sloturi permise, acest slot nepermis va fi numărat ca o fereastră în orarul profesorilor şi studenţilor.
 
-Cea mai buna practica ar fi să folosiţi constrângerea timpi de pauză.
+Cea mai bună practică ar fi să folosiţi constrângerea timpi de pauză.
 
-Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineţi un orar imposibil (dacă un profesor/set de studenţi sunt constrânşi pe ferestre sau ferestre devreme şi lăsaţi un slot nepermis între 2 sloturi permise sau un slot nepermis devreme în zi şi mai multe sloturi permise dupa el, această posibilă fereastră poate fi numărată în orarul profesorilor şi studenţilor)</translation>
+Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineţi un orar imposibil (dacă un profesor/set de studenţi sunt constrânşi pe ferestre sau ferestre devreme şi lăsaţi un slot nepermis între 2 sloturi permise sau un slot nepermis devreme în zi şi mai multe sloturi permise după el, această posibilă fereastră poate fi numărată în orarul profesorilor şi studenţilor)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="335"/>
@@ -36062,11 +36062,11 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation>Aţi specificat doar profesorul. Aceasta s-ar putea să fie o mica problemă: dacă specificaţi un slot nepermis între două sloturi permise, acest slot nepermis va fi numărat ca o fereastră în orarul profesorului.
+        <translation>Aţi specificat doar profesorul. Aceasta s-ar putea să fie o mică problemă: dacă specificaţi un slot nepermis între două sloturi permise, acest slot nepermis va fi numărat ca o fereastră în orarul profesorului.
 
 Cea mai bună practică ar fi să folosiţi constrângerea profesor timpi indisponibili.
 
-Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineti orar imposibil (dacă profesorul este constrâns pe ferestre şi lăsaţi un slot nepermis între 2 sloturi permise, această posibilă fereastră poate fi numărata în orarul profesorului)</translation>
+Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineţi orar imposibil (dacă profesorul este constrâns pe ferestre şi lăsaţi un slot nepermis între 2 sloturi permise, această posibilă fereastră poate fi numărata în orarul profesorului)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="360"/>
@@ -36077,7 +36077,7 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
         <translation>Aţi specificat doar setul de studenţi. Aceasta s-ar putea să fie o mică problemă: dacă specificaţi un slot nepermis între două sloturi permise (sau un slot nepermis înainte de sloturi permise), acest slot nepermis va fi numărat ca o fereastră (sau fereastră devreme) în orarul studenţilor.
 
-Cea mai buna practică ar fi să folosiţi constrângerea set de studenţi timpi indisponibili.
+Cea mai bună practică ar fi să folosiţi constrângerea set de studenţi timpi indisponibili.
 
 Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această constrângere, dar fiţi atent să nu obţineţi orar imposibil (dacă setul de studenţi este constrâns pe ferestre sau ferestre devreme şi lăsaţi un slot nepermis între 2 sloturi permise (sau un slot nepermis înainte de sloturi permise), această posibilă fereastră poate fi numărată în orarul studenţilor)</translation>
     </message>
@@ -37400,7 +37400,7 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="215"/>
         <source>You want to add a constraint min days between activities for more activities than the number of days per week. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
-        <translation>Doriţi să adăugaţi o constrângere min zile între activităţi pentru mai multe activităţi decât numărul de zile pe săptămână. Aceasta este o practică foarte proastă din punctul de vedere al operaţiunii algoritmului (încetineşte generarea şi face soluţia mai greu de gasit).</translation>
+        <translation>Doriţi să adăugaţi o constrângere min zile între activităţi pentru mai multe activităţi decât numărul de zile pe săptămână. Aceasta este o practică foarte proastă din punctul de vedere al operaţiunii algoritmului (încetineşte generarea şi face soluţia mai greu de găsit).</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="218"/>
@@ -37410,12 +37410,12 @@ Dacă aveţi nevoie de importanţă sub 100%, atunci puteţi folosi această con
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="221"/>
         <source>1. If you add &apos;force consecutive if same day&apos;, then couple extra activities in pairs to obtain a number of activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components (possibly raising the weight of added constraint min days between activities up to 100%)</source>
-        <translation>1. Dacă adăugaţi &apos;forţează consecutiv dacă în aceeaşi zi&apos;, atunci cuplaţi activităţile în plus în perechi pentru a obţine un număr de activităţi egal cu numărul de zile pe săptămână. Exemplu: 7 activităţi cu durata 1 într-o săptămână cu 5 zile, atunci transformaţi în 5 activităţi cu duratele: 2,2,1,1,1 şi adăugaţi o singură activitate container cu aceste 5 componente (posibil mărind importanţa constrângerii min zile între activităţi adaugate până la 100%)</translation>
+        <translation>1. Dacă adăugaţi &apos;forţează consecutiv dacă în aceeaşi zi&apos;, atunci cuplaţi activităţile în plus în perechi pentru a obţine un număr de activităţi egal cu numărul de zile pe săptămână. Exemplu: 7 activităţi cu durata 1 într-o săptămână cu 5 zile, atunci transformaţi în 5 activităţi cu duratele: 2,2,1,1,1 şi adăugaţi o singură activitate container cu aceste 5 componente (posibil mărind importanţa constrângerii min zile între activităţi adăugate până la 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="227"/>
         <source>2. If you don&apos;t add &apos;force consecutive if same day&apos;, then add a larger activity splitted into a number of activities equal with the number of days per week and the remaining components into other larger splitted activity. For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, first one splitted into 5 activities with duration 1 and second one splitted into 2 activities with duration 1 (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)</source>
-        <translation>2. Dacă nu adăugaţi &apos;forţează consecutive dacă în aceeaşi zi&apos;, atunci adăugaţi o activitate mai mare împărţită într-un număr de activităţi egale cu numărul de zile pe săptămână şi restul componentelor în altă activitate mai mare împărţită. De exemplu, presupunem că trebuie adăugate 7 activităţi cu durata 1 într-o săptămână de 5 zile. Adăugaţi 2 activităţi mai mari, prima împărţită în 5 activităţi cu durata 1 şi a doua împărţită în 2 activităţi cu durata 1 (posibil mărind importanţa constrângerilor min zile între activităţi adaugate pentru fiecare dintre cele 2 containere până la 100%)</translation>
+        <translation>2. Dacă nu adăugaţi &apos;forţează consecutive dacă în aceeaşi zi&apos;, atunci adăugaţi o activitate mai mare împărţită într-un număr de activităţi egale cu numărul de zile pe săptămână şi restul componentelor în altă activitate mai mare împărţită. De exemplu, presupunem că trebuie adăugate 7 activităţi cu durata 1 într-o săptămână de 5 zile. Adăugaţi 2 activităţi mai mari, prima împărţită în 5 activităţi cu durata 1 şi a doua împărţită în 2 activităţi cu durata 1 (posibil mărind importanţa constrângerilor min zile între activităţi adăugate pentru fiecare dintre cele 2 containere până la 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="234"/>
@@ -37855,7 +37855,7 @@ Notă: set de studenţi indisponibil şi pauzele nu sunt numărate ca ferestre (
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="32"/>
         <source>This represents the maximum allowed beginnings at the second available hour (in a week). You might want to allow your students to begin in some days later, at the second available hour, so you might put &quot;max beginnings at second hour&quot; greater than 0 (the timetable will be easier for FET). You might want to choose a greater value and lower it as you find new timetables</source>
-        <translation>Aceasta reprezintă maximum permis de începeri la a doua oră disponibilă (pe săptămână). Poate veţi vrea să permiteţi studeţilor să înceapa mai târziu în câteva zile, la a doua oră disponibilă, aşa că veţi putea pune „max începeri la ora a doua” mai mare ca 0 (orarul va fi mai uşor pentru FET). Poate veţi vrea să alegeţi o valoare mai mare şi să o scădeţi când gasiti orare noi</translation>
+        <translation>Aceasta reprezintă maximum permis de începeri la a doua oră disponibilă (pe săptămână). Poate veţi vrea să permiteţi studenţilor să înceapă mai târziu în câteva zile, la a doua oră disponibilă, aşa că veţi putea pune „max începeri la ora a doua” mai mare ca 0 (orarul va fi mai uşor pentru FET). Poate veţi vrea să alegeţi o valoare mai mare şi să o scădeţi când găsiţi orare noi</translation>
     </message>
 </context>
 <context>
@@ -38066,7 +38066,7 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
         <translation>Trebuie să folosiţi importanţa procentuală 100%
 Notă: set de studenţi indisponibil şi pauză nu sunt socotite ferestre.
 
-IMPORTANT: daca vreţi 0 ferestre în total, este puternic recomandat să NU folosiţi această constrângere, ci folosiţi în loc mai sigura/mai buna constrângere max ferestre pe săptămână.</translation>
+IMPORTANT: dacă vreţi 0 ferestre în total, este puternic recomandat să NU folosiţi această constrângere, ci folosiţi în loc mai sigura/mai buna constrângere max ferestre pe săptămână.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperdayform_template.ui" line="69"/>
@@ -38318,7 +38318,7 @@ Notă: set de studenţi indisponibil şi pauzele nu sunt numărate ca ferestre.<
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="110"/>
         <source>Advanced usage is not enabled. To be able to select &apos;Allow empty days&apos; for the constraints of type min hours daily for students, you must enable the option from the Settings-&gt;Advanced menu.</source>
         <comment>&apos;Allow empty days&apos; is an option which the user can enable and then he can select it.</comment>
-        <translation>Utilizarea avansată nu este activată. Pentru a putea selecta &apos;Permite zile libere&apos; pentru constrâgerile de tip min ore zilnic pentru studenţi, trebuie să activaţi opţiunea din meniul Setări-&gt;Avansat.</translation>
+        <translation>Utilizarea avansată nu este activată. Pentru a putea selecta &apos;Permite zile libere&apos; pentru constrângerile de tip min ore zilnic pentru studenţi, trebuie să activaţi opţiunea din meniul Setări-&gt;Avansat.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="116"/>
@@ -38565,7 +38565,7 @@ Notă: set de studenţi indisponibil şi pauzele nu sunt numărate ca ferestre (
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="32"/>
         <source>This represents the maximum allowed beginnings at the second available hour (in a week). You might want to allow your students to begin in some days later, at the second available hour, so you might put &quot;max beginnings at second hour&quot; greater than 0 (the timetable will be easier for FET). You might want to choose a greater value and lower it as you find new timetables</source>
-        <translation>Aceasta reprezintă maximum permis de începeri la a doua oră disponibilă (pe săptămână). Poate veţi vrea să permiteţi studeţilor să înceapa mai târziu în câteva zile, la a doua oră disponibilă, aşa că veţi putea pune „max începeri la ora a doua” mai mare ca 0 (orarul va fi mai uşor pentru FET). Poate veţi vrea să alegeţi o valoare mai mare şi să o scădeţi când gasiti orare noi</translation>
+        <translation>Aceasta reprezintă maximum permis de începeri la a doua oră disponibilă (pe săptămână). Poate veţi vrea să permiteţi studenţilor să înceapă mai târziu în câteva zile, la a doua oră disponibilă, aşa că veţi putea pune „max începeri la ora a doua” mai mare ca 0 (orarul va fi mai uşor pentru FET). Poate veţi vrea să alegeţi o valoare mai mare şi să o scădeţi când găsiţi orare noi</translation>
     </message>
 </context>
 <context>
@@ -38931,7 +38931,8 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
         <translation>Trebuie să folosiţi importanţa procentuală 100%
 Notă: set de studenţi indisponibil şi pauză nu sunt socotite ferestre.
 
-IMPORTANT: daca vreţi 0 ferestre în total, este puternic recomandat să NU folosiţi această constrângere, ci folosiţi în loc mai sigura/mai buna constrângere max ferestre pe săptămână.</translation>
+IMPORTANT: dacă
+ vreţi 0 ferestre în total, este puternic recomandat să NU folosiţi această constrângere, ci folosiţi în loc mai sigura/mai buna constrângere max ferestre pe săptămână.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="126"/>
@@ -39243,7 +39244,7 @@ Notă: set de studenţi indisponibil şi pauzele nu sunt numărate ca ferestre.<
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="156"/>
         <source>Advanced usage is not enabled. To be able to select &apos;Allow empty days&apos; for the constraints of type min hours daily for students, you must enable the option from the Settings-&gt;Advanced menu.</source>
         <comment>&apos;Allow empty days&apos; is an option which the user can enable and then he can select it.</comment>
-        <translation>Utilizarea avansată nu este activată. Pentru a putea selecta &apos;Permite zile libere&apos; pentru constrâgerile de tip min ore zilnic pentru studenţi, trebuie să activaţi opţiunea din meniul Setări-&gt;Avansat.</translation>
+        <translation>Utilizarea avansată nu este activată. Pentru a putea selecta &apos;Permite zile libere&apos; pentru constrângerile de tip min ore zilnic pentru studenţi, trebuie să activaţi opţiunea din meniul Setări-&gt;Avansat.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="162"/>
@@ -41319,7 +41320,7 @@ Notă: profesor indisponibil şi pauză nu sunt socotite ca ferestre.</translati
         <source>It is recommended to use only one constraint of this type. You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per week and lower it as you find new timetables.
 Note: teacher not available and break are not counted as gaps.</source>
         <translation>Este recomandat să folosiţi doar o constrângere de acest tip. Trebuie să folosiţi importanţa 100%, deoarece altfel veţi obţine orare proaste. Încercaţi să fixaţi întâi o valoare ridicata pentru max ferestre pe săptămână şi să o micşoraţi când găsiţi orare noi.
-Notă: profesor indisponibil şi pauză nu sunt socotite ca sferestre.</translation>
+Notă: profesor indisponibil şi pauză nu sunt socotite ca ferestre.</translation>
     </message>
 </context>
 <context>
@@ -41525,12 +41526,12 @@ Notă: profesor indisponibil şi pauză nu sunt socotite ca sferestre.</translat
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="79"/>
         <source>Allow empty days check box must be checked. If you need to not allow empty days for the teachers, please use the constraint teachers min days per week</source>
-        <translation>Check box-ul permite zile libere trebuie să fie selectat. Daca aveţi nevoie să nu permiteţi zile libere pentru profesori, vă rugăm folosiţi constrângerea profesori min zile pe săptămână</translation>
+        <translation>Check box-ul permite zile libere trebuie să fie selectat. Dacă aveţi nevoie să nu permiteţi zile libere pentru profesori, vă rugăm folosiţi constrângerea profesori min zile pe săptămână</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersminhoursdailyform.cpp" line="108"/>
         <source>This check box must remain checked. If you really need to not allow empty days for the teachers, please use constraint teachers min days per week</source>
-        <translation>Acest check-box trebuie să ramână selectat. Daca chiar aveţi nevoie să nu permiteţi zile libere pentru profesori, vă rugăm folosiţi constrângerea profesori min zile pe săptămână</translation>
+        <translation>Acest check-box trebuie să rămână selectat. Dacă chiar aveţi nevoie să nu permiteţi zile libere pentru profesori, vă rugăm folosiţi constrângerea profesori min zile pe săptămână</translation>
     </message>
 </context>
 <context>
@@ -42405,12 +42406,12 @@ Notă: profesor indisponibil şi pauză nu sunt socotite ca sferestre.</translat
     <message>
         <location filename="../src/interface/removeredundantconfirmationform.cpp" line="41"/>
         <source>Please read carefully the description below:</source>
-        <translation>Va rugăm citiţi cu atenţie descrierea de mai jos:</translation>
+        <translation>Vă rugăm citiţi cu atenţie descrierea de mai jos:</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform.cpp" line="47"/>
         <source>Removing means making their weight percentage 0.0%. This is done so you can still activate them again, if needed, and also for you to be able to see when they are broken, in the soft conflicts list</source>
-        <translation>Ştergere înseamnă să facă importanţa lor procentuală 0.0%. Aceasta este făcuta pentru ca dvs. să le puteţi activa din nou, dacă aveţi nevoie, şi pentru ca dvs. să puteţi vedea când ele sunt încalcate, în lista de conflicte „uşoare”</translation>
+        <translation>Ştergere înseamnă să facă importanţa lor procentuală 0.0%. Aceasta este făcuta pentru ca dvs. să le puteţi activa din nou, dacă aveţi nevoie, şi pentru ca dvs. să puteţi vedea când ele sunt încălcate, în lista de conflicte „uşoare”</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform.cpp" line="50"/>
@@ -42425,7 +42426,7 @@ Notă: profesor indisponibil şi pauză nu sunt socotite ca sferestre.</translat
     <message>
         <location filename="../src/interface/removeredundantconfirmationform.cpp" line="43"/>
         <source>This function is intended to be used after you inputted all data or after you used the advanced function of spreading the activities over the week. This function will automatically remove the redundant constraints of type min days between activities, so that your data is more correct and the timetable easier for FET to find</source>
-        <translation>Această funcţie este facută pentru a fi folosită după ce aţi introdus toate datele sau după ce aţi folosit funcţia avansată de distribuire a activităţilor de-a lungul săptămânii. Această funcţie va şterge automat constrângerile redundante de tip min zile între activităţi, aşa încât datele dvs. sunt mai corecte şi orarul mai uşor de găsit pentru FET</translation>
+        <translation>Această funcţie este făcută pentru a fi folosită după ce aţi introdus toate datele sau după ce aţi folosit funcţia avansată de distribuire a activităţilor de-a lungul săptămânii. Această funcţie va şterge automat constrângerile redundante de tip min zile între activităţi, aşa încât datele dvs. sunt mai corecte şi orarul mai uşor de găsit pentru FET</translation>
     </message>
 </context>
 <context>
@@ -42481,7 +42482,7 @@ Notă: profesor indisponibil şi pauză nu sunt socotite ca sferestre.</translat
     <message>
         <location filename="../src/interface/removeredundantform.cpp" line="225"/>
         <source>The following time constraints will be inactivated (their weight will be made 0%):</source>
-        <translation>Următoarele constrângeri de timp vor fi inactivate (imporţanta lor va fi făcută 0%):</translation>
+        <translation>Următoarele constrângeri de timp vor fi inactivate (importanţa lor va fi făcută 0%):</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform.cpp" line="231"/>
@@ -42930,7 +42931,7 @@ Notă: profesor indisponibil şi pauză nu sunt socotite ca sferestre.</translat
 %2 because there is only one room left in the constraint</source>
         <translation>Constrângerea
 %1 va fi modificată în constrângerea
-%2 pentru că a ramas o singură sală în constrângere</translation>
+%2 pentru că a rămas o singură sală în constrângere</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="3720"/>
@@ -43077,12 +43078,12 @@ Vă rog luaţi aminte că importanţa procentuală predefinită a constrângeril
     <message>
         <location filename="../src/engine/rules.cpp" line="5624"/>
         <source>Duplicate teacher %1 found - ignoring</source>
-        <translation>Profesor duplicat %1 întalnit - este ignorat</translation>
+        <translation>Profesor duplicat %1 întâlnit - este ignorat</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5667"/>
         <source>Duplicate subject %1 found - ignoring</source>
-        <translation>Disciplină duplicat %1 întalnită - este ignorată</translation>
+        <translation>Disciplină duplicat %1 întâlnită - este ignorată</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5685"/>
@@ -43093,7 +43094,7 @@ Vă rog luaţi aminte că importanţa procentuală predefinită a constrângeril
         <location filename="../src/engine/rules.cpp" line="5713"/>
         <location filename="../src/engine/rules.cpp" line="5756"/>
         <source>Duplicate activity tag %1 found - ignoring</source>
-        <translation>Etichetă activitate duplicat %1 întalnită - este ignorată</translation>
+        <translation>Etichetă activitate duplicat %1 întâlnită - este ignorată</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5811"/>
@@ -43262,29 +43263,28 @@ Vă rog luaţi aminte că importanţa procentuală predefinită a constrângeril
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6309"/>
-        <source>File contains deprecated equipments list - will be ignored
-</source>
+        <source>File contains deprecated equipments list - will be ignored</source>
         <translation>Fişierul conţine lista de echipamente - depreciată - va fi ignorată</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6342"/>
         <source>Duplicate building %1 found - ignoring</source>
-        <translation>Clădire duplicat %1 întalnită - este ignorată</translation>
+        <translation>Clădire duplicat %1 întâlnită - este ignorată</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6404"/>
         <source>Duplicate room %1 found - ignoring</source>
-        <translation>Sală duplicat %1 întalnită - este ignorată</translation>
+        <translation>Sală duplicat %1 întâlnită - este ignorată</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6455"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
-        <translation>Fişierul dvs. conţine constrângere profesor indisponibil, care este veche (a fost îmbunatăţită în FET 5.5.0) şi va fi convertită la o constrângere similară, constrângerea profesor timpi de indisponibilitate (o matrice).</translation>
+        <translation>Fişierul dvs. conţine constrângere profesor indisponibil, care este veche (a fost îmbunătăţită în FET 5.5.0) şi va fi convertită la o constrângere similară, constrângerea profesor timpi de indisponibilitate (o matrice).</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6496"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
-        <translation>Fişierul dvs. conţine constrângere set de studenţi indisponibil, care este veche (a fost îmbunatăţită în FET 5.5.0) şi va fi convertită la o constrângere similară, constrângerea set de studenţi timpi de indisponibilitate (o matrice).</translation>
+        <translation>Fişierul dvs. conţine constrângere set de studenţi indisponibil, care este veche (a fost îmbunătăţită în FET 5.5.0) şi va fi convertită la o constrângere similară, constrângerea set de studenţi timpi de indisponibilitate (o matrice).</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6568"/>
@@ -43307,7 +43307,7 @@ Vă rog luaţi aminte că importanţa procentuală predefinită a constrângeril
     <message>
         <location filename="../src/engine/rules.cpp" line="6631"/>
         <source>File contains old constraint type activity preferred time, which will be converted to the newer similar constraint of this type, constraint activity preferred STARTING time. This improvement is done in versions 5.5.9 and above</source>
-        <translation>Fişierul conţine constrângerea veche de tip activitate timp preferat, care va fi convertită la noua constrângere similară de acest tip, constrângere activitate timp preferat DE START. Această îmbunatăţire este făcută în versiunile 5.5.9 şi mai mari</translation>
+        <translation>Fişierul conţine constrângerea veche de tip activitate timp preferat, care va fi convertită la noua constrângere similară de acest tip, constrângere activitate timp preferat DE START. Această îmbunătăţire este făcută în versiunile 5.5.9 şi mai mari</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6681"/>
@@ -43348,7 +43348,7 @@ Vă rog luaţi aminte că importanţa procentuală predefinită a constrângeril
     <message>
         <location filename="../src/engine/rules.cpp" line="6819"/>
         <source>Your file contains old constraint activities preferred times, which will be converted to new equivalent constraint activities preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of several activities (constraint activities preferred starting times) or: 2. the accepted time slots (constraint activities preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
-        <translation>Fişierul dvs. conţine constrângerea veche activităţi timpi preferaţi, care va fi convertită la noua constrângere echivalentă activităţi timpi de start preferaţi. Începand cu FET-5.5.9 este posibil să specificaţi: 1. timpii de start ai unor activităţi (constrângere activităţi timpi de start preferaţi) sau: 2. sloturile de timp acceptate (constrângere activităţi sloturi de timp preferate). Dacă aveţi nevoie de tipul 2 al acestei constrângeri, trebuie să o adăugaţi dumneavoastră din interfată.</translation>
+        <translation>Fişierul dvs. conţine constrângerea veche activităţi timpi preferaţi, care va fi convertită la noua constrângere echivalentă activităţi timpi de start preferaţi. Începând cu FET-5.5.9 este posibil să specificaţi: 1. timpii de start ai unor activităţi (constrângere activităţi timpi de start preferaţi) sau: 2. sloturile de timp acceptate (constrângere activităţi sloturi de timp preferate). Dacă aveţi nevoie de tipul 2 al acestei constrângeri, trebuie să o adăugaţi dumneavoastră din interfaţă.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6857"/>
@@ -43557,7 +43557,7 @@ neadăugată - trebuie să fie un duplicat</translation>
     <message>
         <location filename="../src/engine/rules.cpp" line="8270"/>
         <source>Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation>Constrângerea SetDeStundenţiIntervalMaxZilePeSăptămână max zile coruptă pentru setul de studenţi %1, max zile %2 &gt;nZilePeSăptămână, constrângerea adăugată, vă rog corectaţi constrângerea</translation>
+        <translation>Constrângerea SetDeStudenţiIntervalMaxZilePeSăptămână max zile coruptă pentru setul de studenţi %1, max zile %2 &gt;nZilePeSăptămână, constrângerea adăugată, vă rog corectaţi constrângerea</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="8286"/>
@@ -43652,13 +43652,13 @@ neadăugată - trebuie să fie un duplicat</translation>
         <location filename="../src/engine/rules.cpp" line="10287"/>
         <location filename="../src/engine/rules.cpp" line="10455"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred starting time has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
-        <translation>Explicaţie: începand cu versiunea 5.8.0 (ianuarie 2009), constrângerea activitate timp de start preferat are o nouă etichetă, &apos;permanent blocată&apos; (adevarat sau fals). Este recomandat să faceţi eticheta &apos;permanent blocată&apos; adevarată pentru constrângerile care trebuie să fie ne-modificabile din meniul &apos;Orar&apos; şi să lăsaţi această etichetă falsă pentru constrângerile care trebuie să fie modificabile din meniul &apos;Orar&apos; (această etichetă poate fi modificată editând constrângerea din meniul &apos;Date&apos;). În acest fel, când vizualizaţi orarul şi blocaţi/deblocaţi câteva activităţi, nu veţi debloca constrângerile care trebuie să fie blocate tot timpul.</translation>
+        <translation>Explicaţie: începând cu versiunea 5.8.0 (ianuarie 2009), constrângerea activitate timp de start preferat are o nouă etichetă, &apos;permanent blocată&apos; (adevărat sau fals). Este recomandat să faceţi eticheta &apos;permanent blocată&apos; adevărată pentru constrângerile care trebuie să fie ne-modificabile din meniul &apos;Orar&apos; şi să lăsaţi această etichetă falsă pentru constrângerile care trebuie să fie modificabile din meniul &apos;Orar&apos; (această etichetă poate fi modificată editând constrângerea din meniul &apos;Date&apos;). În acest fel, când vizualizaţi orarul şi blocaţi/deblocaţi câteva activităţi, nu veţi debloca constrângerile care trebuie să fie blocate tot timpul.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="10306"/>
         <location filename="../src/engine/rules.cpp" line="10474"/>
         <source>Found constraint activity preferred starting time, with unspecified day or hour. This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one). This change is done in FET versions 5.8.1 and higher.</source>
-        <translation>Am găsit constrângerea activitate timp de start preferat, cu zi sau oră nespecificată. Această constrângere va fi transformată în constrângere de tip activitate timpi de start preferaţi (un set de timpi, nu unul singur). Această schimbare este facută în FET versiunile 5.8.1 şi ulterioare.</translation>
+        <translation>Am găsit constrângerea activitate timp de start preferat, cu zi sau oră nespecificată. Această constrângere va fi transformată în constrângere de tip activitate timpi de start preferaţi (un set de timpi, nu unul singur). Această schimbare este făcută în FET versiunile 5.8.1 şi ulterioare.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="10419"/>
@@ -43818,7 +43818,7 @@ neadăugată - trebuie să fie un duplicat</translation>
     <message>
         <location filename="../src/engine/rules.cpp" line="13591"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred room has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
-        <translation>Explicaţie: începând cu versiunea 5.8.0 (ianuarie 2009), constrângerea activitate sală preferată are o nouă etichetă, &apos;permanent blocată&apos; (adevarat sau fals). Este recomandat să faceţi eticheta &apos;permanent blocată&apos; adevarată pentru constrângerile care trebuie să fie ne-modificabile din meniul &apos;Orar&apos; şi să lăsaţi această etichetă falsă pentru constrângerile care trebuie să fie modificabile din meniul &apos;Orar&apos; (această etichetă poate fi modificată editând constrângerea din meniul &apos;Date&apos;). În acest fel, când vizualizaţi orarul şi blocaţi/deblocaţi câteva activităţi, nu veţi debloca constrângerile care trebuie să fie blocate tot timpul.</translation>
+        <translation>Explicaţie: începând cu versiunea 5.8.0 (ianuarie 2009), constrângerea activitate sală preferată are o nouă etichetă, &apos;permanent blocată&apos; (adevărat sau fals). Este recomandat să faceţi eticheta &apos;permanent blocată&apos; adevărată pentru constrângerile care trebuie să fie ne-modificabile din meniul &apos;Orar&apos; şi să lăsaţi această etichetă falsă pentru constrângerile care trebuie să fie modificabile din meniul &apos;Orar&apos; (această etichetă poate fi modificată editând constrângerea din meniul &apos;Date&apos;). În acest fel, când vizualizaţi orarul şi blocaţi/deblocaţi câteva activităţi, nu veţi debloca constrângerile care trebuie să fie blocate tot timpul.</translation>
     </message>
 </context>
 <context>
@@ -43902,7 +43902,7 @@ neadăugată - trebuie să fie un duplicat</translation>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="443"/>
         <source>You selected min days between activities %1 (above 1) and weight %2 (under 100.0). Would you like to add also a second constraint to ensure that almost certainly the distance between activities is at least %3 (%1-1) days? If yes, please select weight (recommended 95.0%-100.0%) and click Yes. If no, please click No (only one constraint will be added)</source>
-        <translation>Aţi selectat min zile între activităţi %1 (peste 1) şi importanţa %2 (sub 100.0). Aţi vrea să adăugaţi o a doua constrângere pentru a asigura faptul că aproape cert distanţa între activităţi este cel puţin %3 (%1-1) zile? Daca da, vă rog selectaţi importanţa (recomandat 95%-100%) şi apăsaţi Da. Dacă nu, vă rog apasaţi Nu (doar o constrângere va fi adăugată)</translation>
+        <translation>Aţi selectat min zile între activităţi %1 (peste 1) şi importanţa %2 (sub 100.0). Aţi vrea să adăugaţi o a doua constrângere pentru a asigura faptul că aproape cert distanţa între activităţi este cel puţin %3 (%1-1) zile? Dacă da, vă rog selectaţi importanţa (recomandat 95%-100%) şi apăsaţi Da. Dacă nu, vă rog apăsaţi Nu (doar o constrângere va fi adăugată)</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="460"/>
@@ -43917,7 +43917,7 @@ neadăugată - trebuie să fie un duplicat</translation>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="454"/>
         <source>Note: 95% is usually enough for min days constraints referring to same activities. The weights are cumulated if referring to the same activities. If you have 2 constraints with say 95% (say min n days and min n-1 days), the min n days constraint is skipped with probability 5%, then min n-1 days constraint is skipped with probability 0.25%=5%*5%, so you&apos;ll get in 99.75% cases the min n-1 days constraint respected.</source>
-        <translation>Notă: 95% este de obicei destul pentru constrângerile min zile care se referă la aceleaşi activităţi. Importanţele sunt cumulate daca se referă la aceleaşi activităţi. Dacă aveţi 2 constrângeri cu să zicem 95% (să zicem min n zile şi min n-1 zile), constrângerea cu min n zile este ocolită cu probabilitatea 5%, apoi constrângerea min n-1 zile este ocolită cu probabilitatea 0.25%=5%*5%, aşa că veţi obţine în 99.75% cazuri constrângerea cu min n-1 zile respectată.</translation>
+        <translation>Notă: 95% este de obicei destul pentru constrângerile min zile care se referă la aceleaşi activităţi. Importanţele sunt cumulate dacă se referă la aceleaşi activităţi. Dacă aveţi 2 constrângeri cu să zicem 95% (să zicem min n zile şi min n-1 zile), constrângerea cu min n zile este ocolită cu probabilitatea 5%, apoi constrângerea min n-1 zile este ocolită cu probabilitatea 0.25%=5%*5%, aşa că veţi obţine în 99.75% cazuri constrângerea cu min n-1 zile respectată.</translation>
     </message>
 </context>
 <context>
@@ -44012,7 +44012,7 @@ neadăugată - trebuie să fie un duplicat</translation>
         <translation>Nivelul 5 - JavaScript
 - toate caracteristicile nivelului 4 cu aprox. de 3.5 ori mai mari dimensiuni pt. fişiere decât nivelul 2
 - highlight ale aceloraşi discipline, etichete activitate, profesori, seturi de studenţi şi săli
-(necesită JavaScript - doar plimbaţi mouse-ul peste un cuvânt şi asteptaţi un pic)</translation>
+(necesită JavaScript - doar plimbaţi mouse-ul peste un cuvânt şi aşteptaţi un pic)</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="54"/>
@@ -44210,7 +44210,7 @@ neadăugată - trebuie să fie un duplicat</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="1141"/>
         <source>Probably you don&apos;t need to worry about empty subgroups (no significant speed changes), although I didn&apos;t test enough such situations. You just need to know that for the moment the maximum total number of subgroups is %1 (which can be changed, but nobody needed larger values)</source>
-        <translation>Probabil că nu trebuie să vă faceţi griji pentru subgrupurile goale (nu se modifică semnificativ viteza), deşi nu am testat de ajuns asemenea situaţii. Trebuie să ştiti că pentru moment numărul total maxim de subgrupuri este %1 (care poate fi modificat, dar nimeni nu a avut nevoie de valori mai mari)</translation>
+        <translation>Probabil că nu trebuie să vă faceţi griji pentru subgrupurile goale (nu se modifică semnificativ viteza), deşi nu am testat de ajuns asemenea situaţii. Trebuie să ştiţi că pentru moment numărul total maxim de subgrupuri este %1 (care poate fi modificat, dar nimeni nu a avut nevoie de valori mai mari)</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="1148"/>
@@ -44318,12 +44318,12 @@ neadăugată - trebuie să fie un duplicat</translation>
     <message>
         <location filename="../src/interface/spreadconfirmationform.cpp" line="52"/>
         <source>Please SAVE/BACKUP your current file and keep it safe, in case anything goes wrong, and only continue if you did that already. Current function might modify much your data</source>
-        <translation>Vă rugăm SALVAŢI/FACEŢI BACKUP al fişierului curent şi păstraţi-l la loc sigur, în caz că ceva va merge prost, şi continuaţi doar daca aţi făcut aceasta deja. Funcţia curentă s-ar putea să modifice semnificativ datele dvs</translation>
+        <translation>Vă rugăm SALVAŢI/FACEŢI BACKUP al fişierului curent şi păstraţi-l la loc sigur, în caz că ceva va merge prost, şi continuaţi doar dacă aţi făcut aceasta deja. Funcţia curentă s-ar putea să modifice semnificativ datele dvs</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform.cpp" line="60"/>
         <source>It is important for you to choose good weights percentages, suitable for your institution. A good weighting might be values from 95.0% to 100.0% (ex.: 95.0%, 99.0%, 99.75%, 100.0%). You may want to select the check boxes for activities split into 2 or 3 components, so that they are not in consecutive days. If you obtain a timetable too difficult for FET, you might need to revert to your former data or lower weights of constraints. Note: you can use a progressive approach in choosing good weights</source>
-        <translation>Este important să alegeţi importanţe procentuale bune, potrivite pentru instituţia dvs. O bună importanţă pot fi valori de la 95.0% până la 100.0% (ex.: 95.0%, 99.0%, 99.75%, 100.0%). Poate veţi dori să selectaţi check box-urile pentru activităţile împărţite în 2 sau 3 componente, aşa încat ele nu vor fi in zile consecutive. Dacă obţineti un orar prea dificil pentru FET, poate va fi nevoie să vă întoarceţi la datele precendente sau să micşoraţi importanţa constrângerilor. Notă: puteţi folosi o abordare progresiva în a alege importanţe bune</translation>
+        <translation>Este important să alegeţi importanţe procentuale bune, potrivite pentru instituţia dvs. O bună importanţă pot fi valori de la 95.0% până la 100.0% (ex.: 95.0%, 99.0%, 99.75%, 100.0%). Poate veţi dori să selectaţi check box-urile pentru activităţile împărţite în 2 sau 3 componente, aşa încât ele nu vor fi în zile consecutive. Dacă obţineţi un orar prea dificil pentru FET, poate va fi nevoie să vă întoarceţi la datele precedente sau să micşoraţi importanţa constrângerilor. Notă: puteţi folosi o abordare progresiva în a alege importanţe bune</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform.cpp" line="47"/>
@@ -44338,7 +44338,7 @@ neadăugată - trebuie să fie un duplicat</translation>
     <message>
         <location filename="../src/interface/spreadconfirmationform.cpp" line="55"/>
         <source>If you use constraints activities same starting time or same starting day then you must take care of this aspect: after applying this function and before generating a timetable, it is IMPORTANT to remove constraints min days between activities which are redundant, like described in Help/Important tips, advice 2) . If you don&apos;t do that, you might get too difficult timetables or even impossible ones.</source>
-        <translation>Dacă folosiţi constrângeri activităţi acelaşi timp de început sau aceeaşi zi de început, atunci trebuie să ţineţi cont de acest aspect: dupa ce aţi aplicat această funcţie şi înainte de a genera un orar, este IMPORTANT să ştergeţi constrângerile min zile între activităţi care sunt redundante, cum este descris în Ajutor/Sfaturi importante, sfatul 2). Dacă nu faceţi aceasta, s-ar putea să obţineţi orare prea dificile sau chiar imposibile.</translation>
+        <translation>Dacă folosiţi constrângeri activităţi acelaşi timp de început sau aceeaşi zi de început, atunci trebuie să ţineţi cont de acest aspect: după ce aţi aplicat această funcţie şi înainte de a genera un orar, este IMPORTANT să ştergeţi constrângerile min zile între activităţi care sunt redundante, cum este descris în Ajutor/Sfaturi importante, sfatul 2). Dacă nu faceţi aceasta, s-ar putea să obţineţi orare prea dificile sau chiar imposibile.</translation>
     </message>
 </context>
 <context>
@@ -44379,17 +44379,17 @@ neadăugată - trebuie să fie un duplicat</translation>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="68"/>
         <source>Invalid weight (percentage) for all split activities - must be real number &gt;=0.0 and &lt;=100.0</source>
-        <translation>Importanţă procentuală invalidă pentru toate activităţile împărţite - trebuie să fie un numar real &gt;=0.0 şi &lt;=100.0</translation>
+        <translation>Importanţă procentuală invalidă pentru toate activităţile împărţite - trebuie să fie un număr real &gt;=0.0 şi &lt;=100.0</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="77"/>
         <source>Invalid weight (percentage) for activities split into 2 components - must be real number &gt;=0.0 and &lt;=100.0</source>
-        <translation>Importanţă procentuală invalidăa pentru activităţile împărţite în 2 componente - trebuie să fie un numar real &gt;=0.0 şi &lt;=100.0</translation>
+        <translation>Importanţă procentuală invalidă pentru activităţile împărţite în 2 componente - trebuie să fie un număr real &gt;=0.0 şi &lt;=100.0</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="86"/>
         <source>Invalid weight (percentage) for activities split into 3 components - must be real number &gt;=0.0 and &lt;=100.0</source>
-        <translation>Importanţă procentuală invalidă pentru activităţile împărţite în 3 componente - trebuie să fie un numar real &gt;=0.0 şi &lt;=100.0</translation>
+        <translation>Importanţă procentuală invalidă pentru activităţile împărţite în 3 componente - trebuie să fie un număr real &gt;=0.0 şi &lt;=100.0</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="96"/>
@@ -44481,7 +44481,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="415"/>
         <source>Weights (percentages) of newly added constraints min days between activities - recommended between 95.0%-100.0% (maybe lower on those split into 3). Make weights 100.0% if the constraints need to be respected all the time. It is recommended to enable the check boxes for activities split into 2 or 3 components (not to be in consecutive days), if your data is still possible to solve. You may use a progressive approach. Example of weights: 90.0%, 95.0%, 99.0%, 99.75%, 100.0%.</source>
-        <translation>Importanţele (procentuale) ale constrângerilor adăugate de tip min zile între activităţi - recomandat între 95.0%-100.0% (poate mai joase pentru cele împărţite în 3). Faceţi importanţele 100.0% dacă constrângerile trebuie să fie respectate tot timpul. Este recomandat să activaţi check box-urile pentru activităţile împărtiţe în 2 sau 3 componente (să nu fie în zile consecutive), dacă datele dvs. sunt în continuare posibil de rezolvat. Puteţi folosi o abordare progresiva. Exemple de importanţe: 90.0%, 95.0%, 99.0%, 99.75%, 100.0%.</translation>
+        <translation>Importanţele (procentuale) ale constrângerilor adăugate de tip min zile între activităţi - recomandat între 95.0%-100.0% (poate mai joase pentru cele împărţite în 3). Faceţi importanţele 100.0% dacă constrângerile trebuie să fie respectate tot timpul. Este recomandat să activaţi check box-urile pentru activităţile împărţite în 2 sau 3 componente (să nu fie în zile consecutive), dacă datele dvs. sunt în continuare posibil de rezolvat. Puteţi folosi o abordare progresiva. Exemple de importanţe: 90.0%, 95.0%, 99.0%, 99.75%, 100.0%.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="420"/>
@@ -44514,7 +44514,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="42"/>
         <source>Select if when placing 2 activities from the same container in the same day, activities should be consecutive (this only happens for constraints with weight below 100.0%, which are not respected)</source>
-        <translation>Selectaţi dacă, atunci când se plaseaza 2 activităţi din acelaşi container în aceeaşi zi, activităţile trebuie să fie consecutive (aceasta se întâmplă doar pentru constrângeri cu importanţa sub 100.0% care nu sunt respectate)</translation>
+        <translation>Selectaţi dacă, atunci când se plasează 2 activităţi din acelaşi container în aceeaşi zi, activităţile trebuie să fie consecutive (aceasta se întâmplă doar pentru constrângeri cu importanţa sub 100.0% care nu sunt respectate)</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="55"/>
@@ -44529,7 +44529,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="83"/>
         <source>This has to be checked, so activies from the same container are not in the same day (they are at least 1 day apart)</source>
-        <translation>Aceasta trebuie să fie selectat, aşa încât activităţile din acelaşi container să nu fie în aceeaşi zi (sunt distantate cu cel puţin 1 zi)</translation>
+        <translation>Aceasta trebuie să fie selectat, aşa încât activităţile din acelaşi container să nu fie în aceeaşi zi (sunt distanţate cu cel puţin 1 zi)</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform_template.ui" line="93"/>
@@ -44983,7 +44983,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="337"/>
         <source>The check box &apos;%1&apos;: it has effect only if you have overlapping groups/years, and means that FET will show the complete tree structure, even if that means that some subgroups/groups will appear twice or more in the table, with the same information. For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 will appear twice in the table with the same information attached</source>
-        <translation>Check box-ul &apos;%1&apos;: aceasta are efect doar dacă aveţi grupuri/ani suprapuse şi înseamnă că FET va arăta structura completa a arborelui, chiar daca aceasta înseamnă că unele subgrupuri/grupuri vor apărea de două sau mai multe ori în tabelă, cu aceeaşi informaţie. De exemplu, dacă aveţi anul Y1, grupurile G1 şi G2, subgrupurile S1, S2, S3, cu structura: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 va apărea de două ori în tabelă cu aceeaşi informatie ataşata</translation>
+        <translation>Check box-ul &apos;%1&apos;: aceasta are efect doar dacă aveţi grupuri/ani suprapuse şi înseamnă că FET va arăta structura completa a arborelui, chiar dacă aceasta înseamnă că unele subgrupuri/grupuri vor apărea de două sau mai multe ori în tabelă, cu aceeaşi informaţie. De exemplu, dacă aveţi anul Y1, grupurile G1 şi G2, subgrupurile S1, S2, S3, cu structura: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 va apărea de două ori în tabelă cu aceeaşi informaţie ataşata</translation>
     </message>
 </context>
 <context>
@@ -45144,7 +45144,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="384"/>
         <source>Above the (sub)activities list, we have 2 labels, containing 4 numbers. The first label contains text: No: a / b. The first number a is the number of active (sub)activities (we number each individual subactivity as 1), while the second number b is the number of total (sub)activities. The second label contains text: Dur: c / d. The third number c is the duration of active (sub)activities, in periods (or FET hours), while the fourth number d is the duration of total (sub)activities, in periods (or FET hours). So, No means number and Dur means duration.</source>
-        <translation>Deasupra listei (sub)activităţilor, avem 2 etichete, conţinând 4 numere. Prima etichetă conţine textul: Nr: a / b. Primul număr a este numărul de (sub)activităţi active (numărăm fiecare subactivitate individuală ca 1), în timp ce al doilea număr b este numărul de (sub)activităţi totale. A doua etichetă conţine textul: Dur: c / d. Al treilea număr c este durata (sub)activităţilor active, în perioade (sau ore FET), în timp ce al patrulea număr d este durata totală a (sub)activităţilor, in perioade (sau ore FET). Deci, Nr înseamnă număr şi Dur înseamnă durata.</translation>
+        <translation>Deasupra listei (sub)activităţilor, avem 2 etichete, conţinând 4 numere. Prima etichetă conţine textul: Nr: a / b. Primul număr a este numărul de (sub)activităţi active (numărăm fiecare subactivitate individuală ca 1), în timp ce al doilea număr b este numărul de (sub)activităţi totale. A doua etichetă conţine textul: Dur: c / d. Al treilea număr c este durata (sub)activităţilor active, în perioade (sau ore FET), în timp ce al patrulea număr d este durata totală a (sub)activităţilor, în perioade (sau ore FET). Deci, Nr înseamnă număr şi Dur înseamnă durată.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="390"/>
@@ -45184,7 +45184,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="409"/>
         <source>if you use colors in interface (see Settings/Interface menu), they will appear with different background color.</source>
-        <translation>daca folosiţi culori în interfaţă (vedeţi meniul Setări/Interfaţă), ele vor apărea cu o culoare de fond diferită.</translation>
+        <translation>dacă folosiţi culori în interfaţă (vedeţi meniul Setări/Interfaţă), ele vor apărea cu o culoare de fond diferită.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="411"/>
@@ -45194,7 +45194,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="413"/>
         <source>Show related: if you select this, there will be listed subactivities for groups and subgroups contained also in the current set (if the current set is a year or a group) and also higher ranked year or group (if the current set is a group or a subgroup).</source>
-        <translation>Arată înrudite: dacă selectaţi aceasta, vor fi listate subactivităţile pentru grupuri şi subgrupuri conţinute de asemenea in setul curent (dacă setul curent este un an sau un grup) şi de asemenea anul sau grupul cu rang mai înalt (dacă setul curent este un grup sau un subgrup).</translation>
+        <translation>Arată înrudite: dacă selectaţi aceasta, vor fi listate subactivităţile pentru grupuri şi subgrupuri conţinute de asemenea în setul curent (dacă setul curent este un an sau un grup) şi de asemenea anul sau grupul cu rang mai înalt (dacă setul curent este un grup sau un subgrup).</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="416"/>
@@ -45441,7 +45441,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
     <message>
         <location filename="../src/engine/subject.cpp" line="64"/>
         <source>Space constraints directly related to this subject:</source>
-        <translation>Constrângeri de spaţiu în legatură directă cu această disciplină:</translation>
+        <translation>Constrângeri de spaţiu în legătură directă cu această disciplină:</translation>
     </message>
 </context>
 <context>
@@ -45699,7 +45699,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
     <message>
         <location filename="../src/interface/teachersform.cpp" line="128"/>
         <source>Are you sure you want to delete this teacher and all related activities and constraints?</source>
-        <translation>Sunteţi sigur că vreţi să ştergeti acest profesor şi toate activităţile şi constrângerile aferente?</translation>
+        <translation>Sunteţi sigur că vreţi să ştergeţi acest profesor şi toate activităţile şi constrângerile aferente?</translation>
     </message>
     <message>
         <location filename="../src/interface/teachersform.cpp" line="129"/>
@@ -46297,7 +46297,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
         <location filename="../src/engine/timetableexport.cpp" line="7291"/>
         <location filename="../src/engine/timetableexport.cpp" line="7399"/>
         <source>Border gap</source>
-        <translation>Fereastră marginaşă</translation>
+        <translation>Fereastră marginală</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="7292"/>
@@ -46376,7 +46376,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="755"/>
         <source>Timetable not generated - cannot save it - this should not happen (please report bug)</source>
-        <translation>Orarul nu a fost generat - nu pot să il salvez - aceasta nu ar trebui să se întâmple (vă rog raportaţi eroarea)</translation>
+        <translation>Orarul nu a fost generat - nu pot să îl salvez - aceasta nu ar trebui să se întâmple (vă rog raportaţi eroarea)</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="765"/>
@@ -47395,7 +47395,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
         <location filename="../src/interface/timetableprintform.cpp" line="220"/>
         <source>Page-break: none</source>
         <comment>No page-break between timetables. Please keep translation short</comment>
-        <translation>Pagină nouă: niciodata</translation>
+        <translation>Pagină nouă: niciodată</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="221"/>
@@ -47817,7 +47817,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
         <location filename="../src/interface/timetableviewteachersform.cpp" line="707"/>
         <source>Added 1 locking time constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
-        <translation>Adaugată 1 constrângere de blocare timp.</translation>
+        <translation>Adăugată 1 constrângere de blocare timp.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="711"/>
@@ -47825,7 +47825,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
         <location filename="../src/interface/timetableviewteachersform.cpp" line="713"/>
         <source>Added 1 locking space constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
-        <translation>Adaugată 1 constrângere de blocare spaţiu.</translation>
+        <translation>Adăugată 1 constrângere de blocare spaţiu.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="717"/>
@@ -47901,7 +47901,7 @@ Vă rog raportaţi eroarea. FET va abandona acum operaţiunea curentă</translat
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="878"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="775"/>
         <source>Locking time constraints are constraints of type activity preferred starting time. Locking space constraints are constraints of type activity preferred room. You can see these constraints in the corresponding constraints dialogs. New locking constraints are added at the end of the list of constraints.</source>
-        <translation>Constrângerile de blocare de timp sunt constrângeri de tip activitate timp de start preferat. Constrângerile de blocare de spaţiu sunt constrângeri de tip activitate sală preferată. Puteţi să vedeţi aceste constrângeri în dialogul corespunzator al constrângerilor. Constrângerile de blocare noi sunt adăugate la sfârşitul listei constrângerilor.</translation>
+        <translation>Constrângerile de blocare de timp sunt constrângeri de tip activitate timp de start preferat. Constrângerile de blocare de spaţiu sunt constrângeri de tip activitate sală preferată. Puteţi să vedeţi aceste constrângeri în dialogul corespunzător al constrângerilor. Constrângerile de blocare noi sunt adăugate la sfârşitul listei constrângerilor.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="776"/>
@@ -48245,7 +48245,7 @@ Vă rog opriţi simularea înainte de aceasta.</translation>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="679"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="756"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
-        <translation>Constrângerea %1 nu va fi ştearsă, pentru că este permanent blocată. Daca vreţi să o deblocaţi trebuie să mergeţi la meniul constrângeri.</translation>
+        <translation>Constrângerea %1 nu va fi ştearsă, pentru că este permanent blocată. Dacă vreţi să o deblocaţi trebuie să mergeţi la meniul constrângeri.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="674"/>

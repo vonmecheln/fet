@@ -6306,7 +6306,7 @@ bool Rules::read(QWidget* parent, const QString& filename, bool commandLine, QSt
 		}
 		else if(elem2.tagName()=="Equipments_List"){
 		 	RulesReconcilableMessage::warning(parent, tr("FET warning"),
-			 tr("File contains deprecated equipments list - will be ignored\n"));
+			 tr("File contains deprecated equipments list - will be ignored"));
 		}
 		else if(elem2.tagName()=="Buildings_List"){
 			QSet<QString> buildingsRead;

@@ -1651,4 +1651,5 @@ Versions 5.19.0 - 5.19.v
 	- Minor bugs corrected (formatting in the HTML timetables), by Volker Dirr.
 	- Corrected some minor string problems.
 	- Updated the Romanian translation (by Liviu Lalescu). It is now complete.
-	
+- Version 5.19.2
+	- Corrected the Romanian translation (by Horatiu Halmajan, daviodan and Liviu Lalescu).
