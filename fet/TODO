@@ -185,7 +185,7 @@ We have:
 2. category: 5 courses
 3. category: 4 religions (always same time, so i didn't enter it)
 4. category: several working groups (afternoon lesson, so i add them
-manualy)
+manually)
 
 Now have a closer look:
 4 classes * 5 courses * 4 religion is already 80 subgroups.
@@ -2252,7 +2252,7 @@ From Etlau (on forum):
 
 Maximum delta in time for day per week per group. For example 7-7-3-4-5 is unacceptable,
 better will be 5-5-5-5-6. And same for teacher. Yes, you can set max and min activities
-per day, but number need to calculate manualy for every class and teacher, not really
+per day, but number need to calculate manually for every class and teacher, not really
 comfortable.
 
 143---------------------------------------------------------
@@ -3818,12 +3818,12 @@ foreach(year, newYearsList){
        if(subgroup.left(year){
          subgroup.replace.left(newIntYear)
        else
-         warning = "impossible to rename. maybe modified manualy?"
+         warning = "impossible to rename. maybe modified manually?"
       }
      if(group.left(year){
        group.replace.left(newIntYear)
      else
-       warning = "impossible to rename. maybe modified manualy?"
+       warning = "impossible to rename. maybe modified manually?"
     }
     if(year.left(year){
        year.replace.left(newIntYear)
@@ -4206,7 +4206,7 @@ When I updates timetable many times on website
 I would like to tell people that some their activities are already fixed time or place.
 It should be some general option in FET allowing user to decide wether show this tags or not in HTML files.
 When timetable is finished it should be easy switched off visibility of the two tags in all timetable in HTML files.
-I don't want to insert these tags manualy in activity dialog because it is some cumbersome.
+I don't want to insert these tags manually in activity dialog because it is some cumbersome.
 
 246---------------------------------------------------------
 From Nguyễn Hữu Duyệt (on forum):
@@ -6125,8 +6125,8 @@ These constraints can still be improved.
 
 Before computeFixedActivities in generate_pre it is useful to disallow days and hours that can't be available:
 
-QList<QSet<int> > activitiesListWithDayNotAvailableSet;
-QList<QSet<int> > activitiesListWithHourNotAvailableSet;
+QList<QSet<int>> activitiesListWithDayNotAvailableSet;
+QList<QSet<int>> activitiesListWithHourNotAvailableSet;
 for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 	QSet<int> dayNotAvailable;
 	activitiesListWithDayNotAvailableSet<<dayNotAvailable;
@@ -6143,7 +6143,7 @@ while(notAvailableFound){
 }
 
 
-bool computeDayOrHourNotAvailable(QList<QSet<int> > *activitiesListWithDayNotAvailableSet, QList<QSet<int> > *activitiesListWithHourNotAvailableSet){
+bool computeDayOrHourNotAvailable(QList<QSet<int>> *activitiesListWithDayNotAvailableSet, QList<QSet<int>> *activitiesListWithHourNotAvailableSet){
 	bool newImprovementFound=false;
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
@@ -6183,7 +6183,7 @@ bool computeDayOrHourNotAvailable(QList<QSet<int> > *activitiesListWithDayNotAva
 	
 }
 
-void setNotAvailable(QList<QSet<int> > *activitiesListWithDayNotAvailableSet, QList<QSet<int> > *activitiesListWithHourNotAvailableSet){
+void setNotAvailable(QList<QSet<int>> *activitiesListWithDayNotAvailableSet, QList<QSet<int>> *activitiesListWithHourNotAvailableSet){
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY){
 			ConstraintActivitiesSameStartingDay* sst=(ConstraintActivitiesSameStartingDay*)gt.rules.internalTimeConstraintsList[i];

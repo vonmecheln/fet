@@ -38,7 +38,7 @@ public:
 	StudentsStatisticsForm(QWidget* parent);
 	~StudentsStatisticsForm();
 	
-	void insertStudentsSet(StudentsSet* set, int row);
+	void insertStudentsSet(StudentsSet* studentsSet, int row);
 	
 public slots:
 	void checkBoxesModified();

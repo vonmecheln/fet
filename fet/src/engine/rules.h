@@ -160,11 +160,11 @@ public:
 	QSet<ConstraintBasicCompulsoryTime*> bctSet;
 	QSet<ConstraintBreakTimes*> btSet;
 	QSet<ConstraintBasicCompulsorySpace*> bcsSet;
-	QHash<int, QSet<ConstraintActivityPreferredStartingTime*> > apstHash;
-	QHash<int, QSet<ConstraintActivityPreferredRoom*> > aprHash;
-	QHash<int, QSet<ConstraintMinDaysBetweenActivities*> > mdbaHash;
-	QHash<QString, QSet<ConstraintTeacherNotAvailableTimes*> > tnatHash;
-	QHash<QString, QSet<ConstraintStudentsSetNotAvailableTimes*> > ssnatHash;
+	QHash<int, QSet<ConstraintActivityPreferredStartingTime*>> apstHash;
+	QHash<int, QSet<ConstraintActivityPreferredRoom*>> aprHash;
+	QHash<int, QSet<ConstraintMinDaysBetweenActivities*>> mdbaHash;
+	QHash<QString, QSet<ConstraintTeacherNotAvailableTimes*>> tnatHash;
+	QHash<QString, QSet<ConstraintStudentsSetNotAvailableTimes*>> ssnatHash;
 	
 	//not internal
 	QHash<QString, StudentsSet*> permanentStudentsHash;
@@ -178,10 +178,10 @@ public:
 	QHash<QString, int> roomsHash;
 	QHash<int, int> activitiesHash; //first is id, second is index in internal list
 	//using activity index in internal activities
-	/*QHash<QString, QSet<int> > activitiesForTeacherHash;
-	QHash<QString, QSet<int> > activitiesForSubjectHash;
-	QHash<QString, QSet<int> > activitiesForActivityTagHash;
-	QHash<QString, QSet<int> > activitiesForStudentsSetHash;*/
+	/*QHash<QString, QSet<int>> activitiesForTeacherHash;
+	QHash<QString, QSet<int>> activitiesForSubjectHash;
+	QHash<QString, QSet<int>> activitiesForActivityTagHash;
+	QHash<QString, QSet<int>> activitiesForStudentsSetHash;*/
 
 	/*
 	The following variables contain redundant data and are used internally
@@ -213,10 +213,10 @@ public:
 	
 	QSet<int> inactiveActivities;
 	
-	Matrix1D<QList<int> > activitiesForSubjectList;
-	Matrix1D<QSet<int> > activitiesForSubjectSet;
-	Matrix1D<QList<int> > activitiesForActivityTagList;
-	Matrix1D<QSet<int> > activitiesForActivityTagSet;
+	Matrix1D<QList<int>> activitiesForSubjectList;
+	Matrix1D<QSet<int>> activitiesForSubjectSet;
+	Matrix1D<QList<int>> activitiesForActivityTagList;
+	Matrix1D<QSet<int>> activitiesForActivityTagSet;
 
 	int nInternalRooms;
 	Matrix1D<Room*> internalRoomsList;

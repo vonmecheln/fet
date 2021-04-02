@@ -68,23 +68,23 @@ qint16 roomsTimetable[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
 //BASIC TIME
 //qint8 activitiesConflictingPercentage[MAX_ACTIVITIES][MAX_ACTIVITIES];
 //Matrix2D<qint8> activitiesConflictingPercentage;
-Matrix1D<QHash<int, int> > activitiesConflictingPercentage;
+Matrix1D<QHash<int, int>> activitiesConflictingPercentage;
 
 //MIN DAYS BETWEEN ACTIVITIES
-Matrix1D<QList<int> > minDaysListOfActivities;
-Matrix1D<QList<int> > minDaysListOfMinDays;
-Matrix1D<QList<double> > minDaysListOfWeightPercentages;
-Matrix1D<QList<bool> > minDaysListOfConsecutiveIfSameDay;
+Matrix1D<QList<int>> minDaysListOfActivities;
+Matrix1D<QList<int>> minDaysListOfMinDays;
+Matrix1D<QList<double>> minDaysListOfWeightPercentages;
+Matrix1D<QList<bool>> minDaysListOfConsecutiveIfSameDay;
 
 //MAX DAYS BETWEEN ACTIVITIES
-Matrix1D<QList<int> > maxDaysListOfActivities;
-Matrix1D<QList<int> > maxDaysListOfMaxDays;
-Matrix1D<QList<double> > maxDaysListOfWeightPercentages;
+Matrix1D<QList<int>> maxDaysListOfActivities;
+Matrix1D<QList<int>> maxDaysListOfMaxDays;
+Matrix1D<QList<double>> maxDaysListOfWeightPercentages;
 
 //MIN GAPS BETWEEN ACTIVITIES
-Matrix1D<QList<int> > minGapsBetweenActivitiesListOfActivities;
-Matrix1D<QList<int> > minGapsBetweenActivitiesListOfMinGaps;
-Matrix1D<QList<double> > minGapsBetweenActivitiesListOfWeightPercentages;
+Matrix1D<QList<int>> minGapsBetweenActivitiesListOfActivities;
+Matrix1D<QList<int>> minGapsBetweenActivitiesListOfMinGaps;
+Matrix1D<QList<double>> minGapsBetweenActivitiesListOfWeightPercentages;
 
 //TCH & ST NOT AVAIL, BREAK, ACT(S) PREFERRED TIME(S)
 //double notAllowedTimesPercentages[MAX_ACTIVITIES][MAX_HOURS_PER_WEEK];
@@ -99,7 +99,7 @@ Matrix2D<bool> breakDayHour;
 Matrix3D<bool> subgroupNotAvailableDayHour;
 
 //used in students timetable view time horizontal dialog
-QHash<QString, QSet<QPair<int, int> > > studentsSetNotAvailableDayHour;
+QHash<QString, QSet<QPair<int, int>>> studentsSetNotAvailableDayHour;
 
 //bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 Matrix3D<bool> teacherNotAvailableDayHour;
@@ -118,12 +118,12 @@ bool haveStudentsMaxGapsPerDay;
 //STUDENTS MAX DAYS PER WEEK
 int subgroupsMaxDaysPerWeekMaxDays[MAX_TOTAL_SUBGROUPS];
 double subgroupsMaxDaysPerWeekWeightPercentages[MAX_TOTAL_SUBGROUPS];
-Matrix1D<QList<int> > subgroupsWithMaxDaysPerWeekForActivities;
+Matrix1D<QList<int>> subgroupsWithMaxDaysPerWeekForActivities;
 
 //TEACHERS MAX DAYS PER WEEK
 int teachersMaxDaysPerWeekMaxDays[MAX_TEACHERS];
 double teachersMaxDaysPerWeekWeightPercentages[MAX_TEACHERS];
-Matrix1D<QList<int> > teachersWithMaxDaysPerWeekForActivities;
+Matrix1D<QList<int>> teachersWithMaxDaysPerWeekForActivities;
 
 /////////////////care for teachers max gaps
 int nHoursPerTeacher[MAX_TEACHERS];
@@ -134,20 +134,20 @@ double teachersMaxGapsPerDayPercentage[MAX_TEACHERS];
 int teachersMaxGapsPerDayMaxGaps[MAX_TEACHERS];
 
 //activities same starting time
-Matrix1D<QList<int> > activitiesSameStartingTimeActivities;
-Matrix1D<QList<double> > activitiesSameStartingTimePercentages;
+Matrix1D<QList<int>> activitiesSameStartingTimeActivities;
+Matrix1D<QList<double>> activitiesSameStartingTimePercentages;
 
 //activities same starting hour
-Matrix1D<QList<int> > activitiesSameStartingHourActivities;
-Matrix1D<QList<double> > activitiesSameStartingHourPercentages;
+Matrix1D<QList<int>> activitiesSameStartingHourActivities;
+Matrix1D<QList<double>> activitiesSameStartingHourPercentages;
 
 //activities same starting day
-Matrix1D<QList<int> > activitiesSameStartingDayActivities;
-Matrix1D<QList<double> > activitiesSameStartingDayPercentages;
+Matrix1D<QList<int>> activitiesSameStartingDayActivities;
+Matrix1D<QList<double>> activitiesSameStartingDayPercentages;
 
 //activities not overlapping
-Matrix1D<QList<int> > activitiesNotOverlappingActivities;
-Matrix1D<QList<double> > activitiesNotOverlappingPercentages;
+Matrix1D<QList<int>> activitiesNotOverlappingActivities;
+Matrix1D<QList<double>> activitiesNotOverlappingPercentages;
 
 //teacher(s) max hours daily
 //int teachersGapsPerDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
@@ -171,17 +171,17 @@ int teachersMaxHoursContinuouslyMaxHours2[MAX_TEACHERS];
 //teacher(s) activity tag max hours daily
 bool haveTeachersActivityTagMaxHoursDaily;
 
-Matrix1D<QList<int> > teachersActivityTagMaxHoursDailyMaxHours;
-Matrix1D<QList<int> > teachersActivityTagMaxHoursDailyActivityTag;
-Matrix1D<QList<double> > teachersActivityTagMaxHoursDailyPercentage;
+Matrix1D<QList<int>> teachersActivityTagMaxHoursDailyMaxHours;
+Matrix1D<QList<int>> teachersActivityTagMaxHoursDailyActivityTag;
+Matrix1D<QList<double>> teachersActivityTagMaxHoursDailyPercentage;
 //(formerly arrays of size MAX_TEACHERS)
 
 //teacher(s) activity tag max hours continuously
 bool haveTeachersActivityTagMaxHoursContinuously;
 
-Matrix1D<QList<int> > teachersActivityTagMaxHoursContinuouslyMaxHours;
-Matrix1D<QList<int> > teachersActivityTagMaxHoursContinuouslyActivityTag;
-Matrix1D<QList<double> > teachersActivityTagMaxHoursContinuouslyPercentage;
+Matrix1D<QList<int>> teachersActivityTagMaxHoursContinuouslyMaxHours;
+Matrix1D<QList<int>> teachersActivityTagMaxHoursContinuouslyActivityTag;
+Matrix1D<QList<double>> teachersActivityTagMaxHoursContinuouslyPercentage;
 //(formerly arrays of size MAX_TEACHERS)
 
 //teacher(s) min hours daily
@@ -202,17 +202,17 @@ int subgroupsMaxHoursContinuouslyMaxHours2[MAX_TOTAL_SUBGROUPS];
 //students (set) activity tag max hours daily
 bool haveStudentsActivityTagMaxHoursDaily;
 
-Matrix1D<QList<int> > subgroupsActivityTagMaxHoursDailyMaxHours;
-Matrix1D<QList<int> > subgroupsActivityTagMaxHoursDailyActivityTag;
-Matrix1D<QList<double> > subgroupsActivityTagMaxHoursDailyPercentage;
+Matrix1D<QList<int>> subgroupsActivityTagMaxHoursDailyMaxHours;
+Matrix1D<QList<int>> subgroupsActivityTagMaxHoursDailyActivityTag;
+Matrix1D<QList<double>> subgroupsActivityTagMaxHoursDailyPercentage;
 //(formerly arrays of size MAX_TOTAL_SUBGROUPS)
 
 //students (set) activity tag max hours continuously
 bool haveStudentsActivityTagMaxHoursContinuously;
 
-Matrix1D<QList<int> > subgroupsActivityTagMaxHoursContinuouslyMaxHours;
-Matrix1D<QList<int> > subgroupsActivityTagMaxHoursContinuouslyActivityTag;
-Matrix1D<QList<double> > subgroupsActivityTagMaxHoursContinuouslyPercentage;
+Matrix1D<QList<int>> subgroupsActivityTagMaxHoursContinuouslyMaxHours;
+Matrix1D<QList<int>> subgroupsActivityTagMaxHoursContinuouslyActivityTag;
+Matrix1D<QList<double>> subgroupsActivityTagMaxHoursContinuouslyPercentage;
 //(formerly arrays of size MAX_TOTAL_SUBGROUPS)
 
 //students (set) max hours daily
@@ -230,42 +230,42 @@ bool haveStudentsMinHoursDailyAllowEmptyDays;
 
 // 2 activities consecutive
 //index represents the first activity, value in array represents the second activity
-Matrix1D<QList<double> > constrTwoActivitiesConsecutivePercentages;
-Matrix1D<QList<int> > constrTwoActivitiesConsecutiveActivities;
+Matrix1D<QList<double>> constrTwoActivitiesConsecutivePercentages;
+Matrix1D<QList<int>> constrTwoActivitiesConsecutiveActivities;
 
 //index represents the second activity, value in array represents the first activity
-Matrix1D<QList<double> > inverseConstrTwoActivitiesConsecutivePercentages;
-Matrix1D<QList<int> > inverseConstrTwoActivitiesConsecutiveActivities;
+Matrix1D<QList<double>> inverseConstrTwoActivitiesConsecutivePercentages;
+Matrix1D<QList<int>> inverseConstrTwoActivitiesConsecutiveActivities;
 // 2 activities consecutive
 
 // 2 activities grouped
 //index represents the first activity, value in array represents the second activity
-Matrix1D<QList<double> > constrTwoActivitiesGroupedPercentages;
-Matrix1D<QList<int> > constrTwoActivitiesGroupedActivities;
+Matrix1D<QList<double>> constrTwoActivitiesGroupedPercentages;
+Matrix1D<QList<int>> constrTwoActivitiesGroupedActivities;
 
 // 3 activities grouped
 //index represents the first activity, value in array represents the second activity
-Matrix1D<QList<double> > constrThreeActivitiesGroupedPercentages;
-Matrix1D<QList<QPair<int, int> > > constrThreeActivitiesGroupedActivities;
+Matrix1D<QList<double>> constrThreeActivitiesGroupedPercentages;
+Matrix1D<QList<QPair<int, int>>> constrThreeActivitiesGroupedActivities;
 
 // 2 activities ordered
 //index represents the first activity, value in array represents the second activity
-Matrix1D<QList<double> > constrTwoActivitiesOrderedPercentages;
-Matrix1D<QList<int> > constrTwoActivitiesOrderedActivities;
+Matrix1D<QList<double>> constrTwoActivitiesOrderedPercentages;
+Matrix1D<QList<int>> constrTwoActivitiesOrderedActivities;
 
 //index represents the second activity, value in array represents the first activity
-Matrix1D<QList<double> > inverseConstrTwoActivitiesOrderedPercentages;
-Matrix1D<QList<int> > inverseConstrTwoActivitiesOrderedActivities;
+Matrix1D<QList<double>> inverseConstrTwoActivitiesOrderedPercentages;
+Matrix1D<QList<int>> inverseConstrTwoActivitiesOrderedActivities;
 // 2 activities ordered
 
 // 2 activities ordered if same day
 //index represents the first activity, value in array represents the second activity
-Matrix1D<QList<double> > constrTwoActivitiesOrderedIfSameDayPercentages;
-Matrix1D<QList<int> > constrTwoActivitiesOrderedIfSameDayActivities;
+Matrix1D<QList<double>> constrTwoActivitiesOrderedIfSameDayPercentages;
+Matrix1D<QList<int>> constrTwoActivitiesOrderedIfSameDayActivities;
 
 //index represents the second activity, value in array represents the first activity
-Matrix1D<QList<double> > inverseConstrTwoActivitiesOrderedIfSameDayPercentages;
-Matrix1D<QList<int> > inverseConstrTwoActivitiesOrderedIfSameDayActivities;
+Matrix1D<QList<double>> inverseConstrTwoActivitiesOrderedIfSameDayPercentages;
+Matrix1D<QList<int>> inverseConstrTwoActivitiesOrderedIfSameDayActivities;
 // 2 activities ordered if same day
 
 double activityEndsStudentsDayPercentages[MAX_ACTIVITIES];
@@ -273,40 +273,20 @@ bool haveActivityEndsStudentsDay;
 
 
 ///////BEGIN teachers interval max days per week
-double teachersIntervalMaxDaysPerWeekPercentages1[MAX_TEACHERS];
-int teachersIntervalMaxDaysPerWeekMaxDays1[MAX_TEACHERS];
-int teachersIntervalMaxDaysPerWeekIntervalStart1[MAX_TEACHERS];
-int teachersIntervalMaxDaysPerWeekIntervalEnd1[MAX_TEACHERS];
-
-double teachersIntervalMaxDaysPerWeekPercentages2[MAX_TEACHERS];
-int teachersIntervalMaxDaysPerWeekMaxDays2[MAX_TEACHERS];
-int teachersIntervalMaxDaysPerWeekIntervalStart2[MAX_TEACHERS];
-int teachersIntervalMaxDaysPerWeekIntervalEnd2[MAX_TEACHERS];
-
-double teachersIntervalMaxDaysPerWeekPercentages3[MAX_TEACHERS];
-int teachersIntervalMaxDaysPerWeekMaxDays3[MAX_TEACHERS];
-int teachersIntervalMaxDaysPerWeekIntervalStart3[MAX_TEACHERS];
-int teachersIntervalMaxDaysPerWeekIntervalEnd3[MAX_TEACHERS];
+Matrix1D<QList<double>> teachersIntervalMaxDaysPerWeekPercentages;
+Matrix1D<QList<int>> teachersIntervalMaxDaysPerWeekMaxDays;
+Matrix1D<QList<int>> teachersIntervalMaxDaysPerWeekIntervalStart;
+Matrix1D<QList<int>> teachersIntervalMaxDaysPerWeekIntervalEnd;
 
 //bool computeTeachersIntervalMaxDaysPerWeek();
 ///////END   teachers interval max days per week
 
 
 ///////BEGIN students interval max days per week
-double subgroupsIntervalMaxDaysPerWeekPercentages1[MAX_TOTAL_SUBGROUPS];
-int subgroupsIntervalMaxDaysPerWeekMaxDays1[MAX_TOTAL_SUBGROUPS];
-int subgroupsIntervalMaxDaysPerWeekIntervalStart1[MAX_TOTAL_SUBGROUPS];
-int subgroupsIntervalMaxDaysPerWeekIntervalEnd1[MAX_TOTAL_SUBGROUPS];
-
-double subgroupsIntervalMaxDaysPerWeekPercentages2[MAX_TOTAL_SUBGROUPS];
-int subgroupsIntervalMaxDaysPerWeekMaxDays2[MAX_TOTAL_SUBGROUPS];
-int subgroupsIntervalMaxDaysPerWeekIntervalStart2[MAX_TOTAL_SUBGROUPS];
-int subgroupsIntervalMaxDaysPerWeekIntervalEnd2[MAX_TOTAL_SUBGROUPS];
-
-double subgroupsIntervalMaxDaysPerWeekPercentages3[MAX_TOTAL_SUBGROUPS];
-int subgroupsIntervalMaxDaysPerWeekMaxDays3[MAX_TOTAL_SUBGROUPS];
-int subgroupsIntervalMaxDaysPerWeekIntervalStart3[MAX_TOTAL_SUBGROUPS];
-int subgroupsIntervalMaxDaysPerWeekIntervalEnd3[MAX_TOTAL_SUBGROUPS];
+Matrix1D<QList<double>> subgroupsIntervalMaxDaysPerWeekPercentages;
+Matrix1D<QList<int>> subgroupsIntervalMaxDaysPerWeekMaxDays;
+Matrix1D<QList<int>> subgroupsIntervalMaxDaysPerWeekIntervalStart;
+Matrix1D<QList<int>> subgroupsIntervalMaxDaysPerWeekIntervalEnd;
 
 //bool computeSubgroupsIntervalMaxDaysPerWeek();
 ///////END   subgroups interval max days per week
@@ -336,16 +316,16 @@ double subgroupsMinRestingHoursNotCircularPercentages[MAX_TOTAL_SUBGROUPS]; //-1
 //double notAllowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK]; //-1 for available
 Matrix2D<double> notAllowedRoomTimePercentages; //-1 for available
 
-Matrix1D<QList<PreferredRoomsItem> > activitiesPreferredRoomsList;
+Matrix1D<QList<PreferredRoomsItem>> activitiesPreferredRoomsList;
 bool unspecifiedPreferredRoom[MAX_ACTIVITIES];
 
-Matrix1D<QList<int> > activitiesHomeRoomsHomeRooms;
+Matrix1D<QList<int>> activitiesHomeRoomsHomeRooms;
 double activitiesHomeRoomsPercentage[MAX_ACTIVITIES];
 bool unspecifiedHomeRoom[MAX_ACTIVITIES];
 
-Matrix1D<QSet<int> > preferredRealRooms;
+Matrix1D<QSet<int>> preferredRealRooms;
 
-static Matrix1D<QSet<int> > tmpPreferredRealRooms;
+static Matrix1D<QSet<int>> tmpPreferredRealRooms;
 static Matrix1D<bool> tmpFoundNonEmpty;
 
 static QSet<int> fixedVirtualSpaceNonZeroButNotTimeActivities;
@@ -353,7 +333,7 @@ static QSet<int> fixedVirtualSpaceNonZeroButNotTimeActivities;
 static bool thereAreTeachersWithMaxHoursDailyWithUnder100Weight;
 static bool thereAreSubgroupsWithMaxHoursDailyWithUnder100Weight;
 
-static Matrix1D<QList<SpaceConstraint*> > constraintsForActivity;
+static Matrix1D<QList<SpaceConstraint*>> constraintsForActivity;
 
 static Matrix1D<bool> visitedActivityResultantRealRooms;
 ////////end rooms
@@ -413,8 +393,8 @@ int maxRoomChangesPerWeekForTeachersMaxChanges[MAX_TEACHERS];
 ////////END   rooms
 
 
-Matrix1D<QList<int> > mustComputeTimetableSubgroups;
-Matrix1D<QList<int> > mustComputeTimetableTeachers;
+Matrix1D<QList<int>> mustComputeTimetableSubgroups;
+Matrix1D<QList<int>> mustComputeTimetableTeachers;
 bool mustComputeTimetableSubgroup[MAX_TOTAL_SUBGROUPS];
 bool mustComputeTimetableTeacher[MAX_TEACHERS];
 //void computeMustComputeTimetableSubgroups();
@@ -423,22 +403,22 @@ bool mustComputeTimetableTeacher[MAX_TEACHERS];
 
 //2011-09-25 - Constraint activities occupy max time slots from selection
 std::list<ActivitiesOccupyMaxTimeSlotsFromSelection_item> aomtsList;
-Matrix1D<QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item*> > aomtsListForActivity;
+Matrix1D<QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item*>> aomtsListForActivity;
 //bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent);
 
 //2019-11-16 - Constraint activities occupy min time slots from selection
 std::list<ActivitiesOccupyMinTimeSlotsFromSelection_item> aomintsList;
-Matrix1D<QList<ActivitiesOccupyMinTimeSlotsFromSelection_item*> > aomintsListForActivity;
+Matrix1D<QList<ActivitiesOccupyMinTimeSlotsFromSelection_item*>> aomintsListForActivity;
 //bool computeActivitiesOccupyMinTimeSlotsFromSelection(QWidget* parent);
 
 //2011-09-30 - Constraint activities max simultaneous in selected time slots
 std::list<ActivitiesMaxSimultaneousInSelectedTimeSlots_item> amsistsList;
-Matrix1D<QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item*> > amsistsListForActivity;
+Matrix1D<QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item*>> amsistsListForActivity;
 //bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent);
 
 //2019-11-16 - Constraint activities min simultaneous in selected time slots
 std::list<ActivitiesMinSimultaneousInSelectedTimeSlots_item> aminsistsList;
-Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*> > aminsistsListForActivity;
+Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*>> aminsistsListForActivity;
 //bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent);
 
 bool haveActivitiesOccupyMaxConstraints;
@@ -449,33 +429,33 @@ bool activityHasMaxSimultaneousConstraints[MAX_ACTIVITIES];
 
 //2019-06-08 - Constraint students (set) min gaps between ordered pair of activity tags
 std::list<StudentsMinGapsBetweenOrderedPairOfActivityTags_item> smgbopoatList;
-Matrix1D<QList<StudentsMinGapsBetweenOrderedPairOfActivityTags_item*> > smgbopoatListForActivity;
+Matrix1D<QList<StudentsMinGapsBetweenOrderedPairOfActivityTags_item*>> smgbopoatListForActivity;
 //bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent);
 
 //2019-06-08 - Constraint teachers(s) min gaps between ordered pair of activity tags
 std::list<TeachersMinGapsBetweenOrderedPairOfActivityTags_item> tmgbopoatList;
-Matrix1D<QList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item*> > tmgbopoatListForActivity;
+Matrix1D<QList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item*>> tmgbopoatListForActivity;
 //bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent);
 
 //2012-04-29 - Constraint activities occupy max different rooms
 std::list<ActivitiesOccupyMaxDifferentRooms_item> aomdrList;
-Matrix1D<QList<ActivitiesOccupyMaxDifferentRooms_item*> > aomdrListForActivity;
+Matrix1D<QList<ActivitiesOccupyMaxDifferentRooms_item*>> aomdrListForActivity;
 //bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent);
 
 //2013-09-14 - Constraint activities same room if consecutive
 std::list<ActivitiesSameRoomIfConsecutive_item> asricList;
-Matrix1D<QList<ActivitiesSameRoomIfConsecutive_item*> > asricListForActivity;
+Matrix1D<QList<ActivitiesSameRoomIfConsecutive_item*>> asricListForActivity;
 //bool computeActivitiesSameRoomIfConsecutive(QWidget* parent);
 
 //2019-11-20
 std::list<SubgroupActivityTagMinHoursDaily_item> satmhdList;
-Matrix1D<QList<SubgroupActivityTagMinHoursDaily_item*> > satmhdListForSubgroup;
+Matrix1D<QList<SubgroupActivityTagMinHoursDaily_item*>> satmhdListForSubgroup;
 bool haveStudentsActivityTagMinHoursDaily;
 //bool computeStudentsActivityTagMinHoursDaily(QWidget* parent);
 
 //2019-11-20
 std::list<TeacherActivityTagMinHoursDaily_item> tatmhdList;
-Matrix1D<QList<TeacherActivityTagMinHoursDaily_item*> > tatmhdListForTeacher;
+Matrix1D<QList<TeacherActivityTagMinHoursDaily_item*>> tatmhdListForTeacher;
 bool haveTeachersActivityTagMinHoursDaily;
 //bool computeTeachersActivityTagMinHoursDaily(QWidget* parent);
 
@@ -716,6 +696,17 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	mustComputeTimetableSubgroups.resize(gt.rules.nInternalActivities);
 	mustComputeTimetableTeachers.resize(gt.rules.nInternalActivities);
 
+	//2021-02-20
+	teachersIntervalMaxDaysPerWeekPercentages.resize(gt.rules.nInternalTeachers);
+	teachersIntervalMaxDaysPerWeekMaxDays.resize(gt.rules.nInternalTeachers);
+	teachersIntervalMaxDaysPerWeekIntervalStart.resize(gt.rules.nInternalTeachers);
+	teachersIntervalMaxDaysPerWeekIntervalEnd.resize(gt.rules.nInternalTeachers);
+
+	subgroupsIntervalMaxDaysPerWeekPercentages.resize(gt.rules.nInternalSubgroups);
+	subgroupsIntervalMaxDaysPerWeekMaxDays.resize(gt.rules.nInternalSubgroups);
+	subgroupsIntervalMaxDaysPerWeekIntervalStart.resize(gt.rules.nInternalSubgroups);
+	subgroupsIntervalMaxDaysPerWeekIntervalEnd.resize(gt.rules.nInternalSubgroups);
+
 	//////teachers and subgroups activity tag max hours daily and continuously
 	teachersActivityTagMaxHoursDailyMaxHours.resize(gt.rules.nInternalTeachers);
 	teachersActivityTagMaxHoursDailyActivityTag.resize(gt.rules.nInternalTeachers);
@@ -759,7 +750,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//////////////////end resizing - new feature
 	
 	QHash<int, int> reprSameStartingTime;
-	QHash<int, QSet<int> > reprSameActivitiesSet;
+	QHash<int, QSet<int>> reprSameActivitiesSet;
 
 	/////1. BASIC TIME CONSTRAINTS
 	bool t=computeActivitiesConflictingPercentage(parent);
@@ -1252,7 +1243,7 @@ bool computeSubgroupsMaxHoursDaily(QWidget* parent)
 		
 						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
-						 " of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
+						 " of type max hours daily relating to it, which cannot be compressed in 2 constraints of this type."
 						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 						 " in the first one and the weight percentage is higher on the first one."
 						 " It is possible to use any number of such constraints for a subgroup, but their resultant must"
@@ -1306,7 +1297,7 @@ bool computeSubgroupsMaxHoursDaily(QWidget* parent)
 	
 						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
-						 " of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
+						 " of type max hours daily relating to it, which cannot be compressed in 2 constraints of this type."
 						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 						 " in the first one and the weight percentage is higher on the first one."
 						 " It is possible to use any number of such constraints for a subgroup, but their resultant must"
@@ -1629,13 +1620,13 @@ bool computeStudentsMaxHoursContinuously(QWidget* parent)
 					 subgroupsMaxHoursContinuouslyPercentages2[sb] >= smd->weightPercentage){
 					 	//nothing
 					}
-					else{				
+					else{
 						 //cannot proceed
 						ok=false;
 		
 						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
-						 " of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
+						 " of type max hours continuously relating to it, which cannot be compressed in 2 constraints of this type."
 						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 						 " in the first one and the weight percentage is higher on the first one."
 						 " It is possible to use any number of such constraints for a subgroup, but their resultant must"
@@ -1686,7 +1677,7 @@ bool computeStudentsMaxHoursContinuously(QWidget* parent)
 	
 						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
-						 " of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
+						 " of type max hours continuously relating to it, which cannot be compressed in 2 constraints of this type."
 						 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 						 " in the first one and the weight percentage is higher on the first one."
 						 " It is possible to use any number of such constraints for a subgroup, but their resultant must"
@@ -1766,13 +1757,13 @@ bool computeStudentsActivityTagMaxHoursDaily(QWidget* parent)
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_DAILY){
 			haveStudentsActivityTagMaxHoursDaily=true;
 
-			ConstraintStudentsActivityTagMaxHoursDaily* samc=(ConstraintStudentsActivityTagMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+			ConstraintStudentsActivityTagMaxHoursDaily* samd=(ConstraintStudentsActivityTagMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
 			
-			for(int sb : qAsConst(samc->canonicalSubgroupsList)){
+			for(int sb : qAsConst(samd->canonicalSubgroupsList)){
 				int pos1=-1, pos2=-1;
 				
 				for(int j=0; j<subgroupsActivityTagMaxHoursDailyMaxHours[sb].count(); j++){
-					if(subgroupsActivityTagMaxHoursDailyActivityTag[sb].at(j)==samc->activityTagIndex){
+					if(subgroupsActivityTagMaxHoursDailyActivityTag[sb].at(j)==samd->activityTagIndex){
 						if(pos1==-1){
 							pos1=j;
 						}
@@ -1784,55 +1775,56 @@ bool computeStudentsActivityTagMaxHoursDaily(QWidget* parent)
 				}
 				
 				if(pos1==-1){
-					subgroupsActivityTagMaxHoursDailyActivityTag[sb].append(samc->activityTagIndex);
-					subgroupsActivityTagMaxHoursDailyMaxHours[sb].append(samc->maxHoursDaily);
-					subgroupsActivityTagMaxHoursDailyPercentage[sb].append(samc->weightPercentage);
+					subgroupsActivityTagMaxHoursDailyActivityTag[sb].append(samd->activityTagIndex);
+					subgroupsActivityTagMaxHoursDailyMaxHours[sb].append(samd->maxHoursDaily);
+					subgroupsActivityTagMaxHoursDailyPercentage[sb].append(samd->weightPercentage);
 				}
 				else{
-					if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos1) <= samc->maxHoursDaily
-					 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos1) >= samc->weightPercentage){
+					if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos1) <= samd->maxHoursDaily
+					 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos1) >= samd->weightPercentage){
 					 	//do nothing
 					}
-					else if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos1) >= samc->maxHoursDaily
-					 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos1) <= samc->weightPercentage){
+					else if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos1) >= samd->maxHoursDaily
+					 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos1) <= samd->weightPercentage){
 					
-						subgroupsActivityTagMaxHoursDailyActivityTag[sb][pos1]=samc->activityTagIndex;
-						subgroupsActivityTagMaxHoursDailyMaxHours[sb][pos1]=samc->maxHoursDaily;
-						subgroupsActivityTagMaxHoursDailyPercentage[sb][pos1]=samc->weightPercentage;
+						subgroupsActivityTagMaxHoursDailyActivityTag[sb][pos1]=samd->activityTagIndex;
+						subgroupsActivityTagMaxHoursDailyMaxHours[sb][pos1]=samd->maxHoursDaily;
+						subgroupsActivityTagMaxHoursDailyPercentage[sb][pos1]=samd->weightPercentage;
 					}
 					else{
 						if(pos2==-1){
-							subgroupsActivityTagMaxHoursDailyActivityTag[sb].append(samc->activityTagIndex);
-							subgroupsActivityTagMaxHoursDailyMaxHours[sb].append(samc->maxHoursDaily);
-							subgroupsActivityTagMaxHoursDailyPercentage[sb].append(samc->weightPercentage);
+							subgroupsActivityTagMaxHoursDailyActivityTag[sb].append(samd->activityTagIndex);
+							subgroupsActivityTagMaxHoursDailyMaxHours[sb].append(samd->maxHoursDaily);
+							subgroupsActivityTagMaxHoursDailyPercentage[sb].append(samd->weightPercentage);
 						}
 						else{
 
-							if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos2) <= samc->maxHoursDaily
-							 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos2) >= samc->weightPercentage){
+							if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos2) <= samd->maxHoursDaily
+							 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos2) >= samd->weightPercentage){
 							 	//do nothing
 							}
-							else if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos2) >= samc->maxHoursDaily
-							 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos2) <= samc->weightPercentage){
+							else if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos2) >= samd->maxHoursDaily
+							 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos2) <= samd->weightPercentage){
 							
-								subgroupsActivityTagMaxHoursDailyActivityTag[sb][pos2]=samc->activityTagIndex;
-								subgroupsActivityTagMaxHoursDailyMaxHours[sb][pos2]=samc->maxHoursDaily;
-								subgroupsActivityTagMaxHoursDailyPercentage[sb][pos2]=samc->weightPercentage;
+								subgroupsActivityTagMaxHoursDailyActivityTag[sb][pos2]=samd->activityTagIndex;
+								subgroupsActivityTagMaxHoursDailyMaxHours[sb][pos2]=samd->maxHoursDaily;
+								subgroupsActivityTagMaxHoursDailyPercentage[sb][pos2]=samd->weightPercentage;
 							}
 							else{
 								ok=false;
 	
 								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-								 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
-								 " of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
+								 GeneratePreTranslate::tr("Cannot optimize for subgroup %1 and activity tag %2, because there are too many constraints"
+								 " of type activity tag max hours daily relating to them, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 								 " in the first one and the weight percentage is higher on the first one."
-								 " It is possible to use any number of such constraints for a subgroup, but their resultant must"
+								 " It is possible to use any number of such constraints for a subgroup and an activity tag, but their resultant must"
 								 " be maximum 2 constraints of type activity tag max hours daily.\n\n"
 								 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
 								 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
 								 " Please modify your data accordingly and try again.")
-								 .arg(gt.rules.internalSubgroupsList[sb]->name),
+								 .arg(gt.rules.internalSubgroupsList[sb]->name)
+								 .arg(samd->activityTagName),
 								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 								 1, 0 );
 
@@ -1844,16 +1836,16 @@ bool computeStudentsActivityTagMaxHoursDaily(QWidget* parent)
 				}
 			}
 		}
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_DAILY){
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_DAILY){
 			haveStudentsActivityTagMaxHoursDaily=true;
 
-			ConstraintStudentsSetActivityTagMaxHoursDaily* samc=(ConstraintStudentsSetActivityTagMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+			ConstraintStudentsSetActivityTagMaxHoursDaily* samd=(ConstraintStudentsSetActivityTagMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
 			
-			for(int sb : qAsConst(samc->canonicalSubgroupsList)){
+			for(int sb : qAsConst(samd->canonicalSubgroupsList)){
 				int pos1=-1, pos2=-1;
 				
 				for(int j=0; j<subgroupsActivityTagMaxHoursDailyMaxHours[sb].count(); j++){
-					if(subgroupsActivityTagMaxHoursDailyActivityTag[sb].at(j)==samc->activityTagIndex){
+					if(subgroupsActivityTagMaxHoursDailyActivityTag[sb].at(j)==samd->activityTagIndex){
 						if(pos1==-1){
 							pos1=j;
 						}
@@ -1865,55 +1857,56 @@ bool computeStudentsActivityTagMaxHoursDaily(QWidget* parent)
 				}
 				
 				if(pos1==-1){
-					subgroupsActivityTagMaxHoursDailyActivityTag[sb].append(samc->activityTagIndex);
-					subgroupsActivityTagMaxHoursDailyMaxHours[sb].append(samc->maxHoursDaily);
-					subgroupsActivityTagMaxHoursDailyPercentage[sb].append(samc->weightPercentage);
+					subgroupsActivityTagMaxHoursDailyActivityTag[sb].append(samd->activityTagIndex);
+					subgroupsActivityTagMaxHoursDailyMaxHours[sb].append(samd->maxHoursDaily);
+					subgroupsActivityTagMaxHoursDailyPercentage[sb].append(samd->weightPercentage);
 				}
 				else{
-					if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos1) <= samc->maxHoursDaily
-					 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos1) >= samc->weightPercentage){
+					if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos1) <= samd->maxHoursDaily
+					 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos1) >= samd->weightPercentage){
 					 	//do nothing
 					}
-					else if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos1) >= samc->maxHoursDaily
-					 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos1) <= samc->weightPercentage){
+					else if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos1) >= samd->maxHoursDaily
+					 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos1) <= samd->weightPercentage){
 					
-						subgroupsActivityTagMaxHoursDailyActivityTag[sb][pos1]=samc->activityTagIndex;
-						subgroupsActivityTagMaxHoursDailyMaxHours[sb][pos1]=samc->maxHoursDaily;
-						subgroupsActivityTagMaxHoursDailyPercentage[sb][pos1]=samc->weightPercentage;
+						subgroupsActivityTagMaxHoursDailyActivityTag[sb][pos1]=samd->activityTagIndex;
+						subgroupsActivityTagMaxHoursDailyMaxHours[sb][pos1]=samd->maxHoursDaily;
+						subgroupsActivityTagMaxHoursDailyPercentage[sb][pos1]=samd->weightPercentage;
 					}
 					else{
 						if(pos2==-1){
-							subgroupsActivityTagMaxHoursDailyActivityTag[sb].append(samc->activityTagIndex);
-							subgroupsActivityTagMaxHoursDailyMaxHours[sb].append(samc->maxHoursDaily);
-							subgroupsActivityTagMaxHoursDailyPercentage[sb].append(samc->weightPercentage);
+							subgroupsActivityTagMaxHoursDailyActivityTag[sb].append(samd->activityTagIndex);
+							subgroupsActivityTagMaxHoursDailyMaxHours[sb].append(samd->maxHoursDaily);
+							subgroupsActivityTagMaxHoursDailyPercentage[sb].append(samd->weightPercentage);
 						}
 						else{
 
-							if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos2) <= samc->maxHoursDaily
-							 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos2) >= samc->weightPercentage){
+							if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos2) <= samd->maxHoursDaily
+							 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos2) >= samd->weightPercentage){
 							 	//do nothing
 							}
-							else if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos2) >= samc->maxHoursDaily
-							 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos2) <= samc->weightPercentage){
+							else if(subgroupsActivityTagMaxHoursDailyMaxHours[sb].at(pos2) >= samd->maxHoursDaily
+							 && subgroupsActivityTagMaxHoursDailyPercentage[sb].at(pos2) <= samd->weightPercentage){
 							
-								subgroupsActivityTagMaxHoursDailyActivityTag[sb][pos2]=samc->activityTagIndex;
-								subgroupsActivityTagMaxHoursDailyMaxHours[sb][pos2]=samc->maxHoursDaily;
-								subgroupsActivityTagMaxHoursDailyPercentage[sb][pos2]=samc->weightPercentage;
+								subgroupsActivityTagMaxHoursDailyActivityTag[sb][pos2]=samd->activityTagIndex;
+								subgroupsActivityTagMaxHoursDailyMaxHours[sb][pos2]=samd->maxHoursDaily;
+								subgroupsActivityTagMaxHoursDailyPercentage[sb][pos2]=samd->weightPercentage;
 							}
 							else{
 								ok=false;
 	
 								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-								 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
-								 " of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
+								 GeneratePreTranslate::tr("Cannot optimize for subgroup %1 and activity tag %2, because there are too many constraints"
+								 " of type activity tag max hours daily relating to them, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 								 " in the first one and the weight percentage is higher on the first one."
-								 " It is possible to use any number of such constraints for a subgroup, but their resultant must"
+								 " It is possible to use any number of such constraints for a subgroup and an activity tag, but their resultant must"
 								 " be maximum 2 constraints of type activity tag max hours daily.\n\n"
 								 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
 								 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
 								 " Please modify your data accordingly and try again.")
-								 .arg(gt.rules.internalSubgroupsList[sb]->name),
+								 .arg(gt.rules.internalSubgroupsList[sb]->name)
+								 .arg(samd->activityTagName),
 								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 								 1, 0 );
 
@@ -2046,16 +2039,17 @@ bool computeStudentsActivityTagMaxHoursContinuously(QWidget* parent)
 								ok=false;
 	
 								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-								 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
-								 " of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
+								 GeneratePreTranslate::tr("Cannot optimize for subgroup %1 and activity tag %2, because there are too many constraints"
+								 " of type activity tag max hours continuously relating to them, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 								 " in the first one and the weight percentage is higher on the first one."
-								 " It is possible to use any number of such constraints for a subgroup, but their resultant must"
+								 " It is possible to use any number of such constraints for a subgroup and an activity tag, but their resultant must"
 								 " be maximum 2 constraints of type activity tag max hours continuously.\n\n"
 								 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
 								 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
 								 " Please modify your data accordingly and try again.")
-								 .arg(gt.rules.internalSubgroupsList[sb]->name),
+								 .arg(gt.rules.internalSubgroupsList[sb]->name)
+								 .arg(samc->activityTagName),
 								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 								 1, 0 );
 
@@ -2067,7 +2061,7 @@ bool computeStudentsActivityTagMaxHoursContinuously(QWidget* parent)
 				}
 			}
 		}
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
 			haveStudentsActivityTagMaxHoursContinuously=true;
 
 			ConstraintStudentsSetActivityTagMaxHoursContinuously* samc=(ConstraintStudentsSetActivityTagMaxHoursContinuously*)gt.rules.internalTimeConstraintsList[i];
@@ -2127,16 +2121,17 @@ bool computeStudentsActivityTagMaxHoursContinuously(QWidget* parent)
 								ok=false;
 	
 								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-								 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are too many constraints"
-								 " of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
+								 GeneratePreTranslate::tr("Cannot optimize for subgroup %1 and activity tag %2, because there are too many constraints"
+								 " of type activity tag max hours continuously relating to them, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 								 " in the first one and the weight percentage is higher on the first one."
-								 " It is possible to use any number of such constraints for a subgroup, but their resultant must"
+								 " It is possible to use any number of such constraints for a subgroup and an activity tag, but their resultant must"
 								 " be maximum 2 constraints of type activity tag max hours continuously.\n\n"
 								 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
 								 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
 								 " Please modify your data accordingly and try again.")
-								 .arg(gt.rules.internalSubgroupsList[sb]->name),
+								 .arg(gt.rules.internalSubgroupsList[sb]->name)
+								 .arg(samc->activityTagName),
 								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 								 1, 0 );
 
@@ -2491,7 +2486,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 				ok=false;
 	
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize for students set %1, because the constraint of type min hours daily relating to him"
+				 GeneratePreTranslate::tr("Cannot optimize for students set %1, because the constraint of type min hours daily relating to it"
 				 " has no 100% weight"
 				 ". Please modify your data accordingly and try again")
 				 .arg(smd->students),
@@ -2545,7 +2540,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 	
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are two constraints"
-					 " of type min hours daily relating to him, and the weight percentage is higher on the constraint"
+					 " of type min hours daily relating to it, and the weight percentage is higher on the constraint"
 					 " with less minimum hours. You are allowed only to have for each subgroup"
 					 " the most important constraint with maximum weight percentage and largest minimum hours daily allowed"
 					 ". Please modify your data accordingly and try again")
@@ -2581,7 +2576,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 	
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because there are two constraints"
-					 " of type min hours daily relating to him, and the weight percentage is higher on the constraint"
+					 " of type min hours daily relating to it, and the weight percentage is higher on the constraint"
 					 " with less minimum hours. You are allowed only to have for each subgroup"
 					 " the most important constraint with maximum weight percentage and largest minimum hours daily allowed"
 					 ". Please modify your data accordingly and try again")
@@ -3443,13 +3438,13 @@ bool computeTeachersActivityTagMaxHoursDaily(QWidget* parent)
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_DAILY){
 			haveTeachersActivityTagMaxHoursDaily=true;
 
-			ConstraintTeachersActivityTagMaxHoursDaily* samc=(ConstraintTeachersActivityTagMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+			ConstraintTeachersActivityTagMaxHoursDaily* tamd=(ConstraintTeachersActivityTagMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
 			
-			for(int tc : qAsConst(samc->canonicalTeachersList)){
+			for(int tc : qAsConst(tamd->canonicalTeachersList)){
 				int pos1=-1, pos2=-1;
 				
 				for(int j=0; j<teachersActivityTagMaxHoursDailyMaxHours[tc].count(); j++){
-					if(teachersActivityTagMaxHoursDailyActivityTag[tc].at(j)==samc->activityTagIndex){
+					if(teachersActivityTagMaxHoursDailyActivityTag[tc].at(j)==tamd->activityTagIndex){
 						if(pos1==-1){
 							pos1=j;
 						}
@@ -3461,55 +3456,56 @@ bool computeTeachersActivityTagMaxHoursDaily(QWidget* parent)
 				}
 				
 				if(pos1==-1){
-					teachersActivityTagMaxHoursDailyActivityTag[tc].append(samc->activityTagIndex);
-					teachersActivityTagMaxHoursDailyMaxHours[tc].append(samc->maxHoursDaily);
-					teachersActivityTagMaxHoursDailyPercentage[tc].append(samc->weightPercentage);
+					teachersActivityTagMaxHoursDailyActivityTag[tc].append(tamd->activityTagIndex);
+					teachersActivityTagMaxHoursDailyMaxHours[tc].append(tamd->maxHoursDaily);
+					teachersActivityTagMaxHoursDailyPercentage[tc].append(tamd->weightPercentage);
 				}
 				else{
-					if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos1) <= samc->maxHoursDaily
-					 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos1) >= samc->weightPercentage){
+					if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos1) <= tamd->maxHoursDaily
+					 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos1) >= tamd->weightPercentage){
 					 	//do nothing
 					}
-					else if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos1) >= samc->maxHoursDaily
-					 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos1) <= samc->weightPercentage){
+					else if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos1) >= tamd->maxHoursDaily
+					 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos1) <= tamd->weightPercentage){
 					
-						teachersActivityTagMaxHoursDailyActivityTag[tc][pos1]=samc->activityTagIndex;
-						teachersActivityTagMaxHoursDailyMaxHours[tc][pos1]=samc->maxHoursDaily;
-						teachersActivityTagMaxHoursDailyPercentage[tc][pos1]=samc->weightPercentage;
+						teachersActivityTagMaxHoursDailyActivityTag[tc][pos1]=tamd->activityTagIndex;
+						teachersActivityTagMaxHoursDailyMaxHours[tc][pos1]=tamd->maxHoursDaily;
+						teachersActivityTagMaxHoursDailyPercentage[tc][pos1]=tamd->weightPercentage;
 					}
 					else{
 						if(pos2==-1){
-							teachersActivityTagMaxHoursDailyActivityTag[tc].append(samc->activityTagIndex);
-							teachersActivityTagMaxHoursDailyMaxHours[tc].append(samc->maxHoursDaily);
-							teachersActivityTagMaxHoursDailyPercentage[tc].append(samc->weightPercentage);
+							teachersActivityTagMaxHoursDailyActivityTag[tc].append(tamd->activityTagIndex);
+							teachersActivityTagMaxHoursDailyMaxHours[tc].append(tamd->maxHoursDaily);
+							teachersActivityTagMaxHoursDailyPercentage[tc].append(tamd->weightPercentage);
 						}
 						else{
 
-							if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos2) <= samc->maxHoursDaily
-							 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos2) >= samc->weightPercentage){
+							if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos2) <= tamd->maxHoursDaily
+							 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos2) >= tamd->weightPercentage){
 							 	//do nothing
 							}
-							else if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos2) >= samc->maxHoursDaily
-							 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos2) <= samc->weightPercentage){
+							else if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos2) >= tamd->maxHoursDaily
+							 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos2) <= tamd->weightPercentage){
 							
-								teachersActivityTagMaxHoursDailyActivityTag[tc][pos2]=samc->activityTagIndex;
-								teachersActivityTagMaxHoursDailyMaxHours[tc][pos2]=samc->maxHoursDaily;
-								teachersActivityTagMaxHoursDailyPercentage[tc][pos2]=samc->weightPercentage;
+								teachersActivityTagMaxHoursDailyActivityTag[tc][pos2]=tamd->activityTagIndex;
+								teachersActivityTagMaxHoursDailyMaxHours[tc][pos2]=tamd->maxHoursDaily;
+								teachersActivityTagMaxHoursDailyPercentage[tc][pos2]=tamd->weightPercentage;
 							}
 							else{
 								ok=false;
 	
 								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-								 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are too many constraints"
-								 " of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
+								 GeneratePreTranslate::tr("Cannot optimize for teacher %1 and activity tag %2, because there are too many constraints"
+								 " of type activity tag max hours daily relating to them, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 								 " in the first one and the weight percentage is higher on the first one."
-								 " It is possible to use any number of such constraints for a teacher, but their resultant must"
+								 " It is possible to use any number of such constraints for a teacher and an activity tag, but their resultant must"
 								 " be maximum 2 constraints of type activity tag max hours daily.\n\n"
 								 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
 								 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
 								 " Please modify your data accordingly and try again.")
-								 .arg(gt.rules.internalTeachersList[tc]->name),
+								 .arg(gt.rules.internalTeachersList[tc]->name)
+								 .arg(tamd->activityTagName),
 								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 								 1, 0 );
 
@@ -3521,16 +3517,16 @@ bool computeTeachersActivityTagMaxHoursDaily(QWidget* parent)
 				}
 			}
 		}
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_DAILY){
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_DAILY){
 			haveTeachersActivityTagMaxHoursDaily=true;
 
-			ConstraintTeacherActivityTagMaxHoursDaily* samc=(ConstraintTeacherActivityTagMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
+			ConstraintTeacherActivityTagMaxHoursDaily* tamd=(ConstraintTeacherActivityTagMaxHoursDaily*)gt.rules.internalTimeConstraintsList[i];
 			
-			for(int tc : qAsConst(samc->canonicalTeachersList)){
+			for(int tc : qAsConst(tamd->canonicalTeachersList)){
 				int pos1=-1, pos2=-1;
 				
 				for(int j=0; j<teachersActivityTagMaxHoursDailyMaxHours[tc].count(); j++){
-					if(teachersActivityTagMaxHoursDailyActivityTag[tc].at(j)==samc->activityTagIndex){
+					if(teachersActivityTagMaxHoursDailyActivityTag[tc].at(j)==tamd->activityTagIndex){
 						if(pos1==-1){
 							pos1=j;
 						}
@@ -3542,55 +3538,56 @@ bool computeTeachersActivityTagMaxHoursDaily(QWidget* parent)
 				}
 				
 				if(pos1==-1){
-					teachersActivityTagMaxHoursDailyActivityTag[tc].append(samc->activityTagIndex);
-					teachersActivityTagMaxHoursDailyMaxHours[tc].append(samc->maxHoursDaily);
-					teachersActivityTagMaxHoursDailyPercentage[tc].append(samc->weightPercentage);
+					teachersActivityTagMaxHoursDailyActivityTag[tc].append(tamd->activityTagIndex);
+					teachersActivityTagMaxHoursDailyMaxHours[tc].append(tamd->maxHoursDaily);
+					teachersActivityTagMaxHoursDailyPercentage[tc].append(tamd->weightPercentage);
 				}
 				else{
-					if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos1) <= samc->maxHoursDaily
-					 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos1) >= samc->weightPercentage){
+					if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos1) <= tamd->maxHoursDaily
+					 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos1) >= tamd->weightPercentage){
 					 	//do nothing
 					}
-					else if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos1) >= samc->maxHoursDaily
-					 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos1) <= samc->weightPercentage){
+					else if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos1) >= tamd->maxHoursDaily
+					 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos1) <= tamd->weightPercentage){
 					
-						teachersActivityTagMaxHoursDailyActivityTag[tc][pos1]=samc->activityTagIndex;
-						teachersActivityTagMaxHoursDailyMaxHours[tc][pos1]=samc->maxHoursDaily;
-						teachersActivityTagMaxHoursDailyPercentage[tc][pos1]=samc->weightPercentage;
+						teachersActivityTagMaxHoursDailyActivityTag[tc][pos1]=tamd->activityTagIndex;
+						teachersActivityTagMaxHoursDailyMaxHours[tc][pos1]=tamd->maxHoursDaily;
+						teachersActivityTagMaxHoursDailyPercentage[tc][pos1]=tamd->weightPercentage;
 					}
 					else{
 						if(pos2==-1){
-							teachersActivityTagMaxHoursDailyActivityTag[tc].append(samc->activityTagIndex);
-							teachersActivityTagMaxHoursDailyMaxHours[tc].append(samc->maxHoursDaily);
-							teachersActivityTagMaxHoursDailyPercentage[tc].append(samc->weightPercentage);
+							teachersActivityTagMaxHoursDailyActivityTag[tc].append(tamd->activityTagIndex);
+							teachersActivityTagMaxHoursDailyMaxHours[tc].append(tamd->maxHoursDaily);
+							teachersActivityTagMaxHoursDailyPercentage[tc].append(tamd->weightPercentage);
 						}
 						else{
 
-							if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos2) <= samc->maxHoursDaily
-							 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos2) >= samc->weightPercentage){
+							if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos2) <= tamd->maxHoursDaily
+							 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos2) >= tamd->weightPercentage){
 							 	//do nothing
 							}
-							else if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos2) >= samc->maxHoursDaily
-							 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos2) <= samc->weightPercentage){
+							else if(teachersActivityTagMaxHoursDailyMaxHours[tc].at(pos2) >= tamd->maxHoursDaily
+							 && teachersActivityTagMaxHoursDailyPercentage[tc].at(pos2) <= tamd->weightPercentage){
 							
-								teachersActivityTagMaxHoursDailyActivityTag[tc][pos2]=samc->activityTagIndex;
-								teachersActivityTagMaxHoursDailyMaxHours[tc][pos2]=samc->maxHoursDaily;
-								teachersActivityTagMaxHoursDailyPercentage[tc][pos2]=samc->weightPercentage;
+								teachersActivityTagMaxHoursDailyActivityTag[tc][pos2]=tamd->activityTagIndex;
+								teachersActivityTagMaxHoursDailyMaxHours[tc][pos2]=tamd->maxHoursDaily;
+								teachersActivityTagMaxHoursDailyPercentage[tc][pos2]=tamd->weightPercentage;
 							}
 							else{
 								ok=false;
 	
 								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-								 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are too many constraints"
-								 " of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type."
+								 GeneratePreTranslate::tr("Cannot optimize for teacher %1 and activity tag %2, because there are too many constraints"
+								 " of type activity tag max hours daily relating to them, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 								 " in the first one and the weight percentage is higher on the first one."
-								 " It is possible to use any number of such constraints for a teacher, but their resultant must"
+								 " It is possible to use any number of such constraints for a teacher and an activity tag, but their resultant must"
 								 " be maximum 2 constraints of type activity tag max hours daily.\n\n"
 								 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
 								 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
 								 " Please modify your data accordingly and try again.")
-								 .arg(gt.rules.internalTeachersList[tc]->name),
+								 .arg(gt.rules.internalTeachersList[tc]->name)
+								 .arg(tamd->activityTagName),
 								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 								 1, 0 );
 
@@ -3666,13 +3663,13 @@ bool computeTeachersActivityTagMaxHoursContinuously(QWidget* parent)
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
 			haveTeachersActivityTagMaxHoursContinuously=true;
 
-			ConstraintTeachersActivityTagMaxHoursContinuously* samc=(ConstraintTeachersActivityTagMaxHoursContinuously*)gt.rules.internalTimeConstraintsList[i];
+			ConstraintTeachersActivityTagMaxHoursContinuously* tamc=(ConstraintTeachersActivityTagMaxHoursContinuously*)gt.rules.internalTimeConstraintsList[i];
 			
-			for(int tc : qAsConst(samc->canonicalTeachersList)){
+			for(int tc : qAsConst(tamc->canonicalTeachersList)){
 				int pos1=-1, pos2=-1;
 				
 				for(int j=0; j<teachersActivityTagMaxHoursContinuouslyMaxHours[tc].count(); j++){
-					if(teachersActivityTagMaxHoursContinuouslyActivityTag[tc].at(j)==samc->activityTagIndex){
+					if(teachersActivityTagMaxHoursContinuouslyActivityTag[tc].at(j)==tamc->activityTagIndex){
 						if(pos1==-1){
 							pos1=j;
 						}
@@ -3684,55 +3681,56 @@ bool computeTeachersActivityTagMaxHoursContinuously(QWidget* parent)
 				}
 				
 				if(pos1==-1){
-					teachersActivityTagMaxHoursContinuouslyActivityTag[tc].append(samc->activityTagIndex);
-					teachersActivityTagMaxHoursContinuouslyMaxHours[tc].append(samc->maxHoursContinuously);
-					teachersActivityTagMaxHoursContinuouslyPercentage[tc].append(samc->weightPercentage);
+					teachersActivityTagMaxHoursContinuouslyActivityTag[tc].append(tamc->activityTagIndex);
+					teachersActivityTagMaxHoursContinuouslyMaxHours[tc].append(tamc->maxHoursContinuously);
+					teachersActivityTagMaxHoursContinuouslyPercentage[tc].append(tamc->weightPercentage);
 				}
 				else{
-					if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos1) <= samc->maxHoursContinuously
-					 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos1) >= samc->weightPercentage){
+					if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos1) <= tamc->maxHoursContinuously
+					 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos1) >= tamc->weightPercentage){
 					 	//do nothing
 					}
-					else if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos1) >= samc->maxHoursContinuously
-					 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos1) <= samc->weightPercentage){
+					else if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos1) >= tamc->maxHoursContinuously
+					 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos1) <= tamc->weightPercentage){
 					
-						teachersActivityTagMaxHoursContinuouslyActivityTag[tc][pos1]=samc->activityTagIndex;
-						teachersActivityTagMaxHoursContinuouslyMaxHours[tc][pos1]=samc->maxHoursContinuously;
-						teachersActivityTagMaxHoursContinuouslyPercentage[tc][pos1]=samc->weightPercentage;
+						teachersActivityTagMaxHoursContinuouslyActivityTag[tc][pos1]=tamc->activityTagIndex;
+						teachersActivityTagMaxHoursContinuouslyMaxHours[tc][pos1]=tamc->maxHoursContinuously;
+						teachersActivityTagMaxHoursContinuouslyPercentage[tc][pos1]=tamc->weightPercentage;
 					}
 					else{
 						if(pos2==-1){
-							teachersActivityTagMaxHoursContinuouslyActivityTag[tc].append(samc->activityTagIndex);
-							teachersActivityTagMaxHoursContinuouslyMaxHours[tc].append(samc->maxHoursContinuously);
-							teachersActivityTagMaxHoursContinuouslyPercentage[tc].append(samc->weightPercentage);
+							teachersActivityTagMaxHoursContinuouslyActivityTag[tc].append(tamc->activityTagIndex);
+							teachersActivityTagMaxHoursContinuouslyMaxHours[tc].append(tamc->maxHoursContinuously);
+							teachersActivityTagMaxHoursContinuouslyPercentage[tc].append(tamc->weightPercentage);
 						}
 						else{
 
-							if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos2) <= samc->maxHoursContinuously
-							 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos2) >= samc->weightPercentage){
+							if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos2) <= tamc->maxHoursContinuously
+							 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos2) >= tamc->weightPercentage){
 							 	//do nothing
 							}
-							else if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos2) >= samc->maxHoursContinuously
-							 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos2) <= samc->weightPercentage){
+							else if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos2) >= tamc->maxHoursContinuously
+							 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos2) <= tamc->weightPercentage){
 							
-								teachersActivityTagMaxHoursContinuouslyActivityTag[tc][pos2]=samc->activityTagIndex;
-								teachersActivityTagMaxHoursContinuouslyMaxHours[tc][pos2]=samc->maxHoursContinuously;
-								teachersActivityTagMaxHoursContinuouslyPercentage[tc][pos2]=samc->weightPercentage;
+								teachersActivityTagMaxHoursContinuouslyActivityTag[tc][pos2]=tamc->activityTagIndex;
+								teachersActivityTagMaxHoursContinuouslyMaxHours[tc][pos2]=tamc->maxHoursContinuously;
+								teachersActivityTagMaxHoursContinuouslyPercentage[tc][pos2]=tamc->weightPercentage;
 							}
 							else{
 								ok=false;
 	
 								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-								 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are too many constraints"
-								 " of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
+								 GeneratePreTranslate::tr("Cannot optimize for teacher %1 and activity tag %2, because there are too many constraints"
+								 " of type activity tag max hours continuously relating to them, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 								 " in the first one and the weight percentage is higher on the first one."
-								 " It is possible to use any number of such constraints for a teacher, but their resultant must"
+								 " It is possible to use any number of such constraints for a teacher and an activity tag, but their resultant must"
 								 " be maximum 2 constraints of type activity tag max hours continuously.\n\n"
 								 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
 								 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
 								 " Please modify your data accordingly and try again.")
-								 .arg(gt.rules.internalTeachersList[tc]->name),
+								 .arg(gt.rules.internalTeachersList[tc]->name)
+								 .arg(tamc->activityTagName),
 								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 								 1, 0 );
 
@@ -3744,16 +3742,16 @@ bool computeTeachersActivityTagMaxHoursContinuously(QWidget* parent)
 				}
 			}
 		}
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
 			haveTeachersActivityTagMaxHoursContinuously=true;
 
-			ConstraintTeacherActivityTagMaxHoursContinuously* samc=(ConstraintTeacherActivityTagMaxHoursContinuously*)gt.rules.internalTimeConstraintsList[i];
+			ConstraintTeacherActivityTagMaxHoursContinuously* tamc=(ConstraintTeacherActivityTagMaxHoursContinuously*)gt.rules.internalTimeConstraintsList[i];
 			
-			for(int tc : qAsConst(samc->canonicalTeachersList)){
+			for(int tc : qAsConst(tamc->canonicalTeachersList)){
 				int pos1=-1, pos2=-1;
 				
 				for(int j=0; j<teachersActivityTagMaxHoursContinuouslyMaxHours[tc].count(); j++){
-					if(teachersActivityTagMaxHoursContinuouslyActivityTag[tc].at(j)==samc->activityTagIndex){
+					if(teachersActivityTagMaxHoursContinuouslyActivityTag[tc].at(j)==tamc->activityTagIndex){
 						if(pos1==-1){
 							pos1=j;
 						}
@@ -3765,55 +3763,56 @@ bool computeTeachersActivityTagMaxHoursContinuously(QWidget* parent)
 				}
 				
 				if(pos1==-1){
-					teachersActivityTagMaxHoursContinuouslyActivityTag[tc].append(samc->activityTagIndex);
-					teachersActivityTagMaxHoursContinuouslyMaxHours[tc].append(samc->maxHoursContinuously);
-					teachersActivityTagMaxHoursContinuouslyPercentage[tc].append(samc->weightPercentage);
+					teachersActivityTagMaxHoursContinuouslyActivityTag[tc].append(tamc->activityTagIndex);
+					teachersActivityTagMaxHoursContinuouslyMaxHours[tc].append(tamc->maxHoursContinuously);
+					teachersActivityTagMaxHoursContinuouslyPercentage[tc].append(tamc->weightPercentage);
 				}
 				else{
-					if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos1) <= samc->maxHoursContinuously
-					 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos1) >= samc->weightPercentage){
+					if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos1) <= tamc->maxHoursContinuously
+					 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos1) >= tamc->weightPercentage){
 					 	//do nothing
 					}
-					else if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos1) >= samc->maxHoursContinuously
-					 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos1) <= samc->weightPercentage){
+					else if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos1) >= tamc->maxHoursContinuously
+					 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos1) <= tamc->weightPercentage){
 					
-						teachersActivityTagMaxHoursContinuouslyActivityTag[tc][pos1]=samc->activityTagIndex;
-						teachersActivityTagMaxHoursContinuouslyMaxHours[tc][pos1]=samc->maxHoursContinuously;
-						teachersActivityTagMaxHoursContinuouslyPercentage[tc][pos1]=samc->weightPercentage;
+						teachersActivityTagMaxHoursContinuouslyActivityTag[tc][pos1]=tamc->activityTagIndex;
+						teachersActivityTagMaxHoursContinuouslyMaxHours[tc][pos1]=tamc->maxHoursContinuously;
+						teachersActivityTagMaxHoursContinuouslyPercentage[tc][pos1]=tamc->weightPercentage;
 					}
 					else{
 						if(pos2==-1){
-							teachersActivityTagMaxHoursContinuouslyActivityTag[tc].append(samc->activityTagIndex);
-							teachersActivityTagMaxHoursContinuouslyMaxHours[tc].append(samc->maxHoursContinuously);
-							teachersActivityTagMaxHoursContinuouslyPercentage[tc].append(samc->weightPercentage);
+							teachersActivityTagMaxHoursContinuouslyActivityTag[tc].append(tamc->activityTagIndex);
+							teachersActivityTagMaxHoursContinuouslyMaxHours[tc].append(tamc->maxHoursContinuously);
+							teachersActivityTagMaxHoursContinuouslyPercentage[tc].append(tamc->weightPercentage);
 						}
 						else{
 
-							if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos2) <= samc->maxHoursContinuously
-							 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos2) >= samc->weightPercentage){
+							if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos2) <= tamc->maxHoursContinuously
+							 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos2) >= tamc->weightPercentage){
 							 	//do nothing
 							}
-							else if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos2) >= samc->maxHoursContinuously
-							 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos2) <= samc->weightPercentage){
+							else if(teachersActivityTagMaxHoursContinuouslyMaxHours[tc].at(pos2) >= tamc->maxHoursContinuously
+							 && teachersActivityTagMaxHoursContinuouslyPercentage[tc].at(pos2) <= tamc->weightPercentage){
 							
-								teachersActivityTagMaxHoursContinuouslyActivityTag[tc][pos2]=samc->activityTagIndex;
-								teachersActivityTagMaxHoursContinuouslyMaxHours[tc][pos2]=samc->maxHoursContinuously;
-								teachersActivityTagMaxHoursContinuouslyPercentage[tc][pos2]=samc->weightPercentage;
+								teachersActivityTagMaxHoursContinuouslyActivityTag[tc][pos2]=tamc->activityTagIndex;
+								teachersActivityTagMaxHoursContinuouslyMaxHours[tc][pos2]=tamc->maxHoursContinuously;
+								teachersActivityTagMaxHoursContinuouslyPercentage[tc][pos2]=tamc->weightPercentage;
 							}
 							else{
 								ok=false;
 	
 								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-								 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are too many constraints"
-								 " of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type."
+								 GeneratePreTranslate::tr("Cannot optimize for teacher %1 and activity tag %2, because there are too many constraints"
+								 " of type activity tag max hours continuously relating to them, which cannot be compressed in 2 constraints of this type."
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 								 " in the first one and the weight percentage is higher on the first one."
-								 " It is possible to use any number of such constraints for a teacher, but their resultant must"
+								 " It is possible to use any number of such constraints for a teacher and an activity tag, but their resultant must"
 								 " be maximum 2 constraints of type activity tag max hours continuously.\n\n"
 								 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
 								 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
 								 " Please modify your data accordingly and try again.")
-								 .arg(gt.rules.internalTeachersList[tc]->name),
+								 .arg(gt.rules.internalTeachersList[tc]->name)
+								 .arg(tamc->activityTagName),
 								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 								 1, 0 );
 
@@ -4647,7 +4646,7 @@ void computeActivitiesNotOverlapping()
 	}
 }
 
-bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int> & reprSameStartingTime, QHash<int, QSet<int> > & reprSameActivitiesSet)
+bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int> & reprSameStartingTime, QHash<int, QSet<int>> & reprSameActivitiesSet)
 {
 	bool reportunder100=true;
 	bool report100=true;
@@ -4754,7 +4753,7 @@ bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int> & reprSa
 			}
 		}
 	}
-		
+	
 	QHash<int, int> repr;
 	//repr.clear();
 	
@@ -4842,7 +4841,7 @@ bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int> & reprSa
 			}*/
 	///////////end added 5.10.0, June 2009
 	
-	QHash<int, QSet<int> > hashSet;
+	QHash<int, QSet<int>> hashSet;
 	
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		assert(repr.contains(i));
@@ -5104,8 +5103,7 @@ bool computeTeachersMaxGapsPerWeekPercentage(QWidget* parent)
 					return false;
 			}
 		}
-
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK){
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK){
 			ConstraintTeacherMaxGapsPerWeek* tg=(ConstraintTeacherMaxGapsPerWeek*)gt.rules.internalTimeConstraintsList[i];
 
 			if(tg->weightPercentage!=100){
@@ -5155,7 +5153,7 @@ bool computeTeachersMaxGapsPerWeekPercentage(QWidget* parent)
 				}
 			}
 		}
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK){
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK){
 			ConstraintTeacherMaxGapsPerWeek* tg=(ConstraintTeacherMaxGapsPerWeek*)gt.rules.internalTimeConstraintsList[i];
 		
 			int j=tg->teacherIndex;
@@ -5215,8 +5213,7 @@ bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent)
 					return false;
 			}
 		}
-
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY){
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY){
 			ConstraintTeacherMaxGapsPerDay* tg=(ConstraintTeacherMaxGapsPerDay*)gt.rules.internalTimeConstraintsList[i];
 
 			if(tg->weightPercentage!=100){
@@ -5266,7 +5263,7 @@ bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent)
 				}
 			}
 		}
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY){
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY){
 			ConstraintTeacherMaxGapsPerDay* tg=(ConstraintTeacherMaxGapsPerDay*)gt.rules.internalTimeConstraintsList[i];
 		
 			int j=tg->teacherIndex;
@@ -5651,7 +5648,7 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent) //st max gaps &
 		}
 
 		//students set early
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
 			ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* se=(ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour*) gt.rules.internalTimeConstraintsList[i];
 			for(int q=0; q<se->iSubgroupsList.count(); q++){
 				int j=se->iSubgroupsList.at(q);
@@ -5663,7 +5660,7 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent) //st max gaps &
 		}
 
 		//students max gaps
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK){
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK){
 			ConstraintStudentsMaxGapsPerWeek* sg=(ConstraintStudentsMaxGapsPerWeek*) gt.rules.internalTimeConstraintsList[i];
 			for(int j=0; j<gt.rules.nInternalSubgroups; j++){ //weight is 100% for all of them
 				if(subgroupsMaxGapsPerWeekPercentage[j] < sg->weightPercentage)
@@ -5675,7 +5672,7 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent) //st max gaps &
 		}
 
 		//students set max gaps
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK){
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK){
 			ConstraintStudentsSetMaxGapsPerWeek* sg=(ConstraintStudentsSetMaxGapsPerWeek*) gt.rules.internalTimeConstraintsList[i];
 			for(int j=0; j<sg->iSubgroupsList.count(); j++){
 				int s=sg->iSubgroupsList.at(j);
@@ -5830,7 +5827,7 @@ bool computeSubgroupsMaxGapsPerDayPercentages(QWidget* parent)
 			}
 		}
 
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_DAY){
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_DAY){
 			haveStudentsMaxGapsPerDay=true;
 			ConstraintStudentsSetMaxGapsPerDay* sg=(ConstraintStudentsSetMaxGapsPerDay*) gt.rules.internalTimeConstraintsList[i];
 			for(int j=0; j<sg->iSubgroupsList.count(); j++){
@@ -5903,14 +5900,14 @@ bool computeNotAllowedTimesPercentages(QWidget* parent)
 	for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 		for(int k=0; k<gt.rules.nHoursPerDay; k++)
 			breakDayHour[j][k]=false;
-			
+	
 	subgroupNotAvailableDayHour.resize(gt.rules.nInternalSubgroups, gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 	//STUDENTS SET NOT AVAILABLE
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++)
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			for(int k=0; k<gt.rules.nHoursPerDay; k++)
 				subgroupNotAvailableDayHour[i][j][k]=false;
-				
+	
 	//used in students timetable view time horizontal dialog
 	studentsSetNotAvailableDayHour.clear();
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
@@ -5922,7 +5919,7 @@ bool computeNotAllowedTimesPercentages(QWidget* parent)
 			assert(gt.rules.studentsHash.contains(csna->students));
 			
 			assert(!studentsSetNotAvailableDayHour.contains(csna->students));
-			QSet<QPair<int, int> > mySet;
+			QSet<QPair<int, int>> mySet;
 			for(int j=0; j<csna->days.count(); j++){
 				int d=csna->days.at(j);
 				int h=csna->hours.at(j);
@@ -5954,209 +5951,235 @@ bool computeNotAllowedTimesPercentages(QWidget* parent)
 	}
 
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
-			//TEACHER not available
-			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES){
-				ConstraintTeacherNotAvailableTimes* tn=(ConstraintTeacherNotAvailableTimes*)gt.rules.internalTimeConstraintsList[i];
-				for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
-					Activity* act=&gt.rules.internalActivitiesList[ai];
-					for(int ti=0; ti<act->iTeachersList.count(); ti++)
-						if(act->iTeachersList.at(ti)==tn->teacher_ID){
-							assert(tn->days.count()==tn->hours.count());
-							for(int kk=0; kk<tn->days.count(); kk++){
-								int d=tn->days.at(kk);
-								int h=tn->hours.at(kk);
-								
+		//TEACHER not available
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES){
+			ConstraintTeacherNotAvailableTimes* tn=(ConstraintTeacherNotAvailableTimes*)gt.rules.internalTimeConstraintsList[i];
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+				for(int ti=0; ti<act->iTeachersList.count(); ti++)
+					if(act->iTeachersList.at(ti)==tn->teacher_ID){
+						assert(tn->days.count()==tn->hours.count());
+						for(int kk=0; kk<tn->days.count(); kk++){
+							int d=tn->days.at(kk);
+							int h=tn->hours.at(kk);
+							
+							for(int hh=max(0, h-act->duration+1); hh<=h; hh++)
+								if(notAllowedTimesPercentages[ai][d+hh*gt.rules.nDaysPerWeek]<tn->weightPercentage)
+									notAllowedTimesPercentages[ai][d+hh*gt.rules.nDaysPerWeek]=tn->weightPercentage;
+						}
+						//break; //search no more for teacher -- careful with that
+					}
+			}
+
+			if(tn->weightPercentage!=100){
+				ok=false;
+
+				GeneratePreIrreconcilableMessage::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
+					GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
+					"teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with "
+					"constraints teacher not available with 100% weight (or no constraint). Please "
+					"modify your data accordingly and try again.").arg(tn->teacher));
+		
+				return ok;
+			}
+			else{
+				assert(tn->weightPercentage==100);
+				assert(tn->days.count()==tn->hours.count());
+				for(int kk=0; kk<tn->days.count(); kk++){
+					int d=tn->days.at(kk);
+					int h=tn->hours.at(kk);
+
+					teacherNotAvailableDayHour[tn->teacher_ID][d][h]=true;
+				}
+			}
+		}
+
+		//STUDENTS SET not available
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES){
+			ConstraintStudentsSetNotAvailableTimes* sn=(ConstraintStudentsSetNotAvailableTimes*)gt.rules.internalTimeConstraintsList[i];
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+				for(int sg=0; sg<act->iSubgroupsList.count(); sg++)
+					for(int j=0; j<sn->iSubgroupsList.count(); j++){
+						if(act->iSubgroupsList.at(sg)==sn->iSubgroupsList.at(j)){
+							assert(sn->days.count()==sn->hours.count());
+							for(int kk=0; kk<sn->days.count(); kk++){
+								int d=sn->days.at(kk);
+								int h=sn->hours.at(kk);
+
 								for(int hh=max(0, h-act->duration+1); hh<=h; hh++)
-									if(notAllowedTimesPercentages[ai][d+hh*gt.rules.nDaysPerWeek]<tn->weightPercentage)
-										notAllowedTimesPercentages[ai][d+hh*gt.rules.nDaysPerWeek]=tn->weightPercentage;
+									if(notAllowedTimesPercentages[ai][d+hh*gt.rules.nDaysPerWeek]<sn->weightPercentage)
+										notAllowedTimesPercentages[ai][d+hh*gt.rules.nDaysPerWeek]=sn->weightPercentage;
 							}
-							//break; //search no more for teacher -- careful with that
+							//break; //search no more for subgroup - this can bring an improvement in precalculation
+							//but needs attention
 						}
-				}
+					}
+			}
 
-				if(tn->weightPercentage!=100){
-					ok=false;
+			if(sn->weightPercentage!=100){
+				ok=false;
 
-					GeneratePreIrreconcilableMessage::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-					 "teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with "
-					 "constraints teacher not available with 100% weight (or no constraint). Please "
-					 "modify your data accordingly and try again.").arg(tn->teacher));
-			
-					return ok;
-				}
-				else{				
-					assert(tn->weightPercentage==100);
-					assert(tn->days.count()==tn->hours.count());
-					for(int kk=0; kk<tn->days.count(); kk++){
-						int d=tn->days.at(kk);
-						int h=tn->hours.at(kk);
+				GeneratePreIrreconcilableMessage::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
+					GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
+					"students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with "
+					"constraints students set not available with 100% weight (or no constraint). Please "
+					"modify your data accordingly and try again.").arg(sn->students));
+		
+				return ok;
+			}
+			else{
+				assert(sn->weightPercentage==100);
+				for(int q=0; q<sn->iSubgroupsList.count(); q++){
+					int ss=sn->iSubgroupsList.at(q);
+					assert(sn->days.count()==sn->hours.count());
+					for(int kk=0; kk<sn->days.count(); kk++){
+						int d=sn->days.at(kk);
+						int h=sn->hours.at(kk);
 
-						teacherNotAvailableDayHour[tn->teacher_ID][d][h]=true;
+						subgroupNotAvailableDayHour[ss][d][h]=true;
 					}
 				}
 			}
+		}
+		
+		//BREAK
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_BREAK_TIMES){
+			ConstraintBreakTimes* br=(ConstraintBreakTimes*)gt.rules.internalTimeConstraintsList[i];
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
 
-			//STUDENTS SET not available		
-			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES){
-				ConstraintStudentsSetNotAvailableTimes* sn=(ConstraintStudentsSetNotAvailableTimes*)gt.rules.internalTimeConstraintsList[i];
-				for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
-					Activity* act=&gt.rules.internalActivitiesList[ai];
-					for(int sg=0; sg<act->iSubgroupsList.count(); sg++)
-						for(int j=0; j<sn->iSubgroupsList.count(); j++){
-							if(act->iSubgroupsList.at(sg)==sn->iSubgroupsList.at(j)){
-								assert(sn->days.count()==sn->hours.count());
-								for(int kk=0; kk<sn->days.count(); kk++){
-									int d=sn->days.at(kk);
-									int h=sn->hours.at(kk);
+				assert(br->days.count()==br->hours.count());
+				for(int kk=0; kk<br->days.count(); kk++){
+					int d=br->days.at(kk);
+					int h=br->hours.at(kk);
 
-									for(int hh=max(0, h-act->duration+1); hh<=h; hh++)
-										if(notAllowedTimesPercentages[ai][d+hh*gt.rules.nDaysPerWeek]<sn->weightPercentage)
-											notAllowedTimesPercentages[ai][d+hh*gt.rules.nDaysPerWeek]=sn->weightPercentage;
-								}
-								//break; //search no more for subgroup - this can bring an improvement in precalculation
-								//but needs attention
-							}
-						}
-				}
-
-				if(sn->weightPercentage!=100){
-					ok=false;
-
-					GeneratePreIrreconcilableMessage::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-					 "students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with "
-					 "constraints students set not available with 100% weight (or no constraint). Please "
-					 "modify your data accordingly and try again.").arg(sn->students));
-			
-					return ok;
-				}
-				else{				
-					assert(sn->weightPercentage==100);
-					for(int q=0; q<sn->iSubgroupsList.count(); q++){
-						int ss=sn->iSubgroupsList.at(q);
-						assert(sn->days.count()==sn->hours.count());
-						for(int kk=0; kk<sn->days.count(); kk++){
-							int d=sn->days.at(kk);
-							int h=sn->hours.at(kk);
-
-							subgroupNotAvailableDayHour[ss][d][h]=true;
-						}
-					}
-				}
-			}
-			
-			//BREAK
-			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_BREAK_TIMES){
-				ConstraintBreakTimes* br=(ConstraintBreakTimes*)gt.rules.internalTimeConstraintsList[i];
-				for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
-					Activity* act=&gt.rules.internalActivitiesList[ai];
-
-					assert(br->days.count()==br->hours.count());
-					for(int kk=0; kk<br->days.count(); kk++){
-						int d=br->days.at(kk);
-						int h=br->hours.at(kk);
-
-						for(int hh=max(0, h-act->duration+1); hh<=h; hh++)
-							if(notAllowedTimesPercentages[ai][d+hh*gt.rules.nDaysPerWeek]<br->weightPercentage)
-								notAllowedTimesPercentages[ai][d+hh*gt.rules.nDaysPerWeek]=br->weightPercentage;
-					}
-				}
-
-				if(br->weightPercentage!=100){
-					ok=false;
-
-					GeneratePreIrreconcilableMessage::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-					 "break with weight percentage less than 100%. Currently, FET can only optimize with "
-					 "constraints break with 100% weight (or no constraint). Please "
-					 "modify your data accordingly and try again."));
-			
-					return ok;
-				}
-				else{				
-					assert(br->weightPercentage==100);
-	
-					assert(br->days.count()==br->hours.count());
-					for(int kk=0; kk<br->days.count(); kk++){
-						int d=br->days.at(kk);
-						int h=br->hours.at(kk);
-
-						breakDayHour[d][h]=true;
-					}
+					for(int hh=max(0, h-act->duration+1); hh<=h; hh++)
+						if(notAllowedTimesPercentages[ai][d+hh*gt.rules.nDaysPerWeek]<br->weightPercentage)
+							notAllowedTimesPercentages[ai][d+hh*gt.rules.nDaysPerWeek]=br->weightPercentage;
 				}
 			}
 
-			//ACTIVITY preferred starting time
-			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
-				ConstraintActivityPreferredStartingTime* ap=(ConstraintActivityPreferredStartingTime*)gt.rules.internalTimeConstraintsList[i];
+			if(br->weightPercentage!=100){
+				ok=false;
+
+				GeneratePreIrreconcilableMessage::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
+					GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
+					"break with weight percentage less than 100%. Currently, FET can only optimize with "
+					"constraints break with 100% weight (or no constraint). Please "
+					"modify your data accordingly and try again."));
+		
+				return ok;
+			}
+			else{				
+				assert(br->weightPercentage==100);
+
+				assert(br->days.count()==br->hours.count());
+				for(int kk=0; kk<br->days.count(); kk++){
+					int d=br->days.at(kk);
+					int h=br->hours.at(kk);
+
+					breakDayHour[d][h]=true;
+				}
+			}
+		}
+
+		//ACTIVITY preferred starting time
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+			ConstraintActivityPreferredStartingTime* ap=(ConstraintActivityPreferredStartingTime*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(ap->day>=0 && ap->hour>=0){
+				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+					for(int h=0; h<gt.rules.nHoursPerDay; h++)
+						if(d!=ap->day || h!=ap->hour)
+							if(notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]<ap->weightPercentage)
+								notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]=ap->weightPercentage;
+			}
+			else if(ap->day>=0){
+				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+					for(int h=0; h<gt.rules.nHoursPerDay; h++)
+						if(d!=ap->day)
+							if(notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]<ap->weightPercentage)
+								notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]=ap->weightPercentage;
+			}
+			else if(ap->hour>=0){
+				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+					for(int h=0; h<gt.rules.nHoursPerDay; h++)
+						if(h!=ap->hour)
+							if(notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]<ap->weightPercentage)
+								notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]=ap->weightPercentage;
+			}
+			else{
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
+					"activity preferred starting time with no day nor hour selected (for activity with id=%1). "
+					"Please modify your data accordingly (remove or edit constraint) and try again.")
+					.arg(gt.rules.internalActivitiesList[ap->activityIndex].id),
+					GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				1, 0 );
+
+				if(t==0)
+					break;
+				//assert(0);
+			}
+		}	
+
+		//ACTIVITY preferred starting times
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
+			ConstraintActivityPreferredStartingTimes* ap=(ConstraintActivityPreferredStartingTimes*)gt.rules.internalTimeConstraintsList[i];
+			
+			int ai=ap->activityIndex;
+			
+			//Matrix1D<bool> allowed;
+			//allowed.resize(gt.rules.nHoursPerWeek);
+			//bool allowed[MAX_HOURS_PER_WEEK];
+			for(int k=0; k<gt.rules.nHoursPerWeek; k++)
+				allowed[k]=false;
+			
+			for(int m=0; m<ap->nPreferredStartingTimes_L; m++){
+				int d=ap->days_L[m];
+				int h=ap->hours_L[m];
 				
-				if(ap->day>=0 && ap->hour>=0){
-					for(int d=0; d<gt.rules.nDaysPerWeek; d++)
-						for(int h=0; h<gt.rules.nHoursPerDay; h++)
-							if(d!=ap->day || h!=ap->hour)
-								if(notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]<ap->weightPercentage)
-									notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]=ap->weightPercentage;
+				if(d>=0 && h>=0){
+					assert(d>=0 && h>=0);
+					allowed[d+h*gt.rules.nDaysPerWeek]=true;
 				}
-				else if(ap->day>=0){
-					for(int d=0; d<gt.rules.nDaysPerWeek; d++)
-						for(int h=0; h<gt.rules.nHoursPerDay; h++)
-							if(d!=ap->day)
-								if(notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]<ap->weightPercentage)
-									notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]=ap->weightPercentage;
+				else if(d>=0){
+					for(int hh=0; hh<gt.rules.nHoursPerDay; hh++)
+						allowed[d+hh*gt.rules.nDaysPerWeek]=true;
 				}
-				else if(ap->hour>=0){
-					for(int d=0; d<gt.rules.nDaysPerWeek; d++)
-						for(int h=0; h<gt.rules.nHoursPerDay; h++)
-							if(h!=ap->hour)
-								if(notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]<ap->weightPercentage)
-									notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]=ap->weightPercentage;
+				else if(h>=0){
+					for(int dd=0; dd<gt.rules.nDaysPerWeek; dd++)
+						allowed[dd+h*gt.rules.nDaysPerWeek]=true;
 				}
-				else{
-					ok=false;
-
-					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-					 "activity preferred starting time with no day nor hour selected (for activity with id=%1). "
-					 "Please modify your data accordingly (remove or edit constraint) and try again.")
-					 .arg(gt.rules.internalActivitiesList[ap->activityIndex].id),
-					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
-					1, 0 );
-
-					if(t==0)
-						break;
-					//assert(0);
-				}
-			}	
-
-			//ACTIVITY preferred starting times
-			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
-				ConstraintActivityPreferredStartingTimes* ap=(ConstraintActivityPreferredStartingTimes*)gt.rules.internalTimeConstraintsList[i];
-				
-				int ai=ap->activityIndex;
+			}
+			
+			for(int k=0; k<gt.rules.nHoursPerWeek; k++)
+				if(!allowed[k])
+					if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
+						notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
+		}
+		
+		//ACTIVITIES preferred starting times
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* ap=(ConstraintActivitiesPreferredStartingTimes*)gt.rules.internalTimeConstraintsList[i];
+			
+			for(int j=0; j<ap->nActivities; j++){
+				int ai=ap->activitiesIndices[j];
 				
 				//Matrix1D<bool> allowed;
 				//allowed.resize(gt.rules.nHoursPerWeek);
 				//bool allowed[MAX_HOURS_PER_WEEK];
 				for(int k=0; k<gt.rules.nHoursPerWeek; k++)
 					allowed[k]=false;
-						
+					
 				for(int m=0; m<ap->nPreferredStartingTimes_L; m++){
 					int d=ap->days_L[m];
 					int h=ap->hours_L[m];
-					
-					if(d>=0 && h>=0){
-						assert(d>=0 && h>=0);
-						allowed[d+h*gt.rules.nDaysPerWeek]=true;
-					}
-					else if(d>=0){
-						for(int hh=0; hh<gt.rules.nHoursPerDay; hh++)
-							allowed[d+hh*gt.rules.nDaysPerWeek]=true;
-					}
-					else if(h>=0){
-						for(int dd=0; dd<gt.rules.nDaysPerWeek; dd++)
-							allowed[dd+h*gt.rules.nDaysPerWeek]=true;
-					}
+					assert(d>=0 && h>=0);
+					allowed[d+h*gt.rules.nDaysPerWeek]=true;
 				}
 				
 				for(int k=0; k<gt.rules.nHoursPerWeek; k++)
@@ -6164,87 +6187,103 @@ bool computeNotAllowedTimesPercentages(QWidget* parent)
 						if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
 							notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
 			}
+		}
+		
+		//subactivities preferred starting times
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintSubactivitiesPreferredStartingTimes* ap=(ConstraintSubactivitiesPreferredStartingTimes*)gt.rules.internalTimeConstraintsList[i];
 			
-			//ACTIVITIES preferred starting times
-			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
-				ConstraintActivitiesPreferredStartingTimes* ap=(ConstraintActivitiesPreferredStartingTimes*)gt.rules.internalTimeConstraintsList[i];
-				
-				for(int j=0; j<ap->nActivities; j++){
-					int ai=ap->activitiesIndices[j];
-					
-					//Matrix1D<bool> allowed;
-					//allowed.resize(gt.rules.nHoursPerWeek);
-					//bool allowed[MAX_HOURS_PER_WEEK];
-					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
-						allowed[k]=false;
-						
-					for(int m=0; m<ap->nPreferredStartingTimes_L; m++){
-						int d=ap->days_L[m];
-						int h=ap->hours_L[m];
-						assert(d>=0 && h>=0);
-						allowed[d+h*gt.rules.nDaysPerWeek]=true;
-					}
-					
-					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
-						if(!allowed[k])
-							if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
-								notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
-				}
-			}
-			//subactivities preferred starting times
-			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES){
-				ConstraintSubactivitiesPreferredStartingTimes* ap=(ConstraintSubactivitiesPreferredStartingTimes*)gt.rules.internalTimeConstraintsList[i];
-				
-				for(int j=0; j<ap->nActivities; j++){
-					int ai=ap->activitiesIndices[j];
-					
-					//Matrix1D<bool> allowed;
-					//allowed.resize(gt.rules.nHoursPerWeek);
-					//bool allowed[MAX_HOURS_PER_WEEK];
-					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
-						allowed[k]=false;
-						
-					for(int m=0; m<ap->nPreferredStartingTimes_L; m++){
-						int d=ap->days_L[m];
-						int h=ap->hours_L[m];
-						assert(d>=0 && h>=0);
-						allowed[d+h*gt.rules.nDaysPerWeek]=true;
-					}
-					
-					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
-						if(!allowed[k])
-							if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
-								notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
-				}
-			}
-			//ACTIVITY preferred time slots
-			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
-				ConstraintActivityPreferredTimeSlots* ap=(ConstraintActivityPreferredTimeSlots*)gt.rules.internalTimeConstraintsList[i];
-				
-				int ai=ap->p_activityIndex;
+			for(int j=0; j<ap->nActivities; j++){
+				int ai=ap->activitiesIndices[j];
 				
 				//Matrix1D<bool> allowed;
 				//allowed.resize(gt.rules.nHoursPerWeek);
 				//bool allowed[MAX_HOURS_PER_WEEK];
 				for(int k=0; k<gt.rules.nHoursPerWeek; k++)
 					allowed[k]=false;
-						
+					
+				for(int m=0; m<ap->nPreferredStartingTimes_L; m++){
+					int d=ap->days_L[m];
+					int h=ap->hours_L[m];
+					assert(d>=0 && h>=0);
+					allowed[d+h*gt.rules.nDaysPerWeek]=true;
+				}
+				
+				for(int k=0; k<gt.rules.nHoursPerWeek; k++)
+					if(!allowed[k])
+						if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
+							notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
+			}
+		}
+		
+		//ACTIVITY preferred time slots
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
+			ConstraintActivityPreferredTimeSlots* ap=(ConstraintActivityPreferredTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+			
+			int ai=ap->p_activityIndex;
+			
+			//Matrix1D<bool> allowed;
+			//allowed.resize(gt.rules.nHoursPerWeek);
+			//bool allowed[MAX_HOURS_PER_WEEK];
+			for(int k=0; k<gt.rules.nHoursPerWeek; k++)
+				allowed[k]=false;
+					
+			for(int m=0; m<ap->p_nPreferredTimeSlots_L; m++){
+				int d=ap->p_days_L[m];
+				int h=ap->p_hours_L[m];
+				
+				if(d>=0 && h>=0){
+					assert(d>=0 && h>=0);
+					allowed[d+h*gt.rules.nDaysPerWeek]=true;
+				}
+				else if(d>=0){
+					for(int hh=0; hh<gt.rules.nHoursPerDay; hh++)
+						allowed[d+hh*gt.rules.nDaysPerWeek]=true;
+				}
+				else if(h>=0){
+					for(int dd=0; dd<gt.rules.nDaysPerWeek; dd++)
+						allowed[dd+h*gt.rules.nDaysPerWeek]=true;
+				}
+			}
+			
+			for(int k=0; k<gt.rules.nHoursPerWeek; k++){
+				int d=k%gt.rules.nDaysPerWeek;
+				int h=k/gt.rules.nDaysPerWeek;
+				
+				bool ok=true;
+				
+				for(int dur=0; dur<gt.rules.internalActivitiesList[ai].duration && h+dur<gt.rules.nHoursPerDay; dur++){
+					assert(d+(h+dur)*gt.rules.nDaysPerWeek<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+					if(!allowed[d+(h+dur)*gt.rules.nDaysPerWeek]){
+						ok=false;
+						break;
+					}
+				}
+			
+				if(!ok)
+					if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
+						notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
+			}
+		}
+		
+		//ACTIVITIES preferred time slots
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* ap=(ConstraintActivitiesPreferredTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+			
+			for(int j=0; j<ap->p_nActivities; j++){
+				int ai=ap->p_activitiesIndices[j];
+				
+				//Matrix1D<bool> allowed;
+				//allowed.resize(gt.rules.nHoursPerWeek);
+				//bool allowed[MAX_HOURS_PER_WEEK];
+				for(int k=0; k<gt.rules.nHoursPerWeek; k++)
+					allowed[k]=false;
+					
 				for(int m=0; m<ap->p_nPreferredTimeSlots_L; m++){
 					int d=ap->p_days_L[m];
 					int h=ap->p_hours_L[m];
-					
-					if(d>=0 && h>=0){
-						assert(d>=0 && h>=0);
-						allowed[d+h*gt.rules.nDaysPerWeek]=true;
-					}
-					else if(d>=0){
-						for(int hh=0; hh<gt.rules.nHoursPerDay; hh++)
-							allowed[d+hh*gt.rules.nDaysPerWeek]=true;
-					}
-					else if(h>=0){
-						for(int dd=0; dd<gt.rules.nDaysPerWeek; dd++)
-							allowed[dd+h*gt.rules.nDaysPerWeek]=true;
-					}
+					assert(d>=0 && h>=0);
+					allowed[d+h*gt.rules.nDaysPerWeek]=true;
 				}
 				
 				for(int k=0; k<gt.rules.nHoursPerWeek; k++){
@@ -6260,93 +6299,54 @@ bool computeNotAllowedTimesPercentages(QWidget* parent)
 							break;
 						}
 					}
-				
+			
 					if(!ok)
 						if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
 							notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
 				}
 			}
+		}
+
+		//subactivities preferred time slots
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintSubactivitiesPreferredTimeSlots* ap=(ConstraintSubactivitiesPreferredTimeSlots*)gt.rules.internalTimeConstraintsList[i];
 			
-			//ACTIVITIES preferred time slots
-			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
-				ConstraintActivitiesPreferredTimeSlots* ap=(ConstraintActivitiesPreferredTimeSlots*)gt.rules.internalTimeConstraintsList[i];
+			for(int j=0; j<ap->p_nActivities; j++){
+				int ai=ap->p_activitiesIndices[j];
 				
-				for(int j=0; j<ap->p_nActivities; j++){
-					int ai=ap->p_activitiesIndices[j];
+				//Matrix1D<bool> allowed;
+				//allowed.resize(gt.rules.nHoursPerWeek);
+				//bool allowed[MAX_HOURS_PER_WEEK];
+				for(int k=0; k<gt.rules.nHoursPerWeek; k++)
+					allowed[k]=false;
 					
-					//Matrix1D<bool> allowed;
-					//allowed.resize(gt.rules.nHoursPerWeek);
-					//bool allowed[MAX_HOURS_PER_WEEK];
-					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
-						allowed[k]=false;
-						
-					for(int m=0; m<ap->p_nPreferredTimeSlots_L; m++){
-						int d=ap->p_days_L[m];
-						int h=ap->p_hours_L[m];
-						assert(d>=0 && h>=0);
-						allowed[d+h*gt.rules.nDaysPerWeek]=true;
-					}
+				for(int m=0; m<ap->p_nPreferredTimeSlots_L; m++){
+					int d=ap->p_days_L[m];
+					int h=ap->p_hours_L[m];
+					assert(d>=0 && h>=0);
+					allowed[d+h*gt.rules.nDaysPerWeek]=true;
+				}
+				
+				for(int k=0; k<gt.rules.nHoursPerWeek; k++){
+					int d=k%gt.rules.nDaysPerWeek;
+					int h=k/gt.rules.nDaysPerWeek;
 					
-					for(int k=0; k<gt.rules.nHoursPerWeek; k++){
-						int d=k%gt.rules.nDaysPerWeek;
-						int h=k/gt.rules.nDaysPerWeek;
-						
-						bool ok=true;
-						
-						for(int dur=0; dur<gt.rules.internalActivitiesList[ai].duration && h+dur<gt.rules.nHoursPerDay; dur++){
-							assert(d+(h+dur)*gt.rules.nDaysPerWeek<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
-							if(!allowed[d+(h+dur)*gt.rules.nDaysPerWeek]){
-								ok=false;
-								break;
-							}
+					bool ok=true;
+					
+					for(int dur=0; dur<gt.rules.internalActivitiesList[ai].duration && h+dur<gt.rules.nHoursPerDay; dur++){
+						assert(d+(h+dur)*gt.rules.nDaysPerWeek<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+						if(!allowed[d+(h+dur)*gt.rules.nDaysPerWeek]){
+							ok=false;
+							break;
 						}
-				
-						if(!ok)
-							if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
-								notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
 					}
+			
+					if(!ok)
+						if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
+							notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
 				}
 			}
-			//subactivities preferred time slots
-			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS){
-				ConstraintSubactivitiesPreferredTimeSlots* ap=(ConstraintSubactivitiesPreferredTimeSlots*)gt.rules.internalTimeConstraintsList[i];
-				
-				for(int j=0; j<ap->p_nActivities; j++){
-					int ai=ap->p_activitiesIndices[j];
-					
-					//Matrix1D<bool> allowed;
-					//allowed.resize(gt.rules.nHoursPerWeek);
-					//bool allowed[MAX_HOURS_PER_WEEK];
-					for(int k=0; k<gt.rules.nHoursPerWeek; k++)
-						allowed[k]=false;
-						
-					for(int m=0; m<ap->p_nPreferredTimeSlots_L; m++){
-						int d=ap->p_days_L[m];
-						int h=ap->p_hours_L[m];
-						assert(d>=0 && h>=0);
-						allowed[d+h*gt.rules.nDaysPerWeek]=true;
-					}
-					
-					for(int k=0; k<gt.rules.nHoursPerWeek; k++){
-						int d=k%gt.rules.nDaysPerWeek;
-						int h=k/gt.rules.nDaysPerWeek;
-						
-						bool ok=true;
-						
-						for(int dur=0; dur<gt.rules.internalActivitiesList[ai].duration && h+dur<gt.rules.nHoursPerDay; dur++){
-							assert(d+(h+dur)*gt.rules.nDaysPerWeek<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
-							if(!allowed[d+(h+dur)*gt.rules.nDaysPerWeek]){
-								ok=false;
-								break;
-							}
-						}
-				
-						if(!ok)
-							if(notAllowedTimesPercentages[ai][k] < ap->weightPercentage)
-								notAllowedTimesPercentages[ai][k] = ap->weightPercentage;
-					}
-				}
-			}
+		}
 	}
 	
 	return ok;
@@ -6363,7 +6363,7 @@ bool computeMinDays(QWidget* parent)
 		minDaysListOfMinDays[j].clear();
 		minDaysListOfConsecutiveIfSameDay[j].clear();
 		minDaysListOfWeightPercentages[j].clear();
-				
+		
 		//for(int k=0; k<gt.rules.nInternalActivities; k++)
 		//	minDays[j][k]=0;
 	}
@@ -6379,7 +6379,7 @@ bool computeMinDays(QWidget* parent)
 				for(int k=0; k<md->_n_activities; k++)
 					if(j!=k){
 						int ai2=md->_activities[k];
-						if(ai1==ai2){						
+						if(ai1==ai2){
 							ok=false;
 							
 							if(!mdset.contains(md)){
@@ -6442,7 +6442,7 @@ bool computeMaxDays(QWidget* parent)
 				for(int k=0; k<md->_n_activities; k++)
 					if(j!=k){
 						int ai2=md->_activities[k];
-						if(ai1==ai2){						
+						if(ai1==ai2){
 							ok=false;
 							
 							if(!mdset.contains(md)){
@@ -6492,7 +6492,7 @@ bool computeMinGapsBetweenActivities(QWidget* parent)
 		minGapsBetweenActivitiesListOfActivities[j].clear();
 		minGapsBetweenActivitiesListOfMinGaps[j].clear();
 		minGapsBetweenActivitiesListOfWeightPercentages[j].clear();
-				
+		
 		//for(int k=0; k<gt.rules.nInternalActivities; k++)
 		//	minDays[j][k]=0;
 	}
@@ -6551,10 +6551,10 @@ bool computeActivitiesConflictingPercentage(QWidget* parent)
 			if(gt.rules.internalTimeConstraintsList[i]->weightPercentage>m)
 				m=gt.rules.internalTimeConstraintsList[i]->weightPercentage;
 		}
-		
+	
 	if(m<100)
 		ok=false;
-		
+	
 	if(!ok || m<100){
 		GeneratePreIrreconcilableMessage::mediumInformation(parent, GeneratePreTranslate::tr("FET warning"),
 		 GeneratePreTranslate::tr("Cannot generate, because you do not have a constraint of type basic compulsory time or its weight is lower than 100.0%.")
@@ -6627,7 +6627,7 @@ bool computeActivitiesConflictingPercentage(QWidget* parent)
 
 	progress.setValue(qMax(gt.rules.nInternalTeachers+gt.rules.nInternalSubgroups, 1));
 	
-	//new volker (start)
+	//new Volker (start)
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		TimeConstraint* tc=gt.rules.internalTimeConstraintsList[i];
 		if(tc->type==CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
@@ -6714,7 +6714,7 @@ bool computeActivitiesConflictingPercentage(QWidget* parent)
 			}
 		}
 	}
-	//new volker (end)
+	//new Volker (end)
 
 	return true;
 }
@@ -7192,7 +7192,7 @@ bool checkMinDaysConsecutiveIfSameDay(QWidget* parent)
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 			ConstraintMinDaysBetweenActivities* md=(ConstraintMinDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
 			if(md->consecutiveIfSameDay){
-				//int nReqForTeacher[MAX_TEACHERS];				
+				//int nReqForTeacher[MAX_TEACHERS];
 				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
 					nReqForTeacher[tc]=0;
 				for(int j=0; j<md->_n_activities; j++){
@@ -7273,20 +7273,10 @@ bool checkMinDaysConsecutiveIfSameDay(QWidget* parent)
 bool computeTeachersIntervalMaxDaysPerWeek(QWidget* parent)
 {
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
-		teachersIntervalMaxDaysPerWeekPercentages1[i]=-1.0;
-		teachersIntervalMaxDaysPerWeekMaxDays1[i]=-1;
-		teachersIntervalMaxDaysPerWeekIntervalStart1[i]=-1;
-		teachersIntervalMaxDaysPerWeekIntervalEnd1[i]=-1;
-
-		teachersIntervalMaxDaysPerWeekPercentages2[i]=-1.0;
-		teachersIntervalMaxDaysPerWeekMaxDays2[i]=-1;
-		teachersIntervalMaxDaysPerWeekIntervalStart2[i]=-1;
-		teachersIntervalMaxDaysPerWeekIntervalEnd2[i]=-1;
-
-		teachersIntervalMaxDaysPerWeekPercentages3[i]=-1.0;
-		teachersIntervalMaxDaysPerWeekMaxDays3[i]=-1;
-		teachersIntervalMaxDaysPerWeekIntervalStart3[i]=-1;
-		teachersIntervalMaxDaysPerWeekIntervalEnd3[i]=-1;
+		teachersIntervalMaxDaysPerWeekPercentages[i].clear();
+		teachersIntervalMaxDaysPerWeekMaxDays[i].clear();
+		teachersIntervalMaxDaysPerWeekIntervalStart[i].clear();
+		teachersIntervalMaxDaysPerWeekIntervalEnd[i].clear();
 	}
 	
 	bool ok=true;
@@ -7304,42 +7294,26 @@ bool computeTeachersIntervalMaxDaysPerWeek(QWidget* parent)
 				 .arg(tn->teacherName),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
-			 	
+				
 				if(t==0)
 					return false;
 			}
 
-			if(teachersIntervalMaxDaysPerWeekPercentages1[tn->teacher_ID]==-1){
-				teachersIntervalMaxDaysPerWeekPercentages1[tn->teacher_ID]=tn->weightPercentage;
-				teachersIntervalMaxDaysPerWeekMaxDays1[tn->teacher_ID]=tn->maxDaysPerWeek;
-				teachersIntervalMaxDaysPerWeekIntervalStart1[tn->teacher_ID]=tn->startHour;
-				teachersIntervalMaxDaysPerWeekIntervalEnd1[tn->teacher_ID]=tn->endHour;
-			}
-			else if(teachersIntervalMaxDaysPerWeekPercentages2[tn->teacher_ID]==-1){
-				teachersIntervalMaxDaysPerWeekPercentages2[tn->teacher_ID]=tn->weightPercentage;
-				teachersIntervalMaxDaysPerWeekMaxDays2[tn->teacher_ID]=tn->maxDaysPerWeek;
-				teachersIntervalMaxDaysPerWeekIntervalStart2[tn->teacher_ID]=tn->startHour;
-				teachersIntervalMaxDaysPerWeekIntervalEnd2[tn->teacher_ID]=tn->endHour;
-			}
-			else if(teachersIntervalMaxDaysPerWeekPercentages3[tn->teacher_ID]==-1){
-				teachersIntervalMaxDaysPerWeekPercentages3[tn->teacher_ID]=tn->weightPercentage;
-				teachersIntervalMaxDaysPerWeekMaxDays3[tn->teacher_ID]=tn->maxDaysPerWeek;
-				teachersIntervalMaxDaysPerWeekIntervalStart3[tn->teacher_ID]=tn->startHour;
-				teachersIntervalMaxDaysPerWeekIntervalEnd3[tn->teacher_ID]=tn->endHour;
-			}
-			else{
-				ok=false;
-				
-				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because it has more than three constraints interval max days per week"
-				 ". Please modify your data correspondingly (leave maximum three constraints of type"
-				 " constraint teacher(s) interval max days per week for each teacher) and try again")
-				 .arg(gt.rules.internalTeachersList[tn->teacher_ID]->name),
-				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
-				 1, 0 );
+			bool exists=false;
+			for(int j=0; j<teachersIntervalMaxDaysPerWeekPercentages[tn->teacher_ID].count(); j++)
+				if(teachersIntervalMaxDaysPerWeekPercentages[tn->teacher_ID].at(j)==tn->weightPercentage &&
+				 teachersIntervalMaxDaysPerWeekMaxDays[tn->teacher_ID].at(j)==tn->maxDaysPerWeek &&
+				 teachersIntervalMaxDaysPerWeekIntervalStart[tn->teacher_ID].at(j)==tn->startHour &&
+				 teachersIntervalMaxDaysPerWeekIntervalEnd[tn->teacher_ID].at(j)==tn->endHour){
+					exists=true;
+					break;
+				}
 			
-				if(t==0)
-					return false;
+			if(!exists){
+				teachersIntervalMaxDaysPerWeekPercentages[tn->teacher_ID].append(tn->weightPercentage);
+				teachersIntervalMaxDaysPerWeekMaxDays[tn->teacher_ID].append(tn->maxDaysPerWeek);
+				teachersIntervalMaxDaysPerWeekIntervalStart[tn->teacher_ID].append(tn->startHour);
+				teachersIntervalMaxDaysPerWeekIntervalEnd[tn->teacher_ID].append(tn->endHour);
 			}
 		}
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_INTERVAL_MAX_DAYS_PER_WEEK){
@@ -7354,43 +7328,27 @@ bool computeTeachersIntervalMaxDaysPerWeek(QWidget* parent)
 				 " to use 100% weight for such constraints. Please make weight 100% and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
-			 	
+				
 				if(t==0)
 					return false;
 			}
 
 			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
-				if(teachersIntervalMaxDaysPerWeekPercentages1[tch]==-1){
-					teachersIntervalMaxDaysPerWeekPercentages1[tch]=tn->weightPercentage;
-					teachersIntervalMaxDaysPerWeekMaxDays1[tch]=tn->maxDaysPerWeek;
-					teachersIntervalMaxDaysPerWeekIntervalStart1[tch]=tn->startHour;
-					teachersIntervalMaxDaysPerWeekIntervalEnd1[tch]=tn->endHour;
-				}
-				else if(teachersIntervalMaxDaysPerWeekPercentages2[tch]==-1){
-					teachersIntervalMaxDaysPerWeekPercentages2[tch]=tn->weightPercentage;
-					teachersIntervalMaxDaysPerWeekMaxDays2[tch]=tn->maxDaysPerWeek;
-					teachersIntervalMaxDaysPerWeekIntervalStart2[tch]=tn->startHour;
-					teachersIntervalMaxDaysPerWeekIntervalEnd2[tch]=tn->endHour;
-				}
-				else if(teachersIntervalMaxDaysPerWeekPercentages3[tch]==-1){
-					teachersIntervalMaxDaysPerWeekPercentages3[tch]=tn->weightPercentage;
-					teachersIntervalMaxDaysPerWeekMaxDays3[tch]=tn->maxDaysPerWeek;
-					teachersIntervalMaxDaysPerWeekIntervalStart3[tch]=tn->startHour;
-					teachersIntervalMaxDaysPerWeekIntervalEnd3[tch]=tn->endHour;
-				}
-				else{
-					ok=false;
-					
-					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because it has more than three constraints interval max days per week"
-					 ". Please modify your data correspondingly (leave maximum three constraints of type"
-					 " constraint teacher(s) interval max days per week for each teacher) and try again")
-					 .arg(gt.rules.internalTeachersList[tch]->name),
-					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
-					 1, 0 );
-				
-					if(t==0)
-						return false;
+				bool exists=false;
+				for(int j=0; j<teachersIntervalMaxDaysPerWeekPercentages[tch].count(); j++)
+					if(teachersIntervalMaxDaysPerWeekPercentages[tch].at(j)==tn->weightPercentage &&
+					 teachersIntervalMaxDaysPerWeekMaxDays[tch].at(j)==tn->maxDaysPerWeek &&
+					 teachersIntervalMaxDaysPerWeekIntervalStart[tch].at(j)==tn->startHour &&
+					 teachersIntervalMaxDaysPerWeekIntervalEnd[tch].at(j)==tn->endHour){
+						exists=true;
+						break;
+					}
+			
+				if(!exists){
+					teachersIntervalMaxDaysPerWeekPercentages[tch].append(tn->weightPercentage);
+					teachersIntervalMaxDaysPerWeekMaxDays[tch].append(tn->maxDaysPerWeek);
+					teachersIntervalMaxDaysPerWeekIntervalStart[tch].append(tn->startHour);
+					teachersIntervalMaxDaysPerWeekIntervalEnd[tch].append(tn->endHour);
 				}
 			}
 		}
@@ -7402,20 +7360,10 @@ bool computeTeachersIntervalMaxDaysPerWeek(QWidget* parent)
 bool computeSubgroupsIntervalMaxDaysPerWeek(QWidget* parent)
 {
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
-		subgroupsIntervalMaxDaysPerWeekPercentages1[i]=-1.0;
-		subgroupsIntervalMaxDaysPerWeekMaxDays1[i]=-1;
-		subgroupsIntervalMaxDaysPerWeekIntervalStart1[i]=-1;
-		subgroupsIntervalMaxDaysPerWeekIntervalEnd1[i]=-1;
-
-		subgroupsIntervalMaxDaysPerWeekPercentages2[i]=-1.0;
-		subgroupsIntervalMaxDaysPerWeekMaxDays2[i]=-1;
-		subgroupsIntervalMaxDaysPerWeekIntervalStart2[i]=-1;
-		subgroupsIntervalMaxDaysPerWeekIntervalEnd2[i]=-1;
-
-		subgroupsIntervalMaxDaysPerWeekPercentages3[i]=-1.0;
-		subgroupsIntervalMaxDaysPerWeekMaxDays3[i]=-1;
-		subgroupsIntervalMaxDaysPerWeekIntervalStart3[i]=-1;
-		subgroupsIntervalMaxDaysPerWeekIntervalEnd3[i]=-1;
+		subgroupsIntervalMaxDaysPerWeekPercentages[i].clear();
+		subgroupsIntervalMaxDaysPerWeekMaxDays[i].clear();
+		subgroupsIntervalMaxDaysPerWeekIntervalStart[i].clear();
+		subgroupsIntervalMaxDaysPerWeekIntervalEnd[i].clear();
 	}
 	
 	bool ok=true;
@@ -7434,43 +7382,27 @@ bool computeSubgroupsIntervalMaxDaysPerWeek(QWidget* parent)
 				 .arg(cn->students),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
-			 	
+				
 				if(t==0)
 					return false;
 			}
 			
 			for(int sbg : qAsConst(cn->iSubgroupsList)){
-				if(subgroupsIntervalMaxDaysPerWeekPercentages1[sbg]==-1){
-					subgroupsIntervalMaxDaysPerWeekPercentages1[sbg]=cn->weightPercentage;
-					subgroupsIntervalMaxDaysPerWeekMaxDays1[sbg]=cn->maxDaysPerWeek;
-					subgroupsIntervalMaxDaysPerWeekIntervalStart1[sbg]=cn->startHour;
-					subgroupsIntervalMaxDaysPerWeekIntervalEnd1[sbg]=cn->endHour;
-				}
-				else if(subgroupsIntervalMaxDaysPerWeekPercentages2[sbg]==-1){
-					subgroupsIntervalMaxDaysPerWeekPercentages2[sbg]=cn->weightPercentage;
-					subgroupsIntervalMaxDaysPerWeekMaxDays2[sbg]=cn->maxDaysPerWeek;
-					subgroupsIntervalMaxDaysPerWeekIntervalStart2[sbg]=cn->startHour;
-					subgroupsIntervalMaxDaysPerWeekIntervalEnd2[sbg]=cn->endHour;
-				}
-				else if(subgroupsIntervalMaxDaysPerWeekPercentages3[sbg]==-1){
-					subgroupsIntervalMaxDaysPerWeekPercentages3[sbg]=cn->weightPercentage;
-					subgroupsIntervalMaxDaysPerWeekMaxDays3[sbg]=cn->maxDaysPerWeek;
-					subgroupsIntervalMaxDaysPerWeekIntervalStart3[sbg]=cn->startHour;
-					subgroupsIntervalMaxDaysPerWeekIntervalEnd3[sbg]=cn->endHour;
-				}
-				else{
-					ok=false;
-					
-					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because it has more than three constraints interval max days per week"
-					 ". Please modify your data correspondingly (leave maximum three constraints of type"
-					 " constraint students (set) interval max days per week for each subgroup) and try again")
-					 .arg(gt.rules.internalSubgroupsList[sbg]->name),
-					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
-					 1, 0 );
+				bool exists=false;
+				for(int j=0; j<subgroupsIntervalMaxDaysPerWeekPercentages[sbg].count(); j++)
+					if(subgroupsIntervalMaxDaysPerWeekPercentages[sbg].at(j)==cn->weightPercentage &&
+					 subgroupsIntervalMaxDaysPerWeekMaxDays[sbg].at(j)==cn->maxDaysPerWeek &&
+					 subgroupsIntervalMaxDaysPerWeekIntervalStart[sbg].at(j)==cn->startHour &&
+					 subgroupsIntervalMaxDaysPerWeekIntervalEnd[sbg].at(j)==cn->endHour){
+						exists=true;
+						break;
+					}
 				
-					if(t==0)
-						return false;
+				if(!exists){
+					subgroupsIntervalMaxDaysPerWeekPercentages[sbg].append(cn->weightPercentage);
+					subgroupsIntervalMaxDaysPerWeekMaxDays[sbg].append(cn->maxDaysPerWeek);
+					subgroupsIntervalMaxDaysPerWeekIntervalStart[sbg].append(cn->startHour);
+					subgroupsIntervalMaxDaysPerWeekIntervalEnd[sbg].append(cn->endHour);
 				}
 			}
 		}
@@ -7488,43 +7420,27 @@ bool computeSubgroupsIntervalMaxDaysPerWeek(QWidget* parent)
 				 ,
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
-			 	
+				
 				if(t==0)
 					return false;
 			}
 			
 			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
-				if(subgroupsIntervalMaxDaysPerWeekPercentages1[sbg]==-1){
-					subgroupsIntervalMaxDaysPerWeekPercentages1[sbg]=cn->weightPercentage;
-					subgroupsIntervalMaxDaysPerWeekMaxDays1[sbg]=cn->maxDaysPerWeek;
-					subgroupsIntervalMaxDaysPerWeekIntervalStart1[sbg]=cn->startHour;
-					subgroupsIntervalMaxDaysPerWeekIntervalEnd1[sbg]=cn->endHour;
-				}
-				else if(subgroupsIntervalMaxDaysPerWeekPercentages2[sbg]==-1){
-					subgroupsIntervalMaxDaysPerWeekPercentages2[sbg]=cn->weightPercentage;
-					subgroupsIntervalMaxDaysPerWeekMaxDays2[sbg]=cn->maxDaysPerWeek;
-					subgroupsIntervalMaxDaysPerWeekIntervalStart2[sbg]=cn->startHour;
-					subgroupsIntervalMaxDaysPerWeekIntervalEnd2[sbg]=cn->endHour;
-				}
-				else if(subgroupsIntervalMaxDaysPerWeekPercentages3[sbg]==-1){
-					subgroupsIntervalMaxDaysPerWeekPercentages3[sbg]=cn->weightPercentage;
-					subgroupsIntervalMaxDaysPerWeekMaxDays3[sbg]=cn->maxDaysPerWeek;
-					subgroupsIntervalMaxDaysPerWeekIntervalStart3[sbg]=cn->startHour;
-					subgroupsIntervalMaxDaysPerWeekIntervalEnd3[sbg]=cn->endHour;
-				}
-				else{
-					ok=false;
-					
-					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because it has more than three constraints interval max days per week"
-					 ". Please modify your data correspondingly (leave maximum three constraints of type"
-					 " constraint students (set) interval max days per week for each subgroup) and try again")
-					 .arg(gt.rules.internalSubgroupsList[sbg]->name),
-					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
-					 1, 0 );
+				bool exists=false;
+				for(int j=0; j<subgroupsIntervalMaxDaysPerWeekPercentages[sbg].count(); j++)
+					if(subgroupsIntervalMaxDaysPerWeekPercentages[sbg].at(j)==cn->weightPercentage &&
+					 subgroupsIntervalMaxDaysPerWeekMaxDays[sbg].at(j)==cn->maxDaysPerWeek &&
+					 subgroupsIntervalMaxDaysPerWeekIntervalStart[sbg].at(j)==cn->startHour &&
+					 subgroupsIntervalMaxDaysPerWeekIntervalEnd[sbg].at(j)==cn->endHour){
+						exists=true;
+						break;
+					}
 				
-					if(t==0)
-						return false;
+				if(!exists){
+					subgroupsIntervalMaxDaysPerWeekPercentages[sbg].append(cn->weightPercentage);
+					subgroupsIntervalMaxDaysPerWeekMaxDays[sbg].append(cn->maxDaysPerWeek);
+					subgroupsIntervalMaxDaysPerWeekIntervalStart[sbg].append(cn->startHour);
+					subgroupsIntervalMaxDaysPerWeekIntervalEnd[sbg].append(cn->endHour);
 				}
 			}
 		}
@@ -8351,7 +8267,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 	QSet<QString> studentsSetHomeRoom;
 	QSet<QString> teachersHomeRoom;
 	/*QSet<QString> subjectsPreferredRoom;
-	QSet<QPair<QString, QString> > subjectsActivityTagsPreferredRoom;*/
+	QSet<QPair<QString, QString>> subjectsActivityTagsPreferredRoom;*/
 	//QSet<int> activitiesPreferredRoom;
 
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
@@ -10014,9 +9930,7 @@ void computeMustComputeTimetableSubgroups()
 			  subgroupsMinRestingHoursCircularPercentages[sbg]>=0 ||
 			  subgroupsMinRestingHoursNotCircularPercentages[sbg]>=0 ||
 			
-			  subgroupsIntervalMaxDaysPerWeekPercentages1[sbg]>=0 ||
-			  subgroupsIntervalMaxDaysPerWeekPercentages2[sbg]>=0 ||
-			  subgroupsIntervalMaxDaysPerWeekPercentages3[sbg]>=0 ||
+			  subgroupsIntervalMaxDaysPerWeekPercentages[sbg].count()>0 ||
 			
 			  maxBuildingChangesPerDayForStudentsPercentages[sbg]>=0 ||
 			  maxBuildingChangesPerWeekForStudentsPercentages[sbg]>=0 ||
@@ -10063,9 +9977,7 @@ void computeMustComputeTimetableTeachers()
 			  teachersMinRestingHoursCircularPercentages[tch]>=0 ||
 			  teachersMinRestingHoursNotCircularPercentages[tch]>=0 ||
 
-			  teachersIntervalMaxDaysPerWeekPercentages1[tch]>=0 ||
-			  teachersIntervalMaxDaysPerWeekPercentages2[tch]>=0 ||
-			  teachersIntervalMaxDaysPerWeekPercentages3[tch]>=0 ||
+			  teachersIntervalMaxDaysPerWeekPercentages[tch].count()>0 ||
 			
 			  maxBuildingChangesPerDayForTeachersPercentages[tch]>=0 ||
 			  maxBuildingChangesPerWeekForTeachersPercentages[tch]>=0 ||
@@ -10221,7 +10133,7 @@ bool homeRoomsAreOk(QWidget* parent)
 	return ok;
 }
 
-void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int> > & reprSameActivitiesSet, QTextStream* initialOrderStream)
+void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int>> & reprSameActivitiesSet, QTextStream* initialOrderStream)
 {
 	//I should take care of home rooms, but I don't want to change the routine below which works well
 

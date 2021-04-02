@@ -327,18 +327,18 @@ Versions 3.9.0 - 3.9.23 - Liviu Lalescu, French translation by Jerome Durand (fe
 - Version 3.9.20
 	- Moved the directory "results" to "~/.fet/results"
 - Version 3.9.21
-	- The conflicts are now saved in a file ("time_conflicts.txt" and 
+	- The conflicts are now saved in a file ("time_conflicts.txt" and
 	 "space_conflicts.txt") - suggested by Sebastian Canagaratna.
 	- Now, saving the internal state works correctly in Debian - reported by
 	Sebastian Canagaratna.
 - Version 3.9.22
-	- The internal state and the exported timetables are now saved in files named after the 
+	- The internal state and the exported timetables are now saved in files named after the
 	.xml input file, to allow multiple simulations (suggested by Sebastian Canagaratna).
 	- Saving now the timetable in .xml and .html models (suggested by Cristian Gherman).
 - Version 3.9.23
 	- The user can view the timetable (and saving to html works) for students and teachers
 	showing also the rooms (suggested by Sebastian Canagaratna).
-	- The space allocation is somewhat faster, by getting rid of the logging part and an 
+	- The space allocation is somewhat faster, by getting rid of the logging part and an
 	unnecessary sorting.
 ---------------------------------------------------------------------------------
 Versions 3.10.0 - 3.10.5 - Liviu Lalescu
@@ -349,7 +349,7 @@ Versions 3.10.0 - 3.10.5 - Liviu Lalescu
 	- Small bug-fixes.
 	- Improvements in the interface.
 - Version 3.10.2
-	- Improvements in space allocation (now compulsory ConstraintTeacherRequiresRoom 
+	- Improvements in space allocation (now compulsory ConstraintTeacherRequiresRoom
 	works by repairing)
 	- Added ConstraintActivityPreferredRoom (suggested by Sebastian Canagaratna)
 - Version 3.10.3
@@ -379,12 +379,12 @@ Versions 3.11.0 - 3.11.6 - Liviu Lalescu
 - Version 3.11.6
 	- Improved Romanian translation
 ---------------------------------------------------------------------------------
-Versions 3.12.0 - 3.12.32 - Liviu Lalescu, 
+Versions 3.12.0 - 3.12.32 - Liviu Lalescu,
 	French translation by Jerome Durand (fetfr@free.fr),
-	Catalan translation by Miguel Gea Milvaques, 
+	Catalan translation by Miguel Gea Milvaques,
 	Malay translation by Abdul Hadi Kamel.
 - Version 3.12.0
-	- The user now has the possibility to choose only one phase allocation 
+	- The user now has the possibility to choose only one phase allocation
 	(for difficult space constraints)
 - Version 3.12.1
 	- Improvements in the interface
@@ -445,7 +445,7 @@ Versions 3.12.0 - 3.12.32 - Liviu Lalescu,
 	- Small update in the FAQ
 - Version 3.12.25
 	- The teachers' timetable now contains a subject tag
-	- Bug fix - when the time constraints are invalid, the user is presented the problem 
+	- Bug fix - when the time constraints are invalid, the user is presented the problem
 		- reported by Sebastian Canagaratna
 - Version 3.12.26
 	- Small improvement in the interface
@@ -466,7 +466,7 @@ Versions 3.12.0 - 3.12.32 - Liviu Lalescu,
 - Version 3.12.32
 	- Added Malay translation (thanks to Abdul Hadi Kamel)
 ---------------------------------------------------------------------------------
-Versions 3.13.0 - 3.13.8 - Liviu Lalescu, 
+Versions 3.13.0 - 3.13.8 - Liviu Lalescu,
 - Version 3.13.0
 	- Added ConstraintSubjectSubjectTagPreferredRoom(s) and ConstraintSubjectPreferredRoom(s)
 	(suggested by Abdul Hadi Kamel).
@@ -493,7 +493,7 @@ Versions 3.13.0 - 3.13.8 - Liviu Lalescu,
 	- Small bug fix (when adding a new ConstraintActivityPreferredTime).
 ---------------------------------------------------------------------------------
 Versions 3.14.0 - 3.14.21
-	- Liviu Lalescu, 
+	- Liviu Lalescu,
 	- Polish translation by Radoslaw Pasiok,
 	- Malay translation update by Abdul Hadi Kamel.
 - Version 3.14.0
@@ -536,7 +536,7 @@ Versions 3.14.0 - 3.14.21
 - Version 3.14.13
 	- Improved "Save as" dialog.
 - Version 3.14.14
-	- Now, special characters <, >, ', " and & are handled correctly in names 
+	- Now, special characters <, >, ', " and & are handled correctly in names
 	(bug reported by Frans de Bruijn)
 	- Code readability improvement (instead of getXMLDescription, now it is getXmlDescription)
 - Version 3.14.15
@@ -629,7 +629,7 @@ Versions 3.17.0 - 3.17.12
 	- Improvement in Romanian translation (by Liviu Lalescu)
 - Version 3.17.5
 	- Added a new sample, number 9 (sent by Cristian Gherman)
-	- Now each generated timetable html file contains an ending tag, mentioning the date 
+	- Now each generated timetable html file contains an ending tag, mentioning the date
 	and the time the timetable was generated
 - Version 3.17.6
 	- Improvement: the interface now contains the constraints to minimize the number of
@@ -707,7 +707,7 @@ Versions 4.0.0 - 4.0.9
 ---------------------------------------------------------------------------------
 Versions 4.1.0 - 4.1.10
 	- Liviu Lalescu,
-	- German translation by Volker Dirr	
+	- German translation by Volker Dirr
 	- FAQ improvement by Les Richardson
 - Version 4.1.0
 	- In the Modify Activity Dialog, the "split into..." spin box is now showed correctly
@@ -757,7 +757,7 @@ Versions 4.1.0 - 4.1.10
 	This bug was introduced in version 4.1.6.
 - Version 4.1.8
 	- Improved readability and corrected possible future bugs, by adding a
-	chromosome property called "timeChangedForMatrixCalculation" and 
+	chromosome property called "timeChangedForMatrixCalculation" and
 	"spaceChangedForMatrixCalculation" (suggested by Volker Dirr).
 	- The minimum population size in the dialog is now 3
 	(suggested by Volker Dirr).
@@ -788,11 +788,11 @@ Versions 4.2.0 - 4.2.x
 	- French translation improved by Patrick Fox.
 - Version 4.2.5
 	- Small interface improvements, the add constraint activity preferred time
-	and add constraint activity preferred times contains a filter (suggested 
+	and add constraint activity preferred times contains a filter (suggested
 	by Abdul Hadi Kamel)
 - Version 4.2.6
 	- Small interface improvements, the modify constraint activity preferred time
-	and modify constraint activity preferred times contains a filter (suggested 
+	and modify constraint activity preferred times contains a filter (suggested
 	by Abdul Hadi Kamel)
 - Version 4.2.7
 	- Added Hungarian translation (incomplete), by Ferenczi Viktor.
@@ -809,7 +809,7 @@ Versions 4.2.0 - 4.2.x
 Versions 5.0.0 - 5.0.2
 	- Liviu Lalescu,
 	- xhtml form of saving timetables by Volker Dirr (timetabling.de)
-- Version 5.0.0-preview1 
+- Version 5.0.0-preview1
 	- new algorithm
 	- too many changes to mention
 - Version 5.0.0-preview2
@@ -1120,7 +1120,7 @@ Versions 5.4.0 - 5.4.18
 	- Update of README file
 	- MAX_ACTIVITIES is now 5000
 - Version 5.4.16
-	- Groups and years timetables contain dashed lines in cells which contain more activities 
+	- Groups and years timetables contain dashed lines in cells which contain more activities
 	(suggested by Silver, done by Volker Dirr)
 	- Arabic translation update by Silver
 - Version 5.4.17
@@ -1138,7 +1138,7 @@ Versions 5.4.0 - 5.4.18
 	- Greek translation update by my80s
 	- When opening a corrupt file, it reports line, column and error.
 	- Added an Italian sample by Marco Barsotti.
-	- Made possible to lock not only time, but also space or both when viewing the timetable 
+	- Made possible to lock not only time, but also space or both when viewing the timetable
 	(suggested by Horatiu Halmajan)
 	- Small improvement: maximum room capacity and number of students for a set is now 15000,
 	instead of 1000
@@ -2316,7 +2316,7 @@ Versions 5.47.0 - 5.47.1
 	- Code cleanup.
 	- Added a new example file from Spain, by Fran.
 ---------------------------------------------------------------------------------
-Versions 5.48.0 - 5.48.v
+Versions 5.48.0 - 5.48.2
 - Version 5.48.0
 	- Updated the code to be compliant with the future Qt 6.0.0 (suggested by Volker Dirr).
 - Version 5.48.1
@@ -2324,3 +2324,11 @@ Versions 5.48.0 - 5.48.v
 	- Code cleanup (suggested by Volker Dirr, found using Cppcheck).
 - Version 5.48.2
 	- Code improvements and cleanup (including one improvement suggested by Volker Dirr, found using Coverity Scan).
+---------------------------------------------------------------------------------
+Versions 5.49.0 - 5.49.v
+- Version 5.49.0
+	- It is now possible to use any number of constraints of type teacher(s)/students (set) interval max days per week for a teacher/students set
+	(previously this number was limited to maximum three for each teacher/students set).
+	- It is now possible to reset the number of categories of a students year to zero in the divide year dialog (suggested by Eric Carolus).
+	- Code improvements and cleanup.
+	- Added an updated example file from South Africa, by Eric Carolus, replacing a deprecated example file.

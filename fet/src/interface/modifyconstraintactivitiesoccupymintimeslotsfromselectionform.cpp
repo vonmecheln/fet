@@ -19,8 +19,6 @@
 
 #include <QMessageBox>
 
-#include "tablewidgetupdatebug.h"
-
 #include "longtextmessagebox.h"
 
 #include "modifyconstraintactivitiesoccupymintimeslotsfromselectionform.h"
@@ -125,8 +123,6 @@ ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::ModifyConstraintA
 
 	selectedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
-	tableWidgetUpdateBug(selectedTimesTable);
-	
 	setStretchAvailabilityTableNicely(selectedTimesTable);
 	
 	//activities
@@ -225,7 +221,6 @@ void ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::horizontalHe
 			selectedTimesTable->item(row, col)->setText(s);
 			colorItem(selectedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(selectedTimesTable);
 	}
 }
 
@@ -244,7 +239,6 @@ void ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::verticalHead
 			selectedTimesTable->item(row, col)->setText(s);
 			colorItem(selectedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(selectedTimesTable);
 	}
 }
 
@@ -255,7 +249,6 @@ void ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::setAllUnsele
 			selectedTimesTable->item(i, j)->setText(NO);
 			colorItem(selectedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(selectedTimesTable);
 }
 
 void ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::setAllSelected()
@@ -265,7 +258,6 @@ void ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::setAllSelect
 			selectedTimesTable->item(i, j)->setText(YES);
 			colorItem(selectedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(selectedTimesTable);
 }
 
 void ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::itemClicked(QTableWidgetItem* item)
@@ -279,8 +271,6 @@ void ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::itemClicked(
 	}
 	item->setText(s);
 	colorItem(item);
-	
-	tableWidgetUpdateBug(selectedTimesTable);
 }
 
 void ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::ok()

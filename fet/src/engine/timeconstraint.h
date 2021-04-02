@@ -197,19 +197,19 @@ public:
 	virtual ~TimeConstraint()=0;
 
 	/**
-	DEPRECATED COMMENT
+	DEPRECATED COMMENT BELOW:
 	Constructor - please note that the maximum allowed weight is 100.0
 	The reason: unallocated activities must have very big conflict weight,
-	and any other restrictions must have much more lower weight,
+	and any other constraints must have much more lower weight,
 	so that the timetable can evolve when starting with uninitialized activities.
 	*/
 	TimeConstraint(double wp);
 
 	/**
 	The function that calculates the fitness of a solution, according to this
-	constraint. We need the rules to compute this fitness factor.
-	If conflictsString!=nullptr,
-	it will be initialized with a text explaining where this restriction is broken.
+	constraint. We need the solution to compute this fitness factor.
+	If conflictsString!=nullptr, it will be initialized with a text explaining
+	where this constraint is broken.
 	*/
 	virtual double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr)=0;
 
@@ -368,7 +368,7 @@ public:
 	QString students;
 
 	/**
-	The subgroups involved in this restriction
+	The subgroups involved in this constraint
 	*/
 	QList<int> iSubgroupsList;
 
@@ -545,7 +545,7 @@ public:
 	//internal
 	QList<int> activityTagsIndices;
 	
-	QList<QList<int> > activitiesIndicesLists;
+	QList<QList<int>> activitiesIndicesLists;
 
 	ConstraintActivityTagsNotOverlapping();
 
@@ -1609,12 +1609,12 @@ public:
 	QString students;
 
 	/**
-	The number of subgroups involved in this restriction
+	The number of subgroups involved in this constraint
 	*/
 	//int nSubgroups;
 
 	/**
-	The subgroups involved in this restriction
+	The subgroups involved in this constraint
 	*/
 	//int subgroups[MAX_SUBGROUPS_PER_CONSTRAINT];
 	QList<int> iSubgroupsList;

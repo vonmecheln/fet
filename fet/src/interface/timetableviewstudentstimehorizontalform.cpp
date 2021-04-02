@@ -19,8 +19,6 @@
 
 #include <QtGlobal>
 
-#include "tablewidgetupdatebug.h"
-
 #include "longtextmessagebox.h"
 
 #include "fetmainform.h"
@@ -79,7 +77,7 @@ extern bool simulation_running;
 
 //extern Matrix3D<bool> subgroupNotAvailableDayHour;
 extern Matrix2D<bool> breakDayHour;
-extern QHash<QString, QSet<QPair<int, int> > > studentsSetNotAvailableDayHour;
+extern QHash<QString, QSet<QPair<int, int>>> studentsSetNotAvailableDayHour;
 
 extern QSet<int> idsOfLockedTime;		//care about locked activities in view forms
 extern QSet<int> idsOfLockedSpace;		//care about locked activities in view forms
@@ -219,7 +217,7 @@ TimetableViewStudentsTimeHorizontalForm::TimetableViewStudentsTimeHorizontalForm
 		}
 	}
 	
-	QHash<QString, QSet<QPair<int, int> > >::const_iterator it=studentsSetNotAvailableDayHour.constBegin();
+	QHash<QString, QSet<QPair<int, int>>>::const_iterator it=studentsSetNotAvailableDayHour.constBegin();
 	while(it!=studentsSetNotAvailableDayHour.constEnd()){
 		if(!usedStudentsSet.contains(it.key()))
 			usedStudentsSet.insert(it.key());
@@ -492,7 +490,7 @@ void TimetableViewStudentsTimeHorizontalForm::newTimetableGenerated()
 		}
 	}
 	
-	QHash<QString, QSet<QPair<int, int> > >::const_iterator it=studentsSetNotAvailableDayHour.constBegin();
+	QHash<QString, QSet<QPair<int, int>>>::const_iterator it=studentsSetNotAvailableDayHour.constBegin();
 	while(it!=studentsSetNotAvailableDayHour.constEnd()){
 		if(!usedStudentsSet.contains(it.key()))
 			usedStudentsSet.insert(it.key());
@@ -769,7 +767,7 @@ void TimetableViewStudentsTimeHorizontalForm::updateStudentsTimetableTable(){
 		
 		assert(sbg>=0 && sbg<gt.rules.nInternalSubgroups);
 		
-		QSet<QPair<int, int> > notAvailableDayHour=studentsSetNotAvailableDayHour.value(usedStudentsList.at(t), QSet<QPair<int, int> >());
+		QSet<QPair<int, int>> notAvailableDayHour=studentsSetNotAvailableDayHour.value(usedStudentsList.at(t), QSet<QPair<int, int>>());
 		
 		/*ConstraintStudentsSetNotAvailableTimes* ctr=notAvailableHash.value(usedStudentsList.at(t), nullptr);
 		if(ctr!=nullptr){
@@ -963,8 +961,6 @@ void TimetableViewStudentsTimeHorizontalForm::updateStudentsTimetableTable(){
 
 //	teachersTimetableTable->resizeRowsToContents();
 	
-	tableWidgetUpdateBug(studentsTimetableTable);
-	
 	detailActivity(studentsTimetableTable->currentItem());
 }
 
@@ -1065,9 +1061,9 @@ void TimetableViewStudentsTimeHorizontalForm::detailActivity(QTableWidgetItem* i
 	
 	assert(sbg>=0 && sbg<gt.rules.nInternalSubgroups);
 	
-	QSet<QPair<int, int> > notAvailableDayHour=studentsSetNotAvailableDayHour.value(usedStudentsList.at(t), QSet<QPair<int, int> >());
+	QSet<QPair<int, int>> notAvailableDayHour=studentsSetNotAvailableDayHour.value(usedStudentsList.at(t), QSet<QPair<int, int>>());
 
-	/*QSet<QPair<int, int> > notAvailableDayHour;
+	/*QSet<QPair<int, int>> notAvailableDayHour;
 	QSet<ConstraintStudentsSetNotAvailableTimes*> cs=gt.rules.ssnatHash.value(usedStudentsList.at(t), QSet<ConstraintStudentsSetNotAvailableTimes*>());
 	if(!cs.isEmpty()){
 		assert(cs.count()==1);
@@ -1181,8 +1177,6 @@ void TimetableViewStudentsTimeHorizontalForm::lockTimeSpace()
 			
 void TimetableViewStudentsTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 {
-	//cout<<"teachers begin, isc="<<gt.rules.internalStructureComputed<<endl;
-
 	if(simulation_running){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
@@ -1372,11 +1366,10 @@ void TimetableViewStudentsTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 						gt.rules.removeTimeConstraint(deltc);
 						idsOfLockedTime.remove(act->id);
 						unlockedT++;
-						//delete deltc; - done by rules.removeTim...
+						//delete deltc; - done by rules.removeTimeConstraint(...)
 					}
 				}
 				tmptc.clear();
-				//gt.rules.internalStructureComputed=false;
 
 				if(report){
 					int k;
@@ -1466,11 +1459,10 @@ void TimetableViewStudentsTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 						gt.rules.removeSpaceConstraint(delsc);
 						idsOfLockedSpace.remove(act->id);
 						unlockedS++;
-						//delete delsc; done by rules.removeSpa...
+						//delete delsc; done by rules.removeSpaceConstraint(...)
 					}
 				}
 				tmpsc.clear();
-				//gt.rules.internalStructureComputed=false;
 			
 				if(report){
 					int k;
@@ -1613,9 +1605,6 @@ void TimetableViewStudentsTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 ///////////
 
 	LockUnlock::increaseCommunicationSpinBox();
-	
-	//cout<<"teachers end, isc="<<gt.rules.internalStructureComputed<<endl;
-	//cout<<endl;
 }
 
 void TimetableViewStudentsTimeHorizontalForm::widthSpinBoxValueChanged()
@@ -1637,8 +1626,6 @@ void TimetableViewStudentsTimeHorizontalForm::heightSpinBoxValueChanged()
 void TimetableViewStudentsTimeHorizontalForm::help()
 {
 	QString s="";
-	//s+=QCoreApplication::translate("TimetableViewForm", "You can drag sections to increase/decrease them.");
-	//s+="\n\n";
 	s+=QCoreApplication::translate("TimetableViewForm", "Lock/unlock: you can select one or more activities in the table and toggle lock/unlock in time, space or both.");
 	s+=" ";
 	s+=QCoreApplication::translate("TimetableViewForm", "There will be added or removed locking constraints for the selected activities (they can be unlocked only if they are not permanently locked).");

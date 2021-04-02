@@ -19,8 +19,6 @@
 
 #include <QtGlobal>
 
-#include "tablewidgetupdatebug.h"
-
 #include "longtextmessagebox.h"
 
 #include "fetmainform.h"
@@ -828,8 +826,6 @@ void TimetableViewTeachersTimeHorizontalForm::updateTeachersTimetableTable(){
 
 //	teachersTimetableTable->resizeRowsToContents();
 	
-	tableWidgetUpdateBug(teachersTimetableTable);
-	
 	detailActivity(teachersTimetableTable->currentItem());
 }
 
@@ -994,8 +990,6 @@ void TimetableViewTeachersTimeHorizontalForm::lockTimeSpace()
 			
 void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 {
-	//cout<<"teachers begin, isc="<<gt.rules.internalStructureComputed<<endl;
-
 	if(simulation_running){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
@@ -1142,11 +1136,10 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 						gt.rules.removeTimeConstraint(deltc);
 						idsOfLockedTime.remove(act->id);
 						unlockedT++;
-						//delete deltc; - done by rules.removeTim...
+						//delete deltc; - done by rules.removeTimeConstraint(...)
 					}
 				}
 				tmptc.clear();
-				//gt.rules.internalStructureComputed=false;
 
 				if(report){
 					int k;
@@ -1236,11 +1229,10 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 						gt.rules.removeSpaceConstraint(delsc);
 						idsOfLockedSpace.remove(act->id);
 						unlockedS++;
-						//delete delsc; done by rules.removeSpa...
+						//delete delsc; done by rules.removeSpaceConstraint(...)
 					}
 				}
 				tmpsc.clear();
-				//gt.rules.internalStructureComputed=false;
 			
 				if(report){
 					int k;
@@ -1383,9 +1375,6 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 ///////////
 
 	LockUnlock::increaseCommunicationSpinBox();
-	
-	//cout<<"teachers end, isc="<<gt.rules.internalStructureComputed<<endl;
-	//cout<<endl;
 }
 
 void TimetableViewTeachersTimeHorizontalForm::widthSpinBoxValueChanged()
@@ -1407,8 +1396,6 @@ void TimetableViewTeachersTimeHorizontalForm::heightSpinBoxValueChanged()
 void TimetableViewTeachersTimeHorizontalForm::help()
 {
 	QString s="";
-	//s+=QCoreApplication::translate("TimetableViewForm", "You can drag sections to increase/decrease them.");
-	//s+="\n\n";
 	s+=QCoreApplication::translate("TimetableViewForm", "Lock/unlock: you can select one or more activities in the table and toggle lock/unlock in time, space or both.");
 	s+=" ";
 	s+=QCoreApplication::translate("TimetableViewForm", "There will be added or removed locking constraints for the selected activities (they can be unlocked only if they are not permanently locked).");

@@ -214,8 +214,8 @@ void SubgroupsForm::removeSubgroup()
 	int subgroupIndex=gt.rules.searchSubgroup(yearName, groupName, subgroupName);
 	assert(subgroupIndex>=0);
 	
-	QList<QPair<QString, QString> > yearsGroupsContainingSubgroup_List;
-	//QSet<QPair<QString, QString> > yearsGroupsContainingSubgroup_Set;
+	QList<QPair<QString, QString>> yearsGroupsContainingSubgroup_List;
+	//QSet<QPair<QString, QString>> yearsGroupsContainingSubgroup_Set;
 	for(StudentsYear* year : qAsConst(gt.rules.yearsList))
 		for(StudentsGroup* group : qAsConst(year->groupsList))
 			for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList))
@@ -295,8 +295,8 @@ void SubgroupsForm::purgeSubgroup()
 	int subgroupIndex=gt.rules.searchSubgroup(yearName, groupName, subgroupName);
 	assert(subgroupIndex>=0);
 	
-	QList<QPair<QString, QString> > yearsGroupsContainingSubgroup_List;
-	//QSet<QPair<QString, QString> > yearsGroupsContainingSubgroup_Set;
+	QList<QPair<QString, QString>> yearsGroupsContainingSubgroup_List;
+	//QSet<QPair<QString, QString>> yearsGroupsContainingSubgroup_Set;
 	for(StudentsYear* year : qAsConst(gt.rules.yearsList))
 		for(StudentsGroup* group : qAsConst(year->groupsList))
 			for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList))
@@ -549,9 +549,9 @@ void SubgroupsForm::modifySubgroup()
 	int subgroupIndex=gt.rules.searchSubgroup(yearName, groupName, subgroupName);
 	assert(subgroupIndex>=0);
 	
-	StudentsSet* sset=gt.rules.searchStudentsSet(subgroupName);
-	assert(sset!=nullptr);
-	int numberOfStudents=sset->numberOfStudents;
+	StudentsSet* studentsSet=gt.rules.searchStudentsSet(subgroupName);
+	assert(studentsSet!=nullptr);
+	int numberOfStudents=studentsSet->numberOfStudents;
 	
 	ModifyStudentsSubgroupForm form(this, yearName, groupName, subgroupName, numberOfStudents);
 	setParentAndOtherThings(&form, this);
@@ -636,8 +636,8 @@ void SubgroupsForm::comments()
 	
 	QString subgroupName=subgroupsListWidget->currentItem()->text();
 	
-	StudentsSet* sset=gt.rules.searchStudentsSet(subgroupName);
-	assert(sset!=nullptr);
+	StudentsSet* studentsSet=gt.rules.searchStudentsSet(subgroupName);
+	assert(studentsSet!=nullptr);
 
 	QDialog getCommentsDialog(this);
 	
@@ -658,7 +658,7 @@ void SubgroupsForm::comments()
 	QVBoxLayout* vl=new QVBoxLayout();
 	
 	QPlainTextEdit* commentsPT=new QPlainTextEdit();
-	commentsPT->setPlainText(sset->comments);
+	commentsPT->setPlainText(studentsSet->comments);
 	commentsPT->selectAll();
 	commentsPT->setFocus();
 	
@@ -677,7 +677,7 @@ void SubgroupsForm::comments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
-		sset->comments=commentsPT->toPlainText();
+		studentsSet->comments=commentsPT->toPlainText();
 	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);

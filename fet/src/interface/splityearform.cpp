@@ -27,8 +27,6 @@
 
 #include <QMessageBox>
 
-//#include <QSettings>
-
 #include <QListWidget>
 #include <QAbstractItemView>
 
@@ -38,9 +36,6 @@
 #include <QHash>
 
 #include "longtextmessagebox.h"
-
-//extern const QString COMPANY;
-//extern const QString PROGRAM;
 
 SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(parent)
 {
@@ -100,29 +95,6 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
-	/*QSettings settings(COMPANY, PROGRAM);
-	
-	_sep=settings.value(this->metaObject()->className()+QString("/separator-string"), QString("")).toString();
-	
-	_nCategories=settings.value(this->metaObject()->className()+QString("/number-of-categories"), 1).toInt();
-	
-	for(int i=0; i<_nCategories; i++){
-		_nDivisions[i]=settings.value(this->metaObject()->className()+QString("/category/%1/number-of-divisions").arg(i+1), 0).toInt();
-		for(int j=0; j<_nDivisions[i]; j++){
-			QString ts=settings.value(this->metaObject()->className()+QString("/category/%1/division/%2").arg(i+1).arg(j+1), QString("")).toString();
-			if(!ts.isEmpty())
-				_divisions[i].append(ts);
-			else
-				_nDivisions[i]--; //comment on 2020-09-03: this is wrong code, but practically not met in practice.
-		}
-		if(_nDivisions[i]!=_divisions[i].count()){
-			QMessageBox::warning(this, tr("FET warning"), tr("You have met a minor bug in FET, please report it. FET expected to read"
-			 " from settings %1 divisions in category %2, but read %3. FET will now continue operation, nothing will be lost.")
-			 .arg(_nDivisions[i]).arg(i).arg(_divisions[i].count()));
-			_nDivisions[i]=_divisions[i].count();
-		}
-	}*/
-	
 	//2020-09-03
 	StudentsSet* ss=gt.rules.searchStudentsSet(_year);
 	assert(ss!=nullptr);
@@ -142,7 +114,7 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	
 	//restore saved values
 	separatorLineEdit->setText(_sep);
-	categoriesSpinBox->setValue(_nCategories);
+	
 	for(int i=0; i<_nCategories; i++)
 		for(int j=0; j<_nDivisions[i]; j++)
 			listWidgets[i]->addItem(_divisions[i].at(j));
@@ -150,29 +122,19 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	maxSubgroupsPerYearLabel->setText(tr("Max subgroups per year: %1").arg(MAX_TOTAL_SUBGROUPS));
 	maxTotalSubgroupsLabel->setText(tr("Max total subgroups: %1").arg(MAX_TOTAL_SUBGROUPS));
 	
+	disconnect(categoriesSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfCategoriesChanged()));
+	categoriesSpinBox->setValue(_nCategories);
+	connect(categoriesSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfCategoriesChanged()));
+	
 	numberOfCategoriesChanged();
 	
-	tabIndexChanged(0);
+	if(_nCategories>0)
+		tabIndexChanged(0);
 }
 
 SplitYearForm::~SplitYearForm()
 {
 	saveFETDialogGeometry(this);
-
-	/*QSettings settings(COMPANY, PROGRAM);
-	
-	settings.setValue(this->metaObject()->className()+QString("/separator-string"), _sep);
-	
-	settings.setValue(this->metaObject()->className()+QString("/number-of-categories"), _nCategories);
-
-	settings.remove(this->metaObject()->className()+QString("/category"));
-
-	for(int i=0; i<_nCategories; i++){
-		settings.setValue(this->metaObject()->className()+QString("/category/%1/number-of-divisions").arg(i+1), _nDivisions[i]);
-		assert(_nDivisions[i]==_divisions[i].count());
-		for(int j=0; j<_nDivisions[i]; j++)
-			settings.setValue(this->metaObject()->className()+QString("/category/%1/division/%2").arg(i+1).arg(j+1), _divisions[i].at(j));
-	}*/
 }
 
 void SplitYearForm::tabIndexChanged(int i)
@@ -191,9 +153,28 @@ void SplitYearForm::numberOfCategoriesChanged()
 			tabWidget->setTabEnabled(i, true);
 		else
 			tabWidget->setTabEnabled(i, false);
-			
+	
 	updateNumberOfSubgroups();
 	updateDivisionsLabel();
+	
+	if(categoriesSpinBox->value()==0){
+		tabWidget->setCurrentIndex(0);
+
+		addPushButton->setEnabled(false);
+		modifyPushButton->setEnabled(false);
+		removePushButton->setEnabled(false);
+		removeAllPushButton->setEnabled(false);
+		
+		separatorGroupBox->setEnabled(false);
+	}
+	else{
+		addPushButton->setEnabled(true);
+		modifyPushButton->setEnabled(true);
+		removePushButton->setEnabled(true);
+		removeAllPushButton->setEnabled(true);
+		
+		separatorGroupBox->setEnabled(true);
+	}
 }
 
 void SplitYearForm::addClicked()
@@ -481,7 +462,7 @@ void SplitYearForm::ok()
 			newStudentsSets.insert(ts);
 		}
 		
-	//As in Knuth TAOCP vol 4A, generate all tuples
+	//As in Knuth TAOCP vol 4A section 7.2.1.1, generate all n-tuples
 	int b[MAX_CATEGORIES];
 	int ii;
 	
@@ -718,7 +699,10 @@ again_here_2:
 	 " of the year to make sure that everything is OK.")+s);
 	
 	//saving page
-	_sep=separatorLineEdit->text();
+	if(categoriesSpinBox->value()>0)
+		_sep=separatorLineEdit->text();
+	else
+		_sep=QString(" ");
 	
 	_nCategories=categoriesSpinBox->value();
 	
@@ -735,7 +719,8 @@ again_here_2:
 	for(int i=0; i<_nCategories; i++)
 		newYear->divisions.append(_divisions[i]);
 	
-	//No need for gt.rules.internalStructureComputed=false and the rest of it, because there are invoked addGroupFast and addSubgroupFast
+	//No need for gt.rules.internalStructureComputed=false and the rest of it, because there was invoked gt.rules.removeYearPointerAfterSplit(yearPointer)
+	//(and in case the number of categories is nonzero, there was also invoked addGroupFast and addSubgroupFast).
 	
 	this->close();
 }
@@ -748,7 +733,6 @@ void SplitYearForm::help()
 	 " that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split"
 	 " into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide"
 	 " according to this category, but add more larger activities, with students set 9a and teachers TE+TF.");
-	// " The only drawback is that each activity can take place only in one room in FET, so you might need to find a way to overcome that.");
 	
 	s+="\n\n";
 	
@@ -758,24 +742,12 @@ void SplitYearForm::help()
 
 	s+="\n\n";
 
-	/*s+=tr("Please input from the beginning the correct divisions. After you inputted activities and constraints"
-	 " for this year's groups and subgroups, dividing it again will remove the activities and constraints referring"
-	 " to these groups/subgroups. I know this is not elegant, I hope I'll solve that in the future."
-	 " You might want to use the alternative of manually adding/editing/removing groups/subgroups"
-	 " in the groups/subgroups menu, though removing a group/subgroup will also remove the activities");
-	
-	s+="\n\n";*/
-
 	s+=tr("If your number of subgroups is reasonable, probably you need not worry about empty subgroups (regarding speed of generation)."
 		" But more tests need to be done. You just need to know that for the moment the maximum total number of subgroups is %1 (which can be changed,"
 		" but nobody needed larger values)").arg(MAX_TOTAL_SUBGROUPS);
 
 	s+="\n\n";
 
-//Commented on 2020-09-03
-//	s+=tr("Please note that the dialog here will keep the last configuration of the last"
-//		" divided year, it will not remember the values for a specific year you need to modify.");
-//	s+=" ";
 	s+=tr("If you intend to divide again a year by categories and you want to keep (the majority of) the existing groups in this year,"
 		" you will need to use the exact same separator character(s) for dividing this year as you used when previously dividing this year,"
 		" and the same division names (any old division which is no longer entered means a group which will be removed from this year).");
@@ -860,14 +832,10 @@ void SplitYearForm::reset() //reset to defaults
 
 	separatorLineEdit->setText(" ");
 	
-	categoriesSpinBox->setValue(1);
-	
 	for(int i=0; i<MAX_CATEGORIES; i++)
 		listWidgets[i]->clear();
 	
-	numberOfCategoriesChanged();
-
-	tabIndexChanged(0);
+	categoriesSpinBox->setValue(0);
 }
 
 void SplitYearForm::updateNumberOfSubgroups()
@@ -882,9 +850,14 @@ void SplitYearForm::updateDivisionsLabel()
 {
 	QString ts;
 	
-	ts=CustomFETString::number(listWidgets[0]->count());
-	for(int i=1; i<categoriesSpinBox->value(); i++)
-		ts+=QString(2, ' ')+CustomFETString::number(listWidgets[i]->count());
+	if(categoriesSpinBox->value()>0){
+		ts=CustomFETString::number(listWidgets[0]->count());
+		for(int i=1; i<categoriesSpinBox->value(); i++)
+			ts+=QString(2, ' ')+CustomFETString::number(listWidgets[i]->count());
+	}
+	else{
+		ts=QString("");
+	}
 
 	divisionsLabel->setText(ts);
 }

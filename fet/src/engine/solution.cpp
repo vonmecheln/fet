@@ -165,16 +165,16 @@ double Solution::fitness(Rules& r, FakeString* conflictsString){
 	//sort descending according to conflicts in O(n log n)
 	int ttt=conflictsWeightList.count();
 		
-	QMultiMap<double, QString> map;
+	QMultiMap<double, QString> conflictsMap;
 	assert(conflictsWeightList.count()==conflictsDescriptionList.count());
 	for(int i=0; i<conflictsWeightList.count(); i++)
-		map.insert(conflictsWeightList.at(i), conflictsDescriptionList.at(i));
+		conflictsMap.insert(conflictsWeightList.at(i), conflictsDescriptionList.at(i));
 		
 	conflictsWeightList.clear();
 	conflictsDescriptionList.clear();
 	
-	QMultiMap<double, QString>::const_iterator i=map.constBegin();
-	while(i!=map.constEnd()){
+	QMultiMap<double, QString>::const_iterator i=conflictsMap.constBegin();
+	while(i!=conflictsMap.constEnd()){
 		conflictsWeightList.append(i.key());
 		conflictsDescriptionList.append(i.value());
 		i++;
@@ -261,7 +261,7 @@ int Solution::getSubgroupsMatrix(Rules& r, Matrix3D<int>& a){
 
 //The following 2 functions (getTeachersTimetable & getSubgroupsTimetable)
 //are very similar to the above 2 ones (getTeachersMatrix & getSubgroupsMatrix)
-void Solution::getTeachersTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<int> >& b){
+void Solution::getTeachersTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<int>>& b){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 	
@@ -470,7 +470,7 @@ int Solution::getRoomsMatrix(
 void Solution::getRoomsTimetable(
 	Rules& r,
 	Matrix3D<int>& a,
-	Matrix3D<QList<int> >& va)
+	Matrix3D<QList<int>>& va)
 {
 	assert(r.initialized);
 	assert(r.internalStructureComputed);

@@ -19,8 +19,6 @@
 
 #include <QMessageBox>
 
-#include "tablewidgetupdatebug.h"
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintstudentssetnotavailabletimesform.h"
@@ -87,8 +85,6 @@ AddConstraintStudentsSetNotAvailableTimesForm::AddConstraintStudentsSetNotAvaila
 
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 
-	tableWidgetUpdateBug(notAllowedTimesTable);
-	
 	setStretchAvailabilityTableNicely(notAllowedTimesTable);
 }
 
@@ -131,7 +127,6 @@ void AddConstraintStudentsSetNotAvailableTimesForm::horizontalHeaderClicked(int 
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(notAllowedTimesTable);
 	}
 }
 
@@ -150,7 +145,6 @@ void AddConstraintStudentsSetNotAvailableTimesForm::verticalHeaderClicked(int ro
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(notAllowedTimesTable);
 	}
 }
 
@@ -161,7 +155,6 @@ void AddConstraintStudentsSetNotAvailableTimesForm::setAllAvailable()
 			notAllowedTimesTable->item(i, j)->setText(NO);
 			colorItem(notAllowedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(notAllowedTimesTable);
 }
 
 void AddConstraintStudentsSetNotAvailableTimesForm::setAllNotAvailable()
@@ -171,7 +164,6 @@ void AddConstraintStudentsSetNotAvailableTimesForm::setAllNotAvailable()
 			notAllowedTimesTable->item(i, j)->setText(YES);
 			colorItem(notAllowedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(notAllowedTimesTable);
 }
 
 void AddConstraintStudentsSetNotAvailableTimesForm::updateStudentsSetComboBox()
@@ -190,7 +182,6 @@ void AddConstraintStudentsSetNotAvailableTimesForm::itemClicked(QTableWidgetItem
 	}
 	item->setText(s);
 	colorItem(item);
-	tableWidgetUpdateBug(notAllowedTimesTable);
 }
 
 void AddConstraintStudentsSetNotAvailableTimesForm::addCurrentConstraint()

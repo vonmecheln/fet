@@ -19,8 +19,6 @@
 
 #include <QtGlobal>
 
-#include "tablewidgetupdatebug.h"
-
 #include "longtextmessagebox.h"
 
 #include "fetmainform.h"
@@ -408,7 +406,6 @@ TimetableViewStudentsDaysHorizontalForm::~TimetableViewStudentsDaysHorizontalFor
 void TimetableViewStudentsDaysHorizontalForm::resizeRowsAfterShow()
 {
 	studentsTimetableTable->resizeRowsToContents();
-//	tableWidgetUpdateBug(studentsTimetableTable);
 }
 
 void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
@@ -748,8 +745,6 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 
 	studentsTimetableTable->resizeRowsToContents();
 	
-	tableWidgetUpdateBug(studentsTimetableTable);
-	
 	detailActivity(studentsTimetableTable->currentItem());
 }
 
@@ -1025,7 +1020,7 @@ void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 	int addedS=0, unlockedS=0;
 
 	//lock selected activities
-	QSet <int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
+	QSet<int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
 	careAboutIndex.clear();
 	for(int j=0; j<gt.rules.nHoursPerDay && j<studentsTimetableTable->rowCount(); j++){
 		for(int k=0; k<gt.rules.nDaysPerWeek && k<studentsTimetableTable->columnCount(); k++){
@@ -1091,12 +1086,11 @@ void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 							for(TimeConstraint* deltc : qAsConst(tmptc)){
 								s+=tr("The following constraint will be deleted:")+"\n"+deltc->getDetailedDescription(gt.rules)+"\n";
 								gt.rules.removeTimeConstraint(deltc);
-								//delete deltc; - this is done by rules.remove...
+								//delete deltc; - this is done by rules.removeTimeConstraint(...)
 								idsOfLockedTime.remove(act->id);
 								unlockedT++;
 							}
 							tmptc.clear();
-							//gt.rules.internalStructureComputed=false;
 						}  //modified by Volker Dirr, so you can also unlock (end)
 						
 						if(report){
@@ -1175,10 +1169,9 @@ void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 								gt.rules.removeSpaceConstraint(delsc);
 								idsOfLockedSpace.remove(act->id);
 								unlockedS++;
-								//delete delsc; done by rules.remove...
+								//delete delsc; done by rules.removeSpaceConstraint(...)
 							}
 							tmpsc.clear();
-							//gt.rules.internalStructureComputed=false;
 						}  //modified by Volker Dirr, so you can also unlock (end)
 						
 						if(report){
@@ -1324,16 +1317,11 @@ void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 ///////////
 
 	LockUnlock::increaseCommunicationSpinBox(); //this is needed
-	
-	//cout<<"students end, isc="<<gt.rules.internalStructureComputed<<endl;
-	//cout<<endl;
 }
 
 void TimetableViewStudentsDaysHorizontalForm::help()
 {
 	QString s="";
-	//s+=QCoreApplication::translate("TimetableViewForm", "You can drag sections to increase/decrease them.");
-	//s+="\n\n";
 	s+=QCoreApplication::translate("TimetableViewForm", "Lock/unlock: you can select one or more activities in the table and toggle lock/unlock in time, space or both.");
 	s+=" ";
 	s+=QCoreApplication::translate("TimetableViewForm", "There will be added or removed locking constraints for the selected activities (they can be unlocked only if they are not permanently locked).");

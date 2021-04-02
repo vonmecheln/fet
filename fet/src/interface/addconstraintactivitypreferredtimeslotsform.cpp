@@ -17,8 +17,6 @@
 
 #include <Qt>
 
-#include "tablewidgetupdatebug.h"
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitypreferredtimeslotsform.h"
@@ -121,8 +119,6 @@ AddConstraintActivityPreferredTimeSlotsForm::AddConstraintActivityPreferredTimeS
 
 	preferredTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
-	tableWidgetUpdateBug(preferredTimesTable);
-	
 	setStretchAvailabilityTableNicely(preferredTimesTable);
 
 	connect(teachersComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(filterChanged()));
@@ -177,7 +173,6 @@ void AddConstraintActivityPreferredTimeSlotsForm::horizontalHeaderClicked(int co
 			preferredTimesTable->item(row, col)->setText(s);
 			colorItem(preferredTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(preferredTimesTable);
 	}
 }
 
@@ -203,7 +198,6 @@ void AddConstraintActivityPreferredTimeSlotsForm::verticalHeaderClicked(int row)
 			preferredTimesTable->item(row, col)->setText(s);
 			colorItem(preferredTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(preferredTimesTable);
 	}
 }
 
@@ -214,7 +208,6 @@ void AddConstraintActivityPreferredTimeSlotsForm::setAllSlotsAllowed()
 			preferredTimesTable->item(i, j)->setText(YES);
 			colorItem(preferredTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(preferredTimesTable);
 }
 
 void AddConstraintActivityPreferredTimeSlotsForm::setAllSlotsNotAllowed()
@@ -224,7 +217,6 @@ void AddConstraintActivityPreferredTimeSlotsForm::setAllSlotsNotAllowed()
 			preferredTimesTable->item(i, j)->setText(NO);
 			colorItem(preferredTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(preferredTimesTable);
 }
 
 bool AddConstraintActivityPreferredTimeSlotsForm::filterOk(Activity* act)
@@ -282,8 +274,6 @@ void AddConstraintActivityPreferredTimeSlotsForm::itemClicked(QTableWidgetItem* 
 	}
 	item->setText(s);
 	colorItem(item);
-
-	tableWidgetUpdateBug(preferredTimesTable);
 }
 
 void AddConstraintActivityPreferredTimeSlotsForm::filterChanged(){

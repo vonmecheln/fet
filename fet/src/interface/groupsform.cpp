@@ -445,9 +445,9 @@ void GroupsForm::modifyGroup()
 	int groupIndex=gt.rules.searchGroup(yearsListWidget->currentItem()->text(), groupName);
 	assert(groupIndex>=0);
 
-	StudentsSet* sset=gt.rules.searchStudentsSet(groupName);
-	assert(sset!=nullptr);
-	int numberOfStudents=sset->numberOfStudents;
+	StudentsSet* studentsSet=gt.rules.searchStudentsSet(groupName);
+	assert(studentsSet!=nullptr);
+	int numberOfStudents=studentsSet->numberOfStudents;
 	
 	ModifyStudentsGroupForm form(this, yearName, groupName, numberOfStudents);
 	setParentAndOtherThings(&form, this);
@@ -514,8 +514,8 @@ void GroupsForm::comments()
 	
 	QString groupName=groupsListWidget->currentItem()->text();
 	
-	StudentsSet* sset=gt.rules.searchStudentsSet(groupName);
-	assert(sset!=nullptr);
+	StudentsSet* studentsSet=gt.rules.searchStudentsSet(groupName);
+	assert(studentsSet!=nullptr);
 
 	QDialog getCommentsDialog(this);
 	
@@ -536,7 +536,7 @@ void GroupsForm::comments()
 	QVBoxLayout* vl=new QVBoxLayout();
 	
 	QPlainTextEdit* commentsPT=new QPlainTextEdit();
-	commentsPT->setPlainText(sset->comments);
+	commentsPT->setPlainText(studentsSet->comments);
 	commentsPT->selectAll();
 	commentsPT->setFocus();
 	
@@ -555,7 +555,7 @@ void GroupsForm::comments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
-		sset->comments=commentsPT->toPlainText();
+		studentsSet->comments=commentsPT->toPlainText();
 	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);

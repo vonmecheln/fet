@@ -105,7 +105,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 	QHash<int, int> activitiesRepresentantIds; //first integer is the id, second is the index in the lists
 
 	//QList<int> activitiesForRepresentant[MAX_ACTIVITIES];
-	Matrix1D<QList<int> > activitiesForRepresentant;
+	Matrix1D<QList<int>> activitiesForRepresentant;
 	activitiesForRepresentant.resize(gt.rules.activitiesList.count());
 	
 	int nActs=0;

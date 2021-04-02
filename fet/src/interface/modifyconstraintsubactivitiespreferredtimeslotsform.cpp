@@ -19,8 +19,6 @@
 
 #include <QMessageBox>
 
-#include "tablewidgetupdatebug.h"
-
 #include "modifyconstraintsubactivitiespreferredtimeslotsform.h"
 #include "timeconstraint.h"
 
@@ -121,9 +119,9 @@ ModifyConstraintSubactivitiesPreferredTimeSlotsForm::ModifyConstraintSubactiviti
 				
 			colorItem(item);
 		}
-		
+	
 	preferredTimesTable->resizeRowsToContents();
-				
+	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 
 	connect(preferredTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
@@ -131,8 +129,6 @@ ModifyConstraintSubactivitiesPreferredTimeSlotsForm::ModifyConstraintSubactiviti
 
 	preferredTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
-	tableWidgetUpdateBug(preferredTimesTable);
-
 	setStretchAvailabilityTableNicely(preferredTimesTable);
 }
 
@@ -175,7 +171,6 @@ void ModifyConstraintSubactivitiesPreferredTimeSlotsForm::horizontalHeaderClicke
 			preferredTimesTable->item(row, col)->setText(s);
 			colorItem(preferredTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(preferredTimesTable);
 	}
 }
 
@@ -194,7 +189,6 @@ void ModifyConstraintSubactivitiesPreferredTimeSlotsForm::verticalHeaderClicked(
 			preferredTimesTable->item(row, col)->setText(s);
 			colorItem(preferredTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(preferredTimesTable);
 	}
 }
 
@@ -205,7 +199,6 @@ void ModifyConstraintSubactivitiesPreferredTimeSlotsForm::setAllSlotsAllowed()
 			preferredTimesTable->item(i, j)->setText(YES);
 			colorItem(preferredTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(preferredTimesTable);
 }
 
 void ModifyConstraintSubactivitiesPreferredTimeSlotsForm::setAllSlotsNotAllowed()
@@ -215,7 +208,6 @@ void ModifyConstraintSubactivitiesPreferredTimeSlotsForm::setAllSlotsNotAllowed(
 			preferredTimesTable->item(i, j)->setText(NO);
 			colorItem(preferredTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(preferredTimesTable);
 }
 
 void ModifyConstraintSubactivitiesPreferredTimeSlotsForm::itemClicked(QTableWidgetItem* item)
@@ -229,8 +221,6 @@ void ModifyConstraintSubactivitiesPreferredTimeSlotsForm::itemClicked(QTableWidg
 	}
 	item->setText(s);
 	colorItem(item);
-
-	tableWidgetUpdateBug(preferredTimesTable);
 }
 
 void ModifyConstraintSubactivitiesPreferredTimeSlotsForm::updateTeachersComboBox(){

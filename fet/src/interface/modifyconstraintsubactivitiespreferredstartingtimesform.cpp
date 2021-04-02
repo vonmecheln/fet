@@ -19,8 +19,6 @@
 
 #include <QMessageBox>
 
-#include "tablewidgetupdatebug.h"
-
 #include "modifyconstraintsubactivitiespreferredstartingtimesform.h"
 #include "timeconstraint.h"
 
@@ -121,17 +119,15 @@ ModifyConstraintSubactivitiesPreferredStartingTimesForm::ModifyConstraintSubacti
 				
 			colorItem(item);
 		}
-		
+	
 	preferredTimesTable->resizeRowsToContents();
-				
+	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 
 	connect(preferredTimesTable->horizontalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(horizontalHeaderClicked(int)));
 	connect(preferredTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
 
 	preferredTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
-	
-	tableWidgetUpdateBug(preferredTimesTable);
 	
 	setStretchAvailabilityTableNicely(preferredTimesTable);
 }
@@ -175,7 +171,6 @@ void ModifyConstraintSubactivitiesPreferredStartingTimesForm::horizontalHeaderCl
 			preferredTimesTable->item(row, col)->setText(s);
 			colorItem(preferredTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(preferredTimesTable);
 	}
 }
 
@@ -194,7 +189,6 @@ void ModifyConstraintSubactivitiesPreferredStartingTimesForm::verticalHeaderClic
 			preferredTimesTable->item(row, col)->setText(s);
 			colorItem(preferredTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(preferredTimesTable);
 	}
 }
 
@@ -205,7 +199,6 @@ void ModifyConstraintSubactivitiesPreferredStartingTimesForm::setAllSlotsAllowed
 			preferredTimesTable->item(i, j)->setText(YES);
 			colorItem(preferredTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(preferredTimesTable);
 }
 
 void ModifyConstraintSubactivitiesPreferredStartingTimesForm::setAllSlotsNotAllowed()
@@ -215,7 +208,6 @@ void ModifyConstraintSubactivitiesPreferredStartingTimesForm::setAllSlotsNotAllo
 			preferredTimesTable->item(i, j)->setText(NO);
 			colorItem(preferredTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(preferredTimesTable);
 }
 
 void ModifyConstraintSubactivitiesPreferredStartingTimesForm::itemClicked(QTableWidgetItem* item)
@@ -229,8 +221,6 @@ void ModifyConstraintSubactivitiesPreferredStartingTimesForm::itemClicked(QTable
 	}
 	item->setText(s);
 	colorItem(item);
-
-	tableWidgetUpdateBug(preferredTimesTable);
 }
 
 void ModifyConstraintSubactivitiesPreferredStartingTimesForm::updateTeachersComboBox(){

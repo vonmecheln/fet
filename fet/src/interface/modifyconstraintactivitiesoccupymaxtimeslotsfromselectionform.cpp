@@ -19,8 +19,6 @@
 
 #include <QMessageBox>
 
-#include "tablewidgetupdatebug.h"
-
 #include "longtextmessagebox.h"
 
 #include "modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.h"
@@ -125,8 +123,6 @@ ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::ModifyConstraintA
 
 	selectedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
-	tableWidgetUpdateBug(selectedTimesTable);
-	
 	setStretchAvailabilityTableNicely(selectedTimesTable);
 	
 	//activities
@@ -225,7 +221,6 @@ void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::horizontalHe
 			selectedTimesTable->item(row, col)->setText(s);
 			colorItem(selectedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(selectedTimesTable);
 	}
 }
 
@@ -244,7 +239,6 @@ void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::verticalHead
 			selectedTimesTable->item(row, col)->setText(s);
 			colorItem(selectedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(selectedTimesTable);
 	}
 }
 
@@ -255,7 +249,6 @@ void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::setAllUnsele
 			selectedTimesTable->item(i, j)->setText(NO);
 			colorItem(selectedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(selectedTimesTable);
 }
 
 void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::setAllSelected()
@@ -265,7 +258,6 @@ void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::setAllSelect
 			selectedTimesTable->item(i, j)->setText(YES);
 			colorItem(selectedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(selectedTimesTable);
 }
 
 void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::itemClicked(QTableWidgetItem* item)
@@ -279,8 +271,6 @@ void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::itemClicked(
 	}
 	item->setText(s);
 	colorItem(item);
-	
-	tableWidgetUpdateBug(selectedTimesTable);
 }
 
 void ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::ok()

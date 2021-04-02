@@ -2108,36 +2108,36 @@ puoi scegliere la distanza minima in giorni tra ciascun paio di subattività. Si
 <context>
     <name>AddConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="256"/>
-        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="273"/>
-        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="280"/>
-        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="295"/>
-        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="298"/>
+        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="246"/>
+        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="263"/>
+        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="270"/>
+        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="285"/>
+        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="288"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="257"/>
+        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="247"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso percentuale non valido. Occorre il 100%</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="273"/>
+        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="263"/>
         <source>You specified max simultaneous activities to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
         <translation>Hai indicato che il numero massimo di attività simultanee deve essere zero. Non è la scelta migliore dal punto di vista dell&apos;efficienza, perchè potresti usare, invece, il vincolo &quot;Ore preferenziali per attività&quot;. Prova a correggere.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="281"/>
+        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="271"/>
         <source>Empty list of activities</source>
         <translation>Elenco di attività vuoto</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="296"/>
+        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="286"/>
         <source>Constraint added:</source>
         <translation>Vincolo inserito:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="299"/>
+        <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="289"/>
         <source>Constraint NOT added - please report error</source>
         <translation>Vincolo NON aggiunto - riportare l&apos;errore all&apos;autore</translation>
     </message>
@@ -2239,36 +2239,36 @@ puoi scegliere la distanza minima in giorni tra ciascun paio di subattività. Si
 <context>
     <name>AddConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="258"/>
-        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="275"/>
-        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="281"/>
-        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="296"/>
-        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="299"/>
+        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="248"/>
+        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="265"/>
+        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="271"/>
+        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="286"/>
+        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="289"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="259"/>
+        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="249"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="275"/>
+        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="265"/>
         <source>You specified min simultaneous activities to be 0. This results in a useless constraint. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="282"/>
+        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="272"/>
         <source>Empty list of activities</source>
         <translation type="unfinished">Elenco di attività vuoto</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="297"/>
+        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="287"/>
         <source>Constraint added:</source>
         <translation type="unfinished">Vincolo inserito:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="300"/>
+        <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="290"/>
         <source>Constraint NOT added - please report error</source>
         <translation type="unfinished">Vincolo NON aggiunto - riportare l&apos;errore all&apos;autore</translation>
     </message>
@@ -2593,36 +2593,36 @@ slots</source>
 <context>
     <name>AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="256"/>
-        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="273"/>
-        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="280"/>
-        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="295"/>
-        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="298"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="246"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="263"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="270"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="285"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="288"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="257"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="247"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso percentuale non valido. Occorre il 100%</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="273"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="263"/>
         <source>You specified max occupied time slots to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
         <translation>Hai indicato che il numero massimo di ore impegnate deve essere zero. Non è la scelta migliore dal punto di vista dell&apos;efficienza, perchè potresti usare, invece, il vincolo &quot;Ore preferenziali per attività&quot; permettendo a FET di trovare un orario più facilmente e prima con un vincolo equivalente. Prova a correggere.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="281"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="271"/>
         <source>Empty list of activities</source>
         <translation>Elenco di attività vuoto</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="296"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="286"/>
         <source>Constraint added:</source>
         <translation>Vincolo inserito:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="299"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="289"/>
         <source>Constraint NOT added - please report error</source>
         <translation>Vincolo NON aggiunto - riportare l&apos;errore all&apos;autore</translation>
     </message>
@@ -2724,36 +2724,36 @@ slots</source>
 <context>
     <name>AddConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="256"/>
-        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="273"/>
-        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="279"/>
-        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="294"/>
-        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="297"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="246"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="263"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="269"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="284"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="287"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="257"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="247"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="273"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="263"/>
         <source>You specified min occupied time slots to be 0. This results in a useless constraint. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="280"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="270"/>
         <source>Empty list of activities</source>
         <translation type="unfinished">Elenco di attività vuoto</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="295"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="285"/>
         <source>Constraint added:</source>
         <translation type="unfinished">Vincolo inserito:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="298"/>
+        <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="288"/>
         <source>Constraint NOT added - please report error</source>
         <translation type="unfinished">Vincolo NON aggiunto - riportare l&apos;errore all&apos;autore</translation>
     </message>
@@ -2855,27 +2855,27 @@ slots</source>
 <context>
     <name>AddConstraintActivitiesPreferredStartingTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="267"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="367"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="370"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="257"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="357"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="360"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="268"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="258"/>
         <source>Invalid weight (percentage)</source>
         <translation>Peso (percentuale) non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="289"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="307"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="323"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="352"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="279"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="297"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="313"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="342"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="290"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="280"/>
         <source>You specified all the activities. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teachers&apos; and students&apos; timetable.
 
  The best practice would be to use constraint break times.
@@ -2888,14 +2888,14 @@ slots</source>
  Se occorre un peso sotto il 100% allora potresti usare questo vincolo, ma fai attenzione a non ottenere un orario impossibile (se i tuoi insegnanti/studenti sono vincolati ad avere ore buche o ingressi posticipati e se lasci una posizione non permessa tra due posizioni consentite oppure una posizione non consentita ad inizio giornata e più posizioni consentite dopo di essa, questo possibile ora buca potrebbe essere contato nell&apos;orario di insegnante e studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="299"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="316"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="333"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="289"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="306"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="323"/>
         <source>Do you want to add current constraint?</source>
         <translation>Vuoi aggiungere questo vincolo?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="308"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="298"/>
         <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
 
  The best practice would be to use constraint teacher not available times.
@@ -2908,7 +2908,7 @@ slots</source>
  Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma attenzione a non ottenere un orario impossibile (se l&apos;insegnante è vincolato a un certo numero di ore buche e se si lascia una posizione non consentita compresa tra due posizioni ammesse, questo possibile ora buca potrebbe essere contato nell&apos;orario dell&apos;insegnante)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="324"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="314"/>
         <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
 
  The best practice would be to use constraint students set not available times.
@@ -2921,17 +2921,17 @@ La pratica migliore consiste nel far uso del vincolo di orario indisponibile per
 Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma attenzione a non ottenere un orario impossibile (se gli studenti sono vincolati a un certo numero di ore buche e se si lascia una posizione non consentita compresa tra due posizioni ammesse -o una posizione esclusa prima di posizioni ammesse-, questo possibile ora buca potrebbe essere contato nell&apos;orario degli studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="353"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="343"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="364"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="354"/>
         <source>Constraint added:</source>
         <translation>Vincolo inserito:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="371"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform.cpp" line="361"/>
         <source>Constraint NOT added - duplicate?</source>
         <comment>&apos;Duplicate&apos; means that the constraint is identical to an existing constraint and cannot be added.</comment>
         <translation type="unfinished">Vincolo NON aggiunto - duplicato?</translation>
@@ -3007,27 +3007,27 @@ Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma a
 <context>
     <name>AddConstraintActivitiesPreferredTimeSlotsForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="267"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="367"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="370"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="257"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="357"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="360"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="268"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="258"/>
         <source>Invalid weight (percentage)</source>
         <translation>Peso (percentuale) non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="289"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="307"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="323"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="352"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="279"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="297"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="313"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="342"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="290"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="280"/>
         <source>You specified all the activities. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teachers&apos; and students&apos; timetable.
 
  The best practice would be to use constraint break times.
@@ -3040,14 +3040,14 @@ Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma a
  Se occorre un peso sotto il 100% allora potresti usare questo vincolo, ma fai attenzione a non ottenere un orario impossibile (se i tuoi insegnanti/studenti sono vincolati ad avere ore buche o ingressi posticipati e se lasci una posizione non permessa tra due posizioni consentite oppure una posizione non consentita ad inizio giornata e più posizioni consentite dopo di essa, questo possibile ora buca potrebbe essere contato nell&apos;orario di insegnante e studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="299"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="316"/>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="333"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="289"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="306"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="323"/>
         <source>Do you want to add current constraint?</source>
         <translation>Vuoi aggiungere questo vincolo?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="308"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="298"/>
         <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
 
  The best practice would be to use constraint teacher not available times.
@@ -3060,7 +3060,7 @@ La pratica migliore consiste nel far uso del vincolo di orario indisponibile per
 Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma attenzione a non ottenere un orario impossibile (se l&apos;insegnante è vincolato a un certo numero di ore buche e se si lascia una posizione non consentita compresa tra due posizioni ammesse, questo possibile ora buca potrebbe essere contato nell&apos;orario dell&apos;insegnante)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="324"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="314"/>
         <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
 
  The best practice would be to use constraint students set not available times.
@@ -3073,17 +3073,17 @@ Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma a
  Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma attenzione a non ottenere un orario impossibile (se gli studenti sono vincolati a un certo numero di ore buche e se si lascia una posizione non consentita compresa tra due posizioni ammesse -o una posizione esclusa prima di posizioni ammesse-, questo possibile ora buca potrebbe essere contato nell&apos;orario degli studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="353"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="343"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="364"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="354"/>
         <source>Constraint added:</source>
         <translation>Vincolo inserito:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="371"/>
+        <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform.cpp" line="361"/>
         <source>Constraint NOT added - duplicate?</source>
         <comment>&apos;Duplicate&apos; means that the constraint is identical to an existing constraint and cannot be added.</comment>
         <translation type="unfinished">Vincolo NON aggiunto - duplicato?</translation>
@@ -4132,40 +4132,40 @@ necessary 100% if list nonempty)</source>
 <context>
     <name>AddConstraintActivityPreferredStartingTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="311"/>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="319"/>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="366"/>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="369"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="301"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="309"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="356"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="359"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="312"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="302"/>
         <source>Invalid weight (percentage)</source>
         <translation>Peso (percentuale) non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="320"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="310"/>
         <source>Invalid activity</source>
         <translation>Attività non valida</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="338"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="328"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="339"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="329"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="363"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="353"/>
         <source>Constraint added:</source>
         <translation>Vincolo inserito:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="370"/>
+        <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform.cpp" line="360"/>
         <source>Constraint NOT added - duplicate?</source>
         <comment>&apos;Duplicate&apos; means that the constraint is identical to an existing constraint and cannot be added.</comment>
         <translation type="unfinished">Vincolo NON aggiunto - duplicato?</translation>
@@ -4246,40 +4246,40 @@ necessary 100% if list nonempty)</source>
 <context>
     <name>AddConstraintActivityPreferredTimeSlotsForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="311"/>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="319"/>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="366"/>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="369"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="301"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="309"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="356"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="359"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="312"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="302"/>
         <source>Invalid weight (percentage)</source>
         <translation>Peso (percentuale) non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="320"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="310"/>
         <source>Invalid activity</source>
         <translation>Attività non valida</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="338"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="328"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="339"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="329"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="363"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="353"/>
         <source>Constraint added:</source>
         <translation>Vincolo inserito:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="370"/>
+        <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform.cpp" line="360"/>
         <source>Constraint NOT added - duplicate?</source>
         <comment>&apos;Duplicate&apos; means that the constraint is identical to an existing constraint and cannot be added.</comment>
         <translation type="unfinished">Vincolo NON aggiunto - duplicato?</translation>
@@ -4710,24 +4710,24 @@ necessary 100% if list nonempty)</source>
 <context>
     <name>AddConstraintBreakTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="194"/>
-        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="212"/>
-        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="215"/>
+        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="185"/>
+        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="203"/>
+        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="206"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="195"/>
+        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="186"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso (percentuale) non valido. Occorre che sia 100%</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="213"/>
+        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="204"/>
         <source>Constraint added:</source>
         <translation>Vincolo inserito:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="216"/>
+        <location filename="../src/interface/addconstraintbreaktimesform.cpp" line="207"/>
         <source>Constraint NOT added - there must be another constraint of this type. Please edit that one</source>
         <translation>Vincolo NON aggiunto - ci deve essere un altro vincolo di questo tipo. Modifica quello</translation>
     </message>
@@ -5168,30 +5168,30 @@ se collocate nello stesso giorno</translation>
 <context>
     <name>AddConstraintRoomNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="223"/>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="230"/>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="252"/>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="258"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="213"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="220"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="242"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="248"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="224"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="214"/>
         <source>Invalid weight</source>
         <translation>Peso non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="231"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="221"/>
         <source>Invalid room</source>
         <translation>Aula non valida</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="249"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="239"/>
         <source>Constraint added:</source>
         <translation>Vincolo inserito:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="259"/>
+        <location filename="../src/interface/addconstraintroomnotavailabletimesform.cpp" line="249"/>
         <source>Constraint NOT added - please report error</source>
         <translation>Vincolo NON aggiunto - riportare l&apos;errore all&apos;autore</translation>
     </message>
@@ -8339,45 +8339,45 @@ allowed: 0.0%-100.0%)</source>
 <context>
     <name>AddConstraintStudentsSetNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="204"/>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="212"/>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="230"/>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="233"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="195"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="203"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="221"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="224"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="205"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="196"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso (percentuale) non valido. Occorre che sia 100%</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="213"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="204"/>
         <source>Invalid students set</source>
         <translation>Insieme di studenti non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="234"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="225"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same students set. Please edit that one</source>
         <translation>Vincolo NON aggiunto - ci deve essere un altro vincolo di questo tipo riferito allo stesso insieme di studenti. Modificare quello</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="244"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="235"/>
         <source>This constraint does not induce gaps (or early gaps) for students. If a student set has lessons before and after a not available period, gaps will not be counted.</source>
         <translation>Vincolo che non induce ore buche (o inizio tardato) per gli studenti. Se un insieme di studenti ha lezioni prima e dopo un periodo di indisponibilità, non saranno contate ore buche.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="253"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="244"/>
         <source>FET help</source>
         <translation>FET - Aiuto</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="249"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="240"/>
         <source>If you really need to use weight under 100%, you can use activities preferred times with only the students set specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable</source>
         <translation>Se davvero ti occorre usare un peso sotto il 100% puoi usare orari preferenziali per attività con il solo gruppo di studenti specificato, ma ciò potrebbe comportare problemi, dato che possibili ore buche potrebbero essere contati e si potrebbe avere un orario impossibile</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="231"/>
+        <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform.cpp" line="222"/>
         <source>Constraint added:</source>
         <translation>Vincolo inserito:</translation>
     </message>
@@ -8443,34 +8443,34 @@ allowed: 0.0%-100.0%)</source>
 <context>
     <name>AddConstraintSubactivitiesPreferredStartingTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="254"/>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="302"/>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="305"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="245"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="293"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="296"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="255"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="246"/>
         <source>Invalid weight (percentage)</source>
         <translation>Peso (percentuale) non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="287"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="278"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="288"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="279"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="299"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="290"/>
         <source>Constraint added:</source>
         <translation>Vincolo inserito:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="306"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform.cpp" line="297"/>
         <source>Constraint NOT added - duplicate?</source>
         <comment>&apos;Duplicate&apos; means that the constraint is identical to an existing constraint and cannot be added.</comment>
         <translation type="unfinished">Vincolo NON aggiunto - duplicato?</translation>
@@ -8556,34 +8556,34 @@ allowed: 0.0%-100.0%)</source>
 <context>
     <name>AddConstraintSubactivitiesPreferredTimeSlotsForm</name>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="255"/>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="303"/>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="306"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="245"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="293"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="296"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="256"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="246"/>
         <source>Invalid weight (percentage)</source>
         <translation>Peso (percentuale) non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="288"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="278"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="289"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="279"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="300"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="290"/>
         <source>Constraint added:</source>
         <translation>Vincolo inserito:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="307"/>
+        <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform.cpp" line="297"/>
         <source>Constraint NOT added - duplicate?</source>
         <comment>&apos;Duplicate&apos; means that the constraint is identical to an existing constraint and cannot be added.</comment>
         <translation type="unfinished">Vincolo NON aggiunto - duplicato?</translation>
@@ -10683,45 +10683,45 @@ allowed: 0.0%-100.0%)</source>
 <context>
     <name>AddConstraintTeacherNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="208"/>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="216"/>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="234"/>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="237"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="198"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="206"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="224"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="227"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="209"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="199"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso (percentuale) non valido. Occorre che sia 100%</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="217"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="207"/>
         <source>Invalid teacher</source>
         <translation>Insegnante non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="238"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="228"/>
         <source>Constraint NOT added - there must be another constraint of this type referring to the same teacher. Please edit that one</source>
         <translation>Vincolo NON aggiunto - ci deve essere un altro vincolo di questo tipo riferito allo stesso insegnante. Modificare quello</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="248"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="238"/>
         <source>This constraint does not induce gaps for teachers. If a teacher has lessons before and after a not available period, gaps will not be counted.</source>
         <translation>Questo vincolo non comporta ore buche per l&apos;insegnante. Se questi ha lezioni prima e dopo un periodo di indisponibilità, non saranno contate ore buche.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="257"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="247"/>
         <source>FET help</source>
         <translation>FET - Aiuto</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="253"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="243"/>
         <source>If you really need to use weight under 100%, you can use activities preferred times with only the teacher specified, but this might generate problems, as possible gaps will be counted and you may obtain an impossible timetable.</source>
         <translation>Se davvero ti occorre usare un peso sotto il 100% puoi usare orari preferenziali per attività con il solo insegnante specificato, ma ciò potrebbe comportare problemi, dato che possibili ore buche potrebbero essere contati e si potrebbe avere un orario impossibile.</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="235"/>
+        <location filename="../src/interface/addconstraintteachernotavailabletimesform.cpp" line="225"/>
         <source>Constraint added:</source>
         <translation>Vincolo inserito:</translation>
     </message>
@@ -41264,130 +41264,130 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
 <context>
     <name>GeneratePreTranslate</name>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="628"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1085"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1104"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1108"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1127"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1131"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1150"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1154"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1193"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1253"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1307"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1382"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1445"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1475"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1491"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1581"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1636"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1687"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1722"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1740"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1825"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1906"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1958"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2048"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2129"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2170"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2190"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2211"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2231"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2254"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2280"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2307"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2328"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2349"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2369"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2392"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2418"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2459"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2474"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2493"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2509"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2546"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2582"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2611"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2630"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2649"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2667"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2703"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2721"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2761"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2804"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2891"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2957"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3032"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3095"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3126"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3142"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3264"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3317"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3364"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3399"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3417"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3502"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3583"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3635"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3725"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3806"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3851"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3868"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3894"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3910"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3937"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3955"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3991"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4009"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4049"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4092"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4134"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4150"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4176"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4191"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4218"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4238"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4262"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4312"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4345"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4359"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4395"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4408"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4471"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4485"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4523"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4536"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4687"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4705"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4806"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4958"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4981"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5002"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5069"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5097"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5114"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5143"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5173"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5208"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5225"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5254"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5284"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5324"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5347"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5368"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5435"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5462"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5500"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5567"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5593"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5717"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5733"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5789"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5861"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5980"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6026"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6069"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6118"/>
+        <location filename="../src/engine/generate_pre.cpp" line="608"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1076"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1095"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1099"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1118"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1122"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1141"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1145"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1184"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1244"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1298"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1373"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1436"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1466"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1482"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1572"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1627"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1678"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1713"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1731"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1816"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1898"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1951"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2041"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2123"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2165"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2185"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2206"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2226"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2249"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2275"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2302"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2323"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2344"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2364"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2387"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2413"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2454"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2469"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2488"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2504"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2541"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2577"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2606"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2625"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2644"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2662"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2698"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2716"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2756"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2799"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2886"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2952"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3027"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3090"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3121"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3137"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3259"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3312"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3394"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3412"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3497"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3579"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3632"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3722"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3804"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3850"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3867"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3893"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3909"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3936"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3954"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3990"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4008"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4048"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4091"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4133"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4149"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4175"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4190"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4217"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4237"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4261"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4311"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4344"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4358"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4394"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4407"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4470"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4484"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4522"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4535"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4686"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4704"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4805"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4957"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4980"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5001"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5068"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5096"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5112"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5141"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5171"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5206"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5222"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5251"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5281"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5321"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5344"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5365"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5432"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5459"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5497"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5564"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5590"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5714"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5730"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5786"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5858"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5977"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6023"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6066"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6115"/>
         <location filename="../src/engine/generate_pre.cpp" line="6388"/>
         <location filename="../src/engine/generate_pre.cpp" line="6451"/>
         <location filename="../src/engine/generate_pre.cpp" line="6519"/>
@@ -41400,189 +41400,185 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
         <location filename="../src/engine/generate_pre.cpp" line="7127"/>
         <location filename="../src/engine/generate_pre.cpp" line="7222"/>
         <location filename="../src/engine/generate_pre.cpp" line="7258"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7300"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7333"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7351"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7384"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7430"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7464"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7483"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7518"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7559"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7617"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7631"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7652"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7717"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7775"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7793"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7856"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7911"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7936"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7991"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8031"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8081"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8106"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8161"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8201"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8248"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8293"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8408"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8443"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8481"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8516"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8790"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8806"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8829"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8851"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8871"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9116"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9138"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9159"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9196"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9230"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9265"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9289"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9328"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9352"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9391"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9415"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9454"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9476"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9515"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9537"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9576"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9598"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9637"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9661"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9700"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9724"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9763"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9787"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9826"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9848"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9887"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9909"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9948"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9970"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10106"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10213"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10657"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7290"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7325"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7378"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7415"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7475"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7533"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7547"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7568"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7633"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7691"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7709"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7772"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7827"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7852"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7907"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7947"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7997"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8022"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8077"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8117"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8164"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8209"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8324"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8359"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8397"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8432"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8706"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8722"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8745"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8767"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8787"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9032"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9054"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9075"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9112"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9146"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9181"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9205"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9244"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9268"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9307"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9331"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9370"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9392"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9431"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9453"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9492"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9514"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9553"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9577"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9616"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9640"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9679"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9703"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9742"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9764"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9803"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9825"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9864"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9886"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10018"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10125"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10569"/>
         <source>FET warning</source>
         <translation>FET - Avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1264"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1318"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1383"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1446"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1478"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1494"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1582"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1647"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1698"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1723"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1741"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1836"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1917"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1963"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2059"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2140"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2178"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2198"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2219"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2239"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2264"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2290"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2315"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2336"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2357"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2377"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2402"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2428"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2463"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2479"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2498"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2515"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2553"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2589"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2615"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2636"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2657"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2673"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2707"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2725"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2767"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2810"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2902"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2968"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3033"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3096"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3129"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3145"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3265"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3328"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3375"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3400"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3418"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3513"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3594"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3640"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3736"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3817"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3856"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3874"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3898"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3915"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3945"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3961"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3995"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4013"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4055"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4098"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4138"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4156"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4179"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4196"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4225"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4246"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4269"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4313"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4349"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4365"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4398"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4413"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4475"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4491"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4526"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4541"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4688"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4706"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4807"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4965"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4987"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5010"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5070"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5100"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5118"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5150"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5180"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5211"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5229"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5261"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5291"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5331"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5353"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5376"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5436"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5467"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5503"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5572"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5596"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5723"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5739"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5797"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5867"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6123"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1255"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1309"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1374"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1437"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1469"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1485"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1573"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1638"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1689"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1714"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1732"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1828"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1910"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1956"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2053"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2135"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2173"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2193"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2214"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2234"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2259"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2285"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2310"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2331"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2352"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2372"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2397"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2423"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2458"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2474"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2493"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2510"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2548"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2610"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2631"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2652"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2668"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2702"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2720"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2762"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2805"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2963"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3028"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3091"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3124"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3140"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3260"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3323"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3370"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3395"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3413"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3509"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3591"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3637"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3734"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3816"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3855"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3873"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3914"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3944"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3960"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3994"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4012"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4054"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4097"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4137"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4155"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4178"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4195"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4224"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4245"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4268"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4312"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4348"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4364"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4397"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4412"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4474"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4490"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4525"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4540"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4687"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4705"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4806"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4964"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4986"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5009"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5069"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5099"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5116"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5148"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5178"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5209"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5226"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5258"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5350"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5373"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5433"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5464"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5500"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5569"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5593"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5720"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5736"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5794"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5864"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6120"/>
         <location filename="../src/engine/generate_pre.cpp" line="6391"/>
         <location filename="../src/engine/generate_pre.cpp" line="6454"/>
         <location filename="../src/engine/generate_pre.cpp" line="6522"/>
@@ -41594,188 +41590,184 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
         <location filename="../src/engine/generate_pre.cpp" line="7128"/>
         <location filename="../src/engine/generate_pre.cpp" line="7223"/>
         <location filename="../src/engine/generate_pre.cpp" line="7259"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7305"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7338"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7355"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7389"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7435"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7469"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7489"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7523"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7563"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7621"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7639"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7660"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7721"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7779"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7804"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7860"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7916"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7940"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7996"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8035"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8086"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8110"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8166"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8205"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8252"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8412"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8447"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8485"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8520"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8794"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8810"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8834"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8856"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8875"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9120"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9142"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9163"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9200"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9235"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9268"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9292"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9331"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9355"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9394"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9418"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9457"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9479"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9518"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9540"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9579"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9601"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9640"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9664"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9703"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9727"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9766"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9790"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9829"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9851"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9890"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9912"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9951"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9973"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10107"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10214"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10658"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7295"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7329"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7383"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7421"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7479"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7537"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7555"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7576"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7637"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7695"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7720"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7776"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7832"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7856"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7912"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7951"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8002"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8026"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8082"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8121"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8168"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8363"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8401"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8436"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8710"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8726"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8750"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8772"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8791"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9036"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9058"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9079"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9116"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9151"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9184"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9208"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9247"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9271"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9310"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9334"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9373"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9395"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9434"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9456"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9495"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9517"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9556"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9580"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9619"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9643"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9682"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9706"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9745"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9767"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9806"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9828"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9867"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9889"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10019"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10126"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10570"/>
         <source>Skip rest</source>
         <translation>Salta gli altri avvisi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1264"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1318"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1383"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1446"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1478"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1494"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1582"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1647"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1698"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1723"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1741"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1836"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1917"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1963"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2059"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2140"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2178"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2198"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2219"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2239"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2264"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2290"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2315"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2336"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2357"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2377"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2402"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2428"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2463"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2479"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2498"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2515"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2553"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2589"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2615"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2636"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2657"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2673"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2707"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2725"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2767"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2810"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2902"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2968"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3033"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3096"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3129"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3145"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3265"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3328"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3375"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3400"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3418"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3513"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3594"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3640"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3736"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3817"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3856"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3874"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3898"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3915"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3945"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3961"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3995"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4013"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4055"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4098"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4138"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4156"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4179"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4196"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4225"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4246"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4269"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4313"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4349"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4365"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4398"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4413"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4475"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4491"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4526"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4541"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4688"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4706"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4807"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4965"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4987"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5010"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5070"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5100"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5118"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5150"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5180"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5211"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5229"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5261"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5291"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5331"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5353"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5376"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5436"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5467"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5503"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5572"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5596"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5723"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5739"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5797"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5867"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6123"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1255"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1309"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1374"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1437"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1469"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1485"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1573"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1638"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1689"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1714"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1732"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1828"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1910"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1956"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2053"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2135"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2173"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2193"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2214"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2234"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2259"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2285"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2310"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2331"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2352"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2372"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2397"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2423"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2458"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2474"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2493"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2510"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2548"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2610"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2631"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2652"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2668"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2702"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2720"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2762"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2805"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2963"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3028"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3091"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3124"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3140"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3260"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3323"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3370"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3395"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3413"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3509"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3591"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3637"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3734"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3816"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3855"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3873"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3914"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3944"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3960"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3994"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4012"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4054"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4097"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4137"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4155"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4178"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4195"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4224"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4245"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4268"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4312"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4348"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4364"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4397"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4412"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4474"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4490"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4525"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4540"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4687"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4705"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4806"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4964"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4986"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5009"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5069"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5099"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5116"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5148"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5178"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5209"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5226"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5258"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5350"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5373"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5433"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5464"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5500"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5569"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5593"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5720"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5736"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5794"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5864"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6120"/>
         <location filename="../src/engine/generate_pre.cpp" line="6391"/>
         <location filename="../src/engine/generate_pre.cpp" line="6454"/>
         <location filename="../src/engine/generate_pre.cpp" line="6522"/>
@@ -41787,347 +41779,250 @@ Se hai un sottogruppo con poche ore di lavoro alla settimana significa che hai i
         <location filename="../src/engine/generate_pre.cpp" line="7128"/>
         <location filename="../src/engine/generate_pre.cpp" line="7223"/>
         <location filename="../src/engine/generate_pre.cpp" line="7259"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7305"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7338"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7355"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7389"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7435"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7469"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7489"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7523"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7563"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7621"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7639"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7660"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7721"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7779"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7804"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7860"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7916"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7940"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7996"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8035"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8086"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8110"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8166"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8205"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8252"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8412"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8447"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8485"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8520"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8794"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8810"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8834"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8856"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8875"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9120"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9142"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9163"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9200"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9235"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9268"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9292"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9331"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9355"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9394"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9418"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9457"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9479"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9518"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9540"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9579"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9601"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9640"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9664"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9703"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9727"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9766"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9790"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9829"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9851"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9890"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9912"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9951"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9973"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10107"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10214"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10658"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7295"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7329"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7383"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7421"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7479"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7537"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7555"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7576"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7637"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7695"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7720"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7776"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7832"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7856"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7912"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7951"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8002"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8026"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8082"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8121"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8168"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8328"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8363"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8401"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8436"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8710"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8726"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8750"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8772"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8791"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9036"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9058"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9079"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9116"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9151"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9184"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9208"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9247"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9271"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9310"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9334"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9373"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9395"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9434"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9456"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9495"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9517"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9556"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9580"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9619"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9643"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9682"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9706"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9745"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9767"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9806"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9828"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9867"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9889"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10019"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10126"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10570"/>
         <source>See next</source>
         <translation>Vedi il prossimo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1713"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1731"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1704"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1722"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo = %2 ore consecutive per il sottogruppo %1 non può essere rispettato a causa dell&apos;attività con id %3 (che ha durata %4).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1826"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1907"/>
-        <source>Cannot optimize for subgroup %1, because there are too many constraints of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type activity tag max hours daily.
-
- Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
-
- Please modify your data accordingly and try again.</source>
-        <translation>Impossibile ottimizzare per il sottogruppo %1, perché vi sono troppo vincoli del tipo N massimo di ore al giorno di attività con chiave ad esso riferiti, che non possono essere sintetizzati in 2 vincoli di questo tipo. Due vincoli per N massimo di ore possono essere riassunti in uno singolo se il numero massimo di ore è più basso nel primo e il peso percentuale è più alto nel primo. E&apos; possibile usare qualsiasi numero di questi vincoli per sottogruppo, ma devono risultare equivalenti a non più di 2 vincoli del tipo N massimo di ore al giorno di attività con chiave.
-
-  Esempio: è possibile usare 3 vincoli: 6 ore al 95%, 7 ore al 100% e 8 ore al 100% che possono essere ridotti a 2 vincoli: 6 ore al 95% e 7 ore al 100%
-
-Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2612"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2607"/>
         <source>For subgroup %1 you have too little activities to respect the constraint(s) of type min hours daily (the constraint(s) do not allow empty days). Please modify your data accordingly and try again.</source>
         <translation>Per il sottogruppo %1 si hanno troppo poche attività per poter rispettare i vincoli del tipo Numero minimo di ore al giorno (i vincoli non permettono di avere giorni vuoti). Correggi i dati e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2631"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2626"/>
         <source>For subgroup %1 cannot respect the constraint(s) of type min hours daily (the constraint(s) do not allow empty days) on day %2, because of students set not available and/or break. Please modify your data accordingly and try again</source>
         <translation>Per il sottogruppo %1 è impossibile rispettare i vincoli del tipo Numero minimo di ore al giorno (i vincoli non permettono giorni vuoti) nel giorno %2, a causa di un insieme di studenti non disponibile e/o interruzioni. Correggi i dati e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3020"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3083"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3015"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3078"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perché c&apos;è un vincolo del tipo numero massimo %2 ore al giorno con il 100% di peso che non può essere rispettato a causa del numero di giorni per settimana, numero di ore per giorno, numero massimo di giorni a settimana per insegnante, insegnante non disponibili e/o interruzioni. Il numero totale di ore per questo insegnante è %3 che devono trovare posto in un numero di ore disponibili, considerato il numero massimo di ore al giorno e altri vincoli, pari a %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3390"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3408"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3385"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3403"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 hours continuously which cannot be respected because of activity with id %3 (which has duration %4).</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo = %2 ore consecutive per l&apos;insegnante %1 non può essere rispettato a causa dell&apos;attività con id %3 (che ha durata %4).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3503"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3584"/>
-        <source>Cannot optimize for teacher %1, because there are too many constraints of type activity tag max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type activity tag max hours daily.
-
- Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
-
- Please modify your data accordingly and try again.</source>
-        <translation>Impossibile ottimizzare per l&apos;insegnante %1, perché vi sono troppo vincoli del tipo N. massimo di ore al giorno di attività con chiave a lui riferiti, che non possono essere sintetizzati in 2 vincoli di questo tipo. Due vincoli per N. massimo di ore possono essere riassunti in uno singolo se il numero massimo di ore è più basso nel primo e il peso percentuale è più alto nel primo. E&apos; possibile usare qualsiasi numero di questi vincoli per insegnante, ma devono risultare equivalenti a non più di 2 vincoli del tipo N. massimo di ore al giorno di attività con chiave.
-
- Esempio: è possibile usare 3 vincoli: 6 ore al 95%, 7 ore al 100% e 8 ore al 100% che possono essere ridotti a 2 vincoli: 6 ore al 95% e 7 ore al 100%
-
- Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3852"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3851"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo di numero minimo di ore al giorno per l&apos;insegnante %1 con peso percentuale sotto 100%. A partire dalla versione 5.4.0 di FET è possibile usare solo il peso 100% per questo vincolo. inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3869"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3868"/>
         <source>Cannot optimize, because you have constraint teacher min hours daily for teacher %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di ore al giorno per l&apos;insegnante %1 con %2 ore minime al giorno ma il numero di ore lavorative al giorno è solo %3. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3895"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3894"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di ore al giorno per insegnanti con peso percentuale inferiore a 100%. A partire dalla versione 5.4.0 di FET è possibile usare solo il 100% per questi vincoli. Inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3911"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3910"/>
         <source>Cannot optimize, because you have constraint teachers min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minomo di ore al giorno per insegnanti con %1 minimo di ore al giorno ma il numero di ore lavorative giornaliere è solo %2. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4135"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4134"/>
         <source>Cannot optimize, because you have constraint teacher min days per week for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero minimo di giorni a settimana per l&apos;insegnante %1 ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4151"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4150"/>
         <source>Cannot optimize, because you have constraint teacher min days per week for teacher %1 with %2 min days per week, and the number of working days per week is only %3. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè hai il vincolo Numero minimo %2 giorni a settimana per l&apos;insegnante %1 e il numero di giorni lavorativi a settimana è solo%3.Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4177"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4176"/>
         <source>Cannot optimize, because you have constraint teachers min days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero minimo di giorni a settimana per insegnanti ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4192"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4191"/>
         <source>Cannot optimize, because you have constraint teachers min days per week with %1 min days per week, and the number of working days per week is only %2. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minomo di giorni a settimana per insegnanti con %1 minimo di giorni a settimana ma il numero di giorni lavorativi settimanali è solo %2. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4219"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4218"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and he has only %3 activities - impossible. Please correct and try again.</source>
         <translation>Impossibile ottimizzare perchè per l&apos;insegnante %1 si ha il vincolo Numero minimo %2 giorni a settimana mentre ha solo %3 attività: impossibile. Correggi e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4239"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4238"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and min hours daily %3 and he has only %4 working hours - impossible. Please correct and try again.</source>
         <translation>Impossibile ottimizzare perchè per l&apos;insegnante %1 si ha il vincolo Numero minimo %2 giorni a settimana e minimo %3 ore al giorno mentre ha solo %4 ore di attività: impossibile. Correggi e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4263"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4262"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 &gt; max days per week %3 - impossible (min days must be &lt;= max days). Please correct and try again.</source>
         <translation>Impossibile ottimizzare perchè per l&apos;insegnante %1 si ha il vincolo Numero minimo %2 giorni a settimana &gt; Numero massimo di giorni a settimana %3: impossibile (numero minimo di giorni deve essere &lt;= numero massimo di giotni; Correggi e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4298"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4297"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and only %3 available days considering breaks and not available and min hours daily for this teacher. Please correct and try again.</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perchè hai il vincolo Numero minimo %2 giorni a settimana e solo %3 giorni a settimana considerate interruzioni, ore non disponibili e Numero minimo di ore al giorno per questo insegnante. Correggi e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4305"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4304"/>
         <source>Cannot optimize because for teacher %1 you have min days per week %2 and only %3 available days considering breaks and not available for this teacher. Please correct and try again.</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perchè hai il vincolo Numero minimo %2 giorni a settimana e solo %3 giorni a settimana considerate interruzioni, ore non disponibili e Numero minimo di ore al giorno per questo insegnante. Correggi e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4679"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4678"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. FET will allow you to continue, because the weight of this constraint is below 100.0%, but anyway most probably you have made a mistake in this constraint, so it is recommended to modify it.</source>
         <translation>E&apos; impossibile rispettare il vincolo perchè le attività con id %1 e %2 contrastano una con l&apos;altra, avendo in comune insiemi di studenti o insegnanti o non potendo cadere contemporaneamente. FET continuerà l&apos;elaborazione perchè il peso di questo vincolo è inferiore a 100.0%, ma con ogni probabilità hai commesso un errore in questo vincolo e quindi ti conviene verificarlo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4699"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4698"/>
         <source>The constraint is impossible to respect, because there are the activities with id-s %1 and %2 which conflict one with another, because they have common students sets or teachers or must be not overlapping. The weight of this constraint is 100.0%, so your timetable is impossible. Please correct this constraint.</source>
         <translation>E&apos; impossibile rispettare il vincolo perchè le attività con id %1 e %2 contrastano una con l&apos;altra, avendo in comune insiemi di studenti o insegnanti o non potendo cadere contemporaneamente. Il peso di questo vincolo è 100,0% e quindi l&apos;orario è impossibile. Correggi questo vincolo e rilancia la ricerca.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4800"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4799"/>
         <source>You have a set of impossible constraints activities same starting time, considering all the indirect links between activities same starting time constraints</source>
         <translation>Hai un insieme di vincoli impossibili, per attività con inizio alla stessa ora, tenuto conto di tutti i collegamenti indiretti tra i vincoli per attività con inizio alla stessa ora</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4803"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4802"/>
         <source>The activities with ids %1 and %2 must be simultaneous (request determined indirectly), but they have common teachers and/or students sets or must be not overlapping</source>
         <translation>Le attività con id %1 e %2 dovrebbero svolgersi simultaneamente (necessità determinata indirettamente), ma esse hanno insegnanti e/o studenti in comune o non possono cadere contemporaneamente</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5003"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5002"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perchè il numero di ore per l&apos;insegnante è %2  e si hanno solo %3 giorni disponibili per il vicnolo numero massimo di giorni per settimana x %4 ore al giorno per insegnante. Sembra che ci sia un errore nei dati</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5059"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5058"/>
         <source>Cannot optimize for teacher %1, because of too constrained teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 a causa di troppi vincoli di numero massimo di giorni a settimana per insegnante, insegnanti non disponibili e/o interruzioni. Il numero totale di ore per questo insegnante è %2 e il numero di ore disponibile è %3, tenuto conto del numero massimo di giorni a settimana e degli altri vincoli.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5098"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5097"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo di ore buche per insegnanti ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5115"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5113"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per week with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo di ore buche per l&apos;insegnante %1 ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5209"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5207"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo di ore buche giornaliere per insegnanti ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5226"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5223"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per day with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo di ore buche giornaliere per l&apos;insegnante %1 ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6566"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8300"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8216"/>
         <source>Explanation:</source>
         <translation>Chiarimento:</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6568"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8302"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8218"/>
         <source>Each time you create a new file, it contains an automatically added constraint of this type.</source>
         <translation>Ogni volta che crei un nuovo file, esso conterrà un vincolo di questo tipo aggiunto automaticamente.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7334"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7385"/>
-        <source>Cannot optimize for teacher %1, because it has more than three constraints interval max days per week. Please modify your data correspondingly (leave maximum three constraints of type constraint teacher(s) interval max days per week for each teacher) and try again</source>
-        <translation>Impossibile ottimizzare per l&apos;insegnante %1 perchè ci sono più di tre vincoli di Numero massimo di giorni a settimana con lezione in intervallo. Modifica i dati indicati (lascia al massimo tre vincoli del tipo numero massimo di ore in intervallo a settimana per ciascun insegnante) e riprova</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7465"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7519"/>
-        <source>Cannot optimize for subgroup %1, because it has more than three constraints interval max days per week. Please modify your data correspondingly (leave maximum three constraints of type constraint students (set) interval max days per week for each subgroup) and try again</source>
-        <translation>Impossibile ottimizzare per il sottogruppo %1 perchè ci sono più di tre vincoli di Numero massimo di giorni a settimana con lezioni in intervallo. Modifica i dati indicati (lascia al massimo tre vincoli del tipo numero massimo di ore in intervallo a settimana per ciascun sottogruppo) e riprova</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1254"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1308"/>
-        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
-
- Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
-
- Please modify your data accordingly and try again.</source>
-        <translation>Impossibile ottimizzare per il sottogruppo %1, perché vi sono troppo vincoli del tipo N massimo di ore al giorno ad esso riferiti, che non possono essere sintetizzati in 2 vincoli di questo tipo. Due vincoli per N massimo di ore possono essere riassunti in uno singolo se il numero massimo di ore è più basso nel primo e il peso percentuale è più alto nel primo. E&apos; possibile usare qualsiasi numero di questi vincoli per sottogruppo, ma devono risultare equivalenti a non più di 2 vincoli del tipo N massimo di ore al giorno.
-
-  Esempio: è possibile usare 3 vincoli: 6 ore al 95%, 7 ore al 100% e 8 ore al 100% che possono essere ridotti a 2 vincoli: 6 ore al 95% e 7 ore al 100%
-
-Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1380"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1443"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1579"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1720"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1738"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3030"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3093"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3262"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3397"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3415"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5067"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5433"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1371"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1434"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1570"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1711"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1729"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3088"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3257"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3392"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3410"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5066"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5430"/>
         <source>Please modify your data accordingly and try again</source>
         <translation>Modifica i tuoi dati secondo le istruzioni e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1637"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1688"/>
-        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours continuously.
-
- Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
-
- Please modify your data accordingly and try again.</source>
-        <translation>Impossibile ottimizzare per il sottogruppo %1, perché vi sono troppo vincoli del tipo N massimo di ore consecutive ad esso riferiti, che non possono essere sintetizzati in 2 vincoli di questo tipo. Due vincoli per N massimo di ore possono essere riassunti in uno singolo se il numero massimo di ore è più basso nel primo e il peso percentuale è più alto nel primo. E&apos; possibile usare qualsiasi numero di questi vincoli per sottogruppo, ma devono risultare equivalenti a non più di 2 vincoli del tipo N massimo di ore consecutive.
-
-  Esempio: è possibile usare 3 vincoli: 6 ore al 95%, 7 ore al 100% e 8 ore al 100% che possono essere ridotti a 2 vincoli: 6 ore al 95% e 7 ore al 100%
-
-Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2049"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2130"/>
-        <source>Cannot optimize for subgroup %1, because there are too many constraints of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type activity tag max hours continuously.
-
- Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
-
- Please modify your data accordingly and try again.</source>
-        <translation>Impossibile ottimizzare per il sottogruppo %1, perché vi sono troppo vincoli del tipo N massimo di ore consecutive di attività con chiave ad esso riferiti, che non possono essere sintetizzati in 2 vincoli di questo tipo. Due vincoli per N massimo di ore possono essere riassunti in uno singolo se il numero massimo di ore è più basso nel primo e il peso percentuale è più alto nel primo. E&apos; possibile usare qualsiasi numero di questi vincoli per sottogruppo, ma devono risultare equivalenti a non più di 2 vincoli del tipo N massimo di ore consecutive di attività con chiave.
-
-  Esempio: è possibile usare 3 vincoli: 6 ore al 95%, 7 ore al 100% e 8 ore al 100% che possono essere ridotti a 2 vincoli: 6 ore al 95% e 7 ore al 100%
-
-Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2460"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2455"/>
         <source>Cannot optimize for students, because the constraint of type min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again</source>
         <translation>Impossibile ottimizzare per gli studenti, perchè il vincolo del tipo numero minimo di ore al giorno relativo agli studenti non ha peso del 100%. Modifica i tuoi dati di coseguenza e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2494"/>
-        <source>Cannot optimize for students set %1, because the constraint of type min hours daily relating to him has no 100% weight. Please modify your data accordingly and try again</source>
-        <translation>Impossibile ottimizzare per l&apos;insieme di studenti %1, perchè il vincolo del tipo Numero minimo di ore al giorno relativo ad esso non ha peso 100%. Modifica i dati di coseguenza e riprova</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2547"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2583"/>
-        <source>Cannot optimize for subgroup %1, because there are two constraints of type min hours daily relating to him, and the weight percentage is higher on the constraint with less minimum hours. You are allowed only to have for each subgroup the most important constraint with maximum weight percentage and largest minimum hours daily allowed. Please modify your data accordingly and try again</source>
-        <translation>Impossibile ottimizzare per il sottogruppo %1 perché ci sono due vincoli del tipo Numero minimo di ore al giorno a esso riferiti, ed il peso percentuale è più alto nel vincolo con numero minimo più basso. E&apos; possibile avere per ciascun sottogruppo il vincolo più importante con il maggior peso percentuale e numero minimo più alto di ore al giorno consentito.Modifica i dati e riprova</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2892"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2958"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2887"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2953"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours daily relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours daily.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -42140,8 +42035,8 @@ Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
 Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3318"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3365"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3313"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3360"/>
         <source>Cannot optimize for teacher %1, because there are too many constraints of type max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type max hours continuously.
 
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
@@ -42154,173 +42049,159 @@ Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
 Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1959"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1952"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100% which cannot be satisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5). Please correct and try again.</source>
         <comment>%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint</comment>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perchè c&apos;è un vincolo N massimo %3 ore al giorno di attività con chiave %2, con peso percentuale del 100% che non può essere soddisfatto, considerato il numero di ore disponibili (%4) e la durata totale di attività con quella chiave (%5). Modifica i dati e prova di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1099"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1122"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1090"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1113"/>
         <source>It is recommended to use such constraints with caution.</source>
         <translation>Si consiglia di usare quel genere di vincoli con cautela.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1097"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1088"/>
         <source>These constraints are good, but they are not perfectly optimized for speed. You may obtain a long generation time or even impossible timetables.</source>
         <translation>Questi vincoli sono validi, ma non perfettamente ottimizzati per la velocità. Potresti ottenere tempi di esecuzione particolarmente lunghi o addirittura orari impossibili.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="616"/>
+        <location filename="../src/engine/generate_pre.cpp" line="596"/>
         <source>Optimization tip:</source>
         <translation>Suggerimenti di ottimizzazione:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="598"/>
         <source>There are %1 subgroups (from the total of %2 subgroups) which have the same activities as other subgroups. They are listed below. If the constraints relating to these subgroups are also the same, you can make the generation (directly proportional) faster by completely removing the subgroups which are equivalent to other subgroups (leaving only one representant for each equivalence set). (The generation algorithm will not completely remove the equivalent subgroups automatically.)</source>
         <translation>Ci sono %1 sottogruppi (dal totale di %2 sottogruppi) che hanno le stesse attività di altri sottogruppi. Essi sono elencati di seguito. Se i vincoli relativi a tali sottogruppi sono anche gli stessi, è possibile effettuare la generazione (direttamente proporzionale) più veloce , eliminando completamente i sottogruppi equivalenti ad altri sottogruppi (lasciando solo un representant per ogni set equivalente) . ( L&apos;algoritmo di generazione non rimuoverà completamente i sottogruppi equivalenti automaticamente)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="626"/>
+        <location filename="../src/engine/generate_pre.cpp" line="606"/>
         <source>You can deactivate this message from the &apos;Settings&apos; menu.</source>
         <translation>Puoi disabilitare questo messaggio dal menu &apos;Opzioni&apos;.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1081"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1101"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1124"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1147"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1182"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1072"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1092"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1115"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1138"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1173"/>
         <source>Are you sure you want to continue?</source>
         <translation>Sei sicuro di voler continuare?</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1173"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1164"/>
         <source>You have a number of %1 activities (listed below) which are not locked in time, but are locked in space into a virtual room (having specified also a nonempty list of selected real rooms). This might lead to impossible, cycling timetables (FET might not be able to find a timetable, even if one exists). It is recommended either to lock these activities also in time, or to remove the specified real rooms and leave only the preferred virtual room. This problematic situation was discovered when generating on a crafted file derived from a German example (the exact file name is %2). If after an initial successful generation you only lock the activities in space (but not also in time), FET seems to cycle indefinitely when trying to generate again on the newly obtained file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1077"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1068"/>
         <source>Your file contains constraints of type teacher(s)/students (set) max hours daily with a weight less than 100%. This is not recommended, because in this case the algorithm is not implemented perfectly (even if it might work well in practice). You are advised to use constraints of this type only with weight 100%.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1476"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1467"/>
         <source>Cannot optimize, because you have constraint students set max span per day for students %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1492"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1483"/>
         <source>Cannot optimize, because you have constraint students max span per day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2255"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2250"/>
         <source>Cannot optimize, because you have activity id = %1 with duration = %2 and a constraint teacher(s) activity tag max %3 hours daily with weight = 100% for the teacher %4 and activity tag %5. The activity&apos;s duration is higher than the teacher&apos;s max hours daily with this activity tag (which the activity contains). Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2668"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2663"/>
         <source>Cannot optimize, because you have constraint students min %1 hours daily for subgroup %2 and the constraint allows empty days. The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di %1 ore al giorno per il sottogruppo di studenti %2 e il vincolo permette giorni vuoti. Il numero minimo di ore al giorno dovrebbe essere almeno 2 per avere un vincolo non banale. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3127"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3122"/>
         <source>Cannot optimize, because you have constraint teacher max span per day for teacher %1 with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3143"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3138"/>
         <source>Cannot optimize, because you have constraint teachers max span per day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3636"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3633"/>
         <source>Cannot optimize for teacher %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100% which cannot be satisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5). Please correct and try again.</source>
         <comment>%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint</comment>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perchè c&apos;è un vincolo N massimo %3 ore al giorno di attività con chiave %2, con peso percentuale del 100% che non può essere soddisfatto, considerato il numero di ore disponibili (%4) e la durata totale di attività con quella chiave (%5). Modifica i dati e prova di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3726"/>
-        <location filename="../src/engine/generate_pre.cpp" line="3807"/>
-        <source>Cannot optimize for teacher %1, because there are too many constraints of type activity tag max hours continuously relating to him, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher, but their resultant must be maximum 2 constraints of type activity tag max hours continuously.
-
- Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
-
- Please modify your data accordingly and try again.</source>
-        <translation>Impossibile ottimizzare per l&apos;insegnante %1, perché vi sono troppo vincoli del tipo numero massimo di ore consecutive a lui riferiti, che non possono essere sintetizzati in 2 vincoli di questo tipo. Due vincoli per numero massimo di ore possono essere riassunti in uno singolo se il numero massimo di ore è più basso nel primo e il peso percentuale è più alto nel primo. E&apos; possibile usare qualsiasi numero di questi vincoli per insegnante, ma devono risultare equivalenti a non più di 2 vincoli del tipo numero massimo di ore consecutive.
-
-  Esempio: è possibile usare 3 vincoli: 6 ore al 95%, 7 ore al 100% e 8 ore al 100% che possono essere ridotti a 2 vincoli: 6 ore al 95% e 7 ore al 100%
-
-  Modifica i tuoi dati secondo le istruzioni e riprova.</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4982"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4981"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 free slots from constraints teacher not available and/or break.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5144"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5174"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5142"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5172"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per week relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perché ci sono due vincoli del tipo Numero massimo di ore buche settimanali riferiti a lui ed il peso percentuale è più alto per il vincolo con più ore buche permesse. E&apos; consentito avere per ciascun insegnante il vincolo più importante con il maggior peso percentuale e il minore numero di ore buche consentito. Modifica i dati secondo le indicazioni e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5255"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5285"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5252"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5282"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per day relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perché ci sono due vincoli del tipo Numero massimo di ore buche al giorno riferiti a lui ed il peso percentuale è più alto per il vincolo con più ore buche permesse. E&apos; consentito avere per ciascun insegnante il vincolo più importante con il maggior peso percentuale e il minore numero di ore buche consentito. Modifica i dati secondo le indicazioni e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5348"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5345"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 free slots from constraints students set not available and/or break.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5463"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5460"/>
         <source>Cannot optimize, because you have constraint teacher max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo di numero massimo di giorni a settimana per insegnante %1 con peso percentuale sotto 100%. A partire dalla versione 5.2.17 di FET è possibile usare solo il peso 100% per questo vincolo. inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5501"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5498"/>
         <source>Cannot optimize, because you have constraint teachers max days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo di giorni a settimana per insegnanti ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5718"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5862"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5715"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5859"/>
         <source>Cannot optimize for subgroup %1, because you have a max gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint max gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perchè hai un vincolo di Numero massimo di ore buche con peso percentuale sotto il 100%. Attualmente FET può ottimizzare solo se i vincoli di Numero massimo di ore buche o non ci sono o hanno peso 100%. Modifica i dati e prova di nuovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5734"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5731"/>
         <source>Cannot optimize for subgroup %1, because you have an early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perchè hai un vincolo di Numero massimo di inizi alla seconda ora con peso percentuale sotto il 100%. Attualmente FET può ottimizzare solo se i vincoli di Numero massimo di inizi alla seconda ora o non ci sono o hanno peso 100%. Modifica i dati e prova di nuovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5790"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5787"/>
         <source>Cannot optimize for subgroup %1, because early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of days per week is %3 which is less. It must be that the number of days per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perchè hai un vincolo di Numero massimo di inizi alla seconda ora pari a %2 ed il numero di giorni a settimana è %3 ovvero di meno. Bisogna che il Numero massimo di inizi alla seconda ora sia inferiore o (tutt&apos;al più) uguale al numero di giorni a settimana.
 Modifica i dati e prova di nuovo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5981"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5978"/>
         <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Impossibile ottimizzare perchè hai vincoli del tipo insegnante non disponibile con peso percentuale sotto il 100% per l&apos;insegnante %1. Attualmente FET può ottimizzare solo se i vincoli per insegnante non disponibile hanno peso 100% (o niente vincolo). Modifica i dati e prova di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6027"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6024"/>
         <source>Cannot optimize, because you have constraints of type students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with constraints students set not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Impossibile ottimizzare perchè hai vincoli del tipo studenti non disponibili con peso percentuale sotto il 100% per l&apos;insieme di studenti %1. Attualmente FET può ottimizzare solo se i vincoli per studenti non disponibili hanno peso 100% (o niente vincolo). Modifica i dati e prova di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6070"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6067"/>
         <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Impossibile ottimizzare perchè hai vincoli del tipo interruzione con peso percentuale sotto il 100%. Attualmente FET può ottimizzare solo se i vincoli di interruzione hanno peso 100% (o niente vincolo). Modifica i dati e prova di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6119"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6116"/>
         <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id=%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>Impossibile ottimizzare perchè hai vincoli del tipo di orario preferenziale di inizio per attività senza giorno nè ora selezionate (per l&apos;attività con id=%1). Modifica i dati (rimuovi o completa il vincolo) e prova di nuovo.</translation>
     </message>
@@ -42367,360 +42248,431 @@ Modifica i dati e prova di nuovo</translation>
         <translation>Impossibile ottimizzare perche hai il vincolo per attività di fine giornata impostato per l&apos;attività con id=%1 con peso percentuale sotto 100%. Il vincolo per attività di fine giornata può avere solo peso del 100%. Modifica i dati (o rimuovi il vincolo) e riprova.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7301"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7291"/>
         <source>Cannot optimize, because you have constraint teacher interval max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo di Numero massimo di giorni a settimana con lezione in intervallo per insegnante %1 con peso percentuale sotto 100%. A partire dalla versione 5.6.2 di FET è possibile usare solo il peso 100% per questo vincolo. inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7352"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7326"/>
         <source>Cannot optimize, because you have constraint teachers interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo di Numero massimo di giorni a settimana con lezioni in intervallo per insegnanti con peso percentuale sotto 100%. A partire dalla versione 5.6.2 di FET è possibile usare solo il peso 100% per questo vincolo. inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7431"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7379"/>
         <source>Cannot optimize, because you have constraint students set interval max days per week with weight (percentage) below 100 for students set %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo di Numero massimo di giorni a settimana con lezioni in intervallo per insieme di studenti %1 con peso percentuale sotto 100%. A partire dalla versione 5.6.2 di FET è possibile usare solo il peso 100% per questo vincolo. inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7484"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7416"/>
         <source>Cannot optimize, because you have constraint students interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo di Numero massimo di giorni a settimana con lezioni in intervallo per studenti con peso percentuale sotto 100%. A partire dalla versione 5.6.2 di FET è possibile usare solo il peso 100% per questo vincolo. inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7794"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7710"/>
         <source>Cannot optimize, because you have a constraint of type &apos;activities min simultaneous in selected time slots&apos; with the total duration of the selected activities being %1, but the required number of occupying slots is %2 (minimum simultaneous) x %3 (selected slots) = %4, which is greater - impossible (the constraint does not allow empty slots). The constraint is:
 %5
 Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8202"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8118"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities occupy max different rooms&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo di attività che occupano un numero massimo di aule ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8409"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8444"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8325"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8360"/>
         <source>Cannot generate timetable, because you have more than one constraint of type students set home room(s) for students set %1. Please leave only one of them</source>
         <translation>Impossibile generare un orario perchè esiste più di un vincolo di aula assegnata per insieme di studenti per gli studenti %1. Correggi e lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8482"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8517"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8398"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8433"/>
         <source>Cannot generate timetable, because you have more than one constraint of type teacher home room(s) for teacher %1. Please leave only one of them</source>
         <translation>Impossibile generare un orario perchè esiste più di un vincolo di aula assegnata ad un insegnante %1. Correggi e lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8791"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8707"/>
         <source>Cannot generate the timetable, because you have a constraint activity preferred room for the activity with id=%1 which specifies a list of real rooms, but the preferred room is not virtual. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8807"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8723"/>
         <source>Cannot generate the timetable, because you have a constraint activity preferred room for the activity with id=%1 which specifies a list of real rooms, but the room %2 from this list is virtual. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8872"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8788"/>
         <source>Cannot generate the timetable, because you have a constraint activity preferred room for the activity with id=%1 which specifies a nonempty list of real rooms and has weight &lt;100.0%. It is necessary that the weight is exactly 100.0% or the list of real rooms to be empty in this case. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9117"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9033"/>
         <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
         <translation>Impossibile generare un orario perchè per l&apos;attività con id=%1 non ci sono aule disponibili (a causa dei vincoli di aula assegnata a studenti ed insegnanti)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9139"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9055"/>
         <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from preferred room(s) constraints).</source>
         <translation>Impossibile generare l&apos;orario perchè l&apos;attività con id=%1 non ha disponibile alcuna aula preferenziale (per vincoli di aula preferenziale).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9160"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9076"/>
         <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
         <translation>Impossibile generare un orario perchè per l&apos;attività con id=%1 non ci sono aule preferenziali disponibili (a causa del numero di studenti consentitoe dei vincoli di aula/e preferenziale)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10980"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10892"/>
         <source>nIncompatible: %1</source>
         <translation>nIncompatibile: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10983"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10895"/>
         <source>nMinDaysConstraintsBroken: %1</source>
         <translation>VincoloInfrantoNumMinGiorni: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10994"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10906"/>
         <source>End - the order of activities (id-s)</source>
         <translation>Fine - ordine delle attività (id)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9197"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9113"/>
         <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from the allowed number of students)</source>
         <translation>Impossibile generare un orario perchè mancano aule disponibili per l&apos;attività con id=%1 (a causa del numero di studenti consentito)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="605"/>
+        <location filename="../src/engine/generate_pre.cpp" line="585"/>
         <source>Subgroup %1 has the same activities as subgroup %2.</source>
         <translation>Il sottogruppo %1 ha le stesse attività del sottogruppo %2.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="623"/>
+        <location filename="../src/engine/generate_pre.cpp" line="603"/>
         <source>If you did not add all the activities yet or if the number of equivalent subgroups compared to the total number of subgroups is small, probably you can safely ignore this message.</source>
         <translation>Se non hai ancora aggiunto tutte le attività o se il numero di sottogruppi equivalente comparato al numero totale di sottogruppi è piccolo, probabilmente puoi ignorare questo messaggio senza preoccuparti.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1095"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1086"/>
         <source>Your data contains constraints students max gaps per day and/or activity tag max/min hours daily.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1104"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1127"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1150"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1095"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1118"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1141"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1104"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1127"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1150"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1095"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1118"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1141"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1117"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1108"/>
         <source>Your data contains constraints students min hours daily which allow empty days.</source>
         <translation>I tuoi dati contengono vincoli di numero minimo di ore al giorno per studenti che permettono giorni vuoti.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1119"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1110"/>
         <source>These constraints are nonstandard. They are recommended only if the students can have free days and a solution with free days for students exists. Otherwise the solution might be impossible for FET to find.</source>
         <translation>Tali vincoli sono non-standard. Sono da utilizzare solo se gli studenti possono avere giorni liberi e una soluzione con giorni liberi per studenti esiste. Altrimenti un orario potrebbe risultare impossibile da trovare per FET.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1140"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1131"/>
         <source>Your data contains the option to group activities in the initial order.</source>
         <translation>I tuoi dati contengono l&apos;opzione di far uso dell&apos;aggregazione di attività in ordine iniziale.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1142"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1133"/>
         <source>This option is nonstandard. It is recommended only if you know what you are doing, otherwise the solution might be impossible for FET to find.</source>
         <translation>Questa opzione è non-standard. Se ne raccomanda l&apos;uso solo se si è ben consapevoli del suo significato, altrimenti trovare una soluzione per FET  può diventare impossibile.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1145"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1136"/>
         <source>Use with caution.</source>
         <translation>Usare con cautela.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1184"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1175"/>
         <source>Note: If an activity is fixed in a virtual room with a constraint activity preferred room with a 100% weight, it is considered locked in space only if the constraint also specifies a nonempty list of real rooms assigned for this activity (chosen from the list of sets of real rooms of the virtual room).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1083"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1188"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1074"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1179"/>
         <source>Note: You can deactivate this warning from the Settings menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1190"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1181"/>
         <source>The ids of the activities are: %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1086"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1194"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1077"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1185"/>
         <source>Continue</source>
         <translation type="unfinished">Continua</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1086"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1194"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1077"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1185"/>
         <source>Cancel</source>
         <translation type="unfinished">Annulla</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1370"/>
-        <location filename="../src/engine/generate_pre.cpp" line="1433"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1245"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1299"/>
+        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours daily relating to it, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours daily.
+
+ Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
+
+ Please modify your data accordingly and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1361"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1424"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 hours daily with 100% weight which cannot be respected because of number of days per week, number of hours per day, students (set) max days per week, students set not available and/or breaks. The number of total hours for this subgroup is %3 and the number of available slots is, considering max hours daily and all other constraints, %4.</source>
         <translation>Impossibile ottimizzare per la classe %1 perché c&apos;è un vincolo del tipo numero massimo %2 ore al giorno con il 100% di peso che non può essere rispettato a causa del numero di giorni per settimana, numero di ore per giorno, numero massimo di giorni a settimana per (insieme di) studenti, studenti non disponibili e/o interruzioni. Il numero totale di ore per questa classe è %3 che devono trovare posto in un numero di ore disponibili, considerato il numero massimo di ore al giorno e altri vincoli, pari a %4.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="1569"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1560"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint of type max %2 span per day with 100% weight which cannot be respected because of number of days per week, number of hours per day, students (set) max days per week, students set not available and/or breaks. The number of total hours for this subgroup is %3 and the number of available slots is, considering max span per day and all other constraints, %4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2171"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2191"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1679"/>
+        <source>Cannot optimize for subgroup %1, because there are too many constraints of type max hours continuously relating to it, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup, but their resultant must be maximum 2 constraints of type max hours continuously.
+
+ Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
+
+ Please modify your data accordingly and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="1817"/>
+        <location filename="../src/engine/generate_pre.cpp" line="1899"/>
+        <source>Cannot optimize for subgroup %1 and activity tag %2, because there are too many constraints of type activity tag max hours daily relating to them, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup and an activity tag, but their resultant must be maximum 2 constraints of type activity tag max hours daily.
+
+ Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
+
+ Please modify your data accordingly and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2042"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2124"/>
+        <source>Cannot optimize for subgroup %1 and activity tag %2, because there are too many constraints of type activity tag max hours continuously relating to them, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a subgroup and an activity tag, but their resultant must be maximum 2 constraints of type activity tag max hours continuously.
+
+ Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
+
+ Please modify your data accordingly and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2166"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2186"/>
         <source>Cannot optimize, because you have activity id = %1 with duration = %2 and a constraint teacher(s) max %3 hours daily with weight = 100% for the teacher %4. The activity&apos;s duration is higher than the teacher&apos;s max hours daily. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2212"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2232"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2207"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2227"/>
         <source>Cannot optimize, because you have activity id = %1 with duration = %2 and a constraint teacher(s) max %3 hours continuously with weight = 100% for the teacher %4. The activity&apos;s duration is higher than the teacher&apos;s max hours continuously. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2281"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2276"/>
         <source>Cannot optimize, because you have activity id = %1 with duration = %2 and a constraint teacher(s) activity tag max %3 hours continuously with weight = 100% for the teacher %4 and activity tag %5. The activity&apos;s duration is higher than the teacher&apos;s max hours continuously with this activity tag (which the activity contains). Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2308"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2329"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2303"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2324"/>
         <source>Cannot optimize, because you have activity id = %1 with duration = %2 and a constraint students (set) max %3 hours daily with weight = 100% for the subgroup %4. The activity&apos;s duration is higher than the subgroup&apos;s max hours daily. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2350"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2370"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2345"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2365"/>
         <source>Cannot optimize, because you have activity id = %1 with duration = %2 and a constraint students (set) max %3 hours continuously with weight = 100% for the subgroup %4. The activity&apos;s duration is higher than the subgroup&apos;s max hours continuously. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2393"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2388"/>
         <source>Cannot optimize, because you have activity id = %1 with duration = %2 and a constraint students (set) activity tag max %3 hours daily with weight = 100% for the subgroup %4 and activity tag %5. The activity&apos;s duration is higher than the subgroup&apos;s max hours daily with this activity tag (which the activity contains). Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2419"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2414"/>
         <source>Cannot optimize, because you have activity id = %1 with duration = %2 and a constraint students (set) activity tag max %3 hours continuously with weight = 100% for the subgroup %4 and activity tag %5. The activity&apos;s duration is higher than the subgroup&apos;s max hours continuously with this activity tag (which the activity contains). Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2475"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2470"/>
         <source>Cannot optimize, because you have constraint students min hours daily with %1 min hours daily, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di ore al giorno per studenti con %1 minimo di ore al giorno ma il numero di ore lavorative giornaliere è solo %2. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2510"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2489"/>
+        <source>Cannot optimize for students set %1, because the constraint of type min hours daily relating to it has no 100% weight. Please modify your data accordingly and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2505"/>
         <source>Cannot optimize, because you have constraint students set min hours daily for students set %1 with %2 min hours daily, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di ore al giorno per insieme di studenti %1 con %2 ore minime al giorno ma il numero di ore lavorative al giorno è solo %3. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2650"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2542"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2578"/>
+        <source>Cannot optimize for subgroup %1, because there are two constraints of type min hours daily relating to it, and the weight percentage is higher on the constraint with less minimum hours. You are allowed only to have for each subgroup the most important constraint with maximum weight percentage and largest minimum hours daily allowed. Please modify your data accordingly and try again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="2645"/>
         <source>Cannot optimize, because you have constraint students min %1 hours daily for subgroup %2 (the constraint allows empty days). This subgroup has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di %1 ore al giorno per il sottogruppo di studenti %2 (il vincolo consente giorni vuoti). Questo sottogruppo ha in totale solo %3 ore a settimana, perciò il vincolo è impossibile. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2704"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2699"/>
         <source>Cannot optimize for students, because the constraint of type activity tag min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2722"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2717"/>
         <source>Cannot optimize for students, because the constraint of type activity tag min hours daily relating to students set %1 has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="2762"/>
-        <location filename="../src/engine/generate_pre.cpp" line="2805"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2757"/>
+        <location filename="../src/engine/generate_pre.cpp" line="2800"/>
         <source>Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to subgroup %3 requires at least %4 hours of work per week, but the activities of this subgroup with this activity tag sum to only %5 hours per week (the constraint does not allow empty days). Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3252"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3247"/>
         <source>Cannot optimize for teacher %1, because there is a constraint of type max %2 span per day with 100% weight which cannot be respected because of number of days per week, number of hours per day, teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %3 and the number of available slots is, considering max span per day and all other constraints, %4.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3938"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3498"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3580"/>
+        <source>Cannot optimize for teacher %1 and activity tag %2, because there are too many constraints of type activity tag max hours daily relating to them, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher and an activity tag, but their resultant must be maximum 2 constraints of type activity tag max hours daily.
+
+ Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
+
+ Please modify your data accordingly and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="3723"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3805"/>
+        <source>Cannot optimize for teacher %1 and activity tag %2, because there are too many constraints of type activity tag max hours continuously relating to them, which cannot be compressed in 2 constraints of this type. Two constraints max hours can be compressed into a single one if the max hours are lower in the first one and the weight percentage is higher on the first one. It is possible to use any number of such constraints for a teacher and an activity tag, but their resultant must be maximum 2 constraints of type activity tag max hours continuously.
+
+ Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
+
+ Please modify your data accordingly and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="3937"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2 (the constraint allows empty days). This teacher has in total only %3 hours per week, so impossible constraint. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di %1 ore al giorno per l&apos;insegnante %2 (il vincolo consente giorni vuoti). Questo insegnante ha in totale solo %3 ore a settimana, perciò il vincolo è impossibile. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3956"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3955"/>
         <source>Cannot optimize, because you have constraint teacher min %1 hours daily for teacher %2 (the constraint allows empty days). The number of min hours daily should be at least 2, to make a non-trivial constraint. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo Numero minimo di %1 ore al giorno per l&apos;insegnante %2 (il vincolo permette giorni vuoti). Il numero minimo di ore al giorno dovrebbe essere almeno 2 per avere un vincolo non banale. Correggi e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="3992"/>
+        <location filename="../src/engine/generate_pre.cpp" line="3991"/>
         <source>Cannot optimize for teachers, because the constraint of type activity tag min hours daily relating to teachers has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4010"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4009"/>
         <source>Cannot optimize for teachers, because the constraint of type activity tag min hours daily relating to teacher %1 has no 100% weight. Please modify your data accordingly and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4050"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4093"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4049"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4092"/>
         <source>Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to teacher %3 requires at least %4 hours of work per week, but the activities of this teacher with this activity tag sum to only %5 hours per week (the constraint does not allow empty days). Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4346"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4345"/>
         <source>Cannot optimize, because you have constraint teacher min resting hours for teacher %1 with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4360"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4359"/>
         <source>Cannot optimize, because you have constraint teacher min resting hours for teacher %1 with %2 min resting hours, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4396"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4395"/>
         <source>Cannot optimize, because you have constraint teachers min resting hours with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4409"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4408"/>
         <source>Cannot optimize, because you have constraint teachers min resting hours with %1 min resting hours, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4472"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4471"/>
         <source>Cannot optimize, because you have constraint students set min resting hours for students set %1 with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4486"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4485"/>
         <source>Cannot optimize, because you have constraint students set min resting hours for students set %1 with %2 min resting hours, and the number of working hours per day is only %3. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4524"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4523"/>
         <source>Cannot optimize, because you have constraint students min resting hours with weight (percentage) below 100. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4537"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4536"/>
         <source>Cannot optimize, because you have constraint students min resting hours with %1 min resting hours, and the number of working hours per day is only %2. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4959"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4958"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 days x %4 hours in a week.</source>
         <translation>Impossibile ottimizzare per l&apos;insegnante %1 perchè il numero di ore dell&apos;insegnante è %2, ma si hanno solo %3 giorni x %4 ore in una settimana.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5325"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5322"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 days x %4 hours in a week.</source>
         <translation>Impossibile ottimizzare per il sottogruppo %1 perchè il numero di ore del sottogruppo è %2, ma si hanno solo %3 giorni x %4 ore in una settimana.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5369"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5366"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 allowed days from constraint students (set) max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation>Impossibile ottimizzare per la classe %1 perchè il numero di ore per la classe è %2  e si hanno solo %3 giorni disponibili per il vicnolo numero massimo di giorni per settimana x %4 ore al giorno per studenti. Sembra che ci sia un errore nei dati</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5425"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5422"/>
         <source>Cannot optimize for subgroup %1, because of too constrained students (set) max days per week, students set not available and/or breaks. The number of total hours for this subgroup is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation>Impossibile ottimizzare il sottogruppo %1 per un numero eccessivo di vincoli di numero massimo di giorni a settimana per classi, classi non disponibili e/o interruzioni. Il numero totale di ore disponibili di questa classe è %2  e si hanno solo %3 ore disponibili a causa dei vincoli di numero massimo di giorni a settimana e tutti gli altri vincoli.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5568"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5565"/>
         <source>Cannot optimize, because you have constraint students set max days per week with weight (percentage) below 100 for students set %1. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè si ha il vincolo di Numero massimo di giorni a settimana per studenti con peso percentuale sotto 100% per la classe %1.E&apos; consentito usare solo il 100% per tali vincoli. Inserisci il peso 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5594"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5591"/>
         <source>Cannot optimize, because you have constraint students max days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo di giorni a settimana per studenti ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
@@ -42731,7 +42683,7 @@ Please correct and try again.</source>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6562"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8296"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8212"/>
         <source>Please add a constraint of this type with weight 100%.</source>
         <translation>Aggiungi un vincolo di questo tipo con peso del 100%.</translation>
     </message>
@@ -42742,19 +42694,19 @@ Please correct and try again.</source>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6570"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8304"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8220"/>
         <source>For complete flexibility, you are allowed to remove it (even if this is a wrong idea).</source>
         <translation>Per la massima flessibilità è consentito rimuoverlo (anche se è una mossa sbagliata).</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6572"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8306"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8222"/>
         <source>Maybe you removed it by mistake from your file.</source>
         <translation>Forse lo hai rimosso per errore dal tuo file.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6574"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8308"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8224"/>
         <source>By adding it again, everything should be all right.</source>
         <translation>Aggiungendolo di nuovo, tutto tornerà a posto.</translation>
     </message>
@@ -42800,294 +42752,294 @@ Please correct and try again.</source>
         <translation>Il vincolo %1 non può essere rispettato perchè il sottogruppo %2 ha al più %3 giorni disponibili. Hai specificato per questo vincolo consecutive se stesso giorno. Attualmente FET non può collocare più di due attività nello stesso giorno se è stato scelto consecutive se stesso giorno. Hai 2* giorni disponibili [number di attività in questo vincolo]. Questa è una situazione molto improbabile, ed è per questo che l&apos;autore non l&apos;ha molto curata. Se si incontra il caso occorre modificare il file dei dati (non selezionare consecutive se stesso giorno o aggiungere altre attività di maggiore durata).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7560"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7476"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities occupy max time slots from selection&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo Numero massimo di ore occupate da una selezione di attività ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7618"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7534"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities occupy min time slots from selection&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7632"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7548"/>
         <source>Cannot optimize, because you have a constraint of type &apos;activities occupy min time slots from selection&apos; with the number of selected slots being %1, but the number of requested minimum slots is %2, which is greater - impossible. The constraint is:
 %3
 Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7653"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7569"/>
         <source>Cannot optimize, because you have a constraint of type &apos;activities occupy min time slots from selection&apos; with the total duration of the selected activities being %1, but the number of requested minimum slots is %2, which is greater - impossible. The constraint is:
 %3
 Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7718"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7634"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities max simultaneous in selected time slots&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo &apos;numero massimo di attività simultanee in una selezione di ore&apos; ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7776"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7692"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities min simultaneous in selected time slots&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7857"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7773"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students set min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7912"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7828"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;students set min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7937"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7853"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7992"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7908"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;students min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8032"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7948"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teacher min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8082"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7998"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;teacher min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8107"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8023"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teachers min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8162"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8078"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;teachers min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8249"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8165"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities same room if consecutive&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation>Impossibile ottimizzare perchè il vincolo di attività che occupano la stessa aula se consecutive ha peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8294"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8210"/>
         <source>Cannot generate, because you do not have a constraint of type basic compulsory space or its weight is lower than 100.0%.</source>
         <translation>Impossibile generare, perchè manca un vincolo di spazio di base obbligatorio, oppure esiste, ma ha un peso inferiore al 100%.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8298"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8214"/>
         <source>You can add this constraint from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation>Puoi aggiungere un vincolo di questo tipo dal menu Dati / Vincoli di spazio / Vari / Vincoli di spazio obbligatori.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8830"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8746"/>
         <source>Cannot generate the timetable, because you have a preferred room constraint for the activity with id=%1 which specifies a real rooms list which does not have the same number of elements as the number of sets of real rooms for the preferred virtual room (%2). Please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8852"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8768"/>
         <source>Cannot generate the timetable, because you have more preferred room constraints for the activity with id=%1 which specify one or more lists of real rooms whose resultant real rooms list does not have the same number of elements as the number of sets of real rooms for the preferred virtual room (%2). Please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9231"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9147"/>
         <source>Cannot generate the timetable, because for activity with id=%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
         <translation>Impossibile generare un orario perchè per l&apos;attività con id=%1 non ci sono aule preferenziali disponibili (a causa della capacità delle aule e di vincoli di aula/e preferenziale con peso del 100%)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9266"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9182"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambio di edificio per insieme di studenti con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9290"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9206"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per studenti al giorno con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9329"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9245"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambio di edificio per insieme di studenti a settimana con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9353"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9269"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per studenti a settimana con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9392"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9308"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero minimo di ore buche per cambio di edificio per insieme di studenti con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9416"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9332"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero minimo di ore buche per cambio di edificio per insieme di studenti con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9455"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9371"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per insegnante al giorno con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9477"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9393"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per insegnanti al giorno con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9516"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9432"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per insegnante a settimana con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9538"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9454"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero massimo di cambi di edificio per insegnanti a settimana con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9577"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9493"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero minimo di ore buche per cambio di edificio per insegnante con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9599"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9515"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Impossibile ottimizzare perchè c&apos;è un vincolo di spazio di numero minimo di ore buche per cambio di edificio per insegnanti con peso inferiore al 100%. Imposta il peso al 100% e riprova</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9638"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9554"/>
         <source>Cannot optimize, because there is a space constraint students set max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9662"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9578"/>
         <source>Cannot optimize, because there is a space constraint students max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9701"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9617"/>
         <source>Cannot optimize, because there is a space constraint students set max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9725"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9641"/>
         <source>Cannot optimize, because there is a space constraint students max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9764"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9680"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9788"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9704"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9827"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9743"/>
         <source>Cannot optimize, because there is a space constraint teacher max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9849"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9765"/>
         <source>Cannot optimize, because there is a space constraint teachers max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9888"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9804"/>
         <source>Cannot optimize, because there is a space constraint teacher max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9910"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9826"/>
         <source>Cannot optimize, because there is a space constraint teachers max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9949"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9865"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9971"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9887"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10105"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10017"/>
         <source>Activity with id=%1 has no allowed slot - please correct that</source>
         <translation>L&apos;attività con id= %1 non ha ore possibili - correggi la situazione</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10211"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10123"/>
         <source>Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that</source>
         <translation>L&apos;aula %1 non ha ore sufficienti per i vincoli di aule assegnate (necessarie %2, disponibili %3) - verifica e correggi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10654"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10566"/>
         <source>Group activities in initial order item number %1 is ignored, because it contains less than two active activities</source>
         <translation>L&apos;elemento numero %1 di attività aggregate in ordine iniziale sarà ignorato perché contiene meno di due attività attive</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10932"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10844"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation>Questo è l&apos;ordine iniziale di valutazione delle attività computate da FET. Se la generazione si blocca dopo un certo numero di attività, controlla l&apos;attività corrispondente a questo numero + 1. Dovresti riscontrare un errore tra i dati in ingresso.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10936"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10848"/>
         <source>The initial order of activities (id-s):</source>
         <translation>Ordine iniziale delle attività (id):</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10941"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10853"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation>No: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10945"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10857"/>
         <source>Id: %1</source>
         <comment>Id of activity</comment>
         <translation>Id:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10962"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10964"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10874"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10876"/>
         <source>Duration: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10969"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10881"/>
         <source>Teachers: %1</source>
         <translation>Insegnanti: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10971"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10883"/>
         <source>Subject: %1</source>
         <translation>Materia: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10974"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10886"/>
         <source>Activity tags: %1</source>
         <translation>Chiavi dell&apos;attività: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10976"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10888"/>
         <source>Students: %1</source>
         <translation>Studenti: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10988"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10900"/>
         <source>(grouped with id %1)</source>
         <translation>(raggruppate con id %1)</translation>
     </message>
@@ -47167,24 +47119,24 @@ Interrompi la simulazione prima di riprovare</translation>
 <context>
     <name>ModifyConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="292"/>
-        <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="313"/>
-        <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="322"/>
+        <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="282"/>
+        <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="303"/>
+        <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="312"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="293"/>
+        <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="283"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso (percentuale) non valido. Occorre che sia 100%</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="313"/>
+        <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="303"/>
         <source>You specified max simultaneous activities to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
         <translation>Hai indicato che il numero massimo di attività simultanee deve essere zero. Non è la scelta migliore dal punto di vista dell&apos;efficienza, perchè potresti usare, invece, il vincolo &quot;Ore preferenziali per attività&quot;. Prova a correggere.</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="323"/>
+        <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="313"/>
         <source>Empty list of activities</source>
         <translation>Elenco di attività vuoto</translation>
     </message>
@@ -47286,24 +47238,24 @@ Interrompi la simulazione prima di riprovare</translation>
 <context>
     <name>ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="294"/>
+        <location filename="../src/interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="284"/>
+        <location filename="../src/interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="305"/>
         <location filename="../src/interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="315"/>
-        <location filename="../src/interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="325"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="295"/>
+        <location filename="../src/interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="285"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="315"/>
+        <location filename="../src/interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="305"/>
         <source>You specified min simultaneous activities to be 0. This results in a useless constraint. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="326"/>
+        <location filename="../src/interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp" line="316"/>
         <source>Empty list of activities</source>
         <translation type="unfinished">Elenco di attività vuoto</translation>
     </message>
@@ -47604,24 +47556,24 @@ slots</source>
 <context>
     <name>ModifyConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="292"/>
-        <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="313"/>
-        <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="322"/>
+        <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="282"/>
+        <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="303"/>
+        <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="312"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="293"/>
+        <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="283"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso (percentuale) non valido. Occorre che sia 100%</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="313"/>
+        <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="303"/>
         <source>You specified max occupied time slots to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
         <translation>Hai indicato che il numero massimo di ore impegnate deve essere zero. Non è la scelta migliore dal punto di vista dell&apos;efficienza, perchè potresti usare, invece, il vincolo &quot;Ore preferenziali per attività&quot; permettendo a FET di trovare un orario più facilmente e prima con un vincolo equivalente. Prova a correggere.</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="323"/>
+        <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform.cpp" line="313"/>
         <source>Empty list of activities</source>
         <translation>Elenco di attività vuoto</translation>
     </message>
@@ -47723,24 +47675,24 @@ slots</source>
 <context>
     <name>ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="292"/>
-        <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="313"/>
-        <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="321"/>
+        <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="282"/>
+        <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="303"/>
+        <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="311"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="293"/>
+        <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="283"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="313"/>
+        <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="303"/>
         <source>You specified min occupied time slots to be 0. This results in a useless constraint. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="322"/>
+        <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform.cpp" line="312"/>
         <source>Empty list of activities</source>
         <translation type="unfinished">Elenco di attività vuoto</translation>
     </message>
@@ -47842,25 +47794,25 @@ slots</source>
 <context>
     <name>ModifyConstraintActivitiesPreferredStartingTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="314"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="304"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="315"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="305"/>
         <source>Invalid weight (percentage)</source>
         <translation>Peso (percentuale) non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="336"/>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="354"/>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="370"/>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="399"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="326"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="344"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="360"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="389"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="337"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="327"/>
         <source>You specified all the activities. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teachers&apos; and students&apos; timetable.
 
  The best practice would be to use constraint break times.
@@ -47873,14 +47825,14 @@ slots</source>
  Se occorre un peso sotto il 100% allora potresti usare questo vincolo, ma fai attenzione a non ottenere un orario impossibile (se i tuoi insegnanti/studenti sono vincolati ad avere ore buche o ingressi posticipati e se lasci una posizione non permessa tra due posizioni consentite oppure una posizione non consentita ad inizio giornata e più posizioni consentite dopo di essa, questo possibile ora buca potrebbe essere contato nell&apos;orario di insegnante e studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="346"/>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="363"/>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="380"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="336"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="353"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="370"/>
         <source>Do you want to add current constraint?</source>
         <translation>Vuoi aggiungere questo vincolo?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="355"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="345"/>
         <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
 
  The best practice would be to use constraint teacher not available times.
@@ -47889,7 +47841,7 @@ slots</source>
         <translation>Hai indicato solo l&apos;insegnante. Questo potrebbe essere un problema: se indichi una posizione (ora) non ammessa compresa tra due posizioni ammesse, questa posizione non ammessa sarà contata come un ora buca nell&apos;orario dell&apos;insegnante. La pratica migliore consiste nel far uso del vincolo di orario indisponibile per insegnante. Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma attenzione a non ottenere un orario impossibile (se l&apos;insegnante è vincolato a un certo numero di ore buche e se si lascia una posizione non consentita compresa tra due posizioni ammesse, questo possibile ora buca potrebbe essere contato nell&apos;orario dell&apos;insegnante)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="371"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="361"/>
         <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
 
  The best practice would be to use constraint students set not available times.
@@ -47898,7 +47850,7 @@ slots</source>
         <translation>Hai indicato solo gli studenti. Questo potrebbe essere un problema: se indichi una posizione (ora) non ammessa compresa tra due posizioni ammesse (o una posizione esclusa prima di una posizione ammessa), questa posizione non ammessa sarà contata come un ora buca nell&apos;orario degli studenti.La pratica migliore consiste nel far uso del vincolo di orario indisponibile per studenti.Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma attenzione a non ottenere un orario impossibile (se gli studenti sono vincolati a un certo numero di ore buche e se si lascia una posizione non consentita compresa tra due posizioni ammesse -o una posizione esclusa prima di posizioni ammesse-, questo possibile ora buca potrebbe essere contato nell&apos;orario degli studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="400"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="390"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
@@ -47973,25 +47925,25 @@ slots</source>
 <context>
     <name>ModifyConstraintActivitiesPreferredTimeSlotsForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="313"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="304"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="314"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="305"/>
         <source>Invalid weight (percentage)</source>
         <translation>Peso (percentuale) non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="335"/>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="353"/>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="369"/>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="398"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="326"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="344"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="360"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="389"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="336"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="327"/>
         <source>You specified all the activities. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teachers&apos; and students&apos; timetable.
 
  The best practice would be to use constraint break times.
@@ -48004,14 +47956,14 @@ slots</source>
  Se occorre un peso sotto il 100% allora potresti usare questo vincolo, ma fai attenzione a non ottenere un orario impossibile (se i tuoi insegnanti/studenti sono vincolati ad avere ore buche o ingressi posticipati e se lasci una posizione non permessa tra due posizioni consentite oppure una posizione non consentita ad inizio giornata e più posizioni consentite dopo di essa, questo possibile ora buca potrebbe essere contato nell&apos;orario di insegnante e studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="345"/>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="362"/>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="379"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="336"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="353"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="370"/>
         <source>Do you want to add current constraint?</source>
         <translation>Vuoi aggiungere questo vincolo?</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="354"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="345"/>
         <source>You specified only the teacher. This might be a small problem: if you specify a not allowed slot between two allowed slots, this not allowed slot will be counted as a gap in the teacher&apos;s timetable.
 
  The best practice would be to use constraint teacher not available times.
@@ -48020,7 +47972,7 @@ slots</source>
         <translation>Hai indicato solo l&apos;insegnante. Questo potrebbe essere un problema: se indichi una posizione non ammessa compresa tra due posizioni ammesse, questa posizione non ammessa sarà contata come un ora buca nell&apos;orario dell&apos;insegnante. La pratica migliore consiste nel far uso del vincolo di orario indisponibile per insegnante. Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma attenzione a non ottenere un orario impossibile (se l&apos;insegnante è vincolato a un certo numero di ore buche e se si lascia una posizione non consentita compresa tra due posizioni ammesse, questo possibile ora buca potrebbe essere contato nell&apos;orario dell&apos;insegnante)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="370"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="361"/>
         <source>You specified only the students set. This might be a small problem: if you specify a not allowed slot between two allowed slots (or a not allowed slot before allowed slots), this not allowed slot will be counted as a gap (or early gap) in the students&apos; timetable.
 
  The best practice would be to use constraint students set not available times.
@@ -48029,7 +47981,7 @@ slots</source>
         <translation>Hai indicato solo gli studenti. Questo potrebbe essere un problema: se indichi una posizione non ammessa compresa tra due posizioni ammesse (o una posizione esclusa prima di una posizione ammessa), questa posizione non ammessa sarà contata come un ora buca nell&apos;orario degli studenti.La pratica migliore consiste nel far uso del vincolo di orario indisponibile per studenti.Se occorre un peso sotto il 100%, allora si può far uso di questo vincolo, ma attenzione a non ottenere un orario impossibile (se gli studenti sono vincolati a un certo numero di ore buche e se si lascia una posizione non consentita compresa tra due posizioni ammesse -o una posizione esclusa prima di posizioni ammesse-, questo possibile ora buca potrebbe essere contato nell&apos;orario degli studenti)</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="399"/>
+        <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="390"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
@@ -48898,28 +48850,28 @@ necessary 100% if list nonempty)</source>
 <context>
     <name>ModifyConstraintActivityPreferredStartingTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="327"/>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="335"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="317"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="325"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="328"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="318"/>
         <source>Invalid weight (percentage)</source>
         <translation>Peso (percentuale) non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="336"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="326"/>
         <source>Invalid activity</source>
         <translation>Attività non valida</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="353"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="343"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="354"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform.cpp" line="344"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
@@ -48999,28 +48951,28 @@ necessary 100% if list nonempty)</source>
 <context>
     <name>ModifyConstraintActivityPreferredTimeSlotsForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="327"/>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="335"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="317"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="325"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="328"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="318"/>
         <source>Invalid weight (percentage)</source>
         <translation>Peso (percentuale) non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="336"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="326"/>
         <source>Invalid activity</source>
         <translation>Attività non valida</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="353"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="343"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="354"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform.cpp" line="344"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
@@ -49390,12 +49342,12 @@ necessary 100% if list nonempty)</source>
 <context>
     <name>ModifyConstraintBreakTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintbreaktimesform.cpp" line="216"/>
+        <location filename="../src/interface/modifyconstraintbreaktimesform.cpp" line="206"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintbreaktimesform.cpp" line="217"/>
+        <location filename="../src/interface/modifyconstraintbreaktimesform.cpp" line="207"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso (percentuale) non valido. Occorre che sia 100%</translation>
     </message>
@@ -49806,18 +49758,18 @@ se collocate nello stesso giorno</translation>
 <context>
     <name>ModifyConstraintRoomNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="242"/>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="249"/>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="232"/>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="239"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="243"/>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="233"/>
         <source>Invalid weight</source>
         <translation>Peso non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="250"/>
+        <location filename="../src/interface/modifyconstraintroomnotavailabletimesform.cpp" line="240"/>
         <source>Invalid room</source>
         <translation>Aula non valida</translation>
     </message>
@@ -52417,24 +52369,24 @@ allowed: 0.0%-100.0%)</source>
 <context>
     <name>ModifyConstraintStudentsSetNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="235"/>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="243"/>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="252"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="225"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="233"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="242"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="236"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="226"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso (percentuale) non valido. Occorre che sia 100%</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="244"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="234"/>
         <source>Invalid students set</source>
         <translation>Insieme di studenti non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="253"/>
+        <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform.cpp" line="243"/>
         <source>A constraint of this type exists for the same students set - cannot proceed</source>
         <translation>Un vincolo di questo tipo esiste già per lo stesso insieme di studenti - impossibile procedere</translation>
     </message>
@@ -52495,22 +52447,22 @@ allowed: 0.0%-100.0%)</source>
 <context>
     <name>ModifyConstraintSubactivitiesPreferredStartingTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="316"/>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="306"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="317"/>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="307"/>
         <source>Invalid weight (percentage)</source>
         <translation>Peso (percentuale) non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="349"/>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="339"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="350"/>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform.cpp" line="340"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
@@ -52590,22 +52542,22 @@ allowed: 0.0%-100.0%)</source>
 <context>
     <name>ModifyConstraintSubactivitiesPreferredTimeSlotsForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="316"/>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="306"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="317"/>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="307"/>
         <source>Invalid weight (percentage)</source>
         <translation>Peso (percentuale) non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="349"/>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="339"/>
         <source>FET question</source>
         <translation>FET - domanda</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="350"/>
+        <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform.cpp" line="340"/>
         <source>Warning: 0 slots selected. Are you sure?</source>
         <translation>Attenzione: 0 posizioni selezionate. Sei sicuro?</translation>
     </message>
@@ -54379,24 +54331,24 @@ allowed: 0.0%-100.0%)</source>
 <context>
     <name>ModifyConstraintTeacherNotAvailableTimesForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="234"/>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="242"/>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="251"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="224"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="232"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="241"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="235"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="225"/>
         <source>Invalid weight (percentage). It has to be 100</source>
         <translation>Peso (percentuale) non valido. Occorre che sia 100%</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="243"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="233"/>
         <source>Invalid teacher</source>
         <translation>Insegnante non valido</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="252"/>
+        <location filename="../src/interface/modifyconstraintteachernotavailabletimesform.cpp" line="242"/>
         <source>A constraint of this type exists for the same teacher - cannot proceed</source>
         <translation>Un vincolo di questo tipo esiste già per lo stesso insegnante - impossibile procedere</translation>
     </message>
@@ -58988,313 +58940,313 @@ not added - must be a duplicate</source>
 <context>
     <name>SplitYearForm</name>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="140"/>
+        <location filename="../src/interface/splityearform.cpp" line="112"/>
         <source>Splitting year: %1</source>
         <translation>Suddivisione anno: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="212"/>
-        <location filename="../src/interface/splityearform.cpp" line="247"/>
-        <location filename="../src/interface/splityearform.cpp" line="393"/>
-        <location filename="../src/interface/splityearform.cpp" line="401"/>
-        <location filename="../src/interface/splityearform.cpp" line="444"/>
-        <location filename="../src/interface/splityearform.cpp" line="450"/>
-        <location filename="../src/interface/splityearform.cpp" line="477"/>
-        <location filename="../src/interface/splityearform.cpp" line="497"/>
-        <location filename="../src/interface/splityearform.cpp" line="717"/>
+        <location filename="../src/interface/splityearform.cpp" line="193"/>
+        <location filename="../src/interface/splityearform.cpp" line="228"/>
+        <location filename="../src/interface/splityearform.cpp" line="374"/>
+        <location filename="../src/interface/splityearform.cpp" line="382"/>
+        <location filename="../src/interface/splityearform.cpp" line="425"/>
+        <location filename="../src/interface/splityearform.cpp" line="431"/>
+        <location filename="../src/interface/splityearform.cpp" line="458"/>
+        <location filename="../src/interface/splityearform.cpp" line="478"/>
+        <location filename="../src/interface/splityearform.cpp" line="698"/>
         <source>FET information</source>
         <translation>FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="378"/>
-        <location filename="../src/interface/splityearform.cpp" line="427"/>
-        <location filename="../src/interface/splityearform.cpp" line="604"/>
+        <location filename="../src/interface/splityearform.cpp" line="359"/>
+        <location filename="../src/interface/splityearform.cpp" line="408"/>
+        <location filename="../src/interface/splityearform.cpp" line="585"/>
         <source>FET warning</source>
         <translation>FET - Avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="150"/>
+        <location filename="../src/interface/splityearform.cpp" line="122"/>
         <source>Max subgroups per year: %1</source>
         <translation>Numero massimo di sottogruppi per anno: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="151"/>
+        <location filename="../src/interface/splityearform.cpp" line="123"/>
         <source>Max total subgroups: %1</source>
         <translation>Numero massimo di sottogruppi in totale: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="206"/>
+        <location filename="../src/interface/splityearform.cpp" line="187"/>
         <source>FET - Add division to category %1</source>
         <translation>FET - Aggiungi una suddivisione della categoria %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="207"/>
+        <location filename="../src/interface/splityearform.cpp" line="188"/>
         <source>Please input division name:</source>
         <translation>Inserisci il nome della suddivisione:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="240"/>
+        <location filename="../src/interface/splityearform.cpp" line="221"/>
         <source>FET - Modify division to category %1</source>
         <translation>FET - Modifica la suddivisione della categoria %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="241"/>
+        <location filename="../src/interface/splityearform.cpp" line="222"/>
         <source>Please input the new division name:</source>
         <translation>Inserisci il nuovo nome della suddivisione:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="335"/>
-        <location filename="../src/interface/splityearform.cpp" line="363"/>
-        <location filename="../src/interface/splityearform.cpp" line="598"/>
-        <location filename="../src/interface/splityearform.cpp" line="855"/>
+        <location filename="../src/interface/splityearform.cpp" line="316"/>
+        <location filename="../src/interface/splityearform.cpp" line="344"/>
+        <location filename="../src/interface/splityearform.cpp" line="579"/>
+        <location filename="../src/interface/splityearform.cpp" line="827"/>
         <source>FET confirmation</source>
         <translation>FET - Conferma</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="336"/>
+        <location filename="../src/interface/splityearform.cpp" line="317"/>
         <source>Do you want to remove division %1 from category %2?</source>
         <translation>Vuoi eliminare la suddivisione %1 dalla categoria %2?</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="364"/>
+        <location filename="../src/interface/splityearform.cpp" line="345"/>
         <source>Do you really want to remove all divisions from category %1?</source>
         <translation>Vuoi eliminare tutte le suddivisioni della categoria %1?</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="552"/>
+        <location filename="../src/interface/splityearform.cpp" line="533"/>
         <source>WARNING: There are groups and subgroups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation>ATTENZIONE: Ci sono gruppi e sottogruppi, che non saranno più disponibili e che saranno rimossi, insieme alle attività connesse e vincoli. Sei sicuro? Vedi l&apos;elenco qui sotto.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="555"/>
+        <location filename="../src/interface/splityearform.cpp" line="536"/>
         <source>WARNING: There are groups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation>ATTENZIONE: Ci sono gruppi che non saranno più disponibili e che saranno rimossi, insieme alle attività connesse e vincoli. Sei sicuro? Vedi l&apos;elenco qui sotto.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="558"/>
+        <location filename="../src/interface/splityearform.cpp" line="539"/>
         <source>WARNING: There are subgroups which will no longer be available and which will be removed, along with the associated activities and constraints. Are you sure? See the list below.</source>
         <translation>ATTENZIONE: Ci sono sottogruppi che non saranno più disponibili e che saranno rimossi, insieme alle attività connesse e vincoli. Sei sicuro? Vedi l&apos;elenco qui sotto.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="564"/>
+        <location filename="../src/interface/splityearform.cpp" line="545"/>
         <source>Notes:</source>
         <translation>Note:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="566"/>
+        <location filename="../src/interface/splityearform.cpp" line="547"/>
         <source>Note:</source>
         <translation>Nota:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="569"/>
+        <location filename="../src/interface/splityearform.cpp" line="550"/>
         <source>To keep a group, you need to keep the corresponding division name and use the same separator(s) character(s).</source>
         <translation>Per mantenere un gruppo è necessario mantenere il corrispondente nome della divisione e utilizzare come separatore lo(gli) stesso(i) carattere(i).</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="576"/>
+        <location filename="../src/interface/splityearform.cpp" line="557"/>
         <source>Read the divide year dialog Help for details.</source>
         <translation>Per ulteriori dettagli leggi l&apos;Aiuto della finestra di suddivisione dell&apos;anno.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="584"/>
+        <location filename="../src/interface/splityearform.cpp" line="565"/>
         <source>The following groups will no longer be available:</source>
         <translation>I seguenti gruppi non saranno più disponibili:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="592"/>
+        <location filename="../src/interface/splityearform.cpp" line="573"/>
         <source>The following subgroups will no longer be available:</source>
         <translation>I seguenti sottogruppi non saranno più disponibili:</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="707"/>
+        <location filename="../src/interface/splityearform.cpp" line="688"/>
         <source>There were removed %1 &apos;group activities in the initial order&apos; items.</source>
         <translation>Sono stati rimossi %1 elementi di &apos;attività raggruppate nell&apos;ordine iniziale&apos;.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="393"/>
+        <location filename="../src/interface/splityearform.cpp" line="374"/>
         <source>The current number of subgroups for this year is too large (the maximum allowed value is %1, but computing up to category %2 gives %3 subgroups)</source>
         <translation>Il numero corrente dei sottogruppi per questo anno è troppo grande (il valore massimo ammesso è %1, ma il calcolo per comprendere la categoria %2 porta ad avere %3 sottogruppi)</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="401"/>
+        <location filename="../src/interface/splityearform.cpp" line="382"/>
         <source>Each category must contain at least one division</source>
         <translation>Ogni categoria deve contenere almeno una suddivisione</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="431"/>
+        <location filename="../src/interface/splityearform.cpp" line="412"/>
         <source>Are you sure you want to continue?</source>
         <translation>Sei sicuro di voler continuare?</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="747"/>
+        <location filename="../src/interface/splityearform.cpp" line="732"/>
         <source>You might first want to consider if dividing a year is necessary and on what options. Please remember that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide according to this category, but add more larger activities, with students set 9a and teachers TE+TF.</source>
         <translation>Prima di tutto considera se dividere l&apos;anno è veramente necessario e in base a quali criteri. Tieni presente che FET può gestire attività composte da più insegnanti e più gruppi di studenti. Prendi ad esempio la lingua straniera e la classe 4A divisa in 2 parti: inglese (insegnante Jhon) e francese (insegnante Silvie). Le lezioni di lingua straniera dovranno cadere contemporaneamente, quindi potresti non dividere la classe in base alla lingua straniera, ma aggiungere una attività più ampia che comprenda la classe 4A e gli insegnanti Jhon e Silvie.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="755"/>
+        <location filename="../src/interface/splityearform.cpp" line="739"/>
         <source>Please choose a number of categories and in each category the number of divisions. You can choose for instance 3 categories, 5 divisions for the first category: a, b, c, d and e, 2 divisions for the second category: boys and girls, and 3 divisions for the third: English, German and French.</source>
         <translation>Si prega di scegliere un numero di categorie e in ogni categoria il numero di sezioni. È possibile scegliere per esempio 3 categorie, 5 sezioni per la prima categoria (a, b, c, d ed e), 2 sezioni per la seconda categoria (ragazzi e ragazze), e 3 sezioni per la terza (inglese, tedesco e francese).</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="769"/>
+        <location filename="../src/interface/splityearform.cpp" line="745"/>
         <source>If your number of subgroups is reasonable, probably you need not worry about empty subgroups (regarding speed of generation). But more tests need to be done. You just need to know that for the moment the maximum total number of subgroups is %1 (which can be changed, but nobody needed larger values)</source>
         <translation>Se il numero di sottogruppi è ragionevole, probabilmente non è necessario preoccuparsi di sottogruppi (per quanto riguarda la velocità di generazione). Ma occorre fare altri test. Hai solo bisogno di sapere che per il momento il numero totale massimo di sottogruppi è %1 (che può essere modificato, ma nessuno ha mai avuto bisogno di valori maggiori)</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="795"/>
+        <location filename="../src/interface/splityearform.cpp" line="767"/>
         <source>If you have many subgroups and you don&apos;t explicitly use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
         <translation>Se si dispone di molti sottogruppi e non si usano esplicitamente, si consiglia di utilizzare le tre impostazioni globali: nascondi i sottogruppi in caselle combinate, nascondi sottogruppi nel pianificatore delle attività e non scrivere gli orari dei sottogruppi su disco rigido.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="802"/>
+        <location filename="../src/interface/splityearform.cpp" line="774"/>
         <source>(Also the conflicts timetable might take long to write, if the file is big.)</source>
         <translation>(Anche la lista dei conflitti orari può richiedere tempo per essere scritta, se il fle è grande.)</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="804"/>
+        <location filename="../src/interface/splityearform.cpp" line="776"/>
         <source>After that, you can re-enable writing the students timetables on the disk, and re-generate.</source>
         <translation>Dopo di ciò, puoi riabilitare la scrittura dell&apos;orario degli studenti su disco e rigenerare.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="807"/>
+        <location filename="../src/interface/splityearform.cpp" line="779"/>
         <source>About using a large number of categories, divisions per category and subgroups: it is highly recommended to keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable might become impossible (taking too much time to generate).</source>
         <translation>Informazioni sull&apos;uso di un gran numero di categorie, divisioni per categoria e sottogruppi: si raccomanda vivamente di mantenere questi al minimo, in particolare il numero di categorie, utilizzando qualsiasi tipo di trucco. In caso contrario, l&apos;orario potrebbe diventare impossibile (richiedendo troppo tempo per l&apos;elaborazione) .</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="856"/>
+        <location filename="../src/interface/splityearform.cpp" line="828"/>
         <source>Do you really want to reset the form values to defaults (empty)?</source>
         <translation>Vuoi veramente portare i valori del modulo allo stato iniziale (vuoto)?</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="878"/>
+        <location filename="../src/interface/splityearform.cpp" line="846"/>
         <source>Subgroups: %1</source>
         <comment>%1 is the number of subgroups</comment>
         <translation>Sottogruppi: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="428"/>
+        <location filename="../src/interface/splityearform.cpp" line="409"/>
         <source>Please note that the current configuration will lead you to %1 total number of subgroups. The file format supports any number of students sets, but for the timetable generation to be possible the maximum allowed total number of subgroups is %2.</source>
         <translation>Si prega di notare che la configurazione attuale vi condurrà al numero totale di %1 sottogruppi. Il formato del file supporta qualsiasi numero di insieme di studenti, ma perché la generazione dell&apos;orario sia possibile, il numero totale massimo consentito di sottogruppi è %2.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="212"/>
-        <location filename="../src/interface/splityearform.cpp" line="247"/>
+        <location filename="../src/interface/splityearform.cpp" line="193"/>
+        <location filename="../src/interface/splityearform.cpp" line="228"/>
         <source>Duplicate names are not allowed (the current string is found in category number %1, division number %2).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="379"/>
+        <location filename="../src/interface/splityearform.cpp" line="360"/>
         <source>You want to divide the year by %1 categories. The recommended number of categories is 2, 3 or maximum 4 (to ensure the timetable generation speed and feasibility). Are you sure?</source>
         <translation>Vuoi dividere l&apos; anno in %1 categorie. Il numero consigliato di categorie è 2, 3 o al massimo 4 (per garantire la velocità di generazione dell&apos;orario e la fattibilità). Sei sicuro?</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="444"/>
+        <location filename="../src/interface/splityearform.cpp" line="425"/>
         <source>Duplicate names not allowed (%1 appears a second time in category number %2, division number %3).</source>
         <comment>%1 is the name of a division (of a year).</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="450"/>
+        <location filename="../src/interface/splityearform.cpp" line="431"/>
         <source>Empty names not allowed (the entry in category number %1, division number %2 has an empty name).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="477"/>
+        <location filename="../src/interface/splityearform.cpp" line="458"/>
         <source>Cannot add group %1, because a set with the same name exists. Please choose another name or remove the old set</source>
         <translation>Impossibile aggiungere il gruppo %1 , in quanto esiste un set con lo stesso nome. Scegliere un altro nome o rimuovere il vecchio set</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="497"/>
+        <location filename="../src/interface/splityearform.cpp" line="478"/>
         <source>Cannot add subgroup %1, because a set with the same name exists. Please choose another name or remove the old set</source>
         <translation>Impossibile aggiungere il sottogruppo %1 , in quanto esiste un set con lo stesso nome . Scegliere un altro nome o rimuovere il vecchio set</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="573"/>
+        <location filename="../src/interface/splityearform.cpp" line="554"/>
         <source>Probably you can safely ignore the warning about the removal of the subgroups.</source>
         <translation>Probabilmente puoi ignorare tranquillamente l&apos;avviso circa la rimozione dei sottogruppi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="599"/>
+        <location filename="../src/interface/splityearform.cpp" line="580"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="599"/>
+        <location filename="../src/interface/splityearform.cpp" line="580"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="604"/>
+        <location filename="../src/interface/splityearform.cpp" line="585"/>
         <source>Year %1 will be split again. All groups and subgroups of this year which will no longer exist (listed before) and the associated activities and constraints will be removed. Are you absolutely sure?</source>
         <translation>L&apos;anno %1 verrà diviso di nuovo. Tutti i gruppi e sottogruppi di quest&apos;anno che cesseranno di esistere (come elencati in precedenza) e le attività connesse ed i vincoli saranno rimossi. Sei assolutamente sicuro?</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="701"/>
+        <location filename="../src/interface/splityearform.cpp" line="682"/>
         <source>There were removed %1 activities, %2 time constraints and %3 space constraints.</source>
         <translation>Sono stati rimossi %1 attività, %2 vincoli di tempo e %3 vincoli di spazio.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="717"/>
+        <location filename="../src/interface/splityearform.cpp" line="698"/>
         <source>Split of the year complete, please check the groups and subgroups of the year to make sure that everything is OK.</source>
         <translation>Divisione dell&apos;anno completata. Controlla i gruppi e i sottogruppi dell&apos;anno per essere sicuro che tutto sia Ok.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="779"/>
+        <location filename="../src/interface/splityearform.cpp" line="751"/>
         <source>If you intend to divide again a year by categories and you want to keep (the majority of) the existing groups in this year, you will need to use the exact same separator character(s) for dividing this year as you used when previously dividing this year, and the same division names (any old division which is no longer entered means a group which will be removed from this year).</source>
         <translation>Se hai intenzione di dividere ancora un anno per categorie e desideri mantenere (la maggior parte de) i gruppi esistenti in questo anno, è necessario utilizzare lo stesso identico insieme di caratteri come separatore, per dividere questo anno come si è fatto in precedenza e gli stessi nomi di divisione (per ogni vecchia divisione che non è più immessa, un gruppo sarà rimosso da quest&apos;anno).</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="785"/>
+        <location filename="../src/interface/splityearform.cpp" line="757"/>
         <source>When dividing again a year, you might get a warning about subgroups which will be removed. If you didn&apos;t explicitly use (these) subgroups in your activities or constraints, probably you can safely ignore this warning. Generally, if you use years&apos; division by categories, it is groups that matter.</source>
         <translation>Quando dividi ancora un anno potresti ottenere un avviso sui sottogruppi che verranno rimossi. Se non utilizzi esplicitamente (questi) sottogruppi nelle attività o nei vincoli probabilmente è possibile ignorare questo avvertimento. In genere se si utilizza la divisione degli anni per categorie, quello che conta principalmente sono i gruppi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="791"/>
+        <location filename="../src/interface/splityearform.cpp" line="763"/>
         <source>Separator character(s) is of your choice (default is space)</source>
         <translation>Carattere(i) di separazione a tua scelta (per default è spazio)</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="798"/>
+        <location filename="../src/interface/splityearform.cpp" line="770"/>
         <source>Note that if you are only working to get a feasible timetable, without the need to obtain the students timetable (XML or HTML) on the disk at all, and if you have many total subgroups, a good idea is to disable writing the subgroups, groups AND years timetables to the hard disk, as these take a long time to compute (not only subgroups, but also groups and years!).</source>
         <translation>Si noti che se si sta solo lavorando per ottenere un orario realistico , senza la necessità di ottenere l&apos;orario degli studenti ( XML o HTML) sul disco, e se si hanno molti sottogruppi totali, una buona idea è quella di disabilitare la scrittura degli orari di sottogruppi, di gruppi e degli anni sul disco rigido, in quanto questi impiegano molto tempo per il calcolo (non solo sottogruppi , ma anche gruppi e anni !).</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="811"/>
+        <location filename="../src/interface/splityearform.cpp" line="783"/>
         <source>Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but these are not at all recommended.</source>
         <translation>Forse un numero ragionevole di categorie potrebbe essere 2, 3 o al massimo 4. Il form per la suddivisione dell&apos;anno permette valori molto più elevati , ma questi non sono affatto raccomandati.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="814"/>
+        <location filename="../src/interface/splityearform.cpp" line="786"/>
         <source>The generation time of the timetable is directly proportional with the total number of subgroups!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="816"/>
+        <location filename="../src/interface/splityearform.cpp" line="788"/>
         <source>For instance, by reducing the total number of subgroups from 10000 to 100 the generation time might decrease 100 times!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="818"/>
+        <location filename="../src/interface/splityearform.cpp" line="790"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your institution data into a file in .fet format.</source>
         <translation>Forse un&apos;alternativa a dividere l&apos;anno in molte categorie/ sottogruppi potrebbe essere quella di inserire i singoli studenti come sottogruppi di FET e aggiungere in ogni gruppo i sottogruppi corrispondenti. Ma questo è difficile da fare dall&apos;interfaccia FET - forse una soluzione potrebbe essere quella di utilizzare uno strumento automatico per convertire i dati dell&apos;anagrafe istituzionale in un file in formato .fet.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="822"/>
+        <location filename="../src/interface/splityearform.cpp" line="794"/>
         <source>Or you might use the FET feature to import students sets from comma separated values (CSV) files.</source>
         <translation>Si potrebbe utilizzare la funzionalità di FET per importare set di studenti da file (CSV) di valori separati da virgola.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="824"/>
+        <location filename="../src/interface/splityearform.cpp" line="796"/>
         <source>In such cases (individual students as FET subgroups), remember that a smaller number of total subgroups means faster generation time, so you might want to consider a single subgroup for two or more students who have the exact same activities and constraints.</source>
         <translation>In questi casi (singoli studenti come sottogruppi di FET ), ricorda che un minor numero di sottogruppi totali significa tempo di generazione più veloce, per cui potrebbe essere preferibile un unico sottogruppo per due o più studenti che hanno esattamente le stesse attività e vincoli.</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="830"/>
+        <location filename="../src/interface/splityearform.cpp" line="802"/>
         <source>FET - help on dividing a year</source>
         <translation>FET - aiuto sulla suddivisione dell&apos;anno</translation>
     </message>
     <message>
-        <location filename="../src/interface/splityearform.cpp" line="836"/>
+        <location filename="../src/interface/splityearform.cpp" line="808"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
@@ -64127,106 +64079,106 @@ Sotto %4</translation>
 <context>
     <name>TimetableViewForm</name>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="472"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="764"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="690"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="860"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="459"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="741"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="469"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="762"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="687"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="858"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="456"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="739"/>
         <source>PLT</source>
         <comment>Abbreviation for permanently locked time. There are 4 strings: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished">OBP</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="478"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="770"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="696"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="866"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="465"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="747"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="475"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="768"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="693"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="864"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="462"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="745"/>
         <source>LT</source>
         <comment>Abbreviation for locked time. There are 4 strings: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished">OB</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="484"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="776"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="702"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="872"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="471"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="753"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="481"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="774"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="699"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="870"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="468"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="751"/>
         <source>PLS</source>
         <comment>Abbreviation for permanently locked space. There are 4 strings: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished">ABP</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="489"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="781"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="707"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="877"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="476"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="758"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="486"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="779"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="704"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="875"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="473"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="756"/>
         <source>LS</source>
         <comment>Abbreviation for locked space. There are 4 strings: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation type="unfinished">AB</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="652"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="981"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="899"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1132"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="637"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="945"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="647"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="977"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="894"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1128"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="632"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="941"/>
         <source>permanently locked time</source>
         <comment>refers to activity</comment>
         <translation>ora bloccata in permanenza</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="656"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="985"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="903"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1136"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="641"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="949"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="651"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="981"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="898"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1132"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="636"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="945"/>
         <source>locked time</source>
         <comment>refers to activity</comment>
         <translation>ora bloccata</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="660"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="989"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="907"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1140"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="645"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="953"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="655"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="985"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="902"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1136"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="640"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="949"/>
         <source>permanently locked space</source>
         <comment>refers to activity</comment>
         <translation>aula bloccata in permanenza</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="663"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="992"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="910"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1143"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="648"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="956"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="658"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="988"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="905"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1139"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="643"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="952"/>
         <source>locked space</source>
         <comment>refers to activity</comment>
         <translation>aula bloccata</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="950"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="983"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1330"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1363"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1229"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1262"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1518"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1551"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="933"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="966"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1288"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1321"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="941"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="974"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1322"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1355"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1222"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1255"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1510"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1543"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="924"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="957"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1280"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1313"/>
         <source>Added %n locking time constraint(s).</source>
         <comment>See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field.Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section &apos;Handling Plurals&apos;.You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts(open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -64235,18 +64187,18 @@ Sotto %4</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="958"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="991"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1338"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1371"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1237"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1270"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1526"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1559"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="941"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="974"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1296"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1329"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="949"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="982"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1330"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1363"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1230"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1263"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1518"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1551"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="932"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="965"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1288"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1321"/>
         <source>Added %n locking space constraint(s).</source>
         <comment>See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field.Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section &apos;Handling Plurals&apos;.You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts(open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -64255,18 +64207,18 @@ Sotto %4</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="966"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="999"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1346"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1379"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1245"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1278"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1534"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1567"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="949"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="982"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1304"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1337"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="957"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="990"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1338"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1371"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1238"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1271"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1526"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1559"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="940"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="973"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1296"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1329"/>
         <source>Removed %n locking time constraint(s).</source>
         <comment>See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field.Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section &apos;Handling Plurals&apos;.You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts(open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -64275,18 +64227,18 @@ Sotto %4</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="974"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1007"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1354"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1387"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1253"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1286"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1542"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1575"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="957"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="990"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1312"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1345"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="965"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="998"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1346"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1379"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1246"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1279"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1534"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1567"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="948"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="981"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1304"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1337"/>
         <source>Removed %n locking space constraint(s).</source>
         <comment>See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field.Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section &apos;Handling Plurals&apos;.You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts(open these files with Qt Linguist and see the translation of this field).</comment>
         <translation type="unfinished">
@@ -64295,64 +64247,64 @@ Sotto %4</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1025"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1405"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1304"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1593"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1008"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1363"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1016"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1397"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1297"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1585"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="999"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1355"/>
         <source>No locking constraints added or removed.</source>
         <translation>Nessun vincolo aggiunto o rimosso.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1058"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1454"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1337"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1642"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1041"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1412"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1044"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1441"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1325"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1629"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1027"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1399"/>
         <source>Lock/unlock: you can select one or more activities in the table and toggle lock/unlock in time, space or both.</source>
         <translation>Blocca/sblocca: puoi selezionare una (o più) attività nella tabella e commutare il blocco/sblocco di tempo, spazio o entrambi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1060"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1456"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1339"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1644"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1043"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1414"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1046"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1443"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1327"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1631"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1029"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1401"/>
         <source>There will be added or removed locking constraints for the selected activities (they can be unlocked only if they are not permanently locked).</source>
         <translation>Saranno aggiunti (o rimossi) vincoli di impostazione per orario ed aule delle attività selezionate (possono essere sbloccate solo se non sono bloccate permanentemente).</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1062"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1458"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1341"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1646"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1045"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1416"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1048"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1445"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1329"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1633"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1031"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1403"/>
         <source>Locking time constraints are constraints of type activity preferred starting time. Locking space constraints are constraints of type activity preferred room. You can see these constraints in the corresponding constraints dialogs. New locking constraints are added at the end of the list of constraints.</source>
         <translation>I vincoli di blocco dell&apos;orario sono del tipo orario preferenziale di inizio di attività. I vincoli di blocco dell&apos;aula sono del tipo aula preferenziale per attività. Puoi osservare questi vincoli nella corrispondente finestra dei vincoli. I nuovo vincoli di blocco alla fine della lista dei vincoli.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1065"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1461"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1344"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1649"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1048"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1419"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1051"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1448"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1332"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1636"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1034"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1406"/>
         <source>If a cell is (permanently) locked in time or space, it contains abbreviations to show that: PLT (permanently locked time), LT (locked time), PLS (permanently locked space) or LS (locked space).</source>
         <comment>Translate the abbreviations also. Make sure the abbreviations in your language are different between themselves and the user can differentiate easily between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>Se una casella è (permanentemente) bloccata per l&apos;orario e per l&apos;aula (tempo e spazio) contiene una sigla che lo ricorda: OBP (Ora Bloccata in Permanenza), OB (Ora Bloccata), ABP (Aula Bloccata in Permanenza) o AB (Aula Bloccata).</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1070"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1474"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1056"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1461"/>
         <source>Note: In this dialog, the virtual rooms&apos; timetable will be empty.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1348"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1336"/>
         <source>There is a combo box in this dialog. You can choose each year, group, and subgroup if you select &apos;Years&apos;, each group and subgroup if you select &apos;Groups&apos;, or each subgroup if you select &apos;Subgroups&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -64360,187 +64312,187 @@ Sotto %4</translation>
 <context>
     <name>TimetableViewRoomsDaysHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="203"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="376"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="380"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="391"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="400"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="405"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="425"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="582"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="588"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="592"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="611"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="712"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="716"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="738"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="785"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="797"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="810"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="867"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="879"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="892"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="201"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="373"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="377"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="388"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="397"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="402"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="422"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="577"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="583"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="587"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="606"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="705"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="709"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="731"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="778"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="790"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="803"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="859"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="871"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="884"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="203"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="201"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Impossibile mostrare l&apos;orario, perché hai aggiunto o rimosso qualche aula. Rigenerare l&apos;orario per poi visualizzarlo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="376"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="380"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="588"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="592"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="712"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="716"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="373"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="377"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="583"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="587"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="705"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="709"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Orario non disponibile nella finestra degli orari &apos;vedi (aule)&apos;. Genera un nuovo orario</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="391"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="738"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="388"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="731"/>
         <source>Invalid room - please close this dialog and open a new view rooms timetable dialog</source>
         <translation type="unfinished">Aula non valida. Chiudi questa finestra e apri nuovamente la voce &apos;vedi (aule)&apos; nel menu &apos;Orario&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="400"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="405"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="582"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="397"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="402"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="577"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable or close the timetable view rooms dialog</source>
         <translation type="unfinished">Orario non disponibile nella finestra degli orari &apos;vedi (aule)&apos;. Genera un nuovo orario oppure chiudi la finestra degli orari &apos;vedi (aule)&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="425"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="422"/>
         <source>You have an old timetable view rooms dialog opened - please close it</source>
         <translation type="unfinished">Hai una vecchia finestra di dialogo &apos;Vedi (aule)&apos;  aperta - provvedi a chiuderla</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="611"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="606"/>
         <source>Invalid room - please close this dialog and open a new view rooms dialog</source>
         <translation type="unfinished">Aula non valida. Chiudi questa finestra e apri nuovamente la voce &apos;vedi (aule)&apos; nel menu &apos;Orario&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="631"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="626"/>
         <source>Room: %1</source>
         <translation type="unfinished">Aula: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="642"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="637"/>
         <source>Building=%1</source>
         <translation type="unfinished">Edificio=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="645"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="640"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Capacità=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="674"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="669"/>
         <source>Room is not available with weight %1%</source>
         <translation type="unfinished">Aula non disponibile con peso %1%</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="678"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="673"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Interruzione con peso del 100% in questa ora</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="706"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="725"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="825"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="907"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1026"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="699"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="718"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="817"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="898"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1017"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="707"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="700"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation type="unfinished">Assegnazione in corso.
 Interrompere la simulazione prima.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="725"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="718"/>
         <source>Please select a room</source>
         <translation type="unfinished">Seleziona un&apos;aula</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="770"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="850"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="763"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="842"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Aggiunto il seguente vincolo:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="785"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="797"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="867"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="879"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="778"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="790"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="859"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="871"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Individuata una piccola anomalia</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="786"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="798"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="779"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="791"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Una possibile anomalia consiste in 2 o più vincoli del genere Orario di inizio preferenziale per attività con peso 100% riferito all&apos;attività id %1. Verifica e di questi lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="787"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="799"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="869"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="881"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="780"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="792"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="861"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="873"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Un possibile problema potrebbe riguardare la sincronizzazione - perciò prova a chiudere la visualizzazione dell&apos;orario per poi aprirla di nuovo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="788"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="800"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="870"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="882"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="781"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="793"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="862"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="874"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Per favore segnala il possibile bug</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="792"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="874"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="785"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="866"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Il vincolo %1 non sarà cancellato perché è bloccato in permanenza. Se lo vuoi sbloccare devi agire nel menu dei vincoli.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="810"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="892"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="803"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="884"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished">Potresti riscontrare un problema, perchè FET si aspettava di dover cancellare 1 vincolo, ma cancellerà %1 vincoli</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="813"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="895"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="806"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="887"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Il seguente vincolo sarà cancellato:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="826"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="908"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="818"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="899"/>
         <source>Skip information</source>
         <translation type="unfinished">Salta l&apos;informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="826"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="908"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="818"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="899"/>
         <source>See next</source>
         <translation type="unfinished">Vedi il prossimo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="868"/>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="880"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="860"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="872"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Una possibile anomalia consiste in 2 o più vincoli del genere aula preferenziale per attività con peso 100% riferito all&apos;attività id %1. Verifica e di questi lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1072"/>
+        <location filename="../src/interface/timetableviewroomsdayshorizontalform.cpp" line="1058"/>
         <source>FET help</source>
         <translation type="unfinished">FET - Aiuto</translation>
     </message>
@@ -64596,211 +64548,211 @@ Interrompere la simulazione prima.</translation>
 <context>
     <name>TimetableViewRoomsTimeHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="208"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="665"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="672"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="679"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="900"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="906"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="912"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="918"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="928"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="937"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="206"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="663"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="670"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="677"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="896"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="902"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="908"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="914"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="924"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="933"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1036"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1042"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1048"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1054"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1134"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1148"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1128"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1142"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1168"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1174"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1180"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1219"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1233"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1268"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1274"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1212"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1226"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1261"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1267"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="208"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="679"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="918"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1054"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="206"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="677"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="914"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1048"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Impossibile mostrare l&apos;orario, perché hai aggiunto o rimosso qualche aula. Rigenerare l&apos;orario per poi visualizzarlo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="312"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="322"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="310"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="320"/>
         <source>px</source>
         <comment>Abbreviation for pixels</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="320"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="330"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="318"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="328"/>
         <source>Automatic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="665"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="672"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="912"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="663"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="670"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="908"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable or close the timetable view rooms dialog</source>
         <translation type="unfinished">Orario non disponibile nella finestra degli orari &apos;vedi (aule)&apos;. Genera un nuovo orario oppure chiudi la finestra degli orari &apos;vedi (aule)&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="900"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="906"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="896"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="902"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1036"/>
         <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1042"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1048"/>
         <source>Timetable not available in view rooms timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Orario non disponibile nella finestra degli orari &apos;vedi (aule)&apos;. Genera un nuovo orario</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="928"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="924"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Impossibile mostrare l&apos;orario, perché hai aggiunto o rimosso qualche insegnante. Rigenerare l&apos;orario per poi visualizzarlo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="937"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="933"/>
         <source>The room is invalid - please close this dialog and open a new view rooms timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="954"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="950"/>
         <source>Room: %1</source>
         <translation type="unfinished">Aula: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="965"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="961"/>
         <source>Building=%1</source>
         <translation type="unfinished">Edificio=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="968"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="964"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Capacità=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1003"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="999"/>
         <source>Room is not available with weight %1%</source>
         <translation type="unfinished">Aula non disponibile con peso %1%</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1007"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1003"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Interruzione con peso del 100% in questa ora</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1036"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1195"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1289"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1406"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1030"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1188"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1281"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1398"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1037"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1031"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation type="unfinished">Assegnazione in corso.
 Interrompere la simulazione prima.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1134"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1148"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1219"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1233"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1128"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1142"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1212"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1226"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Individuata una piccola anomalia</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1135"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1149"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1129"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1143"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Una possibile anomalia consiste in 2 o più vincoli del genere Orario di inizio preferenziale per attività con peso 100% riferito all&apos;attività id %1. Verifica e di questi lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1136"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1150"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1221"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1235"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1130"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1144"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1214"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1228"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Un possibile problema potrebbe riguardare la sincronizzazione - perciò prova a chiudere la visualizzazione dell&apos;orario per poi aprirla di nuovo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1137"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1151"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1222"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1236"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1131"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1145"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1215"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1229"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Per favore segnala il possibile bug</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1142"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1227"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1136"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1220"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Il vincolo %1 non sarà cancellato perché è bloccato in permanenza. Se lo vuoi sbloccare devi agire nel menu dei vincoli.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1169"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1263"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1163"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1256"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Aggiunto il seguente vincolo:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1174"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1268"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1168"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1261"/>
         <source>You may have a problem, because FET expected to add 1 constraint, but this is not possible. Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1180"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1274"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1174"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1267"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished">Potresti riscontrare un problema, perchè FET si aspettava di dover cancellare 1 vincolo, ma cancellerà %1 vincoli</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1183"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1277"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1177"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1270"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Il seguente vincolo sarà cancellato:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1196"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1290"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1189"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1282"/>
         <source>Skip information</source>
         <translation type="unfinished">Salta l&apos;informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1196"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1290"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1189"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1282"/>
         <source>See next</source>
         <translation type="unfinished">Vedi il prossimo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1220"/>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1234"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1213"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1227"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Una possibile anomalia consiste in 2 o più vincoli del genere aula preferenziale per attività con peso 100% riferito all&apos;attività id %1. Verifica e di questi lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1466"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1453"/>
         <source>If a whole column (day+hour) is selected, the activities with no room from that column will NOT be locked/unlocked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1469"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1456"/>
         <source>A bold font cell means that the activity is locked in time, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1471"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1458"/>
         <source>An italic font cell means that the activity is locked in space, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1476"/>
+        <location filename="../src/interface/timetableviewroomstimehorizontalform.cpp" line="1463"/>
         <source>FET help</source>
         <translation type="unfinished">FET - Aiuto</translation>
     </message>
@@ -64885,218 +64837,218 @@ Interrompere la simulazione prima.</translation>
 <context>
     <name>TimetableViewStudentsDaysHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="489"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="498"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="520"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="530"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="534"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="583"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="590"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="612"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="616"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="798"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="804"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="810"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="836"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="840"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="958"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="964"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="997"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1001"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1064"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1076"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1089"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1146"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1158"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1171"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="486"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="495"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="517"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="527"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="531"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="580"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="587"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="609"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="613"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="793"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="799"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="805"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="831"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="835"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="953"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="959"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="992"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="996"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1059"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1071"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1084"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1140"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1152"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1165"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="489"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="520"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="804"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="958"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="486"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="517"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="799"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="953"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Orario non disponibile nella finestra degli orari &apos;vedi (studenti)&apos;. Genera un nuovo orario</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="498"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="495"/>
         <source>Invalid year - please close this dialog and open a new students view timetable dialog</source>
         <translation type="unfinished">Anno non valido - chiudi questa finestra e accedi nuovamente per vedere l&apos;orario degli studenti</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="583"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="798"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="580"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="793"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable or close the timetable view students dialog</source>
         <translation type="unfinished">Orario non disponibile nella finestra degli orari &apos;vedi (studenti)&apos;. Genera un nuovo orario oppure chiudi la finestra degli orari &apos;vedi (aule)&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="590"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="810"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="964"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="587"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="805"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="959"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Impossibile mostrare l&apos;orario, perché hai aggiunto o rimosso qualche aula. Rigenerare l&apos;orario per poi visualizzarlo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="222"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="220"/>
         <source>Years</source>
         <translation type="unfinished">Anni</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="223"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="221"/>
         <source>Groups</source>
         <translation type="unfinished">Classi</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="224"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="222"/>
         <source>Subgroups</source>
         <translation type="unfinished">Sottogruppi</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="530"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="527"/>
         <source>Inexistent group - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="534"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="531"/>
         <source>Incorrect group settings - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="612"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="836"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="997"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="609"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="831"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="992"/>
         <source>Inexistent subgroup - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="616"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="840"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1001"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="613"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="835"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="996"/>
         <source>Incorrect subgroup settings - please reload this dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="879"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="874"/>
         <source>Room: %1</source>
         <translation type="unfinished">Aula: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="890"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="885"/>
         <source>Building=%1</source>
         <translation type="unfinished">Edificio=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="893"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="888"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Capacità=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="921"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="916"/>
         <source>Students subgroup is not available 100% in this slot</source>
         <translation type="unfinished">Il sottogruppo di studenti è indisponibile al 100% in questa ora</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="925"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="920"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Interruzione con peso del 100% in questa ora</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="951"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="985"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1104"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1186"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1305"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="946"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="980"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1098"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1179"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1298"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="952"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="947"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation type="unfinished">Assegnazione in corso.
 Interrompere la simulazione prima.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="985"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="980"/>
         <source>Please select a subgroup</source>
         <translation type="unfinished">Seleziona un sottogruppo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1049"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1129"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1044"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1123"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Aggiunto il seguente vincolo:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1064"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1076"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1146"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1158"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1059"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1071"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1140"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1152"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Individuata una piccola anomalia</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1065"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1077"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1060"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1072"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Una possibile anomalia consiste in 2 o più vincoli del genere Orario di inizio preferenziale per attività con peso 100% riferito all&apos;attività id %1. Verifica e di questi lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1066"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1078"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1148"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1160"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1061"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1073"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1142"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1154"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Un possibile problema potrebbe riguardare la sincronizzazione - perciò prova a chiudere la visualizzazione dell&apos;orario per poi aprirla di nuovo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1067"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1079"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1149"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1161"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1062"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1074"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1143"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1155"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Per favore segnala il possibile bug</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1071"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1153"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1066"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1147"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Il vincolo %1 non sarà cancellato perché è bloccato in permanenza. Se lo vuoi sbloccare devi agire nel menu dei vincoli.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1089"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1171"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1084"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1165"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished">Potresti riscontrare un problema, perchè FET si aspettava di dover cancellare 1 vincolo, ma cancellerà %1 vincoli</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1092"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1174"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1087"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1168"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Il seguente vincolo sarà cancellato:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1105"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1187"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1099"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1180"/>
         <source>Skip information</source>
         <translation type="unfinished">Salta l&apos;informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1105"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1187"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1099"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1180"/>
         <source>See next</source>
         <translation type="unfinished">Vedi il prossimo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1147"/>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1159"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1141"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1153"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Una possibile anomalia consiste in 2 o più vincoli del genere aula preferenziale per attività con peso 100% riferito all&apos;attività id %1. Verifica e di questi lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1352"/>
+        <location filename="../src/interface/timetableviewstudentsdayshorizontalform.cpp" line="1340"/>
         <source>FET help</source>
         <translation type="unfinished">FET - Aiuto</translation>
     </message>
@@ -65157,197 +65109,197 @@ Interrompere la simulazione prima.</translation>
 <context>
     <name>TimetableViewStudentsTimeHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="347"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="357"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="345"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="355"/>
         <source>px</source>
         <comment>Abbreviation for pixels</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="355"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="365"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="353"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="363"/>
         <source>Automatic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="731"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="738"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1012"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1018"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1024"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1044"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="729"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="736"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1008"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1014"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1020"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1040"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1187"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1193"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1199"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1322"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1336"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1316"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1330"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1356"/>
         <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1362"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1368"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1407"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1421"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1456"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1462"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1400"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1414"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1449"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1455"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="731"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1018"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="729"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1014"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable or close the timetable view students dialog</source>
         <translation type="unfinished">Orario non disponibile nella finestra degli orari &apos;vedi (studenti)&apos;. Genera un nuovo orario oppure chiudi la finestra degli orari &apos;vedi (aule)&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="738"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1024"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1199"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="736"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1020"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1193"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Impossibile mostrare l&apos;orario, perché hai aggiunto o rimosso qualche aula. Rigenerare l&apos;orario per poi visualizzarlo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1012"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1193"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1008"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1187"/>
         <source>Timetable not available in view students timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Orario non disponibile nella finestra degli orari &apos;vedi (studenti)&apos;. Genera un nuovo orario</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1044"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1040"/>
         <source>The students set is invalid - please close this dialog and open a new view students timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1112"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1108"/>
         <source>Room: %1</source>
         <translation type="unfinished">Aula: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1123"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1119"/>
         <source>Building=%1</source>
         <translation type="unfinished">Edificio=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1126"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1122"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Capacità=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1155"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1151"/>
         <source>Students set is not available 100% in this slot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1159"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1155"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Interruzione con peso del 100% in questa ora</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1187"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1383"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1477"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1594"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1181"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1376"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1469"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1586"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1188"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1182"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation type="unfinished">Assegnazione in corso.
 Interrompere la simulazione prima.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1322"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1336"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1407"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1421"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1316"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1330"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1400"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1414"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Individuata una piccola anomalia</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1323"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1337"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1317"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1331"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Una possibile anomalia consiste in 2 o più vincoli del genere Orario di inizio preferenziale per attività con peso 100% riferito all&apos;attività id %1. Verifica e di questi lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1324"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1338"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1409"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1423"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1318"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1332"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1402"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1416"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Un possibile problema potrebbe riguardare la sincronizzazione - perciò prova a chiudere la visualizzazione dell&apos;orario per poi aprirla di nuovo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1325"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1339"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1410"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1424"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1319"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1333"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1403"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1417"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Per favore segnala il possibile bug</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1330"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1415"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1324"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1408"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Il vincolo %1 non sarà cancellato perché è bloccato in permanenza. Se lo vuoi sbloccare devi agire nel menu dei vincoli.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1357"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1451"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1351"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1444"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Aggiunto il seguente vincolo:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1362"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1456"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1356"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1449"/>
         <source>You may have a problem, because FET expected to add 1 constraint, but this is not possible. Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1368"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1462"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1362"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1455"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished">Potresti riscontrare un problema, perchè FET si aspettava di dover cancellare 1 vincolo, ma cancellerà %1 vincoli</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1371"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1465"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1365"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1458"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Il seguente vincolo sarà cancellato:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1384"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1478"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1377"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1470"/>
         <source>Skip information</source>
         <translation type="unfinished">Salta l&apos;informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1384"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1478"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1377"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1470"/>
         <source>See next</source>
         <translation type="unfinished">Vedi il prossimo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1408"/>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1422"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1401"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1415"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Una possibile anomalia consiste in 2 o più vincoli del genere aula preferenziale per attività con peso 100% riferito all&apos;attività id %1. Verifica e di questi lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1654"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1641"/>
         <source>If a whole column (day+hour) is selected, there will be locked/unlocked also the dummy activities (activities with no students sets) from that column.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1657"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1644"/>
         <source>A bold font cell means that the activity is locked in time, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1659"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1646"/>
         <source>An italic font cell means that the activity is locked in space, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1661"/>
+        <location filename="../src/interface/timetableviewstudentstimehorizontalform.cpp" line="1648"/>
         <source>FET help</source>
         <translation type="unfinished">FET - Aiuto</translation>
     </message>
@@ -65427,189 +65379,189 @@ Interrompere la simulazione prima.</translation>
 <context>
     <name>TimetableViewTeachersDaysHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="190"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="346"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="356"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="365"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="372"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="386"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="568"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="574"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="580"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="598"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="698"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="704"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="720"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="767"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="779"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="792"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="850"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="862"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="875"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="188"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="343"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="353"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="362"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="369"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="383"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="563"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="569"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="575"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="593"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="691"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="697"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="713"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="760"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="772"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="785"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="842"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="854"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="867"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="190"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="188"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Impossibile mostrare l&apos;orario, perché hai aggiunto o rimosso qualche insegnante. Rigenerare l&apos;orario per poi visualizzarlo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="346"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="574"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="698"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="343"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="569"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="691"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Orario non disponibile nella finestra degli orari &apos;vedi (insegnanti)&apos;. Genera un nuovo orario</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="356"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="720"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="353"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="713"/>
         <source>Invalid teacher - please close this dialog and open a new view teachers dialog</source>
         <translation type="unfinished">L&apos;insegnante non è valido - chiudi questa finestra e accedi nuovamente per vedere l&apos;orario di un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="365"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="568"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="362"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="563"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable or close the timetable view teachers dialog</source>
         <translation type="unfinished">Orario non disponibile nella finestra degli orari &apos;vedi (insegnanti)&apos;. Genera un nuovo orario oppure chiudi la finestra degli orari &apos;vedi (aule)&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="372"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="580"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="704"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="369"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="575"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="697"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Impossibile mostrare l&apos;orario, perché hai aggiunto o rimosso qualche aula. Rigenerare l&apos;orario per poi visualizzarlo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="386"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="383"/>
         <source>You have an old timetable view teachers dialog opened - please close it</source>
         <translation type="unfinished">Hai una vecchia finestra di dialogo &apos;Vedi (insegnanti)&apos;  aperta - provvedi a chiuderla</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="598"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="593"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
         <translation type="unfinished">L&apos;insegnante non è valido - chiudi questa finestra e accedi nuovamente per vedere l&apos;orario di un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="617"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="612"/>
         <source>Room: %1</source>
         <translation type="unfinished">Aula: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="628"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="623"/>
         <source>Building=%1</source>
         <translation type="unfinished">Edificio=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="631"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="626"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Capacità=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="659"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="654"/>
         <source>Teacher is not available 100% in this slot</source>
         <translation type="unfinished">L&apos;insegnante è indisponibile al 100% in questa ora</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="663"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="658"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Interruzione con peso del 100% in questa ora</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="692"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="712"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="807"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="890"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1009"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="685"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="705"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="799"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="881"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1000"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="693"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="686"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation type="unfinished">Assegnazione in corso.
 Interrompere la simulazione prima.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="712"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="705"/>
         <source>Please select a teacher</source>
         <translation type="unfinished">Seleziona un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="753"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="832"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="746"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="824"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Aggiunto il seguente vincolo:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="767"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="779"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="850"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="862"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="760"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="772"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="842"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="854"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Individuata una piccola anomalia</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="768"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="780"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="761"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="773"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Una possibile anomalia consiste in 2 o più vincoli del genere Orario di inizio preferenziale per attività con peso 100% riferito all&apos;attività id %1. Verifica e di questi lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="769"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="781"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="852"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="864"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="762"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="774"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="844"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="856"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Un possibile problema potrebbe riguardare la sincronizzazione - perciò prova a chiudere la visualizzazione dell&apos;orario per poi aprirla di nuovo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="770"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="782"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="853"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="865"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="763"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="775"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="845"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="857"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Per favore segnala il possibile bug</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="774"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="857"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="767"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="849"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Il vincolo %1 non sarà cancellato perché è bloccato in permanenza. Se lo vuoi sbloccare devi agire nel menu dei vincoli.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="792"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="875"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="785"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="867"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished">Potresti riscontrare un problema, perchè FET si aspettava di dover cancellare 1 vincolo, ma cancellerà %1 vincoli</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="795"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="878"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="788"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="870"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Il seguente vincolo sarà cancellato:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="808"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="891"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="800"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="882"/>
         <source>Skip information</source>
         <translation type="unfinished">Salta l&apos;informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="808"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="891"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="800"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="882"/>
         <source>See next</source>
         <translation type="unfinished">Vedi il prossimo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="851"/>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="863"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="843"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="855"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Una possibile anomalia consiste in 2 o più vincoli del genere aula preferenziale per attività con peso 100% riferito all&apos;attività id %1. Verifica e di questi lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1052"/>
+        <location filename="../src/interface/timetableviewteachersdayshorizontalform.cpp" line="1038"/>
         <source>FET help</source>
         <translation type="unfinished">FET - Aiuto</translation>
     </message>
@@ -65665,205 +65617,205 @@ Interrompere la simulazione prima.</translation>
 <context>
     <name>TimetableViewTeachersTimeHorizontalForm</name>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="207"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="650"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="657"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="877"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="883"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="889"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="899"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="908"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="205"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="648"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="655"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="873"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="879"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="885"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="895"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="904"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1000"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1006"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1012"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1092"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1106"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1086"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1100"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1126"/>
         <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1132"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1138"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1177"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1191"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1226"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1232"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1170"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1184"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1219"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1225"/>
         <source>FET warning</source>
         <translation type="unfinished">FET - Avvertenza</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="207"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="899"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="205"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="895"/>
         <source>Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Impossibile mostrare l&apos;orario, perché hai aggiunto o rimosso qualche insegnante. Rigenerare l&apos;orario per poi visualizzarlo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="311"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="321"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="309"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="319"/>
         <source>px</source>
         <comment>Abbreviation for pixels</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="319"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="329"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="317"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="327"/>
         <source>Automatic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="650"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="883"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="648"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="879"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable or close the timetable view teachers dialog</source>
         <translation type="unfinished">Orario non disponibile nella finestra degli orari &apos;vedi (insegnanti)&apos;. Genera un nuovo orario oppure chiudi la finestra degli orari &apos;vedi (aule)&apos;</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="657"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="889"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1012"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="655"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="885"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1006"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation type="unfinished">Impossibile mostrare l&apos;orario, perché hai aggiunto o rimosso qualche aula. Rigenerare l&apos;orario per poi visualizzarlo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="877"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1006"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="873"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1000"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable</source>
         <translation type="unfinished">Orario non disponibile nella finestra degli orari &apos;vedi (insegnanti)&apos;. Genera un nuovo orario</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="908"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="904"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
         <translation type="unfinished">L&apos;insegnante non è valido - chiudi questa finestra e accedi nuovamente per vedere l&apos;orario di un insegnante</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="925"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="921"/>
         <source>Room: %1</source>
         <translation type="unfinished">Aula: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="936"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="932"/>
         <source>Building=%1</source>
         <translation type="unfinished">Edificio=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="939"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="935"/>
         <source>Capacity=%1</source>
         <translation type="unfinished">Capacità=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="967"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="963"/>
         <source>Teacher is not available 100% in this slot</source>
         <translation type="unfinished">L&apos;insegnante è indisponibile al 100% in questa ora</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="971"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="967"/>
         <source>Break with weight 100% in this slot</source>
         <translation type="unfinished">Interruzione con peso del 100% in questa ora</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1000"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1153"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1247"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1364"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="994"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1146"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1239"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1356"/>
         <source>FET information</source>
         <translation type="unfinished">FET - Informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1001"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="995"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation type="unfinished">Assegnazione in corso.
 Interrompere la simulazione prima.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1092"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1106"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1177"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1191"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1086"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1100"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1170"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1184"/>
         <source>Small problem detected</source>
         <translation type="unfinished">Individuata una piccola anomalia</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1093"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1107"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1087"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1101"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Una possibile anomalia consiste in 2 o più vincoli del genere Orario di inizio preferenziale per attività con peso 100% riferito all&apos;attività id %1. Verifica e di questi lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1094"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1108"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1179"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1193"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1088"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1102"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1172"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1186"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation type="unfinished">Un possibile problema potrebbe riguardare la sincronizzazione - perciò prova a chiudere la visualizzazione dell&apos;orario per poi aprirla di nuovo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1095"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1109"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1180"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1194"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1089"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1103"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1173"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1187"/>
         <source>Please report possible bug</source>
         <translation type="unfinished">Per favore segnala il possibile bug</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1100"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1185"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1094"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1178"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation type="unfinished">Il vincolo %1 non sarà cancellato perché è bloccato in permanenza. Se lo vuoi sbloccare devi agire nel menu dei vincoli.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1127"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1221"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1121"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1214"/>
         <source>Added the following constraint:</source>
         <translation type="unfinished">Aggiunto il seguente vincolo:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1132"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1226"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1126"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1219"/>
         <source>You may have a problem, because FET expected to add 1 constraint, but this is not possible. Please report possible bug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1138"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1232"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1132"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1225"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation type="unfinished">Potresti riscontrare un problema, perchè FET si aspettava di dover cancellare 1 vincolo, ma cancellerà %1 vincoli</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1141"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1235"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1135"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1228"/>
         <source>The following constraint will be deleted:</source>
         <translation type="unfinished">Il seguente vincolo sarà cancellato:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1154"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1248"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1147"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1240"/>
         <source>Skip information</source>
         <translation type="unfinished">Salta l&apos;informazione</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1154"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1248"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1147"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1240"/>
         <source>See next</source>
         <translation type="unfinished">Vedi il prossimo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1178"/>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1192"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1171"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1185"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation type="unfinished">Una possibile anomalia consiste in 2 o più vincoli del genere aula preferenziale per attività con peso 100% riferito all&apos;attività id %1. Verifica e di questi lascia un solo vincolo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1424"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1411"/>
         <source>If a whole column (day+hour) is selected, there will be locked/unlocked also the dummy activities (activities with no teacher) from that column.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1427"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1414"/>
         <source>A bold font cell means that the activity is locked in time, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1429"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1416"/>
         <source>An italic font cell means that the activity is locked in space, either permanently or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1431"/>
+        <location filename="../src/interface/timetableviewteacherstimehorizontalform.cpp" line="1418"/>
         <source>FET help</source>
         <translation type="unfinished">FET - Aiuto</translation>
     </message>

@@ -2147,7 +2147,7 @@ bool Rules::removeYearPointerAfterSplit(StudentsYear* yearPointer)
 	//names
 	QSet<StudentsSet*> toBeRemoved;
 
-	//Not here, because there exists another pointer with the same name (to the new year),
+	//Not here, because there exists another pointer (to the new year) with the same name,
 	//and I don't want to remove the activities with this year name
 	//toBeRemoved.insert(yearPointer);
 	for(StudentsGroup* group : qAsConst(yearPointer->groupsList)){
@@ -2166,7 +2166,7 @@ bool Rules::removeYearPointerAfterSplit(StudentsYear* yearPointer)
 	toBeRemoved.insert(yearPointer);
 	for(StudentsSet* studentsSet : qAsConst(toBeRemoved))
 		delete studentsSet;
-		
+	
 	if(toBeRemoved.count()>1)
 		updateConstraintsAfterRemoval();
 	

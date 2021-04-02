@@ -223,10 +223,10 @@ void ActivitiesForm::studentsFilterChanged()
 			showedStudents.insert("");
 		else{
 			//down
-			StudentsSet* set=gt.rules.searchStudentsSet(studentsComboBox->currentText());
-			assert(set!=nullptr);
-			if(set->type==STUDENTS_YEAR){
-				StudentsYear* year=(StudentsYear*)set;
+			StudentsSet* studentsSet=gt.rules.searchStudentsSet(studentsComboBox->currentText());
+			assert(studentsSet!=nullptr);
+			if(studentsSet->type==STUDENTS_YEAR){
+				StudentsYear* year=(StudentsYear*)studentsSet;
 				showedStudents.insert(year->name);
 				for(StudentsGroup* group : qAsConst(year->groupsList)){
 					showedStudents.insert(group->name);
@@ -234,14 +234,14 @@ void ActivitiesForm::studentsFilterChanged()
 						showedStudents.insert(subgroup->name);
 				}
 			}
-			else if(set->type==STUDENTS_GROUP){
-				StudentsGroup* group=(StudentsGroup*) set;
+			else if(studentsSet->type==STUDENTS_GROUP){
+				StudentsGroup* group=(StudentsGroup*)studentsSet;
 				showedStudents.insert(group->name);
 				for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList))
 					showedStudents.insert(subgroup->name);
 			}
-			else if(set->type==STUDENTS_SUBGROUP){
-				StudentsSubgroup* subgroup=(StudentsSubgroup*) set;
+			else if(studentsSet->type==STUDENTS_SUBGROUP){
+				StudentsSubgroup* subgroup=(StudentsSubgroup*)studentsSet;
 				showedStudents.insert(subgroup->name);
 			}
 			else

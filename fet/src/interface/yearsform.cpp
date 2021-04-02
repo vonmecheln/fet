@@ -248,9 +248,9 @@ void YearsForm::modifyYear()
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
 	
-	StudentsSet* sset=gt.rules.searchStudentsSet(yearName);
-	assert(sset!=nullptr);
-	int numberOfStudents=sset->numberOfStudents;
+	StudentsSet* studentsSet=gt.rules.searchStudentsSet(yearName);
+	assert(studentsSet!=nullptr);
+	int numberOfStudents=studentsSet->numberOfStudents;
 
 	ModifyStudentsYearForm form(this, yearName, numberOfStudents);
 	setParentAndOtherThings(&form, this);
@@ -321,8 +321,8 @@ void YearsForm::comments()
 	
 	QString yearName=yearsListWidget->currentItem()->text();
 	
-	StudentsSet* sset=gt.rules.searchStudentsSet(yearName);
-	assert(sset!=nullptr);
+	StudentsSet* studentsSet=gt.rules.searchStudentsSet(yearName);
+	assert(studentsSet!=nullptr);
 
 	QDialog getCommentsDialog(this);
 	
@@ -343,7 +343,7 @@ void YearsForm::comments()
 	QVBoxLayout* vl=new QVBoxLayout();
 	
 	QPlainTextEdit* commentsPT=new QPlainTextEdit();
-	commentsPT->setPlainText(sset->comments);
+	commentsPT->setPlainText(studentsSet->comments);
 	commentsPT->selectAll();
 	commentsPT->setFocus();
 	
@@ -362,7 +362,7 @@ void YearsForm::comments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
-		sset->comments=commentsPT->toPlainText();
+		studentsSet->comments=commentsPT->toPlainText();
 	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);

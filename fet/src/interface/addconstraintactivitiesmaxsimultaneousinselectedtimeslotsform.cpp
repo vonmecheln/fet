@@ -19,8 +19,6 @@
 
 #include <QMessageBox>
 
-#include "tablewidgetupdatebug.h"
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.h"
@@ -98,8 +96,6 @@ AddConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::AddConstraintActi
 	connect(selectedTimesTable->verticalHeader(), SIGNAL(sectionClicked(int)), this, SLOT(verticalHeaderClicked(int)));
 
 	selectedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
-	
-	tableWidgetUpdateBug(selectedTimesTable);
 	
 	setStretchAvailabilityTableNicely(selectedTimesTable);
 	
@@ -187,7 +183,6 @@ void AddConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::horizontalHe
 			selectedTimesTable->item(row, col)->setText(s);
 			colorItem(selectedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(selectedTimesTable);
 	}
 }
 
@@ -206,7 +201,6 @@ void AddConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::verticalHead
 			selectedTimesTable->item(row, col)->setText(s);
 			colorItem(selectedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(selectedTimesTable);
 	}
 }
 
@@ -217,7 +211,6 @@ void AddConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::setAllUnsele
 			selectedTimesTable->item(i, j)->setText(NO);
 			colorItem(selectedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(selectedTimesTable);
 }
 
 void AddConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::setAllSelected()
@@ -227,7 +220,6 @@ void AddConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::setAllSelect
 			selectedTimesTable->item(i, j)->setText(YES);
 			colorItem(selectedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(selectedTimesTable);
 }
 
 void AddConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::itemClicked(QTableWidgetItem* item)
@@ -241,8 +233,6 @@ void AddConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::itemClicked(
 	}
 	item->setText(s);
 	colorItem(item);
-	
-	tableWidgetUpdateBug(selectedTimesTable);
 }
 
 void AddConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::addCurrentConstraint()

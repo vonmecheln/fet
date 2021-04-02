@@ -59,7 +59,7 @@ public:
 	*/
 	int buildingIndex;
 
-	QList<QList<int> > rrsl; //Internal. Contains the rooms' indices.
+	QList<QList<int>> rrsl; //Internal. Contains the rooms' indices.
 
 	Room();
 	~Room();

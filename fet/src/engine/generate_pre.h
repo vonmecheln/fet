@@ -55,38 +55,38 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 //extern qint8 activitiesConflictingPercentage[MAX_ACTIVITIES][MAX_ACTIVITIES]; //-1 for not conflicting,
 //extern Matrix2D<qint8> activitiesConflictingPercentage; //-1 for not conflicting,
 //a value >=0 equal with the weight of the maximum weightPercentage of a basic time constraint
-extern Matrix1D<QHash<int, int> > activitiesConflictingPercentage;
+extern Matrix1D<QHash<int, int>> activitiesConflictingPercentage;
 
 bool computeActivitiesConflictingPercentage(QWidget* parent);
 //void computeActivitiesConflicting();
 
-void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int> > & reprSameActivitiesSet, QTextStream* initialOrderStream=nullptr);
+void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int>> & reprSameActivitiesSet, QTextStream* initialOrderStream=nullptr);
 ////////END   BASIC TIME CONSTRAINTS
 
 
 ////////BEGIN MIN DAYS TIME CONSTRAINTS
-extern Matrix1D<QList<int> > minDaysListOfActivities;
-extern Matrix1D<QList<int> > minDaysListOfMinDays;
-extern Matrix1D<QList<double> > minDaysListOfWeightPercentages;
-extern Matrix1D<QList<bool> > minDaysListOfConsecutiveIfSameDay;
+extern Matrix1D<QList<int>> minDaysListOfActivities;
+extern Matrix1D<QList<int>> minDaysListOfMinDays;
+extern Matrix1D<QList<double>> minDaysListOfWeightPercentages;
+extern Matrix1D<QList<bool>> minDaysListOfConsecutiveIfSameDay;
 
 bool computeMinDays(QWidget* parent);
 ////////END   MIN DAYS TIME CONSTRAINTS
 
 
 ////////BEGIN MAX DAYS TIME CONSTRAINTS
-extern Matrix1D<QList<int> > maxDaysListOfActivities;
-extern Matrix1D<QList<int> > maxDaysListOfMaxDays;
-extern Matrix1D<QList<double> > maxDaysListOfWeightPercentages;
+extern Matrix1D<QList<int>> maxDaysListOfActivities;
+extern Matrix1D<QList<int>> maxDaysListOfMaxDays;
+extern Matrix1D<QList<double>> maxDaysListOfWeightPercentages;
 
 bool computeMaxDays(QWidget* parent);
 ////////END   MAX DAYS TIME CONSTRAINTS
 
 
 ////////BEGIN MIN GAPS between activities TIME CONSTRAINTS
-extern Matrix1D<QList<int> > minGapsBetweenActivitiesListOfActivities;
-extern Matrix1D<QList<int> > minGapsBetweenActivitiesListOfMinGaps;
-extern Matrix1D<QList<double> > minGapsBetweenActivitiesListOfWeightPercentages;
+extern Matrix1D<QList<int>> minGapsBetweenActivitiesListOfActivities;
+extern Matrix1D<QList<int>> minGapsBetweenActivitiesListOfMinGaps;
+extern Matrix1D<QList<double>> minGapsBetweenActivitiesListOfWeightPercentages;
 
 bool computeMinGapsBetweenActivities(QWidget* parent);
 ////////END	 MIN GAPS between activities TIME CONSTRAINTS
@@ -145,7 +145,7 @@ extern double subgroupsMaxDaysPerWeekWeightPercentages[MAX_TOTAL_SUBGROUPS]; //-
 //it is practically better to use the variable below and to put it exactly like in generate.cpp,
 //the order of activities changes
 ///extern QList<int> teacherActivitiesOfTheDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
-extern Matrix1D<QList<int> > subgroupsWithMaxDaysPerWeekForActivities;
+extern Matrix1D<QList<int>> subgroupsWithMaxDaysPerWeekForActivities;
 
 ////////BEGIN teachers max days per week
 //activities indices (in 0..gt.rules.nInternalActivities-1) for each teacher
@@ -154,7 +154,7 @@ extern double teachersMaxDaysPerWeekWeightPercentages[MAX_TEACHERS]; //-1 for no
 //it is practically better to use the variable below and to put it exactly like in generate.cpp,
 //the order of activities changes
 ///extern QList<int> teacherActivitiesOfTheDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
-extern Matrix1D<QList<int> > teachersWithMaxDaysPerWeekForActivities;
+extern Matrix1D<QList<int>> teachersWithMaxDaysPerWeekForActivities;
 
 bool computeMaxDaysPerWeekForTeachers(QWidget* parent);
 
@@ -178,29 +178,29 @@ bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent);
 
 
 ////////BEGIN activities same starting time
-extern Matrix1D<QList<int> > activitiesSameStartingTimeActivities;
-extern Matrix1D<QList<double> > activitiesSameStartingTimePercentages;
-bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int> & reprSameStartingTime, QHash<int, QSet<int> > & reprSameActivitiesSet);
+extern Matrix1D<QList<int>> activitiesSameStartingTimeActivities;
+extern Matrix1D<QList<double>> activitiesSameStartingTimePercentages;
+bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int> & reprSameStartingTime, QHash<int, QSet<int>> & reprSameActivitiesSet);
 ////////END   activities same starting time
 
 
 ////////BEGIN activities same starting hour
-extern Matrix1D<QList<int> > activitiesSameStartingHourActivities;
-extern Matrix1D<QList<double> > activitiesSameStartingHourPercentages;
+extern Matrix1D<QList<int>> activitiesSameStartingHourActivities;
+extern Matrix1D<QList<double>> activitiesSameStartingHourPercentages;
 void computeActivitiesSameStartingHour();
 ////////END   activities same starting hour
 
 
 ////////BEGIN activities same starting day
-extern Matrix1D<QList<int> > activitiesSameStartingDayActivities;
-extern Matrix1D<QList<double> > activitiesSameStartingDayPercentages;
+extern Matrix1D<QList<int>> activitiesSameStartingDayActivities;
+extern Matrix1D<QList<double>> activitiesSameStartingDayPercentages;
 void computeActivitiesSameStartingDay();
 ////////END   activities same starting hour
 
 
 ////////BEGIN activities not overlapping
-extern Matrix1D<QList<int> > activitiesNotOverlappingActivities;
-extern Matrix1D<QList<double> > activitiesNotOverlappingPercentages;
+extern Matrix1D<QList<int>> activitiesNotOverlappingActivities;
+extern Matrix1D<QList<double>> activitiesNotOverlappingPercentages;
 void computeActivitiesNotOverlapping();
 ////////END   activities not overlapping
 
@@ -235,9 +235,9 @@ bool computeTeachersMaxHoursContinuously(QWidget* parent);
 ///////BEGIN teacher(s) activity tag max hours daily
 extern bool haveTeachersActivityTagMaxHoursDaily;
 
-extern Matrix1D<QList<int> > teachersActivityTagMaxHoursDailyMaxHours;
-extern Matrix1D<QList<int> > teachersActivityTagMaxHoursDailyActivityTag;
-extern Matrix1D<QList<double> > teachersActivityTagMaxHoursDailyPercentage;
+extern Matrix1D<QList<int>> teachersActivityTagMaxHoursDailyMaxHours;
+extern Matrix1D<QList<int>> teachersActivityTagMaxHoursDailyActivityTag;
+extern Matrix1D<QList<double>> teachersActivityTagMaxHoursDailyPercentage;
 //(formerly arrays of size MAX_TEACHERS)
 
 bool computeTeachersActivityTagMaxHoursDaily(QWidget* parent);
@@ -247,9 +247,9 @@ bool computeTeachersActivityTagMaxHoursDaily(QWidget* parent);
 ///////BEGIN teacher(s) activity tag max hours continuously
 extern bool haveTeachersActivityTagMaxHoursContinuously;
 
-extern Matrix1D<QList<int> > teachersActivityTagMaxHoursContinuouslyMaxHours;
-extern Matrix1D<QList<int> > teachersActivityTagMaxHoursContinuouslyActivityTag;
-extern Matrix1D<QList<double> > teachersActivityTagMaxHoursContinuouslyPercentage;
+extern Matrix1D<QList<int>> teachersActivityTagMaxHoursContinuouslyMaxHours;
+extern Matrix1D<QList<int>> teachersActivityTagMaxHoursContinuouslyActivityTag;
+extern Matrix1D<QList<double>> teachersActivityTagMaxHoursContinuouslyPercentage;
 //(formerly arrays of size MAX_TEACHERS)
 
 bool computeTeachersActivityTagMaxHoursContinuously(QWidget* parent);
@@ -297,9 +297,9 @@ bool computeStudentsMaxHoursContinuously(QWidget* parent);
 ///////BEGIN students (set) activity tag max hours daily
 extern bool haveStudentsActivityTagMaxHoursDaily;
 
-extern Matrix1D<QList<int> > subgroupsActivityTagMaxHoursDailyMaxHours;
-extern Matrix1D<QList<int> > subgroupsActivityTagMaxHoursDailyActivityTag;
-extern Matrix1D<QList<double> > subgroupsActivityTagMaxHoursDailyPercentage;
+extern Matrix1D<QList<int>> subgroupsActivityTagMaxHoursDailyMaxHours;
+extern Matrix1D<QList<int>> subgroupsActivityTagMaxHoursDailyActivityTag;
+extern Matrix1D<QList<double>> subgroupsActivityTagMaxHoursDailyPercentage;
 //(formerly arrays of size MAX_TOTAL_SUBGROUPS)
 
 bool computeStudentsActivityTagMaxHoursDaily(QWidget* parent);
@@ -309,9 +309,9 @@ bool computeStudentsActivityTagMaxHoursDaily(QWidget* parent);
 ///////BEGIN students (set) activity tag max hours continuously
 extern bool haveStudentsActivityTagMaxHoursContinuously;
 
-extern Matrix1D<QList<int> > subgroupsActivityTagMaxHoursContinuouslyMaxHours;
-extern Matrix1D<QList<int> > subgroupsActivityTagMaxHoursContinuouslyActivityTag;
-extern Matrix1D<QList<double> > subgroupsActivityTagMaxHoursContinuouslyPercentage;
+extern Matrix1D<QList<int>> subgroupsActivityTagMaxHoursContinuouslyMaxHours;
+extern Matrix1D<QList<int>> subgroupsActivityTagMaxHoursContinuouslyActivityTag;
+extern Matrix1D<QList<double>> subgroupsActivityTagMaxHoursContinuouslyPercentage;
 //(formerly arrays of size MAX_TOTAL_SUBGROUPS)
 
 bool computeStudentsActivityTagMaxHoursContinuously(QWidget* parent);
@@ -328,50 +328,50 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent);
 
 //////////////BEGIN 2 activities consecutive
 //index represents the first activity, value in array represents the second activity
-extern Matrix1D<QList<double> > constrTwoActivitiesConsecutivePercentages;
-extern Matrix1D<QList<int> > constrTwoActivitiesConsecutiveActivities;
+extern Matrix1D<QList<double>> constrTwoActivitiesConsecutivePercentages;
+extern Matrix1D<QList<int>> constrTwoActivitiesConsecutiveActivities;
 void computeConstrTwoActivitiesConsecutive();
 
 //index represents the second activity, value in array represents the first activity
-extern Matrix1D<QList<double> > inverseConstrTwoActivitiesConsecutivePercentages;
-extern Matrix1D<QList<int> > inverseConstrTwoActivitiesConsecutiveActivities;
+extern Matrix1D<QList<double>> inverseConstrTwoActivitiesConsecutivePercentages;
+extern Matrix1D<QList<int>> inverseConstrTwoActivitiesConsecutiveActivities;
 //////////////END   2 activities consecutive
 
 
 //////////////BEGIN 2 activities grouped
 //index represents the first activity, value in array represents the second activity
-extern Matrix1D<QList<double> > constrTwoActivitiesGroupedPercentages;
-extern Matrix1D<QList<int> > constrTwoActivitiesGroupedActivities;
+extern Matrix1D<QList<double>> constrTwoActivitiesGroupedPercentages;
+extern Matrix1D<QList<int>> constrTwoActivitiesGroupedActivities;
 void computeConstrTwoActivitiesGrouped();
 
 
 //////////////BEGIN 3 activities grouped
 //index represents the first activity, value in array represents the second and third activities
-extern Matrix1D<QList<double> > constrThreeActivitiesGroupedPercentages;
-extern Matrix1D<QList<QPair<int, int> > > constrThreeActivitiesGroupedActivities;
+extern Matrix1D<QList<double>> constrThreeActivitiesGroupedPercentages;
+extern Matrix1D<QList<QPair<int, int>>> constrThreeActivitiesGroupedActivities;
 void computeConstrThreeActivitiesGrouped();
 
 
 //////////////BEGIN 2 activities ordered
 //index represents the first activity, value in array represents the second activity
-extern Matrix1D<QList<double> > constrTwoActivitiesOrderedPercentages;
-extern Matrix1D<QList<int> > constrTwoActivitiesOrderedActivities;
+extern Matrix1D<QList<double>> constrTwoActivitiesOrderedPercentages;
+extern Matrix1D<QList<int>> constrTwoActivitiesOrderedActivities;
 void computeConstrTwoActivitiesOrdered();
 
 //index represents the second activity, value in array represents the first activity
-extern Matrix1D<QList<double> > inverseConstrTwoActivitiesOrderedPercentages;
-extern Matrix1D<QList<int> > inverseConstrTwoActivitiesOrderedActivities;
+extern Matrix1D<QList<double>> inverseConstrTwoActivitiesOrderedPercentages;
+extern Matrix1D<QList<int>> inverseConstrTwoActivitiesOrderedActivities;
 //////////////END   2 activities ordered
 
 //////////////BEGIN 2 activities ordered if same day
 //index represents the first activity, value in array represents the second activity
-extern Matrix1D<QList<double> > constrTwoActivitiesOrderedIfSameDayPercentages;
-extern Matrix1D<QList<int> > constrTwoActivitiesOrderedIfSameDayActivities;
+extern Matrix1D<QList<double>> constrTwoActivitiesOrderedIfSameDayPercentages;
+extern Matrix1D<QList<int>> constrTwoActivitiesOrderedIfSameDayActivities;
 void computeConstrTwoActivitiesOrderedIfSameDay();
 
 //index represents the second activity, value in array represents the first activity
-extern Matrix1D<QList<double> > inverseConstrTwoActivitiesOrderedIfSameDayPercentages;
-extern Matrix1D<QList<int> > inverseConstrTwoActivitiesOrderedIfSameDayActivities;
+extern Matrix1D<QList<double>> inverseConstrTwoActivitiesOrderedIfSameDayPercentages;
+extern Matrix1D<QList<int>> inverseConstrTwoActivitiesOrderedIfSameDayActivities;
 //////////////END   2 activities ordered if same day
 
 
@@ -390,40 +390,20 @@ bool checkMaxHoursForActivityDuration(QWidget* parent);
 
 
 ///////BEGIN teachers interval max days per week
-extern double teachersIntervalMaxDaysPerWeekPercentages1[MAX_TEACHERS];
-extern int teachersIntervalMaxDaysPerWeekMaxDays1[MAX_TEACHERS];
-extern int teachersIntervalMaxDaysPerWeekIntervalStart1[MAX_TEACHERS];
-extern int teachersIntervalMaxDaysPerWeekIntervalEnd1[MAX_TEACHERS];
-
-extern double teachersIntervalMaxDaysPerWeekPercentages2[MAX_TEACHERS];
-extern int teachersIntervalMaxDaysPerWeekMaxDays2[MAX_TEACHERS];
-extern int teachersIntervalMaxDaysPerWeekIntervalStart2[MAX_TEACHERS];
-extern int teachersIntervalMaxDaysPerWeekIntervalEnd2[MAX_TEACHERS];
-
-extern double teachersIntervalMaxDaysPerWeekPercentages3[MAX_TEACHERS];
-extern int teachersIntervalMaxDaysPerWeekMaxDays3[MAX_TEACHERS];
-extern int teachersIntervalMaxDaysPerWeekIntervalStart3[MAX_TEACHERS];
-extern int teachersIntervalMaxDaysPerWeekIntervalEnd3[MAX_TEACHERS];
+extern Matrix1D<QList<double>> teachersIntervalMaxDaysPerWeekPercentages;
+extern Matrix1D<QList<int>> teachersIntervalMaxDaysPerWeekMaxDays;
+extern Matrix1D<QList<int>> teachersIntervalMaxDaysPerWeekIntervalStart;
+extern Matrix1D<QList<int>> teachersIntervalMaxDaysPerWeekIntervalEnd;
 
 bool computeTeachersIntervalMaxDaysPerWeek(QWidget* parent);
 ///////END   teachers interval max days per week
 
 
 ///////BEGIN subgroups interval max days per week
-extern double subgroupsIntervalMaxDaysPerWeekPercentages1[MAX_TOTAL_SUBGROUPS];
-extern int subgroupsIntervalMaxDaysPerWeekMaxDays1[MAX_TOTAL_SUBGROUPS];
-extern int subgroupsIntervalMaxDaysPerWeekIntervalStart1[MAX_TOTAL_SUBGROUPS];
-extern int subgroupsIntervalMaxDaysPerWeekIntervalEnd1[MAX_TOTAL_SUBGROUPS];
-
-extern double subgroupsIntervalMaxDaysPerWeekPercentages2[MAX_TOTAL_SUBGROUPS];
-extern int subgroupsIntervalMaxDaysPerWeekMaxDays2[MAX_TOTAL_SUBGROUPS];
-extern int subgroupsIntervalMaxDaysPerWeekIntervalStart2[MAX_TOTAL_SUBGROUPS];
-extern int subgroupsIntervalMaxDaysPerWeekIntervalEnd2[MAX_TOTAL_SUBGROUPS];
-
-extern double subgroupsIntervalMaxDaysPerWeekPercentages3[MAX_TOTAL_SUBGROUPS];
-extern int subgroupsIntervalMaxDaysPerWeekMaxDays3[MAX_TOTAL_SUBGROUPS];
-extern int subgroupsIntervalMaxDaysPerWeekIntervalStart3[MAX_TOTAL_SUBGROUPS];
-extern int subgroupsIntervalMaxDaysPerWeekIntervalEnd3[MAX_TOTAL_SUBGROUPS];
+extern Matrix1D<QList<double>> subgroupsIntervalMaxDaysPerWeekPercentages;
+extern Matrix1D<QList<int>> subgroupsIntervalMaxDaysPerWeekMaxDays;
+extern Matrix1D<QList<int>> subgroupsIntervalMaxDaysPerWeekIntervalStart;
+extern Matrix1D<QList<int>> subgroupsIntervalMaxDaysPerWeekIntervalEnd;
 
 bool computeSubgroupsIntervalMaxDaysPerWeek(QWidget* parent);
 ///////END   subgroups interval max days per week
@@ -467,14 +447,14 @@ public:
 	QSet<int> preferredRooms;
 };
 
-extern Matrix1D<QList<PreferredRoomsItem> > activitiesPreferredRoomsList;
+extern Matrix1D<QList<PreferredRoomsItem>> activitiesPreferredRoomsList;
 extern bool unspecifiedPreferredRoom[MAX_ACTIVITIES];
 
-extern Matrix1D<QList<int> > activitiesHomeRoomsHomeRooms;
+extern Matrix1D<QList<int>> activitiesHomeRoomsHomeRooms;
 extern double activitiesHomeRoomsPercentage[MAX_ACTIVITIES];
 extern bool unspecifiedHomeRoom[MAX_ACTIVITIES];
 
-extern Matrix1D<QSet<int> > preferredRealRooms;
+extern Matrix1D<QSet<int>> preferredRealRooms;
 
 bool computeActivitiesRoomsPreferences(QWidget* parent);
 ////////END   rooms
@@ -534,8 +514,8 @@ bool computeMaxRoomChangesPerWeekForTeachers(QWidget* parent);
 ////////END   rooms
 
 
-extern Matrix1D<QList<int> > mustComputeTimetableSubgroups;
-extern Matrix1D<QList<int> > mustComputeTimetableTeachers;
+extern Matrix1D<QList<int>> mustComputeTimetableSubgroups;
+extern Matrix1D<QList<int>> mustComputeTimetableTeachers;
 extern bool mustComputeTimetableSubgroup[MAX_TOTAL_SUBGROUPS];
 extern bool mustComputeTimetableTeacher[MAX_TEACHERS];
 
@@ -561,7 +541,7 @@ public:
 
 //We need the references to the elements to be valid, so we need this to be a std::list
 extern std::list<ActivitiesOccupyMaxTimeSlotsFromSelection_item> aomtsList;
-extern Matrix1D<QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item*> > aomtsListForActivity;
+extern Matrix1D<QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item*>> aomtsListForActivity;
 
 bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent);
 
@@ -580,7 +560,7 @@ public:
 
 //We need the references to the elements to be valid, so we need this to be a std::list
 extern std::list<ActivitiesOccupyMinTimeSlotsFromSelection_item> aomintsList;
-extern Matrix1D<QList<ActivitiesOccupyMinTimeSlotsFromSelection_item*> > aomintsListForActivity;
+extern Matrix1D<QList<ActivitiesOccupyMinTimeSlotsFromSelection_item*>> aomintsListForActivity;
 
 bool computeActivitiesOccupyMinTimeSlotsFromSelection(QWidget* parent);
 
@@ -599,7 +579,7 @@ public:
 
 //We need the references to the elements to be valid, so we need this to be a std::list
 extern std::list<ActivitiesMaxSimultaneousInSelectedTimeSlots_item> amsistsList;
-extern Matrix1D<QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item*> > amsistsListForActivity;
+extern Matrix1D<QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item*>> amsistsListForActivity;
 
 bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent);
 
@@ -620,7 +600,7 @@ public:
 
 //We need the references to the elements to be valid, so we need this to be a std::list
 extern std::list<ActivitiesMinSimultaneousInSelectedTimeSlots_item> aminsistsList;
-extern Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*> > aminsistsListForActivity;
+extern Matrix1D<QList<ActivitiesMinSimultaneousInSelectedTimeSlots_item*>> aminsistsListForActivity;
 
 bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent);
 
@@ -643,7 +623,7 @@ public:
 
 //We need the references to the elements to be valid, so we need this to be a std::list
 extern std::list<StudentsMinGapsBetweenOrderedPairOfActivityTags_item> smgbopoatList;
-extern Matrix1D<QList<StudentsMinGapsBetweenOrderedPairOfActivityTags_item*> > smgbopoatListForActivity;
+extern Matrix1D<QList<StudentsMinGapsBetweenOrderedPairOfActivityTags_item*>> smgbopoatListForActivity;
 
 bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent);
 
@@ -660,7 +640,7 @@ public:
 
 //We need the references to the elements to be valid, so we need this to be a std::list
 extern std::list<TeachersMinGapsBetweenOrderedPairOfActivityTags_item> tmgbopoatList;
-extern Matrix1D<QList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item*> > tmgbopoatListForActivity;
+extern Matrix1D<QList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item*>> tmgbopoatListForActivity;
 
 bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent);
 
@@ -677,7 +657,7 @@ public:
 
 //We need the references to the elements to be valid, so we need this to be a std::list
 extern std::list<ActivitiesOccupyMaxDifferentRooms_item> aomdrList;
-extern Matrix1D<QList<ActivitiesOccupyMaxDifferentRooms_item*> > aomdrListForActivity;
+extern Matrix1D<QList<ActivitiesOccupyMaxDifferentRooms_item*>> aomdrListForActivity;
 
 bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent);
 
@@ -693,7 +673,7 @@ public:
 
 //We need the references to the elements to be valid, so we need this to be a std::list
 extern std::list<ActivitiesSameRoomIfConsecutive_item> asricList;
-extern Matrix1D<QList<ActivitiesSameRoomIfConsecutive_item*> > asricListForActivity;
+extern Matrix1D<QList<ActivitiesSameRoomIfConsecutive_item*>> asricListForActivity;
 
 bool computeActivitiesSameRoomIfConsecutive(QWidget* parent);
 
@@ -711,7 +691,7 @@ public:
 
 //We need the references to the elements to be valid, so we need this to be a std::list
 extern std::list<SubgroupActivityTagMinHoursDaily_item> satmhdList;
-extern Matrix1D<QList<SubgroupActivityTagMinHoursDaily_item*> > satmhdListForSubgroup;
+extern Matrix1D<QList<SubgroupActivityTagMinHoursDaily_item*>> satmhdListForSubgroup;
 extern bool haveStudentsActivityTagMinHoursDaily;
 
 bool computeStudentsActivityTagMinHoursDaily(QWidget* parent);
@@ -728,7 +708,7 @@ public:
 
 //We need the references to the elements to be valid, so we need this to be a std::list
 extern std::list<TeacherActivityTagMinHoursDaily_item> tatmhdList;
-extern Matrix1D<QList<TeacherActivityTagMinHoursDaily_item*> > tatmhdListForTeacher;
+extern Matrix1D<QList<TeacherActivityTagMinHoursDaily_item*>> tatmhdListForTeacher;
 extern bool haveTeachersActivityTagMinHoursDaily;
 
 bool computeTeachersActivityTagMinHoursDaily(QWidget* parent);

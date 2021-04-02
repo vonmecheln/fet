@@ -19,8 +19,6 @@
 
 #include <QMessageBox>
 
-#include "tablewidgetupdatebug.h"
-
 #include "longtextmessagebox.h"
 
 #include "modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.h"
@@ -127,8 +125,6 @@ ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::ModifyConstrai
 
 	selectedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
-	tableWidgetUpdateBug(selectedTimesTable);
-	
 	setStretchAvailabilityTableNicely(selectedTimesTable);
 	
 	//activities
@@ -227,7 +223,6 @@ void ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::horizonta
 			selectedTimesTable->item(row, col)->setText(s);
 			colorItem(selectedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(selectedTimesTable);
 	}
 }
 
@@ -246,7 +241,6 @@ void ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::verticalH
 			selectedTimesTable->item(row, col)->setText(s);
 			colorItem(selectedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(selectedTimesTable);
 	}
 }
 
@@ -257,7 +251,6 @@ void ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::setAllUns
 			selectedTimesTable->item(i, j)->setText(NO);
 			colorItem(selectedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(selectedTimesTable);
 }
 
 void ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::setAllSelected()
@@ -267,7 +260,6 @@ void ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::setAllSel
 			selectedTimesTable->item(i, j)->setText(YES);
 			colorItem(selectedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(selectedTimesTable);
 }
 
 void ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::itemClicked(QTableWidgetItem* item)
@@ -281,8 +273,6 @@ void ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::itemClick
 	}
 	item->setText(s);
 	colorItem(item);
-	
-	tableWidgetUpdateBug(selectedTimesTable);
 }
 
 void ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::ok()

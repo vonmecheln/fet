@@ -1964,8 +1964,8 @@ void Import::importCSVStudents(QWidget* parent){
 	//cout<<"progress3 in importCSVStudents starts, range="<<fieldList[FIELD_YEAR_NAME].size()<<endl;
 	
 	QHash<QString, StudentsSet*> studentsHash;
-	QSet<QPair<QString, QString> > groupsInYearSet; //first year, then group
-	QSet<QPair<QString, QString> > subgroupsInGroupSet; //first group, then subgroup
+	QSet<QPair<QString, QString>> groupsInYearSet; //first year, then group
+	QSet<QPair<QString, QString>> subgroupsInGroupSet; //first group, then subgroup
 	for(StudentsYear* year : qAsConst(gt.rules.yearsList)){
 		studentsHash.insert(year->name, year);
 		for(StudentsGroup* group : qAsConst(year->groupsList)){

@@ -19,8 +19,6 @@
 
 #include <QMessageBox>
 
-#include "tablewidgetupdatebug.h"
-
 #include "modifyconstraintbreaktimesform.h"
 #include "timeconstraint.h"
 
@@ -105,8 +103,6 @@ ModifyConstraintBreakTimesForm::ModifyConstraintBreakTimesForm(QWidget* parent, 
 
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
-	tableWidgetUpdateBug(notAllowedTimesTable);
-	
 	setStretchAvailabilityTableNicely(notAllowedTimesTable);
 }
 
@@ -149,7 +145,6 @@ void ModifyConstraintBreakTimesForm::horizontalHeaderClicked(int col)
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(notAllowedTimesTable);
 	}
 }
 
@@ -168,7 +163,6 @@ void ModifyConstraintBreakTimesForm::verticalHeaderClicked(int row)
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(notAllowedTimesTable);
 	}
 }
 
@@ -179,7 +173,6 @@ void ModifyConstraintBreakTimesForm::setAllAllowed()
 			notAllowedTimesTable->item(i, j)->setText(NO);
 			colorItem(notAllowedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(notAllowedTimesTable);
 }
 
 void ModifyConstraintBreakTimesForm::setAllBreak()
@@ -189,7 +182,6 @@ void ModifyConstraintBreakTimesForm::setAllBreak()
 			notAllowedTimesTable->item(i, j)->setText(YES);
 			colorItem(notAllowedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(notAllowedTimesTable);
 }
 
 void ModifyConstraintBreakTimesForm::itemClicked(QTableWidgetItem* item)
@@ -203,8 +195,6 @@ void ModifyConstraintBreakTimesForm::itemClicked(QTableWidgetItem* item)
 	}
 	item->setText(s);
 	colorItem(item);
-
-	tableWidgetUpdateBug(notAllowedTimesTable);
 }
 
 void ModifyConstraintBreakTimesForm::ok()

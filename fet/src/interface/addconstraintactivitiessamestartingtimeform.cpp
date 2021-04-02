@@ -253,7 +253,7 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 		}
 	
 		/////////////phase 2 - compute the indices of all the (sub)activities
-		Matrix1D<QList<int> > ids;
+		Matrix1D<QList<int>> ids;
 		ids.resize(nConstraints);
 
 		for(int i=0; i<nConstraints; i++)

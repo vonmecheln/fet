@@ -172,8 +172,8 @@ static Matrix1D<int> sbgDayNGaps;
 static Matrix1D<int> sbgDayNFirstGaps;
 
 //static QList<int> teacherActivitiesOfTheDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
-static Matrix2D<QList<int> > teacherActivitiesOfTheDay;
-static Matrix2D<QList<int> > subgroupActivitiesOfTheDay;
+static Matrix2D<QList<int>> teacherActivitiesOfTheDay;
+static Matrix2D<QList<int>> subgroupActivitiesOfTheDay;
 
 int maxActivitiesPlaced;
 
@@ -188,10 +188,10 @@ static Matrix1D<int> l0minWrong;
 static Matrix1D<int> l0minIndexAct;
 
 //2011-09-25
-static Matrix1D<QSet<int> > slotSetOfActivities;
+static Matrix1D<QSet<int>> slotSetOfActivities;
 static Matrix1D<bool> slotCanEmpty;
 
-static Matrix1D<QSet<int> > activitiesAtTime;
+static Matrix1D<QSet<int>> activitiesAtTime;
 ////////////
 
 inline void Generate::addAiToNewTimetable(int ai, const Activity* act, int d, int h)
@@ -2056,7 +2056,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 			continue;
 
 		//correction needed
-		QList<QSet<int> > activitiesInRoom;
+		QList<QSet<int>> activitiesInRoom;
 		occupiedRoomsSet.clear();
 		QList<int> occupiedRoomsList;
 		QHash<int, int> roomIndexInOccupiedRoomsList;
@@ -2272,7 +2272,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 	int optNWrong=INF;
 	int optMinIndexAct=gt.rules.nInternalActivities;
 	
-	QList<QList<int> > conflActivitiesRooms;
+	QList<QList<int>> conflActivitiesRooms;
 	QList<int> nConflActivitiesRooms;
 	QList<int> listedRooms;
 	
@@ -9639,7 +9639,7 @@ impossibleteachersmindaysperweek:
 				}
 				
 				if(!correct){
-					QList<QSet<int> > candidates;
+					QList<QSet<int>> candidates;
 					QSet<int> allCandidates;
 					for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 						if(item->selectedTimeSlotsSet.contains(t)){
@@ -9690,7 +9690,7 @@ impossibleteachersmindaysperweek:
 						assert(nConflActivities[newtime]==conflActivities[newtime].count());
 						////
 	
-						QList<QSet<int> > newCandidates;
+						QList<QSet<int>> newCandidates;
 						QSet<int> newAllCandidates;
 						
 						for(const QSet<int>& tmpSet : qAsConst(candidates))

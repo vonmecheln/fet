@@ -19,8 +19,6 @@
 
 #include <QMessageBox>
 
-#include "tablewidgetupdatebug.h"
-
 #include "modifyconstraintroomnotavailabletimesform.h"
 #include "spaceconstraint.h"
 
@@ -110,8 +108,6 @@ ModifyConstraintRoomNotAvailableTimesForm::ModifyConstraintRoomNotAvailableTimes
 
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 
-	tableWidgetUpdateBug(notAllowedTimesTable);
-	
 	setStretchAvailabilityTableNicely(notAllowedTimesTable);
 }
 
@@ -154,7 +150,6 @@ void ModifyConstraintRoomNotAvailableTimesForm::horizontalHeaderClicked(int col)
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(notAllowedTimesTable);
 	}
 }
 
@@ -173,7 +168,6 @@ void ModifyConstraintRoomNotAvailableTimesForm::verticalHeaderClicked(int row)
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
-		tableWidgetUpdateBug(notAllowedTimesTable);
 	}
 }
 
@@ -184,7 +178,6 @@ void ModifyConstraintRoomNotAvailableTimesForm::setAllAvailable()
 			notAllowedTimesTable->item(i, j)->setText(NO);
 			colorItem(notAllowedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(notAllowedTimesTable);
 }
 
 void ModifyConstraintRoomNotAvailableTimesForm::setAllNotAvailable()
@@ -194,7 +187,6 @@ void ModifyConstraintRoomNotAvailableTimesForm::setAllNotAvailable()
 			notAllowedTimesTable->item(i, j)->setText(YES);
 			colorItem(notAllowedTimesTable->item(i,j));
 		}
-	tableWidgetUpdateBug(notAllowedTimesTable);
 }
 
 void ModifyConstraintRoomNotAvailableTimesForm::updateRoomsComboBox()
@@ -224,8 +216,6 @@ void ModifyConstraintRoomNotAvailableTimesForm::itemClicked(QTableWidgetItem* it
 	}
 	item->setText(s);
 	colorItem(item);
-
-	tableWidgetUpdateBug(notAllowedTimesTable);
 }
 
 void ModifyConstraintRoomNotAvailableTimesForm::cancel()

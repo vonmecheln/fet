@@ -72,9 +72,9 @@ StudentsStatisticsForm::StudentsStatisticsForm(QWidget* parent): QDialog(parent)
 	QHash<QString, StudentsGroup*> groupsHash;
 	QHash<QString, StudentsSubgroup*> subgroupsHash;
 	
-	QHash<StudentsYear*, QSet<Activity*> > activitiesForYear;
-	QHash<StudentsGroup*, QSet<Activity*> > activitiesForGroup;
-	QHash<StudentsSubgroup*, QSet<Activity*> > activitiesForSubgroup;
+	QHash<StudentsYear*, QSet<Activity*>> activitiesForYear;
+	QHash<StudentsGroup*, QSet<Activity*>> activitiesForGroup;
+	QHash<StudentsSubgroup*, QSet<Activity*>> activitiesForSubgroup;
 	
 	for(StudentsYear* year : qAsConst(gt.rules.yearsList)){
 		yearsHash.insert(year->name, year);
@@ -322,22 +322,22 @@ void StudentsStatisticsForm::checkBoxesModified()
 	tableWidget->resizeRowsToContents();
 }
 
-void StudentsStatisticsForm::insertStudentsSet(StudentsSet* set, int row)
+void StudentsStatisticsForm::insertStudentsSet(StudentsSet* studentsSet, int row)
 {
-	QTableWidgetItem* newItem=new QTableWidgetItem(set->name);
+	QTableWidgetItem* newItem=new QTableWidgetItem(studentsSet->name);
 	newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 	tableWidget->setItem(row, 0, newItem);
 
 	int nSubActivities=0;
 	int nHours=0;
 	
-	if(allHours.contains(set->name))
-		nHours=allHours.value(set->name);
+	if(allHours.contains(studentsSet->name))
+		nHours=allHours.value(studentsSet->name);
 	else
 		assert(0);
 		
-	if(allActivities.contains(set->name))
-		nSubActivities=allActivities.value(set->name);
+	if(allActivities.contains(studentsSet->name))
+		nSubActivities=allActivities.value(studentsSet->name);
 	else
 		assert(0);
 		

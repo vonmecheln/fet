@@ -60,7 +60,7 @@ private:
 
 	QStringList usedStudentsList;
 	QSet<QString> usedStudentsSet;
-	//QHash<QString, QList<int> > activitiesForStudentsSet; //activity index in internal activities list
+	//QHash<QString, QList<int>> activitiesForStudentsSet; //activity index in internal activities list
 	
 	//QHash<QString, ConstraintStudentsSetNotAvailableTimes*> notAvailableHash;
 

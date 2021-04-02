@@ -49,7 +49,7 @@ TeachersStatisticsForm::TeachersStatisticsForm(QWidget* parent): QDialog(parent)
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
-	QHash<QString, QSet<Activity*> > activitiesForTeacher;
+	QHash<QString, QSet<Activity*>> activitiesForTeacher;
 	
 	for(Activity* act : qAsConst(gt.rules.activitiesList))
 		if(act->active)

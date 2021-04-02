@@ -58,7 +58,7 @@ SubjectsStatisticsForm::SubjectsStatisticsForm(QWidget* parent): QDialog(parent)
 	
 	tableWidget->setHorizontalHeaderLabels(columns);
 	
-	QHash<QString, QSet<Activity*> > activitiesForSubject;
+	QHash<QString, QSet<Activity*>> activitiesForSubject;
 	
 	for(Activity* act : qAsConst(gt.rules.activitiesList))
 		if(act->active){

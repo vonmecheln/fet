@@ -155,9 +155,9 @@ qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*
 Matrix3D<int> teachers_timetable_weekly;
 Matrix3D<int> students_timetable_weekly;
 Matrix3D<int> rooms_timetable_weekly;
-Matrix3D<QList<int> > virtual_rooms_timetable_weekly;
+Matrix3D<QList<int>> virtual_rooms_timetable_weekly;
 //QList<qint16> teachers_free_periods_timetable_weekly[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-Matrix3D<QList<int> > teachers_free_periods_timetable_weekly;
+Matrix3D<QList<int>> teachers_free_periods_timetable_weekly;
 
 #ifndef FET_COMMAND_LINE
 QApplication* pqapplication=nullptr;

@@ -66,7 +66,7 @@ public:
 	
 	int rooms[MAX_ACTIVITIES];
 	
-	Matrix1D<QList<int> > realRoomsList; //for virtual rooms
+	Matrix1D<QList<int>> realRoomsList; //for virtual rooms
 
 	/**
 	Fitness; it is calculated only at the initialization or
@@ -101,13 +101,13 @@ public:
 	*/
 	double fitness(Rules& r, FakeString* conflictsString=nullptr);
 
-	void getTeachersTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<int> >& b);
+	void getTeachersTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<int>>& b);
 	//return value is the number of conflicts, which must be 0
 
 	void getSubgroupsTimetable(Rules& r, Matrix3D<int>& a);
 	//return value is the number of conflicts, which must be 0
 
-	void getRoomsTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<int> >& va);
+	void getRoomsTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<int>>& va);
 	//return value is the number of conflicts, which must be 0
 
 	int getSubgroupsMatrix(Rules& r, Matrix3D<int>& a);

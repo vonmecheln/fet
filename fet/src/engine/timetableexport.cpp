@@ -89,10 +89,10 @@ extern qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER
 extern Matrix3D<int> teachers_timetable_weekly;
 extern Matrix3D<int> students_timetable_weekly;
 extern Matrix3D<int> rooms_timetable_weekly;
-extern Matrix3D<QList<int> > virtual_rooms_timetable_weekly;
+extern Matrix3D<QList<int>> virtual_rooms_timetable_weekly;
 
 //extern QList<qint16> teachers_free_periods_timetable_weekly[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-extern Matrix3D<QList<int> > teachers_free_periods_timetable_weekly;
+extern Matrix3D<QList<int>> teachers_free_periods_timetable_weekly;
 
 //extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern Matrix2D<bool> breakDayHour;
@@ -135,7 +135,7 @@ const int COLOR_BY_SUBJECT=1;
 const int COLOR_BY_SUBJECT_STUDENTS=2;
 
 //this hash is needed to care about sctivities with same starting time
-static QHash<int, QList<int> >activitiesWithSameStartingTime;
+static QHash<int, QList<int>>activitiesWithSameStartingTime;
 
 //Now the filenames of the output files are following (for xml and all html tables)
 const QString SUBGROUPS_TIMETABLE_FILENAME_XML="subgroups.xml";
