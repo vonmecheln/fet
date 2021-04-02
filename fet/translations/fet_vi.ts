@@ -256,7 +256,7 @@
         <location filename="../src/interface/activitiesform_template.ui" line="14"/>
         <source>Activities dialog</source>
         <extracomment>This is the title of the activities dialog</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Nhập phân công chuyên môn</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="98"/>
@@ -425,7 +425,7 @@
     <message>
         <location filename="../src/engine/activity.cpp" line="717"/>
         <source>Timetable generation options directly related to this activity:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tùy chọn hệ TKB liên quan trực tiếp đến hoạt động này:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="101"/>
@@ -1185,7 +1185,7 @@
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="897"/>
         <source>If you select a number of min days above 1 (say this number is n), you will get the possibility to add a second constraint min days between activities, with min days = n-1 and a percentage of your choice. Just click Add activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Nếu bạn chọn một số ngày nhỏ nhất lớn hơn 1 (con số này là n ) , bạn sẽ có được khả năng để thêm một ràng buộc thứ hai phút ngày giữa các tiết giảng , với ngày nhỏ nhất = n - 1 và một tỷ lệ phần trăm của sự lựa chọn của bạn . Chỉ cần nhấp vào Thêm tiết giảng</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="829"/>
@@ -1318,7 +1318,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="134"/>
         <source>Subgroups</source>
-        <translation>Nhóm con</translation>
+        <translation>Tổ</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="287"/>
@@ -1635,7 +1635,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addactivityform_template.ui" line="2514"/>
         <source>Active</source>
         <comment>It refers to a subactivity</comment>
-        <translation type="unfinished">Kích hoạt</translation>
+        <translation>Kích hoạt</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="2609"/>
@@ -1880,13 +1880,13 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="144"/>
         <source>Select all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Chọn tất cả</translation>
+        <translation>Chọn tất cả</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="151"/>
         <source>Unselect all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Hủy chọn tất cả</translation>
+        <translation>Hủy chọn tất cả</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="173"/>
@@ -2032,32 +2032,32 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform.cpp" line="143"/>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform.cpp" line="146"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform.cpp" line="122"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Trọng số không đúng (%). Nó phải là 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform.cpp" line="130"/>
         <source>Empty list of activities</source>
-        <translation type="unfinished">Danh sách tiết giảng bị trống</translation>
+        <translation>Danh sách tiết giảng bị trống</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform.cpp" line="135"/>
         <source>Only one selected activity</source>
-        <translation type="unfinished">Chỉ một tiết giảng được chọn</translation>
+        <translation>Chỉ một tiết giảng được chọn</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform.cpp" line="144"/>
         <source>Constraint added:</source>
-        <translation type="unfinished">RB được thêm:</translation>
+        <translation>RB được thêm:</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform.cpp" line="147"/>
         <source>Constraint NOT added - please report error</source>
-        <translation type="unfinished">Lỗi không thêm được RB</translation>
+        <translation>Lỗi không thêm được RB</translation>
     </message>
 </context>
 <context>
@@ -2066,63 +2066,63 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="14"/>
         <source>Add activities occupy max different rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>RB thêm các tiết giảng chiếm tối đa nhiều phòng khác nhau</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished">Lọc</translation>
+        <translation>Lọc</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="26"/>
         <source>Teacher</source>
-        <translation type="unfinished">Giáo viên</translation>
+        <translation>Giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="36"/>
         <source>Students set</source>
-        <translation type="unfinished">Lớp học</translation>
+        <translation>Lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="46"/>
         <source>Subject</source>
-        <translation type="unfinished">Môn học</translation>
+        <translation>Môn học</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Thông tin bổ trợ</translation>
+        <translation>Thông tin bổ trợ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="88"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tất cả</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="102"/>
         <source>Clear</source>
-        <translation type="unfinished">Làm lại</translation>
+        <translation>Làm lại</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="115"/>
         <source>Max different rooms</source>
-        <translation type="unfinished"></translation>
+        <translation>Tối  đa phòng học khác nhau</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="135"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Trọng số (cần thiết: 100%)</translation>
+        <translation>Trọng số (cần thiết: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="156"/>
         <source>Add constraint</source>
-        <translation type="unfinished">Thêm RB</translation>
+        <translation>Thêm RB</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="163"/>
         <source>Close</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
 </context>
 <context>
@@ -2226,13 +2226,13 @@ You can choose the minimum distance in days between each pair of activities. Ple
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="144"/>
         <source>Select all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Chọn tất cả</translation>
+        <translation>Chọn tất cả</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="151"/>
         <source>Unselect all</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Hủy chọn tất cả</translation>
+        <translation>Hủy chọn tất cả</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="173"/>
@@ -2356,7 +2356,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation type="unfinished">Thời lượng</translation>
+        <translation>Thời lượng</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="101"/>
@@ -2367,7 +2367,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="122"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="129"/>
@@ -2379,7 +2379,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="136"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="143"/>
@@ -2484,7 +2484,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="136"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="150"/>
@@ -2520,13 +2520,13 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation type="unfinished">Thời lượng</translation>
+        <translation>Thời lượng</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="122"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="129"/>
@@ -2549,32 +2549,32 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform.cpp" line="137"/>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform.cpp" line="140"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform.cpp" line="118"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Trọng số không đúng (%). Nó phải là 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform.cpp" line="124"/>
         <source>Empty list of activities</source>
-        <translation type="unfinished">Danh sách tiết giảng bị trống</translation>
+        <translation>Danh sách tiết giảng bị trống</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform.cpp" line="129"/>
         <source>Only one selected activity</source>
-        <translation type="unfinished">Chỉ một tiết giảng được chọn</translation>
+        <translation>Chỉ một tiết giảng được chọn</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform.cpp" line="138"/>
         <source>Constraint added:</source>
-        <translation type="unfinished">RB được thêm:</translation>
+        <translation>RB được thêm:</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform.cpp" line="141"/>
         <source>Constraint NOT added - please report error</source>
-        <translation type="unfinished">Lỗi không thêm được RB</translation>
+        <translation>Lỗi không thêm được RB</translation>
     </message>
 </context>
 <context>
@@ -2583,58 +2583,58 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="14"/>
         <source>Add activities same room if consecutive</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Thêm cáctiết giảng cùng một căn phòng nếu liên tiếp</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished">Lọc</translation>
+        <translation>Lọc</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="26"/>
         <source>Teacher</source>
-        <translation type="unfinished">Giáo viên</translation>
+        <translation>Giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="36"/>
         <source>Students set</source>
-        <translation type="unfinished">Lớp học</translation>
+        <translation>Lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="46"/>
         <source>Subject</source>
-        <translation type="unfinished">Môn học</translation>
+        <translation>Môn học</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Thông tin bổ trợ</translation>
+        <translation>Thông tin bổ trợ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="88"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tất cả</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="102"/>
         <source>Clear</source>
-        <translation type="unfinished">Làm lại</translation>
+        <translation>Làm lại</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="121"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Trọng số (cần thiết: 100%)</translation>
+        <translation>Trọng số (cần thiết: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="142"/>
         <source>Add constraint</source>
-        <translation type="unfinished">Thêm RB</translation>
+        <translation>Thêm RB</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="149"/>
         <source>Close</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
 </context>
 <context>
@@ -3509,7 +3509,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="146"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="153"/>
@@ -3521,7 +3521,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="167"/>
@@ -3622,7 +3622,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="146"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="153"/>
@@ -3634,7 +3634,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="167"/>
@@ -3954,7 +3954,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="68"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="75"/>
@@ -3966,7 +3966,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="82"/>
         <source>Set all break</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Đặt tất cả là giờ giải lao</translation>
+        <translation>Đặt tất cả là giờ giải lao</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintbreaktimesform_template.ui" line="89"/>
@@ -4417,13 +4417,13 @@ force activities consecutive</source>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="95"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="109"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintroomnotavailabletimesform_template.ui" line="116"/>
@@ -4871,27 +4871,27 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentsmaxdaysperweekform.cpp" line="79"/>
         <location filename="../src/interface/addconstraintstudentsmaxdaysperweekform.cpp" line="82"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxdaysperweekform.cpp" line="64"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Trọng số không đúng (%)</translation>
+        <translation>Trọng số không đúng (%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxdaysperweekform.cpp" line="69"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Trọng số không đúng (%) - phải là 100%</translation>
+        <translation>Trọng số không đúng (%) - phải là 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxdaysperweekform.cpp" line="80"/>
         <source>Constraint added:</source>
-        <translation type="unfinished">RB được thêm:</translation>
+        <translation>RB được thêm:</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxdaysperweekform.cpp" line="83"/>
         <source>Constraint NOT added - please report error</source>
-        <translation type="unfinished">Lỗi không thêm được RB</translation>
+        <translation>Lỗi không thêm được RB</translation>
     </message>
 </context>
 <context>
@@ -4900,28 +4900,28 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentsmaxdaysperweekform_template.ui" line="14"/>
         <source>Add students max days per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Thêm số lớp tối đa mỗi tuần</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxdaysperweekform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished">Thêm RB</translation>
+        <translation>Thêm RB</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxdaysperweekform_template.ui" line="29"/>
         <source>Close</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxdaysperweekform_template.ui" line="62"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Số ngày tối đa trong tuần</translation>
+        <translation>Số ngày tối đa trong tuần</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsmaxdaysperweekform_template.ui" line="85"/>
         <source>Weight percentage
 (necessary: 100%)</source>
-        <translation type="unfinished">Trọng số (cần thiết: 100%)</translation>
+        <translation>Trọng số (cần thiết: 100%)</translation>
     </message>
 </context>
 <context>
@@ -5959,32 +5959,32 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform.cpp" line="110"/>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform.cpp" line="113"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform.cpp" line="87"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Trọng số không đúng (%)</translation>
+        <translation>Trọng số không đúng (%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform.cpp" line="92"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Trọng số không đúng (%) - phải là 100%</translation>
+        <translation>Trọng số không đúng (%) - phải là 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform.cpp" line="102"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Lớp học không đúng</translation>
+        <translation>Lớp học không đúng</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform.cpp" line="111"/>
         <source>Constraint added:</source>
-        <translation type="unfinished">RB được thêm:</translation>
+        <translation>RB được thêm:</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform.cpp" line="114"/>
         <source>Constraint NOT added - please report error</source>
-        <translation type="unfinished">Lỗi không thêm được RB</translation>
+        <translation>Lỗi không thêm được RB</translation>
     </message>
 </context>
 <context>
@@ -5993,32 +5993,32 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform_template.ui" line="14"/>
         <source>Add students set max days per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Thêm số ngày nghỉ tối đa trong tuần đối với lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform_template.ui" line="22"/>
         <source>Add constraint</source>
-        <translation type="unfinished">Thêm RB</translation>
+        <translation>Thêm RB</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform_template.ui" line="29"/>
         <source>Close</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform_template.ui" line="46"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Trọng số (cần thiết: 100%)</translation>
+        <translation>Trọng số (cần thiết: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform_template.ui" line="73"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Số ngày tối đa trong tuần</translation>
+        <translation>Số ngày tối đa trong tuần</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetmaxdaysperweekform_template.ui" line="128"/>
         <source>Students set</source>
-        <translation type="unfinished">Lớp học</translation>
+        <translation>Lớp học</translation>
     </message>
 </context>
 <context>
@@ -6566,7 +6566,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
@@ -6578,7 +6578,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetnotavailabletimesform_template.ui" line="141"/>
@@ -6643,13 +6643,13 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="161"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="175"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="189"/>
@@ -6750,7 +6750,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="175"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="182"/>
@@ -6791,7 +6791,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="161"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="168"/>
@@ -8325,7 +8325,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="124"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="145"/>
@@ -8347,7 +8347,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="138"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachernotavailabletimesform_template.ui" line="159"/>
@@ -9615,22 +9615,22 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="182"/>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="223"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="178"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished">Tiết giảng đang được chọn bị trống</translation>
+        <translation>Tiết giảng đang được chọn bị trống</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="183"/>
         <source>Only one selected activity</source>
-        <translation type="unfinished">Chỉ một tiết giảng được chọn</translation>
+        <translation>Chỉ một tiết giảng được chọn</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform.cpp" line="220"/>
         <source>Added group activities in initial order item</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm một nhóm các tiết giảng trong lựa trọn đầu tiên</translation>
     </message>
 </context>
 <context>
@@ -9639,64 +9639,64 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="14"/>
         <source>Add group activities in initial order item</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Thêm một nhóm các tiết giảng trong lựa trọn đầu tiên</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished">Lọc</translation>
+        <translation>Lọc</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="26"/>
         <source>Teacher</source>
-        <translation type="unfinished">Giáo viên</translation>
+        <translation>Giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="36"/>
         <source>Students set</source>
-        <translation type="unfinished">Lớp học</translation>
+        <translation>Lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="46"/>
         <source>Subject</source>
-        <translation type="unfinished">Môn học</translation>
+        <translation>Môn học</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Thông tin bổ trợ</translation>
+        <translation>Thông tin bổ trợ</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="91"/>
         <source>Activities</source>
-        <translation type="unfinished">Tiết giảng</translation>
+        <translation>Tiết giảng</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="104"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tất cả</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="121"/>
         <source>Selected</source>
         <comment>It refers to a list of selected activities</comment>
-        <translation type="unfinished">Đang được chọn</translation>
+        <translation>Đang được chọn</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished">Làm lại</translation>
+        <translation>Làm lại</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="154"/>
         <source>Add item</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm RB</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="161"/>
         <source>Close</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
 </context>
 <context>
@@ -10037,7 +10037,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addstudentsyearform.cpp" line="101"/>
         <source>Year added. You might want to divide it into sections - this is done in the years dialog - button &apos;Divide year ...&apos;, or by manually adding groups and subgroups in the groups or subgroups menus.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm khối . Bạn có thể muốn chia nó thành nhiều phần - điều này được thực hiện tự động hoặc bằng tay bằng cách thêm các nhóm và phân nhóm trong các nhóm hoặc phân nhóm các menu .</translation>
     </message>
 </context>
 <context>
@@ -10215,7 +10215,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/advancedlockunlockform.cpp" line="648"/>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1195"/>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Khóa</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="115"/>
@@ -10227,7 +10227,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1713"/>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2004"/>
         <source>Time</source>
-        <translation type="unfinished">RB thời gian</translation>
+        <translation>RB thời gian</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="118"/>
@@ -10239,7 +10239,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1716"/>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2007"/>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Phòng học</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="248"/>
@@ -10325,7 +10325,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1707"/>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1998"/>
         <source>Unlock</source>
-        <translation type="unfinished"></translation>
+        <translation>Mở khóa</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="541"/>
@@ -10415,12 +10415,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1688"/>
         <source>FET - Unlock all activities without a generated timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>Mở khóa tất cả các tiết giảng mà không tạo TKB</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="1694"/>
         <source>All activities will be unlocked (those which are not permanently locked)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mở khóa tất cả các tiết giảng (những tiết giảng không bị khóa vĩnh viễn)</translation>
     </message>
 </context>
 <context>
@@ -10588,7 +10588,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/allspaceconstraintsform_template.ui" line="108"/>
         <source>Sorted</source>
         <comment>It refers to space constraints</comment>
-        <translation type="unfinished"></translation>
+        <translation>Sắp xếp</translation>
     </message>
 </context>
 <context>
@@ -10731,7 +10731,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/alltimeconstraintsform_template.ui" line="114"/>
         <source>Sorted</source>
         <comment>It refers to time constraints</comment>
-        <translation type="unfinished"></translation>
+        <translation>Sắp xếp</translation>
     </message>
     <message>
         <location filename="../src/interface/alltimeconstraintsform_template.ui" line="121"/>
@@ -11416,7 +11416,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="313"/>
         <source>Note that if you have activities with two or more teachers, you might need to use a trick for that: add one (or more) dummy activities, no teachers/no students, same starting time with the initial activity.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lưu ý rằng nếu bạn có các tiết giảng với hai hay nhiều giáo viên , bạn có thể cần phải sử dụng một thủ thuật cho rằng : thêm một (hoặc nhiều hơn) các tiết giảng giảng , không có giáo viên / không có học sinh , đồng thời bắt đầu với hoạt động ban đầu.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="316"/>
@@ -11509,7 +11509,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1468"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB sau là sai (vì bạn cần 2 hoặc nhiều hơn các tiết giảng ) . Hãy sửa lại :
+1 %</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1540"/>
@@ -11693,77 +11694,78 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6950"/>
         <source>FET error in data</source>
-        <translation type="unfinished">Lỗi dữ liệu</translation>
+        <translation>Lỗi dữ liệu</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="6951"/>
         <source>Following constraint is wrong (refers to less than two activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB sau không đúng (đề cập đến dưới hai tiết giảng). Hãy sửa lại: 
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7005"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Ghi chú: %1</translation>
+        <translation>Ghi chú: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7012"/>
         <source>Activities occupy max different rooms, WP:%1, NA:%2, A: %3, MDR:%4</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, MDR means max different rooms</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7029"/>
         <source>Space constraint</source>
-        <translation type="unfinished">RB về phòng học</translation>
+        <translation>RB về phòng học</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7030"/>
         <source>Activities occupy max different rooms</source>
-        <translation type="unfinished"></translation>
+        <translation>Các tiết giảng chiếm tối đa nhiều phòng khác nhau</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7031"/>
         <source>Weight (percentage)=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Trọng số=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7032"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished">Số lượng tiết giảng=%1</translation>
+        <translation>Số lượng tiết giảng=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7034"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished">Tiết giảng id=%1 (%2)</translation>
+        <translation>Tiết giảng id=%1 (%2)</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7039"/>
         <source>Maximum number of different rooms=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Số lượng tối đa của các phòng khác nhau=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7042"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Kích hoạt=%1</translation>
+        <translation>Kích hoạt=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7046"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Ghi chú=%1</translation>
+        <translation>Ghi chú=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7084"/>
         <source>Space constraint activities occupy max different rooms broken</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thỏa mãn tiết giảng chiếm tối đa phòng học khác nhau</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7086"/>
         <source>This increases the conflicts total by %1</source>
-        <translation type="unfinished">Số mâu thuấn tăng thêm %1</translation>
+        <translation>Số mâu thuấn tăng thêm %1</translation>
     </message>
 </context>
 <context>
@@ -11772,53 +11774,53 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="260"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="260"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">RB được chọn không đúng</translation>
+        <translation>RB được chọn không đúng</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="265"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Xóa RB?</translation>
+        <translation>Xóa RB?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="271"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">Xác nhận</translation>
+        <translation>Xác nhận</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="272"/>
         <source>Yes</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="272"/>
         <source>No</source>
-        <translation type="unfinished">Không</translation>
+        <translation>Không</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="298"/>
         <source>IMPORTANT NOTE: Please be careful with this constraint, as its overuse may lead to a slowdown of generation or even to an impossible timetable.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="300"/>
         <source>This constraint type was added on 29 April 2012.</source>
-        <translation type="unfinished"></translation>
+        <translation>Loại RB này được thêm mới vào ngày 29 tháng 4 năm 2012.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="302"/>
         <source>To use this constraint, you need to specify a set of activities and the maximum number of different rooms which can be occupied by these activities. Note that each activity can take place in a single room, and a single room can hold a single activity at a certain moment. This constraint may be used for instance to constrain all activities of type Physics of a certain students set to be in the same room throughout the week, by adding all Physics activities for this students set and making max different rooms = 1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Để sử dụng RB này, bạn cần phải xác định một tập hợp các tiết giảng và số lượng tối đa của các phòng khác nhau mà có thể được chiếm bởi các tiết giảng này . Lưu ý rằng mỗi tiết giảng có thể diễn ra trong một căn phòng duy nhất, và một phòng duy nhất có thể tổ chức một tiết giảng duy nhất tại một thời điểm nhất định . RB này có thể được sử dụng ví dụ để RB mọi tiết giảng của môn Vật lý của một sinh viên nào đó thiết lập để được ở cùng phòng trong suốt cả tuần , bằng cách thêm tất cả các tiết giảng vật lý cho các học sinh này thiết lập và thực hiện các phòng khác nhau max = 1 </translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform.cpp" line="307"/>
         <source>FET help</source>
-        <translation type="unfinished">Trợ giúp</translation>
+        <translation>Trợ giúp</translation>
     </message>
 </context>
 <context>
@@ -11827,72 +11829,72 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="14"/>
         <source>Constraints activities occupy max different rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Các tiết giảng chiếm tối đa nhiều phòng học khác nhau</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="26"/>
         <source>IMPORTANT: Please be careful with this constraint, because the generation may become too slow or impossible if you overuse it. Press Help for more details.</source>
-        <translation type="unfinished"></translation>
+        <translation>QUAN TRỌNG: Hãy cẩn thận với các ràng buộc này , vì phần mềm có thể trở nên quá chậm hoặc không thể nếu bạn lạm dụng nó . Nhấn Trợ giúp để biết thêm chi tiết .</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="44"/>
         <source>Constraints</source>
-        <translation type="unfinished">Các RB</translation>
+        <translation>Các RB</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="61"/>
         <source>Current constraint</source>
-        <translation type="unfinished">RB hiện hành</translation>
+        <translation>RB hiện hành</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="76"/>
         <source>Filter</source>
-        <translation type="unfinished">Lọc</translation>
+        <translation>Lọc</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="82"/>
         <source>Teacher</source>
-        <translation type="unfinished">Giáo viên</translation>
+        <translation>Giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="95"/>
         <source>Students set</source>
-        <translation type="unfinished">Lớp học</translation>
+        <translation>Lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="108"/>
         <source>Subject</source>
-        <translation type="unfinished">Môn học</translation>
+        <translation>Môn học</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="121"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Thông tin bổ trợ</translation>
+        <translation>Thông tin bổ trợ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="139"/>
         <source>Add</source>
-        <translation type="unfinished">Thêm mới</translation>
+        <translation>Thêm mới</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="146"/>
         <source>Modify</source>
-        <translation type="unfinished">Sửa</translation>
+        <translation>Sửa</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="153"/>
         <source>Remove</source>
-        <translation type="unfinished">Xóa</translation>
+        <translation>Xóa</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="160"/>
         <source>Help</source>
-        <translation type="unfinished">Trợ giúp</translation>
+        <translation>Trợ giúp</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="167"/>
         <source>Close</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
 </context>
 <context>
@@ -11960,7 +11962,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17623"/>
         <source>Activities occupy max time slots from selection</source>
-        <translation>RB số lượng tối đa tiết học được dùng cho một tập hợp các tiết giảng cho trước</translation>
+        <translation> RB số lượng tối đa tiết học được dùng cho một tập hợp các tiết giảng cho trước</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17624"/>
@@ -12226,18 +12228,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10937"/>
         <source>duration=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>thời lượng=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10939"/>
         <source>all durations</source>
-        <translation type="unfinished"></translation>
+        <translation>tất cả thời lượng</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10941"/>
         <source>Activities with %1, %2, %3, %4, %5, have a set of preferred starting times:</source>
         <comment>%1...%5 are conditions for the activities</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tiết giảng với %1, %2, %3, %4, %5 có một vài thời điểm cụ thể bắt đầu buổi học:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10957"/>
@@ -12298,12 +12300,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10992"/>
         <source>Duration=%1</source>
-        <translation type="unfinished">Thời lượng=%1</translation>
+        <translation>Thời lượng=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10994"/>
         <source>All durations</source>
-        <translation type="unfinished"></translation>
+        <translation>Tất cả thời lượng</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11012"/>
@@ -12501,18 +12503,18 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9643"/>
         <source>duration=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>thời lượng=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9645"/>
         <source>all durations</source>
-        <translation type="unfinished"></translation>
+        <translation>tất cả thời lượng</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9647"/>
         <source>Activities with %1, %2, %3, %4, %5, have a set of preferred time slots:</source>
         <comment>%1...%5 are conditions for the activities</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tiết giảng với %1, %2, %3, %4, %5 có một vài khoảng thời gian lên lớp cụ thể:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9662"/>
@@ -12573,12 +12575,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9694"/>
         <source>Duration=%1</source>
-        <translation type="unfinished">Thời lượng=%1</translation>
+        <translation>Thời lượng=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9696"/>
         <source>All durations</source>
-        <translation type="unfinished"></translation>
+        <translation>Tất cả thời lượng</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9714"/>
@@ -12692,72 +12694,73 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7225"/>
         <source>FET error in data</source>
-        <translation type="unfinished">Lỗi dữ liệu</translation>
+        <translation>Lỗi dữ liệu</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7226"/>
         <source>Following constraint is wrong (refers to less than two activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB sau không đúng (đề cập đến dưới hai tiết giảng). Hãy sửa lại: 
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7278"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Ghi chú: %1</translation>
+        <translation>Ghi chú: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7285"/>
         <source>Activities same room if consecutive, WP:%1, NA:%2, A: %3</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tiết giảng cùng một phòng nếu liên tiếp, WP:%1, NA:%2, A: %3</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7301"/>
         <source>Space constraint</source>
-        <translation type="unfinished">RB về phòng học</translation>
+        <translation>RB về phòng học</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7302"/>
         <source>Activities same room if consecutive</source>
-        <translation type="unfinished"></translation>
+        <translation>Các tiết giảng cùng một căn phòng nếu liên tiếp</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7303"/>
         <source>Weight (percentage)=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Trọng số=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7304"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished">Số lượng tiết giảng=%1</translation>
+        <translation>Số lượng tiết giảng=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7306"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished">Tiết giảng id=%1 (%2)</translation>
+        <translation>Tiết giảng id=%1 (%2)</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7312"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Kích hoạt=%1</translation>
+        <translation>Kích hoạt=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7316"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Ghi chú=%1</translation>
+        <translation>Ghi chú=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7364"/>
         <source>Space constraint activities same rooms if consecutive broken</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thỏa mãn RB các tiết giảng cùng một căn phòng nếu liên tiếp</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="7366"/>
         <source>This increases the conflicts total by %1</source>
-        <translation type="unfinished">Số mâu thuấn tăng thêm %1</translation>
+        <translation>Số mâu thuấn tăng thêm %1</translation>
     </message>
 </context>
 <context>
@@ -12766,33 +12769,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform.cpp" line="260"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform.cpp" line="233"/>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform.cpp" line="260"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">RB được chọn không đúng</translation>
+        <translation>RB được chọn không đúng</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform.cpp" line="265"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Xóa RB?</translation>
+        <translation>Xóa RB?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform.cpp" line="271"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">Xác nhận</translation>
+        <translation>Xác nhận</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform.cpp" line="272"/>
         <source>Yes</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform.cpp" line="272"/>
         <source>No</source>
-        <translation type="unfinished">Không</translation>
+        <translation>Không</translation>
     </message>
 </context>
 <context>
@@ -12801,62 +12804,62 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="14"/>
         <source>Constraints activities same room if consecutive</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hạn chế các tiết giảng cùng một căn phòng nếu liên tiếp</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Các RB</translation>
+        <translation>Các RB</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="43"/>
         <source>Filter</source>
-        <translation type="unfinished">Lọc</translation>
+        <translation>Lọc</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="49"/>
         <source>Teacher</source>
-        <translation type="unfinished">Giáo viên</translation>
+        <translation>Giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="62"/>
         <source>Students set</source>
-        <translation type="unfinished">Lớp học</translation>
+        <translation>Lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="75"/>
         <source>Subject</source>
-        <translation type="unfinished">Môn học</translation>
+        <translation>Môn học</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="88"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Thông tin bổ trợ</translation>
+        <translation>Thông tin bổ trợ</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="106"/>
         <source>Current constraint</source>
-        <translation type="unfinished">RB hiện hành</translation>
+        <translation>RB hiện hành</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="123"/>
         <source>Add</source>
-        <translation type="unfinished">Thêm mới</translation>
+        <translation>Thêm mới</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="130"/>
         <source>Modify</source>
-        <translation type="unfinished">Sửa</translation>
+        <translation>Sửa</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="137"/>
         <source>Remove</source>
-        <translation type="unfinished">Xóa</translation>
+        <translation>Xóa</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="144"/>
         <source>Close</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
 </context>
 <context>
@@ -12870,7 +12873,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="12027"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB sau là sai (vì bạn cần 2 hoặc nhiều hơn các tiết giảng ) . Hãy sửa lại :
+1 %</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12099"/>
@@ -13055,7 +13059,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="11722"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11794"/>
@@ -13220,7 +13224,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1163"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1235"/>
@@ -13365,12 +13369,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="32"/>
         <source>Please read Help/Important tips, advice 2). It is IMPORTANT to remove redundant min days constraints after adding constraints same starting time. Click the Help button!</source>
-        <translation type="unfinished"></translation>
+        <translation>Hãy đọc Trợ giúp -&gt; Lời khuyên hữu ích số 2). Có thể phải xóa bỏ RB dư thừa liên quan tới số ngày tối thiểu sau khi thêm RB cùng ngày bắt đầu.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="54"/>
         <source>NOTE: You might not need this constraint. Press Help!</source>
-        <translation type="unfinished"></translation>
+        <translation>Chú ý : Bạn có thể không cần ràng buộc này . Nhấn Trợ giúp !</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="72"/>
@@ -13440,7 +13444,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="13499"/>
         <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB sau là sai (bởi vì nó đề cập đến id tiết giảng không hợp lệ). Hãy sửa nó (có thể loại bỏ một số RB):
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13535"/>
@@ -14004,7 +14009,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8860"/>
         <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB sau là sai (bởi vì nó đề cập đến id tiết giảng không hợp lệ). Hãy sửa nó (có thể loại bỏ một số RB):
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8865"/>
@@ -14094,19 +14100,19 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8866"/>
         <source>Constraint activity preferred starting time is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB tiết giảng với một vài thời điểm bắt đầu buổi học cụ thể không đúng vì tham chiếu tới ngày đã bị xóa. Hãy sửa và thử lại lần nữa. RB: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8873"/>
         <source>Constraint activity preferred starting time is wrong because preferred hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB tiết giảng có một vài khoảng thời gian lên lớp cụ thể không đúng vì tham chiếu tới giờ học quá trễ (sau tiết học cuối ngày được phép). Hãy sửa và thử lại lần nữa. RB: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8880"/>
         <source>Constraint activity preferred starting time is wrong because it refers to removed hour. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB tiết giảng với một vài thời điểm bắt đầu buổi học cụ thể không đúng vì tham chiếu tới giờ đã bị xóa. Hãy sửa và thử lại lần nữa. RB: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8954"/>
@@ -14224,7 +14230,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10438"/>
         <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB sau là sai (bởi vì nó đề cập đến id tiết giảng không hợp lệ). Hãy sửa nó (có thể loại bỏ một số RB):
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10444"/>
@@ -14267,7 +14274,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="10528"/>
         <source>WP:%1%</source>
         <comment>Weight Percentage</comment>
-        <translation type="unfinished">Trọng số: %1%</translation>
+        <translation>Trọng số: %1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10535"/>
@@ -14419,7 +14426,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="9121"/>
         <source>Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB sau là sai (bởi vì nó đề cập đến id tiết giảng không hợp lệ). Hãy sửa nó (có thể loại bỏ một số RB):
+%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9128"/>
@@ -14469,7 +14477,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="9220"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
-        <translation type="unfinished">Trọng số: %1%</translation>
+        <translation>Trọng số: %1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9227"/>
@@ -15463,7 +15471,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="26"/>
         <source>Note: An activity with duration greater than 1 cannot be split over a break. Also, the activities constrained by min days between activities constraints with &apos;consecutive if same day&apos; = true cannot spread over a break.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lưu ý : Một tiết giảng có thời hạn lớn hơn 1 không thể được chia hơn một tramg. Ngoài ra , các tiết giảng RBi ngày tối thiểu giữa các tiết giảng RBvới &apos; liên tiếp nếu cùng một ngày &apos; = true không thể chuyển sang một trang.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintbreaktimesform_template.ui" line="61"/>
@@ -15492,7 +15500,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2155"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB sau là sai (vì bạn cần 2 hoặc nhiều hơn các tiết giảng ) . Hãy sửa lại :
+1 %</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2228"/>
@@ -15723,7 +15732,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1810"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB sau là sai (vì bạn cần 2 hoặc nhiều hơn các tiết giảng ) . Hãy sửa lại :
+1 %</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1884"/>
@@ -16003,7 +16013,8 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2489"/>
         <source>Following constraint is wrong (because you need 2 or more activities). Please correct it:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB sau là sai (vì bạn cần 2 hoặc nhiều hơn các tiết giảng ) . Hãy sửa lại :
+1 %</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2562"/>
@@ -16269,7 +16280,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="518"/>
         <source>Not available at:</source>
         <comment>It refers to a room</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không có tại:</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="535"/>
@@ -16746,7 +16757,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6287"/>
         <source>All students must begin their activities early, respecting maximum %1 later arrivals, at second hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Một lớp vào học sớm (tối đa có %1 ngày mà vào học từ tiết thứ hai trong ngày)</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6289"/>
@@ -16867,19 +16878,19 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15403"/>
         <source>Constraint students interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB số ngày tối đa trong tuần có cùng khoảng thời gian lên lớp mỗi ngày đối với giáo viên không đúng vì giờ bắt đầu &gt;= giờ kết thúc. Hãy sửa lại:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15410"/>
         <source>Constraint students interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB số ngày tối đa trong tuần có cùng khoảng thời gian lên lớp mỗi ngày đối với giáo viên không đúng vì giờ kết thúc nhiều hơn tổng số tiết học trong ngày. Hãy sửa lại:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15417"/>
         <source>Constraint students interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB số ngày tối đa trong tuần có cùng khoảng thời gian lên lớp mỗi ngày đối với giáo viên không đúng vì giờ kết thúc nhiều hơn tổng số tiết học trong ngày. Hãy sửa lại:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15462"/>
@@ -17338,65 +17349,65 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="18483"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Ghi chú: %1</translation>
+        <translation>Ghi chú: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18485"/>
         <source>Students max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Số ngày tối đa mỗi tuần đối với lớp</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18486"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
-        <translation type="unfinished">Trọng số: %1%</translation>
+        <translation>Trọng số: %1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18487"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
-        <translation type="unfinished">Số ngày tối đa:%1</translation>
+        <translation>Số ngày tối đa:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18495"/>
         <source>Time constraint</source>
-        <translation type="unfinished">Ràng buộc về mặt thời gian</translation>
+        <translation>Ràng buộc về mặt thời gian</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18496"/>
         <source>All students must respect the maximum number of days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Tất cả học sinh phải tuân thủ số tiết nghỉ xen kẽ tối đa trong 1 tuần</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18497"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">Trọng số=%1%</translation>
+        <translation>Trọng số=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18498"/>
         <source>Maximum days per week=%1</source>
-        <translation type="unfinished">Số ngày tối đa trong tuần=%1</translation>
+        <translation>Số ngày tối đa trong tuần=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18501"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Kích hoạt=%1</translation>
+        <translation>Kích hoạt=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18505"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Ghi chú=%1</translation>
+        <translation>Ghi chú=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18546"/>
         <source>Time constraint students max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thỏa mãn RB số ngày tối đa trong tuần mà học sinh có cùng khoảng thời gian lên lớp với trường hợp nhóm lớp con: %1, cho phép %2 ngày và yêu cầu %3 ngày.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18551"/>
         <source>This increases the conflicts total by %1</source>
-        <translation type="unfinished">Số mâu thuấn tăng thêm %1</translation>
+        <translation>Số mâu thuấn tăng thêm %1</translation>
     </message>
 </context>
 <context>
@@ -17405,33 +17416,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="141"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="114"/>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="141"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">RB được chọn không đúng</translation>
+        <translation>RB được chọn không đúng</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="146"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Xóa RB?</translation>
+        <translation>Xóa RB?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="152"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">Xác nhận</translation>
+        <translation>Xác nhận</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="153"/>
         <source>Yes</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform.cpp" line="153"/>
         <source>No</source>
-        <translation type="unfinished">Không</translation>
+        <translation>Không</translation>
     </message>
 </context>
 <context>
@@ -17440,37 +17451,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints students max days per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>RB số ngày lên lớp tối đa trong tuần cho các lớp</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Các RB</translation>
+        <translation>Các RB</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">RB hiện hành</translation>
+        <translation>RB hiện hành</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="62"/>
         <source>Add</source>
-        <translation type="unfinished">Thêm mới</translation>
+        <translation>Thêm mới</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="69"/>
         <source>Modify</source>
-        <translation type="unfinished">Sửa</translation>
+        <translation>Sửa</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="76"/>
         <source>Remove</source>
-        <translation type="unfinished">Xóa</translation>
+        <translation>Xóa</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsmaxdaysperweekform_template.ui" line="83"/>
         <source>Close</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
 </context>
 <context>
@@ -18747,7 +18758,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6581"/>
         <source>A students set must begin its activities early, respecting a maximum number of later arrivals, at second hour</source>
-        <translation type="unfinished"></translation>
+        <translation>Một lớp học thiết phải bắt đầu tiết giảng của mình sớm, tôn trọng một số lượng tối đa của lượt sau đó, vào giờ thứ hai</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="6582"/>
@@ -19213,19 +19224,19 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="15098"/>
         <source>Constraint students set interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB số ngày tối đa trong tuần có cùng khoảng thời gian lên lớp mỗi ngày đối với các lớp  không đúng vì giờ bắt đầu &gt;= giờ kết thúc. Hãy sửa lại:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15105"/>
         <source>Constraint students set interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB số ngày tối đa trong tuần có cùng khoảng thời gian lên lớp mỗi ngày đối với giáo viên không đúng vì giờ kết thúc nhiều hơn tổng số tiết học trong ngày. Hãy sửa lại:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15112"/>
         <source>Constraint students set interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB số ngày tối đa trong tuần có cùng khoảng thời gian lên lớp mỗi ngày đối với giáo viên không đúng vì giờ kết thúc nhiều hơn tổng số tiết học trong ngày. Hãy sửa lại:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="15124"/>
@@ -19760,7 +19771,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18206"/>
         <source>FET warning</source>
-        <translation type="unfinished">Cảnh báo</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18207"/>
@@ -19772,76 +19783,76 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="18286"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Ghi chú: %1</translation>
+        <translation>Ghi chú: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18288"/>
         <source>Students set max days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Số lớp tối đa mỗi tuần</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18289"/>
         <source>WP:%1%</source>
         <comment>Abbreviation for weight percentage</comment>
-        <translation type="unfinished">Trọng số: %1%</translation>
+        <translation>Trọng số: %1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18290"/>
         <source>St:%1</source>
         <comment>Abbreviation for students (sets)</comment>
-        <translation type="unfinished">Lớp học:%1</translation>
+        <translation>Lớp học:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18291"/>
         <source>MD:%1</source>
         <comment>Abbreviation for max days</comment>
-        <translation type="unfinished">Số ngày tối đa:%1</translation>
+        <translation>Số ngày tối đa:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18299"/>
         <source>Time constraint</source>
-        <translation type="unfinished">Ràng buộc về mặt thời gian</translation>
+        <translation>Ràng buộc về mặt thời gian</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18300"/>
         <source>A students set must respect the maximum number of days per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Một lớp phải tuân thủ số tiết nghỉ xen kẽ tối đa trong 1 tuần</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18301"/>
         <source>Weight (percentage)=%1%</source>
-        <translation type="unfinished">Trọng số=%1%</translation>
+        <translation>Trọng số=%1%</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18302"/>
         <source>Students set=%1</source>
-        <translation type="unfinished">Lớp học=%1</translation>
+        <translation>Lớp học=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18304"/>
         <source>Maximum days per week=%1</source>
-        <translation type="unfinished">Số ngày tối đa trong tuần=%1</translation>
+        <translation>Số ngày tối đa trong tuần=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18307"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
-        <translation type="unfinished">Kích hoạt=%1</translation>
+        <translation>Kích hoạt=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18311"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Ghi chú=%1</translation>
+        <translation>Ghi chú=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18352"/>
         <source>Time constraint students set max days per week broken for subgroup: %1, allowed %2 days, required %3 days.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thỏa mãn RB số ngày tối đa trong tuần mà học sinh có cùng khoảng thời gian lên lớp với trường hợp nhóm lớp con: %1, cho phép %2 ngày và yêu cầu %3 ngày.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18357"/>
         <source>This increases the conflicts total by %1</source>
-        <translation type="unfinished">Số mâu thuấn tăng thêm %1</translation>
+        <translation>Số mâu thuấn tăng thêm %1</translation>
     </message>
 </context>
 <context>
@@ -19850,33 +19861,33 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="162"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="135"/>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="162"/>
         <source>Invalid selected constraint</source>
-        <translation type="unfinished">RB được chọn không đúng</translation>
+        <translation>RB được chọn không đúng</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="167"/>
         <source>Remove constraint?</source>
-        <translation type="unfinished">Xóa RB?</translation>
+        <translation>Xóa RB?</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="173"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">Xác nhận</translation>
+        <translation>Xác nhận</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="174"/>
         <source>Yes</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform.cpp" line="174"/>
         <source>No</source>
-        <translation type="unfinished">Không</translation>
+        <translation>Không</translation>
     </message>
 </context>
 <context>
@@ -19885,42 +19896,42 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints students set max days per week</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>RB số ngày nghỉ tối đa trong tuần cho một lớp</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="28"/>
         <source>Constraints</source>
-        <translation type="unfinished">Các RB</translation>
+        <translation>Các RB</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="45"/>
         <source>Current constraint</source>
-        <translation type="unfinished">RB hiện hành</translation>
+        <translation>RB hiện hành</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="60"/>
         <source>Filter</source>
-        <translation type="unfinished">Lọc</translation>
+        <translation>Lọc</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="74"/>
         <source>Add</source>
-        <translation type="unfinished">Thêm mới</translation>
+        <translation>Thêm mới</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="81"/>
         <source>Modify</source>
-        <translation type="unfinished">Sửa</translation>
+        <translation>Sửa</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="88"/>
         <source>Remove</source>
-        <translation type="unfinished">Xóa</translation>
+        <translation>Xóa</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetmaxdaysperweekform_template.ui" line="95"/>
         <source>Close</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
 </context>
 <context>
@@ -21049,7 +21060,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="957"/>
         <source>Not available at:</source>
         <comment>It refers to a students set</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không có tại:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="974"/>
@@ -23117,7 +23128,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14601"/>
         <source>Constraint teacher interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB số ngày tối đa trong tuần có cùng khoảng thời gian lên lớp mỗi ngày đối với giáo viên không đúng vì giờ kết thúc nhiều hơn tổng số tiết học trong ngày. Hãy sửa lại:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14608"/>
@@ -24996,7 +25007,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="592"/>
         <source>Not available at:</source>
         <comment>It refers to a teacher</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không có tại:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="609"/>
@@ -25464,19 +25475,19 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="14847"/>
         <source>Constraint teachers interval max days per week is wrong because start hour &gt;= end hour. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB số ngày tối đa trong tuần có cùng khoảng thời gian lên lớp mỗi ngày đối với giáo viên không đúng vì giờ bắt đầu &gt;= giờ kết thúc. Hãy sửa lại:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14854"/>
         <source>Constraint teachers interval max days per week is wrong because start hour &lt; first hour of the day. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB số ngày tối đa trong tuần có cùng khoảng thời gian lên lớp mỗi ngày đối với giáo viên không đúng vì giờ kết thúc nhiều hơn tổng số tiết học trong ngày. Hãy sửa lại:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14861"/>
         <source>Constraint teachers interval max days per week is wrong because end hour &gt; number of hours per day. Please correct it. Constraint is:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>RB số ngày tối đa trong tuần có cùng khoảng thời gian lên lớp mỗi ngày đối với giáo viên không đúng vì giờ kết thúc nhiều hơn tổng số tiết học trong ngày. Hãy sửa lại:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="14905"/>
@@ -27147,12 +27158,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12968"/>
         <source>Three activities grouped:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gộp 3 tiết giảng</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12985"/>
         <source>Three activities grouped (the activities must be placed in the same day, one immediately following the other, as a block of three activities, in any order, possibly separated by breaks)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhóm 3 tiết giảng ( tiết giảng phải được đặt trong cùng một ngày, một ngay sau khi khác , như là một khối trong ba hoạt động , trong bất kỳ thứ tự , có thể tách bằng dấu ngắt )</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12988"/>
@@ -27310,7 +27321,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12386"/>
         <source>Two activities consecutive:</source>
-        <translation type="unfinished"></translation>
+        <translation> Hai tiết giảng xếp liền nhau</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12389"/>
@@ -27338,7 +27349,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12401"/>
         <source>Two activities consecutive (second activity must be placed immediately after the first activity, in the same day, possibly separated by breaks)</source>
-        <translation type="unfinished"></translation>
+        <translation>Hai tiết giảng liên tục (hoạt động thứ hai phải được đặt ngay sau khi các hoạt động đầu tiên , trong cùng ngày , có thể tách bằng dấu ngắt )</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12404"/>
@@ -27513,12 +27524,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12659"/>
         <source>Two activities grouped:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gộp 2 tiết giảng:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12674"/>
         <source>Two activities grouped (the activities must be placed in the same day, one immediately following the other, in any order, possibly separated by breaks)</source>
-        <translation type="unfinished"></translation>
+        <translation>Hai nhóm tiết giảng ( hoạt động phải được đặt trong cùng một ngày, một ngay sau khi khác , trong bất kỳ thứ tự , có thể tách bằng dấu ngắt )</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="12677"/>
@@ -27693,12 +27704,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13314"/>
         <source>Two activities ordered:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hai tiết giảng xếp thứ tự:</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13329"/>
         <source>Two activities ordered (second activity must be placed at any time in the week after the first activity)</source>
-        <translation type="unfinished"></translation>
+        <translation>Hai tiết giảng ra lệnh ( Tiets giảng thứ hai phải được đặt ở bất cứ lúc nào trong tuần sau khi các tiết giảng đầu tiên )</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="13332"/>
@@ -28338,13 +28349,13 @@ Import of data will be easier with these settings.</source>
         <location filename="../src/engine/messageboxes.cpp" line="34"/>
         <location filename="../src/engine/messageboxes.cpp" line="44"/>
         <source>Title: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiêu đề: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/messageboxes.cpp" line="35"/>
         <location filename="../src/engine/messageboxes.cpp" line="45"/>
         <source>Message: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Thông báo: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/messageboxes.cpp" line="48"/>
@@ -29211,7 +29222,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
         <location filename="../src/interface/fetmainform.cpp" line="3736"/>
         <location filename="../src/interface/fetmainform.cpp" line="3746"/>
         <source>Please generate, firstly</source>
-        <translation>Đầu tiên phải lập mới TKB đã</translation>
+        <translation>Đầu tiên phải lập mới TKB đã bạn ơi</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3587"/>
@@ -29816,7 +29827,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3998"/>
         <source>XML</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">XML</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3994"/>
@@ -29896,7 +29907,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4023"/>
         <source>teachers</source>
-        <translation type="unfinished">Giáo viên</translation>
+        <translation>Giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4019"/>
@@ -30375,7 +30386,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
         <location filename="../src/interface/fetmainform_template.ui" line="1433"/>
         <source>View (&amp;students)</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
-        <translation>TKB (cho &amp;học sinh)</translation>
+        <translation>TKB (c&amp;ho lớp)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1438"/>
@@ -30416,12 +30427,12 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2111"/>
         <source>Min days per week for a teacher</source>
-        <translation>Số ngày dạy tối thiểu trong 1 tuần đối với một giáo viên</translation>
+        <translation>2. Số ngày dạy tối thiểu trong 1 tuần cho một giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2116"/>
         <source>Min days per week for all teachers</source>
-        <translation>Số ngày dạy tối thiểu trong 1 tuần đối với tất cả giáo viên</translation>
+        <translation>22. Số ngày dạy tối thiểu trong 1 tuần cho tất cả giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2121"/>
@@ -30436,12 +30447,12 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2140"/>
         <source>Max hours daily with an activity tag for a teacher</source>
-        <translation>Số giờ lên lớp tối đa hàng ngày trong thông tin bổ trợ của một giáo viên</translation>
+        <translation>6. Số giờ lên lớp tối đa hàng ngày trong thông tin bổ trợ của một giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2148"/>
         <source>Max hours daily with an activity tag for all teachers</source>
-        <translation>Số giờ liên tục tối đa của thông tin bổ trợ cho tất cả giáo viên</translation>
+        <translation>16. Số giờ lên lớp tối đa hàng ngày trong thông tin bổ trợ cho tất cả giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2156"/>
@@ -30487,7 +30498,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1479"/>
         <source>A set of activities has same starting time (day+hour)</source>
-        <translation>Các tiết giảng bắt đầu cùng thời điểm (ngày và giờ)</translation>
+        <translation>12. Các tiết giảng bắt đầu cùng thời điểm (ngày và giờ)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1494"/>
@@ -30503,17 +30514,17 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1519"/>
         <source>Max days per week for a teacher</source>
-        <translation>Số ngày dạy tối đa trong 1 tuần cho một giáo viên</translation>
+        <translation>1. Số ngày dạy tối đa trong 1 tuần cho một giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1524"/>
         <source>Max hours daily for all teachers</source>
-        <translation>Số giờ dạy tối đa trong 1 ngày đối với tất cả giáo viên</translation>
+        <translation>15. Số giờ dạy tối đa trong 1 cho tất cả giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1549"/>
         <source>A set of activities are not overlapping</source>
-        <translation>Các tiết giảng không được phép chồng lấn nhau</translation>
+        <translation>20. Các tiết giảng không được phép chồng lấn nhau</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1562"/>
@@ -30539,7 +30550,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1582"/>
         <source>A set of activities has same starting hour (any days)</source>
-        <translation>Các tiết giảng bắt đầu cùng giờ (có thể khác ngày)</translation>
+        <translation>14. Các tiết giảng bắt đầu cùng giờ (có thể khác ngày)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1592"/>
@@ -30588,7 +30599,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1622"/>
         <source>Students statistics</source>
-        <translation>Thống kê học sinh</translation>
+        <translation>Thống kê lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1627"/>
@@ -30598,17 +30609,17 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1632"/>
         <source>Max gaps per week for all teachers</source>
-        <translation>Số tiết nghỉ xen kẽ tối đa trong tuần cho tất cả giáo viên</translation>
+        <translation>14. Số tiết trống tối đa trong tuần cho tất cả giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1637"/>
         <source>Max gaps per week for a teacher</source>
-        <translation>Số tiết nghỉ xen kẽ tối đa trong tuần cho một giáo viên</translation>
+        <translation>4. Số tiết trống tối đa trong tuần cho một giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1647"/>
         <source>Max hours daily for a teacher</source>
-        <translation>Số giờ dạy tối đa trong 1 ngày đối với 1 giáo viên</translation>
+        <translation>5. Số giờ dạy tối đa trong 1 cho một giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1652"/>
@@ -30643,7 +30654,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1698"/>
         <source>An activity ends students day</source>
-        <translation>Một tiết giảng vào cuối ngày</translation>
+        <translation>10. Một tiết giảng vào cuối ngày</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1703"/>
@@ -30653,12 +30664,12 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1713"/>
         <source>Min hours daily for all teachers</source>
-        <translation>Số giờ dạy tối thiểu trong ngày với tất cả giáo viên</translation>
+        <translation>17. Số giờ dạy tối thiểu trong ngày cho tất cả giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1718"/>
         <source>Min hours daily for a teacher</source>
-        <translation>Số giờ dạy tối thiểu trong ngày cho một giáo viên</translation>
+        <translation>7. Số giờ dạy tối thiểu trong ngày cho một giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1723"/>
@@ -30693,12 +30704,12 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1728"/>
         <source>Max gaps per day for all teachers</source>
-        <translation>Số tiết nghỉ liên tục tối đa trong ngày đối với tất cả các giáo viên</translation>
+        <translation>13. Số tiết trống tối đa trong ngày cho tất cả các giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1733"/>
         <source>Max gaps per day for a teacher</source>
-        <translation>Số tiết nghỉ xen kẽ tối đa trong ngày đối với một giáo viên</translation>
+        <translation>3. Số tiết trống tối đa trong 1 ngày cho một giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1499"/>
@@ -30743,7 +30754,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="761"/>
         <source>Print</source>
-        <translation type="unfinished"></translation>
+        <translation>In</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="909"/>
@@ -30754,7 +30765,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1255"/>
         <source>Enable writing on disk</source>
-        <translation type="unfinished"></translation>
+        <translation>Tùy chọn xuất dữ liệu</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1291"/>
@@ -30772,18 +30783,18 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
         <location filename="../src/interface/fetmainform_template.ui" line="1484"/>
         <source>A set of activities occupies max time slots from selection</source>
         <extracomment>It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a maximum number of slots from those selected which can be occupied by the selected activities</extracomment>
-        <translation>RB số lượng tối đa tiết học được dùng cho một tập hợp các tiết giảng cho trước</translation>
+        <translation>15. RB số lượng tối đa tiết học được dùng cho một tập hợp các tiết giảng cho trước</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1489"/>
         <source>Max simultaneous activities from a set in selected time slots</source>
         <extracomment>It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a maximum number of activities from those selected which can be simultaneous in each selected time slot</extracomment>
-        <translation>RB số lượng tối đa tiết giảng tại một vài tiết học cụ thể</translation>
+        <translation>21. RB số lượng tối đa tiết giảng tại một vài tiết học cụ thể</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1509"/>
         <source>A students set&apos;s not available times</source>
-        <translation>Những thời điểm một lớp học không lên lớp được</translation>
+        <translation>Thêm tiết trống của một lớp</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1514"/>
@@ -30793,7 +30804,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1554"/>
         <source>Min days between a set of activities</source>
-        <translation>Số ngày tối thiểu giữa một nhóm các tiết giảng</translation>
+        <translation>8. Số ngày tối thiểu giữa một nhóm các tiết giảng</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1572"/>
@@ -30813,7 +30824,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1708"/>
         <source>HTML level for generated timetables</source>
-        <translation type="unfinished"></translation>
+        <translation>Cấp độ HTML cho TKB</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1753"/>
@@ -30898,12 +30909,12 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1833"/>
         <source>A set of activities has same starting day (any hours)</source>
-        <translation>Các tiết giảng bắt đầu cùng ngày (có thể khác giờ)</translation>
+        <translation>13. Các tiết giảng bắt đầu cùng ngày (có thể khác giờ)</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2060"/>
         <source>Divide HTML timetables with time-axis by days</source>
-        <translation type="unfinished"></translation>
+        <translation>Định dạng TKB theo chuẩn HTML với trục thời gian theo ngày học</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2329"/>
@@ -30926,143 +30937,144 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
         <location filename="../src/interface/fetmainform_template.ui" line="2344"/>
         <source>&amp;Print</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, &amp;Print, Generate &amp;multiple, must be different</extracomment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2347"/>
         <source>Ctrl+P</source>
         <extracomment>This is the shortcut for menu item Timetable-&gt;Print. It is recommended to translate with Ctrl+P, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write &apos;Ctrl&apos;. It will work OK on all platforms. Even if you are on German keyboard, write &apos;Ctrl&apos; as in English). Maybe it would be good to translate with &apos;Ctrl+P&apos;, the same as the English original, to keep things standard.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2352"/>
         <source>A set of activities occupies max different rooms</source>
-        <translation type="unfinished"></translation>
+        <translation>RB số lượng tối đa tiết học được dùng cho một tập hợp các tiết giảng cho trước</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2357"/>
         <source>A set of activities are in the same room if they are consecutive</source>
-        <translation type="unfinished"></translation>
+        <translation>Một tập hợp các hoạt động đang ở trong phòng cùng nếu tiết giảng liên tiếp</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2362"/>
         <source>Max days per week for a students set</source>
-        <translation type="unfinished"></translation>
+        <translation>Số ngày nghỉ tối đa trong tuần cho một lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2367"/>
         <source>Max days per week for all students</source>
-        <translation type="unfinished"></translation>
+        <translation>Số ngày nghỉ tối đa trong tuần cho tất cả học sinh</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2372"/>
         <source>Print activity tags in timetables</source>
-        <translation type="unfinished"></translation>
+        <translation>In thông tin bổ trợ trong TKB</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2377"/>
         <source>Print advanced statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>In thống kê tiết học</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2388"/>
         <source>Duplicate vertical headers to the right</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2393"/>
         <source>Group activities in the initial order of generation</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Khi nhập PCCM</translatorcomment>
+        <translation>Các tiết giảng theo thứ tự ban đầu</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2404"/>
         <source>Enable group activities in initial order</source>
-        <translation type="unfinished"></translation>
+        <translation>Kích hoạt tính năng tiết giảng lớp học trong lựa trọn đầu tiên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2415"/>
         <source>Warn if using group activities in initial order</source>
-        <translation type="unfinished"></translation>
+        <translation>Cảnh báo nếu sử dụng các nhóm tiết giảng trong đơn hàng đầu tiên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2426"/>
         <source>Show subgroups in combo boxes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiển thị các tổ</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2437"/>
         <source>Show subgroups in activity planning</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiển thị các tổ trong phân công chuyên môn</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2448"/>
         <source>XML</source>
-        <translation type="unfinished"></translation>
+        <translation>XML</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2459"/>
         <source>Days horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngày ở trục hoành</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2470"/>
         <source>Days vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngày ở trục tung</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2481"/>
         <source>Time horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiết học ở trục hoành</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2492"/>
         <source>Time vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiết học ở trục tung</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2503"/>
         <source>Subgroups</source>
-        <translation type="unfinished">Nhóm con</translation>
+        <translation>Tổ</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2514"/>
         <source>Groups</source>
-        <translation type="unfinished">Nhóm lớp</translation>
+        <translation>Lớp</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2525"/>
         <source>Years</source>
-        <translation type="unfinished">Khối</translation>
+        <translation>Khối</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2547"/>
         <source>Teachers free periods</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiết nghỉ của giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2591"/>
         <source>Soft conflicts</source>
-        <translation type="unfinished">Các mâu thuẫn mềm</translation>
+        <translation>Các mâu thuẫn mềm</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2602"/>
         <source>Show tool tips for constraints with tables</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiện thông báo trên bảng</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2613"/>
         <source>Warn subgroups with the same activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Cảnh báo chia nhóm với các tiết giảng tương tự</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1848"/>
         <source>Max hours continuously for all teachers</source>
-        <translation>Số tiết dạy liên tục tối đa đối với tất cả giáo viên</translation>
+        <translation>18. Số tiết dạy liên tục tối đa cho tất cả giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1853"/>
         <source>Max hours continuously for a teacher</source>
-        <translation>Số tiết dạy liên tục tối đa đối với một giáo viên</translation>
+        <translation>8. Số tiết dạy liên tục tối đa cho một giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1858"/>
@@ -31121,13 +31133,13 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2285"/>
         <source>Activity planning</source>
-        <translation>Kế hoạch giảng dạy</translation>
+        <translation>Phân công chuyên môn</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2296"/>
         <source>Confirm activity planning</source>
         <comment>This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before activity planning dialog</comment>
-        <translation>Xác  nhận việc lập kế hoạch giảng dạy</translation>
+        <translation>Xác  nhận việc lập phân công chuyên môn</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2307"/>
@@ -31150,32 +31162,32 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1529"/>
         <source>An activity has a preferred starting time</source>
-        <translation>Tiết giảng với thời điểm bắt đầu buổi học</translation>
+        <translation>1. Một tiết giảng với thời điểm bắt đầu buổi học</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1873"/>
         <source>A set of activities has a set of preferred starting times</source>
-        <translation>Tiết giảng với vài thời điểm bắt đầu buổi học</translation>
+        <translation>4. Nhóm tiết giảng với vài thời điểm bắt đầu buổi học</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1883"/>
         <source>An activity has a set of preferred starting times</source>
-        <translation>Tiết giảng với vài thời điểm bắt đầu buổi học</translation>
+        <translation>2. Một tiết giảng với vài thời điểm bắt đầu buổi học</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1474"/>
         <source>A set of activities has a set of preferred time slots</source>
-        <translation>Tiết giảng với các thời gian cụ thể của buổi học</translation>
+        <translation>5. Nhóm tiết giảng với các khoảng thời gian cụ thể của buổi học</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1878"/>
         <source>An activity has a set of preferred time slots</source>
-        <translation>Tiết giảng với các khoảng thời gian cụ thể của buổi học</translation>
+        <translation>3. Một tiết giảng với các khoảng thời gian cụ thể của buổi học</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1888"/>
         <source>Min gaps (hours) between a set of activities</source>
-        <translation>Số tiết nghỉ xen kẽ tối thiểu giữa các tiết giảng</translation>
+        <translation>22. Số tiết nghỉ xen kẽ tối thiểu giữa các tiết giảng</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="886"/>
@@ -31309,7 +31321,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
         <location filename="../src/interface/fetmainform_template.ui" line="768"/>
         <source>Locking</source>
         <comment>Refers to timetable locking, means locking/unlocking activities, but we need to keep the field short.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Khóa</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="892"/>
@@ -31423,22 +31435,23 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1928"/>
         <source>A set of subactivities has a set of preferred time slots</source>
-        <translation>Tiết giảng &quot;con&quot; với các thời gian cụ thể của buổi học</translation>
+        <translation>7. Tiết giảng &quot;con&quot; với các thời gian cụ thể của buổi học</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1933"/>
         <source>A set of subactivities has a set of preferred starting times</source>
-        <translation>Tiết giảng &quot;con&quot;  với vài thời điểm bắt đầu buổi học</translation>
+        <translation>6. Tiết giảng &quot;con&quot;  với vài thời điểm bắt đầu buổi học</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1938"/>
         <source>A teacher works in an hourly interval max days per week</source>
-        <translation>Số ngày tối đa trong tuần mà một giáo viên đứng lớp trong một khoảng thời gian cụ thể (thường vào cuối ngày để có thể về nhà sớm hơn)</translation>
+        <translatorcomment>Số lượng tiết 5 hàng tuần</translatorcomment>
+        <translation>10. Số ngày tối đa trong tuần mà một giáo viên đứng lớp trong một khoảng thời gian nhất định</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1943"/>
         <source>All teachers work in an hourly interval max days per week</source>
-        <translation>Số ngày tối đa trong tuần mà tất cả giáo viên lên lớp trong khoảng thời gian nhất định</translation>
+        <translation>20. Số ngày tối đa trong tuần mà tất cả giáo viên đứng lớp trong khoảng thời gian nhất định</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1948"/>
@@ -31453,7 +31466,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1958"/>
         <source>A set of activities end students day</source>
-        <translation>Các tiết giảng vào cuối ngày</translation>
+        <translation>11. Các tiết giảng vào cuối ngày</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2258"/>
@@ -31532,12 +31545,12 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2034"/>
         <source>Max hours continuously with an activity tag for a teacher</source>
-        <translation>Số giờ liên tục tối đa của thông tin bổ trợ cho một giáo viên</translation>
+        <translation>9. Số giờ liên tục tối đa của thông tin bổ trợ cho một giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2039"/>
         <source>Max hours continuously with an activity tag for all teachers</source>
-        <translation>Số giờ liên tục tối đa của thông tin bổ trợ cho tất cả  giáo viên</translation>
+        <translation>19. Số giờ liên tục tối đa của thông tin bổ trợ cho tất cả  giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1181"/>
@@ -31578,7 +31591,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2085"/>
         <source>Max days per week for all teachers</source>
-        <translation>Số ngày dạy tối đa một tuần cho tất cả giáo viên</translation>
+        <translation>11. Số ngày dạy tối đa trong 1 tuần cho tất cả giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2096"/>
@@ -31588,27 +31601,27 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2106"/>
         <source>Max days between a set of activities</source>
-        <translation>Số ngày tối đa giữa các tiết giảng</translation>
+        <translation>9. Số ngày tối đa giữa các tiết giảng</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1693"/>
         <source>Two activities are consecutive</source>
-        <translation>Hai tiết giảng xếp liền nhau</translation>
+        <translation>17. Hai tiết giảng xếp liền nhau</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1843"/>
         <source>Two activities are ordered</source>
-        <translation>Hai tiết giảng được xếp thứ tự</translation>
+        <translation>16. Hai tiết giảng được xếp thứ tự</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1989"/>
         <source>Two activities are grouped</source>
-        <translation>Gộp 2 tiết giảng</translation>
+        <translation>18. Gộp 2 tiết giảng</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2101"/>
         <source>Three activities are grouped</source>
-        <translation>Gộp 3 tiết giảng</translation>
+        <translation>19. Gộp 3 tiết giảng</translation>
     </message>
 </context>
 <context>
@@ -31627,7 +31640,7 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
     <message>
         <location filename="../src/interface/fet.cpp" line="777"/>
         <source>To start FET in interface mode, please do not give any command-line parameters to the FET executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Để bắt đầu FET trong chế độ giao diện , xin vui lòng không đưa ra bất cứ thông số dòng lệnh để thực thi các FET</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="1256"/>
@@ -31690,41 +31703,41 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
 <context>
     <name>GenerateMultipleThread</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="102"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="104"/>
         <source>Timetable impossible to generate</source>
         <translation>Không thể tạo được TKB</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="107"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="109"/>
         <source>Time exceeded for current timetable</source>
         <translation>TKB hiện hành bị quá thời gian</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="125"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="127"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation>%1 giờ</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="129"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="131"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation>%1 phút</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="133"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="135"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation>%1 giây</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="137"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="139"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation>Số tiêt giảng tối đa đã xếp được %1 (trong khoảng %2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="158"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="160"/>
         <source>Timetable has %1 soft conflicts factor and was generated in %2 hours, %3 minutes and %4 seconds</source>
         <translation>TKB có %1 mâu thuẫn mềm và được tạo ra trong %2 giờ %3 phút và %4 giây</translation>
     </message>
@@ -32445,14 +32458,14 @@ Nếu một nhóm con có quá ít giờ học, có lẽ bạn đã nhập các 
         <location filename="../src/engine/generate_pre.cpp" line="896"/>
         <location filename="../src/engine/generate_pre.cpp" line="919"/>
         <source>Yes</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="873"/>
         <location filename="../src/engine/generate_pre.cpp" line="896"/>
         <location filename="../src/engine/generate_pre.cpp" line="919"/>
         <source>No</source>
-        <translation type="unfinished">Không</translation>
+        <translation>Không</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="886"/>
@@ -32987,56 +33000,56 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/engine/activity.cpp" line="88"/>
         <source>NA:%1</source>
         <comment>Number of activities</comment>
-        <translation type="unfinished">Số lượng tiết giảng:%1</translation>
+        <translation>Số lượng tiết giảng:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="90"/>
         <source>Id:%1</source>
         <comment>Id of activity</comment>
-        <translation type="unfinished">Id:%1</translation>
+        <translation>Id:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="94"/>
         <source>C: %1</source>
         <comment>Comments</comment>
-        <translation type="unfinished">Ghi chú: %1</translation>
+        <translation>Ghi chú: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="101"/>
         <source>Timetable generation option</source>
-        <translation type="unfinished"></translation>
+        <translation>Tùy chọn lập TKB</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="103"/>
         <source>Number of activities=%1</source>
-        <translation type="unfinished">Số lượng tiết giảng=%1</translation>
+        <translation>Số lượng tiết giảng=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="105"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
-        <translation type="unfinished">Tiết giảng id=%1 (%2)</translation>
+        <translation>Tiết giảng id=%1 (%2)</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="114"/>
         <source>yes</source>
-        <translation type="unfinished"></translation>
+        <translation>đồng ý</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="116"/>
         <source>no</source>
-        <translation type="unfinished"></translation>
+        <translation>không</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="118"/>
         <source>Active=%1</source>
         <comment>Represents a boolean value, if a &apos;group activities in initial order&apos; item is active or not, %1 is yes or no</comment>
-        <translation type="unfinished">Kích hoạt=%1</translation>
+        <translation>Kích hoạt=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="124"/>
         <source>Comments=%1</source>
-        <translation type="unfinished">Ghi chú=%1</translation>
+        <translation>Ghi chú=%1</translation>
     </message>
 </context>
 <context>
@@ -33056,7 +33069,7 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="371"/>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="432"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="246"/>
@@ -33075,17 +33088,17 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="282"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">Xác nhận</translation>
+        <translation>Xác nhận</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="283"/>
         <source>Yes</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="283"/>
         <source>No</source>
-        <translation type="unfinished">Không</translation>
+        <translation>Không</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="315"/>
@@ -33100,7 +33113,7 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="329"/>
         <source>FET help</source>
-        <translation type="unfinished">Trợ giúp</translation>
+        <translation>Trợ giúp</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="409"/>
@@ -33125,12 +33138,12 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="443"/>
         <source>OK</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform.cpp" line="445"/>
         <source>Cancel</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
 </context>
 <context>
@@ -33154,74 +33167,74 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="58"/>
         <source>Filter</source>
-        <translation type="unfinished">Lọc</translation>
+        <translation>Lọc</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="64"/>
         <source>Teacher</source>
-        <translation type="unfinished">Giáo viên</translation>
+        <translation>Giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="77"/>
         <source>Students set</source>
-        <translation type="unfinished">Lớp học</translation>
+        <translation>Lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="90"/>
         <source>Subject</source>
-        <translation type="unfinished">Môn học</translation>
+        <translation>Môn học</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="103"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Thông tin bổ trợ</translation>
+        <translation>Thông tin bổ trợ</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="123"/>
         <source>Add</source>
-        <translation type="unfinished">Thêm mới</translation>
+        <translation>Thêm mới</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="130"/>
         <source>Modify</source>
-        <translation type="unfinished">Sửa</translation>
+        <translation>Sửa</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="137"/>
         <source>Remove</source>
-        <translation type="unfinished">Xóa</translation>
+        <translation>Xóa</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="144"/>
         <source>Comments</source>
-        <translation type="unfinished">Ghi chú</translation>
+        <translation>Ghi chú</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="151"/>
         <source>Sort</source>
-        <translation type="unfinished">Sắp xếp</translation>
+        <translation>Sắp xếp</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="162"/>
         <source>Activate</source>
         <comment>Refers to activating a time constraint</comment>
-        <translation type="unfinished">Kích hoạt</translation>
+        <translation>Kích hoạt</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="169"/>
         <source>Deactivate</source>
         <comment>Refers to deactivating a time constraint</comment>
-        <translation type="unfinished">Vô hiệu hóa</translation>
+        <translation>Vô hiệu hóa</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="176"/>
         <source>Help</source>
-        <translation type="unfinished">Trợ giúp</translation>
+        <translation>Trợ giúp</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="183"/>
         <source>Close</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
 </context>
 <context>
@@ -33278,7 +33291,7 @@ Please modify your data correspondingly and try again</source>
         <location filename="../src/interface/groupsform.cpp" line="152"/>
         <location filename="../src/interface/groupsform.cpp" line="223"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">Xác nhận</translation>
+        <translation>Xác nhận</translation>
     </message>
     <message>
         <location filename="../src/interface/groupsform.cpp" line="213"/>
@@ -33384,20 +33397,166 @@ Please modify your data correspondingly and try again</source>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="14"/>
         <source>About FET - Free Timetabling Software</source>
+        <translation>Phần mềm TKB tự động V2015</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.28.3 (November 2015).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="112"/>
         <source>Translators</source>
-        <translation>Nhóm dịch</translation>
+        <translation>Quy trình xếp thời khóa biểu</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="263"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="133"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Silver (to contact Silver visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Arabic translation, or contact forum user Silver)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;cs - Czech translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Pavel Fric (pavelfric AT seznam.cz)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Volker Dirr (http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Robert Hairgrove (code AT roberthairgrove.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Dimitris Kanatas (to contact Dimitris Kanatas visit&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Greek translation, or contact forum user Dimitris Kanatas)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	José César Fernández López (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;eu - Basque translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Asier Urio Larrea (asieriko AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Jerome Durand (fetfr AT free.fr)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Régis Bouguin (regis.bouguin AT laposte.net)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Pascal Cohen (pacohen AT laposte.net) - rewrote the translation from zero&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;gl - Galician translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Juan Marcos Filgueira Gomis (to contact marcos.filgueira, visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Galician translation, or contact forum user marcos.filgueira)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	this translation was based on the Spanish translation by José César Fernández López&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	as of April 2011 (see es - Spanish translation for more information)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;he - Hebrew translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Yotam Medini (yotam.medini AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Cloves das Neves (clovesneves AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (http://lalescu.ro/liviu/)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sq - Albanian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Artur Lugu (ciaoartur AT yahoo.it)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sr - Serbian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ivan Starchevicy (ivanstar61 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radan Putnik (srastral AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uz - Uzbek translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Orzubek Eraliyev (o.eraliyev AT gmail.com, or visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Uzbek translation, or contact forum user sarkor)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;vi - Vietnamese translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Nguyen Truong Thang (to contact Thang visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Vietnamese translation, or contact forum user NTThang)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Nguyễn Hữu Duyệt (nguyenhuuduyet AT gmail.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;zh_CN - Chinese Simplified translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	orange (112260085 AT qq.com)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;zh_TW - Chinese Traditional translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	James (james AT cc.shu.edu.tw)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/helpaboutform_template.ui" line="264"/>
         <source>References</source>
-        <translation>Tham khảo</translation>
+        <translation>Hướng dẫn sử dụng trực tuyến</translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="318"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="319"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -33839,7 +33998,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="781"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="782"/>
         <source>Close</source>
         <translation>Thoát</translation>
     </message>
@@ -33851,25 +34010,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="27"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="48"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET is free software for automatically scheduling the timetable of a school, high-school or university.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.28.2 (October 2015).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;FET homepage: &lt;/span&gt;&lt;a href=&quot;http://lalescu.ro/liviu/fet/&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://lalescu.ro/liviu/fet/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Giới thiệu</translation>
     </message>
     <message>
         <location filename="../src/interface/helpaboutform_template.ui" line="90"/>
@@ -33891,134 +34032,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="133"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ar - Arabic translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Silver (to contact Silver visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Arabic translation, or contact forum user Silver)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ca - Catalan translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Sílvia Lag (to contact Sílvia visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Catalan translation, or contact forum user silvia)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;cs - Czech translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Pavel Fric (pavelfric AT seznam.cz)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;da - Danish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	David Lamhauge (davidlamhauge AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;de - German translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Volker Dirr (http://www.timetabling.de/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Robert Hairgrove (code AT roberthairgrove.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;el - Greek translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Dimitrios Ropokis (wamy80s AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Dimitris Kanatas (to contact Dimitris Kanatas visit&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Greek translation, or contact forum user Dimitris Kanatas)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;es - Spanish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	José César Fernández López (cesar.fernandez.lopez AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;eu - Basque translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Asier Urio Larrea (asieriko AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fa - Persian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Hamed SadeghiNeshat (ha_sadeghi AT ce.sharif.edu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: sally sat (soory63 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;fr - French translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Jerome Durand (fetfr AT free.fr)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Patrick Fox (patrick.fox AT laposte.net)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	former translator: Régis Bouguin (regis.bouguin AT laposte.net)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Pascal Cohen (pacohen AT laposte.net) - rewrote the translation from zero&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;gl - Galician translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Juan Marcos Filgueira Gomis (to contact marcos.filgueira, visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Galician translation, or contact forum user marcos.filgueira)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	this translation was based on the Spanish translation by José César Fernández López&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	as of April 2011 (see es - Spanish translation for more information)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;he - Hebrew translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Yotam Medini (yotam.medini AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;hu - Hungarian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ferenczi Viktor (cx AT cx.hu)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;id - Indonesian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nirwan Yus (ny.unpar AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;it - Italian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Marco Barsotti (mbarsan AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;lt - Lithuanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Darius Staigys (darius AT e-servisas.lt)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mk - Macedonian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Zoran Zdravkovski (zoran AT pmf.ukim.edu.mk)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ms - Malay translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Abdul Hadi Kamel (hadikamel AT perlis.uitm.edu.my)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;nl - Dutch translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Niels Fikse (k.fikse AT student.utwente.nl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pl - Polish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radoslaw Pasiok (zapala AT konto.pl)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;pt_BR - Brazilian Portuguese translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Werner Bruns (werner.bruns AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Frank Mártin (drfarofa AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Cloves das Neves (clovesneves AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ro - Romanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Liviu Lalescu (http://lalescu.ro/liviu/)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;ru - Russian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ilya V. Paramonov (ivparamonov AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;si - Sinhala translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Achini Duisna (duisna1012 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sk - Slovak translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ondrej Gregor (to contact Ondrej visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Slovak translation, or contact forum user Ondrej)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sq - Albanian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Artur Lugu (ciaoartur AT yahoo.it)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;sr - Serbian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Ivan Starchevicy (ivanstar61 AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Radan Putnik (srastral AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;tr - Turkish translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	initial translator: Mehmet Gezmisoglu (m_gezmisoglu AT hotmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	current translator: Mahir Nacar (mahirnacar AT email.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uk - Ukrainian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Andriy Melnyk (melnyk.andriy AT gmail.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;uz - Uzbek translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Orzubek Eraliyev (o.eraliyev AT gmail.com, or visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Uzbek translation, or contact forum user sarkor)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;vi - Vietnamese translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	Nguyen Truong Thang (to contact Thang visit FET forum - http://lalescu.ro/liviu/fet/forum/,&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	section about Vietnamese translation, or contact forum user NTThang)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;zh_CN - Chinese Simplified translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	orange (112260085 AT qq.com)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;zh_TW - Chinese Traditional translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	James (james AT cc.shu.edu.tw)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="284"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="285"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -34028,9 +34042,9 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/helpaboutform_template.ui" line="297"/>
+        <location filename="../src/interface/helpaboutform_template.ui" line="298"/>
         <source>Thanks to</source>
-        <translation>Cảm tạ</translation>
+        <translation>Cảm ơn</translation>
     </message>
 </context>
 <context>
@@ -37341,7 +37355,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="115"/>
         <source>Max different rooms</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tối  đa phòng học khác nhau</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="135"/>
@@ -37566,7 +37580,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation type="unfinished">Thời lượng</translation>
+        <translation>Thời lượng</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="101"/>
@@ -37577,7 +37591,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="122"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="14"/>
@@ -37595,7 +37609,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="136"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="143"/>
@@ -37696,7 +37710,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="78"/>
         <source>Duration</source>
-        <translation type="unfinished">Thời lượng</translation>
+        <translation>Thời lượng</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="101"/>
@@ -37707,7 +37721,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="136"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="14"/>
@@ -37719,7 +37733,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="122"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="129"/>
@@ -37745,22 +37759,22 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform.cpp" line="139"/>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform.cpp" line="144"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform.cpp" line="132"/>
         <source>Invalid weight (percentage). It has to be 100</source>
-        <translation type="unfinished"></translation>
+        <translation>Trọng số không đúng (%) - phải là 100</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform.cpp" line="140"/>
         <source>Empty list of activities</source>
-        <translation type="unfinished">Danh sách tiết giảng bị trống</translation>
+        <translation>Danh sách tiết giảng bị trống</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform.cpp" line="145"/>
         <source>Only one selected activity</source>
-        <translation type="unfinished">Chỉ một tiết giảng được chọn</translation>
+        <translation>Chỉ một tiết giảng được chọn</translation>
     </message>
 </context>
 <context>
@@ -37774,53 +37788,53 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished">Lọc</translation>
+        <translation>Lọc</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="26"/>
         <source>Teacher</source>
-        <translation type="unfinished">Giáo viên</translation>
+        <translation>Giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="36"/>
         <source>Students set</source>
-        <translation type="unfinished">Lớp học</translation>
+        <translation>Lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="46"/>
         <source>Subject</source>
-        <translation type="unfinished">Môn học</translation>
+        <translation>Môn học</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Thông tin bổ trợ</translation>
+        <translation>Thông tin bổ trợ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="89"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Trọng số (cần thiết: 100%)</translation>
+        <translation>Trọng số (cần thiết: 100%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="110"/>
         <source>Ok</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="117"/>
         <source>Cancel</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="133"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tất cả</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="147"/>
         <source>Clear</source>
-        <translation type="unfinished">Làm lại</translation>
+        <translation>Làm lại</translation>
     </message>
 </context>
 <context>
@@ -38364,7 +38378,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform.cpp" line="260"/>
         <source>Cannot proceed, current constraint is equal to another one (it is duplicated)</source>
-        <translation type="unfinished">Không thể tiếp tục, RB hiện hành bị trùng với một RB khác</translation>
+        <translation>Không thể tiếp tục, RB hiện hành bị trùng với một RB khác</translation>
     </message>
 </context>
 <context>
@@ -38486,13 +38500,13 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="146"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="160"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="167"/>
@@ -38639,13 +38653,13 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="146"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="160"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
 </context>
 <context>
@@ -38889,7 +38903,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="68"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="75"/>
@@ -38901,7 +38915,7 @@ Nếu bạn cần trọng số nhỏ hơn 100%, bạn có thể dùng RB loại 
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="82"/>
         <source>Set all break</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Đặt tất cả là giờ giải lao</translation>
+        <translation>Đặt tất cả là giờ giải lao</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintbreaktimesform_template.ui" line="89"/>
@@ -39310,7 +39324,7 @@ force activities consecutive</source>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="95"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="102"/>
@@ -39322,7 +39336,7 @@ force activities consecutive</source>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="109"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintroomnotavailabletimesform_template.ui" line="116"/>
@@ -39680,17 +39694,17 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentsmaxdaysperweekform.cpp" line="66"/>
         <location filename="../src/interface/modifyconstraintstudentsmaxdaysperweekform.cpp" line="71"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxdaysperweekform.cpp" line="67"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Trọng số không đúng (%)</translation>
+        <translation>Trọng số không đúng (%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxdaysperweekform.cpp" line="72"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Trọng số không đúng (%) - phải là 100%</translation>
+        <translation>Trọng số không đúng (%) - phải là 100%</translation>
     </message>
 </context>
 <context>
@@ -39704,22 +39718,22 @@ Note: students set not available and break are not counted as gaps (early gaps).
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxdaysperweekform_template.ui" line="28"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Số ngày tối đa trong tuần</translation>
+        <translation>Số ngày tối đa trong tuần</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxdaysperweekform_template.ui" line="61"/>
         <source>Ok</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxdaysperweekform_template.ui" line="68"/>
         <source>Cancel</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxdaysperweekform_template.ui" line="101"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Trọng số (cần thiết: 100%)</translation>
+        <translation>Trọng số (cần thiết: 100%)</translation>
     </message>
 </context>
 <context>
@@ -40578,22 +40592,22 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform.cpp" line="113"/>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform.cpp" line="123"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform.cpp" line="109"/>
         <source>Invalid weight (percentage)</source>
-        <translation type="unfinished">Trọng số không đúng (%)</translation>
+        <translation>Trọng số không đúng (%)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform.cpp" line="114"/>
         <source>Invalid weight (percentage) - it has to be 100%</source>
-        <translation type="unfinished">Trọng số không đúng (%) - phải là 100%</translation>
+        <translation>Trọng số không đúng (%) - phải là 100%</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform.cpp" line="124"/>
         <source>Invalid students set</source>
-        <translation type="unfinished">Lớp học không đúng</translation>
+        <translation>Lớp học không đúng</translation>
     </message>
 </context>
 <context>
@@ -40602,32 +40616,32 @@ Note: students set not available and break are not counted as gaps (early gaps).
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="14"/>
         <source>Modify students set max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Sửa số ngày nghỉ tối đa trong tuần đối với lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="28"/>
         <source>Students set</source>
-        <translation type="unfinished">Lớp học</translation>
+        <translation>Lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="64"/>
         <source>Max days per week</source>
-        <translation type="unfinished">Số ngày tối đa trong tuần</translation>
+        <translation>Số ngày tối đa trong tuần</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="81"/>
         <source>Ok</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="88"/>
         <source>Cancel</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxdaysperweekform_template.ui" line="137"/>
         <source>Weight percentage (necessary: 100%)</source>
-        <translation type="unfinished">Trọng số (cần thiết: 100%)</translation>
+        <translation>Trọng số (cần thiết: 100%)</translation>
     </message>
 </context>
 <context>
@@ -41071,13 +41085,13 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="120"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="134"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="127"/>
@@ -41147,7 +41161,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="145"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="152"/>
@@ -41159,7 +41173,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="159"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="166"/>
@@ -41232,7 +41246,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="159"/>
         <source>Set all not allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="166"/>
@@ -41273,7 +41287,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="145"/>
         <source>Set all allowed</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished">Cho phép toàn bộ</translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="152"/>
@@ -42551,7 +42565,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="120"/>
         <source>Set all available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="127"/>
@@ -42563,7 +42577,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="134"/>
         <source>Set all not available</source>
         <comment>It refers to time slots</comment>
-        <translation type="unfinished"></translation>
+        <translation>Không cho phép toàn bộ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="141"/>
@@ -43558,17 +43572,17 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="187"/>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="192"/>
         <source>FET information</source>
-        <translation type="unfinished">Thông tin</translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="188"/>
         <source>Empty list of selected activities</source>
-        <translation type="unfinished">Tiết giảng đang được chọn bị trống</translation>
+        <translation>Tiết giảng đang được chọn bị trống</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform.cpp" line="193"/>
         <source>Only one selected activity</source>
-        <translation type="unfinished">Chỉ một tiết giảng được chọn</translation>
+        <translation>Chỉ một tiết giảng được chọn</translation>
     </message>
 </context>
 <context>
@@ -43582,59 +43596,59 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="20"/>
         <source>Filter</source>
-        <translation type="unfinished">Lọc</translation>
+        <translation>Lọc</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="26"/>
         <source>Teacher</source>
-        <translation type="unfinished">Giáo viên</translation>
+        <translation>Giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="36"/>
         <source>Students set</source>
-        <translation type="unfinished">Lớp học</translation>
+        <translation>Lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="46"/>
         <source>Subject</source>
-        <translation type="unfinished">Môn học</translation>
+        <translation>Môn học</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation type="unfinished">Thông tin bổ trợ</translation>
+        <translation>Thông tin bổ trợ</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="91"/>
         <source>Activities</source>
-        <translation type="unfinished">Tiết giảng</translation>
+        <translation>Tiết giảng</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="104"/>
         <source>All</source>
         <comment>Text on a button. It refers to adding all activities from the list above this button into the current constraint</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tất cả</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="121"/>
         <source>Selected</source>
         <comment>It refers to a list of selected activities</comment>
-        <translation type="unfinished">Đang được chọn</translation>
+        <translation>Đang được chọn</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="134"/>
         <source>Clear</source>
-        <translation type="unfinished">Làm lại</translation>
+        <translation>Làm lại</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="154"/>
         <source>Ok</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="161"/>
         <source>Cancel</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
 </context>
 <context>
@@ -43872,22 +43886,22 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="230"/>
         <source>FET question</source>
-        <translation type="unfinished">Câu hỏi</translation>
+        <translation>Câu hỏi</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="230"/>
         <source>Yes</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="230"/>
         <source>No</source>
-        <translation type="unfinished">Không</translation>
+        <translation>Không</translation>
     </message>
     <message>
         <location filename="../src/interface/modifystudentsyearform.cpp" line="230"/>
         <source>Cancel</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
 </context>
 <context>
@@ -44040,7 +44054,7 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
         <location filename="../src/interface/modifysubactivityform_template.ui" line="312"/>
         <source>Active</source>
         <comment>It refers to a subactivity</comment>
-        <translation type="unfinished">Kích hoạt</translation>
+        <translation>Kích hoạt</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="372"/>
@@ -44131,7 +44145,7 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
     <message>
         <location filename="../src/interface/fet.cpp" line="659"/>
         <source>Help</source>
-        <translation type="unfinished">Trợ giúp</translation>
+        <translation>Trợ giúp</translation>
     </message>
 </context>
 <context>
@@ -44140,13 +44154,13 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
         <location filename="../src/interface/fet.cpp" line="685"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
-        <translation type="unfinished">&amp;Đồng ý</translation>
+        <translation>&amp;Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="687"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
-        <translation type="unfinished">&amp;Thoát</translation>
+        <translation>&amp;Thoát</translation>
     </message>
 </context>
 <context>
@@ -44155,52 +44169,52 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
         <location filename="../src/interface/fet.cpp" line="663"/>
         <source>&amp;OK</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
-        <translation type="unfinished">&amp;Đồng ý</translation>
+        <translation>&amp;Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="665"/>
         <source>OK</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="668"/>
         <source>&amp;Cancel</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
-        <translation type="unfinished">&amp;Thoát</translation>
+        <translation>&amp;Thoát</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="670"/>
         <source>Cancel</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="673"/>
         <source>&amp;Yes</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
-        <translation type="unfinished">&amp;Đồng ý</translation>
+        <translation>&amp;Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="675"/>
         <source>Yes to &amp;All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
-        <translation type="unfinished">Đồng ý tất cả (&amp;A)</translation>
+        <translation>Đồng ý tất cả (&amp;A)</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="677"/>
         <source>&amp;No</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different</comment>
-        <translation type="unfinished">&amp;Không</translation>
+        <translation>&amp;Không</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="679"/>
         <source>N&amp;o to All</source>
         <comment>Accelerator key (letter after ampersand) for &amp;OK, &amp;Cancel, &amp;Yes, Yes to &amp;All, &amp;No, N&amp;o to All, must be different. Please keep the translation short.</comment>
-        <translation type="unfinished">Không cho tất cả (&amp;o)</translation>
+        <translation>Không cho tất cả (&amp;o)</translation>
     </message>
     <message>
         <location filename="../src/interface/fet.cpp" line="682"/>
         <source>Help</source>
-        <translation type="unfinished">Trợ giúp</translation>
+        <translation>Trợ giúp</translation>
     </message>
 </context>
 <context>
@@ -44220,13 +44234,13 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
         <location filename="../src/interface/fetmainform.cpp" line="332"/>
         <source>Random seed X component:</source>
         <comment>Means the X component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
-        <translation type="unfinished">Thành phần X của lõi:</translation>
+        <translation>Thành phần X của lõi:</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="334"/>
         <source>Random seed Y component:</source>
         <comment>Means the Y component of the random seed (random seed has 2 components, X and Y). Please keep translation short</comment>
-        <translation type="unfinished">Thành phần Y của lõi:</translation>
+        <translation>Thành phần Y của lõi:</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="336"/>
@@ -44429,12 +44443,12 @@ Lưu ý: giáo viên bận và nghỉ giải lao không được tính vào ti�
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="84"/>
         <source>Cancel</source>
-        <translation type="unfinished">Thoát</translation>
+        <translation>Thoát</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="91"/>
         <source>OK</source>
-        <translation type="unfinished">Đồng ý</translation>
+        <translation>Đồng ý</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="104"/>
@@ -46696,7 +46710,8 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="147"/>
         <source>Printing is currently not possible, because you modified the dataset. Please generate a new timetable before printing.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Hiện nay không in TKB được vì chưa có dữ liệu. Hãy tạo ra một TKB mới trước khi in.</translatorcomment>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -46834,7 +46849,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="666"/>
         <source>Teachers - Subjects Matrix</source>
-        <translation>Ma trận Giáo viên - Lớp học</translation>
+        <translation>Bảng Giáo viên - Lớp học</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="689"/>
@@ -46850,7 +46865,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="943"/>
         <source>Subjects - Teachers Matrix</source>
-        <translation>Ma trận Lớp học - Giáo viên</translation>
+        <translation>Bảng Lớp học - Giáo viên</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="967"/>
@@ -46860,22 +46875,22 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="1217"/>
         <source>Teachers - Students Matrix</source>
-        <translation>Ma trận Giáo viên - Lớp học</translation>
+        <translation>Bảng Giáo viên - Lớp học</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="1492"/>
         <source>Students -Teachers Matrix</source>
-        <translation>Ma trận Lớp học - Giáo viên</translation>
+        <translation>Bảng Lớp học - Giáo viên</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="1767"/>
         <source>Subjects - Students Matrix</source>
-        <translation>Ma trận Môn học - Lớp học</translation>
+        <translation>Bảng Môn học - Lớp học</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="2041"/>
         <source>Students -Subjects Matrix</source>
-        <translation>Ma trận Lớp học -  Môn học</translation>
+        <translation>Bảng Lớp học -  Môn học</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="690"/>
@@ -46901,13 +46916,13 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="163"/>
         <source>Statistics export incomplete</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoàn thành xuất thống kê</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="382"/>
         <source>Stylesheet generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is date and time</comment>
-        <translation>Stylesheet tạo ra với FET phiên bản %1 vào lúc %2</translation>
+        <translation>Stylesheet tạo ra với TKB tự động phiên bản 2015 %1 vào lúc %2</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="564"/>
@@ -46919,7 +46934,7 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/engine/statisticsexport.cpp" line="2223"/>
         <source>Timetable generated with FET %1 on %2</source>
         <comment>%1 is FET version, %2 is the date and time of generation</comment>
-        <translation>TKB tạo ra với FET phiên bản %1 vào lúc %2</translation>
+        <translation>TKB tạo ra với TKB tự động phiên bản 2015 %1 vào lúc %2</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="683"/>
@@ -46974,7 +46989,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="115"/>
         <source>Print statistics matrix dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="125"/>
@@ -46986,12 +47001,12 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/statisticsprintform.cpp" line="127"/>
         <source>None</source>
         <comment>Refers to a list of items, select none. Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hủy chọn</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="136"/>
         <source>Print</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">In</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="138"/>
@@ -47032,167 +47047,167 @@ Please report error. FET will now abort current operation</source>
         <location filename="../src/interface/statisticsprintform.cpp" line="158"/>
         <source>Page-break: none</source>
         <comment>No page-break between statistics. Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ngắt trang: không</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="159"/>
         <source>Page-break: always</source>
         <comment>Page-break after each statistic. Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ngắt trang: từng TKB</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="160"/>
         <source>Page-break: even</source>
         <comment>Page-break after each even statistic. Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ngắt trang: từng loại TKB</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="174"/>
         <source>Portrait</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Khổ dọc</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="174"/>
         <source>Landscape</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Khổ ngang</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="191"/>
         <source>Custom</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lựa chọn</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="193"/>
         <source>A0</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A0</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="194"/>
         <source>A1</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A1</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="195"/>
         <source>A2</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A2</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="196"/>
         <source>A3</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A3</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="197"/>
         <source>A4</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A4</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="198"/>
         <source>A5</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A5</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="199"/>
         <source>A6</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A6</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="200"/>
         <source>A7</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A7</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="201"/>
         <source>A8</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A8</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="202"/>
         <source>A9</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A9</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="203"/>
         <source>B0</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">B0</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="204"/>
         <source>B1</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">B1</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="205"/>
         <source>B2</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">B2</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="206"/>
         <source>B3</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">B3</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="207"/>
         <source>B4</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">B4</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="208"/>
         <source>B5</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">B5</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="209"/>
         <source>B6</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">B6</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="210"/>
         <source>B7</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">B7</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="211"/>
         <source>B8</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">B8</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="212"/>
         <source>B9</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">B9</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="213"/>
         <source>B10</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">B10</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="214"/>
         <source>C5E</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">C5E</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="215"/>
@@ -47335,7 +47350,7 @@ Bottom: %4</source>
         <location filename="../src/interface/statisticsprintform.cpp" line="436"/>
         <source>Print</source>
         <comment>Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">In</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="438"/>
@@ -49457,327 +49472,327 @@ Bottom: %4</source>
 <context>
     <name>TimetableGenerateForm</name>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="138"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="140"/>
         <source>FET warning</source>
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="138"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="140"/>
         <source>Data is wrong. Please correct and try again</source>
         <translation>Dữ liệu sai. Hãy sửa và thử lại</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="144"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="160"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="650"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="800"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="847"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="146"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="162"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="661"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="811"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="858"/>
         <source>FET information</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="145"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="147"/>
         <source>You have entered simulation with uninitialized rules or 0 activities...aborting</source>
         <translation>Giả lập với 0 tiết giảng và luật chưa khởi tạo... Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="151"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="153"/>
         <source>Entering simulation....precomputing, please be patient</source>
         <translation>Bắt đầu giả lập... tiền xử lý. Hãy chờ trong chốc lát</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="157"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="159"/>
         <source>Cannot generate - please modify your data</source>
         <translation>Không thể lập TKB. Hãy chỉnh lại dữ liệu</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="211"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="362"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="492"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="774"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="821"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="213"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="364"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="493"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="785"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="832"/>
         <source>Total conflicts:</source>
         <translation>Tổng số mâu thuẫn:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="286"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="534"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="876"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="288"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="535"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="887"/>
         <source>No: %1</source>
         <translation>Số: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="302"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="304"/>
         <source>Generation stopped</source>
         <comment>The title of a dialog, meaning that the generation of the timetable was stopped.</comment>
         <translation>Đã dừng việc lập TKB</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="308"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="436"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="556"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="898"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="930"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="310"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="438"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="557"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="909"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="941"/>
         <source>OK</source>
         <translation>Đồng ý</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="391"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="393"/>
         <source>The partial highest-stage results were saved in the directory %1</source>
         <translation>Kết quả được lưu trong thư mục %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="429"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="431"/>
         <source>Generation stopped (highest stage)</source>
         <comment>The title of a dialog, meaning that the generation of the timetable was stopped and highest stage timetable written.</comment>
         <translation>Đã dừng việc lập TKB</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="550"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="551"/>
         <source>Generation impossible</source>
         <comment>The title of a dialog, meaning that the generation of the timetable is impossible.</comment>
         <translation>Không thể tạo được TKB</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="608"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="614"/>
         <source>Total soft conflicts:</source>
         <translation>Tổng số mâu thuẫn mềm:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="672"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="683"/>
         <source>%1 out of %2 activities placed</source>
         <translation>%1 trong số %2 tiết giảng đã được xếp</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="674"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="685"/>
         <source>Elapsed time:</source>
         <translation>Thời gian đã chạy:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="678"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="704"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="689"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="715"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation>%1 giờ</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="684"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="708"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="695"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="719"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation>%1 phút</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="689"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="712"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="700"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="723"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation>%1 giây</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="727"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="738"/>
         <source>Please wait. It might take 5 to 20 minutes or even more for very difficult timetables</source>
         <translation>Chương trình có thể cần 5 - 20 phút hoặc hơn để lập những TKB khó. Hãy chờ thêm lát nữa</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="729"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="740"/>
         <source>Activities are placed in order, most difficult ones first</source>
         <translation>Các tiết giảng được xếp theo trình tự khó nhất trước, dễ sau</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="731"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="742"/>
         <source>The process of searching is semi-randomized, which means that you will get different timetables and running times each time. You can choose the best timetable from several runs</source>
         <translation>Quá trình tìm kiếm là bán ngẫu nhiên, có nghĩa là mỗi lần chạy chương trình có thể tạo ra TKB và thời gian lập lịch khác nhau. Bạn hãy chọn TKB tốt nhất sau vài lần chạy</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="738"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="749"/>
         <source>It is recommended to strengthen the constraints step by step (for instance min days between activities weight or teacher(s) max gaps), as you obtain feasible timetables.</source>
         <translation>Bạn nên tiếp cận theo hướng &quot;tiệm tiến&quot; (chặt dần với vài loại RB) chừng nào còn lập được TKB.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="741"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="752"/>
         <source>If your timetable gets stuck on a certain activity number k (and then begins going back), please check the initial evaluation order and see activity number k+1 in this list. You may find errors this way.</source>
         <translation>Nếu TKB bị dừng tại một tiết giảng k nào đó (và bắt đầu quay ngược lại), hãy kiểm tra trình tự xếp lịch và kiểm tra tiết giảng thứ (k+1) trong danh sách.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="745"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="756"/>
         <source>If the generation is successful, you cannot have hard conflicts. You can have only soft conflicts, corresponding to constraints with weight lower than 100.0%, which are reported in detail.</source>
         <translation>Nếu việc lập lịch thành công, sẽ không có mâu thuẫn cứng. Bạn chỉ có mâu thuẫn mềm tương ứng với những RB có trọng số nhỏ hơn 100% được chỉ dẫn chi tiết.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="748"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="759"/>
         <source>After the generation (successful or interrupted), you can view the current (complete or incomplete) timetable in the corresponding view timetable dialogs, and the list of conflicts in the view conflicts dialog.</source>
         <translation>Sau khi lâp lịch (dù thành công hay bị ngắt), bạn có thể xem TKB hiện tại trong hộp thoại TKB và danh sách các mâu thuẫn trong hộp thoại mâu thuẫn.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="751"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="762"/>
         <source>The results are saved in your selected results directory in HTML and XML mode and the soft conflicts in text mode, along with the current data and timetable, saved as a .fet data file (with activities locked by constraints), so that you can open, modify and regenerate the current timetable later</source>
         <translation>Kết quả được lưu trong thư mục kết quả ở dạng HTML hoặc XML; các mâu thuẫn mềm trong dạng ký tự, cùng với dữ liệu và TKB hiện hành</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="755"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="766"/>
         <source>FET help</source>
         <translation>Trợ giúp</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="801"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="812"/>
         <source>Simulation results should now be written in the directory %1 in html and xml mode and the conflicts in txt mode</source>
         <translation>Kết quả TKB lâm thời được lưu trong thư mục %1 ở dạng HTML và XML; trong khi các mâu thuẫn ở dạng xâu kí tự TXT</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="864"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="875"/>
         <source>Information relating difficult to schedule activities:</source>
         <translation>Thông tin liên quan tới những khó khăn khi lập lịch:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="866"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="877"/>
         <source>Please check the constraints related to the last activities in the list below, which might be difficult to schedule:</source>
         <translation>Hãy kiểm tra các RB của những tiết giảng cuối cùng trong danh sách sau, thường là khó xếp lịch:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="869"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="880"/>
         <source>Here are the placed activities which lead to a difficulty, in order from the first one to the last (the last one FET failed to schedule and the last ones are difficult):</source>
         <translation>Đây là những tiết giảng đã được xếp lịch dẫn tới tình huống khó, theo trình tự từ tiết đầu tới tiết cuối (tiết cuối không thể xếp được lịch và là tình huống khó):</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="209"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="360"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="490"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="772"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="819"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="211"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="362"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="491"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="783"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="830"/>
         <source>Conflicts</source>
         <comment>Title of dialog</comment>
         <translation>Mâu thuẫn</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="215"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="366"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="496"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="778"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="825"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="217"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="368"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="497"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="789"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="836"/>
         <source>Conflicts listing (in decreasing order):</source>
         <translation>Danh sách mâu thuẫn (theo mức độ giảm dần):</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="223"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="374"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="225"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="376"/>
         <source>Simulation interrupted! FET could not find a timetable. Maybe you can consider lowering the constraints.</source>
         <translation>Quá trình lập lịch bị ngắt! Phần mềm không thể tìm được TKB. Có lẽ bạn cần hạ thấp số lượng và trọng số các RB.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="240"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="521"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="242"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="522"/>
         <source>The partial results were saved in the directory %1</source>
         <translation>Kết quả được lưu trong thư mục %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="245"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="396"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="526"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="247"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="398"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="527"/>
         <source>Additional information relating impossible to schedule activities:</source>
         <translation>Thông tin thêm liên quan tới việc không thể lập lịch:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="264"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="290"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="415"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="538"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="880"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="266"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="292"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="417"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="539"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="891"/>
         <source>Id: %1 (%2)</source>
         <comment>%1 is id of activity, %2 is detailed description of activity</comment>
         <translation>Id:%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="276"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="278"/>
         <source>Please check the constraints related to the last activities in the list below, which might be impossible to schedule:</source>
         <translation>Hãy kiểm tra các RB của những tiết giảng cuối cùng trong danh sách sau, thường là không thể xếp lịch được:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="279"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="281"/>
         <source>Here are the placed activities which lead to an inconsistency, in order from the first one to the last (the last one FET failed to schedule and the last ones are most likely impossible):</source>
         <translation>Đây là những tiết giảng đã được xếp lịch dẫn tới tình huống không nhất quán, theo trình tự từ tiết đầu tới tiết cuối (tiết cuối không thể xếp được lịch và khả năng lớn nhất là không thể xếp được):</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="528"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="529"/>
         <source>Please check the constraints related to the activity below, which might be impossible to schedule:</source>
         <translation>Hãy kiểm tra các RB của tiết giảng dưới đây, có lẽ là không thể xếp lịch được:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="606"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="612"/>
         <source>Soft conflicts</source>
         <comment>Title of dialog</comment>
         <translation>Các mâu thuẫn mềm</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="612"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="618"/>
         <source>Soft conflicts listing (in decreasing order):</source>
         <translation>Danh sách mâu thuẫn mềm (theo thứ tự giảm dần):</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="645"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="651"/>
         <source>Generation successful!</source>
         <translation>Lập TKB thành công!</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="647"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="653"/>
         <source>Weighted soft conflicts: %1</source>
         <translation>Trọng số các mâu thuẫn mềm: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="649"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="655"/>
         <source>Results were saved in the directory %1</source>
         <translation>Kết quả được lưu trong thư mục %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="848"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="859"/>
         <source>Highest stage results should now be written in the directory %1 in html and xml mode and the conflicts in txt mode</source>
         <translation>Kết quả TKB lâm thời được lưu trong thư mục %1 ở dạng HTML và XML; trong khi các mâu thuẫn ở dạng xâu kí tự TXT</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="892"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="903"/>
         <source>FET - information about difficult activities</source>
         <translation>Thông tin về những tiết giảng khó xếp lịch</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="924"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="935"/>
         <source>FET - information about initial order of evaluation of activities</source>
         <translation>Thông tin về những trình tự tiết giảng ban đầu để xếp lịch</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="734"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="745"/>
         <source>Usually, there is no need to stop and restart the search. But for very difficult timetables this can help. Sometimes in such cases FET can become stuck and cycle forever, and restarting might produce a very fast solution.</source>
         <translation>Thường thì không cần dừng và tái khởi động việc tìm kiếm. Tuy nhiên, với những TKB rất khó, giải pháp này có thể hữu ích để tránh chương trình rơi vào vòng lặp mãi mãi.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="161"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="163"/>
         <source>Your data cannot be processed - please modify it as instructed</source>
         <translation>Dữ liệu không thể xử lý được - hãy sửa theo hướng dẫn</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="248"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="399"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="250"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="401"/>
         <source>FET managed to schedule correctly the first %1 most difficult activities. You can see initial order of placing the activities in the generate dialog. The activity which might cause problems might be the next activity in the initial order of evaluation. This activity is listed below:</source>
         <translation>Chương trình cố gắng xếp chính xác %1 tiết giảng khó nhất. Tiết giảng gây ra tình huống khó này có thể là tiết giảng tiếp theo trong danh sách xếp lịch. Tiết giảng được hiển thị dưới đây:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="269"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="420"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="271"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="422"/>
         <source>Difficult activity cannot be computed - please report possible bug</source>
         <translation>Tiết giảng khó không thể xếp được. Hãy liên hệ với đơn vị phát triển vì lỗi này</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="255"/>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="406"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="257"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="408"/>
         <source>Please check constraints related to following possibly problematic activity (or teacher(s), or students set(s)):</source>
         <translation>Hãy kiểm tra các RB của những tiết giảng (hoặc giáo viên, lớp học) có vấn đề sau:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="505"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="506"/>
         <source>Simulation impossible! Maybe you can consider lowering the constraints.</source>
         <translation>Phần mềm không thể tìm được TKB! Có lẽ bạn cần hạ thấp số lượng và trọng số các RB.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegenerateform.cpp" line="716"/>
+        <location filename="../src/interface/timetablegenerateform.cpp" line="727"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation>Số tiêt giảng tối đa đã xếp được %1 (trong khoảng %2)</translation>
@@ -49856,154 +49871,154 @@ Bottom: %4</source>
 <context>
     <name>TimetableGenerateMultipleForm</name>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="228"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="230"/>
         <source>You can only see generated timetables on the hard disk, in HTML and XML formats and soft conflicts in text format, or latest timetable in the Timetable/View menu. It is needed that the directory %1 to be emptied and deleted before proceeding.</source>
         <translation>Bạn chỉ có thể xem TKB trên đĩa cứng với định dạng HTML và XML cũng như các mâu thuẫn mềm ở dạng ký tự, hoặc TKB mới nhất từ thực đơn TKB/Xem. Cần thiết xóa trắng thư mục %1 trước khi tiếp tục.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="237"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="239"/>
         <source>There are also saved the timetables in .fet format (data + constraints to lock the timetable), so that you can open each of them later.</source>
         <translation>Có những TKB được lưu theo định dạng .FET (dữ liệu và các RB để khóa TKB). Bạn có thể mở mỗi tệp sau.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="246"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="263"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="279"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="293"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="400"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="446"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="248"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="265"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="281"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="295"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="402"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="452"/>
         <source>FET information</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="263"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="265"/>
         <source>Directory %1 exists and might not be empty, (it might contain old files). You need to manually remove all contents of this directory AND the directory itself (or rename it) and then you can generate multiple timetables</source>
         <translation>Thư mục %1 tồn tại và không rỗng. Bạn cần xóa tất cả nội dụng của thư mục này và bản thân nó (hoặc đổi tên) và sau đó bạn có thể tạo nhiều TKB</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="273"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="275"/>
         <source>FET warning</source>
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="273"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="275"/>
         <source>Data is wrong. Please correct and try again</source>
         <translation>Dữ liệu sai. Hãy sửa và thử lại</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="280"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="282"/>
         <source>You have entered simulation with uninitialized rules or 0 activities...aborting</source>
         <translation>Giả lập với 0 tiết giảng và luật chưa khởi tạo... Hủy bỏ</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="290"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="292"/>
         <source>Cannot optimize - please modify your data</source>
         <translation>Không thể lập TKB. Hãy chỉnh lại dữ liệu</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="351"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="353"/>
         <source>Total soft conflicts:</source>
         <translation>Tổng số mâu thuẫn mềm:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="498"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="504"/>
         <source>Current timetable: %1 out of %2 activities placed, %3h %4m %5s</source>
         <translation>TKB hiện hành: %1 trong số %2 tiết giảng được xếp, trong %3 giờ %4 phút %5 giây</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="239"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="241"/>
         <source>If you get impossible timetable, please enter menu Generate (single) and see the initial order of evaluation of activities, this might help.</source>
         <translation>Nếu không thể lập TKB, bạn hãy vào menu Lập TKB (đơn) và xem trình tự xếp lịch ban đầu của các tiết giảng. Việc này có thể giúp ích.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="233"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="235"/>
         <source>Note that, for large data, each timetable might occupy more megabytes of hard disk space, so make sure you have enough space (you can check the dimension of a single timetable as a precaution).</source>
         <translation>Lưu ý: với dữ liệu lớn, đảm bảo đủ dung lượng trên đĩa.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="242"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="244"/>
         <source>Limit for each timetable</source>
         <translation>Giới hạn cho từng TKB</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="242"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="244"/>
         <source>You can limit the search time, by specifying the maximum number of minutes allowed to spend for each timetable (option %1).</source>
         <translation>Bạn có thể giới hạn thời gian tìm kiếm bằng việc chỉ định số phút tối đa (lựa chọn %1).</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="294"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="296"/>
         <source>Your data cannot be processed - please modify it as instructed.</source>
         <translation>Dữ liệu không thể xử lý được - hãy sửa theo hướng dẫn.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="327"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="329"/>
         <source>Timetable no: %1 =&gt; %2</source>
         <comment>%1 is the number of this timetable when generating multiple timetables, %2 is its description</comment>
         <translation type="unfinished">TKB số: %1 =&gt; %2</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="349"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="351"/>
         <source>Soft conflicts</source>
         <comment>Title of dialog</comment>
         <translation>Các mâu thuẫn mềm</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="355"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="357"/>
         <source>Soft conflicts listing (in decreasing order):</source>
         <translation>Danh sách mâu thuẫn mềm (theo thứ tự giảm dần):</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="376"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="378"/>
         <source>Simulation interrupted!</source>
         <translation>Quá trình lâp lịch bị ngắt!</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="394"/>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="440"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="396"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="442"/>
         <source>The results were saved in the directory %1</source>
         <translation>Kết quả được lưu trong thư mục %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="396"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="398"/>
         <source>Total searching time: %1h %2m %3s</source>
         <translation>Tổng thời gian tìm kiếm là %1 giờ %2 phút %3 giây</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="438"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="440"/>
         <source>Simulation terminated successfully!</source>
         <translation>Lập TKB thành công!</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="442"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="444"/>
         <source>Total searching time was %1h %2m %3s</source>
         <translation>Tổng thời gian tìm kiếm là %1 giờ %2 phút %3 giây</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="483"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="489"/>
         <source>%1 h</source>
         <comment>hours</comment>
         <translation>%1 giờ</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="487"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="493"/>
         <source>%1 m</source>
         <comment>minutes</comment>
         <translation>%1 phút</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="491"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="497"/>
         <source>%1 s</source>
         <comment>seconds</comment>
         <translation>%1 giây</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="495"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="501"/>
         <source>Max placed activities: %1 (at %2)</source>
         <comment>%1 represents the maximum number of activities placed, %2 is a time interval</comment>
         <translation>Số tiêt giảng tối đa đã xếp được %1 (trong khoảng %2)</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="243"/>
+        <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="245"/>
         <source>The maximum and also the predefined value is %1 minutes, which means %2 hours, so virtually unlimited.</source>
         <translation>Giá trị lớn nhất là %1 phút, cũng là %2 giờ. Vì vậy, hầu như không hạn chế.</translation>
     </message>
@@ -50064,17 +50079,17 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="1202"/>
         <source>Print timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>In TKB</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="160"/>
         <source>Subgroups</source>
-        <translation type="unfinished">Nhóm con</translation>
+        <translation>Tổ</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="153"/>
         <source>Print timetable dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>In TKB</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="161"/>
@@ -50099,12 +50114,12 @@ Bottom: %4</source>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="165"/>
         <source>Rooms</source>
-        <translation type="unfinished"></translation>
+        <translation>Phòng học</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="166"/>
         <source>Subjects</source>
-        <translation type="unfinished">Môn học</translation>
+        <translation>Môn học</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="167"/>
@@ -50112,235 +50127,235 @@ Bottom: %4</source>
         <location filename="../src/interface/timetableprintform.cpp" line="829"/>
         <location filename="../src/interface/timetableprintform.cpp" line="848"/>
         <source>All activities</source>
-        <translation type="unfinished"></translation>
+        <translation>Tất cả tiết giảng</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="189"/>
         <source>Print</source>
-        <translation type="unfinished"></translation>
+        <translation>In</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="191"/>
         <source>Days horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngày ở trục hoành</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="192"/>
         <source>Days vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngày ở trục tung</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="193"/>
         <source>Time horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiết học ở trục hoành</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="194"/>
         <source>Time vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiết học ở trục tung</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="212"/>
         <source>Options</source>
-        <translation type="unfinished">Lựa chọn</translation>
+        <translation>Lựa chọn</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="177"/>
         <source>All</source>
         <comment>Refers to a list of items, select all. Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tất cả</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="168"/>
         <source>Students Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Thống kê lớp học</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="169"/>
         <source>Teachers Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Thống kê giáo viên</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="179"/>
         <source>None</source>
         <comment>Refers to a list of items, select none. Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation>Hủy chọn</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="198"/>
         <source>Time horizontal per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiết học ở trục hoành mỗi ngày</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="199"/>
         <source>Time vertical per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiết học ở trục tung mỗi ngày</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="217"/>
         <source>Page-break: none</source>
         <comment>No page-break between timetables. Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ngắt trang: không</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="218"/>
         <source>Page-break: always</source>
         <comment>Page-break after each timetable. Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ngắt trang: từng TKB</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="219"/>
         <source>Page-break: even</source>
         <comment>Page-break after each even timetable. Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ngắt trang: từng loại TKB</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="233"/>
         <source>Portrait</source>
-        <translation type="unfinished"></translation>
+        <translation>Khổ dọc</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="233"/>
         <source>Landscape</source>
-        <translation type="unfinished"></translation>
+        <translation>Khổ ngang</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="250"/>
         <source>Custom</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>Lựa chọn</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="252"/>
         <source>A0</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>A0</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="253"/>
         <source>A1</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>A1</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="254"/>
         <source>A2</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>A2</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="255"/>
         <source>A3</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>A3</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="256"/>
         <source>A4</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>A4</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="257"/>
         <source>A5</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>A5</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="258"/>
         <source>A6</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>A6</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="259"/>
         <source>A7</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>A7</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="260"/>
         <source>A8</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>A8</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="261"/>
         <source>A9</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>A9</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="262"/>
         <source>B0</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>B0</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="263"/>
         <source>B1</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>B1</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="264"/>
         <source>B2</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>B2</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="265"/>
         <source>B3</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>B3</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="266"/>
         <source>B4</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>B4</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="267"/>
         <source>B5</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>B5</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="268"/>
         <source>B6</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>B6</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="269"/>
         <source>B7</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>B7</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="270"/>
         <source>B8</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>B8</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="271"/>
         <source>B9</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>B9</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="272"/>
         <source>B10</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>B10</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="273"/>
         <source>C5E</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>C5E</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="274"/>
@@ -50468,7 +50483,7 @@ Bottom: %4</source>
         <location filename="../src/interface/timetableprintform.cpp" line="498"/>
         <source>Print</source>
         <comment>Please keep translation short</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">In</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="500"/>
