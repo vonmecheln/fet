@@ -249,7 +249,7 @@ void YearsForm::modifyYear()
 	QString yearName=yearsListWidget->currentItem()->text();
 	
 	StudentsSet* sset=gt.rules.searchStudentsSet(yearName);
-	assert(sset!=NULL);
+	assert(sset!=nullptr);
 	int numberOfStudents=sset->numberOfStudents;
 
 	ModifyStudentsYearForm form(this, yearName, numberOfStudents);
@@ -322,7 +322,7 @@ void YearsForm::comments()
 	QString yearName=yearsListWidget->currentItem()->text();
 	
 	StudentsSet* sset=gt.rules.searchStudentsSet(yearName);
-	assert(sset!=NULL);
+	assert(sset!=nullptr);
 
 	QDialog getCommentsDialog(this);
 	

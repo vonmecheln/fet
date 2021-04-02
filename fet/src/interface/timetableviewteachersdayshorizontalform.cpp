@@ -407,7 +407,7 @@ void TimetableViewTeachersDaysHorizontalForm::updateTeachersTimetableTable(){
 			//Activity* act=gt.rules.activitiesList.at(ai);
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				assert(act!=NULL);
+				assert(act!=nullptr);
 				
 				if(act->teachersNames.count()==1){
 					//Don't do the assert below, because it crashes if you change the teacher's name and view the teachers' timetable,
@@ -559,7 +559,7 @@ void TimetableViewTeachersDaysHorizontalForm::currentItemChanged(QTableWidgetIte
 }
 
 void TimetableViewTeachersDaysHorizontalForm::detailActivity(QTableWidgetItem* item){
-	if(item==NULL){
+	if(item==nullptr){
 		detailsTextEdit->setPlainText(QString(""));
 		return;
 	}
@@ -607,7 +607,7 @@ void TimetableViewTeachersDaysHorizontalForm::detailActivity(QTableWidgetItem* i
 			//Activity* act=gt.rules.activitiesList.at(ai);
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				assert(act!=NULL);
+				assert(act!=nullptr);
 				//s += act->getDetailedDescriptionWithConstraints(gt.rules);
 				s += act->getDetailedDescription(gt.rules);
 

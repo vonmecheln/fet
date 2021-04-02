@@ -155,7 +155,7 @@ void AddConstraintActivitiesNotOverlappingForm::filterChanged()
 
 void AddConstraintActivitiesNotOverlappingForm::addConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

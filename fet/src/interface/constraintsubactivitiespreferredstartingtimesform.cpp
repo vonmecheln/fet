@@ -93,7 +93,7 @@ void ConstraintSubactivitiesPreferredStartingTimesForm::constraintChanged(int in
 	QString s;
 	assert(index<this->visibleConstraintsList.size());
 	TimeConstraint* ctr=this->visibleConstraintsList.at(index);
-	assert(ctr!=NULL);
+	assert(ctr!=nullptr);
 	s=ctr->getDetailedDescription(gt.rules);
 	currentConstraintTextEdit->setPlainText(s);
 }

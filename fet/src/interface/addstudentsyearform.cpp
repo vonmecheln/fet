@@ -52,7 +52,7 @@ void AddStudentsYearForm::addStudentsYear()
 	}
 
 	StudentsSet* ss=gt.rules.searchStudentsSet(nameLineEdit->text());
-	if(ss!=NULL){
+	if(ss!=nullptr){
 		if(ss->type==STUDENTS_SUBGROUP){
 			QMessageBox::information( this, tr("Year insertion dialog"),
 				tr("This name is taken for a subgroup - please consider another name"));

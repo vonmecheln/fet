@@ -64,7 +64,7 @@ void AddConstraintStudentsSetHomeRoomForm::updateRoomsComboBox()
 
 void AddConstraintStudentsSetHomeRoomForm::addConstraint()
 {
-	SpaceConstraint *ctr=NULL;
+	SpaceConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();
@@ -76,7 +76,7 @@ void AddConstraintStudentsSetHomeRoomForm::addConstraint()
 	}
 
 	QString students=studentsComboBox->currentText();
-	assert(gt.rules.searchStudentsSet(students)!=NULL);
+	assert(gt.rules.searchStudentsSet(students)!=nullptr);
 
 	int i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){

@@ -42,7 +42,7 @@ AddConstraintBasicCompulsorySpaceForm::~AddConstraintBasicCompulsorySpaceForm()
 
 void AddConstraintBasicCompulsorySpaceForm::addCurrentConstraint()
 {
-	SpaceConstraint *ctr=NULL;
+	SpaceConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

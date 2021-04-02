@@ -145,7 +145,7 @@ void SubgroupsForm::addExistingSubgroups()
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
 	
-	StudentsYear* year=NULL;
+	StudentsYear* year=nullptr;
 	
 	for(StudentsYear* sty : qAsConst(gt.rules.yearsList))
 		if(sty->name==yearName){
@@ -153,7 +153,7 @@ void SubgroupsForm::addExistingSubgroups()
 			break;
 		}
 		
-	assert(year!=NULL);
+	assert(year!=nullptr);
 	
 	if(groupsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
@@ -161,7 +161,7 @@ void SubgroupsForm::addExistingSubgroups()
 	}
 	QString groupName=groupsListWidget->currentItem()->text();
 	
-	StudentsGroup* group=NULL;
+	StudentsGroup* group=nullptr;
 	
 	for(StudentsGroup* stg : qAsConst(year->groupsList))
 		if(stg->name==groupName){
@@ -169,7 +169,7 @@ void SubgroupsForm::addExistingSubgroups()
 			break;
 		}
 		
-	assert(group!=NULL);
+	assert(group!=nullptr);
 	
 	AddExistingStudentsSubgroupsForm form(this, year, group);
 	setParentAndOtherThings(&form, this);
@@ -263,7 +263,7 @@ void SubgroupsForm::removeSubgroup()
 			subgroupTextEdit->setPlainText(QString(""));
 	}
 
-	/*if(gt.rules.searchStudentsSet(subgroupName)!=NULL)
+	/*if(gt.rules.searchStudentsSet(subgroupName)!=nullptr)
 		QMessageBox::information( this, tr("FET"), tr("This subgroup still exists into another group. "
 		"The related activities and constraints were not removed"));*/
 }
@@ -344,7 +344,7 @@ void SubgroupsForm::purgeSubgroup()
 			subgroupTextEdit->setPlainText(QString(""));
 	}
 
-	/*if(gt.rules.searchStudentsSet(subgroupName)!=NULL)
+	/*if(gt.rules.searchStudentsSet(subgroupName)!=nullptr)
 		QMessageBox::information( this, tr("FET"), tr("This subgroup still exists into another group. "
 		"The related activities and constraints were not removed"));*/
 }
@@ -406,7 +406,7 @@ void SubgroupsForm::groupChanged(const QString &groupName)
 void SubgroupsForm::subgroupChanged(const QString &subgroupName)
 {
 	StudentsSet* ss=gt.rules.searchStudentsSet(subgroupName);
-	if(ss==NULL){
+	if(ss==nullptr){
 		subgroupTextEdit->setPlainText(QString(""));
 		return;
 	}
@@ -550,7 +550,7 @@ void SubgroupsForm::modifySubgroup()
 	assert(subgroupIndex>=0);
 	
 	StudentsSet* sset=gt.rules.searchStudentsSet(subgroupName);
-	assert(sset!=NULL);
+	assert(sset!=nullptr);
 	int numberOfStudents=sset->numberOfStudents;
 	
 	ModifyStudentsSubgroupForm form(this, yearName, groupName, subgroupName, numberOfStudents);
@@ -637,7 +637,7 @@ void SubgroupsForm::comments()
 	QString subgroupName=subgroupsListWidget->currentItem()->text();
 	
 	StudentsSet* sset=gt.rules.searchStudentsSet(subgroupName);
-	assert(sset!=NULL);
+	assert(sset!=nullptr);
 
 	QDialog getCommentsDialog(this);
 	

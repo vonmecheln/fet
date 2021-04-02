@@ -42,8 +42,8 @@ void GroupActivitiesInInitialOrderItem::removeUseless(Rules& r)
 	QList<int> tmpList;
 	
 	for(int id : qAsConst(ids)){
-		Activity* act=r.activitiesPointerHash.value(id, NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(id, nullptr);
+		if(act!=nullptr)
 			tmpList.append(id);
 	}
 	
@@ -164,7 +164,7 @@ Activity::Activity()
 		this->nTotalStudents=0;
 		for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++){
 			StudentsSet* ss=r.searchStudentsSet(*it);
-			assert(ss!=NULL);
+			assert(ss!=nullptr);
 			this->nTotalStudents += ss->numberOfStudents;
 		}
 	}
@@ -270,7 +270,7 @@ bool Activity::removeStudents(Rules& r, const QString& studentsName, int nStuden
 
 	if(t>0 && this->computeNTotalStudents==true){
 		/*StudentsSet* s=r.searchStudentsSet(studentsName);
-		assert(s!=NULL);
+		assert(s!=nullptr);
 		this->nTotalStudents-=s->numberOfStudents;*/
 		this->nTotalStudents-=t*nStudents;
 		assert(this->nTotalStudents>=0);
@@ -288,11 +288,11 @@ void Activity::renameStudents(Rules& r, const QString& initialStudentsName, cons
 		if((*it)==initialStudentsName){
 			/*if(this->computeNTotalStudents==true){
 				StudentsSet* s=r.searchStudentsSet(initialStudentsName);
-				assert(s!=NULL);
+				assert(s!=nullptr);
 				this->nTotalStudents-=s->numberOfStudents;
 				
 				StudentsSet* s2=r.searchStudentsSet(finalStudentsName);
-				assert(s2!=NULL);
+				assert(s2!=nullptr);
 				this->nTotalStudents+=s2->numberOfStudents;
 				
 				assert(this->nTotalStudents>=0);
@@ -356,7 +356,7 @@ void Activity::computeInternalStructure(Rules& r)
 	this->iSubgroupsList.clear();
 	QSet<int> iSubgroupsSet;
 	for(QStringList::const_iterator it=this->studentsNames.constBegin(); it!=this->studentsNames.constEnd(); it++){
-		StudentsSet* ss=r.studentsHash.value(*it, NULL); //r.searchAugmentedStudentsSet(*it);
+		StudentsSet* ss=r.studentsHash.value(*it, nullptr); //r.searchAugmentedStudentsSet(*it);
 		assert(ss);
 		if(ss->type==STUDENTS_SUBGROUP){
 			int tmp;

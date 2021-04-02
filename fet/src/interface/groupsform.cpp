@@ -130,7 +130,7 @@ void GroupsForm::addExistingGroups()
 	}
 	QString yearName=yearsListWidget->currentItem()->text();
 	
-	StudentsYear* year=NULL;
+	StudentsYear* year=nullptr;
 	
 	for(StudentsYear* sty : qAsConst(gt.rules.yearsList))
 		if(sty->name==yearName){
@@ -138,7 +138,7 @@ void GroupsForm::addExistingGroups()
 			break;
 		}
 		
-	assert(year!=NULL);
+	assert(year!=nullptr);
 	
 	AddExistingStudentsGroupsForm form(this, year);
 	setParentAndOtherThings(&form, this);
@@ -222,7 +222,7 @@ void GroupsForm::removeGroup()
 			groupTextEdit->setPlainText(QString(""));
 	}
 
-	/*if(gt.rules.searchStudentsSet(groupName)!=NULL)
+	/*if(gt.rules.searchStudentsSet(groupName)!=nullptr)
 		QMessageBox::information( this, tr("FET"), tr("This group still exists into another year. "
 			"The related subgroups, activities and constraints were not removed"));*/
 }
@@ -293,7 +293,7 @@ void GroupsForm::purgeGroup()
 			groupTextEdit->setPlainText(QString(""));
 	}
 
-	/*if(gt.rules.searchStudentsSet(groupName)!=NULL)
+	/*if(gt.rules.searchStudentsSet(groupName)!=nullptr)
 		QMessageBox::information( this, tr("FET"), tr("This group still exists into another year. "
 			"The related subgroups, activities and constraints were not removed"));*/
 }
@@ -324,7 +324,7 @@ void GroupsForm::yearChanged(const QString &yearName)
 void GroupsForm::groupChanged(const QString &groupName)
 {
 	StudentsSet* ss=gt.rules.searchStudentsSet(groupName);
-	if(ss==NULL){
+	if(ss==nullptr){
 		groupTextEdit->setPlainText(QString(""));
 		return;
 	}
@@ -446,7 +446,7 @@ void GroupsForm::modifyGroup()
 	assert(groupIndex>=0);
 
 	StudentsSet* sset=gt.rules.searchStudentsSet(groupName);
-	assert(sset!=NULL);
+	assert(sset!=nullptr);
 	int numberOfStudents=sset->numberOfStudents;
 	
 	ModifyStudentsGroupForm form(this, yearName, groupName, numberOfStudents);
@@ -515,7 +515,7 @@ void GroupsForm::comments()
 	QString groupName=groupsListWidget->currentItem()->text();
 	
 	StudentsSet* sset=gt.rules.searchStudentsSet(groupName);
-	assert(sset!=NULL);
+	assert(sset!=nullptr);
 
 	QDialog getCommentsDialog(this);
 	

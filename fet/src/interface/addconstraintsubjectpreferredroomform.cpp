@@ -69,7 +69,7 @@ void AddConstraintSubjectPreferredRoomForm::updateRoomsComboBox()
 
 void AddConstraintSubjectPreferredRoomForm::addConstraint()
 {
-	SpaceConstraint *ctr=NULL;
+	SpaceConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

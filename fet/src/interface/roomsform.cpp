@@ -141,7 +141,7 @@ void RoomsForm::removeRoom()
 	}
 	
 	Room* rm=visibleRoomsList.at(ind);
-	assert(rm!=NULL);
+	assert(rm!=nullptr);
 
 	if(QMessageBox::warning( this, tr("FET"),
 		tr("Are you sure you want to delete this room and all related constraints?"),
@@ -203,7 +203,7 @@ void RoomsForm::roomChanged(int index)
 	QString s;
 	Room* room=visibleRoomsList.at(index);
 
-	assert(room!=NULL);
+	assert(room!=nullptr);
 	s=room->getDetailedDescriptionWithConstraints(gt.rules);
 	currentRoomTextEdit->setPlainText(s);
 }
@@ -332,7 +332,7 @@ void RoomsForm::comments()
 	}
 	
 	Room* rm=gt.rules.roomsList[ind];
-	assert(rm!=NULL);
+	assert(rm!=nullptr);
 
 	QDialog getCommentsDialog(this);
 	

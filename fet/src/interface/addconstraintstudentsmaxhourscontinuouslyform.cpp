@@ -46,7 +46,7 @@ AddConstraintStudentsMaxHoursContinuouslyForm::~AddConstraintStudentsMaxHoursCon
 
 void AddConstraintStudentsMaxHoursContinuouslyForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

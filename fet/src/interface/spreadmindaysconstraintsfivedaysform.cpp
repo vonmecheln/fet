@@ -196,9 +196,9 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 		ConstraintMinDaysBetweenActivities* c1;
 		ConstraintMinDaysBetweenActivities* c2;
 		ConstraintMinDaysBetweenActivities* c3;
-		c1=NULL;
-		c2=NULL;
-		c3=NULL;
+		c1=nullptr;
+		c2=nullptr;
+		c3=nullptr;
 		
 		QList<int> cl=activitiesForRepresentant[i];
 		assert(cl.count()>=1);
@@ -237,7 +237,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 			}
 			else{
 				QMessageBox::information(this, tr("FET information"), tr("Please select the isolated component"));
-				assert(c1!=NULL);
+				assert(c1!=nullptr);
 				delete c1;
 				return;
 			}
@@ -283,15 +283,15 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 			//acts[1]=cl.at(1);
 			acts.append(cl.at(1));
 			
-			assert(c2==NULL);
+			assert(c2==nullptr);
 			c2=new ConstraintMinDaysBetweenActivities(weight2, consecutiveIfSameDay, n_acts, acts, 2);
 		}
 	
-		if(c1!=NULL)
+		if(c1!=nullptr)
 			addedConstraints.append(c1);
-		if(c2!=NULL)
+		if(c2!=nullptr)
 			addedConstraints.append(c2);
-		if(c3!=NULL)
+		if(c3!=nullptr)
 			addedConstraints.append(c3);
 	}
 	

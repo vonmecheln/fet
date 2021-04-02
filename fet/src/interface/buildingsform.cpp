@@ -131,7 +131,7 @@ void BuildingsForm::removeBuilding()
 	}
 	
 	Building* bu=visibleBuildingsList.at(ind);
-	assert(bu!=NULL);
+	assert(bu!=nullptr);
 
 	if(QMessageBox::warning( this, tr("FET"),
 		tr("Are you sure you want to delete this building?"),
@@ -164,7 +164,7 @@ void BuildingsForm::buildingChanged(int index)
 	QString s;
 	Building* building=visibleBuildingsList.at(index);
 
-	assert(building!=NULL);
+	assert(building!=nullptr);
 	s=building->getDetailedDescriptionWithConstraints(gt.rules);
 	currentBuildingTextEdit->setPlainText(s);
 }
@@ -293,7 +293,7 @@ void BuildingsForm::comments()
 	}
 	
 	Building* bu=gt.rules.buildingsList[ind];
-	assert(bu!=NULL);
+	assert(bu!=nullptr);
 
 	QDialog getCommentsDialog(this);
 	

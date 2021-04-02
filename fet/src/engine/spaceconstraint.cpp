@@ -213,7 +213,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 	int nor; //number of overwhelmed rooms
 
 	//part without logging....................................................................
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		//Unallocated activities
 		unallocated=0;
 		nor=0;
@@ -247,7 +247,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 				for(int k=0; k<r.nHoursPerDay; k++){
 					int tmp=roomsMatrix[i][j][k]-1;
 					if(tmp>0){
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=tr("Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.")
 								.arg(r.internalRoomsList[i]->name)
 								.arg(r.daysOfTheWeek[j])
@@ -277,7 +277,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 				//Needs to be very a large constant, bigger than any other broken constraint.
 				unallocated += /*r.internalActivitiesList[i].duration * r.internalActivitiesList[i].nSubgroups * */ 10000;
 				//(an unallocated activity for a year is more important than an unallocated activity for a subgroup)
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Space constraint basic compulsory broken: unallocated activity with id=%1 (%2)",
 						"%2 is the detailed description of the activity").arg(r.internalActivitiesList[i].id).arg(getActivityDetailedDescription(r, r.internalActivitiesList[i].id));
 					s+=QString(" - ");
@@ -307,7 +307,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 	
 					nor+=tmp;
 
-					if(conflictsString!=NULL){
+					if(conflictsString!=nullptr){
 						QString s;
 						s=tr("Space constraint basic compulsory: room %1 has allocated activity with id %2 (%3) and the capacity of the room is overloaded",
 							"%2 is act id, %3 is detailed description of activity")
@@ -335,7 +335,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 					for(int k=0; k<r.nHoursPerDay; k++){
 						int tmp=roomsMatrix[i][j][k]-1;
 						if(tmp>0){
-							if(conflictsString!=NULL){
+							if(conflictsString!=nullptr){
 								QString s=tr("Space constraint basic compulsory: room with name %1 has more than one allocated activity on day %2, hour %3.")
 									.arg(r.internalRoomsList[i]->name)
 									.arg(r.daysOfTheWeek[j])
@@ -616,7 +616,7 @@ double ConstraintRoomNotAvailableTimes::fitness(
 		if(roomsMatrix[rm][d][h]>0){
 			nbroken+=roomsMatrix[rm][d][h];
 	
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s= tr("Space constraint room not available times broken for room: %1, on day %2, hour %3")
 				 .arg(r.internalRoomsList[rm]->name)
 				 .arg(r.daysOfTheWeek[d])
@@ -949,7 +949,7 @@ double ConstraintActivityPreferredRoom::fitness(
 		if(rm!=UNALLOCATED_SPACE){
 			ok=false;
 
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint activity preferred room broken for activity with id=%1 (%2), room=%3",
 					"%1 is activity id, %2 is detailed description of activity")
 					.arg(this->activityId)
@@ -978,7 +978,7 @@ double ConstraintActivityPreferredRoom::fitness(
 #endif
 				ok=false;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Space constraint activity preferred room broken for activity with id=%1 (%2), room=%3, the preferred real rooms are not satisfied",
 						"%1 is activity id, %2 is detailed description of activity")
 						.arg(this->activityId)
@@ -1240,7 +1240,7 @@ double ConstraintActivityPreferredRooms::fitness(
 			if(rm!=UNALLOCATED_SPACE){
 				ok=false;
 		
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Space constraint activity preferred rooms broken for activity with id=%1 (%2)"
 						, "%1 is activity id, %2 is detailed description of activity")
 						.arg(this->activityId)
@@ -1504,7 +1504,7 @@ double ConstraintStudentsSetHomeRoom::fitness(
 			if(rm!=UNALLOCATED_SPACE)
 				ok2=false;
 		
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint students set home room broken for activity with id %1 (%2)",
 					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
@@ -1784,7 +1784,7 @@ double ConstraintStudentsSetHomeRooms::fitness(
 			if(rm!=UNALLOCATED_SPACE)
 				ok2=false;
 			
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint students set home rooms broken for activity with id %1 (%2)"
 					, "%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
@@ -2044,7 +2044,7 @@ double ConstraintTeacherHomeRoom::fitness(
 			if(rm!=UNALLOCATED_SPACE)
 				ok2=false;
 		
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint teacher home room broken for activity with id %1 (%2)",
 					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
@@ -2323,7 +2323,7 @@ double ConstraintTeacherHomeRooms::fitness(
 			if(rm!=UNALLOCATED_SPACE)
 				ok2=false;
 			
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint teacher home rooms broken for activity with id %1 (%2)",
 					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
@@ -2552,7 +2552,7 @@ double ConstraintSubjectPreferredRoom::fitness(
 			if(rm!=UNALLOCATED_SPACE)
 				ok2=false;
 		
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint subject preferred room broken for activity with id %1 (%2)"
 					, "%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
@@ -2799,7 +2799,7 @@ double ConstraintSubjectPreferredRooms::fitness(
 			if(rm!=UNALLOCATED_SPACE)
 				ok2=false;
 			
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint subject preferred rooms broken for activity with id %1 (%2)",
 					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
@@ -3034,7 +3034,7 @@ double ConstraintSubjectActivityTagPreferredRoom::fitness(
 			if(rm!=UNALLOCATED_SPACE)
 				ok2=false;
 		
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint subject activity tag preferred room broken for activity with id %1 (%2) (activity tag of constraint=%3)",
 					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
@@ -3287,7 +3287,7 @@ double ConstraintSubjectActivityTagPreferredRooms::fitness(
 			if(rm!=UNALLOCATED_SPACE)
 				ok2=false;
 			
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint subject activity tag preferred rooms broken for activity with id %1 (%2) (activity tag of constraint=%3)",
 					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
@@ -3518,7 +3518,7 @@ double ConstraintActivityTagPreferredRoom::fitness(
 			if(rm!=UNALLOCATED_SPACE)
 				ok2=false;
 		
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint activity tag preferred room broken for activity with id %1 (%2) (activity tag of constraint=%3)",
 					"%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
@@ -3766,7 +3766,7 @@ double ConstraintActivityTagPreferredRooms::fitness(
 			if(rm!=UNALLOCATED_SPACE)
 				ok2=false;
 			
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint activity tag preferred rooms broken for activity with id %1 (%2) (activity tag of constraint=%3)"
 					, "%1 is activity id, %2 is detailed description of activity")
 					.arg(r.internalActivitiesList[ac].id)
@@ -3871,9 +3871,9 @@ ConstraintStudentsSetMaxBuildingChangesPerDay::ConstraintStudentsSetMaxBuildingC
 bool ConstraintStudentsSetMaxBuildingChangesPerDay::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
-	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
+	StudentsSet* ss=r.studentsHash.value(studentsName, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max building changes per day is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -4051,7 +4051,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerDay::fitness(
 			if(n_changes>this->maxBuildingChangesPerDay){
 				nbroken+=-this->maxBuildingChangesPerDay+n_changes;
 		
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Space constraint students set max building changes per day broken for students=%1 on day %2")
 						.arg(this->studentsName)
 						.arg(r.daysOfTheWeek[d2]);
@@ -4287,7 +4287,7 @@ double ConstraintStudentsMaxBuildingChangesPerDay::fitness(
 			if(n_changes>this->maxBuildingChangesPerDay){
 				nbroken+=-this->maxBuildingChangesPerDay+n_changes;
 		
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Space constraint students max building changes per day broken for students=%1 on day %2")
 						.arg(r.internalSubgroupsList[sbg]->name)
 						.arg(r.daysOfTheWeek[d2]);
@@ -4397,9 +4397,9 @@ ConstraintStudentsSetMaxBuildingChangesPerWeek::ConstraintStudentsSetMaxBuilding
 bool ConstraintStudentsSetMaxBuildingChangesPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
-	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
+	StudentsSet* ss=r.studentsHash.value(studentsName, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max building changes per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -4578,7 +4578,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerWeek::fitness(
 		if(n_changes>this->maxBuildingChangesPerWeek){
 			nbroken+=-this->maxBuildingChangesPerWeek+n_changes;
 		
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint students set max building changes per week broken for students=%1")
 					.arg(this->studentsName);
 				s += ". ";
@@ -4814,7 +4814,7 @@ double ConstraintStudentsMaxBuildingChangesPerWeek::fitness(
 		if(n_changes>this->maxBuildingChangesPerWeek){
 			nbroken+=-this->maxBuildingChangesPerWeek+n_changes;
 		
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint students max building changes per week broken for students=%1")
 					.arg(r.internalSubgroupsList[sbg]->name);
 				s += ". ";
@@ -4922,9 +4922,9 @@ ConstraintStudentsSetMinGapsBetweenBuildingChanges::ConstraintStudentsSetMinGaps
 bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
-	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
+	StudentsSet* ss=r.studentsHash.value(studentsName, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min gaps between building changes is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -5106,7 +5106,7 @@ double ConstraintStudentsSetMinGapsBetweenBuildingChanges::fitness(
 						if(cnt_gaps<this->minGapsBetweenBuildingChanges){
 							nbroken++;
 						
-							if(conflictsString!=NULL){
+							if(conflictsString!=nullptr){
 								QString s=tr("Space constraint students set min gaps between building changes broken for students=%1 on day %2")
 									.arg(this->studentsName)
 									.arg(r.daysOfTheWeek[d2]);
@@ -5354,7 +5354,7 @@ double ConstraintStudentsMinGapsBetweenBuildingChanges::fitness(
 						if(cnt_gaps<this->minGapsBetweenBuildingChanges){
 							nbroken++;
 						
-							if(conflictsString!=NULL){
+							if(conflictsString!=nullptr){
 								QString s=tr("Space constraint students min gaps between building changes broken for students=%1 on day %2")
 									.arg(r.internalSubgroupsList[sbg]->name)
 									.arg(r.daysOfTheWeek[d2]);
@@ -5616,7 +5616,7 @@ double ConstraintTeacherMaxBuildingChangesPerDay::fitness(
 		if(n_changes>this->maxBuildingChangesPerDay){
 			nbroken+=-this->maxBuildingChangesPerDay+n_changes;
 	
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint teacher max building changes per day broken for teacher=%1 on day %2")
 					.arg(this->teacherName)
 					.arg(r.daysOfTheWeek[d2]);
@@ -5852,7 +5852,7 @@ double ConstraintTeachersMaxBuildingChangesPerDay::fitness(
 			if(n_changes>this->maxBuildingChangesPerDay){
 				nbroken+=-this->maxBuildingChangesPerDay+n_changes;
 		
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Space constraint teachers max building changes per day broken for teacher=%1 on day %2")
 						.arg(r.internalTeachersList[tch]->name)
 						.arg(r.daysOfTheWeek[d2]);
@@ -6108,7 +6108,7 @@ double ConstraintTeacherMaxBuildingChangesPerWeek::fitness(
 	if(n_changes>this->maxBuildingChangesPerWeek){
 		nbroken+=n_changes-this->maxBuildingChangesPerWeek;
 	
-		if(conflictsString!=NULL){
+		if(conflictsString!=nullptr){
 			QString s=tr("Space constraint teacher max building changes per week broken for teacher=%1")
 				.arg(this->teacherName);
 			s += ". ";
@@ -6344,7 +6344,7 @@ double ConstraintTeachersMaxBuildingChangesPerWeek::fitness(
 		if(n_changes>this->maxBuildingChangesPerWeek){
 			nbroken+=n_changes-this->maxBuildingChangesPerWeek;
 		
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint teachers max building changes per week broken for teacher=%1")
 					.arg(r.internalTeachersList[tch]->name);
 				s += ". ";
@@ -6600,7 +6600,7 @@ double ConstraintTeacherMinGapsBetweenBuildingChanges::fitness(
 					if(cnt_gaps<this->minGapsBetweenBuildingChanges){
 						nbroken++;
 					
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=tr("Space constraint teacher min gaps between building changes broken for teacher=%1 on day %2")
 								.arg(this->teacherName)
 								.arg(r.daysOfTheWeek[d2]);
@@ -6848,7 +6848,7 @@ double ConstraintTeachersMinGapsBetweenBuildingChanges::fitness(
 						if(cnt_gaps<this->minGapsBetweenBuildingChanges){
 							nbroken++;
 					
-							if(conflictsString!=NULL){
+							if(conflictsString!=nullptr){
 								QString s=tr("Space constraint teachers min gaps between building changes broken for teacher=%1 on day %2")
 									.arg(r.internalTeachersList[tch]->name)
 									.arg(r.daysOfTheWeek[d2]);
@@ -6967,9 +6967,9 @@ ConstraintStudentsSetMaxRoomChangesPerDay::ConstraintStudentsSetMaxRoomChangesPe
 bool ConstraintStudentsSetMaxRoomChangesPerDay::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
-	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
+	StudentsSet* ss=r.studentsHash.value(studentsName, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max room changes per day is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -7147,7 +7147,7 @@ double ConstraintStudentsSetMaxRoomChangesPerDay::fitness(
 			if(n_changes>this->maxRoomChangesPerDay){
 				nbroken+=-this->maxRoomChangesPerDay+n_changes;
 		
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Space constraint students set max room changes per day broken for students=%1 on day %2")
 						.arg(this->studentsName)
 						.arg(r.daysOfTheWeek[d2]);
@@ -7383,7 +7383,7 @@ double ConstraintStudentsMaxRoomChangesPerDay::fitness(
 			if(n_changes>this->maxRoomChangesPerDay){
 				nbroken+=-this->maxRoomChangesPerDay+n_changes;
 		
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Space constraint students max room changes per day broken for students=%1 on day %2")
 						.arg(r.internalSubgroupsList[sbg]->name)
 						.arg(r.daysOfTheWeek[d2]);
@@ -7493,9 +7493,9 @@ ConstraintStudentsSetMaxRoomChangesPerWeek::ConstraintStudentsSetMaxRoomChangesP
 bool ConstraintStudentsSetMaxRoomChangesPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
-	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
+	StudentsSet* ss=r.studentsHash.value(studentsName, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max room changes per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -7674,7 +7674,7 @@ double ConstraintStudentsSetMaxRoomChangesPerWeek::fitness(
 		if(n_changes>this->maxRoomChangesPerWeek){
 			nbroken+=-this->maxRoomChangesPerWeek+n_changes;
 		
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint students set max room changes per week broken for students=%1")
 					.arg(this->studentsName);
 				s += ". ";
@@ -7910,7 +7910,7 @@ double ConstraintStudentsMaxRoomChangesPerWeek::fitness(
 		if(n_changes>this->maxRoomChangesPerWeek){
 			nbroken+=-this->maxRoomChangesPerWeek+n_changes;
 		
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint students max room changes per week broken for students=%1")
 					.arg(r.internalSubgroupsList[sbg]->name);
 				s += ". ";
@@ -8018,9 +8018,9 @@ ConstraintStudentsSetMinGapsBetweenRoomChanges::ConstraintStudentsSetMinGapsBetw
 bool ConstraintStudentsSetMinGapsBetweenRoomChanges::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
-	StudentsSet* ss=r.studentsHash.value(studentsName, NULL);
+	StudentsSet* ss=r.studentsHash.value(studentsName, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min gaps between room changes is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -8202,7 +8202,7 @@ double ConstraintStudentsSetMinGapsBetweenRoomChanges::fitness(
 						if(cnt_gaps<this->minGapsBetweenRoomChanges){
 							nbroken++;
 						
-							if(conflictsString!=NULL){
+							if(conflictsString!=nullptr){
 								QString s=tr("Space constraint students set min gaps between room changes broken for students=%1 on day %2")
 									.arg(this->studentsName)
 									.arg(r.daysOfTheWeek[d2]);
@@ -8450,7 +8450,7 @@ double ConstraintStudentsMinGapsBetweenRoomChanges::fitness(
 						if(cnt_gaps<this->minGapsBetweenRoomChanges){
 							nbroken++;
 						
-							if(conflictsString!=NULL){
+							if(conflictsString!=nullptr){
 								QString s=tr("Space constraint students min gaps between room changes broken for students=%1 on day %2")
 									.arg(r.internalSubgroupsList[sbg]->name)
 									.arg(r.daysOfTheWeek[d2]);
@@ -8712,7 +8712,7 @@ double ConstraintTeacherMaxRoomChangesPerDay::fitness(
 		if(n_changes>this->maxRoomChangesPerDay){
 			nbroken+=-this->maxRoomChangesPerDay+n_changes;
 	
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint teacher max room changes per day broken for teacher=%1 on day %2")
 					.arg(this->teacherName)
 					.arg(r.daysOfTheWeek[d2]);
@@ -8948,7 +8948,7 @@ double ConstraintTeachersMaxRoomChangesPerDay::fitness(
 			if(n_changes>this->maxRoomChangesPerDay){
 				nbroken+=-this->maxRoomChangesPerDay+n_changes;
 		
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Space constraint teachers max room changes per day broken for teacher=%1 on day %2")
 						.arg(r.internalTeachersList[tch]->name)
 						.arg(r.daysOfTheWeek[d2]);
@@ -9204,7 +9204,7 @@ double ConstraintTeacherMaxRoomChangesPerWeek::fitness(
 	if(n_changes>this->maxRoomChangesPerWeek){
 		nbroken+=n_changes-this->maxRoomChangesPerWeek;
 	
-		if(conflictsString!=NULL){
+		if(conflictsString!=nullptr){
 			QString s=tr("Space constraint teacher max room changes per week broken for teacher=%1")
 				.arg(this->teacherName);
 			s += ". ";
@@ -9440,7 +9440,7 @@ double ConstraintTeachersMaxRoomChangesPerWeek::fitness(
 		if(n_changes>this->maxRoomChangesPerWeek){
 			nbroken+=n_changes-this->maxRoomChangesPerWeek;
 		
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Space constraint teachers max room changes per week broken for teacher=%1")
 					.arg(r.internalTeachersList[tch]->name);
 				s += ". ";
@@ -9696,7 +9696,7 @@ double ConstraintTeacherMinGapsBetweenRoomChanges::fitness(
 					if(cnt_gaps<this->minGapsBetweenRoomChanges){
 						nbroken++;
 					
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=tr("Space constraint teacher min gaps between room changes broken for teacher=%1 on day %2")
 								.arg(this->teacherName)
 								.arg(r.daysOfTheWeek[d2]);
@@ -9944,7 +9944,7 @@ double ConstraintTeachersMinGapsBetweenRoomChanges::fitness(
 						if(cnt_gaps<this->minGapsBetweenRoomChanges){
 							nbroken++;
 					
-							if(conflictsString!=NULL){
+							if(conflictsString!=nullptr){
 								QString s=tr("Space constraint teachers min gaps between room changes broken for teacher=%1 on day %2")
 									.arg(r.internalTeachersList[tch]->name)
 									.arg(r.daysOfTheWeek[d2]);
@@ -10208,7 +10208,7 @@ double ConstraintActivitiesOccupyMaxDifferentRooms::fitness(
 	if(usedRooms.count() > this->maxDifferentRooms){
 		nbroken=1;
 
-		if(conflictsString!=NULL){
+		if(conflictsString!=nullptr){
 			QString s=tr("Space constraint activities occupy max different rooms broken");
 			s += QString(". ");
 			s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
@@ -10231,8 +10231,8 @@ void ConstraintActivitiesOccupyMaxDifferentRooms::removeUseless(Rules& r)
 	QList<int> newActs;
 	
 	for(int aid : qAsConst(activitiesIds)){
-		Activity* act=r.activitiesPointerHash.value(aid, NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
+		if(act!=nullptr)
 		//if(validActs.contains(aid))
 			newActs.append(aid);
 	}
@@ -10472,7 +10472,7 @@ double ConstraintActivitiesSameRoomIfConsecutive::fitness(
 	}
 	
 	if(nbroken>0){
-		if(conflictsString!=NULL){
+		if(conflictsString!=nullptr){
 			QString s=tr("Space constraint activities same room if consecutive broken");
 			s += QString(". ");
 			s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
@@ -10495,8 +10495,8 @@ void ConstraintActivitiesSameRoomIfConsecutive::removeUseless(Rules& r)
 	QList<int> newActs;
 	
 	for(int aid : qAsConst(activitiesIds)){
-		Activity* act=r.activitiesPointerHash.value(aid, NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
+		if(act!=nullptr)
 		//if(validActs.contains(aid))
 			newActs.append(aid);
 	}

@@ -22,6 +22,7 @@
 extern Timetable gt;
 
 #include <QHash>
+#include <QMultiHash>
 #include <QList>
 #include <QQueue>
 

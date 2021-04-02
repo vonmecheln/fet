@@ -127,9 +127,9 @@ public:
 	
 	bool abortOptimization;
 	
-	bool precompute(QWidget* parent, QTextStream* maxPlacedActivityStream=NULL);
+	bool precompute(QWidget* parent, QTextStream* maxPlacedActivityStream=nullptr);
 	
-	void generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=NULL);
+	void generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=nullptr);
 	
 	void moveActivity(int ai, int fromslot, int toslot, int fromroom, int toroom, const QList<int>& fromRealRoomsList, const QList<int>& toRealRoomsList);
 	

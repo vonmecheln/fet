@@ -526,7 +526,7 @@ void TimetableViewStudentsDaysHorizontalForm::groupChanged(const QString &groupN
 		return;
 	
 	StudentsSet* ss=gt.rules.searchAugmentedStudentsSet(groupName);
-	if(ss==NULL){
+	if(ss==nullptr){
 		QMessageBox::warning(this, tr("FET warning"), tr("Inexistent group - please reload this dialog"));
 		return;
 	}
@@ -608,7 +608,7 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 	subgroupname = subgroupsListWidget->currentItem()->text();
 
 	StudentsSet* ss=gt.rules.searchAugmentedStudentsSet(subgroupname);
-	if(ss==NULL){
+	if(ss==nullptr){
 		QMessageBox::information(this, tr("FET warning"), tr("Inexistent subgroup - please reload this dialog"));
 		return;
 	}
@@ -648,7 +648,7 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 			int ai=students_timetable_weekly[i][k][j]; //activity index
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				assert(act!=NULL);
+				assert(act!=nullptr);
 				
 				assert(act->studentsNames.count()>=1);
 				if((act->studentsNames.count()==1 && act->studentsNames.at(0)!=subgroupname) || act->studentsNames.count()>=2){
@@ -789,7 +789,7 @@ void TimetableViewStudentsDaysHorizontalForm::currentItemChanged(QTableWidgetIte
 
 void TimetableViewStudentsDaysHorizontalForm::detailActivity(QTableWidgetItem* item)
 {
-	if(item==NULL){
+	if(item==nullptr){
 		detailsTextEdit->setPlainText(QString(""));
 		return;
 	}
@@ -832,7 +832,7 @@ void TimetableViewStudentsDaysHorizontalForm::detailActivity(QTableWidgetItem* i
 	subgroupname = subgroupsListWidget->currentItem()->text();
 
 	StudentsSet* ss=gt.rules.searchAugmentedStudentsSet(subgroupname);
-	if(ss==NULL){
+	if(ss==nullptr){
 		QMessageBox::information(this, tr("FET warning"), tr("Inexistent subgroup - please reload this dialog"));
 		return;
 	}
@@ -869,7 +869,7 @@ void TimetableViewStudentsDaysHorizontalForm::detailActivity(QTableWidgetItem* i
 		//Activity* act=gt.rules.activitiesList.at(ai);
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			assert(act!=NULL);
+			assert(act!=nullptr);
 			//s+=act->getDetailedDescriptionWithConstraints(gt.rules);
 			s+=act->getDetailedDescription(gt.rules);
 
@@ -993,7 +993,7 @@ void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 	Solution* tc=&best_solution;
 
 	StudentsSet* ss=gt.rules.searchAugmentedStudentsSet(subgroupname);
-	if(ss==NULL){
+	if(ss==nullptr){
 		QMessageBox::information(this, tr("FET warning"), tr("Inexistent subgroup - please reload this dialog"));
 		return;
 	}

@@ -156,7 +156,7 @@ void AddConstraintActivitiesSameStartingDayForm::filterChanged()
 
 void AddConstraintActivitiesSameStartingDayForm::addConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

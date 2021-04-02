@@ -58,7 +58,7 @@ void AddConstraintTeacherMinGapsBetweenRoomChangesForm::updateTeachersComboBox()
 
 void AddConstraintTeacherMinGapsBetweenRoomChangesForm::addCurrentConstraint()
 {
-	SpaceConstraint *ctr=NULL;
+	SpaceConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

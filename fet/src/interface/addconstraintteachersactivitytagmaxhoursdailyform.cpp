@@ -57,7 +57,7 @@ void AddConstraintTeachersActivityTagMaxHoursDailyForm::updateMaxHoursSpinBox(){
 
 void AddConstraintTeachersActivityTagMaxHoursDailyForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

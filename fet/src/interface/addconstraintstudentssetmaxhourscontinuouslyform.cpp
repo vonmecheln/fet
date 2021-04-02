@@ -56,7 +56,7 @@ void AddConstraintStudentsSetMaxHoursContinuouslyForm::updateStudentsSetComboBox
 
 void AddConstraintStudentsSetMaxHoursContinuouslyForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();
@@ -71,7 +71,7 @@ void AddConstraintStudentsSetMaxHoursContinuouslyForm::addCurrentConstraint()
 
 	QString students_name=studentsComboBox->currentText();
 	StudentsSet* s=gt.rules.searchStudentsSet(students_name);
-	if(s==NULL){
+	if(s==nullptr){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid students set"));
 		return;

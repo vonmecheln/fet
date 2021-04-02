@@ -58,7 +58,7 @@ void AddConstraintTeacherMaxRoomChangesPerDayForm::updateTeachersComboBox()
 
 void AddConstraintTeacherMaxRoomChangesPerDayForm::addCurrentConstraint()
 {
-	SpaceConstraint *ctr=NULL;
+	SpaceConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

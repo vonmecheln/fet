@@ -160,9 +160,9 @@ Matrix3D<QList<int> > virtual_rooms_timetable_weekly;
 Matrix3D<QList<int> > teachers_free_periods_timetable_weekly;
 
 #ifndef FET_COMMAND_LINE
-QApplication* pqapplication=NULL;
+QApplication* pqapplication=nullptr;
 
-FetMainForm* pFetMainForm=NULL;
+FetMainForm* pFetMainForm=nullptr;
 #endif
 
 //extern int XX;
@@ -199,7 +199,7 @@ void terminate(int param)
 {
 	Q_UNUSED(param);
 
-	assert(terminateGeneratePointer!=NULL);
+	assert(terminateGeneratePointer!=nullptr);
 	
 	terminateGeneratePointer->abortOptimization=true;
 }
@@ -345,7 +345,7 @@ void usage(QTextStream* out, const QString& error)
 	);
 	
 	cout<<qPrintable(s)<<endl;
-	if(out!=NULL)
+	if(out!=nullptr)
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		(*out)<<qPrintable(s)<<Qt::endl;
 #else
@@ -367,7 +367,7 @@ void readSimulationParameters()
 		if(!dir.exists(OUTPUT_DIR)){
 			bool t=dir.mkpath(OUTPUT_DIR);
 			if(!t){
-				QMessageBox::warning(NULL, FetTranslate::tr("FET warning"), FetTranslate::tr("Output directory %1 does not exist and cannot be"
+				QMessageBox::warning(nullptr, FetTranslate::tr("FET warning"), FetTranslate::tr("Output directory %1 does not exist and cannot be"
 				 " created - output directory will be made the default value %2")
 				 .arg(QDir::toNativeSeparators(OUTPUT_DIR)).arg(QDir::toNativeSeparators(predefDir)));
 				OUTPUT_DIR=predefDir;
@@ -726,40 +726,40 @@ void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 		if(1){
 		//if(wi->isVisible()){
 			FetMainForm* mainform=qobject_cast<FetMainForm*>(wi);
-			if(mainform!=NULL){
+			if(mainform!=nullptr){
 				mainform->retranslateUi(mainform);
 				continue;
 			}
 
 			//help
 			HelpAboutForm* aboutf=qobject_cast<HelpAboutForm*>(wi);
-			if(aboutf!=NULL){
+			if(aboutf!=nullptr){
 				aboutf->retranslateUi(aboutf);
 				continue;
 			}
 
 			HelpAboutLibrariesForm* aboutlibsf=qobject_cast<HelpAboutLibrariesForm*>(wi);
-			if(aboutlibsf!=NULL){
+			if(aboutlibsf!=nullptr){
 				aboutlibsf->retranslateUi(aboutlibsf);
 				continue;
 			}
 
 			HelpFaqForm* faqf=qobject_cast<HelpFaqForm*>(wi);
-			if(faqf!=NULL){
+			if(faqf!=nullptr){
 				faqf->retranslateUi(faqf);
 				faqf->setText();
 				continue;
 			}
 
 			HelpTipsForm* tipsf=qobject_cast<HelpTipsForm*>(wi);
-			if(tipsf!=NULL){
+			if(tipsf!=nullptr){
 				tipsf->retranslateUi(tipsf);
 				tipsf->setText();
 				continue;
 			}
 
 			HelpInstructionsForm* instrf=qobject_cast<HelpInstructionsForm*>(wi);
-			if(instrf!=NULL){
+			if(instrf!=nullptr){
 				instrf->retranslateUi(instrf);
 				instrf->setText();
 				continue;
@@ -768,49 +768,49 @@ void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 			
 			//timetable
 			TimetableViewStudentsDaysHorizontalForm* vsdf=qobject_cast<TimetableViewStudentsDaysHorizontalForm*>(wi);
-			if(vsdf!=NULL){
+			if(vsdf!=nullptr){
 				vsdf->retranslateUi(vsdf);
 				vsdf->updateStudentsTimetableTable();
 				continue;
 			}
 
 			TimetableViewStudentsTimeHorizontalForm* vstf=qobject_cast<TimetableViewStudentsTimeHorizontalForm*>(wi);
-			if(vstf!=NULL){
+			if(vstf!=nullptr){
 				vstf->retranslateUi(vstf);
 				vstf->updateStudentsTimetableTable();
 				continue;
 			}
 
 			TimetableViewTeachersDaysHorizontalForm* vtchdf=qobject_cast<TimetableViewTeachersDaysHorizontalForm*>(wi);
-			if(vtchdf!=NULL){
+			if(vtchdf!=nullptr){
 				vtchdf->retranslateUi(vtchdf);
 				vtchdf->updateTeachersTimetableTable();
 				continue;
 			}
 
 			TimetableViewTeachersTimeHorizontalForm* vtchtf=qobject_cast<TimetableViewTeachersTimeHorizontalForm*>(wi);
-			if(vtchtf!=NULL){
+			if(vtchtf!=nullptr){
 				vtchtf->retranslateUi(vtchtf);
 				vtchtf->updateTeachersTimetableTable();
 				continue;
 			}
 
 			TimetableViewRoomsDaysHorizontalForm* vrdf=qobject_cast<TimetableViewRoomsDaysHorizontalForm*>(wi);
-			if(vrdf!=NULL){
+			if(vrdf!=nullptr){
 				vrdf->retranslateUi(vrdf);
 				vrdf->updateRoomsTimetableTable();
 				continue;
 			}
 
 			TimetableViewRoomsTimeHorizontalForm* vrtf=qobject_cast<TimetableViewRoomsTimeHorizontalForm*>(wi);
-			if(vrtf!=NULL){
+			if(vrtf!=nullptr){
 				vrtf->retranslateUi(vrtf);
 				vrtf->updateRoomsTimetableTable();
 				continue;
 			}
 
 			TimetableShowConflictsForm* scf=qobject_cast<TimetableShowConflictsForm*>(wi);
-			if(scf!=NULL){
+			if(scf!=nullptr){
 				scf->retranslateUi(scf);
 				continue;
 			}
@@ -889,7 +889,7 @@ int main(int argc, char **argv)
 
 	VERBOSE=false;
 
-	terminateGeneratePointer=NULL;
+	terminateGeneratePointer=nullptr;
 	
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
@@ -899,7 +899,7 @@ int main(int argc, char **argv)
 	QObject::connect(&qapplication, SIGNAL(lastWindowClosed()), &qapplication, SLOT(quit()));
 #endif
 
-	//srand(unsigned(time(NULL))); //useless, I use randomKnuth(), but just in case I use somewhere rand() by mistake...
+	//srand(unsigned(time(nullptr))); //useless, I use randomKnuth(), but just in case I use somewhere rand() by mistake...
 
 	//initRandomKnuth();
 	rng.initializeMRG32k3a();
@@ -921,7 +921,7 @@ int main(int argc, char **argv)
 			t=dir.mkpath(OUTPUT_DIR);
 
 		if(!t){
-			QMessageBox::critical(NULL, FetTranslate::tr("FET critical"), FetTranslate::tr("Cannot create or use %1 directory (where the results should be stored) - you can continue operation, but you might not be able to work with FET."
+			QMessageBox::critical(nullptr, FetTranslate::tr("FET critical"), FetTranslate::tr("Cannot create or use %1 directory (where the results should be stored) - you can continue operation, but you might not be able to work with FET."
 			 " Maybe you can try to change the output directory from the 'Settings' menu. If this is a bug - please report it.").arg(QDir::toNativeSeparators(OUTPUT_DIR)));
 		}
 		
@@ -930,7 +930,7 @@ int main(int argc, char **argv)
 		bool existedBefore=test.exists();
 		bool t_t=test.open(QIODevice::ReadWrite);
 		if(!t_t){
-			QMessageBox::critical(NULL, FetTranslate::tr("FET critical"), FetTranslate::tr("You don't have write permissions in the output directory "
+			QMessageBox::critical(nullptr, FetTranslate::tr("FET critical"), FetTranslate::tr("You don't have write permissions in the output directory "
 			 "(FET cannot open or create file %1) - you might not be able to work correctly with FET. Maybe you can try to change the output directory from the 'Settings' menu."
 			 " If this is a bug - please report it.").arg(testFileName));
 		}
@@ -940,7 +940,7 @@ int main(int argc, char **argv)
 				test.remove();
 		}
 
-		setLanguage(qapplication, NULL);
+		setLanguage(qapplication, nullptr);
 
 		QCoreApplication::setApplicationName(FetTranslate::tr("FET"));
 
@@ -957,12 +957,12 @@ int main(int argc, char **argv)
 			cout<<"Settings saved"<<endl;
 		}
 	
-		pFetMainForm=NULL;
+		pFetMainForm=nullptr;
 	
 		return tmp2;
 	}
 	else{
-		QMessageBox::warning(NULL, FetTranslate::tr("FET warning"), FetTranslate::tr("To start FET in interface mode, please do"
+		QMessageBox::warning(nullptr, FetTranslate::tr("FET warning"), FetTranslate::tr("To start FET in interface mode, please do"
 		 " not give any command-line parameters to the FET executable"));
 		
 		return 1;
@@ -1311,13 +1311,13 @@ int main(int argc, char **argv)
 			}
 
 			if(showHelp){
-				usage(NULL, QString(""));
+				usage(nullptr, QString(""));
 				return 0;
 			}
 			else if(showVersion){
 				cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
 				cout<<"Free timetabling software, licensed under the GNU Affero General Public License version 3 or later"<<endl;
-				cout<<"Copyright (C) 2002-2020 Liviu Lalescu, Volker Dirr"<<endl;
+				cout<<"Copyright (C) 2002-2021 Liviu Lalescu, Volker Dirr"<<endl;
 				cout<<"Homepage: https://lalescu.ro/liviu/fet/"<<endl;
 				cout<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<endl;
 				cout<<"Depending on the platform and compiler, this program may use libraries from:"<<endl;
@@ -1326,7 +1326,7 @@ int main(int argc, char **argv)
 				return 0;
 			}
 			else{
-				usage(NULL, QString("Input file not specified"));
+				usage(nullptr, QString("Input file not specified"));
 				return 1;
 			}
 		}
@@ -1421,7 +1421,7 @@ int main(int argc, char **argv)
 			}
 		}
 		
-		setLanguage(qCoreApplication, NULL);
+		setLanguage(qCoreApplication, nullptr);
 		
 		QCoreApplication::setApplicationName(FetTranslate::tr("FET-CL"));
 		
@@ -1497,22 +1497,22 @@ int main(int argc, char **argv)
 		}
 
 //		if(filename==""){
-//			usage(/*&out*/NULL, QString("Input file not specified"));
+//			usage(/*&out*/nullptr, QString("Input file not specified"));
 //			logFile.close();
 //			return 1;
 //		}
 		if(secondsLimit==0){
-			usage(NULL, QString("Time limit is 0 seconds"));
+			usage(nullptr, QString("Time limit is 0 seconds"));
 			logFile.close();
 			return 1;
 		}
 		if(TIMETABLE_HTML_LEVEL>7 || TIMETABLE_HTML_LEVEL<0){
-			usage(NULL, QString("The html level must be 0, 1, 2, 3, 4, 5, 6, or 7"));
+			usage(nullptr, QString("The html level must be 0, 1, 2, 3, 4, 5, 6, or 7"));
 			logFile.close();
 			return 1;
 		}
 		if(randomSeedXSpecified || randomSeedYSpecified){
-			usage(NULL, QString("Starting with FET version 5.44.0 the random number generator was changed to a better one. Please see usage for instructions"
+			usage(nullptr, QString("Starting with FET version 5.44.0 the random number generator was changed to a better one. Please see usage for instructions"
 			 " on how to specify the random number generator seed at the start of the program (or do not specify a random seed at all)."
 			 " The program will now abort the generation"));
 			logFile.close();
@@ -1521,45 +1521,45 @@ int main(int argc, char **argv)
 		if(randomSeedS10Specified && randomSeedS11Specified && randomSeedS12Specified
 		 && randomSeedS20Specified && randomSeedS21Specified && randomSeedS22Specified){
 			if(randomSeedS10<0 || randomSeedS10>=rng.m1){
-				usage(NULL, QString("The random seed s10 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+				usage(nullptr, QString("The random seed s10 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
 				logFile.close();
 				return 1;
 			}
 			if(randomSeedS11<0 || randomSeedS11>=rng.m1){
-				usage(NULL, QString("The random seed s11 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+				usage(nullptr, QString("The random seed s11 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
 				logFile.close();
 				return 1;
 			}
 			if(randomSeedS12<0 || randomSeedS12>=rng.m1){
-				usage(NULL, QString("The random seed s12 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+				usage(nullptr, QString("The random seed s12 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
 				logFile.close();
 				return 1;
 			}
 
 			if(randomSeedS20<0 || randomSeedS20>=rng.m1){
-				usage(NULL, QString("The random seed s20 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+				usage(nullptr, QString("The random seed s20 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
 				logFile.close();
 				return 1;
 			}
 			if(randomSeedS21<0 || randomSeedS21>=rng.m1){
-				usage(NULL, QString("The random seed s21 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+				usage(nullptr, QString("The random seed s21 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
 				logFile.close();
 				return 1;
 			}
 			if(randomSeedS22<0 || randomSeedS22>=rng.m1){
-				usage(NULL, QString("The random seed s22 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+				usage(nullptr, QString("The random seed s22 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
 				logFile.close();
 				return 1;
 			}
 			
 			if(randomSeedS10==0 && randomSeedS11==0 && randomSeedS12==0){
-				usage(NULL, QString("The random seed numbers for component 1: s10, s11, and s12, must not all be zero"));
+				usage(nullptr, QString("The random seed numbers for component 1: s10, s11, and s12, must not all be zero"));
 				logFile.close();
 				return 1;
 			}
 
 			if(randomSeedS20==0 && randomSeedS21==0 && randomSeedS22==0){
-				usage(NULL, QString("The random seeds numbers for component 2: s20, s21, and s22, must not all be zero"));
+				usage(nullptr, QString("The random seeds numbers for component 2: s20, s21, and s22, must not all be zero"));
 				logFile.close();
 				return 1;
 			}
@@ -1601,7 +1601,7 @@ int main(int argc, char **argv)
 			else
 				notSpecified.append("s22");
 				
-			usage(NULL, QString("If you want to specify the random seed, you need to specify all the 6 components. You specified %1, but you did not"
+			usage(nullptr, QString("If you want to specify the random seed, you need to specify all the 6 components. You specified %1, but you did not"
 			 " specify %2.").arg(specified.join(", ")).arg(notSpecified.join(", ")));
 			logFile.close();
 			return 1;
@@ -1609,11 +1609,11 @@ int main(int argc, char **argv)
 		
 		/*if(randomSeedXSpecified != randomSeedYSpecified){
 			if(randomSeedXSpecified){
-				usage(NULL, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the X component"));
+				usage(nullptr, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the X component"));
 			}
 			else{
 				assert(randomSeedYSpecified);
-				usage(NULL, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the Y component"));
+				usage(nullptr, QString("If you want to specify the random seed, you need to specify both the X and the Y components, not only the Y component"));
 			}
 			logFile.close();
 			return 1;
@@ -1621,14 +1621,14 @@ int main(int argc, char **argv)
 		assert(randomSeedXSpecified==randomSeedYSpecified);
 		if(randomSeedXSpecified){
 			if(randomSeedX<=0 || randomSeedX>=MM){
-				usage(NULL, QString("Random seed X component must be at least 1 and at most %1").arg(MM-1));
+				usage(nullptr, QString("Random seed X component must be at least 1 and at most %1").arg(MM-1));
 				logFile.close();
 				return 1;
 			}
 		}
 		if(randomSeedYSpecified){
 			if(randomSeedY<=0 || randomSeedY>=MMM){
-				usage(NULL, QString("Random seed Y component must be at least 1 and at most %1").arg(MMM-1));
+				usage(nullptr, QString("Random seed Y component must be at least 1 and at most %1").arg(MMM-1));
 				logFile.close();
 				return 1;
 			}
@@ -1645,7 +1645,7 @@ int main(int argc, char **argv)
 		if(TIMETABLE_HTML_LEVEL>7 || TIMETABLE_HTML_LEVEL<0)
 			TIMETABLE_HTML_LEVEL=2;
 	
-		bool t=gt.rules.read(NULL, filename, true, initialDir);
+		bool t=gt.rules.read(nullptr, filename, true, initialDir);
 		if(!t){
 			cout<<"fet-cl: cannot read input file (not existing, in use, or incorrect file) - aborting"<<endl;
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
@@ -1675,7 +1675,7 @@ int main(int argc, char **argv)
 			return 1;
 		}
 		
-		t=gt.rules.computeInternalStructure(NULL);
+		t=gt.rules.computeInternalStructure(nullptr);
 		if(!t){
 			cout<<"Cannot compute internal structure - aborting"<<endl;
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
@@ -1696,7 +1696,7 @@ int main(int argc, char **argv)
 #endif
 	
 		gen.abortOptimization=false;
-		bool ok=gen.precompute(NULL, &initialOrderStream);
+		bool ok=gen.precompute(nullptr, &initialOrderStream);
 		
 		initialOrderFile.close();
 		
@@ -1724,7 +1724,7 @@ int main(int argc, char **argv)
 		}
 		//out<<"secondsLimit=="<<secondsLimit<<endl;
 				
-		TimetableExport::writeRandomSeedCommandLine(NULL, outputDirectory, true); //true represents 'before' state
+		TimetableExport::writeRandomSeedCommandLine(nullptr, outputDirectory, true); //true represents 'before' state
 
 		gen.generate(secondsLimit, impossible, timeExceeded, false, &maxPlacedActivityStream); //false means no thread
 		
@@ -1764,7 +1764,7 @@ int main(int argc, char **argv)
 				if(!dir.exists(toc))
 					dir.mkpath(toc);
 
-			TimetableExport::writeSimulationResultsCommandLine(NULL, toc);
+			TimetableExport::writeSimulationResultsCommandLine(nullptr, toc);
 			
 			QString s;
 
@@ -1831,7 +1831,7 @@ int main(int argc, char **argv)
 				if(!dir.exists(toh))
 					dir.mkpath(toh);
 
-			TimetableExport::writeSimulationResultsCommandLine(NULL, toh);
+			TimetableExport::writeSimulationResultsCommandLine(nullptr, toh);
 
 			QString oldDir=OUTPUT_DIR;
 			OUTPUT_DIR=csvOutputDirectory;
@@ -1885,7 +1885,7 @@ int main(int argc, char **argv)
 				if(!dir.exists(toc))
 					dir.mkpath(toc);
 
-			TimetableExport::writeSimulationResultsCommandLine(NULL, toc);
+			TimetableExport::writeSimulationResultsCommandLine(nullptr, toc);
 			
 			QString s;
 
@@ -1971,7 +1971,7 @@ int main(int argc, char **argv)
 				if(!dir.exists(toh))
 					dir.mkpath(toh);
 
-			TimetableExport::writeSimulationResultsCommandLine(NULL, toh);
+			TimetableExport::writeSimulationResultsCommandLine(nullptr, toh);
 
 			QString oldDir=OUTPUT_DIR;
 			OUTPUT_DIR=csvOutputDirectory;
@@ -1986,7 +1986,7 @@ int main(int argc, char **argv)
 			out<<"Simulation successful"<<endl;
 #endif
 		
-			TimetableExport::writeRandomSeedCommandLine(NULL, outputDirectory, false); //false represents 'before' state
+			TimetableExport::writeRandomSeedCommandLine(nullptr, outputDirectory, false); //false represents 'before' state
 
 			Solution& c=gen.c;
 
@@ -1998,7 +1998,7 @@ int main(int argc, char **argv)
 			TimetableExport::getTeachersTimetable(c);
 			TimetableExport::getRoomsTimetable(c);
 
-			TimetableExport::writeSimulationResultsCommandLine(NULL, outputDirectory);
+			TimetableExport::writeSimulationResultsCommandLine(nullptr, outputDirectory);
 			
 			QString oldDir=OUTPUT_DIR;
 			OUTPUT_DIR=csvOutputDirectory;
@@ -2010,7 +2010,7 @@ int main(int argc, char **argv)
 		return 0;
 	}
 	else{
-		usage(NULL, QString("No arguments given"));
+		usage(nullptr, QString("No arguments given"));
 		return 1;
 	}
 	//end command line

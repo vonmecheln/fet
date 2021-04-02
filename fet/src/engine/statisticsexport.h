@@ -47,18 +47,18 @@ public:
 	//QHash<QString, QString> hashDayIDsStatistics;
 	
 	//needed values
-	QHash <QString, int> teachersTotalNumberOfHours;
-	QHash <QString, int> teachersTotalNumberOfHours2;
-	QHash <QString, int> studentsTotalNumberOfHours;
-	QHash <QString, int> studentsTotalNumberOfHours2;
-	QHash <QString, int> subjectsTotalNumberOfHours;
-	QHash <QString, int> subjectsTotalNumberOfHours4;
+	QHash<QString, int> teachersTotalNumberOfHours;
+	QHash<QString, int> teachersTotalNumberOfHours2;
+	QHash<QString, int> studentsTotalNumberOfHours;
+	QHash<QString, int> studentsTotalNumberOfHours2;
+	QHash<QString, int> subjectsTotalNumberOfHours;
+	QHash<QString, int> subjectsTotalNumberOfHours4;
 	QStringList allStudentsNames;				//NOT QSet <QString>!!! Because that does an incorrect order of the lists!
 	QStringList allTeachersNames;				//NOT QSet <QString>!!! Because that does an incorrect order of the lists!
 	QStringList allSubjectsNames;				//NOT QSet <QString>!!! Because that does an incorrect order of the lists!
-	QMultiHash <QString, int> studentsActivities;
-	QMultiHash <QString, int> teachersActivities;
-	QMultiHash <QString, int> subjectsActivities;
+	QMultiHash<QString, int> studentsActivities;
+	QMultiHash<QString, int> teachersActivities;
+	QMultiHash<QString, int> subjectsActivities;
 };
 
 

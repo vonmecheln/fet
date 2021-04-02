@@ -677,7 +677,7 @@ void AddActivityForm::addActivity()
 	}
 	else{
 		for(int i=0; i<selectedStudentsListWidget->count(); i++){
-			//assert(gt.rules.searchStudentsSet(selectedStudentsListWidget->item(i)->text())!=NULL);
+			//assert(gt.rules.searchStudentsSet(selectedStudentsListWidget->item(i)->text())!=nullptr);
 			/*assert(numberOfStudentsHash.contains(selectedStudentsListWidget->item(i)->text()));
 			numberOfStudents+=numberOfStudentsHash.value(selectedStudentsListWidget->item(i)->text());*/
 			assert(gt.rules.permanentStudentsHash.contains(selectedStudentsListWidget->item(i)->text()));

@@ -320,7 +320,7 @@ void SubjectsForm::comments()
 	}
 	
 	Subject* sbj=gt.rules.subjectsList[ind];
-	assert(sbj!=NULL);
+	assert(sbj!=nullptr);
 
 	QDialog getCommentsDialog(this);
 	

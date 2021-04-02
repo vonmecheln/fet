@@ -57,7 +57,7 @@ AddConstraintTeacherMinRestingHoursForm::~AddConstraintTeacherMinRestingHoursFor
 
 void AddConstraintTeacherMinRestingHoursForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

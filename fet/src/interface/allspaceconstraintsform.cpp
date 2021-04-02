@@ -449,7 +449,7 @@ void AllSpaceConstraintsForm::constraintChanged()
 
 	assert(index<visibleSpaceConstraintsList.count());
 	SpaceConstraint* ctr=visibleSpaceConstraintsList.at(index);
-	assert(ctr!=NULL);
+	assert(ctr!=nullptr);
 	QString s=ctr->getDetailedDescription(gt.rules);
 	currentConstraintTextEdit->setPlainText(s);
 }

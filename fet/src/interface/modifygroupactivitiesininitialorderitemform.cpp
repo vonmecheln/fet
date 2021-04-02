@@ -62,7 +62,7 @@ ModifyGroupActivitiesInInitialOrderItemForm::ModifyGroupActivitiesInInitialOrder
 	for(int i=0; i<item->ids.count(); i++){
 		int actId=item->ids[i];
 		this->selectedActivitiesList.append(actId);
-		Activity* act=NULL;
+		Activity* act=nullptr;
 		for(int k=0; k<gt.rules.activitiesList.size(); k++){
 			act=gt.rules.activitiesList[k];
 			if(act->id==actId)

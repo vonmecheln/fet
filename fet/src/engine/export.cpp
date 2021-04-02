@@ -297,7 +297,7 @@ void Export::exportCSV(Solution* bestOrHighest, Solution* current){
 	okact=exportCSVActivities(lastWarnings, textquote, fieldSeparator, head);
 	okacts=exportCSVActivitiesStatistic(lastWarnings, textquote, fieldSeparator, head);
 	
-	if(current==NULL){
+	if(current==nullptr){
 		best_solution.copy(gt.rules, *bestOrHighest);
 		lastWarnings.append(Export::tr("Successfully finished timetable:"));
 		lastWarnings.append(" ");
@@ -362,7 +362,7 @@ bool Export::isActivityNotManualyEdited(int activityIndex, bool& diffTeachers, b
 	assert(activityIndex<gt.rules.activitiesList.size());
 
 	Activity* act=gt.rules.activitiesList[activityIndex];
-	assert(act!=NULL);
+	assert(act!=nullptr);
 	
 	QStringList teachers=act->teachersNames;
 	QString subject=act->subjectName;
@@ -453,7 +453,7 @@ bool Export::selectSeparatorAndTextquote(QWidget* parent, QDialog* &newParent, Q
 	top->addWidget(topText);
 
 	QGroupBox* separatorsGroupBox = new QGroupBox(Export::tr("Please specify the separator between fields:"));
-	QComboBox* separatorsCB=NULL;
+	QComboBox* separatorsCB=nullptr;
 	if(separators.size()>1){
 		QHBoxLayout* separatorBoxChoose=new QHBoxLayout();
 		separatorsCB=new QComboBox();
@@ -467,7 +467,7 @@ bool Export::selectSeparatorAndTextquote(QWidget* parent, QDialog* &newParent, Q
 	}
 
 	QGroupBox* textquoteGroupBox = new QGroupBox(Export::tr("Please specify the text quote of text fields:"));
-	QComboBox* textquoteCB=NULL;
+	QComboBox* textquoteCB=nullptr;
 	if(textquotes.size()>1){
 		QHBoxLayout* textquoteBoxChoose=new QHBoxLayout();
 		textquoteCB=new QComboBox();
@@ -522,8 +522,8 @@ bool Export::selectSeparatorAndTextquote(QWidget* parent, QDialog* &newParent, Q
 
 	// TODO: if is always true. maybe clean source (also 2 previous if)
 	if(separators.size()>1){
-		assert(separatorsCB!=NULL);
-		assert(textquoteCB!=NULL);
+		assert(separatorsCB!=nullptr);
+		assert(textquoteCB!=nullptr);
 		fieldSeparator=separatorsCB->currentText();
 		textquote=textquoteCB->currentText();
 		if(textquoteCB->currentIndex()==NO_TEXTQUOTE_POS){
@@ -536,8 +536,8 @@ bool Export::selectSeparatorAndTextquote(QWidget* parent, QDialog* &newParent, Q
 		}
 	}
 	else{
-		assert(separatorsCB==NULL);
-		assert(textquoteCB==NULL);
+		assert(separatorsCB==nullptr);
+		assert(textquoteCB==nullptr);
 		fieldSeparator="";
 		textquote="";
 	}
@@ -634,7 +634,7 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString& te
 		TimetableExportMessage::warning(parent, tr("FET information"), tr("Your data contains virtual rooms. These virtual rooms will be exported as normal/real rooms."
 		 " The list of sets of real rooms of the virtual rooms will not be exported."));
 #else
-		TimetableExportMessage::warning(NULL, tr("FET information"), tr("Your data contains virtual rooms. These virtual rooms will be exported as normal/real rooms."
+		TimetableExportMessage::warning(nullptr, tr("FET information"), tr("Your data contains virtual rooms. These virtual rooms will be exported as normal/real rooms."
 		 " The list of sets of real rooms of the virtual rooms will not be exported."));
 #endif
 	
@@ -1037,8 +1037,8 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 			}
 	
 			if(oktmp){
-				ConstraintMinDaysBetweenActivities* oldc=activitiesConstraints.value(repres, NULL);
-				if(oldc!=NULL){
+				ConstraintMinDaysBetweenActivities* oldc=activitiesConstraints.value(repres, nullptr);
+				if(oldc!=nullptr){
 					if(oldc->weightPercentage < c->weightPercentage){
 						activitiesConstraints.insert(repres, c); //overwrites old value
 						lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
@@ -1177,9 +1177,9 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 				//min days
 				//start new code, because of Liviu's detection
 				bool careAboutMinDay=false;
-				ConstraintMinDaysBetweenActivities* tcmd=activitiesConstraints.value(acti->id, NULL);
+				ConstraintMinDaysBetweenActivities* tcmd=activitiesConstraints.value(acti->id, nullptr);
 				if(acti->id==acti->activityGroupId){
-					if(tcmd!=NULL){
+					if(tcmd!=nullptr){
 						careAboutMinDay=true;
 					}
 				}

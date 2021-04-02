@@ -70,7 +70,7 @@ void AddConstraintStudentsSetHomeRoomsForm::updateRoomsListWidget()
 
 void AddConstraintStudentsSetHomeRoomsForm::addConstraint()
 {
-	SpaceConstraint *ctr=NULL;
+	SpaceConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();
@@ -93,7 +93,7 @@ void AddConstraintStudentsSetHomeRoomsForm::addConstraint()
 	}*/
 
 	QString students=studentsComboBox->currentText();
-	assert(gt.rules.searchStudentsSet(students)!=NULL);
+	assert(gt.rules.searchStudentsSet(students)!=nullptr);
 
 	QStringList roomsList;
 	for(int i=0; i<selectedRoomsListWidget->count(); i++)

@@ -534,7 +534,7 @@ void ModifyActivityForm::ok()
 	}
 	else{
 		for(int i=0; i<selectedStudentsListWidget->count(); i++){
-			//assert(gt.rules.searchStudentsSet(selectedStudentsListWidget->item(i)->text())!=NULL);
+			//assert(gt.rules.searchStudentsSet(selectedStudentsListWidget->item(i)->text())!=nullptr);
 			/*assert(numberOfStudentsHash.contains(selectedStudentsListWidget->item(i)->text()));
 			numberOfStudents+=numberOfStudentsHash.value(selectedStudentsListWidget->item(i)->text());*/
 			assert(gt.rules.permanentStudentsHash.contains(selectedStudentsListWidget->item(i)->text()));
@@ -546,7 +546,7 @@ void ModifyActivityForm::ok()
 	/*int total_number_of_students=0;
 	for(QStringList::Iterator it=students_names.begin(); it!=students_names.end(); it++){
 		StudentsSet* ss=gt.rules.searchStudentsSet(*it);
-		assert(ss!=NULL);
+		assert(ss!=nullptr);
 		total_number_of_students+=ss->numberOfStudents;
 	}*/
 	int total_number_of_students=numberOfStudents;

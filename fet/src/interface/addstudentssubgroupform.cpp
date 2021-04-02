@@ -68,7 +68,7 @@ void AddStudentsSubgroupForm::addStudentsSubgroup()
 	}
 	StudentsSet* ss=gt.rules.searchStudentsSet(subgroupName);
 	StudentsSubgroup* sts;
-	if(ss!=NULL && ss->type==STUDENTS_YEAR){
+	if(ss!=nullptr && ss->type==STUDENTS_YEAR){
 		QMessageBox::information( this, tr("Subgroup insertion dialog"),
 			tr("This name is taken for a year - please consider another name"));
 
@@ -77,7 +77,7 @@ void AddStudentsSubgroupForm::addStudentsSubgroup()
 
 		return;
 	}
-	if(ss!=NULL && ss->type==STUDENTS_GROUP){
+	if(ss!=nullptr && ss->type==STUDENTS_GROUP){
 		QMessageBox::information( this, tr("Subgroup insertion dialog"),
 			tr("This name is taken for a group - please consider another name"));
 
@@ -86,7 +86,7 @@ void AddStudentsSubgroupForm::addStudentsSubgroup()
 
 		return;
 	}
-	if(ss!=NULL){ //already existing subgroup, but in other group. Several groups share the same subgroup.
+	if(ss!=nullptr){ //already existing subgroup, but in other group. Several groups share the same subgroup.
 		assert(ss->type==STUDENTS_SUBGROUP);
 		if(QMessageBox::warning( this, tr("FET"),
 			tr("This subgroup already exists, but in another group. "

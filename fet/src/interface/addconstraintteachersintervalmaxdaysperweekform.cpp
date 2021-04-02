@@ -74,7 +74,7 @@ void AddConstraintTeachersIntervalMaxDaysPerWeekForm::updateEndHoursComboBox()
 
 void AddConstraintTeachersIntervalMaxDaysPerWeekForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

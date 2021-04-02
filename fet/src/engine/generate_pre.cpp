@@ -39,6 +39,7 @@ using namespace std;
 #include <QPair>
 #include <QSet>
 #include <QHash>
+#include <QMultiHash>
 #include <QQueue>
 #include <QList>
 
@@ -10994,7 +10995,7 @@ void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTim
 	s+="\n";
 	initialOrderOfActivities=s;
 	
-	if(initialOrderStream!=NULL){
+	if(initialOrderStream!=nullptr){
 		(*initialOrderStream)<<s;
 		(*initialOrderStream).flush();
 	}

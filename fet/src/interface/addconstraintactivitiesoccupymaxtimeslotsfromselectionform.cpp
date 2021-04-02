@@ -247,7 +247,7 @@ void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::itemClicked(QTa
 
 void AddConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

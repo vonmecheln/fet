@@ -445,7 +445,7 @@ void TimetableViewRoomsDaysHorizontalForm::updateRoomsTimetableTable(){
 			//Activity* act=gt.rules.activitiesList.at(ai);
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				assert(act!=NULL);
+				assert(act!=nullptr);
 				
 				if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
 					QString ats=act->activityTagsNames.join(", ");
@@ -573,7 +573,7 @@ void TimetableViewRoomsDaysHorizontalForm::currentItemChanged(QTableWidgetItem* 
 }
 
 void TimetableViewRoomsDaysHorizontalForm::detailActivity(QTableWidgetItem* item){
-	if(item==NULL){
+	if(item==nullptr){
 		detailsTextEdit->setPlainText(QString(""));
 		return;
 	}
@@ -621,7 +621,7 @@ void TimetableViewRoomsDaysHorizontalForm::detailActivity(QTableWidgetItem* item
 		//Activity* act=gt.rules.activitiesList.at(ai);
 		if(ai!=UNALLOCATED_ACTIVITY){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			assert(act!=NULL);
+			assert(act!=nullptr);
 			//s += act->getDetailedDescriptionWithConstraints(gt.rules);
 			s += act->getDetailedDescription(gt.rules);
 

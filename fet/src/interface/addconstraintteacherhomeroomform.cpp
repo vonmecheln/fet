@@ -66,7 +66,7 @@ void AddConstraintTeacherHomeRoomForm::updateRoomsComboBox()
 
 void AddConstraintTeacherHomeRoomForm::addConstraint()
 {
-	SpaceConstraint *ctr=NULL;
+	SpaceConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

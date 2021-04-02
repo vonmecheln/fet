@@ -58,7 +58,7 @@ void AddConstraintTeacherMinGapsBetweenBuildingChangesForm::updateTeachersComboB
 
 void AddConstraintTeacherMinGapsBetweenBuildingChangesForm::addCurrentConstraint()
 {
-	SpaceConstraint *ctr=NULL;
+	SpaceConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

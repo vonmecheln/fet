@@ -76,7 +76,7 @@ void AddConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::updateSeco
 
 void AddConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

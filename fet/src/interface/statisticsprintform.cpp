@@ -810,7 +810,7 @@ QString StatisticsPrintForm::updateHTMLprintString(bool printAll){
 	if(studentSubjectRB->isChecked()){
 		int count=0;
 		while(excludedNamesIndex.size()<namesList->count()){
-			tmp+=StatisticsExport::exportStatisticsStudentsSubjectsHtml(NULL/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
+			tmp+=StatisticsExport::exportStatisticsStudentsSubjectsHtml(nullptr/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
 			if(excludedNamesIndex.size()<namesList->count()){
 				if(count%2==0){
 					tmp+="    <p class=\"back1\"><br /></p>\n\n";
@@ -825,7 +825,7 @@ QString StatisticsPrintForm::updateHTMLprintString(bool printAll){
 	if(studentTeacherRB->isChecked()){
 		int count=0;
 		while(excludedNamesIndex.size()<namesList->count()){
-			tmp+=StatisticsExport::exportStatisticsStudentsTeachersHtml(NULL/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
+			tmp+=StatisticsExport::exportStatisticsStudentsTeachersHtml(nullptr/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
 			if(excludedNamesIndex.size()<namesList->count()){
 				if(count%2==0){
 					tmp+="    <p class=\"back1\"><br /></p>\n\n";
@@ -840,7 +840,7 @@ QString StatisticsPrintForm::updateHTMLprintString(bool printAll){
 	if(teacherSubjectRB->isChecked()){
 		int count=0;
 		while(excludedNamesIndex.size()<namesList->count()){
-			tmp+=StatisticsExport::exportStatisticsTeachersSubjectsHtml(NULL/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
+			tmp+=StatisticsExport::exportStatisticsTeachersSubjectsHtml(nullptr/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
 			if(excludedNamesIndex.size()<namesList->count()){
 				if(count%2==0){
 					tmp+="    <p class=\"back1\"><br /></p>\n\n";
@@ -855,7 +855,7 @@ QString StatisticsPrintForm::updateHTMLprintString(bool printAll){
 	if(teacherStudentRB->isChecked()){
 		int count=0;
 		while(excludedNamesIndex.size()<namesList->count()){
-			tmp+=StatisticsExport::exportStatisticsTeachersStudentsHtml(NULL/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
+			tmp+=StatisticsExport::exportStatisticsTeachersStudentsHtml(nullptr/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
 			if(excludedNamesIndex.size()<namesList->count()){
 				if(count%2==0){
 					tmp+="    <p class=\"back1\"><br /></p>\n\n";
@@ -870,7 +870,7 @@ QString StatisticsPrintForm::updateHTMLprintString(bool printAll){
 	if(subjectStudentRB->isChecked()){
 		int count=0;
 		while(excludedNamesIndex.size()<namesList->count()){
-			tmp+=StatisticsExport::exportStatisticsSubjectsStudentsHtml(NULL/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
+			tmp+=StatisticsExport::exportStatisticsSubjectsStudentsHtml(nullptr/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
 			if(excludedNamesIndex.size()<namesList->count()){
 				if(count%2==0){
 					tmp+="    <p class=\"back1\"><br /></p>\n\n";
@@ -885,7 +885,7 @@ QString StatisticsPrintForm::updateHTMLprintString(bool printAll){
 	if(subjectTeacherRB->isChecked()){
 		int count=0;
 		while(excludedNamesIndex.size()<namesList->count()){
-			tmp+=StatisticsExport::exportStatisticsSubjectsTeachersHtml(NULL/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
+			tmp+=StatisticsExport::exportStatisticsSubjectsTeachersHtml(nullptr/*parent*/, saveTime, statisticValues, 3, printActivityTags->isChecked(), maxNames->value(), &excludedNamesIndex);
 			if(excludedNamesIndex.size()<namesList->count()){
 				if(count%2==0){
 					tmp+="    <p class=\"back1\"><br /></p>\n\n";

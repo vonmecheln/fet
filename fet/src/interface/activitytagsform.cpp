@@ -359,7 +359,7 @@ void ActivityTagsForm::comments()
 	}
 	
 	ActivityTag* at=gt.rules.activityTagsList[ind];
-	assert(at!=NULL);
+	assert(at!=nullptr);
 
 	QDialog getCommentsDialog(this);
 	

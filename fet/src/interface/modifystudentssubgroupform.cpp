@@ -68,7 +68,7 @@ void ModifyStudentsSubgroupForm::ok()
 	//QString yearName=yearNameLineEdit->text();
 	//QString groupName=groupNameLineEdit->text();
 	
-	if(this->_initialSubgroupName!=subgroupName && gt.rules.searchStudentsSet(subgroupName)!=NULL){
+	if(this->_initialSubgroupName!=subgroupName && gt.rules.searchStudentsSet(subgroupName)!=nullptr){
 		QMessageBox::information(this, tr("FET information"),
 		 tr("Name exists. If you would like to make more groups to contain a subgroup (overlapping groups),"
  		 " please remove current subgroup (FET will unfortunately remove all related activities and constraints)"

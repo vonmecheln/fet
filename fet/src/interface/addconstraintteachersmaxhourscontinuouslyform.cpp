@@ -50,7 +50,7 @@ void AddConstraintTeachersMaxHoursContinuouslyForm::updateMaxHoursSpinBox(){
 
 void AddConstraintTeachersMaxHoursContinuouslyForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

@@ -186,15 +186,15 @@ bool Rules::computeInternalStructure(QWidget* parent)
 		}
 	}
 	for(StudentsYear* year : qAsConst(ayears)){
-		assert(year!=NULL);
+		assert(year!=nullptr);
 		delete year;
 	}
 	for(StudentsGroup* group : qAsConst(agroups)){
-		assert(group!=NULL);
+		assert(group!=nullptr);
 		delete group;
 	}
 	for(StudentsSubgroup* subgroup : qAsConst(asubgroups)){
-		assert(subgroup!=NULL);
+		assert(subgroup!=nullptr);
 		delete subgroup;
 	}
 	augmentedYearsList.clear();
@@ -942,15 +942,15 @@ void Rules::kill() //clears memory for the rules, destroys them
 		}
 	}
 	for(StudentsYear* year : qAsConst(iyears)){
-		assert(year!=NULL);
+		assert(year!=nullptr);
 		delete year;
 	}
 	for(StudentsGroup* group : qAsConst(igroups)){
-		assert(group!=NULL);
+		assert(group!=nullptr);
 		delete group;
 	}
 	for(StudentsSubgroup* subgroup : qAsConst(isubgroups)){
-		assert(subgroup!=NULL);
+		assert(subgroup!=nullptr);
 		delete subgroup;
 	}
 	yearsList.clear();
@@ -975,15 +975,15 @@ void Rules::kill() //clears memory for the rules, destroys them
 		}
 	}
 	for(StudentsYear* year : qAsConst(ayears)){
-		assert(year!=NULL);
+		assert(year!=nullptr);
 		delete year;
 	}
 	for(StudentsGroup* group : qAsConst(agroups)){
-		assert(group!=NULL);
+		assert(group!=nullptr);
 		delete group;
 	}
 	for(StudentsSubgroup* subgroup : qAsConst(asubgroups)){
-		assert(subgroup!=NULL);
+		assert(subgroup!=nullptr);
 		delete subgroup;
 	}
 	augmentedYearsList.clear();
@@ -1820,8 +1820,8 @@ bool Rules::setsShareStudents(const QString& studentsSet1, const QString& studen
 {
 	StudentsSet* s1=this->searchStudentsSet(studentsSet1);
 	StudentsSet* s2=this->searchStudentsSet(studentsSet2);
-	assert(s1!=NULL);
-	assert(s2!=NULL);
+	assert(s1!=nullptr);
+	assert(s2!=nullptr);
 	
 	QSet<QString> downwardSets1;
 	
@@ -1882,11 +1882,11 @@ bool Rules::setsShareStudents(const QString& studentsSet1, const QString& studen
 bool Rules::augmentedSetsShareStudentsFaster(const QString& studentsSet1, const QString& studentsSet2)
 {
 	//StudentsSet* s1=this->searchStudentsSet(studentsSet1);
-	StudentsSet* s1=studentsHash.value(studentsSet1, NULL);
+	StudentsSet* s1=studentsHash.value(studentsSet1, nullptr);
 	//StudentsSet* s2=this->searchStudentsSet(studentsSet2);
-	StudentsSet* s2=studentsHash.value(studentsSet2, NULL);
-	assert(s1!=NULL);
-	assert(s2!=NULL);
+	StudentsSet* s2=studentsHash.value(studentsSet2, nullptr);
+	assert(s1!=nullptr);
+	assert(s2!=nullptr);
 	
 	QSet<QString> downwardSets1;
 	
@@ -1981,7 +1981,7 @@ void Rules::computePermanentStudentsHash()
 
 StudentsSet* Rules::searchStudentsSet(const QString& setName)
 {
-	return permanentStudentsHash.value(setName, NULL);
+	return permanentStudentsHash.value(setName, nullptr);
 
 	/*for(int i=0; i<this->yearsList.size(); i++){
 		StudentsYear* sty=this->yearsList[i];
@@ -1998,7 +1998,7 @@ StudentsSet* Rules::searchStudentsSet(const QString& setName)
 			}
 		}
 	}
-	return NULL;*/
+	return nullptr;*/
 }
 
 StudentsSet* Rules::searchAugmentedStudentsSet(const QString& setName)
@@ -2018,7 +2018,7 @@ StudentsSet* Rules::searchAugmentedStudentsSet(const QString& setName)
 			}
 		}
 	}
-	return NULL;
+	return nullptr;
 }
 
 bool Rules::addYear(StudentsYear* year)
@@ -2027,7 +2027,7 @@ bool Rules::addYear(StudentsYear* year)
 	for(StudentsYear* ty : qAsConst(yearsList))
 		if(ty->name==year->name)
 			return false;
-	//if(this->searchStudentsSet(year->name)!=NULL)
+	//if(this->searchStudentsSet(year->name)!=nullptr)
 	//	return false;
 	this->yearsList << year;
 	
@@ -2071,7 +2071,7 @@ bool Rules::removeYear(const QString& yearName/*, bool removeAlsoThisYear*/)
 {
 	const bool removeAlsoThisYear=true;
 
-	StudentsYear* yearPointer=NULL;
+	StudentsYear* yearPointer=nullptr;
 	for(StudentsYear* ty : qAsConst(this->yearsList)){
 		if(ty->name==yearName){
 			yearPointer=ty;
@@ -2079,7 +2079,7 @@ bool Rules::removeYear(const QString& yearName/*, bool removeAlsoThisYear*/)
 		}
 	}
 
-	assert(yearPointer!=NULL);
+	assert(yearPointer!=nullptr);
 	
 	//pointers
 	QSet<StudentsSet*> tmpSet;
@@ -2142,7 +2142,7 @@ bool Rules::removeYear(const QString& yearName/*, bool removeAlsoThisYear*/)
 
 bool Rules::removeYearPointerAfterSplit(StudentsYear* yearPointer)
 {
-	assert(yearPointer!=NULL);
+	assert(yearPointer!=nullptr);
 	
 	//names
 	QSet<StudentsSet*> toBeRemoved;
@@ -2201,9 +2201,9 @@ int Rules::searchAugmentedYear(const QString& yearName)
 bool Rules::modifyStudentsSet(const QString& initialStudentsSetName, const QString& finalStudentsSetName, int finalNumberOfStudents)
 {
 	StudentsSet* studentsSet=searchStudentsSet(initialStudentsSetName);
-	assert(studentsSet!=NULL);
+	assert(studentsSet!=nullptr);
 	if(initialStudentsSetName!=finalStudentsSetName)
-		assert(searchStudentsSet(finalStudentsSetName)==NULL);
+		assert(searchStudentsSet(finalStudentsSetName)==nullptr);
 	int initialNumberOfStudents=studentsSet->numberOfStudents;
 	
 	for(Activity* act : qAsConst(activitiesList))
@@ -2547,7 +2547,7 @@ bool Rules::modifyStudentsSets(const QHash<QString, QString>& oldAndNewStudentsS
 	QHash<QString, QString>::const_iterator i=oldAndNewStudentsSetNames.constBegin();
 	while(i!=oldAndNewStudentsSetNames.constEnd()) {
 		StudentsSet* studentsSet=searchStudentsSet(i.key());
-		assert(studentsSet!=NULL);
+		assert(studentsSet!=nullptr);
 		studentsSet->name=i.value();
 		
 		assert(permanentStudentsHash.contains(i.key()));
@@ -2589,7 +2589,7 @@ void Rules::sortYearsAlphabetically()
 
 bool Rules::addGroup(const QString& yearName, StudentsGroup* group)
 {
-	StudentsYear* sty=NULL;
+	StudentsYear* sty=nullptr;
 	for(int i=0; i<this->yearsList.size(); i++){
 		sty=yearsList[i];
 		if(sty->name==yearName)
@@ -2634,7 +2634,7 @@ bool Rules::addGroupFast(StudentsYear* year, StudentsGroup* group)
 
 bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 {
-	StudentsYear* yearPointer=NULL;
+	StudentsYear* yearPointer=nullptr;
 	for(StudentsYear* ty : qAsConst(this->yearsList)){
 		if(ty->name==yearName){
 			yearPointer=ty;
@@ -2642,9 +2642,9 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 		}
 	}
 
-	assert(yearPointer!=NULL);
+	assert(yearPointer!=nullptr);
 	
-	StudentsGroup* groupPointer=NULL;
+	StudentsGroup* groupPointer=nullptr;
 	for(StudentsGroup* tg : qAsConst(yearPointer->groupsList)){
 		if(tg->name==groupName){
 			groupPointer=tg;
@@ -2652,7 +2652,7 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 		}
 	}
 	
-	assert(groupPointer!=NULL);
+	assert(groupPointer!=nullptr);
 
 	//pointers
 	QSet<StudentsSet*> tmpSet;
@@ -2715,13 +2715,13 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 
 bool Rules::purgeGroup(const QString& groupName)
 {
-	StudentsGroup* groupPointer=NULL;
+	StudentsGroup* groupPointer=nullptr;
 	for(StudentsYear* year : qAsConst(yearsList)){
 		int j=-1;
 		for(int i=0; i<year->groupsList.count(); i++){
 			if(year->groupsList.at(i)->name==groupName){
 				j=i;
-				if(groupPointer==NULL)
+				if(groupPointer==nullptr)
 					groupPointer=year->groupsList.at(i);
 				else
 					assert(groupPointer==year->groupsList.at(i));
@@ -2732,7 +2732,7 @@ bool Rules::purgeGroup(const QString& groupName)
 			year->groupsList.removeAt(j);
 	}
 	
-	assert(groupPointer!=NULL);
+	assert(groupPointer!=nullptr);
 
 	//pointers
 	QSet<StudentsSet*> tmpSet;
@@ -2776,13 +2776,13 @@ bool Rules::purgeGroup(const QString& groupName)
 
 int Rules::searchGroup(const QString& yearName, const QString& groupName)
 {
-	StudentsYear* sty=NULL;
+	StudentsYear* sty=nullptr;
 	for(StudentsYear* ty : qAsConst(yearsList))
 		if(ty->name==yearName){
 			sty=ty;
 			break;
 		}
-	assert(sty!=NULL);
+	assert(sty!=nullptr);
 
 	for(int i=0; i<sty->groupsList.size(); i++)
 		if(sty->groupsList[i]->name==groupName)
@@ -2793,13 +2793,13 @@ int Rules::searchGroup(const QString& yearName, const QString& groupName)
 
 int Rules::searchAugmentedGroup(const QString& yearName, const QString& groupName)
 {
-	StudentsYear* sty=NULL;
+	StudentsYear* sty=nullptr;
 	for(StudentsYear* ty : qAsConst(augmentedYearsList))
 		if(ty->name==yearName){
 			sty=ty;
 			break;
 		}
-	assert(sty!=NULL);
+	assert(sty!=nullptr);
 	
 	for(int i=0; i<sty->groupsList.size(); i++)
 		if(sty->groupsList[i]->name==groupName)
@@ -2869,7 +2869,7 @@ bool Rules::addSubgroupFast(StudentsYear* year, StudentsGroup* group, StudentsSu
 
 bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, const QString& subgroupName)
 {
-	StudentsYear* yearPointer=NULL;
+	StudentsYear* yearPointer=nullptr;
 	for(StudentsYear* ty : qAsConst(this->yearsList)){
 		if(ty->name==yearName){
 			yearPointer=ty;
@@ -2877,9 +2877,9 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 		}
 	}
 
-	assert(yearPointer!=NULL);
+	assert(yearPointer!=nullptr);
 	
-	StudentsGroup* groupPointer=NULL;
+	StudentsGroup* groupPointer=nullptr;
 	for(StudentsGroup* tg : qAsConst(yearPointer->groupsList)){
 		if(tg->name==groupName){
 			groupPointer=tg;
@@ -2887,9 +2887,9 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 		}
 	}
 	
-	assert(groupPointer!=NULL);
+	assert(groupPointer!=nullptr);
 	
-	StudentsSubgroup* subgroupPointer=NULL;
+	StudentsSubgroup* subgroupPointer=nullptr;
 	for(StudentsSubgroup* ts : qAsConst(groupPointer->subgroupsList)){
 		if(ts->name==subgroupName){
 			subgroupPointer=ts;
@@ -2897,7 +2897,7 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 		}
 	}
 	
-	assert(subgroupPointer!=NULL);
+	assert(subgroupPointer!=nullptr);
 	
 	//pointers
 	QSet<StudentsSet*> toBeRemoved;
@@ -2938,14 +2938,14 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 
 bool Rules::purgeSubgroup(const QString& subgroupName)
 {
-	StudentsSubgroup* subgroupPointer=NULL;
+	StudentsSubgroup* subgroupPointer=nullptr;
 	for(StudentsYear* year : qAsConst(yearsList))
 		for(StudentsGroup* group : qAsConst(year->groupsList)){
 			int j=-1;
 			for(int i=0; i<group->subgroupsList.count(); i++){
 				if(group->subgroupsList.at(i)->name==subgroupName){
 					j=i;
-					if(subgroupPointer==NULL)
+					if(subgroupPointer==nullptr)
 						subgroupPointer=group->subgroupsList.at(i);
 					else
 						assert(subgroupPointer==group->subgroupsList.at(i));
@@ -2956,7 +2956,7 @@ bool Rules::purgeSubgroup(const QString& subgroupName)
 				group->subgroupsList.removeAt(j);
 		}
 
-	assert(subgroupPointer!=NULL);
+	assert(subgroupPointer!=nullptr);
 	
 	//pointers
 	QSet<StudentsSet*> toBeRemoved;
@@ -2986,21 +2986,21 @@ bool Rules::purgeSubgroup(const QString& subgroupName)
 
 int Rules::searchSubgroup(const QString& yearName, const QString& groupName, const QString& subgroupName)
 {
-	StudentsYear* sty=NULL;
+	StudentsYear* sty=nullptr;
 	for(StudentsYear* ty : qAsConst(yearsList))
 		if(ty->name==yearName){
 			sty=ty;
 			break;
 		}
-	assert(sty!=NULL);
+	assert(sty!=nullptr);
 
-	StudentsGroup* stg=NULL;
+	StudentsGroup* stg=nullptr;
 	for(StudentsGroup* tg : qAsConst(sty->groupsList))
 		if(tg->name==groupName){
 			stg=tg;
 			break;
 		}
-	assert(stg!=NULL);
+	assert(stg!=nullptr);
 
 	for(int i=0; i<stg->subgroupsList.size(); i++)
 		if(stg->subgroupsList[i]->name==subgroupName)
@@ -3011,21 +3011,21 @@ int Rules::searchSubgroup(const QString& yearName, const QString& groupName, con
 
 int Rules::searchAugmentedSubgroup(const QString& yearName, const QString& groupName, const QString& subgroupName)
 {
-	StudentsYear* sty=NULL;
+	StudentsYear* sty=nullptr;
 	for(StudentsYear* ty : qAsConst(augmentedYearsList))
 		if(ty->name==yearName){
 			sty=ty;
 			break;
 		}
-	assert(sty!=NULL);
+	assert(sty!=nullptr);
 
-	StudentsGroup* stg=NULL;
+	StudentsGroup* stg=nullptr;
 	for(StudentsGroup* tg : qAsConst(sty->groupsList))
 		if(tg->name==groupName){
 			stg=tg;
 			break;
 		}
-	assert(stg!=NULL);
+	assert(stg!=nullptr);
 
 	for(int i=0; i<stg->subgroupsList.size(); i++)
 		if(stg->subgroupsList[i]->name==subgroupName)
@@ -3302,7 +3302,7 @@ void Rules::modifySubactivity(
 	int _nTotalStudents)
 {
 	QList<Activity*> actsList;
-	Activity* crtAct=NULL;
+	Activity* crtAct=nullptr;
 	
 	for(Activity* act : qAsConst(this->activitiesList)){
 		if(act->id==_id && act->activityGroupId==_activityGroupId){
@@ -3314,7 +3314,7 @@ void Rules::modifySubactivity(
 		}
 	}
 	
-	assert(crtAct!=NULL);
+	assert(crtAct!=nullptr);
 	
 	int td=0;
 	for(Activity* act : qAsConst(actsList))
@@ -5774,8 +5774,8 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							if(!skipDuplicatedStudentsSets){
 								QString nn=text;
 								//StudentsSet* ss=this->searchStudentsSet(nn);
-								StudentsSet* ss=currentStudentsHash.value(nn, NULL);
-								if(ss!=NULL){
+								StudentsSet* ss=currentStudentsHash.value(nn, nullptr);
+								if(ss!=nullptr){
 									QString str;
 									
 									if(ss->type==STUDENTS_YEAR)
@@ -5908,8 +5908,8 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 									QString text=xmlReader.readElementText();
 									if(!skipDuplicatedStudentsSets){
 										QString nn=text;
-										StudentsSet* ss=currentStudentsHash.value(nn, NULL);
-										if(ss!=NULL){
+										StudentsSet* ss=currentStudentsHash.value(nn, nullptr);
+										if(ss!=nullptr){
 											QString str;
 											bool haveError=false;
 									
@@ -6019,8 +6019,8 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 											QString text=xmlReader.readElementText();
 											if(!skipDuplicatedStudentsSets){
 												QString nn=text;
-												StudentsSet* ss=currentStudentsHash.value(nn, NULL);
-												if(ss!=NULL){
+												StudentsSet* ss=currentStudentsHash.value(nn, nullptr);
+												if(ss!=nullptr){
 													QString str;
 													bool haveError=false;
 									
@@ -6396,7 +6396,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 
 							stl.append(stn);
 							if(!studentsSetsCount.contains(stn))
-							//if(this->searchStudentsSet(stn)==NULL)
+							//if(this->searchStudentsSet(stn)==nullptr)
 								correct=false;
 						}
 						else if(xmlReader.name()==QString("Duration")){
@@ -6761,7 +6761,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 			
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
-				crt_constraint=NULL;
+				crt_constraint=nullptr;
 				if(xmlReader.name()==QString("ConstraintBasicCompulsoryTime")){
 					crt_constraint=readBasicCompulsoryTime(xmlReader, xmlReadingLog);
 				}
@@ -6903,7 +6903,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintStudentsNHoursDaily") && !skipDeprecatedConstraints){
@@ -6914,7 +6914,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintStudentsSetNHoursDaily") && !skipDeprecatedConstraints){
@@ -6925,7 +6925,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintStudentsMaxHoursDaily")){
@@ -7041,7 +7041,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintActivityPreferredTimes")){
@@ -7228,7 +7228,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintTeachersSubjectTagMaxHoursContinuously") && !skipDeprecatedConstraints){
@@ -7239,7 +7239,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				/////////begin 2017-02-07
@@ -7279,8 +7279,8 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 
 //corruptConstraintTime:
 				//here we skip an invalid constraint or add a valid one
-				if(crt_constraint!=NULL){
-					assert(crt_constraint!=NULL);
+				if(crt_constraint!=nullptr){
+					assert(crt_constraint!=nullptr);
 					bool tmp=this->addTimeConstraint(crt_constraint);
 					if(!tmp){
 						if(seeNextWarnNotAddedTimeConstraint){
@@ -7312,7 +7312,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 			assert(xmlReader.isStartElement());
 			while(xmlReader.readNextStartElement()){
 				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
-				crt_constraint=NULL;
+				crt_constraint=nullptr;
 				if(xmlReader.name()==QString("ConstraintBasicCompulsorySpace")){
 					crt_constraint=readBasicCompulsorySpace(xmlReader, xmlReadingLog);
 				}
@@ -7340,7 +7340,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintSubjectRequiresEquipments") && !skipDeprecatedConstraints){
@@ -7353,7 +7353,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					if(t==0)
 						skipDeprecatedConstraints=true;
 				
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintSubjectSubjectTagRequireEquipments") && !skipDeprecatedConstraints){
@@ -7365,7 +7365,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintTeacherRequiresRoom") && !skipDeprecatedConstraints){
@@ -7377,7 +7377,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintTeacherSubjectRequireRoom") && !skipDeprecatedConstraints){
@@ -7389,7 +7389,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintMinimizeNumberOfRoomsForStudents") && !skipDeprecatedConstraints){
@@ -7401,7 +7401,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintMinimizeNumberOfRoomsForTeachers") && !skipDeprecatedConstraints){
@@ -7413,7 +7413,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintActivityPreferredRoom")){
@@ -7431,7 +7431,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintSubjectPreferredRoom")){
@@ -7480,7 +7480,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintMaxBuildingChangesPerDayForStudents") && !skipDeprecatedConstraints){
@@ -7492,7 +7492,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintMaxRoomChangesPerDayForTeachers") && !skipDeprecatedConstraints){
@@ -7504,7 +7504,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					
 					if(t==0)
 						skipDeprecatedConstraints=true;
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintMaxRoomChangesPerDayForStudents") && !skipDeprecatedConstraints){
@@ -7517,7 +7517,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					if(t==0)
 						skipDeprecatedConstraints=true;
 
-					crt_constraint=NULL;
+					crt_constraint=nullptr;
 					xmlReader.skipCurrentElement();
 				}
 				else if(xmlReader.name()==QString("ConstraintTeacherMaxBuildingChangesPerDay")){
@@ -7614,8 +7614,8 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 
 //corruptConstraintSpace:
 				//here we skip an invalid constraint or add a valid one
-				if(crt_constraint!=NULL){
-					assert(crt_constraint!=NULL);
+				if(crt_constraint!=nullptr){
+					assert(crt_constraint!=nullptr);
 					
 					bool tmp=this->addSpaceConstraint(crt_constraint);
 					if(!tmp){
@@ -7985,7 +7985,7 @@ int Rules::activateStudents(const QString& studentsName)
 	QSet<QString> allSets;
 	
 	StudentsSet* studentsSet=this->searchStudentsSet(studentsName);
-	assert(studentsSet!=NULL);
+	assert(studentsSet!=nullptr);
 	if(studentsSet->type==STUDENTS_SUBGROUP)
 		allSets.insert(studentsName);
 	else if(studentsSet->type==STUDENTS_GROUP){
@@ -8099,7 +8099,7 @@ int Rules::deactivateStudents(const QString& studentsName)
 	QSet<QString> allSets;
 	
 	StudentsSet* studentsSet=this->searchStudentsSet(studentsName);
-	assert(studentsSet!=NULL);
+	assert(studentsSet!=nullptr);
 	if(studentsSet->type==STUDENTS_SUBGROUP)
 		allSets.insert(studentsName);
 	else if(studentsSet->type==STUDENTS_GROUP){
@@ -8292,7 +8292,7 @@ TimeConstraint* Rules::readTeacherNotAvailable(QXmlStreamReader& xmlReader, Fake
 			weightPercentage=customFETStrToDouble(text);
 			if(weightPercentage<0){
 				xmlReader.raiseError(tr("Weight percentage incorrect"));
-				return NULL;
+				return nullptr;
 			}
 			assert(weightPercentage>=0);
 			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(weightPercentage)+"\n";
@@ -8318,9 +8318,9 @@ TimeConstraint* Rules::readTeacherNotAvailable(QXmlStreamReader& xmlReader, Fake
 					tr("Constraint TeacherNotAvailable day corrupt for teacher %1, day %2 is inexistent ... ignoring constraint")
 					.arg(teacher)
 					.arg(text));*/
-				//cn=NULL;
+				//cn=nullptr;
 				
-				return NULL;
+				return nullptr;
 				//goto corruptConstraintTime;
 			}
 			assert(d<this->nDaysPerWeek);
@@ -8333,7 +8333,7 @@ TimeConstraint* Rules::readTeacherNotAvailable(QXmlStreamReader& xmlReader, Fake
 					break;
 			if(h1==this->nHoursPerDay){
 				xmlReader.raiseError(tr("Hour %1 is the last hour - impossible").arg(text));
-				return NULL;
+				return nullptr;
 			}
 			else if(h1>this->nHoursPerDay){
 				xmlReader.raiseError(tr("Hour %1 is inexistent").arg(text));
@@ -8341,9 +8341,9 @@ TimeConstraint* Rules::readTeacherNotAvailable(QXmlStreamReader& xmlReader, Fake
 					tr("Constraint TeacherNotAvailable start hour corrupt for teacher %1, hour %2 is inexistent ... ignoring constraint")
 					.arg(teacher)
 					.arg(text));*/
-				//cn=NULL;
+				//cn=nullptr;
 				
-				return NULL;
+				return nullptr;
 				//goto corruptConstraintTime;
 			}
 			assert(h1>=0 && h1 < this->nHoursPerDay);
@@ -8356,11 +8356,11 @@ TimeConstraint* Rules::readTeacherNotAvailable(QXmlStreamReader& xmlReader, Fake
 					break;
 			if(h2==0){
 				xmlReader.raiseError(tr("Hour %1 is the first hour - impossible").arg(text));
-				return NULL;
+				return nullptr;
 			}
 			else if(h2>this->nHoursPerDay){
 				xmlReader.raiseError(tr("Hour %1 is inexistent").arg(text));
-				return NULL;
+				return nullptr;
 			}
 			/*if(h2<=0 || h2>this->nHoursPerDay){
 				RulesReconcilableMessage::information(parent, tr("FET information"),
@@ -8368,7 +8368,7 @@ TimeConstraint* Rules::readTeacherNotAvailable(QXmlStreamReader& xmlReader, Fake
 					.arg(teacher)
 					.arg(text));
 					
-				return NULL;
+				return nullptr;
 				//goto corruptConstraintTime;
 			}*/
 			assert(h2>0 && h2 <= this->nHoursPerDay);
@@ -8392,19 +8392,19 @@ TimeConstraint* Rules::readTeacherNotAvailable(QXmlStreamReader& xmlReader, Fake
 	assert(weightPercentage>=0);
 	if(d<0){
 		xmlReader.raiseError(tr("Field missing: %1").arg("Day"));
-		return NULL;
+		return nullptr;
 	}
 	else if(h1<0){
 		xmlReader.raiseError(tr("Field missing: %1").arg("Start_Hour"));
-		return NULL;
+		return nullptr;
 	}
 	else if(h2<0){
 		xmlReader.raiseError(tr("Field missing: %1").arg("End_Hour"));
-		return NULL;
+		return nullptr;
 	}
 	assert(d>=0 && h1>=0 && h2>=0);
 	
-	ConstraintTeacherNotAvailableTimes* cn = NULL;
+	ConstraintTeacherNotAvailableTimes* cn = nullptr;
 	
 	bool found=false;
 	for(TimeConstraint* c : qAsConst(this->timeConstraintsList))
@@ -8442,7 +8442,7 @@ TimeConstraint* Rules::readTeacherNotAvailable(QXmlStreamReader& xmlReader, Fake
 		return cn;
 	}
 	else
-		return NULL;
+		return nullptr;
 }
 
 TimeConstraint* Rules::readTeacherNotAvailableTimes(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
@@ -8497,9 +8497,9 @@ TimeConstraint* Rules::readTeacherNotAvailableTimes(QXmlStreamReader& xmlReader,
 							.arg(cn->teacher)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 		
 					assert(d<this->nDaysPerWeek);
@@ -8518,9 +8518,9 @@ TimeConstraint* Rules::readTeacherNotAvailableTimes(QXmlStreamReader& xmlReader,
 							.arg(cn->teacher)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(h>=0 && h < this->nHoursPerDay);
@@ -8543,8 +8543,8 @@ TimeConstraint* Rules::readTeacherNotAvailableTimes(QXmlStreamReader& xmlReader,
 			if(d==-1 || h==-1){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Not_Available_Time"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 		}
 		else if(xmlReader.name()==QString("Teacher")){
@@ -8565,8 +8565,8 @@ TimeConstraint* Rules::readTeacherNotAvailableTimes(QXmlStreamReader& xmlReader,
 	if(!(i==nNotAvailableSlots)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Not_Available_Times").arg("Not_Available_Time"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(i==nNotAvailableSlots);
 
@@ -8628,8 +8628,8 @@ TimeConstraint* Rules::readTeacherMaxDaysPerWeek(QXmlStreamReader& xmlReader, Fa
 					.arg(cn->teacherName)
 					.arg(text));*/
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
@@ -8676,8 +8676,8 @@ TimeConstraint* Rules::readTeachersMaxDaysPerWeek(QXmlStreamReader& xmlReader, F
 					tr("Constraint TeachersMaxDaysPerWeek max days corrupt, max days %1 <= 0 or >nDaysPerWeek, ignoring constraint")
 					.arg(text));*/
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
 			xmlReadingLog+="    Max. days per week="+CustomFETString::number(cn->maxDaysPerWeek)+"\n";
@@ -8730,8 +8730,8 @@ TimeConstraint* Rules::readTeacherMinDaysPerWeek(QXmlStreamReader& xmlReader, Fa
 					.arg(cn->teacherName)
 					.arg(text));*/
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(cn->minDaysPerWeek>0 && cn->minDaysPerWeek <= this->nDaysPerWeek);
 			xmlReadingLog+="    Min. days per week="+CustomFETString::number(cn->minDaysPerWeek)+"\n";
@@ -8778,8 +8778,8 @@ TimeConstraint* Rules::readTeachersMinDaysPerWeek(QXmlStreamReader& xmlReader, F
 					tr("Constraint TeachersMinDaysPerWeek min days corrupt, min days %1 <= 0 or >nDaysPerWeek, ignoring constraint")
 					.arg(text));*/
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(cn->minDaysPerWeek>0 && cn->minDaysPerWeek <= this->nDaysPerWeek);
 			xmlReadingLog+="    Min. days per week="+CustomFETString::number(cn->minDaysPerWeek)+"\n";
@@ -8853,7 +8853,7 @@ TimeConstraint* Rules::readTeacherIntervalMaxDaysPerWeek(QWidget* parent, QXmlSt
 					.arg(cn->teacherName)
 					.arg(text));
 				/*delete cn;
-				cn=NULL;
+				cn=nullptr;
 				goto corruptConstraintTime;*/
 			}
 			//assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
@@ -8871,9 +8871,9 @@ TimeConstraint* Rules::readTeacherIntervalMaxDaysPerWeek(QWidget* parent, QXmlSt
 					.arg(cn->teacherName)
 					.arg(text));*/
 				delete cn;
-				//cn=NULL;
+				//cn=nullptr;
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}
 			assert(h1>=0 && h1 < this->nHoursPerDay);
 			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
@@ -8896,9 +8896,9 @@ TimeConstraint* Rules::readTeacherIntervalMaxDaysPerWeek(QWidget* parent, QXmlSt
 						.arg(cn->teacherName)
 						.arg(text));*/
 					delete cn;
-					//cn=NULL;
+					//cn=nullptr;
 					//goto corruptConstraintTime;
-					return NULL;
+					return nullptr;
 				}
 				assert(h2>=0 && h2 < this->nHoursPerDay);
 				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
@@ -8973,7 +8973,7 @@ TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(QWidget* parent, QXmlS
 					//.arg(cn->teacherName)
 					.arg(text));
 				/*delete cn;
-				cn=NULL;
+				cn=nullptr;
 				goto corruptConstraintTime;*/
 			}
 			//assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
@@ -8991,9 +8991,9 @@ TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(QWidget* parent, QXmlS
 					//.arg(cn->teacherName)
 					.arg(text));*/
 				delete cn;
-				//cn=NULL;
+				//cn=nullptr;
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}
 			assert(h1>=0 && h1 < this->nHoursPerDay);
 			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
@@ -9016,9 +9016,9 @@ TimeConstraint* Rules::readTeachersIntervalMaxDaysPerWeek(QWidget* parent, QXmlS
 						//.arg(cn->teacherName)
 						.arg(text));*/
 					delete cn;
-					//cn=NULL;
+					//cn=nullptr;
 					//goto corruptConstraintTime;
-					return NULL;
+					return nullptr;
 				}
 				assert(h2>=0 && h2 < this->nHoursPerDay);
 				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
@@ -9186,7 +9186,7 @@ TimeConstraint* Rules::readStudentsSetIntervalMaxDaysPerWeek(QWidget* parent, QX
 					.arg(cn->students)
 					.arg(text));
 				/*delete cn;
-				cn=NULL;
+				cn=nullptr;
 				goto corruptConstraintTime;*/
 			}
 			//assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
@@ -9204,9 +9204,9 @@ TimeConstraint* Rules::readStudentsSetIntervalMaxDaysPerWeek(QWidget* parent, QX
 					.arg(cn->students)
 					.arg(text));*/
 				delete cn;
-				//cn=NULL;
+				//cn=nullptr;
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}
 			assert(h1>=0 && h1 < this->nHoursPerDay);
 			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
@@ -9229,9 +9229,9 @@ TimeConstraint* Rules::readStudentsSetIntervalMaxDaysPerWeek(QWidget* parent, QX
 						.arg(cn->students)
 						.arg(text));*/
 					delete cn;
-					//cn=NULL;
+					//cn=nullptr;
 					//goto corruptConstraintTime;
-					return NULL;
+					return nullptr;
 				}
 				assert(h2>=0 && h2 < this->nHoursPerDay);
 				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
@@ -9305,7 +9305,7 @@ TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(QWidget* parent, QXmlS
 					tr("Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %1 >nDaysPerWeek, constraint added, please correct constraint")
 					.arg(text));
 				/*delete cn;
-				cn=NULL;
+				cn=nullptr;
 				goto corruptConstraintTime;*/
 			}
 			//assert(cn->maxDaysPerWeek>0 && cn->maxDaysPerWeek <= this->nDaysPerWeek);
@@ -9323,9 +9323,9 @@ TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(QWidget* parent, QXmlS
 					//.arg(cn->students)
 					.arg(text));*/
 				delete cn;
-				//cn=NULL;
+				//cn=nullptr;
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}
 			assert(h1>=0 && h1 < this->nHoursPerDay);
 			xmlReadingLog+="    Interval start hour="+this->hoursOfTheDay[h1]+"\n";
@@ -9348,9 +9348,9 @@ TimeConstraint* Rules::readStudentsIntervalMaxDaysPerWeek(QWidget* parent, QXmlS
 						//.arg(cn->students)
 						.arg(text));*/
 					delete cn;
-					//cn=NULL;
+					//cn=nullptr;
 					//goto corruptConstraintTime;
-					return NULL;
+					return nullptr;
 				}
 				assert(h2>=0 && h2 < this->nHoursPerDay);
 				xmlReadingLog+="    Interval end hour="+this->hoursOfTheDay[h2]+"\n";
@@ -9387,7 +9387,7 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QXmlStreamReader& xmlReader, 
 			weightPercentage=customFETStrToDouble(text);
 			if(weightPercentage<0){
 				xmlReader.raiseError(tr("Weight percentage incorrect"));
-				return NULL;
+				return nullptr;
 			}
 			assert(weightPercentage>=0);
 			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(weightPercentage)+"\n";
@@ -9413,9 +9413,9 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QXmlStreamReader& xmlReader, 
 					tr("Constraint StudentsSetNotAvailable day corrupt for students %1, day %2 is inexistent ... ignoring constraint")
 					.arg(students)
 					.arg(text));*/
-				//cn=NULL;
+				//cn=nullptr;
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}
 			assert(d<this->nDaysPerWeek);
 			xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[d]+"\n";
@@ -9427,7 +9427,7 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QXmlStreamReader& xmlReader, 
 					break;
 			if(h1==this->nHoursPerDay){
 				xmlReader.raiseError(tr("Hour %1 is the last hour - impossible").arg(text));
-				return NULL;
+				return nullptr;
 			}
 			else if(h1>this->nHoursPerDay){
 				xmlReader.raiseError(tr("Hour %1 is inexistent").arg(text));
@@ -9435,9 +9435,9 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QXmlStreamReader& xmlReader, 
 					tr("Constraint StudentsSetNotAvailable start hour corrupt for students set %1, hour %2 is inexistent ... ignoring constraint")
 					.arg(students)
 					.arg(text));*/
-				//cn=NULL;
+				//cn=nullptr;
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}
 			assert(h1>=0 && h1 < this->nHoursPerDay);
 			xmlReadingLog+="    Start hour="+this->hoursOfTheDay[h1]+"\n";
@@ -9449,11 +9449,11 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QXmlStreamReader& xmlReader, 
 					break;
 			if(h2==0){
 				xmlReader.raiseError(tr("Hour %1 is the first hour - impossible").arg(text));
-				return NULL;
+				return nullptr;
 			}
 			else if(h2>this->nHoursPerDay){
 				xmlReader.raiseError(tr("Hour %1 is inexistent").arg(text));
-				return NULL;
+				return nullptr;
 			}
 			/*if(h2<=0 || h2>this->nHoursPerDay){
 				RulesReconcilableMessage::information(parent, tr("FET information"),
@@ -9461,7 +9461,7 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QXmlStreamReader& xmlReader, 
 					.arg(students)
 					.arg(text));
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}*/
 			assert(h2>0 && h2 <= this->nHoursPerDay);
 			xmlReadingLog+="    End hour="+this->hoursOfTheDay[h2]+"\n";
@@ -9484,19 +9484,19 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QXmlStreamReader& xmlReader, 
 	assert(weightPercentage>=0);
 	if(d<0){
 		xmlReader.raiseError(tr("Field missing: %1").arg("Day"));
-		return NULL;
+		return nullptr;
 	}
 	else if(h1<0){
 		xmlReader.raiseError(tr("Field missing: %1").arg("Start_Hour"));
-		return NULL;
+		return nullptr;
 	}
 	else if(h2<0){
 		xmlReader.raiseError(tr("Field missing: %1").arg("End_Hour"));
-		return NULL;
+		return nullptr;
 	}
 	assert(d>=0 && h1>=0 && h2>=0);
 	
-	ConstraintStudentsSetNotAvailableTimes* cn = NULL;
+	ConstraintStudentsSetNotAvailableTimes* cn = nullptr;
 	
 	bool found=false;
 	for(TimeConstraint* c : qAsConst(this->timeConstraintsList))
@@ -9535,7 +9535,7 @@ TimeConstraint* Rules::readStudentsSetNotAvailable(QXmlStreamReader& xmlReader, 
 		return cn;
 	}
 	else
-		return NULL;
+		return nullptr;
 }
 
 TimeConstraint* Rules::readStudentsSetNotAvailableTimes(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
@@ -9590,9 +9590,9 @@ TimeConstraint* Rules::readStudentsSetNotAvailableTimes(QXmlStreamReader& xmlRea
 							.arg(cn->students)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 		
 					assert(d<this->nDaysPerWeek);
@@ -9611,9 +9611,9 @@ TimeConstraint* Rules::readStudentsSetNotAvailableTimes(QXmlStreamReader& xmlRea
 							.arg(cn->students)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(h>=0 && h < this->nHoursPerDay);
@@ -9636,8 +9636,8 @@ TimeConstraint* Rules::readStudentsSetNotAvailableTimes(QXmlStreamReader& xmlRea
 			if(d==-1 || h==-1){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Not_Available_Time"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 		}
 		else if(xmlReader.name()==QString("Students")){
@@ -9658,8 +9658,8 @@ TimeConstraint* Rules::readStudentsSetNotAvailableTimes(QXmlStreamReader& xmlRea
 	if(!(i==nNotAvailableSlots)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Not_Available_Times").arg("Not_Available_Time"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(i==nNotAvailableSlots);
 
@@ -9769,8 +9769,8 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, QXmlStream
 	if(!(n_act==cn->n_activities)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(n_act==cn->n_activities);
 	return cn;
@@ -9912,8 +9912,8 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, QXmlStreamR
 	if(!(n_act==cn->n_activities)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(n_act==cn->n_activities);
 	return cn;
@@ -10006,8 +10006,8 @@ TimeConstraint* Rules::readMaxDaysBetweenActivities(QXmlStreamReader& xmlReader,
 	if(!(n_act==cn->n_activities)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(n_act==cn->n_activities);
 	return cn;
@@ -10065,8 +10065,8 @@ TimeConstraint* Rules::readMinGapsBetweenActivities(QXmlStreamReader& xmlReader,
 	if(!(n_act==cn->n_activities)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(n_act==cn->n_activities);
 	return cn;
@@ -10139,8 +10139,8 @@ TimeConstraint* Rules::readActivitiesNotOverlapping(QXmlStreamReader& xmlReader,
 	if(!(n_act==cn->n_activities)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(n_act==cn->n_activities);
 	return cn;
@@ -10194,8 +10194,8 @@ TimeConstraint* Rules::readActivityTagsNotOverlapping(QXmlStreamReader& xmlReade
 			if(nActivityTags<2){
 				xmlReader.raiseError(tr("The number of activity tags in the constraint activity tags not overlapping is lower than two"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read n activity tags="+CustomFETString::number(nActivityTags)+"\n";
 		}
@@ -10204,8 +10204,8 @@ TimeConstraint* Rules::readActivityTagsNotOverlapping(QXmlStreamReader& xmlReade
 			if(readTags.contains(text)){
 				xmlReader.raiseError(tr("Duplicate activity tag %1 found in constraint activity tags not overlapping").arg(text));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			else{
 				readTags.insert(text);
@@ -10225,8 +10225,8 @@ TimeConstraint* Rules::readActivityTagsNotOverlapping(QXmlStreamReader& xmlReade
 	if(!(nActivityTags==cn->activityTagsNames.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activity_Tags").arg("Activity_Tag"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(nActivityTags==cn->activityTagsNames.count());
 	return cn;
@@ -10299,8 +10299,8 @@ TimeConstraint* Rules::readActivitiesSameStartingTime(QXmlStreamReader& xmlReade
 	if(!(n_act==cn->n_activities)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(n_act==cn->n_activities);
 	return cn;
@@ -10373,8 +10373,8 @@ TimeConstraint* Rules::readActivitiesSameStartingHour(QXmlStreamReader& xmlReade
 	if(!(n_act==cn->n_activities)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(n_act==cn->n_activities);
 	return cn;
@@ -10428,8 +10428,8 @@ TimeConstraint* Rules::readActivitiesSameStartingDay(QXmlStreamReader& xmlReader
 	if(!(n_act==cn->n_activities)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(n_act==cn->n_activities);
 	return cn;
@@ -11153,8 +11153,8 @@ TimeConstraint* Rules::readStudentsMaxHoursDaily(QXmlStreamReader& xmlReader, Fa
 			if(cn->maxHoursDaily<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Maximum_Hours_Daily"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read maxHoursDaily="+CustomFETString::number(cn->maxHoursDaily)+"\n";
 		}
@@ -11170,8 +11170,8 @@ TimeConstraint* Rules::readStudentsMaxHoursDaily(QXmlStreamReader& xmlReader, Fa
 	if(cn->maxHoursDaily<0){
 		xmlReader.raiseError(tr("%1 not found").arg("Maximum_Hours_Daily"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->maxHoursDaily>=0);
 	return cn;
@@ -11223,8 +11223,8 @@ TimeConstraint* Rules::readStudentsSetMaxHoursDaily(QXmlStreamReader& xmlReader,
 			if(cn->maxHoursDaily<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Maximum_Hours_Daily"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read maxHoursDaily="+CustomFETString::number(cn->maxHoursDaily)+"\n";
 		}
@@ -11245,8 +11245,8 @@ TimeConstraint* Rules::readStudentsSetMaxHoursDaily(QXmlStreamReader& xmlReader,
 	if(cn->maxHoursDaily<0){
 		xmlReader.raiseError(tr("%1 not found").arg("Maximum_Hours_Daily"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->maxHoursDaily>=0);
 	return cn;
@@ -11298,8 +11298,8 @@ TimeConstraint* Rules::readStudentsMaxHoursContinuously(QXmlStreamReader& xmlRea
 			if(cn->maxHoursContinuously<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Maximum_Hours_Continuously"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read maxHoursContinuously="+CustomFETString::number(cn->maxHoursContinuously)+"\n";
 		}
@@ -11315,8 +11315,8 @@ TimeConstraint* Rules::readStudentsMaxHoursContinuously(QXmlStreamReader& xmlRea
 	if(cn->maxHoursContinuously<0){
 		xmlReader.raiseError(tr("%1 not found").arg("Maximum_Hours_Continuously"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->maxHoursContinuously>=0);
 	return cn;
@@ -11368,8 +11368,8 @@ TimeConstraint* Rules::readStudentsSetMaxHoursContinuously(QXmlStreamReader& xml
 			if(cn->maxHoursContinuously<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Maximum_Hours_Continuously"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read maxHoursContinuously="+CustomFETString::number(cn->maxHoursContinuously)+"\n";
 		}
@@ -11390,8 +11390,8 @@ TimeConstraint* Rules::readStudentsSetMaxHoursContinuously(QXmlStreamReader& xml
 	if(cn->maxHoursContinuously<0){
 		xmlReader.raiseError(tr("%1 not found").arg("Maximum_Hours_Continuously"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->maxHoursContinuously>=0);
 	return cn;
@@ -11424,8 +11424,8 @@ TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursContinuously(QXmlStream
 			if(cn->maxHoursContinuously<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Maximum_Hours_Continuously"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read maxHoursContinuously="+CustomFETString::number(cn->maxHoursContinuously)+"\n";
 		}
@@ -11451,8 +11451,8 @@ TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursContinuously(QXmlStream
 	if(cn->maxHoursContinuously<0){
 		xmlReader.raiseError(tr("%1 not found").arg("Maximum_Hours_Continuously"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->maxHoursContinuously>=0);
 	return cn;
@@ -11485,8 +11485,8 @@ TimeConstraint* Rules::readStudentsActivityTagMaxHoursContinuously(QXmlStreamRea
 			if(cn->maxHoursContinuously<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Maximum_Hours_Continuously"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read maxHoursContinuously="+CustomFETString::number(cn->maxHoursContinuously)+"\n";
 		}
@@ -11507,8 +11507,8 @@ TimeConstraint* Rules::readStudentsActivityTagMaxHoursContinuously(QXmlStreamRea
 	if(cn->maxHoursContinuously<0){
 		xmlReader.raiseError(tr("%1 not found").arg("Maximum_Hours_Continuously"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->maxHoursContinuously>=0);
 	return cn;
@@ -11541,8 +11541,8 @@ TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursDaily(QXmlStreamReader&
 			if(cn->maxHoursDaily<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Maximum_Hours_Daily"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read maxHoursDaily="+CustomFETString::number(cn->maxHoursDaily)+"\n";
 		}
@@ -11568,8 +11568,8 @@ TimeConstraint* Rules::readStudentsSetActivityTagMaxHoursDaily(QXmlStreamReader&
 	if(cn->maxHoursDaily<0){
 		xmlReader.raiseError(tr("%1 not found").arg("Maximum_Hours_Daily"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->maxHoursDaily>=0);
 	return cn;
@@ -11602,8 +11602,8 @@ TimeConstraint* Rules::readStudentsActivityTagMaxHoursDaily(QXmlStreamReader& xm
 			if(cn->maxHoursDaily<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Maximum_Hours_Daily"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read maxHoursDaily="+CustomFETString::number(cn->maxHoursDaily)+"\n";
 		}
@@ -11624,8 +11624,8 @@ TimeConstraint* Rules::readStudentsActivityTagMaxHoursDaily(QXmlStreamReader& xm
 	if(cn->maxHoursDaily<0){
 		xmlReader.raiseError(tr("%1 not found").arg("Maximum_Hours_Daily"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->maxHoursDaily>=0);
 	return cn;
@@ -11658,8 +11658,8 @@ TimeConstraint* Rules::readStudentsSetActivityTagMinHoursDaily(QXmlStreamReader&
 			if(cn->minHoursDaily<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Minimum_Hours_Daily"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read minHoursDaily="+CustomFETString::number(cn->minHoursDaily)+"\n";
 		}
@@ -11692,8 +11692,8 @@ TimeConstraint* Rules::readStudentsSetActivityTagMinHoursDaily(QXmlStreamReader&
 	if(cn->minHoursDaily<0){
 		xmlReader.raiseError(tr("%1 not found").arg("Minimum_Hours_Daily"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->minHoursDaily>=0);
 	return cn;
@@ -11726,8 +11726,8 @@ TimeConstraint* Rules::readStudentsActivityTagMinHoursDaily(QXmlStreamReader& xm
 			if(cn->minHoursDaily<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Minimum_Hours_Daily"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read minHoursDaily="+CustomFETString::number(cn->minHoursDaily)+"\n";
 		}
@@ -11755,8 +11755,8 @@ TimeConstraint* Rules::readStudentsActivityTagMinHoursDaily(QXmlStreamReader& xm
 	if(cn->minHoursDaily<0){
 		xmlReader.raiseError(tr("%1 not found").arg("Minimum_Hours_Daily"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->minHoursDaily>=0);
 	return cn;
@@ -11809,8 +11809,8 @@ TimeConstraint* Rules::readStudentsMinHoursDaily(QWidget* parent, QXmlStreamRead
 			if(cn->minHoursDaily<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Minimum_Hours_Daily"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read minHoursDaily="+CustomFETString::number(cn->minHoursDaily)+"\n";
 		}
@@ -11845,8 +11845,8 @@ TimeConstraint* Rules::readStudentsMinHoursDaily(QWidget* parent, QXmlStreamRead
 	if(cn->minHoursDaily<0){
 		xmlReader.raiseError(tr("%1 not found").arg("Minimum_Hours_Daily"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->minHoursDaily>=0);
 	return cn;
@@ -11899,8 +11899,8 @@ TimeConstraint* Rules::readStudentsSetMinHoursDaily(QWidget* parent, QXmlStreamR
 			if(cn->minHoursDaily<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Minimum_Hours_Daily"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read minHoursDaily="+CustomFETString::number(cn->minHoursDaily)+"\n";
 		}
@@ -11940,8 +11940,8 @@ TimeConstraint* Rules::readStudentsSetMinHoursDaily(QWidget* parent, QXmlStreamR
 	if(cn->minHoursDaily<0){
 		xmlReader.raiseError(tr("%1 not found").arg("Minimum_Hours_Daily"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->minHoursDaily>=0);
 	return cn;
@@ -11974,8 +11974,8 @@ TimeConstraint* Rules::readStudentsSetMinGapsBetweenOrderedPairOfActivityTags(QX
 			if(cn->minGaps<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("MinGaps"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read minGaps="+CustomFETString::number(cn->minGaps)+"\n";
 		}
@@ -12006,8 +12006,8 @@ TimeConstraint* Rules::readStudentsSetMinGapsBetweenOrderedPairOfActivityTags(QX
 	if(cn->minGaps<0){
 		xmlReader.raiseError(tr("%1 not found").arg("MinGaps"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->minGaps>=0);
 	return cn;
@@ -12040,8 +12040,8 @@ TimeConstraint* Rules::readStudentsMinGapsBetweenOrderedPairOfActivityTags(QXmlS
 			if(cn->minGaps<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("MinGaps"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read minGaps="+CustomFETString::number(cn->minGaps)+"\n";
 		}
@@ -12067,8 +12067,8 @@ TimeConstraint* Rules::readStudentsMinGapsBetweenOrderedPairOfActivityTags(QXmlS
 	if(cn->minGaps<0){
 		xmlReader.raiseError(tr("%1 not found").arg("MinGaps"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->minGaps>=0);
 	return cn;
@@ -12101,8 +12101,8 @@ TimeConstraint* Rules::readTeacherMinGapsBetweenOrderedPairOfActivityTags(QXmlSt
 			if(cn->minGaps<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("MinGaps"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read minGaps="+CustomFETString::number(cn->minGaps)+"\n";
 		}
@@ -12133,8 +12133,8 @@ TimeConstraint* Rules::readTeacherMinGapsBetweenOrderedPairOfActivityTags(QXmlSt
 	if(cn->minGaps<0){
 		xmlReader.raiseError(tr("%1 not found").arg("MinGaps"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->minGaps>=0);
 	return cn;
@@ -12167,8 +12167,8 @@ TimeConstraint* Rules::readTeachersMinGapsBetweenOrderedPairOfActivityTags(QXmlS
 			if(cn->minGaps<0){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("MinGaps"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Read minGaps="+CustomFETString::number(cn->minGaps)+"\n";
 		}
@@ -12194,8 +12194,8 @@ TimeConstraint* Rules::readTeachersMinGapsBetweenOrderedPairOfActivityTags(QXmlS
 	if(cn->minGaps<0){
 		xmlReader.raiseError(tr("%1 not found").arg("MinGaps"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->minGaps>=0);
 	return cn;
@@ -12282,9 +12282,9 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 					.arg(cn->activityId)
 					.arg(text));*/
 				delete cn;
-				cn=NULL;
+				cn=nullptr;
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}
 			assert(cn->day<this->nDaysPerWeek);
 			xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->day]+"\n";
@@ -12301,9 +12301,9 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 					.arg(cn->activityId)
 					.arg(text));*/
 				delete cn;
-				cn=NULL;
+				cn=nullptr;
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}
 			assert(cn->hour>=0 && cn->hour < this->nHoursPerDay);
 			xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hour]+"\n";
@@ -12464,9 +12464,9 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 					.arg(cn->activityId)
 					.arg(text));*/
 				delete cn;
-				cn=NULL;
+				cn=nullptr;
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}
 			assert(cn->day<this->nDaysPerWeek);
 			xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->day]+"\n";
@@ -12483,9 +12483,9 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 					.arg(cn->activityId)
 					.arg(text));*/
 				delete cn;
-				cn=NULL;
+				cn=nullptr;
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}
 			assert(cn->hour>=0 && cn->hour < this->nHoursPerDay);
 			xmlReadingLog+="    Preferred hour="+this->hoursOfTheDay[cn->hour]+"\n";
@@ -13264,9 +13264,9 @@ TimeConstraint* Rules::readActivityPreferredTimes(QXmlStreamReader& xmlReader, F
 							.arg(cn->activityId)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 		
 					assert(cn->days_L[i]<this->nDaysPerWeek);
@@ -13287,9 +13287,9 @@ TimeConstraint* Rules::readActivityPreferredTimes(QXmlStreamReader& xmlReader, F
 							.arg(cn->activityId)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
@@ -13309,8 +13309,8 @@ TimeConstraint* Rules::readActivityPreferredTimes(QXmlStreamReader& xmlReader, F
 			if(!(i==cn->days_L.count()) || !(i==cn->hours_L.count())){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Preferred_Time"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(i==cn->days_L.count());
 			assert(i==cn->hours_L.count());
@@ -13327,8 +13327,8 @@ TimeConstraint* Rules::readActivityPreferredTimes(QXmlStreamReader& xmlReader, F
 	if(!(i==cn->nPreferredStartingTimes_L)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Times").arg("Preferred_Time"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(i==cn->nPreferredStartingTimes_L);
 	return cn;
@@ -13410,9 +13410,9 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(QXmlStreamReader& xmlReade
 							.arg(cn->p_activityId)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 		
 					assert(cn->p_days_L[i]<this->nDaysPerWeek);
@@ -13433,9 +13433,9 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(QXmlStreamReader& xmlReade
 							.arg(cn->p_activityId)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->p_hours_L[i]>=0 && cn->p_hours_L[i] < this->nHoursPerDay);
@@ -13456,8 +13456,8 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(QXmlStreamReader& xmlReade
 			if(!(i==cn->p_days_L.count()) || !(i==cn->p_hours_L.count())){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Preferred_Time_Slot"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(i==cn->p_days_L.count());
 			assert(i==cn->p_hours_L.count());
@@ -13474,8 +13474,8 @@ TimeConstraint* Rules::readActivityPreferredTimeSlots(QXmlStreamReader& xmlReade
 	if(!(i==cn->p_nPreferredTimeSlots_L)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Time_Slots").arg("Preferred_Time_Slot"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(i==cn->p_nPreferredTimeSlots_L);
 	return cn;
@@ -13557,9 +13557,9 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(QXmlStreamReader& xmlR
 							.arg(cn->activityId)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->days_L[i]<this->nDaysPerWeek);
@@ -13580,9 +13580,9 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(QXmlStreamReader& xmlR
 							.arg(cn->activityId)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
@@ -13603,8 +13603,8 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(QXmlStreamReader& xmlR
 			if(!(i==cn->days_L.count()) || !(i==cn->hours_L.count())){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Preferred_Starting_Time"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(i==cn->days_L.count());
 			assert(i==cn->hours_L.count());
@@ -13621,8 +13621,8 @@ TimeConstraint* Rules::readActivityPreferredStartingTimes(QXmlStreamReader& xmlR
 	if(!(i==cn->nPreferredStartingTimes_L)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Starting_Times").arg("Preferred_Starting_Time"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(i==cn->nPreferredStartingTimes_L);
 	return cn;
@@ -13644,7 +13644,7 @@ TimeConstraint* Rules::readBreak(QXmlStreamReader& xmlReader, FakeString& xmlRea
 			weightPercentage=customFETStrToDouble(text);
 			if(weightPercentage<0){
 				xmlReader.raiseError(tr("Weight percentage incorrect"));
-				return NULL;
+				return nullptr;
 			}
 			assert(weightPercentage>=0);
 			xmlReadingLog+="    Read weight percentage="+CustomFETString::number(weightPercentage)+"\n";
@@ -13669,9 +13669,9 @@ TimeConstraint* Rules::readBreak(QXmlStreamReader& xmlReader, FakeString& xmlRea
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint Break day corrupt for day %1 is inexistent ... ignoring constraint")
 					.arg(text));*/
-				//cn=NULL;
+				//cn=nullptr;
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}
 			assert(d<this->nDaysPerWeek);
 			xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[d]+"\n";
@@ -13683,16 +13683,16 @@ TimeConstraint* Rules::readBreak(QXmlStreamReader& xmlReader, FakeString& xmlRea
 					break;
 			if(h1==this->nHoursPerDay){
 				xmlReader.raiseError(tr("Hour %1 is the last hour - impossible").arg(text));
-				return NULL;
+				return nullptr;
 			}
 			else if(h1>this->nHoursPerDay){
 				xmlReader.raiseError(tr("Hour %1 is inexistent").arg(text));
 				/*RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint Break start hour corrupt for hour %1 is inexistent ... ignoring constraint")
 					.arg(text));*/
-				//cn=NULL;
+				//cn=nullptr;
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}
 			assert(h1>=0 && h1 < this->nHoursPerDay);
 			xmlReadingLog+="    Start hour="+this->hoursOfTheDay[h1]+"\n";
@@ -13704,18 +13704,18 @@ TimeConstraint* Rules::readBreak(QXmlStreamReader& xmlReader, FakeString& xmlRea
 					break;
 			if(h2==0){
 				xmlReader.raiseError(tr("Hour %1 is the first hour - impossible").arg(text));
-				return NULL;
+				return nullptr;
 			}
 			else if(h2>this->nHoursPerDay){
 				xmlReader.raiseError(tr("Hour %1 is inexistent").arg(text));
-				return NULL;
+				return nullptr;
 			}
 			/*if(h2<=0 || h2>this->nHoursPerDay){
 				RulesReconcilableMessage::information(parent, tr("FET information"),
 					tr("Constraint Break end hour corrupt for hour %1 is inexistent ... ignoring constraint")
 					.arg(text));
 				//goto corruptConstraintTime;
-				return NULL;
+				return nullptr;
 			}*/
 			assert(h2>0 && h2 <= this->nHoursPerDay);
 			xmlReadingLog+="    End hour="+this->hoursOfTheDay[h2]+"\n";
@@ -13733,19 +13733,19 @@ TimeConstraint* Rules::readBreak(QXmlStreamReader& xmlReader, FakeString& xmlRea
 	assert(weightPercentage>=0);
 	if(d<0){
 		xmlReader.raiseError(tr("Field missing: %1").arg("Day"));
-		return NULL;
+		return nullptr;
 	}
 	else if(h1<0){
 		xmlReader.raiseError(tr("Field missing: %1").arg("Start_Hour"));
-		return NULL;
+		return nullptr;
 	}
 	else if(h2<0){
 		xmlReader.raiseError(tr("Field missing: %1").arg("End_Hour"));
-		return NULL;
+		return nullptr;
 	}
 	assert(d>=0 && h1>=0 && h2>=0);
 
-	ConstraintBreakTimes* cn = NULL;
+	ConstraintBreakTimes* cn = nullptr;
 	
 	bool found=false;
 	for(TimeConstraint* c : qAsConst(this->timeConstraintsList))
@@ -13783,7 +13783,7 @@ TimeConstraint* Rules::readBreak(QXmlStreamReader& xmlReader, FakeString& xmlRea
 		return cn;
 	}
 	else
-		return NULL;
+		return nullptr;
 }
 
 TimeConstraint* Rules::readBreakTimes(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
@@ -13836,9 +13836,9 @@ TimeConstraint* Rules::readBreakTimes(QXmlStreamReader& xmlReader, FakeString& x
 							tr("Constraint BreakTimes day corrupt for day %1 is inexistent ... ignoring constraint")
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 		
 					assert(d<this->nDaysPerWeek);
@@ -13856,9 +13856,9 @@ TimeConstraint* Rules::readBreakTimes(QXmlStreamReader& xmlReader, FakeString& x
 							tr("Constraint BreakTimes hour corrupt for hour %1 is inexistent ... ignoring constraint")
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(h>=0 && h < this->nHoursPerDay);
@@ -13881,8 +13881,8 @@ TimeConstraint* Rules::readBreakTimes(QXmlStreamReader& xmlReader, FakeString& x
 			if(d==-1 || h==-1){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Break_Time"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 		}
 		else{
@@ -13897,8 +13897,8 @@ TimeConstraint* Rules::readBreakTimes(QXmlStreamReader& xmlReader, FakeString& x
 	if(!(i==nNotAvailableSlots)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Break_Times").arg("Break_Time"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(i==nNotAvailableSlots);
 	return cn;
@@ -14643,8 +14643,8 @@ TimeConstraint* Rules::readStudentsEarlyMaxBeginningsAtSecondHour(QXmlStreamRead
 			if(!(cn->maxBeginningsAtSecondHour>=0)){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Beginnings_At_Second_Hour"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Adding max beginnings at second hour="+CustomFETString::number(cn->maxBeginningsAtSecondHour)+"\n";
 		}
@@ -14673,8 +14673,8 @@ TimeConstraint* Rules::readStudentsEarlyMaxBeginningsAtSecondHour(QXmlStreamRead
 	if(!(cn->maxBeginningsAtSecondHour>=0)){
 		xmlReader.raiseError(tr("%1 not found").arg("Max_Beginnings_At_Second_Hour"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->maxBeginningsAtSecondHour>=0);
 	return cn;
@@ -14772,8 +14772,8 @@ TimeConstraint* Rules::readStudentsSetEarlyMaxBeginningsAtSecondHour(QXmlStreamR
 			if(!(cn->maxBeginningsAtSecondHour>=0)){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Beginnings_At_Second_Hour"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			xmlReadingLog+="    Adding max beginnings at second hour="+CustomFETString::number(cn->maxBeginningsAtSecondHour)+"\n";
 		}
@@ -14807,8 +14807,8 @@ TimeConstraint* Rules::readStudentsSetEarlyMaxBeginningsAtSecondHour(QXmlStreamR
 	if(!(cn->maxBeginningsAtSecondHour>=0)){
 		xmlReader.raiseError(tr("%1 not found").arg("Max_Beginnings_At_Second_Hour"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(cn->maxBeginningsAtSecondHour>=0);
 	return cn;
@@ -14920,9 +14920,9 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QXmlStreamReader& xmlReader,
 							.arg(cn->activityTagName)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 							
 					assert(cn->days_L[i]<this->nDaysPerWeek);
@@ -14946,9 +14946,9 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QXmlStreamReader& xmlReader,
 							.arg(cn->activityTagName)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 							
 					assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
@@ -14969,8 +14969,8 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QXmlStreamReader& xmlReader,
 			if(!(i==cn->days_L.count()) || !(i==cn->hours_L.count())){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Preferred_Time"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(i==cn->days_L.count());
 			assert(i==cn->hours_L.count());
@@ -14987,8 +14987,8 @@ TimeConstraint* Rules::readActivitiesPreferredTimes(QXmlStreamReader& xmlReader,
 	if(!(i==cn->nPreferredStartingTimes_L)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Times").arg("Preferred_Time"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(i==cn->nPreferredStartingTimes_L);
 	return cn;
@@ -15109,9 +15109,9 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QXmlStreamReader& xmlRea
 							.arg(cn->p_activityTagName)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 							
 					assert(cn->p_days_L[i]<this->nDaysPerWeek);
@@ -15135,9 +15135,9 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QXmlStreamReader& xmlRea
 							.arg(cn->p_activityTagName)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 							
 					assert(cn->p_hours_L[i]>=0 && cn->p_hours_L[i] < this->nHoursPerDay);
@@ -15158,8 +15158,8 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QXmlStreamReader& xmlRea
 			if(!(i==cn->p_days_L.count()) || !(i==cn->p_hours_L.count())){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Preferred_Time_Slot"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(i==cn->p_days_L.count());
 			assert(i==cn->p_hours_L.count());
@@ -15176,8 +15176,8 @@ TimeConstraint* Rules::readActivitiesPreferredTimeSlots(QXmlStreamReader& xmlRea
 	if(!(i==cn->p_nPreferredTimeSlots_L)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Time_Slots").arg("Preferred_Time_Slot"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(i==cn->p_nPreferredTimeSlots_L);
 	return cn;
@@ -15298,9 +15298,9 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QXmlStreamReader& xm
 							.arg(cn->activityTagName)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 							
 					assert(cn->days_L[i]<this->nDaysPerWeek);
@@ -15324,9 +15324,9 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QXmlStreamReader& xm
 							.arg(cn->activityTagName)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 							
 					assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
@@ -15347,8 +15347,8 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QXmlStreamReader& xm
 			if(!(i==cn->days_L.count()) || !(i==cn->hours_L.count())){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Preferred_Starting_Time"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(i==cn->days_L.count());
 			assert(i==cn->hours_L.count());
@@ -15365,8 +15365,8 @@ TimeConstraint* Rules::readActivitiesPreferredStartingTimes(QXmlStreamReader& xm
 	if(!(i==cn->nPreferredStartingTimes_L)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Starting_Times").arg("Preferred_Starting_Time"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(i==cn->nPreferredStartingTimes_L);
 	return cn;
@@ -15494,9 +15494,9 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QXmlStreamReader& xml
 							.arg(cn->p_activityTagName)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->p_days_L[i]<this->nDaysPerWeek);
@@ -15520,9 +15520,9 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QXmlStreamReader& xml
 							.arg(cn->p_activityTagName)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->p_hours_L[i]>=0 && cn->p_hours_L[i] < this->nHoursPerDay);
@@ -15543,8 +15543,8 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QXmlStreamReader& xml
 			if(!(i==cn->p_days_L.count()) || !(i==cn->p_hours_L.count())){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Preferred_Time_Slot"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(i==cn->p_days_L.count());
 			assert(i==cn->p_hours_L.count());
@@ -15561,8 +15561,8 @@ TimeConstraint* Rules::readSubactivitiesPreferredTimeSlots(QXmlStreamReader& xml
 	if(!(i==cn->p_nPreferredTimeSlots_L)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Time_Slots").arg("Preferred_Time_Slot"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(i==cn->p_nPreferredTimeSlots_L);
 	return cn;
@@ -15689,9 +15689,9 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QXmlStreamReader&
 							.arg(cn->activityTagName)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->days_L[i]<this->nDaysPerWeek);
@@ -15715,9 +15715,9 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QXmlStreamReader&
 							.arg(cn->activityTagName)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->hours_L[i]>=0 && cn->hours_L[i] < this->nHoursPerDay);
@@ -15738,8 +15738,8 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QXmlStreamReader&
 			if(!(i==cn->days_L.count()) || !(i==cn->hours_L.count())){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Preferred_Starting_Time"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(i==cn->days_L.count());
 			assert(i==cn->hours_L.count());
@@ -15756,8 +15756,8 @@ TimeConstraint* Rules::readSubactivitiesPreferredStartingTimes(QXmlStreamReader&
 	if(!(i==cn->nPreferredStartingTimes_L)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Starting_Times").arg("Preferred_Starting_Time"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(i==cn->nPreferredStartingTimes_L);
 	return cn;
@@ -15825,9 +15825,9 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamR
 							tr("Constraint ActivitiesOccupyMaxTimeSlotsFromSelection day corrupt, day %1 is inexistent ... ignoring constraint")
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->selectedDays[i]<this->nDaysPerWeek);
@@ -15847,9 +15847,9 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamR
 							tr(" Constraint ActivitiesOccupyMaxTimeSlotsFromSelection hour corrupt, hour %1 is inexistent ... ignoring constraint")
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->selectedHours[i]>=0 && cn->selectedHours[i] < this->nHoursPerDay);
@@ -15870,8 +15870,8 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamR
 			if(!(i==cn->selectedDays.count()) || !(i==cn->selectedHours.count())){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Selected_Time_Slot"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(i==cn->selectedDays.count());
 			assert(i==cn->selectedHours.count());
@@ -15894,15 +15894,15 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTimeSlotsFromSelection(QXmlStreamR
 	if(!(ac==cn->activitiesIds.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 
 	if(!(i==tsc)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 
 	assert(ac==cn->activitiesIds.count());
@@ -15973,9 +15973,9 @@ TimeConstraint* Rules::readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamR
 							tr("Constraint ActivitiesOccupyMinTimeSlotsFromSelection day corrupt, day %1 is inexistent ... ignoring constraint")
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->selectedDays[i]<this->nDaysPerWeek);
@@ -15995,9 +15995,9 @@ TimeConstraint* Rules::readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamR
 							tr(" Constraint ActivitiesOccupyMinTimeSlotsFromSelection hour corrupt, hour %1 is inexistent ... ignoring constraint")
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->selectedHours[i]>=0 && cn->selectedHours[i] < this->nHoursPerDay);
@@ -16018,8 +16018,8 @@ TimeConstraint* Rules::readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamR
 			if(!(i==cn->selectedDays.count()) || !(i==cn->selectedHours.count())){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Selected_Time_Slot"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(i==cn->selectedDays.count());
 			assert(i==cn->selectedHours.count());
@@ -16042,15 +16042,15 @@ TimeConstraint* Rules::readActivitiesOccupyMinTimeSlotsFromSelection(QXmlStreamR
 	if(!(ac==cn->activitiesIds.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 
 	if(!(i==tsc)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 
 	assert(ac==cn->activitiesIds.count());
@@ -16121,9 +16121,9 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStre
 							tr("Constraint ActivitiesMaxSimultaneousInSelectedTimeSlots day corrupt, day %1 is inexistent ... ignoring constraint")
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 							
 					assert(cn->selectedDays[i]<this->nDaysPerWeek);
@@ -16143,9 +16143,9 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStre
 							tr(" Constraint ActivitiesMaxSimultaneousInSelectedTimeSlots hour corrupt, hour %1 is inexistent ... ignoring constraint")
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->selectedHours[i]>=0 && cn->selectedHours[i] < this->nHoursPerDay);
@@ -16166,8 +16166,8 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStre
 			if(!(i==cn->selectedDays.count()) || !(i==cn->selectedHours.count())){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Selected_Time_Slot"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(i==cn->selectedDays.count());
 			assert(i==cn->selectedHours.count());
@@ -16190,15 +16190,15 @@ TimeConstraint* Rules::readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStre
 	if(!(ac==cn->activitiesIds.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 
 	if(!(i==tsc)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 
 	assert(ac==cn->activitiesIds.count());
@@ -16271,9 +16271,9 @@ TimeConstraint* Rules::readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStre
 							tr("Constraint ActivitiesMinSimultaneousInSelectedTimeSlots day corrupt, day %1 is inexistent ... ignoring constraint")
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 							
 					assert(cn->selectedDays[i]<this->nDaysPerWeek);
@@ -16293,9 +16293,9 @@ TimeConstraint* Rules::readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStre
 							tr(" Constraint ActivitiesMinSimultaneousInSelectedTimeSlots hour corrupt, hour %1 is inexistent ... ignoring constraint")
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintTime;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(cn->selectedHours[i]>=0 && cn->selectedHours[i] < this->nHoursPerDay);
@@ -16316,8 +16316,8 @@ TimeConstraint* Rules::readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStre
 			if(!(i==cn->selectedDays.count()) || !(i==cn->selectedHours.count())){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Selected_Time_Slot"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 			assert(i==cn->selectedDays.count());
 			assert(i==cn->selectedHours.count());
@@ -16347,15 +16347,15 @@ TimeConstraint* Rules::readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStre
 	if(!(ac==cn->activitiesIds.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 
 	if(!(i==tsc)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Selected_Time_Slots").arg("Selected_Time_Slot"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 
 	assert(ac==cn->activitiesIds.count());
@@ -16829,9 +16829,9 @@ SpaceConstraint* Rules::readRoomNotAvailable(QXmlStreamReader& xmlReader, FakeSt
 					tr("Constraint RoomNotAvailable day corrupt for room %1, day %2 is inexistent ... ignoring constraint")
 					.arg(room)
 					.arg(text));*/
-				//cn=NULL;
+				//cn=nullptr;
 				//goto corruptConstraintSpace;
-				return NULL;
+				return nullptr;
 			}
 			assert(d<this->nDaysPerWeek);
 			xmlReadingLog+="    Crt. day="+this->daysOfTheWeek[d]+"\n";
@@ -16843,7 +16843,7 @@ SpaceConstraint* Rules::readRoomNotAvailable(QXmlStreamReader& xmlReader, FakeSt
 					break;
 			if(h1==this->nHoursPerDay){
 				xmlReader.raiseError(tr("Hour %1 is the last hour - impossible").arg(text));
-				return NULL;
+				return nullptr;
 			}
 			else if(h1>this->nHoursPerDay){
 				xmlReader.raiseError(tr("Hour %1 is inexistent").arg(text));
@@ -16851,9 +16851,9 @@ SpaceConstraint* Rules::readRoomNotAvailable(QXmlStreamReader& xmlReader, FakeSt
 					tr("Constraint RoomNotAvailable start hour corrupt for room %1, hour %2 is inexistent ... ignoring constraint")
 					.arg(room)
 					.arg(text));*/
-				//cn=NULL;
+				//cn=nullptr;
 				//goto corruptConstraintSpace;
-				return NULL;
+				return nullptr;
 			}
 			assert(h1>=0 && h1 < this->nHoursPerDay);
 			xmlReadingLog+="    Start hour="+this->hoursOfTheDay[h1]+"\n";
@@ -16865,7 +16865,7 @@ SpaceConstraint* Rules::readRoomNotAvailable(QXmlStreamReader& xmlReader, FakeSt
 					break;
 			if(h2==0){
 				xmlReader.raiseError(tr("Hour %1 is the first hour - impossible").arg(text));
-				return NULL;
+				return nullptr;
 			}
 			else if(h2<0 || h2>this->nHoursPerDay){
 				xmlReader.raiseError(tr("Hour %1 is inexistent").arg(text));
@@ -16874,7 +16874,7 @@ SpaceConstraint* Rules::readRoomNotAvailable(QXmlStreamReader& xmlReader, FakeSt
 					.arg(room)
 					.arg(text));*/
 				//goto corruptConstraintSpace;
-				return NULL;
+				return nullptr;
 			}
 			assert(h2>0 && h2 <= this->nHoursPerDay);
 			xmlReadingLog+="    End hour="+this->hoursOfTheDay[h2]+"\n";
@@ -16896,20 +16896,20 @@ SpaceConstraint* Rules::readRoomNotAvailable(QXmlStreamReader& xmlReader, FakeSt
 	
 	if(d<0){
 		xmlReader.raiseError(tr("Field missing: %1").arg("Day"));
-		return NULL;
+		return nullptr;
 	}
 	else if(h1<0){
 		xmlReader.raiseError(tr("Field missing: %1").arg("Start_Hour"));
-		return NULL;
+		return nullptr;
 	}
 	else if(h2<0){
 		xmlReader.raiseError(tr("Field missing: %1").arg("End_Hour"));
-		return NULL;
+		return nullptr;
 	}
 	assert(weightPercentage>=0);
 	assert(d>=0 && h1>=0 && h2>=0);
 
-	ConstraintRoomNotAvailableTimes* cn = NULL;
+	ConstraintRoomNotAvailableTimes* cn = nullptr;
 	
 	bool found=false;
 	for(SpaceConstraint* c : qAsConst(this->spaceConstraintsList))
@@ -16947,7 +16947,7 @@ SpaceConstraint* Rules::readRoomNotAvailable(QXmlStreamReader& xmlReader, FakeSt
 		return cn;
 	}
 	else
-		return NULL;
+		return nullptr;
 }
 
 SpaceConstraint* Rules::readRoomNotAvailableTimes(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
@@ -17001,8 +17001,8 @@ SpaceConstraint* Rules::readRoomNotAvailableTimes(QXmlStreamReader& xmlReader, F
 							.arg(cn->room)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
-						return NULL;
+						cn=nullptr;
+						return nullptr;
 						//goto corruptConstraintSpace;
 					}
 		
@@ -17022,9 +17022,9 @@ SpaceConstraint* Rules::readRoomNotAvailableTimes(QXmlStreamReader& xmlReader, F
 							.arg(cn->room)
 							.arg(text));*/
 						delete cn;
-						cn=NULL;
+						cn=nullptr;
 						//goto corruptConstraintSpace;
-						return NULL;
+						return nullptr;
 					}
 					
 					assert(h>=0 && h < this->nHoursPerDay);
@@ -17047,8 +17047,8 @@ SpaceConstraint* Rules::readRoomNotAvailableTimes(QXmlStreamReader& xmlReader, F
 			if(d==-1 || h==-1){
 				xmlReader.raiseError(tr("%1 is incorrect").arg("Not_Available_Time"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 		}
 		else if(xmlReader.name()==QString("Room")){
@@ -17069,8 +17069,8 @@ SpaceConstraint* Rules::readRoomNotAvailableTimes(QXmlStreamReader& xmlReader, F
 	if(!(i==nNotAvailableSlots)){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Not_Available_Times").arg("Not_Available_Time"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(i==nNotAvailableSlots);
 	return cn;
@@ -17192,8 +17192,8 @@ bool& reportUnspecifiedPermanentlyLockedSpace){
 			if(specifiedNumberOfRealRooms==-1){
 				xmlReader.raiseError(tr("Argument %1 missing in constraint.").arg("Number_of_Real_Rooms"));
 				delete cn;
-				cn=NULL;
-				return NULL;
+				cn=nullptr;
+				return nullptr;
 			}
 		}
 	}*/
@@ -17201,8 +17201,8 @@ bool& reportUnspecifiedPermanentlyLockedSpace){
 	if(cn->preferredRealRoomsNames.count()!=specifiedNumberOfRealRooms){
 		xmlReader.raiseError(tr("The specified number of real rooms is not equal to the read number of real rooms in constraint."));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 
 	if(!foundLocked && reportUnspecifiedPermanentlyLockedSpace){
@@ -17311,8 +17311,8 @@ SpaceConstraint* Rules::readActivityPreferredRooms(QXmlStreamReader& xmlReader, 
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(_n_preferred_rooms==cn->roomsNames.count());
 	return cn;
@@ -17447,8 +17447,8 @@ SpaceConstraint* Rules::readSubjectPreferredRooms(QXmlStreamReader& xmlReader, F
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(_n_preferred_rooms==cn->roomsNames.count());
 	return cn;
@@ -17593,8 +17593,8 @@ SpaceConstraint* Rules::readSubjectSubjectTagPreferredRooms(QXmlStreamReader& xm
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(_n_preferred_rooms==cn->roomsNames.count());
 	return cn;
@@ -17739,8 +17739,8 @@ SpaceConstraint* Rules::readSubjectActivityTagPreferredRooms(QXmlStreamReader& x
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(_n_preferred_rooms==cn->roomsNames.count());
 	return cn;
@@ -17838,8 +17838,8 @@ SpaceConstraint* Rules::readActivityTagPreferredRooms(QXmlStreamReader& xmlReade
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(_n_preferred_rooms==cn->roomsNames.count());
 	return cn;
@@ -17936,8 +17936,8 @@ SpaceConstraint* Rules::readStudentsSetHomeRooms(QXmlStreamReader& xmlReader, Fa
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(_n_preferred_rooms==cn->roomsNames.count());
 	return cn;
@@ -18034,8 +18034,8 @@ SpaceConstraint* Rules::readTeacherHomeRooms(QXmlStreamReader& xmlReader, FakeSt
 	if(!(_n_preferred_rooms==cn->roomsNames.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Preferred_Rooms").arg("Preferred_Room"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(_n_preferred_rooms==cn->roomsNames.count());
 	return cn;
@@ -19043,8 +19043,8 @@ SpaceConstraint* Rules::readActivitiesOccupyMaxDifferentRooms(QXmlStreamReader& 
 	if(!(ac==cn->activitiesIds.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(ac==cn->activitiesIds.count());
 	
@@ -19101,8 +19101,8 @@ SpaceConstraint* Rules::readActivitiesSameRoomIfConsecutive(QXmlStreamReader& xm
 	if(!(ac==cn->activitiesIds.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 	assert(ac==cn->activitiesIds.count());
 	

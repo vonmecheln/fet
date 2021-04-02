@@ -252,7 +252,7 @@ void AddConstraintActivitiesPreferredStartingTimesForm::updateActivityTagsComboB
 
 void AddConstraintActivitiesPreferredStartingTimesForm::addConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	int duration=-1;
 	if(durationCheckBox->isChecked()){
@@ -275,7 +275,7 @@ void AddConstraintActivitiesPreferredStartingTimesForm::addConstraint()
 
 	QString students=studentsComboBox->currentText();
 	if(students!="")
-		assert(gt.rules.searchStudentsSet(students)!=NULL);
+		assert(gt.rules.searchStudentsSet(students)!=nullptr);
 
 	QString subject=subjectsComboBox->currentText();
 	if(subject!="")

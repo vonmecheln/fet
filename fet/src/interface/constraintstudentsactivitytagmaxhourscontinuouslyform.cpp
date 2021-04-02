@@ -101,7 +101,7 @@ void ConstraintStudentsActivityTagMaxHoursContinuouslyForm::constraintChanged(in
 	}
 	assert(index<this->visibleConstraintsList.size());
 	TimeConstraint* ctr=this->visibleConstraintsList.at(index);
-	assert(ctr!=NULL);
+	assert(ctr!=nullptr);
 	currentConstraintTextEdit->setPlainText(ctr->getDetailedDescription(gt.rules));
 }
 

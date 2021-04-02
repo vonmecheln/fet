@@ -242,7 +242,7 @@ void SubactivitiesForm::studentsFilterChanged()
 		else{
 			//down
 			StudentsSet* set=gt.rules.searchStudentsSet(studentsComboBox->currentText());
-			assert(set!=NULL);
+			assert(set!=nullptr);
 			if(set->type==STUDENTS_YEAR){
 				StudentsYear* year=(StudentsYear*)set;
 				showedStudents.insert(year->name);
@@ -347,7 +347,7 @@ void SubactivitiesForm::modifySubactivity()
 	int valh=subactivitiesListWidget->horizontalScrollBar()->value();
 	
 	Activity* act=visibleSubactivitiesList[ind];
-	assert(act!=NULL);
+	assert(act!=nullptr);
 	
 	ModifySubactivityForm modifySubactivityForm(this, act->id, act->activityGroupId);
 	int t;
@@ -388,7 +388,7 @@ void SubactivitiesForm::subactivityChanged()
 	QString s;
 	Activity* act=visibleSubactivitiesList[index];
 
-	assert(act!=NULL);
+	assert(act!=nullptr);
 	s=act->getDetailedDescriptionWithConstraints(gt.rules);
 	subactivityTextEdit->setPlainText(s);
 }
@@ -446,7 +446,7 @@ void SubactivitiesForm::subactivityComments()
 	assert(ind<visibleSubactivitiesList.count());
 
 	Activity* act=visibleSubactivitiesList[ind];
-	assert(act!=NULL);
+	assert(act!=nullptr);
 
 	QDialog getCommentsDialog(this);
 	

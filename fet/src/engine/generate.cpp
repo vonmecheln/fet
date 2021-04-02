@@ -4017,7 +4017,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 
 				maxActivitiesPlaced=added_act+1;
 				
-				if(maxPlacedActivityStream!=NULL){
+				if(maxPlacedActivityStream!=nullptr){
 					int sec=timeToHighestStage;
 					int hh=sec/3600;
 					sec%=3600;

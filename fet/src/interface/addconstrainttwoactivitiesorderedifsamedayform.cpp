@@ -155,7 +155,7 @@ void AddConstraintTwoActivitiesOrderedIfSameDayForm::filterChanged(){
 
 void AddConstraintTwoActivitiesOrderedIfSameDayForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

@@ -58,7 +58,7 @@ void AddConstraintTeacherMaxBuildingChangesPerWeekForm::updateTeachersComboBox()
 
 void AddConstraintTeacherMaxBuildingChangesPerWeekForm::addCurrentConstraint()
 {
-	SpaceConstraint *ctr=NULL;
+	SpaceConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

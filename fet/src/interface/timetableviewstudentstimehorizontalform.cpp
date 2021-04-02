@@ -108,7 +108,7 @@ void TimetableViewStudentsTimeHorizontalDelegate::paint(QPainter* painter, const
 		painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
 	}*/
 	
-	/*assert(table!=NULL);
+	/*assert(table!=nullptr);
 	QBrush bg(table->item(index.row(), index.column())->background());
 	QPen pen(painter->pen());
 
@@ -252,7 +252,7 @@ TimetableViewStudentsTimeHorizontalForm::TimetableViewStudentsTimeHorizontalForm
 	studentsTimetableTable->setColumnCount(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	
 	oldItemDelegate=studentsTimetableTable->itemDelegate();
-	newItemDelegate=new TimetableViewStudentsTimeHorizontalDelegate(NULL, studentsTimetableTable->rowCount(), gt.rules.nHoursPerDay);
+	newItemDelegate=new TimetableViewStudentsTimeHorizontalDelegate(nullptr, studentsTimetableTable->rowCount(), gt.rules.nHoursPerDay);
 	studentsTimetableTable->setItemDelegate(newItemDelegate);
 	
 	bool min2letters=false;
@@ -530,7 +530,7 @@ void TimetableViewStudentsTimeHorizontalForm::newTimetableGenerated()
 	/*studentsTimetableTable->setItemDelegate(oldItemDelegate);
 	delete newItemDelegate;
 	//oldItemDelegate=studentsTimetableTable->itemDelegate();
-	newItemDelegate=new TimetableViewStudentsTimeHorizontalDelegate(NULL, studentsTimetableTable->rowCount(), gt.rules.nHoursPerDay);
+	newItemDelegate=new TimetableViewStudentsTimeHorizontalDelegate(nullptr, studentsTimetableTable->rowCount(), gt.rules.nHoursPerDay);
 	studentsTimetableTable->setItemDelegate(newItemDelegate);*/
 	
 	bool min2letters=false;
@@ -748,8 +748,8 @@ void TimetableViewStudentsTimeHorizontalForm::updateStudentsTimetableTable(){
 			continue;
 		
 		assert(gt.rules.studentsHash.contains(usedStudentsList.at(t)));
-		StudentsSet* ss=gt.rules.studentsHash.value(usedStudentsList.at(t), NULL);
-		assert(ss!=NULL);
+		StudentsSet* ss=gt.rules.studentsHash.value(usedStudentsList.at(t), nullptr);
+		assert(ss!=nullptr);
 		int sbg=-1;
 		if(ss->type==STUDENTS_YEAR){
 			StudentsYear* year=(StudentsYear*)ss;
@@ -771,8 +771,8 @@ void TimetableViewStudentsTimeHorizontalForm::updateStudentsTimetableTable(){
 		
 		QSet<QPair<int, int> > notAvailableDayHour=studentsSetNotAvailableDayHour.value(usedStudentsList.at(t), QSet<QPair<int, int> >());
 		
-		/*ConstraintStudentsSetNotAvailableTimes* ctr=notAvailableHash.value(usedStudentsList.at(t), NULL);
-		if(ctr!=NULL){
+		/*ConstraintStudentsSetNotAvailableTimes* ctr=notAvailableHash.value(usedStudentsList.at(t), nullptr);
+		if(ctr!=nullptr){
 			for(int i=0; i<ctr->days.count(); i++){
 				int d=ctr->days.at(i);
 				int h=ctr->hours.at(i);
@@ -810,7 +810,7 @@ void TimetableViewStudentsTimeHorizontalForm::updateStudentsTimetableTable(){
 				//Activity* act=gt.rules.activitiesList.at(ai);
 				if(ok){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
-					assert(act!=NULL);
+					assert(act!=nullptr);
 					
 					if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
 						QString ats=act->activityTagsNames.join(", ");
@@ -1003,7 +1003,7 @@ void TimetableViewStudentsTimeHorizontalForm::currentItemChanged(QTableWidgetIte
 }
 
 void TimetableViewStudentsTimeHorizontalForm::detailActivity(QTableWidgetItem* item){
-	if(item==NULL){
+	if(item==nullptr){
 		detailsTextEdit->setPlainText(QString(""));
 		return;
 	}
@@ -1045,8 +1045,8 @@ void TimetableViewStudentsTimeHorizontalForm::detailActivity(QTableWidgetItem* i
 		return;
 	}
 	assert(gt.rules.studentsHash.contains(usedStudentsList.at(t)));
-	StudentsSet* ss=gt.rules.studentsHash.value(usedStudentsList.at(t), NULL);
-	assert(ss!=NULL);
+	StudentsSet* ss=gt.rules.studentsHash.value(usedStudentsList.at(t), nullptr);
+	assert(ss!=nullptr);
 	if(ss->type==STUDENTS_YEAR){
 		StudentsYear* year=(StudentsYear*)ss;
 		sbg=year->groupsList.at(0)->subgroupsList.at(0)->indexInInternalSubgroupsList;
@@ -1102,7 +1102,7 @@ void TimetableViewStudentsTimeHorizontalForm::detailActivity(QTableWidgetItem* i
 		//Activity* act=gt.rules.activitiesList.at(ai);
 		if(ok){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			assert(act!=NULL);
+			assert(act!=nullptr);
 			//s += act->getDetailedDescriptionWithConstraints(gt.rules);
 			s += act->getDetailedDescription(gt.rules);
 
@@ -1251,8 +1251,8 @@ void TimetableViewStudentsTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 		if(!gt.rules.studentsHash.contains(usedStudentsList.at(t)))
 			continue;
 		assert(gt.rules.studentsHash.contains(usedStudentsList.at(t)));
-		StudentsSet* ss=gt.rules.studentsHash.value(usedStudentsList.at(t), NULL);
-		assert(ss!=NULL);
+		StudentsSet* ss=gt.rules.studentsHash.value(usedStudentsList.at(t), nullptr);
+		assert(ss!=nullptr);
 		int sbg=-1;
 		if(ss->type==STUDENTS_YEAR){
 			StudentsYear* year=(StudentsYear*)ss;

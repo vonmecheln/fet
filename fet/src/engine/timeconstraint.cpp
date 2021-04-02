@@ -83,8 +83,8 @@ QString getActivityDetailedDescription(Rules& r, int id)
 {
 	QString s="";
 	
-	Activity* act=r.activitiesPointerHash.value(id, NULL);
-	if(act==NULL){
+	Activity* act=r.activitiesPointerHash.value(id, nullptr);
+	if(act==nullptr){
 		s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 		return s;
 	}
@@ -385,7 +385,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 	int nse; //number of students exhaustions
 
 	//Part without logging..................................................................
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		//Unallocated or late activities
 		unallocated=0;
 		late=0;
@@ -458,7 +458,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 				//Take care: MAX_ACTIVITIES*this_constant <= INT_MAX
 				unallocated += /*r.internalActivitiesList[i].duration * r.internalActivitiesList[i].nSubgroups * */ 10000;
 				//(an unallocated activity for a year is more important than an unallocated activity for a subgroup)
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s= tr("Time constraint basic compulsory broken: unallocated activity with id=%1 (%2)",
 						"%2 is the detailed description of activity - teachers, subject, students")
 						.arg(r.internalActivitiesList[i].id).arg(getActivityDetailedDescription(r, r.internalActivitiesList[i].id));
@@ -488,7 +488,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 					//of subgroups implied, for seeing the importance of the
 					//activity
 
-					if(conflictsString!=NULL){
+					if(conflictsString!=nullptr){
 						QString s=tr("Time constraint basic compulsory");
 						s+=": ";
 						s+=tr("activity with id=%1 is late.")
@@ -519,7 +519,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 				for(int k=0; k<r.nHoursPerDay; k++){
 					int tmp=teachersMatrix[i][j][k]-1;
 					if(tmp>0){
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=tr("Time constraint basic compulsory");
 							s+=": ";
 							s+=tr("teacher with name %1 has more than one allocated activity on day %2, hour %3")
@@ -549,7 +549,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 				for(int k=0; k<r.nHoursPerDay; k++){
 					int tmp=subgroupsMatrix[i][j][k]-1;
 					if(tmp>0){
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=tr("Time constraint basic compulsory");
 							s+=": ";
 							s+=tr("subgroup %1 has more than one allocated activity on day %2, hour %3")
@@ -829,7 +829,7 @@ double ConstraintTeacherNotAvailableTimes::fitness(Solution& c, Rules& r, QList<
 		if(teachersMatrix[tch][d][h]>0){
 			nbroken+=teachersMatrix[tch][d][h];
 	
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s= tr("Time constraint teacher not available");
 				s += " ";
 				s += tr("broken for teacher: %1 on day %2, hour %3")
@@ -954,9 +954,9 @@ ConstraintStudentsSetNotAvailableTimes::ConstraintStudentsSetNotAvailableTimes(d
 
 bool ConstraintStudentsSetNotAvailableTimes::computeInternalStructure(QWidget* parent, Rules& r){
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set not available is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -1150,7 +1150,7 @@ double ConstraintStudentsSetNotAvailableTimes::fitness(Solution& c, Rules& r, QL
 			if(subgroupsMatrix[sbg][d][h]>0){
 				nbroken+=subgroupsMatrix[sbg][d][h];
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s= tr("Time constraint students set not available");
 					s += " ";
 					s += tr("broken for subgroup: %1 on day %2, hour %3")
@@ -1319,8 +1319,8 @@ void ConstraintActivitiesSameStartingTime::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
@@ -1427,7 +1427,7 @@ double ConstraintActivitiesSameStartingTime::fitness(Solution& c, Rules& r, QLis
 	//sum the differences in the scheduled time for all pairs of activities.
 
 	//without logging
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		nbroken=0;
 		for(int i=1; i<this->_n_activities; i++){
 			int t1=c.times[this->_activities[i]];
@@ -1474,7 +1474,7 @@ double ConstraintActivitiesSameStartingTime::fitness(Solution& c, Rules& r, QLis
 
 						nbroken+=tmp;
 
-						if(tmp>0 && conflictsString!=NULL){
+						if(tmp>0 && conflictsString!=nullptr){
 							QString s=tr("Time constraint activities same starting time broken, because activity with id=%1 (%2) is not at the same starting time with activity with id=%3 (%4)",
 							"%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
 							 .arg(this->activitiesId[i])
@@ -1627,8 +1627,8 @@ void ConstraintActivitiesNotOverlapping::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
@@ -1733,7 +1733,7 @@ double ConstraintActivitiesNotOverlapping::fitness(Solution& c, Rules& r, QList<
 
 	//sum the overlapping hours for all pairs of activities.
 	//without logging
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		nbroken=0;
 		for(int i=1; i<this->_n_activities; i++){
 			int t1=c.times[this->_activities[i]];
@@ -1795,7 +1795,7 @@ double ConstraintActivitiesNotOverlapping::fitness(Solution& c, Rules& r, QList<
 
 						nbroken+=tmp;
 
-						if(tt>0 && conflictsString!=NULL){
+						if(tt>0 && conflictsString!=nullptr){
 
 							QString s=tr("Time constraint activities not overlapping broken: activity with id=%1 (%2) overlaps with activity with id=%3 (%4) on a number of %5 periods",
 							 "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
@@ -2058,7 +2058,7 @@ double ConstraintActivityTagsNotOverlapping::fitness(Solution& c, Rules& r, QLis
 
 							nbroken+=tmp;
 
-							if(tt>0 && conflictsString!=NULL){
+							if(tt>0 && conflictsString!=nullptr){
 								QString s=tr("Time constraint activity tags not overlapping broken: activity with id=%1 (%2) overlaps with activity with id=%3 (%4) on a number of %5 periods",
 								 "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
 								 .arg(r.internalActivitiesList[i].id)
@@ -2250,8 +2250,8 @@ void ConstraintMinDaysBetweenActivities::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
@@ -2361,7 +2361,7 @@ double ConstraintMinDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 
 	//sum the overlapping hours for all pairs of activities.
 	//without logging
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		nbroken=0;
 		for(int i=1; i<this->_n_activities; i++){
 			int t1=c.times[this->_activities[i]];
@@ -2427,7 +2427,7 @@ double ConstraintMinDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 	
 						nbroken+=tmp;
 
-						if(tt>0 && conflictsString!=NULL){
+						if(tt>0 && conflictsString!=nullptr){
 							QString s=tr("Time constraint min days between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), being %5 days too close, on days %6 and %7",
 							 "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr. Close here means near")
 							 .arg(this->activitiesId[i])
@@ -2598,8 +2598,8 @@ void ConstraintMaxDaysBetweenActivities::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
@@ -2706,7 +2706,7 @@ double ConstraintMaxDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 
 	//sum the overlapping hours for all pairs of activities.
 	//without logging
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		nbroken=0;
 		for(int i=1; i<this->_n_activities; i++){
 			int t1=c.times[this->_activities[i]];
@@ -2772,7 +2772,7 @@ double ConstraintMaxDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 	
 						nbroken+=tmp;
 
-						if(tt>0 && conflictsString!=NULL){
+						if(tt>0 && conflictsString!=nullptr){
 							QString s=tr("Time constraint max days between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), being %5 days too far away"
 							 ", on days %6 and %7", "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
 							 .arg(this->activitiesId[i])
@@ -2935,8 +2935,8 @@ void ConstraintMinGapsBetweenActivities::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
@@ -3078,7 +3078,7 @@ double ConstraintMinGapsBetweenActivities::fitness(Solution& c, Rules& r, QList<
 	
 					nbroken+=tmp;
 
-					if(tt>0 && conflictsString!=NULL){
+					if(tt>0 && conflictsString!=nullptr){
 						QString s=tr("Time constraint min gaps between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), they are on the same day %5 and there are %6 more needed hours between them",
 							"%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
 						 .arg(this->activitiesId[i])
@@ -3272,7 +3272,7 @@ double ConstraintTeachersMaxHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 	int nbroken;
 
 	//without logging
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		nbroken=0;
 		for(int i=0; i<r.nInternalTeachers; i++){
 			for(int d=0; d<r.nDaysPerWeek; d++){
@@ -3299,7 +3299,7 @@ double ConstraintTeachersMaxHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 				if(n_hours_daily>this->maxHoursDaily){
 					nbroken++;
 
-					if(conflictsString!=NULL){
+					if(conflictsString!=nullptr){
 						QString s=(tr(
 						 "Time constraint teachers max %1 hours daily broken for teacher %2, on day %3, length=%4.")
 						 .arg(CustomFETString::number(this->maxHoursDaily))
@@ -3496,7 +3496,7 @@ double ConstraintTeacherMaxHoursDaily::fitness(Solution& c, Rules& r, QList<doub
 	int nbroken;
 
 	//without logging
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		nbroken=0;
 		int i=this->teacher_ID;
 		for(int d=0; d<r.nDaysPerWeek; d++){
@@ -3523,7 +3523,7 @@ double ConstraintTeacherMaxHoursDaily::fitness(Solution& c, Rules& r, QList<doub
 			if(n_hours_daily>this->maxHoursDaily){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr(
 					 "Time constraint teacher max %1 hours daily broken for teacher %2, on day %3, length=%4.")
 					 .arg(CustomFETString::number(this->maxHoursDaily))
@@ -3722,7 +3722,7 @@ double ConstraintTeachersMaxHoursContinuously::fitness(Solution& c, Rules& r, QL
 					if(nc>this->maxHoursContinuously){
 						nbroken++;
 
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=(tr(
 							 "Time constraint teachers max %1 hours continuously broken for teacher %2, on day %3, length=%4.")
 							 .arg(CustomFETString::number(this->maxHoursContinuously))
@@ -3749,7 +3749,7 @@ double ConstraintTeachersMaxHoursContinuously::fitness(Solution& c, Rules& r, QL
 			if(nc>this->maxHoursContinuously){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr(
 					 "Time constraint teachers max %1 hours continuously broken for teacher %2, on day %3, length=%4.")
 					 .arg(CustomFETString::number(this->maxHoursContinuously))
@@ -3955,7 +3955,7 @@ double ConstraintTeacherMaxHoursContinuously::fitness(Solution& c, Rules& r, QLi
 				if(nc>this->maxHoursContinuously){
 					nbroken++;
 
-					if(conflictsString!=NULL){
+					if(conflictsString!=nullptr){
 						QString s=(tr(
 						 "Time constraint teacher max %1 hours continuously broken for teacher %2, on day %3, length=%4.")
 						 .arg(CustomFETString::number(this->maxHoursContinuously))
@@ -3982,7 +3982,7 @@ double ConstraintTeacherMaxHoursContinuously::fitness(Solution& c, Rules& r, QLi
 		if(nc>this->maxHoursContinuously){
 			nbroken++;
 
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=(tr(
 				 "Time constraint teacher max %1 hours continuously broken for teacher %2, on day %3, length=%4.")
 				 .arg(CustomFETString::number(this->maxHoursContinuously))
@@ -4223,7 +4223,7 @@ double ConstraintTeachersActivityTagMaxHoursContinuously::fitness(Solution& c, R
 					if(nc>this->maxHoursContinuously){
 						nbroken++;
 
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=(tr(
 							 "Time constraint teachers activity tag %1 max %2 hours continuously broken for teacher %3, on day %4, length=%5.")
 							 .arg(this->activityTagName)
@@ -4251,7 +4251,7 @@ double ConstraintTeachersActivityTagMaxHoursContinuously::fitness(Solution& c, R
 			if(nc>this->maxHoursContinuously){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr(
 					 "Time constraint teachers activity tag %1 max %2 hours continuously broken for teacher %3, on day %4, length=%5.")
 					 .arg(this->activityTagName)
@@ -4497,7 +4497,7 @@ double ConstraintTeacherActivityTagMaxHoursContinuously::fitness(Solution& c, Ru
 					if(nc>this->maxHoursContinuously){
 						nbroken++;
 
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=(tr(
 							 "Time constraint teacher activity tag max %1 hours continuously broken for teacher %2, activity tag %3, on day %4, length=%5.")
 							 .arg(CustomFETString::number(this->maxHoursContinuously))
@@ -4525,7 +4525,7 @@ double ConstraintTeacherActivityTagMaxHoursContinuously::fitness(Solution& c, Ru
 			if(nc>this->maxHoursContinuously){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr(
 					 "Time constraint teacher activity tag max %1 hours continuously broken for teacher %2, activity tag %3, on day %4, length=%5.")
 					 .arg(CustomFETString::number(this->maxHoursContinuously))
@@ -4717,7 +4717,7 @@ double ConstraintTeacherMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<dou
 	int nbroken;
 
 	//without logging
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		nbroken=0;
 		//count sort
 		int t=this->teacher_ID;
@@ -4952,7 +4952,7 @@ double ConstraintTeachersMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<do
 	int nbroken;
 
 	//without logging
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		nbroken=0;
 		//count sort
 		
@@ -5224,7 +5224,7 @@ double ConstraintTeachersMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<do
 		if(tg>this->maxGaps){
 			totalGaps+=tg-maxGaps;
 			//assert(this->weightPercentage<100); partial solutions might break this rule
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Time constraint teachers max gaps per week broken for teacher: %1, conflicts factor increase=%2")
 					.arg(r.internalTeachersList[i]->name)
 					.arg(CustomFETString::numberPlusTwoDigitsPrecision((tg-maxGaps)*weightPercentage/100));
@@ -5439,7 +5439,7 @@ double ConstraintTeacherMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<dou
 	if(tg>this->maxGaps){
 		totalGaps+=tg-maxGaps;
 		//assert(this->weightPercentage<100); partial solutions might break this rule
-		if(conflictsString!=NULL){
+		if(conflictsString!=nullptr){
 			QString s=tr("Time constraint teacher max gaps per week broken for teacher: %1, conflicts factor increase=%2")
 				.arg(r.internalTeachersList[i]->name)
 				.arg(CustomFETString::numberPlusTwoDigitsPrecision((tg-maxGaps)*weightPercentage/100));
@@ -5642,7 +5642,7 @@ double ConstraintTeachersMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<dou
 			if(tg>this->maxGaps){
 				totalGaps+=tg-maxGaps;
 				//assert(this->weightPercentage<100); partial solutions might break this rule
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Time constraint teachers max gaps per day broken for teacher: %1, day: %2, conflicts factor increase=%3")
 						.arg(r.internalTeachersList[i]->name)
 						.arg(r.daysOfTheWeek[j])
@@ -5856,7 +5856,7 @@ double ConstraintTeacherMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<doub
 		if(tg>this->maxGaps){
 			totalGaps+=tg-maxGaps;
 			//assert(this->weightPercentage<100); partial solutions might break this rule
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Time constraint teacher max gaps per day broken for teacher: %1, day: %2, conflicts factor increase=%3")
 					.arg(r.internalTeachersList[i]->name)
 					.arg(r.daysOfTheWeek[j])
@@ -6113,7 +6113,7 @@ double ConstraintBreakTimes::fitness(Solution& c, Rules& r, QList<double>& cl, Q
 			{			
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Time constraint break not respected for activity with id %1, on day %2, hour %3")
 						.arg(r.internalActivitiesList[i].id)
 						.arg(r.daysOfTheWeek[dayact])
@@ -6345,7 +6345,7 @@ double ConstraintStudentsMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<do
 		if(illegalGaps<0)
 			illegalGaps=0;
 
-		if(illegalGaps>0 && conflictsString!=NULL){
+		if(illegalGaps>0 && conflictsString!=nullptr){
 			QString s=tr("Time constraint students max gaps per week broken for subgroup: %1, it has %2 extra gaps, conflicts increase=%3")
 			 .arg(r.internalSubgroupsList[i]->name)
 			 .arg(illegalGaps)
@@ -6447,9 +6447,9 @@ ConstraintStudentsSetMaxGapsPerWeek::ConstraintStudentsSetMaxGapsPerWeek(double 
 
 bool ConstraintStudentsSetMaxGapsPerWeek::computeInternalStructure(QWidget* parent, Rules& r){
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max gaps per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -6611,7 +6611,7 @@ double ConstraintStudentsSetMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList
 		if(illegalGaps<0)
 			illegalGaps=0;
 
-		if(illegalGaps>0 && conflictsString!=NULL){
+		if(illegalGaps>0 && conflictsString!=nullptr){
 			QString s=tr("Time constraint students set max gaps per week broken for subgroup: %1, extra gaps=%2, conflicts increase=%3")
 			 .arg(r.internalSubgroupsList[i]->name)
 			 .arg(illegalGaps)
@@ -6825,7 +6825,7 @@ double ConstraintStudentsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Ru
 			}
 			
 			if(dayOccupied && illegalGap){
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Constraint students early max %1 beginnings at second hour broken for subgroup %2, on day %3,"
 					 " because students have an illegal gap, increases conflicts total by %4")
 					 .arg(this->maxBeginningsAtSecondHour)
@@ -6851,7 +6851,7 @@ double ConstraintStudentsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Ru
 		}
 		
 		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Constraint students early max %1 beginnings at second hour broken for subgroup %2,"
 				 " because students have too many arrivals at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
@@ -6960,9 +6960,9 @@ ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::ConstraintStudentsSetEarlyM
 bool ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set early is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -7128,7 +7128,7 @@ double ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::fitness(Solution& c,
 			}
 			
 			if(dayOccupied && illegalGap){
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Constraint students set early max %1 beginnings at second hour broken for subgroup %2, on day %3,"
 					 " because students have an illegal gap, increases conflicts total by %4")
 					 .arg(this->maxBeginningsAtSecondHour)
@@ -7153,7 +7153,7 @@ double ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::fitness(Solution& c,
 		}
 		
 		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=tr("Constraint students set early max %1 beginnings at second hour broken for subgroup %2,"
 				 " because students have too many arrivals at second hour, increases conflicts total by %3")
 				 .arg(this->maxBeginningsAtSecondHour)
@@ -7358,7 +7358,7 @@ double ConstraintStudentsMaxHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 				if(this->maxHoursDaily>=0 && tmp > this->maxHoursDaily){ //we would like no more than maxHoursDaily hours per day.
 					too_much += 1; //tmp - this->maxHoursDaily;
 
-					if(conflictsString!=NULL){
+					if(conflictsString!=nullptr){
 						QString s=tr("Time constraint students max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4")
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(r.daysOfTheWeek[j])
@@ -7526,9 +7526,9 @@ QString ConstraintStudentsSetMaxHoursDaily::getDetailedDescription(Rules& r)
 bool ConstraintStudentsSetMaxHoursDaily::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max hours daily is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -7613,7 +7613,7 @@ double ConstraintStudentsSetMaxHoursDaily::fitness(Solution& c, Rules& r, QList<
 				if(this->maxHoursDaily>=0 && tmp > this->maxHoursDaily){ //we would like no more than max_hours_daily hours per day.
 					too_much += 1; //tmp - this->maxHoursDaily;
 
-					if(conflictsString!=NULL){
+					if(conflictsString!=nullptr){
 						QString s=tr("Time constraint students set max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4")
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(r.daysOfTheWeek[j])
@@ -7808,7 +7808,7 @@ double ConstraintStudentsMaxHoursContinuously::fitness(Solution& c, Rules& r, QL
 					if(nc>this->maxHoursContinuously){
 						nbroken++;
 
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=(tr(
 							 "Time constraint students max %1 hours continuously broken for subgroup %2, on day %3, length=%4.")
 							 .arg(CustomFETString::number(this->maxHoursContinuously))
@@ -7835,7 +7835,7 @@ double ConstraintStudentsMaxHoursContinuously::fitness(Solution& c, Rules& r, QL
 			if(nc>this->maxHoursContinuously){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr(
 					 "Time constraint students max %1 hours continuously broken for subgroup %2, on day %3, length=%4.")
 					 .arg(CustomFETString::number(this->maxHoursContinuously))
@@ -8008,9 +8008,9 @@ QString ConstraintStudentsSetMaxHoursContinuously::getDetailedDescription(Rules&
 bool ConstraintStudentsSetMaxHoursContinuously::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max hours continuously is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -8088,7 +8088,7 @@ double ConstraintStudentsSetMaxHoursContinuously::fitness(Solution& c, Rules& r,
 					if(nc>this->maxHoursContinuously){
 						nbroken++;
 
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=(tr(
 							 "Time constraint students set max %1 hours continuously broken for subgroup %2, on day %3, length=%4.")
 							 .arg(CustomFETString::number(this->maxHoursContinuously))
@@ -8115,7 +8115,7 @@ double ConstraintStudentsSetMaxHoursContinuously::fitness(Solution& c, Rules& r,
 			if(nc>this->maxHoursContinuously){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr(
 					 "Time constraint students set max %1 hours continuously broken for subgroup %2, on day %3, length=%4.")
 					 .arg(CustomFETString::number(this->maxHoursContinuously))
@@ -8360,7 +8360,7 @@ double ConstraintStudentsActivityTagMaxHoursContinuously::fitness(Solution& c, R
 					if(nc>this->maxHoursContinuously){
 						nbroken++;
 
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=(tr(
 							 "Time constraint students, activity tag %1, max %2 hours continuously, broken for subgroup %3, on day %4, length=%5.")
 							 .arg(this->activityTagName)
@@ -8388,7 +8388,7 @@ double ConstraintStudentsActivityTagMaxHoursContinuously::fitness(Solution& c, R
 			if(nc>this->maxHoursContinuously){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr(
 					 "Time constraint students, activity tag %1, max %2 hours continuously, broken for subgroup %3, on day %4, length=%5.")
 					 .arg(this->activityTagName)
@@ -8566,9 +8566,9 @@ bool ConstraintStudentsSetActivityTagMaxHoursContinuously::computeInternalStruct
 	assert(this->activityTagIndex>=0);
 
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max hours continuously is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -8685,7 +8685,7 @@ double ConstraintStudentsSetActivityTagMaxHoursContinuously::fitness(Solution& c
 					if(nc>this->maxHoursContinuously){
 						nbroken++;
 
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=(tr(
 							 "Time constraint students set max %1 hours continuously broken for subgroup %2, on day %3, length=%4.")
 							 .arg(CustomFETString::number(this->maxHoursContinuously))
@@ -8712,7 +8712,7 @@ double ConstraintStudentsSetActivityTagMaxHoursContinuously::fitness(Solution& c
 			if(nc>this->maxHoursContinuously){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr(
 					 "Time constraint students set max %1 hours continuously broken for subgroup %2, on day %3, length=%4.")
 					 .arg(CustomFETString::number(this->maxHoursContinuously))
@@ -8938,7 +8938,7 @@ double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 			if(/*tmp>0*/ searchDay && this->minHoursDaily>=0 && tmp < this->minHoursDaily){ //we would like no less than minHoursDaily hours per day.
 				too_little += - tmp + this->minHoursDaily;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4")
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[j])
@@ -9127,9 +9127,9 @@ QString ConstraintStudentsSetMinHoursDaily::getDetailedDescription(Rules& r)
 bool ConstraintStudentsSetMinHoursDaily::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min hours daily is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -9218,7 +9218,7 @@ double ConstraintStudentsSetMinHoursDaily::fitness(Solution& c, Rules& r, QList<
 			if(/*tmp>0*/ searchDay && this->minHoursDaily>=0 && tmp < this->minHoursDaily){
 				too_little += - tmp + this->minHoursDaily;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=tr("Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4")
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[j])
@@ -9499,7 +9499,7 @@ double ConstraintActivityPreferredStartingTime::fitness(Solution& c, Rules& r, Q
 	if(nbroken>0)
 		nbroken=1;
 
-	if(conflictsString!=NULL && nbroken>0){
+	if(conflictsString!=nullptr && nbroken>0){
 		QString s=tr("Time constraint activity preferred starting time broken for activity with id=%1 (%2), increases conflicts total by %3",
 			"%1 is the id, %2 is the detailed description of the activity")
 			.arg(this->activityId)
@@ -9791,7 +9791,7 @@ double ConstraintActivityPreferredTimeSlots::fitness(Solution& c, Rules& r, QLis
 				nbroken++;
 	}
 
-	if(conflictsString!=NULL && nbroken>0){
+	if(conflictsString!=nullptr && nbroken>0){
 		QString s=tr("Time constraint activity preferred time slots broken for activity with id=%1 (%2) on %3 hours, increases conflicts total by %4",
 		 "%1 is the id, %2 is the detailed description of the activity.")
 		 .arg(this->p_activityId)
@@ -10265,7 +10265,7 @@ double ConstraintActivitiesPreferredTimeSlots::fitness(Solution& c, Rules& r, QL
 					tmp++;
 		}
 		nbroken+=tmp;
-		if(conflictsString!=NULL && tmp>0){
+		if(conflictsString!=nullptr && tmp>0){
 			QString s=tr("Time constraint activities preferred time slots broken"
 			 " for activity with id=%1 (%2) on %3 hours,"
 			 " increases conflicts total by %4", "%1 is the id, %2 is the detailed description of the activity.")
@@ -10782,7 +10782,7 @@ double ConstraintSubactivitiesPreferredTimeSlots::fitness(Solution& c, Rules& r,
 					tmp++;
 		}
 		nbroken+=tmp;
-		if(conflictsString!=NULL && tmp>0){
+		if(conflictsString!=nullptr && tmp>0){
 			QString s=tr("Time constraint subactivities preferred time slots broken"
 			 " for activity with id=%1 (%2), component number %3, on %4 hours,"
 			 " increases conflicts total by %5", "%1 is the id, %2 is the detailed description of the activity.")
@@ -11121,7 +11121,7 @@ double ConstraintActivityPreferredStartingTimes::fitness(Solution& c, Rules& r, 
 		}
 	}
 
-	if(conflictsString!=NULL && nbroken>0){
+	if(conflictsString!=nullptr && nbroken>0){
 		QString s=tr("Time constraint activity preferred starting times broken for activity with id=%1 (%2), increases conflicts total by %3",
 		 "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(this->activityId)
@@ -11582,7 +11582,7 @@ double ConstraintActivitiesPreferredStartingTimes::fitness(Solution& c, Rules& r
 			}
 		}
 		nbroken+=tmp;
-		if(conflictsString!=NULL && tmp>0){
+		if(conflictsString!=nullptr && tmp>0){
 			QString s=tr("Time constraint activities preferred starting times broken"
 			 " for activity with id=%1 (%2),"
 			 " increases conflicts total by %3", "%1 is the id, %2 is the detailed description of the activity")
@@ -12082,7 +12082,7 @@ double ConstraintSubactivitiesPreferredStartingTimes::fitness(Solution& c, Rules
 			}
 		}
 		nbroken+=tmp;
-		if(conflictsString!=NULL && tmp>0){
+		if(conflictsString!=nullptr && tmp>0){
 			QString s=tr("Time constraint subactivities preferred starting times broken"
 			 " for activity with id=%1 (%2), component number %3,"
 			 " increases conflicts total by %4", "%1 is the id, %2 is the detailed description of the activity")
@@ -12284,8 +12284,8 @@ void ConstraintActivitiesSameStartingHour::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
@@ -12394,7 +12394,7 @@ double ConstraintActivitiesSameStartingHour::fitness(Solution& c, Rules& r, QLis
 	//sum the differences in the scheduled hour for all pairs of activities.
 
 	//without logging
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		nbroken=0;
 		for(int i=1; i<this->_n_activities; i++){
 			int t1=c.times[this->_activities[i]];
@@ -12439,7 +12439,7 @@ double ConstraintActivitiesSameStartingHour::fitness(Solution& c, Rules& r, QLis
 
 						nbroken+=tmp;
 
-						if(tmp>0 && conflictsString!=NULL){
+						if(tmp>0 && conflictsString!=nullptr){
 							QString s=tr("Time constraint activities same starting hour broken, because activity with id=%1 (%2) is not at the same hour with activity with id=%3 (%4)"
 							 , "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
 							 .arg(this->activitiesId[i])
@@ -12592,8 +12592,8 @@ void ConstraintActivitiesSameStartingDay::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
@@ -12702,7 +12702,7 @@ double ConstraintActivitiesSameStartingDay::fitness(Solution& c, Rules& r, QList
 	//sum the differences in the scheduled hour for all pairs of activities.
 
 	//without logging
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		nbroken=0;
 		for(int i=1; i<this->_n_activities; i++){
 			int t1=c.times[this->_activities[i]];
@@ -12745,7 +12745,7 @@ double ConstraintActivitiesSameStartingDay::fitness(Solution& c, Rules& r, QList
 
 						nbroken+=tmp;
 
-						if(tmp>0 && conflictsString!=NULL){
+						if(tmp>0 && conflictsString!=nullptr){
 							QString s=tr("Time constraint activities same starting day broken, because activity with id=%1 (%2) is not in the same day with activity with id=%3 (%4)"
 							 , "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
 							 .arg(this->activitiesId[i])
@@ -13024,7 +13024,7 @@ double ConstraintTwoActivitiesConsecutive::fitness(Solution& c, Rules& r, QList<
 	
 	assert(nbroken==0 || nbroken==1);
 
-	if(conflictsString!=NULL && nbroken>0){
+	if(conflictsString!=nullptr && nbroken>0){
 		QString s=tr("Time constraint two activities consecutive broken for first activity with id=%1 (%2) and "
 		 "second activity with id=%3 (%4), increases conflicts total by %5", "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
 		 .arg(this->firstActivityId)
@@ -13310,7 +13310,7 @@ double ConstraintTwoActivitiesGrouped::fitness(Solution& c, Rules& r, QList<doub
 	
 	assert(nbroken==0 || nbroken==1);
 
-	if(conflictsString!=NULL && nbroken>0){
+	if(conflictsString!=nullptr && nbroken>0){
 		QString s=tr("Time constraint two activities grouped broken for first activity with id=%1 (%2) and "
 		 "second activity with id=%3 (%4), increases conflicts total by %5", "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
 		 .arg(this->firstActivityId)
@@ -13674,7 +13674,7 @@ double ConstraintThreeActivitiesGrouped::fitness(Solution& c, Rules& r, QList<do
 	
 	assert(nbroken==0 || nbroken==1);
 
-	if(conflictsString!=NULL && nbroken>0){
+	if(conflictsString!=nullptr && nbroken>0){
 		QString s=tr("Time constraint three activities grouped broken for first activity with id=%1 (%2), "
 		 "second activity with id=%3 (%4) and third activity with id=%5 (%6), increases conflicts total by %7",
 		 "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr., %5 id, %6 det. descr.")
@@ -13938,7 +13938,7 @@ double ConstraintTwoActivitiesOrdered::fitness(Solution& c, Rules& r, QList<doub
 	
 	assert(nbroken==0 || nbroken==1);
 
-	if(conflictsString!=NULL && nbroken>0){
+	if(conflictsString!=nullptr && nbroken>0){
 		QString s=tr("Time constraint two activities ordered broken for first activity with id=%1 (%2) and "
 		 "second activity with id=%3 (%4), increases conflicts total by %5", "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
 		 .arg(this->firstActivityId)
@@ -14199,7 +14199,7 @@ double ConstraintTwoActivitiesOrderedIfSameDay::fitness(Solution& c, Rules& r, Q
 	
 	assert(nbroken==0 || nbroken==1);
 
-	if(conflictsString!=NULL && nbroken>0){
+	if(conflictsString!=nullptr && nbroken>0){
 		QString s=tr("Time constraint two activities ordered if on the same day broken for first activity with id=%1 (%2) and "
 		 "second activity with id=%3 (%4), increases conflicts total by %5", "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
 		 .arg(this->firstActivityId)
@@ -14417,7 +14417,7 @@ double ConstraintActivityEndsStudentsDay::fitness(Solution& c, Rules& r, QList<d
 		}
 	}
 
-	if(conflictsString!=NULL && nbroken>0){
+	if(conflictsString!=nullptr && nbroken>0){
 		QString s=tr("Time constraint activity ends students' day broken for activity with id=%1 (%2), increases conflicts total by %3",
 		 "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(this->activityId)
@@ -14617,7 +14617,7 @@ double ConstraintTeachersMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 	int nbroken;
 
 	//without logging
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		nbroken=0;
 		for(int i=0; i<r.nInternalTeachers; i++){
 			for(int d=0; d<r.nDaysPerWeek; d++){
@@ -14645,7 +14645,7 @@ double ConstraintTeachersMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 				if(n_hours_daily>0 && n_hours_daily<this->minHoursDaily){
 					nbroken++;
 
-					if(conflictsString!=NULL){
+					if(conflictsString!=nullptr){
 						QString s=(tr("Time constraint teachers min %1 hours daily broken for teacher %2, on day %3, length=%4.")
 						 .arg(CustomFETString::number(this->minHoursDaily))
 						 .arg(r.internalTeachersList[i]->name)
@@ -14863,7 +14863,7 @@ double ConstraintTeacherMinHoursDaily::fitness(Solution& c, Rules& r, QList<doub
 	int nbroken;
 
 	//without logging
-	if(conflictsString==NULL){
+	if(conflictsString==nullptr){
 		nbroken=0;
 		int i=this->teacher_ID;
 		for(int d=0; d<r.nDaysPerWeek; d++){
@@ -14890,7 +14890,7 @@ double ConstraintTeacherMinHoursDaily::fitness(Solution& c, Rules& r, QList<doub
 			if(n_hours_daily>0 && n_hours_daily<this->minHoursDaily){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr(
 					 "Time constraint teacher min %1 hours daily broken for teacher %2, on day %3, length=%4.")
 					 .arg(CustomFETString::number(this->minHoursDaily))
@@ -15101,7 +15101,7 @@ double ConstraintTeacherMinDaysPerWeek::fitness(Solution& c, Rules& r, QList<dou
 	if(nd<this->minDaysPerWeek){
 		nbroken+=this->minDaysPerWeek-nd;
 
-		if(conflictsString!=NULL){
+		if(conflictsString!=nullptr){
 			QString s=(tr(
 			 "Time constraint teacher min %1 days per week broken for teacher %2.")
 			 .arg(CustomFETString::number(this->minDaysPerWeek))
@@ -15305,7 +15305,7 @@ double ConstraintTeachersMinDaysPerWeek::fitness(Solution& c, Rules& r, QList<do
 			nbroken+=this->minDaysPerWeek-nd;
 			nbrokentotal+=nbroken;
 
-			if(conflictsString!=NULL){
+			if(conflictsString!=nullptr){
 				QString s=(tr(
 				 "Time constraint teachers min %1 days per week broken for teacher %2.")
 				 .arg(CustomFETString::number(this->minDaysPerWeek))
@@ -15949,9 +15949,9 @@ bool ConstraintStudentsSetIntervalMaxDaysPerWeek::computeInternalStructure(QWidg
 
 	/////////
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set interval max days per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -16688,7 +16688,7 @@ double ConstraintActivitiesEndStudentsDay::fitness(Solution& c, Rules& r, QList<
 					break;
 			}
 
-			if(conflictsString!=NULL && tmp>0){
+			if(conflictsString!=nullptr && tmp>0){
 				QString s=tr("Time constraint activities end students' day broken for activity with id=%1 (%2), increases conflicts total by %3",
 				 "%1 is the id, %2 is the detailed description of the activity")
 				 .arg(r.internalActivitiesList[ai].id)
@@ -16942,7 +16942,7 @@ double ConstraintTeachersActivityTagMaxHoursDaily::fitness(Solution& c, Rules& r
 			if(nd>this->maxHoursDaily){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr("Time constraint teachers activity tag %1 max %2 hours daily broken for teacher %3, on day %4, length=%5.")
 					 .arg(this->activityTagName)
 					 .arg(CustomFETString::number(this->maxHoursDaily))
@@ -17186,7 +17186,7 @@ double ConstraintTeacherActivityTagMaxHoursDaily::fitness(Solution& c, Rules& r,
 			if(nd>this->maxHoursDaily){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr("Time constraint teacher activity tag %1 max %2 hours daily broken for teacher %3, on day %4, length=%5.")
 					 .arg(this->activityTagName)
 					 .arg(CustomFETString::number(this->maxHoursDaily))
@@ -17429,7 +17429,7 @@ double ConstraintStudentsActivityTagMaxHoursDaily::fitness(Solution& c, Rules& r
 			if(nd>this->maxHoursDaily){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr(
 					 "Time constraint students, activity tag %1, max %2 hours daily, broken for subgroup %3, on day %4, length=%5.")
 					 .arg(this->activityTagName)
@@ -17609,9 +17609,9 @@ bool ConstraintStudentsSetActivityTagMaxHoursDaily::computeInternalStructure(QWi
 	assert(this->activityTagIndex>=0);
 
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max hours daily is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -17723,7 +17723,7 @@ double ConstraintStudentsSetActivityTagMaxHoursDaily::fitness(Solution& c, Rules
 			if(nd>this->maxHoursDaily){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr(
 					 "Time constraint students set, activity tag %1, max %2 hours daily, broken for subgroup %3, on day %4, length=%5.")
 					 .arg(this->activityTagName)
@@ -17970,7 +17970,7 @@ double ConstraintTeachersActivityTagMinHoursDaily::fitness(Solution& c, Rules& r
 			if(nd<this->minHoursDaily){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr("Time constraint teachers activity tag %1 min %2 hours daily broken for teacher %3, on day %4, length=%5.")
 					 .arg(this->activityTagName)
 					 .arg(CustomFETString::number(this->minHoursDaily))
@@ -18224,7 +18224,7 @@ double ConstraintTeacherActivityTagMinHoursDaily::fitness(Solution& c, Rules& r,
 			if(nd<this->minHoursDaily){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr("Time constraint teacher activity tag %1 min %2 hours daily broken for teacher %3, on day %4, length=%5.")
 					 .arg(this->activityTagName)
 					 .arg(CustomFETString::number(this->minHoursDaily))
@@ -18477,7 +18477,7 @@ double ConstraintStudentsActivityTagMinHoursDaily::fitness(Solution& c, Rules& r
 			if(nd<this->minHoursDaily){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr(
 					 "Time constraint students, activity tag %1, min %2 hours daily, broken for subgroup %3, on day %4, length=%5.")
 					 .arg(this->activityTagName)
@@ -18666,9 +18666,9 @@ bool ConstraintStudentsSetActivityTagMinHoursDaily::computeInternalStructure(QWi
 	assert(this->activityTagIndex>=0);
 
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min hours daily is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -18782,7 +18782,7 @@ double ConstraintStudentsSetActivityTagMinHoursDaily::fitness(Solution& c, Rules
 			if(nd<this->minHoursDaily){
 				nbroken++;
 
-				if(conflictsString!=NULL){
+				if(conflictsString!=nullptr){
 					QString s=(tr(
 					 "Time constraint students set, activity tag %1, min %2 hours daily, broken for subgroup %3, on day %4, length=%5.")
 					 .arg(this->activityTagName)
@@ -19001,7 +19001,7 @@ double ConstraintStudentsMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<dou
 			if(illegalGaps<0)
 				illegalGaps=0;
 
-			if(illegalGaps>0 && conflictsString!=NULL){
+			if(illegalGaps>0 && conflictsString!=nullptr){
 				QString s=tr("Time constraint students max gaps per day broken for subgroup: %1, it has %2 extra gaps, on day %3, conflicts increase=%4")
 				 .arg(r.internalSubgroupsList[i]->name)
 				 .arg(illegalGaps)
@@ -19105,9 +19105,9 @@ ConstraintStudentsSetMaxGapsPerDay::ConstraintStudentsSetMaxGapsPerDay(double wp
 
 bool ConstraintStudentsSetMaxGapsPerDay::computeInternalStructure(QWidget* parent, Rules& r){
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max gaps per day is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -19271,7 +19271,7 @@ double ConstraintStudentsSetMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<
 			if(illegalGaps<0)
 				illegalGaps=0;
 
-			if(illegalGaps>0 && conflictsString!=NULL){
+			if(illegalGaps>0 && conflictsString!=nullptr){
 				QString s=tr("Time constraint students set max gaps per day broken for subgroup: %1, extra gaps=%2, on day %3, conflicts increase=%4")
 				 .arg(r.internalSubgroupsList[i]->name)
 				 .arg(illegalGaps)
@@ -19601,7 +19601,7 @@ double ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::fitness(Solution& c,
 	if(cnt > this->maxOccupiedTimeSlots){
 		nbroken=1;
 	
-		if(conflictsString!=NULL){
+		if(conflictsString!=nullptr){
 			QString s=tr("Time constraint %1 broken - this should not happen, as this kind of constraint should "
 			 "have only 100.0% weight. Please report error!").arg(this->getDescription(r));
 			
@@ -19622,8 +19622,8 @@ void ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::removeUseless(Rules& r
 	QList<int> newActs;
 	
 	for(int aid : qAsConst(activitiesIds)){
-		Activity* act=r.activitiesPointerHash.value(aid, NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
+		if(act!=nullptr)
 			newActs.append(aid);
 	}
 			
@@ -19964,7 +19964,7 @@ double ConstraintActivitiesOccupyMinTimeSlotsFromSelection::fitness(Solution& c,
 	if(cnt < this->minOccupiedTimeSlots){
 		nbroken=1;
 	
-		if(conflictsString!=NULL){
+		if(conflictsString!=nullptr){
 			QString s;
 			if(c.nPlacedActivities==r.nInternalActivities){
 				s=tr("Time constraint %1 broken - this should not happen, as this kind of constraint should "
@@ -19994,8 +19994,8 @@ void ConstraintActivitiesOccupyMinTimeSlotsFromSelection::removeUseless(Rules& r
 	QList<int> newActs;
 	
 	for(int aid : qAsConst(activitiesIds)){
-		Activity* act=r.activitiesPointerHash.value(aid, NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
+		if(act!=nullptr)
 			newActs.append(aid);
 	}
 			
@@ -20334,7 +20334,7 @@ double ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::fitness(Solution&
 	}
 
 	if(nbroken>0){
-		if(conflictsString!=NULL){
+		if(conflictsString!=nullptr){
 			QString s=tr("Time constraint %1 broken - this should not happen, as this kind of constraint should "
 			 "have only 100.0% weight. Please report error!").arg(this->getDescription(r));
 			
@@ -20355,8 +20355,8 @@ void ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::removeUseless(Rules
 	QList<int> newActs;
 	
 	for(int aid : qAsConst(activitiesIds)){
-		Activity* act=r.activitiesPointerHash.value(aid, NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
+		if(act!=nullptr)
 			newActs.append(aid);
 	}
 			
@@ -20700,7 +20700,7 @@ double ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::fitness(Solution&
 	}
 
 	if(nbroken>0){
-		if(conflictsString!=NULL){
+		if(conflictsString!=nullptr){
 			QString s;
 			if(c.nPlacedActivities==r.nInternalActivities){
 				s=tr("Time constraint %1 broken - this should not happen, as this kind of constraint should "
@@ -20730,8 +20730,8 @@ void ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::removeUseless(Rules
 	QList<int> newActs;
 	
 	for(int aid : qAsConst(activitiesIds)){
-		Activity* act=r.activitiesPointerHash.value(aid, NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
+		if(act!=nullptr)
 			newActs.append(aid);
 	}
 			
@@ -20842,9 +20842,9 @@ ConstraintStudentsSetMaxDaysPerWeek::ConstraintStudentsSetMaxDaysPerWeek(double 
 bool ConstraintStudentsSetMaxDaysPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max days per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -21783,9 +21783,9 @@ QString ConstraintStudentsSetMaxSpanPerDay::getDetailedDescription(Rules& r)
 bool ConstraintStudentsSetMaxSpanPerDay::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max span per day is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -22629,9 +22629,9 @@ QString ConstraintStudentsSetMinRestingHours::getDetailedDescription(Rules& r)
 bool ConstraintStudentsSetMinRestingHours::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min resting hours is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -23089,9 +23089,9 @@ bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::computeIntern
 	assert(this->_secondActivityTagIndex>=0);
 
 	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
-	StudentsSet* ss=r.studentsHash.value(students, NULL);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
 	
-	if(ss==NULL){
+	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min gaps between ordered pair of activity tags is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
@@ -23223,7 +23223,7 @@ double ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::fitness(Sol
 					if(cnt>=0 && cnt<minGaps){
 						nbroken++;
 
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=tr("Time constraint students set min %1 gaps between ordered pair of activity tags broken for subgroup: %2,"
 							 " day: %3, real gaps=%4, conflicts increase=%5")
 							 .arg(minGaps)
@@ -23494,7 +23494,7 @@ double ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::fitness(Soluti
 					if(cnt>=0 && cnt<minGaps){
 						nbroken++;
 
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=tr("Time constraint students min %1 gaps between ordered pair of activity tags broken for subgroup: %2,"
 							 " day: %3, real gaps=%4, conflicts increase=%5")
 							 .arg(minGaps)
@@ -23782,7 +23782,7 @@ double ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::fitness(Solutio
 					if(cnt>=0 && cnt<minGaps){
 						nbroken++;
 
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=tr("Time constraint teacher min %1 gaps between ordered pair of activity tags broken for teacher: %2,"
 							 " day: %3, real gaps=%4, conflicts increase=%5")
 							 .arg(minGaps)
@@ -24059,7 +24059,7 @@ double ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::fitness(Soluti
 					if(cnt>=0 && cnt<minGaps){
 						nbroken++;
 
-						if(conflictsString!=NULL){
+						if(conflictsString!=nullptr){
 							QString s=tr("Time constraint teachers min %1 gaps between ordered pair of activity tags broken for teacher: %2,"
 							 " day: %3, real gaps=%4, conflicts increase=%5")
 							 .arg(minGaps)

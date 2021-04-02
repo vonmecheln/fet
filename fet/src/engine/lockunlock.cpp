@@ -159,7 +159,7 @@ void LockUnlock::computeLockedUnlockedActivitiesOnlySpace()
 
 void LockUnlock::increaseCommunicationSpinBox()
 {
-/*	assert(pcommunicationSpinBox!=NULL);
+/*	assert(pcommunicationSpinBox!=nullptr);
 	
 	int q=pcommunicationSpinBox->value();	//needed to display locked and unlocked times and rooms
 	//cout<<"communication spin box old value: "<<pcommunicationSpinBox->value()<<", ";

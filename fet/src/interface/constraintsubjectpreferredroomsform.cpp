@@ -117,7 +117,7 @@ void ConstraintSubjectPreferredRoomsForm::constraintChanged(int index)
 	QString s;
 	assert(index<this->visibleConstraintsList.size());
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(index);
-	assert(ctr!=NULL);
+	assert(ctr!=nullptr);
 	s=ctr->getDetailedDescription(gt.rules);
 	currentConstraintTextEdit->setPlainText(s);
 }

@@ -50,7 +50,7 @@ void AddConstraintTeachersMinDaysPerWeekForm::updateMinDaysSpinBox(){
 
 void AddConstraintTeachersMinDaysPerWeekForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

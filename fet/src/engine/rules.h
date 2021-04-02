@@ -380,7 +380,7 @@ public:
 
 	/**
 	Returns a pointer to the structure containing this student set
-	(year, group or subgroup) or NULL.
+	(year, group or subgroup) or nullptr.
 	*/
 	StudentsSet* searchStudentsSet(const QString& setName);
 	

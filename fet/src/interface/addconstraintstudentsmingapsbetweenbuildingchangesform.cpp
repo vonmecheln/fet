@@ -46,7 +46,7 @@ AddConstraintStudentsMinGapsBetweenBuildingChangesForm::~AddConstraintStudentsMi
 
 void AddConstraintStudentsMinGapsBetweenBuildingChangesForm::addCurrentConstraint()
 {
-	SpaceConstraint *ctr=NULL;
+	SpaceConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

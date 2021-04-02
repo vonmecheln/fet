@@ -78,7 +78,7 @@ int LongTextMessageBox::confirmationWithDimensions
 	te->setPlainText(text);
 	te->setReadOnly(true);
 	
-	QPushButton* pb0=NULL;
+	QPushButton* pb0=nullptr;
 	if(button0Text!=QString()){
 		pb0=new QPushButton(button0Text);
 		if(defaultButton==0)
@@ -87,7 +87,7 @@ int LongTextMessageBox::confirmationWithDimensions
 			connect(pb0, SIGNAL(clicked()), &dialog, SLOT(reject()));
 	}
 	
-	QPushButton* pb1=NULL;
+	QPushButton* pb1=nullptr;
 	if(button1Text!=QString()){
 		pb1=new QPushButton(button1Text);
 		if(defaultButton==1)
@@ -96,7 +96,7 @@ int LongTextMessageBox::confirmationWithDimensions
 			connect(pb1, SIGNAL(clicked()), &dialog, SLOT(reject()));
 	}
 	
-	QPushButton* pb2=NULL;
+	QPushButton* pb2=nullptr;
 	if(button2Text!=QString()){
 		pb2=new QPushButton(button2Text);
 		if(defaultButton==2)
@@ -107,25 +107,25 @@ int LongTextMessageBox::confirmationWithDimensions
 	
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch(1);
-	if(pb0!=NULL)
+	if(pb0!=nullptr)
 		hl->addWidget(pb0);
-	if(pb1!=NULL)
+	if(pb1!=nullptr)
 		hl->addWidget(pb1);
-	if(pb2!=NULL)
+	if(pb2!=nullptr)
 		hl->addWidget(pb2);
 		
 	vl->addWidget(te);
 	vl->addLayout(hl);
 	
-	if(pb0!=NULL && defaultButton==0){
+	if(pb0!=nullptr && defaultButton==0){
 		pb0->setDefault(true);
 		pb0->setFocus();
 	}
-	else if(pb1!=NULL && defaultButton==1){
+	else if(pb1!=nullptr && defaultButton==1){
 		pb1->setDefault(true);
 		pb1->setFocus();
 	}
-	else if(pb2!=NULL && defaultButton==2){
+	else if(pb2!=nullptr && defaultButton==2){
 		pb2->setDefault(true);
 		pb2->setFocus();
 	}
@@ -308,7 +308,7 @@ int LongTextMessageBox::largeConfirmationWithDimensionsThreeButtonsYesNoCancel
 	te->setPlainText(text);
 	te->setReadOnly(true);
 	
-	QPushButton* pb0=NULL;
+	QPushButton* pb0=nullptr;
 	if(button0Text!=QString()){
 		pb0=new QPushButton(button0Text);
 		if(defaultButton==0)
@@ -317,7 +317,7 @@ int LongTextMessageBox::largeConfirmationWithDimensionsThreeButtonsYesNoCancel
 			QObject::connect(pb0, SIGNAL(clicked()), &dialog, SLOT(reject()));
 	}
 	
-	QPushButton* pb1=NULL;
+	QPushButton* pb1=nullptr;
 	if(button1Text!=QString()){
 		pb1=new QPushButton(button1Text);
 		if(defaultButton==1)
@@ -326,7 +326,7 @@ int LongTextMessageBox::largeConfirmationWithDimensionsThreeButtonsYesNoCancel
 			QObject::connect(pb1, SIGNAL(clicked()), &dialog, SLOT(reject()));
 	}
 	
-	QPushButton* pb2=NULL;
+	QPushButton* pb2=nullptr;
 	if(button2Text!=QString()){
 		pb2=new QPushButton(button2Text);
 		if(defaultButton==2)
@@ -344,25 +344,25 @@ int LongTextMessageBox::largeConfirmationWithDimensionsThreeButtonsYesNoCancel
 	
 	QHBoxLayout* hl=new QHBoxLayout();
 	hl->addStretch(1);
-	if(pb0!=NULL)
+	if(pb0!=nullptr)
 		hl->addWidget(pb0);
-	if(pb1!=NULL)
+	if(pb1!=nullptr)
 		hl->addWidget(pb1);
-	if(pb2!=NULL)
+	if(pb2!=nullptr)
 		hl->addWidget(pb2);
 		
 	vl->addWidget(te);
 	vl->addLayout(hl);
 	
-	if(pb0!=NULL && defaultButton==0){
+	if(pb0!=nullptr && defaultButton==0){
 		pb0->setDefault(true);
 		pb0->setFocus();
 	}
-	else if(pb1!=NULL && defaultButton==1){
+	else if(pb1!=nullptr && defaultButton==1){
 		pb1->setDefault(true);
 		pb1->setFocus();
 	}
-	else if(pb2!=NULL && defaultButton==2){
+	else if(pb2!=nullptr && defaultButton==2){
 		pb2->setDefault(true);
 		pb2->setFocus();
 	}

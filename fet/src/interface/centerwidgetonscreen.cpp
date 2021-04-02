@@ -112,7 +112,7 @@ void forceCenterWidgetOnScreen(QWidget* widget)
 {
 	//widget->setWindowFlags(widget->windowFlags() | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint | Qt::WindowMinMaxButtonsHint);
 	
-	assert(parent!=NULL);
+	assert(parent!=nullptr);
 	
 	QRect frect=widget->geometry();
 	frect.moveCenter(parent->geometry().center());
@@ -236,7 +236,7 @@ void setRulesModifiedAndOtherThings(Rules* rules)
 	if(!rules->modified){
 		rules->modified=true;
 	
-		if(rules==&gt.rules && pFetMainForm!=NULL)
+		if(rules==&gt.rules && pFetMainForm!=nullptr)
 			if(!pFetMainForm->isWindowModified())
 				pFetMainForm->setWindowModified(true);
 	}
@@ -247,7 +247,7 @@ void setRulesUnmodifiedAndOtherThings(Rules* rules)
 	if(rules->modified){
 		rules->modified=false;
 	
-		if(rules==&gt.rules && pFetMainForm!=NULL)
+		if(rules==&gt.rules && pFetMainForm!=nullptr)
 			if(pFetMainForm->isWindowModified())
 				pFetMainForm->setWindowModified(false);
 	}
@@ -438,43 +438,43 @@ int populateStudentsComboBox(QComboBox* studentsComboBox, const QString& selecte
 		if(1){
 			//timetable
 			TimetableViewStudentsDaysHorizontalForm* vsdf=qobject_cast<TimetableViewStudentsDaysHorizontalForm*>(wi);
-			if(vsdf!=NULL){
+			if(vsdf!=nullptr){
 				vsdf->close();
 				continue;
 			}
 
 			TimetableViewStudentsTimeHorizontalForm* vstf=qobject_cast<TimetableViewStudentsTimeHorizontalForm*>(wi);
-			if(vstf!=NULL){
+			if(vstf!=nullptr){
 				vstf->close();
 				continue;
 			}
 
 			TimetableViewTeachersDaysHorizontalForm* vtchdf=qobject_cast<TimetableViewTeachersDaysHorizontalForm*>(wi);
-			if(vtchdf!=NULL){
+			if(vtchdf!=nullptr){
 				vtchdf->close();
 				continue;
 			}
 
 			TimetableViewTeachersTimeHorizontalForm* vtchtf=qobject_cast<TimetableViewTeachersTimeHorizontalForm*>(wi);
-			if(vtchtf!=NULL){
+			if(vtchtf!=nullptr){
 				vtchtf->close();
 				continue;
 			}
 
 			TimetableViewRoomsDaysHorizontalForm* vrdf=qobject_cast<TimetableViewRoomsDaysHorizontalForm*>(wi);
-			if(vrdf!=NULL){
+			if(vrdf!=nullptr){
 				vrdf->close();
 				continue;
 			}
 
 			TimetableViewRoomsTimeHorizontalForm* vrtf=qobject_cast<TimetableViewRoomsTimeHorizontalForm*>(wi);
-			if(vrtf!=NULL){
+			if(vrtf!=nullptr){
 				vrtf->close();
 				continue;
 			}
 
 			TimetableShowConflictsForm* scf=qobject_cast<TimetableShowConflictsForm*>(wi);
-			if(scf!=NULL){
+			if(scf!=nullptr){
 				scf->close();
 				continue;
 			}
@@ -490,43 +490,43 @@ void updateAllTimetableViewDialogs()
 		if(1 /*wi->isVisible()*/){
 			//timetable
 			TimetableViewStudentsDaysHorizontalForm* vsdf=qobject_cast<TimetableViewStudentsDaysHorizontalForm*>(wi);
-			if(vsdf!=NULL){
+			if(vsdf!=nullptr){
 				vsdf->newTimetableGenerated();
 				continue;
 			}
 
 			TimetableViewStudentsTimeHorizontalForm* vstf=qobject_cast<TimetableViewStudentsTimeHorizontalForm*>(wi);
-			if(vstf!=NULL){
+			if(vstf!=nullptr){
 				vstf->newTimetableGenerated();
 				continue;
 			}
 
 			TimetableViewTeachersDaysHorizontalForm* vtchdf=qobject_cast<TimetableViewTeachersDaysHorizontalForm*>(wi);
-			if(vtchdf!=NULL){
+			if(vtchdf!=nullptr){
 				vtchdf->newTimetableGenerated();
 				continue;
 			}
 
 			TimetableViewTeachersTimeHorizontalForm* vtchtf=qobject_cast<TimetableViewTeachersTimeHorizontalForm*>(wi);
-			if(vtchtf!=NULL){
+			if(vtchtf!=nullptr){
 				vtchtf->newTimetableGenerated();
 				continue;
 			}
 
 			TimetableViewRoomsDaysHorizontalForm* vrdf=qobject_cast<TimetableViewRoomsDaysHorizontalForm*>(wi);
-			if(vrdf!=NULL){
+			if(vrdf!=nullptr){
 				vrdf->newTimetableGenerated();
 				continue;
 			}
 
 			TimetableViewRoomsTimeHorizontalForm* vrtf=qobject_cast<TimetableViewRoomsTimeHorizontalForm*>(wi);
-			if(vrtf!=NULL){
+			if(vrtf!=nullptr){
 				vrtf->newTimetableGenerated();
 				continue;
 			}
 
 			TimetableShowConflictsForm* scf=qobject_cast<TimetableShowConflictsForm*>(wi);
-			if(scf!=NULL){
+			if(scf!=nullptr){
 				scf->newTimetableGenerated();
 				continue;
 			}

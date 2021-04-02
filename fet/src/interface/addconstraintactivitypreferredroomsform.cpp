@@ -166,7 +166,7 @@ void AddConstraintActivityPreferredRoomsForm::updateRoomsListWidget()
 
 void AddConstraintActivityPreferredRoomsForm::addConstraint()
 {
-	SpaceConstraint *ctr=NULL;
+	SpaceConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

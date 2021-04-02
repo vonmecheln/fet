@@ -31,7 +31,6 @@ File solution.cpp
 
 #include "matrix.h"
 
-#include <QMap>
 #include <QMultiMap>
 
 #include <algorithm>
@@ -106,7 +105,7 @@ double Solution::fitness(Rules& r, FakeString* conflictsString){
 	if(this->_fitness>=0)
 		assert(this->changedForMatrixCalculation==false);
 		
-	if(this->_fitness>=0 && conflictsString==NULL)
+	if(this->_fitness>=0 && conflictsString==nullptr)
 	//If you want to see the log, you have to recompute the fitness, even if it is
 	//already computed
 		return this->_fitness;

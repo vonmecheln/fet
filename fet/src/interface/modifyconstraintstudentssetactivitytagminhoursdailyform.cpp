@@ -97,7 +97,7 @@ void ModifyConstraintStudentsSetActivityTagMinHoursDailyForm::ok()
 
 	QString students_name=studentsComboBox->currentText();
 	StudentsSet* s=gt.rules.searchStudentsSet(students_name);
-	if(s==NULL){
+	if(s==nullptr){
 		QMessageBox::warning(this, tr("FET warning"),
 			tr("Invalid students set"));
 		return;

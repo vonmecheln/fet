@@ -1686,7 +1686,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 	}
 
 	bool ok_to_continue;
-	SaveTimetableConfirmationForm* pc_form=NULL;
+	SaveTimetableConfirmationForm* pc_form=nullptr;
 	if(CONFIRM_SAVE_TIMETABLE){
 		int confirm;
 		
@@ -1708,7 +1708,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 		
 	if(ok_to_continue){
 		QWidget* parent=pc_form;
-		if(parent==NULL)
+		if(parent==nullptr)
 			parent=this;
 
 		QString s;
@@ -1949,7 +1949,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 		rules2.groupActivitiesInInitialOrderList.clear();
 	}
 	
-	if(pc_form!=NULL)
+	if(pc_form!=nullptr)
 		delete pc_form;
 }
 
@@ -2156,8 +2156,8 @@ void FetMainForm::on_dataTeachersSubjectsQualificationsStatisticsAction_triggere
 		bool alreadyAdded=false;
 		QString subject=act->subjectName;
 		for(const QString& teacher : qAsConst(act->teachersNames)){
-			Teacher* tch=teachersHash.value(teacher, NULL);
-			assert(tch!=NULL);
+			Teacher* tch=teachersHash.value(teacher, nullptr);
+			assert(tch!=nullptr);
 			if(!tch->qualifiedSubjectsHash.contains(subject)){
 				unqualifiedExist=true;
 				if(!alreadyAdded){

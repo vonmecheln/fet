@@ -302,7 +302,7 @@ void AddConstraintActivityPreferredTimeSlotsForm::filterChanged(){
 
 void AddConstraintActivityPreferredTimeSlotsForm::addConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

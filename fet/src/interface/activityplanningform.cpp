@@ -115,7 +115,7 @@ static FetStatistics statisticValues;			//maybe TODO: do it more local
 static QList<bool> studentsDuplicates;			//maybe TODO: do it more local
 static QList<int> yearORgroupORsubgroup;		//maybe TODO: do it more local
 
-//TODO: need to setDefaultValue for the QHash-s ? (sum/number of hours) (also in statisticsexport?) looks like it is unneeded.
+//TODO: need to setDefaultValue for the QHash-es ? (sum/number of hours) (also in statisticsexport?) looks like it is unneeded.
 //TODO: check with toggled
 //TODO: retry mouseTracking (still in source. search "mouseTracking"). check: move mouse one last visibile line. is header always highlighted, under all operating systems?!
 //TODO: update if a new teacher, subject or year/group/subgroup is added - or better: just disalow that?!
@@ -983,8 +983,8 @@ void ActivityPlanningForm::swapTeachers(int studentsActivity1, int subjectActivi
 
 			for(int i=0; i<_idsToBeModified.count(); i++){
 				if(true /*(_affectOtherTeachersToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)*/){
-					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
-					if(act==NULL){
+					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
+					if(act==nullptr){
 						assert(0==1);	//TODO: maybe just a warning
 						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 						break;
@@ -1006,8 +1006,8 @@ void ActivityPlanningForm::swapTeachers(int studentsActivity1, int subjectActivi
 			//modify2
 			for(int i=0; i<_idsToBeModified2.count(); i++){
 				if(true /*(_affectOtherTeachersToBeModified2.at(i)==false) || (ret2==QMessageBox::Yes)*/){
-					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), NULL);
-					if(act==NULL){
+					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), nullptr);
+					if(act==nullptr){
 						assert(0==1);	//TODO: maybe just a warning
 						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 						break;
@@ -1232,8 +1232,8 @@ void ActivityPlanningForm::swapStudents(int studentsActivity1, int subjectActivi
 
 			for(int i=0; i<_idsToBeModified.count(); i++){
 				if(true/*(_affectOtherTeachersToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)*/){
-					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
-					if(act==NULL){
+					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
+					if(act==nullptr){
 						assert(0==1);	//TODO: maybe just a warning
 						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 						break;
@@ -1254,8 +1254,8 @@ void ActivityPlanningForm::swapStudents(int studentsActivity1, int subjectActivi
 			//modify2
 			for(int i=0; i<_idsToBeModified2.count(); i++){
 				if(true/*(_affectOtherTeachersToBeModified2.at(i)==false) || (ret2==QMessageBox::Yes)*/){
-					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), NULL);
-					if(act==NULL){
+					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), nullptr);
+					if(act==nullptr){
 						assert(0==1);	//TODO: maybe just a warning
 						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 						break;
@@ -1557,8 +1557,8 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 					
 					for(int i=0; i<_idsToBeModified.count(); i++){
 						if((_affectOtherSubjectsToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)){
-							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
-							if(act==NULL){
+							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
+							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
 								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 								break;
@@ -1620,8 +1620,8 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 					
 					for(int i=0; i<_idsToBeModified.count(); i++){
 						if((_affectOtherSubjectsToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)){
-							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
-							if(act==NULL){
+							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
+							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
 								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 								break;
@@ -1978,8 +1978,8 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 					
 					for(int i=0; i<_idsToBeModified.count(); i++){
 						if((_affectOtherSubjectsToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)){
-							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
-							if(act==NULL){
+							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
+							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
 								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 								break;
@@ -2040,8 +2040,8 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 				
 					for(int i=0; i<_idsToBeModified.count(); i++){
 						if((_affectOtherStudentsToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)){
-							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
-							if(act==NULL){
+							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
+							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
 								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 								break;
@@ -2560,8 +2560,8 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 					if( ((_affectOtherStudentsToBeModified.at(i)==false) || (retst==QMessageBox::Yes)) &&
 						((_affectOtherSubjectsToBeModified.at(i)==false) || (retsubj==QMessageBox::Yes)) ){
 
-						Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
-						if(act==NULL){
+						Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
+						if(act==nullptr){
 							assert(0==1);	//TODO: maybe just a warning
 							//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 							break;
@@ -2841,8 +2841,8 @@ void ActivityPlanningForm::teachersTableHorizontalHeaderClicked(int column){
 				
 				for(int i=0; i<_idsToBeModified.count(); i++){
 					if((_affectOtherTeachersToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)){
-						Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
-						if(act==NULL){
+						Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
+						if(act==nullptr){
 							assert(0==1);	//TODO: maybe just a warning
 							//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 							break;
@@ -3021,8 +3021,8 @@ void ActivityPlanningForm::teachersTableHorizontalHeaderClicked(int column){
 					
 					for(int i=0; i<_idsToBeModified.count(); i++){
 						if((_affectOtherTeachersToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)){
-							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
-							if(act==NULL){
+							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
+							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
 								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 								break;
@@ -3045,8 +3045,8 @@ void ActivityPlanningForm::teachersTableHorizontalHeaderClicked(int column){
 					}
 					for(int i=0; i<_idsToBeModified2.count(); i++){
 						if((_affectOtherTeachersToBeModified2.at(i)==false) || (ret2==QMessageBox::Yes)){
-							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), NULL);
-							if(act==NULL){
+							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), nullptr);
+							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
 								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 								break;
@@ -3077,7 +3077,7 @@ void ActivityPlanningForm::teachersTableHorizontalHeaderClicked(int column){
 }
 
 void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
-	/*if(item==NULL){
+	/*if(item==nullptr){
 		return;
 	}*/
 	if(!index.isValid())
@@ -3301,8 +3301,8 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 					
 					for(int i=0; i<_idsToBeModified.count(); i++){
 						if((_affectOtherTeachersToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)){
-							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
-							if(act==NULL){
+							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
+							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
 								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 								break;
@@ -3480,8 +3480,8 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 						
 						for(int i=0; i<_idsToBeModified.count(); i++){
 							if((_affectOtherTeachersToBeModified.at(i)==false) || (ret2==QMessageBox::Yes)){
-								Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), NULL);
-								if(act==NULL){
+								Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
+								if(act==nullptr){
 									assert(0==1);	//TODO: maybe just a warning
 									//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 									break;
@@ -3504,8 +3504,8 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 						}
 						for(int i=0; i<_idsToBeModified2.count(); i++){
 							if((_affectOtherTeachersToBeModified2.at(i)==false) || (ret2==QMessageBox::Yes)){
-								Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), NULL);
-								if(act==NULL){
+								Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), nullptr);
+								if(act==nullptr){
 									assert(0==1);	//TODO: maybe just a warning
 									//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
 									break;

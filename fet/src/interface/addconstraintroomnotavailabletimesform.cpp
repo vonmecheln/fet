@@ -214,7 +214,7 @@ void AddConstraintRoomNotAvailableTimesForm::itemClicked(QTableWidgetItem* item)
 
 void AddConstraintRoomNotAvailableTimesForm::addConstraint()
 {
-	SpaceConstraint *ctr=NULL;
+	SpaceConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

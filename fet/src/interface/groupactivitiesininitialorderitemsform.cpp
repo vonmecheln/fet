@@ -119,13 +119,13 @@ bool GroupActivitiesInInitialOrderItemsForm::filterOk(const GroupActivitiesInIni
 		
 	for(int i=0; i<item.ids.count(); i++){
 		int id=item.ids.at(i);
-		/*Activity* act=NULL;
+		/*Activity* act=nullptr;
 		for(Activity* a : qAsConst(gt.rules.activitiesList))
 			if(a->id==id)
 				act=a;*/
-		Activity* act=gt.rules.activitiesPointerHash.value(id, NULL);
+		Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 		
-		if(act!=NULL){
+		if(act!=nullptr){
 			//teacher
 			if(tn!=""){
 				bool ok2=false;

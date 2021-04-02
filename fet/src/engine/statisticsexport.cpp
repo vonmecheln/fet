@@ -32,7 +32,6 @@ File statisticsexport.cpp
 
 #include <QString>
 #include <QStringList>
-#include <QHash>
 #include <QMultiHash>
 #include <QMap>
 #include <QSet>

@@ -185,7 +185,7 @@ void AddConstraintBreakTimesForm::itemClicked(QTableWidgetItem* item)
 
 void AddConstraintBreakTimesForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

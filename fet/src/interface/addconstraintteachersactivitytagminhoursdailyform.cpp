@@ -59,7 +59,7 @@ void AddConstraintTeachersActivityTagMinHoursDailyForm::updateMinHoursSpinBox(){
 
 void AddConstraintTeachersActivityTagMinHoursDailyForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

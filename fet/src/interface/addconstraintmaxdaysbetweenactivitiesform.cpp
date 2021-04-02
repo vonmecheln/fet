@@ -163,7 +163,7 @@ void AddConstraintMaxDaysBetweenActivitiesForm::filterChanged()
 
 void AddConstraintMaxDaysBetweenActivitiesForm::addConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

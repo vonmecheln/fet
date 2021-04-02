@@ -372,7 +372,7 @@ void TeachersForm::comments()
 	}
 	
 	Teacher* tch=gt.rules.teachersList[ind];
-	assert(tch!=NULL);
+	assert(tch!=nullptr);
 
 	QDialog getCommentsDialog(this);
 	

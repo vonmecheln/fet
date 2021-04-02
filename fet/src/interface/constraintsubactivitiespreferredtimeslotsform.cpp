@@ -93,7 +93,7 @@ void ConstraintSubactivitiesPreferredTimeSlotsForm::constraintChanged(int index)
 	QString s;
 	assert(index<this->visibleConstraintsList.size());
 	TimeConstraint* ctr=this->visibleConstraintsList.at(index);
-	assert(ctr!=NULL);
+	assert(ctr!=nullptr);
 	s=ctr->getDetailedDescription(gt.rules);
 	currentConstraintTextEdit->setPlainText(s);
 }

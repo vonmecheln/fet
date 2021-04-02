@@ -149,7 +149,7 @@ AdvancedFilterForm::AdvancedFilterForm(QWidget* parent, bool all, QList<int> des
 		textLineEditList.at(i)->setVisible(i<rows);
 	}
 	
-	assert(textLineEditList.at(0)!=NULL);
+	assert(textLineEditList.at(0)!=nullptr);
 	textLineEditList.at(0)->selectAll();
 	textLineEditList.at(0)->setFocus();
 }

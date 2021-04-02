@@ -97,7 +97,7 @@ void ModifyConstraintStudentsSetHomeRoomForm::ok()
 	}
 
 	QString students=studentsComboBox->currentText();
-	assert(gt.rules.searchStudentsSet(students)!=NULL);
+	assert(gt.rules.searchStudentsSet(students)!=nullptr);
 
 	int i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){

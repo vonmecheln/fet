@@ -125,6 +125,7 @@ SplitYearForm::SplitYearForm(QWidget* parent, const QString& _year): QDialog(par
 	
 	//2020-09-03
 	StudentsSet* ss=gt.rules.searchStudentsSet(_year);
+	assert(ss!=nullptr);
 	assert(ss->type==STUDENTS_YEAR);
 	StudentsYear* sy=(StudentsYear*)ss;
 	_sep=sy->separator;
@@ -516,7 +517,7 @@ again_here_1:
 	
 	QHash<QString, StudentsGroup*> groupsHash;
 	
-	StudentsYear* yearPointer=NULL;
+	StudentsYear* yearPointer=nullptr;
 	int yearIndex=-1;
 	for(int i=0; i<gt.rules.yearsList.count(); i++)
 		if(gt.rules.yearsList[i]->name==year){
@@ -524,7 +525,7 @@ again_here_1:
 			yearIndex=i;
 			break;
 		}
-	assert(yearPointer!=NULL);
+	assert(yearPointer!=nullptr);
 	assert(yearIndex>=0);
 	
 	QSet<QString> notExistingGroupsSet;

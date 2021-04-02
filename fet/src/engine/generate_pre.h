@@ -47,7 +47,7 @@ inline bool compareFunctionGeneratePreWithGroupedActivities(int i, int j);
 extern int permutation[MAX_ACTIVITIES]; //the permutation matrix to obtain activities in
 //decreasing difficulty order
 
-bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStream=NULL);
+bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStream=nullptr);
 
 
 ////////BEGIN BASIC TIME CONSTRAINTS
@@ -60,7 +60,7 @@ extern Matrix1D<QHash<int, int> > activitiesConflictingPercentage;
 bool computeActivitiesConflictingPercentage(QWidget* parent);
 //void computeActivitiesConflicting();
 
-void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int> > & reprSameActivitiesSet, QTextStream* initialOrderStream=NULL);
+void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int> > & reprSameActivitiesSet, QTextStream* initialOrderStream=nullptr);
 ////////END   BASIC TIME CONSTRAINTS
 
 

@@ -96,10 +96,10 @@ public:
 	/**
 	ATTENTION: if the rules change, the user has to reset _fitness to -1
 	<p>
-	If conflictsString is not null, then this function will
+	If conflictsString is not nullptr, then this function will
 	append at this string an explanation of the conflicts.
 	*/
-	double fitness(Rules& r, FakeString* conflictsString=NULL);
+	double fitness(Rules& r, FakeString* conflictsString=nullptr);
 
 	void getTeachersTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<int> >& b);
 	//return value is the number of conflicts, which must be 0

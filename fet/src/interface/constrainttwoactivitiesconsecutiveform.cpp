@@ -124,13 +124,13 @@ bool ConstraintTwoActivitiesConsecutiveForm::filterOk(TimeConstraint* ctr)
 			
 		assert(id>=0);
 
-		/*Activity* act=NULL;
+		/*Activity* act=nullptr;
 		for(Activity* a : qAsConst(gt.rules.activitiesList))
 			if(a->id==id)
 				act=a;*/
-		Activity* act=gt.rules.activitiesPointerHash.value(id, NULL);
+		Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 		
-		if(act!=NULL){
+		if(act!=nullptr){
 			//teacher
 			if(tn!=""){
 				bool ok2=false;
@@ -205,7 +205,7 @@ void ConstraintTwoActivitiesConsecutiveForm::constraintChanged(int index)
 	}
 	assert(index<this->visibleConstraintsList.size());
 	TimeConstraint* ctr=this->visibleConstraintsList.at(index);
-	assert(ctr!=NULL);
+	assert(ctr!=nullptr);
 	currentConstraintTextEdit->setPlainText(ctr->getDetailedDescription(gt.rules));
 }
 

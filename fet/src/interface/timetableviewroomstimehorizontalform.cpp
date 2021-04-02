@@ -102,7 +102,7 @@ void TimetableViewRoomsTimeHorizontalDelegate::paint(QPainter* painter, const QS
 		painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
 	}*/
 	
-	/*assert(table!=NULL);
+	/*assert(table!=nullptr);
 	QBrush bg(table->item(index.row(), index.column())->background());
 	QPen pen(painter->pen());
 
@@ -202,7 +202,7 @@ TimetableViewRoomsTimeHorizontalForm::TimetableViewRoomsTimeHorizontalForm(QWidg
 		initialRecommendedHeight=10;
 
 		oldItemDelegate=roomsTimetableTable->itemDelegate();
-		newItemDelegate=new TimetableViewRoomsTimeHorizontalDelegate(NULL, 1, 1);
+		newItemDelegate=new TimetableViewRoomsTimeHorizontalDelegate(nullptr, 1, 1);
 		roomsTimetableTable->setItemDelegate(newItemDelegate);
 
 		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
@@ -216,7 +216,7 @@ TimetableViewRoomsTimeHorizontalForm::TimetableViewRoomsTimeHorizontalForm(QWidg
 	roomsTimetableTable->setColumnCount(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	
 	oldItemDelegate=roomsTimetableTable->itemDelegate();
-	newItemDelegate=new TimetableViewRoomsTimeHorizontalDelegate(NULL, roomsTimetableTable->rowCount(), gt.rules.nHoursPerDay);
+	newItemDelegate=new TimetableViewRoomsTimeHorizontalDelegate(nullptr, roomsTimetableTable->rowCount(), gt.rules.nHoursPerDay);
 	roomsTimetableTable->setItemDelegate(newItemDelegate);
 	
 	bool min2letters=false;
@@ -462,7 +462,7 @@ void TimetableViewRoomsTimeHorizontalForm::newTimetableGenerated()
 	/*roomsTimetableTable->setItemDelegate(oldItemDelegate);
 	delete newItemDelegate;
 	//oldItemDelegate=roomsTimetableTable->itemDelegate();
-	newItemDelegate=new TimetableViewRoomsTimeHorizontalDelegate(NULL, roomsTimetableTable->rowCount(), gt.rules.nHoursPerDay);
+	newItemDelegate=new TimetableViewRoomsTimeHorizontalDelegate(nullptr, roomsTimetableTable->rowCount(), gt.rules.nHoursPerDay);
 	roomsTimetableTable->setItemDelegate(newItemDelegate);*/
 	
 	bool min2letters=false;
@@ -703,7 +703,7 @@ void TimetableViewRoomsTimeHorizontalForm::updateRoomsTimetableTable(){
 				//Activity* act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
-					assert(act!=NULL);
+					assert(act!=nullptr);
 					
 					if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
 						QString ats=act->activityTagsNames.join(", ");
@@ -891,7 +891,7 @@ void TimetableViewRoomsTimeHorizontalForm::currentItemChanged(QTableWidgetItem* 
 }
 
 void TimetableViewRoomsTimeHorizontalForm::detailActivity(QTableWidgetItem* item){
-	if(item==NULL){
+	if(item==nullptr){
 		detailsTextEdit->setPlainText(QString(""));
 		return;
 	}
@@ -944,7 +944,7 @@ void TimetableViewRoomsTimeHorizontalForm::detailActivity(QTableWidgetItem* item
 			//Activity* act=gt.rules.activitiesList.at(ai);
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				assert(act!=NULL);
+				assert(act!=nullptr);
 				//s += act->getDetailedDescriptionWithConstraints(gt.rules);
 				s += act->getDetailedDescription(gt.rules);
 

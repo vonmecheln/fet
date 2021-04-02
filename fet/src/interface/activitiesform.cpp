@@ -224,7 +224,7 @@ void ActivitiesForm::studentsFilterChanged()
 		else{
 			//down
 			StudentsSet* set=gt.rules.searchStudentsSet(studentsComboBox->currentText());
-			assert(set!=NULL);
+			assert(set!=nullptr);
 			if(set->type==STUDENTS_YEAR){
 				StudentsYear* year=(StudentsYear*)set;
 				showedStudents.insert(year->name);
@@ -354,7 +354,7 @@ void ActivitiesForm::modifyActivity()
 	int valh=activitiesListWidget->horizontalScrollBar()->value();
 
 	Activity* act=visibleActivitiesList[ind];
-	assert(act!=NULL);
+	assert(act!=nullptr);
 	
 	QStringList teachers=act->teachersNames;
 	bool diffTeachers=false;
@@ -466,7 +466,7 @@ void ActivitiesForm::removeActivity()
 	int valh=activitiesListWidget->horizontalScrollBar()->value();
 
 	Activity* act=visibleActivitiesList[ind];
-	assert(act!=NULL);
+	assert(act!=nullptr);
 
 	QString s;
 	s=tr("Remove activity?");
@@ -513,7 +513,7 @@ void ActivitiesForm::activityChanged()
 	QString s;
 	Activity* act=visibleActivitiesList[index];
 
-	assert(act!=NULL);
+	assert(act!=nullptr);
 	s=act->getDetailedDescriptionWithConstraints(gt.rules);
 	activityTextEdit->setPlainText(s);
 }
@@ -568,7 +568,7 @@ void ActivitiesForm::activityComments()
 	assert(ind<visibleActivitiesList.count());
 
 	Activity* act=visibleActivitiesList[ind];
-	assert(act!=NULL);
+	assert(act!=nullptr);
 
 	QDialog getCommentsDialog(this);
 	

@@ -133,7 +133,7 @@ interface for every changeable value. What I have in mind is to split
 the "Details" into two parts; the upper part would include all the non 
 editable values while the lower part all the editable ones. Right now 
 for me, only the "Active" and "locked time" values are worth of being 
-editable, so  simple check boxes would suffice but someone else might 
+editable, so simple check boxes would suffice but someone else might 
 want other values editable too (e.g. Total number of students, duration) 
 or new values worth being editable might be added in the future, so it's 
 a good thing to have.
@@ -678,7 +678,7 @@ taken by those faculty members are to be assigned to some other faculty
 members.
 
 Facility of keeping track of back log periods due to absence or 
-unavailability are to be recorded year and group wise in the software. 
+unavailability are to be recorded year and group wise in the software. 
 Also extra periods taken by the faculty has to be recorded year and group 
 wise.
 
@@ -753,7 +753,7 @@ But we try also that teachers who work two days per week in the afternoon to hav
 From T. Renganathan:
 
 You can include a provision for multiple selection of subjects, teachers,
-activities, etc., for example using Ctrl or Shift key. This will especially be useful for deleting
+activities, etc., for example using Ctrl or Shift key. This will especially be useful for deleting
 multiple entries.
 
 48---------------------------------------------------------
@@ -1843,6 +1843,11 @@ to add multiple classes (sub-groups) with the same choice of periods and teacher
 6. an import and export to EXCEL or txt other than CSV file
 
 7. print option of teachers statistics on preview not from HTML
+
+In addition to (6.), when Liviu said that Excel was not free software, rjmillett replied:
+
+Another option would be to export as a Google sheet that's open source and
+free for all other than Microsoft's excel
 
 125---------------------------------------------------------
 From Volker Dirr and Bobby Wise:
@@ -3354,7 +3359,7 @@ void GroupsForm::removeGroup()
 			groupTextEdit->setPlainText(QString(""));
 	}
 
-	/*if(gt.rules.searchStudentsSet(groupName)!=NULL)
+	/*if(gt.rules.searchStudentsSet(groupName)!=nullptr)
 		QMessageBox::information( this, tr("FET"), tr("This group still exists into another year. "
 			"The related subgroups, activities and constraints were not removed"));*/
 }
@@ -3464,7 +3469,7 @@ void GroupsForm::purgeGroup()
 			groupTextEdit->setPlainText(QString(""));
 	}
 
-	/*if(gt.rules.searchStudentsSet(groupName)!=NULL)
+	/*if(gt.rules.searchStudentsSet(groupName)!=nullptr)
 		QMessageBox::information( this, tr("FET"), tr("This group still exists into another year. "
 			"The related subgroups, activities and constraints were not removed"));*/
 }
@@ -3495,7 +3500,7 @@ void GroupsForm::yearChanged(const QString &yearName)
 void GroupsForm::groupChanged(const QString &groupName)
 {
 	StudentsSet* ss=gt.rules.searchStudentsSet(groupName);
-	if(ss==NULL){
+	if(ss==nullptr){
 		groupTextEdit->setPlainText(QString(""));
 		return;
 	}
@@ -3543,7 +3548,7 @@ void GroupsForm::modifyGroup()
 	assert(groupIndex>=0);
 
 	StudentsSet* sset=gt.rules.searchStudentsSet(groupName);
-	assert(sset!=NULL);
+	assert(sset!=nullptr);
 	int numberOfStudents=sset->numberOfStudents;
 	
 	ModifyStudentsGroupForm form(this, yearName, groupName, numberOfStudents);
@@ -3666,7 +3671,7 @@ Further clarification:
 
 Further clarification:
 
-I need a gap to be maximum 1 hour continuously.
+I need a gap to be maximum 1 hour continuously.
 
 215---------------------------------------------------------
 From mercurialuser (on forum):
@@ -4689,7 +4694,7 @@ bool computeFixedActivities(QWidget* parent)
 	s+="\n";
 	initialOrderOfActivities=s;
 	
-	if(initialOrderStream!=NULL){
+	if(initialOrderStream!=nullptr){
 		(*initialOrderStream)<<s;
 		(*initialOrderStream).flush();
 	}
@@ -5905,7 +5910,7 @@ i<=lastPeriodOfSecondActivity; i++){
 							|| lastPeriodOfSecondActivity<firstPeriodOfSecondActivity
 							|| firstPeriodOfFirstActivity>firstPeriodOfSecondActivity
 							|| lastPeriodOfFirstActivity>lastPeriodOfSecondActivity){
-							QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+							QMessageBox::warning(nullptr, QObject::tr("FET warning"), 
 QObject::tr("F1=%1   L1=%2   F2=%3   
 L2=%4").arg(firstPeriodOfFirstActivity).arg(lastPeriodOfFirstActivity).arg(firstPeriodOfSecondActivity).arg(lastPeriodOfSecondActivity));
 							}*/
@@ -5967,7 +5972,7 @@ lastPeriodOfSecondActivity-durationFirstActivity<firstPeriodOfFirstActivity){
 						|| lastPeriodOfSecondActivity<firstPeriodOfSecondActivity
 						|| firstPeriodOfFirstActivity>firstPeriodOfSecondActivity
 						|| lastPeriodOfFirstActivity>lastPeriodOfSecondActivity){
-						QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+						QMessageBox::warning(nullptr, QObject::tr("FET warning"), 
 QObject::tr("F1=%1   L1=%2   F2=%3   
 L2=%4").arg(firstPeriodOfFirstActivity).arg(lastPeriodOfFirstActivity).arg(firstPeriodOfSecondActivity).arg(lastPeriodOfSecondActivity));
 						}*/
@@ -5995,17 +6000,17 @@ L2=%4").arg(firstPeriodOfFirstActivity).arg(lastPeriodOfFirstActivity).arg(first
 						//TODO: only if this happen each day!!!
 						/*if(lastPeriodOfFirstActivity + durationFirstActivity < 
 firstPeriodOfSecondActivity){
-							QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+							QMessageBox::warning(nullptr, QObject::tr("FET warning"), 
 QObject::tr("Activity %1 and Activity %2 can't be 
 consecutive.").arg(gt.rules.internalActivitiesList[firstActivity].id).arg(gt.rules.internalActivitiesList[secondActivity].id));
 						}
 
 
 						if(firstPeriodOfSecondActivity - durationFirstActivity < 0){
-							QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+							QMessageBox::warning(nullptr, QObject::tr("FET warning"), 
 QObject::tr("*Activity %1 and Activity %2 can't be 
 consecutive.").arg(gt.rules.internalActivitiesList[firstActivity].id).arg(gt.rules.internalActivitiesList[secondActivity].id));
-							QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+							QMessageBox::warning(nullptr, QObject::tr("FET warning"), 
 QObject::tr("%1 - %2 < 
 0").arg(firstPossiblePeriodForSecondActivity).arg(durationFirstActivity));
 						}*/
@@ -6018,7 +6023,7 @@ QObject::tr("%1 - %2 <
 									notAllowedTimesPercentages[firstActivity][currentTime]=100;
 									addImprovement=true;
 									foundImprovement++;	//TODO delete this
-									//QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+									//QMessageBox::warning(nullptr, QObject::tr("FET warning"), 
 QObject::tr("* Lock day %1 and hour %2 of activity 
 %3.").arg(d).arg(h).arg(gt.rules.internalActivitiesList[firstActivity].id));
 								}
@@ -6027,7 +6032,7 @@ QObject::tr("* Lock day %1 and hour %2 of activity
 									notAllowedTimesPercentages[firstActivity][currentTime]=100;
 									addImprovement=true;
 									foundImprovement++;	//TODO delete this
-									//QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+									//QMessageBox::warning(nullptr, QObject::tr("FET warning"), 
 QObject::tr("* Lock day %1 and hour %2 of activity 
 %3.").arg(d).arg(h).arg(gt.rules.internalActivitiesList[firstActivity].id));
 								}
@@ -6039,7 +6044,7 @@ QObject::tr("* Lock day %1 and hour %2 of activity
 											notAllowedTimesPercentages[secondActivity][d+(h+1)*gt.rules.nDaysPerWeek]=100;
 											addImprovement=true;
 											foundImprovement++;	//TODO delete this
-											//QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+											//QMessageBox::warning(nullptr, QObject::tr("FET warning"), 
 QObject::tr("*second* Lock day %1 and hour %2 of activity 
 %3.").arg(d).arg(h-durationFirstActivity).arg(gt.rules.internalActivitiesList[firstActivity].id));
 										}
@@ -6054,7 +6059,7 @@ QObject::tr("*second* Lock day %1 and hour %2 of activity
 								if(notAllowedTimesPercentages[secondActivity][currentTime]!=100 
 && !breakDayHour[d][h-1]){
 									notAllowedTimesPercentages[secondActivity][currentTime]=100;
-									//QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+									//QMessageBox::warning(nullptr, QObject::tr("FET warning"), 
 QObject::tr("** Lock day %1 and hour %2 of activity 
 %3.").arg(d).arg(h).arg(gt.rules.internalActivitiesList[secondActivity].id));
 									addImprovement=true;
@@ -6063,7 +6068,7 @@ QObject::tr("** Lock day %1 and hour %2 of activity
 							} else if(h>lastPeriodOfSecondActivity){
 								if(notAllowedTimesPercentages[secondActivity][currentTime]!=100){
 									notAllowedTimesPercentages[secondActivity][currentTime]=100;
-									//QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+									//QMessageBox::warning(nullptr, QObject::tr("FET warning"), 
 QObject::tr("*** Lock day %1 and hour %2 of activity 
 %3.").arg(d).arg(h).arg(gt.rules.internalActivitiesList[secondActivity].id));
 									addImprovement=true;
@@ -6077,7 +6082,7 @@ QObject::tr("*** Lock day %1 and hour %2 of activity
 											notAllowedTimesPercentages[firstActivity][d+(h-durationFirstActivity)*gt.rules.nDaysPerWeek]=100;
 											addImprovement=true;
 											foundImprovement++;	//TODO delete this
-											//QMessageBox::warning(NULL, QObject::tr("FET warning"), 
+											//QMessageBox::warning(nullptr, QObject::tr("FET warning"), 
 QObject::tr("*first* Lock day %1 and hour %2 of activity 
 %3.").arg(d).arg(h+durationFirstActivity).arg(gt.rules.internalActivitiesList[secondActivity].id));
 										}
@@ -7186,3 +7191,51 @@ Nel chiedere se sono normali questi tempi di elaborazione, faccio notare delle c
 1) Perchè e possibile mettere delle eccezioni più restrittive e non estensive? Esempio num max ore buche per tutti i docenti (3), si può impostare un numero inferiore (2) ma non maggiore (4). Idem per numero giorni a settimana per tutti i docenti, si può mettere l'eccezione in meno ma non in più.
 2) A mio parere alcune criticità del programma dipendono dal fatto di non avere sufficienti ore disponibili da collocare in alcune classi in determinati giorni (esemio il sabato con tanti docenti col giorno libero mi sono trovato a non avere la disponibilità oraria necessaria per coprire tutte le classi. 12 classi su tre plessi necessitavano di 12x5= 60 ore mentre  i docenti disponibili me ne potevano garantire 58) in questo caso il software non segnala niente, semplicemente non porta a termine l'elaborazione. Sarebbe opportuno avere un report che indichi il num. max di ore disponibile nei vari giorni in modo da evidenziare eventuali criticità prima dell'elaborazione.
 3) La stampa per "classi", "tempo verticale per giorno"  dell'orario ha sempre la prima colonna molto stretta, c'e modo di modificarla?
+
+423---------------------------------------------------------
+From Adele and Volker Dirr (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4751.0
+
+Enable/Disable activities in FET->Data->Activities and FET->Data->subactivities similar to enable/disable constraints in FET->Data->Constraints
+
+424---------------------------------------------------------
+From Vangelis Karafillidis:
+
+Import not available constraints for teachers and students from CSV files.
+Overall matrix view of not available times in the FET interface.
+
+425---------------------------------------------------------
+From Vangelis Karafillidis:
+
+1) Define custom sets of teachers and students, and apply constraints for them.
+
+2) Output an HTML-like view of all the constraints. Vangelis also suggests the teachers not available to be displayed in a time horizontal view.
+
+3) it might be useful.. to add a "locked" button.. in the generated timetables view...
+for... "unlocking" advanced manipulations...
+"manipulations"... I mean automated but controlled modifications...
+and not manual adjustments....
+
+after generating a timetable..
+one can open the generated timetable view...
+for locking/unlocking activities...
+
+in this dialog... it might be useful to add a button...
+(with a "locked" icon)
+so the user can open an advanced manipulations dialog...
+for example...
+it would be useful for the user...
+to be able to select a teacher...
+and modify the "not available times" from this dialog...
+and work with the generated timetable...
+the same if selecting for example two activities... which are consecutive, without this being acceptable... in order to add a constraint... and make them not consecutive...
+etc...
+so.... if the user selects teachers... he should be able to modify the constraints concerning these specific teachers...
+if the users selects students...
+he should be able to... blabla...
+if the user selects SETS OF TEACHERS (the new feature I mentioned)... he should be able to add constraints for the entire selected set...
+and the same for activities...
+complicated..
+but...
+I think it would be much more functional for modifying EXISTING (generated) timetables

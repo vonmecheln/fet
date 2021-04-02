@@ -71,7 +71,7 @@ void AddConstraintSubjectPreferredRoomsForm::updateRoomsListWidget()
 
 void AddConstraintSubjectPreferredRoomsForm::addConstraint()
 {
-	SpaceConstraint *ctr=NULL;
+	SpaceConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

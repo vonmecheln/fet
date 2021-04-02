@@ -75,10 +75,10 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	about+=tr("FET is free software for automatically scheduling the timetable of a school, high-school or university.");
 	about+="<br /><br />";
 	about+=tr("Copyright (C) %1 %2.", "%1 is the copyright period (a range between two years, more years separated by commas, "
-	 "or a combination of these), %2 are the copyright holders").arg("2002-2020").arg("Liviu Lalescu, Volker Dirr");
+	 "or a combination of these), %2 are the copyright holders").arg("2002-2021").arg("Liviu Lalescu, Volker Dirr");
 	about+="<br /><br />";
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "December")).arg("2020");
+	 .arg(QCoreApplication::translate("MonthsNames", "February")).arg("2021");
 	about+="<br /><br />";
 	about+=tr("Licensed under the GNU Affero General Public License version 3 or later.");
 	about+="<br /><br />";
@@ -998,6 +998,8 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("Fran");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Nando");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Adele");
 	thanksTo+=QString("<br />");
 
 	thanksToTextBrowser->setHtml(thanksTo);

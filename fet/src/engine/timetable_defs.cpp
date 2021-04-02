@@ -37,7 +37,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 FET version
 */
-const QString FET_VERSION="5.48.1";
+const QString FET_VERSION="5.48.2";
 
 /**
 FET language
@@ -291,8 +291,8 @@ void initRandomKnuth()
 	assert(tttt==2111618746);
 	//////////
 	
-	//unsigned tt=unsigned(time(NULL));
-	qint64 tt=qint64(time(NULL));
+	//unsigned tt=unsigned(time(nullptr));
+	qint64 tt=qint64(time(nullptr));
 	
 	//XX is the current time
 	//XX = 1 + ( (unsigned(tt)) % (unsigned(MM-1)) );
@@ -427,7 +427,7 @@ void MRG32k3a::initializeMRG32k3a()
 {
 	qint64 _s10, _s11, _s12, _s20, _s21, _s22;
 
-	//qint64 tt=qint64(time(NULL));
+	//qint64 tt=qint64(time(nullptr));
 	
 	std::chrono::seconds s=std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch());
 	qint64 si=static_cast<qint64>(s.count());

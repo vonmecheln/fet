@@ -59,7 +59,7 @@ void AddConstraintStudentsActivityTagMinHoursDailyForm::updateActivityTagsComboB
 
 void AddConstraintStudentsActivityTagMinHoursDailyForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

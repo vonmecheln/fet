@@ -61,7 +61,7 @@ ModifyConstraintMinGapsBetweenActivitiesForm::ModifyConstraintMinGapsBetweenActi
 	for(int i=0; i<ctr->n_activities; i++){
 		int actId=ctr->activitiesId[i];
 		this->selectedActivitiesList.append(actId);
-		Activity* act=NULL;
+		Activity* act=nullptr;
 		for(int k=0; k<gt.rules.activitiesList.size(); k++){
 			act=gt.rules.activitiesList[k];
 			if(act->id==actId)

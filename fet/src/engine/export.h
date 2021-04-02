@@ -71,7 +71,7 @@ public:
 	Export();
 	~Export();
 
-	static void exportCSV(Solution* bestOrHighest, Solution* current=NULL);
+	static void exportCSV(Solution* bestOrHighest, Solution* current=nullptr);
 private:
 	static bool okToWrite(const QString& file);
 

@@ -206,9 +206,9 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 			int d=best_solution.times[i]%gt.rules.nDaysPerWeek;
 			int h=best_solution.times[i]/gt.rules.nDaysPerWeek;
 			
-			ConstraintActivityPreferredStartingTime* newTimeCtr=NULL;
+			ConstraintActivityPreferredStartingTime* newTimeCtr=nullptr;
 			
-			ConstraintActivityPreferredRoom* newSpaceCtr=NULL;
+			ConstraintActivityPreferredRoom* newSpaceCtr=nullptr;
 			
 			if(d==selectedDayInt && lockTime){
 				newTimeCtr=new ConstraintActivityPreferredStartingTime(100.0, gt.rules.internalActivitiesList[i].id, d, h, false);
@@ -229,7 +229,7 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 			
 			int aid=gt.rules.internalActivitiesList[i].id;
 			
-			if(newTimeCtr!=NULL){
+			if(newTimeCtr!=nullptr){
 				bool add=true;
 				
 				for(ConstraintActivityPreferredStartingTime* tc : gt.rules.apstHash.value(aid, QSet<ConstraintActivityPreferredStartingTime*>())){
@@ -253,7 +253,7 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 				}
 			}
 
-			if(newSpaceCtr!=NULL){
+			if(newSpaceCtr!=nullptr){
 				bool add=true;
 				
 				for(ConstraintActivityPreferredRoom* tc : gt.rules.aprHash.value(aid, QSet<ConstraintActivityPreferredRoom*>())){
@@ -778,9 +778,9 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 			int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
 			int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
 			
-			ConstraintActivityPreferredStartingTime* newTimeCtr=NULL;
+			ConstraintActivityPreferredStartingTime* newTimeCtr=nullptr;
 			
-			ConstraintActivityPreferredRoom* newSpaceCtr=NULL;
+			ConstraintActivityPreferredRoom* newSpaceCtr=nullptr;
 			
 			if(lockTime){
 				newTimeCtr=new ConstraintActivityPreferredStartingTime(100.0, id, d, h, false);
@@ -799,7 +799,7 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 				}
 			}
 			
-			if(newTimeCtr!=NULL){
+			if(newTimeCtr!=nullptr){
 				bool add=true;
 
 				for(ConstraintActivityPreferredStartingTime* tc : gt.rules.apstHash.value(id, QSet<ConstraintActivityPreferredStartingTime*>())){
@@ -823,7 +823,7 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 				}
 			}
 
-			if(newSpaceCtr!=NULL){
+			if(newSpaceCtr!=nullptr){
 				bool add=true;
 
 				for(ConstraintActivityPreferredRoom* tc : gt.rules.aprHash.value(id, QSet<ConstraintActivityPreferredRoom*>())){
@@ -1308,9 +1308,9 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 			
 			int id=gt.rules.internalActivitiesList[i].id;
 
-			ConstraintActivityPreferredStartingTime* newTimeCtr=NULL;
+			ConstraintActivityPreferredStartingTime* newTimeCtr=nullptr;
 			
-			ConstraintActivityPreferredRoom* newSpaceCtr=NULL;
+			ConstraintActivityPreferredRoom* newSpaceCtr=nullptr;
 			
 			if(lockTime){
 				newTimeCtr=new ConstraintActivityPreferredStartingTime(100.0, gt.rules.internalActivitiesList[i].id, d, h, false);
@@ -1330,7 +1330,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 			}
 			
 			
-			if(newTimeCtr!=NULL){
+			if(newTimeCtr!=nullptr){
 				bool add=true;
 				
 				for(ConstraintActivityPreferredStartingTime* tc : gt.rules.apstHash.value(id, QSet<ConstraintActivityPreferredStartingTime*>())){
@@ -1354,7 +1354,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 				}
 			}
 
-			if(newSpaceCtr!=NULL){
+			if(newSpaceCtr!=nullptr){
 				bool add=true;
 
 				for(ConstraintActivityPreferredRoom* tc : gt.rules.aprHash.value(id, QSet<ConstraintActivityPreferredRoom*>())){
@@ -2382,9 +2382,9 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 			int d=best_solution.times[i]%gt.rules.nDaysPerWeek;
 			int h=best_solution.times[i]/gt.rules.nDaysPerWeek;
 			
-			ConstraintActivityPreferredStartingTime* newTimeCtr=NULL;
+			ConstraintActivityPreferredStartingTime* newTimeCtr=nullptr;
 			
-			ConstraintActivityPreferredRoom* newSpaceCtr=NULL;
+			ConstraintActivityPreferredRoom* newSpaceCtr=nullptr;
 			
 			if(act->iActivityTagsSet.contains(selectedActivityTagInt) && lockTime){
 				newTimeCtr=new ConstraintActivityPreferredStartingTime(100.0, gt.rules.internalActivitiesList[i].id, d, h, false);
@@ -2405,7 +2405,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 			
 			int aid=gt.rules.internalActivitiesList[i].id;
 			
-			if(newTimeCtr!=NULL){
+			if(newTimeCtr!=nullptr){
 				bool add=true;
 				
 				for(ConstraintActivityPreferredStartingTime* tc : gt.rules.apstHash.value(aid, QSet<ConstraintActivityPreferredStartingTime*>())){
@@ -2429,7 +2429,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 				}
 			}
 
-			if(newSpaceCtr!=NULL){
+			if(newSpaceCtr!=nullptr){
 				bool add=true;
 				
 				for(ConstraintActivityPreferredRoom* tc : gt.rules.aprHash.value(aid, QSet<ConstraintActivityPreferredRoom*>())){
@@ -2954,8 +2954,8 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 			if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
 				ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*)tc;
 				if(c->weightPercentage==100.0 && c->day>=0 && c->hour>=0){
-					Activity* act=gt.rules.activitiesPointerHash.value(c->activityId, NULL);
-					assert(act!=NULL);
+					Activity* act=gt.rules.activitiesPointerHash.value(c->activityId, nullptr);
+					assert(act!=nullptr);
 					if(act->activityTagsNames.contains(selectedActivityTagString)){
 						actsSet.insert(c->activityId);
 						if(unlockTime){

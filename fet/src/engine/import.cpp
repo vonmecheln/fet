@@ -744,7 +744,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	textOfFirstLine->setPlainText(line);
 
 	QGroupBox* separatorsGroupBox = new QGroupBox(Import::tr("Please specify the used separator between fields:"));
-	QComboBox* separatorsCB=NULL;
+	QComboBox* separatorsCB=nullptr;
 	if(separators.size()>1){
 		QHBoxLayout* separatorBoxChoose=new QHBoxLayout();
 		separatorsCB=new QComboBox();
@@ -758,7 +758,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	}
 
 	QGroupBox* textquoteGroupBox = new QGroupBox(Import::tr("Please specify the used text quote of text fields:"));
-	QComboBox* textquoteCB=NULL;
+	QComboBox* textquoteCB=nullptr;
 	if(textquotes.size()>1){
 		QHBoxLayout* textquoteBoxChoose=new QHBoxLayout();
 		textquoteCB=new QComboBox();
@@ -816,8 +816,8 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	if(!ok) return false;
 	
 	if(separators.size()>1){
-		assert(separatorsCB!=NULL);
-		assert(textquoteCB!=NULL);
+		assert(separatorsCB!=nullptr);
+		assert(textquoteCB!=nullptr);
 		fieldSeparator=separatorsCB->currentText();
 		
 		if(separatorsCB->currentIndex()==NO_SEPARATOR_POS){
@@ -841,8 +841,8 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 		}
 	}
 	else{
-		assert(separatorsCB==NULL);
-		assert(textquoteCB==NULL);
+		assert(separatorsCB==nullptr);
+		assert(textquoteCB==nullptr);
 		fieldSeparator="";
 		textquote="";
 	}
@@ -1995,8 +1995,8 @@ void Import::importCSVStudents(QWidget* parent){
 			yearName=fieldDefaultItem[FIELD_YEAR_NAME];
 		assert(!yearName.isEmpty());
 		//StudentsSet* ss=gt.rules.searchStudentsSet(yearName);
-		StudentsSet* ss=studentsHash.value(yearName, NULL);
-		if(ss!=NULL){
+		StudentsSet* ss=studentsHash.value(yearName, nullptr);
+		if(ss!=nullptr){
 			if(ss->type==STUDENTS_SUBGROUP)
 				ok=false;
 			else if(ss->type==STUDENTS_GROUP)
@@ -2021,9 +2021,9 @@ void Import::importCSVStudents(QWidget* parent){
 				assert(tmp);
 				addedYears++;
 			}*/
-			StudentsSet* studentsSet=ss; //studentsHash.value(yearName, NULL);
+			StudentsSet* studentsSet=ss; //studentsHash.value(yearName, nullptr);
 			bool yearExists=false;
-			if(studentsSet!=NULL){
+			if(studentsSet!=nullptr){
 				assert(0);
 				if(studentsSet->type==STUDENTS_YEAR)
 					yearExists=true;
@@ -2043,7 +2043,7 @@ void Import::importCSVStudents(QWidget* parent){
 			ok=true;
 			tryNext=false;
 			StudentsGroup* sg;
-			sg=NULL;
+			sg=nullptr;
 			if(fieldNumber[FIELD_GROUP_NAME]!=IMPORT_DEFAULT_ITEM)
 				groupName=fieldList[FIELD_GROUP_NAME][i];
 			else
@@ -2057,22 +2057,22 @@ void Import::importCSVStudents(QWidget* parent){
 					tryNext=true;
 				}
 				//StudentsSet* ss=gt.rules.searchStudentsSet(groupName);
-				StudentsSet* ss=studentsHash.value(groupName, NULL);
-				if(ss!=NULL && ss->type==STUDENTS_YEAR)
+				StudentsSet* ss=studentsHash.value(groupName, nullptr);
+				if(ss!=nullptr && ss->type==STUDENTS_YEAR)
 					ok=false;
-				else if(ss!=NULL && ss->type==STUDENTS_SUBGROUP)
+				else if(ss!=nullptr && ss->type==STUDENTS_SUBGROUP)
 					ok=false;
-				else if(ss!=NULL && ss->type==STUDENTS_GROUP){
+				else if(ss!=nullptr && ss->type==STUDENTS_GROUP){
 					if(fieldNumber[FIELD_SUBGROUP_NAME]==DO_NOT_IMPORT)
 						lastWarning+=Import::tr("Group name %1 exists in another year. It means that some years share the same group.").arg(groupName)+"\n";
 					if(fieldNumber[FIELD_SUBGROUP_NAME]!=DO_NOT_IMPORT)
 						if(fieldList[FIELD_SUBGROUP_NAME].isEmpty())
 							lastWarning+=Import::tr("Group name %1 exists in another year. It means that some years share the same group.").arg(groupName)+"\n";
 				}
-				if(ss!=NULL&&ok){
+				if(ss!=nullptr&&ok){
 					sg=(StudentsGroup*)ss;
 				}
-				else if(ss==NULL&&ok){
+				else if(ss==nullptr&&ok){
 					sg=new StudentsGroup();
 					sg->name=groupName;
 					QString tmpString=fieldList[FIELD_GROUP_NUMBER_OF_STUDENTS][i];
@@ -2083,11 +2083,11 @@ void Import::importCSVStudents(QWidget* parent){
 					studentsHash.insert(sg->name, sg);
 				}
 				if(ok){
-					StudentsSet* tmpStudentsSet=studentsHash.value(yearName, NULL);
+					StudentsSet* tmpStudentsSet=studentsHash.value(yearName, nullptr);
 					assert(tmpStudentsSet->type==STUDENTS_YEAR);
 					
 					StudentsYear* year=(StudentsYear*)tmpStudentsSet;
-					assert(year!=NULL);
+					assert(year!=nullptr);
 					gt.rules.addGroupFast(year, sg);
 
 					groupsInYearSet.insert(QPair<QString, QString> (yearName, sg->name));
@@ -2110,22 +2110,22 @@ void Import::importCSVStudents(QWidget* parent){
 					ok=false;
 				}
 				//StudentsSet* ss=gt.rules.searchStudentsSet(subgroupName);
-				StudentsSet* ss=studentsHash.value(subgroupName, NULL);
+				StudentsSet* ss=studentsHash.value(subgroupName, nullptr);
 				StudentsSubgroup* sts;
-				sts=NULL;
-				if(ss!=NULL && ss->type==STUDENTS_YEAR){
+				sts=nullptr;
+				if(ss!=nullptr && ss->type==STUDENTS_YEAR){
 					ok=false;
 				}
-				else if(ss!=NULL && ss->type==STUDENTS_GROUP){
+				else if(ss!=nullptr && ss->type==STUDENTS_GROUP){
 					ok=false;
 				}
-				else if(ss!=NULL && ss->type==STUDENTS_SUBGROUP){
+				else if(ss!=nullptr && ss->type==STUDENTS_SUBGROUP){
 					lastWarning+=Import::tr("Subgroup name %1 exists in another group. It means that some groups share the same subgroup.").arg(subgroupName)+"\n";
 				}
-				if(ss!=NULL&&ok){
+				if(ss!=nullptr&&ok){
 					sts=(StudentsSubgroup*)ss;
 				}
-				else if(ss==NULL&&ok) {
+				else if(ss==nullptr&&ok) {
 					sts=new StudentsSubgroup();
 					sts->name=subgroupName;
 					QString tmpString=fieldList[FIELD_SUBGROUP_NUMBER_OF_STUDENTS][i];
@@ -2136,17 +2136,17 @@ void Import::importCSVStudents(QWidget* parent){
 					studentsHash.insert(sts->name, sts);
 				}
 				if(ok){
-					StudentsSet* tmpStudentsSet=studentsHash.value(yearName, NULL);
+					StudentsSet* tmpStudentsSet=studentsHash.value(yearName, nullptr);
 					assert(tmpStudentsSet->type==STUDENTS_YEAR);
 				
 					StudentsYear* year=(StudentsYear*)tmpStudentsSet;
-					assert(year!=NULL);
+					assert(year!=nullptr);
 					
-					tmpStudentsSet=studentsHash.value(groupName, NULL);
+					tmpStudentsSet=studentsHash.value(groupName, nullptr);
 					assert(tmpStudentsSet->type==STUDENTS_GROUP);
 					
 					StudentsGroup* group=(StudentsGroup*)tmpStudentsSet;
-					assert(group!=NULL);
+					assert(group!=nullptr);
 
 					gt.rules.addSubgroupFast(year, group, sts);
 
@@ -2352,8 +2352,8 @@ void Import::importCSVActivities(QWidget* parent){
 		if(!fieldList[FIELD_STUDENTS_SET][i].isEmpty()){
 			for(int s=0; s<students.size(); s++){
 				//StudentsSet* ss=gt.rules.searchStudentsSet(students[s]);
-				StudentsSet* ss=studentsHash.value(students[s], NULL);
-				if(ss==NULL){
+				StudentsSet* ss=studentsHash.value(students[s], nullptr);
+				if(ss==nullptr){
 					if(firstWarning){
 						lastWarning+=Import::tr("FET can't import activities, because FET needs to know the structure of the "
 						"students sets. You must add (or import) years, groups and subgroups first.")+"\n"+

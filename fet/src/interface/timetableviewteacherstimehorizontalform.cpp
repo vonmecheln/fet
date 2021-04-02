@@ -101,7 +101,7 @@ void TimetableViewTeachersTimeHorizontalDelegate::paint(QPainter* painter, const
 		painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
 	}*/
 	
-	/*assert(table!=NULL);
+	/*assert(table!=nullptr);
 	QBrush bg(table->item(index.row(), index.column())->background());
 	QPen pen(painter->pen());
 
@@ -201,7 +201,7 @@ TimetableViewTeachersTimeHorizontalForm::TimetableViewTeachersTimeHorizontalForm
 		initialRecommendedHeight=10;
 
 		oldItemDelegate=teachersTimetableTable->itemDelegate();
-		newItemDelegate=new TimetableViewTeachersTimeHorizontalDelegate(NULL, 1, 1);
+		newItemDelegate=new TimetableViewTeachersTimeHorizontalDelegate(nullptr, 1, 1);
 		teachersTimetableTable->setItemDelegate(newItemDelegate);
 
 		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it"));
@@ -215,7 +215,7 @@ TimetableViewTeachersTimeHorizontalForm::TimetableViewTeachersTimeHorizontalForm
 	teachersTimetableTable->setColumnCount(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	
 	oldItemDelegate=teachersTimetableTable->itemDelegate();
-	newItemDelegate=new TimetableViewTeachersTimeHorizontalDelegate(NULL, teachersTimetableTable->rowCount(), gt.rules.nHoursPerDay);
+	newItemDelegate=new TimetableViewTeachersTimeHorizontalDelegate(nullptr, teachersTimetableTable->rowCount(), gt.rules.nHoursPerDay);
 	teachersTimetableTable->setItemDelegate(newItemDelegate);
 	
 	bool min2letters=false;
@@ -454,7 +454,7 @@ void TimetableViewTeachersTimeHorizontalForm::newTimetableGenerated()
 	/*teachersTimetableTable->setItemDelegate(oldItemDelegate);
 	delete newItemDelegate;
 	//oldItemDelegate=teachersTimetableTable->itemDelegate();
-	newItemDelegate=new TimetableViewTeachersTimeHorizontalDelegate(NULL, teachersTimetableTable->rowCount(), gt.rules.nHoursPerDay);
+	newItemDelegate=new TimetableViewTeachersTimeHorizontalDelegate(nullptr, teachersTimetableTable->rowCount(), gt.rules.nHoursPerDay);
 	teachersTimetableTable->setItemDelegate(newItemDelegate);*/
 	
 	bool min2letters=false;
@@ -681,7 +681,7 @@ void TimetableViewTeachersTimeHorizontalForm::updateTeachersTimetableTable(){
 				//Activity* act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
-					assert(act!=NULL);
+					assert(act!=nullptr);
 					
 					if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
 						QString ats=act->activityTagsNames.join(", ");
@@ -868,7 +868,7 @@ void TimetableViewTeachersTimeHorizontalForm::currentItemChanged(QTableWidgetIte
 }
 
 void TimetableViewTeachersTimeHorizontalForm::detailActivity(QTableWidgetItem* item){
-	if(item==NULL){
+	if(item==nullptr){
 		detailsTextEdit->setPlainText(QString(""));
 		return;
 	}
@@ -915,7 +915,7 @@ void TimetableViewTeachersTimeHorizontalForm::detailActivity(QTableWidgetItem* i
 			//Activity* act=gt.rules.activitiesList.at(ai);
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				assert(act!=NULL);
+				assert(act!=nullptr);
 				//s += act->getDetailedDescriptionWithConstraints(gt.rules);
 				s += act->getDetailedDescription(gt.rules);
 

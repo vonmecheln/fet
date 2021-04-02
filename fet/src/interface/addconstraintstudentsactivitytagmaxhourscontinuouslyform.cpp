@@ -57,7 +57,7 @@ void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::updateActivityTag
 
 void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::addCurrentConstraint()
 {
-	TimeConstraint *ctr=NULL;
+	TimeConstraint *ctr=nullptr;
 
 	double weight;
 	QString tmp=weightLineEdit->text();

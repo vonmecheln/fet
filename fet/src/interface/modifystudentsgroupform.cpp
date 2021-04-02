@@ -64,7 +64,7 @@ void ModifyStudentsGroupForm::ok()
 	//QString yearName=yearNameLineEdit->text();
 	QString groupName=nameLineEdit->text();
 	
-	if(this->_initialGroupName!=groupName && gt.rules.searchStudentsSet(groupName)!=NULL){
+	if(this->_initialGroupName!=groupName && gt.rules.searchStudentsSet(groupName)!=nullptr){
 		QMessageBox::information(this, tr("FET information"),
 		 tr("Name exists. If you would like to make more years to contain a group (overlapping years),"
 		 " please remove current group (FET will unfortunately remove all related activities and constraints)"
