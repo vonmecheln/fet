@@ -1076,7 +1076,4 @@ Versions 5.3.0 - 5.3.6
 	- Larger values for maximum number of years, groups and subgroups (suggested by Volker Dirr)
 	- The split activities are now indented, for easier visualization
 	- Improved add constraint activity preferred room(s) dialogs, by adding filters
-- Version 5.4.4
-	- It is allowed now to save the file name containing parentheses (), quotation marks " are not allowed anymore,
-	and neither is semicolon ; because the html code does not work correctly
 	

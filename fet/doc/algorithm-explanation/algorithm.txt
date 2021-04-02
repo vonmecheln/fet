@@ -57,10 +57,3 @@ slot if level>=5. That is, we search at level 0 all slots, at level 1 the same,
 the first (best) slot, etc., we reach level 13, then we go back to level 4 and 
 choose the next slot, etc. This is to allow FET more liberty, I think. This 
 trick was found practically to be good. It might not always be good.
-
-
-Adding - 26 Sept. 2007:
-
-Please consider that the best implemented part is teachers min hours daily, 
-please follow its mechanism and imagine other constraints should be like it
-(in file generate.cpp, function randomswap)
