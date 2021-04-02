@@ -35,6 +35,7 @@ File spaceconstraint.cpp
 #include "generate_pre.h"
 
 #include <QString>
+#include <QSet>
 
 #include "messageboxes.h"
 
@@ -742,7 +743,7 @@ ConstraintActivityPreferredRoom::ConstraintActivityPreferredRoom(double wp, int 
 bool ConstraintActivityPreferredRoom::operator==(ConstraintActivityPreferredRoom& c){
 	if(this->roomName!=c.roomName)
 		return false;
-	if(this->preferredRealRoomsNames!=c.preferredRealRoomsNames)
+	if(this->preferredRealRoomsNames.toSet()!=c.preferredRealRoomsNames.toSet())
 		return false;
 	if(this->activityId!=c.activityId)
 		return false;

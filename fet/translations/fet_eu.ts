@@ -13315,77 +13315,77 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintActivitiesOccupyMaxDifferentRooms</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6925"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6926"/>
         <source>FET error in data</source>
         <translation>FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6926"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6927"/>
         <source>Following constraint is wrong (refers to less than two activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6980"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6981"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7004"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7005"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7005"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7006"/>
         <source>Activities occupy max different rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6987"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6988"/>
         <source>Activities occupy max different rooms, WP:%1%, NA:%2, A: %3, MDR:%4</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list, MDR means max different rooms</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7006"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7007"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7007"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7008"/>
         <source>Number of activities=%1</source>
         <translation>Jarduera kopurua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7009"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7010"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished">id=%1 (%2) duen jarduera</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7014"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7015"/>
         <source>Maximum number of different rooms=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7017"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7018"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7021"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7022"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7059"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7060"/>
         <source>Space constraint activities occupy max different rooms broken</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7061"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7062"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -14317,72 +14317,72 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintActivitiesSameRoomIfConsecutive</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7184"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7185"/>
         <source>FET error in data</source>
         <translation>FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7185"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7186"/>
         <source>Following constraint is wrong (refers to less than two activities). Please correct it:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7237"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7238"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7260"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7261"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7261"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7262"/>
         <source>Activities same room if consecutive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7244"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7245"/>
         <source>Activities same room if consecutive, WP:%1%, NA:%2, A: %3</source>
         <comment>Constraint description. WP means weight percentage, NA means the number of activities, A means activities list</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7262"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7263"/>
         <source>Weight (percentage)=%1%</source>
         <translation type="unfinished">Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7263"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7264"/>
         <source>Number of activities=%1</source>
         <translation>Jarduera kopurua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7265"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7266"/>
         <source>Activity with id=%1 (%2)</source>
         <comment>%1 is the id, %2 is the detailed description of the activity</comment>
         <translation type="unfinished">id=%1 (%2) duen jarduera</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7271"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7272"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7275"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7276"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7323"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7324"/>
         <source>Space constraint activities same room if consecutive broken</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="7325"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="7326"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -15281,126 +15281,126 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintActivityPreferredRoom</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="781"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="793"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="782"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="794"/>
         <source>FET error in data</source>
         <translation>FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="782"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="783"/>
         <source>Following constraint is wrong (because preferred room %1 does not exist):
 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="794"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="795"/>
         <source>Following constraint is wrong (because preferred real room %1 does not exist):
 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="846"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="847"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="848"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="874"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="849"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="875"/>
         <source>Activity preferred room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="849"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="850"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="850"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="851"/>
         <source>Id:%1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="855"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="856"/>
         <source>R:%1</source>
         <comment>Room</comment>
         <translation>G:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="861"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="862"/>
         <source>RR:%1</source>
         <comment>Real room</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="867"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="868"/>
         <source>PL:%1</source>
         <comment>Abbreviation for permanently locked</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="873"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="874"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="875"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="876"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="877"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="878"/>
         <source>Activity id=%1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="882"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="883"/>
         <source>Room=%1</source>
         <translation>Gela=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="886"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="887"/>
         <source>Real room=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="891"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="892"/>
         <source>This activity is permanently locked, which means you cannot unlock it from the &apos;Timetable&apos; menu (you can unlock this activity by removing the constraint from the constraints dialog or by setting the &apos;permanently locked&apos; attribute false when editing this constraint)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="896"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="897"/>
         <source>This activity is not permanently locked, which means you can unlock it from the &apos;Timetable&apos; menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="901"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="902"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="905"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="906"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="941"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="942"/>
         <source>Space constraint activity preferred room broken for activity with id=%1 (%2), room=%3</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="947"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="972"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="948"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="973"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="966"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="967"/>
         <source>Space constraint activity preferred room broken for activity with id=%1 (%2), room=%3, the preferred real rooms are not satisfied</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
@@ -15513,88 +15513,88 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintActivityPreferredRooms</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1091"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1103"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1092"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1104"/>
         <source>FET error in data</source>
         <translation>FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1092"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1104"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1093"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1105"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1148"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1149"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1150"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1166"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1151"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1167"/>
         <source>Activity preferred rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1151"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1152"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1152"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1153"/>
         <source>Id:%1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1158"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1159"/>
         <source>R:%1</source>
         <comment>Room</comment>
         <translation>G:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1165"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1166"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1167"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1168"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1169"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1170"/>
         <source>Activity id=%1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1175"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1176"/>
         <source>Room=%1</source>
         <translation>Gela=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1180"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1181"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1184"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1185"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1225"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1226"/>
         <source>Space constraint activity preferred rooms broken for activity with id=%1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1230"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1231"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -16327,85 +16327,85 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintActivityTagPreferredRoom</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3426"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3427"/>
         <source>Room=%1</source>
         <translation>Gela=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3368"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3369"/>
         <source>FET error in data</source>
         <translation>FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3369"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3370"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3409"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3410"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3411"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3423"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3412"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3424"/>
         <source>Activity tag preferred room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3412"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3413"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3413"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3414"/>
         <source>AT:%1</source>
         <comment>Activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3414"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3415"/>
         <source>R:%1</source>
         <comment>Room</comment>
         <translation>G:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3422"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3423"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3424"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3425"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3425"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3426"/>
         <source>Activity tag=%1</source>
         <translation>Jarduera etiketa=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3429"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3430"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3433"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3434"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3480"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3481"/>
         <source>Space constraint activity tag preferred room broken for activity with id %1 (%2) (activity tag of constraint=%3)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3486"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3487"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -16492,85 +16492,85 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintActivityTagPreferredRooms</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3599"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3600"/>
         <source>FET error in data</source>
         <translation>FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3600"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3601"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3644"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3645"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3646"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3661"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3647"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3662"/>
         <source>Activity tag preferred rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3647"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3648"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3648"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3649"/>
         <source>AT:%1</source>
         <comment>Activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3651"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3652"/>
         <source>R:%1</source>
         <comment>Room</comment>
         <translation>G:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3660"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3661"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3662"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3663"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3663"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3664"/>
         <source>Activity tag=%1</source>
         <translation>Jarduera etiketa=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3665"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3666"/>
         <source>Room=%1</source>
         <translation>Gela=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3670"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3671"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3674"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3675"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3725"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3726"/>
         <source>Space constraint activity tag preferred rooms broken for activity with id %1 (%2) (activity tag of constraint=%3)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3731"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3732"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -16838,76 +16838,76 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintBasicCompulsorySpace</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="151"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="152"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="153"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="154"/>
         <source>Basic compulsory constraints (space)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="155"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="156"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="164"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="165"/>
         <source>These are the basic compulsory constraints (referring to rooms allocation) for any timetable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="165"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="166"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="167"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="168"/>
         <source>The basic space constraints try to avoid:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="168"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="169"/>
         <source>rooms assigned to more than one activity simultaneously</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="169"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="170"/>
         <source>activities with more students than the capacity of the room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="172"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="173"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="176"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="177"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="283"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="284"/>
         <source>this increases the conflicts total by %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="311"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="312"/>
         <source>Space constraint basic compulsory: room %1 has allocated activity with id %2 (%3) and the capacity of the room is overloaded</source>
         <comment>%2 is act id, %3 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="317"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="318"/>
         <source>This increases conflicts total by %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="280"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="281"/>
         <source>Space constraint basic compulsory broken: unallocated activity with id=%1 (%2)</source>
         <comment>%2 is the detailed description of the activity</comment>
         <translation type="unfinished"></translation>
@@ -18100,103 +18100,103 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintRoomNotAvailableTimes</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="485"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="486"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="487"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="511"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="488"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="512"/>
         <source>Room not available</source>
         <translation>Gela ez eskuragarria</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="488"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="489"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="489"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="490"/>
         <source>R:%1</source>
         <comment>Room</comment>
         <translation>G:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="491"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="492"/>
         <source>NA at:</source>
         <comment>Not available at</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="510"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="511"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="512"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="513"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="513"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="514"/>
         <source>Room=%1</source>
         <translation>Gela=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="515"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="516"/>
         <source>Not available at:</source>
         <comment>It refers to a room</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="532"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="533"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="536"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="537"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="548"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="549"/>
         <source>FET warning</source>
         <translation>FET abisua</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="549"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="550"/>
         <source>Constraint room not available times is wrong because it refers to inexistent room. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="558"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="565"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="559"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="566"/>
         <source>FET information</source>
         <translation>FET informazioa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="559"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="560"/>
         <source>Constraint room not available times is wrong because it refers to removed day. Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="566"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="567"/>
         <source>Constraint room not available times is wrong because an hour is too late (after the last acceptable slot). Please correct and try again. Correcting means editing the constraint and updating information. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="616"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="617"/>
         <source>Space constraint room not available times broken for room: %1, on day %2, hour %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="621"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="622"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -18932,66 +18932,66 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintStudentsMaxBuildingChangesPerDay</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4151"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4152"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4153"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4154"/>
         <source>Students max building changes per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4155"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4156"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4157"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4158"/>
         <source>MC:%1</source>
         <comment>MC means max changes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4166"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4167"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4168"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4169"/>
         <source>Students maximum building changes per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4170"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4171"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4172"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4173"/>
         <source>Maximum building changes per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4175"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4176"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4179"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4180"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4244"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4245"/>
         <source>Space constraint students max building changes per day broken for students=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4248"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4249"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -19073,66 +19073,66 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintStudentsMaxBuildingChangesPerWeek</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4675"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4676"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4677"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4678"/>
         <source>Students max building changes per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4679"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4680"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4681"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4682"/>
         <source>MC:%1</source>
         <comment>MC means max changes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4690"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4691"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4692"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4693"/>
         <source>Students maximum building changes per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4694"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4695"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4696"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4697"/>
         <source>Maximum building changes per week=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4699"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4700"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4703"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4704"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4769"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4770"/>
         <source>Space constraint students max building changes per week broken for students=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4772"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4773"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -20068,66 +20068,66 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintStudentsMinGapsBetweenBuildingChanges</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5210"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5211"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5212"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5213"/>
         <source>Students min gaps between building changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5214"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5215"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5216"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5217"/>
         <source>mG:%1</source>
         <comment>mG means min gaps</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5225"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5226"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5227"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5228"/>
         <source>Students minimum gaps between building changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5229"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5230"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5231"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5232"/>
         <source>Minimum gaps between building changes=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5234"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5235"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5238"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5239"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5307"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5308"/>
         <source>Space constraint students min gaps between building changes broken for students=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5311"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5312"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -21203,85 +21203,85 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintStudentsSetHomeRoom</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1423"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1424"/>
         <source>Room=%1</source>
         <translation>Gela=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1402"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1418"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1403"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1419"/>
         <source>Students set home room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1359"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1360"/>
         <source>FET error in data</source>
         <translation type="unfinished">FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1360"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1361"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1400"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1401"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1404"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1405"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1406"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1407"/>
         <source>St:%1</source>
         <comment>St means students</comment>
         <translation>Ik:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1408"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1409"/>
         <source>R:%1</source>
         <comment>R means Room</comment>
         <translation>G:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1417"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1418"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1419"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1420"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1421"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1422"/>
         <source>Students=%1</source>
         <translation>Ikasleak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1426"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1427"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1430"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1431"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1488"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1489"/>
         <source>Space constraint students set home room broken for activity with id %1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1493"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1494"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -21373,85 +21373,85 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintStudentsSetHomeRooms</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1623"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1624"/>
         <source>FET error in data</source>
         <translation>FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1624"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1625"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1670"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1671"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1672"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1689"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1673"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1690"/>
         <source>Students set home rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1673"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1674"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1675"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1676"/>
         <source>St:%1</source>
         <comment>St means students</comment>
         <translation>Ik:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1679"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1680"/>
         <source>R:%1</source>
         <comment>R means Room</comment>
         <translation>G:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1688"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1689"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1690"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1691"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1692"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1693"/>
         <source>Students=%1</source>
         <translation>Ikasleak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1695"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1696"/>
         <source>Room=%1</source>
         <translation>Gela=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1700"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1701"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1704"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1705"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1765"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1766"/>
         <source>Space constraint students set home rooms broken for activity with id %1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1770"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1771"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -21762,88 +21762,88 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintStudentsSetMaxBuildingChangesPerDay</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3832"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3833"/>
         <source>FET warning</source>
         <translation>FET abisua</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3833"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3834"/>
         <source>Constraint students set max building changes per day is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3912"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3913"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3914"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3915"/>
         <source>Students set max building changes per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3916"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3917"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3918"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3919"/>
         <source>St:%1</source>
         <comment>St means students</comment>
         <translation>Ik:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3920"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3921"/>
         <source>MC:%1</source>
         <comment>MC means max changes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3929"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3930"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3931"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3932"/>
         <source>Students set maximum building changes per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3933"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3934"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3935"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3936"/>
         <source>Students=%1</source>
         <translation>Ikasleak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3937"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3938"/>
         <source>Maximum building changes per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3940"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3941"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3944"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3945"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4009"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4010"/>
         <source>Space constraint students set max building changes per day broken for students=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4013"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4014"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -21930,88 +21930,88 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintStudentsSetMaxBuildingChangesPerWeek</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4356"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4357"/>
         <source>FET warning</source>
         <translation>FET abisua</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4357"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4358"/>
         <source>Constraint students set max building changes per week is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4436"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4437"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4438"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4439"/>
         <source>Students set max building changes per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4440"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4441"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4442"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4443"/>
         <source>St:%1</source>
         <comment>St means students</comment>
         <translation>Ik:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4444"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4445"/>
         <source>MC:%1</source>
         <comment>MC means max changes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4453"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4454"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4455"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4456"/>
         <source>Students set maximum building changes per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4457"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4458"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4459"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4460"/>
         <source>Students=%1</source>
         <translation>Ikasleak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4461"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4462"/>
         <source>Maximum building changes per week=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4464"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4465"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4468"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4469"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4534"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4535"/>
         <source>Space constraint students set max building changes per week broken for students=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4537"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4538"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -23114,88 +23114,88 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintStudentsSetMinGapsBetweenBuildingChanges</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4879"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4880"/>
         <source>FET warning</source>
         <translation>FET abisua</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4880"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4881"/>
         <source>Constraint students set min gaps between building changes is wrong because it refers to inexistent students set. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4959"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4960"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4961"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4962"/>
         <source>Students set min gaps between building changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4963"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4964"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4965"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4966"/>
         <source>St:%1</source>
         <comment>St means students</comment>
         <translation>Ik:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4967"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4968"/>
         <source>mG:%1</source>
         <comment>mG means min gaps</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4976"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4977"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4978"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4979"/>
         <source>Students set minimum gaps between building changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4980"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4981"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4982"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4983"/>
         <source>Students=%1</source>
         <translation>Ikasleak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4984"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4985"/>
         <source>Minimum gaps between building changes=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4987"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4988"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="4991"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="4992"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5060"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5061"/>
         <source>Space constraint students set min gaps between building changes broken for students=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5064"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5065"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -24671,96 +24671,96 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintSubjectActivityTagPreferredRoom</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2948"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2949"/>
         <source>Room=%1</source>
         <translation>Gela=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2887"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2888"/>
         <source>FET error in data</source>
         <translation>FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2888"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2889"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2929"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2930"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2931"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2944"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2932"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2945"/>
         <source>Subject activity tag preferred room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2932"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2933"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2933"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2934"/>
         <source>S:%1</source>
         <comment>Subject</comment>
         <translation type="unfinished">S:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2934"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2935"/>
         <source>AT:%1</source>
         <comment>Activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2935"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2936"/>
         <source>R:%1</source>
         <comment>Room</comment>
         <translation>G:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2943"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2944"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2945"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2946"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2946"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2947"/>
         <source>Subject=%1</source>
         <translation>Ikasgaia=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2947"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2948"/>
         <source>Activity tag=%1</source>
         <translation>Jarduera etiketa=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2951"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2952"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2955"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2956"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3002"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3003"/>
         <source>Space constraint subject activity tag preferred room broken for activity with id %1 (%2) (activity tag of constraint=%3)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3008"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3009"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -24847,96 +24847,96 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintSubjectActivityTagPreferredRooms</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3123"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3124"/>
         <source>FET error in data</source>
         <translation>FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3124"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3125"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3169"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3170"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3171"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3187"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3172"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3188"/>
         <source>Subject activity tag preferred rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3172"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3173"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3173"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3174"/>
         <source>S:%1</source>
         <comment>Subject</comment>
         <translation type="unfinished">S:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3174"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3175"/>
         <source>AT:%1</source>
         <comment>Activity tag</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3177"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3178"/>
         <source>R:%1</source>
         <comment>Room</comment>
         <translation>G:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3186"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3187"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3188"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3189"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3189"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3190"/>
         <source>Subject=%1</source>
         <translation>Ikasgaia=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3190"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3191"/>
         <source>Activity tag=%1</source>
         <translation>Jarduera etiketa=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3192"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3193"/>
         <source>Room=%1</source>
         <translation>Gela=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3197"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3198"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3201"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3202"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3252"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3253"/>
         <source>Space constraint subject activity tag preferred rooms broken for activity with id %1 (%2) (activity tag of constraint=%3)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="3258"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="3259"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -25023,85 +25023,85 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintSubjectPreferredRoom</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2472"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2473"/>
         <source>Room=%1</source>
         <translation>Gela=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2414"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2415"/>
         <source>FET error in data</source>
         <translation>FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2415"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2416"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2455"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2456"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2457"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2469"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2458"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2470"/>
         <source>Subject preferred room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2458"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2459"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2459"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2460"/>
         <source>S:%1</source>
         <comment>Subject</comment>
         <translation>S:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2460"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2461"/>
         <source>R:%1</source>
         <comment>Room</comment>
         <translation>G:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2468"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2469"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2470"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2471"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2471"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2472"/>
         <source>Subject=%1</source>
         <translation>Ikasgaia=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2475"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2476"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2479"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2480"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2526"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2527"/>
         <source>Space constraint subject preferred room broken for activity with id %1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2531"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2532"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -25188,85 +25188,85 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintSubjectPreferredRooms</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2644"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2645"/>
         <source>FET error in data</source>
         <translation>FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2645"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2646"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2689"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2690"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2691"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2706"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2692"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2707"/>
         <source>Subject preferred rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2692"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2693"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2693"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2694"/>
         <source>S:%1</source>
         <comment>Subject</comment>
         <translation type="unfinished">S:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2696"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2697"/>
         <source>R:%1</source>
         <comment>Room</comment>
         <translation>G:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2705"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2706"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2707"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2708"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2708"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2709"/>
         <source>Subject=%1</source>
         <translation>Ikasgaia=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2710"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2711"/>
         <source>Room=%1</source>
         <translation>Gela=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2715"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2716"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2719"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2720"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2770"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2771"/>
         <source>Space constraint subject preferred rooms broken for activity with id %1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2775"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2776"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -25681,85 +25681,85 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintTeacherHomeRoom</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1960"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1961"/>
         <source>Room=%1</source>
         <translation>Gela=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1939"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1955"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1940"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1956"/>
         <source>Teacher home room</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1896"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1897"/>
         <source>FET error in data</source>
         <translation type="unfinished">FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1897"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1898"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1937"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1938"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1941"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1942"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1943"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1944"/>
         <source>T:%1</source>
         <comment>T means teacher</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1945"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1946"/>
         <source>R:%1</source>
         <comment>R means Room</comment>
         <translation>G:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1954"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1955"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1956"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1957"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1958"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1959"/>
         <source>Teacher=%1</source>
         <translation>Irakaslea=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1963"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1964"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="1967"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="1968"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2024"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2025"/>
         <source>Space constraint teacher home room broken for activity with id %1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2029"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2030"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -25851,85 +25851,85 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintTeacherHomeRooms</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2158"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2159"/>
         <source>FET error in data</source>
         <translation>FET errorea datuetan</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2159"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2160"/>
         <source>Following constraint is wrong:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2205"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2206"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2207"/>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2224"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2208"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2225"/>
         <source>Teacher home rooms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2208"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2209"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2210"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2211"/>
         <source>T:%1</source>
         <comment>T means teacher</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2214"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2215"/>
         <source>R:%1</source>
         <comment>R means Room</comment>
         <translation>G:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2223"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2224"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2225"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2226"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2227"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2228"/>
         <source>Teacher=%1</source>
         <translation>Irakaslea=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2230"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2231"/>
         <source>Room=%1</source>
         <translation>Gela=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2235"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2236"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2239"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2240"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2300"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2301"/>
         <source>Space constraint teacher home rooms broken for activity with id %1 (%2)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="2305"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="2306"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -26233,88 +26233,88 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintTeacherMaxBuildingChangesPerDay</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5427"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5428"/>
         <source>FET warning</source>
         <translation>FET abisua</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5428"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5429"/>
         <source>Constraint teacher max building changes per day is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5470"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5471"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5472"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5473"/>
         <source>Teacher max building changes per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5474"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5475"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5476"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5477"/>
         <source>T:%1</source>
         <comment>T means teacher</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5478"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5479"/>
         <source>MC:%1</source>
         <comment>MC means max changes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5487"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5488"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5489"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5490"/>
         <source>Teacher maximum building changes per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5491"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5492"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5493"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5494"/>
         <source>Teacher=%1</source>
         <translation>Irakaslea=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5495"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5496"/>
         <source>Maximum building changes per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5498"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5499"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5502"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5503"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5568"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5569"/>
         <source>Space constraint teacher max building changes per day broken for teacher=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5572"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5573"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -26401,88 +26401,88 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintTeacherMaxBuildingChangesPerWeek</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5915"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5916"/>
         <source>FET warning</source>
         <translation>FET abisua</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5916"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5917"/>
         <source>Constraint teacher max building changes per week is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5958"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5959"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5960"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5961"/>
         <source>Teacher max building changes per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5962"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5963"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5964"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5965"/>
         <source>T:%1</source>
         <comment>T means teacher</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5966"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5967"/>
         <source>MC:%1</source>
         <comment>MC means max changes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5975"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5976"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5977"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5978"/>
         <source>Teacher maximum building changes per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5979"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5980"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5981"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5982"/>
         <source>Teacher=%1</source>
         <translation>Irakaslea=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5983"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5984"/>
         <source>Maximum building changes per week=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5986"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5987"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5990"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5991"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6058"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6059"/>
         <source>Space constraint teacher max building changes per week broken for teacher=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6061"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6062"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -27676,88 +27676,88 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintTeacherMinGapsBetweenBuildingChanges</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6403"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6404"/>
         <source>FET warning</source>
         <translation>FET abisua</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6404"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6405"/>
         <source>Constraint teacher min gaps between building changes is wrong because it refers to inexistent teacher. Please correct it (removing it might be a solution). Please report potential bug. Constraint is:
 %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6446"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6447"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6448"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6449"/>
         <source>Teacher min gaps between building changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6450"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6451"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6452"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6453"/>
         <source>T:%1</source>
         <comment>T means teacher</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6454"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6455"/>
         <source>mG:%1</source>
         <comment>mG means min gaps</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6463"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6464"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6465"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6466"/>
         <source>Teacher minimum gaps between building changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6467"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6468"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6469"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6470"/>
         <source>Teacher=%1</source>
         <translation>Irakaslea=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6471"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6472"/>
         <source>Minimum gaps between building changes=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6474"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6475"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6478"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6479"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6548"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6549"/>
         <source>Space constraint teacher min gaps between building changes broken for teacher=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6552"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6553"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -29086,66 +29086,66 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintTeachersMaxBuildingChangesPerDay</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5710"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5711"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5712"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5713"/>
         <source>Teachers max building changes per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5714"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5715"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5716"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5717"/>
         <source>MC:%1</source>
         <comment>MC means max changes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5725"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5726"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5727"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5728"/>
         <source>Teachers maximum building changes per day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5729"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5730"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5731"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5732"/>
         <source>Maximum building changes per day=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5734"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5735"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5738"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5739"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5803"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5804"/>
         <source>Space constraint teachers max building changes per day broken for teacher=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="5807"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="5808"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -29227,66 +29227,66 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintTeachersMaxBuildingChangesPerWeek</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6198"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6199"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6200"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6201"/>
         <source>Teachers max building changes per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6202"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6203"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6204"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6205"/>
         <source>MC:%1</source>
         <comment>MC means max changes</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6213"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6214"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6215"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6216"/>
         <source>Teachers maximum building changes per week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6217"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6218"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6219"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6220"/>
         <source>Maximum building changes per week=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6222"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6223"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6226"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6227"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6293"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6294"/>
         <source>Space constraint teachers max building changes per week broken for teacher=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6296"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6297"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -30363,66 +30363,66 @@ Mesedez gelditu lehenengo simulazioa</translation>
 <context>
     <name>ConstraintTeachersMinGapsBetweenBuildingChanges</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6698"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6699"/>
         <source>C: %1</source>
         <comment>Comments</comment>
         <translation>I: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6700"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6701"/>
         <source>Teachers min gaps between building changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6702"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6703"/>
         <source>WP:%1%</source>
         <comment>Weight percentage</comment>
         <translation>PE:% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6704"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6705"/>
         <source>mG:%1</source>
         <comment>mG means min gaps</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6713"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6714"/>
         <source>Space constraint</source>
         <translation>Leku murrizketa</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6715"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6716"/>
         <source>Teachers minimum gaps between building changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6717"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6718"/>
         <source>Weight (percentage)=%1%</source>
         <translation>Pisua (ehunekoa)=% %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6719"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6720"/>
         <source>Minimum gaps between building changes=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6722"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6723"/>
         <source>Active=%1</source>
         <comment>Refers to a constraint</comment>
         <translation>Gaitua=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6726"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6727"/>
         <source>Comments=%1</source>
         <translation>Iruzkinak=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6795"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6796"/>
         <source>Space constraint teachers min gaps between building changes broken for teacher=%1 on day %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="6799"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="6800"/>
         <source>This increases the conflicts total by %1</source>
         <translation>Honek gatazken totala %1ean handitzen du</translation>
     </message>
@@ -52048,13 +52048,13 @@ not added - must be a duplicate</source>
 <context>
     <name>SpaceConstraint</name>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="52"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="53"/>
         <source>no</source>
         <comment>no - meaning negation</comment>
         <translation>ez</translation>
     </message>
     <message>
-        <location filename="../src/engine/spaceconstraint.cpp" line="54"/>
+        <location filename="../src/engine/spaceconstraint.cpp" line="55"/>
         <source>yes</source>
         <comment>yes - meaning affirmative</comment>
         <translation>bai</translation>
