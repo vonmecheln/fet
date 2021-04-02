@@ -73,7 +73,7 @@
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="412"/>
         <source>different activity tags</source>
-        <translation>مختلف الوسوم المشتركة</translation>
+        <translation>مختلف وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="414"/>
@@ -133,7 +133,7 @@
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="540"/>
         <source>Explanation of the short description of an activity: first comes the id. If the activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration. Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).</source>
-        <translation>شرح لوصف مختصر لنشاط: يأتي أولا id. إذا كان النشاط غير مفعلا يتبع  بحرف X . ثم المدة الزمنية. ثم، إذا كان النشاط مقسما، خط مائل(/) و المدة الاجمالية. ثم المدرسون، المادة، وسم مشترك(في حالة ما استعمل) و الطلاب ثم عدد الطلاب(إذا تم تحديده).</translation>
+        <translation>شرح لوصف مختصر لنشاط: يأتي أولا id. إذا كان النشاط غير مفعل يتبع  بحرف X . ثم المدة الزمنية. ثم، إذا كان النشاط مقسما، خط مائل(/) و المدة الاجمالية. ثم المدرسون، المادة، وسم النشاط(في حالة ما استعمل) و الطلاب ثم عدد الطلاب(إذا تم تحديده).</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform.cpp" line="544"/>
@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="120"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/activitiesform_template.ui" line="14"/>
@@ -357,7 +357,7 @@
     <message>
         <location filename="../src/engine/activity.cpp" line="639"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/activity.cpp" line="644"/>
@@ -455,7 +455,7 @@
     <message>
         <location filename="../src/interface/activityplanningconfirmationform.cpp" line="43"/>
         <source>This is a simple activity planning dialog. You need to add all teachers, subjects and the students structure before you can work with it. It is also recommended to add the necessary activity tags before using this dialog.</source>
-        <translation>هذا مربع الحوار لمخطط أنشطة بسيط. تحتاج لاضافة كل المدرسين, والمواد ومجموعات الطلاب قبل أن تبدأ العمل به. أيضا يفضل اضافة الوسوم المشتركة الضرورية.</translation>
+        <translation>هذا مربع الحوار لمخطط أنشطة بسيط. تحتاج لاضافة كل المدرسين, والمواد ومجموعات الطلاب قبل أن تبدأ العمل به. أيضا يفضل اضافة وسوم النشاط الضرورية.</translation>
     </message>
     <message>
         <location filename="../src/interface/activityplanningconfirmationform.cpp" line="65"/>
@@ -1117,7 +1117,7 @@ Please select another cell to swap students.</source>
         <location filename="../src/engine/activitytag.cpp" line="59"/>
         <source>P:%1</source>
         <comment>Whether the activity tag is Printable - can be true or false</comment>
-        <translatorcomment>ما إذا كان الوسم المشترك قابلا للطباعة - يمكن أن يكون صحيحا أو خاطئا</translatorcomment>
+        <translatorcomment>ما إذا كان وسم النشاط قابلا للطباعة - يمكن أن يكون صحيحا أو خاطئا</translatorcomment>
         <translation>ق.ط: %1</translation>
     </message>
     <message>
@@ -1129,7 +1129,7 @@ Please select another cell to swap students.</source>
     <message>
         <location filename="../src/engine/activitytag.cpp" line="70"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/activitytag.cpp" line="72"/>
@@ -1151,12 +1151,12 @@ Please select another cell to swap students.</source>
     <message>
         <location filename="../src/engine/activitytag.cpp" line="97"/>
         <source>Time constraints directly related to this activity tag:</source>
-        <translation>التقيود الزمنية المتصلة مباشرة بهذا الوسم المشترك :</translation>
+        <translation>التقيود الزمنية المتصلة مباشرة بهذا الوسم:</translation>
     </message>
     <message>
         <location filename="../src/engine/activitytag.cpp" line="108"/>
         <source>Space constraints directly related to this activity tag:</source>
-        <translation>القيود المكانية المتصلة مباشرة بهذا الوسم المشترك :</translation>
+        <translation>القيود المكانية المتصلة مباشرة بهذا الوسم:</translation>
     </message>
 </context>
 <context>
@@ -1164,23 +1164,23 @@ Please select another cell to swap students.</source>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="106"/>
         <source>Please enter activity tag&apos;s name</source>
-        <translation>فضلاً ادخل اسم الوسم المشترك</translation>
+        <translation>فضلاً أدخل اسما لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="106"/>
         <source>Add activity tag</source>
-        <translation>اضافة وسم مشترك</translation>
+        <translation>اضافة وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="112"/>
         <location filename="../src/interface/activitytagsform.cpp" line="189"/>
         <source>Activity tag insertion dialog</source>
-        <translation>ادراج الوسم المشترك</translation>
+        <translation>حوار إدراج وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="113"/>
         <source>Could not insert item. Must be a duplicate</source>
-        <translation>تعذّر ادراج فقرة. حتما هي مكررة</translation>
+        <translation>تعذّر إدراج فقرة. حتما هي مكررة</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="123"/>
@@ -1214,7 +1214,7 @@ Please select another cell to swap students.</source>
         <location filename="../src/interface/activitytagsform.cpp" line="334"/>
         <location filename="../src/interface/activitytagsform.cpp" line="357"/>
         <source>Invalid selected activity tag</source>
-        <translation>اختيار غير صحيح للوسم المشترك</translation>
+        <translation>اختيار غير صحيح لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="144"/>
@@ -1224,7 +1224,7 @@ Please select another cell to swap students.</source>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="145"/>
         <source>Are you sure you want to delete this activity tag?</source>
-        <translation>هل تريد بالتأكيد حذف هذا الوسم المشترك؟</translation>
+        <translation>هل تريد بالتأكيد حذف وسم النشاط هذا؟</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="146"/>
@@ -1239,12 +1239,12 @@ Please select another cell to swap students.</source>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="183"/>
         <source>Please enter new activity tag&apos;s name</source>
-        <translation>فضلاً ادخل اسم الوسم المشترك الجديد</translation>
+        <translation>فضلاً ادخل اسم وسم النشاط الجديد</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="183"/>
         <source>Rename activity tag</source>
-        <translation>اعادة تسمية الوسوم</translation>
+        <translation>اعادة وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="190"/>
@@ -1264,17 +1264,17 @@ Please select another cell to swap students.</source>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="347"/>
         <source>FET help on activity tags</source>
-        <translation>مساعدة الوسوم المشتركة</translation>
+        <translation>مساعدة وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="348"/>
         <source>Activity tag is a field which can be used or not, depending on your wish (optional field). It is designed to help you with some constraints. Each activity has a list of activity tags (which may be empty).</source>
-        <translation>الوسم المشترك هو حقل يمكن استخدامه أو لا، يتعلق برغبتك(حقل اختياري). هو مصمم لمساعدتك مع بعض القيود. كل نشاط له قائمة من الوسوم المشتركة (و التي قد تكون فارغة).</translation>
+        <translation>وسم النشاط هو حقل يمكن استخدامه أو لا، يتعلق برغبتك(حقل اختياري). هو مصمم لمساعدتك مع بعض القيود. كل نشاط له قائمة من وسوم النشاط (و التي قد تكون فارغة).</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="366"/>
         <source>Activity tag comments</source>
-        <translation>تعليقات الوسم</translation>
+        <translation>تعليقات وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform.cpp" line="368"/>
@@ -1293,7 +1293,7 @@ Please select another cell to swap students.</source>
         <location filename="../src/interface/activitytagsform_template.ui" line="14"/>
         <source>Activity tags</source>
         <extracomment>This is the title of the activity tags dialog</extracomment>
-        <translation>وسم مشترك</translation>
+        <translation>وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="37"/>
@@ -1328,12 +1328,12 @@ Please select another cell to swap students.</source>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="85"/>
         <source>Activate all activities for selected tag</source>
-        <translation>تفعيل كل أنشطة الوسم المشترك المحدد</translation>
+        <translation>تفعيل كل أنشطة وسم النشاط المحدد</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="92"/>
         <source>Deactivate all activities for selected tag</source>
-        <translation>تعطيل كل أنشطة الوسم المشترك المحدد</translation>
+        <translation>تعطيل كل أنشطة وسم النشاط المحدد</translation>
     </message>
     <message>
         <location filename="../src/interface/activitytagsform_template.ui" line="101"/>
@@ -1492,7 +1492,7 @@ Please select another cell to swap students.</source>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="880"/>
         <source>The same procedure (double click) applies to students sets and activity tags.</source>
-        <translation>نفس العملية (النقر المزدوج) تنطبق على مجموعات الطلاب و الوسوم المشتركة.</translation>
+        <translation>نفس العملية (النقر المزدوج) تنطبق على مجموعات الطلاب و وسوم النشاط.</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="884"/>
@@ -1592,7 +1592,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="724"/>
         <source>A similar activity already exists. Do you want to insert current activity?</source>
-        <translation>هناك نشاط مماثل موجود أصلا. هل تريد ادراج النشاط الحالي؟</translation>
+        <translation>هناك نشاط مماثل موجود أصلا. هل تريد إدراج النشاط الحالي؟</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="743"/>
@@ -1938,7 +1938,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="172"/>
         <source>Activity tags</source>
-        <translation>وسم مشترك</translation>
+        <translation>وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform_template.ui" line="353"/>
@@ -2006,7 +2006,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addbuildingform.cpp" line="50"/>
         <source>Could not insert item. Must be a duplicate</source>
-        <translation>تعذّر ادراج فقرة. حتما هي مكررة</translation>
+        <translation>تعذّر ادراج إدراج. حتما هي مكررة</translation>
     </message>
     <message>
         <location filename="../src/interface/addbuildingform.cpp" line="54"/>
@@ -2114,12 +2114,12 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesendstudentsdayform_template.ui" line="26"/>
         <source>Instructions: you can choose a set of activities with a certain teacher (or blank for all teachers), students set, subject and activity tag.</source>
-        <translation>توضيح: يمكن اختيار أنشطة معينة لمدرس (أو عدم اختيار أي مدرس)، طلاب،مادة ،وسم مشترك.</translation>
+        <translation>توضيح: يمكن اختيار أنشطة معينة لمدرس (أو عدم اختيار أي مدرس)، طلاب،مادة ،وسم النشاط.</translation>
     </message>
 </context>
 <context>
@@ -2195,7 +2195,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="66"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="98"/>
@@ -2326,7 +2326,7 @@ You can choose the minimum distance in days between each pair of activities. Ple
     <message>
         <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform_template.ui" line="66"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesminsimultaneousinselectedtimeslotsform_template.ui" line="98"/>
@@ -2459,7 +2459,7 @@ slots</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="72"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesnotoverlappingform_template.ui" line="52"/>
@@ -2573,7 +2573,7 @@ slots</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>وسم مشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="88"/>
@@ -2680,7 +2680,7 @@ slots</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="66"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="98"/>
@@ -2811,7 +2811,7 @@ slots</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform_template.ui" line="66"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiesoccupymintimeslotsfromselectionform_template.ui" line="98"/>
@@ -2956,7 +2956,7 @@ slots</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="22"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredstartingtimesform_template.ui" line="38"/>
@@ -3127,7 +3127,7 @@ slots</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="22"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiespreferredtimeslotsform_template.ui" line="38"/>
@@ -3235,7 +3235,7 @@ slots</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>وسم مشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessameroomifconsecutiveform_template.ui" line="88"/>
@@ -3348,7 +3348,7 @@ slots</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingdayform_template.ui" line="36"/>
@@ -3440,7 +3440,7 @@ slots</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartinghourform_template.ui" line="36"/>
@@ -3544,7 +3544,7 @@ slots</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform.cpp" line="405"/>
         <source>Add multiple constraints: this is a check box. Select this if you want to input only the representatives of sub-activities and FET to add multiple constraints, for all sub-activities from the same components, in turn, respectively. There will be added more constraints activities same starting time, one for each corresponding tuple. The number of sub-activities must match for the representants and be careful to the order, to be what you need</source>
-        <translation>اضافة قيود متعددة: هذا مربع االتحديد. حدّد هذا إذا كنت ترغب في إدخال ممثلي الأنشطة الفرعية و FET لإضافة قيود متعددة، لجميع الأنشطة الفرعية من نفس العناصر، بدورها، على التوالي. سوف يتم اضافة المزيد من القيود من نوع نفس وقت البدء، واحد لكل &quot;مجموعة حقول مترابطة&quot; -tuple- ( حسب قاموس المعاني في مجال الحاسوب) المناسبة. عدد الأنشطة الفرعية يجب أن يتطابق مع الممثلين، مع توخي الحذر بالنسبة للترتيب، ليكون ما تحتاجه</translation>
+        <translation>اضافة قيود متعددة: هذا مربع االتحديد. حدّد هذا إذا كنت ترغب في إدراج ممثلي الأنشطة الفرعية و FET لإضافة قيود متعددة، لجميع الأنشطة الفرعية من نفس العناصر، بدورها، على التوالي. سوف يتم اضافة المزيد من القيود من نوع نفس وقت البدء، واحد لكل &quot;مجموعة حقول مترابطة&quot; -tuple- ( حسب قاموس المعاني في مجال الحاسوب) المناسبة. عدد الأنشطة الفرعية يجب أن يتطابق مع الممثلين، مع توخي الحذر بالنسبة للترتيب، ليكون ما تحتاجه</translation>
     </message>
 </context>
 <context>
@@ -3598,7 +3598,7 @@ slots</source>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitiessamestartingtimeform_template.ui" line="91"/>
@@ -3716,7 +3716,7 @@ slots</source>
     <message>
         <location filename="../src/interface/addconstraintactivityendsstudentsdayform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -3855,7 +3855,7 @@ slots</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="145"/>
@@ -3974,7 +3974,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredroomsform_template.ui" line="106"/>
@@ -4098,7 +4098,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimeform_template.ui" line="199"/>
@@ -4188,7 +4188,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredstartingtimesform_template.ui" line="52"/>
@@ -4302,7 +4302,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitypreferredtimeslotsform_template.ui" line="52"/>
@@ -4363,7 +4363,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomform.cpp" line="86"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomform.cpp" line="94"/>
@@ -4402,7 +4402,7 @@ necessary 100% if list nonempty)</source>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Add activity tag preferred room</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة قاعة مفضلة لوسم مشترك</translation>
+        <translation>اضافة قاعة مفضلة لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="110"/>
@@ -4412,7 +4412,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -4439,7 +4439,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform.cpp" line="99"/>
         <source>Invalid selected activity tag</source>
-        <translation>اختيار غير صحيح للوسم المشترك</translation>
+        <translation>اختيار غير صحيح مع وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform.cpp" line="112"/>
@@ -4473,7 +4473,7 @@ necessary 100% if list nonempty)</source>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Add activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة قاعات مفضلة لوسم مشترك</translation>
+        <translation>اضافة قاعات مفضلة لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="41"/>
@@ -4483,7 +4483,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="20"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagpreferredroomsform_template.ui" line="64"/>
@@ -4540,7 +4540,7 @@ necessary 100% if list nonempty)</source>
         <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform_template.ui" line="14"/>
         <source>Add activity tags not overlapping</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة وسوم مشتركة ليست متداخلة</translation>
+        <translation>اضافة وسوم النشاط ليست متداخلة</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform_template.ui" line="28"/>
@@ -4560,7 +4560,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform_template.ui" line="75"/>
         <source>Activity tags</source>
-        <translation>وسوم مشتركة</translation>
+        <translation>وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintactivitytagsnotoverlappingform_template.ui" line="88"/>
@@ -4832,7 +4832,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmaxdaysbetweenactivitiesform_template.ui" line="36"/>
@@ -4967,7 +4967,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmindaysbetweenactivitiesform_template.ui" line="36"/>
@@ -5104,7 +5104,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintmingapsbetweenactivitiesform_template.ui" line="36"/>
@@ -5252,7 +5252,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="76"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="85"/>
@@ -5271,12 +5271,12 @@ force activities consecutive</source>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add students activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة أقصى حصص متصلة مع وسم مشترك لمجموعة طلاب</translation>
+        <translation>اضافة أقصى حصص متصلة مع وسم النشاط لمجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="115"/>
@@ -5323,7 +5323,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform.cpp" line="76"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform.cpp" line="85"/>
@@ -5342,12 +5342,12 @@ force activities consecutive</source>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Add students activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة أقصى حصص يومية لوسم مشترك لمجموعة طلاب</translation>
+        <translation>اضافة أقصى حصص يومية لوسم النشاط لمجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="74"/>
@@ -5395,7 +5395,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagminhoursdailyform.cpp" line="78"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagminhoursdailyform.cpp" line="83"/>
@@ -5419,12 +5419,12 @@ force activities consecutive</source>
         <location filename="../src/interface/addconstraintstudentsactivitytagminhoursdailyform_template.ui" line="14"/>
         <source>Add students activity tag min hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة أدنى حصص يومية لوسم مشترك للطلاب</translation>
+        <translation>اضافة أدنى حصص يومية مع وسم النشاط للطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagminhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentsactivitytagminhoursdailyform_template.ui" line="74"/>
@@ -6617,7 +6617,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="93"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="102"/>
@@ -6636,7 +6636,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add students set activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة أقصى حصص متصلة مع وسم مشترك لمجموعة طلاب</translation>
+        <translation>اضافة أقصى حصص متصلة مع وسم النشاط لمجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -6646,7 +6646,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="57"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="150"/>
@@ -6699,7 +6699,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform.cpp" line="93"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform.cpp" line="102"/>
@@ -6718,7 +6718,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Add students set activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة أقصى حصص يومية مع وسم مشترك لمجموعة طلاب</translation>
+        <translation>اضافة أقصى حصص يومية مع وسم النشاط لمجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -6728,7 +6728,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="57"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="106"/>
@@ -6782,7 +6782,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagminhoursdailyform.cpp" line="95"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagminhoursdailyform.cpp" line="100"/>
@@ -6806,7 +6806,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintstudentssetactivitytagminhoursdailyform_template.ui" line="14"/>
         <source>Add students set activity tag min hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة أدنى حصص يومية مع وسم مشترك لمجموعة طلاب</translation>
+        <translation>اضافة أدنى حصص يومية مع وسم النشاط لمجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagminhoursdailyform_template.ui" line="28"/>
@@ -6816,7 +6816,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagminhoursdailyform_template.ui" line="57"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintstudentssetactivitytagminhoursdailyform_template.ui" line="106"/>
@@ -8470,7 +8470,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="75"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredstartingtimesform_template.ui" line="91"/>
@@ -8582,7 +8582,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="75"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubactivitiespreferredtimeslotsform_template.ui" line="91"/>
@@ -8652,7 +8652,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomform.cpp" line="106"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomform.cpp" line="114"/>
@@ -8696,7 +8696,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Add subject activity tag preferred room</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة قاعة مفضلة لمادة ووسم مشترك</translation>
+        <translation>اضافة قاعة مفضلة لمادة لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomform_template.ui" line="130"/>
@@ -8706,7 +8706,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomform_template.ui" line="50"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -8739,7 +8739,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform.cpp" line="112"/>
         <source>Invalid selected activity tag</source>
-        <translation>اختيار غير صحيح للوسم المشترك</translation>
+        <translation>اختيار غير صحيح لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform.cpp" line="125"/>
@@ -8778,12 +8778,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Add subject activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة قاعات مفضلة لمادة ووسم مشترك</translation>
+        <translation>اضافة قاعات مفضلة لمادة مع وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="33"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintsubjectactivitytagpreferredroomsform_template.ui" line="54"/>
@@ -8977,7 +8977,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="91"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="101"/>
@@ -9022,7 +9022,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="57"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="181"/>
@@ -9059,7 +9059,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform.cpp" line="91"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform.cpp" line="101"/>
@@ -9084,7 +9084,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Add teacher activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة أقصى حصص يومية مع وسم مشترك لمدرس</translation>
+        <translation>اضافة أقصى حصص يومية مع وسم النشاط لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -9094,7 +9094,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="57"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="103"/>
@@ -9142,7 +9142,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagminhoursdailyform.cpp" line="93"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagminhoursdailyform.cpp" line="98"/>
@@ -9172,7 +9172,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteacheractivitytagminhoursdailyform_template.ui" line="14"/>
         <source>Add teacher activity tag min hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة أدنى حصص يومية مع وسم مشترك للمدرس</translation>
+        <translation>اضافة أدنى حصص يومية مع وسم النشاط للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagminhoursdailyform_template.ui" line="28"/>
@@ -9182,7 +9182,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagminhoursdailyform_template.ui" line="57"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteacheractivitytagminhoursdailyform_template.ui" line="103"/>
@@ -9628,7 +9628,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="14"/>
         <source>Add teacher max days per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة أقصى أيام في الأسبوع لمدرس</translation>
+        <translation>اضافة أقصى أيام في الأسبوع للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxdaysperweekform_template.ui" line="145"/>
@@ -9790,7 +9790,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="14"/>
         <source>Add teacher max gaps per week</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة أقصى فجوات في الأسبوع لمدرس</translation>
+        <translation>اضافة أقصى فجوات في الأسبوع للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="88"/>
@@ -10751,7 +10751,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="75"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="85"/>
@@ -10776,7 +10776,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Add teachers activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة أقصى حصص متصلة مع وسم مشترك للمدرسين</translation>
+        <translation>اضافة أقصى حصص متصلة مع وسم النشاط للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="118"/>
@@ -10791,7 +10791,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="155"/>
@@ -10822,7 +10822,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform.cpp" line="75"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform.cpp" line="85"/>
@@ -10847,12 +10847,12 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Add teachers activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة أقصى حصص يومية مع وسم مشترك للمدرسين</translation>
+        <translation>اضافة أقصى حصص يومية مع وسم النشاط للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="77"/>
@@ -10894,7 +10894,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagminhoursdailyform.cpp" line="77"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagminhoursdailyform.cpp" line="82"/>
@@ -10924,12 +10924,12 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachersactivitytagminhoursdailyform_template.ui" line="14"/>
         <source>Add teachers activity tag min hours daily</source>
         <extracomment>This is the title of the dialog to add a new constraint of this type</extracomment>
-        <translation>اضافة أدنى حصص يومية مع وسم مشترك للمدرسين</translation>
+        <translation>اضافة أدنى حصص يومية مع وسم النشاط للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagminhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersactivitytagminhoursdailyform_template.ui" line="77"/>
@@ -12128,7 +12128,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintthreeactivitiesgroupedform_template.ui" line="155"/>
@@ -12250,7 +12250,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesconsecutiveform_template.ui" line="193"/>
@@ -12356,7 +12356,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesgroupedform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -12456,7 +12456,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedform_template.ui" line="193"/>
@@ -12535,7 +12535,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui" line="89"/>
@@ -12627,7 +12627,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/addgroupactivitiesininitialorderitemform_template.ui" line="91"/>
@@ -12689,7 +12689,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addroomform.cpp" line="71"/>
         <source>Could not insert item. Must be a duplicate</source>
-        <translation>تعذّر ادراج فقرة. حتما هي مكررة</translation>
+        <translation>تعذّر إدراج فقرة. حتما هي مكررة</translation>
     </message>
     <message>
         <location filename="../src/interface/addroomform.cpp" line="76"/>
@@ -12774,7 +12774,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="62"/>
         <source>Could not insert item. Duplicate</source>
-        <translation>تعذّر ادراج فقرة. تكرار</translation>
+        <translation>تعذّر إدراج فقرة. تكرار</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsgroupform.cpp" line="72"/>
@@ -12874,7 +12874,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="62"/>
         <source>Could not insert item. Must be a duplicate</source>
-        <translation>تعذّر ادراج فقرة. حتما هي مكررة</translation>
+        <translation>تعذّر إدراج فقرة. حتما هي مكررة</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentssubgroupform.cpp" line="73"/>
@@ -12995,7 +12995,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/addstudentsyearform.cpp" line="93"/>
         <source>Could not insert item. Must be a duplicate</source>
-        <translation>تعذّر ادراج فقرة. حتما هي مكررة</translation>
+        <translation>تعذّر إدراج فقرة. حتما هي مكررة</translation>
     </message>
     <message>
         <location filename="../src/interface/addstudentsyearform.cpp" line="101"/>
@@ -13385,37 +13385,37 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2279"/>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2848"/>
         <source>You entered this dialog, but you have no activity tags. This should not happen. Please report possible bug. Now FET will abandon the current operation and return to the main dialog, so that you don&apos;t lose data.</source>
-        <translation>لقد دقلت إلى مربع الحوار هذا، لكن ليس لديك وسم مشترك. هذا لا ينبغي أن يحدث. فضلا ارفع تقريرا عن خطأمحتمل. الآن سيتخلى FET  عن العملية الحالية و يعود إلى مربع الحوار الأساسي، حتى لا تفقد بيانات.</translation>
+        <translation>لقد دقلت إلى مربع الحوار هذا، لكن ليس لديك وسم النشاط. هذا لا ينبغي أن يحدث. فضلا ارفع تقريرا عن خطأمحتمل. الآن سيتخلى FET  عن العملية الحالية و يعود إلى مربع الحوار الأساسي، حتى لا تفقد بيانات.</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2287"/>
         <source>FET - Lock activities which have attached a certain activity tag</source>
-        <translation>FET - قفل الأنشطة التي لها صلة بوسم مشترك معين</translation>
+        <translation>FET - قفل الأنشطة التي لها صلة بوسم نشاط معين</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2293"/>
         <source>All activities which have attached the selected activity tag will be locked</source>
-        <translation>كل الأنشطة التي لها صلة بالوسم المشترك المحدد ستكون مقفلة</translation>
+        <translation>كل الأنشطة التي لها صلة بوسم النشاط المحدد ستكون مقفلة</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2293"/>
         <source>Please select the activity tag to lock:</source>
-        <translation>فضلاً اختر الوسم المشترك المراد قفله:</translation>
+        <translation>فضلاً اختر وسم النشاط المراد قفله:</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2856"/>
         <source>FET - Unlock activities which have attached a certain activity tag</source>
-        <translation>FET - فتح الأنشطة التي لها صلة بوسم مشترك معين</translation>
+        <translation>FET - فتح الأنشطة التي لها صلة بوسم نشاط معين</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2862"/>
         <source>All activities which have attached the selected activity tag will be unlocked (those which are not permanently locked)</source>
-        <translation>كل الأنشطة التي لها صلة بالوسم المشترك المحدد ستكون مفتوحة (التي ليست مقفلة بشكل دائم)</translation>
+        <translation>كل الأنشطة التي لها صلة بوسم النشاط المحدد ستكون مفتوحة (التي ليست مقفلة بشكل دائم)</translation>
     </message>
     <message>
         <location filename="../src/interface/advancedlockunlockform.cpp" line="2863"/>
         <source>Please select the activity tag to unlock:</source>
-        <translation>فضلاً اختر الوسم المشترك المراد فتحه:</translation>
+        <translation>فضلاً اختر وسم النشاط المراد فتحه:</translation>
     </message>
 </context>
 <context>
@@ -14170,12 +14170,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16417"/>
         <source>activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16419"/>
         <source>all activity tags</source>
-        <translation>كل الوسوم المشتركة</translation>
+        <translation>كل وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16426"/>
@@ -14226,12 +14226,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16457"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16459"/>
         <source>All activity tags</source>
-        <translation>كل الوسوم المشتركة</translation>
+        <translation>كل وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16462"/>
@@ -14573,7 +14573,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="121"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="139"/>
@@ -14847,7 +14847,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesminsimultaneousinselectedtimeslotsform_template.ui" line="121"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesminsimultaneousinselectedtimeslotsform_template.ui" line="139"/>
@@ -15053,7 +15053,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesnotoverlappingform_template.ui" line="84"/>
@@ -15246,7 +15246,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="121"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxdifferentroomsform_template.ui" line="139"/>
@@ -15502,7 +15502,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="121"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="139"/>
@@ -15771,7 +15771,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymintimeslotsfromselectionform_template.ui" line="121"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesoccupymintimeslotsfromselectionform_template.ui" line="139"/>
@@ -15880,12 +15880,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11303"/>
         <source>activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11305"/>
         <source>all activity tags</source>
-        <translation>كل الوسوم المشتركة</translation>
+        <translation>كل وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11312"/>
@@ -15942,12 +15942,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11357"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11359"/>
         <source>All activity tags</source>
-        <translation>كل الوسوم المشتركة</translation>
+        <translation>كل وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11363"/>
@@ -16160,12 +16160,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9982"/>
         <source>activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9984"/>
         <source>all activity tags</source>
-        <translation>كل الوسوم المشتركة</translation>
+        <translation>كل وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="9987"/>
@@ -16232,12 +16232,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10032"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10034"/>
         <source>All activity tags</source>
-        <translation>كل الوسوم المشتركة</translation>
+        <translation>كل وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10038"/>
@@ -16502,7 +16502,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="88"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessameroomifconsecutiveform_template.ui" line="106"/>
@@ -16738,7 +16738,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingdayform_template.ui" line="125"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -16930,7 +16930,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartinghourform_template.ui" line="103"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -17139,7 +17139,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="147"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiessamestartingtimeform_template.ui" line="134"/>
@@ -17315,7 +17315,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivityendsstudentsdayform_template.ui" line="84"/>
@@ -17562,7 +17562,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomform_template.ui" line="103"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -17756,7 +17756,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitypreferredroomsform_template.ui" line="103"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -17971,7 +17971,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimeform_template.ui" line="84"/>
@@ -18166,7 +18166,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredstartingtimesform_template.ui" line="84"/>
@@ -18373,7 +18373,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="113"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitypreferredtimeslotsform_template.ui" line="100"/>
@@ -18431,7 +18431,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3421"/>
         <location filename="../src/engine/spaceconstraint.cpp" line="3433"/>
         <source>Activity tag preferred room</source>
-        <translation>قاعة مفضلة لوسم مشترك</translation>
+        <translation>قاعة مفضلة لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3422"/>
@@ -18465,7 +18465,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3435"/>
         <source>Activity tag=%1</source>
-        <translation>وسم مشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3439"/>
@@ -18482,7 +18482,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3490"/>
         <source>Space constraint activity tag preferred room broken for activity with id %1 (%2) (activity tag of constraint=%3)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
-        <translation>قيد المكان قاعة مفضلة لوسم مشترك تم كسره للنشاط مع %1 (%2) (وسم مشترك للقيد=%3)</translation>
+        <translation>قيد المكان قاعة مفضلة لوسم النشاط تم كسره للنشاط مع %1 (%2) (وسم النشاط للقيد=%3)</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3496"/>
@@ -18531,7 +18531,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Constraints activity tag preferred room</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>قاعة مفضلة لوسم مشترك</translation>
+        <translation>قاعة مفضلة لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomform_template.ui" line="28"/>
@@ -18594,7 +18594,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3656"/>
         <location filename="../src/engine/spaceconstraint.cpp" line="3671"/>
         <source>Activity tag preferred rooms</source>
-        <translation>قاعات مفضلة لوسم مشترك</translation>
+        <translation>قاعات مفضلة لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3657"/>
@@ -18628,7 +18628,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3673"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3675"/>
@@ -18650,7 +18650,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3735"/>
         <source>Space constraint activity tag preferred rooms broken for activity with id %1 (%2) (activity tag of constraint=%3)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
-        <translation>قيد المكان قاعات مفضلة لوسم مشترك تم كسره للنشاط مع id %1 (%2) )وسم مشترك للقيد=%3)</translation>
+        <translation>قيد المكان قاعات مفضلة لوسم النشاط تم كسره للنشاط مع id %1 (%2) )وسم النشاط للقيد=%3)</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3741"/>
@@ -18699,7 +18699,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Constraints activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>قاعات مفضلة لوسم مشترك</translation>
+        <translation>قاعات مفضلة لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagpreferredroomsform_template.ui" line="98"/>
@@ -18755,7 +18755,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1838"/>
         <source>Following constraint is wrong (because you need at least one activity for each activity tag, but no activity has activity tag %1). Please correct it:
 %2</source>
-        <translation>القيد التالي خاطئ (لأنك تحتاج على الأقل نشاطا واحدا لكل وسم مشترك %1). فضلا قم بتصحيحه: %2</translation>
+        <translation>القيد التالي خاطئ (لأنك تحتاج على الأقل نشاطا واحدا لكل وسم النشاط %1). فضلا قم بتصحيحه: %2</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1876"/>
@@ -18766,7 +18766,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1879"/>
         <source>Activity tags not overlapping</source>
-        <translation>وسوم مشتركة ليست متداخلة</translation>
+        <translation>وسوم النشاط ليست متداخلة</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1880"/>
@@ -18778,7 +18778,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1881"/>
         <source>NAT:%1</source>
         <comment>Number of activity tags</comment>
-        <translatorcomment>عدد الوسوم المشتركة</translatorcomment>
+        <translatorcomment>عدد وسوم النشاط</translatorcomment>
         <translation>عدد الوسوم: %1</translation>
     </message>
     <message>
@@ -18795,7 +18795,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1897"/>
         <source>Activity tags must not overlap</source>
-        <translation>الوسوم المشتركة بجب ألاّ تتداخل</translation>
+        <translation>وسوم النشاط بجب ألاّ تتداخل</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1898"/>
@@ -18810,7 +18810,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1901"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1906"/>
@@ -18827,7 +18827,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="1961"/>
         <source>Time constraint activity tags not overlapping broken: activity with id=%1 (%2) overlaps with activity with id=%3 (%4) on a number of %5 periods</source>
         <comment>%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.</comment>
-        <translation>قيد زمني &quot;وسوم مشتركة ليست متداخلة&quot; تم كسره: نشاط ذات id=%1(%2)  تتداخل مع النشاط ذات id=%3 (%4) بعدد %5 من الفترات</translation>
+        <translation>قيد زمني &quot;وسوم النشاط ليست متداخلة&quot; تم كسره: نشاط ذات id=%1(%2)  تتداخل مع النشاط ذات id=%3 (%4) بعدد %5 من الفترات</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="1969"/>
@@ -18876,7 +18876,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintactivitytagsnotoverlappingform_template.ui" line="14"/>
         <source>Constraints activity tags not overlapping</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>قيود وسوم مشتركة ليست متداخلة</translation>
+        <translation>قيود وسوم النشاط ليست متداخلة</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagsnotoverlappingform_template.ui" line="26"/>
@@ -18896,7 +18896,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitytagsnotoverlappingform_template.ui" line="61"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitytagsnotoverlappingform_template.ui" line="76"/>
@@ -19658,7 +19658,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmaxdaysbetweenactivitiesform_template.ui" line="84"/>
@@ -19943,7 +19943,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="97"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmindaysbetweenactivitiesform_template.ui" line="84"/>
@@ -20013,7 +20013,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="2896"/>
         <source>mG:%1</source>
         <comment>Minimum number of gaps</comment>
-        <translation>اقل فجوات بين الأنشطة:%1</translation>
+        <translation>أدنى فجوات بين الأنشطة:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="2902"/>
@@ -20155,7 +20155,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="129"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintmingapsbetweenactivitiesform_template.ui" line="116"/>
@@ -20392,7 +20392,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8137"/>
         <source>Students for activity tag %1 have max %2 hours continuously</source>
-        <translation>طلاب الوسم المشترك %1 لهم %2 حصص متصلة</translation>
+        <translation>طلاب وسم النشاط %1 لهم %2 حصص متصلة</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8139"/>
@@ -20408,7 +20408,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8149"/>
         <source>All students, for an activity tag, must respect the maximum number of hours continuously</source>
-        <translation>كل الطلاب، من أجل وسم مشترك،عليهم احترام أقصى عدد من الحصص المتصلة</translation>
+        <translation>كل الطلاب، من أجل وسم النشاط،عليهم احترام أقصى عدد من الحصص المتصلة</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8150"/>
@@ -20418,7 +20418,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8151"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8152"/>
@@ -20440,7 +20440,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="8214"/>
         <location filename="../src/engine/timeconstraint.cpp" line="8242"/>
         <source>Time constraint students, activity tag %1, max %2 hours continuously, broken for subgroup %3, on day %4, length=%5.</source>
-        <translation>قيد الزمن للطلاب، وسم مشترك %1، أقصى %2 حصص يومية تم كسره للمجموعة الفرعية: %3، في يوم%4، طول=%5.</translation>
+        <translation>قيد الزمن للطلاب، وسم النشاط %1، أقصى %2 حصص يومية تم كسره للمجموعة الفرعية: %3، في يوم%4، طول=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8225"/>
@@ -20515,7 +20515,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints students activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>أقصى حصص متصلة مع وسم مشترك لكل الطلاب</translation>
+        <translation>أقصى حصص متصلة مع وسم النشاط لكل الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="97"/>
@@ -20530,7 +20530,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="26"/>
         <source>This constraint ensures that all students do not have more than max hours continuously of activities with the specified activity tag</source>
-        <translation>هذا القيد يضمن لكل الطلاب ألا يكون لهم أكثر من أقصى حصص متصلة لأنشطة مع وسم مشترك محدّد</translation>
+        <translation>هذا القيد يضمن لكل الطلاب ألا يكون لهم أكثر من أقصى حصص متصلة لأنشطة مع وسم النشاط محدّد</translation>
     </message>
 </context>
 <context>
@@ -20544,7 +20544,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17178"/>
         <source>Students for activity tag %1 have max %2 hours daily</source>
-        <translation>طلاب الوسم المشترك %1 لهم %2 حصة في اليوم</translation>
+        <translation>طلاب وسم النشاط %1 لهم %2 حصة في اليوم</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17180"/>
@@ -20566,7 +20566,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17191"/>
         <source>All students, for an activity tag, must respect the maximum number of hours daily</source>
-        <translation>كل الطلاب، من أجل وسم مشترك، يجب عليهم احترام أقصى حصص يومية</translation>
+        <translation>كل الطلاب، من أجل وسم النشاط، يجب عليهم احترام أقصى حصص يومية</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17192"/>
@@ -20576,7 +20576,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17193"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17194"/>
@@ -20597,7 +20597,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17251"/>
         <source>Time constraint students, activity tag %1, max %2 hours daily, broken for subgroup %3, on day %4, length=%5.</source>
-        <translation>قيد الزمن للطلاب، وسم مشترك %1، أقصى %2 حصص يومية، تم كسره للمجموعة الفرعية: %3، في يوم %4، طول=%5.</translation>
+        <translation>قيد الزمن للطلاب، وسم النشاط %1، أقصى %2 حصص يومية، تم كسره للمجموعة الفرعية: %3، في يوم %4، طول=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17262"/>
@@ -20646,12 +20646,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints students activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>أقصى حصص يومية لوسم مشترك لكل الطلاب</translation>
+        <translation>أقصى حصص يومية مع وسم النشاط لكل الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="26"/>
         <source>This constraint ensures that all students do not have more than max hours daily of activities with the specified activity tag.</source>
-        <translation>هذا القيد يضمن لكل الطلاب ألا يكون لهم أكثر من أقصى حصص يومية لأنشطة مع وسم مشترك محدّد.</translation>
+        <translation>هذا القيد يضمن لكل الطلاب ألا يكون لهم أكثر من أقصى حصص يومية لأنشطة مع وسم النشاط محدّد.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagmaxhoursdailyform_template.ui" line="42"/>
@@ -20710,7 +20710,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18216"/>
         <source>Students for activity tag %1 have min %2 hours daily</source>
-        <translation>طلاب الوسم المشترك %1 لهم %2 حصة في اليوم</translation>
+        <translation>طلاب وسم النشاط %1 لهم %2 حصة في اليوم</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18218"/>
@@ -20738,7 +20738,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18230"/>
         <source>All students, for an activity tag, must respect the minimum number of hours daily</source>
-        <translation>كل الطلاب، من أجل وسم مشترك، يجب عليهم احترام أدنى حصص يومية</translation>
+        <translation>كل الطلاب، من أجل وسم النشاط، يجب عليهم احترام أدنى حصص يومية</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18231"/>
@@ -20748,7 +20748,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18232"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18233"/>
@@ -20774,7 +20774,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18293"/>
         <source>Time constraint students, activity tag %1, min %2 hours daily, broken for subgroup %3, on day %4, length=%5.</source>
-        <translation>قيد الزمن للطلاب، وسم مشترك %1، أدنى %2 حصص يومية، تم كسره للمجموعة الفرعية: %3، في يوم %4، طول=%5.</translation>
+        <translation>قيد الزمن للطلاب، وسم النشاط %1، أدنى %2 حصص يومية، تم كسره للمجموعة الفرعية: %3، في يوم %4، طول=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18304"/>
@@ -20823,12 +20823,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentsactivitytagminhoursdailyform_template.ui" line="14"/>
         <source>Constraints students activity tag min hours daily</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>قيود أدنى حصص يومية مع وسم مشترك للطلاب</translation>
+        <translation>قيود أدنى حصص يومية مع وسم النشاط للطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagminhoursdailyform_template.ui" line="26"/>
         <source>This constraint ensures that all students do not have less than min hours daily of activities with the specified activity tag.</source>
-        <translation>هذا القيد يضمن لكل الطلاب ألا يكون لهم عددا أقل من أدنى حصص يومية لأنشطة مع وسم مشترك محدّد.</translation>
+        <translation>هذا القيد يضمن لكل الطلاب ألا يكون لهم عددا أقل من أدنى حصص يومية لأنشطة مع وسم النشاط محدّد.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentsactivitytagminhoursdailyform_template.ui" line="42"/>
@@ -23399,7 +23399,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8382"/>
         <source>Students set %1 for activity tag %2 has max %3 hours continuously</source>
-        <translation>طلاب %1 من أجل وسم مشترك %2 لهم أقصى %3 حصص متصلة</translation>
+        <translation>طلاب %1 من أجل وسم النشاط %2 لهم أقصى %3 حصص متصلة</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8384"/>
@@ -23415,7 +23415,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8394"/>
         <source>A students set, for an activity tag, must respect the maximum number of hours continuously</source>
-        <translation>طلاب، من أجل وسم مشترك، يجب احترام أقصى عدد من الحصص المتصلة</translation>
+        <translation>طلاب، من أجل وسم النشاط، يجب احترام أقصى عدد من الحصص المتصلة</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8395"/>
@@ -23430,7 +23430,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8397"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="8398"/>
@@ -23538,7 +23538,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints students set activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>قيود أقصى حصص متصلة مع وسم مشترك لمجموعة طلاب</translation>
+        <translation>قيود أقصى حصص متصلة مع وسم النشاط لمجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="100"/>
@@ -23553,7 +23553,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="26"/>
         <source>This constraint ensures that the specified students do not have more than max hours continuously of activities with the specified activity tag</source>
-        <translation>هذا القيد يضمن لمجموعة طلاب محدّدين ألا يكون لهم أكثر من أقصى حصص متصلة لأنشطة مع وسم مشترك محدّد</translation>
+        <translation>هذا القيد يضمن لمجموعة طلاب محدّدين ألا يكون لهم أكثر من أقصى حصص متصلة لأنشطة مع وسم النشاط محدّد</translation>
     </message>
 </context>
 <context>
@@ -23567,7 +23567,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17392"/>
         <source>Students set %1 for activity tag %2 has max %3 hours daily</source>
-        <translation>طلاب %1 من أجل وسم مشترك %2 لهم أقصى %3 حصص يومية</translation>
+        <translation>طلاب %1 من أجل وسم النشاط %2 لهم أقصى %3 حصص يومية</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17394"/>
@@ -23589,7 +23589,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17405"/>
         <source>A students set, for an activity tag, must respect the maximum number of hours daily</source>
-        <translation>كل الطلاب، من أجل وسم مشترك، يجب عليهم احترام أقصى عدد من الحصص اليومية</translation>
+        <translation>كل الطلاب، من أجل وسم النشاط، يجب عليهم احترام أقصى عدد من الحصص اليومية</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17406"/>
@@ -23604,7 +23604,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17408"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17409"/>
@@ -23636,7 +23636,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17545"/>
         <source>Time constraint students set, activity tag %1, max %2 hours daily, broken for subgroup %3, on day %4, length=%5.</source>
-        <translation>قيد الزمن لمجموعة طلاب، وسم مشترك %1، أقصى %2 حصص يومية، تم كسره للمجموعة الفرعية: %3، في يوم %4، طول=%5.</translation>
+        <translation>قيد الزمن لمجموعة طلاب، وسم النشاط %1، أقصى %2 حصص يومية، تم كسره للمجموعة الفرعية: %3، في يوم %4، طول=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17556"/>
@@ -23685,7 +23685,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints students set activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>قيود أقصى حصص يومية مع وسم مشترك لمجموعة طلاب</translation>
+        <translation>قيود أقصى حصص يومية مع وسم النشاط لمجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="130"/>
@@ -23725,7 +23725,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="26"/>
         <source>This constraint ensures that the specified students do not have more than max hours daily of activities with the specified activity tag.</source>
-        <translation>هذا القيد يضمن لطلاب معينين ألا يكون لهم أكثر من أقصى حصص يومية لأنشطة مع وسم مشترك محدّد.</translation>
+        <translation>هذا القيد يضمن لطلاب معينين ألا يكون لهم أكثر من أقصى حصص يومية لأنشطة مع وسم النشاط محدّد.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="60"/>
@@ -23749,7 +23749,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18440"/>
         <source>Students set %1 for activity tag %2 has min %3 hours daily</source>
-        <translation>مجموعة الطلاب %1 من أجل وسم مشترك %2 لها أدنى %3 حصص يومية</translation>
+        <translation>مجموعة الطلاب %1 من أجل وسم النشاط %2 لها أدنى %3 حصص يومية</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18442"/>
@@ -23777,7 +23777,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18455"/>
         <source>A students set, for an activity tag, must respect the minimum number of hours daily</source>
-        <translation>مجموعة الطلاب، من أجل وسم مشترك، يجب أن تحترم أدنى عدد من الحصص اليومية</translation>
+        <translation>مجموعة الطلاب، من أجل وسم النشاط، يجب أن تحترم أدنى عدد من الحصص اليومية</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18456"/>
@@ -23792,7 +23792,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18458"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18459"/>
@@ -23830,7 +23830,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18598"/>
         <source>Time constraint students set, activity tag %1, min %2 hours daily, broken for subgroup %3, on day %4, length=%5.</source>
-        <translation>قيد الزمن لمجموعة طلاب، وسم مشترك %1، أدنى %2 حصص يومية، تم كسره للمجموعة الفرعية: %3، في يوم %4، طول=%5.</translation>
+        <translation>قيد الزمن لمجموعة طلاب، وسم النشاط %1، أدنى %2 حصص يومية، تم كسره للمجموعة الفرعية: %3، في يوم %4، طول=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18609"/>
@@ -23879,12 +23879,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintstudentssetactivitytagminhoursdailyform_template.ui" line="14"/>
         <source>Constraints students set activity tag min hours daily</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>قيود أدنى حصص يومية مع وسم مشترك لمجموعة طلاب</translation>
+        <translation>قيود أدنى حصص يومية مع وسم النشاط لمجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagminhoursdailyform_template.ui" line="26"/>
         <source>This constraint ensures that the specified students do not have less than min hours daily of activities with the specified activity tag.</source>
-        <translation>هذا القيد يضمن لكل الطلاب ألا يكون لهم عددا أقل من أدنى حصص يومية لأنشطة مع وسم مشترك محدّد.</translation>
+        <translation>هذا القيد يضمن لكل الطلاب ألا يكون لهم عددا أقل من أدنى حصص يومية لأنشطة مع وسم النشاط محدّد.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintstudentssetactivitytagminhoursdailyform_template.ui" line="42"/>
@@ -27530,12 +27530,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11798"/>
         <source>activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11800"/>
         <source>all activity tags</source>
-        <translation>كل الوسوم المشتركة</translation>
+        <translation>كل وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11803"/>
@@ -27612,12 +27612,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11857"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11859"/>
         <source>All activity tags</source>
-        <translation>كل الوسوم المشتركة</translation>
+        <translation>كل وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="11863"/>
@@ -27704,7 +27704,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="187"/>
         <source>This is simple: just add 2 constraints of this type, with the component number 1, (then 2) and the corresponding subject (you can also define teacher, students set and activity tag, of course).</source>
-        <translation>هذا بسيط: يكفي اضافة قيدين(2) من هذا النوع، مع العنصر رقم 1، (ثم 2) و المادة الموافقة (تستطيع أيضا تعيين المدرس، مجموعة الطلاب و وسم مشترك، بطبيعة الحال).</translation>
+        <translation>هذا بسيط: يكفي اضافة قيدين(2) من هذا النوع، مع العنصر رقم 1، (ثم 2) و المادة الموافقة (تستطيع أيضا تعيين المدرس، مجموعة الطلاب و وسم النشاط، بطبيعة الحال).</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredstartingtimesform.cpp" line="192"/>
@@ -27860,12 +27860,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10490"/>
         <source>activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10492"/>
         <source>all activity tags</source>
-        <translation>كل الوسوم المشتركة</translation>
+        <translation>كل وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10495"/>
@@ -27942,12 +27942,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10549"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10551"/>
         <source>All activity tags</source>
-        <translation>كل الوسوم المشتركة</translation>
+        <translation>كل وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="10555"/>
@@ -28034,7 +28034,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="187"/>
         <source>This is simple: just add 2 constraints of this type, with the component number 1, (then 2) and the corresponding subject (you can also define teacher, students set and activity tag, of course).</source>
-        <translation>هذا بسيط: يكفي اضافة قيدين(2) من هذا النوع، مع العنصر رقم 1، (ثم 2) و المادة الموافقة (تستطيع أيضا تعيين المدرس، مجموعة الطلاب و وسم مشترك، بطبيعة الحال).</translation>
+        <translation>هذا بسيط: يكفي اضافة قيدين(2) من هذا النوع، مع العنصر رقم 1، (ثم 2) و المادة الموافقة (تستطيع أيضا تعيين المدرس، مجموعة الطلاب و وسم النشاط، بطبيعة الحال).</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubactivitiespreferredtimeslotsform.cpp" line="193"/>
@@ -28129,7 +28129,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="2941"/>
         <location filename="../src/engine/spaceconstraint.cpp" line="2954"/>
         <source>Subject activity tag preferred room</source>
-        <translation>قاعة مفضلة لمادة ووسم مشترك</translation>
+        <translation>قاعة مفضلة لمادة مع وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2942"/>
@@ -28173,7 +28173,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2957"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="2961"/>
@@ -28190,7 +28190,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3012"/>
         <source>Space constraint subject activity tag preferred room broken for activity with id %1 (%2) (activity tag of constraint=%3)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
-        <translation>قيد المكان قاعة مفضلة لمادة و وسم مشترك تم كسره للنشاط مع id %1 (%2) )وسم مشترك للقيد=%3)</translation>
+        <translation>قيد المكان قاعة مفضلة لمادة و وسم النشاط تم كسره للنشاط مع id %1 (%2) )وسم النشاط للقيد=%3)</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3018"/>
@@ -28239,7 +28239,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Constraints subject activity tag preferred room</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>قاعة مفضلة لمادة ووسم مشترك</translation>
+        <translation>قاعة مفضلة لمادة مع وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomform_template.ui" line="95"/>
@@ -28302,7 +28302,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3181"/>
         <location filename="../src/engine/spaceconstraint.cpp" line="3197"/>
         <source>Subject activity tag preferred rooms</source>
-        <translation>قاعات مفضلة لمادة ووسم مشترك</translation>
+        <translation>قاعات مفضلة لمادة مع وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3182"/>
@@ -28346,7 +28346,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3200"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3202"/>
@@ -28368,7 +28368,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/spaceconstraint.cpp" line="3262"/>
         <source>Space constraint subject activity tag preferred rooms broken for activity with id %1 (%2) (activity tag of constraint=%3)</source>
         <comment>%1 is activity id, %2 is detailed description of activity</comment>
-        <translation>قيد المكان قاعاةتمفضلة لمادة و وسم مشترك تم كسره للنشاط مع %1 (%2) (وسم مشترك للقيد=%3)</translation>
+        <translation>قيد المكان قاعاةتمفضلة لمادة و وسم النشاط تم كسره للنشاط مع %1 (%2) (وسم النشاط للقيد=%3)</translation>
     </message>
     <message>
         <location filename="../src/engine/spaceconstraint.cpp" line="3268"/>
@@ -28417,7 +28417,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Constraints subject activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to see the list of all constraints of this type</extracomment>
-        <translation>قاعات مفضلة لمادة ووسم مشترك</translation>
+        <translation>قاعات مفضلة لمادة مع وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintsubjectactivitytagpreferredroomsform_template.ui" line="101"/>
@@ -28798,7 +28798,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4298"/>
         <source>Teacher %1 for activity tag %2 has max %3 hours continuously</source>
-        <translation>مدرس %1 من أجل وسم مشترك %2 له أقصى %3 حصص متصلة</translation>
+        <translation>مدرس %1 من أجل وسم النشاط %2 له أقصى %3 حصص متصلة</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4299"/>
@@ -28824,7 +28824,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4311"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4312"/>
@@ -28846,7 +28846,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4373"/>
         <location filename="../src/engine/timeconstraint.cpp" line="4401"/>
         <source>Time constraint teacher activity tag max %1 hours continuously broken for teacher %2, activity tag %3, on day %4, length=%5.</source>
-        <translation>قيد الزمن لمدرس، وسم مشترك أقصى %1 حصص متصلة تم كسره للمدرس: %2، وسم مشترك %3 في يوم %4، طول=%5.</translation>
+        <translation>قيد الزمن لمدرس، وسم النشاط أقصى %1 حصص متصلة تم كسره للمدرس: %2، وسم النشاط %3 في يوم %4، طول=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4384"/>
@@ -28857,7 +28857,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4308"/>
         <source>A teacher for an activity tag must respect the maximum number of hours continuously</source>
-        <translation>مدرس من أجل وسم مشترك، ملزم باحترام أقصى عدد من الحصص المتصلة</translation>
+        <translation>مدرس من أجل وسم النشاط، ملزم باحترام أقصى عدد من الحصص المتصلة</translation>
     </message>
 </context>
 <context>
@@ -28921,7 +28921,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints teacher activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation>قيود أقصى حصص متصلة مع وسم مشترك لمدرس</translation>
+        <translation>قيود أقصى حصص متصلة مع وسم النشاط لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="100"/>
@@ -28941,7 +28941,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="26"/>
         <source>This constraint ensures that the specified teacher does not have more than max hours continuously of activities with the specified activity tag</source>
-        <translation>هذا القيد يضمن لمدرس معين ألا يكون له أكثر من أقصى حصص متصلة لأنشطة مع وسم مشترك محدّد</translation>
+        <translation>هذا القيد يضمن لمدرس معين ألا يكون له أكثر من أقصى حصص متصلة لأنشطة مع وسم النشاط محدّد</translation>
     </message>
 </context>
 <context>
@@ -28949,12 +28949,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16947"/>
         <source>A teacher for an activity tag must respect the maximum number of hours daily</source>
-        <translation>مدرس من أجل وسم مشترك، يحب أن يحترم أقصى عدد من الحصص في اليوم</translation>
+        <translation>مدرس من أجل وسم النشاط، يحب أن يحترم أقصى عدد من الحصص في اليوم</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16936"/>
         <source>Teacher %1 for activity tag %2 has max %3 hours daily</source>
-        <translation>مدرس %1 من أجل وسم مشترك %2 له أقصى %3 حصص في اليوم</translation>
+        <translation>مدرس %1 من أجل وسم النشاط %2 له أقصى %3 حصص في اليوم</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16932"/>
@@ -28993,7 +28993,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16950"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16951"/>
@@ -29014,7 +29014,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17008"/>
         <source>Time constraint teacher activity tag %1 max %2 hours daily broken for teacher %3, on day %4, length=%5.</source>
-        <translation>قيد الزمن، أقصى حصص يومية لمدرس مع وسم مشترك %1، أقصى %2 حصص يومية تم كسره للمدرس %3، في يوم %4، طول=%5.</translation>
+        <translation>قيد الزمن، أقصى حصص يومية لمدرس مع وسم النشاط %1، أقصى %2 حصص يومية تم كسره للمدرس %3، في يوم %4، طول=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17018"/>
@@ -29063,12 +29063,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints teacher activity tag max hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation>قيود أقصى حصص يومية مع وسم مشترك لمدرس</translation>
+        <translation>قيود أقصى حصص يومية مع وسم النشاط لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="26"/>
         <source>This constraint ensures that the specified teacher does not have more than max hours daily of activities with the specified activity tag.</source>
-        <translation>هذا القيد يضمن لمدرس معين ألا يكون له أكثر من أقصى حصص يومية لأنشطة مع وسم مشترك محدّد.</translation>
+        <translation>هذا القيد يضمن لمدرس معين ألا يكون له أكثر من أقصى حصص يومية لأنشطة مع وسم النشاط محدّد.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagmaxhoursdailyform_template.ui" line="42"/>
@@ -29127,7 +29127,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17964"/>
         <source>Teacher %1 for activity tag %2 has min %3 hours daily</source>
-        <translation>مدرس %1 من أجل وسم مشترك %2 له أدنى %3 حصص في اليوم</translation>
+        <translation>مدرس %1 من أجل وسم النشاط %2 له أدنى %3 حصص في اليوم</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17965"/>
@@ -29155,7 +29155,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17976"/>
         <source>A teacher for an activity tag must respect the minimum number of hours daily</source>
-        <translation>مدرس من أجل وسم مشترك، يحب أن يحترم أدنى عدد من الحصص في اليوم</translation>
+        <translation>مدرس من أجل وسم النشاط، يحب أن يحترم أدنى عدد من الحصص في اليوم</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17977"/>
@@ -29170,7 +29170,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17979"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17980"/>
@@ -29196,7 +29196,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18040"/>
         <source>Time constraint teacher activity tag %1 min %2 hours daily broken for teacher %3, on day %4, length=%5.</source>
-        <translation>قيد الزمن، أدنى حصص يومية للمدرس مع وسم مشترك %1، أدنى %2 حصص يومية تم كسره للمدرس %3، في يوم %4، طول=%5.</translation>
+        <translation>قيد الزمن، أدنى حصص يومية للمدرس مع وسم النشاط %1، أدنى %2 حصص يومية تم كسره للمدرس %3، في يوم %4، طول=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="18050"/>
@@ -29245,12 +29245,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteacheractivitytagminhoursdailyform_template.ui" line="14"/>
         <source>Constraints teacher activity tag min hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation>قيود أقصى حصص يومية مع وسم مشترك لمدرس</translation>
+        <translation>قيود أقصى حصص يومية مع وسم النشاط لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagminhoursdailyform_template.ui" line="26"/>
         <source>This constraint ensures that the specified teacher does not have less than min hours daily of activities with the specified activity tag.</source>
-        <translation>هذا القيد يضمن لكل الطلاب ألا يكون لهم عددا أقل من أدنى حصص يومية لأنشطة مع وسم مشترك محدّد.</translation>
+        <translation>هذا القيد يضمن لكل الطلاب ألا يكون لهم عددا أقل من أدنى حصص يومية لأنشطة مع وسم النشاط محدّد.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteacheractivitytagminhoursdailyform_template.ui" line="42"/>
@@ -30266,7 +30266,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4648"/>
         <source>Time constraint teacher max days per week broken for teacher: %1.</source>
-        <translation>قيد الزمن أقصى أيام في الأسبوع لمدرس تم كسره للمدرس: %1.</translation>
+        <translation>قيد الزمن أقصى أيام في الأسبوع للمدرس تم كسره للمدرس: %1.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4650"/>
@@ -30315,7 +30315,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="14"/>
         <source>Constraints teacher max days per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation>قيود أقصى أيام في الأسبوع لمدرس</translation>
+        <translation>قيود أقصى أيام في الأسبوع للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxdaysperweekform_template.ui" line="28"/>
@@ -30523,7 +30523,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5233"/>
         <source>Teacher max gaps per week</source>
-        <translation>أقصى فجوات في الأسبوع لمدرس</translation>
+        <translation>أقصى فجوات في الأسبوع للمدرس</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5234"/>
@@ -30587,7 +30587,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5305"/>
         <source>Time constraint teacher max gaps per week broken for teacher: %1, conflicts factor increase=%2</source>
-        <translation>قيد الزمن أقصى فجوات في الأسبوع لمدرس قد تم كسره للمدرس: %1، زيادة معامل التعارضات=%2</translation>
+        <translation>قيد الزمن أقصى فجوات في الأسبوع للمدرس قد تم كسره للمدرس: %1، زيادة معامل التعارضات=%2</translation>
     </message>
 </context>
 <context>
@@ -30631,7 +30631,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="14"/>
         <source>Constraints teacher max gaps per week</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation>قيود أقصى فجوات في الأسبوع لمدرس</translation>
+        <translation>قيود أقصى فجوات في الأسبوع للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachermaxgapsperweekform_template.ui" line="28"/>
@@ -32729,7 +32729,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4028"/>
         <source>Teachers for activity tag %1 have max %2 hours continuously</source>
-        <translation>كل مدرسين الوسم المشترك %1 لهم %2 حصص متصلة</translation>
+        <translation>كل مدرسين وسم النشاط %1 لهم %2 حصص متصلة</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4029"/>
@@ -32745,7 +32745,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4038"/>
         <source>All teachers, for an activity tag, must respect the maximum number of hours continuously</source>
-        <translation>كل المدرسين من أجل وسم مشترك، يجب احترام أقصى عدد من الحصص المتصلة</translation>
+        <translation>كل المدرسين من أجل وسم النشاط، يجب احترام أقصى عدد من الحصص المتصلة</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4039"/>
@@ -32755,7 +32755,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4040"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4041"/>
@@ -32777,7 +32777,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/engine/timeconstraint.cpp" line="4102"/>
         <location filename="../src/engine/timeconstraint.cpp" line="4130"/>
         <source>Time constraint teachers activity tag %1 max %2 hours continuously broken for teacher %3, on day %4, length=%5.</source>
-        <translation>قيد الزمن لمدرسين، وسم مشترك %1، أقصى %2 حصص متصلة تم كسره للمدرس %3، في يوم %4، طول=%5.</translation>
+        <translation>قيد الزمن لمدرسين، وسم النشاط %1، أقصى %2 حصص متصلة تم كسره للمدرس %3، في يوم %4، طول=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4113"/>
@@ -32832,7 +32832,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Constraints teachers activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation>قيود أقصى حصص متصلة مع وسم مشترك للمدرسين</translation>
+        <translation>قيود أقصى حصص متصلة مع وسم النشاط للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="90"/>
@@ -32867,7 +32867,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="26"/>
         <source>This constraint ensures that all teachers do not have more than max hours continuously of activities with the specified activity tag</source>
-        <translation>هذا القيد يضمن لكل المدرسين ألا يكون لهم أكثر من أقصى حصص متصلة لأنشطة مع وسم مشترك محدّد</translation>
+        <translation>هذا القيد يضمن لكل المدرسين ألا يكون لهم أكثر من أقصى حصص متصلة لأنشطة مع وسم النشاط محدّد</translation>
     </message>
 </context>
 <context>
@@ -32881,7 +32881,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16696"/>
         <source>Teachers for activity tag %1 have max %2 hours daily</source>
-        <translation>مدرسون من أجل وسم مشترك %1 لهم أقصى %2 حصص في اليوم</translation>
+        <translation>مدرسون من أجل وسم النشاط %1 لهم أقصى %2 حصص في اليوم</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16692"/>
@@ -32903,7 +32903,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16707"/>
         <source>All teachers, for an activity tag, must respect the maximum number of hours daily</source>
-        <translation>كل المدرسين من أجل وسم مشترك، يجب عليهم احترام أقصى عدد من الحصص اليومية</translation>
+        <translation>كل المدرسين من أجل وسم النشاط، يجب عليهم احترام أقصى عدد من الحصص اليومية</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16708"/>
@@ -32913,7 +32913,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16709"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16710"/>
@@ -32934,7 +32934,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16767"/>
         <source>Time constraint teachers activity tag %1 max %2 hours daily broken for teacher %3, on day %4, length=%5.</source>
-        <translation>قيد الزمن، أقصى حصص يومية لمدرس مع وسم مشترك %1، أقصى %2 حصص يومية تم كسره للمدرس %3، في يوم %4، طول=%5.</translation>
+        <translation>قيد الزمن، أقصى حصص يومية لمدرس مع وسم النشاط %1، أقصى %2 حصص يومية تم كسره للمدرس %3، في يوم %4، طول=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="16777"/>
@@ -32983,12 +32983,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Constraints teachers activity tag max hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation>قيود أقصى حصص يومية مع وسم مشترك للمدرسين</translation>
+        <translation>قيود أقصى حصص يومية مع وسم النشاط للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="26"/>
         <source>This constraint ensures that all teachers do not have more than max hours daily of activities with the specified activity tag.</source>
-        <translation>هذا القيد يضمن لكل المدرسين ألا يكون لهم أكثر من أقصى حصص يومية لأنشطة مع وسم مشترك محدّد.</translation>
+        <translation>هذا القيد يضمن لكل المدرسين ألا يكون لهم أكثر من أقصى حصص يومية لأنشطة مع وسم النشاط محدّد.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagmaxhoursdailyform_template.ui" line="42"/>
@@ -33047,7 +33047,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17714"/>
         <source>Teachers for activity tag %1 have min %2 hours daily</source>
-        <translation>مدرسون من أجل وسم مشترك %1 لهم أدنى %2 حصص في اليوم</translation>
+        <translation>مدرسون من أجل وسم النشاط %1 لهم أدنى %2 حصص في اليوم</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17715"/>
@@ -33075,7 +33075,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17726"/>
         <source>All teachers, for an activity tag, must respect the minimum number of hours daily</source>
-        <translation>كل المدرسين من أجل وسم مشترك، يجب عليهم احترام أدنى عدد من الحصص اليومية</translation>
+        <translation>كل المدرسين من أجل وسم النشاط، يجب عليهم احترام أدنى عدد من الحصص اليومية</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17727"/>
@@ -33085,7 +33085,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17728"/>
         <source>Activity tag=%1</source>
-        <translation>الوسم المشترك=%1</translation>
+        <translation>وسم النشاط=%1</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17729"/>
@@ -33111,7 +33111,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17789"/>
         <source>Time constraint teachers activity tag %1 min %2 hours daily broken for teacher %3, on day %4, length=%5.</source>
-        <translation>قيد الزمن، أدنى حصص يومية للمدرسين مع وسم مشترك %1، أدنى %2 حصص يومية تم كسره للمدرس %3، في يوم %4، طول=%5.</translation>
+        <translation>قيد الزمن، أدنى حصص يومية للمدرسين مع وسم النشاط %1، أدنى %2 حصص يومية تم كسره للمدرس %3، في يوم %4، طول=%5.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="17799"/>
@@ -33160,12 +33160,12 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
         <location filename="../src/interface/constraintteachersactivitytagminhoursdailyform_template.ui" line="14"/>
         <source>Constraints teachers activity tag min hours daily</source>
         <extracomment>This is the title of the dialog in which you see the list of all constraints of this type</extracomment>
-        <translation>قيود أدنى حصص يومية مع وسم مشترك للمدرسين</translation>
+        <translation>قيود أدنى حصص يومية مع وسم النشاط للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagminhoursdailyform_template.ui" line="26"/>
         <source>This constraint ensures that all teachers do not have less than min hours daily of activities with the specified activity tag.</source>
-        <translation>هذا القيد يضمن لكل الطلاب ألا يكون لهم عددا أقل من أدنى حصص يومية لأنشطة مع وسم مشترك محدّد.</translation>
+        <translation>هذا القيد يضمن لكل الطلاب ألا يكون لهم عددا أقل من أدنى حصص يومية لأنشطة مع وسم النشاط محدّد.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintteachersactivitytagminhoursdailyform_template.ui" line="42"/>
@@ -33753,7 +33753,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4889"/>
         <source>Time constraint teachers max days per week broken for teacher: %1.</source>
-        <translation>قيد الزمن أقصى أيام في الأسبوع لمدرسين تم كسره للمدرس: %1.</translation>
+        <translation>قيد الزمن أقصى أيام في الأسبوع للمدرسين تم كسره للمدرس: %1.</translation>
     </message>
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="4891"/>
@@ -34040,7 +34040,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/timeconstraint.cpp" line="5093"/>
         <source>Time constraint teachers max gaps per week broken for teacher: %1, conflicts factor increase=%2</source>
-        <translation>قيد الزمن أقصى فجوات في الأسبوع لمدرسين قد تم كسره للمدرس: %1، زيادة معامل التعارضات=%2</translation>
+        <translation>قيد الزمن أقصى فجوات في الأسبوع للمدرسين قد تم كسره للمدرس: %1، زيادة معامل التعارضات=%2</translation>
     </message>
 </context>
 <context>
@@ -35954,7 +35954,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintthreeactivitiesgroupedform_template.ui" line="135"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -36161,7 +36161,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constrainttwoactivitiesconsecutiveform_template.ui" line="135"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -36369,7 +36369,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constrainttwoactivitiesgroupedform_template.ui" line="135"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -36571,7 +36571,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedform_template.ui" line="119"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -36753,7 +36753,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedifsamedayform_template.ui" line="119"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/constrainttwoactivitiesorderedifsamedayform_template.ui" line="139"/>
@@ -37112,7 +37112,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/engine/export.cpp" line="605"/>
         <source>%1 activity tags exported.</source>
-        <translation>%1 وسوم مشتركة تم تصديرها.</translation>
+        <translation>%1 وسوم النشاط تم تصديرها.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="607"/>
@@ -37271,7 +37271,7 @@ Import of data will be easier with these settings.</source>
         <location filename="../src/engine/export.cpp" line="1189"/>
         <location filename="../src/engine/export.cpp" line="1199"/>
         <source>There are subactivities which were modified separately - so the components had different values for subject, activity tags, teachers, students or number of students from the representative subactivity. The export was done, but it is not very accurate.</source>
-        <translation>إنها الأنشطة الفرعية التي تم تغييرها بشكل منفصل - فالعناصر لها قيم مختلفة من مادة، وسم مشترك، مدرسين، طلاب أو عدد الطلاب من النشاط الممثلة. التصدير قد تم، لكنه ليس دقيقا.</translation>
+        <translation>إنها الأنشطة الفرعية التي تم تغييرها بشكل منفصل - فالعناصر لها قيم مختلفة من مادة، وسم النشاط، مدرسين، طلاب أو عدد الطلاب من النشاط الممثلة. التصدير قد تم، لكنه ليس دقيقا.</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="1079"/>
@@ -37308,7 +37308,7 @@ Import of data will be easier with these settings.</source>
     <message>
         <location filename="../src/engine/export.cpp" line="1083"/>
         <source>different activity tags</source>
-        <translation>وسوم مشتركة أخرى</translation>
+        <translation>وسوم أخرى</translation>
     </message>
     <message>
         <location filename="../src/engine/export.cpp" line="1087"/>
@@ -38081,12 +38081,12 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2217"/>
         <source>Enable activity tag max hours daily:</source>
-        <translation>تفعيل أقصى حصص يومية لوسم مشترك:</translation>
+        <translation>تفعيل أقصى حصص يومية مع وسم النشاط:</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2219"/>
         <source>This will enable the menu for 4 constraints: teacher(s) or students (set) activity tag max hours daily. These 4 constraints are good, but not perfect and may bring slow down of generation or impossible timetables if used unproperly. Select only if you know what you&apos;re doing.</source>
-        <translation>هذا سيفعل قائمة من 4 قيود: أقصى حصص يومية مدرس(مدرسون) أو الطلاب(مجموعة) وسم مشترك. هذه القيود الأربعة هي جيدة، لكن غير مثالية و قد تجعل الانتاج بطيئا أو جداول زمنية مستحيلة إذا ما استخدمت بشكل غير صحيح. اختر فقط إذا كنت تعرف ماتفعل.</translation>
+        <translation>هذا سيفعل قائمة من 4 قيود: أقصى حصص يومية مدرس(مدرسون) أو الطلاب(مجموعة) وسم النشاط. هذه القيود الأربعة هي جيدة، لكن غير مثالية و قد تجعل الانتاج بطيئا أو جداول زمنية مستحيلة إذا ما استخدمت بشكل غير صحيح. اختر فقط إذا كنت تعرف ماتفعل.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2222"/>
@@ -38284,7 +38284,7 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/fetmainform.cpp" line="4528"/>
         <location filename="../src/interface/fetmainform.cpp" line="4543"/>
         <source>You have no activity tags defined in your data.</source>
-        <translation>لا يوجد لديك وسم مشترك معرف في قاعدة بياناتك.</translation>
+        <translation>لا يوجد لديك وسم النشاط معرف في قاعدة بياناتك.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4683"/>
@@ -38431,7 +38431,7 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/fetmainform.cpp" line="4758"/>
         <source>Print activities tags will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation>طباعة الوسوم المشتركة ستكون %1</translation>
+        <translation>طباعة وسوم النشاط ستكون %1</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4758"/>
@@ -38452,7 +38452,7 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/fetmainform.cpp" line="4764"/>
         <source>Enable activity tag min hours daily will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation>تفعيل العدد الأدنى للحصص اليومية لوسم مشترك سوف تكون %1</translation>
+        <translation>تفعيل العدد الأدنى للحصص اليومية مع وسم النشاط سوف تكون %1</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4770"/>
@@ -38969,7 +38969,7 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2230"/>
         <source>If you use a not perfect constraint (activity tag max hours daily or students max gaps per day), you&apos;ll get a warning before generating. Uncheck this option to get rid of that warning (it is recommended to keep the warning).</source>
-        <translation>إذا استخدمت قيدا غير مثالي ( أقصى حصص يومية مع وسم مشترك أو أقصى فجوات يومية لطلاب )، سوف تحصل على تحذير قبل الانتاج. ألغ تحديد هذا الخيار للتخلص من هذا التحذير (من المستحسن الابقاء على التحذير).</translation>
+        <translation>إذا استخدمت قيدا غير مثالي ( أقصى حصص يومية مع وسم النشاط أو أقصى فجوات يومية لطلاب )، سوف تحصل على تحذير قبل الانتاج. ألغ تحديد هذا الخيار للتخلص من هذا التحذير (من المستحسن الابقاء على التحذير).</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4686"/>
@@ -39052,7 +39052,7 @@ Please stop simulation before this.</source>
         <location filename="../src/interface/fetmainform.cpp" line="4761"/>
         <source>Enable activity tag max hours daily will be %1</source>
         <comment>%1 is true or false</comment>
-        <translation>تفعيل العدد الاقصى للحصص اليومية لوسم مشترك سوف تكون %1</translation>
+        <translation>تفعيل العدد الاقصى للحصص اليومية مع وسم النشاط سوف تكون %1</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4767"/>
@@ -39073,7 +39073,7 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4848"/>
         <source>activity tags</source>
-        <translation>الوسوم المشتركة</translation>
+        <translation>وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4853"/>
@@ -39495,7 +39495,7 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1168"/>
         <source>Subjects and activity tags</source>
-        <translation>مواد و وسوم مشتركة</translation>
+        <translation>مواد و وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1482"/>
@@ -39565,22 +39565,22 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2319"/>
         <source>Max hours daily with an activity tag for a teacher</source>
-        <translation>أقصى حصص يومية مع وسم مشترك لمدرس</translation>
+        <translation>أقصى حصص يومية مع وسم النشاط لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2327"/>
         <source>Max hours daily with an activity tag for all teachers</source>
-        <translation>أقصى حصص يومية مع وسم مشترك لكل المدرسين</translation>
+        <translation>أقصى حصص يومية مع وسم النشاط لكل المدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2335"/>
         <source>Max hours daily with an activity tag for a students set</source>
-        <translation>أقصى حصص يومية مع وسم مشترك لمجموعة طلاب</translation>
+        <translation>أقصى حصص يومية مع وسم النشاط لمجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2343"/>
         <source>Max hours daily with an activity tag for all students</source>
-        <translation>أقصى حصص يومية مع وسم مشترك لكل الطلاب</translation>
+        <translation>أقصى حصص يومية مع وسم النشاط لكل الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2383"/>
@@ -39595,7 +39595,7 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2402"/>
         <source>Enable students max gaps per day</source>
-        <translation>تفعيل أقصىى فجوات يومية للطلاب</translation>
+        <translation>تفعيل أقصى فجوات يومية للطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2413"/>
@@ -39632,7 +39632,7 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1568"/>
         <source>Max days per week for a teacher</source>
-        <translation>أقصى أيام في الأسبوع لمدرس</translation>
+        <translation>أقصى أيام في الأسبوع للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1573"/>
@@ -39856,7 +39856,7 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1691"/>
         <source>Max gaps per week for a teacher</source>
-        <translation>أقصى فجوات في الأسبوع لمدرس</translation>
+        <translation>أقصى فجوات في الأسبوع للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1701"/>
@@ -39942,7 +39942,7 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1221"/>
         <source>Activity tags</source>
-        <translation>وسم مشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1696"/>
@@ -40059,12 +40059,12 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1867"/>
         <source>A subject+an activity tag have a preferred room</source>
-        <translation>قاعة مفضلة لمادة و وسم مشترك</translation>
+        <translation>قاعة مفضلة لمادة و وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1872"/>
         <source>A subject+an activity tag have a set of preferred rooms</source>
-        <translation>قاعات مفضلة لمادة ووسم مشترك</translation>
+        <translation>قاعات مفضلة لمادة مع وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1877"/>
@@ -40389,7 +40389,7 @@ G1 ستظهر مرتين في الجدول</translation>
         <location filename="../src/interface/fetmainform_template.ui" line="1528"/>
         <source>A set of activities occupies min time slots from selection</source>
         <extracomment>It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a minimum number of slots from those selected which can be occupied by the selected activities</extracomment>
-        <translation>مجموعة من الأنشطة تحتل أدنى فترات زمنية محددة</translation>
+        <translation>أنشطة تحتل أدنى فترات زمنية محددة</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1533"/>
@@ -40411,13 +40411,13 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1603"/>
         <source>A set of activity tags are not overlapping</source>
-        <translation>وسوم مشتركة ليست متداخلة</translation>
+        <translation>وسوم النشاط ليست متداخلة</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1641"/>
         <source>Activity ta&amp;gs</source>
         <extracomment>Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different</extracomment>
-        <translation>&amp;وسوم مشتركة</translation>
+        <translation>&amp;وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1762"/>
@@ -40444,7 +40444,7 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1952"/>
         <source>Max room changes per day for all students</source>
-        <translation>أقصى تغيير لقاعات في اليوم لكل طلاب</translation>
+        <translation>أقصى تغيير لقاعات في اليوم لكل الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1957"/>
@@ -40464,7 +40464,7 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1972"/>
         <source>Min gaps between room changes for all students</source>
-        <translation>أدنى فجوات بين تغيير القاعات لكل طلاب</translation>
+        <translation>أدنى فجوات بين تغيير القاعات لكل الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1977"/>
@@ -40519,7 +40519,7 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2082"/>
         <source>Import activity tags from CSV file</source>
-        <translation>استيراد وسوم مشتركة من ملف CSV</translation>
+        <translation>استيراد وسوم النشاط من ملف CSV</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2087"/>
@@ -40584,22 +40584,22 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2351"/>
         <source>Min hours daily with an activity tag for a teacher</source>
-        <translation>أدنى حصص يومية مع وسم مشترك لمدرس</translation>
+        <translation>أدنى حصص يومية مع وسم النشاط لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2359"/>
         <source>Min hours daily with an activity tag for all teachers</source>
-        <translation>أدنى حصص يومية مع وسم مشترك لكل المدرسين</translation>
+        <translation>أدنى حصص يومية مع وسم النشاط لكل المدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2367"/>
         <source>Min hours daily with an activity tag for a students set</source>
-        <translation>أدنى حصص يومية مع وسم مشترك لمجموعة طلاب</translation>
+        <translation>أدنى حصص يومية مع وسم النشاط لمجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2375"/>
         <source>Min hours daily with an activity tag for all students</source>
-        <translation>أدنى حصص يومية مع وسم مشترك لكل الطلاب</translation>
+        <translation>أدنى حصص يومية مع وسم النشاط لكل الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2424"/>
@@ -40697,7 +40697,7 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2603"/>
         <source>Print activity tags in timetables</source>
-        <translation>طباعة الوسوم المشتركة في الجدول</translation>
+        <translation>طباعة وسوم النشاط في الجدول</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2608"/>
@@ -40748,7 +40748,7 @@ G1 ستظهر مرتين في الجدول</translation>
         <location filename="../src/interface/fetmainform_template.ui" line="2701"/>
         <source>Warn activities not locked in time but locked in a virtual room + real rooms</source>
         <comment>It means FET will issue a warning at the beginning of generation if there are activities which are not locked in time but are locked in space in a virtual room, having also specified the real rooms of that virtual room. Try to keep the string as short as possible (it is a menu item).</comment>
-        <translation>حذار من الأنشطة غير مقفلة في الزمن لكن مقفلة في قاعة افتراضية + قاعات حقيقية</translation>
+        <translation>تحذير من الأنشطة غير مقفلة في الزمن لكن مقفلة في قاعة افتراضية + قاعات حقيقية</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2768"/>
@@ -40759,13 +40759,13 @@ G1 ستظهر مرتين في الجدول</translation>
         <location filename="../src/interface/fetmainform_template.ui" line="2773"/>
         <source>Lock all activities with a specified activity tag</source>
         <comment>It means lock all the activities which have attached a specified activity tag</comment>
-        <translation>قفل كل الأنشطة مع وسم مشترك معين</translation>
+        <translation>قفل كل الأنشطة مع وسم نشاط محدّد</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2778"/>
         <source>Unlock all activities with a specified activity tag</source>
         <comment>It means unlock all the activities which have attached a specified activity tag</comment>
-        <translation>فتح كل الأنشطة مع وسم مشترك معين</translation>
+        <translation>فتح كل الأنشطة مع وسم نشاط محدد</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2789"/>
@@ -40840,22 +40840,22 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2203"/>
         <source>Max hours continuously with an activity tag for a students set</source>
-        <translation>أقصى حصص متصلة مع وسم مشترك لمجموعة طلاب</translation>
+        <translation>أقصى حصص متصلة مع وسم النشاط لمجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2208"/>
         <source>Max hours continuously with an activity tag for all students</source>
-        <translation>أقصى حصص متصلة مع وسم مشترك وكل الطلاب</translation>
+        <translation>أقصى حصص متصلة مع وسم النشاط وكل الطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2213"/>
         <source>Max hours continuously with an activity tag for a teacher</source>
-        <translation>أقصى حصص متصلة مع وسم مشترك لمدرس</translation>
+        <translation>أقصى حصص متصلة مع وسم النشاط لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2218"/>
         <source>Max hours continuously with an activity tag for all teachers</source>
-        <translation>أقصى حصص متصلة مع وسم مشترك وكل المدرسين</translation>
+        <translation>أقصى حصص متصلة مع وسم النشاط وكل المدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1245"/>
@@ -40881,12 +40881,12 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2249"/>
         <source>An activity tag has a preferred room</source>
-        <translation>قاعة مفضلة لوسم مشترك</translation>
+        <translation>قاعة مفضلة لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2254"/>
         <source>An activity tag has a set of preferred rooms</source>
-        <translation>قاعات مفضلة لوسم مشترك</translation>
+        <translation>قاعات مفضلة لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="2259"/>
@@ -41705,7 +41705,7 @@ G1 ستظهر مرتين في الجدول</translation>
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
 
  Please modify your data accordingly and try again.</source>
-        <translation>لا يمكن مقاربة الحل للمجموعة الفرعية %1، لأنه يوجد الكثير من القيود من نوع &quot;أقصى حصص يومية مع وسم مشترك&quot; متعلقة بهذا الفوج، و التي لا يمكن اختصارها في قيدين من هذا النوع. قيدا &quot;أقصى حصص&quot; يمكن اختصارهما إلى قيد واحد إذا كان أقصى جصص منخفضا في القيد الأول و الوزن عاليا. من الممكن استخدام أي عدد من هذه القيود لفوج، لكن محصلتهم يجب أن تكون على أقصى تقدير قيدين اثنين(2) من نوع &quot;أقصى حصص يومية مع وسم مشترك.
+        <translation>لا يمكن مقاربة الحل للمجموعة الفرعية %1، لأنه يوجد الكثير من القيود من نوع &quot;أقصى حصص يومية مع وسم النشاط&quot; متعلقة بهذا الفوج، و التي لا يمكن اختصارها في قيدين من هذا النوع. قيدا &quot;أقصى حصص&quot; يمكن اختصارهما إلى قيد واحد إذا كان أقصى جصص منخفضا في القيد الأول و الوزن عاليا. من الممكن استخدام أي عدد من هذه القيود لفوج، لكن محصلتهم يجب أن تكون على أقصى تقدير قيدين اثنين(2) من نوع &quot;أقصى حصص يومية مع وسم النشاط.
 مثال: يُسمح لك باستخدام 3 قيود: 6 حصص 95%، 7حصص 100%، و 8 حصص 100%، و التي يمكن اختصارها في القيدين: 6 حصص 95%، 7 حصص 100%
 يرجى تعديل بياناتك وفقا لذلك ثم اعادة المحاولة مرة أخرى.</translation>
     </message>
@@ -41713,7 +41713,7 @@ G1 ستظهر مرتين في الجدول</translation>
         <location filename="../src/engine/generate_pre.cpp" line="1931"/>
         <source>Cannot optimize for subgroup %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100% which cannot be satisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5). Please correct and try again.</source>
         <comment>%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint</comment>
-        <translation>لا يمكن مقاربة الحل للمجموعة الفرعية %1، لأنه يوجد قيد أقصى %2 حصص يومي مع وسم مشترك %3 مع الوزن 100% و الذي لا يمكن ارضاؤه، باعتبار عدد الفترات المتاحة (%4) و العدد الاجمالي لمدة الأنشطة مع هذا الوسم المشترك (%5). يرجى التصحيح و المحاولة مرة أخرى.</translation>
+        <translation>لا يمكن مقاربة الحل للمجموعة الفرعية %1، لأنه يوجد قيد أقصى %2 حصص يومي مع وسم النشاط %3 مع الوزن 100% و الذي لا يمكن ارضاؤه، باعتبار عدد الفترات المتاحة (%4) و العدد الاجمالي لمدة الأنشطة مع وسم النشاط هذا (%5). يرجى التصحيح و المحاولة مرة أخرى.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2143"/>
@@ -41730,12 +41730,12 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2227"/>
         <source>Cannot optimize, because you have activity id = %1 with duration = %2 and a constraint teacher(s) activity tag max %3 hours daily with weight = 100% for the teacher %4 and activity tag %5. The activity&apos;s duration is higher than the teacher&apos;s max hours daily with this activity tag (which the activity contains). Please correct and try again.</source>
-        <translation>لا يمكن مقاربة الحل، لأنه يوجد لديك نشاط معرفه %1 مع مدة = %2 و قيد أقصى %3 حصص يومية مع وسم مشترك لمدرس(ين) مع الوزن = 100% للمدرس %4 و الوسم %5. مدة النشاط أكبر من أقصى حصص يومية مع هذا الوسم. يرجى التصحيح و المحاولة من جديد.</translation>
+        <translation>لا يمكن مقاربة الحل، لأنه يوجد لديك نشاط معرفه %1 مع مدة = %2 و قيد أقصى %3 حصص يومية مع وسم النشاط لمدرس(ين) مع الوزن = 100% للمدرس %4 و الوسم %5. مدة النشاط أكبر من أقصى حصص يومية مع هذا الوسم. يرجى التصحيح و المحاولة من جديد.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2253"/>
         <source>Cannot optimize, because you have activity id = %1 with duration = %2 and a constraint teacher(s) activity tag max %3 hours continuously with weight = 100% for the teacher %4 and activity tag %5. The activity&apos;s duration is higher than the teacher&apos;s max hours continuously with this activity tag (which the activity contains). Please correct and try again.</source>
-        <translation>لا يمكن مقاربة الحل، لأنه يوجد لديك نشاط معرفه %1 مع مدة = %2 و قيد أقصى %3 حصص متصلة مع وسم مشترك لمدرس(ين) مع الوزن = 100% للمدرس %4 و الوسم %5. مدة النشاط أكبر من أقصى حصص يومية مع هذا الوسم. يرجى التصحيح و المحاولة من جديد.</translation>
+        <translation>لا يمكن مقاربة الحل، لأنه يوجد لديك نشاط معرفه %1 مع مدة = %2 و قيد أقصى %3 حصص متصلة مع وسم النشاط لمدرس(ين) مع الوزن = 100% للمدرس %4 و الوسم %5. مدة النشاط أكبر من أقصى حصص يومية مع هذا الوسم. يرجى التصحيح و المحاولة من جديد.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2280"/>
@@ -41752,12 +41752,12 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2365"/>
         <source>Cannot optimize, because you have activity id = %1 with duration = %2 and a constraint students (set) activity tag max %3 hours daily with weight = 100% for the subgroup %4 and activity tag %5. The activity&apos;s duration is higher than the subgroup&apos;s max hours daily with this activity tag (which the activity contains). Please correct and try again.</source>
-        <translation>لا يمكن مقاربة الحل، لأنه يوجد لديك نشاط معرفه %1 مع مدة = %2 و قيد أقصى %3 حصص يومية مع وسم مشترك للطلاب(مجموعة) مع الوزن = 100% للمجموعة الفرعية %4 و الوسم %5. مدة النشاط أكبر من أقصى حصص يومية مع هذا الوسم. يرجى التصحيح و المحاولة من جديد.</translation>
+        <translation>لا يمكن مقاربة الحل، لأنه يوجد لديك نشاط معرفه %1 مع مدة = %2 و قيد أقصى %3 حصص يومية مع وسم النشاط للطلاب(مجموعة) مع الوزن = 100% للمجموعة الفرعية %4 و الوسم %5. مدة النشاط أكبر من أقصى حصص يومية مع هذا الوسم. يرجى التصحيح و المحاولة من جديد.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2391"/>
         <source>Cannot optimize, because you have activity id = %1 with duration = %2 and a constraint students (set) activity tag max %3 hours continuously with weight = 100% for the subgroup %4 and activity tag %5. The activity&apos;s duration is higher than the subgroup&apos;s max hours continuously with this activity tag (which the activity contains). Please correct and try again.</source>
-        <translation>لا يمكن مقاربة الحل، لأنه يوجد لديك نشاط معرفه %1 مع مدة = %2 و قيد أقصى %3 حصص متصلة مع وسم مشترك للطلاب(مجموعة) مع الوزن = 100% للمجموعة الفرعية %4 و الوسم %5. مدة النشاط أكبر من أقصى حصص متصلة مع هذا الوسم. يرجى التصحيح و المحاولة من جديد.</translation>
+        <translation>لا يمكن مقاربة الحل، لأنه يوجد لديك نشاط معرفه %1 مع مدة = %2 و قيد أقصى %3 حصص متصلة مع وسم النشاط للطلاب(مجموعة) مع الوزن = 100% للمجموعة الفرعية %4 و الوسم %5. مدة النشاط أكبر من أقصى حصص متصلة مع هذا الوسم. يرجى التصحيح و المحاولة من جديد.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2584"/>
@@ -41809,7 +41809,7 @@ G1 ستظهر مرتين في الجدول</translation>
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
 
  Please modify your data accordingly and try again.</source>
-        <translation>لا يمكن مقاربة الحل للمدرس %1، لأنه يوجد الكثير من القيود من نوع &quot;أقصى حصص يومية مع وسم مشترك&quot; متعلقة بهذا المدرس، و التي لا يمكن اختصارها في قيدين من هذا النوع. قيدا &quot;أقصى حصص&quot; يمكن اختصارهما إلى قيد واحد إذا كان أقصى حصص منخفضا في القيد الأول و الوزن عاليا. من الممكن استخدام أي عدد من هذه القيود لمدرس، لكن محصلتهم يجب أن تكون على أقصى تقدير قيدين اثنين(2) من نوع &quot;أقصى حصص يومية مع وسم مشترك.
+        <translation>لا يمكن مقاربة الحل للمدرس %1، لأنه يوجد الكثير من القيود من نوع &quot;أقصى حصص يومية مع وسم النشاط&quot; متعلقة بهذا المدرس، و التي لا يمكن اختصارها في قيدين من هذا النوع. قيدا &quot;أقصى حصص&quot; يمكن اختصارهما إلى قيد واحد إذا كان أقصى حصص منخفضا في القيد الأول و الوزن عاليا. من الممكن استخدام أي عدد من هذه القيود لمدرس، لكن محصلتهم يجب أن تكون على أقصى تقدير قيدين اثنين(2) من نوع &quot;أقصى حصص يومية مع وسم النشاط.
 مثال: يُسمح لك باستخدام 3 قيود: 6 حصص 95%، 7حصص 100%، و 8 حصص 100%، و التي يمكن اختصارها في القيدين: 6 حصص 95%، 7 حصص 100%
 يرجى تعديل بياناتك وفقا لذلك ثم اعادة المحاولة مرة أخرى.</translation>
     </message>
@@ -41817,7 +41817,7 @@ G1 ستظهر مرتين في الجدول</translation>
         <location filename="../src/engine/generate_pre.cpp" line="3600"/>
         <source>Cannot optimize for teacher %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100% which cannot be satisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5). Please correct and try again.</source>
         <comment>%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint</comment>
-        <translation>لا يمكن مقاربة الحل للمدرس %1، لأنه يوجد قيد أقصى %2 حصص يومي مع وسم مشترك %3 مع الوزن 100% و الذي لا يمكن ارضاؤه، باعتبار عدد الفترات المتاحة (%4) و العدد الاجمالي لمدة الأنشطة مع هذا الوسم المشترك (%5). يرجى التصحيح و المحاولة مرة أخرى.</translation>
+        <translation>لا يمكن مقاربة الحل للمدرس %1، لأنه يوجد قيد أقصى %2 حصص يومي مع وسم النشاط %3 مع الوزن 100% و الذي لا يمكن ارضاؤه، باعتبار عدد الفترات المتاحة (%4) و العدد الاجمالي لمدة الأنشطة مع وسم النشاط هذا (%5). يرجى التصحيح و المحاولة مرة أخرى.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="3816"/>
@@ -42021,7 +42021,7 @@ G1 ستظهر مرتين في الجدول</translation>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6646"/>
         <source>%1 cannot be respected because the activity with id=%2 refers to %3 activity tags from this constraint. Each activity should refer to at most one activity tag from each separated constraint of this type.</source>
-        <translation>%1 لا يمكن احترامه لأن النشاط مع المعرف id=%2 يشير إلى %3 وسوم مشتركة من هذا القيد. كل نشاط يجب أن يشير على الأكثر إلى وسم مشترك واحد من كل قيد منفصل من هذا النوع.</translation>
+        <translation>%1 لا يمكن احترامه لأن النشاط مع المعرف id=%2 يشير إلى %3 وسوم النشاط من هذا القيد. كل نشاط يجب أن يشير على الأكثر إلى وسم النشاط واحد من كل قيد منفصل من هذا النوع.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="6932"/>
@@ -42136,7 +42136,7 @@ Please correct and try again.</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1075"/>
         <source>Your data contains constraints students max gaps per day and/or activity tag max/min hours daily.</source>
-        <translation>بياناتك تشتمل على قيود &quot;أقصى فجوات في اليوم و / أو أقصى حصص يومية مع وسم مشترك.</translation>
+        <translation>بياناتك تشتمل على قيود &quot;أقصى فجوات في اليوم و / أو أقصى حصص يومية مع وسم النشاط.</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="1081"/>
@@ -42247,7 +42247,7 @@ Please correct and try again.</source>
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
 
  Please modify your data accordingly and try again.</source>
-        <translation>لا يمكن مقاربة الحل للمجموعة الفرعية %1، لأنه يوجد الكثير من القيود من نوع &quot;أقصى حصص يومية متصلة&quot; تتعلق به و التي لا يمكن اختصارها في قيدين من هذا النوع. قيدا &quot;أقصى حصص&quot; يمكن اختصارهما إلى قيد واحد إذا كان أقصى جصص منخفضا في القيد الأول و الوزن عاليا. من الممكن استخدام أي عدد من هذه القيود لفوج، لكن محصلتهم يجب أن تكون على أقصى تقدير قيدين اثنين(2) من نوع &quot;أقصى حصص يومية مع وسم مشترك.
+        <translation>لا يمكن مقاربة الحل للمجموعة الفرعية %1، لأنه يوجد الكثير من القيود من نوع &quot;أقصى حصص يومية متصلة&quot; تتعلق به و التي لا يمكن اختصارها في قيدين من هذا النوع. قيدا &quot;أقصى حصص&quot; يمكن اختصارهما إلى قيد واحد إذا كان أقصى جصص منخفضا في القيد الأول و الوزن عاليا. من الممكن استخدام أي عدد من هذه القيود لفوج، لكن محصلتهم يجب أن تكون على أقصى تقدير قيدين اثنين(2) من نوع &quot;أقصى حصص يومية مع وسم النشاط.
 مثال: يُسمح لك باستخدام 3 قيود: 6 حصص 95%، 7حصص 100%، و 8 حصص 100%، و التي يمكن اختصارها في القيدين: 6 حصص 95%، 7 حصص 100%
 يرجى تعديل بياناتك وفقا لذلك ثم اعادة المحاولة مرة أخرى.</translation>
     </message>
@@ -42285,18 +42285,18 @@ Please correct and try again.</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2676"/>
         <source>Cannot optimize for students, because the constraint of type activity tag min hours daily relating to students has no 100% weight. Please modify your data accordingly and try again</source>
-        <translation>لا يمكن مقاربة الحل للطلاب، بسبب القيد من نوع &quot;أدنى حصص يومية مع وسم مشترك متعلق بطلاب ليس لهه 100% كوزن نسبي. يرجى تعديل بياناتك و اعادة المحاولة مرة أخرى</translation>
+        <translation>لا يمكن مقاربة الحل للطلاب، بسبب القيد من نوع &quot;أدنى حصص يومية مع وسم النشاط متعلق بطلاب ليس لهه 100% كوزن نسبي. يرجى تعديل بياناتك و اعادة المحاولة مرة أخرى</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2694"/>
         <source>Cannot optimize for students, because the constraint of type activity tag min hours daily relating to students set %1 has no 100% weight. Please modify your data accordingly and try again</source>
-        <translation>لا يمكن مقاربة الحل للطلاب، بسبب القيد من نوع &quot;أدنى حصص يومية مع وسم مشترك متعلق بمجموعة الطلاب %1 ليس لها 100% كوزن نسبي. يرجى تعديل بياناتك و اعادة المحاولة مرة أخرى</translation>
+        <translation>لا يمكن مقاربة الحل للطلاب، بسبب القيد من نوع &quot;أدنى حصص يومية مع وسم النشاط متعلق بمجموعة الطلاب %1 ليس لها 100% كوزن نسبي. يرجى تعديل بياناتك و اعادة المحاولة مرة أخرى</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2734"/>
         <location filename="../src/engine/generate_pre.cpp" line="2777"/>
         <source>Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to subgroup %3 requires at least %4 hours of work per week, but the activities of this subgroup with this activity tag sum to only %5 hours per week (the constraint does not allow empty days). Please correct and try again</source>
-        <translation>لا يمكن مقاربة الحل، بسبب القيد من نوع أدنى %2 حصص يومية مع وسم مشترك %1 يشير إلى المجموعة الفرعية %3 تحتاح على الأقل %4 حصص في الأسبوع، لكن الأنشطة لهذه المجموعة الفرعية مع هذا الوسم المشترك تصل إلى %5 حصص فقط في الأسبوع (القيد لا يسمح بأيام فارغة). يرجى التصحيح والمحاولة من جديد</translation>
+        <translation>لا يمكن مقاربة الحل، بسبب القيد من نوع أدنى %2 حصص يومية مع وسم النشاط %1 يشير إلى المجموعة الفرعية %3 تحتاح على الأقل %4 حصص في الأسبوع، لكن الأنشطة لهذه المجموعة الفرعية مع وسم النشاط هذا تصل إلى %5 حصص فقط في الأسبوع (القيد لا يسمح بأيام فارغة). يرجى التصحيح والمحاولة من جديد</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="2859"/>
@@ -42334,7 +42334,7 @@ Please correct and try again.</source>
  Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%, which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%
 
  Please modify your data accordingly and try again.</source>
-        <translation>لا يمكن مقاربة الحل للمدرس %1، لأنه يوجد الكثير من القيود من نوع &quot;أقصى حصص يومية متصلة&quot; تتعلق به و التي لا يمكن اختصارها في قيدين من هذا النوع. قيدا &quot;أقصى حصص&quot; يمكن اختصارهما إلى قيد واحد إذا كان أقصى جصص منخفضا في القيد الأول و الوزن عاليا. من الممكن استخدام أي عدد من هذه القيود لمدرس، لكن محصلتهم يجب أن تكون على أقصى تقدير قيدين اثنين(2) من نوع &quot;أقصى حصص متصلة مع وسم مشترك.
+        <translation>لا يمكن مقاربة الحل للمدرس %1، لأنه يوجد الكثير من القيود من نوع &quot;أقصى حصص يومية متصلة&quot; تتعلق به و التي لا يمكن اختصارها في قيدين من هذا النوع. قيدا &quot;أقصى حصص&quot; يمكن اختصارهما إلى قيد واحد إذا كان أقصى جصص منخفضا في القيد الأول و الوزن عاليا. من الممكن استخدام أي عدد من هذه القيود لمدرس، لكن محصلتهم يجب أن تكون على أقصى تقدير قيدين اثنين(2) من نوع &quot;أقصى حصص متصلة مع وسم النشاط.
 
 مثال: يُسمح لك باستخدام 3 قيود: 6 حصص 95%، 7حصص 100%، و 8 حصص 100%، و التي يمكن اختصارها في القيدين: 6 حصص 95%، 7 حصص 100%
 
@@ -42353,18 +42353,18 @@ Please correct and try again.</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="3956"/>
         <source>Cannot optimize for teachers, because the constraint of type activity tag min hours daily relating to teachers has no 100% weight. Please modify your data accordingly and try again</source>
-        <translation>لا يمكن مقاربة الحل للمدرسين بسبب القيد من نوع &quot;أدنى حصص يومية مع وسم مشترك يشير إلى مدرسين ليس لهم 100% كوزن نسبي. يرجى تعديل بياناتك وفق ذلك و اعادة المحاولة مرة أخرى</translation>
+        <translation>لا يمكن مقاربة الحل للمدرسين بسبب القيد من نوع &quot;أدنى حصص يومية مع وسم النشاط يشير إلى مدرسين ليس لهم 100% كوزن نسبي. يرجى تعديل بياناتك وفق ذلك و اعادة المحاولة مرة أخرى</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="3974"/>
         <source>Cannot optimize for teachers, because the constraint of type activity tag min hours daily relating to teacher %1 has no 100% weight. Please modify your data accordingly and try again</source>
-        <translation>لا يمكن مقاربة الحل للمدرسين بسبب القيد من نوع &quot;أدنى حصص يومية مع وسم مشترك يشير إلى المدرس %1 ليس له 100% كوزن نسبي. يرجى تعديل بياناتك وفق ذلك و اعادة المحاولة مرة أخرى</translation>
+        <translation>لا يمكن مقاربة الحل للمدرسين بسبب القيد من نوع &quot;أدنى حصص يومية مع وسم النشاط يشير إلى المدرس %1 ليس له 100% كوزن نسبي. يرجى تعديل بياناتك وفق ذلك و اعادة المحاولة مرة أخرى</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="4014"/>
         <location filename="../src/engine/generate_pre.cpp" line="4057"/>
         <source>Cannot optimize, because the constraint of type activity tag %1 min %2 hours daily relating to teacher %3 requires at least %4 hours of work per week, but the activities of this teacher with this activity tag sum to only %5 hours per week (the constraint does not allow empty days). Please correct and try again</source>
-        <translation>لا يمكن مقاربة الحل، بسبب القيد من نوع أدنى %2 حصص يومية مع وسم مشترك %1 يشير إلى المدرس %3 يحتاح على الأقل %4 حصص عمل في الأسبوع، لكن الأنشطة لهذا المدرس مع هذا الوسم المشترك تصل إلى %5 حصص فقط في الأسبوع (القيد لا يسمح بأيام فارغة). يرجى التصحيح والمحاولة من جديد</translation>
+        <translation>لا يمكن مقاربة الحل، بسبب القيد من نوع أدنى %2 حصص يومية مع وسم النشاط %1 يشير إلى المدرس %3 يحتاح على الأقل %4 حصص عمل في الأسبوع، لكن الأنشطة لهذا المدرس مع  وسم النشاط هذا تصل إلى %5 حصص فقط في الأسبوع (القيد لا يسمح بأيام فارغة). يرجى التصحيح والمحاولة من جديد</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="4923"/>
@@ -42855,7 +42855,7 @@ Please correct and try again.</source>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="10897"/>
         <source>Activity tags: %1</source>
-        <translation>وسوم مشتركة: %1</translation>
+        <translation>وسوم النشاط: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/generate_pre.cpp" line="10899"/>
@@ -43084,7 +43084,7 @@ Please correct and try again.</source>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="103"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/groupactivitiesininitialorderitemsform_template.ui" line="123"/>
@@ -43797,7 +43797,7 @@ Please correct and try again.</source>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="96"/>
         <source>Virtually unlimited number of activity tags</source>
-        <translation>عدد غير محدود تقريبا من الوسوم المشتركة</translation>
+        <translation>عدد غير محدود تقريبا من وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="98"/>
@@ -43848,7 +43848,7 @@ If you input only partial data, please use with caution. If you add a constraint
 
 ج: يمكن تحديد عدد أقصى بدايات في الحصة الثانية (بداية في الحصة الثالثة غير ممكن).
 
-إذا قمت بإدخال غير مكتمل للبيانات، يرجى استخدامه بحذر. إذا أضفت القيد مع العدد 0 كأقصى حد للبدايات في الحصة الثانية: يمكنك على سبيل المثال أن تدخل فقط 4+4 أنشطة في كل ساعة لمادة الرياضيات مع نفس المدرس لمجموعتين من الطلاب (كل تجمع من 4 أنشطة يجب أن يكون متوازنا - في أيام مختلفة). وبالتالي يظهر بوضوح أنه لايمكنك وضع كل الأنشطة 8 في 5 أيام في الأسبوع من دون كسر قيد &apos;البكور&apos; للطلاب، و إلاّ ستحصل على جدول زمني غير ممكن.</translation>
+إذا قمت بإدراج غير مكتمل للبيانات، يرجى استخدامه بحذر. إذا أضفت القيد مع العدد 0 كأقصى حد للبدايات في الحصة الثانية: يمكنك على سبيل المثال أن تدخل فقط 4+4 أنشطة في كل ساعة لمادة الرياضيات مع نفس المدرس لمجموعتين من الطلاب (كل تجمع من 4 أنشطة يجب أن يكون متوازنا - في أيام مختلفة). وبالتالي يظهر بوضوح أنه لايمكنك وضع كل الأنشطة 8 في 5 أيام في الأسبوع من دون كسر قيد &apos;البكور&apos; للطلاب، و إلاّ ستحصل على جدول زمني غير ممكن.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="143"/>
@@ -43951,7 +43951,7 @@ A: Yes, you can add several students sets (subgroups, groups or years) and sever
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="244"/>
         <source>If you need to balance 3 activities in a 5 days week, you can add, in the new version 5.5.8 and higher, directly from the add activity dialog, 2 constraints. You just have to input min days 2, and FET will ask if you want to add a second constraint with min days 1. This way, you can ensure that the activities are balanced better (at least one day apart, usually 2 days apart)</source>
-        <translation>إذا كنت بحاجة إلى تحقيق التوازن 3 أنشطة في 5 أيام من الأسبوع، في النسخة الجديدة 5.5.8 و أعلى، مباشرة من مربع الحوار إضافة نشاط، يمكنك إضافة قيدين(2). لديك فقط لإدخال أدنى أيام= 2، و بعد ذلك سوف يسألك FET إذا كنت ترغب في إضافة قيد ثانٍ مع أدنى أيام= 1. بهذه الطريقة، يمكنك التأكد من أن الأنشطة متوازنة أفضل (على الأقل يوم واحد يفصل بينها وعادة ما تحصل على يومين فاصلين)</translation>
+        <translation>إذا كنت بحاجة إلى تحقيق التوازن 3 أنشطة في 5 أيام من الأسبوع، في النسخة الجديدة 5.5.8 و أعلى، مباشرة من مربع الحوار إضافة نشاط، يمكنك إضافة قيدين(2). لديك فقط لإدراج أدنى أيام= 2، و بعد ذلك سوف يسألك FET إذا كنت ترغب في إضافة قيد ثانٍ مع أدنى أيام= 1. بهذه الطريقة، يمكنك التأكد من أن الأنشطة متوازنة أفضل (على الأقل يوم واحد يفصل بينها وعادة ما تحصل على يومين فاصلين)</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="253"/>
@@ -44018,7 +44018,7 @@ Starting means that an activity may only start at these periods.
 Time slots means more restrictive, that activity may only start and end and take place in these intervals (if activity has duration 2 and on Monday is allowed 8:00, 9:00 and 10:00, then activity can only start at 8:00 or 9:00).</source>
         <translation>س: مساعدة حول قيد أنشطة لها فترات زمنية مفضلة أو أوقات زمنية مفضلة (مجموعة أنشطة لها مجموعة أوقات بدء مفضلة أو مجموعة فترات زمنية مفضلة)
 
-ج: يمكنك تحديد مجموعة من الأنشطة بواسطة اختيار مدرس (إذا كان فارغا - كل المرسين)، مجموعة طلاب (إذا كان فارغا - كل الطلاب)، مادة (إذاكان فارغا - كل المواد) و وسم مشترك (إذا كان فارغا - كل الوسوم) و مجموعة من الفترات الزمنية التي يُسمح بها.
+ج: يمكنك تحديد مجموعة من الأنشطة بواسطة اختيار مدرس (إذا كان فارغا - كل المرسين)، مجموعة طلاب (إذا كان فارغا - كل الطلاب)، مادة (إذاكان فارغا - كل المواد) و وسم النشاط (إذا كان فارغا - كل الوسوم) و مجموعة من الفترات الزمنية التي يُسمح بها.
 
 وقت البدء يعني أن النشاط قد لا ينطلق إلا في هذه الأوقات فقط.
 
@@ -44090,7 +44090,7 @@ Another thing: if you have 1 or 2 lessons per week for a subject, say biology, a
 
 ج: اختيار رقم العنصر لأنشطة معينة (لنقل، إذا كان النشاط مقسما إلى 5 أنشطة في الأسبوع، لديك العناصر 1، 2، 3، 4، 5). فقط العنصر المختار من هذا النشاط المقسم (عنصر النشاط الموافق) الذي سوف يتم تقييده.
 
-سوف تقوم ايضا بتحديد مجموعة الأنشطة الفرعية و ذلك باختيار مدرس (إذاكان فارغا - كل المدرسين)، مجموعة الطلاب (إذاكان فارغا - كل الطلاب)، مادة (إذاكان فارغا - كل المواد) و وسم مشترك (إذاكان فارغا - كل الوسوم) و مجموعة من الفواصل الزمنية التي يُسمح بها.
+سوف تقوم ايضا بتحديد مجموعة الأنشطة الفرعية و ذلك باختيار مدرس (إذاكان فارغا - كل المدرسين)، مجموعة الطلاب (إذاكان فارغا - كل الطلاب)، مادة (إذاكان فارغا - كل المواد) و وسم النشاط (إذاكان فارغا - كل الوسوم) و مجموعة من الفواصل الزمنية التي يُسمح بها.
 
 أوقات بدء تعني أن النشاط قد ينطلق فقط في هذه الفواصل الزمنية.
 
@@ -44156,7 +44156,7 @@ Or add a dummy activity for this teacher, split into 2 per week, min days = 2, w
         <location filename="../src/interface/helpfaqform.cpp" line="713"/>
         <location filename="../src/interface/helpfaqform.cpp" line="767"/>
         <source>(This FAQ entry applies also to the constraints of type activity tag min hours daily:)</source>
-        <translation>(هذا الإدخال الخاص بالأسئلة المتكررة والشائعة ينطبق كذلك على القيود من نوع أدنى حصص يومية مع وسم مشترك:)</translation>
+        <translation>(هذا الإدراج الخاص بالأسئلة المتكررة والشائعة ينطبق كذلك على القيود من نوع أدنى حصص يومية مع وسم النشاط:)</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="751"/>
@@ -44263,7 +44263,7 @@ Add another constraint: min 1 day between activities with id-s 2 and 3, consecut
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="889"/>
         <source>A: You can use a constraint of type activities occupy min time slots from selection or use in an inverted way a constraint of type activities occupy max time slots from selection (the exact menu entries are &apos;A set of activities occupies min/max time slots from selection&apos;). It is not known exactly if the inverted constraint with &apos;max&apos; is more efficient than the direct constraint with &apos;min&apos;. Press these constraints&apos; Help buttons for more details.</source>
-        <translation>ج: يمكن استخدام القيد من نوع أنشطة تحتل أدنى فترات زمنية محددة  أو استخدام كبديل عن ذلك القيد أنشطة تحتل أقصى فترات زمنية محددة ( القائمة الدقيقى للإدخالات  هي &apos;مجموعة من الأنشطة تحتل أدنى/أقصى فترات زمنية محددة&apos;). ليس معلوما بدقة  إذا كان القيد المقلوب مع &quot;أقصى&quot; هو أكثر كفاءة من القيد المباشر مع &quot;أدنى&quot;. اضغط على أزرار تعليمات هذه القيود لمزيد من التفاصيل.</translation>
+        <translation>ج: يمكن استخدام القيد من نوع أنشطة تحتل أدنى فترات زمنية محددة  أو استخدام كبديل عن ذلك القيد أنشطة تحتل أقصى فترات زمنية محددة ( القائمة الدقيقى للإدراجات  هي &apos;مجموعة من الأنشطة تحتل أدنى/أقصى فترات زمنية محددة&apos;). ليس معلوما بدقة  إذا كان القيد المقلوب مع &quot;أقصى&quot; هو أكثر كفاءة من القيد المباشر مع &quot;أدنى&quot;. اضغط على أزرار تعليمات هذه القيود لمزيد من التفاصيل.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="898"/>
@@ -44348,7 +44348,7 @@ Add another constraint: min 1 day between activities with id-s 2 and 3, consecut
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="1016"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your institution data into a file in .fet format.</source>
-        <translation>ربما البديل لتقسيم العام إلى العديد من الفئات / المجموعات الفرعية هو إدخال فردي للطلاب كمجموعات فرعية في FET، و إضافة إلى كل مجموعة المجموعة الفرعية التي توافقه. ولكن هذا من الصعب القيام به من واجهة FET - ربما يكون الحل لاستخدام أداة تلقائية لتحويل بيانات المنشأة الخاص بك إلى ملف على هيئة &quot;.fet.&quot;.</translation>
+        <translation>ربما البديل لتقسيم العام إلى العديد من الفئات / المجموعات الفرعية هو إدراج فردي للطلاب كمجموعات فرعية في FET، و إضافة إلى كل مجموعة المجموعة الفرعية التي توافقه. ولكن هذا من الصعب القيام به من واجهة FET - ربما يكون الحل لاستخدام أداة تلقائية لتحويل بيانات المنشأة الخاص بك إلى ملف على هيئة &quot;.fet.&quot;.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="1029"/>
@@ -44373,14 +44373,14 @@ Add another constraint: min 1 day between activities with id-s 2 and 3, consecut
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="1054"/>
         <source>Q: How does one use the constraint of type activity tags not overlapping?</source>
-        <translation>كيف يمكن للمرء استخدام قيود وسوم مشتركة ليست متداخلة؟</translation>
+        <translation>كيف يمكن للمرء استخدام قيود وسوم النشاط ليست متداخلة؟</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="1058"/>
         <source>This constraint was suggested by Henrique Belo, who gave the following example: You can use this constraint for instance if you have young and old students with Sport activities, and you don&apos;t want young students having the Sport activities at the same time with the old students. You then need to add an activity tag, say SY, to all the young students&apos; Sport activities, and another activity tag, say SO, to all the old students&apos; Sport activities, and add a constraint activity tags not overlapping for the activity tags SY and SO. You can even create more categories of students&apos; age, like SO1, SO2, SO3, and SO4, and add a single constraint activity tags not overlapping, so that at a single time slot only a single activity tag out of these four will be present in the timetable.</source>
         <translation>هذا القيد تم اقتراحه من طرف
 Henrique Belo
-الذي أعطى المثال التالي: يمكنك استخدام هذا القيد على سبيل المثال إذا كان لديك طلاب صغار وكبارًا يمارسون أنشطة رياضية ، ولا تريد أن يحصل الطلاب الصغار على أنشطة رياضية في نفس الوقت مع الطلاب الكبار. ستحتاج بعد ذلك إلى إضافة وسم مشترك على سبيل المثال ، SY إلى جميع الأنشطة الرياضية للطلاب الصغار ، وعلامة نشاط أخرى ، مثل SO ، لجميع الأنشطة الرياضية للطلاب الكبار ، وإضافة القيد الزمني وسوم مشتركة ليست متداخلة مع الوسمين SY و SO. يمكنك حتى إنشاء المزيد من فئات عمر الطلاب ، مثل SO1 و SO2 و SO3 و SO4 ، وإضافة قيد واحد وسوم مشتركة ليست متداخلة ، بحيث في مجال زمني واحد سوف يظهر فقط وسم مشترك واحد من بين هذه الوسوم الربعة في الجدول الزمني.</translation>
+الذي أعطى المثال التالي: يمكنك استخدام هذا القيد على سبيل المثال إذا كان لديك طلاب صغار وكبارًا يمارسون أنشطة رياضية ، ولا تريد أن يحصل الطلاب الصغار على أنشطة رياضية في نفس الوقت مع الطلاب الكبار. ستحتاج بعد ذلك إلى إضافة وسم النشاط على سبيل المثال ، SY إلى جميع الأنشطة الرياضية للطلاب الصغار ، وعلامة نشاط أخرى ، مثل SO ، لجميع الأنشطة الرياضية للطلاب الكبار ، وإضافة القيد الزمني وسوم النشاط ليست متداخلة مع الوسمين SY و SO. يمكنك حتى إنشاء المزيد من فئات عمر الطلاب ، مثل SO1 و SO2 و SO3 و SO4 ، وإضافة قيد واحد وسوم النشاط ليست متداخلة ، بحيث في مجال زمني واحد سوف يظهر فقط وسم النشاط واحد من بين هذه الوسوم الربعة في الجدول الزمني.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="1065"/>
@@ -44482,7 +44482,7 @@ Henrique Belo
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="860"/>
         <source>Add time constraint: activities with all teachers, all students, all subjects, activity tag = &apos;Start hour&apos; have a set of preferred starting times: Monday 8.00, Monday 9.00, ...</source>
-        <translation>أضف قيدا زمنيا: أنشطة مع كل المدرسين، كل الطلاب، كل المواد، وسم مشترك = &quot;ساعة البدء&quot; لها مجموعة أوقات بدء مفضلة : الاثنين 8:00، الاثنين 9:00، ...</translation>
+        <translation>أضف قيدا زمنيا: أنشطة مع كل المدرسين، كل الطلاب، كل المواد، وسم النشاط = &quot;ساعة البدء&quot; لها مجموعة أوقات بدء مفضلة : الاثنين 8:00، الاثنين 9:00، ...</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="47"/>
@@ -44535,10 +44535,10 @@ A: - Students - organized into sets (years (or forms, or classes), containing gr
 ج: - الطلاب(الطلاب) - ينظمون في مجموعات (أعوام (أو دفعات، أو مجموعات)، تحتوي على مجموعات، مجموعات فرعية).
 - مدرسون.
 - مواد (أسماء للدروس الممكنة، على سبيل المثال الرياضيات، الفيزياء، وما إلى ذلك).
-- وسوم مشتركة (يمكنك استخدامها أم لا، والخيار لك: نوع النشاط: مختبر، درس، ندوة، أو أي معلومات أخرى تتعلق بالنشاط).
+- وسوم النشاط (يمكنك استخدامها أو لا، والخيار لك: نوع النشاط: مختبر، درس، ندوة، أو أي معلومات أخرى تتعلق بالنشاط).
 - قاعات (حجرات الدراسة، أو فصول دراسية).
 - البنايات.
-- الأنشطة: اقتران واحد أو أكثر من المدرسين ، مادة و واحدة أو أكثر من مجموعات الطلاب(الطلاب). وعادة ما يسمى هذا بالطبع، درس (أو محاضرة)، نشاط قراءة، مخبر وهلم جرا. يمكن أن يكون للنشاط على سبيل الاختيار وسم مشترك، لمساعدتك في بعض القيود.
+- الأنشطة: اقتران واحد أو أكثر من المدرسين ، مادة و واحدة أو أكثر من مجموعات الطلاب(الطلاب). وعادة ما يسمى هذا بالطبع، درس (أو محاضرة)، نشاط قراءة، مخبر وهلم جرا. يمكن أن يكون للنشاط على سبيل الاختيار وسم النشاط، لمساعدتك في بعض القيود.
 - القيود. ويمكن أن تكون: القيود الزمنية (بالإشارة إلى اليوم و الساعة(الحصة) المخصصين) أو قيود المكان (بالإشارة إلى تخصيص القاعات). هذه القيود المختلفة لديها وزن نسبي من 0.0% إلى 100.0%. 100% يعني أن القيد سوف يكون دائما محترماً وإذا كان هذا القيد مستحيلا، FET لن يكون قادراً على إنتاج جدول زمني.</translation>
     </message>
     <message>
@@ -44674,7 +44674,7 @@ When seeing the students statistics, probably the most useful are for subgroups.
 
 الاحصاءات هامة لمراجعة البيانات قبل انتاج الجدول الزمني.
 
-عند مشاهدة إحصاءات الطلاب، و ربما الاحصاءات الأكثر فائدة هي تلك التي تخص المجموعات الفرعية. يجب أن يكون لكل مجموعة فرعية عددا معقولا من الحصص، وإذا واجهتك مجموعات فرعية مع حصص قليلة جدا، مثل 2 في الأسبوع، ربما كنت قد أسأت فهم ترميز FET. كل مجموعة فرعية هي مستقلة عن غيرها، و ينبغي أن يكون لها عدد حصص في الأسبوع على مقربة من متوسط جميع المجموعات الفرعية. لا تقم بإدخال مجموعات فرعية فارغة مع عدد قليل من الأنشطة.</translation>
+عند مشاهدة إحصاءات الطلاب، و ربما الاحصاءات الأكثر فائدة هي تلك التي تخص المجموعات الفرعية. يجب أن يكون لكل مجموعة فرعية عددا معقولا من الحصص، وإذا واجهتك مجموعات فرعية مع حصص قليلة جدا، مثل 2 في الأسبوع، ربما كنت قد أسأت فهم ترميز FET. كل مجموعة فرعية هي مستقلة عن غيرها، و ينبغي أن يكون لها عدد حصص في الأسبوع على مقربة من متوسط جميع المجموعات الفرعية. لا تقم بإدراج مجموعات فرعية فارغة مع عدد قليل من الأنشطة.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="413"/>
@@ -44876,7 +44876,7 @@ There is only a small problem: A2 cannot be put in the last period. To correct t
 
 لنفترض أن لديك النشاطين 1 و 2. أضف نشاطا تخيليا 3 (لا مدرسين، لا طلاب) مدته ساعة واحدة. أضف قيد نشاطان متتاليان، A2، و A3 حيث A2 يتبع A3. ثم أضف قيد أنشطة ليست متداخلة، A1 و A3.
 
-هناك مشكلة صغيرة فقط: A2 لا يمكن وضعها في الفترة الأخيرة. لتصحيح ذلك: زيادة عدد الساعات مع 1 و تقييد جميع الأنشطة الحقيقية (دون النشاط التخيلي A3) كي تجري في الفترات الأولى. يمكنك القيام بذلك عن طريق إضافة وسم مشترك إلى A1 و A2 اسمه &quot;تبكير&quot;، و وسم مشترك إلى A3 المسمى بأي اسم تشاء، و اضافة قيد أنشطة لها فترات زمنية مفضلة للوسم &quot;تبكير&quot; لتكون في أول  (n-1) فترة من فترات كل يوم.</translation>
+هناك مشكلة صغيرة فقط: A2 لا يمكن وضعها في الفترة الأخيرة. لتصحيح ذلك: زيادة عدد الساعات مع 1 و تقييد جميع الأنشطة الحقيقية (دون النشاط التخيلي A3) كي تجري في الفترات الأولى. يمكنك القيام بذلك عن طريق إضافة وسم النشاط إلى A1 و A2 اسمه &quot;تبكير&quot;، و وسم النشاط إلى A3 المسمى بأي اسم تشاء، و اضافة قيد أنشطة لها فترات زمنية مفضلة للوسم &quot;تبكير&quot; لتكون في أول  (n-1) فترة من فترات كل يوم.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="544"/>
@@ -45006,7 +45006,7 @@ Since I started working on our school&apos;s timetable I had a problem with a sp
 A: Define activity tag &apos;Difficult&apos; and add it to all MA, PH and CH lessons. Then add constraint maximum 1 (or 2) hours continuously for all students and an activity tag &apos;Difficult&apos;. Please take care if you may have double lessons.</source>
         <translation>س: أريد أن أعرف المواد الصعبة (الرياضيات و الفيزياء و الكيمياء) وأريد من الطلاب أن لا يكون لهم أكثر من 1 (أو بديلا آخر 2) من المواد الصعبة في صف واحد.
 
-ج: أنشئ وسما وسمه &apos;صعب&apos; ثم اجعل بداخل هذا القيد كل أنشطة الرياضيات و الفيزيا و الكيمياء. ثم أضف القيد &quot;أقصى حصص متصلة مع وسم مشترك و كل الطلاب&quot; و امنحه القيمة 1(أو 2). يرجى توخي الحذر إذا كان لديك دروسا مزدوجة.</translation>
+ج: أنشئ وسما وسمه &apos;صعب&apos; ثم اجعل بداخل هذا القيد كل أنشطة الرياضيات و الفيزيا و الكيمياء. ثم أضف القيد &quot;أقصى حصص متصلة مع وسم النشاط و كل الطلاب&quot; و امنحه القيمة 1(أو 2). يرجى توخي الحذر إذا كان لديك دروسا مزدوجة.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="684"/>
@@ -45054,35 +45054,35 @@ Conclusion: if, for the ATS, the ratio &apos;tag duration&apos;/&apos;total dura
 So, it is a very bad idea to make all activities (of a teacher or students set) have an activity tag and add constraint teacher(s) or students (set) activity tag max hours daily. You should use in this case constraint teacher(s) or students (set) max hours daily.
 
 Probably, in practice this problem will not appear and you need not to worry. But theoretically it exists.</source>
-        <translation>السؤال 1/25 سبتمبر 2009: ملاحظة حول القيد أقصى حصص يومية مع وسم مشترك للطلاب(مجموعة) او مدرس(ين):
+        <translation>السؤال 1/25 سبتمبر 2009: ملاحظة حول القيد أقصى حصص يومية مع وسم النشاط للطلاب(مجموعة) او مدرس(ين):
 
 هذا القيد قد تم تنفيذه بشكل صحيح و يعمل جيدا، و لكنه غير مثالي، مما يعني أنه في الحالات غير العادية و المتطرفة، الوقت اللازم لانتاج جدول زمني قد يطول أو قد يكون طويلا للغاية أثر مما هو ضروري حقيقة. لا بد أن تمنح لبرنامج FET يدا للمساعدة في مثل هذه الحالات المتطرفة.
 
 ترميز: 
 ATS = affected teacher or students set
-تعني مجمموعات الطلاب أو المدرسين المتأثرين (الموجودين ضمن) بهذا القيد؛ أقصى حصص يومية مع وسم مشترك ( المشكل لا يظهر بالنسبة للمدرسين أو مجموعات الطلاب غير المتأثرة ، التي هي غير موجودة ضمن قيد أقصى حصص يومية مع وسم مشترك)
+تعني مجمموعات الطلاب أو المدرسين المتأثرين (الموجودين ضمن) بهذا القيد؛ أقصى حصص يومية مع وسم النشاط ( المشكل لا يظهر بالنسبة للمدرسين أو مجموعات الطلاب غير المتأثرة ، التي هي غير موجودة ضمن قيد أقصى حصص يومية مع وسم النشاط)
 
 في الحالات المتطرفة، انتاج جدول زمني قد يطول أو يطول للغاية أكثر مما ينبغي حقيقة. هذه الحالات تتعلق بالظروف حيث تكون فيها المدة الاجمالية للأنشطة ذات الوسم المحدد (ATS) هي مرتفعة بالمقارنة مع العدد الاجمالي لحصص كل أنشطة ATS، بالإضافة إلى شروط أخرى لديك في بياناتك. إذا كانت نسبة مدة أنشطة ATS مع هذا الوسم إلى المدة الاجمالية لأنشطة ATS هي أعلى من 0.50 - 0.75 أو قيمة طبيعية، و كنت تستعمل قيودا للتحكم في عدد الفجوات أو البدء المبكر لمجموعة ATS، و عدد الحصص اليومية هو أعلى من الحصص الممكنة لمجموعة ATS، فإن سرعة الانتاج قد تكون أبطأ أو أبطأمما ينبغي.
 
-في هذه الحالات، يُنصح لك باستخدام قيود لمدرس(ون) أو (مجموعة) لطلاب أقصى حصص يومية لِ ATS (دون وسم مشترك)، أو قيود أوقات غير متاحة لهم في الفترات التي تكون بشكل واضح مستحيلة.
+في هذه الحالات، يُنصح لك باستخدام قيود لمدرس(ون) أو (مجموعة) لطلاب أقصى حصص يومية لِ ATS (دون وسم النشاط)، أو قيود أوقات غير متاحة لهم في الفترات التي تكون بشكل واضح مستحيلة.
 
-على سبيل المثال، إذا كانت لمجموعة الطلاب S 20 ساعة لأنشطة مع وسم مشترك و 4 ساعات أخرى لأنشطة بدون وسم مشترك (هذه المجموعة لديها في المجموع 24 ساعة ، النسبة هي 20/24=0.80)، و لدى هذه المجموعة 0 فجوة في الأسبوع و 0 بداية خلال الحصة الثانية و كذلك عدد الساعات في اليوم هو واسع، لنقل 12. إذن إضافة قيد الطلاب أقصى 4 ساعات يومية مع وسم مشترك - وحده - ليس جيدا كفاية (وقت انتاج جدول زمني قد يطول أو يطول للغاية أكثر مما هو ضروري). الحل الأفضل الي ستحتاجه يتمثل كذلك في إضافة قيد للطلاب أقصى 5 ساعات يومية(إذا كان ذلك ممكنا) و /أو جعل الفترات المتأخرة غير متاحة للطلاب(إنها طريقة لتوجيه FET نحو الحل)، أو البحث عن وسائل أخرى أفضل لتعويض هذا الظرف.
+على سبيل المثال، إذا كانت لمجموعة الطلاب S 20 ساعة لأنشطة مع وسم النشاط و 4 ساعات أخرى لأنشطة بدون وسم النشاط (هذه المجموعة لديها في المجموع 24 ساعة ، النسبة هي 20/24=0.80)، و لدى هذه المجموعة 0 فجوة في الأسبوع و 0 بداية خلال الحصة الثانية و كذلك عدد الساعات في اليوم هو واسع، لنقل 12. إذن إضافة قيد الطلاب أقصى 4 ساعات يومية مع وسم النشاط - وحده - ليس جيدا كفاية (وقت انتاج جدول زمني قد يطول أو يطول للغاية أكثر مما هو ضروري). الحل الأفضل الي ستحتاجه يتمثل كذلك في إضافة قيد للطلاب أقصى 5 ساعات يومية(إذا كان ذلك ممكنا) و /أو جعل الفترات المتأخرة غير متاحة للطلاب(إنها طريقة لتوجيه FET نحو الحل)، أو البحث عن وسائل أخرى أفضل لتعويض هذا الظرف.
 
 خلاصة: إذا كان، لمجموعة ATS، النسبة &quot;مدة الوسم / المدة الاجمالية&quot; تتجاوز 0.50 - 0.75 و كنت تستخدم ، لمجموعة ATS، قيودا للفجوات و البدء المبكر و لمجموعة ATS و عدد الفترات المتاحة في الأسبوع يتجاوز بكثير العدد الاجمالي لساعات العمل في الأسبوع لمجموعة ATS ، إذن قد تحتاج لمعالجة هذا المشكل (إضافة قيود لِ ATS أقصى حصص يومية أو أوقات غير متاحة أو البحث عن وسيلة أخرى لتوجيه FET).
 
-لذلك، إنها لفكرة سيئة جدا أن تجعل كل الأنشطة (لمدرس أو مجموعة طلاب) ذات وسم مشترك متضمنة داخل القيد أقصى حصص يومية مع وسم مشترك لمجموعة طلاب أو لمدرس(ين) . ينبغي في هذه الحالة استخدام القيد أقصى حصص يومية لمجموعة طلاب أو مدرس(ين).
+لذلك، إنها لفكرة سيئة جدا أن تجعل كل الأنشطة (لمدرس أو مجموعة طلاب) ذات وسم النشاط متضمنة داخل القيد أقصى حصص يومية مع وسم النشاط لمجموعة طلاب أو لمدرس(ين) . ينبغي في هذه الحالة استخدام القيد أقصى حصص يومية لمجموعة طلاب أو مدرس(ين).
 
 ربما، في الممارسة العملية لن تظهر هذه المشكلة، ولا داعي للقلق بشأنها. ولكن نظريا موجودة.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="769"/>
         <source>Q: Why the constraints activity tag max hours daily and students max gaps per day are disabled in the FET menu?</source>
-        <translation>س: لماذا قيود أقصى حصص يومية مع وسم مشترك و أقصى فجوات يومية هي معطلة من قائمة FET؟</translation>
+        <translation>س: لماذا قيود أقصى حصص يومية مع وسم النشاط و أقصى فجوات يومية هي معطلة من قائمة FET؟</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="771"/>
         <source>A: These 6 constraints (4 for activity tag and 2 for students max gaps per day) are the only ones which are not perfectly optimized in FET. For some combinations of constraints, they may slow down the generation or even make the timetable impossible. That is why they are not enabled by default. You need to activate them from the advanced settings menu. It is recommended to add such constraints at the end of your work, after you added all the other constraints and verified that your timetable is possible.</source>
-        <translation>ج: هذه القيود عددها 6 (4 مع وسم مشترك و 2 لأقصى فجوات يومية للطلاب) و هي قيود لم يتم تحسينها بشكل كامل في FET. مع اجتماع بعض القيود، قد يبطئ الانتاج أو حتى يجعل الجدول الزمني مستحيلا. و هذا هو السبب الذي يجعلها غير مفعلة بشكل افتراضي. تحتاج لتفعيلها من قائمة الاعدادات المتقدمة. من المستحسن اضافة هذا النوع من القيود في نهاية عملك؛ بعد اضافة كل القيود الأخرى و التحقق ما إذا كان الجدول الزمني ممكنا.</translation>
+        <translation>ج: هذه القيود عددها 6 (4 مع وسم النشاط و 2 لأقصى فجوات يومية للطلاب) و هي قيود لم يتم تحسينها بشكل كامل في FET. مع اجتماع بعض القيود، قد يبطئ الانتاج أو حتى يجعل الجدول الزمني مستحيلا. و هذا هو السبب الذي يجعلها غير مفعلة بشكل افتراضي. تحتاج لتفعيلها من قائمة الاعدادات المتقدمة. من المستحسن اضافة هذا النوع من القيود في نهاية عملك؛ بعد اضافة كل القيود الأخرى و التحقق ما إذا كان الجدول الزمني ممكنا.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="776"/>
@@ -45097,12 +45097,12 @@ ATS = affected teacher or students set
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="785"/>
         <source>Q: Why don&apos;t you implement the not perfect constraints (activity tag max hours daily and students max gaps per day) in a perfect way?</source>
-        <translation>س: لماذا لم تقم بتنفيذ القيود الغير المثالية (أقصى حصص يومية مع وسم مشترك و أقصى فجوات يومية للطلاب) بشكل أمثل؟</translation>
+        <translation>س: لماذا لم تقم بتنفيذ القيود الغير المثالية (أقصى حصص يومية مع وسم النشاط و أقصى فجوات يومية للطلاب) بشكل أمثل؟</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="787"/>
         <source>A: Activity tag max hours daily cannot be implemented perfectly, generation would take too much (because of complexity of checks). Students max gaps per day can be implemented perfectly, but it would change the algorithm for students a lot and I am afraid to change something that is working well. Very much testing would be needed, and I have not enough sample files. While changing the algorithm, it would be easy to make critical bugs and some files may not solve anymore.</source>
-        <translation>ج: أقصى حصص يومية مع وسم مشترك لا يمكن تنفيذها بشكل أمثل، الانتاج سوف يستغرق الكثير من الوقت (بسبب التحقيقات المعقدة). أقصى فجوات يومية للطلاب يمكن أن ينفذ بشكل أمثل، و لكن يمكن يغير كثيرا من الخوارمية للطلاب و أخشى أن أغير شيئا يعمل بشكل جيد. هنالك حاجة إلى اختبار هذه القيود كثيرا، وليس لدي ما يكفي من ملفات العينة. في حين تغيير الخوارزمية، يمكن بسهولة أن ينشئ أخطاء حرجة، وبعض الملفات قد لا تحل بعد الآن أبدا.</translation>
+        <translation>ج: أقصى حصص يومية مع وسم النشاط لا يمكن تنفيذها بشكل أمثل، الانتاج سوف يستغرق الكثير من الوقت (بسبب التحقيقات المعقدة). أقصى فجوات يومية للطلاب يمكن أن ينفذ بشكل أمثل، و لكن يمكن يغير كثيرا من الخوارمية للطلاب و أخشى أن أغير شيئا يعمل بشكل جيد. هنالك حاجة إلى اختبار هذه القيود كثيرا، وليس لدي ما يكفي من ملفات العينة. في حين تغيير الخوارزمية، يمكن بسهولة أن ينشئ أخطاء حرجة، وبعض الملفات قد لا تحل بعد الآن أبدا.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="798"/>
@@ -45149,7 +45149,7 @@ ATS = affected teacher or students set
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="51"/>
         <source>These are some small instructions which you have to follow in order to input a solvable data set.</source>
-        <translation>هذه بعض التعليمات الصغيرة التي يحسن بك اتباعها اثناء إدخال مجموعة بيانات قابلة للحل.</translation>
+        <translation>هذه بعض التعليمات الصغيرة التي يحسن بك اتباعها اثناء إدراج مجموعة بيانات قابلة للحل.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="53"/>
@@ -45219,7 +45219,7 @@ ATS = affected teacher or students set
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="74"/>
         <source>To specify that some activities must be in different days, the min days between activities must be 1. To specify that some activities must be separated even more, you can increase the min days to 2 (or even more, but probably not needed). Min days = 2 means that activities will be at least 2 days apart from each other (so there is another day between them). It is recommended that when inputting activities which are split into only 2 subactivities per week, add min days = 2. Or you can, after introducing the activities, to modify the min days value in more constraints at once by using the powerful filter in constraints min days between activities dialog (select old number of activities 2 and new min days 2, maybe also raise weight percentage to 100%).</source>
-        <translation>لتحديد أن بعض الأنشطة يجب أن تكون في أيام مختلفة، يجب أن يكون الحد الأدنى من الأيام بين الأنشطة 1. لتحديد أنه يجب فصل بعض الأنشطة ن بعضها أكثر من ذلك، يمكنك زيادة أدن أيام إلى 2 (أو أكثر، ولكن ربما لا حاجة). أدنى أيام = 2 يعني أن الأنشطة ستكون بيومين على الأقل بعيدة عن بعضها البعض ( ليكون هناك يوم آخر بينهما). فمن المستحسن أنه عند إدخال الأنشطة التي تنقسم إلى نشاطين فرعيين(2) فقط في الأسبوع، إضافة أدنى أيام = 2. أو يمكنك، بعد إدخال الأنشطة تعديل قيمة أدنى أيام  لمزيد من القيود في وقت واحد، و ذلك باستخدام مرشح(فلتر) قوي جدا في القيود أدنى أيام بين الأنشطة في مربع الحوار الخاص بالأنشطة (حدد العدد القديم من الأنشطة 2 والأيام الجديدة 2، وربما أيضا رفع نسبة الوزن إلى 100%).</translation>
+        <translation>لتحديد أن بعض الأنشطة يجب أن تكون في أيام مختلفة، يجب أن يكون الحد الأدنى من الأيام بين الأنشطة 1. لتحديد أنه يجب فصل بعض الأنشطة ن بعضها أكثر من ذلك، يمكنك زيادة أدن أيام إلى 2 (أو أكثر، ولكن ربما لا حاجة). أدنى أيام = 2 يعني أن الأنشطة ستكون بيومين على الأقل بعيدة عن بعضها البعض ( ليكون هناك يوم آخر بينهما). فمن المستحسن أنه عند إدراج الأنشطة التي تنقسم إلى نشاطين فرعيين(2) فقط في الأسبوع، إضافة أدنى أيام = 2. أو يمكنك، بعد إدراج الأنشطة تعديل قيمة أدنى أيام  لمزيد من القيود في وقت واحد، و ذلك باستخدام مرشح(فلتر) قوي جدا في القيود أدنى أيام بين الأنشطة في مربع الحوار الخاص بالأنشطة (حدد العدد القديم من الأنشطة 2 والأيام الجديدة 2، وربما أيضا رفع نسبة الوزن إلى 100%).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="94"/>
@@ -45244,7 +45244,7 @@ ATS = affected teacher or students set
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="114"/>
         <source>4) Constraint students (set) early: if you input only partial data, you might get impossible timetables (see FAQ for details).</source>
-        <translation>4) قيد الطلاب (مجموعة) يبدؤون باكرا: إذا قمت بإدخال بيانات جزئية فقط، قد تحصل على جداول زمنية مستحيلة (انظر الأسئلة الشائعة للحصول على التفاصيل).</translation>
+        <translation>4) قيد الطلاب (مجموعة) يبدؤون باكرا: إذا قمت بإدراج بيانات جزئية فقط، قد تحصل على جداول زمنية مستحيلة (انظر الأسئلة الشائعة للحصول على التفاصيل).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="116"/>
@@ -45264,7 +45264,7 @@ ATS = affected teacher or students set
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="137"/>
         <source>11) Each room can host a single activity at the same time. If you have a large room which can host more activities at the same time, you need to use a small trick. You can add more rooms representing this large room and add corresponding constraints preferred rooms. There is an entry in the FAQ about that.</source>
-        <translation>11) يمكن لكل قاعة استضافة نشاط واحد في نفس الوقت. إذا كان لديك قاعة كبيرة بامكانها استضافة المزيد من الأنشطة في نفس الوقت، تحتاج إلى استخدام خيلة صغيرة. يمكنك إضافة المزيد من القاعات التي تمثل هذه القاعة الكبيرة و إضافة القيود المناسبة &quot;قاعات مفضلة&quot;. يوجد إدخال في الأسئلة الشائعة حول هذا.</translation>
+        <translation>11) يمكن لكل قاعة استضافة نشاط واحد في نفس الوقت. إذا كان لديك قاعة كبيرة بامكانها استضافة المزيد من الأنشطة في نفس الوقت، تحتاج إلى استخدام خيلة صغيرة. يمكنك إضافة المزيد من القاعات التي تمثل هذه القاعة الكبيرة و إضافة القيود المناسبة &quot;قاعات مفضلة&quot;. يوجد إدراج في الأسئلة الشائعة حول هذا.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="141"/>
@@ -45279,12 +45279,12 @@ ATS = affected teacher or students set
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="158"/>
         <source>17) If you have activities split into 3 activities per week and need them to be not in 3 consecutive days, there is an entry in the FAQ explaining how to specify this (question Q1-5-September-2008).</source>
-        <translation>17) إذا كان لديك أنشطة تنقسم إلى 3 أنشطة في الأسبوع وتحتاج إلى أن تكون في 3 أيام متتالية، هناك إدخال في مساعدة / الأسئلة الشائعة، توضح كيفية تحديد هذا (السؤال Q1-5 سبتمبر 2008).</translation>
+        <translation>17) إذا كان لديك أنشطة تنقسم إلى 3 أنشطة في الأسبوع وتحتاج إلى أن تكون في 3 أيام متتالية، هناك إدراج في مساعدة / الأسئلة الشائعة، توضح كيفية تحديد هذا (السؤال Q1-5 سبتمبر 2008).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="161"/>
         <source>18) If you use the not perfect constraints activity tag max hours daily or students max gaps per day (there are 4+2 types of constraints in this category), use them with caution not to obtain an impossible timetable. If the timetable is impossible, it may be because of them. You are advised to add such constraints only in the end, after you are sure that the other constraints are good and the timetable is possible.</source>
-        <translation>18) إذا كنت تستخدم قيودا غير مثالية مثل أقصى حصص يومية لوسم مشترك أو أقصى فجوات يومية للطلاب(مجموعة) (هناك 4 + 2 نوع من القيود في هذه الفئة)، استخدامها بحذر لعدم الحصول على جدول زمني مستحيل. إذا كان الجدول الزمني مستحيلا، قد يكون ذلك بسببهم. يُنصح بإضافة هذا النوع من القيود فقط في النهاية، بعد التأكد من أن القيود الأخرى جيدة والجدول الزمني ممكن.</translation>
+        <translation>18) إذا كنت تستخدم قيودا غير مثالية مثل أقصى حصص يومية مع وسم النشاط أو أقصى فجوات يومية للطلاب(مجموعة) (هناك 4 + 2 نوع من القيود في هذه الفئة)، استخدامها بحذر لعدم الحصول على جدول زمني مستحيل. إذا كان الجدول الزمني مستحيلا، قد يكون ذلك بسببهم. يُنصح بإضافة هذا النوع من القيود فقط في النهاية، بعد التأكد من أن القيود الأخرى جيدة والجدول الزمني ممكن.</translation>
     </message>
 </context>
 <context>
@@ -45316,7 +45316,7 @@ ATS = affected teacher or students set
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="30"/>
         <source>The imperfect constraints are 10: students (set) max gaps per day and teacher(s) or students (set) activity tag max/min hours daily.</source>
-        <translation>القيود غير المثالية هي 10: قيود أقصى فجوات يومية لمجموعة طلاب/كل الطلاب أو قيود أقصى / أدنى حصص يومية مع وسم مشترك لمجموعة طلاب/كل الطلاب و لمدرس/كل المدرسين.</translation>
+        <translation>القيود غير المثالية هي 10: قيود أقصى فجوات يومية لمجموعة طلاب/كل الطلاب أو قيود أقصى / أدنى حصص يومية مع وسم النشاط لمجموعة طلاب/كل الطلاب و لمدرس/كل المدرسين.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="39"/>
@@ -45337,12 +45337,12 @@ ATS = affected teacher or students set
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="49"/>
         <source>Activity tag max/min hours daily: it is not fully optimized for this situation: if the ATS have max gaps constraints and the number of total available slots per week for the ATS is much larger than the working hours per week and the ATS has many activities with the specified activity tag (more than 0.5-0.75 of total hours). In such cases, a remedy may be to add constraint ATS max/min hours daily (without specifying an activity tag).</source>
         <comment>ATS means affected teacher or students set.</comment>
-        <translation>أقصى  أدنى حصص يومية مع وسم مشترك: لم يتم تحسينه بشكل كامل للوضع التالي: إذا كان ATS له قيود أقصى فجوات و العدد الاجمالي للفترات المتاحة في الأسبوع لِ ATS هو واسع للغاية من ساعات العمل في الأسبوع و ATS له أنشطة كثيرة مع وسم مشترك محدد (أكثر من نصف إلى ثلاث أرباع من العدد الكلي للساعات). في مثل هذه الحالات، قد يكون العلاج هو اضافة قيد أقصى / أدنى حصص يومية لِ ATS (بدون تحديد وسم مشترك).</translation>
+        <translation>أقصى  أدنى حصص يومية مع وسم النشاط: لم يتم تحسينه بشكل كامل للوضع التالي: إذا كان ATS له قيود أقصى فجوات و العدد الاجمالي للفترات المتاحة في الأسبوع لِ ATS هو واسع للغاية من ساعات العمل في الأسبوع و ATS له أنشطة كثيرة مع وسم النشاط محدد (أكثر من نصف إلى ثلاث أرباع من العدد الكلي للساعات). في مثل هذه الحالات، قد يكون العلاج هو اضافة قيد أقصى / أدنى حصص يومية لِ ATS (بدون تحديد وسم النشاط).</translation>
     </message>
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="54"/>
         <source>Read FAQ question 1/25 September 2009 for some more details about activity tag max/min hours daily constraint.</source>
-        <translation>اقرأ الأسئلة الشائعة من قائمة مساعدة السؤال 1/25 سبتمبر 2009 من أجل بعض التفاصيل الاضافية حول قيد &quot;أقصى / أدنى حصص يومية مع وسم مشترك&quot;.</translation>
+        <translation>اقرأ الأسئلة الشائعة من قائمة مساعدة السؤال 1/25 سبتمبر 2009 من أجل بعض التفاصيل الاضافية حول قيد &quot;أقصى / أدنى حصص يومية مع وسم النشاط&quot;.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="58"/>
@@ -45438,7 +45438,7 @@ ATS = affected teacher or students set
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="87"/>
         <source>It is IMPORTANT to remove redundant min days constraints after you inputted data and before generating (for instance, apply this after adding more constraints of type same starting time/day and before generating). Any modification of the min days constraints should be followed by this removal of redundant min days constraints (well, not all modifications, but better to do it than not). If you modify more constraints at once or apply the balancing of activities, it is important to remove redundant constraints. If you have no redundant constraints, it is no need to remove the redundant constraints, but better to check again than let some redundant constraints active.</source>
-        <translation>من المهم إزالة القيود أدنى أيام الزائدة عن الحاجة بعد إدخال البيانات وقبل انتاج الجداول الزمنية (على سبيل المثال، تطبيق هذا بعد إضافة المزيد من القيود من نوع نفس وقت البدء / يوم وقبل الانتاج). وينبغي أن يعقب أي تعديل لقیود أدنی أيام  إزالة القیود الزائدة أدنى أيام (حسنا، لیس جمیع التعدیلات، لكن القیام بذلك أفضل من عدم القيام به). إذا قمت بتعديل مزيد من القيود دفعة واحدة أو تطبيق موازنة بين الأنشطة فمن المهم إزالة القيود الزائدة عن الحاجة. إذا كان لم يكن لديك أي قيود زائدة عن الحاجة، فإنه ليس من الضروري إزالة القيود الزائدة عن الحاجة، ولكن التحقق من ذلك أفضل من السماح لبعض القيود الزائدة عن الحاجة ان تكون مفعلة.</translation>
+        <translation>من المهم إزالة القيود أدنى أيام الزائدة عن الحاجة بعد إدراج البيانات وقبل انتاج الجداول الزمنية (على سبيل المثال، تطبيق هذا بعد إضافة المزيد من القيود من نوع نفس وقت البدء / يوم وقبل الانتاج). وينبغي أن يعقب أي تعديل لقیود أدنی أيام  إزالة القیود الزائدة أدنى أيام (حسنا، لیس جمیع التعدیلات، لكن القیام بذلك أفضل من عدم القيام به). إذا قمت بتعديل مزيد من القيود دفعة واحدة أو تطبيق موازنة بين الأنشطة فمن المهم إزالة القيود الزائدة عن الحاجة. إذا كان لم يكن لديك أي قيود زائدة عن الحاجة، فإنه ليس من الضروري إزالة القيود الزائدة عن الحاجة، ولكن التحقق من ذلك أفضل من السماح لبعض القيود الزائدة عن الحاجة ان تكون مفعلة.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="95"/>
@@ -45895,7 +45895,7 @@ ATS = affected teacher or students set
     <message>
         <location filename="../src/engine/import.cpp" line="112"/>
         <source>Activity Tag</source>
-        <translation>وسم مشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="113"/>
@@ -45967,7 +45967,7 @@ ATS = affected teacher or students set
         <location filename="../src/engine/import.cpp" line="483"/>
         <location filename="../src/engine/import.cpp" line="1358"/>
         <source>activity tags</source>
-        <translation>الوسوم المشتركة</translation>
+        <translation>وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="487"/>
@@ -46442,7 +46442,7 @@ ATS = affected teacher or students set
         <location filename="../src/engine/import.cpp" line="1454"/>
         <location filename="../src/engine/import.cpp" line="2519"/>
         <source>%1 activity tags added. Please check activity tags form.</source>
-        <translation>الوسوم المشتركة %1 أُضيفت. يرجى مراجعة استمارة الوسوم المشتركة.</translation>
+        <translation>وسوم النشاط %1 أُضيفت. يرجى مراجعة استمارة وسوم النشاط.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2731"/>
@@ -46462,7 +46462,7 @@ ATS = affected teacher or students set
     <message>
         <location filename="../src/engine/import.cpp" line="2352"/>
         <source>It is recommended to import also teachers, rooms, buildings, subjects and activity tags before importing activities. It is not needed, because FET will automatically do it, but you can check the activity csv file by that.</source>
-        <translation>يوصى باستيراد أيضا المدرسين و القاعات و البنايات و المواد و الوسوم المشتركة قبل استيراد الأنشطة. لا حاجة في ذلك، لأن FET سوف يقوم بذلك تلقائيا، لكن يمكنك التحقق من النشاط من ملف csv بواسطة هذه الطريقة.</translation>
+        <translation>يوصى باستيراد أيضا المدرسين و القاعات و البنايات و المواد و وسوم النشاط قبل استيراد الأنشطة. لا حاجة في ذلك، لأن FET سوف يقوم بذلك تلقائيا، لكن يمكنك التحقق من النشاط من ملف csv بواسطة هذه الطريقة.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="2357"/>
@@ -46551,7 +46551,7 @@ is:</source>
     <message>
         <location filename="../src/engine/import.cpp" line="124"/>
         <source>Activity Tags</source>
-        <translation>الوسوم المشتركة</translation>
+        <translation>وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="508"/>
@@ -47088,7 +47088,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="169"/>
         <source>Activity tags</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform_template.ui" line="43"/>
@@ -47194,7 +47194,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="65"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesendstudentsdayform_template.ui" line="35"/>
@@ -47263,7 +47263,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="66"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform_template.ui" line="98"/>
@@ -47382,7 +47382,7 @@ Please stop simulation before this</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform_template.ui" line="66"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform_template.ui" line="98"/>
@@ -47504,7 +47504,7 @@ slots</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="72"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesnotoverlappingform_template.ui" line="52"/>
@@ -47605,7 +47605,7 @@ slots</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>وسم مشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxdifferentroomsform_template.ui" line="88"/>
@@ -47700,7 +47700,7 @@ slots</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="66"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymaxtimeslotsfromselectionform_template.ui" line="98"/>
@@ -47819,7 +47819,7 @@ slots</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform_template.ui" line="66"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesoccupymintimeslotsfromselectionform_template.ui" line="98"/>
@@ -47951,7 +47951,7 @@ slots</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="31"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform_template.ui" line="41"/>
@@ -48087,7 +48087,7 @@ slots</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="31"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform_template.ui" line="41"/>
@@ -48205,7 +48205,7 @@ slots</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>وسم مشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessameroomifconsecutiveform_template.ui" line="89"/>
@@ -48290,7 +48290,7 @@ slots</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingdayform_template.ui" line="36"/>
@@ -48386,7 +48386,7 @@ slots</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartinghourform_template.ui" line="36"/>
@@ -48482,7 +48482,7 @@ slots</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiessamestartingtimeform_template.ui" line="36"/>
@@ -48599,7 +48599,7 @@ slots</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivityendsstudentsdayform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -48864,7 +48864,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimeform_template.ui" line="102"/>
@@ -49005,7 +49005,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredstartingtimesform_template.ui" line="125"/>
@@ -49100,7 +49100,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="62"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredtimeslotsform_template.ui" line="125"/>
@@ -49137,7 +49137,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform.cpp" line="103"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform.cpp" line="111"/>
@@ -49171,12 +49171,12 @@ necessary 100% if list nonempty)</source>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Modify activity tag preferred room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل قاعة مفضلة لوسم مشترك</translation>
+        <translation>تعديل قاعة مفضلة لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -49201,7 +49201,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform.cpp" line="112"/>
         <source>Invalid selected activity tag</source>
-        <translation>اختيار غير صحيح للوسم المشترك</translation>
+        <translation>اختيار غير صحيح لوسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -49225,7 +49225,7 @@ necessary 100% if list nonempty)</source>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Modify activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل قاعات مفضلة لوسم مشترك</translation>
+        <translation>تعديل قاعات مفضلة لوسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="41"/>
@@ -49235,7 +49235,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="20"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagpreferredroomsform_template.ui" line="64"/>
@@ -49280,7 +49280,7 @@ necessary 100% if list nonempty)</source>
         <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform_template.ui" line="14"/>
         <source>Modify activity tags not overlapping</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل وسوم مشتركة ليست متداخلة</translation>
+        <translation>تعديل وسوم النشاط ليست متداخلة</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform_template.ui" line="28"/>
@@ -49290,7 +49290,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform_template.ui" line="57"/>
         <source>Activity tags</source>
-        <translation>وسوم مشتركة</translation>
+        <translation>وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitytagsnotoverlappingform_template.ui" line="70"/>
@@ -49526,7 +49526,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui" line="36"/>
@@ -49655,7 +49655,7 @@ necessary 100% if list nonempty)</source>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform_template.ui" line="36"/>
@@ -49779,7 +49779,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmingapsbetweenactivitiesform_template.ui" line="36"/>
@@ -49909,7 +49909,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform.cpp" line="82"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
 </context>
 <context>
@@ -49918,7 +49918,7 @@ force activities consecutive</source>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify students activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل أقصى عدد من الحصص المتصلة لوسم مشترك للطلاب</translation>
+        <translation>تعديل أقصى عدد من الحصص المتصلة لوسم النشاط للطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="148"/>
@@ -49938,7 +49938,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhourscontinuouslyform_template.ui" line="77"/>
@@ -49964,7 +49964,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform.cpp" line="82"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
 </context>
 <context>
@@ -49973,12 +49973,12 @@ force activities consecutive</source>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify students activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل أقصى حصص يومية لوسم مشترك للطلاب</translation>
+        <translation>تعديل أقصى حصص يومية لوسم النشاط للطلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagmaxhoursdailyform_template.ui" line="77"/>
@@ -50020,7 +50020,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagminhoursdailyform.cpp" line="84"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagminhoursdailyform.cpp" line="89"/>
@@ -50039,7 +50039,7 @@ force activities consecutive</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagminhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsactivitytagminhoursdailyform_template.ui" line="77"/>
@@ -50748,7 +50748,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform.cpp" line="108"/>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform.cpp" line="115"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmingapsbetweenorderedpairofactivitytagsform.cpp" line="120"/>
@@ -51009,7 +51009,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform.cpp" line="107"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
 </context>
 <context>
@@ -51033,7 +51033,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify students set activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل العدد الاقصى من الحصص المتصلة لطلاب ووسم مشترك</translation>
+        <translation>تعديل العدد الاقصى من الحصص المتصلة لطلاب مع وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
@@ -51043,7 +51043,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="57"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform_template.ui" line="106"/>
@@ -51075,7 +51075,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform.cpp" line="107"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
 </context>
 <context>
@@ -51084,7 +51084,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify students set activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل العدد الاقصى من الحصص اليومية للطلاب ووسم مشترك</translation>
+        <translation>تعديل العدد الاقصى من الحصص اليومية للطلاب مع وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="28"/>
@@ -51094,7 +51094,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="57"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagmaxhoursdailyform_template.ui" line="106"/>
@@ -51142,7 +51142,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagminhoursdailyform.cpp" line="109"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagminhoursdailyform.cpp" line="114"/>
@@ -51156,7 +51156,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagminhoursdailyform_template.ui" line="14"/>
         <source>Modify students set activity tag min hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل أدنى  حصص يومية مع وسم مشترك لمجموعة طلاب</translation>
+        <translation>تعديل أدنى  حصص يومية مع وسم النشاط لمجموعة طلاب</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagminhoursdailyform_template.ui" line="28"/>
@@ -51166,7 +51166,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagminhoursdailyform_template.ui" line="57"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetactivitytagminhoursdailyform_template.ui" line="106"/>
@@ -52137,7 +52137,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform.cpp" line="130"/>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform.cpp" line="137"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmingapsbetweenorderedpairofactivitytagsform.cpp" line="142"/>
@@ -52548,7 +52548,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="68"/>
         <source>Activity tag</source>
-        <translation>وسم مشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredstartingtimesform_template.ui" line="78"/>
@@ -52643,7 +52643,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="68"/>
         <source>Activity tag</source>
-        <translation>وسم مشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubactivitiespreferredtimeslotsform_template.ui" line="78"/>
@@ -52706,7 +52706,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform.cpp" line="129"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform.cpp" line="137"/>
@@ -52745,12 +52745,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="14"/>
         <source>Modify subject activity tag preferred room</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل قاعة مفضلة لمادة ووسم مشترك</translation>
+        <translation>تعديل قاعة مفضلة لمادة مع وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomform_template.ui" line="48"/>
         <source>Activity tag</source>
-        <translation>وسم مشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -52781,7 +52781,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform.cpp" line="133"/>
         <source>Invalid selected activity tag</source>
-        <translation>اختيار غير صحيح لوسم مشترك</translation>
+        <translation>اختيار غير صحيح لوسم النشاط</translation>
     </message>
 </context>
 <context>
@@ -52810,12 +52810,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="14"/>
         <source>Modify subject activity tag preferred rooms</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل قاعات مفضلة لمادة و وسم مشترك</translation>
+        <translation>تعديل قاعات مفضلة لمادة و وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="33"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintsubjectactivitytagpreferredroomsform_template.ui" line="54"/>
@@ -52989,7 +52989,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform.cpp" line="105"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
 </context>
 <context>
@@ -53013,12 +53013,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify teacher activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل أقصى حصص متصلة مع وسم مشترك لمدرس</translation>
+        <translation>تعديل أقصى حصص متصلة مع وسم النشاط لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhourscontinuouslyform_template.ui" line="57"/>
@@ -53059,7 +53059,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform.cpp" line="105"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
 </context>
 <context>
@@ -53068,12 +53068,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teacher activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل أقصى عدد من الحصص اليومية لوسم مشترك لمدرس</translation>
+        <translation>تعديل أقصى عدد من الحصص اليومية لوسم النشاط لمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagmaxhoursdailyform_template.ui" line="57"/>
@@ -53130,7 +53130,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagminhoursdailyform.cpp" line="107"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagminhoursdailyform.cpp" line="112"/>
@@ -53144,12 +53144,12 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteacheractivitytagminhoursdailyform_template.ui" line="14"/>
         <source>Modify teacher activity tag min hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل أدنى حصص يومية مع وسم مشترك للمدرس</translation>
+        <translation>تعديل أدنى حصص يومية مع وسم النشاط للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagminhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteacheractivitytagminhoursdailyform_template.ui" line="57"/>
@@ -53543,7 +53543,7 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="14"/>
         <source>Modify teacher max days per week</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل أقصى أيام في الأسبوع لمدرس</translation>
+        <translation>تعديل أقصى أيام في الأسبوع للمدرس</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermaxdaysperweekform_template.ui" line="74"/>
@@ -54116,7 +54116,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform.cpp" line="129"/>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform.cpp" line="136"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform.cpp" line="141"/>
@@ -54465,7 +54465,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform.cpp" line="84"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
 </context>
 <context>
@@ -54489,12 +54489,12 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="14"/>
         <source>Modify teachers activity tag max hours continuously</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل العدد الاقصى من الحصص المتصلة لوسم مشترك للمدرسين</translation>
+        <translation>تعديل العدد الاقصى من الحصص المتصلة لوسم النشاط للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhourscontinuouslyform_template.ui" line="77"/>
@@ -54524,7 +54524,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform.cpp" line="84"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
 </context>
 <context>
@@ -54533,12 +54533,12 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="14"/>
         <source>Modify teachers activity tag max hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل العدد الاقصى من الحصص اليومية لوسم مشترك للمدرسين</translation>
+        <translation>تعديل العدد الاقصى من الحصص اليومية لوسم النشاط للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagmaxhoursdailyform_template.ui" line="77"/>
@@ -54584,7 +54584,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagminhoursdailyform.cpp" line="86"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagminhoursdailyform.cpp" line="91"/>
@@ -54598,12 +54598,12 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersactivitytagminhoursdailyform_template.ui" line="14"/>
         <source>Modify teachers activity tag min hours daily</source>
         <extracomment>This is the title of the dialog to modify a constraint of this type</extracomment>
-        <translation>تعديل أدنى حصص يومية مع وسم مشترك للمدرسين</translation>
+        <translation>تعديل أدنى حصص يومية مع وسم النشاط للمدرسين</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagminhoursdailyform_template.ui" line="28"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersactivitytagminhoursdailyform_template.ui" line="77"/>
@@ -55308,7 +55308,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp" line="105"/>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp" line="112"/>
         <source>Invalid activity tag</source>
-        <translation>وسم مشترك غير صحيح</translation>
+        <translation>وسم النشاط غير صحيح</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp" line="117"/>
@@ -55934,7 +55934,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="56"/>
         <source>Activity tag</source>
-        <translation>وسم مشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifygroupactivitiesininitialorderitemform_template.ui" line="91"/>
@@ -56410,7 +56410,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="172"/>
         <source>Activity tags</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/modifysubactivityform_template.ui" line="14"/>
@@ -56654,7 +56654,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="120"/>
         <source>Of course, if you use the same FET instance, you don&apos;t need to be worried about same starting random seeds for the same input file, since the period of the random number generator is very large.</source>
-        <translation>بطبيعة الحال، إذا كنت تستخدم نفس مثيل FET ، فلا داعي للقلق بشأن نفس بذور البداية العشوائية لنفس ملف الإدخال ، نظرًا لأن فترة مولد الرقم العشوائي واسعة جدًا.</translation>
+        <translation>بطبيعة الحال، إذا كنت تستخدم نفس مثيل FET ، فلا داعي للقلق بشأن نفس بذور البداية العشوائية لنفس ملف الإدراج ، نظرًا لأن فترة مولد الرقم العشوائي واسعة جدًا.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="78"/>
@@ -56712,7 +56712,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="100"/>
         <source>Mode of operation: if the FET version is the same (or if the generation code did not change), if the input file is identical, and if the starting random seed is exactly the same, the generation and the results should be identical on any generation process on any computer.</source>
-        <translation>طريقة التشغيل: إذا كان إصدار FET هو نفسه (أو إذا لم تتغير شفرة الإنتاج) ، إذا كان ملف الإدخال متطابقًا ، وإذا كانت بذرة البداية العشوائية هي نفسها تمامًا ، فيجب أن يكون الإنتاج والنتائج متطابقة في أي عملية إنتاج على أي جهاز كمبيوتر.</translation>
+        <translation>طريقة التشغيل: إذا كان إصدار FET هو نفسه (أو إذا لم تتغير شفرة الإنتاج) ، إذا كان ملف الإدراج متطابقًا ، وإذا كانت بذرة البداية العشوائية هي نفسها تمامًا ، فيجب أن يكون الإنتاج والنتائج متطابقة في أي عملية إنتاج على أي جهاز كمبيوتر.</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="102"/>
@@ -56733,7 +56733,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="115"/>
         <source>It is very important to note that if you open two or more instances of FET when the number of seconds since the beginning of 1 January 1970 is the same (that is, if you start them at the same time), you should check that the initial random seeds will not be identical value-per-value, which would lead to the same timetable generation behavior for an identical input file (hopefully this will not happen, since the elapsed nanoseconds will probably be different, but please check). If you intend to generate different timetables for the same file using more FET instances, you need to ensure that the starting random seeds are different (you can change them also manually, from the menu Settings-&gt;Advanced-&gt;Seed of random number generator).</source>
-        <translation>من المهم جدًا ملاحظة أنه إذا فتحت مثيلين أو أكثر من FET عندما يكون عدد الثواني منذ بداية 1 يناير 1970 هو نفسه (أي إذا قمت ببدءها في نفس الوقت) ، فيجب عليك التحقق من أنه لن تكون البذور العشوائية الأولية متطابقة قيمة بقيمة ، مما قد يؤدي إلى نفس سلوك إنتاج الجدول الزمني لملف إدخال متطابق (نأمل ألا يحدث ذلك، لأن النانو ثانية المنقضية ستكون مختلفة على الأرجح، ولكن يرجى التحقق). إذا كنت تنوي إنتاج جداول زمنية مختلفة للملف نفسه باستخدام المزيد من مثيلات FET ، فأنت بحاجة إلى التأكد من أن بذور البداية العشوائية مختلفة (يمكنك أيضًا تغييرها يدويًا ، من القائمة إعدادات-&gt; إعدادات متقدمة -&gt; بذور مولد الرقم العشوائي).</translation>
+        <translation>من المهم جدًا ملاحظة أنه إذا فتحت مثيلين أو أكثر من FET عندما يكون عدد الثواني منذ بداية 1 يناير 1970 هو نفسه (أي إذا قمت ببدءها في نفس الوقت) ، فيجب عليك التحقق من أنه لن تكون البذور العشوائية الأولية متطابقة قيمة بقيمة ، مما قد يؤدي إلى نفس سلوك إنتاج الجدول الزمني لملف إدراج متطابق (نأمل ألا يحدث ذلك، لأن النانو ثانية المنقضية ستكون مختلفة على الأرجح، ولكن يرجى التحقق). إذا كنت تنوي إنتاج جداول زمنية مختلفة للملف نفسه باستخدام المزيد من مثيلات FET ، فأنت بحاجة إلى التأكد من أن بذور البداية العشوائية مختلفة (يمكنك أيضًا تغييرها يدويًا ، من القائمة إعدادات-&gt; إعدادات متقدمة -&gt; بذور مولد الرقم العشوائي).</translation>
     </message>
     <message>
         <location filename="../src/interface/randomseedform.cpp" line="122"/>
@@ -57094,7 +57094,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/roommakeeditvirtualform.cpp" line="247"/>
         <source>You must input at least two sets of real rooms, otherwise you wouldn&apos;t need this virtual room.</source>
-        <translation>يجب إدخال مجموعتين على الأقل من القاعات الحقيقية ، خلاف ذلك فليس لك حاجة إلى هذه القاعة الافتراضية.</translation>
+        <translation>يجب إدراج مجموعتين على الأقل من القاعات الحقيقية ، خلاف ذلك فليس لك حاجة إلى هذه القاعة الافتراضية.</translation>
     </message>
     <message>
         <location filename="../src/interface/roommakeeditvirtualform.cpp" line="253"/>
@@ -57997,13 +57997,13 @@ Please note that the default weight percentage of constraints min days between a
     <message>
         <location filename="../src/engine/rules.cpp" line="5596"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
-        <translation>الملف الخاص بك يحتوي على قائمة وسوم المادة، و التي هي مسماة في الإصدار&gt;=5.5.0 قائمة الوسوم المشتركة</translation>
+        <translation>الملف الخاص بك يحتوي على قائمة وسوم المادة، و التي هي مسماة في الإصدار&gt;=5.5.0 قائمة وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5630"/>
         <location filename="../src/engine/rules.cpp" line="5701"/>
         <source>Duplicate activity tag %1 found - ignoring</source>
-        <translation>الوسم المشترك %1 عُثِر عليه مكررا - تم تجاهله</translation>
+        <translation>وسم النشاط %1 عُثِر عليه مكررا - تم تجاهله</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6552"/>
@@ -58013,7 +58013,7 @@ Please note that the default weight percentage of constraints min days between a
     <message>
         <location filename="../src/engine/rules.cpp" line="6591"/>
         <source>The specified number of sets of real rooms was not found in the input file for the virtual room %1</source>
-        <translation>لم يتم العثور على الرقم المحدد لمجموعات القاعات الحقيقية في ملف الإدخال للقاعة الافتراضية  %1</translation>
+        <translation>لم يتم العثور على الرقم المحدد لمجموعات القاعات الحقيقية في ملف الإدراج للقاعة الافتراضية  %1</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6598"/>
@@ -58024,12 +58024,12 @@ Please note that the default weight percentage of constraints min days between a
         <location filename="../src/engine/rules.cpp" line="7633"/>
         <source>There are %1 unrecognized XML tags in your input file. They are written below. Your file will be opened, but these tags will be ignored and they probably represent mistakes in your input file:</source>
         <comment>You can assume that %1 is at least 2</comment>
-        <translation>هناك %1 من علامات XML غير معروفة في ملف الإدخال الخاص بك. لقد تم كتابتها أدناه. سيتم فتح ملفك، ولكن سيتم تجاهل هذه العلامات و ربما يمثلون أخطاء في ملف الإدخال الخاص بك:</translation>
+        <translation>هناك %1 من علامات XML غير معروفة في ملف الإدراج الخاص بك. لقد تم كتابتها أدناه. سيتم فتح ملفك، ولكن سيتم تجاهل هذه العلامات و ربما يمثلون أخطاء في ملف الإدراج الخاص بك:</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7639"/>
         <source>There is an unrecognized XML tag in your input file. It is written below. Your file will be opened, but this tag will be ignored and it probably represents a mistake in your input file:</source>
-        <translation>هناك علامة XML غير معروفة في ملف الإدخال الخاص بك. انها مكتوبة أدناه. سيتم فتح الملف الخاص بك، ولكن سيتم تجاهل هذه العلامة وسيتم ذلك ربما يمثل خطأ في ملف الإدخال الخاص بك:</translation>
+        <translation>هناك علامة XML غير معروفة في ملف الإدراج الخاص بك. انها مكتوبة أدناه. سيتم فتح الملف الخاص بك، ولكن سيتم تجاهل هذه العلامة وسيتم ذلك ربما يمثل خطأ في ملف الإدراج الخاص بك:</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="8187"/>
@@ -58232,7 +58232,7 @@ Please note that the default weight percentage of constraints min days between a
         <location filename="../src/engine/rules.cpp" line="3079"/>
         <location filename="../src/engine/rules.cpp" line="6355"/>
         <source>Activity with Id=%1 contains %2 duplicate activity tags - please correct that</source>
-        <translation>النشاط مع Id=%1 تحتوي على %2 وسوم مشتركة مكررة - يرجى تصحيح ذلك</translation>
+        <translation>النشاط مع Id=%1 تحتوي على %2 وسوم النشاط مكررة - يرجى تصحيح ذلك</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="3122"/>
@@ -58247,7 +58247,7 @@ Please note that the default weight percentage of constraints min days between a
     <message>
         <location filename="../src/engine/rules.cpp" line="3132"/>
         <source>Activities with group_Id=%1 contain %2 duplicate activity tags - please correct that</source>
-        <translation>الأنشطة مع مجموعة_Id=%1 تحتوي على %2 وسوم مشتركة مكررة - يرجى تصحيح ذلك</translation>
+        <translation>الأنشطة مع مجموعة_Id=%1 تحتوي على %2 وسوم النشاط مكررة - يرجى تصحيح ذلك</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5770"/>
@@ -58298,7 +58298,7 @@ Please note that the default weight percentage of constraints min days between a
         <location filename="../src/engine/rules.cpp" line="6222"/>
         <source>Found activity active tag which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The activity will be considered not active</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
-        <translation>العثور على نشاط مفعلة مع وسم مشترك و التي هي &apos;true&apos; , &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; أو &apos;0&apos;. النشاط ستعتبر غير مفعلة</translation>
+        <translation>العثور على نشاط مفعلة مع وسم النشاط و التي هي &apos;true&apos; , &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; أو &apos;0&apos;. النشاط ستعتبر غير مفعلة</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6345"/>
@@ -58313,7 +58313,7 @@ Please note that the default weight percentage of constraints min days between a
     <message>
         <location filename="../src/engine/rules.cpp" line="6547"/>
         <source>The specified number of real rooms was not found in the input file for the virtual room %1, for the set of real rooms number %2</source>
-        <translation>لم يتم العثور على الرقم المحدد لمجموعات القاعات الحقيقية في ملف الإدخال للقاعة الافتراضية  %1،لمجموعة القاعات الحقيقية %2</translation>
+        <translation>لم يتم العثور على الرقم المحدد لمجموعات القاعات الحقيقية في ملف الإدراج للقاعة الافتراضية  %1،لمجموعة القاعات الحقيقية %2</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6611"/>
@@ -58567,7 +58567,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="10098"/>
         <source>Duplicate activity tag %1 found in constraint activity tags not overlapping</source>
-        <translation>وسم مشترك مكرر %1  تم العثور عليه في القيد وسوم مشتركة ليسة متداخلة</translation>
+        <translation>وسم النشاط مكرر %1  تم العثور عليه في القيد وسوم النشاط ليسة متداخلة</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="9078"/>
@@ -58594,7 +58594,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="10088"/>
         <source>The number of activity tags in the constraint activity tags not overlapping is lower than two</source>
-        <translation>عدد الوسوم المشتركة في القيد وسوم مشتركة ليست متداخلة هو أصغر من إثنين(2)</translation>
+        <translation>عدد وسوم النشاط في القيد وسوم النشاط ليست متداخلة هو أصغر من إثنين(2)</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="10900"/>
@@ -58794,7 +58794,7 @@ not added - must be a duplicate</source>
 (needs JavaScript - just move mouse over a word and wait a little bit)</source>
         <translation>مستوى 5 - جافاسكريبت
 - كل وظائف المستو 4 مع في حدود  من 3.5 من المرات حجم الملف أكبر من العام2
-- تسليط الضوء على نفس المواد، و الوسوم المشتركة، الطلاب و القاعات
+- تسليط الضوء على نفس المواد، و وسوم النشاط، الطلاب و القاعات
 يحتاج جافا سكريبت - فقط حرك الفأرة فوق كلمة واحدة وانتظر قليلا)</translation>
     </message>
     <message>
@@ -58850,7 +58850,7 @@ not added - must be a duplicate</source>
 - style (or hide) line 1, line 2 and line 3 of the activity cells</source>
         <translation>مستوى 3 - متقدم css
 - كل وظائف العام 2 مع حوالي مرتين حجم الملف أكبر من العام 2 
-- تنسيق (أو اخفاء) كل المواد، الوسوم المشتركة، المدرسون، مجموعات الطلاب و القاعات
+- تنسيق (أو اخفاء) كل المواد، وسوم النشاط، المدرسون، مجموعات الطلاب و القاعات
 - تنسيق(أو اخفاء) السطر 1، السطر 2 و السطر 3 لخلايا النشاط</translation>
     </message>
     <message>
@@ -58860,7 +58860,7 @@ not added - must be a duplicate</source>
 - style every single subject, activity tag, teacher, students set and room</source>
         <translation>مستوى 4 - css كامل 
 - كل وظائف العام 3 مع حوالي مرتين و نصف حجم الملف أكبر من العام 2
-- تنسيق كل مادة، وسم مشترك، مدرس، مجموعة طلاب، و قاعة</translation>
+- تنسيق كل مادة، وسم النشاط، مدرس، مجموعة طلاب، و قاعة</translation>
     </message>
     <message>
         <location filename="../src/interface/settingstimetablehtmllevelform_template.ui" line="99"/>
@@ -58870,8 +58870,8 @@ not added - must be a duplicate</source>
 (also useful to hide activities with special activity tags)</source>
         <translation>مستوى 6 -  css  محمل بالزيادة 
 - كل وظائف العام 5 مع حوالي 4 مرات حجم الملف أكبر من العام 2
-- تنسيق خلية كل مادة ، وسم مشترك، مدرس أو طلاب
-(كذلك مفيدة لإخفاء الأنشطة مع وسوم مشتركة خاصة)</translation>
+- تنسيق خلية كل مادة ، وسم النشاط، مدرس أو طلاب
+(كذلك مفيدة لإخفاء الأنشطة مع وسوم خاصة)</translation>
     </message>
 </context>
 <context>
@@ -59069,7 +59069,7 @@ not added - must be a duplicate</source>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="796"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your institution data into a file in .fet format.</source>
-        <translation>ربما البديل لتقسيم العام إلى العديد من الفئات / المجموعات الفرعية هو إدخال فردي للطلاب كمجموعات فرعية في FET، و إضافة إلى كل مجموعة المجموعة الفرعية التي توافقه. ولكن هذا من الصعب القيام به من واجهة FET - ربما يكون الحل لاستخدام أداة تلقائية لتحويل بيانات المنشأة الخاص بك إلى ملف على هيئة &quot;.fet.&quot;.</translation>
+        <translation>ربما البديل لتقسيم العام إلى العديد من الفئات / المجموعات الفرعية هو إدراج فردي للطلاب كمجموعات فرعية في FET، و إضافة إلى كل مجموعة المجموعة الفرعية التي توافقه. ولكن هذا من الصعب القيام به من واجهة FET - ربما يكون الحل لاستخدام أداة تلقائية لتحويل بيانات المنشأة الخاص بك إلى ملف على هيئة &quot;.fet.&quot;.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="856"/>
@@ -60239,7 +60239,7 @@ Please report error. FET will now abort current operation</source>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="252"/>
         <source>Activity tags</source>
-        <translation>وسوم مشتركة</translation>
+        <translation>وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="265"/>
@@ -60694,7 +60694,7 @@ N1 ( C1(G1,G2), C2(G1, G3) )
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="415"/>
         <source>Explanation of the short description of an activity: first comes the id. If the activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration. Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).</source>
-        <translation>شرح لوصف مختصر لنشاط: يأتي أولا id. إذا كان النشاط غير مفعلا تتبع  بحرف X . ثم المدة الزمنية. ثم، إذا كان النشاط مقسما، خط مائل(/) و المدة الاجمالية. ثم المدرسون، المادة، وسم مشترك(في حالة ما استعمل) و الطلاب ثم عدد الطلاب(إذا تم تحديده).</translation>
+        <translation>شرح لوصف مختصر لنشاط: يأتي أولا id. إذا كان النشاط غير مفعلا تتبع  بحرف X . ثم المدة الزمنية. ثم، إذا كان النشاط مقسما، خط مائل(/) و المدة الاجمالية. ثم المدرسون، المادة، وسم النشاط(في حالة ما استعمل) و الطلاب ثم عدد الطلاب(إذا تم تحديده).</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="422"/>
@@ -60779,7 +60779,7 @@ N1 ( C1(G1,G2), C2(G1, G3) )
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="120"/>
         <source>Activity tag</source>
-        <translation>الوسم المشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform_template.ui" line="139"/>
@@ -61082,7 +61082,7 @@ N1 ( C1(G1,G2), C2(G1, G3) )
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="108"/>
         <source>Could not insert item. Must be a duplicate</source>
-        <translation>لا يمكن ادراج الفقرة. يجب أن يكون الاسم الجديد نسخة مكررة</translation>
+        <translation>لا يمكن إدراج الفقرة. يجب أن يكون الاسم الجديد نسخة مكررة</translation>
     </message>
     <message>
         <location filename="../src/interface/subjectsform.cpp" line="118"/>
@@ -62091,7 +62091,7 @@ N1 ( C1(G1,G2), C2(G1, G3) )
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2326"/>
         <source>Activity Tags</source>
-        <translation>الوسوم المشتركة</translation>
+        <translation>وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2378"/>
@@ -62206,7 +62206,7 @@ N1 ( C1(G1,G2), C2(G1, G3) )
         <location filename="../src/engine/timetableexport.cpp" line="4472"/>
         <location filename="../src/engine/timetableexport.cpp" line="4524"/>
         <source>Activity Tag</source>
-        <translation>وسم مشترك</translation>
+        <translation>وسم النشاط</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="4727"/>
@@ -63372,7 +63372,7 @@ N1 ( C1(G1,G2), C2(G1, G3) )
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="250"/>
         <source>If you get impossible timetable, please enter menu Generate (single) and see the initial order of evaluation of activities, this might help.</source>
-        <translation>إذا كان من المستحيل الحصول على جدول زمني ، الرجاء إدخال (واحد) في قائمة عدد الجداول المنتجة ، وانظر القائمة الخاصة بتقييم المهمام ، فهذا قد يساعد.</translation>
+        <translation>إذا كان من المستحيل الحصول على جدول زمني ، الرجاء إدراج (واحد) في قائمة عدد الجداول المنتجة ، وانظر القائمة الخاصة بتقييم المهمام ، فهذا قد يساعد.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablegeneratemultipleform.cpp" line="244"/>
@@ -63586,7 +63586,7 @@ N1 ( C1(G1,G2), C2(G1, G3) )
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="175"/>
         <source>Activity Tags</source>
-        <translation>الوسوم المشتركة</translation>
+        <translation>وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="177"/>
@@ -63808,7 +63808,7 @@ N1 ( C1(G1,G2), C2(G1, G3) )
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="318"/>
         <source>Activity tags</source>
-        <translation>وسوم مشتركة</translation>
+        <translation>وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="321"/>
@@ -65857,7 +65857,7 @@ Please stop simulation before this.</source>
     <message>
         <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="133"/>
         <source>Activity tags</source>
-        <translation>الوسوم المشتركة</translation>
+        <translation>وسوم النشاط</translation>
     </message>
     <message>
         <location filename="../src/interface/timetablestowriteondiskform_template.ui" line="155"/>

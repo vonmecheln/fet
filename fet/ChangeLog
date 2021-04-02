@@ -2201,7 +2201,7 @@ Versions 5.42.0 - 5.42.3
 	incorrect file.
 	- Bug fix: when opening the students' timetable view days horizontal dialog with the subgroups list variant selected, the details for the
 	current activity were not shown. Also, in this case, locking the selected activities did not work. Reported by math.
-	- Minor bug fixes in the activity planning dialog: when swapping the teachers/students, their initial order in the affected activities
+	- Minor bug fixes in the activity planning dialog: when swapping the teachers/students, their initial order in the related activities
 	might not have been preserved.
 	- Code cleanup.
 - Version 5.42.1
@@ -2240,7 +2240,7 @@ Versions 5.43.0 - 5.43.2
 	- Updated the code for the future Qt versions: removed usage of the soon-to-be obsolete constant QString::SkipEmptyParts
 	(the future constant will be Qt::SkipEmptyParts).
 ---------------------------------------------------------------------------------
-Versions 5.44.0 - 5.44.v
+Versions 5.44.0 - 5.44.9
 - Version 5.44.0
 	- Changed the random number generator to a better one, MRG32k3a, by Pierre L'Ecuyer (used with permission). This has a longer period but, unfortunately,
 	on some older/not so powerful computers/platforms (especially the 32-bit ones), this new random number generator might run (much) slower. But the generation
@@ -2275,5 +2275,11 @@ Versions 5.44.0 - 5.44.v
 	- Code cleanup.
 - Version 5.44.9
 	- Corrected the source files of the application icons and generated higher resolution ones (suggested by Darren McDonald, using additional suggestions
-	from Vangelis Karafillidis). The application icon in the icns format (used on Mac OS X) was contributed by Darren McDonald.
+	from Vangelis Karafillidis and DT). The application icon in the icns format (used on Mac OS X) was contributed by Darren McDonald.
 	- The application name is now set correctly (using a solution found by Darren McDonald).
+---------------------------------------------------------------------------------
+Versions 5.45.0 - 5.45.v
+- Version 5.45.0
+	- Slightly improved the code for the constraints of type teacher(s)/students (set) max days per week and teacher(s)/students (set) interval max days per week.
+	- Corrected a compilation warning appearing with the new gcc 10.1.1.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.

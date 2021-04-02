@@ -2,15 +2,12 @@ These icons were designed by Liviu Lalescu. Fair use of these icons is allowed/e
 
 Begin: 5 March 2020.
 
-Last modified on: 31 May 2020.
+Last modified on: 5 June 2020.
 
 Instructions by Liviu Lalescu about the icon files:
 
 The file fet-text.svg: This file was recreated in Inkscape 0.92.4 by using copy/paste from the old version of the svg file originally created in
-the old Inkscape 0.48.4. There seems to remain a problem when opening the file in Inkscape, the box is not visually positioned correctly (probably
-these Inkscape bugs: https://bugs.launchpad.net/inkscape/+bug/1235369 and/or https://bugs.launchpad.net/inkscape/+bug/1472892) - as a workaround
-you can open the file, and if the box is displaced select it, then click up and after that down on the Y value, or you may find other workarounds
-on the above listed links).
+the old Inkscape 0.48.4.
 
 To open fet-text.svg: If you do not have it available, you need to download and install the "TeX Gyre Chorus" font. Some possible download
 links are: https://ctan.org/tex-archive/fonts/tex-gyre or http://www.gust.org.pl/projects/e-foundry/tex-gyre/chorus. I used the OpenType
@@ -23,11 +20,8 @@ as a replacement for the acknowledged font ITC Zapf Chancery(R) (designed by Her
 
 (In fact, the older version of the svg file used the URW Chancery L Medium Italic font.)
 
-The file fet.svg: This file was recreated in Inkscape 0.92.4 by converting from text to path the file fet-text.svg. Hopefully, fet.svg will be universal,
+The file fet.svg: This file was recreated in Inkscape 0.92.4 by converting from text to path the file fet-text.svg. This way, fet.svg will be universal,
 without dependency on the font file.
-
-Again, there seems to remain a problem when opening the file fet.svg in Inkscape, the box is not visually positioned correctly, see the explanation
-and possible solutions above, in the details for the file fet-text.svg.
 
 The different size/resolution .png icons were obtained with the function Export PNG Image from the Inkscape file fet-text.svg (they could have been
 obtained from fet.svg as well).

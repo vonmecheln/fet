@@ -93,6 +93,8 @@ public:
 template <typename T> Matrix3D<T>::Matrix3D()
 {
 	d1=d2=d3=-1;
+	a=NULL;
+	content=NULL;
 }
 
 template <typename T> Matrix3D<T>::~Matrix3D()
@@ -107,7 +109,7 @@ template <typename T> void Matrix3D<T>::clear()
 		
 		for(int i=0; i<d1; i++)
 			delete[] a[i];
-		delete[]a;
+		delete[] a;
 		
 		delete[] content;
 	}
@@ -153,6 +155,8 @@ template <typename T> inline T& Matrix3D<T>::operator()(int i, int j, int k)
 template <typename T> Matrix2D<T>::Matrix2D()
 {
 	d1=d2=-1;
+	a=NULL;
+	content=NULL;
 }
 
 template <typename T> Matrix2D<T>::~Matrix2D()
@@ -206,6 +210,7 @@ template <typename T> inline T& Matrix2D<T>::operator()(int i, int j)
 template <typename T> Matrix1D<T>::Matrix1D()
 {
 	d1=-1;
+	a=NULL;
 }
 
 template <typename T> Matrix1D<T>::~Matrix1D()
