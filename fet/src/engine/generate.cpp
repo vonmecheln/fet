@@ -2116,7 +2116,11 @@ impossiblestudentsmaxhoursdaily:
 									nRem[d2]=nHoursScheduledForSubgroupForDay[sb][d2]-subgroupsMinHoursDailyMinHours[sb];
 								else{
 									nRem[d2]=nhday-subgroupsMinHoursDailyMinHours[sb]/*-act->duration*/;
-									assert(nRem[d2]==dayEnd[d2]-dayStart[d2]+1-subgroupsMinHoursDailyMinHours[sb]/*-act->duration*/);
+
+									//commented line below in version 5.2.18 - crash bug fix
+									//test is not true if using breaks or not available
+									//assert(nRem[d2]==dayEnd[d2]-dayStart[d2]+1-subgroupsMinHoursDailyMinHours[sb]/*-act->duration*/);
+
 									//cout<<"nRem[d]=="<<nRem[d]<<endl;
 								}
 							}

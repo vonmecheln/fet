@@ -436,7 +436,7 @@ bool computeSubgroupsMinHoursDaily()
 	}
 
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++)
-		if(subgroupsMinHoursDailyMinHours[i]>=0)
+		if(subgroupsMinHoursDailyMinHours[i]>=0){
 			if(gt.rules.nDaysPerWeek*subgroupsMinHoursDailyMinHours[i] > nHoursPerSubgroup[i]){
 				ok=false;
 			
@@ -454,6 +454,28 @@ bool computeSubgroupsMinHoursDaily()
 				if(t==0)
 					return false;
 			}
+
+			for(int j=0; j<gt.rules.nDaysPerWeek; j++){
+				int freeSlots=0;
+				for(int k=0; k<gt.rules.nHoursPerDay; k++)
+					if(!subgroupNotAvailableDayHour[i][j][k] && !breakDayHour[j][k])
+						freeSlots++;
+				if(subgroupsMinHoursDailyMinHours[i]>freeSlots){
+					ok=false;
+			
+					int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
+					 QObject::tr("For subgroup %1 cannot respect the constraint"
+					 " of type min hours daily on day %2, because of students set not available and/or break. Please modify your data accordingly and try again")
+					 .arg(gt.rules.internalSubgroupsList[i]->name)
+					 .arg(gt.rules.daysOfTheWeek[j]),
+					 QObject::tr("Skip rest of min hours problems"), QObject::tr("See next incompatibility min hours"), QString(),
+					 1, 0 );
+				 	
+					if(t==0)
+						return false;
+				}
+			}
+		}
 	
 	return ok;
 }
@@ -676,15 +698,15 @@ bool computeNHoursPerTeacher()
 		int freeSlots=0;
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			for(int k=0; k<gt.rules.nHoursPerDay; k++)
-				if(!teacherNotAvailableDayHour[i][j][k])
+				if(!teacherNotAvailableDayHour[i][j][k] && !breakDayHour[j][k])
 					freeSlots++;
 		if(nHoursPerTeacher[i]>freeSlots){
 			ok=false;
 
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize for teacher %1, because the number of hours for teacher is %2 "
-			  " and you have only %3 free slots from constraints teacher not available. Maybe you inputted wrong constraints teacher"
-			  " not available or the number of hours per day is less with 1, because of a misunderstanding")
+			  " and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher"
+			  " not available or break or the number of hours per day is less with 1, because of a misunderstanding")
 			 .arg(gt.rules.internalTeachersList[i]->name)
 			 .arg(nHoursPerTeacher[i])
 			 .arg(freeSlots),
@@ -873,15 +895,15 @@ bool computeNHoursPerSubgroup()
 		int freeSlots=0;
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			for(int k=0; k<gt.rules.nHoursPerDay; k++)
-				if(!subgroupNotAvailableDayHour[i][j][k])
+				if(!subgroupNotAvailableDayHour[i][j][k] && !breakDayHour[j][k])
 					freeSlots++;
 		if(nHoursPerSubgroup[i]>freeSlots){
 			ok=false;
 
 			int t=QMessageBox::warning(NULL, QObject::tr("FET warning"),
 			 QObject::tr("Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 "
-			  " and you have only %3 free slots from constraints students set not available. Maybe you inputted wrong constraints students set"
-			  " not available or the number of hours per day is less with 1, because of a misunderstanding")
+			  " and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set"
+			  " not available or break or the number of hours per day is less with 1, because of a misunderstanding")
 			 .arg(gt.rules.internalSubgroupsList[i]->name)
 			 .arg(nHoursPerSubgroup[i])
 			 .arg(freeSlots),

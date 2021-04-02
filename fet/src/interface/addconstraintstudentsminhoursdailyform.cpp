@@ -80,6 +80,11 @@ void AddConstraintStudentsMinHoursDailyForm::addCurrentConstraint()
 			QObject::tr("Invalid weight (percentage)"));
 		return;
 	}
+	if(weight!=100.0){
+		QMessageBox::warning(this, QObject::tr("FET information"),
+			QObject::tr("Invalid weight (percentage) - it has to be 100%"));
+		return;
+	}
 
 	int minHours=minHoursSpinBox->value();
 

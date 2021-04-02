@@ -27,7 +27,7 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.2.17";
+const QString FET_VERSION="5.2.18";
 
 /**
 FET language
