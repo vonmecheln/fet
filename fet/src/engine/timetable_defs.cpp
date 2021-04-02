@@ -37,7 +37,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 FET version
 */
-const QString FET_VERSION="5.45.1";
+const QString FET_VERSION="5.46.0";
 
 /**
 FET language
@@ -226,6 +226,13 @@ double customFETStrToDouble(const QString& str, bool* ok)
 	return c.toDouble(tmps, ok);
 }
 ///////end tricks
+
+bool BEEP_AT_END_OF_GENERATION=true;
+bool ENABLE_COMMAND_AT_END_OF_GENERATION=true;
+QString commandAtEndOfGeneration=QString("");
+//bool DETACHED_NOTIFICATION=false;
+//int terminateCommandAfterSeconds=0;
+//int killCommandAfterSeconds=0;
 
 /*
 int XX;

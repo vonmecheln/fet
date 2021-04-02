@@ -29,6 +29,7 @@ public:
 
 public slots:
 	void addGroup();
+	void addExistingGroups();
 	void removeGroup();
 	void purgeGroup();
 	void modifyGroup();

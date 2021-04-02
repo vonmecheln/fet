@@ -2278,7 +2278,7 @@ Versions 5.44.0 - 5.44.9
 	from Vangelis Karafillidis and DT). The application icon in the icns format (used on Mac OS X) was contributed by Darren McDonald.
 	- The application name is now set correctly (using a solution found by Darren McDonald).
 ---------------------------------------------------------------------------------
-Versions 5.45.0 - 5.45.v
+Versions 5.45.0 - 5.45.1
 - Version 5.45.0
 	- Slightly improved the code for the constraints of type teacher(s)/students (set) max days per week and teacher(s)/students (set) interval max days per week.
 	- Corrected a compilation warning appearing with the new gcc 10.1.1.
@@ -2287,3 +2287,10 @@ Versions 5.45.0 - 5.45.v
 	- Minor fixes and code cleanup.
 	- Added a new example file from South Africa, by Eric Carolus.
 	- Updated the Arabic translation, by Benahmed Abdelkrim.
+---------------------------------------------------------------------------------
+Versions 5.46.0 - 5.46.v
+- Version 5.46.0
+	- Added a new feature to create easier overlapping groups/years, from the subgroups/groups dialogs (suggested by samantha.goddard's file).
+	- Added the possibility of executing an external command after the generation (suggested by Zsolt Udvari and other users). The implementation of this feature
+	was inspired by the Claws Mail software.
+	- Added a new example file from Hong Kong, by Marcus.

@@ -391,7 +391,7 @@ void RoomsForm::help()
 	s+="\n\n";
 	s+=tr("1) If you want an activity to take place in more real rooms.");
 	s+="\n\n";
-	s+=tr("2) If you want an activity to take place in say a large real room or in three smaller real rooms.");
+	s+=tr("2) If you want an activity to take place, say, either in a large real room or in three smaller real rooms.");
 	s+="\n\n";
 	s+=tr("More details about defining and using virtual rooms are shown in the dialog of making/editing virtual rooms, if you click the Help button there.");
 

@@ -281,7 +281,7 @@ void RoomMakeEditVirtualForm::help()
 	s+="\n\n";
 	s+=tr("1) If you want an activity to take place in more real rooms.");
 	s+="\n\n";
-	s+=tr("2) If you want an activity to take place in say a large real room or in three smaller real rooms.");
+	s+=tr("2) If you want an activity to take place, say, either in a large real room or in three smaller real rooms.");
 	s+="\n\n";
 	s+=tr("How does this work: Each virtual room has a SET of sets of real rooms. If an activity is placed in this virtual room,"
 	 " FET will choose for the SET a real room from each set. The chosen real rooms must all be different.",

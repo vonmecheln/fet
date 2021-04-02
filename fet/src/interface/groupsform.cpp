@@ -16,6 +16,7 @@
  ***************************************************************************/
 
 #include "addstudentsgroupform.h"
+#include "addexistingstudentsgroupsform.h"
 #include "modifystudentsgroupform.h"
 #include "groupsform.h"
 #include "timetable_defs.h"
@@ -56,6 +57,7 @@ GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 
 	connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
 	connect(addGroupPushButton, SIGNAL(clicked()), this, SLOT(addGroup()));
+	connect(addExistingGroupsPushButton, SIGNAL(clicked()), this, SLOT(addExistingGroups()));
 	connect(removeGroupPushButton, SIGNAL(clicked()), this, SLOT(removeGroup()));
 	connect(purgeGroupPushButton, SIGNAL(clicked()), this, SLOT(purgeGroup()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
@@ -91,7 +93,6 @@ GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 		groupsListWidget->clear();
 }
 
-
 GroupsForm::~GroupsForm()
 {
 	saveFETDialogGeometry(this);
@@ -119,6 +120,40 @@ void GroupsForm::addGroup()
 	int i=groupsListWidget->count()-1;
 	if(i>=0)
 		groupsListWidget->setCurrentRow(i);
+}
+
+void GroupsForm::addExistingGroups()
+{
+	if(yearsListWidget->currentRow()<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		return;
+	}
+	QString yearName=yearsListWidget->currentItem()->text();
+	
+	StudentsYear* year=NULL;
+	
+	for(StudentsYear* sty : qAsConst(gt.rules.yearsList))
+		if(sty->name==yearName){
+			year=sty;
+			break;
+		}
+		
+	assert(year!=NULL);
+	
+	AddExistingStudentsGroupsForm form(this, year);
+	setParentAndOtherThings(&form, this);
+	int t=form.exec();
+	
+	if(t==QDialog::Accepted){
+		yearChanged(yearsListWidget->currentItem()->text());
+	
+		int i=groupsListWidget->count()-1;
+		if(i>=0)
+			groupsListWidget->setCurrentRow(i);
+	}
+	else{
+		assert(t==QDialog::Rejected);
+	}
 }
 
 void GroupsForm::removeGroup()

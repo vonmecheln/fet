@@ -1,4 +1,4 @@
-This is FET version 5.45.1
+This is FET version 5.46.0
 
 
 Program description:
@@ -14,11 +14,11 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.7.5, Xfce 4.14,
-	Xfce Terminal Emulator 0.8.9.2, Midnight Commander 4.8.24, Kate 20.04.1, KDiff3 0.9.98, grep 3.4, sed 4.8,
-	Qt 5.15.0, Qt Creator 4.12.1, gcc 10.1.1, g++ 10.1.1, make 4.3, gdb 8.3.1, Valgrind 3.15.0, Coverity Scan 2019.03,
-	Cppcheck 2.1, SpeedCrunch 0.12, Inkscape 1.0, GIMP 2.10.18, ImageMagick 7.0.10, tar 1.32, gzip 1.10, bzip2 1.0.8,
-	other great software (most of them are free software, in the sense defined by The Free Software Foundation).
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.8.0, Xfce 4.14,
+	Xfce Terminal Emulator 0.8.9.2, Midnight Commander 4.8.24, Krusader 2.7.2, Kate 20.04.3, KDiff3 0.9.98, grep 3.4, sed 4.8,
+	Thunar Bulk Rename 1.8.15, Qt 5.15.0, Qt Creator 4.12.1, gcc 10.2.1, g++ 10.2.1, make 4.3, gdb 9.2, Valgrind 3.16.0,
+	Coverity Scan 2019.03, Cppcheck 2.1, SpeedCrunch 0.12, Inkscape 1.0, GIMP 2.10.20, ImageMagick 7.0.10, tar 1.32, gzip 1.10,
+	bzip2 1.0.8, other great software (most of them are free software, in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 10 operating system,
 	Command Prompt, Total Commander 9.51, Notepad, Python 2.7.18, Qt 5.15.0, Qt Creator 4.12.1, MinGW 8.1.0, 7-Zip 19.00.
@@ -32,8 +32,8 @@ Requirements:
 	For running, you need only the archive of FET compiled for your operating system (which contains the necessary libraries).
 	For compiling, you will need this software:
 		make 4.2.1 or similar (GNU Make).
-		gcc 10.1.1 or similar.
-		g++ 10.1.1 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package).
+		gcc 10.2.1 or similar.
+		g++ 10.2.1 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package).
 		Qt 5.15.0 or compatible (The authors also tried to maintain backwards source compatibility with Qt 4.v.v).
 
 		Note: You need a C++11 compliant C++ compiler. You might be able to use the Clang C++ compiler or other C++ compiler instead of gcc and g++.
@@ -240,9 +240,13 @@ Running FET:
 	To run FET in interface mode, you just need to run the executable named fet or fet.exe.
 
 	GNU/Linux, and maybe Mac OS X:
-	chdir to the directory where the fet executable is (for instance, "cd ~/fet-v.v.v/") and run it with "./fet" or with the suitable command
-	for your platform. Alternatively, you may run the executable named fet from the fet-v.v.v directory, using another method. The fet executable
-	will be located inside the fet-v.v.v directory after a successful compilation.
+	- If you installed FET with "make install":
+		Run the FET executable from the directory /usr/bin/ (it should be /usr/bin/fet for the interface version or /usr/bin/fet-cl for command line),
+		or use the FET shortcut (/usr/share/applications/fet.desktop).
+	- If you did not install FET with "make install":
+		chdir to the directory where the fet executable is (for instance, "cd ~/fet-v.v.v/") and run it with "./fet" or with the suitable command
+		for your platform. Alternatively, you may run the executable named fet from the fet-v.v.v directory, using another method. The fet executable
+		will be located inside the fet-v.v.v directory after a successful compilation.
 	
 	Note for Mac OS X about using translations (if you want to run FET into other language): it seems that you need to copy the contents
 	of the "translations/" directory into the directory fet-v.v.v/fet.app/Contents/MacOS/translations/ or into the directory /usr/share/fet/translations/

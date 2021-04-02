@@ -358,6 +358,13 @@ inline bool operator<(const LocaleString& lhs, const LocaleString& rhs)
 }
 /////////////////////////////////////////////////////
 
+extern bool BEEP_AT_END_OF_GENERATION;
+extern bool ENABLE_COMMAND_AT_END_OF_GENERATION;
+extern QString commandAtEndOfGeneration;
+//extern bool DETACHED_NOTIFICATION;
+//extern int terminateCommandAfterSeconds;
+//extern int killCommandAfterSeconds;
+
 //Old RNG below
 //for random Knuth - from Knuth TAOCP Vol. 2 Seminumerical Algorithms section 3.6
 //these numbers are really important - please do not change them, NEVER!!!

@@ -40,6 +40,9 @@
 #include <QApplication>
 #include <QtGlobal>
 
+#include <QProcess>
+#include <QTimer>
+
 #include <QDate>
 #include <QTime>
 #include <QLocale>
@@ -225,6 +228,10 @@ TimetableGenerateMultipleForm::~TimetableGenerateMultipleForm()
 	saveFETDialogGeometry(this);
 	if(simulation_running_multi)
 		this->stop();
+
+	/*for(QProcess* myProcess : qAsConst(commandProcesses))
+		//if(myProcess->state()!=QProcess::NotRunning)
+			myProcess->close();*/
 }
 
 void TimetableGenerateMultipleForm::help()
@@ -486,23 +493,51 @@ void TimetableGenerateMultipleForm::simulationFinished()
 	assert(nGeneratedTimetables>=1);
 	TimetableExport::writeReportForMultiple(this, QString("\n")+ms+ms2, false);
 
+//Old comment below (2020-08-14).
 //On Windows we do not beep for Qt >= 5.14.1, because the QMessageBox below beeps itself.
 //It would be better to test at runtime, not at compile time, but it is easier/safer this way.
 //(The alternative would be to develop a parser for the function qVersion(), but I am not sure it will always respect the exact format "vM.vm.vp".)
 //We test the macro Q_OS_WIN32 because on the old Qt 4 it is the only available macro from these three below,
 //Q_OS_WIN, Q_OS_WIN32, and Q_OS_WIN64 (which are available on Qt 5.14.1). Yes, the test is redundant (because if QT_VERSION < 5.14.1
 //the condition is true and if QT_VERSION >= 5.14.1 then all these three macros are available), but this doesn't hurt.
-#if (!defined(Q_OS_WIN) && !defined(Q_OS_WIN32) && !defined(Q_OS_WIN64)) || (QT_VERSION < QT_VERSION_CHECK(5,14,1))
-	QApplication::beep();
-#endif
+//#if (!defined(Q_OS_WIN) && !defined(Q_OS_WIN32) && !defined(Q_OS_WIN64)) || (QT_VERSION < QT_VERSION_CHECK(5,14,1))
+	if(BEEP_AT_END_OF_GENERATION)
+		QApplication::beep();
+//#endif
+
+	if(ENABLE_COMMAND_AT_END_OF_GENERATION){
+		QString s=commandAtEndOfGeneration.simplified();
+		if(!s.isEmpty()){
+			QStringList sl=s.split(" ");
+			assert(sl.count()>=1);
+			QString command=sl.at(0);
+			QStringList arguments;
+			for(int i=1; i<sl.count(); i++)
+				arguments.append(sl.at(i));
+			
+			/*if(DETACHED_NOTIFICATION==false){
+				QProcess* myProcess=new QProcess();
+				if(terminateCommandAfterSeconds>0)
+					QTimer::singleShot(terminateCommandAfterSeconds*1000, myProcess, SLOT(terminate()));
+				if(killCommandAfterSeconds>0)
+					QTimer::singleShot(killCommandAfterSeconds*1000, myProcess, SLOT(kill()));
+				
+				//https://www.qtcentre.org/threads/43083-Freeing-a-QProcess-after-it-has-finished-using-deleteLater()
+				connect(myProcess, SIGNAL(finished(int)), myProcess, SLOT(deleteLater()));
+				myProcess->start(command, arguments);
+			}*/
+			//else{
+				QProcess::startDetached(command, arguments);
+			//}
+		}
+	}
 	
-	//Old comment below. From Qt 5.14.1 on Windows all QMessageBox-es emit a sound.
 	//Trick so that the message box will be silent (the only sound is thus the beep above).
-	/*QMessageBox msgBox(this);
+	QMessageBox msgBox(this);
 	msgBox.setWindowTitle(TimetableGenerateMultipleForm::tr("FET information"));
 	msgBox.setText(ms);
-	msgBox.exec();*/
-	QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"), ms);
+	msgBox.exec();
+	//QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"), ms);
 	
 	startPushButton->setEnabled(true);
 	stopPushButton->setDisabled(true);

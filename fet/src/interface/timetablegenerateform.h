@@ -25,6 +25,9 @@
 
 #include <QThread>
 
+#include <QProcess>
+#include <QList>
+
 class GenerateThread: public QThread{
 	Q_OBJECT
 
@@ -37,11 +40,12 @@ signals:
 
 class TimetableGenerateForm : public QDialog, Ui::TimetableGenerateForm_template  {
 	Q_OBJECT
+	
+private:
+	QList<QProcess*> commandProcesses;
 
 public:
-
 	TimetableGenerateForm(QWidget* parent);
-
 	~TimetableGenerateForm();
 
 public slots:

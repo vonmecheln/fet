@@ -105,6 +105,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="addExistingSubgroupsPushButton">
+       <property name="text">
+        <string extracomment="It refers to adding subgroups in a group, subgroups which exist in (an)other group(s)">Add existing</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="modifySubgroupPushButton">
        <property name="text">
         <string>Modify</string>

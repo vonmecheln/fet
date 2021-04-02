@@ -298,7 +298,7 @@ public:
 };
 
 /**
-This is a constraint. Its purpose: an activity must take part in
+This is a constraint. Its purpose: an activity must take place in
 the preferred room.
 */
 class ConstraintActivityPreferredRoom: public SpaceConstraint{
@@ -365,7 +365,7 @@ public:
 };
 
 /**
-This is a constraint. Its purpose: an activity must take part in
+This is a constraint. Its purpose: an activity must take place in
 the preferred rooms.
 */
 class ConstraintActivityPreferredRooms: public SpaceConstraint{

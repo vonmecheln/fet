@@ -88,6 +88,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="addExistingGroupsPushButton">
+       <property name="text">
+        <string extracomment="It refers to adding groups in a year, groups which exist in (an)other year(s)">Add existing</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="modifyGroupPushButton">
        <property name="text">
         <string>Modify</string>

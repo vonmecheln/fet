@@ -485,6 +485,13 @@ void readSimulationParameters()
 
 	SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=newSettings.value("FetMainForm/show-tooltips-for-constraints-with-tables", "false").toBool();
 	
+	BEEP_AT_END_OF_GENERATION=newSettings.value("beep-at-the-end-of-generation", "true").toBool();
+	ENABLE_COMMAND_AT_END_OF_GENERATION=newSettings.value("enable-command-at-the-end-of-generation", "false").toBool();
+	commandAtEndOfGeneration=newSettings.value("command-at-the-end-of-generation", "").toString();
+//	DETACHED_NOTIFICATION=newSettings.value("detached-notification", "false").toBool();
+//	terminateCommandAfterSeconds=newSettings.value("terminate-command-at-the-end-of-generation-after-seconds", "0").toInt();
+//	killCommandAfterSeconds=newSettings.value("kill-command-at-the-end-of-generation-after-seconds", "0").toInt();
+	
 	if(VERBOSE){
 		cout<<"Settings read"<<endl;
 	}
@@ -564,6 +571,14 @@ void writeSimulationParameters()
 	settings.setValue("FetMainForm/show-shortcuts", SHOW_SHORTCUTS_ON_MAIN_WINDOW);
 
 	settings.setValue("FetMainForm/show-tooltips-for-constraints-with-tables", SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES);
+
+	settings.setValue("beep-at-the-end-of-generation", BEEP_AT_END_OF_GENERATION);
+	settings.setValue("enable-command-at-the-end-of-generation", ENABLE_COMMAND_AT_END_OF_GENERATION);
+	settings.setValue("command-at-the-end-of-generation", commandAtEndOfGeneration);
+//	settings.setValue("detached-notification", DETACHED_NOTIFICATION);
+//	settings.setValue("terminate-command-at-the-end-of-generation-after-seconds", terminateCommandAfterSeconds);
+//	settings.setValue("kill-command-at-the-end-of-generation-after-seconds", killCommandAfterSeconds);
+	
 }
 #endif
 

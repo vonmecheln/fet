@@ -36,7 +36,7 @@ AddConstraintStudentsSetMinRestingHoursForm::AddConstraintStudentsSetMinRestingH
 
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
-		
+	
 	circularCheckBox->setChecked(true);
 	
 	minRestingHoursSpinBox->setMinimum(1);

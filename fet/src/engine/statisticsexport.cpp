@@ -121,7 +121,7 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 	PREFIX_STATISTICS=DIRECTORY_STATISTICS+FILE_SEP;
 	
 	int ok=QMessageBox::question(parent, tr("FET Question"),
-		 StatisticsExport::tr("Do you want to export detailed statistic files into directory %1 as html files?").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)), QMessageBox::Yes | QMessageBox::No);
+		 StatisticsExport::tr("Do you want to export detailed statistics files into directory %1 as html files?").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)), QMessageBox::Yes | QMessageBox::No);
 	if(ok==QMessageBox::No)
 		return;
 
@@ -163,7 +163,7 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 
 	if(ok){
 		QMessageBox::information(parent, tr("FET Information"),
-		 StatisticsExport::tr("Statistic files were exported to directory %1 as html files.").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)));
+		 StatisticsExport::tr("Statistics files were exported to directory %1 as html files.").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)));
 	} else {
 		QMessageBox::warning(parent, tr("FET warning"),
 		 StatisticsExport::tr("Statistics export incomplete")+"\n");

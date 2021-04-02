@@ -25,6 +25,9 @@
 
 #include <QThread>
 
+#include <QProcess>
+#include <QList>
+
 class GenerateMultipleThread: public QThread{
 	Q_OBJECT
 
@@ -42,10 +45,11 @@ signals:
 class TimetableGenerateMultipleForm : public QDialog, Ui::TimetableGenerateMultipleForm_template  {
 	Q_OBJECT
 
+private:
+	QList<QProcess*> commandProcesses;
+
 public:
-
 	TimetableGenerateMultipleForm(QWidget* parent);
-
 	~TimetableGenerateMultipleForm();
 	
 	void simulationFinished();

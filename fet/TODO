@@ -67,7 +67,7 @@ From daviodan:
 I will refer to sample_Brazil_more_difficult_max_2_gaps_for_teachers.fet
 
 1. In the FET activities dialog there exist more filters after the teacher, group, etc.
-If we choose for instance the subject "Math" and we do the filtering also after the name of 
+If we choose for instance the subject "Math" and we do the filtering also after the name of
 the teacher, then the list of the filter should contain only the name: Bruna,Silvania,Wellington,
 because only these teach Maths. In the present moment the filter contains the list of all teachers.
 The same for all the other filters.
@@ -184,11 +184,11 @@ We have:
 1. category: 3-4 classes
 2. category: 5 courses
 3. category: 4 religions (always same time, so i didn't enter it)
-4. category: several working groups (after noon lesson, so i add them
+4. category: several working groups (afternoon lesson, so i add them
 manualy)
 
 Now have a closer look:
-4 classes * 5 courses * 4 religion is already 80 subgroubs.
+4 classes * 5 courses * 4 religion is already 80 subgroups.
 so if i also add working groups (lets say 5, but there are more!)
 then we have total 400 subgroups.
 
@@ -4341,7 +4341,8 @@ do it all at once.
 
 Liviu:
 
-Unfortunately, there is not enough space in that dialog.
+Unfortunately, there is not enough space in that dialog. But you can use the
+timetable view time horizontal views.
 
 257---------------------------------------------------------
 From MING-KIAN JONATHAN CEDRIC LEE KIM GNOK and Volker Dirr:
@@ -5477,10 +5478,7 @@ From Valdo (on forum):
 
 Export the resulted timetables in time horizontal form.
 
-329---------------------------------------------------------
-From Matthias Söllner:
-
-Add an option for the FET command-line version, so that after the generation there will be written also the CSV timetable.
+329-----------------------DONE------------------------------
 
 330---------------------------------------------------------
 From Volker Dirr:
@@ -7095,3 +7093,36 @@ not available in the same slot, then also the teacher is not available in that s
 
 (Liviu: Volker refers to subsequently detecting that the teacher has too little free slots for all his activities, when the user added
 a lot of constraints students set not available.)
+
+415---------------------------------------------------------
+From henriquebelo (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4568.0
+
+We have to change the teaching time and make sure that the class breaks are not met.
+I divided the teaching time into 4, blocks of 15 min, and a class starts at 8:45 am and another at 9:00 am, so it is possible to find the breaks,
+but I cannot use the Breakes constraint, because it is common for all students.
+
+I used the constraint A Student’s set not available times, for each class, where I marked the desired breakes.
+
+This constraint does not allow me to use the other constraint that I used a lot, two activities are consecutive, so that I can have one activity
+before the break and another after the break.
+
+Is it possible to create a new condition in Breakes to choose classes?
+
+416---------------------------------------------------------
+From samantha.goddard (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4571.0
+
+When viewing the group timetables in the 'View timetables / View student timetables / day horizontal' tab, is it possible to hide the long list
+of subgroups that appear in each time slot so that the timetable is easier to view?
+
+I am spending a lot of time adjusting the size of the boxes to be able to check for distribution of activities.
+
+417---------------------------------------------------------
+From Benahmed Abdelkrim (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4601.0
+
+Can be added this functionality: allow in dialog boxes to select multiple elements once and drag them to the adjacent field. It could save precious time.

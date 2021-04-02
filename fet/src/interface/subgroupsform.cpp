@@ -16,6 +16,7 @@
  ***************************************************************************/
 
 #include "addstudentssubgroupform.h"
+#include "addexistingstudentssubgroupsform.h"
 #include "modifystudentssubgroupform.h"
 #include "subgroupsform.h"
 #include "timetable_defs.h"
@@ -61,6 +62,7 @@ SubgroupsForm::SubgroupsForm(QWidget* parent): QDialog(parent)
 	connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
 	connect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
 	connect(addSubgroupPushButton, SIGNAL(clicked()), this, SLOT(addSubgroup()));
+	connect(addExistingSubgroupsPushButton, SIGNAL(clicked()), this, SLOT(addExistingSubgroups()));
 	connect(removeSubgroupPushButton, SIGNAL(clicked()), this, SLOT(removeSubgroup()));
 	connect(purgeSubgroupPushButton, SIGNAL(clicked()), this, SLOT(purgeSubgroup()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
@@ -133,6 +135,56 @@ void SubgroupsForm::addSubgroup()
 	int i=subgroupsListWidget->count()-1;
 	if(i>=0)
 		subgroupsListWidget->setCurrentRow(i);
+}
+
+void SubgroupsForm::addExistingSubgroups()
+{
+	if(yearsListWidget->currentRow()<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
+		return;
+	}
+	QString yearName=yearsListWidget->currentItem()->text();
+	
+	StudentsYear* year=NULL;
+	
+	for(StudentsYear* sty : qAsConst(gt.rules.yearsList))
+		if(sty->name==yearName){
+			year=sty;
+			break;
+		}
+		
+	assert(year!=NULL);
+	
+	if(groupsListWidget->currentRow()<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
+		return;
+	}
+	QString groupName=groupsListWidget->currentItem()->text();
+	
+	StudentsGroup* group=NULL;
+	
+	for(StudentsGroup* stg : qAsConst(year->groupsList))
+		if(stg->name==groupName){
+			group=stg;
+			break;
+		}
+		
+	assert(group!=NULL);
+	
+	AddExistingStudentsSubgroupsForm form(this, year, group);
+	setParentAndOtherThings(&form, this);
+	int t=form.exec();
+	
+	if(t==QDialog::Accepted){
+		groupChanged(groupsListWidget->currentItem()->text());
+	
+		int i=subgroupsListWidget->count()-1;
+		if(i>=0)
+			subgroupsListWidget->setCurrentRow(i);
+	}
+	else{
+		assert(t==QDialog::Rejected);
+	}
 }
 
 void SubgroupsForm::removeSubgroup()

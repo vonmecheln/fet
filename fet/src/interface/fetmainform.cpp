@@ -234,6 +234,8 @@ using namespace std;
 
 #include "settingstimetablehtmllevelform.h"
 
+#include "notificationcommandform.h"
+
 #include "activityplanningconfirmationform.h"
 #include "activityplanningform.h"
 
@@ -4877,6 +4879,11 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	 " real rooms will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
+	s+=tr("55")+QString(". ")+tr("Beep at the end of the generation will be %1, run external command at the end of generation will be %2,"
+	 " and the external command will be empty.",
+	 "%1 and %2 are true or false").arg(tr("true")).arg(tr("false"));
+	s+="\n";
+
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -5044,6 +5051,13 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	
 	settingsShowVirtualRoomsInTimetablesAction->setChecked(false);
 	SHOW_VIRTUAL_ROOMS_IN_TIMETABLES=false;
+	
+	BEEP_AT_END_OF_GENERATION=true;
+	ENABLE_COMMAND_AT_END_OF_GENERATION=false;
+	commandAtEndOfGeneration=QString("");
+//	DETACHED_NOTIFICATION=false;
+//	terminateCommandAfterSeconds=0;
+//	killCommandAfterSeconds=0;
 
 	setLanguage(*pqapplication, this);
 	setCurrentFile(INPUT_FILENAME_XML);
@@ -5098,6 +5112,13 @@ void FetMainForm::on_settingsPrintBreakSlotsAction_toggled()
 void FetMainForm::on_settingsPrintActivitiesWithSameStartingTimeAction_toggled()
 {
 	PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=settingsPrintActivitiesWithSameStartingTimeAction->isChecked();
+}
+
+void FetMainForm::on_settingsCommandAfterFinishingAction_triggered()
+{
+	NotificationCommandForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
 }
 
 void FetMainForm::on_activityPlanningAction_triggered()

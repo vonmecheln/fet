@@ -167,6 +167,8 @@ public slots:
 	void on_studentsComboBoxesStyleAction_triggered();
 	
 	void on_settingsShowVirtualRoomsInTimetablesAction_toggled();
+
+	void on_settingsCommandAfterFinishingAction_triggered();
 	///
 
 	//////confirmations

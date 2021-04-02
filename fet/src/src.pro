@@ -42,6 +42,8 @@ SOURCES += \
 	interface/modifystudentsyearform.cpp \
 	interface/addstudentsgroupform.cpp \
 	interface/addstudentssubgroupform.cpp \
+	interface/addexistingstudentssubgroupsform.cpp \
+	interface/addexistingstudentsgroupsform.cpp \
 	interface/modifystudentsgroupform.cpp \
 	interface/modifystudentssubgroupform.cpp \
 	interface/addconstraintactivitypreferredtimeslotsform.cpp \
@@ -549,7 +551,9 @@ SOURCES += \
 	interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform.cpp \
 	interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp \
 	interface/constraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp \
-	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp
+	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp \
+	\
+	interface/notificationcommandform.cpp
 
 HEADERS += \
 	engine/timetableexport.h \
@@ -596,6 +600,8 @@ HEADERS += \
 	interface/modifystudentsyearform.h \
 	interface/addstudentsgroupform.h \
 	interface/addstudentssubgroupform.h \
+	interface/addexistingstudentssubgroupsform.h \
+	interface/addexistingstudentsgroupsform.h \
 	interface/modifystudentsgroupform.h \
 	interface/modifystudentssubgroupform.h \
 	interface/addconstraintactivitypreferredtimeslotsform.h \
@@ -1105,7 +1111,9 @@ HEADERS += \
 	interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform.h \
 	interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform.h \
 	interface/constraintteachersmingapsbetweenorderedpairofactivitytagsform.h \
-	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.h
+	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.h \
+	\
+	interface/notificationcommandform.h
 
 FORMS += \
 	interface/fetmainform_template.ui \
@@ -1146,6 +1154,8 @@ FORMS += \
 	interface/modifystudentsyearform_template.ui \
 	interface/addstudentsgroupform_template.ui \
 	interface/addstudentssubgroupform_template.ui \
+	interface/addexistingstudentssubgroupsform_template.ui \
+	interface/addexistingstudentsgroupsform_template.ui \
 	interface/modifystudentsgroupform_template.ui \
 	interface/modifystudentssubgroupform_template.ui \
 	interface/addconstraintactivitypreferredtimeslotsform_template.ui \
@@ -1622,7 +1632,9 @@ FORMS += \
 	interface/modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform_template.ui \
 	interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui \
 	interface/constraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui \
-	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui
+	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui \
+	\
+	interface/notificationcommandform_template.ui
 
 TRANSLATIONS += \
 	../translations/fet_ar.ts \

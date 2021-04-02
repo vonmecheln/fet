@@ -579,7 +579,8 @@ ConstraintTeacherNotAvailableTimes::ConstraintTeacherNotAvailableTimes(double wp
 	this->type=CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES;
 }
 
-QString ConstraintTeacherNotAvailableTimes::getXmlDescription(Rules& r){
+QString ConstraintTeacherNotAvailableTimes::getXmlDescription(Rules& r)
+{
 	QString s="<ConstraintTeacherNotAvailableTimes>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Teacher>"+protect(this->teacher)+"</Teacher>\n";
@@ -601,7 +602,8 @@ QString ConstraintTeacherNotAvailableTimes::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeacherNotAvailableTimes::getDescription(Rules& r){
+QString ConstraintTeacherNotAvailableTimes::getDescription(Rules& r)
+{
 	QString begin=QString("");
 	if(!active)
 		begin="X - ";
@@ -632,7 +634,8 @@ QString ConstraintTeacherNotAvailableTimes::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherNotAvailableTimes::getDetailedDescription(Rules& r){
+QString ConstraintTeacherNotAvailableTimes::getDetailedDescription(Rules& r)
+{
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A teacher is not available");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -943,7 +946,8 @@ bool ConstraintStudentsSetNotAvailableTimes::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintStudentsSetNotAvailableTimes::getXmlDescription(Rules& r){
+QString ConstraintStudentsSetNotAvailableTimes::getXmlDescription(Rules& r)
+{
 	QString s="<ConstraintStudentsSetNotAvailableTimes>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Students>"+protect(this->students)+"</Students>\n";
@@ -965,7 +969,8 @@ QString ConstraintStudentsSetNotAvailableTimes::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintStudentsSetNotAvailableTimes::getDescription(Rules& r){
+QString ConstraintStudentsSetNotAvailableTimes::getDescription(Rules& r)
+{
 	QString begin=QString("");
 	if(!active)
 		begin="X - ";
@@ -997,7 +1002,8 @@ QString ConstraintStudentsSetNotAvailableTimes::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetNotAvailableTimes::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetNotAvailableTimes::getDetailedDescription(Rules& r)
+{
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("A students set is not available");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -1259,7 +1265,8 @@ bool ConstraintActivitiesSameStartingTime::hasInactiveActivities(Rules& r)
 		return false;
 }
 
-QString ConstraintActivitiesSameStartingTime::getXmlDescription(Rules& r){
+QString ConstraintActivitiesSameStartingTime::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintActivitiesSameStartingTime>\n";
@@ -1273,7 +1280,8 @@ QString ConstraintActivitiesSameStartingTime::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintActivitiesSameStartingTime::getDescription(Rules& r){
+QString ConstraintActivitiesSameStartingTime::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -1297,7 +1305,8 @@ QString ConstraintActivitiesSameStartingTime::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r){
+QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r)
+{
 	QString s;
 	
 	s=tr("Time constraint");s+="\n";
@@ -1564,7 +1573,8 @@ bool ConstraintActivitiesNotOverlapping::hasInactiveActivities(Rules& r)
 		return false;
 }
 
-QString ConstraintActivitiesNotOverlapping::getXmlDescription(Rules& r){
+QString ConstraintActivitiesNotOverlapping::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintActivitiesNotOverlapping>\n";
@@ -1578,7 +1588,8 @@ QString ConstraintActivitiesNotOverlapping::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintActivitiesNotOverlapping::getDescription(Rules& r){
+QString ConstraintActivitiesNotOverlapping::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -1602,7 +1613,8 @@ QString ConstraintActivitiesNotOverlapping::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r){
+QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r)
+{
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Activities must not overlap");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -1850,7 +1862,8 @@ bool ConstraintActivityTagsNotOverlapping::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintActivityTagsNotOverlapping::getXmlDescription(Rules& r){
+QString ConstraintActivityTagsNotOverlapping::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintActivityTagsNotOverlapping>\n";
@@ -1864,7 +1877,8 @@ QString ConstraintActivityTagsNotOverlapping::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintActivityTagsNotOverlapping::getDescription(Rules& r){
+QString ConstraintActivityTagsNotOverlapping::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -1890,7 +1904,8 @@ QString ConstraintActivityTagsNotOverlapping::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintActivityTagsNotOverlapping::getDetailedDescription(Rules& r){
+QString ConstraintActivityTagsNotOverlapping::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -2181,7 +2196,8 @@ bool ConstraintMinDaysBetweenActivities::hasInactiveActivities(Rules& r)
 		return false;
 }
 
-QString ConstraintMinDaysBetweenActivities::getXmlDescription(Rules& r){
+QString ConstraintMinDaysBetweenActivities::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintMinDaysBetweenActivities>\n";
@@ -2197,7 +2213,8 @@ QString ConstraintMinDaysBetweenActivities::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintMinDaysBetweenActivities::getDescription(Rules& r){
+QString ConstraintMinDaysBetweenActivities::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -2221,7 +2238,8 @@ QString ConstraintMinDaysBetweenActivities::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintMinDaysBetweenActivities::getDetailedDescription(Rules& r){
+QString ConstraintMinDaysBetweenActivities::getDetailedDescription(Rules& r)
+{
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Minimum number of days between activities");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -2526,7 +2544,8 @@ bool ConstraintMaxDaysBetweenActivities::hasInactiveActivities(Rules& r)
 		return false;
 }
 
-QString ConstraintMaxDaysBetweenActivities::getXmlDescription(Rules& r){
+QString ConstraintMaxDaysBetweenActivities::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintMaxDaysBetweenActivities>\n";
@@ -2541,7 +2560,8 @@ QString ConstraintMaxDaysBetweenActivities::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintMaxDaysBetweenActivities::getDescription(Rules& r){
+QString ConstraintMaxDaysBetweenActivities::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -2564,7 +2584,8 @@ QString ConstraintMaxDaysBetweenActivities::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintMaxDaysBetweenActivities::getDetailedDescription(Rules& r){
+QString ConstraintMaxDaysBetweenActivities::getDetailedDescription(Rules& r)
+{
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Maximum number of days between activities");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -2860,7 +2881,8 @@ bool ConstraintMinGapsBetweenActivities::hasInactiveActivities(Rules& r)
 		return false;
 }
 
-QString ConstraintMinGapsBetweenActivities::getXmlDescription(Rules& r){
+QString ConstraintMinGapsBetweenActivities::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintMinGapsBetweenActivities>\n";
@@ -2875,7 +2897,8 @@ QString ConstraintMinGapsBetweenActivities::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintMinGapsBetweenActivities::getDescription(Rules& r){
+QString ConstraintMinGapsBetweenActivities::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -2898,7 +2921,8 @@ QString ConstraintMinGapsBetweenActivities::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintMinGapsBetweenActivities::getDetailedDescription(Rules& r){
+QString ConstraintMinGapsBetweenActivities::getDetailedDescription(Rules& r)
+{
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Minimum gaps between activities (if activities on the same day)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -3093,7 +3117,8 @@ bool ConstraintTeachersMaxHoursDaily::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeachersMaxHoursDaily::getXmlDescription(Rules& r){
+QString ConstraintTeachersMaxHoursDaily::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeachersMaxHoursDaily>\n";
@@ -3105,7 +3130,8 @@ QString ConstraintTeachersMaxHoursDaily::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeachersMaxHoursDaily::getDescription(Rules& r){
+QString ConstraintTeachersMaxHoursDaily::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -3124,7 +3150,8 @@ QString ConstraintTeachersMaxHoursDaily::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxHoursDaily::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxHoursDaily::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -3311,7 +3338,8 @@ bool ConstraintTeacherMaxHoursDaily::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeacherMaxHoursDaily::getXmlDescription(Rules& r){
+QString ConstraintTeacherMaxHoursDaily::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeacherMaxHoursDaily>\n";
@@ -3324,7 +3352,8 @@ QString ConstraintTeacherMaxHoursDaily::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeacherMaxHoursDaily::getDescription(Rules& r){
+QString ConstraintTeacherMaxHoursDaily::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -3344,7 +3373,8 @@ QString ConstraintTeacherMaxHoursDaily::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxHoursDaily::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxHoursDaily::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -3527,7 +3557,8 @@ bool ConstraintTeachersMaxHoursContinuously::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeachersMaxHoursContinuously::getXmlDescription(Rules& r){
+QString ConstraintTeachersMaxHoursContinuously::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeachersMaxHoursContinuously>\n";
@@ -3539,7 +3570,8 @@ QString ConstraintTeachersMaxHoursContinuously::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeachersMaxHoursContinuously::getDescription(Rules& r){
+QString ConstraintTeachersMaxHoursContinuously::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -3558,7 +3590,8 @@ QString ConstraintTeachersMaxHoursContinuously::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxHoursContinuously::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxHoursContinuously::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -3754,7 +3787,8 @@ bool ConstraintTeacherMaxHoursContinuously::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeacherMaxHoursContinuously::getXmlDescription(Rules& r){
+QString ConstraintTeacherMaxHoursContinuously::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeacherMaxHoursContinuously>\n";
@@ -3767,7 +3801,8 @@ QString ConstraintTeacherMaxHoursContinuously::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeacherMaxHoursContinuously::getDescription(Rules& r){
+QString ConstraintTeacherMaxHoursContinuously::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -3787,7 +3822,8 @@ QString ConstraintTeacherMaxHoursContinuously::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxHoursContinuously::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxHoursContinuously::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -4000,7 +4036,8 @@ bool ConstraintTeachersActivityTagMaxHoursContinuously::hasInactiveActivities(Ru
 	return false;
 }
 
-QString ConstraintTeachersActivityTagMaxHoursContinuously::getXmlDescription(Rules& r){
+QString ConstraintTeachersActivityTagMaxHoursContinuously::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeachersActivityTagMaxHoursContinuously>\n";
@@ -4013,7 +4050,8 @@ QString ConstraintTeachersActivityTagMaxHoursContinuously::getXmlDescription(Rul
 	return s;
 }
 
-QString ConstraintTeachersActivityTagMaxHoursContinuously::getDescription(Rules& r){
+QString ConstraintTeachersActivityTagMaxHoursContinuously::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -4031,7 +4069,8 @@ QString ConstraintTeachersActivityTagMaxHoursContinuously::getDescription(Rules&
 	return begin+s+end;
 }
 
-QString ConstraintTeachersActivityTagMaxHoursContinuously::getDetailedDescription(Rules& r){
+QString ConstraintTeachersActivityTagMaxHoursContinuously::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -4269,7 +4308,8 @@ bool ConstraintTeacherActivityTagMaxHoursContinuously::hasInactiveActivities(Rul
 	return false;
 }
 
-QString ConstraintTeacherActivityTagMaxHoursContinuously::getXmlDescription(Rules& r){
+QString ConstraintTeacherActivityTagMaxHoursContinuously::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeacherActivityTagMaxHoursContinuously>\n";
@@ -4283,7 +4323,8 @@ QString ConstraintTeacherActivityTagMaxHoursContinuously::getXmlDescription(Rule
 	return s;
 }
 
-QString ConstraintTeacherActivityTagMaxHoursContinuously::getDescription(Rules& r){
+QString ConstraintTeacherActivityTagMaxHoursContinuously::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -4301,7 +4342,8 @@ QString ConstraintTeacherActivityTagMaxHoursContinuously::getDescription(Rules& 
 	return begin+s+end;
 }
 
-QString ConstraintTeacherActivityTagMaxHoursContinuously::getDetailedDescription(Rules& r){
+QString ConstraintTeacherActivityTagMaxHoursContinuously::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -4532,7 +4574,8 @@ QString ConstraintTeacherMaxDaysPerWeek::getXmlDescription(Rules& r)
 	return s;
 }
 
-QString ConstraintTeacherMaxDaysPerWeek::getDescription(Rules& r){
+QString ConstraintTeacherMaxDaysPerWeek::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -4551,7 +4594,8 @@ QString ConstraintTeacherMaxDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxDaysPerWeek::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -4767,7 +4811,8 @@ QString ConstraintTeachersMaxDaysPerWeek::getXmlDescription(Rules& r)
 	return s;
 }
 
-QString ConstraintTeachersMaxDaysPerWeek::getDescription(Rules& r){
+QString ConstraintTeachersMaxDaysPerWeek::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -4785,7 +4830,8 @@ QString ConstraintTeachersMaxDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxDaysPerWeek::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -4998,7 +5044,8 @@ bool ConstraintTeachersMaxGapsPerWeek::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeachersMaxGapsPerWeek::getXmlDescription(Rules& r){
+QString ConstraintTeachersMaxGapsPerWeek::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeachersMaxGapsPerWeek>\n";
@@ -5010,7 +5057,8 @@ QString ConstraintTeachersMaxGapsPerWeek::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeachersMaxGapsPerWeek::getDescription(Rules& r){
+QString ConstraintTeachersMaxGapsPerWeek::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -5029,7 +5077,8 @@ QString ConstraintTeachersMaxGapsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -5205,7 +5254,8 @@ bool ConstraintTeacherMaxGapsPerWeek::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeacherMaxGapsPerWeek::getXmlDescription(Rules& r){
+QString ConstraintTeacherMaxGapsPerWeek::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeacherMaxGapsPerWeek>\n";
@@ -5218,7 +5268,8 @@ QString ConstraintTeacherMaxGapsPerWeek::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeacherMaxGapsPerWeek::getDescription(Rules& r){
+QString ConstraintTeacherMaxGapsPerWeek::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -5238,7 +5289,8 @@ QString ConstraintTeacherMaxGapsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint"); s+="\n";
@@ -5411,7 +5463,8 @@ bool ConstraintTeachersMaxGapsPerDay::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeachersMaxGapsPerDay::getXmlDescription(Rules& r){
+QString ConstraintTeachersMaxGapsPerDay::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeachersMaxGapsPerDay>\n";
@@ -5423,7 +5476,8 @@ QString ConstraintTeachersMaxGapsPerDay::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeachersMaxGapsPerDay::getDescription(Rules& r){
+QString ConstraintTeachersMaxGapsPerDay::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -5442,7 +5496,8 @@ QString ConstraintTeachersMaxGapsPerDay::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxGapsPerDay::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxGapsPerDay::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -5617,7 +5672,8 @@ bool ConstraintTeacherMaxGapsPerDay::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeacherMaxGapsPerDay::getXmlDescription(Rules& r){
+QString ConstraintTeacherMaxGapsPerDay::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeacherMaxGapsPerDay>\n";
@@ -5630,7 +5686,8 @@ QString ConstraintTeacherMaxGapsPerDay::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeacherMaxGapsPerDay::getDescription(Rules& r){
+QString ConstraintTeacherMaxGapsPerDay::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -5650,7 +5707,8 @@ QString ConstraintTeacherMaxGapsPerDay::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxGapsPerDay::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxGapsPerDay::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint"); s+="\n";
@@ -5817,7 +5875,8 @@ bool ConstraintBreakTimes::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintBreakTimes::getXmlDescription(Rules& r){
+QString ConstraintBreakTimes::getXmlDescription(Rules& r)
+{
 	QString s="<ConstraintBreakTimes>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
@@ -5838,7 +5897,8 @@ QString ConstraintBreakTimes::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintBreakTimes::getDescription(Rules& r){
+QString ConstraintBreakTimes::getDescription(Rules& r)
+{
 	QString begin=QString("");
 	if(!active)
 		begin="X - ";
@@ -5869,7 +5929,8 @@ QString ConstraintBreakTimes::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintBreakTimes::getDetailedDescription(Rules& r){
+QString ConstraintBreakTimes::getDetailedDescription(Rules& r)
+{
 	QString s=tr("Time constraint");s+="\n";
 	s+=tr("Break times");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
@@ -6361,7 +6422,8 @@ bool ConstraintStudentsSetMaxGapsPerWeek::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintStudentsSetMaxGapsPerWeek::getXmlDescription(Rules& r){
+QString ConstraintStudentsSetMaxGapsPerWeek::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintStudentsSetMaxGapsPerWeek>\n";
@@ -6374,7 +6436,8 @@ QString ConstraintStudentsSetMaxGapsPerWeek::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintStudentsSetMaxGapsPerWeek::getDescription(Rules& r){
+QString ConstraintStudentsSetMaxGapsPerWeek::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -6394,7 +6457,8 @@ QString ConstraintStudentsSetMaxGapsPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxGapsPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMaxGapsPerWeek::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -12166,7 +12230,8 @@ bool ConstraintActivitiesSameStartingHour::hasInactiveActivities(Rules& r)
 		return false;
 }
 
-QString ConstraintActivitiesSameStartingHour::getXmlDescription(Rules& r){
+QString ConstraintActivitiesSameStartingHour::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintActivitiesSameStartingHour>\n";
@@ -12180,7 +12245,8 @@ QString ConstraintActivitiesSameStartingHour::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintActivitiesSameStartingHour::getDescription(Rules& r){
+QString ConstraintActivitiesSameStartingHour::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -12204,7 +12270,8 @@ QString ConstraintActivitiesSameStartingHour::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r){
+QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r)
+{
 	QString s;
 	
 	s=tr("Time constraint");s+="\n";
@@ -12471,7 +12538,8 @@ bool ConstraintActivitiesSameStartingDay::hasInactiveActivities(Rules& r)
 		return false;
 }
 
-QString ConstraintActivitiesSameStartingDay::getXmlDescription(Rules& r){
+QString ConstraintActivitiesSameStartingDay::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintActivitiesSameStartingDay>\n";
@@ -12485,7 +12553,8 @@ QString ConstraintActivitiesSameStartingDay::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintActivitiesSameStartingDay::getDescription(Rules& r){
+QString ConstraintActivitiesSameStartingDay::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -12509,7 +12578,8 @@ QString ConstraintActivitiesSameStartingDay::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintActivitiesSameStartingDay::getDetailedDescription(Rules& r){
+QString ConstraintActivitiesSameStartingDay::getDetailedDescription(Rules& r)
+{
 	QString s;
 	
 	s=tr("Time constraint");s+="\n";
@@ -14384,7 +14454,8 @@ bool ConstraintTeachersMinHoursDaily::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeachersMinHoursDaily::getXmlDescription(Rules& r){
+QString ConstraintTeachersMinHoursDaily::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeachersMinHoursDaily>\n";
@@ -14400,7 +14471,8 @@ QString ConstraintTeachersMinHoursDaily::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeachersMinHoursDaily::getDescription(Rules& r){
+QString ConstraintTeachersMinHoursDaily::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -14420,7 +14492,8 @@ QString ConstraintTeachersMinHoursDaily::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinHoursDaily::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMinHoursDaily::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -14624,7 +14697,8 @@ bool ConstraintTeacherMinHoursDaily::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeacherMinHoursDaily::getXmlDescription(Rules& r){
+QString ConstraintTeacherMinHoursDaily::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeacherMinHoursDaily>\n";
@@ -14641,7 +14715,8 @@ QString ConstraintTeacherMinHoursDaily::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeacherMinHoursDaily::getDescription(Rules& r){
+QString ConstraintTeacherMinHoursDaily::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -14662,7 +14737,8 @@ QString ConstraintTeacherMinHoursDaily::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinHoursDaily::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMinHoursDaily::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -14853,7 +14929,8 @@ bool ConstraintTeacherMinDaysPerWeek::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeacherMinDaysPerWeek::getXmlDescription(Rules& r){
+QString ConstraintTeacherMinDaysPerWeek::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeacherMinDaysPerWeek>\n";
@@ -14866,7 +14943,8 @@ QString ConstraintTeacherMinDaysPerWeek::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeacherMinDaysPerWeek::getDescription(Rules& r){
+QString ConstraintTeacherMinDaysPerWeek::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -14886,7 +14964,8 @@ QString ConstraintTeacherMinDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMinDaysPerWeek::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -15054,7 +15133,8 @@ bool ConstraintTeachersMinDaysPerWeek::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeachersMinDaysPerWeek::getXmlDescription(Rules& r){
+QString ConstraintTeachersMinDaysPerWeek::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeachersMinDaysPerWeek>\n";
@@ -15066,7 +15146,8 @@ QString ConstraintTeachersMinDaysPerWeek::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeachersMinDaysPerWeek::getDescription(Rules& r){
+QString ConstraintTeachersMinDaysPerWeek::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -15085,7 +15166,8 @@ QString ConstraintTeachersMinDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMinDaysPerWeek::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -15301,7 +15383,8 @@ QString ConstraintTeacherIntervalMaxDaysPerWeek::getXmlDescription(Rules& r)
 	return s;
 }
 
-QString ConstraintTeacherIntervalMaxDaysPerWeek::getDescription(Rules& r){
+QString ConstraintTeacherIntervalMaxDaysPerWeek::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -15326,7 +15409,8 @@ QString ConstraintTeacherIntervalMaxDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeacherIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -15553,7 +15637,8 @@ QString ConstraintTeachersIntervalMaxDaysPerWeek::getXmlDescription(Rules& r)
 	return s;
 }
 
-QString ConstraintTeachersIntervalMaxDaysPerWeek::getDescription(Rules& r){
+QString ConstraintTeachersIntervalMaxDaysPerWeek::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -15578,7 +15663,8 @@ QString ConstraintTeachersIntervalMaxDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintTeachersIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -15860,7 +15946,8 @@ QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getXmlDescription(Rules& r)
 	return s;
 }
 
-QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDescription(Rules& r){
+QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -15886,7 +15973,8 @@ QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -16111,7 +16199,8 @@ QString ConstraintStudentsIntervalMaxDaysPerWeek::getXmlDescription(Rules& r)
 	return s;
 }
 
-QString ConstraintStudentsIntervalMaxDaysPerWeek::getDescription(Rules& r){
+QString ConstraintStudentsIntervalMaxDaysPerWeek::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -16136,7 +16225,8 @@ QString ConstraintStudentsIntervalMaxDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -16667,7 +16757,8 @@ bool ConstraintTeachersActivityTagMaxHoursDaily::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeachersActivityTagMaxHoursDaily::getXmlDescription(Rules& r){
+QString ConstraintTeachersActivityTagMaxHoursDaily::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeachersActivityTagMaxHoursDaily>\n";
@@ -16680,7 +16771,8 @@ QString ConstraintTeachersActivityTagMaxHoursDaily::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeachersActivityTagMaxHoursDaily::getDescription(Rules& r){
+QString ConstraintTeachersActivityTagMaxHoursDaily::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -16699,7 +16791,8 @@ QString ConstraintTeachersActivityTagMaxHoursDaily::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersActivityTagMaxHoursDaily::getDetailedDescription(Rules& r){
+QString ConstraintTeachersActivityTagMaxHoursDaily::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -16906,7 +16999,8 @@ bool ConstraintTeacherActivityTagMaxHoursDaily::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeacherActivityTagMaxHoursDaily::getXmlDescription(Rules& r){
+QString ConstraintTeacherActivityTagMaxHoursDaily::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeacherActivityTagMaxHoursDaily>\n";
@@ -16920,7 +17014,8 @@ QString ConstraintTeacherActivityTagMaxHoursDaily::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeacherActivityTagMaxHoursDaily::getDescription(Rules& r){
+QString ConstraintTeacherActivityTagMaxHoursDaily::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -16939,7 +17034,8 @@ QString ConstraintTeacherActivityTagMaxHoursDaily::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherActivityTagMaxHoursDaily::getDetailedDescription(Rules& r){
+QString ConstraintTeacherActivityTagMaxHoursDaily::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -17681,7 +17777,8 @@ bool ConstraintTeachersActivityTagMinHoursDaily::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeachersActivityTagMinHoursDaily::getXmlDescription(Rules& r){
+QString ConstraintTeachersActivityTagMinHoursDaily::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeachersActivityTagMinHoursDaily>\n";
@@ -17698,7 +17795,8 @@ QString ConstraintTeachersActivityTagMinHoursDaily::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeachersActivityTagMinHoursDaily::getDescription(Rules& r){
+QString ConstraintTeachersActivityTagMinHoursDaily::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -17718,7 +17816,8 @@ QString ConstraintTeachersActivityTagMinHoursDaily::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersActivityTagMinHoursDaily::getDetailedDescription(Rules& r){
+QString ConstraintTeachersActivityTagMinHoursDaily::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -17930,7 +18029,8 @@ bool ConstraintTeacherActivityTagMinHoursDaily::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeacherActivityTagMinHoursDaily::getXmlDescription(Rules& r){
+QString ConstraintTeacherActivityTagMinHoursDaily::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeacherActivityTagMinHoursDaily>\n";
@@ -17948,7 +18048,8 @@ QString ConstraintTeacherActivityTagMinHoursDaily::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeacherActivityTagMinHoursDaily::getDescription(Rules& r){
+QString ConstraintTeacherActivityTagMinHoursDaily::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -17968,7 +18069,8 @@ QString ConstraintTeacherActivityTagMinHoursDaily::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherActivityTagMinHoursDaily::getDetailedDescription(Rules& r){
+QString ConstraintTeacherActivityTagMinHoursDaily::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -18978,7 +19080,8 @@ bool ConstraintStudentsSetMaxGapsPerDay::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintStudentsSetMaxGapsPerDay::getXmlDescription(Rules& r){
+QString ConstraintStudentsSetMaxGapsPerDay::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintStudentsSetMaxGapsPerDay>\n";
@@ -18991,7 +19094,8 @@ QString ConstraintStudentsSetMaxGapsPerDay::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintStudentsSetMaxGapsPerDay::getDescription(Rules& r){
+QString ConstraintStudentsSetMaxGapsPerDay::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -19012,7 +19116,8 @@ QString ConstraintStudentsSetMaxGapsPerDay::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxGapsPerDay::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMaxGapsPerDay::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -20726,7 +20831,8 @@ QString ConstraintStudentsSetMaxDaysPerWeek::getXmlDescription(Rules& r)
 	return s;
 }
 
-QString ConstraintStudentsSetMaxDaysPerWeek::getDescription(Rules& r){
+QString ConstraintStudentsSetMaxDaysPerWeek::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -20745,7 +20851,8 @@ QString ConstraintStudentsSetMaxDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsSetMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsSetMaxDaysPerWeek::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -20923,7 +21030,8 @@ QString ConstraintStudentsMaxDaysPerWeek::getXmlDescription(Rules& r)
 	return s;
 }
 
-QString ConstraintStudentsMaxDaysPerWeek::getDescription(Rules& r){
+QString ConstraintStudentsMaxDaysPerWeek::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -20941,7 +21049,8 @@ QString ConstraintStudentsMaxDaysPerWeek::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintStudentsMaxDaysPerWeek::getDetailedDescription(Rules& r){
+QString ConstraintStudentsMaxDaysPerWeek::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -21115,7 +21224,8 @@ bool ConstraintTeacherMaxSpanPerDay::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeacherMaxSpanPerDay::getXmlDescription(Rules& r){
+QString ConstraintTeacherMaxSpanPerDay::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeacherMaxSpanPerDay>\n";
@@ -21129,7 +21239,8 @@ QString ConstraintTeacherMaxSpanPerDay::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeacherMaxSpanPerDay::getDescription(Rules& r){
+QString ConstraintTeacherMaxSpanPerDay::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -21150,7 +21261,8 @@ QString ConstraintTeacherMaxSpanPerDay::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMaxSpanPerDay::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMaxSpanPerDay::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -21325,7 +21437,8 @@ bool ConstraintTeachersMaxSpanPerDay::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeachersMaxSpanPerDay::getXmlDescription(Rules& r){
+QString ConstraintTeachersMaxSpanPerDay::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeachersMaxSpanPerDay>\n";
@@ -21338,7 +21451,8 @@ QString ConstraintTeachersMaxSpanPerDay::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeachersMaxSpanPerDay::getDescription(Rules& r){
+QString ConstraintTeachersMaxSpanPerDay::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -21358,7 +21472,8 @@ QString ConstraintTeachersMaxSpanPerDay::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMaxSpanPerDay::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMaxSpanPerDay::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -21975,7 +22090,8 @@ bool ConstraintTeacherMinRestingHours::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeacherMinRestingHours::getXmlDescription(Rules& r){
+QString ConstraintTeacherMinRestingHours::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeacherMinRestingHours>\n";
@@ -21989,7 +22105,8 @@ QString ConstraintTeacherMinRestingHours::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeacherMinRestingHours::getDescription(Rules& r){
+QString ConstraintTeacherMinRestingHours::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -22010,7 +22127,8 @@ QString ConstraintTeacherMinRestingHours::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeacherMinRestingHours::getDetailedDescription(Rules& r){
+QString ConstraintTeacherMinRestingHours::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
@@ -22172,7 +22290,8 @@ bool ConstraintTeachersMinRestingHours::hasInactiveActivities(Rules& r)
 	return false;
 }
 
-QString ConstraintTeachersMinRestingHours::getXmlDescription(Rules& r){
+QString ConstraintTeachersMinRestingHours::getXmlDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeachersMinRestingHours>\n";
@@ -22185,7 +22304,8 @@ QString ConstraintTeachersMinRestingHours::getXmlDescription(Rules& r){
 	return s;
 }
 
-QString ConstraintTeachersMinRestingHours::getDescription(Rules& r){
+QString ConstraintTeachersMinRestingHours::getDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString begin=QString("");
@@ -22205,7 +22325,8 @@ QString ConstraintTeachersMinRestingHours::getDescription(Rules& r){
 	return begin+s+end;
 }
 
-QString ConstraintTeachersMinRestingHours::getDetailedDescription(Rules& r){
+QString ConstraintTeachersMinRestingHours::getDetailedDescription(Rules& r)
+{
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";

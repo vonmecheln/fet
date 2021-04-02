@@ -1357,6 +1357,7 @@
     <addaction name="menuFET_interface"/>
     <addaction name="menuConfirmations"/>
     <addaction name="selectOutputDirAction"/>
+    <addaction name="settingsCommandAfterFinishingAction"/>
     <addaction name="separator"/>
     <addaction name="menuSettingsAdvanced"/>
     <addaction name="separator"/>
@@ -2803,6 +2804,11 @@
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="settingsCommandAfterFinishingAction">
+   <property name="text">
+    <string>Notification command</string>
    </property>
   </action>
  </widget>
