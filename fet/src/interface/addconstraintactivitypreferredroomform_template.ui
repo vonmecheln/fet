@@ -254,6 +254,13 @@ necessary 100% if list nonempty)</string>
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="helpPushButton">
+       <property name="text">
+        <string>Help</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="closePushButton">
        <property name="text">
         <string>Close</string>

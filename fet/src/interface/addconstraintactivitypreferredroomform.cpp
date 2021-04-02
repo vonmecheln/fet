@@ -32,6 +32,7 @@ AddConstraintActivityPreferredRoomForm::AddConstraintActivityPreferredRoomForm(Q
 	addConstraintPushButton->setDefault(true);
 
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
 	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
 
 	connect(selectedRealRoomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeRealRoom()));
@@ -328,4 +329,19 @@ void AddConstraintActivityPreferredRoomForm::addConstraint()
 			tr("Constraint NOT added - must be a duplicate"));
 		delete ctr;
 	}
+}
+
+void AddConstraintActivityPreferredRoomForm::help()
+{
+	QString s;
+	
+	s+=tr("A room can be real (the simplest and the most used scenario) or virtual. You can read more about this in the rooms dialog, by clicking the Help button there.");
+	s+="\n\n";
+	s+=tr("If the preferred room selected in the combo box is real, the list of selected real rooms must remain empty.");
+	s+="\n\n";
+	s+=tr("If the preferred room selected in the combo box is virtual, you can select also the list of real rooms to be allocated to the "
+	 "selected activity (if the preferred room selected in the combo box is virtual and the list of selected real rooms is not empty, the "
+	 "weight of the constraint must be 100.0%).");
+	
+	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

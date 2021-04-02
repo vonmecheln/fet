@@ -2294,3 +2294,7 @@ Versions 5.46.0 - 5.46.v
 	- Added the possibility of executing an external command after the generation (suggested by Zsolt Udvari and other users). The implementation of this feature
 	was inspired by the Claws Mail software.
 	- Added a new example file from Hong Kong, by Marcus.
+- Version 5.46.1
+	- Increased the maximum number of hours per day to 72 (suggested by Celia22).
+	- Added help/information in the add/modify constraint activity preferred room dialog (suggested by math).
+	- Minor improvements.

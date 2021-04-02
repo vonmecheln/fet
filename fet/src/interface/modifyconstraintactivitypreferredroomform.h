@@ -36,6 +36,7 @@ public:
 
 public slots:
 	void ok();
+	void help();
 	void cancel();
 
 	void removeRealRoom();

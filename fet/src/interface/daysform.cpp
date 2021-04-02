@@ -126,14 +126,14 @@ void DaysForm::ok()
 	for(int i=0; i<nDays; i++)
 		if(daysNames[i]->text()==""){
 			QMessageBox::warning(this, tr("FET information"),
-				tr("Empty names not allowed"));
+				tr("Empty names not allowed (the day number %1 has an empty name).").arg(i+1));
 			return;
 		}
 	for(int i=0; i<nDays-1; i++)
 		for(int j=i+1; j<nDays; j++)
 			if(daysNames[i]->text()==daysNames[j]->text()){
 				QMessageBox::warning(this, tr("FET information"),
-					tr("Duplicates not allowed"));
+					tr("Duplicate names not allowed (the day number %1 has the same name as the day number %2).").arg(i+1).arg(j+1));
 				return;
 			}
 	

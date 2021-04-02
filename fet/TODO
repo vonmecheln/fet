@@ -7126,3 +7126,44 @@ From Benahmed Abdelkrim (on forum):
 https://lalescu.ro/liviu/fet/forum/index.php?topic=4601.0
 
 Can be added this functionality: allow in dialog boxes to select multiple elements once and drag them to the adjacent field. It could save precious time.
+
+418---------------------------------------------------------
+From Marcus (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4636.0
+
+I don't know if I am outdated or overlooked. If there is no such constraints mentioned below , may I suggest it.
+
+Some time we may not want the students to move so far away even when the rooms are in the same building. I limited the choices of rooms of activities by manually .ark a set of suitable rooms in the space constraints. The choices are highly based on the distance between rooms but it may be difficult for the users to mention the distance in many ways in the program.
+What if we introduce a coordinate system for the rooms so that the program can calculate the horizontal and vertical distance between rooms? And thus set the space constraints based on the calculated distances?
+
+I don't know if this is a practical idea.
+
+Liviu: Marcus also attached a picture to his suggestion, see the forum link.
+
+419---------------------------------------------------------
+From nguyenhuuduyet (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4501.msg25772#msg25772
+
+About the FET-MA custom version:
+
+I want when entering the teacher's name will be displayed immediately like the official version.
+Example: 1. Enter the teacher's name
+2. Add
+3. OK
+Then the teacher's name will appear in item 4
+
+(meaning the teacher will appear immediately in the list of all the teachers).
+
+---
+
+About the official FET version:
+
+I recommend adding functionality when importing activities in both official and custom versions.
+I want the window on import to behave the same as the image I attached (combine the active dialog with the add activity)
+For example:
+1. Enter teacher, subject, class ... click Add
+2. Click OK
+3. The activity will appear immediately item 3
+If you do this, it will be very easy for the user to observe.

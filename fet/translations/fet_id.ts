@@ -3724,86 +3724,106 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
 <context>
     <name>AddConstraintActivityPreferredRoomForm</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="174"/>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="195"/>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="220"/>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="230"/>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="247"/>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="259"/>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="266"/>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="272"/>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="295"/>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="317"/>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="327"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="175"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="196"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="221"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="231"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="248"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="260"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="267"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="273"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="296"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="318"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="328"/>
         <source>FET information</source>
         <translation>Informasi FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="174"/>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="195"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="175"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="196"/>
         <source>Invalid selected real room.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="221"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="222"/>
         <source>Invalid weight (percentage)</source>
         <translation>Bobot (persentasi) yang salah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="231"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="232"/>
         <source>Invalid activity</source>
         <translation>Kegiatan salah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="248"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="249"/>
         <source>Invalid room</source>
         <translation>Ruang salah</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="259"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="260"/>
         <source>The preferred room of the activity is a real room, not a virtual one. This implies that the selected real rooms list should be empty.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="266"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="267"/>
         <source>If the preferred room is virtual and the list of real rooms is not empty, the weight percentage must be exactly 100%.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="272"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="273"/>
         <source>The preferred room of the activity is a virtual room. This implies that the number of selected real rooms in the list should either be zero or equal to the number of sets of real rooms of the preferred virtual room, which is %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="295"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="296"/>
         <source>The selected real rooms: %1 are not found in the sets of sets of real rooms of the selected preferred virtual room. This is probably wrong. Are you sure you want to add this constraint?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="297"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="298"/>
         <source>Yes</source>
         <translation type="unfinished">Ya</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="297"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="298"/>
         <source>No</source>
         <translation type="unfinished">Tidak</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="314"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="315"/>
         <source>Constraint added:</source>
         <translation>Batasan ditambah:</translation>
     </message>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="328"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="329"/>
         <source>Constraint NOT added - must be a duplicate</source>
         <translation>Batasan tidak ditambah - pasti duplikasi</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="342"/>
+        <source>If the preferred room selected in the combo box is virtual, you can select also the list of real rooms to be allocated to the selected activity (if the preferred room selected in the combo box is virtual and the list of selected real rooms is not empty, the weight of the constraint must be 100.0%).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="340"/>
+        <source>If the preferred room selected in the combo box is real, the list of selected real rooms must remain empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="338"/>
+        <source>A room can be real (the simplest and the most used scenario) or virtual. You can read more about this in the rooms dialog, by clicking the Help button there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform.cpp" line="346"/>
+        <source>FET help</source>
+        <translation type="unfinished">Bantuan FET</translation>
     </message>
 </context>
 <context>
     <name>AddConstraintActivityPreferredRoomForm_template</name>
     <message>
-        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="259"/>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="266"/>
         <source>Close</source>
         <translation>Tutup</translation>
     </message>
@@ -3885,6 +3905,11 @@ necessary 100% if list nonempty)</source>
         <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="237"/>
         <source>Select this if you want this constraint not to be unlockable from the &apos;Timetable&apos; menu (recommended). You can always remove this constraint from the constraints dialogs or uncheck &quot;permanently locked&quot; checkbox by editing this constraint</source>
         <translation>Pilih ini jika Anda ingin batasan ini tidak akan unlockable dari menu &apos;Jadwal&apos; (dianjurkan). Anda selalu dapat menghapus kendala ini dari dialog batasan-batasan atau hapus centang &quot;secara permanen dikunci&quot; checkbox dengan mengedit kendala ini</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/addconstraintactivitypreferredroomform_template.ui" line="259"/>
+        <source>Help</source>
+        <translation type="unfinished">Bantuan</translation>
     </message>
 </context>
 <context>
@@ -36894,13 +36919,13 @@ Ruang dipilih akan menghapus ruang khusus.</translation>
     </message>
     <message>
         <location filename="../src/interface/daysform.cpp" line="129"/>
-        <source>Empty names not allowed</source>
-        <translation>Nama kosong tidak diperbolehkan</translation>
+        <source>Empty names not allowed (the day number %1 has an empty name).</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/daysform.cpp" line="136"/>
-        <source>Duplicates not allowed</source>
-        <translation>Duplikasi tidak diperbolehkan</translation>
+        <source>Duplicate names not allowed (the day number %1 has the same name as the day number %2).</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/interface/daysform.cpp" line="167"/>
@@ -41297,111 +41322,111 @@ Silahkan hentikan simulasi sebeum ini.</translation>
         <location filename="../src/engine/generate_pre.cpp" line="4770"/>
         <location filename="../src/engine/generate_pre.cpp" line="4922"/>
         <location filename="../src/engine/generate_pre.cpp" line="4945"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4967"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5034"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5062"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5079"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5108"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5138"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5173"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5190"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5219"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5249"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5289"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5312"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5334"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5401"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5428"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5466"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5533"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5559"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5683"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5699"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5755"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5827"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5946"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5992"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6035"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6084"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6354"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6417"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6485"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6525"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6645"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6906"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6931"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7026"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7070"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7093"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7188"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7224"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7266"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7299"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7317"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7350"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7396"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7430"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7449"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7484"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7525"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7583"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7597"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7618"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7683"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7741"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7759"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7822"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7877"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7902"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7957"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7997"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8047"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8072"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8127"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8167"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8214"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8259"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8374"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8409"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8447"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8482"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8756"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8772"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8795"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8817"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8837"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9082"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9104"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9125"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9162"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9196"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9231"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9255"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9294"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9318"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9357"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9381"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9420"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9442"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9481"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9503"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9542"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9564"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9603"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9627"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9666"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9690"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9729"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9753"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9792"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9814"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9853"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9875"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9914"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9936"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10072"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10179"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10623"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4966"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5033"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5061"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5078"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5107"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5137"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5172"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5189"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5218"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5248"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5288"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5311"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5332"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5399"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5426"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5464"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5531"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5557"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5681"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5697"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5753"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5825"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5944"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5990"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6033"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6082"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6352"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6415"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6483"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6523"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6643"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6904"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6929"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7024"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7068"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7091"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7186"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7222"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7264"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7297"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7315"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7348"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7394"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7428"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7447"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7482"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7523"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7581"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7595"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7616"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7681"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7739"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7757"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7820"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7875"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7900"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7955"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7995"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8045"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8070"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8125"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8165"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8212"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8257"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8372"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8407"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8445"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8480"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8754"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8770"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8793"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8815"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8835"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9080"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9102"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9123"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9160"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9194"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9229"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9253"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9292"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9316"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9355"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9379"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9418"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9440"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9479"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9501"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9540"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9562"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9601"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9625"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9664"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9688"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9727"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9751"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9790"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9812"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9851"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9873"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9912"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9934"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10070"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10177"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10621"/>
         <source>FET warning</source>
         <translation>Peringatan FET</translation>
     </message>
@@ -41513,107 +41538,107 @@ Silahkan hentikan simulasi sebeum ini.</translation>
         <location filename="../src/engine/generate_pre.cpp" line="4670"/>
         <location filename="../src/engine/generate_pre.cpp" line="4771"/>
         <location filename="../src/engine/generate_pre.cpp" line="4929"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4952"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4975"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5035"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5065"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5083"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5115"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5145"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5176"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5194"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5226"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5256"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5296"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5319"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5342"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5402"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5433"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5469"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5538"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5562"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5689"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5705"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5763"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5833"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6089"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6357"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6420"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6488"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6650"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6912"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6936"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7027"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7071"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7094"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7189"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7225"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7271"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7304"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7321"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7355"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7401"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7435"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7455"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7489"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7529"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7587"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7605"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7626"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7687"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7745"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7770"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7826"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7882"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7906"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7962"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8001"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8052"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8076"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8132"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8171"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8218"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8378"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8413"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8451"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8486"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8760"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8776"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8800"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8822"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8841"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9086"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9108"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9129"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9166"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9201"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9234"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9258"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9297"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9321"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9360"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9384"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9423"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9445"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9484"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9506"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9545"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9567"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9606"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9630"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9669"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9693"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9732"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9756"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9795"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9817"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9856"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9878"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9917"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9939"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10073"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10180"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10624"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4951"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4974"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5034"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5064"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5082"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5114"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5144"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5175"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5193"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5225"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5255"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5295"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5317"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5340"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5400"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5431"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5467"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5536"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5560"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5687"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5703"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5761"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5831"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6087"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6355"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6418"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6486"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6648"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6910"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6934"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7069"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7092"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7187"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7223"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7269"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7302"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7319"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7353"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7399"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7433"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7453"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7487"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7527"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7585"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7603"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7624"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7685"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7743"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7768"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7824"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7880"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7904"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7960"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7999"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8050"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8074"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8130"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8169"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8216"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8376"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8411"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8449"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8484"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8758"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8774"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8798"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8820"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8839"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9084"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9106"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9127"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9164"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9199"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9232"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9256"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9295"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9319"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9358"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9382"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9421"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9443"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9482"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9504"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9543"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9565"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9604"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9667"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9691"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9730"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9754"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9793"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9815"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9854"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9876"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9915"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9937"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10071"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10178"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10622"/>
         <source>Skip rest</source>
         <translation>Lewati sisanya</translation>
     </message>
@@ -41706,107 +41731,107 @@ Silahkan hentikan simulasi sebeum ini.</translation>
         <location filename="../src/engine/generate_pre.cpp" line="4670"/>
         <location filename="../src/engine/generate_pre.cpp" line="4771"/>
         <location filename="../src/engine/generate_pre.cpp" line="4929"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4952"/>
-        <location filename="../src/engine/generate_pre.cpp" line="4975"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5035"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5065"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5083"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5115"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5145"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5176"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5194"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5226"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5256"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5296"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5319"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5342"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5402"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5433"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5469"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5538"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5562"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5689"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5705"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5763"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5833"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6089"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6357"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6420"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6488"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6650"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6912"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6936"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7027"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7071"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7094"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7189"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7225"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7271"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7304"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7321"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7355"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7401"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7435"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7455"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7489"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7529"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7587"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7605"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7626"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7687"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7745"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7770"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7826"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7882"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7906"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7962"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8001"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8052"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8076"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8132"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8171"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8218"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8378"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8413"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8451"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8486"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8760"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8776"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8800"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8822"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8841"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9086"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9108"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9129"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9166"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9201"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9234"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9258"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9297"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9321"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9360"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9384"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9423"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9445"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9484"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9506"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9545"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9567"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9606"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9630"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9669"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9693"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9732"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9756"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9795"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9817"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9856"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9878"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9917"/>
-        <location filename="../src/engine/generate_pre.cpp" line="9939"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10073"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10180"/>
-        <location filename="../src/engine/generate_pre.cpp" line="10624"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4951"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4974"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5034"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5064"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5082"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5114"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5144"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5175"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5193"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5225"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5255"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5295"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5317"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5340"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5400"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5431"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5467"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5536"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5560"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5687"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5703"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5761"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5831"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6087"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6355"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6418"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6486"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6648"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6910"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6934"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7025"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7069"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7092"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7187"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7223"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7269"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7302"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7319"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7353"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7399"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7433"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7453"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7487"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7527"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7585"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7603"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7624"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7685"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7743"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7768"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7824"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7880"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7904"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7960"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7999"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8050"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8074"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8130"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8169"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8216"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8376"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8411"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8449"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8484"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8758"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8774"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8798"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8820"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8839"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9084"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9106"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9127"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9164"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9199"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9232"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9256"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9295"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9319"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9358"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9382"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9421"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9443"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9482"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9504"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9543"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9565"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9604"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9667"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9691"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9730"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9754"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9793"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9815"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9854"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9876"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9915"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9937"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10071"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10178"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10622"/>
         <source>See next</source>
         <translation>Lihat selanjutnya</translation>
     </message>
@@ -41977,62 +42002,62 @@ Silahkan hentikan simulasi sebeum ini.</translation>
         <translation>Kegiatan dengan id %1 dan%2 harus simultan (permintaan ditentukan secara tidak langsung), tetapi mereka memiliki guru-guru umum dan / atau set siswa atau harus tidak tumpang tindih</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4968"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4967"/>
         <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 allowed days from constraint teacher max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation>Tidak dapat optimasi untuk guru %1, karena jumlah jam untuk guru ini adalah %2, dan anda hanya memiliki %3 hari yang diperbolehkan untuk batasan jam maks guru per minggu x %4 jam dalam satu hari. Mungkin ada kesalahan dalam data anda</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5024"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5023"/>
         <source>Cannot optimize for teacher %1, because of too constrained teacher max days per week, teacher not available and/or breaks. The number of total hours for this teacher is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation>Tidak dapat optimasi untuk guru %1, karena batasa berlebih, guru maks hari per minggu, guru tidak tersedia dan/atau isitirahat. Jumlah dari jam totoal untuk guru ini adalalh %2 dan jumlah dari slot tersedia, tergantung maks hari per minggu dan semua batasan, %3.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5063"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5062"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan jam kosong maks guru dengan bobot(persentase) dibawah 100. Ubah bobot jadi 100% dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5080"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5079"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per week with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan jam kosong maks guru dengan bobot(persentase) dibawah 100 untuk guru %1. Ubah bobot jadi 100% dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6526"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6524"/>
         <source>Cannot generate, because you do not have a constraint of type basic compulsory time or its weight is lower than 100.0%.</source>
         <translation>Tidak bisa menghasilkan, karena Anda tidak memiliki kendala waktu wajib tipe dasar atau beratnya lebih rendah dari 100,0%.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6528"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8262"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6526"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8260"/>
         <source>Please add a constraint of this type with weight 100%.</source>
         <translation>Harap menambahkan kendala jenis ini dengan bobot 100%.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6530"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6528"/>
         <source>You can add this constraint from the menu Data -&gt; Time constraints -&gt; Miscellaneous -&gt; Basic compulsory time constraints.</source>
         <translation>Anda dapat menambahkan kendala ini dari menu Data - Waktu&gt; kendala -&gt; Miscellaneous -&gt; Dasar kendala waktu wajib.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6532"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8266"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6530"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8264"/>
         <source>Explanation:</source>
         <translation>Penjelasan:</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6534"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8268"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6532"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8266"/>
         <source>Each time you create a new file, it contains an automatically added constraint of this type.</source>
         <translation>Setiap kali Anda membuat file baru, berisi kendala secara otomatis ditambahkan dari jenis ini.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6540"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8274"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6538"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8272"/>
         <source>By adding it again, everything should be all right.</source>
         <translation>Dengan menambahkan lagi, semuanya harus baik-baik saja.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6536"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8270"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6534"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8268"/>
         <source>For complete flexibility, you are allowed to remove it (even if this is a wrong idea).</source>
         <translation>Untuk fleksibilitas yang lengkap, Anda diijinkan untuk melepaskannya (bahkan jika ini adalah ide yang salah).</translation>
     </message>
@@ -42077,79 +42102,69 @@ Silahkan hentikan simulasi sebeum ini.</translation>
         <translation>Tidak dapat mengoptimalkan untuk guru %1, karena jumlah jam untuk guru adalah%2 dan Anda hanya%3 hari  %4 jam dalam seminggu.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="4946"/>
-        <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 free slots from constraints teacher not available and/or break. Maybe you inputted wrong constraints teacher not available or break or the number of hours per week is less because of a misunderstanding</source>
-        <translation>Tidak dapat mengoptimalkan untuk guru %1, karena jumlah jam untuk guru adalah%2 dan Anda hanya memiliki %3 slot bebas dari kendala guru tidak tersedia dan / atau istirahat. Mungkin Anda salah kendala diinput guru tidak tersedia atau istirahat atau jumlah jam per minggu kurang karena salah paham</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5290"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5289"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 days x %4 hours in a week.</source>
         <translation>Tidak dapat mengoptimalkan untuk subgrup %1, karena jumlah jam untuk subgrup adalah%2 dan Anda hanya%3 hari x%4 jam dalam seminggu.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5313"/>
-        <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 free slots from constraints students set not available and/or break. Maybe you inputted wrong constraints students set not available or break or the number of hours per week is less because of a misunderstanding</source>
-        <translation>Tidak dapat mengoptimalkan untuk subgrup %1, karena jumlah jam untuk subgrup adalah %2 dan Anda hanya memiliki %3 slot bebas dari kendala mahasiswa tetapkan tidak tersedia dan / atau istirahat. Mungkin Anda salah kendala diinput siswa tetapkan tidak tersedia atau istirahat atau jumlah jam per minggu kurang karena salah paham</translation>
-    </message>
-    <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6538"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8272"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6536"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8270"/>
         <source>Maybe you removed it by mistake from your file.</source>
         <translation>Mungkin Anda hapus dengan kesalahan dari file Anda.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6557"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6555"/>
         <source>Precomputing</source>
         <comment>Title of a progress dialog</comment>
         <translation>Pra komputasi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7015"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7013"/>
         <source>%1 cannot be respected because it contains %2 activities, has weight 100% and has min number of days between activities=%3. The minimum required number of days per week for that would be (nactivities-1)*mindays+1=%4, and you have only %5 days per week - impossible. Please correct this constraint.</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 tidak dapat dihormati karena mengandung%2 kegiatan, memiliki berat 100% dan memiliki nomor min hari antara kegiatan =%3. Jumlah minimum yang diperlukan hari per minggu untuk yang akan (nactivities-1) * 1 =%4 mindays, dan Anda hanya%5 hari per minggu - mungkin. Harap perbaiki kendala ini.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7058"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7056"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available days from teacher not available, breaks and teacher max days per week. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 tidak dapat dihormati karena guru%2 memiliki paling banyak%3 hari  tersedia dari guru tidak tersedia, istirahat dan hari maks guru per minggu. Harap menurunkan berat kendala ini ke nilai di bawah 100% (tergantung pada situasi Anda, jika 0% terlalu kecil, membuat 90%, 95% atau bahkan 99,75%. Bahkan dengan berat besar tidak harus memperlambat banyak program Sebuah situasi di mana Anda mungkin perlu membuatnya lebih besar dari 0% adalah. sebagai contoh jika Anda memiliki 5 kegiatan dengan 4 hari mungkin. Anda ingin menyebarkannya 1, 1, 1 dan 2, bukan 2, 2 dan 1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7081"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7079"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available days from students set not available and breaks. Please lower the weight of this constraint to a value below 100% (it depends on your situation, if 0% is too little, make it 90%, 95% or even 99.75%. Even a large weight should not slow down much the program. A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4 possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 tidak dapat dihormati karena subkelompok%2 memiliki paling banyak %3 hari  tersedia dari siswa tetapkan tidak tersedia dan istirahat. Harap menurunkan berat kendala ini ke nilai di bawah 100% (tergantung pada situasi Anda, jika 0% terlalu kecil, membuat 90%, 95% atau bahkan 99,75%. Bahkan dengan berat besar tidak harus memperlambat banyak program Sebuah situasi di mana Anda mungkin perlu membuatnya lebih besar dari 0% adalah. sebagai contoh jika Anda memiliki 5 kegiatan dengan 4 hari mungkin. Anda ingin menyebarkannya 1, 1, 1 dan 2, bukan 2, 2 dan 1)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7176"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7174"/>
         <source>%1 cannot be respected because teacher %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please please modify your file (uncheck consecutive if same day or add other activities with larger duration).</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 tidak dapat dihormati karena guru%2  memiliki paling banyak%3 hari  tersedia. Anda ditentukan untuk ini kendala yang sama berturut-turut jika hari = true. Saat ini FET tidak dapat menempatkan lebih dari 2 kegiatan di hari yang sama jika berturut-turut jika hari yang sama adalah benar. Anda punya nomor &lt;hari tersedia 2 * kegiatan dalam kendala ini. Ini adalah situasi yang sangat tidak mungkin, itu sebabnya aku tidak peduli terlalu banyak tentang hal ini. Jika Anda mengalami ini, silakan silakan memodifikasi file Anda (matikan berurutan jika hari yang sama atau menambahkan kegiatan lain dengan durasi yang lebih besar).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7212"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7210"/>
         <source>%1 cannot be respected because subgroup %2 has at most %3 available days. You specified for this constraint consecutive if same day=true. Currently FET cannot put more than 2 activities in the same day if consecutive if same day is true. You have 2*available days&lt;number of activities in this constraint. This is a very unlikely situation, that is why I didn&apos;t care too much about it. If you encounter it, please modify your file (uncheck consecutive if same day or add other activities with larger duration).</source>
         <comment>%1 is the detailed description of a constraint</comment>
         <translation>%1 tidak dapat dihormati karena subkelompok%2 memiliki paling banyak %3 hari  tersedia. Anda ditentukan untuk ini kendala yang sama berturut-turut jika hari = true. Saat ini FET tidak dapat menempatkan lebih dari 2 kegiatan di hari yang sama jika berturut-turut jika hari yang sama adalah benar. Anda punya nomor &lt;hari tersedia 2 * kegiatan dalam kendala ini. Ini adalah situasi yang sangat tidak mungkin, itu sebabnya aku tidak peduli terlalu banyak tentang hal ini. Jika Anda mengalami itu, silakan memodifikasi file Anda (matikan berturut-turut jika hari yang sama atau menambahkan kegiatan lain dengan durasi yang lebih besar).</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8260"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8258"/>
         <source>Cannot generate, because you do not have a constraint of type basic compulsory space or its weight is lower than 100.0%.</source>
         <translation>Tidak bisa menghasilkan, karena Anda tidak memiliki kendala ruang wajib tipe dasar atau beratnya lebih rendah dari 100,0%.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8264"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8262"/>
         <source>You can add this constraint from the menu Data -&gt; Space constraints -&gt; Miscellaneous -&gt; Basic compulsory space constraints.</source>
         <translation>Anda dapat menambahkan batasan ini dari menu Data -&gt; Batasan tempat -&gt; Macam-macam -&gt; Batasan tempat wajib dasar.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5174"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5173"/>
         <source>Cannot optimize, because you have constraint teachers max gaps per day with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan jam kosong maks guru dengan bobot(persentase) dibawah 100. Ubah bobot jadi 100% dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5191"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5190"/>
         <source>Cannot optimize, because you have constraint teacher max gaps per day with weight (percentage) below 100 for teacher %1. Please make weight 100% and try again</source>
         <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan jam kosong maks guru per hari dengan bobot(persentase) dibawah 100 untuk guru %1. Ubah bobot jadi 100% dan dicoba lagi</translation>
     </message>
@@ -42178,8 +42193,8 @@ Silahkan hentikan simulasi sebeum ini.</translation>
         <location filename="../src/engine/generate_pre.cpp" line="3226"/>
         <location filename="../src/engine/generate_pre.cpp" line="3361"/>
         <location filename="../src/engine/generate_pre.cpp" line="3379"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5032"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5399"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5031"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5397"/>
         <source>Please modify your data accordingly and try again</source>
         <translation>Silakan memodifikasi data yang sesuai dan coba lagi</translation>
     </message>
@@ -42488,352 +42503,362 @@ Silahkan hentikan simulasi sebeum ini.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5109"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5139"/>
+        <location filename="../src/engine/generate_pre.cpp" line="4946"/>
+        <source>Cannot optimize for teacher %1, because the number of hours for teacher is %2 and you have only %3 free slots from constraints teacher not available and/or break.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="5108"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5138"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per week relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again</source>
         <translation>Tidak dapat mengoptimalkan untuk guru %1, karena ada dua kendala dari kesenjangan maks jenis per minggu berhubungan dengan dia, dan persentase berat lebih tinggi pada kendala dengan celah lebih diperbolehkan. Anda diperbolehkan hanya untuk memiliki untuk setiap guru kendala paling penting dengan persentase berat maksimum dan minimum kesenjangan diperbolehkan. Silakan memodifikasi data yang sesuai dan coba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5220"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5250"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5219"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5249"/>
         <source>Cannot optimize for teacher %1, because there are two constraints of type max gaps per day relating to him, and the weight percentage is higher on the constraint with more gaps allowed. You are allowed only to have for each teacher the most important constraint with maximum weight percentage and minimum gaps allowed. Please modify your data accordingly and try again</source>
         <translation>Tidak dapat mengoptimalkan untuk guru %1, karena ada dua kendala dari kesenjangan maks jenis per hari yang berhubungan dengan dia, dan persentase berat lebih tinggi pada kendala dengan celah lebih diperbolehkan. Anda diperbolehkan hanya untuk memiliki untuk setiap guru kendala paling penting dengan persentase berat maksimum dan minimum kesenjangan diperbolehkan. Silakan memodifikasi data yang sesuai dan coba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5335"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5312"/>
+        <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 free slots from constraints students set not available and/or break.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/engine/generate_pre.cpp" line="5333"/>
         <source>Cannot optimize for subgroup %1, because the number of hours for subgroup is %2 and you have only %3 allowed days from constraint students (set) max days per week x %4 hours in a day. Probably there is an error in your data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5391"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5389"/>
         <source>Cannot optimize for subgroup %1, because of too constrained students (set) max days per week, students set not available and/or breaks. The number of total hours for this subgroup is %2 and the number of available slots is, considering max days per week and all other constraints, %3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5429"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5427"/>
         <source>Cannot optimize, because you have constraint teacher max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.2.17 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan jam maks guru per minggu dengan bobot(persentase) dibawah 100 untuk guru %1 . Sejak FET versi 5.2.17 hanya mungkin menggunakan bobot 100% untuk batasan ini. Silahakn ubah bobot menjadi 100% dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5467"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5465"/>
         <source>Cannot optimize, because you have constraint teachers max days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation>Tidak bisa mengoptimalkan, karena Anda memiliki guru kendala maks hari per minggu dengan bobot (persentase) di bawah 100. Silakan membuat berat badan 100% dan coba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5534"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5532"/>
         <source>Cannot optimize, because you have constraint students set max days per week with weight (percentage) below 100 for students set %1. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5560"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5558"/>
         <source>Cannot optimize, because you have constraint students max days per week with weight (percentage) below 100. Please make weight 100% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5684"/>
-        <location filename="../src/engine/generate_pre.cpp" line="5828"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5682"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5826"/>
         <source>Cannot optimize for subgroup %1, because you have a max gaps constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint max gaps or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation>Tidak dapat dioptimasi untuk grup %1, karena anda mempunyai jam kosong maksimal dengan bobot persentase kurang dari 100%. Saat ini, algorima hanya optimasi dengan tanpa batasan jam kosong maks atau ada dengan 100%. Silakan ubah data anda dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5700"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5698"/>
         <source>Cannot optimize for subgroup %1, because you have an early max beginnings at second hour constraint with weight percentage less than 100%. Currently, the algorithm can only optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it. Please modify your data correspondingly and try again</source>
         <translation>Tidak dapat optimasi untuk grup %1, karena anda memiliki batasan mulai awal pada jam kedua maksimal dengan bobot persentase kurang dair 100%. Saat ini, algoritma hanya optimasi dengan tanpa atau 100%. Silahkan ubah data dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5756"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5754"/>
         <source>Cannot optimize for subgroup %1, because early max beginnings at second hour constraint has max beginnings at second hour %2, and the number of days per week is %3 which is less. It must be that the number of days per week must be greater or equal with the max beginnings at second hour
 Please modify your data correspondingly and try again</source>
         <translation>Tidak dapat dioptimasi untuk grup %1, karena mulai awal pada jam kedua maks mempunyai %2, dan jumlah hari per minggu adalah %3, kurang. Seharusnya jumlah hari per minggu lebih besar atau sama dengan awal pada jam kedua maks
 Silakan ubah data anda dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5947"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5945"/>
         <source>Cannot optimize, because you have constraints of type teacher not available with weight percentage less than 100% for teacher %1. Currently, FET can only optimize with constraints teacher not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Tidak dapat dioptimasi karena anda mempunyai batasan dari jenis guru tidak tersedia dengan persentase bobot kurang dari 100% untuk siswa  %1. Saat ini, FET hanya dapat optimasi dengan batasan siswa diatur tidak tersedia dengan bobot 100% (atau tanpa batasan). Silakan ubah data anda dan coba lagi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="5993"/>
+        <location filename="../src/engine/generate_pre.cpp" line="5991"/>
         <source>Cannot optimize, because you have constraints of type students set not available with weight percentage less than 100% for students set %1. Currently, FET can only optimize with constraints students set not available with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Tidak dapat dioptimasi karena anda mempunyai batasan dari jenis siswa diatur tidak tersedia dengan persentase bobot kurang dari 100% untuk siswa diatur %1. Saat ini, FET hanya dapat optimasi dengan batasan siswa diatur tidak tersedia dengan bobot 100% (atau tanpa batasan). Silakan ubah data anda dan coba lagi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6036"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6034"/>
         <source>Cannot optimize, because you have constraints of type break with weight percentage less than 100%. Currently, FET can only optimize with constraints break with 100% weight (or no constraint). Please modify your data accordingly and try again.</source>
         <translation>Tidak bisa mengoptimalkan, karena Anda memiliki kendala pecah dengan persentase berat jenis kurang dari 100%. Saat ini, hanya FET dapat mengoptimalkan dengan kendala berat istirahat dengan 100% (atau tidak ada kendala). Silakan memodifikasi data yang sesuai dan coba lagi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6085"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6083"/>
         <source>Cannot optimize, because you have constraints of type activity preferred starting time with no day nor hour selected (for activity with id=%1). Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>Tidak dapat dioptimasi, karena anda mempunyai batasan dari jenis kegiatan dengan jam mulai disukai dengan tanpa hari atau jam dipilih (untuk kegiatan dengan id=%1). Silahkan ubah data anda ( hapus atau sunting batasan) dan coba lagi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6355"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6353"/>
         <source>Cannot optimize, because you have a constraint min days with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation>Tidak bisa mengoptimalkan, karena Anda memiliki hari min kendala dengan duplikasi kegiatan. kendala adalah:%1. Harap perbaiki itu.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6418"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6416"/>
         <source>Cannot optimize, because you have a constraint max days between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation>Tidak bisa mengoptimalkan, karena Anda memiliki hari maks kendala antara kegiatan dengan duplikasi kegiatan. kendala adalah:%1. Harap perbaiki itu.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6486"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6484"/>
         <source>Cannot optimize, because you have a constraint min gaps between activities with duplicate activities. The constraint is: %1. Please correct that.</source>
         <translation>Tidak dapat optimasi, karena anda mempunyai batasan min jam kosong antar kegiatan dengan kegiatan dobel. Batasan:%1. Silahkan diperiksa.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6558"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6556"/>
         <source>Precomputing ... please wait</source>
         <translation>Prakomputasi... silahkan tunggu</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6568"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6583"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6566"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6581"/>
         <source>FET information</source>
         <translation>Informasi FET</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6568"/>
-        <location filename="../src/engine/generate_pre.cpp" line="6583"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6566"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6581"/>
         <source>Canceled</source>
         <translation>Dibatalkan</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6907"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6905"/>
         <source>Cannot optimize, because you have constraints of type activity activity ends students day for activity with id=%1 with weight percentage under 100%. Constraint activity ends students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation>Tidak dapat optimasi, karena anda mempunyai batasan jenis kegiatan akhiri hari siswa untuk kegiatan dengan id=%1 dengan persentase bobot dibawah 100%. Batasan kegiatan akhiri hari siswa hanya boleh mempunyai persentase bobot 100%. Silahkan ubah data anda( hapus atau sunting batasan) dan dicoba lagi.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7267"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7265"/>
         <source>Cannot optimize, because you have constraint teacher interval max days per week with weight (percentage) below 100 for teacher %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Tidak bisa mengoptimalkan, karena Anda memiliki kendala hari guru interval maks per minggu dengan bobot (persentase) di bawah 100 untuk guru %1. Dimulai dengan versi 5.6.2 FET hanya mungkin untuk menggunakan bobot 100% untuk kendala tersebut. Silakan membuat berat badan 100% dan coba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7300"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7351"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7298"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7349"/>
         <source>Cannot optimize for teacher %1, because it has more than three constraints interval max days per week. Please modify your data correspondingly (leave maximum three constraints of type constraint teacher(s) interval max days per week for each teacher) and try again</source>
         <translation>Tidak dapat mengoptimalkan untuk guru %1, karena memiliki lebih dari tiga kendala interval maks hari per minggu. Silakan memodifikasi data Anda Sejalan dengan (meninggalkan maksimum tiga kendala kendala guru jenis (s) hari max interval per minggu untuk setiap guru) dan coba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7318"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7316"/>
         <source>Cannot optimize, because you have constraint teachers interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Tidak bisa mengoptimalkan, karena Anda memiliki kendala maks hari guru interval per minggu dengan bobot (persentase) di bawah 100. Dimulai dengan versi 5.6.2 FET hanya mungkin untuk menggunakan bobot 100% untuk kendala tersebut. Silakan membuat berat badan 100% dan coba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7397"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7395"/>
         <source>Cannot optimize, because you have constraint students set interval max days per week with weight (percentage) below 100 for students set %1. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Tidak bisa mengoptimalkan, karena Anda memiliki kendala siswa menetapkan interval maks hari per minggu dengan bobot (persentase) di bawah 100 bagi siswa ditetapkan%1. Dimulai dengan versi 5.6.2 FET hanya mungkin untuk menggunakan bobot 100% untuk kendala tersebut. Silakan membuat berat badan 100% dan coba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7431"/>
-        <location filename="../src/engine/generate_pre.cpp" line="7485"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7429"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7483"/>
         <source>Cannot optimize for subgroup %1, because it has more than three constraints interval max days per week. Please modify your data correspondingly (leave maximum three constraints of type constraint students (set) interval max days per week for each subgroup) and try again</source>
         <translation>Tidak dapat mengoptimalkan untuk subgrup %1, karena memiliki lebih dari tiga kendala interval maks hari per minggu. Silakan memodifikasi data Anda Sejalan dengan (meninggalkan maksimum tiga kendala mahasiswa kendala jenis (set) hari maks interval per minggu untuk setiap sub-kelompok) dan coba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7450"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7448"/>
         <source>Cannot optimize, because you have constraint students interval max days per week with weight (percentage) below 100. Starting with FET version 5.6.2 it is only possible to use 100% weight for such constraints. Please make weight 100% and try again</source>
         <translation>Tidak bisa mengoptimalkan, karena Anda memiliki hari siswa kendala interval maks per minggu dengan bobot (persentase) di bawah 100. Dimulai dengan versi 5.6.2 FET hanya mungkin untuk menggunakan bobot 100% untuk kendala tersebut. Silakan membuat berat badan 100% dan coba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7526"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7524"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities occupy max time slots from selection&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation>Tidak bisa mengoptimalkan, karena Anda memiliki batasan tipe &apos;kegiatan menempati slot waktu max dari pilihan&apos; dengan bobot (persentase) di bawah 100,0%. Silakan membuat bobot 100,0% dan coba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7584"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7582"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities occupy min time slots from selection&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7598"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7596"/>
         <source>Cannot optimize, because you have a constraint of type &apos;activities occupy min time slots from selection&apos; with the number of selected slots being %1, but the number of requested minimum slots is %2, which is greater - impossible. The constraint is:
 %3
 Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7619"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7617"/>
         <source>Cannot optimize, because you have a constraint of type &apos;activities occupy min time slots from selection&apos; with the total duration of the selected activities being %1, but the number of requested minimum slots is %2, which is greater - impossible. The constraint is:
 %3
 Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7684"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7682"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities max simultaneous in selected time slots&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation>Tidak bisa mengoptimalkan, karena Anda memiliki kendala (s) dari &apos;max kegiatan simultan di slot waktu yang dipilih&apos; tipe dengan berat badan (persentase) di bawah 100,0%. Silakan membuat berat 100,0% dan coba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7742"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7740"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities min simultaneous in selected time slots&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7823"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7821"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students set min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7878"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7876"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;students set min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7903"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7901"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;students min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7958"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7956"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;students min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7998"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7996"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teacher min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8048"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8046"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;teacher min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8073"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8071"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;teachers min gaps between ordered pair of activity tags&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8128"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8126"/>
         <source>Cannot optimize, because the activity with id %1 has both the first and the second activity tags of the constraint of type &apos;teachers min %2 gaps between ordered pair of activity tags %3 and %4&apos;. Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8215"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8213"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities same room if consecutive&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8375"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8410"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8373"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8408"/>
         <source>Cannot generate timetable, because you have more than one constraint of type students set home room(s) for students set %1. Please leave only one of them</source>
         <translation>Tidak dapat keluarkan jadwal karena anda mungkin memiliki lebih dari satu batasan jenis kelas ruang khusus untuk kelas paralel %1. Silakan hanya pilih satu</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8448"/>
-        <location filename="../src/engine/generate_pre.cpp" line="8483"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8446"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8481"/>
         <source>Cannot generate timetable, because you have more than one constraint of type teacher home room(s) for teacher %1. Please leave only one of them</source>
         <translation>Tidak dapat keluarkan jadwal karena anda mungkin memiliki lebih dari satu batasan jenis batasan guru ruang khusus untuk guru %1. Silakan hanya pilih satu</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8796"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8794"/>
         <source>Cannot generate the timetable, because you have a preferred room constraint for the activity with id=%1 which specifies a real rooms list which does not have the same number of elements as the number of sets of real rooms for the preferred virtual room (%2). Please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8818"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8816"/>
         <source>Cannot generate the timetable, because you have more preferred room constraints for the activity with id=%1 which specify one or more lists of real rooms whose resultant real rooms list does not have the same number of elements as the number of sets of real rooms for the preferred virtual room (%2). Please correct this.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9083"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9081"/>
         <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from constraints students set home room(s) and teacher home room(s))</source>
         <translation>Tidak dapat keluarkan jadwal karena untuk kegiatan dengan id=%1 anda hanya tidak diperbolehkan ruang khusus (dari batasan kelas paralel ruang khusu dan guru ruang khusu))</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9126"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9124"/>
         <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from the allowed number of students and preferred room(s) constraints)</source>
         <translation>Tidak bisa menghasilkan jadwal, karena untuk aktivitas dengan id =%1 Anda tidak diizinkan kamar pilihan (dari jumlah siswa diperbolehkan dan ruang yang diinginkan (s) kendala)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9604"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9602"/>
         <source>Cannot optimize, because there is a space constraint students set max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9628"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9626"/>
         <source>Cannot optimize, because there is a space constraint students max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9667"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9665"/>
         <source>Cannot optimize, because there is a space constraint students set max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9691"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9689"/>
         <source>Cannot optimize, because there is a space constraint students max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9730"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9728"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9754"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9752"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9793"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9791"/>
         <source>Cannot optimize, because there is a space constraint teacher max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9815"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9813"/>
         <source>Cannot optimize, because there is a space constraint teachers max room changes per day with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9854"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9852"/>
         <source>Cannot optimize, because there is a space constraint teacher max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9876"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9874"/>
         <source>Cannot optimize, because there is a space constraint teachers max room changes per week with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9915"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9913"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9937"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9935"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between room changes with weight under 100%. Please correct and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10620"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10618"/>
         <source>Group activities in initial order item number %1 is ignored, because it contains less than two active activities</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10903"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10901"/>
         <source>nIncompatible: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10906"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10904"/>
         <source>nMinDaysConstraintsBroken: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10911"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10909"/>
         <source>(grouped with id %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10917"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10915"/>
         <source>End - the order of activities (id-s)</source>
         <translation>Akhir urutan kegiatan(id)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9163"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9161"/>
         <source>Cannot generate timetable, because for activity with id=%1 you have no allowed home room (from the allowed number of students)</source>
         <translation>Tidak dapat keluarkan jadwal karena untuk kegiatan dengan id=%1 anda tidak mempunyai ruang khusus (dari jumlah siswa yang diperbolehkan)</translation>
     </message>
@@ -42853,161 +42878,161 @@ Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6646"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6644"/>
         <source>%1 cannot be respected because the activity with id=%2 refers to %3 activity tags from this constraint. Each activity should refer to at most one activity tag from each separated constraint of this type.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="6932"/>
+        <location filename="../src/engine/generate_pre.cpp" line="6930"/>
         <source>Cannot optimize, because you have constraints of type activities end students day with weight percentage under 100%. Constraint activities end students day can only have weight percentage 100%. Please modify your data accordingly (remove or edit constraint) and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="7760"/>
+        <location filename="../src/engine/generate_pre.cpp" line="7758"/>
         <source>Cannot optimize, because you have a constraint of type &apos;activities min simultaneous in selected time slots&apos; with the total duration of the selected activities being %1, but the required number of occupying slots is %2 (minimum simultaneous) x %3 (selected slots) = %4, which is greater - impossible (the constraint does not allow empty slots). The constraint is:
 %5
 Please correct and try again.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8168"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8166"/>
         <source>Cannot optimize, because you have constraint(s) of type &apos;activities occupy max different rooms&apos; with weight (percentage) below 100.0%. Please make the weight 100.0% and try again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8757"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8755"/>
         <source>Cannot generate the timetable, because you have a constraint activity preferred room for the activity with id=%1 which specifies a list of real rooms, but the preferred room is not virtual. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8773"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8771"/>
         <source>Cannot generate the timetable, because you have a constraint activity preferred room for the activity with id=%1 which specifies a list of real rooms, but the room %2 from this list is virtual. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="8838"/>
+        <location filename="../src/engine/generate_pre.cpp" line="8836"/>
         <source>Cannot generate the timetable, because you have a constraint activity preferred room for the activity with id=%1 which specifies a nonempty list of real rooms and has weight &lt;100.0%. It is necessary that the weight is exactly 100.0% or the list of real rooms to be empty in this case. Please correct.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9105"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9103"/>
         <source>Cannot generate timetable, because for activity with id=%1 you have no allowed preferred room (from preferred room(s) constraints).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9197"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9195"/>
         <source>Cannot generate the timetable, because for activity with id=%1 you have no allowed preferred room (considering rooms&apos; capacities and constraints preferred room(s) with 100.0% weight percentage)</source>
         <translation>Tidak bisa menghasilkan jadwal, karena untuk aktivitas dengan id =%1 Anda tidak diizinkan kamar pilihan (dari jumlah siswa diperbolehkan dan ruang yang diinginkan (s) kendala)</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9232"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9230"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9256"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9254"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9295"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9293"/>
         <source>Cannot optimize, because there is a space constraint students set max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9319"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9317"/>
         <source>Cannot optimize, because there is a space constraint students max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9358"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9356"/>
         <source>Cannot optimize, because there is a space constraint students set min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur jam kosong min diantara perubahan gedung dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9382"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9380"/>
         <source>Cannot optimize, because there is a space constraint students min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur jam kosong min diantara perubahan gedung dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9421"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9419"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur jam kosong maks diantara perubahan gedung dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9443"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9441"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per day with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat guru diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9482"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9480"/>
         <source>Cannot optimize, because there is a space constraint teacher max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat guru diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9504"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9502"/>
         <source>Cannot optimize, because there is a space constraint teachers max building changes per week with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat siswa diatur perubahan gedung maks per hari dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9543"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9541"/>
         <source>Cannot optimize, because there is a space constraint teacher min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat guru diatur jam kosong min diantara perubahan gedung dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="9565"/>
+        <location filename="../src/engine/generate_pre.cpp" line="9563"/>
         <source>Cannot optimize, because there is a space constraint teachers min gaps between building changes with weight under 100%. Please correct and try again</source>
         <translation>Tidak dioptimasi karena ada sebuah batasan tempat guru diatur jam kosong min diantara perubahan gedung dengan bobot dibawah 100%. Silakan diperbaiki dan dicoba lagi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10071"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10069"/>
         <source>Activity with id=%1 has no allowed slot - please correct that</source>
         <translation>Kegiatan dengan id=%1 tidak memiliki slot - silahkan dikoreksi</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10177"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10175"/>
         <source>Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that</source>
         <translation>Ruang %1 tidak mempunyai cukup slot untuk batasan ruang khusus (diminta %2, dari %3) - silakan diubah</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10876"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10874"/>
         <source>This is the initial evaluation order of activities computed by FET. If the generation gets stuck after a certain number of activities, please check the activity corresponding to this number+1. You might find errors in your input.</source>
         <translation>Ini adalah urutan awal evaluasi dari kegiatan yang dihitung oleh FET. Jika pembuatan jadwal tersangkut pada kegiatan tertentu, silahkan diperiksa kegiatan yang berhubungan degan angka+1. Anda akan menemukan kesalahan pada input anda.</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10880"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10878"/>
         <source>The initial order of activities (id-s):</source>
         <translation>Urutan awal kegiatan(id-s):</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10885"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10883"/>
         <source>No: %1</source>
         <comment>Number</comment>
         <translation>No: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10889"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10887"/>
         <source>Id: %1</source>
         <comment>Id of activity</comment>
         <translation>Id: %1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10892"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10890"/>
         <source>Teachers: %1</source>
         <translation>Guru:%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10894"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10892"/>
         <source>Subject: %1</source>
         <translation>Mata pelajaran=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10897"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10895"/>
         <source>Activity tags: %1</source>
         <translation>Tag kegiatan=%1</translation>
     </message>
     <message>
-        <location filename="../src/engine/generate_pre.cpp" line="10899"/>
+        <location filename="../src/engine/generate_pre.cpp" line="10897"/>
         <source>Students: %1</source>
         <translation>Siswa=%1</translation>
     </message>
@@ -45499,40 +45524,40 @@ Mungkin, dalam prakteknya masalah ini tidak akan muncul dan Anda tidak perlu kha
 <context>
     <name>HoursForm</name>
     <message>
-        <location filename="../src/interface/hoursform.cpp" line="155"/>
-        <location filename="../src/interface/hoursform.cpp" line="162"/>
+        <location filename="../src/interface/hoursform.cpp" line="169"/>
+        <location filename="../src/interface/hoursform.cpp" line="176"/>
         <source>FET information</source>
         <translation>Informasi FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform.cpp" line="156"/>
-        <source>Empty names not allowed</source>
-        <translation>Nama kosong tidak diperbolehkan</translation>
+        <location filename="../src/interface/hoursform.cpp" line="170"/>
+        <source>Empty names not allowed (the hour number %1 has an empty name).</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform.cpp" line="163"/>
-        <source>Duplicates not allowed</source>
-        <translation>Duplikasi tidak diperbolehkan</translation>
+        <location filename="../src/interface/hoursform.cpp" line="177"/>
+        <source>Duplicate names not allowed (the hour number %1 has the same name as the hour number %2).</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform.cpp" line="194"/>
+        <location filename="../src/interface/hoursform.cpp" line="208"/>
         <source>%1 constraints will be removed.</source>
         <comment>%1 is the number of constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform.cpp" line="198"/>
+        <location filename="../src/interface/hoursform.cpp" line="212"/>
         <source>%1 constraints will be modified.</source>
         <comment>%1 is the number of constraints</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform.cpp" line="201"/>
+        <location filename="../src/interface/hoursform.cpp" line="215"/>
         <source>Do you want to continue?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform.cpp" line="203"/>
+        <location filename="../src/interface/hoursform.cpp" line="217"/>
         <source>FET warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -45540,167 +45565,192 @@ Mungkin, dalam prakteknya masalah ini tidak akan muncul dan Anda tidak perlu kha
 <context>
     <name>HoursForm_template</name>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="335"/>
+        <location filename="../src/interface/hoursform_template.ui" line="667"/>
         <source>Hour 22</source>
         <translation>Jam ke-22</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="234"/>
+        <location filename="../src/interface/hoursform_template.ui" line="657"/>
         <source>Hour 14</source>
         <translation>Jam ke-14</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="169"/>
+        <location filename="../src/interface/hoursform_template.ui" line="72"/>
         <source>Hour 9</source>
         <translation>Jam ke-9</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="439"/>
+        <location filename="../src/interface/hoursform_template.ui" line="677"/>
         <source>Hour 30</source>
         <translation>Jam ke-30</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="270"/>
+        <location filename="../src/interface/hoursform_template.ui" line="82"/>
         <source>Hour 17</source>
         <translation>Jam ke-17</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="426"/>
+        <location filename="../src/interface/hoursform_template.ui" line="560"/>
         <source>Hour 29</source>
         <translation>Jam ke-29</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="364"/>
+        <location filename="../src/interface/hoursform_template.ui" line="901"/>
         <source>Hour 24</source>
         <translation>Jam ke-24</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="296"/>
+        <location filename="../src/interface/hoursform_template.ui" line="316"/>
         <source>Hour 19</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="244"/>
+        <location filename="../src/interface/hoursform_template.ui" line="774"/>
         <source>Hour 15</source>
         <translation>Jam ke-15</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="195"/>
+        <location filename="../src/interface/hoursform_template.ui" line="306"/>
         <source>Hour 11</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="101"/>
+        <location filename="../src/interface/hoursform_template.ui" line="413"/>
         <source>Hour 4</source>
         <translation>Jam ke-4</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="156"/>
+        <location filename="../src/interface/hoursform_template.ui" line="881"/>
         <source>Hour 8</source>
         <translation>Jam ke-8</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="390"/>
+        <location filename="../src/interface/hoursform_template.ui" line="209"/>
         <source>Hour 26</source>
         <translation>Jam ke-26</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="117"/>
+        <location filename="../src/interface/hoursform_template.ui" line="530"/>
         <source>Hour 5</source>
         <translation>Jam ke-5</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="325"/>
+        <location filename="../src/interface/hoursform_template.ui" line="550"/>
         <source>Hour 21</source>
         <translation>Jam ke-21</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="218"/>
+        <location filename="../src/interface/hoursform_template.ui" line="540"/>
         <source>Hour 13</source>
         <translation>Jam ke-13</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="455"/>
+        <location filename="../src/interface/hoursform_template.ui" line="794"/>
         <source>Hour 31</source>
         <translation>Jam ke-31</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="260"/>
+        <location filename="../src/interface/hoursform_template.ui" line="891"/>
         <source>Hour 16</source>
         <translation>Jam ke-16</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="127"/>
+        <location filename="../src/interface/hoursform_template.ui" line="647"/>
         <source>Hour 6</source>
         <translation>Jam ke-6</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="413"/>
+        <location filename="../src/interface/hoursform_template.ui" line="443"/>
         <source>Hour 28</source>
         <translation>Jam ke-28</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="348"/>
+        <location filename="../src/interface/hoursform_template.ui" line="784"/>
         <source>Hour 23</source>
         <translation>Jam ke-23</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="283"/>
+        <location filename="../src/interface/hoursform_template.ui" line="199"/>
         <source>Hour 18</source>
         <translation>Jam ke-18</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="182"/>
+        <location filename="../src/interface/hoursform_template.ui" line="189"/>
         <source>Hour 10</source>
         <translation>Jam ke-10</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="140"/>
+        <location filename="../src/interface/hoursform_template.ui" line="764"/>
         <source>Hour 7</source>
         <translation>Jam ke-7</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="377"/>
+        <location filename="../src/interface/hoursform_template.ui" line="92"/>
         <source>Hour 25</source>
         <translation>Jam ke-25</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="65"/>
+        <location filename="../src/interface/hoursform_template.ui" line="62"/>
         <source>Hour 1</source>
         <translation>Jam ke-1</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="78"/>
+        <location filename="../src/interface/hoursform_template.ui" line="142"/>
+        <source>Hour 65</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform_template.ui" line="179"/>
         <source>Hour 2</source>
         <translation>Jam ke-2</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="91"/>
+        <location filename="../src/interface/hoursform_template.ui" line="259"/>
+        <source>Hour 66</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform_template.ui" line="296"/>
         <source>Hour 3</source>
         <translation>Jam ke-3</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="309"/>
+        <location filename="../src/interface/hoursform_template.ui" line="376"/>
+        <source>Hour 67</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform_template.ui" line="433"/>
         <source>Hour 20</source>
         <translation>Jam ke-20</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="208"/>
+        <location filename="../src/interface/hoursform_template.ui" line="423"/>
         <source>Hour 12</source>
         <translation>Jam ke-12</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="403"/>
+        <location filename="../src/interface/hoursform_template.ui" line="326"/>
         <source>Hour 27</source>
         <translation>Jam ke-27</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="866"/>
+        <location filename="../src/interface/hoursform_template.ui" line="951"/>
+        <source>Hour 64</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform_template.ui" line="961"/>
+        <source>Hour 72</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform_template.ui" line="1022"/>
         <source>Cancel</source>
         <translation>Batal</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="859"/>
+        <location filename="../src/interface/hoursform_template.ui" line="1015"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
@@ -45711,147 +45761,182 @@ Mungkin, dalam prakteknya masalah ini tidak akan muncul dan Anda tidak perlu kha
         <translation>Hari</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="686"/>
+        <location filename="../src/interface/hoursform_template.ui" line="122"/>
         <source>Hour 49</source>
         <translation>Jam ke-49</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="790"/>
+        <location filename="../src/interface/hoursform_template.ui" line="132"/>
         <source>Hour 57</source>
         <translation>Jam ke-57</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="468"/>
+        <location filename="../src/interface/hoursform_template.ui" line="493"/>
+        <source>Hour 68</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform_template.ui" line="600"/>
+        <source>Hour 61</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform_template.ui" line="610"/>
+        <source>Hour 69</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform_template.ui" line="717"/>
+        <source>Hour 62</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform_template.ui" line="727"/>
+        <source>Hour 70</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform_template.ui" line="834"/>
+        <source>Hour 63</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform_template.ui" line="844"/>
+        <source>Hour 71</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/hoursform_template.ui" line="911"/>
         <source>Hour 32</source>
         <translation>Jam ke-32</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="517"/>
+        <location filename="../src/interface/hoursform_template.ui" line="453"/>
         <source>Hour 36</source>
         <translation>Jam ke-36</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="650"/>
+        <location filename="../src/interface/hoursform_template.ui" line="697"/>
         <source>Hour 46</source>
         <translation>Jam ke-46</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="556"/>
+        <location filename="../src/interface/hoursform_template.ui" line="804"/>
         <source>Hour 39</source>
         <translation>Jam ke-39</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="507"/>
+        <location filename="../src/interface/hoursform_template.ui" line="336"/>
         <source>Hour 35</source>
         <translation>Jam ke-35</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="819"/>
+        <location filename="../src/interface/hoursform_template.ui" line="366"/>
         <source>Hour 59</source>
         <translation>Jam ke-59</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="660"/>
+        <location filename="../src/interface/hoursform_template.ui" line="814"/>
         <source>Hour 47</source>
         <translation>Jam ke-47</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="611"/>
+        <location filename="../src/interface/hoursform_template.ui" line="346"/>
         <source>Hour 43</source>
         <translation>Jam ke-43</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="767"/>
+        <location filename="../src/interface/hoursform_template.ui" line="824"/>
         <source>Hour 55</source>
         <translation>Jam ke-55</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="543"/>
+        <location filename="../src/interface/hoursform_template.ui" line="687"/>
         <source>Hour 38</source>
         <translation>Jam ke-38</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="777"/>
+        <location filename="../src/interface/hoursform_template.ui" line="941"/>
         <source>Hour 56</source>
         <translation>Jam ke-56</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="621"/>
+        <location filename="../src/interface/hoursform_template.ui" line="463"/>
         <source>Hour 44</source>
         <translation>Jam ke-44</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="598"/>
+        <location filename="../src/interface/hoursform_template.ui" line="229"/>
         <source>Hour 42</source>
         <translation>Jam ke-42</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="491"/>
+        <location filename="../src/interface/hoursform_template.ui" line="219"/>
         <source>Hour 34</source>
         <translation>Jam ke-34</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="712"/>
+        <location filename="../src/interface/hoursform_template.ui" line="356"/>
         <source>Hour 51</source>
         <translation>Jam ke-51</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="832"/>
+        <location filename="../src/interface/hoursform_template.ui" line="483"/>
         <source>Hour 60</source>
         <translation>Jam ke-60</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="751"/>
+        <location filename="../src/interface/hoursform_template.ui" line="707"/>
         <source>Hour 54</source>
         <translation>Jam ke-54</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="530"/>
+        <location filename="../src/interface/hoursform_template.ui" line="570"/>
         <source>Hour 37</source>
         <translation>Jam ke-37</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="569"/>
+        <location filename="../src/interface/hoursform_template.ui" line="921"/>
         <source>Hour 40</source>
         <translation>Jam ke-40</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="582"/>
+        <location filename="../src/interface/hoursform_template.ui" line="112"/>
         <source>Hour 41</source>
         <translation>Jam ke-41</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="806"/>
+        <location filename="../src/interface/hoursform_template.ui" line="249"/>
         <source>Hour 58</source>
         <translation>Jam ke-58</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="725"/>
+        <location filename="../src/interface/hoursform_template.ui" line="473"/>
         <source>Hour 52</source>
         <translation>Jam ke-52</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="699"/>
+        <location filename="../src/interface/hoursform_template.ui" line="239"/>
         <source>Hour 50</source>
         <translation>Jam ke-50</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="634"/>
+        <location filename="../src/interface/hoursform_template.ui" line="580"/>
         <source>Hour 45</source>
         <translation>Jam ke-45</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="481"/>
+        <location filename="../src/interface/hoursform_template.ui" line="102"/>
         <source>Hour 33</source>
         <translation>Jam ke-33</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="738"/>
+        <location filename="../src/interface/hoursform_template.ui" line="590"/>
         <source>Hour 53</source>
         <translation>Jam ke-53</translation>
     </message>
     <message>
-        <location filename="../src/interface/hoursform_template.ui" line="676"/>
+        <location filename="../src/interface/hoursform_template.ui" line="931"/>
         <source>Hour 48</source>
         <translation>Jam ke-48</translation>
     </message>
@@ -48610,68 +48695,88 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
 <context>
     <name>ModifyConstraintActivityPreferredRoomForm</name>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="110"/>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="131"/>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="159"/>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="166"/>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="174"/>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="186"/>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="193"/>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="199"/>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="222"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="111"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="132"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="160"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="167"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="175"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="187"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="194"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="200"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="223"/>
         <source>FET information</source>
         <translation>Informasi FET</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="110"/>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="131"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="111"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="132"/>
         <source>Invalid selected real room.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="160"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="161"/>
         <source>Invalid weight</source>
         <translation>Bobot salah</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="167"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="168"/>
         <source>Invalid activity</source>
         <translation>Kegiatan salah</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="175"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="176"/>
         <source>Invalid room</source>
         <translation>Ruang salah</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="186"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="187"/>
         <source>The preferred room of the activity is a real room, not a virtual one. This implies that the selected real rooms list should be empty.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="193"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="194"/>
         <source>If the preferred room is virtual and the list of real rooms is not empty, the weight percentage must be exactly 100%.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="199"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="200"/>
         <source>The preferred room of the activity is a virtual room. This implies that the number of selected real rooms in the list should either be zero or equal to the number of sets of real rooms of the preferred virtual room, which is %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="222"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="223"/>
         <source>The selected real rooms: %1 are not found in the sets of sets of real rooms of the selected preferred virtual room. This is probably wrong. Are you sure you want to add this constraint?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="224"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="225"/>
         <source>Yes</source>
         <translation type="unfinished">Ya</translation>
     </message>
     <message>
-        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="224"/>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="225"/>
         <source>No</source>
         <translation type="unfinished">Tidak</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="279"/>
+        <source>If the preferred room selected in the combo box is virtual, you can select also the list of real rooms to be allocated to the selected activity (if the preferred room selected in the combo box is virtual and the list of selected real rooms is not empty, the weight of the constraint must be 100.0%).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="277"/>
+        <source>If the preferred room selected in the combo box is real, the list of selected real rooms must remain empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="275"/>
+        <source>A room can be real (the simplest and the most used scenario) or virtual. You can read more about this in the rooms dialog, by clicking the Help button there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform.cpp" line="283"/>
+        <source>FET help</source>
+        <translation type="unfinished">Bantuan FET</translation>
     </message>
 </context>
 <context>
@@ -48683,6 +48788,11 @@ Jika anda menggunakan bobot dibawah 100%, maka anda dapat menggunakan batasan in
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="198"/>
+        <source>Help</source>
+        <translation type="unfinished">Bantuan</translation>
+    </message>
+    <message>
+        <location filename="../src/interface/modifyconstraintactivitypreferredroomform_template.ui" line="205"/>
         <source>Cancel</source>
         <translation>Batal</translation>
     </message>

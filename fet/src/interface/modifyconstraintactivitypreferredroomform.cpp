@@ -32,6 +32,7 @@ ModifyConstraintActivityPreferredRoomForm::ModifyConstraintActivityPreferredRoom
 
 	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
 
 	connect(selectedRealRoomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeRealRoom()));
 	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clearRealRooms()));
@@ -265,4 +266,19 @@ void ModifyConstraintActivityPreferredRoomForm::ok()
 	LockUnlock::increaseCommunicationSpinBox();
 	
 	this->close();
+}
+
+void ModifyConstraintActivityPreferredRoomForm::help()
+{
+	QString s;
+	
+	s+=tr("A room can be real (the simplest and the most used scenario) or virtual. You can read more about this in the rooms dialog, by clicking the Help button there.");
+	s+="\n\n";
+	s+=tr("If the preferred room selected in the combo box is real, the list of selected real rooms must remain empty.");
+	s+="\n\n";
+	s+=tr("If the preferred room selected in the combo box is virtual, you can select also the list of real rooms to be allocated to the "
+	 "selected activity (if the preferred room selected in the combo box is virtual and the list of selected real rooms is not empty, the "
+	 "weight of the constraint must be 100.0%).");
+	
+	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

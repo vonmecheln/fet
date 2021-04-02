@@ -35,6 +35,8 @@ public:
 
 public slots:
 	void addConstraint();
+	
+	void help();
 
 	void filterChanged();
 

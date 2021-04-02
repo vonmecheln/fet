@@ -29,7 +29,7 @@
 
 extern Timetable gt;
 
-static QLineEdit* hoursNames[60];
+static QLineEdit* hoursNames[72];
 static int nHours;
 
 extern bool students_schedule_ready;
@@ -117,11 +117,25 @@ HoursForm::HoursForm(QWidget* parent): QDialog(parent)
 	hoursNames[58]=hour59LineEdit;
 	hoursNames[59]=hour60LineEdit;
 
+	hoursNames[60]=hour61LineEdit;
+	hoursNames[61]=hour62LineEdit;
+	hoursNames[62]=hour63LineEdit;
+	hoursNames[63]=hour64LineEdit;
+	hoursNames[64]=hour65LineEdit;
+	hoursNames[65]=hour66LineEdit;
+	hoursNames[66]=hour67LineEdit;
+	hoursNames[67]=hour68LineEdit;
+	hoursNames[68]=hour69LineEdit;
+	hoursNames[69]=hour70LineEdit;
+
+	hoursNames[70]=hour71LineEdit;
+	hoursNames[71]=hour72LineEdit;
+
 	hoursSpinBox->setMinimum(1);
-	hoursSpinBox->setMaximum(60);
+	hoursSpinBox->setMaximum(72);
 	hoursSpinBox->setValue(gt.rules.nHoursPerDay);
 
-	for(int i=0; i<60; i++){
+	for(int i=0; i<72; i++){
 		if(i<nHours){
 			hoursNames[i]->setEnabled(true);
 			hoursNames[i]->setText(gt.rules.hoursOfTheDay[i]);
@@ -141,7 +155,7 @@ void HoursForm::hoursChanged()
 {
 	nHours=hoursSpinBox->value();
 	assert(nHours <= MAX_HOURS_PER_DAY);
-	for(int i=0; i<60; i++)
+	for(int i=0; i<72; i++)
 		if(i<nHours)
 			hoursNames[i]->setEnabled(true);
 		else
@@ -153,14 +167,14 @@ void HoursForm::ok()
 	for(int i=0; i<nHours; i++)
 		if(hoursNames[i]->text()==""){
 			QMessageBox::warning(this, tr("FET information"),
-				tr("Empty names not allowed"));
+				tr("Empty names not allowed (the hour number %1 has an empty name).").arg(i+1));
 			return;
 		}
 	for(int i=0; i<nHours-1; i++)
 		for(int j=i+1; j<nHours; j++)
 			if(hoursNames[i]->text()==hoursNames[j]->text()){
 				QMessageBox::warning(this, tr("FET information"),
-					tr("Duplicates not allowed"));
+					tr("Duplicate names not allowed (the hour number %1 has the same name as the hour number %2).").arg(i+1).arg(j+1));
 				return;
 			}
 			
