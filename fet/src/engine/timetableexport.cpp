@@ -6629,8 +6629,8 @@ QString TimetableExport::writeHead(bool java, int placedActivities, bool printIn
 	if(placedActivities!=gt.rules.nInternalActivities)
 		tmp+="    <h1>"+TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)+"</h1>\n";
 	if(printInstitution){
-		tmp+="    <p>\n      <strong>"+TimetableExport::tr("Institution name")+":</strong> "+protect2(gt.rules.institutionName)+"<br />\n";
-		tmp+="      <strong>"+TimetableExport::tr("Comments")+":</strong> "+protect2(gt.rules.comments)+"\n    </p>\n";
+		tmp+="    <table>\n      <tr align=\"left\" valign=\"top\">\n        <th>"+TimetableExport::tr("Institution name")+":</th>\n        <td>"+protect2(gt.rules.institutionName)+"</td>\n      </tr>\n    </table>\n";
+		tmp+="    <table>\n      <tr align=\"left\" valign=\"top\">\n        <th>"+TimetableExport::tr("Comments")+":</th>\n        <td>"+protect2(gt.rules.comments).replace(QString("\n"), QString("<br />\n"))+"</td>\n      </tr>\n    </table>\n";
 	}
 	return tmp;
 }

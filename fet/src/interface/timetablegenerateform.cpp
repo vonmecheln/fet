@@ -704,7 +704,7 @@ void TimetableGenerateForm::activityPlaced(int na){
 	mutex.lock();
 	int t=gen.searchTime; //seconds
 	int mact=maxActivitiesPlaced;
-	int secs=gen.timeToHighestStage;
+	int seconds=gen.timeToHighestStage;
 	mutex.unlock();
 
 	//write to the Qt interface
@@ -730,13 +730,13 @@ void TimetableGenerateForm::activityPlaced(int na){
 	}
 	
 	bool zero=false;
-	if(secs==0)
+	if(seconds==0)
 		zero=true;
-	int hh=secs/3600;
-	secs%=3600;
-	int mm=secs/60;
-	secs%=60;
-	int ss=secs;
+	int hh=seconds/3600;
+	seconds%=3600;
+	int mm=seconds/60;
+	seconds%=60;
+	int ss=seconds;
 
 	QString tim;
 	if(hh>0){

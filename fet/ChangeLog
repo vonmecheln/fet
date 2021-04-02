@@ -5,7 +5,7 @@ Versions 1.0 - 1.17 - Liviu Lalescu
 - Version 1 and above - added text menu.
 - Version 1.5 and above - added Qt GUI.
 - Version 1.8 and above - removed the text menu :-)
-- Version 1.12 - used valgrind to track down an annoying crashing bug. Thanx!
+- Version 1.12 - used valgrind to track down an annoying crashing bug. Thanks!
 	This was not the only time I used valgrind to hunt for bugs
 -------------------------------------------------------------------------------
 Versions 2.0 - 2.6 - Liviu Lalescu
@@ -113,7 +113,7 @@ Versions 3.2.0 - 3.2.9 - Liviu Lalescu
 	- saving now even basic constraints
 	- the GUI now has filters when viewing constraints and activities
 - Version 3.2.2
-	- now the program compiles in Windows, under VC 6.0
+	- fixed compilation issue
 - Version 3.2.3
 	- corrected small bug in ConstraintActivitiesSameTime and
 	ConstraintActivitiesNotSameTime
@@ -247,13 +247,13 @@ Versions 3.8.0 - 3.8.5 - Liviu Lalescu
 	- Doxygen options bug corrected
 	- Got rid of some compiler warnings
 - Version 3.8.4
-	- Bug fix: Timetable->Allocate rooms->Start/Continue �- crushed FET if there was no
+	- Bug fix: Timetable->Allocate rooms->Start/Continue - crashed FET if there was no
 	previous Initialization (thanks to Marek Jaszuk)
 	- "Time constraint teacher max days per week broken for teacher:
 	XY.This increases the conflicts factor with 0" (thanks to Marek Jaszuk)
 - Version 3.8.5
 	- Bug fix - when restoring the internal state (time or space), without previously saving
-	the internal state, FET crushed (thanks to Marek Jaszuk)
+	the internal state, FET crashed (thanks to Marek Jaszuk)
 	- Improved translation
 	- Now you can write the timetable after initialization or loading the internal state,
 	without starting the simulation
@@ -318,8 +318,7 @@ Versions 3.9.0 - 3.9.23 - Liviu Lalescu, French translation by Jerome Durand (fe
 	- small doc/FAQ and TODO files modifications.
 	- small interface improvements.
 - Version 3.9.18
-	- now the program compiles in Microsoft Windows without any change (just add a
-	#define WIN32 in the file "src/engine/genetictimetable_defs.h").
+	- fixed some compilation issues.
 	- when reading activities with invalid subject, teacher or students, the program does not
 	crash anymore (thanks to Morten Piil).
 - Version 3.9.19
@@ -642,8 +641,7 @@ Versions 3.17.0 - 3.17.12
 	- Bug fix: renaming or deleting the "results" directory during program operation
 	is now handled correctly (reported by Tom Hosty).
 - Version 3.17.9
-	- Bug fix: handling amperstand now works correctly with hmtl generated
-	files in Microsoft Explorer (reported by Tom Hosty).
+	- Bug fix: handling ampersand in the hmtl generated timetables (reported by Tom Hosty).
 - Version 3.17.10
 	- Now saving the timetable both in days horizontal and days vertical versions in html files.
 	(suggested by Tom Hosty).
@@ -724,8 +722,7 @@ Versions 4.1.0 - 4.1.10
 	in the add activity dialog is now 1 (suggested by Volker Dirr).
 	- The main window title now contains the name of the file (suggested by Volker Dirr).
 	- The add and modify activity dialogs are improved (suggested by Volker Dirr).
-	- Now the windows contain maximize/minimize buttons also on Microsoft Windows
-	(suggested by Volker Dirr).
+	- Now the windows contain maximize/minimize buttons (suggested by Volker Dirr).
 	- Added teachers, subjects and students statistics (suggested by Volker Dirr).
 - Version 4.1.2
 	- The windows are now centered about the screen.
@@ -901,7 +898,7 @@ Versions 5.0.0 - 5.0.2
 	- Can have activities with no teacher or no students set (suggested by Volker Dirr).
 	- Rooms and space allocation.
 	- Improved the automatic generation.
-	- Bug fix in generation in Windows (faster now on newer processors?).
+	- Bug fix in generation (faster now on newer processors?).
 	- Speed improvement in generation.
 	- Improved algorithm in minimizing broken constraints min n days between activities.
 	- Bug fix in constraint activities preferred times.
@@ -1296,7 +1293,7 @@ Versions 5.7.0 - 5.7.7
 	Other interface improvements).
 - Version 5.7.7
 	- Minor improvements (the settings are now saved in a file which does not contain spaces under GNU/Linux,
-	added a better #define Q_OS_WIN for detecting Windows in compilation).
+	other improvements).
 ---------------------------------------------------------------------------------
 Versions 5.8.0 - 5.8.1
 - Version 5.8.0
@@ -1313,7 +1310,7 @@ Versions 5.8.0 - 5.8.1
 	- Minor improvements - when viewing the timetable, the detailed activity view is updated correctly
 	(suggested by Jose Cesar Fernandez Lopez).
 	- Other minor interface improvements.
-	- Minor improvement: the directories under Windows contain now the correct back-slash, instead of forward slash.
+	- Minor improvements.
 	- Repaired the Turkish translation (by Liviu Lalescu), but it is still old and incomplete.
 	- Added the output of activities timetable as xml
 - Version 5.8.1
@@ -1335,7 +1332,7 @@ Versions 5.9.0 - 5.9.4
 	a teacher or a students set must have maximum n hours continuously for an activity tag) - suggested by Silver,
 	George Miliotis and Volker Dirr.
 	- Improved a bit the memory consumption.
-	- To avoid Windows problems with very large filenames, the sample file names were shortened.
+	- To avoid problems with very large filenames, the sample file names were shortened.
 	- Minor html timetables corrections (cosmetic).
 	- Updates in Spanish, Arabic, Romanian and Italian translations.
 	- Minor improvements.
@@ -1371,9 +1368,7 @@ Versions 5.10.0 - 5.10.3
 	Specifically, it corrected tests done when the user has constraints of type students early max beginnings at second hour,
 	without max gaps per week for students, with max or min hours daily for students.
 	- Added constraint teachers max days per week (suggested by Marco Barsotti).
-	- Made the results directory customizable (user can choose it) - suggested by Massimo Mancini. Important: under Windows,
-	the default location is not the usual one, but $HOME\fet-results (C:\Documents and Settings\username\fet-results
-	or C:\Users\username\fet-results)
+	- Made the results directory customizable (user can choose it) - suggested by Massimo Mancini.
 	- Fixed a bug: if user deactivated some activities, in some cases he could not generate a timetable (if using preferred times
 	for (sub)activities).
 	- Added a filter in add and modify dialogs constraints activities not overlapping (suggested by Yush Yuen).
@@ -1551,3 +1546,14 @@ Versions 5.14.0 - 5.14.x
 	- Added a complete Serbian translation, by Ivan Starchevicy and Radan Putnik.
 	- Minor improvements.
 	- Added 3 new sample files, by waleed, M K Lohumi and Asti Widayanti.
+- Version 5.14.5
+	- Updated to Qt 4.7.3.
+	- The generate multiple timetable dialog now shows max placed activities for the current timetable and for each timetable with time limit exceeded
+	(suggested by Yush Yuen).
+	- Non-critical interface bug fix under Mac OS X: in the add and modify activity dialogs, the tab widget for the subactivities was too large, showing
+	all the 35 possible components. Bug reported by Yush Yuen.
+	- Minor interface bug fix under Mac OS X: the dialogs now show minimize/maximize buttons. Bug reported by Yush Yuen.
+	- Minor improvement in the HTML exported timetables (multi-line comments look better), by Volker Dirr.
+	- Added a Galician translation, by Juan Marcos Filgueira Gomis (based on the Spanish translation, as of April 2011, by Jose Cesar Fernandez Lopez).
+	- Added a Spanish secondary school example file, by llantones.
+	

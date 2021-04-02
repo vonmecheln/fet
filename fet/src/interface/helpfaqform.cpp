@@ -253,13 +253,6 @@ HelpFaqForm::HelpFaqForm()
 	s+="-------------------------------------------------------------------------------";
 	s+="\n\n";
 
-	s+=tr("Q: On what plaform does FET run?\n\n"
-		"A: FET can be compiled for any platform supported by free software toolkit Qt. In particular, FET can be used on GNU/Linux, Mac OS X and Microsoft Windows");
-
-	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
-	s+="\n\n";
-
 	s+=tr("Q: Help on ConstraintMinDaysBetweenActivities.\n\n"
 		"A: It refers to a set of activities and involves a constant, N. For every pair of activities in the set, "
 		"it does not allow the distance(in days) between them to be less than N. If you specify N=1, then this "

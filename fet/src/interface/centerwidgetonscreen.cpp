@@ -28,10 +28,10 @@ File centerwidgetonscreen.cpp
 
 void centerWidgetOnScreen(QWidget* widget)
 {
-	widget->setWindowFlags(widget->windowFlags() | Qt::WindowMinMaxButtonsHint);
+	widget->setWindowFlags(widget->windowFlags() | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint | Qt::WindowMinMaxButtonsHint);
 
 	/*QRect rect = QApplication::desktop()->availableGeometry(widget);
-	 
+	
 	widget->move(rect.center() - widget->rect().center());*/
 	
 	QRect frect=widget->frameGeometry();

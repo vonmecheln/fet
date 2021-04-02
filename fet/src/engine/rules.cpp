@@ -275,8 +275,8 @@ bool Rules::computeInternalStructure()
 			StudentsGroup* stg=sty->groupsList.at(j);
 			
 			for(int k=0; k<stg->subgroupsList.size(); k++)
-				allSubgroups.insert(stg->subgroupsList.at(k)->name);
-			//tmpNSubgroups+=stg->subgroupsList.size();
+				if(!allSubgroups.contains(stg->subgroupsList.at(k)->name))
+					allSubgroups.insert(stg->subgroupsList.at(k)->name);
 		}
 	}
 	tmpNSubgroups=allSubgroups.count();

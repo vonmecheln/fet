@@ -2119,3 +2119,53 @@ From liquid (on forum):
 
 Consider a split activity 2/5 - 1/5 - 1/5 - 1/5. FET places my 2 hour activity part in the same room. However in case of soft conflict when FET cannot place other 3 hours separately, it places them consecutively but not in the same room.
 I might agree with FET in some cases when it cannot do desired split but if FET must join some activities consecutively let it do this in the same room. How to tell it to do in such way in case of soft conflict?
+
+92---------------------------------------------------------
+From liquid (on forum):
+
+liquid: Based on what I eperience while creating not an easy timetable I would do suggest to enable more categories than 3. Max number of categories I need years to split to is 7. I do it manually at the moment but it is time and mind consuming. I know it might seem unusual however requirements for the timetable are indeed real not theoretical.
+
+Liviu: Too many categories might slow down the generation and consume too much memory (there will be many empty subgroups). Anyway, anybody can consider as many categories as needed, by adding groups/subgroups manually or using another program to generate the .fet XML file.
+
+liquid: I'd like to mention something that might be worth to consider. As we said earlier we can always make our own division of the year to groups and subgroups which are going to be most suitable to one's needs. It would be good to have the possibility to delete unused (empty) subgroups from all groups. Now, FET kindly informs us that a subgroup belongs to another group and you have to delete it again and again from every other group. 
+
+93---------------------------------------------------------
+From Juan Marcos Filgueira Gomis:
+
+Juan: One question, the update dialog shows buttons '&No' and '&Yes' that I
+couldn't find in fet_gl.ts. How could I translate them?
+
+Liviu: These strings are in the Qt translation. It is a bit difficult to manage also the Qt translations.
+(we need some other files, qt_gl.ts, which complicate things). I'll think of some solution maybe in the future.
+
+94---------------------------------------------------------
+From Yush Yuen (in collaboration with Liviu Lalescu):
+
+Feature: Allow user to customize the initial order of activities for the
+generation.
+
+Benefit: Usually, a few activity converge to be "more difficult" toward the
+end of the generation. It might be beneficial (unproven) to put those
+activity earlier rather then later. Also, I can force some "important"
+activities to be completed first, and some "unimportant" ones to be
+completed later.
+
+Suggested solution: Add a "generate order" text box in the add/modify
+activity form. Values to be taken are 0-100%. The percentile represent what
+percentile out of all the activities should this one be placed. 0 = default
+(according to the original order)
+
+Of course, there could be a dedicated form just to manage generation order.
+
+Another solution: add some special activity tags, like: order##1, order##2, etc.
+Each activity can have one of this special tags, and those with order##1 will be
+placed before those with order##2 and greater orders.
+
+Even better: default order for each activity is 0, then order##1, 2 and so on will
+be after them, and order##-1, -2 and so on will be before them
+(-2 before -1 before 0 before 1 before 2).
+
+It would be nice if you can make it an "advance feature", so user can turn
+on or off the feature. It's useful for cases where I have added a lot of
+custom put order, then want to see how it work with or without it. Probably
+a setting check/uncheck under the menu.

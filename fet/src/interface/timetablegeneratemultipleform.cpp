@@ -61,6 +61,8 @@ Generate genMulti;
 static int nTimetables;
 static int timeLimit;
 
+extern int maxActivitiesPlaced;
+
 extern Solution best_solution;
 
 extern QString conflictsStringTitle;
@@ -106,10 +108,45 @@ void GenerateMultipleThread::run()
 		}
 		else if(impossible){
 			s=tr("Timetable impossible to generate");
+			s+=QString(".");
 			ok=false;
 		}
 		else if(timeExceeded){
 			s=tr("Time exceeded for current timetable");
+
+			////////2011-05-26
+			int mact=maxActivitiesPlaced;
+			int mseconds=genMulti.timeToHighestStage;
+
+			bool zero=false;
+			if(mseconds==0)
+				zero=true;
+			int hh=mseconds/3600;
+			mseconds%=3600;
+			int mm=mseconds/60;
+			mseconds%=60;
+			int ss=mseconds;
+
+			QString tim;
+			if(hh>0){
+				tim+=" ";
+				tim+=tr("%1 h", "hours").arg(hh);
+			}
+			if(mm>0){
+				tim+=" ";
+				tim+=tr("%1 m", "minutes").arg(mm);
+			}
+			if(ss>0 || zero){
+				tim+=" ";
+				tim+=tr("%1 s", "seconds").arg(ss);
+			}
+			tim.remove(0, 1);
+			s+=QString(". ");
+			s+=tr("Max placed activities: %1 (at %2)", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(mact).arg(tim);
+			///////
+
+			s+=QString(".");
+
 			ok=false;
 		}
 		else{
@@ -131,6 +168,8 @@ void GenerateMultipleThread::run()
 			 .arg(hours)
 			 .arg(minutes)
 			 .arg(seconds);
+
+			s+=QString(".");
 		}
 		mutex.unlock();
 		
@@ -458,13 +497,46 @@ void TimetableGenerateMultipleForm::activityPlaced(int na)
 	int minutes=seconds/60;
 	seconds%=60;
 			
+	////////2011-05-26
+	int mact=maxActivitiesPlaced;
+	int mseconds=genMulti.timeToHighestStage;
+
+	QString s;
+
+	bool zero=false;
+	if(mseconds==0)
+		zero=true;
+	int hh=mseconds/3600;
+	mseconds%=3600;
+	int mm=mseconds/60;
+	mseconds%=60;
+	int ss=mseconds;
+
+	QString tim;
+	if(hh>0){
+		tim+=" ";
+		tim+=tr("%1 h", "hours").arg(hh);
+	}
+	if(mm>0){
+		tim+=" ";
+		tim+=tr("%1 m", "minutes").arg(mm);
+	}
+	if(ss>0 || zero){
+		tim+=" ";
+		tim+=tr("%1 s", "seconds").arg(ss);
+	}
+	tim.remove(0, 1);
+	s+=QString("\n");
+	s+=tr("Max placed activities: %1 (at %2)", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(mact).arg(tim);
+	///////
+	
 	textLabel->setText(tr("Current timetable: %1 out of %2 activities placed, %3h %4m %5s")
 	 .arg(na)
 	 .arg(gt.rules.nInternalActivities)
 	 .arg(hours)
 	 .arg(minutes)
-	 .arg(seconds));
-	 
+	 .arg(seconds)+s);
+	
 	semaphorePlacedActivity.release();
 }
 

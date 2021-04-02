@@ -39,7 +39,7 @@ bool skipRandom(double weightPercentage);
 bool compareFunctionGenerate(int i, int j);
 
 /**
-This class represents the solving of time
+This class incorporates the routines for time and space allocation of activities
 */
 class Generate: public QObject{
 	Q_OBJECT

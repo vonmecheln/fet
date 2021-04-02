@@ -333,6 +333,9 @@ activities and add a new split activity</string>
        <property name="currentIndex">
         <number>0</number>
        </property>
+       <property name="usesScrollButtons">
+        <bool>true</bool>
+       </property>
        <widget class="QWidget" name="TabPage1">
         <attribute name="title">
          <string>1</string>
