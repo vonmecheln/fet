@@ -105,6 +105,15 @@ int invPermutation[MAX_ACTIVITIES];
 
 const int INF=2000000000;
 
+
+////////tabu
+const int MAX_TABU=300;
+int crt_tabu_index;
+int tabu_activities[MAX_TABU];
+int tabu_times[MAX_TABU];
+////////////
+
+
 inline bool skipRandom(double weightPercentage)
 {
 	if(weightPercentage<0)
@@ -118,6 +127,7 @@ inline bool skipRandom(double weightPercentage)
 	assert(tt>=0 && tt<=MM);
 						
 	int r=randomKnuth();
+	assert(r>=0 && r<MM);
 	if(tt<=r)
 		return true;
 	else
@@ -173,6 +183,12 @@ void Generate::optimize()
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		for(int j=0; j<gt.rules.nHoursPerWeek; j++)
 			triedRemovals[i][j]=0;
+			
+	////////init tabu
+	crt_tabu_index=0;
+	for(int i=0; i<MAX_TABU; i++)
+		tabu_activities[i]=tabu_times[i]=-1;
+	/////////////////
 
 	abortOptimization=false;
 
@@ -195,13 +211,17 @@ void Generate::optimize()
 	
 	//time_limit=0.25; //obsolete
 	
-	limitcallsrandomswap=2000; //1600, 1500 also good value, 1000 too low???
+	//2000 was before
+	limitcallsrandomswap=1000; //1600, 1500 also good values, 1000 too low???
 	
+	//14 was before
 	level_limit=14; //20; //16
 	
 	assert(level_limit<MAX_LEVEL);
 	
 	int maxPlacedActivities=-1;
+	
+	//int nCallsRandomSwapLevel0=0;
 	
 	for(int added_act=0; added_act<gt.rules.nInternalActivities; added_act++){
 		prevvalue:
@@ -465,6 +485,13 @@ void Generate::optimize()
 		ncallsrandomswap=0;
 		randomswap(permutation[added_act], 0);
 		
+		/*nCallsRandomSwapLevel0++;
+		if(nCallsRandomSwapLevel0%300==0){ //forget tried removals
+			for(int i=0; i<gt.rules.nInternalActivities; i++)
+				for(int j=0; j<gt.rules.nHoursPerWeek; j++)
+					triedRemovals[i][j]=0;
+		}*/
+		
 		/*cout<<"ncallsrandomswap=="<<ncallsrandomswap<<endl;
 		if(maxncallsrandomswap<ncallsrandomswap)
 			maxncallsrandomswap=ncallsrandomswap;
@@ -519,6 +546,20 @@ void Generate::optimize()
 						 <<", times=="<<triedRemovals[permutation[j]][c.times[permutation[j]]]<<endl;
 					}
 					triedRemovals[permutation[j]][c.times[permutation[j]]]++;
+					
+					/////update tabu
+					int a=tabu_activities[crt_tabu_index];
+					int t=tabu_times[crt_tabu_index];
+					if(a>=0 && t>=0){
+						assert(triedRemovals[a][t]>0);
+						triedRemovals[a][t]--;
+						//cout<<"Removing activity with id=="<<gt.rules.internalActivitiesList[a].id<<", time=="<<t<<endl;
+					}
+					tabu_activities[crt_tabu_index]=permutation[j];
+					tabu_times[crt_tabu_index]=c.times[permutation[j]];
+					//cout<<"Inserting activity with id=="<<gt.rules.internalActivitiesList[permutation[j]].id<<", time=="<<c.times[permutation[j]]<<endl;
+					crt_tabu_index=(crt_tabu_index+1)%MAX_TABU;
+					////////////////
 				
 					confl.append(permutation[j]);
 				}
@@ -586,14 +627,12 @@ void Generate::optimize()
 			
 			if(maxPlacedActivities<nPlacedActivities){
 				//forget the old tried removals
-				for(int i=0; i<gt.rules.nInternalActivities; i++)
+				/*for(int i=0; i<gt.rules.nInternalActivities; i++)
 					for(int j=0; j<gt.rules.nHoursPerWeek; j++)
-						triedRemovals[i][j]=0;
+						triedRemovals[i][j]=0;*/
 				maxPlacedActivities=nPlacedActivities;
 			}
-			//for(int j=0; j<gt.rules.nHoursPerWeek; j++)
-			//	triedRemovals[permutation[added_act]][j]=0;
-	
+
 			mutex.unlock();
 			//cout<<"mutex unlocked - optimizetime 382"<<endl;
 			emit(activityPlaced(added_act+1));
@@ -1891,9 +1930,23 @@ impossibleteachersmaxhoursdaily:
 								minWrong1[d2]=-1;
 							}
 							else{
+#if 1
+								if(optNConflActs>conflActs1[d2].count()){
+#endif
+#if 0
+								if(optNWrong>nWrong1[d2]
+								 || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()){
+#endif
+#if 1&0
+								if(optNWrong>nWrong1[d2]
+								 || optNWrong==nWrong1[d2] && minWrong1[d2]<optMinWrong
+								 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
+#endif
+#if 0
 								if(minWrong1[d2]<optMinWrong
 								 || optNWrong>nWrong1[d2] && minWrong1[d2]==optMinWrong
 								 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
+#endif
 									optNWrong=nWrong1[d2];
 									optMinWrong=minWrong1[d2];
 									optNConflActs=conflActs1[d2].count();
@@ -1939,9 +1992,23 @@ impossibleteachersmaxhoursdaily:
 								minWrong1[d2]=-1;
 							}
 							else{										
+#if 1
+								if(optNConflActs>conflActs1[d2].count()){
+#endif
+#if 0
+								if(optNWrong>nWrong1[d2]
+								 || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()){
+#endif
+#if 1&0
+								if(optNWrong>nWrong1[d2]
+								 || optNWrong==nWrong1[d2] && minWrong1[d2]<optMinWrong
+								 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
+#endif
+#if 0
 								if(minWrong1[d2]<optMinWrong
 								 || optNWrong>nWrong1[d2] && minWrong1[d2]==optMinWrong
 								 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
+#endif
 									optNWrong=nWrong1[d2];
 									optMinWrong=minWrong1[d2];
 									optNConflActs=conflActs1[d2].count();
@@ -2003,9 +2070,23 @@ impossibleteachersmaxhoursdaily:
 								minWrong2[d2]=-1;
 							}
 							else{										
+#if 1
+								if(optNConflActs>conflActs2[d2].count()){
+#endif
+#if 0
+								if(optNWrong>nWrong2[d2]
+								 || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()){
+#endif
+#if 1&0
+								if(optNWrong>nWrong2[d2]
+								 || optNWrong==nWrong2[d2] && minWrong2[d2]<optMinWrong
+								 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
+#endif
+#if 0
 								if(minWrong2[d2]<optMinWrong
 								 || optNWrong>nWrong2[d2] && minWrong2[d2]==optMinWrong
 								 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
+#endif
 									optNWrong=nWrong2[d2];
 									optMinWrong=minWrong2[d2];
 									optNConflActs=conflActs2[d2].count();
@@ -2051,9 +2132,23 @@ impossibleteachersmaxhoursdaily:
 								minWrong2[d2]=-1;
 							}
 							else{
+#if 1
+								if(optNConflActs>conflActs2[d2].count()){
+#endif
+#if 0
+								if(optNWrong>nWrong2[d2]
+								 || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()){
+#endif
+#if 1&0
+								if(optNWrong>nWrong2[d2]
+								 || optNWrong==nWrong2[d2] && minWrong2[d2]<optMinWrong
+								 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
+#endif
+#if 0
 								if(minWrong2[d2]<optMinWrong
 								 || optNWrong>nWrong2[d2] && minWrong2[d2]==optMinWrong
 								 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
+#endif
 									optNWrong=nWrong2[d2];
 									optMinWrong=minWrong2[d2];
 									optNConflActs=conflActs2[d2].count();
@@ -2102,13 +2197,23 @@ impossibleteachersmaxhoursdaily:
 						QList<int> where; //at the end (1) or at the begin (2)
 						for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
 							if(nWrong1[d2]>=0)
+#if 1
+								if(optNConflActs==conflActs1[d2].count()){
+#endif
+#if 0
 								if(optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs==conflActs1[d2].count()){
+#endif
 									optDays.append(d2);
 									where.append(1);
 								}
 						for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
 							if(nWrong2[d2]>=0)
+#if 1
+								if(optNConflActs==conflActs2[d2].count()){
+#endif
+#if 0
 								if(optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs==conflActs2[d2].count()){
+#endif
 									optDays.append(d2);
 									where.append(2);
 								}
@@ -2276,9 +2381,23 @@ impossibleteachersmaxhoursdaily:
 										minWrong[d2]=-1;
 									}
 									else{										
+#if 1
+										if(optNConflActs>conflActs[d2].count()){
+#endif
+#if 0
+										if(optNWrong>nWrong[d2]
+										 || optNWrong==nWrong[d2] && optNConflActs>conflActs[d2].count()){
+#endif
+#if 1&0
+										if(optNWrong>nWrong[d2]
+										 || optNWrong==nWrong[d2] && minWrong[d2]<optMinWrong
+										 || optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs>conflActs[d2].count()){
+#endif
+#if 0
 										if(minWrong[d2]<optMinWrong
 										 || optNWrong>nWrong[d2] && minWrong[d2]==optMinWrong
 										 || optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs>conflActs[d2].count()){
+#endif
 											optNWrong=nWrong[d2];
 											optMinWrong=minWrong[d2];
 											optNConflActs=conflActs[d2].count();
@@ -2317,9 +2436,23 @@ impossibleteachersmaxhoursdaily:
 										minWrong[d2]=-1;
 									}
 									else{										
+#if 1
+										if(optNConflActs>conflActs[d2].count()){
+#endif
+#if 0
+										if(optNWrong>nWrong[d2]
+										 || optNWrong==nWrong[d2] && optNConflActs>conflActs[d2].count()){
+#endif
+#if 1&0
+										if(optNWrong>nWrong[d2]
+										 || optNWrong==nWrong[d2] && minWrong[d2]<optMinWrong
+										 || optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs>conflActs[d2].count()){
+#endif
+#if 0
 										if(minWrong[d2]<optMinWrong
 										 || optNWrong>nWrong[d2] && minWrong[d2]==optMinWrong
 										 || optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs>conflActs[d2].count()){
+#endif
 											optNWrong=nWrong[d2];
 											optMinWrong=minWrong[d2];
 											optNConflActs=conflActs[d2].count();
@@ -2339,7 +2472,12 @@ impossibleteachersmaxhoursdaily:
 							QList<int> optDays;
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
 								if(nWrong[d2]>=0)
+#if 1
+									if(optNConflActs==conflActs[d2].count())
+#endif
+#if 0
 									if(optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs==conflActs[d2].count())
+#endif
 										optDays.append(d2);
 							assert(optDays.count()>0);
 							int rnd=randomKnuth()%optDays.count();
@@ -2501,9 +2639,23 @@ impossibleteachersmaxhoursdaily:
 										minWrong1[d2]=-1;
 									}
 									else{										
+#if 1
+										if(optNConflActs>conflActs1[d2].count()){
+#endif
+#if 0
+										if(optNWrong>nWrong1[d2]
+										 || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()){
+#endif
+#if 1&0
+										if(optNWrong>nWrong1[d2]
+										 || optNWrong==nWrong1[d2] && minWrong1[d2]<optMinWrong
+										 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
+#endif
+#if 0
 										if(minWrong1[d2]<optMinWrong
 										 || optNWrong>nWrong1[d2] && minWrong1[d2]==optMinWrong
 										 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
+#endif
 											optNWrong=nWrong1[d2];
 											optMinWrong=minWrong1[d2];
 											optNConflActs=conflActs1[d2].count();
@@ -2548,9 +2700,23 @@ impossibleteachersmaxhoursdaily:
 										minWrong1[d2]=-1;
 									}
 									else{										
+#if 1
+										if(optNConflActs>conflActs1[d2].count()){
+#endif
+#if 0
+										if(optNWrong>nWrong1[d2]
+										 || optNWrong==nWrong1[d2] && optNConflActs>conflActs1[d2].count()){
+#endif
+#if 1&0
+										if(optNWrong>nWrong1[d2]
+										 || optNWrong==nWrong1[d2] && minWrong1[d2]<optMinWrong
+										 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
+#endif
+#if 0
 										if(minWrong1[d2]<optMinWrong
 										 || optNWrong>nWrong1[d2] && minWrong1[d2]==optMinWrong
 										 || optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs>conflActs1[d2].count()){
+#endif
 											optNWrong=nWrong1[d2];
 											optMinWrong=minWrong1[d2];
 											optNConflActs=conflActs1[d2].count();
@@ -2611,9 +2777,23 @@ impossibleteachersmaxhoursdaily:
 										minWrong2[d2]=-1;
 									}
 									else{										
+#if 1
+										if(optNConflActs>conflActs2[d2].count()){
+#endif
+#if 0
+										if(optNWrong>nWrong2[d2]
+										 || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()){
+#endif
+#if 1&0
+										if(optNWrong>nWrong2[d2]
+										 || optNWrong==nWrong2[d2] && minWrong2[d2]<optMinWrong
+										 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
+#endif
+#if 0
 										if(minWrong2[d2]<optMinWrong
 										 || optNWrong>nWrong2[d2] && minWrong2[d2]==optMinWrong
 										 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
+#endif
 											optNWrong=nWrong2[d2];
 											optMinWrong=minWrong2[d2];
 											optNConflActs=conflActs2[d2].count();
@@ -2658,9 +2838,23 @@ impossibleteachersmaxhoursdaily:
 										minWrong2[d2]=-1;
 									}
 									else{										
+#if 1
+										if(optNConflActs>conflActs2[d2].count()){
+#endif
+#if 0
+										if(optNWrong>nWrong2[d2]
+										 || optNWrong==nWrong2[d2] && optNConflActs>conflActs2[d2].count()){
+#endif
+#if 1&0
+										if(optNWrong>nWrong2[d2]
+										 || optNWrong==nWrong2[d2] && minWrong2[d2]<optMinWrong
+										 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
+#endif
+#if 0
 										if(minWrong2[d2]<optMinWrong
 										 || optNWrong>nWrong2[d2] && minWrong2[d2]==optMinWrong
 										 || optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs>conflActs2[d2].count()){
+#endif
 											optNWrong=nWrong2[d2];
 											optMinWrong=minWrong2[d2];
 											optNConflActs=conflActs2[d2].count();
@@ -2690,13 +2884,23 @@ impossibleteachersmaxhoursdaily:
 							QList<int> where; //at the end (1) or at the begin (2)
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
 								if(nWrong1[d2]>=0)
+#if 1
+									if(optNConflActs==conflActs1[d2].count()){
+#endif
+#if 0
 									if(optNWrong==nWrong1[d2] && minWrong1[d2]==optMinWrong && optNConflActs==conflActs1[d2].count()){
+#endif
 										optDays.append(d2);
 										where.append(1);
 									}
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
 								if(nWrong2[d2]>=0)
+#if 1
+									if(optNConflActs==conflActs2[d2].count()){
+#endif
+#if 0
 									if(optNWrong==nWrong2[d2] && minWrong2[d2]==optMinWrong && optNConflActs==conflActs2[d2].count()){
+#endif
 										optDays.append(d2);
 										where.append(2);
 									}
@@ -2835,9 +3039,23 @@ impossibleteachersmaxhoursdaily:
 								minWrong[d2]=-1;
 							}
 							else{
+#if 1
+								if(optNConflActs>conflActs[d2].count()){
+#endif
+#if 0
+								if(optNWrong>nWrong[d2]
+								 || optNWrong==nWrong[d2] && optNConflActs>conflActs[d2].count()){
+#endif
+#if 1&0
+								if(optNWrong>nWrong[d2]
+								 || optNWrong==nWrong[d2] && minWrong[d2]<optMinWrong
+								 || optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs>conflActs[d2].count()){
+#endif
+#if 0
 								if(minWrong[d2]<optMinWrong
 								 || optNWrong>nWrong[d2] && minWrong[d2]==optMinWrong
 								 || optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs>conflActs[d2].count()){
+#endif
 									optNWrong=nWrong[d2];
 									optMinWrong=minWrong[d2];
 									optNConflActs=conflActs[d2].count();
@@ -2857,7 +3075,12 @@ impossibleteachersmaxhoursdaily:
 					QList<int> optDays;
 					for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
 						if(nWrong[d2]>=0)
+#if 1
+							if(optNConflActs==conflActs[d2].count())
+#endif
+#if 0
 							if(optNWrong==nWrong[d2] && minWrong[d2]==optMinWrong && optNConflActs==conflActs[d2].count())
+#endif
 								optDays.append(d2);
 					assert(optDays.count()>0);
 					int rnd=randomKnuth()%optDays.count();
@@ -3068,12 +3291,25 @@ impossibleroomnotavailable:
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
 		conflPerm[perm[i]]=perm[i];
 		
+		
+		
+	////////////////
+	int nWr[MAX_HOURS_PER_WEEK];
+	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
+		foreach(int ai2, conflActivities[i])
+			nWr[i]+=triedRemovals[ai2][c.times[ai2]];
+	////////////////
+		
+		
+		
 	//sorting - stable (not needed?) - O(n^2) - should be improved?
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++)
 		for(int j=i+1; j<gt.rules.nHoursPerWeek; j++)
+#if 1
 			if(nConflActivities[conflPerm[perm[i]]]>nConflActivities[conflPerm[perm[j]]]
 			 || nConflActivities[conflPerm[perm[i]]]==nConflActivities[conflPerm[perm[j]]] 
 			 && nMinDaysBroken[conflPerm[perm[i]]]>nMinDaysBroken[conflPerm[perm[j]]] ){
+#endif
 				int t=conflPerm[perm[i]];
 				conflPerm[perm[i]]=conflPerm[perm[j]];
 				conflPerm[perm[j]]=t;
@@ -3149,21 +3385,25 @@ impossibleroomnotavailable:
 			int optMinWrong=INF;
 			int optNConflActs=gt.rules.nInternalActivities;
 			int j=-1;
-			foreach(int i, tim)
+			foreach(int i, tim){
 				//choose a random time out of these with minimum number of wrongly replaced activities
-				if(minWrong[i]<optMinWrong
-				 || optNWrong>nWrong[i] && minWrong[i]==optMinWrong
-				 || optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs>nConflActivities[i]){
+#if 1
+				if(optNWrong>nWrong[i]
+				 || optNWrong==nWrong[i] && optNConflActs>nConflActivities[i]
+				 || optNWrong==nWrong[i] && minIndexAct[i]>optMinIndex && optNConflActs==nConflActivities[i]){
+#endif
 					optNWrong=nWrong[i];
 					optMinWrong=minWrong[i];
 					optMinIndex=minIndexAct[i];
 					optNConflActs=nConflActivities[i];
 					j=i;
 				}
+			}
+			
 			assert(j>=0);
 			QList<int> tim2;
 			foreach(int i, tim)
-				if(optNWrong==nWrong[i] && minWrong[i]==optMinWrong && optNConflActs==nConflActivities[i])
+				if(optNWrong==nWrong[i] && /*minWrong[i]==optMinWrong*/ minIndexAct[i]==optMinIndex && optNConflActs==nConflActivities[i])
 					tim2.append(i);
 			assert(tim2.count()>0);
 			int rnd=randomKnuth()%tim2.count();
@@ -3176,6 +3416,8 @@ impossibleroomnotavailable:
 			conflActivitiesTimeSlot=conflActivities[timeSlot];
 		}
 	}
+
+	int nExplored=0;
 	
 	for(int i=0; i<gt.rules.nHoursPerWeek; i++){
 		int newtime=conflPerm[perm[i]]; //the considered time
@@ -3206,6 +3448,11 @@ impossibleroomnotavailable:
 		else{
 			/*foreach(int ai2, conflActivities[newtime])
 				assert(!swappedActivities[ai2]);*/
+				
+			nExplored++;
+			
+			//if(nExplored>=4)
+			//	return;
 				
 			if(level==level_limit-1){
 				//cout<<"level_limit-1==level=="<<level<<", for activity with id "<<gt.rules.internalActivitiesList[ai].id<<" returning"<<endl;
@@ -3375,6 +3622,29 @@ impossibleroomnotavailable:
 				//cout<<"level=="<<level<<", activity with id=="<<gt.rules.internalActivitiesList[aii].id<<
 				// " restored from time: "<<c.times[aii]<<" to time: "<<oldtime<<endl;
 				moveActivity(aii, c.times[aii], oldtime, c.rooms[aii], oldroom);
+				
+				
+				
+				/*
+				if(c.times[aii]!=UNALLOCATED_TIME){
+					triedRemovals[aii][c.times[aii]]++;
+				
+					int a=tabu_activities[crt_tabu_index];
+					int t=tabu_times[crt_tabu_index];
+					if(a>=0 && t>=0){
+						assert(triedRemovals[a][t]>0);
+						triedRemovals[a][t]--;
+						//cout<<"Removing activity with id=="<<gt.rules.internalActivitiesList[a].id<<", time=="<<t<<endl;
+					}
+					tabu_activities[crt_tabu_index]=aii;
+					tabu_times[crt_tabu_index]=c.times[aii];
+					//cout<<"Inserting activity with id=="<<gt.rules.internalActivitiesList[aii].id<<", time=="<<c.times[aii]<<endl;
+					crt_tabu_index=(crt_tabu_index+1)%MAX_TABU;
+				}
+				*/
+				
+				
+				
 
 				//cout<<"Level=="<<level<<", act. id=="<<gt.rules.internalActivitiesList[ai].id<<", restoring old time=="<<c.times[ai]<<endl;
 				
@@ -3391,6 +3661,9 @@ impossibleroomnotavailable:
 			//////////////////////////////
 			
 			assert(!foundGoodSwap);
+			
+			if(level>=7)
+				return;
 		}
 	}
 }

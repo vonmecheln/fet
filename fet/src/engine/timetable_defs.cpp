@@ -27,7 +27,7 @@ QString internetVersion;
 /**
 FET version
 */
-const QString FET_VERSION="5.0.1";
+const QString FET_VERSION="5.0.2";
 
 /**
 FET language
@@ -317,7 +317,7 @@ int X;
 //random routines
 void initRandomKnuth()
 {
-	X=(unsigned(time(NULL)))%MM;
+	X=1+((unsigned(time(NULL)))%(MM-1));
 }
 	
 int randomKnuth()
@@ -325,5 +325,6 @@ int randomKnuth()
 	X=AA*(X%QQ)-RR*(X/QQ);
 	if(X<0)
 		X+=MM;
+		
 	return X;
 }

@@ -3,7 +3,7 @@ File generate_pre.cpp
 */
 
 /*
-Copyright 2006 Lalescu Liviu.
+Copyright 2007 Lalescu Liviu.
 
 This file is part of FET.
 

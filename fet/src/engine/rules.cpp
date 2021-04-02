@@ -1610,7 +1610,7 @@ bool Rules::addSplitActivity(
 	//int _parities[],
 	bool _active[],
 	int _minDayDistance,
-	int _weightPercentage,
+	double _weightPercentage,
 	bool _consecutiveIfSameDay,
 	//int _preferredDays[],
 	//int _preferredHours[],

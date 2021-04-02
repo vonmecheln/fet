@@ -1,4 +1,4 @@
-<!DOCTYPE FET><FET version="5.0.0">
+<!DOCTYPE FET><FET version="5.0.2">
 
 <Institution_Name>german secondary school</Institution_Name>
 
@@ -29489,12 +29489,12 @@ The teachersnames are replaced by other random names.
 	<End_Hour>2</End_Hour>
 </ConstraintRoomNotAvailable>
 <ConstraintSubjectPreferredRoom>
-	<Weight_Percentage>90</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>KU</Subject>
 	<Room>501</Room>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRoom>
-	<Weight_Percentage>90</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>TX</Subject>
 	<Room>503</Room>
 </ConstraintSubjectPreferredRoom>
@@ -29504,35 +29504,35 @@ The teachersnames are replaced by other random names.
 	<Room>304</Room>
 </ConstraintSubjectPreferredRoom>
 <ConstraintSubjectPreferredRooms>
-	<Weight_Percentage>90</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>BI</Subject>
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>401</Preferred_Room>
 	<Preferred_Room>403</Preferred_Room>
 </ConstraintSubjectPreferredRooms>
 <ConstraintSubjectPreferredRooms>
-	<Weight_Percentage>90</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>TC</Subject>
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>504</Preferred_Room>
 	<Preferred_Room>101</Preferred_Room>
 </ConstraintSubjectPreferredRooms>
 <ConstraintSubjectPreferredRooms>
-	<Weight_Percentage>90</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>CH</Subject>
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>401</Preferred_Room>
 	<Preferred_Room>162</Preferred_Room>
 </ConstraintSubjectPreferredRooms>
 <ConstraintSubjectPreferredRooms>
-	<Weight_Percentage>90</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>PH</Subject>
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>162</Preferred_Room>
 	<Preferred_Room>161</Preferred_Room>
 </ConstraintSubjectPreferredRooms>
 <ConstraintSubjectPreferredRooms>
-	<Weight_Percentage>90</Weight_Percentage>
+	<Weight_Percentage>100</Weight_Percentage>
 	<Subject>MU</Subject>
 	<Number_of_Preferred_Rooms>2</Number_of_Preferred_Rooms>
 	<Preferred_Room>302</Preferred_Room>

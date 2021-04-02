@@ -909,3 +909,8 @@ Versions 5.0.0 -
 	- Improvement in generation.
 	- Weights can now be real numbers.
 	- Random generator improved (from Knuth).
+- Version 5.0.2
+	- Potential (very unlikely) bug fix in random.
+	- Changes in automatic generation (hope good changes).
+	- Small interface changes.
+	- Improvements in translation by Volker Dirr.

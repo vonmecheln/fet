@@ -28,33 +28,9 @@
 
 #include <QtGui>
 
+#include <QLineEdit>
+
 #define subTab(i)	subactivitiesTabWidget->page(i)
-/*#define prefDay(i)	(i==0?preferredDay1ComboBox:				\
-			(i==1?preferredDay2ComboBox:				\
-			(i==2?preferredDay3ComboBox:				\
-			(i==3?preferredDay4ComboBox:				\
-			(i==4?preferredDay5ComboBox:				\
-			(i==5?preferredDay6ComboBox:				\
-			(i==6?preferredDay7ComboBox:				\
-			(preferredDay8ComboBox))))))))
-#define prefHour(i)	(i==0?preferredHour1ComboBox:				\
-			(i==1?preferredHour2ComboBox:				\
-			(i==2?preferredHour3ComboBox:				\
-			(i==3?preferredHour4ComboBox:				\
-			(i==4?preferredHour5ComboBox:				\
-			(i==5?preferredHour6ComboBox:				\
-			(i==6?preferredHour7ComboBox:				\
-			(preferredHour8ComboBox))))))))*/
-/*
-#define par(i)		(i==0?parity1CheckBox:					\
-			(i==1?parity2CheckBox:					\
-			(i==2?parity3CheckBox:					\
-			(i==3?parity4CheckBox:					\
-			(i==4?parity5CheckBox:					\
-			(i==5?parity6CheckBox:					\
-			(i==6?parity7CheckBox:					\
-			(parity8CheckBox))))))))
-			*/
 #define dur(i)		(i==0?duration1SpinBox:					\
 			(i==1?duration2SpinBox:					\
 			(i==2?duration3SpinBox:					\
@@ -105,7 +81,7 @@ AddActivityForm::AddActivityForm()
 	minDayDistanceTextLabel->setEnabled(nSplit>=2);
 	minDayDistanceSpinBox->setEnabled(nSplit>=2);
 	percentageTextLabel->setEnabled(nSplit>=2);
-	percentageSpinBox->setEnabled(nSplit>=2);
+	percentageLineEdit->setEnabled(nSplit>=2);
 	percentTextLabel->setEnabled(nSplit>=2);
 	forceAdjacentCheckBox->setEnabled(nSplit>=2);
 	
@@ -293,7 +269,7 @@ void AddActivityForm::splitChanged()
 	minDayDistanceTextLabel->setEnabled(nSplit>=2);
 	minDayDistanceSpinBox->setEnabled(nSplit>=2);
 	percentageTextLabel->setEnabled(nSplit>=2);
-	percentageSpinBox->setEnabled(nSplit>=2);
+	percentageLineEdit->setEnabled(nSplit>=2);
 	percentTextLabel->setEnabled(nSplit>=2);
 	forceAdjacentCheckBox->setEnabled(nSplit>=2);
 
@@ -371,14 +347,14 @@ void AddActivityForm::activityChanged()
 		s+="\n";
 		if(minDayDistanceSpinBox->value()>0){
 			percentageTextLabel->setEnabled(true);
-			percentageSpinBox->setEnabled(true);
+			percentageLineEdit->setEnabled(true);
 			percentTextLabel->setEnabled(true);
 			forceAdjacentCheckBox->setEnabled(true);
 			
 			s+=QObject::tr("The distance between any pair of subactivities must be at least %1 days").arg(minDayDistanceSpinBox->value());
 			s+="\n";
 			
-			s+=QObject::tr("Weight percentage of added min n days constraint: %1\%").arg(percentageSpinBox->value());
+			s+=QObject::tr("Weight percentage of added min n days constraint: %1\%").arg(percentageLineEdit->text());
 			s+="\n";
 			
 			if(forceAdjacentCheckBox->isChecked()){
@@ -388,7 +364,7 @@ void AddActivityForm::activityChanged()
 		}
 		else{
 			percentageTextLabel->setDisabled(true);
-			percentageSpinBox->setDisabled(true);
+			percentageLineEdit->setDisabled(true);
 			percentTextLabel->setDisabled(true);
 			forceAdjacentCheckBox->setDisabled(true);
 		}
@@ -428,6 +404,15 @@ void AddActivityForm::activityChanged()
 
 void AddActivityForm::addActivity()
 {
+	double weight;
+	QString tmp=percentageLineEdit->text();
+	sscanf(tmp, "%lf", &weight);
+	if(weight<0.0 || weight>100.0){
+		QMessageBox::warning(this, QObject::tr("FET information"),
+			QObject::tr("Invalid weight (percentage) for added constraint min n days between activities"));
+		return;
+	}
+
 	//teachers
 	QStringList teachers_names;
 	if(selectedTeachersListBox->count()<=0){
@@ -589,7 +574,7 @@ void AddActivityForm::addActivity()
 		bool tmp=gt.rules.addSplitActivity(firstactivityid, firstactivityid,
 			teachers_names, subject_name, subject_tag_name, students_names,
 			nsplit, totalduration, durations,
-			/*parities,*/ active, minD, percentageSpinBox->value(), forceAdjacentCheckBox->isChecked(), /*preferred_days, preferred_hours,*/
+			/*parities,*/ active, minD, /*percentageSpinBox->value()*/weight, forceAdjacentCheckBox->isChecked(), /*preferred_days, preferred_hours,*/
 			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 		if(tmp)
 			QMessageBox::information(this, QObject::tr("FET information"), QObject::tr("Split activity added."

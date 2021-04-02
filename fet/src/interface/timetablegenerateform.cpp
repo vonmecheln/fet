@@ -126,40 +126,40 @@ TimetableGenerateForm::~TimetableGenerateForm()
 void TimetableGenerateForm::start(){
 	if(!gt.rules.internalStructureComputed){
 		if(!gt.rules.computeInternalStructure()){
-			QMessageBox::warning(this, QObject::tr("FET warning"), QObject::tr("Data is wrong. Please correct and try again"));
+			QMessageBox::warning(this, TimetableGenerateForm::tr("FET warning"), TimetableGenerateForm::tr("Data is wrong. Please correct and try again"));
 			//assert(0);
 			return;
 		}
 	}
 
 	if(!gt.rules.initialized || gt.rules.activitiesList.isEmpty()){
-		QMessageBox::critical(this, QObject::tr("FET information"),
-			QObject::tr("You have entered simulation with uninitialized rules or 0 activities...aborting"));
+		QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
+			TimetableGenerateForm::tr("You have entered simulation with uninitialized rules or 0 activities...aborting"));
 		assert(0);
 		exit(1);
 		return;
 	}
 
 	/*if(!gt.timePopulation.initialized){
-		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("You didn't initialize or load the initial state"));
+		QMessageBox::warning(this, TimetableGenerateForm::tr("FET information"),
+			TimetableGenerateForm::tr("You didn't initialize or load the initial state"));
 		return;
 	}*/
 
-    //QLabel* label = new QLabel(QObject::tr("Entering simulation....precomputing"));
+    //QLabel* label = new QLabel(TimetableGenerateForm::tr("Entering simulation....precomputing"));
     //label->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-	//label->setText(QObject::tr("Entering simulation....precomputing"));
+	//label->setText(TimetableGenerateForm::tr("Entering simulation....precomputing"));
 	//label->setAlignment(Qt::AlignBottom | Qt::AlignRight);
 	//label->show();
 
-	//QMessageBox::information(this, QObject::tr("FET information"),
-	// QObject::tr("Entering simulation"));
+	//QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
+	// TimetableGenerateForm::tr("Entering simulation"));
 
-	currentResultsTextEdit->setText(QObject::tr("Entering simulation....precomputing"));
+	currentResultsTextEdit->setText(TimetableGenerateForm::tr("Entering simulation....precomputing"));
 	currentResultsTextEdit->repaint();
 
-	//QMessageBox::information(this, QObject::tr("FET information"),
-	// QObject::tr("Entering simulation"));
+	//QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
+	// TimetableGenerateForm::tr("Entering simulation"));
 
 	bool ok=ot.precompute();
 
@@ -168,11 +168,11 @@ void TimetableGenerateForm::start(){
 
 	if(!ok){
 		//delete label;
-		currentResultsTextEdit->setText(QObject::tr("Cannot optimize - please modify your data"));
+		currentResultsTextEdit->setText(TimetableGenerateForm::tr("Cannot optimize - please modify your data"));
 		currentResultsTextEdit->repaint();
 
-		QMessageBox::information(this, QObject::tr("FET information"),
-		 QObject::tr("Your data cannot be processed - please modify it as instructed"
+		QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
+		 TimetableGenerateForm::tr("Your data cannot be processed - please modify it as instructed"
 		 "\nFor more information you can join the mailing list or write to author"));
 
 		return;
@@ -185,8 +185,8 @@ void TimetableGenerateForm::start(){
 	closePushButton->setDisabled(TRUE);
 	writeResultsPushButton->setEnabled(TRUE);
 
-	/*QMessageBox::information(this, QObject::tr("FET information"),
-	 QObject::tr("Entering simulation..."));*/
+	/*QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
+	 TimetableGenerateForm::tr("Entering simulation..."));*/
 
 	simulation_running=true;
 
@@ -196,8 +196,8 @@ void TimetableGenerateForm::start(){
 void TimetableGenerateForm::stop()
 {
 	if(!simulation_running){
-		QMessageBox::critical(this, QObject::tr("FET information"),
-		 QObject::tr("Simulation stopped but the simulation is not running."
+		QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
+		 TimetableGenerateForm::tr("Simulation stopped but the simulation is not running."
 		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
 
 		return;
@@ -230,46 +230,46 @@ void TimetableGenerateForm::stop()
 	conflictsString+="Total conflicts: ";
 	conflictsString+=QString::number(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString += QObject::tr("Conflicts listing (in decreasing order):\n");
+	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
 
 	foreach(QString t, c.conflictsDescriptionList)
 		conflictsString+=t+"\n";
 
 	//update the string representing the conflicts
 //	conflictsString = "";
-//	conflictsString += QObject::tr("CONSTRAINTS CONFLICTS:\n");
+//	conflictsString += TimetableGenerateForm::tr("CONSTRAINTS CONFLICTS:\n");
 //	c.fitness(gt.rules, &conflictsString);
 	/*conflictsString += "\n--------------------------\n\n";
-	conflictsString += QObject::tr("NON-COMPULSORY CONSTRAINTS CONFLICTS (less important):\n");
+	conflictsString += TimetableGenerateForm::tr("NON-COMPULSORY CONSTRAINTS CONFLICTS (less important):\n");
 	c.softFitness(gt.rules, &conflictsString);*/
 
 	writeSimulationResults(c);
 
-	QString s=QObject::tr("Simulation interrupted. FET could not find a perfect timetable. "
+	QString s=TimetableGenerateForm::tr("Simulation interrupted. FET could not find a perfect timetable. "
 	 "Maybe you can consider lowering the constraints.");
 
 	s+=" ";
 
-	s+=QObject::tr("The partial results are saved in the directory %1 in html and xml mode"
+	s+=TimetableGenerateForm::tr("The partial results are saved in the directory %1 in html and xml mode"
 	 " and the conflicts in txt mode").arg(OUTPUT_DIR);
 
 	s+="\n\n";
 
-	s+=QObject::tr("Additional information relating impossible to schedule activities:\n\n");
-	s+=QObject::tr("Please check the constraints related to the last "
+	s+=TimetableGenerateForm::tr("Additional information relating impossible to schedule activities:\n\n");
+	s+=TimetableGenerateForm::tr("Please check the constraints related to the last "
 	 "activities in the list below, which might be impossible to schedule:\n\n");
-	s+=QObject::tr("Here are the placed activities which lead to an inconsistency, "
+	s+=TimetableGenerateForm::tr("Here are the placed activities which lead to an inconsistency, "
 	 "in order from the first one to the last (the last one FET failed to schedule "
 	 "and the last ones are most likely impossible):\n\n");
 	for(int i=0; i<ot.nDifficultActivities; i++){
 		int ai=ot.difficultActivities[i];
 
-		s+=QObject::tr("No: %1").arg(i+1);
+		s+=TimetableGenerateForm::tr("No: %1").arg(i+1);
 
 		s+=", ";
 
-		s+=QObject::tr("Id: %1").arg(gt.rules.internalActivitiesList[ai].id);
-		s+=QObject::tr(" TN: ");
+		s+=TimetableGenerateForm::tr("Id: %1").arg(gt.rules.internalActivitiesList[ai].id);
+		s+=TimetableGenerateForm::tr(" TN: ");
 		bool first=true;
 		foreach(QString tn, gt.rules.internalActivitiesList[ai].teachersNames){
 			if(!first)
@@ -278,10 +278,10 @@ void TimetableGenerateForm::stop()
 			s+=tn;
 		}
 		s+=", ";
-		s+=QObject::tr("SN: %1").arg(gt.rules.internalActivitiesList[ai].subjectName);
+		s+=TimetableGenerateForm::tr("SN: %1").arg(gt.rules.internalActivitiesList[ai].subjectName);
 		s+=", ";
 		first=true;
-		s+=QObject::tr(" StN: ");
+		s+=TimetableGenerateForm::tr(" StN: ");
 		foreach(QString sn, gt.rules.internalActivitiesList[ai].studentsNames){
 			if(!first)
 				s+=", ";
@@ -301,7 +301,7 @@ void TimetableGenerateForm::stop()
 	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
-	QPushButton* pb=new QPushButton(QObject::tr("OK"));
+	QPushButton* pb=new QPushButton(TimetableGenerateForm::tr("OK"));
 
 	QHBoxLayout* hl=new QHBoxLayout(0);
 	hl->addStretch(1);
@@ -320,7 +320,7 @@ void TimetableGenerateForm::stop()
 	dialog->exec();
 	//QTextEdit* te=new QTextEdit(s, this);
 	//te->show();
-	//QMessageBox::information(this, QObject::tr("FET information"), s);
+	//QMessageBox::information(this, TimetableGenerateForm::tr("FET information"), s);
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
@@ -331,8 +331,8 @@ void TimetableGenerateForm::stop()
 void TimetableGenerateForm::impossibleToSolve()
 {
 	if(!simulation_running){
-		QMessageBox::critical(this, QObject::tr("FET information"),
-		 QObject::tr("Simulation impossible to solve, but the simulation is not running."
+		QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
+		 TimetableGenerateForm::tr("Simulation impossible to solve, but the simulation is not running."
 		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
 
 		return;
@@ -346,31 +346,31 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	mutex.lock();
 
-	QString s=QObject::tr("FET could not find a timetable. "
+	QString s=TimetableGenerateForm::tr("FET could not find a timetable. "
 	 "Maybe you can consider lowering the constraints.");
 
 	s+=" ";
 
-	s+=QObject::tr("The partial results are saved in the directory %1 in html and xml mode"
+	s+=TimetableGenerateForm::tr("The partial results are saved in the directory %1 in html and xml mode"
 	 " and the conflicts in txt mode").arg(OUTPUT_DIR);
 
 	s+="\n\n";
 
-	s+=QObject::tr("Additional information relating impossible to schedule activities:\n\n");
-	/*s+=QObject::tr("Maybe your constraints are too high. Especially check your students (set) early constraint, "
+	s+=TimetableGenerateForm::tr("Additional information relating impossible to schedule activities:\n\n");
+	/*s+=TimetableGenerateForm::tr("Maybe your constraints are too high. Especially check your students (set) early constraint, "
 	 "because if you enter partial data there might be impossible to respect early, so you might "
 	 "firstly generate without this constraint and see if it works\n\n");*/
-	s+=QObject::tr("Please check the constraints related to the "
+	s+=TimetableGenerateForm::tr("Please check the constraints related to the "
 	 "activity below, which might be impossible to schedule:\n\n");
 	for(int i=0; i<ot.nDifficultActivities; i++){
 		int ai=ot.difficultActivities[i];
 
-		s+=QObject::tr("No: %1").arg(i+1);
+		s+=TimetableGenerateForm::tr("No: %1").arg(i+1);
 
 		s+=", ";
 
-		s+=QObject::tr("Id: %1").arg(gt.rules.internalActivitiesList[ai].id);
-		s+=QObject::tr(" TN: ");
+		s+=TimetableGenerateForm::tr("Id: %1").arg(gt.rules.internalActivitiesList[ai].id);
+		s+=TimetableGenerateForm::tr(" TN: ");
 		bool first=true;
 		foreach(QString tn, gt.rules.internalActivitiesList[ai].teachersNames){
 			if(!first)
@@ -379,10 +379,10 @@ void TimetableGenerateForm::impossibleToSolve()
 			s+=tn;
 		}
 		s+=", ";
-		s+=QObject::tr("SN: %1").arg(gt.rules.internalActivitiesList[ai].subjectName);
+		s+=TimetableGenerateForm::tr("SN: %1").arg(gt.rules.internalActivitiesList[ai].subjectName);
 		s+=", ";
 		first=true;
-		s+=QObject::tr(" StN: ");
+		s+=TimetableGenerateForm::tr(" StN: ");
 		foreach(QString sn, gt.rules.internalActivitiesList[ai].studentsNames){
 			if(!first)
 				s+=", ";
@@ -402,7 +402,7 @@ void TimetableGenerateForm::impossibleToSolve()
 	QTextEdit* te=new QTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
-	QPushButton* pb=new QPushButton(QObject::tr("OK"));
+	QPushButton* pb=new QPushButton(TimetableGenerateForm::tr("OK"));
 
 	QHBoxLayout* hl=new QHBoxLayout(0);
 	hl->addStretch(1);
@@ -429,8 +429,8 @@ void TimetableGenerateForm::impossibleToSolve()
 void TimetableGenerateForm::simulationFinished()
 {
 	if(!simulation_running){
-		QMessageBox::critical(this, QObject::tr("FET information"),
-		 QObject::tr("Simulation finished but the simulation is not running."
+		QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
+		 TimetableGenerateForm::tr("Simulation finished but the simulation is not running."
 		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));
 
 		return;
@@ -457,7 +457,7 @@ void TimetableGenerateForm::simulationFinished()
 	conflictsString+="Total conflicts: ";
 	conflictsString+=QString::number(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString += QObject::tr("Conflicts listing (in decreasing order):\n");
+	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
 
 	foreach(QString t, c.conflictsDescriptionList)
 		conflictsString+=t+"\n";
@@ -466,8 +466,8 @@ void TimetableGenerateForm::simulationFinished()
 
 	//mutex.unlock();
 
-	QMessageBox::information(this, QObject::tr("FET information"),
-		QObject::tr("Allocation terminated successfully, remaining %1 weighted"
+	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
+		TimetableGenerateForm::tr("Allocation terminated successfully, remaining %1 weighted"
 		" conflicts from constraints with weight percentage lower than 100%"
 		" (see menu Timetable/Show conflicts (time) or the text file in"
 		" the output directory for details)."
@@ -487,8 +487,8 @@ void TimetableGenerateForm::activityPlaced(int na){
 	/*if(!simulation_running){
 		assert(0);
 
-		QMessageBox::critical(this, QObject::tr("FET information"),
-		 QObject::tr("Activity placed but the simulation is not running."
+		QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
+		 TimetableGenerateForm::tr("Activity placed but the simulation is not running."
 		 " Maybe you aborted simulation previously. Please report possible bug to author"));
 
 		return;
@@ -504,39 +504,39 @@ void TimetableGenerateForm::activityPlaced(int na){
 
 	//write to the Qt interface
 	QString s;
-	//s = QObject::tr("Population number:"); s+=QString::number(gt.timePopulation.n); s+="\n";
-	//s += QObject::tr("Generation:"); s+=QString::number(generation+1)+"\n";
-	s+=QObject::tr("%1 out of %2 activities placed").arg(na).arg(gt.rules.nInternalActivities)+"\n";
+	//s = TimetableGenerateForm::tr("Population number:"); s+=QString::number(gt.timePopulation.n); s+="\n";
+	//s += TimetableGenerateForm::tr("Generation:"); s+=QString::number(generation+1)+"\n";
+	s+=TimetableGenerateForm::tr("%1 out of %2 activities placed").arg(na).arg(gt.rules.nInternalActivities)+"\n";
 
 	/*double d1=c.fitness(gt.rules);
 	double d2 = d1 - floor(d1/10000)*10000;
-	s+=QObject::tr("Constraints conflicts (without unallocated):"); s+=QString::number(d2)+"\n";*/
-	//s+=QObject::tr("Non-compulsory constraints conflicts:"); s+=QString::number(c.softFitness(gt.rules))+"\n";
+	s+=TimetableGenerateForm::tr("Constraints conflicts (without unallocated):"); s+=QString::number(d2)+"\n";*/
+	//s+=TimetableGenerateForm::tr("Non-compulsory constraints conflicts:"); s+=QString::number(c.softFitness(gt.rules))+"\n";
 
-	//s+=QObject::tr("Elapsed time: %1 seconds").arg(ot.searchTime); s+="\n";
-	s+=QObject::tr("Elapsed time:");
+	//s+=TimetableGenerateForm::tr("Elapsed time: %1 seconds").arg(ot.searchTime); s+="\n";
+	s+=TimetableGenerateForm::tr("Elapsed time:");
 	int t=ot.searchTime; //seconds
 	int h=t/3600;
 	if(h>0)
-		s+=QObject::tr(" %1 h").arg(h);
+		s+=TimetableGenerateForm::tr(" %1 h").arg(h);
 	t=t%3600;
 	int m=t/60;
 	if(m>0)
-		s+=QObject::tr(" %1 m").arg(m);
+		s+=TimetableGenerateForm::tr(" %1 m").arg(m);
 	t=t%60;
 	if(t>0)
-		s+=QObject::tr(" %1 s").arg(t);
+		s+=TimetableGenerateForm::tr(" %1 s").arg(t);
 	s+="\n";
 
 	s+="\n";
-	s+=QObject::tr("Please wait. It might take 5 to 20 minutes or even more for very difficult timetables")+"\n";
-	s+=QObject::tr("Activities are placed in order, firstly the most difficult ones, "
+	s+=TimetableGenerateForm::tr("Please wait. It might take 5 to 20 minutes or even more for very difficult timetables")+"\n";
+	s+=TimetableGenerateForm::tr("Activities are placed in order, firstly the most difficult ones, "
 	 "backtracking and swapping order when stucked. When trying to place a new activity, possible swaps of already placed"
 	 " activities are analysed to try to make space for the new activity")+"\n";
-	s+=QObject::tr("The process of searching is semi-randomized, which means that "
+	s+=TimetableGenerateForm::tr("The process of searching is semi-randomized, which means that "
 	 "you will get different timetables and running times each time. You can choose the best timetable from several runs");
 	s+="\n";
-	s+=QObject::tr("Usually, there is no need to stop and restart the search, even if the algorithm seems stucked."
+	s+=TimetableGenerateForm::tr("Usually, there is no need to stop and restart the search, even if the algorithm seems stucked."
 	 " Please report to author contrary cases");
 
 	mutex.unlock();
@@ -565,7 +565,7 @@ void TimetableGenerateForm::write(){
 	conflictsString+="Total conflicts: ";
 	conflictsString+=QString::number(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString += QObject::tr("Conflicts listing (in decreasing order):\n");
+	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
 
 	foreach(QString t, c.conflictsDescriptionList)
 		conflictsString+=t+"\n";
@@ -574,8 +574,8 @@ void TimetableGenerateForm::write(){
 
 	mutex.unlock();
 
-	QMessageBox::information(this, QObject::tr("FET information"),
-		QObject::tr("Simulation results should be now written. You may check now Timetable/View. "
+	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
+		TimetableGenerateForm::tr("Simulation results should be now written. You may check now Timetable/View. "
 		"The results are also saved in the directory %1 in html and xml mode"
 		" and the conflicts in txt mode").arg(OUTPUT_DIR));
 }
@@ -853,10 +853,10 @@ void TimetableGenerateForm::writeStylesheetCss(const QString& htmlfilename){
 	tzset();
 	time(&ltime);
 
-	tos<<"/* "<<QObject::tr("CSS Stylesheet of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
-	tos<<"   "<<QObject::tr("Stylesheet generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<" */\n\n";
+	tos<<"/* "<<TimetableGenerateForm::tr("CSS Stylesheet of %1").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1))<<"\n";
+	tos<<"   "<<TimetableGenerateForm::tr("Stylesheet generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<" */\n\n";
 
-	tos<<QObject::tr("/* To do a page-break only after every second timetiable, cut line 7 and paste it into line 14.*/\n");
+	tos<<"/* "<<TimetableGenerateForm::tr("To do a page-break only after every second timetiable, cut line %1 and paste it into line %2.").arg(7).arg(14)<<" */\n";
 	tos<<"table {\n  page-break-before: always;\n  text-align: center;\n  border: 1px outset black;\n}\n\n\n";
 	tos<<"table.modulo2 {\n\n}\n\n\n";
 	tos<<"caption {\n\n}\n\n\n";
@@ -915,16 +915,16 @@ void TimetableGenerateForm::writeStudentsTimetableDaysHorizontalHtml(const QStri
 	tos<<"  <body id=\"top\">\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
-	tos<<"    <p>"<<QObject::tr("Table of content")<<"</p>\n";
+	tos<<"    <p>"<<TimetableGenerateForm::tr("Table of content")<<"</p>\n";
 	tos<<"    <ul>\n";
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		tos<<"      <li>\n        "<<QObject::tr("Year ")<<protect2(sty->name)<<"\n        <ul>\n";
+		tos<<"      <li>\n        "<<TimetableGenerateForm::tr("Year")<<" "<<protect2(sty->name)<<"\n        <ul>\n";
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			tos<<"          <li>\n            "<<QObject::tr("Group ")<<protect2(stg->name)<<": \n";
+			tos<<"          <li>\n            "<<TimetableGenerateForm::tr("Group")<<" "<<protect2(stg->name)<<": \n";
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
 				tos<<"              <a href=\""<<protect2(onlyfilename)<<"#table_"<<protect2id(sts->name)<<"\">"<<protect2(sts->name)<<"</a>\n";
@@ -954,7 +954,7 @@ void TimetableGenerateForm::writeStudentsTimetableDaysHorizontalHtml(const QStri
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<QObject::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
 
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -993,11 +993,11 @@ void TimetableGenerateForm::writeStudentsTimetableDaysHorizontalHtml(const QStri
 		tos<<"      </tbody>\n";
 		if(subgroup!=gt.rules.nInternalSubgroups-1){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<QObject::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 			tos<<"    <p>&nbsp;</p>\n\n";
 		} else {
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<QObject::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 		}
 	}
 	tos<<"  </body>\n</html>\n";
@@ -1050,16 +1050,16 @@ void TimetableGenerateForm::writeStudentsTimetableDaysVerticalHtml(const QString
 	tos<<"  <body id=\"top\">\n\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
-	tos<<"    <p>"<<QObject::tr("Table of content")<<"</p>\n";
+	tos<<"    <p>"<<TimetableGenerateForm::tr("Table of content")<<"</p>\n";
 	tos<<"    <ul>\n";
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		tos<<"      <li>\n        "<<QObject::tr("Year ")<<protect2(sty->name)<<"\n        <ul>\n";
+		tos<<"      <li>\n        "<<TimetableGenerateForm::tr("Year")<<" "<<protect2(sty->name)<<"\n        <ul>\n";
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			tos<<"          <li>\n            "<<QObject::tr("Group ")<<protect2(stg->name)<<": \n";
+			tos<<"          <li>\n            "<<TimetableGenerateForm::tr("Group")<<" "<<protect2(stg->name)<<": \n";
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
 				tos<<"              <a href=\""<<protect2(onlyfilename)<<"#table_"<<protect2id(sts->name)<<"\">"<<protect2(sts->name)<<"</a>\n";
@@ -1089,7 +1089,7 @@ void TimetableGenerateForm::writeStudentsTimetableDaysVerticalHtml(const QString
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<QObject::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
 
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -1129,11 +1129,11 @@ void TimetableGenerateForm::writeStudentsTimetableDaysVerticalHtml(const QString
 		tos<<"      </tbody>\n";
 		if(subgroup!=gt.rules.nInternalSubgroups-1){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<QObject::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 			tos<<"    <p>&nbsp;</p>\n\n";
 		} else {
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<QObject::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 		}
 	}
 
@@ -1185,7 +1185,7 @@ void TimetableGenerateForm::writeStudentsTimetableTimeVerticalHtml(const QString
 	tos<<"  <body>\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	time_t ltime;
 	tzset();
@@ -1199,7 +1199,7 @@ void TimetableGenerateForm::writeStudentsTimetableTimeVerticalHtml(const QString
 		tos << "<th>" << gt.rules.internalSubgroupsList[i]->name << "</th>";
 	tos<<"</tr>\n      </thead>\n";
 
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<QObject::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalSubgroups<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -1286,7 +1286,7 @@ void TimetableGenerateForm::writeStudentsTimetableTimeHorizontalHtml(const QStri
 	tos<<"  <body>\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	time_t ltime;
 	tzset();
@@ -1306,7 +1306,7 @@ void TimetableGenerateForm::writeStudentsTimetableTimeHorizontalHtml(const QStri
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<QObject::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
@@ -1395,9 +1395,9 @@ void TimetableGenerateForm::writeTeachersTimetableDaysHorizontalHtml(const QStri
 	tos<<"  <body id=\"top\">\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
-	tos<<"    <p>"<<QObject::tr("Table of content")<<"</p>\n";
+	tos<<"    <p>"<<TimetableGenerateForm::tr("Table of content")<<"</p>\n";
 	tos<<"    <ul>\n";
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
@@ -1424,7 +1424,7 @@ void TimetableGenerateForm::writeTeachersTimetableDaysHorizontalHtml(const QStri
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<QObject::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
 
 		for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -1464,11 +1464,11 @@ void TimetableGenerateForm::writeTeachersTimetableDaysHorizontalHtml(const QStri
 		tos<<"      </tbody>\n";
 		if(teacher!=gt.rules.nInternalTeachers-1){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<QObject::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 			tos<<"    <p>&nbsp;</p>\n\n";
 		} else {
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<QObject::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 		}
 	}
 	tos<<"  </body>\n</html>\n";
@@ -1520,9 +1520,9 @@ void TimetableGenerateForm::writeTeachersTimetableDaysVerticalHtml(const QString
 	tos<<"  <body id=\"top\">\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1> "<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+		tos<<"    <h1> "<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
-	tos<<"    <p>"<<QObject::tr("Table of content")<<"</p>\n";
+	tos<<"    <p>"<<TimetableGenerateForm::tr("Table of content")<<"</p>\n";
 	tos<<"    <ul>\n";
 	for(int teacher=0; teacher<gt.rules.nInternalTeachers; teacher++){
 		QString teacher_name = gt.rules.internalTeachersList[teacher]->name;
@@ -1550,7 +1550,7 @@ void TimetableGenerateForm::writeTeachersTimetableDaysVerticalHtml(const QString
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<QObject::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
 
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -1591,11 +1591,11 @@ void TimetableGenerateForm::writeTeachersTimetableDaysVerticalHtml(const QString
 		tos<<"      </tbody>\n";
 		if(teacher!=gt.rules.nInternalTeachers-1){
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<QObject::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 			tos<<"    <p>&nbsp;</p>\n\n";
 		} else {
 			tos<<"    </table>\n    <p>&nbsp;</p>\n";
-			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<QObject::tr("back to the top")<<"</a></p>\n";
+			tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 		}
 	}
 	tos<<"  </body>\n</html>\n";
@@ -1643,7 +1643,7 @@ void TimetableGenerateForm::writeTeachersTimetableTimeVerticalHtml(const QString
 	tos<<"  <body>\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	time_t ltime;
 	tzset();
@@ -1657,7 +1657,7 @@ void TimetableGenerateForm::writeTeachersTimetableTimeVerticalHtml(const QString
 		tos << "<th>" << gt.rules.internalTeachersList[i]->name << "</th>";
 	tos<<"</tr>\n      </thead>\n";
 
-	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<QObject::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalTeachers<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 
 	for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -1744,7 +1744,7 @@ void TimetableGenerateForm::writeTeachersTimetableTimeHorizontalHtml(const QStri
 	tos<<"  <body>\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	time_t ltime;
 	tzset();
@@ -1764,7 +1764,7 @@ void TimetableGenerateForm::writeTeachersTimetableTimeHorizontalHtml(const QStri
 	tos<<"        </tr>\n";
 	tos<<"      </thead>\n";
 
-	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<QObject::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+	tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
 	tos<<"      <tbody>\n";
 
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
@@ -1850,12 +1850,12 @@ void TimetableGenerateForm::writeRoomsTimetableDaysHorizontalHtml(const QString&
 	tos<<"  <body id=\"top\">\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	if(gt.rules.nInternalRooms==0)
-		tos<<"    <h1>"<<QObject::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
-		tos<<"    <p>"<<QObject::tr("Table of content")<<"</p>\n";
+		tos<<"    <p>"<<TimetableGenerateForm::tr("Table of content")<<"</p>\n";
 		tos<<"    <ul>\n";
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
 			QString room_name = gt.rules.internalRoomsList[room]->name;
@@ -1882,7 +1882,7 @@ void TimetableGenerateForm::writeRoomsTimetableDaysHorizontalHtml(const QString&
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
 
-			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<QObject::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
 			tos<<"      <tbody>\n";
 
 			for(int j=0; j<gt.rules.nHoursPerDay; j++){
@@ -1923,11 +1923,11 @@ void TimetableGenerateForm::writeRoomsTimetableDaysHorizontalHtml(const QString&
 			tos<<"      </tbody>\n";
 			if(room!=gt.rules.nInternalRooms-1){
 				tos<<"    </table>\n    <p>&nbsp;</p>\n";
-				tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<QObject::tr("back to the top")<<"</a></p>\n";
+				tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 				tos<<"    <p>&nbsp;</p>\n\n";
 			} else {
 				tos<<"    </table>\n    <p>&nbsp;</p>\n";
-				tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<QObject::tr("back to the top")<<"</a></p>\n";
+				tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 			}
 		}
 	}
@@ -1978,12 +1978,12 @@ void TimetableGenerateForm::writeRoomsTimetableDaysVerticalHtml(const QString& h
 	tos<<"  <body id=\"top\">\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1> "<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+		tos<<"    <h1> "<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	if(gt.rules.nInternalRooms==0)
-		tos<<"    <h1>"<<QObject::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
-		tos<<"    <p>"<<QObject::tr("Table of content")<<"</p>\n";
+		tos<<"    <p>"<<TimetableGenerateForm::tr("Table of content")<<"</p>\n";
 		tos<<"    <ul>\n";
 		for(int room=0; room<gt.rules.nInternalRooms; room++){
 			QString room_name = gt.rules.internalRoomsList[room]->name;
@@ -2011,7 +2011,7 @@ void TimetableGenerateForm::writeRoomsTimetableDaysVerticalHtml(const QString& h
 			tos<<"        </tr>\n";
 			tos<<"      </thead>\n";
 
-			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<QObject::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+			tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
 			tos<<"      <tbody>\n";
 
 			for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -2053,11 +2053,11 @@ void TimetableGenerateForm::writeRoomsTimetableDaysVerticalHtml(const QString& h
 			tos<<"      </tbody>\n";
 			if(room!=gt.rules.nInternalRooms-1){
 				tos<<"    </table>\n    <p>&nbsp;</p>\n";
-				tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<QObject::tr("back to the top")<<"</a></p>\n";
+				tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 				tos<<"    <p>&nbsp;</p>\n\n";
 			} else {
 				tos<<"    </table>\n    <p>&nbsp;</p>\n";
-				tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<QObject::tr("back to the top")<<"</a></p>\n";
+				tos<<"    <p><a href=\""<<protect2(onlyfilename)<<"#top\">"<<TimetableGenerateForm::tr("back to the top")<<"</a></p>\n";
 			}
 		}
 	}
@@ -2105,9 +2105,9 @@ void TimetableGenerateForm::writeRoomsTimetableTimeVerticalHtml(const QString& h
 	tos<<"  <body>\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 	if(gt.rules.nInternalRooms==0)
-		tos<<"    <h1>"<<QObject::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
 		time_t ltime;
 		tzset();
@@ -2121,7 +2121,7 @@ void TimetableGenerateForm::writeRoomsTimetableTimeVerticalHtml(const QString& h
 			tos << "<th>" << gt.rules.internalRoomsList[i]->name << "</th>";
 		tos<<"</tr>\n      </thead>\n";
 
-		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<QObject::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td colspan=\"2\"></td><td colspan=\""<<gt.rules.nInternalRooms<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
 
 		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
@@ -2210,10 +2210,10 @@ void TimetableGenerateForm::writeRoomsTimetableTimeHorizontalHtml(const QString&
 	tos<<"  <body>\n";
 
 	if(na!=gt.rules.nInternalActivities)
-		tos<<"    <h1>"<<QObject::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("Warning! Only %1 out of %2 activities placed!").arg(na).arg(gt.rules.nInternalActivities)<<"</h1>\n";
 
 	if(gt.rules.nInternalRooms==0)
-		tos<<"    <h1>"<<QObject::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
+		tos<<"    <h1>"<<TimetableGenerateForm::tr("No rooms recorded in fet for %1.").arg(protect2(gt.rules.institutionName))<<"</h1>\n";
 	else {
 		time_t ltime;
 		tzset();
@@ -2233,7 +2233,7 @@ void TimetableGenerateForm::writeRoomsTimetableTimeHorizontalHtml(const QString&
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 
-		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<QObject::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
+		tos<<"      <tfoot><tr><td></td><td colspan=\""<<gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek<<"\">"<<TimetableGenerateForm::tr("Timetable generated with FET %1 on %2").arg(FET_VERSION).arg(ctime(&ltime))<<"</td></tr></tfoot>\n";
 		tos<<"      <tbody>\n";
 
 		for(int i=0; i<gt.rules.nInternalRooms; i++){
