@@ -28,10 +28,10 @@ class ConstraintActivitiesPreferredTimeSlotsForm : public QDialog, Ui::Constrain
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintActivitiesPreferredTimeSlotsForm();
+	ConstraintActivitiesPreferredTimeSlotsForm(QWidget* parent);
 	~ConstraintActivitiesPreferredTimeSlotsForm();
 	
-	void refreshConstraintsListBox();
+	void refreshConstraintsListWidget();
 
 	bool filterOk(TimeConstraint* ctr);
 

@@ -26,7 +26,7 @@
 class AddConstraintBasicCompulsorySpaceForm : public QDialog, Ui::AddConstraintBasicCompulsorySpaceForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintBasicCompulsorySpaceForm();
+	AddConstraintBasicCompulsorySpaceForm(QWidget* parent);
 	~AddConstraintBasicCompulsorySpaceForm();
 
 public slots:

@@ -28,7 +28,7 @@ class ConstraintTwoActivitiesGroupedForm : public QDialog, Ui::ConstraintTwoActi
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintTwoActivitiesGroupedForm();
+	ConstraintTwoActivitiesGroupedForm(QWidget* parent);
 	~ConstraintTwoActivitiesGroupedForm();
 
 	bool filterOk(TimeConstraint* ctr);

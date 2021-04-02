@@ -29,7 +29,7 @@ class ChangeMinDaysSelectivelyForm : public QDialog, Ui::ChangeMinDaysSelectivel
 	Q_OBJECT
 
 public:
-	ChangeMinDaysSelectivelyForm();
+	ChangeMinDaysSelectivelyForm(QWidget* parent);
 	~ChangeMinDaysSelectivelyForm();
 	
 	double oldWeight;
@@ -42,13 +42,8 @@ public:
 	int newConsecutive;
 
 public slots:
-	void on_okPushButton_clicked();
-	void on_cancelPushButton_clicked();
-	
-//	QLineEdit* oldWeightLineEdit;
-//	QLineEdit* newWeightLineEdit;
-//	QSpinBox* oldDaysSpinBox;
-//	QComboBox* oldConsecutiveComboBox;
+	void ok();
+	void cancel();
 };
 
 #endif

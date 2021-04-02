@@ -26,7 +26,7 @@
 class AddConstraintStudentsSetMaxBuildingChangesPerWeekForm : public QDialog, Ui::AddConstraintStudentsSetMaxBuildingChangesPerWeekForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintStudentsSetMaxBuildingChangesPerWeekForm();
+	AddConstraintStudentsSetMaxBuildingChangesPerWeekForm(QWidget* parent);
 	~AddConstraintStudentsSetMaxBuildingChangesPerWeekForm();
 
 	void updateStudentsSetComboBox();

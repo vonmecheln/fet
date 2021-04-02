@@ -14,23 +14,19 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef TIMETABLESHOWCONFLICTSFORM_H
 #define TIMETABLESHOWCONFLICTSFORM_H
 
 #include "ui_timetableshowconflictsform_template.h"
 
-class TimetableShowConflictsForm : public QDialog, Ui::TimetableShowConflictsForm_template
+class TimetableShowConflictsForm : public QDialog, public Ui::TimetableShowConflictsForm_template
 {
 	Q_OBJECT
 	
 public:
-    TimetableShowConflictsForm();
-
-    ~TimetableShowConflictsForm();
-
+	TimetableShowConflictsForm(QWidget* parent);
+	~TimetableShowConflictsForm();
 };
 
 #endif

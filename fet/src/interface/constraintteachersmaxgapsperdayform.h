@@ -28,7 +28,7 @@ class ConstraintTeachersMaxGapsPerDayForm : public QDialog, Ui::ConstraintTeache
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintTeachersMaxGapsPerDayForm();
+	ConstraintTeachersMaxGapsPerDayForm(QWidget* parent);
 	~ConstraintTeachersMaxGapsPerDayForm();
 
 	bool filterOk(TimeConstraint* ctr);

@@ -26,7 +26,7 @@
 class AddConstraintTeacherMinGapsBetweenBuildingChangesForm : public QDialog, Ui::AddConstraintTeacherMinGapsBetweenBuildingChangesForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintTeacherMinGapsBetweenBuildingChangesForm();
+	AddConstraintTeacherMinGapsBetweenBuildingChangesForm(QWidget* parent);
 	~AddConstraintTeacherMinGapsBetweenBuildingChangesForm();
 
 	void updateTeachersComboBox();

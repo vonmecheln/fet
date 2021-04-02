@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef HOURSFORM_H
 #define HOURSFORM_H
@@ -26,7 +24,7 @@ class HoursForm : public QDialog, Ui::HoursForm_template
 {
 	Q_OBJECT
 public:
-	HoursForm();
+	HoursForm(QWidget* parent);
 
 	~HoursForm();
 

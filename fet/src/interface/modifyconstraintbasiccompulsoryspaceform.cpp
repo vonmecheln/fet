@@ -17,60 +17,40 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "modifyconstraintbasiccompulsoryspaceform.h"
 #include "timeconstraint.h"
 
-ModifyConstraintBasicCompulsorySpaceForm::ModifyConstraintBasicCompulsorySpaceForm(ConstraintBasicCompulsorySpace* ctr)
+ModifyConstraintBasicCompulsorySpaceForm::ModifyConstraintBasicCompulsorySpaceForm(QWidget* parent, ConstraintBasicCompulsorySpace* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintBasicCompulsorySpaceForm_template*/, SLOT(constraintChanged()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintBasicCompulsorySpaceForm_template*/, SLOT(ok()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintBasicCompulsorySpaceForm_template*/, SLOT(cancel()));
+	okPushButton->setDefault(true);
 
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	this->_ctr=ctr;
 	
-//	compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 }
 
 ModifyConstraintBasicCompulsorySpaceForm::~ModifyConstraintBasicCompulsorySpaceForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintBasicCompulsorySpaceForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-	s+=tr("Basic compulsory space");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight=%1").arg(weight);
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void ModifyConstraintBasicCompulsorySpaceForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
@@ -83,14 +63,10 @@ void ModifyConstraintBasicCompulsorySpaceForm::ok()
 		return;
 	}
 	
-/*	bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
 	this->_ctr->weightPercentage=weight;
-	//this->_ctr->compulsory=compulsory;
 	
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 
 	this->close();
 }

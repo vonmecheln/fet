@@ -28,7 +28,7 @@ class ModifyConstraintSubjectPreferredRoomForm : public QDialog, Ui::ModifyConst
 	
 	ConstraintSubjectPreferredRoom* _ctr;
 public:
-	ModifyConstraintSubjectPreferredRoomForm(ConstraintSubjectPreferredRoom* ctr);
+	ModifyConstraintSubjectPreferredRoomForm(QWidget* parent, ConstraintSubjectPreferredRoom* ctr);
 	~ModifyConstraintSubjectPreferredRoomForm();
 
 	void updateSubjectsComboBox();

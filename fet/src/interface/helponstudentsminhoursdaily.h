@@ -24,7 +24,7 @@ class HelpOnStudentsMinHoursDaily{
 	Q_DECLARE_TR_FUNCTIONS(HelpOnStudentsMinHoursDaily);
 	
 public:
-	static void help();
+	static void help(QWidget* parent);
 };
 
 #endif

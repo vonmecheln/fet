@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>520</width>
-    <height>500</height>
+    <height>490</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,22 +15,21 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <widget class="Q3ListBox" name="teachersListBox">
-     <item>
-      <property name="text">
-       <string>New Item</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <widget class="Q3TextEdit" name="currentTeacherTextEdit">
-     <property name="readOnly">
-      <bool>true</bool>
+    <widget class="QSplitter" name="splitter">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QListWidget" name="teachersListWidget"/>
+     <widget class="QPlainTextEdit" name="currentTeacherTextEdit"/>
     </widget>
    </item>
-   <item row="1" column="0" colspan="2">
+   <item row="1" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -67,7 +66,7 @@
      <item>
       <widget class="QPushButton" name="deactivateTeacherPushButton">
        <property name="text">
-        <string>De-activate all activities for selected teacher</string>
+        <string>Deactivate all activities for selected teacher</string>
        </property>
       </widget>
      </item>
@@ -76,7 +75,7 @@
        <item>
         <widget class="QPushButton" name="sortTeachersPushButton">
          <property name="text">
-          <string>Sort alphabetically</string>
+          <string>Sort</string>
          </property>
         </widget>
        </item>
@@ -94,35 +93,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>Q3Frame</class>
-   <extends>QFrame</extends>
-   <header>Qt3Support/Q3Frame</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>Q3ListBox</class>
-   <extends>Q3Frame</extends>
-   <header>q3listbox.h</header>
-  </customwidget>
-  <customwidget>
-   <class>Q3TextEdit</class>
-   <extends>Q3Frame</extends>
-   <header>q3textedit.h</header>
-  </customwidget>
- </customwidgets>
- <tabstops>
-  <tabstop>teachersListBox</tabstop>
-  <tabstop>addTeacherPushButton</tabstop>
-  <tabstop>removeTeacherPushButton</tabstop>
-  <tabstop>renameTeacherPushButton</tabstop>
-  <tabstop>sortTeachersPushButton</tabstop>
-  <tabstop>activateTeacherPushButton</tabstop>
-  <tabstop>deactivateTeacherPushButton</tabstop>
-  <tabstop>closePushButton</tabstop>
-  <tabstop>currentTeacherTextEdit</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

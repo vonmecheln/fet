@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef GROUPSFORM_H
 #define GROUPSFORM_H
@@ -26,7 +24,7 @@ class GroupsForm : public QDialog, Ui::GroupsForm_template
 {
 	Q_OBJECT
 public:
-	GroupsForm();
+	GroupsForm(QWidget* parent);
 	~GroupsForm();
 
 public slots:

@@ -28,7 +28,7 @@ class ConstraintActivityEndsStudentsDayForm : public QDialog, Ui::ConstraintActi
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintActivityEndsStudentsDayForm();
+	ConstraintActivityEndsStudentsDayForm(QWidget* parent);
 	~ConstraintActivityEndsStudentsDayForm();
 
 	bool filterOk(TimeConstraint* ctr);

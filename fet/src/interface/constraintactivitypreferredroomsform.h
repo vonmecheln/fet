@@ -29,7 +29,7 @@ class ConstraintActivityPreferredRoomsForm : public QDialog, Ui::ConstraintActiv
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
-	ConstraintActivityPreferredRoomsForm();
+	ConstraintActivityPreferredRoomsForm(QWidget* parent);
 	~ConstraintActivityPreferredRoomsForm();
 
 	bool filterOk(SpaceConstraint* ctr);

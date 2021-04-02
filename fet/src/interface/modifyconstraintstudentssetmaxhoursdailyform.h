@@ -28,7 +28,7 @@ class ModifyConstraintStudentsSetMaxHoursDailyForm : public QDialog, Ui::ModifyC
 public:
 	ConstraintStudentsSetMaxHoursDaily* _ctr;
 
-	ModifyConstraintStudentsSetMaxHoursDailyForm(ConstraintStudentsSetMaxHoursDaily* ctr);
+	ModifyConstraintStudentsSetMaxHoursDailyForm(QWidget* parent, ConstraintStudentsSetMaxHoursDaily* ctr);
 	~ModifyConstraintStudentsSetMaxHoursDailyForm();
 
 	void updateStudentsComboBox();

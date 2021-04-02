@@ -36,7 +36,7 @@
      <item>
       <widget class="QLineEdit" name="weightLineEdit">
        <property name="text">
-        <string>100</string>
+        <string notr="true">100</string>
        </property>
       </widget>
      </item>
@@ -86,12 +86,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>weightLineEdit</tabstop>
-  <tabstop>maxHoursSpinBox</tabstop>
-  <tabstop>addConstraintPushButton</tabstop>
-  <tabstop>closePushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

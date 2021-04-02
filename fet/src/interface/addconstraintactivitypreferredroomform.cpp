@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitypreferredroomform.h"
@@ -26,27 +24,22 @@
 
 #include <QSet>
 #include "lockunlock.h"
-//extern QSet<int> idsOfLockedSpace;
-//extern QSet<int> idsOfPermanentlyLockedSpace;
 
-AddConstraintActivityPreferredRoomForm::AddConstraintActivityPreferredRoomForm()
+AddConstraintActivityPreferredRoomForm::AddConstraintActivityPreferredRoomForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-    connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -66,41 +59,41 @@ AddConstraintActivityPreferredRoomForm::AddConstraintActivityPreferredRoomForm()
 	
 	//permTextLabel->setWordWrap(true);
 	
-	teachersComboBox->insertItem("");
+	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 	}
-	teachersComboBox->setCurrentItem(0);
+	teachersComboBox->setCurrentIndex(0);
 
-	subjectsComboBox->insertItem("");
+	subjectsComboBox->addItem("");
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 	}
-	subjectsComboBox->setCurrentItem(0);
+	subjectsComboBox->setCurrentIndex(0);
 
-	activityTagsComboBox->insertItem("");
+	activityTagsComboBox->addItem("");
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* st=gt.rules.activityTagsList[i];
-		activityTagsComboBox->insertItem(st->name);
+		activityTagsComboBox->addItem(st->name);
 	}
-	activityTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentIndex(0);
 
-	studentsComboBox->insertItem("");
+	studentsComboBox->addItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
-	studentsComboBox->setCurrentItem(0);
+	studentsComboBox->setCurrentIndex(0);
 	
 	updateActivitiesComboBox();
 	updateRoomsComboBox();
@@ -108,6 +101,7 @@ AddConstraintActivityPreferredRoomForm::AddConstraintActivityPreferredRoomForm()
 
 AddConstraintActivityPreferredRoomForm::~AddConstraintActivityPreferredRoomForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 bool AddConstraintActivityPreferredRoomForm::filterOk(Activity* act)
@@ -162,7 +156,7 @@ void AddConstraintActivityPreferredRoomForm::updateActivitiesComboBox(){
 		Activity* act=gt.rules.activitiesList[i];
 		
 		if(filterOk(act)){
-			activitiesComboBox->insertItem(act->getDescription(gt.rules));
+			activitiesComboBox->addItem(act->getDescription(gt.rules));
 			this->activitiesList.append(act->id);
 		}
 	}
@@ -178,7 +172,7 @@ void AddConstraintActivityPreferredRoomForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* rm=gt.rules.roomsList[i];
-		roomsComboBox->insertItem(rm->name);
+		roomsComboBox->addItem(rm->name);
 	}
 }
 
@@ -188,7 +182,7 @@ void AddConstraintActivityPreferredRoomForm::addConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
@@ -196,7 +190,7 @@ void AddConstraintActivityPreferredRoomForm::addConstraint()
 	}
 
 	int id;
-	int tmp2=activitiesComboBox->currentItem();
+	int tmp2=activitiesComboBox->currentIndex();
 	//assert(tmp2<gt.rules.activitiesList.size());
 	//assert(tmp2<activitiesList.size());
 	if(tmp2<0 || tmp2>=gt.rules.activitiesList.size() || tmp2>=activitiesList.size()){
@@ -207,7 +201,7 @@ void AddConstraintActivityPreferredRoomForm::addConstraint()
 	else
 		id=activitiesList.at(tmp2);
 		
-	/*int i=activitiesComboBox->currentItem();
+	/*int i=activitiesComboBox->currentIndex();
 	if(i<0 || activitiesComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid activity"));
@@ -215,7 +209,7 @@ void AddConstraintActivityPreferredRoomForm::addConstraint()
 	}
 	Activity* act=gt.rules.activitiesList.at(i);*/
 
-	int i=roomsComboBox->currentItem();
+	int i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid room"));

@@ -29,7 +29,7 @@ class ModifyConstraintSubactivitiesPreferredTimeSlotsForm : public QDialog, Ui::
 public:
 	ConstraintSubactivitiesPreferredTimeSlots* _ctr;
 
-	ModifyConstraintSubactivitiesPreferredTimeSlotsForm(ConstraintSubactivitiesPreferredTimeSlots* ctr);
+	ModifyConstraintSubactivitiesPreferredTimeSlotsForm(QWidget* parent, ConstraintSubactivitiesPreferredTimeSlots* ctr);
 	~ModifyConstraintSubactivitiesPreferredTimeSlotsForm();
 
 	void updateTeachersComboBox();

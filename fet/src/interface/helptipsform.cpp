@@ -19,26 +19,34 @@
 
 #include "timetable_defs.h"
 
-HelpTipsForm::HelpTipsForm()
+HelpTipsForm::HelpTipsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
-
-    connect(closePushButton, SIGNAL(clicked()), this /*HelpTipsForm_template*/, SLOT(close()));
-
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
-	centerWidgetOnScreen(this);
+	setupUi(this);
 	
+	closePushButton->setDefault(true);
+	
+	plainTextEdit->setReadOnly(true);
+
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+
+	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+	
+	setText();
+}
+
+HelpTipsForm::~HelpTipsForm()
+{
+	saveFETDialogGeometry(this);
+}
+
+void HelpTipsForm::setText()
+{
 	QString s;
 	
-	s+=tr("FET Important optimization tips - please read them carefully and try to comply");
-	s+="\n";
-	s+=tr("Modified 19 August 2009.");
+	s+=tr("Important tips.");
+	s+="\n\n";
+	s+=tr("Last modified on %1.").arg(tr("19 August 2009"));
 	
 	s+="\n\n";
 	
@@ -100,9 +108,5 @@ HelpTipsForm::HelpTipsForm()
 	" The correct way would probably be to consider A1 and A2 = a single activity A12', or to modify the related constraint "
 	"min days between activities. Or maybe you can find other ways.");
 	
-	textBrowser->setText(s);
-}
-
-HelpTipsForm::~HelpTipsForm()
-{
+	plainTextEdit->setPlainText(s);
 }

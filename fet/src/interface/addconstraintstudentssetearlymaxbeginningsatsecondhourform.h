@@ -26,7 +26,7 @@
 class AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm : public QDialog, Ui::AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm();
+	AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm(QWidget* parent);
 	~AddConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm();
 
 public slots:

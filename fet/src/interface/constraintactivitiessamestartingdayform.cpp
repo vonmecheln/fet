@@ -23,50 +23,57 @@
 #include "addconstraintactivitiessamestartingdayform.h"
 #include "modifyconstraintactivitiessamestartingdayform.h"
 
-ConstraintActivitiesSameStartingDayForm::ConstraintActivitiesSameStartingDayForm()
+#include <QListWidget>
+#include <QScrollBar>
+#include <QAbstractItemView>
+
+ConstraintActivitiesSameStartingDayForm::ConstraintActivitiesSameStartingDayForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*ConstraintActivitiesSameStartingDayForm_template*/, SLOT(addConstraint()));
-    connect(removeConstraintPushButton, SIGNAL(clicked()), this /*ConstraintActivitiesSameStartingDayForm_template*/, SLOT(removeConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*ConstraintActivitiesSameStartingDayForm_template*/, SLOT(close()));
-    connect(constraintsListBox, SIGNAL(highlighted(int)), this /*ConstraintActivitiesSameStartingDayForm_template*/, SLOT(constraintChanged(int)));
-    connect(modifyConstraintPushButton, SIGNAL(clicked()), this /*ConstraintActivitiesSameStartingDayForm_template*/, SLOT(modifyConstraint()));
-    connect(constraintsListBox, SIGNAL(selected(QString)), this /*ConstraintActivitiesSameStartingDayForm_template*/, SLOT(modifyConstraint()));
-    connect(helpPushButton, SIGNAL(clicked()), this /*ConstraintActivitiesSameStartingDayForm_template*/, SLOT(help()));
+	currentConstraintTextEdit->setReadOnly(true);
 
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
-	centerWidgetOnScreen(this);
+	modifyConstraintPushButton->setDefault(true);
 	
-	this->refreshConstraintsListBox();
+	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
+	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+
+	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+	
+	this->refreshConstraintsListWidget();
 }
 
 ConstraintActivitiesSameStartingDayForm::~ConstraintActivitiesSameStartingDayForm()
 {
+	saveFETDialogGeometry(this);
 }
 
-void ConstraintActivitiesSameStartingDayForm::refreshConstraintsListBox()
+void ConstraintActivitiesSameStartingDayForm::refreshConstraintsListWidget()
 {
 	this->visibleConstraintsList.clear();
-	constraintsListBox->clear();
+	constraintsListWidget->clear();
 	for(int i=0; i<gt.rules.timeConstraintsList.size(); i++){
 		TimeConstraint* ctr=gt.rules.timeConstraintsList[i];
 		if(filterOk(ctr)){
 			QString s;
 			s=ctr->getDescription(gt.rules);
 			visibleConstraintsList.append(ctr);
-			constraintsListBox->insertItem(s);
+			constraintsListWidget->addItem(s);
 		}
 	}
 
-	constraintsListBox->setCurrentItem(0);
-	this->constraintChanged(constraintsListBox->currentItem());
+	if(constraintsListWidget->count()>0)
+		constraintsListWidget->setCurrentRow(0);
+	else
+		this->constraintChanged(-1);
 }
 
 bool ConstraintActivitiesSameStartingDayForm::filterOk(TimeConstraint* ctr)
@@ -80,7 +87,7 @@ bool ConstraintActivitiesSameStartingDayForm::filterOk(TimeConstraint* ctr)
 void ConstraintActivitiesSameStartingDayForm::constraintChanged(int index)
 {
 	if(index<0){
-		currentConstraintTextEdit->setText("");
+		currentConstraintTextEdit->setPlainText("");
 		return;
 	}
 	QString s;
@@ -88,39 +95,53 @@ void ConstraintActivitiesSameStartingDayForm::constraintChanged(int index)
 	TimeConstraint* ctr=this->visibleConstraintsList.at(index);
 	assert(ctr!=NULL);
 	s=ctr->getDetailedDescription(gt.rules);
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setPlainText(s);
 }
 
 void ConstraintActivitiesSameStartingDayForm::addConstraint()
 {
-	AddConstraintActivitiesSameStartingDayForm form;
+	AddConstraintActivitiesSameStartingDayForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListBox();
+	this->refreshConstraintsListWidget();
 	
-	constraintsListBox->setCurrentItem(constraintsListBox->count()-1);
+	constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
 }
 
 void ConstraintActivitiesSameStartingDayForm::modifyConstraint()
 {
-	int i=constraintsListBox->currentItem();
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
+
+	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintActivitiesSameStartingDayForm form((ConstraintActivitiesSameStartingDay*)ctr);
+	ModifyConstraintActivitiesSameStartingDayForm form(this, (ConstraintActivitiesSameStartingDay*)ctr);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListBox();
+	refreshConstraintsListWidget();
+
+	constraintsListWidget->verticalScrollBar()->setValue(valv);
+	constraintsListWidget->horizontalScrollBar()->setValue(valh);
 	
-	constraintsListBox->setCurrentItem(i);
+	if(i>=constraintsListWidget->count())
+		i=constraintsListWidget->count()-1;
+	
+	if(i>=0)
+		constraintsListWidget->setCurrentRow(i);
+	else
+		this->constraintChanged(-1);
 }
 
 void ConstraintActivitiesSameStartingDayForm::removeConstraint()
 {
-	int i=constraintsListBox->currentItem();
+	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
@@ -130,21 +151,30 @@ void ConstraintActivitiesSameStartingDayForm::removeConstraint()
 	s=tr("Remove constraint?");
 	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	//s+=tr("\nAre you sure?");
+	
+	QListWidgetItem* item;
 
 	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
-	case 0: // The user clicked the OK again button or pressed Enter
+	case 0: // The user clicked the OK button or pressed Enter
 		gt.rules.removeTimeConstraint(ctr);
-		this->refreshConstraintsListBox();
+		
+		visibleConstraintsList.removeAt(i);
+		constraintsListWidget->setCurrentRow(-1);
+		item=constraintsListWidget->takeItem(i);
+		delete item;
+		
 		break;
-	case 1: // The user clicked the Cancel or pressed Escape
+	case 1: // The user clicked the Cancel button or pressed Escape
 		break;
 	}
 	
-	if((uint)(i) >= constraintsListBox->count())
-		i=constraintsListBox->count()-1;
-	constraintsListBox->setCurrentItem(i);
+	if(i>=constraintsListWidget->count())
+		i=constraintsListWidget->count()-1;
+	if(i>=0)
+		constraintsListWidget->setCurrentRow(i);
+	else
+		this->constraintChanged(-1);
 }
 
 void ConstraintActivitiesSameStartingDayForm::help()

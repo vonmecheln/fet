@@ -19,18 +19,23 @@
 
 #include "timetable_defs.h"
 
-HelpAboutForm::HelpAboutForm()
+HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
 	
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	closePushButton->setDefault(true);
+	
+	authorsTextBrowser->setReadOnly(true);
+	contributorsTextBrowser->setReadOnly(true);
+	translatorsTextBrowser->setReadOnly(true);
+	referencesTextBrowser->setReadOnly(true);
+	thanksTextBrowser->setReadOnly(true);
+	
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	
 	centerWidgetOnScreen(this);
-		
+	restoreFETDialogGeometry(this);
+	
 	tabWidget->setCurrentIndex(0);
 	
 	authorsTextBrowser->setOpenExternalLinks(true);
@@ -39,4 +44,5 @@ HelpAboutForm::HelpAboutForm()
 
 HelpAboutForm::~HelpAboutForm()
 {
+	saveFETDialogGeometry(this);
 }

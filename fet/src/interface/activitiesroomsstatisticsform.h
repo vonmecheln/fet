@@ -1,8 +1,8 @@
 /***************************************************************************
-                          httpget.h  -  description
+                          activitiesroomsstatisticsform.h  -  description
                              -------------------
-    begin                : July 24 2007
-    copyright            : (C) 2007 by Lalescu Liviu
+    begin                : October 6, 2011
+    copyright            : (C) 2011 by Lalescu Liviu
     email                : Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
  ***************************************************************************/
 
@@ -15,32 +15,19 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef HTTPGET_H
-#define HTTPGET_H
+#ifndef ACTIVITIESROOMSSTATISTICSFORM_H
+#define ACTIVITIESROOMSSTATISTICSFORM_H
 
-#include <QHttp>
-#include <QBuffer>
-#include <QUrl>
+#include "ui_activitiesroomsstatisticsform_template.h"
 
-class HttpGet: public QObject
-{
+#include <QDialog>
+
+class ActivitiesRoomsStatisticsForm : public QDialog, Ui::ActivitiesRoomsStatisticsForm_template  {
 	Q_OBJECT
-	
-public:
-	HttpGet(QObject* parent=0);
-	bool getFile(const QUrl& url);
 
-signals:
-	void done(bool error);
-
-private slots:
-	void httpDone(bool error);
-	
 public:
-	QHttp http;
-	
-private:
-	QBuffer buffer;
+	ActivitiesRoomsStatisticsForm(QWidget* parent);
+	~ActivitiesRoomsStatisticsForm();
 };
 
 #endif

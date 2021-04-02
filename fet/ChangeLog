@@ -650,7 +650,6 @@ Versions 3.17.0 - 3.17.12
 	conflicts factor with" we have "this increases the conflicts total by" (reported by
 	Tom Hosty).
 - Version 3.17.12
-	- Added the e-mails of the translators and changed contact information for Liviu Lalescu.
 	- Began Dutch translation (by Niels Fikse).
 ---------------------------------------------------------------------------------
 Versions 3.18.0 - 3.18.1
@@ -1359,7 +1358,7 @@ Versions 5.9.0 - 5.9.4
 	- Minor interface bug fix (description of constraint teacher max gaps per day displayed incorrectly information about the
 	gaps, writing "per week" instead of "per day").
 	- Modified the order of search for translation files (firstly in current directory, then in current directory/translations,
-	then, under Unix-like, in /usr/share/fet/translations).
+	then, under systems which support it, in /usr/share/fet/translations).
 ---------------------------------------------------------------------------------
 Versions 5.10.0 - 5.10.3
 - Version 5.10.0
@@ -1433,8 +1432,8 @@ Version 5.11.0
 	- Added a new Greek sample file, by George Miliotis.
 	- Updated and improved Persian translation by sally sat.
 	- Dropped !DOCTYPE FET tag in the .fet files - following general recommendations, and changed FET tag to fet tag. Of course you can open older files.
-	- Improved activities simple description (suggested by Massimo Mancini and alfaromeo).
-	- Added possibility to save the highest stage timetable (suggested by alfaromeo, pinco and Massimo Mancini).
+	- Improved activities simple description (suggested by Massimo Mancini and Chafik Graiguer).
+	- Added possibility to save the highest stage timetable (suggested by Chafik Graiguer, pinco and Massimo Mancini).
 	- Added a new Romanian sample file, by Horatiu Halmajan.
 	- Updated translations: Russian, German, Romanian, Italian, Spanish.
 	- The timetable view dialogs now have resizeable widgets (you can drag the sections with the mouse) - suggested by Ben Bauer.
@@ -1488,13 +1487,13 @@ Versions 5.13.0 - 5.13.5
 	Also, you can configure separately if you want breaks displayed and/or not available displayed.
 	- Removed some useless messages, improving speed for some rare cases under GNU/Linux operating system and similar.
 	- Added a few new sample files (by Christoph Schilling, Horatiu Halmajan and aliponte).
-	- Changed default language/locale to en_US (instead of en_GB, which is non-standard).
+	- Changed default language/locale to en_US (instead of en_GB).
 - Version 5.13.1
 	- Corrected a generation bug (probably very rare, it gave impossible timetable). Bug may have appeared if using
 	constraints students (set) early with max beginnings at second hour >= 1 and generating on a locked file.
 	- Increased maximum number of teachers, subjects, rooms and buildings to 6000 (they were 3000 previously).
 	- Corrected some HTML minor problems, by Volker Dirr.
-	- Added a new sample file, by alfaromeo (from Morocco). This user also describes tricks to use official FET for Moroccan schools.
+	- Added a new sample file, by Chafik Graiguer (from Morocco). This user also describes tricks to use official FET for Moroccan schools.
 - Version 5.13.2
 	- Increased max activities from 15,000 to 30,000 (suggested by murad). Also, increased max time constraints from 30,000 to 60,000 and max space constraints from 30,000 to 60,000.
 	- Added a partial Sinhala translation (only the main menu), by Achini Duisna.
@@ -1515,7 +1514,7 @@ Versions 5.13.0 - 5.13.5
 	- Updated the Spanish translation, by Jose Cesar Fernandez Lopez.
 	- Code cleanup
 ---------------------------------------------------------------------------------
-Versions 5.14.0 - 5.14.x
+Versions 5.14.0 - 5.14.5
 - Version 5.14.0
 	- Improved the random number generator, so that potential cycling problems are avoided (though probably nobody met such problems).
 	The new random number generator has a much longer period and is better. The command line parameters for specifying the random
@@ -1556,4 +1555,31 @@ Versions 5.14.0 - 5.14.x
 	- Minor improvement in the HTML exported timetables (multi-line comments look better), by Volker Dirr.
 	- Added a Galician translation, by Juan Marcos Filgueira Gomis (based on the Spanish translation, as of April 2011, by Jose Cesar Fernandez Lopez).
 	- Added a Spanish secondary school example file, by llantones.
-	
+---------------------------------------------------------------------------------
+Versions 5.15.0 - 5.15.x
+- Version 5.15.0
+	- Added two new constraints:
+	1) Activities occupy max time slots from selection. This is useful in more cases, for instance to force
+	some teachers to have activities in certain time slots. (For example, if in a 5 days week with 6 hours per day, teacher T has 20 hours of
+	activities and needs to have activities in the first 3 hours of Monday: add a constraint with all the teacher's activities,
+	all time slots minus these 3 (so 5*6-3=27 slots selected in the constraint), and specify the maximum number of selected time slots occupied
+	by the selected activities to be 17.) Suggested by Zsolt Udvari, Christian Kemmer, Davide G. M. Salvetti, lalloso, Silver, and maybe other users.
+	2) Activities max simultaneous in selected time slots. User chooses a set of activities, a set of time slots, and specifies
+	that in each time slot there should be an upper limit on the activities from the chosen set. Useful for example if you want each slot
+	to have say at least 3 free teachers, for substitution or supervision.
+	- Updated to Qt 4.7.4.
+	- Removed dependence of Qt3Support classes. Many dialogs were changed. This is to improve FET and to prepare it for the future Qt 5.
+	- The program is now storing the geometry of most dialogs (suggested by more users. Zsolt Udvari suggested to store also the
+	Activity planning dialog settings).
+	- The activity tags, students, teachers, subjects, rooms, buildings, activities, subactivities, all time constraints
+	and all space constraints dialogs contain a draggable splitter, for better viewing (suggested by daviodan).
+	- Taking care of when a file was modified. When it was not modified, the user can quit FET directly (suggested by Horatiu Halmajan and maybe other users).
+	- Recently used files list (suggested by daviodan, Silver and maybe other users).
+	- Activities rooms statistics - it shows the list of activities which will certainly or possibly be scheduled in an unspecified room
+	(suggested by Volker Dirr, who also did a part of the coding, Corfiot, Fabio Piedimonte).
+	- Removed the upper limit on the number of time and space constraints.
+	- When modifying the days or hours, the affected constraints will be modified or removed, after confirmation from the user.
+	- Language change is activated without restarting.
+	- Many other interface improvements.
+	- Added a new sample file, by Silver.
+	- Improved the Morocco sample file and the Morocco instructions (by Liviu Lalescu and Chafik Graiguer).

@@ -23,48 +23,56 @@
 #include "addconstraintactivitiespreferredstartingtimesform.h"
 #include "modifyconstraintactivitiespreferredstartingtimesform.h"
 
-ConstraintActivitiesPreferredStartingTimesForm::ConstraintActivitiesPreferredStartingTimesForm()
+#include <QListWidget>
+#include <QScrollBar>
+#include <QAbstractItemView>
+
+ConstraintActivitiesPreferredStartingTimesForm::ConstraintActivitiesPreferredStartingTimesForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(constraintsListBox, SIGNAL(highlighted(int)), this /*ConstraintActivitiesPreferredStartingTimesForm_template*/, SLOT(constraintChanged(int)));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*ConstraintActivitiesPreferredStartingTimesForm_template*/, SLOT(addConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*ConstraintActivitiesPreferredStartingTimesForm_template*/, SLOT(close()));
-    connect(removeConstraintPushButton, SIGNAL(clicked()), this /*ConstraintActivitiesPreferredStartingTimesForm_template*/, SLOT(removeConstraint()));
-    connect(modifyConstraintPushButton, SIGNAL(clicked()), this /*ConstraintActivitiesPreferredStartingTimesForm_template*/, SLOT(modifyConstraint()));
-    connect(constraintsListBox, SIGNAL(selected(QString)), this /*ConstraintActivitiesPreferredStartingTimesForm_template*/, SLOT(modifyConstraint()));
+	currentConstraintTextEdit->setReadOnly(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	modifyConstraintPushButton->setDefault(true);
+
+	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+
+	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
+	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
-	this->refreshConstraintsListBox();
+	this->refreshConstraintsListWidget();
 }
 
 ConstraintActivitiesPreferredStartingTimesForm::~ConstraintActivitiesPreferredStartingTimesForm()
 {
+	saveFETDialogGeometry(this);
 }
 
-void ConstraintActivitiesPreferredStartingTimesForm::refreshConstraintsListBox()
+void ConstraintActivitiesPreferredStartingTimesForm::refreshConstraintsListWidget()
 {
 	this->visibleConstraintsList.clear();
-	constraintsListBox->clear();
+	constraintsListWidget->clear();
 	for(int i=0; i<gt.rules.timeConstraintsList.size(); i++){
 		TimeConstraint* ctr=gt.rules.timeConstraintsList[i];
 		if(filterOk(ctr)){
 			QString s;
 			s=ctr->getDescription(gt.rules);
 			visibleConstraintsList.append(ctr);
-			constraintsListBox->insertItem(s);
+			constraintsListWidget->addItem(s);
 		}
 	}
 
-	constraintsListBox->setCurrentItem(0);
-	this->constraintChanged(constraintsListBox->currentItem());
+	if(constraintsListWidget->count()>0)
+		constraintsListWidget->setCurrentRow(0);
+	else
+		this->constraintChanged(-1);
 }
 
 bool ConstraintActivitiesPreferredStartingTimesForm::filterOk(TimeConstraint* ctr)
@@ -78,7 +86,7 @@ bool ConstraintActivitiesPreferredStartingTimesForm::filterOk(TimeConstraint* ct
 void ConstraintActivitiesPreferredStartingTimesForm::constraintChanged(int index)
 {
 	if(index<0){
-		currentConstraintTextEdit->setText("");
+		currentConstraintTextEdit->setPlainText("");
 		return;
 	}
 	QString s;
@@ -86,39 +94,53 @@ void ConstraintActivitiesPreferredStartingTimesForm::constraintChanged(int index
 	TimeConstraint* ctr=this->visibleConstraintsList.at(index);
 	assert(ctr!=NULL);
 	s=ctr->getDetailedDescription(gt.rules);
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setPlainText(s);
 }
 
 void ConstraintActivitiesPreferredStartingTimesForm::addConstraint()
 {
-	AddConstraintActivitiesPreferredStartingTimesForm form;
+	AddConstraintActivitiesPreferredStartingTimesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListBox();
+	this->refreshConstraintsListWidget();
 
-	constraintsListBox->setCurrentItem(constraintsListBox->count()-1);
+	constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
 }
 
 void ConstraintActivitiesPreferredStartingTimesForm::modifyConstraint()
 {
-	int i=constraintsListBox->currentItem();
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
+
+	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintActivitiesPreferredStartingTimesForm form((ConstraintActivitiesPreferredStartingTimes*)ctr);
+	ModifyConstraintActivitiesPreferredStartingTimesForm form(this, (ConstraintActivitiesPreferredStartingTimes*)ctr);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListBox();
+	this->refreshConstraintsListWidget();
 	
-	constraintsListBox->setCurrentItem(i);
+	constraintsListWidget->verticalScrollBar()->setValue(valv);
+	constraintsListWidget->horizontalScrollBar()->setValue(valh);
+
+	if(i>=constraintsListWidget->count())
+		i=constraintsListWidget->count()-1;
+
+	if(i>=0)
+		constraintsListWidget->setCurrentRow(i);
+	else
+		this->constraintChanged(-1);
 }
 
 void ConstraintActivitiesPreferredStartingTimesForm::removeConstraint()
 {
-	int i=constraintsListBox->currentItem();
+	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
@@ -128,19 +150,28 @@ void ConstraintActivitiesPreferredStartingTimesForm::removeConstraint()
 	s=tr("Remove constraint?");
 	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	//s+=tr("\nAre you sure?");
+	
+	QListWidgetItem* item;
 
 	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
-	case 0: // The user clicked the OK again button or pressed Enter
+	case 0: // The user clicked the OK button or pressed Enter
 		gt.rules.removeTimeConstraint(ctr);
-		this->refreshConstraintsListBox();
+		
+		visibleConstraintsList.removeAt(i);
+		constraintsListWidget->setCurrentRow(-1);
+		item=constraintsListWidget->takeItem(i);
+		delete item;
+		
 		break;
-	case 1: // The user clicked the Cancel or pressed Escape
+	case 1: // The user clicked the Cancel button or pressed Escape
 		break;
 	}
 
-	if((uint)(i) >= constraintsListBox->count())
-		i=constraintsListBox->count()-1;
-	constraintsListBox->setCurrentItem(i);
+	if(i>=constraintsListWidget->count())
+		i=constraintsListWidget->count()-1;
+	if(i>=0)
+		constraintsListWidget->setCurrentRow(i);
+	else
+		this->constraintChanged(-1);
 }

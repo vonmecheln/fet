@@ -24,7 +24,6 @@
 #include "timetable.h"
 #include "fet.h"
 
-
 class ModifyStudentsSubgroupForm : public QDialog, Ui::ModifyStudentsSubgroupForm_template {
 	Q_OBJECT
 public:
@@ -33,7 +32,7 @@ public:
 	QString _initialSubgroupName;
 	int _initialNumberOfStudents;
 	
-	ModifyStudentsSubgroupForm(const QString& yearName, const QString& groupName, const QString& initialSubgroupName, int initialNumberOfStudents);
+	ModifyStudentsSubgroupForm(QWidget* parent, const QString& yearName, const QString& groupName, const QString& initialSubgroupName, int initialNumberOfStudents);
 	~ModifyStudentsSubgroupForm();
 
 public slots:

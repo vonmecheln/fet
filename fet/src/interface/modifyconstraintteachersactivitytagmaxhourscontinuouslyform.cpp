@@ -17,36 +17,27 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "modifyconstraintteachersactivitytagmaxhourscontinuouslyform.h"
 #include "timeconstraint.h"
 
-ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm(ConstraintTeachersActivityTagMaxHoursContinuously* ctr)
+ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm(QWidget* parent, ConstraintTeachersActivityTagMaxHoursContinuously* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm_template*/, SLOT(constraintChanged()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm_template*/, SLOT(ok()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm_template*/, SLOT(cancel()));
-//    connect(maxHoursSpinBox, SIGNAL(valueChanged(int)), this /*ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm_template*/, SLOT(constraintChanged()));
+	okPushButton->setDefault(true);
 
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 
-	//setWindowFlags(Qt::Window);
-	//setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	/*QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp4=activityTagsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
 	
 	this->_ctr=ctr;
 	
-	//compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 	
 	updateMaxHoursSpinBox();
 	
@@ -56,55 +47,35 @@ ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::ModifyConstraintTea
 	int j=-1;
 	for(int k=0; k<gt.rules.activityTagsList.count(); k++){
 		ActivityTag* at=gt.rules.activityTagsList.at(k);
-		activityTagsComboBox->insertItem(at->name);
+		activityTagsComboBox->addItem(at->name);
 		if(at->name==this->_ctr->activityTagName)
 			j=k;
 	}
 	assert(j>=0);
-	activityTagsComboBox->setCurrentItem(j);
+	activityTagsComboBox->setCurrentIndex(j);
 
 	constraintChanged();
 }
 
 ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::~ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::updateMaxHoursSpinBox(){
-	maxHoursSpinBox->setMinValue(1);
-	maxHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);	
+	maxHoursSpinBox->setMinimum(1);
+	maxHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);	
 }
 
 void ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-
-	s+=tr("Activity tag=%1").arg(activityTagsComboBox->currentText());
-	s+="\n";
-
-	s+=tr("Weight (percentage)=%1").arg(weight);
-	s+="\n";
-
-	s+=tr("Teachers activity tag max hours continuously");
-	s+="\n";
-
-	s+=tr("Max hours continuously=%1").arg(maxHoursSpinBox->value());
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
@@ -125,6 +96,7 @@ void ModifyConstraintTeachersActivityTagMaxHoursContinuouslyForm::ok()
 	this->_ctr->activityTagName=activityTagName;
 
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }

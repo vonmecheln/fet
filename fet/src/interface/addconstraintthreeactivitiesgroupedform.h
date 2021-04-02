@@ -28,7 +28,7 @@
 class AddConstraintThreeActivitiesGroupedForm : public QDialog, Ui::AddConstraintThreeActivitiesGroupedForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintThreeActivitiesGroupedForm();
+	AddConstraintThreeActivitiesGroupedForm(QWidget* parent);
 	~AddConstraintThreeActivitiesGroupedForm();
 
 	bool filterOk(Activity* a);

@@ -29,10 +29,10 @@ class AddConstraintActivitiesSameStartingDayForm : public QDialog, Ui::AddConstr
 	Q_OBJECT
 
 public:
-	AddConstraintActivitiesSameStartingDayForm();
+	AddConstraintActivitiesSameStartingDayForm(QWidget* parent);
 	~AddConstraintActivitiesSameStartingDayForm();
 
-	void updateActivitiesListBox();
+	void updateActivitiesListWidget();
 	
 	bool filterOk(Activity* a);
 
@@ -40,6 +40,7 @@ public slots:
 	void filterChanged();
 
 	void addActivity();
+	void addAllActivities();
 	void removeActivity();
 	void clear();
 

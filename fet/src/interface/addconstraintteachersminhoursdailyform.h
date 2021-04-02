@@ -26,7 +26,7 @@
 class AddConstraintTeachersMinHoursDailyForm : public QDialog, Ui::AddConstraintTeachersMinHoursDailyForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintTeachersMinHoursDailyForm();
+	AddConstraintTeachersMinHoursDailyForm(QWidget* parent);
 	~AddConstraintTeachersMinHoursDailyForm();
 
 	void updateMinHoursSpinBox();

@@ -17,28 +17,22 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "modifyconstraintactivitypreferredroomform.h"
 #include "spaceconstraint.h"
 
 #include "lockunlock.h"
 
-ModifyConstraintActivityPreferredRoomForm::ModifyConstraintActivityPreferredRoomForm(ConstraintActivityPreferredRoom* ctr)
+ModifyConstraintActivityPreferredRoomForm::ModifyConstraintActivityPreferredRoomForm(QWidget* parent, ConstraintActivityPreferredRoom* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivityPreferredRoomForm_template*/, SLOT(cancel()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivityPreferredRoomForm_template*/, SLOT(ok()));
+	okPushButton->setDefault(true);
 
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp5=roomsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp5);
@@ -47,12 +41,9 @@ ModifyConstraintActivityPreferredRoomForm::ModifyConstraintActivityPreferredRoom
 	
 	activitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
 	
-	//permTextLabel->setWordWrap(true);
-	
 	this->_ctr=ctr;
 	
-	//compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 	
 	permLockedCheckBox->setChecked(this->_ctr->permanentlyLocked);
 
@@ -62,6 +53,7 @@ ModifyConstraintActivityPreferredRoomForm::ModifyConstraintActivityPreferredRoom
 
 ModifyConstraintActivityPreferredRoomForm::~ModifyConstraintActivityPreferredRoomForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintActivityPreferredRoomForm::updateActivitiesComboBox()
@@ -70,13 +62,13 @@ void ModifyConstraintActivityPreferredRoomForm::updateActivitiesComboBox()
 	activitiesComboBox->clear();
 	for(int k=0; k<gt.rules.activitiesList.size(); k++){
 		Activity* act=gt.rules.activitiesList[k];
-		activitiesComboBox->insertItem(act->getDescription(gt.rules));
+		activitiesComboBox->addItem(act->getDescription(gt.rules));
 		if(act->id==this->_ctr->activityId)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	activitiesComboBox->setCurrentItem(j);
+	activitiesComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintActivityPreferredRoomForm::updateRoomsComboBox()
@@ -85,13 +77,13 @@ void ModifyConstraintActivityPreferredRoomForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int k=0; k<gt.rules.roomsList.size(); k++){
 		Room* rm=gt.rules.roomsList[k];
-		roomsComboBox->insertItem(rm->name);
+		roomsComboBox->addItem(rm->name);
 		if(rm->name==this->_ctr->roomName)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	roomsComboBox->setCurrentItem(j);
+	roomsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintActivityPreferredRoomForm::cancel()
@@ -103,18 +95,14 @@ void ModifyConstraintActivityPreferredRoomForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
 		return;
 	}
 
-/*	bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
-	int i=activitiesComboBox->currentItem();
+	int i=activitiesComboBox->currentIndex();
 	if(i<0 || activitiesComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid activity"));
@@ -122,7 +110,7 @@ void ModifyConstraintActivityPreferredRoomForm::ok()
 	}
 	Activity* act=gt.rules.activitiesList.at(i);
 
-	i=roomsComboBox->currentItem();
+	i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid room"));
@@ -131,13 +119,13 @@ void ModifyConstraintActivityPreferredRoomForm::ok()
 	QString room=roomsComboBox->currentText();
 
 	this->_ctr->weightPercentage=weight;
-//	this->_ctr->compulsory=compulsory;
 	this->_ctr->roomName=room;
 	this->_ctr->activityId=act->id;
 	
 	this->_ctr->permanentlyLocked=permLockedCheckBox->isChecked();
 
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
 	LockUnlock::increaseCommunicationSpinBox();

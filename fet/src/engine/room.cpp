@@ -52,7 +52,7 @@ QString Room::getDescription()
 	/*s+=tr("T:");
 	s+=this->type;
 	s+=",";*/
-	s+=tr("C:%1", "Capacity").arg(QString::number(this->capacity));
+	s+=tr("C:%1", "Capacity").arg(CustomFETString::number(this->capacity));
 	//s+=",";
 
 	/*for(QStringList::Iterator it=this->equipments.begin(); it!=this->equipments.end(); it++)
@@ -75,7 +75,7 @@ QString Room::getDetailedDescription()
 	/*s+=tr("Type=");
 	s+=this->type;
 	s+="\n";*/
-	s+=tr("Capacity=%1").arg(QString::number(this->capacity));
+	s+=tr("Capacity=%1").arg(CustomFETString::number(this->capacity));
 	s+="\n";
 
 	/*for(QStringList::Iterator it=this->equipments.begin(); it!=this->equipments.end(); it++)
@@ -90,7 +90,7 @@ QString Room::getXmlDescription()
 	s+="	<Name>"+protect(this->name)+"</Name>\n";
 	s+="	<Building>"+protect(this->building)+"</Building>\n";
 	//s+="	<Type>"+protect(this->type)+"</Type>\n";
-	s+="	<Capacity>"+QString::number(this->capacity)+"</Capacity>\n";
+	s+="	<Capacity>"+CustomFETString::number(this->capacity)+"</Capacity>\n";
 	
 	/*for(QStringList::Iterator it=this->equipments.begin(); it!=this->equipments.end(); it++)
 		s+="	<Equipment>"+protect(*it)+"</Equipment>\n";*/

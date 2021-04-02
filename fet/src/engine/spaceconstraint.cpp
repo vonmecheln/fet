@@ -22,12 +22,6 @@ along with FET; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-//#define minimu(x,y)	((x)<(y)?(x):(y))
-//#define maximu(x,y)	((x)>(y)?(x):(y))
-
-#include <iostream>
-using namespace std;
-
 #include "timetable_defs.h"
 #include "spaceconstraint.h"
 #include "rules.h"
@@ -47,12 +41,6 @@ using namespace std;
 
 #include "generate_pre.h"
 
-//static Solution* crt_chrom=NULL;
-//static Rules* crt_rules=NULL;
-
-//#define yesNo(x)				((x)==0?"no":"yes")
-
-///#define trueFalse(x)			((x)==0?"false":"true")
 static QString trueFalse(bool x)
 {
 	if(!x)
@@ -61,7 +49,6 @@ static QString trueFalse(bool x)
 		return QString("true");
 }
 
-///#define yesNoTranslated(x)		((x)==0?tr("no"):tr("yes"))
 static QString yesNoTranslated(bool x)
 {
 	if(!x)
@@ -81,7 +68,6 @@ static int rooms_conflicts=-1;
 //static qint8 teachersBuildingsTimetable[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 
 QString getActivityDetailedDescription(Rules& r, int id);
-
 
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
@@ -118,8 +104,9 @@ ConstraintBasicCompulsorySpace::ConstraintBasicCompulsorySpace(double wp)
 	this->type=CONSTRAINT_BASIC_COMPULSORY_SPACE;
 }
 
-bool ConstraintBasicCompulsorySpace::computeInternalStructure(Rules& r)
+bool ConstraintBasicCompulsorySpace::computeInternalStructure(QWidget* parent, Rules& r)
 {
+	Q_UNUSED(parent);
 	Q_UNUSED(r);
 	
 	return true;
@@ -137,7 +124,7 @@ QString ConstraintBasicCompulsorySpace::getXmlDescription(Rules& r)
 	Q_UNUSED(r);
 
 	QString s = "<ConstraintBasicCompulsorySpace>\n";
-	s += "	<Weight_Percentage>"+QString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s += "	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s += "</ConstraintBasicCompulsorySpace>\n";
 	return s;
 }
@@ -148,7 +135,7 @@ QString ConstraintBasicCompulsorySpace::getDescription(Rules& r)
 	
 	QString s = tr("Basic compulsory constraints (space)");
 	s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
 	
 	return s;
 }
@@ -158,7 +145,7 @@ QString ConstraintBasicCompulsorySpace::getDetailedDescription(Rules& r)
 	Q_UNUSED(r);
 
 	QString s=tr("These are the basic compulsory constraints (referring to rooms allocation) for any timetable");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("The basic space constraints try to avoid:");s+="\n";
 	s+=QString("- "); s+=tr("rooms assigned to more than one activity simultaneously"); s+="\n";
@@ -183,14 +170,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 	//so we can compute the rooms conflicts faster this way.
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = roomsConflicts = c.getRoomsMatrix(r, roomsMatrix);
-
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
 		
 		c.changedForMatrixCalculation=false;
 	}
@@ -274,7 +254,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 					QString s=tr("Space constraint basic compulsory broken: unallocated activity with id=%1 (%2)",
 						"%2 is the detailed description of the activity").arg(r.internalActivitiesList[i].id).arg(getActivityDetailedDescription(r, r.internalActivitiesList[i].id));
 					s+=QString(" - ");
-					s+=tr("this increases the conflicts total by %1").arg(weightPercentage/100*10000);
+					s+=tr("this increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100*10000));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100 * 10000);
@@ -308,7 +288,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 						.arg(r.internalActivitiesList[i].id)
 						.arg(getActivityDetailedDescription(r, r.internalActivitiesList[i].id));
 						s+=". ";
-						s+=tr("This increases conflicts total by %1").arg(weightPercentage/100);
+						s+=tr("This increases conflicts total by %1").arg(CustomFETString::number(weightPercentage/100));
 						
 						dl.append(s);
 						cl.append(weightPercentage/100);
@@ -332,7 +312,7 @@ double ConstraintBasicCompulsorySpace::fitness(
 								.arg(r.daysOfTheWeek[j])
 								.arg(r.hoursOfTheDay[k]);
 							s+=" ";
-							s+=tr("This increases the conflicts total by %1").arg(tmp*weightPercentage/100);
+							s+=tr("This increases the conflicts total by %1").arg(CustomFETString::number(tmp*weightPercentage/100));
 						
 							dl.append(s);
 							cl.append(tmp*weightPercentage/100);
@@ -365,8 +345,6 @@ double ConstraintBasicCompulsorySpace::fitness(
 bool ConstraintBasicCompulsorySpace::isRelatedToActivity(Activity* a)
 {
 	Q_UNUSED(a);
-	//if(a)
-	//	;
 
 	return false;
 }
@@ -374,8 +352,6 @@ bool ConstraintBasicCompulsorySpace::isRelatedToActivity(Activity* a)
 bool ConstraintBasicCompulsorySpace::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
-	//if(t)
-	//	;
 
 	return false;
 }
@@ -383,8 +359,6 @@ bool ConstraintBasicCompulsorySpace::isRelatedToTeacher(Teacher* t)
 bool ConstraintBasicCompulsorySpace::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
-	//if(s)
-	//	;
 
 	return false;
 }
@@ -392,8 +366,6 @@ bool ConstraintBasicCompulsorySpace::isRelatedToSubject(Subject* s)
 bool ConstraintBasicCompulsorySpace::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
-	//if(s)
-	//	;
 
 	return false;
 }
@@ -402,10 +374,6 @@ bool ConstraintBasicCompulsorySpace::isRelatedToStudentsSet(Rules& r, StudentsSe
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-	/*if(s)
-		;
-	if(&r)
-		;*/
 
 	return false;
 }
@@ -413,10 +381,30 @@ bool ConstraintBasicCompulsorySpace::isRelatedToStudentsSet(Rules& r, StudentsSe
 bool ConstraintBasicCompulsorySpace::isRelatedToRoom(Room* r)
 {
 	Q_UNUSED(r);
-	//if(r)
-	//	;
 
 	return false;
+}
+
+bool ConstraintBasicCompulsorySpace::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintBasicCompulsorySpace::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintBasicCompulsorySpace::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -446,10 +434,10 @@ bool ConstraintRoomNotAvailableTimes::hasInactiveActivities(Rules& r)
 
 QString ConstraintRoomNotAvailableTimes::getXmlDescription(Rules& r){
 	QString s="<ConstraintRoomNotAvailableTimes>\n";
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Room>"+protect(this->room)+"</Room>\n";
 
-	s+="	<Number_of_Not_Available_Times>"+QString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
+	s+="	<Number_of_Not_Available_Times>"+CustomFETString::number(this->days.count())+"</Number_of_Not_Available_Times>\n";
 	assert(days.count()==hours.count());
 	for(int i=0; i<days.count(); i++){
 		s+="	<Not_Available_Time>\n";
@@ -466,7 +454,7 @@ QString ConstraintRoomNotAvailableTimes::getXmlDescription(Rules& r){
 
 QString ConstraintRoomNotAvailableTimes::getDescription(Rules& r){
 	QString s=tr("Room not available");s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("R:%1", "Room").arg(this->room);s+=", ";
 
 	s+=tr("NA at:", "Not available at");
@@ -490,7 +478,7 @@ QString ConstraintRoomNotAvailableTimes::getDescription(Rules& r){
 QString ConstraintRoomNotAvailableTimes::getDetailedDescription(Rules& r){
 	QString s=tr("Space constraint");s+="\n";
 	s+=tr("Room not available");s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Room=%1").arg(this->room);s+="\n";
 
 	s+=tr("Not available at:");
@@ -511,11 +499,11 @@ QString ConstraintRoomNotAvailableTimes::getDetailedDescription(Rules& r){
 	return s;
 }
 
-bool ConstraintRoomNotAvailableTimes::computeInternalStructure(Rules& r){
+bool ConstraintRoomNotAvailableTimes::computeInternalStructure(QWidget* parent, Rules& r){
 	this->room_ID=r.searchRoom(this->room);
 	
 	if(this->room_ID<0){
-		QMessageBox::warning(NULL, tr("FET warning"),
+		QMessageBox::warning(parent, tr("FET warning"),
 		 tr("Constraint room not available times is wrong because it refers to inexistent room."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -525,14 +513,14 @@ bool ConstraintRoomNotAvailableTimes::computeInternalStructure(Rules& r){
 	assert(days.count()==hours.count());
 	for(int k=0; k<days.count(); k++){
 		if(this->days.at(k) >= r.nDaysPerWeek){
-			QMessageBox::information(NULL, tr("FET information"),
+			QMessageBox::warning(parent, tr("FET information"),
 			 tr("Constraint room not available times is wrong because it refers to removed day. Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 			return false;
 		}		
 		if(this->hours.at(k) >= r.nHoursPerDay){
-			QMessageBox::information(NULL, tr("FET information"),
+			QMessageBox::warning(parent, tr("FET information"),
 			 tr("Constraint room not available times is wrong because an hour is too late (after the last acceptable slot). Please correct"
 			 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
@@ -555,15 +543,8 @@ double ConstraintRoomNotAvailableTimes::fitness(
 	//if the matrices roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -596,7 +577,7 @@ double ConstraintRoomNotAvailableTimes::fitness(
 				 .arg(r.hoursOfTheDay[h]);
 				s += ". ";
 				s += tr("This increases the conflicts total by %1")
-				 .arg(roomsMatrix[rm][d][h]*weightPercentage/100);
+				 .arg(CustomFETString::number(roomsMatrix[rm][d][h]*weightPercentage/100));
 				 
 				dl.append(s);
 				cl.append(roomsMatrix[rm][d][h]*weightPercentage/100);
@@ -653,6 +634,50 @@ bool ConstraintRoomNotAvailableTimes::isRelatedToRoom(Room* r)
 	return this->room==r->name;
 }
 
+bool ConstraintRoomNotAvailableTimes::hasWrongDayOrHour(Rules& r)
+{
+	assert(days.count()==hours.count());
+	
+	for(int i=0; i<days.count(); i++)
+		if(days.at(i)<0 || days.at(i)>=r.nDaysPerWeek
+		 || hours.at(i)<0 || hours.at(i)>=r.nHoursPerDay)
+			return true;
+
+	return false;
+}
+
+bool ConstraintRoomNotAvailableTimes::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintRoomNotAvailableTimes::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	assert(days.count()==hours.count());
+	
+	QList<int> newDays;
+	QList<int> newHours;
+	
+	for(int i=0; i<days.count(); i++)
+		if(days.at(i)>=0 && days.at(i)<r.nDaysPerWeek
+		 && hours.at(i)>=0 && hours.at(i)<r.nHoursPerDay){
+			newDays.append(days.at(i));
+			newHours.append(hours.at(i));
+		}
+	
+	days=newDays;
+	hours=newHours;
+	
+	r.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&r);
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -682,7 +707,7 @@ bool ConstraintActivityPreferredRoom::operator==(ConstraintActivityPreferredRoom
 	return true;
 }
 
-bool ConstraintActivityPreferredRoom::computeInternalStructure(Rules& r)
+bool ConstraintActivityPreferredRoom::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	this->_activity=-1;
 	int ac;
@@ -693,7 +718,7 @@ bool ConstraintActivityPreferredRoom::computeInternalStructure(Rules& r)
 			break;
 		}
 	if(ac==r.nInternalActivities){
-		QMessageBox::warning(NULL, tr("FET error in data"), 
+		QMessageBox::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -702,7 +727,7 @@ bool ConstraintActivityPreferredRoom::computeInternalStructure(Rules& r)
 	this->_room = r.searchRoom(this->roomName);
 
 	if(this->_room<0){
-		QMessageBox::warning(NULL, tr("FET error in data"), 
+		QMessageBox::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -724,8 +749,8 @@ QString ConstraintActivityPreferredRoom::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s="<ConstraintActivityPreferredRoom>\n";
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Activity_Id>"+QString::number(this->activityId)+"</Activity_Id>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
 	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
 	
 	s+="	<Permanently_Locked>";s+=trueFalse(this->permanentlyLocked);s+="</Permanently_Locked>\n";
@@ -739,7 +764,7 @@ QString ConstraintActivityPreferredRoom::getDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s=tr("Activity preferred room"); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("Id:%1 (%2)", "%1 is activity id, %2 is detailed description of activity")
 		.arg(this->activityId)
 		.arg(getActivityDetailedDescription(r, this->activityId));
@@ -756,7 +781,7 @@ QString ConstraintActivityPreferredRoom::getDescription(Rules& r){
 QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules& r){
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activity preferred room"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	
 	s+=tr("Activity id=%1 (%2)", "%1 is activity id, %2 is detailed description of activity")
 		.arg(this->activityId)
@@ -788,15 +813,8 @@ double ConstraintActivityPreferredRoom::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -820,7 +838,7 @@ double ConstraintActivityPreferredRoom::fitness(
 					.arg(getActivityDetailedDescription(r, this->activityId))
 					.arg(this->roomName);
 					s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
 		
 				dl.append(s);
 				cl.append(1*weightPercentage/100);
@@ -847,8 +865,6 @@ bool ConstraintActivityPreferredRoom::isRelatedToActivity(Activity* a)
 bool ConstraintActivityPreferredRoom::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
-	//if(t)
-	//	;
 
 	return false;
 }
@@ -856,8 +872,6 @@ bool ConstraintActivityPreferredRoom::isRelatedToTeacher(Teacher* t)
 bool ConstraintActivityPreferredRoom::isRelatedToSubject(Subject* s)
 {
 	Q_UNUSED(s);
-	//if(s)
-	//	;
 
 	return false;
 }
@@ -865,8 +879,6 @@ bool ConstraintActivityPreferredRoom::isRelatedToSubject(Subject* s)
 bool ConstraintActivityPreferredRoom::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
-	//if(s)
-	//	;
 
 	return false;
 }
@@ -875,10 +887,6 @@ bool ConstraintActivityPreferredRoom::isRelatedToStudentsSet(Rules& r, StudentsS
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-	/*if(s)
-		;
-	if(&r)
-		;*/
 
 	return false;
 }
@@ -886,6 +894,28 @@ bool ConstraintActivityPreferredRoom::isRelatedToStudentsSet(Rules& r, StudentsS
 bool ConstraintActivityPreferredRoom::isRelatedToRoom(Room* r)
 {
 	return r->name==this->roomName;
+}
+
+bool ConstraintActivityPreferredRoom::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintActivityPreferredRoom::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintActivityPreferredRoom::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -905,7 +935,7 @@ ConstraintActivityPreferredRooms::ConstraintActivityPreferredRooms(double wp, in
 	this->roomsNames=roomsList;
 }
 
-bool ConstraintActivityPreferredRooms::computeInternalStructure(Rules& r)
+bool ConstraintActivityPreferredRooms::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	this->_activity=-1;
 	int ac;
@@ -917,7 +947,7 @@ bool ConstraintActivityPreferredRooms::computeInternalStructure(Rules& r)
 		}
 		
 	if(ac==r.nInternalActivities){
-		QMessageBox::warning(NULL, tr("FET error in data"), 
+		QMessageBox::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -928,7 +958,7 @@ bool ConstraintActivityPreferredRooms::computeInternalStructure(Rules& r)
 		int t=r.searchRoom(rm);
 
 		if(t<0){
-			QMessageBox::warning(NULL, tr("FET error in data"), 
+			QMessageBox::warning(parent, tr("FET error in data"), 
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
@@ -938,14 +968,6 @@ bool ConstraintActivityPreferredRooms::computeInternalStructure(Rules& r)
 		this->_rooms.append(t);
 	}
 		
-	/*this->_n_preferred_rooms=this->roomsNames.count();
-	int i=0;
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
-		this->_rooms[i] = r.searchRoom(*it);
-		assert(this->_rooms[i]>=0);
-		i++;
-	}*/
-	
 	return true;
 }
 
@@ -961,9 +983,9 @@ QString ConstraintActivityPreferredRooms::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s="<ConstraintActivityPreferredRooms>\n";
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Activity_Id>"+QString::number(this->activityId)+"</Activity_Id>\n";
-	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
+	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
@@ -974,7 +996,7 @@ QString ConstraintActivityPreferredRooms::getXmlDescription(Rules& r){
 
 QString ConstraintActivityPreferredRooms::getDescription(Rules& r){
 	QString s=tr("Activity preferred rooms"); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("Id:%1 (%2)", "%1 is activity id, %2 is detailed description of activity")
 		.arg(this->activityId)
 		.arg(getActivityDetailedDescription(r, this->activityId));
@@ -990,7 +1012,7 @@ QString ConstraintActivityPreferredRooms::getDescription(Rules& r){
 QString ConstraintActivityPreferredRooms::getDetailedDescription(Rules& r){
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activity preferred rooms"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	
 	s+=tr("Activity id=%1 (%2)", "%1 is activity id, %2 is detailed description of activity")
 		.arg(this->activityId)
@@ -1015,15 +1037,8 @@ double ConstraintActivityPreferredRooms::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -1051,7 +1066,7 @@ double ConstraintActivityPreferredRooms::fitness(
 						.arg(this->activityId)
 						.arg(getActivityDetailedDescription(r, this->activityId));
 					s += ". ";
-					s += tr("This increases the conflicts total by %1").arg(weightPercentage/100 * 1);
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100 * 1));
 				
 					dl.append(s);
 					cl.append(weightPercentage/100 * 1);
@@ -1111,6 +1126,28 @@ bool ConstraintActivityPreferredRooms::isRelatedToRoom(Room* r)
 	return this->roomsNames.contains(r->name);
 }
 
+bool ConstraintActivityPreferredRooms::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintActivityPreferredRooms::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintActivityPreferredRooms::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1128,8 +1165,10 @@ ConstraintStudentsSetHomeRoom::ConstraintStudentsSetHomeRoom(double wp, QString 
 	this->roomName=rm;
 }
 
-bool ConstraintStudentsSetHomeRoom::computeInternalStructure(Rules& r)
+bool ConstraintStudentsSetHomeRoom::computeInternalStructure(QWidget* parent, Rules& r)
 {
+	Q_UNUSED(parent);
+
 	//This procedure computes the internal list of all the activities
 	//which correspond to the subject of the constraint.
 	
@@ -1143,11 +1182,6 @@ bool ConstraintStudentsSetHomeRoom::computeInternalStructure(Rules& r)
 
 		//check if this activity has the corresponding students
 		bool commonStudents=false;
-		/*foreach(QString st, act->studentsNames)
-			if(r.studentsSetsRelated(st, studentsName)){
-				commonStudents=true;
-				break;
-			}*/
 		if(act->studentsNames.count()==1)
 			if(act->studentsNames.at(0)==studentsName)
 				commonStudents=true;
@@ -1175,7 +1209,7 @@ QString ConstraintStudentsSetHomeRoom::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s="<ConstraintStudentsSetHomeRoom>\n";
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
 	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
 		
@@ -1190,7 +1224,7 @@ QString ConstraintStudentsSetHomeRoom::getDescription(Rules& r)
 
 	QString s=tr("Students set home room"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
 
@@ -1205,7 +1239,7 @@ QString ConstraintStudentsSetHomeRoom::getDetailedDescription(Rules& r)
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Students set home room"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Students=%1").arg(this->studentsName);s+="\n";
 
@@ -1224,15 +1258,8 @@ double ConstraintStudentsSetHomeRoom::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -1248,8 +1275,6 @@ double ConstraintStudentsSetHomeRoom::fitness(
 
 	nbroken=0;
 	foreach(int ac, this->_activities){
-	//for(int i=0; i<this->_nActivities; i++){	
-	//	int ac=this->_activities[i];
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE) //counted as unallocated
 			continue;
@@ -1279,7 +1304,7 @@ double ConstraintStudentsSetHomeRoom::fitness(
 					.arg(r.internalActivitiesList[ac].id)
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -1337,6 +1362,28 @@ bool ConstraintStudentsSetHomeRoom::isRelatedToRoom(Room* r)
 	return r->name==this->roomName;
 }
 
+bool ConstraintStudentsSetHomeRoom::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintStudentsSetHomeRoom::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintStudentsSetHomeRoom::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1356,7 +1403,7 @@ ConstraintStudentsSetHomeRooms::ConstraintStudentsSetHomeRooms(double wp, QStrin
 	this->roomsNames=rms;
 }
 
-bool ConstraintStudentsSetHomeRooms::computeInternalStructure(Rules& r)
+bool ConstraintStudentsSetHomeRooms::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//This procedure computes the internal list of all the activities
 	//which correspond to the constraint.
@@ -1371,11 +1418,6 @@ bool ConstraintStudentsSetHomeRooms::computeInternalStructure(Rules& r)
 
 		//check if this activity has the corresponding students
 		bool commonStudents=false;
-		/*foreach(QString st, act->studentsNames)
-			if(r.studentsSetsRelated(st, studentsName)){
-				commonStudents=true;
-				break;
-			}*/
 		if(act->studentsNames.count()==1)
 			if(act->studentsNames.at(0)==studentsName)
 				commonStudents=true;
@@ -1391,7 +1433,7 @@ bool ConstraintStudentsSetHomeRooms::computeInternalStructure(Rules& r)
 	foreach(QString rm, this->roomsNames){
 		int t=r.searchRoom(rm);
 		if(t<0){
-			QMessageBox::warning(NULL, tr("FET error in data"), 
+			QMessageBox::warning(parent, tr("FET error in data"), 
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
@@ -1401,14 +1443,6 @@ bool ConstraintStudentsSetHomeRooms::computeInternalStructure(Rules& r)
 			this->_rooms.append(t);
 		}
 	}
-	
-	/*this->_n_preferred_rooms=this->roomsNames.count();
-	int i=0;
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
-		this->_rooms[i] = r.searchRoom(*it);
-		assert(this->_rooms[i]>=0);
-		i++;
-	}*/
 	
 	return true;
 }
@@ -1422,13 +1456,11 @@ bool ConstraintStudentsSetHomeRooms::hasInactiveActivities(Rules& r)
 
 QString ConstraintStudentsSetHomeRooms::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
 	QString s="<ConstraintStudentsSetHomeRooms>\n";
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
@@ -1441,9 +1473,9 @@ QString ConstraintStudentsSetHomeRooms::getDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s=tr("Students set home rooms"); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 
-	s+=tr("St:%1", "St means students").arg(this->studentsName);//s+=", ";
+	s+=tr("St:%1", "St means students").arg(this->studentsName);
 
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
 		s+=", ";
@@ -1458,7 +1490,7 @@ QString ConstraintStudentsSetHomeRooms::getDetailedDescription(Rules& r){
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Students set home rooms"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Students=%1").arg(this->studentsName);s+="\n";
 
@@ -1480,15 +1512,8 @@ double ConstraintStudentsSetHomeRooms::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -1503,8 +1528,6 @@ double ConstraintStudentsSetHomeRooms::fitness(
 	bool ok2=true;
 
 	nbroken=0;
-	//for(int i=0; i<this->_nActivities; i++){	
-	//	int ac=this->_activities[i];
 	foreach(int ac, this->_activities){
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE)
@@ -1512,11 +1535,9 @@ double ConstraintStudentsSetHomeRooms::fitness(
 	
 		bool ok=true;
 		int i;
-		//for(i=0; i<this->_n_preferred_rooms; i++)
 		for(i=0; i<this->_rooms.count(); i++)
 			if(this->_rooms[i]==rm)
 				break;
-		//if(i==this->_n_preferred_rooms)
 		if(i==this->_rooms.count()){
 			if(rm==UNSPECIFIED_ROOM)
 				ok=false;
@@ -1540,7 +1561,7 @@ double ConstraintStudentsSetHomeRooms::fitness(
 					.arg(r.internalActivitiesList[ac].id)
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -1597,6 +1618,28 @@ bool ConstraintStudentsSetHomeRooms::isRelatedToRoom(Room* r)
 	return this->roomsNames.contains(r->name);
 }
 
+bool ConstraintStudentsSetHomeRooms::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintStudentsSetHomeRooms::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintStudentsSetHomeRooms::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1614,8 +1657,10 @@ ConstraintTeacherHomeRoom::ConstraintTeacherHomeRoom(double wp, QString tc, QStr
 	this->roomName=rm;
 }
 
-bool ConstraintTeacherHomeRoom::computeInternalStructure(Rules& r)
+bool ConstraintTeacherHomeRoom::computeInternalStructure(QWidget* parent, Rules& r)
 {
+	Q_UNUSED(parent);
+
 	//This procedure computes the internal list of all the activities
 	//which correspond to the subject of the constraint.
 	
@@ -1629,11 +1674,6 @@ bool ConstraintTeacherHomeRoom::computeInternalStructure(Rules& r)
 
 		//check if this activity has the corresponding students
 		bool sameTeacher=false;
-		/*foreach(QString st, act->studentsNames)
-			if(r.studentsSetsRelated(st, studentsName)){
-				commonStudents=true;
-				break;
-			}*/
 		if(act->teachersNames.count()==1)
 			if(act->teachersNames.at(0)==teacherName)
 				sameTeacher=true;
@@ -1661,7 +1701,7 @@ QString ConstraintTeacherHomeRoom::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s="<ConstraintTeacherHomeRoom>\n";
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
 	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
 		
@@ -1676,7 +1716,7 @@ QString ConstraintTeacherHomeRoom::getDescription(Rules& r)
 
 	QString s=tr("Teacher home room"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
 
@@ -1691,7 +1731,7 @@ QString ConstraintTeacherHomeRoom::getDetailedDescription(Rules& r)
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Teacher home room"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
@@ -1710,15 +1750,8 @@ double ConstraintTeacherHomeRoom::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -1734,14 +1767,11 @@ double ConstraintTeacherHomeRoom::fitness(
 
 	nbroken=0;
 	foreach(int ac, this->_activities){
-	//for(int i=0; i<this->_nActivities; i++){	
-	//	int ac=this->_activities[i];
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE) //counted as unallocated
 			continue;
 		
 		bool ok=true;
-		//if(rm!=this->_room)
 		if(rm==UNSPECIFIED_ROOM) //it may be other room, from subject (activity tag) preferred room(s), which is OK
 			ok=false;
 		else if(rm==this->_room){
@@ -1765,7 +1795,7 @@ double ConstraintTeacherHomeRoom::fitness(
 					.arg(r.internalActivitiesList[ac].id)
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -1822,6 +1852,28 @@ bool ConstraintTeacherHomeRoom::isRelatedToRoom(Room* r)
 	return r->name==this->roomName;
 }
 
+bool ConstraintTeacherHomeRoom::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintTeacherHomeRoom::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintTeacherHomeRoom::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1841,7 +1893,7 @@ ConstraintTeacherHomeRooms::ConstraintTeacherHomeRooms(double wp, QString tc, co
 	this->roomsNames=rms;
 }
 
-bool ConstraintTeacherHomeRooms::computeInternalStructure(Rules& r)
+bool ConstraintTeacherHomeRooms::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//This procedure computes the internal list of all the activities
 	//which correspond to the constraint.
@@ -1871,7 +1923,7 @@ bool ConstraintTeacherHomeRooms::computeInternalStructure(Rules& r)
 	foreach(QString rm, this->roomsNames){
 		int t=r.searchRoom(rm);
 		if(t<0){
-			QMessageBox::warning(NULL, tr("FET error in data"), 
+			QMessageBox::warning(parent, tr("FET error in data"), 
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
@@ -1881,14 +1933,6 @@ bool ConstraintTeacherHomeRooms::computeInternalStructure(Rules& r)
 			this->_rooms.append(t);
 		}
 	}
-	
-	/*this->_n_preferred_rooms=this->roomsNames.count();
-	int i=0;
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
-		this->_rooms[i] = r.searchRoom(*it);
-		assert(this->_rooms[i]>=0);
-		i++;
-	}*/
 	
 	return true;
 }
@@ -1902,13 +1946,11 @@ bool ConstraintTeacherHomeRooms::hasInactiveActivities(Rules& r)
 
 QString ConstraintTeacherHomeRooms::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
-	//if(&r!=NULL)
-	//	;
 
 	QString s="<ConstraintTeacherHomeRooms>\n";
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
@@ -1921,9 +1963,9 @@ QString ConstraintTeacherHomeRooms::getDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s=tr("Teacher home rooms"); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 
-	s+=tr("T:%1", "T means teacher").arg(this->teacherName);//s+=", ";
+	s+=tr("T:%1", "T means teacher").arg(this->teacherName);
 
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
 		s+=", ";
@@ -1938,7 +1980,7 @@ QString ConstraintTeacherHomeRooms::getDetailedDescription(Rules& r){
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Teacher home rooms"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
@@ -1960,15 +2002,8 @@ double ConstraintTeacherHomeRooms::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -1983,8 +2018,6 @@ double ConstraintTeacherHomeRooms::fitness(
 	bool ok2=true;
 
 	nbroken=0;
-	//for(int i=0; i<this->_nActivities; i++){	
-	//	int ac=this->_activities[i];
 	foreach(int ac, this->_activities){
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE)
@@ -1992,11 +2025,9 @@ double ConstraintTeacherHomeRooms::fitness(
 	
 		bool ok=true;
 		int i;
-		//for(i=0; i<this->_n_preferred_rooms; i++)
 		for(i=0; i<this->_rooms.count(); i++)
 			if(this->_rooms[i]==rm)
 				break;
-		//if(i==this->_n_preferred_rooms)
 		if(i==this->_rooms.count()){
 			if(rm==UNSPECIFIED_ROOM)
 				ok=false;
@@ -2020,7 +2051,7 @@ double ConstraintTeacherHomeRooms::fitness(
 					.arg(r.internalActivitiesList[ac].id)
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2075,6 +2106,28 @@ bool ConstraintTeacherHomeRooms::isRelatedToRoom(Room* r)
 	return this->roomsNames.contains(r->name);
 }
 
+bool ConstraintTeacherHomeRooms::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintTeacherHomeRooms::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintTeacherHomeRooms::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
@@ -2092,7 +2145,7 @@ ConstraintSubjectPreferredRoom::ConstraintSubjectPreferredRoom(double wp, const 
 	this->roomName=rm;
 }
 
-bool ConstraintSubjectPreferredRoom::computeInternalStructure(Rules& r)
+bool ConstraintSubjectPreferredRoom::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//This procedure computes the internal list of all the activities
 	//which correspond to the subject of the constraint.
@@ -2103,16 +2156,9 @@ bool ConstraintSubjectPreferredRoom::computeInternalStructure(Rules& r)
 			this->_activities.append(ac);
 		}
 	
-	/*this->_nActivities=0;
-	for(int ac=0; ac<r.nInternalActivities; ac++)
-		if(r.internalActivitiesList[ac].subjectName == this->subjectName){
-			assert(this->_nActivities<MAX_ACTIVITIES_FOR_A_SUBJECT);
-			this->_activities[this->_nActivities++]=ac;
-		}*/
-		
 	this->_room = r.searchRoom(this->roomName);
 	if(this->_room<0){
-		QMessageBox::warning(NULL, tr("FET error in data"), 
+		QMessageBox::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -2133,7 +2179,7 @@ QString ConstraintSubjectPreferredRoom::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s="<ConstraintSubjectPreferredRoom>\n";
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
 	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
 		
@@ -2146,7 +2192,7 @@ QString ConstraintSubjectPreferredRoom::getDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s=tr("Subject preferred room"); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("S:%1", "Subject").arg(this->subjectName);s+=", ";
 	s+=tr("R:%1", "Room").arg(this->roomName);
 
@@ -2158,7 +2204,7 @@ QString ConstraintSubjectPreferredRoom::getDetailedDescription(Rules& r){
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Subject preferred room"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Subject=%1").arg(this->subjectName);s+="\n";
 	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 
@@ -2175,15 +2221,8 @@ double ConstraintSubjectPreferredRoom::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -2199,8 +2238,6 @@ double ConstraintSubjectPreferredRoom::fitness(
 
 	nbroken=0;
 	foreach(int ac, this->_activities){
-	//for(int i=0; i<this->_nActivities; i++){	
-	//	int ac=this->_activities[i];
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE) //counted as unallocated
 			continue;
@@ -2219,7 +2256,7 @@ double ConstraintSubjectPreferredRoom::fitness(
 					.arg(r.internalActivitiesList[ac].id)
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2239,20 +2276,12 @@ double ConstraintSubjectPreferredRoom::fitness(
 
 bool ConstraintSubjectPreferredRoom::isRelatedToActivity(Activity* a)
 {
-	//Q_UNUSED(a);
-	//if(a)
-	//	;
-
-	//return false;
-	
 	return a->subjectName==this->subjectName;
 }
 
 bool ConstraintSubjectPreferredRoom::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
-	//if(t)
-	//	;
 
 	return false;
 }
@@ -2267,8 +2296,6 @@ bool ConstraintSubjectPreferredRoom::isRelatedToSubject(Subject* s)
 bool ConstraintSubjectPreferredRoom::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
-	//if(s)
-	//	;
 
 	return false;
 }
@@ -2277,10 +2304,6 @@ bool ConstraintSubjectPreferredRoom::isRelatedToStudentsSet(Rules& r, StudentsSe
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-	/*if(s)
-		;
-	if(&r)
-		;*/
 
 	return false;
 }
@@ -2288,6 +2311,28 @@ bool ConstraintSubjectPreferredRoom::isRelatedToStudentsSet(Rules& r, StudentsSe
 bool ConstraintSubjectPreferredRoom::isRelatedToRoom(Room* r)
 {
 	return r->name==this->roomName;
+}
+
+bool ConstraintSubjectPreferredRoom::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintSubjectPreferredRoom::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintSubjectPreferredRoom::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2307,7 +2352,7 @@ ConstraintSubjectPreferredRooms::ConstraintSubjectPreferredRooms(double wp, cons
 	this->roomsNames=rms;
 }
 
-bool ConstraintSubjectPreferredRooms::computeInternalStructure(Rules& r)
+bool ConstraintSubjectPreferredRooms::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//This procedure computes the internal list of all the activities
 	//which correspond to the subject of the constraint.
@@ -2322,7 +2367,7 @@ bool ConstraintSubjectPreferredRooms::computeInternalStructure(Rules& r)
 	foreach(QString rm, this->roomsNames){
 		int t=r.searchRoom(rm);
 		if(t<0){
-			QMessageBox::warning(NULL, tr("FET error in data"), 
+			QMessageBox::warning(parent, tr("FET error in data"), 
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
@@ -2331,21 +2376,6 @@ bool ConstraintSubjectPreferredRooms::computeInternalStructure(Rules& r)
 		this->_rooms.append(t);
 	}
 
-	/*this->_nActivities=0;
-	for(int ac=0; ac<r.nInternalActivities; ac++)
-		if(r.internalActivitiesList[ac].subjectName == this->subjectName){
-			assert(this->_nActivities<MAX_ACTIVITIES_FOR_A_SUBJECT);
-			this->_activities[this->_nActivities++]=ac;
-		}
-
-	this->_n_preferred_rooms=this->roomsNames.count();
-	int i=0;
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
-		this->_rooms[i] = r.searchRoom(*it);
-		assert(this->_rooms[i]>=0);
-		i++;
-	}*/
-	
 	return true;
 }
 
@@ -2360,9 +2390,9 @@ QString ConstraintSubjectPreferredRooms::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s="<ConstraintSubjectPreferredRooms>\n";
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
-	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
@@ -2375,7 +2405,7 @@ QString ConstraintSubjectPreferredRooms::getDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s=tr("Subject preferred rooms"); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("S:%1", "Subject").arg(this->subjectName);
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
 		s+=", ";
@@ -2390,7 +2420,7 @@ QString ConstraintSubjectPreferredRooms::getDetailedDescription(Rules& r){
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Subject preferred rooms"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Subject=%1").arg(this->subjectName);s+="\n";
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
 		s+=tr("Room=%1").arg(*it);
@@ -2410,15 +2440,8 @@ double ConstraintSubjectPreferredRooms::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -2434,8 +2457,6 @@ double ConstraintSubjectPreferredRooms::fitness(
 
 	nbroken=0;
 	foreach(int ac, this->_activities){
-	//for(int i=0; i<this->_nActivities; i++){	
-	//	int ac=this->_activities[i];
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE)
 			continue;
@@ -2458,7 +2479,7 @@ double ConstraintSubjectPreferredRooms::fitness(
 					.arg(r.internalActivitiesList[ac].id)
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id));
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2477,20 +2498,12 @@ double ConstraintSubjectPreferredRooms::fitness(
 
 bool ConstraintSubjectPreferredRooms::isRelatedToActivity(Activity* a)
 {
-	//Q_UNUSED(a);
-	//if(a)
-	//	;
-
-	//return false;
-	
 	return a->subjectName==this->subjectName;
 }
 
 bool ConstraintSubjectPreferredRooms::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
-	//if(t)
-	//	;
 
 	return false;
 }
@@ -2505,8 +2518,6 @@ bool ConstraintSubjectPreferredRooms::isRelatedToSubject(Subject* s)
 bool ConstraintSubjectPreferredRooms::isRelatedToActivityTag(ActivityTag* s)
 {
 	Q_UNUSED(s);
-	//if(s)
-	//	;
 
 	return false;
 }
@@ -2515,10 +2526,6 @@ bool ConstraintSubjectPreferredRooms::isRelatedToStudentsSet(Rules& r, StudentsS
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-	/*if(s)
-		;
-	if(&r)
-		;*/
 
 	return false;
 }
@@ -2526,6 +2533,28 @@ bool ConstraintSubjectPreferredRooms::isRelatedToStudentsSet(Rules& r, StudentsS
 bool ConstraintSubjectPreferredRooms::isRelatedToRoom(Room* r)
 {
 	return this->roomsNames.contains(r->name);
+}
+
+bool ConstraintSubjectPreferredRooms::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintSubjectPreferredRooms::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintSubjectPreferredRooms::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -2546,7 +2575,7 @@ ConstraintSubjectActivityTagPreferredRoom::ConstraintSubjectActivityTagPreferred
 	this->roomName=rm;
 }
 
-bool ConstraintSubjectActivityTagPreferredRoom::computeInternalStructure(Rules& r)
+bool ConstraintSubjectActivityTagPreferredRoom::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//This procedure computes the internal list of all the activities
 	//which correspond to the subject of the constraint.
@@ -2558,17 +2587,9 @@ bool ConstraintSubjectActivityTagPreferredRoom::computeInternalStructure(Rules& 
 		 	this->_activities.append(ac);
 		}
 		
-	/*this->_nActivities=0;
-	for(int ac=0; ac<r.nInternalActivities; ac++)
-		if(r.internalActivitiesList[ac].subjectName == this->subjectName
-		 && r.internalActivitiesList[ac].activityTagName == this->activityTagName){
-			assert(this->_nActivities<MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG);
-			this->_activities[this->_nActivities++]=ac;
-		}*/
-		
 	this->_room = r.searchRoom(this->roomName);
 	if(this->_room<0){
-		QMessageBox::warning(NULL, tr("FET error in data"), 
+		QMessageBox::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -2589,7 +2610,7 @@ QString ConstraintSubjectActivityTagPreferredRoom::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s="<ConstraintSubjectActivityTagPreferredRoom>\n";
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
 	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
@@ -2603,7 +2624,7 @@ QString ConstraintSubjectActivityTagPreferredRoom::getDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s=tr("Subject activity tag preferred room"); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("S:%1", "Subject").arg(this->subjectName);s+=", ";
 	s+=tr("AT:%1", "Activity tag").arg(this->activityTagName);s+=", ";
 	s+=tr("R:%1", "Room").arg(this->roomName);
@@ -2616,7 +2637,7 @@ QString ConstraintSubjectActivityTagPreferredRoom::getDetailedDescription(Rules&
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Subject activity tag preferred room"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Subject=%1").arg(this->subjectName);s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	s+=tr("Room=%1").arg(this->roomName);s+="\n";
@@ -2634,15 +2655,8 @@ double ConstraintSubjectActivityTagPreferredRoom::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -2658,8 +2672,6 @@ double ConstraintSubjectActivityTagPreferredRoom::fitness(
 
 	nbroken=0;
 	foreach(int ac, this->_activities){
-	//for(int i=0; i<this->_nActivities; i++){	
-	//	int ac=this->_activities[i];
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE) //counted as unallocated
 			continue;
@@ -2679,7 +2691,7 @@ double ConstraintSubjectActivityTagPreferredRoom::fitness(
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id))
 					.arg(this->activityTagName);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2699,20 +2711,12 @@ double ConstraintSubjectActivityTagPreferredRoom::fitness(
 
 bool ConstraintSubjectActivityTagPreferredRoom::isRelatedToActivity(Activity* a)
 {
-	//Q_UNUSED(a);
-	//if(a)
-	//	;
-
-	//return false;
-	
 	return this->subjectName==a->subjectName && a->activityTagsNames.contains(this->activityTagName);
 }
 
 bool ConstraintSubjectActivityTagPreferredRoom::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
-	//if(t)
-	//	;
 
 	return false;
 }
@@ -2735,10 +2739,6 @@ bool ConstraintSubjectActivityTagPreferredRoom::isRelatedToStudentsSet(Rules& r,
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-	/*if(s)
-		;
-	if(&r)
-		;*/
 
 	return false;
 }
@@ -2746,6 +2746,28 @@ bool ConstraintSubjectActivityTagPreferredRoom::isRelatedToStudentsSet(Rules& r,
 bool ConstraintSubjectActivityTagPreferredRoom::isRelatedToRoom(Room* r)
 {
 	return r->name==this->roomName;
+}
+
+bool ConstraintSubjectActivityTagPreferredRoom::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintSubjectActivityTagPreferredRoom::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintSubjectActivityTagPreferredRoom::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2766,7 +2788,7 @@ ConstraintSubjectActivityTagPreferredRooms::ConstraintSubjectActivityTagPreferre
 	this->roomsNames=rms;
 }
 
-bool ConstraintSubjectActivityTagPreferredRooms::computeInternalStructure(Rules& r)
+bool ConstraintSubjectActivityTagPreferredRooms::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//This procedure computes the internal list of all the activities
 	//which correspond to the subject of the constraint.
@@ -2782,7 +2804,7 @@ bool ConstraintSubjectActivityTagPreferredRooms::computeInternalStructure(Rules&
 	foreach(QString rm, roomsNames){
 		int t=r.searchRoom(rm);
 		if(t<0){
-			QMessageBox::warning(NULL, tr("FET error in data"), 
+			QMessageBox::warning(parent, tr("FET error in data"), 
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
@@ -2790,22 +2812,6 @@ bool ConstraintSubjectActivityTagPreferredRooms::computeInternalStructure(Rules&
 		assert(t>=0);
 		this->_rooms.append(t);
 	}
-	
-	/*this->_nActivities=0;
-	for(int ac=0; ac<r.nInternalActivities; ac++)
-		if(r.internalActivitiesList[ac].subjectName == this->subjectName
-		 && r.internalActivitiesList[ac].activityTagName == this->activityTagName){
-			assert(this->_nActivities<MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG);
-			this->_activities[this->_nActivities++]=ac;
-		}
-
-	this->_n_preferred_rooms=this->roomsNames.count();
-	int i=0;
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
-		this->_rooms[i] = r.searchRoom(*it);
-		assert(this->_rooms[i]>=0);
-		i++;
-	}*/
 	
 	return true;
 }
@@ -2821,10 +2827,10 @@ QString ConstraintSubjectActivityTagPreferredRooms::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s="<ConstraintSubjectActivityTagPreferredRooms>\n";
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Subject>"+protect(this->subjectName)+"</Subject>\n";
 	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
-	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
@@ -2837,7 +2843,7 @@ QString ConstraintSubjectActivityTagPreferredRooms::getDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s=tr("Subject activity tag preferred rooms"); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("S:%1", "Subject").arg(this->subjectName);s+=", ";
 	s+=tr("AT:%1", "Activity tag").arg(this->activityTagName);
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
@@ -2853,7 +2859,7 @@ QString ConstraintSubjectActivityTagPreferredRooms::getDetailedDescription(Rules
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Subject activity tag preferred rooms"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Subject=%1").arg(this->subjectName);s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
@@ -2874,15 +2880,8 @@ double ConstraintSubjectActivityTagPreferredRooms::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -2898,8 +2897,6 @@ double ConstraintSubjectActivityTagPreferredRooms::fitness(
 
 	nbroken=0;
 	foreach(int ac, this->_activities){
-	//for(int i=0; i<this->_nActivities; i++){	
-	//	int ac=this->_activities[i];
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE)
 			continue;
@@ -2923,7 +2920,7 @@ double ConstraintSubjectActivityTagPreferredRooms::fitness(
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id))
 					.arg(this->activityTagName);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -2942,10 +2939,6 @@ double ConstraintSubjectActivityTagPreferredRooms::fitness(
 
 bool ConstraintSubjectActivityTagPreferredRooms::isRelatedToActivity(Activity* a)
 {
-	//Q_UNUSED(a);
-
-	//return false;
-	
 	return this->subjectName==a->subjectName && a->activityTagsNames.contains(this->activityTagName);
 }
 
@@ -2983,10 +2976,30 @@ bool ConstraintSubjectActivityTagPreferredRooms::isRelatedToRoom(Room* r)
 	return this->roomsNames.contains(r->name);
 }
 
-//////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////
+bool ConstraintSubjectActivityTagPreferredRooms::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
 
-////added on 6 apr 2009
+bool ConstraintSubjectActivityTagPreferredRooms::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintSubjectActivityTagPreferredRooms::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 
 ConstraintActivityTagPreferredRoom::ConstraintActivityTagPreferredRoom()
 	: SpaceConstraint()
@@ -3002,29 +3015,20 @@ ConstraintActivityTagPreferredRoom::ConstraintActivityTagPreferredRoom(double wp
 	this->roomName=rm;
 }
 
-bool ConstraintActivityTagPreferredRoom::computeInternalStructure(Rules& r)
+bool ConstraintActivityTagPreferredRoom::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//This procedure computes the internal list of all the activities
 	//which correspond to the subject of the constraint.
 	
 	this->_activities.clear();
 	for(int ac=0; ac<r.nInternalActivities; ac++)
-		if(/*r.internalActivitiesList[ac].subjectName == this->subjectName
-		 && */ r.internalActivitiesList[ac].activityTagsNames.contains(this->activityTagName)){
+		if(r.internalActivitiesList[ac].activityTagsNames.contains(this->activityTagName)){
 		 	this->_activities.append(ac);
 		}
 		
-	/*this->_nActivities=0;
-	for(int ac=0; ac<r.nInternalActivities; ac++)
-		if(r.internalActivitiesList[ac].subjectName == this->subjectName
-		 && r.internalActivitiesList[ac].activityTagName == this->activityTagName){
-			assert(this->_nActivities<MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG);
-			this->_activities[this->_nActivities++]=ac;
-		}*/
-		
 	this->_room = r.searchRoom(this->roomName);
 	if(this->_room<0){
-		QMessageBox::warning(NULL, tr("FET error in data"), 
+		QMessageBox::warning(parent, tr("FET error in data"), 
 			tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -3045,7 +3049,7 @@ QString ConstraintActivityTagPreferredRoom::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s="<ConstraintActivityTagPreferredRoom>\n";
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
 	s+="	<Room>"+protect(this->roomName)+"</Room>\n";
 		
@@ -3058,7 +3062,7 @@ QString ConstraintActivityTagPreferredRoom::getDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s=tr("Activity tag preferred room"); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("AT:%1", "Activity tag").arg(this->activityTagName);s+=", ";
 	s+=tr("R:%1", "Room").arg(this->roomName);
 
@@ -3070,7 +3074,7 @@ QString ConstraintActivityTagPreferredRoom::getDetailedDescription(Rules& r){
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activity tag preferred room"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 
@@ -3087,15 +3091,8 @@ double ConstraintActivityTagPreferredRoom::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -3111,8 +3108,6 @@ double ConstraintActivityTagPreferredRoom::fitness(
 
 	nbroken=0;
 	foreach(int ac, this->_activities){
-	//for(int i=0; i<this->_nActivities; i++){	
-	//	int ac=this->_activities[i];
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE) //counted as unallocated
 			continue;
@@ -3132,7 +3127,7 @@ double ConstraintActivityTagPreferredRoom::fitness(
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id))
 					.arg(this->activityTagName);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -3152,20 +3147,12 @@ double ConstraintActivityTagPreferredRoom::fitness(
 
 bool ConstraintActivityTagPreferredRoom::isRelatedToActivity(Activity* a)
 {
-	//Q_UNUSED(a);
-	//if(a)
-	//	;
-
-	//return false;
-	
-	return /*this->subjectName==a->subjectName && */ a->activityTagsNames.contains(this->activityTagName);
+	return a->activityTagsNames.contains(this->activityTagName);
 }
 
 bool ConstraintActivityTagPreferredRoom::isRelatedToTeacher(Teacher* t)
 {
 	Q_UNUSED(t);
-	//if(t)
-	//	;
 
 	return false;
 }
@@ -3188,10 +3175,6 @@ bool ConstraintActivityTagPreferredRoom::isRelatedToStudentsSet(Rules& r, Studen
 {
 	Q_UNUSED(r);
 	Q_UNUSED(s);
-	/*if(s)
-		;
-	if(&r)
-		;*/
 
 	return false;
 }
@@ -3199,6 +3182,28 @@ bool ConstraintActivityTagPreferredRoom::isRelatedToStudentsSet(Rules& r, Studen
 bool ConstraintActivityTagPreferredRoom::isRelatedToRoom(Room* r)
 {
 	return r->name==this->roomName;
+}
+
+bool ConstraintActivityTagPreferredRoom::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintActivityTagPreferredRoom::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintActivityTagPreferredRoom::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3218,15 +3223,14 @@ ConstraintActivityTagPreferredRooms::ConstraintActivityTagPreferredRooms(double 
 	this->roomsNames=rms;
 }
 
-bool ConstraintActivityTagPreferredRooms::computeInternalStructure(Rules& r)
+bool ConstraintActivityTagPreferredRooms::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	//This procedure computes the internal list of all the activities
 	//which correspond to the subject of the constraint.
 	
 	this->_activities.clear();
 	for(int ac=0; ac<r.nInternalActivities; ac++)
-		if(/*r.internalActivitiesList[ac].subjectName == this->subjectName
-		 && */  r.internalActivitiesList[ac].activityTagsNames.contains(this->activityTagName)){
+		if(r.internalActivitiesList[ac].activityTagsNames.contains(this->activityTagName)){
 			this->_activities.append(ac);
 		}
 
@@ -3234,7 +3238,7 @@ bool ConstraintActivityTagPreferredRooms::computeInternalStructure(Rules& r)
 	foreach(QString rm, roomsNames){
 		int t=r.searchRoom(rm);
 		if(t<0){
-			QMessageBox::warning(NULL, tr("FET error in data"), 
+			QMessageBox::warning(parent, tr("FET error in data"), 
 				tr("Following constraint is wrong:\n%1").arg(this->getDetailedDescription(r)));
 
 			return false;
@@ -3242,22 +3246,6 @@ bool ConstraintActivityTagPreferredRooms::computeInternalStructure(Rules& r)
 		assert(t>=0);
 		this->_rooms.append(t);
 	}
-	
-	/*this->_nActivities=0;
-	for(int ac=0; ac<r.nInternalActivities; ac++)
-		if(r.internalActivitiesList[ac].subjectName == this->subjectName
-		 && r.internalActivitiesList[ac].activityTagName == this->activityTagName){
-			assert(this->_nActivities<MAX_ACTIVITIES_FOR_A_SUBJECT_SUBJECT_TAG);
-			this->_activities[this->_nActivities++]=ac;
-		}
-
-	this->_n_preferred_rooms=this->roomsNames.count();
-	int i=0;
-	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
-		this->_rooms[i] = r.searchRoom(*it);
-		assert(this->_rooms[i]>=0);
-		i++;
-	}*/
 	
 	return true;
 }
@@ -3273,9 +3261,9 @@ QString ConstraintActivityTagPreferredRooms::getXmlDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s="<ConstraintActivityTagPreferredRooms>\n";
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Activity_Tag>"+protect(this->activityTagName)+"</Activity_Tag>\n";
-	s+="	<Number_of_Preferred_Rooms>"+QString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
+	s+="	<Number_of_Preferred_Rooms>"+CustomFETString::number(this->roomsNames.count())+"</Number_of_Preferred_Rooms>\n";
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++)
 		s+="	<Preferred_Room>"+protect(*it)+"</Preferred_Room>\n";
 		
@@ -3288,7 +3276,7 @@ QString ConstraintActivityTagPreferredRooms::getDescription(Rules& r){
 	Q_UNUSED(r);
 
 	QString s=tr("Activity tag preferred rooms"); s+=", ";
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("AT:%1", "Activity tag").arg(this->activityTagName);
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
 		s+=", ";
@@ -3303,7 +3291,7 @@ QString ConstraintActivityTagPreferredRooms::getDetailedDescription(Rules& r){
 
 	QString s=tr("Space constraint"); s+="\n";
 	s+=tr("Activity tag preferred rooms"); s+="\n";
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Activity tag=%1").arg(this->activityTagName);s+="\n";
 	for(QStringList::Iterator it=this->roomsNames.begin(); it!=this->roomsNames.end(); it++){
 		s+=tr("Room=%1").arg(*it);
@@ -3323,15 +3311,8 @@ double ConstraintActivityTagPreferredRooms::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -3347,8 +3328,6 @@ double ConstraintActivityTagPreferredRooms::fitness(
 
 	nbroken=0;
 	foreach(int ac, this->_activities){
-	//for(int i=0; i<this->_nActivities; i++){	
-	//	int ac=this->_activities[i];
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE)
 			continue;
@@ -3372,7 +3351,7 @@ double ConstraintActivityTagPreferredRooms::fitness(
 					.arg(getActivityDetailedDescription(r, r.internalActivitiesList[ac].id))
 					.arg(this->activityTagName);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* 1);
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* 1));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* 1);
@@ -3391,11 +3370,7 @@ double ConstraintActivityTagPreferredRooms::fitness(
 
 bool ConstraintActivityTagPreferredRooms::isRelatedToActivity(Activity* a)
 {
-	//Q_UNUSED(a);
-
-	//return false;
-	
-	return /*this->subjectName==a->subjectName && */ a->activityTagsNames.contains(this->activityTagName);
+	return a->activityTagsNames.contains(this->activityTagName);
 }
 
 bool ConstraintActivityTagPreferredRooms::isRelatedToTeacher(Teacher* t)
@@ -3431,7 +3406,28 @@ bool ConstraintActivityTagPreferredRooms::isRelatedToRoom(Room* r)
 {
 	return this->roomsNames.contains(r->name);
 }
-///////
+
+bool ConstraintActivityTagPreferredRooms::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintActivityTagPreferredRooms::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+
+	return true;
+}
+
+bool ConstraintActivityTagPreferredRooms::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3450,14 +3446,14 @@ ConstraintStudentsSetMaxBuildingChangesPerDay::ConstraintStudentsSetMaxBuildingC
 	this->maxBuildingChangesPerDay=mc;
 }
 
-bool ConstraintStudentsSetMaxBuildingChangesPerDay::computeInternalStructure(Rules& r)
+bool ConstraintStudentsSetMaxBuildingChangesPerDay::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	this->iSubgroupsList.clear();
 	
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 			
 	if(ss==NULL){
-		QMessageBox::warning(NULL, tr("FET warning"),
+		QMessageBox::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max building changes per day is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 									 		 
@@ -3514,9 +3510,9 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDay::getXmlDescription(Rules& 
 
 	QString s="<ConstraintStudentsSetMaxBuildingChangesPerDay>\n";
 
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Max_Building_Changes_Per_Day>"+QString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 		
 	s+="</ConstraintStudentsSetMaxBuildingChangesPerDay>\n";
 
@@ -3529,7 +3525,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDescription(Rules& r)
 
 	QString s=tr("Students set max building changes per day"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
 
@@ -3546,7 +3542,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDetailedDescription(Ru
 
 	s+=tr("Students set maximum building changes per day"); s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Students=%1").arg(this->studentsName);s+="\n";
 
@@ -3565,22 +3561,15 @@ double ConstraintStudentsSetMaxBuildingChangesPerDay::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
 	int nbroken=0;
 	
 	foreach(int sbg, this->iSubgroupsList){
-///////////// Better, less memory
+		//Better, less memory
 		StudentsSubgroup* sts=r.internalSubgroupsList[sbg];
 		int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
@@ -3601,7 +3590,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerDay::fitness(
 					}
 				}
 			}
-/////////////
+		/////////////
 	
 		for(int d2=0; d2<r.nDaysPerWeek; d2++){			
 			int crt_building=-1;
@@ -3624,7 +3613,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerDay::fitness(
 						.arg(this->studentsName)
 						.arg(r.daysOfTheWeek[d2]);
 					s += ". ";
-					s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
@@ -3681,6 +3670,31 @@ bool ConstraintStudentsSetMaxBuildingChangesPerDay::isRelatedToRoom(Room* r)
 	return false;
 }
 
+bool ConstraintStudentsSetMaxBuildingChangesPerDay::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBuildingChangesPerDay>r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerDay::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerDay::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxBuildingChangesPerDay>r.nHoursPerDay)
+		maxBuildingChangesPerDay=r.nHoursPerDay;
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -3697,8 +3711,9 @@ ConstraintStudentsMaxBuildingChangesPerDay::ConstraintStudentsMaxBuildingChanges
 	this->maxBuildingChangesPerDay=mc;
 }
 
-bool ConstraintStudentsMaxBuildingChangesPerDay::computeInternalStructure(Rules& r)
+bool ConstraintStudentsMaxBuildingChangesPerDay::computeInternalStructure(QWidget* parent, Rules& r)
 {
+	Q_UNUSED(parent);
 	Q_UNUSED(r);
 	
 	return true;
@@ -3716,8 +3731,8 @@ QString ConstraintStudentsMaxBuildingChangesPerDay::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintStudentsMaxBuildingChangesPerDay>\n";
 
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Building_Changes_Per_Day>"+QString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 		
 	s+="</ConstraintStudentsMaxBuildingChangesPerDay>\n";
 
@@ -3730,7 +3745,7 @@ QString ConstraintStudentsMaxBuildingChangesPerDay::getDescription(Rules& r)
 
 	QString s=tr("Students max building changes per day"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
 
@@ -3745,7 +3760,7 @@ QString ConstraintStudentsMaxBuildingChangesPerDay::getDetailedDescription(Rules
 
 	s+=tr("Students maximum building changes per day"); s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
@@ -3762,22 +3777,15 @@ double ConstraintStudentsMaxBuildingChangesPerDay::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
 	int nbroken=0;
 	
 	for(int sbg=0; sbg<r.nInternalSubgroups; sbg++){
-///////////// Better, less memory
+		//Better, less memory
 		StudentsSubgroup* sts=r.internalSubgroupsList[sbg];
 		int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
@@ -3798,9 +3806,9 @@ double ConstraintStudentsMaxBuildingChangesPerDay::fitness(
 					}
 				}
 			}
-/////////////
+		/////////////
 
-		for(int d2=0; d2<r.nDaysPerWeek; d2++){			
+		for(int d2=0; d2<r.nDaysPerWeek; d2++){
 			int crt_building=-1;
 			int n_changes=0;
 			for(int h2=0; h2<r.nHoursPerDay; h2++){
@@ -3821,7 +3829,7 @@ double ConstraintStudentsMaxBuildingChangesPerDay::fitness(
 						.arg(r.internalSubgroupsList[sbg]->name)
 						.arg(r.daysOfTheWeek[d2]);
 					s += ". ";
-					s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
@@ -3881,6 +3889,31 @@ bool ConstraintStudentsMaxBuildingChangesPerDay::isRelatedToRoom(Room* r)
 	return false;
 }
 
+bool ConstraintStudentsMaxBuildingChangesPerDay::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBuildingChangesPerDay>r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerDay::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerDay::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxBuildingChangesPerDay>r.nHoursPerDay)
+		maxBuildingChangesPerDay=r.nHoursPerDay;
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -3898,14 +3931,14 @@ ConstraintStudentsSetMaxBuildingChangesPerWeek::ConstraintStudentsSetMaxBuilding
 	this->maxBuildingChangesPerWeek=mc;
 }
 
-bool ConstraintStudentsSetMaxBuildingChangesPerWeek::computeInternalStructure(Rules& r)
+bool ConstraintStudentsSetMaxBuildingChangesPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	this->iSubgroupsList.clear();
 	
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 			
 	if(ss==NULL){
-		QMessageBox::warning(NULL, tr("FET warning"),
+		QMessageBox::warning(parent, tr("FET warning"),
 		 tr("Constraint students set max building changes per week is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 									 		 
@@ -3962,9 +3995,9 @@ QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getXmlDescription(Rules&
 
 	QString s="<ConstraintStudentsSetMaxBuildingChangesPerWeek>\n";
 
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Max_Building_Changes_Per_Week>"+QString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
+	s+="	<Max_Building_Changes_Per_Week>"+CustomFETString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
 		
 	s+="</ConstraintStudentsSetMaxBuildingChangesPerWeek>\n";
 
@@ -3977,7 +4010,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDescription(Rules& r)
 
 	QString s=tr("Students set max building changes per week"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
 
@@ -3994,7 +4027,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDetailedDescription(R
 
 	s+=tr("Students set maximum building changes per week"); s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Students=%1").arg(this->studentsName);s+="\n";
 
@@ -4013,22 +4046,15 @@ double ConstraintStudentsSetMaxBuildingChangesPerWeek::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
 	int nbroken=0;
 	
 	foreach(int sbg, this->iSubgroupsList){
-///////////// Better, less memory
+		//Better, less memory
 		StudentsSubgroup* sts=r.internalSubgroupsList[sbg];
 		int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
@@ -4049,7 +4075,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerWeek::fitness(
 					}
 				}
 			}
-/////////////
+		/////////////
 
 		int n_changes=0;
 		for(int d2=0; d2<r.nDaysPerWeek; d2++){			
@@ -4072,7 +4098,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerWeek::fitness(
 				QString s=tr("Space constraint students set max building changes per week broken for students=%1")
 					.arg(this->studentsName);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes)));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes));
@@ -4128,6 +4154,31 @@ bool ConstraintStudentsSetMaxBuildingChangesPerWeek::isRelatedToRoom(Room* r)
 	return false;
 }
 
+bool ConstraintStudentsSetMaxBuildingChangesPerWeek::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBuildingChangesPerWeek>r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerWeek::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerWeek::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxBuildingChangesPerWeek>r.nDaysPerWeek*r.nHoursPerDay)
+		maxBuildingChangesPerWeek=r.nDaysPerWeek*r.nHoursPerDay;
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -4144,8 +4195,10 @@ ConstraintStudentsMaxBuildingChangesPerWeek::ConstraintStudentsMaxBuildingChange
 	this->maxBuildingChangesPerWeek=mc;
 }
 
-bool ConstraintStudentsMaxBuildingChangesPerWeek::computeInternalStructure(Rules& r)
+bool ConstraintStudentsMaxBuildingChangesPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
+	Q_UNUSED(parent);
+
 	Q_UNUSED(r);
 
 	return true;
@@ -4163,8 +4216,8 @@ QString ConstraintStudentsMaxBuildingChangesPerWeek::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintStudentsMaxBuildingChangesPerWeek>\n";
 
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Building_Changes_Per_Week>"+QString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Building_Changes_Per_Week>"+CustomFETString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
 		
 	s+="</ConstraintStudentsMaxBuildingChangesPerWeek>\n";
 
@@ -4177,7 +4230,7 @@ QString ConstraintStudentsMaxBuildingChangesPerWeek::getDescription(Rules& r)
 
 	QString s=tr("Students max building changes per week"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerWeek);
 
@@ -4192,7 +4245,7 @@ QString ConstraintStudentsMaxBuildingChangesPerWeek::getDetailedDescription(Rule
 
 	s+=tr("Students maximum building changes per week"); s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Maximum building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
 
@@ -4209,22 +4262,15 @@ double ConstraintStudentsMaxBuildingChangesPerWeek::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
 	int nbroken=0;
 	
 	for(int sbg=0; sbg<r.nInternalSubgroups; sbg++){
-///////////// Better, less memory
+		//Better, less memory
 		StudentsSubgroup* sts=r.internalSubgroupsList[sbg];
 		int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
@@ -4245,7 +4291,7 @@ double ConstraintStudentsMaxBuildingChangesPerWeek::fitness(
 					}
 				}
 			}
-/////////////
+		/////////////
 
 		int n_changes=0;
 		for(int d2=0; d2<r.nDaysPerWeek; d2++){			
@@ -4268,7 +4314,7 @@ double ConstraintStudentsMaxBuildingChangesPerWeek::fitness(
 				QString s=tr("Space constraint students max building changes per week broken for students=%1")
 					.arg(r.internalSubgroupsList[sbg]->name);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes)));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* (-maxBuildingChangesPerWeek+n_changes));
@@ -4327,6 +4373,31 @@ bool ConstraintStudentsMaxBuildingChangesPerWeek::isRelatedToRoom(Room* r)
 	return false;
 }
 
+bool ConstraintStudentsMaxBuildingChangesPerWeek::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBuildingChangesPerWeek>r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerWeek::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerWeek::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxBuildingChangesPerWeek>r.nDaysPerWeek*r.nHoursPerDay)
+		maxBuildingChangesPerWeek=r.nDaysPerWeek*r.nHoursPerDay;
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -4344,14 +4415,14 @@ ConstraintStudentsSetMinGapsBetweenBuildingChanges::ConstraintStudentsSetMinGaps
 	this->minGapsBetweenBuildingChanges=mg;
 }
 
-bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::computeInternalStructure(Rules& r)
+bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	this->iSubgroupsList.clear();
 	
 	StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
 			
 	if(ss==NULL){
-		QMessageBox::warning(NULL, tr("FET warning"),
+		QMessageBox::warning(parent, tr("FET warning"),
 		 tr("Constraint students set min gaps between building changes is wrong because it refers to inexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 									 		 
@@ -4408,9 +4479,9 @@ QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getXmlDescription(Ru
 
 	QString s="<ConstraintStudentsSetMinGapsBetweenBuildingChanges>\n";
 
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
-	s+="	<Min_Gaps_Between_Building_Changes>"+QString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
+	s+="	<Min_Gaps_Between_Building_Changes>"+CustomFETString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
 		
 	s+="</ConstraintStudentsSetMinGapsBetweenBuildingChanges>\n";
 
@@ -4423,7 +4494,7 @@ QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDescription(Rules
 
 	QString s=tr("Students set min gaps between building changes"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
 
@@ -4440,7 +4511,7 @@ QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDetailedDescripti
 
 	s+=tr("Students set minimum gaps between building changes"); s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Students=%1").arg(this->studentsName);s+="\n";
 
@@ -4459,22 +4530,15 @@ double ConstraintStudentsSetMinGapsBetweenBuildingChanges::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
 	int nbroken=0;
 	
 	foreach(int sbg, this->iSubgroupsList){
-///////////// Better, less memory
+		//Better, less memory
 		StudentsSubgroup* sts=r.internalSubgroupsList[sbg];
 		int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
@@ -4495,7 +4559,7 @@ double ConstraintStudentsSetMinGapsBetweenBuildingChanges::fitness(
 					}
 				}
 			}
-/////////////
+		/////////////
 
 		for(int d2=0; d2<r.nDaysPerWeek; d2++){
 			int h2;
@@ -4522,7 +4586,7 @@ double ConstraintStudentsSetMinGapsBetweenBuildingChanges::fitness(
 									.arg(this->studentsName)
 									.arg(r.daysOfTheWeek[d2]);
 								s += ". ";
-								s += tr("This increases the conflicts total by %1").arg(weightPercentage/100*1);
+								s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100*1));
 					
 								dl.append(s);
 								cl.append(weightPercentage/100*1);
@@ -4587,6 +4651,31 @@ bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::isRelatedToRoom(Room* r
 	return false;
 }
 
+bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::hasWrongDayOrHour(Rules& r)
+{
+	if(minGapsBetweenBuildingChanges>r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(minGapsBetweenBuildingChanges>r.nHoursPerDay)
+		minGapsBetweenBuildingChanges=r.nHoursPerDay;
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -4603,8 +4692,9 @@ ConstraintStudentsMinGapsBetweenBuildingChanges::ConstraintStudentsMinGapsBetwee
 	this->minGapsBetweenBuildingChanges=mg;
 }
 
-bool ConstraintStudentsMinGapsBetweenBuildingChanges::computeInternalStructure(Rules& r)
+bool ConstraintStudentsMinGapsBetweenBuildingChanges::computeInternalStructure(QWidget* parent, Rules& r)
 {
+	Q_UNUSED(parent);
 	Q_UNUSED(r);
 		
 	return true;
@@ -4622,8 +4712,8 @@ QString ConstraintStudentsMinGapsBetweenBuildingChanges::getXmlDescription(Rules
 
 	QString s="<ConstraintStudentsMinGapsBetweenBuildingChanges>\n";
 
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Min_Gaps_Between_Building_Changes>"+QString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Min_Gaps_Between_Building_Changes>"+CustomFETString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
 		
 	s+="</ConstraintStudentsMinGapsBetweenBuildingChanges>\n";
 
@@ -4636,7 +4726,7 @@ QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDescription(Rules& r
 
 	QString s=tr("Students min gaps between building changes"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("mG:%1", "mG means min gaps").arg(this->minGapsBetweenBuildingChanges);
 
@@ -4651,7 +4741,7 @@ QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDetailedDescription(
 
 	s+=tr("Students minimum gaps between building changes"); s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Minimum gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
 
@@ -4668,22 +4758,15 @@ double ConstraintStudentsMinGapsBetweenBuildingChanges::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
 	int nbroken=0;
 	
 	for(int sbg=0; sbg<r.nInternalSubgroups; sbg++){
-///////////// Better, less memory
+		//Better, less memory
 		StudentsSubgroup* sts=r.internalSubgroupsList[sbg];
 		int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
@@ -4704,7 +4787,7 @@ double ConstraintStudentsMinGapsBetweenBuildingChanges::fitness(
 					}
 				}
 			}
-/////////////
+		/////////////
 
 		for(int d2=0; d2<r.nDaysPerWeek; d2++){
 			int h2;
@@ -4731,7 +4814,7 @@ double ConstraintStudentsMinGapsBetweenBuildingChanges::fitness(
 									.arg(r.internalSubgroupsList[sbg]->name)
 									.arg(r.daysOfTheWeek[d2]);
 								s += ". ";
-								s += tr("This increases the conflicts total by %1").arg(weightPercentage/100*1);
+								s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100*1));
 					
 								dl.append(s);
 								cl.append(weightPercentage/100*1);
@@ -4799,6 +4882,31 @@ bool ConstraintStudentsMinGapsBetweenBuildingChanges::isRelatedToRoom(Room* r)
 	return false;
 }
 
+bool ConstraintStudentsMinGapsBetweenBuildingChanges::hasWrongDayOrHour(Rules& r)
+{
+	if(minGapsBetweenBuildingChanges>r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintStudentsMinGapsBetweenBuildingChanges::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintStudentsMinGapsBetweenBuildingChanges::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(minGapsBetweenBuildingChanges>r.nHoursPerDay)
+		minGapsBetweenBuildingChanges=r.nHoursPerDay;
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -4816,12 +4924,12 @@ ConstraintTeacherMaxBuildingChangesPerDay::ConstraintTeacherMaxBuildingChangesPe
 	this->maxBuildingChangesPerDay=mc;
 }
 
-bool ConstraintTeacherMaxBuildingChangesPerDay::computeInternalStructure(Rules& r)
+bool ConstraintTeacherMaxBuildingChangesPerDay::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	this->teacher_ID=r.searchTeacher(this->teacherName);
 	
 	if(this->teacher_ID<0){
-		QMessageBox::warning(NULL, tr("FET warning"),
+		QMessageBox::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher max building changes per day is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 							 		 
@@ -4843,9 +4951,9 @@ QString ConstraintTeacherMaxBuildingChangesPerDay::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMaxBuildingChangesPerDay>\n";
 
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Max_Building_Changes_Per_Day>"+QString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 		
 	s+="</ConstraintTeacherMaxBuildingChangesPerDay>\n";
 
@@ -4858,7 +4966,7 @@ QString ConstraintTeacherMaxBuildingChangesPerDay::getDescription(Rules& r)
 
 	QString s=tr("Teacher max building changes per day"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
 
@@ -4875,7 +4983,7 @@ QString ConstraintTeacherMaxBuildingChangesPerDay::getDetailedDescription(Rules&
 
 	s+=tr("Teacher maximum building changes per day"); s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
@@ -4894,15 +5002,8 @@ double ConstraintTeacherMaxBuildingChangesPerDay::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -4910,28 +5011,28 @@ double ConstraintTeacherMaxBuildingChangesPerDay::fitness(
 	
 	int tch=this->teacher_ID;
 
-///////////// Better, less memory
-		Teacher* tchpointer=r.internalTeachersList[tch];
-		int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-		for(int d2=0; d2<r.nDaysPerWeek; d2++)
-			for(int h2=0; h2<r.nHoursPerDay; h2++)
-				crtBuildingsTimetable[d2][h2]=-1;
-				
-		foreach(int ai, tchpointer->activitiesForTeacher)
-			if(c.times[ai]!=UNALLOCATED_TIME){
-				int d2=c.times[ai]%r.nDaysPerWeek;
-				int h2=c.times[ai]/r.nDaysPerWeek;
-				
-				for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
-					assert(h2+dur<r.nHoursPerDay);
-					assert(crtBuildingsTimetable[d2][h2+dur]==-1);
-					if(c.rooms[ai]!=UNSPECIFIED_ROOM && c.rooms[ai]!=UNALLOCATED_SPACE){
-						assert(c.rooms[ai]>=0 && c.rooms[ai]<r.nInternalRooms);
-						crtBuildingsTimetable[d2][h2+dur]=r.internalRoomsList[c.rooms[ai]]->buildingIndex;
-					}
+	//Better, less memory
+	Teacher* tchpointer=r.internalTeachersList[tch];
+	int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+	for(int d2=0; d2<r.nDaysPerWeek; d2++)
+		for(int h2=0; h2<r.nHoursPerDay; h2++)
+			crtBuildingsTimetable[d2][h2]=-1;
+			
+	foreach(int ai, tchpointer->activitiesForTeacher)
+		if(c.times[ai]!=UNALLOCATED_TIME){
+			int d2=c.times[ai]%r.nDaysPerWeek;
+			int h2=c.times[ai]/r.nDaysPerWeek;
+			
+			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+				assert(h2+dur<r.nHoursPerDay);
+				assert(crtBuildingsTimetable[d2][h2+dur]==-1);
+				if(c.rooms[ai]!=UNSPECIFIED_ROOM && c.rooms[ai]!=UNALLOCATED_SPACE){
+					assert(c.rooms[ai]>=0 && c.rooms[ai]<r.nInternalRooms);
+					crtBuildingsTimetable[d2][h2+dur]=r.internalRoomsList[c.rooms[ai]]->buildingIndex;
 				}
 			}
-/////////////
+		}
+	/////////////
 	
 	for(int d2=0; d2<r.nDaysPerWeek; d2++){			
 		int crt_building=-1;
@@ -4954,7 +5055,7 @@ double ConstraintTeacherMaxBuildingChangesPerDay::fitness(
 					.arg(this->teacherName)
 					.arg(r.daysOfTheWeek[d2]);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
@@ -5011,6 +5112,31 @@ bool ConstraintTeacherMaxBuildingChangesPerDay::isRelatedToRoom(Room* r)
 	return false;
 }
 
+bool ConstraintTeacherMaxBuildingChangesPerDay::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBuildingChangesPerDay>r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerDay::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerDay::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxBuildingChangesPerDay>r.nHoursPerDay)
+		maxBuildingChangesPerDay=r.nHoursPerDay;
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -5027,8 +5153,9 @@ ConstraintTeachersMaxBuildingChangesPerDay::ConstraintTeachersMaxBuildingChanges
 	this->maxBuildingChangesPerDay=mc;
 }
 
-bool ConstraintTeachersMaxBuildingChangesPerDay::computeInternalStructure(Rules& r)
+bool ConstraintTeachersMaxBuildingChangesPerDay::computeInternalStructure(QWidget* parent, Rules& r)
 {
+	Q_UNUSED(parent);
 	Q_UNUSED(r);
 
 	return true;
@@ -5046,8 +5173,8 @@ QString ConstraintTeachersMaxBuildingChangesPerDay::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeachersMaxBuildingChangesPerDay>\n";
 
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Building_Changes_Per_Day>"+QString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
 		
 	s+="</ConstraintTeachersMaxBuildingChangesPerDay>\n";
 
@@ -5060,7 +5187,7 @@ QString ConstraintTeachersMaxBuildingChangesPerDay::getDescription(Rules& r)
 
 	QString s=tr("Teachers max building changes per day"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
 
@@ -5075,7 +5202,7 @@ QString ConstraintTeachersMaxBuildingChangesPerDay::getDetailedDescription(Rules
 
 	s+=tr("Teachers maximum building changes per day"); s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
@@ -5092,22 +5219,15 @@ double ConstraintTeachersMaxBuildingChangesPerDay::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
 	int nbroken=0;
 	
 	for(int tch=0; tch<r.nInternalTeachers; tch++){
-///////////// Better, less memory
+		//Better, less memory
 		Teacher* tchpointer=r.internalTeachersList[tch];
 		int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
@@ -5128,9 +5248,9 @@ double ConstraintTeachersMaxBuildingChangesPerDay::fitness(
 					}
 				}
 			}
-/////////////
+		/////////////
 
-		for(int d2=0; d2<r.nDaysPerWeek; d2++){			
+		for(int d2=0; d2<r.nDaysPerWeek; d2++){
 			int crt_building=-1;
 			int n_changes=0;
 			for(int h2=0; h2<r.nHoursPerDay; h2++){
@@ -5151,7 +5271,7 @@ double ConstraintTeachersMaxBuildingChangesPerDay::fitness(
 						.arg(r.internalTeachersList[tch]->name)
 						.arg(r.daysOfTheWeek[d2]);
 					s += ". ";
-					s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
 					
 					dl.append(s);
 					cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
@@ -5211,6 +5331,31 @@ bool ConstraintTeachersMaxBuildingChangesPerDay::isRelatedToRoom(Room* r)
 	return false;
 }
 
+bool ConstraintTeachersMaxBuildingChangesPerDay::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBuildingChangesPerDay>r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerDay::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerDay::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxBuildingChangesPerDay>r.nHoursPerDay)
+		maxBuildingChangesPerDay=r.nHoursPerDay;
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -5228,12 +5373,12 @@ ConstraintTeacherMaxBuildingChangesPerWeek::ConstraintTeacherMaxBuildingChangesP
 	this->maxBuildingChangesPerWeek=mc;
 }
 
-bool ConstraintTeacherMaxBuildingChangesPerWeek::computeInternalStructure(Rules& r)
+bool ConstraintTeacherMaxBuildingChangesPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	this->teacher_ID=r.searchTeacher(this->teacherName);
 	
 	if(this->teacher_ID<0){
-		QMessageBox::warning(NULL, tr("FET warning"),
+		QMessageBox::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher max building changes per week is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 							 		 
@@ -5255,9 +5400,9 @@ QString ConstraintTeacherMaxBuildingChangesPerWeek::getXmlDescription(Rules& r){
 
 	QString s="<ConstraintTeacherMaxBuildingChangesPerWeek>\n";
 
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Max_Building_Changes_Per_Week>"+QString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
+	s+="	<Max_Building_Changes_Per_Week>"+CustomFETString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
 		
 	s+="</ConstraintTeacherMaxBuildingChangesPerWeek>\n";
 
@@ -5270,7 +5415,7 @@ QString ConstraintTeacherMaxBuildingChangesPerWeek::getDescription(Rules& r)
 
 	QString s=tr("Teacher max building changes per week"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
 
@@ -5287,7 +5432,7 @@ QString ConstraintTeacherMaxBuildingChangesPerWeek::getDetailedDescription(Rules
 
 	s+=tr("Teacher maximum building changes per week"); s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
@@ -5306,15 +5451,8 @@ double ConstraintTeacherMaxBuildingChangesPerWeek::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -5322,28 +5460,28 @@ double ConstraintTeacherMaxBuildingChangesPerWeek::fitness(
 	
 	int tch=this->teacher_ID;
 
-///////////// Better, less memory
-		Teacher* tchpointer=r.internalTeachersList[tch];
-		int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-		for(int d2=0; d2<r.nDaysPerWeek; d2++)
-			for(int h2=0; h2<r.nHoursPerDay; h2++)
-				crtBuildingsTimetable[d2][h2]=-1;
-				
-		foreach(int ai, tchpointer->activitiesForTeacher)
-			if(c.times[ai]!=UNALLOCATED_TIME){
-				int d2=c.times[ai]%r.nDaysPerWeek;
-				int h2=c.times[ai]/r.nDaysPerWeek;
-				
-				for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
-					assert(h2+dur<r.nHoursPerDay);
-					assert(crtBuildingsTimetable[d2][h2+dur]==-1);
-					if(c.rooms[ai]!=UNSPECIFIED_ROOM && c.rooms[ai]!=UNALLOCATED_SPACE){
-						assert(c.rooms[ai]>=0 && c.rooms[ai]<r.nInternalRooms);
-						crtBuildingsTimetable[d2][h2+dur]=r.internalRoomsList[c.rooms[ai]]->buildingIndex;
-					}
+	//Better, less memory
+	Teacher* tchpointer=r.internalTeachersList[tch];
+	int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+	for(int d2=0; d2<r.nDaysPerWeek; d2++)
+		for(int h2=0; h2<r.nHoursPerDay; h2++)
+			crtBuildingsTimetable[d2][h2]=-1;
+			
+	foreach(int ai, tchpointer->activitiesForTeacher)
+		if(c.times[ai]!=UNALLOCATED_TIME){
+			int d2=c.times[ai]%r.nDaysPerWeek;
+			int h2=c.times[ai]/r.nDaysPerWeek;
+			
+			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+				assert(h2+dur<r.nHoursPerDay);
+				assert(crtBuildingsTimetable[d2][h2+dur]==-1);
+				if(c.rooms[ai]!=UNSPECIFIED_ROOM && c.rooms[ai]!=UNALLOCATED_SPACE){
+					assert(c.rooms[ai]>=0 && c.rooms[ai]<r.nInternalRooms);
+					crtBuildingsTimetable[d2][h2+dur]=r.internalRoomsList[c.rooms[ai]]->buildingIndex;
 				}
 			}
-/////////////
+		}
+	/////////////
 	
 	int n_changes=0;
 
@@ -5367,7 +5505,7 @@ double ConstraintTeacherMaxBuildingChangesPerWeek::fitness(
 			QString s=tr("Space constraint teacher max building changes per week broken for teacher=%1")
 				.arg(this->teacherName);
 			s += ". ";
-			s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek));
+			s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek)));
 			
 			dl.append(s);
 			cl.append(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek));
@@ -5423,6 +5561,31 @@ bool ConstraintTeacherMaxBuildingChangesPerWeek::isRelatedToRoom(Room* r)
 	return false;
 }
 
+bool ConstraintTeacherMaxBuildingChangesPerWeek::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBuildingChangesPerWeek>r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerWeek::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerWeek::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxBuildingChangesPerWeek>r.nDaysPerWeek*r.nHoursPerDay)
+		maxBuildingChangesPerWeek=r.nDaysPerWeek*r.nHoursPerDay;
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -5439,8 +5602,9 @@ ConstraintTeachersMaxBuildingChangesPerWeek::ConstraintTeachersMaxBuildingChange
 	this->maxBuildingChangesPerWeek=mc;
 }
 
-bool ConstraintTeachersMaxBuildingChangesPerWeek::computeInternalStructure(Rules& r)
+bool ConstraintTeachersMaxBuildingChangesPerWeek::computeInternalStructure(QWidget* parent, Rules& r)
 {
+	Q_UNUSED(parent);
 	Q_UNUSED(r);
 
 	return true;
@@ -5458,8 +5622,8 @@ QString ConstraintTeachersMaxBuildingChangesPerWeek::getXmlDescription(Rules& r)
 
 	QString s="<ConstraintTeachersMaxBuildingChangesPerWeek>\n";
 
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Max_Building_Changes_Per_Week>"+QString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Building_Changes_Per_Week>"+CustomFETString::number(this->maxBuildingChangesPerWeek)+"</Max_Building_Changes_Per_Week>\n";
 		
 	s+="</ConstraintTeachersMaxBuildingChangesPerWeek>\n";
 
@@ -5472,7 +5636,7 @@ QString ConstraintTeachersMaxBuildingChangesPerWeek::getDescription(Rules& r)
 
 	QString s=tr("Teachers max building changes per week"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerWeek);
 
@@ -5487,7 +5651,7 @@ QString ConstraintTeachersMaxBuildingChangesPerWeek::getDetailedDescription(Rule
 
 	s+=tr("Teachers maximum building changes per week"); s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Maximum building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
 
@@ -5504,22 +5668,15 @@ double ConstraintTeachersMaxBuildingChangesPerWeek::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
 	int nbroken=0;
 	
 	for(int tch=0; tch<r.nInternalTeachers; tch++){
-///////////// Better, less memory
+		//Better, less memory
 		Teacher* tchpointer=r.internalTeachersList[tch];
 		int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
@@ -5540,7 +5697,7 @@ double ConstraintTeachersMaxBuildingChangesPerWeek::fitness(
 					}
 				}
 			}
-/////////////
+		/////////////
 
 		int n_changes=0;
 
@@ -5564,7 +5721,7 @@ double ConstraintTeachersMaxBuildingChangesPerWeek::fitness(
 				QString s=tr("Space constraint teachers max building changes per week broken for teacher=%1")
 					.arg(r.internalTeachersList[tch]->name);
 				s += ". ";
-				s += tr("This increases the conflicts total by %1").arg(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek));
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek)));
 				
 				dl.append(s);
 				cl.append(weightPercentage/100* (n_changes-maxBuildingChangesPerWeek));
@@ -5623,6 +5780,31 @@ bool ConstraintTeachersMaxBuildingChangesPerWeek::isRelatedToRoom(Room* r)
 	return false;
 }
 
+bool ConstraintTeachersMaxBuildingChangesPerWeek::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBuildingChangesPerWeek>r.nDaysPerWeek*r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerWeek::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerWeek::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxBuildingChangesPerWeek>r.nDaysPerWeek*r.nHoursPerDay)
+		maxBuildingChangesPerWeek=r.nDaysPerWeek*r.nHoursPerDay;
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -5640,12 +5822,12 @@ ConstraintTeacherMinGapsBetweenBuildingChanges::ConstraintTeacherMinGapsBetweenB
 	this->minGapsBetweenBuildingChanges=mg;
 }
 
-bool ConstraintTeacherMinGapsBetweenBuildingChanges::computeInternalStructure(Rules& r)
+bool ConstraintTeacherMinGapsBetweenBuildingChanges::computeInternalStructure(QWidget* parent, Rules& r)
 {
 	this->teacher_ID=r.searchTeacher(this->teacherName);
 	
 	if(this->teacher_ID<0){
-		QMessageBox::warning(NULL, tr("FET warning"),
+		QMessageBox::warning(parent, tr("FET warning"),
 		 tr("Constraint teacher min gaps between building changes is wrong because it refers to inexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 							 		 
@@ -5667,9 +5849,9 @@ QString ConstraintTeacherMinGapsBetweenBuildingChanges::getXmlDescription(Rules&
 
 	QString s="<ConstraintTeacherMinGapsBetweenBuildingChanges>\n";
 
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
-	s+="	<Min_Gaps_Between_Building_Changes>"+QString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
+	s+="	<Min_Gaps_Between_Building_Changes>"+CustomFETString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
 		
 	s+="</ConstraintTeacherMinGapsBetweenBuildingChanges>\n";
 
@@ -5682,7 +5864,7 @@ QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDescription(Rules& r)
 
 	QString s=tr("Teacher min gaps between building changes"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
 
@@ -5699,7 +5881,7 @@ QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDetailedDescription(R
 
 	s+=tr("Teacher minimum gaps between building changes"); s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
@@ -5718,15 +5900,8 @@ double ConstraintTeacherMinGapsBetweenBuildingChanges::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
@@ -5734,28 +5909,28 @@ double ConstraintTeacherMinGapsBetweenBuildingChanges::fitness(
 	
 	int tch=this->teacher_ID;
 
-///////////// Better, less memory
-		Teacher* tchpointer=r.internalTeachersList[tch];
-		int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-		for(int d2=0; d2<r.nDaysPerWeek; d2++)
-			for(int h2=0; h2<r.nHoursPerDay; h2++)
-				crtBuildingsTimetable[d2][h2]=-1;
-				
-		foreach(int ai, tchpointer->activitiesForTeacher)
-			if(c.times[ai]!=UNALLOCATED_TIME){
-				int d2=c.times[ai]%r.nDaysPerWeek;
-				int h2=c.times[ai]/r.nDaysPerWeek;
-				
-				for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
-					assert(h2+dur<r.nHoursPerDay);
-					assert(crtBuildingsTimetable[d2][h2+dur]==-1);
-					if(c.rooms[ai]!=UNSPECIFIED_ROOM && c.rooms[ai]!=UNALLOCATED_SPACE){
-						assert(c.rooms[ai]>=0 && c.rooms[ai]<r.nInternalRooms);
-						crtBuildingsTimetable[d2][h2+dur]=r.internalRoomsList[c.rooms[ai]]->buildingIndex;
-					}
+	//Better, less memory
+	Teacher* tchpointer=r.internalTeachersList[tch];
+	int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+	for(int d2=0; d2<r.nDaysPerWeek; d2++)
+		for(int h2=0; h2<r.nHoursPerDay; h2++)
+			crtBuildingsTimetable[d2][h2]=-1;
+			
+	foreach(int ai, tchpointer->activitiesForTeacher)
+		if(c.times[ai]!=UNALLOCATED_TIME){
+			int d2=c.times[ai]%r.nDaysPerWeek;
+			int h2=c.times[ai]/r.nDaysPerWeek;
+			
+			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+				assert(h2+dur<r.nHoursPerDay);
+				assert(crtBuildingsTimetable[d2][h2+dur]==-1);
+				if(c.rooms[ai]!=UNSPECIFIED_ROOM && c.rooms[ai]!=UNALLOCATED_SPACE){
+					assert(c.rooms[ai]>=0 && c.rooms[ai]<r.nInternalRooms);
+					crtBuildingsTimetable[d2][h2+dur]=r.internalRoomsList[c.rooms[ai]]->buildingIndex;
 				}
 			}
-/////////////
+		}
+	/////////////
 	
 	for(int d2=0; d2<r.nDaysPerWeek; d2++){
 		int h2;
@@ -5782,7 +5957,7 @@ double ConstraintTeacherMinGapsBetweenBuildingChanges::fitness(
 								.arg(this->teacherName)
 								.arg(r.daysOfTheWeek[d2]);
 							s += ". ";
-							s += tr("This increases the conflicts total by %1").arg(weightPercentage/100*1);
+							s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100*1));
 				
 							dl.append(s);
 							cl.append(weightPercentage/100*1);
@@ -5847,6 +6022,31 @@ bool ConstraintTeacherMinGapsBetweenBuildingChanges::isRelatedToRoom(Room* r)
 	return false;
 }
 
+bool ConstraintTeacherMinGapsBetweenBuildingChanges::hasWrongDayOrHour(Rules& r)
+{
+	if(minGapsBetweenBuildingChanges>r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintTeacherMinGapsBetweenBuildingChanges::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintTeacherMinGapsBetweenBuildingChanges::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(minGapsBetweenBuildingChanges>r.nHoursPerDay)
+		minGapsBetweenBuildingChanges=r.nHoursPerDay;
+
+	return true;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -5863,8 +6063,9 @@ ConstraintTeachersMinGapsBetweenBuildingChanges::ConstraintTeachersMinGapsBetwee
 	this->minGapsBetweenBuildingChanges=mg;
 }
 
-bool ConstraintTeachersMinGapsBetweenBuildingChanges::computeInternalStructure(Rules& r)
+bool ConstraintTeachersMinGapsBetweenBuildingChanges::computeInternalStructure(QWidget* parent, Rules& r)
 {
+	Q_UNUSED(parent);
 	Q_UNUSED(r);
 
 	return true;
@@ -5882,8 +6083,8 @@ QString ConstraintTeachersMinGapsBetweenBuildingChanges::getXmlDescription(Rules
 
 	QString s="<ConstraintTeachersMinGapsBetweenBuildingChanges>\n";
 
-	s+="	<Weight_Percentage>"+QString::number(weightPercentage)+"</Weight_Percentage>\n";
-	s+="	<Min_Gaps_Between_Building_Changes>"+QString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Min_Gaps_Between_Building_Changes>"+CustomFETString::number(this->minGapsBetweenBuildingChanges)+"</Min_Gaps_Between_Building_Changes>\n";
 		
 	s+="</ConstraintTeachersMinGapsBetweenBuildingChanges>\n";
 
@@ -5896,7 +6097,7 @@ QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDescription(Rules& r
 
 	QString s=tr("Teachers min gaps between building changes"); s+=", ";
 
-	s+=tr("WP:%1\%", "Weight percentage").arg(this->weightPercentage);s+=", ";
+	s+=tr("WP:%1\%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	
 	s+=tr("mG:%1", "mG means min gaps").arg(this->minGapsBetweenBuildingChanges);
 
@@ -5911,7 +6112,7 @@ QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDetailedDescription(
 
 	s+=tr("Teachers minimum gaps between building changes"); s+="\n";
 
-	s+=tr("Weight (percentage)=%1\%").arg(this->weightPercentage);s+="\n";
+	s+=tr("Weight (percentage)=%1\%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	s+=tr("Minimum gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
 
@@ -5928,22 +6129,15 @@ double ConstraintTeachersMinGapsBetweenBuildingChanges::fitness(
 	//if the matrix roomsMatrix is already calculated, do not calculate it again!
 	if(!c.roomsMatrixReady){
 		c.roomsMatrixReady=true;
-	//if(crt_chrom!=&c || crt_rules!=&r || rooms_conflicts<0 || c.changedForMatrixCalculation){
 		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
 
-		//c.getSubgroupsBuildingsTimetable(r, subgroupsBuildingsTimetable);
-		//c.getTeachersBuildingsTimetable(r, teachersBuildingsTimetable);
-		 
-		//crt_chrom = &c;
-		//crt_rules = &r;
-		
 		c.changedForMatrixCalculation=false;
 	}
 
 	int nbroken=0;
 	
 	for(int tch=0; tch<r.nInternalTeachers; tch++){
-///////////// Better, less memory
+		//Better, less memory
 		Teacher* tchpointer=r.internalTeachersList[tch];
 		int crtBuildingsTimetable[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
@@ -5964,7 +6158,7 @@ double ConstraintTeachersMinGapsBetweenBuildingChanges::fitness(
 					}
 				}
 			}
-/////////////
+		/////////////
 
 		for(int d2=0; d2<r.nDaysPerWeek; d2++){
 			int h2;
@@ -5991,7 +6185,7 @@ double ConstraintTeachersMinGapsBetweenBuildingChanges::fitness(
 									.arg(r.internalTeachersList[tch]->name)
 									.arg(r.daysOfTheWeek[d2]);
 								s += ". ";
-								s += tr("This increases the conflicts total by %1").arg(weightPercentage/100*1);
+								s += tr("This increases the conflicts total by %1").arg(CustomFETString::number(weightPercentage/100*1));
 					
 								dl.append(s);
 								cl.append(weightPercentage/100*1);
@@ -6057,6 +6251,31 @@ bool ConstraintTeachersMinGapsBetweenBuildingChanges::isRelatedToRoom(Room* r)
 	Q_UNUSED(r);
 	
 	return false;
+}
+
+bool ConstraintTeachersMinGapsBetweenBuildingChanges::hasWrongDayOrHour(Rules& r)
+{
+	if(minGapsBetweenBuildingChanges>r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintTeachersMinGapsBetweenBuildingChanges::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintTeachersMinGapsBetweenBuildingChanges::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(minGapsBetweenBuildingChanges>r.nHoursPerDay)
+		minGapsBetweenBuildingChanges=r.nHoursPerDay;
+
+	return true;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////

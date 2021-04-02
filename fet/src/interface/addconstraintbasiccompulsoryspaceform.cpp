@@ -17,49 +17,31 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintbasiccompulsoryspaceform.h"
 #include "timeconstraint.h"
 
-AddConstraintBasicCompulsorySpaceForm::AddConstraintBasicCompulsorySpaceForm()
+AddConstraintBasicCompulsorySpaceForm::AddConstraintBasicCompulsorySpaceForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 }
 
 AddConstraintBasicCompulsorySpaceForm::~AddConstraintBasicCompulsorySpaceForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintBasicCompulsorySpaceForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-	s+=tr("Basic compulsory space");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1\%").arg(weight);
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void AddConstraintBasicCompulsorySpaceForm::addCurrentConstraint()
@@ -68,7 +50,7 @@ void AddConstraintBasicCompulsorySpaceForm::addCurrentConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
@@ -81,12 +63,7 @@ void AddConstraintBasicCompulsorySpaceForm::addCurrentConstraint()
 		return;
 	}
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
 	ctr=new ConstraintBasicCompulsorySpace(weight);
-	//ctr->compulsory=compulsory;
 
 	bool tmp2=gt.rules.addSpaceConstraint(ctr);
 	if(tmp2)

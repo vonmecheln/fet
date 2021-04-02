@@ -25,12 +25,6 @@
 #include "fet.h"
 #include "timetableexport.h"
 
-#include <QTextEdit>
-
-#include <iostream>
-#include <fstream>
-using namespace std;
-
 #include <ctime>
 
 #include <QMessageBox>
@@ -87,8 +81,6 @@ void GenerateMultipleThread::run()
 		bool impossible;
 		bool timeExceeded;
 		
-		//bool ok=genMulti.precompute(); //here I can speed up, precomputation is only needed to restore permutation of activities
-		//assert(ok);
 		for(int qq=0; qq<gt.rules.nInternalActivities; qq++)
 			permutation[qq]=savedPermutation[qq];
 			
@@ -164,7 +156,7 @@ void GenerateMultipleThread::run()
 			genMulti.c.fitness(gt.rules, &tmp);
 			
 			s=tr("Timetable has %1 soft conflicts factor and was generated in %2 hours, %3 minutes and %4 seconds")
-			 .arg(genMulti.c.conflictsTotal)
+			 .arg(CustomFETString::number(genMulti.c.conflictsTotal))
 			 .arg(hours)
 			 .arg(minutes)
 			 .arg(seconds);
@@ -180,23 +172,21 @@ void GenerateMultipleThread::run()
 	emit(finished());
 }
 
-TimetableGenerateMultipleForm::TimetableGenerateMultipleForm()
+TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	currentResultsTextEdit->setReadOnly(true);
+	
+	startPushButton->setDefault(true);
 
-    connect(startPushButton, SIGNAL(clicked()), this /*TimetableGenerateMultipleForm_template*/, SLOT(start()));
-    connect(stopPushButton, SIGNAL(clicked()), this /*TimetableGenerateMultipleForm_template*/, SLOT(stop()));
-    connect(closePushButton, SIGNAL(clicked()), this /*TimetableGenerateMultipleForm_template*/, SLOT(closePressed()));
-    connect(pushButton4, SIGNAL(clicked()), this /*TimetableGenerateMultipleForm_template*/, SLOT(help()));
+	connect(startPushButton, SIGNAL(clicked()), this, SLOT(start()));
+	connect(stopPushButton, SIGNAL(clicked()), this, SLOT(stop()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(closePressed()));
+	connect(pushButton4, SIGNAL(clicked()), this, SLOT(help()));
 
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	simulation_running_multi=false;
 
@@ -217,37 +207,34 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm()
 
 	connect(&genMulti, SIGNAL(activityPlaced(int)),
 		this, SLOT(activityPlaced(int)));
-
-	//this->setAttribute(Qt::WA_DeleteOnClose);
 }
 
 TimetableGenerateMultipleForm::~TimetableGenerateMultipleForm()
 {
+	saveFETDialogGeometry(this);
 	if(simulation_running_multi)
 		this->stop();
 }
 
 void TimetableGenerateMultipleForm::help()
 {
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 	
 	if(s2.right(4)==".fet")
 		s2=s2.left(s2.length()-4);
-	//else if(INPUT_FILENAME_XML!="")
-	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	
 	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
 
 	QString s=tr("You can only see generated timetables on the hard disk,"
-	 " in html and xml formats and soft conflicts in txt format, or latest timetable in the Timetable/View menu."
+	 " in HTML and XML formats and soft conflicts in text format, or latest timetable in the Timetable/View menu."
 	 " It is needed that the directory"
-	 " %1 to be emptied+deleted before proceeding.").arg(QDir::toNativeSeparators(destDir))
+	 " %1 to be emptied and deleted before proceeding.").arg(QDir::toNativeSeparators(destDir))
 	 +"\n\n"
 	 +tr("Note that, for large data, each timetable might occupy more"
 	 " megabytes of hard disk space,"
 	 " so make sure you have enough space (you can check the dimension of a single timetable as a precaution).")
 	 +"\n\n"
-	 +tr("There are also saved the timetables in .fet format (data + constraints to lock the timetable), so that you can open each of them later")
+	 +tr("There are also saved the timetables in .fet format (data + constraints to lock the timetable), so that you can open each of them later.")
 	 +"\n\n"
 	 +tr("If you get impossible timetable, please enter menu Generate (single) and see the initial order of evaluation of activities,"
 	 " this might help.")
@@ -257,20 +244,6 @@ void TimetableGenerateMultipleForm::help()
 	 ;
 	 
 	 LongTextMessageBox::largeInformation(this, tr("FET information"), s);
-
-/*
-	QMessageBox::information(this, tr("FET information"), tr("Notice: you can only see generated timetables on the hard disk,"
-	 " in html and xml formats and soft conflicts in txt format, or latest timetable in the FET Timetable/View menu."
-	 " It is needed that the directory"
-	 " %1 to be emptied+deleted before proceeding.\n\nPlease note that, for large data, each timetable might occupy more"
-	 " megabytes of hard disk space,"
-	 " so make sure you have enough space (you can check the dimension of a single timetable as a precaution).")
-	 .arg(QDir::toNativeSeparators(destDir))
-	 +"\n\n"
-	 +tr("NEW: There are also saved the timetables in .fet format (data + constraints to lock the timetable), so that you can open each of them later")
-	 +"\n\n"
-	 +tr("If you get impossible timetable, please enter menu Generate (single) and see the initial order of evaluation of activities,"
-	 " this might help."));*/
 }
 
 void TimetableGenerateMultipleForm::start(){
@@ -280,12 +253,10 @@ void TimetableGenerateMultipleForm::start(){
 	assert(timeLimit>0);
 
 	QDir dir;
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 
 	if(s2.right(4)==".fet")
 		s2=s2.left(s2.length()-4);
-	//else if(INPUT_FILENAME_XML!="")
-		//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	
 	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
 	if(dir.exists(destDir)){
@@ -298,7 +269,7 @@ void TimetableGenerateMultipleForm::start(){
 	}
 
 	if(!gt.rules.internalStructureComputed){
-		if(!gt.rules.computeInternalStructure()){
+		if(!gt.rules.computeInternalStructure(this)){
 			QMessageBox::warning(this, TimetableGenerateMultipleForm::tr("FET warning"), TimetableGenerateMultipleForm::tr("Data is wrong. Please correct and try again"));
 			return;
 		}
@@ -312,17 +283,15 @@ void TimetableGenerateMultipleForm::start(){
 		return;
 	}
 
-	currentResultsTextEdit->setText("");
-	//currentResultsTextEdit->repaint();
+	currentResultsTextEdit->setPlainText("");
 
-	bool ok=genMulti.precompute();
+	bool ok=genMulti.precompute(this);
 	if(!ok){
-		currentResultsTextEdit->setText(TimetableGenerateMultipleForm::tr("Cannot optimize - please modify your data"));
+		currentResultsTextEdit->setPlainText(TimetableGenerateMultipleForm::tr("Cannot optimize - please modify your data"));
 		currentResultsTextEdit->update();
 
 		QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"),
-		 TimetableGenerateMultipleForm::tr("Your data cannot be processed - please modify it as instructed"
-		 "\nFor more information you can join the mailing list or write to author"));
+		 TimetableGenerateMultipleForm::tr("Your data cannot be processed - please modify it as instructed."));
 
 		return;
 	}
@@ -345,39 +314,34 @@ void TimetableGenerateMultipleForm::start(){
 
 void TimetableGenerateMultipleForm::timetableStarted(int timetable)
 {
-	TimetableExport::writeRandomSeed(timetable);
+	TimetableExport::writeRandomSeed(this, timetable);
 	
 	semaphoreTimetableStarted.release();
 }
 
 void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QString& description, bool ok)
 {
-	int pv=currentResultsTextEdit->verticalScrollBar()->value();
-	QString s=currentResultsTextEdit->text();
+	QString s=QString("");
 	s+=tr("Timetable no: %1 => %2").arg(timetable).arg(description);
-	s+="\n";
-	currentResultsTextEdit->setText(s);
-	currentResultsTextEdit->verticalScrollBar()->setValue(pv);
+	currentResultsTextEdit->appendPlainText(s);
 
 	if(ok){
 		//needed to get the conflicts string
 		QString tmp;
-		//cout<<"tmp=="<<qPrintable(tmp)<<endl;
-		//cout<<"&tmp=="<<&tmp<<endl;
 		genMulti.c.fitness(gt.rules, &tmp);
 	
 		TimetableExport::getStudentsTimetable(genMulti.c);
 		TimetableExport::getTeachersTimetable(genMulti.c);
 		TimetableExport::getRoomsTimetable(genMulti.c);
 
-		TimetableExport::writeSimulationResults(timetable);
+		TimetableExport::writeSimulationResults(this, timetable);
 
 		//update the string representing the conflicts
 		conflictsStringTitle=tr("Soft conflicts", "Title of dialog");
 		conflictsString = "";
 		conflictsString+=tr("Total soft conflicts:");
 		conflictsString+=" ";
-		conflictsString+=QString::number(best_solution.conflictsTotal);
+		conflictsString+=CustomFETString::number(best_solution.conflictsTotal);
 		conflictsString+="\n";
 		conflictsString += tr("Soft conflicts listing (in decreasing order):")+"\n";
 
@@ -391,10 +355,6 @@ void TimetableGenerateMultipleForm::timetableGenerated(int timetable, const QStr
 void TimetableGenerateMultipleForm::stop()
 {
 	if(!simulation_running_multi){
-		/*QMessageBox::critical(this, TimetableGenerateMultipleForm::tr("FET information"),
-		 TimetableGenerateMultipleForm::tr("Simulation stopped but the simulation is not running."
-		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));*/
-
 		return;
 	}
 
@@ -404,15 +364,13 @@ void TimetableGenerateMultipleForm::stop()
 	genMulti.abortOptimization=true;
 	mutex.unlock();
 
-	QString s=TimetableGenerateMultipleForm::tr("Simulation interrupted.");
-	s+=" ";
+	QString s=TimetableGenerateMultipleForm::tr("Simulation interrupted!");
+	s+="\n\n";
 
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 
 	if(s2.right(4)==".fet")
 		s2=s2.left(s2.length()-4);
-	//else if(INPUT_FILENAME_XML!="")
-		//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	
 	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
 
@@ -424,13 +382,10 @@ void TimetableGenerateMultipleForm::stop()
 	int m=sec/60;
 	sec%=60;
 
-	s+=TimetableGenerateMultipleForm::tr("The results for the generated timetables are saved in the directory %1 in html and xml mode"
-	 " and the soft conflicts in txt mode").arg(QDir::toNativeSeparators(destDir));
-	 
-	s+="\n\n"+tr("The data+timetables are also saved as .fet files (data+constraints to lock the timetable), so you can open-modify-regenerate the same timetables after that");
-	 
-	s+="\n\n"+tr("Total searching time was %1h %2m %3s").arg(h).arg(m).arg(sec);
-	 
+	s+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1").arg(QDir::toNativeSeparators(destDir));
+	s+="\n\n";
+	s+=tr("Total searching time: %1h %2m %3s").arg(h).arg(m).arg(sec);
+	
 	QMessageBox::information(this, tr("FET information"), s);
 
 	startPushButton->setEnabled(TRUE);
@@ -448,21 +403,15 @@ void TimetableGenerateMultipleForm::finished()
 void TimetableGenerateMultipleForm::simulationFinished()
 {
 	if(!simulation_running_multi){
-		/*QMessageBox::critical(this, TimetableGenerateMultipleForm::tr("FET information"),
-		 TimetableGenerateMultipleForm::tr("Simulation finished but the simulation is not running."
-		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));*/
-
 		return;
 	}
 
 	simulation_running_multi=false;
 
-	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1);
+	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 
 	if(s2.right(4)==".fet")
 		s2=s2.left(s2.length()-4);
-	//else if(INPUT_FILENAME_XML!="")
-		//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	
 	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
 	
@@ -474,12 +423,14 @@ void TimetableGenerateMultipleForm::simulationFinished()
 	int m=s/60;
 	s%=60;
 
-	QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"),
-		TimetableGenerateMultipleForm::tr("Simulation terminated successfully. The results are saved in directory %1 in html"
-		" and xml mode and the soft conflicts in txt mode.").arg(QDir::toNativeSeparators(destDir))+"\n\n"
-		+tr("The data+timetables are also saved as .fet files (data+constraints to lock the timetable), so you can open-modify-regenerate the same timetables after that")
-		+"\n\n"+tr("Total searching time was %1h %2m %3s").arg(h).arg(m).arg(s));
-
+	QString ms=QString("");
+	ms+=TimetableGenerateMultipleForm::tr("Simulation terminated successfully!");
+	ms+=QString("\n\n");
+	ms+=TimetableGenerateMultipleForm::tr("The results were saved in the directory %1").arg(QDir::toNativeSeparators(destDir));
+	ms+=QString("\n\n");
+	ms+=TimetableGenerateMultipleForm::tr("Total searching time was %1h %2m %3s").arg(h).arg(m).arg(s);
+	QMessageBox::information(this, TimetableGenerateMultipleForm::tr("FET information"), ms);
+	
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
 	minutesGroupBox->setEnabled(TRUE);

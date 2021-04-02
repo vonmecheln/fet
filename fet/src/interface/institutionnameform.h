@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef INSTITUTIONNAMEFORM_H
 #define INSTITUTIONNAMEFORM_H
@@ -26,7 +24,7 @@ class InstitutionNameForm : public QDialog, Ui::InstitutionNameForm_template
 {
 	Q_OBJECT
 public:
-	InstitutionNameForm();
+	InstitutionNameForm(QWidget* parent);
 
 	~InstitutionNameForm();
 

@@ -19,21 +19,17 @@
 
 #include <QMessageBox>
 
-ModifyBuildingForm::ModifyBuildingForm(const QString& initialBuildingName)
+ModifyBuildingForm::ModifyBuildingForm(QWidget* parent, const QString& initialBuildingName): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	okPushButton->setDefault(true);
 
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyBuildingForm_template*/, SLOT(ok()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyBuildingForm_template*/, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	this->_initialBuildingName=initialBuildingName;
 
@@ -44,6 +40,7 @@ ModifyBuildingForm::ModifyBuildingForm(const QString& initialBuildingName)
 
 ModifyBuildingForm::~ModifyBuildingForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyBuildingForm::cancel()

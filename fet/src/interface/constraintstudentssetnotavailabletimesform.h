@@ -28,7 +28,7 @@ class ConstraintStudentsSetNotAvailableTimesForm : public QDialog, Ui::Constrain
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintStudentsSetNotAvailableTimesForm();
+	ConstraintStudentsSetNotAvailableTimesForm(QWidget* parent);
 	~ConstraintStudentsSetNotAvailableTimesForm();
 
 	bool filterOk(TimeConstraint* ctr);

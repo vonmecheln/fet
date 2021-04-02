@@ -29,7 +29,7 @@ class ModifyBuildingForm : public QDialog, Ui::ModifyBuildingForm_template {
 	
 	QString _initialBuildingName;
 public: 
-	ModifyBuildingForm(const QString& initialBuildingName);
+	ModifyBuildingForm(QWidget* parent, const QString& initialBuildingName);
 	~ModifyBuildingForm();
 
 public slots:

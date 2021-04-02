@@ -23,31 +23,34 @@
 #include "addconstraintbasiccompulsoryspaceform.h"
 #include "modifyconstraintbasiccompulsoryspaceform.h"
 
-ConstraintBasicCompulsorySpaceForm::ConstraintBasicCompulsorySpaceForm()
+#include <QListWidget>
+#include <QScrollBar>
+#include <QAbstractItemView>
+
+ConstraintBasicCompulsorySpaceForm::ConstraintBasicCompulsorySpaceForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(constraintsListBox, SIGNAL(highlighted(int)), this /*ConstraintBasicCompulsorySpaceForm_template*/, SLOT(constraintChanged(int)));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*ConstraintBasicCompulsorySpaceForm_template*/, SLOT(addConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*ConstraintBasicCompulsorySpaceForm_template*/, SLOT(close()));
-    connect(removeConstraintPushButton, SIGNAL(clicked()), this /*ConstraintBasicCompulsorySpaceForm_template*/, SLOT(removeConstraint()));
-    connect(modifyConstraintPushButton, SIGNAL(clicked()), this /*ConstraintBasicCompulsorySpaceForm_template*/, SLOT(modifyConstraint()));
-    connect(constraintsListBox, SIGNAL(selected(QString)), this /*ConstraintBasicCompulsorySpaceForm_template*/, SLOT(modifyConstraint()));
+	currentConstraintTextEdit->setReadOnly(true);
+	
+	modifyConstraintPushButton->setDefault(true);
 
+	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
+	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	this->filterChanged();
 }
 
 ConstraintBasicCompulsorySpaceForm::~ConstraintBasicCompulsorySpaceForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 bool ConstraintBasicCompulsorySpaceForm::filterOk(SpaceConstraint* ctr)
@@ -61,60 +64,77 @@ bool ConstraintBasicCompulsorySpaceForm::filterOk(SpaceConstraint* ctr)
 void ConstraintBasicCompulsorySpaceForm::filterChanged()
 {
 	this->visibleConstraintsList.clear();
-	constraintsListBox->clear();
+	constraintsListWidget->clear();
 	for(int i=0; i<gt.rules.spaceConstraintsList.size(); i++){
 		SpaceConstraint* ctr=gt.rules.spaceConstraintsList[i];
 		if(filterOk(ctr)){
 			visibleConstraintsList.append(ctr);
-			constraintsListBox->insertItem(ctr->getDescription(gt.rules));
+			constraintsListWidget->addItem(ctr->getDescription(gt.rules));
 		}
 	}
 	
-	constraintsListBox->setCurrentItem(0);
-	this->constraintChanged(constraintsListBox->currentItem());
+	if(constraintsListWidget->count()>0)
+		constraintsListWidget->setCurrentRow(0);
+	else
+		this->constraintChanged(-1);
 }
 
 void ConstraintBasicCompulsorySpaceForm::constraintChanged(int index)
 {
 	if(index<0){
-		currentConstraintTextEdit->setText("");
+		currentConstraintTextEdit->setPlainText("");
 		return;
 	}
 	assert(index<this->visibleConstraintsList.size());
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(index);
 	assert(ctr!=NULL);
-	currentConstraintTextEdit->setText(ctr->getDetailedDescription(gt.rules));
+	currentConstraintTextEdit->setPlainText(ctr->getDetailedDescription(gt.rules));
 }
 
 void ConstraintBasicCompulsorySpaceForm::addConstraint()
 {
-	AddConstraintBasicCompulsorySpaceForm form;
+	AddConstraintBasicCompulsorySpaceForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
 	filterChanged();
 	
-	constraintsListBox->setCurrentItem(constraintsListBox->count()-1);
+	constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
 }
 
 void ConstraintBasicCompulsorySpaceForm::modifyConstraint()
 {
-	int i=constraintsListBox->currentItem();
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
+
+	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
 	}
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintBasicCompulsorySpaceForm form((ConstraintBasicCompulsorySpace*)ctr);
+	ModifyConstraintBasicCompulsorySpaceForm form(this, (ConstraintBasicCompulsorySpace*)ctr);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
 	filterChanged();
-	constraintsListBox->setCurrentItem(i);
+
+	constraintsListWidget->verticalScrollBar()->setValue(valv);
+	constraintsListWidget->horizontalScrollBar()->setValue(valh);
+
+	if(i>=constraintsListWidget->count())
+		i=constraintsListWidget->count()-1;
+
+	if(i>=0)
+		constraintsListWidget->setCurrentRow(i);
+	else
+		this->constraintChanged(-1);
 }
 
 void ConstraintBasicCompulsorySpaceForm::removeConstraint()
 {
-	int i=constraintsListBox->currentItem();
+	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
@@ -124,13 +144,14 @@ void ConstraintBasicCompulsorySpaceForm::removeConstraint()
 	s=tr("Remove constraint?");
 	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	//s+=tr("\nAre you sure?");
+	
+	QListWidgetItem* item;
 
 	int lres=LongTextMessageBox::confirmation( this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), 0, 0, 1 );
 		
 	if(lres==0){
-		// The user clicked the OK button or pressed Enter
+		//The user clicked the OK button or pressed Enter
 		
 		assert(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE);
 		
@@ -146,14 +167,21 @@ void ConstraintBasicCompulsorySpaceForm::removeConstraint()
 		
 		if(wr==QMessageBox::Yes){
 			gt.rules.removeSpaceConstraint(ctr);
-			filterChanged();
+
+			visibleConstraintsList.removeAt(i);
+			constraintsListWidget->setCurrentRow(-1);
+			item=constraintsListWidget->takeItem(i);
+			delete item;
 		}
 	}
 	//else if(lres==1){
-		// The user clicked the Cancel or pressed Escape
+		//The user clicked the Cancel button or pressed Escape
 	//}
 	
-	if((uint)(i) >= constraintsListBox->count())
-		i=constraintsListBox->count()-1;
-	constraintsListBox->setCurrentItem(i);
+	if(i>=constraintsListWidget->count())
+		i=constraintsListWidget->count()-1;
+	if(i>=0)
+		constraintsListWidget->setCurrentRow(i);
+	else
+		this->constraintChanged(-1);
 }

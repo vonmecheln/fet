@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>823</width>
-    <height>588</height>
+    <height>663</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -85,7 +85,7 @@
          <string>Level 5 - JavaScript
 - all features of level 4 with around 3.5 times larger filesize than level 2
 - highlighting of same subjects, activity tags, teachers, students sets and rooms
-  (needs JavaScript - just move mouse over a word and wait a little bit)</string>
+(needs JavaScript - just move mouse over a word and wait a little bit)</string>
         </property>
        </widget>
       </item>
@@ -141,16 +141,6 @@
    </item>
   </layout>
  </widget>
- <tabstops>
-  <tabstop>level0RadioButton</tabstop>
-  <tabstop>level1RadioButton</tabstop>
-  <tabstop>level2RadioButton</tabstop>
-  <tabstop>level3RadioButton</tabstop>
-  <tabstop>level4RadioButton</tabstop>
-  <tabstop>level5RadioButton</tabstop>
-  <tabstop>okPushButton</tabstop>
-  <tabstop>cancelPushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

@@ -27,7 +27,7 @@ class AddConstraintActivitiesPreferredTimeSlotsForm : public QDialog, Ui::AddCon
 	Q_OBJECT
 
 public:
-	AddConstraintActivitiesPreferredTimeSlotsForm();
+	AddConstraintActivitiesPreferredTimeSlotsForm(QWidget* parent);
 	~AddConstraintActivitiesPreferredTimeSlotsForm();
 
 	void updateTeachersComboBox();

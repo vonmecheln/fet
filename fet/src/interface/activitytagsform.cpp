@@ -14,14 +14,11 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
 #include "activitytagsform.h"
-//#include "fetmainform.h"
 #include "studentsset.h"
 #include "teacher.h"
 #include "subject.h"
@@ -31,53 +28,70 @@
 
 #include <QMessageBox>
 
-ActivityTagsForm::ActivityTagsForm()
- : ActivityTagsForm_template()
+#include <QListWidget>
+#include <QAbstractItemView>
+
+#include <QSplitter>
+#include <QSettings>
+#include <QObject>
+#include <QMetaObject>
+
+extern const QString COMPANY;
+extern const QString PROGRAM;
+
+ActivityTagsForm::ActivityTagsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	currentActivityTagTextEdit->setReadOnly(true);
 
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-    connect(addActivityTagPushButton, SIGNAL(clicked()), this, SLOT(addActivityTag()));
-    connect(removeActivityTagPushButton, SIGNAL(clicked()), this, SLOT(removeActivityTag()));
-    connect(renameActivityTagPushButton, SIGNAL(clicked()), this, SLOT(renameActivityTag()));
-    connect(sortActivityTagsPushButton, SIGNAL(clicked()), this, SLOT(sortActivityTags()));
-    connect(activityTagsListBox, SIGNAL(highlighted(int)), this, SLOT(activityTagChanged(int)));
-    connect(activateActivityTagPushButton, SIGNAL(clicked()), this, SLOT(activateActivityTag()));
-    connect(deactivateActivityTagPushButton, SIGNAL(clicked()), this, SLOT(deactivateActivityTag()));
-    connect(activityTagsListBox, SIGNAL(selected(QString)), this, SLOT(renameActivityTag()));
-    connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	renameActivityTagPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	activityTagsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addActivityTagPushButton, SIGNAL(clicked()), this, SLOT(addActivityTag()));
+	connect(removeActivityTagPushButton, SIGNAL(clicked()), this, SLOT(removeActivityTag()));
+	connect(renameActivityTagPushButton, SIGNAL(clicked()), this, SLOT(renameActivityTag()));
+	connect(sortActivityTagsPushButton, SIGNAL(clicked()), this, SLOT(sortActivityTags()));
+	connect(activityTagsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(activityTagChanged(int)));
+	connect(activateActivityTagPushButton, SIGNAL(clicked()), this, SLOT(activateActivityTag()));
+	connect(deactivateActivityTagPushButton, SIGNAL(clicked()), this, SLOT(deactivateActivityTag()));
+	connect(activityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(renameActivityTag()));
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+	//restore splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
+		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
 		
-	activityTagsListBox->clear();
+	activityTagsListWidget->clear();
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* sbt=gt.rules.activityTagsList[i];
-		activityTagsListBox->insertItem(sbt->name);
+		activityTagsListWidget->addItem(sbt->name);
 	}
 		
-	if(activityTagsListBox->count()>0){
-		activityTagsListBox->setCurrentItem(0);
-		this->activityTagChanged(0);
-	}
+	if(activityTagsListWidget->count()>0)
+		activityTagsListWidget->setCurrentRow(0);
 }
 
 
 ActivityTagsForm::~ActivityTagsForm()
 {
+	saveFETDialogGeometry(this);
+	//save splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
 }
 
 void ActivityTagsForm::addActivityTag()
 {
 	bool ok = FALSE;
 	ActivityTag* sbt=new ActivityTag();
-	sbt->name = QInputDialog::getText( tr("User input"), tr("Please enter activity tag's name") ,
-                    QLineEdit::Normal, QString::null, &ok, this );
+	sbt->name = QInputDialog::getText( this, tr("Add activity tag"), tr("Please enter activity tag's name") ,
+	 QLineEdit::Normal, QString(), &ok );
 
 	if ( ok && !((sbt->name).isEmpty()) ){
 		// user entered something and pressed OK
@@ -87,24 +101,27 @@ void ActivityTagsForm::addActivityTag()
 			delete sbt;
 		}
 		else{
-			activityTagsListBox->insertItem(sbt->name);
-			activityTagsListBox->setCurrentItem(activityTagsListBox->count()-1);
-			this->activityTagChanged(activityTagsListBox->count()-1);
+			activityTagsListWidget->addItem(sbt->name);
+			activityTagsListWidget->setCurrentRow(activityTagsListWidget->count()-1);
 		}
 	}
-	else
+	else{
+		if(ok){ //the user entered nothing
+			QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
+		}
 		delete sbt;// user entered nothing or pressed Cancel
+	}
 }
 
 void ActivityTagsForm::removeActivityTag()
 {
-	int i=activityTagsListBox->currentItem();
-	if(activityTagsListBox->currentItem()<0){
+	int i=activityTagsListWidget->currentRow();
+	if(activityTagsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity tag"));
 		return;
 	}
 
-	QString text=activityTagsListBox->currentText();
+	QString text=activityTagsListWidget->currentItem()->text();
 	int activity_tag_ID=gt.rules.searchActivityTag(text);
 	if(activity_tag_ID<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity tag"));
@@ -118,23 +135,29 @@ void ActivityTagsForm::removeActivityTag()
 
 	int tmp=gt.rules.removeActivityTag(text);
 	if(tmp){
-		activityTagsListBox->removeItem(activityTagsListBox->currentItem());
-		if((uint)(i)>=activityTagsListBox->count())
-			i=activityTagsListBox->count()-1;
-		activityTagsListBox->setCurrentItem(i);
-		this->activityTagChanged(i);
+		activityTagsListWidget->setCurrentRow(-1);
+		QListWidgetItem* item;
+		item=activityTagsListWidget->takeItem(i);
+		delete item;
+		
+		if(i>=activityTagsListWidget->count())
+			i=activityTagsListWidget->count()-1;
+		if(i>=0)
+			activityTagsListWidget->setCurrentRow(i);
+		else
+			currentActivityTagTextEdit->setPlainText(QString(""));
 	}
 }
 
 void ActivityTagsForm::renameActivityTag()
 {
-	int i=activityTagsListBox->currentItem();
-	if(activityTagsListBox->currentItem()<0){
+	int i=activityTagsListWidget->currentRow();
+	if(activityTagsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity tag"));
 		return;
 	}
 	
-	QString initialActivityTagName=activityTagsListBox->currentText();
+	QString initialActivityTagName=activityTagsListWidget->currentItem()->text();
 
 	int activity_tag_ID=gt.rules.searchActivityTag(initialActivityTagName);
 	if(activity_tag_ID<0){
@@ -144,8 +167,8 @@ void ActivityTagsForm::renameActivityTag()
 
 	bool ok = FALSE;
 	QString finalActivityTagName;
-	finalActivityTagName = QInputDialog::getText( tr("User input"), tr("Please enter new activity tag's name") ,
-                    QLineEdit::Normal, initialActivityTagName, &ok, this );
+	finalActivityTagName = QInputDialog::getText( this, tr("Rename activity tag"), tr("Please enter new activity tag's name") ,
+	 QLineEdit::Normal, initialActivityTagName, &ok );
 
 	if ( ok && !(finalActivityTagName.isEmpty()) ){
 		// user entered something and pressed OK
@@ -155,7 +178,8 @@ void ActivityTagsForm::renameActivityTag()
 		}
 		else{
 			gt.rules.modifyActivityTag(initialActivityTagName, finalActivityTagName);
-			activityTagsListBox->changeItem(finalActivityTagName, i);
+			activityTagsListWidget->item(i)->setText(finalActivityTagName);
+			activityTagChanged(activityTagsListWidget->currentRow());
 		}
 	}
 }
@@ -164,47 +188,49 @@ void ActivityTagsForm::sortActivityTags()
 {
 	gt.rules.sortActivityTagsAlphabetically();
 
-	activityTagsListBox->clear();
+	activityTagsListWidget->clear();
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* sbt=gt.rules.activityTagsList[i];
-		activityTagsListBox->insertItem(sbt->name);
+		activityTagsListWidget->addItem(sbt->name);
 	}
+
+	if(activityTagsListWidget->count()>0)
+		activityTagsListWidget->setCurrentRow(0);
 }
 
 void ActivityTagsForm::activityTagChanged(int index)
 {
 	if(index<0){
-		//currentActivityTagTextEdit->setText(tr("Invalid activity tag"));
-		currentActivityTagTextEdit->setText("");
+		currentActivityTagTextEdit->setPlainText(QString(""));
 		return;
 	}
 	
 	ActivityTag* st=gt.rules.activityTagsList.at(index);
 	assert(st);
 	QString s=st->getDetailedDescriptionWithConstraints(gt.rules);
-	currentActivityTagTextEdit->setText(s);
+	currentActivityTagTextEdit->setPlainText(s);
 }
 
 void ActivityTagsForm::activateActivityTag()
 {
-	if(activityTagsListBox->currentItem()<0){
+	if(activityTagsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity tag"));
 		return;
 	}
 
-	QString text=activityTagsListBox->currentText();
+	QString text=activityTagsListWidget->currentItem()->text();
 	int count=gt.rules.activateActivityTag(text);
 	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
 }
 
 void ActivityTagsForm::deactivateActivityTag()
 {
-	if(activityTagsListBox->currentItem()<0){
+	if(activityTagsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity tag"));
 		return;
 	}
 
-	QString text=activityTagsListBox->currentText();
+	QString text=activityTagsListWidget->currentItem()->text();
 	int count=gt.rules.deactivateActivityTag(text);
 	QMessageBox::information(this, tr("FET information"), tr("De-activated a number of %1 activities").arg(count));
 }

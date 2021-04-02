@@ -24,7 +24,7 @@ class HelpOnImperfectConstraints{
 	Q_DECLARE_TR_FUNCTIONS(HelpOnImperfectConstraints);
 	
 public:
-	static void help();
+	static void help(QWidget* parent);
 };
 
 #endif

@@ -18,6 +18,8 @@
 #ifndef SPLITYEARFORM_H
 #define SPLITYEARFORM_H
 
+#include <QString>
+
 #include "ui_splityearform_template.h"
 
 #include "timetable_defs.h"
@@ -27,12 +29,48 @@
 class SplitYearForm : public QDialog, Ui::SplitYearForm_template  {
 	Q_OBJECT
 
+private:
+	QString _sep;
+
+	int _nCategories;
+	
+	int _nDiv1;
+	int _nDiv2;
+	int _nDiv3;
+	
+	QString _cat1div1;
+	QString _cat1div2;
+	QString _cat1div3;
+	QString _cat1div4;
+	QString _cat1div5;
+	QString _cat1div6;
+	QString _cat1div7;
+	QString _cat1div8;
+	QString _cat1div9;
+	QString _cat1div10;
+	QString _cat1div11;
+	QString _cat1div12;
+
+	QString _cat2div1;
+	QString _cat2div2;
+	QString _cat2div3;
+	QString _cat2div4;
+	QString _cat2div5;
+	QString _cat2div6;
+
+	QString _cat3div1;
+	QString _cat3div2;
+	QString _cat3div3;
+	QString _cat3div4;
+	QString _cat3div5;
+	QString _cat3div6;
+	
 public:
 	QString year;
 	
-	SplitYearForm(const QString year);
+	SplitYearForm(QWidget* parent, const QString year);
 	~SplitYearForm();
-
+	
 public slots:
 	void ok();
 	void numberOfCategoriesChanged();

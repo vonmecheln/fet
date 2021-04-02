@@ -27,7 +27,7 @@ class AddConstraintActivitiesPreferredStartingTimesForm : public QDialog, Ui::Ad
 	Q_OBJECT
 
 public:
-	AddConstraintActivitiesPreferredStartingTimesForm();
+	AddConstraintActivitiesPreferredStartingTimesForm(QWidget* parent);
 	~AddConstraintActivitiesPreferredStartingTimesForm();
 
 	void updateTeachersComboBox();

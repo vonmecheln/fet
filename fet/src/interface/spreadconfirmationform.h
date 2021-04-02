@@ -14,21 +14,24 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef SPREAD_CONFIRMATION_FORM_H
 #define SPREAD_CONFIRMATION_FORM_H
 
 #include "ui_spreadconfirmationform_template.h"
 
-class SpreadConfirmationForm:public QDialog, Ui::SpreadConfirmationForm_template
+class SpreadConfirmationForm: public QDialog, Ui::SpreadConfirmationForm_template
 {
 	Q_OBJECT
 
 public:
-	SpreadConfirmationForm();
+	bool dontShowAgain;
+	
+	SpreadConfirmationForm(QWidget* parent);
 	~SpreadConfirmationForm();
+
+public slots:
+	void dontShowAgainCheckBoxToggled();
 };
 
 #endif

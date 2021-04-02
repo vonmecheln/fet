@@ -17,41 +17,40 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
+
 
 #include "modifyconstraintsubjectpreferredroomsform.h"
-#include "spaceconstraint.h"
 
-ModifyConstraintSubjectPreferredRoomsForm::ModifyConstraintSubjectPreferredRoomsForm(ConstraintSubjectPreferredRooms* ctr)
+#include <QListWidget>
+#include <QAbstractItemView>
+
+ModifyConstraintSubjectPreferredRoomsForm::ModifyConstraintSubjectPreferredRoomsForm(QWidget* parent, ConstraintSubjectPreferredRooms* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(addPushButton, SIGNAL(clicked()), this /*ModifyConstraintSubjectPreferredRoomsForm_template*/, SLOT(addRoom()));
-//    connect(removePushButton, SIGNAL(clicked()), this /*ModifyConstraintSubjectPreferredRoomsForm_template*/, SLOT(removeRoom()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintSubjectPreferredRoomsForm_template*/, SLOT(cancel()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintSubjectPreferredRoomsForm_template*/, SLOT(ok()));
-    connect(roomsListBox, SIGNAL(selected(QString)), this /*ModifyConstraintSubjectPreferredRoomsForm_template*/, SLOT(addRoom()));
-    connect(selectedRoomsListBox, SIGNAL(selected(QString)), this /*ModifyConstraintSubjectPreferredRoomsForm_template*/, SLOT(removeRoom()));
+	okPushButton->setDefault(true);
 
-    connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	roomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	selectedRoomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(roomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addRoom()));
+	connect(selectedRoomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeRoom()));
+	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp3=subjectsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp3);
 	
-	updateRoomsListBox();
+	updateRoomsListWidget();
 	
 	int i=0, j=-1;
 	for(int k=0; k<gt.rules.subjectsList.size(); k++){
 		Subject* sb=gt.rules.subjectsList[k];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 		if(ctr->subjectName==sb->name){
 			assert(j==-1);
 			j=i;
@@ -59,29 +58,29 @@ ModifyConstraintSubjectPreferredRoomsForm::ModifyConstraintSubjectPreferredRooms
 		i++;
 	}
 	assert(j>=0);
-	subjectsComboBox->setCurrentItem(j);
+	subjectsComboBox->setCurrentIndex(j);
 	
 	this->_ctr=ctr;
 	
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
-	//compulsoryCheckBox->setChecked(ctr->compulsory);
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 	
 	for(QStringList::Iterator it=ctr->roomsNames.begin(); it!=ctr->roomsNames.end(); it++)
-		selectedRoomsListBox->insertItem(*it);
+		selectedRoomsListWidget->addItem(*it);
 }
 
 ModifyConstraintSubjectPreferredRoomsForm::~ModifyConstraintSubjectPreferredRoomsForm()
 {
+	saveFETDialogGeometry(this);
 }
 
-void ModifyConstraintSubjectPreferredRoomsForm::updateRoomsListBox()
+void ModifyConstraintSubjectPreferredRoomsForm::updateRoomsListWidget()
 {
-	roomsListBox->clear();
-	selectedRoomsListBox->clear();
+	roomsListWidget->clear();
+	selectedRoomsListWidget->clear();
 
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* rm=gt.rules.roomsList[i];
-		roomsListBox->insertItem(rm->name);
+		roomsListWidget->addItem(rm->name);
 	}
 }
 
@@ -89,29 +88,25 @@ void ModifyConstraintSubjectPreferredRoomsForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
 		return;
 	}
 
-/*	bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
-	if(selectedRoomsListBox->count()==0){
+	if(selectedRoomsListWidget->count()==0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Empty list of selected rooms"));
 		return;
 	}
-	if(selectedRoomsListBox->count()==1){
+	if(selectedRoomsListWidget->count()==1){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Only one selected room - please use constraint subject preferred room if you want a single room"));
 		return;
 	}
 	
-	if(subjectsComboBox->currentItem()<0){
+	if(subjectsComboBox->currentIndex()<0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid selected subject"));
 		return;
@@ -119,15 +114,15 @@ void ModifyConstraintSubjectPreferredRoomsForm::ok()
 	QString subject=subjectsComboBox->currentText();
 	
 	QStringList roomsList;
-	for(uint i=0; i<selectedRoomsListBox->count(); i++)
-		roomsList.append(selectedRoomsListBox->text(i));
+	for(int i=0; i<selectedRoomsListWidget->count(); i++)
+		roomsList.append(selectedRoomsListWidget->item(i)->text());
 	
 	this->_ctr->weightPercentage=weight;
-//	this->_ctr->compulsory=compulsory;
 	this->_ctr->subjectName=subject;
 	this->_ctr->roomsNames=roomsList;
 	
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }
@@ -139,28 +134,37 @@ void ModifyConstraintSubjectPreferredRoomsForm::cancel()
 
 void ModifyConstraintSubjectPreferredRoomsForm::addRoom()
 {
-	if(roomsListBox->currentItem()<0)
+	if(roomsListWidget->currentRow()<0)
 		return;
-	QString rmName=roomsListBox->currentText();
+	QString rmName=roomsListWidget->currentItem()->text();
 	assert(rmName!="");
-	uint i;
+	int i;
 	//duplicate?
-	for(i=0; i<selectedRoomsListBox->count(); i++)
-		if(rmName==selectedRoomsListBox->text(i))
+	for(i=0; i<selectedRoomsListWidget->count(); i++)
+		if(rmName==selectedRoomsListWidget->item(i)->text())
 			break;
-	if(i<selectedRoomsListBox->count())
+	if(i<selectedRoomsListWidget->count())
 		return;
-	selectedRoomsListBox->insertItem(rmName);
+	selectedRoomsListWidget->addItem(rmName);
+	selectedRoomsListWidget->setCurrentRow(selectedRoomsListWidget->count()-1);
 }
 
 void ModifyConstraintSubjectPreferredRoomsForm::removeRoom()
 {
-	if(selectedRoomsListBox->currentItem()<0 || selectedRoomsListBox->count()<=0)
-		return;		
-	selectedRoomsListBox->removeItem(selectedRoomsListBox->currentItem());
+	if(selectedRoomsListWidget->currentRow()<0 || selectedRoomsListWidget->count()<=0)
+		return;
+	int tmp=selectedRoomsListWidget->currentRow();
+
+	selectedRoomsListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=selectedRoomsListWidget->takeItem(tmp);
+	delete item;
+	if(tmp<selectedRoomsListWidget->count())
+		selectedRoomsListWidget->setCurrentRow(tmp);
+	else
+		selectedRoomsListWidget->setCurrentRow(selectedRoomsListWidget->count()-1);
 }
 
 void ModifyConstraintSubjectPreferredRoomsForm::clear()
 {
-	selectedRoomsListBox->clear();
+	selectedRoomsListWidget->clear();
 }

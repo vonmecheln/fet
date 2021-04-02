@@ -19,33 +19,31 @@
 
 #include <QMessageBox>
 
-AddStudentsGroupForm::AddStudentsGroupForm(const QString& yearName)
+AddStudentsGroupForm::AddStudentsGroupForm(QWidget* parent, const QString& yearName): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	addStudentsGroupPushButton->setDefault(true);
 
-    connect(addStudentsYearPushButton, SIGNAL(clicked()), this /*addStudentsGroupForm_template*/, SLOT(addStudentsGroup()));
-    connect(closePushButton, SIGNAL(clicked()), this/*addStudentsGroupForm_template*/, SLOT(close()));
+	connect(addStudentsGroupPushButton, SIGNAL(clicked()), this, SLOT(addStudentsGroup()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 		
 	yearNameLineEdit->setText(yearName);
 
 	nameLineEdit->selectAll();
 	nameLineEdit->setFocus();
 	
-	numberSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
-	numberSpinBox->setMinValue(0);
+	numberSpinBox->setMaximum(MAX_ROOM_CAPACITY);
+	numberSpinBox->setMinimum(0);
 	numberSpinBox->setValue(0);
 }
 
 AddStudentsGroupForm::~AddStudentsGroupForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddStudentsGroupForm::addStudentsGroup()

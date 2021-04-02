@@ -17,31 +17,22 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintteachermaxhoursdailyform.h"
 #include "timeconstraint.h"
 
-AddConstraintTeacherMaxHoursDailyForm::AddConstraintTeacherMaxHoursDailyForm()
+AddConstraintTeacherMaxHoursDailyForm::AddConstraintTeacherMaxHoursDailyForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintTeacherMaxHoursDailyForm_template*/, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintTeacherMaxHoursDailyForm_template*/, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintTeacherMaxHoursDailyForm_template*/, SLOT(close()));
-//    connect(maxHoursSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintTeacherMaxHoursDailyForm_template*/, SLOT(constraintChanged()));
-//    connect(teachersComboBox, SIGNAL(activated(QString)), this /*AddConstraintTeacherMaxHoursDailyForm_template*/, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -51,7 +42,7 @@ AddConstraintTeacherMaxHoursDailyForm::AddConstraintTeacherMaxHoursDailyForm()
 	teachersComboBox->clear();
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 	}
 
 	constraintChanged();
@@ -59,36 +50,17 @@ AddConstraintTeacherMaxHoursDailyForm::AddConstraintTeacherMaxHoursDailyForm()
 
 AddConstraintTeacherMaxHoursDailyForm::~AddConstraintTeacherMaxHoursDailyForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintTeacherMaxHoursDailyForm::updateMaxHoursSpinBox(){
-	maxHoursSpinBox->setMinValue(1);
-	maxHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
+	maxHoursSpinBox->setMinimum(1);
+	maxHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxHoursSpinBox->setValue(gt.rules.nHoursPerDay);
 }
 
 void AddConstraintTeacherMaxHoursDailyForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1").arg(weight);
-	s+="\n";
-
-	s+=tr("Teacher max hours daily");
-	s+="\n";
-
-	s+=tr("Teacher=%1").arg(teachersComboBox->currentText());
-	s+="\n";
-
-	s+=tr("Max hours daily=%1").arg(maxHoursSpinBox->value());
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void AddConstraintTeacherMaxHoursDailyForm::addCurrentConstraint()
@@ -97,17 +69,12 @@ void AddConstraintTeacherMaxHoursDailyForm::addCurrentConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
 		return;
 	}
-	/*if(weight!=100.0){
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Invalid weight (percentage) - must be 100%"));
-		return;
-	}*/
 
 	QString teacher_name=teachersComboBox->currentText();
 	int teacher_ID=gt.rules.searchTeacher(teacher_name);
@@ -117,13 +84,9 @@ void AddConstraintTeacherMaxHoursDailyForm::addCurrentConstraint()
 		return;
 	}
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
 	int max_hours=maxHoursSpinBox->value();
 
-	ctr=new ConstraintTeacherMaxHoursDaily(weight, /*compulsory,*/ max_hours, teacher_name);
+	ctr=new ConstraintTeacherMaxHoursDaily(weight, max_hours, teacher_name);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

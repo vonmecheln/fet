@@ -17,38 +17,28 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintstudentsactivitytagmaxhourscontinuouslyform.h"
 #include "timeconstraint.h"
 
-AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::AddConstraintStudentsActivityTagMaxHoursContinuouslyForm()
+AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::AddConstraintStudentsActivityTagMaxHoursContinuouslyForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-//    connect(maxHoursSpinBox, SIGNAL(valueChanged(int)), this, SLOT(constraintChanged()));
-//    connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QSize tmp4=activityTagsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
 	
-	
-	maxHoursSpinBox->setMinValue(1);
-	maxHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
+	maxHoursSpinBox->setMinimum(1);
+	maxHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxHoursSpinBox->setValue(gt.rules.nHoursPerDay);
 
 	updateActivityTagsComboBox();
@@ -56,40 +46,19 @@ AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::AddConstraintStudentsA
 
 AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::~AddConstraintStudentsActivityTagMaxHoursContinuouslyForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::updateActivityTagsComboBox()
 {
 	foreach(ActivityTag* at, gt.rules.activityTagsList)
-		activityTagsComboBox->insertItem(at->name);
+		activityTagsComboBox->addItem(at->name);
 
 	constraintChanged();
 }
 
 void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1").arg(weight);
-	s+="\n";
-
-	s+=tr("Students activity tag max hours continuously");
-	s+="\n";
-	s+=tr("Activity tag=%1").arg(activityTagsComboBox->currentText());
-	s+="\n";
-
-	int maxHours=maxHoursSpinBox->value();
-	if(maxHours>=0){
-		s+=tr("Max. hours:%1").arg(maxHours);
-		s+="\n";
-	}
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::addCurrentConstraint()
@@ -98,7 +67,7 @@ void AddConstraintStudentsActivityTagMaxHoursContinuouslyForm::addCurrentConstra
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));

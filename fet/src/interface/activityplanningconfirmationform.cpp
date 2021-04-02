@@ -14,27 +14,36 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include "activityplanningconfirmationform.h"
 
 #include "timetable_defs.h"
 
-ActivityPlanningConfirmationForm::ActivityPlanningConfirmationForm()
+ActivityPlanningConfirmationForm::ActivityPlanningConfirmationForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
+	
+	continuePushButton->setDefault(true);
+	
+	connect(continuePushButton, SIGNAL(clicked()), this, SLOT(accept()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(reject()));
+	connect(dontShowAgainCheckBox, SIGNAL(stateChanged(int)), this, SLOT(dontShowAgainCheckBoxToggled()));
+	
+	dontShowAgain=dontShowAgainCheckBox->isChecked();
+	
+	plainTextEdit->setReadOnly(true);
 
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QString s;
 	
 	s+=tr("Please read carefully the description below:");
 	s+="\n\n";
-	s+=tr("This function is new and not thoroughly tested. Please report any problems.");
-	s+=" ";
-	s+=tr("It might be a good idea to backup your current data file before proceeding.");
-	s+="\n\n";
+	//s+=tr("This function is new and not thoroughly tested. Please report any problems.");
+	//s+=" ";
+	//s+=tr("It might be a good idea to backup your current data file before proceeding.");
+	//s+="\n\n";
 	s+=tr("This is a simple activity planning dialog. You need to add all teachers, "
 		"subjects and the students structure before you can work with it. It "
 		"is also recommended to add the necessary activity tags before using this dialog.");
@@ -60,10 +69,15 @@ ActivityPlanningConfirmationForm::ActivityPlanningConfirmationForm()
 	s+=tr("If the buttons are hidden, when you will double-click or click the mouse on the tables or press Enter "
 		"on a table cell, the command that will be done is the one which was selected when the buttons were not hidden.");
 	
-	textBrowser->setText(s);
+	plainTextEdit->setPlainText(s);
 }
 
 ActivityPlanningConfirmationForm::~ActivityPlanningConfirmationForm()
 {
+	saveFETDialogGeometry(this);
+}
 
+void ActivityPlanningConfirmationForm::dontShowAgainCheckBoxToggled()
+{
+	dontShowAgain=dontShowAgainCheckBox->isChecked();
 }

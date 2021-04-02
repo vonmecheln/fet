@@ -40,7 +40,7 @@ class TimetableGenerateForm : public QDialog, Ui::TimetableGenerateForm_template
 
 public:
 
-	TimetableGenerateForm();
+	TimetableGenerateForm(QWidget* parent);
 
 	~TimetableGenerateForm();
 

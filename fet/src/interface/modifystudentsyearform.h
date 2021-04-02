@@ -30,7 +30,7 @@ public:
 	QString _initialYearName;
 	int _initialNumberOfStudents;
 
-	ModifyStudentsYearForm(const QString& initialYearName, int initialNumberOfStudents);
+	ModifyStudentsYearForm(QWidget* parent, const QString& initialYearName, int initialNumberOfStudents);
 	~ModifyStudentsYearForm();
 
 public slots:

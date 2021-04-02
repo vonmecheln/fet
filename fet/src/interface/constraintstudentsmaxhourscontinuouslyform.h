@@ -28,7 +28,7 @@ class ConstraintStudentsMaxHoursContinuouslyForm : public QDialog, Ui::Constrain
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintStudentsMaxHoursContinuouslyForm();
+	ConstraintStudentsMaxHoursContinuouslyForm(QWidget* parent);
 	~ConstraintStudentsMaxHoursContinuouslyForm();
 
 	bool filterOk(TimeConstraint* ctr);

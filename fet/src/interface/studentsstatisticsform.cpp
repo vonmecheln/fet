@@ -39,18 +39,13 @@
 
 extern QApplication* pqapplication;
 
-#include <iostream>
-using namespace std;
-
 //QHash<QString, int> onlyExactHours; //for each students set, only the hours from each activity which has exactly the same set
 //does not include related sets.
 
 //QHash<QString, int> onlyExactActivities;
 
-
 //QHash<QString, int> allStudentsSets; //int is type
 QSet<QString> allStudentsSets;
-
 
 QHash<QString, int> allHours; //for each students set, only the hours from each activity which has exactly the same set
 //does not include related sets.
@@ -63,59 +58,26 @@ QSet<QString> relatedSubgroups;
 QSet<QString> relatedGroups;
 QSet<QString> relatedYears;
 
-StudentsStatisticsForm::StudentsStatisticsForm()
+StudentsStatisticsForm::StudentsStatisticsForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
 	
+	closeButton->setDefault(true);
+
+	connect(closeButton, SIGNAL(clicked()), this, SLOT(close()));
+
 	tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 	tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
-		
+	restoreFETDialogGeometry(this);
+	
 	connect(showYearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
 	connect(showGroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
 	connect(showSubgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
 
 	connect(showCompleteStructureCheckBox, SIGNAL(toggled(bool)), this, SLOT(checkBoxesModified()));
 
-	////////////	
-	/*onlyExactHours.clear();
-	onlyExactActivities.clear();
-	
-	foreach(Activity* act, gt.rules.activitiesList) if(act->active){
-		foreach(QString stud, act->studentsNames){
-			//hours
-			int crt=0;
-			if(onlyExactHours.contains(stud))
-				crt=onlyExactHours.value(stud);
-			onlyExactHours.insert(stud, crt+act->duration);
-
-			//n activities
-			crt=0;
-			if(onlyExactActivities.contains(stud))
-				crt=onlyExactActivities.value(stud);
-			onlyExactActivities.insert(stud, crt+1);
-		}
-	}*/
-	////////////
-
-	////////////
-	/*allStudentsSets.clear();
-	foreach(StudentsYear* year, gt.rules.yearsList){
-		allStudentsSets.insert(year->name, STUDENTS_YEAR);
-		foreach(StudentsGroup* group, year->groupsList){
-			allStudentsSets.insert(group->name, STUDENTS_GROUP);
-			foreach(StudentsSubgroup* subgroup, group->subgroupsList){
-				allStudentsSets.insert(subgroup->name, STUDENTS_SUBGROUP);
-			}
-		}
-	}*/
 	allStudentsSets.clear();
 	foreach(StudentsYear* year, gt.rules.yearsList){
 		allStudentsSets.insert(year->name);
@@ -144,7 +106,7 @@ StudentsStatisticsForm::StudentsStatisticsForm()
 		progress.setValue(ttt);
 		//pqapplication->processEvents();
 		if(progress.wasCanceled()){
-			QMessageBox::information(NULL, tr("FET information"), tr("Canceled"));
+			QMessageBox::information(this, tr("FET information"), tr("Canceled"));
 			showYearsCheckBox->setDisabled(true);
 			showGroupsCheckBox->setDisabled(true);
 			showSubgroupsCheckBox->setDisabled(true);
@@ -198,46 +160,12 @@ StudentsStatisticsForm::StudentsStatisticsForm()
 			}
 		}
 		
-		/*foreach(StudentsYear* year, gt.rules.yearsList){
-			if(year->name==set)
-				related.insert(year->name);
-			foreach(StudentsGroup* group, year->groupsList){
-				if(group->name==set){
-					related.insert(group->name);
-					related.insert(year->name);
-				}
-				if(year->name==set)
-					related.insert(group->name);
-				foreach(StudentsSubgroup* subgroup, group->subgroupsList){
-					if(subgroup->name==set){
-						related.insert(subgroup->name);
-						related.insert(group->name);
-						related.insert(year->name);
-					}
-					if(group->name==set)
-						related.insert(subgroup->name);
-					if(year->name==set)
-						related.insert(subgroup->name);
-				}
-			}
-		}*/
-		
 		int nh=0;
 		int na=0;
 		
-		/*foreach(QString rel, related){
-			//int nh=allHours.value(set);
-			nh+=onlyExactHours.value(rel);
-			//allHours.insert(set, nh);
-			
-			//int na=allActivities.value(set);
-			na+=onlyExactActivities.value(rel);
-			//allActivities.insert(set, na);
-		}*/
-		
 		foreach(Activity* act, gt.rules.activitiesList) if(act->active){
-			foreach(QString stud, act->studentsNames){
-				if(related.contains(stud)){
+			foreach(QString _students, act->studentsNames){
+				if(related.contains(_students)){
 					nh += act->duration;
 					na ++;
 					
@@ -258,6 +186,7 @@ StudentsStatisticsForm::StudentsStatisticsForm()
 
 StudentsStatisticsForm::~StudentsStatisticsForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void StudentsStatisticsForm::checkBoxesModified()
@@ -296,9 +225,6 @@ void StudentsStatisticsForm::checkBoxesModified()
 					else
 						studs.insert(subgroup->name);
 				}
-				//Q_UNUSED(subgroup);
-				//if(subgroup)
-				//	;
 				if(showSubgroupsCheckBox->isChecked() && ss)
 					nStudentsSets++;
 			}
@@ -374,13 +300,12 @@ void StudentsStatisticsForm::insertStudentsSet(StudentsSet* set, int row)
 	newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 	tableWidget->setItem(row, 0, newItem);
 
-	int	nSubActivities=0;
+	int nSubActivities=0;
 	int nHours=0;
 	
 	if(allHours.contains(set->name))
 		nHours=allHours.value(set->name);
 	else{
-		cout<<qPrintable(set->name)<<endl;
 		assert(0);
 	}
 		
@@ -389,20 +314,11 @@ void StudentsStatisticsForm::insertStudentsSet(StudentsSet* set, int row)
 	else
 		assert(0);
 		
-	/*foreach(Activity* act, gt.rules.activitiesList)
-		if(act->active)
-			foreach(QString asn, act->studentsNames)
-				if(gt.rules.studentsSetsRelated(asn, set->name)){
-					nSubActivities++;
-					nHours+=act->duration;
-					break;
-				}*/
-
-	newItem=new QTableWidgetItem(QString::number(nSubActivities));
+	newItem=new QTableWidgetItem(CustomFETString::number(nSubActivities));
 	newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 	tableWidget->setItem(row, 1, newItem);
 
-	newItem=new QTableWidgetItem(QString::number(nHours));
+	newItem=new QTableWidgetItem(CustomFETString::number(nHours));
 	newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 	tableWidget->setItem(row, 2, newItem);
 }
@@ -423,6 +339,5 @@ void StudentsStatisticsForm::on_helpPushButton_clicked()
 	 " For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)),"
 	 " S1 will appear twice in the table with the same information attached").arg(tr("Show duplicates"));
 	
-	//QMessageBox::information(this, tr("FET help"), s);
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

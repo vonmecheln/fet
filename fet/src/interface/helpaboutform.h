@@ -20,12 +20,12 @@
 
 #include "ui_helpaboutform_template.h"
 
-class HelpAboutForm : public QDialog, Ui::HelpAboutForm_template
+class HelpAboutForm : public QDialog, public Ui::HelpAboutForm_template
 {
 	Q_OBJECT
 	
-public: 
-	HelpAboutForm();
+public:
+	HelpAboutForm(QWidget* parent);
 	~HelpAboutForm();
 };
 

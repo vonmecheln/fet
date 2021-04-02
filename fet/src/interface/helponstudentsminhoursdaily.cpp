@@ -21,7 +21,7 @@
 
 #include <QApplication>
 
-void HelpOnStudentsMinHoursDaily::help()
+void HelpOnStudentsMinHoursDaily::help(QWidget* parent)
 {
 	QString s=tr("Important information about constraints students (set) min hours daily:");
 	
@@ -42,5 +42,5 @@ void HelpOnStudentsMinHoursDaily::help()
 	s+="\n\n";
 	s+=tr("So, remember: don't allow empty days unless you need it.");
 	
-	LongTextMessageBox::largeInformation(NULL, tr("FET information"), s);
+	LongTextMessageBox::largeInformation(parent, tr("FET information"), s);
 }

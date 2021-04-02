@@ -17,49 +17,31 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintbasiccompulsorytimeform.h"
 #include "timeconstraint.h"
 
-AddConstraintBasicCompulsoryTimeForm::AddConstraintBasicCompulsoryTimeForm()
+AddConstraintBasicCompulsoryTimeForm::AddConstraintBasicCompulsoryTimeForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 }
 
 AddConstraintBasicCompulsoryTimeForm::~AddConstraintBasicCompulsoryTimeForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintBasicCompulsoryTimeForm::constraintChanged()
 {
-/*	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-	s+=tr("Basic compulsory time");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1").arg(weight);
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
 }
 
 void AddConstraintBasicCompulsoryTimeForm::addCurrentConstraint()
@@ -68,7 +50,7 @@ void AddConstraintBasicCompulsoryTimeForm::addCurrentConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
@@ -81,12 +63,7 @@ void AddConstraintBasicCompulsoryTimeForm::addCurrentConstraint()
 		return;
 	}
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
 	ctr=new ConstraintBasicCompulsoryTime(weight);
-	//ctr->compulsory=compulsory;
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

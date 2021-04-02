@@ -28,7 +28,7 @@ class ModifyConstraintTwoActivitiesConsecutiveForm : public QDialog, Ui::ModifyC
 public:
 	ConstraintTwoActivitiesConsecutive* _ctr;
 
-	ModifyConstraintTwoActivitiesConsecutiveForm(ConstraintTwoActivitiesConsecutive* ctr);
+	ModifyConstraintTwoActivitiesConsecutiveForm(QWidget* parent, ConstraintTwoActivitiesConsecutive* ctr);
 	~ModifyConstraintTwoActivitiesConsecutiveForm();
 
 	void updateActivitiesComboBox();

@@ -17,32 +17,23 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintstudentssetminhoursdailyform.h"
 #include "timeconstraint.h"
 
 
-AddConstraintStudentsSetMinHoursDailyForm::AddConstraintStudentsSetMinHoursDailyForm()
+AddConstraintStudentsSetMinHoursDailyForm::AddConstraintStudentsSetMinHoursDailyForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintStudentsSetMinHoursDailyForm_template*/, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintStudentsSetMinHoursDailyForm_template*/, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintStudentsSetMinHoursDailyForm_template*/, SLOT(close()));
-//    connect(studentsComboBox, SIGNAL(activated(QString)), this /*AddConstraintStudentsSetMinHoursDailyForm_template*/, SLOT(constraintChanged()));
-//    connect(minHoursSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintStudentsSetMinHoursDailyForm_template*/, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	if(ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS)
 		allowLabel->setText(tr("Advanced usage: enabled"));
@@ -52,8 +43,8 @@ AddConstraintStudentsSetMinHoursDailyForm::AddConstraintStudentsSetMinHoursDaily
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
 
-	minHoursSpinBox->setMinValue(1);
-	minHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
+	minHoursSpinBox->setMinimum(1);
+	minHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minHoursSpinBox->setValue(1);
 
 	updateStudentsSetComboBox();
@@ -61,6 +52,7 @@ AddConstraintStudentsSetMinHoursDailyForm::AddConstraintStudentsSetMinHoursDaily
 
 AddConstraintStudentsSetMinHoursDailyForm::~AddConstraintStudentsSetMinHoursDailyForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintStudentsSetMinHoursDailyForm::updateStudentsSetComboBox()
@@ -68,13 +60,13 @@ void AddConstraintStudentsSetMinHoursDailyForm::updateStudentsSetComboBox()
 	studentsComboBox->clear();	
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
@@ -83,29 +75,7 @@ void AddConstraintStudentsSetMinHoursDailyForm::updateStudentsSetComboBox()
 }
 
 void AddConstraintStudentsSetMinHoursDailyForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1").arg(weight);
-	s+="\n";
-
-	s+=tr("Students set min hours daily");
-	s+="\n";
-	s+=tr("Students set=%1").arg(studentsComboBox->currentText());
-	s+="\n";
-
-	int minHours=minHoursSpinBox->value();
-	if(minHours>=0){
-		s+=tr("Min. hours:%1").arg(minHours);
-		s+="\n";
-	}
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void AddConstraintStudentsSetMinHoursDailyForm::addCurrentConstraint()
@@ -114,7 +84,7 @@ void AddConstraintStudentsSetMinHoursDailyForm::addCurrentConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
@@ -136,10 +106,6 @@ void AddConstraintStudentsSetMinHoursDailyForm::addCurrentConstraint()
 		return;
 	}
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
 	int minHours=minHoursSpinBox->value();
 
 	QString students_name=studentsComboBox->currentText();
@@ -150,7 +116,7 @@ void AddConstraintStudentsSetMinHoursDailyForm::addCurrentConstraint()
 		return;
 	}
 
-	ctr=new ConstraintStudentsSetMinHoursDaily(weight, /*compulsory,*/ minHours, students_name, allowEmptyDaysCheckBox->isChecked());
+	ctr=new ConstraintStudentsSetMinHoursDaily(weight, minHours, students_name, allowEmptyDaysCheckBox->isChecked());
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

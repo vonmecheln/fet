@@ -28,10 +28,10 @@ class ConstraintSubactivitiesPreferredStartingTimesForm : public QDialog, Ui::Co
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintSubactivitiesPreferredStartingTimesForm();
+	ConstraintSubactivitiesPreferredStartingTimesForm(QWidget* parent);
 	~ConstraintSubactivitiesPreferredStartingTimesForm();
 
-	void refreshConstraintsListBox();
+	void refreshConstraintsListWidget();
 
 	bool filterOk(TimeConstraint* ctr);
 

@@ -28,7 +28,7 @@ class ConstraintStudentsSetHomeRoomForm : public QDialog, Ui::ConstraintStudents
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
-	ConstraintStudentsSetHomeRoomForm();
+	ConstraintStudentsSetHomeRoomForm(QWidget* parent);
 	~ConstraintStudentsSetHomeRoomForm();
 
 	bool filterOk(SpaceConstraint* ctr);

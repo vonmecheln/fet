@@ -23,27 +23,31 @@
 #include "addconstraintteacherhomeroomsform.h"
 #include "modifyconstraintteacherhomeroomsform.h"
 
-ConstraintTeacherHomeRoomsForm::ConstraintTeacherHomeRoomsForm()
+#include <QListWidget>
+#include <QScrollBar>
+#include <QAbstractItemView>
+
+ConstraintTeacherHomeRoomsForm::ConstraintTeacherHomeRoomsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*ConstraintTeacherHomeRoomsForm_template*/, SLOT(addConstraint()));
-    connect(removeConstraintPushButton, SIGNAL(clicked()), this /*ConstraintTeacherHomeRoomsForm_template*/, SLOT(removeConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*ConstraintTeacherHomeRoomsForm_template*/, SLOT(close()));
-    connect(constraintsListBox, SIGNAL(highlighted(int)), this /*ConstraintTeacherHomeRoomsForm_template*/, SLOT(constraintChanged(int)));
-    connect(modifyConstraintPushButton, SIGNAL(clicked()), this /*ConstraintTeacherHomeRoomsForm_template*/, SLOT(modifyConstraint()));
-    connect(constraintsListBox, SIGNAL(selected(QString)), this /*ConstraintTeacherHomeRoomsForm_template*/, SLOT(modifyConstraint()));
-    connect(teachersComboBox, SIGNAL(activated(QString)), this /*ConstraintTeacherHomeRoomsForm_template*/, SLOT(filterChanged()));
-    connect(roomsComboBox, SIGNAL(activated(QString)), this /*ConstraintTeacherHomeRoomsForm_template*/, SLOT(filterChanged()));
+	currentConstraintTextEdit->setReadOnly(true);
+	
+	modifyConstraintPushButton->setDefault(true);
 
+	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
+	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(roomsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -51,42 +55,45 @@ ConstraintTeacherHomeRoomsForm::ConstraintTeacherHomeRoomsForm()
 	QSize tmp5=roomsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp5);
 	
-	teachersComboBox->insertItem("");
+	teachersComboBox->addItem("");
 	foreach(Teacher* tch, gt.rules.teachersList)
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 					
-	roomsComboBox->insertItem("");
+	roomsComboBox->addItem("");
 	foreach(Room* rm, gt.rules.roomsList)
-		roomsComboBox->insertItem(rm->name);
+		roomsComboBox->addItem(rm->name);
 
-	this->refreshConstraintsListBox();
+	this->refreshConstraintsListWidget();
 }
 
 ConstraintTeacherHomeRoomsForm::~ConstraintTeacherHomeRoomsForm()
 {
+	saveFETDialogGeometry(this);
 }
 
-void ConstraintTeacherHomeRoomsForm::refreshConstraintsListBox()
+void ConstraintTeacherHomeRoomsForm::refreshConstraintsListWidget()
 {
 	this->visibleConstraintsList.clear();
-	constraintsListBox->clear();
+	constraintsListWidget->clear();
 	for(int i=0; i<gt.rules.spaceConstraintsList.size(); i++){
 		SpaceConstraint* ctr=gt.rules.spaceConstraintsList[i];
 		if(filterOk(ctr)){
 			QString s;
 			s=ctr->getDescription(gt.rules);
 			visibleConstraintsList.append(ctr);
-			constraintsListBox->insertItem(s);
+			constraintsListWidget->addItem(s);
 		}
 	}
 
-	constraintsListBox->setCurrentItem(0);
-	this->constraintChanged(constraintsListBox->currentItem());
+	if(constraintsListWidget->count()>0)
+		constraintsListWidget->setCurrentRow(0);
+	else
+		this->constraintChanged(-1);
 }
 
 void ConstraintTeacherHomeRoomsForm::filterChanged()
 {
-	this->refreshConstraintsListBox();
+	this->refreshConstraintsListWidget();
 }
 
 bool ConstraintTeacherHomeRoomsForm::filterOk(SpaceConstraint* ctr)
@@ -103,7 +110,7 @@ bool ConstraintTeacherHomeRoomsForm::filterOk(SpaceConstraint* ctr)
 void ConstraintTeacherHomeRoomsForm::constraintChanged(int index)
 {
 	if(index<0){
-		currentConstraintTextEdit->setText("");
+		currentConstraintTextEdit->setPlainText("");
 		return;
 	}
 	QString s;
@@ -111,39 +118,53 @@ void ConstraintTeacherHomeRoomsForm::constraintChanged(int index)
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(index);
 	assert(ctr!=NULL);
 	s=ctr->getDetailedDescription(gt.rules);
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setPlainText(s);
 }
 
 void ConstraintTeacherHomeRoomsForm::addConstraint()
 {
-	AddConstraintTeacherHomeRoomsForm form;
+	AddConstraintTeacherHomeRoomsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListBox();
+	this->refreshConstraintsListWidget();
 	
-	constraintsListBox->setCurrentItem(constraintsListBox->count()-1);
+	constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
 }
 
 void ConstraintTeacherHomeRoomsForm::modifyConstraint()
 {
-	int i=constraintsListBox->currentItem();
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
+
+	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
 	}
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintTeacherHomeRoomsForm form((ConstraintTeacherHomeRooms*)ctr);
+	ModifyConstraintTeacherHomeRoomsForm form(this, (ConstraintTeacherHomeRooms*)ctr);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListBox();
+	this->refreshConstraintsListWidget();
 	
-	constraintsListBox->setCurrentItem(i);
+	constraintsListWidget->verticalScrollBar()->setValue(valv);
+	constraintsListWidget->horizontalScrollBar()->setValue(valh);
+
+	if(i>=constraintsListWidget->count())
+		i=constraintsListWidget->count()-1;
+
+	if(i>=0)
+		constraintsListWidget->setCurrentRow(i);
+	else
+		this->constraintChanged(-1);
 }
 
 void ConstraintTeacherHomeRoomsForm::removeConstraint()
 {
-	int i=constraintsListBox->currentItem();
+	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
@@ -153,19 +174,28 @@ void ConstraintTeacherHomeRoomsForm::removeConstraint()
 	s=tr("Remove constraint?");
 	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	//s+=tr("\nAre you sure?");
+	
+	QListWidgetItem* item;
 
 	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
-	case 0: // The user clicked the OK again button or pressed Enter
+	case 0: // The user clicked the OK button or pressed Enter
 		gt.rules.removeSpaceConstraint(ctr);
-		this->refreshConstraintsListBox();
+		
+		visibleConstraintsList.removeAt(i);
+		constraintsListWidget->setCurrentRow(-1);
+		item=constraintsListWidget->takeItem(i);
+		delete item;
+		
 		break;
-	case 1: // The user clicked the Cancel or pressed Escape
+	case 1: // The user clicked the Cancel button or pressed Escape
 		break;
 	}
 
-	if((uint)(i) >= constraintsListBox->count())
-		i=constraintsListBox->count()-1;
-	constraintsListBox->setCurrentItem(i);
+	if(i>=constraintsListWidget->count())
+		i=constraintsListWidget->count()-1;
+	if(i>=0)
+		constraintsListWidget->setCurrentRow(i);
+	else
+		this->constraintChanged(-1);
 }

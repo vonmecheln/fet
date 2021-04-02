@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef SUBJECTSFORM_H
 #define SUBJECTSFORM_H
@@ -26,7 +24,7 @@ class SubjectsForm : public QDialog, Ui::SubjectsForm_template
 {
 	Q_OBJECT
 public:
-	SubjectsForm();
+	SubjectsForm(QWidget* parent);
 
 	~SubjectsForm();
 

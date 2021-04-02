@@ -24,13 +24,13 @@
 
 #include <QMessageBox>
 
+#include <QPlainTextEdit>
+
 #include <QList>
 
-/*QWidget* ModifyActivityForm::subTab(int i)
-{
-	assert(i>=0 && i<subactivitiesTabWidget->count());
-	return subactivitiesTabWidget->widget(i);
-}*/
+#include <QListWidget>
+#include <QAbstractItemView>
+#include <QScrollBar>
 
 QSpinBox* ModifyActivityForm::dur(int i)
 {
@@ -46,9 +46,9 @@ QCheckBox* ModifyActivityForm::activ(int i)
 	return activList.at(i);
 }
 
-ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
+ModifyActivityForm::ModifyActivityForm(QWidget* parent, int id, int activityGroupId): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
 	durList.clear();
 	durList.append(duration1SpinBox);
@@ -88,7 +88,7 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 	durList.append(duration35SpinBox);
 	
 	for(int i=0; i<MAX_SPLIT_OF_AN_ACTIVITY; i++)
-		dur(i)->setMaxValue(gt.rules.nHoursPerDay);
+		dur(i)->setMaximum(gt.rules.nHoursPerDay);
 	
 	activList.clear();
 	activList.append(active1CheckBox);
@@ -126,31 +126,32 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 	activList.append(active33CheckBox);
 	activList.append(active34CheckBox);
 	activList.append(active35CheckBox);
+	
+	allTeachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	selectedTeachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	allStudentsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	selectedStudentsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	allActivityTagsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	selectedActivityTagsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(subjectChanged(QString)));
-    connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
-    connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-    connect(clearTeacherPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
-    connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
-    connect(allTeachersListBox, SIGNAL(selected(QString)), this, SLOT(addTeacher()));
-    connect(selectedTeachersListBox, SIGNAL(selected(QString)), this, SLOT(removeTeacher()));
-    connect(allStudentsListBox, SIGNAL(selected(QString)), this, SLOT(addStudents()));
-    connect(selectedStudentsListBox, SIGNAL(selected(QString)), this, SLOT(removeStudents()));
-    connect(clearActivityTagPushButton, SIGNAL(clicked()), this, SLOT(clearActivityTags()));
-    connect(allActivityTagsListBox, SIGNAL(selected(QString)), this, SLOT(addActivityTag()));
-    connect(selectedActivityTagsListBox, SIGNAL(selected(QString)), this, SLOT(removeActivityTag()));
-    connect(showYearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showYearsChanged()));
-    connect(showGroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showGroupsChanged()));
-    connect(showSubgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsChanged()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(clearTeacherPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
+	connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
+	connect(allTeachersListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addTeacher()));
+	connect(selectedTeachersListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeTeacher()));
+	connect(allStudentsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addStudents()));
+	connect(selectedStudentsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeStudents()));
+	connect(clearActivityTagPushButton, SIGNAL(clicked()), this, SLOT(clearActivityTags()));
+	connect(allActivityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivityTag()));
+	connect(selectedActivityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivityTag()));
+	connect(showYearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showYearsChanged()));
+	connect(showGroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showGroupsChanged()));
+	connect(showSubgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsChanged()));
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
 
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp3=subjectsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp3);
@@ -195,25 +196,25 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 		subactivitiesTabWidget->setCurrentIndex(0);
 	}
 
-	splitSpinBox->setMinValue(nSplit);
-	splitSpinBox->setMaxValue(nSplit);	
-	splitSpinBox->setValue(nSplit);	
+	splitSpinBox->setMinimum(nSplit);
+	splitSpinBox->setMaximum(nSplit);
+	splitSpinBox->setValue(nSplit);
 	
-	nStudentsSpinBox->setMinValue(-1);
-	nStudentsSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
+	nStudentsSpinBox->setMinimum(-1);
+	nStudentsSpinBox->setMaximum(MAX_ROOM_CAPACITY);
 	nStudentsSpinBox->setValue(-1);
-				
+	
 	if(this->_activity->computeNTotalStudents==false)
 		nStudentsSpinBox->setValue(this->_activity->nTotalStudents);
 	
-	updateStudentsListBox();
-	updateTeachersListBox();
+	updateStudentsListWidget();
+	updateTeachersListWidget();
 	updateSubjectsComboBox();
-	updateActivityTagsListBox();
+	updateActivityTagsListWidget();
 	
-	selectedStudentsListBox->clear();
+	selectedStudentsListWidget->clear();
 	for(QStringList::Iterator it=this->_students.begin(); it!=this->_students.end(); it++)
-		selectedStudentsListBox->insertItem(*it);
+		selectedStudentsListWidget->addItem(*it);
 
 	for(int i=0; i<MAX_SPLIT_OF_AN_ACTIVITY; i++)
 		if(i<nSplit)
@@ -227,21 +228,110 @@ ModifyActivityForm::ModifyActivityForm(int id, int activityGroupId)
 
 ModifyActivityForm::~ModifyActivityForm()
 {
+	saveFETDialogGeometry(this);
 }
 
-void ModifyActivityForm::updateTeachersListBox()
+void ModifyActivityForm::updateTeachersListWidget()
 {
-	allTeachersListBox->clear();
+	allTeachersListWidget->clear();
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
-		allTeachersListBox->insertItem(tch->name);
+		allTeachersListWidget->addItem(tch->name);
 	}
-		
-	selectedTeachersListBox->clear();
+	
+	selectedTeachersListWidget->clear();
 	for(QStringList::Iterator it=this->_teachers.begin(); it!=this->_teachers.end(); it++)
-		selectedTeachersListBox->insertItem(*it);
-		
-	activityChanged();
+		selectedTeachersListWidget->addItem(*it);
+}
+
+void ModifyActivityForm::addTeacher()
+{
+	if(allTeachersListWidget->currentRow()<0 || allTeachersListWidget->currentRow()>=allTeachersListWidget->count())
+		return;
+	
+	for(int i=0; i<selectedTeachersListWidget->count(); i++)
+		if(selectedTeachersListWidget->item(i)->text()==allTeachersListWidget->currentItem()->text())
+			return;
+	
+	selectedTeachersListWidget->addItem(allTeachersListWidget->currentItem()->text());
+	selectedTeachersListWidget->setCurrentRow(selectedTeachersListWidget->count()-1);
+}
+
+void ModifyActivityForm::removeTeacher()
+{
+	if(selectedTeachersListWidget->count()<=0 || selectedTeachersListWidget->currentRow()<0 ||
+	 selectedTeachersListWidget->currentRow()>=selectedTeachersListWidget->count())
+		return;
+
+	int i=selectedTeachersListWidget->currentRow();
+	selectedTeachersListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=selectedTeachersListWidget->takeItem(i);
+	delete item;
+	if(i<selectedTeachersListWidget->count())
+		selectedTeachersListWidget->setCurrentRow(i);
+	else
+		selectedTeachersListWidget->setCurrentRow(selectedTeachersListWidget->count()-1);
+}
+
+void ModifyActivityForm::addStudents()
+{
+	if(allStudentsListWidget->currentRow()<0 || allStudentsListWidget->currentRow()>=allStudentsListWidget->count())
+		return;
+
+	assert(canonicalStudentsSetsNames.count()==allStudentsListWidget->count());
+	QString sn=canonicalStudentsSetsNames.at(allStudentsListWidget->currentRow());
+
+	for(int i=0; i<selectedStudentsListWidget->count(); i++)
+		if(selectedStudentsListWidget->item(i)->text()==sn)
+			return;
+
+	selectedStudentsListWidget->addItem(sn);
+	selectedStudentsListWidget->setCurrentRow(selectedStudentsListWidget->count()-1);
+}
+
+void ModifyActivityForm::removeStudents()
+{
+	if(selectedStudentsListWidget->count()<=0 || selectedStudentsListWidget->currentRow()<0 ||
+	 selectedStudentsListWidget->currentRow()>=selectedStudentsListWidget->count())
+		return;
+
+	int i=selectedStudentsListWidget->currentRow();
+	selectedStudentsListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=selectedStudentsListWidget->takeItem(i);
+	delete item;
+	if(i<selectedStudentsListWidget->count())
+		selectedStudentsListWidget->setCurrentRow(i);
+	else
+		selectedStudentsListWidget->setCurrentRow(selectedStudentsListWidget->count()-1);
+}
+
+void ModifyActivityForm::addActivityTag()
+{
+	if(allActivityTagsListWidget->currentRow()<0 || allActivityTagsListWidget->currentRow()>=allActivityTagsListWidget->count())
+		return;
+
+	for(int i=0; i<selectedActivityTagsListWidget->count(); i++)
+		if(selectedActivityTagsListWidget->item(i)->text()==allActivityTagsListWidget->currentItem()->text())
+			return;
+
+	selectedActivityTagsListWidget->addItem(allActivityTagsListWidget->currentItem()->text());
+	selectedActivityTagsListWidget->setCurrentRow(selectedActivityTagsListWidget->count()-1);
+}
+
+void ModifyActivityForm::removeActivityTag()
+{
+	if(selectedActivityTagsListWidget->count()<=0 || selectedActivityTagsListWidget->currentRow()<0 ||
+	 selectedActivityTagsListWidget->currentRow()>=selectedActivityTagsListWidget->count())
+		return;
+
+	int i=selectedActivityTagsListWidget->currentRow();
+	selectedActivityTagsListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=selectedActivityTagsListWidget->takeItem(i);
+	delete item;
+	if(i<selectedActivityTagsListWidget->count())
+		selectedActivityTagsListWidget->setCurrentRow(i);
+	else
+		selectedActivityTagsListWidget->setCurrentRow(selectedActivityTagsListWidget->count()-1);
 }
 
 void ModifyActivityForm::updateSubjectsComboBox()
@@ -250,47 +340,43 @@ void ModifyActivityForm::updateSubjectsComboBox()
 	subjectsComboBox->clear();
 	for(int k=0; k<gt.rules.subjectsList.size(); k++, i++){
 		Subject* sbj=gt.rules.subjectsList[k];
-		subjectsComboBox->insertItem(sbj->name);
+		subjectsComboBox->addItem(sbj->name);
 		if(sbj->name==this->_subject)
 			j=i;
 	}
 	assert(j!=-1);
-	subjectsComboBox->setCurrentItem(j);
-
-	subjectChanged("");
+	subjectsComboBox->setCurrentIndex(j);
 }
 
-void ModifyActivityForm::updateActivityTagsListBox()
+void ModifyActivityForm::updateActivityTagsListWidget()
 {
-	allActivityTagsListBox->clear();
+	allActivityTagsListWidget->clear();
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* at=gt.rules.activityTagsList[i];
-		allActivityTagsListBox->insertItem(at->name);
+		allActivityTagsListWidget->addItem(at->name);
 	}
 		
-	selectedActivityTagsListBox->clear();
+	selectedActivityTagsListWidget->clear();
 	for(QStringList::Iterator it=this->_activityTags.begin(); it!=this->_activityTags.end(); it++)
-		selectedActivityTagsListBox->insertItem(*it);
-		
-	activityChanged();
+		selectedActivityTagsListWidget->addItem(*it);
 }
 
 void ModifyActivityForm::showYearsChanged()
 {
-	updateStudentsListBox();
+	updateStudentsListWidget();
 }
 
 void ModifyActivityForm::showGroupsChanged()
 {
-	updateStudentsListBox();
+	updateStudentsListWidget();
 }
 
 void ModifyActivityForm::showSubgroupsChanged()
 {
-	updateStudentsListBox();
+	updateStudentsListWidget();
 }
 
-void ModifyActivityForm::updateStudentsListBox()
+void ModifyActivityForm::updateStudentsListWidget()
 {
 	const int INDENT=2;
 
@@ -298,12 +384,12 @@ void ModifyActivityForm::updateStudentsListBox()
 	bool showGroups=showGroupsCheckBox->isChecked();
 	bool showSubgroups=showSubgroupsCheckBox->isChecked();
 
-	allStudentsListBox->clear();
+	allStudentsListWidget->clear();
 	canonicalStudentsSetsNames.clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
 		if(showYears){
-			allStudentsListBox->insertItem(sty->name);
+			allStudentsListWidget->addItem(sty->name);
 			canonicalStudentsSetsNames.append(sty->name);
 		}
 		for(int j=0; j<sty->groupsList.size(); j++){
@@ -312,9 +398,7 @@ void ModifyActivityForm::updateStudentsListBox()
 				QString begin=QString("");
 				QString end=QString("");
 				begin=QString(INDENT, ' ');
-				if(LANGUAGE_STYLE_RIGHT_TO_LEFT==true)
-					end=QString(INDENT, ' ');
-				allStudentsListBox->insertItem(begin+stg->name+end);
+				allStudentsListWidget->addItem(begin+stg->name+end);
 				canonicalStudentsSetsNames.append(stg->name);
 			}
 			for(int k=0; k<stg->subgroupsList.size(); k++){
@@ -323,187 +407,15 @@ void ModifyActivityForm::updateStudentsListBox()
 					QString begin=QString("");
 					QString end=QString("");
 					begin=QString(2*INDENT, ' ');
-					if(LANGUAGE_STYLE_RIGHT_TO_LEFT==true)
-						end=QString(2*INDENT, ' ');
-					allStudentsListBox->insertItem(begin+sts->name+end);
+					allStudentsListWidget->addItem(begin+sts->name+end);
 					canonicalStudentsSetsNames.append(sts->name);
 				}
 			}
 		}
 	}
-
-	activityChanged();
-}
-
-void ModifyActivityForm::addTeacher()
-{
-	if(allTeachersListBox->currentItem()<0 || (uint)(allTeachersListBox->currentItem())>=allTeachersListBox->count())
-		return;
 	
-	for(uint i=0; i<selectedTeachersListBox->count(); i++)
-		if(selectedTeachersListBox->text(i)==allTeachersListBox->currentText())
-			return;
-			
-	selectedTeachersListBox->insertItem(allTeachersListBox->currentText());
-
-	activityChanged();
-}
-
-void ModifyActivityForm::removeTeacher()
-{
-	if(selectedTeachersListBox->count()<=0 || selectedTeachersListBox->currentItem()<0 ||
-	 (uint)(selectedTeachersListBox->currentItem())>=selectedTeachersListBox->count())
-		return;
-		
-	selectedTeachersListBox->removeItem(selectedTeachersListBox->currentItem());
-
-	activityChanged();
-}
-
-void ModifyActivityForm::addActivityTag()
-{
-	if(allActivityTagsListBox->currentItem()<0 || (uint)(allActivityTagsListBox->currentItem())>=allActivityTagsListBox->count())
-		return;
-	
-	for(uint i=0; i<selectedActivityTagsListBox->count(); i++)
-		if(selectedActivityTagsListBox->text(i)==allActivityTagsListBox->currentText())
-			return;
-			
-	selectedActivityTagsListBox->insertItem(allActivityTagsListBox->currentText());
-
-	activityChanged();
-}
-
-void ModifyActivityForm::removeActivityTag()
-{
-	if(selectedActivityTagsListBox->count()<=0 || selectedActivityTagsListBox->currentItem()<0 ||
-	 (uint)(selectedActivityTagsListBox->currentItem())>=selectedActivityTagsListBox->count())
-		return;
-		
-	selectedActivityTagsListBox->removeItem(selectedActivityTagsListBox->currentItem());
-
-	activityChanged();
-}
-
-void ModifyActivityForm::addStudents()
-{
-	if(allStudentsListBox->currentItem()<0 || (uint)(allStudentsListBox->currentItem())>=allStudentsListBox->count())
-		return;
-	
-	assert(canonicalStudentsSetsNames.count()==(int)(allStudentsListBox->count()));
-	QString sn=canonicalStudentsSetsNames.at(allStudentsListBox->currentItem());
-	
-	for(uint i=0; i<selectedStudentsListBox->count(); i++)
-		if(selectedStudentsListBox->text(i)==sn)
-			return;
-			
-	selectedStudentsListBox->insertItem(sn);
-	
-	activityChanged();
-}
-
-void ModifyActivityForm::removeStudents()
-{
-	if(selectedStudentsListBox->count()<=0 || selectedStudentsListBox->currentItem()<0 ||
-	 (uint)(selectedStudentsListBox->currentItem())>=selectedStudentsListBox->count())
-		return;
-		
-	selectedStudentsListBox->removeItem(selectedStudentsListBox->currentItem());
-
-	activityChanged();
-}
-
-void ModifyActivityForm::subjectChanged(const QString& dummy)
-{
-	Q_UNUSED(dummy);
-	//if(dummy=="")
-	//	;
-
-	activityChanged();
-}
-
-void ModifyActivityForm::activityChanged()
-{
-/*	QString s;
-	//s+=tr("Current activity:");
-	//s+="\n";
-	
-	if(selectedTeachersListBox->count()==0){
-		if(splitSpinBox->value()==1)
-			s+=tr("No teachers for this activity\n");
-		else
-			s+=tr("No teachers for these activities\n");
-	}
-	else
-		for(uint i=0; i<selectedTeachersListBox->count(); i++){
-			s+=tr("Teacher=%1").arg(selectedTeachersListBox->text(i));
-			s+="\n";
-		}
-
-	s+=tr("Subject=%1").arg(subjectsComboBox->currentText());
-	s+="\n";
-	if(activityTagsComboBox->currentText()!=""){
-		s+=tr("Activity tag=%1").arg(activityTagsComboBox->currentText());
-		s+="\n";
-	}
-	if(selectedStudentsListBox->count()==0){
-		if(splitSpinBox->value()==1)
-			s+=tr("No students for this activity\n");
-		else
-			s+=tr("No students for these activities\n");
-	}
-	else
-		for(uint i=0; i<selectedStudentsListBox->count(); i++){
-			s+=tr("Students=%1").arg(selectedStudentsListBox->text(i));
-			s+="\n";
-		}
-	
-	if(nStudentsSpinBox->value()==-1){
-		s+=tr("Number of students: computed from corresponding students sets");
-		s+="\n";	
-	}
-	else{
-		s+=tr("Number of students=%1").arg(nStudentsSpinBox->value());
-		s+="\n";	
-	}
-
-	if(splitSpinBox->value()==1){
-		s+=tr("Duration=%1").arg(dur(0)->value());
-		s+="\n";
-		
-		if(activ(0)->isChecked()){
-			s+=tr("Active activity");
-			s+="\n";
-		}
-		else{
-			s+=tr("Non-active activity");
-			s+="\n";
-		}
-	}
-	else{
-		s+=tr("This larger activity is split into %1 smaller activities per week").arg(splitSpinBox->value());
-		s+="\n";
-		s+="\n";
-
-		for(int i=0; i<splitSpinBox->value(); i++){
-			s+=tr("Component %1:").arg(i+1);
-			s+="\n";
-			s+=tr("Duration=%1").arg(dur(i)->value());
-			s+="\n";
-			if(activ(i)->isChecked()){
-				s+=tr("Active activity");
-				s+="\n";
-			}
-			else{
-				s+=tr("Non-active activity");
-				s+="\n";
-			}
-			s+="\n";
-		}
-	}
-
-	currentActivityTextEdit->setText(s);
-	*/
+	int q=allStudentsListWidget->verticalScrollBar()->minimum();
+	allStudentsListWidget->verticalScrollBar()->setValue(q);
 }
 
 void ModifyActivityForm::cancel()
@@ -515,7 +427,7 @@ void ModifyActivityForm::ok()
 {
 	//teachers
 	QStringList teachers_names;
-	if(selectedTeachersListBox->count()<=0){
+	if(selectedTeachersListWidget->count()<=0){
 		int t=QMessageBox::question(this, tr("FET question"),
 		 tr("Do you really want to have the activity without teacher(s)?"),
 		 QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
@@ -524,9 +436,9 @@ void ModifyActivityForm::ok()
 			return;
 	}
 	else{
-		for(uint i=0; i<selectedTeachersListBox->count(); i++){
-			assert(gt.rules.searchTeacher(selectedTeachersListBox->text(i))>=0);
-			teachers_names.append(selectedTeachersListBox->text(i));
+		for(int i=0; i<selectedTeachersListWidget->count(); i++){
+			assert(gt.rules.searchTeacher(selectedTeachersListWidget->item(i)->text())>=0);
+			teachers_names.append(selectedTeachersListWidget->item(i)->text());
 		}
 	}
 
@@ -541,14 +453,14 @@ void ModifyActivityForm::ok()
 
 	//activity tag
 	QStringList activity_tags_names;
-	for(uint i=0; i<selectedActivityTagsListBox->count(); i++){
-		assert(gt.rules.searchActivityTag(selectedActivityTagsListBox->text(i))>=0);
-		activity_tags_names.append(selectedActivityTagsListBox->text(i));
+	for(int i=0; i<selectedActivityTagsListWidget->count(); i++){
+		assert(gt.rules.searchActivityTag(selectedActivityTagsListWidget->item(i)->text())>=0);
+		activity_tags_names.append(selectedActivityTagsListWidget->item(i)->text());
 	}
 
 	//students
 	QStringList students_names;
-	if(selectedStudentsListBox->count()<=0){
+	if(selectedStudentsListWidget->count()<=0){
 		int t=QMessageBox::question(this, tr("FET question"),
 		 tr("Do you really want to have the activity without student set(s)?"),
 		 QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
@@ -557,9 +469,9 @@ void ModifyActivityForm::ok()
 			return;
 	}
 	else{
-		for(uint i=0; i<selectedStudentsListBox->count(); i++){
-			assert(gt.rules.searchStudentsSet(selectedStudentsListBox->text(i))!=NULL);
-			students_names.append(selectedStudentsListBox->text(i));
+		for(int i=0; i<selectedStudentsListWidget->count(); i++){
+			assert(gt.rules.searchStudentsSet(selectedStudentsListWidget->item(i)->text())!=NULL);
+			students_names.append(selectedStudentsListWidget->item(i)->text());
 		}
 	}
 
@@ -584,12 +496,12 @@ void ModifyActivityForm::ok()
 
 	if(nStudentsSpinBox->value()==-1){
 		gt.rules.modifyActivity(this->_id, this->_activityGroupId, teachers_names, subject_name,
-		 activity_tags_names,students_names, nsplit, totalduration, durations, /*parities,*/ active,
+		 activity_tags_names,students_names, nsplit, totalduration, durations, active,
 		 (nStudentsSpinBox->value()==-1), total_number_of_students);
 	}
 	else{
 		gt.rules.modifyActivity(this->_id, this->_activityGroupId, teachers_names, subject_name,
-		 activity_tags_names,students_names, nsplit, totalduration, durations, /*parities,*/ active,
+		 activity_tags_names,students_names, nsplit, totalduration, durations, active,
 		 (nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 	}
 	
@@ -600,18 +512,55 @@ void ModifyActivityForm::ok()
 
 void ModifyActivityForm::clearTeachers()
 {
-	selectedTeachersListBox->clear();
-	activityChanged();
+	selectedTeachersListWidget->clear();
 }
 
 void ModifyActivityForm::clearStudents()
 {
-	selectedStudentsListBox->clear();
-	activityChanged();
+	selectedStudentsListWidget->clear();
 }
 
 void ModifyActivityForm::clearActivityTags()
 {
-	selectedActivityTagsListBox->clear();
-	activityChanged();
+	selectedActivityTagsListWidget->clear();
+}
+
+void ModifyActivityForm::help()
+{
+	QString s;
+	
+	s+=tr("Abbreviations in this dialog:");
+	s+="\n\n";
+	s+=tr("'Students' (the text near the spin box), means 'Number of students (-1 for automatic)'");
+	s+="\n";
+	s+=tr("'Split' means 'Is split into ... activities per week. This value cannot be changed."
+	 " If you need to modify it, please remove the corresponding activities and add a new split activity.'");
+	s+="\n";
+	s+=tr("The 'Duration' spin box and the 'Active' check box refer to each component of current activity, you can change "
+	 "them for each component, separately, by selecting the corresponding tab in the tab widget.");
+	
+	//show the message in a dialog
+	QDialog dialog(this);
+	
+	dialog.setWindowTitle(tr("FET - help on modifying activity(ies)"));
+
+	QVBoxLayout* vl=new QVBoxLayout(&dialog);
+	QPlainTextEdit* te=new QPlainTextEdit();
+	te->setPlainText(s);
+	te->setReadOnly(true);
+	QPushButton* pb=new QPushButton(tr("OK"));
+
+	QHBoxLayout* hl=new QHBoxLayout(0);
+	hl->addStretch(1);
+	hl->addWidget(pb);
+
+	vl->addWidget(te);
+	vl->addLayout(hl);
+	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
+
+	dialog.resize(600,470);
+	centerWidgetOnScreen(&dialog);
+
+	setParentAndOtherThings(&dialog, this);
+	dialog.exec();
 }

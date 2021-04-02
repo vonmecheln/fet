@@ -34,7 +34,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include <QStringList>
 
 class Rules;
-class SpaceChromosome;
 class SpaceConstraint;
 class Activity;
 class Teacher;
@@ -45,6 +44,8 @@ class Equipment;
 class Building;
 class Room;
 class Solution;
+
+class QWidget;
 
 typedef QList<SpaceConstraint*> SpaceConstraintsList;
 
@@ -84,8 +85,6 @@ const int CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES			=1024;
 const int CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM						=1025;
 const int CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS						=1026;
 
-
-
 /**
 This class represents a space constraint
 */
@@ -120,7 +119,7 @@ public:
 	SpaceConstraint(double wp);
 
 	/**
-	The function that calculates the fitness of a space chromosome, according to this
+	The function that calculates the fitness of a solution, according to this
 	constraint. We need the rules to compute this fitness factor.
 	We need also the allocation of the activities on days and hours.
 	If conflictsString!=NULL,
@@ -136,7 +135,7 @@ public:
 	/**
 	Computes the internal structure for this constraint
 	*/
-	virtual bool computeInternalStructure(Rules& r)=0;
+	virtual bool computeInternalStructure(QWidget* parent, Rules& r)=0;
 	
 	virtual bool hasInactiveActivities(Rules& r)=0;
 
@@ -179,6 +178,10 @@ public:
 	Returns true if this constraint is related to this room
 	*/
 	virtual bool isRelatedToRoom(Room* r)=0;
+
+	virtual bool hasWrongDayOrHour(Rules& r)=0;
+	virtual bool canRepairWrongDayOrHour(Rules& r)=0;
+	virtual bool repairWrongDayOrHour(Rules& r)=0;
 };
 
 /**
@@ -193,7 +196,7 @@ public:
 
 	ConstraintBasicCompulsorySpace(double wp);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -216,6 +219,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintRoomNotAvailableTimes: public SpaceConstraint{
@@ -240,7 +247,7 @@ public:
 
 	ConstraintRoomNotAvailableTimes(double wp, const QString& rn, QList<int> d, QList<int> h);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -263,6 +270,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 /**
@@ -298,7 +309,7 @@ public:
 	*/
 	bool operator==(ConstraintActivityPreferredRoom& c);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -322,6 +333,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 /**
@@ -350,7 +365,7 @@ public:
 
 	ConstraintActivityPreferredRooms(double wp, int aid, const QStringList& roomsList);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -373,6 +388,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintStudentsSetHomeRoom: public SpaceConstraint{
@@ -395,7 +414,7 @@ public:
 
 	ConstraintStudentsSetHomeRoom(double wp, QString st, QString rm);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -418,6 +437,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintStudentsSetHomeRooms: public SpaceConstraint{
@@ -442,7 +465,7 @@ public:
 
 	ConstraintStudentsSetHomeRooms(double wp, QString st, const QStringList& rms);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -465,6 +488,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintTeacherHomeRoom: public SpaceConstraint{
@@ -487,7 +514,7 @@ public:
 
 	ConstraintTeacherHomeRoom(double wp, QString tc, QString rm);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -510,6 +537,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintTeacherHomeRooms: public SpaceConstraint{
@@ -534,7 +565,7 @@ public:
 
 	ConstraintTeacherHomeRooms(double wp, QString st, const QStringList& rms);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -557,6 +588,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 /**
@@ -583,7 +618,7 @@ public:
 
 	ConstraintSubjectPreferredRoom(double wp, const QString& subj, const QString& rm);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -607,6 +642,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 /**
@@ -632,7 +671,7 @@ public:
 
 	ConstraintSubjectPreferredRooms(double wp, const QString& subj, const QStringList& rms);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -656,6 +695,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 /**
@@ -684,7 +727,7 @@ public:
 
 	ConstraintSubjectActivityTagPreferredRoom(double wp, const QString& subj, const QString& actTag, const QString& rm);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -708,6 +751,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 /**
@@ -735,7 +782,7 @@ public:
 
 	ConstraintSubjectActivityTagPreferredRooms(double wp, const QString& subj, const QString& actTag, const QStringList& rms);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -758,6 +805,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 //addded on 6 apr 2009
@@ -781,7 +832,7 @@ public:
 
 	ConstraintActivityTagPreferredRoom(double wp, const QString& actTag, const QString& rm);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -804,6 +855,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintActivityTagPreferredRooms: public SpaceConstraint{
@@ -825,7 +880,7 @@ public:
 
 	ConstraintActivityTagPreferredRooms(double wp, const QString& actTag, const QStringList& rms);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -848,6 +903,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 ///////
 
@@ -868,7 +927,7 @@ public:
 
 	ConstraintStudentsSetMaxBuildingChangesPerDay(double wp, QString st, int mc);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -891,6 +950,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintStudentsMaxBuildingChangesPerDay: public SpaceConstraint{
@@ -904,7 +967,7 @@ public:
 
 	ConstraintStudentsMaxBuildingChangesPerDay(double wp, int mc);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -927,6 +990,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintStudentsSetMaxBuildingChangesPerWeek: public SpaceConstraint{
@@ -946,7 +1013,7 @@ public:
 
 	ConstraintStudentsSetMaxBuildingChangesPerWeek(double wp, QString st, int mc);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -969,6 +1036,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintStudentsMaxBuildingChangesPerWeek: public SpaceConstraint{
@@ -982,7 +1053,7 @@ public:
 
 	ConstraintStudentsMaxBuildingChangesPerWeek(double wp, int mc);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -1005,6 +1076,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintStudentsSetMinGapsBetweenBuildingChanges: public SpaceConstraint{
@@ -1024,7 +1099,7 @@ public:
 
 	ConstraintStudentsSetMinGapsBetweenBuildingChanges(double wp, QString st, int mg);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -1047,6 +1122,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintStudentsMinGapsBetweenBuildingChanges: public SpaceConstraint{
@@ -1060,7 +1139,7 @@ public:
 
 	ConstraintStudentsMinGapsBetweenBuildingChanges(double wp, int mg);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -1083,6 +1162,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintTeacherMaxBuildingChangesPerDay: public SpaceConstraint{
@@ -1102,7 +1185,7 @@ public:
 
 	ConstraintTeacherMaxBuildingChangesPerDay(double wp, QString tc, int mc);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	QString getXmlDescription(Rules& r);
 
@@ -1125,6 +1208,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintTeachersMaxBuildingChangesPerDay: public SpaceConstraint{
@@ -1138,7 +1225,7 @@ public:
 
 	ConstraintTeachersMaxBuildingChangesPerDay(double wp, int mc);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -1161,6 +1248,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintTeacherMaxBuildingChangesPerWeek: public SpaceConstraint{
@@ -1180,7 +1271,7 @@ public:
 
 	ConstraintTeacherMaxBuildingChangesPerWeek(double wp, QString tc, int mc);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -1203,6 +1294,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintTeachersMaxBuildingChangesPerWeek: public SpaceConstraint{
@@ -1216,7 +1311,7 @@ public:
 
 	ConstraintTeachersMaxBuildingChangesPerWeek(double wp, int mc);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -1239,6 +1334,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintTeacherMinGapsBetweenBuildingChanges: public SpaceConstraint{
@@ -1258,7 +1357,7 @@ public:
 
 	ConstraintTeacherMinGapsBetweenBuildingChanges(double wp, QString tc, int mg);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -1281,6 +1380,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
 
 class ConstraintTeachersMinGapsBetweenBuildingChanges: public SpaceConstraint{
@@ -1294,7 +1397,7 @@ public:
 
 	ConstraintTeachersMinGapsBetweenBuildingChanges(double wp, int mg);
 
-	bool computeInternalStructure(Rules& r);
+	bool computeInternalStructure(QWidget* parent, Rules& r);
 
 	bool hasInactiveActivities(Rules& r);
 	
@@ -1317,8 +1420,10 @@ public:
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
 };
-
-
 
 #endif

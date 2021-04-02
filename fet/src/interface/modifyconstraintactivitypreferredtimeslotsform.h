@@ -28,7 +28,7 @@ class ModifyConstraintActivityPreferredTimeSlotsForm : public QDialog, Ui::Modif
 
 	ConstraintActivityPreferredTimeSlots* _ctr;
 public:
-	ModifyConstraintActivityPreferredTimeSlotsForm(ConstraintActivityPreferredTimeSlots* ctr);
+	ModifyConstraintActivityPreferredTimeSlotsForm(QWidget* parent, ConstraintActivityPreferredTimeSlots* ctr);
 	~ModifyConstraintActivityPreferredTimeSlotsForm();
 
 	void updateActivitiesComboBox();

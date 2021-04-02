@@ -28,7 +28,7 @@ class ModifyConstraintTeachersMaxBuildingChangesPerWeekForm : public QDialog, Ui
 public:
 	ConstraintTeachersMaxBuildingChangesPerWeek* _ctr;
 
-	ModifyConstraintTeachersMaxBuildingChangesPerWeekForm(ConstraintTeachersMaxBuildingChangesPerWeek* ctr);
+	ModifyConstraintTeachersMaxBuildingChangesPerWeekForm(QWidget* parent, ConstraintTeachersMaxBuildingChangesPerWeek* ctr);
 	~ModifyConstraintTeachersMaxBuildingChangesPerWeekForm();
 
 public slots:

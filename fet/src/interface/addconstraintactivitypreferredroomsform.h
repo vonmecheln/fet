@@ -26,11 +26,11 @@
 class AddConstraintActivityPreferredRoomsForm : public QDialog, Ui::AddConstraintActivityPreferredRoomsForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintActivityPreferredRoomsForm();
+	AddConstraintActivityPreferredRoomsForm(QWidget* parent);
 	~AddConstraintActivityPreferredRoomsForm();
 
-	void updateRoomsListBox();
-	void updateActivitiesComboBox();	
+	void updateRoomsListWidget();
+	void updateActivitiesComboBox();
 	
 	bool filterOk(Activity* a);
 

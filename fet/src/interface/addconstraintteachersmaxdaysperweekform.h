@@ -26,7 +26,7 @@
 class AddConstraintTeachersMaxDaysPerWeekForm : public QDialog, Ui::AddConstraintTeachersMaxDaysPerWeekForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintTeachersMaxDaysPerWeekForm();
+	AddConstraintTeachersMaxDaysPerWeekForm(QWidget* parent);
 	~AddConstraintTeachersMaxDaysPerWeekForm();
 
 	void updateMaxDaysSpinBox();

@@ -19,30 +19,39 @@
 
 #include "timetable_defs.h"
 
-HelpFaqForm::HelpFaqForm()
+HelpFaqForm::HelpFaqForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	closePushButton->setDefault(true);
+	
+	plainTextEdit->setReadOnly(true);
 
-    connect(closePushButton, SIGNAL(clicked()), this /*HelpFaqForm_template*/, SLOT(close()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+	
+	setText();
+}
 
+HelpFaqForm::~HelpFaqForm()
+{
+	saveFETDialogGeometry(this);
+}
+
+void HelpFaqForm::setText()
+{
 	QString s;
 	
-	s+=tr("FET FAQ:");
+	s+=tr("Frequently asked questions.");
 	s+="\n\n";
-	s+=tr("This documentation by Liviu Lalescu, reviewed and modified on %1 (new additions are written with date, most are at the end)", "%1 is the date of last modification")
-		.arg(tr("17 February 2011", "Date of modification of FAQ"));
-	s+="\n\n";
-	s+="--------";
-	s+="\n\n";
+	s+=tr("Last modified on %1.").arg(tr("21 October 2011"));
 	
+	s+="\n\n";
+	s+="--------------------";
+	s+="\n\n";
+
 	s+=tr("Q: What is the organization of FET input data?\n\n"
 		"A: - Students - organized into sets (years (or forms, or classes), containing groups, containing subgroups)."
 		"\n"
@@ -62,11 +71,9 @@ HelpFaqForm::HelpFaqForm()
 		"constraint will always be respected and if this constraint is impossible, FET will not be able to generate a timetable.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	//s+=tr("Entry added on 20 Nov. 2009.");
-	//s+="\n\n";
 	s+=tr("Q: What are the maximum limits FET can handle?");
 	s+="\n\n";
 	s+=tr("A: There are indeed maximum limits for the generation algorithm (all these limits can be increased on demand, as a custom version, because this requires a bit more memory).");
@@ -94,27 +101,12 @@ HelpFaqForm::HelpFaqForm()
 	s+="\n- ";
 	s+=tr("Virtually unlimited number of teachers and students sets for each activity");
 	s+="\n- ";
-	s+=tr("Maximum number of time constraints: %1").arg(MAX_TIME_CONSTRAINTS);
+	s+=tr("Virtually unlimited number of time constraints");
 	s+="\n- ";
-	s+=tr("Maximum number of space constraints: %1").arg(MAX_SPACE_CONSTRAINTS);
+	s+=tr("Virtually unlimited number of space constraints");
 	
-	/*s+="\n\n";
-	s+=tr("Other limits referring to constraints:");
-	s+="\n- ";
-	s+=tr("Maximum number of activities in a single constraint min days between activities: %1").arg(MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES);
-	s+="\n- ";
-	//s+=tr("Maximum number of activities in a single constraint max days between activities: %1").arg(MAX_CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES);
-	//s+="\n- ";
-	s+=tr("Maximum number of activities in a single constraint activities same starting time: %1").arg(MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME);
-	s+="\n- ";
-	s+=tr("Maximum number of activities in a single constraint activities same starting day: %1").arg(MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY);
-	s+="\n- ";
-	s+=tr("Maximum number of activities in a single constraint activities same starting hour: %1").arg(MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR);
-	s+="\n- ";
-	s+=tr("Maximum number of activities in a single constraint activities not overlapping: %1").arg(MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING);*/
-
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: Why some activities appear indented while others not?\n\n"
@@ -123,14 +115,16 @@ HelpFaqForm::HelpFaqForm()
 		"the other components of this larger split activity.");
 		
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: Is it possible to use non-integer weights for constraints?\n\n"
-		"A: Yes. Using values like 99.75% might be good sometimes.");
+		"A: Yes. Using values like 99.75% might be good sometimes. "
+		"The precision in FET is limited to %1 decimal digits after the decimal point, "
+		"but probably nobody will use such a fine precision").arg(CUSTOM_DOUBLE_PRECISION);
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: Help on ConstraintStudentsEarlyMaxBeginningsAtSecondHour.\n\n"
@@ -141,14 +135,7 @@ HelpFaqForm::HelpFaqForm()
 		"all 8 activities in a 5 days week without breaking the students early constraint, so you will get no possible timetable.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
-	s+="\n\n";
-
-	s+=tr("Q: How does FET work?\n\n"
-		"A: A heuristic algorithm, based on swapping activities recursively to make space for new activities. Email the author or mailing list for details.");
-
-	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: How about optional subjects or students sets which are divided according to options?\n\n"
@@ -161,7 +148,7 @@ HelpFaqForm::HelpFaqForm()
 		"Another possible approach: you may choose to define students into sections (see question below).");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: How to define the students into sections?\n\n"
@@ -196,7 +183,7 @@ HelpFaqForm::HelpFaqForm()
 		"T2 and subject 'Language1'. This is a small trick, which might be easier to use than to divide a year.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: What is the structure of the students FET can handle?\n\n"
@@ -205,7 +192,7 @@ HelpFaqForm::HelpFaqForm()
 		"- overlapping groups (several subgroups) and years (several groups).");
 		
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: How can one work with overlapping structures of students?\n\n"
@@ -224,33 +211,14 @@ HelpFaqForm::HelpFaqForm()
 		"NEW: the thing is automatic now. Just select year->divide in the years dialog. Please see above entries in the FAQ.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: Can you add more students sets or teachers to a single activity?\n\n"
 		"A: Yes, you can add several students sets (subgroups, groups or years) and several teachers per activity.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
-	s+="\n\n";
-
-	s+=tr("Q: How can I contribute to/support FET?\n\n"
-		"A: You can translate, improve interface, any work. Please email the author or mailing list for details.\n\n"
-		"FET is free software and any donation would be great. Please contact the author for that.");
-
-	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
-	s+="\n\n";
-
-	s+=tr("Q: What advantages has FET over other applications?\n\n"
-		"A: - It is free software and...\n\n"
-		"- Independent subgroups, overlapping or independent groups, overlapping or independent years (flexible enough to permit any kind of "
-		"students structure). FET can even be used to manage every individual student, if you really need that;\n\n"
-		"- Possibility of optional activities;\n\n"
-		"- Many kinds of constraints, possibility to add more.");
-
-	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: Help on ConstraintMinDaysBetweenActivities.\n\n"
@@ -283,7 +251,7 @@ HelpFaqForm::HelpFaqForm()
 		"better (at least one day apart, usually 2 days apart)");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: Can I use FET to do interactive timetabling?\n\n"
@@ -293,58 +261,28 @@ HelpFaqForm::HelpFaqForm()
 		"this feature for a semi-automatic or even manual timetabling, but it is not so convenient.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Q: After finding the timetable of our school, suppose that a single teacher needs to modify his timetable and "
-		"the rest would like to keep their timetable unchanged. Thus, it is needed to fix all the activities of the rest of "
-		"the teachers and re-allocate the hours. Can FET deal with such a situation?\n\n"
-		"A: Yes, FET can deal with that. Just add many compulsory ConstraintActivityPreferredStartingTime-s, one for each activity "
-		"that you would like to be fixed (the preferred time will be the one from the previous allocation).");
-	s+="\n\n";
-	s+=tr("Text added on 28 June 2008: The timetable can be saved as .fet file, with activities blocked, and you can unblock certain activities (of this teacher).");
-	s+="\n\n";
-	s+=tr("Text added on 25 September 2009: You have now simpler possibilities, using lock/unlock features");
-
-	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
-	s+="\n\n";
-
-	s+=tr("Q: From Yush Yuen: Anyway, what i meant was, our teachers may have lunch at EITHER 5th or 6th period. so, i can't just use a break.\n\n"
-		"A: From Volker Dirr: Just add a subject 'lunch'. Then add activities new activities. this activities must contain "
-		"the teacher, subject lunch, split activity into number of working days of the teacher, set min day = 100% and add "
-		"NO studentsset. Then add constraint activities preferd time for this subject 5th and 6th hour weight = 100%.");
-
-	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
-	s+="\n\n";
-
-	s+=tr("Q: Is it possible to make a timetable where the students learn in two shifts? (for instance, the lowest form in the morning and the highest forms in the afternoon)?\n\n"
+	s+=tr("Q: Is it possible to make a timetable where the students learn in two shifts? (for instance, the lowest form in the morning and "
+		"the highest forms in the afternoon)?\n\n"
 		"A: Yes, you have to add more constraint students set not available accordingly (for the lowest forms not available Mon, "
 		"Tue, Wed, Th, Fr each from middle hour to last hour and for highest forms from first hour to middle hour). "
 		"The constraints no gaps and early work correctly with these not available: if not available, a students set will not have "
 		"gaps or early broken for the period of non-availability.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
-	s+="\n\n";
-
-	s+=tr("Q: What are groups of type 'year1 WHOLE YEAR' and subgroups of type 'group1 WHOLE GROUP'?\n\n"
-		"A: FET old versions (prior to 5.4.17) inserted automatically them. Please remove them now.");
-
-	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: I added an activity with min days constraint. But I cannot see the min days value in modify activity dialog\n\n"
 		"A: Min days is a time constraint. You can see it in the time constraints dialog");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: Can I work with fortnightly activities like in older FET versions?\n\n"
-		"Answer modified 21 July 2008:\n\n"
 		"A: You have to use some tricks. It would be difficult to consider fortnightly activities into the new FET algorithm "
 		"(from 5.0.0 up). But I think you can apply this: for instance, I suppose that you would like the first week to have activity "
 		"A1 (teacher T1, student S1) and A2 (T2, S2), and second week A3 (T1, S2) and A4 (T2, S1) (simultaneously)."
@@ -352,7 +290,7 @@ HelpFaqForm::HelpFaqForm()
 		"A' (no teachers, no students) and constraint activities same starting time A and A' and add rooms for A and A' .");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 
@@ -371,7 +309,7 @@ HelpFaqForm::HelpFaqForm()
 	s+=tr("You might want to choose different weights for different constraint min days (for instance, higher on subjects with less activities per week)");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: Are some constraints more efficient in speed of generation than other constraints, even if they give the same result?\n\n"
@@ -383,44 +321,34 @@ HelpFaqForm::HelpFaqForm()
 		"Each constraint of type not available or preferred times which filters out impossible slots might bring an improvement in speed.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Q: Is it allowed to use non-interger weights?\n\n"
+	s+=tr("Q: Is it allowed to use non-integer weights?\n\n"
 		"A: If a constraint is allowed values under 100%, you can use any weight, even fractional numbers like 99.75%. It might help "
 		"in constraints like min days, preferred rooms or max hours daily.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 
-	s+=tr("Q: With max 5 hours per day and 2 max gaps per week, in 4 cases it resulted 3 lesson+2 gaps + 2 lesson that is not acceptable,"
-		" cause other day only 2 lesson, I mean I don't want gaps on same day, and gaps only in extra cases extend the hours, "
-		"how can I keep the balance in this?\n\n"
-		"A: Then you have to add 2 extra activities for a teacher, each with duration 1 and students empty and dummy subject"
-		", and max gaps for this teacher 0.");
-
-	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
-	s+="\n\n";
-
-	s+=tr("Q: I have a sports room which allows more than 1 activity simultaneously in it. How to make the preferred room constraints"
-		"? Can FET accept more than one activity at the same time in a single room?\n\n"
+	s+=tr("Q: I have a sports room which allows more than 1 activity simultaneously in it. How to make the preferred room constraints? "
+		"Can FET accept more than one activity at the same time in a single room?\n\n"
 		"A: Each room can host a single activity at the same time. How to implement what you need? You can add more "
 		"rooms (sport1, sport2, sport3) and instead of a single preferred room add more preferred rooms.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Q: Help me! I got an impossible to solve timetable\n\n"
+	s+=tr("Q: I got an impossible to solve timetable!\n\n"
 		"A: If you get an impossible timetable, maybe the constraints students (set) early are too difficult. "
-		"Maybe you can allow more arrivals at second hour. Also teachers' min hours daily might be too strong."
-		" Please also check the statistics to be correct. Remove other constraints until you get a possible timetable.");
+		"Maybe you can allow more arrivals at second hour. Also teachers' min hours daily might be too strong. "
+		"Please also check the statistics to be correct. Remove other constraints until you get a possible timetable.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: Is it possible to work with 0 hour?\n\n"
@@ -430,7 +358,7 @@ HelpFaqForm::HelpFaqForm()
 		"Mr. Zsolt Udvari used another trick: considered the last hour to be hour 0. But this is not always applicable.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: How does FET care about weights. What do they mean?\n\n"
@@ -448,11 +376,9 @@ HelpFaqForm::HelpFaqForm()
 		"This is not 100% correct. Activities might get unallocated, and cycle reopened.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Modified on 28 June 2008:");
-	s+="\n\n";
 	s+=tr("Q: Help on constraint activities preferred starting or preferred time slots (a set of activities has a set of preferred starting or time slots)\n\n"
 		"A: You can specify a set of activities by selecting a teacher (if empty - all teachers), a students set "
 		"(if empty - all students), a subject (if empty - all subjects) and an activity tag (if empty, all activity tags) and a set of allowed days.\n\n"
@@ -461,7 +387,7 @@ HelpFaqForm::HelpFaqForm()
 		"if activity has duration 2 and on Monday is allowed 8:00, 9:00 and 10:00, then activity can only start at 8:00 or 9:00).");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: Help on statistics menu\n\n"
@@ -472,7 +398,7 @@ HelpFaqForm::HelpFaqForm()
 		"week close to the average of all subgroups. Do not input empty subgroups with only a few activities.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: What if I enter accidentally duplicate constraints?\n\n"
@@ -483,11 +409,9 @@ HelpFaqForm::HelpFaqForm()
 		"largest value, so you can use more constraints of this type for same activities.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Text added on 24 March 2008:");
-	s+="\n\n";
 	s+=tr("Q: More information about students' structure\n\n"
 		"A: The students' structure is very flexible and permits any institution structure.\n\n"
 		"The main idea is that subgroups are independent. Each subgroup must be the smallest teaching unit or even a single student.\n\n"
@@ -551,10 +475,10 @@ HelpFaqForm::HelpFaqForm()
 		"Currently, the interface for students is difficult to use. I am thinking of that. Maybe it is more simple for you if you try to work on the xml .fet file.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Text added on 27 March 2008: (Q-1-27-March-2008)");
+	s+=tr("Q-1-27-March-2008", "Mnemonic name for a particular question in the FAQ");
 	s+="\n\n";
 	s+=tr("Q: Example: I have 7 hours of Maths per 5 days week (7 is larger than 5). How to add correctly this split activity?\n\n"
 		"Complete Question: I have a large container activity split into more activities than the number of days per week. "
@@ -574,10 +498,10 @@ HelpFaqForm::HelpFaqForm()
 		"possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Text added on 6 June 2008: (Q-1-6-June-2008)");
+	s+=tr("Q-1-6-June-2008", "Mnemonic name for a particular question in the FAQ");
 	s+="\n\n";
 	s+=tr("Q: What I need is a way to make the following constraint:\n\n"
 		"If Activity1 comes first, then Activity2 can be consecutive. "
@@ -595,21 +519,9 @@ HelpFaqForm::HelpFaqForm()
 		"activities preferred time slots for subject tag Early to be in the first n-1 slots of each day.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Text added on 14 June 2008");
-	s+="\n\n";
-	s+=tr("It was added a possibility to add 2 constraints min days between activities when adding a split activity. "
-		"Please read above the documentation related to constrain min days between activities (basically, if you "
-		"add min days 2 (or 3), you get the possibility to add a second constraint with min days 1 (or 2)).");
-
-	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
-	s+="\n\n";
-
-	s+=tr("Text added on 28 June 2008:");
-	s+="\n\n";
 	s+=tr("Q: What is the difference between preferred starting times and preferred time slots?\n\n"
 		"A: Time slots is more restrictive, means all hours of an activity must be in the allowed intervals.\n\n"
 		"Example: Preferred times Monday 8,9 and 10. If activity A has duration 2, then starting means that activity A "
@@ -617,11 +529,9 @@ HelpFaqForm::HelpFaqForm()
 		"allowed, because the last hour of activity is not allowed there).");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Text added on 10 July 2008:");
-	s+="\n\n";
 	s+=tr("Q: What means constraint min gaps (hours) between a set of activities?\n\n"
 		"A: I had many users wanting to put a gap between activities of same teachers or between activities with same teacher and "
 		"subject, if they are on the same day. This constraint does that. If you want for instance to make teacher John to have "
@@ -632,90 +542,16 @@ HelpFaqForm::HelpFaqForm()
 		"by constraint min days between activities which have consecutive if same day selected.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Text added on 11 July 2008:");
-	s+="\n\n";
-	s+=tr("Q: As most of our pupils are using special busses, the last lesson of the day must be at "
-		"least the 5th (of 6 lessons). Year 10 for instance has 2 allowed beginnings of second hour, with 27 working hours in 5x6 hours per week.\n\n"
-		"A: It is possible to add constraint students min 5 hours daily, but this is stronger that what you need, "
-		"so the timetable is more difficult to generate (year 10 might have 4 hours on a day: 1:not here, 2: math, "
-		"3: phys, 4: engl, 5: bio, 6: not here on a normal timetable).\n\n"
-		"It is possible to use some trick, if you cannot find a solution with minimum 5 hours per day: add, for each "
-		"lowest level set of year 10 (see * below), 3 dummy activities, which represent the max 2 beginnings at second "
-		"hour and the minimum 1 finishing at the 5th period (2+1=3). The first 2 activities have activity tag ATBegin "
-		"and last 1 activity ATEnd. Add 2 constraints a set of activities has a set of preferred time slots, ATBegin, "
-		"first hour each day and last hour of each day allowed and rest not allowed and ATEnd, allowed only at last slot of "
-		"each day. Optionally: add constraint students (set) early max begs at sec. hour = 0 for the involved students ("
-		"may use here year or group). I think it should work nice, but you have to work a little bit more to input the data.\n\n"
-		"* : if year 10 does not contain groups, add dummy activities for year 10. If year 10 contains only groups"
-		", add for each group. If year 10 contains subgroups, add for each subgroup. The reason: if year 10 contains subgroups "
-		"and you add dummy activity, it is constrained to be in the same time for all subgroups; if you add dummy activities "
-		"for subgroups, they can be in different slots -> timetable might be easier to find.");
-		
-
-	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
-	s+="\n\n";
-
-	s+=tr("Text added on 15 July 2008:");
-	s+="\n\n";
-	s+=tr("From Zsolt Udvari:");
-	s+="\n\n";
-	s+=tr("Q: * imho must have a constraint: a student (or set) must have activite "
-		"at specified time /because in our school there is a worship in church "
-		"at monday, 7:30, and the school begin at 8:00 - so every students must "
-		"have an activite monday's first hour - and there is a class, where "
-		"must be an 'empty' first hour.\n\n"
-		"The problem (exactly): there's a class, 5A (11-12 years old), and "
-		"they've 4 english hours, in two subgroups (5A1 and 5A2), with same(!) "
-		"teacher (DIOR). They'll learn the other language (latin) in this "
-		"subgroups, but they've 'only' 3 latin. And at the other hours they're "
-		"together. So if we don't want gaps we must the english and latin hours "
-		"be pair, and one english hour'll be alone. "
-		"But these students are young so must escort them to lunch and can't be "
-		"that they'll go in two subgroups to lunch. "
-		"So, once the 5A1 hasn't first hour and 5A2 has english lesson and"
-		"second vica versa (when we don't want gaps). But in monday...\n\n"
-		"3 answers by Liviu:\n\n"
-		"A1: Maybe you could use dummy activities to represent gaps at first hour. Say you "
-		"allow 2 gaps at first hour, not on Monday. Then add a dummy activity for each "
-		"subgroup (with subject tag ST) and activities preferred starting times "
-		"subject tag ST allowed Tuesday first hour, Wed first hour, Th first hour, Fr "
-		"first hour. It should work.\n\n"
-		"Also allowed on the last slot of each day. But if you can have 2 last empty "
-		"slots in a day, I think you cannot use this trick.\n\n"
-		"A2: I understand that you want to allow 1 arrival at second hour, not on Monday.\n"
-		"So, add hours+1: 7:30, 8, ...\n"
-		"Add not available for each students set (or break - for all) on Tue, Wed, Thu, Fri, at hour 7:30.\n"
-		"Add 1 activity Religion, all students, no teachers. Preferred starting time Mon 7:30 (or you can add more activities).\n"
-		"Add constraint activity (one or more, as you added one or more Religion), "
-		"Monday, 7:30, for the above activity/ies.\n"
-		"Add constraint students early max 1 beginning at second hour.\n\n"
-		"A3: Constraint activities preferred time slots creates gaps, so use this facility:\n\n"
-		"Add hours from 7:30.\n\n"
-		"Constraint activities preferred time slots, not allowed on Monday 7:30, 100%.\n\n"
-		"Constraint break times (or not available for all students), not allowed Tue, Wed, Thu, Fri 7:30.\n\n"
-		"Add constraint students early max 2 beginnings at second hour (max 2 "
-		"beginnings, not 1, careful, because the Monday 7:30 is one and you allow "
-		"another one).");
-
-	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
-	s+="\n\n";
-
-	s+=tr("Text added on 15 July 2008:");
-	s+="\n\n";
 	s+=tr("Q: What type of files uses FET?\n\n"
-		"A: FET uses text files, xml or html or txt or csv (comma separated values - for import/export). The used codec is UTF-8 and probably UTF-16 should work.");
+		"A: FET uses text files, xml or html or txt or csv (comma separated values - for import/export). The used encoding is UTF-8.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Text added on 4 August 2008:");
-	s+="\n\n";
 	s+=tr("Q: Help on constraint subactivities preferred starting or preferred time slots (a set of subactivities has a set of preferred starting or time slots)\n\n"
 		"A: You select the component number of certain activities (say, if you have an activity split into 5 activities per week, you "
 		"have components 1, 2, 3, 4 or 5). Only the selected number of this split activity (the corresponding component activity) will be constrained.\n\n"
@@ -732,33 +568,27 @@ HelpFaqForm::HelpFaqForm()
 		"of the components if there are 2 per week, and none if there is only 1, you can add such a constraint for component number=2.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Text added on 15 August 2008:");
-	s+="\n\n";
 	s+=tr("Q: Help on constraints teacher(s) or students (set) hourly interval max days per week\n\n"
 		"A: This is a constraint suggested by users, to allow you to specify an hourly interval for students or teachers, and "
 		"to say that in this interval they must work at most max days per week. This is useful if for instance you want teachers "
 		"not to have more than 2 days per week activities in the last 2 hours of the day.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Text added on 16 August 2008:");
-	s+="\n\n";
 	s+=tr("Q: Help on constraint activities end students day (or activity ends students day).\n\n"
 		"A: If you have activities which you want to put in the last slots of a day (like say the meetings with "
 		"the class master), please use the new constraint a set of activities end students day (or singular activity ends "
 		"students day). This constraint can have weight only 100%, because of the way the algorithm works.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 	
-	s+=tr("Text added on 16 August 2008:");
-	s+="\n\n";
 	s+=tr("Q: At our school there are a lot of teachers which work only a few hours a week. Of course it "
 		"is really nasty to drive for one our to the school. So we set the constraint, that every teacher "
 		"should work at least 2 hours a day. Unfortunately we have this year a teacher which only works 1h a "
@@ -768,22 +598,18 @@ HelpFaqForm::HelpFaqForm()
 		"This trick just passed through my mind as I was trying to write you that you have to do it the hard way (add constraints for each teacher)");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 	
-	s+=tr("Text added on 17 August 2008:");
-	s+="\n\n";
 	s+=tr("Q: What about the automatic search for updates? Should I enable it?\n\n"
 		"A: It is recommended to enable automatic search for updates. I didn't set it as default because people might be annoyed if I "
 		"release too fast new versions. But if you can cope with that, it is recommended to always have the latest version and enable "
 		"searching for updates at startup.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 	
-	s+=tr("Text added on 5 December 2008");
-	s+="\n\n";
 	s+=tr("Q: I have a double duration activity. Is it possible that it is spread over the break period, like:\n\n"
 		"Activity Math, duration 2, id say 100\n\n"
 		"Hour 10:00 Math (first hour of act. 100)\n"
@@ -792,7 +618,7 @@ HelpFaqForm::HelpFaqForm()
 		"A: No, the activity must respect the break, so it is before or after the break with all the hours of it.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 	
 	s+=tr("Q and A From Anestis Vovos: A very difficult to diagnose unresolved case\n\n"
@@ -810,7 +636,7 @@ HelpFaqForm::HelpFaqForm()
 		"...Not that I will fall again for it but based on the difficulty to diagnose on my part it will help others that might face the same problem.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: I want to define hard subjects (Math, Physics and Chemistry) and I want students not to have more than 1 (or another variant 2) difficult subjects in a row.\n\n"
@@ -818,7 +644,7 @@ HelpFaqForm::HelpFaqForm()
 		"hours continuously for all students and an activity tag 'Difficult'. Please take care if you may have double lessons.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Q: (by Horatiu Halmajan) I met a situation: a teacher asks for maximum 2 working days, but these days "
@@ -833,7 +659,7 @@ HelpFaqForm::HelpFaqForm()
 		"these dummy activities as possible gaps, so if teacher has max gaps 2 then make max gaps for him 0.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 
@@ -843,14 +669,14 @@ HelpFaqForm::HelpFaqForm()
 		"in a day. Add max gaps for students = 0 per week.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Advice: to treat gaps for students or teachers, if FET constraints are not enough, you can use dummy activities."
 		" For instance, if a students set can have maximum 3 gaps, add an activity split into 3 per week, with no teachers.");
 		
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Question 1/16 August 2009: How to add constraint two activities grouped, two activities consecutive and three "
@@ -863,7 +689,7 @@ HelpFaqForm::HelpFaqForm()
 		"min days between activities. Or maybe you can find other ways.");
 		
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
 	s+=tr("Question 1/25 September 2009: An observation for constraint teacher(s) or students (set) activity tag max hours daily:\n\n"
@@ -897,10 +723,10 @@ HelpFaqForm::HelpFaqForm()
 		"Probably, in practice this problem will not appear and you need not to worry. But theoretically it exists.");
 		
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 	
-	s+=tr("3 Hints from an anonymous Polish user, who uses FET for very large data (added on 7 October 2009):");
+	s+=tr("3 hints from an anonymous Polish user, who uses FET for very large data:");
 	s+="\n\n";
 	s+=tr("The first hint for other users is to start with minimum number of constraints and if FET would generate "
 		"the plan than thinking about adding the next ones.");
@@ -915,7 +741,7 @@ HelpFaqForm::HelpFaqForm()
 		"generated plan is faster than creating many many more constraints and repeating simulations. And this is the third hint.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 	
 	s+=tr("Q: Why the constraints activity tag max hours daily and students max gaps per day are disabled in the FET menu?");
@@ -931,7 +757,7 @@ HelpFaqForm::HelpFaqForm()
 	s+=tr("Use these constraints with caution, not to obtain impossible timetables.");
 	
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 	
 	s+=tr("Q: Why don't you implement the not perfect constraints (activity tag max hours daily and students max gaps per day) in a perfect way?");
@@ -942,22 +768,18 @@ HelpFaqForm::HelpFaqForm()
 		" easy to make critical bugs and some files may not solve anymore.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 	
-	s+=tr("Entry added on 19 Nov. 2009.");
-	s+="\n\n";
 	s+=tr("Q: Help on shortcut buttons in the main form.");
 	s+="\n\n";
 	s+=tr("A: More users asked for shortcut buttons for the most commonly used functions. It is possible to show such buttons, if you select the corresponding option"
 		" from the Settings->Interface menu (shortcuts are shown, by default).");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 	
-	s+=tr("Entry added on 29 Jan. 2010.");
-	s+="\n\n";
 	s+=tr("This is an advanced question which probably will never appear in practice, you may skip it at first reading.");
 	s+="\n\n";
 	s+=tr("Q: This is a problem that probably will never appear in practice, but it is possible. Say the user generates a timetable successfully, "
@@ -983,21 +805,17 @@ HelpFaqForm::HelpFaqForm()
 		"Practical solution to case 2)? Reduce weights of constraints which have weight below 100% or lock (to a corresponding slot) the activity which corresponds to A1 in your data file.");
 	
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Entry added on 15 Feb. 2010.");
-	s+="\n\n";
 	s+=tr("Q: I need constraint students (set) max days per week, similar to existing teacher(s) max days per week constraint.");
 	s+="\n\n";
 	s+=tr("A: Maybe it will be implemented in the future. Until then, please use constraint students (set) interval max days per week, interval = whole day.");
 	
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Entry added on 27 Feb. 2010.");
-	s+="\n\n";
 	s+=tr("Q: I tried to work on a fixed timetable, to move an activity to another time slot. Now I got stuck - FET says: impossible to generate.");
 	s+="\n\n";
 	s+=tr("A: There is this potential problem. Suppose you have max hours daily for students = 4 hours, 99%. You generated successfully (maybe you got some days with more"
@@ -1009,12 +827,10 @@ HelpFaqForm::HelpFaqForm()
 		" A solution: lower the weight of this constraint from 99% to 90% or less.");
 	
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Entry added on 17 Feb. 2011.");
-	s+="\n\n";
-	s+=tr("-- This Q&A by Regis Bouguin --");
+	s+=tr("-- This entry by Regis Bouguin --");
 	s+="\n\n";
 	s+=tr("Q: A trick to deal with fortnightly activities (my institution has a lot of fortnightly activities):");
 	s+="\n\n";
@@ -1033,11 +849,9 @@ HelpFaqForm::HelpFaqForm()
 	s+=tr("It works fine and I got good timetables with strong teachers time constraints.");
 
 	s+="\n\n";
-	s+="-------------------------------------------------------------------------------";
+	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Entry added on 17 Feb. 2011.");
-	s+="\n\n";
 	s+=tr("Q: I need to add a split activity with total duration 4, which can be either 2+2 or 2+1+1 (two hours in a day and two hours in another day,"
 		" or two hours in a day, one hour in another day and one hour in another day).");
 	s+="\n\n";
@@ -1052,9 +866,37 @@ HelpFaqForm::HelpFaqForm()
 	s+="\n\n";
 	s+=tr("There may be other solutions possible, but this one seems perfect with respect to efficiency.");
 
-	textBrowser->setText(s);
-}
+	s+="\n\n";
+	s+="--------------------";
+	s+="\n\n";
 
-HelpFaqForm::~HelpFaqForm()
-{
+	s+=tr("Q: I would like to specify that a teacher should have activities in certain time slots, no matter which activities.");
+	s+="\n\n";
+	s+=tr("A: Please use constraint activities occupy max time slots from selection (the exact menu entry is 'A set of activities occupies max"
+	 " time slots from selection'. See that constraint's Help button for more details.");
+
+	s+="\n\n";
+	s+="--------------------";
+	s+="\n\n";
+
+	s+=tr("Q: How to easily find the activities with unspecified room in the timetable (after the timetable was generated)?");
+	s+="\n\n";
+	s+=tr("A: A trick is this: open the file representing the activities timetable in XML form (this file can be found in"
+	 " the results directory, with a name like: file_activities.xml) with a text editor, and search for the text <Room></Room>");
+
+	s+="\n\n";
+	s+="--------------------";
+	s+="\n\n";
+
+	s+=tr("Q: The students and/or teachers should have in each day some activities without interruption, then some"
+	 " continuous gaps, then again some activities without interruption."
+	 " This situation can appear in these cases: schools in Morocco and Algeria, which have morning and afternoon shifts,"
+	 " and also in some universities in which students would prefer to have at most a single cluster of gaps, no matter how long, in each day."
+	 " How to treat such situations in FET?");
+	s+="\n\n";
+	s+=tr("A: A nice way to treat such situations would be to consider the number of FET days = 2 * the number of real days. Each real day"
+	 " corresponds to two FET days, one for the morning and one for the afternoon. Then, add constraints max zero gaps, and maybe min two hours"
+	 " daily with allow empty days true. You may need to devise some other tricks, in addition.");
+
+	plainTextEdit->setPlainText(s);
 }

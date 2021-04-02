@@ -17,36 +17,28 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintstudentssetmaxhoursdailyform.h"
 #include "timeconstraint.h"
 
-AddConstraintStudentsSetMaxHoursDailyForm::AddConstraintStudentsSetMaxHoursDailyForm()
+AddConstraintStudentsSetMaxHoursDailyForm::AddConstraintStudentsSetMaxHoursDailyForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintStudentsSetMaxHoursDailyForm_template*/, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintStudentsSetMaxHoursDailyForm_template*/, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintStudentsSetMaxHoursDailyForm_template*/, SLOT(close()));
-//    connect(studentsComboBox, SIGNAL(activated(QString)), this /*AddConstraintStudentsSetMaxHoursDailyForm_template*/, SLOT(constraintChanged()));
-//    connect(maxHoursSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintStudentsSetMaxHoursDailyForm_template*/, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
 
-	maxHoursSpinBox->setMinValue(1);
-	maxHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
+	maxHoursSpinBox->setMinimum(1);
+	maxHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxHoursSpinBox->setValue(gt.rules.nHoursPerDay);
 
 	updateStudentsSetComboBox();
@@ -54,6 +46,7 @@ AddConstraintStudentsSetMaxHoursDailyForm::AddConstraintStudentsSetMaxHoursDaily
 
 AddConstraintStudentsSetMaxHoursDailyForm::~AddConstraintStudentsSetMaxHoursDailyForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintStudentsSetMaxHoursDailyForm::updateStudentsSetComboBox()
@@ -61,13 +54,13 @@ void AddConstraintStudentsSetMaxHoursDailyForm::updateStudentsSetComboBox()
 	studentsComboBox->clear();	
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
@@ -76,29 +69,7 @@ void AddConstraintStudentsSetMaxHoursDailyForm::updateStudentsSetComboBox()
 }
 
 void AddConstraintStudentsSetMaxHoursDailyForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1").arg(weight);
-	s+="\n";
-
-	s+=tr("Students set max hours daily");
-	s+="\n";
-	s+=tr("Students set=%1").arg(studentsComboBox->currentText());
-	s+="\n";
-
-	int maxHours=maxHoursSpinBox->value();
-	if(maxHours>=0){
-		s+=tr("Max. hours:%1").arg(maxHours);
-		s+="\n";
-	}
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void AddConstraintStudentsSetMaxHoursDailyForm::addCurrentConstraint()
@@ -107,21 +78,12 @@ void AddConstraintStudentsSetMaxHoursDailyForm::addCurrentConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
 		return;
 	}
-	/*if(weight!=100.0){
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Invalid weight - must be 100%"));
-		return;
-	}*/
-
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
 
 	int maxHours=maxHoursSpinBox->value();
 
@@ -133,7 +95,7 @@ void AddConstraintStudentsSetMaxHoursDailyForm::addCurrentConstraint()
 		return;
 	}
 
-	ctr=new ConstraintStudentsSetMaxHoursDaily(weight, /*compulsory,*/ maxHours, students_name);
+	ctr=new ConstraintStudentsSetMaxHoursDaily(weight, maxHours, students_name);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

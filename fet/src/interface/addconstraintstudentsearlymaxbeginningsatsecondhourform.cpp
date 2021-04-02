@@ -17,32 +17,25 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintstudentsearlymaxbeginningsatsecondhourform.h"
 #include "timeconstraint.h"
 
-AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm()
+AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-//    connect(maxBeginningsSpinBox, SIGNAL(valueChanged(int)), this, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 		
-	maxBeginningsSpinBox->setMinValue(0);
-	maxBeginningsSpinBox->setMaxValue(gt.rules.nDaysPerWeek);
+	maxBeginningsSpinBox->setMinimum(0);
+	maxBeginningsSpinBox->setMaximum(gt.rules.nDaysPerWeek);
 	maxBeginningsSpinBox->setValue(0);
 	
 	constraintChanged();
@@ -50,25 +43,11 @@ AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::AddConstraintStudentsEa
 
 AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::~AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::constraintChanged()
 {
-/*	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight percentage=%1\%").arg(weight);
-	s+="\n";
-
-	s+=tr("Students must begin activities early, with maximum %1 beginnings at the second available hour, per week (not available and break not counted)")
-	 .arg(maxBeginningsSpinBox->value());
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
 }
 
 void AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::addCurrentConstraint()
@@ -77,7 +56,7 @@ void AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::addCurrentConstrai
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
@@ -88,10 +67,6 @@ void AddConstraintStudentsEarlyMaxBeginningsAtSecondHourForm::addCurrentConstrai
 			tr("Invalid weight (percentage) - it must be 100%"));
 		return;
 	}
-
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
 
 	ctr=new ConstraintStudentsEarlyMaxBeginningsAtSecondHour(weight/*, compulsory*/, maxBeginningsSpinBox->value());
 

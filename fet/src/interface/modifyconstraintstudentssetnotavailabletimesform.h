@@ -28,7 +28,7 @@ class ModifyConstraintStudentsSetNotAvailableTimesForm : public QDialog, Ui::Mod
 public:
 	ConstraintStudentsSetNotAvailableTimes* _ctr;
 
-	ModifyConstraintStudentsSetNotAvailableTimesForm(ConstraintStudentsSetNotAvailableTimes* ctr);
+	ModifyConstraintStudentsSetNotAvailableTimesForm(QWidget* parent, ConstraintStudentsSetNotAvailableTimes* ctr);
 	~ModifyConstraintStudentsSetNotAvailableTimesForm();
 
 	void updateStudentsComboBox();

@@ -32,15 +32,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 #include <QSet>
 #include <QHash>
+#include <QList>
 
 #include <QTextStream>
+
+class QWidget;
 
 bool compareFunctionGeneratePre(int i, int j);
 
 extern int permutation[MAX_ACTIVITIES]; //the permutation matrix to obtain activities in
 //decreasing difficulty order
 
-bool processTimeSpaceConstraints(QTextStream* initialOrderStream=NULL);
+bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStream=NULL);
 
 
 ////////BEGIN BASIC TIME CONSTRAINTS
@@ -49,7 +52,7 @@ bool processTimeSpaceConstraints(QTextStream* initialOrderStream=NULL);
 extern Matrix2D<qint8> activitiesConflictingPercentage; //-1 for not conflicting,
 //a value >=0 equal with the weight of the maximum weightPercentage of a basic time constraint
 
-bool computeActivitiesConflictingPercentage();
+bool computeActivitiesConflictingPercentage(QWidget* parent);
 //void computeActivitiesConflicting();
 
 void sortActivities(const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int> > & reprSameActivitiesSet, QTextStream* initialOrderStream=NULL);
@@ -62,7 +65,7 @@ extern Matrix1D<QList<int> > minDaysListOfMinDays;
 extern Matrix1D<QList<double> > minDaysListOfWeightPercentages;
 extern Matrix1D<QList<bool> > minDaysListOfConsecutiveIfSameDay;
 
-bool computeMinDays();
+bool computeMinDays(QWidget* parent);
 ////////END   MIN DAYS TIME CONSTRAINTS
 
 
@@ -71,7 +74,7 @@ extern Matrix1D<QList<int> > maxDaysListOfActivities;
 extern Matrix1D<QList<int> > maxDaysListOfMaxDays;
 extern Matrix1D<QList<double> > maxDaysListOfWeightPercentages;
 
-bool computeMaxDays();
+bool computeMaxDays(QWidget* parent);
 ////////END   MAX DAYS TIME CONSTRAINTS
 
 
@@ -80,7 +83,7 @@ extern Matrix1D<QList<int> > minGapsBetweenActivitiesListOfActivities;
 extern Matrix1D<QList<int> > minGapsBetweenActivitiesListOfMinGaps;
 extern Matrix1D<QList<double> > minGapsBetweenActivitiesListOfWeightPercentages;
 
-bool computeMinGapsBetweenActivities();
+bool computeMinGapsBetweenActivities(QWidget* parent);
 ////////END	 MIN GAPS between activities TIME CONSTRAINTS
 
 
@@ -105,14 +108,14 @@ extern Matrix3D<bool> subgroupNotAvailableDayHour;
 //extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern Matrix3D<bool> teacherNotAvailableDayHour;
 
-bool computeNotAllowedTimesPercentages();
+bool computeNotAllowedTimesPercentages(QWidget* parent);
 ////////END   st. not available, tch not avail., break, activity preferred time,
 ////////activity preferred time, activities preferred times
 
 
 ////////BEGIN students no gaps and early
-bool computeNHoursPerSubgroup();
-bool computeSubgroupsEarlyAndMaxGapsPercentages();
+bool computeNHoursPerSubgroup(QWidget* parent);
+bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent);
 
 extern double subgroupsEarlyMaxBeginningsAtSecondHourPercentage[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[MAX_TOTAL_SUBGROUPS];
@@ -122,7 +125,7 @@ extern int subgroupsMaxGapsPerWeekMaxGaps[MAX_TOTAL_SUBGROUPS];
 extern int nHoursPerSubgroup[MAX_TOTAL_SUBGROUPS]; //used also for students min hours daily
 
 //max gaps per day (not perfect!!!)
-bool computeSubgroupsMaxGapsPerDayPercentages();
+bool computeSubgroupsMaxGapsPerDayPercentages(QWidget* parent);
 
 extern double subgroupsMaxGapsPerDayPercentage[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsMaxGapsPerDayMaxGaps[MAX_TOTAL_SUBGROUPS];
@@ -139,7 +142,7 @@ extern double teachersMaxDaysPerWeekWeightPercentages[MAX_TEACHERS]; //-1 for no
 ///extern QList<int> teacherActivitiesOfTheDay[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
 extern Matrix1D<QList<int> > teachersWithMaxDaysPerWeekForActivities;
 
-bool computeMaxDaysPerWeekForTeachers();
+bool computeMaxDaysPerWeekForTeachers(QWidget* parent);
 ////////END   teachers max days per week
 
 
@@ -152,16 +155,16 @@ extern double teachersMaxGapsPerDayPercentage[MAX_TEACHERS];
 extern int teachersMaxGapsPerDayMaxGaps[MAX_TEACHERS];
 
 extern int nHoursPerTeacher[MAX_TEACHERS];
-bool computeNHoursPerTeacher();
-bool computeTeachersMaxGapsPerWeekPercentage();
-bool computeTeachersMaxGapsPerDayPercentage();
+bool computeNHoursPerTeacher(QWidget* parent);
+bool computeTeachersMaxGapsPerWeekPercentage(QWidget* parent);
+bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent);
 ////////END   teachers max gaps per week and per day
 
 
 ////////BEGIN activities same starting time
 extern Matrix1D<QList<int> > activitiesSameStartingTimeActivities;
 extern Matrix1D<QList<double> > activitiesSameStartingTimePercentages;
-bool computeActivitiesSameStartingTime(QHash<int, int> & reprSameStartingTime, QHash<int, QSet<int> > & reprSameActivitiesSet);
+bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int> & reprSameStartingTime, QHash<int, QSet<int> > & reprSameActivitiesSet);
 ////////END   activities same starting time
 
 
@@ -198,7 +201,7 @@ extern double teachersMaxHoursDailyPercentages2[MAX_TEACHERS];
 extern int teachersMaxHoursDailyMaxHours2[MAX_TEACHERS];
 //extern int teachersRealGapsPerDay2[MAX_TEACHERS][MAX_DAYS_PER_WEEK];
 
-bool computeTeachersMaxHoursDaily();
+bool computeTeachersMaxHoursDaily(QWidget* parent);
 ////////END   teacher(s) max hours daily
 
 
@@ -209,7 +212,7 @@ extern int teachersMaxHoursContinuouslyMaxHours1[MAX_TEACHERS];
 extern double teachersMaxHoursContinuouslyPercentages2[MAX_TEACHERS];
 extern int teachersMaxHoursContinuouslyMaxHours2[MAX_TEACHERS];
 
-bool computeTeachersMaxHoursContinuously();
+bool computeTeachersMaxHoursContinuously(QWidget* parent);
 ////////END   teacher(s) max hours continuously
 
 
@@ -221,7 +224,7 @@ extern Matrix1D<QList<int> > teachersActivityTagMaxHoursDailyActivityTag;
 extern Matrix1D<QList<double> > teachersActivityTagMaxHoursDailyPercentage;
 //(formerly arrays of size MAX_TEACHERS)
 
-bool computeTeachersActivityTagMaxHoursDaily();
+bool computeTeachersActivityTagMaxHoursDaily(QWidget* parent);
 ///////END   teacher(s) activity tag max hours daily
 
 
@@ -233,7 +236,7 @@ extern Matrix1D<QList<int> > teachersActivityTagMaxHoursContinuouslyActivityTag;
 extern Matrix1D<QList<double> > teachersActivityTagMaxHoursContinuouslyPercentage;
 //(formerly arrays of size MAX_TEACHERS)
 
-bool computeTeachersActivityTagMaxHoursContinuously();
+bool computeTeachersActivityTagMaxHoursContinuously(QWidget* parent);
 ///////END   teacher(s) activity tag max hours continuously
 
 
@@ -241,7 +244,7 @@ bool computeTeachersActivityTagMaxHoursContinuously();
 extern double teachersMinHoursDailyPercentages[MAX_TEACHERS];
 extern int teachersMinHoursDailyMinHours[MAX_TEACHERS];
 
-bool computeTeachersMinHoursDaily();
+bool computeTeachersMinHoursDaily(QWidget* parent);
 ////////END   teacher(s) min hours daily
 
 
@@ -249,7 +252,7 @@ bool computeTeachersMinHoursDaily();
 extern double teachersMinDaysPerWeekPercentages[MAX_TEACHERS];
 extern int teachersMinDaysPerWeekMinDays[MAX_TEACHERS];
 
-bool computeTeachersMinDaysPerWeek();
+bool computeTeachersMinDaysPerWeek(QWidget* parent);
 ////////END   teacher(s) min days per week
 
 
@@ -260,7 +263,7 @@ extern int subgroupsMaxHoursDailyMaxHours1[MAX_TOTAL_SUBGROUPS];
 extern double subgroupsMaxHoursDailyPercentages2[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsMaxHoursDailyMaxHours2[MAX_TOTAL_SUBGROUPS];
 
-bool computeSubgroupsMaxHoursDaily();
+bool computeSubgroupsMaxHoursDaily(QWidget* parent);
 ////////END   students (set) max hours daily
 
 
@@ -271,7 +274,7 @@ extern int subgroupsMaxHoursContinuouslyMaxHours1[MAX_TOTAL_SUBGROUPS];
 extern double subgroupsMaxHoursContinuouslyPercentages2[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsMaxHoursContinuouslyMaxHours2[MAX_TOTAL_SUBGROUPS];
 
-bool computeStudentsMaxHoursContinuously();
+bool computeStudentsMaxHoursContinuously(QWidget* parent);
 ////////END   students (set) max hours continuously
 
 
@@ -283,7 +286,7 @@ extern Matrix1D<QList<int> > subgroupsActivityTagMaxHoursDailyActivityTag;
 extern Matrix1D<QList<double> > subgroupsActivityTagMaxHoursDailyPercentage;
 //(formerly arrays of size MAX_TOTAL_SUBGROUPS)
 
-bool computeStudentsActivityTagMaxHoursDaily();
+bool computeStudentsActivityTagMaxHoursDaily(QWidget* parent);
 ///////END   students (set) activity tag max hours daily
 
 
@@ -295,7 +298,7 @@ extern Matrix1D<QList<int> > subgroupsActivityTagMaxHoursContinuouslyActivityTag
 extern Matrix1D<QList<double> > subgroupsActivityTagMaxHoursContinuouslyPercentage;
 //(formerly arrays of size MAX_TOTAL_SUBGROUPS)
 
-bool computeStudentsActivityTagMaxHoursContinuously();
+bool computeStudentsActivityTagMaxHoursContinuously(QWidget* parent);
 ///////END   students (set) activity tag max hours continuously
 
 
@@ -303,7 +306,7 @@ bool computeStudentsActivityTagMaxHoursContinuously();
 extern double subgroupsMinHoursDailyPercentages[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsMinHoursDailyMinHours[MAX_TOTAL_SUBGROUPS];
 extern bool subgroupsMinHoursDailyAllowEmptyDays[MAX_TOTAL_SUBGROUPS];
-bool computeSubgroupsMinHoursDaily();
+bool computeSubgroupsMinHoursDaily(QWidget* parent);
 ////////END   students (set) min hours daily
 
 
@@ -347,13 +350,13 @@ extern Matrix1D<QList<int> > inverseConstrTwoActivitiesOrderedActivities;
 
 ////////////BEGIN activity ends students day
 extern double activityEndsStudentsDayPercentages[MAX_ACTIVITIES]; //-1 for not existing
-bool computeActivityEndsStudentsDayPercentages();
+bool computeActivityEndsStudentsDayPercentages(QWidget* parent);
 extern bool haveActivityEndsStudentsDay;
 ////////////END   activity ends students day
 
 
-bool checkMinDays100Percent();
-bool checkMinDaysConsecutiveIfSameDay();
+bool checkMinDays100Percent(QWidget* parent);
+bool checkMinDaysConsecutiveIfSameDay(QWidget* parent);
 
 
 ///////BEGIN teachers interval max days per week
@@ -372,7 +375,7 @@ extern int teachersIntervalMaxDaysPerWeekMaxDays3[MAX_TEACHERS];
 extern int teachersIntervalMaxDaysPerWeekIntervalStart3[MAX_TEACHERS];
 extern int teachersIntervalMaxDaysPerWeekIntervalEnd3[MAX_TEACHERS];
 
-bool computeTeachersIntervalMaxDaysPerWeek();
+bool computeTeachersIntervalMaxDaysPerWeek(QWidget* parent);
 ///////END   teachers interval max days per week
 
 
@@ -392,12 +395,12 @@ extern int subgroupsIntervalMaxDaysPerWeekMaxDays3[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsIntervalMaxDaysPerWeekIntervalStart3[MAX_TOTAL_SUBGROUPS];
 extern int subgroupsIntervalMaxDaysPerWeekIntervalEnd3[MAX_TOTAL_SUBGROUPS];
 
-bool computeSubgroupsIntervalMaxDaysPerWeek();
+bool computeSubgroupsIntervalMaxDaysPerWeek(QWidget* parent);
 ///////END   subgroups interval max days per week
 
 
 ////////BEGIN rooms
-bool computeBasicSpace();
+bool computeBasicSpace(QWidget* parent);
 
 //extern double notAllowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK]; //-1 for available
 extern Matrix2D<double> notAllowedRoomTimePercentages; //-1 for available
@@ -416,34 +419,34 @@ extern Matrix1D<QList<int> > activitiesHomeRoomsHomeRooms;
 extern double activitiesHomeRoomsPercentage[MAX_ACTIVITIES];
 extern bool unspecifiedHomeRoom[MAX_ACTIVITIES];
 
-bool computeActivitiesRoomsPreferences();
+bool computeActivitiesRoomsPreferences(QWidget* parent);
 ////////END   rooms
 
 
 ////////BEGIN buildings
 extern double maxBuildingChangesPerDayForStudentsPercentages[MAX_TOTAL_SUBGROUPS];
 extern int maxBuildingChangesPerDayForStudentsMaxChanges[MAX_TOTAL_SUBGROUPS];
-bool computeMaxBuildingChangesPerDayForStudents();
+bool computeMaxBuildingChangesPerDayForStudents(QWidget* parent);
 
 extern double minGapsBetweenBuildingChangesForStudentsPercentages[MAX_TOTAL_SUBGROUPS];
 extern int minGapsBetweenBuildingChangesForStudentsMinGaps[MAX_TOTAL_SUBGROUPS];
-bool computeMinGapsBetweenBuildingChangesForStudents();
+bool computeMinGapsBetweenBuildingChangesForStudents(QWidget* parent);
 
 extern double maxBuildingChangesPerDayForTeachersPercentages[MAX_TEACHERS];
 extern int maxBuildingChangesPerDayForTeachersMaxChanges[MAX_TEACHERS];
-bool computeMaxBuildingChangesPerDayForTeachers();
+bool computeMaxBuildingChangesPerDayForTeachers(QWidget* parent);
 
 extern double minGapsBetweenBuildingChangesForTeachersPercentages[MAX_TEACHERS];
 extern int minGapsBetweenBuildingChangesForTeachersMinGaps[MAX_TEACHERS];
-bool computeMinGapsBetweenBuildingChangesForTeachers();
+bool computeMinGapsBetweenBuildingChangesForTeachers(QWidget* parent);
 
 extern double maxBuildingChangesPerWeekForStudentsPercentages[MAX_TOTAL_SUBGROUPS];
 extern int maxBuildingChangesPerWeekForStudentsMaxChanges[MAX_TOTAL_SUBGROUPS];
-bool computeMaxBuildingChangesPerWeekForStudents();
+bool computeMaxBuildingChangesPerWeekForStudents(QWidget* parent);
 
 extern double maxBuildingChangesPerWeekForTeachersPercentages[MAX_TEACHERS];
 extern int maxBuildingChangesPerWeekForTeachersMaxChanges[MAX_TEACHERS];
-bool computeMaxBuildingChangesPerWeekForTeachers();
+bool computeMaxBuildingChangesPerWeekForTeachers(QWidget* parent);
 ////////END   buildings
 
 
@@ -452,13 +455,57 @@ extern Matrix1D<QList<int> > mustComputeTimetableTeachers;
 extern bool mustComputeTimetableSubgroup[MAX_TOTAL_SUBGROUPS];
 extern bool mustComputeTimetableTeacher[MAX_TEACHERS];
 
+void computeMustComputeTimetableSubgroups();
+void computeMustComputeTimetableTeachers();
 
-bool homeRoomsAreOk();
+
+bool homeRoomsAreOk(QWidget* parent);
 
 
-extern bool fixedTimeActivity[MAX_ACTIVITIES]; //this is in fact time fixed, not both time and space
+//2011-09-25 - Constraint activities occupy max time slots from selection
+
+class ActivitiesOccupyMaxTimeSlotsFromSelection_item
+{
+public:
+	//double weight; -> must be 100.0%
+	QList<int> activitiesList;
+	QSet<int> activitiesSet;
+	QList<int> selectedTimeSlotsList;
+	QSet<int> selectedTimeSlotsSet;
+	int maxOccupiedTimeSlots;
+};
+
+extern QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item> aomtsList;
+extern Matrix1D<QList<ActivitiesOccupyMaxTimeSlotsFromSelection_item*> > aomtsListForActivity;
+
+bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent);
+
+//2011-09-30 - Constraint activities max simultaneous in selected time slots
+
+class ActivitiesMaxSimultaneousInSelectedTimeSlots_item
+{
+public:
+	//double weight; -> must be 100.0%
+	QList<int> activitiesList;
+	QSet<int> activitiesSet;
+	QList<int> selectedTimeSlotsList;
+	QSet<int> selectedTimeSlotsSet;
+	int maxSimultaneous;
+};
+
+extern QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item> amsistsList;
+extern Matrix1D<QList<ActivitiesMaxSimultaneousInSelectedTimeSlots_item*> > amsistsListForActivity;
+
+bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent);
+
+extern bool haveActivitiesOccupyOrSimultaneousConstraints;
+
+/////////////////////////////////////////////////////////////////////////
+
+
+extern bool fixedTimeActivity[MAX_ACTIVITIES];
 extern bool fixedSpaceActivity[MAX_ACTIVITIES];
-bool computeFixedActivities();
+bool computeFixedActivities(QWidget* parent);
 
 class GeneratePreTranslate: public QObject{
 	Q_OBJECT

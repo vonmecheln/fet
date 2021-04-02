@@ -26,7 +26,7 @@
 class AddConstraintSubjectPreferredRoomForm : public QDialog, Ui::AddConstraintSubjectPreferredRoomForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintSubjectPreferredRoomForm();
+	AddConstraintSubjectPreferredRoomForm(QWidget* parent);
 	~AddConstraintSubjectPreferredRoomForm();
 
 	void updateSubjectsComboBox();

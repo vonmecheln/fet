@@ -131,7 +131,7 @@
      <item>
       <widget class="QLineEdit" name="weightLineEdit">
        <property name="text">
-        <string>100</string>
+        <string notr="true">100</string>
        </property>
       </widget>
      </item>
@@ -179,18 +179,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>componentNumberSpinBox</tabstop>
-  <tabstop>teachersComboBox</tabstop>
-  <tabstop>studentsComboBox</tabstop>
-  <tabstop>subjectsComboBox</tabstop>
-  <tabstop>activityTagsComboBox</tabstop>
-  <tabstop>weightLineEdit</tabstop>
-  <tabstop>okPushButton</tabstop>
-  <tabstop>cancelPushButton</tabstop>
-  <tabstop>setAllAllowedPushButton</tabstop>
-  <tabstop>setAllNotAllowedPushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

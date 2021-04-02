@@ -17,37 +17,37 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
+
 
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitypreferredroomsform.h"
 #include "spaceconstraint.h"
 
-AddConstraintActivityPreferredRoomsForm::AddConstraintActivityPreferredRoomsForm()
+#include <QListWidget>
+#include <QAbstractItemView>
+
+AddConstraintActivityPreferredRoomsForm::AddConstraintActivityPreferredRoomsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    QObject::connect(addPushButton, SIGNAL(clicked()), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(addRoom()));
-//    QObject::connect(removePushButton, SIGNAL(clicked()), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(removeRoom()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(close()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(addConstraint()));
-    connect(roomsListBox, SIGNAL(selected(QString)), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(addRoom()));
-    connect(selectedRoomsListBox, SIGNAL(selected(QString)), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(removeRoom()));
-    connect(teachersComboBox, SIGNAL(activated(QString)), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(filterChanged()));
-    connect(studentsComboBox, SIGNAL(activated(QString)), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(filterChanged()));
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(filterChanged()));
-    connect(activityTagsComboBox, SIGNAL(activated(QString)), this /*AddConstraintActivityPreferredRoomsForm_template*/, SLOT(filterChanged()));
+	addConstraintPushButton->setDefault(true);
+	
+	roomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	selectedRoomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-    connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(roomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addRoom()));
+	connect(selectedRoomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeRoom()));
+	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -63,58 +63,51 @@ AddConstraintActivityPreferredRoomsForm::AddConstraintActivityPreferredRoomsForm
 
 	activitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
 	
-	teachersComboBox->insertItem("");
+	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 	}
-	teachersComboBox->setCurrentItem(0);
+	teachersComboBox->setCurrentIndex(0);
 
-	subjectsComboBox->insertItem("");
+	subjectsComboBox->addItem("");
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 	}
-	subjectsComboBox->setCurrentItem(0);
+	subjectsComboBox->setCurrentIndex(0);
 
-	activityTagsComboBox->insertItem("");
+	activityTagsComboBox->addItem("");
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* st=gt.rules.activityTagsList[i];
-		activityTagsComboBox->insertItem(st->name);
+		activityTagsComboBox->addItem(st->name);
 	}
-	activityTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentIndex(0);
 
-	studentsComboBox->insertItem("");
+	studentsComboBox->addItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
-	studentsComboBox->setCurrentItem(0);
+	studentsComboBox->setCurrentIndex(0);
 	
 	updateActivitiesComboBox();
 
-
-	updateRoomsListBox();
-	
-	/*for(int i=0; i<gt.rules.activitiesList.size(); i++){
-		Activity* ac=gt.rules.activitiesList[i];
-		activitiesComboBox->insertItem(ac->getDescription(gt.rules));
-	}*/
+	updateRoomsListWidget();
 }
 
 AddConstraintActivityPreferredRoomsForm::~AddConstraintActivityPreferredRoomsForm()
 {
+	saveFETDialogGeometry(this);
 }
-
-
 
 bool AddConstraintActivityPreferredRoomsForm::filterOk(Activity* act)
 {
@@ -141,7 +134,6 @@ bool AddConstraintActivityPreferredRoomsForm::filterOk(Activity* act)
 		ok=false;
 		
 	//activity tag
-//	if(sbtn!="" && sbtn!=act->activityTagName)
 	if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
 		ok=false;
 		
@@ -168,7 +160,7 @@ void AddConstraintActivityPreferredRoomsForm::updateActivitiesComboBox(){
 		Activity* act=gt.rules.activitiesList[i];
 		
 		if(filterOk(act)){
-			activitiesComboBox->insertItem(act->getDescription(gt.rules));
+			activitiesComboBox->addItem(act->getDescription(gt.rules));
 			this->activitiesList.append(act->id);
 		}
 	}
@@ -179,17 +171,14 @@ void AddConstraintActivityPreferredRoomsForm::filterChanged()
 	this->updateActivitiesComboBox();
 }
 
-
-
-
-void AddConstraintActivityPreferredRoomsForm::updateRoomsListBox()
+void AddConstraintActivityPreferredRoomsForm::updateRoomsListWidget()
 {
-	roomsListBox->clear();
-	selectedRoomsListBox->clear();
+	roomsListWidget->clear();
+	selectedRoomsListWidget->clear();
 
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* rm= gt.rules.roomsList[i];
-		roomsListBox->insertItem(rm->name);
+		roomsListWidget->addItem(rm->name);
 	}
 }
 
@@ -199,29 +188,26 @@ void AddConstraintActivityPreferredRoomsForm::addConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	if(selectedRoomsListBox->count()==0){
+	if(selectedRoomsListWidget->count()==0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Empty list of selected rooms"));
 		return;
 	}
-	if(selectedRoomsListBox->count()==1){
+	if(selectedRoomsListWidget->count()==1){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Only one selected room - please use constraint activity preferred room if you want a single room"));
 		return;
 	}
 
-
 	int id;
-	int tmp2=activitiesComboBox->currentItem();
-	//assert(tmp2<gt.rules.activitiesList.size());
-	//assert(tmp2<activitiesList.size());
+	int tmp2=activitiesComboBox->currentIndex();
 	if(tmp2<0 || tmp2>=gt.rules.activitiesList.size() || tmp2>=activitiesList.size()){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid activity"));
@@ -229,17 +215,10 @@ void AddConstraintActivityPreferredRoomsForm::addConstraint()
 	}
 	else
 		id=activitiesList.at(tmp2);
-		
-	/*if(activitiesComboBox->currentItem()<0){
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Invalid selected activity"));
-		return;	
-	}
-	int id=gt.rules.activitiesList[activitiesComboBox->currentItem()]->id;*/
 	
 	QStringList roomsList;
-	for(uint i=0; i<selectedRoomsListBox->count(); i++)
-		roomsList.append(selectedRoomsListBox->text(i));
+	for(int i=0; i<selectedRoomsListWidget->count(); i++)
+		roomsList.append(selectedRoomsListWidget->item(i)->text());
 	
 	ctr=new ConstraintActivityPreferredRooms(weight, id, roomsList);
 	bool tmp3=gt.rules.addSpaceConstraint(ctr);
@@ -259,28 +238,37 @@ void AddConstraintActivityPreferredRoomsForm::addConstraint()
 
 void AddConstraintActivityPreferredRoomsForm::addRoom()
 {
-	if(roomsListBox->currentItem()<0)
+	if(roomsListWidget->currentRow()<0)
 		return;
-	QString rmName=roomsListBox->currentText();
+	QString rmName=roomsListWidget->currentItem()->text();
 	assert(rmName!="");
-	uint i;
+	int i;
 	//duplicate?
-	for(i=0; i<selectedRoomsListBox->count(); i++)
-		if(rmName==selectedRoomsListBox->text(i))
+	for(i=0; i<selectedRoomsListWidget->count(); i++)
+		if(rmName==selectedRoomsListWidget->item(i)->text())
 			break;
-	if(i<selectedRoomsListBox->count())
+	if(i<selectedRoomsListWidget->count())
 		return;
-	selectedRoomsListBox->insertItem(rmName);
+	selectedRoomsListWidget->addItem(rmName);
+	selectedRoomsListWidget->setCurrentRow(selectedRoomsListWidget->count()-1);
 }
 
 void AddConstraintActivityPreferredRoomsForm::removeRoom()
 {
-	if(selectedRoomsListBox->currentItem()<0 || selectedRoomsListBox->count()<=0)
-		return;		
-	selectedRoomsListBox->removeItem(selectedRoomsListBox->currentItem());
+	if(selectedRoomsListWidget->currentRow()<0 || selectedRoomsListWidget->count()<=0)
+		return;
+	int tmp=selectedRoomsListWidget->currentRow();
+	
+	selectedRoomsListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=selectedRoomsListWidget->takeItem(tmp);
+	delete item;
+	if(tmp<selectedRoomsListWidget->count())
+		selectedRoomsListWidget->setCurrentRow(tmp);
+	else
+		selectedRoomsListWidget->setCurrentRow(selectedRoomsListWidget->count()-1);
 }
 
 void AddConstraintActivityPreferredRoomsForm::clear()
 {
-	selectedRoomsListBox->clear();
+	selectedRoomsListWidget->clear();
 }

@@ -28,7 +28,7 @@ class ConstraintBreakTimesForm : public QDialog, Ui::ConstraintBreakTimesForm_te
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintBreakTimesForm();
+	ConstraintBreakTimesForm(QWidget* parent);
 	~ConstraintBreakTimesForm();
 
 	bool filterOk(TimeConstraint* ctr);

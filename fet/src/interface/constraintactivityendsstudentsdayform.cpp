@@ -23,29 +23,33 @@
 #include "addconstraintactivityendsstudentsdayform.h"
 #include "modifyconstraintactivityendsstudentsdayform.h"
 
-ConstraintActivityEndsStudentsDayForm::ConstraintActivityEndsStudentsDayForm()
+#include <QListWidget>
+#include <QScrollBar>
+#include <QAbstractItemView>
+
+ConstraintActivityEndsStudentsDayForm::ConstraintActivityEndsStudentsDayForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(constraintsListBox, SIGNAL(highlighted(int)), this /*ConstraintActivityEndsStudentsDayForm_template*/, SLOT(constraintChanged(int)));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*ConstraintActivityEndsStudentsDayForm_template*/, SLOT(addConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*ConstraintActivityEndsStudentsDayForm_template*/, SLOT(close()));
-    connect(removeConstraintPushButton, SIGNAL(clicked()), this /*ConstraintActivityEndsStudentsDayForm_template*/, SLOT(removeConstraint()));
-    connect(modifyConstraintPushButton, SIGNAL(clicked()), this /*ConstraintActivityEndsStudentsDayForm_template*/, SLOT(modifyConstraint()));
-    connect(constraintsListBox, SIGNAL(selected(QString)), this /*ConstraintActivityEndsStudentsDayForm_template*/, SLOT(modifyConstraint()));
-    connect(teachersComboBox, SIGNAL(activated(QString)), this /*ConstraintActivityEndsStudentsDayForm_template*/, SLOT(filterChanged()));
-    connect(studentsComboBox, SIGNAL(activated(QString)), this /*ConstraintActivityEndsStudentsDayForm_template*/, SLOT(filterChanged()));
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*ConstraintActivityEndsStudentsDayForm_template*/, SLOT(filterChanged()));
-    connect(activityTagsComboBox, SIGNAL(activated(QString)), this /*ConstraintActivityEndsStudentsDayForm_template*/, SLOT(filterChanged()));
+	currentConstraintTextEdit->setReadOnly(true);
+	
+	modifyConstraintPushButton->setDefault(true);
+	
+	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
+	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
+	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -55,44 +59,43 @@ ConstraintActivityEndsStudentsDayForm::ConstraintActivityEndsStudentsDayForm()
 	Q_UNUSED(tmp3);
 	QSize tmp4=activityTagsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
-
 	
 /////////////
-	teachersComboBox->insertItem("");
+	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 	}
-	teachersComboBox->setCurrentItem(0);
+	teachersComboBox->setCurrentIndex(0);
 
-	subjectsComboBox->insertItem("");
+	subjectsComboBox->addItem("");
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 	}
-	subjectsComboBox->setCurrentItem(0);
+	subjectsComboBox->setCurrentIndex(0);
 
-	activityTagsComboBox->insertItem("");
+	activityTagsComboBox->addItem("");
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* st=gt.rules.activityTagsList[i];
-		activityTagsComboBox->insertItem(st->name);
+		activityTagsComboBox->addItem(st->name);
 	}
-	activityTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentIndex(0);
 
-	studentsComboBox->insertItem("");
+	studentsComboBox->addItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
-	studentsComboBox->setCurrentItem(0);
+	studentsComboBox->setCurrentIndex(0);
 ///////////////
 
 	this->filterChanged();
@@ -100,6 +103,7 @@ ConstraintActivityEndsStudentsDayForm::ConstraintActivityEndsStudentsDayForm()
 
 ConstraintActivityEndsStudentsDayForm::~ConstraintActivityEndsStudentsDayForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 bool ConstraintActivityEndsStudentsDayForm::filterOk(TimeConstraint* ctr)
@@ -142,7 +146,6 @@ bool ConstraintActivityEndsStudentsDayForm::filterOk(TimeConstraint* ctr)
 			found=false;
 	
 		//activity tag
-//		if(sbtn!="" && sbtn!=act->activityTagName)
 		if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
 			found=false;
 	
@@ -168,65 +171,77 @@ bool ConstraintActivityEndsStudentsDayForm::filterOk(TimeConstraint* ctr)
 void ConstraintActivityEndsStudentsDayForm::filterChanged()
 {
 	this->visibleConstraintsList.clear();
-	constraintsListBox->clear();
+	constraintsListWidget->clear();
 	for(int i=0; i<gt.rules.timeConstraintsList.size(); i++){
 		TimeConstraint* ctr=gt.rules.timeConstraintsList[i];
 		if(filterOk(ctr)){
 			visibleConstraintsList.append(ctr);
-			constraintsListBox->insertItem(ctr->getDescription(gt.rules));
+			constraintsListWidget->addItem(ctr->getDescription(gt.rules));
 		}
 	}
 
-	constraintsListBox->setCurrentItem(0);
-	this->constraintChanged(constraintsListBox->currentItem());
-	
-	/*if(visibleConstraintsList.count()>0)
-		constraintChanged(0);
+	if(constraintsListWidget->count()>0)
+		constraintsListWidget->setCurrentRow(0);
 	else
-		constraintChanged(-1);*/
+		constraintChanged(-1);
 }
 
 void ConstraintActivityEndsStudentsDayForm::constraintChanged(int index)
 {
 	if(index<0){
-		currentConstraintTextEdit->setText("");
+		currentConstraintTextEdit->setPlainText("");
 		return;
 	}
 	assert(index<this->visibleConstraintsList.size());
 	TimeConstraint* ctr=this->visibleConstraintsList.at(index);
 	assert(ctr!=NULL);
-	currentConstraintTextEdit->setText(ctr->getDetailedDescription(gt.rules));
+	currentConstraintTextEdit->setPlainText(ctr->getDetailedDescription(gt.rules));
 }
 
 void ConstraintActivityEndsStudentsDayForm::addConstraint()
 {
-	AddConstraintActivityEndsStudentsDayForm form;
+	AddConstraintActivityEndsStudentsDayForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
 	filterChanged();
 	
-	constraintsListBox->setCurrentItem(constraintsListBox->count()-1);
+	constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
 }
 
 void ConstraintActivityEndsStudentsDayForm::modifyConstraint()
 {
-	int i=constraintsListBox->currentItem();
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
+
+	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
 	}
 	TimeConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintActivityEndsStudentsDayForm form((ConstraintActivityEndsStudentsDay*)ctr);
+	ModifyConstraintActivityEndsStudentsDayForm form(this, (ConstraintActivityEndsStudentsDay*)ctr);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
 	filterChanged();
-	constraintsListBox->setCurrentItem(i);
+
+	constraintsListWidget->verticalScrollBar()->setValue(valv);
+	constraintsListWidget->horizontalScrollBar()->setValue(valh);
+
+	if(i>=constraintsListWidget->count())
+		i=constraintsListWidget->count()-1;
+		
+	if(i>=0)
+		constraintsListWidget->setCurrentRow(i);
+	else
+		this->constraintChanged(-1);
 }
 
 void ConstraintActivityEndsStudentsDayForm::removeConstraint()
 {
-	int i=constraintsListBox->currentItem();
+	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
@@ -236,19 +251,28 @@ void ConstraintActivityEndsStudentsDayForm::removeConstraint()
 	s=tr("Remove constraint?");
 	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	//s+=tr("\nAre you sure?");
+	
+	QListWidgetItem* item;
 
 	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
-	case 0: // The user clicked the OK again button or pressed Enter
+	case 0: // The user clicked the OK button or pressed Enter
 		gt.rules.removeTimeConstraint(ctr);
-		filterChanged();
+		
+		visibleConstraintsList.removeAt(i);
+		constraintsListWidget->setCurrentRow(-1);
+		item=constraintsListWidget->takeItem(i);
+		delete item;
+		
 		break;
-	case 1: // The user clicked the Cancel or pressed Escape
+	case 1: // The user clicked the Cancel button or pressed Escape
 		break;
 	}
 	
-	if((uint)(i) >= constraintsListBox->count())
-		i=constraintsListBox->count()-1;
-	constraintsListBox->setCurrentItem(i);
+	if(i>=constraintsListWidget->count())
+		i=constraintsListWidget->count()-1;
+	if(i>=0)
+		constraintsListWidget->setCurrentRow(i);
+	else
+		this->constraintChanged(-1);
 }

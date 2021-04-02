@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>528</width>
+    <width>632</width>
     <height>334</height>
    </rect>
   </property>
@@ -15,7 +15,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" colspan="2">
-    <widget class="QLabel" name="weightTextLabel_2">
+    <widget class="QLabel" name="teacherInstructionsTextLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
        <horstretch>0</horstretch>
@@ -37,7 +37,7 @@ Note: teacher not available and break are not counted as gaps.</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="1">
+   <item row="1" column="0" colspan="2">
     <spacer name="spacer1">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -117,7 +117,7 @@ Note: teacher not available and break are not counted as gaps.</string>
    <item row="5" column="1">
     <widget class="QLineEdit" name="weightLineEdit">
      <property name="text">
-      <string>100</string>
+      <string notr="true">100</string>
      </property>
     </widget>
    </item>
@@ -142,13 +142,6 @@ Note: teacher not available and break are not counted as gaps.</string>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>teachersComboBox</tabstop>
-  <tabstop>maxGapsSpinBox</tabstop>
-  <tabstop>weightLineEdit</tabstop>
-  <tabstop>addConstraintPushButton</tabstop>
-  <tabstop>closePushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

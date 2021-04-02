@@ -17,26 +17,20 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "modifyconstraintsubjectpreferredroomform.h"
 #include "spaceconstraint.h"
 
-ModifyConstraintSubjectPreferredRoomForm::ModifyConstraintSubjectPreferredRoomForm(ConstraintSubjectPreferredRoom* ctr)
+ModifyConstraintSubjectPreferredRoomForm::ModifyConstraintSubjectPreferredRoomForm(QWidget* parent, ConstraintSubjectPreferredRoom* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintSubjectPreferredRoomForm_template*/, SLOT(cancel()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintSubjectPreferredRoomForm_template*/, SLOT(ok()));
+	okPushButton->setDefault(true);
 
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp3=subjectsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp3);
@@ -46,8 +40,7 @@ ModifyConstraintSubjectPreferredRoomForm::ModifyConstraintSubjectPreferredRoomFo
 	
 	this->_ctr=ctr;
 	
-	//compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 
 	updateSubjectsComboBox();
 	updateRoomsComboBox();
@@ -55,6 +48,7 @@ ModifyConstraintSubjectPreferredRoomForm::ModifyConstraintSubjectPreferredRoomFo
 
 ModifyConstraintSubjectPreferredRoomForm::~ModifyConstraintSubjectPreferredRoomForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintSubjectPreferredRoomForm::updateSubjectsComboBox()
@@ -63,13 +57,13 @@ void ModifyConstraintSubjectPreferredRoomForm::updateSubjectsComboBox()
 	subjectsComboBox->clear();
 	for(int k=0; k<gt.rules.subjectsList.size(); k++){
 		Subject* sb=gt.rules.subjectsList[k];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 		if(sb->name==this->_ctr->subjectName)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	subjectsComboBox->setCurrentItem(j);
+	subjectsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintSubjectPreferredRoomForm::updateRoomsComboBox()
@@ -78,13 +72,13 @@ void ModifyConstraintSubjectPreferredRoomForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int k=0; k<gt.rules.roomsList.size(); k++){
 		Room* rm=gt.rules.roomsList[k];
-		roomsComboBox->insertItem(rm->name);
+		roomsComboBox->addItem(rm->name);
 		if(rm->name==this->_ctr->roomName)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	roomsComboBox->setCurrentItem(j);
+	roomsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintSubjectPreferredRoomForm::cancel()
@@ -96,18 +90,14 @@ void ModifyConstraintSubjectPreferredRoomForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
 		return;
 	}
 
-/*	bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
-	int i=subjectsComboBox->currentItem();
+	int i=subjectsComboBox->currentIndex();
 	if(i<0 || subjectsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid subject"));
@@ -115,7 +105,7 @@ void ModifyConstraintSubjectPreferredRoomForm::ok()
 	}
 	QString subject=subjectsComboBox->currentText();
 
-	i=roomsComboBox->currentItem();
+	i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid room"));
@@ -124,11 +114,11 @@ void ModifyConstraintSubjectPreferredRoomForm::ok()
 	QString room=roomsComboBox->currentText();
 
 	this->_ctr->weightPercentage=weight;
-	//this->_ctr->compulsory=compulsory;
 	this->_ctr->roomName=room;
 	this->_ctr->subjectName=subject;
 
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }

@@ -38,25 +38,17 @@ public:
 	QStringList _activityTags;
 	QStringList _students;
 
-	ModifySubactivityForm(int id, int activityGroupId);
+	ModifySubactivityForm(QWidget* parent, int id, int activityGroupId);
 	~ModifySubactivityForm();
 
-	void updateStudentsListBox();
-	void updateTeachersListBox();
+	void updateStudentsListWidget();
+	void updateTeachersListWidget();
 	void updateSubjectsComboBox();
-	void updateActivityTagsListBox();
+	void updateActivityTagsListWidget();
 	
-	/*void durationChanged();
-	void showYearsChanged();
-	void showGroupsChanged();
-	void showSubgroupsChanged();*/
-
 public slots:
 	void ok();
 	void cancel();
-	
-	void subjectChanged(const QString& dummy);
-	void subactivityChanged();
 	
 	void addTeacher();
 	void removeTeacher();
@@ -74,6 +66,8 @@ public slots:
 	void showYearsChanged();
 	void showGroupsChanged();
 	void showSubgroupsChanged();
+	
+	void help();
 };
 
 #endif

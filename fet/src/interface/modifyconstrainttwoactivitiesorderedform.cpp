@@ -17,29 +17,20 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "modifyconstrainttwoactivitiesorderedform.h"
 #include "timeconstraint.h"
 
-ModifyConstraintTwoActivitiesOrderedForm::ModifyConstraintTwoActivitiesOrderedForm(ConstraintTwoActivitiesOrdered* ctr)
+ModifyConstraintTwoActivitiesOrderedForm::ModifyConstraintTwoActivitiesOrderedForm(QWidget* parent, ConstraintTwoActivitiesOrdered* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintTwoActivitiesOrderedForm_template*/, SLOT(constraintChanged()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintTwoActivitiesOrderedForm_template*/, SLOT(ok()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintTwoActivitiesOrderedForm_template*/, SLOT(cancel()));
-//    connect(firstActivitiesComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintTwoActivitiesOrderedForm_template*/, SLOT(constraintChanged()));
-//    connect(secondActivitiesComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintTwoActivitiesOrderedForm_template*/, SLOT(constraintChanged()));
+	okPushButton->setDefault(true);
 
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp5=firstActivitiesComboBox->minimumSizeHint();
 	Q_UNUSED(tmp5);
@@ -51,7 +42,7 @@ ModifyConstraintTwoActivitiesOrderedForm::ModifyConstraintTwoActivitiesOrderedFo
 	
 	this->_ctr=ctr;
 	
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 
 	updateActivitiesComboBox();
 
@@ -60,6 +51,7 @@ ModifyConstraintTwoActivitiesOrderedForm::ModifyConstraintTwoActivitiesOrderedFo
 
 ModifyConstraintTwoActivitiesOrderedForm::~ModifyConstraintTwoActivitiesOrderedForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 bool ModifyConstraintTwoActivitiesOrderedForm::filterOk(Activity* act)
@@ -87,7 +79,7 @@ void ModifyConstraintTwoActivitiesOrderedForm::updateActivitiesComboBox(){
 	for(int k=0; k<gt.rules.activitiesList.size(); k++){
 		Activity* act=gt.rules.activitiesList[k];
 		if(filterOk(act)){
-			firstActivitiesComboBox->insertItem(act->getDescription(gt.rules));
+			firstActivitiesComboBox->addItem(act->getDescription(gt.rules));
 			this->firstActivitiesList.append(act->id);
 
 			if(act->id==this->_ctr->firstActivityId)
@@ -97,13 +89,13 @@ void ModifyConstraintTwoActivitiesOrderedForm::updateActivitiesComboBox(){
 		}
 	}
 	//assert(j>=0); only first time
-	firstActivitiesComboBox->setCurrentItem(j);
+	firstActivitiesComboBox->setCurrentIndex(j);
 
 	i=0, j=-1;
 	for(int k=0; k<gt.rules.activitiesList.size(); k++){
 		Activity* act=gt.rules.activitiesList[k];
 		if(filterOk(act)){
-			secondActivitiesComboBox->insertItem(act->getDescription(gt.rules));
+			secondActivitiesComboBox->addItem(act->getDescription(gt.rules));
 			this->secondActivitiesList.append(act->id);
 
 			if(act->id==this->_ctr->secondActivityId)
@@ -113,71 +105,27 @@ void ModifyConstraintTwoActivitiesOrderedForm::updateActivitiesComboBox(){
 		}
 	}
 	//assert(j>=0); only first time
-	secondActivitiesComboBox->setCurrentItem(j);
+	secondActivitiesComboBox->setCurrentIndex(j);
 
 	constraintChanged();
 }
 
 void ModifyConstraintTwoActivitiesOrderedForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1\%").arg(weight);
-	s+="\n";
-
-	s+=tr("two activities ordered");	
-	s+=" ";
-	s+=tr("(activity 2 must be after activity 1, separated by any number of days or hours)");
-	s+="\n";
-	
-	int fid;
-	int tmp2=firstActivitiesComboBox->currentItem();
-	assert(tmp2<gt.rules.activitiesList.size());
-	assert(tmp2<firstActivitiesList.size());
-	if(tmp2<0){
-		s+=tr("Invalid activity");
-		s+="\n";
-	}
-	else{
-		fid=firstActivitiesList.at(tmp2);
-		s+=tr("First activity id=%1").arg(fid);
-		s+="\n";
-	}
-
-	int sid;
-	int tmp3=secondActivitiesComboBox->currentItem();
-	assert(tmp3<gt.rules.activitiesList.size());
-	assert(tmp3<secondActivitiesList.size());
-	if(tmp3<0){
-		s+=tr("Invalid second activity");
-		s+="\n";
-	}
-	else{
-		sid=secondActivitiesList.at(tmp3);
-		s+=tr("Second activity id=%1").arg(sid);
-		s+="\n";
-	}
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void ModifyConstraintTwoActivitiesOrderedForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	int tmp2=firstActivitiesComboBox->currentItem();
+	int tmp2=firstActivitiesComboBox->currentIndex();
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<firstActivitiesList.size());
 	if(tmp2<0){
@@ -187,7 +135,7 @@ void ModifyConstraintTwoActivitiesOrderedForm::ok()
 	}
 	int fid=firstActivitiesList.at(tmp2);
 	
-	int tmp3=secondActivitiesComboBox->currentItem();
+	int tmp3=secondActivitiesComboBox->currentIndex();
 	assert(tmp3<gt.rules.activitiesList.size());
 	assert(tmp3<secondActivitiesList.size());
 	if(tmp3<0){
@@ -208,6 +156,7 @@ void ModifyConstraintTwoActivitiesOrderedForm::ok()
 	this->_ctr->secondActivityId=sid;
 	
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 
 	this->close();
 }

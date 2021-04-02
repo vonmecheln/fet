@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>450</width>
-    <height>293</height>
+    <height>302</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -112,7 +112,7 @@
    <item row="8" column="0" colspan="2">
     <widget class="QLineEdit" name="weightLineEdit">
      <property name="text">
-      <string>-1</string>
+      <string notr="true">100</string>
      </property>
     </widget>
    </item>
@@ -133,14 +133,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>subjectsComboBox</tabstop>
-  <tabstop>activityTagsComboBox</tabstop>
-  <tabstop>roomsComboBox</tabstop>
-  <tabstop>weightLineEdit</tabstop>
-  <tabstop>okPushButton</tabstop>
-  <tabstop>cancelPushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

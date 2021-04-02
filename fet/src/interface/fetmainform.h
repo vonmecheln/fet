@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef FETMAINFORM_H
 #define FETMAINFORM_H
@@ -25,22 +23,21 @@
 #include <QMutex>
 #include <QThread>
 
+#include <QtGui>
+#include <QResizeEvent>
 #include <QCloseEvent>
 
-#include <QMainWindow>
+#include <QStringList>
 
-#include "httpget.h"
+#include <QAction>
 
-#include <QSpinBox>
-
-#include <QtGui>
-
-#include <QResizeEvent>
-
-#include <QMenu>
+class QNetworkAccessManager;
+class QNetworkReply;
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
+
+const int MAX_RECENT_FILES=10;
 
 class RandomSeedDialog: public QDialog
 {
@@ -63,7 +60,7 @@ public:
 	QHBoxLayout* buttonsLayout;
 	QVBoxLayout* mainLayout;
 
-	RandomSeedDialog();
+	RandomSeedDialog(QWidget* parent);
 	~RandomSeedDialog();
 	
 public slots:
@@ -71,36 +68,38 @@ public slots:
 	void ok();
 };
 
-
-class FetMainForm:public QMainWindow, Ui::FetMainForm_template
+class FetMainForm: public QMainWindow, public Ui::FetMainForm_template
 {
 	Q_OBJECT
 	
 private:
 	QSpinBox communicationSpinBox;
 	
-	void setEnabledIcon(QAction* action, bool enabled);
-	
 	QMenu* shortcutBasicMenu;
 	QMenu* shortcutDataSpaceMenu;
 	QMenu* shortcutDataAdvancedMenu;
 	QMenu* shortcutAdvancedTimeMenu;
 	
-/*protected:
-	void resizeEvent(QResizeEvent* event);*/
+	QNetworkAccessManager* networkManager;
+	
+	QStringList recentFiles;
+	
+	QAction* recentFileActions[MAX_RECENT_FILES];
+	QAction* recentSeparatorAction;
+	
+	void setEnabledIcon(QAction* action, bool enabled);
+	
+	void setCurrentFile(const QString& fileName);
+	QString strippedName(const QString& fullFileName);
+	void updateRecentFileActions();
 
 public:
-	HttpGet getter;
-	
-	bool useGetter;
-
 	FetMainForm();
 	~FetMainForm();
 	
-//	void updateLogo();
-
 	void closeOtherWindows();
 	
+	void openFile(const QString& fileName);
 	bool fileSave();
 	bool fileSaveAs();
 	
@@ -112,6 +111,8 @@ public slots:
 	void on_fileSaveAsAction_activated();
 	void on_fileExitAction_activated();
 	void on_fileOpenAction_activated();
+	void on_fileClearRecentFilesListAction_activated();
+	void openRecentFile();
 
 	void on_fileImportCSVActivityTagsAction_activated();
 	void on_fileImportCSVActivitiesAction_activated();
@@ -120,7 +121,7 @@ public slots:
 	void on_fileImportCSVTeachersAction_activated();
 	void on_fileImportCSVYearsGroupsSubgroupsAction_activated();
 	void on_fileExportCSVAction_activated();
-							
+	
 	void on_dataInstitutionNameAction_activated();
 	void on_dataCommentsAction_activated();
 	void on_dataDaysAction_activated();
@@ -134,6 +135,7 @@ public slots:
 	void on_dataGroupsAction_activated();
 	void on_dataSubgroupsAction_activated();
 	void on_dataStudentsStatisticsAction_activated();
+	void on_dataActivitiesRoomsStatisticsAction_activated();
 	void on_dataHelpOnStatisticsAction_activated();
 	
 	void on_helpSettingsAction_activated();
@@ -144,6 +146,7 @@ public slots:
 	void on_settingsConfirmActivityPlanningAction_toggled();
 	void on_settingsConfirmSpreadActivitiesAction_toggled();
 	void on_settingsConfirmRemoveRedundantAction_toggled();
+	void on_settingsConfirmSaveTimetableAction_toggled();
 	//////
 	
 	void enableActivityTagMaxHoursDailyToggled(bool checked);
@@ -159,7 +162,6 @@ public slots:
 	void on_dataBuildingsAction_activated();
 	void on_dataAllTimeConstraintsAction_activated();
 	void on_dataAllSpaceConstraintsAction_activated();
-
 
 	void on_dataSpaceConstraintsRoomNotAvailableTimesAction_activated();
 
@@ -194,7 +196,6 @@ public slots:
 	void on_dataSpaceConstraintsActivityTagPreferredRoomAction_activated();
 	void on_dataSpaceConstraintsActivityTagPreferredRoomsAction_activated();
 
-
 	void on_dataTimeConstraintsBasicCompulsoryTimeAction_activated();
 	void on_dataTimeConstraintsBreakTimesAction_activated();
 
@@ -212,6 +213,8 @@ public slots:
 	void on_dataTimeConstraintsActivitiesSameStartingTimeAction_activated();
 	void on_dataTimeConstraintsActivitiesSameStartingHourAction_activated();
 	void on_dataTimeConstraintsActivitiesSameStartingDayAction_activated();
+	void on_dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_activated();
+	void on_dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_activated();
 	void on_dataTimeConstraintsActivitiesNotOverlappingAction_activated();
 	void on_dataTimeConstraintsMinDaysBetweenActivitiesAction_activated();
 	void on_dataTimeConstraintsMaxDaysBetweenActivitiesAction_activated();
@@ -286,8 +289,6 @@ public slots:
 	void on_helpHomepageAction_activated();
 	void on_helpContentsAction_activated();
 	void on_helpForumAction_activated();
-	//void on_helpMailingListAction_activated();
-	//void on_helpContactsAction_activated();
 	void on_helpAddressesAction_activated();
 
 	void on_timetableGenerateAction_activated();
@@ -324,12 +325,9 @@ public slots:
 
 	void on_selectOutputDirAction_activated();
 	
-	void httpDone(bool error);
-	
 	void on_statisticsExportToDiskAction_activated();
 	
 	void on_shortcutAllTimeConstraintsPushButton_clicked();
-	//void on_shortcutMiscTimeConstraintsPushButton_clicked();
 	void on_shortcutBreakTimeConstraintsPushButton_clicked();
 	void on_shortcutTeachersTimeConstraintsPushButton_clicked();
 	void on_shortcutStudentsTimeConstraintsPushButton_clicked();
@@ -337,7 +335,6 @@ public slots:
 	void on_shortcutAdvancedTimeConstraintsPushButton_clicked();
 
 	void on_shortcutAllSpaceConstraintsPushButton_clicked();
-	//void on_shortcutMiscSpaceConstraintsPushButton_clicked();
 	void on_shortcutRoomsSpaceConstraintsPushButton_clicked();
 	void on_shortcutTeachersSpaceConstraintsPushButton_clicked();
 	void on_shortcutStudentsSpaceConstraintsPushButton_clicked();
@@ -360,15 +357,16 @@ public slots:
 	void on_shortcutStudentsPushButton_clicked();
 	void on_shortcutActivitiesPushButton_clicked();
 	void on_shortcutSubactivitiesPushButton_clicked();
-	//void on_shortcutBuildingsPushButton_clicked();
-	//void on_shortcutRoomsPushButton_clicked();
 	void on_shortcutDataAdvancedPushButton_clicked();
 	void on_shortcutDataSpacePushButton_clicked();
 
 	void on_shortcutOpenPushButton_clicked();
+	void on_shortcutOpenRecentPushButton_clicked();
 	void on_shortcutNewPushButton_clicked();
 	void on_shortcutSavePushButton_clicked();
 	void on_shortcutSaveAsPushButton_clicked();
+	
+	void replyFinished(QNetworkReply* networkReply);
 	
 protected:
 	void closeEvent(QCloseEvent* event);

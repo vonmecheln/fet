@@ -26,7 +26,7 @@
 class AddConstraintStudentsSetMinHoursDailyForm : public QDialog, Ui::AddConstraintStudentsSetMinHoursDailyForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintStudentsSetMinHoursDailyForm();
+	AddConstraintStudentsSetMinHoursDailyForm(QWidget* parent);
 	~AddConstraintStudentsSetMinHoursDailyForm();
 	
 	void updateStudentsSetComboBox();

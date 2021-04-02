@@ -103,7 +103,7 @@
    <item row="4" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout_5">
      <item>
-      <widget class="QPushButton" name="addStudentsYearPushButton">
+      <widget class="QPushButton" name="addStudentsSubgroupPushButton">
        <property name="text">
         <string>Add</string>
        </property>
@@ -121,14 +121,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>yearNameLineEdit</tabstop>
-  <tabstop>groupNameLineEdit</tabstop>
-  <tabstop>nameLineEdit</tabstop>
-  <tabstop>numberSpinBox</tabstop>
-  <tabstop>addStudentsYearPushButton</tabstop>
-  <tabstop>closePushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

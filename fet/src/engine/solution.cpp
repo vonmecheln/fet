@@ -22,9 +22,7 @@ along with FET; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-/*
-2-point and uniform crossover code by Volker Dirr, Volker at dirr-computer dot de
-*/
+//Teachers free periods code contributed by Volker Dirr (http://timetabling.de/)
 
 #include <iostream>
 using namespace std;
@@ -186,11 +184,6 @@ double Solution::fitness(Rules& r, QString* conflictsString){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 
-	/*if(this->changedForMatrixCalculation && this->_hardFitness>=0){
-		cout<<"this->_hardFitness=="<<this->_hardFitness<<endl;
-		cout<<"this->changedForMatrixCalculation=="<<this->changedForMatrixCalculation<<endl;		
-	}*/
-	
 	if(this->_fitness>=0)
 		assert(this->changedForMatrixCalculation==false);
 		
@@ -199,61 +192,11 @@ double Solution::fitness(Rules& r, QString* conflictsString){
 	//already computed
 		return this->_fitness;
 		
-	//Repair the chromosome - we enter here with the assumption that
-	//the time constraints of type ConstraintActivityPreferredTime,
-	//ConstraintActivitiesSameTime and ConstraintActivitiesSameStartingHour
-	//do not contradict one with each other.
-	//I had good reasons here not to repair activities that are scheduled too late
-	//(that is, have the hour+duration>nHoursPerDay.
-	//The reason is that there might be a mutation by swapping 2 activities,
-	//and I want it to consider all the variants.
-	//I might be wrong :-)
-	
-	//1)preferred times
-	/*not repairing anymore - 27 June 2007
-	for(int i=0; i<r.nInternalActivities; i++){
-		if(r.fixedDay[i]>=0 && r.fixedHour[i]>=0){
-			this->times[i] = r.fixedDay[i] + r.fixedHour[i] * r.nDaysPerWeek;
-		}
-		else if(r.fixedDay[i]>=0 && this->times[i]!=UNALLOCATED_TIME){
-			this->times[i] = r.fixedDay[i] + (this->times[i]/r.nDaysPerWeek)*r.nDaysPerWeek;
-		}
-		else if(r.fixedHour[i]>=0 && this->times[i]!=UNALLOCATED_TIME){
-			this->times[i] = (this->times[i]%r.nDaysPerWeek) + r.fixedHour[i]*r.nDaysPerWeek;
-		}
-	}
-	
-	//2)same starting day and/or hour
-	for(int i=0; i<r.nInternalActivities; i++){
-		if(r.sameDay[i]>=0 && r.sameHour[i]>=0 && this->times[r.sameDay[i]]!=UNALLOCATED_TIME && this->times[r.sameHour[i]]!=UNALLOCATED_TIME){
-			int d = this->times[r.sameDay[i]] % r.nDaysPerWeek;
-			int h = this->times[r.sameHour[i]] / r.nDaysPerWeek;
-			this->times[i] = d + h * r.nDaysPerWeek;
-			if(r.fixedDay[i]>=0)
-				assert(r.fixedDay[i]==d);
-			if(r.fixedHour[i]>=0)
-				assert(r.fixedHour[i]==h);
-		}
-		if(r.sameDay[i]>=0 && this->times[i]!=UNALLOCATED_SPACE && this->times[r.sameDay[i]]!=UNALLOCATED_TIME){
-			int d = this->times[r.sameDay[i]] % r.nDaysPerWeek;
-			int h = this->times[i] / r.nDaysPerWeek;
-			this->times[i] = d + h * r.nDaysPerWeek;
-			if(r.fixedDay[i]>=0)
-				assert(r.fixedDay[i]==d);
-		}
-		if(r.sameHour[i]>=0 && this->times[i]!=UNALLOCATED_SPACE && this->times[r.sameHour[i]]!=UNALLOCATED_TIME){
-			int d = this->times[i] % r.nDaysPerWeek;
-			int h = this->times[r.sameHour[i]] / r.nDaysPerWeek;
-			this->times[i] = d + h * r.nDaysPerWeek;
-			if(r.fixedHour[i]>=0)
-				assert(r.fixedHour[i]==h);
-		}
-	}*/
-	
 	this->changedForMatrixCalculation=true;
 	
 	this->_fitness=0;
-	//here we must not have compulsory activity preferred time nor 
+	//I AM NOT SURE IF THE COMMENT BELOW IS DEPRECATED/FALSE NOW (IT IS OLD).
+	//here we must not have compulsory activity preferred time nor
 	//compulsory activities same time and/or hour
 	//Also, here I compute soft fitness (for faster results,
 	//I do not want to pass again through the constraints)
@@ -275,10 +218,6 @@ double Solution::fitness(Rules& r, QString* conflictsString){
 		QList<double> cl;
 		this->_fitness += r.internalTimeConstraintsList[i]->fitness(*this, r, cl, sl, conflictsString);
 		
-		//if(cl.count()>0)
-		//	cout<<"cl.count()=="<<cl.count()<<endl;
-		//cout<<"conflictsString=="<<conflictsString<<endl;
-			
 		conflictsWeightList+=cl;
 		conflictsDescriptionList+=sl;
 	}	
@@ -296,7 +235,6 @@ double Solution::fitness(Rules& r, QString* conflictsString){
 		conflictsTotal+=cn;
 	}
 		
-	//cout<<"this->_fitness=="<<this->_fitness<<", conflictsTotal=="<<conflictsTotal<<endl;
 #if 0
 	//I cannot put this test. I got situations of assert failed with 15.2 != 15.2 ??? Maybe rounding errors
 	if(this->_fitness!=conflictsTotal){
@@ -306,7 +244,7 @@ double Solution::fitness(Rules& r, QString* conflictsString){
 	assert(this->_fitness==conflictsTotal);//TODO
 #endif
 		
-	//sort descending according to conflicts in O(n log n)	
+	//sort descending according to conflicts in O(n log n)
 	int ttt=conflictsWeightList.count();
 		
 	QMultiMap<double, QString> map;
@@ -330,25 +268,11 @@ double Solution::fitness(Rules& r, QString* conflictsString){
 	assert(conflictsWeightList.count()==conflictsDescriptionList.count());
 	assert(conflictsWeightList.count()==ttt);
 	
-	/*for(int i=0; i<conflictsWeightList.size(); i++)
-		for(int j=0; j<i; j++)
-			if(conflictsWeightList[i]>conflictsWeightList[j]){
-				double t=conflictsWeightList[i];
-				conflictsWeightList[i]=conflictsWeightList[j];
-				conflictsWeightList[j]=t;
-				
-				QString s=conflictsDescriptionList[i];
-				conflictsDescriptionList[i]=conflictsDescriptionList[j];
-				conflictsDescriptionList[j]=s;
-			}*/
-			
 	this->changedForMatrixCalculation=false;
 
 	return this->_fitness;
 }
 
-//critical function here - must be optimized for speed
-//int Solution::getTeachersMatrix(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
 int Solution::getTeachersMatrix(Rules& r, Matrix3D<qint8>& a){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
@@ -372,15 +296,6 @@ int Solution::getTeachersMatrix(Rules& r, Matrix3D<qint8>& a){
 				for(int it=0; it<act->iTeachersList.count(); it++){
 					int tch=act->iTeachersList.at(it);
 					int tmp=a[tch][day][hour+dd];
-					/*if(act->parity==PARITY_WEEKLY){
-						conflicts += tmp<2 ? tmp : 2;
-						a[tch][day][hour+dd]+=2;
-					}
-					else{
-						assert(act->parity==PARITY_FORTNIGHTLY);
-						conflicts += tmp<2 ? 0 : 1;
-						a[tch][day][hour+dd]++;
-					}*/
 					conflicts += tmp==0 ? 0 : 1;
 					a[tch][day][hour+dd]++;
 				}
@@ -391,8 +306,6 @@ int Solution::getTeachersMatrix(Rules& r, Matrix3D<qint8>& a){
 	return conflicts;
 }
 
-//critical function here - must be optimized for speed
-//int Solution::getSubgroupsMatrix(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
 int Solution::getSubgroupsMatrix(Rules& r, Matrix3D<qint8>& a){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
@@ -416,15 +329,6 @@ int Solution::getSubgroupsMatrix(Rules& r, Matrix3D<qint8>& a){
 				for(int isg=0; isg < act->iSubgroupsList.count(); isg++){ //isg => index subgroup
 					int sg = act->iSubgroupsList.at(isg); //sg => subgroup
 					int tmp=a[sg][day][hour+dd];
-					/*if(act->parity == PARITY_WEEKLY){
-						conflicts += tmp<2 ? tmp : 2;
-						a[sg][day][hour+dd]+=2;
-					}
-					else{
-						assert(act->parity == PARITY_FORTNIGHTLY);
-						conflicts += tmp<2 ? 0 : 1;
-						a[sg][day][hour+dd]++;
-					}*/
 					conflicts += tmp==0 ? 0 : 1;
 					a[sg][day][hour+dd]++;
 				}
@@ -437,11 +341,7 @@ int Solution::getSubgroupsMatrix(Rules& r, Matrix3D<qint8>& a){
 
 //The following 2 functions (GetTeachersTimetable & GetSubgroupsTimetable)
 //are very similar to the above 2 ones (GetTeachersMatrix & GetSubgroupsMatrix)
-//void Solution::getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY], QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
-//void Solution::getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
 void Solution::getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, Matrix3D<QList<qint16> >& b){
-	//assert(HFitness()==0); //This is only for perfect solutions, that do not have any non-satisfied hard constrains
-
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 	
@@ -452,7 +352,6 @@ void Solution::getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, Matrix3D<QLis
 	for(i=0; i<r.nInternalTeachers; i++)
 		for(j=0; j<r.nDaysPerWeek; j++)
 			for(k=0; k<r.nHoursPerDay; k++)
-				//a1[i][j][k]=a2[i][j][k]=UNALLOCATED_ACTIVITY;
 				a[i][j][k]=UNALLOCATED_ACTIVITY;
 
 	Activity *act;
@@ -465,10 +364,6 @@ void Solution::getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, Matrix3D<QLis
 				assert(hour+dd<r.nHoursPerDay);
 				for(int ti=0; ti<act->iTeachersList.count(); ti++){
 					int tch = act->iTeachersList.at(ti); //teacher index
-					/*if(a1[tch][day][hour+dd]==UNALLOCATED_ACTIVITY)
-						a1[tch][day][hour+dd]=i;
-					else
-						a2[tch][day][hour+dd]=i;*/
 					assert(a[tch][day][hour+dd]==UNALLOCATED_ACTIVITY);
 					a[tch][day][hour+dd]=i;
 				}
@@ -573,10 +468,7 @@ void Solution::getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, Matrix3D<QLis
 	}
 }
 
-//void Solution::getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]){
 void Solution::getSubgroupsTimetable(Rules& r, Matrix3D<qint16>& a){
-	//assert(HFitness()==0);	//This is only for perfect solutions, that do not have any non-satisfied hard constrains
-
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 	
@@ -586,7 +478,6 @@ void Solution::getSubgroupsTimetable(Rules& r, Matrix3D<qint16>& a){
 	for(i=0; i<r.nInternalSubgroups; i++)
 		for(j=0; j<r.nDaysPerWeek; j++)
 			for(k=0; k<r.nHoursPerDay; k++)
-				//a1[i][j][k]=a2[i][j][k]=UNALLOCATED_ACTIVITY;
 				a[i][j][k]=UNALLOCATED_ACTIVITY;
 
 	Activity *act;
@@ -600,10 +491,6 @@ void Solution::getSubgroupsTimetable(Rules& r, Matrix3D<qint16>& a){
 			
 				for(int isg=0; isg < act->iSubgroupsList.count(); isg++){ //isg -> index subgroup
 					int sg = act->iSubgroupsList.at(isg); //sg -> subgroup
-					/*if(a1[sg][day][hour+dd]==UNALLOCATED_ACTIVITY)
-						a1[sg][day][hour+dd]=i;
-					else
-						a2[sg][day][hour+dd]=i;*/
 					assert(a[sg][day][hour+dd]==UNALLOCATED_ACTIVITY);
 					a[sg][day][hour+dd]=i;
 				}
@@ -613,7 +500,6 @@ void Solution::getSubgroupsTimetable(Rules& r, Matrix3D<qint16>& a){
 
 int Solution::getRoomsMatrix(
 	Rules& r, 
-//	qint8 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
 	Matrix3D<qint8>& a)
 {
 	assert(r.initialized);
@@ -639,15 +525,6 @@ int Solution::getRoomsMatrix(
 			Activity* act=&r.internalActivitiesList[i];
 			for(int dd=0; dd<act->duration && hour+dd<r.nHoursPerDay; dd++){
 				int tmp=a[room][day][hour+dd];
-				/*if(act->parity==PARITY_WEEKLY){
-					conflicts += tmp<2 ? tmp : 2;
-					a[room][day][hour+dd]+=2;
-				}
-				else{
-					assert(act->parity==PARITY_FORTNIGHTLY);
-					conflicts += tmp<2 ? 0 : 1;
-					a[room][day][hour+dd]++;
-				}*/
 				conflicts += tmp==0 ? 0 : 1;
 				a[room][day][hour+dd]++;
 			}
@@ -661,7 +538,6 @@ int Solution::getRoomsMatrix(
 
 void Solution::getRoomsTimetable(
 	Rules& r,
-//	qint16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY])
 	Matrix3D<qint16>& a)
 {
 	assert(r.initialized);
@@ -673,7 +549,6 @@ void Solution::getRoomsTimetable(
 	for(i=0; i<r.nInternalRooms; i++)
 		for(j=0; j<r.nDaysPerWeek; j++)
 			for(k=0; k<r.nHoursPerDay; k++)
-				//a1[i][j][k]=a2[i][j][k]=UNALLOCATED_ACTIVITY;
 				a[i][j][k]=UNALLOCATED_ACTIVITY;
 
 	Activity *act;
@@ -682,16 +557,10 @@ void Solution::getRoomsTimetable(
 		int room=this->rooms[i];
 		int hour=times[i]/r.nDaysPerWeek;
 		int day=times[i]%r.nDaysPerWeek;
-		//int day=days[i];
-		//int hour=hours[i];
 		if(room!=UNALLOCATED_SPACE && room!=UNSPECIFIED_ROOM && day!=UNALLOCATED_TIME && hour!=UNALLOCATED_TIME){
 			for(int dd=0; dd < act->duration; dd++){
 				assert(hour+dd<r.nHoursPerDay);
 			
-				/*if(a1[room][day][hour+dd]==UNALLOCATED_ACTIVITY)
-					a1[room][day][hour+dd]=i;
-				else
-					a2[room][day][hour+dd]=i;*/
 				assert(a[room][day][hour+dd]==UNALLOCATED_ACTIVITY);
 				a[room][day][hour+dd]=i;
 			}

@@ -28,12 +28,12 @@ class ConstraintStudentsSetHomeRoomsForm : public QDialog, Ui::ConstraintStudent
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
-	ConstraintStudentsSetHomeRoomsForm();
+	ConstraintStudentsSetHomeRoomsForm(QWidget* parent);
 	~ConstraintStudentsSetHomeRoomsForm();
 
 	bool filterOk(SpaceConstraint* ctr);
 	
-	void refreshConstraintsListBox();
+	void refreshConstraintsListWidget();
 
 public slots:
 	void constraintChanged(int index);

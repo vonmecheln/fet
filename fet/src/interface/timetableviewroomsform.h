@@ -22,13 +22,12 @@
 
 #include <QResizeEvent>
 
-class TimetableViewRoomsForm : public QDialog, Ui::TimetableViewRoomsForm_template  {
+class TimetableViewRoomsForm : public QDialog, public Ui::TimetableViewRoomsForm_template
+{
 	Q_OBJECT
 	
-	//bool columnResizeModeInitialized;
-
 public:
-	TimetableViewRoomsForm();
+	TimetableViewRoomsForm(QWidget* parent);
 	~TimetableViewRoomsForm();
 
 	void lock(bool lockTime, bool lockSpace);

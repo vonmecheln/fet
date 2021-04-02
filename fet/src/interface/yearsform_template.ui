@@ -15,22 +15,21 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <widget class="Q3ListBox" name="yearsListBox">
-     <item>
-      <property name="text">
-       <string>New Item</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <widget class="Q3TextEdit" name="detailsTextEdit">
-     <property name="readOnly">
-      <bool>true</bool>
+    <widget class="QSplitter" name="splitter">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QListWidget" name="yearsListWidget"/>
+     <widget class="QPlainTextEdit" name="detailsTextEdit"/>
     </widget>
    </item>
-   <item row="1" column="0" colspan="2">
+   <item row="1" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
@@ -62,7 +61,7 @@
        <item>
         <widget class="QPushButton" name="sortYearsPushButton">
          <property name="text">
-          <string>Sort alphabetically</string>
+          <string>Sort</string>
          </property>
         </widget>
        </item>
@@ -71,21 +70,21 @@
      <item>
       <widget class="QPushButton" name="divisionsPushButton">
        <property name="text">
-        <string>Divide year automatically by selecting categories</string>
+        <string>Divide year by selecting categories</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="activateStudentsPushButton">
        <property name="text">
-        <string>Activate all activities for selected students year</string>
+        <string>Activate all activities for selected year</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="deactivateStudentsPushButton">
        <property name="text">
-        <string>De-activate all activities for selected students year</string>
+        <string>Deactivate all activities for selected year</string>
        </property>
       </widget>
      </item>
@@ -101,36 +100,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>Q3Frame</class>
-   <extends>QFrame</extends>
-   <header>Qt3Support/Q3Frame</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>Q3ListBox</class>
-   <extends>Q3Frame</extends>
-   <header>q3listbox.h</header>
-  </customwidget>
-  <customwidget>
-   <class>Q3TextEdit</class>
-   <extends>Q3Frame</extends>
-   <header>q3textedit.h</header>
-  </customwidget>
- </customwidgets>
- <tabstops>
-  <tabstop>yearsListBox</tabstop>
-  <tabstop>detailsTextEdit</tabstop>
-  <tabstop>addYearPushButton</tabstop>
-  <tabstop>removeYearPushButton</tabstop>
-  <tabstop>modifyYearPushButton</tabstop>
-  <tabstop>sortYearsPushButton</tabstop>
-  <tabstop>divisionsPushButton</tabstop>
-  <tabstop>activateStudentsPushButton</tabstop>
-  <tabstop>deactivateStudentsPushButton</tabstop>
-  <tabstop>closePushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

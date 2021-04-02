@@ -15,38 +15,28 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <cstdio>
+#include <QMessageBox>
 
 #include "modifyconstraintteachersmaxdaysperweekform.h"
 #include "timeconstraint.h"
 
-#include <QMessageBox>
-
-ModifyConstraintTeachersMaxDaysPerWeekForm::ModifyConstraintTeachersMaxDaysPerWeekForm(ConstraintTeachersMaxDaysPerWeek* ctr)
+ModifyConstraintTeachersMaxDaysPerWeekForm::ModifyConstraintTeachersMaxDaysPerWeekForm(QWidget* parent, ConstraintTeachersMaxDaysPerWeek* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintTeachersMaxDaysPerWeekForm_template*/, SLOT(constraintChanged()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeachersMaxDaysPerWeekForm_template*/, SLOT(ok()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeachersMaxDaysPerWeekForm_template*/, SLOT(cancel()));
-//    connect(maxDaysSpinBox, SIGNAL(valueChanged(int)), this /*ModifyConstraintTeachersMaxDaysPerWeekForm_template*/, SLOT(constraintChanged()));
+	okPushButton->setDefault(true);
 
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	this->_ctr=ctr;
 	
-	//compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 	
 	updateMaxDaysSpinBox();
-	//updateTeachersComboBox();
 	
 	maxDaysSpinBox->setValue(ctr->maxDaysPerWeek);
 
@@ -55,57 +45,23 @@ ModifyConstraintTeachersMaxDaysPerWeekForm::ModifyConstraintTeachersMaxDaysPerWe
 
 ModifyConstraintTeachersMaxDaysPerWeekForm::~ModifyConstraintTeachersMaxDaysPerWeekForm()
 {
+	saveFETDialogGeometry(this);
 }
 
-/*
-void ModifyConstraintTeachersMaxDaysPerWeekForm::updateTeachersComboBox(){
-	teachersComboBox->clear();
-	int i=0, j=-1;
-	for(int k=0; k<gt.rules.teachersList.size(); k++, i++){
-		Teacher* tch=gt.rules.teachersList[k];
-		teachersComboBox->insertItem(tch->name);
-		if(tch->name==this->_ctr->teacherName)
-			j=i;
-	}
-	assert(j>=0);
-	teachersComboBox->setCurrentItem(j);
-
-	constraintChanged();
-}*/
-
 void ModifyConstraintTeachersMaxDaysPerWeekForm::updateMaxDaysSpinBox(){
-	maxDaysSpinBox->setMinValue(1);
-	maxDaysSpinBox->setMaxValue(gt.rules.nDaysPerWeek);	
+	maxDaysSpinBox->setMinimum(1);
+	maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);	
 }
 
 void ModifyConstraintTeachersMaxDaysPerWeekForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1\%").arg(weight);
-	s+="\n";
-
-	s+=tr("Teachers max days per week");
-	s+="\n";
-	//s+=tr("Teacher=%1").arg(teachersComboBox->currentText());
-	//s+="\n";
-
-	s+=tr("Max days per week=%1").arg(maxDaysSpinBox->value());
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void ModifyConstraintTeachersMaxDaysPerWeekForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
@@ -117,26 +73,13 @@ void ModifyConstraintTeachersMaxDaysPerWeekForm::ok()
 		return;
 	}
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
 	int max_days=maxDaysSpinBox->value();
 
-	/*QString teacher_name=teachersComboBox->currentText();
-	int teacher_ID=gt.rules.searchTeacher(teacher_name);
-	if(teacher_ID<0){
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Invalid teacher"));
-		return;
-	}*/
-
 	this->_ctr->weightPercentage=weight;
-	//this->_ctr->compulsory=compulsory;
 	this->_ctr->maxDaysPerWeek=max_days;
-	//this->_ctr->teacherName=teacher_name;
 
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }

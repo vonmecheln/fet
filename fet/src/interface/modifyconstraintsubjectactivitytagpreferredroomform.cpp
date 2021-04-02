@@ -17,26 +17,20 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "modifyconstraintsubjectactivitytagpreferredroomform.h"
 #include "spaceconstraint.h"
 
-ModifyConstraintSubjectActivityTagPreferredRoomForm::ModifyConstraintSubjectActivityTagPreferredRoomForm(ConstraintSubjectActivityTagPreferredRoom* ctr)
+ModifyConstraintSubjectActivityTagPreferredRoomForm::ModifyConstraintSubjectActivityTagPreferredRoomForm(QWidget* parent, ConstraintSubjectActivityTagPreferredRoom* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintSubjectActivityTagPreferredRoomForm_template*/, SLOT(cancel()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintSubjectActivityTagPreferredRoomForm_template*/, SLOT(ok()));
+	okPushButton->setDefault(true);
 
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp3=subjectsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp3);
@@ -48,8 +42,7 @@ ModifyConstraintSubjectActivityTagPreferredRoomForm::ModifyConstraintSubjectActi
 	
 	this->_ctr=ctr;
 	
-	//compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 
 	updateSubjectsComboBox();
 	updateActivityTagsComboBox();
@@ -58,6 +51,7 @@ ModifyConstraintSubjectActivityTagPreferredRoomForm::ModifyConstraintSubjectActi
 
 ModifyConstraintSubjectActivityTagPreferredRoomForm::~ModifyConstraintSubjectActivityTagPreferredRoomForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintSubjectActivityTagPreferredRoomForm::updateSubjectsComboBox()
@@ -66,13 +60,13 @@ void ModifyConstraintSubjectActivityTagPreferredRoomForm::updateSubjectsComboBox
 	subjectsComboBox->clear();
 	for(int k=0; k<gt.rules.subjectsList.size(); k++){
 		Subject* sb=gt.rules.subjectsList[k];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 		if(sb->name==this->_ctr->subjectName)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	subjectsComboBox->setCurrentItem(j);
+	subjectsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintSubjectActivityTagPreferredRoomForm::updateActivityTagsComboBox()
@@ -81,13 +75,13 @@ void ModifyConstraintSubjectActivityTagPreferredRoomForm::updateActivityTagsComb
 	activityTagsComboBox->clear();
 	for(int k=0; k<gt.rules.activityTagsList.size(); k++){
 		ActivityTag* sb=gt.rules.activityTagsList[k];
-		activityTagsComboBox->insertItem(sb->name);
+		activityTagsComboBox->addItem(sb->name);
 		if(sb->name==this->_ctr->activityTagName)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	activityTagsComboBox->setCurrentItem(j);
+	activityTagsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintSubjectActivityTagPreferredRoomForm::updateRoomsComboBox()
@@ -96,13 +90,13 @@ void ModifyConstraintSubjectActivityTagPreferredRoomForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int k=0; k<gt.rules.roomsList.size(); k++){
 		Room* rm=gt.rules.roomsList[k];
-		roomsComboBox->insertItem(rm->name);
+		roomsComboBox->addItem(rm->name);
 		if(rm->name==this->_ctr->roomName)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	roomsComboBox->setCurrentItem(j);
+	roomsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintSubjectActivityTagPreferredRoomForm::cancel()
@@ -114,18 +108,14 @@ void ModifyConstraintSubjectActivityTagPreferredRoomForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
 		return;
 	}
 
-/*	bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
-	int i=subjectsComboBox->currentItem();
+	int i=subjectsComboBox->currentIndex();
 	if(i<0 || subjectsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid subject"));
@@ -133,7 +123,7 @@ void ModifyConstraintSubjectActivityTagPreferredRoomForm::ok()
 	}
 	QString subject=subjectsComboBox->currentText();
 
-	i=activityTagsComboBox->currentItem();
+	i=activityTagsComboBox->currentIndex();
 	if(i<0 || activityTagsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid activity tag"));
@@ -141,7 +131,7 @@ void ModifyConstraintSubjectActivityTagPreferredRoomForm::ok()
 	}
 	QString activityTag=activityTagsComboBox->currentText();
 
-	i=roomsComboBox->currentItem();
+	i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid room"));
@@ -150,12 +140,12 @@ void ModifyConstraintSubjectActivityTagPreferredRoomForm::ok()
 	QString room=roomsComboBox->currentText();
 
 	this->_ctr->weightPercentage=weight;
-	//this->_ctr->compulsory=compulsory;
 	this->_ctr->roomName=room;
 	this->_ctr->subjectName=subject;
 	this->_ctr->activityTagName=activityTag;
 
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }

@@ -22,12 +22,29 @@ File centerwidgetonscreen.h
 #ifndef CENTERWIDGETONSCREEN_H
 #define CENTERWIDGETONSCREEN_H
 
-#include <QWidget>
+#include <QString>
+
+class QWidget;
+class QTableWidget;
+
+class Rules;
 
 void centerWidgetOnScreen(QWidget* widget);
+void forceCenterWidgetOnScreen(QWidget* widget);
+//void centerWidgetOnParent(QWidget* widget, QWidget* parent);
 
 int maxScreenWidth(QWidget* widget);
 
 int maxRecommendedWidth(QWidget* widget);
+
+void saveFETDialogGeometry(QWidget* widget, const QString& alternativeName=QString());
+void restoreFETDialogGeometry(QWidget* widget, const QString& alternativeName=QString());
+
+void setParentAndOtherThings(QWidget* widget, QWidget* parent);
+
+void setStretchAvailabilityTableNicely(QTableWidget* notAllowedTimesTable);
+
+void setRulesModifiedAndOtherThings(Rules* rules);
+void setRulesUnmodifiedAndOtherThings(Rules* rules);
 
 #endif

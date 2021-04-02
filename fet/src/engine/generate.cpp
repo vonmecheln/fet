@@ -183,6 +183,13 @@ static Matrix1D<int> l0nWrong;
 static Matrix1D<int> l0minWrong;
 static Matrix1D<int> l0minIndexAct;
 
+//2011-09-25
+static Matrix1D<QSet<int> > slotSetOfActivities;
+static Matrix1D<bool> slotCanEmpty;
+
+static Matrix1D<QSet<int> > activitiesAtTime;
+////////////
+
 
 inline int max(qint16 a, int b){
 	if(int(a)>=b)
@@ -1614,9 +1621,9 @@ Generate::~Generate()
 {
 }
 
-bool Generate::precompute(QTextStream* initialOrderStream)
+bool Generate::precompute(QWidget* parent, QTextStream* initialOrderStream)
 {
-	return processTimeSpaceConstraints(initialOrderStream);
+	return processTimeSpaceConstraints(parent, initialOrderStream);
 }
 
 inline bool Generate::checkBuildingChanges(int sbg, int tch, const QList<int>& globalConflActivities, int rm, int level, const Activity* act, int ai, int d, int h, QList<int>& tmp_list)
@@ -2271,6 +2278,8 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 
 void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
 {
+	this->isThreaded=threaded;
+
 	l0nWrong.resize(gt.rules.nHoursPerWeek);
 	l0minWrong.resize(gt.rules.nHoursPerWeek);
 	l0minIndexAct.resize(gt.rules.nHoursPerWeek);
@@ -2306,6 +2315,14 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	sbgDayNFirstGaps.resize(gt.rules.nDaysPerWeek);
 	
 	teacherActivitiesOfTheDay.resize(gt.rules.nInternalTeachers, gt.rules.nDaysPerWeek);
+	
+	//2011-09-30
+	if(haveActivitiesOccupyOrSimultaneousConstraints){
+		activitiesAtTime.resize(gt.rules.nHoursPerWeek);
+
+		slotSetOfActivities.resize(gt.rules.nHoursPerWeek);
+		slotCanEmpty.resize(gt.rules.nHoursPerWeek);
+	}
 
 if(threaded){
 		mutex.lock();
@@ -2596,6 +2613,32 @@ if(threaded){
 		}
 		//////////////
 		
+		//2011-09-30
+		if(haveActivitiesOccupyOrSimultaneousConstraints){
+			for(int t=0; t<gt.rules.nHoursPerWeek; t++)
+				activitiesAtTime[t].clear();
+	
+			for(int j=0; j<gt.rules.nInternalActivities/*added_act*/; j++){
+				int i=permutation[j];
+				if(j<added_act){
+					assert(c.times[i]!=UNALLOCATED_TIME);
+				}
+				else{
+					if(c.times[i]==UNALLOCATED_TIME)
+						continue;
+				}
+				assert(c.times[i]!=UNALLOCATED_TIME);
+				
+				Activity* act=&gt.rules.internalActivitiesList[i];
+			
+				for(int t=c.times[i]; t<c.times[i]+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
+					assert(!activitiesAtTime[t].contains(i));
+					activitiesAtTime[t].insert(i);
+				}
+			}
+		}
+		//////////////
+		
 		foundGoodSwap=false;
 	
 		assert(!swappedActivities[permutation[added_act]]);
@@ -2761,8 +2804,8 @@ if(threaded){
 					QString s=tr("At time %1 h %2 m %3 s, FET reached %4 activities placed", "h=hours, m=minutes, s=seconds. Please leave spaces between 'time', %1, h, %2, m, %3, s, so they are visible")
 						.arg(hh).arg(mm).arg(sec).arg(maxActivitiesPlaced);
 					//s+="\n";
-					//QString s=QString("At time ")+QString::number(hh)+QString(" h ")+QString::number(mm)+QString(" m ")+QString::number(sec)
-					//	+QString(" s, FET reached ")+QString::number(maxActivitiesPlaced)+QString(" activities placed\n");
+					//QString s=QString("At time ")+CustomFETString::number(hh)+QString(" h ")+CustomFETString::number(mm)+QString(" m ")+CustomFETString::number(sec)
+					//	+QString(" s, FET reached ")+CustomFETString::number(maxActivitiesPlaced)+QString(" activities placed\n");
 					
 					(*maxPlacedActivityStream)<<s<<endl;
 					//(*maxPlacedActivityStream).flush();
@@ -2908,6 +2951,14 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				assert(tt==1);
 			}
 			/////////////////
+			
+			//2011-09-30
+			if(haveActivitiesOccupyOrSimultaneousConstraints){
+				for(int t=fromslot; t<fromslot+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
+					assert(activitiesAtTime[t].contains(ai));
+					activitiesAtTime[t].remove(ai);
+				}
+			}
 		}
 	}
 	
@@ -2995,6 +3046,14 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				teacherActivitiesOfTheDay(tch,d).append(ai);
 			}
 			/////////////////
+
+			//2011-09-30
+			if(haveActivitiesOccupyOrSimultaneousConstraints){
+				for(int t=toslot; t<toslot+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
+					assert(!activitiesAtTime[t].contains(ai));
+					activitiesAtTime[t].insert(ai);
+				}
+			}
 		}
 	}
 }
@@ -3188,6 +3247,12 @@ again_if_impossible_activity:
 
 		bool okteachersactivitytagmaxhoursdaily;
 		bool okstudentsactivitytagmaxhoursdaily;
+
+		//2011-09-25
+		bool okactivitiesoccupymaxtimeslotsfromselection;
+		
+		//2011-09-30
+		bool okactivitiesmaxsimultaneousinselectedtimeslots;
 		
 		if(c.times[ai]!=UNALLOCATED_TIME)
 			goto skip_here_if_already_allocated_in_time;
@@ -8117,6 +8182,256 @@ impossibleteachersmindaysperweek:
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+		//2011-09-30
+		//care about activities max simultaneous in selected time slots
+		//I think it is best to put this after all other major constraints
+		//I think it is better to put this before activities occupy max time slots from selection
+		if(haveActivitiesOccupyOrSimultaneousConstraints){
+			okactivitiesmaxsimultaneousinselectedtimeslots=true;
+			
+			foreach(ActivitiesMaxSimultaneousInSelectedTimeSlots_item* item, amsistsListForActivity[ai]){
+				bool inSpecifiedTimeSlots=false;
+				for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek)
+					if(item->selectedTimeSlotsSet.contains(t)){
+						inSpecifiedTimeSlots=true;
+						break;
+					}
+					
+				if(!inSpecifiedTimeSlots)
+					continue;
+					
+				bool correct=true;
+			
+				for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
+					if(item->selectedTimeSlotsSet.contains(t)){
+						slotSetOfActivities[t]=activitiesAtTime[t];
+
+						if(slotSetOfActivities[t].count()+1 <= item->maxSimultaneous)
+							continue;
+
+						slotSetOfActivities[t].intersect(item->activitiesSet);
+
+						if(slotSetOfActivities[t].count()+1 <= item->maxSimultaneous)
+							continue;
+
+						slotSetOfActivities[t].subtract(conflActivities[newtime].toSet());
+						
+						if(slotSetOfActivities[t].count()+1 <= item->maxSimultaneous)
+							continue;
+						
+						assert(!slotSetOfActivities[t].contains(ai));
+						slotSetOfActivities[t].insert(ai);
+
+						correct=false;
+					}
+				}
+				
+				if(!correct){
+					QList<QSet<int> > candidates;
+					QSet<int> allCandidates;
+					for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
+						if(item->selectedTimeSlotsSet.contains(t)){
+							if(slotSetOfActivities[t].count() > item->maxSimultaneous){
+								QSet<int> tmpSet;
+								
+								assert(slotSetOfActivities[t].count() == item->maxSimultaneous+1);
+								foreach(int ai2, slotSetOfActivities[t])
+									if(ai2!=ai && !fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+										tmpSet.insert(ai2);
+										if(!allCandidates.contains(ai2))
+											allCandidates.insert(ai2);
+									}
+								
+								candidates.append(tmpSet);
+							}
+						}
+					}
+					
+					foreach(QSet<int> tmpSet, candidates)
+						if(tmpSet.count()==0){
+							okactivitiesmaxsimultaneousinselectedtimeslots=false;
+							goto impossibleactivitiesmaxsimultaneousinselectedtimeslots;
+						}
+						
+					//possible to fix
+					while(candidates.count()>0){
+						int tc=candidates.count();
+	
+						int q=randomKnuth(allCandidates.count());
+						int ai2=allCandidates.toList().at(q);
+						
+						////
+						assert(ai2!=ai);
+						assert(c.times[ai2]!=UNALLOCATED_TIME);
+						assert(!fixedTimeActivity[ai2] && !swappedActivities[ai2]);
+						
+						assert(!conflActivities[newtime].contains(ai2));
+						conflActivities[newtime].append(ai2);
+					
+						nConflActivities[newtime]++;
+						assert(nConflActivities[newtime]==conflActivities[newtime].count());
+						////
+	
+						QList<QSet<int> > newCandidates;
+						QSet<int> newAllCandidates;
+						
+						foreach(QSet<int> tmpSet, candidates)
+							if(!tmpSet.contains(ai2)){
+								newCandidates.append(tmpSet);
+								newAllCandidates.unite(tmpSet);
+							}
+						
+						allCandidates=newAllCandidates;
+						candidates=newCandidates;
+						
+						assert(candidates.count()<tc); //need to have a progress, not an endless loop
+					}
+				}
+			}
+			
+impossibleactivitiesmaxsimultaneousinselectedtimeslots:
+			if(!okactivitiesmaxsimultaneousinselectedtimeslots){
+				if(updateSubgroups || updateTeachers)
+					removeAiFromNewTimetable(ai, act, d, h);
+				//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+				nConflActivities[newtime]=MAX_ACTIVITIES;
+				continue;
+			}
+
+			/*foreach(int ai2, conflActivities[newtime])
+				assert(!swappedActivities[ai2]);*/
+		}
+	
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//2011-09-25
+		//care about activities max number of occupied time slots from selection
+		//I think it is best to put this after all other major constraints
+		//I think it is best to put this after activities max simultaneous in selected time slots
+
+		if(haveActivitiesOccupyOrSimultaneousConstraints){
+			okactivitiesoccupymaxtimeslotsfromselection=true;
+			
+			foreach(ActivitiesOccupyMaxTimeSlotsFromSelection_item* item, aomtsListForActivity[ai]){
+				//preliminary, for speed
+				bool contained=false;
+				for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek)
+					if(item->selectedTimeSlotsSet.contains(t)){
+						contained=true;
+						break;
+					}
+				if(!contained)
+					continue;
+
+				int _nOcc=0;
+				foreach(int t, item->selectedTimeSlotsList)
+					if(activitiesAtTime[t].count()>0)
+						_nOcc++;
+				for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek)
+					if(item->selectedTimeSlotsSet.contains(t))
+						if(activitiesAtTime[t].count()==0)
+							_nOcc++;
+				if(_nOcc<=item->maxOccupiedTimeSlots)
+					continue;
+				///////
+			
+				foreach(int t, item->selectedTimeSlotsList){
+					slotSetOfActivities[t].clear();
+					slotCanEmpty[t]=true;
+				}
+				
+				foreach(int ai2, item->activitiesList){
+					if(ai2!=ai && c.times[ai2]!=UNALLOCATED_TIME && !conflActivities[newtime].contains(ai2)){
+						for(int t=c.times[ai2]; t<c.times[ai2]+gt.rules.internalActivitiesList[ai2].duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
+							if(item->selectedTimeSlotsSet.contains(t)){
+								slotSetOfActivities[t].insert(ai2);
+								
+								if(fixedTimeActivity[ai2] || swappedActivities[ai2])
+									slotCanEmpty[t]=false;
+							}
+						}
+					}
+					else if(ai2==ai){
+						for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
+							if(item->selectedTimeSlotsSet.contains(t)){
+								slotSetOfActivities[t].insert(ai);
+								slotCanEmpty[t]=false;
+							}
+						}
+					}
+				}
+				
+				int nOccupied=0;
+				QSet<int> candidates;
+				foreach(int t, item->selectedTimeSlotsList){
+					if(slotSetOfActivities[t].count()>0){
+						nOccupied++;
+						
+						if(slotCanEmpty[t])
+							candidates.insert(t);
+					}
+				}
+				
+				if(nOccupied > item->maxOccupiedTimeSlots){
+					int target = nOccupied - item->maxOccupiedTimeSlots;
+					while(target>0){
+						bool decreased=false;
+						
+						if(candidates.count()==0){
+							okactivitiesoccupymaxtimeslotsfromselection=false;
+							goto impossibleactivitiesoccupymaxtimeslotsfromselection;
+						}
+						int q=randomKnuth(candidates.count());
+						int t=candidates.toList().at(q);
+						QSet<int> tmpSet=slotSetOfActivities[t];
+						foreach(int ai2, tmpSet){
+							assert(ai2!=ai);
+							assert(c.times[ai2]!=UNALLOCATED_TIME);
+							assert(!fixedTimeActivity[ai2] && !swappedActivities[ai2]);
+							
+							for(int tt=c.times[ai2]; tt<c.times[ai2]+gt.rules.internalActivitiesList[ai2].duration*gt.rules.nDaysPerWeek; tt+=gt.rules.nDaysPerWeek)
+								if(item->selectedTimeSlotsSet.contains(tt)){
+									assert(slotSetOfActivities[tt].contains(ai2));
+									slotSetOfActivities[tt].remove(ai2);
+									if(slotSetOfActivities[tt].count()==0){
+										assert(candidates.contains(tt));
+										candidates.remove(tt);
+										target--;
+										
+										decreased=true;
+									}
+								}
+							
+							assert(!conflActivities[newtime].contains(ai2));
+							conflActivities[newtime].append(ai2);
+
+							nConflActivities[newtime]++;
+							assert(nConflActivities[newtime]==conflActivities[newtime].count());
+						}
+						
+						assert(decreased);
+					}
+				}
+			}
+			
+impossibleactivitiesoccupymaxtimeslotsfromselection:
+			if(!okactivitiesoccupymaxtimeslotsfromselection){
+				if(updateSubgroups || updateTeachers)
+					removeAiFromNewTimetable(ai, act, d, h);
+				//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+				nConflActivities[newtime]=MAX_ACTIVITIES;
+				continue;
+			}
+
+			/*foreach(int ai2, conflActivities[newtime])
+				assert(!swappedActivities[ai2]);*/
+				
+		}
+		
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 skip_here_if_already_allocated_in_time:
 
 		//////////////////rooms
@@ -8268,13 +8583,18 @@ skip_here_if_already_allocated_in_time:
 	}*/
 
 	if(level==0 && (nConflActivities[perm[0]]==MAX_ACTIVITIES)){
-		if(activity_count_impossible_tries<MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0){
+		//to check if generation was stopped
+if(this->isThreaded){
+			mutex.unlock();
+			mutex.lock();
+}
+		if(!abortOptimization && activity_count_impossible_tries<MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0){
 			activity_count_impossible_tries++;
 			goto again_if_impossible_activity;
 		}
 		else{
-			cout<<__FILE__<<" line "<<__LINE__<<"- WARNING - after retrying for "<<MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0
-			<<" times - no possible timeslots for activity with id=="<<gt.rules.internalActivitiesList[ai].id<<endl;
+			cout<<__FILE__<<" line "<<__LINE__<<" - WARNING - after retrying for "<<activity_count_impossible_tries
+			<<" times - no possible time slot for activity with id=="<<gt.rules.internalActivitiesList[ai].id<<endl;
 		}
 	}
 		
@@ -8302,9 +8622,9 @@ skip_here_if_already_allocated_in_time:
 			 && roomSlots[perm[i]]!=UNALLOCATED_SPACE)
 				tim.append(perm[i]);
 		if(tim.count()==0 && nConflActivities[perm[0]]==MAX_ACTIVITIES){
-			cout<<"optimizetime.cpp line 2712 - WARNING - no possible timeslots for activity with id=="<<
-			 gt.rules.internalActivitiesList[ai].id<<endl;
-			 
+			//cout<<__FILE__<<" line "<<__LINE__<<" - WARNING - no possible time slot for activity with id=="<<
+			// gt.rules.internalActivitiesList[ai].id<<endl;
+			
 			impossibleActivity=true;
 		}
 		if(tim.count()>0){

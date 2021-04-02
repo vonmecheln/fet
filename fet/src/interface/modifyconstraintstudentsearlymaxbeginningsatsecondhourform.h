@@ -28,7 +28,7 @@ class ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm : public QDialo
 public:
 	ConstraintStudentsEarlyMaxBeginningsAtSecondHour* _ctr;
 
-	ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm(ConstraintStudentsEarlyMaxBeginningsAtSecondHour* ctr);
+	ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm(QWidget* parent, ConstraintStudentsEarlyMaxBeginningsAtSecondHour* ctr);
 	~ModifyConstraintStudentsEarlyMaxBeginningsAtSecondHourForm();
 
 public slots:

@@ -17,15 +17,9 @@
  *                                                                         *
  ***************************************************************************/
 
-/*
-#include <iostream>
-using namespace std;*/
-
 #include <QtGui>
 
 #include <QMessageBox>
-
-//extern CommunicationSpinBox communicationSpinBox;
 
 #include "lockunlock.h"
 #include "advancedlockunlockform.h"
@@ -49,105 +43,24 @@ extern QSet<int> idsOfLockedSpace;
 extern QSet<int> idsOfPermanentlyLockedTime;
 extern QSet<int> idsOfPermanentlyLockedSpace;
 
-/*#include <iostream>
-using namespace std;*/
-
-/*
-LockUnlockToggleDay::LockUnlockToggleDay()
-{
-}
-
-LockUnlockToggleDay::~LockUnlockToggleDay()
-{
-}*/
-
 const int MIN_WIDTH=400;
 const int MIN_HEIGHT=200;
 
-/*void LockUnlock::computeLockedUnlockedActivitiesTimeSpace()
-{
-	//by Volker Dirr
-	idsOfLockedTime.clear();
-	idsOfLockedSpace.clear();
-	idsOfPermanentlyLockedTime.clear();
-	idsOfPermanentlyLockedSpace.clear();
+const QString lockDaySettingsString=QString("AdvancedLockUnlockFormLockDay");
+const QString unlockDaySettingsString=QString("AdvancedLockUnlockFormUnlockDay");
+const QString lockAllSettingsString=QString("AdvancedLockUnlockFormLockAll");
+const QString unlockAllSettingsString=QString("AdvancedLockUnlockFormUnlockAll");
+const QString lockEndStudentsDaySettingsString=QString("AdvancedLockUnlockFormLockEndStudentsDay");
+const QString unlockEndStudentsDaySettingsString=QString("AdvancedLockUnlockFormUnlockEndStudentsDay");
 
-	foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME && tc->weightPercentage==100.0){
-			ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*) tc;
-			if(c->day >= 0  &&  c->hour >= 0) {
-				if(c->permanentlyLocked)
-					idsOfPermanentlyLockedTime.insert(c->activityId);
-				else
-					idsOfLockedTime.insert(c->activityId);
-			}
-		}
-	}
-	
-	foreach(SpaceConstraint* tc, gt.rules.spaceConstraintsList){
-		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM && tc->weightPercentage==100.0){
-			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) tc;
+const QString lockDayConfirmationSettingsString=QString("AdvancedLockUnlockFormLockDayConfirmation");
+const QString unlockDayConfirmationSettingsString=QString("AdvancedLockUnlockFormUnlockDayConfirmation");
+const QString lockAllConfirmationSettingsString=QString("AdvancedLockUnlockFormLockAllConfirmation");
+const QString unlockAllConfirmationSettingsString=QString("AdvancedLockUnlockFormUnlockAllConfirmation");
+const QString lockEndStudentsDayConfirmationSettingsString=QString("AdvancedLockUnlockFormLockEndStudentsDayConfirmation");
+const QString unlockEndStudentsDayConfirmationSettingsString=QString("AdvancedLockUnlockFormUnlockEndStudentsDayConfirmation");
 
-			if(c->permanentlyLocked)
-				idsOfPermanentlyLockedSpace.insert(c->activityId);
-			else
-				idsOfLockedSpace.insert(c->activityId);
-		}
-	}
-}
-
-void LockUnlock::computeLockedUnlockedActivitiesOnlyTime()
-{
-	//by Volker Dirr
-	idsOfLockedTime.clear();
-	idsOfPermanentlyLockedTime.clear();
-
-	foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
-		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME && tc->weightPercentage==100.0){
-			ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*) tc;
-			if(c->day >= 0  &&  c->hour >= 0) {
-				if(c->permanentlyLocked)
-					idsOfPermanentlyLockedTime.insert(c->activityId);
-				else
-					idsOfLockedTime.insert(c->activityId);
-			}
-		}
-	}
-}
-
-void LockUnlock::computeLockedUnlockedActivitiesOnlySpace()
-{
-	//by Volker Dirr
-	idsOfLockedSpace.clear();
-	idsOfPermanentlyLockedSpace.clear();
-
-	foreach(SpaceConstraint* tc, gt.rules.spaceConstraintsList){
-		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM && tc->weightPercentage==100.0){
-			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) tc;
-
-			if(c->permanentlyLocked)
-				idsOfPermanentlyLockedSpace.insert(c->activityId);
-			else
-				idsOfLockedSpace.insert(c->activityId);
-		}
-	}
-}
-
-void LockUnlock::increaseCommunicationSpinBox()
-{
-	assert(pcommunicationSpinBox!=NULL);
-	
-	int q=pcommunicationSpinBox->value();	//needed to display locked and unlocked times and rooms
-	//cout<<"communication spin box old value: "<<pcommunicationSpinBox->value()<<", ";
-	q++;
-	assert(pcommunicationSpinBox->maximum()>pcommunicationSpinBox->minimum());
-	if(q > pcommunicationSpinBox->maximum())
-		q=pcommunicationSpinBox->minimum();
-	pcommunicationSpinBox->setValue(q);
-	//cout<<"changed to new value: "<<pcommunicationSpinBox->value()<<endl;
-}*/
-
-void AdvancedLockUnlockForm::lockDay()
+void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 {
 	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
 		return;
@@ -159,7 +72,7 @@ void AdvancedLockUnlockForm::lockDay()
 	assert(days.size()!=0);
 
 	//New Dialog
-	QDialog taDialog(NULL);
+	QDialog taDialog(parent);
 	taDialog.setWindowTitle(tr("FET - Lock activities of a day"));
 
 	QVBoxLayout* taMainLayout=new QVBoxLayout(&taDialog);
@@ -175,7 +88,7 @@ void AdvancedLockUnlockForm::lockDay()
 	Q_UNUSED(tmp);
 	
 	taLW->addItems(days);
-	taLW->setCurrentItem(0);
+	taLW->setCurrentIndex(0);
 
 	QPushButton* tapb1=new QPushButton(tr("Cancel"));
 	QPushButton* tapb2=new QPushButton(tr("OK"));
@@ -222,10 +135,11 @@ void AdvancedLockUnlockForm::lockDay()
 		w=MIN_WIDTH;
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
-	taDialog.setGeometry(0,0,w,h);
+	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
-	
+	restoreFETDialogGeometry(&taDialog, lockDaySettingsString);
 	bool ok=taDialog.exec();
+	saveFETDialogGeometry(&taDialog, lockDaySettingsString);
 	if(!ok)
 		return;
 		
@@ -324,7 +238,7 @@ void AdvancedLockUnlockForm::lockDay()
 	
 	////////////
 	//last confirmation dialog
-	QDialog lastConfirmationDialog(NULL);
+	QDialog lastConfirmationDialog(&taDialog);
 	lastConfirmationDialog.setWindowTitle(tr("Last confirmation needed"));
 
 	QVBoxLayout* lastMainLayout=new QVBoxLayout(&lastConfirmationDialog);
@@ -343,36 +257,36 @@ void AdvancedLockUnlockForm::lockDay()
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QTextEdit* addTim=new QTextEdit();
+	QPlainTextEdit* addTim=new QPlainTextEdit();
 	addTim->setReadOnly(true);
-	addTim->setText(addedTimeConstraintsString);
+	addTim->setPlainText(addedTimeConstraintsString);
 	QLabel* labAddTim=new QLabel(tr("These time constraints will be added"));
 	labAddTim->setWordWrap(true);
 	labAddTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	left->addWidget(labAddTim);
 	left->addWidget(addTim);
 
-	QTextEdit* notAddTim=new QTextEdit();
+	QPlainTextEdit* notAddTim=new QPlainTextEdit();
 	notAddTim->setReadOnly(true);
-	notAddTim->setText(notAddedTimeConstraintsString);
+	notAddTim->setPlainText(notAddedTimeConstraintsString);
 	QLabel* labNotAddTim=new QLabel(tr("These time constraints will NOT be added"));
 	labNotAddTim->setWordWrap(true);
 	labNotAddTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	left->addWidget(labNotAddTim);
 	left->addWidget(notAddTim);
 
-	QTextEdit* addSpa=new QTextEdit();
+	QPlainTextEdit* addSpa=new QPlainTextEdit();
 	addSpa->setReadOnly(true);
-	addSpa->setText(addedSpaceConstraintsString);
+	addSpa->setPlainText(addedSpaceConstraintsString);
 	QLabel* labAddSpa=new QLabel(tr("These space constraints will be added"));
 	labAddSpa->setWordWrap(true);
 	labAddSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	right->addWidget(labAddSpa);
 	right->addWidget(addSpa);
 	
-	QTextEdit* notAddSpa=new QTextEdit();
+	QPlainTextEdit* notAddSpa=new QPlainTextEdit();
 	notAddSpa->setReadOnly(true);
-	notAddSpa->setText(notAddedSpaceConstraintsString);
+	notAddSpa->setPlainText(notAddedSpaceConstraintsString);
 	QLabel* labNotAddSpa=new QLabel(tr("These space constraints will NOT be added"));
 	labNotAddSpa->setWordWrap(true);
 	labNotAddSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -393,10 +307,11 @@ void AdvancedLockUnlockForm::lockDay()
 	
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
-	lastConfirmationDialog.setGeometry(0,0,lw,lh);
+	lastConfirmationDialog.resize(lw,lh);
 	centerWidgetOnScreen(&lastConfirmationDialog);
-	
+	restoreFETDialogGeometry(&lastConfirmationDialog, lockDayConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
+	saveFETDialogGeometry(&lastConfirmationDialog, lockDayConfirmationSettingsString);
 	if(!ok)
 		return;
 	////////////
@@ -421,7 +336,7 @@ void AdvancedLockUnlockForm::lockDay()
 	}
 	notAddedSpaceConstraints.clear();
 	
-	QMessageBox::information(NULL, tr("FET information"), tr("There were added %1 locking time constraints and"
+	QMessageBox::information(&lastConfirmationDialog, tr("FET information"), tr("There were added %1 locking time constraints and"
 		" %2 locking space constraints. There were not added %3 locking time constraints and %4 locking space constraints, because"
 		" these activities were already locked").arg(addedTime).arg(addedSpace).arg(notAddedTime).arg(notAddedSpace));
 	
@@ -429,7 +344,7 @@ void AdvancedLockUnlockForm::lockDay()
 	LockUnlock::increaseCommunicationSpinBox();
 }
 
-void AdvancedLockUnlockForm::unlockDay()
+void AdvancedLockUnlockForm::unlockDay(QWidget* parent)
 {
 	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
 		return;
@@ -441,7 +356,7 @@ void AdvancedLockUnlockForm::unlockDay()
 	assert(days.size()!=0);
 
 	//New Dialog
-	QDialog taDialog(NULL);
+	QDialog taDialog(parent);
 	taDialog.setWindowTitle(tr("FET - Unlock activities of a day"));
 
 	QVBoxLayout* taMainLayout=new QVBoxLayout(&taDialog);
@@ -457,7 +372,7 @@ void AdvancedLockUnlockForm::unlockDay()
 	Q_UNUSED(tmp2);
 	
 	taLW->addItems(days);
-	taLW->setCurrentItem(0);
+	taLW->setCurrentIndex(0);
 
 	QPushButton* tapb1=new QPushButton(tr("Cancel"));
 	QPushButton* tapb2=new QPushButton(tr("OK"));
@@ -504,10 +419,11 @@ void AdvancedLockUnlockForm::unlockDay()
 		w=MIN_WIDTH;
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
-	taDialog.setGeometry(0,0,w,h);
+	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
-	
+	restoreFETDialogGeometry(&taDialog, unlockDaySettingsString);
 	bool ok=taDialog.exec();
+	saveFETDialogGeometry(&taDialog, unlockDaySettingsString);
 	if(!ok)
 		return;
 		
@@ -552,7 +468,7 @@ void AdvancedLockUnlockForm::unlockDay()
 				ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*)tc;
 				if(c->weightPercentage==100.0 && c->day>=0 && c->hour>=0 && lockedActivitiesIds.contains(c->activityId)){
 					if(c->day!=selectedDayInt){
-						//QMessageBox::warning(NULL, tr("FET warning"), tr("Incorrect data - time constraint is incorrect - please regenerate the timetable. Please report possible bug."));
+						//QMessageBox::warning(&taDialog, tr("FET warning"), tr("Incorrect data - time constraint is incorrect - please regenerate the timetable. Please report possible bug."));
 						//above test is no good???
 					}
 					//assert(c->day==selectedDayInt);
@@ -594,7 +510,7 @@ void AdvancedLockUnlockForm::unlockDay()
 
 	////////////
 	//last confirmation dialog
-	QDialog lastConfirmationDialog(NULL);
+	QDialog lastConfirmationDialog(&taDialog);
 	lastConfirmationDialog.setWindowTitle(tr("Last confirmation needed"));
 
 	QVBoxLayout* lastMainLayout=new QVBoxLayout(&lastConfirmationDialog);
@@ -613,36 +529,36 @@ void AdvancedLockUnlockForm::unlockDay()
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QTextEdit* remTim=new QTextEdit();
+	QPlainTextEdit* remTim=new QPlainTextEdit();
 	remTim->setReadOnly(true);
-	remTim->setText(removedTimeConstraintsString);
+	remTim->setPlainText(removedTimeConstraintsString);
 	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
 	labRemTim->setWordWrap(true);
 	labRemTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	left->addWidget(labRemTim);
 	left->addWidget(remTim);
 
-	QTextEdit* notRemTim=new QTextEdit();
+	QPlainTextEdit* notRemTim=new QPlainTextEdit();
 	notRemTim->setReadOnly(true);
-	notRemTim->setText(notRemovedTimeConstraintsString);
+	notRemTim->setPlainText(notRemovedTimeConstraintsString);
 	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
 	labNotRemTim->setWordWrap(true);
 	labNotRemTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	left->addWidget(labNotRemTim);
 	left->addWidget(notRemTim);
 
-	QTextEdit* remSpa=new QTextEdit();
+	QPlainTextEdit* remSpa=new QPlainTextEdit();
 	remSpa->setReadOnly(true);
-	remSpa->setText(removedSpaceConstraintsString);
+	remSpa->setPlainText(removedSpaceConstraintsString);
 	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
 	labRemSpa->setWordWrap(true);
 	labRemSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	right->addWidget(labRemSpa);
 	right->addWidget(remSpa);
 	
-	QTextEdit* notRemSpa=new QTextEdit();
+	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
 	notRemSpa->setReadOnly(true);
-	notRemSpa->setText(notRemovedSpaceConstraintsString);
+	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
 	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));
 	labNotRemSpa->setWordWrap(true);
 	labNotRemSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -663,10 +579,11 @@ void AdvancedLockUnlockForm::unlockDay()
 	
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
-	lastConfirmationDialog.setGeometry(0,0,lw,lh);
+	lastConfirmationDialog.resize(lw,lh);
 	centerWidgetOnScreen(&lastConfirmationDialog);
-	
+	restoreFETDialogGeometry(&lastConfirmationDialog, unlockDayConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
+	saveFETDialogGeometry(&lastConfirmationDialog, unlockDayConfirmationSettingsString);
 	if(!ok)
 		return;
 	////////////
@@ -681,7 +598,7 @@ void AdvancedLockUnlockForm::unlockDay()
 	removedSpaceConstraints.clear();
 	notRemovedSpaceConstraints.clear();
 
-	QMessageBox::information(NULL, tr("FET information"), tr("There were removed %1 locking time constraints and"
+	QMessageBox::information(&lastConfirmationDialog, tr("FET information"), tr("There were removed %1 locking time constraints and"
 		" %2 locking space constraints. There were not removed %3 locking time constraints and %4 locking space constraints, because"
 		" these activities were permanently locked").arg(removedTime).arg(removedSpace).arg(notRemovedTime).arg(notRemovedSpace));
 	
@@ -689,14 +606,14 @@ void AdvancedLockUnlockForm::unlockDay()
 	LockUnlock::increaseCommunicationSpinBox();
 }
 
-void AdvancedLockUnlockForm::lockEndStudentsDay()
+void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 {
 	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
 		return;
 	}
 	
 	//New Dialog
-	QDialog taDialog(NULL);
+	QDialog taDialog(parent);
 	taDialog.setWindowTitle(tr("FET - Lock all activities which end each students set's day"));
 
 	QVBoxLayout* taMainLayout=new QVBoxLayout(&taDialog);
@@ -750,10 +667,11 @@ void AdvancedLockUnlockForm::lockEndStudentsDay()
 		w=MIN_WIDTH;
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
-	taDialog.setGeometry(0,0,w,h);
+	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
-	
+	restoreFETDialogGeometry(&taDialog, lockEndStudentsDaySettingsString);
 	bool ok=taDialog.exec();
+	saveFETDialogGeometry(&taDialog, lockEndStudentsDaySettingsString);
 	if(!ok)
 		return;
 		
@@ -878,7 +796,7 @@ void AdvancedLockUnlockForm::lockEndStudentsDay()
 	
 	////////////
 	//last confirmation dialog
-	QDialog lastConfirmationDialog(NULL);
+	QDialog lastConfirmationDialog(&taDialog);
 	lastConfirmationDialog.setWindowTitle(tr("Last confirmation needed"));
 
 	QVBoxLayout* lastMainLayout=new QVBoxLayout(&lastConfirmationDialog);
@@ -897,36 +815,36 @@ void AdvancedLockUnlockForm::lockEndStudentsDay()
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QTextEdit* addTim=new QTextEdit();
+	QPlainTextEdit* addTim=new QPlainTextEdit();
 	addTim->setReadOnly(true);
-	addTim->setText(addedTimeConstraintsString);
+	addTim->setPlainText(addedTimeConstraintsString);
 	QLabel* labAddTim=new QLabel(tr("These time constraints will be added"));
 	labAddTim->setWordWrap(true);
 	labAddTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	left->addWidget(labAddTim);
 	left->addWidget(addTim);
 
-	QTextEdit* notAddTim=new QTextEdit();
+	QPlainTextEdit* notAddTim=new QPlainTextEdit();
 	notAddTim->setReadOnly(true);
-	notAddTim->setText(notAddedTimeConstraintsString);
+	notAddTim->setPlainText(notAddedTimeConstraintsString);
 	QLabel* labNotAddTim=new QLabel(tr("These time constraints will NOT be added"));
 	labNotAddTim->setWordWrap(true);
 	labNotAddTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	left->addWidget(labNotAddTim);
 	left->addWidget(notAddTim);
 
-	QTextEdit* addSpa=new QTextEdit();
+	QPlainTextEdit* addSpa=new QPlainTextEdit();
 	addSpa->setReadOnly(true);
-	addSpa->setText(addedSpaceConstraintsString);
+	addSpa->setPlainText(addedSpaceConstraintsString);
 	QLabel* labAddSpa=new QLabel(tr("These space constraints will be added"));
 	labAddSpa->setWordWrap(true);
 	labAddSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	right->addWidget(labAddSpa);
 	right->addWidget(addSpa);
 	
-	QTextEdit* notAddSpa=new QTextEdit();
+	QPlainTextEdit* notAddSpa=new QPlainTextEdit();
 	notAddSpa->setReadOnly(true);
-	notAddSpa->setText(notAddedSpaceConstraintsString);
+	notAddSpa->setPlainText(notAddedSpaceConstraintsString);
 	QLabel* labNotAddSpa=new QLabel(tr("These space constraints will NOT be added"));
 	labNotAddSpa->setWordWrap(true);
 	labNotAddSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -947,10 +865,11 @@ void AdvancedLockUnlockForm::lockEndStudentsDay()
 	
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
-	lastConfirmationDialog.setGeometry(0,0,lw,lh);
+	lastConfirmationDialog.resize(lw,lh);
 	centerWidgetOnScreen(&lastConfirmationDialog);
-	
+	restoreFETDialogGeometry(&lastConfirmationDialog, lockEndStudentsDayConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
+	saveFETDialogGeometry(&lastConfirmationDialog, lockEndStudentsDayConfirmationSettingsString);
 	if(!ok)
 		return;
 	////////////
@@ -975,7 +894,7 @@ void AdvancedLockUnlockForm::lockEndStudentsDay()
 	}
 	notAddedSpaceConstraints.clear();
 	
-	QMessageBox::information(NULL, tr("FET information"), tr("There were added %1 locking time constraints and"
+	QMessageBox::information(&lastConfirmationDialog, tr("FET information"), tr("There were added %1 locking time constraints and"
 		" %2 locking space constraints. There were not added %3 locking time constraints and %4 locking space constraints, because"
 		" these activities were already locked").arg(addedTime).arg(addedSpace).arg(notAddedTime).arg(notAddedSpace));
 	
@@ -983,14 +902,14 @@ void AdvancedLockUnlockForm::lockEndStudentsDay()
 	LockUnlock::increaseCommunicationSpinBox();
 }
 
-void AdvancedLockUnlockForm::unlockEndStudentsDay()
+void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 {
 	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
 		return;
 	}
 	
 	//New Dialog
-	QDialog taDialog(NULL);
+	QDialog taDialog(parent);
 	taDialog.setWindowTitle(tr("FET - Unlock all activities which end each students set's day"));
 
 	QVBoxLayout* taMainLayout=new QVBoxLayout(&taDialog);
@@ -1044,10 +963,11 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay()
 		w=MIN_WIDTH;
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
-	taDialog.setGeometry(0,0,w,h);
+	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
-	
+	restoreFETDialogGeometry(&taDialog, unlockEndStudentsDaySettingsString);
 	bool ok=taDialog.exec();
+	saveFETDialogGeometry(&taDialog, unlockEndStudentsDaySettingsString);
 	if(!ok)
 		return;
 		
@@ -1131,7 +1051,7 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay()
 
 	////////////
 	//last confirmation dialog
-	QDialog lastConfirmationDialog(NULL);
+	QDialog lastConfirmationDialog(&taDialog);
 	lastConfirmationDialog.setWindowTitle(tr("Last confirmation needed"));
 
 	QVBoxLayout* lastMainLayout=new QVBoxLayout(&lastConfirmationDialog);
@@ -1150,36 +1070,36 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay()
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QTextEdit* remTim=new QTextEdit();
+	QPlainTextEdit* remTim=new QPlainTextEdit();
 	remTim->setReadOnly(true);
-	remTim->setText(removedTimeConstraintsString);
+	remTim->setPlainText(removedTimeConstraintsString);
 	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
 	labRemTim->setWordWrap(true);
 	labRemTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	left->addWidget(labRemTim);
 	left->addWidget(remTim);
 
-	QTextEdit* notRemTim=new QTextEdit();
+	QPlainTextEdit* notRemTim=new QPlainTextEdit();
 	notRemTim->setReadOnly(true);
-	notRemTim->setText(notRemovedTimeConstraintsString);
+	notRemTim->setPlainText(notRemovedTimeConstraintsString);
 	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
 	labNotRemTim->setWordWrap(true);
 	labNotRemTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	left->addWidget(labNotRemTim);
 	left->addWidget(notRemTim);
 
-	QTextEdit* remSpa=new QTextEdit();
+	QPlainTextEdit* remSpa=new QPlainTextEdit();
 	remSpa->setReadOnly(true);
-	remSpa->setText(removedSpaceConstraintsString);
+	remSpa->setPlainText(removedSpaceConstraintsString);
 	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
 	labRemSpa->setWordWrap(true);
 	labRemSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	right->addWidget(labRemSpa);
 	right->addWidget(remSpa);
 	
-	QTextEdit* notRemSpa=new QTextEdit();
+	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
 	notRemSpa->setReadOnly(true);
-	notRemSpa->setText(notRemovedSpaceConstraintsString);
+	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
 	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));
 	labNotRemSpa->setWordWrap(true);
 	labNotRemSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -1200,10 +1120,11 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay()
 	
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
-	lastConfirmationDialog.setGeometry(0,0,lw,lh);
+	lastConfirmationDialog.resize(lw,lh);
 	centerWidgetOnScreen(&lastConfirmationDialog);
-	
+	restoreFETDialogGeometry(&lastConfirmationDialog, unlockEndStudentsDayConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
+	saveFETDialogGeometry(&lastConfirmationDialog, unlockEndStudentsDayConfirmationSettingsString);
 	if(!ok)
 		return;
 	////////////
@@ -1218,7 +1139,7 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay()
 	removedSpaceConstraints.clear();
 	notRemovedSpaceConstraints.clear();
 
-	QMessageBox::information(NULL, tr("FET information"), tr("There were removed %1 locking time constraints and"
+	QMessageBox::information(&lastConfirmationDialog, tr("FET information"), tr("There were removed %1 locking time constraints and"
 		" %2 locking space constraints. There were not removed %3 locking time constraints and %4 locking space constraints, because"
 		" these activities were permanently locked").arg(removedTime).arg(removedSpace).arg(notRemovedTime).arg(notRemovedSpace));
 	
@@ -1226,14 +1147,14 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay()
 	LockUnlock::increaseCommunicationSpinBox();
 }
 
-void AdvancedLockUnlockForm::lockAll()
+void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 {
 	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
 		return;
 	}
 	
 	//New Dialog
-	QDialog taDialog(NULL);
+	QDialog taDialog(parent);
 	taDialog.setWindowTitle(tr("FET - Lock all activities in the timetable"));
 
 	QVBoxLayout* taMainLayout=new QVBoxLayout(&taDialog);
@@ -1287,10 +1208,11 @@ void AdvancedLockUnlockForm::lockAll()
 		w=MIN_WIDTH;
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
-	taDialog.setGeometry(0,0,w,h);
+	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
-	
+	restoreFETDialogGeometry(&taDialog, lockAllSettingsString);
 	bool ok=taDialog.exec();
+	saveFETDialogGeometry(&taDialog, lockAllSettingsString);
 	if(!ok)
 		return;
 		
@@ -1386,7 +1308,7 @@ void AdvancedLockUnlockForm::lockAll()
 	
 	////////////
 	//last confirmation dialog
-	QDialog lastConfirmationDialog(NULL);
+	QDialog lastConfirmationDialog(&taDialog);
 	lastConfirmationDialog.setWindowTitle(tr("Last confirmation needed"));
 
 	QVBoxLayout* lastMainLayout=new QVBoxLayout(&lastConfirmationDialog);
@@ -1405,36 +1327,36 @@ void AdvancedLockUnlockForm::lockAll()
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QTextEdit* addTim=new QTextEdit();
+	QPlainTextEdit* addTim=new QPlainTextEdit();
 	addTim->setReadOnly(true);
-	addTim->setText(addedTimeConstraintsString);
+	addTim->setPlainText(addedTimeConstraintsString);
 	QLabel* labAddTim=new QLabel(tr("These time constraints will be added"));
 	labAddTim->setWordWrap(true);
 	labAddTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	left->addWidget(labAddTim);
 	left->addWidget(addTim);
 
-	QTextEdit* notAddTim=new QTextEdit();
+	QPlainTextEdit* notAddTim=new QPlainTextEdit();
 	notAddTim->setReadOnly(true);
-	notAddTim->setText(notAddedTimeConstraintsString);
+	notAddTim->setPlainText(notAddedTimeConstraintsString);
 	QLabel* labNotAddTim=new QLabel(tr("These time constraints will NOT be added"));
 	labNotAddTim->setWordWrap(true);
 	labNotAddTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	left->addWidget(labNotAddTim);
 	left->addWidget(notAddTim);
 
-	QTextEdit* addSpa=new QTextEdit();
+	QPlainTextEdit* addSpa=new QPlainTextEdit();
 	addSpa->setReadOnly(true);
-	addSpa->setText(addedSpaceConstraintsString);
+	addSpa->setPlainText(addedSpaceConstraintsString);
 	QLabel* labAddSpa=new QLabel(tr("These space constraints will be added"));
 	labAddSpa->setWordWrap(true);
 	labAddSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	right->addWidget(labAddSpa);
 	right->addWidget(addSpa);
 	
-	QTextEdit* notAddSpa=new QTextEdit();
+	QPlainTextEdit* notAddSpa=new QPlainTextEdit();
 	notAddSpa->setReadOnly(true);
-	notAddSpa->setText(notAddedSpaceConstraintsString);
+	notAddSpa->setPlainText(notAddedSpaceConstraintsString);
 	QLabel* labNotAddSpa=new QLabel(tr("These space constraints will NOT be added"));
 	labNotAddSpa->setWordWrap(true);
 	labNotAddSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -1455,10 +1377,11 @@ void AdvancedLockUnlockForm::lockAll()
 	
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
-	lastConfirmationDialog.setGeometry(0,0,lw,lh);
+	lastConfirmationDialog.resize(lw,lh);
 	centerWidgetOnScreen(&lastConfirmationDialog);
-	
+	restoreFETDialogGeometry(&lastConfirmationDialog, lockAllConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
+	saveFETDialogGeometry(&lastConfirmationDialog, lockAllConfirmationSettingsString);
 	if(!ok)
 		return;
 	////////////
@@ -1483,7 +1406,7 @@ void AdvancedLockUnlockForm::lockAll()
 	}
 	notAddedSpaceConstraints.clear();
 	
-	QMessageBox::information(NULL, tr("FET information"), tr("There were added %1 locking time constraints and"
+	QMessageBox::information(&lastConfirmationDialog, tr("FET information"), tr("There were added %1 locking time constraints and"
 		" %2 locking space constraints. There were not added %3 locking time constraints and %4 locking space constraints, because"
 		" these activities were already locked").arg(addedTime).arg(addedSpace).arg(notAddedTime).arg(notAddedSpace));
 	
@@ -1493,14 +1416,14 @@ void AdvancedLockUnlockForm::lockAll()
 	//cout<<"isc=="<<gt.rules.internalStructureComputed<<endl;
 }
 
-void AdvancedLockUnlockForm::unlockAll()
+void AdvancedLockUnlockForm::unlockAll(QWidget* parent)
 {
 	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
 		return;
 	}
 	
 	//New Dialog
-	QDialog taDialog(NULL);
+	QDialog taDialog(parent);
 	taDialog.setWindowTitle(tr("FET - Unlock all activities of the current timetable"));
 
 	QVBoxLayout* taMainLayout=new QVBoxLayout(&taDialog);
@@ -1554,10 +1477,11 @@ void AdvancedLockUnlockForm::unlockAll()
 		w=MIN_WIDTH;
 	if(h<MIN_HEIGHT)
 		h=MIN_HEIGHT;
-	taDialog.setGeometry(0,0,w,h);
+	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
-	
+	restoreFETDialogGeometry(&taDialog, unlockAllSettingsString);
 	bool ok=taDialog.exec();
+	saveFETDialogGeometry(&taDialog, unlockAllSettingsString);
 	if(!ok)
 		return;
 		
@@ -1630,7 +1554,7 @@ void AdvancedLockUnlockForm::unlockAll()
 
 	////////////
 	//last confirmation dialog
-	QDialog lastConfirmationDialog(NULL);
+	QDialog lastConfirmationDialog(&taDialog);
 	lastConfirmationDialog.setWindowTitle(tr("Last confirmation needed"));
 
 	QVBoxLayout* lastMainLayout=new QVBoxLayout(&lastConfirmationDialog);
@@ -1649,36 +1573,36 @@ void AdvancedLockUnlockForm::unlockAll()
 	all->addLayout(left);
 	all->addLayout(right);
 	
-	QTextEdit* remTim=new QTextEdit();
+	QPlainTextEdit* remTim=new QPlainTextEdit();
 	remTim->setReadOnly(true);
-	remTim->setText(removedTimeConstraintsString);
+	remTim->setPlainText(removedTimeConstraintsString);
 	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
 	labRemTim->setWordWrap(true);
 	labRemTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	left->addWidget(labRemTim);
 	left->addWidget(remTim);
 
-	QTextEdit* notRemTim=new QTextEdit();
+	QPlainTextEdit* notRemTim=new QPlainTextEdit();
 	notRemTim->setReadOnly(true);
-	notRemTim->setText(notRemovedTimeConstraintsString);
+	notRemTim->setPlainText(notRemovedTimeConstraintsString);
 	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
 	labNotRemTim->setWordWrap(true);
 	labNotRemTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	left->addWidget(labNotRemTim);
 	left->addWidget(notRemTim);
 
-	QTextEdit* remSpa=new QTextEdit();
+	QPlainTextEdit* remSpa=new QPlainTextEdit();
 	remSpa->setReadOnly(true);
-	remSpa->setText(removedSpaceConstraintsString);
+	remSpa->setPlainText(removedSpaceConstraintsString);
 	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
 	labRemSpa->setWordWrap(true);
 	labRemSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	right->addWidget(labRemSpa);
 	right->addWidget(remSpa);
 	
-	QTextEdit* notRemSpa=new QTextEdit();
+	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
 	notRemSpa->setReadOnly(true);
-	notRemSpa->setText(notRemovedSpaceConstraintsString);
+	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
 	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));
 	labNotRemSpa->setWordWrap(true);
 	labNotRemSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -1699,10 +1623,11 @@ void AdvancedLockUnlockForm::unlockAll()
 	
 	int lw=lastConfirmationDialog.sizeHint().width();
 	int lh=lastConfirmationDialog.sizeHint().height();
-	lastConfirmationDialog.setGeometry(0,0,lw,lh);
+	lastConfirmationDialog.resize(lw,lh);
 	centerWidgetOnScreen(&lastConfirmationDialog);
-	
+	restoreFETDialogGeometry(&lastConfirmationDialog, unlockAllConfirmationSettingsString);
 	ok=lastConfirmationDialog.exec();
+	saveFETDialogGeometry(&lastConfirmationDialog, unlockAllConfirmationSettingsString);
 	if(!ok)
 		return;
 	////////////
@@ -1717,7 +1642,7 @@ void AdvancedLockUnlockForm::unlockAll()
 	removedSpaceConstraints.clear();
 	notRemovedSpaceConstraints.clear();
 
-	QMessageBox::information(NULL, tr("FET information"), tr("There were removed %1 locking time constraints and"
+	QMessageBox::information(&lastConfirmationDialog, tr("FET information"), tr("There were removed %1 locking time constraints and"
 		" %2 locking space constraints. There were not removed %3 locking time constraints and %4 locking space constraints, because"
 		" these activities were permanently locked").arg(removedTime).arg(removedSpace).arg(notRemovedTime).arg(notRemovedSpace));
 	

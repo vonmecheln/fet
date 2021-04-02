@@ -34,11 +34,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>institutionNameLineEdit</tabstop>
-  <tabstop>okPushButton</tabstop>
-  <tabstop>cancelPushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

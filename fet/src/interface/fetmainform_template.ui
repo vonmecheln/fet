@@ -7,11 +7,8 @@
     <x>0</x>
     <y>0</y>
     <width>560</width>
-    <height>295</height>
+    <height>306</height>
    </rect>
-  </property>
-  <property name="windowTitle">
-   <string extracomment="The title of the main form">FET - a free timetabling program</string>
   </property>
   <widget class="QWidget" name="mainwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -47,7 +44,7 @@
        <bool>true</bool>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="usesScrollButtons">
        <bool>false</bool>
@@ -97,45 +94,52 @@
            </property>
            <item row="0" column="0">
             <layout class="QGridLayout" name="gridLayout_10">
-             <item row="0" column="0">
-              <widget class="QPushButton" name="shortcutOpenPushButton">
-               <property name="text">
-                <string comment="It is on the shortcuts tab buttons, so keep translation short">Open</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QPushButton" name="shortcutNewPushButton">
-               <property name="text">
-                <string comment="It is on the shortcuts tab buttons, so keep translation short">New</string>
-               </property>
-              </widget>
-             </item>
              <item row="2" column="0" colspan="2">
-              <widget class="QPushButton" name="shortcutSavePushButton">
-               <property name="text">
-                <string comment="It is on the shortcuts tab buttons, so keep translation short">Save</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="0" colspan="2">
-              <widget class="QPushButton" name="shortcutSaveAsPushButton">
-               <property name="text">
-                <string comment="It is on the shortcuts tab buttons, so keep translation short">Save As</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0" colspan="2">
               <widget class="Line" name="line_7">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
               </widget>
              </item>
-             <item row="3" column="0" colspan="2">
+             <item row="5" column="0" colspan="2">
               <widget class="Line" name="line_8">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <widget class="QPushButton" name="shortcutSaveAsPushButton">
+               <property name="text">
+                <string comment="It is an abbreviation for Save as. It is on the shortcuts tab buttons, so keep translation short">As</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0" colspan="2">
+              <widget class="QPushButton" name="shortcutOpenRecentPushButton">
+               <property name="text">
+                <string comment="It is an abbreaviation for Open recent. It is text on a push button, to show the list of recently used files and open one of them. Please keep translation short.">Recent</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QPushButton" name="shortcutSavePushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Save</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QPushButton" name="shortcutOpenPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">Open</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QPushButton" name="shortcutNewPushButton">
+               <property name="text">
+                <string comment="It is on the shortcuts tab buttons, so keep translation short">New</string>
                </property>
               </widget>
              </item>
@@ -782,7 +786,7 @@
      <x>0</x>
      <y>0</y>
      <width>560</width>
-     <height>21</height>
+     <height>28</height>
     </rect>
    </property>
    <widget class="QMenu" name="helpMenu">
@@ -834,8 +838,16 @@
      </widget>
      <addaction name="menuImport_CSV"/>
     </widget>
+    <widget class="QMenu" name="fileOpenRecentMenu">
+     <property name="title">
+      <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">Open &amp;recent</string>
+     </property>
+     <addaction name="fileClearRecentFilesListAction"/>
+    </widget>
     <addaction name="fileNewAction"/>
     <addaction name="fileOpenAction"/>
+    <addaction name="fileOpenRecentMenu"/>
+    <addaction name="separator"/>
     <addaction name="fileSaveAction"/>
     <addaction name="fileSaveAsAction"/>
     <addaction name="separator"/>
@@ -881,6 +893,8 @@
     <addaction name="dataTeachersStatisticsAction"/>
     <addaction name="dataSubjectsStatisticsAction"/>
     <addaction name="dataStudentsStatisticsAction"/>
+    <addaction name="separator"/>
+    <addaction name="dataActivitiesRoomsStatisticsAction"/>
     <addaction name="separator"/>
     <addaction name="statisticsExportToDiskAction"/>
     <addaction name="separator"/>
@@ -979,6 +993,8 @@
       <addaction name="dataTimeConstraintsActivitiesSameStartingDayAction"/>
       <addaction name="dataTimeConstraintsActivitiesSameStartingHourAction"/>
       <addaction name="separator"/>
+      <addaction name="dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction"/>
+      <addaction name="separator"/>
       <addaction name="dataTimeConstraintsTwoActivitiesOrderedAction"/>
       <addaction name="separator"/>
       <addaction name="dataTimeConstraintsTwoActivitiesConsecutiveAction"/>
@@ -986,6 +1002,7 @@
       <addaction name="dataTimeConstraintsThreeActivitiesGroupedAction"/>
       <addaction name="separator"/>
       <addaction name="dataTimeConstraintsActivitiesNotOverlappingAction"/>
+      <addaction name="dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction"/>
       <addaction name="separator"/>
       <addaction name="dataTimeConstraintsMinGapsBetweenActivitiesAction"/>
      </widget>
@@ -1167,6 +1184,8 @@
      <addaction name="settingsConfirmSpreadActivitiesAction"/>
      <addaction name="separator"/>
      <addaction name="settingsConfirmRemoveRedundantAction"/>
+     <addaction name="separator"/>
+     <addaction name="settingsConfirmSaveTimetableAction"/>
     </widget>
     <addaction name="checkForUpdatesAction"/>
     <addaction name="separator"/>
@@ -1204,43 +1223,31 @@
   <widget class="QStatusBar" name="defaultStatusBar"/>
   <action name="fileNewAction">
    <property name="text">
-    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, &amp;Save, Save &amp;As, &amp;Quit, must be different">&amp;New</string>
-   </property>
-   <property name="iconText">
-    <string>New</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">&amp;New</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;New. It is recommended to translate with Ctrl+N, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use PC English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if you are on Mac, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+N', the same as the English original, to keep things standard.">Ctrl+N</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;New. It is recommended to translate with Ctrl+N, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+N', the same as the English original, to keep things standard.">Ctrl+N</string>
    </property>
   </action>
   <action name="fileOpenAction">
    <property name="text">
-    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, &amp;Save, Save &amp;As, &amp;Quit, must be different">&amp;Open...</string>
-   </property>
-   <property name="iconText">
-    <string>Open</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">&amp;Open...</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;Open. It is recommended to translate with Ctrl+O, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use PC English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if you are on Mac, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+O', the same as the English original, to keep things standard.">Ctrl+O</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;Open. It is recommended to translate with Ctrl+O, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+O', the same as the English original, to keep things standard.">Ctrl+O</string>
    </property>
   </action>
   <action name="fileSaveAction">
    <property name="text">
-    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, &amp;Save, Save &amp;As, &amp;Quit, must be different">&amp;Save</string>
-   </property>
-   <property name="iconText">
-    <string>Save</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">&amp;Save</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;Save. It is recommended to translate with Ctrl+S, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use PC English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if you are on Mac, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+S', the same as the English original, to keep things standard.">Ctrl+S</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;Save. It is recommended to translate with Ctrl+S, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+S', the same as the English original, to keep things standard.">Ctrl+S</string>
    </property>
   </action>
   <action name="fileSaveAsAction">
    <property name="text">
-    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, &amp;Save, Save &amp;As, &amp;Quit, must be different">Save &amp;As...</string>
-   </property>
-   <property name="iconText">
-    <string>Save As</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">Save &amp;as...</string>
    </property>
    <property name="shortcut">
     <string/>
@@ -1248,20 +1255,14 @@
   </action>
   <action name="fileExitAction">
    <property name="text">
-    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, &amp;Save, Save &amp;As, &amp;Quit, must be different">&amp;Quit</string>
-   </property>
-   <property name="iconText">
-    <string>Quit</string>
+    <string extracomment="Accelerator key (letter after ampersand) for &amp;New, &amp;Open, Open &amp;recent, &amp;Save, Save &amp;as, &amp;Quit, must be different">&amp;Quit</string>
    </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item File-&gt;Quit. It is recommended to translate with Ctrl+Q, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use PC English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if you are on Mac, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+Q', the same as the English original, to keep things standard.">Ctrl+Q</string>
+    <string extracomment="This is the shortcut for menu item File-&gt;Quit. It is recommended to translate with Ctrl+Q, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+Q', the same as the English original, to keep things standard.">Ctrl+Q</string>
    </property>
   </action>
   <action name="helpFAQAction">
    <property name="text">
-    <string>Frequently asked questions</string>
-   </property>
-   <property name="iconText">
     <string>Frequently asked questions</string>
    </property>
    <property name="shortcut">
@@ -1272,12 +1273,6 @@
    <property name="text">
     <string>About...</string>
    </property>
-   <property name="iconText">
-    <string>About...</string>
-   </property>
-   <property name="toolTip">
-    <string>About...</string>
-   </property>
    <property name="shortcut">
     <string/>
    </property>
@@ -1286,99 +1281,63 @@
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">&amp;Teachers</string>
    </property>
-   <property name="iconText">
-    <string>Teachers</string>
-   </property>
   </action>
   <action name="dataSubjectsAction">
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">&amp;Subjects</string>
-   </property>
-   <property name="iconText">
-    <string>Subjects</string>
    </property>
   </action>
   <action name="dataYearsAction">
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups">&amp;Years (forms, classes)</string>
    </property>
-   <property name="iconText">
-    <string>Years</string>
-   </property>
   </action>
   <action name="dataGroupsAction">
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups">&amp;Groups</string>
-   </property>
-   <property name="iconText">
-    <string>Groups</string>
    </property>
   </action>
   <action name="dataSubgroupsAction">
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) must be different for &amp;Years, &amp;Groups, &amp;Subgroups">&amp;Subgroups</string>
    </property>
-   <property name="iconText">
-    <string>Subgroups</string>
-   </property>
   </action>
   <action name="dataActivitiesAction">
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">&amp;Activities</string>
-   </property>
-   <property name="iconText">
-    <string>Activities</string>
    </property>
   </action>
   <action name="timetableGenerateAction">
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, Generate &amp;multiple, must be different">&amp;Generate new</string>
    </property>
-   <property name="iconText">
-    <string>Generate new</string>
-   </property>
    <property name="shortcut">
-    <string extracomment="This is the shortcut for menu item Timetable-&gt;Generate. It is recommended to translate with Ctrl+G, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use PC English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if you are on Mac, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+G', the same as the English original, to keep things standard.">Ctrl+G</string>
+    <string extracomment="This is the shortcut for menu item Timetable-&gt;Generate. It is recommended to translate with Ctrl+G, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+G', the same as the English original, to keep things standard.">Ctrl+G</string>
    </property>
   </action>
   <action name="timetableViewStudentsAction">
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, Generate &amp;multiple, must be different">View (&amp;students)</string>
    </property>
-   <property name="iconText">
-    <string>View (students)</string>
-   </property>
   </action>
   <action name="timetableViewTeachersAction">
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, Generate &amp;multiple, must be different">View (&amp;teachers)</string>
-   </property>
-   <property name="iconText">
-    <string>View (teachers)</string>
    </property>
   </action>
   <action name="timetableShowConflictsAction">
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, Generate &amp;multiple, must be different">Show soft &amp;conflicts</string>
    </property>
-   <property name="iconText">
-    <string>Show soft conflicts</string>
-   </property>
   </action>
   <action name="dataDaysAction">
    <property name="text">
     <string extracomment="Accelerators (letters after &amp; - ampersand) for &amp;Days per week and &amp;Hours (periods) per day must be different">&amp;Days per week</string>
    </property>
-   <property name="iconText">
-    <string>Days per week</string>
-   </property>
   </action>
   <action name="dataHoursAction">
    <property name="text">
     <string extracomment="Accelerators (letters after &amp; - ampersand) for &amp;Days per week and &amp;Hours (periods) per day must be different">&amp;Hours (periods) per day</string>
-   </property>
-   <property name="iconText">
-    <string>Hours per day</string>
    </property>
   </action>
   <action name="dataRoomsAction">
@@ -1388,9 +1347,6 @@
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">&amp;Rooms</string>
    </property>
-   <property name="iconText">
-    <string>Rooms</string>
-   </property>
   </action>
   <action name="timetableViewRoomsAction">
    <property name="enabled">
@@ -1399,15 +1355,9 @@
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, Generate &amp;multiple, must be different">View (&amp;rooms)</string>
    </property>
-   <property name="iconText">
-    <string>View (rooms)</string>
-   </property>
   </action>
   <action name="dataTimeConstraintsActivitiesPreferredTimeSlotsAction">
    <property name="text">
-    <string>A set of activities has a set of preferred time slots</string>
-   </property>
-   <property name="iconText">
     <string>A set of activities has a set of preferred time slots</string>
    </property>
   </action>
@@ -1415,31 +1365,29 @@
    <property name="text">
     <string>A set of activities has same starting time (day+hour)</string>
    </property>
-   <property name="iconText">
-    <string>A set of activities has same starting time (day+hour)</string>
+  </action>
+  <action name="dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction">
+   <property name="text">
+    <string extracomment="It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a maximum number of slots from those selected which can be occupied by the selected activities">A set of activities occupies max time slots from selection</string>
+   </property>
+  </action>
+  <action name="dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction">
+   <property name="text">
+    <string extracomment="It refers to a time constraint. It means: user chooses a set of activities, a set of time slots and a maximum number of activities from those selected which can be simultaneous in each selected time slot">Max simultaneous activities from a set in selected time slots</string>
    </property>
   </action>
   <action name="dataAllTimeConstraintsAction">
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">All t&amp;ime constraints</string>
    </property>
-   <property name="iconText">
-    <string>All time constraints</string>
-   </property>
   </action>
   <action name="dataTimeConstraintsTeacherNotAvailableTimesAction">
    <property name="text">
     <string>A teacher's not available times</string>
    </property>
-   <property name="iconText">
-    <string>A teacher is not available</string>
-   </property>
   </action>
   <action name="dataTimeConstraintsBasicCompulsoryTimeAction">
    <property name="text">
-    <string>Basic compulsory time constraints</string>
-   </property>
-   <property name="iconText">
     <string>Basic compulsory time constraints</string>
    </property>
   </action>
@@ -1447,23 +1395,14 @@
    <property name="text">
     <string>A students set's not available times</string>
    </property>
-   <property name="iconText">
-    <string>A students set is not available</string>
-   </property>
   </action>
   <action name="dataTimeConstraintsBreakTimesAction">
    <property name="text">
     <string>Break times (all teachers+all students not available)</string>
    </property>
-   <property name="iconText">
-    <string>Break (all teachers+all students not available)</string>
-   </property>
   </action>
   <action name="dataTimeConstraintsTeacherMaxDaysPerWeekAction">
    <property name="text">
-    <string>Max days per week for a teacher</string>
-   </property>
-   <property name="iconText">
     <string>Max days per week for a teacher</string>
    </property>
   </action>
@@ -1471,15 +1410,9 @@
    <property name="text">
     <string>Max hours daily for all teachers</string>
    </property>
-   <property name="iconText">
-    <string>Max hours daily for all teachers</string>
-   </property>
   </action>
   <action name="dataTimeConstraintsActivityPreferredStartingTimeAction">
    <property name="text">
-    <string>An activity has a preferred starting time</string>
-   </property>
-   <property name="iconText">
     <string>An activity has a preferred starting time</string>
    </property>
   </action>
@@ -1487,15 +1420,9 @@
    <property name="text">
     <string>Max gaps per week for a students set</string>
    </property>
-   <property name="iconText">
-    <string>Max gaps per week for a students set</string>
-   </property>
   </action>
   <action name="dataTimeConstraintsStudentsMaxGapsPerWeekAction">
    <property name="text">
-    <string>Max gaps per week for all students</string>
-   </property>
-   <property name="iconText">
     <string>Max gaps per week for all students</string>
    </property>
   </action>
@@ -1503,23 +1430,14 @@
    <property name="text">
     <string>All students begin early (max beginnings at second hour)</string>
    </property>
-   <property name="iconText">
-    <string>All students begin early (max beginnings at second hour)</string>
-   </property>
   </action>
   <action name="dataTimeConstraintsActivitiesNotOverlappingAction">
    <property name="text">
     <string>A set of activities are not overlapping</string>
    </property>
-   <property name="iconText">
-    <string>A set of activities are not overlapping</string>
-   </property>
   </action>
   <action name="dataTimeConstraintsMinDaysBetweenActivitiesAction">
    <property name="text">
-    <string>Min days between a set of activities</string>
-   </property>
-   <property name="iconText">
     <string>Min days between a set of activities</string>
    </property>
   </action>
@@ -1530,15 +1448,9 @@
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">All s&amp;pace constraints</string>
    </property>
-   <property name="iconText">
-    <string>All space constraints</string>
-   </property>
   </action>
   <action name="dataSpaceConstraintsBasicCompulsorySpaceAction">
    <property name="text">
-    <string>Basic compulsory space constraints</string>
-   </property>
-   <property name="iconText">
     <string>Basic compulsory space constraints</string>
    </property>
   </action>
@@ -1546,15 +1458,9 @@
    <property name="text">
     <string>A room's not available times</string>
    </property>
-   <property name="iconText">
-    <string>A room is not available</string>
-   </property>
   </action>
   <action name="dataSpaceConstraintsActivityPreferredRoomAction">
    <property name="text">
-    <string>An activity has a preferred room</string>
-   </property>
-   <property name="iconText">
     <string>An activity has a preferred room</string>
    </property>
   </action>
@@ -1562,39 +1468,24 @@
    <property name="text">
     <string>A set of activities has same starting hour (any days)</string>
    </property>
-   <property name="iconText">
-    <string>A set of activities has same starting hour (any days)</string>
-   </property>
   </action>
   <action name="dataActivityTagsAction">
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Subjects, Activity ta&amp;gs, &amp;Teachers, Stu&amp;dents, &amp;Activities, &amp;Modify subactivities, &amp;Buildings, &amp;Rooms, All t&amp;ime constraints, All s&amp;pace constraints must be different">Activity ta&amp;gs</string>
-   </property>
-   <property name="iconText">
-    <string>Activity tags</string>
    </property>
   </action>
   <action name="dataInstitutionNameAction">
    <property name="text">
     <string extracomment="Accelerators (letters after &amp; - ampersand) for I&amp;nstitution name and &amp;Comments must be different">I&amp;nstitution name</string>
    </property>
-   <property name="iconText">
-    <string>Institution name</string>
-   </property>
   </action>
   <action name="dataCommentsAction">
    <property name="text">
     <string extracomment="Accelerators (letters after &amp; - ampersand) for I&amp;nstitution name and &amp;Comments must be different">&amp;Comments</string>
    </property>
-   <property name="iconText">
-    <string>Comments</string>
-   </property>
   </action>
   <action name="dataSpaceConstraintsActivityPreferredRoomsAction">
    <property name="text">
-    <string>An activity has a set of preferred rooms</string>
-   </property>
-   <property name="iconText">
     <string>An activity has a set of preferred rooms</string>
    </property>
   </action>
@@ -1617,12 +1508,6 @@
    <property name="text">
     <string>Students statistics</string>
    </property>
-   <property name="iconText">
-    <string>Students statistics</string>
-   </property>
-   <property name="toolTip">
-    <string>Students statistics</string>
-   </property>
   </action>
   <action name="dataSubjectsStatisticsAction">
    <property name="text">
@@ -1631,12 +1516,6 @@
   </action>
   <action name="dataTimeConstraintsTeachersMaxGapsPerWeekAction">
    <property name="text">
-    <string>Max gaps per week for all teachers</string>
-   </property>
-   <property name="iconText">
-    <string>Max gaps per week for all teachers</string>
-   </property>
-   <property name="toolTip">
     <string>Max gaps per week for all teachers</string>
    </property>
   </action>
@@ -1694,9 +1573,6 @@
   <action name="timetableGenerateMultipleAction">
    <property name="text">
     <string extracomment="Accelerator key (letter after ampersand) for &amp;Generate new, View (&amp;teachers), View (&amp;students), View (&amp;rooms), Show soft &amp;conflicts, Generate &amp;multiple, must be different">Generate &amp;multiple</string>
-   </property>
-   <property name="iconText">
-    <string>Generate multiple variants</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTwoActivitiesConsecutiveAction">
@@ -1846,7 +1722,7 @@
   </action>
   <action name="timetableSaveTimetableAsAction">
    <property name="text">
-    <string>Save data+timetable as...</string>
+    <string>Save data and timetable as...</string>
    </property>
   </action>
   <action name="dataTimeConstraintsTwoActivitiesOrderedAction">
@@ -1886,9 +1762,6 @@
   </action>
   <action name="dataTimeConstraintsActivityPreferredTimeSlotsAction">
    <property name="text">
-    <string>An activity has a set of preferred time slots</string>
-   </property>
-   <property name="iconText">
     <string>An activity has a set of preferred time slots</string>
    </property>
   </action>
@@ -2332,44 +2205,29 @@
     <string comment="This is a setting - a check box: if a user wants to deactivate/activate the confirmation (instructions) dialog that appears before removing redundant constraints dialog">Confirm remove redundant constraints</string>
    </property>
   </action>
+  <action name="settingsConfirmSaveTimetableAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Confirm save data and timetable as</string>
+   </property>
+  </action>
+  <action name="fileClearRecentFilesListAction">
+   <property name="text">
+    <string extracomment="It means clearing the list of recently opened files">&amp;Clear list</string>
+   </property>
+  </action>
+  <action name="dataActivitiesRoomsStatisticsAction">
+   <property name="text">
+    <string extracomment="It refers to the statistics of each activity's possible room(s)">Activities rooms statistics</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>tabWidget</tabstop>
-  <tabstop>shortcutOpenPushButton</tabstop>
-  <tabstop>shortcutNewPushButton</tabstop>
-  <tabstop>shortcutSavePushButton</tabstop>
-  <tabstop>shortcutSaveAsPushButton</tabstop>
-  <tabstop>shortcutBasicPushButton</tabstop>
-  <tabstop>shortcutTeachersPushButton</tabstop>
-  <tabstop>shortcutStudentsPushButton</tabstop>
-  <tabstop>shortcutSubjectsPushButton</tabstop>
-  <tabstop>shortcutActivityTagsPushButton</tabstop>
-  <tabstop>shortcutDataSpacePushButton</tabstop>
-  <tabstop>shortcutActivitiesPushButton</tabstop>
-  <tabstop>shortcutSubactivitiesPushButton</tabstop>
-  <tabstop>shortcutDataAdvancedPushButton</tabstop>
-  <tabstop>shortcutAllTimeConstraintsPushButton</tabstop>
-  <tabstop>shortcutBreakTimeConstraintsPushButton</tabstop>
-  <tabstop>shortcutTeachersTimeConstraintsPushButton</tabstop>
-  <tabstop>shortcutStudentsTimeConstraintsPushButton</tabstop>
-  <tabstop>shortcutActivitiesTimeConstraintsPushButton</tabstop>
-  <tabstop>shortcutAdvancedTimeConstraintsPushButton</tabstop>
-  <tabstop>shortcutAllSpaceConstraintsPushButton</tabstop>
-  <tabstop>shortcutTeachersSpaceConstraintsPushButton</tabstop>
-  <tabstop>shortcutStudentsSpaceConstraintsPushButton</tabstop>
-  <tabstop>shortcutRoomsSpaceConstraintsPushButton</tabstop>
-  <tabstop>shortcutSubjectsSpaceConstraintsPushButton</tabstop>
-  <tabstop>shortcutActivityTagsSpaceConstraintsPushButton</tabstop>
-  <tabstop>shortcutActivitiesSpaceConstraintsPushButton</tabstop>
-  <tabstop>shortcutSubjectsAndActivityTagsSpaceConstraintsPushButton</tabstop>
-  <tabstop>shortcutGeneratePushButton</tabstop>
-  <tabstop>shortcutGenerateMultiplePushButton</tabstop>
-  <tabstop>shortcutViewTeachersPushButton</tabstop>
-  <tabstop>shortcutViewStudentsPushButton</tabstop>
-  <tabstop>shortcutViewRoomsPushButton</tabstop>
-  <tabstop>shortcutShowSoftConflictsPushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

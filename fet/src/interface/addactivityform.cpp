@@ -15,12 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QMessageBox>
-
-#include <cstdio>
-
-#include <QDialog>
-
 #include "longtextmessagebox.h"
 
 #include "addactivityform.h"
@@ -30,20 +24,18 @@
 
 #include "activityplanningform.h"
 
+#include <QMessageBox>
+
+#include <QDialog>
+
 #include <QtGui>
-
-#include <QLineEdit>
-
-#include <QAbstractItemView>
-#include <QModelIndex>
 
 #include <QList>
 
-/*QWidget* AddActivityForm::subTab(int i)
-{
-	assert(i>=0 && i<subactivitiesTabWidget->count());
-	return subactivitiesTabWidget->widget(i);
-}*/
+#include <QListWidget>
+#include <QAbstractItemView>
+#include <QModelIndex>
+#include <QScrollBar>
 
 QSpinBox* AddActivityForm::dur(int i)
 {
@@ -59,11 +51,18 @@ QCheckBox* AddActivityForm::activ(int i)
 	return activList.at(i);
 }
 
-AddActivityForm::AddActivityForm(const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName)
+AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	allTeachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	selectedTeachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	allStudentsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	selectedStudentsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	allActivityTagsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	selectedActivityTagsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	splitSpinBox->setMaxValue(MAX_SPLIT_OF_AN_ACTIVITY);
+	splitSpinBox->setMaximum(MAX_SPLIT_OF_AN_ACTIVITY);
 
 	durList.clear();
 	durList.append(duration1SpinBox);
@@ -103,7 +102,7 @@ AddActivityForm::AddActivityForm(const QString& teacherName, const QString& stud
 	durList.append(duration35SpinBox);
 	
 	for(int i=0; i<MAX_SPLIT_OF_AN_ACTIVITY; i++)
-		dur(i)->setMaxValue(gt.rules.nHoursPerDay);
+		dur(i)->setMaximum(gt.rules.nHoursPerDay);
 
 	activList.clear();
 	activList.append(active1CheckBox);
@@ -142,78 +141,72 @@ AddActivityForm::AddActivityForm(const QString& teacherName, const QString& stud
 	activList.append(active34CheckBox);
 	activList.append(active35CheckBox);
 
-    connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
-    connect(clearTeacherPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
-    connect(subgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsChanged()));
-    connect(groupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showGroupsChanged()));
-    connect(yearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showYearsChanged()));
-    connect(splitSpinBox, SIGNAL(valueChanged(int)), this, SLOT(splitChanged()));
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(subjectChanged(QString)));
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-    connect(addActivityPushButton, SIGNAL(clicked()), this, SLOT(addActivity()));
-    connect(allTeachersListBox, SIGNAL(selected(QString)), this, SLOT(addTeacher()));
-    connect(selectedTeachersListBox, SIGNAL(selected(QString)), this, SLOT(removeTeacher()));
-    connect(allStudentsListBox, SIGNAL(selected(QString)), this, SLOT(addStudents()));
-    connect(selectedStudentsListBox, SIGNAL(selected(QString)), this, SLOT(removeStudents()));
-    connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
-    connect(clearActivityTagPushButton, SIGNAL(clicked()), this, SLOT(clearActivityTags()));
-    connect(allActivityTagsListBox, SIGNAL(selected(QString)), this, SLOT(addActivityTag()));
-    connect(selectedActivityTagsListBox, SIGNAL(selected(QString)), this, SLOT(removeActivityTag()));
-    connect(minDayDistanceSpinBox, SIGNAL(valueChanged(int)), this, SLOT(minDaysChanged()));
+	connect(subgroupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showSubgroupsChanged()));
+	connect(groupsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showGroupsChanged()));
+	connect(yearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showYearsChanged()));
 
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(splitSpinBox, SIGNAL(valueChanged(int)), this, SLOT(splitChanged()));
+
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addActivityPushButton, SIGNAL(clicked()), this, SLOT(addActivity()));
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+
+	connect(allTeachersListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addTeacher()));
+	connect(selectedTeachersListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeTeacher()));
+	connect(allStudentsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addStudents()));
+	connect(selectedStudentsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeStudents()));
+	connect(allActivityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivityTag()));
+	connect(selectedActivityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivityTag()));
+
+	connect(clearActivityTagPushButton, SIGNAL(clicked()), this, SLOT(clearActivityTags()));
+	connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
+	connect(clearTeacherPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
+
+	connect(minDayDistanceSpinBox, SIGNAL(valueChanged(int)), this, SLOT(minDaysChanged()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QSize tmp3=subjectsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp3);
-						
-	//updatePreferredDaysComboBox();
-	//updatePreferredHoursComboBox();
-	selectedStudentsListBox->clear();
-	updateStudentsListBox();
-	updateTeachersListBox();
+	
+	selectedStudentsListWidget->clear();
+	updateStudentsListWidget();
+	updateTeachersListWidget();
 	updateSubjectsComboBox();
-	updateActivityTagsListBox();
+	updateActivityTagsListWidget();
 
-	minDayDistanceSpinBox->setMaxValue(gt.rules.nDaysPerWeek);
-	minDayDistanceSpinBox->setMinValue(0);
+	minDayDistanceSpinBox->setMaximum(gt.rules.nDaysPerWeek);
+	minDayDistanceSpinBox->setMinimum(0);
 	minDayDistanceSpinBox->setValue(1);
 	
 	int nSplit=splitSpinBox->value();
-	for(int i=0; i<MAX_SPLIT_OF_AN_ACTIVITY; i++)
+	for(int i=0; i<MAX_SPLIT_OF_AN_ACTIVITY; i++){
 		if(i<nSplit)
 			subactivitiesTabWidget->setTabEnabled(i, true);
 		else
 			subactivitiesTabWidget->setTabEnabled(i, false);
-			
+	}
+	
 	minDayDistanceTextLabel->setEnabled(nSplit>=2);
 	minDayDistanceSpinBox->setEnabled(nSplit>=2);
 	percentageTextLabel->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
 	percentageLineEdit->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
-	percentTextLabel->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
-	forceAdjacentCheckBox->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
+	forceConsecutiveCheckBox->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
 	
 	subactivitiesTabWidget->setCurrentIndex(0);
 	
-	nStudentsSpinBox->setMinValue(-1);
-	nStudentsSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
+	nStudentsSpinBox->setMinimum(-1);
+	nStudentsSpinBox->setMaximum(MAX_ROOM_CAPACITY);
 	nStudentsSpinBox->setValue(-1);
 
-	//addActivityPushButton->setText(tr("Add"));
-	
 	addActivityPushButton->setDefault(true);
 	addActivityPushButton->setFocus();
 	
-	//selectedTeachersListBox->clear();
 	if(teacherName!="")
-		selectedTeachersListBox->insertItem(teacherName);
-	//selectedStudentsListBox->clear();
+		selectedTeachersListWidget->addItem(teacherName);
 	if(studentsSetName!="")
-		selectedStudentsListBox->insertItem(studentsSetName);
+		selectedStudentsListWidget->addItem(studentsSetName);
 	if(subjectName!=""){
 		int pos=-1;
 		for(int i=0; i<subjectsComboBox->count(); i++){
@@ -223,170 +216,162 @@ AddActivityForm::AddActivityForm(const QString& teacherName, const QString& stud
 			}
 		}
 		assert(pos>=0);
-		subjectsComboBox->setCurrentItem(pos);
+		subjectsComboBox->setCurrentIndex(pos);
 	}
 	else{
 		//begin trick to pass a Qt 4.6.0 bug: the first entry is not highlighted with mouse until you move to second entry and then back up
 		if(subjectsComboBox->view()){
-			/*QModelIndex mi=subjectsComboBox->view()->currentIndex();
-			subjectsComboBox->view()->setCurrentIndex(mi);*/
 			subjectsComboBox->view()->setCurrentIndex(QModelIndex());
 		}
 		//end trick
-		subjectsComboBox->setCurrentItem(-1);
+		subjectsComboBox->setCurrentIndex(-1);
 	}
-	//selectedActivityTagsListBox->clear();
 	if(activityTagName!="")
-		selectedActivityTagsListBox->insertItem(activityTagName);	
+		selectedActivityTagsListWidget->addItem(activityTagName);
 }
 
 AddActivityForm::~AddActivityForm()
 {
+	saveFETDialogGeometry(this);
 }
 
-void AddActivityForm::updateTeachersListBox()
+void AddActivityForm::updateTeachersListWidget()
 {
-	allTeachersListBox->clear();
+	allTeachersListWidget->clear();
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
-		allTeachersListBox->insertItem(tch->name);
+		allTeachersListWidget->addItem(tch->name);
 	}
-		
-	selectedTeachersListBox->clear();
-
-	activityChanged();
+	
+	selectedTeachersListWidget->clear();
 }
 
 void AddActivityForm::addTeacher()
 {
-	if(allTeachersListBox->currentItem()<0 || (uint)(allTeachersListBox->currentItem())>=allTeachersListBox->count())
+	if(allTeachersListWidget->currentRow()<0 || allTeachersListWidget->currentRow()>=allTeachersListWidget->count())
 		return;
 	
-	for(uint i=0; i<selectedTeachersListBox->count(); i++)
-		if(selectedTeachersListBox->text(i)==allTeachersListBox->currentText())
+	for(int i=0; i<selectedTeachersListWidget->count(); i++)
+		if(selectedTeachersListWidget->item(i)->text()==allTeachersListWidget->currentItem()->text())
 			return;
 			
-	selectedTeachersListBox->insertItem(allTeachersListBox->currentText());
-
-	activityChanged();
+	selectedTeachersListWidget->addItem(allTeachersListWidget->currentItem()->text());
+	selectedTeachersListWidget->setCurrentRow(selectedTeachersListWidget->count()-1);
 }
 
 void AddActivityForm::removeTeacher()
 {
-	if(selectedTeachersListBox->count()<=0 || selectedTeachersListBox->currentItem()<0 ||
-	 (uint)(selectedTeachersListBox->currentItem())>=selectedTeachersListBox->count())
+	if(selectedTeachersListWidget->count()<=0 || selectedTeachersListWidget->currentRow()<0 ||
+	 selectedTeachersListWidget->currentRow()>=selectedTeachersListWidget->count())
 		return;
-		
-	selectedTeachersListBox->removeItem(selectedTeachersListBox->currentItem());
-
-	activityChanged();
+	
+	int i=selectedTeachersListWidget->currentRow();
+	selectedTeachersListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=selectedTeachersListWidget->takeItem(i);
+	delete item;
+	if(i<selectedTeachersListWidget->count())
+		selectedTeachersListWidget->setCurrentRow(i);
+	else
+		selectedTeachersListWidget->setCurrentRow(selectedTeachersListWidget->count()-1);
 }
 
 void AddActivityForm::addStudents()
 {
-	if(allStudentsListBox->currentItem()<0 || (uint)(allStudentsListBox->currentItem())>=allStudentsListBox->count())
+	if(allStudentsListWidget->currentRow()<0 || allStudentsListWidget->currentRow()>=allStudentsListWidget->count())
 		return;
 	
-	assert(canonicalStudentsSetsNames.count()==(int)(allStudentsListBox->count()));
-	QString sn=canonicalStudentsSetsNames.at(allStudentsListBox->currentItem());
+	assert(canonicalStudentsSetsNames.count()==allStudentsListWidget->count());
+	QString sn=canonicalStudentsSetsNames.at(allStudentsListWidget->currentRow());
 
-	for(uint i=0; i<selectedStudentsListBox->count(); i++)
-		if(selectedStudentsListBox->text(i)==sn)
+	for(int i=0; i<selectedStudentsListWidget->count(); i++)
+		if(selectedStudentsListWidget->item(i)->text()==sn)
 			return;
-			
-	selectedStudentsListBox->insertItem(sn);
 	
-	activityChanged();
+	selectedStudentsListWidget->addItem(sn);
+	selectedStudentsListWidget->setCurrentRow(selectedStudentsListWidget->count()-1);
 }
 
 void AddActivityForm::removeStudents()
 {
-	if(selectedStudentsListBox->count()<=0 || selectedStudentsListBox->currentItem()<0 ||
-	 (uint)(selectedStudentsListBox->currentItem())>=selectedStudentsListBox->count())
+	if(selectedStudentsListWidget->count()<=0 || selectedStudentsListWidget->currentRow()<0 ||
+	 selectedStudentsListWidget->currentRow()>=selectedStudentsListWidget->count())
 		return;
-		
-	selectedStudentsListBox->removeItem(selectedStudentsListBox->currentItem());
-
-	activityChanged();
+	
+	int i=selectedStudentsListWidget->currentRow();
+	selectedStudentsListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=selectedStudentsListWidget->takeItem(i);
+	delete item;
+	if(i<selectedStudentsListWidget->count())
+		selectedStudentsListWidget->setCurrentRow(i);
+	else
+		selectedStudentsListWidget->setCurrentRow(selectedStudentsListWidget->count()-1);
 }
 
 void AddActivityForm::addActivityTag()
 {
-	if(allActivityTagsListBox->currentItem()<0 || (uint)(allActivityTagsListBox->currentItem())>=allActivityTagsListBox->count())
+	if(allActivityTagsListWidget->currentRow()<0 || allActivityTagsListWidget->currentRow()>=allActivityTagsListWidget->count())
 		return;
 	
-	for(uint i=0; i<selectedActivityTagsListBox->count(); i++)
-		if(selectedActivityTagsListBox->text(i)==allActivityTagsListBox->currentText())
+	for(int i=0; i<selectedActivityTagsListWidget->count(); i++)
+		if(selectedActivityTagsListWidget->item(i)->text()==allActivityTagsListWidget->currentItem()->text())
 			return;
-			
-	selectedActivityTagsListBox->insertItem(allActivityTagsListBox->currentText());
-
-	activityChanged();
+	
+	selectedActivityTagsListWidget->addItem(allActivityTagsListWidget->currentItem()->text());
+	selectedActivityTagsListWidget->setCurrentRow(selectedActivityTagsListWidget->count()-1);
 }
 
 void AddActivityForm::removeActivityTag()
 {
-	if(selectedActivityTagsListBox->count()<=0 || selectedActivityTagsListBox->currentItem()<0 ||
-	 (uint)(selectedActivityTagsListBox->currentItem())>=selectedActivityTagsListBox->count())
+	if(selectedActivityTagsListWidget->count()<=0 || selectedActivityTagsListWidget->currentRow()<0 ||
+	 selectedActivityTagsListWidget->currentRow()>=selectedActivityTagsListWidget->count())
 		return;
-		
-	selectedActivityTagsListBox->removeItem(selectedActivityTagsListBox->currentItem());
-
-	activityChanged();
+	
+	int i=selectedActivityTagsListWidget->currentRow();
+	selectedActivityTagsListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=selectedActivityTagsListWidget->takeItem(i);
+	delete item;
+	if(i<selectedActivityTagsListWidget->count())
+		selectedActivityTagsListWidget->setCurrentRow(i);
+	else
+		selectedActivityTagsListWidget->setCurrentRow(selectedActivityTagsListWidget->count()-1);
 }
-
 
 void AddActivityForm::updateSubjectsComboBox()
 {
 	subjectsComboBox->clear();
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sbj=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(sbj->name);
+		subjectsComboBox->addItem(sbj->name);
 	}
-
-	subjectChanged(subjectsComboBox->currentText());
 }
 
-void AddActivityForm::updateActivityTagsListBox()
+void AddActivityForm::updateActivityTagsListWidget()
 {
-	allActivityTagsListBox->clear();
+	allActivityTagsListWidget->clear();
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* at=gt.rules.activityTagsList[i];
-		allActivityTagsListBox->insertItem(at->name);
+		allActivityTagsListWidget->addItem(at->name);
 	}
-		
-	selectedActivityTagsListBox->clear();
-
-	activityChanged();
-
-/*	activityTagsComboBox->clear();
-	activityTagsComboBox->insertItem("");
-	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
-		ActivityTag* sbt=gt.rules.activityTagsList[i];
-		activityTagsComboBox->insertItem(sbt->name);
-	}
-		
-	activityTagsComboBox->setCurrentItem(0);
-
-	activityTagChanged(activityTagsComboBox->currentText());*/
+	
+	selectedActivityTagsListWidget->clear();
 }
 
 void AddActivityForm::showYearsChanged()
 {
-	updateStudentsListBox();
+	updateStudentsListWidget();
 }
 
 void AddActivityForm::showGroupsChanged()
 {
-	updateStudentsListBox();
+	updateStudentsListWidget();
 }
 
 void AddActivityForm::showSubgroupsChanged()
 {
-	updateStudentsListBox();
+	updateStudentsListWidget();
 }
 
-void AddActivityForm::updateStudentsListBox()
+void AddActivityForm::updateStudentsListWidget()
 {
 	const int INDENT=2;
 
@@ -394,12 +379,12 @@ void AddActivityForm::updateStudentsListBox()
 	bool showGroups=groupsCheckBox->isChecked();
 	bool showSubgroups=subgroupsCheckBox->isChecked();
 
-	allStudentsListBox->clear();
+	allStudentsListWidget->clear();
 	canonicalStudentsSetsNames.clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
 		if(showYears){
-			allStudentsListBox->insertItem(sty->name);
+			allStudentsListWidget->addItem(sty->name);
 			canonicalStudentsSetsNames.append(sty->name);
 		}
 		for(int j=0; j<sty->groupsList.size(); j++){
@@ -408,9 +393,7 @@ void AddActivityForm::updateStudentsListBox()
 				QString begin=QString("");
 				QString end=QString("");
 				begin=QString(INDENT, ' ');
-				if(LANGUAGE_STYLE_RIGHT_TO_LEFT==true)
-					end=QString(INDENT, ' ');
-				allStudentsListBox->insertItem(begin+stg->name+end);
+				allStudentsListWidget->addItem(begin+stg->name+end);
 				canonicalStudentsSetsNames.append(stg->name);
 			}
 			for(int k=0; k<stg->subgroupsList.size(); k++){
@@ -419,200 +402,32 @@ void AddActivityForm::updateStudentsListBox()
 					QString begin=QString("");
 					QString end=QString("");
 					begin=QString(2*INDENT, ' ');
-					if(LANGUAGE_STYLE_RIGHT_TO_LEFT==true)
-						end=QString(2*INDENT, ' ');
-					allStudentsListBox->insertItem(begin+sts->name+end);
+					allStudentsListWidget->addItem(begin+sts->name+end);
 					canonicalStudentsSetsNames.append(sts->name);
 				}
 			}
 		}
 	}
 	
-	//selectedStudentsListBox->clear();
-
-	activityChanged();
+	int q=allStudentsListWidget->verticalScrollBar()->minimum();
+	allStudentsListWidget->verticalScrollBar()->setValue(q);
 }
-
-/*void AddActivityForm::updatePreferredDaysComboBox()
-{
-	for(int j=0; j<8; j++){
-		prefDay(j)->clear();
-		prefDay(j)->insertItem(tr("Any"));
-		for(int i=0; i<gt.rules.nDaysPerWeek; i++)
-			prefDay(j)->insertItem(gt.rules.daysOfTheWeek[i]);
-	}
-}
-
-void AddActivityForm::updatePreferredHoursComboBox()
-{
-	for(int j=0; j<8; j++){
-		prefHour(j)->clear();
-		prefHour(j)->insertItem(tr("Any"));
-		for(int i=0; i<gt.rules.nHoursPerDay; i++)
-			prefHour(j)->insertItem(gt.rules.hoursOfTheDay[i]);
-	}
-}*/
-
-void AddActivityForm::subjectChanged(const QString& dummy)
-{
-	Q_UNUSED(dummy);
-	//if(dummy=="")
-	//	;
-
-	activityChanged();
-}
-
-/*void AddActivityForm::activityTagChanged(const QString& dummy)
-{
-	Q_UNUSED(dummy);
-	//if(dummy=="")
-	//	;
-
-	activityChanged();
-}*/
 
 void AddActivityForm::splitChanged()
 {
 	int nSplit=splitSpinBox->value();
 	
-	//if(nSplit>=2){
-		//addActivityPushButton->setText(tr("Add current activities"));
-		//addActivityPushButton->setText(tr("Add activities"));
-		//addActivityPushButton->setText(tr("Add"));
-		//currentActivityTextLabel->setText(tr("Current activities"));
-	//}
-	//else{
-		//addActivityPushButton->setText(tr("Add current activity"));
-		//addActivityPushButton->setText(tr("Add activity"));
-		//addActivityPushButton->setText(tr("Add"));
-		//currentActivityTextLabel->setText(tr("Current activity"));
-	//}
-
-	//minDayDistanceTextLabel->setEnabled(nSplit>=2);
-	//minDayDistanceSpinBox->setEnabled(nSplit>=2);
-
 	minDayDistanceTextLabel->setEnabled(nSplit>=2);
 	minDayDistanceSpinBox->setEnabled(nSplit>=2);
 	percentageTextLabel->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
 	percentageLineEdit->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
-	percentTextLabel->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
-	forceAdjacentCheckBox->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
+	forceConsecutiveCheckBox->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
 
 	for(int i=0; i<MAX_SPLIT_OF_AN_ACTIVITY; i++)
 		if(i<nSplit)
 			subactivitiesTabWidget->setTabEnabled(i, true);
 		else
 			subactivitiesTabWidget->setTabEnabled(i, false);
-
-	activityChanged();
-}
-
-void AddActivityForm::activityChanged()
-{
-/*	QString s;
-	//s+=tr("Current activity:");s+="\n";
-	if(selectedTeachersListBox->count()==0){
-		if(splitSpinBox->value()==1)
-			s+=tr("No teachers for this activity");
-		else
-			s+=tr("No teachers for these activities");
-			
-		s+="\n";
-	}
-	else
-		for(uint i=0; i<selectedTeachersListBox->count(); i++){
-			s+=tr("Teacher=%1").arg(selectedTeachersListBox->text(i));
-			//s+=selectedTeachersListBox->text(i);
-			s+="\n";
-		}
-
-	s+=tr("Subject=%1").arg(subjectsComboBox->currentText());
-	s+="\n";
-	if(activityTagsComboBox->currentText()!=""){
-		s+=tr("Activity tag=%1").arg(activityTagsComboBox->currentText());
-		s+="\n";
-	}
-	if(selectedStudentsListBox->count()==0){
-		if(splitSpinBox->value()==1)
-			s+=tr("No students for this activity");
-		else
-			s+=tr("No students for these activities");
-			
-		s+="\n";
-	}
-	else
-		for(uint i=0; i<selectedStudentsListBox->count(); i++){
-			s+=tr("Students=%1").arg(selectedStudentsListBox->text(i));
-			s+="\n";
-		}
-
-	if(nStudentsSpinBox->value()>=0){
-		s+=tr("Number of students=%1").arg(nStudentsSpinBox->value());
-		s+="\n";
-	}
-	else{
-		s+=tr("Number of students: automatically computed from component students sets");
-		s+="\n";
-	}
-
-	if(splitSpinBox->value()==1){
-		s+=tr("Duration=%1").arg(dur(0)->value());
-		s+="\n";
-		if(activ(0)->isChecked()){
-			s+=tr("Active activity");
-			s+="\n";
-		}
-		else{
-			s+=tr("Non-active activity");
-			s+="\n";
-		}
-	}
-	else{
-		s+=tr("This larger activity will be split into %1 smaller activities per week").arg(splitSpinBox->value());
-		s+="\n";
-		if(minDayDistanceSpinBox->value()>0){
-			percentageTextLabel->setEnabled(true);
-			percentageLineEdit->setEnabled(true);
-			percentTextLabel->setEnabled(true);
-			forceAdjacentCheckBox->setEnabled(true);
-			
-			s+=tr("The distance between any pair of activities must be at least %1 days").arg(minDayDistanceSpinBox->value());
-			s+="\n";
-			
-			s+=tr("Weight percentage of added min days constraint: %1\%").arg(percentageLineEdit->text());
-			s+="\n";
-			
-			if(forceAdjacentCheckBox->isChecked()){
-				s+=tr("If activities on same day, then place activities consecutive, in a bigger duration lesson");
-				s+="\n";
-			}
-		}
-		else{
-			percentageTextLabel->setDisabled(true);
-			percentageLineEdit->setDisabled(true);
-			percentTextLabel->setDisabled(true);
-			forceAdjacentCheckBox->setDisabled(true);
-		}
-		s+="\n";
-
-		for(int i=0; i<splitSpinBox->value(); i++){
-			s+=tr("Component %1:").arg(i+1);
-			s+="\n";
-			s+=tr("Duration=%1").arg(dur(i)->value());
-			s+="\n";
-			if(activ(i)->isChecked()){
-				s+=tr("Active activity");
-				s+="\n";
-			}
-			else{
-				s+=tr("Non-active activity");
-				s+="\n";
-			}
-			s+="\n";
-		}
-	}
-
-	currentActivityTextEdit->setText(s);*/
 }
 
 SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialog(p)
@@ -623,7 +438,7 @@ SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialo
 	 ("You selected min days between activities %1 (above 1) and weight %2 (under 100.0). "
 	  "Would you like to add also a second constraint to ensure that almost certainly the "
 	  "distance between activities is at least %3 (%1-1) days? If yes, please select weight (recommended "
-	  "95.0%-100.0%) and click Yes. If no, please click No (only one constraint will be added)").arg(minD).arg(w).arg(minD-1);
+	  "95.0%-100.0%) and click Yes. If no, please click No (only one constraint will be added)").arg(CustomFETString::number(minD).arg(w)).arg(minD-1);
 	l+="\n\n";
 	l+=tr("(Yes means to add an additional constraint min %1 days between activities, weight 0.0%-100.0%. "
 	  "If you say Yes, you will have 2 constraints min days added for current activities. "
@@ -637,38 +452,59 @@ SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialo
 	  "probability 0.25%=5%*5%, so you'll get in 99.75% cases the min n-1 days constraint respected.");
 	l+="\n\n";
 	l+=tr("Recommended answer is Yes, 95% (or higher).");
-	l+="\n\n";
 
 	setWindowTitle(tr("Add a second constraint or not?"));
 				
 	QVBoxLayout* vl=new QVBoxLayout(this);
-				
-	/*QLabel* la=new QLabel(this);
-	la->setWordWrap(true);
-	la->setText(l);*/
-	QTextEdit* la=new QTextEdit();
-	la->setText(l);
+	
+	QPlainTextEdit* la=new QPlainTextEdit();
+	la->setPlainText(l);
 	la->setReadOnly(true);
 
 	vl->addWidget(la);
 				
 	QPushButton* yes=new QPushButton(tr("Yes"));
-	yes->setDefault(true);				
-				
+	yes->setDefault(true);
+	
 	QPushButton* no=new QPushButton(tr("No"));
 
 	QLabel* percLabel=new QLabel(this);
 	percLabel->setText("Percentage");
-	percText.setText("95.0");
-	QHBoxLayout* hl2=new QHBoxLayout(vl);
-	hl2->addWidget(percLabel);
-	hl2->addWidget(&percText);
+	percText=new QLineEdit(this);
+	percText->setText("95.0");
+	
+	//QHBoxLayout* hl2=new QHBoxLayout(vl);
+	QHBoxLayout* hl2=new QHBoxLayout();
+	vl->addLayout(hl2);
+	
+	//////
+	QLabel* minDaysLabel=new QLabel(this);
+	minDaysLabel->setText("Min days");
+	QSpinBox* minDaysSpinBox=new QSpinBox(this);
+	minDaysSpinBox->setMinimum(minD-1);
+	minDaysSpinBox->setMaximum(minD-1);
+	minDaysSpinBox->setValue(minD-1);
+	minDaysSpinBox->setEnabled(false);
+	//////
 
-	QHBoxLayout* hl=new QHBoxLayout(vl);
+	//////
+	hl2->addStretch(1);
+	hl2->addWidget(minDaysLabel);
+	hl2->addWidget(minDaysSpinBox);
+	//////
+	
+	hl2->addStretch(1);
+	hl2->addWidget(percLabel);
+	hl2->addWidget(percText);
+	
+	//QHBoxLayout* hl=new QHBoxLayout(vl);
+	QHBoxLayout* hl=new QHBoxLayout();
+	vl->addLayout(hl);
+	
 	hl->addStretch(1);
 	hl->addWidget(yes);
 	hl->addWidget(no);
-				
+	
 	connect(yes, SIGNAL(clicked()), this, SLOT(yesPressed()));
 	connect(no, SIGNAL(clicked()), this, SLOT(reject()));
 	
@@ -683,20 +519,22 @@ SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialo
 		hh=650;
 	if(hh<380)
 		hh=380;
-		
+	
 	this->setGeometry(0, 0, ww, hh);
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 }
 
 SecondMinDaysDialog::~SecondMinDaysDialog()
 {
+	saveFETDialogGeometry(this);
 }
 
 void SecondMinDaysDialog::yesPressed()
 {
 	double wt;
-	QString tmp=percText.text();
-	sscanf(tmp, "%lf", &wt);
+	QString tmp=percText->text();
+	weight_sscanf(tmp, "%lf", &wt);
 	if(wt<0.0 || wt>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage) - must be >=0 and <=100.0"));
@@ -710,7 +548,7 @@ void AddActivityForm::addActivity()
 {
 	double weight;
 	QString tmp=percentageLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(percentageLineEdit->isEnabled() && (weight<0.0 || weight>100.0)){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage) for added constraint min days between activities"));
@@ -719,7 +557,7 @@ void AddActivityForm::addActivity()
 
 	//teachers
 	QStringList teachers_names;
-	if(selectedTeachersListBox->count()<=0){
+	if(selectedTeachersListWidget->count()<=0){
 		int t=QMessageBox::question(this, tr("FET question"),
 		 tr("Do you really want to add an activity without teacher(s)?"),
 		 QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
@@ -728,9 +566,9 @@ void AddActivityForm::addActivity()
 			return;
 	}
 	else{
-		for(uint i=0; i<selectedTeachersListBox->count(); i++){
-			assert(gt.rules.searchTeacher(selectedTeachersListBox->text(i))>=0);
-			teachers_names.append(selectedTeachersListBox->text(i));
+		for(int i=0; i<selectedTeachersListWidget->count(); i++){
+			assert(gt.rules.searchTeacher(selectedTeachersListWidget->item(i)->text())>=0);
+			teachers_names.append(selectedTeachersListWidget->item(i)->text());
 		}
 	}
 
@@ -738,28 +576,20 @@ void AddActivityForm::addActivity()
 	QString subject_name=subjectsComboBox->currentText();
 	int subject_index=gt.rules.searchSubject(subject_name);
 	if(subject_index<0){
-		QMessageBox::warning(this, tr("FET information"),
+		QMessageBox::warning(this, tr("FET warning"),
 			tr("Invalid subject"));
 		return;
 	}
 
-	//activity tags
-	/*QString activity_tag_name=activityTagsComboBox->currentText();
-	int activity_tag_index=gt.rules.searchActivityTag(activity_tag_name);
-	if(activity_tag_index<0 && activity_tag_name!=""){
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Invalid activity tag"));
-		return;
-	}*/
 	QStringList activity_tags_names;
-	for(uint i=0; i<selectedActivityTagsListBox->count(); i++){
-		assert(gt.rules.searchActivityTag(selectedActivityTagsListBox->text(i))>=0);
-		activity_tags_names.append(selectedActivityTagsListBox->text(i));
+	for(int i=0; i<selectedActivityTagsListWidget->count(); i++){
+		assert(gt.rules.searchActivityTag(selectedActivityTagsListWidget->item(i)->text())>=0);
+		activity_tags_names.append(selectedActivityTagsListWidget->item(i)->text());
 	}
 
 	//students
 	QStringList students_names;
-	if(selectedStudentsListBox->count()<=0){
+	if(selectedStudentsListWidget->count()<=0){
 		int t=QMessageBox::question(this, tr("FET question"),
 		 tr("Do you really want to add an activity without student set(s)?"),
 		 QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
@@ -768,9 +598,9 @@ void AddActivityForm::addActivity()
 			return;
 	}
 	else{
-		for(uint i=0; i<selectedStudentsListBox->count(); i++){
-			assert(gt.rules.searchStudentsSet(selectedStudentsListBox->text(i))!=NULL);
-			students_names.append(selectedStudentsListBox->text(i));
+		for(int i=0; i<selectedStudentsListWidget->count(); i++){
+			assert(gt.rules.searchStudentsSet(selectedStudentsListWidget->item(i)->text())!=NULL);
+			students_names.append(selectedStudentsListWidget->item(i)->text());
 		}
 	}
 
@@ -816,7 +646,7 @@ void AddActivityForm::addActivity()
 		}
 
 		bool tmp=gt.rules.addSimpleActivity(activityid, 0, teachers_names, subject_name, activity_tags_names,
-			students_names,	duration, duration, /*parity,*/ active, /*preferred_day, preferred_hour,*/
+			students_names, duration, duration, active,
 			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 		if(tmp)
 			QMessageBox::information(this, tr("FET information"), tr("Activity added"));
@@ -852,23 +682,15 @@ void AddActivityForm::addActivity()
 
 		int totalduration;
 		int durations[MAX_SPLIT_OF_AN_ACTIVITY];
-		//int parities[8];
-		//int preferred_days[8];
-		//int preferred_hours[8];
 		bool active[MAX_SPLIT_OF_AN_ACTIVITY];
 		int nsplit=splitSpinBox->value();
 
 		totalduration=0;
 		for(int i=0; i<nsplit; i++){
 			durations[i]=dur(i)->value();
-			/*parities[i]=PARITY_WEEKLY;
-			if(par(i)->isChecked())
-				parities[i]=PARITY_FORTNIGHTLY;*/
 			active[i]=false;
 			if(activ(i)->isChecked())
 				active[i]=true;
-			//preferred_days[i]=prefDay(i)->currentItem()-1;
-			//preferred_hours[i]=prefHour(i)->currentItem()-1;
 
 			totalduration+=durations[i];
 		}
@@ -887,73 +709,24 @@ void AddActivityForm::addActivity()
 		bool tmp=gt.rules.addSplitActivity(firstactivityid, firstactivityid,
 			teachers_names, subject_name, activity_tags_names, students_names,
 			nsplit, totalduration, durations,
-			/*parities,*/ active, minD, /*percentageSpinBox->value()*/weight, forceAdjacentCheckBox->isChecked(), /*preferred_days, preferred_hours,*/
+			active, minD, weight, forceConsecutiveCheckBox->isChecked(),
 			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value());
 		if(tmp){
 			if(minD>1 && weight<100.0){
 				SecondMinDaysDialog second(this, minD, weight);
+				setParentAndOtherThings(&second, this);
 				int code=second.exec();
 
 				if(code==QDialog::Accepted){
 					assert(second.weight>=0 && second.weight<=100.0);
-					//int acts[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
 					QList<int> acts;
 					for(int i=0; i<nsplit; i++){
-						//acts[i]=firstactivityid+i;
 						acts.append(firstactivityid+i);
 					}
-					TimeConstraint* c=new ConstraintMinDaysBetweenActivities(second.weight, forceAdjacentCheckBox->isChecked(), nsplit, acts, minD-1);
+					TimeConstraint* c=new ConstraintMinDaysBetweenActivities(second.weight, forceConsecutiveCheckBox->isChecked(), nsplit, acts, minD-1);
 					bool tmp=gt.rules.addTimeConstraint(c);
 					assert(tmp);
 				}
-				
-			/*
-			    bool ok;
-				
-				QString s=tr
-				 ("You selected min days between activities %1 (above 1) and weight %2 (under 100.0).\n"
-				  "Would you like to add also a second constraint to ensure that almost certainly the\n"
-				  "distance between activities is at least 1 day? If yes, please select weight (recommended\n"
-				  "95%-100%) and click OK. If no, please click Cancel (only one constraint will be added)\n\n"
-				  "(OK means to add an additional constraint min 1 day between activities, weight 0%-100%.\n"
-				  "If you say OK, you will have 2 constraints min days added for current activities.\n"
-				  "Adding the second constraint might lead to impossible timetables if the condition is\n"
-				  "too tight, but you can remove the second constraint at any time).\n\n"
-				  "Note: 95% is usually enough for min days constraints referring to same activities.\n"
-				  "The weights are cumulated (only in such cases). If you have 2 constraints with say 95%\n"
-				  "first constraint is skipped with probability 5%, then second constraint is skipped with\n"
-				  "probability 0.25%=5%*5%, so you'll get in 99.75% cases second constraint respected\n\n"
-				  "Recommended answer is Yes (OK), 95%.").arg(minD).arg(weight);
-				
-			    double d = QInputDialog::getDouble(this, tr("FET question"),
-				 s, 95.0, 0.0, 100.0, 10, &ok);
-
- 				if(ok){ //yes
-					int acts[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
-					for(int i=0; i<nsplit; i++)
-						acts[i]=firstactivityid+i;
-					TimeConstraint* c=new ConstraintMinDaysBetweenActivities(d, forceAdjacentCheckBox->isChecked(), nsplit, acts, 1);
-					bool tmp=gt.rules.addTimeConstraint(c);
-					assert(tmp);
-				}*/
-			
-				/*int t=QMessageBox::question(this, tr("FET question"), tr("You selected min days between activities %1 (above 1) and weight %2 (under 100.0). Would you"
-				 " like to add also a second constraint to ensure that always the distance between activities is at least 1 day?\n\n"
-				 "(This means to add an additional constraint min 1 day between activities, weight 100.0%. If you say yes, you will have 2 constraints"
-				 " min days added for these activities. Adding the second constraint might lead to impossible timetables"
-				 " if the condition is too tight, but you can remove the second constraint at any time).\n\n"
-				 "Safest answer is No, recommended answer is Yes.").arg(minD).arg(weight),
-				 tr("Yes"), tr("No"), QString(),
- 				 0, 1 );
-														 				 	
- 				if(t==0){ //yes
-					int acts[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
-					for(int i=0; i<nsplit; i++)
-						acts[i]=firstactivityid+i;
-					TimeConstraint* c=new ConstraintMinDaysBetweenActivities(100.0, forceAdjacentCheckBox->isChecked(), nsplit, acts, 1);
-					bool tmp=gt.rules.addTimeConstraint(c);
-					assert(tmp);
-				}*/
 			}
 		
 			QMessageBox::information(this, tr("FET information"), tr("Split activity added."
@@ -969,32 +742,39 @@ void AddActivityForm::addActivity()
 
 void AddActivityForm::clearTeachers()
 {
-	selectedTeachersListBox->clear();
-	activityChanged();
+	selectedTeachersListWidget->clear();
 }
 
 void AddActivityForm::clearStudents()
 {
-	selectedStudentsListBox->clear();
-	activityChanged();
+	selectedStudentsListWidget->clear();
 }
 
 void AddActivityForm::clearActivityTags()
 {
-	selectedActivityTagsListBox->clear();
-	activityChanged();
+	selectedActivityTagsListWidget->clear();
 }
 
 void AddActivityForm::help()
 {
 	QString s;
 	
-	s=tr("This help by Liviu Lalescu, modified 25 September 2008");
-	
+	s+=tr("Abbreviations in this dialog:");
 	s+="\n\n";
-	 
-	s+=tr("Comment added on 25 September 2008:");
-	s+=" ";
+	s+=tr("'Students' (the text near the spin box), means 'Number of students (-1 for automatic)'");
+	s+="\n";
+	s+=tr("'Split' means 'Split into ... activities per week'");
+	s+="\n";
+	s+=tr("'Min days' means 'The minimum required distance in days between each pair of activities'");
+	s+="\n";
+	s+=tr("'Weight %' means 'Percentage of added constraint (min days between activities constraint). Recommended: 95.0%-100.0%'");
+	s+="\n";
+	s+=tr("'Consecutive' means 'If activities on same day, force consecutive?'");
+	s+="\n";
+	s+=tr("The 'Duration' spin box and the 'Active' check box refer to each component of current activity, you can change "
+	 "them for each component, separately, by selecting the corresponding tab in the tab widget.");
+	s+="\n\n";
+	
 	s+=tr("A first notice, because many users didn't care about it: "
 	 "If you use a 5 days week: "
 	 "when adding an activity split into only 2 components "
@@ -1002,14 +782,14 @@ void AddActivityForm::help()
 	 "If you split an activity into 3 components per week - please read FAQ question Q1-5-September-2008");
 	s+="\n\n";
 	
-	s+=tr("You can select a teacher from all the teachers with the mouse or with keyboard tab/up/down, then "
-	 "double click it or press Enter to add it to the selected teachers for current activity. "
+	s+=tr("You can select a teacher from all the teachers with the mouse or with the keyboard tab/up/down, then "
+	 "double click it to add it to the selected teachers for current activity. "
 	 "You can then choose to remove a teacher from the selected teachers. You can highlight it "
-	 "with arrows or mouse, then double click or press Enter to remove the teacher from the selected teachers.");
+	 "with the mouse or with the keyboard, then double click it to remove this teacher from the selected teachers.");
 	 
 	s+="\n\n";
 	
-	s+=tr("The same procedure (double click or Enter) applies to adding a students set or removing a students set.");
+	s+=tr("The same procedure (double click) applies to students sets and activity tags.");
 	
 	s+="\n\n";
 	
@@ -1024,8 +804,6 @@ void AddActivityForm::help()
 
 	s+="\n\n";
 	 
-	 s+=tr("Modification on 14 June 2008:");
-	 s+=" ";
 	 s+=tr("If you have for instance an activity with 2 lessons per week and you want to spread them to at "
 	 "least 2 days distance, you can add a constraint min days with min days = 2 and weight 95% "
 	 "(or higher). If you want also to ensure that activities will "
@@ -1070,33 +848,30 @@ void AddActivityForm::help()
 
 	s+=tr("Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so "
 	 "you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, "
-	 "and select 'force consecutive if same day', you will get an imposssible timetable. But these are extremely unlikely cases. "
-	 "If you encounter such cases, please contact the author, I'll try to fix this problem).");
+	 "and select 'force consecutive if same day', you will get an imposssible timetable. But these are extremely unlikely cases).");
 
 	s+="\n\n";
-	 
-	 s+=tr("Note: You cannot add 'consecutive if same day' with min days=0. If you want this, you have to add "
+	
+	s+=tr("Note: You cannot add 'consecutive if same day' with min days=0. If you want this, you have to add "
 	 "min days at least 1 (and any weight percentage).");
 
 	s+="\n\n";
-	 
-	 s+=tr("Starting with version 5.0.0, it is possible to add activities with no students or no teachers");
+	
+	s+=tr("Starting with version 5.0.0, it is possible to add activities with no students or no teachers");
 
 	s+="\n\n";
-	 
-	 s+=tr("Addition 14 June 2008:");
-	 s+=" ";
-	 s+=tr("If you select a number of min days above 1, you will get the possibility "
+	
+	s+=tr("If you select a number of min days above 1, you will get the possibility "
 	 "to add a second constraint min days between activities, with min days 1 and a percentage of your choice. Just click "
 	 "Add activities");
-	 
+	
 	//show the message in a dialog
-	QDialog dialog;
+	QDialog dialog(this);
 	
 	dialog.setWindowTitle(tr("FET - help on adding activity(ies)"));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QTextEdit* te=new QTextEdit();
+	QPlainTextEdit* te=new QPlainTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(tr("OK"));
@@ -1109,30 +884,16 @@ void AddActivityForm::help()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	/*
-	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
-	int xx=rect.width()/2 - 350;
-	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);*/
-	dialog.setGeometry(0,0,700,500);
+	dialog.resize(700,500);
 	centerWidgetOnScreen(&dialog);
 
+	setParentAndOtherThings(&dialog, this);
 	dialog.exec();
 }
 
 void AddActivityForm::minDaysChanged()
 {
-	/*if(splitSpinBox->value()<2){
-		QMessageBox::critical(this, tr("FET critical"), tr("You found a bug in FET (file %1, line %2). "
-		 "The problem is that the split has value less than 2, but the min days button can be modified. Please report this bug. Operation will now continue")
-		 .arg(__FILE__)
-		 .arg(__LINE__));
-	}
-	else
-		assert(splitSpinBox->value()>=2);*/
 	percentageTextLabel->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
 	percentageLineEdit->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
-	percentTextLabel->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
-	forceAdjacentCheckBox->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
+	forceConsecutiveCheckBox->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
 }

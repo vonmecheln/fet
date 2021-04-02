@@ -17,26 +17,20 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "modifyconstraintactivitytagpreferredroomform.h"
 #include "spaceconstraint.h"
 
-ModifyConstraintActivityTagPreferredRoomForm::ModifyConstraintActivityTagPreferredRoomForm(ConstraintActivityTagPreferredRoom* ctr)
+ModifyConstraintActivityTagPreferredRoomForm::ModifyConstraintActivityTagPreferredRoomForm(QWidget* parent, ConstraintActivityTagPreferredRoom* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivityTagPreferredRoomForm_template*/, SLOT(cancel()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivityTagPreferredRoomForm_template*/, SLOT(ok()));
+	okPushButton->setDefault(true);
 
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp4=activityTagsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
@@ -46,16 +40,15 @@ ModifyConstraintActivityTagPreferredRoomForm::ModifyConstraintActivityTagPreferr
 	
 	this->_ctr=ctr;
 	
-	//compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 
-//	updateSubjectsComboBox();
 	updateActivityTagsComboBox();
 	updateRoomsComboBox();
 }
 
 ModifyConstraintActivityTagPreferredRoomForm::~ModifyConstraintActivityTagPreferredRoomForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintActivityTagPreferredRoomForm::updateActivityTagsComboBox()
@@ -64,13 +57,13 @@ void ModifyConstraintActivityTagPreferredRoomForm::updateActivityTagsComboBox()
 	activityTagsComboBox->clear();
 	for(int k=0; k<gt.rules.activityTagsList.size(); k++){
 		ActivityTag* sb=gt.rules.activityTagsList[k];
-		activityTagsComboBox->insertItem(sb->name);
+		activityTagsComboBox->addItem(sb->name);
 		if(sb->name==this->_ctr->activityTagName)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	activityTagsComboBox->setCurrentItem(j);
+	activityTagsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintActivityTagPreferredRoomForm::updateRoomsComboBox()
@@ -79,13 +72,13 @@ void ModifyConstraintActivityTagPreferredRoomForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int k=0; k<gt.rules.roomsList.size(); k++){
 		Room* rm=gt.rules.roomsList[k];
-		roomsComboBox->insertItem(rm->name);
+		roomsComboBox->addItem(rm->name);
 		if(rm->name==this->_ctr->roomName)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	roomsComboBox->setCurrentItem(j);
+	roomsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintActivityTagPreferredRoomForm::cancel()
@@ -97,22 +90,14 @@ void ModifyConstraintActivityTagPreferredRoomForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
 		return;
 	}
 
-/*	int i=subjectsComboBox->currentItem();
-	if(i<0 || subjectsComboBox->count()<=0){
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Invalid subject"));
-		return;
-	}
-	QString subject=subjectsComboBox->currentText();*/
-
-	int i=activityTagsComboBox->currentItem();
+	int i=activityTagsComboBox->currentIndex();
 	if(i<0 || activityTagsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid activity tag"));
@@ -120,7 +105,7 @@ void ModifyConstraintActivityTagPreferredRoomForm::ok()
 	}
 	QString activityTag=activityTagsComboBox->currentText();
 
-	i=roomsComboBox->currentItem();
+	i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid room"));
@@ -130,10 +115,10 @@ void ModifyConstraintActivityTagPreferredRoomForm::ok()
 
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->roomName=room;
-//	this->_ctr->subjectName=subject;
 	this->_ctr->activityTagName=activityTag;
 
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }

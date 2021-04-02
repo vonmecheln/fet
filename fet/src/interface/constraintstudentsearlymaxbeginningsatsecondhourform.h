@@ -28,7 +28,7 @@ class ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm : public QDialog, Ui:
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm();
+	ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm(QWidget* parent);
 	~ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm();
 
 	bool filterOk(TimeConstraint* ctr);

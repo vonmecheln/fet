@@ -21,15 +21,13 @@
 
 #include "centerwidgetonscreen.h"
 
-
-const int MAX_ROWS=8;
-const int MIN_ROWS=1;
-
-AdvancedFilterForm::AdvancedFilterForm(bool all, QList<int> descrDetDescr, QList<int> contNCont, QStringList text, bool caseSensitive)
+AdvancedFilterForm::AdvancedFilterForm(QWidget* parent, bool all, QList<int> descrDetDescr, QList<int> contNCont, QStringList text, bool caseSensitive, const QString& textToSettings): QDialog(parent)
 {
+	atts=textToSettings;
+
 	assert(descrDetDescr.count()==contNCont.count());
 	assert(contNCont.count()==text.count());
-	assert(text.count()>=MIN_ROWS && text.count()<=MAX_ROWS);
+	assert(text.count()>=ADVANCED_FILTER_MIN_ROWS && text.count()<=ADVANCED_FILTER_MAX_ROWS);
 	
 	rows=descrDetDescr.count();
 	
@@ -37,8 +35,6 @@ AdvancedFilterForm::AdvancedFilterForm(bool all, QList<int> descrDetDescr, QList
 	
 	allRadio=new QRadioButton(tr("Match all of the following:"));
 	anyRadio=new QRadioButton(tr("Match any of the following:"));
-	//allRadio->setChecked(false);
-	//anyRadio->setChecked(false);
 	if(all)
 		allRadio->setChecked(true);
 	else
@@ -55,34 +51,34 @@ AdvancedFilterForm::AdvancedFilterForm(bool all, QList<int> descrDetDescr, QList
 	allAnyLayout->addWidget(allRadio);
 	allAnyLayout->addWidget(anyRadio);
 	
-	for(int i=0; i<MAX_ROWS; i++){
+	for(int i=0; i<ADVANCED_FILTER_MAX_ROWS; i++){
 		QComboBox* cb1=new QComboBox();
-		cb1->insertItem(tr("Description"));
-		cb1->insertItem(tr("Detailed description"));
+		cb1->addItem(tr("Description"));
+		cb1->addItem(tr("Detailed description"));
 		if(i<rows)
 			cb1->setCurrentIndex(descrDetDescr.at(i));
 		else
 			cb1->setCurrentIndex(0);
 		
 		QComboBox* cb2=new QComboBox();
-		cb2->insertItem(tr("Contains", "A text string contains other substring"));
-		cb2->insertItem(tr("Does not contain", "A text string does not contain other substring"));
-		cb2->insertItem(tr("Matches regular expr.", "A text string matches a regular expression (regexp)."
+		cb2->addItem(tr("Contains", "A text string contains other substring"));
+		cb2->addItem(tr("Does not contain", "A text string does not contain other substring"));
+		cb2->addItem(tr("Matches regular expr.", "A text string matches a regular expression (regexp)."
 			" Regular expressions are a complex notion, see definition on the internet if you don't know about them or how to translate the words.  "
 			"\nDefinition from Wikipedia: 'In computing, regular expressions, also referred to as regex or regexp, provide a concise and flexible means "
 			"for identifying strings of text, such as particular characters, words, or patterns of characters. A regular expression is written in "
 			"a formal language that can be interpreted by a regular expression processor, a program that either serves as a parser generator or "
 			"examines text and identifies parts that match the provided specification."));
-		cb2->insertItem(tr("Does not match reg. expr.", "A text string does not match a regular expression (regexp)."
+		cb2->addItem(tr("Does not match reg. expr.", "A text string does not match a regular expression (regexp)."
 			" Regular expressions are a complex notion, see definition on the internet if you don't know about them or how to translate the words.  "
 			"\nDefinition from Wikipedia: 'In computing, regular expressions, also referred to as regex or regexp, provide a concise and flexible means "
 			"for identifying strings of text, such as particular characters, words, or patterns of characters. A regular expression is written in "
 			"a formal language that can be interpreted by a regular expression processor, a program that either serves as a parser generator or "
 			"examines text and identifies parts that match the provided specification."));
 		if(i<rows)
-			cb2->setCurrentItem(contNCont.at(i));
+			cb2->setCurrentIndex(contNCont.at(i));
 		else
-			cb2->setCurrentItem(0);
+			cb2->setCurrentIndex(0);
 		
 		QLineEdit* ln1=new QLineEdit();
 		if(i<rows)
@@ -96,23 +92,11 @@ AdvancedFilterForm::AdvancedFilterForm(bool all, QList<int> descrDetDescr, QList
 	}
 	
 	filtersLayout=new QGridLayout();
-	/*QComboBox* cb1=new QComboBox();
-	cb1->insertItem(tr("Description"));
-	cb1->insertItem(tr("Detailed description"));
-	QComboBox* cb2=new QComboBox();
-	cb2->insertItem(tr("Contains"));
-	cb2->insertItem(tr("Does not contain"));
-	cb2->insertItem(tr("Matches regular expr."));
-	cb2->insertItem(tr("Does not match reg. expr."));
-	QLineEdit* ln1=new QLineEdit(QString(""));
-	descrDetDescrComboBoxList.append(cb1);
-	contNContReNReComboBoxList.append(cb2);
-	textLineEditList.append(ln1);*/
 
 	assert(descrDetDescrComboBoxList.count()==contNContReNReComboBoxList.count());
 	assert(descrDetDescrComboBoxList.count()==textLineEditList.count());
-	assert(descrDetDescrComboBoxList.count()==MAX_ROWS);
-	for(int i=0; i<MAX_ROWS; i++){
+	assert(descrDetDescrComboBoxList.count()==ADVANCED_FILTER_MAX_ROWS);
+	for(int i=0; i<ADVANCED_FILTER_MAX_ROWS; i++){
 		QComboBox* cb1=descrDetDescrComboBoxList.at(i);
 		QComboBox* cb2=contNContReNReComboBoxList.at(i);
 		QLineEdit* ln1=textLineEditList.at(i);
@@ -128,8 +112,8 @@ AdvancedFilterForm::AdvancedFilterForm(bool all, QList<int> descrDetDescr, QList
 	moreFewerLayout->addWidget(morePushButton);
 	moreFewerLayout->addWidget(fewerPushButton);
 	moreFewerLayout->addStretch();
-	morePushButton->setEnabled(rows<MAX_ROWS);
-	fewerPushButton->setEnabled(rows>MIN_ROWS);
+	morePushButton->setEnabled(rows<ADVANCED_FILTER_MAX_ROWS);
+	fewerPushButton->setEnabled(rows>ADVANCED_FILTER_MIN_ROWS);
 	
 	resetPushButton=new QPushButton(tr("Reset"));
 	okPushButton=new QPushButton(tr("OK"));
@@ -146,7 +130,6 @@ AdvancedFilterForm::AdvancedFilterForm(bool all, QList<int> descrDetDescr, QList
 	layout->addLayout(filtersLayout);
 	layout->addLayout(moreFewerLayout);
 	layout->addLayout(caseSensitiveLayout);
-	//layout->addSpacing(100);
 	layout->addStretch();
 	layout->addLayout(buttonsLayout);
 	
@@ -158,12 +141,11 @@ AdvancedFilterForm::AdvancedFilterForm(bool all, QList<int> descrDetDescr, QList
 	
 	int w=this->sizeHint().width();
 	int h=this->sizeHint().height();
-	//if(h<450)
-	//	h=450;
-	this->setGeometry(0, 0, w, h);
+	this->resize(w, h);
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this, atts);
 	
-	for(int i=0; i<MAX_ROWS; i++){
+	for(int i=0; i<ADVANCED_FILTER_MAX_ROWS; i++){
 		descrDetDescrComboBoxList.at(i)->setVisible(i<rows);
 		contNContReNReComboBoxList.at(i)->setVisible(i<rows);
 		textLineEditList.at(i)->setVisible(i<rows);
@@ -172,21 +154,21 @@ AdvancedFilterForm::AdvancedFilterForm(bool all, QList<int> descrDetDescr, QList
 
 AdvancedFilterForm::~AdvancedFilterForm()
 {
-
+	saveFETDialogGeometry(this, atts);
 }
 
 void AdvancedFilterForm::reset()
 {
 	assert(descrDetDescrComboBoxList.count()==contNContReNReComboBoxList.count());
 	assert(descrDetDescrComboBoxList.count()==textLineEditList.count());
-	assert(descrDetDescrComboBoxList.count()==MAX_ROWS);
+	assert(descrDetDescrComboBoxList.count()==ADVANCED_FILTER_MAX_ROWS);
 	
 	rows=1;
 
-	fewerPushButton->setEnabled(rows>MIN_ROWS);
-	morePushButton->setEnabled(rows<MAX_ROWS);
+	fewerPushButton->setEnabled(rows>ADVANCED_FILTER_MIN_ROWS);
+	morePushButton->setEnabled(rows<ADVANCED_FILTER_MAX_ROWS);
 	
-	for(int i=0; i<MAX_ROWS; i++){
+	for(int i=0; i<ADVANCED_FILTER_MAX_ROWS; i++){
 		if(i<rows){
 			descrDetDescrComboBoxList.at(i)->setVisible(true);
 		}
@@ -212,54 +194,18 @@ void AdvancedFilterForm::reset()
 		textLineEditList.at(i)->setText(QString(""));
 	}
 	
-	//allRadio->setChecked(false);
-	//anyRadio->setChecked(false);
 	allRadio->setChecked(true);
-	
-/*	descrDetDescrComboBoxList.at(0)->setCurrentItem(0);
-	contNContReNReComboBoxList.at(0)->setCurrentItem(0);
-	textLineEditList.at(0)->setText(QString(""));*/
 	
 	caseSensitiveCheckBox->setChecked(false);
 }
 
 void AdvancedFilterForm::more()
 {
-/*
-	QComboBox* cb1=new QComboBox();
-	cb1->insertItem(tr("Description"));
-	cb1->insertItem(tr("Detailed description"));
-	QComboBox* cb2=new QComboBox();
-	cb2->insertItem(tr("Contains"));
-	cb2->insertItem(tr("Does not contain"));
-	cb2->insertItem(tr("Matches regular expr."));
-	cb2->insertItem(tr("Does not match reg. expr."));
-	QLineEdit* ln1=new QLineEdit(QString(""));
-	descrDetDescrComboBoxList.append(cb1);
-	contNContReNReComboBoxList.append(cb2);
-	textLineEditList.append(ln1);
-
 	assert(descrDetDescrComboBoxList.count()==contNContReNReComboBoxList.count());
 	assert(descrDetDescrComboBoxList.count()==textLineEditList.count());
-	for(int i=0; i<descrDetDescrComboBoxList.count(); i++){
-		QComboBox* cb1=descrDetDescrComboBoxList.at(i);
-		QComboBox* cb2=contNContReNReComboBoxList.at(i);
-		QLineEdit* ln1=textLineEditList.at(i);
-		
-		filtersLayout->addWidget(cb1, i, 0);
-		filtersLayout->addWidget(cb2, i, 1);
-		filtersLayout->addWidget(ln1, i, 2);
-	}
-
-	fewerPushButton->setEnabled(descrDetDescrComboBoxList.count()>MIN_ROWS);
-	morePushButton->setEnabled(descrDetDescrComboBoxList.count()<MAX_ROWS);
-	*/
-
-	assert(descrDetDescrComboBoxList.count()==contNContReNReComboBoxList.count());
-	assert(descrDetDescrComboBoxList.count()==textLineEditList.count());
-	assert(descrDetDescrComboBoxList.count()==MAX_ROWS);
+	assert(descrDetDescrComboBoxList.count()==ADVANCED_FILTER_MAX_ROWS);
 	
-	assert(rows<MAX_ROWS);
+	assert(rows<ADVANCED_FILTER_MAX_ROWS);
 	
 	descrDetDescrComboBoxList.at(rows)->setCurrentIndex(0);
 	contNContReNReComboBoxList.at(rows)->setCurrentIndex(0);
@@ -271,17 +217,17 @@ void AdvancedFilterForm::more()
 	
 	rows++;
 	
-	fewerPushButton->setEnabled(rows>MIN_ROWS);
-	morePushButton->setEnabled(rows<MAX_ROWS);
+	fewerPushButton->setEnabled(rows>ADVANCED_FILTER_MIN_ROWS);
+	morePushButton->setEnabled(rows<ADVANCED_FILTER_MAX_ROWS);
 }
 
 void AdvancedFilterForm::fewer()
 {
 	assert(descrDetDescrComboBoxList.count()==contNContReNReComboBoxList.count());
 	assert(descrDetDescrComboBoxList.count()==textLineEditList.count());
-	assert(descrDetDescrComboBoxList.count()==MAX_ROWS);
+	assert(descrDetDescrComboBoxList.count()==ADVANCED_FILTER_MAX_ROWS);
 	
-	assert(rows>MIN_ROWS);
+	assert(rows>ADVANCED_FILTER_MIN_ROWS);
 	
 	rows--;
 	
@@ -293,27 +239,6 @@ void AdvancedFilterForm::fewer()
 	contNContReNReComboBoxList.at(rows)->setVisible(false);
 	textLineEditList.at(rows)->setVisible(false);
 	
-	fewerPushButton->setEnabled(rows>MIN_ROWS);
-	morePushButton->setEnabled(rows<MAX_ROWS);
-
-/*
-	delete descrDetDescrComboBoxList.takeLast();
-	delete contNContReNReComboBoxList.takeLast();
-	delete textLineEditList.takeLast();
-
-	assert(descrDetDescrComboBoxList.count()==contNContReNReComboBoxList.count());
-	assert(descrDetDescrComboBoxList.count()==textLineEditList.count());
-	for(int i=0; i<descrDetDescrComboBoxList.count(); i++){
-		QComboBox* cb1=descrDetDescrComboBoxList.at(i);
-		QComboBox* cb2=contNContReNReComboBoxList.at(i);
-		QLineEdit* ln1=textLineEditList.at(i);
-		
-		filtersLayout->addWidget(cb1, i, 0);
-		filtersLayout->addWidget(cb2, i, 1);
-		filtersLayout->addWidget(ln1, i, 2);
-	}
-
-	fewerPushButton->setEnabled(descrDetDescrComboBoxList.count()>MIN_ROWS);
-	morePushButton->setEnabled(descrDetDescrComboBoxList.count()<MAX_ROWS);
-*/
+	fewerPushButton->setEnabled(rows>ADVANCED_FILTER_MIN_ROWS);
+	morePushButton->setEnabled(rows<ADVANCED_FILTER_MAX_ROWS);
 }

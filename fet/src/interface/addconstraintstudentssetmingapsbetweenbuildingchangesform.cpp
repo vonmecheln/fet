@@ -17,36 +17,28 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintstudentssetmingapsbetweenbuildingchangesform.h"
 #include "spaceconstraint.h"
 
-AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm::AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm()
+AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm::AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm_template*/, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm_template*/, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm_template*/, SLOT(close()));
-//    connect(studentsComboBox, SIGNAL(activated(QString)), this /*AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm_template*/, SLOT(constraintChanged()));
-//    connect(minGapsSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm_template*/, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
 		
-	minGapsSpinBox->setMinValue(1);
-	minGapsSpinBox->setMaxValue(gt.rules.nHoursPerDay);
+	minGapsSpinBox->setMinimum(1);
+	minGapsSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minGapsSpinBox->setValue(1);
 
 	updateStudentsSetComboBox();
@@ -54,6 +46,7 @@ AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm::AddConstraintStudents
 
 AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm::~AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm::updateStudentsSetComboBox()
@@ -61,13 +54,13 @@ void AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm::updateStudentsSe
 	studentsComboBox->clear();	
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
@@ -76,26 +69,7 @@ void AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm::updateStudentsSe
 }
 
 void AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1").arg(weight);
-	s+="\n";
-
-	s+=tr("Students set min gaps between building changes");
-	s+="\n";
-	s+=tr("Students set=%1").arg(studentsComboBox->currentText());
-	s+="\n";
-	
-	s+=tr("Max building changes per day=%1").arg(minGapsSpinBox->value());
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm::addCurrentConstraint()
@@ -104,7 +78,7 @@ void AddConstraintStudentsSetMinGapsBetweenBuildingChangesForm::addCurrentConstr
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<100.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage). It has to be 100"));

@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "tablewidgetupdatebug.h"
 
 #include "modifyconstraintroomnotavailabletimesform.h"
@@ -31,38 +29,30 @@
 #include <QBrush>
 #include <QColor>
 
-//#define YES	(ModifyConstraintRoomNotAvailableTimesForm::tr("Not available", "Please keep translation short"))
-//#define NO	(ModifyConstraintRoomNotAvailableTimesForm::tr("Available", "Please keep translation short"))
 #define YES		(QString("X"))
 #define NO		(QString(" "))
 
-static bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
-
-ModifyConstraintRoomNotAvailableTimesForm::ModifyConstraintRoomNotAvailableTimesForm(ConstraintRoomNotAvailableTimes* ctr)
+ModifyConstraintRoomNotAvailableTimesForm::ModifyConstraintRoomNotAvailableTimesForm(QWidget* parent, ConstraintRoomNotAvailableTimes* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintRoomNotAvailableTimesForm_template*/, SLOT(ok()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintRoomNotAvailableTimesForm_template*/, SLOT(cancel()));
-    connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-    connect(setAllAvailablePushButton, SIGNAL(clicked()), this /*ModifyConstraintRoomNotAvailableTimesForm_template*/, SLOT(setAllAvailable()));
-    connect(setAllNotAvailablePushButton, SIGNAL(clicked()), this /*ModifyConstraintRoomNotAvailableTimesForm_template*/, SLOT(setAllNotAvailable()));
+	okPushButton->setDefault(true);
 
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
+	connect(setAllAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllAvailable()));
+	connect(setAllNotAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllNotAvailable()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp5=roomsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp5);
 	
 	this->_ctr=ctr;
 	
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 
 	updateRoomsComboBox();
 
@@ -79,6 +69,9 @@ ModifyConstraintRoomNotAvailableTimesForm::ModifyConstraintRoomNotAvailableTimes
 	}
 
 	//bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
+	Matrix2D<bool> currentMatrix;
+	currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
+	
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			currentMatrix[i][j]=false;			
@@ -88,7 +81,8 @@ ModifyConstraintRoomNotAvailableTimesForm::ModifyConstraintRoomNotAvailableTimes
 			assert(0);
 		int i=ctr->hours.at(k);
 		int j=ctr->days.at(k);
-		currentMatrix[i][j]=true;
+		if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
+			currentMatrix[i][j]=true;
 	}
 
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
@@ -114,10 +108,13 @@ ModifyConstraintRoomNotAvailableTimesForm::ModifyConstraintRoomNotAvailableTimes
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 
 	tableWidgetUpdateBug(notAllowedTimesTable);
+	
+	setStretchAvailabilityTableNicely(notAllowedTimesTable);
 }
 
 ModifyConstraintRoomNotAvailableTimesForm::~ModifyConstraintRoomNotAvailableTimesForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintRoomNotAvailableTimesForm::colorItem(QTableWidgetItem* item)
@@ -143,13 +140,6 @@ void ModifyConstraintRoomNotAvailableTimesForm::horizontalHeaderClicked(int col)
 		}
 
 		for(int row=0; row<gt.rules.nHoursPerDay; row++){
-			/*QString s=notAllowedTimesTable->text(row, col);
-			if(s==YES)
-				s=NO;
-			else{
-				assert(s==NO);
-				s=YES;
-			}*/
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
@@ -169,13 +159,6 @@ void ModifyConstraintRoomNotAvailableTimesForm::verticalHeaderClicked(int row)
 		}
 	
 		for(int col=0; col<gt.rules.nDaysPerWeek; col++){
-			/*QString s=notAllowedTimesTable->text(row, col);
-			if(s==YES)
-				s=NO;
-			else{
-				assert(s==NO);
-				s=YES;
-			}*/
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
@@ -209,14 +192,14 @@ void ModifyConstraintRoomNotAvailableTimesForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int k=0; k<gt.rules.roomsList.size(); k++){
 		Room* room=gt.rules.roomsList[k];
-		//roomsComboBox->insertItem(room->getDescription());
-		roomsComboBox->insertItem(room->name);
+		//roomsComboBox->addItem(room->getDescription());
+		roomsComboBox->addItem(room->name);
 		if(room->name==this->_ctr->room)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	roomsComboBox->setCurrentItem(j);
+	roomsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintRoomNotAvailableTimesForm::itemClicked(QTableWidgetItem* item)
@@ -243,14 +226,14 @@ void ModifyConstraintRoomNotAvailableTimesForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<=0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
 		return;
 	}
 
-	int i=roomsComboBox->currentItem();
+	int i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid room"));
@@ -259,17 +242,6 @@ void ModifyConstraintRoomNotAvailableTimesForm::ok()
 	
 	Room* room=gt.rules.roomsList.at(i);
 
-/*
-	foreach(SpaceConstraint* c, gt.rules.spaceConstraintsList)
-		if(c!=this->_ctr && c->type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES){
-			ConstraintRoomNotAvailableTimes* cc=(ConstraintRoomNotAvailableTimes*)c;
-			if(cc->room==room->name){
-				QMessageBox::warning(this, tr("FET information"),
-					tr("A constraint of this type exists for the same room - cannot proceed"));
-				return;
-			}
-		}*/
-	
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->room=room->name;
 
@@ -286,6 +258,7 @@ void ModifyConstraintRoomNotAvailableTimesForm::ok()
 	this->_ctr->hours=hours;
 
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }

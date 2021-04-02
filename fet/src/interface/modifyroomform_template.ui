@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="The name of themodify room dialog">Modify room</string>
+   <string extracomment="The name of the modify room dialog">Modify room</string>
   </property>
   <layout class="QGridLayout">
    <item row="3" column="0">
@@ -96,13 +96,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>nameLineEdit</tabstop>
-  <tabstop>buildingsComboBox</tabstop>
-  <tabstop>capacitySpinBox</tabstop>
-  <tabstop>okPushButton</tabstop>
-  <tabstop>cancelPushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

@@ -17,36 +17,36 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "modifyconstraintmingapsbetweenactivitiesform.h"
-#include "spaceconstraint.h"
 
 #include <QList>
 
-ModifyConstraintMinGapsBetweenActivitiesForm::ModifyConstraintMinGapsBetweenActivitiesForm(ConstraintMinGapsBetweenActivities* ctr)
+#include <QListWidget>
+#include <QAbstractItemView>
+#include <QScrollBar>
+
+ModifyConstraintMinGapsBetweenActivitiesForm::ModifyConstraintMinGapsBetweenActivitiesForm(QWidget* parent, ConstraintMinGapsBetweenActivities* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintMinGapsBetweenActivitiesForm_template*/, SLOT(cancel()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintMinGapsBetweenActivitiesForm_template*/, SLOT(ok()));
-    connect(activitiesListBox, SIGNAL(selected(QString)), this /*ModifyConstraintMinGapsBetweenActivitiesForm_template*/, SLOT(addActivity()));
-    connect(selectedActivitiesListBox, SIGNAL(selected(QString)), this /*ModifyConstraintMinGapsBetweenActivitiesForm_template*/, SLOT(removeActivity()));
-    connect(teachersComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintMinGapsBetweenActivitiesForm_template*/, SLOT(filterChanged()));
-    connect(studentsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintMinGapsBetweenActivitiesForm_template*/, SLOT(filterChanged()));
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintMinGapsBetweenActivitiesForm_template*/, SLOT(filterChanged()));
-    connect(activityTagsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintMinGapsBetweenActivitiesForm_template*/, SLOT(filterChanged()));
+	okPushButton->setDefault(true);
+	
+	activitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-    connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(activitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
+	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
+	connect(selectedActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
+	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
 
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -58,10 +58,9 @@ ModifyConstraintMinGapsBetweenActivitiesForm::ModifyConstraintMinGapsBetweenActi
 	Q_UNUSED(tmp4);
 	
 	this->_ctr=ctr;
-	//updateActivitiesListBox();
 
 	selectedActivitiesList.clear();
-	selectedActivitiesListBox->clear();	
+	selectedActivitiesListWidget->clear();
 	for(int i=0; i<ctr->n_activities; i++){
 		int actId=ctr->activitiesId[i];
 		this->selectedActivitiesList.append(actId);
@@ -72,76 +71,75 @@ ModifyConstraintMinGapsBetweenActivitiesForm::ModifyConstraintMinGapsBetweenActi
 				break;
 		}
 		assert(act);
-		this->selectedActivitiesListBox->insertItem(act->getDescription(gt.rules));
+		this->selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
 	}
 	
-	minGapsSpinBox->setMinValue(1);
-	minGapsSpinBox->setMaxValue(gt.rules.nHoursPerDay);
+	minGapsSpinBox->setMinimum(1);
+	minGapsSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minGapsSpinBox->setValue(ctr->minGaps);
 
-	//compulsoryCheckBox->setChecked(ctr->compulsory);
-	//consecutiveIfSameDayCheckBox->setChecked(ctr->consecutiveIfSameDay);
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 
 	////////////////
-	teachersComboBox->insertItem("");
+	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 	}
-	teachersComboBox->setCurrentItem(0);
+	teachersComboBox->setCurrentIndex(0);
 
-	subjectsComboBox->insertItem("");
+	subjectsComboBox->addItem("");
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 	}
-	subjectsComboBox->setCurrentItem(0);
+	subjectsComboBox->setCurrentIndex(0);
 
-	activityTagsComboBox->insertItem("");
+	activityTagsComboBox->addItem("");
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* st=gt.rules.activityTagsList[i];
-		activityTagsComboBox->insertItem(st->name);
+		activityTagsComboBox->addItem(st->name);
 	}
-	activityTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentIndex(0);
 
-	studentsComboBox->insertItem("");
+	studentsComboBox->addItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
-	studentsComboBox->setCurrentItem(0);
+	studentsComboBox->setCurrentIndex(0);
 
 	filterChanged();
 }
 
 ModifyConstraintMinGapsBetweenActivitiesForm::~ModifyConstraintMinGapsBetweenActivitiesForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintMinGapsBetweenActivitiesForm::filterChanged()
 {
-	activitiesListBox->clear();
-//	selectedActivitiesListBox->clear();
-
+	activitiesListWidget->clear();
 	this->activitiesList.clear();
-//	this->selectedActivitiesList.clear();
 
 	for(int i=0; i<gt.rules.activitiesList.size(); i++){
 		Activity* ac=gt.rules.activitiesList[i];
 		if(filterOk(ac)){
-			activitiesListBox->insertItem(ac->getDescription(gt.rules));
+			activitiesListWidget->addItem(ac->getDescription(gt.rules));
 			this->activitiesList.append(ac->id);
 		}
 	}
+	
+	int q=activitiesListWidget->verticalScrollBar()->minimum();
+	activitiesListWidget->verticalScrollBar()->setValue(q);
 }
 
 bool ModifyConstraintMinGapsBetweenActivitiesForm::filterOk(Activity* act)
@@ -169,7 +167,6 @@ bool ModifyConstraintMinGapsBetweenActivitiesForm::filterOk(Activity* act)
 		ok=false;
 		
 	//activity tag
-//	if(sbtn!="" && sbtn!=act->activityTagName)
 	if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
 		ok=false;
 		
@@ -192,16 +189,12 @@ void ModifyConstraintMinGapsBetweenActivitiesForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
 		return;
 	}
-
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
 
 	if(this->selectedActivitiesList.size()==0){
 		QMessageBox::warning(this, tr("FET information"),
@@ -213,43 +206,7 @@ void ModifyConstraintMinGapsBetweenActivitiesForm::ok()
 			tr("Only one selected activity"));
 		return;
 	}
-/*	if(this->selectedActivitiesList.size()>MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Please report error to the author\nMAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES must be increased (you have too many activities)"));
-		return;
-	}*/
 
-/*	if(1){
-		ConstraintMinGapsBetweenActivities adc;
-
-		int i;
-		QList<int>::iterator it;
-		adc.activitiesId.clear();
-		for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++){
-			adc.activitiesId.append(*it);
-			//adc.activitiesId[i]=*it;
-		}
-		adc.n_activities=i;
-		assert(adc.n_activities==adc.activitiesId.count());
-		
-		adc.weightPercentage=weight;
-		adc.minGaps=minGapsSpinBox->value();
-		
-		bool duplicate=false;
-		
-		foreach(TimeConstraint* tc, gt.rules.timeConstraintsList)
-			if(tc!=this->_ctr && tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES)
-				if( ( *((ConstraintMinDaysBetweenActivities*)tc) ) == adc){
-					duplicate=true;
-					break;
-				}
-				
-		if(duplicate){
-			QMessageBox::warning(this, tr("FET information"), tr("Cannot proceed, current constraint is equal to another one (it is duplicated)"));
-			return;
-		}
-	}*/
-	
 	int i;
 	QList<int>::iterator it;
 	this->_ctr->activitiesId.clear();
@@ -259,11 +216,10 @@ void ModifyConstraintMinGapsBetweenActivitiesForm::ok()
 	assert(i==this->_ctr->activitiesId.count());
 		
 	this->_ctr->weightPercentage=weight;
-	//this->_ctr->compulsory=compulsory;
-	//this->_ctr->consecutiveIfSameDay=consecutiveIfSameDayCheckBox->isChecked();
 	this->_ctr->minGaps=minGapsSpinBox->value();
 	
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }
@@ -275,38 +231,67 @@ void ModifyConstraintMinGapsBetweenActivitiesForm::cancel()
 
 void ModifyConstraintMinGapsBetweenActivitiesForm::addActivity()
 {
-	if(activitiesListBox->currentItem()<0)
+	if(activitiesListWidget->currentRow()<0)
 		return;
-	int tmp=activitiesListBox->currentItem();
+	int tmp=activitiesListWidget->currentRow();
 	int _id=this->activitiesList.at(tmp);
 	
-	QString actName=activitiesListBox->currentText();
+	QString actName=activitiesListWidget->currentItem()->text();
 	assert(actName!="");
-	uint i;
+	int i;
 	//duplicate?
-	for(i=0; i<selectedActivitiesListBox->count(); i++)
-		if(actName==selectedActivitiesListBox->text(i))
+	for(i=0; i<selectedActivitiesListWidget->count(); i++)
+		if(actName==selectedActivitiesListWidget->item(i)->text())
 			break;
-	if(i<selectedActivitiesListBox->count())
+	if(i<selectedActivitiesListWidget->count())
 		return;
-	selectedActivitiesListBox->insertItem(actName);
+	selectedActivitiesListWidget->addItem(actName);
+	selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
 	
 	this->selectedActivitiesList.append(_id);
 }
 
+void ModifyConstraintMinGapsBetweenActivitiesForm::addAllActivities()
+{
+	for(int tmp=0; tmp<activitiesListWidget->count(); tmp++){
+		int _id=this->activitiesList.at(tmp);
+	
+		QString actName=activitiesListWidget->item(tmp)->text();
+		assert(actName!="");
+		int i;
+		//duplicate?
+		for(i=0; i<selectedActivitiesList.count(); i++)
+			if(selectedActivitiesList.at(i)==_id)
+				break;
+		if(i<selectedActivitiesList.count())
+			continue;
+			
+		selectedActivitiesListWidget->addItem(actName);
+		this->selectedActivitiesList.append(_id);
+	}
+	
+	selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
+}
+
 void ModifyConstraintMinGapsBetweenActivitiesForm::removeActivity()
 {
-	if(selectedActivitiesListBox->currentItem()<0 || selectedActivitiesListBox->count()<=0)
-		return;		
-	int tmp=selectedActivitiesListBox->currentItem();
+	if(selectedActivitiesListWidget->currentRow()<0 || selectedActivitiesListWidget->count()<=0)
+		return;
+	int tmp=selectedActivitiesListWidget->currentRow();
 	
-	selectedActivitiesListBox->removeItem(selectedActivitiesListBox->currentItem());
 	this->selectedActivitiesList.removeAt(tmp);
+	
+	selectedActivitiesListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=selectedActivitiesListWidget->takeItem(tmp);
+	delete item;
+	if(tmp<selectedActivitiesListWidget->count())
+		selectedActivitiesListWidget->setCurrentRow(tmp);
+	else
+		selectedActivitiesListWidget->setCurrentRow(selectedActivitiesListWidget->count()-1);
 }
 
 void ModifyConstraintMinGapsBetweenActivitiesForm::clear()
 {
-	selectedActivitiesListBox->clear();
+	selectedActivitiesListWidget->clear();
 	selectedActivitiesList.clear();
 }
-

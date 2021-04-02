@@ -32,6 +32,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 class Activity;
 
+class QWidget;
+
 //a probabilistic function to say if we can skip a constraint based on its percentage weight
 bool skipRandom(double weightPercentage);
 
@@ -105,7 +107,7 @@ public:
 	
 	bool abortOptimization;
 	
-	bool precompute(QTextStream* maxPlacedActivityStream=NULL);
+	bool precompute(QWidget* parent, QTextStream* maxPlacedActivityStream=NULL);
 	
 	void generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=NULL);
 	
@@ -119,6 +121,9 @@ signals:
 	void simulationFinished();
 	
 	void impossibleToSolve();
+	
+private:
+	bool isThreaded;
 };
 
 #endif

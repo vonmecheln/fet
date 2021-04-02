@@ -26,7 +26,7 @@
 class AddConstraintStudentsSetMaxGapsPerDayForm : public QDialog, Ui::AddConstraintStudentsSetMaxGapsPerDayForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintStudentsSetMaxGapsPerDayForm();
+	AddConstraintStudentsSetMaxGapsPerDayForm(QWidget* parent);
 	~AddConstraintStudentsSetMaxGapsPerDayForm();
 
 	void updateStudentsSetComboBox();

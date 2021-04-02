@@ -28,7 +28,7 @@ class ConstraintStudentsSetIntervalMaxDaysPerWeekForm : public QDialog, Ui::Cons
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintStudentsSetIntervalMaxDaysPerWeekForm();
+	ConstraintStudentsSetIntervalMaxDaysPerWeekForm(QWidget* parent);
 	~ConstraintStudentsSetIntervalMaxDaysPerWeekForm();
 
 	bool filterOk(TimeConstraint* ctr);

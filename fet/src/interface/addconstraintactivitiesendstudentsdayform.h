@@ -27,7 +27,7 @@ class AddConstraintActivitiesEndStudentsDayForm : public QDialog, Ui::AddConstra
 	Q_OBJECT
 
 public:
-	AddConstraintActivitiesEndStudentsDayForm();
+	AddConstraintActivitiesEndStudentsDayForm(QWidget* parent);
 	~AddConstraintActivitiesEndStudentsDayForm();
 
 	void updateTeachersComboBox();

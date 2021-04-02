@@ -26,7 +26,7 @@
 class AddConstraintStudentsSetMaxHoursDailyForm : public QDialog, Ui::AddConstraintStudentsSetMaxHoursDailyForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintStudentsSetMaxHoursDailyForm();
+	AddConstraintStudentsSetMaxHoursDailyForm(QWidget* parent);
 	~AddConstraintStudentsSetMaxHoursDailyForm();
 	
 	void updateStudentsSetComboBox();

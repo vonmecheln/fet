@@ -29,7 +29,7 @@ class ConstraintMinDaysBetweenActivitiesForm : public QDialog, Ui::ConstraintMin
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintMinDaysBetweenActivitiesForm();
+	ConstraintMinDaysBetweenActivitiesForm(QWidget* parent);
 	~ConstraintMinDaysBetweenActivitiesForm();
 
 	bool filterOk(TimeConstraint* ctr);

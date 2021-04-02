@@ -37,9 +37,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 class Rules;
 
 /**
-This class represents a chromosome (time allocation for the activities).
-<p>
-Every chromosome represents a solution candidate for the timetabling problem (time).
+This class represents a solution (time and space allocation for the activities).
 */
 class Solution{
 public:
@@ -56,7 +54,7 @@ public:
 	/*
 	You will need to set this to true if altering the times array values.
 	The conflicts calculating routine will reset this to false
-	at the first teachers matrix and subgroups matrix calculation.	
+	at the first teachers matrix and subgroups matrix calculation.
 	*/
 	bool changedForMatrixCalculation;
 
@@ -71,8 +69,8 @@ public:
 	qint16 rooms[MAX_ACTIVITIES];
 
 	/**
-	Fitness; it is calculated only at the initialization
-	of this chromosome or at the modification of it.
+	Fitness; it is calculated only at the initialization or
+	at the modification.
 	Important assumption: the rules have to ramain the same;
 	otherwise the user has to reset this value to -1
 	*/
@@ -85,134 +83,65 @@ public:
 	void copy(Rules& r, Solution& c);
 
 	/**
-	Initializes a chromosome, marking all activities as unscheduled (time)
+	Initializes, marking all activities as unscheduled (time)
 	*/
 	void init(Rules& r);
 
 	/**
 	Marks the starting time of all the activities as undefined
 	(all activities are unallocated).
-	This is the first method of generating an initial population.
 	*/
 	void makeUnallocated(Rules& r);
 
 	/**
 	Randomizes the starting time of all the activities.
-	This is the second method of generating an initial population.
 	*/
 	void makeRandom(Rules& r);
 
 	/**
-	Reads this chromosome from the disk (reads a saved solution).
+	Reads this solution from the disk (reads a saved solution).
 	Returns false on failure, true on success.
 	*/
 	bool read(Rules& r, const QString &filename);
 
 	/**
-	Reads this chromosome from the disk (reads a saved solution).
+	Reads this solution from the disk (reads a saved solution).
 	Returns false on failure, true on success.
 	*/
 	bool read(Rules& r, QTextStream &tis);
 
 	/**
-	Saves this chromosome to the disk (saves this solution).
+	Saves this solution to the disk (saves this solution).
 	*/
 	void write(Rules& r, const QString &filename);
 
 	/**
-	Saves this chromosome to the disk (saves this solution).
+	Saves this solution to the disk (saves this solution).
 	*/
 	void write(Rules &r, QTextStream &tos);
 
 	/**
-	ATTENTION: if the rules change, the user has to reset _hardFitness to -1
+	ATTENTION: if the rules change, the user has to reset _fitness to -1
 	<p>
 	If conflictsString is not null, then this function will
 	append at this string an explanation of the conflicts.
 	*/
 	double fitness(Rules& r, QString* conflictsString=NULL);
 
-	/**
-	OLD COMMENT BELOW, now FET has no fortnightly activities, 
-	only one matrix is now used.
-	
-	This is a function that retrieves the teachers' timetable from
-	this chromosome's "times" array.
-	We have 2 matrices: the most used is the first, for weekly activities
-	(in this case the corresponding position in the second matrix is a
-	special value, let's say UNALLOCATED_ACTIVITY)
-	For fortnightly activities we use both matrices: the first matrix
-	keeps the activity scheduled for the first week, while the second
-	matrix keeps the activity scheduled for the second week.
-	The arrays a1 and a2 will contain the index of the activity in the rules.
-	*/
-	//void getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY], QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
-	//void getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, QList<qint16> b[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 	void getTeachersTimetable(Rules& r, Matrix3D<qint16>& a, Matrix3D<QList<qint16> >& b);
 	//return value is the number of conflicts, must be 0
 
-	/**
-	OLD COMMENT BELOW, now FET has no fortnightly activities, 
-	only one matrix is now used.
-	
-	This is a function that retrieves the subgroups' timetable from
-	this chromosome's "times" array.
-	We have 2 matrices: the most used is the first, for weekly activities
-	(in this case the corresponding position in the second matrix is a
-	special value, let's say UNALLOCATED_ACTIVITY)
-	For fortnightly activities we use both matrices: the first matrix
-	keeps the activity scheduled for the first week, while the second
-	matrix keeps the activity scheduled for the second week.
-	The arrays a1 and a2 will contain the index of the activity in the rules.
-	*/
-	//void getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 	void getSubgroupsTimetable(Rules& r, Matrix3D<qint16>& a);
 	//return value is the number of conflicts, must be 0
 
-	/**
-	OLD COMMENT BELOW, now FET has no fortnightly activities, 
-	only one matrix is now used. If cell value is higher than 1,
-	then a basic conflict is there. If cell value is higher than 0,
-	then subgroup has activity at that time.
-	
-	The following function is very similar to GetsubgroupsTimetable,
-	except that it is used in fitness calculation: it computes a matrix
-	that for each subgroup and day and hour keeps the double
-	of the number of courses attended, for weekly activities. For fortnightly
-	activities it keeps the sum for the two weeks (not multiplied by two).
-	A value bigger than 2 in this matrix is considered
-	a clash (increases hard fitness).
-	Return value: the number of subgroups exhaustions (sum of values which are
-	over 2).
-	*/
-	//int getSubgroupsMatrix(Rules& r, qint8 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
-	int getSubgroupsMatrix(Rules& r, Matrix3D<qint8>& a);
-
-	/**
-	OLD COMMENT BELOW, now FET has no fortnightly activities, 
-	only one matrix is now used. If cell value is higher than 1,
-	then a basic conflict is there. If cell value is higher than 0,
-	then subgroup has activity at that time.
-	
-	The following function is very similar to GetTeachersTimetable,
-	except that it is used in fitness calculation: it computes a matrix
-	that for each teacher, day and hour, keeps the double
-	of the number of courses attended, for weekly activities. For fortnightly
-	activities it keeps the sum for the two weeks (not multiplied by two).
-	A value bigger than 2 in this matrix is considered
-	a clash (increases hard fitness).
-	Return value: the number of teachers exhaustions (sum of values which are
-	over 2).
-	*/
-	//int getTeachersMatrix(Rules& r, qint8 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
-	int getTeachersMatrix(Rules& r, Matrix3D<qint8>& a);
-
-	//int getRoomsMatrix(Rules& r, qint8 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
-	int getRoomsMatrix(Rules& r, Matrix3D<qint8>& a);
-
-	//void getRoomsTimetable(Rules& r, qint16 a[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 	void getRoomsTimetable(Rules& r, Matrix3D<qint16>& a);
 	//return value is the number of conflicts, must be 0
+
+	int getSubgroupsMatrix(Rules& r, Matrix3D<qint8>& a);
+
+	int getTeachersMatrix(Rules& r, Matrix3D<qint8>& a);
+
+	int getRoomsMatrix(Rules& r, Matrix3D<qint8>& a);
 };
 
 #endif

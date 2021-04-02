@@ -34,7 +34,7 @@ private:
 public:
 	ActivitiesList visibleActivitiesList;
 
-	ActivitiesForm(const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName);
+	ActivitiesForm(QWidget* parent, const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName);
 	~ActivitiesForm();
 
 	bool filterOk(Activity* act);

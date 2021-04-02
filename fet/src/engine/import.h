@@ -38,7 +38,6 @@ class QPushButton;
 class QSpinBox;
 class QHBoxLayout;
 
-
 static const int DO_NOT_IMPORT=-2;
 static const int IMPORT_DEFAULT_ITEM=-1;
 
@@ -72,7 +71,6 @@ static const int FIELD_MIN_DAYS=18;
 static const int FIELD_MIN_DAYS_WEIGHT=19;
 static const int FIELD_MIN_DAYS_CONSECUTIVE=20;
 
-
 static const int NUMBER_OF_FIELDS=21;
 
 class Import: public QObject{
@@ -85,26 +83,27 @@ public:
 	Import();
 	~Import();
 
-	static void importCSVActivities();
-	static void importCSVActivityTags();
-	static void importCSVRoomsAndBuildings();
-	static void importCSVSubjects();
-	static void importCSVTeachers();
-	static void importCSVStudents();
+	static void importCSVActivities(QWidget* parent);
+	static void importCSVActivityTags(QWidget* parent);
+	static void importCSVRoomsAndBuildings(QWidget* parent);
+	static void importCSVSubjects(QWidget* parent);
+	static void importCSVTeachers(QWidget* parent);
+	static void importCSVStudents(QWidget* parent);
 
 private:
 	static void prearrangement();
-	static int getFileSeparatorFieldsAndHead();
-	static int readFields();
-	static int showFieldsAndWarnings();
+	static int getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent);
+	static int readFields(QWidget* parent);
+	static int showFieldsAndWarnings(QWidget* parent, QDialog* &newParent);
 };
-
 
 class ChooseFieldsDialog: public QDialog{
 	Q_OBJECT
 	
 public:							//can i do that privat too?
-	ChooseFieldsDialog(QWidget *parent = 0);
+	ChooseFieldsDialog(QWidget *parent/*, const QString& settingsName*/);
+	~ChooseFieldsDialog();
+
 private:
 	QGroupBox* fieldGroupBox[NUMBER_OF_FIELDS];
 	QRadioButton* fieldRadio1[NUMBER_OF_FIELDS];
@@ -118,6 +117,8 @@ private:
 	QPushButton* cancelpb;
 	QHBoxLayout* buttonsLayout;
 	
+	QString _settingsName;
+	
 private slots:
 	void chooseFieldsDialogClose();
 	void chooseFieldsDialogUpdateRadio1();
@@ -127,12 +128,12 @@ private slots:
 	void chooseFieldsDialogUpdateLine3Text();
 };
 
-
 class LastWarningsDialog: public QDialog{
 	Q_OBJECT
 	
 public:							//can i do that privat too?
-	LastWarningsDialog(QWidget *parent = 0);
+	LastWarningsDialog(QWidget *parent);
+	~LastWarningsDialog();
 };
 
 #endif

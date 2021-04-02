@@ -28,7 +28,7 @@
 class AddConstraintTwoActivitiesOrderedForm : public QDialog, Ui::AddConstraintTwoActivitiesOrderedForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintTwoActivitiesOrderedForm();
+	AddConstraintTwoActivitiesOrderedForm(QWidget* parent);
 	~AddConstraintTwoActivitiesOrderedForm();
 
 	bool filterOk(Activity* a);

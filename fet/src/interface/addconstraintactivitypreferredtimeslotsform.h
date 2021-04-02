@@ -29,7 +29,7 @@ class AddConstraintActivityPreferredTimeSlotsForm : public QDialog, Ui::AddConst
 	Q_OBJECT
 
 public:
-	AddConstraintActivityPreferredTimeSlotsForm();
+	AddConstraintActivityPreferredTimeSlotsForm(QWidget* parent);
 	~AddConstraintActivityPreferredTimeSlotsForm();
 
 	void updateActivitiesComboBox();

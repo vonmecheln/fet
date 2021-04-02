@@ -17,32 +17,26 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintthreeactivitiesgroupedform.h"
 #include "timeconstraint.h"
 
-AddConstraintThreeActivitiesGroupedForm::AddConstraintThreeActivitiesGroupedForm()
+AddConstraintThreeActivitiesGroupedForm::AddConstraintThreeActivitiesGroupedForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintThreeActivitiesGroupedForm_template*/, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintThreeActivitiesGroupedForm_template*/, SLOT(close()));
-    connect(teachersComboBox, SIGNAL(activated(QString)), this /*AddConstraintThreeActivitiesGroupedForm_template*/, SLOT(filterChanged()));
-    connect(studentsComboBox, SIGNAL(activated(QString)), this /*AddConstraintThreeActivitiesGroupedForm_template*/, SLOT(filterChanged()));
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*AddConstraintThreeActivitiesGroupedForm_template*/, SLOT(filterChanged()));
-    connect(activityTagsComboBox, SIGNAL(activated(QString)), this /*AddConstraintThreeActivitiesGroupedForm_template*/, SLOT(filterChanged()));
+	addConstraintPushButton->setDefault(true);
 
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -64,47 +58,48 @@ AddConstraintThreeActivitiesGroupedForm::AddConstraintThreeActivitiesGroupedForm
 	secondActivitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
 	thirdActivitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
 	
-	teachersComboBox->insertItem("");
+	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 	}
-	teachersComboBox->setCurrentItem(0);
+	teachersComboBox->setCurrentIndex(0);
 
-	subjectsComboBox->insertItem("");
+	subjectsComboBox->addItem("");
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 	}
-	subjectsComboBox->setCurrentItem(0);
+	subjectsComboBox->setCurrentIndex(0);
 
-	activityTagsComboBox->insertItem("");
+	activityTagsComboBox->addItem("");
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* st=gt.rules.activityTagsList[i];
-		activityTagsComboBox->insertItem(st->name);
+		activityTagsComboBox->addItem(st->name);
 	}
-	activityTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentIndex(0);
 
-	studentsComboBox->insertItem("");
+	studentsComboBox->addItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
-	studentsComboBox->setCurrentItem(0);
+	studentsComboBox->setCurrentIndex(0);
 
 	updateActivitiesComboBox();
 }
 
 AddConstraintThreeActivitiesGroupedForm::~AddConstraintThreeActivitiesGroupedForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 bool AddConstraintThreeActivitiesGroupedForm::filterOk(Activity* act)
@@ -132,7 +127,6 @@ bool AddConstraintThreeActivitiesGroupedForm::filterOk(Activity* act)
 		ok=false;
 		
 	//activity tag
-//	if(sbtn!="" && sbtn!=act->activityTagName)
 	if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
 		ok=false;
 		
@@ -165,18 +159,16 @@ void AddConstraintThreeActivitiesGroupedForm::updateActivitiesComboBox(){
 		Activity* act=gt.rules.activitiesList[i];
 		
 		if(filterOk(act)){
-			firstActivitiesComboBox->insertItem(act->getDescription(gt.rules));
+			firstActivitiesComboBox->addItem(act->getDescription(gt.rules));
 			this->firstActivitiesList.append(act->id);
 
-			secondActivitiesComboBox->insertItem(act->getDescription(gt.rules));
+			secondActivitiesComboBox->addItem(act->getDescription(gt.rules));
 			this->secondActivitiesList.append(act->id);
 
-			thirdActivitiesComboBox->insertItem(act->getDescription(gt.rules));
+			thirdActivitiesComboBox->addItem(act->getDescription(gt.rules));
 			this->thirdActivitiesList.append(act->id);
 		}
 	}
-
-	//constraintChanged();
 }
 
 void AddConstraintThreeActivitiesGroupedForm::filterChanged()
@@ -184,72 +176,13 @@ void AddConstraintThreeActivitiesGroupedForm::filterChanged()
 	this->updateActivitiesComboBox();
 }
 
-/*void AddConstraintActivitiesGroupedForm::constraintChanged()
-{
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1\%").arg(weight);
-	s+="\n";
-
-	s+=tr("3 activities grouped");
-	s+=" ";
-	s+=tr("(activities must be in the same day, one following the other one, in any order, possibly separated by breaks)");
-	s+="\n";
-
-	int tmp2=firstActivitiesComboBox->currentItem();
-	assert(tmp2<firstActivitiesList.size());
-	assert(tmp2<gt.rules.activitiesList.size());
-	if(tmp2<0){
-		s+=tr("Invalid first activity");
-		s+="\n";
-	}
-	else{
-		int fid=firstActivitiesList.at(tmp2);
-		s+=tr("First activity id=%1").arg(fid);
-		s+="\n";
-	}
-
-	int tmp3=secondActivitiesComboBox->currentItem();
-	assert(tmp3<secondActivitiesList.size());
-	assert(tmp3<gt.rules.activitiesList.size());
-	if(tmp3<0){
-		s+=tr("Invalid second activity");
-		s+="\n";
-	}
-	else{
-		int sid=secondActivitiesList.at(tmp3);
-		s+=tr("Second activity id=%1").arg(sid);
-		s+="\n";
-	}
-
-	int tmp4=thirdActivitiesComboBox->currentItem();
-	assert(tmp4<thirdActivitiesList.size());
-	assert(tmp4<gt.rules.activitiesList.size());
-	if(tmp4<0){
-		s+=tr("Invalid third activity");
-		s+="\n";
-	}
-	else{
-		int tid=thirdActivitiesList.at(tmp4);
-		s+=tr("Third activity id=%1").arg(tid);
-		s+="\n";
-	}
-
-	currentConstraintTextEdit->setText(s);
-}*/
-
 void AddConstraintThreeActivitiesGroupedForm::addCurrentConstraint()
 {
 	TimeConstraint *ctr=NULL;
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
@@ -257,7 +190,7 @@ void AddConstraintThreeActivitiesGroupedForm::addCurrentConstraint()
 	}
 
 	int fid;
-	int tmp2=firstActivitiesComboBox->currentItem();
+	int tmp2=firstActivitiesComboBox->currentIndex();
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<firstActivitiesList.size());
 	if(tmp2<0){
@@ -269,7 +202,7 @@ void AddConstraintThreeActivitiesGroupedForm::addCurrentConstraint()
 		fid=firstActivitiesList.at(tmp2);
 	
 	int sid;
-	int tmp3=secondActivitiesComboBox->currentItem();
+	int tmp3=secondActivitiesComboBox->currentIndex();
 	assert(tmp3<gt.rules.activitiesList.size());
 	assert(tmp3<secondActivitiesList.size());
 	if(tmp3<0){
@@ -281,7 +214,7 @@ void AddConstraintThreeActivitiesGroupedForm::addCurrentConstraint()
 		sid=secondActivitiesList.at(tmp3);
 		
 	int tid;
-	int tmp4=thirdActivitiesComboBox->currentItem();
+	int tmp4=thirdActivitiesComboBox->currentIndex();
 	assert(tmp4<gt.rules.activitiesList.size());
 	assert(tmp4<thirdActivitiesList.size());
 	if(tmp4<0){

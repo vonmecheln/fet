@@ -29,7 +29,7 @@ class ModifyConstraintTeacherMinDaysPerWeekForm : public QDialog, Ui::ModifyCons
 public:
 	ConstraintTeacherMinDaysPerWeek* _ctr;
 
-	ModifyConstraintTeacherMinDaysPerWeekForm(ConstraintTeacherMinDaysPerWeek* ctr);
+	ModifyConstraintTeacherMinDaysPerWeekForm(QWidget* parent, ConstraintTeacherMinDaysPerWeek* ctr);
 	~ModifyConstraintTeacherMinDaysPerWeekForm();
 
 	void updateMinDaysSpinBox();

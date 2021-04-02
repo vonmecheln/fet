@@ -39,6 +39,8 @@
 
 #include <QAbstractItemView>
 
+#include <QListWidget>
+
 #include <QList>
 #include <QSplitter>
 
@@ -48,6 +50,14 @@
 #include <QString>
 #include <QStringList>
 
+#include <QSplitter>
+#include <QSettings>
+#include <QObject>
+#include <QMetaObject>
+
+extern const QString COMPANY;
+extern const QString PROGRAM;
+
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
 extern bool rooms_schedule_ready;
@@ -55,11 +65,8 @@ extern bool rooms_schedule_ready;
 extern bool simulation_running;
 
 extern Solution best_solution;
-extern SpaceChromosome best_space_chromosome;
 
-//extern double notAllowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK];
 extern Matrix2D<double> notAllowedRoomTimePercentages;
-//extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern Matrix2D<bool> breakDayHour;
 
 extern QSet <int> idsOfLockedTime;		//care about locked activities in view forms
@@ -69,39 +76,50 @@ extern QSet <int> idsOfPermanentlyLockedSpace;	//care about locked activities in
 
 extern CommunicationSpinBox communicationSpinBox;	//small hint to sync the forms
 
-TimetableViewRoomsForm::TimetableViewRoomsForm()
+TimetableViewRoomsForm::TimetableViewRoomsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
-    
+	setupUi(this);
+	
+	closePushButton->setDefault(true);
+	
+	detailsTextEdit->setReadOnly(true);
+
 	//columnResizeModeInitialized=false;
 
-    QList<int> tmpList;
-    tmpList<<5000<<5000;
-    splitter->setSizes(tmpList);
-    
-    QList<int> tmpList2;
-    tmpList2<<3000<<10000;
-    splitter_2->setSizes(tmpList2);
-    
-    roomsTimetableTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
+	QList<int> tmpList;
+	tmpList<<5000<<5000;
+	verticalSplitter->setSizes(tmpList);
 
-    connect(closePushButton, SIGNAL(clicked()), this /*TimetableViewRoomsForm_template*/, SLOT(close()));
-    connect(roomsListBox, SIGNAL(highlighted(QString)), this /*TimetableViewRoomsForm_template*/, SLOT(roomChanged(QString)));
-    connect(roomsTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
-    connect(lockTimeSpacePushButton, SIGNAL(clicked()), this /*TimetableViewRoomsForm_template*/, SLOT(lock()));
-    connect(lockTimePushButton, SIGNAL(clicked()), this /*TimetableViewRoomsForm_template*/, SLOT(lockTime()));
-    connect(lockSpacePushButton, SIGNAL(clicked()), this /*TimetableViewRoomsForm_template*/, SLOT(lockSpace()));
+	QList<int> tmpList2;
+	tmpList2<<3000<<10000;
+	horizontalSplitter->setSizes(tmpList2);
+	
+	roomsTimetableTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
-    connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	roomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(roomsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(roomChanged(const QString&)));
+	connect(roomsTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
+	connect(lockTimeSpacePushButton, SIGNAL(clicked()), this, SLOT(lock()));
+	connect(lockTimePushButton, SIGNAL(clicked()), this, SLOT(lockTime()));
+	connect(lockSpacePushButton, SIGNAL(clicked()), this, SLOT(lockSpace()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+
+	//restore vertical splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/vertical-splitter-state")))
+		verticalSplitter->restoreState(settings.value(this->metaObject()->className()+QString("/vertical-splitter-state")).toByteArray());
+
+	//restore horizontal splitter state
+	//QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/horizontal-splitter-state")))
+		horizontalSplitter->restoreState(settings.value(this->metaObject()->className()+QString("/horizontal-splitter-state")).toByteArray());
+
 
 //////////TODO
 /*    double time_start = get_time();
@@ -170,30 +188,34 @@ TimetableViewRoomsForm::TimetableViewRoomsForm()
 	//}
 	///////////////
 
-	roomsListBox->clear();
+	roomsListWidget->clear();
 	
 	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
 		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
 	}
 	else{
 		for(int i=0; i<gt.rules.nInternalRooms; i++)
-			roomsListBox->insertItem(gt.rules.internalRoomsList[i]->name);
+			roomsListWidget->addItem(gt.rules.internalRoomsList[i]->name);
 	}
 	
-	//roomChanged(roomsListBox->currentText());
-	if(roomsListBox->count()>0){
-		roomsListBox->setCurrentItem(0);
-		roomsListBox->setSelected(0, true);
-	}
+	if(roomsListWidget->count()>0)
+		roomsListWidget->setCurrentRow(0);
 
 	//added by Volker Dirr
 	connect(&communicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateRoomsTimetableTable()));
-
-	//roomsTimetableTable->setSelectionMode(Q3Table::NoSelection);
 }
 
 TimetableViewRoomsForm::~TimetableViewRoomsForm()
 {
+	saveFETDialogGeometry(this);
+
+	//save vertical splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	settings.setValue(this->metaObject()->className()+QString("/vertical-splitter-state"), verticalSplitter->saveState());
+
+	//save horizontal splitter state
+	//QSettings settings(COMPANY, PROGRAM);
+	settings.setValue(this->metaObject()->className()+QString("/horizontal-splitter-state"), horizontalSplitter->saveState());
 }
 
 void TimetableViewRoomsForm::resizeRowsAfterShow()
@@ -215,9 +237,8 @@ void TimetableViewRoomsForm::roomChanged(const QString &roomName)
 	assert(students_schedule_ready && teachers_schedule_ready);
 	assert(rooms_schedule_ready);
 
-	if(roomName==QString::null){
+	if(roomName==QString())
 		return;
-	}
 
 	int roomIndex=gt.rules.searchRoom(roomName);
 	if(roomIndex<0){
@@ -245,10 +266,10 @@ void TimetableViewRoomsForm::updateRoomsTimetableTable(){
 	QString s;
 	QString roomName;
 
-	if(roomsListBox->currentItem() < 0)
+	if(roomsListWidget->currentRow()<0 || roomsListWidget->currentRow()>=roomsListWidget->count())
 		return;
 
-	roomName = roomsListBox->currentText();
+	roomName = roomsListWidget->currentItem()->text();
 	s = roomName;
 	roomNameTextLabel->setText(s);
 	
@@ -261,8 +282,8 @@ void TimetableViewRoomsForm::updateRoomsTimetableTable(){
 
 	int roomIndex=gt.rules.searchRoom(roomName);
 	assert(roomIndex>=0);
-	for(int j=0; j<gt.rules.nHoursPerDay; j++){
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+	for(int j=0; j<gt.rules.nHoursPerDay && j<roomsTimetableTable->rowCount(); j++){
+		for(int k=0; k<gt.rules.nDaysPerWeek && k<roomsTimetableTable->columnCount(); k++){
 			s = "";
 			int ai=rooms_timetable_weekly[roomIndex][k][j]; //activity index
 			//Activity* act=gt.rules.activitiesList.at(ai);
@@ -351,8 +372,13 @@ void TimetableViewRoomsForm::currentItemChanged(QTableWidgetItem* current, QTabl
 
 void TimetableViewRoomsForm::detailActivity(QTableWidgetItem* item){
 	if(item==NULL){
-		//detailsTextEdit->setText(tr("Invalid selected cell"));
-		detailsTextEdit->setText(QString(""));
+		detailsTextEdit->setPlainText(QString(""));
+		return;
+	}
+	
+	if(item->row()>=gt.rules.nHoursPerDay || item->column()>=gt.rules.nDaysPerWeek){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable "
+		"or close the timetable view rooms dialog"));
 		return;
 	}
 
@@ -370,10 +396,10 @@ void TimetableViewRoomsForm::detailActivity(QTableWidgetItem* item){
 	QString s;
 	QString roomName;
 
-	if(roomsListBox->currentText()==QString::null)
+	if(roomsListWidget->currentRow()<0 || roomsListWidget->currentRow()>=roomsListWidget->count())
 		return;
 
-	roomName = roomsListBox->currentText();
+	roomName = roomsListWidget->currentItem()->text();
 	s = roomName;
 	roomNameTextLabel->setText(s);
 
@@ -421,7 +447,7 @@ void TimetableViewRoomsForm::detailActivity(QTableWidgetItem* item){
 		}
 		else{
 			if(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]>=0){
-				s+=tr("Room is not available with weight %1%").arg(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]);
+				s+=tr("Room is not available with weight %1%").arg(CustomFETString::number(notAllowedRoomTimePercentages[roomIndex][k+j*gt.rules.nDaysPerWeek]));
 				s+="\n";
 			}
 			if(breakDayHour[k][j]){
@@ -430,7 +456,7 @@ void TimetableViewRoomsForm::detailActivity(QTableWidgetItem* item){
 			}
 		}
 	}
-	detailsTextEdit->setText(s);
+	detailsTextEdit->setPlainText(s);
 }
 
 void TimetableViewRoomsForm::lock()
@@ -471,11 +497,11 @@ void TimetableViewRoomsForm::lock(bool lockTime, bool lockSpace)
 
 	//find room index
 	QString roomName;
-	if(roomsListBox->currentText()==QString::null){
+	if(roomsListWidget->currentRow()<0 || roomsListWidget->currentRow()>=roomsListWidget->count()){
 		QMessageBox::information(this, tr("FET information"), tr("Please select a room"));
 		return;
 	}
-	roomName = roomsListBox->currentText();
+	roomName = roomsListWidget->currentItem()->text();
 	int i=gt.rules.searchRoom(roomName);
 
 	if(!(rooms_schedule_ready)){
@@ -483,7 +509,6 @@ void TimetableViewRoomsForm::lock(bool lockTime, bool lockSpace)
 		return;
 	}
 	assert(rooms_schedule_ready);
-	//SpaceChromosome* c=&best_space_chromosome;
 	
 	if(i<0){
 		QMessageBox::warning(this, tr("FET warning"), tr("Invalid room - please close this dialog and open a new view rooms timetable dialog"));
@@ -500,8 +525,8 @@ void TimetableViewRoomsForm::lock(bool lockTime, bool lockSpace)
 	//lock selected activities
 	QSet <int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
 	careAboutIndex.clear();
-	for(int j=0; j<gt.rules.nHoursPerDay; j++){
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+	for(int j=0; j<gt.rules.nHoursPerDay && j<roomsTimetableTable->rowCount(); j++){
+		for(int k=0; k<gt.rules.nDaysPerWeek && k<roomsTimetableTable->columnCount(); k++){
 			if(roomsTimetableTable->item(j, k)->isSelected()){
 				int ai=rooms_timetable_weekly[i][k][j];
 				if(ai!=UNALLOCATED_ACTIVITY && !careAboutIndex.contains(ai)){	//modified, because of activities with duration > 1

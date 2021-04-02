@@ -26,7 +26,7 @@
 class AddConstraintStudentsSetNotAvailableTimesForm : public QDialog, Ui::AddConstraintStudentsSetNotAvailableTimesForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintStudentsSetNotAvailableTimesForm();
+	AddConstraintStudentsSetNotAvailableTimesForm(QWidget* parent);
 	~AddConstraintStudentsSetNotAvailableTimesForm();
 
 	void updateStudentsSetComboBox();

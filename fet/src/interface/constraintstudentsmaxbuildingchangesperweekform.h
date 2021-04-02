@@ -28,7 +28,7 @@ class ConstraintStudentsMaxBuildingChangesPerWeekForm : public QDialog, Ui::Cons
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
-	ConstraintStudentsMaxBuildingChangesPerWeekForm();
+	ConstraintStudentsMaxBuildingChangesPerWeekForm(QWidget* parent);
 	~ConstraintStudentsMaxBuildingChangesPerWeekForm();
 
 	bool filterOk(SpaceConstraint* ctr);

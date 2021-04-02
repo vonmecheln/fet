@@ -28,7 +28,7 @@ class ModifyConstraintBasicCompulsoryTimeForm : public QDialog, Ui::ModifyConstr
 public:
 	ConstraintBasicCompulsoryTime* _ctr;
 
-	ModifyConstraintBasicCompulsoryTimeForm(ConstraintBasicCompulsoryTime* ctr);
+	ModifyConstraintBasicCompulsoryTimeForm(QWidget* parent, ConstraintBasicCompulsoryTime* ctr);
 	~ModifyConstraintBasicCompulsoryTimeForm();
 
 public slots:

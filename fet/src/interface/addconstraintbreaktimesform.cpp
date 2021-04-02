@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "tablewidgetupdatebug.h"
 
 #include "longtextmessagebox.h"
@@ -33,28 +31,23 @@
 #include <QBrush>
 #include <QColor>
 
-//#define YES	(AddConstraintBreakTimesForm::tr("Break", "Please keep translation short"))
-//#define NO	(AddConstraintBreakTimesForm::tr("Allowed", "Please keep translation short"))
 #define YES	(QString("X"))
 #define NO	(QString(" "))
 
-AddConstraintBreakTimesForm::AddConstraintBreakTimesForm()
+AddConstraintBreakTimesForm::AddConstraintBreakTimesForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-    connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-    connect(setAllAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllAllowed()));
-    connect(setAllBreakPushButton, SIGNAL(clicked()), this, SLOT(setAllBreak()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
+	connect(setAllAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllAllowed()));
+	connect(setAllBreakPushButton, SIGNAL(clicked()), this, SLOT(setAllBreak()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 							
 	notAllowedTimesTable->setRowCount(gt.rules.nHoursPerDay);
 	notAllowedTimesTable->setColumnCount(gt.rules.nDaysPerWeek);
@@ -86,10 +79,13 @@ AddConstraintBreakTimesForm::AddConstraintBreakTimesForm()
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
 	tableWidgetUpdateBug(notAllowedTimesTable);
+	
+	setStretchAvailabilityTableNicely(notAllowedTimesTable);
 }
 
 AddConstraintBreakTimesForm::~AddConstraintBreakTimesForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintBreakTimesForm::colorItem(QTableWidgetItem* item)
@@ -115,13 +111,6 @@ void AddConstraintBreakTimesForm::horizontalHeaderClicked(int col)
 		}
 
 		for(int row=0; row<gt.rules.nHoursPerDay; row++){
-			/*QString s=notAllowedTimesTable->text(row, col);
-			if(s==YES)
-				s=NO;
-			else{
-				assert(s==NO);
-				s=YES;
-			}*/
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
@@ -141,13 +130,6 @@ void AddConstraintBreakTimesForm::verticalHeaderClicked(int row)
 		}
 	
 		for(int col=0; col<gt.rules.nDaysPerWeek; col++){
-			/*QString s=notAllowedTimesTable->text(row, col);
-			if(s==YES)
-				s=NO;
-			else{
-				assert(s==NO);
-				s=YES;
-			}*/
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
@@ -195,7 +177,7 @@ void AddConstraintBreakTimesForm::addCurrentConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<100.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage). It has to be 100"));

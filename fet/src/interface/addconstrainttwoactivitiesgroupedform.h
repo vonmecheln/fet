@@ -28,7 +28,7 @@
 class AddConstraintTwoActivitiesGroupedForm : public QDialog, Ui::AddConstraintTwoActivitiesGroupedForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintTwoActivitiesGroupedForm();
+	AddConstraintTwoActivitiesGroupedForm(QWidget* parent);
 	~AddConstraintTwoActivitiesGroupedForm();
 
 	bool filterOk(Activity* a);

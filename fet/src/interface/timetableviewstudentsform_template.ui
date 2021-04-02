@@ -15,42 +15,21 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
-    <widget class="QSplitter" name="splitter_2">
+    <widget class="QSplitter" name="horizontalSplitter">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <widget class="QWidget" name="">
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <widget class="QWidget" name="layoutWidget">
+      <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="Q3ListBox" name="yearsListBox">
-           <item>
-            <property name="text">
-             <string>New Item</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="Q3ListBox" name="groupsListBox">
-           <item>
-            <property name="text">
-             <string>New Item</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="Q3ListBox" name="subgroupsListBox">
-           <item>
-            <property name="text">
-             <string>New Item</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QSplitter" name="verticalStudentsListSplitter">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <widget class="QListWidget" name="yearsListWidget"/>
+         <widget class="QListWidget" name="groupsListWidget"/>
+         <widget class="QListWidget" name="subgroupsListWidget"/>
+        </widget>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -120,12 +99,12 @@
        </item>
       </layout>
      </widget>
-     <widget class="QSplitter" name="splitter">
+     <widget class="QSplitter" name="verticalStudentsTableDetailsSplitter">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="QWidget" name="">
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+      <widget class="QWidget" name="layoutWidget2">
+       <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QLabel" name="classNameTextLabel">
           <property name="sizePolicy">
@@ -154,8 +133,8 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
-       <layout class="QVBoxLayout" name="verticalLayout">
+      <widget class="QWidget" name="layoutWidget3">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <widget class="QLabel" name="detailsTextLabel">
           <property name="sizePolicy">
@@ -173,11 +152,7 @@
          </widget>
         </item>
         <item>
-         <widget class="Q3TextEdit" name="detailsTextEdit">
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
+         <widget class="QPlainTextEdit" name="detailsTextEdit"/>
         </item>
        </layout>
       </widget>
@@ -187,36 +162,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>Q3Frame</class>
-   <extends>QFrame</extends>
-   <header>Qt3Support/Q3Frame</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>Q3ListBox</class>
-   <extends>Q3Frame</extends>
-   <header>q3listbox.h</header>
-  </customwidget>
-  <customwidget>
-   <class>Q3TextEdit</class>
-   <extends>Q3Frame</extends>
-   <header>q3textedit.h</header>
-  </customwidget>
- </customwidgets>
- <tabstops>
-  <tabstop>yearsListBox</tabstop>
-  <tabstop>groupsListBox</tabstop>
-  <tabstop>subgroupsListBox</tabstop>
-  <tabstop>studentsTimetableTable</tabstop>
-  <tabstop>lockTimePushButton</tabstop>
-  <tabstop>lockSpacePushButton</tabstop>
-  <tabstop>lockTimeSpacePushButton</tabstop>
-  <tabstop>helpPushButton</tabstop>
-  <tabstop>closePushButton</tabstop>
-  <tabstop>detailsTextEdit</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

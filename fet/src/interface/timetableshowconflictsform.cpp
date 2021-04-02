@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include "timetableshowconflictsform.h"
 
@@ -27,27 +25,24 @@ extern Timetable gt;
 extern QString conflictsStringTitle;
 extern QString conflictsString;
 
-TimetableShowConflictsForm::TimetableShowConflictsForm()
- : TimetableShowConflictsForm_template()
+TimetableShowConflictsForm::TimetableShowConflictsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	closePushButton->setDefault(true);
 
-    connect(closePushButton, SIGNAL(clicked()), this /*TimetableShowConflictsForm_template*/, SLOT(close()));
+	conflictsTextEdit->setReadOnly(true);
 
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
-	//setWindowFlags(Qt::Window);
-	//setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-/*	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	setWindowTitle(conflictsStringTitle);
-	conflictsTextEdit->setText(conflictsString);
+	conflictsTextEdit->setPlainText(conflictsString);
 }
-
 
 TimetableShowConflictsForm::~TimetableShowConflictsForm()
 {
+	saveFETDialogGeometry(this);
 }

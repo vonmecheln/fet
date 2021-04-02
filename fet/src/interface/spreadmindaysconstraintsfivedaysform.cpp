@@ -14,10 +14,20 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
-#include <cstdio>
+#include <QHash>
+#include <QList>
+
+#include <QMessageBox>
+
+#include <QPushButton>
+#include <QCheckBox>
+#include <QPlainTextEdit>
+#include <QLineEdit>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+
+#include "matrix.h"
 
 #include "spreadmindaysconstraintsfivedaysform.h"
 
@@ -27,27 +37,12 @@
 
 extern Timetable gt;
 
-#include <cstdio>
-
-#include <QHash>
-#include <QList>
-
-#include <QMessageBox>
-
-#include <QPushButton>
-#include <QCheckBox>
-#include <QTextEdit>
-#include <QLineEdit>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-
-#include "matrix.h"
-
-SpreadMinDaysConstraintsFiveDaysForm::SpreadMinDaysConstraintsFiveDaysForm()
+SpreadMinDaysConstraintsFiveDaysForm::SpreadMinDaysConstraintsFiveDaysForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
 
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	connect(buttonBox, SIGNAL(accepted()), this, SLOT(wasAccepted()));
 	connect(buttonBox, SIGNAL(rejected()), this, SLOT(wasCanceled()));
@@ -59,6 +54,7 @@ SpreadMinDaysConstraintsFiveDaysForm::SpreadMinDaysConstraintsFiveDaysForm()
 
 SpreadMinDaysConstraintsFiveDaysForm::~SpreadMinDaysConstraintsFiveDaysForm()
 {
+	saveFETDialogGeometry(this);
 
 }
 
@@ -66,7 +62,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 {
 	double weight4;
 	QString tmp=weight4LineEdit->text();
-	sscanf(tmp, "%lf", &weight4);
+	weight_sscanf(tmp, "%lf", &weight4);
 	if(weight4<0.0 || weight4>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 		 tr("Invalid weight (percentage) for all split activities - must be real number >=0.0 and <=100.0"));
@@ -75,7 +71,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 
 	double weight2;
 	tmp=weight2LineEdit->text();
-	sscanf(tmp, "%lf", &weight2);
+	weight_sscanf(tmp, "%lf", &weight2);
 	if(spread2CheckBox->isChecked() && (weight2<0.0 || weight2>100.0)){
 		QMessageBox::warning(this, tr("FET information"),
 		 tr("Invalid weight (percentage) for activities split into 2 components - must be real number >=0.0 and <=100.0"));
@@ -84,7 +80,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 
 	double weight3;
 	tmp=weight3LineEdit->text();
-	sscanf(tmp, "%lf", &weight3);
+	weight_sscanf(tmp, "%lf", &weight3);
 	if(spread3CheckBox->isChecked() && (weight3<0.0 || weight3>100.0)){
 		QMessageBox::warning(this, tr("FET information"),
 		 tr("Invalid weight (percentage) for activities split into 3 components - must be real number >=0.0 and <=100.0"));
@@ -311,8 +307,8 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 	QObject::connect(acceptPB, SIGNAL(clicked()), &dialog, SLOT(accept()));
 	QObject::connect(cancelPB, SIGNAL(clicked()), &dialog, SLOT(reject()));
 	
-	QTextEdit* removedText=new QTextEdit();
-	QTextEdit* addedText=new QTextEdit();
+	QPlainTextEdit* removedText=new QPlainTextEdit();
+	QPlainTextEdit* addedText=new QPlainTextEdit();
 	
 	QString s=tr("The following time constraints will be removed:");
 	s+="\n\n";
@@ -321,8 +317,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 		s+="\n";
 	}
 	
-	removedText->setText(s);
-	
+	removedText->setPlainText(s);
 	removedText->setReadOnly(true);
 	
 	s=tr("The following time constraints will be added:");
@@ -332,8 +327,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 		s+="\n";
 	}
 	
-	addedText->setText(s);
-	
+	addedText->setPlainText(s);
 	addedText->setReadOnly(true);
 	
 	top->addWidget(removedText);
@@ -342,14 +336,19 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 	top->addLayout(hl);
 	
 	//dialog.addLayout(top);
+	
+	const QString settingsName=QString("SpreadMinDaysBetweenActivitiesConstraintsLastConfirmationForm");
 
 	dialog.resize(600, 500);
 	centerWidgetOnScreen(&dialog);
+	restoreFETDialogGeometry(&dialog, settingsName);
 	
 	acceptPB->setFocus();
 	acceptPB->setDefault(true);
 	
+	setParentAndOtherThings(&dialog, this);
 	int res=dialog.exec();
+	saveFETDialogGeometry(&dialog, settingsName);
 	
 	if(res==QDialog::Rejected){
 		constraintsToBeRemoved.clear();
@@ -369,6 +368,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 		assert(t==1);
 	}
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	foreach(ConstraintMinDaysBetweenActivities* mdc, constraintsToBeRemoved)
 		delete mdc;

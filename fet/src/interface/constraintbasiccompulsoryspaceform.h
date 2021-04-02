@@ -28,7 +28,7 @@ class ConstraintBasicCompulsorySpaceForm : public QDialog, Ui::ConstraintBasicCo
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
-	ConstraintBasicCompulsorySpaceForm();
+	ConstraintBasicCompulsorySpaceForm(QWidget* parent);
 	~ConstraintBasicCompulsorySpaceForm();
 
 	bool filterOk(SpaceConstraint* ctr);

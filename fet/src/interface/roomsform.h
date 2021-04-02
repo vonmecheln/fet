@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef ROOMSFORM_H
 #define ROOMSFORM_H
@@ -24,16 +22,13 @@
 
 #include "ui_roomsform_template.h"
 
-/**
-@author Liviu Lalescu
-*/
 class RoomsForm : public QDialog, Ui::RoomsForm_template
 {
 	Q_OBJECT
 public:
 	RoomsList visibleRoomsList;
 
-	RoomsForm();
+	RoomsForm(QWidget* parent);
 	~RoomsForm();
 
 	bool filterOk(Room* rm);

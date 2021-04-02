@@ -17,30 +17,22 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintteachersminhoursdailyform.h"
 #include "timeconstraint.h"
 
-AddConstraintTeachersMinHoursDailyForm::AddConstraintTeachersMinHoursDailyForm()
+AddConstraintTeachersMinHoursDailyForm::AddConstraintTeachersMinHoursDailyForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintTeachersMinHoursDailyForm_template*/, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintTeachersMinHoursDailyForm_template*/, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintTeachersMinHoursDailyForm_template*/, SLOT(close()));
-//    connect(minHoursSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintTeachersMinHoursDailyForm_template*/, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	updateMinHoursSpinBox();
 	
@@ -49,33 +41,17 @@ AddConstraintTeachersMinHoursDailyForm::AddConstraintTeachersMinHoursDailyForm()
 
 AddConstraintTeachersMinHoursDailyForm::~AddConstraintTeachersMinHoursDailyForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintTeachersMinHoursDailyForm::updateMinHoursSpinBox(){
-	minHoursSpinBox->setMinValue(2);
-	minHoursSpinBox->setMaxValue(gt.rules.nHoursPerDay);
+	minHoursSpinBox->setMinimum(2);
+	minHoursSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minHoursSpinBox->setValue(2);
 }
 
 void AddConstraintTeachersMinHoursDailyForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1").arg(weight);
-	s+="\n";
-
-	s+=tr("Teachers min hours daily");
-	s+="\n";
-
-	s+=tr("Min hours daily=%1").arg(minHoursSpinBox->value());
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void AddConstraintTeachersMinHoursDailyForm::addCurrentConstraint()
@@ -84,7 +60,7 @@ void AddConstraintTeachersMinHoursDailyForm::addCurrentConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));

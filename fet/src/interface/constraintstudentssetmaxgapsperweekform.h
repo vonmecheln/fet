@@ -28,7 +28,7 @@ class ConstraintStudentsSetMaxGapsPerWeekForm : public QDialog, Ui::ConstraintSt
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintStudentsSetMaxGapsPerWeekForm();
+	ConstraintStudentsSetMaxGapsPerWeekForm(QWidget* parent);
 	~ConstraintStudentsSetMaxGapsPerWeekForm();
 
 	bool filterOk(TimeConstraint* ctr);

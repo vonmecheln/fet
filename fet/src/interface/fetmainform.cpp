@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include <iostream>
 using namespace std;
@@ -49,9 +47,11 @@ using namespace std;
 #include "teachersform.h"
 #include "teachersstatisticsform.h"
 #include "yearsform.h"
+#include "splityearform.h"
 #include "groupsform.h"
 #include "subgroupsform.h"
 #include "studentsstatisticsform.h"
+#include "activitiesroomsstatisticsform.h"
 #include "activitiesform.h"
 #include "subactivitiesform.h"
 #include "roomsform.h"
@@ -80,6 +80,10 @@ using namespace std;
 #include "constraintactivitiessamestartingtimeform.h"
 #include "constraintactivitiessamestartinghourform.h"
 #include "constraintactivitiessamestartingdayform.h"
+
+#include "constraintactivitiesoccupymaxtimeslotsfromselectionform.h"
+#include "constraintactivitiesmaxsimultaneousinselectedtimeslotsform.h"
+
 #include "constraintteachernotavailabletimesform.h"
 #include "constraintbasiccompulsorytimeform.h"
 #include "constraintbasiccompulsoryspaceform.h"
@@ -182,44 +186,47 @@ using namespace std;
 #include "removeredundantconfirmationform.h"
 #include "removeredundantform.h"
 
+#include "savetimetableconfirmationform.h"
+
 #include "lockunlock.h"
 #include "advancedlockunlockform.h"
 
-#include <QMessageBox>
-
 #include "longtextmessagebox.h"
+
+#include <QMessageBox>
 
 #include <QFileDialog>
 #include <QString>
 #include <QDir>
-
 #include <QTranslator>
-
 #include <QCloseEvent>
-
 #include <QStatusBar>
-
 #include <QMap>
-
 #include <QWidget>
-
 #include <QList>
 
 #include <QDesktopServices>
 #include <QUrl>
-
 #include <QApplication>
-
-//#include <QCursor>
-
 #include <QMenu>
 #include <QCursor>
+#include <QSettings>
+
+#include <QFileInfo>
+#include <QFile>
+
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+
+#include <QRegExp>
+
+//for the icons of not perfect constraints
+#include <QIcon>
 
 #include <QRect>
+
 QRect mainFormSettingsRect;
 int MAIN_FORM_SHORTCUTS_TAB_POSITION;
-
-#include "httpget.h"
 
 #include "spreadmindaysconstraintsfivedaysform.h"
 
@@ -240,19 +247,15 @@ QString conflictsStringTitle;
 
 extern QApplication* pqapplication;
 
-#include <QSettings>
-
-//for the icons of not perfect constraints
-#include <QIcon>
-
-//static HttpGet getter;
-
 Rules rules2;
 
-static int ORIGINAL_WIDTH, ORIGINAL_HEIGHT;
+static int ORIGINAL_WIDTH;
+static int ORIGINAL_HEIGHT;
+//static int ORIGINAL_X;
+//static int ORIGINAL_Y;
 
-const QString COMPANY="fet";
-const QString PROGRAM="fettimetabling";
+const QString COMPANY=QString("fet");
+const QString PROGRAM=QString("fettimetabling");
 
 bool USE_GUI_COLORS=false;
 
@@ -271,6 +274,7 @@ bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
 bool CONFIRM_ACTIVITY_PLANNING=true;
 bool CONFIRM_SPREAD_ACTIVITIES=true;
 bool CONFIRM_REMOVE_REDUNDANT=true;
+bool CONFIRM_SAVE_TIMETABLE=true;
 
 extern int XX;
 extern int YY;
@@ -278,15 +282,14 @@ extern const int MM;
 
 const int STATUS_BAR_MILLISECONDS=2500;
 
-
-RandomSeedDialog::RandomSeedDialog()
+RandomSeedDialog::RandomSeedDialog(QWidget* parent): QDialog(parent)
 {
 	setWindowTitle(tr("Random seed"));
 
 	labelX=new QLabel(tr("Random seed X component:", "Means the X component of the random seed (random seed has 2 components, X and Y)"));
-	lineEditX=new QLineEdit(QString::number(XX));
+	lineEditX=new QLineEdit(CustomFETString::number(XX));
 	labelY=new QLabel(tr("Random seed Y component:", "Means the Y component of the random seed (random seed has 2 components, X and Y)"));
-	lineEditY=new QLineEdit(QString::number(YY));
+	lineEditY=new QLineEdit(CustomFETString::number(YY));
 	okPB=new QPushButton(tr("OK"));
 	okPB->setDefault(true);
 	helpPB=new QPushButton(tr("Help"));
@@ -327,13 +330,15 @@ RandomSeedDialog::RandomSeedDialog()
 		w=370;
 	if(h<220)
 		h=220;
-	this->setGeometry(0, 0, w, h);
+	this->resize(w, h);
 	
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 }
 
 RandomSeedDialog::~RandomSeedDialog()
 {
+	saveFETDialogGeometry(this);
 }
 
 void RandomSeedDialog::help()
@@ -388,16 +393,36 @@ void RandomSeedDialog::ok()
 	accept();
 }
 
-
 FetMainForm::FetMainForm()
 {
 	setupUi(this);
+
+	QSettings settings(COMPANY, PROGRAM);
+	int nRec=settings.value(QString("FetMainForm/number-of-recent-files"), 0).toInt();
+	if(nRec>MAX_RECENT_FILES)
+		nRec=MAX_RECENT_FILES;
+	recentFiles.clear();
+	for(int i=0; i<nRec; i++)
+		if(settings.contains(QString("FetMainForm/recent-file/")+CustomFETString::number(i+1)))
+			recentFiles.append(settings.value(QString("FetMainForm/recent-file/")+CustomFETString::number(i+1)).toString());
+	
+	recentSeparatorAction=fileOpenRecentMenu->insertSeparator(fileClearRecentFilesListAction);
+	for(int i=0; i<MAX_RECENT_FILES; i++){
+		recentFileActions[i]=new QAction(this);
+		recentFileActions[i]->setVisible(false);
+		connect(recentFileActions[i], SIGNAL(triggered()), this, SLOT(openRecentFile()));
+		
+		fileOpenRecentMenu->insertAction(recentSeparatorAction, recentFileActions[i]);
+	}
+	
+	updateRecentFileActions();
 	
 	//statusBar()->showMessage(tr("FET started", "This is a message written in the status bar, saying that FET was started"), STATUS_BAR_MILLISECONDS);
 	statusBar()->showMessage("", STATUS_BAR_MILLISECONDS); //to get the correct centralWidget for the logo, so we need status bar existing.
-
-	setWindowTitle(tr("FET - %1", "The title of the main window, %1 is the name of the current file").arg("untitled"));
 	
+	INPUT_FILENAME_XML=QString("");
+	setCurrentFile(INPUT_FILENAME_XML);
+
 	//toolBox->setCurrentIndex(0);
 	tabWidget->setVisible(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
 	tabWidget->setCurrentIndex(MAIN_FORM_SHORTCUTS_TAB_POSITION);
@@ -423,37 +448,24 @@ FetMainForm::FetMainForm()
 	shortcutDataAdvancedMenu->addAction(dataTeachersStatisticsAction);
 	shortcutDataAdvancedMenu->addAction(dataSubjectsStatisticsAction);
 	shortcutDataAdvancedMenu->addAction(dataStudentsStatisticsAction);
-	//shortcutDataAdvancedMenu->addSeparator();
-	//shortcutDataAdvancedMenu->addAction(statisticsExportToDiskAction);
+	shortcutDataAdvancedMenu->addSeparator();
+	shortcutDataAdvancedMenu->addAction(dataActivitiesRoomsStatisticsAction);
 	
 	ORIGINAL_WIDTH=width();
 	ORIGINAL_HEIGHT=height();
+	//ORIGINAL_X=x();
+	//ORIGINAL_Y=y();
 	
-	/*
-	QSettings newSettings(COMPANY, PROGRAM);
-	QRect rect=newSettings.value("main-form-geometry", QRect(0,0,0,0)).toRect();
-	if(!rect.isValid())
-		rect=newSettings.value("fetmainformgeometry", QRect(0,0,0,0)).toRect();
-	
-	if(!rect.isValid()){
-		centerWidgetOnScreen(this);
-	}
-	else{
-		this->setWindowFlags(this->windowFlags() | Qt::WindowMinMaxButtonsHint);
-		
-		resize(rect.size());
-		move(rect.topLeft());
-		cout<<"read rect.x()=="<<rect.x()<<", rect.y()=="<<rect.y()<<endl;
-	}*/
 	QRect rect=mainFormSettingsRect;
 	if(!rect.isValid()){
-		centerWidgetOnScreen(this);
+		forceCenterWidgetOnScreen(this);
 	}
 	else{
-		this->setWindowFlags(this->windowFlags() | Qt::WindowMinMaxButtonsHint);
+		//this->setWindowFlags(this->windowFlags() | Qt::CustomizeWindowHint | Qt::WindowCloseButtonHint | Qt::WindowMinMaxButtonsHint);
 		
-		resize(rect.size());
-		move(rect.topLeft());
+		/*resize(rect.size());
+		move(rect.topLeft());*/
+		this->setGeometry(rect);
 	}
 
 	//new data
@@ -461,16 +473,19 @@ FetMainForm::FetMainForm()
 		gt.rules.kill();
 	gt.rules.init();
 
+	gt.rules.modified=true; //to avoid flicker of the main form modified flag
+
 	bool tmp=gt.rules.addTimeConstraint(new ConstraintBasicCompulsoryTime(100));
 	assert(tmp);
 	tmp=gt.rules.addSpaceConstraint(new ConstraintBasicCompulsorySpace(100));
 	assert(tmp);
 
+	gt.rules.modified=true; //force update of the modified flag of the main window
+	setRulesUnmodifiedAndOtherThings(&gt.rules);
+
 	students_schedule_ready=false;
 	teachers_schedule_ready=false;
 	rooms_schedule_ready=false;
-	
-	//languageMenu->setCheckable(true);
 	
 	settingsShowShortcutsOnMainWindowAction->setCheckable(true);
 	settingsShowShortcutsOnMainWindowAction->setChecked(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
@@ -490,24 +505,21 @@ FetMainForm::FetMainForm()
 	
 	settingsConfirmRemoveRedundantAction->setCheckable(true);
 	settingsConfirmRemoveRedundantAction->setChecked(CONFIRM_REMOVE_REDUNDANT);
+	
+	settingsConfirmSaveTimetableAction->setCheckable(true);
+	settingsConfirmSaveTimetableAction->setChecked(CONFIRM_SAVE_TIMETABLE);
 	///////
 	
 	timetablesDivideByDaysAction->setCheckable(true);
 	timetablesDivideByDaysAction->setChecked(DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS);
 	
-	QObject::connect(&getter, SIGNAL(done(bool)), this, SLOT(httpDone(bool)));
-	
-	useGetter=false;
-	
 	if(checkForUpdates){
-		useGetter=true;
-		bool t=getter.getFile(QUrl("http://lalescu.ro/liviu/fet/crtversion/crtversion.txt"));
-		if(!t){
-			QMessageBox::critical(this, tr("FET information"), tr("Critical error - cannot check for updates"
-			 " because of a bug in application. FET will now continue operation, but you should"
-			 " visit the FET page to report this bug or to get the fixed version."));
-		}
-		//assert(t);
+		networkManager=new QNetworkAccessManager(this);
+		connect(networkManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
+		QUrl url("http://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
+		cout<<"New version checking host: "<<qPrintable(url.host())<<endl;
+		cout<<"New version checking path: "<<qPrintable(url.path())<<endl;
+		networkManager->get(QNetworkRequest(url));
 	}
 	
 	settingsPrintNotAvailableSlotsAction->setCheckable(true);
@@ -606,6 +618,11 @@ void FetMainForm::on_settingsConfirmRemoveRedundantAction_toggled()
 {
 	CONFIRM_REMOVE_REDUNDANT=settingsConfirmRemoveRedundantAction->isChecked();
 }
+
+void FetMainForm::on_settingsConfirmSaveTimetableAction_toggled()
+{
+	CONFIRM_SAVE_TIMETABLE=settingsConfirmSaveTimetableAction->isChecked();
+}
 /////////
 
 void FetMainForm::on_settingsShowShortcutsOnMainWindowAction_toggled()
@@ -619,47 +636,68 @@ void FetMainForm::on_timetablesDivideByDaysAction_toggled()
 	DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS=timetablesDivideByDaysAction->isChecked();
 }
 
-void FetMainForm::httpDone(bool error)
+void FetMainForm::replyFinished(QNetworkReply* networkReply)
 {
-	if(error){
-		QMessageBox::warning(this, tr("FET warning"), tr(
-		 "Could not search for possible updates on internet - error message is: %1. "
-		 "Searching for file %2. "
-		 "Maybe the current structure on web page was changed. Please visit FET homepage: %3"
-		 " and get latest version or,"
-		 " if the web page does not work, try to search for the new FET page on the internet."
-		 " Maybe the page has some temporary problems, so try again later.")
-		  .arg(getter.http.errorString()).arg("http://lalescu.ro/liviu/fet/crtversion/crtversion.txt").arg("http://lalescu.ro/liviu/fet/"));
-		 //+"\n\n"+tr("You can choose to disable automatic search for updates in the Settings menu."));
+	if(networkReply->error()!=QNetworkReply::NoError){
+		QString s=QString("");
+		s+=tr("Could not search for possible updates on Internet - error message is: %1.").arg(networkReply->errorString());
+		s+=QString("\n\n");
+		s+=tr("Searching for file %1.").arg("http://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
+		s+=QString("\n\n");
+		s+=tr("Possible actions: check your network connection, try again later, try to visit FET homepage: %1, or"
+		 " try to search for the new FET page on the Internet (maybe it has changed).").arg("http://lalescu.ro/liviu/fet/");
+
+		QMessageBox::warning(this, tr("FET warning"), s);
 	}
 	else{
-		QString s;
-		for(int c=0; c<internetVersion.count(); c++){
-			s+=internetVersion[c];
-			if((c+1)%64==0)
-				s+=" ";
+		QString internetVersion;
+		QString additionalComments;
+		
+		QRegExp regExp("^\\s*(\\S+)(.*)$");
+		int t=regExp.indexIn(QString(networkReply->readAll()));
+		if(t!=0){
+			QString s=QString("");
+			s+=tr("The file %1 from the FET homepage, indicating the current FET version, is incorrect.").arg("http://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
+			s+=QString("\n\n");
+			s+=tr("Maybe the FET homepage has some temporary problems, so try again later."
+			 " Or maybe the current structure on FET homepage was changed. You may visit FET homepage: %1, and get latest version or,"
+			 " if it does not work, try to search for the new FET page on the Internet (maybe it has changed).")
+			  .arg("http://lalescu.ro/liviu/fet/");
+
+			QMessageBox::warning(this, tr("FET warning"), s);
 		}
+		else{
+			internetVersion=regExp.cap(1);
+			additionalComments=regExp.cap(2).trimmed();
 	
-		if(internetVersion!=FET_VERSION){
-			QMessageBox::StandardButton button=QMessageBox::information(this, tr("FET information"),
-			 tr("Another version: %1, is available on the FET homepage: %2", "%1 is new version, %2 is FET homepage").arg(s).arg("http://lalescu.ro/liviu/fet/")
-			  +"\n\n"
-			 +tr("You have to manually download and install.")+" "+
-			 tr("You may need to hit Refresh in your web browser.")+"\n\n"+
-			 tr("Would you like to open the FET homepage now?"),
-			 QMessageBox::Yes|QMessageBox::No
-			 );
-			 //+"\n\n"+tr("You can choose to disable automatic search for updates from the Settings menu."));
-			 
-			if(button==QMessageBox::Yes){
-				bool tds=QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/"));
-				if(!tds){
-					QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default internet browser (trying to open the link %1)."
-						" Maybe you can try to manually start your browser and open this link.").arg("http://lalescu.ro/liviu/fet/"));
+			cout<<"Your current version: '";
+			cout<<qPrintable(FET_VERSION)<<"'"<<endl;
+			cout<<"Latest version: '";
+			cout<<qPrintable(internetVersion)<<"'"<<endl;
+	
+			if(internetVersion!=FET_VERSION){
+				QString s=tr("Another version: %1, is available on the FET homepage: %2", "%1 is new version, %2 is FET homepage").arg(internetVersion).arg("http://lalescu.ro/liviu/fet/");
+				s+=QString("\n\n");
+				s+=("You have to manually download and install.")+QString(" ")+tr("You may need to hit Refresh in your web browser.")+QString("\n\n")+tr("Would you like to open the FET homepage now?");
+				if(!additionalComments.isEmpty()){
+					s+=QString("\n\n");
+					s+=tr("Additional comments: %1").arg(additionalComments);
+				}
+			
+				QMessageBox::StandardButton button=QMessageBox::information(this, tr("FET information"), s, QMessageBox::Yes|QMessageBox::No);
+				
+				if(button==QMessageBox::Yes){
+					bool tds=QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/"));
+					if(!tds){
+						QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default Internet browser (trying to open the link %1)."
+							" Maybe you can try to manually start your browser and open this link.").arg("http://lalescu.ro/liviu/fet/"));
+					}
 				}
 			}
 		}
 	}
+
+	networkReply->deleteLater();
 }
 
 void FetMainForm::closeOtherWindows()
@@ -673,45 +711,49 @@ void FetMainForm::closeOtherWindows()
 
 void FetMainForm::closeEvent(QCloseEvent* event)
 {
-	/*QSettings settings(COMPANY, PROGRAM);
-	QRect rect(x(), y(), width(), height());
-	settings.setValue("main-form-geometry", rect);
-	cout<<"wrote x()=="<<x()<<", y()=="<<y()<<endl;*/
-	QRect rect(x(), y(), width(), height());
+	//QRect rect(x(), y(), width(), height());
+	QRect rect=this->geometry();
 	mainFormSettingsRect=rect;
 	
 	MAIN_FORM_SHORTCUTS_TAB_POSITION=tabWidget->currentIndex();
-
 	
-	int res=QMessageBox::question( this, tr("FET - exiting"),
-	 tr("File might have been changed - do you want to save it?"),
-	 tr("&Yes"), tr("&No"), tr("&Cancel"), 0 , 2 );
+	if(gt.rules.modified){
+		QMessageBox::StandardButton res=QMessageBox::question( this, tr("FET - exiting"),
+		 tr("Your data file has been modified - do you want to save it?"), QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel);
 
-	if(res==0){
-		bool t=this->fileSave();
-		if(!t){
-			event->ignore();
+		if(res==QMessageBox::Yes){
+			bool t=this->fileSave();
+			if(!t){
+				event->ignore();
+			}
+			else{
+				closeOtherWindows();
+				event->accept();
+			}
 		}
-		else{
+		else if(res==QMessageBox::No){
 			closeOtherWindows();
 			event->accept();
 		}
-	}
-	else if(res==1){
-		closeOtherWindows();
-		event->accept();
+		else{
+			assert(res==QMessageBox::Cancel);
+			event->ignore();
+		}
 	}
 	else{
-		assert(res==2);
-		event->ignore();
+		closeOtherWindows();
+		event->accept();
 	}
 }
 
 FetMainForm::~FetMainForm()
 {
-	if(useGetter)
-		getter.http.abort();
-		
+	QSettings settings(COMPANY, PROGRAM);
+	settings.setValue(QString("FetMainForm/number-of-recent-files"), recentFiles.count());
+	settings.remove(QString("FetMainForm/recent-file"));
+	for(int i=0; i<recentFiles.count(); i++)
+		settings.setValue(QString("FetMainForm/recent-file/")+CustomFETString::number(i+1), recentFiles.at(i));
+
 	shortcutBasicMenu->clear();
 	delete shortcutBasicMenu;
 
@@ -736,6 +778,68 @@ void FetMainForm::on_fileExitAction_activated()
 	close();
 }
 
+QString FetMainForm::strippedName(const QString& fullFileName)
+{
+	return QFileInfo(fullFileName).fileName();
+}
+
+void FetMainForm::setCurrentFile(const QString& fileName)
+{
+	QString currentFile=fileName;
+	QString shownName=QString("Untitled");
+	
+	if(!currentFile.isEmpty()){
+		shownName=strippedName(currentFile);
+		recentFiles.removeAll(currentFile);
+		recentFiles.prepend(currentFile);
+		if(recentFiles.count()>MAX_RECENT_FILES){
+			assert(recentFiles.count()==MAX_RECENT_FILES+1);
+			assert(!recentFiles.isEmpty());
+			recentFiles.removeLast();
+		}
+		updateRecentFileActions();
+	}
+	
+	setWindowTitle(tr("%1[*] - FET", "The title of the main window, %1 is the name of the current file. "
+	 "Please keep the string [*] unmodified (three characters) - it is used to make the difference between modified files and unmodified files.")
+	 .arg(shownName));
+}
+
+void FetMainForm::updateRecentFileActions()
+{
+	QMutableStringListIterator i(recentFiles);
+	while(i.hasNext()){
+		if(!QFile::exists(i.next()))
+			i.remove();
+	}
+	
+	for(int j=0; j<MAX_RECENT_FILES; j++){
+		if(j<recentFiles.count()){
+			QString text=strippedName(recentFiles[j]);
+			recentFileActions[j]->setText(text);
+			recentFileActions[j]->setData(recentFiles[j]);
+			recentFileActions[j]->setVisible(true);
+		}
+		else{
+			recentFileActions[j]->setVisible(false);
+		}
+	}
+	
+	recentSeparatorAction->setVisible(!recentFiles.isEmpty());
+}
+
+void FetMainForm::on_fileClearRecentFilesListAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	recentFiles.clear();
+	updateRecentFileActions();
+}
+
 void FetMainForm::on_fileNewAction_activated()
 {
 	if(simulation_running){
@@ -745,30 +849,45 @@ void FetMainForm::on_fileNewAction_activated()
 	}
 
 	int confirm=0;
-	switch( QMessageBox::information( this, tr("FET application"),
-	 tr("Are you sure you want to load new data (rules) ?"),
-	 tr("&Yes"), tr("&No"), 0 , 1 ) ) {
-	case 0: // Yes
-		confirm=1;
-		break;
-	case 1: // No
-		confirm=0;
-		break;
-	}
-
-	if(confirm){
-		INPUT_FILENAME_XML="";
 	
-		setWindowTitle(tr("FET - %1", "The title of the main window, %1 is the name of the current file").arg("untitled"));
-
+	if(gt.rules.modified){
+		switch( QMessageBox::question(
+		 this,
+		 tr("FET application"),
+		 tr("Your current data file has been modified. Are you sure you want to reset to new empty data?"),
+		 QMessageBox::Yes|QMessageBox::No
+		 ) ){
+		case QMessageBox::Yes: // Yes
+			confirm=1;
+			break;
+		case QMessageBox::No: // No
+			confirm=0;
+			break;
+		default:
+			assert(0);
+			break;
+		}
+	}
+	else
+		confirm=1;
+	
+	if(confirm){
+		INPUT_FILENAME_XML=QString("");
+		setCurrentFile(INPUT_FILENAME_XML);
+	
 		if(gt.rules.initialized)
 			gt.rules.kill();
 		gt.rules.init();
+		
+		gt.rules.modified=true; //to avoid flicker of the main form modified flag
 
 		bool tmp=gt.rules.addTimeConstraint(new ConstraintBasicCompulsoryTime(100));
 		assert(tmp);
 		tmp=gt.rules.addSpaceConstraint(new ConstraintBasicCompulsorySpace(100));
 		assert(tmp);
+		
+		gt.rules.modified=true; //force update of the modified flag of the main window
+		setRulesUnmodifiedAndOtherThings(&gt.rules);
 
 		students_schedule_ready=false;
 		teachers_schedule_ready=false;
@@ -781,7 +900,19 @@ void FetMainForm::on_fileNewAction_activated()
 	}
 }
 
+void FetMainForm::openRecentFile()
+{
+	QAction* action=qobject_cast<QAction*>(sender());
+	if(action)
+		openFile(action->data().toString());
+}
+
 void FetMainForm::on_fileOpenAction_activated()
+{
+	openFile(QString());
+}
+
+void FetMainForm::openFile(const QString& fileName)
 {
 	if(simulation_running){
 		QMessageBox::information(this, tr("FET information"),
@@ -789,21 +920,43 @@ void FetMainForm::on_fileOpenAction_activated()
 		return;
 	}
 
-	int confirm=1;
-
+	int confirm=0;
+	
+	if(gt.rules.modified){
+		switch( QMessageBox::question(
+		 this,
+		 tr("FET application"),
+		 tr("Your current data file has been modified. Are you sure you want to open another data file?"),
+		 QMessageBox::Yes|QMessageBox::No
+		 ) ){
+		case QMessageBox::Yes: // Yes
+			confirm=1;
+			break;
+		case QMessageBox::No: // No
+			confirm=0;
+			break;
+		default:
+			assert(0);
+			break;
+		}
+	}
+	else
+		confirm=1;
+	
 	if(confirm){
-		QString s = QFileDialog::getOpenFileName(this, tr("Choose a file to open"),
-			WORKING_DIRECTORY, 
-			tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
-			"So this field means files in the FET XML format")+" (*.fet)"+";;"+tr("All files")+" (*)");
-			/*tr("FET xml files (*.fet)\nAll files (*)",
-			"Instructions for translators, IMPORTANT: There are 2 file filters, on "
-			"2 separate lines, so make sure you have a 'new line' character after the first filter "
-			"(follow the source text format). Please keep the string *.fet unmodified, with lowercase letters."));*/
-		if(s.isNull())
-			return;
+		QString s=fileName;
+		
+		if(s.isNull()){
+			s = QFileDialog::getOpenFileName(this, tr("Choose a file to open"),
+			 WORKING_DIRECTORY, 
+			 tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
+			 "So this field means files in the FET XML format")+" (*.fet)"+";;"+tr("All files")+" (*)");
 
-		int tmp2=s.findRev("/");
+			if(s.isNull())
+				return;
+		}
+
+		int tmp2=s.lastIndexOf(FILE_SEP);
 		QString s2=s.right(s.length()-tmp2-1);
 			
 		if(s2.indexOf("\"") >= 0){
@@ -834,7 +987,10 @@ void FetMainForm::on_fileOpenAction_activated()
 			statusBar()->showMessage(tr("Loading...", "This is a message in the status bar, that we are loading the file"), 0);
 			pqapplication->processEvents();
 		
-			if(gt.rules.read(s)){
+			bool before=gt.rules.modified;
+			gt.rules.modified=true; //to avoid flicker of the main form modified flag
+
+			if(gt.rules.read(this, s)){
 				students_schedule_ready=false;
 				teachers_schedule_ready=false;
 				rooms_schedule_ready=false;
@@ -845,42 +1001,42 @@ void FetMainForm::on_fileOpenAction_activated()
 				LockUnlock::increaseCommunicationSpinBox();
 
 				statusBar()->showMessage(tr("File opened"), STATUS_BAR_MILLISECONDS);
+				
+				gt.rules.modified=true; //force update of the modified flag of the main window
+				setRulesUnmodifiedAndOtherThings(&gt.rules);
+				
+				setCurrentFile(INPUT_FILENAME_XML);
 			}
 			else{
+				gt.rules.modified=before;
+			
 				statusBar()->showMessage("", STATUS_BAR_MILLISECONDS);
 
-				QMessageBox::information(this, tr("FET information"), tr("Invalid file"), tr("&OK"));
+				QMessageBox::information(this, tr("FET information"), tr("Invalid file"));
 			}
-
+			
 			//this->setCursor(orig);
 		}
 		//get the directory
-		int tmp=s.findRev("/");
+		int tmp=s.lastIndexOf(FILE_SEP);
 		WORKING_DIRECTORY=s.left(tmp);
-		
-		if(INPUT_FILENAME_XML!="")
-			setWindowTitle(tr("FET - %1", "The title of the main window, %1 is the name of the current file").arg(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev("/")-1)));
 	}
 }
 
 bool FetMainForm::fileSaveAs()
 {
 	QString predefFileName=INPUT_FILENAME_XML;
-	if(predefFileName=="")
-		predefFileName=WORKING_DIRECTORY+FILE_SEP+"untitled.fet";
+	if(predefFileName.isEmpty())
+		predefFileName=WORKING_DIRECTORY+FILE_SEP+QString("untitled.fet");
 
 	QString s = QFileDialog::getSaveFileName(this, tr("Choose a filename to save under"),
 		predefFileName, tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
 		"So this field means files in the FET XML format")+" (*.fet)"+";;"+tr("All files")+" (*)",
-			/*tr("FET xml files (*.fet)\nAll files (*)",
-			"Instructions for translators, IMPORTANT: There are 2 file filters, on "
-			"2 separate lines, so make sure you have a 'new line' character after the first filter "
-			"(follow the source text format). Please keep the string *.fet unmodified, with lowercase letters."),*/
 		0, QFileDialog::DontConfirmOverwrite);
-	if(s==QString::null)
+	if(s==QString())
 		return false;
 
-	int tmp2=s.findRev("/");
+	int tmp2=s.lastIndexOf(FILE_SEP);
 	QString s2=s.right(s.length()-tmp2-1);
 			
 	if(s2.indexOf("\"") >= 0){
@@ -895,28 +1051,26 @@ bool FetMainForm::fileSaveAs()
 		QMessageBox::warning(this, tr("FET information"), tr("Please do not use # in filename, the html css code does not work"));
 		return false;
 	}
-	/*if(s2.indexOf("(") >= 0 || s2.indexOf(")")>=0){
-		QMessageBox::information(this, tr("FET information"), tr("Please do not use parentheses () in filename, the html css code does not work"));
-		return false;
-	}*/
-		
+	
 	if(s.right(4)!=".fet")
 		s+=".fet";
 
-	int tmp=s.findRev("/");
+	int tmp=s.lastIndexOf(FILE_SEP);
 	WORKING_DIRECTORY=s.left(tmp);
 
 	if(QFile::exists(s))
 		if(QMessageBox::warning( this, tr("FET"),
-		 tr("File %1 exists - are you sure you want to overwrite existing file?").arg(s),
-		 tr("&Yes"), tr("&No"), 0 , 1 ) == 1)
+		 tr("File %1 exists - are you sure you want to overwrite it?").arg(s),
+		 QMessageBox::Yes|QMessageBox::No) == QMessageBox::No)
 		 	return false;
 			
 	INPUT_FILENAME_XML = s;
+	gt.rules.write(this, INPUT_FILENAME_XML);
 	
-	setWindowTitle(tr("FET - %1", "The title of the main window, %1 is the name of the current file").arg(s.right(s.length()-tmp-1)));
+	gt.rules.modified=true; //force update of the modified flag of the main window
+	setRulesUnmodifiedAndOtherThings(&gt.rules);
 	
-	gt.rules.write(INPUT_FILENAME_XML);
+	setCurrentFile(INPUT_FILENAME_XML);
 	
 	statusBar()->showMessage(tr("File saved"), STATUS_BAR_MILLISECONDS);
 	
@@ -935,7 +1089,7 @@ void FetMainForm::on_fileImportCSVRoomsBuildingsAction_activated(){
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
-	Import::importCSVRoomsAndBuildings();
+	Import::importCSVRoomsAndBuildings(this);
 }
 
 void FetMainForm::on_fileImportCSVSubjectsAction_activated(){
@@ -944,7 +1098,7 @@ void FetMainForm::on_fileImportCSVSubjectsAction_activated(){
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
-	Import::importCSVSubjects();
+	Import::importCSVSubjects(this);
 }
 
 void FetMainForm::on_fileImportCSVTeachersAction_activated(){
@@ -953,7 +1107,7 @@ void FetMainForm::on_fileImportCSVTeachersAction_activated(){
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
-	Import::importCSVTeachers();
+	Import::importCSVTeachers(this);
 }
 
 void FetMainForm::on_fileImportCSVActivitiesAction_activated(){
@@ -962,7 +1116,7 @@ void FetMainForm::on_fileImportCSVActivitiesAction_activated(){
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
-	Import::importCSVActivities();
+	Import::importCSVActivities(this);
 
 	//TODO: if the import takes care of locked activities, then we need
 	//to do:
@@ -977,7 +1131,7 @@ void FetMainForm::on_fileImportCSVActivityTagsAction_activated(){
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
-	Import::importCSVActivityTags();
+	Import::importCSVActivityTags(this);
 }
 
 void FetMainForm::on_fileImportCSVYearsGroupsSubgroupsAction_activated(){
@@ -986,7 +1140,7 @@ void FetMainForm::on_fileImportCSVYearsGroupsSubgroupsAction_activated(){
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
-	Import::importCSVStudents();
+	Import::importCSVStudents(this);
 }
 
 void FetMainForm::on_fileExportCSVAction_activated(){
@@ -995,7 +1149,7 @@ void FetMainForm::on_fileExportCSVAction_activated(){
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
-	Export::exportCSV();
+	Export::exportCSV(this);
 }
 // End of code contributed by Volker Dirr
 
@@ -1003,7 +1157,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_activated()
 {
 	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
 		QMessageBox::warning(this, tr("FET - Warning"), tr("You have not yet generated a timetable - please generate firstly"));
-		return;	
+		return;
 	}
 
 	Solution* tc=&best_solution;
@@ -1027,266 +1181,229 @@ void FetMainForm::on_timetableSaveTimetableAsAction_activated()
 		}
 	}
 
-	QString t=tr("Please read this important information before proceeding:");
-	
-	t+="\n\n";
-	
-	t+=tr("This option is only useful if you need to lock current timetable into a file."
-		" Locking means that there will be added constraints activity preferred starting time and"
-		" activity preferred room with 100% importance for each activity to fix it at current place in current timetable."
-		" You can save this timetable as an ordinary .fet file; when you'll open it, you'll see all old inputted data (activities, teachers, etc.)" 
-		" and the locking constraints as the last time/space constraints."
-		" You can unlock some of these activities (by removing constraints) if small changes appear in the configuration, and generate again"
-		" and the remaining locking constraints will be respected.");
+	bool ok_to_continue;
+	SaveTimetableConfirmationForm* pc_form=NULL;
+	if(CONFIRM_SAVE_TIMETABLE){
+		int confirm;
 		
-	t+="\n\n";
-	
-	//t+=tr("NEW, 25 December 2008:");
-	//t+=" ";
-	t+=tr("The added constraints will have the 'permanently locked' tag set to false, so you can also unlock the activities from the "
-		"'Timetable' menu, without interfering with the initial constraints which are made by you 'permanently locked'");
-	t+="\n\n";
-	
-	t+=tr("This option is useful for institutions where you obtain a timetable, then some small changes appear,"
-		" and you need to regenerate timetable, but respecting in a large proportion the old timetable");
-
-	t+="\n\n";
-	
-	t+=tr("Current data file will not be affected by anything, locking constraints will only be added to the file you select to save"
-		" (you can save current datafile and open saved timetable file after that to check it)");
+		pc_form=new SaveTimetableConfirmationForm(this);
+		setParentAndOtherThings(pc_form, this);
+		confirm=pc_form->exec();
 		
-	//t+="\n\n";
-	
-	//t+=tr("If you need more information, contact author or mailing list");
-
-	//QMessageBox::information(this, tr("FET - information about saving a timetable as"), t);
-	LongTextMessageBox::largeInformation(this, tr("FET - information about saving a timetable as"), t);
-	
-	QString s;
-
-	for(;;){
-		s = QFileDialog::getSaveFileName(this, tr("Choose a filename to save under" ), 
-			INPUT_FILENAME_XML, tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
-			"So this field means files in the FET XML format")+" (*.fet)"+";;"+tr("All files")+" (*)",
-			/*tr("FET xml files (*.fet)\nAll files (*)",
-			"Instructions for translators, IMPORTANT: There are 2 file filters, on "
-			"2 separate lines, so make sure you have a 'new line' character after the first filter "
-			"(follow the source text format). Please keep the string *.fet unmodified, with lowercase letters."),*/
-			0, QFileDialog::DontConfirmOverwrite);
-		if(s==QString::null)
-			return;
-
-		int tmp2=s.findRev("/");
-		QString s2=s.right(s.length()-tmp2-1);
+		if(confirm==QDialog::Accepted){
+			if(pc_form->dontShowAgain)
+				settingsConfirmSaveTimetableAction->setChecked(false);
 			
-		if(s2.indexOf("\"") >= 0){
-			QMessageBox::warning(this, tr("FET information"), tr("Please do not use quotation marks \" in filename, the html css code does not work"));
-			return;
-		}
-		if(s2.indexOf(";") >= 0){
-			QMessageBox::warning(this, tr("FET information"), tr("Please do not use semicolon ; in filename, the html css code does not work"));
-			return;
-		}
-		if(s2.indexOf("#") >= 0){
-			QMessageBox::warning(this, tr("FET information"), tr("Please do not use # in filename, the html css code does not work"));
-			return;
-		}
-		/*if(s2.indexOf("(") >= 0 || s2.indexOf(")")>=0){
-			QMessageBox::information(this, tr("FET information"), tr("Please do not use parentheses () in filename, the html css code does not work"));
-			return;
-		}*/
-			
-		if(s.right(4)!=".fet")
-			s+=".fet";
-
-		int tmp=s.findRev("/");
-		WORKING_DIRECTORY=s.left(tmp);
-
-		if(QFile::exists(s)){
-			t=tr("File exists");
-			t+="\n\n";
-			t+=tr("For safety (so you don't lose work), it is not allowed to overwrite an existing file with"
-				" locking and saving a current data+timetable");
-			t+="\n\n";
-			t+=tr("Please choose a non-existing name");
-	
-			QMessageBox::warning( this, tr("FET warning"), t);
+			ok_to_continue=true;
 		}
 		else
-			break;
+			ok_to_continue=false;
 	}
+	else
+		ok_to_continue=true;
+		
+	if(ok_to_continue){
+		QWidget* parent=pc_form;
+		if(parent==NULL)
+			parent=this;
+
+		QString s;
+
+		for(;;){
+			s = QFileDialog::getSaveFileName(parent, tr("Choose a filename for data and timetable"),
+				INPUT_FILENAME_XML, tr("FET XML files", "Instructions for translators: FET XML is a type of file format (using text mode). "
+				"So this field means files in the FET XML format")+" (*.fet)"+";;"+tr("All files")+" (*)",
+				0, QFileDialog::DontConfirmOverwrite);
+			if(s==QString())
+				return;
+
+			int tmp2=s.lastIndexOf(FILE_SEP);
+			QString s2=s.right(s.length()-tmp2-1);
+				
+			if(s2.indexOf("\"") >= 0){
+				QMessageBox::warning(parent, tr("FET information"), tr("Please do not use quotation marks \" in filename, the html css code does not work"));
+				return;
+			}
+			if(s2.indexOf(";") >= 0){
+				QMessageBox::warning(parent, tr("FET information"), tr("Please do not use semicolon ; in filename, the html css code does not work"));
+				return;
+			}
+			if(s2.indexOf("#") >= 0){
+				QMessageBox::warning(parent, tr("FET information"), tr("Please do not use # in filename, the html css code does not work"));
+				return;
+			}
 			
-	//INPUT_FILENAME_XML = s; - do NOT add this
-	
-	//setWindowTitle(tr("FET - %1").arg(s.right(s.length()-tmp-1)));
-	
-	rules2.initialized=true;
-	
-	rules2.institutionName=gt.rules.institutionName;
-	rules2.comments=gt.rules.comments;
-	
-	rules2.nHoursPerDay=gt.rules.nHoursPerDay;
-	for(int i=0; i<gt.rules.nHoursPerDay; i++)
-		rules2.hoursOfTheDay[i]=gt.rules.hoursOfTheDay[i];
+			if(s.right(4)!=".fet")
+				s+=".fet";
 
-	rules2.nDaysPerWeek=gt.rules.nDaysPerWeek;
-	for(int i=0; i<gt.rules.nDaysPerWeek; i++)
-		rules2.daysOfTheWeek[i]=gt.rules.daysOfTheWeek[i];
+			int tmp=s.lastIndexOf(FILE_SEP);
+			WORKING_DIRECTORY=s.left(tmp);
+
+			if(QFile::exists(s)){
+				QString t=tr("File exists");
+				t+="\n\n";
+				t+=tr("For safety (so you don't lose work), it is not allowed to overwrite an existing file with"
+					" locking and saving a current data+timetable");
+				t+="\n\n";
+				t+=tr("Please choose a non-existing name");
 		
-	rules2.yearsList=gt.rules.yearsList;
-	
-	rules2.teachersList=gt.rules.teachersList;
-	
-	rules2.subjectsList=gt.rules.subjectsList;
-	
-	rules2.activityTagsList=gt.rules.activityTagsList;
-
-	rules2.activitiesList=gt.rules.activitiesList;
-
-	rules2.buildingsList=gt.rules.buildingsList;
-
-	rules2.roomsList=gt.rules.roomsList;
-
-	rules2.timeConstraintsList=gt.rules.timeConstraintsList;
-	
-	rules2.spaceConstraintsList=gt.rules.spaceConstraintsList;
-
-
-	//add locking constraints
-	TimeConstraintsList lockTimeConstraintsList;
-	SpaceConstraintsList lockSpaceConstraintsList;
-
-
-
-	bool report=true;
-	
-	int addedTime=0, duplicatesTime=0;
-	int addedSpace=0, duplicatesSpace=0;
-
-	//lock selected activities
-	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
-		Activity* act=&gt.rules.internalActivitiesList[ai];
-		int time=tc->times[ai];
-		if(time>=0 && time<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay){
-			int hour=time/gt.rules.nDaysPerWeek;
-			int day=time%gt.rules.nDaysPerWeek;
-
-			ConstraintActivityPreferredStartingTime* ctr=new ConstraintActivityPreferredStartingTime(100.0, act->id, day, hour, false); //permanently locked is false
-			bool t=rules2.addTimeConstraint(ctr);
-						
-			if(t){
-				addedTime++;
-				lockTimeConstraintsList.append(ctr);
+				QMessageBox::warning( parent, tr("FET warning"), t);
 			}
 			else
-				duplicatesTime++;
+				break;
+		}
+			
+		rules2.initialized=true;
+		
+		rules2.institutionName=gt.rules.institutionName;
+		rules2.comments=gt.rules.comments;
+		
+		rules2.nHoursPerDay=gt.rules.nHoursPerDay;
+		for(int i=0; i<gt.rules.nHoursPerDay; i++)
+			rules2.hoursOfTheDay[i]=gt.rules.hoursOfTheDay[i];
 
-			QString s;
-						
-			if(t)
-				s=tr("Added the following constraint to saved file:")+"\n"+ctr->getDetailedDescription(gt.rules);
-			else{
-				s=tr("Constraint\n%1 NOT added to saved file - duplicate").arg(ctr->getDetailedDescription(gt.rules));
-				delete ctr;
+		rules2.nDaysPerWeek=gt.rules.nDaysPerWeek;
+		for(int i=0; i<gt.rules.nDaysPerWeek; i++)
+			rules2.daysOfTheWeek[i]=gt.rules.daysOfTheWeek[i];
+			
+		rules2.yearsList=gt.rules.yearsList;
+		
+		rules2.teachersList=gt.rules.teachersList;
+		
+		rules2.subjectsList=gt.rules.subjectsList;
+		
+		rules2.activityTagsList=gt.rules.activityTagsList;
+
+		rules2.activitiesList=gt.rules.activitiesList;
+
+		rules2.buildingsList=gt.rules.buildingsList;
+
+		rules2.roomsList=gt.rules.roomsList;
+
+		rules2.timeConstraintsList=gt.rules.timeConstraintsList;
+		
+		rules2.spaceConstraintsList=gt.rules.spaceConstraintsList;
+
+		//add locking constraints
+		TimeConstraintsList lockTimeConstraintsList;
+		SpaceConstraintsList lockSpaceConstraintsList;
+
+		//bool report=true;
+		
+		int addedTime=0, duplicatesTime=0;
+		int addedSpace=0, duplicatesSpace=0;
+		
+		QString constraintsString=QString("");
+
+		//lock selected activities
+		for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+			Activity* act=&gt.rules.internalActivitiesList[ai];
+			int time=tc->times[ai];
+			if(time>=0 && time<gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay){
+				int hour=time/gt.rules.nDaysPerWeek;
+				int day=time%gt.rules.nDaysPerWeek;
+
+				ConstraintActivityPreferredStartingTime* ctr=new ConstraintActivityPreferredStartingTime(100.0, act->id, day, hour, false); //permanently locked is false
+				bool t=rules2.addTimeConstraint(ctr);
+							
+				if(t){
+					addedTime++;
+					lockTimeConstraintsList.append(ctr);
+				}
+				else
+					duplicatesTime++;
+
+				QString s;
+
+				if(t)
+					s=tr("Added to the saved file:", "It refers to a constraint")+QString("\n")+ctr->getDetailedDescription(gt.rules);
+				else{
+					s=tr("NOT added to the saved file (already existing):", "It refers to a constraint")+QString("\n")+ctr->getDetailedDescription(gt.rules);
+					delete ctr;
+				}
+				
+				constraintsString+=QString("\n");
+				constraintsString+=s;
 			}
 						
-			if(report){
-				int k;
-				if(t)
-					k=QMessageBox::information(this, tr("FET information"), s,
-				 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
+			int ri=tc->rooms[ai];
+			if(ri!=UNALLOCATED_SPACE && ri!=UNSPECIFIED_ROOM && ri>=0 && ri<gt.rules.nInternalRooms){
+				ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, false); //false means not permanently locked
+				bool t=rules2.addSpaceConstraint(ctr);
+
+				QString s;
+							
+				if(t){
+					addedSpace++;
+					lockSpaceConstraintsList.append(ctr);
+				}
 				else
-					k=QMessageBox::warning(this, tr("FET warning"), s,
-				 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
-																			 				 	
-		 		if(k==0)
-					report=false;
+					duplicatesSpace++;
+
+				if(t)
+					s=tr("Added to the saved file:", "It refers to a constraint")+QString("\n")+ctr->getDetailedDescription(gt.rules);
+				else{
+					s=tr("NOT added to the saved file (already existing):", "It refers to a constraint")+QString("\n")+ctr->getDetailedDescription(gt.rules);
+					delete ctr;
+				}
+				
+				constraintsString+=QString("\n");
+				constraintsString+=s;
 			}
 		}
-					
-		int ri=tc->rooms[ai];
-		if(ri!=UNALLOCATED_SPACE && ri!=UNSPECIFIED_ROOM && ri>=0 && ri<gt.rules.nInternalRooms){
-			ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, false); //false means not permanently locked
-			bool t=rules2.addSpaceConstraint(ctr);
 
-			QString s;
-						
-			if(t){
-				addedSpace++;
-				lockSpaceConstraintsList.append(ctr);
-			}
-			else
-				duplicatesSpace++;
+		LongTextMessageBox::largeInformation(parent, tr("FET information"), tr("Added %1 locking time constraints and %2 locking space constraints to saved file,"
+		" ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space.").arg(addedTime).arg(addedSpace).arg(duplicatesTime).arg(duplicatesSpace)
+		+QString("\n\n")+tr("Detailed information about each locking constraint which was added or not (if already existing) to the saved file:")+QString("\n")+constraintsString
+		+QString("\n")+tr("Your current data file remained untouched (no locking constraints were added), so you can save it also, or generate different timetables."));
+			
+		bool result=rules2.write(parent, s);
+		
+		Q_UNUSED(result);
+		
+		while(!lockTimeConstraintsList.isEmpty())
+			delete lockTimeConstraintsList.takeFirst();
+		while(!lockSpaceConstraintsList.isEmpty())
+			delete lockSpaceConstraintsList.takeFirst();
 
-			if(t)
-				s=tr("Added the following constraint to saved file:")+"\n"+ctr->getDetailedDescription(gt.rules);
-			else{
-				s=tr("Constraint\n%1 NOT added to saved file - duplicate").arg(ctr->getDetailedDescription(gt.rules));
-				delete ctr;
-			}
-						
-			if(report){
-				int k;
-				if(t)
-					k=QMessageBox::information(this, tr("FET information"), s,
-				 	 tr("Skip information"), tr("See next"), QString(), 1, 0 );
-				else
-					k=QMessageBox::warning(this, tr("FET warning"), s,
-					 tr("Skip information"), tr("See next"), QString(), 1, 0 );
-																			 				 	
-				if(k==0)
-					report=false;
-			}
-		}
+		rules2.nHoursPerDay=0;
+		rules2.nDaysPerWeek=0;
+
+		rules2.yearsList.clear();
+		
+		rules2.teachersList.clear();
+		
+		rules2.subjectsList.clear();
+		
+		rules2.activityTagsList.clear();
+
+		rules2.activitiesList.clear();
+
+		rules2.buildingsList.clear();
+
+		rules2.roomsList.clear();
+
+		rules2.timeConstraintsList.clear();
+		
+		rules2.spaceConstraintsList.clear();
 	}
-
-	QMessageBox::information(this, tr("FET information"), tr("Added %1 locking time constraints and %2 locking space constraints to saved file,"
-	 " ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space").arg(addedTime).arg(addedSpace).arg(duplicatesTime).arg(duplicatesSpace));
-		
-	bool result=rules2.write(s);
 	
-	while(!lockTimeConstraintsList.isEmpty())
-		delete lockTimeConstraintsList.takeFirst();
-	while(!lockSpaceConstraintsList.isEmpty())
-		delete lockSpaceConstraintsList.takeFirst();
-	/*foreach(TimeConstraint* tc, lockTimeConstraintsList)
-		delete tc;
-	foreach(SpaceConstraint* sc, lockSpaceConstraintsList)
-		delete sc;*/
-
-	if(result)	
-		QMessageBox::information(this, tr("FET information"),
-			tr("File saved successfully. You can see it on the hard disk. Current data file remained untouched (of locking constraints),"
-			" so you can save it also, or generate different timetables."));
-
-	rules2.nHoursPerDay=0;
-	rules2.nDaysPerWeek=0;
-
-	rules2.yearsList.clear();
-	
-	rules2.teachersList.clear();
-	
-	rules2.subjectsList.clear();
-	
-	rules2.activityTagsList.clear();
-
-	rules2.activitiesList.clear();
-
-	rules2.buildingsList.clear();
-
-	rules2.roomsList.clear();
-
-	rules2.timeConstraintsList.clear();
-	
-	rules2.spaceConstraintsList.clear();
+	if(pc_form!=NULL)
+		delete pc_form;
 }
 
 bool FetMainForm::fileSave()
 {
-	if(INPUT_FILENAME_XML == "")
+	if(INPUT_FILENAME_XML.isEmpty())
 		return fileSaveAs();
 	else{
-		gt.rules.write(INPUT_FILENAME_XML);
+		gt.rules.write(this, INPUT_FILENAME_XML);
+
+		gt.rules.modified=true; //force update of the modified flag of the main window
+		setRulesUnmodifiedAndOtherThings(&gt.rules);
+		
+		setCurrentFile(INPUT_FILENAME_XML);
+
 		statusBar()->showMessage(tr("File saved"), STATUS_BAR_MILLISECONDS);
 		return true;
 	}
@@ -1299,31 +1416,27 @@ void FetMainForm::on_fileSaveAction_activated()
 
 void FetMainForm::on_dataInstitutionNameAction_activated()
 {
-/*	InstitutionNameForm* form=new InstitutionNameForm();
-	form->setAttribute(Qt::WA_DeleteOnClose);
-	form->show();*/
 	if(simulation_running){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
-	InstitutionNameForm form;
+	InstitutionNameForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
 void FetMainForm::on_dataCommentsAction_activated()
 {
-/*	CommentsForm* form=new CommentsForm();
-	form->setAttribute(Qt::WA_DeleteOnClose);
-	form->show();*/
 	if(simulation_running){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
 	}
 
-	CommentsForm form;
+	CommentsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1335,7 +1448,8 @@ void FetMainForm::on_dataDaysAction_activated()
 		return;
 	}
 
-	DaysForm form;
+	DaysForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1347,7 +1461,8 @@ void FetMainForm::on_dataHoursAction_activated()
 		return;
 	}
 
-	HoursForm form;
+	HoursForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1359,13 +1474,15 @@ void FetMainForm::on_dataTeachersAction_activated()
 		return;
 	}
 
-	TeachersForm form;
+	TeachersForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
 void FetMainForm::on_dataTeachersStatisticsAction_activated()
 {
-	TeachersStatisticsForm form;
+	TeachersStatisticsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1377,13 +1494,15 @@ void FetMainForm::on_dataSubjectsAction_activated()
 		return;
 	}
 
-	SubjectsForm form;
+	SubjectsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
 void FetMainForm::on_dataSubjectsStatisticsAction_activated()
 {
-	SubjectsStatisticsForm form;
+	SubjectsStatisticsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1395,7 +1514,8 @@ void FetMainForm::on_dataActivityTagsAction_activated()
 		return;
 	}
 
-	ActivityTagsForm form;
+	ActivityTagsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1407,7 +1527,8 @@ void FetMainForm::on_dataYearsAction_activated()
 		return;
 	}
 
-	YearsForm form;
+	YearsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1419,7 +1540,8 @@ void FetMainForm::on_dataGroupsAction_activated()
 		return;
 	}
 
-	GroupsForm form;
+	GroupsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1431,13 +1553,22 @@ void FetMainForm::on_dataSubgroupsAction_activated()
 		return;
 	}
 
-	SubgroupsForm form;
+	SubgroupsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
 void FetMainForm::on_dataStudentsStatisticsAction_activated()
 {
-	StudentsStatisticsForm form;
+	StudentsStatisticsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::on_dataActivitiesRoomsStatisticsAction_activated()
+{
+	ActivitiesRoomsStatisticsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1510,10 +1641,6 @@ void FetMainForm::on_dataHelpOnStatisticsAction_activated()
 {
 	QString s;
 	
-	s+=tr("This help by Liviu Lalescu, modified 12 September 2009");
-	
-	s+="\n\n";
-	
 	s+=tr("You will find in the statistics only active activities count. The inactive ones are not counted.");
 	
 	s+="\n\n";
@@ -1540,14 +1667,20 @@ void FetMainForm::on_dataHelpOnStatisticsAction_activated()
 	 );
 	
 	s+="\n\n";
-	/*s+=tr("New addition, 26 June 2009:");
-	s+=" ";*/
 	s+=tr("Students' statistics form contains a check box named '%1'"
 	 ". This has effect only if you have overlapping groups/years, and means that FET will show the complete tree structure"
 	 ", even if that means that some subgroups/groups will appear twice or more in the table, with the same information."
 	 " For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)),"
 	 " S1 will appear twice in the table").arg(tr("Show duplicates"));
-	 
+
+	s+="\n\n";
+	s+=tr("Activities rooms statistics: this menu will show the activities which may be scheduled in an unspecified room,"
+	 " if they are referred to by space constraints with weight under 100.0%, and the activities which will certainly be scheduled in an"
+	 " unspecified room, if they are not referred to by any space constraints. Remember that home rooms constraints are effective only"
+	 " on activities which have only the exact specified teacher or students set (activities with more teachers or students"
+	 " sets are not affected by home rooms constraints, you need to have preferred rooms constraints for such activities to ensure"
+	 " they will not end up in an unspecified room).");
+	
 	LongTextMessageBox::largeInformation(this, tr("FET - information about statistics"), s);
 }
 
@@ -1559,7 +1692,8 @@ void FetMainForm::on_dataActivitiesAction_activated()
 		return;
 	}
 
-	ActivitiesForm form("", "", "", "");
+	ActivitiesForm form(this, "", "", "", "");
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1571,7 +1705,8 @@ void FetMainForm::on_dataSubactivitiesAction_activated()
 		return;
 	}
 
-	SubactivitiesForm form("", "", "", "");
+	SubactivitiesForm form(this, "", "", "", "");
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1583,7 +1718,8 @@ void FetMainForm::on_dataRoomsAction_activated()
 		return;
 	}
 
-	RoomsForm form;
+	RoomsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1595,7 +1731,8 @@ void FetMainForm::on_dataBuildingsAction_activated()
 		return;
 	}
 
-	BuildingsForm form;
+	BuildingsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1607,7 +1744,8 @@ void FetMainForm::on_dataAllTimeConstraintsAction_activated()
 		return;
 	}
 
-	AllTimeConstraintsForm form;
+	AllTimeConstraintsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1619,7 +1757,8 @@ void FetMainForm::on_dataAllSpaceConstraintsAction_activated()
 		return;
 	}
 
-	AllSpaceConstraintsForm form;
+	AllSpaceConstraintsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1631,7 +1770,8 @@ void FetMainForm::on_dataTimeConstraintsTwoActivitiesConsecutiveAction_activated
 		return;
 	}
 
-	ConstraintTwoActivitiesConsecutiveForm form;
+	ConstraintTwoActivitiesConsecutiveForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1643,7 +1783,8 @@ void FetMainForm::on_dataTimeConstraintsTwoActivitiesGroupedAction_activated()
 		return;
 	}
 
-	ConstraintTwoActivitiesGroupedForm form;
+	ConstraintTwoActivitiesGroupedForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1655,7 +1796,8 @@ void FetMainForm::on_dataTimeConstraintsThreeActivitiesGroupedAction_activated()
 		return;
 	}
 
-	ConstraintThreeActivitiesGroupedForm form;
+	ConstraintThreeActivitiesGroupedForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1667,7 +1809,8 @@ void FetMainForm::on_dataTimeConstraintsTwoActivitiesOrderedAction_activated()
 		return;
 	}
 
-	ConstraintTwoActivitiesOrderedForm form;
+	ConstraintTwoActivitiesOrderedForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1679,7 +1822,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesPreferredTimeSlotsAction_activ
 		return;
 	}
 
-	ConstraintActivitiesPreferredTimeSlotsForm form;
+	ConstraintActivitiesPreferredTimeSlotsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1691,7 +1835,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesPreferredStartingTimesAction_a
 		return;
 	}
 
-	ConstraintActivitiesPreferredStartingTimesForm form;
+	ConstraintActivitiesPreferredStartingTimesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1703,7 +1848,8 @@ void FetMainForm::on_dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_ac
 		return;
 	}
 
-	ConstraintSubactivitiesPreferredTimeSlotsForm form;
+	ConstraintSubactivitiesPreferredTimeSlotsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1715,7 +1861,8 @@ void FetMainForm::on_dataTimeConstraintsSubactivitiesPreferredStartingTimesActio
 		return;
 	}
 
-	ConstraintSubactivitiesPreferredStartingTimesForm form;
+	ConstraintSubactivitiesPreferredStartingTimesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1727,7 +1874,8 @@ void FetMainForm::on_dataTimeConstraintsActivityEndsStudentsDayAction_activated(
 		return;
 	}
 
-	ConstraintActivityEndsStudentsDayForm form;
+	ConstraintActivityEndsStudentsDayForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1739,7 +1887,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesEndStudentsDayAction_activated
 		return;
 	}
 
-	ConstraintActivitiesEndStudentsDayForm form;
+	ConstraintActivitiesEndStudentsDayForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1751,7 +1900,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingTimeAction_activat
 		return;
 	}
 
-	ConstraintActivitiesSameStartingTimeForm form;
+	ConstraintActivitiesSameStartingTimeForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1763,7 +1913,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingHourAction_activat
 		return;
 	}
 
-	ConstraintActivitiesSameStartingHourForm form;
+	ConstraintActivitiesSameStartingHourForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1775,7 +1926,34 @@ void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingDayAction_activate
 		return;
 	}
 
-	ConstraintActivitiesSameStartingDayForm form;
+	ConstraintActivitiesSameStartingDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivitiesOccupyMaxTimeSlotsFromSelectionForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::on_dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_activated()
+{
+	if(simulation_running){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1787,7 +1965,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherNotAvailableTimesAction_activated
 		return;
 	}
 
-	ConstraintTeacherNotAvailableTimesForm form;
+	ConstraintTeacherNotAvailableTimesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1799,7 +1978,8 @@ void FetMainForm::on_dataTimeConstraintsBasicCompulsoryTimeAction_activated()
 		return;
 	}
 
-	ConstraintBasicCompulsoryTimeForm form;
+	ConstraintBasicCompulsoryTimeForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1811,7 +1991,8 @@ void FetMainForm::on_dataSpaceConstraintsBasicCompulsorySpaceAction_activated()
 		return;
 	}
 
-	ConstraintBasicCompulsorySpaceForm form;
+	ConstraintBasicCompulsorySpaceForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1823,7 +2004,8 @@ void FetMainForm::on_dataSpaceConstraintsRoomNotAvailableTimesAction_activated()
 		return;
 	}
 
-	ConstraintRoomNotAvailableTimesForm form;
+	ConstraintRoomNotAvailableTimesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1835,7 +2017,8 @@ void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomAction_activated()
 		return;
 	}
 
-	ConstraintActivityPreferredRoomForm form;
+	ConstraintActivityPreferredRoomForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1847,7 +2030,8 @@ void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomsAction_activated(
 		return;
 	}
 
-	ConstraintActivityPreferredRoomsForm form;
+	ConstraintActivityPreferredRoomsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1859,7 +2043,8 @@ void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomAction_activated()
 		return;
 	}
 
-	ConstraintSubjectPreferredRoomForm form;
+	ConstraintSubjectPreferredRoomForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1871,7 +2056,8 @@ void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomsAction_activated()
 		return;
 	}
 
-	ConstraintSubjectPreferredRoomsForm form;
+	ConstraintSubjectPreferredRoomsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1883,7 +2069,8 @@ void FetMainForm::on_dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_a
 		return;
 	}
 
-	ConstraintSubjectActivityTagPreferredRoomForm form;
+	ConstraintSubjectActivityTagPreferredRoomForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1895,7 +2082,8 @@ void FetMainForm::on_dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_
 		return;
 	}
 
-	ConstraintSubjectActivityTagPreferredRoomsForm form;
+	ConstraintSubjectActivityTagPreferredRoomsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1908,7 +2096,8 @@ void FetMainForm::on_dataSpaceConstraintsActivityTagPreferredRoomAction_activate
 		return;
 	}
 
-	ConstraintActivityTagPreferredRoomForm form;
+	ConstraintActivityTagPreferredRoomForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1920,7 +2109,8 @@ void FetMainForm::on_dataSpaceConstraintsActivityTagPreferredRoomsAction_activat
 		return;
 	}
 
-	ConstraintActivityTagPreferredRoomsForm form;
+	ConstraintActivityTagPreferredRoomsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 ///
@@ -1933,7 +2123,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetHomeRoomAction_activated()
 		return;
 	}
 
-	ConstraintStudentsSetHomeRoomForm form;
+	ConstraintStudentsSetHomeRoomForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1945,7 +2136,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetHomeRoomsAction_activated()
 		return;
 	}
 
-	ConstraintStudentsSetHomeRoomsForm form;
+	ConstraintStudentsSetHomeRoomsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1958,7 +2150,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayActi
 		return;
 	}
 
-	ConstraintStudentsSetMaxBuildingChangesPerDayForm form;
+	ConstraintStudentsSetMaxBuildingChangesPerDayForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1970,7 +2163,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_
 		return;
 	}
 
-	ConstraintStudentsMaxBuildingChangesPerDayForm form;
+	ConstraintStudentsMaxBuildingChangesPerDayForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1982,7 +2176,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAct
 		return;
 	}
 
-	ConstraintStudentsSetMaxBuildingChangesPerWeekForm form;
+	ConstraintStudentsSetMaxBuildingChangesPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -1994,7 +2189,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction
 		return;
 	}
 
-	ConstraintStudentsMaxBuildingChangesPerWeekForm form;
+	ConstraintStudentsMaxBuildingChangesPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2006,7 +2202,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChange
 		return;
 	}
 
-	ConstraintStudentsSetMinGapsBetweenBuildingChangesForm form;
+	ConstraintStudentsSetMinGapsBetweenBuildingChangesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2018,7 +2215,8 @@ void FetMainForm::on_dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAc
 		return;
 	}
 
-	ConstraintStudentsMinGapsBetweenBuildingChangesForm form;
+	ConstraintStudentsMinGapsBetweenBuildingChangesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2030,7 +2228,8 @@ void FetMainForm::on_dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_a
 		return;
 	}
 
-	ConstraintTeacherMaxBuildingChangesPerDayForm form;
+	ConstraintTeacherMaxBuildingChangesPerDayForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 void FetMainForm::on_dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_activated()
@@ -2041,7 +2240,8 @@ void FetMainForm::on_dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_
 		return;
 	}
 
-	ConstraintTeachersMaxBuildingChangesPerDayForm form;
+	ConstraintTeachersMaxBuildingChangesPerDayForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2053,7 +2253,8 @@ void FetMainForm::on_dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_
 		return;
 	}
 
-	ConstraintTeacherMaxBuildingChangesPerWeekForm form;
+	ConstraintTeacherMaxBuildingChangesPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2065,7 +2266,8 @@ void FetMainForm::on_dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction
 		return;
 	}
 
-	ConstraintTeachersMaxBuildingChangesPerWeekForm form;
+	ConstraintTeachersMaxBuildingChangesPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2077,7 +2279,8 @@ void FetMainForm::on_dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAct
 		return;
 	}
 
-	ConstraintTeacherMinGapsBetweenBuildingChangesForm form;
+	ConstraintTeacherMinGapsBetweenBuildingChangesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2089,7 +2292,8 @@ void FetMainForm::on_dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAc
 		return;
 	}
 
-	ConstraintTeachersMinGapsBetweenBuildingChangesForm form;
+	ConstraintTeachersMinGapsBetweenBuildingChangesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2101,7 +2305,8 @@ void FetMainForm::on_dataSpaceConstraintsTeacherHomeRoomAction_activated()
 		return;
 	}
 
-	ConstraintTeacherHomeRoomForm form;
+	ConstraintTeacherHomeRoomForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2113,7 +2318,8 @@ void FetMainForm::on_dataSpaceConstraintsTeacherHomeRoomsAction_activated()
 		return;
 	}
 
-	ConstraintTeacherHomeRoomsForm form;
+	ConstraintTeacherHomeRoomsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2125,7 +2331,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetNotAvailableTimesAction_activ
 		return;
 	}
 
-	ConstraintStudentsSetNotAvailableTimesForm form;
+	ConstraintStudentsSetNotAvailableTimesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2137,7 +2344,8 @@ void FetMainForm::on_dataTimeConstraintsBreakTimesAction_activated()
 		return;
 	}
 
-	ConstraintBreakTimesForm form;
+	ConstraintBreakTimesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2149,7 +2357,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_activated()
 		return;
 	}
 
-	ConstraintTeacherMaxDaysPerWeekForm form;
+	ConstraintTeacherMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2161,7 +2370,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxDaysPerWeekAction_activated()
 		return;
 	}
 
-	ConstraintTeachersMaxDaysPerWeekForm form;
+	ConstraintTeachersMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2173,7 +2383,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMinDaysPerWeekAction_activated()
 		return;
 	}
 
-	ConstraintTeacherMinDaysPerWeekForm form;
+	ConstraintTeacherMinDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2185,7 +2396,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMinDaysPerWeekAction_activated()
 		return;
 	}
 
-	ConstraintTeachersMinDaysPerWeekForm form;
+	ConstraintTeachersMinDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2197,7 +2409,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_acti
 		return;
 	}
 
-	ConstraintTeacherIntervalMaxDaysPerWeekForm form;
+	ConstraintTeacherIntervalMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2209,7 +2422,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_act
 		return;
 	}
 
-	ConstraintTeachersIntervalMaxDaysPerWeekForm form;
+	ConstraintTeachersIntervalMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2221,7 +2435,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_
 		return;
 	}
 
-	ConstraintStudentsSetIntervalMaxDaysPerWeekForm form;
+	ConstraintStudentsSetIntervalMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2233,7 +2448,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_act
 		return;
 	}
 
-	ConstraintStudentsIntervalMaxDaysPerWeekForm form;
+	ConstraintStudentsIntervalMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2245,7 +2461,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxHoursDailyAction_activated()
 		return;
 	}
 
-	ConstraintTeachersMaxHoursDailyForm form;
+	ConstraintTeachersMaxHoursDailyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2257,7 +2474,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursDailyAction_activated()
 		return;
 	}
 
-	ConstraintTeacherMaxHoursDailyForm form;
+	ConstraintTeacherMaxHoursDailyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2269,7 +2487,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxHoursContinuouslyAction_activ
 		return;
 	}
 
-	ConstraintTeachersMaxHoursContinuouslyForm form;
+	ConstraintTeachersMaxHoursContinuouslyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2281,7 +2500,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursContinuouslyAction_activa
 		return;
 	}
 
-	ConstraintTeacherMaxHoursContinuouslyForm form;
+	ConstraintTeacherMaxHoursContinuouslyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2293,7 +2513,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyA
 		return;
 	}
 
-	ConstraintTeachersActivityTagMaxHoursContinuouslyForm form;
+	ConstraintTeachersActivityTagMaxHoursContinuouslyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2305,7 +2526,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAc
 		return;
 	}
 
-	ConstraintTeacherActivityTagMaxHoursContinuouslyForm form;
+	ConstraintTeacherActivityTagMaxHoursContinuouslyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2322,7 +2544,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_a
 		return;
 	}
 
-	ConstraintTeachersActivityTagMaxHoursDailyForm form;
+	ConstraintTeachersActivityTagMaxHoursDailyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2339,7 +2562,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_ac
 		return;
 	}
 
-	ConstraintTeacherActivityTagMaxHoursDailyForm form;
+	ConstraintTeacherActivityTagMaxHoursDailyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2351,7 +2575,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMinHoursDailyAction_activated()
 		return;
 	}
 
-	ConstraintTeachersMinHoursDailyForm form;
+	ConstraintTeachersMinHoursDailyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2363,7 +2588,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMinHoursDailyAction_activated()
 		return;
 	}
 
-	ConstraintTeacherMinHoursDailyForm form;
+	ConstraintTeacherMinHoursDailyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2375,7 +2601,8 @@ void FetMainForm::on_dataTimeConstraintsActivityPreferredStartingTimeAction_acti
 		return;
 	}
 
-	ConstraintActivityPreferredStartingTimeForm form;
+	ConstraintActivityPreferredStartingTimeForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2387,7 +2614,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_activate
 		return;
 	}
 
-	ConstraintStudentsSetMaxGapsPerWeekForm form;
+	ConstraintStudentsSetMaxGapsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2399,7 +2627,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxGapsPerWeekAction_activated()
 		return;
 	}
 
-	ConstraintStudentsMaxGapsPerWeekForm form;
+	ConstraintStudentsMaxGapsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2416,7 +2645,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxGapsPerDayAction_activated
 		return;
 	}
 
-	ConstraintStudentsSetMaxGapsPerDayForm form;
+	ConstraintStudentsSetMaxGapsPerDayForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2433,7 +2663,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxGapsPerDayAction_activated()
 		return;
 	}
 
-	ConstraintStudentsMaxGapsPerDayForm form;
+	ConstraintStudentsMaxGapsPerDayForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2445,7 +2676,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_activated()
 		return;
 	}
 
-	ConstraintTeachersMaxGapsPerWeekForm form;
+	ConstraintTeachersMaxGapsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2457,7 +2689,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxGapsPerWeekAction_activated()
 		return;
 	}
 
-	ConstraintTeacherMaxGapsPerWeekForm form;
+	ConstraintTeacherMaxGapsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2469,7 +2702,8 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerDayAction_activated()
 		return;
 	}
 
-	ConstraintTeachersMaxGapsPerDayForm form;
+	ConstraintTeachersMaxGapsPerDayForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2481,7 +2715,8 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxGapsPerDayAction_activated()
 		return;
 	}
 
-	ConstraintTeacherMaxGapsPerDayForm form;
+	ConstraintTeacherMaxGapsPerDayForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2493,7 +2728,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAc
 		return;
 	}
 
-	ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm form;
+	ConstraintStudentsEarlyMaxBeginningsAtSecondHourForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2505,7 +2741,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHou
 		return;
 	}
 
-	ConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm form;
+	ConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2517,7 +2754,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxHoursDailyAction_activated
 		return;
 	}
 
-	ConstraintStudentsSetMaxHoursDailyForm form;
+	ConstraintStudentsSetMaxHoursDailyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2529,7 +2767,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursDailyAction_activated()
 		return;
 	}
 
-	ConstraintStudentsMaxHoursDailyForm form;
+	ConstraintStudentsMaxHoursDailyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2541,7 +2780,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_ac
 		return;
 	}
 
-	ConstraintStudentsSetMaxHoursContinuouslyForm form;
+	ConstraintStudentsSetMaxHoursContinuouslyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2553,7 +2793,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursContinuouslyAction_activ
 		return;
 	}
 
-	ConstraintStudentsMaxHoursContinuouslyForm form;
+	ConstraintStudentsMaxHoursContinuouslyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2565,7 +2806,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuous
 		return;
 	}
 
-	ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm form;
+	ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2577,7 +2819,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyA
 		return;
 	}
 
-	ConstraintStudentsActivityTagMaxHoursContinuouslyForm form;
+	ConstraintStudentsActivityTagMaxHoursContinuouslyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2594,7 +2837,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyActio
 		return;
 	}
 
-	ConstraintStudentsSetActivityTagMaxHoursDailyForm form;
+	ConstraintStudentsSetActivityTagMaxHoursDailyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2611,7 +2855,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_a
 		return;
 	}
 
-	ConstraintStudentsActivityTagMaxHoursDailyForm form;
+	ConstraintStudentsActivityTagMaxHoursDailyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2623,7 +2868,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMinHoursDailyAction_activated
 		return;
 	}
 
-	ConstraintStudentsSetMinHoursDailyForm form;
+	ConstraintStudentsSetMinHoursDailyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2635,7 +2881,8 @@ void FetMainForm::on_dataTimeConstraintsStudentsMinHoursDailyAction_activated()
 		return;
 	}
 
-	ConstraintStudentsMinHoursDailyForm form;
+	ConstraintStudentsMinHoursDailyForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2647,7 +2894,8 @@ void FetMainForm::on_dataTimeConstraintsActivitiesNotOverlappingAction_activated
 		return;
 	}
 
-	ConstraintActivitiesNotOverlappingForm form;
+	ConstraintActivitiesNotOverlappingForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2659,7 +2907,8 @@ void FetMainForm::on_dataTimeConstraintsMinDaysBetweenActivitiesAction_activated
 		return;
 	}
 
-	ConstraintMinDaysBetweenActivitiesForm form;
+	ConstraintMinDaysBetweenActivitiesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2671,7 +2920,8 @@ void FetMainForm::on_dataTimeConstraintsMaxDaysBetweenActivitiesAction_activated
 		return;
 	}
 
-	ConstraintMaxDaysBetweenActivitiesForm form;
+	ConstraintMaxDaysBetweenActivitiesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2683,7 +2933,8 @@ void FetMainForm::on_dataTimeConstraintsMinGapsBetweenActivitiesAction_activated
 		return;
 	}
 
-	ConstraintMinGapsBetweenActivitiesForm form;
+	ConstraintMinGapsBetweenActivitiesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2695,7 +2946,8 @@ void FetMainForm::on_dataTimeConstraintsActivityPreferredTimeSlotsAction_activat
 		return;
 	}
 
-	ConstraintActivityPreferredTimeSlotsForm form;
+	ConstraintActivityPreferredTimeSlotsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -2707,14 +2959,18 @@ void FetMainForm::on_dataTimeConstraintsActivityPreferredStartingTimesAction_act
 		return;
 	}
 
-	ConstraintActivityPreferredStartingTimesForm form;
+	ConstraintActivityPreferredStartingTimesForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
 void FetMainForm::on_helpAboutAction_activated()
 {
-	HelpAboutForm* form=new HelpAboutForm();
+	HelpAboutForm* form=new HelpAboutForm(this);
+	form->setWindowFlags(Qt::Window);
 	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
 	form->show();
 }
 
@@ -2723,7 +2979,7 @@ void FetMainForm::on_helpHomepageAction_activated()
 	bool tds=QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/"));
 
 	if(!tds){
-		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default internet browser (trying to open the link %1)."
+		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default Internet browser (trying to open the link %1)."
 		" Maybe you can try to manually start your browser and open this link.").arg("http://lalescu.ro/liviu/fet/"));
 	}
 }
@@ -2733,7 +2989,7 @@ void FetMainForm::on_helpContentsAction_activated()
 	bool tds=QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/doc/"));
 
 	if(!tds){
-		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default internet browser (trying to open the link %1)."
+		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default Internet browser (trying to open the link %1)."
 		" Maybe you can try to manually start your browser and open this link.").arg("http://lalescu.ro/liviu/fet/doc/"));
 	}
 }
@@ -2743,58 +2999,15 @@ void FetMainForm::on_helpForumAction_activated()
 	bool tds=QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/forum/"));
 
 	if(!tds){
-		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default internet browser (trying to open the link %1)."
+		QMessageBox::warning(this, tr("FET warning"), tr("Could not start the default Internet browser (trying to open the link %1)."
 		" Maybe you can try to manually start your browser and open this link.").arg("http://lalescu.ro/liviu/fet/forum/"));
 	}
-
-/*	QString s=tr("FET has a forum where you can ask questions or talk about FET");
-	s+="\n\n";
-	s+=tr("The current address is: %1").arg("http://lalescu.ro/liviu/fet/forum/");
-	s+="\n";
-	s+=tr("Please open this address in a web browser");
-	s+="\n\n";
-	s+=tr("If it does not work, please search the FET web page, maybe the address was changed");
-
-	QDialog dialog;
-	
-	dialog.setWindowTitle(tr("FET forum"));
-
-	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QTextEdit* te=new QTextEdit();
-	te->setPlainText(s);
-	te->setReadOnly(true);
-	QPushButton* pb=new QPushButton(tr("OK"));
-
-	QHBoxLayout* hl=new QHBoxLayout(0);
-	hl->addStretch(1);
-	hl->addWidget(pb);
-
-	vl->addWidget(te);
-	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
-
-	dialog.setGeometry(0, 0, 400, 250);
-	centerWidgetOnScreen(&dialog);
-
-	dialog.exec();*/
 }
-
-/*
-void FetMainForm::on_helpMailingListAction_activated()
-{
-	QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/mailinglist.html"));
-}*/
-
-/*
-void FetMainForm::on_helpContactsAction_activated()
-{
-	QDesktopServices::openUrl(QUrl("http://lalescu.ro/liviu/fet/contacts.html"));
-}*/
 
 void FetMainForm::on_helpAddressesAction_activated()
 {
 	QString s="";
-	s+=tr("In case the Help/Online menus do not function, please write down these addresses and open them in an internet browser:");
+	s+=tr("In case the Help/Online menus do not function, please write down these addresses and open them in an Internet browser:");
 	s+="\n\n";
 	s+=tr("FET homepage: %1", "%1 is FET homepage, begins with http://...").arg("http://lalescu.ro/liviu/fet/");
 	s+="\n";
@@ -2802,121 +3015,42 @@ void FetMainForm::on_helpAddressesAction_activated()
 	s+="\n";
 	s+=tr("Forum: %1", "%1 is web page of FET forum, begins with http://...").arg("http://lalescu.ro/liviu/fet/forum/");
 	s+="\n\n";
-	/*s+=tr("Mailing list: %1", "%1 is web page of FET mailing list, begins with http://...").arg("http://lalescu.ro/liviu/fet/mailinglist.html");
-	s+="\n";
-	s+=tr("Contacts: %1", "%1 is web page of FET contacts, begins with http://...").arg("http://lalescu.ro/liviu/fet/contacts.html");
-	s+="\n\n";*/
-	s+=tr("Additionally, you may find on the FET homepage a mailing list address and other contact information.");
+	s+=tr("Additionally, you may find on the FET homepage other contact information.");
 	s+="\n\n";
-	s+=tr("In case these addresses do not function, maybe the FET webpage has temporary problems, so try again later. Or maybe the FET webpage has changed, so search for the new page on the internet.");
+	s+=tr("In case these addresses do not function, maybe the FET webpage has temporary problems, so try again later. Or maybe the FET webpage has changed, so search for the new page on the Internet.");
 
 	LongTextMessageBox::largeInformation(this, tr("FET web addresses"), s);
 }
 
 void FetMainForm::on_helpFAQAction_activated()
 {
-	HelpFaqForm* form=new HelpFaqForm();
+	HelpFaqForm* form=new HelpFaqForm(this);
+	form->setWindowFlags(Qt::Window);
 	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
 	form->show();
 }
 
 void FetMainForm::on_helpTipsAction_activated()
 {
-	HelpTipsForm* form=new HelpTipsForm();
+	HelpTipsForm* form=new HelpTipsForm(this);
+	form->setWindowFlags(Qt::Window);
 	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
 	form->show();
 }
 
 void FetMainForm::on_helpInstructionsAction_activated()
 {
-	HelpInstructionsForm* form=new HelpInstructionsForm();
+	HelpInstructionsForm* form=new HelpInstructionsForm(this);
+	form->setWindowFlags(Qt::Window);
 	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
 	form->show();
 }
-
-/*
-void FetMainForm::on_helpManualAction_activated()
-{
-	QString s=tr("You can read a contributed user's manual in the %1 directory of FET.").arg(QDir::toNativeSeparators("doc/manual/"));
-	s+="\n\n";
-	s+=tr("This manual is contributed by Volker Dirr (timetabling.de).");
-	s+="\n\n";
-	s+=tr("You can read this manual using a web browser."
-	 " Please open the main html file from the specified directory in a web browser.");
-	s+="\n\n";
-	s+=tr("See the website timetabling.de for possible updated version of this manual.");
-
-	//show the message in a dialog
-	QDialog dialog;
-	
-	dialog.setWindowTitle(tr("FET - contributed user's manual"));
-
-	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QTextEdit* te=new QTextEdit();
-	te->setPlainText(s);
-
-	te->setReadOnly(true);
-	QPushButton* pb=new QPushButton(tr("OK"));
-
-	QHBoxLayout* hl=new QHBoxLayout(0);
-	hl->addStretch(1);
-	hl->addWidget(pb);
-
-	vl->addWidget(te);
-	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
-
-	dialog.setGeometry(0,0,600,400);
-	centerWidgetOnScreen(&dialog);
-
-	dialog.exec();
-}
-*/
-
-/*
-void FetMainForm::on_helpInOtherLanguagesAction_activated()
-{
-	QString s=tr("You can see help translated into other languages in the directory %1 of FET").arg(QDir::toNativeSeparators("doc/international/"));
-	s+="\n\n";	
-	s+=tr("Currently (17 July 2008), there are:");	
-	s+="\n\n";	
-	s+=tr("1. ar - Arabic - Manual");
-	s+="\n\n";	
-	s+=tr("2. es - Spanish - Instructions");
-	s+="\n\n";	
-	s+=tr("3. it - Italian - Instructions, FAQ");
-	s+="\n\n";	
-	s+=tr("4. ro - Romanian - Import/Export Help");
-	s+="\n\n";	
-	s+=tr("5. ca - Catalan - Manual");
-	s+="\n\n";	
-	s+=tr("6. fa - Persian - Manual");
-
-	//show the message in a dialog
-	QDialog dialog;
-	
-	dialog.setWindowTitle(tr("FET - help in other languages"));
-
-	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QTextEdit* te=new QTextEdit();
-	te->setPlainText(s);
-
-	te->setReadOnly(true);
-	QPushButton* pb=new QPushButton(tr("OK"));
-
-	QHBoxLayout* hl=new QHBoxLayout(0);
-	hl->addStretch(1);
-	hl->addWidget(pb);
-
-	vl->addWidget(te);
-	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
-
-	dialog.setGeometry(0,0,700,500);
-	centerWidgetOnScreen(&dialog);
-
-	dialog.exec();
-}*/
 
 void FetMainForm::on_timetableGenerateAction_activated()
 {
@@ -2929,19 +3063,17 @@ void FetMainForm::on_timetableGenerateAction_activated()
 	int count=0;
 	for(int i=0; i<gt.rules.activitiesList.size(); i++){
 		Activity* act=gt.rules.activitiesList[i];
-		if(act->active){
-			//cout<<"here: i=="<<i<<endl;
+		if(act->active)
 			count++;
-		}
 	}
 	if(count<1){
 		QMessageBox::information(this, tr("FET information"), tr("Please input at least one active activity before generating"));
 		return;
 	}
-	TimetableGenerateForm form;
+	TimetableGenerateForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 	
-	//LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 	LockUnlock::increaseCommunicationSpinBox();
 }
 
@@ -2953,28 +3085,26 @@ void FetMainForm::on_timetableGenerateMultipleAction_activated()
 		return;
 	}
 
-	if(INPUT_FILENAME_XML==""){
+	if(INPUT_FILENAME_XML.isEmpty()){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Current file (data) has no name. Please save file under a certain name before proceeding"));
+			tr("Your current data has no name. Please save it as a file with a certain name before proceeding."));
 		return;
 	}
 
 	int count=0;
 	for(int i=0; i<gt.rules.activitiesList.size(); i++){
 		Activity* act=gt.rules.activitiesList[i];
-		if(act->active){
-			//cout<<"here: i=="<<i<<endl;
+		if(act->active)
 			count++;
-		}
 	}
 	if(count<1){
 		QMessageBox::information(this, tr("FET information"), tr("Please input at least one active activity before generating multiple"));
 		return;
 	}
-	TimetableGenerateMultipleForm form;
+	TimetableGenerateMultipleForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	//LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 	LockUnlock::increaseCommunicationSpinBox();
 }
 
@@ -2990,8 +3120,11 @@ void FetMainForm::on_timetableViewStudentsAction_activated()
 		return;
 	}
 
-	TimetableViewStudentsForm *form=new TimetableViewStudentsForm();
+	TimetableViewStudentsForm *form=new TimetableViewStudentsForm(this);
+	form->setWindowFlags(Qt::Window);
 	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
 	form->show();
 	form->resizeRowsAfterShow();
 }
@@ -3012,8 +3145,11 @@ void FetMainForm::on_timetableViewTeachersAction_activated()
 		return;
 	}
 	
-	TimetableViewTeachersForm *form=new TimetableViewTeachersForm();
+	TimetableViewTeachersForm *form=new TimetableViewTeachersForm(this);
+	form->setWindowFlags(Qt::Window);
 	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
 	form->show();
 	form->resizeRowsAfterShow();
 }
@@ -3025,15 +3161,17 @@ void FetMainForm::on_timetableShowConflictsAction_activated()
 		return;
 	}
 
-	TimetableShowConflictsForm *form=new TimetableShowConflictsForm();
+	TimetableShowConflictsForm *form=new TimetableShowConflictsForm(this);
+	form->setWindowFlags(Qt::Window);
 	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
 	form->show();
 }
 
 void FetMainForm::on_timetableViewRoomsAction_activated()
 {
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
-	//if(!rooms_schedule_ready){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -3043,8 +3181,11 @@ void FetMainForm::on_timetableViewRoomsAction_activated()
 		return;
 	}
 
-	TimetableViewRoomsForm* form=new TimetableViewRoomsForm();
+	TimetableViewRoomsForm* form=new TimetableViewRoomsForm(this);
+	form->setWindowFlags(Qt::Window);
 	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
 	form->show();
 	form->resizeRowsAfterShow();
 }
@@ -3057,7 +3198,7 @@ void FetMainForm::on_timetableLockAllActivitiesAction_activated()
 		return;
 	}
 
-	AdvancedLockUnlockForm::lockAll();
+	AdvancedLockUnlockForm::lockAll(this);
 }
 
 void FetMainForm::on_timetableUnlockAllActivitiesAction_activated()
@@ -3067,7 +3208,7 @@ void FetMainForm::on_timetableUnlockAllActivitiesAction_activated()
 		return;
 	}
 
-	AdvancedLockUnlockForm::unlockAll();
+	AdvancedLockUnlockForm::unlockAll(this);
 }
 
 void FetMainForm::on_timetableLockActivitiesDayAction_activated()
@@ -3077,7 +3218,7 @@ void FetMainForm::on_timetableLockActivitiesDayAction_activated()
 		return;
 	}
 
-	AdvancedLockUnlockForm::lockDay();
+	AdvancedLockUnlockForm::lockDay(this);
 }
 
 void FetMainForm::on_timetableUnlockActivitiesDayAction_activated()
@@ -3087,7 +3228,7 @@ void FetMainForm::on_timetableUnlockActivitiesDayAction_activated()
 		return;
 	}
 
-	AdvancedLockUnlockForm::unlockDay();
+	AdvancedLockUnlockForm::unlockDay(this);
 }
 
 void FetMainForm::on_timetableLockActivitiesEndStudentsDayAction_activated()
@@ -3097,7 +3238,7 @@ void FetMainForm::on_timetableLockActivitiesEndStudentsDayAction_activated()
 		return;
 	}
 
-	AdvancedLockUnlockForm::lockEndStudentsDay();
+	AdvancedLockUnlockForm::lockEndStudentsDay(this);
 }
 
 void FetMainForm::on_timetableUnlockActivitiesEndStudentsDayAction_activated()
@@ -3107,7 +3248,7 @@ void FetMainForm::on_timetableUnlockActivitiesEndStudentsDayAction_activated()
 		return;
 	}
 
-	AdvancedLockUnlockForm::unlockEndStudentsDay();
+	AdvancedLockUnlockForm::unlockEndStudentsDay(this);
 }
 
 void FetMainForm::on_languageAction_activated()
@@ -3168,7 +3309,7 @@ void FetMainForm::on_languageAction_activated()
 	int eng=-1;
 	while(it.hasNext()){
 		it.next();
-		languagesComboBox->insertItem( it.key() + " (" + it.value() + ")" );
+		languagesComboBox->addItem( it.key() + " (" + it.value() + ")" );
 		if(it.key()==FET_LANGUAGE)
 			j=i;
 		if(it.key()=="en_US")
@@ -3181,7 +3322,7 @@ void FetMainForm::on_languageAction_activated()
 		FET_LANGUAGE="en_US";
 		j=eng;
 	}
-	languagesComboBox->setCurrentItem(j);
+	languagesComboBox->setCurrentIndex(j);
 	
 	QLabel* label=new QLabel(tr("Please select FET language"));
 	
@@ -3201,6 +3342,8 @@ void FetMainForm::on_languageAction_activated()
 	
 	tapb2->setDefault(true);
 	tapb2->setFocus();
+	
+	const QString settingsName=QString("LanguageSelectionForm");
 
 	int w=dialog.sizeHint().width();
 	if(w<350)
@@ -3208,15 +3351,18 @@ void FetMainForm::on_languageAction_activated()
 	int h=dialog.sizeHint().height();
 	if(h<180)
 		h=180;
-	dialog.setGeometry(0,0,w,h);
+	dialog.resize(w,h);
 	centerWidgetOnScreen(&dialog);
-					
+	restoreFETDialogGeometry(&dialog, settingsName);
+	
+	setParentAndOtherThings(&dialog, this);
 	bool ok=dialog.exec();
+	saveFETDialogGeometry(&dialog, settingsName);
 	if(!ok)
 		return;
 		
 	//QString newLang=languagesComboBox->currentText();
-	int k=languagesComboBox->currentItem();
+	int k=languagesComboBox->currentIndex();
 	i=0;
 	bool found=false;
 	QMapIterator<QString, QString> it2(languagesMap);
@@ -3232,9 +3378,12 @@ void FetMainForm::on_languageAction_activated()
 		QMessageBox::warning(this, tr("FET warning"), tr("Invalid language selected - making it en_US (US English)"));
 		FET_LANGUAGE="en_US";
 	}
+	
+	setLanguage(*pqapplication, this);
+	setCurrentFile(INPUT_FILENAME_XML);
 
-	QMessageBox::information(this, tr("FET information"), tr("Language %1 selected").arg( FET_LANGUAGE+" ("+languagesMap.value(FET_LANGUAGE)+")" )+"\n\n"+
-	 tr("Please exit and restart FET to activate language change"));
+	//QMessageBox::information(this, tr("FET information"), tr("Language %1 selected").arg( FET_LANGUAGE+" ("+languagesMap.value(FET_LANGUAGE)+")" )+"\n\n"+
+	// tr("Please exit and restart FET to activate language change"));
 }
 
 void FetMainForm::on_settingsRestoreDefaultsAction_activated()
@@ -3252,7 +3401,7 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	s+=tr("That means:");
 	s+="\n";
 
-	s+=QString("1. ")+tr("Mainform geometry will be reset to default");
+	s+=QString("1. ")+tr("The geometry and any other saved settings of all the windows and dialogs will be reset to default");
 	s+="\n";
 
 	s+=QString("2. ")+tr("Show shortcut buttons in main window will be %1", "%1 is true or false").arg(tr("true"));
@@ -3271,55 +3420,60 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	s+=QString("6. ")+tr("Language will be %1 (restart needed to activate language change)", "%1 is the default language").arg(QString("en_US")+QString(" (")+tr("US English")+QString(")"));
 	s+="\n";
 
-	s+=QString("7. ")+tr("Working directory will be %1", "%1 is the directory").arg(QDir::toNativeSeparators(default_working_directory));
+	s+=QString("7. ")+tr("The list of recently used files will be cleared");
+	s+="\n";
+	
+	s+=QString("8. ")+tr("Working directory will be %1", "%1 is the directory").arg(QDir::toNativeSeparators(default_working_directory));
 	s+="\n";
 
-	s+=QString("8. ")+tr("Output directory will be %1", "%1 is the directory").arg(QDir::toNativeSeparators(QDir::homePath()+FILE_SEP+"fet-results"));
+	s+=QString("9. ")+tr("Output directory will be %1", "%1 is the directory").arg(QDir::toNativeSeparators(QDir::homePath()+FILE_SEP+"fet-results"));
 	s+="\n";
 
-	s+=QString("9. ")+tr("Import directory will be %1", "%1 is the directory").arg(QDir::toNativeSeparators(QDir::homePath()+FILE_SEP+"fet-results"));
+	s+=QString("10. ")+tr("Import directory will be %1", "%1 is the directory").arg(QDir::toNativeSeparators(QDir::homePath()+FILE_SEP+"fet-results"));
 	s+="\n";
 
-	s+=QString("10. ")+tr("Html level of the timetables will be %1", "%1 is default html level").arg(2);
+	s+=QString("11. ")+tr("Html level of the timetables will be %1", "%1 is default html level").arg(2);
 	s+="\n";
 
-	s+=QString("11. ")+tr("Mark not available slots with -x- in timetables will be %1", "%1 is true or false. Lowercase -x-").arg(tr("true"));
+	s+=QString("12. ")+tr("Mark not available slots with -x- in timetables will be %1", "%1 is true or false. Lowercase -x-").arg(tr("true"));
 	s+="\n";
 
-	s+=QString("12. ")+tr("Mark break slots with -X- in timetables will be %1", "%1 is true or false. Uppercase -X-").arg(tr("true"));
+	s+=QString("13. ")+tr("Mark break slots with -X- in timetables will be %1", "%1 is true or false. Uppercase -X-").arg(tr("true"));
 	s+="\n";
 
-	s+=QString("13. ")+tr("Divide html timetables with time-axis by days will be %1", "%1 is true or false").arg(tr("false"));
+	s+=QString("14. ")+tr("Divide html timetables with time-axis by days will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("14. ")+tr("Print activities with same starting time will be %1", "%1 is true or false").arg(tr("false"));
+	s+=QString("15. ")+tr("Print activities with same starting time will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("15. ")+tr("Enable activity tag max hours daily will be %1", "%1 is true or false").arg(tr("false"));
+	s+=QString("16. ")+tr("Enable activity tag max hours daily will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("16. ")+tr("Enable students max gaps per day will be %1", "%1 is true or false").arg(tr("false"));
+	s+=QString("17. ")+tr("Enable students max gaps per day will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("17. ")+tr("Warn if using not perfect constraints will be %1", "%1 is true or false. This is a warning if user uses not perfect constraints").arg(tr("true"));
+	s+=QString("18. ")+tr("Warn if using not perfect constraints will be %1", "%1 is true or false. This is a warning if user uses not perfect constraints").arg(tr("true"));
 	s+="\n";
 
-	s+=QString("18. ")+tr("Enable constraints students min hours daily with empty days will be %1", "%1 is true or false").arg(tr("false"));
+	s+=QString("19. ")+tr("Enable constraints students min hours daily with empty days will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=QString("19. ")+tr("Warn if using constraints students min hours daily with empty days will be %1", "%1 is true or false. This is a warning if user uses a non-standard constraint"
+	s+=QString("20. ")+tr("Warn if using constraints students min hours daily with empty days will be %1", "%1 is true or false. This is a warning if user uses a nonstandard constraint"
 		" students min hours daily with allowed empty days").arg(tr("true"));
 	s+="\n";
 
 	///////////////confirmations
-	s+=QString("20. ")+tr("Confirm activity planning will be %1", "%1 is true or false").arg(tr("true"));
+	s+=QString("21. ")+tr("Confirm activity planning will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=QString("21. ")+tr("Confirm spread activities over the week will be %1", "%1 is true or false").arg(tr("true"));
+	s+=QString("22. ")+tr("Confirm spread activities over the week will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
-	s+=QString("22. ")+tr("Confirm remove redundant constraints will be %1", "%1 is true or false").arg(tr("true"));
+	s+=QString("23. ")+tr("Confirm remove redundant constraints will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
+	s+=QString("24. ")+tr("Confirm save data and timetable as will be %1", "%1 is true or false").arg(tr("true"));
+	//s+="\n";
 	///////////////
-	
+
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -3328,16 +3482,16 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 		return;
 	}
 
-	resize(ORIGINAL_WIDTH, ORIGINAL_HEIGHT);
-	/*QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
-	centerWidgetOnScreen(this);
+	QSettings settings(COMPANY, PROGRAM);
+	settings.clear();
+	
+	recentFiles.clear();
+	updateRecentFileActions();
 
-	/*for(int i=0; i<NUMBER_OF_LANGUAGES; i++)
-		languageMenu->setItemChecked(languageMenu->idAt(i), false);
-	languageMenu->setItemChecked(languageMenu->idAt(LANGUAGE_EN_GB_POSITION), true);*/
+	resize(ORIGINAL_WIDTH, ORIGINAL_HEIGHT);
+	//move(ORIGINAL_X, ORIGINAL_Y);
+	forceCenterWidgetOnScreen(this);
+	
 	FET_LANGUAGE="en_US";
 	
 	checkForUpdatesAction->setChecked(false);
@@ -3361,6 +3515,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 	
 	CONFIRM_REMOVE_REDUNDANT=true;
 	settingsConfirmRemoveRedundantAction->setChecked(CONFIRM_REMOVE_REDUNDANT);
+	
+	CONFIRM_SAVE_TIMETABLE=true;
+	settingsConfirmSaveTimetableAction->setChecked(CONFIRM_SAVE_TIMETABLE);
 	///////
 
 	///////////
@@ -3380,7 +3537,6 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 
 	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
-
 
 	ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
 	enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
@@ -3411,6 +3567,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_activated()
 
 	settingsPrintActivitiesWithSameStartingTimeAction->setChecked(false);
 	PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=false;
+
+	setLanguage(*pqapplication, this);
+	setCurrentFile(INPUT_FILENAME_XML);
 }
 
 void FetMainForm::on_settingsTimetableHtmlLevelAction_activated()
@@ -3421,7 +3580,8 @@ void FetMainForm::on_settingsTimetableHtmlLevelAction_activated()
 		return;
 	}
 
-	SettingsTimetableHtmlLevelForm form;
+	SettingsTimetableHtmlLevelForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }
 
@@ -3451,15 +3611,19 @@ void FetMainForm::on_activityPlanningAction_activated()
 	if(CONFIRM_ACTIVITY_PLANNING){
 		int confirm;
 	
-		ActivityPlanningConfirmationForm form;
-		confirm=form.exec();
+		ActivityPlanningConfirmationForm c_form(this);
+		setParentAndOtherThings(&c_form, this);
+		confirm=c_form.exec();
 
 		if(confirm==QDialog::Accepted){
-			StartActivityPlanning::startActivityPlanning();
+			if(c_form.dontShowAgain)
+				settingsConfirmActivityPlanningAction->setChecked(false);
+		
+			StartActivityPlanning::startActivityPlanning(&c_form);
 		}
 	}
 	else{
-		StartActivityPlanning::startActivityPlanning();
+		StartActivityPlanning::startActivityPlanning(this);
 	}
 }
 
@@ -3516,16 +3680,22 @@ void FetMainForm::on_spreadActivitiesAction_activated()
 	if(CONFIRM_SPREAD_ACTIVITIES){
 		int confirm;
 	
-		SpreadConfirmationForm form;
-		confirm=form.exec();
+		SpreadConfirmationForm c_form(this);
+		setParentAndOtherThings(&c_form, this);
+		confirm=c_form.exec();
 
 		if(confirm==QDialog::Accepted){
-			SpreadMinDaysConstraintsFiveDaysForm form;
+			if(c_form.dontShowAgain)
+				settingsConfirmSpreadActivitiesAction->setChecked(false);
+			
+			SpreadMinDaysConstraintsFiveDaysForm form(&c_form);
+			setParentAndOtherThings(&form, &c_form);
 			form.exec();
 		}
 	}
 	else{
-		SpreadMinDaysConstraintsFiveDaysForm form;
+		SpreadMinDaysConstraintsFiveDaysForm form(this);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
 }
@@ -3538,7 +3708,7 @@ void FetMainForm::on_statisticsExportToDiskAction_activated()
 		return;
 	}
 
-	StatisticsExport::exportStatistics();
+	StatisticsExport::exportStatistics(this);
 }
 
 void FetMainForm::on_removeRedundantConstraintsAction_activated()
@@ -3552,16 +3722,22 @@ void FetMainForm::on_removeRedundantConstraintsAction_activated()
 	if(CONFIRM_REMOVE_REDUNDANT){
 		int confirm;
 	
-		RemoveRedundantConfirmationForm form;
-		confirm=form.exec();
+		RemoveRedundantConfirmationForm c_form(this);
+		setParentAndOtherThings(&c_form, this);
+		confirm=c_form.exec();
 
 		if(confirm==QDialog::Accepted){
-			RemoveRedundantForm form;
+			if(c_form.dontShowAgain)
+				settingsConfirmRemoveRedundantAction->setChecked(false);
+
+			RemoveRedundantForm form(&c_form);
+			setParentAndOtherThings(&form, &c_form);
 			form.exec();
 		}
 	}
 	else{
-		RemoveRedundantForm form;
+		RemoveRedundantForm form(this);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
 }
@@ -3592,8 +3768,9 @@ void FetMainForm::on_selectOutputDirAction_activated()
 
 void FetMainForm::on_randomSeedAction_activated()
 {
-	RandomSeedDialog dialog;
+	RandomSeedDialog dialog(this);
 	
+	setParentAndOtherThings(&dialog, this);
 	int te=dialog.exec();
 	
 	if(te==QDialog::Accepted){
@@ -3752,11 +3929,6 @@ void FetMainForm::on_shortcutAllTimeConstraintsPushButton_clicked()
 	on_dataAllTimeConstraintsAction_activated();
 }
 
-/*void FetMainForm::on_shortcutMiscTimeConstraintsPushButton_clicked()
-{
-	menuMisc_time_constraints->popup(QCursor::pos());
-}*/
-
 void FetMainForm::on_shortcutAdvancedTimeConstraintsPushButton_clicked()
 {
 	shortcutAdvancedTimeMenu->popup(QCursor::pos());
@@ -3788,11 +3960,6 @@ void FetMainForm::on_shortcutAllSpaceConstraintsPushButton_clicked()
 {
 	on_dataAllSpaceConstraintsAction_activated();
 }
-
-/*void FetMainForm::on_shortcutMiscSpaceConstraintsPushButton_clicked()
-{
-	menuMisc_space_constraints->popup(QCursor::pos());
-}*/
 
 void FetMainForm::on_shortcutRoomsSpaceConstraintsPushButton_clicked()
 {
@@ -3896,16 +4063,6 @@ void FetMainForm::on_shortcutSubactivitiesPushButton_clicked()
 	on_dataSubactivitiesAction_activated();
 }
 
-/*void FetMainForm::on_shortcutBuildingsPushButton_clicked()
-{
-	on_dataBuildingsAction_activated();
-}
-
-void FetMainForm::on_shortcutRoomsPushButton_clicked()
-{
-	on_dataRoomsAction_activated();
-}*/
-
 void FetMainForm::on_shortcutDataSpacePushButton_clicked()
 {
 	shortcutDataSpaceMenu->popup(QCursor::pos());
@@ -3925,6 +4082,11 @@ void FetMainForm::on_shortcutNewPushButton_clicked()
 void FetMainForm::on_shortcutOpenPushButton_clicked()
 {
 	on_fileOpenAction_activated();
+}
+
+void FetMainForm::on_shortcutOpenRecentPushButton_clicked()
+{
+	fileOpenRecentMenu->popup(QCursor::pos());
 }
 
 void FetMainForm::on_shortcutSavePushButton_clicked()

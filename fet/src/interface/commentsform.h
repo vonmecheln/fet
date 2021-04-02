@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef COMMENTSFORM_H
 #define COMMENTSFORM_H
@@ -26,7 +24,7 @@ class CommentsForm : public QDialog, Ui::CommentsForm_template
 {
 	Q_OBJECT
 public:
-	CommentsForm();
+	CommentsForm(QWidget* parent);
 
 	~CommentsForm();
 

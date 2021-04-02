@@ -28,7 +28,7 @@
 class AddConstraintTwoActivitiesConsecutiveForm : public QDialog, Ui::AddConstraintTwoActivitiesConsecutiveForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintTwoActivitiesConsecutiveForm();
+	AddConstraintTwoActivitiesConsecutiveForm(QWidget* parent);
 	~AddConstraintTwoActivitiesConsecutiveForm();
 
 	bool filterOk(Activity* a);

@@ -20,13 +20,15 @@
 
 #include "ui_helpinstructionsform_template.h"
 
-class HelpInstructionsForm : public QDialog, Ui::HelpInstructionsForm_template
+class HelpInstructionsForm : public QDialog, public Ui::HelpInstructionsForm_template
 {
 	Q_OBJECT
 	
-public: 
-	HelpInstructionsForm();
+public:
+	HelpInstructionsForm(QWidget* parent);
 	~HelpInstructionsForm();
+	
+	void setText();
 };
 
 #endif

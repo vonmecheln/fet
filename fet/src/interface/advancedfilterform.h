@@ -20,6 +20,8 @@
 
 #include <QtGui>
 
+const int ADVANCED_FILTER_MAX_ROWS=8;
+const int ADVANCED_FILTER_MIN_ROWS=1;
 
 class AdvancedFilterForm : public QDialog {
 	Q_OBJECT
@@ -50,8 +52,10 @@ public:
 	
 	QVBoxLayout* layout;
 	
+	QString atts;
+	
 public:
-	AdvancedFilterForm(bool all, QList<int> descrDetDescr, QList<int> contNCont, QStringList text, bool caseSensitive);
+	AdvancedFilterForm(QWidget* parent, bool all, QList<int> descrDetDescr, QList<int> contNCont, QStringList text, bool caseSensitive, const QString& textToSettings);
 	~AdvancedFilterForm();
 	
 public slots:

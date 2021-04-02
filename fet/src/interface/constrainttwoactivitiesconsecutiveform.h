@@ -28,7 +28,7 @@ class ConstraintTwoActivitiesConsecutiveForm : public QDialog, Ui::ConstraintTwo
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintTwoActivitiesConsecutiveForm();
+	ConstraintTwoActivitiesConsecutiveForm(QWidget* parent);
 	~ConstraintTwoActivitiesConsecutiveForm();
 
 	bool filterOk(TimeConstraint* ctr);

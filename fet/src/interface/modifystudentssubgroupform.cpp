@@ -19,24 +19,20 @@
 
 #include <QMessageBox>
 
-ModifyStudentsSubgroupForm::ModifyStudentsSubgroupForm(const QString& yearName, const QString& groupName, const QString& initialSubgroupName, int initialNumberOfStudents)
+ModifyStudentsSubgroupForm::ModifyStudentsSubgroupForm(QWidget* parent, const QString& yearName, const QString& groupName, const QString& initialSubgroupName, int initialNumberOfStudents): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyStudentsSubgroupForm_template*/, SLOT(ok()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyStudentsSubgroupForm_template*/, SLOT(cancel()));
+	okPushButton->setDefault(true);
 
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
-	numberSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
-	numberSpinBox->setMinValue(0);
+	numberSpinBox->setMaximum(MAX_ROOM_CAPACITY);
+	numberSpinBox->setMinimum(0);
 	numberSpinBox->setValue(0);
 
 	this->_yearName=yearName;
@@ -54,6 +50,7 @@ ModifyStudentsSubgroupForm::ModifyStudentsSubgroupForm(const QString& yearName, 
 
 ModifyStudentsSubgroupForm::~ModifyStudentsSubgroupForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyStudentsSubgroupForm::cancel()

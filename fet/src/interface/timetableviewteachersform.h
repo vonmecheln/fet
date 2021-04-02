@@ -22,13 +22,12 @@
 
 #include "ui_timetableviewteachersform_template.h"
 
-class TimetableViewTeachersForm : public QDialog, Ui::TimetableViewTeachersForm_template  {
+class TimetableViewTeachersForm : public QDialog, public Ui::TimetableViewTeachersForm_template
+{
 	Q_OBJECT
 
-	//bool columnResizeModeInitialized;
-
-public: 
-	TimetableViewTeachersForm();
+public:
+	TimetableViewTeachersForm(QWidget* parent);
 	~TimetableViewTeachersForm();
 	
 	void lock(bool lockTime, bool lockSpace);

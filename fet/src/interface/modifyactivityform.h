@@ -33,7 +33,6 @@ private:
 	QList<QSpinBox*> durList;
 	QList<QCheckBox*> activList;
 
-	//QWidget* subTab(int i);
 	QSpinBox* dur(int i);
 	QCheckBox* activ(int i);
 
@@ -48,27 +47,17 @@ public:
 	QStringList _activityTags;
 	QStringList _students;
 
-	ModifyActivityForm(int id, int activityGroupId);
+	ModifyActivityForm(QWidget* parent, int id, int activityGroupId);
 	~ModifyActivityForm();
 
-	void updateStudentsListBox();
-	void updateTeachersListBox();
+	void updateStudentsListWidget();
+	void updateTeachersListWidget();
 	void updateSubjectsComboBox();
-	void updateActivityTagsListBox();
+	void updateActivityTagsListWidget();
 	
-	//void durationChanged();
-	
-	//void showYearsChanged();
-	//void showGroupsChanged();
-	//void showSubgroupsChanged();
-
 public slots:
 	void ok();
 	void cancel();
-
-	void subjectChanged(const QString& dummy);
-
-	void activityChanged();
 
 	void addTeacher();
 	void removeTeacher();
@@ -86,6 +75,8 @@ public slots:
 	void showYearsChanged();
 	void showGroupsChanged();
 	void showSubgroupsChanged();
+	
+	void help();
 };
 
 #endif

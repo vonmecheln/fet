@@ -17,53 +17,34 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintteachersmindaysperweekform.h"
 #include "timeconstraint.h"
 
-
-AddConstraintTeachersMinDaysPerWeekForm::AddConstraintTeachersMinDaysPerWeekForm()
+AddConstraintTeachersMinDaysPerWeekForm::AddConstraintTeachersMinDaysPerWeekForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintTeachersMaxDaysPerWeekForm_template*/, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintTeachersMaxDaysPerWeekForm_template*/, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintTeachersMaxDaysPerWeekForm_template*/, SLOT(close()));
-//    connect(maxDaysSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintTeachersMaxDaysPerWeekForm_template*/, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	updateMinDaysSpinBox();
-	//updateTeachersComboBox();
 }
 
 AddConstraintTeachersMinDaysPerWeekForm::~AddConstraintTeachersMinDaysPerWeekForm()
 {
+	saveFETDialogGeometry(this);
 }
 
-/*void AddConstraintTeachersMaxDaysPerWeekForm::updateTeachersComboBox(){
-	teachersComboBox->clear();
-	for(int i=0; i<gt.rules.teachersList.size(); i++){
-		Teacher* tch=gt.rules.teachersList[i];
-		teachersComboBox->insertItem(tch->name);
-	}
-
-	constraintChanged();
-}*/
-
 void AddConstraintTeachersMinDaysPerWeekForm::updateMinDaysSpinBox(){
-	minDaysSpinBox->setMinValue(1);
-	minDaysSpinBox->setMaxValue(gt.rules.nDaysPerWeek);
+	minDaysSpinBox->setMinimum(1);
+	minDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);
 	minDaysSpinBox->setValue(1);
 }
 
@@ -73,7 +54,7 @@ void AddConstraintTeachersMinDaysPerWeekForm::addCurrentConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
@@ -85,21 +66,9 @@ void AddConstraintTeachersMinDaysPerWeekForm::addCurrentConstraint()
 		return;
 	}
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
 	int min_days=minDaysSpinBox->value();
 
-/*	QString teacher_name=teachersComboBox->currentText();
-	int teacher_ID=gt.rules.searchTeacher(teacher_name);
-	if(teacher_ID<0){
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Invalid teacher"));
-		return;
-	}*/
-
-	ctr=new ConstraintTeachersMinDaysPerWeek(weight, /*compulsory,*/ min_days/*, teacher_name*/);
+	ctr=new ConstraintTeachersMinDaysPerWeek(weight, min_days);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	if(tmp2)

@@ -28,7 +28,7 @@ class ModifyConstraintRoomNotAvailableTimesForm : public QDialog, Ui::ModifyCons
 
 	ConstraintRoomNotAvailableTimes* _ctr;
 public:
-	ModifyConstraintRoomNotAvailableTimesForm(ConstraintRoomNotAvailableTimes* ctr);
+	ModifyConstraintRoomNotAvailableTimesForm(QWidget* parent, ConstraintRoomNotAvailableTimes* ctr);
 	~ModifyConstraintRoomNotAvailableTimesForm();
 	
 	void updateRoomsComboBox();

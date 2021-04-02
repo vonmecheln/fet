@@ -17,38 +17,28 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintstudentssetmaxbuildingchangesperweekform.h"
 #include "spaceconstraint.h"
 
-
-AddConstraintStudentsSetMaxBuildingChangesPerWeekForm::AddConstraintStudentsSetMaxBuildingChangesPerWeekForm()
+AddConstraintStudentsSetMaxBuildingChangesPerWeekForm::AddConstraintStudentsSetMaxBuildingChangesPerWeekForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintStudentsSetMaxBuildingChangesPerWeekForm_template*/, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintStudentsSetMaxBuildingChangesPerWeekForm_template*/, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintStudentsSetMaxBuildingChangesPerWeekForm_template*/, SLOT(close()));
-//    connect(studentsComboBox, SIGNAL(activated(QString)), this /*AddConstraintStudentsSetMaxBuildingChangesPerWeekForm_template*/, SLOT(constraintChanged()));
-//    connect(maxChangesSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintStudentsSetMaxBuildingChangesPerWeekForm_template*/, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
 
-	maxChangesSpinBox->setMinValue(0);
-	maxChangesSpinBox->setMaxValue(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
+	maxChangesSpinBox->setMinimum(0);
+	maxChangesSpinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	maxChangesSpinBox->setValue(3);
 
 	updateStudentsSetComboBox();
@@ -56,6 +46,7 @@ AddConstraintStudentsSetMaxBuildingChangesPerWeekForm::AddConstraintStudentsSetM
 
 AddConstraintStudentsSetMaxBuildingChangesPerWeekForm::~AddConstraintStudentsSetMaxBuildingChangesPerWeekForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintStudentsSetMaxBuildingChangesPerWeekForm::updateStudentsSetComboBox()
@@ -63,13 +54,13 @@ void AddConstraintStudentsSetMaxBuildingChangesPerWeekForm::updateStudentsSetCom
 	studentsComboBox->clear();	
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
@@ -78,26 +69,7 @@ void AddConstraintStudentsSetMaxBuildingChangesPerWeekForm::updateStudentsSetCom
 }
 
 void AddConstraintStudentsSetMaxBuildingChangesPerWeekForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1").arg(weight);
-	s+="\n";
-
-	s+=tr("Students set max building changes per week");
-	s+="\n";
-	s+=tr("Students set=%1").arg(studentsComboBox->currentText());
-	s+="\n";
-	
-	s+=tr("Max building changes per week=%1").arg(maxChangesSpinBox->value());
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void AddConstraintStudentsSetMaxBuildingChangesPerWeekForm::addCurrentConstraint()
@@ -106,7 +78,7 @@ void AddConstraintStudentsSetMaxBuildingChangesPerWeekForm::addCurrentConstraint
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<100.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage). It has to be 100"));

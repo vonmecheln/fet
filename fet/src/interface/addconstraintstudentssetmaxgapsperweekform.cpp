@@ -17,37 +17,29 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintstudentssetmaxgapsperweekform.h"
 #include "timeconstraint.h"
 
 
-AddConstraintStudentsSetMaxGapsPerWeekForm::AddConstraintStudentsSetMaxGapsPerWeekForm()
+AddConstraintStudentsSetMaxGapsPerWeekForm::AddConstraintStudentsSetMaxGapsPerWeekForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintStudentsSetMaxGapsPerWeekForm_template*/, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintStudentsSetMaxGapsPerWeekForm_template*/, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintStudentsSetMaxGapsPerWeekForm_template*/, SLOT(close()));
-//    connect(studentsComboBox, SIGNAL(activated(QString)), this /*AddConstraintStudentsSetMaxGapsPerWeekForm_template*/, SLOT(constraintChanged()));
-//    connect(maxGapsSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintStudentsSetMaxGapsPerWeekForm_template*/, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
 		
-	maxGapsSpinBox->setMinValue(0);
-	maxGapsSpinBox->setMaxValue(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek);
+	maxGapsSpinBox->setMinimum(0);
+	maxGapsSpinBox->setMaximum(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek);
 	maxGapsSpinBox->setValue(0);
 
 	updateStudentsSetComboBox();
@@ -57,6 +49,7 @@ AddConstraintStudentsSetMaxGapsPerWeekForm::AddConstraintStudentsSetMaxGapsPerWe
 
 AddConstraintStudentsSetMaxGapsPerWeekForm::~AddConstraintStudentsSetMaxGapsPerWeekForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintStudentsSetMaxGapsPerWeekForm::updateStudentsSetComboBox()
@@ -64,13 +57,13 @@ void AddConstraintStudentsSetMaxGapsPerWeekForm::updateStudentsSetComboBox()
 	studentsComboBox->clear();	
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
@@ -79,26 +72,7 @@ void AddConstraintStudentsSetMaxGapsPerWeekForm::updateStudentsSetComboBox()
 }
 
 void AddConstraintStudentsSetMaxGapsPerWeekForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1").arg(weight);
-	s+="\n";
-	
-	s+=tr("Max gaps=%1").arg(maxGapsSpinBox->value());
-	s+="\n";
-
-	s+=tr("Students set max gaps per week");
-	s+="\n";
-	s+=tr("Students set=%1").arg(studentsComboBox->currentText());
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void AddConstraintStudentsSetMaxGapsPerWeekForm::addCurrentConstraint()
@@ -107,7 +81,7 @@ void AddConstraintStudentsSetMaxGapsPerWeekForm::addCurrentConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));

@@ -18,9 +18,6 @@
  *                                                                         *
  ***************************************************************************/
 
-/*#include <iostream>
-using namespace std;*/
-
 #include "sparsetableview.h"
 
 #include "timetable_defs.h"
@@ -31,7 +28,6 @@ using namespace std;*/
 #include <QPair>
 
 #include <QSize>
-
 
 SparseTableView::SparseTableView() : QTableView()
 {

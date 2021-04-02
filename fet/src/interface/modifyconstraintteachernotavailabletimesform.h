@@ -28,7 +28,7 @@ class ModifyConstraintTeacherNotAvailableTimesForm : public QDialog, Ui::ModifyC
 public:
 	ConstraintTeacherNotAvailableTimes* _ctr;
 
-	ModifyConstraintTeacherNotAvailableTimesForm(ConstraintTeacherNotAvailableTimes* ctr);
+	ModifyConstraintTeacherNotAvailableTimesForm(QWidget* parent, ConstraintTeacherNotAvailableTimes* ctr);
 	~ModifyConstraintTeacherNotAvailableTimesForm();
 
 	void updateTeachersComboBox();

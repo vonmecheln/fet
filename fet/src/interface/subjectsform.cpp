@@ -14,14 +14,11 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
 #include "subjectsform.h"
-//#include "fetmainform.h"
 #include "studentsset.h"
 #include "teacher.h"
 #include "subject.h"
@@ -30,53 +27,69 @@
 
 #include <QMessageBox>
 
-SubjectsForm::SubjectsForm()
- : SubjectsForm_template()
+#include <QListWidget>
+#include <QAbstractItemView>
+
+#include <QSplitter>
+#include <QSettings>
+#include <QObject>
+#include <QMetaObject>
+
+extern const QString COMPANY;
+extern const QString PROGRAM;
+
+SubjectsForm::SubjectsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
-
-    connect(closePushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(close()));
-    connect(addSubjectPushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(addSubject()));
-    connect(removeSubjectPushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(removeSubject()));
-    connect(renameSubjectPushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(renameSubject()));
-    connect(sortSubjectsPushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(sortSubjects()));
-    connect(subjectsListBox, SIGNAL(highlighted(int)), this /*SubjectsForm_template*/, SLOT(subjectChanged(int)));
-    connect(activateSubjectPushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(activateSubject()));
-    connect(deactivateSubjectPushButton, SIGNAL(clicked()), this /*SubjectsForm_template*/, SLOT(deactivateSubject()));
-    connect(subjectsListBox, SIGNAL(selected(QString)), this /*SubjectsForm_template*/, SLOT(renameSubject()));
-
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
-	centerWidgetOnScreen(this);
+	setupUi(this);
 	
-	subjectsListBox->clear();
+	currentSubjectTextEdit->setReadOnly(true);
+	
+	renameSubjectPushButton->setDefault(true);
+
+	subjectsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addSubjectPushButton, SIGNAL(clicked()), this, SLOT(addSubject()));
+	connect(removeSubjectPushButton, SIGNAL(clicked()), this, SLOT(removeSubject()));
+	connect(renameSubjectPushButton, SIGNAL(clicked()), this, SLOT(renameSubject()));
+	connect(sortSubjectsPushButton, SIGNAL(clicked()), this, SLOT(sortSubjects()));
+	connect(subjectsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(subjectChanged(int)));
+	connect(activateSubjectPushButton, SIGNAL(clicked()), this, SLOT(activateSubject()));
+	connect(deactivateSubjectPushButton, SIGNAL(clicked()), this, SLOT(deactivateSubject()));
+	connect(subjectsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(renameSubject()));
+
+	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+	//restore splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
+		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
+	
+	subjectsListWidget->clear();
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sbj=gt.rules.subjectsList[i];
-		subjectsListBox->insertItem(sbj->name);
+		subjectsListWidget->addItem(sbj->name);
 	}
-		
-	if(subjectsListBox->count()>0){
-		subjectsListBox->setCurrentItem(0);
-		this->subjectChanged(0);
-	}
+	
+	if(subjectsListWidget->count()>0)
+		subjectsListWidget->setCurrentRow(0);
 }
 
 
 SubjectsForm::~SubjectsForm()
 {
+	saveFETDialogGeometry(this);
+	//save splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
 }
 
 void SubjectsForm::addSubject()
 {
 	bool ok = FALSE;
 	Subject* sbj=new Subject();
-	sbj->name = QInputDialog::getText( tr("User input"), tr("Please enter subject's name") ,
-                    QLineEdit::Normal, QString::null, &ok, this );
+	sbj->name = QInputDialog::getText( this, tr("Add subject"), tr("Please enter subject's name") ,
+	 QLineEdit::Normal, QString(), &ok );
 
 	if ( ok && !((sbj->name).isEmpty()) ){
 		// user entered something and pressed OK
@@ -86,24 +99,27 @@ void SubjectsForm::addSubject()
 			delete sbj;
 		}
 		else{
-			subjectsListBox->insertItem(sbj->name);
-			subjectsListBox->setCurrentItem(subjectsListBox->count()-1);
-			this->subjectChanged(subjectsListBox->count()-1);
+			subjectsListWidget->addItem(sbj->name);
+			subjectsListWidget->setCurrentRow(subjectsListWidget->count()-1);
 		}
 	}
-	else
+	else{
+		if(ok){ //the user entered nothing
+			QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
+		}
 		delete sbj;// user entered nothing or pressed Cancel
+	}
 }
 
 void SubjectsForm::removeSubject()
 {
-	int i=subjectsListBox->currentItem();
-	if(subjectsListBox->currentItem()<0){
+	int i=subjectsListWidget->currentRow();
+	if(subjectsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subject"));
 		return;
 	}
 
-	QString text=subjectsListBox->currentText();
+	QString text=subjectsListWidget->currentItem()->text();
 	int subject_ID=gt.rules.searchSubject(text);
 	if(subject_ID<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subject"));
@@ -117,23 +133,29 @@ void SubjectsForm::removeSubject()
 
 	int tmp=gt.rules.removeSubject(text);
 	if(tmp){
-		subjectsListBox->removeItem(subjectsListBox->currentItem());
-		if((uint)(i)>=subjectsListBox->count())
-			i=subjectsListBox->count()-1;
-		subjectsListBox->setCurrentItem(i);
-		this->subjectChanged(i);
+		subjectsListWidget->setCurrentRow(-1);
+		QListWidgetItem* item;
+		item=subjectsListWidget->takeItem(i);
+		delete item;
+
+		if(i>=subjectsListWidget->count())
+			i=subjectsListWidget->count()-1;
+		if(i>=0)
+			subjectsListWidget->setCurrentRow(i);
+		else
+			currentSubjectTextEdit->setPlainText(QString(""));
 	}
 }
 
 void SubjectsForm::renameSubject()
 {
-	int i=subjectsListBox->currentItem();
-	if(subjectsListBox->currentItem()<0){
+	int i=subjectsListWidget->currentRow();
+	if(subjectsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subject"));
 		return;
 	}
 	
-	QString initialSubjectName=subjectsListBox->currentText();
+	QString initialSubjectName=subjectsListWidget->currentItem()->text();
 
 	int subject_ID=gt.rules.searchSubject(initialSubjectName);
 	if(subject_ID<0){
@@ -143,8 +165,8 @@ void SubjectsForm::renameSubject()
 
 	bool ok = FALSE;
 	QString finalSubjectName;
-	finalSubjectName = QInputDialog::getText( tr("User input"), tr("Please enter new subject's name") ,
-                    QLineEdit::Normal, initialSubjectName, &ok, this );
+	finalSubjectName = QInputDialog::getText( this, tr("Modify subject"), tr("Please enter new subject's name") ,
+	 QLineEdit::Normal, initialSubjectName, &ok);
 
 	if ( ok && !(finalSubjectName.isEmpty()) ){
 		// user entered something and pressed OK
@@ -154,7 +176,8 @@ void SubjectsForm::renameSubject()
 		}
 		else{
 			gt.rules.modifySubject(initialSubjectName, finalSubjectName);
-			subjectsListBox->changeItem(finalSubjectName, i);
+			subjectsListWidget->item(i)->setText(finalSubjectName);
+			subjectChanged(subjectsListWidget->currentRow());
 		}
 	}
 }
@@ -163,35 +186,37 @@ void SubjectsForm::sortSubjects()
 {
 	gt.rules.sortSubjectsAlphabetically();
 	
-	subjectsListBox->clear();
+	subjectsListWidget->clear();
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sbj=gt.rules.subjectsList[i];
-		subjectsListBox->insertItem(sbj->name);
+		subjectsListWidget->addItem(sbj->name);
 	}
+	
+	if(subjectsListWidget->count()>0)
+		subjectsListWidget->setCurrentRow(0);
 }
 
 void SubjectsForm::subjectChanged(int index)
 {
 	if(index<0){
-		//currentSubjectTextEdit->setText(tr("Invalid subject"));
-		currentSubjectTextEdit->setText("");
+		currentSubjectTextEdit->setPlainText(QString(""));
 		return;
 	}
 	
 	Subject* sb=gt.rules.subjectsList.at(index);
 	assert(sb);
 	QString s=sb->getDetailedDescriptionWithConstraints(gt.rules);
-	currentSubjectTextEdit->setText(s);
+	currentSubjectTextEdit->setPlainText(s);
 }
 
 void SubjectsForm::activateSubject()
 {
-	if(subjectsListBox->currentItem()<0){
+	if(subjectsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subject"));
 		return;
 	}
 	
-	QString subjectName=subjectsListBox->currentText();
+	QString subjectName=subjectsListWidget->currentItem()->text();
 	
 	int count=gt.rules.activateSubject(subjectName);
 	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
@@ -199,12 +224,12 @@ void SubjectsForm::activateSubject()
 
 void SubjectsForm::deactivateSubject()
 {
-	if(subjectsListBox->currentItem()<0){
+	if(subjectsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected subject"));
 		return;
 	}
 	
-	QString subjectName=subjectsListBox->currentText();
+	QString subjectName=subjectsListWidget->currentItem()->text();
 	
 	int count=gt.rules.deactivateSubject(subjectName);
 	QMessageBox::information(this, tr("FET information"), tr("De-activated a number of %1 activities").arg(count));

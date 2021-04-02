@@ -36,7 +36,7 @@
      <item>
       <widget class="QLineEdit" name="weightLineEdit">
        <property name="text">
-        <string>100</string>
+        <string notr="true">100</string>
        </property>
       </widget>
      </item>
@@ -62,12 +62,6 @@
      </item>
      <item>
       <widget class="QComboBox" name="firstActivitiesComboBox">
-       <property name="maximumSize">
-        <size>
-         <width>32767</width>
-         <height>32767</height>
-        </size>
-       </property>
        <property name="editable">
         <bool>false</bool>
        </property>
@@ -104,12 +98,6 @@
      </item>
      <item>
       <widget class="QComboBox" name="secondActivitiesComboBox">
-       <property name="maximumSize">
-        <size>
-         <width>32767</width>
-         <height>32767</height>
-        </size>
-       </property>
        <property name="editable">
         <bool>false</bool>
        </property>
@@ -146,12 +134,6 @@
      </item>
      <item>
       <widget class="QComboBox" name="thirdActivitiesComboBox">
-       <property name="maximumSize">
-        <size>
-         <width>32767</width>
-         <height>32767</height>
-        </size>
-       </property>
        <property name="editable">
         <bool>false</bool>
        </property>
@@ -205,14 +187,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>firstActivitiesComboBox</tabstop>
-  <tabstop>secondActivitiesComboBox</tabstop>
-  <tabstop>thirdActivitiesComboBox</tabstop>
-  <tabstop>weightLineEdit</tabstop>
-  <tabstop>okPushButton</tabstop>
-  <tabstop>cancelPushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

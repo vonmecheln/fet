@@ -23,63 +23,71 @@
 #include "addconstraintsubjectpreferredroomsform.h"
 #include "modifyconstraintsubjectpreferredroomsform.h"
 
-ConstraintSubjectPreferredRoomsForm::ConstraintSubjectPreferredRoomsForm()
+#include <QListWidget>
+#include <QScrollBar>
+#include <QAbstractItemView>
+
+ConstraintSubjectPreferredRoomsForm::ConstraintSubjectPreferredRoomsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*ConstraintSubjectPreferredRoomsForm_template*/, SLOT(addConstraint()));
-    connect(removeConstraintPushButton, SIGNAL(clicked()), this /*ConstraintSubjectPreferredRoomsForm_template*/, SLOT(removeConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*ConstraintSubjectPreferredRoomsForm_template*/, SLOT(close()));
-    connect(constraintsListBox, SIGNAL(highlighted(int)), this /*ConstraintSubjectPreferredRoomsForm_template*/, SLOT(constraintChanged(int)));
-    connect(modifyConstraintPushButton, SIGNAL(clicked()), this /*ConstraintSubjectPreferredRoomsForm_template*/, SLOT(modifyConstraint()));
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this /*ConstraintSubjectPreferredRoomsForm_template*/, SLOT(filterChanged()));
-    connect(constraintsListBox, SIGNAL(selected(QString)), this /*ConstraintSubjectPreferredRoomsForm_template*/, SLOT(modifyConstraint()));
+	currentConstraintTextEdit->setReadOnly(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	modifyConstraintPushButton->setDefault(true);
+	
+	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
+	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp3=subjectsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp3);
 	
-	subjectsComboBox->insertItem("");
+	subjectsComboBox->addItem("");
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 	}
 
-	this->refreshConstraintsListBox();
+	this->refreshConstraintsListWidget();
 }
 
 ConstraintSubjectPreferredRoomsForm::~ConstraintSubjectPreferredRoomsForm()
 {
+	saveFETDialogGeometry(this);
 }
 
-void ConstraintSubjectPreferredRoomsForm::refreshConstraintsListBox()
+void ConstraintSubjectPreferredRoomsForm::refreshConstraintsListWidget()
 {
 	this->visibleConstraintsList.clear();
-	constraintsListBox->clear();
+	constraintsListWidget->clear();
 	for(int i=0; i<gt.rules.spaceConstraintsList.size(); i++){
 		SpaceConstraint* ctr=gt.rules.spaceConstraintsList[i];
 		if(filterOk(ctr)){
 			QString s;
 			s=ctr->getDescription(gt.rules);
 			visibleConstraintsList.append(ctr);
-			constraintsListBox->insertItem(s);
+			constraintsListWidget->addItem(s);
 		}
 	}
 
-	constraintsListBox->setCurrentItem(0);
-	this->constraintChanged(constraintsListBox->currentItem());
+	if(constraintsListWidget->count()>0)
+		constraintsListWidget->setCurrentRow(0);
+	else
+		this->constraintChanged(-1);
 }
 
 void ConstraintSubjectPreferredRoomsForm::filterChanged()
 {
-	this->refreshConstraintsListBox();
+	this->refreshConstraintsListWidget();
 }
 
 bool ConstraintSubjectPreferredRoomsForm::filterOk(SpaceConstraint* ctr)
@@ -95,7 +103,7 @@ bool ConstraintSubjectPreferredRoomsForm::filterOk(SpaceConstraint* ctr)
 void ConstraintSubjectPreferredRoomsForm::constraintChanged(int index)
 {
 	if(index<0){
-		currentConstraintTextEdit->setText("");
+		currentConstraintTextEdit->setPlainText("");
 		return;
 	}
 	QString s;
@@ -103,39 +111,53 @@ void ConstraintSubjectPreferredRoomsForm::constraintChanged(int index)
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(index);
 	assert(ctr!=NULL);
 	s=ctr->getDetailedDescription(gt.rules);
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setPlainText(s);
 }
 
 void ConstraintSubjectPreferredRoomsForm::addConstraint()
 {
-	AddConstraintSubjectPreferredRoomsForm form;
+	AddConstraintSubjectPreferredRoomsForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListBox();
+	this->refreshConstraintsListWidget();
 	
-	constraintsListBox->setCurrentItem(constraintsListBox->count()-1);
+	constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
 }
 
 void ConstraintSubjectPreferredRoomsForm::modifyConstraint()
 {
-	int i=constraintsListBox->currentItem();
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
+
+	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
 	}
 	SpaceConstraint* ctr=this->visibleConstraintsList.at(i);
 
-	ModifyConstraintSubjectPreferredRoomsForm form((ConstraintSubjectPreferredRooms*)ctr);
+	ModifyConstraintSubjectPreferredRoomsForm form(this, (ConstraintSubjectPreferredRooms*)ctr);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	this->refreshConstraintsListBox();
+	this->refreshConstraintsListWidget();
 	
-	constraintsListBox->setCurrentItem(i);
+	constraintsListWidget->verticalScrollBar()->setValue(valv);
+	constraintsListWidget->horizontalScrollBar()->setValue(valh);
+
+	if(i>=constraintsListWidget->count())
+		i=constraintsListWidget->count()-1;
+
+	if(i>=0)
+		constraintsListWidget->setCurrentRow(i);
+	else
+		this->constraintChanged(-1);
 }
 
 void ConstraintSubjectPreferredRoomsForm::removeConstraint()
 {
-	int i=constraintsListBox->currentItem();
+	int i=constraintsListWidget->currentRow();
 	if(i<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
 		return;
@@ -145,19 +167,28 @@ void ConstraintSubjectPreferredRoomsForm::removeConstraint()
 	s=tr("Remove constraint?");
 	s+="\n\n";
 	s+=ctr->getDetailedDescription(gt.rules);
-	//s+=tr("\nAre you sure?");
+	
+	QListWidgetItem* item;
 
 	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
-	case 0: // The user clicked the OK again button or pressed Enter
+	case 0: // The user clicked the OK button or pressed Enter
 		gt.rules.removeSpaceConstraint(ctr);
-		this->refreshConstraintsListBox();
+	
+		visibleConstraintsList.removeAt(i);
+		constraintsListWidget->setCurrentRow(-1);
+		item=constraintsListWidget->takeItem(i);
+		delete item;
+
 		break;
-	case 1: // The user clicked the Cancel or pressed Escape
+	case 1: // The user clicked the Cancel button or pressed Escape
 		break;
 	}
 
-	if((uint)(i) >= constraintsListBox->count())
-		i=constraintsListBox->count()-1;
-	constraintsListBox->setCurrentItem(i);
+	if(i>=constraintsListWidget->count())
+		i=constraintsListWidget->count()-1;
+	if(i>=0)
+		constraintsListWidget->setCurrentRow(i);
+	else
+		this->constraintChanged(-1);
 }

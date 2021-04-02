@@ -29,7 +29,7 @@ class ConstraintMaxDaysBetweenActivitiesForm : public QDialog, Ui::ConstraintMax
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintMaxDaysBetweenActivitiesForm();
+	ConstraintMaxDaysBetweenActivitiesForm(QWidget* parent);
 	~ConstraintMaxDaysBetweenActivitiesForm();
 
 	bool filterOk(TimeConstraint* ctr);

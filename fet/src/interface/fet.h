@@ -22,10 +22,8 @@ along with timetable; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-
 #ifndef FET_H
 #define FET_H
-
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -36,6 +34,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 using namespace std;
 
 #include <QTextStream>
+
+#include <QApplication>
+
+class QWidget;
 
 class FetTranslate: public QObject{
 	Q_OBJECT
@@ -55,7 +57,6 @@ extern ofstream logg;
 The name of the file from where the rules are read.
 */
 extern QString INPUT_FILENAME_XML;
-     
 
 /**
 The timetable for the teachers
@@ -81,10 +82,11 @@ void writeSimulationParameters();
 
 void usage(QTextStream& out);
 
+void setLanguage(QApplication& qapplication, QWidget* parent);
+
 /**
 The main function.
 */
 int main(int argc, char **argv);
-
 
 #endif

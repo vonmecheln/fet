@@ -17,27 +17,22 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintsubjectpreferredroomform.h"
 #include "spaceconstraint.h"
 
-AddConstraintSubjectPreferredRoomForm::AddConstraintSubjectPreferredRoomForm()
+AddConstraintSubjectPreferredRoomForm::AddConstraintSubjectPreferredRoomForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintSubjectPreferredRoomForm_template*/, SLOT(close()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintSubjectPreferredRoomForm_template*/, SLOT(addConstraint()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp3=subjectsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp3);
@@ -51,6 +46,7 @@ AddConstraintSubjectPreferredRoomForm::AddConstraintSubjectPreferredRoomForm()
 
 AddConstraintSubjectPreferredRoomForm::~AddConstraintSubjectPreferredRoomForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintSubjectPreferredRoomForm::updateSubjectsComboBox()
@@ -58,7 +54,7 @@ void AddConstraintSubjectPreferredRoomForm::updateSubjectsComboBox()
 	subjectsComboBox->clear();
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 	}
 }
 
@@ -67,7 +63,7 @@ void AddConstraintSubjectPreferredRoomForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* rm=gt.rules.roomsList[i];
-		roomsComboBox->insertItem(rm->name);
+		roomsComboBox->addItem(rm->name);
 	}
 }
 
@@ -77,18 +73,14 @@ void AddConstraintSubjectPreferredRoomForm::addConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
 		return;
 	}
 
-/*	bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
-	int i=subjectsComboBox->currentItem();
+	int i=subjectsComboBox->currentIndex();
 	if(i<0 || subjectsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid subject"));
@@ -96,7 +88,7 @@ void AddConstraintSubjectPreferredRoomForm::addConstraint()
 	}
 	QString subject=subjectsComboBox->currentText();
 
-	i=roomsComboBox->currentItem();
+	i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid room"));
@@ -104,7 +96,7 @@ void AddConstraintSubjectPreferredRoomForm::addConstraint()
 	}
 	QString room=roomsComboBox->currentText();
 
-	ctr=new ConstraintSubjectPreferredRoom(weight/*, compulsory*/, subject, room);
+	ctr=new ConstraintSubjectPreferredRoom(weight, subject, room);
 
 	bool tmp2=gt.rules.addSpaceConstraint(ctr);
 	if(tmp2){

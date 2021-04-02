@@ -28,7 +28,7 @@
     <widget class="QComboBox" name="subjectsComboBox"/>
    </item>
    <item row="2" column="0">
-    <layout class="QVBoxLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
       <widget class="QLabel" name="roomsTextLabel">
        <property name="frameShape">
@@ -46,13 +46,7 @@
       </widget>
      </item>
      <item>
-      <widget class="Q3ListBox" name="roomsListBox">
-       <item>
-        <property name="text">
-         <string>New Item</string>
-        </property>
-       </item>
-      </widget>
+      <widget class="QListWidget" name="roomsListWidget"/>
      </item>
     </layout>
    </item>
@@ -75,13 +69,7 @@
       </widget>
      </item>
      <item>
-      <widget class="Q3ListBox" name="selectedRoomsListBox">
-       <item>
-        <property name="text">
-         <string>New Item</string>
-        </property>
-       </item>
-      </widget>
+      <widget class="QListWidget" name="selectedRoomsListWidget"/>
      </item>
      <item>
       <widget class="QPushButton" name="clearPushButton">
@@ -113,7 +101,7 @@
      <item>
       <widget class="QLineEdit" name="weightLineEdit">
        <property name="text">
-        <string>-1</string>
+        <string notr="true">100</string>
        </property>
       </widget>
      </item>
@@ -140,27 +128,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>Q3Frame</class>
-   <extends>QFrame</extends>
-   <header>Qt3Support/Q3Frame</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>Q3ListBox</class>
-   <extends>Q3Frame</extends>
-   <header>q3listbox.h</header>
-  </customwidget>
- </customwidgets>
- <tabstops>
-  <tabstop>subjectsComboBox</tabstop>
-  <tabstop>roomsListBox</tabstop>
-  <tabstop>selectedRoomsListBox</tabstop>
-  <tabstop>weightLineEdit</tabstop>
-  <tabstop>okPushButton</tabstop>
-  <tabstop>cancelPushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

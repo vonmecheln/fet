@@ -29,7 +29,7 @@ class ConstraintMinGapsBetweenActivitiesForm : public QDialog, Ui::ConstraintMin
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintMinGapsBetweenActivitiesForm();
+	ConstraintMinGapsBetweenActivitiesForm(QWidget* parent);
 	~ConstraintMinGapsBetweenActivitiesForm();
 
 	bool filterOk(TimeConstraint* ctr);

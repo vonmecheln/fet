@@ -15,9 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-//#include <iostream>
-//using namespace std;
-
 #include "timetable_defs.h"
 #include "fet.h"
 #include "timetable.h"
@@ -33,11 +30,8 @@
 #include <QString>
 #include <QMessageBox>
 
-#include <QTextEdit>
 #include <QListWidget>
-
 #include <QScrollBar>
-
 #include <QAbstractItemView>
 
 #include "longtextmessagebox.h"
@@ -45,34 +39,44 @@
 #include <QBrush>
 #include <QPalette>
 
-ActivitiesForm::ActivitiesForm(const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName)
+#include <QSplitter>
+#include <QSettings>
+#include <QObject>
+#include <QMetaObject>
+
+extern const QString COMPANY;
+extern const QString PROGRAM;
+
+ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName): QDialog(parent)
 {
-    setupUi(this);
-    
-    modifyActivityPushButton->setDefault(true);
-    
-    activitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	setupUi(this);
+	
+	activityTextEdit->setReadOnly(true);
 
-    connect(activitiesListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(activityChanged()));
-    connect(addActivityPushButton, SIGNAL(clicked()), this, SLOT(addActivity()));
-    connect(removeActivityPushButton, SIGNAL(clicked()), this, SLOT(removeActivity()));
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-    connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(studentsFilterChanged()));
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(modifyActivityPushButton, SIGNAL(clicked()), this, SLOT(modifyActivity()));
-    connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(activitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyActivity()));
-    connect(recursiveCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
+	modifyActivityPushButton->setDefault(true);
 
-    connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	activitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	//setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	connect(activitiesListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(activityChanged()));
+	connect(addActivityPushButton, SIGNAL(clicked()), this, SLOT(addActivity()));
+	connect(removeActivityPushButton, SIGNAL(clicked()), this, SLOT(removeActivity()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(studentsFilterChanged()));
+	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(modifyActivityPushButton, SIGNAL(clicked()), this, SLOT(modifyActivity()));
+	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(activitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyActivity()));
+	connect(recursiveCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
+
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+
 	centerWidgetOnScreen(this);
-	/*QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	restoreFETDialogGeometry(this);
+	//restore splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
+		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
 	
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -83,61 +87,61 @@ ActivitiesForm::ActivitiesForm(const QString& teacherName, const QString& studen
 	QSize tmp4=activityTagsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
 
-	teachersComboBox->insertItem("");
+	teachersComboBox->addItem("");
 	int cit=0;
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 		if(tch->name==teacherName)
 			cit=i+1;
 	}
-	teachersComboBox->setCurrentItem(cit);
+	teachersComboBox->setCurrentIndex(cit);
 
-	subjectsComboBox->insertItem("");
+	subjectsComboBox->addItem("");
 	int cisu=0;
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 		if(sb->name==subjectName)
 			cisu=i+1;
 	}
-	subjectsComboBox->setCurrentItem(cisu);
+	subjectsComboBox->setCurrentIndex(cisu);
 
-	activityTagsComboBox->insertItem("");
+	activityTagsComboBox->addItem("");
 	int ciat=0;
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* st=gt.rules.activityTagsList[i];
-		activityTagsComboBox->insertItem(st->name);
+		activityTagsComboBox->addItem(st->name);
 		if(st->name==activityTagName)
 			ciat=i+1;
 	}
-	activityTagsComboBox->setCurrentItem(ciat);
+	activityTagsComboBox->setCurrentIndex(ciat);
 
-	studentsComboBox->insertItem("");
+	studentsComboBox->addItem("");
 	int cist=0;
 	int currentID=0;
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		currentID++;
 		if(sty->name==studentsSetName)
 			cist=currentID;
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			currentID++;
 			if(stg->name==studentsSetName)
 				cist=currentID;
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 				currentID++;
 				if(sts->name==studentsSetName)
 					cist=currentID;
 			}
 		}
 	}
-	studentsComboBox->setCurrentItem(cist);
+	studentsComboBox->setCurrentIndex(cist);
 	
 	if(studentsSetName!=""){
 		this->studentsFilterChanged();
@@ -152,6 +156,10 @@ ActivitiesForm::ActivitiesForm(const QString& teacherName, const QString& studen
 
 ActivitiesForm::~ActivitiesForm()
 {
+	saveFETDialogGeometry(this);
+	//save splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
 }
 
 bool ActivitiesForm::filterOk(Activity* act)
@@ -179,7 +187,6 @@ bool ActivitiesForm::filterOk(Activity* act)
 		ok=false;
 		
 	//activity tag
-	//if(sbtn!="" && sbtn!=act->activityTagName)
 	if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
 		ok=false;
 		
@@ -303,11 +310,10 @@ void ActivitiesForm::filterChanged()
 	totalTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the duration of total activities."
 		" Please leave spaces between fields, so that they are better visible").arg(nh-ninacth).arg(nh));
 	
-	activitiesListWidget->setCurrentRow(0);
-	//activitiesListWidget->setSelected(0, true);
-	
-	if(activitiesListWidget->count()<=0)
-		activityTextEdit->setText("");
+	if(activitiesListWidget->count()>0)
+		activitiesListWidget->setCurrentRow(0);
+	else
+		activityTextEdit->setPlainText(QString(""));
 }
 
 void ActivitiesForm::addActivity()
@@ -319,7 +325,8 @@ void ActivitiesForm::addActivity()
 	QString sn=subjectsComboBox->currentText();
 	QString atn=activityTagsComboBox->currentText();
 	
-	AddActivityForm addActivityForm(tn, stn, sn, atn);
+	AddActivityForm addActivityForm(this, tn, stn, sn, atn);
+	setParentAndOtherThings(&addActivityForm, this);
 	addActivityForm.exec();
 
 	if(gt.rules.activitiesList.count()!=nInitialActs){
@@ -390,8 +397,8 @@ void ActivitiesForm::modifyActivity()
 			}
 			if(nSplit>MAX_SPLIT_OF_AN_ACTIVITY){
 				QMessageBox::warning(this, tr("FET information"),
-					tr("Cannot modify this large activity, because it contains more than %1 activities. "
-					"If you really need that, please talk to the author").arg(MAX_SPLIT_OF_AN_ACTIVITY));
+				 tr("Cannot modify this large activity, because it contains more than %1 activities.")
+				 .arg(MAX_SPLIT_OF_AN_ACTIVITY));
 				return;
 			}
 		}
@@ -425,12 +432,12 @@ void ActivitiesForm::modifyActivity()
 		}
 	}
 	
-	ModifyActivityForm modifyActivityForm(act->id, act->activityGroupId);
+	ModifyActivityForm modifyActivityForm(this, act->id, act->activityGroupId);
 	int t;
+	setParentAndOtherThings(&modifyActivityForm, this);
 	t=modifyActivityForm.exec();
 	
 	if(t==QDialog::Accepted){
-		//cout<<"AAcc"<<endl;
 		filterChanged();
 	
 		activitiesListWidget->verticalScrollBar()->setValue(valv);
@@ -442,7 +449,6 @@ void ActivitiesForm::modifyActivity()
 			activitiesListWidget->setCurrentRow(ind);
 	}
 	else{
-		//cout<<"ARej"<<endl;
 		assert(t==QDialog::Rejected);
 	}
 }
@@ -464,11 +470,6 @@ void ActivitiesForm::removeActivity()
 	assert(act!=NULL);
 
 	QString s;
-	/*
-	if(!act->isSplit())
-		s=tr("Removing activity:");
-	else
-		s=tr("Removing sub-activity:");*/
 	s=tr("Remove activity?");
 	s+="\n";
 	if(act->isSplit())
@@ -502,11 +503,11 @@ void ActivitiesForm::activityChanged()
 	int index=activitiesListWidget->currentRow();
 	
 	if(index<0){
-		activityTextEdit->setText(tr("Invalid activity"));
+		activityTextEdit->setPlainText(QString(""));
 		return;
 	}
 	if(index>=visibleActivitiesList.count()){
-		activityTextEdit->setText(tr("Invalid activity"));
+		activityTextEdit->setPlainText(tr("Invalid activity"));
 		return;
 	}
 
@@ -515,7 +516,7 @@ void ActivitiesForm::activityChanged()
 
 	assert(act!=NULL);
 	s=act->getDetailedDescriptionWithConstraints(gt.rules);
-	activityTextEdit->setText(s);
+	activityTextEdit->setPlainText(s);
 }
 
 void ActivitiesForm::help()
@@ -546,9 +547,6 @@ void ActivitiesForm::help()
 	s+=" -";
 	s+=tr("have an X mark after the id.", "It refers to inactive activities, which have this mark after the id.");
 	s+="\n";
-/*	s+=" -";
-	s+=tr("are shown with lowercase letters.");
-	s+="\n";*/
 	s+=" -";
 	s+=tr("if you use colors in interface (see Settings/Interface menu), they will appear with different background color.", "It refers to inactive activities");
 	s+="\n\n";

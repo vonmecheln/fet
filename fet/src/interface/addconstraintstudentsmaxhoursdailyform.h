@@ -26,7 +26,7 @@
 class AddConstraintStudentsMaxHoursDailyForm : public QDialog, Ui::AddConstraintStudentsMaxHoursDailyForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintStudentsMaxHoursDailyForm();
+	AddConstraintStudentsMaxHoursDailyForm(QWidget* parent);
 	~AddConstraintStudentsMaxHoursDailyForm();
 
 public slots:

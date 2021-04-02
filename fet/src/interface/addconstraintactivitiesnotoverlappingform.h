@@ -28,15 +28,16 @@
 class AddConstraintActivitiesNotOverlappingForm : public QDialog, Ui::AddConstraintActivitiesNotOverlappingForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintActivitiesNotOverlappingForm();
+	AddConstraintActivitiesNotOverlappingForm(QWidget* parent);
 	~AddConstraintActivitiesNotOverlappingForm();
 
-	void updateActivitiesListBox();
+	void updateActivitiesListWidget();
 	
 	bool filterOk(Activity* a);
 
 public slots:
 	void addActivity();
+	void addAllActivities();
 	void removeActivity();
 
 	void addConstraint();

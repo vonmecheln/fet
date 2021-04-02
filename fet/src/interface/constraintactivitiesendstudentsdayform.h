@@ -28,10 +28,10 @@ class ConstraintActivitiesEndStudentsDayForm : public QDialog, Ui::ConstraintAct
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintActivitiesEndStudentsDayForm();
+	ConstraintActivitiesEndStudentsDayForm(QWidget* parent);
 	~ConstraintActivitiesEndStudentsDayForm();
 
-	void refreshConstraintsListBox();
+	void refreshConstraintsListWidget();
 
 	bool filterOk(TimeConstraint* ctr);
 public slots:

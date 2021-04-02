@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>567</width>
+    <width>816</width>
     <height>404</height>
    </rect>
   </property>
@@ -15,7 +15,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" colspan="3">
-    <widget class="QLabel" name="weightTextLabel_2_2">
+    <widget class="QLabel" name="instructions1TextLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
        <horstretch>0</horstretch>
@@ -36,7 +36,7 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
+   <item row="1" column="0" colspan="3">
     <spacer name="spacer11_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -53,7 +53,7 @@
     </spacer>
    </item>
    <item row="2" column="0" colspan="3">
-    <widget class="QLabel" name="weightTextLabel_2">
+    <widget class="QLabel" name="instructions2TextLabel">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
        <horstretch>0</horstretch>
@@ -75,7 +75,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="3" column="0" colspan="3">
     <spacer name="spacer11">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -129,7 +129,7 @@ Note: students set not available and break are not counted as gaps (early gaps).
    <item row="5" column="1" colspan="2">
     <widget class="QLineEdit" name="weightLineEdit">
      <property name="text">
-      <string>100</string>
+      <string notr="true">100</string>
      </property>
     </widget>
    </item>
@@ -154,12 +154,6 @@ Note: students set not available and break are not counted as gaps (early gaps).
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>maxBeginningsSpinBox</tabstop>
-  <tabstop>weightLineEdit</tabstop>
-  <tabstop>addConstraintPushButton</tabstop>
-  <tabstop>closePushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

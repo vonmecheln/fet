@@ -28,7 +28,7 @@ class ModifyConstraintTwoActivitiesGroupedForm : public QDialog, Ui::ModifyConst
 public:
 	ConstraintTwoActivitiesGrouped* _ctr;
 
-	ModifyConstraintTwoActivitiesGroupedForm(ConstraintTwoActivitiesGrouped* ctr);
+	ModifyConstraintTwoActivitiesGroupedForm(QWidget* parent, ConstraintTwoActivitiesGrouped* ctr);
 	~ModifyConstraintTwoActivitiesGroupedForm();
 
 	void updateActivitiesComboBox();

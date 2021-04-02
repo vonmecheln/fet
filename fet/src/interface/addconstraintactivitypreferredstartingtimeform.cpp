@@ -17,7 +17,7 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
+
 
 #include "longtextmessagebox.h"
 
@@ -26,32 +26,22 @@
 
 #include <QSet>
 #include "lockunlock.h"
-//extern QSet<int> idsOfLockedTime;
-//extern QSet<int> idsOfPermanentlyLockedTime;
 
-AddConstraintActivityPreferredStartingTimeForm::AddConstraintActivityPreferredStartingTimeForm()
+AddConstraintActivityPreferredStartingTimeForm::AddConstraintActivityPreferredStartingTimeForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-//    connect(activitiesComboBox, SIGNAL(activated(QString)), this, SLOT(constraintChanged()));
-//    connect(dayComboBox, SIGNAL(activated(QString)), this, SLOT(constraintChanged()));
-//    connect(startHourComboBox, SIGNAL(activated(QString)), this, SLOT(constraintChanged()));
-    connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-//    connect(permLockedCheckBox, SIGNAL(toggled(bool)), this, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -71,43 +61,41 @@ AddConstraintActivityPreferredStartingTimeForm::AddConstraintActivityPreferredSt
 
 	activitiesComboBox->setMaximumWidth(maxRecommendedWidth(this));
 	
-	//permTextLabel->setWordWrap(true);
-	
-	teachersComboBox->insertItem("");
+	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 	}
-	teachersComboBox->setCurrentItem(0);
+	teachersComboBox->setCurrentIndex(0);
 
-	subjectsComboBox->insertItem("");
+	subjectsComboBox->addItem("");
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 	}
-	subjectsComboBox->setCurrentItem(0);
+	subjectsComboBox->setCurrentIndex(0);
 
-	activityTagsComboBox->insertItem("");
+	activityTagsComboBox->addItem("");
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* st=gt.rules.activityTagsList[i];
-		activityTagsComboBox->insertItem(st->name);
+		activityTagsComboBox->addItem(st->name);
 	}
-	activityTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentIndex(0);
 
-	studentsComboBox->insertItem("");
+	studentsComboBox->addItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
-	studentsComboBox->setCurrentItem(0);
+	studentsComboBox->setCurrentIndex(0);
 	
 	updatePeriodGroupBox();
 	updateActivitiesComboBox();
@@ -115,6 +103,7 @@ AddConstraintActivityPreferredStartingTimeForm::AddConstraintActivityPreferredSt
 
 AddConstraintActivityPreferredStartingTimeForm::~AddConstraintActivityPreferredStartingTimeForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 bool AddConstraintActivityPreferredStartingTimeForm::filterOk(Activity* act)
@@ -142,7 +131,6 @@ bool AddConstraintActivityPreferredStartingTimeForm::filterOk(Activity* act)
 		ok=false;
 		
 	//activity tag
-//	if(sbtn!="" && sbtn!=act->activityTagName)
 	if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
 		ok=false;
 		
@@ -161,7 +149,6 @@ bool AddConstraintActivityPreferredStartingTimeForm::filterOk(Activity* act)
 	return ok;
 }
 
-
 void AddConstraintActivityPreferredStartingTimeForm::updateActivitiesComboBox(){
 	activitiesComboBox->clear();
 	activitiesList.clear();
@@ -170,12 +157,10 @@ void AddConstraintActivityPreferredStartingTimeForm::updateActivitiesComboBox(){
 		Activity* act=gt.rules.activitiesList[i];
 		
 		if(filterOk(act)){
-			activitiesComboBox->insertItem(act->getDescription(gt.rules));
+			activitiesComboBox->addItem(act->getDescription(gt.rules));
 			this->activitiesList.append(act->id);
 		}
 	}
-
-	constraintChanged();
 }
 
 void AddConstraintActivityPreferredStartingTimeForm::filterChanged()
@@ -185,73 +170,12 @@ void AddConstraintActivityPreferredStartingTimeForm::filterChanged()
 
 void AddConstraintActivityPreferredStartingTimeForm::updatePeriodGroupBox(){
 	startHourComboBox->clear();
-	//startHourComboBox->insertItem(tr("Any"));
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
-		startHourComboBox->insertItem(gt.rules.hoursOfTheDay[i]);
+		startHourComboBox->addItem(gt.rules.hoursOfTheDay[i]);
 
 	dayComboBox->clear();
-	//dayComboBox->insertItem(tr("Any"));
 	for(int i=0; i<gt.rules.nDaysPerWeek; i++)
-		dayComboBox->insertItem(gt.rules.daysOfTheWeek[i]);
-}
-
-void AddConstraintActivityPreferredStartingTimeForm::constraintChanged()
-{
-/*	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1\%").arg(weight);
-	s+="\n";
-
-	s+=tr("Activity preferred starting time");
-	s+="\n";
-	int tmp2=activitiesComboBox->currentItem();
-	assert(tmp2<activitiesList.size());
-	assert(tmp2<gt.rules.activitiesList.size());
-	if(tmp2<0){
-		s+=tr("Invalid activity");
-		s+="\n";
-	}
-	else{
-		int id=activitiesList.at(tmp2);
-		s+=tr("Activity id=%1").arg(id);
-		s+="\n";
-	}
-
-	int day=dayComboBox->currentItem();
-	if(day<0 || day>=gt.rules.nDaysPerWeek){
-		s+=tr("Invalid day");
-		s+="\n";
-	}
-	else{
-		s+=tr("Day:%1").arg(dayComboBox->currentText());
-		s+="\n";
-	}
-
-	int startHour=startHourComboBox->currentItem();
-	if(startHour<0 || startHour>=gt.rules.nHoursPerDay){
-		s+=tr("Invalid start hour");
-		s+="\n";
-	}
-	else{
-		s+=tr("Start hour:%1").arg(startHourComboBox->currentText());
-		s+="\n";
-	}
-	
-	if(permLockedCheckBox->isChecked()){
-		s+=tr("Permanently locked (cannot be unlocked from the 'Timetable' menu)");
-	}
-	else{
-		s+=tr("Not permanently locked (can be unlocked from the 'Timetable' menu)");
-	}
-	s+="\n";
-	
-	currentConstraintTextEdit->setText(s);
-	*/
+		dayComboBox->addItem(gt.rules.daysOfTheWeek[i]);
 }
 
 void AddConstraintActivityPreferredStartingTimeForm::addCurrentConstraint()
@@ -260,38 +184,28 @@ void AddConstraintActivityPreferredStartingTimeForm::addCurrentConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
 		return;
 	}
 
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
-	int day=dayComboBox->currentItem();
+	int day=dayComboBox->currentIndex();
 	if(day<0 || day>=gt.rules.nDaysPerWeek){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid day"));
 		return;
 	}
-	int startHour=startHourComboBox->currentItem();
+	int startHour=startHourComboBox->currentIndex();
 	if(startHour<0 || startHour>=gt.rules.nHoursPerDay){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid start hour"));
 		return;
 	}
 
-/*	if(startHour==0 && day==0){
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Please specify at least a day or an hour"));
-		return;
-	}*/
-
 	int id;
-	int tmp2=activitiesComboBox->currentItem();
+	int tmp2=activitiesComboBox->currentIndex();
 	assert(tmp2<gt.rules.activitiesList.size());
 	assert(tmp2<activitiesList.size());
 	if(tmp2<0){
@@ -302,21 +216,13 @@ void AddConstraintActivityPreferredStartingTimeForm::addCurrentConstraint()
 	else
 		id=activitiesList.at(tmp2);
 	
-	ctr=new ConstraintActivityPreferredStartingTime(weight, /*compulsory,*/ id, day, startHour, permLockedCheckBox->isChecked());
+	ctr=new ConstraintActivityPreferredStartingTime(weight, id, day, startHour, permLockedCheckBox->isChecked());
 
 	bool tmp3=gt.rules.addTimeConstraint(ctr);
 	if(tmp3){
 		LongTextMessageBox::information(this, tr("FET information"),
 			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
-			
-		/*
-		if(day-1>=0 && startHour-1>=0){
-			if(permLockedCheckBox->isChecked())
-				idsOfPermanentlyLockedTime.insert(id);
-			else
-				idsOfLockedTime.insert(id);
-			LockUnlock::increaseCommunicationSpinBox();
-		} wrong, must take care also of weight==100.0 */
+		
 		LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
 		LockUnlock::increaseCommunicationSpinBox();
 	}

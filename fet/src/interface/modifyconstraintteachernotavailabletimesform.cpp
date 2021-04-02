@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "tablewidgetupdatebug.h"
 
 #include "modifyconstraintteachernotavailabletimesform.h"
@@ -31,38 +29,30 @@
 #include <QBrush>
 #include <QColor>
 
-//#define YES	(ModifyConstraintTeacherNotAvailableTimesForm::tr("Not available", "Please keep translation short"))
-//#define NO	(ModifyConstraintTeacherNotAvailableTimesForm::tr("Available", "Please keep translation short"))
 #define YES		(QString("X"))
 #define NO		(QString(" "))
 
-static bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
-
-ModifyConstraintTeacherNotAvailableTimesForm::ModifyConstraintTeacherNotAvailableTimesForm(ConstraintTeacherNotAvailableTimes* ctr)
+ModifyConstraintTeacherNotAvailableTimesForm::ModifyConstraintTeacherNotAvailableTimesForm(QWidget* parent, ConstraintTeacherNotAvailableTimes* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeacherNotAvailableTimesForm_template*/, SLOT(ok()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeacherNotAvailableTimesForm_template*/, SLOT(cancel()));
-    connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-    connect(setAllAvailablePushButton, SIGNAL(clicked()), this /*ModifyConstraintTeacherNotAvailableTimesForm_template*/, SLOT(setAllAvailable()));
-    connect(setAllNotAvailablePushButton, SIGNAL(clicked()), this /*ModifyConstraintTeacherNotAvailableTimesForm_template*/, SLOT(setAllNotAvailable()));
+	okPushButton->setDefault(true);
 
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
+	connect(setAllAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllAvailable()));
+	connect(setAllNotAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllNotAvailable()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
 	
 	this->_ctr=ctr;
 	
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 	
 	updateTeachersComboBox();
 
@@ -79,6 +69,9 @@ ModifyConstraintTeacherNotAvailableTimesForm::ModifyConstraintTeacherNotAvailabl
 	}
 
 	//bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
+	Matrix2D<bool> currentMatrix;
+	currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
+
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			currentMatrix[i][j]=false;			
@@ -88,7 +81,8 @@ ModifyConstraintTeacherNotAvailableTimesForm::ModifyConstraintTeacherNotAvailabl
 			assert(0);
 		int i=ctr->hours.at(k);
 		int j=ctr->days.at(k);
-		currentMatrix[i][j]=true;
+		if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
+			currentMatrix[i][j]=true;
 	}
 
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
@@ -114,10 +108,13 @@ ModifyConstraintTeacherNotAvailableTimesForm::ModifyConstraintTeacherNotAvailabl
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
 	tableWidgetUpdateBug(notAllowedTimesTable);
+	
+	setStretchAvailabilityTableNicely(notAllowedTimesTable);
 }
 
 ModifyConstraintTeacherNotAvailableTimesForm::~ModifyConstraintTeacherNotAvailableTimesForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintTeacherNotAvailableTimesForm::colorItem(QTableWidgetItem* item)
@@ -143,13 +140,6 @@ void ModifyConstraintTeacherNotAvailableTimesForm::horizontalHeaderClicked(int c
 		}
 
 		for(int row=0; row<gt.rules.nHoursPerDay; row++){
-			/*QString s=notAllowedTimesTable->text(row, col);
-			if(s==YES)
-				s=NO;
-			else{
-				assert(s==NO);
-				s=YES;
-			}*/
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
@@ -169,13 +159,6 @@ void ModifyConstraintTeacherNotAvailableTimesForm::verticalHeaderClicked(int row
 		}
 	
 		for(int col=0; col<gt.rules.nDaysPerWeek; col++){
-			/*QString s=notAllowedTimesTable->text(row, col);
-			if(s==YES)
-				s=NO;
-			else{
-				assert(s==NO);
-				s=YES;
-			}*/
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
@@ -208,12 +191,12 @@ void ModifyConstraintTeacherNotAvailableTimesForm::updateTeachersComboBox(){
 	int i=0, j=-1;
 	for(int k=0; k<gt.rules.teachersList.size(); k++, i++){
 		Teacher* tch=gt.rules.teachersList[k];
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 		if(tch->name==this->_ctr->teacher)
 			j=i;
 	}
 	assert(j>=0);
-	teachersComboBox->setCurrentItem(j);
+	teachersComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintTeacherNotAvailableTimesForm::itemClicked(QTableWidgetItem* item)
@@ -235,7 +218,7 @@ void ModifyConstraintTeacherNotAvailableTimesForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<100.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage). It has to be 100"));
@@ -276,6 +259,7 @@ void ModifyConstraintTeacherNotAvailableTimesForm::ok()
 	this->_ctr->hours=hours;
 
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }

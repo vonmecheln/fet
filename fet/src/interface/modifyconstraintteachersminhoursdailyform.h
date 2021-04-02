@@ -28,7 +28,7 @@ class ModifyConstraintTeachersMinHoursDailyForm : public QDialog, Ui::ModifyCons
 public:
 	ConstraintTeachersMinHoursDaily* _ctr;
 
-	ModifyConstraintTeachersMinHoursDailyForm(ConstraintTeachersMinHoursDaily* ctr);
+	ModifyConstraintTeachersMinHoursDailyForm(QWidget* parent, ConstraintTeachersMinHoursDaily* ctr);
 	~ModifyConstraintTeachersMinHoursDailyForm();
 
 	void updateMinHoursSpinBox();

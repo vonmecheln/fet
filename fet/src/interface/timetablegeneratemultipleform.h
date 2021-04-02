@@ -44,7 +44,7 @@ class TimetableGenerateMultipleForm : public QDialog, Ui::TimetableGenerateMulti
 
 public:
 
-	TimetableGenerateMultipleForm();
+	TimetableGenerateMultipleForm(QWidget* parent);
 
 	~TimetableGenerateMultipleForm();
 	

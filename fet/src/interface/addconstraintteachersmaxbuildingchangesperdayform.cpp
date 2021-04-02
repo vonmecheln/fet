@@ -17,60 +17,35 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintteachersmaxbuildingchangesperdayform.h"
 #include "spaceconstraint.h"
 
-
-AddConstraintTeachersMaxBuildingChangesPerDayForm::AddConstraintTeachersMaxBuildingChangesPerDayForm()
+AddConstraintTeachersMaxBuildingChangesPerDayForm::AddConstraintTeachersMaxBuildingChangesPerDayForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintTeachersMaxBuildingChangesPerDayForm_template*/, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintTeachersMaxBuildingChangesPerDayForm_template*/, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintTeachersMaxBuildingChangesPerDayForm_template*/, SLOT(close()));
-//    connect(maxChangesSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintTeachersMaxBuildingChangesPerDayForm_template*/, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
-	maxChangesSpinBox->setMinValue(0);
-	maxChangesSpinBox->setMaxValue(gt.rules.nHoursPerDay);
+	maxChangesSpinBox->setMinimum(0);
+	maxChangesSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxChangesSpinBox->setValue(1);
 }
 
 AddConstraintTeachersMaxBuildingChangesPerDayForm::~AddConstraintTeachersMaxBuildingChangesPerDayForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintTeachersMaxBuildingChangesPerDayForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1").arg(weight);
-	s+="\n";
-
-	s+=tr("Teachers max building changes per day");
-	s+="\n";
-	
-	s+=tr("Max building changes per day=%1").arg(maxChangesSpinBox->value());
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void AddConstraintTeachersMaxBuildingChangesPerDayForm::addCurrentConstraint()
@@ -79,7 +54,7 @@ void AddConstraintTeachersMaxBuildingChangesPerDayForm::addCurrentConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<100.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage). It has to be 100"));

@@ -28,7 +28,7 @@ class ModifyConstraintActivityPreferredRoomForm : public QDialog, Ui::ModifyCons
 	
 	ConstraintActivityPreferredRoom* _ctr;
 public:
-	ModifyConstraintActivityPreferredRoomForm(ConstraintActivityPreferredRoom* ctr);
+	ModifyConstraintActivityPreferredRoomForm(QWidget* parent, ConstraintActivityPreferredRoom* ctr);
 	~ModifyConstraintActivityPreferredRoomForm();
 
 	void updateActivitiesComboBox();

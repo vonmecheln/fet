@@ -27,7 +27,7 @@
 class AddBuildingForm : public QDialog, Ui::AddBuildingForm_template {
 	Q_OBJECT
 public: 
-	AddBuildingForm();
+	AddBuildingForm(QWidget* parent);
 	~AddBuildingForm();
 
 public slots:

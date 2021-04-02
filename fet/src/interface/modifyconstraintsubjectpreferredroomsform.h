@@ -26,10 +26,10 @@
 class ModifyConstraintSubjectPreferredRoomsForm : public QDialog, Ui::ModifyConstraintSubjectPreferredRoomsForm_template  {
 	Q_OBJECT
 public:
-	ModifyConstraintSubjectPreferredRoomsForm(ConstraintSubjectPreferredRooms* ctr);
+	ModifyConstraintSubjectPreferredRoomsForm(QWidget* parent, ConstraintSubjectPreferredRooms* ctr);
 	~ModifyConstraintSubjectPreferredRoomsForm();
 
-	void updateRoomsListBox();
+	void updateRoomsListWidget();
 	
 public slots:
 	void addRoom();

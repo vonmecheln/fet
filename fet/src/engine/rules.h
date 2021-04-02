@@ -37,10 +37,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "matrix.h"
 
 #include <QSet>
+#include <QList>
 
 #include <QString>
 
 #include <QCoreApplication>
+
+class QWidget;
 
 class FakeString
 /*
@@ -66,6 +69,8 @@ class Rules{
 	Q_DECLARE_TR_FUNCTIONS(Rules)
 
 public:
+	bool modified;
+
 	/**
 	The name of the institution
 	*/
@@ -214,7 +219,7 @@ public:
 	After any modification of the activities or students or teachers
 	or constraints, you need to call this subroutine
 	*/
-	bool computeInternalStructure();
+	bool computeInternalStructure(QWidget* parent);
 
 	/**
 	Terminator - basically clears the memory for the constraints.
@@ -565,7 +570,7 @@ public:
 	Removes the room with this name.
 	Returns true on success, false on failure (not found).
 	*/
-	bool removeRoom(const QString& roomName);
+	bool removeRoom(QWidget* parent, const QString& roomName);
 	
 	/**
 	Modifies this room and takes care of all related constraints.
@@ -639,12 +644,12 @@ public:
 	Reads the rules from the xml input file "filename".
 	Returns true on success, false on failure (inexistent file or wrong format)
 	*/
-	bool read(const QString& filename, bool commandLine=false, QString commandLineDirectory=QString());
+	bool read(QWidget* parent, const QString& filename, bool commandLine=false, QString commandLineDirectory=QString());
 
 	/**
 	Write the rules to the xml input file "inputfile".
 	*/
-	bool write(const QString& filename);
+	bool write(QWidget* parent, const QString& filename);
 	
 	int activateTeacher(const QString& teacherName);
 	
@@ -664,22 +669,22 @@ public:
 	
 private:
 	TimeConstraint* readBasicCompulsoryTime(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readTeacherNotAvailable(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readTeacherNotAvailableTimes(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readTeacherMaxDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readTeachersMaxDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherNotAvailable(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherNotAvailableTimes(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 
-	TimeConstraint* readTeacherMinDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readTeachersMinDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMinDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMinDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 
-	TimeConstraint* readTeacherIntervalMaxDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readTeachersIntervalMaxDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readStudentsSetIntervalMaxDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readStudentsIntervalMaxDaysPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readStudentsSetNotAvailable(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readStudentsSetNotAvailableTimes(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readMinNDaysBetweenActivities(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readMinDaysBetweenActivities(const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherIntervalMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersIntervalMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetIntervalMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsIntervalMaxDaysPerWeek(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetNotAvailable(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetNotAvailableTimes(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readMinNDaysBetweenActivities(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readMinDaysBetweenActivities(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readMaxDaysBetweenActivities(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readMinGapsBetweenActivities(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesNotOverlapping(const QDomElement& elem3, FakeString& xmlReadingLog);
@@ -696,8 +701,8 @@ private:
 	TimeConstraint* readTeacherActivityTagMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersActivityTagMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog);
 
-	TimeConstraint* readTeachersMinHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readTeacherMinHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMinHoursDaily(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMinHoursDaily(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsSetMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsMaxHoursContinuously(const QDomElement& elem3, FakeString& xmlReadingLog);
@@ -708,12 +713,12 @@ private:
 	TimeConstraint* readStudentsSetActivityTagMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsActivityTagMaxHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog);
 
-	TimeConstraint* readStudentsMinHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readStudentsSetMinHoursDaily(const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMinHoursDaily(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMinHoursDaily(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 
-	TimeConstraint* readActivityPreferredTime(const QDomElement& elem3, FakeString& xmlReadingLog,
+	TimeConstraint* readActivityPreferredTime(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog,
 		bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPreferredStartingTime);
-	TimeConstraint* readActivityPreferredStartingTime(const QDomElement& elem3, FakeString& xmlReadingLog,
+	TimeConstraint* readActivityPreferredStartingTime(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog,
 		bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPreferredStartingTime);
 
 	TimeConstraint* readActivityEndsStudentsDay(const QDomElement& elem3, FakeString& xmlReadingLog);
@@ -731,12 +736,12 @@ private:
 	TimeConstraint* readThreeActivitiesGrouped(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readTwoActivitiesOrdered(const QDomElement& elem3, FakeString& xmlReadingLog);
 	
-	TimeConstraint* readActivityPreferredTimes(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readActivityPreferredTimeSlots(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readActivityPreferredStartingTimes(const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readActivityPreferredTimes(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readActivityPreferredTimeSlots(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readActivityPreferredStartingTimes(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 	
-	TimeConstraint* readBreak(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readBreakTimes(const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readBreak(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readBreakTimes(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 	
 	TimeConstraint* readTeachersNoGaps(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMaxGapsPerWeek(const QDomElement& elem3, FakeString& xmlReadingLog);
@@ -757,18 +762,20 @@ private:
 	TimeConstraint* readStudentsSetEarly(const QDomElement& elem3, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsSetEarlyMaxBeginningsAtSecondHour(const QDomElement& elem3, FakeString& xmlReadingLog);
 
-	TimeConstraint* readActivitiesPreferredTimes(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readActivitiesPreferredTimeSlots(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readActivitiesPreferredStartingTimes(const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesPreferredTimes(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesPreferredTimeSlots(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesPreferredStartingTimes(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 
-	TimeConstraint* readSubactivitiesPreferredTimeSlots(const QDomElement& elem3, FakeString& xmlReadingLog);
-	TimeConstraint* readSubactivitiesPreferredStartingTimes(const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readSubactivitiesPreferredTimeSlots(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readSubactivitiesPreferredStartingTimes(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 
+	TimeConstraint* readActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
 
 	SpaceConstraint* readBasicCompulsorySpace(const QDomElement& elem3, FakeString& xmlReadingLog);
-	SpaceConstraint* readRoomNotAvailable(const QDomElement& elem3, FakeString& xmlReadingLog);
-	SpaceConstraint* readRoomNotAvailableTimes(const QDomElement& elem3, FakeString& xmlReadingLog);
-	SpaceConstraint* readActivityPreferredRoom(const QDomElement& elem3, FakeString& xmlReadingLog,
+	SpaceConstraint* readRoomNotAvailable(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	SpaceConstraint* readRoomNotAvailableTimes(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog);
+	SpaceConstraint* readActivityPreferredRoom(QWidget* parent, const QDomElement& elem3, FakeString& xmlReadingLog,
 		bool& reportUnspecifiedPermanentlyLockedSpace);
 	SpaceConstraint* readActivityPreferredRooms(const QDomElement& elem3, FakeString& xmlReadingLog);
 	SpaceConstraint* readSubjectPreferredRoom(const QDomElement& elem3, FakeString& xmlReadingLog);

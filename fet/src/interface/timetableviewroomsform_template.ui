@@ -15,29 +15,19 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
-    <widget class="QSplitter" name="splitter_2">
+    <widget class="QSplitter" name="horizontalSplitter">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QSplitter" name="splitter">
+        <widget class="QSplitter" name="verticalSplitter">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
-         <widget class="Q3ListBox" name="roomsListBox">
-          <item>
-           <property name="text">
-            <string>New Item</string>
-           </property>
-          </item>
-         </widget>
-         <widget class="Q3TextEdit" name="detailsTextEdit">
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
+         <widget class="QListWidget" name="roomsListWidget"/>
+         <widget class="QPlainTextEdit" name="detailsTextEdit"/>
         </widget>
        </item>
        <item>
@@ -108,7 +98,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget2">
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <widget class="QLabel" name="roomNameTextLabel">
@@ -136,34 +126,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>Q3Frame</class>
-   <extends>QFrame</extends>
-   <header>Qt3Support/Q3Frame</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>Q3ListBox</class>
-   <extends>Q3Frame</extends>
-   <header>q3listbox.h</header>
-  </customwidget>
-  <customwidget>
-   <class>Q3TextEdit</class>
-   <extends>Q3Frame</extends>
-   <header>q3textedit.h</header>
-  </customwidget>
- </customwidgets>
- <tabstops>
-  <tabstop>roomsListBox</tabstop>
-  <tabstop>roomsTimetableTable</tabstop>
-  <tabstop>lockTimePushButton</tabstop>
-  <tabstop>lockSpacePushButton</tabstop>
-  <tabstop>lockTimeSpacePushButton</tabstop>
-  <tabstop>helpPushButton</tabstop>
-  <tabstop>closePushButton</tabstop>
-  <tabstop>detailsTextEdit</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

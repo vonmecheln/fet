@@ -28,7 +28,7 @@ class ModifyConstraintActivityPreferredStartingTimeForm : public QDialog, Ui::Mo
 public:
 	ConstraintActivityPreferredStartingTime* _ctr;
 
-	ModifyConstraintActivityPreferredStartingTimeForm(ConstraintActivityPreferredStartingTime* ctr);
+	ModifyConstraintActivityPreferredStartingTimeForm(QWidget* parent, ConstraintActivityPreferredStartingTime* ctr);
 	~ModifyConstraintActivityPreferredStartingTimeForm();
 
 	void updatePeriodGroupBox();

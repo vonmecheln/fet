@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>510</width>
+    <width>613</width>
     <height>304</height>
    </rect>
   </property>
@@ -76,7 +76,7 @@ Note: teacher not available and break are not counted as gaps.</string>
      <item row="3" column="2">
       <widget class="QLineEdit" name="weightLineEdit">
        <property name="text">
-        <string>100</string>
+        <string notr="true">100</string>
        </property>
       </widget>
      </item>
@@ -114,12 +114,6 @@ Note: teacher not available and break are not counted as gaps.</string>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>maxGapsSpinBox</tabstop>
-  <tabstop>weightLineEdit</tabstop>
-  <tabstop>okPushButton</tabstop>
-  <tabstop>cancelPushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

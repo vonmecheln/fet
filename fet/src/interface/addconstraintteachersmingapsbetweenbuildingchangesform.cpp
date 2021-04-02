@@ -17,34 +17,25 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintteachersmingapsbetweenbuildingchangesform.h"
 #include "spaceconstraint.h"
 
-
-AddConstraintTeachersMinGapsBetweenBuildingChangesForm::AddConstraintTeachersMinGapsBetweenBuildingChangesForm()
+AddConstraintTeachersMinGapsBetweenBuildingChangesForm::AddConstraintTeachersMinGapsBetweenBuildingChangesForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintTeachersMinGapsBetweenBuildingChangesForm_template*/, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintTeachersMinGapsBetweenBuildingChangesForm_template*/, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintTeachersMinGapsBetweenBuildingChangesForm_template*/, SLOT(close()));
-//    connect(minGapsSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintTeachersMinGapsBetweenBuildingChangesForm_template*/, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 		
-	minGapsSpinBox->setMinValue(1);
-	minGapsSpinBox->setMaxValue(gt.rules.nHoursPerDay);
+	minGapsSpinBox->setMinimum(1);
+	minGapsSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minGapsSpinBox->setValue(1);
 
 	constraintChanged();
@@ -52,28 +43,12 @@ AddConstraintTeachersMinGapsBetweenBuildingChangesForm::AddConstraintTeachersMin
 
 AddConstraintTeachersMinGapsBetweenBuildingChangesForm::~AddConstraintTeachersMinGapsBetweenBuildingChangesForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 
 void AddConstraintTeachersMinGapsBetweenBuildingChangesForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1").arg(weight);
-	s+="\n";
-
-	s+=tr("Teachers min gaps between building changes");
-	s+="\n";
-
-	s+=tr("Min gaps between building changes=%1").arg(minGapsSpinBox->value());
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void AddConstraintTeachersMinGapsBetweenBuildingChangesForm::addCurrentConstraint()
@@ -82,7 +57,7 @@ void AddConstraintTeachersMinGapsBetweenBuildingChangesForm::addCurrentConstrain
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<100.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage). It has to be 100"));

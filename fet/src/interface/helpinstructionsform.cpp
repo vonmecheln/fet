@@ -19,32 +19,40 @@
 
 #include "timetable_defs.h"
 
-HelpInstructionsForm::HelpInstructionsForm()
+HelpInstructionsForm::HelpInstructionsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	closePushButton->setDefault(true);
+	
+	plainTextEdit->setReadOnly(true);
 
-    connect(closePushButton, SIGNAL(clicked()), this /*HelpInstructionsForm_template*/, SLOT(close()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+	
+	setText();
+}
 
+HelpInstructionsForm::~HelpInstructionsForm()
+{
+	saveFETDialogGeometry(this);
+}
 
+void HelpInstructionsForm::setText()
+{
 	QString s;
 
-	s+=tr("Updated: 12 October 2009");
+	s+=tr("Instructions.");
 	s+="\n\n";
-	s+=tr("Instructions by Liviu Lalescu");
+	s+=tr("Last modified on %1.").arg(tr("12 October 2009"));
 	s+="\n\n";
 	s+=tr("These are some small instructions which you have to follow in order to input a solvable data set.");
 	s+="\n\n";
 	s+=tr("If you get an impossible timetable and your institution allows beginning later for students, please reconsider your students (set) early "
 		"constraints to allow more beginnings at second hour. Also, removing or weakening other constraints might help. If FET cannot find "
-		"a good timetable for your school, make sure to write to the author, as FET needs to be improved. Maybe small changes to your datafile "
+		"a good timetable for your school, make sure to report this, as FET needs to be improved. Maybe small changes to your datafile "
 		"can bring good solutions, or maybe there are aspects which have to be changed in FET.");
 	s+="\n\n";
 	s+=tr("An impossible timetable might also be caused by incorrect years division. Please check statistics/students for all subgroups, "
@@ -63,7 +71,7 @@ HelpInstructionsForm::HelpInstructionsForm()
 		"menu->Activities->Min days between a set of activities constraints. You have there a powerful filter to change many "
 		"constraints with a few clicks).");
 	s+="\n\n";
-	s+=tr("Text added on 25 September 2008: To specify that some activities must be in different days, the min days between activities "
+	s+=tr("To specify that some activities must be in different days, the min days between activities "
 		"must be 1. To specify that some activities must be separated even more, you can increase the min days to 2 (or even more, "
 		"but probably not needed). Min days = 2 means that activities will be at least 2 days apart from each other (so there is "
 		"another day between them). It is recommended that when inputting activities which are split into only 2 subactivities per week, "
@@ -83,7 +91,7 @@ HelpInstructionsForm::HelpInstructionsForm()
 	s+="\n\n";
 	s+=tr("You might want to choose different weights for different constraint min days (for instance, higher on subjects with less activities per week)");
 	s+="\n\n";
-	s+=tr("Text added on 14 June 2008: in versions 5.5.8 and higher, you can add 2 constraints min days for the same split activity. In add activity "
+	s+=tr("In versions 5.5.8 and higher, you can add 2 constraints min days for the same split activity. In add activity "
 		"dialog, select min days 2 (or 3) and you get the chance to add another constraint min 1 days (or 2). For instance, if you have 3 "
 		"activities per week from the same group, you can add 2 constraints, min 2 days and min 1 day, both with 95%. This will ensure that "
 		"in 99.75% of cases the min 1 day will be respected.");
@@ -134,28 +142,24 @@ HelpInstructionsForm::HelpInstructionsForm()
 		"min hours daily (probably with 2 hours), but please make sure your timetable is possible. This constraint is "
 		"smart, it only considers non-empty days.");
 	s+="\n\n";
-	s+=tr("13) Text added on 27 March 2008: If you have for instance 7 hours of Maths on a 5 days week (more lessons than days), "
+	s+=tr("13) If you have for instance 7 hours of Maths on a 5 days week (more lessons than days), "
 		"please respect the correct way to add these as a split activity. See question Q-1-27-March-2008 from FAQ. It is important!");
 	s+="\n\n";
-	s+=tr("14) Text added on 28 June 2008: It is recommended to remove redundant min days constraints after adding constraints same starting day or time (read Help/Important tips).");
+	s+=tr("14) It is recommended to remove redundant min days constraints after adding constraints same starting day or time (read Help/Important tips).");
 	s+="\n\n";
-	s+=tr("15) Text added on 15 August 2008: If you want for instance teachers (or students) not to have more than 2 times per week "
+	s+=tr("15) If you want for instance teachers (or students) not to have more than 2 times per week "
 		"activities in the last hours, you have to use new constraint teacher(s) or students (set) hourly interval "
 		"max days per week. Please read FAQ for more details.");
 	s+="\n\n";
-	s+=tr("16) Text added on 16 August 2008: If you have activities which you want to put in the last slots of a day (like say "
+	s+=tr("16) If you have activities which you want to put in the last slots of a day (like say "
 		"the meetings with the class master), please use the new constraint a set of activities end students day (or singular activity ends students day).");
 	s+="\n\n";
-	s+=tr("17) Text added on 8 September 2008: If you have activities split into 3 activities per week and need them to be not "
+	s+=tr("17) If you have activities split into 3 activities per week and need them to be not "
 		"in 3 consecutive days, there is an entry in the FAQ explaining how to specify this (question Q1-5-September-2008).");
 	s+="\n\n";
-	s+=tr("18) Text added on 12 October 2009: If you use the not perfect constraints activity tag max hours daily or students max gaps per week (there are 4+2"
+	s+=tr("18) If you use the not perfect constraints activity tag max hours daily or students max gaps per week (there are 4+2"
 		" types of constraints in this category), use them with caution not to obtain an impossible timetable. If the timetable is impossible, it may be because of them."
 		" You are advised to add such constraints only in the end, after you are sure that the other constraints are good and the timetable is possible.");
 		
-	textBrowser->setText(s);
-}
-
-HelpInstructionsForm::~HelpInstructionsForm()
-{
+	plainTextEdit->setPlainText(s);
 }

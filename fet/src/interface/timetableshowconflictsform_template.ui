@@ -10,22 +10,9 @@
     <height>480</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string extracomment="Title of dialog">Soft conflicts</string>
-  </property>
-  <layout class="QGridLayout">
-   <property name="margin">
-    <number>11</number>
-   </property>
-   <property name="spacing">
-    <number>6</number>
-   </property>
+  <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <widget class="Q3TextEdit" name="conflictsTextEdit">
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
+    <widget class="QPlainTextEdit" name="conflictsTextEdit"/>
    </item>
    <item row="1" column="0">
     <widget class="QPushButton" name="closePushButton">
@@ -37,23 +24,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>Q3Frame</class>
-   <extends>QFrame</extends>
-   <header>Qt3Support/Q3Frame</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>Q3TextEdit</class>
-   <extends>Q3Frame</extends>
-   <header>q3textedit.h</header>
-  </customwidget>
- </customwidgets>
- <tabstops>
-  <tabstop>closePushButton</tabstop>
-  <tabstop>conflictsTextEdit</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

@@ -17,34 +17,36 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitiesnotoverlappingform.h"
-#include "spaceconstraint.h"
 
-AddConstraintActivitiesNotOverlappingForm::AddConstraintActivitiesNotOverlappingForm()
+#include <QListWidget>
+#include <QAbstractItemView>
+#include <QScrollBar>
+
+AddConstraintActivitiesNotOverlappingForm::AddConstraintActivitiesNotOverlappingForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-    connect(activitiesListBox, SIGNAL(selected(QString)), this, SLOT(addActivity()));
-    connect(notOverlappingActivitiesListBox, SIGNAL(selected(QString)), this, SLOT(removeActivity()));
-    connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
-    connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	activitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	notOverlappingActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(activitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
+	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
+	connect(notOverlappingActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
+	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -55,45 +57,43 @@ AddConstraintActivitiesNotOverlappingForm::AddConstraintActivitiesNotOverlapping
 	QSize tmp4=activityTagsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
 
-	updateActivitiesListBox();
-
-	teachersComboBox->insertItem("");
+	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 	}
-	teachersComboBox->setCurrentItem(0);
+	teachersComboBox->setCurrentIndex(0);
 
-	subjectsComboBox->insertItem("");
+	subjectsComboBox->addItem("");
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 	}
-	subjectsComboBox->setCurrentItem(0);
+	subjectsComboBox->setCurrentIndex(0);
 
-	activityTagsComboBox->insertItem("");
+	activityTagsComboBox->addItem("");
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* st=gt.rules.activityTagsList[i];
-		activityTagsComboBox->insertItem(st->name);
+		activityTagsComboBox->addItem(st->name);
 	}
-	activityTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentIndex(0);
 
-	studentsComboBox->insertItem("");
+	studentsComboBox->addItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
-	studentsComboBox->setCurrentItem(0);
+	studentsComboBox->setCurrentIndex(0);
 
-	notOverlappingActivitiesListBox->clear();
+	notOverlappingActivitiesListWidget->clear();
 	notOverlappingActivitiesList.clear();
 
 	filterChanged();
@@ -101,6 +101,7 @@ AddConstraintActivitiesNotOverlappingForm::AddConstraintActivitiesNotOverlapping
 
 AddConstraintActivitiesNotOverlappingForm::~AddConstraintActivitiesNotOverlappingForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 bool AddConstraintActivitiesNotOverlappingForm::filterOk(Activity* act)
@@ -128,7 +129,6 @@ bool AddConstraintActivitiesNotOverlappingForm::filterOk(Activity* act)
 		ok=false;
 		
 	//activity tag
-//	if(sbtn!="" && sbtn!=act->activityTagName)
 	if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
 		ok=false;
 		
@@ -149,30 +149,24 @@ bool AddConstraintActivitiesNotOverlappingForm::filterOk(Activity* act)
 
 void AddConstraintActivitiesNotOverlappingForm::filterChanged()
 {
-	this->updateActivitiesListBox();
+	this->updateActivitiesListWidget();
 }
 
-void AddConstraintActivitiesNotOverlappingForm::updateActivitiesListBox()
+void AddConstraintActivitiesNotOverlappingForm::updateActivitiesListWidget()
 {
-	activitiesListBox->clear();
-	//notOverlappingActivitiesListBox->clear();
-
+	activitiesListWidget->clear();
 	this->activitiesList.clear();
-	//this->notOverlappingActivitiesList.clear();
 	
 	for(int i=0; i<gt.rules.activitiesList.size(); i++){
 		Activity* ac=gt.rules.activitiesList[i];
 		if(filterOk(ac)){
-			activitiesListBox->insertItem(ac->getDescription(gt.rules));
+			activitiesListWidget->addItem(ac->getDescription(gt.rules));
 			this->activitiesList.append(ac->id);
 		}
 	}
-	/*
-	for(int i=0; i<gt.rules.activitiesList.size(); i++){
-		Activity* ac=gt.rules.activitiesList[i];
-		activitiesListBox->insertItem(ac->getDescription(gt.rules));
-		this->activitiesList.append(ac->id);
-	}*/
+	
+	int q=activitiesListWidget->verticalScrollBar()->minimum();
+	activitiesListWidget->verticalScrollBar()->setValue(q);
 }
 
 void AddConstraintActivitiesNotOverlappingForm::addConstraint()
@@ -181,16 +175,12 @@ void AddConstraintActivitiesNotOverlappingForm::addConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
 		return;
 	}
-
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
 
 	if(this->notOverlappingActivitiesList.count()==0){
 		QMessageBox::warning(this, tr("FET information"),
@@ -202,23 +192,16 @@ void AddConstraintActivitiesNotOverlappingForm::addConstraint()
 			tr("Only one selected activity"));
 		return;
 	}
-	/*if(this->notOverlappingActivitiesList.size()>MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Please report error to the author\nMAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING must be increased (you have too many activities)"));
-		return;
-	}*/
 	
 	QList<int> ids;
-	//int ids[MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING];
 	int i;
 	QList<int>::iterator it;
 	ids.clear();
 	for(i=0, it=this->notOverlappingActivitiesList.begin(); it!=this->notOverlappingActivitiesList.end(); it++, i++){
-		//ids[i]=*it;
 		ids.append(*it);
 	}
 	
-	ctr=new ConstraintActivitiesNotOverlapping(weight, /*compulsory,*/ this->notOverlappingActivitiesList.count(), ids);
+	ctr=new ConstraintActivitiesNotOverlapping(weight, this->notOverlappingActivitiesList.count(), ids);
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
 	
 	if(tmp2){
@@ -236,37 +219,67 @@ void AddConstraintActivitiesNotOverlappingForm::addConstraint()
 
 void AddConstraintActivitiesNotOverlappingForm::addActivity()
 {
-	if(activitiesListBox->currentItem()<0)
+	if(activitiesListWidget->currentRow()<0)
 		return;
-	int tmp=activitiesListBox->currentItem();
+	int tmp=activitiesListWidget->currentRow();
 	int _id=this->activitiesList.at(tmp);
 	
-	QString actName=activitiesListBox->currentText();
+	QString actName=activitiesListWidget->currentItem()->text();
 	assert(actName!="");
-	uint i;
+	int i;
 	//duplicate?
-	for(i=0; i<notOverlappingActivitiesListBox->count(); i++)
-		if(actName==notOverlappingActivitiesListBox->text(i))
+	for(i=0; i<notOverlappingActivitiesListWidget->count(); i++)
+		if(actName==notOverlappingActivitiesListWidget->item(i)->text())
 			break;
-	if(i<notOverlappingActivitiesListBox->count())
+	if(i<notOverlappingActivitiesListWidget->count())
 		return;
-	notOverlappingActivitiesListBox->insertItem(actName);
+	notOverlappingActivitiesListWidget->addItem(actName);
+	notOverlappingActivitiesListWidget->setCurrentRow(notOverlappingActivitiesListWidget->count()-1);
 	
 	this->notOverlappingActivitiesList.append(_id);
 }
 
+void AddConstraintActivitiesNotOverlappingForm::addAllActivities()
+{
+	for(int tmp=0; tmp<activitiesListWidget->count(); tmp++){
+		int _id=this->activitiesList.at(tmp);
+	
+		QString actName=activitiesListWidget->item(tmp)->text();
+		assert(actName!="");
+		int i;
+		//duplicate?
+		for(i=0; i<notOverlappingActivitiesList.count(); i++)
+			if(notOverlappingActivitiesList.at(i)==_id)
+				break;
+		if(i<notOverlappingActivitiesList.count())
+			continue;
+		
+		notOverlappingActivitiesListWidget->addItem(actName);
+		this->notOverlappingActivitiesList.append(_id);
+	}
+	
+	notOverlappingActivitiesListWidget->setCurrentRow(notOverlappingActivitiesListWidget->count()-1);
+}
+
 void AddConstraintActivitiesNotOverlappingForm::removeActivity()
 {
-	if(notOverlappingActivitiesListBox->currentItem()<0 || notOverlappingActivitiesListBox->count()<=0)
+	if(notOverlappingActivitiesListWidget->currentRow()<0 || notOverlappingActivitiesListWidget->count()<=0)
 		return;		
-	int tmp=notOverlappingActivitiesListBox->currentItem();
+	int tmp=notOverlappingActivitiesListWidget->currentRow();
 	
-	notOverlappingActivitiesListBox->removeItem(notOverlappingActivitiesListBox->currentItem());
-	this->notOverlappingActivitiesList.removeAt(tmp);
+	notOverlappingActivitiesList.removeAt(tmp);
+
+	notOverlappingActivitiesListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=notOverlappingActivitiesListWidget->takeItem(tmp);
+	delete item;
+	if(tmp<notOverlappingActivitiesListWidget->count())
+		notOverlappingActivitiesListWidget->setCurrentRow(tmp);
+	else
+		notOverlappingActivitiesListWidget->setCurrentRow(notOverlappingActivitiesListWidget->count()-1);
 }
 
 void AddConstraintActivitiesNotOverlappingForm::clear()
 {
-	notOverlappingActivitiesListBox->clear();
+	notOverlappingActivitiesListWidget->clear();
 	notOverlappingActivitiesList.clear();
 }

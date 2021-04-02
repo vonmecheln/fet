@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include "timetable_defs.h"
 
@@ -25,16 +23,17 @@ extern QApplication* pqapplication;
 
 #include <QMessageBox>
 
-SettingsTimetableHtmlLevelForm::SettingsTimetableHtmlLevelForm()
+SettingsTimetableHtmlLevelForm::SettingsTimetableHtmlLevelForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
 	
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	okPushButton->setDefault(true);
+	
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 		
 	if(TIMETABLE_HTML_LEVEL==0)
 		level0RadioButton->setChecked(true);
@@ -54,9 +53,10 @@ SettingsTimetableHtmlLevelForm::SettingsTimetableHtmlLevelForm()
 
 SettingsTimetableHtmlLevelForm::~SettingsTimetableHtmlLevelForm()
 {
+	saveFETDialogGeometry(this);
 }
 
-void SettingsTimetableHtmlLevelForm::on_okPushButton_clicked()
+void SettingsTimetableHtmlLevelForm::ok()
 {
 	int level=-1;
 	if(level0RadioButton->isChecked())
@@ -95,7 +95,7 @@ void SettingsTimetableHtmlLevelForm::on_okPushButton_clicked()
 	this->close();
 }
 
-void SettingsTimetableHtmlLevelForm::on_cancelPushButton_clicked()
+void SettingsTimetableHtmlLevelForm::cancel()
 {
 	this->close();
 }

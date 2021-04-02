@@ -28,7 +28,7 @@ class ModifyConstraintStudentsSetMinHoursDailyForm : public QDialog, Ui::ModifyC
 public:
 	ConstraintStudentsSetMinHoursDaily* _ctr;
 
-	ModifyConstraintStudentsSetMinHoursDailyForm(ConstraintStudentsSetMinHoursDaily* ctr);
+	ModifyConstraintStudentsSetMinHoursDailyForm(QWidget* parent, ConstraintStudentsSetMinHoursDaily* ctr);
 	~ModifyConstraintStudentsSetMinHoursDailyForm();
 
 	void updateStudentsComboBox();

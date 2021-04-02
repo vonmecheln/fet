@@ -28,10 +28,10 @@ class ConstraintActivitiesSameStartingTimeForm : public QDialog, Ui::ConstraintA
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintActivitiesSameStartingTimeForm();
+	ConstraintActivitiesSameStartingTimeForm(QWidget* parent);
 	~ConstraintActivitiesSameStartingTimeForm();
 
-	void refreshConstraintsListBox();
+	void refreshConstraintsListWidget();
 
 	bool filterOk(TimeConstraint* ctr);
 	

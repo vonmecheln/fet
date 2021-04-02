@@ -28,7 +28,7 @@ class ConstraintThreeActivitiesGroupedForm : public QDialog, Ui::ConstraintThree
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintThreeActivitiesGroupedForm();
+	ConstraintThreeActivitiesGroupedForm(QWidget* parent);
 	~ConstraintThreeActivitiesGroupedForm();
 
 	bool filterOk(TimeConstraint* ctr);

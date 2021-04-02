@@ -14,21 +14,24 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef ACTIVITY_PLANNING_CONFIRMATION_FORM_H
 #define ACTIVITY_PLANNING_CONFIRMATION_FORM_H
 
 #include "ui_activityplanningconfirmationform_template.h"
 
-class ActivityPlanningConfirmationForm:public QDialog, Ui::ActivityPlanningConfirmationForm_template
+class ActivityPlanningConfirmationForm: public QDialog, Ui::ActivityPlanningConfirmationForm_template
 {
 	Q_OBJECT
 
 public:
-	ActivityPlanningConfirmationForm();
+	bool dontShowAgain;
+
+	ActivityPlanningConfirmationForm(QWidget* parent);
 	~ActivityPlanningConfirmationForm();
+
+public slots:
+	void dontShowAgainCheckBoxToggled();
 };
 
 #endif

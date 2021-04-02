@@ -17,89 +17,60 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "modifyconstraintteachermaxgapsperdayform.h"
 #include "timeconstraint.h"
 
-ModifyConstraintTeacherMaxGapsPerDayForm::ModifyConstraintTeacherMaxGapsPerDayForm(ConstraintTeacherMaxGapsPerDay* ctr)
+ModifyConstraintTeacherMaxGapsPerDayForm::ModifyConstraintTeacherMaxGapsPerDayForm(QWidget* parent, ConstraintTeacherMaxGapsPerDay* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintTeacherMaxGapsPerDayForm_template*/, SLOT(constraintChanged()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeacherMaxGapsPerDayForm_template*/, SLOT(ok()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintTeacherMaxGapsPerDayForm_template*/, SLOT(cancel()));
-//    connect(maxGapsSpinBox, SIGNAL(valueChanged(int)), this /*ModifyConstraintTeacherMaxGapsPerDayForm_template*/, SLOT(constraintChanged()));
-//    connect(teachersComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintTeacherMaxGapsPerDayForm_template*/, SLOT(constraintChanged()));
+	okPushButton->setDefault(true);
 
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
 	
 	this->_ctr=ctr;
 	
-	//compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 	
-	maxGapsSpinBox->setMinValue(0);
-	maxGapsSpinBox->setMaxValue(gt.rules.nHoursPerDay);
+	maxGapsSpinBox->setMinimum(0);
+	maxGapsSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	maxGapsSpinBox->setValue(ctr->maxGaps);
 
 	teachersComboBox->clear();
 	int i=0, j=-1;
 	for(int k=0; k<gt.rules.teachersList.size(); k++, i++){
 		Teacher* tch=gt.rules.teachersList[k];
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 		if(tch->name==this->_ctr->teacherName)
 			j=i;
 	}
 	assert(j>=0);
-	teachersComboBox->setCurrentItem(j);
+	teachersComboBox->setCurrentIndex(j);
 
 	constraintChanged();
 }
 
 ModifyConstraintTeacherMaxGapsPerDayForm::~ModifyConstraintTeacherMaxGapsPerDayForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintTeacherMaxGapsPerDayForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1").arg(weight);
-	s+="\n";
-
-	s+=tr("Teacher=%1").arg(teachersComboBox->currentText());
-	s+="\n";
-
-	s+=tr("Max gaps=%1").arg(maxGapsSpinBox->value());
-	s+="\n";
-
-	s+=tr("Teacher max gaps per day");
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void ModifyConstraintTeacherMaxGapsPerDayForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
@@ -125,6 +96,7 @@ void ModifyConstraintTeacherMaxGapsPerDayForm::ok()
 	this->_ctr->teacherName=teacher_name;
 
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }

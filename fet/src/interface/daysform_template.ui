@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>650</width>
-    <height>550</height>
+    <height>572</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string extracomment="The title of the dialog to set the days of the week">The days of the week</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
+  <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
-    <widget class="Q3GroupBox" name="groupBox1">
+    <widget class="QGroupBox" name="numberGroupBox">
      <property name="title">
       <string>Number of working days per week</string>
      </property>
-     <layout class="QGridLayout">
+     <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
        <widget class="QSpinBox" name="daysSpinBox">
         <property name="minimum">
@@ -565,54 +565,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>Q3GroupBox</class>
-   <extends>QGroupBox</extends>
-   <header>Qt3Support/Q3GroupBox</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
- <tabstops>
-  <tabstop>daysSpinBox</tabstop>
-  <tabstop>day1LineEdit</tabstop>
-  <tabstop>day2LineEdit</tabstop>
-  <tabstop>day3LineEdit</tabstop>
-  <tabstop>day4LineEdit</tabstop>
-  <tabstop>day5LineEdit</tabstop>
-  <tabstop>day6LineEdit</tabstop>
-  <tabstop>day7LineEdit</tabstop>
-  <tabstop>day8LineEdit</tabstop>
-  <tabstop>day9LineEdit</tabstop>
-  <tabstop>day10LineEdit</tabstop>
-  <tabstop>day11LineEdit</tabstop>
-  <tabstop>day12LineEdit</tabstop>
-  <tabstop>day13LineEdit</tabstop>
-  <tabstop>day14LineEdit</tabstop>
-  <tabstop>day15LineEdit</tabstop>
-  <tabstop>day16LineEdit</tabstop>
-  <tabstop>day17LineEdit</tabstop>
-  <tabstop>day18LineEdit</tabstop>
-  <tabstop>day19LineEdit</tabstop>
-  <tabstop>day20LineEdit</tabstop>
-  <tabstop>day21LineEdit</tabstop>
-  <tabstop>day22LineEdit</tabstop>
-  <tabstop>day23LineEdit</tabstop>
-  <tabstop>day24LineEdit</tabstop>
-  <tabstop>day25LineEdit</tabstop>
-  <tabstop>day26LineEdit</tabstop>
-  <tabstop>day27LineEdit</tabstop>
-  <tabstop>day28LineEdit</tabstop>
-  <tabstop>day29LineEdit</tabstop>
-  <tabstop>day30LineEdit</tabstop>
-  <tabstop>day31LineEdit</tabstop>
-  <tabstop>day32LineEdit</tabstop>
-  <tabstop>day33LineEdit</tabstop>
-  <tabstop>day34LineEdit</tabstop>
-  <tabstop>day35LineEdit</tabstop>
-  <tabstop>okPushButton</tabstop>
-  <tabstop>cancelPushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

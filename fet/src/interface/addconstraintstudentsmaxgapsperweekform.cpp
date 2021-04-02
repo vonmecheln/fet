@@ -17,32 +17,25 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintstudentsmaxgapsperweekform.h"
 #include "timeconstraint.h"
 
-AddConstraintStudentsMaxGapsPerWeekForm::AddConstraintStudentsMaxGapsPerWeekForm()
+AddConstraintStudentsMaxGapsPerWeekForm::AddConstraintStudentsMaxGapsPerWeekForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*AddConstraintStudentsMaxGapsPerWeekForm_template*/, SLOT(constraintChanged()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintStudentsMaxGapsPerWeekForm_template*/, SLOT(addCurrentConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintStudentsMaxGapsPerWeekForm_template*/, SLOT(close()));
-//    connect(maxGapsSpinBox, SIGNAL(valueChanged(int)), this /*AddConstraintStudentsMaxGapsPerWeekForm_template*/, SLOT(constraintChanged()));
+	addConstraintPushButton->setDefault(true);
 
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+
 	centerWidgetOnScreen(this);
-	//setWindowFlags(Qt::Window);
+	restoreFETDialogGeometry(this);
 	
-	maxGapsSpinBox->setMinValue(0);
-	maxGapsSpinBox->setMaxValue(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek);
+	maxGapsSpinBox->setMinimum(0);
+	maxGapsSpinBox->setMaximum(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek);
 	maxGapsSpinBox->setValue(0);
 	
 	constraintChanged();
@@ -50,27 +43,11 @@ AddConstraintStudentsMaxGapsPerWeekForm::AddConstraintStudentsMaxGapsPerWeekForm
 
 AddConstraintStudentsMaxGapsPerWeekForm::~AddConstraintStudentsMaxGapsPerWeekForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintStudentsMaxGapsPerWeekForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr("Weight (percentage)=%1\%").arg(weight);
-	s+="\n";
-	
-	s+=tr("Max gaps=%1").arg(maxGapsSpinBox->value());
-	s+="\n";
-
-	s+=tr("Students max gaps per week");
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void AddConstraintStudentsMaxGapsPerWeekForm::addCurrentConstraint()
@@ -79,7 +56,7 @@ void AddConstraintStudentsMaxGapsPerWeekForm::addCurrentConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight(percentage)"));

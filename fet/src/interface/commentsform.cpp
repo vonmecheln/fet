@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
   ***************************************************************************/
-//
-//
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -29,38 +27,38 @@ extern Timetable gt;
 
 extern bool simulation_running;
 
-CommentsForm::CommentsForm()
- : CommentsForm_template()
+CommentsForm::CommentsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
-
-    connect(cancelPushButton, SIGNAL(clicked()), this /*CommentsForm_template*/, SLOT(cancel()));
-    connect(okPushButton, SIGNAL(clicked()), this /*CommentsForm_template*/, SLOT(ok()));
-
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
-	centerWidgetOnScreen(this);
+	setupUi(this);
 	
-	commentsTextEdit->setText(gt.rules.comments);
+	//!!!Do NOT set commentsTextEdit read only
+	
+	okPushButton->setDefault(true);
+
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+
+	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+	
+	commentsTextEdit->setPlainText(gt.rules.comments);
+	commentsTextEdit->selectAll();
+	commentsTextEdit->setFocus();
 }
 
 CommentsForm::~CommentsForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void CommentsForm::ok()
 {
 	if(!simulation_running)
-		gt.rules.setComments(commentsTextEdit->text());
+		gt.rules.setComments(commentsTextEdit->toPlainText());
 	else{
 		QMessageBox::information(this, tr("FET information"),
-			tr("Cannot update comments during simulation\n"
-			"Please stop simulation before this"));
+			tr("Cannot update comments during simulation."
+			" Please stop simulation before this"));
 		return;
 	}
 

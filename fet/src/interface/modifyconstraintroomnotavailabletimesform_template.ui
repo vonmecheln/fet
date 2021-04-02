@@ -78,7 +78,7 @@
      <item>
       <widget class="QLineEdit" name="weightLineEdit">
        <property name="text">
-        <string>-1</string>
+        <string notr="true">100</string>
        </property>
       </widget>
      </item>
@@ -129,14 +129,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>roomsComboBox</tabstop>
-  <tabstop>weightLineEdit</tabstop>
-  <tabstop>okPushButton</tabstop>
-  <tabstop>cancelPushButton</tabstop>
-  <tabstop>setAllAvailablePushButton</tabstop>
-  <tabstop>setAllNotAvailablePushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

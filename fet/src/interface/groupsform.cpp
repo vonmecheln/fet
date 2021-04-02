@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include "addstudentsgroupform.h"
 #include "modifystudentsgroupform.h"
@@ -23,97 +21,109 @@
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
-//#include "fetmainform.h"
 #include "studentsset.h"
-
-#include <QInputDialog>
 
 #include <QMessageBox>
 
-GroupsForm::GroupsForm()
- : GroupsForm_template()
+#include <QListWidget>
+#include <QScrollBar>
+#include <QAbstractItemView>
+
+#include <QSplitter>
+#include <QSettings>
+#include <QObject>
+#include <QMetaObject>
+
+extern const QString COMPANY;
+extern const QString PROGRAM;
+
+GroupsForm::GroupsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
-
-    connect(yearsListBox, SIGNAL(highlighted(QString)), this /*GroupsForm_template*/, SLOT(yearChanged(QString)));
-    connect(addGroupPushButton, SIGNAL(clicked()), this /*GroupsForm_template*/, SLOT(addGroup()));
-    connect(removeGroupPushButton, SIGNAL(clicked()), this /*GroupsForm_template*/, SLOT(removeGroup()));
-    connect(closePushButton, SIGNAL(clicked()), this /*GroupsForm_template*/, SLOT(close()));
-    connect(groupsListBox, SIGNAL(highlighted(QString)), this /*GroupsForm_template*/, SLOT(groupChanged(QString)));
-    connect(modifyGroupPushButton, SIGNAL(clicked()), this /*GroupsForm_template*/, SLOT(modifyGroup()));
-    connect(sortGroupsPushButton, SIGNAL(clicked()), this /*GroupsForm_template*/, SLOT(sortGroups()));
-    connect(activateStudentsPushButton, SIGNAL(clicked()), this /*GroupsForm_template*/, SLOT(activateStudents()));
-    connect(deactivateStudentsPushButton, SIGNAL(clicked()), this /*GroupsForm_template*/, SLOT(deactivateStudents()));
-    connect(groupsListBox, SIGNAL(selected(QString)), this /*GroupsForm_template*/, SLOT(modifyGroup()));
-
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
-	centerWidgetOnScreen(this);
+	setupUi(this);
 	
-	yearsListBox->clear();
+	groupTextEdit->setReadOnly(true);
+	
+	modifyGroupPushButton->setDefault(true);
+
+	yearsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	groupsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+
+	connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
+	connect(addGroupPushButton, SIGNAL(clicked()), this, SLOT(addGroup()));
+	connect(removeGroupPushButton, SIGNAL(clicked()), this, SLOT(removeGroup()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(groupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(groupChanged(const QString&)));
+	connect(modifyGroupPushButton, SIGNAL(clicked()), this, SLOT(modifyGroup()));
+	connect(sortGroupsPushButton, SIGNAL(clicked()), this, SLOT(sortGroups()));
+	connect(activateStudentsPushButton, SIGNAL(clicked()), this, SLOT(activateStudents()));
+	connect(deactivateStudentsPushButton, SIGNAL(clicked()), this, SLOT(deactivateStudents()));
+	connect(groupsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyGroup()));
+
+	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+	//restore splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
+		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
+	
+	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* year=gt.rules.yearsList[i];
-		yearsListBox->insertItem(year->name);
+		yearsListWidget->addItem(year->name);
 	}
 
-	if(yearsListBox->count()>0){
-		yearsListBox->setCurrentItem(0);
-		yearsListBox->setSelected(yearsListBox->currentItem(), true);
-		yearChanged(yearsListBox->currentText());
-	}
+	if(yearsListWidget->count()>0)
+		yearsListWidget->setCurrentRow(0);
 	else
-		groupsListBox->clear();
+		groupsListWidget->clear();
 }
 
 
 GroupsForm::~GroupsForm()
 {
+	saveFETDialogGeometry(this);
+	//save splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
 }
 
 void GroupsForm::addGroup()
 {
-	if(yearsListBox->currentItem()<0){
+	if(yearsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
-	QString yearName=yearsListBox->currentText();
+	QString yearName=yearsListWidget->currentItem()->text();
 	int yearIndex=gt.rules.searchYear(yearName);
 	assert(yearIndex>=0);
 
-	AddStudentsGroupForm form(yearName);
-	//form.yearNameLineEdit->setText(yearName);
+	AddStudentsGroupForm form(this, yearName);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	yearChanged(yearsListBox->currentText());
+	yearChanged(yearsListWidget->currentItem()->text());
 	
-	int i=groupsListBox->count()-1;
-	if(i>=0){
-		groupsListBox->setCurrentItem(i);
-		groupsListBox->setSelected(i, true);
-	}
+	int i=groupsListWidget->count()-1;
+	if(i>=0)
+		groupsListWidget->setCurrentRow(i);
 }
 
 void GroupsForm::removeGroup()
 {
-	if(yearsListBox->currentItem()<0){
+	if(yearsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
-	int yearIndex=gt.rules.searchYear(yearsListBox->currentText());
+	int yearIndex=gt.rules.searchYear(yearsListWidget->currentItem()->text());
 	assert(yearIndex>=0);
 
-	if(groupsListBox->currentItem()<0){
+	if(groupsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
 		return;
 	}
 
-	QString groupName=groupsListBox->currentText();
-	int groupIndex=gt.rules.searchGroup(yearsListBox->currentText(), groupName);
+	QString groupName=groupsListWidget->currentItem()->text();
+	int groupIndex=gt.rules.searchGroup(yearsListWidget->currentItem()->text(), groupName);
 	assert(groupIndex>=0);
 
 	if(QMessageBox::warning( this, tr("FET"),
@@ -121,141 +131,155 @@ void GroupsForm::removeGroup()
 		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
 		return;
 
-	bool tmp=gt.rules.removeGroup(yearsListBox->currentText(), groupName);
+	bool tmp=gt.rules.removeGroup(yearsListWidget->currentItem()->text(), groupName);
 	assert(tmp);
-	if(tmp)
-		groupsListBox->removeItem(groupsListBox->currentItem());
+	if(tmp){
+		int q=groupsListWidget->currentRow();
+		
+		groupsListWidget->setCurrentRow(-1);
+		QListWidgetItem* item;
+		item=groupsListWidget->takeItem(q);
+		delete item;
+		
+		if(q>=groupsListWidget->count())
+			q=groupsListWidget->count()-1;
+		if(q>=0)
+			groupsListWidget->setCurrentRow(q);
+		else
+			groupTextEdit->setPlainText(QString(""));
+	}
 
 	if(gt.rules.searchStudentsSet(groupName)!=NULL)
 		QMessageBox::information( this, tr("FET"), tr("This group still exists into another year. "
 			"The related subgroups, activities and constraints were not removed"));
-
-	if(groupsListBox->count()>0){
-		groupsListBox->setSelected(groupsListBox->currentItem(), true);
-	}
-	else{
-		groupTextEdit->setText("");
-	}
 }
 
 void GroupsForm::yearChanged(const QString &yearName)
 {
 	int yearIndex=gt.rules.searchYear(yearName);
 	if(yearIndex<0){
-		groupsListBox->clear();
-		groupTextEdit->setText("");
+		groupsListWidget->clear();
+		groupTextEdit->setPlainText(QString(""));
 		return;
 	}
 
-	groupsListBox->clear();
+	groupsListWidget->clear();
 
 	StudentsYear* sty=gt.rules.yearsList.at(yearIndex);
 	for(int i=0; i<sty->groupsList.size(); i++){
 		StudentsGroup* stg=sty->groupsList[i];
-		groupsListBox->insertItem(stg->name);
+		groupsListWidget->addItem(stg->name);
 	}
 
-	if(groupsListBox->count()>0){
-		groupsListBox->setCurrentItem(0);
-		groupsListBox->setSelected(groupsListBox->currentItem(), true);
-	}
+	if(groupsListWidget->count()>0)
+		groupsListWidget->setCurrentRow(0);
 	else
-		groupTextEdit->setText("");
+		groupTextEdit->setPlainText(QString(""));
 }
 
 void GroupsForm::groupChanged(const QString &groupName)
 {
 	StudentsSet* ss=gt.rules.searchStudentsSet(groupName);
 	if(ss==NULL){
-		groupTextEdit->setText("");
+		groupTextEdit->setPlainText(QString(""));
 		return;
 	}
 	StudentsGroup* sg=(StudentsGroup*)ss;
-	groupTextEdit->setText(sg->getDetailedDescriptionWithConstraints(gt.rules));
+	groupTextEdit->setPlainText(sg->getDetailedDescriptionWithConstraints(gt.rules));
 }
 
 void GroupsForm::sortGroups()
 {
-	if(yearsListBox->currentItem()<0){
+	if(yearsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
-	int yearIndex=gt.rules.searchYear(yearsListBox->currentText());
+	int yearIndex=gt.rules.searchYear(yearsListWidget->currentItem()->text());
 	assert(yearIndex>=0);
 	
-	gt.rules.sortGroupsAlphabetically(yearsListBox->currentText());
+	gt.rules.sortGroupsAlphabetically(yearsListWidget->currentItem()->text());
 
-	yearChanged(yearsListBox->currentText());
+	yearChanged(yearsListWidget->currentItem()->text());
 }
 
 void GroupsForm::modifyGroup()
 {
-	if(yearsListBox->currentItem()<0){
+	if(yearsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
 	
-	QString yearName=yearsListBox->currentText();
+	QString yearName=yearsListWidget->currentItem()->text();
 	
-	int yearIndex=gt.rules.searchYear(yearsListBox->currentText());
+	int yearIndex=gt.rules.searchYear(yearsListWidget->currentItem()->text());
 	assert(yearIndex>=0);
 	
-	int ci=groupsListBox->currentItem();
-	int ti=groupsListBox->topItem();
-	if(groupsListBox->currentItem()<0){
+	int q=groupsListWidget->currentRow();
+	int valv=groupsListWidget->verticalScrollBar()->value();
+	int valh=groupsListWidget->horizontalScrollBar()->value();
+
+	if(groupsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
 		return;
 	}
 
-	QString groupName=groupsListBox->currentText();
-	int groupIndex=gt.rules.searchGroup(yearsListBox->currentText(), groupName);
+	QString groupName=groupsListWidget->currentItem()->text();
+	int groupIndex=gt.rules.searchGroup(yearsListWidget->currentItem()->text(), groupName);
 	assert(groupIndex>=0);
 
 	int numberOfStudents=gt.rules.searchStudentsSet(groupName)->numberOfStudents;
 	
-	ModifyStudentsGroupForm form(yearName, groupName, numberOfStudents);
+	ModifyStudentsGroupForm form(this, yearName, groupName, numberOfStudents);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	yearChanged(yearsListBox->currentText());
+	yearChanged(yearsListWidget->currentItem()->text());
 	
-	groupsListBox->setTopItem(ti);
-	groupsListBox->setCurrentItem(ci);
+	groupsListWidget->verticalScrollBar()->setValue(valv);
+	groupsListWidget->horizontalScrollBar()->setValue(valh);
+	
+	if(q>=groupsListWidget->count())
+		q=groupsListWidget->count()-1;
+	if(q>=0)
+		groupsListWidget->setCurrentRow(q);
+	else
+		groupTextEdit->setPlainText(QString(""));
 }
 
 void GroupsForm::activateStudents()
 {
-	if(yearsListBox->currentItem()<0){
+	if(yearsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
-	int yearIndex=gt.rules.searchYear(yearsListBox->currentText());
+	int yearIndex=gt.rules.searchYear(yearsListWidget->currentItem()->text());
 	assert(yearIndex>=0);
 
-	if(groupsListBox->currentItem()<0){
+	if(groupsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
 		return;
 	}
 
-	QString groupName=groupsListBox->currentText();
+	QString groupName=groupsListWidget->currentItem()->text();
 	int count=gt.rules.activateStudents(groupName);
 	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
 }
 
 void GroupsForm::deactivateStudents()
 {
-	if(yearsListBox->currentItem()<0){
+	if(yearsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
-	int yearIndex=gt.rules.searchYear(yearsListBox->currentText());
+	int yearIndex=gt.rules.searchYear(yearsListWidget->currentItem()->text());
 	assert(yearIndex>=0);
 
-	if(groupsListBox->currentItem()<0){
+	if(groupsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected group"));
 		return;
 	}
 
-	QString groupName=groupsListBox->currentText();
+	QString groupName=groupsListWidget->currentItem()->text();
 	int count=gt.rules.deactivateStudents(groupName);
 	QMessageBox::information(this, tr("FET information"), tr("De-activated a number of %1 activities").arg(count));
 }

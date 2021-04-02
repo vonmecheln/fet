@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>804</width>
-    <height>525</height>
+    <width>852</width>
+    <height>568</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -103,7 +103,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>95.0</string>
+         <string notr="true">95.0</string>
         </property>
        </widget>
       </item>
@@ -158,7 +158,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>95.0</string>
+         <string notr="true">95.0</string>
         </property>
        </widget>
       </item>
@@ -225,7 +225,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>95.0</string>
+         <string notr="true">95.0</string>
         </property>
        </widget>
       </item>
@@ -250,7 +250,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>1 </string>
+            <string>1</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -301,19 +301,6 @@
    </item>
   </layout>
  </widget>
- <tabstops>
-  <tabstop>consecutiveIfSameDayCheckBox</tabstop>
-  <tabstop>spread4OrMoreCheckBox</tabstop>
-  <tabstop>weight4LineEdit</tabstop>
-  <tabstop>spread2CheckBox</tabstop>
-  <tabstop>weight2LineEdit</tabstop>
-  <tabstop>spread3CheckBox</tabstop>
-  <tabstop>weight3LineEdit</tabstop>
-  <tabstop>type123RadioButton</tabstop>
-  <tabstop>type213RadioButton</tabstop>
-  <tabstop>type312RadioButton</tabstop>
-  <tabstop>buttonBox</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

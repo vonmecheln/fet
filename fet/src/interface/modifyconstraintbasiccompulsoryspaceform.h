@@ -28,7 +28,7 @@ class ModifyConstraintBasicCompulsorySpaceForm : public QDialog, Ui::ModifyConst
 public:
 	ConstraintBasicCompulsorySpace* _ctr;
 
-	ModifyConstraintBasicCompulsorySpaceForm(ConstraintBasicCompulsorySpace* ctr);
+	ModifyConstraintBasicCompulsorySpaceForm(QWidget* parent, ConstraintBasicCompulsorySpace* ctr);
 	~ModifyConstraintBasicCompulsorySpaceForm();
 
 public slots:

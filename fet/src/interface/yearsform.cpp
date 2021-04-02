@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include "addstudentsyearform.h"
 #include "modifystudentsyearform.h"
@@ -27,77 +25,90 @@
 
 #include "splityearform.h"
 
-#include <QInputDialog>
-
 #include <QMessageBox>
 
-YearsForm::YearsForm()
- : YearsForm_template()
+#include <QListWidget>
+#include <QScrollBar>
+#include <QAbstractItemView>
+
+#include <QSplitter>
+#include <QSettings>
+#include <QObject>
+#include <QMetaObject>
+
+extern const QString COMPANY;
+extern const QString PROGRAM;
+
+YearsForm::YearsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
-
-    connect(addYearPushButton, SIGNAL(clicked()), this /*YearsForm_template*/, SLOT(addYear()));
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-    connect(removeYearPushButton, SIGNAL(clicked()), this, SLOT(removeYear()));
-    connect(yearsListBox, SIGNAL(highlighted(int)), this, SLOT(yearChanged()));
-    connect(modifyYearPushButton, SIGNAL(clicked()), this, SLOT(modifyYear()));
-    connect(sortYearsPushButton, SIGNAL(clicked()), this, SLOT(sortYears()));
-    connect(activateStudentsPushButton, SIGNAL(clicked()), this, SLOT(activateStudents()));
-    connect(deactivateStudentsPushButton, SIGNAL(clicked()), this, SLOT(deactivateStudents()));
-    connect(divisionsPushButton, SIGNAL(clicked()), this, SLOT(divideYear()));
-    connect(yearsListBox, SIGNAL(selected(QString)), this, SLOT(modifyYear()));
-
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
-	centerWidgetOnScreen(this);
+	setupUi(this);
 	
-	yearsListBox->clear();
+	detailsTextEdit->setReadOnly(true);
+	
+	modifyYearPushButton->setDefault(true);
+
+	yearsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+
+	connect(addYearPushButton, SIGNAL(clicked()), this, SLOT(addYear()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(removeYearPushButton, SIGNAL(clicked()), this, SLOT(removeYear()));
+	connect(yearsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(yearChanged()));
+	connect(modifyYearPushButton, SIGNAL(clicked()), this, SLOT(modifyYear()));
+	connect(sortYearsPushButton, SIGNAL(clicked()), this, SLOT(sortYears()));
+	connect(activateStudentsPushButton, SIGNAL(clicked()), this, SLOT(activateStudents()));
+	connect(deactivateStudentsPushButton, SIGNAL(clicked()), this, SLOT(deactivateStudents()));
+	connect(divisionsPushButton, SIGNAL(clicked()), this, SLOT(divideYear()));
+	connect(yearsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyYear()));
+
+	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+	//restore splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
+		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
+	
+	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* year=gt.rules.yearsList[i];
-		yearsListBox->insertItem(year->name);
+		yearsListWidget->addItem(year->name);
 	}
 	
-	if(yearsListBox->count()>0){
-		yearsListBox->setCurrentItem(0);
-		yearsListBox->setSelected(yearsListBox->currentItem(), true);
-	}
+	if(yearsListWidget->count()>0)
+		yearsListWidget->setCurrentRow(0);
 }
-
 
 YearsForm::~YearsForm()
 {
+	saveFETDialogGeometry(this);
+	//save splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
 }
 
 void YearsForm::addYear()
 {
-	AddStudentsYearForm form;
+	AddStudentsYearForm form(this);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	yearsListBox->clear();
+	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* year=gt.rules.yearsList[i];
-		yearsListBox->insertItem(year->name);
+		yearsListWidget->addItem(year->name);
 	}
 	
-	int i=yearsListBox->count()-1;
-	if(i>=0){
-		yearsListBox->setCurrentItem(i);
-		yearsListBox->setSelected(i, true);
-	}
+	int i=yearsListWidget->count()-1;
+	if(i>=0)
+		yearsListWidget->setCurrentRow(i);
 }
 
 void YearsForm::removeYear()
 {
-	if(yearsListBox->currentItem()<0){
+	if(yearsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
-	QString yearName=yearsListBox->currentText();
+	QString yearName=yearsListWidget->currentItem()->text();
 	int yearIndex=gt.rules.searchYear(yearName);
 	assert(yearIndex>=0);
 
@@ -108,100 +119,115 @@ void YearsForm::removeYear()
 
 	bool tmp=gt.rules.removeYear(yearName);
 	assert(tmp);
-	if(tmp)
-		yearsListBox->removeItem(yearsListBox->currentItem());
+	if(tmp){
+		int q=yearsListWidget->currentRow();
 
-	if(yearsListBox->currentItem()>=0 && yearsListBox->count()>0)
-		yearsListBox->setSelected(yearsListBox->currentItem(), true);
-	else
-		detailsTextEdit->setText("");
+		yearsListWidget->setCurrentRow(-1);
+		QListWidgetItem* item;
+		item=yearsListWidget->takeItem(q);
+		delete item;
+
+		if(q>=yearsListWidget->count())
+			q=yearsListWidget->count()-1;
+		if(q>=0)
+			yearsListWidget->setCurrentRow(q);
+		else
+			detailsTextEdit->setPlainText(QString(""));
+	}
 }
 
 void YearsForm::yearChanged()
 {
-	if(yearsListBox->currentItem()<0){
-		detailsTextEdit->setText("");
+	if(yearsListWidget->currentRow()<0){
+		detailsTextEdit->setPlainText("");
 		return;
 	}
-	StudentsYear* sty=gt.rules.yearsList.at(yearsListBox->currentItem());
-	detailsTextEdit->setText(sty->getDetailedDescriptionWithConstraints(gt.rules));
+	StudentsYear* sty=gt.rules.yearsList.at(yearsListWidget->currentRow());
+	detailsTextEdit->setPlainText(sty->getDetailedDescriptionWithConstraints(gt.rules));
 }
 
 void YearsForm::sortYears()
 {
 	gt.rules.sortYearsAlphabetically();
 
-	yearsListBox->clear();
+	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* year=gt.rules.yearsList[i];
-		yearsListBox->insertItem(year->name);
+		yearsListWidget->addItem(year->name);
 	}
 
-	if(yearsListBox->count()>0){
-		yearsListBox->setCurrentItem(0);
-		yearsListBox->setSelected(0, true);
-	}
+	if(yearsListWidget->count()>0)
+		yearsListWidget->setCurrentRow(0);
 }
 
 void YearsForm::modifyYear()
 {
-	int ti=yearsListBox->topItem();
+	int q=yearsListWidget->currentRow();
+	int valv=yearsListWidget->verticalScrollBar()->value();
+	int valh=yearsListWidget->horizontalScrollBar()->value();
 
-	int ci=yearsListBox->currentItem();
-	if(yearsListBox->currentItem()<0){
+	if(yearsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
-	QString yearName=yearsListBox->currentText();
+	QString yearName=yearsListWidget->currentItem()->text();
 	int numberOfStudents=gt.rules.searchStudentsSet(yearName)->numberOfStudents;
 
-	ModifyStudentsYearForm form(yearName, numberOfStudents);
+	ModifyStudentsYearForm form(this, yearName, numberOfStudents);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
-	yearsListBox->clear();
+	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* year=gt.rules.yearsList[i];
-		yearsListBox->insertItem(year->name);
+		yearsListWidget->addItem(year->name);
 	}
+	
+	yearsListWidget->verticalScrollBar()->setValue(valv);
+	yearsListWidget->horizontalScrollBar()->setValue(valh);
 
-	yearsListBox->setTopItem(ti);
-
-	yearsListBox->setCurrentItem(ci);
+	if(q>=yearsListWidget->count())
+		q=yearsListWidget->count()-1;
+	if(q>=0)
+		yearsListWidget->setCurrentRow(q);
+	else
+		detailsTextEdit->setPlainText(QString(""));
 }
 
 void YearsForm::activateStudents()
 {
-	if(yearsListBox->currentItem()<0){
+	if(yearsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
 	
-	QString yearName=yearsListBox->currentText();
+	QString yearName=yearsListWidget->currentItem()->text();
 	int count=gt.rules.activateStudents(yearName);
 	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
 }
 
 void YearsForm::deactivateStudents()
 {
-	if(yearsListBox->currentItem()<0){
+	if(yearsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
 	
-	QString yearName=yearsListBox->currentText();
+	QString yearName=yearsListWidget->currentItem()->text();
 	int count=gt.rules.deactivateStudents(yearName);
 	QMessageBox::information(this, tr("FET information"), tr("De-activated a number of %1 activities").arg(count));
 }
 
 void YearsForm::divideYear()
 {
-	if(yearsListBox->currentItem()<0){
+	if(yearsListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected year"));
 		return;
 	}
 	
-	QString yearName=yearsListBox->currentText();
+	QString yearName=yearsListWidget->currentItem()->text();
 	
-	SplitYearForm form(yearName);
+	SplitYearForm form(this, yearName);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 }

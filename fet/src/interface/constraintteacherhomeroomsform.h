@@ -28,10 +28,10 @@ class ConstraintTeacherHomeRoomsForm : public QDialog, Ui::ConstraintTeacherHome
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
-	ConstraintTeacherHomeRoomsForm();
+	ConstraintTeacherHomeRoomsForm(QWidget* parent);
 	~ConstraintTeacherHomeRoomsForm();
 
-	void refreshConstraintsListBox();
+	void refreshConstraintsListWidget();
 
 	bool filterOk(SpaceConstraint* ctr);
 	

@@ -17,26 +17,22 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
+
 
 #include "modifyconstraintactivitiesendstudentsdayform.h"
 #include "timeconstraint.h"
 
-ModifyConstraintActivitiesEndStudentsDayForm::ModifyConstraintActivitiesEndStudentsDayForm(ConstraintActivitiesEndStudentsDay* ctr)
+ModifyConstraintActivitiesEndStudentsDayForm::ModifyConstraintActivitiesEndStudentsDayForm(QWidget* parent, ConstraintActivitiesEndStudentsDay* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivitiesEndStudentsDayForm_template*/, SLOT(cancel()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintActivitiesEndStudentsDayForm_template*/, SLOT(ok()));
+	okPushButton->setDefault(true);
 
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -54,54 +50,54 @@ ModifyConstraintActivitiesEndStudentsDayForm::ModifyConstraintActivitiesEndStude
 	updateSubjectsComboBox();
 	updateActivityTagsComboBox();
 
-	//compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 }
 
 ModifyConstraintActivitiesEndStudentsDayForm::~ModifyConstraintActivitiesEndStudentsDayForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintActivitiesEndStudentsDayForm::updateTeachersComboBox(){
 	int i=0, j=-1;
 	teachersComboBox->clear();
-	teachersComboBox->insertItem("");
+	teachersComboBox->addItem("");
 	if(this->_ctr->teacherName=="")
 		j=i;
 	i++;
 	for(int k=0; k<gt.rules.teachersList.size(); k++){
 		Teacher* t=gt.rules.teachersList[k];
-		teachersComboBox->insertItem(t->name);
+		teachersComboBox->addItem(t->name);
 		if(t->name==this->_ctr->teacherName)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	teachersComboBox->setCurrentItem(j);
+	teachersComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintActivitiesEndStudentsDayForm::updateStudentsComboBox(){
 	int i=0, j=-1;
 	studentsComboBox->clear();
-	studentsComboBox->insertItem("");
+	studentsComboBox->addItem("");
 	if(this->_ctr->studentsName=="")
 		j=i;
 	i++;
 	for(int m=0; m<gt.rules.yearsList.size(); m++){
 		StudentsYear* sty=gt.rules.yearsList[m];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		if(sty->name==this->_ctr->studentsName)
 			j=i;
 		i++;
 		for(int n=0; n<sty->groupsList.size(); n++){
 			StudentsGroup* stg=sty->groupsList[n];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			if(stg->name==this->_ctr->studentsName)
 				j=i;
 			i++;
 			for(int p=0; p<stg->subgroupsList.size(); p++){
 				StudentsSubgroup* sts=stg->subgroupsList[p];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 				if(sts->name==this->_ctr->studentsName)
 					j=i;
 				i++;
@@ -109,50 +105,50 @@ void ModifyConstraintActivitiesEndStudentsDayForm::updateStudentsComboBox(){
 		}
 	}
 	assert(j>=0);
-	studentsComboBox->setCurrentItem(j);
+	studentsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintActivitiesEndStudentsDayForm::updateSubjectsComboBox(){
 	int i=0, j=-1;
 	subjectsComboBox->clear();
-	subjectsComboBox->insertItem("");
+	subjectsComboBox->addItem("");
 	if(this->_ctr->subjectName=="")
 		j=i;
 	i++;
 	for(int k=0; k<gt.rules.subjectsList.size(); k++){
 		Subject* s=gt.rules.subjectsList[k];
-		subjectsComboBox->insertItem(s->name);
+		subjectsComboBox->addItem(s->name);
 		if(s->name==this->_ctr->subjectName)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	subjectsComboBox->setCurrentItem(j);
+	subjectsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintActivitiesEndStudentsDayForm::updateActivityTagsComboBox(){
 	int i=0, j=-1;
 	activityTagsComboBox->clear();
-	activityTagsComboBox->insertItem("");
+	activityTagsComboBox->addItem("");
 	if(this->_ctr->activityTagName=="")
 		j=i;
 	i++;
 	for(int k=0; k<gt.rules.activityTagsList.size(); k++){
 		ActivityTag* s=gt.rules.activityTagsList[k];
-		activityTagsComboBox->insertItem(s->name);
+		activityTagsComboBox->addItem(s->name);
 		if(s->name==this->_ctr->activityTagName)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	activityTagsComboBox->setCurrentItem(j);
+	activityTagsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintActivitiesEndStudentsDayForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
@@ -163,10 +159,6 @@ void ModifyConstraintActivitiesEndStudentsDayForm::ok()
 			tr("Invalid weight (percentage) - it must be 100%"));
 		return;
 	}
-
-	/*bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
 
 	QString teacher=teachersComboBox->currentText();
 	if(teacher!="")
@@ -185,13 +177,13 @@ void ModifyConstraintActivitiesEndStudentsDayForm::ok()
 		assert(gt.rules.searchActivityTag(activityTag)>=0);
 		
 	this->_ctr->weightPercentage=weight;
-	//this->_ctr->compulsory=compulsory;
 	this->_ctr->teacherName=teacher;
 	this->_ctr->studentsName=students;
 	this->_ctr->subjectName=subject;
 	this->_ctr->activityTagName=activityTag;
 
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }

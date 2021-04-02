@@ -29,20 +29,21 @@ class AddConstraintMaxDaysBetweenActivitiesForm : public QDialog, Ui::AddConstra
 	Q_OBJECT
 
 public:
-	AddConstraintMaxDaysBetweenActivitiesForm();
+	AddConstraintMaxDaysBetweenActivitiesForm(QWidget* parent);
 	~AddConstraintMaxDaysBetweenActivitiesForm();
 
-	void updateActivitiesListBox();
+	void updateActivitiesListWidget();
 
 	bool filterOk(Activity* a);
 
 public slots:
 	void addActivity();
+	void addAllActivities();
 	void removeActivity();
 
 	void addConstraint();
 
-	void filterChanged();	
+	void filterChanged();
 	
 	void clear();
 	

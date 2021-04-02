@@ -26,7 +26,7 @@
 class AddConstraintTeacherMinDaysPerWeekForm : public QDialog, Ui::AddConstraintTeacherMinDaysPerWeekForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintTeacherMinDaysPerWeekForm();
+	AddConstraintTeacherMinDaysPerWeekForm(QWidget* parent);
 	~AddConstraintTeacherMinDaysPerWeekForm();
 
 	void updateMinDaysSpinBox();

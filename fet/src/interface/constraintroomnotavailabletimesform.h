@@ -28,7 +28,7 @@ class ConstraintRoomNotAvailableTimesForm : public QDialog, Ui::ConstraintRoomNo
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
-	ConstraintRoomNotAvailableTimesForm();
+	ConstraintRoomNotAvailableTimesForm(QWidget* parent);
 	~ConstraintRoomNotAvailableTimesForm();
 
 	bool filterOk(SpaceConstraint* ctr);

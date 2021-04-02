@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef REMOVE_REDUNDANT_FORM_H
 #define REMOVE_REDUNDANT_FORM_H
@@ -27,7 +25,7 @@ class RemoveRedundantForm:public QDialog, Ui::RemoveRedundantForm_template
 	Q_OBJECT
 
 public:
-	RemoveRedundantForm();
+	RemoveRedundantForm(QWidget* parent);
 	~RemoveRedundantForm();
 	
 public slots:

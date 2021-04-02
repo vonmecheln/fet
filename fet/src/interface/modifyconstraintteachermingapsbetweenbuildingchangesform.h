@@ -28,7 +28,7 @@ class ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm : public QDialog,
 public:
 	ConstraintTeacherMinGapsBetweenBuildingChanges* _ctr;
 
-	ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm(ConstraintTeacherMinGapsBetweenBuildingChanges* ctr);
+	ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm(QWidget* parent, ConstraintTeacherMinGapsBetweenBuildingChanges* ctr);
 	~ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm();
 
 	void updateTeachersComboBox();

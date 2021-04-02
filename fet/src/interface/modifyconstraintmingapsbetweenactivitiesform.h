@@ -29,7 +29,7 @@ class ModifyConstraintMinGapsBetweenActivitiesForm : public QDialog, Ui::ModifyC
 	Q_OBJECT	
 
 public:
-	ModifyConstraintMinGapsBetweenActivitiesForm(ConstraintMinGapsBetweenActivities* ctr);
+	ModifyConstraintMinGapsBetweenActivitiesForm(QWidget* parent, ConstraintMinGapsBetweenActivities* ctr);
 	~ModifyConstraintMinGapsBetweenActivitiesForm();
 
 	bool filterOk(Activity* ac);
@@ -38,6 +38,7 @@ public slots:
 	void filterChanged();
 	
 	void addActivity();
+	void addAllActivities();
 	void removeActivity();
 
 	void clear();

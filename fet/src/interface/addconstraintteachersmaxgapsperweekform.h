@@ -26,7 +26,7 @@
 class AddConstraintTeachersMaxGapsPerWeekForm : public QDialog, Ui::AddConstraintTeachersMaxGapsPerWeekForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintTeachersMaxGapsPerWeekForm();
+	AddConstraintTeachersMaxGapsPerWeekForm(QWidget* parent);
 	~AddConstraintTeachersMaxGapsPerWeekForm();
 
 public slots:

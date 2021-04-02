@@ -19,14 +19,13 @@ File longtextmessagebox.cpp
  *                                                                         *
  ***************************************************************************/
 
-
 #include "longtextmessagebox.h"
 
 #include <QMessageBox>
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
-#include <QTextEdit>
+#include <QPlainTextEdit>
 #include <QPushButton>
 
 #include "centerwidgetonscreen.h"
@@ -52,7 +51,7 @@ int LongTextMessageBox::confirmationWithDimensions
  int defaultButton, int escapeButton, int MINW, int MAXW, int MINH, int MAXH )
 {
 	if(button0Text==QString() || button1Text==QString() || button2Text!=QString()){
-		QMessageBox::critical(NULL, tr("FET critical"), tr("You have met a FET bug. The problem is in file"
+		QMessageBox::critical(parent, tr("FET critical"), tr("You have met a FET bug. The problem is in file"
 		 " %1 line %2, the reason is that a confirmation dialog box does not get exactly 2 arguments. Please report bug. FET will now continue."
 		 " You probably don't have any problems with your data file - you can save it.").arg(__FILE__).arg(__LINE__));
 	}
@@ -61,7 +60,7 @@ int LongTextMessageBox::confirmationWithDimensions
 	dialog.setWindowTitle(title);
 	
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QTextEdit* te=new QTextEdit();
+	QPlainTextEdit* te=new QPlainTextEdit();
 	te->setPlainText(text);
 	te->setReadOnly(true);
 	
@@ -123,8 +122,9 @@ int LongTextMessageBox::confirmationWithDimensions
 	if(w<MINW) w=MINW;
 	if(h>MAXH) h=MAXH;
 	if(h<MINH) h=MINH;
-	dialog.setGeometry(0, 0, w, h);
-	centerWidgetOnScreen(&dialog);
+	dialog.resize(w, h);
+	if(parent==0)
+		forceCenterWidgetOnScreen(&dialog);
 	
 	int b=dialog.exec();
 	
@@ -178,7 +178,7 @@ void LongTextMessageBox::informationWithDimensions
 	dialog.setWindowTitle(title);
 	
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QTextEdit* te=new QTextEdit();
+	QPlainTextEdit* te=new QPlainTextEdit();
 	te->setPlainText(text);
 	te->setReadOnly(true);
 	
@@ -201,8 +201,9 @@ void LongTextMessageBox::informationWithDimensions
 	if(w<MINW) w=MINW;
 	if(h>MAXH) h=MAXH;
 	if(h<MINH) h=MINH;
-	dialog.setGeometry(0, 0, w, h);
-	centerWidgetOnScreen(&dialog);
+	dialog.resize(w, h);
+	if(parent==0)
+		forceCenterWidgetOnScreen(&dialog);
 	
 	dialog.exec();
 }

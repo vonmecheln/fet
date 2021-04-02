@@ -28,7 +28,7 @@ class ModifyConstraintTeacherActivityTagMaxHoursContinuouslyForm : public QDialo
 public:
 	ConstraintTeacherActivityTagMaxHoursContinuously* _ctr;
 
-	ModifyConstraintTeacherActivityTagMaxHoursContinuouslyForm(ConstraintTeacherActivityTagMaxHoursContinuously* ctr);
+	ModifyConstraintTeacherActivityTagMaxHoursContinuouslyForm(QWidget* parent, ConstraintTeacherActivityTagMaxHoursContinuously* ctr);
 	~ModifyConstraintTeacherActivityTagMaxHoursContinuouslyForm();
 
 	void updateMaxHoursSpinBox();

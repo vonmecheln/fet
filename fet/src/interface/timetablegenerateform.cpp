@@ -17,8 +17,6 @@
 
 #include "generate.h"
 
-#include "centerwidgetonscreen.h"
-
 #include "timetablegenerateform.h"
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -27,7 +25,7 @@
 
 #include <QString>
 
-#include <QTextEdit>
+#include <QPlainTextEdit>
 
 #include <QDateTime>
 #include <QLocale>
@@ -68,7 +66,6 @@ extern Solution highestStageSolution;
 extern QString conflictsStringTitle;
 extern QString conflictsString;
 
-
 Generate gen;
 
 QString initialOrderOfActivities;
@@ -82,6 +79,8 @@ extern QDateTime generationHighestStageDateTime;
 
 QString getActivityDetailedDescription(Rules& r, int id);
 
+const QString settingsName=QString("TimetableGenerateUnsuccessfulForm");
+
 void GenerateThread::run()
 {
 	const int INF=2000000000;
@@ -90,28 +89,24 @@ void GenerateThread::run()
 	gen.generate(INF, impossible, timeExceeded, true); //true means threaded
 }
 
-TimetableGenerateForm::TimetableGenerateForm()
+TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(startPushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(start()));
-    connect(stopPushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(stop()));
-    connect(writeResultsPushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(write()));
-    connect(closePushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(closePressed()));
-    connect(helpPushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(help()));
-    connect(seeImpossiblePushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(seeImpossible()));
-    connect(seeInitialOrderPushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(seeInitialOrder()));
+	currentResultsTextEdit->setReadOnly(true);
+	
+	connect(startPushButton, SIGNAL(clicked()), this, SLOT(start()));
+	connect(stopPushButton, SIGNAL(clicked()), this, SLOT(stop()));
+	connect(writeResultsPushButton, SIGNAL(clicked()), this, SLOT(write()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(closePressed()));
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(seeImpossiblePushButton, SIGNAL(clicked()), this, SLOT(seeImpossible()));
+	connect(seeInitialOrderPushButton, SIGNAL(clicked()), this, SLOT(seeInitialOrder()));
+	connect(writeHighestStagePushButton, SIGNAL(clicked()), this, SLOT(writeHighestStage()));
+	connect(stopHighestPushButton, SIGNAL(clicked()), this, SLOT(stopHighest()));
 
-    connect(writeHighestStagePushButton, SIGNAL(clicked()), this /*TimetableGenerateForm_template*/, SLOT(writeHighestStage()));
-    connect(stopHighestPushButton, SIGNAL(clicked()), this, SLOT(stopHighest()));
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	simulation_running=false;
 
@@ -125,7 +120,6 @@ TimetableGenerateForm::TimetableGenerateForm()
 	writeHighestStagePushButton->setDisabled(TRUE);
 	seeImpossiblePushButton->setDisabled(TRUE);
 	seeInitialOrderPushButton->setDisabled(TRUE);
-	//seeHighestStagePushButton->setDisabled(TRUE);
 
 	connect(&gen, SIGNAL(activityPlaced(int)),
 	 this, SLOT(activityPlaced(int)));
@@ -133,19 +127,18 @@ TimetableGenerateForm::TimetableGenerateForm()
 	 this, SLOT(simulationFinished()));
 	connect(&gen, SIGNAL(impossibleToSolve()),
 	 this, SLOT(impossibleToSolve()));
-
-//	this->setAttribute(Qt::WA_DeleteOnClose);
 }
 
 TimetableGenerateForm::~TimetableGenerateForm()
 {
+	saveFETDialogGeometry(this);
 	if(simulation_running)
 		this->stop();
 }
 
 void TimetableGenerateForm::start(){
 	if(!gt.rules.internalStructureComputed){
-		if(!gt.rules.computeInternalStructure()){
+		if(!gt.rules.computeInternalStructure(this)){
 			QMessageBox::warning(this, TimetableGenerateForm::tr("FET warning"), TimetableGenerateForm::tr("Data is wrong. Please correct and try again"));
 			return;
 		}
@@ -159,19 +152,17 @@ void TimetableGenerateForm::start(){
 		return;
 	}
 
-	currentResultsTextEdit->setText(TimetableGenerateForm::tr("Entering simulation....precomputing, please be patient"));
-	//currentResultsTextEdit->repaint();
+	currentResultsTextEdit->setPlainText(TimetableGenerateForm::tr("Entering simulation....precomputing, please be patient"));
 	
 	gen.abortOptimization=false;
-	bool ok=gen.precompute();
+	bool ok=gen.precompute(this);
 	
 	if(!ok){
-		currentResultsTextEdit->setText(TimetableGenerateForm::tr("Cannot generate - please modify your data"));
+		currentResultsTextEdit->setPlainText(TimetableGenerateForm::tr("Cannot generate - please modify your data"));
 		currentResultsTextEdit->update();
 
 		QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
-		 TimetableGenerateForm::tr("Your data cannot be processed - please modify it as instructed"
-		 "\nFor more information you can join the mailing list or write to author"));
+		 TimetableGenerateForm::tr("Your data cannot be processed - please modify it as instructed"));
 
 		return;
 	}
@@ -184,13 +175,12 @@ void TimetableGenerateForm::start(){
 	writeHighestStagePushButton->setEnabled(TRUE);
 	seeImpossiblePushButton->setEnabled(TRUE);
 	seeInitialOrderPushButton->setEnabled(TRUE);
-	//seeHighestStagePushButton->setEnabled(TRUE);
 
 	simulation_running=true;
 	
 	gen.c.makeUnallocated(gt.rules);
 	
-	TimetableExport::writeRandomSeed();
+	TimetableExport::writeRandomSeed(this);
 
 	generateThread.start();
 }
@@ -198,10 +188,6 @@ void TimetableGenerateForm::start(){
 void TimetableGenerateForm::stop()
 {
 	if(!simulation_running){
-		/*QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
-		 TimetableGenerateForm::tr("Simulation stopped but the simulation is not running."
-		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));*/
-
 		return;
 	}
 
@@ -225,20 +211,21 @@ void TimetableGenerateForm::stop()
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
-	conflictsString = "";
+	conflictsString="";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";
-	conflictsString+=QString::number(c.conflictsTotal);
+	conflictsString+=CustomFETString::number(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
+	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
+	conflictsString+="\n";
 
 	foreach(QString t, c.conflictsDescriptionList)
 		conflictsString+=t+"\n";
 
-	TimetableExport::writeSimulationResults();
+	TimetableExport::writeSimulationResults(this);
 
-	QString s=TimetableGenerateForm::tr("Simulation interrupted. FET could not find a perfect timetable. "
-	 "Maybe you can consider lowering the constraints.");
+	QString s=TimetableGenerateForm::tr("Simulation interrupted! FET could not find a timetable."
+	 " Maybe you can consider lowering the constraints.");
 
 	s+=" ";
 	
@@ -247,17 +234,15 @@ void TimetableGenerateForm::stop()
 	if(INPUT_FILENAME_XML=="")
 		kk.append("unnamed");
 	else{
-		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1));
 
 		if(kk.right(4)==".fet")
 			kk=kk.left(kk.length()-4);
-		//else if(INPUT_FILENAME_XML!="")
-		//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	}
 	kk.append("-single");
 
-	s+=TimetableGenerateForm::tr("The partial results are saved in the directory %1 in html and xml mode"
-	 " and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
+	s+=TimetableGenerateForm::tr("The partial results were saved in the directory %1")
+	 .arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
 
 	s+="\n\n";
 
@@ -316,12 +301,12 @@ void TimetableGenerateForm::stop()
 	mutex.unlock();
 
 	//show the message in a dialog
-	QDialog dialog;
+	QDialog dialog(this);
 	
 	dialog.setWindowTitle(TimetableGenerateForm::tr("Generation stopped", "The title of a dialog, meaning that the generation of the timetable was stopped."));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QTextEdit* te=new QTextEdit();
+	QPlainTextEdit* te=new QPlainTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(TimetableGenerateForm::tr("OK"));
@@ -333,16 +318,14 @@ void TimetableGenerateForm::stop()
 	vl->addWidget(te);
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
-
-	/*dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
-	int xx=rect.width()/2 - 350;
-	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);*/
-	dialog.setGeometry(0,0,700,500);
-	centerWidgetOnScreen(&dialog);
 	
+	dialog.resize(700,500);
+	centerWidgetOnScreen(&dialog);
+	restoreFETDialogGeometry(&dialog, settingsName);
+	
+	setParentAndOtherThings(&dialog, this);
 	dialog.exec();
+	saveFETDialogGeometry(&dialog, settingsName);
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
@@ -351,16 +334,11 @@ void TimetableGenerateForm::stop()
 	writeResultsPushButton->setDisabled(TRUE);
 	writeHighestStagePushButton->setDisabled(TRUE);
 	seeImpossiblePushButton->setDisabled(TRUE);
-	//seeHighestStagePushButton->setDisabled(TRUE);
 }
 
 void TimetableGenerateForm::stopHighest()
 {
 	if(!simulation_running){
-		/*QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
-		 TimetableGenerateForm::tr("Simulation stopped but the simulation is not running."
-		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));*/
-
 		return;
 	}
 
@@ -384,20 +362,21 @@ void TimetableGenerateForm::stopHighest()
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
-	conflictsString = "";
+	conflictsString="";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";
-	conflictsString+=QString::number(c.conflictsTotal);
+	conflictsString+=CustomFETString::number(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
+	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
+	conflictsString+="\n";
 
 	foreach(QString t, c.conflictsDescriptionList)
 		conflictsString+=t+"\n";
 
-	TimetableExport::writeHighestStageResults();
+	TimetableExport::writeHighestStageResults(this);
 
-	QString s=TimetableGenerateForm::tr("Simulation interrupted. FET could not find a perfect timetable. "
-	 "Maybe you can consider lowering the constraints.");
+	QString s=TimetableGenerateForm::tr("Simulation interrupted! FET could not find a timetable."
+	 " Maybe you can consider lowering the constraints.");
 
 	s+=" ";
 	
@@ -406,17 +385,15 @@ void TimetableGenerateForm::stopHighest()
 	if(INPUT_FILENAME_XML=="")
 		kk.append("unnamed");
 	else{
-		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1));
 
 		if(kk.right(4)==".fet")
 			kk=kk.left(kk.length()-4);
-		//else if(INPUT_FILENAME_XML!="")
-		//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	}
 	kk.append("-highest");
 
-	s+=TimetableGenerateForm::tr("The partial highest stage results are saved in the directory %1 in html and xml mode"
-	 " and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
+	s+=TimetableGenerateForm::tr("The partial highest-stage results were saved in the directory %1")
+	 .arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
 
 	s+="\n\n";
 
@@ -451,13 +428,13 @@ void TimetableGenerateForm::stopHighest()
 	mutex.unlock();
 
 	//show the message in a dialog
-	QDialog dialog;
+	QDialog dialog(this);
 
 	dialog.setWindowTitle(TimetableGenerateForm::tr("Generation stopped (highest stage)", "The title of a dialog, meaning that the generation of the timetable was stopped "
 		"and highest stage timetable written."));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QTextEdit* te=new QTextEdit();
+	QPlainTextEdit* te=new QPlainTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(TimetableGenerateForm::tr("OK"));
@@ -470,17 +447,13 @@ void TimetableGenerateForm::stopHighest()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	/*
-	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
-	int xx=rect.width()/2 - 350;
-	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);
-	*/
-	dialog.setGeometry(0,0,700,500);
+	dialog.resize(700,500);
 	centerWidgetOnScreen(&dialog);
+	restoreFETDialogGeometry(&dialog, settingsName);
 	
+	setParentAndOtherThings(&dialog, this);
 	dialog.exec();
+	saveFETDialogGeometry(&dialog, settingsName);
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
@@ -489,16 +462,11 @@ void TimetableGenerateForm::stopHighest()
 	writeResultsPushButton->setDisabled(TRUE);
 	writeHighestStagePushButton->setDisabled(TRUE);
 	seeImpossiblePushButton->setDisabled(TRUE);
-	//seeHighestStagePushButton->setDisabled(TRUE);
 }
 
 void TimetableGenerateForm::impossibleToSolve()
 {
 	if(!simulation_running){
-		/*QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
-		 TimetableGenerateForm::tr("Simulation impossible to solve, but the simulation is not running."
-		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));*/
-
 		return;
 	}
 
@@ -524,21 +492,21 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
-	conflictsString = "";
+	conflictsString="";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";
-	conflictsString+=QString::number(c.conflictsTotal);
+	conflictsString+=CustomFETString::number(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
+	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
+	conflictsString+="\n";
 
 	foreach(QString t, c.conflictsDescriptionList)
 		conflictsString+=t+"\n";
 
-	TimetableExport::writeSimulationResults();
+	TimetableExport::writeSimulationResults(this);
 
 
-	QString s=TimetableGenerateForm::tr("FET could not find a timetable. "
-	 "Maybe you can consider lowering the constraints.");
+	QString s=TimetableGenerateForm::tr("Simulation impossible! Maybe you can consider lowering the constraints.");
 
 	s+=" ";
 
@@ -547,17 +515,15 @@ void TimetableGenerateForm::impossibleToSolve()
 	if(INPUT_FILENAME_XML=="")
 		kk.append("unnamed");
 	else{
-		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1));
 
 		if(kk.right(4)==".fet")
 			kk=kk.left(kk.length()-4);
-		//else if(INPUT_FILENAME_XML!="")
-			//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	}
 	kk.append("-single");
 
-	s+=TimetableGenerateForm::tr("The partial results are saved in the directory %1 in html and xml mode"
-	 " and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
+	s+=TimetableGenerateForm::tr("The partial results were saved in the directory %1")
+	 .arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
 
 	s+="\n\n";
 
@@ -583,12 +549,12 @@ void TimetableGenerateForm::impossibleToSolve()
 	mutex.unlock();
 
 	//show the message in a dialog
-	QDialog dialog;
+	QDialog dialog(this);
 
 	dialog.setWindowTitle(TimetableGenerateForm::tr("Generation impossible", "The title of a dialog, meaning that the generation of the timetable is impossible."));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QTextEdit* te=new QTextEdit();
+	QPlainTextEdit* te=new QPlainTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(TimetableGenerateForm::tr("OK"));
@@ -601,15 +567,13 @@ void TimetableGenerateForm::impossibleToSolve()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	/*dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
-	int xx=rect.width()/2 - 350;
-	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);*/
-	dialog.setGeometry(0,0,700,500);
+	dialog.resize(700,500);
 	centerWidgetOnScreen(&dialog);
+	restoreFETDialogGeometry(&dialog, settingsName);
 
+	setParentAndOtherThings(&dialog, this);
 	dialog.exec();
+	saveFETDialogGeometry(&dialog, settingsName);
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
@@ -618,24 +582,17 @@ void TimetableGenerateForm::impossibleToSolve()
 	writeResultsPushButton->setDisabled(TRUE);
 	writeHighestStagePushButton->setDisabled(TRUE);
 	seeImpossiblePushButton->setDisabled(TRUE);
-	//seeHighestStagePushButton->setDisabled(TRUE);
 }
 
 void TimetableGenerateForm::simulationFinished()
 {
 	if(!simulation_running){
-		/*QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
-		 TimetableGenerateForm::tr("Simulation finished but the simulation is not running."
-		 " This should not happen. Maybe you aborted simulation previously. Please report possible bug to author"));*/
-
 		return;
 	}
 
 	simulation_running=false;
 
 	finishedSemaphore.acquire();
-
-	//mutex.lock();
 
 	Solution& c=gen.c;
 
@@ -649,35 +606,32 @@ void TimetableGenerateForm::simulationFinished()
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Soft conflicts", "Title of dialog");
-	conflictsString = "";
+	conflictsString="";
 	conflictsString+=tr("Total soft conflicts:");
 	conflictsString+=" ";
-	conflictsString+=QString::number(c.conflictsTotal);
+	conflictsString+=CustomFETString::number(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString += TimetableGenerateForm::tr("Soft conflicts listing (in decreasing order):")+"\n";
+	conflictsString+=TimetableGenerateForm::tr("Soft conflicts listing (in decreasing order):");
+	conflictsString+="\n";
 
 	foreach(QString t, c.conflictsDescriptionList)
 		conflictsString+=t+"\n";
 
-	TimetableExport::writeSimulationResults();
-
-	//mutex.unlock();
+	TimetableExport::writeSimulationResults(this);
 
 	QString kk;
 	kk=FILE_SEP;
 	if(INPUT_FILENAME_XML=="")
 		kk.append("unnamed");
 	else{
-		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1));
 
 		if(kk.right(4)==".fet")
 			kk=kk.left(kk.length()-4);
-		//else if(INPUT_FILENAME_XML!="")
-			//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	}
 	kk.append("-single");
 
-	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
+/*	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
 		TimetableGenerateForm::tr("Allocation terminated successfully, remaining %1 weighted"
 		" soft conflicts from constraints with weight percentage lower than 100%"
 		" (see menu Timetable/Show soft conflicts or the text file in"
@@ -687,6 +641,15 @@ void TimetableGenerateForm::simulationFinished()
 		" html and xml mode and the soft conflicts in txt mode").arg(c.conflictsTotal).arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk))
 		+". "+tr("Data+timetable is saved as a .fet data file (with activities locked by constraints)"
 		", so that you can open/modify/regenerate the current timetable later"));
+*/
+
+	QString s=QString("");
+	s+=tr("Generation successful!");
+	s+=QString("\n\n");
+	s+=tr("Weighted soft conflicts: %1").arg(CustomFETString::number(c.conflictsTotal));
+	s+=QString("\n\n");
+	s+=tr("Results were saved in the directory %1").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
+	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"), s);
 
 	startPushButton->setEnabled(TRUE);
 	stopPushButton->setDisabled(TRUE);
@@ -695,7 +658,6 @@ void TimetableGenerateForm::simulationFinished()
 	writeResultsPushButton->setDisabled(TRUE);
 	writeHighestStagePushButton->setDisabled(TRUE);
 	seeImpossiblePushButton->setDisabled(TRUE);
-	//seeHighestStagePushButton->setDisabled(TRUE);
 }
 
 void TimetableGenerateForm::activityPlaced(int na){
@@ -755,7 +717,7 @@ void TimetableGenerateForm::activityPlaced(int na){
 	s+="\n\n";
 	s+=tr("Max placed activities: %1 (at %2)", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(mact).arg(tim);
 
-	currentResultsTextEdit->setText(s);
+	currentResultsTextEdit->setPlainText(s);
 
 	semaphorePlacedActivity.release();
 }
@@ -764,23 +726,36 @@ void TimetableGenerateForm::help()
 {
 	QString s;
 	
-	s+=TimetableGenerateForm::tr("Please wait. It might take 5 to 20 minutes or even more for very difficult timetables")+"\n";
-	s+=TimetableGenerateForm::tr("Activities are placed in order, most difficult ones first"); s+="\n";
+	s+=TimetableGenerateForm::tr("Please wait. It might take 5 to 20 minutes or even more for very difficult timetables");
+	s+="\n\n";
+	s+=TimetableGenerateForm::tr("Activities are placed in order, most difficult ones first");
+	s+="\n\n";
 	s+=TimetableGenerateForm::tr("The process of searching is semi-randomized, which means that "
 	 "you will get different timetables and running times each time. You can choose the best timetable from several runs");
-	s+="\n";
+	s+="\n\n";
 	s+=TimetableGenerateForm::tr("Usually, there is no need to stop and restart the search."
 	 " But for very difficult timetables this can help. Sometimes in such cases FET can become stuck and cycle forever,"
 	 " and restarting might produce a very fast solution.");
-	s+="\n";
+	s+="\n\n";
 	s+=TimetableGenerateForm::tr("It is recommended to strengthen the constraints step by step (for"
 	 " instance min days between activities weight or teacher(s) max gaps), as you obtain feasible timetables.");
-	s+="\n";
-	s+="\n";
-	s+=TimetableGenerateForm::tr("NEW: If your timetable gets stuck on a certain activity number k (and then"
-	 " begins going back), please check the initial evaluation order and see activity number k+1 in this list. I found"
+	s+="\n\n";
+	s+="\n\n";
+	s+=TimetableGenerateForm::tr("If your timetable gets stuck on a certain activity number k (and then"
+	 " begins going back), please check the initial evaluation order and see activity number k+1 in this list. You may find"
 	 " errors this way.");
 	 
+	s+="\n\n";
+	s+=TimetableGenerateForm::tr("If the generation is successful, you cannot have hard conflicts. You can have only soft conflicts,"
+	 " corresponding to constraints with weight lower than 100.0%, which are reported in detail.");
+	s+="\n\n";
+	s+=TimetableGenerateForm::tr("After the generation (successful or interrupted), you can view the current (complete or incomplete) timetable"
+	 " in the corresponding view timetable dialogs, and the list of conflicts in the view conflicts dialog.");
+	s+="\n\n";
+	s+=TimetableGenerateForm::tr("The results are saved in your selected results directory in HTML and XML mode and the soft conflicts"
+	 " in text mode, along with the current data and timetable, saved as a .fet data file (with activities locked by constraints), so"
+	 " that you can open, modify and regenerate the current timetable later");
+	
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }
 
@@ -799,17 +774,18 @@ void TimetableGenerateForm::write(){
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
-	conflictsString = "";
+	conflictsString="";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";
-	conflictsString+=QString::number(c.conflictsTotal);
+	conflictsString+=CustomFETString::number(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
+	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
+	conflictsString+="\n";
 
 	foreach(QString t, c.conflictsDescriptionList)
 		conflictsString+=t+"\n";
 
-	TimetableExport::writeSimulationResults();
+	TimetableExport::writeSimulationResults(this);
 
 	mutex.unlock();
 
@@ -818,12 +794,10 @@ void TimetableGenerateForm::write(){
 	if(INPUT_FILENAME_XML=="")
 		kk.append("unnamed");
 	else{
-		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1));
 
 		if(kk.right(4)==".fet")
 			kk=kk.left(kk.length()-4);
-		//else if(INPUT_FILENAME_XML!="")
-			//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	}
 	kk.append("-single");
 
@@ -847,17 +821,18 @@ void TimetableGenerateForm::writeHighestStage(){
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
-	conflictsString = "";
+	conflictsString="";
 	conflictsString+=TimetableGenerateForm::tr("Total conflicts:");
 	conflictsString+=" ";
-	conflictsString+=QString::number(c.conflictsTotal);
+	conflictsString+=CustomFETString::number(c.conflictsTotal);
 	conflictsString+="\n";
-	conflictsString += TimetableGenerateForm::tr("Conflicts listing (in decreasing order):\n");
+	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
+	conflictsString+="\n";
 
 	foreach(QString t, c.conflictsDescriptionList)
 		conflictsString+=t+"\n";
 
-	TimetableExport::writeHighestStageResults();
+	TimetableExport::writeHighestStageResults(this);
 
 	mutex.unlock();
 
@@ -866,12 +841,10 @@ void TimetableGenerateForm::writeHighestStage(){
 	if(INPUT_FILENAME_XML=="")
 		kk.append("unnamed");
 	else{
-		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.findRev(FILE_SEP)-1));
+		kk.append(INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1));
 
 		if(kk.right(4)==".fet")
 			kk=kk.left(kk.length()-4);
-		//else if(INPUT_FILENAME_XML!="")
-			//cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	}
 	kk.append("-highest");
 
@@ -918,12 +891,12 @@ void TimetableGenerateForm::seeImpossible()
 	mutex.unlock();
 	
 	//show the message in a dialog
-	QDialog dialog;
+	QDialog dialog(this);
 	
 	dialog.setWindowTitle(tr("FET - information about difficult activities"));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QTextEdit* te=new QTextEdit();
+	QPlainTextEdit* te=new QPlainTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(tr("OK"));
@@ -936,15 +909,13 @@ void TimetableGenerateForm::seeImpossible()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	/*dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
-	int xx=rect.width()/2 - 350;
-	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);*/
-	dialog.setGeometry(0,0,700,500);
+	dialog.resize(700,500);
 	centerWidgetOnScreen(&dialog);
+	restoreFETDialogGeometry(&dialog, settingsName);
 
+	setParentAndOtherThings(&dialog, this);
 	dialog.exec();
+	saveFETDialogGeometry(&dialog, settingsName);
 }
 
 void TimetableGenerateForm::seeInitialOrder()
@@ -952,12 +923,12 @@ void TimetableGenerateForm::seeInitialOrder()
 	QString s=initialOrderOfActivities;
 
 	//show the message in a dialog
-	QDialog dialog;
+	QDialog dialog(this);
 	
 	dialog.setWindowTitle(tr("FET - information about initial order of evaluation of activities"));
 
 	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QTextEdit* te=new QTextEdit();
+	QPlainTextEdit* te=new QPlainTextEdit();
 	te->setPlainText(s);
 	te->setReadOnly(true);
 	QPushButton* pb=new QPushButton(tr("OK"));
@@ -970,15 +941,12 @@ void TimetableGenerateForm::seeInitialOrder()
 	vl->addLayout(hl);
 	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
 
-	/*
-	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
-	int xx=rect.width()/2 - 350;
-	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);*/
-	dialog.setGeometry(0,0,700,500);
+	dialog.resize(700,500);
 	centerWidgetOnScreen(&dialog);
+	restoreFETDialogGeometry(&dialog, settingsName);
 
+	setParentAndOtherThings(&dialog, this);
 	dialog.exec();
+	saveFETDialogGeometry(&dialog, settingsName);
 }
 

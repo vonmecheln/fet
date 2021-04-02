@@ -28,7 +28,7 @@ class ModifyConstraintTeacherMaxGapsPerDayForm : public QDialog, Ui::ModifyConst
 public:
 	ConstraintTeacherMaxGapsPerDay* _ctr;
 
-	ModifyConstraintTeacherMaxGapsPerDayForm(ConstraintTeacherMaxGapsPerDay* ctr);
+	ModifyConstraintTeacherMaxGapsPerDayForm(QWidget* parent, ConstraintTeacherMaxGapsPerDay* ctr);
 	~ModifyConstraintTeacherMaxGapsPerDayForm();
 
 public slots:

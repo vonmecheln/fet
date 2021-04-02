@@ -17,26 +17,20 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "modifyconstraintstudentssethomeroomform.h"
 #include "spaceconstraint.h"
 
-ModifyConstraintStudentsSetHomeRoomForm::ModifyConstraintStudentsSetHomeRoomForm(ConstraintStudentsSetHomeRoom* ctr)
+ModifyConstraintStudentsSetHomeRoomForm::ModifyConstraintStudentsSetHomeRoomForm(QWidget* parent, ConstraintStudentsSetHomeRoom* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetHomeRoomForm_template*/, SLOT(cancel()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetHomeRoomForm_template*/, SLOT(ok()));
+	okPushButton->setDefault(true);
 
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
@@ -46,8 +40,7 @@ ModifyConstraintStudentsSetHomeRoomForm::ModifyConstraintStudentsSetHomeRoomForm
 	
 	this->_ctr=ctr;
 	
-	//compulsoryCheckBox->setChecked(ctr->compulsory);
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 
 	updateStudentsComboBox();
 	updateRoomsComboBox();
@@ -55,6 +48,7 @@ ModifyConstraintStudentsSetHomeRoomForm::ModifyConstraintStudentsSetHomeRoomForm
 
 ModifyConstraintStudentsSetHomeRoomForm::~ModifyConstraintStudentsSetHomeRoomForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintStudentsSetHomeRoomForm::updateStudentsComboBox(){
@@ -62,19 +56,19 @@ void ModifyConstraintStudentsSetHomeRoomForm::updateStudentsComboBox(){
 	studentsComboBox->clear();
 	for(int m=0; m<gt.rules.yearsList.size(); m++){
 		StudentsYear* sty=gt.rules.yearsList[m];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		if(sty->name==this->_ctr->studentsName)
 			j=i;
 		i++;
 		for(int n=0; n<sty->groupsList.size(); n++){
 			StudentsGroup* stg=sty->groupsList[n];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			if(stg->name==this->_ctr->studentsName)
 				j=i;
 			i++;
 			for(int p=0; p<stg->subgroupsList.size(); p++){
 				StudentsSubgroup* sts=stg->subgroupsList[p];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 				if(sts->name==this->_ctr->studentsName)
 					j=i;
 				i++;
@@ -82,7 +76,7 @@ void ModifyConstraintStudentsSetHomeRoomForm::updateStudentsComboBox(){
 		}
 	}
 	assert(j>=0);
-	studentsComboBox->setCurrentItem(j);
+	studentsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintStudentsSetHomeRoomForm::updateRoomsComboBox()
@@ -91,13 +85,13 @@ void ModifyConstraintStudentsSetHomeRoomForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int k=0; k<gt.rules.roomsList.size(); k++){
 		Room* rm=gt.rules.roomsList[k];
-		roomsComboBox->insertItem(rm->name);
+		roomsComboBox->addItem(rm->name);
 		if(rm->name==this->_ctr->roomName)
 			j=i;
 		i++;
 	}
 	assert(j>=0);
-	roomsComboBox->setCurrentItem(j);
+	roomsComboBox->setCurrentIndex(j);
 }
 
 void ModifyConstraintStudentsSetHomeRoomForm::cancel()
@@ -109,7 +103,7 @@ void ModifyConstraintStudentsSetHomeRoomForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
@@ -119,7 +113,7 @@ void ModifyConstraintStudentsSetHomeRoomForm::ok()
 	QString students=studentsComboBox->currentText();
 	assert(gt.rules.searchStudentsSet(students)!=NULL);
 
-	int i=roomsComboBox->currentItem();
+	int i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid room"));
@@ -132,6 +126,7 @@ void ModifyConstraintStudentsSetHomeRoomForm::ok()
 	this->_ctr->studentsName=students;
 
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }

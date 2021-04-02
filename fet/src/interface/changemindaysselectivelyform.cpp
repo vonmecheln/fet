@@ -15,7 +15,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <cstdio>
+
 
 #include "changemindaysselectivelyform.h"
 
@@ -23,11 +23,17 @@
 
 #include <QMessageBox>
 
-ChangeMinDaysSelectivelyForm::ChangeMinDaysSelectivelyForm()
+ChangeMinDaysSelectivelyForm::ChangeMinDaysSelectivelyForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
 	
+	okPushButton->setDefault(true);
+	
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QSize tmp5=oldConsecutiveComboBox->minimumSizeHint();
 	Q_UNUSED(tmp5);
@@ -40,8 +46,8 @@ ChangeMinDaysSelectivelyForm::ChangeMinDaysSelectivelyForm()
 	oldConsecutiveComboBox->addItem(tr("No"));
 	oldConsecutiveComboBox->setCurrentIndex(0);
 	
-	oldDaysSpinBox->setMinValue(-1);
-	oldDaysSpinBox->setMaxValue(gt.rules.nDaysPerWeek);
+	oldDaysSpinBox->setMinimum(-1);
+	oldDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);
 	oldDaysSpinBox->setValue(-1);
 
 	newConsecutiveComboBox->clear();
@@ -50,21 +56,22 @@ ChangeMinDaysSelectivelyForm::ChangeMinDaysSelectivelyForm()
 	newConsecutiveComboBox->addItem(tr("No"));
 	newConsecutiveComboBox->setCurrentIndex(0);
 	
-	newDaysSpinBox->setMinValue(-1);
-	newDaysSpinBox->setMaxValue(gt.rules.nDaysPerWeek);
+	newDaysSpinBox->setMinimum(-1);
+	newDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);
 	newDaysSpinBox->setValue(-1);
 	
-	oldNActsSpinBox->setMinValue(-1);
-	oldNActsSpinBox->setMaxValue(99);
+	oldNActsSpinBox->setMinimum(-1);
+	oldNActsSpinBox->setMaximum(MAX_SPLIT_OF_AN_ACTIVITY);
 	oldNActsSpinBox->setValue(-1);
 }
 
 ChangeMinDaysSelectivelyForm::~ChangeMinDaysSelectivelyForm()
 {
+	saveFETDialogGeometry(this);
 
 }
 
-void ChangeMinDaysSelectivelyForm::on_okPushButton_clicked()
+void ChangeMinDaysSelectivelyForm::ok()
 {
 	enum {ANY=0, YES=1, NO=2};
 	enum {NOCHANGE=0};
@@ -73,14 +80,14 @@ void ChangeMinDaysSelectivelyForm::on_okPushButton_clicked()
 	newWeight=newDays=newConsecutive=-2;
 
 	QString oldWeightS=oldWeightLineEdit->text();
-	sscanf(oldWeightS, "%lf", &oldWeight);
+	weight_sscanf(oldWeightS, "%lf", &oldWeight);
 	if(!(oldWeight==-1 || (oldWeight>=0.0 && oldWeight<=100.0))){
 		QMessageBox::warning(this, tr("FET warning"), tr("Old weight must be -1 or both >=0 and <=100"));
 		return;
 	}
 	
 	QString newWeightS=newWeightLineEdit->text();
-	sscanf(newWeightS, "%lf", &newWeight);
+	weight_sscanf(newWeightS, "%lf", &newWeight);
 	if(!(newWeight==-1 || (newWeight>=0.0 && newWeight<=100.0))){
 		QMessageBox::warning(this, tr("FET warning"), tr("New weight must be -1 or both >=0 and <=100"));
 		return;
@@ -113,7 +120,7 @@ void ChangeMinDaysSelectivelyForm::on_okPushButton_clicked()
 	this->accept();
 }
 
-void ChangeMinDaysSelectivelyForm::on_cancelPushButton_clicked()
+void ChangeMinDaysSelectivelyForm::cancel()
 {
 	this->reject();
 }

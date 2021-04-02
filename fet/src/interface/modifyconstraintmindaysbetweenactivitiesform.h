@@ -29,13 +29,14 @@ class ModifyConstraintMinDaysBetweenActivitiesForm : public QDialog, Ui::ModifyC
 	Q_OBJECT	
 
 public:
-	ModifyConstraintMinDaysBetweenActivitiesForm(ConstraintMinDaysBetweenActivities* ctr);
+	ModifyConstraintMinDaysBetweenActivitiesForm(QWidget* parent, ConstraintMinDaysBetweenActivities* ctr);
 	~ModifyConstraintMinDaysBetweenActivitiesForm();
 
 	bool filterOk(Activity* ac);
 	
 public slots:
 	void addActivity();
+	void addAllActivities();
 	void removeActivity();
 
 	void ok();

@@ -26,12 +26,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #include "activity.h"
 #include "rules.h"
 
-#include <QMessageBox>
-
-#include <iostream>
-
-using namespace std;
-
 Activity::Activity()
 {
 }
@@ -128,7 +122,7 @@ bool Activity::operator==(Activity& a)
 
 bool Activity::searchTeacher(const QString& teacherName)
 {
-	return this->teachersNames.find(teacherName)!=this->teachersNames.end();
+	return this->teachersNames.indexOf(teacherName)!=-1;
 }
 
 bool Activity::removeTeacher(const QString& teacherName)
@@ -151,7 +145,7 @@ void Activity::renameTeacher(const QString& initialTeacherName, const QString& f
 
 bool Activity::searchStudents(const QString& studentsName)
 {
-	return this->studentsNames.find(studentsName)!=this->studentsNames.end();
+	return this->studentsNames.indexOf(studentsName)!=-1;
 }
 
 bool Activity::removeStudents(Rules& r, const QString& studentsName, int nStudents)
@@ -348,10 +342,10 @@ QString Activity::getXmlDescription(Rules& r)
 	foreach(QString tag, this->activityTagsNames)
 		s+="	<Activity_Tag>"+protect(tag)+"</Activity_Tag>\n";
 
-	s+="	<Duration>"+QString::number(this->duration)+"</Duration>\n";
-	s+="	<Total_Duration>"+QString::number(this->totalDuration)+"</Total_Duration>\n";
-	s+="	<Id>"+QString::number(this->id)+"</Id>\n";
-	s+="	<Activity_Group_Id>"+QString::number(this->activityGroupId)+"</Activity_Group_Id>\n";
+	s+="	<Duration>"+CustomFETString::number(this->duration)+"</Duration>\n";
+	s+="	<Total_Duration>"+CustomFETString::number(this->totalDuration)+"</Total_Duration>\n";
+	s+="	<Id>"+CustomFETString::number(this->id)+"</Id>\n";
+	s+="	<Activity_Group_Id>"+CustomFETString::number(this->activityGroupId)+"</Activity_Group_Id>\n";
 	/*if(this->parity==PARITY_WEEKLY)
 		s+="	<Weekly></Weekly>\n";
 	else{
@@ -370,7 +364,7 @@ QString Activity::getXmlDescription(Rules& r)
 		s+="	<Students>" + protect(*it) + "</Students>\n";
 
 	if(this->computeNTotalStudents==false)
-		s+="	<Number_Of_Students>"+QString::number(this->nTotalStudents)+"</Number_Of_Students>\n";
+		s+="	<Number_Of_Students>"+CustomFETString::number(this->nTotalStudents)+"</Number_Of_Students>\n";
 
 	s+="</Activity>";
 
@@ -394,8 +388,6 @@ QString Activity::getDescription(Rules& r)
 		indentRepr=true;
 	else
 		indentRepr=false;
-
-
 		
 	QString _teachers="";
 	if(teachersNames.count()==0)
@@ -414,17 +406,17 @@ QString Activity::getDescription(Rules& r)
 		_students=this->studentsNames.join(",");
 
 	QString _id;
-	_id = QString::number(id);
+	_id = CustomFETString::number(id);
 
 	QString _agid="";
 	if(this->isSplit())
-		_agid = QString::number(this->activityGroupId);
+		_agid = CustomFETString::number(this->activityGroupId);
 
-	QString _duration=QString::number(this->duration);
+	QString _duration=CustomFETString::number(this->duration);
 	
 	QString _totalDuration="";
 	if(this->isSplit())
-		_totalDuration = QString::number(this->totalDuration);
+		_totalDuration = CustomFETString::number(this->totalDuration);
 
 	QString _active;
 	if(this->active==true)
@@ -434,7 +426,7 @@ QString Activity::getDescription(Rules& r)
 
 	QString _nstudents="";
 	if(this->computeNTotalStudents==false)
-		_nstudents=QString::number(this->nTotalStudents);
+		_nstudents=CustomFETString::number(this->nTotalStudents);
 
 	/////////
 	QString s="";
@@ -474,12 +466,6 @@ QString Activity::getDescription(Rules& r)
 		s+=_nstudents;
 	}
 
-
-
-	//if there is left alignment, I do a double padding with spaces in RTL languages, just to make sure
-	if(_indent && LANGUAGE_STYLE_RIGHT_TO_LEFT==true) //this is because old Q3ListBox is left aligned even in RTL layout
-		s+=QString(INDENT, ' ');
-
 	return s;
 }
 
@@ -493,10 +479,10 @@ QString Activity::getDetailedDescription(Rules& r)
 	s+="\n";
 
 	//Id, AGId
-	s += tr("Id=%1").arg(QString::number(id));
+	s += tr("Id=%1").arg(CustomFETString::number(id));
 	s+="\n";
 	if(this->isSplit()){
-		s += tr("Activity group id=%1").arg(QString::number(this->activityGroupId));
+		s += tr("Activity group id=%1").arg(CustomFETString::number(this->activityGroupId));
 		s+="\n";
 	}
 
@@ -510,10 +496,10 @@ QString Activity::getDetailedDescription(Rules& r)
 	s+="\n";
 
 	//Dur, TD
-	s+=tr("Duration=%1").arg(QString::number(this->duration));
+	s+=tr("Duration=%1").arg(CustomFETString::number(this->duration));
 	s+="\n";
 	if(this->isSplit()){
-		s += tr("Total duration=%1").arg(QString::number(this->totalDuration));
+		s += tr("Total duration=%1").arg(CustomFETString::number(this->totalDuration));
 		s+="\n";
 	}
 	

@@ -26,7 +26,7 @@
 class AddConstraintTeachersMinGapsBetweenBuildingChangesForm : public QDialog, Ui::AddConstraintTeachersMinGapsBetweenBuildingChangesForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintTeachersMinGapsBetweenBuildingChangesForm();
+	AddConstraintTeachersMinGapsBetweenBuildingChangesForm(QWidget* parent);
 	~AddConstraintTeachersMinGapsBetweenBuildingChangesForm();
 
 public slots:

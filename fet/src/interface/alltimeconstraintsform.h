@@ -25,11 +25,6 @@
 
 #include "advancedfilterform.h"
 
-/*
-typedef enum {ALL, ANY} ALLANY;
-typedef enum {DESCRIPTION=0, DETDESCRIPTION=1} DESCRDETDESCR;
-typedef enum {CONTAINS=0, DOESNOTCONTAIN=1, REGEXP=2, NOTREGEXP=3} CONTAINSORNOT;*/
-
 class AllTimeConstraintsForm : public QDialog, Ui::AllTimeConstraintsForm_template  {
 	Q_OBJECT
 	
@@ -38,18 +33,16 @@ private:
 
 	QList<TimeConstraint*> visibleTimeConstraintsList;
 	
-	static bool filterInitialized;
-
-	static bool all; //all or any, true means all, false means any
-	static QList<int> descrDetDescr;
-	static QList<int> contains;
-	static QStringList text;
-	static bool caseSensitive;
+	bool all; //all or any, true means all, false means any
+	QList<int> descrDetDescr;
+	QList<int> contains;
+	QStringList text;
+	bool caseSensitive;
 	
 	bool useFilter;
 	
 public:
-	AllTimeConstraintsForm();
+	AllTimeConstraintsForm(QWidget* parent);
 	~AllTimeConstraintsForm();
 	
 	bool filterOk(TimeConstraint* ctr);

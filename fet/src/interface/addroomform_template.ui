@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="This is the title of the dialog to add a new room">Add Room Dialog</string>
+   <string extracomment="This is the title of the dialog to add a new room">Add room</string>
   </property>
   <layout class="QGridLayout">
    <item row="0" column="0">
@@ -36,7 +36,7 @@
      <item>
       <widget class="QPushButton" name="addRoomPushButton">
        <property name="text">
-        <string>Add room</string>
+        <string>Add</string>
        </property>
        <property name="default">
         <bool>true</bool>
@@ -51,7 +51,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton3">
+      <widget class="QPushButton" name="helpPushButton">
        <property name="text">
         <string>Help</string>
        </property>
@@ -106,14 +106,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>nameLineEdit</tabstop>
-  <tabstop>buildingsComboBox</tabstop>
-  <tabstop>capacitySpinBox</tabstop>
-  <tabstop>addRoomPushButton</tabstop>
-  <tabstop>closePushButton</tabstop>
-  <tabstop>pushButton3</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

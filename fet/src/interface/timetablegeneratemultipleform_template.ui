@@ -25,7 +25,7 @@
     </widget>
    </item>
    <item row="1" column="0" colspan="2">
-    <widget class="QTextEdit" name="currentResultsTextEdit">
+    <widget class="QPlainTextEdit" name="currentResultsTextEdit">
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -126,12 +126,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>startPushButton</tabstop>
-  <tabstop>stopPushButton</tabstop>
-  <tabstop>pushButton4</tabstop>
-  <tabstop>closePushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

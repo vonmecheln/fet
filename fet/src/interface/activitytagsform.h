@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef ACTIVITYTAGSFORM_H
 #define ACTIVITYTAGSFORM_H
@@ -27,7 +25,7 @@ class ActivityTagsForm : public QDialog, Ui::ActivityTagsForm_template
 	Q_OBJECT
 	
 public:
-	ActivityTagsForm();
+	ActivityTagsForm(QWidget* parent);
 
 	~ActivityTagsForm();
 

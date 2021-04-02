@@ -14,22 +14,31 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include "removeredundantconfirmationform.h"
 
 #include "timetable_defs.h"
 
-RemoveRedundantConfirmationForm::RemoveRedundantConfirmationForm()
+RemoveRedundantConfirmationForm::RemoveRedundantConfirmationForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
+	
+	continuePushButton->setDefault(true);
+	
+	connect(continuePushButton, SIGNAL(clicked()), this, SLOT(accept()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(reject()));
+	connect(dontShowAgainCheckBox, SIGNAL(stateChanged(int)), this, SLOT(dontShowAgainCheckBoxToggled()));
+
+	dontShowAgain=dontShowAgainCheckBox->isChecked();
+	
+	plainTextEdit->setReadOnly(true);
 
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QString s;
 	
-	s+=tr("Please read VERY carefully the description below:");
+	s+=tr("Please read carefully the description below:");
 	s+="\n\n";
 	s+=tr("This function is intended to be used after you inputted all data or after you used the advanced function "
 	"of spreading the activities over the week. This function will automatically remove the redundant constraints of "
@@ -44,10 +53,15 @@ RemoveRedundantConfirmationForm::RemoveRedundantConfirmationForm()
 	s+=tr("Please SAVE/BACKUP your current file and keep it safe, in case anything goes wrong, and only continue if "
 	"you did that already. Current function might modify much your data");
 	
-	textBrowser->setText(s);
+	plainTextEdit->setPlainText(s);
 }
 
 RemoveRedundantConfirmationForm::~RemoveRedundantConfirmationForm()
 {
+	saveFETDialogGeometry(this);
+}
 
+void RemoveRedundantConfirmationForm::dontShowAgainCheckBoxToggled()
+{
+	dontShowAgain=dontShowAgainCheckBox->isChecked();
 }

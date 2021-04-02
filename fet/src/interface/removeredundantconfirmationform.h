@@ -14,21 +14,24 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef REMOVE_REDUNDANT_CONFIRMATION_FORM_H
 #define REMOVE_REDUNDANT_CONFIRMATION_FORM_H
 
 #include "ui_removeredundantconfirmationform_template.h"
 
-class RemoveRedundantConfirmationForm:public QDialog, Ui::RemoveRedundantConfirmationForm_template
+class RemoveRedundantConfirmationForm: public QDialog, Ui::RemoveRedundantConfirmationForm_template
 {
 	Q_OBJECT
 
 public:
-	RemoveRedundantConfirmationForm();
+	bool dontShowAgain;
+
+	RemoveRedundantConfirmationForm(QWidget* parent);
 	~RemoveRedundantConfirmationForm();
+
+public slots:
+	void dontShowAgainCheckBoxToggled();
 };
 
 #endif

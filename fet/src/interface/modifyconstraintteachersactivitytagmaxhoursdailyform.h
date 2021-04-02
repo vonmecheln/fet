@@ -28,7 +28,7 @@ class ModifyConstraintTeachersActivityTagMaxHoursDailyForm : public QDialog, Ui:
 public:
 	ConstraintTeachersActivityTagMaxHoursDaily* _ctr;
 
-	ModifyConstraintTeachersActivityTagMaxHoursDailyForm(ConstraintTeachersActivityTagMaxHoursDaily* ctr);
+	ModifyConstraintTeachersActivityTagMaxHoursDailyForm(QWidget* parent, ConstraintTeachersActivityTagMaxHoursDaily* ctr);
 	~ModifyConstraintTeachersActivityTagMaxHoursDailyForm();
 
 	void updateMaxHoursSpinBox();

@@ -29,19 +29,20 @@ class AddConstraintActivitiesSameStartingTimeForm : public QDialog, Ui::AddConst
 	Q_OBJECT
 	
 public:
-	AddConstraintActivitiesSameStartingTimeForm();
+	AddConstraintActivitiesSameStartingTimeForm(QWidget* parent);
 	~AddConstraintActivitiesSameStartingTimeForm();
 
-	void updateActivitiesListBox();
+	void updateActivitiesListWidget();
 
 	bool filterOk(Activity* a);
 
 public slots:
 	void blockChanged();
 	
-	void filterChanged();	
+	void filterChanged();
 
 	void addActivity();
+	void addAllActivities();
 	void removeActivity();
 	void clear();
 

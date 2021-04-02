@@ -17,41 +17,32 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "modifyconstraintstudentssetmaxbuildingchangesperweekform.h"
 #include "spaceconstraint.h"
 
-ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm::ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm(ConstraintStudentsSetMaxBuildingChangesPerWeek* ctr)
+ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm::ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm(QWidget* parent, ConstraintStudentsSetMaxBuildingChangesPerWeek* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(weightLineEdit, SIGNAL(textChanged(QString)), this /*ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm_template*/, SLOT(constraintChanged()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm_template*/, SLOT(ok()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm_template*/, SLOT(cancel()));
-//    connect(studentsComboBox, SIGNAL(activated(QString)), this /*ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm_template*/, SLOT(constraintChanged()));
-//    connect(maxChangesSpinBox, SIGNAL(valueChanged(int)), this /*ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm_template*/, SLOT(constraintChanged()));
+	okPushButton->setDefault(true);
 
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
 		
 	this->_ctr=ctr;
 	
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 	
 	updateStudentsComboBox();
 
-	maxChangesSpinBox->setMinValue(0);
-	maxChangesSpinBox->setMaxValue(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek);
+	maxChangesSpinBox->setMinimum(0);
+	maxChangesSpinBox->setMaximum(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek);
 	maxChangesSpinBox->setValue(ctr->maxBuildingChangesPerWeek);	
 		
 	constraintChanged();
@@ -59,6 +50,7 @@ ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm::ModifyConstraintStuden
 
 ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm::~ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm::updateStudentsComboBox(){
@@ -66,19 +58,19 @@ void ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm::updateStudentsCom
 	int i=0, j=-1;
 	for(int m=0; m<gt.rules.yearsList.size(); m++){
 		StudentsYear* sty=gt.rules.yearsList[m];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		if(sty->name==this->_ctr->studentsName)
 			j=i;
 		i++;
 		for(int n=0; n<sty->groupsList.size(); n++){
 			StudentsGroup* stg=sty->groupsList[n];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			if(stg->name==this->_ctr->studentsName)
 				j=i;
 			i++;
 			for(int p=0; p<stg->subgroupsList.size(); p++){
 				StudentsSubgroup* sts=stg->subgroupsList[p];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 				if(sts->name==this->_ctr->studentsName)
 					j=i;
 				i++;
@@ -86,39 +78,20 @@ void ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm::updateStudentsCom
 		}
 	}
 	assert(j>=0);
-	studentsComboBox->setCurrentItem(j);																
+	studentsComboBox->setCurrentIndex(j);																
 
 	constraintChanged();
 }
 
 void ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm::constraintChanged()
-{/*
-	QString s;
-	s+=tr("Current constraint:");
-	s+="\n";
-
-	double weight;
-	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
-	s+=tr(QString("Weight (percentage)=%1\%").arg(weight));
-	s+="\n";
-
-	s+=tr("Students set max building changes per week");
-	s+="\n";
-	s+=tr("Students set=%1").arg(studentsComboBox->currentText());
-	s+="\n";
-	
-	s+=tr("Max building changes per week=%1").arg(maxChangesSpinBox->value());
-	s+="\n";
-
-	currentConstraintTextEdit->setText(s);*/
+{
 }
 
 void ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<100.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage). It has to be 100"));
@@ -138,6 +111,7 @@ void ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm::ok()
 	this->_ctr->maxBuildingChangesPerWeek=maxChangesSpinBox->value();
 
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }

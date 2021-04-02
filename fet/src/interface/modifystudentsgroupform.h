@@ -31,7 +31,7 @@ public:
 	QString _initialGroupName;
 	int _initialNumberOfStudents;
 
-	ModifyStudentsGroupForm(const QString& yearName, const QString& initialGroupName, int initialNumberOfStudents);
+	ModifyStudentsGroupForm(QWidget* parent, const QString& yearName, const QString& initialGroupName, int initialNumberOfStudents);
 	~ModifyStudentsGroupForm();
 
 public slots:

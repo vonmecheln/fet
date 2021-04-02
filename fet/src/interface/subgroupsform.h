@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef SUBGROUPSFORM_H
 #define SUBGROUPSFORM_H
@@ -26,7 +24,7 @@ class SubgroupsForm : public QDialog, Ui::SubgroupsForm_template
 {
 	Q_OBJECT
 public:
-	SubgroupsForm();
+	SubgroupsForm(QWidget* parent);
 	~SubgroupsForm();
 
 public slots:

@@ -26,7 +26,7 @@
 class AddConstraintTeachersMaxBuildingChangesPerDayForm : public QDialog, Ui::AddConstraintTeachersMaxBuildingChangesPerDayForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintTeachersMaxBuildingChangesPerDayForm();
+	AddConstraintTeachersMaxBuildingChangesPerDayForm(QWidget* parent);
 	~AddConstraintTeachersMaxBuildingChangesPerDayForm();
 
 public slots:

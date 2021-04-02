@@ -19,32 +19,29 @@
 
 #include <QMessageBox>
 
-AddStudentsYearForm::AddStudentsYearForm()
+AddStudentsYearForm::AddStudentsYearForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	addStudentsYearPushButton->setDefault(true);
 
-    connect(addStudentsYearPushButton, SIGNAL(clicked()), this /*AddStudentsYearForm_template*/, SLOT(addStudentsYear()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AddStudentsYearForm_template*/, SLOT(close()));
+	connect(addStudentsYearPushButton, SIGNAL(clicked()), this, SLOT(addStudentsYear()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	nameLineEdit->selectAll();
 	nameLineEdit->setFocus();
 
-	numberSpinBox->setMaxValue(MAX_ROOM_CAPACITY);
-	numberSpinBox->setMinValue(0);
+	numberSpinBox->setMaximum(MAX_ROOM_CAPACITY);
+	numberSpinBox->setMinimum(0);
 	numberSpinBox->setValue(0);
 }
 
 AddStudentsYearForm::~AddStudentsYearForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddStudentsYearForm::addStudentsYear()

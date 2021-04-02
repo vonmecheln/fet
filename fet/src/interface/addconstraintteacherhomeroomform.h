@@ -26,7 +26,7 @@
 class AddConstraintTeacherHomeRoomForm : public QDialog, Ui::AddConstraintTeacherHomeRoomForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintTeacherHomeRoomForm();
+	AddConstraintTeacherHomeRoomForm(QWidget* parent);
 	~AddConstraintTeacherHomeRoomForm();
 
 	void updateTeachersComboBox();

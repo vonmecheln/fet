@@ -26,7 +26,7 @@
 class AddConstraintStudentsActivityTagMaxHoursContinuouslyForm : public QDialog, Ui::AddConstraintStudentsActivityTagMaxHoursContinuouslyForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintStudentsActivityTagMaxHoursContinuouslyForm();
+	AddConstraintStudentsActivityTagMaxHoursContinuouslyForm(QWidget* parent);
 	~AddConstraintStudentsActivityTagMaxHoursContinuouslyForm();
 	
 	void updateActivityTagsComboBox();

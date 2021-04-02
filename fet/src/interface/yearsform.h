@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef YEARSFORM_H
 #define YEARSFORM_H
@@ -26,7 +24,7 @@ class YearsForm : public QDialog, Ui::YearsForm_template
 {
 	Q_OBJECT
 public:
-	YearsForm();
+	YearsForm(QWidget* parent);
 	~YearsForm();
 
 public slots:

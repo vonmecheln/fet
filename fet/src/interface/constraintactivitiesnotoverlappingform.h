@@ -28,7 +28,7 @@ class ConstraintActivitiesNotOverlappingForm : public QDialog, Ui::ConstraintAct
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintActivitiesNotOverlappingForm();
+	ConstraintActivitiesNotOverlappingForm(QWidget* parent);
 	~ConstraintActivitiesNotOverlappingForm();
 
 	bool filterOk(TimeConstraint* ctr);

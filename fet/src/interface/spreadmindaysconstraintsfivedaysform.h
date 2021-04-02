@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef SPREAD_MIN_DAYS_CONSTRAINTS_FIVE_DAYS_FORM_H
 #define SPREAD_MIN_DAYS_CONSTRAINTS_FIVE_DAYS_FORM_H
@@ -27,7 +25,7 @@ class SpreadMinDaysConstraintsFiveDaysForm:public QDialog, Ui::SpreadMinDaysCons
 	Q_OBJECT
 
 public:
-	SpreadMinDaysConstraintsFiveDaysForm();
+	SpreadMinDaysConstraintsFiveDaysForm(QWidget* parent);
 	~SpreadMinDaysConstraintsFiveDaysForm();
 	
 public slots:

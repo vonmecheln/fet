@@ -26,7 +26,7 @@
 class AddConstraintBasicCompulsoryTimeForm : public QDialog, Ui::AddConstraintBasicCompulsoryTimeForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintBasicCompulsoryTimeForm();
+	AddConstraintBasicCompulsoryTimeForm(QWidget* parent);
 	~AddConstraintBasicCompulsoryTimeForm();
 
 public slots:

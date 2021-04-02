@@ -31,8 +31,11 @@ File timetable_defs.h
 
 #include <QString>
 
-class QWidget;
+#include <QtGlobal>
 
+#include "centerwidgetonscreen.h"
+
+class QWidget;
 
 /**
 The version number
@@ -76,6 +79,7 @@ extern bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS;
 extern bool CONFIRM_ACTIVITY_PLANNING;
 extern bool CONFIRM_SPREAD_ACTIVITIES;
 extern bool CONFIRM_REMOVE_REDUNDANT;
+extern bool CONFIRM_SAVE_TIMETABLE;
 
 /**
 The maximum total number of different subgroups of students
@@ -173,30 +177,12 @@ const qint16 UNSPECIFIED_ROOM = MAX_ROOMS+1;
 /**
 The maximum number of time constraints
 */
-const int MAX_TIME_CONSTRAINTS = 60000;
+//const int MAX_TIME_CONSTRAINTS = 60000;
 
 /**
 The maximum number of space constraints
 */
-const int MAX_SPACE_CONSTRAINTS = 60000;
-
-/**
-The maximum number of preferred times that can be considered
-in this kind of constraint
-*/
-//const int MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS = MAX_HOURS_PER_WEEK;
-
-/**
-The maximum number of preferred times that can be considered
-in this kind of constraint
-*/
-//const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS = MAX_HOURS_PER_WEEK;
-
-//const int MAX_N_CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_WEEK;
-//const int MAX_N_CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_WEEK;
-
-//const int MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS = MAX_HOURS_PER_WEEK;
-//const int MAX_N_CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES = MAX_HOURS_PER_WEEK;
+//const int MAX_SPACE_CONSTRAINTS = 60000;
 
 
 /**
@@ -269,46 +255,48 @@ A function used in html saving
 QString protect2java(const QString& str);
 
 /**
-A function used in iCal saving
-*/
-QString protect3(const QString& str);
-
-/**
 This constants represents free periods of a teacher in the teachers free periods timetable
 */
-const qint16 TEACHER_HAS_SINGLE_GAP =0;
-const qint16 TEACHER_HAS_BORDER_GAP =1;
-const qint16 TEACHER_HAS_BIG_GAP =2;
+const qint16 TEACHER_HAS_SINGLE_GAP = 0;
+const qint16 TEACHER_HAS_BORDER_GAP = 1;
+const qint16 TEACHER_HAS_BIG_GAP = 2;
 
-const qint16 TEACHER_MUST_COME_EARLIER =4;
-const qint16 TEACHER_MUST_COME_MUCH_EARLIER =6;
+const qint16 TEACHER_MUST_COME_EARLIER = 4;
+const qint16 TEACHER_MUST_COME_MUCH_EARLIER = 6;
 
-const qint16 TEACHER_MUST_STAY_LONGER =3;
-const qint16 TEACHER_MUST_STAY_MUCH_LONGER =5;		// BE CAREFULL, I just print into LESS_DETAILED timetable, if it's smaller then TEACHER_MUST_STAY_MUCH_LONGER
+const qint16 TEACHER_MUST_STAY_LONGER = 3;
+const qint16 TEACHER_MUST_STAY_MUCH_LONGER = 5;		// BE CAREFULL, I just print into LESS_DETAILED timetable, if it's smaller then TEACHER_MUST_STAY_MUCH_LONGER
 
-const qint16 TEACHER_HAS_A_FREE_DAY =7;
+const qint16 TEACHER_HAS_A_FREE_DAY = 7;
 
-const qint16 TEACHER_IS_NOT_AVAILABLE =8;
+const qint16 TEACHER_IS_NOT_AVAILABLE = 8;
 
-const int TEACHERS_FREE_PERIODS_N_CATEGORIES=9;
+const int TEACHERS_FREE_PERIODS_N_CATEGORIES = 9;
 
 
-
-extern int checkForUpdates;
+extern bool checkForUpdates;
 
 extern QString internetVersion;
 
-//class Widget;
-void centerWidgetOnScreen(QWidget* widget);
-//int maxScreenWidth(QWidget* widget);
-int maxRecommendedWidth(QWidget* widget);
+///////tricks to save work to reconvert old files
+const int CUSTOM_DOUBLE_PRECISION=6; //number of digits after the decimal dot for the weights
 
+void weight_sscanf(const QString& str, const char* fmt, double* result);
+
+class CustomFETString{
+public:
+	static QString number(int n);
+	static QString number(double x);
+};
+
+double customFETStrToDouble(const QString& str, bool* ok=0);
+///////end tricks
 
 //for random Knuth - from Knuth TAOCP Vol. 2 Seminumerical Algorithms section 3.6
 //these numbers are really important - please do not change them, NEVER!!!
 //if you want, write a new random number generator routine, with other name
-//I think I found a minor error in Knuth TAOCP, the author said: if(Z<=0) then Z+=MM,
-//but I think it should be: if(Z<=0) then Z+=MM-1.
+//I think I found a minor possible improvement, the author said: if(Z<=0) then Z+=MM,
+//but I think this is better: if(Z<=0) then Z+=MM-1. - Yes, the author confirmed
 //extern int XX;
 //extern int YY;
 const int MM=2147483647;
@@ -321,10 +309,8 @@ const int AAA=40692;
 const int QQQ=52774;
 const int RRR=3791;
 
-
 void initRandomKnuth();
 int randomKnuth1MM1(); //a random between 1 and MM-1
 int randomKnuth(int k); //a random between 0 and k-1
-
 
 #endif

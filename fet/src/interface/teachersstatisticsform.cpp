@@ -28,20 +28,19 @@
 #include <QTableWidget>
 #include <QHeaderView>
 
-TeachersStatisticsForm::TeachersStatisticsForm()
+TeachersStatisticsForm::TeachersStatisticsForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
+	
+	closeButton->setDefault(true);
 
+	connect(closeButton, SIGNAL(clicked()), this, SLOT(close()));
+	
 	tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
 	tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	//setWindowFlags(Qt::Window);
-	//setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	/*QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 		
 	tableWidget->clear();
 	tableWidget->setColumnCount(3);
@@ -71,11 +70,11 @@ TeachersStatisticsForm::TeachersStatisticsForm()
 					nHours+=act->duration;
 				}
 
-		newItem=new QTableWidgetItem(QString::number(nSubActivities));
+		newItem=new QTableWidgetItem(CustomFETString::number(nSubActivities));
 		newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 		tableWidget->setItem(i, 1, newItem);
 
-		newItem=new QTableWidgetItem(QString::number(nHours));
+		newItem=new QTableWidgetItem(CustomFETString::number(nHours));
 		newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 		tableWidget->setItem(i, 2, newItem);
 	}
@@ -86,4 +85,5 @@ TeachersStatisticsForm::TeachersStatisticsForm()
 
 TeachersStatisticsForm::~TeachersStatisticsForm()
 {
+	saveFETDialogGeometry(this);
 }

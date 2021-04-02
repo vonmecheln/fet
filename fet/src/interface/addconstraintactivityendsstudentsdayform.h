@@ -28,7 +28,7 @@
 class AddConstraintActivityEndsStudentsDayForm : public QDialog, Ui::AddConstraintActivityEndsStudentsDayForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintActivityEndsStudentsDayForm();
+	AddConstraintActivityEndsStudentsDayForm(QWidget* parent);
 	~AddConstraintActivityEndsStudentsDayForm();
 
 	void updateActivitiesComboBox();
@@ -36,7 +36,6 @@ public:
 	bool filterOk(Activity* a);
 
 public slots:
-	void constraintChanged();
 	void addCurrentConstraint();
 	
 	void filterChanged();

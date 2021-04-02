@@ -21,7 +21,7 @@
 
 #include <QApplication>
 
-void HelpOnImperfectConstraints::help()
+void HelpOnImperfectConstraints::help(QWidget* parent)
 {
 	QString s=tr("Important information about imperfect constraints:");
 	
@@ -53,5 +53,5 @@ void HelpOnImperfectConstraints::help()
 	s+="\n\n";
 	s+=tr("Read FAQ question 1/25 September 2009 for some more details about activity tag max hours daily constraint.");
 
-	LongTextMessageBox::largeInformation(NULL, tr("FET information"), s);
+	LongTextMessageBox::largeInformation(parent, tr("FET information"), s);
 }

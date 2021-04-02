@@ -27,7 +27,7 @@
 class AddStudentsGroupForm : public QDialog, Ui::AddStudentsGroupForm_template {
 	Q_OBJECT
 public:
-	AddStudentsGroupForm(const QString& yearName);
+	AddStudentsGroupForm(QWidget* parent, const QString& yearName);
 	~AddStudentsGroupForm();
 	
 public slots:

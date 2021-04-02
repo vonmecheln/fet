@@ -26,7 +26,7 @@
 class AddConstraintRoomNotAvailableTimesForm : public QDialog, Ui::AddConstraintRoomNotAvailableTimesForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintRoomNotAvailableTimesForm();
+	AddConstraintRoomNotAvailableTimesForm(QWidget* parent);
 	~AddConstraintRoomNotAvailableTimesForm();
 	
 	void updateRoomsComboBox();

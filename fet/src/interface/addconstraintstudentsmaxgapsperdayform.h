@@ -26,7 +26,7 @@
 class AddConstraintStudentsMaxGapsPerDayForm : public QDialog, Ui::AddConstraintStudentsMaxGapsPerDayForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintStudentsMaxGapsPerDayForm();
+	AddConstraintStudentsMaxGapsPerDayForm(QWidget* parent);
 	~AddConstraintStudentsMaxGapsPerDayForm();
 
 public slots:

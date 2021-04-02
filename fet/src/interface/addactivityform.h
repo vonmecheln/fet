@@ -33,20 +33,19 @@ private:
 	QList<QSpinBox*> durList;
 	QList<QCheckBox*> activList;
 
-	//QWidget* subTab(int i);
 	QSpinBox* dur(int i);
 	QCheckBox* activ(int i);
 
 public:
 	QList<QString> canonicalStudentsSetsNames;
 
-	AddActivityForm(const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName);
+	AddActivityForm(QWidget* parent, const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName);
 	~AddActivityForm();
 
-	void updateStudentsListBox();
-	void updateTeachersListBox();
+	void updateStudentsListWidget();
+	void updateTeachersListWidget();
 	void updateSubjectsComboBox();
-	void updateActivityTagsListBox();
+	void updateActivityTagsListWidget();
 	void updatePreferredDaysComboBox();
 	void updatePreferredHoursComboBox();
 
@@ -55,12 +54,10 @@ public slots:
 	void removeTeacher();
 	void addStudents();
 	void removeStudents();
-	void subjectChanged(const QString& dummy);
 
 	void addActivityTag();
 	void removeActivityTag();
 
-	void activityChanged();
 	void splitChanged();
 	
 	void clearTeachers();
@@ -85,12 +82,10 @@ public:
 	~SecondMinDaysDialog();
 	
 	double weight;
-	QLineEdit percText;
+	QLineEdit* percText;
 
 public slots:
 	void yesPressed();
-	
 };
-
 
 #endif

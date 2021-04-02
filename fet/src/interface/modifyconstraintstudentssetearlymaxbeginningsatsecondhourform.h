@@ -28,7 +28,7 @@ class ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm : public QDi
 public:
 	ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* _ctr;
 
-	ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm(ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* ctr);
+	ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm(QWidget* parent, ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* ctr);
 	~ModifyConstraintStudentsSetEarlyMaxBeginningsAtSecondHourForm();
 
 public slots:

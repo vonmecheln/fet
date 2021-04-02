@@ -17,28 +17,22 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintteacherhomeroomform.h"
 #include "spaceconstraint.h"
 
-AddConstraintTeacherHomeRoomForm::AddConstraintTeacherHomeRoomForm()
+AddConstraintTeacherHomeRoomForm::AddConstraintTeacherHomeRoomForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintTeacherHomeRoomForm_template*/, SLOT(close()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintTeacherHomeRoomForm_template*/, SLOT(addConstraint()));
+	addConstraintPushButton->setDefault(true);
 
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -52,12 +46,13 @@ AddConstraintTeacherHomeRoomForm::AddConstraintTeacherHomeRoomForm()
 
 AddConstraintTeacherHomeRoomForm::~AddConstraintTeacherHomeRoomForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintTeacherHomeRoomForm::updateTeachersComboBox(){
 	teachersComboBox->clear();
 	foreach(Teacher* tch, gt.rules.teachersList)
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 }
 
 void AddConstraintTeacherHomeRoomForm::updateRoomsComboBox()
@@ -65,7 +60,7 @@ void AddConstraintTeacherHomeRoomForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* rm=gt.rules.roomsList[i];
-		roomsComboBox->insertItem(rm->name);
+		roomsComboBox->addItem(rm->name);
 	}
 }
 
@@ -75,7 +70,7 @@ void AddConstraintTeacherHomeRoomForm::addConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
@@ -85,7 +80,7 @@ void AddConstraintTeacherHomeRoomForm::addConstraint()
 	QString teacher=teachersComboBox->currentText();
 	assert(gt.rules.searchTeacher(teacher)>=0);
 
-	int i=roomsComboBox->currentItem();
+	int i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid room"));

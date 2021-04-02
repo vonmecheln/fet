@@ -29,7 +29,7 @@ class ModifyConstraintBreakTimesForm : public QDialog, Ui::ModifyConstraintBreak
 public:
 	ConstraintBreakTimes* _ctr;
 
-	ModifyConstraintBreakTimesForm(ConstraintBreakTimes* ctr);
+	ModifyConstraintBreakTimesForm(QWidget* parent, ConstraintBreakTimes* ctr);
 	~ModifyConstraintBreakTimesForm();
 
 	void colorItem(QTableWidgetItem* item);

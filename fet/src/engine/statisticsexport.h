@@ -38,20 +38,20 @@ public:
 	StatisticsExport();
 	~StatisticsExport();
 
-	static void exportStatistics();
+	static void exportStatistics(QWidget* parent);
 private:
 	//this function must be called before export html files, because it compute the IDs
 	static void computeHashForIDsStatistics();
 
 	//the following functions write the css and html statistics files
-	static bool exportStatisticsStylesheetCss(QString saveTime);
-	static bool exportStatisticsIndex(QString saveTime);
-	static bool exportStatisticsTeachersSubjects(QString saveTime);
-	static bool exportStatisticsSubjectsTeachers(QString saveTime);
-	static bool exportStatisticsTeachersStudents(QString saveTime);
-	static bool exportStatisticsStudentsTeachers(QString saveTime);
-	static bool exportStatisticsSubjectsStudents(QString saveTime);
-	static bool exportStatisticsStudentsSubjects(QString saveTime);
+	static bool exportStatisticsStylesheetCss(QWidget* parent, QString saveTime);
+	static bool exportStatisticsIndex(QWidget* parent, QString saveTime);
+	static bool exportStatisticsTeachersSubjects(QWidget* parent, QString saveTime);
+	static bool exportStatisticsSubjectsTeachers(QWidget* parent, QString saveTime);
+	static bool exportStatisticsTeachersStudents(QWidget* parent, QString saveTime);
+	static bool exportStatisticsStudentsTeachers(QWidget* parent, QString saveTime);
+	static bool exportStatisticsSubjectsStudents(QWidget* parent, QString saveTime);
+	static bool exportStatisticsStudentsSubjects(QWidget* parent, QString saveTime);
 };
 
 #endif

@@ -28,7 +28,7 @@ class ConstraintTeacherMinGapsBetweenBuildingChangesForm : public QDialog, Ui::C
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
-	ConstraintTeacherMinGapsBetweenBuildingChangesForm();
+	ConstraintTeacherMinGapsBetweenBuildingChangesForm(QWidget* parent);
 	~ConstraintTeacherMinGapsBetweenBuildingChangesForm();
 
 	bool filterOk(SpaceConstraint* ctr);

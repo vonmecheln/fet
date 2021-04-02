@@ -17,34 +17,37 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitiessamestartingdayform.h"
 #include "spaceconstraint.h"
 
-AddConstraintActivitiesSameStartingDayForm::AddConstraintActivitiesSameStartingDayForm()
+#include <QListWidget>
+#include <QAbstractItemView>
+#include <QScrollBar>
+
+AddConstraintActivitiesSameStartingDayForm::AddConstraintActivitiesSameStartingDayForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-    connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
-    connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
-    connect(activitiesListBox, SIGNAL(selected(QString)), this, SLOT(addActivity()));
-    connect(simultaneousActivitiesListBox, SIGNAL(selected(QString)), this, SLOT(removeActivity()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	activitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	simultaneousActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(teachersComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(studentsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(subjectsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(activityTagsComboBox, SIGNAL(activated(QString)), this, SLOT(filterChanged()));
+	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+	connect(activitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivity()));
+	connect(addAllActivitiesPushButton, SIGNAL(clicked()), this, SLOT(addAllActivities()));
+	connect(simultaneousActivitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivity()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -55,50 +58,51 @@ AddConstraintActivitiesSameStartingDayForm::AddConstraintActivitiesSameStartingD
 	QSize tmp4=activityTagsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
 	
-	teachersComboBox->insertItem("");
+	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* tch=gt.rules.teachersList[i];
-		teachersComboBox->insertItem(tch->name);
+		teachersComboBox->addItem(tch->name);
 	}
-	teachersComboBox->setCurrentItem(0);
+	teachersComboBox->setCurrentIndex(0);
 
-	subjectsComboBox->insertItem("");
+	subjectsComboBox->addItem("");
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 	}
-	subjectsComboBox->setCurrentItem(0);
+	subjectsComboBox->setCurrentIndex(0);
 
-	activityTagsComboBox->insertItem("");
+	activityTagsComboBox->addItem("");
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* st=gt.rules.activityTagsList[i];
-		activityTagsComboBox->insertItem(st->name);
+		activityTagsComboBox->addItem(st->name);
 	}
-	activityTagsComboBox->setCurrentItem(0);
+	activityTagsComboBox->setCurrentIndex(0);
 
-	studentsComboBox->insertItem("");
+	studentsComboBox->addItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
-	studentsComboBox->setCurrentItem(0);
+	studentsComboBox->setCurrentIndex(0);
 	
-	simultaneousActivitiesListBox->clear();
+	simultaneousActivitiesListWidget->clear();
 	this->simultaneousActivitiesList.clear();
 
-	updateActivitiesListBox();
+	updateActivitiesListWidget();
 }
 
 AddConstraintActivitiesSameStartingDayForm::~AddConstraintActivitiesSameStartingDayForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 bool AddConstraintActivitiesSameStartingDayForm::filterOk(Activity* act)
@@ -126,7 +130,6 @@ bool AddConstraintActivitiesSameStartingDayForm::filterOk(Activity* act)
 		ok=false;
 		
 	//activity tag
-//	if(sbtn!="" && sbtn!=act->activityTagName)
 	if(sbtn!="" && !act->activityTagsNames.contains(sbtn))
 		ok=false;
 		
@@ -147,24 +150,24 @@ bool AddConstraintActivitiesSameStartingDayForm::filterOk(Activity* act)
 
 void AddConstraintActivitiesSameStartingDayForm::filterChanged()
 {
-	this->updateActivitiesListBox();
+	this->updateActivitiesListWidget();
 }
 
-void AddConstraintActivitiesSameStartingDayForm::updateActivitiesListBox()
+void AddConstraintActivitiesSameStartingDayForm::updateActivitiesListWidget()
 {
-	activitiesListBox->clear();
-	//simultaneousActivitiesListBox->clear();
-
+	activitiesListWidget->clear();
 	this->activitiesList.clear();
-	//this->simultaneousActivitiesList.clear();
 
 	for(int i=0; i<gt.rules.activitiesList.size(); i++){
 		Activity* ac=gt.rules.activitiesList[i];
 		if(filterOk(ac)){
-			activitiesListBox->insertItem(ac->getDescription(gt.rules));
+			activitiesListWidget->addItem(ac->getDescription(gt.rules));
 			this->activitiesList.append(ac->id);
 		}
 	}
+	
+	int q=activitiesListWidget->verticalScrollBar()->minimum();
+	activitiesListWidget->verticalScrollBar()->setValue(q);
 }
 
 void AddConstraintActivitiesSameStartingDayForm::addConstraint()
@@ -173,7 +176,7 @@ void AddConstraintActivitiesSameStartingDayForm::addConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));
@@ -190,20 +193,12 @@ void AddConstraintActivitiesSameStartingDayForm::addConstraint()
 			tr("Only one selected activity - impossible"));
 		return;
 	}
-	/*if(this->simultaneousActivitiesList.size()>=MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY){
-		QMessageBox::warning(this, tr("FET information"),
-			tr("Too many activities - please report error\n(CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY too little)"));
-		return;
-	}*/
-	
-	//int ids[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY];
+
 	QList<int> ids;
 	QList<int>::iterator it;
 	int i;
 	ids.clear();
 	for(i=0, it=this->simultaneousActivitiesList.begin(); it!=this->simultaneousActivitiesList.end(); i++,it++){
-		//assert(i<MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY);
-		//ids[i]=*it;
 		ids.append(*it);
 	}
 	ctr=new ConstraintActivitiesSameStartingDay(weight, this->simultaneousActivitiesList.count(), ids);
@@ -213,13 +208,6 @@ void AddConstraintActivitiesSameStartingDayForm::addConstraint()
 	if(tmp2){
 		QString s;
 		
-/*		s+=tr("Constraint added")+". "+tr("See details below")+"\n\n";
-		
-		s+=tr("IMPORTANT: after adding such constraints, it is necessary (otherwise generation might be impossible) to remove redundant constraints"
-		" min days between activities. If you are sure that you don't have redundant constraints, you can skip this step, but it doesn't hurt to do it as a precaution."
-		" Also, you don't have to do that after each added constraint, but only once after adding more constraints of this type."
-		" Please read Help/Important tips - tip number 2 for details");
-		s+="\n\n";*/
 		s+=tr("Constraint added:");
 		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
@@ -234,37 +222,68 @@ void AddConstraintActivitiesSameStartingDayForm::addConstraint()
 
 void AddConstraintActivitiesSameStartingDayForm::addActivity()
 {
-	if(activitiesListBox->currentItem()<0)
+	if(activitiesListWidget->currentRow()<0)
 		return;
-	int tmp=activitiesListBox->currentItem();
+	int tmp=activitiesListWidget->currentRow();
 	int _id=this->activitiesList.at(tmp);
 	
-	QString actName=activitiesListBox->currentText();
+	QString actName=activitiesListWidget->currentItem()->text();
 	assert(actName!="");
-	uint i;
+	int i;
 	//duplicate?
-	for(i=0; i<simultaneousActivitiesListBox->count(); i++)
-		if(actName==simultaneousActivitiesListBox->text(i))
+	for(i=0; i<simultaneousActivitiesListWidget->count(); i++)
+		if(actName==simultaneousActivitiesListWidget->item(i)->text())
 			break;
-	if(i<simultaneousActivitiesListBox->count())
+	if(i<simultaneousActivitiesListWidget->count())
 		return;
-	simultaneousActivitiesListBox->insertItem(actName);
+	
+	simultaneousActivitiesListWidget->addItem(actName);
+	simultaneousActivitiesListWidget->setCurrentRow(simultaneousActivitiesListWidget->count()-1);
 	
 	this->simultaneousActivitiesList.append(_id);
 }
 
+void AddConstraintActivitiesSameStartingDayForm::addAllActivities()
+{
+	for(int tmp=0; tmp<activitiesListWidget->count(); tmp++){
+		int _id=this->activitiesList.at(tmp);
+	
+		QString actName=activitiesListWidget->item(tmp)->text();
+		assert(actName!="");
+		int i;
+		//duplicate?
+		for(i=0; i<simultaneousActivitiesList.count(); i++)
+			if(simultaneousActivitiesList.at(i)==_id)
+				break;
+		if(i<simultaneousActivitiesList.count())
+			continue;
+			
+		simultaneousActivitiesListWidget->addItem(actName);
+		this->simultaneousActivitiesList.append(_id);
+	}
+	
+	simultaneousActivitiesListWidget->setCurrentRow(simultaneousActivitiesListWidget->count()-1);
+}
+
 void AddConstraintActivitiesSameStartingDayForm::removeActivity()
 {
-	if(simultaneousActivitiesListBox->currentItem()<0 || simultaneousActivitiesListBox->count()<=0)
-		return;		
-	int tmp=simultaneousActivitiesListBox->currentItem();
-	
-	simultaneousActivitiesListBox->removeItem(tmp);
+	if(simultaneousActivitiesListWidget->currentRow()<0 || simultaneousActivitiesListWidget->count()<=0)
+		return;
+	int tmp=simultaneousActivitiesListWidget->currentRow();
+
 	this->simultaneousActivitiesList.removeAt(tmp);
+	
+	simultaneousActivitiesListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=simultaneousActivitiesListWidget->takeItem(tmp);
+	delete item;
+	if(tmp<simultaneousActivitiesListWidget->count())
+		simultaneousActivitiesListWidget->setCurrentRow(tmp);
+	else
+		simultaneousActivitiesListWidget->setCurrentRow(simultaneousActivitiesListWidget->count()-1);
 }
 
 void AddConstraintActivitiesSameStartingDayForm::clear()
 {
-	simultaneousActivitiesListBox->clear();
+	simultaneousActivitiesListWidget->clear();
 	simultaneousActivitiesList.clear();
 }

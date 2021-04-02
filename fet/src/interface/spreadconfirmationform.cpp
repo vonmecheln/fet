@@ -14,22 +14,31 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include "spreadconfirmationform.h"
 
 #include "timetable_defs.h"
 
-SpreadConfirmationForm::SpreadConfirmationForm()
+SpreadConfirmationForm::SpreadConfirmationForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
+	
+	continuePushButton->setDefault(true);
+	
+	connect(continuePushButton, SIGNAL(clicked()), this, SLOT(accept()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(reject()));
+	connect(dontShowAgainCheckBox, SIGNAL(stateChanged(int)), this, SLOT(dontShowAgainCheckBoxToggled()));
+
+	dontShowAgain=dontShowAgainCheckBox->isChecked();
+	
+	plainTextEdit->setReadOnly(true);
 
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QString s;
 	
-	s+=tr("Please read VERY carefully the description below:");
+	s+=tr("Please read carefully the description below:");
 	s+="\n\n";
 	s+=tr("This function is intended to be used after you introduced all activities and obtained a timetable, if you want "
 	"now to spread the divided activities more evenly over the week. This function is useful if you have 5 days per week, "
@@ -54,10 +63,15 @@ SpreadConfirmationForm::SpreadConfirmationForm()
 	"you might need to revert to your former data or lower weights of constraints. Note: you can use a progressive approach "
 	"in choosing good weights");
 	
-	textBrowser->setText(s);
+	plainTextEdit->setPlainText(s);
 }
 
 SpreadConfirmationForm::~SpreadConfirmationForm()
 {
+	saveFETDialogGeometry(this);
+}
 
+void SpreadConfirmationForm::dontShowAgainCheckBoxToggled()
+{
+	dontShowAgain=dontShowAgainCheckBox->isChecked();
 }

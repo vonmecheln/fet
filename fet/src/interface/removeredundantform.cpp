@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include "removeredundantform.h"
 
@@ -31,16 +29,17 @@ extern Timetable gt;
 
 #include <QPushButton>
 #include <QCheckBox>
-#include <QTextEdit>
+#include <QPlainTextEdit>
 #include <QLineEdit>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 
-RemoveRedundantForm::RemoveRedundantForm()
+RemoveRedundantForm::RemoveRedundantForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
 
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	connect(buttonBox, SIGNAL(accepted()), this, SLOT(wasAccepted()));
 	connect(buttonBox, SIGNAL(rejected()), this, SLOT(wasCanceled()));
@@ -48,7 +47,7 @@ RemoveRedundantForm::RemoveRedundantForm()
 
 RemoveRedundantForm::~RemoveRedundantForm()
 {
-
+	saveFETDialogGeometry(this);
 }
 
 void RemoveRedundantForm::wasAccepted()
@@ -221,7 +220,7 @@ void RemoveRedundantForm::wasAccepted()
 	QObject::connect(acceptPB, SIGNAL(clicked()), &dialog, SLOT(accept()));
 	QObject::connect(cancelPB, SIGNAL(clicked()), &dialog, SLOT(reject()));
 	
-	QTextEdit* removedText=new QTextEdit();
+	QPlainTextEdit* removedText=new QPlainTextEdit();
 	
 	QString s=tr("The following time constraints will be inactivated (their weight will be made 0%):");
 	s+="\n\n";
@@ -236,23 +235,25 @@ void RemoveRedundantForm::wasAccepted()
 		}
 	}
 	
-	removedText->setText(s);
-	
+	removedText->setPlainText(s);
 	removedText->setReadOnly(true);
-	
 	
 	top->addWidget(removedText);
 	
 	top->addLayout(hl);
 	
+	const QString settingsName=QString("RemoveRedundantConstraintsLastConfirmationForm");
 	
 	dialog.resize(600, 400);
 	centerWidgetOnScreen(&dialog);
+	restoreFETDialogGeometry(&dialog, settingsName);
 	
 	acceptPB->setFocus();
 	acceptPB->setDefault(true);
 	
+	setParentAndOtherThings(&dialog, this);
 	int res=dialog.exec();
+	saveFETDialogGeometry(&dialog, settingsName);
 	
 	if(res==QDialog::Rejected){
 		toBeRemovedList.clear();
@@ -262,15 +263,8 @@ void RemoveRedundantForm::wasAccepted()
 
 	assert(res==QDialog::Accepted);
 	
-/*	foreach(ConstraintMinDaysBetweenActivities* mdc, toBeRemovedList){
-		int t=gt.rules.timeConstraintsList.removeAll(mdc);
-		assert(t==1);
-	}
 	gt.rules.internalStructureComputed=false;
-	
-	foreach(ConstraintMinDaysBetweenActivities* mdc, toBeRemovedList)
-		delete mdc;*/
-	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	foreach(ConstraintMinDaysBetweenActivities* mdc, toBeRemovedList)
 		mdc->weightPercentage=0.0;

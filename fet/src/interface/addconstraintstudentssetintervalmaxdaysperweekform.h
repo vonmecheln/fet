@@ -26,7 +26,7 @@
 class AddConstraintStudentsSetIntervalMaxDaysPerWeekForm : public QDialog, Ui::AddConstraintStudentsSetIntervalMaxDaysPerWeekForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintStudentsSetIntervalMaxDaysPerWeekForm();
+	AddConstraintStudentsSetIntervalMaxDaysPerWeekForm(QWidget* parent);
 	~AddConstraintStudentsSetIntervalMaxDaysPerWeekForm();
 
 	void updateMaxDaysSpinBox();

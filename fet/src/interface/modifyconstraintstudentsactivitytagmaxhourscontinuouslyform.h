@@ -28,7 +28,7 @@ class ModifyConstraintStudentsActivityTagMaxHoursContinuouslyForm : public QDial
 public:
 	ConstraintStudentsActivityTagMaxHoursContinuously* _ctr;
 
-	ModifyConstraintStudentsActivityTagMaxHoursContinuouslyForm(ConstraintStudentsActivityTagMaxHoursContinuously* ctr);
+	ModifyConstraintStudentsActivityTagMaxHoursContinuouslyForm(QWidget* parent, ConstraintStudentsActivityTagMaxHoursContinuously* ctr);
 	~ModifyConstraintStudentsActivityTagMaxHoursContinuouslyForm();
 
 	void updateActivityTagsComboBox();

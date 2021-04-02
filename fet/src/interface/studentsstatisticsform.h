@@ -28,7 +28,7 @@ class StudentsStatisticsForm : public QDialog, Ui::StudentsStatisticsForm_templa
 	Q_OBJECT
 
 public:
-	StudentsStatisticsForm();
+	StudentsStatisticsForm(QWidget* parent);
 	~StudentsStatisticsForm();
 	
 	void insertStudentsSet(StudentsSet* set, int row);

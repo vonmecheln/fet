@@ -26,7 +26,7 @@
 class AddConstraintBreakTimesForm : public QDialog, Ui::AddConstraintBreakTimesForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintBreakTimesForm();
+	AddConstraintBreakTimesForm(QWidget* parent);
 	~AddConstraintBreakTimesForm();
 
 	void colorItem(QTableWidgetItem* item);

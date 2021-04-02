@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "tablewidgetupdatebug.h"
 
 #include "longtextmessagebox.h"
@@ -33,28 +31,23 @@
 #include <QBrush>
 #include <QColor>
 
-//#define YES	(AddConstraintActivitiesPreferredTimeSlotsForm::tr("Allowed", "Please keep translation short"))
-//#define NO	(AddConstraintActivitiesPreferredTimeSlotsForm::tr("Not allowed", "Please keep translation short"))
 #define YES		(QString(" "))
 #define NO		(QString("X"))
 
-AddConstraintActivitiesPreferredTimeSlotsForm::AddConstraintActivitiesPreferredTimeSlotsForm()
+AddConstraintActivitiesPreferredTimeSlotsForm::AddConstraintActivitiesPreferredTimeSlotsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(preferredTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-    connect(setAllAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllSlotsAllowed()));
-    connect(setAllNotAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllSlotsNotAllowed()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(preferredTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(setAllAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllSlotsAllowed()));
+	connect(setAllNotAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllSlotsNotAllowed()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -99,10 +92,13 @@ AddConstraintActivitiesPreferredTimeSlotsForm::AddConstraintActivitiesPreferredT
 	preferredTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 
 	tableWidgetUpdateBug(preferredTimesTable);
+	
+	setStretchAvailabilityTableNicely(preferredTimesTable);
 }
 
 AddConstraintActivitiesPreferredTimeSlotsForm::~AddConstraintActivitiesPreferredTimeSlotsForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintActivitiesPreferredTimeSlotsForm::colorItem(QTableWidgetItem* item)
@@ -207,25 +203,25 @@ void AddConstraintActivitiesPreferredTimeSlotsForm::itemClicked(QTableWidgetItem
 
 void AddConstraintActivitiesPreferredTimeSlotsForm::updateTeachersComboBox(){
 	teachersComboBox->clear();
-	teachersComboBox->insertItem("");
+	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
 		Teacher* t=gt.rules.teachersList[i];
-		teachersComboBox->insertItem(t->name);
+		teachersComboBox->addItem(t->name);
 	}
 }
 
 void AddConstraintActivitiesPreferredTimeSlotsForm::updateStudentsComboBox(){
 	studentsComboBox->clear();
-	studentsComboBox->insertItem("");
+	studentsComboBox->addItem("");
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
 		StudentsYear* sty=gt.rules.yearsList[i];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		for(int j=0; j<sty->groupsList.size(); j++){
 			StudentsGroup* stg=sty->groupsList[j];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			for(int k=0; k<stg->subgroupsList.size(); k++){
 				StudentsSubgroup* sts=stg->subgroupsList[k];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 			}
 		}
 	}
@@ -233,19 +229,19 @@ void AddConstraintActivitiesPreferredTimeSlotsForm::updateStudentsComboBox(){
 
 void AddConstraintActivitiesPreferredTimeSlotsForm::updateSubjectsComboBox(){
 	subjectsComboBox->clear();
-	subjectsComboBox->insertItem("");
+	subjectsComboBox->addItem("");
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* s=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(s->name);
+		subjectsComboBox->addItem(s->name);
 	}
 }
 
 void AddConstraintActivitiesPreferredTimeSlotsForm::updateActivityTagsComboBox(){
 	activityTagsComboBox->clear();
-	activityTagsComboBox->insertItem("");
+	activityTagsComboBox->addItem("");
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* s=gt.rules.activityTagsList[i];
-		activityTagsComboBox->insertItem(s->name);
+		activityTagsComboBox->addItem(s->name);
 	}
 }
 
@@ -255,7 +251,7 @@ void AddConstraintActivitiesPreferredTimeSlotsForm::addConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage)"));

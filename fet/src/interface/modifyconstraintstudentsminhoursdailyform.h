@@ -28,7 +28,7 @@ class ModifyConstraintStudentsMinHoursDailyForm : public QDialog, Ui::ModifyCons
 public:
 	ConstraintStudentsMinHoursDaily* _ctr;
 
-	ModifyConstraintStudentsMinHoursDailyForm(ConstraintStudentsMinHoursDaily* ctr);
+	ModifyConstraintStudentsMinHoursDailyForm(QWidget* parent, ConstraintStudentsMinHoursDaily* ctr);
 	~ModifyConstraintStudentsMinHoursDailyForm();
 
 public slots:

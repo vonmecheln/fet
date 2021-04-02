@@ -28,7 +28,7 @@ class ModifyConstraintStudentsActivityTagMaxHoursDailyForm : public QDialog, Ui:
 public:
 	ConstraintStudentsActivityTagMaxHoursDaily* _ctr;
 
-	ModifyConstraintStudentsActivityTagMaxHoursDailyForm(ConstraintStudentsActivityTagMaxHoursDaily* ctr);
+	ModifyConstraintStudentsActivityTagMaxHoursDailyForm(QWidget* parent, ConstraintStudentsActivityTagMaxHoursDaily* ctr);
 	~ModifyConstraintStudentsActivityTagMaxHoursDailyForm();
 
 	void updateActivityTagsComboBox();

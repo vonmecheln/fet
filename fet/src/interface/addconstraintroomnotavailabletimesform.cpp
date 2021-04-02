@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "tablewidgetupdatebug.h"
 
 #include "longtextmessagebox.h"
@@ -33,28 +31,23 @@
 #include <QBrush>
 #include <QColor>
 
-//#define YES	(AddConstraintRoomNotAvailableTimesForm::tr("Not available", "Please keep translation short"))
-//#define NO	(AddConstraintRoomNotAvailableTimesForm::tr("Available", "Please keep translation short"))
 #define YES		(QString("X"))
 #define NO		(QString(" "))
 
-AddConstraintRoomNotAvailableTimesForm::AddConstraintRoomNotAvailableTimesForm()
+AddConstraintRoomNotAvailableTimesForm::AddConstraintRoomNotAvailableTimesForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-    connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-    connect(setAllAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllAvailable()));
-    connect(setAllNotAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllNotAvailable()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
+	connect(setAllAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllAvailable()));
+	connect(setAllNotAvailablePushButton, SIGNAL(clicked()), this, SLOT(setAllNotAvailable()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QSize tmp5=roomsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp5);
@@ -90,10 +83,13 @@ AddConstraintRoomNotAvailableTimesForm::AddConstraintRoomNotAvailableTimesForm()
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 
 	tableWidgetUpdateBug(notAllowedTimesTable);
+
+	setStretchAvailabilityTableNicely(notAllowedTimesTable);
 }
 
 AddConstraintRoomNotAvailableTimesForm::~AddConstraintRoomNotAvailableTimesForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintRoomNotAvailableTimesForm::colorItem(QTableWidgetItem* item)
@@ -184,8 +180,8 @@ void AddConstraintRoomNotAvailableTimesForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* room=gt.rules.roomsList[i];
-		//roomsComboBox->insertItem(room->getDescription());
-		roomsComboBox->insertItem(room->name);
+		//roomsComboBox->addItem(room->getDescription());
+		roomsComboBox->addItem(room->name);
 	}
 }
 
@@ -210,14 +206,14 @@ void AddConstraintRoomNotAvailableTimesForm::addConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
 		return;
 	}
 
-	int i=roomsComboBox->currentItem();
+	int i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid room"));

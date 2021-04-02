@@ -26,7 +26,7 @@
 class AddConstraintStudentsMinHoursDailyForm : public QDialog, Ui::AddConstraintStudentsMinHoursDailyForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintStudentsMinHoursDailyForm();
+	AddConstraintStudentsMinHoursDailyForm(QWidget* parent);
 	~AddConstraintStudentsMinHoursDailyForm();
 
 public slots:

@@ -28,15 +28,14 @@
 class ModifyConstraintActivitiesSameStartingTimeForm : public QDialog, Ui::ModifyConstraintActivitiesSameStartingTimeForm_template  {
 	Q_OBJECT
 public:
-	ModifyConstraintActivitiesSameStartingTimeForm(ConstraintActivitiesSameStartingTime* ctr);
+	ModifyConstraintActivitiesSameStartingTimeForm(QWidget* parent, ConstraintActivitiesSameStartingTime* ctr);
 	~ModifyConstraintActivitiesSameStartingTimeForm();
-
-	//void updateActivitiesListBox();
 
 	bool filterOk(Activity* ac);
 	
 public slots:
 	void addActivity();
+	void addAllActivities();
 	void removeActivity();
 
 	void clear();

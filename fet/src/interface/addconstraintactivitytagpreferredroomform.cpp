@@ -17,27 +17,22 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitytagpreferredroomform.h"
 #include "spaceconstraint.h"
 
-AddConstraintActivityTagPreferredRoomForm::AddConstraintActivityTagPreferredRoomForm()
+AddConstraintActivityTagPreferredRoomForm::AddConstraintActivityTagPreferredRoomForm(QWidget* parent): QDialog(parent)
 {
-     setupUi(this);
+	setupUi(this);
 
-    connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+	addConstraintPushButton->setDefault(true);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	QSize tmp4=activityTagsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
@@ -51,6 +46,7 @@ AddConstraintActivityTagPreferredRoomForm::AddConstraintActivityTagPreferredRoom
 
 AddConstraintActivityTagPreferredRoomForm::~AddConstraintActivityTagPreferredRoomForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintActivityTagPreferredRoomForm::updateActivityTagsComboBox()
@@ -58,7 +54,7 @@ void AddConstraintActivityTagPreferredRoomForm::updateActivityTagsComboBox()
 	activityTagsComboBox->clear();
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* sb=gt.rules.activityTagsList[i];
-		activityTagsComboBox->insertItem(sb->name);
+		activityTagsComboBox->addItem(sb->name);
 	}
 }
 
@@ -67,7 +63,7 @@ void AddConstraintActivityTagPreferredRoomForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* rm=gt.rules.roomsList[i];
-		roomsComboBox->insertItem(rm->name);
+		roomsComboBox->addItem(rm->name);
 	}
 }
 
@@ -77,14 +73,14 @@ void AddConstraintActivityTagPreferredRoomForm::addConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
 		return;
 	}
 
-/*	int i=subjectsComboBox->currentItem();
+/*	int i=subjectsComboBox->currentIndex();
 	if(i<0 || subjectsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid subject"));
@@ -92,7 +88,7 @@ void AddConstraintActivityTagPreferredRoomForm::addConstraint()
 	}
 	QString subject=subjectsComboBox->currentText();*/
 
-	int i=activityTagsComboBox->currentItem();
+	int i=activityTagsComboBox->currentIndex();
 	if(i<0 || activityTagsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid activity tag"));
@@ -100,7 +96,7 @@ void AddConstraintActivityTagPreferredRoomForm::addConstraint()
 	}
 	QString activityTag=activityTagsComboBox->currentText();
 
-	i=roomsComboBox->currentItem();
+	i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid room"));

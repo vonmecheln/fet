@@ -28,7 +28,7 @@ class ModifyConstraintTeacherMaxBuildingChangesPerDayForm : public QDialog, Ui::
 public:
 	ConstraintTeacherMaxBuildingChangesPerDay* _ctr;
 
-	ModifyConstraintTeacherMaxBuildingChangesPerDayForm(ConstraintTeacherMaxBuildingChangesPerDay* ctr);
+	ModifyConstraintTeacherMaxBuildingChangesPerDayForm(QWidget* parent, ConstraintTeacherMaxBuildingChangesPerDay* ctr);
 	~ModifyConstraintTeacherMaxBuildingChangesPerDayForm();
 
 	void updateTeachersComboBox();

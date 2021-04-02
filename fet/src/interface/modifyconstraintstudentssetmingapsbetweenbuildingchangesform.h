@@ -28,7 +28,7 @@ class ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm : public QDia
 public:
 	ConstraintStudentsSetMinGapsBetweenBuildingChanges* _ctr;
 
-	ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm(ConstraintStudentsSetMinGapsBetweenBuildingChanges* ctr);
+	ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm(QWidget* parent, ConstraintStudentsSetMinGapsBetweenBuildingChanges* ctr);
 	~ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm();
 
 	void updateStudentsComboBox();

@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include "timetable_defs.h"
 #include "fet.h"
@@ -23,31 +21,44 @@
 #include "addroomform.h"
 #include "modifyroomform.h"
 
-#include <QInputDialog>
-
 #include <QMessageBox>
 
-RoomsForm::RoomsForm()
- : RoomsForm_template()
+#include <QListWidget>
+#include <QScrollBar>
+#include <QAbstractItemView>
+
+#include <QSplitter>
+#include <QSettings>
+#include <QObject>
+#include <QMetaObject>
+
+extern const QString COMPANY;
+extern const QString PROGRAM;
+
+RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	currentRoomTextEdit->setReadOnly(true);
+	
+	modifyRoomPushButton->setDefault(true);
+	
+	roomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-    connect(addRoomPushButton, SIGNAL(clicked()), this /*RoomsForm_template*/, SLOT(addRoom()));
-    connect(removeRoomPushButton, SIGNAL(clicked()), this /*RoomsForm_template*/, SLOT(removeRoom()));
-    connect(roomsListBox, SIGNAL(highlighted(int)), this /*RoomsForm_template*/, SLOT(roomChanged(int)));
-    connect(closePushButton, SIGNAL(clicked()), this /*RoomsForm_template*/, SLOT(close()));
-    connect(modifyRoomPushButton, SIGNAL(clicked()), this /*RoomsForm_template*/, SLOT(modifyRoom()));
-    connect(sortRoomsPushButton, SIGNAL(clicked()), this /*RoomsForm_template*/, SLOT(sortRooms()));
-    connect(roomsListBox, SIGNAL(selected(QString)), this /*RoomsForm_template*/, SLOT(modifyRoom()));
+	connect(addRoomPushButton, SIGNAL(clicked()), this, SLOT(addRoom()));
+	connect(removeRoomPushButton, SIGNAL(clicked()), this, SLOT(removeRoom()));
+	connect(roomsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(roomChanged(int)));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(modifyRoomPushButton, SIGNAL(clicked()), this, SLOT(modifyRoom()));
+	connect(sortRoomsPushButton, SIGNAL(clicked()), this, SLOT(sortRooms()));
+	connect(roomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyRoom()));
 
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+	//restore splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
+		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
 	
 	this->filterChanged();
 }
@@ -55,56 +66,54 @@ RoomsForm::RoomsForm()
 
 RoomsForm::~RoomsForm()
 {
+	saveFETDialogGeometry(this);
+	//save splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
 }
 
 bool RoomsForm::filterOk(Room* rm)
 {
 	Q_UNUSED(rm);
-	//if(rm!=NULL)
-	//	;
 
 	bool ok=true;
-
 	return ok;
 }
 
 void RoomsForm::filterChanged()
 {
 	QString s;
-	roomsListBox->clear();
+	roomsListWidget->clear();
 	visibleRoomsList.clear();
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* rm=gt.rules.roomsList[i];
 		if(this->filterOk(rm)){
 			s=rm->getDescription();
 			visibleRoomsList.append(rm);
-			roomsListBox->insertItem(s);
+			roomsListWidget->addItem(s);
 		}
 	}
-	roomChanged(roomsListBox->currentItem());
+	
+	if(roomsListWidget->count()>0)
+		roomsListWidget->setCurrentRow(0);
+	else
+		roomChanged(-1);
 }
 
 void RoomsForm::addRoom()
 {
-	int ind=roomsListBox->currentItem();
-
-	AddRoomForm addRoomForm;
+	AddRoomForm addRoomForm(this);
+	setParentAndOtherThings(&addRoomForm, this);
 	addRoomForm.exec();
 	
 	filterChanged();
 	
-	//roomsListBox->setCurrentItem(ind);
-	Q_UNUSED(ind);
-	int i=roomsListBox->count()-1;
-	if(i>=0){
-		roomsListBox->setCurrentItem(i);
-		roomChanged(i);
-	}
+	roomsListWidget->setCurrentRow(roomsListWidget->count()-1);
 }
 
 void RoomsForm::removeRoom()
 {
-	int ind=roomsListBox->currentItem();
+	int ind=roomsListWidget->currentRow();
 	if(ind<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected room"));
 		return;
@@ -118,21 +127,26 @@ void RoomsForm::removeRoom()
 		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
 		return;
 
-	bool tmp=gt.rules.removeRoom(rm->name);
+	bool tmp=gt.rules.removeRoom(this, rm->name);
 	assert(tmp);
 
-	filterChanged();
-	
-	if((uint)(ind)>=roomsListBox->count())
-		ind=roomsListBox->count()-1;
-	roomsListBox->setCurrentItem(ind);
+	visibleRoomsList.removeAt(ind);
+	roomsListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=roomsListWidget->takeItem(ind);
+	delete item;
+
+	if(ind>=roomsListWidget->count())
+		ind=roomsListWidget->count()-1;
+	if(ind>=0)
+		roomsListWidget->setCurrentRow(ind);
+	else
+		currentRoomTextEdit->setPlainText(QString(""));
 }
 
 void RoomsForm::roomChanged(int index)
 {
 	if(index<0){
-		//currentRoomTextEdit->setText(tr("Invalid room"));
-		currentRoomTextEdit->setText("");
+		currentRoomTextEdit->setPlainText("");
 		return;
 	}
 
@@ -141,7 +155,7 @@ void RoomsForm::roomChanged(int index)
 
 	assert(room!=NULL);
 	s=room->getDetailedDescriptionWithConstraints(gt.rules);
-	currentRoomTextEdit->setText(s);
+	currentRoomTextEdit->setPlainText(s);
 }
 
 void RoomsForm::sortRooms()
@@ -153,17 +167,28 @@ void RoomsForm::sortRooms()
 
 void RoomsForm::modifyRoom()
 {
-	int ci=roomsListBox->currentItem();
+	int valv=roomsListWidget->verticalScrollBar()->value();
+	int valh=roomsListWidget->horizontalScrollBar()->value();
+
+	int ci=roomsListWidget->currentRow();
 	if(ci<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected room"));
 		return;
 	}
 	
 	Room* rm=visibleRoomsList.at(ci);
-	ModifyRoomForm form(rm->name, rm->building, rm->capacity);
+	ModifyRoomForm form(this, rm->name, rm->building, rm->capacity);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
 	filterChanged();
 	
-	roomsListBox->setCurrentItem(ci);
+	roomsListWidget->verticalScrollBar()->setValue(valv);
+	roomsListWidget->horizontalScrollBar()->setValue(valh);
+
+	if(ci>=roomsListWidget->count())
+		ci=roomsListWidget->count()-1;
+
+	if(ci>=0)
+		roomsListWidget->setCurrentRow(ci);
 }

@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef TEACHERSFORM_H
 #define TEACHERSFORM_H
@@ -26,7 +24,7 @@ class TeachersForm : public QDialog, Ui::TeachersForm_template
 {
 	Q_OBJECT
 public:
-	TeachersForm();
+	TeachersForm(QWidget* parent);
 
 	~TeachersForm();
 

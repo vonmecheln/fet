@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef BUILDINGSFORM_H
 #define BUILDINGSFORM_H
@@ -24,9 +22,6 @@
 
 #include "ui_buildingsform_template.h"
 
-/**
-@author Liviu Lalescu
-*/
 class BuildingsForm : public QDialog, Ui::BuildingsForm_template
 {
 	Q_OBJECT
@@ -34,7 +29,7 @@ class BuildingsForm : public QDialog, Ui::BuildingsForm_template
 public:
 	BuildingsList visibleBuildingsList;
 
-	BuildingsForm();
+	BuildingsForm(QWidget* parent);
 	~BuildingsForm();
 
 	bool filterOk(Building* bu);

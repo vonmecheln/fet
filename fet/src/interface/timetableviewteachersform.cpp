@@ -39,6 +39,8 @@
 
 #include <QAbstractItemView>
 
+#include <QListWidget>
+
 #include <QList>
 #include <QSplitter>
 
@@ -48,9 +50,13 @@
 #include <QString>
 #include <QStringList>
 
-/*#include <iostream>
-#include <fstream>
-using namespace std;*/
+#include <QSplitter>
+#include <QSettings>
+#include <QObject>
+#include <QMetaObject>
+
+extern const QString COMPANY;
+extern const QString PROGRAM;
 
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
@@ -59,9 +65,7 @@ extern Solution best_solution;
 
 extern bool simulation_running;
 
-//extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern Matrix3D<bool> teacherNotAvailableDayHour;
-//extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern Matrix2D<bool> breakDayHour;
 
 extern QSet <int> idsOfLockedTime;		//care about locked activities in view forms
@@ -71,38 +75,49 @@ extern QSet <int> idsOfPermanentlyLockedSpace;	//care about locked activities in
 
 extern CommunicationSpinBox communicationSpinBox;	//small hint to sync the forms
 
-TimetableViewTeachersForm::TimetableViewTeachersForm()
+TimetableViewTeachersForm::TimetableViewTeachersForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
-    
+	setupUi(this);
+	
+	closePushButton->setDefault(true);
+	
+	detailsTextEdit->setReadOnly(true);
+
 	//columnResizeModeInitialized=false;
 
-    QList<int> tmpList;
-    tmpList<<5000<<5000;
-    splitter->setSizes(tmpList);
-    
-    QList<int> tmpList2;
-    tmpList2<<3000<<10000;
-    splitter_2->setSizes(tmpList2);
-    
-    teachersTimetableTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
+	QList<int> tmpList;
+	tmpList<<5000<<5000;
+	verticalSplitter->setSizes(tmpList);
 
-    connect(closePushButton, SIGNAL(clicked()), this /*TimetableViewTeachersForm_template*/, SLOT(close()));
-    connect(teachersListBox, SIGNAL(highlighted(QString)), this /*TimetableViewTeachersForm_template*/, SLOT(teacherChanged(QString)));
-    connect(teachersTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
-    connect(lockTimePushButton, SIGNAL(clicked()), this /*TimetableViewTeachersForm_template*/, SLOT(lockTime()));
-    connect(lockSpacePushButton, SIGNAL(clicked()), this /*TimetableViewTeachersForm_template*/, SLOT(lockSpace()));
-    connect(lockTimeSpacePushButton, SIGNAL(clicked()), this /*TimetableViewTeachersForm_template*/, SLOT(lockTimeSpace()));
+	QList<int> tmpList2;
+	tmpList2<<3000<<10000;
+	horizontalSplitter->setSizes(tmpList2);
 
-    connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	teachersTimetableTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
+	
+	teachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(teachersListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(teacherChanged(const QString&)));
+	connect(teachersTimetableTable, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)), this, SLOT(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)));
+	connect(lockTimePushButton, SIGNAL(clicked()), this, SLOT(lockTime()));
+	connect(lockSpacePushButton, SIGNAL(clicked()), this, SLOT(lockSpace()));
+	connect(lockTimeSpacePushButton, SIGNAL(clicked()), this, SLOT(lockTimeSpace()));
+
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+
+	//restore vertical splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/vertical-splitter-state")))
+		verticalSplitter->restoreState(settings.value(this->metaObject()->className()+QString("/vertical-splitter-state")).toByteArray());
+
+	//restore horizontal splitter state
+	//QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/horizontal-splitter-state")))
+		horizontalSplitter->restoreState(settings.value(this->metaObject()->className()+QString("/horizontal-splitter-state")).toByteArray());
 
 ///////////just for testing
 	QSet<int> backupLockedTime;
@@ -159,31 +174,34 @@ TimetableViewTeachersForm::TimetableViewTeachersForm()
 	//}
 	////////////////
 	
-	teachersListBox->clear();
+	teachersListWidget->clear();
 
 	if(gt.rules.nInternalTeachers!=gt.rules.teachersList.count()){
 		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some teachers. Please regenerate the timetable and then view it"));
 	}
 	else{
 		for(int i=0; i<gt.rules.nInternalTeachers; i++)
-			teachersListBox->insertItem(gt.rules.internalTeachersList[i]->name);
+			teachersListWidget->addItem(gt.rules.internalTeachersList[i]->name);
 	}
 
-	//teacherChanged(teachersListBox->currentText());
-	
-	if(teachersListBox->count()>0){
-		teachersListBox->setCurrentItem(0);
-		teachersListBox->setSelected(0, true);
-	}
+	if(teachersListWidget->count()>0)
+		teachersListWidget->setCurrentRow(0);
 
 	//added by Volker Dirr
 	connect(&communicationSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateTeachersTimetableTable()));
-
-	//teachersTimetableTable->setSelectionMode(Q3Table::NoSelection);
 }
 
 TimetableViewTeachersForm::~TimetableViewTeachersForm()
 {
+	saveFETDialogGeometry(this);
+
+	//save vertical splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	settings.setValue(this->metaObject()->className()+QString("/vertical-splitter-state"), verticalSplitter->saveState());
+
+	//save horizontal splitter state
+	//QSettings settings(COMPANY, PROGRAM);
+	settings.setValue(this->metaObject()->className()+QString("/horizontal-splitter-state"), horizontalSplitter->saveState());
 }
 
 void TimetableViewTeachersForm::resizeRowsAfterShow()
@@ -200,7 +218,7 @@ void TimetableViewTeachersForm::teacherChanged(const QString &teacherName)
 	}
 	assert(students_schedule_ready && teachers_schedule_ready);
 
-	if(teacherName==QString::null)
+	if(teacherName==QString())
 		return;
 
 	int teacherId=gt.rules.searchTeacher(teacherName);
@@ -228,10 +246,10 @@ void TimetableViewTeachersForm::updateTeachersTimetableTable(){
 	QString s;
 	QString teachername;
 
-	if(teachersListBox->currentText()==QString::null)
+	if(teachersListWidget->currentRow()<0 || teachersListWidget->currentRow()>=teachersListWidget->count())
 		return;
 
-	teachername = teachersListBox->currentText();
+	teachername = teachersListWidget->currentItem()->text();
 	
 	if(gt.rules.searchTeacher(teachername)<0){
 		QMessageBox::warning(this, tr("FET warning"), tr("You have an old timetable view teachers dialog opened - please close it"));
@@ -256,8 +274,8 @@ void TimetableViewTeachersForm::updateTeachersTimetableTable(){
 		return;
 	}
 
-	for(int j=0; j<gt.rules.nHoursPerDay; j++){
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+	for(int j=0; j<gt.rules.nHoursPerDay && j<teachersTimetableTable->rowCount(); j++){
+		for(int k=0; k<gt.rules.nDaysPerWeek && k<teachersTimetableTable->columnCount(); k++){
 			s = "";
 			int ai=teachers_timetable_weekly[teacher][k][j]; //activity index
 			//Activity* act=gt.rules.activitiesList.at(ai);
@@ -349,8 +367,13 @@ void TimetableViewTeachersForm::currentItemChanged(QTableWidgetItem* current, QT
 
 void TimetableViewTeachersForm::detailActivity(QTableWidgetItem* item){
 	if(item==NULL){
-		//detailsTextEdit->setText(tr("Invalid selected cell"));
-		detailsTextEdit->setText(QString(""));
+		detailsTextEdit->setPlainText(QString(""));
+		return;
+	}
+
+	if(item->row()>=gt.rules.nHoursPerDay || item->column()>=gt.rules.nDaysPerWeek){
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view teachers timetable dialog - please generate a new timetable "
+		"or close the timetable view teachers dialog"));
 		return;
 	}
 
@@ -368,10 +391,10 @@ void TimetableViewTeachersForm::detailActivity(QTableWidgetItem* item){
 	QString s;
 	QString teachername;
 
-	if(teachersListBox->currentText()==QString::null)
+	if(teachersListWidget->currentRow()<0 || teachersListWidget->currentRow()>=teachersListWidget->count())
 		return;
 
-	teachername = teachersListBox->currentText();
+	teachername = teachersListWidget->currentItem()->text();
 
 	s = teachername;
 
@@ -436,7 +459,7 @@ void TimetableViewTeachersForm::detailActivity(QTableWidgetItem* item){
 				}
 			}
 		}
-		detailsTextEdit->setText(s);
+		detailsTextEdit->setPlainText(s);
 	}
 }
 
@@ -479,12 +502,12 @@ void TimetableViewTeachersForm::lock(bool lockTime, bool lockSpace)
 	//find teacher index
 	QString teachername;
 
-	if(teachersListBox->currentText()==QString::null){
+	if(teachersListWidget->currentRow()<0 || teachersListWidget->currentRow()>=teachersListWidget->count()){
 		QMessageBox::information(this, tr("FET information"), tr("Please select a teacher"));
 		return;
 	}
 
-	teachername = teachersListBox->currentText();
+	teachername = teachersListWidget->currentItem()->text();
 	int i=gt.rules.searchTeacher(teachername);
 	
 	if(i<0){
@@ -502,8 +525,8 @@ void TimetableViewTeachersForm::lock(bool lockTime, bool lockSpace)
 	//lock selected activities
 	QSet <int> careAboutIndex;		//added by Volker Dirr. Needed, because of activities with duration > 1
 	careAboutIndex.clear();
-	for(int j=0; j<gt.rules.nHoursPerDay; j++){
-		for(int k=0; k<gt.rules.nDaysPerWeek; k++){
+	for(int j=0; j<gt.rules.nHoursPerDay && j<teachersTimetableTable->rowCount(); j++){
+		for(int k=0; k<gt.rules.nDaysPerWeek && k<teachersTimetableTable->columnCount(); k++){
 			if(teachersTimetableTable->item(j, k)->isSelected()){
 				int ai=teachers_timetable_weekly[i][k][j];
 				if(ai!=UNALLOCATED_ACTIVITY && !careAboutIndex.contains(ai)){	//modified, because of activities with duration > 1

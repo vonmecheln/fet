@@ -26,7 +26,7 @@
 class AddConstraintStudentsMaxHoursContinuouslyForm : public QDialog, Ui::AddConstraintStudentsMaxHoursContinuouslyForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintStudentsMaxHoursContinuouslyForm();
+	AddConstraintStudentsMaxHoursContinuouslyForm(QWidget* parent);
 	~AddConstraintStudentsMaxHoursContinuouslyForm();
 
 public slots:

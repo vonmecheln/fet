@@ -14,19 +14,16 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 //REFERENCES:
 //
-//		Hints from Ted Jensen's Tutorial on Pointers and Arrays in C (free, on the internet) -
-//				- Chapter 9: Pointers and Dynamic Allocation of Memory - improvement so that the elements of a matrix are in a contiguous memory location.
+//		Hints from Ted Jensen's Tutorial on Pointers and Arrays in C -
+//			- Chapter 9: Pointers and Dynamic Allocation of Memory - improvement so that the elements of a matrix are in a contiguous memory location.
 //
-//		Hints from C++ FAQ LITE by Marshall Cline (free, on the internet) -
-//				- Section [13] - Operator overloading, article [13.12] - advice about the () operator for matrices.
+//		Hints from C++ FAQ LITE by Marshall Cline -
+//			- Section [13] - Operator overloading, article [13.12] - advice about the () operator for matrices.
 //
 //		You may find more information on the FET documentation web page, http://lalescu.ro/liviu/fet/doc/
-
 
 #ifndef MATRIX_H
 #define MATRIX_H
@@ -54,7 +51,6 @@ public:
 	T& operator()(int i, int j, int k);
 };
 
-
 template <typename T>
 class Matrix2D
 {
@@ -75,7 +71,6 @@ public:
 	T& operator()(int i, int j);
 };
 
-
 template <typename T>
 class Matrix1D
 {
@@ -93,7 +88,6 @@ public:
 	T& operator[](int i);
 	//T& operator()(int i);
 };
-
 
 
 template <typename T> Matrix3D<T>::Matrix3D()
@@ -253,6 +247,5 @@ template <typename T> inline T& Matrix1D<T>::operator[](int i)
 {
 	return a[i];
 }*/
-
 
 #endif

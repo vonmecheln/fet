@@ -14,8 +14,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
+
 #ifndef DAYSFORM_H
 #define DAYSFORM_H
 
@@ -25,7 +24,7 @@ class DaysForm : public QDialog, Ui::DaysForm_template
 {
 	Q_OBJECT
 public:
-	DaysForm();
+	DaysForm(QWidget* parent);
 
 	~DaysForm();
 

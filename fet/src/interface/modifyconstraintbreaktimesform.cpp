@@ -17,8 +17,6 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "tablewidgetupdatebug.h"
 
 #include "modifyconstraintbreaktimesform.h"
@@ -31,35 +29,27 @@
 #include <QBrush>
 #include <QColor>
 
-//#define YES	(ModifyConstraintBreakTimesForm::tr("Break", "Please keep translation short"))
-//#define NO	(ModifyConstraintBreakTimesForm::tr("Allowed", "Please keep translation short"))
 #define YES		(QString("X"))
 #define NO		(QString(" "))
 
-static bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
-
-ModifyConstraintBreakTimesForm::ModifyConstraintBreakTimesForm(ConstraintBreakTimes* ctr)
+ModifyConstraintBreakTimesForm::ModifyConstraintBreakTimesForm(QWidget* parent, ConstraintBreakTimes* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintBreakTimesForm_template*/, SLOT(ok()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintBreakTimesForm_template*/, SLOT(cancel()));
-    connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
-    connect(setAllAllowedPushButton, SIGNAL(clicked()), this /*ModifyConstraintBreakTimesForm_template*/, SLOT(setAllAllowed()));
-    connect(setAllBreakPushButton, SIGNAL(clicked()), this /*ModifyConstraintBreakTimesForm_template*/, SLOT(setAllBreak()));
+	okPushButton->setDefault(true);
 
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(notAllowedTimesTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(itemClicked(QTableWidgetItem*)));
+	connect(setAllAllowedPushButton, SIGNAL(clicked()), this, SLOT(setAllAllowed()));
+	connect(setAllBreakPushButton, SIGNAL(clicked()), this, SLOT(setAllBreak()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	this->_ctr=ctr;
 	
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 	
 	notAllowedTimesTable->setRowCount(gt.rules.nHoursPerDay);
 	notAllowedTimesTable->setColumnCount(gt.rules.nDaysPerWeek);
@@ -74,6 +64,9 @@ ModifyConstraintBreakTimesForm::ModifyConstraintBreakTimesForm(ConstraintBreakTi
 	}
 
 	//bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
+	Matrix2D<bool> currentMatrix;
+	currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
+
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
 		for(int j=0; j<gt.rules.nDaysPerWeek; j++)
 			currentMatrix[i][j]=false;			
@@ -83,7 +76,8 @@ ModifyConstraintBreakTimesForm::ModifyConstraintBreakTimesForm(ConstraintBreakTi
 			assert(0);
 		int i=ctr->hours.at(k);
 		int j=ctr->days.at(k);
-		currentMatrix[i][j]=true;
+		if(i>=0 && i<gt.rules.nHoursPerDay && j>=0 && j<gt.rules.nDaysPerWeek)
+			currentMatrix[i][j]=true;
 	}
 
 	for(int i=0; i<gt.rules.nHoursPerDay; i++)
@@ -109,10 +103,13 @@ ModifyConstraintBreakTimesForm::ModifyConstraintBreakTimesForm(ConstraintBreakTi
 	notAllowedTimesTable->setSelectionMode(QAbstractItemView::NoSelection);
 	
 	tableWidgetUpdateBug(notAllowedTimesTable);
+	
+	setStretchAvailabilityTableNicely(notAllowedTimesTable);
 }
 
 ModifyConstraintBreakTimesForm::~ModifyConstraintBreakTimesForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyConstraintBreakTimesForm::colorItem(QTableWidgetItem* item)
@@ -138,13 +135,6 @@ void ModifyConstraintBreakTimesForm::horizontalHeaderClicked(int col)
 		}
 
 		for(int row=0; row<gt.rules.nHoursPerDay; row++){
-			/*QString s=notAllowedTimesTable->text(row, col);
-			if(s==YES)
-				s=NO;
-			else{
-				assert(s==NO);
-				s=YES;
-			}*/
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
@@ -164,13 +154,6 @@ void ModifyConstraintBreakTimesForm::verticalHeaderClicked(int row)
 		}
 	
 		for(int col=0; col<gt.rules.nDaysPerWeek; col++){
-			/*QString s=notAllowedTimesTable->text(row, col);
-			if(s==YES)
-				s=NO;
-			else{
-				assert(s==NO);
-				s=YES;
-			}*/
 			notAllowedTimesTable->item(row, col)->setText(s);
 			colorItem(notAllowedTimesTable->item(row,col));
 		}
@@ -217,7 +200,7 @@ void ModifyConstraintBreakTimesForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<100.0 || weight>100.0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight (percentage). It has to be 100"));
@@ -239,6 +222,7 @@ void ModifyConstraintBreakTimesForm::ok()
 	this->_ctr->hours=hours;
 
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }

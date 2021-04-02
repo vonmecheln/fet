@@ -19,31 +19,26 @@
 
 #include <QMessageBox>
 
-ModifyRoomForm::ModifyRoomForm(const QString& initialRoomName, const QString& initialRoomBuilding, int initialRoomCapacity)
+ModifyRoomForm::ModifyRoomForm(QWidget* parent, const QString& initialRoomName, const QString& initialRoomBuilding, int initialRoomCapacity): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	okPushButton->setDefault(true);
 
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyRoomForm_template*/, SLOT(ok()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyRoomForm_template*/, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp5=buildingsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp5);
 	
-	capacitySpinBox->setMinValue(1);
-	capacitySpinBox->setMaxValue(MAX_ROOM_CAPACITY);
+	capacitySpinBox->setMinimum(1);
+	capacitySpinBox->setMaximum(MAX_ROOM_CAPACITY);
 	capacitySpinBox->setValue(MAX_ROOM_CAPACITY);
 
 	this->_initialRoomName=initialRoomName;
-	//this->_initialRoomType=initialRoomType;
 	this->_initialRoomBuilding=initialRoomBuilding;
 	this->_initialRoomCapacity=initialRoomCapacity;
 	capacitySpinBox->setValue(initialRoomCapacity);
@@ -52,45 +47,25 @@ ModifyRoomForm::ModifyRoomForm(const QString& initialRoomName, const QString& in
 	nameLineEdit->selectAll();
 	nameLineEdit->setFocus();
 	
-	/*typesComboBox->clear();
-	typesComboBox->setDuplicatesEnabled(false);
-	int i=0, j=-1;
-	for(int ri=0; ri<gt.rules.roomsList.size(); ri++){
-		Room* rm=gt.rules.roomsList[ri];
-		int k;
-		for(k=0; k<typesComboBox->count(); k++)
-			if(typesComboBox->text(k)==rm->type)
-				break;
-		if(k==typesComboBox->count()){
-			typesComboBox->insertItem(rm->type);
-
-			if(rm->type==initialRoomType)
-				j=i;
-				
-			i++;
-		}
-	}
-	assert(j>=0);
-	typesComboBox->setCurrentItem(j);*/
-
 	int i=0;
 	int j=-1;
 	buildingsComboBox->clear();
-	buildingsComboBox->insertItem("");
+	buildingsComboBox->addItem("");
 	if(initialRoomBuilding=="")
 		j=i;
 	i++;
 	for(int k=0; k<gt.rules.buildingsList.size(); k++, i++){
-		buildingsComboBox->insertItem(gt.rules.buildingsList.at(k)->name);
+		buildingsComboBox->addItem(gt.rules.buildingsList.at(k)->name);
 		if(gt.rules.buildingsList.at(k)->name==initialRoomBuilding)
 			j=i;
 	}
 	assert(j>=0);
-	buildingsComboBox->setCurrentItem(j);
+	buildingsComboBox->setCurrentIndex(j);
 }
 
 ModifyRoomForm::~ModifyRoomForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void ModifyRoomForm::cancel()
@@ -104,11 +79,7 @@ void ModifyRoomForm::ok()
 		QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
 		return;
 	}
-	/*if(typesComboBox->currentText().isEmpty()){
-		QMessageBox::information(this, tr("FET information"), tr("Incorrect type"));
-		return;
-	}*/
-	if(buildingsComboBox->currentItem()<0){
+	if(buildingsComboBox->currentIndex()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Incorrect building"));
 		return;
 	}

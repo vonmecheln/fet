@@ -28,19 +28,20 @@
 class AddConstraintActivitiesSameStartingHourForm : public QDialog, Ui::AddConstraintActivitiesSameStartingHourForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintActivitiesSameStartingHourForm();
+	AddConstraintActivitiesSameStartingHourForm(QWidget* parent);
 	~AddConstraintActivitiesSameStartingHourForm();
 
-	void updateActivitiesListBox();
+	void updateActivitiesListWidget();
 	
 	bool filterOk(Activity* a);
 
 public slots:
 	void clear();
 
-	void filterChanged();	
+	void filterChanged();
 
 	void addActivity();
+	void addAllActivities();
 	void removeActivity();
 
 	void addConstraint();

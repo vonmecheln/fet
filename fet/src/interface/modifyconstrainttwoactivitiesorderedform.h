@@ -28,7 +28,7 @@ class ModifyConstraintTwoActivitiesOrderedForm : public QDialog, Ui::ModifyConst
 public:
 	ConstraintTwoActivitiesOrdered* _ctr;
 
-	ModifyConstraintTwoActivitiesOrderedForm(ConstraintTwoActivitiesOrdered* ctr);
+	ModifyConstraintTwoActivitiesOrderedForm(QWidget* parent, ConstraintTwoActivitiesOrdered* ctr);
 	~ModifyConstraintTwoActivitiesOrderedForm();
 
 	void updateActivitiesComboBox();

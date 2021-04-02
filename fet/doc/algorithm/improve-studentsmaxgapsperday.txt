@@ -2,7 +2,7 @@ This is an idea of how the code for perfect students max gaps per day should loo
 students max gaps per day becomes perfect and does not need those warnings in the program). But this code is unstable and may contain critical bugs.
 Also, it is old and in the meantime, important changes might have been made to the official generate.cpp.
 
-Very much care must be taken for hidden bugs and much testing is needed. Any bug is critical and some input files may become impossible to solve.
+Very much care must be taken for hidden bugs and much testing is needed. Any bug would be critical and some input files might become impossible to solve.
 
 I prefer current stability, that is why I don't try to add this code.
 

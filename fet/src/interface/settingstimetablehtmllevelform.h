@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #ifndef SETTINGSTIMETABLEHTMLLEVELFORM_H
 #define SETTINGSTIMETABLEHTMLLEVELFORM_H
@@ -27,12 +25,12 @@ class SettingsTimetableHtmlLevelForm:public QDialog, Ui::SettingsTimetableHtmlLe
 	Q_OBJECT
 
 public:
-	SettingsTimetableHtmlLevelForm();
+	SettingsTimetableHtmlLevelForm(QWidget* parent);
 	~SettingsTimetableHtmlLevelForm();
 
 public slots:
-	void on_okPushButton_clicked();
-	void on_cancelPushButton_clicked();
+	void ok();
+	void cancel();
 };
 
 #endif

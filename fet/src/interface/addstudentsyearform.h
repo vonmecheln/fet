@@ -27,7 +27,7 @@
 class AddStudentsYearForm : public QDialog, Ui::AddStudentsYearForm_template {
 	Q_OBJECT
 public:
-	AddStudentsYearForm();
+	AddStudentsYearForm(QWidget* parent);
 	~AddStudentsYearForm();
 
 public slots:

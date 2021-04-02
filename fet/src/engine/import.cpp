@@ -27,17 +27,11 @@ File import.cpp
 //TODO: import days per week
 //TODO: import hours per day
 
-//#include "centerwidgetonscreen.h"
-class QWidget;
-void centerWidgetOnScreen(QWidget* widget);
-
 #include "import.h"
 #include <QtGui>
-#include <QDesktopWidget> //needed?
 #include <QProgressDialog>
 
-/*#include <iostream>
-using namespace std;*/
+#include "centerwidgetonscreen.h"
 
 extern Timetable gt;
 
@@ -130,7 +124,7 @@ void Import::prearrangement(){
 
 
 //TODO: add this into the first function!? form to full?!
-ChooseFieldsDialog::ChooseFieldsDialog(QWidget *parent): QDialog(parent)
+ChooseFieldsDialog::ChooseFieldsDialog(QWidget *parent/*, const QString& settingsName*/): QDialog(parent)
 {
 	assert(fields.size()>0);
 
@@ -295,12 +289,17 @@ ChooseFieldsDialog::ChooseFieldsDialog(QWidget *parent): QDialog(parent)
 		connect(fieldLine3Text[i], SIGNAL(textChanged(QString)), this, SLOT(chooseFieldsDialogUpdateLine3Text()));
 	}
 	
-	this->setWindowFlags(this->windowFlags() | Qt::WindowMinMaxButtonsHint);
-	
 	pb->setDefault(true);
 	pb->setFocus();
+	
+	//_settingsName=settingsName;
+	//restoreFETDialogGeometry(this, _settingsName);
 }
 
+ChooseFieldsDialog::~ChooseFieldsDialog()
+{
+	//saveFETDialogGeometry(this, _settingsName);
+}
 
 void ChooseFieldsDialog::chooseFieldsDialogUpdateRadio1(){
 	if(fieldRadio1[FIELD_GROUP_NAME]->isChecked()){
@@ -431,12 +430,12 @@ LastWarningsDialog::LastWarningsDialog(QWidget *parent): QDialog(parent)
 	this->setWindowTitle(tr("FET - import %1 comment", "The comment of the importing of the category named %1").arg(importThing));
 	QVBoxLayout* lastWarningsMainLayout=new QVBoxLayout(this);
 
-	QTextEdit* lastWarningsText=new QTextEdit();
+	QPlainTextEdit* lastWarningsText=new QPlainTextEdit();
 	lastWarningsText->setMinimumWidth(500);				//width
 	lastWarningsText->setMinimumHeight(250);
 	lastWarningsText->setReadOnly(true);
 	lastWarningsText->setWordWrapMode(QTextOption::NoWrap);
-	lastWarningsText->setText(lastWarning);
+	lastWarningsText->setPlainText(lastWarning);
 
 	//Start Buttons
 	QPushButton* pb1=new QPushButton(tr("&OK"));
@@ -456,46 +455,52 @@ LastWarningsDialog::LastWarningsDialog(QWidget *parent): QDialog(parent)
 
 	pb1->setDefault(true);
 	pb1->setFocus();
-	
-	this->setWindowFlags(this->windowFlags() | Qt::WindowMinMaxButtonsHint);
 }
 
+LastWarningsDialog::~LastWarningsDialog()
+{
+}
 
 // private funtions ---------------------------------------------------------------------------------------------------
-
-int Import::getFileSeparatorFieldsAndHead(){
+int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	assert(gt.rules.initialized);
+	
+	newParent=((QDialog*)parent);
+	
+	QString settingsName;
 
-	if(fieldNumber[FIELD_ACTIVITY_TAG_NAME]==IMPORT_DEFAULT_ITEM)
+	if(fieldNumber[FIELD_ACTIVITY_TAG_NAME]==IMPORT_DEFAULT_ITEM){
 		importThing=Import::tr("activity tags");
-	if(fieldNumber[FIELD_ROOM_NAME]==IMPORT_DEFAULT_ITEM)
+		settingsName=QString("ImportActivityTagsSelectSeparatorsDialog");
+	}
+	if(fieldNumber[FIELD_ROOM_NAME]==IMPORT_DEFAULT_ITEM){
 		importThing=Import::tr("buildings and rooms");
-	if(fieldNumber[FIELD_TEACHER_NAME]==IMPORT_DEFAULT_ITEM)
+		settingsName=QString("ImportBuildingsRoomsSelectSeparatorsDialog");
+	}
+	if(fieldNumber[FIELD_TEACHER_NAME]==IMPORT_DEFAULT_ITEM){
 		importThing=Import::tr("teachers");
-	if(fieldNumber[FIELD_SUBJECT_NAME]==IMPORT_DEFAULT_ITEM)
+		settingsName=QString("ImportTeachersSelectSeparatorsDialog");
+	}
+	if(fieldNumber[FIELD_SUBJECT_NAME]==IMPORT_DEFAULT_ITEM){
 		importThing=Import::tr("subjects");
-	if(fieldNumber[FIELD_YEAR_NAME]==IMPORT_DEFAULT_ITEM)
+		settingsName=QString("ImportSubjectsSelectSeparatorsDialog");
+	}
+	if(fieldNumber[FIELD_YEAR_NAME]==IMPORT_DEFAULT_ITEM){
 		importThing=Import::tr("years, groups and subgroups");
-	if(fieldNumber[FIELD_STUDENTS_SET]==IMPORT_DEFAULT_ITEM)
+		settingsName=QString("ImportYearsGroupsSubgroupsSelectSeparatorsDialog");
+	}
+	if(fieldNumber[FIELD_STUDENTS_SET]==IMPORT_DEFAULT_ITEM){
 		importThing=Import::tr("activities");
+		settingsName=QString("ImportActivitiesSelectSeparatorsDialog");
+	}
 
-	fileName=QFileDialog::getOpenFileName(NULL, Import::tr("FET - Import %1 from CSV file").arg(importThing), IMPORT_DIRECTORY, 
+	fileName=QFileDialog::getOpenFileName(parent, Import::tr("FET - Import %1 from CSV file").arg(importThing), IMPORT_DIRECTORY, 
 		Import::tr("Text Files")+" (*.csv *.dat *.txt)" + ";;" + Import::tr("All Files") + " (*)");
 
 	const QString NO_SEPARATOR_TRANSLATED=Import::tr("no separator");
 	fieldSeparator=NO_SEPARATOR_TRANSLATED;	//needed, because a csv file contain maybe just one field!
-/*	if(fieldSeparator.size()<=1){
-		QMessageBox::warning(NULL, tr("FET warning"), tr("Translation is wrong, because translation of 'no separator' is too short - falling back to English words. Please report bug"));
-		fieldSeparator=QString("no separator");
-	}
-	assert(fieldSeparator.size()>1);*/
 	const QString NO_TEXTQUOTE_TRANSLATED=Import::tr("no textquote");
 	textquote=NO_TEXTQUOTE_TRANSLATED;
-/*	if(textquote.size()<=1){
-		QMessageBox::warning(NULL, tr("FET warning"), tr("Translation is wrong, because translation of 'no textquote' is too short - falling back to English words. Please report bug"));
-		textquote=QString("no textquote");
-	}
-	assert(textquote.size()>1);*/
 	fields.clear();
 	QFile file(fileName);
 	if(fileName.isEmpty()){
@@ -509,7 +514,7 @@ int Import::getFileSeparatorFieldsAndHead(){
 	QString line = in.readLine();
 	
 	if(line.size()<=0){
-		QMessageBox::warning(NULL, tr("FET warning"), tr("The first line of the file is empty. Please fix this."));
+		QMessageBox::warning(parent, tr("FET warning"), tr("The first line of the file is empty. Please fix this."));
 		return false;
 	}
 	
@@ -618,22 +623,23 @@ int Import::getFileSeparatorFieldsAndHead(){
 		}
 	}
 
-	QDialog separatorsDialog(NULL);
+	newParent=new QDialog(parent);
+	QDialog& separatorsDialog=(*newParent);
 	separatorsDialog.setWindowTitle(Import::tr("FET - Import %1 from CSV file").arg(importThing));
 	QVBoxLayout* separatorsMainLayout=new QVBoxLayout(&separatorsDialog);
 
 	QHBoxLayout* top=new QHBoxLayout();
 	QLabel* topText=new QLabel();
 
-	int tmpi=fileName.findRev("/");
+	int tmpi=fileName.lastIndexOf(FILE_SEP);
 	tmpi=fileName.size()-tmpi-1;
 	QString shortFileName=fileName.right(tmpi);
 	topText->setText(Import::tr("The first line of file\n%1\nis:").arg(shortFileName));
 	top->addWidget(topText);
 	top->addStretch();
-	QTextEdit* textOfFirstLine=new QTextEdit();
+	QPlainTextEdit* textOfFirstLine=new QPlainTextEdit();
 	textOfFirstLine->setReadOnly(true);
-	textOfFirstLine->setText(line);
+	textOfFirstLine->setPlainText(line);
 
 	QGroupBox* separatorsGroupBox = new QGroupBox(Import::tr("Please specify the used separator between fields:"));
 	QComboBox* separatorsCB=NULL;
@@ -663,7 +669,7 @@ int Import::getFileSeparatorFieldsAndHead(){
 		textquoteGroupBox->setLayout(textquoteBoxChoose);
 	}
 
-	QGroupBox* firstLineGroupBox = new QGroupBox(Import::tr("Please specify the content of the first line:"));
+	QGroupBox* firstLineGroupBox = new QGroupBox(Import::tr("Please specify the contents of the first line:"));
 	QVBoxLayout* firstLineChooseBox=new QVBoxLayout();
 	QRadioButton* firstLineRadio1 = new QRadioButton(Import::tr("The first line is the heading. Don't import that line."));
 	QRadioButton* firstLineRadio2 = new QRadioButton(Import::tr("The first line contains data. Import that line."));
@@ -697,14 +703,14 @@ int Import::getFileSeparatorFieldsAndHead(){
 	pb->setDefault(true);
 	pb->setFocus();
 	
-	//separatorsDialog.setWindowFlags(separatorsDialog.windowFlags() | Qt::WindowMinMaxButtonsHint);
-	//separatorsDialog.show();
 	int w=chooseWidth(separatorsDialog.sizeHint().width());
 	int h=chooseHeight(separatorsDialog.sizeHint().height());
-	separatorsDialog.setGeometry(0,0,w,h);
+	separatorsDialog.resize(w,h);
 	centerWidgetOnScreen(&separatorsDialog);
+	restoreFETDialogGeometry(&separatorsDialog, settingsName);
 	
 	int ok=separatorsDialog.exec();
+	saveFETDialogGeometry(&separatorsDialog, settingsName);
 	if(!ok) return false;
 	
 	if(separators.size()>1){
@@ -712,7 +718,7 @@ int Import::getFileSeparatorFieldsAndHead(){
 		assert(textquoteCB!=NULL);
 		fieldSeparator=separatorsCB->currentText();
 		
-		if(separatorsCB->currentItem()==NO_SEPARATOR_POS){
+		if(separatorsCB->currentIndex()==NO_SEPARATOR_POS){
 			assert(fieldSeparator==NO_SEPARATOR_TRANSLATED);
 			fieldSeparator=QString("no sep"); //must have length >= 2
 		}
@@ -723,7 +729,7 @@ int Import::getFileSeparatorFieldsAndHead(){
 		
 		textquote=textquoteCB->currentText();
 		
-		if(textquoteCB->currentItem()==NO_TEXTQUOTE_POS){
+		if(textquoteCB->currentIndex()==NO_TEXTQUOTE_POS){
 			assert(textquote==NO_TEXTQUOTE_TRANSLATED);
 			textquote=QString("no tquote"); //must have length >= 2
 		}
@@ -757,7 +763,7 @@ int Import::getFileSeparatorFieldsAndHead(){
 								tmp+=textquote;
 								tmpLine.remove(0,1);
 							} else {
-								QMessageBox::critical(NULL, tr("FET Warning"), Import::tr("Missing field separator or text quote in first line. Import might be incorrect.")+"\n");
+								QMessageBox::critical(newParent, tr("FET Warning"), Import::tr("Missing field separator or text quote in first line. Import might be incorrect.")+"\n");
 							}
 						}
 						tmpLine.remove(0,1);
@@ -766,7 +772,7 @@ int Import::getFileSeparatorFieldsAndHead(){
 						if(tmpLine.left(1)==textquote){
 							tmpLine.remove(0,1);
 						} else {
-							QMessageBox::critical(NULL, tr("FET Warning"), Import::tr("Missing closing text quote in first line. Import might be incorrect.")+"\n");
+							QMessageBox::critical(newParent, tr("FET Warning"), Import::tr("Missing closing text quote in first line. Import might be incorrect.")+"\n");
 							tmp+=tmpLine.left(1);
 							tmpLine.remove(0,1);
 						}
@@ -803,8 +809,7 @@ OLD */
 	return true;
 }
 
-
-int Import::readFields(){
+int Import::readFields(QWidget* parent){
 	QSet<QString> checkSet;
 	QString check;
 	numberOfFields=fields.size();
@@ -816,18 +821,19 @@ int Import::readFields(){
 
 	QFile file(fileName);
 	if(fileName.isEmpty()){
-		QMessageBox::warning(NULL, tr("FET warning"), tr("Empty filename."));
+		QMessageBox::warning(parent, tr("FET warning"), tr("Empty filename."));
 		return false;
 	}
 	if(!file.open(QIODevice::ReadOnly)){
-		QMessageBox::warning(NULL, tr("Error! Can't open file."),fileName);
+		QMessageBox::warning(parent, tr("Error! Can't open file."),fileName);
 		return false;
 	}
 	QTextStream in(&file);
 	in.setCodec("UTF-8");
 
 	qint64 size=file.size();
-	QProgressDialog progress(NULL);
+	QProgressDialog* _progress=new QProgressDialog(parent);
+	QProgressDialog& progress=(*_progress);
 	progress.setWindowTitle(tr("Importing", "Title of a progress dialog"));
 	progress.setLabelText(tr("Loading file"));
 	progress.setModal(true);
@@ -844,7 +850,7 @@ int Import::readFields(){
 		lineNumber++;
         crt+=line.length();
 		if(progress.wasCanceled()){
-			QMessageBox::warning(NULL, "FET", Import::tr("Loading canceled by user."));
+			QMessageBox::warning(parent, "FET", Import::tr("Loading canceled by user."));
 			return false;
 		}
 		bool ok=true;
@@ -983,7 +989,7 @@ int Import::readFields(){
 											warnText+=Import::tr("Skipped line %1: Field '%2' doesn't contain an integer value.").arg(lineNumber).arg(fieldName[FIELD_SPLIT_DURATION])+"\n";
 									}
 									if(itemOfField[FIELD_TOTAL_DURATION].isEmpty()){
-										itemOfField[FIELD_TOTAL_DURATION]=QString::number(tmpInt);	
+										itemOfField[FIELD_TOTAL_DURATION]=CustomFETString::number(tmpInt);	
 									} else {
 										int totalInt=itemOfField[FIELD_TOTAL_DURATION].toInt(&ok, 10);
 										if(totalInt!=tmpInt){
@@ -1021,7 +1027,8 @@ int Import::readFields(){
 							}
 						}
 						if(ok && i==FIELD_MIN_DAYS_WEIGHT){
-							double weight=itemOfField[i].toDouble(&ok);
+//							double weight=itemOfField[i].toDouble(&ok);
+							double weight=customFETStrToDouble(itemOfField[i], &ok);
 							if(!ok)
 								warnText+=Import::tr("Skipped line %1: Field '%2' doesn't contain a number (double) value.").arg(lineNumber).arg(fieldName[i])+"\n";
 							else {
@@ -1071,7 +1078,7 @@ int Import::readFields(){
 				//QString tmp;
 				//tmp=tr("%1").arg(lineNumber);
 				//itemOfField[FIELD_LINE_NUMBER]=tmp;
-				itemOfField[FIELD_LINE_NUMBER]=QString::number(lineNumber);
+				itemOfField[FIELD_LINE_NUMBER]=CustomFETString::number(lineNumber);
 				for(int i=0; i<NUMBER_OF_FIELDS; i++){
 					if(fieldNumber[i]!=DO_NOT_IMPORT)
 						fieldList[i]<<itemOfField[i];
@@ -1096,7 +1103,9 @@ int Import::readFields(){
 }
 
 
-int Import::showFieldsAndWarnings(){
+int Import::showFieldsAndWarnings(QWidget* parent, QDialog* &newParent){
+	newParent=((QDialog*)parent);
+
 	int ok=true;
 
 	int max=0;
@@ -1114,7 +1123,8 @@ int Import::showFieldsAndWarnings(){
 		}
 	}
 	// Start Dialog
-	QDialog addItemsDialog(NULL);
+	newParent=new QDialog(parent);
+	QDialog& addItemsDialog=(*newParent);
 	addItemsDialog.setWindowTitle(Import::tr("FET import %1 question").arg(importThing));
 	QVBoxLayout* addItemsMainLayout=new QVBoxLayout(&addItemsDialog);
 
@@ -1122,7 +1132,7 @@ int Import::showFieldsAndWarnings(){
 	QHBoxLayout* headWarnings=new QHBoxLayout();
 	QLabel* headWarningsText=new QLabel();
 
-	int tmp=fileName.findRev("/");
+	int tmp=fileName.lastIndexOf(FILE_SEP);
 	tmp=fileName.size()-tmp-1;
 	QString shortFileName=fileName.right(tmp);
 	if(!warnText.isEmpty())
@@ -1142,11 +1152,11 @@ FILE_STRIPPED_NAME
 	headWarnings->addWidget(headWarningsText);
 	headWarnings->addStretch();
 
-	QTextEdit* textOfWarnings=new QTextEdit();
+	QPlainTextEdit* textOfWarnings=new QPlainTextEdit();
 	textOfWarnings->setMinimumWidth(500);			//width
 	textOfWarnings->setReadOnly(true);
 	textOfWarnings->setWordWrapMode(QTextOption::NoWrap);
-	textOfWarnings->setText(warnText);
+	textOfWarnings->setPlainText(warnText);
 
 	//Start data table
 	QLabel* headTableText=new QLabel();
@@ -1234,45 +1244,64 @@ FILE_STRIPPED_NAME
 
 	//pb1->setDefault(true);
 	
-	//addItemsDialog.setWindowFlags(addItemsDialog.windowFlags() | Qt::WindowMinMaxButtonsHint);
-	//addItemsDialog.show();
 	int w=chooseWidth(addItemsDialog.sizeHint().width());
 	int h=chooseHeight(addItemsDialog.sizeHint().height());
-	addItemsDialog.setGeometry(0,0,w,h);
-
-	centerWidgetOnScreen(&addItemsDialog);
-
+	addItemsDialog.resize(w,h);
+	
+	QString settingsName;
+	if(importThing==Import::tr("activity tags"))
+		settingsName=QString("ImportActivityTagsShowFieldsAndWarningsDialog");
+	else if(importThing==Import::tr("buildings and rooms"))
+		settingsName=QString("ImportBuildingsRoomsShowFieldsAndWarningsDialog");
+	else if(importThing==Import::tr("teachers"))
+		settingsName=QString("ImportTeachersShowFieldsAndWarningsDialog");
+	else if(importThing==Import::tr("subjects"))
+		settingsName=QString("ImportSubjectsShowFieldsAndWarningsDialog");
+	else if(importThing==Import::tr("years, groups and subgroups"))
+		settingsName=QString("ImportYearsGroupsSubgroupsShowFieldsAndWarningsDialog");
+	else if(importThing==Import::tr("activities"))
+		settingsName=QString("ImportActivitiesShowFieldsAndWarningsDialog");
+	
 	pb1->setDefault(true);
 	pb1->setFocus();
 
-	ok=addItemsDialog.exec();
+	centerWidgetOnScreen(&addItemsDialog);
+	restoreFETDialogGeometry(&addItemsDialog, settingsName);
 
+	ok=addItemsDialog.exec();
+	saveFETDialogGeometry(&addItemsDialog, settingsName);
+	
 	return ok;
 }
 
-
-void Import::importCSVActivityTags(){
+void Import::importCSVActivityTags(QWidget* parent){
 	prearrangement();
 	fieldNumber[FIELD_ACTIVITY_TAG_NAME]=IMPORT_DEFAULT_ITEM;
 	int ok;
 
-	ok = getFileSeparatorFieldsAndHead();
+	QDialog* newParent;
+	ok = getFileSeparatorFieldsAndHead(parent, newParent);
+	//DON'T ADD THIS! newParent->deleteLater();
 	if(!ok)	return;
 
 	if(fieldNumber[FIELD_ACTIVITY_TAG_NAME]==IMPORT_DEFAULT_ITEM){
-		ChooseFieldsDialog cfd;
-		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
-		//cfd.show();
+		QDialog* newParent2=new ChooseFieldsDialog(newParent);
+		const QString settingsName=QString("ImportActivityTagsChooseFieldsDialog");
+		//DON'T ADD THIS! newParent2->deleteLater();
+		newParent=newParent2;
+		ChooseFieldsDialog& cfd=(*((ChooseFieldsDialog*)newParent));
 		int w= chooseWidth(cfd.sizeHint().width());
 		int h= chooseHeight(cfd.sizeHint().height());
-		cfd.setGeometry(0,0,w,h);
+		cfd.resize(w,h);
 		centerWidgetOnScreen(&cfd);
-	
+		restoreFETDialogGeometry(&cfd, settingsName);
+		
 		ok=cfd.exec();
+		saveFETDialogGeometry(&cfd, settingsName);
 		if(!ok)	return;
 	}
 
-	ok = readFields();
+	ok = readFields(newParent);
 	if(!ok) return;
 
 	//check empty fields (start)
@@ -1289,8 +1318,10 @@ void Import::importCSVActivityTags(){
 			dataWarning<<Import::tr("%1 is already in FET data.").arg(a->name);
 	}
 	//check if already in memory (end)
-
-	ok = showFieldsAndWarnings();
+	QDialog* newParent2;
+	ok = showFieldsAndWarnings(newParent, newParent2);
+	//DON'T ADD THIS! newParent2->deleteLater();
+	newParent=newParent2;
 	if(!ok) return;
 
 	//add subjects (start) - similar to teachersform.cpp by Liviu modified by Volker
@@ -1304,39 +1335,45 @@ void Import::importCSVActivityTags(){
 			} else count++;
 		}
 	}
-	QMessageBox::information(NULL, tr("FET information"), Import::tr("%1 activity tags added. Please check activity tag form.").arg(count));
+	QMessageBox::information(newParent, tr("FET information"), Import::tr("%1 activity tags added. Please check activity tag form.").arg(count));
 	//add subjects (end) - similar to teachersform.cpp by Liviu modified by Volker
-	int tmp=fileName.findRev("/");
+	int tmp=fileName.lastIndexOf(FILE_SEP);
 	IMPORT_DIRECTORY=fileName.left(tmp);
 	gt.rules.internalStructureComputed=false;
 }
 
 
-void Import::importCSVRoomsAndBuildings(){
+void Import::importCSVRoomsAndBuildings(QWidget* parent){
 	prearrangement();
 	fieldNumber[FIELD_ROOM_NAME]=IMPORT_DEFAULT_ITEM;
 	fieldNumber[FIELD_ROOM_CAPACITY]=IMPORT_DEFAULT_ITEM;
 	fieldNumber[FIELD_BUILDING_NAME]=IMPORT_DEFAULT_ITEM;
 	int ok;
 
-	ok = getFileSeparatorFieldsAndHead();
+	QDialog* newParent;
+	ok = getFileSeparatorFieldsAndHead(parent, newParent);
+	//DON'T ADD THIS! newParent->deleteLater();
 	if(!ok)	return;
 
 	if(fieldNumber[FIELD_ROOM_NAME]==IMPORT_DEFAULT_ITEM){
-		ChooseFieldsDialog cfd;
-		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
-		//cfd.show();
+		QDialog* newParent2=new ChooseFieldsDialog(newParent);
+		const QString settingsName=QString("ImportRoomsBuildingsChooseFieldsDialog");
+		//DON'T ADD THIS! newParent2->deleteLater();
+		newParent=newParent2;
+		ChooseFieldsDialog& cfd=(*((ChooseFieldsDialog*)newParent));
 		int w= chooseWidth(cfd.sizeHint().width());
 		int h= chooseHeight(cfd.sizeHint().height());
-		cfd.setGeometry(0,0,w,h);
+		cfd.resize(w,h);
 		centerWidgetOnScreen(&cfd);
+		restoreFETDialogGeometry(&cfd, settingsName);
 
 		ok=cfd.exec();
+		saveFETDialogGeometry(&cfd, settingsName);
 	}
 
 	if(!ok)	return;
 
-	ok = readFields();
+	ok = readFields(newParent);
 	if(!ok) return;
 
 	QStringList duplicatesCheck;
@@ -1388,7 +1425,10 @@ void Import::importCSVRoomsAndBuildings(){
 	}
 	//check if buildings are already in memory (end)
 
-	ok = showFieldsAndWarnings();
+	QDialog* newParent2;
+	ok = showFieldsAndWarnings(newParent, newParent2);
+	//DON'T ADD THIS! newParent2->deleteLater();
+	newParent=newParent2;
 	if(!ok) return;
 
 	//add buildings (start) - similar to teachersform.cpp by Liviu modified by Volker
@@ -1426,38 +1466,43 @@ void Import::importCSVRoomsAndBuildings(){
 		}
 	}
 	//add rooms (end) - similar to teachersform.cpp by Liviu modified by Volker
-	QMessageBox::information(NULL, tr("FET information"), 
+	QMessageBox::information(newParent, tr("FET information"), 
 	 Import::tr("%1 buildings added. Please check rooms form.").arg(count)+"\n"+tr("%2 rooms added. Please check rooms form.").arg(countroom));
 
-	int tmp=fileName.findRev("/");
+	int tmp=fileName.lastIndexOf(FILE_SEP);
 	IMPORT_DIRECTORY=fileName.left(tmp);
 	gt.rules.internalStructureComputed=false;
 }
 
-
-void Import::importCSVSubjects(){
+void Import::importCSVSubjects(QWidget* parent){
 	prearrangement();
 	fieldNumber[FIELD_SUBJECT_NAME]=IMPORT_DEFAULT_ITEM;
 	int ok;
 
-	ok = getFileSeparatorFieldsAndHead();
+	QDialog* newParent;
+	ok = getFileSeparatorFieldsAndHead(parent, newParent);
+	//DON'T ADD THIS! newParent->deleteLater();
 	if(!ok)	return;
 
 	if(fieldNumber[FIELD_SUBJECT_NAME]==IMPORT_DEFAULT_ITEM){
-		ChooseFieldsDialog cfd;
-		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
-		//cfd.show();
+		QDialog* newParent2=new ChooseFieldsDialog(newParent);
+		const QString settingsName=QString("ImportSubjectsChooseFieldsDialog");
+		//DON'T ADD THIS! newParent2->deleteLater();
+		newParent=newParent2;
+		ChooseFieldsDialog& cfd=(*((ChooseFieldsDialog*)newParent));
 		int w= chooseWidth(cfd.sizeHint().width());
 		int h= chooseHeight(cfd.sizeHint().height());
-		cfd.setGeometry(0,0,w,h);
+		cfd.resize(w,h);
 		centerWidgetOnScreen(&cfd);
+		restoreFETDialogGeometry(&cfd, settingsName);
 
 		ok=cfd.exec();
+		saveFETDialogGeometry(&cfd, settingsName);
 	}
 
 	if(!ok)	return;
 
-	ok = readFields();
+	ok = readFields(newParent);
 	if(!ok) return;
 
 	//check empty fields (start)
@@ -1475,7 +1520,10 @@ void Import::importCSVSubjects(){
 	}
 	//check if already in memory (end)
 
-	ok = showFieldsAndWarnings();
+	QDialog* newParent2;
+	ok = showFieldsAndWarnings(newParent, newParent2);
+	//DON'T ADD THIS! newParent2->deleteLater();
+	newParent=newParent2;
 	if(!ok) return;
 
 	//add subjects (start) - similar to teachersform.cpp by Liviu modified by Volker
@@ -1490,36 +1538,42 @@ void Import::importCSVSubjects(){
 		}
 	}
 	//add subjects (end) - similar to teachersform.cpp by Liviu modified by Volker
-	QMessageBox::information(NULL, tr("FET information"), Import::tr("%1 subjects added. Please check subjects form.").arg(count));
-	int tmp=fileName.findRev("/");
+	QMessageBox::information(newParent, tr("FET information"), Import::tr("%1 subjects added. Please check subjects form.").arg(count));
+	int tmp=fileName.lastIndexOf(FILE_SEP);
 	IMPORT_DIRECTORY=fileName.left(tmp);
 	gt.rules.internalStructureComputed=false;
 }
 
 
-void Import::importCSVTeachers(){
+void Import::importCSVTeachers(QWidget* parent){
 	prearrangement();
 	fieldNumber[FIELD_TEACHER_NAME]=IMPORT_DEFAULT_ITEM;
 	int ok;
 
-	ok = getFileSeparatorFieldsAndHead();
+	QDialog* newParent;
+	ok = getFileSeparatorFieldsAndHead(parent, newParent);
+	//DON'T ADD THIS! newParent->deleteLater();
 	if(!ok)	return;
 
 	if(fieldNumber[FIELD_TEACHER_NAME]==IMPORT_DEFAULT_ITEM){
-		ChooseFieldsDialog cfd;
-		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
-		//cfd.show();
+		QDialog* newParent2=new ChooseFieldsDialog(newParent);
+		const QString settingsName=QString("ImportTeachersChooseFieldsDialog");
+		//DON'T ADD THIS! newParent2->deleteLater();
+		newParent=newParent2;
+		ChooseFieldsDialog& cfd=(*((ChooseFieldsDialog*)newParent));
 		int w= chooseWidth(cfd.sizeHint().width());
 		int h= chooseHeight(cfd.sizeHint().height());
-		cfd.setGeometry(0,0,w,h);
+		cfd.resize(w,h);
 		centerWidgetOnScreen(&cfd);
+		restoreFETDialogGeometry(&cfd, settingsName);
 
 		ok=cfd.exec();
+		saveFETDialogGeometry(&cfd, settingsName);
 	}
 
 	if(!ok)	return;
 
-	ok = readFields();
+	ok = readFields(newParent);
 	if(!ok) return;
 
 	//check empty fields (start)
@@ -1537,7 +1591,10 @@ void Import::importCSVTeachers(){
 	}
 	//check if already in memory (end)
 
-	ok = showFieldsAndWarnings();
+	QDialog* newParent2;
+	ok = showFieldsAndWarnings(newParent, newParent2);
+	//DON'T ADD THIS! newParent2->deleteLater();
+	newParent=newParent2;
 	if(!ok) return;
 
 	//add teachers (start) - similar to teachersform.cpp by Liviu modified by Volker
@@ -1551,15 +1608,14 @@ void Import::importCSVTeachers(){
 			} else count++;
 		}
 	}
-	QMessageBox::information(NULL, tr("FET information"), Import::tr("%1 teachers added. Please check teachers form.").arg(count));
+	QMessageBox::information(newParent, tr("FET information"), Import::tr("%1 teachers added. Please check teachers form.").arg(count));
 	//add teachers (end) - similar to teachersform.cpp by Liviu modified by Volker
-	int tmp=fileName.findRev("/");
+	int tmp=fileName.lastIndexOf(FILE_SEP);
 	IMPORT_DIRECTORY=fileName.left(tmp);
 	gt.rules.internalStructureComputed=false;
 }
 
-
-void Import::importCSVStudents(){
+void Import::importCSVStudents(QWidget* parent){
 	prearrangement();
 	fieldNumber[FIELD_YEAR_NAME]=IMPORT_DEFAULT_ITEM;
 	fieldNumber[FIELD_YEAR_NUMBER_OF_STUDENTS]=IMPORT_DEFAULT_ITEM;
@@ -1569,24 +1625,30 @@ void Import::importCSVStudents(){
 	fieldNumber[FIELD_SUBGROUP_NUMBER_OF_STUDENTS]=IMPORT_DEFAULT_ITEM;
 	int ok;
 
-	ok = getFileSeparatorFieldsAndHead();
+	QDialog* newParent;
+	ok = getFileSeparatorFieldsAndHead(parent, newParent);
+	//DON'T ADD THIS! newParent->deleteLater();
 	if(!ok)	return;
 	
 	if(fieldNumber[FIELD_YEAR_NAME]==IMPORT_DEFAULT_ITEM){
-		ChooseFieldsDialog cfd;
-		//cfd.show();
-		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
+		QDialog* newParent2=new ChooseFieldsDialog(newParent);
+		const QString settingsName=QString("ImportYearsGroupsSubgroupsChooseFieldsDialog");
+		//DON'T ADD THIS! newParent2->deleteLater();
+		newParent=newParent2;
+		ChooseFieldsDialog& cfd=(*((ChooseFieldsDialog*)newParent));
 		int w=chooseWidth(cfd.sizeHint().width());
 		int h=chooseHeight(cfd.sizeHint().height());
-		cfd.setGeometry(0,0,w,h);
+		cfd.resize(w,h);
 
 		centerWidgetOnScreen(&cfd);
+		restoreFETDialogGeometry(&cfd, settingsName);
 
 		ok=cfd.exec();
+		saveFETDialogGeometry(&cfd, settingsName);
 		if(!ok)	return;
 	}
 
-	ok = readFields();
+	ok = readFields(newParent);
 	if(!ok) return;
 
 	//check if already in memory (start) - similar to adding items by Liviu modified by Volker
@@ -1598,7 +1660,8 @@ void Import::importCSVStudents(){
 	QSet<QString> usedCSVSubgroupNames;
 
 	//check csv
-	QProgressDialog progress(NULL);
+	QProgressDialog* _progress=new QProgressDialog(newParent);
+	QProgressDialog& progress=(*_progress);
 	progress.setWindowTitle(tr("Importing", "Title of a progress dialog"));
 	//cout<<"progress in importCSVStudents starts, range="<<fieldList[FIELD_YEAR_NAME].size()<<endl;
 	progress.setLabelText(tr("Checking CSV"));
@@ -1607,7 +1670,7 @@ void Import::importCSVStudents(){
 	for(int i=0; i<fieldList[FIELD_YEAR_NAME].size(); i++){
 		progress.setValue(i);
 		if(progress.wasCanceled()){
-			QMessageBox::warning(NULL, "FET", Import::tr("Checking CSV canceled by user."));
+			QMessageBox::warning(newParent, "FET", Import::tr("Checking CSV canceled by user."));
 			return;
 		}
 		if(fieldNumber[FIELD_YEAR_NAME]>=0)
@@ -1655,7 +1718,8 @@ void Import::importCSVStudents(){
 	//cout<<"progress in importCSVStudents ends"<<endl;
 
 	//check current data
-	QProgressDialog progress2(NULL);
+	QProgressDialog* _progress2=new QProgressDialog(newParent);
+	QProgressDialog& progress2=(*_progress2);
 	progress2.setWindowTitle(tr("Importing", "Title of a progress dialog"));
 	progress2.setLabelText(tr("Checking data"));
 	progress2.setModal(true);
@@ -1666,7 +1730,7 @@ void Import::importCSVStudents(){
 		progress2.setValue(kk);
 		kk++;
 		if(progress2.wasCanceled()){
-			QMessageBox::warning(NULL, "FET", Import::tr("Checking data canceled by user."));
+			QMessageBox::warning(newParent, "FET", Import::tr("Checking data canceled by user."));
 			return;
 		}
 		StudentsYear* sty=gt.rules.yearsList[i];
@@ -1680,7 +1744,7 @@ void Import::importCSVStudents(){
 			progress2.setValue(kk);
 			kk++;
 			if(progress2.wasCanceled()){
-				QMessageBox::warning(NULL, "FET", Import::tr("Checking data canceled by user."));
+				QMessageBox::warning(newParent, "FET", Import::tr("Checking data canceled by user."));
 				return;
 			}
 
@@ -1696,7 +1760,7 @@ void Import::importCSVStudents(){
 				kk++;
 
 				if(progress2.wasCanceled()){
-					QMessageBox::warning(NULL, "FET", Import::tr("Checking data canceled by user."));
+					QMessageBox::warning(newParent, "FET", Import::tr("Checking data canceled by user."));
 					return;
 				}
 
@@ -1713,7 +1777,10 @@ void Import::importCSVStudents(){
 	progress2.setValue(fieldList[FIELD_YEAR_NAME].size());
 	//cout<<"progress2 in importCSVStudents ends"<<endl;
 
-	ok = showFieldsAndWarnings();
+	QDialog* newParent2;
+	ok = showFieldsAndWarnings(newParent, newParent2);
+	//DON'T ADD THIS! newParent2->deleteLater();
+	newParent=newParent2;
 	if(!ok) return;
 
 	//add students (start) - similar to adding items by Liviu modified by Volker
@@ -1721,7 +1788,8 @@ void Import::importCSVStudents(){
 	int addedYears=0;
 	int addedGroups=0;
 	int addedSubgroups=0;
-	QProgressDialog progress3(NULL);
+	QProgressDialog* _progress3=new QProgressDialog(newParent);
+	QProgressDialog& progress3=(*_progress3);
 	progress3.setWindowTitle(tr("Importing", "Title of a progress dialog"));
 	progress3.setLabelText(tr("Importing data"));
 	progress3.setModal(true);
@@ -1731,7 +1799,7 @@ void Import::importCSVStudents(){
 	for(int i=0; i<fieldList[FIELD_YEAR_NAME].size(); i++){
 		progress3.setValue(i);
 		if(progress3.wasCanceled()){
-			QMessageBox::warning(NULL, "FET", Import::tr("Importing data canceled by user."));
+			QMessageBox::warning(newParent, "FET", Import::tr("Importing data canceled by user."));
 			//return false;
 			ok=false;
 			goto ifUserCanceledProgress3;
@@ -1867,23 +1935,20 @@ ifUserCanceledProgress3:
 	lastWarning.insert(0,Import::tr("%1 groups added. Please check groups form.").arg(addedGroups)+"\n");
 	lastWarning.insert(0,Import::tr("%1 years added. Please check years form.").arg(addedYears)+"\n");
 
-	LastWarningsDialog lwd;
-	//lwd.setWindowFlags(lwd.windowFlags() | Qt::WindowMinMaxButtonsHint);
-	//lwd.show();
+	LastWarningsDialog lwd(newParent);
 	int w=chooseWidth(lwd.sizeHint().width());
 	int h=chooseHeight(lwd.sizeHint().height());
-	lwd.setGeometry(0,0,w,h);
+	lwd.resize(w,h);
 	centerWidgetOnScreen(&lwd);
 
 	ok=lwd.exec();
 
-	int tmp=fileName.findRev("/");
+	int tmp=fileName.lastIndexOf(FILE_SEP);
 	IMPORT_DIRECTORY=fileName.left(tmp);
 	gt.rules.internalStructureComputed=false;
 }
 
-
-void Import::importCSVActivities(){
+void Import::importCSVActivities(QWidget* parent){
 	prearrangement();
 	fieldNumber[FIELD_STUDENTS_SET]=IMPORT_DEFAULT_ITEM;
 	fieldNumber[FIELD_SUBJECT_NAME]=IMPORT_DEFAULT_ITEM;
@@ -1897,28 +1962,34 @@ void Import::importCSVActivities(){
 
 	int ok;
 
-	ok = getFileSeparatorFieldsAndHead();
+	QDialog* newParent;
+	ok = getFileSeparatorFieldsAndHead(parent, newParent);
+	//DON'T ADD THIS! newParent->deleteLater();
 	if(!ok)	return;
 
 	if(fieldNumber[FIELD_SUBJECT_NAME]==IMPORT_DEFAULT_ITEM){
-		ChooseFieldsDialog cfd;
-		//cfd.setWindowFlags(cfd.windowFlags() | Qt::WindowMinMaxButtonsHint);
-		//cfd.show();
+		QDialog* newParent2=new ChooseFieldsDialog(newParent);
+		const QString settingsName=QString("ImportActivitiesChooseFieldsDialog");
+		//DON'T ADD THIS! newParent2->deleteLater();
+		newParent=newParent2;
+		ChooseFieldsDialog& cfd=(*((ChooseFieldsDialog*)newParent));
 		int w=chooseWidth(cfd.sizeHint().width());
 		int h=chooseHeight(cfd.sizeHint().height());
-		cfd.setGeometry(0,0,w,h);
+		cfd.resize(w,h);
 		centerWidgetOnScreen(&cfd);
+		restoreFETDialogGeometry(&cfd, settingsName);
 
 		ok=cfd.exec();
+		saveFETDialogGeometry(&cfd, settingsName);
 	}
 	if(!ok)	return;
 
 	if(fieldNumber[FIELD_SPLIT_DURATION]==DO_NOT_IMPORT&&fieldNumber[FIELD_TOTAL_DURATION]==DO_NOT_IMPORT){
-		QMessageBox::warning(NULL, tr("FET warning"), Import::tr("FET need to know %1 or %2 if you import %3.").arg(fieldName[FIELD_SPLIT_DURATION]).arg(fieldName[FIELD_TOTAL_DURATION]).arg(importThing));
+		QMessageBox::warning(newParent, tr("FET warning"), Import::tr("FET need to know %1 or %2 if you import %3.").arg(fieldName[FIELD_SPLIT_DURATION]).arg(fieldName[FIELD_TOTAL_DURATION]).arg(importThing));
 		return;
 	}
 
-	ok = readFields();
+	ok = readFields(newParent);
 	if(!ok) return;
 
 	//check number of fields (start) //because of bug reported 17.03.2008
@@ -1974,8 +2045,6 @@ void Import::importCSVActivities(){
 		}
 		checkNumber=fieldList[FIELD_MIN_DAYS_CONSECUTIVE].size();
 	}
-
-
 
 	if(fieldList[FIELD_STUDENTS_SET].size()==0){
 		for(int i=0; i<checkNumber; i++)
@@ -2045,12 +2114,13 @@ void Import::importCSVActivities(){
 		}
 	}
 	if(lastWarning.size()>0){
-		LastWarningsDialog lwd;
-		//lwd.setWindowFlags(lwd.windowFlags() | Qt::WindowMinMaxButtonsHint);
-		//lwd.show();
+		QDialog* newParent2=new LastWarningsDialog(newParent);
+		//DON'T ADD THIS! newParent2->deleteLater();
+		newParent=newParent2;
+		LastWarningsDialog& lwd=(*((LastWarningsDialog*)newParent));
 		int w=chooseWidth(lwd.sizeHint().width());
 		int h=chooseHeight(lwd.sizeHint().height());
-		lwd.setGeometry(0,0,w,h);
+		lwd.resize(w,h);
 		centerWidgetOnScreen(&lwd);
 
 		ok=lwd.exec();
@@ -2123,7 +2193,10 @@ void Import::importCSVActivities(){
 	tmpList.clear();
 	//check if already in memory (end)
 
-	ok = showFieldsAndWarnings();
+	QDialog* newParent2;
+	ok = showFieldsAndWarnings(newParent, newParent2);
+	//DON'T ADD THIS! newParent2->deleteLater();
+	newParent=newParent2;
 	if(!ok) return;
 
 	//add teachers
@@ -2183,7 +2256,8 @@ void Import::importCSVActivities(){
 			activityid = act->id;
 	}
 	activityid++;
-	QProgressDialog progress4(NULL);
+	QProgressDialog* _progress4=new QProgressDialog(newParent);
+	QProgressDialog& progress4=(*_progress4);
 	progress4.setWindowTitle(tr("Importing", "Title of a progress dialog"));
 	progress4.setLabelText(tr("Importing activities"));
 	progress4.setModal(true);
@@ -2194,14 +2268,15 @@ void Import::importCSVActivities(){
 	for(int i=0; i<fieldList[FIELD_SUBJECT_NAME].size(); i++){
 		progress4.setValue(i);
 		if(progress4.wasCanceled()){
-			QMessageBox::warning(NULL, "FET", Import::tr("Importing data canceled by user."));
+			QMessageBox::warning(newParent, "FET", Import::tr("Importing data canceled by user."));
 			//return false;
 			ok=false;
 			goto ifUserCanceledProgress4;
 		}
 		bool ok2;
 		QString tmpStr=fieldList[FIELD_MIN_DAYS_WEIGHT][i];
-		double weight=tmpStr.toDouble(&ok2);
+//		double weight=tmpStr.toDouble(&ok2);
+		double weight=customFETStrToDouble(tmpStr, &ok2);
 		assert(ok2);
 
 		QStringList teachers_names;
@@ -2249,7 +2324,7 @@ void Import::importCSVActivities(){
 				count2++;
 			}
 			else
-				QMessageBox::critical(NULL, tr("FET information"), tr("Activity NOT added - please report error"));
+				QMessageBox::critical(newParent, tr("FET information"), tr("Activity NOT added - please report error"));
 		}
 		else{ //split activity
 			int totalduration;
@@ -2303,7 +2378,7 @@ void Import::importCSVActivities(){
 				count2+=nsplit;
 			}
 			else
-				QMessageBox::critical(NULL, tr("FET information"), tr("Split activity NOT added - error???"));
+				QMessageBox::critical(newParent, tr("FET information"), tr("Split activity NOT added - error???"));
 		}
 	}
 	progress4.setValue(fieldList[FIELD_SUBJECT_NAME].size());
@@ -2319,17 +2394,18 @@ ifUserCanceledProgress4:
 	if(count>0)
 		lastWarning.insert(0,Import::tr("%1 container activities (%2 total activities) added. Please check activity form.").arg(count).arg(count2)+"\n");
 
-	LastWarningsDialog lwd;
-	//lwd.setWindowFlags(lwd.windowFlags() | Qt::WindowMinMaxButtonsHint);
-	//lwd.show();
+	QDialog* newParent3=new LastWarningsDialog(newParent);
+	//DON'T ADD THIS! newParent3->deleteLater();
+	newParent=newParent3;
+	LastWarningsDialog& lwd=(*((LastWarningsDialog*)newParent));
 	int w=chooseWidth(lwd.sizeHint().width());
 	int h=chooseHeight(lwd.sizeHint().height());
-	lwd.setGeometry(0,0,w,h);
+	lwd.resize(w,h);
 	centerWidgetOnScreen(&lwd);
 
 	ok=lwd.exec();
 
-	int tmp=fileName.findRev("/");
+	int tmp=fileName.lastIndexOf(FILE_SEP);
 	IMPORT_DIRECTORY=fileName.left(tmp);
 	gt.rules.internalStructureComputed=false;
 }

@@ -6,6 +6,7 @@
 // Author: Liviu Lalescu <Please see http://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)>
 // Copyright (C) 2003 Liviu Lalescu <http://lalescu.ro/liviu/>
 //
+
 /***************************************************************************
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -14,8 +15,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include "timetable_defs.h"
 #include "fet.h"
@@ -23,38 +22,54 @@
 #include "addbuildingform.h"
 #include "modifybuildingform.h"
 
-#include <QInputDialog>
-
 #include <QMessageBox>
 
-BuildingsForm::BuildingsForm()
- : BuildingsForm_template()
+#include <QListWidget>
+#include <QScrollBar>
+#include <QAbstractItemView>
+
+#include <QSplitter>
+#include <QSettings>
+#include <QObject>
+#include <QMetaObject>
+
+extern const QString COMPANY;
+extern const QString PROGRAM;
+
+BuildingsForm::BuildingsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	currentBuildingTextEdit->setReadOnly(true);
 
-    connect(addBuildingPushButton, SIGNAL(clicked()), this /*BuildingsForm_template*/, SLOT(addBuilding()));
-    connect(removeBuildingPushButton, SIGNAL(clicked()), this /*BuildingsForm_template*/, SLOT(removeBuilding()));
-    connect(buildingsListBox, SIGNAL(highlighted(int)), this /*BuildingsForm_template*/, SLOT(buildingChanged(int)));
-    connect(closePushButton, SIGNAL(clicked()), this /*BuildingsForm_template*/, SLOT(close()));
-    connect(modifyBuildingPushButton, SIGNAL(clicked()), this /*BuildingsForm_template*/, SLOT(modifyBuilding()));
-    connect(sortBuildingsPushButton, SIGNAL(clicked()), this /*BuildingsForm_template*/, SLOT(sortBuildings()));
-    connect(buildingsListBox, SIGNAL(selected(QString)), this /*BuildingsForm_template*/, SLOT(modifyBuilding()));
+	modifyBuildingPushButton->setDefault(true);
 
+	buildingsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(addBuildingPushButton, SIGNAL(clicked()), this, SLOT(addBuilding()));
+	connect(removeBuildingPushButton, SIGNAL(clicked()), this, SLOT(removeBuilding()));
+	connect(buildingsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(buildingChanged(int)));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(modifyBuildingPushButton, SIGNAL(clicked()), this, SLOT(modifyBuilding()));
+	connect(sortBuildingsPushButton, SIGNAL(clicked()), this, SLOT(sortBuildings()));
+	connect(buildingsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyBuilding()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
+	//restore splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
+		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
 	
 	this->filterChanged();
 }
 
-
 BuildingsForm::~BuildingsForm()
 {
+	saveFETDialogGeometry(this);
+	//save splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
 }
 
 bool BuildingsForm::filterOk(Building* bu)
@@ -69,41 +84,37 @@ bool BuildingsForm::filterOk(Building* bu)
 void BuildingsForm::filterChanged()
 {
 	QString s;
-	buildingsListBox->clear();
+	buildingsListWidget->clear();
 	visibleBuildingsList.clear();
 	for(int i=0; i<gt.rules.buildingsList.size(); i++){
 		Building* bu=gt.rules.buildingsList[i];
 		if(this->filterOk(bu)){
-			//s=bu->getDescription();
 			s=bu->name;
 			visibleBuildingsList.append(bu);
-			buildingsListBox->insertItem(s);
+			buildingsListWidget->addItem(s);
 		}
 	}
-	buildingChanged(buildingsListBox->currentItem());
+	
+	if(buildingsListWidget->count()>0)
+		buildingsListWidget->setCurrentRow(0);
+	else
+		buildingChanged(-1);
 }
 
 void BuildingsForm::addBuilding()
 {
-	int ind=buildingsListBox->currentItem();
-
-	AddBuildingForm addBuildingForm;
+	AddBuildingForm addBuildingForm(this);
+	setParentAndOtherThings(&addBuildingForm, this);
 	addBuildingForm.exec();
 	
 	filterChanged();
 	
-	//buildingsListBox->setCurrentItem(ind);
-	Q_UNUSED(ind);
-	int i=buildingsListBox->count()-1;
-	if(i>=0){
-		buildingsListBox->setCurrentItem(i);
-		buildingChanged(i);
-	}
+	buildingsListWidget->setCurrentRow(buildingsListWidget->count()-1);
 }
 
 void BuildingsForm::removeBuilding()
 {
-	int ind=buildingsListBox->currentItem();
+	int ind=buildingsListWidget->currentRow();
 	if(ind<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected building"));
 		return;
@@ -119,19 +130,24 @@ void BuildingsForm::removeBuilding()
 		
 	bool tmp=gt.rules.removeBuilding(bu->name);
 	assert(tmp);
-
-	filterChanged();
 	
-	if((uint)(ind)>=buildingsListBox->count())
-		ind=buildingsListBox->count()-1;
-	buildingsListBox->setCurrentItem(ind);
+	visibleBuildingsList.removeAt(ind);
+	buildingsListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=buildingsListWidget->takeItem(ind);
+	delete item;
+	
+	if(ind>=buildingsListWidget->count())
+		ind=buildingsListWidget->count()-1;
+	if(ind>=0)
+		buildingsListWidget->setCurrentRow(ind);
+	else
+		currentBuildingTextEdit->setPlainText(QString(""));
 }
 
 void BuildingsForm::buildingChanged(int index)
 {
 	if(index<0){
-		//currentBuildingTextEdit->setText(tr("Invalid building"));
-		currentBuildingTextEdit->setText("");
+		currentBuildingTextEdit->setPlainText("");
 		return;
 	}
 
@@ -140,7 +156,7 @@ void BuildingsForm::buildingChanged(int index)
 
 	assert(building!=NULL);
 	s=building->getDetailedDescriptionWithConstraints(gt.rules);
-	currentBuildingTextEdit->setText(s);
+	currentBuildingTextEdit->setPlainText(s);
 }
 
 void BuildingsForm::sortBuildings()
@@ -152,17 +168,28 @@ void BuildingsForm::sortBuildings()
 
 void BuildingsForm::modifyBuilding()
 {
-	int ci=buildingsListBox->currentItem();
+	int valv=buildingsListWidget->verticalScrollBar()->value();
+	int valh=buildingsListWidget->horizontalScrollBar()->value();
+
+	int ci=buildingsListWidget->currentRow();
 	if(ci<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected building"));
 		return;
 	}
 	
 	Building* bu=visibleBuildingsList.at(ci);
-	ModifyBuildingForm form(bu->name);
+	ModifyBuildingForm form(this, bu->name);
+	setParentAndOtherThings(&form, this);
 	form.exec();
 
 	filterChanged();
 	
-	buildingsListBox->setCurrentItem(ci);
+	buildingsListWidget->verticalScrollBar()->setValue(valv);
+	buildingsListWidget->horizontalScrollBar()->setValue(valh);
+
+	if(ci>=buildingsListWidget->count())
+		ci=buildingsListWidget->count()-1;
+
+	if(ci>=0)
+		buildingsListWidget->setCurrentRow(ci);
 }

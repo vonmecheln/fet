@@ -14,14 +14,14 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include <QMessageBox>
 
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
+
+#include "lockunlock.h"
 
 #include "hoursform.h"
 
@@ -36,24 +36,21 @@ extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
 extern bool rooms_schedule_ready;
 
-HoursForm::HoursForm()
- : HoursForm_template()
+HoursForm::HoursForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	okPushButton->setDefault(true);
 
-    connect(hoursSpinBox, SIGNAL(valueChanged(int)), this /*HoursForm_template*/, SLOT(hoursChanged()));
-    connect(okPushButton, SIGNAL(clicked()), this /*HoursForm_template*/, SLOT(ok()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*HoursForm_template*/, SLOT(cancel()));
+	connect(hoursSpinBox, SIGNAL(valueChanged(int)), this, SLOT(hoursChanged()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	nHours=gt.rules.nHoursPerDay;
+
 	hoursNames[0]=hour1LineEdit;
 	hoursNames[1]=hour2LineEdit;
 	hoursNames[2]=hour3LineEdit;
@@ -64,6 +61,7 @@ HoursForm::HoursForm()
 	hoursNames[7]=hour8LineEdit;
 	hoursNames[8]=hour9LineEdit;
 	hoursNames[9]=hour10LineEdit;
+
 	hoursNames[10]=hour11LineEdit;
 	hoursNames[11]=hour12LineEdit;
 	hoursNames[12]=hour13LineEdit;
@@ -74,6 +72,7 @@ HoursForm::HoursForm()
 	hoursNames[17]=hour18LineEdit;
 	hoursNames[18]=hour19LineEdit;
 	hoursNames[19]=hour20LineEdit;
+
 	hoursNames[20]=hour21LineEdit;
 	hoursNames[21]=hour22LineEdit;
 	hoursNames[22]=hour23LineEdit;
@@ -84,8 +83,8 @@ HoursForm::HoursForm()
 	hoursNames[27]=hour28LineEdit;
 	hoursNames[28]=hour29LineEdit;
 	hoursNames[29]=hour30LineEdit;
-	hoursNames[30]=hour31LineEdit;
 
+	hoursNames[30]=hour31LineEdit;
 	hoursNames[31]=hour32LineEdit;
 	hoursNames[32]=hour33LineEdit;
 	hoursNames[33]=hour34LineEdit;
@@ -95,8 +94,8 @@ HoursForm::HoursForm()
 	hoursNames[37]=hour38LineEdit;
 	hoursNames[38]=hour39LineEdit;
 	hoursNames[39]=hour40LineEdit;
-	hoursNames[40]=hour41LineEdit;
 
+	hoursNames[40]=hour41LineEdit;
 	hoursNames[41]=hour42LineEdit;
 	hoursNames[42]=hour43LineEdit;
 	hoursNames[43]=hour44LineEdit;
@@ -106,8 +105,8 @@ HoursForm::HoursForm()
 	hoursNames[47]=hour48LineEdit;
 	hoursNames[48]=hour49LineEdit;
 	hoursNames[49]=hour50LineEdit;
-	hoursNames[50]=hour51LineEdit;
 
+	hoursNames[50]=hour51LineEdit;
 	hoursNames[51]=hour52LineEdit;
 	hoursNames[52]=hour53LineEdit;
 	hoursNames[53]=hour54LineEdit;
@@ -118,8 +117,8 @@ HoursForm::HoursForm()
 	hoursNames[58]=hour59LineEdit;
 	hoursNames[59]=hour60LineEdit;
 
-	hoursSpinBox->setMinValue(1);
-	hoursSpinBox->setMaxValue(60);
+	hoursSpinBox->setMinimum(1);
+	hoursSpinBox->setMaximum(60);
 	hoursSpinBox->setValue(gt.rules.nHoursPerDay);
 
 	for(int i=0; i<60; i++)
@@ -131,9 +130,9 @@ HoursForm::HoursForm()
 			hoursNames[i]->setDisabled(true);
 }
 
-
 HoursForm::~HoursForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void HoursForm::hoursChanged()
@@ -162,20 +161,119 @@ void HoursForm::ok()
 					tr("Duplicates not allowed"));
 				return;
 			}
+			
+	//2011-10-18
+	int cnt_mod=0;
+	int cnt_rem=0;
+	int oldHours=gt.rules.nHoursPerDay;
+	gt.rules.nHoursPerDay=nHours;
 
-	QMessageBox::information(this, tr("FET information"),
-		tr("Please note that FET will NOT take care "
-		"of old constraints using erased hours "
-		"(only renamed hours will be handled correctly)"));
-				
-	/*int t=QMessageBox::question(this, tr("FET question"),
-		tr("Are you sure that the number of working periods per day is %1? (there were lots of misunderstandings here)")
-		.arg(nHours),
-		QMessageBox::Yes, QMessageBox::Cancel
-		);		
-	if(t==QMessageBox::Cancel)
-		return;*/
+	foreach(TimeConstraint* tc, gt.rules.timeConstraintsList)
+		if(tc->hasWrongDayOrHour(gt.rules)){
+			if(tc->canRepairWrongDayOrHour(gt.rules))
+				cnt_mod++;
+			else
+				cnt_rem++;
+		}
+
+	foreach(SpaceConstraint* sc, gt.rules.spaceConstraintsList)
+		if(sc->hasWrongDayOrHour(gt.rules)){
+			if(sc->canRepairWrongDayOrHour(gt.rules))
+				cnt_mod++;
+			else
+				cnt_rem++;
+		}
+	
+	gt.rules.nHoursPerDay=oldHours;
+			
+	if(cnt_mod>0 || cnt_rem>0){
+		QString s=QString("");
+		if(cnt_rem>0){
+			s+=tr("%1 constraints will be removed.", "%1 is the number of constraints").arg(cnt_rem);
+			s+=" ";
+		}
+		if(cnt_mod>0){
+			s+=tr("%1 constraints will be modified.", "%1 is the number of constraints").arg(cnt_mod);
+			s+=" ";
+		}
+		s+=tr("Do you want to continue?");
+
+		int res=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::Cancel);
 		
+		if(res==QMessageBox::Cancel)
+			return;
+			
+		int _oldHours=gt.rules.nHoursPerDay;
+		gt.rules.nHoursPerDay=nHours;
+		
+		//time
+		QList<TimeConstraint*> toBeRemovedTime;
+		foreach(TimeConstraint* tc, gt.rules.timeConstraintsList){
+			if(tc->hasWrongDayOrHour(gt.rules)){
+				bool tmp=tc->canRepairWrongDayOrHour(gt.rules);
+				if(tmp){
+					int tmp2=tc->repairWrongDayOrHour(gt.rules);
+					assert(tmp2);
+				}
+				else{
+					toBeRemovedTime.append(tc);
+				}
+			}
+		}
+		bool recomputeTime=false;
+
+		if(toBeRemovedTime.count()>0){
+			foreach(TimeConstraint* tc, toBeRemovedTime){
+				if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME)
+					recomputeTime=true;
+				bool tmp=gt.rules.removeTimeConstraint(tc);
+				assert(tmp);
+			}
+		}
+		//////
+
+		//space
+		QList<SpaceConstraint*> toBeRemovedSpace;
+		foreach(SpaceConstraint* sc, gt.rules.spaceConstraintsList){
+			if(sc->hasWrongDayOrHour(gt.rules)){
+				bool tmp=sc->canRepairWrongDayOrHour(gt.rules);
+				if(tmp){
+					int tmp2=sc->repairWrongDayOrHour(gt.rules);
+					assert(tmp2);
+				}
+				else{
+					toBeRemovedSpace.append(sc);
+				}
+			}
+		}
+
+		bool recomputeSpace=false;
+		
+		if(toBeRemovedSpace.count()>0){
+			foreach(SpaceConstraint* sc, toBeRemovedSpace){
+				if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM)
+					recomputeSpace=true;
+				bool tmp=gt.rules.removeSpaceConstraint(sc);
+				assert(tmp);
+			}
+		}
+		//////
+
+		gt.rules.nHoursPerDay=_oldHours;
+
+		if(recomputeTime){
+			LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
+		}
+		if(recomputeSpace){
+			assert(0);
+			LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
+		}
+		if(recomputeTime || recomputeSpace){
+			LockUnlock::increaseCommunicationSpinBox();
+		}
+	}
+	////////////
+
 	if(gt.rules.nHoursPerDay!=nHours){
 		students_schedule_ready=false;
 		teachers_schedule_ready=false;
@@ -192,6 +290,7 @@ void HoursForm::ok()
 		
 	gt.rules.nHoursPerWeek=gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek; //not needed
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 
 	assert(gt.rules.nHoursPerDay<=MAX_HOURS_PER_DAY);
 		

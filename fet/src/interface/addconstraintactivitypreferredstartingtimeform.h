@@ -28,7 +28,7 @@
 class AddConstraintActivityPreferredStartingTimeForm : public QDialog, Ui::AddConstraintActivityPreferredStartingTimeForm_template  {
 	Q_OBJECT
 public:
-	AddConstraintActivityPreferredStartingTimeForm();
+	AddConstraintActivityPreferredStartingTimeForm(QWidget* parent);
 	~AddConstraintActivityPreferredStartingTimeForm();
 
 	void updatePeriodGroupBox();
@@ -37,7 +37,6 @@ public:
 	bool filterOk(Activity* a);
 
 public slots:
-	void constraintChanged();
 	void addCurrentConstraint();
 	
 	void filterChanged();

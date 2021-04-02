@@ -19,22 +19,22 @@ File timetable_defs.cpp
  *                                                                         *
  ***************************************************************************/
 
-
 #include "timetable_defs.h"
 
 #include <ctime>
 
-//#include <QByteArray>
 #include <QHash>
 
-int checkForUpdates;
+#include <QLocale>
+
+bool checkForUpdates;
 
 QString internetVersion;
 
 /**
 FET version
 */
-const QString FET_VERSION="5.14.5";
+const QString FET_VERSION="5.15.0";
 
 /**
 FET language
@@ -46,13 +46,6 @@ The output directory. Please be careful when editing it,
 because the functions add a FILE_SEP sign at the end of it
 and then the name of a file. If you make OUTPUT_DIR="",
 there will be problems.
-*/
-/*
-#ifdef Q_OS_WIN
-const QString OUTPUT_DIR="results";
-#else
-const QString OUTPUT_DIR=QDir::homePath()+FILE_SEP+"fet-results";
-#endif
 */
 QString OUTPUT_DIR;
 
@@ -81,13 +74,10 @@ QHash<QString, QString> hashTeacherIDs;
 QHash<QString, QString> hashRoomIDs;
 QHash<QString, QString> hashDayIDs;
 
-
 /**
 A log file explaining how the xml input file was parsed
 */
 const QString XML_PARSING_LOG_FILENAME="file_open.log";
-
-
 
 /**
 The predefined names of the days of the week
@@ -103,14 +93,6 @@ const QString PREDEFINED_DAYS_OF_THE_WEEK[]={"Monday", "Tuesday", "Wednesday",
 File and directory separator
 */
 const QString FILE_SEP="/";
-
-
-/**
-The XML tag used for identification of the input file (old)
-*/
-//const QString INPUT_FILE_TAG_3_6_1="FET_VERSION_3_6_1_AND_ABOVE_TIMETABLE_DATA_FILE";
-
-
 
 QString protect(const QString& str) //used for xml
 {
@@ -134,9 +116,6 @@ QString protect2(const QString& str) //used for html
 	return p;
 }
 
-//protect2vert is very similar to protect2
-//protect2vert code contributed by Volker Dirr
-
 QString protect2vert(const QString& str) //used for html
 {
 	QString p=str;
@@ -156,21 +135,62 @@ QString protect2vert(const QString& str) //used for html
 	return returnstring;
 }
 
-
-QString protect3(const QString& str) //used for iCal
+///////begin tricks
+void weight_sscanf(const QString& str, const char* fmt, double* result)
 {
-	QString p=str;
-	p.replace("?", "_");
-	p.replace("/", "_");
-	p.replace(" ", "_");
-	p.replace("\\", "_");
-	p.replace(":", "_");
-	p.replace("'", "_");
-	p.replace("*", "_");
-	p.replace("\"", "_");
-	return p;
+	assert(QString(fmt)==QString("%lf"));
+
+	bool ok;
+	double myres=customFETStrToDouble(str, &ok);
+	if(!ok)
+		(*result)=-2.5; //any value that does not belong to {>=0.0 and <=100.0} or {-1.0}
+						//not -1.0 because of modify multiple constraints min days between activities,
+						//-1 there represents any weight
+						//potential bug found by Volker Dirr
+	else
+		(*result)=myres;
 }
 
+QString CustomFETString::number(int n)
+{
+	return QString::number(n);
+}
+
+QString CustomFETString::number(double x)
+{
+	QString tmp=QString::number(x, 'f', CUSTOM_DOUBLE_PRECISION);
+	
+	//remove trailing zeroes AFTER decimal points
+	if(tmp.contains('.')){
+		int n=tmp.length()-1;
+		int del=0;
+		while(tmp.at(n)=='0'){
+			n--;
+			del++;
+		}
+		if(tmp.at(n)=='.'){
+			n--;
+			del++;
+		}
+		tmp.chop(del);
+	}
+
+	return tmp;
+}
+
+double customFETStrToDouble(const QString& str, bool* ok)
+{
+	QLocale c(QLocale::C);
+
+	//tricks to convert numbers like 97.123456789 to 97.123457, to CUSTOM_DOUBLE_PRECISION (6) decimal digits after decimal point
+	double tmpd=c.toDouble(str, ok);
+	if(ok!=0)
+		if((*ok)==false)
+			return tmpd;
+	QString tmps=CustomFETString::number(tmpd);
+	return c.toDouble(tmps, ok);
+}
+///////end tricks
 
 int XX;
 int YY;
@@ -250,7 +270,7 @@ void initRandomKnuth()
 	
 	ZZ=XX-YY;
 	if(ZZ<=0)
-		ZZ+=MM-1; //-1 is not written in Knuth TAOCP vol. 2 third edition, I think it should. (Later edit: yes, the author confirmed that).
+		ZZ+=MM-1; //-1 is not written in Knuth TAOCP vol. 2 third edition; I think it would be an improvement. (Later edit: yes, the author confirmed that).
 	assert(ZZ>0);
 	assert(ZZ<MM); //again, modified from Knuth TAOCP vol. 2 third edition, ZZ is strictly lower than MM (the author confirmed that, too).
 }
@@ -279,7 +299,7 @@ int randomKnuth1MM1()
 
 	ZZ=XX-YY;
 	if(ZZ<=0)
-		ZZ+=MM-1; //-1 is not written in Knuth TAOCP vol. 2 third edition, I think it should. (Later edit: yes, the author confirmed that).
+		ZZ+=MM-1; //-1 is not written in Knuth TAOCP vol. 2 third edition; I think it would be an improvement. (Later edit: yes, the author confirmed that).
 	assert(ZZ>0);
 	assert(ZZ<MM); //again, modified from Knuth TAOCP vol. 2 third edition, ZZ is strictly lower than MM (the author confirmed that, too).
 	

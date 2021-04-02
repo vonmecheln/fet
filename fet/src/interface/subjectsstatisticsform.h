@@ -26,7 +26,7 @@ class SubjectsStatisticsForm : public QDialog, Ui::SubjectsStatisticsForm_templa
 	Q_OBJECT
 
 public:
-	SubjectsStatisticsForm();
+	SubjectsStatisticsForm(QWidget* parent);
 	~SubjectsStatisticsForm();
 };
 

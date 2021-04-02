@@ -26,21 +26,14 @@ class AdvancedLockUnlockForm: public QObject{
 	Q_OBJECT
 
 public:
-	static void lockAll();
-	static void unlockAll();
+	static void lockAll(QWidget* parent);
+	static void unlockAll(QWidget* parent);
 	
-	static void lockDay();
-	static void unlockDay();
+	static void lockDay(QWidget* parent);
+	static void unlockDay(QWidget* parent);
 	
-	static void lockEndStudentsDay();
-	static void unlockEndStudentsDay();
-	
-	//static void computeLockedUnlockedActivitiesTimeSpace();
-	//static void computeLockedUnlockedActivitiesOnlyTime();
-	//static void computeLockedUnlockedActivitiesOnlySpace();
-	
-	//static void increaseCommunicationSpinBox();
+	static void lockEndStudentsDay(QWidget* parent);
+	static void unlockEndStudentsDay(QWidget* parent);
 };
-
 
 #endif

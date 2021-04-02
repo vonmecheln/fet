@@ -17,71 +17,57 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
+
 
 #include "modifyconstraintstudentssethomeroomsform.h"
-#include "spaceconstraint.h"
 
-ModifyConstraintStudentsSetHomeRoomsForm::ModifyConstraintStudentsSetHomeRoomsForm(ConstraintStudentsSetHomeRooms* ctr)
+#include <QListWidget>
+#include <QAbstractItemView>
+
+ModifyConstraintStudentsSetHomeRoomsForm::ModifyConstraintStudentsSetHomeRoomsForm(QWidget* parent, ConstraintStudentsSetHomeRooms* ctr): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-//    connect(addPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetHomeRoomsForm_template*/, SLOT(addRoom()));
-//    connect(removePushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetHomeRoomsForm_template*/, SLOT(removeRoom()));
-    connect(cancelPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetHomeRoomsForm_template*/, SLOT(cancel()));
-    connect(okPushButton, SIGNAL(clicked()), this /*ModifyConstraintStudentsSetHomeRoomsForm_template*/, SLOT(ok()));
-    connect(roomsListBox, SIGNAL(selected(QString)), this /*ModifyConstraintStudentsSetHomeRoomsForm_template*/, SLOT(addRoom()));
-    connect(selectedRoomsListBox, SIGNAL(selected(QString)), this /*ModifyConstraintStudentsSetHomeRoomsForm_template*/, SLOT(removeRoom()));
+	okPushButton->setDefault(true);
+	
+	roomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	selectedRoomsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-    connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
-    
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(roomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addRoom()));
+	connect(selectedRoomsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeRoom()));
+	connect(clearPushButton, SIGNAL(clicked()), this, SLOT(clear()));
+
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
 	
-	updateRoomsListBox();
+	updateRoomsListWidget();
 	
 	this->_ctr=ctr;
 	
-	/*int i=0, j=-1;
-	for(int k=0; k<gt.rules.subjectsList.size(); k++){
-		Subject* sb=gt.rules.subjectsList[k];
-		subjectsComboBox->insertItem(sb->name);
-		if(ctr->subjectName==sb->name){
-			assert(j==-1);
-			j=i;
-		}
-		i++;
-	}
-	assert(j>=0);
-	subjectsComboBox->setCurrentItem(j);*/
-
 /////////
 	//students
 	int i=0, j=-1;
 	studentsComboBox->clear();
 	for(int m=0; m<gt.rules.yearsList.size(); m++){
 		StudentsYear* sty=gt.rules.yearsList[m];
-		studentsComboBox->insertItem(sty->name);
+		studentsComboBox->addItem(sty->name);
 		if(sty->name==this->_ctr->studentsName)
 			j=i;
 		i++;
 		for(int n=0; n<sty->groupsList.size(); n++){
 			StudentsGroup* stg=sty->groupsList[n];
-			studentsComboBox->insertItem(stg->name);
+			studentsComboBox->addItem(stg->name);
 			if(stg->name==this->_ctr->studentsName)
 				j=i;
 			i++;
 			for(int p=0; p<stg->subgroupsList.size(); p++){
 				StudentsSubgroup* sts=stg->subgroupsList[p];
-				studentsComboBox->insertItem(sts->name);
+				studentsComboBox->addItem(sts->name);
 				if(sts->name==this->_ctr->studentsName)
 					j=i;
 				i++;
@@ -89,28 +75,28 @@ ModifyConstraintStudentsSetHomeRoomsForm::ModifyConstraintStudentsSetHomeRoomsFo
 		}
 	}
 	assert(j>=0);
-	studentsComboBox->setCurrentItem(j);
+	studentsComboBox->setCurrentIndex(j);
 /////////
 	
-	weightLineEdit->setText(QString::number(ctr->weightPercentage));
-	//compulsoryCheckBox->setChecked(ctr->compulsory);
+	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 	
 	for(QStringList::Iterator it=ctr->roomsNames.begin(); it!=ctr->roomsNames.end(); it++)
-		selectedRoomsListBox->insertItem(*it);
+		selectedRoomsListWidget->addItem(*it);
 }
 
 ModifyConstraintStudentsSetHomeRoomsForm::~ModifyConstraintStudentsSetHomeRoomsForm()
 {
+	saveFETDialogGeometry(this);
 }
 
-void ModifyConstraintStudentsSetHomeRoomsForm::updateRoomsListBox()
+void ModifyConstraintStudentsSetHomeRoomsForm::updateRoomsListWidget()
 {
-	roomsListBox->clear();
-	selectedRoomsListBox->clear();
+	roomsListWidget->clear();
+	selectedRoomsListWidget->clear();
 
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* rm=gt.rules.roomsList[i];
-		roomsListBox->insertItem(rm->name);
+		roomsListWidget->addItem(rm->name);
 	}
 }
 
@@ -118,19 +104,19 @@ void ModifyConstraintStudentsSetHomeRoomsForm::ok()
 {
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
 		return;
 	}
 
-	if(selectedRoomsListBox->count()==0){
+	if(selectedRoomsListWidget->count()==0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Empty list of selected rooms"));
 		return;
 	}
-	if(selectedRoomsListBox->count()==1){
+	if(selectedRoomsListWidget->count()==1){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Only one selected room - please use constraint students set home room if you want a single room"));
 		return;
@@ -140,8 +126,8 @@ void ModifyConstraintStudentsSetHomeRoomsForm::ok()
 	assert(gt.rules.searchStudentsSet(students)!=NULL);
 
 	QStringList roomsList;
-	for(uint i=0; i<selectedRoomsListBox->count(); i++)
-		roomsList.append(selectedRoomsListBox->text(i));
+	for(int i=0; i<selectedRoomsListWidget->count(); i++)
+		roomsList.append(selectedRoomsListWidget->item(i)->text());
 	
 	this->_ctr->weightPercentage=weight;
 
@@ -150,6 +136,7 @@ void ModifyConstraintStudentsSetHomeRoomsForm::ok()
 	this->_ctr->roomsNames=roomsList;
 	
 	gt.rules.internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(&gt.rules);
 	
 	this->close();
 }
@@ -161,28 +148,37 @@ void ModifyConstraintStudentsSetHomeRoomsForm::cancel()
 
 void ModifyConstraintStudentsSetHomeRoomsForm::addRoom()
 {
-	if(roomsListBox->currentItem()<0)
+	if(roomsListWidget->currentRow()<0)
 		return;
-	QString rmName=roomsListBox->currentText();
+	QString rmName=roomsListWidget->currentItem()->text();
 	assert(rmName!="");
-	uint i;
+	int i;
 	//duplicate?
-	for(i=0; i<selectedRoomsListBox->count(); i++)
-		if(rmName==selectedRoomsListBox->text(i))
+	for(i=0; i<selectedRoomsListWidget->count(); i++)
+		if(rmName==selectedRoomsListWidget->item(i)->text())
 			break;
-	if(i<selectedRoomsListBox->count())
+	if(i<selectedRoomsListWidget->count())
 		return;
-	selectedRoomsListBox->insertItem(rmName);
+	selectedRoomsListWidget->addItem(rmName);
+	selectedRoomsListWidget->setCurrentRow(selectedRoomsListWidget->count()-1);
 }
 
 void ModifyConstraintStudentsSetHomeRoomsForm::removeRoom()
 {
-	if(selectedRoomsListBox->currentItem()<0 || selectedRoomsListBox->count()<=0)
-		return;		
-	selectedRoomsListBox->removeItem(selectedRoomsListBox->currentItem());
+	if(selectedRoomsListWidget->currentRow()<0 || selectedRoomsListWidget->count()<=0)
+		return;
+	int tmp=selectedRoomsListWidget->currentRow();
+
+	selectedRoomsListWidget->setCurrentRow(-1);
+	QListWidgetItem* item=selectedRoomsListWidget->takeItem(tmp);
+	delete item;
+	if(tmp<selectedRoomsListWidget->count())
+		selectedRoomsListWidget->setCurrentRow(tmp);
+	else
+		selectedRoomsListWidget->setCurrentRow(selectedRoomsListWidget->count()-1);
 }
 
 void ModifyConstraintStudentsSetHomeRoomsForm::clear()
 {
-	selectedRoomsListBox->clear();
+	selectedRoomsListWidget->clear();
 }

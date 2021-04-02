@@ -28,7 +28,7 @@ class ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm : public QDialog,
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm();
+	ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm(QWidget* parent);
 	~ConstraintStudentsSetActivityTagMaxHoursContinuouslyForm();
 
 	bool filterOk(TimeConstraint* ctr);

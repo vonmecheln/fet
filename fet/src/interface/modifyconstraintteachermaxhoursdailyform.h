@@ -28,7 +28,7 @@ class ModifyConstraintTeacherMaxHoursDailyForm : public QDialog, Ui::ModifyConst
 public:
 	ConstraintTeacherMaxHoursDaily* _ctr;
 
-	ModifyConstraintTeacherMaxHoursDailyForm(ConstraintTeacherMaxHoursDaily* ctr);
+	ModifyConstraintTeacherMaxHoursDailyForm(QWidget* parent, ConstraintTeacherMaxHoursDaily* ctr);
 	~ModifyConstraintTeacherMaxHoursDailyForm();
 
 	void updateMaxHoursSpinBox();

@@ -21,52 +21,35 @@
 
 #include <QMessageBox>
 
-#include <QTextEdit>
-
-AddRoomForm::AddRoomForm()
+AddRoomForm::AddRoomForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	addRoomPushButton->setDefault(true);
 
-    connect(closePushButton, SIGNAL(clicked()), this /*addRoomForm_template*/, SLOT(close()));
-    connect(pushButton3, SIGNAL(clicked()), this /*addRoomForm_template*/, SLOT(help()));
-    connect(addRoomPushButton, SIGNAL(clicked()), this /*addRoomForm_template*/, SLOT(addRoom()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+	connect(addRoomPushButton, SIGNAL(clicked()), this, SLOT(addRoom()));
 
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp5=buildingsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp5);
 	
-	/*typesComboBox->clear();
-	typesComboBox->setDuplicatesEnabled(false);
-	for(int i=0; i<gt.rules.roomsList.size(); i++){
-		Room* rm=gt.rules.roomsList[i];
-		int i;
-		for(i=0; i<typesComboBox->count(); i++)
-			if(typesComboBox->text(i)==rm->type)
-				break;
-		if(i==typesComboBox->count())
-			typesComboBox->insertItem(rm->type);
-	}*/
-
 	buildingsComboBox->clear();
-	buildingsComboBox->insertItem("");
+	buildingsComboBox->addItem("");
 	for(int i=0; i<gt.rules.buildingsList.size(); i++)
-		buildingsComboBox->insertItem(gt.rules.buildingsList.at(i)->name);
+		buildingsComboBox->addItem(gt.rules.buildingsList.at(i)->name);
 		
-	capacitySpinBox->setMinValue(1);
-	capacitySpinBox->setMaxValue(MAX_ROOM_CAPACITY);
+	capacitySpinBox->setMinimum(1);
+	capacitySpinBox->setMaximum(MAX_ROOM_CAPACITY);
 	capacitySpinBox->setValue(MAX_ROOM_CAPACITY);
 }
 
 AddRoomForm::~AddRoomForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddRoomForm::addRoom()
@@ -75,17 +58,12 @@ void AddRoomForm::addRoom()
 		QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
 		return;
 	}
-	/*if(typesComboBox->currentText().isEmpty()){
-		QMessageBox::information(this, tr("FET information"), tr("Incorrect type"));
-		return;
-	}*/
-	if(buildingsComboBox->currentItem()<0){
+	if(buildingsComboBox->currentIndex()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Incorrect building"));
 		return;
 	}
 	Room* rm=new Room();
 	rm->name=nameLineEdit->text();
-	//rm->type=typesComboBox->currentText();
 	rm->building=buildingsComboBox->currentText();
 	rm->capacity=capacitySpinBox->value();
 	if(!gt.rules.addRoom(rm)){
@@ -96,8 +74,6 @@ void AddRoomForm::addRoom()
 	else{
 		QMessageBox::information(this, tr("Room insertion dialog"),
 			tr("Room added"));
-			
-		//typesComboBox->insertItem(rm->type);
 	}
 
 	nameLineEdit->selectAll();
@@ -117,32 +93,4 @@ void AddRoomForm::help()
 	 " representing this larger room");
 	 
 	LongTextMessageBox::largeInformation(this, tr("FET - help on adding room(s)"), s);
-	
-	//show the message in a dialog
-/*	QDialog dialog;
-	
-	dialog.setWindowTitle(tr("FET - help on adding room(s)"));
-
-	QVBoxLayout* vl=new QVBoxLayout(&dialog);
-	QTextEdit* te=new QTextEdit();
-	te->setPlainText(s);
-	te->setReadOnly(true);
-	QPushButton* pb=new QPushButton(tr("OK"));
-
-	QHBoxLayout* hl=new QHBoxLayout(0);
-	hl->addStretch(1);
-	hl->addWidget(pb);
-
-	vl->addWidget(te);
-	vl->addLayout(hl);
-	connect(pb, SIGNAL(clicked()), &dialog, SLOT(close()));
-
-	dialog.setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	//QDesktopWidget* desktop=QApplication::desktop();
-	QRect rect = QApplication::desktop()->availableGeometry(&dialog);
-	int xx=rect.width()/2 - 350;
-	int yy=rect.height()/2 - 250;
-	dialog.setGeometry(xx, yy, 700, 500);
-
-	dialog.exec();*/
 }

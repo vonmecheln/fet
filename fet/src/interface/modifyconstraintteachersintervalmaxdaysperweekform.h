@@ -28,7 +28,7 @@ class ModifyConstraintTeachersIntervalMaxDaysPerWeekForm : public QDialog, Ui::M
 public:
 	ConstraintTeachersIntervalMaxDaysPerWeek* _ctr;
 
-	ModifyConstraintTeachersIntervalMaxDaysPerWeekForm(ConstraintTeachersIntervalMaxDaysPerWeek* ctr);
+	ModifyConstraintTeachersIntervalMaxDaysPerWeekForm(QWidget* parent, ConstraintTeachersIntervalMaxDaysPerWeek* ctr);
 	~ModifyConstraintTeachersIntervalMaxDaysPerWeekForm();
 
 	void updateMaxDaysSpinBox();

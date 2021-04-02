@@ -133,8 +133,7 @@
         <enum>QFrame::Plain</enum>
        </property>
        <property name="text">
-        <string>Weight percentage
-(necessary: 100%)</string>
+        <string>Weight percentage (necessary: 100%)</string>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -144,7 +143,7 @@
      <item>
       <widget class="QLineEdit" name="weightLineEdit">
        <property name="text">
-        <string>100</string>
+        <string notr="true">100</string>
        </property>
       </widget>
      </item>
@@ -171,15 +170,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>teachersComboBox</tabstop>
-  <tabstop>studentsComboBox</tabstop>
-  <tabstop>subjectsComboBox</tabstop>
-  <tabstop>activityTagsComboBox</tabstop>
-  <tabstop>weightLineEdit</tabstop>
-  <tabstop>addConstraintPushButton</tabstop>
-  <tabstop>closePushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

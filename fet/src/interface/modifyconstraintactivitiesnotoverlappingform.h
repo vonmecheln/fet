@@ -21,17 +21,14 @@
 #include "ui_modifyconstraintactivitiesnotoverlappingform_template.h"
 #include "timetable_defs.h"
 #include "timetable.h"
-#include "fet.h"
 
 #include <QList>
 
 class ModifyConstraintActivitiesNotOverlappingForm : public QDialog, Ui::ModifyConstraintActivitiesNotOverlappingForm_template  {
 	Q_OBJECT
 public:
-	ModifyConstraintActivitiesNotOverlappingForm(ConstraintActivitiesNotOverlapping* ctr);
+	ModifyConstraintActivitiesNotOverlappingForm(QWidget* parent, ConstraintActivitiesNotOverlapping* ctr);
 	~ModifyConstraintActivitiesNotOverlappingForm();
-
-	//void updateActivitiesListBox();
 
 	bool filterOk(Activity* ac);
 	
@@ -40,6 +37,7 @@ public slots:
 	void filterChanged();
 
 	void addActivity();
+	void addAllActivities();
 	void removeActivity();
 
 	void clear();

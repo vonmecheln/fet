@@ -7,15 +7,73 @@
     <x>0</x>
     <y>0</y>
     <width>648</width>
-    <height>497</height>
+    <height>545</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string extracomment="This is the title of the dialog to add a new constraint of this type">Add activity preferred room</string>
   </property>
-  <layout class="QGridLayout">
-   <item row="4" column="0">
-    <widget class="QComboBox" name="roomsComboBox"/>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="filterGroupBox">
+     <property name="title">
+      <string>Filter</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="teachersTextLabel_2">
+        <property name="text">
+         <string>Teacher</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="studentsTextLabel_2">
+        <property name="text">
+         <string>Students set</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QComboBox" name="teachersComboBox"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="studentsComboBox"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="subjectsTextLabel_2">
+        <property name="text">
+         <string>Subject</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="activityTagsTextLabel_2">
+        <property name="text">
+         <string>Activity tag</string>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QComboBox" name="subjectsComboBox"/>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="activityTagsComboBox"/>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item row="1" column="0">
     <widget class="QLabel" name="activitiesTextLabel">
@@ -37,14 +95,7 @@
     </widget>
    </item>
    <item row="2" column="0">
-    <widget class="QComboBox" name="activitiesComboBox">
-     <property name="maximumSize">
-      <size>
-       <width>32767</width>
-       <height>32767</height>
-      </size>
-     </property>
-    </widget>
+    <widget class="QComboBox" name="activitiesComboBox"/>
    </item>
    <item row="3" column="0">
     <widget class="QLabel" name="roomsTextLabel">
@@ -65,73 +116,8 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="0">
-    <widget class="Q3GroupBox" name="periodGroupBox_2">
-     <property name="title">
-      <string>Filter</string>
-     </property>
-     <layout class="QGridLayout">
-      <item row="1" column="1">
-       <widget class="QComboBox" name="studentsComboBox"/>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLabel" name="studentsTextLabel_2">
-        <property name="text">
-         <string>Students set</string>
-        </property>
-        <property name="wordWrap">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QComboBox" name="teachersComboBox"/>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="teachersTextLabel_2">
-        <property name="text">
-         <string>Teacher</string>
-        </property>
-        <property name="wordWrap">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QComboBox" name="subjectsComboBox"/>
-      </item>
-      <item row="2" column="0" rowspan="2">
-       <widget class="QLabel" name="subjectsTextLabel_2">
-        <property name="text">
-         <string>Subject</string>
-        </property>
-        <property name="wordWrap">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QLabel" name="activityTagsTextLabel_2">
-        <property name="text">
-         <string>Activity tag</string>
-        </property>
-        <property name="wordWrap">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1" rowspan="2">
-       <widget class="QComboBox" name="activityTagsComboBox"/>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLineEdit" name="weightLineEdit">
-     <property name="text">
-      <string>100</string>
-     </property>
-    </widget>
+   <item row="4" column="0">
+    <widget class="QComboBox" name="roomsComboBox"/>
    </item>
    <item row="5" column="0">
     <widget class="QLabel" name="weightTextLabel">
@@ -146,6 +132,58 @@
      </property>
      <property name="wordWrap">
       <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLineEdit" name="weightLineEdit">
+     <property name="text">
+      <string notr="true">100</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <spacer name="spacer1">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>41</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="8" column="0">
+    <widget class="QCheckBox" name="permLockedCheckBox">
+     <property name="text">
+      <string>Permanently locked</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="permTextLabel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Select this if you want this constraint not to be unlockable from the 'Timetable' menu (recommended). You can always remove this constraint from the constraints dialogs or uncheck &quot;permanently locked&quot; checkbox by editing this constraint</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignVCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
@@ -167,74 +205,9 @@
      </item>
     </layout>
    </item>
-   <item row="9" column="0">
-    <widget class="QLabel" name="permTextLabel">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Select this if you want this constraint not to be unlockable from the 'Timetable' menu (recommended). You can always remove this constraint from the constraints dialogs or uncheck &quot;permanently locked&quot; checkbox by editing this constraint</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignVCenter</set>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="0">
-    <widget class="QCheckBox" name="permLockedCheckBox">
-     <property name="text">
-      <string>Permanently locked</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="0">
-    <spacer name="spacer1">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Expanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>41</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>Q3GroupBox</class>
-   <extends>QGroupBox</extends>
-   <header>Qt3Support/Q3GroupBox</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
- <tabstops>
-  <tabstop>teachersComboBox</tabstop>
-  <tabstop>studentsComboBox</tabstop>
-  <tabstop>subjectsComboBox</tabstop>
-  <tabstop>activityTagsComboBox</tabstop>
-  <tabstop>activitiesComboBox</tabstop>
-  <tabstop>roomsComboBox</tabstop>
-  <tabstop>weightLineEdit</tabstop>
-  <tabstop>permLockedCheckBox</tabstop>
-  <tabstop>addConstraintPushButton</tabstop>
-  <tabstop>closePushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

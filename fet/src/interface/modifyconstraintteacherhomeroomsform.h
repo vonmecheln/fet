@@ -26,10 +26,10 @@
 class ModifyConstraintTeacherHomeRoomsForm : public QDialog, Ui::ModifyConstraintTeacherHomeRoomsForm_template  {
 	Q_OBJECT
 public:
-	ModifyConstraintTeacherHomeRoomsForm(ConstraintTeacherHomeRooms* ctr);
+	ModifyConstraintTeacherHomeRoomsForm(QWidget* parent, ConstraintTeacherHomeRooms* ctr);
 	~ModifyConstraintTeacherHomeRoomsForm();
 
-	void updateRoomsListBox();
+	void updateRoomsListWidget();
 
 public slots:
 	void addRoom();

@@ -28,7 +28,7 @@ class ModifyConstraintStudentsSetHomeRoomForm : public QDialog, Ui::ModifyConstr
 	
 	ConstraintStudentsSetHomeRoom* _ctr;
 public:
-	ModifyConstraintStudentsSetHomeRoomForm(ConstraintStudentsSetHomeRoom* ctr);
+	ModifyConstraintStudentsSetHomeRoomForm(QWidget* parent, ConstraintStudentsSetHomeRoom* ctr);
 	~ModifyConstraintStudentsSetHomeRoomForm();
 
 	void updateStudentsComboBox();

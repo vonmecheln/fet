@@ -28,7 +28,7 @@ class ConstraintTeachersMinDaysPerWeekForm : public QDialog, Ui::ConstraintTeach
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintTeachersMinDaysPerWeekForm();
+	ConstraintTeachersMinDaysPerWeekForm(QWidget* parent);
 	~ConstraintTeachersMinDaysPerWeekForm();
 
 	bool filterOk(TimeConstraint* ctr);

@@ -28,7 +28,7 @@ class ConstraintBasicCompulsoryTimeForm : public QDialog, Ui::ConstraintBasicCom
 public:
 	TimeConstraintsList visibleConstraintsList;
 
-	ConstraintBasicCompulsoryTimeForm();
+	ConstraintBasicCompulsoryTimeForm(QWidget* parent);
 	~ConstraintBasicCompulsoryTimeForm();
 
 	bool filterOk(TimeConstraint* ctr);

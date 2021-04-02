@@ -14,8 +14,6 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-//
-//
 
 #include "timetable_defs.h"
 #include "timetable.h"
@@ -29,28 +27,26 @@ extern Timetable gt;
 
 extern bool simulation_running;
 
-InstitutionNameForm::InstitutionNameForm()
- : InstitutionNameForm_template()
+InstitutionNameForm::InstitutionNameForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
+	
+	okPushButton->setDefault(true);
 
-    connect(cancelPushButton, SIGNAL(clicked()), this /*InstitutionNameForm_template*/, SLOT(cancel()));
-    connect(okPushButton, SIGNAL(clicked()), this /*InstitutionNameForm_template*/, SLOT(ok()));
+	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
 
-
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 	
 	institutionNameLineEdit->setText(gt.rules.institutionName);
+	institutionNameLineEdit->selectAll();
+	institutionNameLineEdit->setFocus();
 }
 
 InstitutionNameForm::~InstitutionNameForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void InstitutionNameForm::ok()

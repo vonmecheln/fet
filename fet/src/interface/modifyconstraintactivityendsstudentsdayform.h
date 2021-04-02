@@ -28,7 +28,7 @@ class ModifyConstraintActivityEndsStudentsDayForm : public QDialog, Ui::ModifyCo
 public:
 	ConstraintActivityEndsStudentsDay* _ctr;
 
-	ModifyConstraintActivityEndsStudentsDayForm(ConstraintActivityEndsStudentsDay* ctr);
+	ModifyConstraintActivityEndsStudentsDayForm(QWidget* parent, ConstraintActivityEndsStudentsDay* ctr);
 	~ModifyConstraintActivityEndsStudentsDayForm();
 
 	void updateActivitiesComboBox();

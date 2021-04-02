@@ -60,11 +60,18 @@
 
 #include <QRegExp>
 
-#include <QTextEdit>
 #include <QListWidget>
 #include <QScrollBar>
 
 #include <QAbstractItemView>
+
+#include <QSplitter>
+#include <QSettings>
+#include <QObject>
+#include <QMetaObject>
+
+extern const QString COMPANY;
+extern const QString PROGRAM;
 
 const int DESCRIPTION=0;
 const int DETDESCRIPTION=1;
@@ -74,50 +81,50 @@ const int DOESNOTCONTAIN=1;
 const int REGEXP=2;
 const int NOTREGEXP=3;
 
-
-bool AllSpaceConstraintsForm::filterInitialized=false;
-bool AllSpaceConstraintsForm::all=true;
-QList<int> AllSpaceConstraintsForm::descrDetDescr;
-QList<int> AllSpaceConstraintsForm::contains;
-QStringList AllSpaceConstraintsForm::text;
-bool AllSpaceConstraintsForm::caseSensitive=false;
-
-AllSpaceConstraintsForm::AllSpaceConstraintsForm()
+AllSpaceConstraintsForm::AllSpaceConstraintsForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
-    
-    modifyConstraintPushButton->setDefault(true);
-    
-    constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	setupUi(this);
+	
+	currentConstraintTextEdit->setReadOnly(true);
+	
+	modifyConstraintPushButton->setDefault(true);
+	
+	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-    connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this /*AllSpaceConstraintsForm_template*/, SLOT(constraintChanged()));
-    connect(closePushButton, SIGNAL(clicked()), this /*AllSpaceConstraintsForm_template*/, SLOT(close()));
-    connect(removeConstraintPushButton, SIGNAL(clicked()), this /*AllSpaceConstraintsForm_template*/, SLOT(removeConstraint()));
-    connect(modifyConstraintPushButton, SIGNAL(clicked()), this /*AllSpaceConstraintsForm_template*/, SLOT(modifyConstraint()));
-    connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this /*AllSpaceConstraintsForm_template*/, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged()));
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
+	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
+	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+	connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
 
-   connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
-
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
-		
+	restoreFETDialogGeometry(this);
+	//restore splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
+		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
 
-	if(!this->filterInitialized){
-		all=true;
-		descrDetDescr.clear();
-		descrDetDescr.append(DESCRIPTION);
-		contains.clear();
-		contains.append(CONTAINS);
-		text.clear();
-		text.append(QString(""));
-		caseSensitive=false;
-		
-		this->filterInitialized=true;
-	}
+	QString settingsName="AllSpaceConstraintsAdvancedFilterForm";
+
+	all=settings.value(settingsName+"/all-conditions", "true").toBool();
+
+	descrDetDescr.clear();
+	int n=settings.value(settingsName+"/number-of-descriptions", "1").toInt();
+	for(int i=0; i<n; i++)
+		descrDetDescr.append(settings.value(settingsName+"/description/"+CustomFETString::number(i+1), CustomFETString::number(DESCRIPTION)).toInt());
+
+	contains.clear();
+	n=settings.value(settingsName+"/number-of-contains", "1").toInt();
+	for(int i=0; i<n; i++)
+		contains.append(settings.value(settingsName+"/contains/"+CustomFETString::number(i+1), CustomFETString::number(CONTAINS)).toInt());
+
+	text.clear();
+	n=settings.value(settingsName+"/number-of-texts", "1").toInt();
+	for(int i=0; i<n; i++)
+		text.append(settings.value(settingsName+"/text/"+CustomFETString::number(i+1), QString("")).toString());
+
+	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
 
 	useFilter=false;
 	
@@ -128,8 +135,32 @@ AllSpaceConstraintsForm::AllSpaceConstraintsForm()
 
 AllSpaceConstraintsForm::~AllSpaceConstraintsForm()
 {
-}
+	saveFETDialogGeometry(this);
+	//save splitter state
+	QSettings settings(COMPANY, PROGRAM);
+	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
 
+	QString settingsName="AllSpaceConstraintsAdvancedFilterForm";
+
+	settings.setValue(settingsName+"/all-conditions", all);
+
+	settings.setValue(settingsName+"/number-of-descriptions", descrDetDescr.count());
+	settings.remove(settingsName+"/description");
+	for(int i=0; i<descrDetDescr.count(); i++)
+		settings.setValue(settingsName+"/description/"+CustomFETString::number(i+1), descrDetDescr.at(i));
+
+	settings.setValue(settingsName+"/number-of-contains", contains.count());
+	settings.remove(settingsName+"/contains");
+	for(int i=0; i<contains.count(); i++)
+		settings.setValue(settingsName+"/contains/"+CustomFETString::number(i+1), contains.at(i));
+
+	settings.setValue(settingsName+"/number-of-texts", text.count());
+	settings.remove(settingsName+"/text");
+	for(int i=0; i<text.count(); i++)
+		settings.setValue(settingsName+"/text/"+CustomFETString::number(i+1), text.at(i));
+
+	settings.setValue(settingsName+"/case-sensitive", caseSensitive);
+}
 
 bool AllSpaceConstraintsForm::filterOk(SpaceConstraint* ctr)
 {
@@ -200,7 +231,7 @@ void AllSpaceConstraintsForm::filterChanged()
 		}
 		
 	if(constraintsListWidget->count()<=0)
-		currentConstraintTextEdit->setText("");
+		currentConstraintTextEdit->setPlainText("");
 	else
 		constraintsListWidget->setCurrentRow(0);
 	
@@ -220,7 +251,7 @@ void AllSpaceConstraintsForm::constraintChanged()
 	SpaceConstraint* ctr=visibleSpaceConstraintsList.at(index);
 	assert(ctr!=NULL);
 	QString s=ctr->getDetailedDescription(gt.rules);
-	currentConstraintTextEdit->setText(s);
+	currentConstraintTextEdit->setPlainText(s);
 }
 
 void AllSpaceConstraintsForm::modifyConstraint()
@@ -237,111 +268,162 @@ void AllSpaceConstraintsForm::modifyConstraint()
 	assert(i<visibleSpaceConstraintsList.count());
 	SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
 	
+	//1
 	if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE){
-		ModifyConstraintBasicCompulsorySpaceForm form((ConstraintBasicCompulsorySpace*)ctr);
+		ModifyConstraintBasicCompulsorySpaceForm form(this, (ConstraintBasicCompulsorySpace*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//2
 	else if(ctr->type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES){
-		ModifyConstraintRoomNotAvailableTimesForm form((ConstraintRoomNotAvailableTimes*)ctr);
+		ModifyConstraintRoomNotAvailableTimesForm form(this, (ConstraintRoomNotAvailableTimes*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//3
 	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
-		ModifyConstraintActivityPreferredRoomForm form((ConstraintActivityPreferredRoom*)ctr);
+		ModifyConstraintActivityPreferredRoomForm form(this, (ConstraintActivityPreferredRoom*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//4
 	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOMS){
-		ModifyConstraintActivityPreferredRoomsForm form((ConstraintActivityPreferredRooms*)ctr);
+		ModifyConstraintActivityPreferredRoomsForm form(this, (ConstraintActivityPreferredRooms*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//5
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_HOME_ROOM){
-		ModifyConstraintStudentsSetHomeRoomForm form((ConstraintStudentsSetHomeRoom*)ctr);
+		ModifyConstraintStudentsSetHomeRoomForm form(this, (ConstraintStudentsSetHomeRoom*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//6
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_HOME_ROOMS){
-		ModifyConstraintStudentsSetHomeRoomsForm form((ConstraintStudentsSetHomeRooms*)ctr);
+		ModifyConstraintStudentsSetHomeRoomsForm form(this, (ConstraintStudentsSetHomeRooms*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//7
 	else if(ctr->type==CONSTRAINT_TEACHER_HOME_ROOM){
-		ModifyConstraintTeacherHomeRoomForm form((ConstraintTeacherHomeRoom*)ctr);
+		ModifyConstraintTeacherHomeRoomForm form(this, (ConstraintTeacherHomeRoom*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//8
 	else if(ctr->type==CONSTRAINT_TEACHER_HOME_ROOMS){
-		ModifyConstraintTeacherHomeRoomsForm form((ConstraintTeacherHomeRooms*)ctr);
+		ModifyConstraintTeacherHomeRoomsForm form(this, (ConstraintTeacherHomeRooms*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//9
 	else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOM){
-		ModifyConstraintSubjectPreferredRoomForm form((ConstraintSubjectPreferredRoom*)ctr);
+		ModifyConstraintSubjectPreferredRoomForm form(this, (ConstraintSubjectPreferredRoom*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//10
 	else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOMS){
-		ModifyConstraintSubjectPreferredRoomsForm form((ConstraintSubjectPreferredRooms*)ctr);
+		ModifyConstraintSubjectPreferredRoomsForm form(this, (ConstraintSubjectPreferredRooms*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//11
 	else if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM){
-		ModifyConstraintSubjectActivityTagPreferredRoomForm form((ConstraintSubjectActivityTagPreferredRoom*)ctr);
+		ModifyConstraintSubjectActivityTagPreferredRoomForm form(this, (ConstraintSubjectActivityTagPreferredRoom*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//12
 	else if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS){
-		ModifyConstraintSubjectActivityTagPreferredRoomsForm form((ConstraintSubjectActivityTagPreferredRooms*)ctr);
+		ModifyConstraintSubjectActivityTagPreferredRoomsForm form(this, (ConstraintSubjectActivityTagPreferredRooms*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
 	///6 apr 2009
+	//13
 	else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM){
-		ModifyConstraintActivityTagPreferredRoomForm form((ConstraintActivityTagPreferredRoom*)ctr);
+		ModifyConstraintActivityTagPreferredRoomForm form(this, (ConstraintActivityTagPreferredRoom*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//14
 	else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS){
-		ModifyConstraintActivityTagPreferredRoomsForm form((ConstraintActivityTagPreferredRooms*)ctr);
+		ModifyConstraintActivityTagPreferredRoomsForm form(this, (ConstraintActivityTagPreferredRooms*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
 	///
+	//15
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY){
-		ModifyConstraintStudentsSetMaxBuildingChangesPerDayForm form((ConstraintStudentsSetMaxBuildingChangesPerDay*)ctr);
+		ModifyConstraintStudentsSetMaxBuildingChangesPerDayForm form(this, (ConstraintStudentsSetMaxBuildingChangesPerDay*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//16
 	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_DAY){
-		ModifyConstraintStudentsMaxBuildingChangesPerDayForm form((ConstraintStudentsMaxBuildingChangesPerDay*)ctr);
+		ModifyConstraintStudentsMaxBuildingChangesPerDayForm form(this, (ConstraintStudentsMaxBuildingChangesPerDay*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//17
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_WEEK){
-		ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm form((ConstraintStudentsSetMaxBuildingChangesPerWeek*)ctr);
+		ModifyConstraintStudentsSetMaxBuildingChangesPerWeekForm form(this, (ConstraintStudentsSetMaxBuildingChangesPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//18
 	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_WEEK){
-		ModifyConstraintStudentsMaxBuildingChangesPerWeekForm form((ConstraintStudentsMaxBuildingChangesPerWeek*)ctr);
+		ModifyConstraintStudentsMaxBuildingChangesPerWeekForm form(this, (ConstraintStudentsMaxBuildingChangesPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//19
 	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
-		ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm form((ConstraintStudentsSetMinGapsBetweenBuildingChanges*)ctr);
+		ModifyConstraintStudentsSetMinGapsBetweenBuildingChangesForm form(this, (ConstraintStudentsSetMinGapsBetweenBuildingChanges*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//20
 	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
-		ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm form((ConstraintStudentsMinGapsBetweenBuildingChanges*)ctr);
+		ModifyConstraintStudentsMinGapsBetweenBuildingChangesForm form(this, (ConstraintStudentsMinGapsBetweenBuildingChanges*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
-
+	//21
 	else if(ctr->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY){
-		ModifyConstraintTeacherMaxBuildingChangesPerDayForm form((ConstraintTeacherMaxBuildingChangesPerDay*)ctr);
+		ModifyConstraintTeacherMaxBuildingChangesPerDayForm form(this, (ConstraintTeacherMaxBuildingChangesPerDay*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//22
 	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY){
-		ModifyConstraintTeachersMaxBuildingChangesPerDayForm form((ConstraintTeachersMaxBuildingChangesPerDay*)ctr);
+		ModifyConstraintTeachersMaxBuildingChangesPerDayForm form(this, (ConstraintTeachersMaxBuildingChangesPerDay*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//23
 	else if(ctr->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_WEEK){
-		ModifyConstraintTeacherMaxBuildingChangesPerWeekForm form((ConstraintTeacherMaxBuildingChangesPerWeek*)ctr);
+		ModifyConstraintTeacherMaxBuildingChangesPerWeekForm form(this, (ConstraintTeacherMaxBuildingChangesPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//24
 	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_WEEK){
-		ModifyConstraintTeachersMaxBuildingChangesPerWeekForm form((ConstraintTeachersMaxBuildingChangesPerWeek*)ctr);
+		ModifyConstraintTeachersMaxBuildingChangesPerWeekForm form(this, (ConstraintTeachersMaxBuildingChangesPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//25
 	else if(ctr->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
-		ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm form((ConstraintTeacherMinGapsBetweenBuildingChanges*)ctr);
+		ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm form(this, (ConstraintTeacherMinGapsBetweenBuildingChanges*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//26
 	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
-		ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm form((ConstraintTeachersMinGapsBetweenBuildingChanges*)ctr);
+		ModifyConstraintTeachersMinGapsBetweenBuildingChangesForm form(this, (ConstraintTeachersMinGapsBetweenBuildingChanges*)ctr);
+		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
 	else{
@@ -387,7 +469,7 @@ void AllSpaceConstraintsForm::removeConstraint()
 		s, tr("Yes"), tr("No"), 0, 0, 1 );
 		
 	if(lres==0){
-		// The user clicked the OK again button or pressed Enter
+		//The user clicked the OK button or pressed Enter
 		
 		QMessageBox::StandardButton wr=QMessageBox::Yes;
 		
@@ -427,7 +509,7 @@ void AllSpaceConstraintsForm::removeConstraint()
 		}
 	}
 	//else if(lres==1){
-		// The user clicked the Cancel or pressed Escape
+		//The user clicked the Cancel button or pressed Escape
 	//}
 	
 	if(i>=constraintsListWidget->count())
@@ -435,7 +517,7 @@ void AllSpaceConstraintsForm::removeConstraint()
 	if(i>=0)
 		constraintsListWidget->setCurrentRow(i);
 	else
-		currentConstraintTextEdit->setText(QString(""));
+		currentConstraintTextEdit->setPlainText(QString(""));
 }
 
 void AllSpaceConstraintsForm::filter(bool active)
@@ -451,9 +533,7 @@ void AllSpaceConstraintsForm::filter(bool active)
 	
 	assert(active);
 	
-	filterForm=new AdvancedFilterForm(all, descrDetDescr, contains, text, caseSensitive);
-
-	//centerWidgetOnScreen(filterForm);
+	filterForm=new AdvancedFilterForm(this, all, descrDetDescr, contains, text, caseSensitive, "AllSpaceConstraintsAdvancedFilterForm");
 
 	int t=filterForm->exec();
 	
@@ -481,8 +561,8 @@ void AllSpaceConstraintsForm::filter(bool active)
 			QComboBox* cb2=filterForm->contNContReNReComboBoxList.at(i);
 			QLineEdit* tl=filterForm->textLineEditList.at(i);
 			
-			descrDetDescr.append(cb1->currentItem());
-			contains.append(cb2->currentItem());
+			descrDetDescr.append(cb1->currentIndex());
+			contains.append(cb2->currentIndex());
 			text.append(tl->text());
 		}
 		

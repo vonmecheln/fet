@@ -33,6 +33,7 @@
 #include <QList>
 
 #include <QDialog>
+
 class QTableWidget;
 class QRadioButton;
 class QCheckBox;
@@ -42,22 +43,27 @@ class QComboBox;
 class QGroupBox;
 class QToolButton;
 class QSizePolicy;
+class QSplitter;
 
 class StartActivityPlanning{
 public:
 	StartActivityPlanning();
 	~StartActivityPlanning();
 
-	static void startActivityPlanning();
+	static void startActivityPlanning(QWidget* parent);
 };
 
 class ActivityPlanningForm: public QDialog{
 	Q_OBJECT
 	
 public:							//can i do that private, too?
-	ActivityPlanningForm(QWidget *parent = 0);
+	ActivityPlanningForm(QWidget *parent);
+	~ActivityPlanningForm();
 
 private:
+	bool buttonsVisible;
+
+	QSplitter* leftSplitter;
 	SparseTableView* activitiesTableView;
 	SparseTableView* teachersTableView;
 	QRadioButton* RBActivity;

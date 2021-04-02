@@ -24,11 +24,12 @@
 
 void tableWidgetUpdateBug(QTableWidget* table)
 {
-	//this is for bug appeared in Qt 4.5.3. The bug seems to be solved in subsequent versions.
+	//this is for a bug appeared in Qt 4.5.3. The bug seems to be solved in Qt subsequent versions.
 
 	QString buggy1=QString("4.5.3");
 	QString crtVersion=qVersion();
 	if(crtVersion==buggy1){
-		table->viewport()->update();
+		if(table->viewport())
+			table->viewport()->update();
 	}
 }

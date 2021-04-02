@@ -25,11 +25,6 @@
 
 #include "advancedfilterform.h"
 
-/*
-typedef enum {ALL, ANY} ALLANY;
-typedef enum {DESCRIPTION=0, DETDESCRIPTION=1} DESCRDETDESCR;
-typedef enum {CONTAINS=0, DOESNOTCONTAIN=1, REGEXP=2, NOTREGEXP=3} CONTAINSORNOT;*/
-
 class AllSpaceConstraintsForm : public QDialog, Ui::AllSpaceConstraintsForm_template  {
 	Q_OBJECT
 
@@ -38,18 +33,16 @@ private:
 
 	QList<SpaceConstraint*> visibleSpaceConstraintsList;
 	
-	static bool filterInitialized;
-
-	static bool all; //all or any, true means all, false means any
-	static QList<int> descrDetDescr;
-	static QList<int> contains;
-	static QStringList text;
-	static bool caseSensitive;
+	bool all; //all or any, true means all, false means any
+	QList<int> descrDetDescr;
+	QList<int> contains;
+	QStringList text;
+	bool caseSensitive;
 	
 	bool useFilter;
 	
 public:
-	AllSpaceConstraintsForm();
+	AllSpaceConstraintsForm(QWidget* parent);
 	~AllSpaceConstraintsForm();
 
 	bool filterOk(SpaceConstraint* ctr);

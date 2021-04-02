@@ -71,7 +71,7 @@ Note: students set not available and break are not counted as gaps.</string>
      <item row="2" column="1" colspan="2">
       <widget class="QLineEdit" name="weightLineEdit">
        <property name="text">
-        <string>100</string>
+        <string notr="true">100</string>
        </property>
       </widget>
      </item>
@@ -114,12 +114,6 @@ Note: students set not available and break are not counted as gaps.</string>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>weightLineEdit</tabstop>
-  <tabstop>maxGapsSpinBox</tabstop>
-  <tabstop>okPushButton</tabstop>
-  <tabstop>cancelPushButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

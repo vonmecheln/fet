@@ -17,28 +17,22 @@
 
 #include <QMessageBox>
 
-#include <cstdio>
-
 #include "longtextmessagebox.h"
 
 #include "addconstraintsubjectactivitytagpreferredroomform.h"
 #include "spaceconstraint.h"
 
-AddConstraintSubjectActivityTagPreferredRoomForm::AddConstraintSubjectActivityTagPreferredRoomForm()
+AddConstraintSubjectActivityTagPreferredRoomForm::AddConstraintSubjectActivityTagPreferredRoomForm(QWidget* parent): QDialog(parent)
 {
-    setupUi(this);
+	setupUi(this);
 
-    connect(closePushButton, SIGNAL(clicked()), this /*AddConstraintSubjectActivityTagPreferredRoomForm_template*/, SLOT(close()));
-    connect(addConstraintPushButton, SIGNAL(clicked()), this /*AddConstraintSubjectActivityTagPreferredRoomForm_template*/, SLOT(addConstraint()));
+	addConstraintPushButton->setDefault(true);
 
+	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
+	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
 
-	//setWindowFlags(Qt::Window);
-	/*setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
-	QDesktopWidget* desktop=QApplication::desktop();
-	int xx=desktop->width()/2 - frameGeometry().width()/2;
-	int yy=desktop->height()/2 - frameGeometry().height()/2;
-	move(xx, yy);*/
 	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	QSize tmp3=subjectsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp3);
@@ -55,6 +49,7 @@ AddConstraintSubjectActivityTagPreferredRoomForm::AddConstraintSubjectActivityTa
 
 AddConstraintSubjectActivityTagPreferredRoomForm::~AddConstraintSubjectActivityTagPreferredRoomForm()
 {
+	saveFETDialogGeometry(this);
 }
 
 void AddConstraintSubjectActivityTagPreferredRoomForm::updateSubjectsComboBox()
@@ -62,7 +57,7 @@ void AddConstraintSubjectActivityTagPreferredRoomForm::updateSubjectsComboBox()
 	subjectsComboBox->clear();
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sb=gt.rules.subjectsList[i];
-		subjectsComboBox->insertItem(sb->name);
+		subjectsComboBox->addItem(sb->name);
 	}
 }
 
@@ -71,7 +66,7 @@ void AddConstraintSubjectActivityTagPreferredRoomForm::updateActivityTagsComboBo
 	activityTagsComboBox->clear();
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
 		ActivityTag* sb=gt.rules.activityTagsList[i];
-		activityTagsComboBox->insertItem(sb->name);
+		activityTagsComboBox->addItem(sb->name);
 	}
 }
 
@@ -80,7 +75,7 @@ void AddConstraintSubjectActivityTagPreferredRoomForm::updateRoomsComboBox()
 	roomsComboBox->clear();
 	for(int i=0; i<gt.rules.roomsList.size(); i++){
 		Room* rm=gt.rules.roomsList[i];
-		roomsComboBox->insertItem(rm->name);
+		roomsComboBox->addItem(rm->name);
 	}
 }
 
@@ -90,18 +85,14 @@ void AddConstraintSubjectActivityTagPreferredRoomForm::addConstraint()
 
 	double weight;
 	QString tmp=weightLineEdit->text();
-	sscanf(tmp, "%lf", &weight);
+	weight_sscanf(tmp, "%lf", &weight);
 	if(weight<0.0 || weight>100){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid weight"));
 		return;
 	}
 
-/*	bool compulsory=false;
-	if(compulsoryCheckBox->isChecked())
-		compulsory=true;*/
-
-	int i=subjectsComboBox->currentItem();
+	int i=subjectsComboBox->currentIndex();
 	if(i<0 || subjectsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid subject"));
@@ -109,7 +100,7 @@ void AddConstraintSubjectActivityTagPreferredRoomForm::addConstraint()
 	}
 	QString subject=subjectsComboBox->currentText();
 
-	i=activityTagsComboBox->currentItem();
+	i=activityTagsComboBox->currentIndex();
 	if(i<0 || activityTagsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid activity tag"));
@@ -117,7 +108,7 @@ void AddConstraintSubjectActivityTagPreferredRoomForm::addConstraint()
 	}
 	QString activityTag=activityTagsComboBox->currentText();
 
-	i=roomsComboBox->currentItem();
+	i=roomsComboBox->currentIndex();
 	if(i<0 || roomsComboBox->count()<=0){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid room"));
@@ -125,7 +116,7 @@ void AddConstraintSubjectActivityTagPreferredRoomForm::addConstraint()
 	}
 	QString room=roomsComboBox->currentText();
 
-	ctr=new ConstraintSubjectActivityTagPreferredRoom(weight/*, compulsory*/, subject, activityTag, room);
+	ctr=new ConstraintSubjectActivityTagPreferredRoom(weight, subject, activityTag, room);
 
 	bool tmp2=gt.rules.addSpaceConstraint(ctr);
 	if(tmp2){

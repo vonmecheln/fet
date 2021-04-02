@@ -28,7 +28,7 @@ class ModifyConstraintActivityPreferredStartingTimesForm : public QDialog, Ui::M
 
 	ConstraintActivityPreferredStartingTimes* _ctr;
 public:
-	ModifyConstraintActivityPreferredStartingTimesForm(ConstraintActivityPreferredStartingTimes* ctr);
+	ModifyConstraintActivityPreferredStartingTimesForm(QWidget* parent, ConstraintActivityPreferredStartingTimes* ctr);
 	~ModifyConstraintActivityPreferredStartingTimesForm();
 
 	void updateActivitiesComboBox();
