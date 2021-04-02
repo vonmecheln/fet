@@ -23,7 +23,7 @@
 /**
 FET version
 */
-const QString FET_VERSION="5.0.0-preview19";
+const QString FET_VERSION="5.0.0-preview20";
 
 /**
 FET language

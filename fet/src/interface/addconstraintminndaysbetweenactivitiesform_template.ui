@@ -92,8 +92,8 @@
                 <cstring>adjIfBrokenCheckBox</cstring>
             </property>
             <property name="text">
-                <string>If broken, force
-adjcency of activities</string>
+                <string>If broken, force activities
+continuous (in a larger activity)</string>
             </property>
             <property name="checked">
                 <bool>true</bool>

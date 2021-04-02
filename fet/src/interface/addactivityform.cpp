@@ -604,8 +604,20 @@ void AddActivityForm::help()
 	 "You can check/uncheck show years, show groups or show subgroups.\n\n"
 	
 	 "If you split an activity into more sub-activities per week, you have a multitude of choices:\n"
-	 "You can choose the minimum distance in days between each pair of subactivities. If you choose a "
-	 "value greater or equal with 1, a time constraint min n days between activities will be added automatically "
+	 "You can choose the minimum distance in days between each pair of subactivities."
+	 " Please note that a minimum distance of 1 means that the activities must not be in the same day, "
+	 "a minimum distance of 2 means that the activities must be separated by one day (distance from Monday "
+	 " to Wednesday for instance is 2 days), etc.\n\n"
+	 
+	 " If you have for instance an activity with 2 lessons per week and you want to spread them equally, "
+	 "you can add a constraint min n days with minimum days = 1 and weight 100% and another constraint "
+	 "(which has to be added manually, because the add activity dialog has only one constraint possible) "
+	 "with min days 2 and weight for instance 95% or lower., but please be careful not to select "
+	 "continuous if broken for the second constraint (with lower weight and lower min n days), "
+	 "because it results that you need the activities 2 days apart all the time, from the combination "
+	 "of these 2 constraints\n\n"
+	 
+	 " If you choose a value greater or equal with 1 for min days, a time constraint min n days between activities will be added automatically "
 	 "(you can see this constraint in the time constraints list or you can see this constraint in the"
 	 "detailed description of the activity). You can select a weight percentage for this constraint. "
 	 "If you select 100%, the constraint must be respected all the time. If you select 95%, there is a small chance "
