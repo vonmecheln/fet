@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>537</width>
+            <width>588</width>
             <height>567</height>
         </rect>
     </property>
@@ -19,7 +19,7 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <widget class="QListBox" row="1" column="0" rowspan="1" colspan="2">
+        <widget class="QListBox" row="1" column="0" rowspan="2" colspan="2">
             <item>
                 <property name="text">
                     <string>New Item</string>
@@ -43,7 +43,7 @@
                 <string>Constraints</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="2" column="3">
+        <widget class="QPushButton" row="3" column="3">
             <property name="name">
                 <cstring>closePushButton</cstring>
             </property>
@@ -51,7 +51,7 @@
                 <string>Close</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="2" column="0">
+        <widget class="QPushButton" row="3" column="0">
             <property name="name">
                 <cstring>addConstraintPushButton</cstring>
             </property>
@@ -59,15 +59,7 @@
                 <string>Add</string>
             </property>
         </widget>
-        <widget class="QLabel" row="0" column="2" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>currentConstraintTextLabel</cstring>
-            </property>
-            <property name="text">
-                <string>Current constraint</string>
-            </property>
-        </widget>
-        <widget class="QPushButton" row="2" column="2">
+        <widget class="QPushButton" row="3" column="2">
             <property name="name">
                 <cstring>removeConstraintPushButton</cstring>
             </property>
@@ -75,7 +67,7 @@
                 <string>Remove</string>
             </property>
         </widget>
-        <widget class="QPushButton" row="2" column="1">
+        <widget class="QPushButton" row="3" column="1">
             <property name="name">
                 <cstring>modifyConstraintPushButton</cstring>
             </property>
@@ -92,6 +84,79 @@
             </property>
             <property name="readOnly">
                 <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QGroupBox" row="2" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>filterGroupBox</cstring>
+            </property>
+            <property name="title">
+                <string>Filter</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>teachersTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Teacher</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="1" column="0">
+                    <property name="name">
+                        <cstring>teachersComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="6" column="0">
+                    <property name="name">
+                        <cstring>subjectTagsTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Subject tag</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="7" column="0">
+                    <property name="name">
+                        <cstring>subjectTagsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="5" column="0">
+                    <property name="name">
+                        <cstring>subjectsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="0">
+                    <property name="name">
+                        <cstring>subjectsTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Subject</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="3" column="0">
+                    <property name="name">
+                        <cstring>studentsComboBox</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>studentsTextLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Students set</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QLabel" row="0" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>currentConstraintTextLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Current constraint</string>
             </property>
         </widget>
     </grid>
@@ -132,6 +197,30 @@
         <signal>selected(const QString&amp;)</signal>
         <receiver>ConstraintActivityPreferredTimesForm_template</receiver>
         <slot>modifyConstraint()</slot>
+    </connection>
+    <connection>
+        <sender>teachersComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ConstraintActivityPreferredTimesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>studentsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ConstraintActivityPreferredTimesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ConstraintActivityPreferredTimesForm_template</receiver>
+        <slot>filterChanged()</slot>
+    </connection>
+    <connection>
+        <sender>subjectTagsComboBox</sender>
+        <signal>activated(const QString&amp;)</signal>
+        <receiver>ConstraintActivityPreferredTimesForm_template</receiver>
+        <slot>filterChanged()</slot>
     </connection>
 </connections>
 <tabstops>

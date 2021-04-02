@@ -12,12 +12,63 @@ From Peter Ambroz:
 
 ----------------------------------------------------------------------------------
 
+From Danail:
+
+You see, this division in subgroups is very complicated - to understand 
+and to add by hand. And at the end you came with a lot of subgroups that 
+have only formal sense, for the algorithm, but are visible in dialogs, 
+in the final chart and everywhere. It should not be like this. One will 
+have to divide years in wizard-like dialog, with questions:
+1. How many classes you have for this year?
+2. Define courses for which students from this year study together
+3. Which of these curses start at same time. Group them by this criteria
+4. Define from which classes came students for these courses. Whole 
+class is caming, or only part of it? Where other part goes - have rest, 
+or has another activity, and if yes - which one?
+5. Define teacher that is teaching in every course.
+
+This is a draft, but some wizard like this will save *a lot of" 
+mistakes, and will make program much more user friendly. Then you can 
+add internal groups, but not show them to users, or at least show if 
+they set some option. Show them only groups and subgroups that they need 
+to put in activities, and show these same in final html output.
+
+This is my opinion of user in trouble :-)
+
+
+Second set:
+1.Ability to select more than one constraint and delete it, or set its 
+weight
+2.Ability to disable all informative and warning messages, or to display 
+them in status bar or in another log window.
+3.Option to remember last focused control in dialogs - very useful if 
+you want by keyboard to open many constraints and change their weight
+4.Constraint "Max gaps per day" and "longest gap is n hours"
+5.way to save last generated timetable and reopen it again (for example 
+for printing it with different html level, or for viewing it.
+6.Ability to show free teachers for every position in students and 
+teachers timetable - very useful if you want to find somebody to replace you
+
+
+----------------------------------------------------------------------------------
+
 From Maciej Deorowicz:
 
 Buildings for rooms and constraint students max building changes per day
 and constraint students min gaps between building changes.
 
 ConstraintActivitiesPreferredRoom(s) (like acts. pref. times)
+
+
+Maybe similar request with min gaps between building changes, from Marco Barsotti:
+
+>    - I have more teachers with some activity in some classes at a *first
+>    address* (subject tag 1). They have also some activity with some *other
+>    classes* at a *second address* (subject tag 2). When I define an
+>    activity and I add a subject tag, I would like to be able (select)
+> impose a gap after that activity IF (and only IF) *next activity (for
+> teacher*) has a different subject tag. Can you plan to add a such
+> constraint? - 
 
 ----------------------------------------------------------------------------------
 

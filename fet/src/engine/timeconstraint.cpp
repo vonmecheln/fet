@@ -150,7 +150,6 @@ QString ConstraintBasicCompulsoryTime::getDetailedDescription(Rules& r)
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString){
 	assert(r.internalStructureComputed);
 
@@ -540,7 +539,6 @@ bool ConstraintTeacherNotAvailable::computeInternalStructure(Rules& r){
 	return true;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintTeacherNotAvailable::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -785,7 +783,6 @@ QString ConstraintStudentsSetNotAvailable::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintStudentsSetNotAvailable::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -1058,7 +1055,6 @@ QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintActivitiesSameStartingTime::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	assert(r.internalStructureComputed);
@@ -1360,7 +1356,6 @@ QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintActivitiesNotOverlapping::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	assert(r.internalStructureComputed);
@@ -1729,7 +1724,6 @@ QString ConstraintMinNDaysBetweenActivities::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintMinNDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	assert(r.internalStructureComputed);
@@ -2015,7 +2009,6 @@ QString ConstraintTeachersMaxHoursDaily::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintTeachersMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -2196,7 +2189,6 @@ QString ConstraintTeacherMaxHoursDaily::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintTeacherMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -2379,7 +2371,6 @@ QString ConstraintTeacherMaxDaysPerWeek::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintTeacherMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString *conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -2583,7 +2574,6 @@ QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintTeachersMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 { 
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -2755,7 +2745,6 @@ QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintTeacherMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 { 
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -2949,7 +2938,6 @@ bool ConstraintBreak::computeInternalStructure(Rules& r)
 	return true;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintBreak::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -3150,7 +3138,6 @@ QString ConstraintStudentsNoGaps::getDetailedDescription(Rules& r)
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintStudentsNoGaps::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//returns a number equal to the number of windows of the subgroups (in hours)
@@ -3362,7 +3349,6 @@ QString ConstraintStudentsSetNoGaps::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintStudentsSetNoGaps::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//OLD COMMENT
@@ -3534,7 +3520,6 @@ QString ConstraintStudentsEarly::getDetailedDescription(Rules& r)
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintStudentsEarly::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//considers the condition that the hours of subgroups begin as early as possible
@@ -3744,7 +3729,6 @@ QString ConstraintStudentsSetEarly::getDetailedDescription(Rules& r)
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintStudentsSetEarly::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//considers the condition that the hours of subgroups begin as early as possible
@@ -3920,7 +3904,6 @@ QString ConstraintStudentsMaxHoursDaily::getDetailedDescription(Rules& r)
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintStudentsMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -4171,7 +4154,6 @@ bool ConstraintStudentsSetMaxHoursDaily::computeInternalStructure(Rules &r)
 	return true;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintStudentsSetMaxHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -4374,7 +4356,6 @@ QString ConstraintStudentsMinHoursDaily::getDetailedDescription(Rules& r)
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -4404,7 +4385,10 @@ double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 				if(subgroupsMatrix[i][j][k]>=1)
 					tmp++;
 			}
-			if(this->minHoursDaily>=0 && tmp < this->minHoursDaily){ //we would like no more than maxHoursDaily hours per day.
+			
+			//if(tmp>0) - smart, for empty days does not consider
+			
+			if(this->minHoursDaily>=0 && tmp < this->minHoursDaily){ //we would like no less than minHoursDaily hours per day.
 				too_little += - tmp + this->minHoursDaily;
 
 				if(conflictsString!=NULL){
@@ -4422,6 +4406,8 @@ double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 			}
 		}
 
+	//for empty days should not consider
+			
 	assert(too_little>=0);
 	//if(weightPercentage==100) does not work for partial solutions
 	//	assert(too_little==0);
@@ -4598,7 +4584,6 @@ bool ConstraintStudentsSetMinHoursDaily::computeInternalStructure(Rules &r)
 	return true;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintStudentsSetMinHoursDaily::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -4912,7 +4897,6 @@ QString ConstraintActivityPreferredTime::getDetailedDescription(Rules& r)
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintActivityPreferredTime::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -5232,7 +5216,6 @@ QString ConstraintActivityPreferredTimes::getDetailedDescription(Rules& r)
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintActivityPreferredTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -5578,7 +5561,6 @@ QString ConstraintActivitiesPreferredTimes::getDetailedDescription(Rules& r)
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintActivitiesPreferredTimes::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -5922,7 +5904,6 @@ QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintActivitiesSameStartingHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	assert(r.internalStructureComputed);
@@ -6256,7 +6237,6 @@ QString Constraint2ActivitiesConsecutive::getDetailedDescription(Rules& r)
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double Constraint2ActivitiesConsecutive::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
@@ -6528,7 +6508,6 @@ QString ConstraintActivityEndsStudentsDay::getDetailedDescription(Rules& r)
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintActivityEndsStudentsDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, QString* conflictsString)
 {
 	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!

@@ -134,8 +134,6 @@ QString ConstraintBasicCompulsorySpace::getDetailedDescription(Rules& r)
 	return s;
 }
 
-//NOT CRITICAL as with new algorithm
-//critical function here - must be optimized for speed
 double ConstraintBasicCompulsorySpace::fitness(
 	Solution& c,
 	Rules& r,
@@ -471,7 +469,6 @@ bool ConstraintRoomNotAvailable::computeInternalStructure(Rules& r){
 	return true;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintRoomNotAvailable::fitness(
 	Solution& c,
 	Rules& r,
@@ -766,7 +763,6 @@ QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintActivityPreferredRoom::fitness(
 	Solution& c,
 	Rules& r,
@@ -1043,7 +1039,6 @@ QString ConstraintActivityPreferredRooms::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintActivityPreferredRooms::fitness(
 	Solution& c,
 	Rules& r,
@@ -1225,7 +1220,6 @@ QString ConstraintSubjectPreferredRoom::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintSubjectPreferredRoom::fitness(
 	Solution& c,
 	Rules& r,
@@ -1427,7 +1421,6 @@ QString ConstraintSubjectPreferredRooms::getDetailedDescription(Rules& r){
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintSubjectPreferredRooms::fitness(
 	Solution& c,
 	Rules& r,
@@ -1623,7 +1616,6 @@ QString ConstraintSubjectSubjectTagPreferredRoom::getDetailedDescription(Rules& 
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintSubjectSubjectTagPreferredRoom::fitness(
 	Solution& c,
 	Rules& r,
@@ -1830,7 +1822,6 @@ QString ConstraintSubjectSubjectTagPreferredRooms::getDetailedDescription(Rules&
 	return s;
 }
 
-//critical function here - must be optimized for speed
 double ConstraintSubjectSubjectTagPreferredRooms::fitness(
 	Solution& c,
 	Rules& r,

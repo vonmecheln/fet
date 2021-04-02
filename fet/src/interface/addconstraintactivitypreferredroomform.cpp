@@ -201,7 +201,7 @@ void AddConstraintActivityPreferredRoomForm::addConstraint()
 	}
 	else{
 		QMessageBox::warning(this, QObject::tr("FET information"),
-			QObject::tr("Constraint NOT added - error ?"));
+			QObject::tr("Constraint NOT added - must be a duplicate"));
 		delete ctr;
 	}
 }

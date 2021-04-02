@@ -35,6 +35,8 @@
 #include <q3listbox.h>
 
 class ConstraintActivityPreferredRoomsForm : public ConstraintActivityPreferredRoomsForm_template  {
+	Q_OBJECT
+
 public:
 	SpaceConstraintsList visibleConstraintsList;
 
@@ -46,9 +48,9 @@ public:
 	void removeConstraint();
 	void modifyConstraint();
 	
-	void refreshConstraintsListBox();
-
 	bool filterOk(SpaceConstraint* ctr);
+	
+	void filterChanged();
 };
 
 #endif

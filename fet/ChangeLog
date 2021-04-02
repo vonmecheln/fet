@@ -1088,4 +1088,9 @@ Versions 5.3.0 - 5.3.6
 	- Minor cosmetic changes
 - Version 5.4.8
 	- Minor cosmetic changes
+- Version 5.4.9
+	- Spanish instructions by Jose Cesar Fernandez Lopez
+	- Groups and years timetable by Volker Dirr (in addition to old subgroups timetable)
+	- Small interface improvements (added filters in dialog of constraints: activity preferred time(s),
+	min n days between activities, activity preferred room(s))
 	

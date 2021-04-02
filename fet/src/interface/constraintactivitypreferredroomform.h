@@ -35,6 +35,8 @@
 #include <q3listbox.h>
 
 class ConstraintActivityPreferredRoomForm : public ConstraintActivityPreferredRoomForm_template  {
+	Q_OBJECT
+
 public:
 	SpaceConstraintsList visibleConstraintsList;
 

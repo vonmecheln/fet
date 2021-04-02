@@ -35,6 +35,8 @@
 #include <q3listbox.h>
 
 class ConstraintActivityPreferredTimesForm : public ConstraintActivityPreferredTimesForm_template  {
+	Q_OBJECT
+
 public:
 	TimeConstraintsList visibleConstraintsList;
 

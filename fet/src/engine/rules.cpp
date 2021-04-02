@@ -2562,7 +2562,9 @@ bool Rules::read(const QString& filename)
 		exit(1);
 	}
 	QTextStream logStream(&file2);
-	logStream.setEncoding(QTextStream::UnicodeUTF8);
+	//logStream.setEncoding(QTextStream::UnicodeUTF8);
+	logStream.setCodec("UTF-8");
+	logStream.setGenerateByteOrderMark(true);
 	
 	QDomElement elem1=doc.documentElement();
 	xmlReadingLog+=" Found "+elem1.tagName()+" tag\n";

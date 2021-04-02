@@ -86,6 +86,12 @@
             <property name="name">
                 <cstring>activitiesComboBox</cstring>
             </property>
+            <property name="maximumSize">
+                <size>
+                    <width>1600</width>
+                    <height>32767</height>
+                </size>
+            </property>
         </widget>
         <widget class="QLabel" row="4" column="0" rowspan="1" colspan="2">
             <property name="name">

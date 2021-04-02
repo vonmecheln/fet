@@ -135,4 +135,8 @@ void ConstraintSubjectPreferredRoomsForm::removeConstraint()
 	case 1: // The user clicked the Cancel or pressed Escape
 		break;
 	}
+
+	if((uint)(i) >= constraintsListBox->count())
+		i=constraintsListBox->count()-1;
+	constraintsListBox->setCurrentItem(i);
 }

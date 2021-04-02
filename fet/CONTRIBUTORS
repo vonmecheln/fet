@@ -10,9 +10,10 @@ Volker Dirr (to contact Volker Dirr visit http://www.timetabling.de/) - implemen
 	XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
 	(old code by Liviu Lalescu)
 	added features: - xhtml 1.0 strict valide
-	                - span using
-	                - times vertical
-	                - table of content with hyperlinks
-	                - css and JavaScript support
-	                - rooms
-	                - TIMETABLE_HTML_LEVEL
+		- colspan and rowspan using
+		- times vertical
+		- table of content with hyperlinks
+		- css and JavaScript support
+		- print rooms timetable
+		- TIMETABLE_HTML_LEVEL
+		- print groups and years timetable

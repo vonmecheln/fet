@@ -41,9 +41,9 @@ public:
 	static void writeSimulationResults(int n); //write in a directory with number n (for multiple generation)
 
 	/**
-	Function writing the students' timetable xml format, to a file
+	Function writing the subgroups' timetable xml format, to a file
 	*/
-	static void writeStudentsTimetableXml(const QString& xmlfilename);
+	static void writeSubgroupsTimetableXml(const QString& xmlfilename);
 
 	/**
 	Function writing the teachers' timetable in xml format
@@ -61,29 +61,76 @@ public:
 	static void writeStylesheetCss(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
-	Function writing the students' timetable html format, to a file
+	Function writing the subgroups' timetable html format, to a file
 	Days horizontal version.
 	*/
-	static void writeStudentsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+	static void writeSubgroupsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
-	Function writing the students' timetable html format, to a file
+	Function writing the subgroups' timetable html format, to a file
 	Days vertical version.
 	*/
-	static void writeStudentsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+	static void writeSubgroupsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
-	Function writing the students' timetable html format, to a file
+	Function writing the subgroups' timetable html format, to a file
 	Time horizontal version.
 	*/
-	static void writeStudentsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+	static void writeSubgroupsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
 	/**
-	Function writing the students' timetable html format, to a file
+	Function writing the subgroups' timetable html format, to a file
 	Time vertical version.
 	*/
-	static void writeStudentsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+	static void writeSubgroupsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
 
+		/**
+	Function writing the groups' timetable html format, to a file
+	Days horizontal version.
+	*/
+	static void writeGroupsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing the groups' timetable html format, to a file
+	Days vertical version.
+	*/
+	static void writeGroupsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing the groups' timetable html format, to a file
+	Time horizontal version.
+	*/
+	static void writeGroupsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing the groups' timetable html format, to a file
+	Time vertical version.
+	*/
+	static void writeGroupsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+	/**
+	Function writing the years' timetable html format, to a file
+	Days horizontal version.
+	*/
+	static void writeYearsTimetableDaysHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing the year' timetable html format, to a file
+	Days vertical version.
+	*/
+	static void writeYearsTimetableDaysVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing the year' timetable html format, to a file
+	Time horizontal version.
+	*/
+	static void writeYearsTimetableTimeHorizontalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+
+	/**
+	Function writing the year' timetable html format, to a file
+	Time vertical version.
+	*/
+	static void writeYearsTimetableTimeVerticalHtml(const QString& htmlfilename, QString saveTime, int placedActivities);
+	
 	/**
 	Function writing the teachers' timetable in html format
 	Days horizontal version

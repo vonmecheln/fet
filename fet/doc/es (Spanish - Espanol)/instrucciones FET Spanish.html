@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.2  (Unix)">
+	<META NAME="AUTHOR" CONTENT="cesar">
+	<META NAME="CREATED" CONTENT="20071002;320300">
+	<META NAME="CHANGEDBY" CONTENT="cesar">
+	<META NAME="CHANGED" CONTENT="20071002;1484000">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		P { margin-bottom: 0.08in }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="es-ES" DIR="LTR">
+<P STYLE="margin-bottom: 0in">Traducci&oacute;n actualizada a 30 de
+Septiembre de 2007 sobre la documentaci&oacute;n inglesa de la misma
+fecha. Revisi&oacute;n de original FET-5.4.8.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">Instrucciones por Liviu Lalescu y
+traducidas por C&eacute;sar Fern&aacute;ndez L&oacute;pez.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">Unas peque&ntilde;as instrucciones que
+se deber&iacute;an seguir para introducir unos datos adecuados y
+conseguir un horario con FET. 
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">Si se obtiene un horario imposible de
+resolver y su escuela permite que los alumnos empiecen m&aacute;s
+tarde, reconsidere las restricciones de que los alumnos empiecen a
+primera hora y/o c&aacute;mbielas por pausas o horas no disponibles
+en las &uacute;ltimas casillas del d&iacute;a. Tambi&eacute;n,
+eliminar o suavizar otras coacciones puede ayudar. Si FET no puede
+encontrar un horario para su escuela, aseg&uacute;rese de
+comunic&aacute;rselo al autor, ya que FET puede ser mejorado. Tambi&eacute;n
+es posible que peque&ntilde;os cambios en el archivo de datos puedan
+ofrecer buenas soluciones, o quiz&aacute;s alg&uacute;n aspecto de
+FET necesita cambiarse.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">Un horario imposible puede tambi&eacute;n
+ser debido a una divisi&oacute;n de cursos incorrecta. Compruebe las
+estad&iacute;sticas de los alumnos para todos los subgrupos, cada
+subgrupo deber&iacute;a tener las horas necesarias, ninguna menos. Si
+tiene, por ejemplo alg&uacute;n subgrupo con menos de 20 horas por
+semana, puede que sea imposible resolver este horario, probablemente
+a causa de una divisi&oacute;n incorrecta del curso y de las
+actividades que se han introducido. Todos los subgrupos son
+independientes y deber&iacute;an tener una cantidad de horas por
+semana cercana al promedio para todos los subgrupos. Consulte la
+documentaci&oacute;n FAQ (Respuesta a Preguntas Comunes) para m&aacute;s
+informaci&oacute;n.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">0) Seleccione correctamente los d&iacute;as
+y horas (o per&iacute;odos de trabajo). Para conseguir el mejor
+rendimiento, es mejor mantener el n&uacute;mero de horas (o per&iacute;odos)
+por d&iacute;a requeridos necesarios, no mayor. Es mejor practicar
+para elegir un valor para el n&uacute;mero de d&iacute;as y de horas
+desde el principio (puede cambiar sus nombres en cualquier momento
+posteriormente).</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">1) Puede usar las restricciones de
+m&iacute;nimo de d&iacute;as con la ponderaci&oacute;n que quiera.
+Puede ser de un 95%, 99.75% o incluso 100%. Si es un valor por debajo
+de 100% para una restricci&oacute;n imposible, FET ser&aacute; capaz
+de detectarlo y obtener un horario al final, as&iacute; que el factor
+de ponderaci&oacute;n es subjetivo. La mejor forma podr&iacute;a ser
+elegir un 99.75% para todas las coacciones, aunque el tiempo de
+generaci&oacute;n puede ser mayor que con el 95%.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">Puede intentar al principio el 95% del
+valor m&iacute;nimo recomendado, entonces ir incrementado el factor
+de ponderaci&oacute;n hasta 99.75% o 100%. No estoy seguro aqu&iacute;,
+no tengo suficientes archivos de datos con ejemplos (puede contribuir
+en este aspecto). Si desea cambiar el 95% por otro valor para todas
+las restricciones de este tipo, la forma m&aacute;s f&aacute;cil es
+la caja de di&aacute;logo de restricciones entre m&iacute;nimo de
+d&iacute;as, donde a partir de la versi&oacute;n 5.3.6 existe un
+comando para eso.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">2) Si tiene una lecci&oacute;n con,
+digamos unas 4 actividades por semana dif&iacute;ciles, que desear&iacute;a
+poder disponerlas en el comienzo del d&iacute;a (digamos que 3 de las
+4 necesitan ir en la primera mitad del d&iacute;a), puede a&ntilde;adir
+restricciones de tiempos preferentes para la actividad para las tres
+primeras actividades, con una preferencia expresada en un 100%
+mediante el coeficiente de ponderaci&oacute;n o un poco m&aacute;s
+baja. Se puede trabajar con un editor de texto en el archivo .fet
+para a&ntilde;adir tales restricciones si esto es razonablemente
+sencillo.  Este enfoque trabaj&oacute; particularmente bien en el
+ejemplo de datos suministrado de la escuela alemana.
+Alternativamente, puede usar restricciones de tiempos preferidos para
+actividades (un conjunto de actividades que tienen tiempos
+preferentes) con un factor de ponderaci&oacute;n menor del 100% para
+materias problem&aacute;ticas. Este &uacute;ltimo enfoque es sencillo
+de usar pero puede que los resultados no sean muy satisfactorio.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">3) Desde el principio el algoritmo est&aacute;
+concebido, de tal forma que la generaci&oacute;n es m&aacute;s r&aacute;pida
+si usa un grupo de alumnos (o profesores) no disponible y/o
+restricciones de actividad(es) con tiempos preferentes para
+especificar casillas imposibles, en suma al posible uso de grupos de
+alumnos o profesores con m&aacute;ximo de horas diario, donde esto es
+posible. Un ejemplo, si se sabe que el curso 5 tendr&aacute; s&oacute;lo
+clase de 8:00 a 13:00, es mejor a&ntilde;adir una restricci&oacute;n
+de grupo no disponible adem&aacute;s de un n&uacute;mero de horas
+m&aacute;ximo diario. Por lo tanto, si es posible, intente seguir
+esta advertencia. Este truco ayuda a FET a conseguir mejores
+soluciones.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">Cada restricci&oacute;n del tipo no
+disponible o de tiempos preferentes que filtren casillas imposibles
+puede mejorar la velocidad de c&aacute;lculo de FET.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">4) Las restricciones de alumnos que
+empiezan tempranto: esta coacci&oacute;n es muy restrictiva, forzando
+que los alumnos deben tener horas en la primera casilla libre del
+horario (posible siempre que no haya pausas o no disponibles
+coaccionando). En el caso de alguna restricci&oacute;n del tipo
+“temprano” sea demasiado fuerte y la escuela acepte comenzar las
+clases un poco m&aacute;s tarde, puede usar la restricci&oacute;n de
+tipo no disponible o pausa en la &uacute;ltima hora del horario.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">Por ejemplo, si el grupo X no est&aacute;
+disponible el Lunes desde las 8 hasta las 9 y est&aacute; el resto y
+a&ntilde;ade la restricci&oacute;n de temprano a X, deben empezar
+cada d&iacute;a (sin Lunes) a las 8 y los Lunes a las 9, no m&aacute;s
+tarde</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">Tambi&eacute;n, si sus datos de entrada
+son parciales, puede ser imposible generar horarios (consulte las FAQ
+para m&aacute;s detalles).</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">5) Para huecos de profesor(es): n&oacute;tese
+que FET tendr&aacute; cuidado de que no exista huecos en el horario
+de los profesores s&oacute;lo si se utilizan las restricciones de
+m&aacute;ximo de huecos para profesorado o un profesor. Lo normal es
+a&ntilde;adir estas restricciones despu&eacute;s de comprobar que el
+horario es posible, usando un vlor de m&aacute;ximo de huecos que
+parezca aceptable, y baj&aacute;ndolo seg&uacute;n se van encontrando
+soluciones.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">6) Introduzca las aulas especiales
+necesarias para las restricciones. Para las aulas habituales no es
+necesario (aulas de alumnos o profesores). Puede primero generar un
+horario sin aulas, para ver si es posible y a&ntilde;adir
+posteriormente las aulas y sus restricciones.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">7) Es posible trabajar con
+instituciones en cual el trabajo de estudiantes est&aacute;
+desplazado (por ejemplo, los cursos m&aacute;s bajos se imparte por
+la ma&ntilde;ana y lo m&aacute;s altos por la tarde). Consulte las
+FAQ (en esencia debe a&ntilde;adir al grupo de estudiantes
+correspondiente la restricci&oacute;n de no disponible).</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">8) El nuevo algoritmo de FET (a partir
+de la versi&oacute;n 5.0.0) no acepta actividades bimensuales. Pero
+se podr&iacute;a aplicar un truco. Consulte las FAQ (tiene la
+descripci&oacute;n de un truco posible) (en esencia consiste en una
+actividad con la suma de profesores y estudiantes de ambas
+actividades bimensuales)</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">9) Incluso si FET toma un largo tiempo
+para generar su horario con un conjunto de restricciones,
+endurecerlas puede no ralentizar la generaci&oacute;n demasiado.
+Puede ser que utilizando restricciones m&aacute;s potentes, despu&eacute;s
+de que aparezcan horarios, permita obtener mejores soluciones.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">10) Si una restricci&oacute;n permite
+valores por debajo de 100%, puede usar cualquier valor de
+ponderaci&oacute;n, incluso n&uacute;meros no enteros como 99.75%.
+Esto puede ayudar en restricciones del tipo n&uacute;mero m&iacute;nimo
+de d&iacute;as, aulas preferidas o m&aacute;ximo de horas diarias.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">11) Cada habitaci&oacute;n puede
+albergar una actividad sencilla al mismo tiempo. Si tiene una gran
+aula o sal&oacute;n que puede tener m&aacute;s actividades al mismo
+tiempo, puede usar un peque&ntilde;o truco. Puede a&ntilde;adir m&aacute;s
+aulas representando el aula m&aacute;s grande y a&ntilde;adir las
+correspondientes restricciones de aulas preferidas. Consulte la
+secci&oacute;n de FAQ para m&aacute;s informaci&oacute;n.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">12) Si los profesores obtienen d&iacute;as
+con solamente una hora de trabajo, puede querer a&ntilde;adir una
+restricci&oacute;n de un m&iacute;nimo de horas diario (probablemente
+llegar&iacute;a con 2 horas), pero aseg&uacute;rese de que el horario
+es posible. La restricci&oacute;n es muy precisa y considera los d&iacute;as
+no vac&iacute;os &uacute;nicamente.</P>
+</BODY>
+</HTML>

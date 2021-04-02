@@ -40,7 +40,7 @@
             <property name="text">
                 <string>FET FAQ:
 
-this documentation by Liviu Lalescu, reviewed and modified - 1 October 2007
+this documentation by Liviu Lalescu, reviewed and modified - 6 October 2007
 
 --------
 
@@ -234,6 +234,18 @@ You can specify consecutive if same day. Please be careful, even if constraint m
 
 Currently FET can put at most 2 activities in the same day if "consecutive if same day" is true. FET cannot put 3 or more activities in the same day if "consecutive if same day" is true.
 
+Important: please do not input unnecessary duplicates. If you input for instance 2 constraints:
+1. Activities 1 and 2, min days 1, consecutive if same day=true, weight=95%
+2. Activities 1 and 2, min days 1, consecutive if same day=false, weight=95%
+(these are different constraints),
+
+then the outcome of these 2 constraints will be a constraint:
+Activities 1 and 2, min days 1, consecutive if same day=true, weight=100%-5%*5%=99.75%, very high. This is because of FET algorithm.
+
+You may however add 2 constraints for the same activities if you want 100% with min 2 days and 95% with min 1 day. These are not duplicates.
+
+You might get an impossible timetable with duplicates, so beware.
+
 ------------------------------------------------------------------------------
 
 
@@ -386,7 +398,11 @@ A: The statistics are important to check your data before generating.
 
 When seeing the students statistics, probably the most useful are for subgroups. Each subgroup should have a reasonable amount of hours, and if you are having subgroups with too little hours, like 2 per week, probably you misunderstood FET notation. Each subgroup is independent of the others and should have a number of hours per week close to the average of all subgroups. Do not input empty subgroups with only a few activities.
 
--------------------------------------------------------------------------------</string>
+-------------------------------------------------------------------------------
+
+Q: What if I enter accidentally duplicate constraints?
+
+A: It is not a good practice to allow unnecessary duplicate constraints. For activity(ies) preferred time(s) and min n days between activities and other constraints, the combined weight becomes very high. For instance, if you have 2 constraints with weight 95%, the outcome is a constraint with weight 100%-5%*5%=99.75%, very high. You might get an impossible timetable with duplicates, so beware.</string>
             </property>
         </widget>
     </grid>

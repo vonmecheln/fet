@@ -32,6 +32,8 @@
     <addaction name="helpInstructionsAction" />
     <addaction name="helpFAQAction" />
     <addaction name="separator" />
+    <addaction name="helpInOtherLanguagesAction" />
+    <addaction name="separator" />
     <addaction name="helpAboutAction" />
    </widget>
    <widget class="QMenu" name="fileMenu" >
@@ -946,6 +948,11 @@
   <action name="dataHelpOnStatisticsAction" >
    <property name="text" >
     <string>Help on statistics</string>
+   </property>
+  </action>
+  <action name="helpInOtherLanguagesAction" >
+   <property name="text" >
+    <string>Help in other languages than English</string>
    </property>
   </action>
  </widget>

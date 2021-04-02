@@ -1139,6 +1139,43 @@ void FetMainForm::on_helpInstructionsAction_activated()
 	form->show();
 }
 
+void FetMainForm::on_helpInOtherLanguagesAction_activated()
+{
+	QString s=tr("You can see help translated into other languages in the directory doc/ of FET");
+	s+="\n\n";	
+	s+=tr("Currently (4 Oct. 2007), there are:");	
+	s+="\n\n";	
+	s+=tr("1. es - Spanish - Instructions");
+
+	//show the message in a dialog
+	QDialog* dialog=new QDialog();
+	
+	dialog->setWindowTitle(tr("FET - help in other languages"));
+
+	QVBoxLayout* vl=new QVBoxLayout(dialog);
+	QTextEdit* te=new QTextEdit();
+	te->setPlainText(s);
+
+	te->setReadOnly(true);
+	QPushButton* pb=new QPushButton(tr("OK"));
+
+	QHBoxLayout* hl=new QHBoxLayout(0);
+	hl->addStretch(1);
+	hl->addWidget(pb);
+
+	vl->addWidget(te);
+	vl->addLayout(hl);
+	connect(pb, SIGNAL(clicked()), dialog, SLOT(close()));
+
+	dialog->setWindowFlags(windowFlags() | Qt::WindowMinMaxButtonsHint);
+	QDesktopWidget* desktop=QApplication::desktop();
+	int xx=desktop->width()/2 - 350;
+	int yy=desktop->height()/2 - 250;
+	dialog->setGeometry(xx, yy, 700, 500);
+
+	dialog->exec();
+}
+
 void FetMainForm::on_timetableGenerateAction_activated()
 {
 	if(simulation_running){

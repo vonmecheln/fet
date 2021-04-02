@@ -112,6 +112,7 @@ Running FET:
 	
 Documentation:
 	Very primitive: some hints in the directory "/.../fet-x.x.x/doc/".
+	Some other hints in Help menu.
 	If you are a programmer and would like to know how the program works,
 	you can use "doxygen" to generate API documentation.
 
@@ -119,7 +120,7 @@ Input files:
 	You can open a few sample input files in "/.../fet-x.x.x/sample_inputs/" directory.
 	
 	You can create/modify a file from FET's user interface or you can modify it by
-	hand, if you like
+	hand, if you like.
 
 Feed-back / help:
 	- I would like to hear your oppinions/results about this program; any

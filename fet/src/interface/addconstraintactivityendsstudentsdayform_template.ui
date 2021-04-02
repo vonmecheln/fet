@@ -53,6 +53,12 @@
                             <property name="name">
                                 <cstring>activitiesComboBox</cstring>
                             </property>
+                            <property name="maximumSize">
+                                <size>
+                                    <width>1600</width>
+                                    <height>32767</height>
+                                </size>
+                            </property>
                             <property name="editable">
                                 <bool>false</bool>
                             </property>

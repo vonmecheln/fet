@@ -129,6 +129,9 @@ public:
 	double fitness(Rules& r, QString* conflictsString=NULL);
 
 	/**
+	OLD COMMENT BELOW, now FET has no fortnightly activities, 
+	only one matrix is now used.
+	
 	This is a function that retrieves the teachers' timetable from
 	this chromosome's "times" array.
 	We have 2 matrices: the most used is the first, for weekly activities
@@ -142,6 +145,9 @@ public:
 	void getTeachersTimetable(Rules& r, qint16 a[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 
 	/**
+	OLD COMMENT BELOW, now FET has no fortnightly activities, 
+	only one matrix is now used.
+	
 	This is a function that retrieves the subgroups' timetable from
 	this chromosome's "times" array.
 	We have 2 matrices: the most used is the first, for weekly activities
@@ -155,6 +161,11 @@ public:
 	void getSubgroupsTimetable(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 
 	/**
+	OLD COMMENT BELOW, now FET has no fortnightly activities, 
+	only one matrix is now used. If cell value is higher than 1,
+	then a basic conflict is there. If cell value is higher than 0,
+	then subgroup has activity at that time.
+	
 	The following function is very similar to GetsubgroupsTimetable,
 	except that it is used in fitness calculation: it computes a matrix
 	that for each subgroup and day and hour keeps the double
@@ -168,6 +179,11 @@ public:
 	int getSubgroupsMatrix(Rules& r, qint16 a[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY]);
 
 	/**
+	OLD COMMENT BELOW, now FET has no fortnightly activities, 
+	only one matrix is now used. If cell value is higher than 1,
+	then a basic conflict is there. If cell value is higher than 0,
+	then subgroup has activity at that time.
+	
 	The following function is very similar to GetTeachersTimetable,
 	except that it is used in fitness calculation: it computes a matrix
 	that for each teacher, day and hour, keeps the double
