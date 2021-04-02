@@ -7877,7 +7877,7 @@ Bemerkung: „Nicht verfügbare Zeiten einer Schülergruppe“ und Pausen werden
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="32"/>
         <source>You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per day and lower it as you find new timetables. The default 1 given here might be too low for your school, in which case you need to use higher values.
 Note: teacher not available and break are not counted as gaps.</source>
-        <translation>Gewichtung muss 100% sein. Setze anfangs einen hohen Wert für die maximale Anzahl von Springstunden. Der Stanartwert von 1 ist wahrscheinlich zu niedrig, sodass vielleicht höhere Werte nötig sind. Redziere den Wert, wenn ein Plan gelöst wurde. Pausen und nicht verfügbare Lehrer werden nicht als Springstunde gezählt.</translation>
+        <translation>Die Gewichtung muss 100% betragen. Anfangs kann man einen hohen Wert für die maximale Anzahl von Freistunden setzen. Der Vorgabewert von 1 ist wahrscheinlich zu niedrig, sodass vielleicht höhere Werte nötig sind. Wenn ein Plan gelöst wurde, kann man den den Wert nachher reduzieren. . Pausen und nicht verfügbare Lehrer werden nicht als Freistunden gezählt.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperdayform_template.ui" line="110"/>
@@ -7954,7 +7954,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="32"/>
         <source>You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per week and lower it as you find new timetables. The default 3 given here might be too low for your school, in which case you need to use higher values.
 Note: teacher not available and break are not counted as gaps.</source>
-        <translation>Gewichtung muss 100% sein. Setze anfangs einen hohen Wert für die maximale Anzahl von Springstunden. Der Stanartwert von 1 ist wahrscheinlich zu niedrig, sodass vielleicht höhere Werte nötig sind. Redziere den Wert, wenn ein Plan gelöst wurde. Pausen und nicht verfügbare Lehrer werden nicht als Springstunde gezählt.</translation>
+        <translation>Die Gewichtung muss 100% betragen. Anfangs kann man einen hohen Wert für die maximale Anzahl von Freistunden pro Woche setzen. Der Vorgabewert von 3 ist wahrscheinlich zu niedrig, sodass vielleicht höhere Werte nötig sind. Wenn ein Plan gelöst wurde, kann man den den Wert nachher reduzieren. . Pausen und nicht verfügbare Lehrer werden nicht als Freistunden gezählt.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachermaxgapsperweekform_template.ui" line="110"/>
@@ -8884,7 +8884,7 @@ Note: teacher not available and break are not counted as gaps.</source>
 
 Setzen Sie anfangs einen eher hohen Wert für „Maximale Anzahl an Freistunden pro Tag“ - der Standartwert 1 ist wahrscheinlich zu klein! Bei erfolgreicher Stundenplanberechnung kann dieser Wert nachher verringert werden.
 
-Bemerkung: Pausen und nicht verfügbare Stunden werden nicht als Springstunden gezählt.</translation>
+Bemerkung: Pausen und nicht verfügbare Stunden werden nicht als Freistunden gezählt.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperdayform_template.ui" line="14"/>
@@ -8961,7 +8961,7 @@ Bemerkung: Pausen und nicht verfügbare Stunden werden nicht als Springstunden g
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="32"/>
         <source>It is recommended to use only one constraint of this type. You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per week and lower it as you find new timetables. The default given here, 3, might be too low for your school and you might need to use higher values.
 Note: teacher not available and break are not counted as gaps.</source>
-        <translation>Es wird empfolen nur eine Einschränkung von diesem Typ zu benutzen. Die Gewichtung muss 100%. Setze anfangs einen hohen Wert. Der Standartwert 1 ist wahrscheinlich zu klein! Pausen und nicht verfügbar werden nicht als Springstunden gezählt.</translation>
+        <translation>Es wird empfohlen, nur eine Einschränkung von diesem Typ zu benutzen. Die Gewichtung muss 100% betragen, damit es taugliche Stundenpläne gibt. Setzen Sie anfangs einen eher hohen Wert für „Maximale Anzahl an Freistunden pro Woche“ - der Vorgabewert 3 ist wahrscheinlich zu klein! Bei erfolgreicher Stundenplanberechnung kann dieser Wert nachher verringert werden. Pausen und nicht verfügbare Stunden bei Lehrern werden nicht als Freistunden gezählt.</translation>
     </message>
     <message>
         <location filename="../src/interface/addconstraintteachersmaxgapsperweekform_template.ui" line="84"/>
@@ -11458,7 +11458,7 @@ Definition from Wikipedia: &apos;In computing, regular expressions, also referre
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="313"/>
         <source>Note that if you have activities with two or more teachers, you might need to use a trick for that: add one (or more) dummy activities, no teachers/no students, same starting time with the initial activity.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falls Sie Aktivitäten mit mehreren Lehrern einsetzen, dann könnte der folgende Trick nötig sein: Man füge eine oder mehrere Pseudoaktivitäten hinzu, ohne Lehrer und ohne Schüler, alle mit der gleichen Startzeit wie die ursprüngliche Aktivität.</translation>
     </message>
     <message>
         <location filename="../src/interface/constraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="316"/>
@@ -29439,7 +29439,7 @@ Bitte stoppe vorher die Berechnung.</translation>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4032"/>
         <source>47</source>
-        <translation type="unfinished"></translation>
+        <translation>47</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="4270"/>
@@ -29811,7 +29811,7 @@ Dieses Menü zeigt Aktivitäten an, die Raumeinschränkungen mit einer Gewichtun
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2002"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
-        <translation>Wenn Teilgruppen in Auswahlfeldern versteckt werden, können die betroffenen Dialoge (Aktivitätendialog, Dialog „nicht verfügbare Zeiten für Schülergruppe“) viel schneller aufstarten, falls es viele Teilgruppen gibt.</translation>
+        <translation>Wenn Teilgruppen in Auswahlfeldern versteckt werden, können die betroffenen Dialoge (Aktivitätendialog, Dialog „nicht verfügbare Zeiten für Schülergruppe“) viel schneller öffnen, falls es viele Teilgruppen gibt.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="2007"/>
@@ -30092,7 +30092,7 @@ Dieses Menü zeigt Aktivitäten an, die Raumeinschränkungen mit einer Gewichtun
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3988"/>
         <source>statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Statistik</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="3991"/>
@@ -31177,7 +31177,7 @@ Dieses Menü zeigt Aktivitäten an, die Raumeinschränkungen mit einer Gewichtun
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1572"/>
         <source>A room&apos;s not available times</source>
-        <translation>Ein Raum ist nicht verfügbar</translation>
+        <translation>Nicht verfügbare Zeiten eines Raums</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform_template.ui" line="1607"/>
@@ -34001,7 +34001,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.0 (April 2015).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.1 (May 2015).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -34866,7 +34866,7 @@ Dazu noch eine weitere Einschränkung hinzufügen: „Min. Anzahl an Tagen zwisc
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="976"/>
         <source>If you hide subgroups in combo boxes, the affected dialogs (like the activities dialog or the add constraint students set not available times dialog) will load much faster if you have many subgroups.</source>
-        <translation>Wenn Teilgruppen in Auswahlfeldern versteckt werden, können die betroffenen Dialoge (Aktivitätendialog, Dialog „nicht verfügbare Zeiten für Schülergruppe“) viel schneller aufstarten, falls es viele Teilgruppen gibt.</translation>
+        <translation>Wenn Teilgruppen in Auswahlfeldern versteckt werden, können die betroffenen Dialoge (Aktivitätendialog, Dialog „nicht verfügbare Zeiten für Schülergruppe“) viel schneller öffnen, falls es viele Teilgruppen gibt.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpfaqform.cpp" line="981"/>
@@ -35644,62 +35644,62 @@ Dieses Problem ist zugegeben eher theoretischer Natur; trotzdem könnte es einma
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="106"/>
         <source>3) From the way the algorithm is conceived, the automatic generation is faster if you use students set (or teacher) not available and/or constraint activity(ies) preferred time slots or preferred starting times to specify impossible slots, in addition to possible use of students (set) or teacher(s) max hours daily, whenever it is possible. For instance, if you know that year 5 will only have hours from 8:00 to 13:00, it is better to add students set not available in addition to students set max hours daily. So, if possible, try to follow this advice. This trick helps guide FET better towards a solution.</source>
-        <translation type="unfinished"></translation>
+        <translation>3) Der Algorithmus der automatischen Stundenplanberechnung erlaubt schnellere Lösungen, wenn man die Einschränkungen „Nicht verfügbare Zeiten einer Schülergruppe“ und/oder „Aktivitäten haben eine bevorzugte Startzeit/bevorzugte Zeitfeldern“ benutzt, um unmögliche Zeiten zu definieren. Dies im Zusammenhang mit „Maximale Anzahl an Stunden pro Tag“ für eine Schülergruppe oder für einen Lehrer, wo immer es möglich ist. Zum Beispiel: Wenn Sie wissen, dass der Jahrgang 5 Unterricht nur zwischen 8-13 Uhr haben wird, wäre es besser, „Nicht verfügbare Zeiten einer Schülergruppe“ zusammen mit „Maximale Anzahl an Stunden pro Tag für eine Schülergruppe“ einzusetzen. Auf diese Weise führen Sie FET zu einer optimalen Lösung heran.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="112"/>
         <source>Each constraint of type not available or preferred times which filters out impossible slots might bring an improvement in speed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jede Einschränkung vom Typ „Nicht verfügbare Stunden“ bzw. „Bevorzugte Zeitfeldern“, die die unmöglichen Zeiten herausfiltern, kann eine Verbesserung der Berechnungszeit herbeiführen.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="114"/>
         <source>4) Constraint students (set) early: if you input only partial data, you might get impossible timetables (see FAQ for details).</source>
-        <translation type="unfinished"></translation>
+        <translation>4) Bei der Einschränkung „Früher Unterrichtsbeginn für eine Schülergruppe“ kann die Eingabe von unvollständigen Daten eine erfolgreiche Lösung verhindern (bitte in der FAQ über die Gründe dafür nachlesen).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="116"/>
         <source>5) For teacher(s) gaps: please note that FET will take care of teacher(s) gaps only if you tell it so, by adding constraint teacher(s) max gaps per week. It is normal to add such constraint(s) after you saw that the data is solvable, using for max gaps a value which seems acceptable, lowering it as you find timetables.</source>
-        <translation type="unfinished"></translation>
+        <translation>5) Lehrerfreistunden werden durch FET durch „Maximale Anzahl an Freistunden pro Woche“ eingeschränkt. Normalerweise setzt man die entsprechende Einschränkung erst dann ein, nachdem eine mögliche Lösung gefunden wurde. Die akzeptable Anzahl an Freistunden kann nachher sukzessiv verringert werden.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="120"/>
         <source>6) Rooms: You might firstly try to generate a timetable without rooms, to see if it is possible, then add rooms and rooms related constraints.</source>
-        <translation type="unfinished"></translation>
+        <translation>6) Räume: Es ist ratsam, zuerst einen Stundenplan ohne Raumangaben berechnen zu lassen, damit man weiss, dass es eine mögliche Lösung gibt. Nachher gibt man die Räume und deren Einschränkungen ein.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="126"/>
         <source>8) The new algorithm (after version 5.0.0) does not accept fortnightly activities. But you might apply a trick. Please see menu Help/Frequently Asked Questions menu (it has the description of a possible trick) (the essence is to make a weekly activity with the sum of teachers and students of both fortnightly activities)</source>
-        <translation type="unfinished"></translation>
+        <translation>8) Der neue Algorithmus, der nach der FET-Version 5.0.0 zum Einsatz kommt, verarbeitet zweiwöchentlich stattfindende Aktivitäten leider nicht. Allerdings kann man im Menü „Hilfe-&gt;Häufig gestellte Fragen (FAQ)“ über einen Trick nachlesen, der darin besteht, eine wöchentliche Aktivität mit der Summe aller Lehrer und Schüler der beiden zweiwöchentlichen Aktivitäten einzusetzen.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="130"/>
         <source>9) Even if it takes a long time to generate your timetable with a set of constraints, strengthening the constraints might not slow the generation too much. You are adviced to try with stronger constraints after you obtain timetables, because you can obtain better timetables this way.</source>
-        <translation type="unfinished"></translation>
+        <translation>9) Auch dann, wenn die Stundenplanberechnung mit den dazugehörenden Einschränkungen etwas lange dauern mag, heisst es nicht, dass verstärkte Einschränkungen die Berechnung noch langsamer machen. Es ist sogar ratsam, die Einschränkungen möglichst strikte zu definieren, weil man so bessere Stundenpläne erhält.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="137"/>
         <source>11) Each room can host a single activity at the same time. If you have a large room which can host more activities at the same time, you need to use a small trick. You can add more rooms representing this large room and add corresponding constraints preferred rooms. There is an entry in the FAQ about that.</source>
-        <translation type="unfinished"></translation>
+        <translation>11) Jeder Raum kann eine einzige Aktivität auf einmal aufnehmen. Bei größeren Räumen, die mehrere gleichzeitige Aktivitäten erlauben, kann ein kleiner Trick eingesetzt werden: Mehrere Räume werden stellvertretend für den grossen Raum zusammen mit Einschränkungen „Bevorzugte Räume“ definiert (bitte in der FAQ mehr darüber nachlesen).</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="141"/>
         <source>12) If teachers are getting days with only one hour of work, you might want to add constraint teacher(s) min hours daily (probably with 2 hours), but please make sure your timetable is possible. This constraint is smart, it only considers non-empty days.</source>
-        <translation type="unfinished"></translation>
+        <translation>12) Falls Lehrer manchmal Tage mit nur 1 Stunde erhalten, könnte man die Einschränkung „Minimale Anzahl an Stunden pro Tag“=2 einsetzen. Allerdings sollte man vorher sicherstellen, dass eine Lösung möglich ist. Diese Einschränkung berücksichtigt nur Tage, die nicht leer sind.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="145"/>
         <source>13) If you have for instance 7 hours of Maths on a 5 days week (more lessons than days), please respect the correct way to add these as a split activity. See question Q-1-27-March-2008 from FAQ. It is important!</source>
-        <translation type="unfinished"></translation>
+        <translation>13) Bitte beachten, falls mehr Lektionen als Tage vorkommen (z.B. 7 Stunden Mathematik bei 5 Tagen in der Woche), dass diese richtigerweise als geteilte Aktivität eingegeben werden -- in der FAQ gibt es die Frage „Q 1 27-März-2008“, die mehr Infos darüber gibt. Es ist wichtig!</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="158"/>
         <source>17) If you have activities split into 3 activities per week and need them to be not in 3 consecutive days, there is an entry in the FAQ explaining how to specify this (question Q1-5-September-2008).</source>
-        <translation type="unfinished"></translation>
+        <translation>17) Bei 3 Teilaktivitäten, die nicht an aufeinanderfolgenden Tagen stattfinden sollen, gibt es einen Eintrag in der FAQ (Q1-5-September-2008). Dort findet man eine Erklärung des richtigen Vorgehens wie man diese eingibt.</translation>
     </message>
     <message>
         <location filename="../src/interface/helpinstructionsform.cpp" line="161"/>
         <source>18) If you use the not perfect constraints activity tag max hours daily or students max gaps per day (there are 4+2 types of constraints in this category), use them with caution not to obtain an impossible timetable. If the timetable is impossible, it may be because of them. You are advised to add such constraints only in the end, after you are sure that the other constraints are good and the timetable is possible.</source>
-        <translation type="unfinished"></translation>
+        <translation>18) Bei den Einschränkungen „Maximale tägliche Stundenzahl einer Aktivitätskennzeichnung für alle Schüler“ oder „Maximale Anzahl an Freistunden pro Tag für eine Schülergruppe“, die nicht perfekt sind, muss man vorsichtig sein, damit die Stundenplanberechnung gelingt. Es gibt 4+2 solcher Einschränkungen in dieser Kategorie. Falls keine Lösung gefunden wird, könnte das an diesen Einschränkungen liegen. Setzen Sie sie daher erst am Schluß ein, nachdem sichergestellt wurde, dass es eine Lösung gibt.</translation>
     </message>
 </context>
 <context>
@@ -35726,37 +35726,37 @@ Dieses Problem ist zugegeben eher theoretischer Natur; trotzdem könnte es einma
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="30"/>
         <source>The imperfect constraints are 6: students (set) max gaps per day and teacher(s) or students (set) activity tag max hours daily.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es gibt 6 Einschränkungen, die nicht perfekt sind: „Maximale Anzahl an Freistunden pro Tag für eine Schülergruppe“ und „Maximale tägliche Stundenzahl einer Aktivitätskennzeichnung bei allen Schülern“ oder bei allen Lehrern.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="34"/>
         <source>You are advised to leave the imperfect constraints as a last resort if you really need them. Generate the timetable with all other constraints and only after that you may try them. The imperfect constraints may make your timetable too hard to find or even impossible, in some conditions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Einschränkungen sollten als letztes Mittel eingesetzt werden, falls sie wirklich gebraucht werden. Weil sie die Berechnung einer Lösung sehr erschweren oder gar verunmöglichen können, sollten zuerst alle anderen Einschränkungen ausprobiert werden, bevor man sie einsetzt.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="39"/>
         <source>Notation: ATS = affected students set or teacher - the teacher or students specified in an imperfect constraint.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Abkürzung „BSL“ heisst: Betroffene Schülergruppe oder Lehrer, die in einer imperfekten Einschränkung angegeben werden.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="43"/>
         <source>Max gaps per day: it is not fully optimized for use with other constraints for students: min/max hours daily. It is also not tested thoroughly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Anzahl an Freistunden pro Tag: Diese Einschränkung wurde bei gleichzeitigem Einsatz von anderen Einschränkungen wie „Min./Max. Anzahl an Stunden pro Tag“ nicht vollständig optimiert. Ausserdem wurde sie nicht ausgiebig getestet.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="45"/>
         <source>If your students need 0 maximum total gaps, do not use max gaps per day constraint, better use the safe and tested max gaps per week (with 0 gaps allowed).</source>
-        <translation type="unfinished"></translation>
+        <translation>Falls Ihre Schüler 0 Freistunden total bekommen sollten, setzen Sie lieber die Einschränkung „Maximale Anzahl an Freistunden pro Woche“=0 ein. Diese ist sicher und wurde ausreichend getestet.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="49"/>
         <source>Activity tag max hours daily: it is not fully optimized for this situation: if the ATS have max gaps constraints and the number of total available slots per week for the ATS is much larger than the working hours per week and the ATS has many activities with the specified activity tag (more than 0.5-0.75 of total hours). In such cases, a remedy may be to add constraint ATS max hours daily (without specifying an activity tag).</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Einschränkungen „Maximale tägliche Stundenzahl einer Aktivitätskennzeichnung“ für Schüler oder Lehrer wurden für diese Situation nicht perfekt optimiert: wenn die BSL auch eine Einschränkung wie „Maximale Anzahl an Freistunden“ haben, und die Anzahl an verfügbaren Zeitfeldern pro Woche für die BSL viel größer als die Anzahl Unterrichtsstunden pro Woche ist, und die BSL viele Aktivitäten mit dieser Kennzeichnung aufweisen (50%-75% der Gesamtanzahl an Stunden). In solchen Fällen könnte es besser sein, für die BSL eine Einschränkung „Maximale Anzahl an Stunden pro Tag“ ohne Aktivitätskennzeichnung einzusetzen.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="54"/>
         <source>Read FAQ question 1/25 September 2009 for some more details about activity tag max hours daily constraint.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die FAQ-Frage 1 / 25. September 2009 enthält mehr Details über die Einschränkung „Maximale tägliche Stundenzahl für eine Aktivitätskennzeichnung“.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponimperfectconstraints.cpp" line="56"/>
@@ -35769,42 +35769,42 @@ Dieses Problem ist zugegeben eher theoretischer Natur; trotzdem könnte es einma
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="26"/>
         <source>Important information about constraints students (set) min hours daily:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wichtige Informationen über die Einschränkungen „Minimale Anzahl an Stunden pro Tag“ für Schüler bzw. Schülergruppen:</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="30"/>
         <source>Normally, these constraints do not allow empty days for students (and the check boxes in the dialogs are not selectable).</source>
-        <translation type="unfinished"></translation>
+        <translation>Normalerweise erlauben diese Einschränkungen keine leeren Tage für Schüler, und die entsprechenden Optionen in den Dialogen sind nicht anwählbar.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="32"/>
         <source>If you really need this constraint to allow empty days for students, you must enable the option from Settings-&gt;Advanced menu and select the check box.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falls Sie tatsächlich leere Tage für Schüler erlauben möchten, muss die entsprechende Option über das Menü „Einstellungen-&gt;Erweitert“ aktiviert und das Häkchen beim Kontrollkästchen gesetzt werden.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="34"/>
         <source>Be very careful: if your school does not allow empty days for students or if a timetable does not exist with empty days for students, you MUST keep the constraints the usual way, without allowing empty days.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falls Ihre Schule keine freien (leeren) Tage für Schüler erlaubt, oder es keine Stundenplanlösung mit leeren Tage für Schüler gibt, muss man undebingt vorsichtig sein und die Einschränkungen auf die normale Weise (ohne leere Tage zuzulassen) einsetzen.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="37"/>
         <source>The reason is performance: speed of generation and the ability of FET to find a solution.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Grund dafür: FET kann viel schneller und effizienter arbeiten, um einen optimalen Stundenplanzu generieren.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="39"/>
         <source>If you allow empty days to these constraints and a solution exists only with non-empty days, FET might not be able to find it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn die Einschränkungen leere Tage erlauben, aber es nur Lösungen ohne leere Tage gibt, kann FET u.U. diese nicht finden.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="41"/>
         <source>For normal schools or high-schools, probably you won&apos;t need to enable this option. Maybe for universities you will need to enable this option.</source>
-        <translation type="unfinished"></translation>
+        <translation>Für normale Schulen oder Oberstufen wird diese Option wohl nicht benötigt; für Universitäten muss die Option evtl. aktiviert werden.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="43"/>
         <source>So, remember: don&apos;t allow empty days unless you need it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Also sollte man sich merken: keine leeren Tage zulassen, wenn sie nicht benötigt werden.</translation>
     </message>
     <message>
         <location filename="../src/interface/helponstudentsminhoursdaily.cpp" line="45"/>
@@ -35817,62 +35817,62 @@ Dieses Problem ist zugegeben eher theoretischer Natur; trotzdem könnte es einma
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="53"/>
         <source>1) Say you add a split activity or you add a constraint min days between activities (say na activities), when your week has nd days. Do not add a constraint with na&gt;nd (number of activities strictly greater than number of days per week).</source>
-        <translation type="unfinished"></translation>
+        <translation>1) Nehmen wir an, Sie fügen eine Aktivität ein, die in eine Anzahl „A“ an Teilaktivitäten aufgeteilt wurde, und eine Einschränkung „Mindestens n Tage zwischen einem Satz an Aktivitäten“ bei einer Anzahl an Wochentagen „W“. Setzen Sie diese Einschränkung nicht, falls A &gt; W sein sollte (Anzahl an Aktivitäten größer als die Anzahl an Wochentagen).</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="56"/>
         <source>The correct way: if you want consecutive if same day, consider activities having a longer duration. Instead of adding activities 1+1+1+1+1+1+1 in a 5 days week, add them as 2+2+1+1+1. If you don&apos;t want consecutive if same day, add 1+1+1+1+1 firstly and 1+1 after that.</source>
-        <translation type="unfinished"></translation>
+        <translation>So wird es richtig gemacht: Falls die Aktivitäten direkt hintereinander stattfinden sollten, gibt man ihnen eine längere Dauer. Anstatt 7 Aktivitäten als 1+1+1+1+1+1+1 in einer 5-Tage-Woche hinzuzufügen, gibt man sie als 2+2+1+1+1 ein. Falls nicht hintereinander, kann man zuerst 1+1+1+1+1 und nachher 1+1 hinzufügen.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="60"/>
         <source>The generation will be much faster and easier using this approach (more than 10 times faster sometimes).</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Berechnungszeit wird mit diesem Vorgehen enorm beschleunigt (manchmal sogar bis zu 10x schneller).</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="64"/>
         <source>2) When adding constraints activities same starting time (or day), please remove redundant min days constraints. For instance, A1 (at same time with B1 and C1), A2 (same time with B2 and C2) and A3 (same time with B3 and C3). You will normally have 3 or 6 constraints min days between activities (first one or two with A1,A2,A3 and then with B1,B2,B3 and then with C1,C2,C3). These 3 or 6 constraints min days will result in a much stronger constraint, which will make the timetable much harder to find. If you have say 4 groups of activities (A, B, C, D), things will be even harder.</source>
-        <translation type="unfinished"></translation>
+        <translation>2) Beim Einsatz von Einschränkungen „Aktivitäten mit der selben Startzeit“ (Tag oder Stunde) sollte man redundante Einschränkungen „Mindestens n Tage zwischen einem Satz an Aktivitäten“ entfernen. Z.B. A1 (gleichzeitig mit B1 und C1), A2 (gleichzeitig mit B2 und C2) und A3 (gleichzeitig mit B3 und C3). Normalerweise hat man 3 oder 6 Einschränkungen „Mindestens n Tage zwischen einem Satz an Aktivitäten“ (die erste oder die ersten beiden mit A1,A2,A3 und dann B1,B2,B3 und dann C1,C2,C3). Diese 3 bzw. 6 Einschränkungen ergeben eine viel stärkere Einschränkung, die die Lösungsfindung sehr erschweren. Bei 4 Gruppen von Aktivitäten (A,B,C und D) wird es noch schwieriger.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="70"/>
         <source>The correct way is to leave only the constraints min days referring to the first group of activities (A). You will have a much faster generation (maybe 10 times faster or more).</source>
-        <translation type="unfinished"></translation>
+        <translation>Der richtige Weg besteht darin, die Einschränkung „Mindestens n Tage zwischen einem Satz an Aktivitäten“ nur für die erste Gruppe von Aktivitäten (A) zu belassen. Die Berechnungszeit verringert sich ca. um den Faktor 10 oder noch mehr.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="77"/>
         <source>More details: the combination of 2 or more redundant constraints min days between activities gives another resultant constraint, much stronger. From 3 redundant constraints with 95%, you get one with 100%-5%*5%*5%=99.9875%, which is not what you want.</source>
-        <translation type="unfinished"></translation>
+        <translation>Weitere Einzelheiten: Die Kombination von 2 oder mehr redundanten Einschränkungen ergibt eine weitere, viel stärkere Einschränkung. Mit 3 redundanten Einschränkungen von je 95% Gewichtung erhält man eine mit Gewichtung 100%-5%*5%*5%=99,9875%, was ja unerwünscht wäre.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="87"/>
         <source>It is IMPORTANT to remove redundant min days constraints after you inputted data and before generating (for instance, apply this after adding more constraints of type same starting time/day and before generating). Any modification of the min days constraints should be followed by this removal of redundant min days constraints (well, not all modifications, but better to do it than not). If you modify more constraints at once or apply the balancing of activities, it is important to remove redundant constraints. If you have no redundant constraints, it is no need to remove the redundant constraints, but better to check again than let some redundant constraints active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es ist wichtig, redundante Einschränkungen vom Typ „Min. Tage“ zu entfernen, nachdem Sie die Daten eingegeben und vor der Stundenplanberechnung durchzuführen (z.B. gilt das nach dem Hinzufügen von Einschränkungen vom Typ „gleiche Startzeit (Tag+Stunde)“ und bevor die Berechnung startet). Nach jeder Änderung der „Min. Tage“-Einschränkungen sollte die Entfernung der redundanten Einschränkungen folgen (evtl. nicht jede Änderung, aber besser entfernen, als es nicht zu tun). Wenn Sie weitere Einschränkungen auf einmal ändern oder den Abgleich der Aktivitäten anwenden, ist es wichtig, die redundanten Einschränkungen zu entfernen. Es ist besser, alles nochmals zu überprüfen, ob die eingesetzten Einschränkungen nicht doch redundant sind, als welche durchgehen zu lassen.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="95"/>
         <source>Note: redundant constraints min days with weight 100.0% do not really affect the generation. This is because the resultant of more constraints with weight 100.0% is also 100.0%. So, if your data contains only min days between activities constraints with 100.0% weight, there is no imperative need to remove redundant constraints. But, again, better to remove redundant constraints as a precaution.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bemerkung: Redundante Einschränkungen mit einer Gewichtung von 100% beeinflussen die Berechnung nicht wirklich. Das liegt daran, dass die Summe aller Gewichtungen von 100% ebenfalls 100% ergibt. Falls Ihre Daten Einschränkungen vom Typ „Mindestens n Tage zwischen einem Satz an Aktivitäten“ mit Gewichtung = 100% aufweisen, müssen Sie diese nicht zwingend entfernen. Allerdings wäre es eine empfehlenswerte Vorsichtsmassnahme.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="101"/>
         <source>3) About constraints two activities grouped, two activities consecutive and three activities grouped: It is a bad practice to add such constraints if the involved activities are also constrained not to be in the same day by constraints min days between activities.</source>
-        <translation type="unfinished"></translation>
+        <translation>3) Eine Bemerkung zu den Einschränkungen „2 Aktivitäten sind gruppiert“, „2 Aktivitäten direkt hintereinander“ und „3 Aktivitäten sind gruppiert“: Diese Einschränkungen sollten nicht eingesetzt werden, wenn die betroffenen Aktivitäten gleichzeitig durch „Mindestens n Tage zwischen einem Satz an Aktivitäten“ eingeschränkt werden.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="105"/>
         <source>If A1 and A2 are constrained not to be in the same day with 95% weight or any other weight, it is a bad practice to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be in the same day, the timetable is impossible; if the weight is below 100%, the timetable is more difficult to find than using the correct way. The correct way would probably be to consider A1 and A2 = a single activity A12&apos;, or to modify the related constraint min days between activities. Or maybe you can find other ways.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falls die Aktivitäten A1 und A2 für unterschiedliche Tage mit Gewichtung von 95% oder jeder anderen Gewichtung eingeschränkt werden, ist es eine schlechte Idee, sie zusätzlich durch „gruppiert“ oder „direkt hintereinander“ einzuschränken. Falls sie mit Gewichtung 100% für unterschiedliche Tage eingeschränkt werden, wird eine Lösung des Stundenplans nicht möglich. Falls die Gewichtung tiefer liegt, wird der Stundenplan schwieriger zu lösen, als es sonst der Fall wäre. Besser wäre evtl. A1 und A2 zu einer größeren Aktivität A12 zusammen zu führen oder die Einschränkung „Mindestens n Tage zwischen einem Satz an Aktivitäten“ abzuändern. Evtl. können Sie auch einen anderen Weg finden.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="73"/>
         <source>PS: Suppose there are 2 constraints for activities A1,2,3 and 2 constraints for activities B1,2,3 and 2 constraints for activities C1,2,3. If A and B and C are simultaneous, remove only the constraints referring to B and C (but leave both for A, if for instance you have min 2 days with 95% and min 1 day with 100%).</source>
-        <translation type="unfinished"></translation>
+        <translation>PS: Angenommen, es gibt 2 Einschränkungen für Aktivitäten A1,2,3 und 2 Einschränkungen für Aktivitäten B1,2,3 und 2 Einschränkungen für Aktivitäten C1,2,3. Falls A, B und C alle gleichzeitig stattfinden, entfernen Sie nur die Einschränkungen, die sich auf B und C auswirken (aber beide für A belassen; z.B. „Mindestens n Tage“=2 und Gewichtung 95%, und „Mindestens n Tage“=1 mit 100%).</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="47"/>
         <source>Important tips.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wichtige Hinweise.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="49"/>
@@ -35887,12 +35887,12 @@ Dieses Problem ist zugegeben eher theoretischer Natur; trotzdem könnte es einma
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="80"/>
         <source>Do not consider redundant constraints with the same activities but different number of days (you may want to add min 2 days 95% and min 1 day 95%, which gives in 95% cases the 2 days will be respected and in 99.75% cases the 1 day will be respected).</source>
-        <translation type="unfinished"></translation>
+        <translation>Zwei Einschränkungen mit den gleichen Aktivitäten aber einer unterschiedlichen Anzahl an Tagen sollte man nicht als redundant ansehen. Z.B. bei den Einschränkungen „Mindestens n Tage“=2 mit 95% und „Mindestens n Tage“=1 mit 95%, wird in 95% der Fälle die Einschränkung mit 2 Tagen und in 99,75% der Fälle die Einschränkung mit 1 Tag respektiert.</translation>
     </message>
     <message>
         <location filename="../src/interface/helptipsform.cpp" line="84"/>
         <source>The other constraints (like preferred time(s) constraints) do not have the problem of redundancy like min days constraints, so no need to take care about them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Andere Einschränkungstypen wie „...bevorzugte Zeiten“ haben das Problem der Redundanz nicht und machen deshalb keine Probleme.</translation>
     </message>
 </context>
 <context>
@@ -36762,7 +36762,7 @@ Dieses Problem ist zugegeben eher theoretischer Natur; trotzdem könnte es einma
     <message>
         <location filename="../src/engine/import.cpp" line="1508"/>
         <source>%1 buildings added. Please check buildings form.</source>
-        <translation type="unfinished">%1 Gebäude wurden hinzugefügt. Bitte überprüfen Sie das Gebäudeformular.</translation>
+        <translation>%1 Gebäude wurden hinzugefügt. Bitte überprüfen Sie das Gebäudeformular.</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1749"/>
@@ -36845,7 +36845,7 @@ Dieses Problem ist zugegeben eher theoretischer Natur; trotzdem könnte es einma
     <message>
         <location filename="../src/engine/import.cpp" line="2552"/>
         <source>Warning: found tags for the &apos;consecutive&apos; field of min days which are not a valid boolean value (%1) - making them %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung: Kennzeichnungen wurden gefunden für das Feld „hintereinander“ bei der Einschränkung „Mindestens n Tage“, die keinen gültigen Booleschen Wert ergeben (%1) - wird geändert in %2</translation>
     </message>
     <message>
         <location filename="../src/engine/import.cpp" line="1012"/>
@@ -37100,12 +37100,12 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="560"/>
         <source>&apos;Students&apos; (the text near the spin box), means &apos;Number of students (-1 for automatic)&apos;</source>
-        <translation type="unfinished">„Schüler“ (der Text neben dem Zahlendrehfeld) bedeutet: „Schüleranzahl“ (-1 = automatisch)</translation>
+        <translation>„Schüler“ (der Text neben dem Zahlendrehfeld) bedeutet: „Schüleranzahl“ (-1 = automatisch)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="562"/>
         <source>&apos;Split&apos; means &apos;Is split into ... activities per week&apos;. This value cannot be changed. If you need to modify it, please remove the corresponding activities and add a new split activity.</source>
-        <translation type="unfinished"></translation>
+        <translation>„Aufgeteilt“ bedeutet „wurde in ... Aktivitäten pro Woche aufgeteilt“. Dieser Wert kann nicht bearbeitet werden. Falls Sie sie ändern möchten, entfernen Sie die entsprechenden Aktivitäten und fügen Sie eine neue, aufgeteilte Aktivität hinzu.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyactivityform.cpp" line="565"/>
@@ -37596,7 +37596,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="314"/>
         <source>You specified max simultaneous activities to be 0. This is not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, and help FET to find a timetable easier and faster, with an equivalent result. Please correct.</source>
-        <translation type="unfinished">Sie haben „Max. gleichzeitige Aktivitäten = 0“ gewählt. Das ist wenig effizient; besser wäre es, die Einschränkung „Aktivitäten haben bevorzugte Zeiten (Zeitfelder)“ zu wählen und dabei FET helfen, schneller und einfacher einen gleichwertigen Stundenplan zu finden. Bitte, korrigieren Sie das.</translation>
+        <translation>Sie haben „Max. gleichzeitige Aktivitäten = 0“ gewählt. Das ist wenig effizient; besser wäre es, die Einschränkung „Aktivitäten haben bevorzugte Zeiten (Zeitfelder)“ zu wählen und dabei FET helfen, schneller und einfacher einen gleichwertigen Stundenplan zu finden. Bitte, korrigieren Sie das.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiesmaxsimultaneousinselectedtimeslotsform.cpp" line="324"/>
@@ -38035,7 +38035,11 @@ Bitte stoppen Sie die Plangenerierung</translation>
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben alle Aktivitäten ausgewählt. Das könnte ein kleines Problem ergeben: Falls ein nichterlaubtes Zeitfeld zwischen zwei erlaubten Feldern stehen würde, würde das nichterlaubte Feld als Freistunde in den Stundenplänen der Schüler und der Lehrern gezählt.
+
+Am Besten wäre es, eine Einschränkung „Hinzufügen von Pausenzeiten“ zu wählen.
+
+Bei einer Gewichtung unter 100% kann man diese Einschränkung einsetzen, aber man muss vorsichtig sein, damit der Stundenplan nicht unmöglich wird (falls Einschränkungen bei Schülern/Lehrern auf Freistunden oder frühen Freistunden bestehen.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="346"/>
@@ -38051,7 +38055,11 @@ Bitte stoppen Sie die Plangenerierung</translation>
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben nur einen Lehrer ausgewählt. Das könnte ein kleines Problem ergeben: Falls ein nichterlaubtes Zeitfeld zwischen zwei erlaubten Feldern stehen würde, würde das nichterlaubte Feld als Freistunde im Stundenplan des Lehrers gezählt.
+
+Am Besten wäre es, eine Einschränkung „Nicht verfügbare Zeiten eines Lehrers“ zu wählen.
+
+Bei einer Gewichtung unter 100% kann man diese Einschränkung einsetzen, aber man muss vorsichtig sein, damit der Stundenplan nicht unmöglich wird (falls Einschränkungen beim Lehrer auf Freistunden bestehen und ein nicht erlaubtes Zeitfeld zwischen zwei erlaubten Zeitfeldern steht, das nachher als Freistunde gezählt würde).</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="371"/>
@@ -38060,7 +38068,11 @@ Bitte stoppen Sie die Plangenerierung</translation>
  The best practice would be to use constraint students set not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben nur eine Schülergruppe ausgewählt. Das könnte ein kleines Problem ergeben: Falls ein nichterlaubtes Zeitfeld zwischen zwei erlaubten Feldern stehen würde, würde das nichterlaubte Feld als Freistunde im Stundenplan der Schüler gezählt.
+
+Am Besten wäre es, eine Einschränkung „Nicht verfügbare Zeiten einer Schülergruppe“ zu wählen.
+
+Bei einer Gewichtung unter 100% kann man diese Einschränkung einsetzen, aber man muss vorsichtig sein, damit der Stundenplan nicht unmöglich wird (falls Einschränkungen bei der Schülergruppe auf Freistunden bestehen und ein nicht erlaubtes Zeitfeld zwischen zwei erlaubten Zeitfeldern steht, das nachher als Freistunde gezählt würde).</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredstartingtimesform.cpp" line="402"/>
@@ -38157,7 +38169,11 @@ Bitte stoppen Sie die Plangenerierung</translation>
  The best practice would be to use constraint break times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teachers/students are constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots or a not allowed slot early in the day and more allowed slots after it, this possible gap might be counted in teachers&apos; and students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben alle Aktivitäten ausgewählt. Das könnte ein kleines Problem ergeben: Falls ein nichterlaubtes Zeitfeld zwischen zwei erlaubten Feldern stehen würde, würde das nichterlaubte Feld als Freistunde in den Stundenplänen der Schüler und der Lehrern gezählt.
+
+Am Besten wäre es, eine Einschränkung „Hinzufügen von Pausenzeiten“ zu wählen.
+
+Bei einer Gewichtung unter 100% kann man diese Einschränkung einsetzen, aber man muss vorsichtig sein, damit der Stundenplan nicht unmöglich wird (falls Einschränkungen bei Schülern/Lehrern auf Freistunden oder frühen Freistunden bestehen.)</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="345"/>
@@ -38173,7 +38189,11 @@ Bitte stoppen Sie die Plangenerierung</translation>
  The best practice would be to use constraint teacher not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your teacher is constrained on gaps and if you leave a not allowed slot between 2 allowed slots, this possible gap might be counted in teacher&apos;s timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben nur einen Lehrer ausgewählt. Das könnte ein kleines Problem ergeben: Falls ein nichterlaubtes Zeitfeld zwischen zwei erlaubten Feldern stehen würde, würde das nichterlaubte Feld als Freistunde im Stundenplan des Lehrers gezählt.
+
+Am Besten wäre es, eine Einschränkung „Nicht verfügbare Zeiten eines Lehrers“ zu wählen.
+
+Bei einer Gewichtung unter 100% kann man diese Einschränkung einsetzen, aber man muss vorsichtig sein, damit der Stundenplan nicht unmöglich wird (falls Einschränkungen beim Lehrer auf Freistunden bestehen und ein nicht erlaubtes Zeitfeld zwischen zwei erlaubten Zeitfeldern steht, das nachher als Freistunde gezählt würde).</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="370"/>
@@ -38182,7 +38202,11 @@ Bitte stoppen Sie die Plangenerierung</translation>
  The best practice would be to use constraint students set not available times.
 
  If you need weight under 100%, then you can use this constraint, but be careful not to obtain an impossible timetable (if your students set is constrained on gaps or early gaps and if you leave a not allowed slot between 2 allowed slots (or a not allowed slot before allowed slots), this possible gap might be counted in students&apos; timetable)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben nur eine Schülergruppe ausgewählt. Das könnte ein kleines Problem ergeben: Falls ein nichterlaubtes Zeitfeld zwischen zwei erlaubten Feldern stehen würde, würde das nichterlaubte Feld als Freistunde im Stundenplan der Schüler gezählt.
+
+Am Besten wäre es, eine Einschränkung „Nicht verfügbare Zeiten einer Schülergruppe“ zu wählen.
+
+Bei einer Gewichtung unter 100% kann man diese Einschränkung einsetzen, aber man muss vorsichtig sein, damit der Stundenplan nicht unmöglich wird (falls Einschränkungen bei der Schülergruppe auf Freistunden bestehen und ein nicht erlaubtes Zeitfeld zwischen zwei erlaubten Zeitfeldern steht, das nachher als Freistunde gezählt würde).</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintactivitiespreferredtimeslotsform.cpp" line="401"/>
@@ -39566,7 +39590,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="215"/>
         <source>You want to add a constraint min days between activities for more activities than the number of days per week. This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).</source>
-        <translation type="unfinished">Sie möchten eine Einschränkung für die minimale Anzahl an Tagen zwischen Aktivitäten setzen für mehr Aktivitäten, als es Wochentage gibt: Dies ist nicht ratsam, da es die Stundenplanerstellung verlangsamen und die Berechnung einer Lösung erschweren würde.</translation>
+        <translation>Sie möchten eine Einschränkung für die minimale Anzahl an Tagen zwischen Aktivitäten setzen für mehr Aktivitäten, als es Wochentage gibt: Dies ist nicht ratsam, da es die Stundenplanerstellung verlangsamen und die Berechnung einer Lösung erschweren würde.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="218"/>
@@ -39596,7 +39620,7 @@ Bitte stoppen Sie die Plangenerierung</translation>
     <message>
         <location filename="../src/interface/modifyconstraintmindaysbetweenactivitiesform.cpp" line="268"/>
         <source>Cannot proceed, current constraint is equal to another one (it is duplicated)</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Vorgang konnte nicht fortgesetzt werden: Eine Einschränkung wie diese existiert bereits (ist ein Duplikat).</translation>
     </message>
 </context>
 <context>
@@ -40021,7 +40045,7 @@ Bemerkung: „Nicht verfügbare Zeiten einer Schülergruppe“ und Pausen werden
     <message>
         <location filename="../src/interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui" line="32"/>
         <source>This represents the maximum allowed beginnings at the second available hour (in a week). You might want to allow your students to begin in some days later, at the second available hour, so you might put &quot;max beginnings at second hour&quot; greater than 0 (the timetable will be easier for FET). You might want to choose a greater value and lower it as you find new timetables</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser Wert bestimmt die maximale Anzahl an Unterrichtsstunden (pro Woche), die erst bei der 2. Lektion beginnen. Falls Sie es Ihren Schülern erlauben, an einigen Tagen erst bei der 2. verfügbaren Stunde zu erscheinen, können Sie einen Wert größer als 0 beim Feld „Spätestens zur zweiten Stunde beginnen“ eingeben. So wird es für FET einfacher, einen gültigen Stundenplan zu berechnen. Den Wert kann man anfangs höher setzen und nachher erniedrigen, wenn Lösungen gefunden wurden.</translation>
     </message>
 </context>
 <context>
@@ -40277,7 +40301,10 @@ Bemerkung: „Nicht verfügbare Zeiten einer Schülergruppe“ und Pausen werden
 Note: students set not available and break are not counted as gaps.
 
 IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this constraint, but instead use the safer/better max gaps per week.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hier muss eine Gewichtung von 100% gesetzt werden.
+Bemerkung: „Nicht verfügbare Zeiten einer Schülergruppe“ und Pausen werden nicht als Freistunden (bzw. frühe Freistunden) berechnet.
+
+WICHTIG: Falls 0 Freistunden total gewünscht wird, sollte man diese Einschränkung NICHT verwenden, sondern die bessere/sicherere „Max. Freistunden pro Woche“ einsetzen.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperdayform_template.ui" line="69"/>
@@ -40346,7 +40373,9 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
         <location filename="../src/interface/modifyconstraintstudentsmaxgapsperweekform_template.ui" line="32"/>
         <source>You have to use weight percentage 100%, because otherwise you will get poor timetables. Currently, the algorithm only accepts 100% weight percentage for this constraint (or no constraint).
 Note: students set not available and break are not counted as gaps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hier muss eine Gewichtung von 100% gesetzt werden; sonst erhält man schlechte Stundenpläne. Der aktuelle Algorithmus akzeptiert zur Zeit nur 100% als Gewichtung für diese Einschränkung (oder keine Einschränkung).
+
+Bemerkung: „Nicht verfügbare Zeiten einer Schülergruppe“ und Pausen werden nicht als Freistunden berechnet.</translation>
     </message>
 </context>
 <context>
@@ -40522,7 +40551,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="84"/>
         <source>If you allow empty days, the min hours must be at least 2 (to make it a non-trivial constraint)</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn man freie (leere) Stunden erlaubt, muss die Mindestanzahl an Stunden 2 betragen, um eine sinnvolle Einschränkung zu definieren.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentsminhoursdailyform.cpp" line="110"/>
@@ -40775,7 +40804,7 @@ Bemerkung: „Nicht verfügbare Zeiten einer Schülergruppe“ und Pausen werden
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetearlymaxbeginningsatsecondhourform_template.ui" line="32"/>
         <source>This represents the maximum allowed beginnings at the second available hour (in a week). You might want to allow your students to begin in some days later, at the second available hour, so you might put &quot;max beginnings at second hour&quot; greater than 0 (the timetable will be easier for FET). You might want to choose a greater value and lower it as you find new timetables</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser Wert bestimmt die maximale Anzahl an Unterrichtsstunden (pro Woche), die erst bei der 2. Lektion beginnen. Falls Sie es Ihren Schülern erlauben, an einigen Tagen erst bei der 2. verfügbaren Stunde zu erscheinen, können Sie einen Wert größer als 0 beim Feld „Spätestens zur zweiten Stunde beginnen“ eingeben. So wird es für FET einfacher, einen gültigen Stundenplan zu berechnen. Den Wert kann man anfangs höher setzen und nachher erniedrigen, wenn Lösungen gefunden wurden.</translation>
     </message>
 </context>
 <context>
@@ -41191,7 +41220,10 @@ Bemerkung: „Nicht verfügbare Zeiten einer Schülergruppe“ und Pausen werden
 Note: students set not available and break are not counted as gaps.
 
 IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this constraint, but instead use the safer/better max gaps per week.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hier muss eine Gewichtung von 100% gesetzt werden.
+Bemerkung: „Nicht verfügbare Zeiten einer Schülergruppe“ und Pausen werden nicht als Freistunden (bzw. frühe Freistunden) berechnet.
+
+WICHTIG: Falls 0 Freistunden total gewünscht wird, sollte man diese Einschränkung NICHT verwenden, sondern die bessere/sicherere „Max. Freistunden pro Woche“ einsetzen.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperdayform_template.ui" line="126"/>
@@ -41281,7 +41313,9 @@ IMPORTANT: if you want 0 total gaps, it is strongly recommended NOT to use this 
         <location filename="../src/interface/modifyconstraintstudentssetmaxgapsperweekform_template.ui" line="32"/>
         <source>You have to use weight percentage 100%, because otherwise you will get poor timetables. Currently, the algorithm only accepts 100% weight percentage for this constraint (or no constraint).
 Note: students set not available and break are not counted as gaps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hier muss eine Gewichtung von 100% gesetzt werden; sonst erhält man schlechte Stundenpläne. Der aktuelle Algorithmus akzeptiert zur Zeit nur 100% als Gewichtung für diese Einschränkung (oder keine Einschränkung).
+
+Bemerkung: „Nicht verfügbare Zeiten einer Schülergruppe“ und Pausen werden nicht als Freistunden berechnet.</translation>
     </message>
 </context>
 <context>
@@ -41491,7 +41525,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="129"/>
         <source>If you allow empty days, the min hours must be at least 2 (to make it a non-trivial constraint)</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn man freie (leere) Stunden erlaubt, muss die Mindestanzahl an Stunden 2 betragen, um eine sinnvolle Einschränkung zu definieren.</translation>
     </message>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetminhoursdailyform.cpp" line="137"/>
@@ -41628,7 +41662,7 @@ Note: students set not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintstudentssetnotavailabletimesform_template.ui" line="26"/>
         <source>This constraint does not induce gaps (or early not respected) for students. If a students set has lessons before and after this not available period, there will be no gaps counted</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Einschränkung rechnet nicht verfügbare Zeiten nicht als Freistunden. Falls eine Schülergruppe Aktivitäten vor und nach einer nicht verfügbaren Zeit hat, werden keine Freistunden gezählt.</translation>
     </message>
 </context>
 <context>
@@ -42667,7 +42701,10 @@ Note: students set not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperdayform_template.ui" line="32"/>
         <source>You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per day and lower it as you find new timetables.
 Note: teacher not available and break are not counted as gaps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hier muss eine Gewichtung von 100% gesetzt werden; sonst erhält man schlechte Stundenpläne. Geben Sie zunächst einen etwas höheren Wert für die maximale Anzahl an Freistunden an. Nachdem neue Stundenpläne berechnet wurden, kann dieser Wert verringert werden. 
+
+Bemerkung: „Nicht verfügbare Zeiten einer Schülergruppe“ und Pausen werden nicht als Freistunden berechnet.
+</translation>
     </message>
 </context>
 <context>
@@ -42732,7 +42769,10 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachermaxgapsperweekform_template.ui" line="32"/>
         <source>You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per week and lower it as you find new timetables.
 Note: teacher not available and break are not counted as gaps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hier muss eine Gewichtung von 100% gesetzt werden; sonst erhält man schlechte Stundenpläne. Geben Sie zunächst einen etwas höheren Wert für die maximale Anzahl an Freistunden an. Nachdem neue Stundenpläne berechnet wurden, kann dieser Wert verringert werden. 
+
+Bemerkung: „Nicht verfügbare Zeiten einer Schülergruppe“ und Pausen werden nicht als Freistunden berechnet.
+</translation>
     </message>
 </context>
 <context>
@@ -43112,7 +43152,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifyconstraintteachernotavailabletimesform_template.ui" line="26"/>
         <source>This constraint does not induce gaps for teachers. If a teacher has lessons before and after this not available period, there will be no gaps counted</source>
-        <translation type="unfinished"></translation>
+        <translation>Bemerkung: Diese Einschränkung berechnet nicht verfügbare Zeiten nicht als Freistunden für Lehrer. Falls ein Lehrer vor und nach einer nicht verfügbaren Zeit unterrichtet, werden keine Freistunden gezählt.</translation>
     </message>
 </context>
 <context>
@@ -43503,7 +43543,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperdayform_template.ui" line="32"/>
         <source>It is recommended to use only one constraint of this type. You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per day and lower it as you find new timetables.
 Note: teacher not available and break are not counted as gaps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es sollte hier nur eine Einschränkung von diesem Typ benutzt werden. Die Gewichtung muss 100% betragen, um taugliche Stundenpläne zu bekommen. Anfangs sollte mit einem großen Wert für „Maximale Anzahl an Freistunden pro Tag“ gearbeitet werden. Diesen kann man nach und nach verkleinern, nachdem Stundenpläne erfolgreich berechnet wurden. Nicht verfügbare Lehrerstunden und Pausen werden nicht als Freistunden gezählt.</translation>
     </message>
 </context>
 <context>
@@ -43557,7 +43597,7 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/interface/modifyconstraintteachersmaxgapsperweekform_template.ui" line="32"/>
         <source>It is recommended to use only one constraint of this type. You must use weight percentage 100%, because otherwise you will get poor timetables. Try to fix firstly a rather large value for max gaps per week and lower it as you find new timetables.
 Note: teacher not available and break are not counted as gaps.</source>
-        <translation>Es sollte hier nur eine Einschränkung mit 100% benutzt werden. Beginne mit einem großen Wert und verkleinere ihn.Nicht verfügbare Lehrerstunden und Pausenwerden nicht als Springstunde gezählt.</translation>
+        <translation>Es sollte hier nur eine Einschränkung von diesem Typ benutzt werden. Die Gewichtung muss 100% betragen, um taugliche Stundenpläne zu bekommen. Anfangs sollte mit einem großen Wert für „Maximale Anzahl an Freistunden pro Woche“ gearbeitet werden. Diesen kann man nach und nach verkleinern, nachdem Stundenpläne erfolgreich berechnet wurden. Nicht verfügbare Lehrerstunden und Pausen werden nicht als Freistunden gezählt.</translation>
     </message>
 </context>
 <context>
@@ -44248,7 +44288,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentsgroupform.cpp" line="69"/>
         <source>Name exists. If you would like to make more years to contain a group (overlapping years), please remove current group (FET will unfortunately remove all related activities and constraints) and add a new group with desired name in current year. I know this is a not an elegant procedure, I&apos;ll try to fix that in the future.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser Name existiert schon. Falls mehrere Jahrgänge eine Gruppe aufnehmen sollen (überlappende Jahrgänge), entfernen Sie bitte die aktuelle Gruppe (leider wird FET alle verknüpften Aktivitäten und Einschränkungen entfernen!) und fügen Sie eine neue Gruppe mit dem grwünschten Namen in den aktuellen Jahrgang ein. Der Vorgang ist zugegeben nicht sehr elegant; ich werde versuchen, das in einer späteren Version irgendwann zu beheben.</translation>
     </message>
 </context>
 <context>
@@ -44301,7 +44341,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/modifystudentssubgroupform.cpp" line="73"/>
         <source>Name exists. If you would like to make more groups to contain a subgroup (overlapping groups), please remove current subgroup (FET will unfortunately remove all related activities and constraints) and add a new subgroup with desired name in current group. I know this is a not an elegant procedure, I&apos;ll try to fix that in the future.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser Name existiert schon. Falls mehrere Schülergruppen eine Teilgruppe aufnehmen sollen (überlappende Schülergruppen), entfernen Sie bitte die aktuelle Teilgruppe (leider wird FET alle verknüpften Aktivitäten und Einschränkungen entfernen!) und fügen Sie eine neue Teilgruppe mit dem gewünschten Namen in die aktuelle Gruppe ein. Der Vorgang ist zugegeben nicht sehr elegant; ich werde versuchen, das in einer späteren Version irgendwann zu beheben.</translation>
     </message>
 </context>
 <context>
@@ -44679,32 +44719,32 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="397"/>
         <source>Mode of operation: to obtain the same timetable twice, give the random seed two values (say X=1234, Y=12345), then generate single, then make it again the same values (X=1234 and Y=12345), then generate single again. The timetables will be the same. If you generate multiple instead of single, the first set of timetables will be the same as the second set (if you generate the same number of timetables) but of course timetables inside each set will be different. If you enter the same random seed (X and Y) on different computers (but using the same FET version, see note below) and generate single, the timetables will be the same (if you generate multiple, the sets of timetables will correspond, the first timetable from simulation 1 with first timetable from simulation 2, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Vorgang lässt sich folgendermassen beschreiben: Um zweimal den gleichen Stundenplan zu berechnen, gibt man dem Zufallsgenerator zwei Anfangswerte, z.B. X=1234, Y=12345. Dann lässt man einen Einzelstundenplan berechnen, die Anfangswerte nochmals mit den gleichen Zahlen belegen, dann nochmals einen Einzelstundenplan generieren. Die zwei Stundenpläne werden identisch sein. Falls man Mehrfachstundenpläne berechnet hätte, würden die Stundenpläne im zweiten Satz gleich wie im ersten Satz sein (falls die gleiche Anzahl an Stundenpläne berechnet wurden); innerhalb jeden Satzes sind die Stundenpläne voneinander aber natürlich verschieden. Bei einer Berechnung mit verschiedenen Computern, aber die gleiche Version von FET, werden die Stundenpläne exakt dieselben, falls die gleichen Anfangswerte den Zufallsgeneratoren eingegeben wurden.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="406"/>
         <source>Note: of course you need exactly the same conditions to duplicate the same simulations (so, you need exactly the same data - activities, constraints, etc.).</source>
-        <translation type="unfinished"></translation>
+        <translation>Bemerkung: Natürlich müssen die gleichen Ausgangsdaten vorliegen, um gleiche Stundenpläne zu erhalten -- Aktivitäten, Einschränkungen, usw.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="408"/>
         <source>Note: for different versions of FET, the behavior of generation may be totally different, even for the same data and the same random seed (same X and same Y), due to possible changes in the algorithm. You need to consider this as a precaution.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bemerkung: Unterschiedliche Versionen von FET können in der Berechnung von Stundenplänen sehr voneinander abweichen; auch dann, wenn die gleichen Ausgangsdaten und die gleichen Zufallszahlen (X und Y) eingegeben werden. Der Algorithmus könnte verändert worden sein. Das sollte man vorsichtshalber bedenken.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="411"/>
         <source>Note: when you start FET, each time, the random seed X is the number of seconds elapsed since 1 January 1970 and the random seed Y is the next number in the Y series, after the number of seconds elapsed since 1 January 1970</source>
-        <translation type="unfinished"></translation>
+        <translation>Bemerkung: Jedesmal beim Ausführen von FET wird der Anfangswert X des Zufallsgenerators mit der Anzahl an Sekunden seit dem 1. Januar 1970 belegt. Die Zahl Y ist die nächste in der Y-Reihe nach der Anzahl an Sekunden seit dem 1. Januar 1970.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="414"/>
         <source>After you generate (even partially), the random seed (X and Y components) will change (each call of the random number generator updates the random seed components to the next numbers in the sequence, and there are many calls to this random generating routine in the generate function)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach jeder Stundenplanberechnung, auch nach einer partiellen Berechnung, ändern sich die Zufallswerte X und Y. Bei jedem Aufruf der Zufallsfunktion werden diese Zahlen auf die nächsten Werte in der Reihe aktualisiert, und davon gibt es sehr viele in der Generierungsfunktion.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="417"/>
         <source>This setting is useful for more things, maybe one thing is bug report: send you file along with the random seed at the start of generating (the two components, X and Y, are saved in the timetable directory at the start of generation)</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Einstellung ist nützlich, wenn man einen Fehlerbericht schickt: Senden Sie Ihre Datei zusammen mit den Zufallswerten (X und Y), die im Stundenplanordner mit gespeichert werden.</translation>
     </message>
     <message>
         <location filename="../src/interface/fetmainform.cpp" line="426"/>
@@ -44733,7 +44773,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform.cpp" line="43"/>
         <source>This function is intended to be used after you inputted all data or after you used the advanced function of spreading the activities over the week. This function will automatically remove the redundant constraints of type min days between activities, so that your data is more correct and the timetable easier for FET to find</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Funktion sollte nach der Eingabe aller Daten oder nach dem Einsatz der erweiterten Funktion „Verteile Aktivitäten gleichmäßig in der Woche“ ausgeführt werden. Redundante Einschränkungen vom Typ „Mindestens n Tage zwischen einem Satz von Aktivitäten“ werden automatisch entfernt, damit FET schneller und zuverlässiger den Stundenplan berechnen kann.</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform.cpp" line="47"/>
@@ -44748,7 +44788,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/removeredundantconfirmationform.cpp" line="53"/>
         <source>Please SAVE/BACKUP your current file and keep it safe, in case anything goes wrong, and only continue if you did that already. Current function might modify much your data</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte erst fortfahren, nachdem Sie eine Sicherheitskopie Ihrer aktuellen Datei angelegt haben. Diese sollten Sie für alle Fälle gut aufheben! Die aktuelle Funktion kann möglicherweise Ihre Daten verändern.</translation>
     </message>
 </context>
 <context>
@@ -44842,7 +44882,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="68"/>
         <source>Explanation: If you use constraints activities same starting time and/or constraints activities same starting days, maybe you will obtain redundant constraints min days between activities, which are not good (your timetable is more difficult to find, or even impossible). This menu enables you to remove these redundant min days between activities constraints</source>
-        <translation type="unfinished"></translation>
+        <translation>Erläuterung: Beim Einsatz der Einschränkungen „Aktivitäten haben gleiche Startzeiten“ (Tag oder Tag+Stunde) werden evtl. redundante Einschränkungen vom Typ „Mindestens n Tage zwischen Aktivitäten“ erzeugt - diese könnten die Stundenplanberechnung verlangsamen oder gar verunmöglichen. Durch dieses Menü kann man solche redundanten Einschränkungen entfernen.</translation>
     </message>
     <message>
         <location filename="../src/interface/removeredundantform_template.ui" line="84"/>
@@ -45060,7 +45100,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="459"/>
         <source>Processing internally the activities ... please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivitäten werden intern verarbeitet ... bitte etwas Geduld!</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="476"/>
@@ -45072,7 +45112,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="580"/>
         <source>The following time constraint is ignored, because it refers to inactive activities:</source>
-        <translation type="unfinished"></translation>
+        <translation>Die folgende Zeiteinschränkung wird ignoriert, weil sie sich auf deaktivierte Aktivitäten bezieht:</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="585"/>
@@ -45157,17 +45197,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="600"/>
         <source>Processing internally the time constraints ... please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeiteinschränkungen werden intern verarbeitet ... bitte etwas Geduld!</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="662"/>
         <source>The following space constraint is ignored, because it refers to inactive activities:</source>
-        <translation type="unfinished"></translation>
+        <translation>Die folgende Raumeinschränkung wird ignoriert, weil sie sich auf deaktivierte Aktivitäten bezieht:</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="682"/>
         <source>Processing internally the space constraints ... please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Raumeinschränkungen werden intern verarbeitet ... bitte etwas Geduld!</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2535"/>
@@ -45229,7 +45269,7 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="5488"/>
         <source>The activity with id=%1 contains incorrect data</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Aktivität mit ID=%1 enthält ungültige Daten.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6475"/>
@@ -45248,17 +45288,17 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="4270"/>
         <source>FET cannot open the log file %1 for writing. This might mean that you don&apos;t have write permissions in this location. You can continue operation, but you might not be able to save the generated timetables as html files</source>
-        <translation type="unfinished"></translation>
+        <translation>FET kann die Berichtdatei %1 zum Schreiben nicht öffnen. Eventuell fehlen die nötigen Schreibberechtigungen. Sie können fortfahren, nur werden keine Stundenpläne als HTML-Dateien gespeichert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4273"/>
         <source>A solution is to remove that file (if it exists already) or set its permissions to allow writing</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine Lösung wäre, diese Datei zu löschen, falls sie bereits existiert, oder die Schreibberechtigung zu aktivieren.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4274"/>
         <source>Please report possible bug</source>
-        <translation>Bitte teilen Sie diesen möglichen Feher mit</translation>
+        <translation>Bitte teilen Sie uns diesen möglichen Feher mit!</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4275"/>
@@ -45271,32 +45311,32 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="4325"/>
         <source>File contains a version numbering scheme which is not matched by v.v.va (3 numbers separated by points, followed by any string a, which may be empty). File will be opened, but you are adviced to check the version of the .fet file (in the beginning of the file). If this is a FET bug, please report it</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine Versionskennzeichnung, die dem Muster „v.v.va“ nicht entspricht (mit 3 Ziffern, die durch Punkte getrennt werden und nachfolgender beliebiger Zeichenkette, die auch leer sein kann). Die Datei wird geöffnet, aber bitte überprüfen Sie die Version Ihrer FET-Datei (diese steht ganz am Anfang der Datei). Falls es sich um einen Fehler in FET handelt, bitte uns darüber benachrichtigen.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4328"/>
         <source>If you are opening a file older than FET format version 5, it will be converted to latest FET data format</source>
-        <translation type="unfinished"></translation>
+        <translation>Falls Sie eine Datei öffnen, die mit einer FET-Version älter als 5 angelegt wurde, wird sie in das aktuelle FET-Datenformat konvertiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4352"/>
         <source>FET version does not respect the format v.v.va (3 numbers separated by points, followed by any string a, which may be empty). This is probably a bug in FET - please report it</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Version von FET kann das Format „v.v.va“ nicht verarbeiten (3 durch Punkt getrennte Ziffern mit einer beliebigen Zeichenkette angehängt). Das ist wahrscheinlich ein Fehler von FET ... bitte diesen Fehler melden!</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4388"/>
         <source>File does not have a corresponding beginning tag - it should be %1 or %2. File is incorrect...it cannot be opened</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei hat keine korrekte Anfangskennzeichnung - diese sollte %1 oder %2 heissen. Die Datei ist fehlerhaft und kann nicht geöffnet werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4407"/>
         <source>Opening a file generated with a newer version than your current FET software ... file will be opened but it is recommended to update your FET software to the latest version</source>
-        <translation type="unfinished"></translation>
+        <translation>Die zu öffnende Datei wurde mit einer späteren Version von FET angelegt. Sie wird zwar geöffnet, aber es ist ratsam, Ihre FET-Software auf die aktuelle Version zu aktualisieren.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4408"/>
         <source>Your FET version: %1, file version: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihre FET-Version: %1 - Dateiversion: %2</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4477"/>
@@ -45341,13 +45381,13 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/engine/rules.cpp" line="13625"/>
         <location filename="../src/engine/rules.cpp" line="13973"/>
         <source>%1 is incorrect</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ist inkorrekt.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4480"/>
         <location filename="../src/engine/rules.cpp" line="4561"/>
         <source>%1 is too large. Maximum allowed is %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ist zu gross; der Maximalwert beträgt %2.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4490"/>
@@ -45355,35 +45395,35 @@ Note: teacher not available and break are not counted as gaps.</source>
         <location filename="../src/engine/rules.cpp" line="4571"/>
         <location filename="../src/engine/rules.cpp" line="4589"/>
         <source>Too many %1 items. Maximum allowed is %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu viele Objekte: %1. Maximale Anzahl = %2.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4535"/>
         <location filename="../src/engine/rules.cpp" line="4618"/>
         <location filename="../src/engine/rules.cpp" line="4625"/>
         <source>%1: %2 and the number of %3 read do not correspond</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: %2 stimmt nicht mit der Anzahl gelesener Objekte überein: %3</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4658"/>
         <source>Duplicate teacher %1 found - ignoring</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Lehrer %1 ist doppelt vorhanden - wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4708"/>
         <source>Duplicate subject %1 found - ignoring</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Fach %1 ist doppelt vorhanden ... wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4736"/>
         <source>Your file contains subject tags list, which is named in versions&gt;=5.5.0 activity tags list</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihre Datei enthält eine Liste von Unterrichtskennzeichnungen, die ab Version 5.5.0 neu Aktivitätskennzeichnungen heissen.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4761"/>
         <location filename="../src/engine/rules.cpp" line="4811"/>
         <source>Duplicate activity tag %1 found - ignoring</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Aktivitätskennzeichnung %1 ist doppelt vorhanden - wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="253"/>
@@ -45478,228 +45518,230 @@ Note: teacher not available and break are not counted as gaps.</source>
     <message>
         <location filename="../src/engine/rules.cpp" line="161"/>
         <source>You have too many teachers. You need to increase the variable MAX_TEACHERS (which is currently %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Es sind zu viele Lehrer; die Variable MAX_TEACHERS, momentan = %1, muss erhöht werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="266"/>
         <source>Automatic Subgroup</source>
         <comment>Please keep the translation short. It is used when a group contains no subgroups and an automatic subgroup is added in the group, in the timetable (when viewing the students timetable from FET and also in the html timetables for students subgroups). In the empty group there will be added a subgroup with name = groupName+a space character+your translation of &apos;Automatic Subgroup&apos;.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Auto-Teilgruppe</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="304"/>
         <source>You have too many total subgroups. You need to increase the variable MAX_TOTAL_SUBGROUPS (which is currently %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Es gibt zu viele Teilgruppen insgesamt; die Variable MAX_TOTAL_SUBGROUPS (momentan = %1) muss erhöht werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="318"/>
         <source>You have too many active activities. You need to increase the variable MAX_ACTIVITIES (which is currently %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Es gibt zu viele Aktivitäten; die Variable MAX_ACTIVITIES (momentan %1) muss erhöht werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="325"/>
         <source>You have too many buildings. You need to increase the variable MAX_BUILDINGS (which is currently %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Es gibt zu viele Gebäude; die Variable MAX_BUILDINGS (momentan = %1) muss erhöht werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="332"/>
         <source>You have too many rooms. You need to increase the variable MAX_ROOMS (which is currently %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Es gibt zu viele Räume; die Variable MAX_ROOMS (momentan = %1) muss erhöht werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="458"/>
         <source>Computing internal structure</source>
         <comment>Title of a progress dialog</comment>
-        <translation type="unfinished"></translation>
+        <translation>Interne Struktur wird berechnet</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="735"/>
         <source>All &apos;group activities in the initial order for timetable generation&apos; items should contain at least two activities ids. This is not true for item number %1. Please report potential bug.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Objekte, die durch „Aktivitäten zusammenfassen für die Anfangsordnung zum Erstellen“ angegeben werden, sollten zumindest zwei Aktivitäten-IDs aufweisen. Für das Objekt %1 trifft dies nicht zu. Bitte, melden Sie diesen möglichen Fehler an uns!</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2535"/>
         <source>Activity with Id=%1 contains %2 duplicate teachers - please correct that</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Aktivität mit ID=%1 enthält %2 Lehrer, die Duplikate sind. Bitte, korrigieren Sie das.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2540"/>
         <source>Activity with Id=%1 contains %2 duplicate students sets - please correct that</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Aktivität mit ID=%1 enthält %2 Schülergruppen, die Duplikate sind. Bitte, korrigieren Sie das.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2545"/>
         <source>Activity with Id=%1 contains %2 duplicate activity tags - please correct that</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Aktivität mit ID=%1 enthält %2 Aktivitätskennzeichnungen, die Duplikate sind. Bitte, korrigieren Sie das.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2671"/>
         <source>Activities with group_Id=%1 contain %2 duplicate teachers - please correct that</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Aktivitäten mit Gruppen-ID=%1 enthält %2 Lehrer, die Duplikate sind. Bitte, korrigieren Sie das.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2676"/>
         <source>Activities with group_Id=%1 contain %2 duplicate students sets - please correct that</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Aktivitäten mit Gruppen-ID=%1 enthält %2 Schülergruppen, die Duplikate sind. Bitte, korrigieren Sie das.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="2681"/>
         <source>Activities with group_Id=%1 contain %2 duplicate activity tags - please correct that</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Aktivitäten mit Gruppen-ID=%1 enthält %2 Aktivitätskennzeichnungen, die Duplikate sind. Bitte, korrigieren Sie das.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4395"/>
         <source>Opening older file - it will be converted to latest format, automatically assigning weight percentages to constraints and dropping parity for activities. You are adviced to make a backup of your old file before saving in new format.
 
 Please note that the default weight percentage of constraints min days between activities will be 95% (mainly satisfied, not always) and &apos;force consecutive if same day&apos; will be set to true (meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity). If you want, you can modify this percent to be 100%, manually in the fet input file or from the interface</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine ältere Dateiversion wird geöffnet - sie wird in das aktuelle Dateienformat konvertiert, Gewichtungen werden den Einschränkungen automatisch hinzugefügt, und Paritäten für Aktivitäten werden gelöscht. Es ist ratsam, von dieser älteren Datei eine Sicherheitskopie anzulegen, bevor Sie den Vorgang fortsetzen.
+
+Die Vorgabegewichtung für Einschränkungen vom Typ „Mindestens n Tage zwischen Aktivitäten“ beträgt 95% (wird meistens respektiert, aber nicht immer), und „Aktivitäten aufeinanderfolgend am gleichen Tag“ wird aktiviert (Aktivitäten, die am gleichen Tag stattfinden, werden zu einer Aktivität mit entsprechend längerer Dauer zusammengefasst). Diese Gewichtung kann manuell bis auf 100% heraufgesetzt werden, entweder durch direktes Bearbeiten der FET-Datei oder durch die grafische Benutzerschnittstelle.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4876"/>
         <source>Trying to add year %1, which is already added as another year.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wird versucht, den Jahrgang %1 hinzuzufügen, der als Jahrgang bereits existiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4878"/>
         <source>Trying to add year %1, which is already added as another group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wird versucht, den Jahrgang %1 hinzuzufügen, der als Schülergruppe bereits existiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4880"/>
         <source>Trying to add year %1, which is already added as another subgroup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wird versucht, den Jahrgang %1 hinzuzufügen, der als Teilgruppe bereits existiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4940"/>
         <source>Trying to add group %1, which is already added as another year.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wird versucht, die Schülergruppe %1 hinzuzufügen, die als Jahrgang bereits existiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4945"/>
         <source>Trying to add group %1 in year %2 but it is already added.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wird versucht, die Schülergruppe %1 dem Jahrgang %2 hinzuzufügen; diese existiert bereits.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4954"/>
         <source>Trying to add group %1, which is already added as another subgroup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wird versucht, die Schülergruppe %1 hinzuzufügen, die als Teilgruppe bereits existiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5046"/>
         <source>Trying to add subgroup %1, which is already added as another year.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wird versucht, die Teilgruppe %1 hinzuzufügen, die als Jahrgang bereits existiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5050"/>
         <source>Trying to add subgroup %1, which is already added as another group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wird versucht, die Teilgruppe %1 hinzuzufügen, die als Schülergruppe bereits existiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5055"/>
         <source>Trying to add subgroup %1 in year %2, group %3 but it is already added.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wird versucht, die Teilgruppe %1 dem Jahrgang %2 und Gruppe %3 hinzuzufügen; diese existiert bereits.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5364"/>
         <source>Found activity active tag which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The activity will be considered not active</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
-        <translation type="unfinished"></translation>
+        <translation>Es wurden „active“-Tags für Aktivitäten gefunden, die weder „true“, „false“, „yes“, „no“, „1“ oder „0“ heissen. Die Aktivität wird als deaktiviert verarbeitet.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5536"/>
         <source>Duplicate building %1 found - ignoring</source>
-        <translation type="unfinished"></translation>
+        <translation>Duplikat für Gebäude %1 gefunden - es wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5609"/>
         <source>Duplicate room %1 found - ignoring</source>
-        <translation type="unfinished"></translation>
+        <translation>Duplikat für Raum %1 gefunden - er wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5666"/>
         <source>File contains constraint teacher not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint teacher not available times (a matrix).</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine Einschränkung „Lehrer nicht verfügbar“, die in einer älteren FET-Version (vor 5.5.0) galt. Diese wird auf die aktuelle Einschränkung „Nicht verfügbare Zeiten eines Lehrers“ (eine Matrix) aktualisiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5713"/>
         <source>File contains constraint students set not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set not available times (a matrix).</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine Einschränkung „Schülergruppe nicht verfügbar“, die in einer älteren FET-Version (vor 5.5.0) galt. Diese wird auf die aktuelle Einschränkung „Nicht verfügbare Zeiten einer Schülergruppe“ (eine Matrix) aktualisiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5785"/>
         <source>File contains deprecated constraint teachers subgroups max hours daily - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die veraltete Einschränkung „Maximale Stunden pro Tag eines Lehrers mit Teilgruppen“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5796"/>
         <source>File contains deprecated constraint students n hours daily - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die veraltete Einschränkung „Maximale Stunden pro Tag eines Schülers“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5807"/>
         <source>File contains deprecated constraint students set n hours daily - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die veraltete Einschränkung „Maximale Stunden pro Tag einer Schülergruppe“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5851"/>
         <source>File contains old constraint type activity preferred time, which will be converted to the newer similar constraint of this type, constraint activity preferred STARTING time. This improvement is done in versions 5.5.9 and above</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine veraltete Einschränkung „Aktivitäten haben bevorzugte Stunden“, die auf die aktuelle Einschränkung „Aktivitäten haben bevorzugte STARTzeiten“ (ab Version 5.5.9) aktualisiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5901"/>
         <source>File contains deprecated constraint activity ends day - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die veraltete Einschränkung „Aktivität beendet den Tag“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5913"/>
         <source>Your file contains old constraint activity preferred times, which will be converted to new equivalent constraint activity preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of an activity (constraint activity preferred starting times) or: 2. the accepted time slots (constraint activity preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine veraltete Einschränkung „Aktivitäten haben bevorzugte Stunden“, die auf die aktuelle Einschränkung „Aktivitäten haben bevorzugte Startzeiten“ aktualisiert. Ab FET-Version 5.5.9 kann entweder (1) die Anfangszeit von Aktivitäten („Aktivitäten haben bevorzugte Startzeiten“) oder (2) „Aktivitäten haben bevorzugte Zeiten (Zeitfelder)“ angegeben werden. Falls die 2. Version benötigt wird, muss diese Einschränkung über die grafische Benutzerschnittstelle eingegeben werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5934"/>
         <source>File contains constraint break, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint break times (a matrix).</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die veraltete Einschränkung „Pause“ - diese wird in die neuere Version (ab FET 5.5.0) konvertiert, die „Einschränkungen für Pausen“ (eine Matrix) heisst.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5964"/>
         <source>File contains constraint students no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die Einschränkung „Schüler haben keine Freistunden“, die ab Version 5.5.0 von FET in „Maximale Anzahl an Freistunden pro Woche für alle Schüler“ geändert wurde. Die ältere Einschränkung wird in die neue Version mit max. Freistunden=0 konvertiert. Nach Bedarf kann dieser Wert erhöht werden, um mehr Freistunden pro Woche zu erlauben (normalerweise wird das von Schulen nicht erlaubt).</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5978"/>
         <source>File contains constraint students set no gaps, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set max gaps per week, with max gaps=0. If you like, you can modify this constraint to allow more gaps per week (normally not accepted in schools)</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die Einschränkung „Eine Schülergruppe hat keine Freistunden“, die ab Version 5.5.0 von FET in „Maximale Anzahl an Freistunden pro Woche für eine Schülergruppe“ geändert wurde. Die ältere Einschränkung wird in die neue Version mit max. Freistunden=0 konvertiert. Nach Bedarf kann dieser Wert erhöht werden, um mehr Freistunden pro Woche zu erlauben (normalerweise wird das von Schulen nicht erlaubt).</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6006"/>
         <source>File contains constraint students early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine ältere Einschränkung „Früher Unterrichtsbeginn für Schüler“, die ab Version 5.5.0 von FET in „Früher Unterrichtsbeginn für alle Schüler“ mit „Spätestens zur zweiten Stunde beginnen“=0 geändert wurde. Nach Bedarf kann dieser Wert erhöht werden, was die Stundenplanberechnung erleichtern könnte.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6023"/>
         <source>File contains constraint students set early, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint students set early max beginnings at second hour, with max beginnings=0. If you like, you can modify this constraint to allow more beginnings at second available hour (above 0 - this will make the timetable easier)</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine ältere Einschränkung „Früher Unterrichtsbeginn für eine Schülergruppe“, die ab Version 5.5.0 von FET in „Früher Unterrichtsbeginn für eine Schülergruppe“ mit „Spätestens zur zweiten Stunde beginnen“=0 geändert wurde. Nach Bedarf kann dieser Wert erhöht werden, was die Stundenplanberechnung erleichtern könnte.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6040"/>
         <source>Your file contains old constraint activities preferred times, which will be converted to new equivalent constraint activities preferred starting times. Beginning with FET-5.5.9 it is possible to specify: 1. the starting times of several activities (constraint activities preferred starting times) or: 2. the accepted time slots (constraint activities preferred time slots). If what you need is type 2 of this constraint, you will have to add it by yourself from the interface.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihre Datei enthält eine veraltete Einschränkung „Aktivitäten haben bevorzugte Zeiten“, die in die neuere Version „Aktivitäten haben bevorzugte Startzeiten“ geändert wird. Dabei kann man (ab FET-Version 5.5.9) spezifizieren: (1) Die Startzeiten von mehreren Aktivitäten (Einschränkung „Aktivitäten haben bevorzugte Startzeiten“) oder (2) „Aktivitäten haben bevorzugte Zeiten (Zeitfelder)“. Falls die 2. Variante benötigt wird, muss diese über die grafische Benutzerschnittstelle eingegeben werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6078"/>
         <source>File contains deprecated constraint teachers subject tags max hours continuously - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine veraltete Einschränkung „Lehrer unterrichten Fächer mit Kennzeichnungen für maximal n aufeinanderfolgende Stunden“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6089"/>
         <source>File contains deprecated constraint teachers subject tag max hours continuously - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine veraltete Einschränkung „Lehrer unterrichten ein Fach mit Kennzeichnung für maximal n aufeinanderfolgende Stunden“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6110"/>
@@ -45714,79 +45756,79 @@ nicht hinzugefügt - Duplikat</translation>
     <message>
         <location filename="../src/engine/rules.cpp" line="6139"/>
         <source>File contains constraint room not available, which is old (it was improved in FET 5.5.0), and will be converted to the similar constraint of this type, constraint room not available times (a matrix).</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine Einschränkung „Raum nicht verfügbar“, die in einer älteren FET-Version (vor 5.5.0) galt. Diese wird auf die aktuelle Einschränkung „Nicht verfügbare Zeiten eines Raumes“ (eine Matrix) aktualisiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6154"/>
         <source>File contains deprecated constraint room type not allowed subjects - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die veraltete Einschränkung „Raumtyp ist nicht verfügbar für Fächer“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6166"/>
         <source>File contains deprecated constraint subject requires equipments - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die veraltete Einschränkung „Benötigte Ausstattung für Fächer“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6179"/>
         <source>File contains deprecated constraint subject tag requires equipments - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die veraltete Einschränkung „Benötigte Ausstattung für Unterrichtskennzeichnungen“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6191"/>
         <source>File contains deprecated constraint teacher requires room - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die veraltete Einschränkung „Benötigte Räume für Lehrer“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6203"/>
         <source>File contains deprecated constraint teacher subject require room - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die veraltete Einschränkung „Benötigte Räume für Lehrer mit Fach“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6215"/>
         <source>File contains deprecated constraint minimize number of rooms for students - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die veraltete Einschränkung „Minimieren der Anzahl an Räumen für alle Schüler“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6227"/>
         <source>File contains deprecated constraint minimize number of rooms for teachers - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die veraltete Einschränkung „Minimieren der Anzahl an Räumen für alle Lehrer“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6245"/>
         <source>File contains deprecated constraint activities same room - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält die veraltete Einschränkung „Aktivitäten haben die gleichen Räume“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6294"/>
         <source>File contains deprecated constraint max building changes per day for teachers - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine veraltete Einschränkung „Maximale Anzahl an Gebäudewechsel pro Tag für Lehrer“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6306"/>
         <source>File contains deprecated constraint max building changes per day for students - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine veraltete Einschränkung „Maximale Anzahl an Gebäudewechsel pro Tag für Schüler“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6318"/>
         <source>File contains deprecated constraint max room changes per day for teachers - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine veraltete Einschränkung „Maximale Anzahl an Raumwechsel pro Tag für Lehrer“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6330"/>
         <source>File contains deprecated constraint max room changes per day for students - will be ignored
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine veraltete Einschränkung „Maximale Anzahl an Raumwechsel pro Tag für Schüler“ - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6451"/>
@@ -45824,29 +45866,29 @@ nicht hinzugefügt - Duplikat</translation>
         <location filename="../src/engine/rules.cpp" line="15349"/>
         <location filename="../src/engine/rules.cpp" line="15403"/>
         <source>%1 does not coincide with the number of read %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 stimmt nicht mit der Anzahl der eingelesenen Objekte überein: %2</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6505"/>
         <source>Saving of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Versuch, eine Berichtsdatei zu speichern, hat die Fehlermeldung %1 zurückgegeben. Das heisst, dass die Log-Datei nicht gelesen werden kann. Überprüfen Sie bitte den freien Speicherplatz auf Ihrer Festplatte.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6548"/>
         <source>Cannot open %1 for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann die Datei %1 zum Schreiben nicht öffnen. Überprüfen Sie bitte die Ordnerberechtigungen sowie den freien Speicherplatz auf Ihrer Festplatte. Der Speichervorgang wurde abgebrochen.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6674"/>
         <source>Saved file gave error code %1, which means saving is compromised. Please check your disk free space</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Fehlercode %1 wurde beim Speichern der Datei zurückgegeben; das heisst, dass die Datei beschädigt ist. Bitte überprüfen Sie den freien Speicherplatz auf Ihrer Festplatte.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6952"/>
         <location filename="../src/engine/rules.cpp" line="7995"/>
         <location filename="../src/engine/rules.cpp" line="11421"/>
         <source>Weight percentage incorrect</source>
-        <translation type="unfinished"></translation>
+        <translation>Unzulässige Gewichtungsprozentzahl</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6974"/>
@@ -45871,7 +45913,7 @@ nicht hinzugefügt - Duplikat</translation>
         <location filename="../src/engine/rules.cpp" line="13760"/>
         <location filename="../src/engine/rules.cpp" line="13927"/>
         <source>Day %1 is inexistent</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Tag %1 existiert nicht.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6993"/>
@@ -45879,7 +45921,7 @@ nicht hinzugefügt - Duplikat</translation>
         <location filename="../src/engine/rules.cpp" line="11460"/>
         <location filename="../src/engine/rules.cpp" line="13778"/>
         <source>Hour %1 is the last hour - impossible</source>
-        <translation type="unfinished"></translation>
+        <translation>Stunde %1 kann nicht die letzte Stunde sein.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="6997"/>
@@ -45910,7 +45952,7 @@ nicht hinzugefügt - Duplikat</translation>
         <location filename="../src/engine/rules.cpp" line="13804"/>
         <location filename="../src/engine/rules.cpp" line="13948"/>
         <source>Hour %1 is inexistent</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Stunde %1 existiert nicht.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7016"/>
@@ -45918,7 +45960,7 @@ nicht hinzugefügt - Duplikat</translation>
         <location filename="../src/engine/rules.cpp" line="11481"/>
         <location filename="../src/engine/rules.cpp" line="13800"/>
         <source>Hour %1 is the first hour - impossible</source>
-        <translation type="unfinished"></translation>
+        <translation>Stunde %1 kann nicht die erste Stunde sein.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7048"/>
@@ -45934,7 +45976,7 @@ nicht hinzugefügt - Duplikat</translation>
         <location filename="../src/engine/rules.cpp" line="13831"/>
         <location filename="../src/engine/rules.cpp" line="13835"/>
         <source>Field missing: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Feld %1 fehlt.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7523"/>
@@ -45942,66 +45984,66 @@ nicht hinzugefügt - Duplikat</translation>
         <location filename="../src/engine/rules.cpp" line="7840"/>
         <location filename="../src/engine/rules.cpp" line="7955"/>
         <source>Hour %1 is inexistent (it is also not void, to specify end of the day)</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Stunde %1 existiert nicht (und ist auch nicht leer, um den Tag zu beenden).</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7482"/>
         <source>Constraint TeacherIntervalMaxDaysPerWeek max days corrupt for teacher %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Einschränkung „Ein Lehrer arbeitet in einem Intervall maximal n Tage pro Woche“ (TeacherIntervalMaxDaysPerWeek) enthält einen Fehler: für Lehrer %1, max. Tage %2 &gt; Anzahl an Wochentagen. Die Einschränkung wurde zwar hinzugefügt, muss aber korrigiert werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7598"/>
         <source>Constraint TeachersIntervalMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Einschränkung „Alle Lehrer arbeitet in einem Intervall maximal n Tage pro Woche“ (TeachersIntervalMaxDaysPerWeek) enthält einen Fehler: max. Tage %1 &gt; Anzahl an Wochentagen. Die Einschränkung wurde zwar hinzugefügt, muss aber korrigiert werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7693"/>
         <source>Constraint StudentsSetMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Einschränkung „Eine Schülergruppe arbeitet maximal n Tage pro Woche“ (StudentsSetMaxDaysPerWeek) enthält einen Fehler: für Schülergruppe %1, max. Tage %2 &gt; Anzahl an Wochentagen. Die Einschränkung wurde zwar hinzugefügt, muss aber korrigiert werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7733"/>
         <source>Constraint StudentsMaxDaysPerWeek max days corrupt, max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Einschränkung „Alle Schüler arbeiten maximal n Tage pro Woche“ (StudentsMaxDaysPerWeek) enthält einen Fehler: max. Tage %1 &gt; Anzahl an Wochentagen. Die Einschränkung wurde zwar hinzugefügt, muss aber korrigiert werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7915"/>
         <source>Constraint StudentsIntervalMaxDaysPerWeek max days corrupt: max days %1 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Einschränkung „Alle Schüler arbeitet in einem Intervall maximal n Tage pro Woche“ (StudentsIntervalMaxDaysPerWeek) enthält einen Fehler: max. Tage %1 &gt; Anzahl an Wochentagen. Die Einschränkung wurde zwar hinzugefügt, muss aber korrigiert werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="7799"/>
         <source>Constraint StudentsSetIntervalMaxDaysPerWeek max days corrupt for students set %1, max days %2 &gt;nDaysPerWeek, constraint added, please correct constraint</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Einschränkung „Eine Schülergruppe arbeitet in einem Intervall maximal n Tage pro Woche“ (StudentsSetIntervalMaxDaysPerWeek) enthält einen Fehler: für Schülergruppe %1, max. Tage %2 &gt; Anzahl an Wochentagen. Die Einschränkung wurde zwar hinzugefügt, muss aber korrigiert werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="742"/>
         <source>All &apos;group activities in the initial order for timetable generation&apos; items should have different activities ids. (Each activity id must appear at most once in all the items.) This is not true for item number %1 and activity id %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Objekte, die durch „Aktivitäten zusammenfassen für die Anfangsordnung zum Erstellen“ angegeben werden, sollten eindeutige Aktivitäten-IDs aufweisen. Für das Objekt %1 und die Aktivitäts-ID %2 trifft dies nicht zu.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="5504"/>
         <source>File contains deprecated equipments list - will be ignored</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei enthält eine veraltete Liste der Raumausstattung - diese wird ignoriert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="8304"/>
         <location filename="../src/engine/rules.cpp" line="8443"/>
         <source>Found constraint min days between activities with tag consecutive if same day which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
-        <translation type="unfinished"></translation>
+        <translation>Bei der Einschränkung „Mindestens n Tage zwischen einem Satz an Aktivitäten“ wurde die Eigenschaft „Aufeinanderfolgend am gleichen Tag“ gefunden, die keines der Werte aufweist: „true“, „false“, „yes“, „no“, „1“ oder „0“. Die Eigenschaft wird als „falsch“ interpretiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="9348"/>
         <source>Found constraint teachers min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
-        <translation type="unfinished"></translation>
+        <translation>Bei der Einschränkung „Mindestens n Stunden pro Tag für alle Lehrer“ wurde die Eigenschaft „Freie Tage zulassen“ gefunden, die keines der Werte aufweist: „true“, „false“, „yes“, „no“, „1“ oder „0“. Die Eigenschaft wird als „falsch“ interpretiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="9425"/>
         <source>Found constraint teacher min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
-        <translation type="unfinished"></translation>
+        <translation>Bei der Einschränkung „Mindestens n Stunden pro Tag für einen Lehrer“ wurde die Eigenschaft „Freie Tage zulassen“ gefunden, die keines der Werte aufweist: „true“, „false“, „yes“, „no“, „1“ oder „0“. Die Eigenschaft wird als „falsch“ interpretiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="4531"/>
@@ -46019,60 +46061,60 @@ nicht hinzugefügt - Duplikat</translation>
         <location filename="../src/engine/rules.cpp" line="12385"/>
         <location filename="../src/engine/rules.cpp" line="12511"/>
         <source>%1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 wurde nicht gefunden</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="9996"/>
         <source>Found constraint students min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
-        <translation type="unfinished"></translation>
+        <translation>Bei der Einschränkung „Mindestens n Stunden pro Tag für alle Schüler“ wurde die Eigenschaft „Freie Tage zulassen“ gefunden, die keines der Werte aufweist: „true“, „false“, „yes“, „no“, „1“ oder „0“. Die Eigenschaft wird als „falsch“ interpretiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="10087"/>
         <source>Found constraint students set min hours daily with tag allow empty days which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
-        <translation type="unfinished"></translation>
+        <translation>Bei der Einschränkung „Mindestens n Stunden pro Tag für eine Schülergruppe“ wurde die Eigenschaft „Freie Tage zulassen“ gefunden, die keines der Werte aufweist: „true“, „false“, „yes“, „no“, „1“ oder „0“. Die Eigenschaft wird als „falsch“ interpretiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="10165"/>
         <location filename="../src/engine/rules.cpp" line="10343"/>
         <source>Found constraint activity preferred starting time with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
-        <translation type="unfinished"></translation>
+        <translation>Bei der Einschränkung „Eine Aktivität hat eine bevorzugte Startzeit“ wurde die Eigenschaft „dauerhaft gesperrt“ gefunden, die keines der Werte aufweist: „true“, „false“, „yes“, „no“, „1“ oder „0“. Die Eigenschaft wird als „falsch“ interpretiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="10228"/>
         <location filename="../src/engine/rules.cpp" line="10406"/>
         <source>Found constraint activity preferred starting time, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Bei der Einschränkung „Eine Aktivität hat eine bevorzugte Startzeit“ wurde die Eigenschaft „dauerhaft gesperrt“ ohne angegebenen Wert gefunden. Die Eigenschaft wird als „falsch“ interpretiert. Im Menü „Daten“ können Sie die Einschränkung nachher ändern.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="10231"/>
         <location filename="../src/engine/rules.cpp" line="10409"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred starting time has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Erläuterung: Ab FET-Version 5.8.0 (im Januar 2009), weist die Einschränkung „Eine Aktivität hat eine bevorzugte Startzeit“ eine neue Eigenschaft auf, die heisst: „dauerhaft gesperrt“ mit dem Wert Ja oder Nein (true/false). Für die Einschränkungen, die über das Menü „Stundenplan“ nicht aus Versehen sollen bearbeitet werden können, empfiehlt es sich, diese Eigenschaft auf „Ja“ zu setzen; für andere, die im Menü „Stundenplan“ modifiziert werden können, setzt man diese Eigenschaft auf „Nein“. Die Eigenschaft kann über das Menü „Daten“ ein- und ausgeschaltet werden.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="10250"/>
         <location filename="../src/engine/rules.cpp" line="10428"/>
         <source>Found constraint activity preferred starting time, with unspecified day or hour. This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one). This change is done in FET versions 5.8.1 and higher.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wurde eine Einschränkung gefunden: „Eine Aktivität hat eine bevorzugte Startzeit“ ohne Angabe des Tages oder der Stunde. Sie wird ab FET-Version 5.8.1 in die Einschränkung „Eine Aktivität hat bevorzugte Startzeiten“ (also mit einer Menge von möglichen Startzeiten) geändert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="14051"/>
         <source>Found constraint activity preferred room with tag permanently locked which is not &apos;true&apos;, &apos;false&apos;, &apos;yes&apos;, &apos;no&apos;, &apos;1&apos; or &apos;0&apos;. The tag will be considered false</source>
         <comment>Instructions for translators: please leave the &apos;true&apos;, &apos;false&apos;, &apos;yes&apos; and &apos;no&apos; fields untranslated, as they are in English</comment>
-        <translation type="unfinished"></translation>
+        <translation>Bei der Einschränkung „Eine Aktivität hat einen bevorzugten Raum“ wurde die Eigenschaft „dauerhaft gesperrt“ gefunden, die keines der Werte aufweist: „true“, „false“, „yes“, „no“, „1“ oder „0“. Die Eigenschaft wird als „falsch“ interpretiert.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="14094"/>
         <source>Found constraint activity preferred room, with unspecified tag &apos;permanently locked&apos; - this tag will be set to &apos;false&apos; by default. You can always modify it by editing the constraint in the &apos;Data&apos; menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Bei der Einschränkung „Eine Aktivität hat einen bevorzugten Raum“ wurde die Eigenschaft „dauerhaft gesperrt“ ohne angegebenen Wert gefunden. Die Eigenschaft wird als „falsch“ interpretiert. Im Menü „Daten“ können Sie die Einschränkung nachher ändern.</translation>
     </message>
     <message>
         <location filename="../src/engine/rules.cpp" line="14097"/>
         <source>Explanation: starting with version 5.8.0 (January 2009), the constraint activity preferred room has a new tag, &apos;permanently locked&apos; (true or false). It is recommended to make the tag &apos;permanently locked&apos; true for the constraints you need to be not modifiable from the &apos;Timetable&apos; menu and leave this tag false for the constraints you need to be modifiable from the &apos;Timetable&apos; menu (the &apos;permanently locked&apos; tag can be modified by editing the constraint from the &apos;Data&apos; menu). This way, when viewing the timetable and locking/unlocking some activities, you will not unlock the constraints which need to be locked all the time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Erläuterung: Ab FET-Version 5.8.0 (im Januar 2009), weist die Einschränkung „Eine Aktivität hat einen bevorzugten Raum“ eine neue Eigenschaft auf, die heisst: „dauerhaft gesperrt“ mit dem Wert Ja oder Nein (true/false). Für die Einschränkungen, die über das Menü „Stundenplan“ nicht aus Versehen sollen bearbeitet werden können, empfiehlt es sich, diese Eigenschaft auf „Ja“ zu setzen; für andere, die im Menü „Stundenplan“ modifiziert werden können, setzt man diese Eigenschaft auf „Nein“. Die Eigenschaft kann über das Menü „Daten“ ein- und ausgeschaltet werden.</translation>
     </message>
 </context>
 <context>
@@ -46090,12 +46132,12 @@ nicht hinzugefügt - Duplikat</translation>
     <message>
         <location filename="../src/interface/savetimetableconfirmationform.cpp" line="52"/>
         <source>The added constraints will have the &apos;permanently locked&apos; tag set to false, so you can also unlock the activities from the &apos;Timetable&apos; menu, without interfering with the initial constraints which are made by you &apos;permanently locked&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Bei den hinzugefügten Einschränkungen wird deren Eigenschaft „dauerhaft gesperrt“ mit dem Vorgabewert „falsch“ belegt. Diese kann später über das Menü „Stundenplan“ wieder freigeschaltet werden, ohne die ursprünglichen, von Ihnen definitierten Einschränkungen zu tangieren.</translation>
     </message>
     <message>
         <location filename="../src/interface/savetimetableconfirmationform.cpp" line="55"/>
         <source>This option is useful for institutions where you obtain a timetable, then some small changes appear, and you need to regenerate timetable, but respecting in a large proportion the old timetable</source>
-        <translation type="unfinished">Diese Option ist für Schulen, die einen lauffähigen Stundenplan haben, aber nun aus später hinzugekommenen Gründen kleine Änderungen vornehmen müssen und daher einen Plan wüschen, der sehr nahe am alten Plan liegt (um z.B. Vertretungen zu vermeiden).</translation>
+        <translation>Diese Option ist für Schulen, die einen lauffähigen Stundenplan haben, aber nun aus später hinzugekommenen Gründen kleine Änderungen vornehmen müssen und daher einen Plan wüschen, der sehr nahe am alten Plan liegt (um z.B. Vertretungen zu vermeiden).</translation>
     </message>
     <message>
         <location filename="../src/interface/savetimetableconfirmationform.cpp" line="58"/>
@@ -46108,7 +46150,7 @@ nicht hinzugefügt - Duplikat</translation>
     <message>
         <location filename="../src/interface/savetimetableconfirmationform_template.ui" line="14"/>
         <source>Instructions and confirmation for saving data and timetable</source>
-        <translation type="unfinished"></translation>
+        <translation>Anweisungen und Bestätigung des Speicherns von Daten und Stundenplänen</translation>
     </message>
     <message>
         <location filename="../src/interface/savetimetableconfirmationform_template.ui" line="23"/>
@@ -46156,22 +46198,22 @@ nicht hinzugefügt - Duplikat</translation>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="459"/>
         <source>You selected min days between activities %1 (above 1) and weight %2 (under 100.0). Would you like to add also a second constraint to ensure that almost certainly the distance between activities is at least %3 (%1-1) days? If yes, please select weight (recommended 95.0%-100.0%) and click Yes. If no, please click No (only one constraint will be added)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben eine Einschränkung „Mindestens n Tage zwischen einem Satz an Aktivitäten“ mit n = %1 und Gewichtung = %2 (also unter 100%). Möchten Sie eine zweite Einschränkung definieren, die sicherstellt, dass der Abstand zwischen zwei Aktivitäten mindestens %3 (%1-1) Tage beträgt? Falls ja, geben Sie eine Gewichtung ein (empfohlen wird ein Wert zwischen 95,0% - 100%) und klicken Sie auf „Ja“. Wenn Sie auf „Nein“ klicken, wird nur eine Einschränkung hinzugefügt.</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="475"/>
         <source>Recommended answer is Yes, 95% (or higher).</source>
-        <translation type="unfinished"></translation>
+        <translation>Die empfohlene Antwort heisst: „Ja“, 95% (oder höher)</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="464"/>
         <source>(Yes means to add an additional constraint min %1 days between activities, weight 0.0%-100.0%. If you say Yes, you will have 2 constraints min days added for current activities. Adding the second constraint might lead to impossible timetables if the condition is too tight, but you can remove the second constraint at any time).</source>
-        <translation type="unfinished"></translation>
+        <translation>(„Ja“ bedeutet, dass eine zusätzliche Einschränkung „Mindestens %1 Tage zwischen einem Satz an Aktivitäten“ mit Gewichtung 0,0% - 100% hinzugefügt wird. Dann werden 2 Einschränkungen diesen Typs für die ausgewählten Aktivitäten aktiviert. Obwohl die 2. Einschränkung, falls die Bedingungen zu restriktiv sind, zu unmöglichen Stundenplänen führen könnten, kann diese jederzeit wieder entfernt werden).</translation>
     </message>
     <message>
         <location filename="../src/interface/addactivityform.cpp" line="469"/>
         <source>Note: 95% is usually enough for min days constraints referring to same activities. The weights are cumulated if referring to the same activities. If you have 2 constraints with say 95% (say min n days and min n-1 days), the min n days constraint is skipped with probability 5%, then min n-1 days constraint is skipped with probability 0.25%=5%*5%, so you&apos;ll get in 99.75% cases the min n-1 days constraint respected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bemerkung: Eine Gewichtung von 95% ist meistens ausreichend für Einschränkungen, die sich auf die gleichen Aktivitäten auswirken. Die Gewichtungen werden kumuliert, wenn die gleichen Aktivitäten betroffen sind. Zum Beispiel wird die kumulierte Gewichtung bei 2 Einschränkungen mit „Min. n Tage“ und „Min. n-1 Tage“ 99,75% betragen; die 1. Einschränkung (mit n Tagen) wird in 5% der Fälle nicht respektiert, und die mit n-1 Tagen mit der Wahrscheinlichkeit 0,25% = 5%*5%. Es wird die Einschränkung mit n-1 Tagen also in 99,75% der Fälle respektiert.</translation>
     </message>
 </context>
 <context>
@@ -46436,37 +46478,37 @@ nicht hinzugefügt - Duplikat</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="702"/>
         <source>If your number of subgroups is reasonable, probably you need not worry about empty subgroups (regarding speed of generation). But more tests need to be done. You just need to know that for the moment the maximum total number of subgroups is %1 (which can be changed, but nobody needed larger values)</source>
-        <translation type="unfinished"></translation>
+        <translation>Falls die Anzahl an Teilgruppen nicht allzu hoch ist, wird man sich in Hinsicht auf die Berechnungszeit wohl keine Sorgen um leere Teilgruppen machen müssen. Das müsste allerdings noch ausgiebiger getestet werden. Für den Augenblick reicht es aus, die maximale Gesamtanzahl von Teilgruppen zu wissen, und diese beträgt %1 (dieser Wert kann noch geändert werden; allerdings gab es bisher noch keinen Bedarf dafür).</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="727"/>
         <source>If you have many subgroups and you don&apos;t explicitely use them, it is recommended to use the three global settings: hide subgroups in combo boxes, hide subgroups in activity planning, and do not write subgroups timetables on hard disk.</source>
-        <translation type="unfinished">Falls viele Teilgruppen definiert wurden, die nicht ausdrücklich verwendet werden, gibt es drei empfehlenswerte Einstellungen: Teilgruppen in Auswahlfeldern und bei der Aktivitätenplanung verstecken, und Teilgruppen nicht auf Festplatte speichern.</translation>
+        <translation>Falls viele Teilgruppen definiert wurden, die nicht ausdrücklich verwendet werden, gibt es drei empfehlenswerte Einstellungen: Teilgruppen in Auswahlfeldern und bei der Aktivitätenplanung verstecken, und Teilgruppen nicht auf Festplatte speichern.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="734"/>
         <source>(Also the conflicts timetable might take long to write, if the file is big.)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Außerdem könnte es lange brauchen, um den Stundenplan der Konfliktfälle zu generieren, falls die Datei groß ist).</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="736"/>
         <source>After that, you can re-enable writing the students timetables on the disk, and re-generate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachher kann man das Speichern der Schülerstundenpläne wieder aktivieren und nochmals generieren.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="739"/>
         <source>About using a large number of categories, divisions per category and subgroups: it is highly recommended to keep these to a minimum, especially the number of categories, by using any kind of tricks. Otherwise the timetable might become impossible (taking too much time to generate).</source>
-        <translation type="unfinished">Über den Einsatz einer großen Anzahl an Kategorien, Teilkategorien und Teilgruppen: Allgemein ist es sehr empfehlenswert, diese auf ein Minimum zu reduzieren - vorallem die Anzahl an Kategorien - egal, welche Mittel dazu notwendig sind. Sonst kann die Stundenplangenerierung zuviel Zeit in Anspruch nehmen und somit fehlschlagen.</translation>
+        <translation>Über den Einsatz einer großen Anzahl an Kategorien, Teilkategorien und Teilgruppen: Allgemein ist es sehr empfehlenswert, diese auf ein Minimum zu reduzieren - vor allem die Anzahl an Kategorien - egal, welche Mittel dazu notwendig sind. Sonst kann die Stundenplangenerierung zuviel Zeit in Anspruch nehmen und somit fehlschlagen.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="750"/>
         <source>Or you might use the FET feature to import students sets from comma separated values (CSV) files.</source>
-        <translation type="unfinished">Oder man importiert die Schülergruppen aus Textdateien im CSV-Format (d.h. in kommagetrennten Textfeldern) mit der entsprechenden Importfunktion in FET.</translation>
+        <translation>Oder man importiert die Schülergruppen aus Textdateien im CSV-Format (d.h. in kommagetrennten Textfeldern) mit der entsprechenden Importfunktion in FET.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="752"/>
         <source>In such cases (individual students as FET subgroups), remember that a smaller number of total subgroups means faster generation time, so you might want to consider a single subgroup for two or more students who have the exact same activities and constraints.</source>
-        <translation type="unfinished">In solchen Fällen (einzelne Schülerinnen und Schüler als FET-Teilgruppen) sollte man bedenken, dass eine kleinere Gesamtanzahl an Teilgruppen eine schnellere Laufzeit der Stundenplangenerierung bedeutet. Also wäre es gut, eine einzelne Teilgruppe für mehrere Schüler einsetzen, die alle exakt die gleichen Aktivitäten und Einschränkungen aufweisen.</translation>
+        <translation>In solchen Fällen (einzelne Schülerinnen und Schüler als FET-Teilgruppen) sollte man bedenken, dass eine kleinere Gesamtanzahl an Teilgruppen eine schnellere Laufzeit der Stundenplangenerierung bedeutet. Also wäre es gut, eine einzelne Teilgruppe für mehrere Schüler einsetzen, die alle exakt die gleichen Aktivitäten und Einschränkungen aufweisen.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="784"/>
@@ -46476,7 +46518,7 @@ nicht hinzugefügt - Duplikat</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="114"/>
         <source>You have met a minor bug in FET, please report it. FET expected to read from settings %1 divisions in category %2, but read %3. FET will now continue operation, nothing will be lost.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben einen kleinen Fehler in FET entdeckt, den Sie uns gerne melden dürfen: FET erwartete, aus den Einstellungen %1 Teilkategorien aus Kategorie %2 zu lesen, hat aber %3 eingelesen. FET wird nun mit der Bearbeitung fortfahren; nichts geht verloren.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="290"/>
@@ -46516,7 +46558,7 @@ nicht hinzugefügt - Duplikat</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="647"/>
         <source>There were removed %1 &apos;group activities in the initial order&apos; items.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aus den Objekten, die unter „Aktivitäten zusammenfassen für die Anfangsordnung zum Erstellen“ gruppiert wurden, wurde(n) %1 entfernt.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="806"/>
@@ -46557,7 +46599,7 @@ nicht hinzugefügt - Duplikat</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="516"/>
         <source>Read the divide year dialog Help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Für Einzelheiten darüber bitte die Hilfetexte im Dialog „Jahrgänge aufteilen“ lesen.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="641"/>
@@ -46577,12 +46619,12 @@ nicht hinzugefügt - Duplikat</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="711"/>
         <source>If you intend to divide again a year by categories and you want to keep (the majority of) the existing groups in this year, you will need to use the exact same separator character(s) for dividing this year as you used when previously dividing this year, and the same division names (any old division which is no longer entered means a group which will be removed from this year).</source>
-        <translation type="unfinished"></translation>
+        <translation>Falls Sie einen Jahrgang in Kategorien nochmals aufteilen, aber die Mehrzahl der existierenden Gruppen in diesem Jahrgang beibehalten möchten, muss das gleiche Trennzeichen sowie die gleichen Kategoriebezeichnungen wie vorher verwendet werden. Ältere Kategorien, die nicht mehr eingegeben werden, haben zur Folge, dass die entsprechenden Gruppen aus diesem Jahrgang entfernt werden.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="717"/>
         <source>When dividing again a year, you might get a warning about subgroups which will be removed. If you didn&apos;t explicitely use (these) subgroups in your activities or constraints, probably you can safely ignore this warning. Generally, if you use years&apos; division by categories, it is groups that matter.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beim nochmaligen Aufteilen eines Jahrgangs kann eine Warnung über zu entfernende Teilgruppen auftreten. Falls Sie diese Teilgruppen in den Einschränkungen und Aktivitäten nicht ausdrücklich verwenden, können Sie die Warnung ignorieren. Im Allgemeinen sind es nur die Gruppen von Bedeutung, wenn ein Jahrgang in Kategorien aufgeteilt wird.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="723"/>
@@ -46592,22 +46634,22 @@ nicht hinzugefügt - Duplikat</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="730"/>
         <source>Note that if you are only working to get a feasible timetable, without the need to obtain the students timetable (XML or HTML) on the disk at all, and if you have many total subgroups, a good idea is to disable writing the subgroups, groups AND years timetables to the hard disk, as these take a long time to compute (not only subgroups, but also groups and years!).</source>
-        <translation type="unfinished"></translation>
+        <translation>Falls Sie nur einen brauchbaren Stundenplan haben möchten, ohne auch die Schülerstundenpläne (im XML- oder HTML-Format) zu speichern, und falls es viele Teilgruppen gibt, ist es empfehlenswert, das Speichern der Stundenpläne der Teilgruppen, Gruppen UND Jahrgänge auf der Festplatte zu deaktivieren. Die Generierung dieser Objekte nehmen viel Zeit in Anspruch - nicht nur für Teilgruppen, sondern auch für die Gruppen und Jahrgänge!</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="743"/>
         <source>Maybe a reasonable number of categories could be 2, 3 or maximum 4. The divide year dialog allows much higher values, but these are not at all recommended.</source>
-        <translation type="unfinished">Evtl. wäre eine vernünftige Anzahl an Kategorien 2, 3 oder maximal 4. Der Dialog „Jahrgänge aufteilen“ erlaubt zwar höhere Werte; das ist allerdings nicht empfehlenswert.</translation>
+        <translation>Evtl. wäre eine vernünftige Anzahl an Kategorien 2, 3 oder maximal 4. Der Dialog „Jahrgänge aufteilen“ erlaubt zwar höhere Werte; das ist allerdings nicht empfehlenswert.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="746"/>
         <source>Maybe an alternative to dividing a year into many categories/subgroups would be to enter individual students as FET subgroups and add into each group the corresponding subgroups. But this is hard to do from the FET interface - maybe a solution would be to use an automatic tool to convert your instition data into a file in .fet format.</source>
-        <translation type="unfinished">Als Alternative zum Aufteilen eines Jahrgangs in viele Kategorien/Teilgruppen könnte man die einzelnen Schülerinnen und Schüler als Teilgruppen in FET eingeben und nachher diese zu entsprechenden Schülergruppen zusammenfügen. In der FET-Benutzerumgebung ist das allerdings schwierig zu machen; besser wäre es, ein automatisches Programm einzusetzen, das die Daten Ihrer Bildungsinstitution in das .fet-Format konvertiert.</translation>
+        <translation>Als Alternative zum Aufteilen eines Jahrgangs in viele Kategorien/Teilgruppen könnte man die einzelnen Schülerinnen und Schüler als Teilgruppen in FET eingeben und nachher diese zu entsprechenden Schülergruppen zusammenfügen. In der FET-Benutzerumgebung ist das allerdings schwierig zu machen; besser wäre es, ein automatisches Programm einzusetzen, das die Daten Ihrer Bildungsinstitution in das .fet-Format konvertiert.</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="758"/>
         <source>FET - help on dividing a year</source>
-        <translation type="unfinished"></translation>
+        <translation>FET-Hilfe über das Aufteilen von Jahrgängen</translation>
     </message>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="764"/>
@@ -46617,7 +46659,7 @@ nicht hinzugefügt - Duplikat</translation>
     <message>
         <location filename="../src/interface/splityearform.cpp" line="680"/>
         <source>You might first want to consider if dividing a year is necessary and on what options. Please remember that FET can handle activities with multiple teachers/students sets. If you have say students set 9a, which is split into 2 parts: English (teacher TE) and French (teacher TF), and language activities must be simultaneous, then you might not want to divide according to this category, but add more larger activities, with students set 9a and teachers TE+TF. The only drawback is that each activity can take place only in one room in FET, so you might need to find a way to overcome that.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zuerst sollte man sich überlegen, ob ein Jahrgang aufgeteilt werden sollte, und welche Optionen es dabei gibt. FET kann Aktivitäten mit mehreren Lehrern und Schülergruppen verarbeiten. Wenn es z.B. eine Schülergruppe „9a“ mit zwei Teilgruppen Englisch (Lehrer „LE“) und Französich (Lehrer „LF“) gibt, und Sprachunterricht zur gleichen Zeit stattfinden soll, wäre es nicht ratsam, den Jahrgang nach dieser Kategorie aufzuteilen, sondern eher übergeordnete Aktivitäten mit Schülergruppe „9a“ und Lehrern „LE+LF“ einzurichten. Da jede Aktivität in FET nur in einem Raum stattfinden darf, müsste diese Lösung jedoch weiter verfeinert werden.</translation>
     </message>
 </context>
 <context>
@@ -46794,17 +46836,17 @@ nicht hinzugefügt - Duplikat</translation>
     <message>
         <location filename="../src/interface/spreadconfirmationform.cpp" line="47"/>
         <source>This improvement - optimization of spreading activities in a week - is a process of replacing current constraints of type min days between activities with others, which should provide you with a better timetable. Note: only min days constraints referring to components from the same split activity will be replaced. If you have constraints min days referring to activities in different components, these will be left untouched - this is a useful feature.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Optimierung der Verteilung von Aktivitäten über die Woche besteht darin, Einschränkungen des Typs „Mindestens n Tage zwischen einem Satz an Aktivitäten“ durch andere zu ersetzen, die einen besseren Stundenplan ergeben sollten. Bemerkung: es werden nur die Einschränkungen ersetzt, die die gleichen Teilaktivitäten betreffen. Einschränkungen, die Aktivitäten in verschiedenen Kategorien betreffen, werden nicht angetastet - das ist ein nützliches Feature.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform.cpp" line="52"/>
         <source>Please SAVE/BACKUP your current file and keep it safe, in case anything goes wrong, and only continue if you did that already. Current function might modify much your data</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte erst fortfahren, nachdem Sie eine Sicherheitskopie Ihrer aktuellen Datei angelegt haben. Diese sollten Sie für alle Fälle gut aufheben! Die aktuelle Funktion kann möglicherweise Ihre Daten verändern.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform.cpp" line="55"/>
         <source>If you use constraints activities same starting time or same starting day then you must take care of this aspect: after applying this function and before generating a timetable, it is IMPORTANT to remove constraints min days between activities which are redundant, like described in Help/Important tips, advice 2) . If you don&apos;t do that, you might get too difficult timetables or even impossible ones.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beim Einsatz der Einschränkungen „Aktivitäten mit der selben Startzeit“ oder „Aktivitäten, die am gleichen Tag stattfinden“ muss folgende Besonderheit berücksichtig werden: Nachdem die Einschränkungen erstellt wurden, aber noch bevor ein Stundenplan generiert wird, ist es WICHTIG, redundante Einschränkungen vom Typ „Mindestens n Tage zwischen einem Satz an Aktivitäten“ zu entfernen (s. Hilfe-&gt;Wichtige Hinweise, Ratschlag Nr. 2). Ohne diesen Schritt wird es evtl. sehr schwierig bis unmöglich werden, einen Stundenplan zu berechnen.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadconfirmationform.cpp" line="60"/>
@@ -46850,17 +46892,17 @@ nicht hinzugefügt - Duplikat</translation>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="71"/>
         <source>Invalid weight (percentage) for all split activities - must be real number &gt;=0.0 and &lt;=100.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Gewichtung (eine Prozentzahl) für alle Teilaktivitäten ist ungültig - diese muss &gt;= 0,0% und &lt;= 100,0% betragen.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="80"/>
         <source>Invalid weight (percentage) for activities split into 2 components - must be real number &gt;=0.0 and &lt;=100.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Gewichtung (eine Prozentzahl) für Aktivitäten, die in 2 Komponenten aufgeteilt wurden, ist ungültig - diese muss &gt;= 0,0% und &lt;= 100,0% betragen.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="89"/>
         <source>Invalid weight (percentage) for activities split into 3 components - must be real number &gt;=0.0 and &lt;=100.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Gewichtung (eine Prozentzahl) für Aktivitäten, die in 3 Komponenten aufgeteilt wurden, ist ungültig - diese muss &gt;= 0,0% und &lt;= 100,0% betragen.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="99"/>
@@ -46933,27 +46975,27 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="406"/>
         <source>NOTE: If you are using constraints of type activities same starting time or activities same starting day, it is important (after current operation) to apply the operation of removing redundant constraints.</source>
-        <translation type="unfinished">BEMERKUNG: Wenn Sie die Einschränkungen „Aktivitäten haben gleiche Startzeiten“ oder „Aktivitäten haben gleiche Starttage“ einsetzen, sollte man nach dem aktuellen Vorgang alle redundante Einschränkungen entfernen.</translation>
+        <translation>BEMERKUNG: Wenn Sie die Einschränkungen „Aktivitäten haben gleiche Startzeiten“ oder „Aktivitäten haben gleiche Starttage“ einsetzen, sollte man nach dem aktuellen Vorgang alle redundante Einschränkungen entfernen.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="408"/>
         <source>Read Help/Important tips - tip 2) for details.</source>
-        <translation type="unfinished">Bitte lesen Sie in der Hilfe: „Wichtige Hinweise“ bei Tipp Nr. 2 für weitere Infos.</translation>
+        <translation>Bitte lesen Sie in der Hilfe: „Wichtige Hinweise“ bei Tipp Nr. 2 für weitere Infos.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="423"/>
         <source>Help on spreading the activities over the week:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hilfe über den Befehl „Verteile Aktivitäten gleichmäßig in der Woche“ (im Menü „Erweitert“)</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="427"/>
         <source>How to choose the weights in this dialog:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anleitung, wie die Gewichtungen in diesem Dialog gesetzt werden sollen:</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="431"/>
         <source>Weights (percentages) of newly added constraints min days between activities - recommended between 95.0%-100.0% (maybe lower on those split into 3). Make weights 100.0% if the constraints need to be respected all the time. It is recommended to enable the check boxes for activities split into 2 or 3 components (not to be in consecutive days), if your data is still possible to solve. You may use a progressive approach. Example of weights: 90.0%, 95.0%, 99.0%, 99.75%, 100.0%.</source>
-        <translation type="unfinished"></translation>
+        <translation>Über die Gewichtung (eine Prozentzahl) der neu hinzugefügten Einschränkungen vom Typ „Mindestens n Tage zwischen einem Satz an Aktivitäten“: Es wird eine Zahl zwischen 95,0% und 100,0% empfohlen (evtl. kleiner, falls es 3 Teilaktivitäten gibt). Setzen Sie eine Gewichtung von 100%, falls die Einschränkungen ohne Ausnahme respektiert werden sollen. Es wird empfohlen, die Kontrollkästchen für Aktivitäten, die in 2 oder 3 Teilaktivitäten aufgeteilt werden (d.h. jene, die nicht an aufeinanderfolgenden Tagen stattfinden sollen), zu aktivieren, falls eine Lösung für Ihre Daten immer noch möglich ist. Man kann dabei inkrementell vorgehen, z.B.: 90,0%, 95,0%, 99,0%, 99,75%, 100,0%.</translation>
     </message>
     <message>
         <location filename="../src/interface/spreadmindaysconstraintsfivedaysform.cpp" line="436"/>
@@ -47151,7 +47193,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/statisticsexport.cpp" line="384"/>
         <source>To hide an element just write the following phrase into the element: %1 (without quotes).</source>
         <comment>%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes</comment>
-        <translation type="unfinished"></translation>
+        <translation>Um ein Objekt auszublenden, schreibt man die Phrase %1 (ohne Zitatzeichen) in das Element.</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="455"/>
@@ -47295,7 +47337,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/statisticsexport.cpp" line="391"/>
         <source>Some programs import &quot;tfoot&quot; incorrectly. So we use &quot;tr.foot&quot; instead of &quot;tfoot&quot;.</source>
         <comment>Please keep tfoot and tr.foot untranslated, as they are in the original English phrase</comment>
-        <translation type="unfinished"></translation>
+        <translation>Einige Programme importieren „tfoot“ falsch. Deshalb verwenden wir „tr.foot“ anstatt „tfoot“.</translation>
     </message>
     <message>
         <location filename="../src/engine/statisticsexport.cpp" line="564"/>
@@ -47448,7 +47490,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/interface/statisticsprintform.cpp" line="197"/>
         <source>Custom</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>Benutzerdefiniert</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="199"/>
@@ -47580,55 +47622,55 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/interface/statisticsprintform.cpp" line="220"/>
         <source>C5E</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>C5E (Umschlag)</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="221"/>
         <source>Comm10E</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>Comm10E (Umschlag)</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="222"/>
         <source>DLE</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>DLE (Umschlag)</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="223"/>
         <source>Executive</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>US-Executive</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="224"/>
         <source>Folio</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>US-Folio</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="225"/>
         <source>Ledger</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>US-Ledger</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="226"/>
         <source>Legal</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>US-Legal</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="227"/>
         <source>Letter</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>US-Letter</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="228"/>
         <source>Tabloid</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>US-Tabloid</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="251"/>
@@ -47660,7 +47702,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/interface/statisticsprintform.cpp" line="934"/>
         <location filename="../src/interface/statisticsprintform.cpp" line="961"/>
         <source>FET is compiled without printer support - it is impossible to print from this dialog. Please export and open the HTML statistics from the results directory</source>
-        <translation>FET wurde ihne Druckerunterstützung kompeliert. Daher ist es nicht möglich zu drucken. Bitte exportieren Sie die HTML Statistik und öffnen Sie diese mit einem Webbrowser</translation>
+        <translation>FET wurde ohne Druckerunterstützung kompiliert. Daher ist es nicht möglich zu drucken. Bitte exportieren Sie die HTML-Statistik und öffnen Sie diese mit einem Webbrowser.</translation>
     </message>
     <message>
         <location filename="../src/interface/statisticsprintform.cpp" line="886"/>
@@ -47736,13 +47778,14 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/studentsset.cpp" line="183"/>
         <source>GN:%1</source>
         <comment>Group name</comment>
-        <translation type="unfinished"></translation>
+        <translation>GN:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="185"/>
         <source>NoS:%1</source>
         <comment>Number of students</comment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Anzahl Schüler</translatorcomment>
+        <translation>AnzS:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="193"/>
@@ -47800,7 +47843,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="121"/>
         <source>Students set %1 from activity with id %2 is inexistent in the students list. Please correct this.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Schülergruppe %1 bei Aktivität mit ID=%2 existiert nicht in der Schülerliste. Bitte, korrigieren Sie das.</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="125"/>
@@ -47815,7 +47858,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="462"/>
         <source>The check boxes &apos;%1&apos;, &apos;%2&apos; and &apos;%3&apos;: they permit you to show/hide information related to years, groups or subgroups</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Kontrollkästchen „%1“, „%2“ und „%3“ blenden Informationen über Jahrgänge, Schülergruppen oder Teilgruppen ein bzw. aus.</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="374"/>
@@ -47825,7 +47868,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="469"/>
         <source>The check box &apos;%1&apos;: it has effect only if you have overlapping groups/years, and means that FET will show the complete tree structure, even if that means that some subgroups/groups will appear twice or more in the table, with the same information. For instance, if you have year Y1, groups G1 and G2, subgroups S1, S2, S3, with structure: Y1 (G1 (S1, S2), G2 (S1, S3)), S1 will appear twice in the table with the same information attached</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Kontrollkästchen „%1“: Diese Option ist nur dann von Bedeutung, falls Gruppen oder Jahrgänge sich überlappen. Falls aktiviert, zeigt FET die komplette Baumstruktur an, auch wenn einige Teilgruppen oder Gruppen in der Tabelle mit der gleichen Information mehrfach eingeblendet werden. Zum Beispiel: der Jahrgang J1 mit Schülergruppen G1, G2 und Teilgruppen S1, S2 und S3 bei dieser Struktur: J1 (G1 (S1, S2), G2 (S1, S3)), S1 wird in der Tabelle zweimal mit der gleichen dazugehörenden Information angezeigt.</translation>
     </message>
     <message>
         <location filename="../src/interface/studentsstatisticsform.cpp" line="463"/>
@@ -47883,13 +47926,14 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/studentsset.cpp" line="260"/>
         <source>SgN:%1</source>
         <comment>Subgroup name</comment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Teilgruppen-Name</translatorcomment>
+        <translation>TgN: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="262"/>
         <source>NoS:%1</source>
         <comment>Number of students</comment>
-        <translation type="unfinished"></translation>
+        <translation>AnzS: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="270"/>
@@ -47923,13 +47967,14 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/studentsset.cpp" line="81"/>
         <source>YN:%1</source>
         <comment>Year name</comment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Jahrgang-Name</translatorcomment>
+        <translation>JN: %1</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="83"/>
         <source>NoS:%1</source>
         <comment>Number of students</comment>
-        <translation type="unfinished"></translation>
+        <translation>AnzS:%1</translation>
     </message>
     <message>
         <location filename="../src/engine/studentsset.cpp" line="91"/>
@@ -47991,27 +48036,27 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="396"/>
         <source>Above the (sub)activities list, we have 2 labels, containing 4 numbers. The first label contains text: No: a / b. The first number a is the number of active (sub)activities (we number each individual subactivity as 1), while the second number b is the number of total (sub)activities. The second label contains text: Dur: c / d. The third number c is the duration of active (sub)activities, in periods (or FET hours), while the fourth number d is the duration of total (sub)activities, in periods (or FET hours). So, No means number and Dur means duration.</source>
-        <translation type="unfinished">Über der Liste der Aktivitäten und Teilaktivitäten werden zwei Schriftfelder mit vier Zahlen eingeblendet. Das erste Schriftfeld enthält den Text: „Nr: a / b“. Die erste Zahl „a“ entspricht der Anzahl aktiver Aktivitäten und Teilaktivitäten (jede Teilaktivität wird einzeln gezählt); die 2. Zahl „b“ entspricht der Anzahl aller Aktivitäten und Teilaktivitäten zusammen. Das zweite Schriftfeld enthält den Text: „Dauer: c / d“. Die 3. Zahl „c“ entspricht der Dauer der aktiven (Teil-)aktivitäten in Lektionen oder FET-Einheiten, und die vierte Zahl „d“ der Dauer aller Aktivitäten in Lektionen bzw. FET-Einheiten insgesamt.</translation>
+        <translation>Über der Liste der Aktivitäten und Teilaktivitäten werden zwei Schriftfelder mit vier Zahlen eingeblendet. Das erste Schriftfeld enthält den Text: „Nr: a / b“. Die erste Zahl „a“ entspricht der Anzahl aktiver Aktivitäten und Teilaktivitäten (jede Teilaktivität wird einzeln gezählt); die 2. Zahl „b“ entspricht der Anzahl aller Aktivitäten und Teilaktivitäten zusammen. Das zweite Schriftfeld enthält den Text: „Dauer: c / d“. Die 3. Zahl „c“ entspricht der Dauer der aktiven (Teil-)aktivitäten in Lektionen oder FET-Einheiten, und die vierte Zahl „d“ der Dauer aller Aktivitäten in Lektionen bzw. FET-Einheiten insgesamt.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="402"/>
         <source>Example: No: 100 / 102, Dur: 114 / 117. They represent: 100 - the number of active (sub)activities, then 102 - the number of total (sub)activities, 114 - the duration of active activities (in periods or FET hours) and 117 - the duration of total activities (in periods or FET hours). In this example we have 2 inactive activities with their combined duration being 3 periods.</source>
-        <translation type="unfinished">Zum Beispiel: „Nr: 100 / 102, Dauer: 114 / 117“ entspricht 100 aktiven (Teil-)aktivitäten aus insgesamt 102 (Teil-)aktivitäten mit Dauer der aktiven Aktivitäten = 114 aus einer Gesamtdauer von 117 Lektionen bzw. FET-Einheiten. Dies entspricht also zwei deaktivierten Aktivitäten mit einer Gesamtdauer von 3 Lektionen bzw. FET-Einheiten.</translation>
+        <translation>Zum Beispiel: „Nr: 100 / 102, Dauer: 114 / 117“ entspricht 100 aktiven (Teil-)aktivitäten aus insgesamt 102 (Teil-)aktivitäten mit Dauer der aktiven Aktivitäten = 114 aus einer Gesamtdauer von 117 Lektionen bzw. FET-Einheiten. Dies entspricht also zwei deaktivierten Aktivitäten mit einer Gesamtdauer von 3 Lektionen bzw. FET-Einheiten.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="408"/>
         <source>Explanation of the short description of an activity: first comes the id. If the activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration. Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).</source>
-        <translation type="unfinished">Erklärung der Kurzbeschreibung einer Aktivität: Zuerst steht die Kennungsnummer (ID); falls deaktiviert, folgt ein „X“. Nachher folgt die Angabe der Dauer; dann, falls die Aktivität aufgeteilt wurde, folgt ein Schrägstrich und die Gesamtdauer. Daraufhin werden Lehrer, Fach, Kennzeichnung (falls nicht leer) und Schüler aufgelistet. Zuletzt steht die Anzahl Schüler, falls angegeben.</translation>
+        <translation>Erklärung der Kurzbeschreibung einer Aktivität: Zuerst steht die Kennungsnummer (ID); falls deaktiviert, folgt ein „X“. Nachher folgt die Angabe der Dauer; dann, falls die Aktivität aufgeteilt wurde, folgt ein Schrägstrich und die Gesamtdauer. Daraufhin werden Lehrer, Fach, Kennzeichnung (falls nicht leer) und Schüler aufgelistet. Zuletzt steht die Anzahl Schüler, falls angegeben.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="415"/>
         <source>have an X mark after the id.</source>
-        <translation type="unfinished">Bei diesen steht ein „X“ nach der ID-Nummer.</translation>
+        <translation>Bei diesen steht ein „X“ nach der ID-Nummer.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="446"/>
         <source>Subactivity comments</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentare über Teilaktivitäten</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="448"/>
@@ -48031,17 +48076,17 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="421"/>
         <source>if you use colors in interface (see Settings/Interface menu), they will appear with different background color.</source>
-        <translation type="unfinished">Bei eingeschalteter Option „Farben in der Oberfläche“ (s. Menü-Eintrag bei „Einstellungen/Benutzeroberfläche“) werden sie mit anderen Hintergrundfarben dargestellt.</translation>
+        <translation>Bei eingeschalteter Option „Farben in der Oberfläche“ (s. Menü-Eintrag bei „Einstellungen/Benutzeroberfläche“) werden sie mit anderen Hintergrundfarben dargestellt.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="423"/>
         <source>To modify a subactivity, you can also double click it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um eine Teilaktivität zu bearbeiten, kann man auch darauf doppelklicken.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="425"/>
         <source>Show related: if you select this, there will be listed subactivities for groups and subgroups contained also in the current set (if the current set is a year or a group) and also higher ranked year or group (if the current set is a group or a subgroup).</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige Zugehörige: Falls die aktuelle Menge ein Jahr oder eine Gruppe ist, werden bei Auswahl dieser Option auch die zugehörenden Gruppen bzw. Teilgruppen, oder bei Teilgruppen die übergeordnete Gruppe und das Jahr, eingeblendet.</translation>
     </message>
     <message>
         <location filename="../src/interface/subactivitiesform.cpp" line="428"/>
@@ -48175,28 +48220,28 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="166"/>
         <source>This subgroup exists only in year %1, group %2. This means that all the related activities and constraints will be removed. Do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Teilgruppe existiert nur im Jahrgang %1, Gruppe %2. Das bedeutet, dass alle darauf verweisende Aktivitäten und Einschränkungen gelöscht werden. Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="169"/>
         <source>This subgroup exists in more places, listed below. It will only be removed from the current year/group, and the related activities and constraints will not be removed. Do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Teilgruppe existiert in mehreren Stellen, die unten aufgelistet sind. Sie wird nur aus dem aktuellen Jahrgang oder der aktuellen Gruppe entfernt. Die anderen Einschränkungen und Aktivitäten mit einem Verweis auf diese Teilgruppe werden nicht entfernt. Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="177"/>
         <location filename="../src/interface/subgroupsform.cpp" line="259"/>
         <source>FET confirmation</source>
-        <translation type="unfinished">FET Rückmeldung</translation>
+        <translation>FET-Bestätigung</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="248"/>
         <source>This subgroup exists only in year %1, group %2. All the related activities and constraints will be removed. Do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Teilgruppe existiert nur im Jahrgang %1 in der Gruppe %2. Das bedeutet, dass alle darauf verweisende Aktivitäten und Einschränkungen gelöscht werden. Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="251"/>
         <source>This subgroup exists in more places, listed below. It will be removed from all these places. All the related activities and constraints will be removed. Do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Teilgruppe existiert an mehreren Stellen, die unten aufgelistet sind. Sie wird aus allen Jahrgängen und Gruppen entfernt. Alle Einschränkungen und Aktivitäten mit einem Verweis auf diese Gruppe werden ebenfalls entfernt. Möchten Sie fortfahren?</translation>
     </message>
     <message>
         <location filename="../src/interface/subgroupsform.cpp" line="178"/>
@@ -49020,23 +49065,23 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1873"/>
         <source>students</source>
-        <translation type="unfinished"></translation>
+        <translation>Schüler</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1875"/>
         <source>students - disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Schüler - deaktiviert</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1880"/>
         <source>teachers - disabled</source>
-        <translation type="unfinished">Lehrer deaktiviert</translation>
+        <translation>Lehrer - deaktiviert</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1882"/>
         <source>View statistics: %1, %2.</source>
         <comment>%1 and %2 are two files in HTML format, to show statistics for students and teachers. The user can click on one file to view it</comment>
-        <translation type="unfinished"></translation>
+        <translation>Statistiken anzeigen: %1, %2</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1928"/>
@@ -49175,12 +49220,12 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/timetableexport.cpp" line="2196"/>
         <source>Some programs import &quot;tfoot&quot; incorrectly. So we use &quot;tr.foot&quot; instead of &quot;tfoot&quot;.</source>
         <comment>Please keep tfoot and tr.foot untranslated, as they are in the original English phrase</comment>
-        <translation type="unfinished"></translation>
+        <translation>Einige Programme importieren „tfoot“ falsch. Deshalb verwenden wir „tr.foot“ anstatt „tfoot“.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2261"/>
         <source>Be careful. You might get mutual and ambiguous styles. CSS means that the last definition will be used.</source>
-        <translation>Vorsicht. Sie könnten sich überscheidene CSS-Eigenschaften erhalten.</translation>
+        <translation>Vorsicht. Sie könnten sich überschneidene CSS-Eigenschaften erhalten.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="3662"/>
@@ -49322,18 +49367,18 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/timetableexport.cpp" line="8294"/>
         <location filename="../src/engine/timetableexport.cpp" line="8471"/>
         <source>This is a teaser only. Values are not correct!</source>
-        <translation type="unfinished"></translation>
+        <translation>Dies ist nur eine schnelle Vorschau - die Werte sind (evtl.) nicht korrekt.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8298"/>
         <location filename="../src/engine/timetableexport.cpp" line="8475"/>
         <source>This file doesn&apos;t list limits that are set by constraints. It contains statistics about the min and max values of the currently calculated solution.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Datei zeigt keine Begrenzungen an, die durch Einschränkungen gesetzt wurden. Sie zeigt nur eine Statistik über die berechneten Maximal- und Minimalwerten in der aktuellen Lösung an.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8401"/>
         <source>All teachers</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8402"/>
@@ -49342,62 +49387,62 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/timetableexport.cpp" line="8638"/>
         <location filename="../src/engine/timetableexport.cpp" line="8799"/>
         <source>Free days</source>
-        <translation type="unfinished"></translation>
+        <translation>Freie Tage</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8403"/>
         <location filename="../src/engine/timetableexport.cpp" line="8592"/>
         <source>Gaps</source>
-        <translation type="unfinished"></translation>
+        <translation>Freistunden</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8404"/>
         <location filename="../src/engine/timetableexport.cpp" line="8593"/>
         <source>Gaps per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Freistunden pro Tag</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8405"/>
         <location filename="../src/engine/timetableexport.cpp" line="8594"/>
         <source>Hours per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Stunden pro Tag</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8408"/>
         <location filename="../src/engine/timetableexport.cpp" line="8597"/>
         <source>Sum</source>
-        <translation type="unfinished">Summe</translation>
+        <translation>Summe</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8414"/>
         <location filename="../src/engine/timetableexport.cpp" line="8603"/>
         <source>Average</source>
-        <translation type="unfinished"></translation>
+        <translation>Durchschnitt</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8420"/>
         <location filename="../src/engine/timetableexport.cpp" line="8609"/>
         <source>Min</source>
-        <translation type="unfinished"></translation>
+        <translation>Min.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8426"/>
         <location filename="../src/engine/timetableexport.cpp" line="8615"/>
         <source>Max</source>
-        <translation type="unfinished"></translation>
+        <translation>Max.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8443"/>
         <location filename="../src/engine/timetableexport.cpp" line="8452"/>
         <source>Teacher</source>
-        <translation type="unfinished">Lehrer</translation>
+        <translation>Lehrer</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8445"/>
         <location filename="../src/engine/timetableexport.cpp" line="8639"/>
         <location filename="../src/engine/timetableexport.cpp" line="8800"/>
         <source>Total gaps</source>
-        <translation type="unfinished"></translation>
+        <translation>Freistunden total</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8446"/>
@@ -49406,7 +49451,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/timetableexport.cpp" line="8686"/>
         <location filename="../src/engine/timetableexport.cpp" line="8801"/>
         <source>Min gaps per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Min. Freistd. pro Tag</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8447"/>
@@ -49415,7 +49460,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/timetableexport.cpp" line="8687"/>
         <location filename="../src/engine/timetableexport.cpp" line="8802"/>
         <source>Max gaps per day</source>
-        <translation type="unfinished">Maximale Anzahl an Freistunden pro Tag</translation>
+        <translation>Max. Freistd. pro Tag</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8448"/>
@@ -49424,7 +49469,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/timetableexport.cpp" line="8682"/>
         <location filename="../src/engine/timetableexport.cpp" line="8803"/>
         <source>Min hours per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Min. Stunden pro Tag</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8449"/>
@@ -49433,36 +49478,36 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/timetableexport.cpp" line="8683"/>
         <location filename="../src/engine/timetableexport.cpp" line="8804"/>
         <source>Max hours per day</source>
-        <translation type="unfinished"></translation>
+        <translation>Max. Stunden pro Tag</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8590"/>
         <source>All students</source>
-        <translation type="unfinished">alle Schüler</translation>
+        <translation>Alle Schüler</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8662"/>
         <location filename="../src/engine/timetableexport.cpp" line="8680"/>
         <source>Min free days</source>
-        <translation type="unfinished"></translation>
+        <translation>Min. freie Tage</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8663"/>
         <location filename="../src/engine/timetableexport.cpp" line="8681"/>
         <source>Max free days</source>
-        <translation type="unfinished"></translation>
+        <translation>Max. freie Tage</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8666"/>
         <location filename="../src/engine/timetableexport.cpp" line="8684"/>
         <source>Min gaps per week</source>
-        <translation type="unfinished"></translation>
+        <translation>Min. Freistd. pro Woche</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8667"/>
         <location filename="../src/engine/timetableexport.cpp" line="8685"/>
         <source>Max gaps per week</source>
-        <translation type="unfinished">Maximale Anzahl an Freistunden pro Woche</translation>
+        <translation>Max. Freistd. pro Woche</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="8637"/>
@@ -49470,7 +49515,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/timetableexport.cpp" line="8798"/>
         <location filename="../src/engine/timetableexport.cpp" line="8807"/>
         <source>Subgroup</source>
-        <translation type="unfinished">Teilgruppe</translation>
+        <translation>Teilgruppe</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1598"/>
@@ -49490,14 +49535,14 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1614"/>
         <source>Conflicts list (in decreasing order):</source>
-        <translation>Konflikte (in absteigender Ordnung):</translation>
+        <translation>Konflikte (absteigende Reihenfolge):</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="808"/>
         <location filename="../src/engine/timetableexport.cpp" line="818"/>
         <location filename="../src/engine/timetableexport.cpp" line="824"/>
         <source>FET - Critical</source>
-        <translation>FET Kritische Meldung</translation>
+        <translation>FET - kritische Meldung</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="808"/>
@@ -49635,7 +49680,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/timetableexport.cpp" line="4331"/>
         <location filename="../src/engine/timetableexport.cpp" line="4346"/>
         <source>FET critical</source>
-        <translation>FET Kritische Meldung</translation>
+        <translation>FET - kritische Meldung</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="785"/>
@@ -49646,7 +49691,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="992"/>
         <source>Could not save the data + timetable file on the hard disk - maybe hard disk is full</source>
-        <translation>Die Daten und der Stundenplan konnten nicht auf Festplatte gespeichert werden. Evtl. ist die Festplatte voll</translation>
+        <translation>Die Daten und der Stundenplan konnten nicht auf Festplatte gespeichert werden. Evtl. ist die Festplatte voll?</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1867"/>
@@ -49813,13 +49858,13 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/engine/timetableexport.cpp" line="2183"/>
         <source>To do a page-break only after every second timetable, delete &quot;page-break-before: always;&quot; in &quot;table.even_table&quot;.</source>
         <comment>Please keep fields in quotes as they are, untranslated.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Um einen Seitenumbruch nur alle 2 Seiten zu erzeugen, lösche man „page-break-before: always;“ in „table.even_table“.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="2185"/>
         <source>To hide an element just write the following phrase into the element: %1 (without quotes).</source>
         <comment>%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes</comment>
-        <translation type="unfinished"></translation>
+        <translation>Um ein Objekt auszublenden, schreibt man die Phrase %1 (ohne Zitatzeichen) in das Element.</translation>
     </message>
     <message>
         <location filename="../src/engine/timetableexport.cpp" line="1593"/>
@@ -50528,12 +50573,12 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="174"/>
         <source>Students Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Schülerstatistik</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="175"/>
         <source>Teachers Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Lehrerstatistik</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="185"/>
@@ -50583,7 +50628,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/interface/timetableprintform.cpp" line="256"/>
         <source>Custom</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>Benutzerdefiniert</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="258"/>
@@ -50715,55 +50760,55 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/interface/timetableprintform.cpp" line="279"/>
         <source>C5E</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>C5E (Umschlag)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="280"/>
         <source>Comm10E</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>Comm10E (Umschlag)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="281"/>
         <source>DLE</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>DLE (Umschlag)</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="282"/>
         <source>Executive</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>US-Executive</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="283"/>
         <source>Folio</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>US-Folio</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="284"/>
         <source>Ledger</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>US-Ledger</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="285"/>
         <source>Legal</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>US-Legal</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="286"/>
         <source>Letter</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>US-Letter</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="287"/>
         <source>Tabloid</source>
         <comment>Type of paper size</comment>
-        <translation type="unfinished"></translation>
+        <translation>US-Tabloid</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="307"/>
@@ -50778,7 +50823,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="313"/>
         <source>Repeat vertical names</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikale Namen wiederholen</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableprintform.cpp" line="326"/>
@@ -50877,7 +50922,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
         <location filename="../src/interface/timetableprintform.cpp" line="1245"/>
         <location filename="../src/interface/timetableprintform.cpp" line="1272"/>
         <source>FET is compiled without printer support - it is impossible to print from this dialog. Please open the HTML timetables from the results directory</source>
-        <translation type="unfinished"></translation>
+        <translation>FET wurde ohne Druckerunterstützung kompiliert. Daher ist es nicht möglich zu drucken. Bitte exportieren Sie die HTML-Statistik und öffnen Sie diese mit einem Webbrowser.</translation>
     </message>
 </context>
 <context>
@@ -50893,7 +50938,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="436"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="528"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="436"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="440"/>
         <source>permanently locked time</source>
         <comment>refers to activity</comment>
         <translation>permanent gesperrte Zeit</translation>
@@ -50901,7 +50946,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="440"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="532"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="440"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="444"/>
         <source>locked time</source>
         <comment>refers to activity</comment>
         <translation>gesperrte Zeit</translation>
@@ -50909,7 +50954,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="444"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="536"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="444"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="448"/>
         <source>permanently locked space</source>
         <comment>refers to activity</comment>
         <translation>permanent gesperrter Raum</translation>
@@ -50917,7 +50962,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="447"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="539"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="447"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="451"/>
         <source>locked space</source>
         <comment>refers to activity</comment>
         <translation>gesperrter Raum</translation>
@@ -50925,7 +50970,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="699"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="805"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="698"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="702"/>
         <source>Added %1 locking time constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Es wurden %1 sperrende Zeiteinschränkungen hinzugefügt.</translation>
@@ -50933,7 +50978,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="705"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="811"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="704"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="708"/>
         <source>Added %1 locking space constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Es wurden %1 sperrende Raumeinschränkungen hinzugefügt.</translation>
@@ -50941,7 +50986,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="711"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="817"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="710"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="714"/>
         <source>Removed %1 locking time constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Es wurden %1 sperrende Zeiteinschränkungen entfernt.</translation>
@@ -50949,7 +50994,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="717"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="823"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="716"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="720"/>
         <source>Removed %1 locking space constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Es wurden %1 sperrende Raumeinschränkungen entfernt.</translation>
@@ -50957,28 +51002,28 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="728"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="834"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="727"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="731"/>
         <source>No locking constraints added or removed.</source>
         <translation>Es wurden keine Einschränkungen hinzugefügt oder entfernt.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="761"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="867"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="760"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="764"/>
         <source>Lock/unlock: you can select one or more activities in the table and toggle lock/unlock in time, space or both.</source>
         <translation>Sperren/Entsperren: Sie können eine oder mehrere Aktivitäten in dem Plan auswählen und zwischen gesperrten und ungesperrtem Zustand hin und her zu wechseln. Dies gilt für die Zeit, den Raum und beide.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="763"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="869"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="762"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="766"/>
         <source>There will be added or removed locking constraints for the selected activities (they can be unlocked only if they are not permanently locked).</source>
         <translation>Es werden für die ausgewählten Aktivitäten Einschränkungen für feste Zeiten hinzugefügt/entfernt. Es kann nur entsperrt werden, wenn sie nicht permanent fest sind.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="319"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="392"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="312"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="316"/>
         <source>PLT</source>
         <comment>Abbreviation for permanently locked time. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>PGZ</translation>
@@ -50986,7 +51031,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="325"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="398"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="318"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="322"/>
         <source>LT</source>
         <comment>Abbreviation for locked time. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>GZ</translation>
@@ -50994,7 +51039,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="331"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="404"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="324"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="328"/>
         <source>PLS</source>
         <comment>Abbreviation for permanently locked space. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>PGR</translation>
@@ -51002,7 +51047,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="336"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="409"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="329"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="333"/>
         <source>LS</source>
         <comment>Abbreviation for locked space. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>GR</translation>
@@ -51010,7 +51055,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="697"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="803"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="696"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="700"/>
         <source>Added 1 locking time constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Es wurde 1 sperrende Zeiteinschränkung hinzugefügt.</translation>
@@ -51018,7 +51063,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="703"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="809"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="702"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="706"/>
         <source>Added 1 locking space constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Es wurde 1 sperrende Raumeinschränkung hinzugefügt.</translation>
@@ -51026,7 +51071,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="709"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="815"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="708"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="712"/>
         <source>Removed 1 locking time constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Es wurde 1 sperrende Zeiteinschränkung entfernt.</translation>
@@ -51034,7 +51079,7 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="715"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="821"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="714"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="718"/>
         <source>Removed 1 locking space constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Es wurde 1 sperrende Raumeinschränkung entfernt.</translation>
@@ -51042,14 +51087,14 @@ Bitte teilen Sie den Fehler mit. FET wird nun abbrechen</translation>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="765"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="871"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="764"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="768"/>
         <source>Locking time constraints are constraints of type activity preferred starting time. Locking space constraints are constraints of type activity preferred room. You can see these constraints in the corresponding constraints dialogs. New locking constraints are added at the end of the list of constraints.</source>
         <translation>Sperrende Zeiteinschränkungen sind Einschänkungen vom Typ &quot;Eine Aktivität hat eine bevorzugte Startzeit&quot;. Sperrende Raumeinschränkungen sind vom Typ &quot;Eine Aktivität hat einen bevorzugten Raum&quot;. Sie können diese Einschränkungen in den entsprechenden Dialogen sehen und bearbeiten. Neue Einschränkungen werden immer am Ende der List hinzugefügt.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="768"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="874"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="767"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="771"/>
         <source>If a cell is (permanently) locked in time or space, it contains abbreviations to show that: PLT (permanently locked time), LT (locked time), PLS (permanently locked space) or LS (locked space).</source>
         <comment>Translate the abbreviations also. Make sure the abbreviations in your language are different between themselves and the user can differentiate easily between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>Wenn eine Aktivität (permanent) in Zeit oder Raum gesetzt ist, dann können folgende Abkürzungen angezeigt werden: PGZ (permanent gesperrte Zeit),  GZ (gesperrte Zeit), PGR (permanent gesperrter Raum), GR (gesperrter Raum).</translation>
@@ -51539,29 +51584,29 @@ Bitte reduzieren Sie dies auf eine Einschränkung</translation>
 <context>
     <name>TimetableViewTeachersForm</name>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="552"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="624"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="556"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="628"/>
         <source>Added the following constraint:</source>
         <translation>Folgende Einschränkung hinzugefügt:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="491"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="511"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="606"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="680"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="728"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="495"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="515"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="610"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="684"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="732"/>
         <source>FET information</source>
         <translation>FET-Information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="607"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="681"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="611"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="685"/>
         <source>Skip information</source>
         <translation>Überspringe Informationen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="607"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="681"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="611"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="685"/>
         <source>See next</source>
         <translation>Zeige die Nächste</translation>
     </message>
@@ -51572,51 +51617,51 @@ Bitte reduzieren Sie dies auf eine Einschränkung</translation>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="237"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="244"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="258"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="380"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="386"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="392"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="410"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="497"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="503"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="519"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="566"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="578"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="591"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="640"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="652"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="665"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="384"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="390"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="396"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="414"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="501"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="507"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="523"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="570"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="582"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="595"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="644"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="656"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="669"/>
         <source>FET warning</source>
         <translation>FET-Warnung</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="458"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="462"/>
         <source>Teacher is not available 100% in this slot</source>
         <translation>Lehrer ist mit einer Gewichtung von 100% nicht verfügbar</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="462"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="466"/>
         <source>Break with weight 100% in this slot</source>
         <translation>Pause mit 100% Gewichtung</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="410"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="414"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
         <translation>Ungültiger Lehrer - Bitte schließen Sie den Dialog und öffnen Sie die Lehreransicht erneut</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="430"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="434"/>
         <source>Room: %1</source>
         <translation>Raum: %1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="492"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="496"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Berechnung läuft.
 Bitte stoppe vorher die Berechnung.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="771"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="775"/>
         <source>FET help</source>
         <translation>FET-Hilfe</translation>
     </message>
@@ -51626,30 +51671,30 @@ Bitte stoppe vorher die Berechnung.</translation>
         <translation>Sie haben eine alte Stundenplanansicht von Lehrern geöffnet. Bitte schließen jenes Fenster</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="594"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="668"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="598"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="672"/>
         <source>The following constraint will be deleted:</source>
         <translation>Die folgende Einschränkungen werden gelöscht:</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="573"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="647"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="577"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="651"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation>Einschränkung %1 wird nicht entfernt, weil es permanent gesperrt ist. Wenn Sie es entsperren wollen, dann müssen Sie ins Menue Daten-&gt;Einschränkungen gehen.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="568"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="580"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="642"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="654"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="572"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="584"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="646"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="658"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation>Ein mögliches Problem könnte Asynchronität sein. Versuchen Sie daher einfach die Stundenplanansichtsfenter zu schließen und wieder zu öffnen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="566"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="578"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="640"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="652"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="570"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="582"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="644"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="656"/>
         <source>Small problem detected</source>
         <translation>Kleines Pronlem entdeckt</translation>
     </message>
@@ -51660,60 +51705,60 @@ Bitte stoppe vorher die Berechnung.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="244"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="392"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="503"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="396"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="507"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation>Der Stundenplan kann nicht angezeigt werden, weil Räume hinzugefügt oder gelöscht wurden. Bitte (re-)generieren Sie zuerst einen Plan</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="567"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="579"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="571"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="583"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation>Ein mögliches Problem könnte sein, dass Sie 2 oder mehr Einschränkungen des Types bevorzugte Startzeit (Zeit+Tag) mit einer Gewichtung von 100% für Aktivität ID %1 vergeben haben.
 Bitte reduzieren Sie dies auf eine Einschränkung</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="569"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="581"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="643"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="655"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="573"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="585"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="647"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="659"/>
         <source>Please report possible bug</source>
         <translation>Bitte teilen Sie diesen möglichen Feher mit</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="591"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="665"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="595"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="669"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation>FET erwartet, dass eine Einschränkung gelöscht werden soll, es wird aber %1 Einschrnkungen löschen</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="641"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="653"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="645"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="657"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation>Ein mögliches Problem könnte sein, dass Sie 2 oder mehr Einschränkungen des Types bevorzugte Raum mit einer Gewichtung von 100% für Aktivität ID %1 vergeben haben.
 Bitte reduzieren Sie dies auf eine Einschränkung</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="228"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="519"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="523"/>
         <source>Invalid teacher - please close this dialog and open a new view teachers dialog</source>
         <translation>Ungültiger Lehrer - Bitte schließen Sie den Dialog und öffnen Sie die Lehreransicht erneut</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="511"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="515"/>
         <source>Please select a teacher</source>
         <translation>Wähle einen Lehrer</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="218"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="386"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="497"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="390"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="501"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable</source>
         <translation>Plan kann nicht angezeigt werden - Bitte generieren Sie einen neuen Plan</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="237"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="380"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="384"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable or close the timetable view teachers dialog</source>
         <translation>Plan nicht verfügbar. Bitte erstllen Sie einen neuen Plan oder öffnen Sie diesen Dialog erneut</translation>
     </message>

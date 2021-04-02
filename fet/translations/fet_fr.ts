@@ -33940,7 +33940,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Copyright (C) 2002-2015 Liviu Lalescu, Volker Dirr.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.0 (April 2015).&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Version: 5.27.1 (May 2015).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;Licensed under the GNU Affero General Public License version 3 or later.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -50766,7 +50766,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="436"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="528"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="436"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="440"/>
         <source>permanently locked time</source>
         <comment>refers to activity</comment>
         <translation>horaire bloqué en permanence</translation>
@@ -50774,7 +50774,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="440"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="532"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="440"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="444"/>
         <source>locked time</source>
         <comment>refers to activity</comment>
         <translation>horaire bloqué</translation>
@@ -50782,7 +50782,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="444"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="536"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="444"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="448"/>
         <source>permanently locked space</source>
         <comment>refers to activity</comment>
         <translation>salle bloquée en permanence</translation>
@@ -50790,7 +50790,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="447"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="539"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="447"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="451"/>
         <source>locked space</source>
         <comment>refers to activity</comment>
         <translation>salle bloquée</translation>
@@ -50798,7 +50798,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="699"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="805"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="698"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="702"/>
         <source>Added %1 locking time constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Ajout de %1 contraintes horaire bloqué.</translation>
@@ -50806,7 +50806,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="705"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="811"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="704"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="708"/>
         <source>Added %1 locking space constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Ajout de %1 contraintes salle bloquée.</translation>
@@ -50814,7 +50814,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="711"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="817"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="710"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="714"/>
         <source>Removed %1 locking time constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Suppression de %1 contraintes horaire bloqué.</translation>
@@ -50822,7 +50822,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="717"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="823"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="716"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="720"/>
         <source>Removed %1 locking space constraints.</source>
         <comment>%1 is &gt;= 2, so constraints is plural</comment>
         <translation>Suppression de %1 contraintes salle bloquée.</translation>
@@ -50830,28 +50830,28 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="728"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="834"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="727"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="731"/>
         <source>No locking constraints added or removed.</source>
         <translation>Aucune contraintes de blocage ajoutée ou supprimée.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="761"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="867"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="760"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="764"/>
         <source>Lock/unlock: you can select one or more activities in the table and toggle lock/unlock in time, space or both.</source>
         <translation>Bloquer/débloquer : vous pouvez sélectionner une ou plusieurs activités dans la table et basculer entre bloquer/débloquer les horaires, les salles ou les deux.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="763"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="869"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="762"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="766"/>
         <source>There will be added or removed locking constraints for the selected activities (they can be unlocked only if they are not permanently locked).</source>
         <translation>Des contraintes de blocage seront ajoutées ou supprimées pour les activités sélectionnées (elles ne peuvent être débloquées que si elles ne sont pas bloquées de façon permanente).</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="319"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="392"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="312"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="316"/>
         <source>PLT</source>
         <comment>Abbreviation for permanently locked time. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>PLT</translation>
@@ -50859,7 +50859,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="325"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="398"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="318"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="322"/>
         <source>LT</source>
         <comment>Abbreviation for locked time. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>LT</translation>
@@ -50867,7 +50867,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="331"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="404"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="324"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="328"/>
         <source>PLS</source>
         <comment>Abbreviation for permanently locked space. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>PLS</translation>
@@ -50875,7 +50875,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="336"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="409"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="329"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="333"/>
         <source>LS</source>
         <comment>Abbreviation for locked space. There are 4 string: permanently locked time, permanently locked space, locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>LS</translation>
@@ -50883,7 +50883,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="697"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="803"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="696"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="700"/>
         <source>Added 1 locking time constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Ajout d&apos;1 contrainte horaire bloquée.</translation>
@@ -50891,7 +50891,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="703"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="809"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="702"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="706"/>
         <source>Added 1 locking space constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Ajout d&apos;1 contrainte salle bloquée.</translation>
@@ -50899,7 +50899,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="709"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="815"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="708"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="712"/>
         <source>Removed 1 locking time constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Suppression d&apos;1 contrainte horaire bloquée.</translation>
@@ -50907,7 +50907,7 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="715"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="821"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="714"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="718"/>
         <source>Removed 1 locking space constraint.</source>
         <comment>constraint is singular (only 1 constraint)</comment>
         <translation>Suppression d&apos;1 contrainte salle bloquée.</translation>
@@ -50915,14 +50915,14 @@ activité invalide id %2
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="765"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="871"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="764"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="768"/>
         <source>Locking time constraints are constraints of type activity preferred starting time. Locking space constraints are constraints of type activity preferred room. You can see these constraints in the corresponding constraints dialogs. New locking constraints are added at the end of the list of constraints.</source>
         <translation>Les contraintes horaires bloquées sont des contraintes d&apos;activité de type &apos;heure de début privilégiée&apos;. Les contraintes salle bloquée sont des contraintes d&apos;activité de type &apos;salle privilégiée&apos;. Vous pouvez voir ces contraintes dans les boites de dialogues correspondantes. Les nouvelles contraintes de blocage sont ajoutées à la fin de la liste des contraintes.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewroomsform.cpp" line="768"/>
         <location filename="../src/interface/timetableviewstudentsform.cpp" line="874"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="767"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="771"/>
         <source>If a cell is (permanently) locked in time or space, it contains abbreviations to show that: PLT (permanently locked time), LT (locked time), PLS (permanently locked space) or LS (locked space).</source>
         <comment>Translate the abbreviations also. Make sure the abbreviations in your language are different between themselves and the user can differentiate easily between them. These abbreviations may appear also in other places, please use the same abbreviations.</comment>
         <translation>Si une cellule est bloquée (en permanence) en horaire ou salle, elle contient des abréviations pour le montrer : PLT (horaire bloqué en permanence), LT (horaire bloqué), PLS (salle bloquée en permanence), LS (salle bloquée).</translation>
@@ -51408,29 +51408,29 @@ Merci d&apos;arrêter la simulation avant ceci.</translation>
 <context>
     <name>TimetableViewTeachersForm</name>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="552"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="624"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="556"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="628"/>
         <source>Added the following constraint:</source>
         <translation>Ajouter les contraintes suivantes :</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="491"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="511"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="606"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="680"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="728"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="495"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="515"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="610"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="684"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="732"/>
         <source>FET information</source>
         <translation>FET - Information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="607"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="681"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="611"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="685"/>
         <source>Skip information</source>
         <translation>Passer l&apos;information</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="607"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="681"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="611"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="685"/>
         <source>See next</source>
         <translation>Voir suivant</translation>
     </message>
@@ -51441,29 +51441,29 @@ Merci d&apos;arrêter la simulation avant ceci.</translation>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="237"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="244"/>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="258"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="380"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="386"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="392"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="410"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="497"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="503"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="519"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="566"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="578"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="591"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="640"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="652"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="665"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="384"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="390"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="396"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="414"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="501"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="507"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="523"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="570"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="582"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="595"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="644"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="656"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="669"/>
         <source>FET warning</source>
         <translation>FET - Avertissement</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="458"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="462"/>
         <source>Teacher is not available 100% in this slot</source>
         <translation>L&apos;enseignant n&apos;est pas disponible 100% sur ce créneau</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="462"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="466"/>
         <source>Break with weight 100% in this slot</source>
         <translation>Pause avec un poids de 100% dans ce créneau</translation>
     </message>
@@ -51474,25 +51474,25 @@ Merci d&apos;arrêter la simulation avant ceci.</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="244"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="392"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="503"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="396"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="507"/>
         <source>Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it</source>
         <translation>Impossible d&apos;afficher l&apos;emploi du temps car vous avez ajouter ou supprimé des salles. Merci de regénérer l&apos;emploi du temps puis de l&apos;afficher ensuite</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="410"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="414"/>
         <source>The teacher is invalid - please close this dialog and open a new view teachers timetable</source>
         <translation>L&apos;enseignant n&apos;est pas valide -  merci de fermer cette boite de dialogue et d&apos;ouvrir une nouvelle vue d&apos;emplois du temps enseignants</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="492"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="496"/>
         <source>Allocation in course.
 Please stop simulation before this.</source>
         <translation>Affectation en cours.
 Merci d&apos;arrêter la simulation avant ceci.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="771"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="775"/>
         <source>FET help</source>
         <translation>FET - Aide</translation>
     </message>
@@ -51502,85 +51502,85 @@ Merci d&apos;arrêter la simulation avant ceci.</translation>
         <translation>Vous avez une vue d&apos;un ancien emploi du temps enseignants ouvert - merci de la fermer</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="594"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="668"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="598"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="672"/>
         <source>The following constraint will be deleted:</source>
         <translation>La contrainte suivante va être détruite :</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="573"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="647"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="577"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="651"/>
         <source>Constraint %1 will not be removed, because it is permanently locked. If you want to unlock it you must go to the constraints menu.</source>
         <translation>La contrainte %1 ne sera pas supprimée car elle est bloquée de façon permanente. Si vous voulez la débloquer vous devez vous rendre dans le menu des contraintes.</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="568"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="580"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="642"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="654"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="572"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="584"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="646"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="658"/>
         <source>A possible problem might be synchronization - so maybe try to close the timetable view dialog and open it again</source>
         <translation>La synchronisation peut être un problème - aussi essayez de fermer la vue de l&apos;emploi du temps et ouvrez la à nouveau</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="566"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="578"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="640"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="652"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="570"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="582"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="644"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="656"/>
         <source>Small problem detected</source>
         <translation>Petit problème détecté</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="430"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="434"/>
         <source>Room: %1</source>
         <translation>Salle=%1</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="567"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="579"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="571"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="583"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred starting time with weight 100% related to activity id %1, please leave only one of them</source>
         <translation>Un problème possible est que vous ayez 2 ou plus contraintes de type heure de début privilégiée pour une activité avec un poids de 100% se référant à l&apos;activité id %1, merci de n&apos;en laisser qu&apos;une</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="569"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="581"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="643"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="655"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="573"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="585"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="647"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="659"/>
         <source>Please report possible bug</source>
         <translation>Merci de rapporté un bug éventuel</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="591"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="665"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="595"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="669"/>
         <source>You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints</source>
         <translation>Vous devez avoir un problème car FET s&apos;attend à supprimer 1 contrainte, mais va détruire %1 contraintes  </translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="641"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="653"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="645"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="657"/>
         <source>A possible problem might be that you have 2 or more constraints of type activity preferred room with weight 100% related to activity id %1, please leave only one of them</source>
         <translation>Un problème possible est que vous ayez 2 ou plus contraintes de type salle privilégiée pour une activité avec un poids de 100% se référant à l&apos;activité id %1, merci de n&apos;en laisser qu&apos;une</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="228"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="519"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="523"/>
         <source>Invalid teacher - please close this dialog and open a new view teachers dialog</source>
         <translation>Enseignant non valide -  merci de fermer cette boite de dialogue et d&apos;ouvrir une nouvelle vue d&apos;emplois du temps enseignants</translation>
     </message>
     <message>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="511"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="515"/>
         <source>Please select a teacher</source>
         <translation>Merci de sélectionner un enseignant</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="218"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="386"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="497"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="390"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="501"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable</source>
         <translation>Emploi du temps non disponible dans la fenêtre de consultation de l&apos;emploi du temps des professeurs. Merci de créer un nouvel emploi du temps</translation>
     </message>
     <message>
         <location filename="../src/interface/timetableviewteachersform.cpp" line="237"/>
-        <location filename="../src/interface/timetableviewteachersform.cpp" line="380"/>
+        <location filename="../src/interface/timetableviewteachersform.cpp" line="384"/>
         <source>Timetable not available in view teachers timetable dialog - please generate a new timetable or close the timetable view teachers dialog</source>
         <translation>Emploi du temps non disponible dans la fenêtre de consultation de l&apos;emploi du temps des professeurs. Merci de générer un nouvel emploi du temps ou de fermer la fenêtre de consultation de l&apos;emploi du temps des professeurs</translation>
     </message>
