@@ -26,6 +26,7 @@
 extern Timetable gt;
 
 extern bool simulation_running;
+extern bool simulation_running_multi;
 
 CommentsForm::CommentsForm(QWidget* parent): QDialog(parent)
 {
@@ -53,7 +54,7 @@ CommentsForm::~CommentsForm()
 
 void CommentsForm::ok()
 {
-	if(!simulation_running)
+	if(!simulation_running && !simulation_running_multi)
 		gt.rules.setComments(commentsTextEdit->toPlainText());
 	else{
 		QMessageBox::information(this, tr("FET information"),

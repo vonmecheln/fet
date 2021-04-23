@@ -30,11 +30,11 @@ File lockunlock.cpp
 #include "timetable.h"
 #include "solution.h"
 
-extern bool students_schedule_ready;
-extern bool teachers_schedule_ready;
-extern bool rooms_schedule_ready;
+//extern bool students_schedule_ready;
+//extern bool teachers_schedule_ready;
+//extern bool rooms_schedule_ready;
 
-extern Solution best_solution;
+//extern Solution best_solution;
 
 extern Timetable gt;
 

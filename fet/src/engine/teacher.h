@@ -33,6 +33,15 @@ class Rules;
 
 typedef QList<Teacher*> TeachersList;
 
+const int TEACHER_MORNINGS_AFTERNOONS_BEHAVIOR_NOT_INITIALIZED=0;
+const int TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS=1; //normally used in Algeria.
+const int TEACHER_MORNING_OR_EXCLUSIVELY_AFTERNOON=2; //normally used in Morocco.
+const int TEACHER_ONE_DAY_EXCEPTION=3;
+const int TEACHER_TWO_DAYS_EXCEPTION=4;
+const int TEACHER_THREE_DAYS_EXCEPTION=5;
+const int TEACHER_FOUR_DAYS_EXCEPTION=6;
+const int TEACHER_FIVE_DAYS_EXCEPTION=7;
+
 /**
 @author Liviu Lalescu
 */
@@ -44,6 +53,8 @@ public:
 	QList<int> activitiesForTeacher;
 
 	QString name;
+
+	int morningsAfternoonsBehavior;
 	
 	QString comments;
 	
@@ -55,9 +66,9 @@ public:
 	Teacher();
 	~Teacher();
 
-	QString getXmlDescription();
-	QString getDescription();
-	QString getDetailedDescription();
+	QString getXmlDescription(const Rules& r);
+	QString getDescription(const Rules& r);
+	QString getDetailedDescription(const Rules& r);
 	QString getDetailedDescriptionWithConstraints(Rules& r);
 };
 

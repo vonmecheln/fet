@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<fet version="5.27.3-algeria50">
+
+<Institution_Name>Default institution</Institution_Name>
+
+<Comments>Default comments</Comments>
+
+<Days_List>
+<Number_of_Days>2</Number_of_Days>
+<Day>
+	<Name>mon mor</Name>
+</Day>
+<Day>
+	<Name>mon aft</Name>
+</Day>
+</Days_List>
+
+<Hours_List>
+<Number_of_Hours>4</Number_of_Hours>
+<Hour>
+	<Name>08:00</Name>
+</Hour>
+<Hour>
+	<Name>09:00</Name>
+</Hour>
+<Hour>
+	<Name>10:00</Name>
+</Hour>
+<Hour>
+	<Name>11:00</Name>
+</Hour>
+</Hours_List>
+
+<Students_List>
+</Students_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>t1</Name>
+</Teacher>
+</Teachers_List>
+
+<Subjects_List>
+<Subject>
+	<Name>s1</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+</Activity_Tags_List>
+
+<Activities_List>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Subject>s1</Subject>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>1</Id>
+	<Activity_Group_Id>1</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Subject>s1</Subject>
+	<Duration>1</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>2</Id>
+	<Activity_Group_Id>1</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+</Activities_List>
+
+<Buildings_List>
+</Buildings_List>
+
+<Rooms_List>
+</Rooms_List>
+
+<Time_Constraints_List>
+<ConstraintBasicCompulsoryTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBasicCompulsoryTime>
+<ConstraintActivityPreferredTimeSlots>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>1</Activity_Id>
+	<Number_of_Preferred_Time_Slots>4</Number_of_Preferred_Time_Slots>
+	<Preferred_Time_Slot>
+		<Preferred_Day>mon mor</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>mon mor</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>mon mor</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>mon mor</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredTimeSlots>
+<ConstraintActivityPreferredTimeSlots>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>2</Activity_Id>
+	<Number_of_Preferred_Time_Slots>4</Number_of_Preferred_Time_Slots>
+	<Preferred_Time_Slot>
+		<Preferred_Day>mon aft</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>mon aft</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>mon aft</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>mon aft</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredTimeSlots>
+<ConstraintTeachersMaxGapsPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>1</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxGapsPerRealDay>
+</Time_Constraints_List>
+
+<Space_Constraints_List>
+<ConstraintBasicCompulsorySpace>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBasicCompulsorySpace>
+</Space_Constraints_List>
+
+</fet>

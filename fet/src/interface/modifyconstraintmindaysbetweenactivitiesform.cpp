@@ -72,9 +72,16 @@ ModifyConstraintMinDaysBetweenActivitiesForm::ModifyConstraintMinDaysBetweenActi
 		this->selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
 	}
 	
-	minDaysSpinBox->setMinimum(1);
-	minDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek-1);
-	minDaysSpinBox->setValue(ctr->minDays);
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		minDaysSpinBox->setMinimum(1);
+		minDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek-1);
+		minDaysSpinBox->setValue(ctr->minDays);
+	}
+	else{
+		minDaysSpinBox->setMinimum(1);
+		minDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek/2-1);
+		minDaysSpinBox->setValue(ctr->minDays);
+	}
 
 	consecutiveIfSameDayCheckBox->setChecked(ctr->consecutiveIfSameDay);
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));

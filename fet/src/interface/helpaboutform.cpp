@@ -79,7 +79,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "or a combination of these), %2 are the copyright holders").arg("2002-2021").arg("Liviu Lalescu, Volker Dirr");
 	about+="<br /><br />";
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "March")).arg("2021");
+	 .arg(QCoreApplication::translate("MonthsNames", "April")).arg("2021");
 	about+="<br /><br />";
 	about+=tr("Licensed under the GNU Affero General Public License version 3 or later.");
 	about+="<br /><br />";
@@ -299,7 +299,9 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("ru").arg(tr("Russian translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("%1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Ilya V. Paramonov").arg("ivparamonov AT gmail.com");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Ilya V. Paramonov").arg("ivparamonov AT gmail.com");
+	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
+	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Alexey Chernous").arg("alexch82 AT ya.ru");
 	translators+=QString("<br /><br /><br />");
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("si").arg(tr("Sinhala translation"));
@@ -843,7 +845,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("auriolar");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString("dmcdonald");
+	thanksTo+=QString("Darren McDonald");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("wahyuamin");
 	thanksTo+=QString("<br />");
@@ -893,7 +895,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("utismetis");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString("chernous");
+	thanksTo+=QString("Alexey Chernous");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Roberto Bergonzini");
 	thanksTo+=QString("<br />");
@@ -1026,6 +1028,10 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("Nando");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Adele");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("YOUSSEF HOUIET");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Khineche Kaddour");
 	thanksTo+=QString("<br />");
 
 	thanksToTextBrowser->setHtml(thanksTo);

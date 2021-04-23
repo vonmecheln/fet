@@ -1,11 +1,68 @@
+0.5--------------------------------------------------------
+From different old custom FET-MA users, for the new mornings-afternoons mode, on forum:
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4519.0
+
+- Students (set) min half-days per week (suggested by Abdeljalil Elghazoui) - but is it needed, considering we have available min mornings/afternoons and min hours daily without allowing empty real days?
+
+- Max days per week for a room,
+- Max hours daily (half day) for a room,
+- Max hours daily (real day) for a room (suggested by bachiri401).
+
+- Default 100% or saving the value of min days between activities constraints when adding a split activity (suggested by Mohamed Ait Ichou).
+
+- Another suggestion, is it possible to combine morning and evening periods during viewing. That is, it is not divided between morning and evening periods (suggested by Mohamed Ait Ichou).
+
+- Drag and drop manual timetabling in the time horizontal view timetables (suggested by Abdeljalil Elghazoui).
+
+- Suggested by BOUHADEF (https://lalescu.ro/liviu/fet/forum/index.php?topic=4501.msg25467#msg25467):
+There is an important constraints if it can be added
+Max resting hours between morning and afternoon. With the possibility of setting it 0.
+This restriction is important for schools that provide food as students cannot be discharged at the end of the morning or the first hour in the evening.
+Also important for teachers who live far from the institution. Breaks between morning and evening are tiring for the teacher as he cannot move home.
+Also if it is possible to space constraint
+ As set of activities are in the same room if they are consecutive
+with a weight less than 100%.
+Also, please add it in space constraint
+My important place if possible is
+a set of activities occupies minimum different rooms
+
+- Suggested by nguyenhuuduyet (https://lalescu.ro/liviu/fet/forum/index.php?topic=4501.msg25772#msg25772):
+Can you help me. I want when entering the teacher's name will be displayed immediately like the official version.
+Example: 1. Enter the teacher's name
+2. Add
+3. OK
+Then the teacher's name will appear in item 4
+
+From mohammed, on forum (https://lalescu.ro/liviu/fet/forum/index.php?topic=4805.0):
+- Teacher(s)/students (set) activity tag min hours continuously.
+
+From ghani1990, on forum (https://lalescu.ro/liviu/fet/forum/index.php?topic=4729.0):
+- Activity(ies) start(s) or end(s) students day.
+This was implemented as a custom version for him, but it is ugly/not perfect, because each half day may contain only one
+such activity, and the implementation is not perfect (even if ghani1990 says in practice it works very well).
+ghani1990 says on that forum topic that this is to ensure that optional activities begin or end the students' day. But a
+perfect way to do this would be to divide the students and add all the activities for a students set, all the activities
+without the optional ones for another students set, and add max zero gaps for these students.
+
+From bachiri401:
+- Constraints teacher(s)/students (set) begin(s) mornings early max beginnings at second hour.
+(we have now for FET days and for afternoons.)
+- Constraints teacher(s)/students (set) min hours per afternoon.
+-> And in general every constraint referring to days should have a corresponding constraint for real days,
+and every constraint referring to mornings should have a corresponding one referring to afternoons.
+
 1----------------------------------------------------------
 From Liviu Lalescu:
 
 These are some rather technical problems, for developers, referring to some possible improvements in the generation code:
 
-In the initial order, in nIncompatible, consider also teachers(students)intervalMaxDaysPerWeek, like in teacherMaxDaysPerWeek
+- In the initial order, in nIncompatible, consider also teachers(students)intervalMaxDaysPerWeek, like in teacherMaxDaysPerWeek
 
-Make students max gaps per day perfect. This is very difficult/complicated. Any bug/mistake would be critical.
+- Make students max gaps per day perfect. This is very difficult/complicated. Any bug/mistake would be critical.
+
+- Instead of if-else, use switch in rules.cpp when there are many alternatives (like in modify teacher or read time/space constraints).
+Also in the all time/space constraints dialogs in the interface.
 
 2----------------------------------------------------------
 From Volker Dirr:
@@ -7244,3 +7301,72 @@ I think it would be much more functional for modifying EXISTING (generated) time
 From bachiri401:
 
 The possibility of choosing the colors in the timetables, instead of arbitrarily assigning random ones.
+
+427---------------------------------------------------------
+From Volker Dirr:
+
+Add the possibility of generating multiple with multi-threading for fet-cl (FET command-line).
+
+428---------------------------------------------------------
+From Vangelis Karafillidis (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4795.msg26561#msg26561
+
+4) I think that FET works very well for solving timetables which do not need to be changed/modified during the school year. In my country (Greece),
+most of the time teachers are hired "incrementally". So, most Greek schools need to change/modify their timetables around 10-15 times even up until April!
+This means that one needs to be able to easily change/modify an already existing timetable. Under this perspective, a new feature of adding/removing/modifying
+constraints on a existing timetable (in addition to locking/unlocking activities) would be highly useful. What about other countries? Do you need to modify
+existing (FET generated) timetables during the school/academic year or not?
+
+5) Sometimes, I needed to add identical constraints for the vast majority of teachers (for example max hours continuously = 4), while at the same time
+a couple of teachers were an exception. I think that a new feature for adding constraints for (predefined) groups of teachers/students/rooms would be highly useful.
+
+6) The constraints teachers/students/rooms not available times sometimes cause problems. I think that adding a button for displaying a report for
+all teachers / all students / all rooms not available times would simplify the monitoring of these constraints. Especially, I think that for
+rooms not available times with a weight <100, displaying the weight percentage in each time slot would be very useful.
+
+Another topic by Vangelis Karafillidis:
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4797.0
+
+In my country (Greece), schools need to modify their timetables quite many times during the school year. The reason is that not all teachers are hired
+at the beginning of the school year. Actually, teachers are hired "incrementally". So, up until February (or even March/April) schools need to change
+their timetables, each time new teachers are hired. The problem is that there is a practical necessity of modifying the previous (existing) timetable
+in such a way that each day "preserves" its activity content as much as possible.
+
+My suggestion is to add a button at the generated timetable view, so the user could select the activities he/she wants and add a constraint,
+so that the selected activities would be placed in the new timetable in selected time slots. In this way, the timetable will change of course,
+but it would not affect the test planning of the school, etc.
+
+What do other users think? Would this feature be useful for their schools? Greece might be an exception... Who knows?
+
+Alex Chernous:
+
+Fully agree. Lock time mean the one time slot, but in this case, it is necessary range of slots, usually one particular day, for all activities
+in this range. For some teachers and some groups, I add special constraint for this, but not all of them.
+
+Greece not an exception. I live in Crimea, and I changed timetable 8 times in this year.
+
+429---------------------------------------------------------
+From bachiri401:
+
+The idea of threads = many instances of fet on the same file
+
+We used to run two (for example) instances of fet with the same file but this file is copied and renamed with a new name so as not to be confused
+We run them to generate multiple timetables
+One of them may generate 5 timtables whreas the second will genarate only 2 ……….
+
+This new idea of threads is so useful but it should as the previous one:
+Each thread is given the number of timtables to generate (should be optional to the user)
+Each generated timtable will be given the name (thread number+timtable number) eg 1.1
+1.2
+
+2.1  2.2 ………………
+
+430---------------------------------------------------------
+From bachiri401:
+
+He suggests that the constraints of type max room changes per week to consider the week as a whole. For instance, if the max room changes per week is 0,
+we need to have the same room all over the week. Now the behavior is that on day 1 we can use room R1, on day 2 room R2, on day 3 again R1, and so on.
+
+Liviu Lalescu: I think this is impossible to change now, and incorrect. You could use the constraint activities occupy max different rooms.

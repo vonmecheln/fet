@@ -1,0 +1,2634 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<fet version="6.0.0">
+
+<Mode>Mornings_Afternoons</Mode>
+
+<Institution_Name>Default institution</Institution_Name>
+
+<Comments>Default comments</Comments>
+
+<Days_List>
+<Number_of_Days>10</Number_of_Days>
+<Day>
+	<Name>Monday m</Name>
+</Day>
+<Day>
+	<Name>Monday a</Name>
+</Day>
+<Day>
+	<Name>Tuesday m</Name>
+</Day>
+<Day>
+	<Name>Tueday a</Name>
+</Day>
+<Day>
+	<Name>Wednesday m</Name>
+</Day>
+<Day>
+	<Name>Wednesday a</Name>
+</Day>
+<Day>
+	<Name>Thursday m</Name>
+</Day>
+<Day>
+	<Name>Thursday a</Name>
+</Day>
+<Day>
+	<Name>Friday m</Name>
+</Day>
+<Day>
+	<Name>Friday a</Name>
+</Day>
+</Days_List>
+
+<Hours_List>
+<Number_of_Hours>4</Number_of_Hours>
+<Hour>
+	<Name>08:00</Name>
+</Hour>
+<Hour>
+	<Name>09:00</Name>
+</Hour>
+<Hour>
+	<Name>10:00</Name>
+</Hour>
+<Hour>
+	<Name>11:00</Name>
+</Hour>
+</Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>s1</Name>
+	<Comments></Comments>
+</Subject>
+<Subject>
+	<Name>s2</Name>
+	<Comments></Comments>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+<Activity_Tag>
+	<Name>at1</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+<Activity_Tag>
+	<Name>at2</Name>
+	<Printable>true</Printable>
+	<Comments></Comments>
+</Activity_Tag>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>t1</Name>
+	<Mornings_Afternoons_Behavior>Unrestricted</Mornings_Afternoons_Behavior>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>t2</Name>
+	<Mornings_Afternoons_Behavior>Exclusive</Mornings_Afternoons_Behavior>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+</Teachers_List>
+
+<Students_List>
+<Year>
+	<Name>y1</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
+	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->
+	<Number_of_Categories>0</Number_of_Categories>
+	<Separator> </Separator>
+</Year>
+<Year>
+	<Name>y2</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
+	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->
+	<Number_of_Categories>0</Number_of_Categories>
+	<Separator> </Separator>
+</Year>
+</Students_List>
+
+<Activities_List>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Teacher>t2</Teacher>
+	<Subject>s1</Subject>
+	<Students>y1</Students>
+	<Students>y2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>1</Id>
+	<Activity_Group_Id>1</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Teacher>t2</Teacher>
+	<Subject>s1</Subject>
+	<Students>y1</Students>
+	<Students>y2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>2</Id>
+	<Activity_Group_Id>1</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Teacher>t2</Teacher>
+	<Subject>s1</Subject>
+	<Students>y1</Students>
+	<Students>y2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>3</Id>
+	<Activity_Group_Id>1</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Teacher>t2</Teacher>
+	<Subject>s1</Subject>
+	<Students>y1</Students>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>4</Id>
+	<Activity_Group_Id>4</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Teacher>t2</Teacher>
+	<Subject>s1</Subject>
+	<Students>y1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>5</Id>
+	<Activity_Group_Id>4</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Teacher>t2</Teacher>
+	<Subject>s1</Subject>
+	<Students>y1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>6</Id>
+	<Activity_Group_Id>4</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Teacher>t2</Teacher>
+	<Subject>s1</Subject>
+	<Students>y2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>7</Id>
+	<Activity_Group_Id>7</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Teacher>t2</Teacher>
+	<Subject>s1</Subject>
+	<Students>y2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>8</Id>
+	<Activity_Group_Id>7</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>t1</Teacher>
+	<Teacher>t2</Teacher>
+	<Subject>s1</Subject>
+	<Students>y2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>4</Total_Duration>
+	<Id>9</Id>
+	<Activity_Group_Id>7</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+</Activities_List>
+
+<Buildings_List>
+<Building>
+	<Name>b1</Name>
+	<Comments></Comments>
+</Building>
+</Buildings_List>
+
+<Rooms_List>
+<Room>
+	<Name>r1</Name>
+	<Building>b1</Building>
+	<Capacity>30000</Capacity>
+	<Virtual>false</Virtual>
+	<Comments></Comments>
+</Room>
+</Rooms_List>
+
+<Time_Constraints_List>
+<ConstraintBasicCompulsoryTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBasicCompulsoryTime>
+<ConstraintBreakTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Break_Times>2</Number_of_Break_Times>
+	<Break_Time>
+		<Day>Monday m</Day>
+		<Hour>09:00</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Monday a</Day>
+		<Hour>09:00</Hour>
+	</Break_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBreakTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Monday m</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday m</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday a</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday a</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Max_Days_Per_Week>4</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxDaysPerWeek>
+<ConstraintTeacherMaxRealDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Max_Days_Per_Week>3</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxRealDaysPerWeek>
+<ConstraintTeacherMaxMorningsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Max_Mornings_Per_Week>3</Max_Mornings_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxMorningsPerWeek>
+<ConstraintTeacherMaxAfternoonsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Max_Afternoons_Per_Week>1</Max_Afternoons_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxAfternoonsPerWeek>
+<ConstraintTeacherMaxTwoConsecutiveMornings>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxTwoConsecutiveMornings>
+<ConstraintTeacherMaxTwoConsecutiveAfternoons>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t2</Teacher_Name>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxTwoConsecutiveAfternoons>
+<ConstraintTeacherMinRealDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t2</Teacher_Name>
+	<Minimum_Days_Per_Week>3</Minimum_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinRealDaysPerWeek>
+<ConstraintTeacherMinMorningsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Minimum_Mornings_Per_Week>2</Minimum_Mornings_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinMorningsPerWeek>
+<ConstraintTeacherMinAfternoonsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t2</Teacher_Name>
+	<Minimum_Afternoons_Per_Week>2</Minimum_Afternoons_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinAfternoonsPerWeek>
+<ConstraintTeacherMaxGapsPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Max_Gaps>1</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxGapsPerDay>
+<ConstraintTeacherMaxGapsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t2</Teacher_Name>
+	<Max_Gaps>2</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxGapsPerWeek>
+<ConstraintTeacherMaxGapsPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Max_Gaps>8</Max_Gaps>
+	<Allow_One_Day_Exception_of_Plus_One>true</Allow_One_Day_Exception_of_Plus_One>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxGapsPerRealDay>
+<ConstraintTeacherMaxGapsPerWeekForRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t2</Teacher_Name>
+	<Max_Gaps>28</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxGapsPerWeekForRealDays>
+<ConstraintTeacherMaxZeroGapsPerAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxZeroGapsPerAfternoon>
+<ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Beginnings_At_Second_Hour>4</Max_Beginnings_At_Second_Hour>
+	<Teacher>t2</Teacher>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour>
+<ConstraintTeacherMaxHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t2</Teacher_Name>
+	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxHoursDaily>
+<ConstraintTeacherMaxHoursDailyRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t2</Teacher_Name>
+	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxHoursDailyRealDays>
+<ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3>
+<ConstraintTeacherMinHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinHoursDaily>
+<ConstraintTeacherMinHoursDailyRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinHoursDailyRealDays>
+<ConstraintTeacherMinHoursPerMorning>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Minimum_Hours_Per_Morning>2</Minimum_Hours_Per_Morning>
+	<Allow_Empty_Mornings>true</Allow_Empty_Mornings>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinHoursPerMorning>
+<ConstraintTeacherMaxHoursContinuously>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Maximum_Hours_Continuously>4</Maximum_Hours_Continuously>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxHoursContinuously>
+<ConstraintTeacherActivityTagMaxHoursDailyRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherActivityTagMaxHoursDailyRealDays>
+<ConstraintTeacherActivityTagMaxHoursContinuously>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Maximum_Hours_Continuously>4</Maximum_Hours_Continuously>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherActivityTagMaxHoursContinuously>
+<ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<First_Activity_Tag>at1</First_Activity_Tag>
+	<Second_Activity_Tag>at2</Second_Activity_Tag>
+	<MinGaps>2</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags>
+<ConstraintTeacherIntervalMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Interval_Start_Hour>11:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Days_Per_Week>10</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherIntervalMaxDaysPerWeek>
+<ConstraintTeacherMorningIntervalMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Interval_Start_Hour>10:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Days_Per_Week>5</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMorningIntervalMaxDaysPerWeek>
+<ConstraintTeacherAfternoonIntervalMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Interval_Start_Hour>11:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Days_Per_Week>2</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherAfternoonIntervalMaxDaysPerWeek>
+<ConstraintTeacherMaxHoursPerAllAfternoons>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t2</Teacher_Name>
+	<Maximum_Hours_Per_All_Afternoons>13</Maximum_Hours_Per_All_Afternoons>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxHoursPerAllAfternoons>
+<ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Minimum_Resting_Hours>2</Minimum_Resting_Hours>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon>
+<ConstraintTeachersMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Days_Per_Week>10</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxDaysPerWeek>
+<ConstraintTeachersMaxRealDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Days_Per_Week>2</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxRealDaysPerWeek>
+<ConstraintTeachersMaxMorningsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Mornings_Per_Week>4</Max_Mornings_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxMorningsPerWeek>
+<ConstraintTeachersMaxAfternoonsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Afternoons_Per_Week>5</Max_Afternoons_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxAfternoonsPerWeek>
+<ConstraintTeachersMaxTwoConsecutiveMornings>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxTwoConsecutiveMornings>
+<ConstraintTeachersMaxTwoConsecutiveAfternoons>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxTwoConsecutiveAfternoons>
+<ConstraintTeachersMinRealDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Days_Per_Week>2</Minimum_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinRealDaysPerWeek>
+<ConstraintTeachersMinMorningsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Mornings_Per_Week>5</Minimum_Mornings_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinMorningsPerWeek>
+<ConstraintTeachersMinAfternoonsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Afternoons_Per_Week>3</Minimum_Afternoons_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinAfternoonsPerWeek>
+<ConstraintTeachersMaxGapsPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>1</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxGapsPerDay>
+<ConstraintTeachersMaxGapsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>3</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxGapsPerWeek>
+<ConstraintTeachersMaxGapsPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>2</Max_Gaps>
+	<Allow_One_Day_Exception_of_Plus_One>true</Allow_One_Day_Exception_of_Plus_One>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxGapsPerRealDay>
+<ConstraintTeachersMaxGapsPerWeekForRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>2</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxGapsPerWeekForRealDays>
+<ConstraintTeachersMaxZeroGapsPerAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxZeroGapsPerAfternoon>
+<ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Beginnings_At_Second_Hour>3</Max_Beginnings_At_Second_Hour>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour>
+<ConstraintTeachersMaxHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Daily>2</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxHoursDaily>
+<ConstraintTeachersMaxHoursDailyRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Daily>7</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxHoursDailyRealDays>
+<ConstraintTeachersMaxSpanPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Span>5</Max_Span>
+	<Allow_One_Day_Exception_of_Plus_One>true</Allow_One_Day_Exception_of_Plus_One>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxSpanPerRealDay>
+<ConstraintTeachersActivityTagMaxHoursDailyRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersActivityTagMaxHoursDailyRealDays>
+<ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3>
+<ConstraintTeachersMinHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinHoursDaily>
+<ConstraintTeachersMinHoursDailyRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinHoursDailyRealDays>
+<ConstraintTeachersMinHoursPerMorning>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Per_Morning>2</Minimum_Hours_Per_Morning>
+	<Allow_Empty_Mornings>true</Allow_Empty_Mornings>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinHoursPerMorning>
+<ConstraintTeachersMaxHoursContinuously>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Continuously>4</Maximum_Hours_Continuously>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxHoursContinuously>
+<ConstraintTeachersActivityTagMaxHoursContinuously>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag_Name>at2</Activity_Tag_Name>
+	<Maximum_Hours_Continuously>4</Maximum_Hours_Continuously>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersActivityTagMaxHoursContinuously>
+<ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Tag>at2</First_Activity_Tag>
+	<Second_Activity_Tag>at1</Second_Activity_Tag>
+	<MinGaps>1</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags>
+<ConstraintTeachersIntervalMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>11:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Days_Per_Week>10</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersIntervalMaxDaysPerWeek>
+<ConstraintTeachersMorningIntervalMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>11:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Days_Per_Week>5</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMorningIntervalMaxDaysPerWeek>
+<ConstraintTeachersAfternoonIntervalMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>11:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Days_Per_Week>5</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersAfternoonIntervalMaxDaysPerWeek>
+<ConstraintTeachersMaxHoursPerAllAfternoons>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Per_All_Afternoons>12</Maximum_Hours_Per_All_Afternoons>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxHoursPerAllAfternoons>
+<ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Resting_Hours>1</Minimum_Resting_Hours>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon>
+<ConstraintStudentsSetNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Number_of_Not_Available_Times>4</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Monday m</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday a</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday a</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday a</Day>
+		<Hour>11:00</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Max_Days_Per_Week>10</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxDaysPerWeek>
+<ConstraintStudentsSetMaxRealDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Max_Days_Per_Week>4</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxRealDaysPerWeek>
+<ConstraintStudentsSetMaxMorningsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Max_Mornings_Per_Week>5</Max_Mornings_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxMorningsPerWeek>
+<ConstraintStudentsSetMaxAfternoonsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Max_Afternoons_Per_Week>2</Max_Afternoons_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxAfternoonsPerWeek>
+<ConstraintStudentsSetMinMorningsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y2</Students>
+	<Min_Mornings_Per_Week>4</Min_Mornings_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinMorningsPerWeek>
+<ConstraintStudentsSetMinAfternoonsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Min_Afternoons_Per_Week>2</Min_Afternoons_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinAfternoonsPerWeek>
+<ConstraintStudentsSetMaxGapsPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>3</Max_Gaps>
+	<Students>y1</Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxGapsPerDay>
+<ConstraintStudentsSetMaxGapsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>2</Max_Gaps>
+	<Students>y1</Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxGapsPerWeek>
+<ConstraintStudentsSetMaxGapsPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>3</Max_Gaps>
+	<Students>y1</Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxGapsPerRealDay>
+<ConstraintStudentsSetMaxGapsPerWeekForRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>10</Max_Gaps>
+	<Students>y1</Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxGapsPerWeekForRealDays>
+<ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Beginnings_At_Second_Hour>3</Max_Beginnings_At_Second_Hour>
+	<Students>y2</Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour>
+<ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Beginnings_At_Second_Hour>2</Max_Beginnings_At_Second_Hour>
+	<Students>y2</Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour>
+<ConstraintStudentsSetMaxHoursDailyRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
+	<Students>y1</Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxHoursDailyRealDays>
+<ConstraintStudentsSetMaxSpanPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Span>3</Max_Span>
+	<Students>y2</Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxSpanPerRealDay>
+<ConstraintStudentsSetActivityTagMaxHoursDailyRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Daily>3</Maximum_Hours_Daily>
+	<Students>y1</Students>
+	<Activity_Tag>at1</Activity_Tag>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetActivityTagMaxHoursDailyRealDays>
+<ConstraintStudentsSetMinHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Daily>1</Minimum_Hours_Daily>
+	<Students>y1</Students>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinHoursDaily>
+<ConstraintStudentsSetMinHoursPerMorning>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Per_Morning>1</Minimum_Hours_Per_Morning>
+	<Students>y1</Students>
+	<Allow_Empty_Mornings>true</Allow_Empty_Mornings>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinHoursPerMorning>
+<ConstraintStudentsSetMaxHoursContinuously>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Continuously>4</Maximum_Hours_Continuously>
+	<Students>y1</Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxHoursContinuously>
+<ConstraintStudentsSetActivityTagMaxHoursContinuously>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Continuously>3</Maximum_Hours_Continuously>
+	<Students>y2</Students>
+	<Activity_Tag>at2</Activity_Tag>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetActivityTagMaxHoursContinuously>
+<ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y2</Students>
+	<First_Activity_Tag>at2</First_Activity_Tag>
+	<Second_Activity_Tag>at1</Second_Activity_Tag>
+	<MinGaps>2</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags>
+<ConstraintStudentsSetIntervalMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Interval_Start_Hour>11:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Days_Per_Week>10</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetIntervalMaxDaysPerWeek>
+<ConstraintStudentsSetMorningIntervalMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Interval_Start_Hour>11:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Days_Per_Week>5</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMorningIntervalMaxDaysPerWeek>
+<ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Interval_Start_Hour>11:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Days_Per_Week>5</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek>
+<ConstraintStudentsSetMaxHoursPerAllAfternoons>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Maximum_Hours_Per_All_Afternoons>19</Maximum_Hours_Per_All_Afternoons>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxHoursPerAllAfternoons>
+<ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Resting_Hours>4</Minimum_Resting_Hours>
+	<Students>y2</Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon>
+<ConstraintStudentsMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Days_Per_Week>4</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxDaysPerWeek>
+<ConstraintStudentsMaxRealDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Days_Per_Week>4</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxRealDaysPerWeek>
+<ConstraintStudentsMaxMorningsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Mornings_Per_Week>5</Max_Mornings_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxMorningsPerWeek>
+<ConstraintStudentsMaxAfternoonsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Afternoons_Per_Week>5</Max_Afternoons_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxAfternoonsPerWeek>
+<ConstraintStudentsMinMorningsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Min_Mornings_Per_Week>3</Min_Mornings_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinMorningsPerWeek>
+<ConstraintStudentsMinAfternoonsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Min_Afternoons_Per_Week>5</Min_Afternoons_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinAfternoonsPerWeek>
+<ConstraintStudentsMaxGapsPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>3</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxGapsPerDay>
+<ConstraintStudentsMaxGapsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>0</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxGapsPerWeek>
+<ConstraintStudentsMaxGapsPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>3</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxGapsPerRealDay>
+<ConstraintStudentsMaxGapsPerWeekForRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>40</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxGapsPerWeekForRealDays>
+<ConstraintStudentsEarlyMaxBeginningsAtSecondHour>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Beginnings_At_Second_Hour>2</Max_Beginnings_At_Second_Hour>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsEarlyMaxBeginningsAtSecondHour>
+<ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Beginnings_At_Second_Hour>5</Max_Beginnings_At_Second_Hour>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour>
+<ConstraintStudentsMaxHoursDailyRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Daily>6</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxHoursDailyRealDays>
+<ConstraintStudentsMaxSpanPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Span>7</Max_Span>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxSpanPerRealDay>
+<ConstraintStudentsActivityTagMaxHoursDailyRealDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>at1</Activity_Tag>
+	<Maximum_Hours_Daily>8</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsActivityTagMaxHoursDailyRealDays>
+<ConstraintStudentsMinHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Daily>1</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinHoursDaily>
+<ConstraintStudentsMinHoursPerMorning>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Per_Morning>1</Minimum_Hours_Per_Morning>
+	<Allow_Empty_Mornings>true</Allow_Empty_Mornings>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinHoursPerMorning>
+<ConstraintStudentsMaxHoursContinuously>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Continuously>4</Maximum_Hours_Continuously>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxHoursContinuously>
+<ConstraintStudentsActivityTagMaxHoursContinuously>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>at1</Activity_Tag>
+	<Maximum_Hours_Continuously>4</Maximum_Hours_Continuously>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsActivityTagMaxHoursContinuously>
+<ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Tag>at2</First_Activity_Tag>
+	<Second_Activity_Tag>at1</Second_Activity_Tag>
+	<MinGaps>2</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags>
+<ConstraintStudentsIntervalMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>11:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Days_Per_Week>10</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsIntervalMaxDaysPerWeek>
+<ConstraintStudentsMorningIntervalMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>11:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Days_Per_Week>5</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMorningIntervalMaxDaysPerWeek>
+<ConstraintStudentsAfternoonIntervalMaxDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Interval_Start_Hour>11:00</Interval_Start_Hour>
+	<Interval_End_Hour></Interval_End_Hour>
+	<!-- Interval_End_Hour void means the end of the day (which has no name) -->
+	<Max_Days_Per_Week>5</Max_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsAfternoonIntervalMaxDaysPerWeek>
+<ConstraintStudentsMaxHoursPerAllAfternoons>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Per_All_Afternoons>20</Maximum_Hours_Per_All_Afternoons>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxHoursPerAllAfternoons>
+<ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Resting_Hours>1</Minimum_Resting_Hours>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>1</Activity_Id>
+	<Preferred_Day>Monday m</Preferred_Day>
+	<Preferred_Hour>08:00</Preferred_Hour>
+	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>1</Activity_Id>
+	<Number_of_Preferred_Starting_Times>37</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tueday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tueday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tueday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTimes>
+<ConstraintActivityPreferredTimeSlots>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>1</Activity_Id>
+	<Number_of_Preferred_Time_Slots>37</Number_of_Preferred_Time_Slots>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday m</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tuesday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tuesday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tueday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tueday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tueday a</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tueday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday m</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday a</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday m</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday a</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday m</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday a</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredTimeSlots>
+<ConstraintActivitiesPreferredStartingTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name></Teacher_Name>
+	<Students_Name></Students_Name>
+	<Subject_Name>s1</Subject_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
+	<Duration></Duration>
+	<Number_of_Preferred_Starting_Times>38</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tueday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tueday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tueday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesPreferredStartingTimes>
+<ConstraintActivitiesPreferredTimeSlots>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name></Teacher_Name>
+	<Students_Name>y1</Students_Name>
+	<Subject_Name>s1</Subject_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
+	<Duration></Duration>
+	<Number_of_Preferred_Time_Slots>38</Number_of_Preferred_Time_Slots>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday m</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tuesday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tuesday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tuesday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tueday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tueday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tueday a</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tueday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday m</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday a</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday m</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday a</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday m</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday a</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesPreferredTimeSlots>
+<ConstraintSubactivitiesPreferredStartingTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Component_Number>2</Component_Number>
+	<Teacher_Name></Teacher_Name>
+	<Students_Name></Students_Name>
+	<Subject_Name>s1</Subject_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
+	<Duration>2</Duration>
+	<Number_of_Preferred_Starting_Times>40</Number_of_Preferred_Starting_Times>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Monday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tuesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tueday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tueday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tueday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Tueday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Wednesday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Thursday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday m</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>08:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>09:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>10:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Preferred_Starting_Time>
+		<Preferred_Starting_Day>Friday a</Preferred_Starting_Day>
+		<Preferred_Starting_Hour>11:00</Preferred_Starting_Hour>
+	</Preferred_Starting_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintSubactivitiesPreferredStartingTimes>
+<ConstraintSubactivitiesPreferredTimeSlots>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Component_Number>1</Component_Number>
+	<Teacher_Name></Teacher_Name>
+	<Students_Name></Students_Name>
+	<Subject_Name>s2</Subject_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
+	<Duration></Duration>
+	<Number_of_Preferred_Time_Slots>40</Number_of_Preferred_Time_Slots>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday m</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday a</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Monday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tuesday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tuesday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tuesday m</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tuesday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tueday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tueday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tueday a</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Tueday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday m</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday a</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Wednesday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday m</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday a</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Thursday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday m</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday m</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday m</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday m</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday a</Preferred_Day>
+		<Preferred_Hour>08:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday a</Preferred_Day>
+		<Preferred_Hour>09:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday a</Preferred_Day>
+		<Preferred_Hour>10:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Preferred_Time_Slot>
+		<Preferred_Day>Friday a</Preferred_Day>
+		<Preferred_Hour>11:00</Preferred_Hour>
+	</Preferred_Time_Slot>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintSubactivitiesPreferredTimeSlots>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>5</Activity_Id>
+	<Activity_Id>3</Activity_Id>
+	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintMaxDaysBetweenActivities>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>5</Activity_Id>
+	<Activity_Id>3</Activity_Id>
+	<MaxDays>3</MaxDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMaxDaysBetweenActivities>
+<ConstraintActivityEndsStudentsDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>1</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityEndsStudentsDay>
+<ConstraintActivitiesEndStudentsDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name></Teacher_Name>
+	<Students_Name></Students_Name>
+	<Subject_Name>s1</Subject_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesEndStudentsDay>
+<ConstraintActivityEndsTeachersDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>4</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityEndsTeachersDay>
+<ConstraintActivitiesEndTeachersDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name></Teacher_Name>
+	<Students_Name></Students_Name>
+	<Subject_Name>s2</Subject_Name>
+	<Activity_Tag_Name></Activity_Tag_Name>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesEndTeachersDay>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>4</Activity_Id>
+	<Activity_Id>1</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>5</Activity_Id>
+	<Activity_Id>2</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingDay>
+<ConstraintActivitiesSameStartingHour>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>5</Activity_Id>
+	<Activity_Id>2</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingHour>
+<ConstraintActivitiesOccupyMaxTimeSlotsFromSelection>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>4</Activity_Id>
+	<Activity_Id>2</Activity_Id>
+	<Number_of_Selected_Time_Slots>2</Number_of_Selected_Time_Slots>
+	<Selected_Time_Slot>
+		<Selected_Day>Monday m</Selected_Day>
+		<Selected_Hour>09:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Selected_Time_Slot>
+		<Selected_Day>Monday a</Selected_Day>
+		<Selected_Hour>09:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Max_Number_of_Occupied_Time_Slots>1</Max_Number_of_Occupied_Time_Slots>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesOccupyMaxTimeSlotsFromSelection>
+<ConstraintActivitiesOccupyMinTimeSlotsFromSelection>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>4</Activity_Id>
+	<Activity_Id>2</Activity_Id>
+	<Number_of_Selected_Time_Slots>2</Number_of_Selected_Time_Slots>
+	<Selected_Time_Slot>
+		<Selected_Day>Monday a</Selected_Day>
+		<Selected_Hour>09:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Selected_Time_Slot>
+		<Selected_Day>Tuesday m</Selected_Day>
+		<Selected_Hour>09:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Min_Number_of_Occupied_Time_Slots>1</Min_Number_of_Occupied_Time_Slots>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesOccupyMinTimeSlotsFromSelection>
+<ConstraintTwoActivitiesOrdered>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Id>2</First_Activity_Id>
+	<Second_Activity_Id>1</Second_Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTwoActivitiesOrdered>
+<ConstraintTwoActivitiesOrderedIfSameDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Id>5</First_Activity_Id>
+	<Second_Activity_Id>1</Second_Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTwoActivitiesOrderedIfSameDay>
+<ConstraintTwoActivitiesConsecutive>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Id>2</First_Activity_Id>
+	<Second_Activity_Id>1</Second_Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTwoActivitiesConsecutive>
+<ConstraintTwoActivitiesGrouped>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Id>1</First_Activity_Id>
+	<Second_Activity_Id>2</Second_Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTwoActivitiesGrouped>
+<ConstraintThreeActivitiesGrouped>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activity_Id>1</First_Activity_Id>
+	<Second_Activity_Id>2</Second_Activity_Id>
+	<Third_Activity_Id>3</Third_Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintThreeActivitiesGrouped>
+<ConstraintActivitiesNotOverlapping>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>4</Activity_Id>
+	<Activity_Id>3</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesNotOverlapping>
+<ConstraintActivityTagsNotOverlapping>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activity_Tags>2</Number_of_Activity_Tags>
+	<Activity_Tag>at1</Activity_Tag>
+	<Activity_Tag>at2</Activity_Tag>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagsNotOverlapping>
+<ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>7</Activity_Id>
+	<Activity_Id>4</Activity_Id>
+	<Number_of_Selected_Time_Slots>2</Number_of_Selected_Time_Slots>
+	<Selected_Time_Slot>
+		<Selected_Day>Monday a</Selected_Day>
+		<Selected_Hour>10:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Selected_Time_Slot>
+		<Selected_Day>Tuesday m</Selected_Day>
+		<Selected_Hour>10:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Max_Number_of_Simultaneous_Activities>1</Max_Number_of_Simultaneous_Activities>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots>
+<ConstraintActivitiesMinSimultaneousInSelectedTimeSlots>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>7</Activity_Id>
+	<Activity_Id>4</Activity_Id>
+	<Activity_Id>3</Activity_Id>
+	<Number_of_Selected_Time_Slots>2</Number_of_Selected_Time_Slots>
+	<Selected_Time_Slot>
+		<Selected_Day>Monday a</Selected_Day>
+		<Selected_Hour>11:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Selected_Time_Slot>
+		<Selected_Day>Tuesday m</Selected_Day>
+		<Selected_Hour>10:00</Selected_Hour>
+	</Selected_Time_Slot>
+	<Min_Number_of_Simultaneous_Activities>2</Min_Number_of_Simultaneous_Activities>
+	<Allow_Empty_Slots>true</Allow_Empty_Slots>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesMinSimultaneousInSelectedTimeSlots>
+<ConstraintMinGapsBetweenActivities>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>4</Activity_Id>
+	<Activity_Id>3</Activity_Id>
+	<Activity_Id>1</Activity_Id>
+	<MinGaps>1</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinGapsBetweenActivities>
+</Time_Constraints_List>
+
+<Space_Constraints_List>
+<ConstraintBasicCompulsorySpace>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBasicCompulsorySpace>
+<ConstraintSubjectPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Subject>s1</Subject>
+	<Room>r1</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintSubjectPreferredRoom>
+<ConstraintSubjectPreferredRooms>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Subject>s1</Subject>
+	<Number_of_Preferred_Rooms>1</Number_of_Preferred_Rooms>
+	<Preferred_Room>r1</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintSubjectPreferredRooms>
+<ConstraintActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>at1</Activity_Tag>
+	<Room>r1</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRoom>
+<ConstraintActivityTagPreferredRooms>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>at1</Activity_Tag>
+	<Number_of_Preferred_Rooms>1</Number_of_Preferred_Rooms>
+	<Preferred_Room>r1</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityTagPreferredRooms>
+<ConstraintTeacherHomeRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Room>r1</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherHomeRoom>
+<ConstraintTeacherHomeRooms>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Number_of_Preferred_Rooms>1</Number_of_Preferred_Rooms>
+	<Preferred_Room>r1</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherHomeRooms>
+<ConstraintTeacherMaxRoomChangesPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Max_Room_Changes_Per_Day>4</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxRoomChangesPerDay>
+<ConstraintTeacherMaxRoomChangesPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Max_Room_Changes_Per_Week>40</Max_Room_Changes_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxRoomChangesPerWeek>
+<ConstraintTeacherMinGapsBetweenRoomChanges>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Min_Gaps_Between_Room_Changes>4</Min_Gaps_Between_Room_Changes>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinGapsBetweenRoomChanges>
+<ConstraintTeacherMaxRoomChangesPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Max_Room_Changes_Per_Day>8</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxRoomChangesPerRealDay>
+<ConstraintTeacherMaxBuildingChangesPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxBuildingChangesPerDay>
+<ConstraintTeacherMaxBuildingChangesPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Max_Building_Changes_Per_Week>3</Max_Building_Changes_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxBuildingChangesPerWeek>
+<ConstraintTeacherMinGapsBetweenBuildingChanges>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Min_Gaps_Between_Building_Changes>1</Min_Gaps_Between_Building_Changes>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinGapsBetweenBuildingChanges>
+<ConstraintTeachersMaxRoomChangesPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxRoomChangesPerDay>
+<ConstraintTeachersMaxRoomChangesPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Room_Changes_Per_Week>3</Max_Room_Changes_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxRoomChangesPerWeek>
+<ConstraintTeachersMinGapsBetweenRoomChanges>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Min_Gaps_Between_Room_Changes>1</Min_Gaps_Between_Room_Changes>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinGapsBetweenRoomChanges>
+<ConstraintTeachersMaxRoomChangesPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Room_Changes_Per_Day>8</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxRoomChangesPerRealDay>
+<ConstraintTeachersMaxBuildingChangesPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxBuildingChangesPerDay>
+<ConstraintTeachersMaxBuildingChangesPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Building_Changes_Per_Week>3</Max_Building_Changes_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxBuildingChangesPerWeek>
+<ConstraintTeachersMinGapsBetweenBuildingChanges>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Min_Gaps_Between_Building_Changes>1</Min_Gaps_Between_Building_Changes>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinGapsBetweenBuildingChanges>
+<ConstraintStudentsSetHomeRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Room>r1</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetHomeRoom>
+<ConstraintStudentsSetHomeRooms>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Number_of_Preferred_Rooms>1</Number_of_Preferred_Rooms>
+	<Preferred_Room>r1</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetHomeRooms>
+<ConstraintStudentsSetMaxRoomChangesPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxRoomChangesPerDay>
+<ConstraintStudentsSetMaxRoomChangesPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Max_Room_Changes_Per_Week>3</Max_Room_Changes_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxRoomChangesPerWeek>
+<ConstraintStudentsSetMinGapsBetweenRoomChanges>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Min_Gaps_Between_Room_Changes>1</Min_Gaps_Between_Room_Changes>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinGapsBetweenRoomChanges>
+<ConstraintStudentsSetMaxRoomChangesPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Max_Room_Changes_Per_Day>8</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxRoomChangesPerRealDay>
+<ConstraintStudentsSetMaxBuildingChangesPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxBuildingChangesPerDay>
+<ConstraintStudentsSetMaxBuildingChangesPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Max_Building_Changes_Per_Week>3</Max_Building_Changes_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxBuildingChangesPerWeek>
+<ConstraintStudentsSetMinGapsBetweenBuildingChanges>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1</Students>
+	<Min_Gaps_Between_Building_Changes>1</Min_Gaps_Between_Building_Changes>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinGapsBetweenBuildingChanges>
+<ConstraintStudentsMaxRoomChangesPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxRoomChangesPerDay>
+<ConstraintStudentsMaxRoomChangesPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Room_Changes_Per_Week>3</Max_Room_Changes_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxRoomChangesPerWeek>
+<ConstraintStudentsMinGapsBetweenRoomChanges>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Min_Gaps_Between_Room_Changes>1</Min_Gaps_Between_Room_Changes>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinGapsBetweenRoomChanges>
+<ConstraintStudentsMaxRoomChangesPerRealDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Room_Changes_Per_Day>1</Max_Room_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxRoomChangesPerRealDay>
+<ConstraintStudentsMaxBuildingChangesPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Building_Changes_Per_Day>1</Max_Building_Changes_Per_Day>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxBuildingChangesPerDay>
+<ConstraintStudentsMaxBuildingChangesPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Building_Changes_Per_Week>3</Max_Building_Changes_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxBuildingChangesPerWeek>
+<ConstraintStudentsMinGapsBetweenBuildingChanges>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Min_Gaps_Between_Building_Changes>1</Min_Gaps_Between_Building_Changes>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinGapsBetweenBuildingChanges>
+<ConstraintRoomNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Room>r1</Room>
+	<Number_of_Not_Available_Times>3</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Monday m</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday a</Day>
+		<Hour>09:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Tuesday m</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintRoomNotAvailableTimes>
+<ConstraintTeacherRoomNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Room>r1</Room>
+	<Number_of_Not_Available_Times>2</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>Monday m</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>Monday a</Day>
+		<Hour>10:00</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherRoomNotAvailableTimes>
+<ConstraintActivityPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>1</Activity_Id>
+	<Room>r1</Room>
+	<Permanently_Locked>true</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredRoom>
+<ConstraintActivityPreferredRooms>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>1</Activity_Id>
+	<Number_of_Preferred_Rooms>1</Number_of_Preferred_Rooms>
+	<Preferred_Room>r1</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredRooms>
+<ConstraintActivitiesSameRoomIfConsecutive>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>6</Activity_Id>
+	<Activity_Id>4</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameRoomIfConsecutive>
+<ConstraintActivitiesOccupyMaxDifferentRooms>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>6</Activity_Id>
+	<Activity_Id>3</Activity_Id>
+	<Activity_Id>2</Activity_Id>
+	<Max_Number_of_Different_Rooms>1</Max_Number_of_Different_Rooms>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesOccupyMaxDifferentRooms>
+<ConstraintSubjectActivityTagPreferredRoom>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Subject>s1</Subject>
+	<Activity_Tag>at1</Activity_Tag>
+	<Room>r1</Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintSubjectActivityTagPreferredRoom>
+<ConstraintSubjectActivityTagPreferredRooms>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Subject>s1</Subject>
+	<Activity_Tag>at1</Activity_Tag>
+	<Number_of_Preferred_Rooms>1</Number_of_Preferred_Rooms>
+	<Preferred_Room>r1</Preferred_Room>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintSubjectActivityTagPreferredRooms>
+</Space_Constraints_List>
+
+</fet>

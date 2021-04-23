@@ -22,38 +22,86 @@
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "fet.h"
+#include "solution.h"
 
-#include <QThread>
+//#include <QThread>
 
-#include <QProcess>
 #include <QList>
 
-class GenerateMultipleThread: public QThread{
+#include <thread>
+
+class TimetablingThread: public QObject
+{
 	Q_OBJECT
 
 public:
-	void run();
+	std::thread _internalGeneratingThread;
+	int _nThread;
+	int nOverallTimetable;
 
 signals:
-	void timetableStarted(int timetable);
+	void timetableGenerated(int nThread, int timetable, const QString& description, bool ok);
 
-	void timetableGenerated(int timetable, const QString& description, bool ok);
-	
-	void finished();
+public slots:
+	void startGenerating();
 };
+
+/*class Worker: public QObject
+{
+	Q_OBJECT
+
+signals:
+	void resultReady(int nThread, const QString& description, bool ok);
+
+public slots:
+	void doWork(int _nThread);
+};
+
+class Controller: public QObject
+{
+	Q_OBJECT
+
+public:
+	QThread workerThread;
+	
+	int _nThread;
+	int nOverallTimetable;
+
+	Controller();
+	~Controller();
+	
+	void startOperate(int nThread);
+	
+public slots:
+	void handleResults(int nThread, const QString& description, bool ok);
+
+signals:
+	void operate(int nThread);
+
+	void timetableGenerated(int nThread, int timetable, const QString& description, bool ok);
+};*/
 
 class TimetableGenerateMultipleForm : public QDialog, Ui::TimetableGenerateMultipleForm_template  {
 	Q_OBJECT
 
-//private:
-//	QList<QProcess*> commandProcesses;
+	QList<QLabel*> labels;
+	
+	//QList<Controller*> controllersList;
+	
+	time_t all_processes_start_time;
+	
+	int nGeneratedTimetables;
+	int nSuccessfullyGeneratedTimetables;
+	int highestPlacedActivities; //if no timetable was finished, we save the first partial best.
+	QList<Solution*> highestStageSolutions;
+	QList<int> nTimetableForHighestStageSolutions;
+	QList<int> nThreadForHighest;
+	QList<bool> simulationTimedOutForHighest;
 
 public:
 	TimetableGenerateMultipleForm(QWidget* parent);
 	~TimetableGenerateMultipleForm();
 	
-	void simulationFinished();
-
 	void writeTimetableDataFile();
 
 public slots:
@@ -66,13 +114,15 @@ public slots:
 	void closePressed();
 	
 private slots:
-	void timetableStarted(int timetable);
+	void nThreadsChanged(int nt);
 
-	void timetableGenerated(int timetable, const QString& description, bool ok);
+	void timetableStarted(int nThread, int timetable);
+
+	void timetableGenerated(int nThread, int timetable, const QString& description, bool ok);
 	
-	void finished();
+	void simulationFinished();
 	
-	void activityPlaced(int na);
+	void activityPlaced(int nThread, int na);
 };
 
 #endif

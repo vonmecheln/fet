@@ -1,0 +1,1749 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<fet version="5.27.3-ma11">
+
+<Institution_Name>المنشأة الافتراضية</Institution_Name>
+
+<Comments>تعليقات افتراضية</Comments>
+
+<Days_List>
+<Number_of_Days>10</Number_of_Days>
+<Day>
+	<Name>الأحد</Name>
+</Day>
+<Day>
+	<Name>الأحد2</Name>
+</Day>
+<Day>
+	<Name>الاثنين</Name>
+</Day>
+<Day>
+	<Name>الاثنين2</Name>
+</Day>
+<Day>
+	<Name>الثلاثاء</Name>
+</Day>
+<Day>
+	<Name>الثلاثاء2</Name>
+</Day>
+<Day>
+	<Name>الأربعاء</Name>
+</Day>
+<Day>
+	<Name>الأربعاء2</Name>
+</Day>
+<Day>
+	<Name>الخميس</Name>
+</Day>
+<Day>
+	<Name>الخميس2</Name>
+</Day>
+</Days_List>
+
+<Hours_List>
+<Number_of_Hours>6</Number_of_Hours>
+<Hour>
+	<Name>1</Name>
+</Hour>
+<Hour>
+	<Name>2</Name>
+</Hour>
+<Hour>
+	<Name>3</Name>
+</Hour>
+<Hour>
+	<Name>4</Name>
+</Hour>
+<Hour>
+	<Name>5</Name>
+</Hour>
+<Hour>
+	<Name>6</Name>
+</Hour>
+</Hours_List>
+
+<Students_List>
+<Year>
+	<Name>4م</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>4م1_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>4م1_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>4م2_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>4م2_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>4م3_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>4م3_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>4م4_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>4م4_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+</Year>
+<Year>
+	<Name>3م</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>3م1_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>3م1_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>3م2_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>3م2_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>3م3_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>3م3_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>3م4_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>3م4_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>3م5_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>3م5_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+</Year>
+<Year>
+	<Name>2م</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>2م1_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>2م1_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>2م2_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>2م2_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>2م3_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>2م3_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>2م4_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>2م4_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>2م5_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>2م5_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+</Year>
+<Year>
+	<Name>1م</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Group>
+		<Name>1م1_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>1م1_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>1م2_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>1م2_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>1م3_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>1م3_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>1م4_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>1م4_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>1م5_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+	<Group>
+		<Name>1م5_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+	</Group>
+</Year>
+</Students_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>R1</Name>
+	<Mornings_Afternoons_Behavior>One day exception</Mornings_Afternoons_Behavior>
+</Teacher>
+<Teacher>
+	<Name>R2</Name>
+	<Mornings_Afternoons_Behavior>One day exception</Mornings_Afternoons_Behavior>
+</Teacher>
+<Teacher>
+	<Name>Q</Name>
+	<Mornings_Afternoons_Behavior>One day exception</Mornings_Afternoons_Behavior>
+</Teacher>
+<Teacher>
+	<Name>Inf</Name>
+	<Mornings_Afternoons_Behavior>One day exception</Mornings_Afternoons_Behavior>
+</Teacher>
+</Teachers_List>
+
+<Subjects_List>
+<Subject>
+	<Name>ت.بد.ر</Name>
+</Subject>
+<Subject>
+	<Name>ت.مو</Name>
+</Subject>
+<Subject>
+	<Name>معلو</Name>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+</Activity_Tags_List>
+
+<Activities_List>
+<Activity>
+	<Teacher>R1</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>4م1_ف1</Students>
+	<Students>4م1_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>1</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R1</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>4م2_ف1</Students>
+	<Students>4م2_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>2</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R1</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>4م3_ف1</Students>
+	<Students>4م3_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>3</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R1</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>4م4_ف1</Students>
+	<Students>4م4_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>4</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R1</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>2م1_ف1</Students>
+	<Students>2م1_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>5</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R1</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>2م2_ف1</Students>
+	<Students>2م2_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>6</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R1</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>2م3_ف1</Students>
+	<Students>2م3_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>7</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R1</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>2م4_ف1</Students>
+	<Students>2م4_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>8</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R1</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>2م5_ف1</Students>
+	<Students>2م5_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>9</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R2</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>3م1_ف1</Students>
+	<Students>3م1_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>10</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R2</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>3م2_ف1</Students>
+	<Students>3م2_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>11</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R2</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>3م3_ف1</Students>
+	<Students>3م3_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>12</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R2</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>3م4_ف1</Students>
+	<Students>3م4_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>13</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R2</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>3م5_ف1</Students>
+	<Students>3م5_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>14</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R2</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>1م1_ف1</Students>
+	<Students>1م1_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>15</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R2</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>1م2_ف1</Students>
+	<Students>1م2_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>16</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R2</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>1م3_ف1</Students>
+	<Students>1م3_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>17</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R2</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>1م4_ف1</Students>
+	<Students>1م4_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>18</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>R2</Teacher>
+	<Subject>ت.بد.ر</Subject>
+	<Students>1م5_ف1</Students>
+	<Students>1م5_ف2</Students>
+	<Duration>2</Duration>
+	<Total_Duration>2</Total_Duration>
+	<Id>19</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>4م1_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>20</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>4م2_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>21</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>4م3_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>22</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>4م4_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>23</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>3م1_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>24</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>3م2_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>25</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>3م3_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>26</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>3م4_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>27</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>3م5_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>28</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>2م1_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>29</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>2م2_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>30</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>2م3_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>31</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>2م4_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>32</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>2م5_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>33</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>1م1_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>34</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>1م2_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>35</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>1م3_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>36</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>1م4_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>37</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Q</Teacher>
+	<Subject>ت.مو</Subject>
+	<Students>1م5_ف1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>38</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>4م1_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>39</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>4م2_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>40</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>4م3_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>41</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>4م4_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>42</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>3م1_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>43</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>3م2_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>44</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>3م3_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>45</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>3م4_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>46</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>3م5_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>47</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>2م1_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>48</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>2م2_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>49</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>2م3_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>50</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>2م4_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>51</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>2م5_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>52</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>1م1_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>53</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>1م2_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>54</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>1م3_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>55</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>1م4_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>56</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>Inf</Teacher>
+	<Subject>معلو</Subject>
+	<Students>1م5_ف2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>57</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+</Activities_List>
+
+<Buildings_List>
+</Buildings_List>
+
+<Rooms_List>
+</Rooms_List>
+
+<Time_Constraints_List>
+<ConstraintBasicCompulsoryTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBasicCompulsoryTime>
+<ConstraintStudentsSetNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>4م</Students>
+	<Number_of_Not_Available_Times>30</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>الأحد</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين2</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين2</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين2</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين2</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين2</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين2</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء2</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء2</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء2</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء2</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء2</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء2</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>1م</Students>
+	<Number_of_Not_Available_Times>30</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>الأحد</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين2</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين2</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين2</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين2</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين2</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين2</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء2</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء2</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء2</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء2</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء2</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء2</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>3م</Students>
+	<Number_of_Not_Available_Times>30</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>الأحد2</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد2</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد2</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد2</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد2</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد2</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس2</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس2</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس2</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس2</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس2</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس2</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsSetNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>2م</Students>
+	<Number_of_Not_Available_Times>30</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>الأحد2</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد2</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد2</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد2</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد2</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأحد2</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الاثنين</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الأربعاء</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس2</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس2</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس2</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس2</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس2</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الخميس2</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetNotAvailableTimes>
+<ConstraintStudentsMinHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Daily>3</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinHoursDaily>
+<ConstraintStudentsMaxGapsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>0</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxGapsPerWeek>
+<ConstraintTeachersMaxGapsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>1</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxGapsPerWeek>
+<ConstraintTeachersMinHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinHoursDaily>
+<ConstraintTeachersMaxAfternoonsPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Afternoons_Per_Week>3</Max_Afternoons_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxAfternoonsPerWeek>
+<ConstraintTeachersMaxHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Maximum_Hours_Daily>8</Maximum_Hours_Daily>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxHoursDaily>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>R1</Teacher>
+	<Number_of_Not_Available_Times>12</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintTeacherNotAvailableTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>R2</Teacher>
+	<Number_of_Not_Available_Times>12</Number_of_Not_Available_Times>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>1</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>2</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>3</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>4</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>5</Hour>
+	</Not_Available_Time>
+	<Not_Available_Time>
+		<Day>الثلاثاء2</Day>
+		<Hour>6</Hour>
+	</Not_Available_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherNotAvailableTimes>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>20</Activity_Id>
+	<Activity_Id>39</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>21</Activity_Id>
+	<Activity_Id>40</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>22</Activity_Id>
+	<Activity_Id>41</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>23</Activity_Id>
+	<Activity_Id>42</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>24</Activity_Id>
+	<Activity_Id>43</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>25</Activity_Id>
+	<Activity_Id>44</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>26</Activity_Id>
+	<Activity_Id>45</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>27</Activity_Id>
+	<Activity_Id>46</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>28</Activity_Id>
+	<Activity_Id>47</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>29</Activity_Id>
+	<Activity_Id>48</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>30</Activity_Id>
+	<Activity_Id>49</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>31</Activity_Id>
+	<Activity_Id>50</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>32</Activity_Id>
+	<Activity_Id>51</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>33</Activity_Id>
+	<Activity_Id>52</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>34</Activity_Id>
+	<Activity_Id>53</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>35</Activity_Id>
+	<Activity_Id>54</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>36</Activity_Id>
+	<Activity_Id>55</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>37</Activity_Id>
+	<Activity_Id>56</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+<ConstraintActivitiesSameStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>2</Number_of_Activities>
+	<Activity_Id>38</Activity_Id>
+	<Activity_Id>57</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesSameStartingTime>
+</Time_Constraints_List>
+
+<Space_Constraints_List>
+<ConstraintBasicCompulsorySpace>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBasicCompulsorySpace>
+</Space_Constraints_List>
+
+</fet>

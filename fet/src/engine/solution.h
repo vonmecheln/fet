@@ -62,9 +62,9 @@ public:
 	stored as an integer value). We have a special value here:
 	UNALLOCATED_TIME, which is a large number.
 	*/
-	int times[MAX_ACTIVITIES];
+	Matrix1D<int> times;
 	
-	int rooms[MAX_ACTIVITIES];
+	Matrix1D<int> rooms;
 	
 	Matrix1D<QList<int>> realRoomsList; //for virtual rooms
 
@@ -81,11 +81,14 @@ public:
 	to know the number of activities.
 	*/
 	void copy(Rules& r, Solution& c);
+	
+	//Used only in timetable generate multiple highest stage (incomplete) solutions.
+	void copyForHighestStage(Rules& r, Solution& c);
 
 	/**
 	Initializes, marking all activities as unscheduled (time)
 	*/
-	void init(Rules& r);
+	//void init(Rules& r);
 
 	/**
 	Marks the starting time of all the activities as undefined

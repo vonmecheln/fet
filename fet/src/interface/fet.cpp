@@ -47,14 +47,30 @@ static QSet<QString> languagesSet;
 
 #include "timetableexport.h"
 #include "generate.h"
+#include "generate_pre.h"
 
 #include "timetable_defs.h"
 #include "timetable.h"
 
-extern MRG32k3a rng;
+//extern MRG32k3a rng;
+
+#ifndef FET_COMMAND_LINE
+FetSettings fetSettings;
+#endif
+
+#ifdef FET_COMMAND_LINE
+Generate gen;
+#else
+extern Generate gen;
+#endif
 
 #ifndef FET_COMMAND_LINE
 #include "fetmainform.h"
+
+#include "helpblockplanningform.h"
+#include "helptermsform.h"
+#include "helpmoroccoform.h"
+#include "helpalgeriaform.h"
 
 #include "helpaboutform.h"
 #include "helpaboutlibrariesform.h"
@@ -105,25 +121,19 @@ extern QRect mainFormSettingsRect;
 extern int MAIN_FORM_SHORTCUTS_TAB_POSITION;
 #endif
 
-extern Solution highestStageSolution;
+//extern Solution highestStageSolution;
 
-extern int maxActivitiesPlaced;
-
-#ifndef FET_COMMAND_LINE
-extern int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
-#else
-int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
-#endif
+//extern int maxActivitiesPlaced;
 
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
 extern bool rooms_schedule_ready;
 
-#ifndef FET_COMMAND_LINE
-extern QMutex myMutex;
-#else
-QMutex myMutex;
-#endif
+//#ifndef FET_COMMAND_LINE
+//extern QMutex myMutex;
+//#else
+//QMutex myMutex;
+//#endif
 
 void writeDefaultSimulationParameters();
 
@@ -149,14 +159,10 @@ The import directory
 */
 QString IMPORT_DIRECTORY;
 
-/*qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-qint16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
 Matrix3D<int> teachers_timetable_weekly;
 Matrix3D<int> students_timetable_weekly;
 Matrix3D<int> rooms_timetable_weekly;
 Matrix3D<QList<int>> virtual_rooms_timetable_weekly;
-//QList<qint16> teachers_free_periods_timetable_weekly[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 Matrix3D<QList<int>> teachers_free_periods_timetable_weekly;
 
 #ifndef FET_COMMAND_LINE
@@ -188,7 +194,7 @@ extern const int EXPORT_COMMA;
 extern const int EXPORT_SEMICOLON;
 extern const int EXPORT_VERTICALBAR;
 
-extern Solution best_solution;
+//extern Solution best_solution;
 
 extern QString DIRECTORY_CSV;
 #endif
@@ -284,7 +290,7 @@ void usage(QTextStream* out, const QString& error)
 		"\n"
 		"\t--warnifusingnotperfectconstraints=WNP\n"
 		"\t\tWNP is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains not perfect constraints "
-		"(activity tag max hours daily or students max gaps per day) (default true).\n"
+		"(activity tag max / min hours daily or students max gaps per day / real day) (default true).\n"
 		"\n"
 		"\t--warnifusingstudentsminhoursdailywithallowemptydays=WSMHDAED\n"
 		"\t\tSMHDAEDP is either true or false, represents whether you want a message box to be shown, with a warning, if the input file contains nonstandard constraints "
@@ -355,11 +361,23 @@ void usage(QTextStream* out, const QString& error)
 #endif
 
 #ifndef FET_COMMAND_LINE
-void readSimulationParameters()
+void FetSettings::readSimulationParameters()
 {
 	const QString predefDir=QDir::homePath()+FILE_SEP+"fet-results";
 
 	QSettings newSettings(COMPANY, PROGRAM);
+
+	QString s=newSettings.value("mode", "official").toString();
+	if(s==QString("official"))
+		gt.rules.mode=OFFICIAL;
+	else if(s==QString("mornings-afternoons"))
+		gt.rules.mode=MORNINGS_AFTERNOONS;
+	else if(s==QString("block-planning"))
+		gt.rules.mode=BLOCK_PLANNING;
+	else if(s==QString("terms"))
+		gt.rules.mode=TERMS;
+	else
+		assert(0);
 
 	if(newSettings.contains("output-directory")){
 		OUTPUT_DIR=newSettings.value("output-directory").toString();
@@ -377,6 +395,7 @@ void readSimulationParameters()
 	else{
 		OUTPUT_DIR=predefDir;
 	}
+	
 
 #ifndef USE_SYSTEM_LOCALE
 	FET_LANGUAGE=newSettings.value("language", "en_US").toString();
@@ -469,13 +488,17 @@ void readSimulationParameters()
 	ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY=newSettings.value("enable-activity-tag-max-hours-daily", "false").toBool();
 	ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY=newSettings.value("enable-activity-tag-min-hours-daily", "false").toBool();
 	ENABLE_STUDENTS_MAX_GAPS_PER_DAY=newSettings.value("enable-students-max-gaps-per-day", "false").toBool();
+	ENABLE_MAX_GAPS_PER_REAL_DAY=newSettings.value("enable-max-gaps-per-real-day", "false").toBool();
 	SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=newSettings.value("warn-if-using-not-perfect-constraints", "true").toBool();
 	SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=newSettings.value("warn-subgroups-with-the-same-activities", "true").toBool();
 	SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME=newSettings.value("warn-activities-not-fixed-time-fixed-space-virtual-real", "true").toBool();
 	SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=newSettings.value("warn-max-hours-daily-with-under-100-weight", "true").toBool();
 	ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=newSettings.value("enable-students-min-hours-daily-with-allow-empty-days", "false").toBool();
 	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=newSettings.value("warn-if-using-students-min-hours-daily-with-allow-empty-days", "true").toBool();
-	
+
+	ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=newSettings.value("enable-students-min-hours-per-morning-with-allow-empty-mornings", "false").toBool();
+	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=newSettings.value("warn-if-using-students-min-hours-per-morning-with-allow-empty-mornings", "true").toBool();
+
 	ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER=newSettings.value("enable-group-activities-in-initial-order", "false").toBool();
 	SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=newSettings.value("warn-if-using-group-activities-in-initial-order", "true").toBool();
 
@@ -502,9 +525,20 @@ void readSimulationParameters()
 	}
 }
 
-void writeSimulationParameters()
+void FetSettings::writeSimulationParameters()
 {
 	QSettings settings(COMPANY, PROGRAM);
+
+	if(gt.rules.mode==OFFICIAL)
+		settings.setValue("mode", "official");
+	else if(gt.rules.mode==MORNINGS_AFTERNOONS)
+		settings.setValue("mode", "mornings-afternoons");
+	else if(gt.rules.mode==BLOCK_PLANNING)
+		settings.setValue("mode", "block-planning");
+	else if(gt.rules.mode==TERMS)
+		settings.setValue("mode", "terms");
+	else
+		assert(0);
 
 	settings.setValue("output-directory", OUTPUT_DIR);
 	settings.setValue("language", FET_LANGUAGE);
@@ -558,12 +592,16 @@ void writeSimulationParameters()
 	settings.setValue("enable-activity-tag-max-hours-daily", ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	settings.setValue("enable-activity-tag-min-hours-daily", ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
 	settings.setValue("enable-students-max-gaps-per-day", ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
+	settings.setValue("enable-max-gaps-per-real-day", ENABLE_MAX_GAPS_PER_REAL_DAY);
 	settings.setValue("warn-if-using-not-perfect-constraints", SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
 	settings.setValue("warn-subgroups-with-the-same-activities", SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES);
 	settings.setValue("warn-activities-not-fixed-time-fixed-space-virtual-real", SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME);
 	settings.setValue("warn-max-hours-daily-with-under-100-weight", SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT);
 	settings.setValue("enable-students-min-hours-daily-with-allow-empty-days", ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
 	settings.setValue("warn-if-using-students-min-hours-daily-with-allow-empty-days", SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
+
+	settings.setValue("enable-students-min-hours-per-morning-with-allow-empty-mornings", ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
+	settings.setValue("warn-if-using-students-min-hours-per-morning-with-allow-empty-mornings", SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
 
 	settings.setValue("enable-group-activities-in-initial-order", ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	settings.setValue("warn-if-using-group-activities-in-initial-order", SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
@@ -585,6 +623,11 @@ void writeSimulationParameters()
 //	settings.setValue("terminate-command-at-the-end-of-generation-after-seconds", terminateCommandAfterSeconds);
 //	settings.setValue("kill-command-at-the-end-of-generation-after-seconds", killCommandAfterSeconds);
 	
+	if(VERBOSE){
+		cout<<"Settings saved"<<endl;
+	}
+	
+	pFetMainForm=nullptr;
 }
 #endif
 
@@ -727,6 +770,33 @@ void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 			FetMainForm* mainform=qobject_cast<FetMainForm*>(wi);
 			if(mainform!=nullptr){
 				mainform->retranslateUi(mainform);
+				mainform->retranslateConstraints();
+				mainform->retranslateMode();
+				continue;
+			}
+
+			//help block-planning
+			HelpBlockPlanningForm* hbp=qobject_cast<HelpBlockPlanningForm*>(wi);
+			if(hbp!=nullptr){
+				hbp->retranslateUi(hbp);
+				continue;
+			}
+			//help terms
+			HelpTermsForm* ht=qobject_cast<HelpTermsForm*>(wi);
+			if(ht!=nullptr){
+				ht->retranslateUi(ht);
+				continue;
+			}
+			//help Morocco
+			HelpMoroccoForm* hm=qobject_cast<HelpMoroccoForm*>(wi);
+			if(hm!=nullptr){
+				hm->retranslateUi(hm);
+				continue;
+			}
+			//help Algeria
+			HelpAlgeriaForm* ha=qobject_cast<HelpAlgeriaForm*>(wi);
+			if(ha!=nullptr){
+				ha->retranslateUi(ha);
 				continue;
 			}
 
@@ -901,7 +971,7 @@ int main(int argc, char **argv)
 	//srand(unsigned(time(nullptr))); //useless, I use randomKnuth(), but just in case I use somewhere rand() by mistake...
 
 	//initRandomKnuth();
-	rng.initializeMRG32k3a();
+	gen.rng.initializeMRG32k3a();
 
 	OUTPUT_DIR=QDir::homePath()+FILE_SEP+"fet-results";
 	
@@ -909,7 +979,7 @@ int main(int argc, char **argv)
 
 #ifndef FET_COMMAND_LINE
 	if(_args.count()==1){
-		readSimulationParameters();
+		fetSettings.readSimulationParameters();
 	
 		QDir dir;
 	
@@ -942,21 +1012,27 @@ int main(int argc, char **argv)
 		setLanguage(qapplication, nullptr);
 
 		QCoreApplication::setApplicationName(FetTranslate::tr("FET"));
+		
+		/*QString s="";
+		s+=FetTranslate::tr("Dear user, this is a preview version of FET-6.0.0. Please be careful not to lose data/time with it.");
+		s+="\n\n";
+		s+=FetTranslate::tr("You should be able to open FET-5-official, FET-5-MA19, and FET-5-BP files with it. Please test intensively and report problems.");
+		s+=" ";
+		s+=FetTranslate::tr("Starting with the same random seed, the behavior should be identical for old official 5, old MA19, and old BP files versus the"
+		 " new FET-6.0.0. Please report as soon as possible any different behavior. Note that the new FET-6.0.0 might be 10% slower for some files.");
+		s+="\n\n";
+		s+=FetTranslate::tr("This is an appeal from the author Liviu Lalescu: please report success or failure on the forum or by email: find it"
+		 " on https://lalescu.ro/liviu/ . If you think you have found a problematic file, please send it along with the starting random seed.");
+		QMessageBox::information(nullptr, FetTranslate::tr("FET information"), s);*/
 
 		pqapplication=&qapplication;
 		FetMainForm fetMainForm;
 		pFetMainForm=&fetMainForm;
 		fetMainForm.show();
+		
+		QObject::connect(&qapplication, SIGNAL(aboutToQuit()), &fetSettings, SLOT(writeSimulationParameters()));
 
 		int tmp2=qapplication.exec();
-	
-		writeSimulationParameters();
-	
-		if(VERBOSE){
-			cout<<"Settings saved"<<endl;
-		}
-	
-		pFetMainForm=nullptr;
 	
 		return tmp2;
 	}
@@ -1050,7 +1126,7 @@ int main(int argc, char **argv)
 		SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=true;
 		
 		SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
-		
+
 		SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
 		
 		SHOW_VIRTUAL_ROOMS_IN_TIMETABLES=false;
@@ -1187,8 +1263,8 @@ int main(int argc, char **argv)
 					SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=false;
 			}
 			else if(s.left(53)=="--warnifusingstudentsminhoursdailywithallowemptydays="){
-				if(s.right(5)=="false")
-					SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
+				if(s.right(4)=="true")
+					SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
 			}
 			else if(s.left(19)=="--showvirtualrooms="){
 				if(s.right(4)=="true")
@@ -1519,34 +1595,34 @@ int main(int argc, char **argv)
 		}
 		if(randomSeedS10Specified && randomSeedS11Specified && randomSeedS12Specified
 		 && randomSeedS20Specified && randomSeedS21Specified && randomSeedS22Specified){
-			if(randomSeedS10<0 || randomSeedS10>=rng.m1){
-				usage(nullptr, QString("The random seed s10 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+			if(randomSeedS10<0 || randomSeedS10>=gen.rng.m1){
+				usage(nullptr, QString("The random seed s10 component must be an integer number at least %1 and at most %2").arg(0).arg(gen.rng.m1-1));
 				logFile.close();
 				return 1;
 			}
-			if(randomSeedS11<0 || randomSeedS11>=rng.m1){
-				usage(nullptr, QString("The random seed s11 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+			if(randomSeedS11<0 || randomSeedS11>=gen.rng.m1){
+				usage(nullptr, QString("The random seed s11 component must be an integer number at least %1 and at most %2").arg(0).arg(gen.rng.m1-1));
 				logFile.close();
 				return 1;
 			}
-			if(randomSeedS12<0 || randomSeedS12>=rng.m1){
-				usage(nullptr, QString("The random seed s12 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+			if(randomSeedS12<0 || randomSeedS12>=gen.rng.m1){
+				usage(nullptr, QString("The random seed s12 component must be an integer number at least %1 and at most %2").arg(0).arg(gen.rng.m1-1));
 				logFile.close();
 				return 1;
 			}
 
-			if(randomSeedS20<0 || randomSeedS20>=rng.m1){
-				usage(nullptr, QString("The random seed s20 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+			if(randomSeedS20<0 || randomSeedS20>=gen.rng.m1){
+				usage(nullptr, QString("The random seed s20 component must be an integer number at least %1 and at most %2").arg(0).arg(gen.rng.m1-1));
 				logFile.close();
 				return 1;
 			}
-			if(randomSeedS21<0 || randomSeedS21>=rng.m1){
-				usage(nullptr, QString("The random seed s21 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+			if(randomSeedS21<0 || randomSeedS21>=gen.rng.m1){
+				usage(nullptr, QString("The random seed s21 component must be an integer number at least %1 and at most %2").arg(0).arg(gen.rng.m1-1));
 				logFile.close();
 				return 1;
 			}
-			if(randomSeedS22<0 || randomSeedS22>=rng.m1){
-				usage(nullptr, QString("The random seed s22 component must be an integer number at least %1 and at most %2").arg(0).arg(rng.m1-1));
+			if(randomSeedS22<0 || randomSeedS22>=gen.rng.m1){
+				usage(nullptr, QString("The random seed s22 component must be an integer number at least %1 and at most %2").arg(0).arg(gen.rng.m1-1));
 				logFile.close();
 				return 1;
 			}
@@ -1563,7 +1639,7 @@ int main(int argc, char **argv)
 				return 1;
 			}
 
-			rng.initializeMRG32k3a(randomSeedS10, randomSeedS11, randomSeedS12,
+			gen.rng.initializeMRG32k3a(randomSeedS10, randomSeedS11, randomSeedS12,
 			 randomSeedS20, randomSeedS21, randomSeedS22);
 		}
 		else if(randomSeedS10Specified || randomSeedS11Specified || randomSeedS12Specified
@@ -1686,8 +1762,6 @@ int main(int argc, char **argv)
 			return 1;
 		}
 	
-		Generate gen;
-
 		terminateGeneratePointer=&gen;
 		signal(SIGTERM, terminate);
 #ifdef SIGBREAK
@@ -1722,8 +1796,8 @@ int main(int argc, char **argv)
 			cout<<"secondsLimit=="<<secondsLimit<<endl;
 		}
 		//out<<"secondsLimit=="<<secondsLimit<<endl;
-				
-		TimetableExport::writeRandomSeedCommandLine(nullptr, outputDirectory, true); //true represents 'before' state
+		
+		TimetableExport::writeRandomSeedCommandLine(nullptr, gen.rng, outputDirectory, true); //true represents 'before' state
 
 		gen.generate(secondsLimit, impossible, timeExceeded, false, &maxPlacedActivityStream); //false means no thread
 		
@@ -1746,9 +1820,10 @@ int main(int argc, char **argv)
 			FakeString tmp;
 			cc.fitness(gt.rules, &tmp);
 
-			TimetableExport::getStudentsTimetable(cc);
+			/*TimetableExport::getStudentsTimetable(cc);
 			TimetableExport::getTeachersTimetable(cc);
-			TimetableExport::getRoomsTimetable(cc);
+			TimetableExport::getRoomsTimetable(cc);*/
+			TimetableExport::getStudentsTeachersRoomsTimetable(cc);
 
 			QString toc=outputDirectory;
 			if(toc!="" && toc.count()>=1 && toc.endsWith(FILE_SEP)){
@@ -1807,15 +1882,16 @@ int main(int argc, char **argv)
 			
 			//2011-11-11 (2)
 			//write highest stage timetable
-			Solution& ch=highestStageSolution;
+			Solution& ch=gen.highestStageSolution;
 
 			//needed to find the conflicts strings
 			FakeString tmp2;
 			ch.fitness(gt.rules, &tmp2);
 
-			TimetableExport::getStudentsTimetable(ch);
+			/*TimetableExport::getStudentsTimetable(ch);
 			TimetableExport::getTeachersTimetable(ch);
-			TimetableExport::getRoomsTimetable(ch);
+			TimetableExport::getRoomsTimetable(ch);*/
+			TimetableExport::getStudentsTeachersRoomsTimetable(ch);
 
 			QString toh=outputDirectory;
 			if(toh!="" && toh.count()>=1 && toh.endsWith(FILE_SEP)){
@@ -1834,7 +1910,7 @@ int main(int argc, char **argv)
 
 			QString oldDir=OUTPUT_DIR;
 			OUTPUT_DIR=csvOutputDirectory;
-			Export::exportCSV(&highestStageSolution, &gen.c);
+			Export::exportCSV(&gen.highestStageSolution, &gen.c);
 			OUTPUT_DIR=oldDir;
 		}
 		//2012-01-24 - suggestion and code by Ian Holden (ian@ianholden.com), to write best and current timetable on time exceeded
@@ -1867,9 +1943,10 @@ int main(int argc, char **argv)
 			FakeString tmp;
 			cc.fitness(gt.rules, &tmp);
 
-			TimetableExport::getStudentsTimetable(cc);
+			/*TimetableExport::getStudentsTimetable(cc);
 			TimetableExport::getTeachersTimetable(cc);
-			TimetableExport::getRoomsTimetable(cc);
+			TimetableExport::getRoomsTimetable(cc);*/
+			TimetableExport::getStudentsTeachersRoomsTimetable(cc);
 
 			QString toc=outputDirectory;
 			if(toc!="" && toc.count()>=1 && toc.endsWith(FILE_SEP)){
@@ -1888,14 +1965,14 @@ int main(int argc, char **argv)
 			
 			QString s;
 
-			if(maxActivitiesPlaced>=0 && maxActivitiesPlaced<gt.rules.nInternalActivities
-			 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]<gt.rules.nInternalActivities){
+			if(gen.maxActivitiesPlaced>=0 && gen.maxActivitiesPlaced<gt.rules.nInternalActivities
+			 && initialOrderOfActivitiesIndices[gen.maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[gen.maxActivitiesPlaced]<gt.rules.nInternalActivities){
 				s=FetTranslate::tr("FET managed to schedule correctly the first %1 most difficult activities."
 				 " You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems"
-				 " might be the next activity in the initial order of evaluation. This activity is listed below:").arg(maxActivitiesPlaced);
+				 " might be the next activity in the initial order of evaluation. This activity is listed below:").arg(gen.maxActivitiesPlaced);
 				s+=QString("\n\n");
 			
-				int ai=initialOrderOfActivitiesIndices[maxActivitiesPlaced];
+				int ai=initialOrderOfActivitiesIndices[gen.maxActivitiesPlaced];
 
 				s+=FetTranslate::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
 				 .arg(gt.rules.internalActivitiesList[ai].id)
@@ -1947,15 +2024,16 @@ int main(int argc, char **argv)
 			
 			//2011-11-11 (2)
 			//write highest stage timetable
-			Solution& ch=highestStageSolution;
+			Solution& ch=gen.highestStageSolution;
 
 			//needed to find the conflicts strings
 			FakeString tmp2;
 			ch.fitness(gt.rules, &tmp2);
 
-			TimetableExport::getStudentsTimetable(ch);
+			/*TimetableExport::getStudentsTimetable(ch);
 			TimetableExport::getTeachersTimetable(ch);
-			TimetableExport::getRoomsTimetable(ch);
+			TimetableExport::getRoomsTimetable(ch);*/
+			TimetableExport::getStudentsTeachersRoomsTimetable(ch);
 
 			QString toh=outputDirectory;
 			if(toh!="" && toh.count()>=1 && toh.endsWith(FILE_SEP)){
@@ -1974,7 +2052,7 @@ int main(int argc, char **argv)
 
 			QString oldDir=OUTPUT_DIR;
 			OUTPUT_DIR=csvOutputDirectory;
-			Export::exportCSV(&highestStageSolution, &gen.c);
+			Export::exportCSV(&gen.highestStageSolution, &gen.c);
 			OUTPUT_DIR=oldDir;
 		}
 		else{
@@ -1985,7 +2063,7 @@ int main(int argc, char **argv)
 			out<<"Simulation successful"<<endl;
 #endif
 		
-			TimetableExport::writeRandomSeedCommandLine(nullptr, outputDirectory, false); //false represents 'before' state
+			TimetableExport::writeRandomSeedCommandLine(nullptr, gen.rng, outputDirectory, false); //false represents 'before' state
 
 			Solution& c=gen.c;
 
@@ -1993,9 +2071,10 @@ int main(int argc, char **argv)
 			FakeString tmp;
 			c.fitness(gt.rules, &tmp);
 			
-			TimetableExport::getStudentsTimetable(c);
+			/*TimetableExport::getStudentsTimetable(c);
 			TimetableExport::getTeachersTimetable(c);
-			TimetableExport::getRoomsTimetable(c);
+			TimetableExport::getRoomsTimetable(c);*/
+			TimetableExport::getStudentsTeachersRoomsTimetable(c);
 
 			TimetableExport::writeSimulationResultsCommandLine(nullptr, outputDirectory);
 			

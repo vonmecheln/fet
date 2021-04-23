@@ -766,7 +766,7 @@ Versions 4.1.0 - 4.1.10
 - Version 4.1.10
 	- Possible bug fix (reported by Volker Dirr).
 ---------------------------------------------------------------------------------
-Versions 4.2.0 - 4.2.x
+Versions 4.2.0 - 4.2.9
 	- Liviu Lalescu,
 	- 2-point and uniform crossover implemented and tested by Volker Dirr
 	- Turkish language update by Mahir Nacar
@@ -2325,7 +2325,7 @@ Versions 5.48.0 - 5.48.2
 - Version 5.48.2
 	- Code improvements and cleanup (including one improvement suggested by Volker Dirr, found using Coverity Scan).
 ---------------------------------------------------------------------------------
-Versions 5.49.0 - 5.49.v
+Versions 5.49.0 - 5.49.1
 - Version 5.49.0
 	- It is now possible to use any number of constraints of type teacher(s)/students (set) interval max days per week for a teacher/students set
 	(previously this number was limited to maximum three for each teacher/students set).
@@ -2337,3 +2337,20 @@ Versions 5.49.0 - 5.49.v
 	- Redesigned the locked/unlocked icons for the special constraints.
 	- Acknowledged the code contributors in a new file, CONTRIBUTORS, and in a new section in Help->About FET, Contributors.
 	- Minor improvements.
+---------------------------------------------------------------------------------
+Versions 6.0.0 - 6.0.v
+- Version 6.0.0
+	- Updated to Qt 6.0.3.
+	- Increased the limits of the generation algorithm (the new limits are most probably more than enough for everybody).
+	- Combined the most important custom versions into the official FET. The new feature is called "mode" and it can be:
+	"official", "mornings-afternoons" (for Morocco and Algeria), "block planning", and "terms" (for Finland).
+	- The multiple generation can be done on multiple threads, each timetable on a separate thread. Multiple timetables should
+	be obtained much faster if you have a multi-core/hyper-threading processor.
+
+	The following people, listed in chronological order, contributed to this release: bachiri401 (thorough testing), Alexey Chernous (testing),
+	Darren McDonald (testing and bug reports), DT (suggestions), Chichi Lalescu (suggestions), YOUSSEF HOUIET (testing and bug reports),
+	and the translators: Benahmed Abdelkrim (Arabic), Robert Hairgrove (German), Alexandre R. Soares (Brazilian Portuguese),
+	Alexey Chernous (Russian), Vangelis Karafillidis (Greek), and Emiliano Llano Díaz (Spanish).
+- Version 6.0.1
+	- Bug fix when importing the teachers from a CSV file in the mornings-afternoons mode. This bug would eventually lead to a crash
+	(assertion failed) when viewing the teachers list. Reported by Khineche Kaddour.

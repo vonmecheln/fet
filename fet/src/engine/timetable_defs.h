@@ -116,6 +116,7 @@ extern bool SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES;
 extern bool ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY;
 extern bool ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY;
 extern bool ENABLE_STUDENTS_MAX_GAPS_PER_DAY;
+extern bool ENABLE_MAX_GAPS_PER_REAL_DAY;
 
 extern bool SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS;
 
@@ -127,6 +128,8 @@ extern bool SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT;
 
 extern bool ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS;
 extern bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS;
+extern bool ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS;
+extern bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS;
 
 extern bool ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER;
 extern bool SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER;
@@ -141,14 +144,9 @@ extern bool VERBOSE;
 /**
 The maximum total number of different subgroups of students
 */
-const int MAX_TOTAL_SUBGROUPS=30000;//MAX_YEARS*MAX_GROUPS_PER_YEAR*MAX_SUBGROUPS_PER_GROUP;
+const int MAX_TOTAL_SUBGROUPS=30000;
 
 const int MAX_ROOM_CAPACITY=30000;
-
-/**
-The maximum number of different teachers
-*/
-const int MAX_TEACHERS=6000;
 
 /**
 The maximum number of activities
@@ -156,11 +154,7 @@ DEPRECATED COMMENT BELOW
 IMPORTANT: must be qint16 (max 32767), because we are using qint16 for each activity index and for
 unallocated activity = max_activities
 */
-const int MAX_ACTIVITIES=30000;
-
-//if you want to increase this, you also need to modify the add/modify activity dialogs, to permit larger values
-//(add more pages in the subactivities tab).
-const int MAX_SPLIT_OF_AN_ACTIVITY=35;
+const int MAX_ACTIVITIES=500000;
 
 /**
 The maximum number of rooms
@@ -168,12 +162,12 @@ DEPRECATED COMMENT BELOW
 IMPORTANT: max_rooms+1 must be qint16 (max 32766 for max_rooms), because we are using qint16 for each room index and
 for unallocated space = max_rooms and for unspecified room = max_rooms+1
 */
-const int MAX_ROOMS=6000;
+const int MAX_ROOMS=30000;
 
 /**
 The maximum number of buildings
 */
-const int MAX_BUILDINGS=6000;
+const int MAX_BUILDINGS=30000;
 
 /**
 This constant represents an unallocated activity
@@ -182,24 +176,27 @@ const int UNALLOCATED_ACTIVITY = MAX_ACTIVITIES;
 
 /**
 The maximum number of working hours per day.
-DEPRECATED COMMENT BELOW
-IMPORTANT: max hours per day * max days per week = max hours per week must be qint16 (max 32767),
-because each time is qint16 and unallocated time is qint16
+
+IMPORTANT: MAX_HOURS_PER_DAY * MAX_DAYS_PER_WEEK == MAX_HOURS_PER_WEEK must be int (max 2^31-1)
+because each time is int and unallocated time is int
 */
-const int MAX_HOURS_PER_DAY=72;
+const int MAX_HOURS_PER_DAY=1440;
 
 /**
 The maximum number of working days per week.
-DEPRECATED COMMENT BELOW
-IMPORTANT: max hours per day * max days per week = max hours per week must be qint16 (max 32767)
-because each time is qint16 and unallocated time is qint16
+
+IMPORTANT: MAX_HOURS_PER_DAY * MAX_DAYS_PER_WEEK == MAX_HOURS_PER_WEEK must be int (max 2^31-1)
+because each time is int and unallocated time is int
 */
-const int MAX_DAYS_PER_WEEK=35;
+const int MAX_DAYS_PER_WEEK=1000;
+
+//This is a practically chosen value so that the dialog of add activity does not become unresponsive.
+const int MAX_SPLIT_OF_AN_ACTIVITY=1000;
 
 /**
 The predefined names of the days of the week
 */
-extern const QString PREDEFINED_DAYS_OF_THE_WEEK[];
+//extern const QString PREDEFINED_DAYS_OF_THE_WEEK[];
 
 /**
 The maximum number of working hours in a week.
@@ -213,9 +210,8 @@ Hours in a week are arranged like this:
 5        20 21 22 23 24
 6        25 26 27 28 29 etc.
 
-DEPRECATED COMMENT BELOW
-IMPORTANT: MAX_HOURS_PER_DAY * MAX_DAYS_PER_WEEK == MAX_HOURS_PER_WEEK must be qint16 (max 32767)
-because each time is qint16 and unallocated time is qint16
+IMPORTANT: MAX_HOURS_PER_DAY * MAX_DAYS_PER_WEEK == MAX_HOURS_PER_WEEK must be int (max 2^31-1)
+because each time is int and unallocated time is int
 */
 const int MAX_HOURS_PER_WEEK = MAX_HOURS_PER_DAY * MAX_DAYS_PER_WEEK;
 

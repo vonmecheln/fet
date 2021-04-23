@@ -25,7 +25,6 @@
 #include "fet.h"
 
 #include <QSet>
-//#include <QHash>
 #include <QList>
 
 class ModifyActivityForm : public QDialog, Ui::ModifyActivityForm_template  {
@@ -41,7 +40,6 @@ private:
 	QSet<QString> teacherNamesSet;
 	QSet<QString> subjectNamesSet;
 	QSet<QString> activityTagNamesSet;
-	//QHash<QString, int> numberOfStudentsHash;
 
 public:
 	QList<QString> canonicalStudentsSetsNames;
@@ -60,7 +58,9 @@ public:
 	void updateStudentsListWidget();
 	void updateSubjectsComboBox();
 	void updateActivityTagsListWidget();
-	
+
+	void populateSubactivitiesTabWidget(int n);
+
 public slots:
 	void allTeachersRadioButtonToggled(bool checked);
 	void qualifiedTeachersRadioButtonToggled(bool checked);

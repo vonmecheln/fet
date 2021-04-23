@@ -20,13 +20,15 @@
 #include "solution.h"
 
 #include <iostream>
-using namespace std;
+//using namespace std;
 
 #ifndef FET_COMMAND_LINE
 
 #include <Qt>
 
 #include "fetmainform.h"
+
+#include "getmodefornewfileform.h"
 
 #include "timetablegenerateform.h"
 #include "timetablegeneratemultipleform.h"
@@ -67,9 +69,14 @@ using namespace std;
 #include "allspaceconstraintsform.h"
 #include "helpaboutform.h"
 #include "helpaboutlibrariesform.h"
+#include "helpblockplanningform.h"
+#include "helptermsform.h"
 #include "helpfaqform.h"
 #include "helptipsform.h"
 #include "helpinstructionsform.h"
+#include "helpmoroccoform.h"
+#include "helpalgeriaform.h"
+
 #include "randomseedform.h"
 
 #include "fet.h"
@@ -77,6 +84,10 @@ using namespace std;
 #include "groupactivitiesininitialorderitemsform.h"
 #include "constraintactivityendsstudentsdayform.h"
 #include "constraintactivitiesendstudentsdayform.h"
+
+#include "constraintactivityendsteachersdayform.h"
+#include "constraintactivitiesendteachersdayform.h"
+
 #include "constrainttwoactivitiesconsecutiveform.h"
 #include "constrainttwoactivitiesgroupedform.h"
 #include "constraintthreeactivitiesgroupedform.h"
@@ -101,6 +112,7 @@ using namespace std;
 #include "constraintbasiccompulsorytimeform.h"
 #include "constraintbasiccompulsoryspaceform.h"
 #include "constraintroomnotavailabletimesform.h"
+#include "constraintteacherroomnotavailabletimesform.h"
 #include "constraintactivitypreferredroomform.h"
 #include "constraintstudentssetnotavailabletimesform.h"
 #include "constraintbreaktimesform.h"
@@ -202,12 +214,18 @@ using namespace std;
 #include "constraintteachermingapsbetweenbuildingchangesform.h"
 #include "constraintteachersmingapsbetweenbuildingchangesform.h"
 
+#include "constraintstudentssetmaxroomchangesperrealdayform.h"
+#include "constraintstudentsmaxroomchangesperrealdayform.h"
+
 #include "constraintstudentssetmaxroomchangesperdayform.h"
 #include "constraintstudentsmaxroomchangesperdayform.h"
 #include "constraintstudentssetmaxroomchangesperweekform.h"
 #include "constraintstudentsmaxroomchangesperweekform.h"
 #include "constraintstudentssetmingapsbetweenroomchangesform.h"
 #include "constraintstudentsmingapsbetweenroomchangesform.h"
+
+#include "constraintteachermaxroomchangesperrealdayform.h"
+#include "constraintteachersmaxroomchangesperrealdayform.h"
 
 #include "constraintteachermaxroomchangesperdayform.h"
 #include "constraintteachersmaxroomchangesperdayform.h"
@@ -231,6 +249,125 @@ using namespace std;
 #include "constraintstudentsmingapsbetweenorderedpairofactivitytagsform.h"
 #include "constraintteachermingapsbetweenorderedpairofactivitytagsform.h"
 #include "constraintteachersmingapsbetweenorderedpairofactivitytagsform.h"
+
+//mornings-afternoons
+#include "constraintteachersmaxzerogapsperafternoonform.h"
+#include "constraintteachermaxzerogapsperafternoonform.h"
+
+#include "constraintteachersmaxgapsperrealdayform.h"
+#include "constraintteachermaxgapsperrealdayform.h"
+
+#include "constraintteachermaxrealdaysperweekform.h"
+#include "constraintteachersmaxrealdaysperweekform.h"
+#include "constraintteachermaxafternoonsperweekform.h"
+#include "constraintteachersmaxafternoonsperweekform.h"
+#include "constraintteachermaxmorningsperweekform.h"
+#include "constraintteachersmaxmorningsperweekform.h"
+
+#include "constraintteachermaxtwoconsecutivemorningsform.h"
+#include "constraintteachersmaxtwoconsecutivemorningsform.h"
+#include "constraintteachermaxtwoconsecutiveafternoonsform.h"
+#include "constraintteachersmaxtwoconsecutiveafternoonsform.h"
+
+#include "constraintteachersmaxhoursdailyrealdaysform.h"
+#include "constraintteachermaxhoursdailyrealdaysform.h"
+
+#include "constraintteachersminhoursdailyrealdaysform.h"
+#include "constraintteacherminhoursdailyrealdaysform.h"
+
+#include "constraintteachermaxhoursperallafternoonsform.h"
+#include "constraintteachersmaxhoursperallafternoonsform.h"
+
+#include "constraintstudentssetmaxhoursperallafternoonsform.h"
+#include "constraintstudentsmaxhoursperallafternoonsform.h"
+
+#include "constraintteachersminhourspermorningform.h"
+#include "constraintteacherminhourspermorningform.h"
+
+#include "constraintteachersminhoursdailyrealdaysform.h"
+#include "constraintteacherminhoursdailyrealdaysform.h"
+
+#include "constraintteacherminrealdaysperweekform.h"
+#include "constraintteachersminrealdaysperweekform.h"
+
+#include "constraintteacherminmorningsperweekform.h"
+#include "constraintteachersminmorningsperweekform.h"
+#include "constraintteacherminafternoonsperweekform.h"
+#include "constraintteachersminafternoonsperweekform.h"
+
+#include "constraintteachermaxtwoactivitytagsperdayfromn1n2n3form.h"
+#include "constraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.h"
+
+#include "constraintteachersactivitytagmaxhoursdailyrealdaysform.h"
+#include "constraintteacheractivitytagmaxhoursdailyrealdaysform.h"
+
+#include "constraintstudentssetmaxgapsperrealdayform.h"
+#include "constraintstudentsmaxgapsperrealdayform.h"
+
+#include "constraintteachersmaxgapsperweekforrealdaysform.h"
+#include "constraintteachermaxgapsperweekforrealdaysform.h"
+#include "constraintstudentssetmaxgapsperweekforrealdaysform.h"
+#include "constraintstudentsmaxgapsperweekforrealdaysform.h"
+
+#include "constraintstudentsafternoonsearlymaxbeginningsatsecondhourform.h"
+#include "constraintstudentssetafternoonsearlymaxbeginningsatsecondhourform.h"
+
+#include "constraintteachersafternoonsearlymaxbeginningsatsecondhourform.h"
+#include "constraintteacherafternoonsearlymaxbeginningsatsecondhourform.h"
+
+#include "constraintstudentssetmaxhoursdailyrealdaysform.h"
+#include "constraintstudentsmaxhoursdailyrealdaysform.h"
+
+#include "constraintstudentsminhourspermorningform.h"
+#include "constraintstudentssetminhourspermorningform.h"
+
+#include "constraintstudentssetactivitytagmaxhoursdailyrealdaysform.h"
+#include "constraintstudentsactivitytagmaxhoursdailyrealdaysform.h"
+
+#include "constraintteachermorningintervalmaxdaysperweekform.h"
+#include "constraintteachersmorningintervalmaxdaysperweekform.h"
+
+#include "constraintteacherafternoonintervalmaxdaysperweekform.h"
+#include "constraintteachersafternoonintervalmaxdaysperweekform.h"
+
+#include "constraintstudentssetmorningintervalmaxdaysperweekform.h"
+#include "constraintstudentsmorningintervalmaxdaysperweekform.h"
+#include "constraintstudentssetafternoonintervalmaxdaysperweekform.h"
+#include "constraintstudentsafternoonintervalmaxdaysperweekform.h"
+
+#include "constraintstudentssetmaxrealdaysperweekform.h"
+#include "constraintstudentsmaxrealdaysperweekform.h"
+
+#include "constraintstudentssetmaxafternoonsperweekform.h"
+#include "constraintstudentsmaxafternoonsperweekform.h"
+#include "constraintstudentssetmaxmorningsperweekform.h"
+#include "constraintstudentsmaxmorningsperweekform.h"
+
+#include "constraintstudentssetminafternoonsperweekform.h"
+#include "constraintstudentsminafternoonsperweekform.h"
+#include "constraintstudentssetminmorningsperweekform.h"
+#include "constraintstudentsminmorningsperweekform.h"
+
+#include "constraintteachermaxspanperrealdayform.h"
+#include "constraintteachersmaxspanperrealdayform.h"
+#include "constraintstudentssetmaxspanperrealdayform.h"
+#include "constraintstudentsmaxspanperrealdayform.h"
+
+#include "constraintteacherminrestinghoursbetweenmorningandafternoonform.h"
+#include "constraintteachersminrestinghoursbetweenmorningandafternoonform.h"
+#include "constraintstudentssetminrestinghoursbetweenmorningandafternoonform.h"
+#include "constraintstudentsminrestinghoursbetweenmorningandafternoonform.h"
+
+//block-planning
+#include "constraintmaxtotalactivitiesfromsetinselectedtimeslotsform.h"
+
+#include "constraintmaxgapsbetweenactivitiesform.h"
+
+//terms
+#include "constraintactivitiesmaxinatermform.h"
+#include "constraintactivitiesoccupymaxtermsform.h"
+
+#include "termsform.h"
 
 #include "settingstimetablehtmllevelform.h"
 
@@ -271,6 +408,7 @@ using namespace std;
 #include <QDesktopServices>
 #include <QUrl>
 #include <QApplication>
+#include <QCoreApplication>
 
 #include <QSysInfo>
 
@@ -375,6 +513,8 @@ bool ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY=false;
 bool ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY=false;
 bool ENABLE_STUDENTS_MAX_GAPS_PER_DAY=false;
 
+bool ENABLE_MAX_GAPS_PER_REAL_DAY=false;
+
 bool SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
 
 bool SHOW_WARNING_FOR_SUBGROUPS_WITH_THE_SAME_ACTIVITIES=true;
@@ -384,8 +524,10 @@ bool SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TI
 bool SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=true;
 
 bool ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
-
 bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
+
+bool ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=false;
+bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=true;
 
 bool ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER=false;
 bool SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
@@ -395,135 +537,25 @@ bool CONFIRM_SPREAD_ACTIVITIES=true;
 bool CONFIRM_REMOVE_REDUNDANT=true;
 bool CONFIRM_SAVE_TIMETABLE=true;
 
-//extern int XX;
-//extern int YY;
-//extern const int MM;
 extern MRG32k3a rng;
 
 const int STATUS_BAR_MILLISECONDS=2500;
 
-/*RandomSeedDialog::RandomSeedDialog(QWidget* parent): QDialog(parent)
-{
-	setWindowTitle(tr("Random seed"));
-
-	labelX=new QLabel(tr("Random seed X component:", "Means the X component of the random seed (random seed has 2 components, X and Y). Please keep translation short"));
-	lineEditX=new QLineEdit(CustomFETString::number(XX));
-	labelY=new QLabel(tr("Random seed Y component:", "Means the Y component of the random seed (random seed has 2 components, X and Y). Please keep translation short"));
-	lineEditY=new QLineEdit(CustomFETString::number(YY));
-	okPB=new QPushButton(tr("OK"));
-	okPB->setDefault(true);
-	helpPB=new QPushButton(tr("Help"));
-	cancelPB=new QPushButton(tr("Cancel"));
-
-	valuesLabelX=new QLabel(tr("Allowed minimum %1 to maximum %2").arg(1).arg(MM-1));
-	valuesLabelY=new QLabel(tr("Allowed minimum %1 to maximum %2").arg(1).arg(MMM-1));
-	
-	seedLayoutX=new QGridLayout();
-	seedLayoutX->addWidget(labelX,0,0);
-	seedLayoutX->addWidget(lineEditX,0,1);
-	seedLayoutX->addWidget(valuesLabelX,1,0,1,2);
-
-	seedLayoutY=new QGridLayout();
-	seedLayoutY->addWidget(labelY,0,0);
-	seedLayoutY->addWidget(lineEditY,0,1);
-	seedLayoutY->addWidget(valuesLabelY,1,0,1,2);
-
-	buttonsLayout=new QHBoxLayout();
-	buttonsLayout->addWidget(helpPB);
-	buttonsLayout->addWidget(okPB);
-	buttonsLayout->addWidget(cancelPB);
-	
-	mainLayout=new QVBoxLayout(this);
-	mainLayout->addLayout(seedLayoutX);
-	mainLayout->addStretch();
-	mainLayout->addLayout(seedLayoutY);
-	mainLayout->addStretch();
-	mainLayout->addLayout(buttonsLayout);
-	
-	connect(helpPB, SIGNAL(clicked()), this, SLOT(help()));
-	connect(okPB, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(cancelPB, SIGNAL(clicked()), this, SLOT(reject()));
-	
-	int w=this->sizeHint().width();
-	int h=this->sizeHint().height();
-	if(w<370)
-		w=370;
-	if(h<220)
-		h=220;
-	this->resize(w, h);
-	
-	centerWidgetOnScreen(this);
-	restoreFETDialogGeometry(this);
-}
-
-RandomSeedDialog::~RandomSeedDialog()
-{
-	saveFETDialogGeometry(this);
-}
-
-void RandomSeedDialog::help()
-{
-	LongTextMessageBox::largeInformation(this, tr("FET information"),
-		tr("You can control the random behaviour of FET with this function")+".\n\n"+
-		tr("The random seed is the state of the random number generator.")+" "+
-		tr("It has two components, X and Y.")+" "+
-		tr("X is a value at least %1 and at most %2.").arg(1).arg(MM-1)+" "+
-		tr("Y is a value at least %1 and at most %2.").arg(1).arg(MMM-1)+" "+
-		+"\n\n"+tr("The random seed before the generation of a timetable (the X and Y components) is saved on disk in the corresponding timetables directory,"
-		" so that you can simulate again the same generation after that.")+"\n\n"+
-		tr("Mode of operation: to obtain the same timetable twice, give the random seed"
-		" two values (say X=1234, Y=12345), then generate single, then make it again the same values (X=1234 and Y=12345),"
-		" then generate single again. The timetables will be the same. If you generate multiple instead of single,"
-		" the first set of timetables will be the same as the second set (if you generate the same number of timetables)"
-		" but of course timetables inside each set will be different. If you enter the same random seed (X and Y) on different computers"
-		" (but using the same FET version, see note below)"
-		" and generate single, the timetables will be the same (if you generate multiple, the sets of timetables will correspond, "
-		"the first timetable from simulation 1 with first timetable from simulation 2, etc.)")
-		+"\n\n"
-		+tr("Note: of course you need exactly the same conditions to duplicate the same simulations (so, you need exactly the same data - activities, constraints, etc.).")
-		+"\n\n"
-		+tr("Note: for different versions of FET, the behavior of generation may be totally different, even for the same data and the same random seed (same X and same Y), "
-		"due to possible changes in the algorithm. You need to consider this as a precaution.")
-		+"\n\n"
-		+tr("Note: when you start FET, each time, the random seed X is the number of seconds elapsed since 1 January 1970 and the random seed Y is the next number"
-		" in the Y series, after the number of seconds elapsed since 1 January 1970")
-		+". "
-		+tr("It is thus very important to note that if you start two or more instances of FET when the number of seconds since 1 January 1970 is the same"
-		" the initial random seeds will be identical, leading to the same timetable generation behavior for an identical input file. If you intend to"
-		" generate different timetables for the same file, you need to wait at least one second between starting two successive FET instances. Or you can"
-		" change the initial random seed by hand")
-		+". "
-		+tr("After you generate (even partially), the random seed (X and Y components) will change (each call of the random number generator updates the random seed components to the next numbers"
-		" in the sequence, and there are many calls to this random generating routine in the generate function)")
-		+"\n\n"
-		+tr("This setting is useful for more things, maybe one thing is bug report: send your file along with the random seed at the start of generating"
-		" (the two components, X and Y, are saved in the timetable directory at the start of generation)")
-	);
-}
-
-void RandomSeedDialog::ok()
-{
-	int tx=lineEditX->text().toInt();
-	if(!(tx>=1 && tx<MM)){
-		QMessageBox::warning(this, tr("FET warning"), tr("The random seed X component must be at least %1 and at most %2").arg(1).arg(MM-1));
-		return;
-	}
-	
-	int ty=lineEditY->text().toInt();
-	if(!(ty>=1 && ty<MMM)){
-		QMessageBox::warning(this, tr("FET warning"), tr("The random seed Y component must be at least %1 and at most %2").arg(1).arg(MMM-1));
-		return;
-	}
-	
-	accept();
-}*/
-
 FetMainForm::FetMainForm()
 {
 	setupUi(this);
+
+	simulation_running=false;
+	simulation_running_multi=false;
+
+	createActionsForConstraints();
 	
 	QIcon appIcon(":/images/appicon.png");
 	pqapplication->setWindowIcon(appIcon);
+	
+	this->statusBar()->addPermanentWidget(&modeLabel);
+	dataAvailable=false;
+	updateMode(true); //true means force
 	
 	QSettings settings(COMPANY, PROGRAM);
 	int nRec=settings.value(QString("FetMainForm/number-of-recent-files"), 0).toInt();
@@ -558,6 +590,7 @@ FetMainForm::FetMainForm()
 	shortcutBasicMenu=new QMenu();
 	shortcutBasicMenu->addMenu(menuInstitution_information);
 	shortcutBasicMenu->addSeparator(); //added on 19 Dec. 2009
+	shortcutBasicMenu->addAction(dataTermsAction);
 	shortcutBasicMenu->addMenu(menuDays_and_hours);
 	
 	shortcutAdvancedTimeMenu=new QMenu();
@@ -632,17 +665,17 @@ FetMainForm::FetMainForm()
 		forceCenterWidgetOnScreen(this);
 	}
 	
-	//new data
+	//new void data
 	if(gt.rules.initialized)
 		gt.rules.kill();
-	gt.rules.init();
+	/*gt.rules.init();
 
-	gt.rules.modified=true; //to avoid flicker of the main form modified flag
+	gt.rules.modified=true; //to avoid the flickering of the main form modified flag
 
 	bool tmp=gt.rules.addTimeConstraint(new ConstraintBasicCompulsoryTime(100));
 	assert(tmp);
 	tmp=gt.rules.addSpaceConstraint(new ConstraintBasicCompulsorySpace(100));
-	assert(tmp);
+	assert(tmp);*/
 
 	gt.rules.modified=true; //force update of the modified flag of the main window
 	setRulesUnmodifiedAndOtherThings(&gt.rules);
@@ -650,6 +683,8 @@ FetMainForm::FetMainForm()
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
 	rooms_schedule_ready=false;
+	
+	assert(!gt.rules.initialized);
 	
 	settingsShowShortcutsOnMainWindowAction->setCheckable(true);
 	settingsShowShortcutsOnMainWindowAction->setChecked(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
@@ -700,8 +735,8 @@ FetMainForm::FetMainForm()
 			connect(networkManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply*)));
 			QUrl url("https://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
 			if(VERBOSE){
-				cout<<"New version checking host: "<<qPrintable(url.host())<<endl;
-				cout<<"New version checking path: "<<qPrintable(url.path())<<endl;
+				std::cout<<"New version checking host: "<<qPrintable(url.host())<<std::endl;
+				std::cout<<"New version checking path: "<<qPrintable(url.path())<<std::endl;
 			}
 			QNetworkRequest req=QNetworkRequest(url);
 			//As on https://stackoverflow.com/questions/14416786/webpage-returning-http-406-error-only-when-connecting-from-qt
@@ -750,11 +785,15 @@ FetMainForm::FetMainForm()
 	enableActivityTagMaxHoursDailyAction->setCheckable(true);
 	enableActivityTagMinHoursDailyAction->setCheckable(true);
 	enableStudentsMaxGapsPerDayAction->setCheckable(true);
+	enableMaxGapsPerRealDayAction->setCheckable(true);
 	showWarningForNotPerfectConstraintsAction->setCheckable(true);
 
 	enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setCheckable(true);
 	showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setCheckable(true);
-	
+
+	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setCheckable(true);
+	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setCheckable(true);
+
 	enableGroupActivitiesInInitialOrderAction->setCheckable(true);
 	showWarningForGroupActivitiesInInitialOrderAction->setCheckable(true);
 	
@@ -767,10 +806,14 @@ FetMainForm::FetMainForm()
 	enableActivityTagMaxHoursDailyAction->setChecked(ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	enableActivityTagMinHoursDailyAction->setChecked(ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
 	enableStudentsMaxGapsPerDayAction->setChecked(ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
+	enableMaxGapsPerRealDayAction->setChecked(ENABLE_MAX_GAPS_PER_REAL_DAY);
 	showWarningForNotPerfectConstraintsAction->setChecked(SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
 
 	enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
 	showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
+
+	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
+	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
 
 	enableGroupActivitiesInInitialOrderAction->setChecked(ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	showWarningForGroupActivitiesInInitialOrderAction->setChecked(SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
@@ -789,10 +832,14 @@ FetMainForm::FetMainForm()
 	connect(enableActivityTagMaxHoursDailyAction, SIGNAL(toggled(bool)), this, SLOT(enableActivityTagMaxHoursDailyToggled(bool)));
 	connect(enableActivityTagMinHoursDailyAction, SIGNAL(toggled(bool)), this, SLOT(enableActivityTagMinHoursDailyToggled(bool)));
 	connect(enableStudentsMaxGapsPerDayAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMaxGapsPerDayToggled(bool)));
+	connect(enableMaxGapsPerRealDayAction, SIGNAL(toggled(bool)), this, SLOT(enableMaxGapsPerRealDayToggled(bool)));
 	connect(showWarningForNotPerfectConstraintsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForNotPerfectConstraintsToggled(bool)));
 
 	connect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
 	connect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
+
+	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
 
 	connect(enableGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(enableGroupActivitiesInInitialOrderToggled(bool)));
 	connect(showWarningForGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForGroupActivitiesInInitialOrderToggled(bool)));
@@ -802,6 +849,11 @@ FetMainForm::FetMainForm()
 	dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction->setIconVisibleInMenu(true);
 	dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction->setIconVisibleInMenu(true);
 
+	dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction->setIconVisibleInMenu(true);
+	dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction->setIconVisibleInMenu(true);
+	dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction->setIconVisibleInMenu(true);
+	dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction->setIconVisibleInMenu(true);
+
 	dataTimeConstraintsTeacherActivityTagMinHoursDailyAction->setIconVisibleInMenu(true);
 	dataTimeConstraintsTeachersActivityTagMinHoursDailyAction->setIconVisibleInMenu(true);
 	dataTimeConstraintsStudentsActivityTagMinHoursDailyAction->setIconVisibleInMenu(true);
@@ -810,12 +862,27 @@ FetMainForm::FetMainForm()
 	dataTimeConstraintsStudentsSetMaxGapsPerDayAction->setIconVisibleInMenu(true);
 	dataTimeConstraintsStudentsMaxGapsPerDayAction->setIconVisibleInMenu(true);
 
+	dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction->setIconVisibleInMenu(true);
+	dataTimeConstraintsStudentsMaxGapsPerRealDayAction->setIconVisibleInMenu(true);
+	dataTimeConstraintsTeachersMaxGapsPerRealDayAction->setIconVisibleInMenu(true);
+	dataTimeConstraintsTeacherMaxGapsPerRealDayAction->setIconVisibleInMenu(true);
+
+	dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction->setIconVisibleInMenu(true);
+	dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction->setIconVisibleInMenu(true);
+	dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction->setIconVisibleInMenu(true);
+	dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction->setIconVisibleInMenu(true);
+
 	groupActivitiesInInitialOrderAction->setIconVisibleInMenu(true);
 
 	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
+
+	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
+	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
+	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
+	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 
 	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
@@ -825,11 +892,1663 @@ FetMainForm::FetMainForm()
 	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 
+	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsTeachersMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsTeacherMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+
+	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+
 	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
+}
+
+void FetMainForm::retranslateMode()
+{
+	if(dataAvailable){
+		assert(gt.rules.initialized);
+		assert(currentMode==gt.rules.mode);
+		if(gt.rules.mode==OFFICIAL)
+			modeLabel.setText(tr("MODE: Official"));
+		else if(gt.rules.mode==MORNINGS_AFTERNOONS)
+			modeLabel.setText(tr("MODE: Mornings-Afternoons"));
+		else if(gt.rules.mode==BLOCK_PLANNING)
+			modeLabel.setText(tr("MODE: Block planning"));
+		else if(gt.rules.mode==TERMS)
+			modeLabel.setText(tr("MODE: Terms"));
+		else
+			assert(0);
+	}
+	else{
+		if(currentMode==OFFICIAL)
+			modeLabel.setText(tr("MODE: Official (no data)"));
+		else if(currentMode==MORNINGS_AFTERNOONS)
+			modeLabel.setText(tr("MODE: Mornings-Afternoons (no data)"));
+		else if(currentMode==BLOCK_PLANNING)
+			modeLabel.setText(tr("MODE: Block planning (no data)"));
+		else if(currentMode==TERMS)
+			modeLabel.setText(tr("MODE: Terms (no data)"));
+		else
+			assert(0);
+	}
+}
+
+void FetMainForm::updateMode(bool forceUpdate)
+{
+	if(!forceUpdate){
+		assert(gt.rules.initialized);
+		if(gt.rules.mode==currentMode){
+			if(!oldDataAvailable && dataAvailable){
+				if(gt.rules.mode==OFFICIAL){
+					if(dataAvailable)
+						modeLabel.setText(tr("MODE: Official"));
+					else
+						modeLabel.setText(tr("MODE: Official (no data)"));
+				}
+				else if(gt.rules.mode==MORNINGS_AFTERNOONS){
+					if(dataAvailable)
+						modeLabel.setText(tr("MODE: Mornings-Afternoons"));
+					else
+						modeLabel.setText(tr("MODE: Mornings-Afternoons (no data)"));
+				}
+				else if(gt.rules.mode==BLOCK_PLANNING){
+					if(dataAvailable)
+						modeLabel.setText(tr("MODE: Block planning"));
+					else
+						modeLabel.setText(tr("MODE: Block planning (no data)"));
+				}
+				else if(gt.rules.mode==TERMS){
+					if(dataAvailable)
+						modeLabel.setText(tr("MODE: Terms"));
+					else
+						modeLabel.setText(tr("MODE: Terms (no data)"));
+				}
+				else
+					assert(0);
+			}
+		
+			return;
+		}
+	}
+	else{
+		//gt.rules have the correct mode, read in fet.cpp, so we continue
+	}
+	
+	currentMode=gt.rules.mode;
+
+	if(gt.rules.mode==OFFICIAL){
+		if(dataAvailable)
+			modeLabel.setText(tr("MODE: Official"));
+		else
+			modeLabel.setText(tr("MODE: Official (no data)"));
+		
+		modeOfficialAction->setChecked(true);
+		modeMorningsAfternoonsAction->setChecked(false);
+		modeBlockPlanningAction->setChecked(false);
+		modeTermsAction->setChecked(false);
+	}
+	else if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		if(dataAvailable)
+			modeLabel.setText(tr("MODE: Mornings-Afternoons"));
+		else
+			modeLabel.setText(tr("MODE: Mornings-Afternoons (no data)"));
+
+		modeOfficialAction->setChecked(false);
+		modeMorningsAfternoonsAction->setChecked(true);
+		modeBlockPlanningAction->setChecked(false);
+		modeTermsAction->setChecked(false);
+	}
+	else if(gt.rules.mode==BLOCK_PLANNING){
+		if(dataAvailable)
+			modeLabel.setText(tr("MODE: Block planning"));
+		else
+			modeLabel.setText(tr("MODE: Block planning (no data)"));
+
+		modeOfficialAction->setChecked(false);
+		modeMorningsAfternoonsAction->setChecked(false);
+		modeBlockPlanningAction->setChecked(true);
+		modeTermsAction->setChecked(false);
+	}
+	else if(gt.rules.mode==TERMS){
+		if(dataAvailable)
+			modeLabel.setText(tr("MODE: Terms"));
+		else
+			modeLabel.setText(tr("MODE: Terms (no data)"));
+
+		modeOfficialAction->setChecked(false);
+		modeMorningsAfternoonsAction->setChecked(false);
+		modeBlockPlanningAction->setChecked(false);
+		modeTermsAction->setChecked(true);
+	}
+	else
+		assert(0);
+	
+	if(gt.rules.mode==TERMS)
+		dataTermsAction->setEnabled(true);
+	else
+		dataTermsAction->setEnabled(false);
+
+	//(Yes, the enable and warning for min hours per morning with allow empty mornings are always disabled.)
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		enableActivityTagMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Enable activity tag max hours daily", nullptr));
+	
+		enableActivityTagMinHoursDailyAction->setEnabled(true);
+
+		enableMaxGapsPerRealDayAction->setEnabled(false);
+
+		enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setEnabled(true);
+		showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setEnabled(true);
+
+		enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setEnabled(false);
+		showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setEnabled(false);
+	}
+	else{
+		enableActivityTagMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Enable activity tag max hours daily / per real day", nullptr));
+
+		enableActivityTagMinHoursDailyAction->setEnabled(false);
+
+		enableMaxGapsPerRealDayAction->setEnabled(true);
+
+		enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setEnabled(false);
+		showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setEnabled(false);
+
+		enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setEnabled(false);
+		showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setEnabled(false);
+	}
+
+	createMenusOfActionsForConstraints();
+}
+
+void FetMainForm::createActionsForConstraints()
+{
+	dataTimeConstraintsActivitiesPreferredTimeSlotsAction = new QAction(this);
+	dataTimeConstraintsActivitiesSameStartingTimeAction = new QAction(this);
+	dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction = new QAction(this);
+	dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction = new QAction(this);
+	dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction = new QAction(this);
+	dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction = new QAction(this);
+	dataTimeConstraintsTeacherNotAvailableTimesAction = new QAction(this);
+	dataTimeConstraintsBasicCompulsoryTimeAction = new QAction(this);
+	dataTimeConstraintsStudentsSetNotAvailableTimesAction = new QAction(this);
+	dataTimeConstraintsBreakTimesAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxHoursDailyAction = new QAction(this);
+	dataTimeConstraintsActivityPreferredStartingTimeAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxGapsPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxGapsPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction = new QAction(this);
+	dataTimeConstraintsActivitiesNotOverlappingAction = new QAction(this);
+	dataTimeConstraintsActivityTagsNotOverlappingAction = new QAction(this);
+	dataTimeConstraintsMinDaysBetweenActivitiesAction = new QAction(this);
+	dataSpaceConstraintsBasicCompulsorySpaceAction = new QAction(this);
+	dataSpaceConstraintsRoomNotAvailableTimesAction = new QAction(this);
+	dataSpaceConstraintsTeacherRoomNotAvailableTimesAction = new QAction(this);
+	dataSpaceConstraintsActivityPreferredRoomAction = new QAction(this);
+	dataTimeConstraintsActivitiesSameStartingHourAction = new QAction(this);
+	dataSpaceConstraintsActivityPreferredRoomsAction = new QAction(this);
+	dataSpaceConstraintsStudentsSetHomeRoomAction = new QAction(this);
+	dataSpaceConstraintsStudentsSetHomeRoomsAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxGapsPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxGapsPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxHoursDailyAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxHoursDailyAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxHoursDailyAction = new QAction(this);
+	dataTimeConstraintsStudentsMinHoursDailyAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMinHoursDailyAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction = new QAction(this);
+	dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction = new QAction(this);
+	dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction = new QAction(this);
+	dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction = new QAction(this);
+	dataTimeConstraintsTwoActivitiesConsecutiveAction = new QAction(this);
+	dataTimeConstraintsActivityEndsStudentsDayAction = new QAction(this);
+	dataTimeConstraintsActivityEndsTeachersDayAction = new QAction(this);
+	dataTimeConstraintsTeachersMinHoursDailyAction = new QAction(this);
+	dataTimeConstraintsTeacherMinHoursDailyAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxGapsPerDayAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxGapsPerDayAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxSpanPerDayAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxSpanPerDayAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxSpanPerDayAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxSpanPerDayAction = new QAction(this);
+	dataTimeConstraintsTeacherMinRestingHoursAction = new QAction(this);
+	dataTimeConstraintsTeachersMinRestingHoursAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMinRestingHoursAction = new QAction(this);
+	dataTimeConstraintsStudentsMinRestingHoursAction = new QAction(this);
+	dataSpaceConstraintsSubjectPreferredRoomAction = new QAction(this);
+	dataSpaceConstraintsSubjectPreferredRoomsAction = new QAction(this);
+	dataSpaceConstraintsSubjectActivityTagPreferredRoomAction = new QAction(this);
+	dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction = new QAction(this);
+	dataSpaceConstraintsTeacherHomeRoomAction = new QAction(this);
+	dataSpaceConstraintsTeacherHomeRoomsAction = new QAction(this);
+	dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction = new QAction(this);
+	dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction = new QAction(this);
+	dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction = new QAction(this);
+	dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction = new QAction(this);
+	dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction = new QAction(this);
+	dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction = new QAction(this);
+	dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction = new QAction(this);
+	dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction = new QAction(this);
+	dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction = new QAction(this);
+	dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction = new QAction(this);
+	dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction = new QAction(this);
+	dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction = new QAction(this);
+	dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction = new QAction(this);
+	dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction = new QAction(this);
+	dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction = new QAction(this);
+	dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction = new QAction(this);
+	dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction = new QAction(this);
+	dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction = new QAction(this);
+	dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction = new QAction(this);
+	dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction = new QAction(this);
+	dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction = new QAction(this);
+	dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction = new QAction(this);
+	dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction = new QAction(this);
+	dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction = new QAction(this);
+	dataTimeConstraintsActivitiesSameStartingDayAction = new QAction(this);
+	dataTimeConstraintsTwoActivitiesOrderedAction = new QAction(this);
+	dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxHoursContinuouslyAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxHoursContinuouslyAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxHoursContinuouslyAction = new QAction(this);
+	dataTimeConstraintsActivitiesPreferredStartingTimesAction = new QAction(this);
+	dataTimeConstraintsActivityPreferredTimeSlotsAction = new QAction(this);
+	dataTimeConstraintsActivityPreferredStartingTimesAction = new QAction(this);
+	dataTimeConstraintsMinGapsBetweenActivitiesAction = new QAction(this);
+	dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction = new QAction(this);
+	dataTimeConstraintsSubactivitiesPreferredStartingTimesAction = new QAction(this);
+	dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsActivitiesEndStudentsDayAction = new QAction(this);
+	dataTimeConstraintsActivitiesEndTeachersDayAction = new QAction(this);
+	dataTimeConstraintsTwoActivitiesGroupedAction = new QAction(this);
+	dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction = new QAction(this);
+	dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction = new QAction(this);
+	dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction = new QAction(this);
+	dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction = new QAction(this);
+	dataSpaceConstraintsActivityTagPreferredRoomAction = new QAction(this);
+	dataSpaceConstraintsActivityTagPreferredRoomsAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsThreeActivitiesGroupedAction = new QAction(this);
+	dataTimeConstraintsMaxDaysBetweenActivitiesAction = new QAction(this);
+	dataTimeConstraintsTeacherMinDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeachersMinDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction = new QAction(this);
+	dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction = new QAction(this);
+	dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction = new QAction(this);
+	dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction = new QAction(this);
+	dataTimeConstraintsTeacherActivityTagMinHoursDailyAction = new QAction(this);
+	dataTimeConstraintsTeachersActivityTagMinHoursDailyAction = new QAction(this);
+	dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction = new QAction(this);
+	dataTimeConstraintsStudentsActivityTagMinHoursDailyAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxGapsPerDayAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxGapsPerDayAction = new QAction(this);
+	dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction = new QAction(this);
+	dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxDaysPerWeekAction = new QAction(this);
+
+	//mornings-afternoons
+	dataTimeConstraintsTeacherMaxRealDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxMorningsPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction = new QAction(this);
+	dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecondHourAction = new QAction(this);
+	dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction = new QAction(this);
+	dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction = new QAction(this);
+	dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction = new QAction(this);
+	dataTimeConstraintsStudentsMinHoursPerMorningAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMinHoursPerMorningAction = new QAction(this);
+	dataTimeConstraintsTeachersMinHoursPerMorningAction = new QAction(this);
+	dataTimeConstraintsTeachersMinHoursDailyRealDaysAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction = new QAction(this);
+	dataTimeConstraintsTeacherMinHoursPerMorningAction = new QAction(this);
+	dataTimeConstraintsTeacherMinHoursDailyRealDaysAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxSpanPerRealDayAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxSpanPerRealDayAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxSpanPerRealDayAction = new QAction(this);
+	dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfternoonAction = new QAction(this);
+	dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction = new QAction(this);
+	dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction = new QAction(this);
+	dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxRealDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxMorningsPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeacherMinRealDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeachersMinRealDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeacherMinMorningsPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeachersMinMorningsPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeacherMinAfternoonsPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeachersMinAfternoonsPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxTwoActivityTagsPerDayFromN1N2N3Action = new QAction(this);
+	dataTimeConstraintsTeachersMaxTwoActivityTagsPerDayFromN1N2N3Action = new QAction(this);
+	dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction = new QAction(this);
+	dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction = new QAction(this);
+	dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxGapsPerRealDayAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxRealDaysPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxMorningsPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMinMorningsPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsMinMorningsPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction = new QAction(this);
+	dataTimeConstraintsStudentsMinAfternoonsPerWeekAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxGapsPerRealDayAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxGapsPerRealDayAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction = new QAction(this);
+	dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction = new QAction(this);
+	dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction = new QAction(this);
+	dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction = new QAction(this);
+	dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction = new QAction(this);
+	dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction = new QAction(this);
+	dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction = new QAction(this);
+	
+	//block-planning
+	dataTimeConstraintsMaxGapsBetweenActivitiesAction = new QAction(this);
+	dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction = new QAction(this);
+	
+	//terms
+	dataTimeConstraintsActivitiesMaxInATermAction = new QAction(this);
+	dataTimeConstraintsActivitiesOccupyMaxTermsAction = new QAction(this);
+
+	connect(dataTimeConstraintsActivitiesPreferredTimeSlotsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesPreferredTimeSlotsAction_triggered()));
+	connect(dataTimeConstraintsActivitiesSameStartingTimeAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesSameStartingTimeAction_triggered()));
+	connect(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered()));
+	connect(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction_triggered()));
+	connect(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_triggered()));
+	connect(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction_triggered()));
+	connect(dataTimeConstraintsTeacherNotAvailableTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherNotAvailableTimesAction_triggered()));
+	connect(dataTimeConstraintsBasicCompulsoryTimeAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsBasicCompulsoryTimeAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetNotAvailableTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetNotAvailableTimesAction_triggered()));
+	connect(dataTimeConstraintsBreakTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsBreakTimesAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsActivityPreferredStartingTimeAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityPreferredStartingTimeAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxGapsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxGapsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction_triggered()));
+	connect(dataTimeConstraintsActivitiesNotOverlappingAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesNotOverlappingAction_triggered()));
+	connect(dataTimeConstraintsActivityTagsNotOverlappingAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityTagsNotOverlappingAction_triggered()));
+	connect(dataTimeConstraintsMinDaysBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered()));
+	connect(dataSpaceConstraintsBasicCompulsorySpaceAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsBasicCompulsorySpaceAction_triggered()));
+	connect(dataSpaceConstraintsRoomNotAvailableTimesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsRoomNotAvailableTimesAction_triggered()));
+	connect(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction_triggered()));
+	connect(dataSpaceConstraintsActivityPreferredRoomAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsActivityPreferredRoomAction_triggered()));
+	connect(dataTimeConstraintsActivitiesSameStartingHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesSameStartingHourAction_triggered()));
+	connect(dataSpaceConstraintsActivityPreferredRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsActivityPreferredRoomsAction_triggered()));
+	connect(dataSpaceConstraintsStudentsSetHomeRoomAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetHomeRoomAction_triggered()));
+	connect(dataSpaceConstraintsStudentsSetHomeRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetHomeRoomsAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxGapsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxGapsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxGapsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxGapsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsStudentsMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()));
+	connect(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()));
+	connect(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()));
+	connect(dataTimeConstraintsTwoActivitiesConsecutiveAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoActivitiesConsecutiveAction_triggered()));
+	connect(dataTimeConstraintsActivityEndsStudentsDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityEndsStudentsDayAction_triggered()));
+	connect(dataTimeConstraintsActivityEndsTeachersDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityEndsTeachersDayAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsTeacherMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxGapsPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxGapsPerDayAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxGapsPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxGapsPerDayAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxSpanPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxSpanPerDayAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxSpanPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxSpanPerDayAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxSpanPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxSpanPerDayAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxSpanPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxSpanPerDayAction_triggered()));
+	connect(dataTimeConstraintsTeacherMinRestingHoursAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinRestingHoursAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinRestingHoursAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinRestingHoursAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMinRestingHoursAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinRestingHoursAction_triggered()));
+	connect(dataTimeConstraintsStudentsMinRestingHoursAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinRestingHoursAction_triggered()));
+	connect(dataSpaceConstraintsSubjectPreferredRoomAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsSubjectPreferredRoomAction_triggered()));
+	connect(dataSpaceConstraintsSubjectPreferredRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsSubjectPreferredRoomsAction_triggered()));
+	connect(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_triggered()));
+	connect(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_triggered()));
+	connect(dataSpaceConstraintsTeacherHomeRoomAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherHomeRoomAction_triggered()));
+	connect(dataSpaceConstraintsTeacherHomeRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherHomeRoomsAction_triggered()));
+	connect(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction_triggered()));
+	connect(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_triggered()));
+	connect(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction_triggered()));
+	connect(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction_triggered()));
+	connect(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction_triggered()));
+	connect(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction_triggered()));
+	connect(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_triggered()));
+	connect(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_triggered()));
+	connect(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_triggered()));
+	connect(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction_triggered()));
+	connect(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction_triggered()));
+	connect(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction_triggered()));
+	connect(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction_triggered()));
+	connect(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction_triggered()));
+	connect(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction_triggered()));
+	connect(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction_triggered()));
+	connect(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction_triggered()));
+	connect(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction_triggered()));
+	connect(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction_triggered()));
+	connect(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction_triggered()));
+	connect(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction_triggered()));
+	connect(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction_triggered()));
+	connect(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction_triggered()));
+	connect(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction_triggered()));
+	connect(dataTimeConstraintsActivitiesSameStartingDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesSameStartingDayAction_triggered()));
+	connect(dataTimeConstraintsTwoActivitiesOrderedAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoActivitiesOrderedAction_triggered()));
+	connect(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxHoursContinuouslyAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxHoursContinuouslyAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxHoursContinuouslyAction_triggered()));
+	connect(dataTimeConstraintsActivitiesPreferredStartingTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesPreferredStartingTimesAction_triggered()));
+	connect(dataTimeConstraintsActivityPreferredTimeSlotsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityPreferredTimeSlotsAction_triggered()));
+	connect(dataTimeConstraintsActivityPreferredStartingTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityPreferredStartingTimesAction_triggered()));
+	connect(dataTimeConstraintsMinGapsBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered()));
+	connect(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_triggered()));
+	connect(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction_triggered()));
+	connect(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsActivitiesEndStudentsDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesEndStudentsDayAction_triggered()));
+	connect(dataTimeConstraintsActivitiesEndTeachersDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesEndTeachersDayAction_triggered()));
+	connect(dataTimeConstraintsTwoActivitiesGroupedAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoActivitiesGroupedAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction_triggered()));
+	connect(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction_triggered()));
+	connect(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_triggered()));
+	connect(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_triggered()));
+	connect(dataSpaceConstraintsActivityTagPreferredRoomAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsActivityTagPreferredRoomAction_triggered()));
+	connect(dataSpaceConstraintsActivityTagPreferredRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsActivityTagPreferredRoomsAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsThreeActivitiesGroupedAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsThreeActivitiesGroupedAction_triggered()));
+	connect(dataTimeConstraintsMaxDaysBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered()));
+	connect(dataTimeConstraintsTeacherMinDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxGapsPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxGapsPerDayAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxGapsPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxGapsPerDayAction_triggered()));
+	connect(dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction_triggered()));
+	connect(dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxDaysPerWeekAction_triggered()));
+
+	//mornings-afternoons
+	connect(dataTimeConstraintsTeacherMaxRealDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxRealDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxMorningsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction_triggered()));
+	connect(dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()));
+	connect(dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()));
+	connect(dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction_triggered()));
+	connect(dataTimeConstraintsStudentsMinHoursPerMorningAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinHoursPerMorningAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMinHoursPerMorningAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinHoursPerMorningAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinHoursPerMorningAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinHoursPerMorningAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinHoursDailyRealDaysAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction_triggered()));
+	connect(dataTimeConstraintsTeacherMinHoursPerMorningAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinHoursPerMorningAction_triggered()));
+	connect(dataTimeConstraintsTeacherMinHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinHoursDailyRealDaysAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxSpanPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxSpanPerRealDayAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxSpanPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxSpanPerRealDayAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxSpanPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxSpanPerRealDayAction_triggered()));
+	connect(dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfternoonAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction_triggered()));
+	connect(dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction_triggered()));
+	connect(dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxRealDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxRealDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxMorningsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeacherMinRealDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinRealDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinRealDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinRealDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeacherMinMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinMorningsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinMorningsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeacherMinAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinAfternoonsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinAfternoonsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxTwoActivityTagsPerDayFromN1N2N3Action, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered()));
+	connect(dataTimeConstraintsTeachersMaxTwoActivityTagsPerDayFromN1N2N3Action, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered()));
+	connect(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction_triggered()));
+	connect(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxGapsPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxGapsPerRealDayAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxRealDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxRealDaysPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxMorningsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMinMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinMorningsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsMinMorningsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinMorningsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsStudentsMinAfternoonsPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinAfternoonsPerWeekAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxGapsPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxGapsPerRealDayAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxGapsPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxGapsPerRealDayAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction_triggered()));
+	connect(dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction_triggered()));
+	connect(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction_triggered()));
+	connect(dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction_triggered()));
+	connect(dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction_triggered()));
+	connect(dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction_triggered()));
+	connect(dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction_triggered()));
+
+	//block-planning
+	connect(dataTimeConstraintsMaxGapsBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMaxGapsBetweenActivitiesAction_triggered()));
+	connect(dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction_triggered()));
+
+	//terms
+	connect(dataTimeConstraintsActivitiesMaxInATermAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesMaxInATermAction_triggered()));
+	connect(dataTimeConstraintsActivitiesOccupyMaxTermsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesOccupyMaxTermsAction_triggered()));
+
+	retranslateConstraints();
+}
+
+void FetMainForm::retranslateConstraints()
+{
+	dataTimeConstraintsActivitiesPreferredTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has a set of preferred time slots", nullptr));
+	dataTimeConstraintsActivitiesSameStartingTimeAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has same starting time (day+hour)", nullptr));
+	dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities occupies max time slots from selection", nullptr));
+	dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities occupies min time slots from selection", nullptr));
+	dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "Max simultaneous activities from a set in selected time slots", nullptr));
+	dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "Min simultaneous activities from a set in selected time slots", nullptr));
+	dataTimeConstraintsTeacherNotAvailableTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher's not available times", nullptr));
+	dataTimeConstraintsBasicCompulsoryTimeAction->setText(QCoreApplication::translate("FetMainForm_template", "Basic compulsory time constraints", nullptr));
+	dataTimeConstraintsStudentsSetNotAvailableTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "A students set's not available times", nullptr));
+	dataTimeConstraintsBreakTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "Break times", nullptr));
+	dataTimeConstraintsTeacherMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max days per week for a teacher", nullptr));
+	dataTimeConstraintsTeachersMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily for all teachers", nullptr));
+	dataTimeConstraintsActivityPreferredStartingTimeAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity has a preferred starting time", nullptr));
+	dataTimeConstraintsStudentsSetMaxGapsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxGapsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for all students", nullptr));
+	dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction->setText(QCoreApplication::translate("FetMainForm_template", "All students begin early (max beginnings at second hour)", nullptr));
+	dataTimeConstraintsActivitiesNotOverlappingAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities are not overlapping", nullptr));
+	dataTimeConstraintsActivityTagsNotOverlappingAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activity tags are not overlapping", nullptr));
+	dataTimeConstraintsMinDaysBetweenActivitiesAction->setText(QCoreApplication::translate("FetMainForm_template", "Min days between a set of activities", nullptr));
+	dataSpaceConstraintsBasicCompulsorySpaceAction->setText(QCoreApplication::translate("FetMainForm_template", "Basic compulsory space constraints", nullptr));
+	dataSpaceConstraintsRoomNotAvailableTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "A room's not available times", nullptr));
+	dataSpaceConstraintsTeacherRoomNotAvailableTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher+a room's not available times", nullptr));
+	dataSpaceConstraintsActivityPreferredRoomAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity has a preferred room", nullptr));
+	dataTimeConstraintsActivitiesSameStartingHourAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has same starting hour (any days)", nullptr));
+	dataSpaceConstraintsActivityPreferredRoomsAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity has a set of preferred rooms", nullptr));
+	dataSpaceConstraintsStudentsSetHomeRoomAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of students has a home room", nullptr));
+	dataSpaceConstraintsStudentsSetHomeRoomsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of students has a set of home rooms", nullptr));
+	dataTimeConstraintsTeachersMaxGapsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for all teachers", nullptr));
+	dataTimeConstraintsTeacherMaxGapsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for a teacher", nullptr));
+	dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction->setText(QCoreApplication::translate("FetMainForm_template", "A students set begins early (max beginnings at second hour)", nullptr));
+	dataTimeConstraintsTeacherMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily for a teacher", nullptr));
+	dataTimeConstraintsStudentsSetMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily for all students", nullptr));
+	dataTimeConstraintsStudentsMinHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily for all students", nullptr));
+	dataTimeConstraintsStudentsSetMinHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily for a students set", nullptr));
+	dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between an ordered pair of activity tags for a students set", nullptr));
+	dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between an ordered pair of activity tags for all students", nullptr));
+	dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between an ordered pair of activity tags for a teacher", nullptr));
+	dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between an ordered pair of activity tags for all teachers", nullptr));
+	dataTimeConstraintsTwoActivitiesConsecutiveAction->setText(QCoreApplication::translate("FetMainForm_template", "Two activities are consecutive", nullptr));
+	dataTimeConstraintsActivityEndsStudentsDayAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity ends students day", nullptr));
+	dataTimeConstraintsActivityEndsTeachersDayAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity ends teachers day", nullptr));
+	dataTimeConstraintsTeachersMinHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily for all teachers", nullptr));
+	dataTimeConstraintsTeacherMinHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily for a teacher", nullptr));
+	dataTimeConstraintsTeachersMaxGapsPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per day for all teachers", nullptr));
+	dataTimeConstraintsTeacherMaxGapsPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per day for a teacher", nullptr));
+	dataTimeConstraintsTeacherMaxSpanPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max span per day for a teacher", nullptr));
+	dataTimeConstraintsTeachersMaxSpanPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max span per day for all teachers", nullptr));
+	dataTimeConstraintsStudentsSetMaxSpanPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max span per day for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxSpanPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max span per day for all students", nullptr));
+	dataTimeConstraintsTeacherMinRestingHoursAction->setText(QCoreApplication::translate("FetMainForm_template", "Min resting hours for a teacher", nullptr));
+	dataTimeConstraintsTeachersMinRestingHoursAction->setText(QCoreApplication::translate("FetMainForm_template", "Min resting hours for all teachers", nullptr));
+	dataTimeConstraintsStudentsSetMinRestingHoursAction->setText(QCoreApplication::translate("FetMainForm_template", "Min resting hours for a students set", nullptr));
+	dataTimeConstraintsStudentsMinRestingHoursAction->setText(QCoreApplication::translate("FetMainForm_template", "Min resting hours for all students", nullptr));
+	dataSpaceConstraintsSubjectPreferredRoomAction->setText(QCoreApplication::translate("FetMainForm_template", "A subject has a preferred room", nullptr));
+	dataSpaceConstraintsSubjectPreferredRoomsAction->setText(QCoreApplication::translate("FetMainForm_template", "A subject has a set of preferred rooms", nullptr));
+	dataSpaceConstraintsSubjectActivityTagPreferredRoomAction->setText(QCoreApplication::translate("FetMainForm_template", "A subject+an activity tag have a preferred room", nullptr));
+	dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction->setText(QCoreApplication::translate("FetMainForm_template", "A subject+an activity tag have a set of preferred rooms", nullptr));
+	dataSpaceConstraintsTeacherHomeRoomAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher has a home room", nullptr));
+	dataSpaceConstraintsTeacherHomeRoomsAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher has a set of home rooms", nullptr));
+	dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per day for a students set", nullptr));
+	dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per day for all students", nullptr));
+	dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per week for a students set", nullptr));
+	dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per week for all students", nullptr));
+	dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between building changes for a students set", nullptr));
+	dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between building changes for all students", nullptr));
+	dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per day for a teacher", nullptr));
+	dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per day for all teachers", nullptr));
+	dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per week for a teacher", nullptr));
+	dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max building changes per week for all teachers", nullptr));
+	dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between building changes for a teacher", nullptr));
+	dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between building changes for all teachers", nullptr));
+	dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per day for a students set", nullptr));
+	dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per day for all students", nullptr));
+	dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per week for a students set", nullptr));
+	dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per week for all students", nullptr));
+	dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between room changes for a students set", nullptr));
+	dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between room changes for all students", nullptr));
+	dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per day for a teacher", nullptr));
+	dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per day for all teachers", nullptr));
+	dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per week for a teacher", nullptr));
+	dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per week for all teachers", nullptr));
+	dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between room changes for a teacher", nullptr));
+	dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between room changes for all teachers", nullptr));
+	dataTimeConstraintsActivitiesSameStartingDayAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has same starting day (any hours)", nullptr));
+	dataTimeConstraintsTwoActivitiesOrderedAction->setText(QCoreApplication::translate("FetMainForm_template", "Two activities are ordered", nullptr));
+	dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Two activities are ordered if they are on the same day", nullptr));
+	dataTimeConstraintsTeachersMaxHoursContinuouslyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours continuously for all teachers", nullptr));
+	dataTimeConstraintsTeacherMaxHoursContinuouslyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours continuously for a teacher", nullptr));
+	dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours continuously for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxHoursContinuouslyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours continuously for all students", nullptr));
+	dataTimeConstraintsActivitiesPreferredStartingTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has a set of preferred starting times", nullptr));
+	dataTimeConstraintsActivityPreferredTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity has a set of preferred time slots", nullptr));
+	dataTimeConstraintsActivityPreferredStartingTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity has a set of preferred starting times", nullptr));
+	dataTimeConstraintsMinGapsBetweenActivitiesAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps (hours) between a set of activities", nullptr));
+	dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of subactivities has a set of preferred time slots", nullptr));
+	dataTimeConstraintsSubactivitiesPreferredStartingTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of subactivities has a set of preferred starting times", nullptr));
+	dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher works in an hourly interval max days per week", nullptr));
+	dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "All teachers work in an hourly interval max days per week", nullptr));
+	dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "A students set works in an hourly interval max days per week", nullptr));
+	dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "All students work in an hourly interval max days per week", nullptr));
+	dataTimeConstraintsActivitiesEndStudentsDayAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities end students day", nullptr));
+	dataTimeConstraintsActivitiesEndTeachersDayAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities end teachers day", nullptr));
+	dataTimeConstraintsTwoActivitiesGroupedAction->setText(QCoreApplication::translate("FetMainForm_template", "Two activities are grouped", nullptr));
+	dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours continuously with an activity tag for a students set", nullptr));
+	dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours continuously with an activity tag for all students", nullptr));
+	dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours continuously with an activity tag for a teacher", nullptr));
+	dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours continuously with an activity tag for all teachers", nullptr));
+	dataSpaceConstraintsActivityTagPreferredRoomAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity tag has a preferred room", nullptr));
+	dataSpaceConstraintsActivityTagPreferredRoomsAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity tag has a set of preferred rooms", nullptr));
+	dataTimeConstraintsTeachersMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max days per week for all teachers", nullptr));
+	dataTimeConstraintsThreeActivitiesGroupedAction->setText(QCoreApplication::translate("FetMainForm_template", "Three activities are grouped", nullptr));
+	dataTimeConstraintsMaxDaysBetweenActivitiesAction->setText(QCoreApplication::translate("FetMainForm_template", "Max days between a set of activities", nullptr));
+	dataTimeConstraintsTeacherMinDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min days per week for a teacher", nullptr));
+	dataTimeConstraintsTeachersMinDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min days per week for all teachers", nullptr));
+	dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily with an activity tag for a teacher", nullptr));
+	dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily with an activity tag for all teachers", nullptr));
+	dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily with an activity tag for a students set", nullptr));
+	dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily with an activity tag for all students", nullptr));
+	dataTimeConstraintsTeacherActivityTagMinHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily with an activity tag for a teacher", nullptr));
+	dataTimeConstraintsTeachersActivityTagMinHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily with an activity tag for all teachers", nullptr));
+	dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily with an activity tag for a students set", nullptr));
+	dataTimeConstraintsStudentsActivityTagMinHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily with an activity tag for all students", nullptr));
+	dataTimeConstraintsStudentsSetMaxGapsPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per day for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxGapsPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per day for all students", nullptr));
+	dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities occupies max different rooms", nullptr));
+	dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities are in the same room if they are consecutive", nullptr));
+	dataTimeConstraintsStudentsSetMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max days per week for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max days per week for all students", nullptr));
+
+	//mornings-afternoons
+	dataTimeConstraintsTeacherMaxRealDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max real days per week for a teacher", nullptr));
+	dataTimeConstraintsTeacherMaxMorningsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max mornings per week for a teacher", nullptr));
+	dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher works max two consecutive mornings", nullptr));
+	dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction->setText(QCoreApplication::translate("FetMainForm_template", "All teachers work max two consecutive mornings", nullptr));
+	dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher works max two consecutive afternoons", nullptr));
+	dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction->setText(QCoreApplication::translate("FetMainForm_template", "All teachers work max two consecutive afternoons", nullptr));
+	dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max afternoons per week for a teacher", nullptr));
+	dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day for all teachers", nullptr));
+	dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecondHourAction->setText(QCoreApplication::translate("FetMainForm_template", "All teachers begin afternoons early (max beginnings at second hour)", nullptr));
+	dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher begins afternoons early (max beginnings at second hour)", nullptr));
+	dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction->setText(QCoreApplication::translate("FetMainForm_template", "All students begin afternoons early (max beginnings at second hour)", nullptr));
+	dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction->setText(QCoreApplication::translate("FetMainForm_template", "A students set begins afternoons early (max beginnings at second hour)", nullptr));
+	dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day for a teacher", nullptr));
+	dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day for all students", nullptr));
+	dataTimeConstraintsStudentsMinHoursPerMorningAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours per morning for all students", nullptr));
+	dataTimeConstraintsStudentsSetMinHoursPerMorningAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours per morning for a students set", nullptr));
+	dataTimeConstraintsTeachersMinHoursPerMorningAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours per morning for all teachers", nullptr));
+	dataTimeConstraintsTeachersMinHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily per real day for all teachers", nullptr));
+	dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours per all afternoons for a teacher", nullptr));
+	dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours per all afternoons for all teachers", nullptr));
+	dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours per all afternoons for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours per all afternoons for all students", nullptr));
+	dataTimeConstraintsTeacherMinHoursPerMorningAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours per morning for a teacher", nullptr));
+	dataTimeConstraintsTeacherMinHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily per real day for a teacher", nullptr));
+	dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction->setText(QCoreApplication::translate("FetMainForm_template", "Max zero gaps per afternoon for all teachers", nullptr));
+	dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction->setText(QCoreApplication::translate("FetMainForm_template", "Max zero gaps per afternoon for a teacher", nullptr));
+	dataTimeConstraintsTeacherMaxSpanPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max span per real day for a teacher", nullptr));
+	dataTimeConstraintsTeachersMaxSpanPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max span per real day for all teachers", nullptr));
+	dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max span per real day for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxSpanPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max span per real day for all students", nullptr));
+	dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfternoonAction->setText(QCoreApplication::translate("FetMainForm_template", "Min resting hours between morning and afternoon for a teacher", nullptr));
+	dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction->setText(QCoreApplication::translate("FetMainForm_template", "Min resting hours between morning and afternoon for all teachers", nullptr));
+	dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction->setText(QCoreApplication::translate("FetMainForm_template", "Min resting hours between morning and afternoon for a students set", nullptr));
+	dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction->setText(QCoreApplication::translate("FetMainForm_template", "Min resting hours between morning and afternoon for all students", nullptr));
+	dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher works in an hourly morning interval max days per week", nullptr));
+	dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "All teachers work in an hourly morning interval max days per week", nullptr));
+	dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher works in an hourly afternoon interval max days per week", nullptr));
+	dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "All teachers work in an hourly afternoon interval max days per week", nullptr));
+	dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "A students set works in an hourly morning interval max days per week", nullptr));
+	dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "All students work in an hourly morning interval max days per week", nullptr));
+	dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "A students set works in an hourly afternoon interval max days per week", nullptr));
+	dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "All students work in an hourly afternoon interval max days per week", nullptr));
+	dataTimeConstraintsTeachersMaxRealDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max real days per week for all teachers", nullptr));
+	dataTimeConstraintsTeachersMaxMorningsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max mornings per week for all teachers", nullptr));
+	dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max afternoons per week for all teachers", nullptr));
+	dataTimeConstraintsTeacherMinRealDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min real days per week for a teacher", nullptr));
+	dataTimeConstraintsTeachersMinRealDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min real days per week for all teachers", nullptr));
+	dataTimeConstraintsTeacherMinMorningsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min mornings per week for a teacher", nullptr));
+	dataTimeConstraintsTeachersMinMorningsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min mornings per week for all teachers", nullptr));
+	dataTimeConstraintsTeacherMinAfternoonsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min afternoons per week for a teacher", nullptr));
+	dataTimeConstraintsTeachersMinAfternoonsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min afternoons per week for all teachers", nullptr));
+	dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day with an activity tag for a teacher", nullptr));
+	dataTimeConstraintsTeacherMaxTwoActivityTagsPerDayFromN1N2N3Action->setText(QCoreApplication::translate("FetMainForm_template", "Max two activity tags from N1, N2, N3 per day for a teacher", nullptr));
+	dataTimeConstraintsTeachersMaxTwoActivityTagsPerDayFromN1N2N3Action->setText(QCoreApplication::translate("FetMainForm_template", "Max two activity tags from N1, N2, N3 per day for all teachers", nullptr));
+	dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day with an activity tag for all teachers", nullptr));
+	dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day with an activity tag for a students set", nullptr));
+	dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours daily per real day with an activity tag for all students", nullptr));
+	dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per real day for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxGapsPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per real day for all students", nullptr));
+	dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max real days per week for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxRealDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max real days per week for all students", nullptr));
+	dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max mornings per week for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxMorningsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max mornings per week for all students", nullptr));
+	dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max afternoons per week for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max afternoons per week for all students", nullptr));
+	dataTimeConstraintsStudentsSetMinMorningsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min mornings per week for a students set", nullptr));
+	dataTimeConstraintsStudentsMinMorningsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min mornings per week for all students", nullptr));
+	dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min afternoons per week for a students set", nullptr));
+	dataTimeConstraintsStudentsMinAfternoonsPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min afternoons per week for all students", nullptr));
+	dataTimeConstraintsTeacherMaxGapsPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per real day for a teacher", nullptr));
+	dataTimeConstraintsTeachersMaxGapsPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per real day for all teachers", nullptr));
+	dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for real days for a students set", nullptr));
+	dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for real days for all students", nullptr));
+	dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for real days for a teacher", nullptr));
+	dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per week for real days for all teachers", nullptr));
+	dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per real day for a students set", nullptr));
+	dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per real day for all students", nullptr));
+	dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per real day for a teacher", nullptr));
+	dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per real day for all teachers", nullptr));
+
+	//block-planning
+	dataTimeConstraintsMaxGapsBetweenActivitiesAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps (hours) between a set of activities", nullptr));
+	dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction->setText(QCoreApplication::translate("FetMainForm_template", "Max total activities from a set in selected time slots", nullptr));
+	
+	//terms
+	dataTimeConstraintsActivitiesMaxInATermAction->setText(QCoreApplication::translate("FetMainForm_template", "Max activities from a set in a term", nullptr));
+	dataTimeConstraintsActivitiesOccupyMaxTermsAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities occupies max terms", nullptr));
+}
+
+void FetMainForm::createMenusOfActionsForConstraints()
+{
+	menuMisc_time_constraints->clear();
+	menuA_teacher_time_constraints->clear();
+	menuAll_teachers_time_constraints->clear();
+	menuA_students_set_time_constraints->clear();
+	menuAll_students_time_constraints->clear();
+	menuActivities_preferred_times_time_constraints->clear();
+	menuActivities_others_time_constraints->clear();
+	menuMisc_space_constraints->clear();
+	menuRooms_space_constraints->clear();
+	menuActivities_space_constraints->clear();
+	menuSubjects_space_constraints->clear();
+	menuSubjects_and_activity_tags_space_constraints->clear();
+	menuStudents_space_constraints->clear();
+	menuTeachers_space_constraints->clear();
+	menuActivity_tags_space_constraints->clear();
+	
+	if(gt.rules.mode==OFFICIAL){
+		menuMisc_time_constraints->addAction(dataTimeConstraintsBasicCompulsoryTimeAction);
+		menuMisc_time_constraints->addAction(dataTimeConstraintsBreakTimesAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherNotAvailableTimesAction);
+		menuA_teacher_time_constraints->addSeparator();
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerDayAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerDayAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursContinuouslyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinRestingHoursAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerDayAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerDayAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursContinuouslyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinRestingHoursAction);
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetNotAvailableTimesAction);
+		menuA_students_set_time_constraints->addSeparator();
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxDaysPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxGapsPerDayAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxSpanPerDayAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinRestingHoursAction);
+
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxDaysPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxGapsPerDayAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxGapsPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxSpanPerDayAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursContinuouslyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinRestingHoursAction);
+
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivityPreferredStartingTimeAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivityPreferredStartingTimesAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivityPreferredTimeSlotsAction);
+		menuActivities_preferred_times_time_constraints->addSeparator();
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivitiesPreferredStartingTimesAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivitiesPreferredTimeSlotsAction);
+		menuActivities_preferred_times_time_constraints->addSeparator();
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction);
+
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesGroupedAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsThreeActivitiesGroupedAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesNotOverlappingAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivityTagsNotOverlappingAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMinGapsBetweenActivitiesAction);
+
+		menuMisc_space_constraints->addAction(dataSpaceConstraintsBasicCompulsorySpaceAction);
+
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
+
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
+		menuActivities_space_constraints->addSeparator();
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction);
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction);
+
+		menuSubjects_space_constraints->addAction(dataSpaceConstraintsSubjectPreferredRoomAction);
+		menuSubjects_space_constraints->addAction(dataSpaceConstraintsSubjectPreferredRoomsAction);
+
+		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction);
+		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction);
+
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomsAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction);
+
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomsAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction);
+
+		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomAction);
+		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomsAction);
+	}
+	else if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		menuMisc_time_constraints->addAction(dataTimeConstraintsBasicCompulsoryTimeAction);
+		menuMisc_time_constraints->addAction(dataTimeConstraintsBreakTimesAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherNotAvailableTimesAction);
+		menuA_teacher_time_constraints->addSeparator();
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxRealDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxMorningsPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinRealDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinMorningsPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinAfternoonsPerWeekAction);
+		
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerDayAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerWeekAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerRealDayAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction);
+		
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerRealDayAction);
+		
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxTwoActivityTagsPerDayFromN1N2N3Action);
+		
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursDailyRealDaysAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursPerMorningAction);
+		
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursContinuouslyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfternoonAction);
+
+		//all teachers
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxRealDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxMorningsPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinRealDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinMorningsPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinAfternoonsPerWeekAction);
+		
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerDayAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerWeekAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerRealDayAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction);
+		
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecondHourAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerRealDayAction);
+		
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxTwoActivityTagsPerDayFromN1N2N3Action);
+		
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursDailyRealDaysAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursPerMorningAction);
+		
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursContinuouslyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction);
+		/////////
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetNotAvailableTimesAction);
+		menuA_students_set_time_constraints->addSeparator();
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxDaysPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction);
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinMorningsPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction);
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxGapsPerDayAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction);
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction);
+		
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction);
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction);
+		
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinHoursPerMorningAction);
+		
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction);
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction);
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekAction);
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction);
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction);
+		
+		///////
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxDaysPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxRealDaysPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxMorningsPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction);
+
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinMorningsPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinAfternoonsPerWeekAction);
+
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxGapsPerDayAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxGapsPerWeekAction);
+
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxGapsPerRealDayAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction);
+		
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction);
+
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxSpanPerRealDayAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction);
+		
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinHoursPerMorningAction);
+		
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursContinuouslyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction);
+
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction);
+
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekAction);
+
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction);
+
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction);
+		///////
+
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivityPreferredStartingTimeAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivityPreferredStartingTimesAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivityPreferredTimeSlotsAction);
+		menuActivities_preferred_times_time_constraints->addSeparator();
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivitiesPreferredStartingTimesAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivitiesPreferredTimeSlotsAction);
+		menuActivities_preferred_times_time_constraints->addSeparator();
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction);
+
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesGroupedAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsThreeActivitiesGroupedAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesNotOverlappingAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivityTagsNotOverlappingAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMinGapsBetweenActivitiesAction);
+
+		menuMisc_space_constraints->addAction(dataSpaceConstraintsBasicCompulsorySpaceAction);
+
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
+
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
+		menuActivities_space_constraints->addSeparator();
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction);
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction);
+
+		menuSubjects_space_constraints->addAction(dataSpaceConstraintsSubjectPreferredRoomAction);
+		menuSubjects_space_constraints->addAction(dataSpaceConstraintsSubjectPreferredRoomsAction);
+
+		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction);
+		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction);
+
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomsAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction);
+
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomsAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction);
+
+		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomAction);
+		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomsAction);
+	}
+	else if(gt.rules.mode==BLOCK_PLANNING){
+		menuMisc_time_constraints->addAction(dataTimeConstraintsBasicCompulsoryTimeAction);
+		menuMisc_time_constraints->addAction(dataTimeConstraintsBreakTimesAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherNotAvailableTimesAction);
+		menuA_teacher_time_constraints->addSeparator();
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerDayAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerDayAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursContinuouslyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinRestingHoursAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerDayAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerDayAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursContinuouslyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinRestingHoursAction);
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetNotAvailableTimesAction);
+		menuA_students_set_time_constraints->addSeparator();
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxDaysPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxGapsPerDayAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxSpanPerDayAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinRestingHoursAction);
+
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxDaysPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxGapsPerDayAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxGapsPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxSpanPerDayAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursContinuouslyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinRestingHoursAction);
+
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivityPreferredStartingTimeAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivityPreferredStartingTimesAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivityPreferredTimeSlotsAction);
+		menuActivities_preferred_times_time_constraints->addSeparator();
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivitiesPreferredStartingTimesAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivitiesPreferredTimeSlotsAction);
+		menuActivities_preferred_times_time_constraints->addSeparator();
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction);
+
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesGroupedAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsThreeActivitiesGroupedAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesNotOverlappingAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivityTagsNotOverlappingAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMinGapsBetweenActivitiesAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMaxGapsBetweenActivitiesAction);
+
+		menuMisc_space_constraints->addAction(dataSpaceConstraintsBasicCompulsorySpaceAction);
+
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
+
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
+		menuActivities_space_constraints->addSeparator();
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction);
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction);
+
+		menuSubjects_space_constraints->addAction(dataSpaceConstraintsSubjectPreferredRoomAction);
+		menuSubjects_space_constraints->addAction(dataSpaceConstraintsSubjectPreferredRoomsAction);
+
+		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction);
+		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction);
+
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomsAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction);
+
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomsAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction);
+
+		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomAction);
+		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomsAction);
+	}
+	else if(gt.rules.mode==TERMS){
+		menuMisc_time_constraints->addAction(dataTimeConstraintsBasicCompulsoryTimeAction);
+		menuMisc_time_constraints->addAction(dataTimeConstraintsBreakTimesAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherNotAvailableTimesAction);
+		menuA_teacher_time_constraints->addSeparator();
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerDayAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxGapsPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerDayAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursContinuouslyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinRestingHoursAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerDayAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxGapsPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerDayAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursContinuouslyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinRestingHoursAction);
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetNotAvailableTimesAction);
+		menuA_students_set_time_constraints->addSeparator();
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxDaysPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxGapsPerDayAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxGapsPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxSpanPerDayAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinRestingHoursAction);
+
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxDaysPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxGapsPerDayAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxGapsPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxSpanPerDayAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursContinuouslyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinRestingHoursAction);
+
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivityPreferredStartingTimeAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivityPreferredStartingTimesAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivityPreferredTimeSlotsAction);
+		menuActivities_preferred_times_time_constraints->addSeparator();
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivitiesPreferredStartingTimesAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsActivitiesPreferredTimeSlotsAction);
+		menuActivities_preferred_times_time_constraints->addSeparator();
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredStartingTimesAction);
+		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction);
+
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsTwoActivitiesGroupedAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsThreeActivitiesGroupedAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesNotOverlappingAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivityTagsNotOverlappingAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction);
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsMinGapsBetweenActivitiesAction);
+
+		menuActivities_others_time_constraints->addSeparator();
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesMaxInATermAction);
+		menuActivities_others_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTermsAction);
+
+		menuMisc_space_constraints->addAction(dataSpaceConstraintsBasicCompulsorySpaceAction);
+
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsRoomNotAvailableTimesAction);
+		menuRooms_space_constraints->addAction(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction);
+
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomAction);
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivityPreferredRoomsAction);
+		menuActivities_space_constraints->addSeparator();
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction);
+		menuActivities_space_constraints->addAction(dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction);
+
+		menuSubjects_space_constraints->addAction(dataSpaceConstraintsSubjectPreferredRoomAction);
+		menuSubjects_space_constraints->addAction(dataSpaceConstraintsSubjectPreferredRoomsAction);
+
+		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomAction);
+		menuSubjects_and_activity_tags_space_constraints->addAction(dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction);
+
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetHomeRoomsAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction);
+		menuStudents_space_constraints->addSeparator();
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction);
+		menuStudents_space_constraints->addAction(dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction);
+
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherHomeRoomsAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction);
+		menuTeachers_space_constraints->addSeparator();
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction);
+		menuTeachers_space_constraints->addAction(dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction);
+
+		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomAction);
+		menuActivity_tags_space_constraints->addAction(dataSpaceConstraintsActivityTagPreferredRoomsAction);
+	}
+	else{
+		assert(0);
+	}
 }
 
 void FetMainForm::setEnabledIcon(QAction* action, bool enabled)
 {
+	assert(action!=nullptr);
+
 	static QIcon locked(":/images/locked.png");
 	static QIcon unlocked(":/images/unlocked.png");
 	
@@ -866,8 +2585,9 @@ void FetMainForm::populateLanguagesMap(QMap<QString, QString>& languagesMap)
 	languagesMap.insert("zh_TW", QString::fromUtf8("正體字型"));
 	languagesMap.insert("cs", QString::fromUtf8("Český"));
 	languagesMap.insert("ja", QString::fromUtf8("日本語"));
+	languagesMap.insert("ru", QString::fromUtf8("Русский"));
 
-	//Need to finish these.
+	//We need to write the following language names in their native language, as above:
 	languagesMap.insert("hu", QString("Hungarian"));
 	languagesMap.insert("lt", QString("Lithuanian"));
 	languagesMap.insert("mk", QString("Macedonian"));
@@ -875,7 +2595,6 @@ void FetMainForm::populateLanguagesMap(QMap<QString, QString>& languagesMap)
 	languagesMap.insert("nl", QString("Dutch"));
 	languagesMap.insert("pl", QString("Polish"));
 	languagesMap.insert("tr", QString("Turkish"));
-	languagesMap.insert("ru", QString("Russian"));
 	languagesMap.insert("fa", QString("Persian"));
 	languagesMap.insert("si", QString("Sinhala"));
 	languagesMap.insert("sk", QString("Slovak"));
@@ -978,6 +2697,342 @@ void FetMainForm::showSubgroupsInActivityPlanningToggled(bool checked)
 	SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING=checked;
 }
 
+void FetMainForm::on_modeOfficialAction_triggered()
+{
+	if(!gt.rules.initialized){
+		modeOfficialAction->setChecked(currentMode==OFFICIAL);
+		modeMorningsAfternoonsAction->setChecked(currentMode==MORNINGS_AFTERNOONS);
+		modeBlockPlanningAction->setChecked(currentMode==BLOCK_PLANNING);
+		modeTermsAction->setChecked(currentMode==TERMS);
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(gt.rules.mode==OFFICIAL){
+		modeOfficialAction->setChecked(true);
+		
+		return;
+	}
+	
+	QString s;
+	if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		s=tr("Are you sure you want to convert your file to the official mode? This might involve data loss."
+		 " All the teachers will have uninitialized mornings-afternoons behavior. Also, the incompatible constraints will be removed.");
+	}
+	else if(gt.rules.mode==BLOCK_PLANNING){
+		s=tr("Are you sure you want to convert your file to the official mode? This might involve data loss."
+		 " The incompatible constraints will be removed.");
+	}
+	else if(gt.rules.mode==TERMS){
+		s=tr("Are you sure you want to convert your file to the official mode? This might involve data loss."
+		 " The incompatible constraints will be removed.");
+	}
+	else
+		assert(0);
+	int ok=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Cancel | QMessageBox::Ok);
+	if(ok==QMessageBox::Cancel){
+		modeOfficialAction->setChecked(false);
+		return;
+	}
+
+	bool ok2=getLastConfirmation(OFFICIAL);
+	if(!ok2){
+		modeOfficialAction->setChecked(false);
+		return;
+	}
+
+	gt.rules.setMode(OFFICIAL);
+	updateMode();
+}
+
+void FetMainForm::on_modeMorningsAfternoonsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		modeOfficialAction->setChecked(currentMode==OFFICIAL);
+		modeMorningsAfternoonsAction->setChecked(currentMode==MORNINGS_AFTERNOONS);
+		modeBlockPlanningAction->setChecked(currentMode==BLOCK_PLANNING);
+		modeTermsAction->setChecked(currentMode==TERMS);
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		modeMorningsAfternoonsAction->setChecked(true);
+		
+		return;
+	}
+
+	QString s;
+	if(gt.rules.mode==OFFICIAL){
+		s=tr("Are you sure you want to convert your file to the mornings-afternoons mode? This might involve data loss."
+		 " All the teachers with uninitialized mornings-afternoons behavior will have unrestricted mornings-afternoons behavior."
+		 " Also, the incompatible constraints will be removed.");
+	}
+	else if(gt.rules.mode==BLOCK_PLANNING){
+		s=tr("Are you sure you want to convert your file to the mornings-afternoons mode? This might involve data loss."
+		 " All the teachers with uninitialized mornings-afternoons behavior will have unrestricted mornings-afternoons behavior."
+		 " Also, the incompatible constraints will be removed.");
+	}
+	else if(gt.rules.mode==TERMS){
+		s=tr("Are you sure you want to convert your file to the mornings-afternoons mode? This might involve data loss."
+		 " All the teachers with uninitialized mornings-afternoons behavior will have unrestricted mornings-afternoons behavior."
+		 " Also, the incompatible constraints will be removed.");
+	}
+	else
+		assert(0);
+	int ok=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Cancel | QMessageBox::Ok);
+	if(ok==QMessageBox::Cancel){
+		modeMorningsAfternoonsAction->setChecked(false);
+		return;
+	}
+
+	bool ok2=getLastConfirmation(MORNINGS_AFTERNOONS);
+	if(!ok2){
+		modeMorningsAfternoonsAction->setChecked(false);
+		return;
+	}
+
+	gt.rules.setMode(MORNINGS_AFTERNOONS);
+	updateMode();
+}
+
+void FetMainForm::on_modeBlockPlanningAction_triggered()
+{
+	if(!gt.rules.initialized){
+		modeOfficialAction->setChecked(currentMode==OFFICIAL);
+		modeMorningsAfternoonsAction->setChecked(currentMode==MORNINGS_AFTERNOONS);
+		modeBlockPlanningAction->setChecked(currentMode==BLOCK_PLANNING);
+		modeTermsAction->setChecked(currentMode==TERMS);
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(gt.rules.mode==BLOCK_PLANNING){
+		modeBlockPlanningAction->setChecked(true);
+		
+		return;
+	}
+	
+	QString s;
+	if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		s=tr("Are you sure you want to convert your file to the block-planning mode? This might involve data loss."
+		 " All the teachers will have uninitialized mornings-afternoons behavior. Also, the incompatible constraints will be removed.");
+	}
+	else if(gt.rules.mode==OFFICIAL){
+		s=tr("Are you sure you want to convert your file to the block-planning mode? This might involve data loss."
+		 " The incompatible constraints will be removed.");
+	}
+	else if(gt.rules.mode==TERMS){
+		s=tr("Are you sure you want to convert your file to the block-planning mode? This might involve data loss."
+		 " The incompatible constraints will be removed.");
+	}
+	else
+		assert(0);
+	s+="\n\n";
+	
+	s+=tr("WARNING: In the block-planning mode, the basic time and space constraints are modified to consider that the FET hours are real-life time slots."
+	  " Consequently, they are much stronger and each row (FET hour, real-life time slot) for a students subgroup / room may have a single occupied slot out of all"
+	  " the FET days (real-life teachers). This might result in an impossible timetable if you intend to do usual timetabling.");
+
+	int ok=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Cancel | QMessageBox::Ok);
+	if(ok==QMessageBox::Cancel){
+		modeBlockPlanningAction->setChecked(false);
+		return;
+	}
+
+	bool ok2=getLastConfirmation(BLOCK_PLANNING);
+	if(!ok2){
+		modeBlockPlanningAction->setChecked(false);
+		return;
+	}
+
+	gt.rules.setMode(BLOCK_PLANNING);
+	updateMode();
+}
+
+void FetMainForm::on_modeTermsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		modeOfficialAction->setChecked(currentMode==OFFICIAL);
+		modeMorningsAfternoonsAction->setChecked(currentMode==MORNINGS_AFTERNOONS);
+		modeBlockPlanningAction->setChecked(currentMode==BLOCK_PLANNING);
+		modeTermsAction->setChecked(currentMode==TERMS);
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(gt.rules.mode==TERMS){
+		modeTermsAction->setChecked(true);
+		
+		return;
+	}
+	
+	QString s;
+	if(gt.rules.mode==OFFICIAL){
+		s=tr("Are you sure you want to convert your file to the terms mode? This might involve data loss."
+		 " The incompatible constraints will be removed.");
+	}
+	else if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		s=tr("Are you sure you want to convert your file to the terms mode? This might involve data loss."
+		 " All the teachers will have uninitialized mornings-afternoons behavior. Also, the incompatible constraints will be removed.");
+	}
+	else if(gt.rules.mode==BLOCK_PLANNING){
+		s=tr("Are you sure you want to convert your file to the terms mode? This might involve data loss."
+		 " The incompatible constraints will be removed.");
+	}
+	else
+		assert(0);
+	int ok=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Cancel | QMessageBox::Ok);
+	if(ok==QMessageBox::Cancel){
+		modeTermsAction->setChecked(false);
+		return;
+	}
+
+	bool ok2=getLastConfirmation(TERMS);
+	if(!ok2){
+		modeTermsAction->setChecked(false);
+		return;
+	}
+
+	gt.rules.setMode(TERMS);
+	updateMode();
+}
+
+void FetMainForm::on_dataTermsAction_triggered()
+{
+	assert(gt.rules.mode==TERMS);
+	
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	TermsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+bool FetMainForm::getLastConfirmation(int newMode)
+{
+	QString removedTimeConstraintsString;
+	QString removedSpaceConstraintsString;
+
+	QList<TimeConstraint*> removedTimeConstraintsList;
+	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList))
+		if((newMode==OFFICIAL && !tc->canBeUsedInOfficialMode())
+		 || (newMode==MORNINGS_AFTERNOONS && !tc->canBeUsedInMorningsAfternoonsMode())
+		 || (newMode==BLOCK_PLANNING && !tc->canBeUsedInBlockPlanningMode())
+		 || (newMode==TERMS && !tc->canBeUsedInTermsMode())){
+			removedTimeConstraintsList.append(tc);
+			removedTimeConstraintsString+=tc->getDetailedDescription(gt.rules)+"\n";
+		}
+
+	QList<SpaceConstraint*> removedSpaceConstraintsList;
+	for(SpaceConstraint* sc : qAsConst(gt.rules.spaceConstraintsList))
+		if((newMode==OFFICIAL && !sc->canBeUsedInOfficialMode())
+		 || (newMode==MORNINGS_AFTERNOONS && !sc->canBeUsedInMorningsAfternoonsMode())
+		 || (newMode==BLOCK_PLANNING && !sc->canBeUsedInBlockPlanningMode())
+		 || (newMode==TERMS && !sc->canBeUsedInTermsMode())){
+			removedSpaceConstraintsList.append(sc);
+			removedSpaceConstraintsString+=sc->getDetailedDescription(gt.rules)+"\n";
+		}
+
+	////////////
+	//last confirmation dialog
+	QDialog lastConfirmationDialog(this);
+	lastConfirmationDialog.setWindowTitle(tr("Last confirmation needed"));
+
+	QVBoxLayout* lastMainLayout=new QVBoxLayout(&lastConfirmationDialog);
+
+	QPushButton* lastpb1=new QPushButton(tr("Cancel"));
+	QPushButton* lastpb2=new QPushButton(tr("OK"));
+	QHBoxLayout* lastButtons=new QHBoxLayout();
+	lastButtons->addStretch();
+	lastButtons->addWidget(lastpb1);
+	lastButtons->addWidget(lastpb2);
+
+	////texts
+	QVBoxLayout* left=new QVBoxLayout();
+	QVBoxLayout* right=new QVBoxLayout();
+	QHBoxLayout* all=new QHBoxLayout();
+	all->addLayout(left);
+	all->addLayout(right);
+
+	QPlainTextEdit* remTim=new QPlainTextEdit();
+	remTim->setReadOnly(true);
+	remTim->setPlainText(removedTimeConstraintsString);
+	QLabel* labRemTim=new QLabel(tr("These %1 time constraints will be removed:").arg(removedTimeConstraintsList.count()));
+	labRemTim->setWordWrap(true);
+	labRemTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	left->addWidget(labRemTim);
+	left->addWidget(remTim);
+
+	QPlainTextEdit* remSpa=new QPlainTextEdit();
+	remSpa->setReadOnly(true);
+	remSpa->setPlainText(removedSpaceConstraintsString);
+	QLabel* labRemSpa=new QLabel(tr("These %1 space constraints will be removed:").arg(removedSpaceConstraintsList.count()));
+	labRemSpa->setWordWrap(true);
+	labRemSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	right->addWidget(labRemSpa);
+	right->addWidget(remSpa);
+	////end texts
+
+	////////
+	lastMainLayout->addLayout(all);
+	//lastMainLayout->addStretch();
+	lastMainLayout->addLayout(lastButtons);
+
+	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
+	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+
+	lastpb2->setDefault(true);
+	lastpb2->setFocus();
+
+	int lw=lastConfirmationDialog.sizeHint().width();
+	int lh=lastConfirmationDialog.sizeHint().height();
+	lastConfirmationDialog.resize(lw,lh);
+	centerWidgetOnScreen(&lastConfirmationDialog);
+	restoreFETDialogGeometry(&lastConfirmationDialog, QString("LastConfirmationChangeMode"));
+	int ok=lastConfirmationDialog.exec();
+	saveFETDialogGeometry(&lastConfirmationDialog, QString("LastConfirmationChangeMode"));
+	if(ok==QDialog::Rejected)
+		return false;
+	assert(ok==QDialog::Accepted);
+	////////////
+
+	int removedTime=removedTimeConstraintsList.count();
+	int removedSpace=removedSpaceConstraintsList.count();
+
+	bool t=gt.rules.removeTimeConstraints(removedTimeConstraintsList);
+	assert(t);
+
+	removedTimeConstraintsList.clear();
+
+	t=gt.rules.removeSpaceConstraints(removedSpaceConstraintsList);
+	assert(t);
+
+	removedSpaceConstraintsList.clear();
+
+	QMessageBox::information(&lastConfirmationDialog, tr("FET information"), tr("There were removed %1 time constraints and"
+	 " %2 space constraints.").arg(removedTime).arg(removedSpace));
+
+	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+	LockUnlock::increaseCommunicationSpinBox();
+
+	return true;
+}
+
 /////////confirmations
 void FetMainForm::on_settingsConfirmActivityPlanningAction_toggled()
 {
@@ -1023,7 +3078,7 @@ void FetMainForm::on_settingsDuplicateVerticalNamesAction_toggled()
 
 void FetMainForm::on_timetablesToWriteOnDiskAction_triggered()
 {
-	if(simulation_running){
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1036,7 +3091,7 @@ void FetMainForm::on_timetablesToWriteOnDiskAction_triggered()
 
 void FetMainForm::on_studentsComboBoxesStyleAction_triggered()
 {
-	if(simulation_running){
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1101,10 +3156,10 @@ void FetMainForm::replyFinished(QNetworkReply* networkReply)
 #endif
 
 			if(VERBOSE){
-				cout<<"Your current version: '";
-				cout<<qPrintable(FET_VERSION)<<"'"<<endl;
-				cout<<"Latest version: '";
-				cout<<qPrintable(internetVersion)<<"'"<<endl;
+				std::cout<<"Your current version: '";
+				std::cout<<qPrintable(FET_VERSION)<<"'"<<std::endl;
+				std::cout<<"Latest version: '";
+				std::cout<<qPrintable(internetVersion)<<"'"<<std::endl;
 			}
 			if(internetVersion!=FET_VERSION){
 				QString s=tr("Another version: %1, is available on the FET homepage: %2", "%1 is new version, %2 is FET homepage").arg(internetVersion).arg("https://lalescu.ro/liviu/fet/");
@@ -1148,7 +3203,7 @@ void FetMainForm::closeEvent(QCloseEvent* event)
 	
 	MAIN_FORM_SHORTCUTS_TAB_POSITION=tabWidget->currentIndex();
 	
-	if(gt.rules.modified){
+	if(gt.rules.initialized && gt.rules.modified){
 		QMessageBox::StandardButton res=QMessageBox::question( this, tr("FET question"),
 		 tr("Your data file has been modified - do you want to save it?"), QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel);
 
@@ -1207,7 +3262,7 @@ FetMainForm::~FetMainForm()
 
 void FetMainForm::on_fileQuitAction_triggered()
 {
-	if(simulation_running){
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1268,7 +3323,7 @@ void FetMainForm::updateRecentFileActions()
 
 void FetMainForm::on_fileClearRecentFilesListAction_triggered()
 {
-	if(simulation_running){
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1280,7 +3335,7 @@ void FetMainForm::on_fileClearRecentFilesListAction_triggered()
 
 void FetMainForm::on_fileNewAction_triggered()
 {
-	if(simulation_running){
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1288,7 +3343,7 @@ void FetMainForm::on_fileNewAction_triggered()
 
 	int confirm=0;
 	
-	if(gt.rules.modified){
+	if(gt.rules.initialized && gt.rules.modified){
 		switch( QMessageBox::question(
 		 this,
 		 tr("FET application"),
@@ -1309,6 +3364,19 @@ void FetMainForm::on_fileNewAction_triggered()
 	else
 		confirm=1;
 	
+	int tm=-1;
+	if(confirm){
+		GetModeForNewFileForm form(this);
+		int result=form.exec();
+		if(result==QDialog::Accepted){
+			assert(form.mode==OFFICIAL || form.mode==MORNINGS_AFTERNOONS || form.mode==BLOCK_PLANNING || form.mode==TERMS);
+			tm=form.mode;
+		}
+		else{
+			confirm=0;
+		}
+	}
+
 	if(confirm){
 		INPUT_FILENAME_XML=QString("");
 		setCurrentFile(INPUT_FILENAME_XML);
@@ -1316,6 +3384,8 @@ void FetMainForm::on_fileNewAction_triggered()
 		if(gt.rules.initialized)
 			gt.rules.kill();
 		gt.rules.init();
+		
+		gt.rules.mode=tm;
 		
 		gt.rules.modified=true; //to avoid flicker of the main form modified flag
 
@@ -1335,6 +3405,9 @@ void FetMainForm::on_fileNewAction_triggered()
 		LockUnlock::increaseCommunicationSpinBox();
 
 		statusBar()->showMessage(tr("New file generated"), STATUS_BAR_MILLISECONDS);
+		oldDataAvailable=dataAvailable;
+		dataAvailable=true;
+		updateMode();
 	}
 }
 
@@ -1352,7 +3425,7 @@ void FetMainForm::on_fileOpenAction_triggered()
 
 void FetMainForm::openFile(const QString& fileName)
 {
-	if(simulation_running){
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1360,7 +3433,7 @@ void FetMainForm::openFile(const QString& fileName)
 
 	int confirm=0;
 	
-	if(gt.rules.modified){
+	if(gt.rules.initialized && gt.rules.modified){
 		switch( QMessageBox::question(
 		 this,
 		 tr("FET application"),
@@ -1461,6 +3534,9 @@ void FetMainForm::openFile(const QString& fileName)
 				LockUnlock::increaseCommunicationSpinBox();
 
 				statusBar()->showMessage(tr("File opened"), STATUS_BAR_MILLISECONDS);
+				oldDataAvailable=dataAvailable;
+				dataAvailable=true;
+				updateMode();
 				
 				gt.rules.modified=true; //force update of the modified flag of the main window
 				setRulesUnmodifiedAndOtherThings(&gt.rules);
@@ -1474,9 +3550,13 @@ void FetMainForm::openFile(const QString& fileName)
 				statusBar()->showMessage("", STATUS_BAR_MILLISECONDS);
 				
 				setCurrentFile(INPUT_FILENAME_XML);*/
+
+				//not needed, because if the file cannot be read we keep the old mode
+				//updateMode();
 				
 				assert(!simulation_running);
 				gt.rules.modified=false;
+				statusBar()->showMessage(tr("Loading file failed...", "This is a message in the status bar, that opening the chosen file failed"), STATUS_BAR_MILLISECONDS);
 				on_fileNewAction_triggered();
 			}
 			
@@ -1490,6 +3570,12 @@ void FetMainForm::openFile(const QString& fileName)
 
 bool FetMainForm::fileSaveAs()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return false;
+	}
+
 	QString predefFileName=INPUT_FILENAME_XML;
 	if(predefFileName.isEmpty())
 		predefFileName=WORKING_DIRECTORY+FILE_SEP+QString("untitled.fet");
@@ -1503,7 +3589,7 @@ bool FetMainForm::fileSaveAs()
 
 	int tmp2=s.lastIndexOf(FILE_SEP);
 	QString s2=s.right(s.length()-tmp2-1);
-			
+	
 	if(s2.length()>=1){
 		if(s2.at(0).isSpace()){
 			QMessageBox::warning(this, tr("FET information"),
@@ -1587,8 +3673,15 @@ void FetMainForm::on_fileSaveAsAction_triggered()
 }
 
 // Start of code contributed by Volker Dirr
-void FetMainForm::on_fileImportCSVRoomsBuildingsAction_triggered(){
-	if(simulation_running){
+void FetMainForm::on_fileImportCSVRoomsBuildingsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1596,8 +3689,15 @@ void FetMainForm::on_fileImportCSVRoomsBuildingsAction_triggered(){
 	Import::importCSVRoomsAndBuildings(this);
 }
 
-void FetMainForm::on_fileImportCSVSubjectsAction_triggered(){
-	if(simulation_running){
+void FetMainForm::on_fileImportCSVSubjectsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1605,8 +3705,15 @@ void FetMainForm::on_fileImportCSVSubjectsAction_triggered(){
 	Import::importCSVSubjects(this);
 }
 
-void FetMainForm::on_fileImportCSVTeachersAction_triggered(){
-	if(simulation_running){
+void FetMainForm::on_fileImportCSVTeachersAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1614,8 +3721,15 @@ void FetMainForm::on_fileImportCSVTeachersAction_triggered(){
 	Import::importCSVTeachers(this);
 }
 
-void FetMainForm::on_fileImportCSVActivitiesAction_triggered(){
-	if(simulation_running){
+void FetMainForm::on_fileImportCSVActivitiesAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1629,8 +3743,15 @@ void FetMainForm::on_fileImportCSVActivitiesAction_triggered(){
 	//after the importing
 }
 
-void FetMainForm::on_fileImportCSVActivityTagsAction_triggered(){
-	if(simulation_running){
+void FetMainForm::on_fileImportCSVActivityTagsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1638,8 +3759,15 @@ void FetMainForm::on_fileImportCSVActivityTagsAction_triggered(){
 	Import::importCSVActivityTags(this);
 }
 
-void FetMainForm::on_fileImportCSVYearsGroupsSubgroupsAction_triggered(){
-	if(simulation_running){
+void FetMainForm::on_fileImportCSVYearsGroupsSubgroupsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1647,8 +3775,15 @@ void FetMainForm::on_fileImportCSVYearsGroupsSubgroupsAction_triggered(){
 	Import::importCSVStudents(this);
 }
 
-void FetMainForm::on_fileExportCSVAction_triggered(){
-	if(simulation_running){
+void FetMainForm::on_fileExportCSVAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1659,6 +3794,12 @@ void FetMainForm::on_fileExportCSVAction_triggered(){
 
 void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
 		QMessageBox::warning(this, tr("FET - Warning"), tr("You have not yet generated a timetable - please generate firstly"));
 		return;
@@ -1673,7 +3814,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 			QMessageBox::warning(this, tr("FET - Warning"), tr("It seems that you have an incomplete timetable."
 			 " Saving of timetable does not work for incomplete timetables. Please generate a complete timetable"));
 			 //.arg(act->id));
-			return;	
+			return;
 		}
 		
 		int ri=tc->rooms[ai];
@@ -1681,7 +3822,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 			QMessageBox::warning(this, tr("FET - Warning"), tr("It seems that you have an incomplete timetable."
 			 " Saving of timetable does not work for incomplete timetables. Please generate a complete timetable"));
 			 //.arg(act->id));
-			return;	
+			return;
 		}
 	}
 
@@ -1790,20 +3931,27 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 			else
 				break;
 		}
-			
+		
 		rules2.initialized=true;
+		
+		rules2.mode=gt.rules.mode;
 		
 		rules2.institutionName=gt.rules.institutionName;
 		rules2.comments=gt.rules.comments;
 		
+		rules2.nTerms=gt.rules.nTerms;
+		rules2.nDaysPerTerm=gt.rules.nDaysPerTerm;
+		
 		rules2.nHoursPerDay=gt.rules.nHoursPerDay;
-		for(int i=0; i<gt.rules.nHoursPerDay; i++)
-			rules2.hoursOfTheDay[i]=gt.rules.hoursOfTheDay[i];
+		rules2.hoursOfTheDay=gt.rules.hoursOfTheDay;
+		//for(int i=0; i<gt.rules.nHoursPerDay; i++)
+		//	rules2.hoursOfTheDay[i]=gt.rules.hoursOfTheDay[i];
 
 		rules2.nDaysPerWeek=gt.rules.nDaysPerWeek;
-		for(int i=0; i<gt.rules.nDaysPerWeek; i++)
-			rules2.daysOfTheWeek[i]=gt.rules.daysOfTheWeek[i];
-			
+		rules2.daysOfTheWeek=gt.rules.daysOfTheWeek;
+		//for(int i=0; i<gt.rules.nDaysPerWeek; i++)
+		//	rules2.daysOfTheWeek[i]=gt.rules.daysOfTheWeek[i];
+
 		rules2.yearsList=gt.rules.yearsList;
 		
 		rules2.teachersList=gt.rules.teachersList;
@@ -1848,7 +3996,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 
 				ConstraintActivityPreferredStartingTime* ctr=new ConstraintActivityPreferredStartingTime(100.0, act->id, day, hour, false); //permanently locked is false
 				bool t=rules2.addTimeConstraint(ctr);
-							
+				
 				if(t){
 					addedTime++;
 					lockTimeConstraintsList.append(ctr);
@@ -1868,7 +4016,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 				constraintsString+=QString("\n");
 				constraintsString+=s;
 			}
-						
+			
 			int ri=tc->rooms[ai];
 			if(ri!=UNALLOCATED_SPACE && ri!=UNSPECIFIED_ROOM && ri>=0 && ri<gt.rules.nInternalRooms){
 				QStringList tl;
@@ -1882,7 +4030,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 				bool t=rules2.addSpaceConstraint(ctr);
 
 				QString s;
-							
+				
 				if(t){
 					addedSpace++;
 					lockSpaceConstraintsList.append(ctr);
@@ -1917,13 +4065,11 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 		for(SpaceConstraint* sc : qAsConst(lockSpaceConstraintsList))
 			delete sc;
 		lockSpaceConstraintsList.clear();
-		//while(!lockTimeConstraintsList.isEmpty())
-		//	delete lockTimeConstraintsList.takeFirst();
-		//while(!lockSpaceConstraintsList.isEmpty())
-		//	delete lockSpaceConstraintsList.takeFirst();
 
 		rules2.nHoursPerDay=0;
+		rules2.hoursOfTheDay.clear();
 		rules2.nDaysPerWeek=0;
+		rules2.daysOfTheWeek.clear();
 
 		rules2.yearsList.clear();
 		
@@ -1955,6 +4101,12 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 
 bool FetMainForm::fileSave()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return false;
+	}
+
 	if(INPUT_FILENAME_XML.isEmpty())
 		return fileSaveAs();
 	else{
@@ -1982,7 +4134,13 @@ void FetMainForm::on_fileSaveAction_triggered()
 
 void FetMainForm::on_dataInstitutionNameAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -1995,7 +4153,13 @@ void FetMainForm::on_dataInstitutionNameAction_triggered()
 
 void FetMainForm::on_dataCommentsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2008,7 +4172,13 @@ void FetMainForm::on_dataCommentsAction_triggered()
 
 void FetMainForm::on_dataDaysAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2021,7 +4191,13 @@ void FetMainForm::on_dataDaysAction_triggered()
 
 void FetMainForm::on_dataHoursAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2034,7 +4210,13 @@ void FetMainForm::on_dataHoursAction_triggered()
 
 void FetMainForm::on_dataTeachersAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2047,6 +4229,12 @@ void FetMainForm::on_dataTeachersAction_triggered()
 
 void FetMainForm::on_dataTeachersStatisticsAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	TeachersStatisticsForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -2054,7 +4242,13 @@ void FetMainForm::on_dataTeachersStatisticsAction_triggered()
 
 void FetMainForm::on_dataSubjectsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2067,6 +4261,12 @@ void FetMainForm::on_dataSubjectsAction_triggered()
 
 void FetMainForm::on_dataSubjectsStatisticsAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	SubjectsStatisticsForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -2074,7 +4274,13 @@ void FetMainForm::on_dataSubjectsStatisticsAction_triggered()
 
 void FetMainForm::on_dataActivityTagsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2087,7 +4293,13 @@ void FetMainForm::on_dataActivityTagsAction_triggered()
 
 void FetMainForm::on_dataYearsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2100,7 +4312,13 @@ void FetMainForm::on_dataYearsAction_triggered()
 
 void FetMainForm::on_dataGroupsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2113,7 +4331,13 @@ void FetMainForm::on_dataGroupsAction_triggered()
 
 void FetMainForm::on_dataSubgroupsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2126,6 +4350,12 @@ void FetMainForm::on_dataSubgroupsAction_triggered()
 
 void FetMainForm::on_dataStudentsStatisticsAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	StudentsStatisticsForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -2133,6 +4363,12 @@ void FetMainForm::on_dataStudentsStatisticsAction_triggered()
 
 void FetMainForm::on_dataActivitiesRoomsStatisticsAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	ActivitiesRoomsStatisticsForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
@@ -2140,6 +4376,12 @@ void FetMainForm::on_dataActivitiesRoomsStatisticsAction_triggered()
 
 void FetMainForm::on_dataTeachersSubjectsQualificationsStatisticsAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	QHash<QString, Teacher*> teachersHash;
 	
 	for(Teacher* tch : qAsConst(gt.rules.teachersList))
@@ -2225,8 +4467,9 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	s+="\n\n";
 	s+=tr("Enable activity tag max hours daily:");
 	s+="\n";
-	s+=tr("This will enable the menu for 4 constraints: teacher(s) or students (set) activity tag max hours daily. These 4 constraints are good, but not perfect and"
-		" may bring slow down of generation or impossible timetables if used unproperly. Select only if you know what you're doing.");
+	s+=tr("This will enable the menu for the constraints: teacher(s) or students (set) activity tag max hours daily / per real day (where applicable)."
+		" These constraints are good, but not perfect and may bring slow down of generation or impossible timetables if used unproperly. Select only"
+		" if you know what you're doing.");
 	s+="\n\n";
 	s+=tr("Enable students max gaps per day:");
 	s+="\n";
@@ -2236,8 +4479,8 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	s+="\n\n";
 	s+=tr("Warn if using not perfect constraints:", "this is a warning if user uses not perfect constraints");
 	s+="\n";
-	s+=tr("If you use a not perfect constraint (activity tag max hours daily or students max gaps per day), you'll get a warning before generating"
-		". Uncheck this option to get rid of that warning (it is recommended to keep the warning).");
+	s+=tr("If you use a not perfect constraint (activity tag max hours daily / per real day or students max gaps per day / per real day / per week for real days - where applicable),"
+		" you'll get a warning before generating. Uncheck this option to get rid of that warning (it is recommended to keep the warning).");
 	
 	s+="\n\n";
 	s+=tr("Enable students min hours daily with empty days:");
@@ -2337,7 +4580,13 @@ void FetMainForm::on_dataHelpOnStatisticsAction_triggered()
 
 void FetMainForm::on_dataActivitiesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2350,7 +4599,13 @@ void FetMainForm::on_dataActivitiesAction_triggered()
 
 void FetMainForm::on_dataSubactivitiesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2363,7 +4618,13 @@ void FetMainForm::on_dataSubactivitiesAction_triggered()
 
 void FetMainForm::on_dataRoomsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2376,7 +4637,13 @@ void FetMainForm::on_dataRoomsAction_triggered()
 
 void FetMainForm::on_dataBuildingsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2389,7 +4656,13 @@ void FetMainForm::on_dataBuildingsAction_triggered()
 
 void FetMainForm::on_dataAllTimeConstraintsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2402,7 +4675,13 @@ void FetMainForm::on_dataAllTimeConstraintsAction_triggered()
 
 void FetMainForm::on_dataAllSpaceConstraintsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2413,9 +4692,15 @@ void FetMainForm::on_dataAllSpaceConstraintsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTwoActivitiesConsecutiveAction_triggered()
+void FetMainForm::dataTimeConstraintsTwoActivitiesConsecutiveAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2426,9 +4711,15 @@ void FetMainForm::on_dataTimeConstraintsTwoActivitiesConsecutiveAction_triggered
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTwoActivitiesGroupedAction_triggered()
+void FetMainForm::dataTimeConstraintsTwoActivitiesGroupedAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2439,9 +4730,15 @@ void FetMainForm::on_dataTimeConstraintsTwoActivitiesGroupedAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsThreeActivitiesGroupedAction_triggered()
+void FetMainForm::dataTimeConstraintsThreeActivitiesGroupedAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2452,9 +4749,15 @@ void FetMainForm::on_dataTimeConstraintsThreeActivitiesGroupedAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTwoActivitiesOrderedAction_triggered()
+void FetMainForm::dataTimeConstraintsTwoActivitiesOrderedAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2465,9 +4768,15 @@ void FetMainForm::on_dataTimeConstraintsTwoActivitiesOrderedAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction_triggered()
+void FetMainForm::dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2478,9 +4787,15 @@ void FetMainForm::on_dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction_trig
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivitiesPreferredTimeSlotsAction_triggered()
+void FetMainForm::dataTimeConstraintsActivitiesPreferredTimeSlotsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2491,9 +4806,15 @@ void FetMainForm::on_dataTimeConstraintsActivitiesPreferredTimeSlotsAction_trigg
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivitiesPreferredStartingTimesAction_triggered()
+void FetMainForm::dataTimeConstraintsActivitiesPreferredStartingTimesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2504,9 +4825,15 @@ void FetMainForm::on_dataTimeConstraintsActivitiesPreferredStartingTimesAction_t
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_triggered()
+void FetMainForm::dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2517,9 +4844,15 @@ void FetMainForm::on_dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_tr
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsSubactivitiesPreferredStartingTimesAction_triggered()
+void FetMainForm::dataTimeConstraintsSubactivitiesPreferredStartingTimesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2530,9 +4863,15 @@ void FetMainForm::on_dataTimeConstraintsSubactivitiesPreferredStartingTimesActio
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivityEndsStudentsDayAction_triggered()
+void FetMainForm::dataTimeConstraintsActivityEndsStudentsDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2543,9 +4882,15 @@ void FetMainForm::on_dataTimeConstraintsActivityEndsStudentsDayAction_triggered(
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivitiesEndStudentsDayAction_triggered()
+void FetMainForm::dataTimeConstraintsActivitiesEndStudentsDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2556,9 +4901,53 @@ void FetMainForm::on_dataTimeConstraintsActivitiesEndStudentsDayAction_triggered
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingTimeAction_triggered()
+void FetMainForm::dataTimeConstraintsActivityEndsTeachersDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivityEndsTeachersDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsActivitiesEndTeachersDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivitiesEndTeachersDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsActivitiesSameStartingTimeAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2569,9 +4958,15 @@ void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingTimeAction_trigger
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingHourAction_triggered()
+void FetMainForm::dataTimeConstraintsActivitiesSameStartingHourAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2582,9 +4977,15 @@ void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingHourAction_trigger
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingDayAction_triggered()
+void FetMainForm::dataTimeConstraintsActivitiesSameStartingDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2595,9 +4996,15 @@ void FetMainForm::on_dataTimeConstraintsActivitiesSameStartingDayAction_triggere
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered()
+void FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2608,9 +5015,15 @@ void FetMainForm::on_dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectio
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction_triggered()
+void FetMainForm::dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2621,9 +5034,15 @@ void FetMainForm::on_dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectio
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_triggered()
+void FetMainForm::dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlotsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2634,9 +5053,15 @@ void FetMainForm::on_dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeS
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction_triggered()
+void FetMainForm::dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlotsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2647,9 +5072,34 @@ void FetMainForm::on_dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeS
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherNotAvailableTimesAction_triggered()
+void FetMainForm::dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlotsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherNotAvailableTimesAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2660,9 +5110,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherNotAvailableTimesAction_triggered
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsBasicCompulsoryTimeAction_triggered()
+void FetMainForm::dataTimeConstraintsBasicCompulsoryTimeAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2673,9 +5129,15 @@ void FetMainForm::on_dataTimeConstraintsBasicCompulsoryTimeAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsBasicCompulsorySpaceAction_triggered()
+void FetMainForm::dataSpaceConstraintsBasicCompulsorySpaceAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2686,9 +5148,15 @@ void FetMainForm::on_dataSpaceConstraintsBasicCompulsorySpaceAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsRoomNotAvailableTimesAction_triggered()
+void FetMainForm::dataSpaceConstraintsRoomNotAvailableTimesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2699,9 +5167,34 @@ void FetMainForm::on_dataSpaceConstraintsRoomNotAvailableTimesAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeacherRoomNotAvailableTimesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+	
+	ConstraintTeacherRoomNotAvailableTimesForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataSpaceConstraintsActivityPreferredRoomAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2712,9 +5205,15 @@ void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomsAction_triggered()
+void FetMainForm::dataSpaceConstraintsActivityPreferredRoomsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2725,9 +5224,15 @@ void FetMainForm::on_dataSpaceConstraintsActivityPreferredRoomsAction_triggered(
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomAction_triggered()
+void FetMainForm::dataSpaceConstraintsSubjectPreferredRoomAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2738,9 +5243,15 @@ void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomsAction_triggered()
+void FetMainForm::dataSpaceConstraintsSubjectPreferredRoomsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2751,9 +5262,15 @@ void FetMainForm::on_dataSpaceConstraintsSubjectPreferredRoomsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_triggered()
+void FetMainForm::dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2764,9 +5281,15 @@ void FetMainForm::on_dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_t
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_triggered()
+void FetMainForm::dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2778,9 +5301,15 @@ void FetMainForm::on_dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_
 }
 
 ///added 6 apr 2009
-void FetMainForm::on_dataSpaceConstraintsActivityTagPreferredRoomAction_triggered()
+void FetMainForm::dataSpaceConstraintsActivityTagPreferredRoomAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2791,9 +5320,15 @@ void FetMainForm::on_dataSpaceConstraintsActivityTagPreferredRoomAction_triggere
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsActivityTagPreferredRoomsAction_triggered()
+void FetMainForm::dataSpaceConstraintsActivityTagPreferredRoomsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2805,9 +5340,15 @@ void FetMainForm::on_dataSpaceConstraintsActivityTagPreferredRoomsAction_trigger
 }
 ///
 
-void FetMainForm::on_dataSpaceConstraintsStudentsSetHomeRoomAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsSetHomeRoomAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2818,9 +5359,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetHomeRoomAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsStudentsSetHomeRoomsAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsSetHomeRoomsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2832,9 +5379,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetHomeRoomsAction_triggered()
 }
 
 
-void FetMainForm::on_dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2845,9 +5398,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayActi
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2858,9 +5417,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(simulation_running || simulation_running_multi){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2871,9 +5436,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAct
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2884,9 +5455,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2897,9 +5474,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChange
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2910,9 +5493,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesAc
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2922,9 +5511,15 @@ void FetMainForm::on_dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_t
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }
-void FetMainForm::on_dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2935,9 +5530,15 @@ void FetMainForm::on_dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2948,9 +5549,15 @@ void FetMainForm::on_dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2961,9 +5568,15 @@ void FetMainForm::on_dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2974,9 +5587,15 @@ void FetMainForm::on_dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAct
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -2987,9 +5606,15 @@ void FetMainForm::on_dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesAc
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3000,9 +5625,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction_t
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3013,9 +5644,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction_trig
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3026,9 +5663,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction_
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3039,9 +5682,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction_tri
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3052,9 +5701,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAct
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction_triggered()
+void FetMainForm::dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3065,9 +5720,15 @@ void FetMainForm::on_dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3077,9 +5738,15 @@ void FetMainForm::on_dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction_trigg
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }
-void FetMainForm::on_dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3090,9 +5757,15 @@ void FetMainForm::on_dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction_trig
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3103,9 +5776,15 @@ void FetMainForm::on_dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction_trig
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3116,9 +5795,15 @@ void FetMainForm::on_dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction_tri
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3129,9 +5814,15 @@ void FetMainForm::on_dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction_
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3142,9 +5833,15 @@ void FetMainForm::on_dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsTeacherHomeRoomAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeacherHomeRoomAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3155,9 +5852,15 @@ void FetMainForm::on_dataSpaceConstraintsTeacherHomeRoomAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataSpaceConstraintsTeacherHomeRoomsAction_triggered()
+void FetMainForm::dataSpaceConstraintsTeacherHomeRoomsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3168,9 +5871,15 @@ void FetMainForm::on_dataSpaceConstraintsTeacherHomeRoomsAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetNotAvailableTimesAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetNotAvailableTimesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3181,9 +5890,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetNotAvailableTimesAction_trigg
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsBreakTimesAction_triggered()
+void FetMainForm::dataTimeConstraintsBreakTimesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3194,9 +5909,15 @@ void FetMainForm::on_dataTimeConstraintsBreakTimesAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3207,9 +5928,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersMaxDaysPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersMaxDaysPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3220,9 +5947,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxDaysPerWeekAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherMinDaysPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherMinDaysPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3233,9 +5966,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherMinDaysPerWeekAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersMinDaysPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersMinDaysPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3246,9 +5985,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersMinDaysPerWeekAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3259,9 +6004,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_trig
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3272,9 +6023,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_tri
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetMaxDaysPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetMaxDaysPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3285,9 +6042,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxDaysPerWeekAction_triggere
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsMaxDaysPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsMaxDaysPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3298,9 +6061,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxDaysPerWeekAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3311,9 +6080,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3324,9 +6099,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_tri
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersMaxHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3337,9 +6118,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxHoursDailyAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3350,9 +6137,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursDailyAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersMaxHoursContinuouslyAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersMaxHoursContinuouslyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3363,9 +6156,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxHoursContinuouslyAction_trigg
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursContinuouslyAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherMaxHoursContinuouslyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3376,9 +6175,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxHoursContinuouslyAction_trigge
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3389,9 +6194,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyA
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3402,9 +6213,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAc
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3420,9 +6237,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_t
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3438,9 +6261,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_tr
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersActivityTagMinHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersActivityTagMinHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3456,9 +6285,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersActivityTagMinHoursDailyAction_t
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherActivityTagMinHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherActivityTagMinHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3474,9 +6309,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherActivityTagMinHoursDailyAction_tr
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersMinHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersMinHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3487,9 +6328,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersMinHoursDailyAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherMinHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherMinHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3500,9 +6347,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherMinHoursDailyAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivityPreferredStartingTimeAction_triggered()
+void FetMainForm::dataTimeConstraintsActivityPreferredStartingTimeAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3513,9 +6366,15 @@ void FetMainForm::on_dataTimeConstraintsActivityPreferredStartingTimeAction_trig
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3526,9 +6385,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggere
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsMaxGapsPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3539,9 +6404,54 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxGapsPerWeekAction_triggered()
 	form.exec();
 }
 
+//terms
+void FetMainForm::dataTimeConstraintsActivitiesMaxInATermAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivitiesMaxInATermForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTermsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivitiesOccupyMaxTermsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
 void FetMainForm::on_groupActivitiesInInitialOrderAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3564,9 +6474,15 @@ void FetMainForm::on_groupActivitiesInInitialOrderAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetMaxGapsPerDayAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3582,9 +6498,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxGapsPerDayAction_triggered
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsMaxGapsPerDayAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3600,9 +6522,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxGapsPerDayAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3613,9 +6541,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerWeekAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherMaxGapsPerWeekAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerWeekAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3626,9 +6560,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxGapsPerWeekAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerDayAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3639,9 +6579,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxGapsPerDayAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherMaxGapsPerDayAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3652,9 +6598,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxGapsPerDayAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3665,9 +6617,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourAc
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3678,9 +6636,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHou
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetMaxHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3691,9 +6655,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxHoursDailyAction_triggered
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3704,9 +6674,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursDailyAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3717,9 +6693,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_tr
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursContinuouslyAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsMaxHoursContinuouslyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3730,9 +6712,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxHoursContinuouslyAction_trigg
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3743,9 +6731,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuous
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3756,9 +6750,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyA
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3774,9 +6774,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyActio
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3792,9 +6798,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_t
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3810,9 +6822,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetActivityTagMinHoursDailyActio
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsActivityTagMinHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsActivityTagMinHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3828,9 +6846,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsActivityTagMinHoursDailyAction_t
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetMinHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetMinHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3841,9 +6865,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMinHoursDailyAction_triggered
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsMinHoursDailyAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsMinHoursDailyAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3854,9 +6884,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsMinHoursDailyAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3867,9 +6903,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfAc
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3880,9 +6922,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActiv
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3893,9 +6941,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivi
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3906,9 +6960,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActiv
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivitiesNotOverlappingAction_triggered()
+void FetMainForm::dataTimeConstraintsActivitiesNotOverlappingAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3919,9 +6979,15 @@ void FetMainForm::on_dataTimeConstraintsActivitiesNotOverlappingAction_triggered
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivityTagsNotOverlappingAction_triggered()
+void FetMainForm::dataTimeConstraintsActivityTagsNotOverlappingAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3932,9 +6998,15 @@ void FetMainForm::on_dataTimeConstraintsActivityTagsNotOverlappingAction_trigger
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered()
+void FetMainForm::dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3945,9 +7017,15 @@ void FetMainForm::on_dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered()
+void FetMainForm::dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3958,9 +7036,15 @@ void FetMainForm::on_dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered()
+void FetMainForm::dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3971,9 +7055,34 @@ void FetMainForm::on_dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivityPreferredTimeSlotsAction_triggered()
+void FetMainForm::dataTimeConstraintsMaxGapsBetweenActivitiesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintMaxGapsBetweenActivitiesForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsActivityPreferredTimeSlotsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3984,9 +7093,15 @@ void FetMainForm::on_dataTimeConstraintsActivityPreferredTimeSlotsAction_trigger
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsActivityPreferredStartingTimesAction_triggered()
+void FetMainForm::dataTimeConstraintsActivityPreferredStartingTimesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -3997,9 +7112,15 @@ void FetMainForm::on_dataTimeConstraintsActivityPreferredStartingTimesAction_tri
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherMaxSpanPerDayAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherMaxSpanPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -4010,9 +7131,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherMaxSpanPerDayAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersMaxSpanPerDayAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersMaxSpanPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -4023,9 +7150,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersMaxSpanPerDayAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetMaxSpanPerDayAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetMaxSpanPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -4036,9 +7169,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMaxSpanPerDayAction_triggered
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsMaxSpanPerDayAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsMaxSpanPerDayAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -4049,9 +7188,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsMaxSpanPerDayAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeacherMinRestingHoursAction_triggered()
+void FetMainForm::dataTimeConstraintsTeacherMinRestingHoursAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -4062,9 +7207,15 @@ void FetMainForm::on_dataTimeConstraintsTeacherMinRestingHoursAction_triggered()
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsTeachersMinRestingHoursAction_triggered()
+void FetMainForm::dataTimeConstraintsTeachersMinRestingHoursAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -4075,9 +7226,15 @@ void FetMainForm::on_dataTimeConstraintsTeachersMinRestingHoursAction_triggered(
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsSetMinRestingHoursAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsSetMinRestingHoursAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -4088,9 +7245,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsSetMinRestingHoursAction_trigger
 	form.exec();
 }
 
-void FetMainForm::on_dataTimeConstraintsStudentsMinRestingHoursAction_triggered()
+void FetMainForm::dataTimeConstraintsStudentsMinRestingHoursAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -4102,9 +7265,15 @@ void FetMainForm::on_dataTimeConstraintsStudentsMinRestingHoursAction_triggered(
 }
 
 //2012-04-29
-void FetMainForm::on_dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction_triggered()
+void FetMainForm::dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -4116,9 +7285,15 @@ void FetMainForm::on_dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction
 }
 
 //2013-09-14
-void FetMainForm::on_dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction_triggered()
+void FetMainForm::dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -4127,6 +7302,1608 @@ void FetMainForm::on_dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction_t
 	ConstraintActivitiesSameRoomIfConsecutiveForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
+}
+
+//mornings-afternoons space
+void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMaxRoomChangesPerRealDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMaxRoomChangesPerRealDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxRoomChangesPerRealDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxRoomChangesPerRealDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+//mornings-afternoons time
+void FetMainForm::dataTimeConstraintsTeacherMaxRealDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxRealDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxRealDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxRealDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxAfternoonsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxAfternoonsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMaxMorningsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxMorningsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxMorningsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxMorningsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxTwoConsecutiveMorningsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxTwoConsecutiveMorningsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxTwoConsecutiveAfternoonsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxTwoConsecutiveAfternoonsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMinRealDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMinRealDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMinMorningsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMinMorningsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMinMorningsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMinMorningsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMinAfternoonsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMinAfternoonsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMinAfternoonsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMinAfternoonsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMinRealDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMinRealDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMorningIntervalMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMorningIntervalMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherAfternoonIntervalMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersAfternoonIntervalMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMaxRealDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMaxRealDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMaxRealDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMaxMorningsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMaxMorningsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMaxMorningsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMaxAfternoonsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMaxAfternoonsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMinMorningsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMinMorningsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMinMorningsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMinMorningsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMinAfternoonsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMinAfternoonsPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMinAfternoonsPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMorningIntervalMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsAfternoonIntervalMaxDaysPerWeekForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxHoursDailyRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxHoursDailyRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3Form form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxTwoActivityTagsPerDayFromN1N2N3Action_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3Form form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY){
+		enableNotPerfectMessage();
+		return;
+	}
+
+	ConstraintTeachersActivityTagMaxHoursDailyRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY){
+		enableNotPerfectMessage();
+		return;
+	}
+
+	ConstraintTeacherActivityTagMaxHoursDailyRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxHoursPerAllAfternoonsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxHoursPerAllAfternoonsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMaxHoursPerAllAfternoonsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMaxHoursPerAllAfternoonsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMinHoursPerMorningAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMinHoursPerMorningForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMinHoursPerMorningAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMinHoursPerMorningForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMinHoursDailyRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMinHoursDailyRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMinHoursDailyRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMinHoursDailyRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMaxSpanPerRealDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxSpanPerRealDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxSpanPerRealDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxSpanPerRealDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMaxSpanPerRealDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMaxSpanPerRealDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMaxSpanPerRealDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfternoonAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoonForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoonForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoonForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoonForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
+		enableNotPerfectMessage();
+		return;
+	}
+
+	ConstraintStudentsSetMaxGapsPerRealDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerRealDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
+		enableNotPerfectMessage();
+		return;
+	}
+
+	ConstraintStudentsMaxGapsPerRealDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerRealDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
+		enableNotPerfectMessage();
+		return;
+	}
+
+	ConstraintTeachersMaxGapsPerRealDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerRealDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
+		enableNotPerfectMessage();
+		return;
+	}
+
+	ConstraintTeacherMaxGapsPerRealDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
+		enableNotPerfectMessage();
+		return;
+	}
+
+	ConstraintStudentsSetMaxGapsPerWeekForRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
+		enableNotPerfectMessage();
+		return;
+	}
+
+	ConstraintStudentsMaxGapsPerWeekForRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
+		enableNotPerfectMessage();
+		return;
+	}
+
+	ConstraintTeachersMaxGapsPerWeekForRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(!ENABLE_MAX_GAPS_PER_REAL_DAY){
+		enableNotPerfectMessage();
+		return;
+	}
+
+	ConstraintTeacherMaxGapsPerWeekForRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxZeroGapsPerAfternoonForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxZeroGapsPerAfternoonForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMaxHoursDailyRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMaxHoursDailyRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY){
+		enableNotPerfectMessage();
+		return;
+	}
+
+	ConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	if(!ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY){
+		enableNotPerfectMessage();
+		return;
+	}
+
+	ConstraintStudentsActivityTagMaxHoursDailyRealDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMinHoursPerMorningAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMinHoursPerMorningForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMinHoursPerMorningAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMinHoursPerMorningForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::on_helpMoroccoAction_triggered()
+{
+	HelpMoroccoForm* form=new HelpMoroccoForm(this);
+	form->setWindowFlags(Qt::Window);
+	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
+	form->show();
+}
+
+void FetMainForm::on_helpAlgeriaAction_triggered()
+{
+	HelpAlgeriaForm* form=new HelpAlgeriaForm(this);
+	form->setWindowFlags(Qt::Window);
+	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
+	form->show();
 }
 
 void FetMainForm::on_helpAboutFETAction_triggered()
@@ -4202,6 +8979,26 @@ void FetMainForm::on_helpAddressesAction_triggered()
 	LongTextMessageBox::largeInformation(this, tr("FET web addresses"), s);
 }
 
+void FetMainForm::on_helpBlockPlanningAction_triggered()
+{
+	HelpBlockPlanningForm* form=new HelpBlockPlanningForm(this);
+	form->setWindowFlags(Qt::Window);
+	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
+	form->show();
+}
+
+void FetMainForm::on_helpTermsAction_triggered()
+{
+	HelpTermsForm* form=new HelpTermsForm(this);
+	form->setWindowFlags(Qt::Window);
+	form->setAttribute(Qt::WA_DeleteOnClose);
+	forceCenterWidgetOnScreen(form);
+	restoreFETDialogGeometry(form);
+	form->show();
+}
+
 void FetMainForm::on_helpFAQAction_triggered()
 {
 	HelpFaqForm* form=new HelpFaqForm(this);
@@ -4234,7 +9031,13 @@ void FetMainForm::on_helpInstructionsAction_triggered()
 
 void FetMainForm::on_timetableGenerateAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -4259,7 +9062,13 @@ void FetMainForm::on_timetableGenerateAction_triggered()
 
 void FetMainForm::on_timetableGenerateMultipleAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -4290,6 +9099,12 @@ void FetMainForm::on_timetableGenerateMultipleAction_triggered()
 
 void FetMainForm::on_timetableViewStudentsDaysHorizontalAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
@@ -4311,6 +9126,12 @@ void FetMainForm::on_timetableViewStudentsDaysHorizontalAction_triggered()
 
 void FetMainForm::on_timetableViewStudentsTimeHorizontalAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
@@ -4332,6 +9153,12 @@ void FetMainForm::on_timetableViewStudentsTimeHorizontalAction_triggered()
 
 void FetMainForm::on_timetableViewTeachersDaysHorizontalAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
@@ -4357,6 +9184,12 @@ void FetMainForm::on_timetableViewTeachersDaysHorizontalAction_triggered()
 
 void FetMainForm::on_timetableViewTeachersTimeHorizontalAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
@@ -4382,6 +9215,12 @@ void FetMainForm::on_timetableViewTeachersTimeHorizontalAction_triggered()
 
 void FetMainForm::on_timetableShowConflictsAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
@@ -4397,6 +9236,12 @@ void FetMainForm::on_timetableShowConflictsAction_triggered()
 
 void FetMainForm::on_timetableViewRoomsDaysHorizontalAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
@@ -4418,6 +9263,12 @@ void FetMainForm::on_timetableViewRoomsDaysHorizontalAction_triggered()
 
 void FetMainForm::on_timetableViewRoomsTimeHorizontalAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
@@ -4439,6 +9290,12 @@ void FetMainForm::on_timetableViewRoomsTimeHorizontalAction_triggered()
 
 void FetMainForm::on_timetablePrintAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
@@ -4458,11 +9315,23 @@ void FetMainForm::on_timetablePrintAction_triggered()
 
 void FetMainForm::on_statisticsPrintAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	StartStatisticsPrint::startStatisticsPrint(this);
 }
 
 void FetMainForm::on_timetableLockAllActivitiesAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
@@ -4473,6 +9342,12 @@ void FetMainForm::on_timetableLockAllActivitiesAction_triggered()
 
 void FetMainForm::on_timetableUnlockAllActivitiesAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		//QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		QMessageBox::information(this, tr("FET information"), tr("The timetable is not generated, but anyway FET will proceed now"));
@@ -4488,6 +9363,12 @@ void FetMainForm::on_timetableUnlockAllActivitiesAction_triggered()
 
 void FetMainForm::on_timetableLockActivitiesDayAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
@@ -4498,6 +9379,12 @@ void FetMainForm::on_timetableLockActivitiesDayAction_triggered()
 
 void FetMainForm::on_timetableUnlockActivitiesDayAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		//QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		QMessageBox::information(this, tr("FET information"), tr("The timetable is not generated, but anyway FET will proceed now"));
@@ -4513,6 +9400,12 @@ void FetMainForm::on_timetableUnlockActivitiesDayAction_triggered()
 
 void FetMainForm::on_timetableLockActivitiesEndStudentsDayAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
@@ -4523,6 +9416,12 @@ void FetMainForm::on_timetableLockActivitiesEndStudentsDayAction_triggered()
 
 void FetMainForm::on_timetableUnlockActivitiesEndStudentsDayAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
@@ -4533,6 +9432,12 @@ void FetMainForm::on_timetableUnlockActivitiesEndStudentsDayAction_triggered()
 
 void FetMainForm::on_timetableLockActivitiesWithASpecifiedActivityTagAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(gt.rules.activityTagsList.count()==0){
 		QMessageBox::information(this, tr("FET information"), tr("You have no activity tags defined in your data."));
 		return;
@@ -4548,6 +9453,12 @@ void FetMainForm::on_timetableLockActivitiesWithASpecifiedActivityTagAction_trig
 
 void FetMainForm::on_timetableUnlockActivitiesWithASpecifiedActivityTagAction_triggered()
 {
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
 	if(gt.rules.activityTagsList.count()==0){
 		QMessageBox::information(this, tr("FET information"), tr("You have no activity tags defined in your data."));
 		return;
@@ -4898,6 +9809,16 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	 " will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
+	s+=tr("57")+QString(". ")+tr("Enable max gaps per real day / per week for real days will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+
+	s+=tr("58")+QString(". ")+tr("Enable constraints students min hours per morning with empty mornings will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+
+	s+=tr("59")+QString(". ")+tr("Warn if using constraints students min hours per morning with empty mornings will be %1", "%1 is true or false. This is a warning if user uses a nonstandard constraint"
+		" students min hours per morning with allowed empty mornings").arg(tr("true"));
+	s+="\n";
+
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -5002,6 +9923,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	ENABLE_STUDENTS_MAX_GAPS_PER_DAY=false;
 	enableStudentsMaxGapsPerDayAction->setChecked(ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 	
+	ENABLE_MAX_GAPS_PER_REAL_DAY=false;
+	enableMaxGapsPerRealDayAction->setChecked(ENABLE_MAX_GAPS_PER_REAL_DAY);
+
 	SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
 	showWarningForNotPerfectConstraintsAction->setChecked(SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
 	
@@ -5015,6 +9939,11 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 
+	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
+	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
+	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
+	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
+
 	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction, ENABLE_ACTIVITY_TAG_MIN_HOURS_DAILY);
@@ -5023,6 +9952,16 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 
+	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsTeachersMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsTeacherMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+
+	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+
 	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 
 	ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
@@ -5030,6 +9969,12 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 
 	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
 	showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
+
+	ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=false;
+	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
+
+	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=true;
+	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
 
 	///////////
 	
@@ -5085,7 +10030,7 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 
 void FetMainForm::on_settingsTimetableHtmlLevelAction_triggered()
 {
-	if(simulation_running){
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -5140,7 +10085,13 @@ void FetMainForm::on_settingsCommandAfterFinishingAction_triggered()
 
 void FetMainForm::on_activityPlanningAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -5167,7 +10118,13 @@ void FetMainForm::on_activityPlanningAction_triggered()
 
 void FetMainForm::on_spreadActivitiesAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -5193,11 +10150,11 @@ void FetMainForm::on_spreadActivitiesAction_triggered()
 			return;
 		}
 	}
-	
-	if(gt.rules.nDaysPerWeek<=4){
+
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS && gt.rules.nDaysPerWeek<=4){
 		QString s;
 		s=tr("You have less than 5 days per week, so probably you won't need this feature. Do you still want to continue?");
-		
+
 		int cfrm=0;
 		switch( QMessageBox::question( this, tr("FET question"),
 		 s,
@@ -5214,7 +10171,27 @@ void FetMainForm::on_spreadActivitiesAction_triggered()
 			return;
 		}
 	}
-	
+	else if(gt.rules.mode==MORNINGS_AFTERNOONS && gt.rules.nDaysPerWeek/2<=4){
+		QString s;
+		s=tr("You have less than 5 real days per week, so probably you won't need this feature. Do you still want to continue?");
+
+		int cfrm=0;
+		switch( QMessageBox::question( this, tr("FET question"),
+		 s,
+		 tr("&Continue"), tr("&Cancel"), 0 , 1 ) ) {
+		case 0: // Yes - continue
+			cfrm=1;
+			break;
+		case 1: // No - cancel
+			cfrm=0;
+			break;
+		}
+
+		if(!cfrm){
+			return;
+		}
+	}
+
 	if(CONFIRM_SPREAD_ACTIVITIES){
 		int confirm;
 	
@@ -5240,7 +10217,13 @@ void FetMainForm::on_spreadActivitiesAction_triggered()
 
 void FetMainForm::on_statisticsExportToDiskAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -5251,7 +10234,13 @@ void FetMainForm::on_statisticsExportToDiskAction_triggered()
 
 void FetMainForm::on_removeRedundantConstraintsAction_triggered()
 {
-	if(simulation_running){
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;
@@ -5360,6 +10349,11 @@ void FetMainForm::enableActivityTagMaxHoursDailyToggled(bool checked)
 	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
+
+	setEnabledIcon(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
+	setEnabledIcon(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
+	setEnabledIcon(dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
+	setEnabledIcon(dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDaysAction, ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
 }
 
 void FetMainForm::enableActivityTagMinHoursDailyToggled(bool checked)
@@ -5418,6 +10412,41 @@ void FetMainForm::enableStudentsMaxGapsPerDayToggled(bool checked)
 	
 	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerDayAction, ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
+}
+
+void FetMainForm::enableMaxGapsPerRealDayToggled(bool checked)
+{
+	if(checked==true){
+		QString s=tr("These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your"
+		 " timetable solve too slow or even impossible.");
+		s+=" ";
+		s+=tr("It is recommended to use such constraints only at the end, after you generated successfully with all the other constraints.");
+		s+="\n\n";
+		s+=tr("If your timetable is too difficult, it may be from these kinds of constraints, so you may need to remove them and retry.");
+		s+="\n\n";
+		s+=tr("Continue only if you know what you are doing.");
+
+		QMessageBox::StandardButton b=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
+
+		if(b!=QMessageBox::Ok){
+			disconnect(enableMaxGapsPerRealDayAction, SIGNAL(toggled(bool)), this, SLOT(enableMaxGapsPerRealDayToggled(bool)));
+			enableMaxGapsPerRealDayAction->setChecked(false);
+			connect(enableMaxGapsPerRealDayAction, SIGNAL(toggled(bool)), this, SLOT(enableMaxGapsPerRealDayToggled(bool)));
+			return;
+		}
+	}
+
+	ENABLE_MAX_GAPS_PER_REAL_DAY=checked;
+
+	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsTeachersMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsTeacherMaxGapsPerRealDayAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+
+	setEnabledIcon(dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
+	setEnabledIcon(dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction, ENABLE_MAX_GAPS_PER_REAL_DAY);
 }
 
 void FetMainForm::showWarningForSubgroupsWithTheSameActivitiesToggled(bool checked)
@@ -5511,6 +10540,7 @@ void FetMainForm::showWarningForNotPerfectConstraintsToggled(bool checked)
 
 void FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool checked)
 {
+	assert(gt.rules.mode!=MORNINGS_AFTERNOONS);
 	if(checked==true){
 		QString s=tr("This kind of constraint is good, but only in the right case. Adding such constraints in the wrong circumstance may make your"
 		 " timetable solve too slow or even impossible.");
@@ -5537,6 +10567,7 @@ void FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool chec
 
 void FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool checked)
 {
+	assert(gt.rules.mode!=MORNINGS_AFTERNOONS);
 	if(checked==false){
 		QString s=tr("It is recommended to keep this warning active, but if you really want, you can disable it.");
 		s+="\n\n";
@@ -5555,6 +10586,36 @@ void FetMainForm::showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(b
 	}
 	
 	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=checked;
+}
+
+void FetMainForm::enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool checked)
+{
+	Q_UNUSED(checked);
+
+	assert(0); //Yes, this option is always disabled
+
+	/*QMessageBox::information(this, tr("FET information"), tr("This option must remain selected in the custom FET version MA"));
+
+	disconnect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(true);
+	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
+
+	return;
+}
+
+void FetMainForm::showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool checked)
+{
+	Q_UNUSED(checked);
+
+	assert(0); //Yes, this option is always disabled
+
+	/*QMessageBox::information(this, tr("FET information"), tr("This option must remain unselected in the custom FET version MA"));
+
+	disconnect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(false);
+	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
+
+	return;
 }
 
 void FetMainForm::enableGroupActivitiesInInitialOrderToggled(bool checked)
@@ -5611,7 +10672,7 @@ void FetMainForm::on_shortcutAllTimeConstraintsPushButton_clicked()
 
 void FetMainForm::on_shortcutBreakTimeConstraintsPushButton_clicked()
 {
-	on_dataTimeConstraintsBreakTimesAction_triggered();
+	dataTimeConstraintsBreakTimesAction_triggered();
 }
 
 void FetMainForm::on_shortcutTeachersTimeConstraintsPushButton_clicked()
@@ -5810,5 +10871,8 @@ bool SHOW_WARNING_FOR_MAX_HOURS_DAILY_WITH_UNDER_100_WEIGHT=true;
 
 bool SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
 bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
+
+bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=true;
+
 bool SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
 #endif

@@ -213,7 +213,7 @@ Activity::Activity(
 	this->nTotalStudents=_computedNumberOfStudents;
 }
 
-bool Activity::operator==(Activity& a)
+bool Activity::operator==(const Activity& a)
 {
 	if(this->teachersNames != a.teachersNames)
 		return false;

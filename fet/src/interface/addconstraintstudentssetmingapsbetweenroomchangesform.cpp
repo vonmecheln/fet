@@ -36,7 +36,7 @@ AddConstraintStudentsSetMinGapsBetweenRoomChangesForm::AddConstraintStudentsSetM
 
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
-		
+	
 	minGapsSpinBox->setMinimum(1);
 	minGapsSpinBox->setMaximum(gt.rules.nHoursPerDay);
 	minGapsSpinBox->setValue(1);

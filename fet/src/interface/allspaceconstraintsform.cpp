@@ -23,6 +23,7 @@
 
 #include "modifyconstraintbasiccompulsoryspaceform.h"
 #include "modifyconstraintroomnotavailabletimesform.h"
+#include "modifyconstraintteacherroomnotavailabletimesform.h"
 #include "modifyconstraintactivitypreferredroomform.h"
 #include "modifyconstraintactivitypreferredroomsform.h"
 
@@ -46,12 +47,18 @@
 #include "modifyconstraintteachermingapsbetweenbuildingchangesform.h"
 #include "modifyconstraintteachersmingapsbetweenbuildingchangesform.h"
 
+#include "modifyconstraintstudentssetmaxroomchangesperrealdayform.h"
+#include "modifyconstraintstudentsmaxroomchangesperrealdayform.h"
+
 #include "modifyconstraintstudentssetmaxroomchangesperdayform.h"
 #include "modifyconstraintstudentsmaxroomchangesperdayform.h"
 #include "modifyconstraintstudentssetmaxroomchangesperweekform.h"
 #include "modifyconstraintstudentsmaxroomchangesperweekform.h"
 #include "modifyconstraintstudentssetmingapsbetweenroomchangesform.h"
 #include "modifyconstraintstudentsmingapsbetweenroomchangesform.h"
+
+#include "modifyconstraintteachermaxroomchangesperrealdayform.h"
+#include "modifyconstraintteachersmaxroomchangesperrealdayform.h"
 
 #include "modifyconstraintteachermaxroomchangesperdayform.h"
 #include "modifyconstraintteachersmaxroomchangesperdayform.h"
@@ -711,6 +718,37 @@ void AllSpaceConstraintsForm::modifyConstraint()
 	//40
 	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ROOM_CHANGES){
 		ModifyConstraintTeachersMinGapsBetweenRoomChangesForm form(this, (ConstraintTeachersMinGapsBetweenRoomChanges*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//41
+	else if(ctr->type==CONSTRAINT_TEACHER_ROOM_NOT_AVAILABLE_TIMES){
+		ModifyConstraintTeacherRoomNotAvailableTimesForm form(this, (ConstraintTeacherRoomNotAvailableTimes*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//for mornings-afternoons
+	//42
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_REAL_DAY){
+		ModifyConstraintStudentsSetMaxRoomChangesPerRealDayForm form(this, (ConstraintStudentsSetMaxRoomChangesPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//43
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_REAL_DAY){
+		ModifyConstraintStudentsMaxRoomChangesPerRealDayForm form(this, (ConstraintStudentsMaxRoomChangesPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//44
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY){
+		ModifyConstraintTeacherMaxRoomChangesPerRealDayForm form(this, (ConstraintTeacherMaxRoomChangesPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//45
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY){
+		ModifyConstraintTeachersMaxRoomChangesPerRealDayForm form(this, (ConstraintTeachersMaxRoomChangesPerRealDay*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

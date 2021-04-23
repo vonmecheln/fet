@@ -82,7 +82,6 @@ ModifyConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::ModifyConstrai
 		selectedTimesTable->setVerticalHeaderItem(i, item);
 	}
 
-	//bool currentMatrix[MAX_HOURS_PER_DAY][MAX_DAYS_PER_WEEK];
 	Matrix2D<bool> currentMatrix;
 	currentMatrix.resize(gt.rules.nHoursPerDay, gt.rules.nDaysPerWeek);
 

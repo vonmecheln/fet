@@ -51,6 +51,9 @@
 
 #include "modifyconstraintactivitiesendstudentsdayform.h"
 
+#include "modifyconstraintactivityendsteachersdayform.h"
+#include "modifyconstraintactivitiesendteachersdayform.h"
+
 #include "modifyconstraintteachernotavailabletimesform.h"
 #include "modifyconstraintteachersmaxgapsperweekform.h"
 #include "modifyconstraintteachermaxgapsperweekform.h"
@@ -130,6 +133,120 @@
 #include "modifyconstraintteachersminrestinghoursform.h"
 #include "modifyconstraintstudentssetminrestinghoursform.h"
 #include "modifyconstraintstudentsminrestinghoursform.h"
+
+//mornings-afternoons
+#include "modifyconstraintteachersmaxzerogapsperafternoonform.h"
+#include "modifyconstraintteachermaxzerogapsperafternoonform.h"
+
+#include "modifyconstraintteachersmaxgapsperrealdayform.h"
+#include "modifyconstraintteachermaxgapsperrealdayform.h"
+
+#include "modifyconstraintteachermaxrealdaysperweekform.h"
+#include "modifyconstraintteachersmaxrealdaysperweekform.h"
+#include "modifyconstraintteachermaxafternoonsperweekform.h"
+#include "modifyconstraintteachersmaxafternoonsperweekform.h"
+#include "modifyconstraintteachermaxmorningsperweekform.h"
+#include "modifyconstraintteachersmaxmorningsperweekform.h"
+
+#include "modifyconstraintteachermaxtwoconsecutivemorningsform.h"
+#include "modifyconstraintteachersmaxtwoconsecutivemorningsform.h"
+#include "modifyconstraintteachermaxtwoconsecutiveafternoonsform.h"
+#include "modifyconstraintteachersmaxtwoconsecutiveafternoonsform.h"
+
+#include "modifyconstraintteachersmaxhoursdailyrealdaysform.h"
+#include "modifyconstraintteachermaxhoursdailyrealdaysform.h"
+
+#include "modifyconstraintteachersminhoursdailyrealdaysform.h"
+#include "modifyconstraintteacherminhoursdailyrealdaysform.h"
+
+#include "modifyconstraintteachermaxhoursperallafternoonsform.h"
+#include "modifyconstraintteachersmaxhoursperallafternoonsform.h"
+
+#include "modifyconstraintstudentssetmaxhoursperallafternoonsform.h"
+#include "modifyconstraintstudentsmaxhoursperallafternoonsform.h"
+
+#include "modifyconstraintteachersminhourspermorningform.h"
+#include "modifyconstraintteacherminhourspermorningform.h"
+
+#include "modifyconstraintteacherminrealdaysperweekform.h"
+#include "modifyconstraintteachersminrealdaysperweekform.h"
+
+#include "modifyconstraintteacherminmorningsperweekform.h"
+#include "modifyconstraintteachersminmorningsperweekform.h"
+#include "modifyconstraintteacherminafternoonsperweekform.h"
+#include "modifyconstraintteachersminafternoonsperweekform.h"
+
+#include "modifyconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form.h"
+#include "modifyconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.h"
+
+#include "modifyconstraintteachersactivitytagmaxhoursdailyrealdaysform.h"
+#include "modifyconstraintteacheractivitytagmaxhoursdailyrealdaysform.h"
+
+#include "modifyconstraintstudentssetmaxgapsperrealdayform.h"
+#include "modifyconstraintstudentsmaxgapsperrealdayform.h"
+
+#include "modifyconstraintteachersmaxgapsperweekforrealdaysform.h"
+#include "modifyconstraintteachermaxgapsperweekforrealdaysform.h"
+#include "modifyconstraintstudentssetmaxgapsperweekforrealdaysform.h"
+#include "modifyconstraintstudentsmaxgapsperweekforrealdaysform.h"
+
+#include "modifyconstraintstudentsafternoonsearlymaxbeginningsatsecondhourform.h"
+#include "modifyconstraintstudentssetafternoonsearlymaxbeginningsatsecondhourform.h"
+
+#include "modifyconstraintteachersafternoonsearlymaxbeginningsatsecondhourform.h"
+#include "modifyconstraintteacherafternoonsearlymaxbeginningsatsecondhourform.h"
+
+#include "modifyconstraintstudentssetmaxhoursdailyrealdaysform.h"
+#include "modifyconstraintstudentsmaxhoursdailyrealdaysform.h"
+
+#include "modifyconstraintstudentsminhourspermorningform.h"
+#include "modifyconstraintstudentssetminhourspermorningform.h"
+
+#include "modifyconstraintstudentssetactivitytagmaxhoursdailyrealdaysform.h"
+#include "modifyconstraintstudentsactivitytagmaxhoursdailyrealdaysform.h"
+
+#include "modifyconstraintteachermorningintervalmaxdaysperweekform.h"
+#include "modifyconstraintteachersmorningintervalmaxdaysperweekform.h"
+
+#include "modifyconstraintteacherafternoonintervalmaxdaysperweekform.h"
+#include "modifyconstraintteachersafternoonintervalmaxdaysperweekform.h"
+
+#include "modifyconstraintstudentssetmorningintervalmaxdaysperweekform.h"
+#include "modifyconstraintstudentsmorningintervalmaxdaysperweekform.h"
+#include "modifyconstraintstudentssetafternoonintervalmaxdaysperweekform.h"
+#include "modifyconstraintstudentsafternoonintervalmaxdaysperweekform.h"
+
+#include "modifyconstraintstudentssetmaxrealdaysperweekform.h"
+#include "modifyconstraintstudentsmaxrealdaysperweekform.h"
+
+#include "modifyconstraintstudentssetmaxafternoonsperweekform.h"
+#include "modifyconstraintstudentsmaxafternoonsperweekform.h"
+#include "modifyconstraintstudentssetmaxmorningsperweekform.h"
+#include "modifyconstraintstudentsmaxmorningsperweekform.h"
+
+#include "modifyconstraintstudentssetminafternoonsperweekform.h"
+#include "modifyconstraintstudentsminafternoonsperweekform.h"
+#include "modifyconstraintstudentssetminmorningsperweekform.h"
+#include "modifyconstraintstudentsminmorningsperweekform.h"
+
+#include "modifyconstraintteachermaxspanperrealdayform.h"
+#include "modifyconstraintteachersmaxspanperrealdayform.h"
+#include "modifyconstraintstudentssetmaxspanperrealdayform.h"
+#include "modifyconstraintstudentsmaxspanperrealdayform.h"
+
+#include "modifyconstraintteacherminrestinghoursbetweenmorningandafternoonform.h"
+#include "modifyconstraintteachersminrestinghoursbetweenmorningandafternoonform.h"
+#include "modifyconstraintstudentssetminrestinghoursbetweenmorningandafternoonform.h"
+#include "modifyconstraintstudentsminrestinghoursbetweenmorningandafternoonform.h"
+
+//block planning
+#include "modifyconstraintmaxgapsbetweenactivitiesform.h"
+
+#include "modifyconstraintmaxtotalactivitiesfromsetinselectedtimeslotsform.h"
+
+//terms
+#include "modifyconstraintactivitiesmaxinatermform.h"
+#include "modifyconstraintactivitiesoccupymaxtermsform.h"
 
 #include "lockunlock.h"
 
@@ -1052,7 +1169,515 @@ void AllTimeConstraintsForm::modifyConstraint()
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+	//87
+	else if(ctr->type==CONSTRAINT_ACTIVITY_ENDS_TEACHERS_DAY){
+		ModifyConstraintActivityEndsTeachersDayForm form(this, (ConstraintActivityEndsTeachersDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//88
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_END_TEACHERS_DAY){
+		ModifyConstraintActivitiesEndTeachersDayForm form(this, (ConstraintActivitiesEndTeachersDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
 
+	//mornings-afternoons
+	//89
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_AFTERNOONS_PER_WEEK){
+		ModifyConstraintTeacherMaxAfternoonsPerWeekForm form(this, (ConstraintTeacherMaxAfternoonsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//90
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_AFTERNOONS_PER_WEEK){
+		ModifyConstraintTeachersMaxAfternoonsPerWeekForm form(this, (ConstraintTeachersMaxAfternoonsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//91
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_MORNINGS_PER_WEEK){
+		ModifyConstraintTeacherMaxMorningsPerWeekForm form(this, (ConstraintTeacherMaxMorningsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//92
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_MORNINGS_PER_WEEK){
+		ModifyConstraintTeachersMaxMorningsPerWeekForm form(this, (ConstraintTeachersMaxMorningsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//93
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+		ModifyConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3Form form(this, (ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//94
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+		ModifyConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3Form form(this, (ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//95
+	else if(ctr->type==CONSTRAINT_TEACHER_MIN_MORNINGS_PER_WEEK){
+		ModifyConstraintTeacherMinMorningsPerWeekForm form(this, (ConstraintTeacherMinMorningsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//96
+	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_MORNINGS_PER_WEEK){
+		ModifyConstraintTeachersMinMorningsPerWeekForm form(this, (ConstraintTeachersMinMorningsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//97
+	else if(ctr->type==CONSTRAINT_TEACHER_MIN_AFTERNOONS_PER_WEEK){
+		ModifyConstraintTeacherMinAfternoonsPerWeekForm form(this, (ConstraintTeacherMinAfternoonsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//98
+	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_AFTERNOONS_PER_WEEK){
+		ModifyConstraintTeachersMinAfternoonsPerWeekForm form(this, (ConstraintTeachersMinAfternoonsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//99
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_TWO_CONSECUTIVE_MORNINGS){
+		ModifyConstraintTeacherMaxTwoConsecutiveMorningsForm form(this, (ConstraintTeacherMaxTwoConsecutiveMornings*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//100
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_TWO_CONSECUTIVE_MORNINGS){
+		ModifyConstraintTeachersMaxTwoConsecutiveMorningsForm form(this, (ConstraintTeachersMaxTwoConsecutiveMornings*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//101
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_TWO_CONSECUTIVE_AFTERNOONS){
+		ModifyConstraintTeacherMaxTwoConsecutiveAfternoonsForm form(this, (ConstraintTeacherMaxTwoConsecutiveAfternoons*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//102
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_TWO_CONSECUTIVE_AFTERNOONS){
+		ModifyConstraintTeachersMaxTwoConsecutiveAfternoonsForm form(this, (ConstraintTeachersMaxTwoConsecutiveAfternoons*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//103
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_REAL_DAY){
+		ModifyConstraintTeachersMaxGapsPerRealDayForm form(this, (ConstraintTeachersMaxGapsPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//104
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_REAL_DAY){
+		ModifyConstraintTeacherMaxGapsPerRealDayForm form(this, (ConstraintTeacherMaxGapsPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//105
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_REAL_DAY){
+		ModifyConstraintStudentsSetMaxGapsPerRealDayForm form(this, (ConstraintStudentsSetMaxGapsPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//106
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_GAPS_PER_REAL_DAY){
+		ModifyConstraintStudentsMaxGapsPerRealDayForm form(this, (ConstraintStudentsMaxGapsPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+
+	//107
+	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_HOURS_DAILY_REAL_DAYS){
+		ModifyConstraintTeachersMinHoursDailyRealDaysForm form(this, (ConstraintTeachersMinHoursDailyRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//108
+	else if(ctr->type==CONSTRAINT_TEACHER_MIN_HOURS_DAILY_REAL_DAYS){
+		ModifyConstraintTeacherMinHoursDailyRealDaysForm form(this, (ConstraintTeacherMinHoursDailyRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+
+	//109
+	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_HOURS_PER_MORNING){
+		ModifyConstraintTeachersMinHoursPerMorningForm form(this, (ConstraintTeachersMinHoursPerMorning*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//110
+	else if(ctr->type==CONSTRAINT_TEACHER_MIN_HOURS_PER_MORNING){
+		ModifyConstraintTeacherMinHoursPerMorningForm form(this, (ConstraintTeacherMinHoursPerMorning*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//2017-02-07
+	//111
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_SPAN_PER_REAL_DAY){
+		ModifyConstraintTeacherMaxSpanPerRealDayForm form(this, (ConstraintTeacherMaxSpanPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//112
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_SPAN_PER_REAL_DAY){
+		ModifyConstraintTeachersMaxSpanPerRealDayForm form(this, (ConstraintTeachersMaxSpanPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//113
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_SPAN_PER_REAL_DAY){
+		ModifyConstraintStudentsSetMaxSpanPerRealDayForm form(this, (ConstraintStudentsSetMaxSpanPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//114
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_SPAN_PER_REAL_DAY){
+		ModifyConstraintStudentsMaxSpanPerRealDayForm form(this, (ConstraintStudentsMaxSpanPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+
+	//115
+	else if(ctr->type==CONSTRAINT_TEACHER_MORNING_INTERVAL_MAX_DAYS_PER_WEEK){
+		ModifyConstraintTeacherMorningIntervalMaxDaysPerWeekForm form(this, (ConstraintTeacherMorningIntervalMaxDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//116
+	else if(ctr->type==CONSTRAINT_TEACHERS_MORNING_INTERVAL_MAX_DAYS_PER_WEEK){
+		ModifyConstraintTeachersMorningIntervalMaxDaysPerWeekForm form(this, (ConstraintTeachersMorningIntervalMaxDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+
+	//117
+	else if(ctr->type==CONSTRAINT_TEACHER_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK){
+		ModifyConstraintTeacherAfternoonIntervalMaxDaysPerWeekForm form(this, (ConstraintTeacherAfternoonIntervalMaxDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//118
+	else if(ctr->type==CONSTRAINT_TEACHERS_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK){
+		ModifyConstraintTeachersAfternoonIntervalMaxDaysPerWeekForm form(this, (ConstraintTeachersAfternoonIntervalMaxDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//119
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_MORNING){
+		ModifyConstraintStudentsSetMinHoursPerMorningForm form(this, (ConstraintStudentsSetMinHoursPerMorning*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//120
+	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_HOURS_PER_MORNING){
+		ModifyConstraintStudentsMinHoursPerMorningForm form(this, (ConstraintStudentsMinHoursPerMorning*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+
+	//121
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_ZERO_GAPS_PER_AFTERNOON){
+		ModifyConstraintTeachersMaxZeroGapsPerAfternoonForm form(this, (ConstraintTeachersMaxZeroGapsPerAfternoon*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//122
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_ZERO_GAPS_PER_AFTERNOON){
+		ModifyConstraintTeacherMaxZeroGapsPerAfternoonForm form(this, (ConstraintTeacherMaxZeroGapsPerAfternoon*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//123
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_AFTERNOONS_PER_WEEK){
+		ModifyConstraintStudentsSetMaxAfternoonsPerWeekForm form(this, (ConstraintStudentsSetMaxAfternoonsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//124
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_AFTERNOONS_PER_WEEK){
+		ModifyConstraintStudentsMaxAfternoonsPerWeekForm form(this, (ConstraintStudentsMaxAfternoonsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//125
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_MORNINGS_PER_WEEK){
+		ModifyConstraintStudentsSetMaxMorningsPerWeekForm form(this, (ConstraintStudentsSetMaxMorningsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//126
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_MORNINGS_PER_WEEK){
+		ModifyConstraintStudentsMaxMorningsPerWeekForm form(this, (ConstraintStudentsMaxMorningsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	/////
+	//127
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_AFTERNOONS_PER_WEEK){
+		ModifyConstraintStudentsSetMinAfternoonsPerWeekForm form(this, (ConstraintStudentsSetMinAfternoonsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//128
+	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_AFTERNOONS_PER_WEEK){
+		ModifyConstraintStudentsMinAfternoonsPerWeekForm form(this, (ConstraintStudentsMinAfternoonsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//129
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_MORNINGS_PER_WEEK){
+		ModifyConstraintStudentsSetMinMorningsPerWeekForm form(this, (ConstraintStudentsSetMinMorningsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//130
+	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_MORNINGS_PER_WEEK){
+		ModifyConstraintStudentsMinMorningsPerWeekForm form(this, (ConstraintStudentsMinMorningsPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//131
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MORNING_INTERVAL_MAX_DAYS_PER_WEEK){
+		ModifyConstraintStudentsSetMorningIntervalMaxDaysPerWeekForm form(this, (ConstraintStudentsSetMorningIntervalMaxDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//132
+	else if(ctr->type==CONSTRAINT_STUDENTS_MORNING_INTERVAL_MAX_DAYS_PER_WEEK){
+		ModifyConstraintStudentsMorningIntervalMaxDaysPerWeekForm form(this, (ConstraintStudentsMorningIntervalMaxDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//133
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK){
+		ModifyConstraintStudentsSetAfternoonIntervalMaxDaysPerWeekForm form(this, (ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//134
+	else if(ctr->type==CONSTRAINT_STUDENTS_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK){
+		ModifyConstraintStudentsAfternoonIntervalMaxDaysPerWeekForm form(this, (ConstraintStudentsAfternoonIntervalMaxDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//2020-06-28
+	//135
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_PER_ALL_AFTERNOONS){
+		ModifyConstraintTeacherMaxHoursPerAllAfternoonsForm form(this, (ConstraintTeacherMaxHoursPerAllAfternoons*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//136
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_HOURS_PER_ALL_AFTERNOONS){
+		ModifyConstraintTeachersMaxHoursPerAllAfternoonsForm form(this, (ConstraintTeachersMaxHoursPerAllAfternoons*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//137
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_PER_ALL_AFTERNOONS){
+		ModifyConstraintStudentsSetMaxHoursPerAllAfternoonsForm form(this, (ConstraintStudentsSetMaxHoursPerAllAfternoons*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//138
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_HOURS_PER_ALL_AFTERNOONS){
+		ModifyConstraintStudentsMaxHoursPerAllAfternoonsForm form(this, (ConstraintStudentsMaxHoursPerAllAfternoons*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+
+	//139
+	else if(ctr->type==CONSTRAINT_TEACHER_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON){
+		ModifyConstraintTeacherMinRestingHoursBetweenMorningAndAfternoonForm form(this, (ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//140
+	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON){
+		ModifyConstraintTeachersMinRestingHoursBetweenMorningAndAfternoonForm form(this, (ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//141
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON){
+		ModifyConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoonForm form(this, (ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//142
+	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON){
+		ModifyConstraintStudentsMinRestingHoursBetweenMorningAndAfternoonForm form(this, (ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	/////////
+	//143
+	else if(ctr->type==CONSTRAINT_STUDENTS_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+		ModifyConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this, (ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//144
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+		ModifyConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this, (ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+
+	//145
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS){
+		ModifyConstraintTeachersMaxGapsPerWeekForRealDaysForm form(this, (ConstraintTeachersMaxGapsPerWeekForRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//146
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS){
+		ModifyConstraintTeacherMaxGapsPerWeekForRealDaysForm form(this, (ConstraintTeacherMaxGapsPerWeekForRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//147
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS){
+		ModifyConstraintStudentsSetMaxGapsPerWeekForRealDaysForm form(this, (ConstraintStudentsSetMaxGapsPerWeekForRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//148
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS){
+		ModifyConstraintStudentsMaxGapsPerWeekForRealDaysForm form(this, (ConstraintStudentsMaxGapsPerWeekForRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	
+	//149
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_REAL_DAYS_PER_WEEK){
+		ModifyConstraintTeacherMaxRealDaysPerWeekForm form(this, (ConstraintTeacherMaxRealDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//150
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_HOURS_DAILY_REAL_DAYS){
+		ModifyConstraintTeachersMaxHoursDailyRealDaysForm form(this, (ConstraintTeachersMaxHoursDailyRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//151
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY_REAL_DAYS){
+		ModifyConstraintTeacherMaxHoursDailyRealDaysForm form(this, (ConstraintTeacherMaxHoursDailyRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//152
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_REAL_DAYS){
+		ModifyConstraintStudentsSetMaxHoursDailyRealDaysForm form(this, (ConstraintStudentsSetMaxHoursDailyRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//153
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_HOURS_DAILY_REAL_DAYS){
+		ModifyConstraintStudentsMaxHoursDailyRealDaysForm form(this, (ConstraintStudentsMaxHoursDailyRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//154
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_REAL_DAYS_PER_WEEK){
+		ModifyConstraintTeachersMaxRealDaysPerWeekForm form(this, (ConstraintTeachersMaxRealDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//155
+	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_REAL_DAYS_PER_WEEK){
+		ModifyConstraintTeachersMinRealDaysPerWeekForm form(this, (ConstraintTeachersMinRealDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//156
+	else if(ctr->type==CONSTRAINT_TEACHER_MIN_REAL_DAYS_PER_WEEK){
+		ModifyConstraintTeacherMinRealDaysPerWeekForm form(this, (ConstraintTeacherMinRealDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//157
+	else if(ctr->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS){
+		ModifyConstraintTeachersActivityTagMaxHoursDailyRealDaysForm form(this, (ConstraintTeachersActivityTagMaxHoursDailyRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//158
+	else if(ctr->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS){
+		ModifyConstraintTeacherActivityTagMaxHoursDailyRealDaysForm form(this, (ConstraintTeacherActivityTagMaxHoursDailyRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//159
+	else if(ctr->type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS){
+		ModifyConstraintStudentsActivityTagMaxHoursDailyRealDaysForm form(this, (ConstraintStudentsActivityTagMaxHoursDailyRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//160
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS){
+		ModifyConstraintStudentsSetActivityTagMaxHoursDailyRealDaysForm form(this, (ConstraintStudentsSetActivityTagMaxHoursDailyRealDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+
+	//161
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_REAL_DAYS_PER_WEEK){
+		ModifyConstraintStudentsSetMaxRealDaysPerWeekForm form(this, (ConstraintStudentsSetMaxRealDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//162
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_REAL_DAYS_PER_WEEK){
+		ModifyConstraintStudentsMaxRealDaysPerWeekForm form(this, (ConstraintStudentsMaxRealDaysPerWeek*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//163
+	else if(ctr->type==CONSTRAINT_TEACHERS_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+		ModifyConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this, (ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//164
+	else if(ctr->type==CONSTRAINT_TEACHER_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+		ModifyConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHourForm form(this, (ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//block-planning
+	//165
+	else if(ctr->type==CONSTRAINT_MAX_TOTAL_ACTIVITIES_FROM_SET_IN_SELECTED_TIME_SLOTS){
+		ModifyConstraintMaxTotalActivitiesFromSetInSelectedTimeSlotsForm form(this, (ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//166
+	else if(ctr->type==CONSTRAINT_MAX_GAPS_BETWEEN_ACTIVITIES){
+		ModifyConstraintMaxGapsBetweenActivitiesForm form(this, (ConstraintMaxGapsBetweenActivities*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//terms
+	//167
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_IN_A_TERM){
+		ModifyConstraintActivitiesMaxInATermForm form(this, (ConstraintActivitiesMaxInATerm*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//168
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS){
+		ModifyConstraintActivitiesOccupyMaxTermsForm form(this, (ConstraintActivitiesOccupyMaxTerms*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
 	else{
 		QMessageBox::critical(this, tr("FET critical"), tr("You have found a bug in FET. Please report it. This kind of constraint"
 		 " is not correctly recognized in all time constraints dialog. FET will skip this error, so that you can continue work."

@@ -1,0 +1,31 @@
+Students Sets;Subject;Teachers;Activity Tags;Total Duration;Split Duration;Min Days;Weight;Consecutive;;Att: All of the lessons in a same term are not in a same day (Split Duration 1+1+1)
+8;VT;Nop+Lip+Nik+Ger+Aho;;6;;;;;;2 lessons in a week in one term and 1 lesson in a week in four terms. All 8th graders have their lessons exactly same time.
+8;VP;Nop+Lip+Nik+Ger+Aho;;6;;;;;;2 lessons in a week in one term and 1 lesson in a week in four terms. All 8th graders have their lessons exactly same time.
+8;VL1;Nop+Luo+S-F+Lip+Nik+Ger+Aho;;3;;;;;;3 lessons in a week in one term. All 8th graders have their lessons exactly same time.
+8RUB;VL2;Nop+Lip+Luo+Aro+Nik+Ger+Aho;;3;;;;;;3 lessons in a week in one term for 8th graders RUB
+8A+8B;FK;SaP+LiK+LuS;;9;;;;;;3 lessons in a week in three terms.
+8A;SUK;Rag;;9;;;;;;3 lessons in a week in three terms.
+8A;ENA;Ber;;6;;;;;;3 lessons in a week in two terms.
+8A;MA;Luo;;12;;;;;;3 lessons in a week in four terms.
+8A;BG;Vir;;6;;;;;;3 lessons in a week in two terms.
+8A;TE;Nyl;;4;;;;;;All OPs (1 OP and 1 (OP/TE in a week) have to be studied in 5th term. In addition to TE/OP there have to be 2 TEs in a 5th term. In addition there have to be 2 TEs in 4th term (has to consecutive). This applies to 8B also. They will have their lessons separately.
+8A;OP;NiP;;1;;;;;;
+8A;TE/OP;NiP+Nyl;;1;;;;;;
+8A;UE;Kal;;3;;;;;;3 lessons in a week in one term.
+8A;HY;Kal;;6;;;;;;3 lessons in a week in two terms.
+8A;MU;Ger;;3;;;;;;3 lessons in a week in one term.
+8A;LI;Put;;9;;;;;;1 lesson in a week in one term and 2 lessons in a week in four terms.
+8ARUA;RUA;Eri;;6;;;;;;3 lessons in a week in two terms. Lessons in another of them can overlap with RUB.
+8ARUB;RUB;Aro;;3;;;;;;3 lessons in a week in one term.
+8B;SUK;Joe;;9;;;;;;
+8B;ENA;Ron;;6;;;;;;
+8B;MA;Ket;;4;;;;;;
+8B;BG;Vir;;2;;;;;;
+8B;TE;Nyl;;4;;;;;;
+8B;OP;NiP;;1;;;;;;
+8B;TE/OP;Nyl+NiP;;1;;;;;;
+8B;UE;Kal;;3;;;;;;
+8B;HY;Sei;;6;;;;;;
+8B;MU;Ger;;3;;;;;;
+8B;LI;Ket;;9;;;;;;
+8BRUB;RUB;Aro;;3;;;;;;

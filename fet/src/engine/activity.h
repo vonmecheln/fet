@@ -147,7 +147,7 @@ public:
 	and the activity group id of both of them is 0 or of both of them is != 0, returns true.
 	TODO: add a more intelligent comparison
 	*/
-	bool operator==(Activity &a);
+	bool operator==(const Activity &a);
 
 	//internal structure
 	

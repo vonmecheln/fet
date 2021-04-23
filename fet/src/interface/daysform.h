@@ -20,6 +20,10 @@
 
 #include "ui_daysform_template.h"
 
+#include <QStringList>
+
+class QWidget;
+
 class DaysForm : public QDialog, Ui::DaysForm_template
 {
 	Q_OBJECT
@@ -27,9 +31,14 @@ public:
 	DaysForm(QWidget* parent);
 
 	~DaysForm();
+	
+	QStringList realNames;
 
 public slots:
-	void daysChanged();
+	void numberOfDaysChanged();
+	void insertDay();
+	void modifyDay();
+	void removeDay();
 	void ok();
 	void cancel();
 };

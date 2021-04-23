@@ -56,9 +56,16 @@ AddConstraintMaxDaysBetweenActivitiesForm::AddConstraintMaxDaysBetweenActivities
 	QSize tmp4=activityTagsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp4);
 
-	maxDaysSpinBox->setMinimum(0);
-	maxDaysSpinBox->setValue(gt.rules.nDaysPerWeek-1);
-	maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek-1);
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		maxDaysSpinBox->setMinimum(0);
+		maxDaysSpinBox->setValue(gt.rules.nDaysPerWeek-1);
+		maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek-1);
+	}
+	else{
+		maxDaysSpinBox->setMinimum(0);
+		maxDaysSpinBox->setValue(gt.rules.nDaysPerWeek/2-1);
+		maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek/2-1);
+	}
 
 	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){

@@ -72,7 +72,7 @@ using namespace std;
 #include <QDir>
 
 //Represents the current status of the simulation - running or stopped.
-extern bool simulation_running;
+//extern bool simulation_running;
 
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
@@ -83,30 +83,22 @@ extern bool LANGUAGE_STYLE_RIGHT_TO_LEFT;
 extern QString LANGUAGE_FOR_HTML;
 
 extern Timetable gt;
-/*extern qint16 teachers_timetable_weekly[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-extern qint16 students_timetable_weekly[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-extern qint16 rooms_timetable_weekly[MAX_ROOMS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
 extern Matrix3D<int> teachers_timetable_weekly;
 extern Matrix3D<int> students_timetable_weekly;
 extern Matrix3D<int> rooms_timetable_weekly;
 extern Matrix3D<QList<int>> virtual_rooms_timetable_weekly;
 
-//extern QList<qint16> teachers_free_periods_timetable_weekly[TEACHERS_FREE_PERIODS_N_CATEGORIES][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern Matrix3D<QList<int>> teachers_free_periods_timetable_weekly;
 
-//extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern Matrix2D<bool> breakDayHour;
-/*extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-extern double notAllowedRoomTimePercentages[MAX_ROOMS][MAX_HOURS_PER_WEEK];
-extern bool subgroupNotAvailableDayHour[MAX_TOTAL_SUBGROUPS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];*/
 extern Matrix3D<bool> teacherNotAvailableDayHour;
 extern Matrix2D<double> notAllowedRoomTimePercentages;
 extern Matrix3D<bool> subgroupNotAvailableDayHour;
 
-static QList<int> activitiesForCurrentSubject[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
-static QList<int> activitiesForCurrentActivityTag[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+static Matrix2D<QList<int>> activitiesForCurrentSubject;
+static Matrix2D<QList<int>> activitiesForCurrentActivityTag;
 
-static QList<int> activitiesAtTime[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
+static Matrix2D<QList<int>> activitiesAtTime;
 
 extern Rules rules2;
 
@@ -206,7 +198,7 @@ const QString RANDOM_SEED_FILENAME_AFTER="random_seed_after.txt";
 
 //extern int XX;
 //extern int YY;
-extern MRG32k3a rng;
+//extern MRG32k3a rng;
 
 QString generationLocalizedTime=QString(""); //to be used in timetableprintform.cpp
 
@@ -277,7 +269,7 @@ TimetableExport::~TimetableExport()
 {
 }
 
-void TimetableExport::getStudentsTimetable(Solution &c){
+/*void TimetableExport::getStudentsTimetable(Solution &c){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 
 	c.getSubgroupsTimetable(gt.rules, students_timetable_weekly);
@@ -298,6 +290,20 @@ void TimetableExport::getRoomsTimetable(Solution &c){
 
 	c.getRoomsTimetable(gt.rules, rooms_timetable_weekly, virtual_rooms_timetable_weekly);
 	best_solution.copy(gt.rules, c);
+	rooms_schedule_ready=true;
+}*/
+
+void TimetableExport::getStudentsTeachersRoomsTimetable(Solution &c){
+	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
+
+	c.getSubgroupsTimetable(gt.rules, students_timetable_weekly);
+	c.getTeachersTimetable(gt.rules, teachers_timetable_weekly, teachers_free_periods_timetable_weekly);
+	c.getRoomsTimetable(gt.rules, rooms_timetable_weekly, virtual_rooms_timetable_weekly);
+
+	best_solution.copy(gt.rules, c);
+
+	students_schedule_ready=true;
+	teachers_schedule_ready=true;
 	rooms_schedule_ready=true;
 }
 
@@ -801,7 +807,7 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	}
 }
 
-void TimetableExport::writeRandomSeed(QWidget* parent, bool before)
+void TimetableExport::writeRandomSeed(QWidget* parent, const MRG32k3a& rng, bool before)
 {
 	QString RANDOM_SEED_FILENAME;
 	if(before)
@@ -841,10 +847,10 @@ void TimetableExport::writeRandomSeed(QWidget* parent, bool before)
 
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+RANDOM_SEED_FILENAME;
 	
-	writeRandomSeedFile(parent, s, before);
+	writeRandomSeedFile(parent, rng, s, before);
 }
 
-void TimetableExport::writeRandomSeedFile(QWidget* parent, const QString& filename, bool before)
+void TimetableExport::writeRandomSeedFile(QWidget* parent, const MRG32k3a& rng, const QString& filename, bool before)
 {
 	QString s=filename;
 
@@ -951,17 +957,24 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 	
 	rules2.initialized=true;
 	
+	rules2.mode=gt.rules.mode;
+	
 	rules2.institutionName=gt.rules.institutionName;
 	rules2.comments=gt.rules.comments;
 	
+	rules2.nTerms=gt.rules.nTerms;
+	rules2.nDaysPerTerm=gt.rules.nDaysPerTerm;
+	
 	rules2.nHoursPerDay=gt.rules.nHoursPerDay;
-	for(int i=0; i<gt.rules.nHoursPerDay; i++)
-		rules2.hoursOfTheDay[i]=gt.rules.hoursOfTheDay[i];
+	rules2.hoursOfTheDay=gt.rules.hoursOfTheDay;
+	//for(int i=0; i<gt.rules.nHoursPerDay; i++)
+	//	rules2.hoursOfTheDay[i]=gt.rules.hoursOfTheDay[i];
 
 	rules2.nDaysPerWeek=gt.rules.nDaysPerWeek;
-	for(int i=0; i<gt.rules.nDaysPerWeek; i++)
-		rules2.daysOfTheWeek[i]=gt.rules.daysOfTheWeek[i];
-		
+	rules2.daysOfTheWeek=gt.rules.daysOfTheWeek;
+	//for(int i=0; i<gt.rules.nDaysPerWeek; i++)
+	//	rules2.daysOfTheWeek[i]=gt.rules.daysOfTheWeek[i];
+	
 	rules2.yearsList=gt.rules.yearsList;
 	
 	rules2.teachersList=gt.rules.teachersList;
@@ -1098,7 +1111,9 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 	//		" so you can save it also, or generate different timetables."));
 
 	rules2.nHoursPerDay=0;
+	rules2.hoursOfTheDay.clear();
 	rules2.nDaysPerWeek=0;
+	rules2.daysOfTheWeek.clear();
 
 	rules2.yearsList.clear();
 	
@@ -1128,7 +1143,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 	}
 }
 
-void TimetableExport::writeSimulationResults(QWidget* parent, int n){
+void TimetableExport::writeSimulationResults(QWidget* parent, int n, bool highest){
 	QDir dir;
 	
 	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
@@ -1157,8 +1172,11 @@ void TimetableExport::writeSimulationResults(QWidget* parent, int n){
 	
 	if(!dir.exists(destDir))
 		dir.mkpath(destDir);
-		
+	
 	QString finalDestDir=destDir+FILE_SEP+CustomFETString::number(n);
+	
+	if(highest)
+		finalDestDir+=QString("-highest");
 
 	if(!dir.exists(finalDestDir))
 		dir.mkpath(finalDestDir);
@@ -1175,7 +1193,8 @@ void TimetableExport::writeSimulationResults(QWidget* parent, int n){
 	finalDestDir+=s3+"_";
 	
 	//write data+timetable in .fet format
-	writeTimetableDataFile(parent, finalDestDir+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE);
+	if(!highest)
+		writeTimetableDataFile(parent, finalDestDir+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE);
 
 	//now write the solution in xml files
 	//subgroups
@@ -1368,7 +1387,7 @@ void TimetableExport::writeSimulationResults(QWidget* parent, int n){
 	}
 }
 
-void TimetableExport::writeRandomSeed(QWidget* parent, int n, bool before){
+void TimetableExport::writeRandomSeed(QWidget* parent, const MRG32k3a& rng, int n, bool before){
 	QString RANDOM_SEED_FILENAME;
 	if(before)
 		RANDOM_SEED_FILENAME=RANDOM_SEED_FILENAME_BEFORE;
@@ -1413,7 +1432,7 @@ void TimetableExport::writeRandomSeed(QWidget* parent, int n, bool before){
 	
 	s=finalDestDir+RANDOM_SEED_FILENAME;
 
-	writeRandomSeedFile(parent, s, before);
+	writeRandomSeedFile(parent, rng, s, before);
 }
 
 void TimetableExport::writeReportForMultiple(QWidget* parent, const QString& description, bool begin)
@@ -1733,7 +1752,7 @@ void TimetableExport::writeSimulationResultsCommandLine(QWidget* parent, const Q
 	activeHashActivityColorBySubjectAndStudents.clear();*/
 }
 
-void TimetableExport::writeRandomSeedCommandLine(QWidget* parent, const QString& outputDirectory, bool before){ //outputDirectory contains trailing FILE_SEP
+void TimetableExport::writeRandomSeedCommandLine(QWidget* parent, const MRG32k3a& rng, const QString& outputDirectory, bool before){ //outputDirectory contains trailing FILE_SEP
 	QString RANDOM_SEED_FILENAME;
 	if(before)
 		RANDOM_SEED_FILENAME=RANDOM_SEED_FILENAME_BEFORE;
@@ -1752,7 +1771,7 @@ void TimetableExport::writeRandomSeedCommandLine(QWidget* parent, const QString&
 	QString s=add+RANDOM_SEED_FILENAME;
 	s.prepend(outputDirectory);
 	
-	writeRandomSeedFile(parent, s, before);
+	writeRandomSeedFile(parent, rng, s, before);
 }
 
 //by Volker Dirr (timetabling.de)
@@ -5239,6 +5258,7 @@ void TimetableExport::computeHashActivityColorBySubjectAndStudents(){
 }*/
 
 void TimetableExport::computeActivitiesAtTime(){		// by Liviu Lalescu
+	activitiesAtTime.resize(gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++)
 		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++)
 			activitiesAtTime[day][hour].clear();
@@ -5252,7 +5272,6 @@ void TimetableExport::computeActivitiesAtTime(){		// by Liviu Lalescu
 		}
 	}
 }
-
 
 void TimetableExport::computeActivitiesWithSameStartingTime(){
 // by Volker Dirr
@@ -7591,7 +7610,7 @@ QString TimetableExport::singleYearsTimetableTimeHorizontalDailyHtml(int htmlLev
 //by Volker Dirr
 QString TimetableExport::singleAllActivitiesTimetableDaysHorizontalHtml(int htmlLevel, const QString& saveTime, bool printActivityTags, bool repeatNames){
 	QString tmpString;
-	tmpString+="    <table border=\"1\">\n";	
+	tmpString+="    <table border=\"1\">\n";
 	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
 	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+tr("All Activities")+"</th>";
 	if(repeatNames){
@@ -8933,6 +8952,7 @@ QString TimetableExport::singleSubjectsTimetableDaysHorizontalHtml(int htmlLevel
 	assert(subject<gt.rules.nInternalSubjects);
 	QString tmpString;
 	///////by Liviu Lalescu
+	activitiesForCurrentSubject.resize(gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 	for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 		for(int h=0; h<gt.rules.nHoursPerDay; h++)
 			activitiesForCurrentSubject[d][h].clear();
@@ -9037,6 +9057,7 @@ QString TimetableExport::singleSubjectsTimetableDaysVerticalHtml(int htmlLevel, 
 	assert(subject<gt.rules.nInternalSubjects);
 	QString tmpString;
 	///////by Liviu Lalescu
+	activitiesForCurrentSubject.resize(gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 	for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 		for(int h=0; h<gt.rules.nHoursPerDay; h++)
 			activitiesForCurrentSubject[d][h].clear();
@@ -9274,9 +9295,9 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel
 	tmpString+="      <tbody>\n";
 	int currentCount=0;
 	for(int subject=0; subject<gt.rules.nInternalSubjects && currentCount<maxSubjects; subject++){
-		if(!excludedNames.contains(subject)){	
+		if(!excludedNames.contains(subject)){
 			currentCount++;
-			excludedNames<<subject;	
+			excludedNames<<subject;
 			tmpString+="        <tr>\n";
 			if(htmlLevel>=2)
 				tmpString+="        <th class=\"yAxis\">"+protect2(gt.rules.internalSubjectsList[subject]->name)+"</th>\n";
@@ -9284,6 +9305,7 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel
 				tmpString+="        <th>"+protect2(gt.rules.internalSubjectsList[subject]->name)+"</th>\n";
 
 			///////by Liviu Lalescu
+			activitiesForCurrentSubject.resize(gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 				for(int h=0; h<gt.rules.nHoursPerDay; h++)
 					activitiesForCurrentSubject[d][h].clear();
@@ -9302,7 +9324,6 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel
 					QList<int> allActivities;
 
 					allActivities=activitiesForCurrentSubject[day][hour];
-
 
 					/*allActivities.clear();
 					//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
@@ -9493,6 +9514,7 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalDailyHtml(int html
 				tmpString+="        <th>"+protect2(gt.rules.internalSubjectsList[subject]->name)+"</th>\n";
 
 			///////by Liviu Lalescu
+			activitiesForCurrentSubject.resize(gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 				for(int h=0; h<gt.rules.nHoursPerDay; h++)
 					activitiesForCurrentSubject[d][h].clear();
@@ -9510,7 +9532,6 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalDailyHtml(int html
 				QList<int> allActivities;
 
 				allActivities=activitiesForCurrentSubject[day][hour];
-
 
 				/*allActivities.clear();
 				//Now get the activitiy ids. I don't run through the InternalActivitiesList, even that is faster. I run through subgroupsList, because by that the activites are sorted by that in the html-table.
@@ -9565,6 +9586,7 @@ QString TimetableExport::singleActivityTagsTimetableDaysHorizontalHtml(int htmlL
 	assert(activityTag<gt.rules.nInternalActivityTags);
 	QString tmpString;
 	///////by Liviu Lalescu
+	activitiesForCurrentActivityTag.resize(gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 	for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 		for(int h=0; h<gt.rules.nHoursPerDay; h++)
 			activitiesForCurrentActivityTag[d][h].clear();
@@ -9646,6 +9668,7 @@ QString TimetableExport::singleActivityTagsTimetableDaysVerticalHtml(int htmlLev
 	assert(activityTag<gt.rules.nInternalActivityTags);
 	QString tmpString;
 	///////by Liviu Lalescu
+	activitiesForCurrentActivityTag.resize(gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 	for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 		for(int h=0; h<gt.rules.nHoursPerDay; h++)
 			activitiesForCurrentActivityTag[d][h].clear();
@@ -9853,6 +9876,7 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalHtml(int htmlL
 					tmpString+="        <th>"+protect2(gt.rules.internalActivityTagsList[activityTag]->name)+"</th>\n";
 
 				///////by Liviu Lalescu
+				activitiesForCurrentActivityTag.resize(gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					for(int h=0; h<gt.rules.nHoursPerDay; h++)
 						activitiesForCurrentActivityTag[d][h].clear();
@@ -10024,6 +10048,7 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalDailyHtml(int 
 					tmpString+="        <th>"+protect2(gt.rules.internalActivityTagsList[activityTag]->name)+"</th>\n";
 
 				///////by Liviu Lalescu
+				activitiesForCurrentActivityTag.resize(gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					for(int h=0; h<gt.rules.nHoursPerDay; h++)
 						activitiesForCurrentActivityTag[d][h].clear();

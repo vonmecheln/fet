@@ -23,6 +23,8 @@ SOURCES += \
 	\
 	interface/fet.cpp \
 	interface/helpaboutform.cpp \
+	interface/helpblockplanningform.cpp \
+	interface/helptermsform.cpp \
 	interface/helpaboutlibrariesform.cpp \
 	interface/helpfaqform.cpp \
 	interface/helptipsform.cpp \
@@ -53,6 +55,9 @@ SOURCES += \
 	interface/addconstraintroomnotavailabletimesform.cpp \
 	interface/constraintroomnotavailabletimesform.cpp \
 	interface/modifyconstraintroomnotavailabletimesform.cpp \
+	interface/addconstraintteacherroomnotavailabletimesform.cpp \
+	interface/constraintteacherroomnotavailabletimesform.cpp \
+	interface/modifyconstraintteacherroomnotavailabletimesform.cpp \
 	interface/addconstraintactivitypreferredroomform.cpp \
 	interface/constraintactivitypreferredroomform.cpp \
 	interface/modifyconstraintactivitypreferredroomform.cpp \
@@ -175,6 +180,8 @@ SOURCES += \
 	interface/subjectsform.cpp \
 	interface/activitytagsform.cpp \
 	interface/teachersform.cpp \
+	interface/addteacherform.cpp \
+	interface/modifyteacherform.cpp \
 	interface/timetablegenerateform.cpp \
 	interface/timetablegeneratemultipleform.cpp \
 	interface/fetmainform.cpp \
@@ -194,6 +201,7 @@ SOURCES += \
 	interface/daysform.cpp \
 	interface/roomsform.cpp \
 	interface/randomseedform.cpp \
+	interface/getmodefornewfileform.cpp \
 	interface/roommakeeditvirtualform.cpp \
 	interface/buildingsform.cpp \
 	\
@@ -327,6 +335,14 @@ SOURCES += \
 	interface/constraintactivitiesendstudentsdayform.cpp \
 	interface/addconstraintactivitiesendstudentsdayform.cpp \
 	interface/modifyconstraintactivitiesendstudentsdayform.cpp \
+	\
+	interface/constraintactivityendsteachersdayform.cpp \
+	interface/addconstraintactivityendsteachersdayform.cpp \
+	interface/modifyconstraintactivityendsteachersdayform.cpp \
+	\
+	interface/constraintactivitiesendteachersdayform.cpp \
+	interface/addconstraintactivitiesendteachersdayform.cpp \
+	interface/modifyconstraintactivitiesendteachersdayform.cpp \
 	\
 	interface/constraintstudentssetmaxgapsperweekform.cpp \
 	interface/addconstraintstudentssetmaxgapsperweekform.cpp \
@@ -552,7 +568,325 @@ SOURCES += \
 	interface/constraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp \
 	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp \
 	\
-	interface/notificationcommandform.cpp
+	interface/notificationcommandform.cpp \
+	\
+	interface/helpmoroccoform.cpp \
+	interface/helpalgeriaform.cpp \
+	\
+	interface/addconstraintstudentssetmaxroomchangesperrealdayform.cpp \
+	interface/constraintstudentssetmaxroomchangesperrealdayform.cpp \
+	interface/modifyconstraintstudentssetmaxroomchangesperrealdayform.cpp \
+	interface/addconstraintstudentsmaxroomchangesperrealdayform.cpp \
+	interface/constraintstudentsmaxroomchangesperrealdayform.cpp \
+	interface/modifyconstraintstudentsmaxroomchangesperrealdayform.cpp \
+	\
+	interface/addconstraintteachermaxroomchangesperrealdayform.cpp \
+	interface/constraintteachermaxroomchangesperrealdayform.cpp \
+	interface/modifyconstraintteachermaxroomchangesperrealdayform.cpp \
+	interface/addconstraintteachersmaxroomchangesperrealdayform.cpp \
+	interface/constraintteachersmaxroomchangesperrealdayform.cpp \
+	interface/modifyconstraintteachersmaxroomchangesperrealdayform.cpp \
+	\
+	interface/constraintteachermaxafternoonsperweekform.cpp \
+	interface/addconstraintteachermaxafternoonsperweekform.cpp \
+	interface/modifyconstraintteachermaxafternoonsperweekform.cpp \
+	interface/constraintteachersmaxafternoonsperweekform.cpp \
+	interface/addconstraintteachersmaxafternoonsperweekform.cpp \
+	interface/modifyconstraintteachersmaxafternoonsperweekform.cpp \
+	\
+	interface/constraintteachermaxmorningsperweekform.cpp \
+	interface/addconstraintteachermaxmorningsperweekform.cpp \
+	interface/modifyconstraintteachermaxmorningsperweekform.cpp \
+	interface/constraintteachersmaxmorningsperweekform.cpp \
+	interface/addconstraintteachersmaxmorningsperweekform.cpp \
+	interface/modifyconstraintteachersmaxmorningsperweekform.cpp \
+	\
+	interface/constraintteachermaxtwoconsecutivemorningsform.cpp \
+	interface/addconstraintteachermaxtwoconsecutivemorningsform.cpp \
+	interface/modifyconstraintteachermaxtwoconsecutivemorningsform.cpp \
+	interface/constraintteachersmaxtwoconsecutivemorningsform.cpp \
+	interface/addconstraintteachersmaxtwoconsecutivemorningsform.cpp \
+	interface/modifyconstraintteachersmaxtwoconsecutivemorningsform.cpp \
+	\
+	interface/constraintteachermaxtwoconsecutiveafternoonsform.cpp \
+	interface/addconstraintteachermaxtwoconsecutiveafternoonsform.cpp \
+	interface/modifyconstraintteachermaxtwoconsecutiveafternoonsform.cpp \
+	interface/constraintteachersmaxtwoconsecutiveafternoonsform.cpp \
+	interface/addconstraintteachersmaxtwoconsecutiveafternoonsform.cpp \
+	interface/modifyconstraintteachersmaxtwoconsecutiveafternoonsform.cpp \
+	\
+	interface/constraintteacherminmorningsperweekform.cpp \
+	interface/addconstraintteacherminmorningsperweekform.cpp \
+	interface/modifyconstraintteacherminmorningsperweekform.cpp \
+	\
+	interface/constraintteacherminafternoonsperweekform.cpp \
+	interface/addconstraintteacherminafternoonsperweekform.cpp \
+	interface/modifyconstraintteacherminafternoonsperweekform.cpp \
+	\
+	interface/constraintteachersminmorningsperweekform.cpp \
+	interface/addconstraintteachersminmorningsperweekform.cpp \
+	interface/modifyconstraintteachersminmorningsperweekform.cpp \
+	\
+	interface/constraintteachersminafternoonsperweekform.cpp \
+	interface/addconstraintteachersminafternoonsperweekform.cpp \
+	interface/modifyconstraintteachersminafternoonsperweekform.cpp \
+	\
+	interface/constraintteachermorningintervalmaxdaysperweekform.cpp \
+	interface/addconstraintteachermorningintervalmaxdaysperweekform.cpp \
+	interface/modifyconstraintteachermorningintervalmaxdaysperweekform.cpp \
+	\
+	interface/constraintteacherafternoonintervalmaxdaysperweekform.cpp \
+	interface/addconstraintteacherafternoonintervalmaxdaysperweekform.cpp \
+	interface/modifyconstraintteacherafternoonintervalmaxdaysperweekform.cpp \
+	\
+	interface/constraintstudentssetmorningintervalmaxdaysperweekform.cpp \
+	interface/addconstraintstudentssetmorningintervalmaxdaysperweekform.cpp \
+	interface/modifyconstraintstudentssetmorningintervalmaxdaysperweekform.cpp \
+	\
+	interface/constraintstudentsmorningintervalmaxdaysperweekform.cpp \
+	interface/addconstraintstudentsmorningintervalmaxdaysperweekform.cpp \
+	interface/modifyconstraintstudentsmorningintervalmaxdaysperweekform.cpp \
+	\
+	interface/constraintstudentssetafternoonintervalmaxdaysperweekform.cpp \
+	interface/addconstraintstudentssetafternoonintervalmaxdaysperweekform.cpp \
+	interface/modifyconstraintstudentssetafternoonintervalmaxdaysperweekform.cpp \
+	\
+	interface/constraintstudentsafternoonintervalmaxdaysperweekform.cpp \
+	interface/addconstraintstudentsafternoonintervalmaxdaysperweekform.cpp \
+	interface/modifyconstraintstudentsafternoonintervalmaxdaysperweekform.cpp \
+	\
+	interface/constraintstudentssetmaxafternoonsperweekform.cpp \
+	interface/addconstraintstudentssetmaxafternoonsperweekform.cpp \
+	interface/modifyconstraintstudentssetmaxafternoonsperweekform.cpp \
+	\
+	interface/constraintstudentsmaxafternoonsperweekform.cpp \
+	interface/addconstraintstudentsmaxafternoonsperweekform.cpp \
+	interface/modifyconstraintstudentsmaxafternoonsperweekform.cpp \
+	\
+	interface/constraintstudentssetmaxmorningsperweekform.cpp \
+	interface/addconstraintstudentssetmaxmorningsperweekform.cpp \
+	interface/modifyconstraintstudentssetmaxmorningsperweekform.cpp \
+	\
+	interface/constraintstudentsmaxmorningsperweekform.cpp \
+	interface/addconstraintstudentsmaxmorningsperweekform.cpp \
+	interface/modifyconstraintstudentsmaxmorningsperweekform.cpp \
+	\
+	interface/constraintstudentssetminafternoonsperweekform.cpp \
+	interface/addconstraintstudentssetminafternoonsperweekform.cpp \
+	interface/modifyconstraintstudentssetminafternoonsperweekform.cpp \
+	\
+	interface/constraintstudentsminafternoonsperweekform.cpp \
+	interface/addconstraintstudentsminafternoonsperweekform.cpp \
+	interface/modifyconstraintstudentsminafternoonsperweekform.cpp \
+	\
+	interface/constraintstudentssetminmorningsperweekform.cpp \
+	interface/addconstraintstudentssetminmorningsperweekform.cpp \
+	interface/modifyconstraintstudentssetminmorningsperweekform.cpp \
+	\
+	interface/constraintstudentsminmorningsperweekform.cpp \
+	interface/addconstraintstudentsminmorningsperweekform.cpp \
+	interface/modifyconstraintstudentsminmorningsperweekform.cpp \
+	\
+	interface/constraintteachersmorningintervalmaxdaysperweekform.cpp \
+	interface/addconstraintteachersmorningintervalmaxdaysperweekform.cpp \
+	interface/modifyconstraintteachersmorningintervalmaxdaysperweekform.cpp \
+	\
+	interface/constraintteachersafternoonintervalmaxdaysperweekform.cpp \
+	interface/addconstraintteachersafternoonintervalmaxdaysperweekform.cpp \
+	interface/modifyconstraintteachersafternoonintervalmaxdaysperweekform.cpp \
+	\
+	interface/constraintteachermaxhoursperallafternoonsform.cpp \
+	interface/addconstraintteachermaxhoursperallafternoonsform.cpp \
+	interface/modifyconstraintteachermaxhoursperallafternoonsform.cpp \
+	\
+	interface/constraintteachersmaxhoursperallafternoonsform.cpp \
+	interface/addconstraintteachersmaxhoursperallafternoonsform.cpp \
+	interface/modifyconstraintteachersmaxhoursperallafternoonsform.cpp \
+	\
+	interface/constraintstudentssetmaxhoursperallafternoonsform.cpp \
+	interface/addconstraintstudentssetmaxhoursperallafternoonsform.cpp \
+	interface/modifyconstraintstudentssetmaxhoursperallafternoonsform.cpp \
+	\
+	interface/constraintstudentsmaxhoursperallafternoonsform.cpp \
+	interface/addconstraintstudentsmaxhoursperallafternoonsform.cpp \
+	interface/modifyconstraintstudentsmaxhoursperallafternoonsform.cpp \
+	\
+	interface/constraintteachersminhourspermorningform.cpp \
+	interface/addconstraintteachersminhourspermorningform.cpp \
+	interface/modifyconstraintteachersminhourspermorningform.cpp \
+	interface/constraintteacherminhourspermorningform.cpp \
+	interface/addconstraintteacherminhourspermorningform.cpp \
+	interface/modifyconstraintteacherminhourspermorningform.cpp \
+	\
+	interface/constraintteachersminhoursdailyrealdaysform.cpp \
+	interface/addconstraintteachersminhoursdailyrealdaysform.cpp \
+	interface/modifyconstraintteachersminhoursdailyrealdaysform.cpp \
+	interface/constraintteacherminhoursdailyrealdaysform.cpp \
+	interface/addconstraintteacherminhoursdailyrealdaysform.cpp \
+	interface/modifyconstraintteacherminhoursdailyrealdaysform.cpp \
+	\
+	interface/constraintstudentssetmaxgapsperrealdayform.cpp \
+	interface/addconstraintstudentssetmaxgapsperrealdayform.cpp \
+	interface/modifyconstraintstudentssetmaxgapsperrealdayform.cpp \
+	interface/constraintstudentsmaxgapsperrealdayform.cpp \
+	interface/addconstraintstudentsmaxgapsperrealdayform.cpp \
+	interface/modifyconstraintstudentsmaxgapsperrealdayform.cpp \
+	\
+	interface/constraintteachersmaxzerogapsperafternoonform.cpp \
+	interface/constraintteachermaxzerogapsperafternoonform.cpp \
+	interface/addconstraintteachersmaxzerogapsperafternoonform.cpp \
+	interface/modifyconstraintteachersmaxzerogapsperafternoonform.cpp \
+	interface/addconstraintteachermaxzerogapsperafternoonform.cpp \
+	interface/modifyconstraintteachermaxzerogapsperafternoonform.cpp \
+	\
+	interface/constraintteachersmaxgapsperrealdayform.cpp \
+	interface/constraintteachermaxgapsperrealdayform.cpp \
+	interface/addconstraintteachersmaxgapsperrealdayform.cpp \
+	interface/modifyconstraintteachersmaxgapsperrealdayform.cpp \
+	interface/addconstraintteachermaxgapsperrealdayform.cpp \
+	interface/modifyconstraintteachermaxgapsperrealdayform.cpp \
+	\
+	interface/constraintstudentssetmaxgapsperweekforrealdaysform.cpp \
+	interface/addconstraintstudentssetmaxgapsperweekforrealdaysform.cpp \
+	interface/modifyconstraintstudentssetmaxgapsperweekforrealdaysform.cpp \
+	interface/constraintstudentsmaxgapsperweekforrealdaysform.cpp \
+	interface/addconstraintstudentsmaxgapsperweekforrealdaysform.cpp \
+	interface/modifyconstraintstudentsmaxgapsperweekforrealdaysform.cpp \
+	\
+	interface/constraintteachersmaxgapsperweekforrealdaysform.cpp \
+	interface/constraintteachermaxgapsperweekforrealdaysform.cpp \
+	interface/addconstraintteachersmaxgapsperweekforrealdaysform.cpp \
+	interface/modifyconstraintteachersmaxgapsperweekforrealdaysform.cpp \
+	interface/addconstraintteachermaxgapsperweekforrealdaysform.cpp \
+	interface/modifyconstraintteachermaxgapsperweekforrealdaysform.cpp \
+	\
+	interface/constraintstudentsafternoonsearlymaxbeginningsatsecondhourform.cpp \
+	interface/addconstraintstudentsafternoonsearlymaxbeginningsatsecondhourform.cpp \
+	interface/modifyconstraintstudentsafternoonsearlymaxbeginningsatsecondhourform.cpp \
+	interface/constraintstudentssetafternoonsearlymaxbeginningsatsecondhourform.cpp \
+	interface/addconstraintstudentssetafternoonsearlymaxbeginningsatsecondhourform.cpp \
+	interface/modifyconstraintstudentssetafternoonsearlymaxbeginningsatsecondhourform.cpp \
+	\
+	interface/constraintteachersafternoonsearlymaxbeginningsatsecondhourform.cpp \
+	interface/addconstraintteachersafternoonsearlymaxbeginningsatsecondhourform.cpp \
+	interface/modifyconstraintteachersafternoonsearlymaxbeginningsatsecondhourform.cpp \
+	interface/constraintteacherafternoonsearlymaxbeginningsatsecondhourform.cpp \
+	interface/addconstraintteacherafternoonsearlymaxbeginningsatsecondhourform.cpp \
+	interface/modifyconstraintteacherafternoonsearlymaxbeginningsatsecondhourform.cpp \
+	\
+	interface/constraintstudentssetminhourspermorningform.cpp \
+	interface/addconstraintstudentssetminhourspermorningform.cpp \
+	interface/modifyconstraintstudentssetminhourspermorningform.cpp \
+	interface/constraintstudentsminhourspermorningform.cpp \
+	interface/addconstraintstudentsminhourspermorningform.cpp \
+	interface/modifyconstraintstudentsminhourspermorningform.cpp \
+	\
+	interface/constraintteachermaxtwoactivitytagsperdayfromn1n2n3form.cpp \
+	interface/addconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form.cpp \
+	interface/modifyconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form.cpp \
+	interface/constraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.cpp \
+	interface/addconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.cpp \
+	interface/modifyconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.cpp \
+	\
+	interface/constraintteacherminrestinghoursbetweenmorningandafternoonform.cpp \
+	interface/addconstraintteacherminrestinghoursbetweenmorningandafternoonform.cpp \
+	interface/modifyconstraintteacherminrestinghoursbetweenmorningandafternoonform.cpp \
+	interface/constraintteachersminrestinghoursbetweenmorningandafternoonform.cpp \
+	interface/addconstraintteachersminrestinghoursbetweenmorningandafternoonform.cpp \
+	interface/modifyconstraintteachersminrestinghoursbetweenmorningandafternoonform.cpp \
+	\
+	interface/constraintstudentssetminrestinghoursbetweenmorningandafternoonform.cpp \
+	interface/addconstraintstudentssetminrestinghoursbetweenmorningandafternoonform.cpp \
+	interface/modifyconstraintstudentssetminrestinghoursbetweenmorningandafternoonform.cpp \
+	interface/constraintstudentsminrestinghoursbetweenmorningandafternoonform.cpp \
+	interface/addconstraintstudentsminrestinghoursbetweenmorningandafternoonform.cpp \
+	interface/modifyconstraintstudentsminrestinghoursbetweenmorningandafternoonform.cpp \
+	\
+	interface/helponn1n2n3.cpp \
+	\
+	interface/constraintteachersmaxhoursdailyrealdaysform.cpp \
+	interface/addconstraintteachersmaxhoursdailyrealdaysform.cpp \
+	interface/modifyconstraintteachersmaxhoursdailyrealdaysform.cpp \
+	interface/constraintteachermaxhoursdailyrealdaysform.cpp \
+	interface/addconstraintteachermaxhoursdailyrealdaysform.cpp \
+	interface/modifyconstraintteachermaxhoursdailyrealdaysform.cpp \
+	\
+	interface/constraintteachersactivitytagmaxhoursdailyrealdaysform.cpp \
+	interface/addconstraintteachersactivitytagmaxhoursdailyrealdaysform.cpp \
+	interface/modifyconstraintteachersactivitytagmaxhoursdailyrealdaysform.cpp \
+	interface/constraintteacheractivitytagmaxhoursdailyrealdaysform.cpp \
+	interface/addconstraintteacheractivitytagmaxhoursdailyrealdaysform.cpp \
+	interface/modifyconstraintteacheractivitytagmaxhoursdailyrealdaysform.cpp \
+	\
+	interface/constraintstudentssetmaxhoursdailyrealdaysform.cpp \
+	interface/addconstraintstudentssetmaxhoursdailyrealdaysform.cpp \
+	interface/modifyconstraintstudentssetmaxhoursdailyrealdaysform.cpp \
+	interface/constraintstudentsmaxhoursdailyrealdaysform.cpp \
+	interface/addconstraintstudentsmaxhoursdailyrealdaysform.cpp \
+	interface/modifyconstraintstudentsmaxhoursdailyrealdaysform.cpp \
+	\
+	interface/constraintstudentssetactivitytagmaxhoursdailyrealdaysform.cpp \
+	interface/addconstraintstudentssetactivitytagmaxhoursdailyrealdaysform.cpp \
+	interface/modifyconstraintstudentssetactivitytagmaxhoursdailyrealdaysform.cpp \
+	interface/constraintstudentsactivitytagmaxhoursdailyrealdaysform.cpp \
+	interface/addconstraintstudentsactivitytagmaxhoursdailyrealdaysform.cpp \
+	interface/modifyconstraintstudentsactivitytagmaxhoursdailyrealdaysform.cpp \
+	\
+	interface/constraintteachermaxrealdaysperweekform.cpp \
+	interface/addconstraintteachermaxrealdaysperweekform.cpp \
+	interface/modifyconstraintteachermaxrealdaysperweekform.cpp \
+	\
+	interface/constraintteachersmaxrealdaysperweekform.cpp \
+	interface/addconstraintteachersmaxrealdaysperweekform.cpp \
+	interface/modifyconstraintteachersmaxrealdaysperweekform.cpp \
+	\
+	interface/constraintstudentssetmaxrealdaysperweekform.cpp \
+	interface/addconstraintstudentssetmaxrealdaysperweekform.cpp \
+	interface/modifyconstraintstudentssetmaxrealdaysperweekform.cpp \
+	\
+	interface/constraintstudentsmaxrealdaysperweekform.cpp \
+	interface/addconstraintstudentsmaxrealdaysperweekform.cpp \
+	interface/modifyconstraintstudentsmaxrealdaysperweekform.cpp \
+	\
+	interface/constraintteacherminrealdaysperweekform.cpp \
+	interface/addconstraintteacherminrealdaysperweekform.cpp \
+	interface/modifyconstraintteacherminrealdaysperweekform.cpp \
+	\
+	interface/constraintteachersminrealdaysperweekform.cpp \
+	interface/addconstraintteachersminrealdaysperweekform.cpp \
+	interface/modifyconstraintteachersminrealdaysperweekform.cpp \
+	\
+	interface/constraintteachermaxspanperrealdayform.cpp \
+	interface/addconstraintteachermaxspanperrealdayform.cpp \
+	interface/modifyconstraintteachermaxspanperrealdayform.cpp \
+	interface/constraintteachersmaxspanperrealdayform.cpp \
+	interface/addconstraintteachersmaxspanperrealdayform.cpp \
+	interface/modifyconstraintteachersmaxspanperrealdayform.cpp \
+	\
+	interface/constraintstudentssetmaxspanperrealdayform.cpp \
+	interface/addconstraintstudentssetmaxspanperrealdayform.cpp \
+	interface/modifyconstraintstudentssetmaxspanperrealdayform.cpp \
+	interface/constraintstudentsmaxspanperrealdayform.cpp \
+	interface/addconstraintstudentsmaxspanperrealdayform.cpp \
+	interface/modifyconstraintstudentsmaxspanperrealdayform.cpp \
+	\
+	interface/constraintmaxtotalactivitiesfromsetinselectedtimeslotsform.cpp \
+	interface/addconstraintmaxtotalactivitiesfromsetinselectedtimeslotsform.cpp \
+	interface/modifyconstraintmaxtotalactivitiesfromsetinselectedtimeslotsform.cpp \
+	\
+	interface/constraintmaxgapsbetweenactivitiesform.cpp \
+	interface/addconstraintmaxgapsbetweenactivitiesform.cpp \
+	interface/modifyconstraintmaxgapsbetweenactivitiesform.cpp \
+	\
+	interface/constraintactivitiesmaxinatermform.cpp \
+	interface/addconstraintactivitiesmaxinatermform.cpp \
+	interface/modifyconstraintactivitiesmaxinatermform.cpp \
+	\
+	interface/constraintactivitiesoccupymaxtermsform.cpp \
+	interface/addconstraintactivitiesoccupymaxtermsform.cpp \
+	interface/modifyconstraintactivitiesoccupymaxtermsform.cpp \
+	\
+	interface/termsform.cpp
 
 HEADERS += \
 	engine/timetableexport.h \
@@ -580,6 +914,8 @@ HEADERS += \
 	\
 	interface/fet.h \
 	interface/helpaboutform.h \
+	interface/helpblockplanningform.h \
+	interface/helptermsform.h \
 	interface/helpaboutlibrariesform.h \
 	interface/helpfaqform.h \
 	interface/helptipsform.h \
@@ -610,6 +946,9 @@ HEADERS += \
 	interface/addconstraintroomnotavailabletimesform.h \
 	interface/constraintroomnotavailabletimesform.h \
 	interface/modifyconstraintroomnotavailabletimesform.h \
+	interface/addconstraintteacherroomnotavailabletimesform.h \
+	interface/constraintteacherroomnotavailabletimesform.h \
+	interface/modifyconstraintteacherroomnotavailabletimesform.h \
 	interface/addconstraintactivitypreferredroomform.h \
 	interface/constraintactivitypreferredroomform.h \
 	interface/modifyconstraintactivitypreferredroomform.h \
@@ -734,6 +1073,8 @@ HEADERS += \
 	interface/subjectsform.h \
 	interface/activitytagsform.h \
 	interface/teachersform.h \
+	interface/addteacherform.h \
+	interface/modifyteacherform.h \
 	interface/timetablegenerateform.h \
 	interface/timetablegeneratemultipleform.h \
 	interface/fetmainform.h \
@@ -753,6 +1094,7 @@ HEADERS += \
 	interface/daysform.h \
 	interface/roomsform.h \
 	interface/randomseedform.h \
+	interface/getmodefornewfileform.h \
 	interface/roommakeeditvirtualform.h \
 	interface/buildingsform.h \
 	\
@@ -883,6 +1225,14 @@ HEADERS += \
 	interface/constraintactivitiesendstudentsdayform.h \
 	interface/addconstraintactivitiesendstudentsdayform.h \
 	interface/modifyconstraintactivitiesendstudentsdayform.h \
+	\
+	interface/constraintactivityendsteachersdayform.h \
+	interface/addconstraintactivityendsteachersdayform.h \
+	interface/modifyconstraintactivityendsteachersdayform.h \
+	\
+	interface/constraintactivitiesendteachersdayform.h \
+	interface/addconstraintactivitiesendteachersdayform.h \
+	interface/modifyconstraintactivitiesendteachersdayform.h \
 	\
 	interface/constraintstudentssetmaxgapsperweekform.h \
 	interface/addconstraintstudentssetmaxgapsperweekform.h \
@@ -1111,7 +1461,325 @@ HEADERS += \
 	interface/constraintteachersmingapsbetweenorderedpairofactivitytagsform.h \
 	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.h \
 	\
-	interface/notificationcommandform.h
+	interface/notificationcommandform.h \
+	\
+	interface/helpmoroccoform.h \
+	interface/helpalgeriaform.h \
+	\
+	interface/addconstraintstudentssetmaxroomchangesperrealdayform.h \
+	interface/constraintstudentssetmaxroomchangesperrealdayform.h \
+	interface/modifyconstraintstudentssetmaxroomchangesperrealdayform.h \
+	interface/addconstraintstudentsmaxroomchangesperrealdayform.h \
+	interface/constraintstudentsmaxroomchangesperrealdayform.h \
+	interface/modifyconstraintstudentsmaxroomchangesperrealdayform.h \
+	\
+	interface/addconstraintteachermaxroomchangesperrealdayform.h \
+	interface/constraintteachermaxroomchangesperrealdayform.h \
+	interface/modifyconstraintteachermaxroomchangesperrealdayform.h \
+	interface/addconstraintteachersmaxroomchangesperrealdayform.h \
+	interface/constraintteachersmaxroomchangesperrealdayform.h \
+	interface/modifyconstraintteachersmaxroomchangesperrealdayform.h \
+	\
+	interface/constraintteachermaxafternoonsperweekform.h \
+	interface/addconstraintteachermaxafternoonsperweekform.h \
+	interface/modifyconstraintteachermaxafternoonsperweekform.h \
+	interface/constraintteachersmaxafternoonsperweekform.h \
+	interface/addconstraintteachersmaxafternoonsperweekform.h \
+	interface/modifyconstraintteachersmaxafternoonsperweekform.h \
+	\
+	interface/constraintteachermaxmorningsperweekform.h \
+	interface/addconstraintteachermaxmorningsperweekform.h \
+	interface/modifyconstraintteachermaxmorningsperweekform.h \
+	interface/constraintteachersmaxmorningsperweekform.h \
+	interface/addconstraintteachersmaxmorningsperweekform.h \
+	interface/modifyconstraintteachersmaxmorningsperweekform.h \
+	\
+	interface/constraintteachermaxtwoconsecutivemorningsform.h \
+	interface/addconstraintteachermaxtwoconsecutivemorningsform.h \
+	interface/modifyconstraintteachermaxtwoconsecutivemorningsform.h \
+	interface/constraintteachersmaxtwoconsecutivemorningsform.h \
+	interface/addconstraintteachersmaxtwoconsecutivemorningsform.h \
+	interface/modifyconstraintteachersmaxtwoconsecutivemorningsform.h \
+	\
+	interface/constraintteachermaxtwoconsecutiveafternoonsform.h \
+	interface/addconstraintteachermaxtwoconsecutiveafternoonsform.h \
+	interface/modifyconstraintteachermaxtwoconsecutiveafternoonsform.h \
+	interface/constraintteachersmaxtwoconsecutiveafternoonsform.h \
+	interface/addconstraintteachersmaxtwoconsecutiveafternoonsform.h \
+	interface/modifyconstraintteachersmaxtwoconsecutiveafternoonsform.h \
+	\
+	interface/constraintteacherminmorningsperweekform.h \
+	interface/addconstraintteacherminmorningsperweekform.h \
+	interface/modifyconstraintteacherminmorningsperweekform.h \
+	\
+	interface/constraintteacherminafternoonsperweekform.h \
+	interface/addconstraintteacherminafternoonsperweekform.h \
+	interface/modifyconstraintteacherminafternoonsperweekform.h \
+	\
+	interface/constraintteachersminmorningsperweekform.h \
+	interface/addconstraintteachersminmorningsperweekform.h \
+	interface/modifyconstraintteachersminmorningsperweekform.h \
+	\
+	interface/constraintteachersminafternoonsperweekform.h \
+	interface/addconstraintteachersminafternoonsperweekform.h \
+	interface/modifyconstraintteachersminafternoonsperweekform.h \
+	\
+	interface/constraintteachermorningintervalmaxdaysperweekform.h \
+	interface/addconstraintteachermorningintervalmaxdaysperweekform.h \
+	interface/modifyconstraintteachermorningintervalmaxdaysperweekform.h \
+	\
+	interface/constraintteacherafternoonintervalmaxdaysperweekform.h \
+	interface/addconstraintteacherafternoonintervalmaxdaysperweekform.h \
+	interface/modifyconstraintteacherafternoonintervalmaxdaysperweekform.h \
+	\
+	interface/constraintstudentssetmorningintervalmaxdaysperweekform.h \
+	interface/addconstraintstudentssetmorningintervalmaxdaysperweekform.h \
+	interface/modifyconstraintstudentssetmorningintervalmaxdaysperweekform.h \
+	\
+	interface/constraintstudentsmorningintervalmaxdaysperweekform.h \
+	interface/addconstraintstudentsmorningintervalmaxdaysperweekform.h \
+	interface/modifyconstraintstudentsmorningintervalmaxdaysperweekform.h \
+	\
+	interface/constraintstudentssetafternoonintervalmaxdaysperweekform.h \
+	interface/addconstraintstudentssetafternoonintervalmaxdaysperweekform.h \
+	interface/modifyconstraintstudentssetafternoonintervalmaxdaysperweekform.h \
+	\
+	interface/constraintstudentsafternoonintervalmaxdaysperweekform.h \
+	interface/addconstraintstudentsafternoonintervalmaxdaysperweekform.h \
+	interface/modifyconstraintstudentsafternoonintervalmaxdaysperweekform.h \
+	\
+	interface/constraintstudentssetmaxafternoonsperweekform.h \
+	interface/addconstraintstudentssetmaxafternoonsperweekform.h \
+	interface/modifyconstraintstudentssetmaxafternoonsperweekform.h \
+	\
+	interface/constraintstudentsmaxafternoonsperweekform.h \
+	interface/addconstraintstudentsmaxafternoonsperweekform.h \
+	interface/modifyconstraintstudentsmaxafternoonsperweekform.h \
+	\
+	interface/constraintstudentssetmaxmorningsperweekform.h \
+	interface/addconstraintstudentssetmaxmorningsperweekform.h \
+	interface/modifyconstraintstudentssetmaxmorningsperweekform.h \
+	\
+	interface/constraintstudentsmaxmorningsperweekform.h \
+	interface/addconstraintstudentsmaxmorningsperweekform.h \
+	interface/modifyconstraintstudentsmaxmorningsperweekform.h \
+	\
+	interface/constraintstudentssetminafternoonsperweekform.h \
+	interface/addconstraintstudentssetminafternoonsperweekform.h \
+	interface/modifyconstraintstudentssetminafternoonsperweekform.h \
+	\
+	interface/constraintstudentsminafternoonsperweekform.h \
+	interface/addconstraintstudentsminafternoonsperweekform.h \
+	interface/modifyconstraintstudentsminafternoonsperweekform.h \
+	\
+	interface/constraintstudentssetminmorningsperweekform.h \
+	interface/addconstraintstudentssetminmorningsperweekform.h \
+	interface/modifyconstraintstudentssetminmorningsperweekform.h \
+	\
+	interface/constraintstudentsminmorningsperweekform.h \
+	interface/addconstraintstudentsminmorningsperweekform.h \
+	interface/modifyconstraintstudentsminmorningsperweekform.h \
+	\
+	interface/constraintteachersmorningintervalmaxdaysperweekform.h \
+	interface/addconstraintteachersmorningintervalmaxdaysperweekform.h \
+	interface/modifyconstraintteachersmorningintervalmaxdaysperweekform.h \
+	\
+	interface/constraintteachersafternoonintervalmaxdaysperweekform.h \
+	interface/addconstraintteachersafternoonintervalmaxdaysperweekform.h \
+	interface/modifyconstraintteachersafternoonintervalmaxdaysperweekform.h \
+	\
+	interface/constraintteachermaxhoursperallafternoonsform.h \
+	interface/addconstraintteachermaxhoursperallafternoonsform.h \
+	interface/modifyconstraintteachermaxhoursperallafternoonsform.h \
+	\
+	interface/constraintteachersmaxhoursperallafternoonsform.h \
+	interface/addconstraintteachersmaxhoursperallafternoonsform.h \
+	interface/modifyconstraintteachersmaxhoursperallafternoonsform.h \
+	\
+	interface/constraintstudentssetmaxhoursperallafternoonsform.h \
+	interface/addconstraintstudentssetmaxhoursperallafternoonsform.h \
+	interface/modifyconstraintstudentssetmaxhoursperallafternoonsform.h \
+	\
+	interface/constraintstudentsmaxhoursperallafternoonsform.h \
+	interface/addconstraintstudentsmaxhoursperallafternoonsform.h \
+	interface/modifyconstraintstudentsmaxhoursperallafternoonsform.h \
+	\
+	interface/constraintteachersminhourspermorningform.h \
+	interface/addconstraintteachersminhourspermorningform.h \
+	interface/modifyconstraintteachersminhourspermorningform.h \
+	interface/constraintteacherminhourspermorningform.h \
+	interface/addconstraintteacherminhourspermorningform.h \
+	interface/modifyconstraintteacherminhourspermorningform.h \
+	\
+	interface/constraintteachersminhoursdailyrealdaysform.h \
+	interface/addconstraintteachersminhoursdailyrealdaysform.h \
+	interface/modifyconstraintteachersminhoursdailyrealdaysform.h \
+	interface/constraintteacherminhoursdailyrealdaysform.h \
+	interface/addconstraintteacherminhoursdailyrealdaysform.h \
+	interface/modifyconstraintteacherminhoursdailyrealdaysform.h \
+	\
+	interface/constraintstudentssetmaxgapsperrealdayform.h \
+	interface/addconstraintstudentssetmaxgapsperrealdayform.h \
+	interface/modifyconstraintstudentssetmaxgapsperrealdayform.h \
+	interface/constraintstudentsmaxgapsperrealdayform.h \
+	interface/addconstraintstudentsmaxgapsperrealdayform.h \
+	interface/modifyconstraintstudentsmaxgapsperrealdayform.h \
+	\
+	interface/constraintteachersmaxzerogapsperafternoonform.h \
+	interface/constraintteachermaxzerogapsperafternoonform.h \
+	interface/addconstraintteachersmaxzerogapsperafternoonform.h \
+	interface/modifyconstraintteachersmaxzerogapsperafternoonform.h \
+	interface/addconstraintteachermaxzerogapsperafternoonform.h \
+	interface/modifyconstraintteachermaxzerogapsperafternoonform.h \
+	\
+	interface/constraintteachersmaxgapsperrealdayform.h \
+	interface/constraintteachermaxgapsperrealdayform.h \
+	interface/addconstraintteachersmaxgapsperrealdayform.h \
+	interface/modifyconstraintteachersmaxgapsperrealdayform.h \
+	interface/addconstraintteachermaxgapsperrealdayform.h \
+	interface/modifyconstraintteachermaxgapsperrealdayform.h \
+	\
+	interface/constraintstudentssetmaxgapsperweekforrealdaysform.h \
+	interface/addconstraintstudentssetmaxgapsperweekforrealdaysform.h \
+	interface/modifyconstraintstudentssetmaxgapsperweekforrealdaysform.h \
+	interface/constraintstudentsmaxgapsperweekforrealdaysform.h \
+	interface/addconstraintstudentsmaxgapsperweekforrealdaysform.h \
+	interface/modifyconstraintstudentsmaxgapsperweekforrealdaysform.h \
+	\
+	interface/constraintteachersmaxgapsperweekforrealdaysform.h \
+	interface/constraintteachermaxgapsperweekforrealdaysform.h \
+	interface/addconstraintteachersmaxgapsperweekforrealdaysform.h \
+	interface/modifyconstraintteachersmaxgapsperweekforrealdaysform.h \
+	interface/addconstraintteachermaxgapsperweekforrealdaysform.h \
+	interface/modifyconstraintteachermaxgapsperweekforrealdaysform.h \
+	\
+	interface/constraintstudentsafternoonsearlymaxbeginningsatsecondhourform.h \
+	interface/addconstraintstudentsafternoonsearlymaxbeginningsatsecondhourform.h \
+	interface/modifyconstraintstudentsafternoonsearlymaxbeginningsatsecondhourform.h \
+	interface/constraintstudentssetafternoonsearlymaxbeginningsatsecondhourform.h \
+	interface/addconstraintstudentssetafternoonsearlymaxbeginningsatsecondhourform.h \
+	interface/modifyconstraintstudentssetafternoonsearlymaxbeginningsatsecondhourform.h \
+	\
+	interface/constraintteachersafternoonsearlymaxbeginningsatsecondhourform.h \
+	interface/addconstraintteachersafternoonsearlymaxbeginningsatsecondhourform.h \
+	interface/modifyconstraintteachersafternoonsearlymaxbeginningsatsecondhourform.h \
+	interface/constraintteacherafternoonsearlymaxbeginningsatsecondhourform.h \
+	interface/addconstraintteacherafternoonsearlymaxbeginningsatsecondhourform.h \
+	interface/modifyconstraintteacherafternoonsearlymaxbeginningsatsecondhourform.h \
+	\
+	interface/constraintstudentssetminhourspermorningform.h \
+	interface/addconstraintstudentssetminhourspermorningform.h \
+	interface/modifyconstraintstudentssetminhourspermorningform.h \
+	interface/constraintstudentsminhourspermorningform.h \
+	interface/addconstraintstudentsminhourspermorningform.h \
+	interface/modifyconstraintstudentsminhourspermorningform.h \
+	\
+	interface/constraintteachermaxtwoactivitytagsperdayfromn1n2n3form.h \
+	interface/addconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form.h \
+	interface/modifyconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form.h \
+	interface/constraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.h \
+	interface/addconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.h \
+	interface/modifyconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.h \
+	\
+	interface/constraintteacherminrestinghoursbetweenmorningandafternoonform.h \
+	interface/addconstraintteacherminrestinghoursbetweenmorningandafternoonform.h \
+	interface/modifyconstraintteacherminrestinghoursbetweenmorningandafternoonform.h \
+	interface/constraintteachersminrestinghoursbetweenmorningandafternoonform.h \
+	interface/addconstraintteachersminrestinghoursbetweenmorningandafternoonform.h \
+	interface/modifyconstraintteachersminrestinghoursbetweenmorningandafternoonform.h \
+	\
+	interface/constraintstudentssetminrestinghoursbetweenmorningandafternoonform.h \
+	interface/addconstraintstudentssetminrestinghoursbetweenmorningandafternoonform.h \
+	interface/modifyconstraintstudentssetminrestinghoursbetweenmorningandafternoonform.h \
+	interface/constraintstudentsminrestinghoursbetweenmorningandafternoonform.h \
+	interface/addconstraintstudentsminrestinghoursbetweenmorningandafternoonform.h \
+	interface/modifyconstraintstudentsminrestinghoursbetweenmorningandafternoonform.h \
+	\
+	interface/helponn1n2n3.h \
+	\
+	interface/constraintteachersmaxhoursdailyrealdaysform.h \
+	interface/addconstraintteachersmaxhoursdailyrealdaysform.h \
+	interface/modifyconstraintteachersmaxhoursdailyrealdaysform.h \
+	interface/constraintteachermaxhoursdailyrealdaysform.h \
+	interface/addconstraintteachermaxhoursdailyrealdaysform.h \
+	interface/modifyconstraintteachermaxhoursdailyrealdaysform.h \
+	\
+	interface/constraintteachersactivitytagmaxhoursdailyrealdaysform.h \
+	interface/addconstraintteachersactivitytagmaxhoursdailyrealdaysform.h \
+	interface/modifyconstraintteachersactivitytagmaxhoursdailyrealdaysform.h \
+	interface/constraintteacheractivitytagmaxhoursdailyrealdaysform.h \
+	interface/addconstraintteacheractivitytagmaxhoursdailyrealdaysform.h \
+	interface/modifyconstraintteacheractivitytagmaxhoursdailyrealdaysform.h \
+	\
+	interface/constraintstudentssetmaxhoursdailyrealdaysform.h \
+	interface/addconstraintstudentssetmaxhoursdailyrealdaysform.h \
+	interface/modifyconstraintstudentssetmaxhoursdailyrealdaysform.h \
+	interface/constraintstudentsmaxhoursdailyrealdaysform.h \
+	interface/addconstraintstudentsmaxhoursdailyrealdaysform.h \
+	interface/modifyconstraintstudentsmaxhoursdailyrealdaysform.h \
+	\
+	interface/constraintstudentssetactivitytagmaxhoursdailyrealdaysform.h \
+	interface/addconstraintstudentssetactivitytagmaxhoursdailyrealdaysform.h \
+	interface/modifyconstraintstudentssetactivitytagmaxhoursdailyrealdaysform.h \
+	interface/constraintstudentsactivitytagmaxhoursdailyrealdaysform.h \
+	interface/addconstraintstudentsactivitytagmaxhoursdailyrealdaysform.h \
+	interface/modifyconstraintstudentsactivitytagmaxhoursdailyrealdaysform.h \
+	\
+	interface/constraintteachermaxrealdaysperweekform.h \
+	interface/addconstraintteachermaxrealdaysperweekform.h \
+	interface/modifyconstraintteachermaxrealdaysperweekform.h \
+	\
+	interface/constraintteachersmaxrealdaysperweekform.h \
+	interface/addconstraintteachersmaxrealdaysperweekform.h \
+	interface/modifyconstraintteachersmaxrealdaysperweekform.h \
+	\
+	interface/constraintstudentssetmaxrealdaysperweekform.h \
+	interface/addconstraintstudentssetmaxrealdaysperweekform.h \
+	interface/modifyconstraintstudentssetmaxrealdaysperweekform.h \
+	\
+	interface/constraintstudentsmaxrealdaysperweekform.h \
+	interface/addconstraintstudentsmaxrealdaysperweekform.h \
+	interface/modifyconstraintstudentsmaxrealdaysperweekform.h \
+	\
+	interface/constraintteacherminrealdaysperweekform.h \
+	interface/addconstraintteacherminrealdaysperweekform.h \
+	interface/modifyconstraintteacherminrealdaysperweekform.h \
+	\
+	interface/constraintteachersminrealdaysperweekform.h \
+	interface/addconstraintteachersminrealdaysperweekform.h \
+	interface/modifyconstraintteachersminrealdaysperweekform.h \
+	\
+	interface/constraintteachermaxspanperrealdayform.h \
+	interface/addconstraintteachermaxspanperrealdayform.h \
+	interface/modifyconstraintteachermaxspanperrealdayform.h \
+	interface/constraintteachersmaxspanperrealdayform.h \
+	interface/addconstraintteachersmaxspanperrealdayform.h \
+	interface/modifyconstraintteachersmaxspanperrealdayform.h \
+	\
+	interface/constraintstudentssetmaxspanperrealdayform.h \
+	interface/addconstraintstudentssetmaxspanperrealdayform.h \
+	interface/modifyconstraintstudentssetmaxspanperrealdayform.h \
+	interface/constraintstudentsmaxspanperrealdayform.h \
+	interface/addconstraintstudentsmaxspanperrealdayform.h \
+	interface/modifyconstraintstudentsmaxspanperrealdayform.h \
+	\
+	interface/constraintmaxtotalactivitiesfromsetinselectedtimeslotsform.h \
+	interface/addconstraintmaxtotalactivitiesfromsetinselectedtimeslotsform.h \
+	interface/modifyconstraintmaxtotalactivitiesfromsetinselectedtimeslotsform.h \
+	\
+	interface/constraintmaxgapsbetweenactivitiesform.h \
+	interface/addconstraintmaxgapsbetweenactivitiesform.h \
+	interface/modifyconstraintmaxgapsbetweenactivitiesform.h \
+	\
+	interface/constraintactivitiesmaxinatermform.h \
+	interface/addconstraintactivitiesmaxinatermform.h \
+	interface/modifyconstraintactivitiesmaxinatermform.h \
+	\
+	interface/constraintactivitiesoccupymaxtermsform.h \
+	interface/addconstraintactivitiesoccupymaxtermsform.h \
+	interface/modifyconstraintactivitiesoccupymaxtermsform.h \
+	\
+	interface/termsform.h
 
 FORMS += \
 	interface/fetmainform_template.ui \
@@ -1137,6 +1805,8 @@ FORMS += \
 	interface/addactivityform_template.ui \
 	interface/addbuildingform_template.ui \
 	\
+	interface/helpblockplanningform_template.ui \
+	interface/helptermsform_template.ui \
 	interface/helpfaqform_template.ui \
 	interface/helptipsform_template.ui \
 	interface/helpinstructionsform_template.ui \
@@ -1163,6 +1833,9 @@ FORMS += \
 	interface/addconstraintroomnotavailabletimesform_template.ui \
 	interface/constraintroomnotavailabletimesform_template.ui \
 	interface/modifyconstraintroomnotavailabletimesform_template.ui \
+	interface/addconstraintteacherroomnotavailabletimesform_template.ui \
+	interface/constraintteacherroomnotavailabletimesform_template.ui \
+	interface/modifyconstraintteacherroomnotavailabletimesform_template.ui \
 	interface/addconstraintactivitypreferredroomform_template.ui \
 	interface/constraintactivitypreferredroomform_template.ui \
 	interface/modifyconstraintactivitypreferredroomform_template.ui \
@@ -1286,6 +1959,8 @@ FORMS += \
 	interface/subgroupsform_template.ui \
 	interface/subjectsform_template.ui \
 	interface/teachersform_template.ui \
+	interface/addteacherform_template.ui \
+	interface/modifyteacherform_template.ui \
 	interface/timetablegenerateform_template.ui \
 	interface/timetablegeneratemultipleform_template.ui \
 	interface/timetableviewstudentsdayshorizontalform_template.ui \
@@ -1300,6 +1975,7 @@ FORMS += \
 	interface/hoursform_template.ui \
 	interface/roomsform_template.ui \
 	interface/randomseedform_template.ui \
+	interface/getmodefornewfileform_template.ui \
 	interface/roommakeeditvirtualform_template.ui \
 	interface/buildingsform_template.ui \
 	\
@@ -1431,6 +2107,14 @@ FORMS += \
 	interface/constraintactivitiesendstudentsdayform_template.ui \
 	interface/addconstraintactivitiesendstudentsdayform_template.ui \
 	interface/modifyconstraintactivitiesendstudentsdayform_template.ui \
+	\
+	interface/constraintactivityendsteachersdayform_template.ui \
+	interface/addconstraintactivityendsteachersdayform_template.ui \
+	interface/modifyconstraintactivityendsteachersdayform_template.ui \
+	\
+	interface/constraintactivitiesendteachersdayform_template.ui \
+	interface/addconstraintactivitiesendteachersdayform_template.ui \
+	interface/modifyconstraintactivitiesendteachersdayform_template.ui \
 	\
 	interface/constraintstudentssetmaxgapsperweekform_template.ui \
 	interface/addconstraintstudentssetmaxgapsperweekform_template.ui \
@@ -1632,7 +2316,323 @@ FORMS += \
 	interface/constraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui \
 	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui \
 	\
-	interface/notificationcommandform_template.ui
+	interface/notificationcommandform_template.ui \
+	\
+	interface/helpmoroccoform_template.ui \
+	interface/helpalgeriaform_template.ui \
+	\
+	interface/addconstraintstudentssetmaxroomchangesperrealdayform_template.ui \
+	interface/constraintstudentssetmaxroomchangesperrealdayform_template.ui \
+	interface/modifyconstraintstudentssetmaxroomchangesperrealdayform_template.ui \
+	interface/addconstraintstudentsmaxroomchangesperrealdayform_template.ui \
+	interface/constraintstudentsmaxroomchangesperrealdayform_template.ui \
+	interface/modifyconstraintstudentsmaxroomchangesperrealdayform_template.ui \
+	\
+	interface/addconstraintteachermaxroomchangesperrealdayform_template.ui \
+	interface/constraintteachermaxroomchangesperrealdayform_template.ui \
+	interface/modifyconstraintteachermaxroomchangesperrealdayform_template.ui \
+	interface/addconstraintteachersmaxroomchangesperrealdayform_template.ui \
+	interface/constraintteachersmaxroomchangesperrealdayform_template.ui \
+	interface/modifyconstraintteachersmaxroomchangesperrealdayform_template.ui \
+	\
+	interface/constraintteachermaxafternoonsperweekform_template.ui \
+	interface/addconstraintteachermaxafternoonsperweekform_template.ui \
+	interface/modifyconstraintteachermaxafternoonsperweekform_template.ui \
+	interface/constraintteachersmaxafternoonsperweekform_template.ui \
+	interface/addconstraintteachersmaxafternoonsperweekform_template.ui \
+	interface/modifyconstraintteachersmaxafternoonsperweekform_template.ui \
+	\
+	interface/constraintteachermaxmorningsperweekform_template.ui \
+	interface/addconstraintteachermaxmorningsperweekform_template.ui \
+	interface/modifyconstraintteachermaxmorningsperweekform_template.ui \
+	interface/constraintteachersmaxmorningsperweekform_template.ui \
+	interface/addconstraintteachersmaxmorningsperweekform_template.ui \
+	interface/modifyconstraintteachersmaxmorningsperweekform_template.ui \
+	\
+	interface/constraintteachermaxtwoconsecutivemorningsform_template.ui \
+	interface/addconstraintteachermaxtwoconsecutivemorningsform_template.ui \
+	interface/modifyconstraintteachermaxtwoconsecutivemorningsform_template.ui \
+	interface/constraintteachersmaxtwoconsecutivemorningsform_template.ui \
+	interface/addconstraintteachersmaxtwoconsecutivemorningsform_template.ui \
+	interface/modifyconstraintteachersmaxtwoconsecutivemorningsform_template.ui \
+	\
+	interface/constraintteachermaxtwoconsecutiveafternoonsform_template.ui \
+	interface/addconstraintteachermaxtwoconsecutiveafternoonsform_template.ui \
+	interface/modifyconstraintteachermaxtwoconsecutiveafternoonsform_template.ui \
+	interface/constraintteachersmaxtwoconsecutiveafternoonsform_template.ui \
+	interface/addconstraintteachersmaxtwoconsecutiveafternoonsform_template.ui \
+	interface/modifyconstraintteachersmaxtwoconsecutiveafternoonsform_template.ui \
+	\
+	interface/constraintteacherminmorningsperweekform_template.ui \
+	interface/addconstraintteacherminmorningsperweekform_template.ui \
+	interface/modifyconstraintteacherminmorningsperweekform_template.ui \
+	\
+	interface/constraintteacherminafternoonsperweekform_template.ui \
+	interface/addconstraintteacherminafternoonsperweekform_template.ui \
+	interface/modifyconstraintteacherminafternoonsperweekform_template.ui \
+	\
+	interface/constraintteachersminmorningsperweekform_template.ui \
+	interface/addconstraintteachersminmorningsperweekform_template.ui \
+	interface/modifyconstraintteachersminmorningsperweekform_template.ui \
+	\
+	interface/constraintteachersminafternoonsperweekform_template.ui \
+	interface/addconstraintteachersminafternoonsperweekform_template.ui \
+	interface/modifyconstraintteachersminafternoonsperweekform_template.ui \
+	\
+	interface/constraintteachermorningintervalmaxdaysperweekform_template.ui \
+	interface/addconstraintteachermorningintervalmaxdaysperweekform_template.ui \
+	interface/modifyconstraintteachermorningintervalmaxdaysperweekform_template.ui \
+	\
+	interface/constraintteacherafternoonintervalmaxdaysperweekform_template.ui \
+	interface/addconstraintteacherafternoonintervalmaxdaysperweekform_template.ui \
+	interface/modifyconstraintteacherafternoonintervalmaxdaysperweekform_template.ui \
+	\
+	interface/constraintstudentssetmorningintervalmaxdaysperweekform_template.ui \
+	interface/addconstraintstudentssetmorningintervalmaxdaysperweekform_template.ui \
+	interface/modifyconstraintstudentssetmorningintervalmaxdaysperweekform_template.ui \
+	\
+	interface/constraintstudentsmorningintervalmaxdaysperweekform_template.ui \
+	interface/addconstraintstudentsmorningintervalmaxdaysperweekform_template.ui \
+	interface/modifyconstraintstudentsmorningintervalmaxdaysperweekform_template.ui \
+	\
+	interface/constraintstudentssetafternoonintervalmaxdaysperweekform_template.ui \
+	interface/addconstraintstudentssetafternoonintervalmaxdaysperweekform_template.ui \
+	interface/modifyconstraintstudentssetafternoonintervalmaxdaysperweekform_template.ui \
+	\
+	interface/constraintstudentsafternoonintervalmaxdaysperweekform_template.ui \
+	interface/addconstraintstudentsafternoonintervalmaxdaysperweekform_template.ui \
+	interface/modifyconstraintstudentsafternoonintervalmaxdaysperweekform_template.ui \
+	\
+	interface/constraintstudentssetmaxafternoonsperweekform_template.ui \
+	interface/addconstraintstudentssetmaxafternoonsperweekform_template.ui \
+	interface/modifyconstraintstudentssetmaxafternoonsperweekform_template.ui \
+	\
+	interface/constraintstudentsmaxafternoonsperweekform_template.ui \
+	interface/addconstraintstudentsmaxafternoonsperweekform_template.ui \
+	interface/modifyconstraintstudentsmaxafternoonsperweekform_template.ui \
+	\
+	interface/constraintstudentssetmaxmorningsperweekform_template.ui \
+	interface/addconstraintstudentssetmaxmorningsperweekform_template.ui \
+	interface/modifyconstraintstudentssetmaxmorningsperweekform_template.ui \
+	\
+	interface/constraintstudentsmaxmorningsperweekform_template.ui \
+	interface/addconstraintstudentsmaxmorningsperweekform_template.ui \
+	interface/modifyconstraintstudentsmaxmorningsperweekform_template.ui \
+	\
+	interface/constraintstudentssetminafternoonsperweekform_template.ui \
+	interface/addconstraintstudentssetminafternoonsperweekform_template.ui \
+	interface/modifyconstraintstudentssetminafternoonsperweekform_template.ui \
+	\
+	interface/constraintstudentsminafternoonsperweekform_template.ui \
+	interface/addconstraintstudentsminafternoonsperweekform_template.ui \
+	interface/modifyconstraintstudentsminafternoonsperweekform_template.ui \
+	\
+	interface/constraintstudentssetminmorningsperweekform_template.ui \
+	interface/addconstraintstudentssetminmorningsperweekform_template.ui \
+	interface/modifyconstraintstudentssetminmorningsperweekform_template.ui \
+	\
+	interface/constraintstudentsminmorningsperweekform_template.ui \
+	interface/addconstraintstudentsminmorningsperweekform_template.ui \
+	interface/modifyconstraintstudentsminmorningsperweekform_template.ui \
+	\
+	interface/constraintteachersmorningintervalmaxdaysperweekform_template.ui \
+	interface/addconstraintteachersmorningintervalmaxdaysperweekform_template.ui \
+	interface/modifyconstraintteachersmorningintervalmaxdaysperweekform_template.ui \
+	\
+	interface/constraintteachersafternoonintervalmaxdaysperweekform_template.ui \
+	interface/addconstraintteachersafternoonintervalmaxdaysperweekform_template.ui \
+	interface/modifyconstraintteachersafternoonintervalmaxdaysperweekform_template.ui \
+	\
+	interface/constraintteachermaxhoursperallafternoonsform_template.ui \
+	interface/addconstraintteachermaxhoursperallafternoonsform_template.ui \
+	interface/modifyconstraintteachermaxhoursperallafternoonsform_template.ui \
+	\
+	interface/constraintteachersmaxhoursperallafternoonsform_template.ui \
+	interface/addconstraintteachersmaxhoursperallafternoonsform_template.ui \
+	interface/modifyconstraintteachersmaxhoursperallafternoonsform_template.ui \
+	\
+	interface/constraintstudentssetmaxhoursperallafternoonsform_template.ui \
+	interface/addconstraintstudentssetmaxhoursperallafternoonsform_template.ui \
+	interface/modifyconstraintstudentssetmaxhoursperallafternoonsform_template.ui \
+	\
+	interface/constraintstudentsmaxhoursperallafternoonsform_template.ui \
+	interface/addconstraintstudentsmaxhoursperallafternoonsform_template.ui \
+	interface/modifyconstraintstudentsmaxhoursperallafternoonsform_template.ui \
+	\
+	interface/constraintteachersminhourspermorningform_template.ui \
+	interface/addconstraintteachersminhourspermorningform_template.ui \
+	interface/modifyconstraintteachersminhourspermorningform_template.ui \
+	interface/constraintteacherminhourspermorningform_template.ui \
+	interface/addconstraintteacherminhourspermorningform_template.ui \
+	interface/modifyconstraintteacherminhourspermorningform_template.ui \
+	\
+	interface/constraintteachersminhoursdailyrealdaysform_template.ui \
+	interface/addconstraintteachersminhoursdailyrealdaysform_template.ui \
+	interface/modifyconstraintteachersminhoursdailyrealdaysform_template.ui \
+	interface/constraintteacherminhoursdailyrealdaysform_template.ui \
+	interface/addconstraintteacherminhoursdailyrealdaysform_template.ui \
+	interface/modifyconstraintteacherminhoursdailyrealdaysform_template.ui \
+	\
+	interface/constraintstudentssetmaxgapsperrealdayform_template.ui \
+	interface/addconstraintstudentssetmaxgapsperrealdayform_template.ui \
+	interface/modifyconstraintstudentssetmaxgapsperrealdayform_template.ui \
+	interface/constraintstudentsmaxgapsperrealdayform_template.ui \
+	interface/addconstraintstudentsmaxgapsperrealdayform_template.ui \
+	interface/modifyconstraintstudentsmaxgapsperrealdayform_template.ui \
+	\
+	interface/constraintteachersmaxzerogapsperafternoonform_template.ui \
+	interface/constraintteachermaxzerogapsperafternoonform_template.ui \
+	interface/addconstraintteachersmaxzerogapsperafternoonform_template.ui \
+	interface/modifyconstraintteachersmaxzerogapsperafternoonform_template.ui \
+	interface/addconstraintteachermaxzerogapsperafternoonform_template.ui \
+	interface/modifyconstraintteachermaxzerogapsperafternoonform_template.ui \
+	\
+	interface/constraintteachersmaxgapsperrealdayform_template.ui \
+	interface/constraintteachermaxgapsperrealdayform_template.ui \
+	interface/addconstraintteachersmaxgapsperrealdayform_template.ui \
+	interface/modifyconstraintteachersmaxgapsperrealdayform_template.ui \
+	interface/addconstraintteachermaxgapsperrealdayform_template.ui \
+	interface/modifyconstraintteachermaxgapsperrealdayform_template.ui \
+	\
+	interface/constraintstudentssetmaxgapsperweekforrealdaysform_template.ui \
+	interface/addconstraintstudentssetmaxgapsperweekforrealdaysform_template.ui \
+	interface/modifyconstraintstudentssetmaxgapsperweekforrealdaysform_template.ui \
+	interface/constraintstudentsmaxgapsperweekforrealdaysform_template.ui \
+	interface/addconstraintstudentsmaxgapsperweekforrealdaysform_template.ui \
+	interface/modifyconstraintstudentsmaxgapsperweekforrealdaysform_template.ui \
+	\
+	interface/constraintteachersmaxgapsperweekforrealdaysform_template.ui \
+	interface/constraintteachermaxgapsperweekforrealdaysform_template.ui \
+	interface/addconstraintteachersmaxgapsperweekforrealdaysform_template.ui \
+	interface/modifyconstraintteachersmaxgapsperweekforrealdaysform_template.ui \
+	interface/addconstraintteachermaxgapsperweekforrealdaysform_template.ui \
+	interface/modifyconstraintteachermaxgapsperweekforrealdaysform_template.ui \
+	\
+	interface/constraintstudentsafternoonsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/addconstraintstudentsafternoonsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/modifyconstraintstudentsafternoonsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/constraintstudentssetafternoonsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/addconstraintstudentssetafternoonsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/modifyconstraintstudentssetafternoonsearlymaxbeginningsatsecondhourform_template.ui \
+	\
+	interface/constraintteachersafternoonsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/addconstraintteachersafternoonsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/modifyconstraintteachersafternoonsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/constraintteacherafternoonsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/addconstraintteacherafternoonsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/modifyconstraintteacherafternoonsearlymaxbeginningsatsecondhourform_template.ui \
+	\
+	interface/constraintstudentssetminhourspermorningform_template.ui \
+	interface/addconstraintstudentssetminhourspermorningform_template.ui \
+	interface/modifyconstraintstudentssetminhourspermorningform_template.ui \
+	interface/constraintstudentsminhourspermorningform_template.ui \
+	interface/addconstraintstudentsminhourspermorningform_template.ui \
+	interface/modifyconstraintstudentsminhourspermorningform_template.ui \
+	\
+	interface/constraintteachermaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
+	interface/addconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
+	interface/modifyconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
+	interface/constraintteachersmaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
+	interface/addconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
+	interface/modifyconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
+	\
+	interface/constraintteacherminrestinghoursbetweenmorningandafternoonform_template.ui \
+	interface/addconstraintteacherminrestinghoursbetweenmorningandafternoonform_template.ui \
+	interface/modifyconstraintteacherminrestinghoursbetweenmorningandafternoonform_template.ui \
+	interface/constraintteachersminrestinghoursbetweenmorningandafternoonform_template.ui \
+	interface/addconstraintteachersminrestinghoursbetweenmorningandafternoonform_template.ui \
+	interface/modifyconstraintteachersminrestinghoursbetweenmorningandafternoonform_template.ui \
+	\
+	interface/constraintstudentssetminrestinghoursbetweenmorningandafternoonform_template.ui \
+	interface/addconstraintstudentssetminrestinghoursbetweenmorningandafternoonform_template.ui \
+	interface/modifyconstraintstudentssetminrestinghoursbetweenmorningandafternoonform_template.ui \
+	interface/constraintstudentsminrestinghoursbetweenmorningandafternoonform_template.ui \
+	interface/addconstraintstudentsminrestinghoursbetweenmorningandafternoonform_template.ui \
+	interface/modifyconstraintstudentsminrestinghoursbetweenmorningandafternoonform_template.ui \
+	\
+	interface/constraintteachersmaxhoursdailyrealdaysform_template.ui \
+	interface/addconstraintteachersmaxhoursdailyrealdaysform_template.ui \
+	interface/modifyconstraintteachersmaxhoursdailyrealdaysform_template.ui \
+	interface/constraintteachermaxhoursdailyrealdaysform_template.ui \
+	interface/addconstraintteachermaxhoursdailyrealdaysform_template.ui \
+	interface/modifyconstraintteachermaxhoursdailyrealdaysform_template.ui \
+	\
+	interface/constraintteachersactivitytagmaxhoursdailyrealdaysform_template.ui \
+	interface/addconstraintteachersactivitytagmaxhoursdailyrealdaysform_template.ui \
+	interface/modifyconstraintteachersactivitytagmaxhoursdailyrealdaysform_template.ui \
+	interface/constraintteacheractivitytagmaxhoursdailyrealdaysform_template.ui \
+	interface/addconstraintteacheractivitytagmaxhoursdailyrealdaysform_template.ui \
+	interface/modifyconstraintteacheractivitytagmaxhoursdailyrealdaysform_template.ui \
+	\
+	interface/constraintstudentssetmaxhoursdailyrealdaysform_template.ui \
+	interface/addconstraintstudentssetmaxhoursdailyrealdaysform_template.ui \
+	interface/modifyconstraintstudentssetmaxhoursdailyrealdaysform_template.ui \
+	interface/constraintstudentsmaxhoursdailyrealdaysform_template.ui \
+	interface/addconstraintstudentsmaxhoursdailyrealdaysform_template.ui \
+	interface/modifyconstraintstudentsmaxhoursdailyrealdaysform_template.ui \
+	\
+	interface/constraintstudentssetactivitytagmaxhoursdailyrealdaysform_template.ui \
+	interface/addconstraintstudentssetactivitytagmaxhoursdailyrealdaysform_template.ui \
+	interface/modifyconstraintstudentssetactivitytagmaxhoursdailyrealdaysform_template.ui \
+	interface/constraintstudentsactivitytagmaxhoursdailyrealdaysform_template.ui \
+	interface/addconstraintstudentsactivitytagmaxhoursdailyrealdaysform_template.ui \
+	interface/modifyconstraintstudentsactivitytagmaxhoursdailyrealdaysform_template.ui \
+	\
+	interface/constraintteachermaxrealdaysperweekform_template.ui \
+	interface/addconstraintteachermaxrealdaysperweekform_template.ui \
+	interface/modifyconstraintteachermaxrealdaysperweekform_template.ui \
+	\
+	interface/constraintteachersmaxrealdaysperweekform_template.ui \
+	interface/addconstraintteachersmaxrealdaysperweekform_template.ui \
+	interface/modifyconstraintteachersmaxrealdaysperweekform_template.ui \
+	\
+	interface/constraintstudentssetmaxrealdaysperweekform_template.ui \
+	interface/addconstraintstudentssetmaxrealdaysperweekform_template.ui \
+	interface/modifyconstraintstudentssetmaxrealdaysperweekform_template.ui \
+	\
+	interface/constraintstudentsmaxrealdaysperweekform_template.ui \
+	interface/addconstraintstudentsmaxrealdaysperweekform_template.ui \
+	interface/modifyconstraintstudentsmaxrealdaysperweekform_template.ui \
+	\
+	interface/constraintteacherminrealdaysperweekform_template.ui \
+	interface/addconstraintteacherminrealdaysperweekform_template.ui \
+	interface/modifyconstraintteacherminrealdaysperweekform_template.ui \
+	\
+	interface/constraintteachersminrealdaysperweekform_template.ui \
+	interface/addconstraintteachersminrealdaysperweekform_template.ui \
+	interface/modifyconstraintteachersminrealdaysperweekform_template.ui \
+	\
+	interface/constraintteachermaxspanperrealdayform_template.ui \
+	interface/addconstraintteachermaxspanperrealdayform_template.ui \
+	interface/modifyconstraintteachermaxspanperrealdayform_template.ui \
+	interface/constraintteachersmaxspanperrealdayform_template.ui \
+	interface/addconstraintteachersmaxspanperrealdayform_template.ui \
+	interface/modifyconstraintteachersmaxspanperrealdayform_template.ui \
+	\
+	interface/constraintstudentssetmaxspanperrealdayform_template.ui \
+	interface/addconstraintstudentssetmaxspanperrealdayform_template.ui \
+	interface/modifyconstraintstudentssetmaxspanperrealdayform_template.ui \
+	interface/constraintstudentsmaxspanperrealdayform_template.ui \
+	interface/addconstraintstudentsmaxspanperrealdayform_template.ui \
+	interface/modifyconstraintstudentsmaxspanperrealdayform_template.ui \
+	\
+	interface/constraintmaxtotalactivitiesfromsetinselectedtimeslotsform_template.ui \
+	interface/addconstraintmaxtotalactivitiesfromsetinselectedtimeslotsform_template.ui \
+	interface/modifyconstraintmaxtotalactivitiesfromsetinselectedtimeslotsform_template.ui \
+	\
+	interface/constraintmaxgapsbetweenactivitiesform_template.ui \
+	interface/addconstraintmaxgapsbetweenactivitiesform_template.ui \
+	interface/modifyconstraintmaxgapsbetweenactivitiesform_template.ui \
+	\
+	interface/constraintactivitiesmaxinatermform_template.ui \
+	interface/addconstraintactivitiesmaxinatermform_template.ui \
+	interface/modifyconstraintactivitiesmaxinatermform_template.ui \
+	\
+	interface/constraintactivitiesoccupymaxtermsform_template.ui \
+	interface/addconstraintactivitiesoccupymaxtermsform_template.ui \
+	interface/modifyconstraintactivitiesoccupymaxtermsform_template.ui \
+	\
+	interface/termsform_template.ui
 
 TRANSLATIONS += \
 	../translations/fet_ar.ts \

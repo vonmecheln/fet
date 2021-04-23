@@ -26,6 +26,7 @@
 extern Timetable gt;
 
 extern bool simulation_running;
+extern bool simulation_running_multi;
 
 InstitutionNameForm::InstitutionNameForm(QWidget* parent): QDialog(parent)
 {
@@ -51,7 +52,7 @@ InstitutionNameForm::~InstitutionNameForm()
 
 void InstitutionNameForm::ok()
 {
-	if(!simulation_running)
+	if(!simulation_running && !simulation_running_multi)
 		gt.rules.setInstitutionName(institutionNameLineEdit->text());
 	else{
 		QMessageBox::information(this, tr("FET information"),

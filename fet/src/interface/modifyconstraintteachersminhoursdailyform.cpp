@@ -72,9 +72,17 @@ void ModifyConstraintTeachersMinHoursDailyForm::ok()
 	}
 
 	if(!allowEmptyDaysCheckBox->isChecked()){
-		QMessageBox::warning(this, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for the teachers, "
-			"please use the constraint teachers min days per week"));
-		return;
+		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+			QMessageBox::warning(this, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for the teachers, "
+				"please use the constraint teachers min days per week"));
+			return;
+		}
+		else{
+			QMessageBox::warning(this, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for a teacher, "
+				"please use the constraint teacher min days per week (but the min days per week constraint is for real days. You can also use the "
+				"constraints teacher min mornings/afternoons per week.)"));
+			return;
+		}
 	}
 
 	int min_hours=minHoursSpinBox->value();
@@ -101,7 +109,12 @@ void ModifyConstraintTeachersMinHoursDailyForm::allowEmptyDaysCheckBoxToggled()
 
 	if(!k){
 		allowEmptyDaysCheckBox->setChecked(true);
-		QMessageBox::information(this, tr("FET information"), tr("This check box must remain checked. If you really need to not allow empty days for the teachers,"
-			" please use constraint teachers min days per week"));
+		if(gt.rules.mode!=MORNINGS_AFTERNOONS)
+			QMessageBox::information(this, tr("FET information"), tr("This check box must remain checked. If you really need to not allow empty days for the teachers,"
+				" please use constraint teachers min days per week"));
+		else
+			QMessageBox::information(this, tr("FET information"), tr("This check box must remain checked. If you really need to not allow empty days for this teacher,"
+				" please use constraint teacher min days per week (but the min days per week constraint is for real days. You can also use the "
+				"constraints teacher min mornings/afternoons per week.)"));
 	}
 }

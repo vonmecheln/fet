@@ -16,6 +16,7 @@
  ***************************************************************************/
 
 #include "generate.h"
+#include "generate_pre.h"
 
 #include "timetablegenerateform.h"
 #include "timetable_defs.h"
@@ -35,7 +36,7 @@
 
 #include <QMessageBox>
 
-#include <QMutex>
+//#include <QMutex>
 
 #include <QDir>
 
@@ -47,26 +48,31 @@
 
 #include "longtextmessagebox.h"
 
-QMutex myMutex;
+#include <thread>
+#include <mutex>
+#include <condition_variable>
 
-static GenerateThread generateThread;
+//#include <QSemaphore>
 
-#include <QSemaphore>
+//QMutex myMutex;
 
-QSemaphore semaphorePlacedActivity; //used to update when an activity is placed
+//It might be safer to not make this variable static - see the comment for this in timetablegeneratemultipleform.cpp
+//static GenerateThread generateThread;
 
-QSemaphore finishedSemaphore;
+//QSemaphore semaphorePlacedActivity; //used to update when an activity is placed
+
+//QSemaphore finishedSemaphore;
 
 //Represents the current status of the simulation - running or stopped.
 extern bool simulation_running;
 
-extern bool students_schedule_ready;
-extern bool teachers_schedule_ready;
-extern bool rooms_schedule_ready;
+//extern bool students_schedule_ready;
+//extern bool teachers_schedule_ready;
+//extern bool rooms_schedule_ready;
 
-extern Solution best_solution;
+//extern Solution best_solution;
 
-extern Solution highestStageSolution;
+//extern Solution highestStageSolution;
 
 extern QString conflictsStringTitle;
 extern QString conflictsString;
@@ -75,18 +81,21 @@ Generate gen;
 
 QString initialOrderOfActivities;
 
-int initialOrderOfActivitiesIndices[MAX_ACTIVITIES];
-
-extern int maxActivitiesPlaced;
-
-//extern QDateTime generationStartDateTime;
-//extern QDateTime generationHighestStageDateTime;
-
 QString getActivityDetailedDescription(Rules& r, int id);
 
 const QString settingsName=QString("TimetableGenerateUnsuccessfulForm");
 
-void GenerateThread::run()
+static std::thread singleThread;
+
+/*void GenerateThread::run()
+{
+	const int INF=2000000000;
+	bool impossible, timeExceeded;
+
+	gen.generate(INF, impossible, timeExceeded, true); //true means threaded
+}*/
+
+void runSingle()
 {
 	const int INF=2000000000;
 	bool impossible, timeExceeded;
@@ -126,12 +135,9 @@ TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)
 	seeImpossiblePushButton->setDisabled(true);
 	seeInitialOrderPushButton->setDisabled(true);
 
-	connect(&gen, SIGNAL(activityPlaced(int)),
-	 this, SLOT(activityPlaced(int)));
-	connect(&gen, SIGNAL(simulationFinished()),
-	 this, SLOT(simulationFinished()));
-	connect(&gen, SIGNAL(impossibleToSolve()),
-	 this, SLOT(impossibleToSolve()));
+	connect(&gen, SIGNAL(activityPlaced(int, int)), this, SLOT(activityPlaced(int, int)));
+	connect(&gen, SIGNAL(simulationFinished()), this, SLOT(simulationFinished()));
+	connect(&gen, SIGNAL(impossibleToSolve()), this, SLOT(impossibleToSolve()));
 }
 
 TimetableGenerateForm::~TimetableGenerateForm()
@@ -143,6 +149,9 @@ TimetableGenerateForm::~TimetableGenerateForm()
 	/*for(QProcess* myProcess : qAsConst(commandProcesses))
 		//if(myProcess->state()!=QProcess::NotRunning)
 			myProcess->close();*/
+	
+	/*generateThread.quit();
+	generateThread.wait();*/
 }
 
 void TimetableGenerateForm::start(){
@@ -164,7 +173,7 @@ void TimetableGenerateForm::start(){
 	}
 
 	currentResultsTextEdit->setPlainText(TimetableGenerateForm::tr("Entering simulation....precomputing, please be patient"));
-	
+
 	gen.abortOptimization=false;
 	bool ok=gen.precompute(this);
 	
@@ -191,9 +200,11 @@ void TimetableGenerateForm::start(){
 	
 	gen.c.makeUnallocated(gt.rules);
 	
-	TimetableExport::writeRandomSeed(this, true); //true represents 'before' state
+	TimetableExport::writeRandomSeed(this, gen.rng, true); //true represents 'before' state
 
-	generateThread.start();
+	//generateThread.start();
+	singleThread=std::thread(runSingle);
+	singleThread.detach();
 }
 
 void TimetableGenerateForm::stop()
@@ -204,11 +215,11 @@ void TimetableGenerateForm::stop()
 
 	simulation_running=false;
 
-	myMutex.lock();
+	gen.myMutex.lock();
 	gen.abortOptimization=true;
-	myMutex.unlock();
+	gen.myMutex.unlock();
 
-	myMutex.lock();
+	gen.myMutex.lock();
 
 	Solution& c=gen.c;
 
@@ -216,9 +227,10 @@ void TimetableGenerateForm::stop()
 	FakeString tmp;
 	c.fitness(gt.rules, &tmp);
 
-	TimetableExport::getStudentsTimetable(c);
+	/*TimetableExport::getStudentsTimetable(c);
 	TimetableExport::getTeachersTimetable(c);
-	TimetableExport::getRoomsTimetable(c);
+	TimetableExport::getRoomsTimetable(c);*/
+	TimetableExport::getStudentsTeachersRoomsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
@@ -267,7 +279,7 @@ void TimetableGenerateForm::stop()
 	s+=tr("FET managed to schedule correctly the first %1 most difficult activities."
 	 " You can see initial order of placing the activities in the generate dialog. The activity which might cause problems"
 	 " might be the next activity in the initial order of evaluation. This activity is listed below:")
-	 .arg(maxActivitiesPlaced);
+	 .arg(gen.maxActivitiesPlaced);
 	
 	s+="\n\n";
 	
@@ -276,9 +288,9 @@ void TimetableGenerateForm::stop()
 	s+="-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ";
 	s+="\n";
 	
-	if(maxActivitiesPlaced>=0 && maxActivitiesPlaced<gt.rules.nInternalActivities
-	 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]<gt.rules.nInternalActivities){
-		int ai=initialOrderOfActivitiesIndices[maxActivitiesPlaced];
+	if(gen.maxActivitiesPlaced>=0 && gen.maxActivitiesPlaced<gt.rules.nInternalActivities
+	 && initialOrderOfActivitiesIndices[gen.maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[gen.maxActivitiesPlaced]<gt.rules.nInternalActivities){
+		int ai=initialOrderOfActivitiesIndices[gen.maxActivitiesPlaced];
 
 		s+=TimetableGenerateForm::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
 			.arg(gt.rules.internalActivitiesList[ai].id)
@@ -313,7 +325,7 @@ void TimetableGenerateForm::stop()
 		s+="\n";
 	}
 
-	myMutex.unlock();
+	gen.myMutex.unlock();
 
 	//show the message in a dialog
 	QDialog dialog(this);
@@ -349,6 +361,11 @@ void TimetableGenerateForm::stop()
 	writeResultsPushButton->setDisabled(true);
 	writeHighestStagePushButton->setDisabled(true);
 	seeImpossiblePushButton->setDisabled(true);
+
+	//generateThread.quit();
+	//generateThread.wait();
+	if(singleThread.joinable())
+		singleThread.join();
 }
 
 void TimetableGenerateForm::stopHighest()
@@ -359,21 +376,22 @@ void TimetableGenerateForm::stopHighest()
 
 	simulation_running=false;
 
-	myMutex.lock();
+	gen.myMutex.lock();
 	gen.abortOptimization=true;
-	myMutex.unlock();
+	gen.myMutex.unlock();
 
-	myMutex.lock();
+	gen.myMutex.lock();
 
-	Solution& c=highestStageSolution;
+	Solution& c=gen.highestStageSolution;
 
 	//needed to find the conflicts strings
 	FakeString tmp;
 	c.fitness(gt.rules, &tmp);
 
-	TimetableExport::getStudentsTimetable(c);
+	/*TimetableExport::getStudentsTimetable(c);
 	TimetableExport::getTeachersTimetable(c);
-	TimetableExport::getRoomsTimetable(c);
+	TimetableExport::getRoomsTimetable(c);*/
+	TimetableExport::getStudentsTeachersRoomsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
@@ -422,7 +440,7 @@ void TimetableGenerateForm::stopHighest()
 	s+=tr("FET managed to schedule correctly the first %1 most difficult activities."
 	 " You can see initial order of placing the activities in the generate dialog. The activity which might cause problems"
 	 " might be the next activity in the initial order of evaluation. This activity is listed below:")
-	 .arg(maxActivitiesPlaced);
+	 .arg(gen.maxActivitiesPlaced);
 	
 	s+="\n\n";
 	
@@ -431,9 +449,9 @@ void TimetableGenerateForm::stopHighest()
 	s+="-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ";
 	s+="\n";
 	
-	if(maxActivitiesPlaced>=0 && maxActivitiesPlaced<gt.rules.nInternalActivities
-	 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[maxActivitiesPlaced]<gt.rules.nInternalActivities){
-		int ai=initialOrderOfActivitiesIndices[maxActivitiesPlaced];
+	if(gen.maxActivitiesPlaced>=0 && gen.maxActivitiesPlaced<gt.rules.nInternalActivities
+	 && initialOrderOfActivitiesIndices[gen.maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[gen.maxActivitiesPlaced]<gt.rules.nInternalActivities){
+		int ai=initialOrderOfActivitiesIndices[gen.maxActivitiesPlaced];
 
 		s+=TimetableGenerateForm::tr("Id: %1 (%2)", "%1 is id of activity, %2 is detailed description of activity")
 			.arg(gt.rules.internalActivitiesList[ai].id)
@@ -444,7 +462,7 @@ void TimetableGenerateForm::stopHighest()
 
 	s+="\n";
 
-	myMutex.unlock();
+	gen.myMutex.unlock();
 
 	//show the message in a dialog
 	QDialog dialog(this);
@@ -481,6 +499,11 @@ void TimetableGenerateForm::stopHighest()
 	writeResultsPushButton->setDisabled(true);
 	writeHighestStagePushButton->setDisabled(true);
 	seeImpossiblePushButton->setDisabled(true);
+
+	//generateThread.quit();
+	//generateThread.wait();
+	if(singleThread.joinable())
+		singleThread.join();
 }
 
 void TimetableGenerateForm::impossibleToSolve()
@@ -491,11 +514,11 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	simulation_running=false;
 
-	myMutex.lock();
+	gen.myMutex.lock();
 	gen.abortOptimization=true;
-	myMutex.unlock();
+	gen.myMutex.unlock();
 
-	myMutex.lock();
+	gen.myMutex.lock();
 
 	Solution& c=gen.c;
 
@@ -503,9 +526,10 @@ void TimetableGenerateForm::impossibleToSolve()
 	FakeString tmp;
 	c.fitness(gt.rules, &tmp);
 
-	TimetableExport::getStudentsTimetable(c);
+	/*TimetableExport::getStudentsTimetable(c);
 	TimetableExport::getTeachersTimetable(c);
-	TimetableExport::getRoomsTimetable(c);
+	TimetableExport::getRoomsTimetable(c);*/
+	TimetableExport::getStudentsTeachersRoomsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
@@ -566,7 +590,7 @@ void TimetableGenerateForm::impossibleToSolve()
 		s+="\n";
 	}
 
-	myMutex.unlock();
+	gen.myMutex.unlock();
 
 	//show the message in a dialog
 	QDialog dialog(this);
@@ -633,6 +657,11 @@ void TimetableGenerateForm::impossibleToSolve()
 	writeResultsPushButton->setDisabled(true);
 	writeHighestStagePushButton->setDisabled(true);
 	seeImpossiblePushButton->setDisabled(true);
+
+	//generateThread.quit();
+	//generateThread.wait();
+	if(singleThread.joinable())
+		singleThread.join();
 }
 
 void TimetableGenerateForm::simulationFinished()
@@ -643,9 +672,11 @@ void TimetableGenerateForm::simulationFinished()
 
 	simulation_running=false;
 
-	finishedSemaphore.acquire();
+	//gen.finishedSemaphore.acquire();
 
-	TimetableExport::writeRandomSeed(this, false); //false represents 'before' state
+	gen.myMutex.lock();
+
+	TimetableExport::writeRandomSeed(this, gen.rng, false); //false represents 'before' state
 
 	Solution& c=gen.c;
 
@@ -653,9 +684,10 @@ void TimetableGenerateForm::simulationFinished()
 	FakeString tmp;
 	c.fitness(gt.rules, &tmp);
 
-	TimetableExport::getStudentsTimetable(c);
+	/*TimetableExport::getStudentsTimetable(c);
 	TimetableExport::getTeachersTimetable(c);
-	TimetableExport::getRoomsTimetable(c);
+	TimetableExport::getRoomsTimetable(c);*/
+	TimetableExport::getStudentsTeachersRoomsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Soft conflicts", "Title of dialog");
@@ -710,7 +742,9 @@ void TimetableGenerateForm::simulationFinished()
 	s+=QString("\n");
 	s+=tr("Weighted soft conflicts: %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(c.conflictsTotal));
 	s+=QString("\n\n");
-	s+=tr("The results were saved in the directory %1").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
+	s+=tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
+
+	gen.myMutex.unlock();
 
 //Old comment below (2020-08-14).
 //On Windows we do not beep for Qt >= 5.14.1, because the QMessageBox below beeps itself.
@@ -765,16 +799,26 @@ void TimetableGenerateForm::simulationFinished()
 	writeResultsPushButton->setDisabled(true);
 	writeHighestStagePushButton->setDisabled(true);
 	seeImpossiblePushButton->setDisabled(true);
+
+	//generateThread.quit();
+	//generateThread.wait();
+	if(singleThread.joinable())
+		singleThread.join();
 }
 
-void TimetableGenerateForm::activityPlaced(int na){
+void TimetableGenerateForm::activityPlaced(int nThread, int na){
+	Q_UNUSED(nThread);
+	
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 
-	myMutex.lock();
+	gen.myMutex.lock();
 	int t=gen.searchTime; //seconds
-	int mact=maxActivitiesPlaced;
+	int mact=gen.maxActivitiesPlaced;
 	int seconds=gen.timeToHighestStage;
-	myMutex.unlock();
+	gen.myMutex.unlock();
+
+	gen.semaphorePlacedActivity.release();
+	//gen.cvForPlacedActivity.notify_one();
 
 	//write to the Qt interface
 	QString s;
@@ -825,8 +869,6 @@ void TimetableGenerateForm::activityPlaced(int na){
 	s+=tr("Max placed activities: %1 (at %2)", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(mact).arg(tim);
 
 	currentResultsTextEdit->setPlainText(s);
-
-	semaphorePlacedActivity.release();
 }
 
 void TimetableGenerateForm::help()
@@ -865,7 +907,7 @@ void TimetableGenerateForm::help()
 }
 
 void TimetableGenerateForm::write(){
-	myMutex.lock();
+	gen.myMutex.lock();
 
 	Solution& c=gen.c;
 
@@ -873,9 +915,10 @@ void TimetableGenerateForm::write(){
 	FakeString tmp;
 	c.fitness(gt.rules, &tmp);
 
-	TimetableExport::getStudentsTimetable(c);
+	/*TimetableExport::getStudentsTimetable(c);
 	TimetableExport::getTeachersTimetable(c);
-	TimetableExport::getRoomsTimetable(c);
+	TimetableExport::getRoomsTimetable(c);*/
+	TimetableExport::getStudentsTeachersRoomsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
@@ -896,7 +939,7 @@ void TimetableGenerateForm::write(){
 
 	TimetableExport::writeSimulationResults(this);
 
-	myMutex.unlock();
+	gen.myMutex.unlock();
 
 	QString kk;
 	kk=FILE_SEP;
@@ -916,17 +959,18 @@ void TimetableGenerateForm::write(){
 }
 
 void TimetableGenerateForm::writeHighestStage(){
-	myMutex.lock();
+	gen.myMutex.lock();
 
-	Solution& c=highestStageSolution;
+	Solution& c=gen.highestStageSolution;
 
 	//needed to find the conflicts strings
 	FakeString tmp;
 	c.fitness(gt.rules, &tmp);
 
-	TimetableExport::getStudentsTimetable(c);
+	/*TimetableExport::getStudentsTimetable(c);
 	TimetableExport::getTeachersTimetable(c);
-	TimetableExport::getRoomsTimetable(c);
+	TimetableExport::getRoomsTimetable(c);*/
+	TimetableExport::getStudentsTeachersRoomsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
@@ -947,7 +991,7 @@ void TimetableGenerateForm::writeHighestStage(){
 
 	TimetableExport::writeHighestStageResults(this);
 
-	myMutex.unlock();
+	gen.myMutex.unlock();
 
 	QString kk;
 	kk=FILE_SEP;
@@ -968,7 +1012,10 @@ void TimetableGenerateForm::writeHighestStage(){
 
 void TimetableGenerateForm::closePressed()
 {
-	if(!generateThread.isRunning())
+	//if(singleThread.joinable())
+	//	singleThread.join();
+	//if(!generateThread.isRunning())
+	if(!singleThread.joinable())
 		this->close();
 }
 
@@ -976,7 +1023,7 @@ void TimetableGenerateForm::seeImpossible()
 {
 	QString s;
 
-	myMutex.lock();
+	gen.myMutex.lock();
 
 	s+=TimetableGenerateForm::tr("Information relating difficult to schedule activities:");
 	s+="\n\n";
@@ -1001,7 +1048,7 @@ void TimetableGenerateForm::seeImpossible()
 		s+="\n";
 	}
 
-	myMutex.unlock();
+	gen.myMutex.unlock();
 	
 	//show the message in a dialog
 	QDialog dialog(this);
@@ -1062,4 +1109,3 @@ void TimetableGenerateForm::seeInitialOrder()
 	dialog.exec();
 	saveFETDialogGeometry(&dialog, settingsName);
 }
-

@@ -45,7 +45,7 @@ ChangeMinDaysSelectivelyForm::ChangeMinDaysSelectivelyForm(QWidget* parent): QDi
 	oldConsecutiveComboBox->setCurrentIndex(0);
 	
 	oldDaysSpinBox->setMinimum(-1);
-	oldDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);
+	oldDaysSpinBox->setMaximum(gt.rules.mode==MORNINGS_AFTERNOONS?gt.rules.nDaysPerWeek/2:gt.rules.nDaysPerWeek);
 	oldDaysSpinBox->setValue(-1);
 
 	newConsecutiveComboBox->clear();
@@ -55,7 +55,7 @@ ChangeMinDaysSelectivelyForm::ChangeMinDaysSelectivelyForm(QWidget* parent): QDi
 	newConsecutiveComboBox->setCurrentIndex(0);
 	
 	newDaysSpinBox->setMinimum(-1);
-	newDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek);
+	newDaysSpinBox->setMaximum(gt.rules.mode==MORNINGS_AFTERNOONS?gt.rules.nDaysPerWeek/2:gt.rules.nDaysPerWeek);
 	newDaysSpinBox->setValue(-1);
 	
 	oldNActsSpinBox->setMinimum(-1);
@@ -91,16 +91,31 @@ void ChangeMinDaysSelectivelyForm::ok()
 		return;
 	}
 	
-	oldDays=oldDaysSpinBox->value();
-	if(!(oldDays==-1 || (oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek))){
-		QMessageBox::warning(this, tr("FET warning"), tr("Old min days must be -1 or both >=1 and <=n_days_per_week"));
-		return;
-	}
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		oldDays=oldDaysSpinBox->value();
+		if(!(oldDays==-1 || (oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek))){
+			QMessageBox::warning(this, tr("FET warning"), tr("Old min days must be -1 or both >=1 and <=n_days_per_week"));
+			return;
+		}
 	
-	newDays=newDaysSpinBox->value();
-	if(!(newDays==-1 || (newDays>=1 && newDays<=gt.rules.nDaysPerWeek))){
-		QMessageBox::warning(this, tr("FET warning"), tr("New min days must be -1 or both >=1 and <=n_days_per_week"));
-		return;
+		newDays=newDaysSpinBox->value();
+		if(!(newDays==-1 || (newDays>=1 && newDays<=gt.rules.nDaysPerWeek))){
+			QMessageBox::warning(this, tr("FET warning"), tr("New min days must be -1 or both >=1 and <=n_days_per_week"));
+			return;
+		}
+	}
+	else{
+		oldDays=oldDaysSpinBox->value();
+		if(!(oldDays==-1 || (oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek/2))){
+			QMessageBox::warning(this, tr("FET warning"), tr("Old min days must be -1 or both >=1 and <=n_real_days_per_week"));
+			return;
+		}
+	
+		newDays=newDaysSpinBox->value();
+		if(!(newDays==-1 || (newDays>=1 && newDays<=gt.rules.nDaysPerWeek/2))){
+			QMessageBox::warning(this, tr("FET warning"), tr("New min days must be -1 or both >=1 and <=n_real_days_per_week"));
+			return;
+		}
 	}
 	
 	oldConsecutive=oldConsecutiveComboBox->currentIndex();

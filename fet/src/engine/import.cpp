@@ -1090,7 +1090,7 @@ int Import::readFields(QWidget* parent){
 #else
 								QStringList splitList=itemOfField[FIELD_SPLIT_DURATION].split("+", QString::SkipEmptyParts);
 #endif
-								if(splitList.size()<MAX_SPLIT_OF_AN_ACTIVITY){
+								if(splitList.size()<=MAX_SPLIT_OF_AN_ACTIVITY){
 									int tmpInt=0;
 									for(const QString& split : qAsConst(splitList)){
 										tmpInt+=split.toInt(&ok, 10);
@@ -1764,6 +1764,8 @@ void Import::importCSVTeachers(QWidget* parent){
 		if(!fieldList[FIELD_TEACHER_NAME][i].isEmpty() && !tmpSet.contains(fieldList[FIELD_TEACHER_NAME][i])){
 			tmpSet.insert(fieldList[FIELD_TEACHER_NAME][i]);
 			Teacher* tch=new Teacher();
+			if(gt.rules.mode==MORNINGS_AFTERNOONS)
+				tch->morningsAfternoonsBehavior=TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS;
 			tch->name=fieldList[FIELD_TEACHER_NAME][i];
 			if(!gt.rules.addTeacherFast(tch)){
 				delete tch;
@@ -2470,6 +2472,8 @@ void Import::importCSVActivities(QWidget* parent){
 	for(int i=0; i<fieldList[FIELD_TEACHER_NAME].size(); i++){
 		if(!fieldList[FIELD_TEACHER_NAME][i].isEmpty()){
 			Teacher* tch=new Teacher();
+			if(gt.rules.mode==MORNINGS_AFTERNOONS)
+				tch->morningsAfternoonsBehavior=TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS;
 			tch->name=fieldList[FIELD_TEACHER_NAME][i];
 			assert(!tmpSet.contains(tch->name));
 			if(!gt.rules.addTeacherFast(tch)){
@@ -2670,18 +2674,18 @@ void Import::importCSVActivities(QWidget* parent){
 		}
 		else{ //split activity
 			int totalduration;
-			int durations[MAX_SPLIT_OF_AN_ACTIVITY];
-			bool active[MAX_SPLIT_OF_AN_ACTIVITY];
+			QList<int> durations;
+			QList<bool> active;
 	
 			totalduration=0;
 			bool durationOK=true;
 			for(int s=0; s<nsplit; s++){
-				durations[s]=splitDurationList[s].toInt(&ok2);
+				durations.append(splitDurationList[s].toInt(&ok2));
 				assert(ok2);
 				if(durations[s]<1){
 					durationOK=false;
 				}
-				active[s]=true;
+				active.append(true);
 				totalduration+=durations[s];
 			}
 			if(durationOK){

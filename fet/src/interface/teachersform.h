@@ -31,7 +31,7 @@ public:
 public slots:
 	void addTeacher();
 	void removeTeacher();
-	void renameTeacher();
+	void modifyTeacher();
 	
 	void targetNumberOfHours();
 	void qualifiedSubjects();

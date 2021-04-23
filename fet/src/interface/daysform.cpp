@@ -23,13 +23,15 @@
 
 #include "daysform.h"
 
-#include <QLineEdit>
 #include <QMessageBox>
+#include <QListWidget>
+#include <QListWidgetItem>
+
+#include <QInputDialog>
+
+#include <QHash>
 
 extern Timetable gt;
-
-static QLineEdit* daysNames[35];
-static int nDays;
 
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
@@ -41,68 +43,29 @@ DaysForm::DaysForm(QWidget* parent): QDialog(parent)
 
 	okPushButton->setDefault(true);
 
-	connect(daysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(daysChanged()));
+	daysListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+
+	connect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
 	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
+	connect(insertDayPushButton, SIGNAL(clicked()), this, SLOT(insertDay()));
+	connect(modifyDayPushButton, SIGNAL(clicked()), this, SLOT(modifyDay()));
+	connect(removeDayPushButton, SIGNAL(clicked()), this, SLOT(removeDay()));
+	connect(daysListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyDay()));
+
+	disconnect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
+	nDaysSpinBox->setMinimum(1);
+	nDaysSpinBox->setMaximum(MAX_DAYS_PER_WEEK);
+	nDaysSpinBox->setValue(gt.rules.nDaysPerWeek);
+	realNames.clear();
+	for(int i=0; i<gt.rules.nDaysPerWeek; i++){
+		realNames.append(gt.rules.daysOfTheWeek[i]);
+		daysListWidget->addItem(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(i+1).arg(gt.rules.daysOfTheWeek[i]));
+	}
+	connect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-	
-	nDays=gt.rules.nDaysPerWeek;
-	
-	daysNames[0]=day1LineEdit;
-	daysNames[1]=day2LineEdit;
-	daysNames[2]=day3LineEdit;
-	daysNames[3]=day4LineEdit;
-	daysNames[4]=day5LineEdit;
-	daysNames[5]=day6LineEdit;
-	daysNames[6]=day7LineEdit;
-
-	daysNames[7]=day8LineEdit;
-	daysNames[8]=day9LineEdit;
-	daysNames[9]=day10LineEdit;
-	daysNames[10]=day11LineEdit;
-	daysNames[11]=day12LineEdit;
-	daysNames[12]=day13LineEdit;
-	daysNames[13]=day14LineEdit;
-
-	daysNames[14]=day15LineEdit;
-	daysNames[15]=day16LineEdit;
-	daysNames[16]=day17LineEdit;
-	daysNames[17]=day18LineEdit;
-	daysNames[18]=day19LineEdit;
-	daysNames[19]=day20LineEdit;
-	daysNames[20]=day21LineEdit;
-
-	daysNames[21]=day22LineEdit;
-	daysNames[22]=day23LineEdit;
-	daysNames[23]=day24LineEdit;
-	daysNames[24]=day25LineEdit;
-	daysNames[25]=day26LineEdit;
-	daysNames[26]=day27LineEdit;
-	daysNames[27]=day28LineEdit;
-
-	daysNames[28]=day29LineEdit;
-	daysNames[29]=day30LineEdit;
-	daysNames[30]=day31LineEdit;
-	daysNames[31]=day32LineEdit;
-	daysNames[32]=day33LineEdit;
-	daysNames[33]=day34LineEdit;
-	daysNames[34]=day35LineEdit;
-
-	daysSpinBox->setMinimum(1);
-	daysSpinBox->setMaximum(35);
-	daysSpinBox->setValue(gt.rules.nDaysPerWeek);
-
-	for(int i=0; i<35; i++){
-		if(i<nDays){
-			daysNames[i]->setEnabled(true);
-			daysNames[i]->setText(gt.rules.daysOfTheWeek[i]);
-		}
-		else{
-			daysNames[i]->setDisabled(true);
-		}
-	}
 }
 
 DaysForm::~DaysForm()
@@ -110,32 +73,116 @@ DaysForm::~DaysForm()
 	saveFETDialogGeometry(this);
 }
 
-void DaysForm::daysChanged()
+void DaysForm::insertDay()
 {
-	nDays=daysSpinBox->value();
-	assert(nDays <= MAX_DAYS_PER_WEEK);
-	for(int i=0; i<35; i++)
-		if(i<nDays)
-			daysNames[i]->setEnabled(true);
+	if(nDaysSpinBox->value()==nDaysSpinBox->maximum()){
+		QMessageBox::warning(this, tr("FET information"), tr("Maximum number of days reached"));
+		return;
+	}
+	int i=daysListWidget->currentRow();
+	if(i<0)
+		i=daysListWidget->count();
+	
+	realNames.insert(i, tr("Day %1").arg(i+1));
+	daysListWidget->insertItem(i, tr("%1. %2", "%1 is the day index, %2 is the day name").arg(i+1).arg(tr("Day %1").arg(i+1)));
+	for(int j=i+1; j<daysListWidget->count(); j++)
+		daysListWidget->item(j)->setText(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(j+1).arg(realNames.at(j)));
+
+	disconnect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
+	int j=nDaysSpinBox->value();
+	nDaysSpinBox->setValue(j+1);
+	connect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
+}
+
+void DaysForm::modifyDay()
+{
+	int i=daysListWidget->currentRow();
+	if(daysListWidget->count()<=0 || i<0 || i>=daysListWidget->count()){
+		QMessageBox::warning(this, tr("FET information"), tr("Invalid selected day"));
+		return;
+	}
+	QString oldName=realNames.at(i);
+	bool ok=false;
+	QString newName=QInputDialog::getText(this, tr("Rename day"), tr("Please enter the new name of this day"),
+	 QLineEdit::Normal, oldName, &ok);
+	if(ok && !newName.isEmpty()){
+		daysListWidget->item(i)->setText(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(i+1).arg(newName));
+		realNames[i]=newName;
+	}
+}
+
+void DaysForm::removeDay()
+{
+	int i=daysListWidget->currentRow();
+	if(i>=0 && i<daysListWidget->count() && daysListWidget->count()>=2){
+		daysListWidget->setCurrentRow(-1);
+		QListWidgetItem* item=daysListWidget->takeItem(i);
+		delete item;
+		realNames.removeAt(i);
+		if(i<daysListWidget->count())
+			daysListWidget->setCurrentRow(i);
 		else
-			daysNames[i]->setDisabled(true);
+			daysListWidget->setCurrentRow(daysListWidget->count()-1);
+		for(int j=i; j<daysListWidget->count(); j++)
+			daysListWidget->item(j)->setText(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(j+1).arg(realNames[j]));
+
+		disconnect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
+		int j=nDaysSpinBox->value();
+		nDaysSpinBox->setValue(j-1);
+		connect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
+	}
+	else if(daysListWidget->count()==1){
+		QMessageBox::warning(this, tr("FET information"), tr("The number of days must be at least 1"));
+	}
+	else{
+		QMessageBox::warning(this, tr("FET information"), tr("Invalid selected day"));
+	}
+}
+
+void DaysForm::numberOfDaysChanged()
+{
+	int nv=nDaysSpinBox->value();
+	int cnt=daysListWidget->count();
+	if(nv<cnt){
+		daysListWidget->setCurrentRow(-1);
+		for(int i=cnt-1; i>=nv; i--){
+			QListWidgetItem* item=daysListWidget->takeItem(i);
+			delete item;
+			realNames.removeLast();
+		}
+		daysListWidget->setCurrentRow(daysListWidget->count()-1);
+	}
+	else if(nv>cnt){
+		for(int i=cnt; i<nv; i++){
+			realNames.append(tr("Day %1").arg(i+1));
+			daysListWidget->addItem(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(i+1).arg(tr("Day %1").arg(i+1)));
+		}
+	}
 }
 
 void DaysForm::ok()
 {
-	for(int i=0; i<nDays; i++)
-		if(daysNames[i]->text()==""){
-			QMessageBox::warning(this, tr("FET information"),
-				tr("Empty names not allowed (the day number %1 has an empty name).").arg(i+1));
+	int nDays=daysListWidget->count();
+
+	QHash<QString, int> hashDayIndex;
+	for(int i=0; i<nDays; i++){
+		QString s=realNames.at(i);
+		
+		if(s.isEmpty()){
+			QMessageBox::warning(this, tr("FET information"), tr("Empty names not allowed (the day number %1 has an empty name).").arg(i+1));
 			return;
 		}
-	for(int i=0; i<nDays-1; i++)
-		for(int j=i+1; j<nDays; j++)
-			if(daysNames[i]->text()==daysNames[j]->text()){
-				QMessageBox::warning(this, tr("FET information"),
-					tr("Duplicate names not allowed (the day number %1 has the same name as the day number %2).").arg(i+1).arg(j+1));
-				return;
-			}
+		
+		if(hashDayIndex.contains(s)){
+			int j=hashDayIndex.value(s);
+			QMessageBox::warning(this, tr("FET information"),
+			 tr("Duplicate names not allowed (the day number %1 has the same name as the day number %2).").arg(i+1).arg(j+1));
+			return;
+		}
+		else{
+			hashDayIndex.insert(s, i);
+		}
+	}
 	
 	//2011-10-18
 	int cnt_mod=0;
@@ -160,7 +207,7 @@ void DaysForm::ok()
 		}
 	
 	gt.rules.nDaysPerWeek=oldDays;
-			
+	
 	if(cnt_mod>0 || cnt_rem>0){
 		QString s=QString("");
 		if(cnt_rem>0){
@@ -258,23 +305,11 @@ void DaysForm::ok()
 	}
 	////////////
 
-	//I prefer to make these three variables always false, because the names in the time horizontal views are not updated.
-	//Also, these assignments should be done before the LockUnlock::increaseCommunicationSpinBox() above.
-	/*if(gt.rules.nDaysPerWeek!=nDays){
-		teachers_schedule_ready=false;
-		students_schedule_ready=false;
-		rooms_schedule_ready=false;
-	}*/
-		
-	//remove old names
-	for(int i=nDays; i<gt.rules.nDaysPerWeek; i++)
-		gt.rules.daysOfTheWeek[i]="";
-
 	gt.rules.nDaysPerWeek=nDays;
+	gt.rules.daysOfTheWeek.clear();
 	for(int i=0; i<nDays; i++)
-		gt.rules.daysOfTheWeek[i]=daysNames[i]->text();
-		
-	gt.rules.nHoursPerWeek=gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay; //not needed
+		gt.rules.daysOfTheWeek.append(realNames.at(i));
+	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 

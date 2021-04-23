@@ -47,20 +47,22 @@ public:
 	
 	static void stringToColor(const QString& s, int& r, int& g, int& b);
 
-	static void getStudentsTimetable(Solution& c);
+	/*static void getStudentsTimetable(Solution& c);
 	static void getTeachersTimetable(Solution& c);
-	static void getRoomsTimetable(Solution& c);
+	static void getRoomsTimetable(Solution& c);*/
+	static void getStudentsTeachersRoomsTimetable(Solution& c);
 	static void getNumberOfPlacedActivities(int& number1, int& number2);
 
 	static void writeSimulationResults(QWidget* parent);
 	static void writeHighestStageResults(QWidget* parent);
-	static void writeSimulationResults(QWidget* parent, int n); //write in a directory with number n (for multiple generation)
+	static void writeSimulationResults(QWidget* parent, int n, bool highest=false); //write in a directory with number n (for multiple generation)
+	//If highest==true, it writes a partial highest timetable.
 	static void writeSimulationResultsCommandLine(QWidget* parent, const QString& outputDirectory);
 	
-	static void writeRandomSeed(QWidget* parent, bool before);
-	static void writeRandomSeed(QWidget* parent, int n, bool before); //write in a directory with number n (for multiple generation)
-	static void writeRandomSeedCommandLine(QWidget* parent, const QString& outputDirectory, bool before);
-	static void writeRandomSeedFile(QWidget* parent, const QString& filename, bool before);
+	static void writeRandomSeed(QWidget* parent, const MRG32k3a& rng, bool before);
+	static void writeRandomSeed(QWidget* parent, const MRG32k3a& rng, int n, bool before); //write in a directory with number n (for multiple generation)
+	static void writeRandomSeedCommandLine(QWidget* parent, const MRG32k3a& rng, const QString& outputDirectory, bool before);
+	static void writeRandomSeedFile(QWidget* parent, const MRG32k3a& rng, const QString& filename, bool before);
 	
 	static void writeTimetableDataFile(QWidget* parent, const QString& filename);
 	

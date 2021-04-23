@@ -106,9 +106,7 @@ template <typename T> Matrix3D<T>::~Matrix3D()
 
 template <typename T> void Matrix3D<T>::clear()
 {
-	if(d1>=0 || d2>=0 || d3>=0){
-		assert(d1>0 && d2>0 && d3>0);
-		
+	if(d1>0 && d2>0 && d3>0){
 		for(int i=0; i<d1; i++)
 			delete[] a[i];
 		delete[] a;
@@ -168,9 +166,7 @@ template <typename T> Matrix2D<T>::~Matrix2D()
 
 template <typename T> void Matrix2D<T>::clear()
 {
-	if(d1>=0 || d2>=0){
-		assert(d1>0 && d2>0);
-		
+	if(d1>0 && d2>0){
 		delete[] a;
 		
 		delete[] content;
@@ -222,8 +218,7 @@ template <typename T> Matrix1D<T>::~Matrix1D()
 
 template <typename T> void Matrix1D<T>::clear()
 {
-	if(d1>=0){
-		assert(d1>0);
+	if(d1>0){
 		delete[] a;
 	}
 	d1=-1;

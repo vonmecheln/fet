@@ -27,7 +27,9 @@ void HelpOnImperfectConstraints::help(QWidget* parent, bool activityTagMinHoursD
 	
 	s+="\n\n";
 	
-	s+=tr("The imperfect constraints are 10: students (set) max gaps per day and teacher(s) or students (set) activity tag max/min hours daily.");
+	s+=tr("The imperfect constraints are these: students (set) max gaps per day, students (set) / teacher(s) max gaps per real day,"
+	 " teacher(s) or students (set) activity tag max/min hours daily / real days, and students (set) / teacher(s) max gaps per week for real days"
+	 " (depending on the chosen mode).");
 
 	s+="\n\n";
 	
@@ -40,12 +42,15 @@ void HelpOnImperfectConstraints::help(QWidget* parent, bool activityTagMinHoursD
 
 	s+="\n\n";
 	
-	s+=tr("Max gaps per day: it is not fully optimized for use with other constraints for students: min/max hours daily. It is also not tested thoroughly.");
-	s+=" ";
-	s+=tr("If your students need 0 maximum total gaps, do not use max gaps per day constraint, better use the safe and tested max gaps per week (with 0 gaps allowed).");
+	s+=tr("Students max gaps per day: it is not fully optimized for use with other constraints for students: min/max hours daily. It is also not tested thoroughly.");
 	
 	s+="\n\n";
 	
+	s+=tr("Students (set) / teacher(s) max gaps per week for real days (available depending on the mode): it is not fully optimized for use with other constraints for students/teachers:"
+	 " max hours daily (for a real day). It is also not tested thoroughly. These 4 constraints were introduced on 30 July 2020. They represent the total sum of gaps allowed"
+	 " over the whole week, where the gaps are computed for each complete real day (morning+afternoon).");
+
+	s+="\n\n";
 	s+=tr("Activity tag max/min hours daily: it is not fully optimized for this situation: if the ATS have max gaps constraints and the number of total available slots per week"
 	 " for the ATS is much larger than the working hours per week and the ATS has many activities with the specified activity tag (more than 0.5-0.75 of total hours)"
 	 ". In such cases, a remedy may be to add constraint ATS max/min hours daily (without specifying an activity tag).", "ATS means affected teacher or students set.");

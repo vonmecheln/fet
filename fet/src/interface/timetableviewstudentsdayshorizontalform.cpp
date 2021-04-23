@@ -66,6 +66,7 @@ extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
 
 extern bool simulation_running;
+extern bool simulation_running_multi;
 
 extern Solution best_solution;
 
@@ -363,7 +364,7 @@ void TimetableViewStudentsDaysHorizontalForm::newTimetableGenerated()
 	if(yearsListWidget->count()>0)
 		yearsListWidget->setCurrentRow(0);
 	connect(yearsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(yearChanged(const QString&)));
-		
+	
 /*	shownComboBox->addItem(tr("Years"));
 	shownComboBox->addItem(tr("Groups"));
 	shownComboBox->addItem(tr("Subgroups"));
@@ -942,7 +943,7 @@ void TimetableViewStudentsDaysHorizontalForm::lockTimeSpace()
 
 void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace)
 {
-	if(simulation_running){
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;

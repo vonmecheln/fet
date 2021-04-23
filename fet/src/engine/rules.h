@@ -47,6 +47,11 @@ class QXmlStreamReader;
 
 class QWidget;
 
+const int OFFICIAL=0;
+const int MORNINGS_AFTERNOONS=1;
+const int BLOCK_PLANNING=2;
+const int TERMS=3;
+
 class FakeString
 /*
 fake string, so that the output log is not too large
@@ -69,6 +74,8 @@ class Rules{
 	Q_DECLARE_TR_FUNCTIONS(Rules)
 
 public:
+	int mode;
+
 	bool modified;
 
 	/**
@@ -82,29 +89,35 @@ public:
 	QString comments;
 
 	/**
-	The number of hours per day
-	*/
-	int nHoursPerDay;
-
-	/**
 	The number of days per week
 	*/
 	int nDaysPerWeek;
 
 	/**
+	The number of hours per day
+	*/
+	int nHoursPerDay;
+
+	/**
 	The days of the week (names)
 	*/
-	QString daysOfTheWeek[MAX_DAYS_PER_WEEK];
+	//QString daysOfTheWeek[MAX_DAYS_PER_WEEK];
+	QStringList daysOfTheWeek;
 
 	/**
 	The hours of the day (names).
 	*/
-	QString hoursOfTheDay[MAX_HOURS_PER_DAY];
+	//QString hoursOfTheDay[MAX_HOURS_PER_DAY];
+	QStringList hoursOfTheDay;
 
 	/**
 	The number of hours per week
 	*/
 	int nHoursPerWeek;
+	
+	int nTerms; //for terms (Finland) mode
+	
+	int nDaysPerTerm; //for terms (Finland) mode
 
 	/**
 	The list of teachers
@@ -265,6 +278,10 @@ public:
 	Rules();
 
 	~Rules();
+	
+	void setMode(int newMode);
+	
+	void setTerms(int numberOfTerms, int numberOfDaysPerTerm);
 	
 	void setInstitutionName(const QString& newInstitutionName);
 	
@@ -560,8 +577,8 @@ public:
 		const QStringList& _studentsNames,
 		int _nSplits,
 		int _totalDuration,
-		int _durations[],
-		bool _active[],
+		QList<int> _durations,
+		QList<bool> _active,
 		int _minDayDistance,
 		double _weightPercentage,
 		bool _consecutiveIfSameDay,
@@ -598,8 +615,8 @@ public:
 		const QStringList& _studentsNames,
 	 	int _nSplits,
 		int _totalDuration,
-		int _durations[],
-		bool _active[],
+		QList<int> _durations,
+		QList<bool> _active,
 		bool _computeNTotalStudents,
 		int _nTotalStudents);
 
@@ -770,6 +787,7 @@ private:
 	TimeConstraint* readMinDaysBetweenActivities(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readMaxDaysBetweenActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readMinGapsBetweenActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readMaxGapsBetweenActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesNotOverlapping(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivityTagsNotOverlapping(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesSameStartingTime(QXmlStreamReader& xml, FakeString& xmlReadingLog);
@@ -819,6 +837,9 @@ private:
 	TimeConstraint* readActivityEndsStudentsDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesEndStudentsDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	
+	TimeConstraint* readActivityEndsTeachersDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesEndTeachersDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	/*old, with 2 and 3*/
 	TimeConstraint* read2ActivitiesConsecutive(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* read2ActivitiesGrouped(QXmlStreamReader& xml, FakeString& xmlReadingLog);
@@ -870,6 +891,11 @@ private:
 	TimeConstraint* readActivitiesMaxSimultaneousInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesMinSimultaneousInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readMaxTotalActivitiesFromSetInSelectedTimeSlots(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readActivitiesMaxInATerm(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesOccupyMaxTerms(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	TimeConstraint* readTeacherMaxSpanPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMaxSpanPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsSetMaxSpanPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
@@ -880,9 +906,140 @@ private:
 	TimeConstraint* readStudentsSetMinRestingHours(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsMinRestingHours(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	//For mornings-afternoons
+	TimeConstraint* readTeacherMaxRealDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxRealDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMaxAfternoonsPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxAfternoonsPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMaxMorningsPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxMorningsPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMaxTwoConsecutiveMornings(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxTwoConsecutiveMornings(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMaxTwoConsecutiveAfternoons(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxTwoConsecutiveAfternoons(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMinRealDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMinRealDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMinMorningsPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMinMorningsPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMinAfternoonsPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMinAfternoonsPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMorningIntervalMaxDaysPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMorningIntervalMaxDaysPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherAfternoonIntervalMaxDaysPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersAfternoonIntervalMaxDaysPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetMaxRealDaysPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxRealDaysPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetMaxAfternoonsPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxAfternoonsPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMaxMorningsPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxMorningsPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetMinAfternoonsPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMinAfternoonsPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMinMorningsPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMinMorningsPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetMorningIntervalMaxDaysPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMorningIntervalMaxDaysPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetAfternoonIntervalMaxDaysPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsAfternoonIntervalMaxDaysPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeachersMaxHoursDailyRealDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMaxHoursDailyRealDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherActivityTagMaxHoursDailyRealDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersActivityTagMaxHoursDailyRealDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMaxHoursPerAllAfternoons(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxHoursPerAllAfternoons(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetMaxHoursPerAllAfternoons(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxHoursPerAllAfternoons(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeachersMinHoursPerMorning(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMinHoursPerMorning(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeachersMinHoursDailyRealDays(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMinHoursDailyRealDays(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsMaxHoursDailyRealDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMaxHoursDailyRealDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetActivityTagMaxHoursDailyRealDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsActivityTagMaxHoursDailyRealDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsMinHoursPerMorning(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMinHoursPerMorning(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMaxZeroGapsPerAfternoon(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxZeroGapsPerAfternoon(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeachersMaxGapsPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMaxGapsPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsMaxGapsPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMaxGapsPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeachersMaxGapsPerWeekForRealDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMaxGapsPerWeekForRealDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxGapsPerWeekForRealDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMaxGapsPerWeekForRealDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsAfternoonsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeachersAfternoonsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherAfternoonsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMaxSpanPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxSpanPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMaxSpanPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxSpanPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMinRestingHoursBetweenMorningAndAfternoon(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMinRestingHoursBetweenMorningAndAfternoon(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMinRestingHoursBetweenMorningAndAfternoon(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMinRestingHoursBetweenMorningAndAfternoon(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readOldMATeacherMaxDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMATeachersMaxDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMATeacherMinDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMATeachersMinDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMAStudentsSetMaxDaysPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMAStudentsMaxDaysPerWeek(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMATeachersMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMATeacherMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMATeachersMaxHoursDailyHalfDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMATeacherMaxHoursDailyHalfDays(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMATeacherActivityTagMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMATeachersActivityTagMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMAStudentsMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMAStudentsSetMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMAStudentsSetActivityTagMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMAStudentsActivityTagMaxHoursDaily(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMATeacherMaxSpanPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMATeachersMaxSpanPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMAStudentsSetMaxSpanPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readOldMAStudentsMaxSpanPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	//
 	SpaceConstraint* readBasicCompulsorySpace(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readRoomNotAvailable(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readRoomNotAvailableTimes(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	SpaceConstraint* readTeacherRoomNotAvailableTimes(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	SpaceConstraint* readActivityPreferredRoom(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog,
 		bool& reportUnspecifiedPermanentlyLockedSpace);
 	SpaceConstraint* readActivityPreferredRooms(QXmlStreamReader& xml, FakeString& xmlReadingLog);
@@ -930,6 +1087,17 @@ private:
 
 	SpaceConstraint* readActivitiesOccupyMaxDifferentRooms(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readActivitiesSameRoomIfConsecutive(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	//For mornings-afternoons
+	SpaceConstraint* readTeacherMaxRoomChangesPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readTeachersMaxRoomChangesPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readStudentsSetMaxRoomChangesPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readStudentsMaxRoomChangesPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	SpaceConstraint* readOldMATeacherMaxRoomChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readOldMATeachersMaxRoomChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readOldMAStudentsSetMaxRoomChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readOldMAStudentsMaxRoomChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 };
 
 #endif

@@ -21,10 +21,13 @@
 
 #include "longtextmessagebox.h"
 
+#include "generate.h"
+
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
-extern MRG32k3a rng;
+//extern MRG32k3a rng;
+extern Generate gen;
 
 RandomSeedForm::RandomSeedForm(QWidget* parent): QDialog(parent)
 {
@@ -41,18 +44,18 @@ RandomSeedForm::RandomSeedForm(QWidget* parent): QDialog(parent)
 	
 	component1GroupBox->setTitle(tr("Component 1: each from min %1 to max %2, not all zero.",
 	 "Component 1 has 3 values, each is constrained to be >= %1 and <=%2, and not all 3 should be 0. Keep the translation short.")
-	 .arg(0).arg(rng.m1-1));
+	 .arg(0).arg(gen.rng.m1-1));
 	component2GroupBox->setTitle(tr("Component 2: each from min %1 to max %2, not all zero.",
 	 "Component 2 has 3 values, each is constrained to be >= %1 and <=%2, and not all 3 should be 0. Keep the translation short.")
-	 .arg(0).arg(rng.m2-1));
+	 .arg(0).arg(gen.rng.m2-1));
 
-	s10LineEdit->setText(QString::number(rng.s10));
-	s11LineEdit->setText(QString::number(rng.s11));
-	s12LineEdit->setText(QString::number(rng.s12));
+	s10LineEdit->setText(QString::number(gen.rng.s10));
+	s11LineEdit->setText(QString::number(gen.rng.s11));
+	s12LineEdit->setText(QString::number(gen.rng.s12));
 
-	s20LineEdit->setText(QString::number(rng.s20));
-	s21LineEdit->setText(QString::number(rng.s21));
-	s22LineEdit->setText(QString::number(rng.s22));
+	s20LineEdit->setText(QString::number(gen.rng.s20));
+	s21LineEdit->setText(QString::number(gen.rng.s21));
+	s22LineEdit->setText(QString::number(gen.rng.s22));
 
 	//s10LineEdit->selectAll();
 	//s10LineEdit->setFocus();
@@ -90,9 +93,9 @@ void RandomSeedForm::help()
 	
 	s+=tr("The random seed is the state of the random number generator.")+" "+tr("It has two components, each with 3 components in turn.")+" "+
 	 tr("Component %1 consists of 3 integers named %2, %3, and %4, and each one should be initialized with an integer value between minimum %5 and maximum %6, "
-	 "and not all of them should be zero.", "%1 is the number of the component, 1 or 2.").arg(1).arg("s10").arg("s11").arg("s12").arg(0).arg(rng.m1-1)+" "+
+	 "and not all of them should be zero.", "%1 is the number of the component, 1 or 2.").arg(1).arg("s10").arg("s11").arg("s12").arg(0).arg(gen.rng.m1-1)+" "+
 	 tr("Component %1 consists of 3 integers named %2, %3, and %4, and each one should be initialized with an integer value between minimum %5 and maximum %6, "
-	 "and not all of them should be zero.", "%1 is the number of the component, 1 or 2.").arg(2).arg("s20").arg("s21").arg("s22").arg(0).arg(rng.m2-1)+"\n\n";
+	 "and not all of them should be zero.", "%1 is the number of the component, 1 or 2.").arg(2).arg("s20").arg("s21").arg("s22").arg(0).arg(gen.rng.m2-1)+"\n\n";
 
 	s+=tr("The random seed before the generation of a timetable (the %1 integer components) and the random seed after the generation are both saved on the "
 	 "disk in the corresponding timetables directory, so that you can replicate the same generation after that and verify that the random seed after the "
@@ -142,9 +145,9 @@ void RandomSeedForm::ok()
 		errors+="\n";
 		okNumber1=false;
 	}
-	else if(s10<0 || s10>rng.m1-1){
+	else if(s10<0 || s10>gen.rng.m1-1){
 		errors+=tr("%1 must be >= %2 and <= %3.", "%1 is the name of an integer variable, %2 is the minimum allowed value,"
-		 " %3 is the maximum allowed value.").arg("s10").arg(0).arg(rng.m1-1);
+		 " %3 is the maximum allowed value.").arg("s10").arg(0).arg(gen.rng.m1-1);
 		errors+="\n";
 	}
 	qint64 s11=s11LineEdit->text().toLongLong(&ok);
@@ -153,9 +156,9 @@ void RandomSeedForm::ok()
 		errors+="\n";
 		okNumber1=false;
 	}
-	else if(s11<0 || s11>rng.m1-1){
+	else if(s11<0 || s11>gen.rng.m1-1){
 		errors+=tr("%1 must be >= %2 and <= %3.", "%1 is the name of an integer variable, %2 is the minimum allowed value,"
-		 " %3 is the maximum allowed value.").arg("s11").arg(0).arg(rng.m1-1);
+		 " %3 is the maximum allowed value.").arg("s11").arg(0).arg(gen.rng.m1-1);
 		errors+="\n";
 	}
 	qint64 s12=s12LineEdit->text().toLongLong(&ok);
@@ -164,9 +167,9 @@ void RandomSeedForm::ok()
 		errors+="\n";
 		okNumber1=false;
 	}
-	else if(s12<0 || s12>rng.m1-1){
+	else if(s12<0 || s12>gen.rng.m1-1){
 		errors+=tr("%1 must be >= %2 and <= %3.", "%1 is the name of an integer variable, %2 is the minimum allowed value,"
-		 " %3 is the maximum allowed value.").arg("s12").arg(0).arg(rng.m1-1);
+		 " %3 is the maximum allowed value.").arg("s12").arg(0).arg(gen.rng.m1-1);
 		errors+="\n";
 	}
 
@@ -176,9 +179,9 @@ void RandomSeedForm::ok()
 		errors+="\n";
 		okNumber2=false;
 	}
-	else if(s20<0 || s20>rng.m2-1){
+	else if(s20<0 || s20>gen.rng.m2-1){
 		errors+=tr("%1 must be >= %2 and <= %3.", "%1 is the name of an integer variable, %2 is the minimum allowed value,"
-		 " %3 is the maximum allowed value.").arg("s20").arg(0).arg(rng.m2-1);
+		 " %3 is the maximum allowed value.").arg("s20").arg(0).arg(gen.rng.m2-1);
 		errors+="\n";
 	}
 	qint64 s21=s21LineEdit->text().toLongLong(&ok);
@@ -187,9 +190,9 @@ void RandomSeedForm::ok()
 		errors+="\n";
 		okNumber2=false;
 	}
-	else if(s21<0 || s21>rng.m2-1){
+	else if(s21<0 || s21>gen.rng.m2-1){
 		errors+=tr("%1 must be >= %2 and <= %3.", "%1 is the name of an integer variable, %2 is the minimum allowed value,"
-		 " %3 is the maximum allowed value.").arg("s21").arg(0).arg(rng.m2-1);
+		 " %3 is the maximum allowed value.").arg("s21").arg(0).arg(gen.rng.m2-1);
 		errors+="\n";
 	}
 	qint64 s22=s22LineEdit->text().toLongLong(&ok);
@@ -198,9 +201,9 @@ void RandomSeedForm::ok()
 		errors+="\n";
 		okNumber2=false;
 	}
-	else if(s22<0 || s22>rng.m2-1){
+	else if(s22<0 || s22>gen.rng.m2-1){
 		errors+=tr("%1 must be >= %2 and <= %3.", "%1 is the name of an integer variable, %2 is the minimum allowed value,"
-		 " %3 is the maximum allowed value.").arg("s22").arg(0).arg(rng.m2-1);
+		 " %3 is the maximum allowed value.").arg("s22").arg(0).arg(gen.rng.m2-1);
 		errors+="\n";
 	}
 
@@ -221,7 +224,7 @@ void RandomSeedForm::ok()
 		return;
 	}
 	
-	rng.initializeMRG32k3a(s10, s11, s12, s20, s21, s22);
+	gen.rng.initializeMRG32k3a(s10, s11, s12, s20, s21, s22);
 	
 	this->close();
 }

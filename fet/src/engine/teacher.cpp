@@ -24,16 +24,40 @@ Teacher::Teacher()
 	comments=QString("");
 	qualifiedSubjectsList.clear();
 	qualifiedSubjectsHash.clear();
+
+	morningsAfternoonsBehavior=TEACHER_MORNINGS_AFTERNOONS_BEHAVIOR_NOT_INITIALIZED;
 }
 
 Teacher::~Teacher()
 {
 }
 
-QString Teacher::getXmlDescription()
+QString Teacher::getXmlDescription(const Rules& r)
 {
 	QString s="<Teacher>\n";
 	s+="	<Name>"+protect(this->name)+"</Name>\n";
+
+	if(r.mode==MORNINGS_AFTERNOONS){
+		s+="	<Mornings_Afternoons_Behavior>";
+		if(morningsAfternoonsBehavior==TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS)
+			s+="Unrestricted";
+		else if(morningsAfternoonsBehavior==TEACHER_MORNING_OR_EXCLUSIVELY_AFTERNOON)
+			s+="Exclusive";
+		else if(morningsAfternoonsBehavior==TEACHER_ONE_DAY_EXCEPTION)
+			s+="One day exception";
+		else if(morningsAfternoonsBehavior==TEACHER_TWO_DAYS_EXCEPTION)
+			s+="Two days exception";
+		else if(morningsAfternoonsBehavior==TEACHER_THREE_DAYS_EXCEPTION)
+			s+="Three days exception";
+		else if(morningsAfternoonsBehavior==TEACHER_FOUR_DAYS_EXCEPTION)
+			s+="Four days exception";
+		else if(morningsAfternoonsBehavior==TEACHER_FIVE_DAYS_EXCEPTION)
+			s+="Five days exception";
+		else
+			assert(0);
+		s+="</Mornings_Afternoons_Behavior>\n";
+	}
+
 	s+="	<Target_Number_of_Hours>"+CustomFETString::number(targetNumberOfHours)+"</Target_Number_of_Hours>\n";
 	s+="	<Qualified_Subjects>\n";
 	for(const QString& sbj : qAsConst(qualifiedSubjectsList))
@@ -45,9 +69,31 @@ QString Teacher::getXmlDescription()
 	return s;
 }
 
-QString Teacher::getDescription()
+QString Teacher::getDescription(const Rules& r)
 {
 	QString s=tr("N:%1", "The name of the teacher").arg(name);
+
+	if(r.mode==MORNINGS_AFTERNOONS){
+		QString mab;
+		if(morningsAfternoonsBehavior==TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS)
+			mab=tr("UNR", "Unrestricted mornings/afternoons");
+		else if(morningsAfternoonsBehavior==TEACHER_MORNING_OR_EXCLUSIVELY_AFTERNOON)
+			mab=tr("EXCL", "Exclusive mornings/afternoons");
+		else if(morningsAfternoonsBehavior==TEACHER_ONE_DAY_EXCEPTION)
+			mab=tr("1DE", "One day exception");
+		else if(morningsAfternoonsBehavior==TEACHER_TWO_DAYS_EXCEPTION)
+			mab=tr("2DE", "Two days exception");
+		else if(morningsAfternoonsBehavior==TEACHER_THREE_DAYS_EXCEPTION)
+			mab=tr("3DE", "Three days exception");
+		else if(morningsAfternoonsBehavior==TEACHER_FOUR_DAYS_EXCEPTION)
+			mab=tr("4DE", "Four days exception");
+		else if(morningsAfternoonsBehavior==TEACHER_FIVE_DAYS_EXCEPTION)
+			mab=tr("5DE", "Five days exception");
+		else
+			assert(0);
+		s+=", ";
+		s+=tr("MAB: %1", "Mornings afternoons behavior").arg(mab);
+	}
 	
 	QString end=QString("");
 	if(!comments.isEmpty())
@@ -56,12 +102,34 @@ QString Teacher::getDescription()
 	return s+end;
 }
 
-QString Teacher::getDetailedDescription()
+QString Teacher::getDetailedDescription(const Rules& r)
 {
 	QString s=tr("Teacher");
 	s+="\n";
 	s+=tr("Name=%1", "The name of the teacher").arg(this->name);
 	s+="\n";
+
+	if(r.mode==MORNINGS_AFTERNOONS){
+		QString mab;
+		if(morningsAfternoonsBehavior==TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS)
+			mab=tr("Unrestricted mornings/afternoons");
+		else if(morningsAfternoonsBehavior==TEACHER_MORNING_OR_EXCLUSIVELY_AFTERNOON)
+			mab=tr("Exclusive mornings/afternoons");
+		else if(morningsAfternoonsBehavior==TEACHER_ONE_DAY_EXCEPTION)
+			mab=tr("One day exception");
+		else if(morningsAfternoonsBehavior==TEACHER_TWO_DAYS_EXCEPTION)
+			mab=tr("Two days exception");
+		else if(morningsAfternoonsBehavior==TEACHER_THREE_DAYS_EXCEPTION)
+			mab=tr("Three days exception");
+		else if(morningsAfternoonsBehavior==TEACHER_FOUR_DAYS_EXCEPTION)
+			mab=tr("Four days exception");
+		else if(morningsAfternoonsBehavior==TEACHER_FIVE_DAYS_EXCEPTION)
+			mab=tr("Five days exception");
+		else
+			assert(0);
+		s+=tr("Mornings afternoons behavior=%1").arg(mab);
+		s+="\n";
+	}
 	
 	s+=tr("Target number of hours=%1", "The target number of hours for the teacher").arg(targetNumberOfHours);
 	s+="\n";
@@ -84,7 +152,7 @@ QString Teacher::getDetailedDescription()
 
 QString Teacher::getDetailedDescriptionWithConstraints(Rules& r)
 {
-	QString s=this->getDetailedDescription();
+	QString s=this->getDetailedDescription(r);
 
 	s+="--------------------------------------------------\n";
 	s+=tr("Time constraints directly related to this teacher:");

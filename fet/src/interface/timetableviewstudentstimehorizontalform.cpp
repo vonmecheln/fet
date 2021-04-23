@@ -74,6 +74,7 @@ extern bool teachers_schedule_ready;
 extern Solution best_solution;
 
 extern bool simulation_running;
+extern bool simulation_running_multi;
 
 //extern Matrix3D<bool> subgroupNotAvailableDayHour;
 extern Matrix2D<bool> breakDayHour;
@@ -1177,7 +1178,7 @@ void TimetableViewStudentsTimeHorizontalForm::lockTimeSpace()
 			
 void TimetableViewStudentsTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 {
-	if(simulation_running){
+	if(simulation_running || simulation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Allocation in course.\nPlease stop simulation before this."));
 		return;

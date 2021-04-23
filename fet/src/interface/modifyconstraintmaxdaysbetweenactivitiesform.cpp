@@ -72,9 +72,16 @@ ModifyConstraintMaxDaysBetweenActivitiesForm::ModifyConstraintMaxDaysBetweenActi
 		selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
 	}
 	
-	maxDaysSpinBox->setMinimum(0);
-	maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek-1);
-	maxDaysSpinBox->setValue(ctr->maxDays);
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		maxDaysSpinBox->setMinimum(0);
+		maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek-1);
+		maxDaysSpinBox->setValue(ctr->maxDays);
+	}
+	else{
+		maxDaysSpinBox->setMinimum(0);
+		maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek/2-1);
+		maxDaysSpinBox->setValue(ctr->maxDays);
+	}
 
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
 

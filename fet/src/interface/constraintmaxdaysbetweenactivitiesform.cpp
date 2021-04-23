@@ -30,6 +30,9 @@
 ConstraintMaxDaysBetweenActivitiesForm::ConstraintMaxDaysBetweenActivitiesForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
+	
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS)
+		instructionsLabel->setEnabled(false);
 
 	currentConstraintTextEdit->setReadOnly(true);
 	

@@ -32,6 +32,9 @@
 ConstraintMinDaysBetweenActivitiesForm::ConstraintMinDaysBetweenActivitiesForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
+	
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS)
+		instructionsLabel->setEnabled(false);
 
 	currentConstraintTextEdit->setReadOnly(true);
 	
@@ -304,7 +307,7 @@ void ConstraintMinDaysBetweenActivitiesForm::changeSelectively()
 		}
 		else{
 			QMessageBox::critical(this, tr("FET information"),
-			tr("FET has meet a critical error - aborting current operation, please report bug (old weight is not -1 and not (>=0.0 and <=100.0))"));
+			 tr("FET has meet a critical error - aborting current operation, please report bug (old weight is not -1 and not (>=0.0 and <=100.0))"));
 			return;
 		}
 
@@ -314,7 +317,7 @@ void ConstraintMinDaysBetweenActivitiesForm::changeSelectively()
 		}
 		else{
 			QMessageBox::critical(this, tr("FET information"),
-			tr("FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (>=0.0 and <=100.0))"));
+			 tr("FET has met a critical error - aborting current operation, please report bug (new weight is not -1 and not (>=0.0 and <=100.0))"));
 			return;
 		}
 		
@@ -323,34 +326,57 @@ void ConstraintMinDaysBetweenActivitiesForm::changeSelectively()
 		
 		if(oldConsecutive<0 || oldConsecutive>2){
 			QMessageBox::critical(this, tr("FET information"),
-			tr("FET has met a critical error - aborting current operation, please report bug (old consecutive is not any, yes or no)"));
+			 tr("FET has met a critical error - aborting current operation, please report bug (old consecutive is not any, yes or no)"));
 			return;
 		}
 		
 		if(newConsecutive<0 || newConsecutive>2){
 			QMessageBox::critical(this, tr("FET information"),
-			tr("FET has met a critical error - aborting current operation, please report bug (new consecutive is not no_change, yes or no)"));
+			 tr("FET has met a critical error - aborting current operation, please report bug (new consecutive is not no_change, yes or no)"));
 			return;
 		}
 		
-		if(oldDays==-1){
-		}
-		else if(oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek){
+		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+			if(oldDays==-1){
+			}
+			else if(oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek){
+			}
+			else{
+				QMessageBox::critical(this, tr("FET information"),
+				 tr("FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..ndaysperweek)"));
+				return;
+			}
+			
+			if(newDays==-1){
+			}
+			else if(newDays>=1 && newDays<=gt.rules.nDaysPerWeek){
+			}
+			else{
+				QMessageBox::critical(this, tr("FET information"),
+				 tr("FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..ndaysperweek)"));
+				return;
+			}
 		}
 		else{
-			QMessageBox::critical(this, tr("FET information"),
-			tr("FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..ndaysperweek)"));
-			return;
-		}
-		
-		if(newDays==-1){
-		}
-		else if(newDays>=1 && newDays<=gt.rules.nDaysPerWeek){
-		}
-		else{
-			QMessageBox::critical(this, tr("FET information"),
-			tr("FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..ndaysperweek)"));
-			return;
+			if(oldDays==-1){
+			}
+			else if(oldDays>=1 && oldDays<=gt.rules.nDaysPerWeek/2){
+			}
+			else{
+				QMessageBox::critical(this, tr("FET information"),
+				 tr("FET has met a critical error - aborting current operation, please report bug (old min days is not -1 or 1..nrealdaysperweek)"));
+				return;
+			}
+			
+			if(newDays==-1){
+			}
+			else if(newDays>=1 && newDays<=gt.rules.nDaysPerWeek/2){
+			}
+			else{
+				QMessageBox::critical(this, tr("FET information"),
+				 tr("FET has met a critical error - aborting current operation, please report bug (new min days is not -1 or 1..nrealdaysperweek)"));
+				return;
+			}
 		}
 		
 		if(oldNActs==-1){
@@ -359,7 +385,7 @@ void ConstraintMinDaysBetweenActivitiesForm::changeSelectively()
 		}
 		else{
 			QMessageBox::critical(this, tr("FET information"),
-			tr("FET has met a critical error - aborting current operation, please report bug (old nActivities is not -1 or >=1)"));
+			 tr("FET has met a critical error - aborting current operation, please report bug (old nActivities is not -1 or >=1)"));
 			return;
 		}
 		

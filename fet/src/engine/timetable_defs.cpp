@@ -37,7 +37,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 FET version
 */
-const QString FET_VERSION="5.49.1";
+const QString FET_VERSION="6.0.1";
 
 /**
 FET language
@@ -95,12 +95,14 @@ const QString XML_PARSING_LOG_FILENAME="file_open.log";
 /**
 The predefined names of the days of the week
 */
+/*
 const QString PREDEFINED_DAYS_OF_THE_WEEK[]={"Monday", "Tuesday", "Wednesday",
 	"Thursday", "Friday", "Saturday", "Sunday", "Monday2",
 	"Tuesday2", "Wednesday2", "Thursday2", "Friday2", "Saturday2", "Sunday2",
 	"Monday3", "Tuesday3", "Wednesday3",
 	"Thursday3", "Friday3", "Saturday3", "Sunday3", "Monday4",
 	"Tuesday4", "Wednesday4", "Thursday4", "Friday4", "Saturday4", "Sunday4"};
+*/
 
 /**
 File and directory separator
@@ -360,7 +362,7 @@ int randomKnuth(int k)
 }
 */
 
-MRG32k3a rng;
+//MRG32k3a rng;
 
 const qint64 MRG32k3a::m1 = Q_INT64_C(4294967087);
 const qint64 MRG32k3a::m2 = Q_INT64_C(4294944443);

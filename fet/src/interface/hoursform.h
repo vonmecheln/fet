@@ -20,6 +20,10 @@
 
 #include "ui_hoursform_template.h"
 
+#include <QStringList>
+
+class QWidget;
+
 class HoursForm : public QDialog, Ui::HoursForm_template
 {
 	Q_OBJECT
@@ -27,9 +31,14 @@ public:
 	HoursForm(QWidget* parent);
 
 	~HoursForm();
+	
+	QStringList realNames;
 
 public slots:
-	void hoursChanged();
+	void numberOfHoursChanged();
+	void insertHour();
+	void modifyHour();
+	void removeHour();
 	void ok();
 	void cancel();
 };

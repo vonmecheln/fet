@@ -19,10 +19,10 @@
 #include "timetable.h"
 #include "fet.h"
 #include "teachersform.h"
+#include "addteacherform.h"
+#include "modifyteacherform.h"
 #include "teacher.h"
 #include "teachersubjectsqualificationsform.h"
-
-#include <QInputDialog>
 
 #include <QMessageBox>
 
@@ -33,6 +33,10 @@
 #include <QSettings>
 #include <QObject>
 #include <QMetaObject>
+
+#include <QInputDialog>
+
+#include <QScrollBar>
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
@@ -47,11 +51,11 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 	
 	currentTeacherTextEdit->setReadOnly(true);
 
-	renameTeacherPushButton->setDefault(true);
+	modifyTeacherPushButton->setDefault(true);
 
 	teachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	connect(renameTeacherPushButton, SIGNAL(clicked()), this, SLOT(renameTeacher()));
+	connect(modifyTeacherPushButton, SIGNAL(clicked()), this, SLOT(modifyTeacher()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 	connect(addTeacherPushButton, SIGNAL(clicked()), this, SLOT(addTeacher()));
 
@@ -66,7 +70,7 @@ TeachersForm::TeachersForm(QWidget* parent): QDialog(parent)
 	connect(teachersListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(teacherChanged(int)));
 	connect(activateTeacherPushButton, SIGNAL(clicked()), this, SLOT(activateTeacher()));
 	connect(deactivateTeacherPushButton, SIGNAL(clicked()), this, SLOT(deactivateTeacher()));
-	connect(teachersListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(renameTeacher()));
+	connect(teachersListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyTeacher()));
 
 	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(comments()));
 
@@ -97,7 +101,7 @@ TeachersForm::~TeachersForm()
 
 void TeachersForm::addTeacher()
 {
-	bool ok = false;
+	/*bool ok = false;
 	Teacher* tch=new Teacher();
 	tch->name = QInputDialog::getText( this, tr("Add teacher"), tr("Please enter teacher's name") ,
 	 QLineEdit::Normal, QString(), &ok );
@@ -119,7 +123,23 @@ void TeachersForm::addTeacher()
 			QMessageBox::information(this, tr("FET information"), tr("Incorrect name"));
 		}
 		delete tch;// user entered nothing or pressed Cancel
+	}*/
+
+	AddTeacherForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+	
+	teachersListWidget->clear();
+	for(int i=0; i<gt.rules.teachersList.size(); i++){
+		Teacher* tch=gt.rules.teachersList[i];
+		teachersListWidget->addItem(tch->name);
 	}
+
+	int i=teachersListWidget->count()-1;
+	if(i>=0)
+		teachersListWidget->setCurrentRow(i);
+	else
+		currentTeacherTextEdit->setPlainText(QString(""));
 }
 
 void TeachersForm::removeTeacher()
@@ -158,9 +178,9 @@ void TeachersForm::removeTeacher()
 	}
 }
 
-void TeachersForm::renameTeacher()
+void TeachersForm::modifyTeacher()
 {
-	int i=teachersListWidget->currentRow();
+	/*int i=teachersListWidget->currentRow();
 	if(teachersListWidget->currentRow()<0){
 		QMessageBox::information(this, tr("FET information"), tr("Invalid selected teacher"));
 		return;
@@ -189,7 +209,30 @@ void TeachersForm::renameTeacher()
 			teachersListWidget->item(i)->setText(finalTeacherName);
 			teacherChanged(teachersListWidget->currentRow());
 		}
+	}*/
+	
+	int valv=teachersListWidget->verticalScrollBar()->value();
+	int valh=teachersListWidget->horizontalScrollBar()->value();
+
+	int i=teachersListWidget->currentRow();
+	if(teachersListWidget->currentRow()<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected teacher"));
+		return;
 	}
+	
+	assert(i>=0 && i<gt.rules.teachersList.count());
+	Teacher* tch=gt.rules.teachersList.at(i);
+	assert(tch->name==teachersListWidget->currentItem()->text());
+	
+	ModifyTeacherForm form(this, tch);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+
+	teachersListWidget->verticalScrollBar()->setValue(valv);
+	teachersListWidget->horizontalScrollBar()->setValue(valh);
+	
+	teachersListWidget->item(i)->setText(tch->name);
+	teacherChanged(i);
 }
 
 void TeachersForm::targetNumberOfHours()

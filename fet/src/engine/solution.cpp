@@ -35,9 +35,7 @@ File solution.cpp
 
 #include <algorithm>
 
-//extern bool breakDayHour[MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern Matrix2D<bool> breakDayHour;
-//extern bool teacherNotAvailableDayHour[MAX_TEACHERS][MAX_DAYS_PER_WEEK][MAX_HOURS_PER_DAY];
 extern Matrix3D<bool> teacherNotAvailableDayHour;
 
 //critical function here - must be optimized for speed
@@ -46,13 +44,14 @@ void Solution::copy(Rules& r, Solution& c){
 
 	assert(r.internalStructureComputed);
 	
+	this->times.resize(r.nInternalActivities);
+	this->rooms.resize(r.nInternalActivities);
 	this->realRoomsList.resize(r.nInternalActivities);
 	for(int i=0; i<r.nInternalActivities; i++){
 		this->times[i] = c.times[i];
-		this->rooms[i]=c.rooms[i];
+		this->rooms[i] = c.rooms[i];
 		this->realRoomsList[i]=c.realRoomsList[i];
 	}
-	//memcpy(times, c.times, r.nActivities * sizeof(times[0]));
 	
 	this->changedForMatrixCalculation=c.changedForMatrixCalculation;
 
@@ -68,7 +67,37 @@ void Solution::copy(Rules& r, Solution& c){
 	nPlacedActivities=c.nPlacedActivities;
 }
 
-void Solution::init(Rules& r){
+//critical function here - must be optimized for speed
+void Solution::copyForHighestStage(Rules& r, Solution& c){
+	this->_fitness=-1;
+
+	assert(r.internalStructureComputed);
+	
+	this->times.resize(r.nInternalActivities);
+	this->rooms.resize(r.nInternalActivities);
+	this->realRoomsList.resize(r.nInternalActivities);
+	for(int i=0; i<r.nInternalActivities; i++){
+		this->times[i] = c.times[i];
+		this->rooms[i] = c.rooms[i];
+		this->realRoomsList[i]=c.realRoomsList[i];
+	}
+	
+	this->changedForMatrixCalculation=true;
+
+	//I commented out the following lines, to avoid useless copying.
+	//added in version 5.2.0
+	//conflictsWeightList=c.conflictsWeightList;
+	//conflictsDescriptionList=c.conflictsDescriptionList;
+	//conflictsTotal=c.conflictsTotal;
+	
+	//teachersMatrixReady=false;
+	//subgroupsMatrixReady=false;
+	//roomsMatrixReady=false;
+	
+	//nPlacedActivities=c.nPlacedActivities;
+}
+
+/*void Solution::init(Rules& r){
 	assert(r.internalStructureComputed);
 
 	realRoomsList.resize(r.nInternalActivities);
@@ -80,17 +109,19 @@ void Solution::init(Rules& r){
 	this->_fitness=-1;
 	
 	this->changedForMatrixCalculation=true;
-}
+}*/
 
 void Solution::makeUnallocated(Rules& r){
 	assert(r.initialized);
 	assert(r.internalStructureComputed);
 
-	realRoomsList.resize(r.nInternalActivities);
+	this->times.resize(r.nInternalActivities);
+	this->rooms.resize(r.nInternalActivities);
+	this->realRoomsList.resize(r.nInternalActivities);
 	for(int i=0; i<r.nInternalActivities; i++){
 		this->times[i]=UNALLOCATED_TIME;
 		this->rooms[i]=UNALLOCATED_SPACE;
-		realRoomsList[i].clear();
+		this->realRoomsList[i].clear();
 	}
 
 	this->_fitness=-1;
@@ -371,7 +402,6 @@ void Solution::getTeachersTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<i
 		}
 	}
 	//END of Code contributed by Volker Dirr (https://timetabling.de/) END
-	//bool visited[MAX_TEACHERS];
 	Matrix1D<bool> visited;
 	visited.resize(r.nInternalTeachers);
 	for(d=0; d<r.nDaysPerWeek; d++){

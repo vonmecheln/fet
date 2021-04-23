@@ -23,12 +23,12 @@
 #include "timetable.h"
 #include "fet.h"
 
-#include <QThread>
+//#include <QThread>
 
-#include <QProcess>
+//#include <QProcess>
 #include <QList>
 
-class GenerateThread: public QThread{
+/*class GenerateThread: public QThread{
 	Q_OBJECT
 
 public:
@@ -36,7 +36,7 @@ public:
 
 signals:
 	void generationComputed(int generation);
-};
+};*/
 
 class TimetableGenerateForm : public QDialog, Ui::TimetableGenerateForm_template  {
 	Q_OBJECT
@@ -60,7 +60,7 @@ public slots:
 	//void generationLogging(int generation);
 
 private slots:
-	void activityPlaced(int na);
+	void activityPlaced(int nThread, int na);
 
 	void simulationFinished();
 

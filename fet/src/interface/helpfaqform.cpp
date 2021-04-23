@@ -46,7 +46,7 @@ void HelpFaqForm::setText()
 	
 	s+=tr("Frequently asked questions.");
 	s+="\n\n";
-	s+=tr("Last modified on %1.").arg(tr("21 November 2019"));
+	s+=tr("Last modified on %1.").arg(tr("20 March 2021"));
 	
 	s+="\n\n";
 	s+="--------------------";
@@ -78,7 +78,7 @@ void HelpFaqForm::setText()
 
 	s+=tr("Q: What are the maximum limits FET can handle?");
 	s+="\n\n";
-	s+=tr("A: There are indeed maximum limits for the generation algorithm (all these limits can be increased on demand, as a custom version, because this requires a bit more memory).");
+	s+=tr("A: There are indeed maximum limits for the generation algorithm, but probably nobody will ever need larger values.");
 	s+="\n\n";
 	s+=tr("These limits are:");
 	
@@ -87,10 +87,13 @@ void HelpFaqForm::setText()
 	s+="\n- ";
 	s+=tr("Maximum number of hours per day: %1").arg(MAX_HOURS_PER_DAY);
 	s+="\n- ";
-	s+=tr("Maximum number of teachers: %1").arg(MAX_TEACHERS);
+	s+=tr("Virtually unlimited number of teachers");
 	s+="\n- ";
 	s+=tr("Maximum number of subgroups of students: %1").arg(MAX_TOTAL_SUBGROUPS);
-	s+="\n- ";
+	s+=" (";
+	s+=tr("This limitation is added just to prevent the users to add too many subgroups, which might slow down the generation much more than necessary -"
+	 " but it can be lifted very easily by modifying the code.");
+	s+=")\n- ";
 	s+=tr("Virtually unlimited number of subjects");
 	s+="\n- ";
 	s+=tr("Virtually unlimited number of activity tags");
