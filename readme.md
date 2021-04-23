@@ -1,8 +1,7 @@
-#import sources by new version
+## import sources by new version
 
-./fet_version.sh 5.49.1
+./fet_version.sh 6.0.1
 
-
-#build binary
+## build binary
 
 ./fet_build.sh
