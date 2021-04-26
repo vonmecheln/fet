@@ -52,6 +52,10 @@ So at least for now FET will use QList.*/
 //The sorting with the compare function as a class member using lambdas was inspired by this page:
 //https://stackoverflow.com/questions/37767847/stdsort-function-with-custom-compare-function-results-error-reference-to-non
 
+//Note about using constBegin() and constEnd() when converting from QSet to QList and viceversa: In Qt >= 5.14.0 and < 6.0.0 it is necessary
+//to use 'const' for the global variables which are accessed in more than one thread concurrently. It seems that in Qt 6 this does not matter,
+//but it is better to use it. We are using the 'const' variant for the begin() and end() iterators in the whole generate.cpp file, for safety.
+
 #include <ctime>
 
 #include <Qt>
@@ -92,7 +96,7 @@ QSemaphore finishedSemaphore;
 #endif
 */
 
-extern MRG32k3a rng;
+//extern MRG32k3a rng;
 
 extern Timetable gt;
 
@@ -4903,7 +4907,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 		
 		//To keep the generation identical on all computers - 2013-01-03
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-		QList<int> tmpListFromSet=QList<int>(activitiesInRoom.at(indexToRemove).begin(), activitiesInRoom.at(indexToRemove).end());
+		QList<int> tmpListFromSet=QList<int>(activitiesInRoom.at(indexToRemove).constBegin(), activitiesInRoom.at(indexToRemove).constEnd());
 #else
 		QList<int> tmpListFromSet=activitiesInRoom.at(indexToRemove).toList();
 #endif
@@ -5191,7 +5195,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 						//so that the preferred rooms are those with lowest conflicts. This is possible in O(VE) with depth first search.
 					
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						acceptedRoomsList=QList<int>(acceptedRoomsSet.begin(), acceptedRoomsSet.end());
+						acceptedRoomsList=QList<int>(acceptedRoomsSet.constBegin(), acceptedRoomsSet.constEnd());
 #else
 						acceptedRoomsList=acceptedRoomsSet.toList();
 #endif
@@ -6088,10 +6092,10 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			}
 			else{
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-				QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[permutation[i]].begin(), subgroupsWithMaxDaysPerWeekForActivities[permutation[i]].end());
-				QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[permutation[i]].begin(), subgroupsWithMaxRealDaysPerWeekForActivities[permutation[i]].end());
-				QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[permutation[i]].begin(), subgroupsWithMaxAfternoonsPerWeekForActivities[permutation[i]].end());
-				QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[permutation[i]].begin(), subgroupsWithMaxMorningsPerWeekForActivities[permutation[i]].end());
+				QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[permutation[i]].constBegin(), subgroupsWithMaxDaysPerWeekForActivities[permutation[i]].constEnd());
+				QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[permutation[i]].constBegin(), subgroupsWithMaxRealDaysPerWeekForActivities[permutation[i]].constEnd());
+				QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[permutation[i]].constBegin(), subgroupsWithMaxAfternoonsPerWeekForActivities[permutation[i]].constEnd());
+				QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[permutation[i]].constBegin(), subgroupsWithMaxMorningsPerWeekForActivities[permutation[i]].constEnd());
 #else
 				QSet<int> st_smhd=subgroupsWithMaxDaysPerWeekForActivities[permutation[i]].toSet();
 				QSet<int> st_smd=subgroupsWithMaxRealDaysPerWeekForActivities[permutation[i]].toSet();
@@ -6197,11 +6201,11 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			}
 			else{
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-				QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[permutation[i]].begin(), teachersWithMaxDaysPerWeekForActivities[permutation[i]].end());
-				QSet<int> smd=QSet<int>(teachersWithMaxRealDaysPerWeekForActivities[permutation[i]].begin(), teachersWithMaxRealDaysPerWeekForActivities[permutation[i]].end());
-				QSet<int> smn1n2n3=QSet<int>(teachersWithN1N2N3ForActivities[permutation[i]].begin(), teachersWithN1N2N3ForActivities[permutation[i]].end());
-				QSet<int> sma=QSet<int>(teachersWithMaxAfternoonsPerWeekForActivities[permutation[i]].begin(), teachersWithMaxAfternoonsPerWeekForActivities[permutation[i]].end());
-				QSet<int> smm=QSet<int>(teachersWithMaxMorningsPerWeekForActivities[permutation[i]].begin(), teachersWithMaxMorningsPerWeekForActivities[permutation[i]].end());
+				QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[permutation[i]].constBegin(), teachersWithMaxDaysPerWeekForActivities[permutation[i]].constEnd());
+				QSet<int> smd=QSet<int>(teachersWithMaxRealDaysPerWeekForActivities[permutation[i]].constBegin(), teachersWithMaxRealDaysPerWeekForActivities[permutation[i]].constEnd());
+				QSet<int> smn1n2n3=QSet<int>(teachersWithN1N2N3ForActivities[permutation[i]].constBegin(), teachersWithN1N2N3ForActivities[permutation[i]].constEnd());
+				QSet<int> sma=QSet<int>(teachersWithMaxAfternoonsPerWeekForActivities[permutation[i]].constBegin(), teachersWithMaxAfternoonsPerWeekForActivities[permutation[i]].constEnd());
+				QSet<int> smm=QSet<int>(teachersWithMaxMorningsPerWeekForActivities[permutation[i]].constBegin(), teachersWithMaxMorningsPerWeekForActivities[permutation[i]].constEnd());
 #else
 				QSet<int> smhd=teachersWithMaxDaysPerWeekForActivities[permutation[i]].toSet();
 				QSet<int> smd=teachersWithMaxRealDaysPerWeekForActivities[permutation[i]].toSet();
@@ -6595,10 +6599,10 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				/////////////////
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-				QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[ai].begin(), subgroupsWithMaxDaysPerWeekForActivities[ai].end());
-				QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[ai].begin(), subgroupsWithMaxRealDaysPerWeekForActivities[ai].end());
-				QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[ai].begin(), subgroupsWithMaxAfternoonsPerWeekForActivities[ai].end());
-				QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[ai].begin(), subgroupsWithMaxMorningsPerWeekForActivities[ai].end());
+				QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxDaysPerWeekForActivities[ai].constEnd());
+				QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxRealDaysPerWeekForActivities[ai].constEnd());
+				QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
+				QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxMorningsPerWeekForActivities[ai].constEnd());
 #else
 				QSet<int> st_smhd=subgroupsWithMaxDaysPerWeekForActivities[ai].toSet();
 				QSet<int> st_smd=subgroupsWithMaxRealDaysPerWeekForActivities[ai].toSet();
@@ -6667,11 +6671,11 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				//update teachers' list of activities for each day
 				/////////////////
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-				QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[ai].begin(), teachersWithMaxDaysPerWeekForActivities[ai].end());
-				QSet<int> smd=QSet<int>(teachersWithMaxRealDaysPerWeekForActivities[ai].begin(), teachersWithMaxRealDaysPerWeekForActivities[ai].end());
-				QSet<int> smn1n2n3=QSet<int>(teachersWithN1N2N3ForActivities[ai].begin(), teachersWithN1N2N3ForActivities[ai].end());
-				QSet<int> sma=QSet<int>(teachersWithMaxAfternoonsPerWeekForActivities[ai].begin(), teachersWithMaxAfternoonsPerWeekForActivities[ai].end());
-				QSet<int> smm=QSet<int>(teachersWithMaxMorningsPerWeekForActivities[ai].begin(), teachersWithMaxMorningsPerWeekForActivities[ai].end());
+				QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxDaysPerWeekForActivities[ai].constEnd());
+				QSet<int> smd=QSet<int>(teachersWithMaxRealDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxRealDaysPerWeekForActivities[ai].constEnd());
+				QSet<int> smn1n2n3=QSet<int>(teachersWithN1N2N3ForActivities[ai].constBegin(), teachersWithN1N2N3ForActivities[ai].constEnd());
+				QSet<int> sma=QSet<int>(teachersWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), teachersWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
+				QSet<int> smm=QSet<int>(teachersWithMaxMorningsPerWeekForActivities[ai].constBegin(), teachersWithMaxMorningsPerWeekForActivities[ai].constEnd());
 #else
 				QSet<int> smhd=teachersWithMaxDaysPerWeekForActivities[ai].toSet();
 				QSet<int> smd=teachersWithMaxRealDaysPerWeekForActivities[ai].toSet();
@@ -6805,10 +6809,10 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				/////////////////
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-				QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[ai].begin(), subgroupsWithMaxDaysPerWeekForActivities[ai].end());
-				QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[ai].begin(), subgroupsWithMaxRealDaysPerWeekForActivities[ai].end());
-				QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[ai].begin(), subgroupsWithMaxAfternoonsPerWeekForActivities[ai].end());
-				QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[ai].begin(), subgroupsWithMaxMorningsPerWeekForActivities[ai].end());
+				QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxDaysPerWeekForActivities[ai].constEnd());
+				QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxRealDaysPerWeekForActivities[ai].constEnd());
+				QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
+				QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxMorningsPerWeekForActivities[ai].constEnd());
 #else
 				QSet<int> st_smhd=subgroupsWithMaxDaysPerWeekForActivities[ai].toSet();
 				QSet<int> st_smd=subgroupsWithMaxRealDaysPerWeekForActivities[ai].toSet();
@@ -6879,11 +6883,11 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				//update teachers' list of activities for each day
 				/////////////////
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-				QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[ai].begin(), teachersWithMaxDaysPerWeekForActivities[ai].end());
-				QSet<int> smd=QSet<int>(teachersWithMaxRealDaysPerWeekForActivities[ai].begin(), teachersWithMaxRealDaysPerWeekForActivities[ai].end());
-				QSet<int> smn1n2n3=QSet<int>(teachersWithN1N2N3ForActivities[ai].begin(), teachersWithN1N2N3ForActivities[ai].end());
-				QSet<int> sma=QSet<int>(teachersWithMaxAfternoonsPerWeekForActivities[ai].begin(), teachersWithMaxAfternoonsPerWeekForActivities[ai].end());
-				QSet<int> smm=QSet<int>(teachersWithMaxMorningsPerWeekForActivities[ai].begin(), teachersWithMaxMorningsPerWeekForActivities[ai].end());
+				QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxDaysPerWeekForActivities[ai].constEnd());
+				QSet<int> smd=QSet<int>(teachersWithMaxRealDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxRealDaysPerWeekForActivities[ai].constEnd());
+				QSet<int> smn1n2n3=QSet<int>(teachersWithN1N2N3ForActivities[ai].constBegin(), teachersWithN1N2N3ForActivities[ai].constEnd());
+				QSet<int> sma=QSet<int>(teachersWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), teachersWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
+				QSet<int> smm=QSet<int>(teachersWithMaxMorningsPerWeekForActivities[ai].constBegin(), teachersWithMaxMorningsPerWeekForActivities[ai].constEnd());
 #else
 				QSet<int> smhd=teachersWithMaxDaysPerWeekForActivities[ai].toSet();
 				QSet<int> smd=teachersWithMaxRealDaysPerWeekForActivities[ai].toSet();
@@ -8629,7 +8633,7 @@ impossibleactivityendsteachersday:
 											canEmptyDay[d2]=false;
 										else if(!_activitiesForDay[d2].contains(ai2)){
 											_minWrong[d2] = min (_minWrong[d2], triedRemovals(ai2,c.times[ai2]));
-											_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);					
+											_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);
 											_nWrong[d2]+=triedRemovals(ai2,c.times[ai2]);
 											_nConflActivities[d2]++;
 											_activitiesForDay[d2].append(ai2);
@@ -8834,7 +8838,7 @@ impossibleactivityendsteachersday:
 											canEmptyDay[d2]=false;
 										else if(!_activitiesForDay[d2].contains(ai2)){
 											_minWrong[d2] = min (_minWrong[d2], triedRemovals(ai2,c.times[ai2]));
-											_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);					
+											_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);
 											_nWrong[d2]+=triedRemovals(ai2,c.times[ai2]);
 											_nConflActivities[d2]++;
 											_activitiesForDay[d2].append(ai2);
@@ -9061,7 +9065,7 @@ impossibleactivityendsteachersday:
 											canEmptyDay[d2]=false;
 										else if(!_activitiesForDay[d2].contains(ai2)){
 											_minWrong[d2] = min (_minWrong[d2], triedRemovals(ai2,c.times[ai2]));
-											_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);					
+											_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);
 											_nWrong[d2]+=triedRemovals(ai2,c.times[ai2]);
 											_nConflActivities[d2]++;
 											_activitiesForDay[d2].append(ai2);
@@ -14170,7 +14174,7 @@ impossiblestudentsmaxhoursdaily:
 					//	continue;
 
 					bool increased;
-					if(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0){
+					/*if(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0){
 						if(subgroupsMaxGapsPerWeekPercentage[sbg]>=0){
 							//both
 							if(oldSubgroupsDayNHours(sbg,d)+oldSubgroupsDayNGaps(sbg,d)+oldSubgroupsDayNFirstGaps(sbg,d)<
@@ -14207,7 +14211,7 @@ impossiblestudentsmaxhoursdaily:
 							else
 								increased=false;
 						}
-					}
+					}*/
 
 					//Liviu Lalescu 2021-03-29: I think this needs to remain true, because of gaps per day/real day/real day per week.
 					increased=true; //?????
@@ -16454,7 +16458,7 @@ impossiblestudentsminmorningsafternoonsperweek:
 
 								//To keep the generation identical on all computers
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-								QList<int> tmpSortedList=QList<int>(candidates.begin(), candidates.end());
+								QList<int> tmpSortedList=QList<int>(candidates.constBegin(), candidates.constEnd());
 #else
 								QList<int> tmpSortedList=candidates.toList();
 #endif
@@ -16616,7 +16620,7 @@ impossiblestudentsmaxhoursperallafternoons:
 							}
 							else{
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-								QList<int> candidatesList(candidatesSet.begin(), candidatesSet.end());
+								QList<int> candidatesList(candidatesSet.constBegin(), candidatesSet.constEnd());
 #else
 								QList<int> candidatesList=candidatesSet.toList();
 #endif
@@ -20116,7 +20120,8 @@ impossibleteachersmaxgapsperrealday:
 
 					bool increased;
 					//2019-09-13 - max gaps per afternoon = 0
-					if(teachersMaxGapsPerWeekPercentage[tch]>=0 || teachersMaxGapsPerDayPercentage[tch]>=0 || teacherNoGapsPerAfternoon(tch)){
+					//2021-04-22: the tests below involve uninitialized variables, as reported by Valgrind.
+					/*if(teachersMaxGapsPerWeekPercentage[tch]>=0 || teachersMaxGapsPerDayPercentage[tch]>=0 || teacherNoGapsPerAfternoon(tch)){
 						if(newTeachersDayNHours(tch,d)+newTeachersDayNHours(tch,dpair) > oldTeachersDayNHours(tch,d)+oldTeachersDayNHours(tch,dpair)
 						  || newTeachersDayNHours(tch,d)+newTeachersDayNGaps(tch,d)+newTeachersDayNHours(tch,dpair)+newTeachersDayNGaps(tch,dpair)
 						  > oldTeachersDayNHours(tch,d)+oldTeachersDayNGaps(tch,d)+
@@ -20130,7 +20135,7 @@ impossibleteachersmaxgapsperrealday:
 							increased=true;
 						else
 							increased=false;
-					}
+					}*/
 					/*
 					if(newTeachersDayNHours(tch,d) > oldTeachersDayNHours(tch,d))
 						increased=true;
@@ -23501,7 +23506,7 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 
 								//To keep the generation identical on all computers
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-								QList<int> tmpSortedList=QList<int>(candidates.begin(), candidates.end());
+								QList<int> tmpSortedList=QList<int>(candidates.constBegin(), candidates.constEnd());
 #else
 								QList<int> tmpSortedList=candidates.toList();
 #endif
@@ -23663,7 +23668,7 @@ impossibleteachersmaxhoursperallafternoons:
 							}
 							else{
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-								QList<int> candidatesList(candidatesSet.begin(), candidatesSet.end());
+								QList<int> candidatesList(candidatesSet.constBegin(), candidatesSet.constEnd());
 #else
 								QList<int> candidatesList=candidatesSet.toList();
 #endif
@@ -23897,7 +23902,7 @@ impossibleteachersmingapsbetweenorderedpairofactivitytags:
 							continue;
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						slotSetOfActivities[t].subtract(QSet<int>(conflActivities[newtime].begin(), conflActivities[newtime].end()));
+						slotSetOfActivities[t].subtract(QSet<int>(conflActivities[newtime].constBegin(), conflActivities[newtime].constEnd()));
 #else
 						slotSetOfActivities[t].subtract(conflActivities[newtime].toSet());
 #endif
@@ -23945,7 +23950,7 @@ impossibleteachersmingapsbetweenorderedpairofactivitytags:
 						
 						//To keep the generation identical on all computers - 2013-01-03
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						QList<int> tmpSortedList=QList<int>(allCandidates.begin(), allCandidates.end());
+						QList<int> tmpSortedList=QList<int>(allCandidates.constBegin(), allCandidates.constEnd());
 #else
 						QList<int> tmpSortedList=allCandidates.toList();
 #endif
@@ -24104,7 +24109,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 						
 						//To keep the generation identical on all computers - 2013-01-03
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						QList<int> tmpSortedList=QList<int>(candidates.begin(), candidates.end());
+						QList<int> tmpSortedList=QList<int>(candidates.constBegin(), candidates.constEnd());
 #else
 						QList<int> tmpSortedList=candidates.toList();
 #endif
@@ -24169,7 +24174,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 						const QSet<int>& tmpSet=slotSetOfActivities[t];
 						//To keep the generation identical on all computers - 2013-01-03
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						QList<int> tmpListFromSet=QList<int>(tmpSet.begin(), tmpSet.end());
+						QList<int> tmpListFromSet=QList<int>(tmpSet.constBegin(), tmpSet.constEnd());
 #else
 						QList<int> tmpListFromSet=tmpSet.toList();
 #endif
@@ -24335,7 +24340,7 @@ impossiblemaxtotalactivitiesfromsetinselectedtimeslots:
 
 		if(!aomintsListForActivity[ai].isEmpty())
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			conflActivitiesSet=QSet<int>(conflActivities[newtime].begin(), conflActivities[newtime].end());
+			conflActivitiesSet=QSet<int>(conflActivities[newtime].constBegin(), conflActivities[newtime].constEnd());
 #else
 			conflActivitiesSet=conflActivities[newtime].toSet();
 #endif
@@ -24490,7 +24495,7 @@ impossibleactivitiesoccupymintimeslotsfromselection:
 
 		if(!aminsistsListForActivity[ai].isEmpty())
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			conflActivitiesSet=QSet<int>(conflActivities[newtime].begin(), conflActivities[newtime].end());
+			conflActivitiesSet=QSet<int>(conflActivities[newtime].constBegin(), conflActivities[newtime].constEnd());
 #else
 			conflActivitiesSet=conflActivities[newtime].toSet();
 #endif

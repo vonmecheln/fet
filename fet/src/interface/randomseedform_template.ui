@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="The name of the random seed dialog">Random seed</string>
+   <string extracomment="The title of the random seed dialog">Random seed</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
    <item row="0" column="0">

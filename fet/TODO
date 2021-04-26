@@ -7370,3 +7370,23 @@ He suggests that the constraints of type max room changes per week to consider t
 we need to have the same room all over the week. Now the behavior is that on day 1 we can use room R1, on day 2 room R2, on day 3 again R1, and so on.
 
 Liviu Lalescu: I think this is impossible to change now, and incorrect. You could use the constraint activities occupy max different rooms.
+
+431---------------------------------------------------------
+From ghani1990 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4795.msg26796#msg26796
+
+1) I have a suggestion in the case of multiple timetables why I should delete the output folder every time, why the files are not output in new folders with
+the same name with a number's suffix , 1,2,3 etc.
+
+2) I suggest adding settings to choose the default mode of operation.
+
+Meaning instead of choosing the The mode of operation every time through the menu New, just I go once to settings and i set my default option.
+
+Why should this preferance exist? Because the Custom FET versions are basically each one belonging to a specific country or group, so I think it is better for
+me to choose the mode once in the settings instead of choosing every time I create a new file!
+
+Thus, your work is wonderful in the endeavor to collect all copies in one copy, and at the same time it is easy to use the program as if it is directed to a
+specific mode.
+
+Of course, these settings are optional, they can be edited by the user, or they can be left as they are now.

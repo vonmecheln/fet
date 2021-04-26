@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="The name of the random seed dialog">Please select the mode for the new file</string>
+   <string extracomment="The title of the new file dialog - the user must select the mode for this new file">Please select the mode for the new file</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">

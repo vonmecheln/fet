@@ -537,7 +537,7 @@ bool CONFIRM_SPREAD_ACTIVITIES=true;
 bool CONFIRM_REMOVE_REDUNDANT=true;
 bool CONFIRM_SAVE_TIMETABLE=true;
 
-extern MRG32k3a rng;
+//extern MRG32k3a rng;
 
 const int STATUS_BAR_MILLISECONDS=2500;
 
