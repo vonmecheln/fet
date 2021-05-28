@@ -841,18 +841,18 @@ Matrix1D<bool> activityHasMaxSimultaneousConstraints;
 
 //2020-05-01 - Constraint max total activities from set in selected time slots
 std::list<ActivitiesMaxTotalFromSetInSelectedTimeSlots_item> amtfsistsList;
-Matrix1D<QList<ActivitiesMaxTotalFromSetInSelectedTimeSlots_item*> > amtfsistsListForActivity;
+Matrix1D<QList<ActivitiesMaxTotalFromSetInSelectedTimeSlots_item*>> amtfsistsListForActivity;
 //bool computeActivitiesMaxTotalFromSetInSelectedTimeSlots(QWidget* parent);
 
 //for the terms mode
 //2020-01-14 - Constraint activities max in a term
 std::list<ActivitiesMaxInATerm_item> amiatList;
-Matrix1D<QList<ActivitiesMaxInATerm_item*> > amiatListForActivity;
+Matrix1D<QList<ActivitiesMaxInATerm_item*>> amiatListForActivity;
 //bool computeActivitiesMaxInATerm(QWidget* parent);
 
 //2020-01-14 - Constraint activities occupy max terms
 std::list<ActivitiesOccupyMaxTerms_item> aomtList;
-Matrix1D<QList<ActivitiesOccupyMaxTerms_item*> > aomtListForActivity;
+Matrix1D<QList<ActivitiesOccupyMaxTerms_item*>> aomtListForActivity;
 //bool computeActivitiesOccupyMaxTerms(QWidget* parent);
 
 //2019-06-08 - Constraint students (set) min gaps between ordered pair of activity tags

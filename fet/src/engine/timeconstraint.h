@@ -4498,7 +4498,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules& r);
 
@@ -4542,7 +4542,7 @@ public:
 
 	QString getDetailedDescription(Rules& r);
 
-	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=NULL);
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules& r);
 

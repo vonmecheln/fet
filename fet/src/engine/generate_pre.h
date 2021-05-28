@@ -966,7 +966,7 @@ public:
 //The next variable should be a std::list!!!
 //We need the references to the elements to be valid
 extern std::list<ActivitiesMaxTotalFromSetInSelectedTimeSlots_item> amtfsistsList;
-extern Matrix1D<QList<ActivitiesMaxTotalFromSetInSelectedTimeSlots_item*> > amtfsistsListForActivity;
+extern Matrix1D<QList<ActivitiesMaxTotalFromSetInSelectedTimeSlots_item*>> amtfsistsListForActivity;
 
 bool computeActivitiesMaxTotalFromSetInSelectedTimeSlots(QWidget* parent);
 
@@ -984,7 +984,7 @@ public:
 //The next variable should be a std::list!!!
 //We need the references to the elements to be valid
 extern std::list<ActivitiesMaxInATerm_item> amiatList;
-extern Matrix1D<QList<ActivitiesMaxInATerm_item*> > amiatListForActivity;
+extern Matrix1D<QList<ActivitiesMaxInATerm_item*>> amiatListForActivity;
 
 bool computeActivitiesMaxInATerm(QWidget* parent);
 
@@ -1001,7 +1001,7 @@ public:
 //The next variable should be a std::list!!!
 //We need the references to the elements to be valid
 extern std::list<ActivitiesOccupyMaxTerms_item> aomtList;
-extern Matrix1D<QList<ActivitiesOccupyMaxTerms_item*> > aomtListForActivity;
+extern Matrix1D<QList<ActivitiesOccupyMaxTerms_item*>> aomtListForActivity;
 
 bool computeActivitiesOccupyMaxTerms(QWidget* parent);
 

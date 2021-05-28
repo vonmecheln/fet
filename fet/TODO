@@ -7390,3 +7390,15 @@ Thus, your work is wonderful in the endeavor to collect all copies in one copy, 
 specific mode.
 
 Of course, these settings are optional, they can be edited by the user, or they can be left as they are now.
+
+432---------------------------------------------------------
+From Volker Dirr:
+
+In src/engine/generate.cpp and src/interface/timetablegenerateform.cpp and src/interface/timetablegeneratemultipleform.cpp, use std::atomic instead of
+std::mutex on the Boolean variable testing if the generation was stopped, bool Generate::abortOptimization. And maybe use std::atomic instead of std::mutex
+in other places.
+
+433---------------------------------------------------------
+From Khelifi Fouad Mohssen:
+
+If I (Liviu) understood correctly, he suggests to make the overall timetable, but to see it separately for each department.

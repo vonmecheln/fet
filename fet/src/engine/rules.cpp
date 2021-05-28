@@ -18516,8 +18516,8 @@ TimeConstraint* Rules::readActivitiesMaxInATerm(QXmlStreamReader& xmlReader, Fak
 	if(!(ac==cn->activitiesIds.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 
 	assert(ac==cn->activitiesIds.count());
@@ -18577,8 +18577,8 @@ TimeConstraint* Rules::readActivitiesOccupyMaxTerms(QXmlStreamReader& xmlReader,
 	if(!(ac==cn->activitiesIds.count())){
 		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
 		delete cn;
-		cn=NULL;
-		return NULL;
+		cn=nullptr;
+		return nullptr;
 	}
 
 	assert(ac==cn->activitiesIds.count());

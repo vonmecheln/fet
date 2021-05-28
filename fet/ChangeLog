@@ -2357,3 +2357,7 @@ Versions 6.0.0 - 6.0.v
 - Version 6.0.2
 	- Crash bugs fixed when using Qt 5.15.2, reported by ghani1990. The exact locations with wrong code were found using gdb.
 	- Bug fix: the program was using some uninitialized variables (discovered with Valgrind). But this did not affect the generation.
+- Version 6.0.3
+	- Updated to Qt 6.1.0.
+	- Code cleanup.
+	- Added three new example files, by Jijo Jose (two from India and one from South Africa).

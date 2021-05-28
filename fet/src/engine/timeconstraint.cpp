@@ -23145,7 +23145,7 @@ double ConstraintActivitiesMaxInATerm::fitness(Solution& c, Rules& r, QList<doub
 			nbroken++;
 
 	if(nbroken>0){
-		if(conflictsString!=NULL){
+		if(conflictsString!=nullptr){
 			QString s=tr("Time constraint %1 broken - this should not happen, as this kind of constraint should "
 			 "have only 100.0% weight. Please report error!").arg(this->getDescription(r));
 
@@ -23166,8 +23166,8 @@ void ConstraintActivitiesMaxInATerm::removeUseless(Rules& r)
 	QList<int> newActs;
 
 	for(int aid : qAsConst(activitiesIds)){
-		Activity* act=r.activitiesPointerHash.value(aid, NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
+		if(act!=nullptr)
 			newActs.append(aid);
 	}
 
@@ -23407,7 +23407,7 @@ double ConstraintActivitiesOccupyMaxTerms::fitness(Solution& c, Rules& r, QList<
 		nbroken++;
 
 	if(nbroken>0){
-		if(conflictsString!=NULL){
+		if(conflictsString!=nullptr){
 			QString s=tr("Time constraint %1 broken - this should not happen, as this kind of constraint should "
 			 "have only 100.0% weight. Please report error!").arg(this->getDescription(r));
 
@@ -23428,8 +23428,8 @@ void ConstraintActivitiesOccupyMaxTerms::removeUseless(Rules& r)
 	QList<int> newActs;
 
 	for(int aid : qAsConst(activitiesIds)){
-		Activity* act=r.activitiesPointerHash.value(aid, NULL);
-		if(act!=NULL)
+		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
+		if(act!=nullptr)
 			newActs.append(aid);
 	}
 
