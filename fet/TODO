@@ -52,6 +52,10 @@ From bachiri401:
 -> And in general every constraint referring to days should have a corresponding constraint for real days,
 and every constraint referring to mornings should have a corresponding one referring to afternoons.
 
+From Mohamed Ait Ichou: He suggests good printing and output.
+Liviu Lalescu: In case of mornings-afternoons, to print and output the same real day continuously?
+Mohamed Ait Ichou: Yes, morning and evening combined in one day in case of printing.
+
 1----------------------------------------------------------
 From Liviu Lalescu:
 
@@ -273,10 +277,7 @@ checking the studentsname must be added as subgroup into that group.
 
 13-------------------------DONE----------------------------
 
-14---------------------------------------------------------
-From more users:
-
-Multiple processor - split multiple timetable generation on multiple processors
+14-------------------------DONE in FET-6.0.0---------------
 
 15---------------------------------------------------------
 From Volker Dirr
@@ -7402,3 +7403,20 @@ in other places.
 From Khelifi Fouad Mohssen:
 
 If I (Liviu) understood correctly, he suggests to make the overall timetable, but to see it separately for each department.
+
+434---------------------------------------------------------
+From Darren McDonald and samantha.goddard (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4839.0
+
+For block planning mode:
+
+1) Activities occupy max hours (blocks). For instance, if there are 3 sets of simultaneous activities, the user would like that they occupy at most 2 hours:
+FET day 1 FET hours 2 and 3 and FET day 3 hour 3 (suggested by Darren McDonald and Samantha Goddard).
+
+2) Activities not same hour (block) if in different days (suggested by Samantha Goddard).
+
+I do have another suggestion that would help with block planning (that may also be useful more generally). When selecting a set of activities
+(for time constraints, etc.) it would be very helpful if there were a way to select all activities that do not have a specific activity tag,
+teacher, etc. Would it be possible to add something like a "not" checkbox, or equivalent, to use when filtering activities? Very often with block planning
+I have restrictions that should apply to all courses except one, so this would be very useful.

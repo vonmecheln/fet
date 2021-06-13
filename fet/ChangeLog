@@ -2361,3 +2361,8 @@ Versions 6.0.0 - 6.0.v
 	- Updated to Qt 6.1.0.
 	- Code cleanup.
 	- Added three new example files, by Jijo Jose (two from India and one from South Africa).
+- Version 6.0.4
+	- Updated to Qt 6.1.1.
+	- Bug fix in the timetable generate multiple dialog, when generating on multiple threads: if the generation time limit was reached and if the limit
+	on the total number of generated timetables was reached, the highest-stage solutions of some of the timetables generated in the last round were missing
+	in the final results.

@@ -721,6 +721,30 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 			
 			if(timetablingThreads[t]._internalGeneratingThread.joinable())
 				timetablingThreads[t]._internalGeneratingThread.join();
+
+			if(highestPlacedActivities<genMultiMatrix[t].maxActivitiesPlaced){
+				highestPlacedActivities=genMultiMatrix[t].maxActivitiesPlaced;
+				for(Solution* sol : qAsConst(highestStageSolutions))
+					delete sol;
+				highestStageSolutions.clear();
+				nTimetableForHighestStageSolutions.clear();
+				nThreadForHighest.clear();
+				simulationTimedOutForHighest.clear();
+				Solution* sol=new Solution();
+				sol->copyForHighestStage(gt.rules, genMultiMatrix[t].highestStageSolution);
+				highestStageSolutions.append(sol);
+				nTimetableForHighestStageSolutions.append(timetablingThreads[t].nOverallTimetable+1);
+				nThreadForHighest.append(t);
+				simulationTimedOutForHighest.append(true);
+			}
+			else if(highestPlacedActivities==genMultiMatrix[t].maxActivitiesPlaced){
+				Solution* sol=new Solution();
+				sol->copyForHighestStage(gt.rules, genMultiMatrix[t].highestStageSolution);
+				highestStageSolutions.append(sol);
+				nTimetableForHighestStageSolutions.append(timetablingThreads[t].nOverallTimetable+1);
+				nThreadForHighest.append(t);
+				simulationTimedOutForHighest.append(true);
+			}
 		}
 		simulationFinished();
 	}
