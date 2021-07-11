@@ -2338,7 +2338,7 @@ Versions 5.49.0 - 5.49.1
 	- Acknowledged the code contributors in a new file, CONTRIBUTORS, and in a new section in Help->About FET, Contributors.
 	- Minor improvements.
 ---------------------------------------------------------------------------------
-Versions 6.0.0 - 6.0.v
+Versions 6.0.0 - 6.0.4
 - Version 6.0.0
 	- Updated to Qt 6.0.3.
 	- Increased the limits of the generation algorithm (the new limits are most probably more than enough for everybody).
@@ -2366,3 +2366,10 @@ Versions 6.0.0 - 6.0.v
 	- Bug fix in the timetable generate multiple dialog, when generating on multiple threads: if the generation time limit was reached and if the limit
 	on the total number of generated timetables was reached, the highest-stage solutions of some of the timetables generated in the last round were missing
 	in the final results.
+---------------------------------------------------------------------------------
+Versions 6.1.0 - 6.1.v
+- Version 6.1.0
+	- Updated to Qt 6.1.2.
+	- Added the import/export of comments from/to CSV (comma separated values) files (suggested by Darren McDonald).
+	- Added two new example files from South Africa, by Eric Carolus.
+	- Updated the Russian translation, by Alexey Chernous.

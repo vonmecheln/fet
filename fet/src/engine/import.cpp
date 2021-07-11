@@ -122,6 +122,7 @@ void Import::prearrangement(){
 	fieldName[FIELD_MIN_DAYS_WEIGHT]=Import::tr("Min Days Weight");
 	fieldName[FIELD_MIN_DAYS_CONSECUTIVE]=Import::tr("Min Days Consecutive");
 	fieldName[FIELD_ACTIVITY_TAGS_SET]=Import::tr("Activity Tags");
+	fieldName[FIELD_COMMENTS]=Import::tr("Comments");
 	for(int i=0; i<NUMBER_OF_FIELDS; i++){
 		fieldNumber[i]=DO_NOT_IMPORT;
 		fieldDefaultItem[i]="";
@@ -133,7 +134,6 @@ void Import::prearrangement(){
 	warnText.clear();
 	lastWarning.clear();
 }
-
 
 //TODO: add this into the first function!? form too full?!
 ChooseFieldsDialog::ChooseFieldsDialog(QWidget *parent): QDialog(parent)
@@ -340,7 +340,6 @@ void ChooseFieldsDialog::chooseFieldsDialogUpdateRadio1(){
 	}
 }
 
-
 void ChooseFieldsDialog::chooseFieldsDialogUpdateRadio2(){
 	if(fieldRadio2[FIELD_GROUP_NAME]->isChecked()){
 		fieldGroupBox[FIELD_SUBGROUP_NAME]->setDisabled(false);
@@ -394,7 +393,6 @@ void ChooseFieldsDialog::chooseFieldsDialogUpdateRadio3b(){
 		fieldGroupBox[FIELD_ROOM_CAPACITY]->setDisabled(false);
 	}
 }
-
 
 void ChooseFieldsDialog::chooseFieldsDialogUpdateLine3Text(){
 	bool textOK=true;
@@ -534,36 +532,39 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	}
 	
 	if(fieldNumber[FIELD_ACTIVITY_TAG_NAME]==IMPORT_DEFAULT_ITEM
-		&& line.contains("\"Activity Tag\"")
-		&& line.size()<=QString("\"Activity Tag\"").length()+1
-		&& line.size()>=QString("\"Activity Tag\"").length()){
+		&& line.contains("\"Activity Tag\",\"Comments\"")
+		&& line.size()<=QString("\"Activity Tag\",\"Comments\"").length()+1
+		&& line.size()>=QString("\"Activity Tag\",\"Comments\"").length()){
 		fieldNumber[FIELD_ACTIVITY_TAG_NAME]=0;
+		fieldNumber[FIELD_COMMENTS]=1;
 		head=true;
 		fieldSeparator=",";
 		textquote="\"";
-		fields<<line;
+		fields=line.split(fieldSeparator);
 		return true;
 	}
 	
 	if(fieldNumber[FIELD_ACTIVITY_TAG_NAME]==IMPORT_DEFAULT_ITEM
-		&& line.contains("Activity Tag")
-		&& line.size()<=QString("Activity Tag").length()+1
-		&& line.size()>=QString("Activity Tag").length()){
+		&& line.contains("Activity Tag,Comments")
+		&& line.size()<=QString("Activity Tag,Comments").length()+1
+		&& line.size()>=QString("Activity Tag,Comments").length()){
 		fieldNumber[FIELD_ACTIVITY_TAG_NAME]=0;
+		fieldNumber[FIELD_COMMENTS]=1;
 		head=true;
 		fieldSeparator=",";
 		textquote="";
-		fields<<line;
+		fields=line.split(fieldSeparator);
 		return true;
 	}
 
 	if(fieldNumber[FIELD_ROOM_NAME]==IMPORT_DEFAULT_ITEM
-		&& line.contains("\"Room\",\"Room Capacity\",\"Building\"")
-		&& line.size()<=QString("\"Room\",\"Room Capacity\",\"Building\"").length()+1
-		&& line.size()>=QString("\"Room\",\"Room Capacity\",\"Building\"").length()){
+		&& line.contains("\"Room\",\"Room Capacity\",\"Building\",\"Comments\"")
+		&& line.size()<=QString("\"Room\",\"Room Capacity\",\"Building\",\"Comments\"").length()+1
+		&& line.size()>=QString("\"Room\",\"Room Capacity\",\"Building\",\"Comments\"").length()){
 		fieldNumber[FIELD_BUILDING_NAME]=2;
 		fieldNumber[FIELD_ROOM_NAME]=0;
 		fieldNumber[FIELD_ROOM_CAPACITY]=1;
+		fieldNumber[FIELD_COMMENTS]=3;
 		head=true;
 		fieldSeparator=",";
 		textquote="\"";
@@ -572,12 +573,13 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	}
 	
 	if(fieldNumber[FIELD_ROOM_NAME]==IMPORT_DEFAULT_ITEM
-		&& line.contains("Room,Room Capacity,Building")
-		&& line.size()<=QString("Room,Room Capacity,Building").length()+1
-		&& line.size()>=QString("Room,Room Capacity,Building").length()){
+		&& line.contains("Room,Room Capacity,Building,Comments")
+		&& line.size()<=QString("Room,Room Capacity,Building,Comments").length()+1
+		&& line.size()>=QString("Room,Room Capacity,Building,Comments").length()){
 		fieldNumber[FIELD_BUILDING_NAME]=2;
 		fieldNumber[FIELD_ROOM_NAME]=0;
 		fieldNumber[FIELD_ROOM_CAPACITY]=1;
+		fieldNumber[FIELD_COMMENTS]=3;
 		head=true;
 		fieldSeparator=",";
 		textquote="";
@@ -586,63 +588,68 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	}
 
 	if(fieldNumber[FIELD_TEACHER_NAME]==IMPORT_DEFAULT_ITEM
-		&& line.contains("\"Teacher\"")
-		&& line.size()<=QString("\"Teacher\"").length()+1
-		&& line.size()>=QString("\"Teacher\"").length()){
+		&& line.contains("\"Teacher\",\"Comments\"")
+		&& line.size()<=QString("\"Teacher\",\"Comments\"").length()+1
+		&& line.size()>=QString("\"Teacher\",\"Comments\"").length()){
 		fieldNumber[FIELD_TEACHER_NAME]=0;
+		fieldNumber[FIELD_COMMENTS]=1;
 		head=true;
 		fieldSeparator=",";
 		textquote="\"";
-		fields<<line;
+		fields=line.split(fieldSeparator);
 		return true;
 	}
 	
 	if(fieldNumber[FIELD_TEACHER_NAME]==IMPORT_DEFAULT_ITEM
-		&& line.contains("Teacher")
-		&& line.size()<=QString("Teacher").length()+1
-		&& line.size()>=QString("Teacher").length()){
+		&& line.contains("Teacher,Comments")
+		&& line.size()<=QString("Teacher,Comments").length()+1
+		&& line.size()>=QString("Teacher,Comments").length()){
 		fieldNumber[FIELD_TEACHER_NAME]=0;
+		fieldNumber[FIELD_COMMENTS]=1;
 		head=true;
 		fieldSeparator=",";
 		textquote="";
-		fields<<line;
+		fields=line.split(fieldSeparator);
 		return true;
 	}
 
 	if(fieldNumber[FIELD_SUBJECT_NAME]==IMPORT_DEFAULT_ITEM
-		&& line.contains("\"Subject\"")
-		&& line.size()<=QString("\"Subject\"").length()+1
-		&& line.size()>=QString("\"Subject\"").length()){
+		&& line.contains("\"Subject\",\"Comments\"")
+		&& line.size()<=QString("\"Subject\",\"Comments\"").length()+1
+		&& line.size()>=QString("\"Subject\",\"Comments\"").length()){
 		fieldNumber[FIELD_SUBJECT_NAME]=0;
+		fieldNumber[FIELD_COMMENTS]=1;
 		head=true;
 		fieldSeparator=",";
 		textquote="\"";
-		fields<<line;
+		fields=line.split(fieldSeparator);
 		return true;
 	}
 	
 	if(fieldNumber[FIELD_SUBJECT_NAME]==IMPORT_DEFAULT_ITEM
-		&& line.contains("Subject")
-		&& line.size()<=QString("Subject").length()+1
-		&& line.size()>=QString("Subject").length()){
+		&& line.contains("Subject,Comments")
+		&& line.size()<=QString("Subject,Comments").length()+1
+		&& line.size()>=QString("Subject,Comments").length()){
 		fieldNumber[FIELD_SUBJECT_NAME]=0;
+		fieldNumber[FIELD_COMMENTS]=1;
 		head=true;
 		fieldSeparator=",";
 		textquote="";
-		fields<<line;
+		fields=line.split(fieldSeparator);
 		return true;
 	}
 
 	if(fieldNumber[FIELD_YEAR_NAME]==IMPORT_DEFAULT_ITEM
-		&& line.contains("\"Year\",\"Number of Students per Year\",\"Group\",\"Number of Students per Group\",\"Subgroup\",\"Number of Students per Subgroup\"")
-		&& line.size()<=QString("\"Year\",\"Number of Students per Year\",\"Group\",\"Number of Students per Group\",\"Subgroup\",\"Number of Students per Subgroup\"").length()+1
-		&& line.size()>=QString("\"Year\",\"Number of Students per Year\",\"Group\",\"Number of Students per Group\",\"Subgroup\",\"Number of Students per Subgroup\"").length()){
+		&& line.contains("\"Year\",\"Number of Students per Year\",\"Group\",\"Number of Students per Group\",\"Subgroup\",\"Number of Students per Subgroup\",\"Comments\"")
+		&& line.size()<=QString("\"Year\",\"Number of Students per Year\",\"Group\",\"Number of Students per Group\",\"Subgroup\",\"Number of Students per Subgroup\",\"Comments\"").length()+1
+		&& line.size()>=QString("\"Year\",\"Number of Students per Year\",\"Group\",\"Number of Students per Group\",\"Subgroup\",\"Number of Students per Subgroup\",\"Comments\"").length()){
 		fieldNumber[FIELD_YEAR_NAME]=0;
 		fieldNumber[FIELD_YEAR_NUMBER_OF_STUDENTS]=1;
 		fieldNumber[FIELD_GROUP_NAME]=2;
 		fieldNumber[FIELD_GROUP_NUMBER_OF_STUDENTS]=3;
 		fieldNumber[FIELD_SUBGROUP_NAME]=4;
 		fieldNumber[FIELD_SUBGROUP_NUMBER_OF_STUDENTS]=5;
+		fieldNumber[FIELD_COMMENTS]=6;
 		head=true;
 		fieldSeparator=",";
 		textquote="\"";
@@ -651,15 +658,16 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	}
 	
 	if(fieldNumber[FIELD_YEAR_NAME]==IMPORT_DEFAULT_ITEM
-		&& line.contains("Year,Number of Students per Year,Group,Number of Students per Group,Subgroup,Number of Students per Subgroup")
-		&& line.size()<=QString("Year,Number of Students per Year,Group,Number of Students per Group,Subgroup,Number of Students per Subgroup").length()+1
-		&& line.size()>=QString("Year,Number of Students per Year,Group,Number of Students per Group,Subgroup,Number of Students per Subgroup").length()){
+		&& line.contains("Year,Number of Students per Year,Group,Number of Students per Group,Subgroup,Number of Students per Subgroup,Comments")
+		&& line.size()<=QString("Year,Number of Students per Year,Group,Number of Students per Group,Subgroup,Number of Students per Subgroup,Comments").length()+1
+		&& line.size()>=QString("Year,Number of Students per Year,Group,Number of Students per Group,Subgroup,Number of Students per Subgroup,Comments").length()){
 		fieldNumber[FIELD_YEAR_NAME]=0;
 		fieldNumber[FIELD_YEAR_NUMBER_OF_STUDENTS]=1;
 		fieldNumber[FIELD_GROUP_NAME]=2;
 		fieldNumber[FIELD_GROUP_NUMBER_OF_STUDENTS]=3;
 		fieldNumber[FIELD_SUBGROUP_NAME]=4;
 		fieldNumber[FIELD_SUBGROUP_NUMBER_OF_STUDENTS]=5;
+		fieldNumber[FIELD_COMMENTS]=6;
 		head=true;
 		fieldSeparator=",";
 		textquote="";
@@ -668,9 +676,9 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	}
 
 	if(fieldNumber[FIELD_STUDENTS_SET]==IMPORT_DEFAULT_ITEM
-		&& line.contains("\"Students Sets\",\"Subject\",\"Teachers\",\"Activity Tags\",\"Total Duration\",\"Split Duration\",\"Min Days\",\"Weight\",\"Consecutive\"")
-		&& line.size()<=QString("\"Students Sets\",\"Subject\",\"Teachers\",\"Activity Tags\",\"Total Duration\",\"Split Duration\",\"Min Days\",\"Weight\",\"Consecutive\"").length()+1
-		&& line.size()>=QString("\"Students Sets\",\"Subject\",\"Teachers\",\"Activity Tags\",\"Total Duration\",\"Split Duration\",\"Min Days\",\"Weight\",\"Consecutive\"").length()){
+		&& line.contains("\"Students Sets\",\"Subject\",\"Teachers\",\"Activity Tags\",\"Total Duration\",\"Split Duration\",\"Min Days\",\"Weight\",\"Consecutive\",\"Comments\"")
+		&& line.size()<=QString("\"Students Sets\",\"Subject\",\"Teachers\",\"Activity Tags\",\"Total Duration\",\"Split Duration\",\"Min Days\",\"Weight\",\"Consecutive\",\"Comments\"").length()+1
+		&& line.size()>=QString("\"Students Sets\",\"Subject\",\"Teachers\",\"Activity Tags\",\"Total Duration\",\"Split Duration\",\"Min Days\",\"Weight\",\"Consecutive\",\"Comments\"").length()){
 		fieldNumber[FIELD_ACTIVITY_TAGS_SET]=3;
 		fieldNumber[FIELD_SUBJECT_NAME]=1;
 		fieldNumber[FIELD_STUDENTS_SET]=0;
@@ -680,6 +688,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 		fieldNumber[FIELD_MIN_DAYS]=6;
 		fieldNumber[FIELD_MIN_DAYS_WEIGHT]=7;
 		fieldNumber[FIELD_MIN_DAYS_CONSECUTIVE]=8;
+		fieldNumber[FIELD_COMMENTS]=9;
 		head=true;
 		fieldSeparator=",";
 		textquote="\"";
@@ -688,9 +697,9 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	}
 	
 	if(fieldNumber[FIELD_STUDENTS_SET]==IMPORT_DEFAULT_ITEM
-		&& line.contains("Students Sets,Subject,Teachers,Activity Tags,Total Duration,Split Duration,Min Days,Weight,Consecutive")
-		&& line.size()<=QString("Students Sets,Subject,Teachers,Activity Tags,Total Duration,Split Duration,Min Days,Weight,Consecutive").length()+1
-		&& line.size()>=QString("Students Sets,Subject,Teachers,Activity Tags,Total Duration,Split Duration,Min Days,Weight,Consecutive").length()){
+		&& line.contains("Students Sets,Subject,Teachers,Activity Tags,Total Duration,Split Duration,Min Days,Weight,Consecutive,Comments")
+		&& line.size()<=QString("Students Sets,Subject,Teachers,Activity Tags,Total Duration,Split Duration,Min Days,Weight,Consecutive,Comments").length()+1
+		&& line.size()>=QString("Students Sets,Subject,Teachers,Activity Tags,Total Duration,Split Duration,Min Days,Weight,Consecutive,Comments").length()){
 		fieldNumber[FIELD_ACTIVITY_TAGS_SET]=3;
 		fieldNumber[FIELD_SUBJECT_NAME]=1;
 		fieldNumber[FIELD_STUDENTS_SET]=0;
@@ -700,6 +709,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 		fieldNumber[FIELD_MIN_DAYS]=6;
 		fieldNumber[FIELD_MIN_DAYS_WEIGHT]=7;
 		fieldNumber[FIELD_MIN_DAYS_CONSECUTIVE]=8;
+		fieldNumber[FIELD_COMMENTS]=9;
 		head=true;
 		fieldSeparator=",";
 		textquote="";
@@ -847,52 +857,52 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 		textquote="";
 	}
 //NEW start
-			QString tmp;
-			QString tmpLine=line;
-			while(!tmpLine.isEmpty()){
-				tmp.clear();
-				bool foundField=false;
-				if(tmpLine.left(1)==textquote){
-					tmpLine.remove(0,1);
-					while(!foundField && tmpLine.size()>1){
-						if(tmpLine.left(1)!=textquote){
-							tmp+=tmpLine.left(1);
-						} else {
-							if(tmpLine.mid(1,1)==fieldSeparator){
-								foundField=true;
-								tmpLine.remove(0,1);
-							} else if(tmpLine.mid(1,1)==textquote){
-								tmp+=textquote;
-								tmpLine.remove(0,1);
-							} else {
-								QMessageBox::critical(newParent, tr("FET warning"), Import::tr("Missing field separator or text quote in first line. Import might be incorrect.")+"\n");
-							}
-						}
-						tmpLine.remove(0,1);
-					}
-					if(!foundField && tmpLine.size()==1){
-						if(tmpLine.left(1)==textquote){
-							tmpLine.remove(0,1);
-						} else {
-							QMessageBox::critical(newParent, tr("FET warning"), Import::tr("Missing closing text quote in first line. Import might be incorrect.")+"\n");
-							tmp+=tmpLine.left(1);
-							tmpLine.remove(0,1);
-						}
-						
-					}
+	QString tmp;
+	QString tmpLine=line;
+	while(!tmpLine.isEmpty()){
+		tmp.clear();
+		bool foundField=false;
+		if(tmpLine.left(1)==textquote){
+			tmpLine.remove(0,1);
+			while(!foundField && tmpLine.size()>1){
+				if(tmpLine.left(1)!=textquote){
+					tmp+=tmpLine.left(1);
 				} else {
-					while(!foundField && !tmpLine.isEmpty()){
-						if(tmpLine.left(1)!=fieldSeparator)
-							tmp+=tmpLine.left(1);
-						else
-							foundField=true;
+					if(tmpLine.mid(1,1)==fieldSeparator){
+						foundField=true;
 						tmpLine.remove(0,1);
+					} else if(tmpLine.mid(1,1)==textquote){
+						tmp+=textquote;
+						tmpLine.remove(0,1);
+					} else {
+						QMessageBox::critical(newParent, tr("FET warning"), Import::tr("Missing field separator or text quote in first line. Import might be incorrect.")+"\n");
 					}
 				}
-				fields << tmp;
-				if(foundField && tmpLine.isEmpty())
-					fields << "";
+				tmpLine.remove(0,1);
 			}
+			if(!foundField && tmpLine.size()==1){
+				if(tmpLine.left(1)==textquote){
+					tmpLine.remove(0,1);
+				} else {
+					QMessageBox::critical(newParent, tr("FET warning"), Import::tr("Missing closing text quote in first line. Import might be incorrect.")+"\n");
+					tmp+=tmpLine.left(1);
+					tmpLine.remove(0,1);
+				}
+				
+			}
+		} else {
+			while(!foundField && !tmpLine.isEmpty()){
+				if(tmpLine.left(1)!=fieldSeparator)
+					tmp+=tmpLine.left(1);
+				else
+					foundField=true;
+				tmpLine.remove(0,1);
+			}
+		}
+		fields << tmp;
+		if(foundField && tmpLine.isEmpty())
+			fields << "";
+	}
 //NEW end
 
 /* OLD
@@ -1279,17 +1289,17 @@ FILE_STRIPPED_NAME
 	//fieldsTable->setUpdatesEnabled(false);
 	
 	fieldsTable->setRowCount(max);
-	QStringList fieldsTabelLabel;
+	QStringList fieldsTableLabel;
 
 	int columns=0;
 	for(int i=0; i<NUMBER_OF_FIELDS; i++){
 		if(fieldNumber[i]>DO_NOT_IMPORT){
-			fieldsTabelLabel<<tr("%1").arg(fieldName[i]);
+			fieldsTableLabel<<tr("%1").arg(fieldName[i]);
 			columns++;
 		}
 	}
 	fieldsTable->setColumnCount(columns);
-	fieldsTable->setHorizontalHeaderLabels(fieldsTabelLabel);
+	fieldsTable->setHorizontalHeaderLabels(fieldsTableLabel);
 	for(int i=0; i<max; i++){
 		int column=0;
 		for(int f=0; f<NUMBER_OF_FIELDS; f++){
@@ -1391,6 +1401,7 @@ FILE_STRIPPED_NAME
 void Import::importCSVActivityTags(QWidget* parent){
 	prearrangement();
 	fieldNumber[FIELD_ACTIVITY_TAG_NAME]=IMPORT_DEFAULT_ITEM;
+	fieldNumber[FIELD_COMMENTS]=IMPORT_DEFAULT_ITEM;
 	int ok;
 
 	QDialog* newParent;
@@ -1453,6 +1464,8 @@ void Import::importCSVActivityTags(QWidget* parent){
 			tmpSet.insert(fieldList[FIELD_ACTIVITY_TAG_NAME][i]);
 			ActivityTag* a=new ActivityTag();
 			a->name=fieldList[FIELD_ACTIVITY_TAG_NAME][i];
+			if(fieldNumber[FIELD_COMMENTS]!=DO_NOT_IMPORT)
+				a->comments=fieldList[FIELD_COMMENTS][i];
 			if(!gt.rules.addActivityTagFast(a)){
 				delete a;
 				assert(0);
@@ -1471,6 +1484,7 @@ void Import::importCSVRoomsAndBuildings(QWidget* parent){
 	fieldNumber[FIELD_ROOM_NAME]=IMPORT_DEFAULT_ITEM;
 	fieldNumber[FIELD_ROOM_CAPACITY]=IMPORT_DEFAULT_ITEM;
 	fieldNumber[FIELD_BUILDING_NAME]=IMPORT_DEFAULT_ITEM;
+	fieldNumber[FIELD_COMMENTS]=IMPORT_DEFAULT_ITEM;
 	int ok;
 
 	QDialog* newParent;
@@ -1603,6 +1617,8 @@ void Import::importCSVRoomsAndBuildings(QWidget* parent){
 			}
 			else
 				assert(0==1);
+			if(fieldNumber[FIELD_COMMENTS]!=DO_NOT_IMPORT)
+				r->comments=fieldList[FIELD_COMMENTS][i];
 			if(!gt.rules.addRoomFast(r)){
 				delete r;
 				assert(0);
@@ -1621,6 +1637,7 @@ void Import::importCSVRoomsAndBuildings(QWidget* parent){
 void Import::importCSVSubjects(QWidget* parent){
 	prearrangement();
 	fieldNumber[FIELD_SUBJECT_NAME]=IMPORT_DEFAULT_ITEM;
+	fieldNumber[FIELD_COMMENTS]=IMPORT_DEFAULT_ITEM;
 	int ok;
 
 	QDialog* newParent;
@@ -1685,6 +1702,8 @@ void Import::importCSVSubjects(QWidget* parent){
 			tmpSet.insert(fieldList[FIELD_SUBJECT_NAME][i]);
 			Subject* s=new Subject();
 			s->name=fieldList[FIELD_SUBJECT_NAME][i];
+			if(fieldNumber[FIELD_COMMENTS]!=DO_NOT_IMPORT)
+				s->comments=fieldList[FIELD_COMMENTS][i];
 			if(!gt.rules.addSubjectFast(s)){
 				delete s;
 				assert(0);
@@ -1701,6 +1720,7 @@ void Import::importCSVSubjects(QWidget* parent){
 void Import::importCSVTeachers(QWidget* parent){
 	prearrangement();
 	fieldNumber[FIELD_TEACHER_NAME]=IMPORT_DEFAULT_ITEM;
+	fieldNumber[FIELD_COMMENTS]=IMPORT_DEFAULT_ITEM;
 	int ok;
 
 	QDialog* newParent;
@@ -1767,6 +1787,8 @@ void Import::importCSVTeachers(QWidget* parent){
 			if(gt.rules.mode==MORNINGS_AFTERNOONS)
 				tch->morningsAfternoonsBehavior=TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS;
 			tch->name=fieldList[FIELD_TEACHER_NAME][i];
+			if(fieldNumber[FIELD_COMMENTS]!=DO_NOT_IMPORT)
+				tch->comments=fieldList[FIELD_COMMENTS][i];
 			if(!gt.rules.addTeacherFast(tch)){
 				delete tch;
 				assert(0);
@@ -1788,6 +1810,7 @@ void Import::importCSVStudents(QWidget* parent){
 	fieldNumber[FIELD_GROUP_NUMBER_OF_STUDENTS]=IMPORT_DEFAULT_ITEM;
 	fieldNumber[FIELD_SUBGROUP_NAME]=IMPORT_DEFAULT_ITEM;
 	fieldNumber[FIELD_SUBGROUP_NUMBER_OF_STUDENTS]=IMPORT_DEFAULT_ITEM;
+	fieldNumber[FIELD_COMMENTS]=IMPORT_DEFAULT_ITEM;
 	int ok;
 
 	QDialog* newParent;
@@ -2016,6 +2039,8 @@ void Import::importCSVStudents(QWidget* parent){
 			QString tmpString=fieldList[FIELD_YEAR_NUMBER_OF_STUDENTS][i];
 			sy->numberOfStudents=tmpString.toInt();
 			assert(!fieldList[FIELD_YEAR_NUMBER_OF_STUDENTS].isEmpty());
+			if(fieldNumber[FIELD_COMMENTS]!=DO_NOT_IMPORT)
+				sy->comments=fieldList[FIELD_COMMENTS][i];
 			/*if(gt.rules.searchYear(yearName) >=0 )
 				delete sy;
 			else {
@@ -2079,6 +2104,8 @@ void Import::importCSVStudents(QWidget* parent){
 					sg->name=groupName;
 					QString tmpString=fieldList[FIELD_GROUP_NUMBER_OF_STUDENTS][i];
 					sg->numberOfStudents=tmpString.toInt();
+					if(fieldNumber[FIELD_COMMENTS]!=DO_NOT_IMPORT)
+						sg->comments=fieldList[FIELD_COMMENTS][i];
 					assert(ok);
 					assert(!fieldList[FIELD_GROUP_NUMBER_OF_STUDENTS].isEmpty());
 
@@ -2132,6 +2159,8 @@ void Import::importCSVStudents(QWidget* parent){
 					sts->name=subgroupName;
 					QString tmpString=fieldList[FIELD_SUBGROUP_NUMBER_OF_STUDENTS][i];
 					sts->numberOfStudents=tmpString.toInt();
+					if(fieldNumber[FIELD_COMMENTS]!=DO_NOT_IMPORT)
+						sts->comments=fieldList[FIELD_COMMENTS][i];
 					assert(ok);
 					assert(!fieldList[FIELD_SUBGROUP_NUMBER_OF_STUDENTS].isEmpty());
 
@@ -2198,6 +2227,7 @@ void Import::importCSVActivities(QWidget* parent){
 	fieldNumber[FIELD_MIN_DAYS]=IMPORT_DEFAULT_ITEM;
 	fieldNumber[FIELD_MIN_DAYS_WEIGHT]=IMPORT_DEFAULT_ITEM;
 	fieldNumber[FIELD_MIN_DAYS_CONSECUTIVE]=IMPORT_DEFAULT_ITEM;
+	fieldNumber[FIELD_COMMENTS]=IMPORT_DEFAULT_ITEM;
 
 	int ok;
 
@@ -2661,6 +2691,10 @@ void Import::importCSVActivities(QWidget* parent){
 			if(duration>0){
 				bool tmp=gt.rules.addSimpleActivityFast(newParent, activityid, 0, teachers_names, subject_name, activity_tags_names,
 					students_names, duration, duration, active, true, -1, numberOfStudents);
+				if(fieldNumber[FIELD_COMMENTS]!=DO_NOT_IMPORT){
+					assert(!gt.rules.activitiesList.isEmpty());
+					gt.rules.activitiesList.last()->comments=fieldList[FIELD_COMMENTS][i];
+				}
 				activityid++;
 				if(tmp){
 					count++;
@@ -2723,6 +2757,11 @@ void Import::importCSVActivities(QWidget* parent){
 					teachers_names, subject_name, activity_tags_names, students_names,
 					nsplit, totalduration, durations,
 					active, minD, weight, force, true, -1, numberOfStudents);
+				if(fieldNumber[FIELD_COMMENTS]!=DO_NOT_IMPORT){
+					assert(gt.rules.activitiesList.count()>=nsplit);
+					for(int j=1; j<=nsplit; j++)
+						gt.rules.activitiesList.at(gt.rules.activitiesList.count()-j)->comments=fieldList[FIELD_COMMENTS][i];
+				}
 				activityid+=nsplit;
 				if(tmp){
 					count++;

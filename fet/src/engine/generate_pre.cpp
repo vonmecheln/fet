@@ -16536,7 +16536,7 @@ void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTim
 			if(notAllowedTimesPercentages[i][j]>=THRESHOLD)
 				nIncompatible[i]++;
 		
-		//min days - no
+		//min days between activities - no
 		
 		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 			//students max days per week

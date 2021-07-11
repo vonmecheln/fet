@@ -469,7 +469,7 @@ void TimetableGenerateMultipleForm::start(){
 	
 	QString destDir=OUTPUT_DIR+FILE_SEP+"timetables"+FILE_SEP+s2+"-multi";
 	if(dir.exists(destDir)){
-		QMessageBox::warning(this, tr("FET information"), tr("The directory %1 exists and might not be empty,"
+		QMessageBox::warning(this, tr("FET information"), tr("The directory %1 exists and might not be empty"
 		 " (it might contain old files). You need to manually remove all contents of this directory AND the directory itself (or rename it)"
 		 " and then you can generate multiple timetables.")
 		 .arg(QDir::toNativeSeparators(destDir)));

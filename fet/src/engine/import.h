@@ -71,7 +71,9 @@ static const int FIELD_MIN_DAYS=18;
 static const int FIELD_MIN_DAYS_WEIGHT=19;
 static const int FIELD_MIN_DAYS_CONSECUTIVE=20;
 
-static const int NUMBER_OF_FIELDS=21;
+static const int FIELD_COMMENTS=21;
+
+static const int NUMBER_OF_FIELDS=22;
 
 class Import: public QObject{
 	Q_OBJECT
