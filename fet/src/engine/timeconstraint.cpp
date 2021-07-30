@@ -35128,7 +35128,7 @@ QString ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3::getDetailedDescript
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("A teacher must respect the maximum number of activity tags per day from N1, N2, N3");s+="\n";
+	s+=tr("A teacher must respect a maximum of two activity tags per day from N1, N2, N3");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
@@ -35179,12 +35179,12 @@ double ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3::fitness(Solution& c,
 	}
 
 	for(int d=0; d<r.nDaysPerWeek; d++){
-		int cnt[3];
-		cnt[0]=cnt[1]=cnt[2]=0;
+		int cnt[4];
+		cnt[0]=cnt[1]=cnt[2]=cnt[3]=0; //cnt[3] means none.
 
 		for(int h=0; h<r.nHoursPerDay; h++){
 			if(crtTeacherTimetableActivityTag[d][h]>=0){
-				assert(crtTeacherTimetableActivityTag[d][h]<3);
+				assert(crtTeacherTimetableActivityTag[d][h]<4);
 				cnt[crtTeacherTimetableActivityTag[d][h]]++;
 			}
 		}
@@ -35323,7 +35323,7 @@ QString ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3::getDetailedDescrip
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("All teachers must respect the maximum number of activity tags per day from N1, N2, N3");s+="\n";
+	s+=tr("All teachers must respect a maximum of two activity tags per day from N1, N2, N3");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
@@ -35374,12 +35374,12 @@ double ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3::fitness(Solution& c
 		}
 
 		for(int d=0; d<r.nDaysPerWeek; d++){
-			int cnt[3];
-			cnt[0]=cnt[1]=cnt[2]=0;
+			int cnt[4];
+			cnt[0]=cnt[1]=cnt[2]=cnt[3]=0; //cnt[3] means none.
 
 			for(int h=0; h<r.nHoursPerDay; h++){
 				if(crtTeacherTimetableActivityTag[d][h]>=0){
-					assert(crtTeacherTimetableActivityTag[d][h]<3);
+					assert(crtTeacherTimetableActivityTag[d][h]<4);
 					cnt[crtTeacherTimetableActivityTag[d][h]]++;
 				}
 			}

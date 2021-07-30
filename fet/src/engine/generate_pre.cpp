@@ -1852,7 +1852,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 
-	t=computeN1N2N3();
+	t=computeN1N2N3(parent);
 	if(!t)
 		return false;
 
@@ -16199,20 +16199,26 @@ void computeMustComputeTimetableTeachers()
 	}
 }
 
-bool computeN1N2N3()
+bool computeN1N2N3(QWidget* parent)
 {
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
 		teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[i]=-1.0;
 	}
+	
+	//bool haveN1N2N3=false;
 
 	bool ok=true;
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+			//haveN1N2N3=true;
+
 			ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3* tn=(ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3*)gt.rules.internalTimeConstraintsList[i];
 
 			teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tn->teacher_ID]=100.0;
 		}
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+			//haveN1N2N3=true;
+
 			//ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3* tn=(ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3*)gt.rules.internalTimeConstraintsList[i];
 
 			//teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tn->teacher_ID]=100.0;
@@ -16238,19 +16244,37 @@ bool computeN1N2N3()
 
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		Activity* act=&gt.rules.internalActivitiesList[ai];
+		int cnt=0;
 		for(const QString& tag : qAsConst(act->activityTagsNames)){
 			if(tag=="N1"){
 				activityTagN1N2N3[ai]=0;
-				break;
+				cnt++;
 			}
 			else if(tag=="N2"){
 				activityTagN1N2N3[ai]=1;
-				break;
+				cnt++;
 			}
 			else if(tag=="N3"){
 				activityTagN1N2N3[ai]=2;
-				break;
+				cnt++;
 			}
+		}
+		if(cnt==0){
+			activityTagN1N2N3[ai]=3; //none
+		}
+		else if(teachersWithN1N2N3ForActivities[ai].count()>=1 && cnt>=2){
+			ok=false;
+		
+			QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from N1, N2, and N3, and you have"
+			 " at least a constraint of type teacher(s) max two activity tags from N1, N2, and N3 per day for the teacher(s) of this activity - please correct that.")
+			 .arg(gt.rules.internalActivitiesList[ai].id);
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+			 1, 0 );
+					
+			if(t==0)
+				return false;
+			
 		}
 	}
 
@@ -16272,11 +16296,11 @@ bool computeFixedActivities(QWidget* parent)
 		if(notAllowedSlots==gt.rules.nHoursPerWeek){
 			ok=false;
 		
-			QString s=GeneratePreTranslate::tr("Activity with id=%1 has no allowed slot - please correct that").arg(gt.rules.internalActivitiesList[ai].id);
+			QString s=GeneratePreTranslate::tr("Activity with id=%1 has no allowed slot - please correct that.").arg(gt.rules.internalActivitiesList[ai].id);
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );
-				 	
+					
 			if(t==0)
 				return false;
 		}
@@ -16374,12 +16398,12 @@ bool homeRoomsAreOk(QWidget* parent)
 		if(nHoursRequiredForRoom[r]>nHoursAvailableForRoom[r]){
 			ok=false;
 
-			QString s=GeneratePreTranslate::tr("Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that")
+			QString s=GeneratePreTranslate::tr("Room %1 has not enough slots for home rooms constraints (requested %2, available %3) - please correct that.")
 			  .arg(gt.rules.internalRoomsList[r]->name).arg(nHoursRequiredForRoom[r]).arg(nHoursAvailableForRoom[r]);
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );
-				 	
+					
 			if(t==0)
 				return false;
 		}

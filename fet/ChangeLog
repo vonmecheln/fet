@@ -2373,3 +2373,8 @@ Versions 6.1.0 - 6.1.v
 	- Added the import/export of comments from/to CSV (comma separated values) files (suggested by Darren McDonald).
 	- Added two new example files from South Africa, by Eric Carolus.
 	- Updated the Russian translation, by Alexey Chernous.
+- Version 6.1.1
+	- Crash bugs fixed, when using the constraints teacher(s) max two activity tags from N1, N2, and N3 (in the Mornings-Afternoons mode)
+	and there were activities having none of these tags. Reported by Mohamed Ait Ichou. Other minor bugs were fixed in these constraints
+	(the description of the constraints, and an activity should not have more than one tag from these three, if using these constraints relating
+	to its teacher(s)).

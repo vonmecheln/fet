@@ -769,7 +769,7 @@ extern Matrix1D<double> teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages;
 extern Matrix1D<int> activityTagN1N2N3;
 extern Matrix1D<QList<int>> teachersWithN1N2N3ForActivities;
 
-bool computeN1N2N3();
+bool computeN1N2N3(QWidget* parent);
 
 
 ////////BEGIN rooms

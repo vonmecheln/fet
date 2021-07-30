@@ -23367,8 +23367,8 @@ impossibleteachersminmorningsafternoonsperweek:
 			for(int tch : qAsConst(act->iTeachersList)){
 				if(teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tch]>=0){
 					assert(teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tch]==100);
-					int cnt[3];
-					cnt[0]=cnt[1]=cnt[2]=0;
+					int cnt[4]; //cnt[3] is for activities which have no tag from N1, N2, or N3. Crash bug fixed on 2021-07-25.
+					cnt[0]=cnt[1]=cnt[2]=cnt[3]=0;
 					for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d]))
 						if(!conflActivities[newtime].contains(ai2)){
 							int actTag=activityTagN1N2N3[ai2];
