@@ -34,6 +34,8 @@ public:
 
 public slots:
 	void addCurrentConstraint();
+	
+	void swap();
 };
 
 #endif

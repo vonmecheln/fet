@@ -30,6 +30,8 @@ ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::ModifyConst
 	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
 	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 
+	connect(swapPushButton, SIGNAL(clicked()), this, SLOT(swap()));
+
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 
@@ -135,4 +137,12 @@ void ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::ok()
 void ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::cancel()
 {
 	this->close();
+}
+
+void ModifyConstraintStudentsMinGapsBetweenOrderedPairOfActivityTagsForm::swap()
+{
+	int t1=firstActivityTagComboBox->currentIndex();
+	int t2=secondActivityTagComboBox->currentIndex();
+	firstActivityTagComboBox->setCurrentIndex(t2);
+	secondActivityTagComboBox->setCurrentIndex(t1);
 }

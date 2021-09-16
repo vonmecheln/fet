@@ -69,12 +69,12 @@ public:
 	static void writeReportForMultiple(QWidget* parent, const QString& description, bool begin);
 	
 	//the following functions return a single html table (needed for html file export and printing)
-	static QString singleSubgroupsTimetableDaysHorizontalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags, bool repeatNames, QList<int> subgroupsSortedOrder=QList<int>());
-	static QString singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags, bool repeatNames, QList<int> subgroupsSortedOrder=QList<int>());
-	static QString singleSubgroupsTimetableTimeHorizontalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, QList<int> subgroupsSortedOrder=QList<int>());
-	static QString singleSubgroupsTimetableTimeVerticalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, QList<int> subgroupsSortedOrder=QList<int>());
-	static QString singleSubgroupsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, QList<int> subgroupsSortedOrder=QList<int>());
-	static QString singleSubgroupsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, QList<int> subgroupsSortedOrder=QList<int>());
+	static QString singleSubgroupsTimetableDaysHorizontalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static QString singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static QString singleSubgroupsTimetableTimeHorizontalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static QString singleSubgroupsTimetableTimeVerticalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static QString singleSubgroupsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static QString singleSubgroupsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
 	static QString singleGroupsTimetableDaysHorizontalHtml(int htmlLevel, int group, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
 	static QString singleGroupsTimetableDaysVerticalHtml(int htmlLevel, int group, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
 	static QString singleGroupsTimetableTimeHorizontalHtml(int htmlLevel, int maxGroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
@@ -138,7 +138,7 @@ private:
 	static bool addActivitiesWithSameStartingTime(QList<int>& allActivities, int hour);
 
 	//the following functions write the conflicts text and the xml files
-	static void writeSubgroupsTimetableXml(QWidget* parent, const QString& xmlfilename);
+	static void writeSubgroupsTimetableXml(QWidget* parent, const QString& xmlfilename, const QList<int>& subgroupsSortedOrder=QList<int>());
 	static void writeTeachersTimetableXml(QWidget* parent, const QString& xmlfilename);
 	static void writeActivitiesTimetableXml(QWidget* parent, const QString& xmlfilename);
 	static void writeConflictsTxt(QWidget* parent, const QString& filename, const QString& saveTime, int placedActivities);
@@ -146,12 +146,12 @@ private:
 	//the following functions write the css and html timetable files
 	static void writeIndexHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeStylesheetCss(QWidget* parent, const QString& cssfilename, const QString& saveTime, int placedActivities);
-	static void writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, QList<int> subgroupsSortedOrder=QList<int>());
-	static void writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, QList<int> subgroupsSortedOrder=QList<int>());
-	static void writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, QList<int> subgroupsSortedOrder=QList<int>());
-	static void writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, QList<int> subgroupsSortedOrder=QList<int>());
-	static void writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, QList<int> subgroupsSortedOrder=QList<int>());
-	static void writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, QList<int> subgroupsSortedOrder=QList<int>());
+	static void writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static void writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static void writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static void writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static void writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static void writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, const QList<int>& subgroupsSortedOrder=QList<int>());
 	static void writeGroupsTimetableDaysHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeGroupsTimetableDaysVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);

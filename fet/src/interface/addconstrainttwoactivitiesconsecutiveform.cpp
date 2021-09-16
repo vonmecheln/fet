@@ -157,7 +157,6 @@ void AddConstraintTwoActivitiesConsecutiveForm::filterChanged(){
 
 	if(secondActivitiesComboBox->count()>=2)
 		secondActivitiesComboBox->setCurrentIndex(1);
-
 	else if(secondActivitiesComboBox->count()>=1)
 		secondActivitiesComboBox->setCurrentIndex(0);
 }

@@ -7144,7 +7144,7 @@ double ConstraintTeachersMaxGapsPerMorningAndAfternoon::fitness(Solution& c, Rul
 
 			for(k=0; k<r.nHoursPerDay; k++)
 				if(teachersMatrix[i][2*j+1][k]>0){
-					assert(!breakDayHour[2*j+1][k] && !teacherNotAvailableDayHour[i][2*j][k+1]);
+					assert(!breakDayHour[2*j+1][k] && !teacherNotAvailableDayHour[i][2*j+1][k]);
 					break;
 				}
 

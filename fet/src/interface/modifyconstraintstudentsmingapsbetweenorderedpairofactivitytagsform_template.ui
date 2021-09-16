@@ -172,6 +172,13 @@
    <item>
     <layout class="QHBoxLayout">
      <item>
+      <widget class="QPushButton" name="swapPushButton">
+       <property name="text">
+        <string comment="Interchange (swap) the two selected activity tags in the dialog">Swap</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="okPushButton">
        <property name="text">
         <string>Ok</string>

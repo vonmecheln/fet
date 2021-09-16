@@ -37,6 +37,8 @@ public:
 public slots:
 	void ok();
 	void cancel();
+	
+	void swap();
 };
 
 #endif

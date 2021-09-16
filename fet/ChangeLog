@@ -2393,5 +2393,9 @@ Versions 6.1.0 - 6.1.v
 	- Updated the French translation, by Pascal Cohen.
 - Version 6.1.4
 	- Added a new constraint, two sets of activities are ordered (suggested by math and Volker Dirr).
-	- Added the option to sort alphabetically the subgroups in view/print/HTML timetables (suggested by math).
+	- Added the option to sort alphabetically the subgroups in the view/print/HTML timetables (suggested by math).
 	- Minor improvements (some of them were suggested by math).
+- Version 6.1.5
+	- Crash bug fixed, when using the constraint teachers max gaps per morning and afternoon (in the Mornings-Afternoons mode) (reported by hellal sofiane yazid).
+	- Now also the subgroups' XML timetables are saved in ordered form, if the user selected this option.
+	- Code and interface improvements.

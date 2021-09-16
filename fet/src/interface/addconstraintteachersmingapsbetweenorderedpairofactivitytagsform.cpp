@@ -31,6 +31,8 @@ AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::AddConstraintT
 	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
+	connect(swapPushButton, SIGNAL(clicked()), this, SLOT(swap()));
+
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
@@ -45,6 +47,14 @@ AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::AddConstraintT
 
 	updateFirstActivityTagComboBox();
 	updateSecondActivityTagComboBox();
+
+	if(firstActivityTagComboBox->count()>=1)
+		firstActivityTagComboBox->setCurrentIndex(0);
+
+	if(secondActivityTagComboBox->count()>=2)
+		secondActivityTagComboBox->setCurrentIndex(1);
+	else if(secondActivityTagComboBox->count()>=1)
+		secondActivityTagComboBox->setCurrentIndex(0);
 }
 
 AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::~AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm()
@@ -114,4 +124,12 @@ void AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::addCurren
 			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
+}
+
+void AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::swap()
+{
+	int t1=firstActivityTagComboBox->currentIndex();
+	int t2=secondActivityTagComboBox->currentIndex();
+	firstActivityTagComboBox->setCurrentIndex(t2);
+	secondActivityTagComboBox->setCurrentIndex(t1);
 }
