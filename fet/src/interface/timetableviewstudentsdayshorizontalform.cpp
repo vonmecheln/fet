@@ -35,6 +35,9 @@
 #include <QList>
 #include <QSet>
 
+//std::stable_sort
+#include <algorithm>
+
 #include <QMessageBox>
 
 #include <QTableWidget>
@@ -221,6 +224,7 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 	shownComboBox->addItem(tr("Years"));
 	shownComboBox->addItem(tr("Groups"));
 	shownComboBox->addItem(tr("Subgroups"));
+	shownComboBox->addItem(tr("Subgroups (sorted)"));
 
 	shownComboBox->setCurrentIndex(-1);
 
@@ -470,6 +474,36 @@ void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 						subgroupsSet.insert(sts->name);
 					}
 		}
+		if(subgroupsListWidget->count()>0)
+			subgroupsListWidget->setCurrentRow(0);
+		connect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
+		if(subgroupsListWidget->count()>0)
+			subgroupChanged(subgroupsListWidget->item(0)->text());
+	}
+	else if(shownComboBox->currentIndex()==3){
+		//only subgroups shown, sorted alphabetically.
+		yearsListWidget->hide();
+		groupsListWidget->hide();
+		subgroupsListWidget->show();
+		
+		disconnect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));
+		subgroupsListWidget->clear();
+		
+		QSet<QString> subgroupsSet;
+		QList<StudentsSubgroup*> lst;
+		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
+			StudentsYear* sty=gt.rules.augmentedYearsList[i];
+			for(StudentsGroup* stg : qAsConst(sty->groupsList))
+				for(StudentsSubgroup* sts : qAsConst(stg->subgroupsList))
+					if(!subgroupsSet.contains(sts->name)){
+						lst.append(sts);
+						subgroupsSet.insert(sts->name);
+					}
+		}
+		std::stable_sort(lst.begin(), lst.end(), subgroupsAscending);
+		for(StudentsSubgroup* s : qAsConst(lst))
+			subgroupsListWidget->addItem(s->name);
+		
 		if(subgroupsListWidget->count()>0)
 			subgroupsListWidget->setCurrentRow(0);
 		connect(subgroupsListWidget, SIGNAL(currentTextChanged(const QString&)), this, SLOT(subgroupChanged(const QString&)));

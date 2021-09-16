@@ -5280,10 +5280,7 @@ And can also define between each interval a constraint of break time.
 
 In this way can integrate the time constraints specific to 2 versions customized in official FET.
 
-315---------------------------------------------------------
-From math and Volker Dirr (on forum):
-
-Constraint order two lists of activities, so that the first list is before the second list.
+315------------------DONE-----------------------------------
 
 316---------------------------------------------------------
 From math (on forum):
@@ -5348,32 +5345,7 @@ option "change room to..." could appear with a sub menu holding all the availabl
 I'd be really happy if you could integrate such functionality and I'm a bit afraid that you say something like "sorry dude, this is out of scope since FET does
 not focus on post-generation optimization at all".
 
-318---------------------------------------------------------
-From Volker Dirr:
-
-since multicore CPU are more and more normal today we should rethink 
-about that.
-as i can see it will be impossible ((also?) because of speed) to 
-generate only ONE timetable with multicore.
-so the "only" variant is to generate multiple tables on different core.
-
-we should already "prepare" the source for this. (it mainly just mean: 
-tidy up. no real "new code" is needed for that.)
-
-so it mean:
-all variables that didn't change after generate_pre is calculated should 
-be store in a single structure. so all cores can read from that single 
-structure.
-
-all variables in generate that will be "modified" while generating 
-should be stored into an other structure.
-
-by that we prepared the source for later. so as soon as we start coding 
-multi core support we just need to do a list of that structure, so each 
-core get/care about its own data.
-
-(even if we never add multicore this tidy up migth be useful, since it 
-might help reading the source)
+318-------------------DONE since FET-6.0.0------------------
 
 319---------------------------------------------------------
 From Vangelis Karafillidis:
@@ -6556,21 +6528,7 @@ different subject. By showing both teachers timetable side-by-side and highlight
 This is just a suggestion, definitely not very important. But, it will be very easy this way to modify timetable without breaking constraints, if we get some
 swap requests.
 
-382---------------------------------------------------------
-From math (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=4102.0
-
-When selecting "Timetable -> Students -> Days horizontal", the timetable dialog shows up. When selecting "Year" or "Group" in the dropdown combo box, the
-order of entries corresponds to the order of "Data -> Students -> Years" resp. "Data -> Student -> Groups". Hence, if I'm sorting the data entries there,
-the list of entries is sorted in the timetable dialog as well.
-
-As a matter of fact, it is not possible to sort the subgroups, since they spread over multiple groups. As a consequence, the list of entries in
-"Timetable -> Students -> Days horizontal" is unsorted as well, when selecting "Subgroups" in the dropdown combo box.
-
-Would it be possible to sort the list of subgroups in that dialog by default?
-
-If there is a scenario where the list should better remain unsorted, would it be possible to add an option to "Settings -> Advanced -> Sort list of subgroups"?
+382-----------------------DONE------------------------------
 
 383---------------------------------------------------------
 From Nagendra (on forum):
@@ -7418,3 +7376,13 @@ I do have another suggestion that would help with block planning (that may also 
 (for time constraints, etc.) it would be very helpful if there were a way to select all activities that do not have a specific activity tag,
 teacher, etc. Would it be possible to add something like a "not" checkbox, or equivalent, to use when filtering activities? Very often with block planning
 I have restrictions that should apply to all courses except one, so this would be very useful.
+
+435---------------------------------------------------------
+From djm (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4874.0
+
+He suggests the possibility to change the duration of all the activities multiplied/divided by a factor. For instance, if in reality the activities
+have duration 50 minutes and they would like an activity to have 5 x 10 minutes duration. So all activities can be easily edited with a single click.
+
+Liviu Lalescu: This would be unfortunately a probably very seldom used facility. The user could use find+replace on the .fet XML file instead.

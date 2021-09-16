@@ -385,7 +385,9 @@ bool TimeConstraint::canBeUsedInOfficialMode()
 	 type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MIN_HOURS_DAILY ||
 
 	 type==CONSTRAINT_ACTIVITY_ENDS_TEACHERS_DAY ||
-	 type==CONSTRAINT_ACTIVITIES_END_TEACHERS_DAY)
+	 type==CONSTRAINT_ACTIVITIES_END_TEACHERS_DAY ||
+
+	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED)
 		return true;
 
 	return false;
@@ -625,7 +627,9 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 	 type==CONSTRAINT_TEACHERS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR ||
 	 type==CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR ||
 	 type==CONSTRAINT_STUDENTS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR ||
-	 type==CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR)
+	 type==CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR ||
+	
+	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED)
 		return true;
 
 	return false;
@@ -752,7 +756,9 @@ bool TimeConstraint::canBeUsedInBlockPlanningMode()
 
 	 //block-planning
 	 type==CONSTRAINT_MAX_TOTAL_ACTIVITIES_FROM_SET_IN_SELECTED_TIME_SLOTS ||
-	 type==CONSTRAINT_MAX_GAPS_BETWEEN_ACTIVITIES)
+	 type==CONSTRAINT_MAX_GAPS_BETWEEN_ACTIVITIES ||
+	
+	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED)
 		return true;
 
 	return false;
@@ -879,7 +885,9 @@ bool TimeConstraint::canBeUsedInTermsMode()
 
 	//terms
 	 type==CONSTRAINT_ACTIVITIES_MAX_IN_A_TERM ||
-	 type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS)
+	 type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS ||
+	
+	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED)
 		return true;
 
 	return false;
@@ -15710,6 +15718,350 @@ bool ConstraintTwoActivitiesOrdered::canRepairWrongDayOrHour(Rules& r)
 }
 
 bool ConstraintTwoActivitiesOrdered::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTwoSetsOfActivitiesOrdered::ConstraintTwoSetsOfActivitiesOrdered()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED;
+}
+
+ConstraintTwoSetsOfActivitiesOrdered::ConstraintTwoSetsOfActivitiesOrdered(double wp, const QList<int>& firstActsIds, const QList<int>& secondActsIds)
+	: TimeConstraint(wp)
+{
+	this->firstActivitiesIdsList = firstActsIds;
+	this->secondActivitiesIdsList=secondActsIds;
+	this->type = CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED;
+}
+
+bool ConstraintTwoSetsOfActivitiesOrdered::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	QSet<int> sf;
+	
+	this->firstActivitiesIndicesList.clear();
+	for(int firstActivityId : qAsConst(this->firstActivitiesIdsList)){
+		int i=r.activitiesHash.value(firstActivityId, r.nInternalActivities);
+	
+		if(i<r.nInternalActivities){
+			this->firstActivitiesIndicesList.append(i);
+			sf.insert(i);
+		}
+	}
+
+	if(this->firstActivitiesIndicesList.isEmpty()){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (its first set of activities is empty/incorrect):\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+
+	////////
+
+	bool intersect=false;
+	this->secondActivitiesIndicesList.clear();
+	for(int secondActivityId : qAsConst(this->secondActivitiesIdsList)){
+		int i=r.activitiesHash.value(secondActivityId, r.nInternalActivities);
+	
+		if(i<r.nInternalActivities){
+			this->secondActivitiesIndicesList.append(i);
+			if(sf.contains(i)){
+				intersect=true;
+				break;
+			}
+		}
+	}
+
+	if(this->secondActivitiesIndicesList.isEmpty()){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (its second set of activities is empty/incorrect):\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+
+	if(intersect){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (the first set of activities has activities in common with the second set of activities):\n%1")
+			 .arg(this->getDetailedDescription(r)));
+		return false;
+	}
+	
+	return true;
+}
+
+bool ConstraintTwoSetsOfActivitiesOrdered::hasInactiveActivities(Rules& r)
+{
+	bool okf=false;
+	for(int ai : this->firstActivitiesIdsList)
+		if(!r.inactiveActivities.contains(ai)){
+			okf=true;
+			break;
+		}
+
+	bool oks=false;
+	for(int ai : this->secondActivitiesIdsList)
+		if(!r.inactiveActivities.contains(ai)){
+			oks=true;
+			break;
+		}
+	
+	if(!okf || !oks)
+		return true;
+	return false;
+}
+
+QString ConstraintTwoSetsOfActivitiesOrdered::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintTwoSetsOfActivitiesOrdered>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<First_Activities_Ids_Set>\n";
+	s+="		<Number_of_Activities>"+QString::number(this->firstActivitiesIdsList.count())+"</Number_of_Activities>\n";
+	for(int ai : qAsConst(this->firstActivitiesIdsList))
+		s+="		<Activity_Id>"+CustomFETString::number(ai)+"</Activity_Id>\n";
+	s+="	</First_Activities_Ids_Set>\n";
+	s+="	<Second_Activities_Ids_Set>\n";
+	s+="		<Number_of_Activities>"+QString::number(this->secondActivitiesIdsList.count())+"</Number_of_Activities>\n";
+	for(int ai : qAsConst(this->secondActivitiesIdsList))
+		s+="		<Activity_Id>"+CustomFETString::number(ai)+"</Activity_Id>\n";
+	s+="	</Second_Activities_Ids_Set>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintTwoSetsOfActivitiesOrdered>\n";
+	return s;
+}
+
+QString ConstraintTwoSetsOfActivitiesOrdered::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	
+	s=tr("Two sets of activities ordered:");
+	s+=" ";
+	
+	s+=tr("first activities set:");
+	s+=" ";
+	s+=tr("NA:%1", "Number of activities").arg(this->firstActivitiesIdsList.count());
+	s+=", ";
+	for(int ai : qAsConst(this->firstActivitiesIdsList))
+		s+=tr("Id:%1").arg(ai)+", ";
+
+	s+=tr("second activities set:");
+	s+=" ";
+	s+=tr("NA:%1", "Number of activities").arg(this->secondActivitiesIdsList.count());
+	s+=", ";
+	for(int ai : qAsConst(this->secondActivitiesIdsList))
+		s+=tr("Id:%1").arg(ai)+", ";
+
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+
+	return begin+s+end;
+}
+
+QString ConstraintTwoSetsOfActivitiesOrdered::getDetailedDescription(Rules& r)
+{
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("Two sets of activities ordered (each activity from the second set must begin at any time in the week later than each activity"
+	 " from the first set has finished)"); s+="\n";
+
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	s+=tr("First activities set ids:");
+	s+="\n";
+	s+=tr("Number of activities=%1").arg(this->firstActivitiesIdsList.count());s+="\n";
+	for(int ai : qAsConst(this->firstActivitiesIdsList)){
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			.arg(ai).arg(getActivityDetailedDescription(r, ai));
+		s+="\n";
+	}
+
+	s+=tr("Second activities set ids:");
+	s+="\n";
+	s+=tr("Number of activities=%1").arg(this->secondActivitiesIdsList.count());s+="\n";
+	for(int ai : qAsConst(this->secondActivitiesIdsList)){
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			.arg(ai).arg(getActivityDetailedDescription(r, ai));
+		s+="\n";
+	}
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTwoSetsOfActivitiesOrdered::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+
+	assert(r.internalStructureComputed);
+
+	int totalBroken=0;
+	
+	for(int i=0; i<this->firstActivitiesIndicesList.count(); i++){
+		for(int j=0; j<this->secondActivitiesIndicesList.count(); j++){
+			nbroken=0;
+
+			int firstActivityIndex=this->firstActivitiesIndicesList[i];
+			int secondActivityIndex=this->secondActivitiesIndicesList[j];
+
+			if(c.times[firstActivityIndex]!=UNALLOCATED_TIME && c.times[secondActivityIndex]!=UNALLOCATED_TIME){
+				int fd=c.times[firstActivityIndex]%r.nDaysPerWeek; //the day when first activity was scheduled
+				int fh=c.times[firstActivityIndex]/r.nDaysPerWeek
+				  + r.internalActivitiesList[firstActivityIndex].duration-1; //the end hour of first activity
+				int sd=c.times[secondActivityIndex]%r.nDaysPerWeek; //the day when second activity was scheduled
+				int sh=c.times[secondActivityIndex]/r.nDaysPerWeek; //the start hour of second activity
+				
+				if(!(fd<sd || (fd==sd && fh<sh)))
+					nbroken=1;
+			}
+		
+			assert(nbroken==0 || nbroken==1);
+			
+			totalBroken+=nbroken;
+
+			if(conflictsString!=nullptr && nbroken>0){
+				int firstActivityId=this->firstActivitiesIdsList[i];
+				int secondActivityId=this->secondActivitiesIdsList[j];
+			
+				QString s=tr("Time constraint two sets of activities ordered broken for first activity with id=%1 (%2) and "
+				 "second activity with id=%3 (%4), increases conflicts total by %5", "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
+				 .arg(firstActivityId)
+				 .arg(getActivityDetailedDescription(r, firstActivityId))
+				 .arg(secondActivityId)
+				 .arg(getActivityDetailedDescription(r, secondActivityId))
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
+	
+				dl.append(s);
+				cl.append(weightPercentage/100*nbroken);
+		
+				*conflictsString+= s+"\n";
+			}
+		}
+	}
+	
+	if(weightPercentage==100)
+		assert(totalBroken==0);
+	return totalBroken * weightPercentage/100;
+}
+
+void ConstraintTwoSetsOfActivitiesOrdered::removeUseless(Rules& r)
+{
+	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	
+	QList<int> tmpList;
+
+	tmpList.clear();
+	for(int ai : qAsConst(this->firstActivitiesIdsList)){
+		Activity* act=r.activitiesPointerHash.value(ai, nullptr);
+		if(act!=nullptr){
+			assert(act->id==ai);
+			tmpList.append(act->id);
+		}
+	}
+	this->firstActivitiesIdsList=tmpList;
+	
+	tmpList.clear();
+	for(int ai : qAsConst(this->secondActivitiesIdsList)){
+		Activity* act=r.activitiesPointerHash.value(ai, nullptr);
+		if(act!=nullptr){
+			assert(act->id==ai);
+			tmpList.append(act->id);
+		}
+	}
+	this->secondActivitiesIdsList=tmpList;
+	
+	r.internalStructureComputed=false;
+}
+
+bool ConstraintTwoSetsOfActivitiesOrdered::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	
+	for(int ai : qAsConst(this->firstActivitiesIdsList))
+		if(ai==a->id)
+			return true;
+	for(int ai : qAsConst(this->secondActivitiesIdsList))
+		if(ai==a->id)
+			return true;
+	return false;
+}
+
+bool ConstraintTwoSetsOfActivitiesOrdered::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintTwoSetsOfActivitiesOrdered::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTwoSetsOfActivitiesOrdered::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTwoSetsOfActivitiesOrdered::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+		
+	return false;
+}
+
+bool ConstraintTwoSetsOfActivitiesOrdered::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintTwoSetsOfActivitiesOrdered::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+	
+	return true;
+}
+
+bool ConstraintTwoSetsOfActivitiesOrdered::repairWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
 	assert(0); //should check hasWrongDayOrHour, firstly

@@ -110,7 +110,7 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLabel" name="simultaneousActivitiesTextLabel">
+        <widget class="QLabel" name="selectedActivitiesTextLabel">
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>

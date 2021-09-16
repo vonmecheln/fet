@@ -473,6 +473,11 @@ SOURCES += \
 	interface/constrainttwoactivitiesorderedform.cpp \
 	interface/addconstrainttwoactivitiesorderedform.cpp \
 	interface/modifyconstrainttwoactivitiesorderedform.cpp \
+	\
+	interface/constrainttwosetsofactivitiesorderedform.cpp \
+	interface/addconstrainttwosetsofactivitiesorderedform.cpp \
+	interface/modifyconstrainttwosetsofactivitiesorderedform.cpp \
+	\
 	interface/constrainttwoactivitiesorderedifsamedayform.cpp \
 	interface/addconstrainttwoactivitiesorderedifsamedayform.cpp \
 	interface/modifyconstrainttwoactivitiesorderedifsamedayform.cpp \
@@ -1385,6 +1390,11 @@ HEADERS += \
 	interface/constrainttwoactivitiesorderedform.h \
 	interface/addconstrainttwoactivitiesorderedform.h \
 	interface/modifyconstrainttwoactivitiesorderedform.h \
+	\
+	interface/constrainttwosetsofactivitiesorderedform.h \
+	interface/addconstrainttwosetsofactivitiesorderedform.h \
+	interface/modifyconstrainttwosetsofactivitiesorderedform.h \
+	\
 	interface/constrainttwoactivitiesorderedifsamedayform.h \
 	interface/addconstrainttwoactivitiesorderedifsamedayform.h \
 	interface/modifyconstrainttwoactivitiesorderedifsamedayform.h \
@@ -2289,6 +2299,11 @@ FORMS += \
 	interface/constrainttwoactivitiesorderedform_template.ui \
 	interface/addconstrainttwoactivitiesorderedform_template.ui \
 	interface/modifyconstrainttwoactivitiesorderedform_template.ui \
+	\
+	interface/constrainttwosetsofactivitiesorderedform_template.ui \
+	interface/addconstrainttwosetsofactivitiesorderedform_template.ui \
+	interface/modifyconstrainttwosetsofactivitiesorderedform_template.ui \
+	\
 	interface/constrainttwoactivitiesorderedifsamedayform_template.ui \
 	interface/addconstrainttwoactivitiesorderedifsamedayform_template.ui \
 	interface/modifyconstrainttwoactivitiesorderedifsamedayform_template.ui \

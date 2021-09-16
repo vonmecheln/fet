@@ -5023,6 +5023,12 @@ void Rules::updateConstraintsAfterRemoval()
 			 !existingActivitiesIds.contains(c->secondActivityId) )
 				toBeRemovedTime.append(tc);
 		}
+		else if(tc->type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED){
+			ConstraintTwoSetsOfActivitiesOrdered* c=(ConstraintTwoSetsOfActivitiesOrdered*)tc;
+			c->removeUseless(*this);
+			if(c->firstActivitiesIdsList.isEmpty() || c->secondActivitiesIdsList.isEmpty())
+				toBeRemovedTime.append(tc);
+		}
 		else if(tc->type==CONSTRAINT_TWO_ACTIVITIES_ORDERED_IF_SAME_DAY){
 			ConstraintTwoActivitiesOrderedIfSameDay* c=(ConstraintTwoActivitiesOrderedIfSameDay*)tc;
 			if( !existingActivitiesIds.contains(c->firstActivityId) ||
@@ -8201,6 +8207,9 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				}
 				else if(xmlReader.name()==QString("ConstraintTwoActivitiesOrdered")){
 					crt_constraint=readTwoActivitiesOrdered(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTwoSetsOfActivitiesOrdered")){
+					crt_constraint=readTwoSetsOfActivitiesOrdered(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintTwoActivitiesOrderedIfSameDay")){
 					crt_constraint=readTwoActivitiesOrderedIfSameDay(xmlReader, xmlReadingLog);
@@ -15118,6 +15127,113 @@ TimeConstraint* Rules::readTwoActivitiesOrdered(QXmlStreamReader& xmlReader, Fak
 			QString text=xmlReader.readElementText();
 			cn->secondActivityId=text.toInt();
 			xmlReadingLog+="    Read second activity id="+CustomFETString::number(cn->secondActivityId)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readTwoSetsOfActivitiesOrdered(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTwoSetsOfActivitiesOrdered"));
+	ConstraintTwoSetsOfActivitiesOrdered* cn=new ConstraintTwoSetsOfActivitiesOrdered();
+	int rnfa=-1, rnsa=-1; //read number of first/second activities
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("First_Activities_Ids_Set")){
+			xmlReadingLog+="    Reading first activities ids set\n";
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="     Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Number_of_Activities")){
+					QString text=xmlReader.readElementText();
+					rnfa=text.toInt();
+					xmlReadingLog+="     Read number of activities="+CustomFETString::number(rnfa)+"\n";
+				}
+				else if(xmlReader.name()==QString("Activity_Id")){
+					QString text=xmlReader.readElementText();
+					cn->firstActivitiesIdsList.append(text.toInt());
+					xmlReadingLog+="     Read activity id="+CustomFETString::number(cn->firstActivitiesIdsList.last())+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+			if(rnfa==-1){
+				xmlReader.raiseError(tr("Field %1 not met").arg("Number_of_Activities"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else if(rnfa!=cn->firstActivitiesIdsList.count()){
+				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of read %2 fields").arg("Number_of_Activities").arg("Activity_Id"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+		}
+		else if(xmlReader.name()==QString("Second_Activities_Ids_Set")){
+			xmlReadingLog+="    Reading second activities ids set\n";
+			assert(xmlReader.isStartElement());
+			while(xmlReader.readNextStartElement()){
+				xmlReadingLog+="     Found "+xmlReader.name().toString()+" tag\n";
+				if(xmlReader.name()==QString("Number_of_Activities")){
+					QString text=xmlReader.readElementText();
+					rnsa=text.toInt();
+					xmlReadingLog+="     Read number of activities="+CustomFETString::number(rnsa)+"\n";
+				}
+				else if(xmlReader.name()==QString("Activity_Id")){
+					QString text=xmlReader.readElementText();
+					cn->secondActivitiesIdsList.append(text.toInt());
+					xmlReadingLog+="     Read activity id="+CustomFETString::number(cn->secondActivitiesIdsList.last())+"\n";
+				}
+				else{
+					unrecognizedXmlTags.append(xmlReader.name().toString());
+					unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+					unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+					xmlReader.skipCurrentElement();
+					xmlReaderNumberOfUnrecognizedFields++;
+				}
+			}
+			if(rnsa==-1){
+				xmlReader.raiseError(tr("Field %1 not met").arg("Number_of_Activities"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			else if(rnsa!=cn->secondActivitiesIdsList.count()){
+				xmlReader.raiseError(tr("The value in field %1 is not equal with the number of read %2 fields").arg("Number_of_Activities").arg("Activity_Id"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
 		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());

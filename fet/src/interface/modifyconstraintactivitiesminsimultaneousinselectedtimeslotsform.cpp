@@ -141,13 +141,8 @@ ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::ModifyConstrai
 	for(int i=0; i<ctr->activitiesIds.count(); i++){
 		int actId=ctr->activitiesIds.at(i);
 		this->selectedActivitiesList.append(actId);
-		Activity* act=nullptr;
-		for(int k=0; k<gt.rules.activitiesList.size(); k++){
-			act=gt.rules.activitiesList[k];
-			if(act->id==actId)
-				break;
-		}
-		assert(act);
+		Activity *act=gt.rules.activitiesPointerHash.value(actId, nullptr);
+		assert(act!=nullptr);
 		this->selectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
 	}
 

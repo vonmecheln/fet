@@ -20,7 +20,6 @@
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitiessamestartingdayform.h"
-#include "spaceconstraint.h"
 
 #include <QListWidget>
 #include <QAbstractItemView>
@@ -169,7 +168,7 @@ void AddConstraintActivitiesSameStartingDayForm::addConstraint()
 
 	if(this->selectedActivitiesList.count()==0){
 		QMessageBox::warning(this, tr("FET information"),
-			tr("Empty list of simultaneous activities"));
+			tr("Empty list of selected activities"));
 		return;
 	}
 	if(this->selectedActivitiesList.count()==1){

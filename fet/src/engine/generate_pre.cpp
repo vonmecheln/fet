@@ -12615,7 +12615,7 @@ void computeConstrTwoActivitiesOrdered()
 		inverseConstrTwoActivitiesOrderedActivities[i].clear();
 	}
 
-	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TWO_ACTIVITIES_ORDERED){
 			ConstraintTwoActivitiesOrdered* c2=(ConstraintTwoActivitiesOrdered*)gt.rules.internalTimeConstraintsList[i];
 			
@@ -12642,6 +12642,34 @@ void computeConstrTwoActivitiesOrdered()
 				inverseConstrTwoActivitiesOrderedPercentages[sai][j]=c2->weightPercentage;
 			}
 		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED){
+			ConstraintTwoSetsOfActivitiesOrdered* c2=(ConstraintTwoSetsOfActivitiesOrdered*)gt.rules.internalTimeConstraintsList[i];
+			
+			for(int fai : qAsConst(c2->firstActivitiesIndicesList)){
+				for(int sai : qAsConst(c2->secondActivitiesIndicesList)){
+					//direct
+					int j=constrTwoActivitiesOrderedActivities[fai].indexOf(sai);
+					if(j==-1){
+						constrTwoActivitiesOrderedActivities[fai].append(sai);
+						constrTwoActivitiesOrderedPercentages[fai].append(c2->weightPercentage);
+					}
+					else if(j>=0 && constrTwoActivitiesOrderedPercentages[fai].at(j)<c2->weightPercentage){
+						constrTwoActivitiesOrderedPercentages[fai][j]=c2->weightPercentage;
+					}
+
+					//inverse
+					j=inverseConstrTwoActivitiesOrderedActivities[sai].indexOf(fai);
+					if(j==-1){
+						inverseConstrTwoActivitiesOrderedActivities[sai].append(fai);
+						inverseConstrTwoActivitiesOrderedPercentages[sai].append(c2->weightPercentage);
+					}
+					else if(j>=0 && inverseConstrTwoActivitiesOrderedPercentages[sai].at(j)<c2->weightPercentage){
+						inverseConstrTwoActivitiesOrderedPercentages[sai][j]=c2->weightPercentage;
+					}
+				}
+			}
+		}
+	}
 }
 
 void computeConstrTwoActivitiesOrderedIfSameDay()

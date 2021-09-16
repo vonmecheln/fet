@@ -168,7 +168,7 @@ public:
 	GroupActivitiesInInitialOrderList groupActivitiesInInitialOrderList;
 	
 	//For faster operation
-	//not internal, based on activity id / teacher name / students set name and constraints list
+	//not internal, but based on activity id / teacher name / students set name and constraints list
 	QHash<int, Activity*> activitiesPointerHash; //first is the id, second is the pointer to the activity in Rules::activitiesList
 	QSet<ConstraintBasicCompulsoryTime*> bctSet;
 	QSet<ConstraintBreakTimes*> btSet;
@@ -851,6 +851,7 @@ private:
 	TimeConstraint* readTwoActivitiesGrouped(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readThreeActivitiesGrouped(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTwoActivitiesOrdered(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTwoSetsOfActivitiesOrdered(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTwoActivitiesOrderedIfSameDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	
 	TimeConstraint* readActivityPreferredTimes(QXmlStreamReader& xml, FakeString& xmlReadingLog);

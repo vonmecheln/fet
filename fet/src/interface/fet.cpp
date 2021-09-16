@@ -271,6 +271,10 @@ void usage(QTextStream* out, const QString& error)
 		"\t\tPB is either true or false and represents if you want -X- (for true) or --- (for false) in the generated timetables for the "
 		"break slots (default true).\n"
 		"\n"
+		"\t--sortsubgroups=SS\n"
+		"\t\tSS is either true or false and represents if you want the timetables of the subgroups to be sorted alphabetically by subgroup name "
+		"(default false).\n"
+		"\n"
 		"\t--dividetimeaxisbydays=DTAD\n"
 		"\t\tDTAD is either true or false, represents if you want the HTML timetables with time-axis divided by days (default false).\n"
 		"\n"
@@ -440,6 +444,7 @@ void FetSettings::readSimulationParameters()
 	QString ver=newSettings.value("version", "-1").toString();
 	
 	TIMETABLE_HTML_LEVEL=newSettings.value("html-level", "2").toInt();
+	TIMETABLES_SUBGROUPS_SORTED=newSettings.value("timetables-subgroups-sorted", "false").toBool();
 	TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=newSettings.value("print-activity-tags", "true").toBool();
 	PRINT_DETAILED_HTML_TIMETABLES=newSettings.value("print-detailed-timetables", "true").toBool();
 	PRINT_DETAILED_HTML_TEACHERS_FREE_PERIODS=newSettings.value("print-detailed-teachers-free-periods-timetables", "true").toBool();
@@ -548,6 +553,7 @@ void FetSettings::writeSimulationParameters()
 	settings.setValue("check-for-updates", checkForUpdates);
 	settings.setValue("html-level", TIMETABLE_HTML_LEVEL);
 	settings.setValue("print-activity-tags", TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
+	settings.setValue("timetables-subgroups-sorted", TIMETABLES_SUBGROUPS_SORTED);
 	settings.setValue("print-detailed-timetables", PRINT_DETAILED_HTML_TIMETABLES);
 	settings.setValue("print-detailed-teachers-free-periods-timetables", PRINT_DETAILED_HTML_TEACHERS_FREE_PERIODS);
 	settings.setValue("print-activities-with-same-starting-time", PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME);
@@ -1086,6 +1092,8 @@ int main(int argc, char **argv)
 
 		FET_LANGUAGE="en_US";
 		
+		TIMETABLES_SUBGROUPS_SORTED=false;
+		
 		PRINT_NOT_AVAILABLE_TIME_SLOTS=true;
 		
 		PRINT_BREAK_TIME_SLOTS=true;
@@ -1171,6 +1179,10 @@ int main(int argc, char **argv)
 			else if(s.left(13)=="--printbreak="){
 				if(s.right(5)=="false")
 					PRINT_BREAK_TIME_SLOTS=false;
+			}
+			else if(s.left(16)=="--sortsubgroups="){
+				if(s.right(4)=="true")
+					TIMETABLES_SUBGROUPS_SORTED=true;
 			}
 			else if(s.left(23)=="--dividetimeaxisbydays="){
 				if(s.right(4)=="true")

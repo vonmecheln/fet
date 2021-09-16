@@ -62,6 +62,8 @@ DaysForm::DaysForm(QWidget* parent): QDialog(parent)
 		realNames.append(gt.rules.daysOfTheWeek[i]);
 		daysListWidget->addItem(tr("%1. %2", "%1 is the day index, %2 is the day name").arg(i+1).arg(gt.rules.daysOfTheWeek[i]));
 	}
+	if(daysListWidget->count()>=1)
+		daysListWidget->setCurrentRow(0);
 	connect(nDaysSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfDaysChanged()));
 
 	centerWidgetOnScreen(this);

@@ -2391,3 +2391,7 @@ Versions 6.1.0 - 6.1.v
 	- The dialogs of adding constraints of type two activities ordered, two activities ordered if same day, two activities consecutive, two activities grouped,
 	and three activities grouped were improved. Now there are selected different activities (the first two or three ones), not only the first. Suggested by math.
 	- Updated the French translation, by Pascal Cohen.
+- Version 6.1.4
+	- Added a new constraint, two sets of activities are ordered (suggested by math and Volker Dirr).
+	- Added the option to sort alphabetically the subgroups in view/print/HTML timetables (suggested by math).
+	- Minor improvements (some of them were suggested by math).

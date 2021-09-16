@@ -92,6 +92,7 @@
 #include "constrainttwoactivitiesgroupedform.h"
 #include "constraintthreeactivitiesgroupedform.h"
 #include "constrainttwoactivitiesorderedform.h"
+#include "constrainttwosetsofactivitiesorderedform.h"
 #include "constrainttwoactivitiesorderedifsamedayform.h"
 #include "constraintactivitiespreferredtimeslotsform.h"
 #include "constraintactivitiespreferredstartingtimesform.h"
@@ -473,6 +474,8 @@ Solution best_solution;
 QString conflictsString; //the string that contains a log of the broken constraints
 QString conflictsStringTitle;
 
+bool TIMETABLES_SUBGROUPS_SORTED=false;
+
 bool WRITE_TIMETABLE_CONFLICTS=true;
 
 bool WRITE_TIMETABLES_STATISTICS=true;
@@ -783,6 +786,9 @@ FetMainForm::FetMainForm()
 	
 	settingsShowVirtualRoomsInTimetablesAction->setCheckable(true);
 	settingsShowVirtualRoomsInTimetablesAction->setChecked(SHOW_VIRTUAL_ROOMS_IN_TIMETABLES);
+
+	settingsOrderSubgroupsInTimetablesAction->setCheckable(true);
+	settingsOrderSubgroupsInTimetablesAction->setChecked(TIMETABLES_SUBGROUPS_SORTED);
 
 	settingsPrintDetailedTimetablesAction->setCheckable(true);
 	settingsPrintDetailedTimetablesAction->setChecked(PRINT_DETAILED_HTML_TIMETABLES);
@@ -1175,6 +1181,7 @@ void FetMainForm::createActionsForConstraints()
 	dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction = new QAction(this);
 	dataTimeConstraintsActivitiesSameStartingDayAction = new QAction(this);
 	dataTimeConstraintsTwoActivitiesOrderedAction = new QAction(this);
+	dataTimeConstraintsTwoSetsOfActivitiesOrderedAction = new QAction(this);
 	dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction = new QAction(this);
 	dataTimeConstraintsTeachersMaxHoursContinuouslyAction = new QAction(this);
 	dataTimeConstraintsTeacherMaxHoursContinuouslyAction = new QAction(this);
@@ -1403,6 +1410,7 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction_triggered()));
 	connect(dataTimeConstraintsActivitiesSameStartingDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesSameStartingDayAction_triggered()));
 	connect(dataTimeConstraintsTwoActivitiesOrderedAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoActivitiesOrderedAction_triggered()));
+	connect(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction_triggered()));
 	connect(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction_triggered()));
 	connect(dataTimeConstraintsTeachersMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxHoursContinuouslyAction_triggered()));
 	connect(dataTimeConstraintsTeacherMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxHoursContinuouslyAction_triggered()));
@@ -1664,6 +1672,7 @@ void FetMainForm::retranslateConstraints()
 	dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between room changes for all teachers", nullptr));
 	dataTimeConstraintsActivitiesSameStartingDayAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities has same starting day (any hours)", nullptr));
 	dataTimeConstraintsTwoActivitiesOrderedAction->setText(QCoreApplication::translate("FetMainForm_template", "Two activities are ordered", nullptr));
+	dataTimeConstraintsTwoSetsOfActivitiesOrderedAction->setText(QCoreApplication::translate("FetMainForm_template", "Two sets of activities are ordered", nullptr));
 	dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Two activities are ordered if they are on the same day", nullptr));
 	dataTimeConstraintsTeachersMaxHoursContinuouslyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours continuously for all teachers", nullptr));
 	dataTimeConstraintsTeacherMaxHoursContinuouslyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours continuously for a teacher", nullptr));
@@ -1951,6 +1960,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
 		menuActivities_others_2_time_constraints->addSeparator();
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction);
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction);
 		menuActivities_others_2_time_constraints->addSeparator();
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
@@ -2275,6 +2285,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
 		menuActivities_others_2_time_constraints->addSeparator();
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction);
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction);
 		menuActivities_others_2_time_constraints->addSeparator();
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
@@ -2469,6 +2480,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction);
 		menuActivities_others_2_time_constraints->addSeparator();
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction);
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction);
 		menuActivities_others_2_time_constraints->addSeparator();
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
@@ -2654,6 +2666,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
 		menuActivities_others_2_time_constraints->addSeparator();
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction);
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction);
 		menuActivities_others_2_time_constraints->addSeparator();
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesConsecutiveAction);
@@ -4952,6 +4965,25 @@ void FetMainForm::dataTimeConstraintsTwoActivitiesOrderedAction_triggered()
 	}
 
 	ConstraintTwoActivitiesOrderedForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTwoSetsOfActivitiesOrderedAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTwoSetsOfActivitiesOrderedForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }
@@ -10121,6 +10153,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 		" students min hours per morning with allowed empty mornings").arg(tr("true"));
 	s+="\n";
 
+	s+=tr("60")+QString(". ")+tr("Write HTML timetables for subgroups in sorted order will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -10170,6 +10205,8 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	settingsShowSubgroupsInActivityPlanningAction->setChecked(SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING);
 
 	///
+	TIMETABLES_SUBGROUPS_SORTED=false;
+	
 	WRITE_TIMETABLE_CONFLICTS=true;
 
 	WRITE_TIMETABLES_STATISTICS=true;
@@ -10316,6 +10353,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	settingsShowVirtualRoomsInTimetablesAction->setChecked(false);
 	SHOW_VIRTUAL_ROOMS_IN_TIMETABLES=false;
 	
+	settingsOrderSubgroupsInTimetablesAction->setChecked(false);
+	TIMETABLES_SUBGROUPS_SORTED=false;
+	
 	BEEP_AT_END_OF_GENERATION=true;
 	ENABLE_COMMAND_AT_END_OF_GENERATION=false;
 	commandAtEndOfGeneration=QString("");
@@ -10351,6 +10391,11 @@ void FetMainForm::on_settingsPrintActivityTagsAction_toggled()
 void FetMainForm::on_settingsShowVirtualRoomsInTimetablesAction_toggled()
 {
 	SHOW_VIRTUAL_ROOMS_IN_TIMETABLES=settingsShowVirtualRoomsInTimetablesAction->isChecked();
+}
+
+void FetMainForm::on_settingsOrderSubgroupsInTimetablesAction_toggled()
+{
+	TIMETABLES_SUBGROUPS_SORTED=settingsOrderSubgroupsInTimetablesAction->isChecked();
 }
 
 void FetMainForm::on_settingsPrintDetailedTimetablesAction_toggled()

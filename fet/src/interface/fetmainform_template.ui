@@ -1224,6 +1224,8 @@
      <addaction name="settingsPrintNotAvailableSlotsAction"/>
      <addaction name="settingsPrintBreakSlotsAction"/>
      <addaction name="separator"/>
+     <addaction name="settingsOrderSubgroupsInTimetablesAction"/>
+     <addaction name="separator"/>
      <addaction name="settingsDivideTimetablesByDaysAction"/>
      <addaction name="settingsDuplicateVerticalNamesAction"/>
      <addaction name="separator"/>
@@ -2156,6 +2158,17 @@
   <action name="helpTermsAction">
    <property name="text">
     <string comment="Terms is a FET mode, it means something like periods.">Terms (Finland)</string>
+   </property>
+  </action>
+  <action name="settingsOrderSubgroupsInTimetablesAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Order subgroups' timetables alphabetically</string>
    </property>
   </action>
  </widget>

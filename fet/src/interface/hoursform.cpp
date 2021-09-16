@@ -62,6 +62,8 @@ HoursForm::HoursForm(QWidget* parent): QDialog(parent)
 		realNames.append(gt.rules.hoursOfTheDay[i]);
 		hoursListWidget->addItem(tr("%1. %2", "%1 is the hours index, %2 is the hours name").arg(i+1).arg(gt.rules.hoursOfTheDay[i]));
 	}
+	if(hoursListWidget->count()>=1)
+		hoursListWidget->setCurrentRow(0);
 	connect(nHoursSpinBox, SIGNAL(valueChanged(int)), this, SLOT(numberOfHoursChanged()));
 
 	centerWidgetOnScreen(this);

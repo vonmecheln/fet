@@ -1,4 +1,4 @@
-This is FET version 6.1.3
+This is FET version 6.1.4
 
 
 Program description:
@@ -312,6 +312,10 @@ Running FET:
 		--printbreak=PB
 			PB is either true or false and represents if you want -X- (for true) or --- (for false) in the generated timetables for the break slots
 			(default true).
+
+		--sortsubgroups=SS
+			SS is either true or false and represents if you want the timetables of the subgroups to be sorted alphabetically by subgroup name 
+			(default false).\n"
 
 		--dividetimeaxisbydays=DTAD
 			DTAD is either true or false, represents if you want the HTML timetables with time-axis divided by days (default false).

@@ -292,6 +292,8 @@ const int CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR		
 const int CONSTRAINT_STUDENTS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR			=174;
 //End   for mornings-afternoons
 
+const int CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED									=175;
+
 QString getActivityDetailedDescription(Rules& r, int id);
 
 /**
@@ -3231,6 +3233,52 @@ public:
 	QString getDetailedDescription(Rules& r);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTwoSetsOfActivitiesOrdered: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTwoSetsOfActivitiesOrdered)
+
+public:
+	QList<int> firstActivitiesIdsList;
+
+	QList<int> secondActivitiesIdsList;
+
+	//internal variables
+	QList<int> firstActivitiesIndicesList;
+
+	QList<int> secondActivitiesIndicesList;
+
+	ConstraintTwoSetsOfActivitiesOrdered();
+
+	ConstraintTwoSetsOfActivitiesOrdered(double wp, const QList<int>& firstActsIds, const QList<int>& secondActsIds);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules &r);
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	

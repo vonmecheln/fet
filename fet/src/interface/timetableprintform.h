@@ -61,6 +61,8 @@ public:
 	~TimetablePrintForm();
 
 private:
+	QList<int> subgroupsSortedOrder;
+
 	QComboBox* CBTables;
 	QListWidget* namesList;
 	QPushButton* pbSelectAll;

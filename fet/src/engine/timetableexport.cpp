@@ -71,6 +71,9 @@ using namespace std;
 
 #include <QDir>
 
+//std::stable_sort
+#include <algorithm>
+
 //Represents the current status of the simulation - running or stopped.
 //extern bool simulation_running;
 
@@ -321,6 +324,15 @@ void TimetableExport::getNumberOfPlacedActivities(int& number1, int& number2)
 }
 
 void TimetableExport::writeSimulationResults(QWidget* parent){
+	QList<int> subgroupsSortedOrder;
+	QList<StudentsSubgroup*> lst;
+	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++)
+		lst.append(gt.rules.internalSubgroupsList[subgroup]);
+	if(TIMETABLES_SUBGROUPS_SORTED)
+		std::stable_sort(lst.begin(), lst.end(), subgroupsAscending);
+	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++)
+		subgroupsSortedOrder.append(lst.at(subgroup)->indexInInternalSubgroupsList);
+
 	QDir dir;
 	
 	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
@@ -409,19 +421,19 @@ void TimetableExport::writeSimulationResults(QWidget* parent){
 	
 	//subgroups
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
-	writeSubgroupsTimetableDaysHorizontalHtml(parent, s, sTime, na);
+	writeSubgroupsTimetableDaysHorizontalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
-	writeSubgroupsTimetableDaysVerticalHtml(parent, s, sTime, na);
+	writeSubgroupsTimetableDaysVerticalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-		writeSubgroupsTimetableTimeHorizontalHtml(parent, s, sTime, na);
+		writeSubgroupsTimetableTimeHorizontalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-		writeSubgroupsTimetableTimeVerticalHtml(parent, s, sTime, na);
+		writeSubgroupsTimetableTimeVerticalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	} else {
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-		writeSubgroupsTimetableTimeHorizontalDailyHtml(parent, s, sTime, na);
+		writeSubgroupsTimetableTimeHorizontalDailyHtml(parent, s, sTime, na, subgroupsSortedOrder);
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-		writeSubgroupsTimetableTimeVerticalDailyHtml(parent, s, sTime, na);
+		writeSubgroupsTimetableTimeVerticalDailyHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	}
 	//groups
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
@@ -565,6 +577,14 @@ void TimetableExport::writeSimulationResults(QWidget* parent){
 }
 
 void TimetableExport::writeHighestStageResults(QWidget* parent){
+	QList<int> subgroupsSortedOrder;
+	QList<StudentsSubgroup*> lst;
+	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++)
+		lst.append(gt.rules.internalSubgroupsList[subgroup]);
+	if(TIMETABLES_SUBGROUPS_SORTED)
+		std::stable_sort(lst.begin(), lst.end(), subgroupsAscending);
+	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++)
+		subgroupsSortedOrder.append(lst.at(subgroup)->indexInInternalSubgroupsList);
 	QDir dir;
 	
 	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
@@ -653,19 +673,19 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	
 	//subgroups
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
-	writeSubgroupsTimetableDaysHorizontalHtml(parent, s, sTime, na);
+	writeSubgroupsTimetableDaysHorizontalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
-	writeSubgroupsTimetableDaysVerticalHtml(parent, s, sTime, na);
+	writeSubgroupsTimetableDaysVerticalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-		writeSubgroupsTimetableTimeHorizontalHtml(parent, s, sTime, na);
+		writeSubgroupsTimetableTimeHorizontalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-		writeSubgroupsTimetableTimeVerticalHtml(parent, s, sTime, na);
+		writeSubgroupsTimetableTimeVerticalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	} else {
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-		writeSubgroupsTimetableTimeHorizontalDailyHtml(parent, s, sTime, na);
+		writeSubgroupsTimetableTimeHorizontalDailyHtml(parent, s, sTime, na, subgroupsSortedOrder);
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-		writeSubgroupsTimetableTimeVerticalDailyHtml(parent, s, sTime, na);
+		writeSubgroupsTimetableTimeVerticalDailyHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	}
 	//groups
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
@@ -1144,6 +1164,14 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 }
 
 void TimetableExport::writeSimulationResults(QWidget* parent, int n, bool highest){
+	QList<int> subgroupsSortedOrder;
+	QList<StudentsSubgroup*> lst;
+	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++)
+		lst.append(gt.rules.internalSubgroupsList[subgroup]);
+	if(TIMETABLES_SUBGROUPS_SORTED)
+		std::stable_sort(lst.begin(), lst.end(), subgroupsAscending);
+	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++)
+		subgroupsSortedOrder.append(lst.at(subgroup)->indexInInternalSubgroupsList);
 	QDir dir;
 	
 	QString OUTPUT_DIR_TIMETABLES=OUTPUT_DIR+FILE_SEP+"timetables";
@@ -1233,19 +1261,19 @@ void TimetableExport::writeSimulationResults(QWidget* parent, int n, bool highes
 	writeIndexHtml(parent, s, sTime, na);
 	//subgroups
 	s=finalDestDir+SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
-	writeSubgroupsTimetableDaysHorizontalHtml(parent, s, sTime, na);
+	writeSubgroupsTimetableDaysHorizontalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	s=finalDestDir+SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
-	writeSubgroupsTimetableDaysVerticalHtml(parent, s, sTime, na);
+	writeSubgroupsTimetableDaysVerticalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
 		s=finalDestDir+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-		writeSubgroupsTimetableTimeHorizontalHtml(parent, s, sTime, na);
+		writeSubgroupsTimetableTimeHorizontalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 		s=finalDestDir+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-		writeSubgroupsTimetableTimeVerticalHtml(parent, s, sTime, na);
+		writeSubgroupsTimetableTimeVerticalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	} else {
 		s=finalDestDir+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
-		writeSubgroupsTimetableTimeHorizontalDailyHtml(parent, s, sTime, na);
+		writeSubgroupsTimetableTimeHorizontalDailyHtml(parent, s, sTime, na, subgroupsSortedOrder);
 		s=finalDestDir+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
-		writeSubgroupsTimetableTimeVerticalDailyHtml(parent, s, sTime, na);
+		writeSubgroupsTimetableTimeVerticalDailyHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	}
 	//groups
 	s=finalDestDir+GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
@@ -1489,6 +1517,14 @@ void TimetableExport::writeReportForMultiple(QWidget* parent, const QString& des
 }
 
 void TimetableExport::writeSimulationResultsCommandLine(QWidget* parent, const QString& outputDirectory){ //outputDirectory contains trailing FILE_SEP
+	QList<int> subgroupsSortedOrder;
+	QList<StudentsSubgroup*> lst;
+	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++)
+		lst.append(gt.rules.internalSubgroupsList[subgroup]);
+	if(TIMETABLES_SUBGROUPS_SORTED)
+		std::stable_sort(lst.begin(), lst.end(), subgroupsAscending);
+	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++)
+		subgroupsSortedOrder.append(lst.at(subgroup)->indexInInternalSubgroupsList);
 	QString add=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 	if(add.right(4)==".fet")
 		add=add.left(add.length()-4);
@@ -1551,24 +1587,24 @@ void TimetableExport::writeSimulationResultsCommandLine(QWidget* parent, const Q
 	//subgroups
 	s=add+SUBGROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
 	s.prepend(outputDirectory);
-	TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(parent, s, sTime, na);
+	TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	s=add+SUBGROUPS_TIMETABLE_DAYS_VERTICAL_FILENAME_HTML;
 	s.prepend(outputDirectory);
-	TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(parent, s, sTime, na);
+	TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	if(!DIVIDE_HTML_TIMETABLES_WITH_TIME_AXIS_BY_DAYS){
 		s=add+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		s.prepend(outputDirectory);
-		TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(parent, s, sTime, na);
+		TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 		s=add+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		s.prepend(outputDirectory);
-		TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(parent, s, sTime, na);
+		TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	} else {
 		s=add+SUBGROUPS_TIMETABLE_TIME_HORIZONTAL_FILENAME_HTML;
 		s.prepend(outputDirectory);
-		TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(parent, s, sTime, na);
+		TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(parent, s, sTime, na, subgroupsSortedOrder);
 		s=add+SUBGROUPS_TIMETABLE_TIME_VERTICAL_FILENAME_HTML;
 		s.prepend(outputDirectory);
-		TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(parent, s, sTime, na);
+		TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(parent, s, sTime, na, subgroupsSortedOrder);
 	}
 	//groups
 	s=add+GROUPS_TIMETABLE_DAYS_HORIZONTAL_FILENAME_HTML;
@@ -2666,7 +2702,7 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 }
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
-void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities){
+void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, QList<int> subgroupsSortedOrder){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
 
@@ -2713,7 +2749,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent,
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n\n";
 
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-		tos<<singleSubgroupsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, subgroup, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES);
+		tos<<singleSubgroupsTimetableDaysHorizontalHtml(TIMETABLE_HTML_LEVEL, subgroup, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES, subgroupsSortedOrder);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos<<"  </body>\n</html>\n";
@@ -2726,7 +2762,7 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent,
 }
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
-void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities){
+void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, QList<int> subgroupsSortedOrder){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
 
@@ -2773,7 +2809,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 	tos<<"    </ul>\n    <p>&nbsp;</p>\n";
 
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++){
-		tos<<singleSubgroupsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, subgroup, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES);
+		tos<<singleSubgroupsTimetableDaysVerticalHtml(TIMETABLE_HTML_LEVEL, subgroup, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES, subgroupsSortedOrder);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 
@@ -2787,7 +2823,7 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 }
 
 //XHTML generation code by Volker Dirr (https://timetabling.de/)
-void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities){
+void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, QList<int> subgroupsSortedOrder){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
 
@@ -2816,7 +2852,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 	tos<<writeHead(true, placedActivities, false);
 	
 	QSet<int> tmp;
-	tos << singleSubgroupsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubgroups, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES);
+	tos << singleSubgroupsTimetableTimeVerticalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubgroups, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES, subgroupsSortedOrder);
 
 	tos << "  </body>\n</html>\n";
 
@@ -2828,7 +2864,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 }
 
 //XHTML generation code modified by Volker Dirr (timetabling.de) from old html generation code
-void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities){
+void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, QList<int> subgroupsSortedOrder){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
 
@@ -2857,7 +2893,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 	tos<<writeHead(true, placedActivities, false);
 	
 	QSet<int> tmp;
-	tos << singleSubgroupsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubgroups, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES);
+	tos << singleSubgroupsTimetableTimeHorizontalHtml(TIMETABLE_HTML_LEVEL, gt.rules.nInternalSubgroups, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES, subgroupsSortedOrder);
 
 	tos << "  </body>\n</html>\n";
 
@@ -2869,7 +2905,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 }
 
 // by Volker Dirr
-void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities){
+void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, QList<int> subgroupsSortedOrder){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
 
@@ -2900,7 +2936,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 		QSet<int> tmp;
-		tos<<singleSubgroupsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubgroups, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES);
+		tos<<singleSubgroupsTimetableTimeVerticalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubgroups, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES, subgroupsSortedOrder);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 
@@ -2914,7 +2950,7 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 }
 
 // by Volker Dirr
-void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities){
+void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, QList<int> subgroupsSortedOrder){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
 
@@ -2945,7 +2981,7 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* pa
 	
 	for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 		QSet<int> tmp;
-		tos<<singleSubgroupsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubgroups, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES);
+		tos<<singleSubgroupsTimetableTimeHorizontalDailyHtml(TIMETABLE_HTML_LEVEL, day, gt.rules.nInternalSubgroups, tmp, saveTime, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, TIMETABLE_HTML_REPEAT_NAMES, subgroupsSortedOrder);
 		tos<<"    <p class=\"back\"><a href=\""<<"#top\">"<<TimetableExport::tr("back to the top")<<"</a></p>\n\n";
 	}
 	tos << "  </body>\n</html>\n";
@@ -6083,16 +6119,22 @@ QString TimetableExport::writeActivitiesActivityTags(int htmlLevel, const QList<
 //the following functions return a single html table (needed for html file export and printing)
 
 //by Volker Dirr
-QString TimetableExport::singleSubgroupsTimetableDaysHorizontalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags, bool repeatNames){
-	assert(subgroup>=0);
-	assert(subgroup<gt.rules.nInternalSubgroups);
+QString TimetableExport::singleSubgroupsTimetableDaysHorizontalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags, bool repeatNames, QList<int> subgroupsSortedOrder){
+	int realSubgroup;
+	if(subgroupsSortedOrder!=QList<int>())
+		realSubgroup=subgroupsSortedOrder[subgroup];
+	else
+		realSubgroup=subgroup;
+
+	assert(realSubgroup>=0);
+	assert(realSubgroup<gt.rules.nInternalSubgroups);
 	QString tmpString;
-	QString subgroup_name = gt.rules.internalSubgroupsList[subgroup]->name;
+	QString subgroup_name = gt.rules.internalSubgroupsList[realSubgroup]->name;
 	tmpString+="    <table id=\"table_"+hashStudentIDsTimetable.value(subgroup_name)+"\" border=\"1\"";
 	if(subgroup%2==0) tmpString+=" class=\"odd_table\"";
 	else tmpString+=" class=\"even_table\"";
 	tmpString+=">\n";
-		
+	
 	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
 	tmpString+="      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\""+QString::number(gt.rules.nDaysPerWeek)+"\">"+protect2(subgroup_name)+"</th>";
 	if(repeatNames){
@@ -6123,10 +6165,10 @@ QString TimetableExport::singleSubgroupsTimetableDaysHorizontalHtml(int htmlLeve
 		for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 			QList<int> allActivities;
 			allActivities.clear();
-			allActivities<<students_timetable_weekly[subgroup][day][hour];
+			allActivities<<students_timetable_weekly[realSubgroup][day][hour];
 			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-				tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], false, true, printActivityTags, subgroup_name);
+				tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[realSubgroup][day][hour], day, hour, subgroupNotAvailableDayHour[realSubgroup][day][hour], false, true, printActivityTags, subgroup_name);
 			} else{
 				tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
 			}
@@ -6153,11 +6195,17 @@ QString TimetableExport::singleSubgroupsTimetableDaysHorizontalHtml(int htmlLeve
 }
 	
 //by Volker Dirr
-QString TimetableExport::singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags, bool repeatNames){
-	assert(subgroup>=0);
-	assert(subgroup<gt.rules.nInternalSubgroups);
+QString TimetableExport::singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags, bool repeatNames, QList<int> subgroupsSortedOrder){
+	int realSubgroup;
+	if(subgroupsSortedOrder!=QList<int>())
+		realSubgroup=subgroupsSortedOrder[subgroup];
+	else
+		realSubgroup=subgroup;
+
+	assert(realSubgroup>=0);
+	assert(realSubgroup<gt.rules.nInternalSubgroups);
 	QString tmpString;
-	QString subgroup_name = gt.rules.internalSubgroupsList[subgroup]->name;
+	QString subgroup_name = gt.rules.internalSubgroupsList[realSubgroup]->name;
 	tmpString+="    <table id=\"table_"+hashStudentIDsTimetable.value(subgroup_name)+"\" border=\"1\"";
 	if(subgroup%2==0) tmpString+=" class=\"odd_table\"";
 	else tmpString+=" class=\"even_table\"";
@@ -6193,10 +6241,10 @@ QString TimetableExport::singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel,
 		for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 			QList<int> allActivities;
 			allActivities.clear();
-			allActivities<<students_timetable_weekly[subgroup][day][hour];
+			allActivities<<students_timetable_weekly[realSubgroup][day][hour];
 			bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 			if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-				tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], true, false, printActivityTags, subgroup_name);
+				tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[realSubgroup][day][hour], day, hour, subgroupNotAvailableDayHour[realSubgroup][day][hour], true, false, printActivityTags, subgroup_name);
 			} else{
 				tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
 			}
@@ -6223,7 +6271,7 @@ QString TimetableExport::singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel,
 }
 	
 //by Volker Dirr
-QString TimetableExport::singleSubgroupsTimetableTimeVerticalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames){
+QString TimetableExport::singleSubgroupsTimetableTimeVerticalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, QList<int> subgroupsSortedOrder){
 	QString tmpString;
 	tmpString+="    <table border=\"1\">\n";
 	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
@@ -6232,13 +6280,19 @@ QString TimetableExport::singleSubgroupsTimetableTimeVerticalHtml(int htmlLevel,
 	
 	int currentCount=0;
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups && currentCount<maxSubgroups; subgroup++){
+		int realSubgroup;
+		if(subgroupsSortedOrder!=QList<int>())
+			realSubgroup=subgroupsSortedOrder[subgroup];
+		else
+			realSubgroup=subgroup;
+
 		if(!excludedNames.contains(subgroup)){
 			currentCount++;
 			if(htmlLevel>=2)
 				tmpString+="          <th class=\"xAxis\">";
 			else
 				tmpString+="          <th>";
-			tmpString+=gt.rules.internalSubgroupsList[subgroup]->name+"</th>";
+			tmpString+=gt.rules.internalSubgroupsList[realSubgroup]->name+"</th>";
 		}
 	}
 	if(repeatNames){
@@ -6263,16 +6317,22 @@ QString TimetableExport::singleSubgroupsTimetableTimeVerticalHtml(int htmlLevel,
 			tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
 			currentCount=0;
 			for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups && currentCount<maxSubgroups; subgroup++){
+				int realSubgroup;
+				if(subgroupsSortedOrder!=QList<int>())
+					realSubgroup=subgroupsSortedOrder[subgroup];
+				else
+					realSubgroup=subgroup;
+
 				if(!excludedNames.contains(subgroup)){
 					currentCount++;
 					if(day+1==gt.rules.nDaysPerWeek && hour+1==gt.rules.nHoursPerDay)
 						excludedNames<<subgroup;
 					QList<int> allActivities;
 					allActivities.clear();
-					allActivities<<students_timetable_weekly[subgroup][day][hour];
+					allActivities<<students_timetable_weekly[realSubgroup][day][hour];
 					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], false, true, printActivityTags, gt.rules.internalSubgroupsList[subgroup]->name);
+						tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[realSubgroup][day][hour], day, hour, subgroupNotAvailableDayHour[realSubgroup][day][hour], false, true, printActivityTags, gt.rules.internalSubgroupsList[realSubgroup]->name);
 					} else{
 						tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
 					}
@@ -6304,7 +6364,7 @@ QString TimetableExport::singleSubgroupsTimetableTimeVerticalHtml(int htmlLevel,
 }
 
 //by Volker Dirr
-QString TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames){
+QString TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, QList<int> subgroupsSortedOrder){
 	QString tmpString;
 	tmpString+="    <table border=\"1\">\n";
 	tmpString+="      <caption>"+protect2(gt.rules.institutionName)+"</caption>\n";
@@ -6336,6 +6396,12 @@ QString TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(int htmlLeve
 	
 	int currentCount=0;
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups && currentCount<maxSubgroups; subgroup++){
+		int realSubgroup;
+		if(subgroupsSortedOrder!=QList<int>())
+			realSubgroup=subgroupsSortedOrder[subgroup];
+		else
+			realSubgroup=subgroup;
+
 		if(!excludedNames.contains(subgroup)){
 			currentCount++;
 			excludedNames<<subgroup;
@@ -6344,15 +6410,15 @@ QString TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(int htmlLeve
 				tmpString+="          <th class=\"yAxis\">";
 			else
 				tmpString+="          <th>";
-			tmpString+=protect2(gt.rules.internalSubgroupsList[subgroup]->name)+"</th>\n";
+			tmpString+=protect2(gt.rules.internalSubgroupsList[realSubgroup]->name)+"</th>\n";
 			for(int day=0; day<gt.rules.nDaysPerWeek; day++){
 				for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 					QList<int> allActivities;
 					allActivities.clear();
-					allActivities<<students_timetable_weekly[subgroup][day][hour];
+					allActivities<<students_timetable_weekly[realSubgroup][day][hour];
 					bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 					if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-						tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], true, false, printActivityTags, gt.rules.internalSubgroupsList[subgroup]->name);
+						tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[realSubgroup][day][hour], day, hour, subgroupNotAvailableDayHour[realSubgroup][day][hour], true, false, printActivityTags, gt.rules.internalSubgroupsList[realSubgroup]->name);
 					} else{
 						tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
 					}
@@ -6363,7 +6429,7 @@ QString TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(int htmlLeve
 					tmpString+="          <th class=\"yAxis\">";
 				else
 					tmpString+="          <th>";
-				tmpString+=protect2(gt.rules.internalSubgroupsList[subgroup]->name)+"</th>\n";
+				tmpString+=protect2(gt.rules.internalSubgroupsList[realSubgroup]->name)+"</th>\n";
 			}
 			tmpString+="        </tr>\n";
 		}
@@ -6380,7 +6446,7 @@ QString TimetableExport::singleSubgroupsTimetableTimeHorizontalHtml(int htmlLeve
 }
 
 //by Volker Dirr
-QString TimetableExport::singleSubgroupsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames){
+QString TimetableExport::singleSubgroupsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, QList<int> subgroupsSortedOrder){
 	assert(day>=0);
 	assert(day<gt.rules.nDaysPerWeek);
 	
@@ -6391,13 +6457,19 @@ QString TimetableExport::singleSubgroupsTimetableTimeVerticalDailyHtml(int htmlL
 	tmpString+="      <thead>\n        <tr><td colspan=\"2\"></td>";
 	int currentCount=0;
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups && currentCount<maxSubgroups; subgroup++){
+		int realSubgroup;
+		if(subgroupsSortedOrder!=QList<int>())
+			realSubgroup=subgroupsSortedOrder[subgroup];
+		else
+			realSubgroup=subgroup;
+
 		if(!excludedNames.contains(subgroup)){
 			currentCount++;
 			if(htmlLevel>=2)
 				tmpString+="          <th class=\"xAxis\">";
 			else
 				tmpString+="          <th>";
-			tmpString+=gt.rules.internalSubgroupsList[subgroup]->name+"</th>";
+			tmpString+=gt.rules.internalSubgroupsList[realSubgroup]->name+"</th>";
 		}
 	}
 	if(repeatNames){
@@ -6420,16 +6492,22 @@ QString TimetableExport::singleSubgroupsTimetableTimeVerticalDailyHtml(int htmlL
 		tmpString+=protect2(gt.rules.hoursOfTheDay[hour])+"</th>\n";
 		currentCount=0;
 		for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups && currentCount<maxSubgroups; subgroup++){
+			int realSubgroup;
+			if(subgroupsSortedOrder!=QList<int>())
+				realSubgroup=subgroupsSortedOrder[subgroup];
+			else
+				realSubgroup=subgroup;
+
 			if(!excludedNames.contains(subgroup)){
 				currentCount++;
 				if(hour+1==gt.rules.nHoursPerDay)
 					excludedNames<<subgroup;
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][day][hour];
+				allActivities<<students_timetable_weekly[realSubgroup][day][hour];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], false, true, printActivityTags, gt.rules.internalSubgroupsList[subgroup]->name);
+					tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[realSubgroup][day][hour], day, hour, subgroupNotAvailableDayHour[realSubgroup][day][hour], false, true, printActivityTags, gt.rules.internalSubgroupsList[realSubgroup]->name);
 				} else{
 					tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
 				}
@@ -6461,7 +6539,7 @@ QString TimetableExport::singleSubgroupsTimetableTimeVerticalDailyHtml(int htmlL
 }
 
 //by Volker Dirr
-QString TimetableExport::singleSubgroupsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames){
+QString TimetableExport::singleSubgroupsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, QList<int> subgroupsSortedOrder){
 	assert(day>=0);
 	assert(day<gt.rules.nDaysPerWeek);
 	QString tmpString;
@@ -6490,6 +6568,12 @@ QString TimetableExport::singleSubgroupsTimetableTimeHorizontalDailyHtml(int htm
 	tmpString+="      <tbody>\n";
 	int currentCount=0;
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups && currentCount<maxSubgroups; subgroup++){
+		int realSubgroup;
+		if(subgroupsSortedOrder!=QList<int>())
+			realSubgroup=subgroupsSortedOrder[subgroup];
+		else
+			realSubgroup=subgroup;
+
 		if(!excludedNames.contains(subgroup)){
 			currentCount++;
 			excludedNames<<subgroup;
@@ -6499,14 +6583,14 @@ QString TimetableExport::singleSubgroupsTimetableTimeHorizontalDailyHtml(int htm
 				tmpString+="          <th class=\"yAxis\">";
 			else
 				tmpString+="          <th>";
-			tmpString+=gt.rules.internalSubgroupsList[subgroup]->name+"</th>\n";
+			tmpString+=gt.rules.internalSubgroupsList[realSubgroup]->name+"</th>\n";
 			for(int hour=0; hour<gt.rules.nHoursPerDay; hour++){
 				QList<int> allActivities;
 				allActivities.clear();
-				allActivities<<students_timetable_weekly[subgroup][day][hour];
+				allActivities<<students_timetable_weekly[realSubgroup][day][hour];
 				bool activitiesWithSameStartingtime=addActivitiesWithSameStartingTime(allActivities, hour);
 				if(allActivities.size()==1 && !activitiesWithSameStartingtime){  // because i am using colspan or rowspan!!!
-					tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[subgroup][day][hour], day, hour, subgroupNotAvailableDayHour[subgroup][day][hour], true, false, printActivityTags, gt.rules.internalSubgroupsList[subgroup]->name);
+					tmpString+=writeActivityStudents(htmlLevel, students_timetable_weekly[realSubgroup][day][hour], day, hour, subgroupNotAvailableDayHour[realSubgroup][day][hour], true, false, printActivityTags, gt.rules.internalSubgroupsList[realSubgroup]->name);
 				} else{
 					tmpString+=writeActivitiesStudents(htmlLevel, allActivities, printActivityTags);
 				}
@@ -6516,7 +6600,7 @@ QString TimetableExport::singleSubgroupsTimetableTimeHorizontalDailyHtml(int htm
 					tmpString+="          <th class=\"yAxis\">";
 				else
 					tmpString+="          <th>";
-				tmpString+=gt.rules.internalSubgroupsList[subgroup]->name+"</th>\n";
+				tmpString+=gt.rules.internalSubgroupsList[realSubgroup]->name+"</th>\n";
 			}
 			tmpString+="        </tr>\n";
 		}

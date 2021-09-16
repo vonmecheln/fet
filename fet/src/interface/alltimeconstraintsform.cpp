@@ -30,6 +30,7 @@
 #include "modifyconstrainttwoactivitiesgroupedform.h"
 #include "modifyconstraintthreeactivitiesgroupedform.h"
 #include "modifyconstrainttwoactivitiesorderedform.h"
+#include "modifyconstrainttwosetsofactivitiesorderedform.h"
 #include "modifyconstrainttwoactivitiesorderedifsamedayform.h"
 
 #include "modifyconstraintactivitiespreferredtimeslotsform.h"
@@ -1719,6 +1720,12 @@ void AllTimeConstraintsForm::modifyConstraint()
 	//174
 	else if(ctr->type==CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
 		ModifyConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHourForm form(this, (ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//175
+	else if(ctr->type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED){
+		ModifyConstraintTwoSetsOfActivitiesOrderedForm form(this, (ConstraintTwoSetsOfActivitiesOrdered*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

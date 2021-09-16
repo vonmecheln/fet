@@ -51,7 +51,7 @@ public slots:
 private:
 	//the id's of the activities listed in the activities list
 	QList<int> activitiesList;
-	//the id-s of the activities listed in the list of simultaneous activities
+	//the id-s of the activities listed in the list of selected activities
 	QList<int> selectedActivitiesList;
 };
 

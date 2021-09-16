@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.0.0">
+<fet version="6.1.4">
 
 <Mode>Block_Planning</Mode>
 
@@ -1982,6 +1982,21 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMaxGapsBetweenActivities>
+<ConstraintTwoSetsOfActivitiesOrdered>
+	<Weight_Percentage>100</Weight_Percentage>
+	<First_Activities_Ids_Set>
+		<Number_of_Activities>2</Number_of_Activities>
+		<Activity_Id>2</Activity_Id>
+		<Activity_Id>3</Activity_Id>
+	</First_Activities_Ids_Set>
+	<Second_Activities_Ids_Set>
+		<Number_of_Activities>2</Number_of_Activities>
+		<Activity_Id>6</Activity_Id>
+		<Activity_Id>4</Activity_Id>
+	</Second_Activities_Ids_Set>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTwoSetsOfActivitiesOrdered>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

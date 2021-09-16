@@ -163,6 +163,7 @@ private:
 	QAction* dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction;
 	QAction* dataTimeConstraintsActivitiesSameStartingDayAction;
 	QAction* dataTimeConstraintsTwoActivitiesOrderedAction;
+	QAction* dataTimeConstraintsTwoSetsOfActivitiesOrderedAction;
 	QAction* dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction;
 	QAction* dataTimeConstraintsTeachersMaxHoursContinuouslyAction;
 	QAction* dataTimeConstraintsTeacherMaxHoursContinuouslyAction;
@@ -507,6 +508,7 @@ public slots:
 	void dataTimeConstraintsTwoActivitiesGroupedAction_triggered();
 	void dataTimeConstraintsThreeActivitiesGroupedAction_triggered();
 	void dataTimeConstraintsTwoActivitiesOrderedAction_triggered();
+	void dataTimeConstraintsTwoSetsOfActivitiesOrderedAction_triggered();
 	void dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction_triggered();
 	void dataTimeConstraintsActivityPreferredStartingTimeAction_triggered();
 	void dataTimeConstraintsActivityPreferredTimeSlotsAction_triggered();
@@ -793,6 +795,7 @@ public slots:
 
 	void on_settingsTimetableHtmlLevelAction_triggered();
 	void on_settingsPrintActivityTagsAction_toggled();
+	void on_settingsOrderSubgroupsInTimetablesAction_toggled();
 	void on_settingsPrintDetailedTimetablesAction_toggled();
 	void on_settingsPrintDetailedTeachersFreePeriodsTimetablesAction_toggled();
 	void on_settingsPrintNotAvailableSlotsAction_toggled();
