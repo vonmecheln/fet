@@ -313,18 +313,36 @@ extern Matrix1D<int> subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginni
 extern bool haveStudentsAfternoonsEarly;
 
 
-////////BEGIN teachers max gaps per week and per day
+bool computeTeachersMorningsEarlyMaxBeginningsAtSecondHourPercentages(QWidget* parent);
+extern Matrix1D<double> teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage;
+extern Matrix1D<int> teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings;
+
+extern bool haveTeachersMorningsEarly;
+
+
+bool computeSubgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentages(QWidget* parent);
+extern Matrix1D<double> subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage;
+extern Matrix1D<int> subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings;
+
+extern bool haveStudentsMorningsEarly;
+
+
+////////BEGIN teachers max gaps per week and per day and per morning and afternoon
 extern Matrix1D<double> teachersMaxGapsPerWeekPercentage;
 extern Matrix1D<int> teachersMaxGapsPerWeekMaxGaps;
 
 extern Matrix1D<double> teachersMaxGapsPerDayPercentage;
 extern Matrix1D<int> teachersMaxGapsPerDayMaxGaps;
 
+extern Matrix1D<double> teachersMaxGapsPerMorningAndAfternoonPercentage;
+extern Matrix1D<int> teachersMaxGapsPerMorningAndAfternoonMaxGaps;
+
 extern Matrix1D<int> nHoursPerTeacher;
 bool computeNHoursPerTeacher(QWidget* parent);
 bool computeTeachersMaxGapsPerWeekPercentage(QWidget* parent);
 bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent);
-////////END   teachers max gaps per week and per day
+bool computeTeachersMaxGapsPerMorningAndAfternoonPercentage(QWidget* parent);
+////////END   teachers max gaps per week and per day and per morning and afternoon
 
 
 //max gaps per real day - not perfect!!!

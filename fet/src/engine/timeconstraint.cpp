@@ -617,7 +617,15 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 	 type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS ||
 
 	 type==CONSTRAINT_STUDENTS_SET_MAX_REAL_DAYS_PER_WEEK ||
-	 type==CONSTRAINT_STUDENTS_MAX_REAL_DAYS_PER_WEEK)
+	 type==CONSTRAINT_STUDENTS_MAX_REAL_DAYS_PER_WEEK ||
+
+	 //2021-08-12
+	 type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_MORNING_AND_AFTERNOON ||
+	 type==CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON ||
+	 type==CONSTRAINT_TEACHERS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR ||
+	 type==CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR ||
+	 type==CONSTRAINT_STUDENTS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR ||
+	 type==CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR)
 		return true;
 
 	return false;
@@ -6716,7 +6724,7 @@ double ConstraintTeachersMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<dou
 						.arg(CustomFETString::numberPlusTwoDigitsPrecision((tg-maxGaps)*weightPercentage/100));
 					
 					*conflictsString+= s+"\n";
-								
+					
 					dl.append(s);
 					cl.append((tg-maxGaps)*weightPercentage/100);
 				}
@@ -6900,7 +6908,7 @@ double ConstraintTeacherMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<doub
 	int totalGaps;
 
 	totalGaps=0;
-		
+	
 	i=this->teacherIndex;
 	
 	for(j=0; j<r.nDaysPerWeek; j++){
@@ -6928,9 +6936,9 @@ double ConstraintTeacherMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<doub
 					.arg(r.internalTeachersList[i]->name)
 					.arg(r.daysOfTheWeek[j])
 					.arg(CustomFETString::numberPlusTwoDigitsPrecision((tg-maxGaps)*weightPercentage/100));
-						
+				
 				*conflictsString+= s+"\n";
-							
+				
 				dl.append(s);
 				cl.append((tg-maxGaps)*weightPercentage/100);
 			}
@@ -7001,6 +7009,459 @@ bool ConstraintTeacherMaxGapsPerDay::repairWrongDayOrHour(Rules& r)
 	
 	if(maxGaps>r.nHoursPerDay)
 		maxGaps=r.nHoursPerDay;
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeachersMaxGapsPerMorningAndAfternoon::ConstraintTeachersMaxGapsPerMorningAndAfternoon()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_TEACHERS_MAX_GAPS_PER_MORNING_AND_AFTERNOON;
+}
+
+ConstraintTeachersMaxGapsPerMorningAndAfternoon::ConstraintTeachersMaxGapsPerMorningAndAfternoon(double wp, int mg)
+	: TimeConstraint(wp)
+{
+	this->type = CONSTRAINT_TEACHERS_MAX_GAPS_PER_MORNING_AND_AFTERNOON;
+	this->maxGaps=mg;
+}
+
+bool ConstraintTeachersMaxGapsPerMorningAndAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+	
+	return true;
+}
+
+bool ConstraintTeachersMaxGapsPerMorningAndAfternoon::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeachersMaxGapsPerMorningAndAfternoon::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintTeachersMaxGapsPerMorningAndAfternoon>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Gaps>"+CustomFETString::number(this->maxGaps)+"</Max_Gaps>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintTeachersMaxGapsPerMorningAndAfternoon>\n";
+	return s;
+}
+
+QString ConstraintTeachersMaxGapsPerMorningAndAfternoon::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Teachers max gaps per morning and afternoon");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("MG:%1", "Max gaps (per morning and afternoon)").arg(this->maxGaps);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeachersMaxGapsPerMorningAndAfternoon::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All teachers must respect the maximum gaps per morning and afternoon");s+="\n";
+	s+=tr("(breaks and teacher not available not counted)");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Maximum gaps per morning and afternoon=%1").arg(this->maxGaps); s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeachersMaxGapsPerMorningAndAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+	
+	int tg;
+	int i, j, k;
+	int totalGaps;
+
+	totalGaps=0;
+	for(i=0; i<r.nInternalTeachers; i++){
+		for(j=0; j<r.nDaysPerWeek/2; j++){
+			tg=0;
+			for(k=0; k<r.nHoursPerDay; k++)
+				if(teachersMatrix[i][2*j][k]>0){
+					assert(!breakDayHour[2*j][k] && !teacherNotAvailableDayHour[i][2*j][k]);
+					break;
+				}
+
+			int cnt=0;
+			for(; k<r.nHoursPerDay; k++) if(!breakDayHour[2*j][k] && !teacherNotAvailableDayHour[i][2*j][k]){
+				if(teachersMatrix[i][2*j][k]>0){
+					tg+=cnt;
+					cnt=0;
+				}
+				else
+					cnt++;
+			}
+
+			for(k=0; k<r.nHoursPerDay; k++)
+				if(teachersMatrix[i][2*j+1][k]>0){
+					assert(!breakDayHour[2*j+1][k] && !teacherNotAvailableDayHour[i][2*j][k+1]);
+					break;
+				}
+
+			cnt=0;
+			for(; k<r.nHoursPerDay; k++) if(!breakDayHour[2*j+1][k] && !teacherNotAvailableDayHour[i][2*j+1][k]){
+				if(teachersMatrix[i][2*j+1][k]>0){
+					tg+=cnt;
+					cnt=0;
+				}
+				else
+					cnt++;
+			}
+
+			if(tg>this->maxGaps){
+				totalGaps+=tg-maxGaps;
+				//assert(this->weightPercentage<100); partial solutions might break this rule
+				if(conflictsString!=nullptr){
+					QString s=tr("Time constraint teachers max gaps per morning and afternoon broken for teacher: %1, real day number: %2, conflicts factor increase=%3")
+						.arg(r.internalTeachersList[i]->name)
+						.arg(j)
+						.arg(CustomFETString::numberPlusTwoDigitsPrecision((tg-maxGaps)*weightPercentage/100));
+					
+					*conflictsString+= s+"\n";
+					
+					dl.append(s);
+					cl.append((tg-maxGaps)*weightPercentage/100);
+				}
+			}
+		}
+	}
+	
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)
+			assert(totalGaps==0); //for partial solutions this rule might be broken
+	return weightPercentage/100 * totalGaps;
+}
+
+bool ConstraintTeachersMaxGapsPerMorningAndAfternoon::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxGapsPerMorningAndAfternoon::isRelatedToTeacher(Teacher* t)
+{	
+	Q_UNUSED(t);
+
+	return true;
+}
+
+bool ConstraintTeachersMaxGapsPerMorningAndAfternoon::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxGapsPerMorningAndAfternoon::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxGapsPerMorningAndAfternoon::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxGapsPerMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
+{
+	if(maxGaps>2*r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintTeachersMaxGapsPerMorningAndAfternoon::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeachersMaxGapsPerMorningAndAfternoon::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxGaps>2*r.nHoursPerDay)
+		maxGaps=2*r.nHoursPerDay;
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeacherMaxGapsPerMorningAndAfternoon::ConstraintTeacherMaxGapsPerMorningAndAfternoon()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON;
+}
+
+ConstraintTeacherMaxGapsPerMorningAndAfternoon::ConstraintTeacherMaxGapsPerMorningAndAfternoon(double wp, const QString& tn, int mg)
+	: TimeConstraint(wp)
+{
+	this->type = CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON;
+	this->teacherName=tn;
+	this->maxGaps=mg;
+}
+
+bool ConstraintTeacherMaxGapsPerMorningAndAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+
+	//this->teacherIndex=r.searchTeacher(this->teacherName);
+	teacherIndex=r.teachersHash.value(teacherName, -1);
+	assert(this->teacherIndex>=0);
+	return true;
+}
+
+bool ConstraintTeacherMaxGapsPerMorningAndAfternoon::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeacherMaxGapsPerMorningAndAfternoon::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintTeacherMaxGapsPerMorningAndAfternoon>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Max_Gaps>"+CustomFETString::number(this->maxGaps)+"</Max_Gaps>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintTeacherMaxGapsPerMorningAndAfternoon>\n";
+	return s;
+}
+
+QString ConstraintTeacherMaxGapsPerMorningAndAfternoon::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Teacher max gaps per morning and afternoon");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("T:%1", "Teacher").arg(this->teacherName); s+=", ";
+	s+=tr("MG:%1", "Max gaps (per morning and afternoon)").arg(this->maxGaps);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeacherMaxGapsPerMorningAndAfternoon::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint"); s+="\n";
+	s+=tr("A teacher must respect the maximum number of gaps per morning and afternoon"); s+="\n";
+	s+=tr("(breaks and teacher not available not counted)");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacherName); s+="\n";
+	s+=tr("Maximum gaps per morning and afternoon=%1").arg(this->maxGaps); s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeacherMaxGapsPerMorningAndAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+	
+	int tg;
+	int i, j, k;
+	int totalGaps;
+
+	totalGaps=0;
+	
+	i=this->teacherIndex;
+	
+	for(j=0; j<r.nDaysPerWeek/2; j++){
+		tg=0;
+		for(k=0; k<r.nHoursPerDay; k++)
+			if(teachersMatrix[i][2*j][k]>0){
+				assert(!breakDayHour[2*j][k] && !teacherNotAvailableDayHour[i][2*j][k]);
+				break;
+			}
+
+		int cnt=0;
+		for(; k<r.nHoursPerDay; k++) if(!breakDayHour[2*j][k] && !teacherNotAvailableDayHour[i][2*j][k]){
+			if(teachersMatrix[i][2*j][k]>0){
+				tg+=cnt;
+				cnt=0;
+			}
+			else
+				cnt++;
+		}
+		
+		for(k=0; k<r.nHoursPerDay; k++)
+			if(teachersMatrix[i][2*j+1][k]>0){
+				assert(!breakDayHour[2*j+1][k] && !teacherNotAvailableDayHour[i][2*j+1][k]);
+				break;
+			}
+
+		cnt=0;
+		for(; k<r.nHoursPerDay; k++) if(!breakDayHour[2*j+1][k] && !teacherNotAvailableDayHour[i][2*j+1][k]){
+			if(teachersMatrix[i][2*j+1][k]>0){
+				tg+=cnt;
+				cnt=0;
+			}
+			else
+				cnt++;
+		}
+		
+		if(tg>this->maxGaps){
+			totalGaps+=tg-maxGaps;
+			//assert(this->weightPercentage<100); partial solutions might break this rule
+			if(conflictsString!=nullptr){
+				QString s=tr("Time constraint teacher max gaps per morning and afternoon broken for teacher: %1, real day number: %2, conflicts factor increase=%3")
+					.arg(r.internalTeachersList[i]->name)
+					.arg(j)
+					.arg(CustomFETString::numberPlusTwoDigitsPrecision((tg-maxGaps)*weightPercentage/100));
+				
+				*conflictsString+= s+"\n";
+				
+				dl.append(s);
+				cl.append((tg-maxGaps)*weightPercentage/100);
+			}
+		}
+	}
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)
+			assert(totalGaps==0); //for partial solutions this rule might be broken
+	return weightPercentage/100 * totalGaps;
+}
+
+bool ConstraintTeacherMaxGapsPerMorningAndAfternoon::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerMorningAndAfternoon::isRelatedToTeacher(Teacher* t)
+{
+	if(this->teacherName==t->name)
+		return true;
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerMorningAndAfternoon::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerMorningAndAfternoon::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerMorningAndAfternoon::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerMorningAndAfternoon::hasWrongDayOrHour(Rules& r)
+{
+	if(maxGaps>2*r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintTeacherMaxGapsPerMorningAndAfternoon::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintTeacherMaxGapsPerMorningAndAfternoon::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxGaps>2*r.nHoursPerDay)
+		maxGaps=2*r.nHoursPerDay;
 
 	return true;
 }
@@ -44900,6 +45361,1069 @@ bool ConstraintStudentsSetMaxGapsPerWeekForRealDays::repairWrongDayOrHour(Rules&
 
 	if(maxGaps>r.nDaysPerWeek*r.nHoursPerDay)
 		maxGaps=r.nDaysPerWeek*r.nHoursPerDay;
+
+	return true;
+}
+
+//2021-08-12
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_TEACHERS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR;
+}
+
+ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour(double wp, int mBSH)
+	: TimeConstraint(wp)
+{
+	this->type = CONSTRAINT_TEACHERS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR;
+	this->maxBeginningsAtSecondHour=mBSH;
+}
+
+bool ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+
+	return true;
+}
+
+bool ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Beginnings_At_Second_Hour>"+CustomFETString::number(this->maxBeginningsAtSecondHour)+"</Max_Beginnings_At_Second_Hour>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour>\n";
+	return s;
+}
+
+QString ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s;
+	s+=tr("Teachers must begin mornings early, respecting maximum %1 arrivals at second hour")
+	 .arg(this->maxBeginningsAtSecondHour);
+	s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+
+	return begin+s+end;
+}
+
+QString ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All teachers must begin the mornings early, respecting maximum %1 later arrivals, at second hour")
+	 .arg(this->maxBeginningsAtSecondHour);s+="\n";
+	s+=tr("(breaks and teacher not available not counted)");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
+{
+	//considers the condition that the hours of teachers begin as early as possible the mornings
+
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int conflTotal=0;
+
+	for(int i=0; i<r.nInternalTeachers; i++){
+		int nGapsFirstHour=0;
+		for(int j=0; j<r.nDaysPerWeek; j++){
+			if(j%2==1)
+				continue;
+
+			int k;
+			for(k=0; k<r.nHoursPerDay; k++)
+				if(!breakDayHour[j][k] && !teacherNotAvailableDayHour[i][j][k])
+					break;
+
+			bool firstHourOccupied=false;
+			if(k<r.nHoursPerDay)
+				if(teachersMatrix[i][j][k]>0)
+					firstHourOccupied=true;
+
+			bool dayOccupied=firstHourOccupied;
+
+			bool illegalGap=false;
+
+			if(!dayOccupied){
+				for(k++; k<r.nHoursPerDay; k++){
+					if(!breakDayHour[j][k] && !teacherNotAvailableDayHour[i][j][k]){
+						if(teachersMatrix[i][j][k]>0){
+							dayOccupied=true;
+							break;
+						}
+						else{
+							illegalGap=true;
+						}
+					}
+				}
+			}
+
+			if(dayOccupied && illegalGap){
+				if(conflictsString!=nullptr){
+					QString s=tr("Constraint teachers mornings early max %1 beginnings at second hour broken for teacher %2, on day %3,"
+					 " because the teacher has an illegal gap, increases conflicts total by %4")
+					 .arg(this->maxBeginningsAtSecondHour)
+					 .arg(r.internalTeachersList[i]->name)
+					 .arg(r.daysOfTheWeek[j])
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(1*weightPercentage/100));
+
+					dl.append(s);
+					cl.append(1*weightPercentage/100);
+
+					*conflictsString+= s+"\n";
+
+					conflTotal+=1;
+				}
+
+				if(c.nPlacedActivities==r.nInternalActivities){
+					assert(0);
+				}
+			}
+
+			if(dayOccupied && !firstHourOccupied)
+				nGapsFirstHour++;
+		}
+
+		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
+			if(conflictsString!=nullptr){
+				QString s=tr("Constraint teachers mornings early max %1 beginnings at second hour broken for teacher %2,"
+				 " because the teacher has too many arrivals at second hour, increases conflicts total by %3")
+				 .arg(this->maxBeginningsAtSecondHour)
+				 .arg(r.internalTeachersList[i]->name)
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
+
+				dl.append(s);
+				cl.append((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100);
+
+				*conflictsString+= s+"\n";
+
+				conflTotal+=(nGapsFirstHour-this->maxBeginningsAtSecondHour);
+			}
+
+			if(c.nPlacedActivities==r.nInternalActivities){
+				assert(0);
+			}
+		}
+	}
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)    //might be broken for partial solutions
+			assert(conflTotal==0);
+	return weightPercentage/100 * conflTotal;
+}
+
+bool ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return true;
+}
+
+bool ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBeginningsAtSecondHour>r.nDaysPerWeek/2)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(maxBeginningsAtSecondHour>r.nDaysPerWeek/2)
+		maxBeginningsAtSecondHour=r.nDaysPerWeek/2;
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR;
+}
+
+ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour(double wp, int mBSH, const QString& teacher)
+	: TimeConstraint(wp)
+{
+	this->type = CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR;
+	this->teacherName=teacher;
+	this->maxBeginningsAtSecondHour=mBSH;
+}
+
+bool ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+
+	teacherIndex=r.teachersHash.value(teacherName, -1);
+	assert(this->teacherIndex>=0);
+
+	return true;
+}
+
+bool ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Beginnings_At_Second_Hour>"+CustomFETString::number(this->maxBeginningsAtSecondHour)+"</Max_Beginnings_At_Second_Hour>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour>\n";
+	return s;
+}
+
+QString ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s;
+
+	s+=tr("Teacher must begin mornings early, respecting maximum %1 arrivals at second hour")
+	 .arg(this->maxBeginningsAtSecondHour); s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+
+	s+=tr("A teacher must begin his mornings early, respecting a maximum number of later arrivals, at second hour"); s+="\n";
+	s+=tr("(breaks and teacher not available not counted)");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacherName); s+="\n";
+	s+=tr("Maximum number of arrivals at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
+{
+	//considers the condition that the hours of subgroups begin as early as possible
+
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int conflTotal=0;
+
+	if(1){
+		int i=teacherIndex;
+
+		int nGapsFirstHour=0;
+		for(int j=0; j<r.nDaysPerWeek; j++){
+			if(j%2==1)
+				continue;
+
+			int k;
+			for(k=0; k<r.nHoursPerDay; k++)
+				if(!breakDayHour[j][k] && !teacherNotAvailableDayHour[i][j][k])
+					break;
+
+			bool firstHourOccupied=false;
+			if(k<r.nHoursPerDay)
+				if(teachersMatrix[i][j][k]>0)
+					firstHourOccupied=true;
+
+			bool dayOccupied=firstHourOccupied;
+
+			bool illegalGap=false;
+
+			if(!dayOccupied){
+				for(k++; k<r.nHoursPerDay; k++){
+					if(!breakDayHour[j][k] && !teacherNotAvailableDayHour[i][j][k]){
+						if(teachersMatrix[i][j][k]>0){
+							dayOccupied=true;
+							break;
+						}
+						else{
+							illegalGap=true;
+						}
+					}
+				}
+			}
+
+			if(dayOccupied && illegalGap){
+				if(conflictsString!=nullptr){
+					QString s=tr("Constraint teacher mornings early max %1 beginnings at second hour broken for teacher %2, on day %3,"
+					 " because the teacher has an illegal gap, increases conflicts total by %4")
+					 .arg(this->maxBeginningsAtSecondHour)
+					 .arg(r.internalTeachersList[i]->name)
+					 .arg(r.daysOfTheWeek[j])
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(1*weightPercentage/100));
+
+					dl.append(s);
+					cl.append(1*weightPercentage/100);
+
+					*conflictsString+= s+"\n";
+
+					conflTotal+=1;
+				}
+
+				if(c.nPlacedActivities==r.nInternalActivities)
+					assert(0);
+			}
+
+			if(dayOccupied && !firstHourOccupied)
+				nGapsFirstHour++;
+		}
+
+		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
+			if(conflictsString!=nullptr){
+				QString s=tr("Constraint teacher mornings early max %1 beginnings at second hour broken for teacher %2,"
+				 " because the teacher has too many arrivals at second hour, increases conflicts total by %3")
+				 .arg(this->maxBeginningsAtSecondHour)
+				 .arg(r.internalTeachersList[i]->name)
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
+
+				dl.append(s);
+				cl.append((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100);
+
+				*conflictsString+= s+"\n";
+
+				conflTotal+=(nGapsFirstHour-this->maxBeginningsAtSecondHour);
+			}
+
+			if(c.nPlacedActivities==r.nInternalActivities)
+				assert(0);
+		}
+	}
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)    //might be broken for partial solutions
+			assert(conflTotal==0);
+	return weightPercentage/100 * conflTotal;
+}
+
+bool ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToTeacher(Teacher* t)
+{
+	return this->teacherName==t->name;
+}
+
+bool ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBeginningsAtSecondHour>r.nDaysPerWeek/2)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(maxBeginningsAtSecondHour>r.nDaysPerWeek/2)
+		maxBeginningsAtSecondHour=r.nDaysPerWeek/2;
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_STUDENTS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR;
+}
+
+ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour(double wp, int mBSH)
+	: TimeConstraint(wp)
+{
+	this->type = CONSTRAINT_STUDENTS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR;
+	this->maxBeginningsAtSecondHour=mBSH;
+}
+
+bool ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+
+	return true;
+}
+
+bool ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Beginnings_At_Second_Hour>"+CustomFETString::number(this->maxBeginningsAtSecondHour)+"</Max_Beginnings_At_Second_Hour>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour>\n";
+	return s;
+}
+
+QString ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s;
+	s+=tr("Students must begin mornings early, respecting maximum %1 arrivals at second hour")
+	 .arg(this->maxBeginningsAtSecondHour);
+	s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All students must begin the mornings early, respecting maximum %1 later arrivals, at second hour")
+	 .arg(this->maxBeginningsAtSecondHour);s+="\n";
+	s+=tr("(breaks and students set not available not counted)");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
+{
+	//considers the condition that the hours of subgroups begin as early as possible
+
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int conflTotal=0;
+
+	for(int i=0; i<r.nInternalSubgroups; i++){
+		int nGapsFirstHour=0;
+		for(int j=0; j<r.nDaysPerWeek; j++){
+			if(j%2==1)
+				continue;
+
+			int k;
+			for(k=0; k<r.nHoursPerDay; k++)
+				if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k])
+					break;
+
+			bool firstHourOccupied=false;
+			if(k<r.nHoursPerDay)
+				if(subgroupsMatrix[i][j][k]>0)
+					firstHourOccupied=true;
+
+			bool dayOccupied=firstHourOccupied;
+
+			bool illegalGap=false;
+
+			if(!dayOccupied){
+				for(k++; k<r.nHoursPerDay; k++){
+					if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]){
+						if(subgroupsMatrix[i][j][k]>0){
+							dayOccupied=true;
+							break;
+						}
+						else{
+							illegalGap=true;
+						}
+					}
+				}
+			}
+
+			if(dayOccupied && illegalGap){
+				if(conflictsString!=nullptr){
+					QString s=tr("Constraint students mornings early max %1 beginnings at second hour broken for subgroup %2, on day %3,"
+					 " because students have an illegal gap, increases conflicts total by %4")
+					 .arg(this->maxBeginningsAtSecondHour)
+					 .arg(r.internalSubgroupsList[i]->name)
+					 .arg(r.daysOfTheWeek[j])
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(1*weightPercentage/100));
+
+					dl.append(s);
+					cl.append(1*weightPercentage/100);
+
+					*conflictsString+= s+"\n";
+
+					conflTotal+=1;
+				}
+
+				if(c.nPlacedActivities==r.nInternalActivities){
+					assert(0);
+				}
+			}
+
+			if(dayOccupied && !firstHourOccupied)
+				nGapsFirstHour++;
+		}
+
+		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
+			if(conflictsString!=nullptr){
+				QString s=tr("Constraint students mornings early max %1 beginnings at second hour broken for subgroup %2,"
+				 " because students have too many arrivals at second hour, increases conflicts total by %3")
+				 .arg(this->maxBeginningsAtSecondHour)
+				 .arg(r.internalSubgroupsList[i]->name)
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
+
+				dl.append(s);
+				cl.append((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100);
+
+				*conflictsString+= s+"\n";
+
+				conflTotal+=(nGapsFirstHour-this->maxBeginningsAtSecondHour);
+			}
+
+			if(c.nPlacedActivities==r.nInternalActivities){
+				assert(0);
+			}
+		}
+	}
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)    //might be broken for partial solutions
+			assert(conflTotal==0);
+	return weightPercentage/100 * conflTotal;
+}
+
+bool ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return true;
+}
+
+bool ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBeginningsAtSecondHour>r.nDaysPerWeek/2)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(maxBeginningsAtSecondHour>r.nDaysPerWeek/2)
+		maxBeginningsAtSecondHour=r.nDaysPerWeek/2;
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR;
+}
+
+ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour(double wp, int mBSH, const QString& students)
+	: TimeConstraint(wp)
+{
+	this->type = CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR;
+	this->students=students;
+	this->maxBeginningsAtSecondHour=mBSH;
+}
+
+bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
+
+	if(ss==nullptr){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint students set mornings early is wrong because it refers to inexistent students set."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+
+		return false;
+	}
+
+	assert(ss!=nullptr);
+
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
+	if(ss->type==STUDENTS_SUBGROUP){
+		int tmp;
+		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
+		assert(tmp>=0);
+		assert(tmp<r.nInternalSubgroups);
+		if(!this->iSubgroupsList.contains(tmp))
+			this->iSubgroupsList.append(tmp);
+	}
+	else if(ss->type==STUDENTS_GROUP){
+		StudentsGroup* stg=(StudentsGroup*)ss;
+		for(int i=0; i<stg->subgroupsList.size(); i++){
+			StudentsSubgroup* sts=stg->subgroupsList[i];
+			int tmp;
+			tmp=sts->indexInInternalSubgroupsList;
+			assert(tmp>=0);
+			assert(tmp<r.nInternalSubgroups);
+			if(!this->iSubgroupsList.contains(tmp))
+				this->iSubgroupsList.append(tmp);
+		}
+	}
+	else if(ss->type==STUDENTS_YEAR){
+		StudentsYear* sty=(StudentsYear*)ss;
+		for(int i=0; i<sty->groupsList.size(); i++){
+			StudentsGroup* stg=sty->groupsList[i];
+			for(int j=0; j<stg->subgroupsList.size(); j++){
+				StudentsSubgroup* sts=stg->subgroupsList[j];
+				int tmp;
+				tmp=sts->indexInInternalSubgroupsList;
+				assert(tmp>=0);
+				assert(tmp<r.nInternalSubgroups);
+				if(!this->iSubgroupsList.contains(tmp))
+					this->iSubgroupsList.append(tmp);
+			}
+		}
+	}
+	else
+		assert(0);*/
+	return true;
+}
+
+bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Beginnings_At_Second_Hour>"+CustomFETString::number(this->maxBeginningsAtSecondHour)+"</Max_Beginnings_At_Second_Hour>\n";
+	s+="	<Students>"+protect(this->students)+"</Students>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour>\n";
+	return s;
+}
+
+QString ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s;
+
+	s+=tr("Students set must begin the mornings early, respecting maximum %1 arrivals at second hour")
+	 .arg(this->maxBeginningsAtSecondHour); s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("St:%1", "Students set").arg(this->students);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+
+	s+=tr("A students set must begin the mornings early, respecting a maximum number of later arrivals, at second hour"); s+="\n";
+	s+=tr("(breaks and students set not available not counted)");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Students set=%1").arg(this->students); s+="\n";
+	s+=tr("Maximum number of arrivals at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
+{
+	//considers the condition that the hours of subgroups begin as early as possible
+
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int conflTotal=0;
+
+	for(int i : qAsConst(this->iSubgroupsList)){
+		int nGapsFirstHour=0;
+		for(int j=0; j<r.nDaysPerWeek; j++){
+			if(j%2==1)
+				continue;
+
+			int k;
+			for(k=0; k<r.nHoursPerDay; k++)
+				if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k])
+					break;
+
+			bool firstHourOccupied=false;
+			if(k<r.nHoursPerDay)
+				if(subgroupsMatrix[i][j][k]>0)
+					firstHourOccupied=true;
+
+			bool dayOccupied=firstHourOccupied;
+
+			bool illegalGap=false;
+
+			if(!dayOccupied){
+				for(k++; k<r.nHoursPerDay; k++){
+					if(!breakDayHour[j][k] && !subgroupNotAvailableDayHour[i][j][k]){
+						if(subgroupsMatrix[i][j][k]>0){
+							dayOccupied=true;
+							break;
+						}
+						else{
+							illegalGap=true;
+						}
+					}
+				}
+			}
+
+			if(dayOccupied && illegalGap){
+				if(conflictsString!=nullptr){
+					QString s=tr("Constraint students set mornings early max %1 beginnings at second hour broken for subgroup %2, on day %3,"
+					 " because students have an illegal gap, increases conflicts total by %4")
+					 .arg(this->maxBeginningsAtSecondHour)
+					 .arg(r.internalSubgroupsList[i]->name)
+					 .arg(r.daysOfTheWeek[j])
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(1*weightPercentage/100));
+
+					dl.append(s);
+					cl.append(1*weightPercentage/100);
+
+					*conflictsString+= s+"\n";
+
+					conflTotal+=1;
+				}
+
+				if(c.nPlacedActivities==r.nInternalActivities)
+					assert(0);
+			}
+
+			if(dayOccupied && !firstHourOccupied)
+				nGapsFirstHour++;
+		}
+
+		if(nGapsFirstHour>this->maxBeginningsAtSecondHour){
+			if(conflictsString!=nullptr){
+				QString s=tr("Constraint students set mornings early max %1 beginnings at second hour broken for subgroup %2,"
+				 " because students have too many arrivals at second hour, increases conflicts total by %3")
+				 .arg(this->maxBeginningsAtSecondHour)
+				 .arg(r.internalSubgroupsList[i]->name)
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100));
+
+				dl.append(s);
+				cl.append((nGapsFirstHour-this->maxBeginningsAtSecondHour)*weightPercentage/100);
+
+				*conflictsString+= s+"\n";
+
+				conflTotal+=(nGapsFirstHour-this->maxBeginningsAtSecondHour);
+			}
+
+			if(c.nPlacedActivities==r.nInternalActivities)
+				assert(0);
+		}
+	}
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)    //might be broken for partial solutions
+			assert(conflTotal==0);
+	return weightPercentage/100 * conflTotal;
+}
+
+bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	return r.setsShareStudents(this->students, s->name);
+}
+
+bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBeginningsAtSecondHour>r.nDaysPerWeek/2)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(maxBeginningsAtSecondHour>r.nDaysPerWeek/2)
+		maxBeginningsAtSecondHour=r.nDaysPerWeek/2;
 
 	return true;
 }

@@ -280,17 +280,28 @@ Matrix1D<double> subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentage;
 Matrix1D<int> subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings;
 
 
-////////BEGIN teachers max gaps per week and per day
+Matrix1D<double> teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage;
+Matrix1D<int> teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings;
+
+Matrix1D<double> subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage;
+Matrix1D<int> subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings;
+
+
+////////BEGIN teachers max gaps per week and per day and per morning and afternoon
 Matrix1D<double> teachersMaxGapsPerWeekPercentage;
 Matrix1D<int> teachersMaxGapsPerWeekMaxGaps;
 
 Matrix1D<double> teachersMaxGapsPerDayPercentage;
 Matrix1D<int> teachersMaxGapsPerDayMaxGaps;
 
+Matrix1D<double> teachersMaxGapsPerMorningAndAfternoonPercentage;
+Matrix1D<int> teachersMaxGapsPerMorningAndAfternoonMaxGaps;
+
 Matrix1D<int> nHoursPerTeacher;
 //bool computeNHoursPerTeacher(QWidget* parent);
 //bool computeTeachersMaxGapsPerWeekPercentage(QWidget* parent);
 //bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent);
+//bool computeTeachersMaxGapsPerMorningAndAfternoonPercentage(QWidget* parent);
 
 
 Matrix1D<double> teachersMaxGapsPerRealDayPercentage;
@@ -303,10 +314,13 @@ Matrix1D<double> teachersMaxGapsPerWeekForRealDaysPercentage;
 Matrix1D<int> teachersMaxGapsPerWeekForRealDaysMaxGaps;
 //bool haveTeachersMaxGapsPerRealDay;
 
-////////END   teachers max gaps per week and per day
+////////END   teachers max gaps per week and per day and per morning and afternoon
 
 bool haveTeachersAfternoonsEarly;
 bool haveStudentsAfternoonsEarly;
+
+bool haveTeachersMorningsEarly;
+bool haveStudentsMorningsEarly;
 
 Matrix1D<bool> teacherConstrainedToZeroGapsPerAfternoon;
 
@@ -1119,6 +1133,8 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersMaxGapsPerWeekMaxGaps.resize(gt.rules.nInternalTeachers);
 	teachersMaxGapsPerDayPercentage.resize(gt.rules.nInternalTeachers);
 	teachersMaxGapsPerDayMaxGaps.resize(gt.rules.nInternalTeachers);
+	teachersMaxGapsPerMorningAndAfternoonPercentage.resize(gt.rules.nInternalTeachers);
+	teachersMaxGapsPerMorningAndAfternoonMaxGaps.resize(gt.rules.nInternalTeachers);
 	nHoursPerTeacher.resize(gt.rules.nInternalTeachers);
 	//
 	teachersMaxHoursDailyPercentages1.resize(gt.rules.nInternalTeachers);
@@ -1157,6 +1173,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersAfternoonsEarlyMaxBeginningsAtSecondHourPercentage.resize(gt.rules.nInternalTeachers);
 	teachersAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings.resize(gt.rules.nInternalTeachers);
 	//
+	teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage.resize(gt.rules.nInternalTeachers);
+	teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings.resize(gt.rules.nInternalTeachers);
+	//
 	teachersMaxHoursDailyRealDaysPercentages1.resize(gt.rules.nInternalTeachers);
 	teachersMaxHoursDailyRealDaysMaxHours1.resize(gt.rules.nInternalTeachers);
 	teachersMaxHoursDailyRealDaysPercentages2.resize(gt.rules.nInternalTeachers);
@@ -1178,6 +1197,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//
 	subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentage.resize(gt.rules.nInternalSubgroups);
 	subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings.resize(gt.rules.nInternalSubgroups);
+	//
+	subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage.resize(gt.rules.nInternalSubgroups);
+	subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings.resize(gt.rules.nInternalSubgroups);
 	//
 	subgroupsMaxHoursDailyPercentages1.resize(gt.rules.nInternalSubgroups);
 	subgroupsMaxHoursDailyMaxHours1.resize(gt.rules.nInternalSubgroups);
@@ -1592,6 +1614,10 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	t=computeSubgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentages(parent);
 	if(!t)
 		return false;
+	//!!!After subgroups early and subgroups afternoons early
+	t=computeSubgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentages(parent);
+	if(!t)
+		return false;
 	//////////////////////////////////
 	
 	/////5. TEACHERS MAX DAYS PER WEEK
@@ -1618,10 +1644,17 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	t=computeTeachersAfternoonsEarlyMaxBeginningsAtSecondHourPercentages(parent);
 	if(!t)
 		return false;
+	t=computeTeachersMorningsEarlyMaxBeginningsAtSecondHourPercentages(parent);
+	if(!t)
+		return false;
 	t=computeTeachersMaxGapsPerWeekPercentage(parent);
 	if(!t)
 		return false;
 	t=computeTeachersMaxGapsPerDayPercentage(parent);
+	if(!t)
+		return false;
+	//!!!After max gaps per week and per day
+	t=computeTeachersMaxGapsPerMorningAndAfternoonPercentage(parent);
 	if(!t)
 		return false;
 	t=computeTeachersMaxGapsPerRealDayPercentage(parent);
@@ -9396,6 +9429,93 @@ bool computeTeachersAfternoonsEarlyMaxBeginningsAtSecondHourPercentages(QWidget*
 	return ok;
 }
 
+bool computeTeachersMorningsEarlyMaxBeginningsAtSecondHourPercentages(QWidget* parent)
+{
+	haveTeachersMorningsEarly=false;
+
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[i]=-1;
+		teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]=-1;
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		//teachers early
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			haveTeachersMorningsEarly=true;
+			ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour* se=(ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour*) gt.rules.internalTimeConstraintsList[i];
+			for(int j=0; j<gt.rules.nInternalTeachers; j++){
+				if(teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[j] < se->weightPercentage)
+					teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[j] = se->weightPercentage;
+				if(teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j]==-1 || teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j] > se->maxBeginningsAtSecondHour)
+					teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j] = se->maxBeginningsAtSecondHour;
+			}
+		}
+
+		//teacher early
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			haveTeachersMorningsEarly=true;
+			ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour* se=(ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour*) gt.rules.internalTimeConstraintsList[i];
+			int j=se->teacherIndex;
+			if(teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[j] < se->weightPercentage)
+				teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[j] = se->weightPercentage;
+			if(teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j]==-1 || teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j] > se->maxBeginningsAtSecondHour)
+				teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j] = se->maxBeginningsAtSecondHour;
+		}
+	}
+
+	bool ok=true;
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		assert((teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[i]==-1 &&
+		 teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]==-1) ||
+		 (teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[i]>=0 &&
+		 teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0));
+
+		bool okteacher=true;
+
+		if(teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[i]>=0 && teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[i]!=100){
+			okteacher=false;
+			ok=false;
+
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+			 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because you have an mornings early max beginnings at second hour constraint"
+			 " with weight percentage less than 100%. Currently, the algorithm can only"
+			 " optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it"
+			 ". Please modify your data correspondingly and try again")
+			 .arg(gt.rules.internalTeachersList[i]->name),
+			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+			 1, 0 );
+
+			if(t==0)
+				break;
+		}
+
+		if(teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0
+		 && teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>gt.rules.nDaysPerWeek/2){
+			okteacher=false;
+			ok=false;
+
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+			 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because mornings early max beginnings at second hour constraint"
+			 " has max beginnings at second hour %2, and the number of mornings per week is %3 which is less. It must be that the number of"
+			 " mornings per week must be greater or equal with the max beginnings at second hour\n"
+			 "Please modify your data correspondingly and try again")
+			 .arg(gt.rules.internalTeachersList[i]->name)
+			 .arg(teachersMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i])
+			 .arg(gt.rules.nDaysPerWeek/2),
+			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+			 1, 0 );
+
+			if(t==0)
+				break;
+		}
+
+		if(!okteacher)
+			ok=false;
+	}
+
+	return ok;
+}
+
 bool computeSubgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentages(QWidget* parent)
 {
 	haveStudentsAfternoonsEarly=false;
@@ -9487,6 +9607,115 @@ bool computeSubgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentages(QWidget
 			 && subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0
 			 && subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i])
 				subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i];
+		}
+	}
+
+	return ok;
+}
+
+bool computeSubgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentages(QWidget* parent)
+{
+	haveStudentsMorningsEarly=false;
+
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[i]=-1;
+		subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]=-1;
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		//subgroups early
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			haveStudentsMorningsEarly=true;
+			ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour* se=(ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour*) gt.rules.internalTimeConstraintsList[i];
+			for(int j=0; j<gt.rules.nInternalSubgroups; j++){
+				if(subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[j] < se->weightPercentage)
+					subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[j] = se->weightPercentage;
+				if(subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j]==-1 || subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j] > se->maxBeginningsAtSecondHour)
+					subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j] = se->maxBeginningsAtSecondHour;
+			}
+		}
+
+		//subgroup early
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			haveStudentsMorningsEarly=true;
+			ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour* se=(ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour*) gt.rules.internalTimeConstraintsList[i];
+			for(int j : se->iSubgroupsList){
+				if(subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[j] < se->weightPercentage)
+					subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[j] = se->weightPercentage;
+				if(subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j]==-1 || subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j] > se->maxBeginningsAtSecondHour)
+					subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[j] = se->maxBeginningsAtSecondHour;
+			}
+		}
+	}
+
+	bool ok=true;
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		assert((subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[i]==-1 &&
+		 subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]==-1) ||
+		 (subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[i]>=0 &&
+		 subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0));
+
+		bool oksubgroup=true;
+
+		if(subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[i]>=0 && subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[i]!=100){
+			oksubgroup=false;
+			ok=false;
+
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+			 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because you have an mornings early max beginnings at second hour constraint"
+			 " with weight percentage less than 100%. Currently, the algorithm can only"
+			 " optimize with not existing constraint early m.b.a.s.h. or existing with 100% weight for it"
+			 ". Please modify your data correspondingly and try again")
+			 .arg(gt.rules.internalSubgroupsList[i]->name),
+			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+			 1, 0 );
+
+			if(t==0)
+				break;
+		}
+
+		if(subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0
+		 && subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>gt.rules.nDaysPerWeek/2){
+			oksubgroup=false;
+			ok=false;
+
+			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+			 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because mornings early max beginnings at second hour constraint"
+			 " has max beginnings at second hour %2, and the number of mornings per week is %3 which is less. It must be that the number of"
+			 " mornings per week must be greater or equal with the max beginnings at second hour\n"
+			 "Please modify your data correspondingly and try again")
+			 .arg(gt.rules.internalSubgroupsList[i]->name)
+			 .arg(subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i])
+			 .arg(gt.rules.nDaysPerWeek/2),
+			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+			 1, 0 );
+
+			if(t==0)
+				break;
+		}
+
+		if(!oksubgroup)
+			ok=false;
+	}
+
+	if(ok){
+		for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+			if(subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0
+			 && subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0
+			 && subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i])
+				subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]=subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i];
+
+			if(subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0
+			 && subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0
+			 && subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0
+			 && subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]+subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]<subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i])
+				subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]=subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]+subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i];
+			else if(subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0
+			 && subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]>=0
+			 && subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]==-1){
+				subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]=subgroupsMorningsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i]+subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings[i];
+				subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[i]=100;
+			}
 		}
 	}
 
@@ -9710,6 +9939,133 @@ bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent)
 		}
 	}
 	
+	return ok;
+}
+
+bool computeTeachersMaxGapsPerMorningAndAfternoonPercentage(QWidget* parent)
+{
+	for(int j=0; j<gt.rules.nInternalTeachers; j++){
+		teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]=-1;
+		teachersMaxGapsPerMorningAndAfternoonPercentage[j]=-1;
+	}
+	
+	bool ok=true;
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_MORNING_AND_AFTERNOON){
+			ConstraintTeachersMaxGapsPerMorningAndAfternoon* tg=(ConstraintTeachersMaxGapsPerMorningAndAfternoon*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tg->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers max gaps per morning and afternoon with"
+				 " weight (percentage) below 100. Please make weight 100% and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON){
+			ConstraintTeacherMaxGapsPerMorningAndAfternoon* tg=(ConstraintTeacherMaxGapsPerMorningAndAfternoon*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tg->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher max gaps per morning and afternoon with"
+				 " weight (percentage) below 100 for teacher %1. Please make weight 100% and try again")
+				 .arg(tg->teacherName),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+		}
+	}
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_MORNING_AND_AFTERNOON){
+			ConstraintTeachersMaxGapsPerMorningAndAfternoon* tg=(ConstraintTeachersMaxGapsPerMorningAndAfternoon*)gt.rules.internalTimeConstraintsList[i];
+			
+			for(int j=0; j<gt.rules.nInternalTeachers; j++){
+				if(teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]==-1
+				 ||(teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]>=0 && teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerMorningAndAfternoonPercentage[j]<=tg->weightPercentage)){
+					teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]=tg->maxGaps;
+					teachersMaxGapsPerMorningAndAfternoonPercentage[j]=tg->weightPercentage;
+				}
+				else if(teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]>=0 && teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]<=tg->maxGaps && teachersMaxGapsPerMorningAndAfternoonPercentage[j]>=tg->weightPercentage){
+					//do nothing
+				}
+				else{
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are two constraints"
+					 " of type max gaps per morning and afternoon relating to him, and the weight percentage is higher on the constraint"
+					 " with more gaps allowed. You are allowed only to have for each teacher"
+					 " the most important constraint with maximum weight percentage and minimum gaps allowed"
+					 ". Please modify your data accordingly and try again")
+					 .arg(gt.rules.internalTeachersList[j]->name),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+			 	
+					if(t==0)
+						return false;
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON){
+			ConstraintTeacherMaxGapsPerMorningAndAfternoon* tg=(ConstraintTeacherMaxGapsPerMorningAndAfternoon*)gt.rules.internalTimeConstraintsList[i];
+		
+			int j=tg->teacherIndex;
+			if(teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]==-1
+			 ||(teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]>=0 && teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]>=tg->maxGaps && teachersMaxGapsPerMorningAndAfternoonPercentage[j]<=tg->weightPercentage)){
+				teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]=tg->maxGaps;
+				teachersMaxGapsPerMorningAndAfternoonPercentage[j]=tg->weightPercentage;
+			}
+			else if(teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]>=0 && teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]<=tg->maxGaps && teachersMaxGapsPerMorningAndAfternoonPercentage[j]>=tg->weightPercentage){
+				//do nothing
+			}
+			else{
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are two constraints"
+				 " of type max gaps per morning and afternoon relating to him, and the weight percentage is higher on the constraint"
+				 " with more gaps allowed. You are allowed only to have for each teacher"
+				 " the most important constraint with maximum weight percentage and minimum gaps allowed"
+				 ". Please modify your data accordingly and try again")
+				 .arg(gt.rules.internalTeachersList[j]->name),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+		 	
+				if(t==0)
+					return false;
+			}
+		}
+	}
+	
+	if(ok){
+		for(int j=0; j<gt.rules.nInternalTeachers; j++)
+			if(teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]>=0){
+				if(teachersMaxGapsPerDayMaxGaps[j]==-1 || (teachersMaxGapsPerDayMaxGaps[j]>=0
+				 && teachersMaxGapsPerDayMaxGaps[j]>teachersMaxGapsPerMorningAndAfternoonMaxGaps[j])){
+					teachersMaxGapsPerDayPercentage[j]=100;
+					teachersMaxGapsPerDayMaxGaps[j]=teachersMaxGapsPerMorningAndAfternoonMaxGaps[j];
+				}
+
+				if(teachersMaxGapsPerWeekMaxGaps[j]==-1 || (teachersMaxGapsPerWeekMaxGaps[j]>=0
+				 && teachersMaxGapsPerWeekMaxGaps[j]>teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]*gt.rules.nDaysPerWeek/2)){
+					teachersMaxGapsPerWeekPercentage[j]=100;
+					teachersMaxGapsPerWeekMaxGaps[j]=teachersMaxGapsPerMorningAndAfternoonMaxGaps[j]*gt.rules.nDaysPerWeek/2;
+				}
+			}
+	}
+
 	return ok;
 }
 
@@ -16112,7 +16468,8 @@ void computeMustComputeTimetableSubgroups()
 
 			  subgroupsActivityTagMaxHoursDailyRealDaysPercentage[sbg].count()>0 ||
 
-			  subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0
+			  subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0 ||
+			  subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0
 			  ){
 			
 				mustComputeTimetableSubgroups[ai].append(sbg);
@@ -16189,6 +16546,9 @@ void computeMustComputeTimetableTeachers()
 			  teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tch]>=0 ||
 
 			  teachersAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[tch]>=0 ||
+			  teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[tch]>=0 ||
+
+			  teachersMaxGapsPerMorningAndAfternoonPercentage[tch]>=0 ||
 
 			  teacherConstrainedToZeroGapsPerAfternoon[tch]==true
 			  ){

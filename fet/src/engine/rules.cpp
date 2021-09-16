@@ -1220,6 +1220,11 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 			if(initialTeacherName == crt_constraint->teacherName)
 				crt_constraint->teacherName=finalTeacherName;
 		}
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON){
+			ConstraintTeacherMaxGapsPerMorningAndAfternoon* crt_constraint=(ConstraintTeacherMaxGapsPerMorningAndAfternoon*)ctr;
+			if(initialTeacherName == crt_constraint->teacherName)
+				crt_constraint->teacherName=finalTeacherName;
+		}
 		else if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY){
 			ConstraintTeacherMaxHoursDaily* crt_constraint=(ConstraintTeacherMaxHoursDaily*)ctr;
 			if(initialTeacherName == crt_constraint->teacherName)
@@ -1315,6 +1320,11 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 		//mornings-afternoons
 		else if(ctr->type==CONSTRAINT_TEACHER_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
 			ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour* crt_constraint=(ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour*)ctr;
+			if(initialTeacherName == crt_constraint->teacherName)
+				crt_constraint->teacherName=finalTeacherName;
+		}
+		else if(ctr->type==CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour* crt_constraint=(ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour*)ctr;
 			if(initialTeacherName == crt_constraint->teacherName)
 				crt_constraint->teacherName=finalTeacherName;
 		}
@@ -2586,6 +2596,11 @@ bool Rules::modifyStudentsSet(const QString& initialStudentsSetName, const QStri
 				if(initialStudentsSetName == crt_constraint->students)
 					crt_constraint->students=finalStudentsSetName;
 			}
+			else if(ctr->type==CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+				ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour* crt_constraint=(ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour*)ctr;
+				if(initialStudentsSetName == crt_constraint->students)
+					crt_constraint->students=finalStudentsSetName;
+			}
 			//2020-06-28
 			else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_PER_ALL_AFTERNOONS){
 				ConstraintStudentsSetMaxHoursPerAllAfternoons* crt_constraint=(ConstraintStudentsSetMaxHoursPerAllAfternoons*)ctr;
@@ -2871,6 +2886,11 @@ bool Rules::modifyStudentsSets(const QHash<QString, QString>& oldAndNewStudentsS
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
 			ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour* crt_constraint=(ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour*)ctr;
+			if(oldAndNewStudentsSetNames.contains(crt_constraint->students))
+				crt_constraint->students=oldAndNewStudentsSetNames.value(crt_constraint->students);
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour* crt_constraint=(ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour*)ctr;
 			if(oldAndNewStudentsSetNames.contains(crt_constraint->students))
 				crt_constraint->students=oldAndNewStudentsSetNames.value(crt_constraint->students);
 		}
@@ -4856,6 +4876,11 @@ void Rules::updateConstraintsAfterRemoval()
 			if(!existingTeachersNames.contains(c->teacherName))
 				toBeRemovedTime.append(tc);
 		}
+		else if(tc->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON){
+			ConstraintTeacherMaxGapsPerMorningAndAfternoon* c=(ConstraintTeacherMaxGapsPerMorningAndAfternoon*)tc;
+			if(!existingTeachersNames.contains(c->teacherName))
+				toBeRemovedTime.append(tc);
+		}
 		else if(tc->type==CONSTRAINT_STUDENTS_SET_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
 			ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* c=(ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour*)tc;
 			if(!permanentStudentsHash.contains(c->students))
@@ -5223,6 +5248,11 @@ void Rules::updateConstraintsAfterRemoval()
 			if(!existingTeachersNames.contains(c->teacherName))
 				toBeRemovedTime.append(tc);
 		}
+		else if(tc->type==CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour* c=(ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour*)tc;
+			if(!existingTeachersNames.contains(c->teacherName))
+				toBeRemovedTime.append(tc);
+		}
 		else if(tc->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_REAL_DAY){
 			ConstraintTeacherMaxGapsPerRealDay* c=(ConstraintTeacherMaxGapsPerRealDay*)tc;
 			if(!existingTeachersNames.contains(c->teacherName))
@@ -5240,6 +5270,11 @@ void Rules::updateConstraintsAfterRemoval()
 		}
 		else if(tc->type==CONSTRAINT_STUDENTS_SET_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
 			ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour* c=(ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour*)tc;
+			if(!permanentStudentsHash.contains(c->students))
+				toBeRemovedTime.append(tc);
+		}
+		else if(tc->type==CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour* c=(ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour*)tc;
 			if(!permanentStudentsHash.contains(c->students))
 				toBeRemovedTime.append(tc);
 		}
@@ -8232,6 +8267,12 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()==QString("ConstraintTeacherMaxGapsPerDay")){
 					crt_constraint=readTeacherMaxGapsPerDay(xmlReader, xmlReadingLog);
 				}
+				else if(xmlReader.name()==QString("ConstraintTeachersMaxGapsPerMorningAndAfternoon")){
+					crt_constraint=readTeachersMaxGapsPerMorningAndAfternoon(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeacherMaxGapsPerMorningAndAfternoon")){
+					crt_constraint=readTeacherMaxGapsPerMorningAndAfternoon(xmlReader, xmlReadingLog);
+				}
 				else if(xmlReader.name()==QString("ConstraintStudentsNoGaps")){
 					if(reportMaxGapsChange){
 						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
@@ -8837,6 +8878,12 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()==QString("ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour")){
 					crt_constraint=readTeacherAfternoonsEarlyMaxBeginningsAtSecondHour(xmlReader, xmlReadingLog);
 				}
+				else if(xmlReader.name()==QString("ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour")){
+					crt_constraint=readTeachersMorningsEarlyMaxBeginningsAtSecondHour(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour")){
+					crt_constraint=readTeacherMorningsEarlyMaxBeginningsAtSecondHour(xmlReader, xmlReadingLog);
+				}
 				else if(xmlReader.name()==QString("ConstraintTeachersMaxGapsPerRealDay")){
 					crt_constraint=readTeachersMaxGapsPerRealDay(xmlReader, xmlReadingLog);
 				}
@@ -8876,6 +8923,13 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				}
 				else if(xmlReader.name()==QString("ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour")){
 					crt_constraint=readStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour(xmlReader, xmlReadingLog);
+				}
+				//////////
+				else if(xmlReader.name()==QString("ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour")){
+					crt_constraint=readStudentsMorningsEarlyMaxBeginningsAtSecondHour(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour")){
+					crt_constraint=readStudentsSetMorningsEarlyMaxBeginningsAtSecondHour(xmlReader, xmlReadingLog);
 				}
 				//////////
 
@@ -16084,6 +16138,123 @@ TimeConstraint* Rules::readTeachersMaxGapsPerDay(QXmlStreamReader& xmlReader, Fa
 TimeConstraint* Rules::readTeacherMaxGapsPerDay(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMaxGapsPerDay"));
 	ConstraintTeacherMaxGapsPerDay* cn=new ConstraintTeacherMaxGapsPerDay();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight")){
+			//cn->weight=customFETStrToDouble(text);
+			xmlReader.skipCurrentElement();
+			xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+			cn->weightPercentage=100;
+		}
+		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Max_Gaps")){
+			QString text=xmlReader.readElementText();
+			cn->maxGaps=text.toInt();
+			xmlReadingLog+="    Adding max gaps="+CustomFETString::number(cn->maxGaps)+"\n";
+		}
+		else if(xmlReader.name()==QString("Compulsory")){
+			QString text=xmlReader.readElementText();
+			if(text=="yes"){
+				//cn->compulsory=true;
+				xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+				cn->weightPercentage=100;
+			}
+			else{
+				//cn->compulsory=false;
+				xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+				cn->weightPercentage=0;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readTeachersMaxGapsPerMorningAndAfternoon(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMaxGapsPerMorningAndAfternoon"));
+	ConstraintTeachersMaxGapsPerMorningAndAfternoon* cn=new ConstraintTeachersMaxGapsPerMorningAndAfternoon();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight")){
+			//cn->weight=customFETStrToDouble(text);
+			xmlReader.skipCurrentElement();
+			xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+			cn->weightPercentage=100;
+		}
+		else if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Max_Gaps")){
+			QString text=xmlReader.readElementText();
+			cn->maxGaps=text.toInt();
+			xmlReadingLog+="    Adding max gaps="+CustomFETString::number(cn->maxGaps)+"\n";
+		}
+		else if(xmlReader.name()==QString("Compulsory")){
+			QString text=xmlReader.readElementText();
+			if(text=="yes"){
+				//cn->compulsory=true;
+				xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+				cn->weightPercentage=100;
+			}
+			else{
+				//cn->compulsory=false;
+				xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+				cn->weightPercentage=0;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readTeacherMaxGapsPerMorningAndAfternoon(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMaxGapsPerMorningAndAfternoon"));
+	ConstraintTeacherMaxGapsPerMorningAndAfternoon* cn=new ConstraintTeacherMaxGapsPerMorningAndAfternoon();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight")){
@@ -23942,6 +24113,298 @@ TimeConstraint* Rules::readTeachersAfternoonsEarlyMaxBeginningsAtSecondHour(QXml
 TimeConstraint* Rules::readTeacherAfternoonsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour"));
 	ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour* cn=new ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour();
+	cn->maxBeginningsAtSecondHour=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight")){
+			//cn->weight=customFETStrToDouble(text);
+			xmlReader.skipCurrentElement();
+			xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+			cn->weightPercentage=100;
+		}
+		else if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Max_Beginnings_At_Second_Hour")){
+			QString text=xmlReader.readElementText();
+			cn->maxBeginningsAtSecondHour=text.toInt();
+			if(!(cn->maxBeginningsAtSecondHour>=0)){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Beginnings_At_Second_Hour"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Adding max beginnings at second hour="+CustomFETString::number(cn->maxBeginningsAtSecondHour)+"\n";
+		}
+		else if(xmlReader.name()==QString("Compulsory")){
+			QString text=xmlReader.readElementText();
+			if(text=="yes"){
+				//cn->compulsory=true;
+				xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+				cn->weightPercentage=100;
+			}
+			else{
+				//cn->compulsory=false;
+				xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+				cn->weightPercentage=0;
+			}
+		}
+		else if(xmlReader.name()==QString("Teacher")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read students name="+cn->teacherName+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(!(cn->maxBeginningsAtSecondHour>=0)){
+		xmlReader.raiseError(tr("%1 not found").arg("Max_Beginnings_At_Second_Hour"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->maxBeginningsAtSecondHour>=0);
+	return cn;
+}
+
+//2021-08-12
+TimeConstraint* Rules::readStudentsMorningsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour"));
+	ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour();
+	cn->maxBeginningsAtSecondHour=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight")){
+			//cn->weight=customFETStrToDouble(text);
+			xmlReader.skipCurrentElement();
+			xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+			cn->weightPercentage=100;
+		}
+		else if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Max_Beginnings_At_Second_Hour")){
+			QString text=xmlReader.readElementText();
+			cn->maxBeginningsAtSecondHour=text.toInt();
+			if(!(cn->maxBeginningsAtSecondHour>=0)){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Beginnings_At_Second_Hour"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Adding max beginnings at second hour="+CustomFETString::number(cn->maxBeginningsAtSecondHour)+"\n";
+		}
+		else if(xmlReader.name()==QString("Compulsory")){
+			QString text=xmlReader.readElementText();
+			if(text=="yes"){
+				//cn->compulsory=true;
+				xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+				cn->weightPercentage=100;
+			}
+			else{
+				//cn->compulsory=false;
+				xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+				cn->weightPercentage=0;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(!(cn->maxBeginningsAtSecondHour>=0)){
+		xmlReader.raiseError(tr("%1 not found").arg("Max_Beginnings_At_Second_Hour"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->maxBeginningsAtSecondHour>=0);
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetMorningsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour"));
+	ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour* cn=new ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour();
+	cn->maxBeginningsAtSecondHour=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight")){
+			//cn->weight=customFETStrToDouble(text);
+			xmlReader.skipCurrentElement();
+			xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+			cn->weightPercentage=100;
+		}
+		else if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Max_Beginnings_At_Second_Hour")){
+			QString text=xmlReader.readElementText();
+			cn->maxBeginningsAtSecondHour=text.toInt();
+			if(!(cn->maxBeginningsAtSecondHour>=0)){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Beginnings_At_Second_Hour"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Adding max beginnings at second hour="+CustomFETString::number(cn->maxBeginningsAtSecondHour)+"\n";
+		}
+		else if(xmlReader.name()==QString("Compulsory")){
+			QString text=xmlReader.readElementText();
+			if(text=="yes"){
+				//cn->compulsory=true;
+				xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+				cn->weightPercentage=100;
+			}
+			else{
+				//cn->compulsory=false;
+				xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+				cn->weightPercentage=0;
+			}
+		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->students=text;
+			xmlReadingLog+="    Read students name="+cn->students+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(!(cn->maxBeginningsAtSecondHour>=0)){
+		xmlReader.raiseError(tr("%1 not found").arg("Max_Beginnings_At_Second_Hour"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->maxBeginningsAtSecondHour>=0);
+	return cn;
+}
+/////////////
+
+TimeConstraint* Rules::readTeachersMorningsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour"));
+	ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour* cn=new ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour();
+	cn->maxBeginningsAtSecondHour=-1;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight")){
+			//cn->weight=customFETStrToDouble(text);
+			xmlReader.skipCurrentElement();
+			xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+			cn->weightPercentage=100;
+		}
+		else if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Max_Beginnings_At_Second_Hour")){
+			QString text=xmlReader.readElementText();
+			cn->maxBeginningsAtSecondHour=text.toInt();
+			if(!(cn->maxBeginningsAtSecondHour>=0)){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Max_Beginnings_At_Second_Hour"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Adding max beginnings at second hour="+CustomFETString::number(cn->maxBeginningsAtSecondHour)+"\n";
+		}
+		else if(xmlReader.name()==QString("Compulsory")){
+			QString text=xmlReader.readElementText();
+			if(text=="yes"){
+				//cn->compulsory=true;
+				xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+				cn->weightPercentage=100;
+			}
+			else{
+				//cn->compulsory=false;
+				xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+				cn->weightPercentage=0;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(!(cn->maxBeginningsAtSecondHour>=0)){
+		xmlReader.raiseError(tr("%1 not found").arg("Max_Beginnings_At_Second_Hour"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->maxBeginningsAtSecondHour>=0);
+	return cn;
+}
+
+TimeConstraint* Rules::readTeacherMorningsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour"));
+	ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour* cn=new ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour();
 	cn->maxBeginningsAtSecondHour=-1;
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";

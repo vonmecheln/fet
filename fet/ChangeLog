@@ -2382,3 +2382,12 @@ Versions 6.1.0 - 6.1.v
 	- Enabled the constraints of type teacher(s)/students (set) activity tag min hours daily in the Mornings-Afternoons mode (suggested by
 	Khineche Kaddour, YOUSSEF HOUIET, and other users).
 	- Added a new example file from Algeria, by Benahmed Abdelkrim.
+- Version 6.1.3
+	- Added the constraints of type teacher(s) max gaps per morning and afternoon (in the Mornings-Afternoons mode) (suggested by ghani1990).
+	- Added the constraints of type teacher(s)/students (set) begin mornings early max beginnings at second hour (in the Mornings-Afternoons mode)
+	(suggested by bachiri401).
+	- Improved the visual aspect of the teachers and students time constraints lists in the Mornings-Afternoons mode (suggested by bachiri401, Benahmed Abdelkdrim,
+	and Khineche Kaddour). Also it was improved the visual aspect of the activities time constraints.
+	- The dialogs of adding constraints of type two activities ordered, two activities ordered if same day, two activities consecutive, two activities grouped,
+	and three activities grouped were improved. Now there are selected different activities (the first two or three ones), not only the first. Suggested by math.
+	- Updated the French translation, by Pascal Cohen.

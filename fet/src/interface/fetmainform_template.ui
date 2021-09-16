@@ -1032,35 +1032,11 @@
       <property name="title">
        <string>Teachers</string>
       </property>
-      <widget class="QMenu" name="menuA_teacher_time_constraints">
-       <property name="title">
-        <string>A teacher</string>
-       </property>
-      </widget>
-      <widget class="QMenu" name="menuAll_teachers_time_constraints">
-       <property name="title">
-        <string>All teachers</string>
-       </property>
-      </widget>
-      <addaction name="menuA_teacher_time_constraints"/>
-      <addaction name="menuAll_teachers_time_constraints"/>
      </widget>
      <widget class="QMenu" name="menuStudents_time_constraints">
       <property name="title">
        <string>Students</string>
       </property>
-      <widget class="QMenu" name="menuA_students_set_time_constraints">
-       <property name="title">
-        <string>A students set</string>
-       </property>
-      </widget>
-      <widget class="QMenu" name="menuAll_students_time_constraints">
-       <property name="title">
-        <string>All students</string>
-       </property>
-      </widget>
-      <addaction name="menuA_students_set_time_constraints"/>
-      <addaction name="menuAll_students_time_constraints"/>
      </widget>
      <widget class="QMenu" name="menuActivities_time_constraints">
       <property name="title">
@@ -1071,13 +1047,19 @@
         <string comment="The menu of the list of preferred time constraints for activities">Preferred times</string>
        </property>
       </widget>
-      <widget class="QMenu" name="menuActivities_others_time_constraints">
+      <widget class="QMenu" name="menuActivities_others_1_time_constraints">
        <property name="title">
-        <string comment="The menu of the list of other time constraints for activities">Others</string>
+        <string comment="The menu of the list of other time constraints for activities (1st part)">Others (1)</string>
+       </property>
+      </widget>
+      <widget class="QMenu" name="menuActivities_others_2_time_constraints">
+       <property name="title">
+        <string comment="The menu of the list of other time constraints for activities (2nd part)">Others (2)</string>
        </property>
       </widget>
       <addaction name="menuActivities_preferred_times_time_constraints"/>
-      <addaction name="menuActivities_others_time_constraints"/>
+      <addaction name="menuActivities_others_1_time_constraints"/>
+      <addaction name="menuActivities_others_2_time_constraints"/>
      </widget>
      <addaction name="menuMisc_time_constraints"/>
      <addaction name="menuTeachers_time_constraints"/>

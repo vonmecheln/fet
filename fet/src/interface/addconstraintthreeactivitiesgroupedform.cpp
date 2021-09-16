@@ -158,6 +158,21 @@ void AddConstraintThreeActivitiesGroupedForm::filterChanged(){
 			this->thirdActivitiesList.append(act->id);
 		}
 	}
+	
+	if(firstActivitiesComboBox->count()>=1)
+		firstActivitiesComboBox->setCurrentIndex(0);
+	
+	if(secondActivitiesComboBox->count()>=2)
+		secondActivitiesComboBox->setCurrentIndex(1);
+	else if(secondActivitiesComboBox->count()>=1)
+		secondActivitiesComboBox->setCurrentIndex(0);
+	
+	if(thirdActivitiesComboBox->count()>=3)
+		thirdActivitiesComboBox->setCurrentIndex(2);
+	else if(thirdActivitiesComboBox->count()>=2)
+		thirdActivitiesComboBox->setCurrentIndex(1);
+	else if(thirdActivitiesComboBox->count()>=1)
+		thirdActivitiesComboBox->setCurrentIndex(0);
 }
 
 void AddConstraintThreeActivitiesGroupedForm::addCurrentConstraint()

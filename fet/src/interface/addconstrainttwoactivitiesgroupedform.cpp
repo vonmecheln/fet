@@ -149,6 +149,14 @@ void AddConstraintTwoActivitiesGroupedForm::filterChanged(){
 			this->secondActivitiesList.append(act->id);
 		}
 	}
+
+	if(firstActivitiesComboBox->count()>=1)
+		firstActivitiesComboBox->setCurrentIndex(0);
+
+	if(secondActivitiesComboBox->count()>=2)
+		secondActivitiesComboBox->setCurrentIndex(1);
+	else if(secondActivitiesComboBox->count()>=1)
+		secondActivitiesComboBox->setCurrentIndex(0);
 }
 
 void AddConstraintTwoActivitiesGroupedForm::addCurrentConstraint()

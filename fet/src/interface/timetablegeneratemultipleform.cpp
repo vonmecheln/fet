@@ -243,6 +243,8 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): Q
 {
 	setupUi(this);
 	
+	timetablesTabWidget->setUsesScrollButtons(true);
+	
 	currentResultsTextEdit->setReadOnly(true);
 	
 	startPushButton->setDefault(true);

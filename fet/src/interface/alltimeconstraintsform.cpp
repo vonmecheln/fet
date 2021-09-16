@@ -59,6 +59,8 @@
 #include "modifyconstraintteachermaxgapsperweekform.h"
 #include "modifyconstraintteachersmaxgapsperdayform.h"
 #include "modifyconstraintteachermaxgapsperdayform.h"
+#include "modifyconstraintteachersmaxgapspermorningandafternoonform.h"
+#include "modifyconstraintteachermaxgapspermorningandafternoonform.h"
 #include "modifyconstraintteachermaxdaysperweekform.h"
 #include "modifyconstraintteachersmaxdaysperweekform.h"
 #include "modifyconstraintteachersmaxhoursdailyform.h"
@@ -195,6 +197,12 @@
 
 #include "modifyconstraintteachersafternoonsearlymaxbeginningsatsecondhourform.h"
 #include "modifyconstraintteacherafternoonsearlymaxbeginningsatsecondhourform.h"
+
+#include "modifyconstraintstudentsmorningsearlymaxbeginningsatsecondhourform.h"
+#include "modifyconstraintstudentssetmorningsearlymaxbeginningsatsecondhourform.h"
+
+#include "modifyconstraintteachersmorningsearlymaxbeginningsatsecondhourform.h"
+#include "modifyconstraintteachermorningsearlymaxbeginningsatsecondhourform.h"
 
 #include "modifyconstraintstudentssetmaxhoursdailyrealdaysform.h"
 #include "modifyconstraintstudentsmaxhoursdailyrealdaysform.h"
@@ -1675,6 +1683,42 @@ void AllTimeConstraintsForm::modifyConstraint()
 	//168
 	else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS){
 		ModifyConstraintActivitiesOccupyMaxTermsForm form(this, (ConstraintActivitiesOccupyMaxTerms*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//169
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_MORNING_AND_AFTERNOON){
+		ModifyConstraintTeachersMaxGapsPerMorningAndAfternoonForm form(this, (ConstraintTeachersMaxGapsPerMorningAndAfternoon*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//170
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON){
+		ModifyConstraintTeacherMaxGapsPerMorningAndAfternoonForm form(this, (ConstraintTeacherMaxGapsPerMorningAndAfternoon*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//171
+	else if(ctr->type==CONSTRAINT_STUDENTS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+		ModifyConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHourForm form(this, (ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//172
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+		ModifyConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHourForm form(this, (ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//173
+	else if(ctr->type==CONSTRAINT_TEACHERS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+		ModifyConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHourForm form(this, (ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//174
+	else if(ctr->type==CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+		ModifyConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHourForm form(this, (ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

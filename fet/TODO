@@ -46,8 +46,6 @@ perfect way to do this would be to divide the students and add all the activitie
 without the optional ones for another students set, and add max zero gaps for these students.
 
 From bachiri401:
-- Constraints teacher(s)/students (set) begin(s) mornings early max beginnings at second hour.
-(we have now for FET days and for afternoons.)
 - Constraints teacher(s)/students (set) min hours per afternoon.
 -> And in general every constraint referring to days should have a corresponding constraint for real days,
 and every constraint referring to mornings should have a corresponding one referring to afternoons.
@@ -1664,7 +1662,7 @@ I'm not sure how you in on T2's not available time slot as the cause of the prob
 
 The problem with activity id 2 was a variation on this problem. T2 had 5 activities for tag AT1, AT1 has 6 preferred time slots, but T2 was unavailable for 2 of them.
 
-You do similar checking for student groups which have too many activities for the available time slots 
+You do similar checking for student groups which have too many activities for the available time slots.
 
 102---------------------------------------------------------
 From Christian Kemmer:
@@ -5445,7 +5443,7 @@ From Vangelis Karafillidis:
 After testing the new display (mainly teachers time horizontal) for partially modifying an existing timetable, I thought of a suggestion. Most likely, it's
 similar to "remove redundant constraints". The suggestion is to add a (percentage) multiplication factor for each one of the "groups" or time constraints.
 This means that the user should be able to add a different multiplication factor for each one of the following groups of constraints: Teachers' time constraints
-(for example 98%)Students' time constraints (for example 90%)Activities time constraints (for example 20%) This would affect ONLY the constraints that can have
+(for example 98%) Students' time constraints (for example 90%) Activities time constraints (for example 20%) This would affect ONLY the constraints that can have
 weight (percentage) less than 100%. For example, teachers not available times can have ONLY 100% as a percentage. These constraints are not going to be affected.
 But, all the other constraints (for example: teachers max gaps per day, max hours continuously) are going to be affected since they are going to be multiplied
 by this factor. For example if there is a constraint for the TEACHER_1 such as max hours continuously = 3, weight = 100%, it is going to be now 98%.

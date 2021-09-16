@@ -38,6 +38,7 @@
 #include <QStringList>
 
 #include <QAction>
+#include <QMenu>
 
 #include <QMap>
 
@@ -57,6 +58,23 @@ class FetMainForm: public QMainWindow, public Ui::FetMainForm_template
 	Q_OBJECT
 	
 private:
+	//
+	QMenu* menuA_teacher_time_constraints;
+	QMenu* menuAll_teachers_time_constraints;
+	//
+	QMenu* menuA_students_set_time_constraints;
+	QMenu* menuAll_students_time_constraints;
+	//
+	QMenu* menuA_teacher_1_time_constraints; //for Mornings-Afternoons mode
+	QMenu* menuA_teacher_2_time_constraints;
+	QMenu* menuAll_teachers_1_time_constraints;
+	QMenu* menuAll_teachers_2_time_constraints;
+	//
+	QMenu* menuA_students_set_1_time_constraints;
+	QMenu* menuA_students_set_2_time_constraints;
+	QMenu* menuAll_students_1_time_constraints;
+	QMenu* menuAll_students_2_time_constraints;
+
 	QAction* dataTimeConstraintsActivitiesPreferredTimeSlotsAction;
 	QAction* dataTimeConstraintsActivitiesSameStartingTimeAction;
 	QAction* dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction;
@@ -103,6 +121,8 @@ private:
 	QAction* dataTimeConstraintsTeacherMinHoursDailyAction;
 	QAction* dataTimeConstraintsTeachersMaxGapsPerDayAction;
 	QAction* dataTimeConstraintsTeacherMaxGapsPerDayAction;
+	QAction* dataTimeConstraintsTeachersMaxGapsPerMorningAndAfternoonAction;
+	QAction* dataTimeConstraintsTeacherMaxGapsPerMorningAndAfternoonAction;
 	QAction* dataTimeConstraintsTeacherMaxSpanPerDayAction;
 	QAction* dataTimeConstraintsTeachersMaxSpanPerDayAction;
 	QAction* dataTimeConstraintsStudentsSetMaxSpanPerDayAction;
@@ -200,6 +220,10 @@ private:
 	QAction* dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecondHourAction;
 	QAction* dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction;
 	QAction* dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction;
+	QAction* dataTimeConstraintsTeachersMorningsEarlyMaxBeginningsAtSecondHourAction;
+	QAction* dataTimeConstraintsTeacherMorningsEarlyMaxBeginningsAtSecondHourAction;
+	QAction* dataTimeConstraintsStudentsMorningsEarlyMaxBeginningsAtSecondHourAction;
+	QAction* dataTimeConstraintsStudentsSetMorningsEarlyMaxBeginningsAtSecondHourAction;
 	QAction* dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction;
 	QAction* dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction;
 	QAction* dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction;
@@ -536,6 +560,8 @@ public slots:
 	void dataTimeConstraintsTeacherMaxGapsPerWeekAction_triggered();
 	void dataTimeConstraintsTeachersMaxGapsPerDayAction_triggered();
 	void dataTimeConstraintsTeacherMaxGapsPerDayAction_triggered();
+	void dataTimeConstraintsTeachersMaxGapsPerMorningAndAfternoonAction_triggered();
+	void dataTimeConstraintsTeacherMaxGapsPerMorningAndAfternoonAction_triggered();
 	
 	void dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_triggered();
 	void dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_triggered();
@@ -677,6 +703,12 @@ public slots:
 
 	void dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered();
 	void dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHourAction_triggered();
+
+	void dataTimeConstraintsTeachersMorningsEarlyMaxBeginningsAtSecondHourAction_triggered();
+	void dataTimeConstraintsTeacherMorningsEarlyMaxBeginningsAtSecondHourAction_triggered();
+
+	void dataTimeConstraintsStudentsMorningsEarlyMaxBeginningsAtSecondHourAction_triggered();
+	void dataTimeConstraintsStudentsSetMorningsEarlyMaxBeginningsAtSecondHourAction_triggered();
 
 	void dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction_triggered();
 	void dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction_triggered();

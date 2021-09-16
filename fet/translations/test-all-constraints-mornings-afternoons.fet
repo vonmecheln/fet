@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.0.0">
+<fet version="6.1.3">
 
 <Mode>Mornings_Afternoons</Mode>
 
@@ -2293,6 +2293,62 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintMinGapsBetweenActivities>
+<ConstraintTeacherActivityTagMinHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Minimum_Hours_Daily>1</Minimum_Hours_Daily>
+	<Allow_Empty_Days>false</Allow_Empty_Days>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherActivityTagMinHoursDaily>
+<ConstraintTeachersActivityTagMinHoursDaily>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Minimum_Hours_Daily>2</Minimum_Hours_Daily>
+	<Allow_Empty_Days>true</Allow_Empty_Days>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersActivityTagMinHoursDaily>
+<ConstraintTeacherMaxGapsPerMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Max_Gaps>1</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxGapsPerMorningAndAfternoon>
+<ConstraintTeachersMaxGapsPerMorningAndAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Gaps>2</Max_Gaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxGapsPerMorningAndAfternoon>
+<ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Beginnings_At_Second_Hour>4</Max_Beginnings_At_Second_Hour>
+	<Teacher>t1</Teacher>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour>
+<ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Beginnings_At_Second_Hour>3</Max_Beginnings_At_Second_Hour>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour>
+<ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Beginnings_At_Second_Hour>0</Max_Beginnings_At_Second_Hour>
+	<Students>y1</Students>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour>
+<ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Beginnings_At_Second_Hour>1</Max_Beginnings_At_Second_Hour>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

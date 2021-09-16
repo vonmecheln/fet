@@ -865,6 +865,9 @@ private:
 	TimeConstraint* readTeacherMaxGapsPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMaxGapsPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeacherMaxGapsPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeachersMaxGapsPerMorningAndAfternoon(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMaxGapsPerMorningAndAfternoon(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	
 	TimeConstraint* readStudentsNoGaps(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsSetNoGaps(QXmlStreamReader& xml, FakeString& xmlReadingLog);
@@ -1001,6 +1004,12 @@ private:
 
 	TimeConstraint* readTeachersAfternoonsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeacherAfternoonsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsMorningsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMorningsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeachersMorningsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMorningsEarlyMaxBeginningsAtSecondHour(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readTeacherMaxSpanPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMaxSpanPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);

@@ -271,6 +271,7 @@ public:
 	inline void tchGetNHoursGapsRealDays(int tch);
 	inline void teacherGetNHoursGaps(int tch);
 	inline bool teacherRemoveAnActivityFromBeginOrEnd(int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
+	inline bool teacherRemoveAnActivityFromEnd(int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
 	inline bool teacherRemoveAnActivityFromAnywhere(int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
 	inline bool teacherRemoveAnActivityFromBeginOrEndCertainDay(int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);
 	inline bool teacherRemoveAnActivityFromAnywhereCertainDay(int d2, int level, int ai, QList<int>& conflActivities, int& nConflActivities, int& removedActivity);

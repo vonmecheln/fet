@@ -370,6 +370,14 @@ SOURCES += \
 	interface/modifyconstraintteachersmaxgapsperdayform.cpp \
 	interface/addconstraintteachermaxgapsperdayform.cpp \
 	interface/modifyconstraintteachermaxgapsperdayform.cpp \
+	\
+	interface/constraintteachersmaxgapspermorningandafternoonform.cpp \
+	interface/constraintteachermaxgapspermorningandafternoonform.cpp \
+	interface/addconstraintteachersmaxgapspermorningandafternoonform.cpp \
+	interface/modifyconstraintteachersmaxgapspermorningandafternoonform.cpp \
+	interface/addconstraintteachermaxgapspermorningandafternoonform.cpp \
+	interface/modifyconstraintteachermaxgapspermorningandafternoonform.cpp \
+	\
 	interface/constraintstudentsearlymaxbeginningsatsecondhourform.cpp \
 	interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.cpp \
 	interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform.cpp \
@@ -773,6 +781,20 @@ SOURCES += \
 	interface/constraintteacherafternoonsearlymaxbeginningsatsecondhourform.cpp \
 	interface/addconstraintteacherafternoonsearlymaxbeginningsatsecondhourform.cpp \
 	interface/modifyconstraintteacherafternoonsearlymaxbeginningsatsecondhourform.cpp \
+	\
+	interface/constraintstudentsmorningsearlymaxbeginningsatsecondhourform.cpp \
+	interface/addconstraintstudentsmorningsearlymaxbeginningsatsecondhourform.cpp \
+	interface/modifyconstraintstudentsmorningsearlymaxbeginningsatsecondhourform.cpp \
+	interface/constraintstudentssetmorningsearlymaxbeginningsatsecondhourform.cpp \
+	interface/addconstraintstudentssetmorningsearlymaxbeginningsatsecondhourform.cpp \
+	interface/modifyconstraintstudentssetmorningsearlymaxbeginningsatsecondhourform.cpp \
+	\
+	interface/constraintteachersmorningsearlymaxbeginningsatsecondhourform.cpp \
+	interface/addconstraintteachersmorningsearlymaxbeginningsatsecondhourform.cpp \
+	interface/modifyconstraintteachersmorningsearlymaxbeginningsatsecondhourform.cpp \
+	interface/constraintteachermorningsearlymaxbeginningsatsecondhourform.cpp \
+	interface/addconstraintteachermorningsearlymaxbeginningsatsecondhourform.cpp \
+	interface/modifyconstraintteachermorningsearlymaxbeginningsatsecondhourform.cpp \
 	\
 	interface/constraintstudentssetminhourspermorningform.cpp \
 	interface/addconstraintstudentssetminhourspermorningform.cpp \
@@ -1260,6 +1282,14 @@ HEADERS += \
 	interface/constraintteachermaxgapsperdayform.h \
 	interface/addconstraintteachermaxgapsperdayform.h \
 	interface/modifyconstraintteachermaxgapsperdayform.h \
+	\
+	interface/constraintteachersmaxgapspermorningandafternoonform.h \
+	interface/constraintteachermaxgapspermorningandafternoonform.h \
+	interface/addconstraintteachersmaxgapspermorningandafternoonform.h \
+	interface/modifyconstraintteachersmaxgapspermorningandafternoonform.h \
+	interface/addconstraintteachermaxgapspermorningandafternoonform.h \
+	interface/modifyconstraintteachermaxgapspermorningandafternoonform.h \
+	\
 	interface/constraintstudentsearlymaxbeginningsatsecondhourform.h \
 	interface/addconstraintstudentsearlymaxbeginningsatsecondhourform.h \
 	interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform.h \
@@ -1666,6 +1696,20 @@ HEADERS += \
 	interface/constraintteacherafternoonsearlymaxbeginningsatsecondhourform.h \
 	interface/addconstraintteacherafternoonsearlymaxbeginningsatsecondhourform.h \
 	interface/modifyconstraintteacherafternoonsearlymaxbeginningsatsecondhourform.h \
+	\
+	interface/constraintstudentsmorningsearlymaxbeginningsatsecondhourform.h \
+	interface/addconstraintstudentsmorningsearlymaxbeginningsatsecondhourform.h \
+	interface/modifyconstraintstudentsmorningsearlymaxbeginningsatsecondhourform.h \
+	interface/constraintstudentssetmorningsearlymaxbeginningsatsecondhourform.h \
+	interface/addconstraintstudentssetmorningsearlymaxbeginningsatsecondhourform.h \
+	interface/modifyconstraintstudentssetmorningsearlymaxbeginningsatsecondhourform.h \
+	\
+	interface/constraintteachersmorningsearlymaxbeginningsatsecondhourform.h \
+	interface/addconstraintteachersmorningsearlymaxbeginningsatsecondhourform.h \
+	interface/modifyconstraintteachersmorningsearlymaxbeginningsatsecondhourform.h \
+	interface/constraintteachermorningsearlymaxbeginningsatsecondhourform.h \
+	interface/addconstraintteachermorningsearlymaxbeginningsatsecondhourform.h \
+	interface/modifyconstraintteachermorningsearlymaxbeginningsatsecondhourform.h \
 	\
 	interface/constraintstudentssetminhourspermorningform.h \
 	interface/addconstraintstudentssetminhourspermorningform.h \
@@ -2142,6 +2186,14 @@ FORMS += \
 	interface/constraintteachermaxgapsperdayform_template.ui \
 	interface/addconstraintteachermaxgapsperdayform_template.ui \
 	interface/modifyconstraintteachermaxgapsperdayform_template.ui \
+	\
+	interface/constraintteachersmaxgapspermorningandafternoonform_template.ui \
+	interface/constraintteachermaxgapspermorningandafternoonform_template.ui \
+	interface/addconstraintteachersmaxgapspermorningandafternoonform_template.ui \
+	interface/modifyconstraintteachersmaxgapspermorningandafternoonform_template.ui \
+	interface/addconstraintteachermaxgapspermorningandafternoonform_template.ui \
+	interface/modifyconstraintteachermaxgapspermorningandafternoonform_template.ui \
+	\
 	interface/constraintstudentsearlymaxbeginningsatsecondhourform_template.ui \
 	interface/addconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui \
 	interface/modifyconstraintstudentsearlymaxbeginningsatsecondhourform_template.ui \
@@ -2521,6 +2573,20 @@ FORMS += \
 	interface/constraintteacherafternoonsearlymaxbeginningsatsecondhourform_template.ui \
 	interface/addconstraintteacherafternoonsearlymaxbeginningsatsecondhourform_template.ui \
 	interface/modifyconstraintteacherafternoonsearlymaxbeginningsatsecondhourform_template.ui \
+	\
+	interface/constraintstudentsmorningsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/addconstraintstudentsmorningsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/modifyconstraintstudentsmorningsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/constraintstudentssetmorningsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/addconstraintstudentssetmorningsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/modifyconstraintstudentssetmorningsearlymaxbeginningsatsecondhourform_template.ui \
+	\
+	interface/constraintteachersmorningsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/addconstraintteachersmorningsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/modifyconstraintteachersmorningsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/constraintteachermorningsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/addconstraintteachermorningsearlymaxbeginningsatsecondhourform_template.ui \
+	interface/modifyconstraintteachermorningsearlymaxbeginningsatsecondhourform_template.ui \
 	\
 	interface/constraintstudentssetminhourspermorningform_template.ui \
 	interface/addconstraintstudentssetminhourspermorningform_template.ui \
