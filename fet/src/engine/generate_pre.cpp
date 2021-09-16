@@ -16271,10 +16271,9 @@ bool computeN1N2N3(QWidget* parent)
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 			 1, 0 );
-					
+			
 			if(t==0)
 				return false;
-			
 		}
 	}
 

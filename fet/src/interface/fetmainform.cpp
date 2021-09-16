@@ -1047,7 +1047,7 @@ void FetMainForm::updateMode(bool forceUpdate)
 	else{
 		enableActivityTagMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Enable activity tag max hours daily / per real day", nullptr));
 
-		enableActivityTagMinHoursDailyAction->setEnabled(false);
+		enableActivityTagMinHoursDailyAction->setEnabled(true);
 
 		enableMaxGapsPerRealDayAction->setEnabled(true);
 
@@ -1953,6 +1953,8 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursDailyAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursDailyRealDaysAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursPerMorningAction);
+
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction);
 		
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursContinuouslyAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction);
@@ -2001,6 +2003,8 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursDailyAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursDailyRealDaysAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursPerMorningAction);
+
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction);
 		
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursContinuouslyAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction);
@@ -2042,6 +2046,8 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinHoursDailyAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinHoursPerMorningAction);
+
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction);
 		
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction);
@@ -2080,6 +2086,8 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinHoursDailyAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinHoursPerMorningAction);
+
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction);
 		
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursContinuouslyAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction);

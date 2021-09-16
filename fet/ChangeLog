@@ -2378,3 +2378,7 @@ Versions 6.1.0 - 6.1.v
 	and there were activities having none of these tags. Reported by Mohamed Ait Ichou. Other minor bugs were fixed in these constraints
 	(the description of the constraints, and an activity should not have more than one tag from these three, if using these constraints relating
 	to its teacher(s)).
+- Version 6.1.2
+	- Enabled the constraints of type teacher(s)/students (set) activity tag min hours daily in the Mornings-Afternoons mode (suggested by
+	Khineche Kaddour, YOUSSEF HOUIET, and other users).
+	- Added a new example file from Algeria, by Benahmed Abdelkrim.
