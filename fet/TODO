@@ -54,6 +54,10 @@ From Mohamed Ait Ichou: He suggests good printing and output.
 Liviu Lalescu: In case of mornings-afternoons, to print and output the same real day continuously?
 Mohamed Ait Ichou: Yes, morning and evening combined in one day in case of printing.
 
+From Ziani Ben Alia: Please add the following condition: Maximum rest periods between morning and evening for teachers.
+Liviu Lalescu: I am sorry, but this is too difficult. But maybe you could use max gaps per real day and max span per real day.
+Also suggested by saidmechri: Max resting hours between morning and afternoon for teacher (https://lalescu.ro/liviu/fet/forum/index.php?topic=4951.0).
+
 1----------------------------------------------------------
 From Liviu Lalescu:
 
@@ -7386,3 +7390,76 @@ He suggests the possibility to change the duration of all the activities multipl
 have duration 50 minutes and they would like an activity to have 5 x 10 minutes duration. So all activities can be easily edited with a single click.
 
 Liviu Lalescu: This would be unfortunately a probably very seldom used facility. The user could use find+replace on the .fet XML file instead.
+
+436---------------------------------------------------------
+From Henrique Belo (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4938.0
+
+A lot of times we need to disable some activities, and to do that we need to enter the activity and unselect Active check box.
+
+In the list of time and space constraints there is a button that can enable and disable the constraint, I think this is very useful to us in the activities list.
+
+437---------------------------------------------------------
+From Mohamed Ait Ichou (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4940.0
+
+As for the relative weight, which is mandatory to be 100%, it is suggested to hide it from the user because it is not originally allowed to reduce it
+to a lower percentage.
+
+438---------------------------------------------------------
+From Henrique Belo (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4942.0
+
+He suggests to add in the timetable view dialogs, in the details for the activity in the current selected slot, also the constraints which are related
+to this activity.
+
+439---------------------------------------------------------
+From uni_instructor (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4830.0
+
+The most recent version of FET 6.0.2 does not support ALT-hotkeys for the menu bar.
+I have attached two screenshots of version 6.0.2 and 5.49.1
+
+As you can see, FET 5.49.1 supports ALT-hotkeys whereas FET 6.0.2 does not.
+Applying ALT+F should open the file menu but there is no reaction.
+
+Liviu: This is done by me. The reason is that on at least one platform, GNU/Linux with XFCE, my computer, the fields with accelerators appear shortened
+in a bad way, like "&Institu ... mation" or something like that, when using the new Qt 6. So I decided to remove the Alt accelerators in FET version 6,
+considering that they are not used by anybody, since anyway the mouse is much more important in the constraints, where there are no accelerators, and
+the mouse is needed almost everywhere.
+
+Also suggested by rjmillett (by email to Liviu Lalescu):
+
+please consider keyboard shortcuts
+Like
+alt+f for file or similar
+alt+d for data or similar
+
+currently we use alt + down arrow, etc to navigate by the keyboard
+
+it helps whenever the mouse gives trouble
+
+440---------------------------------------------------------
+From aroby (on forum and by email):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4960.0
+
+Between each two uses of a room from two activities with at least one students set attached to them, leave a pause of 1 hour (or a selectable integer
+number of hours). This is done to ensure room sanitation due to Covid-19.
+
+441---------------------------------------------------------
+From Khineche Kaddour (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4977.0
+
+sometimes we need to change the weight of "constraint min days between a set of activities" for one teacher or one Subject in one time
+so can you please add it in filter ?
+
+(in the filter of changing multiple constraints min days between activities with a single click.)
+
+Liviu: it would complicate the dialog. Instead, you could go to the all time constraints and apply a filter, then you can manually modify
+the necessary constraints (I doubt there are too many for a single teacher - hmm, but for a subject there might be many).

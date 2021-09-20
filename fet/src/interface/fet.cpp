@@ -380,8 +380,12 @@ void FetSettings::readSimulationParameters()
 		gt.rules.mode=BLOCK_PLANNING;
 	else if(s==QString("terms"))
 		gt.rules.mode=TERMS;
-	else
-		assert(0);
+	else{
+		QMessageBox::warning(nullptr, FetTranslate::tr("FET warning"), FetTranslate::tr("Incorrect startup mode read from the settings - making"
+		 " it %1.").arg(tr("Official")));
+		gt.rules.mode=OFFICIAL;
+		//assert(0);
+	}
 
 	if(newSettings.contains("output-directory")){
 		OUTPUT_DIR=newSettings.value("output-directory").toString();
@@ -400,7 +404,6 @@ void FetSettings::readSimulationParameters()
 		OUTPUT_DIR=predefDir;
 	}
 	
-
 #ifndef USE_SYSTEM_LOCALE
 	FET_LANGUAGE=newSettings.value("language", "en_US").toString();
 #else
@@ -444,6 +447,10 @@ void FetSettings::readSimulationParameters()
 	QString ver=newSettings.value("version", "-1").toString();
 	
 	TIMETABLE_HTML_LEVEL=newSettings.value("html-level", "2").toInt();
+	if(TIMETABLE_HTML_LEVEL<0 || TIMETABLE_HTML_LEVEL>7){
+		QMessageBox::warning(nullptr, FetTranslate::tr("FET warning"), FetTranslate::tr("Incorrect HTML level read from the settings - making it %1.").arg(2));
+		TIMETABLE_HTML_LEVEL=2;
+	}
 	TIMETABLES_SUBGROUPS_SORTED=newSettings.value("timetables-subgroups-sorted", "false").toBool();
 	TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=newSettings.value("print-activity-tags", "true").toBool();
 	PRINT_DETAILED_HTML_TIMETABLES=newSettings.value("print-detailed-timetables", "true").toBool();
@@ -1593,7 +1600,7 @@ int main(int argc, char **argv)
 			logFile.close();
 			return 1;
 		}
-		if(TIMETABLE_HTML_LEVEL>7 || TIMETABLE_HTML_LEVEL<0){
+		if(TIMETABLE_HTML_LEVEL<0 || TIMETABLE_HTML_LEVEL>7){
 			usage(nullptr, QString("The html level must be 0, 1, 2, 3, 4, 5, 6, or 7"));
 			logFile.close();
 			return 1;

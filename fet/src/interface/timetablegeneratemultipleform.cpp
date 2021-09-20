@@ -584,6 +584,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 	numberOfGeneratedTimetablesLabel->setText(tr("Generated: %1").arg(nGeneratedTimetables));
 	if(ok){
 		nSuccessfullyGeneratedTimetables++;
+		numberOfSuccessfullyGeneratedTimetablesLabel->setText(tr("Successfully: %1").arg(nSuccessfullyGeneratedTimetables));
 		highestPlacedActivities=genMultiMatrix[nThread].maxActivitiesPlaced;
 		assert(highestPlacedActivities==gt.rules.nInternalActivities);
 	}

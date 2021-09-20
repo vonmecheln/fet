@@ -136,6 +136,13 @@ Max placed activities: 0 (at 0 s)</string>
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QLabel" name="numberOfSuccessfullyGeneratedTimetablesLabel">
+         <property name="text">
+          <string>Successfully: 0</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </item>
     </layout>

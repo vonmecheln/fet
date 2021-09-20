@@ -2399,3 +2399,8 @@ Versions 6.1.0 - 6.1.v
 	- Crash bug fixed, when using the constraint teachers max gaps per morning and afternoon (in the Mornings-Afternoons mode) (reported by hellal sofiane yazid).
 	- Now also the subgroups' XML timetables are saved in ordered form, if the user selected this option.
 	- Code and interface improvements.
+- Version 6.1.6
+	- Updated to Qt 6.1.3.
+	- Possible crash bugs fixed (probably never met in practice).
+	- Improvement in the timetable generate multiple dialog: showing the number of successfully generated timetables (useful for instance when generating
+	with a time limit).

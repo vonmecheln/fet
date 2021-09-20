@@ -1,4 +1,4 @@
-This is FET version 6.1.5
+This is FET version 6.1.6
 
 
 Program description:
@@ -14,16 +14,16 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.13.12, Xfce 4.16,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.14.2, Xfce 4.16,
 	Xfce Terminal Emulator 0.8.10, Midnight Commander 4.8.26, Krusader 2.7.2, Kate 21.04.3, KDiff3 0.9.98, grep 3.6,
-	sed 4.8, Thunar Bulk Rename 4.16.8, Qt 6.1.2, QMake 3.1, Qt Creator 4.15.0, gcc 11.1.1, g++ 11.1.1, make 4.3, gdb 10.1,
+	sed 4.8, Thunar Bulk Rename 4.16.8, Qt 6.1.3, QMake 3.1, Qt Creator 5.0.1, gcc 11.2.1, g++ 11.2.1, make 4.3, gdb 10.1,
 	Valgrind 3.17.0, Coverity Scan 2020.09, Cppcheck 2.5, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0, Inkscape 1.0.2,
 	GIMP 2.10.24, ImageMagick 7.1.0, tar 1.34, gzip 1.10, bzip2 1.0.8, other great software (most of them are free software,
 	in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 10 operating system,
-	Command Prompt, Total Commander 10.00, Notepad, Python 3.9.4, ActivePerl 5.28, CMake 3.19.2, Ninja 1.10.0, Qt 6.1.2, QMake 3.1,
-	Qt Creator 4.15.1, MinGW 8.1.0, 7-Zip 19.00.
+	Command Prompt, Total Commander 10.00, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.21.2, Ninja 1.10.2, Qt 6.1.3,
+	QMake 3.1, Qt Creator 5.0.1, MinGW 8.1.0, 7-Zip 19.00.
 
 	FET is a C++ application and uses Qt, a C++ toolkit for cross-platform application development.
 	FET can be run on any platform supported by Qt (GNU/Linux, Windows, Mac OS X, and maybe others).
@@ -34,9 +34,9 @@ Requirements:
 	For running, you need only the archive of FET compiled for your operating system (which contains the necessary libraries).
 	For compiling, you will need this software:
 		make 4.2.1 or similar (GNU Make).
-		gcc 11.1.1 or similar.
-		g++ 11.1.1 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package).
-		Qt 6.1.2 or compatible. Qt 5 should be fine (the authors also tried to maintain backwards source compatibility with Qt 4,
+		gcc 11.2.1 or similar.
+		g++ 11.2.1 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package).
+		Qt 6.1.3 or compatible. Qt 5 should be fine (the authors also tried to maintain backwards source compatibility with Qt 4,
 			but beware that multiple generation on multiple threads is very slow with such an old Qt version).
 		QMake 3.1 or compatible (usually available with Qt).
 
@@ -61,8 +61,8 @@ Getting - compiling - installing the GNU tools: make, gcc and g++ (or gcc-g++, o
 	"g++ --version".
 	Advice from a user on Ubuntu: "sudo apt-get install build-essential" installs build libraries commonly used.
 
-	Maybe Mac OS X from a user: Install Xcode (current version is 7.3.1) from the Mac App Store.
-	(Once installed, I think you'll need to open the Xcode app to finish the installation.)
+	Maybe Mac OS X (from the user Darren McDonald): Install Xcode (the current version is 12.5.1) from the Mac App Store. (Once installed, you'll
+	need to open the Xcode app to finish the installation.)
 
 	Windows: you need a Qt compatible C++ compiler.
 	Maybe an easy option is the MinGW compiler, available optionally with the Qt distribution or on the Qt download page.
@@ -73,32 +73,31 @@ Getting - compiling - installing Qt:
 
 	Qt homepage: https://www.qt.io/
 
-	You will need Qt 6.1.2 or compatible to compile FET. Qt 5 should be fine (the authors also tried to maintain backwards source
+	You will need Qt 6.1.3 or compatible to compile FET. Qt 5 should be fine (the authors also tried to maintain backwards source
 		compatibility with Qt 4, but beware that multiple generation on multiple threads is very slow with such an old Qt version).
 	You can get the corresponding version of Qt with your package manager or from the internet (preferably from the Qt homepage).
 	Qt can be used with the GNU (L)GPL or commercial license (The authors chose the GNU (L)GPL license).
 
 	GNU/Linux: It is possible to use YaST (or Adept Manager) or other package managers to get your version of Qt, pre-compiled.
 	Or you can download, (possibly) compile and install Qt from the internet (preferably from its homepage).
-	A possible name for the precompiled package is libqt5.
-	A user reported that on Ubuntu "sudo apt-get install qt5-default" without quotes should work.
 
 	Windows - Download latest Qt from the internet (preferably from its homepage). There are available precompiled packages, but the authors chose
 	to compile Qt from the sources using the additional configure option "-schannel". This is done to ensure that SSL will work in FET using the
 	available SSL dll-s from Windows. For a faster Qt configuration, the authors download/compile/install only the qtbase component,
 	with a configure command which might look like:
-	"configure.bat -opensource -confirm-license -platform win32-g++ -schannel -opengl desktop -release -nomake examples -nomake tests -prefix C:\Qt\6.1.2".
+	"configure.bat -opensource -confirm-license -platform win32-g++ -schannel -opengl desktop -release -nomake examples -nomake tests -prefix C:\Qt\6.1.3".
 	(When we tried to use the recommended option "-opengl dynamic" we got a compiler error.)
 	Note that to be able to open ui files with Qt Designer or ts files with Qt Linguist you need to install the Qt component qttools
 	(or the whole Qt package).
 
 	Mac OS X:
-	Maybe you can get pre-compiled Qt packages for Mac OS X. If not, get Qt from the internet (preferably from its homepage).
+	Install Qt (the current version is 6.1.3) from https://www.qt.io. The default install location is /Users/YOURUSERNAME/Qt, and you can create
+	a (free) Qt account. [Update: if you're just using Qt for FET, you should select to "download for open source".]
 
 	Note about the Qt "QMAKESPEC" variable: advanced topic, read this if you get Qt errors about the environment not being set, or environment
 	variable QMAKESPEC not being set, or if the Qt environment is not set correctly: Qt needs to know the environment you are using. It is usually
 	something like: linux-g++, macx-g++ or win32-g++ (platform-compiler). You can find all the supported platforms in the directory "mkspecs" of Qt
-	(some usual locations are /usr/share/qt5/mkspecs or /usr/lib/qt5/mkspecs on GNU/Linux or C:\Qt\6.1.2\mkspecs on Windows).
+	(some usual locations are /usr/share/qt5/mkspecs or /usr/lib/qt5/mkspecs on GNU/Linux or C:\Qt\6.1.3\mkspecs on Windows).
 	It seems that Qt automatically finds the platform (there is a default configuration in the "default" subdirectory of the "mkspecs" directory,
 	which is created automatically when you install Qt). If the default configuration is not working or is wrong, you may need to set the
 	correct QMAKESPEC variable for your platform. Under Windows, you can create an environment variable QMAKESPEC equal to win32-g++
@@ -124,7 +123,7 @@ Compiling FET:
 	Note2: compilation takes long (maybe even 1 hour, if you are using an older computer). The file
 	rules.cpp takes the longest time to compile, maybe even 1 minute or more.
 
-	Note3: the following situation may appear under GNU/Linux, but it could be met also on other platforms.
+	Note3 (old, probably deprecated): the following situation may appear under GNU/Linux, but it could be met also on other platforms.
 	Depending on your Qt installation, it may happen that the FET intermediary files and executables are very large (~100 MB for the fet executable
 	instead of ~10 MB). It is not sure if this affects the FET speed and performance, but anyway it is unpleasant. In this case, you may want to
 	modify some files in your system (Qt files) to improve this. You need to change some Qt configuration files and recompile FET from the beginning
@@ -153,7 +152,7 @@ Compiling FET:
 	to keep a core free for other tasks, write "make -j 3"). This is proven to work under GNU/Linux and Mac OS X. Under Windows it depends on the C++ compiler (you
 	may try it to see if it works).
 
-	Currently FET can be compiled with a C++ compiler, using Qt version 6.1.2 or compatible.
+	Currently FET can be compiled with a C++ compiler, using Qt version 6.1.3 or compatible.
 
 	Note NUseSystemLocale: If you want FET to autodetect the system locale language, type <<qmake fet.pro "DEFINES+=USE_SYSTEM_LOCALE">>
 	or simply <<qmake "DEFINES+=USE_SYSTEM_LOCALE">>. This will work if you recompile from the beginning all the FET package (remove
@@ -178,7 +177,7 @@ Compiling FET:
 
 
 	GNU/Linux:
-	- You will need Qt 6.1.2 or compatible to compile this program.
+	- You will need Qt 6.1.3 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 6 series (this command is executed very fast, so don't worry if you
 		get immediate return from it)
 	See also notes NUseSystemLocale and Note4 above.
@@ -190,7 +189,7 @@ Compiling FET:
 	3 Variants:
 
 	1. First variant, if you use the gcc compiler:
-	- You will need Qt 6.1.2 or compatible to compile this program.
+	- You will need Qt 6.1.3 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 6 series.
 	(this command is executed very fast, so don't worry if you get immediate return from it)
 	- IMPORTANT: you might need to write: "qmake -spec macx-g++ fet.pro", if "qmake fet.pro"
@@ -202,14 +201,14 @@ Compiling FET:
 	2. Another variant:
 	- Type "qmake fet.pro" and then "xcodebuild".
 
-	3. Another variant, if you use the Clang C++ compiler (which seems to be the default for Qt 6.1.2 on Mac):
+	3. Another variant, if you use the Clang C++ compiler (which seems to be the default for Qt 6.1.3 on Mac):
 	It seems that you need to type:
-	"/Users/Yourname/Qt6.1.2/6.1.2/clang_64/bin/qmake -r -spec /Users/Yourname/Qt6.1.2/6.1.2/clang_64/mkspecs/macx-clang", then "make"
+	/Users/YOURUSERNAME/Qt/6.1.3/clang_64/bin/qmake -r -spec /Users/YOURUSERNAME/Qt/6.1.3/clang_64/mkspecs/macx-clang
 	(the -r parameter might not be necessary.)
 	Please see: https://lalescu.ro/liviu/fet/forum/index.php?topic=2488.msg13425#msg13425 (and also see the whole topic there.)
 
 
-	Windows: MinGW C++ compiler: you need Qt 6.1.2 or compatible, and MinGW.
+	Windows: MinGW C++ compiler: you need Qt 6.1.3 or compatible, and MinGW.
 	You might use other C++ compilers if you want, please see the Qt documentation.
 	for other variants. Any C++ compiler that supports Qt should be good.
 	You need to run "qmake fet.pro" or "qmake" (this command is executed very fast, so don't worry if you get
@@ -228,11 +227,10 @@ Installing FET:
 	GNU/Linux, and maybe Mac OS X:
 	Type "make install" with root permissions.
 	
-	Mac OS X: A user reported that one can obtain a universal Mac OS X executable with:
-	$ cd /"pathto"/Qt/5.5/clang_64/bin/
-	$ ./macdeployqt /"pathto"/fet.app
-	(with Qt 5.5)
-
+	Mac OS X: The user Darren McDonald reported that one can obtain a universal Mac OS X executable with:
+	cd /Users/YOURUSERNAME/Qt/6.1.3/clang_64/bin/
+	./macdeployqt /Users/YOURUSERNAME/Downloads/fet-v.v.v/fet.app
+	
 	Windows:
 	Move the FET directory to a place of your choice.
 
@@ -253,12 +251,11 @@ Running FET:
 		for your platform. Alternatively, you may run the executable named fet from the fet-v.v.v directory, using another method. The fet executable
 		will be located inside the fet-v.v.v directory after a successful compilation.
 	
-	Note for Mac OS X about using translations (if you want to run FET into other language): it seems that you need to copy the contents
-	of the "translations/" directory into the directory fet-v.v.v/fet.app/Contents/MacOS/translations/ or into the directory /usr/share/fet/translations/
-	(if you compiled/installed FET by yourself). Or copy the whole directory translations/ into fet-v.v.v/fet.app/Contents/MacOS/ or into usr/share/fet/
-	More notes for the Mac OS X platform, from a user: copying the translations/ directory into the directory fet.app/Contents/MacOS/ is
-	possible from the command line in X11 xterm (but it is not possible with the finder program, because the file extension ".app" is
-	exclusive for applications, so the program finder interprets a directory with the extension ".app" as an application).
+	Note for Mac OS X about using translations: If you want to use FET in a language other than the default, you'll need to move the translation files
+	into the appropriate location. The files you need to move can be found in /Users/YOURUSERNAME/Downloads/fet-v.v.v/translations — you'll want to
+	move all of the files ending with .qm to a new location. Open a new Finder window and right-click on the FET.app you've just created in
+	/Users/YOURUSERNAME/Downloads, and select Show Package Contents. Then open the Contents folder, and finally open the MacOS folder within Contents.
+	This is where you should move the .qm files. Once these have been moved, you switch FET languages within the FET app as usual.
 
 	Windows:
 	Run the executable fet.exe (its location is inside the fet-v.v.v directory, you can find it there if you have FET precompiled for Windows or after you compiled it).
