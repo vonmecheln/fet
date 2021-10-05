@@ -424,9 +424,13 @@ void ActivitiesForm::modifyActivity()
 			s2+="\n\n";
 			s2+=tr("The fields which are different are: %1").arg(s.join(", "));
 				
-			int t=QMessageBox::warning(this, tr("FET warning"), s2, tr("Abort"), tr("Continue"), QString(), 1, 0);
+			/*int t=QMessageBox::warning(this, tr("FET warning"), s2, tr("Abort"), tr("Continue"), QString(), 1, 0);
 			
 			if(t==0)
+				return;*/
+			QMessageBox::StandardButton t=QMessageBox::warning(this, tr("FET warning"), s2, QMessageBox::Ok | QMessageBox::Cancel);
+			
+			if(t==QMessageBox::Cancel)
 				return;
 		}
 	}

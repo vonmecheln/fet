@@ -135,7 +135,7 @@ void BuildingsForm::removeBuilding()
 
 	if(QMessageBox::warning( this, tr("FET"),
 		tr("Are you sure you want to delete this building?"),
-		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+		QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
 		return;
 		
 	bool tmp=gt.rules.removeBuilding(bu->name);

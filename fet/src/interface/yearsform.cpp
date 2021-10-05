@@ -122,9 +122,13 @@ void YearsForm::removeYear()
 	int yearIndex=gt.rules.searchYear(yearName);
 	assert(yearIndex>=0);
 
-	if(QMessageBox::warning( this, tr("FET"),
+	/*if(QMessageBox::warning( this, tr("FET"),
 		tr("Are you sure you want to delete year %1 and all related groups, subgroups, activities and constraints?").arg(yearName),
 		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+		return;*/
+	if(QMessageBox::warning( this, tr("FET"),
+		tr("Are you sure you want to delete year %1 and all related groups, subgroups, activities and constraints?").arg(yearName),
+		QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
 		return;
 
 	bool tmp=gt.rules.removeYear(yearName);

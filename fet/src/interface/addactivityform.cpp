@@ -702,14 +702,18 @@ void AddActivityForm::addActivity()
 		}
 
 		if(already_existing){
-			int t=QMessageBox::question(this, tr("FET question"),
-				//tr("This activity already exists. Insert it again?"),
+			/*int t=QMessageBox::question(this, tr("FET question"),
 				tr("A similar activity already exists. Do you want to insert current activity?"),
 				tr("Yes"),tr("No"));
-			assert(t==0 || t==1 ||t==-1);
+			assert(t==0 || t==1 || t==-1);
 			if(t==1) //no pressed
 				return;
 			if(t==-1) //Esc pressed
+				return;*/
+			QMessageBox::StandardButton t=QMessageBox::question(this, tr("FET question"),
+				tr("A similar activity already exists. Do you want to insert current activity?"),
+				QMessageBox::Yes | QMessageBox::No);
+			if(t==QMessageBox::No)
 				return;
 		}
 
@@ -943,8 +947,7 @@ void AddActivityForm::addMultipleActivities()
 			}
 	
 			if(already_existing){
-				int t=QMessageBox::question(this, tr("FET question"), 
-					//tr("This activity already exists. Insert it again?"),
+				/*int t=QMessageBox::question(this, tr("FET question"),
 					tr("A similar activity for students set %1 already exists. Do you want to insert current activity?").arg(students_names.at(st)),
 					tr("Yes"),tr("No"));
 				assert(t==0 || t==1 ||t==-1);
@@ -953,7 +956,13 @@ void AddActivityForm::addMultipleActivities()
 				}
 				if(t==-1){ //Esc pressed
 					continue;
-				}
+				}*/
+				
+				QMessageBox::StandardButton t=QMessageBox::question(this, tr("FET question"),
+					tr("A similar activity for students set %1 already exists. Do you want to insert current activity?").arg(students_names.at(st)),
+					QMessageBox::Yes | QMessageBox::No);
+				if(t==QMessageBox::No)
+					return;
 			}
 
 			bool tmp=gt.rules.addSimpleActivityFast(this, activityid, 0, teachers_names, subject_name, activity_tags_names,

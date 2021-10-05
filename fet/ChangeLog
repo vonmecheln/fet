@@ -2408,3 +2408,7 @@ Versions 6.1.0 - 6.1.v
 	- Added a new type of constraint in the Mornings-Afternoons mode: teacher(s) max three consecutive days (suggested by Benahmed Abdelkrim, Hiba Hadi,
 	and other users).
 	- Added a new example file from Algeria, by Benahmed Abdelkrim.
+- Version 6.1.8
+	- Updated to Qt 6.2.0.
+	- Improvements in the new constraint introduced in the previous version (teacher(s) max three consecutive days).
+	- Minor interface bug fixes.

@@ -10533,11 +10533,11 @@ void FetMainForm::on_spreadActivitiesAction_triggered()
 		return;
 	}
 	
-	if(gt.rules.nDaysPerWeek>=7){
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS && gt.rules.nDaysPerWeek>=7){
 		QString s;
 		s=tr("You have more than 6 days per week, so probably you won't need this feature. Do you still want to continue?");
 		
-		int cfrm=0;
+		/*int cfrm=0;
 		switch( QMessageBox::question( this, tr("FET question"),
 		 s,
 		 tr("&Continue"), tr("&Cancel"), 0 , 1 ) ) {
@@ -10551,14 +10551,40 @@ void FetMainForm::on_spreadActivitiesAction_triggered()
 
 		if(!cfrm){
 			return;
+		}*/
+		QMessageBox::StandardButton cfrm=QMessageBox::question( this, tr("FET question"), s, QMessageBox::Yes | QMessageBox::Cancel);
+		if(cfrm==QMessageBox::Cancel)
+			return;
+	}
+	else if(gt.rules.mode==MORNINGS_AFTERNOONS && gt.rules.nDaysPerWeek/2>=7){
+		QString s;
+		s=tr("You have more than 6 real days per week, so probably you won't need this feature. Do you still want to continue?");
+		
+		/*int cfrm=0;
+		switch( QMessageBox::question( this, tr("FET question"),
+		 s,
+		 tr("&Continue"), tr("&Cancel"), 0 , 1 ) ) {
+		case 0: // Yes - continue
+			cfrm=1;
+			break;
+		case 1: // No - cancel
+			cfrm=0;
+			break;
 		}
+
+		if(!cfrm){
+			return;
+		}*/
+		QMessageBox::StandardButton cfrm=QMessageBox::question( this, tr("FET question"), s, QMessageBox::Yes | QMessageBox::Cancel);
+		if(cfrm==QMessageBox::Cancel)
+			return;
 	}
 
 	if(gt.rules.mode!=MORNINGS_AFTERNOONS && gt.rules.nDaysPerWeek<=4){
 		QString s;
 		s=tr("You have less than 5 days per week, so probably you won't need this feature. Do you still want to continue?");
 
-		int cfrm=0;
+		/*int cfrm=0;
 		switch( QMessageBox::question( this, tr("FET question"),
 		 s,
 		 tr("&Continue"), tr("&Cancel"), 0 , 1 ) ) {
@@ -10572,13 +10598,16 @@ void FetMainForm::on_spreadActivitiesAction_triggered()
 
 		if(!cfrm){
 			return;
-		}
+		}*/
+		QMessageBox::StandardButton cfrm=QMessageBox::question( this, tr("FET question"), s, QMessageBox::Yes | QMessageBox::Cancel);
+		if(cfrm==QMessageBox::Cancel)
+			return;
 	}
 	else if(gt.rules.mode==MORNINGS_AFTERNOONS && gt.rules.nDaysPerWeek/2<=4){
 		QString s;
 		s=tr("You have less than 5 real days per week, so probably you won't need this feature. Do you still want to continue?");
 
-		int cfrm=0;
+		/*int cfrm=0;
 		switch( QMessageBox::question( this, tr("FET question"),
 		 s,
 		 tr("&Continue"), tr("&Cancel"), 0 , 1 ) ) {
@@ -10592,7 +10621,10 @@ void FetMainForm::on_spreadActivitiesAction_triggered()
 
 		if(!cfrm){
 			return;
-		}
+		}*/
+		QMessageBox::StandardButton cfrm=QMessageBox::question( this, tr("FET question"), s, QMessageBox::Yes | QMessageBox::Cancel);
+		if(cfrm==QMessageBox::Cancel)
+			return;
 	}
 
 	if(CONFIRM_SPREAD_ACTIVITIES){

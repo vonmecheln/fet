@@ -1129,11 +1129,16 @@ void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 						}  //modified by Volker Dirr, so you can also unlock (end)
 						
 						if(report){
-							int k;
+							/*int k;
 							k=QMessageBox::information(this, tr("FET information"), s,
 							 tr("Skip information"), tr("See next"), QString(), 1, 0 );
 
 		 					if(k==0)
+								report=false;*/
+							QMessageBox::StandardButton k;
+							k=QMessageBox::information(this, tr("FET information"), s, QMessageBox::YesToAll | QMessageBox::Ok);
+							
+							if(k==QMessageBox::YesToAll)
 								report=false;
 						}
 					}
@@ -1210,11 +1215,16 @@ void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 						}  //modified by Volker Dirr, so you can also unlock (end)
 						
 						if(report){
-							int k;
+							/*int k;
 							k=QMessageBox::information(this, tr("FET information"), s,
 							 tr("Skip information"), tr("See next"), QString(), 1, 0 );
 							
 		 					if(k==0)
+								report=false;*/
+							QMessageBox::StandardButton k;
+							k=QMessageBox::information(this, tr("FET information"), s, QMessageBox::YesToAll | QMessageBox::Ok);
+							
+							if(k==QMessageBox::YesToAll)
 								report=false;
 						}
 					}

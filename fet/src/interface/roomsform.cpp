@@ -145,7 +145,7 @@ void RoomsForm::removeRoom()
 
 	if(QMessageBox::warning( this, tr("FET"),
 		tr("Are you sure you want to delete this room and all related constraints?"),
-		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+		QMessageBox::Yes | QMessageBox::No ) == QMessageBox::No)
 		return;
 		
 	int nv=0;
@@ -173,7 +173,7 @@ void RoomsForm::removeRoom()
 			tr("This is a real room. If you remove it, it will affect %1 virtual rooms."
 			" The real room is met %2 times overall in the lists of sets of the virtual rooms."
 			" Do you really want to remove it?").arg(nv).arg(nvtotal),
-			tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+			QMessageBox::Yes | QMessageBox::No ) == QMessageBox::No)
 			return;
 	}
 
@@ -431,7 +431,7 @@ void RoomsForm::makeReal()
 	
 	if(QMessageBox::warning( this, tr("FET confirmation"),
 		tr("Are you sure you want to make this room real? This will erase the list of sets of real rooms for this virtual room."),
-		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+		QMessageBox::Yes | QMessageBox::No ) == QMessageBox::No)
 		return;
 	
 	rm->isVirtual=false;

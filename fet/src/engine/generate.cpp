@@ -17517,44 +17517,74 @@ impossibleteachersmaxdaysperweek:
 					assert(_dstart>=0);
 					assert(_dend>=0);
 
-					if(_nOc<=maxDays || (allowExceptionAMAM && /* _dend>=0 && _dstart>=0 && */ _dend-_dstart==maxDays && _dstart%2==1 && _dend%2==0))
+					if(_nOc<=maxDays || (allowExceptionAMAM && _dend-_dstart==maxDays && _dstart%2==1 && _dend%2==0))
 						continue; //OK, preliminary
 
 					if(level>0){
-						for(;;){
-							int nOc=1;
-							int dstart=d, dend=d;
-							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
-								occupiedDay[d2]=false;
-								canEmptyDay[d2]=true;
-							}
-							occupiedDay[d]=true;
-							canEmptyDay[d]=false;
-						
-							for(int d2=d-1; d2>=0; d2--){
-								occupiedDay[d2]=false;
-								canEmptyDay[d2]=true;
-	
-								_nConflActivities[d2]=0;
-								_activitiesForDay[d2].clear();
-								
-								if(teacherActivitiesOfTheDay(tch,d2).count()>0){
-									for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
-										if(ai2>=0){
-											if(!conflActivities[newtime].contains(ai2)){
-												occupiedDay[d2]=true;
-												if(fixedTimeActivity[ai2] || swappedActivities[ai2])
-													canEmptyDay[d2]=false;
-												else if(!_activitiesForDay[d2].contains(ai2)){
-													_nConflActivities[d2]++;
-													_activitiesForDay[d2].append(ai2);
-													assert(_nConflActivities[d2]==_activitiesForDay[d2].count());
-												}
+						occupiedDay[d]=true;
+						canEmptyDay[d]=false;
+					
+						for(int d2=d-1; d2>=0; d2--){
+							occupiedDay[d2]=false;
+							canEmptyDay[d2]=true;
+
+							_nConflActivities[d2]=0;
+							_activitiesForDay[d2].clear();
+							
+							if(teacherActivitiesOfTheDay(tch,d2).count()>0){
+								for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+									if(ai2>=0){
+										if(!conflActivities[newtime].contains(ai2)){
+											occupiedDay[d2]=true;
+											if(fixedTimeActivity[ai2] || swappedActivities[ai2])
+												canEmptyDay[d2]=false;
+											else if(!_activitiesForDay[d2].contains(ai2)){
+												_nConflActivities[d2]++;
+												_activitiesForDay[d2].append(ai2);
+												assert(_nConflActivities[d2]==_activitiesForDay[d2].count());
 											}
 										}
 									}
 								}
+							}
 
+							if(!occupiedDay[d2])
+								break;
+						}
+						
+						for(int d2=d+1; d2<gt.rules.nDaysPerWeek; d2++){
+							occupiedDay[d2]=false;
+							canEmptyDay[d2]=true;
+
+							_nConflActivities[d2]=0;
+							_activitiesForDay[d2].clear();
+							
+							if(teacherActivitiesOfTheDay(tch,d2).count()>0){
+								for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+									if(ai2>=0){
+										if(!conflActivities[newtime].contains(ai2)){
+											occupiedDay[d2]=true;
+											if(fixedTimeActivity[ai2] || swappedActivities[ai2])
+												canEmptyDay[d2]=false;
+											else if(!_activitiesForDay[d2].contains(ai2)){
+												_nConflActivities[d2]++;
+												_activitiesForDay[d2].append(ai2);
+												assert(_nConflActivities[d2]==_activitiesForDay[d2].count());
+											}
+										}
+									}
+								}
+							}
+
+							if(!occupiedDay[d2])
+								break;
+						}
+
+						for(;;){
+							int dstart=d, dend=d;
+							int nOc=1;
+
+							for(int d2=d-1; d2>=0; d2--){
 								if(occupiedDay[d2]){
 									nOc++;
 									dstart=d2;
@@ -17562,61 +17592,23 @@ impossibleteachersmaxdaysperweek:
 								else{
 									break;
 								}
-								
-								if(!occupiedDay[d2]){
-									assert(0);
-									canEmptyDay[d2]=false;
-								}
 							}
-							
 							for(int d2=d+1; d2<gt.rules.nDaysPerWeek; d2++){
-								occupiedDay[d2]=false;
-								canEmptyDay[d2]=true;
-	
-								_nConflActivities[d2]=0;
-								_activitiesForDay[d2].clear();
-								
-								if(teacherActivitiesOfTheDay(tch,d2).count()>0){
-									for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
-										if(ai2>=0){
-											if(!conflActivities[newtime].contains(ai2)){
-												occupiedDay[d2]=true;
-												if(fixedTimeActivity[ai2] || swappedActivities[ai2])
-													canEmptyDay[d2]=false;
-												else if(!_activitiesForDay[d2].contains(ai2)){
-													_nConflActivities[d2]++;
-													_activitiesForDay[d2].append(ai2);
-													assert(_nConflActivities[d2]==_activitiesForDay[d2].count());
-												}
-											}
-										}
-									}
-								}
-
 								if(occupiedDay[d2]){
-									dend=d2;
 									nOc++;
+									dend=d2;
 								}
 								else{
 									break;
 								}
-								
-								if(!occupiedDay[d2]){
-									assert(0);
-									canEmptyDay[d2]=false;
-								}
 							}
-							
 
-							assert(dstart>=0);
-							assert(dend>=0);
-
-							if(nOc<=maxDays || (allowExceptionAMAM && /* dend>=0 && dstart>=0 && */ dend-dstart==maxDays && dstart%2==1 && dend%2==0))
+							if(nOc<=maxDays || (allowExceptionAMAM && dend-dstart==maxDays && dstart%2==1 && dend%2==0))
 								break;
 							
 							bool canChooseDay=false;
 							
-							for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+							for(int j=dstart; j<=dend; j++)
 								if(occupiedDay[j]){
 									if(canEmptyDay[j]){
 										canChooseDay=true;
@@ -17640,14 +17632,14 @@ impossibleteachersmaxdaysperweek:
 							
 							int m=gt.rules.nInternalActivities;
 							
-							for(int kk=0; kk<gt.rules.nDaysPerWeek; kk++)
-								if(occupiedDay[kk] /**/ && canEmptyDay[kk])
+							for(int kk=dstart; kk<=dend; kk++)
+								if(occupiedDay[kk] && canEmptyDay[kk])
 									if(m>_nConflActivities[kk])
 										m=_nConflActivities[kk];
 							
 							candidateDays.clear();
-							for(int kk=0; kk<gt.rules.nDaysPerWeek; kk++)
-								if(occupiedDay[kk] /**/ && canEmptyDay[kk])
+							for(int kk=dstart; kk<=dend; kk++)
+								if(occupiedDay[kk] && canEmptyDay[kk])
 									if(m==_nConflActivities[kk])
 										candidateDays.append(kk);
 							
@@ -17668,54 +17660,90 @@ impossibleteachersmaxdaysperweek:
 								nConflActivities[newtime]++;
 								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 							}
+							
+							occupiedDay[d2]=false;
+							canEmptyDay[d2]=true;
 						}
 					}
 					else{
 						assert(level==0);
 
-						for(;;){
-							int nOc=1;
-							int dstart=d, dend=d;
-							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
-								occupiedDay[d2]=false;
-								canEmptyDay[d2]=true;
-							}
-							occupiedDay[d]=true;
-							canEmptyDay[d]=false;
-						
-							for(int d2=d-1; d2>=0; d2--){
-								occupiedDay[d2]=false;
-								canEmptyDay[d2]=true;
-	
-								_nConflActivities[d2]=0;
-								_activitiesForDay[d2].clear();
+						occupiedDay[d]=true;
+						canEmptyDay[d]=false;
+					
+						for(int d2=d-1; d2>=0; d2--){
+							occupiedDay[d2]=false;
+							canEmptyDay[d2]=true;
 
-								_minWrong[d2]=INF;
-								_nWrong[d2]=0;
-								_nConflActivities[d2]=0;
-								_minIndexAct[d2]=gt.rules.nInternalActivities;
-								_activitiesForDay[d2].clear();
-								
-								if(teacherActivitiesOfTheDay(tch,d2).count()>0){
-									for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
-										if(ai2>=0){
-											if(!conflActivities[newtime].contains(ai2)){
-												occupiedDay[d2]=true;
-												if(fixedTimeActivity[ai2] || swappedActivities[ai2])
-													canEmptyDay[d2]=false;
-												else if(!_activitiesForDay[d2].contains(ai2)){
-													_minWrong[d2] = min (_minWrong[d2], triedRemovals(ai2,c.times[ai2]));
-													_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);
-													_nWrong[d2]+=triedRemovals(ai2,c.times[ai2]);
-													_nConflActivities[d2]++;
-													_activitiesForDay[d2].append(ai2);
-													assert(_nConflActivities[d2]==_activitiesForDay[d2].count());
-												}
+							_minWrong[d2]=INF;
+							_nWrong[d2]=0;
+							_nConflActivities[d2]=0;
+							_minIndexAct[d2]=gt.rules.nInternalActivities;
+							_activitiesForDay[d2].clear();
+							
+							if(teacherActivitiesOfTheDay(tch,d2).count()>0){
+								for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+									if(ai2>=0){
+										if(!conflActivities[newtime].contains(ai2)){
+											occupiedDay[d2]=true;
+											if(fixedTimeActivity[ai2] || swappedActivities[ai2])
+												canEmptyDay[d2]=false;
+											else if(!_activitiesForDay[d2].contains(ai2)){
+												_minWrong[d2] = min (_minWrong[d2], triedRemovals(ai2,c.times[ai2]));
+												_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);
+												_nWrong[d2]+=triedRemovals(ai2,c.times[ai2]);
+												_nConflActivities[d2]++;
+												_activitiesForDay[d2].append(ai2);
+												assert(_nConflActivities[d2]==_activitiesForDay[d2].count());
 											}
 										}
 									}
 								}
+							}
 
+							if(!occupiedDay[d2])
+								break;
+						}
+						
+						for(int d2=d+1; d2<gt.rules.nDaysPerWeek; d2++){
+							occupiedDay[d2]=false;
+							canEmptyDay[d2]=true;
+
+							_minWrong[d2]=INF;
+							_nWrong[d2]=0;
+							_nConflActivities[d2]=0;
+							_minIndexAct[d2]=gt.rules.nInternalActivities;
+							_activitiesForDay[d2].clear();
+							
+							if(teacherActivitiesOfTheDay(tch,d2).count()>0){
+								for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+									if(ai2>=0){
+										if(!conflActivities[newtime].contains(ai2)){
+											occupiedDay[d2]=true;
+											if(fixedTimeActivity[ai2] || swappedActivities[ai2])
+												canEmptyDay[d2]=false;
+											else if(!_activitiesForDay[d2].contains(ai2)){
+												_minWrong[d2] = min (_minWrong[d2], triedRemovals(ai2,c.times[ai2]));
+												_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);
+												_nWrong[d2]+=triedRemovals(ai2,c.times[ai2]);
+												_nConflActivities[d2]++;
+												_activitiesForDay[d2].append(ai2);
+												assert(_nConflActivities[d2]==_activitiesForDay[d2].count());
+											}
+										}
+									}
+								}
+							}
+
+							if(!occupiedDay[d2])
+								break;
+						}
+
+						for(;;){
+							int dstart=d, dend=d;
+							int nOc=1;
+
+							for(int d2=d-1; d2>=0; d2--){
 								if(occupiedDay[d2]){
 									nOc++;
 									dstart=d2;
@@ -17723,46 +17751,8 @@ impossibleteachersmaxdaysperweek:
 								else{
 									break;
 								}
-								
-								if(!occupiedDay[d2]){
-									assert(0);
-									canEmptyDay[d2]=false;
-								}
 							}
-							
 							for(int d2=d+1; d2<gt.rules.nDaysPerWeek; d2++){
-								occupiedDay[d2]=false;
-								canEmptyDay[d2]=true;
-	
-								_nConflActivities[d2]=0;
-								_activitiesForDay[d2].clear();
-
-								_minWrong[d2]=INF;
-								_nWrong[d2]=0;
-								_nConflActivities[d2]=0;
-								_minIndexAct[d2]=gt.rules.nInternalActivities;
-								_activitiesForDay[d2].clear();
-								
-								if(teacherActivitiesOfTheDay(tch,d2).count()>0){
-									for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
-										if(ai2>=0){
-											if(!conflActivities[newtime].contains(ai2)){
-												occupiedDay[d2]=true;
-												if(fixedTimeActivity[ai2] || swappedActivities[ai2])
-													canEmptyDay[d2]=false;
-												else if(!_activitiesForDay[d2].contains(ai2)){
-													_minWrong[d2] = min (_minWrong[d2], triedRemovals(ai2,c.times[ai2]));
-													_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);
-													_nWrong[d2]+=triedRemovals(ai2,c.times[ai2]);
-													_nConflActivities[d2]++;
-													_activitiesForDay[d2].append(ai2);
-													assert(_nConflActivities[d2]==_activitiesForDay[d2].count());
-												}
-											}
-										}
-									}
-								}
-
 								if(occupiedDay[d2]){
 									nOc++;
 									dend=d2;
@@ -17770,23 +17760,14 @@ impossibleteachersmaxdaysperweek:
 								else{
 									break;
 								}
-								
-								if(!occupiedDay[d2]){
-									assert(0);
-									canEmptyDay[d2]=false;
-								}
 							}
-							
 
-							assert(dstart>=0);
-							assert(dend>=0);
-
-							if(nOc<=maxDays || (allowExceptionAMAM && /* dend>=0 && dstart>=0 && */ dend-dstart==maxDays && dstart%2==1 && dend%2==0))
+							if(nOc<=maxDays || (allowExceptionAMAM && dend-dstart==maxDays && dstart%2==1 && dend%2==0))
 								break;
 							
 							bool canChooseDay=false;
 							
-							for(int j=0; j<gt.rules.nDaysPerWeek; j++)
+							for(int j=dstart; j<=dend; j++)
 								if(occupiedDay[j]){
 									if(canEmptyDay[j]){
 										canChooseDay=true;
@@ -17805,37 +17786,35 @@ impossibleteachersmaxdaysperweek:
 							int d2=-1;
 							
 							////////////////
+							//choose a random day from those with minimum number of conflicting activities
 							QList<int> candidateDays;
-
+							
 							int _mW=INF;
 							int _nW=INF;
 							int _mCA=gt.rules.nInternalActivities;
 							int _mIA=gt.rules.nInternalActivities;
-
-							for(int kk=0; kk<gt.rules.nDaysPerWeek; kk++)
-								if(occupiedDay[kk] /**/ && canEmptyDay[kk]){
+							
+							for(int kk=dstart; kk<=dend; kk++)
+								if(occupiedDay[kk] && canEmptyDay[kk])
 									if(_mW>_minWrong[kk] ||
-									(_mW==_minWrong[kk] && _nW>_nWrong[kk]) ||
-									(_mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA>_nConflActivities[kk]) ||
-									(_mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA==_nConflActivities[kk] && _mIA>_minIndexAct[kk])){
+									 (_mW==_minWrong[kk] && _nW>_nWrong[kk]) ||
+									 (_mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA>_nConflActivities[kk]) ||
+									 (_mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA==_nConflActivities[kk] && _mIA>_minIndexAct[kk])){
 										_mW=_minWrong[kk];
 										_nW=_nWrong[kk];
 										_mCA=_nConflActivities[kk];
 										_mIA=_minIndexAct[kk];
 									}
-								}
-								
-							assert(_mW<INF);
 							
 							candidateDays.clear();
-							for(int kk=0; kk<gt.rules.nDaysPerWeek; kk++)
-								if(occupiedDay[kk] /**/ && canEmptyDay[kk])
+							for(int kk=dstart; kk<=dend; kk++)
+								if(occupiedDay[kk] && canEmptyDay[kk])
 									if(_mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA==_nConflActivities[kk] && _mIA==_minIndexAct[kk])
 										candidateDays.append(kk);
 							
 							assert(candidateDays.count()>0);
 							d2=candidateDays.at(rng.intMRG32k3a(candidateDays.count()));
-							//////////////////
+							/////////////////
 							
 							assert(d2>=0);
 
@@ -17850,6 +17829,9 @@ impossibleteachersmaxdaysperweek:
 								nConflActivities[newtime]++;
 								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 							}
+							
+							occupiedDay[d2]=false;
+							canEmptyDay[d2]=true;
 						}
 					}
 				}

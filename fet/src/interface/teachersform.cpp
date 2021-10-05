@@ -157,9 +157,13 @@ void TeachersForm::removeTeacher()
 		return;
 	}
 
-	if(QMessageBox::warning( this, tr("FET"),
+	/*if(QMessageBox::warning( this, tr("FET"),
 		tr("Are you sure you want to delete this teacher and all related activities and constraints?"),
 		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+		return;*/
+	if(QMessageBox::warning( this, tr("FET"),
+		tr("Are you sure you want to delete this teacher and all related activities and constraints?"),
+		QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
 		return;
 
 	int tmp=gt.rules.removeTeacher(text);

@@ -87,7 +87,7 @@ void AddStudentsGroupForm::addStudentsGroup()
 	}
 	if(ss!=nullptr){ //already existing group, but in other year. It is the same group.
 		assert(ss->type==STUDENTS_GROUP);
-		if(QMessageBox::warning( this, tr("FET"),
+		/*if(QMessageBox::warning( this, tr("FET"),
 			tr("This group already exists, but in another year. "
 			"If you insert current group to current year, that "
 			"means that some years share the same group (overlap). "
@@ -95,6 +95,20 @@ void AddStudentsGroupForm::addStudentsGroup()
 			"please abort now and give it another name.")+"\n\n"+tr("Note: the number of students for the added group will be the number of students of the already existing group"
 			" (you can modify the number of students in the modify group dialog)."),
 			tr("Add"),tr("Abort"), 0, 0, 1 ) == 1){
+
+			nameLineEdit->selectAll();
+			nameLineEdit->setFocus();
+
+			return;
+		}*/
+		if(QMessageBox::warning( this, tr("FET"),
+			tr("This group already exists, but in another year. "
+			"If you insert current group to current year, that "
+			"means that some years share the same group (overlap). "
+			"If you want to make a new group, independent, "
+			"please abort now and give it another name.")+"\n\n"+tr("Note: the number of students for the added group will be the number of students of the already existing group"
+			" (you can modify the number of students in the modify group dialog)."),
+			QMessageBox::Ok | QMessageBox::Cancel ) == QMessageBox::Cancel){
 
 			nameLineEdit->selectAll();
 			nameLineEdit->setFocus();

@@ -1143,11 +1143,16 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 				tmptc.clear();
 
 				if(report){
-					int k;
+					/*int k;
 					k=QMessageBox::information(this, tr("FET information"), s,
 						tr("Skip information"), tr("See next"), QString(), 1, 0 );
 
 					if(k==0)
+						report=false;*/
+					QMessageBox::StandardButton k;
+					k=QMessageBox::information(this, tr("FET information"), s, QMessageBox::YesToAll | QMessageBox::Ok);
+					
+					if(k==QMessageBox::YesToAll)
 						report=false;
 				}
 			}
@@ -1236,11 +1241,16 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 				tmpsc.clear();
 			
 				if(report){
-					int k;
+					/*int k;
 					k=QMessageBox::information(this, tr("FET information"), s,
 						tr("Skip information"), tr("See next"), QString(), 1, 0 );
 						
 					if(k==0)
+						report=false;*/
+					QMessageBox::StandardButton k;
+					k=QMessageBox::information(this, tr("FET information"), s, QMessageBox::YesToAll | QMessageBox::Ok);
+					
+					if(k==QMessageBox::YesToAll)
 						report=false;
 				}
 			}

@@ -141,9 +141,13 @@ void ActivityTagsForm::removeActivityTag()
 		return;
 	}
 
-	if(QMessageBox::warning( this, tr("FET"),
+	/*if(QMessageBox::warning( this, tr("FET"),
 		tr("Are you sure you want to delete this activity tag?"),
 		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+		return;*/
+	if(QMessageBox::warning( this, tr("FET"),
+		tr("Are you sure you want to delete this activity tag?"),
+		QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
 		return;
 
 	int tmp=gt.rules.removeActivityTag(text);
