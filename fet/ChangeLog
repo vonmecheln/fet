@@ -2404,3 +2404,7 @@ Versions 6.1.0 - 6.1.v
 	- Possible crash bugs fixed (probably never met in practice).
 	- Improvement in the timetable generate multiple dialog: showing the number of successfully generated timetables (useful for instance when generating
 	with a time limit).
+- Version 6.1.7
+	- Added a new type of constraint in the Mornings-Afternoons mode: teacher(s) max three consecutive days (suggested by Benahmed Abdelkrim, Hiba Hadi,
+	and other users).
+	- Added a new example file from Algeria, by Benahmed Abdelkrim.

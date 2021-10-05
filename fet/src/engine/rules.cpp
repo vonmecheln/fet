@@ -1265,6 +1265,11 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 			if(initialTeacherName == crt_constraint->teacherName)
 				crt_constraint->teacherName=finalTeacherName;
 		}
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintTeacherMaxThreeConsecutiveDays* crt_constraint=(ConstraintTeacherMaxThreeConsecutiveDays*)ctr;
+			if(initialTeacherName == crt_constraint->teacherName)
+				crt_constraint->teacherName=finalTeacherName;
+		}
 		else if(ctr->type==CONSTRAINT_TEACHER_MIN_DAYS_PER_WEEK){
 			ConstraintTeacherMinDaysPerWeek* crt_constraint=(ConstraintTeacherMinDaysPerWeek*)ctr;
 			if(initialTeacherName == crt_constraint->teacherName)
@@ -4853,6 +4858,11 @@ void Rules::updateConstraintsAfterRemoval()
 		}
 		else if(tc->type==CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK){
 			ConstraintTeacherMaxDaysPerWeek* c=(ConstraintTeacherMaxDaysPerWeek*)tc;
+			if(!existingTeachersNames.contains(c->teacherName))
+				toBeRemovedTime.append(tc);
+		}
+		else if(tc->type==CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintTeacherMaxThreeConsecutiveDays* c=(ConstraintTeacherMaxThreeConsecutiveDays*)tc;
 			if(!existingTeachersNames.contains(c->teacherName))
 				toBeRemovedTime.append(tc);
 		}
@@ -9022,6 +9032,13 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				}
 				else if(xmlReader.name()==QString("ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon")){
 					crt_constraint=readStudentsMinRestingHoursBetweenMorningAndAfternoon(xmlReader, xmlReadingLog);
+				}
+				//
+				else if(xmlReader.name()==QString("ConstraintTeacherMaxThreeConsecutiveDays")){
+					crt_constraint=readTeacherMaxThreeConsecutiveDays(parent, xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeachersMaxThreeConsecutiveDays")){
+					crt_constraint=readTeachersMaxThreeConsecutiveDays(parent, xmlReader, xmlReadingLog);
 				}
 				//
 				else{
@@ -25257,6 +25274,133 @@ TimeConstraint* Rules::readStudentsSetMaxGapsPerWeekForRealDays(QXmlStreamReader
 			xmlReader.skipCurrentElement();
 			xmlReaderNumberOfUnrecognizedFields++;
 		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readTeacherMaxThreeConsecutiveDays(QWidget* parent, QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMaxThreeConsecutiveDays"));
+	
+	ConstraintTeacherMaxThreeConsecutiveDays* cn=new ConstraintTeacherMaxThreeConsecutiveDays();
+	cn->allowAMAMException=false;
+	bool foundAllowAMAMException=false;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Allow_Afternoon_Morning_Afternoon_Morning_Exception")){
+			foundAllowAMAMException=true;
+			QString text=xmlReader.readElementText();
+			if(text=="yes" || text=="true" || text=="1"){
+				cn->allowAMAMException=true;
+				xmlReadingLog+="    Current constraint has allowAMAMException=true\n";
+			}
+			else{
+				if(!(text=="no" || text=="false" || text=="0")){
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
+						tr("Found constraint teacher max three consecutive days with tag %1"
+						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+						" The tag will be considered false",
+						"Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English")
+						.arg("Allow_Afternoon_Morning_Afternoon_Morning_Exception"));
+				}
+				cn->allowAMAMException=false;
+				xmlReadingLog+="    Current constraint has allowAMAMException=false\n";
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(!foundAllowAMAMException){
+		xmlReader.raiseError(tr("%1 not found").arg("Allow_Afternoon_Morning_Afternoon_Morning_Exception"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readTeachersMaxThreeConsecutiveDays(QWidget* parent, QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMaxThreeConsecutiveDays"));
+	
+	ConstraintTeachersMaxThreeConsecutiveDays* cn=new ConstraintTeachersMaxThreeConsecutiveDays();
+	cn->allowAMAMException=false;
+	bool foundAllowAMAMException=false;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Allow_Afternoon_Morning_Afternoon_Morning_Exception")){
+			foundAllowAMAMException=true;
+			QString text=xmlReader.readElementText();
+			if(text=="yes" || text=="true" || text=="1"){
+				cn->allowAMAMException=true;
+				xmlReadingLog+="    Current constraint has allowAMAMException=true\n";
+			}
+			else{
+				if(!(text=="no" || text=="false" || text=="0")){
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
+						tr("Found constraint teacher max three consecutive days with tag %1"
+						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+						" The tag will be considered false",
+						"Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English")
+						.arg("Allow_Afternoon_Morning_Afternoon_Morning_Exception"));
+				}
+				cn->allowAMAMException=false;
+				xmlReadingLog+="    Current constraint has allowAMAMException=false\n";
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(!foundAllowAMAMException){
+		xmlReader.raiseError(tr("%1 not found").arg("Allow_Afternoon_Morning_Afternoon_Morning_Exception"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
 	}
 	return cn;
 }

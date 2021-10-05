@@ -7463,3 +7463,52 @@ so can you please add it in filter ?
 
 Liviu: it would complicate the dialog. Instead, you could go to the all time constraints and apply a filter, then you can manually modify
 the necessary constraints (I doubt there are too many for a single teacher - hmm, but for a subject there might be many).
+
+442---------------------------------------------------------
+From sasbland (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4988.0
+
+I wonder if there is a way to set the colours so that for the same subject, it shows the same colour in both student's and teacher's timetable.
+At the moment, we often view the student's and teacher's timetable at the same time when we need to move classes around. It would help very much
+if the same subject is in the same colour.
+
+Liviu:
+
+Now the colors are based on subject for students and on subject+students for teachers. We did it like this because usually the teacher teaches the same subject.
+I will add this in the TODO list (for the official FET): A selectable FET setting "Color the teachers' activities by subject versus by subject+students".
+
+443---------------------------------------------------------
+From ben bacha sami:
+
+1-      J'ai  plus que 50 enseignants :  si je mets limite vide par
+semaine (par exemple) pour tous les  enseignants =2h
+et si je veux qu’un enseignant X a limit vide par semaine =1h , je
+dois préciser à chaque enseignant apart  (limite vide par semaine=2h)
+solution : les contraintes pour un enseignant doit être prioritaires
+en face des contraintes pour tous les enseignants.
+
+Même chose pour un groupe et tous les groupes
+
+2-      Je suggère  -pour les salles d’ajouter :
+  limite heure / semaine- / jour
+  limites vide/jours -/semaine
+
+3-      Problème d’optimisation :
+une école qui  possède 12 classes dans un seul niveau
+chaque classe possède 3 matières de base –M1-M2-M3
+
+Pour M1 en a 6 enseignants
+          M2 en a 4 enseignants
+          M3 en a 3 enseignants
+peut-on ajouter a fet une fonction qui peut optimiser l’affectation
+des  enseignants au classes pour un emploi idéal.
+
+Liviu:
+
+1. If you have max gaps for all teachers = 2 and for a teacher max gaps
+= 1, it will work correctly. Yes, you are right for min hours daily,
+for instance; in this case you need to add individual constraints. It
+is difficult to change now.
+
+2. and 3. are unfortunately too difficult/impossible.

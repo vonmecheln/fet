@@ -294,6 +294,9 @@ private:
 	QAction* dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction;
 	QAction* dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction;
 
+	QAction* dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction;
+	QAction* dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction;
+
 	//block-planning
 	QAction* dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction;
 	QAction* dataTimeConstraintsMaxGapsBetweenActivitiesAction;
@@ -730,6 +733,9 @@ public slots:
 	void dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAfternoonAction_triggered();
 	void dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAndAfternoonAction_triggered();
 	void dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAfternoonAction_triggered();
+
+	void dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction_triggered();
+	void dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction_triggered();
 
 	//block-planning
 	void dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction_triggered();

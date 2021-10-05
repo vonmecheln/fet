@@ -369,6 +369,9 @@
 #include "constraintstudentssetminrestinghoursbetweenmorningandafternoonform.h"
 #include "constraintstudentsminrestinghoursbetweenmorningandafternoonform.h"
 
+#include "constraintteachermaxthreeconsecutivedaysform.h"
+#include "constraintteachersmaxthreeconsecutivedaysform.h"
+
 //block-planning
 #include "constraintmaxtotalactivitiesfromsetinselectedtimeslotsform.h"
 
@@ -1313,6 +1316,9 @@ void FetMainForm::createActionsForConstraints()
 	dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction = new QAction(this);
 	dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction = new QAction(this);
 	dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction = new QAction(this);
+
+	dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction = new QAction(this);
+	dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction = new QAction(this);
 	
 	//block-planning
 	dataTimeConstraintsMaxGapsBetweenActivitiesAction = new QAction(this);
@@ -1542,6 +1548,9 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction_triggered()));
 	connect(dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction_triggered()));
 	connect(dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction_triggered()));
+
+	connect(dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction_triggered()));
+	connect(dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction_triggered()));
 
 	//block-planning
 	connect(dataTimeConstraintsMaxGapsBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMaxGapsBetweenActivitiesAction_triggered()));
@@ -1804,6 +1813,9 @@ void FetMainForm::retranslateConstraints()
 	dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per real day for all students", nullptr));
 	dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per real day for a teacher", nullptr));
 	dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max room changes per real day for all teachers", nullptr));
+
+	dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher works max three consecutive days", nullptr));
+	dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "All teachers work max three consecutive days", nullptr));
 
 	//block-planning
 	dataTimeConstraintsMaxGapsBetweenActivitiesAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps (hours) between a set of activities", nullptr));
@@ -2074,6 +2086,8 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxMorningsPerWeekAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction);
 
+		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction);
+		
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction);
 
@@ -2125,6 +2139,8 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxRealDaysPerWeekAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxMorningsPerWeekAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction);
+
+		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction);
 
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction);
@@ -7753,6 +7769,46 @@ void FetMainForm::dataTimeConstraintsTeachersMaxMorningsPerWeekAction_triggered(
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }
+
+////////2021-09-26
+void FetMainForm::dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMaxThreeConsecutiveDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMaxThreeConsecutiveDaysForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+//////////
 
 void FetMainForm::dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction_triggered()
 {

@@ -244,6 +244,19 @@ bool computeMaxDaysPerWeekForTeachers(QWidget* parent);
 bool computeMaxDaysPerWeekForStudents(QWidget* parent);
 ////////END   teachers max days per week
 
+
+////////BEGIN teachers max three consecutive days
+//activities indices (in 0..gt.rules.nInternalActivities-1) for each teacher
+extern Matrix1D<bool> teachersMaxThreeConsecutiveDaysAllowAMAMException;
+extern Matrix1D<double> teachersMaxThreeConsecutiveDaysPercentages; //-1 for not existing
+//it is practically better to use the variable below and to put it exactly like in generate.cpp,
+//the order of activities changes
+extern Matrix1D<QList<int>> teachersWithMaxThreeConsecutiveDaysForActivities;
+
+bool computeMaxThreeConsecutiveDaysForTeachers(QWidget* parent);
+////////END   teachers max three consecutive days
+
+
 //for mornings-afternoons
 //activities indices (in 0..gt.rules.nInternalActivities-1) for each teacher
 extern Matrix1D<int> teachersMaxRealDaysPerWeekMaxDays; //-1 for not existing

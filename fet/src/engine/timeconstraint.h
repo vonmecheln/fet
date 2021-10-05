@@ -294,6 +294,11 @@ const int CONSTRAINT_STUDENTS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR			=17
 
 const int CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED									=175;
 
+//Begin for mornings-afternoons - 2021-09-26
+const int CONSTRAINT_TEACHERS_MAX_THREE_CONSECUTIVE_DAYS							=176;
+const int CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS								=177;
+//End   for mornings-afternoons - 2021-09-26
+
 QString getActivityDetailedDescription(Rules& r, int id);
 
 /**
@@ -8855,5 +8860,90 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 //End for mornings-afternoons
+
+//Begin mornings-afternoons 2021-09-26
+class ConstraintTeacherMaxThreeConsecutiveDays: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMaxThreeConsecutiveDays)
+
+public:
+	/**
+	The teacher's name
+	*/
+	QString teacherName;
+
+	/**
+	The teacher's id, or index in the rules
+	*/
+	int teacher_ID;
+
+	bool allowAMAMException; //AMAM=afternoon morning afternoon morning.
+
+	ConstraintTeacherMaxThreeConsecutiveDays();
+
+	ConstraintTeacherMaxThreeConsecutiveDays(double wp, bool ae, const QString& tn);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+class ConstraintTeachersMaxThreeConsecutiveDays: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxThreeConsecutiveDays)
+
+public:
+	bool allowAMAMException; //AMAM=afternoon morning afternoon morning.
+
+	ConstraintTeachersMaxThreeConsecutiveDays();
+
+	ConstraintTeachersMaxThreeConsecutiveDays(double wp, bool ae);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+//End   mornings-afternoons 2021-09-26
 
 #endif

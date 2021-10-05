@@ -273,6 +273,18 @@ Matrix1D<QList<int>> teachersWithMaxDaysPerWeekForActivities;
 ////////END   teachers max days per week
 
 
+////////BEGIN teachers max three consecutive days
+//activities indices (in 0..gt.rules.nInternalActivities-1) for each teacher
+Matrix1D<bool> teachersMaxThreeConsecutiveDaysAllowAMAMException;
+Matrix1D<double> teachersMaxThreeConsecutiveDaysPercentages; //-1 for not existing
+//it is practically better to use the variable below and to put it exactly like in generate.cpp,
+//the order of activities changes
+Matrix1D<QList<int>> teachersWithMaxThreeConsecutiveDaysForActivities;
+
+//bool computeMaxThreeDaysConsecutiveForTeachers(QWidget* parent);
+////////END   teachers max three consecutive days
+
+
 Matrix1D<double> teachersAfternoonsEarlyMaxBeginningsAtSecondHourPercentage;
 Matrix1D<int> teachersAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings;
 
@@ -1129,6 +1141,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersMaxDaysPerWeekMaxDays.resize(gt.rules.nInternalTeachers);
 	teachersMaxDaysPerWeekWeightPercentages.resize(gt.rules.nInternalTeachers);
 	//
+	teachersMaxThreeConsecutiveDaysAllowAMAMException.resize(gt.rules.nInternalTeachers);
+	teachersMaxThreeConsecutiveDaysPercentages.resize(gt.rules.nInternalTeachers); //-1 for not existing
+	//
 	teachersMaxGapsPerWeekPercentage.resize(gt.rules.nInternalTeachers);
 	teachersMaxGapsPerWeekMaxGaps.resize(gt.rules.nInternalTeachers);
 	teachersMaxGapsPerDayPercentage.resize(gt.rules.nInternalTeachers);
@@ -1368,6 +1383,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersWithMaxDaysPerWeekForActivities.resize(gt.rules.nInternalActivities);
 	subgroupsWithMaxDaysPerWeekForActivities.resize(gt.rules.nInternalActivities);
 
+	teachersWithMaxThreeConsecutiveDaysForActivities.resize(gt.rules.nInternalActivities);
 
 	teachersWithMaxRealDaysPerWeekForActivities.resize(gt.rules.nInternalActivities);
 
@@ -1620,8 +1636,11 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		return false;
 	//////////////////////////////////
 	
-	/////5. TEACHERS MAX DAYS PER WEEK
+	/////5. TEACHERS MAX DAYS PER WEEK (and max three days consecutive)
 	t=computeMaxDaysPerWeekForTeachers(parent);
+	if(!t)
+		return false;
+	t=computeMaxThreeConsecutiveDaysForTeachers(parent);
 	if(!t)
 		return false;
 	t=computeMaxRealDaysPerWeekForTeachers(parent);
@@ -10593,6 +10612,86 @@ bool computeMaxDaysPerWeekForTeachers(QWidget* parent)
 				if(teachersMaxDaysPerWeekMaxDays[tch]>=0){
 					assert(teachersWithMaxDaysPerWeekForActivities[i].indexOf(tch)==-1);
 					teachersWithMaxDaysPerWeekForActivities[i].append(tch);
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool computeMaxThreeConsecutiveDaysForTeachers(QWidget* parent)
+{
+	for(int j=0; j<gt.rules.nInternalTeachers; j++){
+		teachersMaxThreeConsecutiveDaysAllowAMAMException[j]=true;
+		teachersMaxThreeConsecutiveDaysPercentages[j]=-1;
+	}
+
+	bool ok=true;
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintTeacherMaxThreeConsecutiveDays* tn=(ConstraintTeacherMaxThreeConsecutiveDays*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tn->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher max three consecutive days with"
+				 " weight (percentage) below 100% for teacher %1. It is only possible to use 100% weight for such constraints."
+				 " Please make weight 100% and try again.")
+				 .arg(tn->teacherName),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+
+			if(teachersMaxThreeConsecutiveDaysPercentages[tn->teacher_ID]==-1 ||
+			 (teachersMaxThreeConsecutiveDaysPercentages[tn->teacher_ID]>=0 &&
+			 teachersMaxThreeConsecutiveDaysAllowAMAMException[tn->teacher_ID]==true)){
+				teachersMaxThreeConsecutiveDaysPercentages[tn->teacher_ID]=tn->weightPercentage;
+				teachersMaxThreeConsecutiveDaysAllowAMAMException[tn->teacher_ID]=tn->allowAMAMException;
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintTeachersMaxThreeConsecutiveDays* tn=(ConstraintTeachersMaxThreeConsecutiveDays*)gt.rules.internalTimeConstraintsList[i];
+
+			if(tn->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers max three consecutive days with"
+				 " weight (percentage) below 100%. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again."),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+
+			for(int t=0; t<gt.rules.nInternalTeachers; t++){
+				if(teachersMaxThreeConsecutiveDaysPercentages[t]==-1 ||
+				 (teachersMaxThreeConsecutiveDaysPercentages[t]>=0 &&
+				 teachersMaxThreeConsecutiveDaysAllowAMAMException[t]==true)){
+					teachersMaxThreeConsecutiveDaysPercentages[t]=tn->weightPercentage;
+					teachersMaxThreeConsecutiveDaysAllowAMAMException[t]=tn->allowAMAMException;
+				}
+			}
+		}
+	}
+	
+	if(ok){
+		for(int i=0; i<gt.rules.nInternalActivities; i++){
+			teachersWithMaxThreeConsecutiveDaysForActivities[i].clear();
+		
+			Activity* act=&gt.rules.internalActivitiesList[i];
+			for(int j=0; j<act->iTeachersList.count(); j++){
+				int tch=act->iTeachersList.at(j);
+				
+				if(teachersMaxThreeConsecutiveDaysPercentages[tch]>=0){
+					assert(teachersWithMaxThreeConsecutiveDaysForActivities[i].indexOf(tch)==-1);
+					teachersWithMaxThreeConsecutiveDaysForActivities[i].append(tch);
 				}
 			}
 		}

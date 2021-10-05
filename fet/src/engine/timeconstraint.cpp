@@ -629,7 +629,11 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 	 type==CONSTRAINT_STUDENTS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR ||
 	 type==CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR ||
 	
-	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED)
+	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED ||
+	 
+	 //2021-09-26
+	 type==CONSTRAINT_TEACHERS_MAX_THREE_CONSECUTIVE_DAYS ||
+	 type==CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS)
 		return true;
 
 	return false;
@@ -46776,6 +46780,413 @@ bool ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::repairWrongDay
 
 	if(maxBeginningsAtSecondHour>r.nDaysPerWeek/2)
 		maxBeginningsAtSecondHour=r.nDaysPerWeek/2;
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeacherMaxThreeConsecutiveDays::ConstraintTeacherMaxThreeConsecutiveDays()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS;
+}
+
+ConstraintTeacherMaxThreeConsecutiveDays::ConstraintTeacherMaxThreeConsecutiveDays(double wp, bool ae, const QString& tn)
+	 : TimeConstraint(wp)
+{
+	this->teacherName = tn;
+	this->allowAMAMException=ae;
+	this->type=CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS;
+}
+
+bool ConstraintTeacherMaxThreeConsecutiveDays::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
+	assert(this->teacher_ID>=0);
+	return true;
+}
+
+bool ConstraintTeacherMaxThreeConsecutiveDays::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeacherMaxThreeConsecutiveDays::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintTeacherMaxThreeConsecutiveDays>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Allow_Afternoon_Morning_Afternoon_Morning_Exception>"+trueFalse(this->allowAMAMException)
+	 +"</Allow_Afternoon_Morning_Afternoon_Morning_Exception>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintTeacherMaxThreeConsecutiveDays>\n";
+	return s;
+}
+
+QString ConstraintTeacherMaxThreeConsecutiveDays::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s=tr("Teacher max three consecutive days");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("A-AMAM-E:%1", "Allow afternoon-morning-afternoon-morning exception").arg(yesNoTranslated(this->allowAMAMException));
+
+	return begin+s+end;
+}
+
+QString ConstraintTeacherMaxThreeConsecutiveDays::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A teacher must respect a maximum of three consecutive working days");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
+	s+=tr("Allow afternoon-morning-afternoon-morning exception=%1").arg(yesNoTranslated(this->allowAMAMException));s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeacherMaxThreeConsecutiveDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+	
+	Matrix1D<bool> tm;
+	tm.resize(r.nDaysPerWeek);
+	//Teacher* tch=r.internalTeachersList[this->teacher_ID];
+	for(int d=0; d<r.nDaysPerWeek; d++){
+		tm[d]=false;
+		for(int h=0; h<r.nHoursPerDay; h++)
+			if(teachersMatrix[this->teacher_ID][d][h]>0){
+				tm[d]=true;
+				break;
+			}
+	}
+	
+	for(int d=0; d<r.nDaysPerWeek; d++){
+		if(d%2==1 && this->allowAMAMException)
+			continue;
+		if(d+3>=r.nDaysPerWeek)
+			continue;
+		if(tm[d] && tm[d+1] && tm[d+2] && tm[d+3]){
+			nbroken++;
+		}
+	}
+
+	if(conflictsString!=nullptr){
+		if(nbroken>0){
+			QString s= tr("Time constraint teacher max three consecutive days broken for teacher: %1.")
+			 .arg(r.internalTeachersList[this->teacher_ID]->name);
+			s += QString(" ")+tr("This increases the conflicts total by %1")
+			 .arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
+			
+			dl.append(s);
+			cl.append(nbroken*weightPercentage/100);
+	
+			*conflictsString += s+"\n";
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeacherMaxThreeConsecutiveDays::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxThreeConsecutiveDays::isRelatedToTeacher(Teacher* t)
+{
+	if(this->teacherName==t->name)
+		return true;
+	return false;
+}
+
+bool ConstraintTeacherMaxThreeConsecutiveDays::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxThreeConsecutiveDays::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxThreeConsecutiveDays::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxThreeConsecutiveDays::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintTeacherMaxThreeConsecutiveDays::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+	
+	return true;
+}
+
+bool ConstraintTeacherMaxThreeConsecutiveDays::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeachersMaxThreeConsecutiveDays::ConstraintTeachersMaxThreeConsecutiveDays()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHERS_MAX_THREE_CONSECUTIVE_DAYS;
+}
+
+ConstraintTeachersMaxThreeConsecutiveDays::ConstraintTeachersMaxThreeConsecutiveDays(double wp, bool ae)
+	 : TimeConstraint(wp)
+{
+	this->allowAMAMException=ae;
+	this->type=CONSTRAINT_TEACHERS_MAX_THREE_CONSECUTIVE_DAYS;
+}
+
+bool ConstraintTeachersMaxThreeConsecutiveDays::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+
+	return true;
+}
+
+bool ConstraintTeachersMaxThreeConsecutiveDays::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeachersMaxThreeConsecutiveDays::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintTeachersMaxThreeConsecutiveDays>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Allow_Afternoon_Morning_Afternoon_Morning_Exception>"+trueFalse(this->allowAMAMException)
+	 +"</Allow_Afternoon_Morning_Afternoon_Morning_Exception>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintTeachersMaxThreeConsecutiveDays>\n";
+	return s;
+}
+
+QString ConstraintTeachersMaxThreeConsecutiveDays::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s=tr("Teachers max three consecutive days");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("A-AMAM-E:%1", "Allow afternoon-morning-afternoon-morning exception").arg(yesNoTranslated(this->allowAMAMException));
+
+	return begin+s+end;
+}
+
+QString ConstraintTeachersMaxThreeConsecutiveDays::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All teachers must respect a maximum of three consecutive working days");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Allow afternoon-morning-afternoon-morning exception=%1").arg(yesNoTranslated(this->allowAMAMException));s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeachersMaxThreeConsecutiveDays::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	Matrix1D<bool> tm;
+	tm.resize(r.nDaysPerWeek);
+	for(int t=0; t<r.nInternalTeachers; t++){
+		//Teacher* tch=r.internalTeachersList[this->teacher_ID];
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			tm[d]=false;
+			for(int h=0; h<r.nHoursPerDay; h++)
+				if(teachersMatrix[t][d][h]>0){
+					tm[d]=true;
+					break;
+				}
+		}
+		
+		int partialnbroken=0;
+	
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			if(d%2==1 && this->allowAMAMException)
+				continue;
+			if(d+3>=r.nDaysPerWeek)
+				continue;
+			if(tm[d] && tm[d+1] && tm[d+2] && tm[d+3]){
+				nbroken++;
+				partialnbroken++;
+			}
+		}
+
+		if(conflictsString!=nullptr){
+			if(partialnbroken>0){
+				QString s= tr("Time constraint teacher max three consecutive days broken for teacher: %1.")
+				 .arg(r.internalTeachersList[t]->name);
+				s += QString(" ")+tr("This increases the conflicts total by %1")
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision(nbroken*weightPercentage/100));
+			
+				dl.append(s);
+				cl.append(partialnbroken*weightPercentage/100);
+		
+				*conflictsString += s+"\n";
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeachersMaxThreeConsecutiveDays::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxThreeConsecutiveDays::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+	
+	return false;
+}
+
+bool ConstraintTeachersMaxThreeConsecutiveDays::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxThreeConsecutiveDays::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxThreeConsecutiveDays::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxThreeConsecutiveDays::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintTeachersMaxThreeConsecutiveDays::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+	
+	return true;
+}
+
+bool ConstraintTeachersMaxThreeConsecutiveDays::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
 }
