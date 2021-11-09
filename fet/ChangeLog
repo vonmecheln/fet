@@ -2420,3 +2420,7 @@ Versions 6.2.0 - 6.2.v
 	(discovered using the new Clang 13.0.0).
 	- Minor corrections in some texts of the interface.
 	- Updated the Romanian translation, by Liviu Lalescu.
+- Version 6.2.1
+	- Improvements of the efficiency of generation in the constraints teacher(s) min hours daily per real day (in the Mornings-Afternoons mode).
+	- Updated the Arabic translation, by Benahmed Abdelkrim.
+	- Updated the Russian translation, by Alexey Chernous.

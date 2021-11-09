@@ -23681,11 +23681,11 @@ impossibleteachersminhoursdaily:
 								_ok=false;
 						}
 						else{
-							int remG1=0;
-							int remG2=0;
+							//int remG1=0;
+							//int remG2=0;
 							int remG=0;
-							int totalH1=0;
-							int totalH2=0;
+							//int totalH1=0;
+							//int totalH2=0;
 							int totalH=0;
 							int _usedDays=0;
 							for(int rd=0; rd<gt.rules.nDaysPerWeek/2; rd++){
@@ -23726,7 +23726,7 @@ impossibleteachersminhoursdaily:
 								assert(remGDay2>=0);
 								h1+=addh1;
 								h2+=addh2;
-								if(teachersMinHoursDailyMinHours[tch][1]>=0){
+								/*if(teachersMinHoursDailyMinHours[tch][1]>=0){
 									if(h1>0){
 										if(h1<teachersMinHoursDailyMinHours[tch][0]){
 											remGDay1-=teachersMinHoursDailyMinHours[tch][0]-h1;
@@ -23748,7 +23748,7 @@ impossibleteachersminhoursdaily:
 									}
 									if(remGDay2>0)
 										remG2+=remGDay2;
-								}
+								}*/
 								if(1){
 									int remGDay=remGDay1+remGDay2;
 									int h=h1+h2;
@@ -23784,9 +23784,9 @@ impossibleteachersminhoursdaily:
 							}
 
 							if(remG+totalH<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
-							  && remG1+remG2+totalH1+totalH2<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
+							  /*&& remG1+remG2+totalH1+totalH2<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]*/
 							  && totalH<=nHoursPerTeacher[tch]
-							  && totalH1+totalH2<=nHoursPerTeacher[tch])
+							  /*&& totalH1+totalH2<=nHoursPerTeacher[tch]*/)
 								_ok=true;
 							else
 								_ok=false;
@@ -23913,11 +23913,11 @@ impossibleteachersminhoursdaily:
 									ok=false;
 							}
 							else{
-								int remG1=0;
-								int remG2=0;
+								//int remG1=0;
+								//int remG2=0;
 								int remG=0;
-								int totalH1=0;
-								int totalH2=0;
+								//int totalH1=0;
+								//int totalH2=0;
 								int totalH=0;
 								int _usedDays=0;
 								for(int rd=0; rd<gt.rules.nDaysPerWeek/2; rd++){
@@ -23957,7 +23957,7 @@ impossibleteachersminhoursdaily:
 									assert(remGDay2>=0);
 									h1+=addh1;
 									h2+=addh2;
-									if(teachersMinHoursDailyMinHours[tch][1]>=0){
+									/*if(teachersMinHoursDailyMinHours[tch][1]>=0){
 										if(h1>0){
 											if(h1<teachersMinHoursDailyMinHours[tch][0]){
 												remGDay1-=teachersMinHoursDailyMinHours[tch][0]-h1;
@@ -23979,7 +23979,7 @@ impossibleteachersminhoursdaily:
 										}
 										if(remGDay2>0)
 											remG2+=remGDay2;
-									}
+									}*/
 									if(1){
 										int remGDay=remGDay1+remGDay2;
 										int h=h1+h2;
@@ -24015,9 +24015,9 @@ impossibleteachersminhoursdaily:
 								}
 
 								if(remG+totalH<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
-								  && remG1+remG2+totalH1+totalH2<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
+								  /*&& remG1+remG2+totalH1+totalH2<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]*/
 								  && totalH<=nHoursPerTeacher[tch]
-								  && totalH1+totalH2<=nHoursPerTeacher[tch])
+								  /*&& totalH1+totalH2<=nHoursPerTeacher[tch]*/)
 									ok=true;
 								else
 									ok=false;
