@@ -646,18 +646,12 @@ QString Activity::getDetailedDescription(Rules& r)
 	}
 	else
 		for(QStringList::const_iterator it=this->studentsNames.constBegin(); it!=this->studentsNames.constEnd(); it++){
-			s += tr("Students=%1").arg(*it);
+			s+=tr("Students=%1").arg(*it);
 			s+="\n";
 		}
-		
+	
 	if(this->computeNTotalStudents==true){
-		/*int nStud=0;
-		for(QStringList::Iterator it=this->studentsNames.begin(); it!=this->studentsNames.end(); it++){
-			StudentsSet* ss=r.searchStudentsSet(*it);
-			nStud += ss->numberOfStudents;
-		}*/
-		int nStud=this->nTotalStudents;
-		s+=tr("Total number of students=%1").arg(nStud);
+		s+=tr("Total number of students=%1").arg(this->nTotalStudents);
 		s+="\n";
 	}
 	else{

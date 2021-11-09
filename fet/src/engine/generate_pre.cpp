@@ -8196,6 +8196,114 @@ bool computeTeachersMinMorningsAfternoonsPerWeek(QWidget* parent)
 
 	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
 		if(teachersMinMorningsPerWeekMinMornings[tc]>=0){
+			int md=teachersMinMorningsPerWeekMinMornings[tc];
+			if(md>gt.rules.internalTeachersList[tc]->activitiesForTeacher.count()){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min mornings per week %2 and he has only %3 activities - impossible."
+				 " Please correct and try again.")
+				 .arg(gt.rules.internalTeachersList[tc]->name)
+				 .arg(md)
+				 .arg(gt.rules.internalTeachersList[tc]->activitiesForTeacher.count())
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(teachersMinHoursDailyMinHours[tc][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0){
+				int mh=teachersMinHoursDailyMinHours[tc][MIN_HOURS_DAILY_INDEX_IN_ARRAY];
+				
+				if(md*mh>nHoursPerTeacher[tc]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min mornings per week %2 and min hours daily %3"
+					 " and he has only %4 working hours - impossible. Please correct and try again.")
+					 .arg(gt.rules.internalTeachersList[tc]->name)
+					 .arg(md)
+					 .arg(mh)
+					 .arg(nHoursPerTeacher[tc])
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+			 	
+					if(t==0)
+						return false;
+				}
+			}
+
+			if(teachersMinHoursDailyMinHours[tc][0]>=0 && teachersMinHoursDailyMinHours[tc][0]>teachersMinHoursDailyMinHours[tc][MIN_HOURS_DAILY_INDEX_IN_ARRAY]){
+				int mh=teachersMinHoursDailyMinHours[tc][0];
+				
+				if(md*mh>nHoursPerTeacher[tc]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min mornings per week %2 and min hours per morning %3"
+					 " and he has only %4 working hours - impossible. Please correct and try again.")
+					 .arg(gt.rules.internalTeachersList[tc]->name)
+					 .arg(md)
+					 .arg(mh)
+					 .arg(nHoursPerTeacher[tc])
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+			 	
+					if(t==0)
+						return false;
+				}
+			}
+		}
+
+		if(teachersMinAfternoonsPerWeekMinAfternoons[tc]>=0){
+			int md=teachersMinAfternoonsPerWeekMinAfternoons[tc];
+			if(md>gt.rules.internalTeachersList[tc]->activitiesForTeacher.count()){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min afternoons per week %2 and he has only %3 activities - impossible."
+				 " Please correct and try again.")
+				 .arg(gt.rules.internalTeachersList[tc]->name)
+				 .arg(md)
+				 .arg(gt.rules.internalTeachersList[tc]->activitiesForTeacher.count())
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(teachersMinHoursDailyMinHours[tc][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0){
+				int mh=teachersMinHoursDailyMinHours[tc][MIN_HOURS_DAILY_INDEX_IN_ARRAY];
+				
+				if(md*mh>nHoursPerTeacher[tc]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min afternoons per week %2 and min hours daily %3"
+					 " and he has only %4 working hours - impossible. Please correct and try again.")
+					 .arg(gt.rules.internalTeachersList[tc]->name)
+					 .arg(md)
+					 .arg(mh)
+					 .arg(nHoursPerTeacher[tc])
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+			 	
+					if(t==0)
+						return false;
+				}
+			}
+		}
+	}
+
+	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+		if(teachersMinMorningsPerWeekMinMornings[tc]>=0){
 			if(teachersMaxMorningsPerWeekMaxMornings[tc]>=0){
 				if(teachersMaxMorningsPerWeekMaxMornings[tc]<teachersMinMorningsPerWeekMinMornings[tc]){
 					ok=false;
@@ -8443,6 +8551,114 @@ bool computeStudentsMinMorningsAfternoonsPerWeek(QWidget* parent)
 				if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]==-1 || subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]<tmd->minAfternoonsPerWeek){
 					subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]=tmd->minAfternoonsPerWeek;
 					subgroupsMinAfternoonsPerWeekPercentages[sbg]=100;
+				}
+			}
+		}
+	}
+
+	for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+		if(subgroupsMinMorningsPerWeekMinMornings[sbg]>=0){
+			int md=subgroupsMinMorningsPerWeekMinMornings[sbg];
+			if(md>gt.rules.internalSubgroupsList[sbg]->activitiesForSubgroup.count()){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize because for subgroup %1 you have min mornings per week %2 and it has only %3 activities - impossible."
+				 " Please correct and try again.")
+				 .arg(gt.rules.internalSubgroupsList[sbg]->name)
+				 .arg(md)
+				 .arg(gt.rules.internalSubgroupsList[sbg]->activitiesForSubgroup.count())
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(subgroupsMinHoursDailyMinHours[sbg][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0){
+				int mh=subgroupsMinHoursDailyMinHours[sbg][MIN_HOURS_DAILY_INDEX_IN_ARRAY];
+				
+				if(md*mh>nHoursPerSubgroup[sbg]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize because for subgroup %1 you have min mornings per week %2 and min hours daily %3"
+					 " and it has only %4 working hours - impossible. Please correct and try again.")
+					 .arg(gt.rules.internalSubgroupsList[sbg]->name)
+					 .arg(md)
+					 .arg(mh)
+					 .arg(nHoursPerSubgroup[sbg])
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+			 	
+					if(t==0)
+						return false;
+				}
+			}
+
+			if(subgroupsMinHoursDailyMinHours[sbg][0]>=0 && subgroupsMinHoursDailyMinHours[sbg][0]>subgroupsMinHoursDailyMinHours[sbg][MIN_HOURS_DAILY_INDEX_IN_ARRAY]){
+				int mh=subgroupsMinHoursDailyMinHours[sbg][0];
+				
+				if(md*mh>nHoursPerSubgroup[sbg]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize because for subgroup %1 you have min mornings per week %2 and min hours per morning %3"
+					 " and it has only %4 working hours - impossible. Please correct and try again.")
+					 .arg(gt.rules.internalSubgroupsList[sbg]->name)
+					 .arg(md)
+					 .arg(mh)
+					 .arg(nHoursPerSubgroup[sbg])
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+			 	
+					if(t==0)
+						return false;
+				}
+			}
+		}
+
+		if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0){
+			int md=subgroupsMinAfternoonsPerWeekMinAfternoons[sbg];
+			if(md>gt.rules.internalSubgroupsList[sbg]->activitiesForSubgroup.count()){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize because for subgroup %1 you have min afternoons per week %2 and it has only %3 activities - impossible."
+				 " Please correct and try again.")
+				 .arg(gt.rules.internalSubgroupsList[sbg]->name)
+				 .arg(md)
+				 .arg(gt.rules.internalSubgroupsList[sbg]->activitiesForSubgroup.count())
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(subgroupsMinHoursDailyMinHours[sbg][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0){
+				int mh=subgroupsMinHoursDailyMinHours[sbg][MIN_HOURS_DAILY_INDEX_IN_ARRAY];
+				
+				if(md*mh>nHoursPerSubgroup[sbg]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize because for subgroup %1 you have min afternoons per week %2 and min hours daily %3"
+					 " and it has only %4 working hours - impossible. Please correct and try again.")
+					 .arg(gt.rules.internalSubgroupsList[sbg]->name)
+					 .arg(md)
+					 .arg(mh)
+					 .arg(nHoursPerSubgroup[sbg])
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+			 	
+					if(t==0)
+						return false;
 				}
 			}
 		}

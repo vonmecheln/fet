@@ -2424,3 +2424,8 @@ Versions 6.2.0 - 6.2.v
 	- Improvements of the efficiency of generation in the constraints teacher(s) min hours daily per real day (in the Mornings-Afternoons mode).
 	- Updated the Arabic translation, by Benahmed Abdelkrim.
 	- Updated the Russian translation, by Alexey Chernous.
+- Version 6.2.2
+	- Updated to Qt 6.2.1.
+	- Crash bugs fixed (rare, in the Mornings-Afternoons mode, if using constraints of type teacher(s)/students (set) min mornings/afternoons per week
+	for teachers/students sets who had no activities. Reported by Abdul Latif Al-Ablaq, Hisham Abu Ferdous, and Ahmed Moullafi (Ahmed Moullafi provided
+	an input file which was very useful in isolating the bugs).

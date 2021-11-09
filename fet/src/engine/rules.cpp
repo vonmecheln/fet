@@ -574,14 +574,14 @@ bool Rules::computeInternalStructure(QWidget* parent)
 			
 			for(int j=0; j<act->iSubgroupsList.count(); j++){
 				int k=act->iSubgroupsList.at(j);
-				//The test below takes time
+				//The test below would take too much time
 				//assert(!internalSubgroupsList[k]->activitiesForSubgroup.contains(activei));
 				internalSubgroupsList[k]->activitiesForSubgroup.append(activei);
 			}
 			
 			for(int j=0; j<act->iTeachersList.count(); j++){
 				int k=act->iTeachersList.at(j);
-				//The test below takes time
+				//The test below would take too much time
 				//assert(!internalTeachersList[k]->activitiesForTeacher.contains(activei));
 				internalTeachersList[k]->activitiesForTeacher.append(activei);
 			}
