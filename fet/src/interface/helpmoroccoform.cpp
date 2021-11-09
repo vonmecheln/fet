@@ -39,7 +39,7 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	s+="\n\n";
 	s+=QString("--------------------------------------");
 	s+="\n\n";
-	s+=tr("This is a version specially made for Preparatory and Secondary schools in Morocco, in other words,"
+	s+=tr("This is a version specially made for Preparatory and Secondary schools in Morocco; in other words,"
 	 " it is suitable to ""colleges"" and ""lycees"" in Morocco. It was requested by the user Chafik Graiguer.");
 	s+="\n\n";
 	s+=tr("These schools have a morning shift and an afternoon shift.");
@@ -52,25 +52,32 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	s+="\n\n";
 	s+=tr("1 - Definition of a working school day:");
 	s+="\n\n";
-	s+=tr("	A day is devided into two distinct periods:");
+	s+="\t";
+	s+=tr("A day is devided into two distinct periods:");
 	s+="\n\n";
-	s+=tr("	- morning 08:00-12:00");
+	s+="\t";
+	s+=tr("- morning 08:00 - 12:00");
 	s+="\n";
-	s+=tr("	- afternoon 14:00 - 18:00");
+	s+="\t";
+	s+=tr("- afternoon 14:00 - 18:00");
 	s+="\n";
-	s+=tr("	- there is a lunch break 12:00 - 14:00");
+	s+="\t";
+	s+=tr("- there is a lunch break 12:00 - 14:00");
 	s+="\n\n";
 	s+=tr("2 - Studying periods and gaps per day:");
 	s+="\n\n";
-	s+=tr("	- Students can have gaps around lunch break, i.e. before or after lunch break (official FET version cannot tolerate this !!!)");
+	s+="\t";
+	s+=tr("- Students can have gaps around lunch break, i.e. before or after lunch break (official FET version cannot tolerate this !!!)");
 	s+="\n";
-	s+=tr("	- Students and teachers must have at least 2 hours per period (Empty periods are OK.)");
+	s+="\t";
+	s+=tr("- Students and teachers must have at least 2 hours per period (Empty periods are OK.)");
 	s+="\n";
-	s+=tr("	- Teachers can only have lesson either in morning or afternoon. Never both.");
+	s+="\t";
+	s+=tr("- Teachers can only have lesson either in morning or afternoon. Never both.");
 	s+="\n\n";
 	s+=tr("3 - The key hint to use this version");
 	s+="\n\n";
-	s+=tr("We have 6 REAL day, with 6 working timeslots");
+	s+=tr("We have 6 REAL day, with 8 working timeslots");
 	s+="\n\n";
 	s+=tr("We should input 6x2 = 12 days, with 4 working timeslots ONLY");
 	s+="\n\n";
@@ -82,33 +89,33 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	s+="\n\n";
 	s+=tr("Intelligent min hours daily for students (can have days with 0 hours).");
 	s+="\n\n";
-	s+=tr("User must input an even number of days per week. The first FET day is morning real day 1, the second");
-	s+=tr(" FET day is afternoon real day 1, and so on (FET days are double than real days).");
+	s+=tr("User must input an even number of days per week. The first FET day is morning real day 1, the second"
+	 " FET day is afternoon real day 1, and so on (FET days are double than real days).");
 	s+="\n\n";
-	s+=tr("A teacher can have hours in first day or second day, but not both. Same for third and fourth, fifth and sixth, and so on.");
-	s+=tr(" (in fact, there are 2*normal days, first is morning, second is afternoon).");
+	s+=tr("A teacher can have hours in first day or second day, but not both. Same for third and fourth, fifth and sixth, and so on."
+	 " (in fact, there are 2*normal days, first is morning, second is afternoon).");
 	s+="\n\n";
-	s+=tr("Exception teachers: it allows for some teachers to work in double morning+afternoon for a single day (1 exception)");
-	s+=tr(" or for 2 days (2 exception).");
+	s+=tr("Exception teachers: it allows for some teachers to work in double morning+afternoon for a single day (1 exception)"
+	 " or for 2 days (2 exception).");
 	s+=" ";
 	s+=tr("(Recently, it is also possible to allow 3, 4, or 5 days exceptions.)");
 	s+="\n\n";
-	s+=tr("Very important about constraint min days between activities: probably you will need to");
-	s+=tr(" add min days = 1 for all constraints. I modified the sources and min 1 day means");
-	s+=tr(" that the activities must be in different real days, so it cannot be that one activity");
-	s+=tr(" is in the morning and another is in the afternoon. If you need constraint to be respected always,");
-	s+=tr(" please use 100% weight. If you allow weight under 100% and select consecutive if same day,");
-	s+=tr(" then activities must be either in the morning or exclusively in the afternoon.");
+	s+=tr("Very important about constraint min days between activities: probably you will need to"
+	 " add min days = 1 for all constraints. I modified the sources and min 1 day means"
+	 " that the activities must be in different real days, so it cannot be that one activity"
+	 " is in the morning and another is in the afternoon. If you need constraint to be always respected,"
+	 " please use 100% weight. If you allow weight under 100% and select consecutive if same day,"
+	 " then activities must be either in the morning or exclusively in the afternoon.");
 	s+="\n\n";
-	s+=tr("Min 1 day means that the activities cannot be in REAL same day (so they can be");
-	s+=tr(" on Monday afternoon and Tuesday morning, but not both on Monday).");
+	s+=tr("Min 1 day means that the activities cannot be in REAL same day (so they can be"
+	 " on Monday afternoon and Tuesday morning, but not both on Monday).");
 	s+="\n\n";
-	s+=tr("Min 2 days means that the activities must be 2 REAL days apart (so they");
-	s+=tr(" can be on Monday afternoon and Wednesday morning, but not on Monday and Tuesday).");
+	s+=tr("Min 2 days means that the activities must be 2 REAL days apart (so they"
+	 " can be on Monday afternoon and Wednesday morning, but not on Monday and Tuesday).");
 	s+="\n\n";
-	s+=tr("If your data is too difficult (impossible), maybe you can de-activate force consecutive if same day for");
-	s+=tr(" all constraints min n days between activities (from the modify multiple constraints at once,");
-	s+=tr(" which can be activated from the constraints min n days between activities dialog).");
+	s+=tr("If your data is too difficult (impossible), maybe you can de-activate force consecutive if same day for"
+	 " all constraints min days between activities (from the modify multiple constraints at once,"
+	 " which can be activated from the constraints min days between activities dialog).");
 	s+="\n\n";
 	s+=tr("Constraint max days between activities considers real days.");
 	s+="\n\n";

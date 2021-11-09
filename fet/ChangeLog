@@ -2367,7 +2367,7 @@ Versions 6.0.0 - 6.0.4
 	on the total number of generated timetables was reached, the highest-stage solutions of some of the timetables generated in the last round were missing
 	in the final results.
 ---------------------------------------------------------------------------------
-Versions 6.1.0 - 6.1.v
+Versions 6.1.0 - 6.1.8
 - Version 6.1.0
 	- Updated to Qt 6.1.2.
 	- Added the import/export of comments from/to CSV (comma separated values) files (suggested by Darren McDonald).
@@ -2412,3 +2412,11 @@ Versions 6.1.0 - 6.1.v
 	- Updated to Qt 6.2.0.
 	- Improvements in the new constraint introduced in the previous version (teacher(s) max three consecutive days).
 	- Minor interface bug fixes.
+---------------------------------------------------------------------------------
+Versions 6.2.0 - 6.2.v
+- Version 6.2.0
+	- Crash bugs fixed, when restoring the default settings (probably very rare).
+	- Corrected a bug regarding the efficiency of generation in the constraints teacher(s) min hours daily per real day (in the Mornings-Afternoons mode)
+	(discovered using the new Clang 13.0.0).
+	- Minor corrections in some texts of the interface.
+	- Updated the Romanian translation, by Liviu Lalescu.

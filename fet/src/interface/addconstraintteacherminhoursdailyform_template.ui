@@ -29,7 +29,7 @@
       <enum>QFrame::Plain</enum>
      </property>
      <property name="text">
-      <string>It is recommended to start with 2 min hours and strenghen them as you find new timetables.</string>
+      <string>It is recommended to start with 2 min hours and strengthen them as you find new timetables.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

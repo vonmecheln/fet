@@ -23763,7 +23763,6 @@ impossibleteachersminhoursdaily:
 									if(remGDay>0)
 										remG+=remGDay;
 								}
-
 							}
 							for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
 								if(newTeachersDayNHours(tch,2*d2)>0 || newTeachersDayNHours(tch,2*d2+1)>0)
@@ -23785,7 +23784,9 @@ impossibleteachersminhoursdaily:
 							}
 
 							if(remG+totalH<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
-							  && totalH<=nHoursPerTeacher[tch])
+							  && remG1+remG2+totalH1+totalH2<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
+							  && totalH<=nHoursPerTeacher[tch]
+							  && totalH1+totalH2<=nHoursPerTeacher[tch])
 								_ok=true;
 							else
 								_ok=false;
@@ -24014,7 +24015,9 @@ impossibleteachersminhoursdaily:
 								}
 
 								if(remG+totalH<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
-								  && totalH<=nHoursPerTeacher[tch])
+								  && remG1+remG2+totalH1+totalH2<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
+								  && totalH<=nHoursPerTeacher[tch]
+								  && totalH1+totalH2<=nHoursPerTeacher[tch])
 									ok=true;
 								else
 									ok=false;

@@ -23,7 +23,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>This constraint forces two sets of activities SA1 and SA2: each activity A2 from SA2 to begin later than each activity A1 from SA1 has finished, separated by any time interval in the week</string>
+      <string>This constraint forces two sets of activities SA1 and SA2: each activity A2 from SA2 to begin later than the moment each activity A1 from SA1 has finished, separated by any time interval in the week</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

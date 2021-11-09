@@ -180,8 +180,8 @@ void ConstraintTeachersMaxThreeConsecutiveDaysForm::help()
 	 .arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=4990.0");
 	s+="\n\n";
 	s+=tr("It was designed to disallow the teachers to have activities in two consecutive real days, morning and afternoon on both,"
-	 " which can be tiring. If you can allow the teachers to have activities on the afternoon only of a real day (half day 1), then the whole next real day"
+	 " which can be tiring. If you can allow the teachers to have activities only on the afternoon of a real day (half day 1), then the whole next real day"
 	 " (both morning and afternoon, half days 2 and 3), then only on the next morning (half day 4), you can select the exception option."
-	 " In this case only a succession of these four days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.");
+	 " In this case only a succession of these four half-days: morning-afternoon-morning-afternoon is NOT allowed by the algorithm.");
 	LongTextMessageBox::information(this, tr("FET help"), s);
 }

@@ -1297,7 +1297,7 @@ double ConstraintBasicCompulsoryTime::fitness(Solution& c, Rules& r, QList<doubl
 				if(tmp>0 && conflictsString!=nullptr){
 					QString s=tr("Time constraint basic compulsory");
 					s+=": ";
-					s+=tr("teacher with name %1 does not respect mornings-afternoons behavior")
+					s+=tr("the teacher with name %1 does not respect mornings-afternoons behavior")
 					 .arg(r.internalTeachersList[t]->name);
 					s+=". ";
 					s+=tr("This increases the conflicts total by %1")
@@ -8899,7 +8899,7 @@ double ConstraintStudentsMaxHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 					too_much += 1; //tmp - this->maxHoursDaily;
 
 					if(conflictsString!=nullptr){
-						QString s=tr("Time constraint students max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4")
+						QString s=tr("Time constraint students max hours daily broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(r.daysOfTheWeek[j])
 						 .arg(CustomFETString::number(tmp))
@@ -9154,7 +9154,7 @@ double ConstraintStudentsSetMaxHoursDaily::fitness(Solution& c, Rules& r, QList<
 					too_much += 1; //tmp - this->maxHoursDaily;
 
 					if(conflictsString!=nullptr){
-						QString s=tr("Time constraint students set max hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4")
+						QString s=tr("Time constraint students set max hours daily broken for subgroup: %1, day: %2, length=%3, conflicts increase=%4")
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(r.daysOfTheWeek[j])
 						 .arg(CustomFETString::number(tmp))
@@ -10484,7 +10484,7 @@ double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 					too_little += - tmp + this->minHoursDaily;
 
 					if(conflictsString!=nullptr){
-						QString s=tr("Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4")
+						QString s=tr("Time constraint students min hours daily broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(r.daysOfTheWeek[j])
 						 .arg(CustomFETString::number(tmp))
@@ -10527,7 +10527,7 @@ double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 					too_little += - tmp1 + this->minHoursDaily;
 
 					if(conflictsString!=nullptr){
-						QString s=tr("Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4")
+						QString s=tr("Time constraint students min hours daily broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(r.daysOfTheWeek[2*j])
 						 .arg(CustomFETString::number(tmp1))
@@ -10550,7 +10550,7 @@ double ConstraintStudentsMinHoursDaily::fitness(Solution& c, Rules& r, QList<dou
 					too_little += - tmp2 + this->minHoursDaily;
 
 					if(conflictsString!=nullptr){
-						QString s=tr("Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4")
+						QString s=tr("Time constraint students min hours daily broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(r.daysOfTheWeek[2*j+1])
 						 .arg(CustomFETString::number(tmp2))
@@ -10848,7 +10848,7 @@ double ConstraintStudentsSetMinHoursDaily::fitness(Solution& c, Rules& r, QList<
 					too_little += - tmp + this->minHoursDaily;
 
 					if(conflictsString!=nullptr){
-						QString s=tr("Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflicts increase=%4")
+						QString s=tr("Time constraint students set min hours daily broken for subgroup: %1, day: %2, length=%3, conflicts increase=%4")
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(r.daysOfTheWeek[j])
 						 .arg(CustomFETString::number(tmp))
@@ -10891,7 +10891,7 @@ double ConstraintStudentsSetMinHoursDaily::fitness(Solution& c, Rules& r, QList<
 					too_little += - tmp1 + this->minHoursDaily;
 
 					if(conflictsString!=nullptr){
-						QString s=tr("Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4")
+						QString s=tr("Time constraint students set min hours daily broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(r.daysOfTheWeek[2*j])
 						 .arg(CustomFETString::number(tmp1))
@@ -10914,7 +10914,7 @@ double ConstraintStudentsSetMinHoursDaily::fitness(Solution& c, Rules& r, QList<
 					too_little += - tmp2 + this->minHoursDaily;
 
 					if(conflictsString!=nullptr){
-						QString s=tr("Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4")
+						QString s=tr("Time constraint students set min hours daily broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(r.daysOfTheWeek[2*j+1])
 						 .arg(CustomFETString::number(tmp2))
@@ -15762,7 +15762,7 @@ bool ConstraintTwoSetsOfActivitiesOrdered::computeInternalStructure(QWidget* par
 
 	if(this->firstActivitiesIndicesList.isEmpty()){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (its first set of activities is empty/incorrect):\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (its first set of activities is empty/incorrect). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
@@ -15784,13 +15784,13 @@ bool ConstraintTwoSetsOfActivitiesOrdered::computeInternalStructure(QWidget* par
 
 	if(this->secondActivitiesIndicesList.isEmpty()){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (its second set of activities is empty/incorrect):\n%1").arg(this->getDetailedDescription(r)));
+			tr("Following constraint is wrong (its second set of activities is empty/incorrect). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
 		return false;
 	}
 
 	if(intersect){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
-			tr("Following constraint is wrong (the first set of activities has activities in common with the second set of activities):\n%1")
+			tr("Following constraint is wrong (the first set of activities has activities in common with the second set of activities). Please correct it:\n%1")
 			 .arg(this->getDetailedDescription(r)));
 		return false;
 	}
@@ -19237,7 +19237,7 @@ QString ConstraintActivitiesEndTeachersDay::getDetailedDescription(Rules& r)
 	s+=tr("must end teachers' day");
 	s+="\n";
 
-	s+=tr("Weight (percentage)=%1").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
 		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
@@ -29235,7 +29235,7 @@ double ConstraintStudentsMaxHoursDailyRealDays::fitness(Solution& c, Rules& r, Q
 					too_much += 1; //tmp - this->maxHoursDaily;
 
 					if(conflictsString!=nullptr){
-						QString s=tr("Time constraint students max hours daily per real day broken for subgroup: %1, real day: %2, lenght=%3, conflict increase=%4")
+						QString s=tr("Time constraint students max hours daily per real day broken for subgroup: %1, real day: %2, length=%3, conflict increase=%4")
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(j/*r.daysOfTheWeek[j]*/)
 						 .arg(CustomFETString::number(tmp))
@@ -29492,7 +29492,7 @@ double ConstraintStudentsSetMaxHoursDailyRealDays::fitness(Solution& c, Rules& r
 					too_much += 1; //tmp - this->maxHoursDaily;
 
 					if(conflictsString!=nullptr){
-						QString s=tr("Time constraint students set max hours daily per real day broken for subgroup: %1, real day: %2, lenght=%3, conflicts increase=%4")
+						QString s=tr("Time constraint students set max hours daily per real day broken for subgroup: %1, real day: %2, length=%3, conflicts increase=%4")
 						 .arg(r.internalSubgroupsList[i]->name)
 						 .arg(j/*r.daysOfTheWeek[j]*/)
 						 .arg(CustomFETString::number(tmp))
@@ -32384,7 +32384,7 @@ double ConstraintTeacherActivityTagMaxHoursDailyRealDays::fitness(Solution& c, R
 				nbroken++;
 
 				if(conflictsString!=nullptr){
-					QString s=(tr("Time constraint teacher activity tag %1 max %2 hours daily broken for teacher %3, on real day %4, length=%5.")
+					QString s=(tr("Time constraint teacher activity tag %1 max %2 hours daily per real day broken for teacher %3, on real day %4, length=%5.")
 					 .arg(this->activityTagName)
 					 .arg(CustomFETString::number(this->maxHoursDaily))
 					 .arg(r.internalTeachersList[i]->name)
@@ -32634,7 +32634,7 @@ double ConstraintStudentsActivityTagMaxHoursDailyRealDays::fitness(Solution& c, 
 
 				if(conflictsString!=nullptr){
 					QString s=(tr(
-					 "Time constraint students, activity tag %1, max %2 hours daily, broken for subgroup %3, on real day %4, length=%5.")
+					 "Time constraint students, activity tag %1, max %2 hours daily per real day, broken for subgroup %3, on real day %4, length=%5.")
 					 .arg(this->activityTagName)
 					 .arg(CustomFETString::number(this->maxHoursDaily))
 					 .arg(r.internalSubgroupsList[i]->name)
@@ -32935,7 +32935,7 @@ double ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::fitness(Solution& 
 
 				if(conflictsString!=nullptr){
 					QString s=(tr(
-					 "Time constraint students set, activity tag %1, max %2 hours daily, broken for subgroup %3, on real day %4, length=%5.")
+					 "Time constraint students set, activity tag %1, max %2 hours daily per real day, broken for subgroup %3, on real day %4, length=%5.")
 					 .arg(this->activityTagName)
 					 .arg(CustomFETString::number(this->maxHoursDaily))
 					 .arg(r.internalSubgroupsList[i]->name)
@@ -33374,7 +33374,7 @@ QString ConstraintStudentsSetMaxGapsPerRealDay::getDetailedDescription(Rules& r)
 	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A students set must respect the maximum number of gaps per real day");s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
-	s+=tr("Weight (percentage)=%1").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Maximum gaps per real day=%1").arg(this->maxGaps);s+="\n";
 	s+=tr("Students=%1").arg(this->students); s+="\n";
 
@@ -33916,7 +33916,7 @@ double ConstraintStudentsMaxRealDaysPerWeek::fitness(Solution& c, Rules& r, QLis
 			nbroken+=nOcDays-this->maxDaysPerWeek;
 
 			if((nOcDays-this->maxDaysPerWeek)>0){
-				QString s= tr("Time constraint students max real days per week broken for subgroup: %1, allowed %2 days, required %3 days.")
+				QString s= tr("Time constraint students max real days per week broken for subgroup: %1, allowed %2 real days, required %3 real days.")
 				 .arg(r.internalSubgroupsList[sbg]->name)
 				 .arg(this->maxDaysPerWeek)
 				 .arg(nOcDays);
@@ -38781,7 +38781,7 @@ double ConstraintStudentsMinHoursPerMorning::fitness(Solution& c, Rules& r, QLis
 				too_little += - tmp1 + this->minHoursPerMorning;
 
 				if(conflictsString!=nullptr){
-					QString s=tr("Time constraint students min hours per morning broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4")
+					QString s=tr("Time constraint students min hours per morning broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[2*j])
 					 .arg(CustomFETString::number(tmp1))
@@ -38804,7 +38804,7 @@ double ConstraintStudentsMinHoursPerMorning::fitness(Solution& c, Rules& r, QLis
 				too_little += - tmp2 + this->minHoursDaily;
 
 				if(conflictsString!=nullptr){
-					QString s=tr("Time constraint students min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4")
+					QString s=tr("Time constraint students min hours daily broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[2*j+1])
 					 .arg(CustomFETString::number(tmp2))
@@ -39094,7 +39094,7 @@ double ConstraintStudentsSetMinHoursPerMorning::fitness(Solution& c, Rules& r, Q
 				too_little += - tmp1 + this->minHoursPerMorning;
 
 				if(conflictsString!=nullptr){
-					QString s=tr("Time constraint students set min hours per morning broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4")
+					QString s=tr("Time constraint students set min hours per morning broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[2*j])
 					 .arg(CustomFETString::number(tmp1))
@@ -39117,7 +39117,7 @@ double ConstraintStudentsSetMinHoursPerMorning::fitness(Solution& c, Rules& r, Q
 				too_little += - tmp2 + this->minHoursDaily;
 
 				if(conflictsString!=nullptr){
-					QString s=tr("Time constraint students set min hours daily broken for subgroup: %1, day: %2, lenght=%3, conflict increase=%4")
+					QString s=tr("Time constraint students set min hours daily broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
 					 .arg(r.internalSubgroupsList[i]->name)
 					 .arg(r.daysOfTheWeek[2*j+1])
 					 .arg(CustomFETString::number(tmp2))
@@ -45563,7 +45563,7 @@ QString ConstraintStudentsSetMaxGapsPerWeekForRealDays::getDetailedDescription(R
 	s+=tr("(not perfect)", "It refers to a not perfect constraint"); s+="\n";
 	s+=tr("A students set must respect the maximum number of gaps per week for real days");s+="\n";
 	s+=tr("(breaks and students set not available not counted)");s+="\n";
-	s+=tr("Weight (percentage)=%1").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Maximum gaps per week for real days=%1").arg(this->maxGaps);s+="\n";
 	s+=tr("Students=%1").arg(this->students); s+="\n";
 

@@ -762,12 +762,12 @@ void AddActivityForm::addActivity()
 				 "\n\n"+
 				 tr("The best way to add the activities would be:")+
 				 "\n\n"+
-				 tr("1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
+				 tr("1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of activities equal to the number of real days per week"
 				  ". Example: 7 activities with duration 1 in a 5 real days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components"
 				  " (possibly raising the weight of added constraint min days between activities up to 100%)")+
 				  "\n\n"+
 				 tr("2. If you don't add 'force consecutive if same day', then add a larger activity split into a number of"
-				  " activities equal with the number of days per week and the remaining components into other larger split activity."
+				  " activities equal with the number of real days per week and the remaining components into other larger split activity."
 				  " For example, suppose you need to add 7 activities with duration 1 in a 5 real days week. Add 2 larger container activities,"
 				  " first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1"
 				  " (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)")+

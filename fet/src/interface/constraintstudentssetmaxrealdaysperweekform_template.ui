@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="This is the title of the dialog to see the list of all constraints of this type">Constraints students set max eral days per week</string>
+   <string extracomment="This is the title of the dialog to see the list of all constraints of this type">Constraints students set max real days per week</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0" colspan="2">

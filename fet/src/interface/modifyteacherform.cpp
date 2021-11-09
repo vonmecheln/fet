@@ -147,7 +147,7 @@ void ModifyTeacherForm::ok()
 		}
 		else{
 			QMessageBox::information(this, tr("FET warning"), tr("Please select an option for the mornings afternoons behavior.")+QString(" ")+
-			 tr("You can press the Help button to read the explanations for information on how to correctly choose this option."));
+			 tr("You can press the Help button to read the information on how to correctly choose this option."));
 			return;
 		}
 		
@@ -198,7 +198,7 @@ void ModifyTeacherForm::help()
 		s+=QCoreApplication::translate("MorningsAfternoonsTeacherBehavior", "To allow the teacher to work both in the morning and afternoon on each day, use the option 'Unrestricted'.");
 	}
 	else{
-		s+=tr("Since you are not using the mornings-afternoons version of FET, you need to simply input a non-existing teacher name.");
+		s+=tr("Since you are not using the mornings-afternoons mode of FET, you need to simply input a non-existing teacher name.");
 	}
 
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);

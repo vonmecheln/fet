@@ -1,4 +1,4 @@
-This is FET version 6.1.8
+This is FET version 6.2.0
 
 
 Program description:
@@ -14,16 +14,16 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.14.6, Xfce 4.16,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.14.9, Xfce 4.16,
 	Xfce Terminal Emulator 0.8.10, Midnight Commander 4.8.26, Krusader 2.7.2, Kate 21.08.1, KDiff3 0.9.98, grep 3.7,
-	sed 4.8, Thunar Bulk Rename 4.16.10, Qt 6.2.0, QMake 3.1, Qt Creator 5.0.1, gcc 11.2.1, g++ 11.2.1, make 4.3, gdb 10.1,
-	Valgrind 3.17.0, Coverity Scan 2020.09, Cppcheck 2.5, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0, Inkscape 1.1,
-	GIMP 2.10.24, ImageMagick 7.1.0, tar 1.34, gzip 1.11, bzip2 1.0.8, other great software (most of them are free software,
-	in the sense defined by The Free Software Foundation).
+	sed 4.8, Thunar Bulk Rename 4.16.10, Qt 6.2.0, QMake 3.1, Qt Creator 5.0.1, GCC 11.2.1, Clang 13.0.0, Make 4.3,
+	GDB 10.1, Valgrind 3.17.0, Coverity Scan 2020.09, Cppcheck 2.6, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
+	Inkscape 1.1, GIMP 2.10.24, ImageMagick 7.1.0, tar 1.34, Gzip 1.11, bzip2 1.0.8, other great software (most of them are
+	free software, in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 10 operating system,
 	Command Prompt, Total Commander 10.00, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.21.1, Ninja 1.10.2, Qt 6.2.0,
-	QMake 3.1, Qt Creator 5.0.1, MinGW 8.1.0, 7-Zip 19.00.
+	QMake 3.1, Qt Creator 5.0.1, MinGW 8.1.0, Microsoft Visual C++ 2019, 7-Zip 19.00.
 
 	FET is a C++ application and uses Qt, a C++ toolkit for cross-platform application development.
 	FET can be run on any platform supported by Qt (GNU/Linux, Windows, Mac OS X, and maybe others).
@@ -33,14 +33,13 @@ Requirements:
 	GNU/Linux, Mac OS X:
 	For running, you need only the archive of FET compiled for your operating system (which contains the necessary libraries).
 	For compiling, you will need this software:
-		make 4.2.1 or similar (GNU Make).
-		gcc 11.2.1 or similar.
-		g++ 11.2.1 or similar (or gcc-g++, or gcc-c++, the name may vary. This program may be included in the gcc package).
+		Make 4.2.1 or similar (GNU Make).
+		GCC 11.2.1 or similar.
 		Qt 6.2.0 or compatible. Qt 5 should be fine (the authors also tried to maintain backwards source compatibility with Qt 4,
 			but beware that multiple generation on multiple threads is very slow with such an old Qt version).
 		QMake 3.1 or compatible (usually available with Qt).
 
-		Note: You need a C++11 compliant C++ compiler. You might be able to use the Clang C++ compiler or other C++ compiler instead of gcc and g++.
+		Note: You need a C++11 compliant C++ compiler. You might be able to use the Clang C++ compiler or other C++ compiler instead of GCC.
 
 	Windows:
 	For running, you need only the archive of FET compiled for Windows (which contains the necessary dll-s).
@@ -52,7 +51,7 @@ Download:
 	You can download the latest version from the FET homepage, https://lalescu.ro/liviu/fet/
 
 
-Getting - compiling - installing the GNU tools: make, gcc and g++ (or gcc-g++, or gcc-c++):
+Getting - compiling - installing the GNU tools: Make and GCC:
 
 	GNU/Linux, maybe Mac OS X: Most probably, your platform has these installed by default or available on the internet
 	as precompiled packages. If you don't have them, please install them using YaST (on openSUSE), Adept Manager
@@ -139,7 +138,7 @@ Compiling FET:
 	Under Fedora GNU/Linux for the same problem, a user reported that you need to modify /usr/lib/qt4/mkspecs/common/g++.conf
 	and /usr/lib/qt4/mkspecs/linux-g++/qmake.conf (remove the -g flag from QMAKE_CFLAGS_RELEASE and QMAKE_CXXFLAGS_RELEASE sections).
 	(The mkspecs directory contains more subdirectories, in the form platform-compiler, you need to search for your corresponding directories/files.
-	For instance, GNU/Linux with gcc compiler is named "linux-g++", and you may also need to modify the "common" section).
+	For instance, GNU/Linux with GCC compiler is named "linux-g++", and you may also need to modify the "common" section).
 	Another solution, by another user: the addition of the lines
 	 "linux-g++*: QMAKE_CXXFLAGS_RELEASE -= -g"
 	 and
@@ -178,7 +177,7 @@ Compiling FET:
 
 	GNU/Linux:
 	- You will need Qt 6.2.0 or compatible to compile this program.
-	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 6 series (this command is executed very fast, so don't worry if you
+	- type "qmake fet.pro" or simply "qmake". You have to use QMake from Qt 6 series (this command is executed very fast, so don't worry if you
 		get immediate return from it)
 	See also notes NUseSystemLocale and Note4 above.
 	- type "make" (this takes a long time, maybe even 1 hour). See also note NMkJobs above ("make -j 16" for instance will be much faster on a 16 threads processor).
@@ -188,9 +187,9 @@ Compiling FET:
 	Mac OS X:
 	3 Variants:
 
-	1. First variant, if you use the gcc compiler:
+	1. First variant, if you use the GCC compiler:
 	- You will need Qt 6.2.0 or compatible to compile this program.
-	- type "qmake fet.pro" or simply "qmake". You have to use qmake from Qt 6 series.
+	- type "qmake fet.pro" or simply "qmake". You have to use QMake from Qt 6 series.
 	(this command is executed very fast, so don't worry if you get immediate return from it)
 	- IMPORTANT: you might need to write: "qmake -spec macx-g++ fet.pro", if "qmake fet.pro"
 	does not produce a correct makefile.
@@ -203,8 +202,10 @@ Compiling FET:
 
 	3. Another variant, if you use the Clang C++ compiler (which seems to be the default for Qt 6.2.0 on Mac):
 	It seems that you need to type:
-	/Users/YOURUSERNAME/Qt/6.2.0/clang_64/bin/qmake -r -spec /Users/YOURUSERNAME/Qt/6.2.0/clang_64/mkspecs/macx-clang
+	/Users/YOURUSERNAME/Qt/6.2.0/macos/bin/qmake -r -spec /Users/YOURUSERNAME/Qt/6.2.0/macos/mkspecs/macx-clang
 	(the -r parameter might not be necessary.)
+	Then "make" (this takes a long time, maybe even 1 hour). See also note NMkJobs above ("make -j 16" for instance will be much faster on a 16 threads processor).
+	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 	Please see: https://lalescu.ro/liviu/fet/forum/index.php?topic=2488.msg13425#msg13425 (and also see the whole topic there.)
 
 
@@ -228,7 +229,7 @@ Installing FET:
 	Type "make install" with root permissions.
 	
 	Mac OS X: The user Darren McDonald reported that one can obtain a universal Mac OS X executable with:
-	cd /Users/YOURUSERNAME/Qt/6.2.0/clang_64/bin/
+	cd /Users/YOURUSERNAME/Qt/6.2.0/macos/bin/
 	./macdeployqt /Users/YOURUSERNAME/Downloads/fet-v.v.v/fet.app
 	
 	Windows:

@@ -360,10 +360,10 @@ void TimetableGenerateMultipleForm::help()
 	 +tr("For finished timetables, there are also saved the timetables in .fet format (data + constraints to lock the timetable), so that you"
 	 " can open each of them later.")
 	 +"\n\n"
-	 +tr("If you get an impossible timetable, please enter menu Generate (single) and see the initial order of evaluation of activities, this might help.")
+	 +tr("If you get an impossible timetable, please enter menu Generate (single) and see the initial order of evaluation of activities; this might help.")
 	 +"\n\n"
 	 +tr("You can limit the search time, by specifying the maximum number of minutes allowed to spend for each timetable (option %1).").arg("'"+tr("Limit each")+"'")
-	 +" "+tr(" The maximum and also the predefined value is %1 minutes, which means %2 hours, so virtually unlimited.").arg(600000).arg(10000)
+	 +" "+tr("The maximum and also the predefined value is %1 minutes, which means %2 hours, so virtually unlimited.").arg(600000).arg(10000)
 	 +"\n\n"
 	 +tr("Note that if you start the multiple generation with the same global seed, the timetables will be identical (if you let the generations finish).")
 	 +" "+tr("The seed of the first thread will be the global seed multiplied in each component with the number of threads (modulo m1=%1 and respectively m2=%2),"
@@ -377,7 +377,7 @@ void TimetableGenerateMultipleForm::help()
 	 +"\n\n"
 	 +tr("The number of threads is limited by your computer processor(s). If you have for example an 8 core/16 thread processor, the maximum allowed"
 	 " number of threads is 16. In this case you can make a comparison of generation time with 8 threads or with 16 threads. If you generate on a single thread,"
-	 " the speed of generation of a timetable will be in general a bit better than that of obtaining a single timetable by generating on multiple threads,"
+	 " the speed of generation of a timetable will be in general a bit higher than that of obtaining a single timetable by generating on multiple threads,"
 	 " because the processor slows down if you are using more threads, but you will obtain more timetables in a comparable time.")
 	 +"\n\n"
 	 +tr("WARNING: As you use more threads, the processor will be used to a greater extent and it might overheat. Also, the system might become"

@@ -6053,7 +6053,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 			else if(text=="Terms")
 				this->mode=TERMS;
 			else
-				xmlReader.raiseError(tr("Mode incorrect - it has to be %1, %2, %3, or %4.").arg("Official").arg("Mornings_Afternoons").arg("Block_Planning").arg("Terms"));
+				xmlReader.raiseError(tr("Incorrect mode - it has to be %1, %2, %3, or %4.").arg("Official").arg("Mornings_Afternoons").arg("Block_Planning").arg("Terms"));
 			xmlReadingLog+="  Found mode="+text+"\n";
 			reducedXmlLog+="Read mode="+text+"\n";
 		}
@@ -8821,7 +8821,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					if(reportMA5OldTimeConstraintsChange){
 						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 						  tr("Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and"
-						  " contains a constraint of type student max hours daily, which will be converted"
+						  " contains a constraint of type students max hours daily, which will be converted"
 						  " to a constraint of type students max hours daily real days."),
 						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
 						if(t==0)
@@ -8872,7 +8872,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					if(reportMA5OldTimeConstraintsChange){
 						int t=RulesReconcilableMessage::information(parent, tr("FET information"),
 						  tr("Your file was detected as an old FET-5 MA, Morocco, or Algeria file, and"
-						  " contains a constraint of type student activity tag max hours daily, which will be converted"
+						  " contains a constraint of type students activity tag max hours daily, which will be converted"
 						  " to a constraint of type students activity tag max hours daily real days."),
 						  tr("Skip rest"), tr("See next"), QString(), 1, 0 );
 						if(t==0)

@@ -10319,7 +10319,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	enableStudentsMaxGapsPerDayAction->setChecked(ENABLE_STUDENTS_MAX_GAPS_PER_DAY);
 	
 	ENABLE_MAX_GAPS_PER_REAL_DAY=false;
+	disconnect(enableMaxGapsPerRealDayAction, SIGNAL(toggled(bool)), this, SLOT(enableMaxGapsPerRealDayToggled(bool)));
 	enableMaxGapsPerRealDayAction->setChecked(ENABLE_MAX_GAPS_PER_REAL_DAY);
+	connect(enableMaxGapsPerRealDayAction, SIGNAL(toggled(bool)), this, SLOT(enableMaxGapsPerRealDayToggled(bool)));
 
 	SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
 	showWarningForNotPerfectConstraintsAction->setChecked(SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS);
@@ -10360,16 +10362,24 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	setEnabledIcon(groupActivitiesInInitialOrderAction, ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 
 	ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=false;
+	disconnect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
 	enableStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
+	connect(enableStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
 
 	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
+	disconnect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
 	showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS);
+	connect(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool)));
 
 	ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=false;
+	disconnect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
 	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
+	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
 
 	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=true;
+	disconnect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
 	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
+	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
 
 	///////////
 	
@@ -10851,6 +10861,7 @@ void FetMainForm::enableStudentsMaxGapsPerDayToggled(bool checked)
 
 void FetMainForm::enableMaxGapsPerRealDayToggled(bool checked)
 {
+	assert(gt.rules.mode==MORNINGS_AFTERNOONS);
 	if(checked==true){
 		QString s=tr("These kinds of constraints are good, but not perfectly optimized. Adding such constraints may make your"
 		 " timetable solve too slow or even impossible.");

@@ -100,7 +100,7 @@ void HelpBlockPlanningForm::setText()
 	s+=tr("    If not all the options of the students can be respected, add one or more overflow/fake block, at the end of the day, so that"
 	 " impossible activities get scheduled there. And constrain the maximum number of activities there with the new constraint designed especially"
 	 " for the block-planning mode, max total activities from a set in selected time slots. You could use a progressive approach, decreasing the"
-	 " maximum allowed total number of allowed activities in the overflow/fake slot(s) until no solution is possible anymore.");
+	 " maximum allowed total number of activities in the overflow/fake slot(s) until no solution is possible anymore.");
 	s+="\n\n";
 	s+=tr("- With ideas from ChicagoPianoTuner, Darren McDonald:");
 	s+="\n\n";
@@ -118,12 +118,12 @@ void HelpBlockPlanningForm::setText()
 	s+="\n\n";
 	s+=tr("- The user Darren McDonald described the following use case:");
 	s+="\n\n";
-	s+=tr("I am planning to use a two-stage process: using the custom version to plan blocks, then using the standard version to prepare a final"
+	s+=tr("I am planning to use a two-stage process: using the 'Block-planning' mode to plan blocks, then using the 'Official' mode to prepare a final"
 	 " timetable. A little bit more detail about my timetabling situation may help explain.");
 	s+="\n\n";
 	s+=tr("My school offers the International Baccalaureate Diploma programme (as do many international schools), which is a two year programme"
 	 " offered in the final two years of high school, and block timetabling is useful for this group. Students choose 6 subjects to study over"
-	 " two years, and will choose 3 HL (Higher Level) courses, and 3 SL (standard level) courses. (HL courses require more time each week,"
+	 " two years, and will choose 3 HL (Higher Level) courses, and 3 SL (Standard Level) courses. (HL courses require more time each week,"
 	 " but this isn't important at this stage.) Enrolment in courses will not be very uniform: for example, we may have only 5 students taking"
 	 " Music SL, but 14 students taking Geography SL, and 50 students taking Mathematics SL, so, there's only need for one section (one standard"
 	 " FET activity) for both Music SL and Geography SL, but 3 sections (3 standard FET activities) for Mathematics SL (since our class sizes are"
@@ -143,11 +143,11 @@ void HelpBlockPlanningForm::setText()
 	 " are using seven blocks, so in block-planning I need only 7 hours per day. Geography SL is a subject, with one activity for each student"
 	 " enrolled in the course. Similarly, Mathematics SL is a subject, with one activity for each student. At this stage, then, there is no need"
 	 " to take into account the number of times a course meets in a week, etc., so one activity per student per course is all that's required."
-	 " A successfully generated custom timetable will allow me to identify which courses should go in Block A (custom FET Hour 1),"
-	 " Block B (custom FET Hour 2), etc., and which students should be allocated to each section. (This actually needs to be done only for"
+	 " A successfully generated block-planning mode timetable will allow me to identify which courses should go in Block A (block-planning mode FET Hour 1),"
+	 " Block B (block-planning FET Hour 2), etc., and which students should be allocated to each section. (This actually needs to be done only for"
 	 " Grade 11, since students in Grade 12 can keep the same blocks they had in the previous year.)");
 	s+="\n\n";
-	s+=tr("With that information, I could move to the official version to generate the real timetable: Block A becomes an activity tag which"
+	s+=tr("With that information, I could move to the official mode to generate the real timetable: Block A becomes an activity tag which"
 	 " could be used to ensure activities in the same block get the same actual time, and I know that students assigned to a section have no"
 	 " conflicts within the blocks.");
 	s+="\n\n";
@@ -193,7 +193,7 @@ void HelpBlockPlanningForm::setText()
 	s+=tr("If your students have some different courses in semester 1 and semester 2, there are a few things you need to do. First, double"
 	 " the number of hours in your FET day, creating an hour for each block in semester 1, and another for semester 2, including fakes."
 	 " The structure should be A_sem1, B_sem1, ..., FAKE_1_sem1, ... A_sem2, B_sem2, FAKE_1_sem2, ... FAKE_N_sem2. Now, for subjects that"
-	 " only last one semester, you can create one activity per student choice as you did before. If you care which semester it's in, use"
+	 " only last one semester, you can create one activity per student choice, as you did before. If you care which semester it's in, use"
 	 " a set of activities has a set of preferred starting times and select the hours corresponding to the specific semester.");
 	s+="\n\n";
 	s+=tr("For subjects that last the entire year (both semesters), you need to create two activities for each student choice and corresponding"

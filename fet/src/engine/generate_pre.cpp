@@ -2976,7 +2976,7 @@ bool computeSubgroupsMaxSpanPerRealDay(QWidget* parent)
 				 " max %2 span per real day with 100% weight which cannot be respected because of number of days per week,"
 				 " number of hours per day, students (set) max real days per week, students set not available and/or breaks."
 				 " The number of total hours for this subgroup is"
-				 " %3 and the number of available slots is, considering max span per day and all other constraints, %4.")
+				 " %3 and the number of available slots is, considering max span per real day and all other constraints, %4.")
 				 .arg(gt.rules.internalSubgroupsList[sb]->name)
 				 .arg(subgroupsMaxSpanPerRealDayMaxSpan[sb])
 				 .arg(nHoursPerSubgroup[sb])
@@ -3460,7 +3460,7 @@ bool computeStudentsActivityTagMaxHoursDailyRealDays(QWidget* parent)
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 								 " in the first one and the weight percentage is higher on the first one."
 								 " It is possible to use any number of such constraints for a subgroup and an activity tag, but their resultant must"
-								 " be maximum 2 constraints of type activity tag max hours daily.\n\n"
+								 " be maximum 2 constraints of type activity tag max hours daily per real day.\n\n"
 								 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
 								 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
 								 " Please modify your data accordingly and try again.")
@@ -3542,7 +3542,7 @@ bool computeStudentsActivityTagMaxHoursDailyRealDays(QWidget* parent)
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 								 " in the first one and the weight percentage is higher on the first one."
 								 " It is possible to use any number of such constraints for a subgroup and an activity tag, but their resultant must"
-								 " be maximum 2 constraints of type activity tag max hours daily.\n\n"
+								 " be maximum 2 constraints of type activity tag max hours daily per real day.\n\n"
 								 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
 								 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
 								 " Please modify your data accordingly and try again.")
@@ -4336,7 +4336,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students min hours per morning with"
-				 " %2 min hours per morning, and the number of working hours per day is only %3. Please correct and try again")
+				 " %1 min hours per morning, and the number of working hours per day is only %2. Please correct and try again")
 				 .arg(smd->minHoursPerMorning)
 				 .arg(gt.rules.nHoursPerDay),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -5307,7 +5307,7 @@ bool computeTeachersMaxHoursDailyRealDays(QWidget* parent)
 				QString s;
 				s=GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there is a constraint of type"
 				 " max %2 hours daily per real day with 100% weight which cannot be respected because of number of days per week,"
-				 " number of hours per day, teacher max real days per week, teacher not available and/or breaks."
+				 " number of hours per day, teacher(s) max real days per week, teacher not available and/or breaks."
 				 " The number of total hours for this teacher is"
 				 " %3 and the number of available slots is, considering max hours daily per real day and all other constraints, %4.")
 				 .arg(gt.rules.internalTeachersList[tc]->name)
@@ -5371,7 +5371,7 @@ bool computeTeachersMaxHoursDailyRealDays(QWidget* parent)
 				QString s;
 				s=GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there is a constraint of type"
 				 " max %2 hours daily per real day with 100% weight which cannot be respected because of number of days per week,"
-				 " number of hours per day, teacher max real days per week, teacher not available and/or breaks."
+				 " number of hours per day, teacher(s) max real days per week, teacher not available and/or breaks."
 				 " The number of total hours for this teacher is"
 				 " %3 and the number of available slots is, considering max hours daily and all other constraints, %4.")
 				 .arg(gt.rules.internalTeachersList[tc]->name)
@@ -5722,9 +5722,9 @@ bool computeTeachersMaxSpanPerRealDay(QWidget* parent)
 				QString s;
 				s=GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there is a constraint of type"
 				 " max %2 span per real day with 100% weight which cannot be respected because of number of days per week,"
-				 " number of hours per day, teacher max real days per week, teacher not available and/or breaks."
+				 " number of hours per day, teacher(s) max real days per week, teacher not available and/or breaks."
 				 " The number of total hours for this teacher is"
-				 " %3 and the number of available slots is, considering max span per day and all other constraints, %4.")
+				 " %3 and the number of available slots is, considering max span per real day and all other constraints, %4.")
 				 .arg(gt.rules.internalTeachersList[tc]->name)
 				 .arg(teachersMaxSpanPerRealDayMaxSpan[tc])
 				 .arg(nHoursPerTeacher[tc])
@@ -6203,7 +6203,7 @@ bool computeTeachersActivityTagMaxHoursDailyRealDays(QWidget* parent)
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 								 " in the first one and the weight percentage is higher on the first one."
 								 " It is possible to use any number of such constraints for a teacher and an activity tag, but their resultant must"
-								 " be maximum 2 constraints of type activity tag max hours daily.\n\n"
+								 " be maximum 2 constraints of type activity tag max hours daily per real day.\n\n"
 								 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
 								 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
 								 " Please modify your data accordingly and try again.")
@@ -6285,7 +6285,7 @@ bool computeTeachersActivityTagMaxHoursDailyRealDays(QWidget* parent)
 								 " Two constraints max hours can be compressed into a single one if the max hours are lower"
 								 " in the first one and the weight percentage is higher on the first one."
 								 " It is possible to use any number of such constraints for a teacher and an activity tag, but their resultant must"
-								 " be maximum 2 constraints of type activity tag max hours daily.\n\n"
+								 " be maximum 2 constraints of type activity tag max hours daily per real day.\n\n"
 								 " Example: you are allowed to use 3 constraints: 6 hours 95%, 7 hours 100% and 8 hours 100%,"
 								 " which can be compressed into 2 constraints: 6 hours 95%, 7 hours 100%\n\n"
 								 " Please modify your data accordingly and try again.")
@@ -8090,7 +8090,7 @@ bool computeTeachersMinMorningsAfternoonsPerWeek(QWidget* parent)
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers min mornings per week with"
-				 " %2 min mornings per week, and the number of working mornings per week is only %3. Please correct and try again")
+				 " %1 min mornings per week, and the number of working mornings per week is only %2. Please correct and try again")
 				 .arg(tmd->minMorningsPerWeek)
 				 .arg(gt.rules.nDaysPerWeek/2),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -8174,7 +8174,7 @@ bool computeTeachersMinMorningsAfternoonsPerWeek(QWidget* parent)
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers min afternoons per week with"
-				 " %2 min afternoons per week, and the number of working afternoons per week is only %3. Please correct and try again")
+				 " %1 min afternoons per week, and the number of working afternoons per week is only %2. Please correct and try again")
 				 .arg(tmd->minAfternoonsPerWeek)
 				 .arg(gt.rules.nDaysPerWeek/2),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -8343,7 +8343,7 @@ bool computeStudentsMinMorningsAfternoonsPerWeek(QWidget* parent)
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students min mornings per week with"
-				 " %2 min mornings per week, and the number of working mornings per week is only %3. Please correct and try again")
+				 " %1 min mornings per week, and the number of working mornings per week is only %2. Please correct and try again")
 				 .arg(tmd->minMorningsPerWeek)
 				 .arg(gt.rules.nDaysPerWeek/2),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -8428,7 +8428,7 @@ bool computeStudentsMinMorningsAfternoonsPerWeek(QWidget* parent)
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students min afternoons per week with"
-				 " %2 min afternoons per week, and the number of working afternoons per week is only %3. Please correct and try again")
+				 " %1 min afternoons per week, and the number of working afternoons per week is only %2. Please correct and try again")
 				 .arg(tmd->minAfternoonsPerWeek)
 				 .arg(gt.rules.nDaysPerWeek/2),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -9428,7 +9428,7 @@ bool computeTeachersAfternoonsEarlyMaxBeginningsAtSecondHourPercentages(QWidget*
 
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 			 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because afternoons early max beginnings at second hour constraint"
-			 " has max beginnings at second hour %2, and the number of afternoons per week is %3 which is less. It must be that the number of"
+			 " has max beginnings at second hour %2, and the number of afternoons per week is %3, which is less. It must be that the number of"
 			 " afternoons per week must be greater or equal with the max beginnings at second hour\n"
 			 "Please modify your data correspondingly and try again")
 			 .arg(gt.rules.internalTeachersList[i]->name)
@@ -9515,7 +9515,7 @@ bool computeTeachersMorningsEarlyMaxBeginningsAtSecondHourPercentages(QWidget* p
 
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 			 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because mornings early max beginnings at second hour constraint"
-			 " has max beginnings at second hour %2, and the number of mornings per week is %3 which is less. It must be that the number of"
+			 " has max beginnings at second hour %2, and the number of mornings per week is %3, which is less. It must be that the number of"
 			 " mornings per week must be greater or equal with the max beginnings at second hour\n"
 			 "Please modify your data correspondingly and try again")
 			 .arg(gt.rules.internalTeachersList[i]->name)
@@ -9603,7 +9603,7 @@ bool computeSubgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentages(QWidget
 
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 			 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because afternoons early max beginnings at second hour constraint"
-			 " has max beginnings at second hour %2, and the number of afternoons per week is %3 which is less. It must be that the number of"
+			 " has max beginnings at second hour %2, and the number of afternoons per week is %3, which is less. It must be that the number of"
 			 " afternoons per week must be greater or equal with the max beginnings at second hour\n"
 			 "Please modify your data correspondingly and try again")
 			 .arg(gt.rules.internalSubgroupsList[i]->name)
@@ -9700,7 +9700,7 @@ bool computeSubgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentages(QWidget* 
 
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 			 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because mornings early max beginnings at second hour constraint"
-			 " has max beginnings at second hour %2, and the number of mornings per week is %3 which is less. It must be that the number of"
+			 " has max beginnings at second hour %2, and the number of mornings per week is %3, which is less. It must be that the number of"
 			 " mornings per week must be greater or equal with the max beginnings at second hour\n"
 			 "Please modify your data correspondingly and try again")
 			 .arg(gt.rules.internalSubgroupsList[i]->name)
@@ -11492,7 +11492,7 @@ bool computeSubgroupsEarlyAndMaxGapsPercentages(QWidget* parent) //st max gaps &
 
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 			 GeneratePreTranslate::tr("Cannot optimize for subgroup %1, because early max beginnings at second hour constraint"
-			 " has max beginnings at second hour %2, and the number of days per week is %3 which is less. It must be that the number of"
+			 " has max beginnings at second hour %2, and the number of days per week is %3, which is less. It must be that the number of"
 			 " days per week must be greater or equal with the max beginnings at second hour\n"
 			 "Please modify your data correspondingly and try again")
 			 .arg(gt.rules.internalSubgroupsList[i]->name)
