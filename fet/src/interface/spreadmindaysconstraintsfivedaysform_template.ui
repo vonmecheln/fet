@@ -82,7 +82,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>This has to be checked, so activies from the same container are not in the same day (they are at least 1 day apart)</string>
+           <string>This has to be checked, so that the activities from the same container are not on the same day (they are at least 1 day apart)</string>
           </property>
           <property name="wordWrap">
            <bool>true</bool>

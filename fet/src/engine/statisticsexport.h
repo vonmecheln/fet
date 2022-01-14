@@ -78,11 +78,11 @@ public:
 	static QString exportStatisticsSubjectsStudentsHtml(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int> *excludedNames);
 	static QString exportStatisticsStudentsSubjectsHtml(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int> *excludedNames);
 	
-	//this function must be called before export html files, because it compute the IDs
+	//this function must be called before export HTML files, because it compute the IDs
 	static void computeHashForIDsStatistics(FetStatistics *statisticValues);
 	static void getNamesAndHours(FetStatistics *statisticValues);
 private:
-	//the following functions write the css and html statistics files
+	//the following functions write the CSS and HTML statistics files
 	static bool exportStatisticsStylesheetCss(QWidget* parent, QString saveTime, FetStatistics statisticValues);
 	static bool exportStatisticsIndex(QWidget* parent, QString saveTime);
 	static bool exportStatisticsTeachersSubjects(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel);

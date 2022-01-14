@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.1.4">
+<fet version="6.2.5">
 
 <Mode>Terms</Mode>
 
@@ -1988,6 +1988,36 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTwoSetsOfActivitiesOrdered>
+<ConstraintTeacherMinGapsBetweenActivityTag>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher>t1</Teacher>
+	<Activity_Tag>at2</Activity_Tag>
+	<MinGaps>1</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinGapsBetweenActivityTag>
+<ConstraintTeachersMinGapsBetweenActivityTag>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>at3</Activity_Tag>
+	<MinGaps>3</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinGapsBetweenActivityTag>
+<ConstraintStudentsSetMinGapsBetweenActivityTag>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y1 a</Students>
+	<Activity_Tag>at2</Activity_Tag>
+	<MinGaps>1</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinGapsBetweenActivityTag>
+<ConstraintStudentsMinGapsBetweenActivityTag>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Tag>at2</Activity_Tag>
+	<MinGaps>2</MinGaps>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinGapsBetweenActivityTag>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

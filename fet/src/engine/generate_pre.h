@@ -1068,6 +1068,36 @@ extern Matrix1D<QList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item*>> tm
 
 bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent);
 
+//2021-12-15 - Constraint students (set) min gaps between activity tag
+class StudentsMinGapsBetweenActivityTag_item{
+public:
+	//double weight; -> must be 100.0%
+	QSet<int> canonicalSetOfSubgroups;
+	int minGaps;
+	int activityTag;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<StudentsMinGapsBetweenActivityTag_item> smgbatList;
+extern Matrix1D<QList<StudentsMinGapsBetweenActivityTag_item*>> smgbatListForActivity;
+
+bool computeStudentsMinGapsBetweenActivityTag(QWidget* parent);
+
+//2021-12-15 - Constraint teacher(s) min gaps between activity tag
+class TeachersMinGapsBetweenActivityTag_item{
+public:
+	//double weight; -> must be 100.0%
+	QSet<int> canonicalSetOfTeachers;
+	int minGaps;
+	int activityTag;
+};
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+extern std::list<TeachersMinGapsBetweenActivityTag_item> tmgbatList;
+extern Matrix1D<QList<TeachersMinGapsBetweenActivityTag_item*>> tmgbatListForActivity;
+
+bool computeTeachersMinGapsBetweenActivityTag(QWidget* parent);
+
 //2012-04-29 - Constraint activities occupy max different rooms
 class ActivitiesOccupyMaxDifferentRooms_item
 {

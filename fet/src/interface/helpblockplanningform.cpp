@@ -124,7 +124,7 @@ void HelpBlockPlanningForm::setText()
 	s+=tr("My school offers the International Baccalaureate Diploma programme (as do many international schools), which is a two year programme"
 	 " offered in the final two years of high school, and block timetabling is useful for this group. Students choose 6 subjects to study over"
 	 " two years, and will choose 3 HL (Higher Level) courses, and 3 SL (Standard Level) courses. (HL courses require more time each week,"
-	 " but this isn't important at this stage.) Enrolment in courses will not be very uniform: for example, we may have only 5 students taking"
+	 " but this isn't important at this stage.) Enrollment in courses will not be very uniform: for example, we may have only 5 students taking"
 	 " Music SL, but 14 students taking Geography SL, and 50 students taking Mathematics SL, so, there's only need for one section (one standard"
 	 " FET activity) for both Music SL and Geography SL, but 3 sections (3 standard FET activities) for Mathematics SL (since our class sizes are"
 	 " capped at 17). In a standard FET timetable, each of these activities would have several subactivities (without going into the details,"

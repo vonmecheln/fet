@@ -64,7 +64,7 @@ HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)
 
 	s+="\n\n";
 
-	s+=tr("If your data is too difficult (impossible), maybe you can de-activate force consecutive if same day "
+	s+=tr("If your data is too difficult (impossible), maybe you can deactivate force consecutive if same day "
 	 "for all constraints min days between activities (from the modify multiple constraints at once dialog "
 	 "which can be activated from the min days constraints dialog).");
 
@@ -83,7 +83,7 @@ HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)
 	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "bachiri401: In Algeria, we can not teach the same subject in the same real day. For example a subject divided into 3 activities (1+1+1)"
 	 " must be on three different real days. The constraint min days between activities here is great (working for real days).");
 	s+="\n\n";
-	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "But for example we have students styding math and sport. We want math and sport not to be on the same half day but they can be on the same real day.");
+	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "But for example we have students studying math and sport. We want math and sport not to be on the same half day but they can be on the same real day.");
 	s+="\n\n";
 	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "bachiri401 also said that for this problem he uses a trick, adding a constraint min gaps between the activities.");
 	s+="\n\n";

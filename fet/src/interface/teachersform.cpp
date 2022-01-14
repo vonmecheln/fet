@@ -407,7 +407,7 @@ void TeachersForm::deactivateTeacher()
 
 	QString teacherName=teachersListWidget->currentItem()->text();
 	int count=gt.rules.deactivateTeacher(teacherName);
-	QMessageBox::information(this, tr("FET information"), tr("De-activated a number of %1 activities").arg(count));
+	QMessageBox::information(this, tr("FET information"), tr("Deactivated a number of %1 activities").arg(count));
 }
 
 void TeachersForm::comments()

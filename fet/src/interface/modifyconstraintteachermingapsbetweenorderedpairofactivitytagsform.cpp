@@ -128,14 +128,14 @@ void ModifyConstraintTeacherMinGapsBetweenOrderedPairOfActivityTagsForm::ok()
 	QString firstActivityTagName=firstActivityTagComboBox->currentText();
 	int fati=gt.rules.searchActivityTag(firstActivityTagName);
 	if(fati<0){
-		QMessageBox::warning(this, tr("FET warning"), tr("Invalid activity tag"));
+		QMessageBox::warning(this, tr("FET warning"), tr("Invalid first activity tag"));
 		return;
 	}
 
 	QString secondActivityTagName=secondActivityTagComboBox->currentText();
 	int sati=gt.rules.searchActivityTag(secondActivityTagName);
 	if(sati<0){
-		QMessageBox::warning(this, tr("FET warning"), tr("Invalid activity tag"));
+		QMessageBox::warning(this, tr("FET warning"), tr("Invalid second activity tag"));
 		return;
 	}
 	

@@ -68,7 +68,7 @@ public:
 	
 	static void writeReportForMultiple(QWidget* parent, const QString& description, bool begin);
 	
-	//the following functions return a single html table (needed for html file export and printing)
+	//the following functions return a single HTML table (needed for HTML file export and printing)
 	static QString singleSubgroupsTimetableDaysHorizontalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
 	static QString singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
 	static QString singleSubgroupsTimetableTimeHorizontalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
@@ -126,24 +126,24 @@ public:
 	static void computeHashActivityColorBySubjectAndStudents();
 
 private:
-	//this function must be called before export html files, because it compute the IDs
+	//this function must be called before export HTML files, because it compute the IDs
 	static void computeHashForIDsTimetable();
 
-	//this function must be called before export html files, because it is needed for the allActivities tables
+	//this function must be called before export HTML files, because it is needed for the allActivities tables
 	static void computeActivitiesAtTime();
 	
-	//this function must be called before export html files, because it is needed to add activities with same starting time (simultaneous activities)
+	//this function must be called before export HTML files, because it is needed to add activities with same starting time (simultaneous activities)
 	static void computeActivitiesWithSameStartingTime();
 	//this function add activities with same starting time into the allActivities list
 	static bool addActivitiesWithSameStartingTime(QList<int>& allActivities, int hour);
 
-	//the following functions write the conflicts text and the xml files
+	//the following functions write the conflicts as text and the XML files
 	static void writeSubgroupsTimetableXml(QWidget* parent, const QString& xmlfilename, const QList<int>& subgroupsSortedOrder=QList<int>());
 	static void writeTeachersTimetableXml(QWidget* parent, const QString& xmlfilename);
 	static void writeActivitiesTimetableXml(QWidget* parent, const QString& xmlfilename);
 	static void writeConflictsTxt(QWidget* parent, const QString& filename, const QString& saveTime, int placedActivities);
 
-	//the following functions write the css and html timetable files
+	//the following functions write the CSS and HTML timetable files
 	static void writeIndexHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeStylesheetCss(QWidget* parent, const QString& cssfilename, const QString& saveTime, int placedActivities);
 	static void writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities, const QList<int>& subgroupsSortedOrder=QList<int>());

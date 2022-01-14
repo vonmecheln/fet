@@ -120,7 +120,7 @@ StudentsStatisticsForm::StudentsStatisticsForm(QWidget* parent): QDialog(parent)
 					activitiesForSubgroup.insert(subgroup, acts);
 				}
 				else
-					warnings+=tr("Students set %1 from activity with id %2 is inexistent in the students list. Please correct this.").arg(sts).arg(act->id)+QString("\n");
+					warnings+=tr("Students set %1 from activity with id %2 is nonexistent in the students list. Please correct this.").arg(sts).arg(act->id)+QString("\n");
 			}
 		}
 	if(!warnings.isEmpty())

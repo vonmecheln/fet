@@ -176,7 +176,7 @@ StatisticsPrintForm::StatisticsPrintForm(QWidget *parent): QDialog(parent){
 	CBBreak->setSizePolicy(QSizePolicy::Expanding, CBBreak->sizePolicy().verticalPolicy());
 	
 	QStringList whiteSpaceStrings;
-	whiteSpaceStrings<<QString("normal")<<QString("pre")<<QString("nowrap")<<QString("pre-wrap");	//don't translate these strings, because they are css parameters!
+	whiteSpaceStrings<<QString("normal")<<QString("pre")<<QString("nowrap")<<QString("pre-wrap");	//don't translate these strings, because they are CSS parameters!
 	CBWhiteSpace=new QComboBox();
 	CBWhiteSpace->addItems(whiteSpaceStrings);
 	CBWhiteSpace->setCurrentIndex(0);
@@ -561,7 +561,7 @@ StatisticsPrintForm::StatisticsPrintForm(QWidget *parent): QDialog(parent){
 	restoreFETDialogGeometry(this);
 	
 	QSettings settings(COMPANY, PROGRAM);
-		
+	
 	if(settings.contains(this->metaObject()->className()+studentSubjectRBState))
 		studentSubjectRB->setChecked(settings.value(this->metaObject()->className()+studentSubjectRBState).toBool());
 	if(settings.contains(this->metaObject()->className()+studentTeacherRBState))
@@ -585,8 +585,8 @@ StatisticsPrintForm::StatisticsPrintForm(QWidget *parent): QDialog(parent){
 		CBpaperSize->setCurrentIndex(settings.value(this->metaObject()->className()+CBpaperSizeState).toInt());
 	if(settings.contains(this->metaObject()->className()+CBorientationModeState))
 		CBorientationMode->setCurrentIndex(settings.value(this->metaObject()->className()+CBorientationModeState).toInt());
-//	if(settings.contains(this->metaObject()->className()+printDetailedTablesState))
-//		printDetailedTables->setChecked(settings.value(this->metaObject()->className()+printDetailedTablesState).toBool());
+	//if(settings.contains(this->metaObject()->className()+printDetailedTablesState))
+	//	printDetailedTables->setChecked(settings.value(this->metaObject()->className()+printDetailedTablesState).toBool());
 	if(settings.contains(this->metaObject()->className()+printActivityTagsState))
 		printActivityTags->setChecked(settings.value(this->metaObject()->className()+printActivityTagsState).toBool());
 	//
@@ -950,6 +950,10 @@ void StatisticsPrintForm::print(){
 	//QPrintDialog *printDialog = new QPrintDialog(&printer, this);
 	QPrintDialog printDialog(&printer, this);
 	printDialog.setWindowTitle(tr("Print statistics"));
+	
+	//const QString settingsName=QString("StatisticsPrintFormPrintDialog");
+	//restoreFETDialogGeometry(&printDialog, settingsName);
+	
 	if (printDialog.exec() == QDialog::Accepted) {
 		QTextDocument textDocument;
 		textDocument.documentLayout()->setPaintDevice(&printer);
@@ -961,6 +965,7 @@ void StatisticsPrintForm::print(){
 		textDocument.setHtml(updateHTMLprintString(true));
 		textDocument.print(&printer);
 	}
+	//saveFETDialogGeometry(&printDialog, settingsName);
 	//delete printDialog;
 #endif
 }
@@ -1006,7 +1011,13 @@ void StatisticsPrintForm::printPreviewFull(){
 #endif
 	QPrintPreviewDialog printPreviewFull(&printer, this);
 	connect(&printPreviewFull, SIGNAL(paintRequested(QPrinter*)), SLOT(updatePreviewFull(QPrinter*)));
+
+	const QString settingsName=QString("StatisticsPrintFormPrintPreviewFullDialog");
+	restoreFETDialogGeometry(&printPreviewFull, settingsName);
+
 	printPreviewFull.exec();
+
+	saveFETDialogGeometry(&printPreviewFull, settingsName);
 #endif
 }
 
@@ -1069,7 +1080,13 @@ void StatisticsPrintForm::printPreviewSmall(){
 #endif
 	QPrintPreviewDialog printPreviewSmall(&printer, this);
 	connect(&printPreviewSmall, SIGNAL(paintRequested(QPrinter*)), SLOT(updatePreviewSmall(QPrinter*)));
+
+	const QString settingsName=QString("StatisticsPrintFormPrintPreviewSmallDialog");
+	restoreFETDialogGeometry(&printPreviewSmall, settingsName);
+
 	printPreviewSmall.exec();
+
+	saveFETDialogGeometry(&printPreviewSmall, settingsName);
 #endif
 }
 

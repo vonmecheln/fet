@@ -7255,6 +7255,8 @@ again_if_impossible_activity:
 
 		bool okstudentsmingapsbetweenorderedpairofactivitytags;
 		bool okteachersmingapsbetweenorderedpairofactivitytags;
+		bool okstudentsmingapsbetweenactivitytag;
+		bool okteachersmingapsbetweenactivitytag;
 
 		bool okteachersmaxtwoactivitytagsperdayfromn1n2n3;
 		bool okteachersmaxhoursperallafternoons;
@@ -17097,49 +17099,47 @@ impossiblestudentsactivitytagminhoursdaily:
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}
-				
+		
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//allowed from students min gaps between ordered pair of activity tags
 		
 		okstudentsmingapsbetweenorderedpairofactivitytags=true;
 		
-		if(1){
-			for(StudentsMinGapsBetweenOrderedPairOfActivityTags_item* item : qAsConst(smgbopoatListForActivity[ai])){
-				bool first, second;
-				if(act->iActivityTagsSet.contains(item->firstActivityTag))
-					first=true;
-				else
-					first=false;
+		for(StudentsMinGapsBetweenOrderedPairOfActivityTags_item* item : qAsConst(smgbopoatListForActivity[ai])){
+			bool first, second;
+			if(act->iActivityTagsSet.contains(item->firstActivityTag))
+				first=true;
+			else
+				first=false;
 
-				if(act->iActivityTagsSet.contains(item->secondActivityTag))
-					second=true;
-				else
-					second=false;
-					
-				assert((first && !second) || (!first && second));
-				
-				if(first){
-					assert(!second);
-					//after the first activity tag we need to have at least minGaps until the second activity tag.
-					for(int sbg : qAsConst(act->iSubgroupsList)){
-						if(item->canonicalSetOfSubgroups.contains(sbg)){
-							for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
-								if(startSecond-h-act->duration >= item->minGaps)
-									break;
-								int ai2=subgroupsTimetable(sbg,d,startSecond);
-								if(ai2>=0){
-									if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->secondActivityTag)){
-										if(!conflActivities[newtime].contains(ai2)){
-											if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
-												okstudentsmingapsbetweenorderedpairofactivitytags=false;
-												goto impossiblestudentsmingapsbetweenorderedpairofactivitytags;
-											}
-											else{
-												conflActivities[newtime].append(ai2);
-												nConflActivities[newtime]++;
-												assert(conflActivities[newtime].count()==nConflActivities[newtime]);
-											}
+			if(act->iActivityTagsSet.contains(item->secondActivityTag))
+				second=true;
+			else
+				second=false;
+
+			assert((first && !second) || (!first && second));
+
+			if(first){
+				assert(!second);
+				//after the first activity tag we need to have at least minGaps until the second activity tag.
+				for(int sbg : qAsConst(act->iSubgroupsList)){
+					if(item->canonicalSetOfSubgroups.contains(sbg)){
+						for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
+							if(startSecond-h-act->duration >= item->minGaps)
+								break;
+							int ai2=subgroupsTimetable(sbg,d,startSecond);
+							if(ai2>=0){
+								if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->secondActivityTag)){
+									if(!conflActivities[newtime].contains(ai2)){
+										if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+											okstudentsmingapsbetweenorderedpairofactivitytags=false;
+											goto impossiblestudentsmingapsbetweenorderedpairofactivitytags;
+										}
+										else{
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+											assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 										}
 									}
 								}
@@ -17147,27 +17147,27 @@ impossiblestudentsactivitytagminhoursdaily:
 						}
 					}
 				}
-				else{
-					assert(second);
-					//before the second activity tag we need to have at least minGaps until the first activity tag.
-					for(int sbg : qAsConst(act->iSubgroupsList)){
-						if(item->canonicalSetOfSubgroups.contains(sbg)){
-							for(int endFirst=h-1; endFirst>=0; endFirst--){
-								if(h-1-endFirst >= item->minGaps)
-									break;
-								int ai2=subgroupsTimetable(sbg,d,endFirst);
-								if(ai2>=0){
-									if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->firstActivityTag)){
-										if(!conflActivities[newtime].contains(ai2)){
-											if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
-												okstudentsmingapsbetweenorderedpairofactivitytags=false;
-												goto impossiblestudentsmingapsbetweenorderedpairofactivitytags;
-											}
-											else{
-												conflActivities[newtime].append(ai2);
-												nConflActivities[newtime]++;
-												assert(conflActivities[newtime].count()==nConflActivities[newtime]);
-											}
+			}
+			else{
+				assert(second);
+				//before the second activity tag we need to have at least minGaps until the first activity tag.
+				for(int sbg : qAsConst(act->iSubgroupsList)){
+					if(item->canonicalSetOfSubgroups.contains(sbg)){
+						for(int endFirst=h-1; endFirst>=0; endFirst--){
+							if(h-1-endFirst >= item->minGaps)
+								break;
+							int ai2=subgroupsTimetable(sbg,d,endFirst);
+							if(ai2>=0){
+								if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->firstActivityTag)){
+									if(!conflActivities[newtime].contains(ai2)){
+										if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+											okstudentsmingapsbetweenorderedpairofactivitytags=false;
+											goto impossiblestudentsmingapsbetweenorderedpairofactivitytags;
+										}
+										else{
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+											assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 										}
 									}
 								}
@@ -17180,6 +17180,82 @@ impossiblestudentsactivitytagminhoursdaily:
 		
 impossiblestudentsmingapsbetweenorderedpairofactivitytags:
 		if(!okstudentsmingapsbetweenorderedpairofactivitytags){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//allowed from students min gaps between activity tag
+		
+		okstudentsmingapsbetweenactivitytag=true;
+		
+		for(StudentsMinGapsBetweenActivityTag_item* item : qAsConst(smgbatListForActivity[ai])){
+			bool hasTag;
+			if(act->iActivityTagsSet.contains(item->activityTag))
+				hasTag=true;
+			else
+				hasTag=false;
+
+			if(hasTag){
+				//before and after the activity tag we need to have at least minGaps until the same activity tag.
+				for(int sbg : qAsConst(act->iSubgroupsList)){
+					if(item->canonicalSetOfSubgroups.contains(sbg)){
+						//after the current activity
+						for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
+							if(startSecond-h-act->duration >= item->minGaps)
+								break;
+							int ai2=subgroupsTimetable(sbg,d,startSecond);
+							if(ai2>=0){
+								if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+									if(!conflActivities[newtime].contains(ai2)){
+										if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+											okstudentsmingapsbetweenactivitytag=false;
+											goto impossiblestudentsmingapsbetweenactivitytag;
+										}
+										else{
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+											assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+										}
+									}
+								}
+							}
+						}
+
+						//before the current activity
+						for(int startSecond=h-1; startSecond>=0; startSecond--){
+							if(h-startSecond > item->minGaps)
+								break;
+							int ai2=subgroupsTimetable(sbg,d,startSecond);
+							if(ai2>=0){
+								if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+									if(!conflActivities[newtime].contains(ai2)){
+										if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+											okstudentsmingapsbetweenactivitytag=false;
+											goto impossiblestudentsmingapsbetweenactivitytag;
+										}
+										else{
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+											assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+impossiblestudentsmingapsbetweenactivitytag:
+		if(!okstudentsmingapsbetweenactivitytag){
 			if(updateSubgroups || updateTeachers)
 				removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
@@ -25179,43 +25255,41 @@ impossibleteachersactivitytagminhoursdaily:
 		
 		okteachersmingapsbetweenorderedpairofactivitytags=true;
 		
-		if(1){
-			for(TeachersMinGapsBetweenOrderedPairOfActivityTags_item* item : qAsConst(tmgbopoatListForActivity[ai])){
-				bool first, second;
-				if(act->iActivityTagsSet.contains(item->firstActivityTag))
-					first=true;
-				else
-					first=false;
+		for(TeachersMinGapsBetweenOrderedPairOfActivityTags_item* item : qAsConst(tmgbopoatListForActivity[ai])){
+			bool first, second;
+			if(act->iActivityTagsSet.contains(item->firstActivityTag))
+				first=true;
+			else
+				first=false;
 
-				if(act->iActivityTagsSet.contains(item->secondActivityTag))
-					second=true;
-				else
-					second=false;
-					
-				assert((first && !second) || (!first && second));
-				
-				if(first){
-					assert(!second);
-					//after the first activity tag we need to have at least minGaps until the second activity tag.
-					
-					for(int tch : qAsConst(act->iTeachersList)){
-						if(item->canonicalSetOfTeachers.contains(tch)){
-							for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
-								if(startSecond-h-act->duration >= item->minGaps)
-									break;
-								int ai2=teachersTimetable(tch,d,startSecond);
-								if(ai2>=0){
-									if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->secondActivityTag)){
-										if(!conflActivities[newtime].contains(ai2)){
-											if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
-												okteachersmingapsbetweenorderedpairofactivitytags=false;
-												goto impossibleteachersmingapsbetweenorderedpairofactivitytags;
-											}
-											else{
-												conflActivities[newtime].append(ai2);
-												nConflActivities[newtime]++;
-												assert(conflActivities[newtime].count()==nConflActivities[newtime]);
-											}
+			if(act->iActivityTagsSet.contains(item->secondActivityTag))
+				second=true;
+			else
+				second=false;
+
+			assert((first && !second) || (!first && second));
+
+			if(first){
+				assert(!second);
+				//after the first activity tag we need to have at least minGaps until the second activity tag.
+
+				for(int tch : qAsConst(act->iTeachersList)){
+					if(item->canonicalSetOfTeachers.contains(tch)){
+						for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
+							if(startSecond-h-act->duration >= item->minGaps)
+								break;
+							int ai2=teachersTimetable(tch,d,startSecond);
+							if(ai2>=0){
+								if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->secondActivityTag)){
+									if(!conflActivities[newtime].contains(ai2)){
+										if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+											okteachersmingapsbetweenorderedpairofactivitytags=false;
+											goto impossibleteachersmingapsbetweenorderedpairofactivitytags;
+										}
+										else{
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+											assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 										}
 									}
 								}
@@ -25223,28 +25297,28 @@ impossibleteachersactivitytagminhoursdaily:
 						}
 					}
 				}
-				else{
-					assert(second);
-					//before the second activity tag we need to have at least minGaps until the first activity tag.
+			}
+			else{
+				assert(second);
+				//before the second activity tag we need to have at least minGaps until the first activity tag.
 
-					for(int tch : qAsConst(act->iTeachersList)){
-						if(item->canonicalSetOfTeachers.contains(tch)){
-							for(int endFirst=h-1; endFirst>=0; endFirst--){
-								if(h-1-endFirst >= item->minGaps)
-									break;
-								int ai2=teachersTimetable(tch,d,endFirst);
-								if(ai2>=0){
-									if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->firstActivityTag)){
-										if(!conflActivities[newtime].contains(ai2)){
-											if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
-												okteachersmingapsbetweenorderedpairofactivitytags=false;
-												goto impossibleteachersmingapsbetweenorderedpairofactivitytags;
-											}
-											else{
-												conflActivities[newtime].append(ai2);
-												nConflActivities[newtime]++;
-												assert(conflActivities[newtime].count()==nConflActivities[newtime]);
-											}
+				for(int tch : qAsConst(act->iTeachersList)){
+					if(item->canonicalSetOfTeachers.contains(tch)){
+						for(int endFirst=h-1; endFirst>=0; endFirst--){
+							if(h-1-endFirst >= item->minGaps)
+								break;
+							int ai2=teachersTimetable(tch,d,endFirst);
+							if(ai2>=0){
+								if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->firstActivityTag)){
+									if(!conflActivities[newtime].contains(ai2)){
+										if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+											okteachersmingapsbetweenorderedpairofactivitytags=false;
+											goto impossibleteachersmingapsbetweenorderedpairofactivitytags;
+										}
+										else{
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+											assert(conflActivities[newtime].count()==nConflActivities[newtime]);
 										}
 									}
 								}
@@ -25265,6 +25339,85 @@ impossibleteachersmingapsbetweenorderedpairofactivitytags:
 			continue;
 		}
 		
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//allowed from teachers min gaps between activity tag
+		
+		okteachersmingapsbetweenactivitytag=true;
+		
+		for(TeachersMinGapsBetweenActivityTag_item* item : qAsConst(tmgbatListForActivity[ai])){
+			bool hasTag;
+			if(act->iActivityTagsSet.contains(item->activityTag))
+				hasTag=true;
+			else
+				hasTag=false;
+
+			if(hasTag){
+				//before and after the activity tag we need to have at least minGaps until the same activity tag.
+				for(int tch : qAsConst(act->iTeachersList)){
+					if(item->canonicalSetOfTeachers.contains(tch)){
+						//after the current activity
+						for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
+							if(startSecond-h-act->duration >= item->minGaps)
+								break;
+							int ai2=teachersTimetable(tch,d,startSecond);
+							if(ai2>=0){
+								if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+									if(!conflActivities[newtime].contains(ai2)){
+										if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+											okteachersmingapsbetweenactivitytag=false;
+											goto impossibleteachersmingapsbetweenactivitytag;
+										}
+										else{
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+											assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+										}
+									}
+								}
+							}
+						}
+
+						//before the current activity
+						for(int startSecond=h-1; startSecond>=0; startSecond--){
+							if(h-startSecond > item->minGaps)
+								break;
+							int ai2=teachersTimetable(tch,d,startSecond);
+							if(ai2>=0){
+								if(gt.rules.internalActivitiesList[ai2].iActivityTagsSet.contains(item->activityTag)){
+									if(!conflActivities[newtime].contains(ai2)){
+										if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+											okteachersmingapsbetweenactivitytag=false;
+											goto impossibleteachersmingapsbetweenactivitytag;
+										}
+										else{
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+											assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+impossibleteachersmingapsbetweenactivitytag:
+		if(!okteachersmingapsbetweenactivitytag){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -25630,7 +25783,7 @@ impossibleactivitiesoccupymaxtimeslotsfromselection:
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//2020-04-30
-		//care about max total activities from set in selected timeslots
+		//care about max total activities from set in selected time slots
 		//I think it is best to put this after all other major constraints
 		//I think it is best to put this after activities max simultaneous in selected time slots
 		//I think it is best to put this after activities occupy max time slots from selection

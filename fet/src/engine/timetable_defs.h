@@ -63,7 +63,7 @@ extern bool LANGUAGE_STYLE_RIGHT_TO_LEFT;
 extern QString LANGUAGE_FOR_HTML;
 
 /**
-Timetable html css javaScript Level, added by Volker Dirr
+Timetable HTML and CSS JavaScript level, added by Volker Dirr
 */
 extern int TIMETABLE_HTML_LEVEL;
 
@@ -270,32 +270,32 @@ there might be problems.
 extern QString OUTPUT_DIR;
 
 /**
-A log file explaining how the xml input file was parsed
+A log file explaining how the XML input file was parsed
 */
 extern const QString XML_PARSING_LOG_FILENAME;
 
 /**
-A function used in xml saving
+A function used in XML saving
 */
 QString protect(const QString& str);
 
 /**
-A function used in html saving
+A function used in HTML saving
 */
 QString protect2(const QString& str);
 
 /**
-A function used in html saving
+A function used in HTML saving
 */
 QString protect2vert(const QString& str);
 
 /**
-A function used in html saving
+A function used in HTML saving
 */
 //QString protect2id(const QString& str);
 
 /**
-A function used in html saving
+A function used in HTML saving
 */
 //QString protect2java(const QString& str);
 

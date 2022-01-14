@@ -52,7 +52,7 @@ void HelpInstructionsForm::setText()
 	s+="\n\n";
 	s+=tr("If you get an impossible timetable and your institution allows beginning later for students, please reconsider your students (set) early "
 		"constraints to allow more beginnings at second hour. Also, removing or weakening other constraints might help. If FET cannot find "
-		"a good timetable for your school, make sure to report this, as FET needs to be improved. Maybe small changes to your datafile "
+		"a good timetable for your school, make sure to report this, as FET needs to be improved. Maybe small changes to your data file "
 		"can bring good solutions, or maybe there are aspects which have to be changed in FET.");
 	s+="\n\n";
 	s+=tr("An impossible timetable might also be caused by incorrect years division. Please check statistics/students for all subgroups, "
@@ -83,7 +83,7 @@ void HelpInstructionsForm::setText()
 		"100% (even 99.75% or more) for an impossible constraint, FET will be able to detect that it is impossible and obtain a "
 		"timetable in the end, so the weight is subjective. So, the best way would be to choose a 99.75% for all constraints, "
 		"but the time of generation might be larger than with 95%. You could try at first the 95% minimum recommended value, then "
-		"highten the weight percentage up to maybe 99.75% or 100%. I am not sure here, I have not enough sample files (please contribute with advice).");
+		"heighten the weight percentage up to maybe 99.75% or 100%. I am not sure here, I have not enough sample files (please contribute with advice).");
 	s+="\n\n";
 	s+=tr("If you would like to change the default 95% for another value for some constraints of type min days, the easiest way "
 		"is in Data/Time constraints/Min days between activities dialog, where starting with version 5.6.1 there is a "
@@ -96,12 +96,12 @@ void HelpInstructionsForm::setText()
 		"activities per week from the same group, you can add 2 constraints, min 2 days and min 1 day, both with 95%. This will ensure that "
 		"in 99.75% of cases the min 1 day will be respected.");
 	s+="\n\n";
-	s+=tr("2) If you have a course lesson with say 4-5 activities per week, difficult lessons (Maths), which you would like to schedule "
+	s+=tr("2) If you have a course lesson with say 4-5 activities per week, difficult lessons (math), which you would like to schedule "
 		"in the beginning of the day (say 3 out of 4-5 need to be in the first half of the day), the best approach is to use constraint "
 		"subactivities preferred time slots or starting times, specifying possibly the subject and component number: 1, 2 and maybe 3"
 		", adding 3 constraints for this subject (see FAQ for more details). You can also add constraints for component numbers 3, 4 "
-		"and 5 for subject Maths (this way, if activity is split into 4 it will get 2 early, if it is split into 5 it will get 3 "
-		"early - a nice trick). Similarly, if you have say Bio with 1 or 2 splits per week, you can add constraint with component number = 2.");
+		"and 5 for subject math (this way, if activity is split into 4 it will get 2 early, if it is split into 5 it will get 3 "
+		"early - a nice trick). Similarly, if you have say biology with 1 or 2 splits per week, you can add constraint with component number = 2.");
 	s+="\n\n";
 	s+=tr("3) From the way the algorithm is conceived, the automatic generation is faster if you use students set (or teacher) "
 		"not available and/or constraint activity(ies) preferred time slots or preferred starting times to specify impossible slots, "
@@ -142,7 +142,7 @@ void HelpInstructionsForm::setText()
 		"min hours daily (probably with 2 hours), but please make sure your timetable is possible. This constraint is "
 		"smart, it only considers non-empty days.");
 	s+="\n\n";
-	s+=tr("13) If you have for instance 7 hours of Maths on a 5 days week (more lessons than days), "
+	s+=tr("13) If you have for instance 7 hours of math on a 5 days week (more lessons than days), "
 		"please respect the correct way to add these as a split activity. See question Q-1-27-March-2008 from FAQ. It is important!");
 	s+="\n\n";
 	s+=tr("14) It is recommended to remove redundant min days between activities constraints after adding constraints same starting day or time "

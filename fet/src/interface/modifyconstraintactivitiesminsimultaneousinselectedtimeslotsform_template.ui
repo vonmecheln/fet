@@ -222,7 +222,7 @@ slots</string>
      <item>
       <widget class="QPushButton" name="okPushButton">
        <property name="text">
-        <string>Ok</string>
+        <string>OK</string>
        </property>
       </widget>
      </item>

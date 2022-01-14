@@ -74,11 +74,28 @@
          </property>
          <layout class="QGridLayout" name="gridLayout">
           <item row="0" column="0">
-           <widget class="QLabel" name="teachersTextLabel">
-            <property name="text">
-             <string>Teacher</string>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="teachersTextLabel">
+              <property name="text">
+               <string>Teacher</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="invertedTeacherCheckBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string comment="Inverted (negated) teacher filter">Inverted</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item row="1" column="0">
            <widget class="QComboBox" name="teachersComboBox"/>
@@ -99,27 +116,74 @@
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QCheckBox" name="invertedStudentsCheckBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string comment="Inverted (negated) students filter">Inverted</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
           <item row="3" column="0">
            <widget class="QComboBox" name="studentsComboBox"/>
           </item>
           <item row="4" column="0">
-           <widget class="QLabel" name="subjectsTextLabel">
-            <property name="text">
-             <string>Subject</string>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="subjectsTextLabel">
+              <property name="text">
+               <string>Subject</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="invertedSubjectCheckBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string comment="Inverted (negated) subject filter">Inverted</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item row="5" column="0">
            <widget class="QComboBox" name="subjectsComboBox"/>
           </item>
           <item row="6" column="0">
-           <widget class="QLabel" name="activityTagsTextLabel">
-            <property name="text">
-             <string>Activity tag</string>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="activityTagsTextLabel">
+              <property name="text">
+               <string>Activity tag</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="invertedActivityTagCheckBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string comment="Inverted (negated) activity tag filter">Inverted</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item row="7" column="0">
            <widget class="QComboBox" name="activityTagsComboBox"/>

@@ -588,6 +588,19 @@ SOURCES += \
 	interface/constraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp \
 	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.cpp \
 	\
+	interface/addconstraintstudentssetmingapsbetweenactivitytagform.cpp \
+	interface/constraintstudentssetmingapsbetweenactivitytagform.cpp \
+	interface/modifyconstraintstudentssetmingapsbetweenactivitytagform.cpp \
+	interface/addconstraintstudentsmingapsbetweenactivitytagform.cpp \
+	interface/constraintstudentsmingapsbetweenactivitytagform.cpp \
+	interface/modifyconstraintstudentsmingapsbetweenactivitytagform.cpp \
+	interface/addconstraintteachermingapsbetweenactivitytagform.cpp \
+	interface/constraintteachermingapsbetweenactivitytagform.cpp \
+	interface/modifyconstraintteachermingapsbetweenactivitytagform.cpp \
+	interface/addconstraintteachersmingapsbetweenactivitytagform.cpp \
+	interface/constraintteachersmingapsbetweenactivitytagform.cpp \
+	interface/modifyconstraintteachersmingapsbetweenactivitytagform.cpp \
+	\
 	interface/notificationcommandform.cpp \
 	\
 	interface/helpmoroccoform.cpp \
@@ -1515,6 +1528,19 @@ HEADERS += \
 	interface/constraintteachersmingapsbetweenorderedpairofactivitytagsform.h \
 	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.h \
 	\
+	interface/addconstraintstudentssetmingapsbetweenactivitytagform.h \
+	interface/constraintstudentssetmingapsbetweenactivitytagform.h \
+	interface/modifyconstraintstudentssetmingapsbetweenactivitytagform.h \
+	interface/addconstraintstudentsmingapsbetweenactivitytagform.h \
+	interface/constraintstudentsmingapsbetweenactivitytagform.h \
+	interface/modifyconstraintstudentsmingapsbetweenactivitytagform.h \
+	interface/addconstraintteachermingapsbetweenactivitytagform.h \
+	interface/constraintteachermingapsbetweenactivitytagform.h \
+	interface/modifyconstraintteachermingapsbetweenactivitytagform.h \
+	interface/addconstraintteachersmingapsbetweenactivitytagform.h \
+	interface/constraintteachersmingapsbetweenactivitytagform.h \
+	interface/modifyconstraintteachersmingapsbetweenactivitytagform.h \
+	\
 	interface/notificationcommandform.h \
 	\
 	interface/helpmoroccoform.h \
@@ -2403,6 +2429,19 @@ FORMS += \
 	interface/addconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui \
 	interface/constraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui \
 	interface/modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform_template.ui \
+	\
+	interface/addconstraintstudentssetmingapsbetweenactivitytagform_template.ui \
+	interface/constraintstudentssetmingapsbetweenactivitytagform_template.ui \
+	interface/modifyconstraintstudentssetmingapsbetweenactivitytagform_template.ui \
+	interface/addconstraintstudentsmingapsbetweenactivitytagform_template.ui \
+	interface/constraintstudentsmingapsbetweenactivitytagform_template.ui \
+	interface/modifyconstraintstudentsmingapsbetweenactivitytagform_template.ui \
+	interface/addconstraintteachermingapsbetweenactivitytagform_template.ui \
+	interface/constraintteachermingapsbetweenactivitytagform_template.ui \
+	interface/modifyconstraintteachermingapsbetweenactivitytagform_template.ui \
+	interface/addconstraintteachersmingapsbetweenactivitytagform_template.ui \
+	interface/constraintteachersmingapsbetweenactivitytagform_template.ui \
+	interface/modifyconstraintteachersmingapsbetweenactivitytagform_template.ui \
 	\
 	interface/notificationcommandform_template.ui \
 	\

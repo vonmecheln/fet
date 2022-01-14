@@ -491,7 +491,7 @@ SecondMinDaysDialog::SecondMinDaysDialog(QWidget* p, int minD, double w) :QDialo
 	  "too tight, but you can remove the second constraint at any time).").arg(minD-1);
 	l+="\n\n";
 	l+=tr("Note: 95% is usually enough for min days constraints referring to same activities. "
-	  "The weights are cumulated if referring to the same activities. If you have 2 constraints with say 95%"
+	  "The weights are accumulated if referring to the same activities. If you have 2 constraints with say 95%"
 	  " (say min n days and min n-1 days), "
 	  "the min n days constraint is skipped with probability 5%, then min n-1 days constraint is skipped with "
 	  "probability 0.25%=5%*5%, so you'll get in 99.75% cases the min n-1 days constraint respected.");
@@ -1227,9 +1227,9 @@ void AddActivityForm::help()
 
 	s+="\n\n";
 
-	s+=tr("Current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so "
+	s+=tr("The current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so "
 	 "you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, "
-	 "and select 'force consecutive if same day', you will get an imposssible timetable. But these are extremely unlikely cases).");
+	 "and select 'force consecutive if same day', you will get an impossible timetable. But these are extremely unlikely cases).");
 
 	s+="\n\n";
 	

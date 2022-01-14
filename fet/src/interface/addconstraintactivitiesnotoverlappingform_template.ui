@@ -23,7 +23,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>This constraint means that the activities should not be placed in common timeslots. You don't need to add this constraint for activities sharing a teacher or students set.</string>
+      <string>This constraint means that the activities should not be placed in common time slots. You don't need to add this constraint for activities sharing a teacher or students set.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

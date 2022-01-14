@@ -88,11 +88,11 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	aboutTextBrowser->setHtml(about);
 	
 	QString authors=QString("");
-	authors+=tr("%1 (%2)", "%1 is the name of an author, %2 is a method to contact him or her (email or webpage)")
+	authors+=tr("%1 (%2)", "%1 is the name of an author, %2 is a method to contact him or her (email or web page)")
 	 .arg("Liviu Lalescu")
 	 .arg("https://lalescu.ro/liviu/");
 	authors+="<br /><br />";
-	authors+=tr("%1 (%2)", "%1 is the name of an author, %2 is a method to contact him or her (email or webpage)")
+	authors+=tr("%1 (%2)", "%1 is the name of an author, %2 is a method to contact him or her (email or web page)")
 	 .arg("Volker Dirr")
 	 .arg("https://www.timetabling.de/");
 	authors+="<br />";
@@ -115,7 +115,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	QString contributors=QString("");
 	contributors+=tr("Code contributors:");
 	contributors+="<br /><br />";
-	contributors+=tr("%1 (%2)", "%1 is the name of a contributor, %2 is a method to contact him or her (email or webpage)")
+	contributors+=tr("%1 (%2)", "%1 is the name of a contributor, %2 is a method to contact him or her (email or web page)")
 	 .arg("Rodolfo Ribeiro Gomes")
 	 .arg("rodolforg AT gmail.com");
 	contributors+="<br />";
@@ -907,7 +907,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Roberto Bergonzini");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString("sln_rj");
+	thanksTo+=QString("Thaneswer Patel");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString::fromUtf8("Emiliano Llano Díaz");
 	thanksTo+=QString("<br />");

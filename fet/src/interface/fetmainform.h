@@ -114,6 +114,13 @@ private:
 	QAction* dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction;
 	QAction* dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction;
 	QAction* dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction;
+	//
+	//2021-12-15
+	QAction* dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction;
+	QAction* dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction;
+	QAction* dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction;
+	QAction* dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction;
+	//
 	QAction* dataTimeConstraintsTwoActivitiesConsecutiveAction;
 	QAction* dataTimeConstraintsActivityEndsStudentsDayAction;
 	QAction* dataTimeConstraintsActivityEndsTeachersDayAction;
@@ -606,6 +613,12 @@ public slots:
 	void dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction_triggered();
 	void dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction_triggered();
 	void dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction_triggered();
+
+	//2021-12-15
+	void dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction_triggered();
+	void dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction_triggered();
+	void dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction_triggered();
+	void dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction_triggered();
 
 	void dataTimeConstraintsTeacherMaxSpanPerDayAction_triggered();
 	void dataTimeConstraintsTeachersMaxSpanPerDayAction_triggered();

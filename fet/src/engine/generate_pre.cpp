@@ -897,6 +897,22 @@ Matrix1D<QList<TeachersMinGapsBetweenOrderedPairOfActivityTags_item*>> tmgbopoat
 
 //bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent);
 
+//2021-12-15 - Constraint students (set) min gaps between activity tag
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<StudentsMinGapsBetweenActivityTag_item> smgbatList;
+Matrix1D<QList<StudentsMinGapsBetweenActivityTag_item*>> smgbatListForActivity;
+
+//bool computeStudentsMinGapsBetweenActivityTag(QWidget* parent);
+
+//2021-12-15 - Constraint teacher(s) min gaps between activity tag
+
+//We need the references to the elements to be valid, so we need this to be a std::list
+std::list<TeachersMinGapsBetweenActivityTag_item> tmgbatList;
+Matrix1D<QList<TeachersMinGapsBetweenActivityTag_item*>> tmgbatListForActivity;
+
+//bool computeTeachersMinGapsBetweenActivityTag(QWidget* parent);
+
 //2012-04-29 - Constraint activities occupy max different rooms
 
 //We need the references to the elements to be valid, so we need this to be a std::list
@@ -1106,7 +1122,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 			s0+=" ";
 			s0+=GeneratePreTranslate::tr("There are %1 subgroups (from the total of %2 subgroups) which have the same activities as other subgroups. They are listed below."
 				" If the constraints relating to these subgroups are also the same, you can make the generation (directly proportional) faster by completely removing the subgroups"
-				" which are equivalent to other subgroups (leaving only one representant for each equivalence set). (The generation algorithm will not completely remove the equivalent"
+				" which are equivalent to other subgroups (leaving only one representative for each equivalence set). (The generation algorithm will not completely remove the equivalent"
 				" subgroups automatically.)").arg(cnt).arg(gt.rules.nInternalSubgroups);
 			s0+="\n\n";
 			s0+=GeneratePreTranslate::tr("If you did not add all the activities yet or if the number of equivalent subgroups compared to the total number of subgroups"
@@ -1545,6 +1561,11 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//2019-06-08
 	tmgbopoatListForActivity.resize(gt.rules.nInternalActivities);
 
+	//2021-12-15
+	smgbatListForActivity.resize(gt.rules.nInternalActivities);
+	//2021-12-15
+	tmgbatListForActivity.resize(gt.rules.nInternalActivities);
+
 	//2012-04-29
 	aomdrListForActivity.resize(gt.rules.nInternalActivities);
 
@@ -1959,6 +1980,17 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 
 	//2019-06-08
 	t=computeTeachersMinGapsBetweenOrderedPairOfActivityTags(parent);
+	if(!t)
+		return false;
+
+	//2021-12-15
+	t=computeStudentsMinGapsBetweenActivityTag(parent);
+	if(!t)
+		return false;
+	////////////////
+
+	//2021-12-15
+	t=computeTeachersMinGapsBetweenActivityTag(parent);
 	if(!t)
 		return false;
 	////////////////
@@ -9116,7 +9148,7 @@ void computeActivitiesNotOverlapping()
 	}
 }
 
-bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int> & reprSameStartingTime, QHash<int, QSet<int>> & reprSameActivitiesSet)
+bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int>& reprSameStartingTime, QHash<int, QSet<int>>& reprSameActivitiesSet)
 {
 	bool reportunder100=true;
 	bool report100=true;
@@ -14618,6 +14650,139 @@ bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 	return ok;
 }
 
+//2021-12-15
+bool computeStudentsMinGapsBetweenActivityTag(QWidget* parent)
+{
+	bool ok=true;
+	
+	smgbatList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		smgbatListForActivity[i].clear();
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+			ConstraintStudentsSetMinGapsBetweenActivityTag* cn=(ConstraintStudentsSetMinGapsBetweenActivityTag*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'students set min gaps between activity tag'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(cn->canonicalSubgroupsList.isEmpty())
+				continue;
+			
+			StudentsMinGapsBetweenActivityTag_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.begin(), cn->canonicalSubgroupsList.end());
+#else
+			item.canonicalSetOfSubgroups=cn->canonicalSubgroupsList.toSet();
+#endif
+			item.minGaps=cn->minGaps;
+			item.activityTag=cn->_activityTagIndex;
+			
+			smgbatList.push_back(item);
+			StudentsMinGapsBetweenActivityTag_item* p_item=&smgbatList.back();
+			
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+				QSet<int> studentsSet(act->iSubgroupsList.begin(), act->iSubgroupsList.end());
+#else
+				QSet<int> studentsSet=act->iSubgroupsList.toSet();
+#endif
+				studentsSet.intersect(item.canonicalSetOfSubgroups);
+				if(studentsSet.isEmpty())
+					continue;
+			
+				bool hasTag;
+			
+				if(act->iActivityTagsSet.contains(cn->_activityTagIndex))
+					hasTag=true;
+				else
+					hasTag=false;
+
+				if(hasTag){
+					smgbatListForActivity[ai].append(p_item);
+				}
+				else{
+					//do nothing
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+			ConstraintStudentsMinGapsBetweenActivityTag* cn=(ConstraintStudentsMinGapsBetweenActivityTag*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'students min gaps between activity tag'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(cn->canonicalSubgroupsList.isEmpty())
+				continue;
+
+			StudentsMinGapsBetweenActivityTag_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.begin(), cn->canonicalSubgroupsList.end());
+#else
+			item.canonicalSetOfSubgroups=cn->canonicalSubgroupsList.toSet();
+#endif
+			item.minGaps=cn->minGaps;
+			item.activityTag=cn->_activityTagIndex;
+			
+			smgbatList.push_back(item);
+			StudentsMinGapsBetweenActivityTag_item* p_item=&smgbatList.back();
+			
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+				QSet<int> studentsSet(act->iSubgroupsList.begin(), act->iSubgroupsList.end());
+#else
+				QSet<int> studentsSet=act->iSubgroupsList.toSet();
+#endif
+				studentsSet.intersect(item.canonicalSetOfSubgroups);
+				if(studentsSet.isEmpty())
+					continue;
+
+				bool hasTag;
+			
+				if(act->iActivityTagsSet.contains(cn->_activityTagIndex))
+					hasTag=true;
+				else
+					hasTag=false;
+
+				if(hasTag){
+					smgbatListForActivity[ai].append(p_item);
+				}
+				else{
+					//do nothing
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
 //2019-06-08
 bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 {
@@ -14777,6 +14942,134 @@ bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 				}
 				else if(first || second){
 					tmgbopoatListForActivity[ai].append(p_item);
+				}
+				else{
+					//do nothing
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+//2021-12-15
+bool computeTeachersMinGapsBetweenActivityTag(QWidget* parent)
+{
+	bool ok=true;
+	
+	tmgbatList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++)
+		tmgbatListForActivity[i].clear();
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+			ConstraintTeacherMinGapsBetweenActivityTag* cn=(ConstraintTeacherMinGapsBetweenActivityTag*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'teacher min gaps between activity tag'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+
+			if(cn->canonicalTeachersList.isEmpty())
+				continue;
+			assert(cn->canonicalTeachersList.count()==1);
+			
+			TeachersMinGapsBetweenActivityTag_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.begin(), cn->canonicalTeachersList.end());
+#else
+			item.canonicalSetOfTeachers=cn->canonicalTeachersList.toSet();
+#endif
+			item.minGaps=cn->minGaps;
+			item.activityTag=cn->_activityTagIndex;
+			
+			tmgbatList.push_back(item);
+			TeachersMinGapsBetweenActivityTag_item* p_item=&tmgbatList.back();
+			
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+
+				if(!act->iTeachersList.contains(cn->canonicalTeachersList.at(0)))
+					continue;
+			
+				bool hasTag;
+			
+				if(act->iActivityTagsSet.contains(cn->_activityTagIndex))
+					hasTag=true;
+				else
+					hasTag=false;
+
+				if(hasTag){
+					tmgbatListForActivity[ai].append(p_item);
+				}
+				else{
+					//do nothing
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+			ConstraintTeachersMinGapsBetweenActivityTag* cn=(ConstraintTeachersMinGapsBetweenActivityTag*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'teachers min gaps between activity tag'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(cn->canonicalTeachersList.isEmpty())
+				continue;
+
+			TeachersMinGapsBetweenActivityTag_item item;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.begin(), cn->canonicalTeachersList.end());
+#else
+			item.canonicalSetOfTeachers=cn->canonicalTeachersList.toSet();
+#endif
+			item.minGaps=cn->minGaps;
+			item.activityTag=cn->_activityTagIndex;
+			
+			tmgbatList.push_back(item);
+			TeachersMinGapsBetweenActivityTag_item* p_item=&tmgbatList.back();
+			
+			for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+				Activity* act=&gt.rules.internalActivitiesList[ai];
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+				QSet<int> teachersSet(act->iTeachersList.begin(), act->iTeachersList.end());
+#else
+				QSet<int> teachersSet=act->iTeachersList.toSet();
+#endif
+				teachersSet.intersect(item.canonicalSetOfTeachers);
+				if(teachersSet.isEmpty())
+					continue;
+
+				bool hasTag;
+			
+				if(act->iActivityTagsSet.contains(cn->_activityTagIndex))
+					hasTag=true;
+				else
+					hasTag=false;
+
+				if(hasTag){
+					tmgbatListForActivity[ai].append(p_item);
 				}
 				else{
 					//do nothing
@@ -16788,6 +17081,7 @@ void computeMustComputeTimetableSubgroups()
 			  subgroupsActivityTagMaxHoursDailyPercentage[sbg].count()>0 ||
 			  satmhdListForSubgroup[sbg].count()>0 ||
 			  //no need to consider constraints students (set) min gaps between ordered pair of activity tags
+			  //or min gaps between activity tag
 
 			  //mornings-afternoons
 			  subgroupsMaxGapsPerRealDayPercentage[sbg]>=0 ||
@@ -16860,6 +17154,7 @@ void computeMustComputeTimetableTeachers()
 			  teachersActivityTagMaxHoursDailyPercentage[tch].count()>0 ||
 			  tatmhdListForTeacher[tch].count()>0 ||
 			  //no need to consider constraints teacher(s) min gaps between ordered pair of activity tags
+			  //or min gaps between activity tag
 
 			  //mornings-afternoons
 			  teachersMaxGapsPerRealDayPercentage[tch]>=0 ||
@@ -17113,7 +17408,7 @@ bool homeRoomsAreOk(QWidget* parent)
 	return ok;
 }
 
-void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTime, const QHash<int, QSet<int>> & reprSameActivitiesSet, QTextStream* initialOrderStream)
+void sortActivities(QWidget* parent, const QHash<int, int>& reprSameStartingTime, const QHash<int, QSet<int>>& reprSameActivitiesSet, QTextStream* initialOrderStream)
 {
 	//I should take care of home rooms, but I don't want to change the routine below which works well
 
@@ -17190,15 +17485,15 @@ void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTim
 	}
 	
 	//make those with same starting time have conflicts
-	//for instance, if A1 simultaneous with A2 and A2 conflicts with A3. then A1 conflicts with A3
+	//for instance, if A1 simultaneous with A2 and A2 conflicts with A3, then A1 conflicts with A3
 	//also, A1 will conflict with A2, but this conflict is not counted
-	//idea of Volker Dirr, implementation of Liviu
+	//idea of Volker Dirr, implementation of Liviu Lalescu
 	
-	QSet<int> allRepresentants;
-	for(int r : qAsConst(reprSameStartingTime)) //only values, which are representants
-		allRepresentants.insert(r);
+	QSet<int> allRepresentatives;
+	for(int r : qAsConst(reprSameStartingTime)) //only values, which are representatives
+		allRepresentatives.insert(r);
 	
-	for(int r : qAsConst(allRepresentants)){
+	for(int r : qAsConst(allRepresentatives)){
 		assert(reprSameActivitiesSet.contains(r));
 		QSet<int> s=reprSameActivitiesSet.value(r);
 		
@@ -17433,7 +17728,7 @@ void sortActivities(QWidget* parent, const QHash<int, int> & reprSameStartingTim
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		reprNInc[i]=-1;
 		
-	//repr contains the representant of each activity
+	//repr contains the representative of each activity
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		//int MM=nIncompatible[i];
 		assert(repr.contains(i));

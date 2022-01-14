@@ -798,7 +798,7 @@ bool ConstraintRoomNotAvailableTimes::computeInternalStructure(QWidget* parent, 
 	
 	if(this->room_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint room not available times is wrong because it refers to inexistent room."
+		 tr("Constraint room not available times is wrong because it refers to nonexistent room."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;
@@ -1092,7 +1092,7 @@ bool ConstraintTeacherRoomNotAvailableTimes::computeInternalStructure(QWidget* p
 	teacher_ID=r.teachersHash.value(teacherName, -1);
 	if(this->teacher_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher room not available times is wrong because it refers to inexistent teacher."
+		 tr("Constraint teacher room not available times is wrong because it refers to nonexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 		return false;
@@ -1103,7 +1103,7 @@ bool ConstraintTeacherRoomNotAvailableTimes::computeInternalStructure(QWidget* p
 	
 	if(this->room_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher room not available times is wrong because it refers to inexistent room."
+		 tr("Constraint teacher room not available times is wrong because it refers to nonexistent room."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		 
 		return false;
@@ -4454,7 +4454,7 @@ bool ConstraintStudentsSetMaxBuildingChangesPerDay::computeInternalStructure(QWi
 	
 	if(ss==nullptr){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint students set max building changes per day is wrong because it refers to inexistent students set."
+		 tr("Constraint students set max building changes per day is wrong because it refers to nonexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;
@@ -4984,7 +4984,7 @@ bool ConstraintStudentsSetMaxBuildingChangesPerWeek::computeInternalStructure(QW
 	
 	if(ss==nullptr){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint students set max building changes per week is wrong because it refers to inexistent students set."
+		 tr("Constraint students set max building changes per week is wrong because it refers to nonexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;
@@ -5513,7 +5513,7 @@ bool ConstraintStudentsSetMinGapsBetweenBuildingChanges::computeInternalStructur
 	
 	if(ss==nullptr){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint students set min gaps between building changes is wrong because it refers to inexistent students set."
+		 tr("Constraint students set min gaps between building changes is wrong because it refers to nonexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;
@@ -6067,7 +6067,7 @@ bool ConstraintTeacherMaxBuildingChangesPerDay::computeInternalStructure(QWidget
 	
 	if(this->teacher_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher max building changes per day is wrong because it refers to inexistent teacher."
+		 tr("Constraint teacher max building changes per day is wrong because it refers to nonexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;
@@ -6561,7 +6561,7 @@ bool ConstraintTeacherMaxBuildingChangesPerWeek::computeInternalStructure(QWidge
 	
 	if(this->teacher_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher max building changes per week is wrong because it refers to inexistent teacher."
+		 tr("Constraint teacher max building changes per week is wrong because it refers to nonexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;
@@ -7055,7 +7055,7 @@ bool ConstraintTeacherMinGapsBetweenBuildingChanges::computeInternalStructure(QW
 	
 	if(this->teacher_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher min gaps between building changes is wrong because it refers to inexistent teacher."
+		 tr("Constraint teacher min gaps between building changes is wrong because it refers to nonexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;
@@ -7574,7 +7574,7 @@ bool ConstraintStudentsSetMaxRoomChangesPerDay::computeInternalStructure(QWidget
 	
 	if(ss==nullptr){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint students set max room changes per day is wrong because it refers to inexistent students set."
+		 tr("Constraint students set max room changes per day is wrong because it refers to nonexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;
@@ -8104,7 +8104,7 @@ bool ConstraintStudentsSetMaxRoomChangesPerWeek::computeInternalStructure(QWidge
 	
 	if(ss==nullptr){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint students set max room changes per week is wrong because it refers to inexistent students set."
+		 tr("Constraint students set max room changes per week is wrong because it refers to nonexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;
@@ -8633,7 +8633,7 @@ bool ConstraintStudentsSetMinGapsBetweenRoomChanges::computeInternalStructure(QW
 	
 	if(ss==nullptr){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint students set min gaps between room changes is wrong because it refers to inexistent students set."
+		 tr("Constraint students set min gaps between room changes is wrong because it refers to nonexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;
@@ -9187,7 +9187,7 @@ bool ConstraintTeacherMaxRoomChangesPerDay::computeInternalStructure(QWidget* pa
 	
 	if(this->teacher_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher max room changes per day is wrong because it refers to inexistent teacher."
+		 tr("Constraint teacher max room changes per day is wrong because it refers to nonexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;
@@ -9681,7 +9681,7 @@ bool ConstraintTeacherMaxRoomChangesPerWeek::computeInternalStructure(QWidget* p
 	
 	if(this->teacher_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher max room changes per week is wrong because it refers to inexistent teacher."
+		 tr("Constraint teacher max room changes per week is wrong because it refers to nonexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;
@@ -10175,7 +10175,7 @@ bool ConstraintTeacherMinGapsBetweenRoomChanges::computeInternalStructure(QWidge
 	
 	if(this->teacher_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher min gaps between room changes is wrong because it refers to inexistent teacher."
+		 tr("Constraint teacher min gaps between room changes is wrong because it refers to nonexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;
@@ -11468,7 +11468,7 @@ bool ConstraintStudentsSetMaxRoomChangesPerRealDay::computeInternalStructure(QWi
 
 	if(ss==nullptr){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint students set max room changes per real day is wrong because it refers to inexistent students set."
+		 tr("Constraint students set max room changes per real day is wrong because it refers to nonexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;
@@ -11766,7 +11766,7 @@ bool ConstraintTeacherMaxRoomChangesPerRealDay::computeInternalStructure(QWidget
 
 	if(this->teacher_ID<0){
 		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint teacher max room changes per real day is wrong because it refers to inexistent teacher."
+		 tr("Constraint teacher max room changes per real day is wrong because it refers to nonexistent teacher."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 
 		return false;

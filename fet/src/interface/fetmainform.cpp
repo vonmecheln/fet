@@ -255,6 +255,12 @@
 #include "constraintteachermingapsbetweenorderedpairofactivitytagsform.h"
 #include "constraintteachersmingapsbetweenorderedpairofactivitytagsform.h"
 
+//2021-12-15
+#include "constraintstudentssetmingapsbetweenactivitytagform.h"
+#include "constraintstudentsmingapsbetweenactivitytagform.h"
+#include "constraintteachermingapsbetweenactivitytagform.h"
+#include "constraintteachersmingapsbetweenactivitytagform.h"
+
 //mornings-afternoons
 #include "constraintteachersmaxzerogapsperafternoonform.h"
 #include "constraintteachermaxzerogapsperafternoonform.h"
@@ -1135,6 +1141,12 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction = new QAction(this);
 	dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction = new QAction(this);
 	dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction = new QAction(this);
+	//2021-12-15
+	dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction = new QAction(this);
+	dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction = new QAction(this);
+	dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction = new QAction(this);
+	dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction = new QAction(this);
+	//
 	dataTimeConstraintsTwoActivitiesConsecutiveAction = new QAction(this);
 	dataTimeConstraintsActivityEndsStudentsDayAction = new QAction(this);
 	dataTimeConstraintsActivityEndsTeachersDayAction = new QAction(this);
@@ -1367,6 +1379,12 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()));
 	connect(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()));
 	connect(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction_triggered()));
+	//2021-12-15
+	connect(dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction_triggered()));
+	connect(dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction_triggered()));
+	connect(dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction_triggered()));
+	//
 	connect(dataTimeConstraintsTwoActivitiesConsecutiveAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoActivitiesConsecutiveAction_triggered()));
 	connect(dataTimeConstraintsActivityEndsStudentsDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityEndsStudentsDayAction_triggered()));
 	connect(dataTimeConstraintsActivityEndsTeachersDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityEndsTeachersDayAction_triggered()));
@@ -1632,6 +1650,12 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between an ordered pair of activity tags for all students", nullptr));
 	dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between an ordered pair of activity tags for a teacher", nullptr));
 	dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between an ordered pair of activity tags for all teachers", nullptr));
+	//2021-12-15
+	dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between an activity tag for a students set", nullptr));
+	dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between an activity tag for all students", nullptr));
+	dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between an activity tag for a teacher", nullptr));
+	dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction->setText(QCoreApplication::translate("FetMainForm_template", "Min gaps between an activity tag for all teachers", nullptr));
+	//
 	dataTimeConstraintsTwoActivitiesConsecutiveAction->setText(QCoreApplication::translate("FetMainForm_template", "Two activities are consecutive", nullptr));
 	dataTimeConstraintsActivityEndsStudentsDayAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity ends students day", nullptr));
 	dataTimeConstraintsActivityEndsTeachersDayAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity ends teachers day", nullptr));
@@ -1894,6 +1918,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursContinuouslyAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinRestingHoursAction);
@@ -1909,6 +1934,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursContinuouslyAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinRestingHoursAction);
@@ -1926,6 +1952,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinRestingHoursAction);
@@ -1941,6 +1968,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursContinuouslyAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinRestingHoursAction);
@@ -2124,6 +2152,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursContinuouslyAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction);
 
+		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction);
 
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction);
@@ -2178,6 +2207,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursContinuouslyAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction);
 
+		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction);
 
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction);
@@ -2222,6 +2252,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction);
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction);
 
+		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction);
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction);
 
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction);
@@ -2263,6 +2294,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursContinuouslyAction);
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction);
 
+		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction);
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction);
 
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction);
@@ -2416,6 +2448,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursContinuouslyAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinRestingHoursAction);
@@ -2431,6 +2464,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursContinuouslyAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinRestingHoursAction);
@@ -2448,6 +2482,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinRestingHoursAction);
@@ -2463,6 +2498,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursContinuouslyAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinRestingHoursAction);
@@ -2604,6 +2640,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursContinuouslyAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyAction);
+		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityTagsAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction);
 		menuA_teacher_time_constraints->addAction(dataTimeConstraintsTeacherMinRestingHoursAction);
@@ -2619,6 +2656,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursContinuouslyAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyAction);
+		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivityTagsAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction);
 		menuAll_teachers_time_constraints->addAction(dataTimeConstraintsTeachersMinRestingHoursAction);
@@ -2636,6 +2674,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction);
+		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActivityTagsAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction);
 		menuA_students_set_time_constraints->addAction(dataTimeConstraintsStudentsSetMinRestingHoursAction);
@@ -2651,6 +2690,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMaxHoursContinuouslyAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction);
+		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivityTagsAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction);
 		menuAll_students_time_constraints->addAction(dataTimeConstraintsStudentsMinRestingHoursAction);
@@ -3691,7 +3731,7 @@ void FetMainForm::openFile(const QString& fileName)
 		if(s2.length()>=1){
 			if(s2.at(0).isSpace()){
 				QMessageBox::warning(this, tr("FET information"),
-				 tr("Please do not use a filename starting with white space(s), the html css code does not work."
+				 tr("Please do not use a filename starting with white space(s), the HTML CSS code does not work."
 				  " File was not loaded. Please rename it, removing the white space(s) from the beginning and open it after that with FET."));
 				return;
 			}
@@ -3712,24 +3752,24 @@ void FetMainForm::openFile(const QString& fileName)
 		}
 		if(s2.indexOf("\"") >= 0){
 			QMessageBox::warning(this, tr("FET information"),
-			 tr("Please do not use quotation marks \" in filename, the html css code does not work."
+			 tr("Please do not use quotation marks \" in filename, the HTML CSS code does not work."
 			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
 			return;
 		}		
 		if(s2.indexOf(";") >= 0){
 			QMessageBox::warning(this, tr("FET information"),
-			 tr("Please do not use semicolon ; in filename, the html css code does not work."
+			 tr("Please do not use semicolon ; in filename, the HTML CSS code does not work."
 			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
 			return;
 		}
 		if(s2.indexOf("#") >= 0){
 			QMessageBox::warning(this, tr("FET information"),
-			 tr("Please do not use # in filename, the html css code does not work."
+			 tr("Please do not use # in filename, the HTML CSS code does not work."
 			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
 			return;
 		}
 		/*if(s2.indexOf("(") >= 0 || s2.indexOf(")")>=0){
-			QMessageBox::information(this, tr("FET information"), tr("Please do not use parentheses () in filename, the html css code does not work"));
+			QMessageBox::information(this, tr("FET information"), tr("Please do not use parentheses () in filename, the HTML CSS code does not work"));
 			return;
 		}*/
 		else{
@@ -3811,7 +3851,7 @@ bool FetMainForm::fileSaveAs()
 	if(s2.length()>=1){
 		if(s2.at(0).isSpace()){
 			QMessageBox::warning(this, tr("FET information"),
-			 tr("Please do not use a filename starting with white space(s), the html css code does not work.")
+			 tr("Please do not use a filename starting with white space(s), the HTML CSS code does not work.")
 			 +"\n\n"+tr("File was not saved."));
 			return false;
 		}
@@ -3840,17 +3880,17 @@ bool FetMainForm::fileSaveAs()
 		}
 	}
 	if(s2.indexOf("\"") >= 0){
-		QMessageBox::warning(this, tr("FET information"), tr("Please do not use quotation marks \" in filename, the html css code does not work")
+		QMessageBox::warning(this, tr("FET information"), tr("Please do not use quotation marks \" in filename, the HTML CSS code does not work")
 		 +"\n\n"+tr("File was not saved."));
 		return false;
 	}
 	if(s2.indexOf(";") >= 0){
-		QMessageBox::warning(this, tr("FET information"), tr("Please do not use semicolon ; in filename, the html css code does not work")
+		QMessageBox::warning(this, tr("FET information"), tr("Please do not use semicolon ; in filename, the HTML CSS code does not work")
 		 +"\n\n"+tr("File was not saved."));
 		return false;
 	}
 	if(s2.indexOf("#") >= 0){
-		QMessageBox::warning(this, tr("FET information"), tr("Please do not use # in filename, the html css code does not work")
+		QMessageBox::warning(this, tr("FET information"), tr("Please do not use # in filename, the HTML CSS code does not work")
 		 +"\n\n"+tr("File was not saved."));
 		return false;
 	}
@@ -4086,7 +4126,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 			if(s2.length()>=1){
 				if(s2.at(0).isSpace()){
 					QMessageBox::warning(this, tr("FET information"),
-					 tr("Please do not use a filename starting with white space(s), the html css code does not work.")
+					 tr("Please do not use a filename starting with white space(s), the HTML CSS code does not work.")
 					 +"\n\n"+tr("File was not saved."));
 					return;
 				}
@@ -4115,17 +4155,17 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 				}
 			}
 			if(s2.indexOf("\"") >= 0){
-				QMessageBox::warning(parent, tr("FET information"), tr("Please do not use quotation marks \" in filename, the html css code does not work")
+				QMessageBox::warning(parent, tr("FET information"), tr("Please do not use quotation marks \" in filename, the HTML CSS code does not work")
 				 +"\n\n"+tr("File was not saved."));
 				return;
 			}
 			if(s2.indexOf(";") >= 0){
-				QMessageBox::warning(parent, tr("FET information"), tr("Please do not use semicolon ; in filename, the html css code does not work")
+				QMessageBox::warning(parent, tr("FET information"), tr("Please do not use semicolon ; in filename, the HTML CSS code does not work")
 				 +"\n\n"+tr("File was not saved."));
 				return;
 			}
 			if(s2.indexOf("#") >= 0){
-				QMessageBox::warning(parent, tr("FET information"), tr("Please do not use # in filename, the html css code does not work")
+				QMessageBox::warning(parent, tr("FET information"), tr("Please do not use # in filename, the HTML CSS code does not work")
 				 +"\n\n"+tr("File was not saved."));
 				return;
 			}
@@ -4649,14 +4689,14 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	
 	s+=tr("Probably some settings which are more difficult to understand are these ones:");
 	s+="\n\n";
-	s+=tr("Option 'Divide html timetables with time axis by days':"
-	" This means simply that the html timetables of type 'time horizontal' or 'time vertical' (see the generated html timetables)"
+	s+=tr("Option 'Divide HTML timetables with time axis by days':"
+	" This means simply that the HTML timetables of type 'time horizontal' or 'time vertical' (see the generated HTML timetables)"
 	" should be or not divided according to the days.");
 	s+=" ";
-	s+=tr("If the 'time horizontal' or 'time vertical' html timetables are too large for you, then you might need to select this option");
+	s+=tr("If the 'time horizontal' or 'time vertical' HTML timetables are too large for you, then you might need to select this option");
 	
 	s+="\n\n";
-	s+=tr("Option 'Print activities with same starting time in timetables': selecting it means that the html timetables will contain for"
+	s+=tr("Option 'Print activities with same starting time in timetables': selecting it means that the HTML timetables will contain for"
 	 " each slot all the activities which have the same starting time (fact specified by your constraints) as the activity(ies) which are normally shown in this slot."
 	 " If you don't use constraints activities same starting time, this option has no effect for you.");
 	
@@ -4686,13 +4726,13 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	s+=tr("Enable activity tag max hours daily:");
 	s+="\n";
 	s+=tr("This will enable the menu for the constraints: teacher(s) or students (set) activity tag max hours daily / per real day (where applicable)."
-		" These constraints are good, but not perfect and may bring slow down of generation or impossible timetables if used unproperly. Select only"
+		" These constraints are good, but not perfect and may bring slow down of generation or impossible timetables if improperly used. Select only"
 		" if you know what you're doing.");
 	s+="\n\n";
 	s+=tr("Enable students max gaps per day:");
 	s+="\n";
 	s+=tr("This will enable the menu for 2 constraints: students (set) max gaps per day. These 2 constraints are good, but not perfect and"
-		" may bring slow down of generation or impossible timetables if used unproperly. Select only if you know what you're doing.");
+		" may bring slow down of generation or impossible timetables if improperly used. Select only if you know what you're doing.");
 		
 	s+="\n\n";
 	s+=tr("Warn if using not perfect constraints:", "this is a warning if user uses not perfect constraints");
@@ -4735,7 +4775,7 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	s+="\n\n";
 	
 	s+=tr("If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables"
-		" on the hard disk, for operativity (the generation speed is not affected, only the overhead to write the partial/complete timetables"
+		" on the hard disk, for efficiency (the generation speed is not affected, only the overhead to write the partial/complete timetables"
 		" when stopping/finishing the simulation). The timetables taking the longest time are the subgroups, groups AND years ones.");
 	s+=" ";
 	s+=tr("(Also the conflicts timetable might take long to write, if the file is large.)");
@@ -7235,6 +7275,84 @@ void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivity
 	form.exec();
 }
 
+//begin 2021-12-15
+void FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMinGapsBetweenActivityTagForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMinGapsBetweenActivityTagForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMinGapsBetweenActivityTagForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMinGapsBetweenActivityTagForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+//end 2021-12-15
+
 void FetMainForm::dataTimeConstraintsActivitiesNotOverlappingAction_triggered()
 {
 	if(!gt.rules.initialized){
@@ -9365,7 +9483,7 @@ void FetMainForm::on_helpAddressesAction_triggered()
 	s+="\n\n";
 	s+=tr("Additionally, you may find on the FET homepage other contact information.");
 	s+="\n\n";
-	s+=tr("In case these addresses do not function, maybe the FET webpage has temporary problems, so try again later. Or maybe the FET webpage has changed, so search for the new page on the internet.");
+	s+=tr("In case these addresses do not function, maybe the FET web page has temporary problems, so try again later. Or maybe the FET web page has changed, so search for the new page on the internet.");
 
 	LongTextMessageBox::largeInformation(this, tr("FET web addresses"), s);
 }
@@ -10051,7 +10169,7 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+=tr("10")+QString(". ")+tr("Import directory will be %1", "%1 is the directory").arg(QDir::toNativeSeparators(QDir::homePath()+FILE_SEP+"fet-results"));
 	s+="\n";
 
-	s+=tr("11")+QString(". ")+tr("Html level of the timetables will be %1", "%1 is default html level").arg(2);
+	s+=tr("11")+QString(". ")+tr("HTML level of the timetables will be %1", "%1 is default HTML level").arg(2);
 	s+="\n";
 
 	s+=tr("12")+QString(". ")+tr("Mark not available slots with -x- in timetables will be %1", "%1 is true or false. Lowercase -x-").arg(tr("true"));
@@ -10060,7 +10178,7 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+=tr("13")+QString(". ")+tr("Mark break slots with -X- in timetables will be %1", "%1 is true or false. Uppercase -X-").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("14")+QString(". ")+tr("Divide html timetables with time axis by days will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("14")+QString(". ")+tr("Divide HTML timetables with time axis by days will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
 	s+=tr("15")+QString(". ")+tr("Duplicate vertical headers to the right will be %1", "%1 is true or false").arg(tr("false"));
@@ -10992,7 +11110,7 @@ void FetMainForm::enableStudentsMinHoursDailyWithAllowEmptyDaysToggled(bool chec
 		QString s=tr("This kind of constraint is good, but only in the right case. Adding such constraints in the wrong circumstance may make your"
 		 " timetable solve too slow or even impossible.");
 		s+="\n\n";
-		s+=tr("Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your instution requires"
+		s+=tr("Please use such constraints only if you are sure that there exists a timetable with empty days for students. If your institution requires"
 			" each day for the students to be not empty, or if there does not exist a solution with empty days for students, "
 			"it is IMPERATIVE (for performance reasons) that you use the standard constraint which does not allow empty days."
 			" Otherwise, the timetable may be impossible to find.");

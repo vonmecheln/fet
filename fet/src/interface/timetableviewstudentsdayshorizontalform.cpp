@@ -559,7 +559,7 @@ void TimetableViewStudentsDaysHorizontalForm::groupChanged(const QString &groupN
 	
 	StudentsSet* ss=gt.rules.searchAugmentedStudentsSet(groupName);
 	if(ss==nullptr){
-		QMessageBox::warning(this, tr("FET warning"), tr("Inexistent group - please reload this dialog"));
+		QMessageBox::warning(this, tr("FET warning"), tr("Nonexistent group - please reload this dialog"));
 		return;
 	}
 	if(ss->type!=STUDENTS_GROUP){
@@ -641,7 +641,7 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 
 	StudentsSet* ss=gt.rules.searchAugmentedStudentsSet(subgroupname);
 	if(ss==nullptr){
-		QMessageBox::information(this, tr("FET warning"), tr("Inexistent subgroup - please reload this dialog"));
+		QMessageBox::information(this, tr("FET warning"), tr("Nonexistent subgroup - please reload this dialog"));
 		return;
 	}
 	if(ss->type!=STUDENTS_SUBGROUP){
@@ -863,7 +863,7 @@ void TimetableViewStudentsDaysHorizontalForm::detailActivity(QTableWidgetItem* i
 
 	StudentsSet* ss=gt.rules.searchAugmentedStudentsSet(subgroupname);
 	if(ss==nullptr){
-		QMessageBox::information(this, tr("FET warning"), tr("Inexistent subgroup - please reload this dialog"));
+		QMessageBox::information(this, tr("FET warning"), tr("Nonexistent subgroup - please reload this dialog"));
 		return;
 	}
 	if(ss->type!=STUDENTS_SUBGROUP){
@@ -1024,7 +1024,7 @@ void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 
 	StudentsSet* ss=gt.rules.searchAugmentedStudentsSet(subgroupname);
 	if(ss==nullptr){
-		QMessageBox::information(this, tr("FET warning"), tr("Inexistent subgroup - please reload this dialog"));
+		QMessageBox::information(this, tr("FET warning"), tr("Nonexistent subgroup - please reload this dialog"));
 		return;
 	}
 	if(ss->type!=STUDENTS_SUBGROUP){

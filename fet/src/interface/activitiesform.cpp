@@ -64,6 +64,11 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
 	showRelatedCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/show-related-check-box-state"), "false").toBool());
+
+	/*invertedTeacherCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/inverted-teacher-check-box-state"), "false").toBool());
+	invertedStudentsCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/inverted-students-check-box-state"), "false").toBool());
+	invertedSubjectCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/inverted-subject-check-box-state"), "false").toBool());
+	invertedActivityTagCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/inverted-activity-tag-check-box-state"), "false").toBool());*/
 	
 	connect(activitiesListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(activityChanged()));
 	connect(addActivityPushButton, SIGNAL(clicked()), this, SLOT(addActivity()));
@@ -75,6 +80,11 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	connect(showRelatedCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
 	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
 	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(activityComments()));
+
+	connect(invertedTeacherCheckBox, SIGNAL(toggled(bool)), this, SLOT(filterChanged()));
+	connect(invertedStudentsCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
+	connect(invertedSubjectCheckBox, SIGNAL(toggled(bool)), this, SLOT(filterChanged()));
+	connect(invertedActivityTagCheckBox, SIGNAL(toggled(bool)), this, SLOT(filterChanged()));
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
@@ -159,6 +169,11 @@ ActivitiesForm::~ActivitiesForm()
 	settings.setValue(this->metaObject()->className()+QString("/splitter-state"), splitter->saveState());
 
 	settings.setValue(this->metaObject()->className()+QString("/show-related-check-box-state"), showRelatedCheckBox->isChecked());
+
+	/*settings.setValue(this->metaObject()->className()+QString("/inverted-teacher-check-box-state"), invertedTeacherCheckBox->isChecked());
+	settings.setValue(this->metaObject()->className()+QString("/inverted-students-check-box-state"), invertedStudentsCheckBox->isChecked());
+	settings.setValue(this->metaObject()->className()+QString("/inverted-subject-check-box-state"), invertedSubjectCheckBox->isChecked());
+	settings.setValue(this->metaObject()->className()+QString("/inverted-activity-tag-check-box-state"), invertedActivityTagCheckBox->isChecked());*/
 }
 
 bool ActivitiesForm::filterOk(Activity* act)
@@ -177,18 +192,46 @@ bool ActivitiesForm::filterOk(Activity* act)
 				ok2=true;
 				break;
 			}
+		
+		if(invertedTeacherCheckBox->isChecked())
+			ok2=!ok2;
+		
 		if(!ok2)
+			ok=false;
+	}
+	else{
+		if(invertedTeacherCheckBox->isChecked() && act->teachersNames.count()>0)
 			ok=false;
 	}
 
 	//subject
-	if(sbn!="" && sbn!=act->subjectName)
-		ok=false;
-		
+	if(!invertedSubjectCheckBox->isChecked()){
+		if(sbn!="" && sbn!=act->subjectName)
+			ok=false;
+	}
+	else{
+		if(sbn=="")
+			ok=false;
+		else if(sbn==act->subjectName)
+			ok=false;
+	}
+	
 	//activity tag
-	if(atn!="" && !act->activityTagsNames.contains(atn))
-		ok=false;
-		
+	if(!invertedActivityTagCheckBox->isChecked()){
+		if(atn!="" && !act->activityTagsNames.contains(atn))
+			ok=false;
+	}
+	else{
+		if(atn!=""){
+			if(act->activityTagsNames.contains(atn))
+				ok=false;
+		}
+		else{
+			if(act->activityTagsNames.count()>0)
+				ok=false;
+		}
+	}
+	
 	//students
 	if(stn!=""){
 		bool ok2=false;
@@ -198,12 +241,19 @@ bool ActivitiesForm::filterOk(Activity* act)
 				ok2=true;
 				break;
 			}
+
+		if(invertedStudentsCheckBox->isChecked())
+			ok2=!ok2;
+
 		if(!ok2)
 			ok=false;
 	}
 	else{
 		assert(showedStudents.count()==1);
 		assert(showedStudents.contains(""));
+
+		if(invertedStudentsCheckBox->isChecked() && act->studentsNames.count()>0)
+			ok=false;
 	}
 	
 	return ok;
@@ -557,6 +607,9 @@ void ActivitiesForm::help()
 	s+="\n\n";
 	s+=tr("Show related: if you select this, there will be listed activities for groups and subgroups contained also in the current set (if the current set"
 		" is a year or a group) and also higher ranked year or group (if the current set is a group or a subgroup).");
+	
+	s+="\n\n";
+	s+=tr("Inverted: this will show all the activities which _don't_ respect the selected filter.");
 	
 	LongTextMessageBox::largeInformation(this, tr("FET Help"), s);
 }

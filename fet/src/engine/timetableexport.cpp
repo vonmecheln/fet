@@ -113,7 +113,7 @@ const QString STRING_NOT_AVAILABLE_TIME_SLOT="-x-";
 
 const QString STRING_BREAK_SLOT="-X-";
 
-//these hashes are needed to get the IDs for html and css in timetableexport and statistics
+//these hashes are needed to get the IDs for HTML and CSS in timetableexport and statistics
 static QHash<QString, QString> hashSubjectIDsTimetable;
 static QHash<QString, QString> hashActivityTagIDsTimetable;
 static QHash<QString, QString> hashStudentIDsTimetable;
@@ -132,7 +132,7 @@ const int COLOR_BY_SUBJECT_STUDENTS=2;
 //this hash is needed to care about sctivities with same starting time
 static QHash<int, QList<int>>activitiesWithSameStartingTime;
 
-//Now the filenames of the output files are following (for xml and all html tables)
+//Now the filenames of the output files are following (for XML and all HTML tables)
 const QString SUBGROUPS_TIMETABLE_FILENAME_XML="subgroups.xml";
 const QString TEACHERS_TIMETABLE_FILENAME_XML="teachers.xml";
 const QString ACTIVITIES_TIMETABLE_FILENAME_XML="activities.xml";
@@ -374,7 +374,7 @@ void TimetableExport::writeSimulationResults(QWidget* parent){
 	//else if(INPUT_FILENAME_XML!="")
 	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	
-	//now write the solution in xml files
+	//now write the solution in XML files
 	//subgroups
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_FILENAME_XML;
 	writeSubgroupsTimetableXml(parent, s, subgroupsSortedOrder);
@@ -385,14 +385,14 @@ void TimetableExport::writeSimulationResults(QWidget* parent){
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ACTIVITIES_TIMETABLE_FILENAME_XML;
 	writeActivitiesTimetableXml(parent, s);
 
-	//now get the time. TODO: maybe write it in xml too? so do it a few lines earlier!
+	//now get the time. TODO: maybe write it in XML too? so do it a few lines earlier!
 	QDate dat=QDate::currentDate();
 	QTime tim=QTime::currentTime();
 	QLocale loc(FET_LANGUAGE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 	generationLocalizedTime=sTime;
 	
-	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
+	//now get the number of placed activities. TODO: maybe write it in XML too? so do it a few lines earlier!
 	int na=0;
 	int na2=0;
 	getNumberOfPlacedActivities(na, na2);
@@ -626,7 +626,7 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	//else if(INPUT_FILENAME_XML!="")
 	//	cout<<"Minor problem - input file does not end in .fet extension - might be a problem when saving the timetables"<<" (file:"<<__FILE__<<", line:"<<__LINE__<<")"<<endl;
 	
-	//now write the solution in xml files
+	//now write the solution in XML files
 	//subgroups
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+SUBGROUPS_TIMETABLE_FILENAME_XML;
 	writeSubgroupsTimetableXml(parent, s, subgroupsSortedOrder);
@@ -637,14 +637,14 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+ACTIVITIES_TIMETABLE_FILENAME_XML;
 	writeActivitiesTimetableXml(parent, s);
 
-	//now get the time. TODO: maybe write it in xml too? so do it a few lines earlier!
+	//now get the time. TODO: maybe write it in XML too? so do it a few lines earlier!
 	QDate dat=QDate::currentDate();
 	QTime tim=QTime::currentTime();
 	QLocale loc(FET_LANGUAGE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 	generationLocalizedTime=sTime;
 	
-	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
+	//now get the number of placed activities. TODO: maybe write it in XML too? so do it a few lines earlier!
 	int na=0;
 	int na2=0;
 	getNumberOfPlacedActivities(na, na2);
@@ -1127,7 +1127,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 
 	//if(result)
 	//	QMessageBox::information(parent, tr("FET information"),
-	//		tr("File saved successfully. You can see it on the hard disk. Current data file remained untouched (of locking constraints),"
+	//		tr("File saved successfully. You can see it on the hard disk. The current data file remained untouched (of locking constraints),"
 	//		" so you can save it also, or generate different timetables."));
 
 	rules2.nHoursPerDay=0;
@@ -1224,7 +1224,7 @@ void TimetableExport::writeSimulationResults(QWidget* parent, int n, bool highes
 	if(!highest)
 		writeTimetableDataFile(parent, finalDestDir+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE);
 
-	//now write the solution in xml files
+	//now write the solution in XML files
 	//subgroups
 	s=finalDestDir+SUBGROUPS_TIMETABLE_FILENAME_XML;
 	writeSubgroupsTimetableXml(parent, s, subgroupsSortedOrder);
@@ -1235,14 +1235,14 @@ void TimetableExport::writeSimulationResults(QWidget* parent, int n, bool highes
 	s=finalDestDir+ACTIVITIES_TIMETABLE_FILENAME_XML;
 	writeActivitiesTimetableXml(parent, s);
 
-	//now get the time. TODO: maybe write it in xml too? so do it a few lines earlier!
+	//now get the time. TODO: maybe write it in XML too? so do it a few lines earlier!
 	QDate dat=QDate::currentDate();
 	QTime tim=QTime::currentTime();
 	QLocale loc(FET_LANGUAGE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 	generationLocalizedTime=sTime;
 
-	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
+	//now get the number of placed activities. TODO: maybe write it in XML too? so do it a few lines earlier!
 	int na=0;
 	int na2=0;
 	getNumberOfPlacedActivities(na, na2);
@@ -1556,7 +1556,7 @@ void TimetableExport::writeSimulationResultsCommandLine(QWidget* parent, const Q
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 	generationLocalizedTime=sTime; //really unneeded, but just to be similar to the other parts
 	
-	//now get the number of placed activities. TODO: maybe write it in xml too? so do it a few lines earlier!
+	//now get the number of placed activities. TODO: maybe write it in XML too? so do it a few lines earlier!
 	int na=0;
 	int na2=0;
 	getNumberOfPlacedActivities(na, na2);
@@ -1965,7 +1965,7 @@ void TimetableExport::writeTeachersTimetableXml(QWidget* parent, const QString& 
 		return;
 	}
 
-	//Writing the timetable in xml format
+	//Writing the timetable in XML format
 	QFile file(xmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
@@ -2036,7 +2036,7 @@ void TimetableExport::writeActivitiesTimetableXml(QWidget* parent, const QString
 		return;
 	}
 
-	//Writing the timetable in xml format
+	//Writing the timetable in XML format
 	QFile file(xmlfilename);
 	if(!file.open(QIODevice::WriteOnly)){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
@@ -2450,7 +2450,7 @@ void TimetableExport::writeIndexHtml(QWidget* parent, const QString& htmlfilenam
 	file.close();
 }
 
-// writing the stylesheet in css format to a file by Volker Dirr.
+// writing the style sheet in CSS format to a file by Volker Dirr.
 void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfilename, const QString& saveTime, int placedActivities){
 	assert(gt.rules.initialized && gt.rules.internalStructureComputed);
 	assert(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready);
@@ -2493,11 +2493,11 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 	QString tt=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 	if(INPUT_FILENAME_XML=="")
 		tt=tr("unnamed");
-	tos<<"/* "<<TimetableExport::tr("CSS Stylesheet of %1", "%1 is the file name").arg(tt);
+	tos<<"/* "<<TimetableExport::tr("CSS Style sheet of %1", "%1 is the file name").arg(tt);
 	tos<<"\n";
 	if(placedActivities!=gt.rules.nInternalActivities)
 		tos<<"   "<<TimetableExport::tr("Warning! Only %1 out of %2 activities placed!").arg(placedActivities).arg(gt.rules.nInternalActivities)<<"\n";
-	tos<<"   "<<TimetableExport::tr("Stylesheet generated with FET %1 on %2", "%1 is FET version, %2 is date and time").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
+	tos<<"   "<<TimetableExport::tr("Style sheet generated with FET %1 on %2", "%1 is FET version, %2 is date and time").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
 
 	tos<<"/* "<<TimetableExport::tr("To do a page-break only after every second timetable, delete \"page-break-before: always;\" in \"table.even_table\".",
 		"Please keep fields in quotes as they are, untranslated.")<<" */\n";

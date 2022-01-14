@@ -55,8 +55,8 @@ SaveTimetableConfirmationForm::SaveTimetableConfirmationForm(QWidget* parent): Q
 	s+=tr("This option is useful for institutions where you obtain a timetable, then some small changes appear,"
 	 " and you need to regenerate timetable, but respecting in a large proportion the old timetable");
 	s+="\n\n";
-	s+=tr("Current data file will not be affected by anything, locking constraints will only be added to the file you select to save"
-	 " (you can save current datafile and open saved timetable file after that to check it)");
+	s+=tr("The current data file will not be affected by anything, locking constraints will only be added to the file you select to save"
+	 " (you can save the current data file and open the saved timetable file after that to check it)");
 	
 	plainTextEdit->setPlainText(s);
 }

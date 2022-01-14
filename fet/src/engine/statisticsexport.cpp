@@ -120,7 +120,7 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 	PREFIX_STATISTICS=DIRECTORY_STATISTICS+FILE_SEP;
 	
 	int ok=QMessageBox::question(parent, tr("FET Question"),
-		 StatisticsExport::tr("Do you want to export detailed statistics files into directory %1 as html files?").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)), QMessageBox::Yes | QMessageBox::No);
+		 StatisticsExport::tr("Do you want to export detailed statistics files into directory %1 as HTML files?").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)), QMessageBox::Yes | QMessageBox::No);
 	if(ok==QMessageBox::No)
 		return;
 
@@ -162,7 +162,7 @@ void StatisticsExport::exportStatistics(QWidget* parent){
 
 	if(ok){
 		QMessageBox::information(parent, tr("FET Information"),
-		 StatisticsExport::tr("Statistics files were exported to directory %1 as html files.").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)));
+		 StatisticsExport::tr("Statistics files were exported to directory %1 as HTML files.").arg(QDir::toNativeSeparators(DIRECTORY_STATISTICS)));
 	} else {
 		QMessageBox::warning(parent, tr("FET warning"),
 		 StatisticsExport::tr("Statistics export incomplete")+"\n");
@@ -385,9 +385,9 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString sa
 	QString tt=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
 	if(INPUT_FILENAME_XML=="")
 		tt=tr("unnamed");
-	tos<<"/* "<<StatisticsExport::tr("CSS Stylesheet of %1", "%1 is the file name").arg(tt);
+	tos<<"/* "<<StatisticsExport::tr("CSS Style sheet of %1", "%1 is the file name").arg(tt);
 	tos<<"\n";
-	tos<<"   "<<StatisticsExport::tr("Stylesheet generated with FET %1 on %2", "%1 is FET version, %2 is date and time").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
+	tos<<"   "<<StatisticsExport::tr("Style sheet generated with FET %1 on %2", "%1 is FET version, %2 is date and time").arg(FET_VERSION).arg(saveTime)<<" */\n\n";
 
 	tos<<"/* "<<StatisticsExport::tr("To hide an element just write the following phrase into the element: %1 (without quotes).",
 		"%1 is a short phrase beginning and ending with quotes, and we want the user to be able to add it, but without quotes").arg("\"display:none;\"")<<" */\n\n";

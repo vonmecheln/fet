@@ -40,7 +40,7 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	s+=QString("--------------------------------------");
 	s+="\n\n";
 	s+=tr("This is a version specially made for Preparatory and Secondary schools in Morocco; in other words,"
-	 " it is suitable to ""colleges"" and ""lycees"" in Morocco. It was requested by the user Chafik Graiguer.");
+	 " it is suitable to 'colleges' and 'lyceums' in Morocco. It was requested by the user Chafik Graiguer.");
 	s+="\n\n";
 	s+=tr("These schools have a morning shift and an afternoon shift.");
 	s+="\n\n";
@@ -53,7 +53,7 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	s+=tr("1 - Definition of a working school day:");
 	s+="\n\n";
 	s+="\t";
-	s+=tr("A day is devided into two distinct periods:");
+	s+=tr("A day is divided into two distinct periods:");
 	s+="\n\n";
 	s+="\t";
 	s+=tr("- morning 08:00 - 12:00");
@@ -77,9 +77,9 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	s+="\n\n";
 	s+=tr("3 - The key hint to use this version");
 	s+="\n\n";
-	s+=tr("We have 6 REAL day, with 8 working timeslots");
+	s+=tr("We have 6 REAL day, with 8 working time slots");
 	s+="\n\n";
-	s+=tr("We should input 6x2 = 12 days, with 4 working timeslots ONLY");
+	s+=tr("We should input 6x2 = 12 days, with 4 working time slots ONLY");
 	s+="\n\n";
 	s+=QString("--------------------------------------");
 	s+="\n\n";
@@ -113,7 +113,7 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	s+=tr("Min 2 days means that the activities must be 2 REAL days apart (so they"
 	 " can be on Monday afternoon and Wednesday morning, but not on Monday and Tuesday).");
 	s+="\n\n";
-	s+=tr("If your data is too difficult (impossible), maybe you can de-activate force consecutive if same day for"
+	s+=tr("If your data is too difficult (impossible), maybe you can deactivate force consecutive if same day for"
 	 " all constraints min days between activities (from the modify multiple constraints at once,"
 	 " which can be activated from the constraints min days between activities dialog).");
 	s+="\n\n";
@@ -129,7 +129,7 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "bachiri401: In Algeria, we can not teach the same subject in the same real day. For example a subject divided into 3 activities (1+1+1)"
 	 " must be on three different real days. The constraint min days between activities here is great (working for real days).");
 	s+="\n\n";
-	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "But for example we have students styding math and sport. We want math and sport not to be on the same half day but they can be on the same real day.");
+	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "But for example we have students studying math and sport. We want math and sport not to be on the same half day but they can be on the same real day.");
 	s+="\n\n";
 	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "bachiri401 also said that for this problem he uses a trick, adding a constraint min gaps between the activities.");
 	s+="\n\n";

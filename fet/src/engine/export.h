@@ -53,7 +53,7 @@ private:
 
 	static bool isActivityNotManualyEdited(int activityIndex, bool& diffTeachers, bool& diffSubject, bool& diffActivityTags, bool& diffStudents, bool& diffCompNStud, bool& diffNStud, bool& diffActive);
 
-	static bool selectSeparatorAndTextquote(QWidget* parent, QDialog* &newParent, QString& textquote, QString& fieldSeparator, bool& head);
+	static bool selectSeparatorAndTextQuote(QWidget* parent, QDialog* &newParent, QString& textquote, QString& fieldSeparator, bool& head);
 
 	static bool exportCSVActivities(QWidget* parent, QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, QMessageBox::StandardButton& msgBoxButton);
 	static bool exportCSVActivitiesStatistics(QWidget* parent, QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, QMessageBox::StandardButton& msgBoxButton);

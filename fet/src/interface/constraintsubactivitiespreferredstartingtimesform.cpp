@@ -189,12 +189,12 @@ void ConstraintSubactivitiesPreferredStartingTimesForm::help()
 	" define teacher, students set and activity tag, of course)."
 	 )
 	 +"\n\n"+
-	 tr("Note: if you have Maths with 4 and 5 splits and want to constrain 2 subactivities for those with 4 per week and 3 subactivities"
-	 " for those with 5 per week, you can add constraints only for Maths with components 3, 4 and 5 (nice trick)")
+	 tr("Note: if you have math with 4 and 5 splits and want to constrain 2 subactivities for those with 4 per week and 3 subactivities"
+	 " for those with 5 per week, you can add constraints only for math with components 3, 4 and 5 (nice trick)")
 	 +"\n\n"+
 	 tr("Note: if an activity does not belong to a larger group (is a single activity),"
-	 " it is considered to have component number 1. As an advice, if you have activities of say Biology split into 1"
-	 " or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for Biology with component number=2")
+	 " it is considered to have component number 1. As an advice, if you have activities of say biology split into 1"
+	 " or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for biology with component number=2")
 	 +"\n\n"+
 	 tr("Note: if a teacher or a students set cannot have lessons in some slots because of this constraint, gaps will be counted (if you have max gaps constraints)"
  	  ". So be careful if you add this constraint for all sub-activities, for only a teacher or for only a students set"));

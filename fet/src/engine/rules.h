@@ -299,7 +299,7 @@ public:
 
 	/**
 	Returns the index of this teacher in the teachersList,
-	or -1 for inexistent teacher.
+	or -1 for nonexistent teacher.
 	*/
 	int searchTeacher(const QString& teacherName);
 
@@ -732,13 +732,13 @@ public:
 	QList<int> unrecognizedXmlColumnNumbers;
 
 	/**
-	Reads the rules from the xml input file "filename".
-	Returns true on success, false on failure (inexistent file or wrong format)
+	Reads the rules from the XML data file.
+	Returns true on success, false on failure (nonexistent file or wrong format)
 	*/
 	bool read(QWidget* parent, const QString& fileName, bool commandLine=false, QString commandLineDirectory=QString());
 
 	/**
-	Write the rules to the xml input file "inputfile".
+	Write the rules to the XML data file.
 	*/
 	bool write(QWidget* parent, const QString& filename);
 	
@@ -832,6 +832,11 @@ private:
 	TimeConstraint* readStudentsMinGapsBetweenOrderedPairOfActivityTags(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeacherMinGapsBetweenOrderedPairOfActivityTags(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMinGapsBetweenOrderedPairOfActivityTags(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetMinGapsBetweenActivityTag(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMinGapsBetweenActivityTag(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMinGapsBetweenActivityTag(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMinGapsBetweenActivityTag(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readActivityPreferredTime(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog,
 		bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPreferredStartingTime);

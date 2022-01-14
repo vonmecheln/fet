@@ -730,7 +730,7 @@ void TimetableGenerateForm::simulationFinished()
 		" the output directory for details)."
 		"\n\nSimulation results should be now written. You may check now Timetable/View."
 		" The results are also saved in the directory %2 in"
-		" html and xml mode and the soft conflicts in txt mode").arg(c.conflictsTotal).arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk))
+		" HTML and XML mode and the soft conflicts in txt mode").arg(c.conflictsTotal).arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk))
 		+". "+tr("Data+timetable is saved as a .fet data file (with activities locked by constraints)"
 		", so that you can open/modify/regenerate the current timetable later"));
 */
@@ -954,7 +954,7 @@ void TimetableGenerateForm::write(){
 	kk.append("-single");
 
 	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
-		TimetableGenerateForm::tr("Simulation results should now be written in the directory %1 in html and xml mode"
+		TimetableGenerateForm::tr("Simulation results should now be written in the directory %1 in HTML and XML mode"
 		" and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk)));
 }
 
@@ -1006,7 +1006,7 @@ void TimetableGenerateForm::writeHighestStage(){
 	kk.append("-highest");
 
 	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
-		TimetableGenerateForm::tr("Highest stage results should now be written in the directory %1 in html and xml mode"
+		TimetableGenerateForm::tr("Highest stage results should now be written in the directory %1 in HTML and XML mode"
 		" and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk)));
 }
 

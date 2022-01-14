@@ -507,7 +507,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 
 	const QString NO_SEPARATOR_TRANSLATED=Import::tr("no separator");
 	fieldSeparator=NO_SEPARATOR_TRANSLATED;	//needed, because a csv file contain maybe just one field!
-	const QString NO_TEXTQUOTE_TRANSLATED=Import::tr("no textquote");
+	const QString NO_TEXTQUOTE_TRANSLATED=Import::tr("no text quote");
 	textquote=NO_TEXTQUOTE_TRANSLATED;
 	fields.clear();
 	QFile file(fileName);
@@ -832,7 +832,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 		
 		if(separatorsCB->currentIndex()==NO_SEPARATOR_POS){
 			assert(fieldSeparator==NO_SEPARATOR_TRANSLATED);
-			fieldSeparator=QString("no sep"); //must have length >= 2
+			fieldSeparator=QString("no separator"); //must have length >= 2
 		}
 		else{
 			assert(fieldSeparator.size()==1);
@@ -843,7 +843,7 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 		
 		if(textquoteCB->currentIndex()==NO_TEXTQUOTE_POS){
 			assert(textquote==NO_TEXTQUOTE_TRANSLATED);
-			textquote=QString("no tquote"); //must have length >= 2
+			textquote=QString("no text quote"); //must have length >= 2
 		}
 		else{
 			assert(textquote.size()==1);

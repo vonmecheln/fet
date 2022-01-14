@@ -1620,7 +1620,7 @@ int main(int argc, char **argv)
 			return 1;
 		}
 		if(TIMETABLE_HTML_LEVEL<0 || TIMETABLE_HTML_LEVEL>7){
-			usage(nullptr, QString("The html level must be 0, 1, 2, 3, 4, 5, 6, or 7"));
+			usage(nullptr, QString("The HTML level must be 0, 1, 2, 3, 4, 5, 6, or 7"));
 			logFile.close();
 			return 1;
 		}

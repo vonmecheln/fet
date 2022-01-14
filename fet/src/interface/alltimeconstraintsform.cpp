@@ -104,6 +104,11 @@
 #include "modifyconstraintteachermingapsbetweenorderedpairofactivitytagsform.h"
 #include "modifyconstraintteachersmingapsbetweenorderedpairofactivitytagsform.h"
 
+#include "modifyconstraintstudentssetmingapsbetweenactivitytagform.h"
+#include "modifyconstraintstudentsmingapsbetweenactivitytagform.h"
+#include "modifyconstraintteachermingapsbetweenactivitytagform.h"
+#include "modifyconstraintteachersmingapsbetweenactivitytagform.h"
+
 #include "modifyconstraintstudentssetactivitytagmaxhourscontinuouslyform.h"
 #include "modifyconstraintstudentsactivitytagmaxhourscontinuouslyform.h"
 
@@ -1741,6 +1746,31 @@ void AllTimeConstraintsForm::modifyConstraint()
 	//177
 	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_THREE_CONSECUTIVE_DAYS){
 		ModifyConstraintTeachersMaxThreeConsecutiveDaysForm form(this, (ConstraintTeachersMaxThreeConsecutiveDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//2021-12-15
+	//178
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+		ModifyConstraintStudentsSetMinGapsBetweenActivityTagForm form(this, (ConstraintStudentsSetMinGapsBetweenActivityTag*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//179
+	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+		ModifyConstraintStudentsMinGapsBetweenActivityTagForm form(this, (ConstraintStudentsMinGapsBetweenActivityTag*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//180
+	else if(ctr->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+		ModifyConstraintTeacherMinGapsBetweenActivityTagForm form(this, (ConstraintTeacherMinGapsBetweenActivityTag*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//181
+	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+		ModifyConstraintTeachersMinGapsBetweenActivityTagForm form(this, (ConstraintTeachersMinGapsBetweenActivityTag*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

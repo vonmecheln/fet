@@ -405,7 +405,7 @@ void AddConstraintActivitiesSameStartingTimeForm::help()
 	s=tr("Add multiple constraints: this is a check box. Select this if you want to input only the representatives of sub-activities and FET to add multiple constraints,"
 	" for all sub-activities from the same components, in turn, respectively."
 	" There will be added more constraints activities same starting time, one for each corresponding tuple. The number of"
-	" sub-activities must match for the representants and be careful to the order, to be what you need");
+	" sub-activities must match for the representatives and be careful to the order, to be what you need");
 
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

@@ -60,7 +60,6 @@ public slots:
 
 	void sortedChanged(bool checked);
 
-	//void sortConstraintsByComments();
 	void activateConstraint();
 	void deactivateConstraint();
 	void constraintComments();

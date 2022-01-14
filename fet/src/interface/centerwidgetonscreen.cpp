@@ -146,8 +146,10 @@ int maxRecommendedWidth(QWidget* widget)
 void saveFETDialogGeometry(QWidget* widget, const QString& alternativeName)
 {
 	QSettings settings(COMPANY, PROGRAM);
-	QString name=QString(widget->metaObject()->className());
-	if(!alternativeName.isEmpty())
+	QString name;
+	if(alternativeName.isEmpty())
+		name=QString(widget->metaObject()->className());
+	else
 		name=alternativeName;
 	
 	QRect rect=widget->geometry();
@@ -157,9 +159,12 @@ void saveFETDialogGeometry(QWidget* widget, const QString& alternativeName)
 void restoreFETDialogGeometry(QWidget* widget, const QString& alternativeName)
 {
 	QSettings settings(COMPANY, PROGRAM);
-	QString name=QString(widget->metaObject()->className());
-	if(!alternativeName.isEmpty())
+	QString name;
+	if(alternativeName.isEmpty())
+		name=QString(widget->metaObject()->className());
+	else
 		name=alternativeName;
+	
 	if(settings.contains(name+QString("/geometry"))){
 		QRect rect=settings.value(name+QString("/geometry")).toRect();
 		if(rect.isValid()){

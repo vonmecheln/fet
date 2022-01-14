@@ -262,7 +262,7 @@ public:
 	void computeInternalStructure(Rules& r);
 
 	/**
-	Returns a representation of this activity (xml format).
+	Returns a representation of this activity (in XML format).
 	*/
 	QString getXmlDescription(Rules& r);
 

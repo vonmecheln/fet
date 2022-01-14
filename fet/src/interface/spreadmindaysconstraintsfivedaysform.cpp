@@ -159,7 +159,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 		if(tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 			ConstraintMinDaysBetweenActivities* mdc=(ConstraintMinDaysBetweenActivities*) tc;
 			
-			//find representant
+			//find representative
 			int reprIndex=-1;
 			
 			bool toBeRemoved=true;

@@ -247,7 +247,7 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	CBBreak->setSizePolicy(QSizePolicy::Expanding, CBBreak->sizePolicy().verticalPolicy());
 	
 	QStringList whiteSpaceStrings;
-	whiteSpaceStrings<<QString("normal")<<QString("pre")<<QString("nowrap")<<QString("pre-wrap");	//don't translate these strings, because they are css parameters!
+	whiteSpaceStrings<<QString("normal")<<QString("pre")<<QString("nowrap")<<QString("pre-wrap");	//don't translate these strings, because they are CSS parameters!
 	CBWhiteSpace=new QComboBox();
 	CBWhiteSpace->addItems(whiteSpaceStrings);
 	CBWhiteSpace->setCurrentIndex(0);
@@ -592,7 +592,7 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	optionsBox->setSizePolicy(QSizePolicy::Expanding, optionsBox->sizePolicy().verticalPolicy());
 	
 // maybe TODO: be careful. the form is pretty full already!
-// be careful: these are global settings, so it will also change html output setting?! so it need parameter in each function!
+// be careful: these are global settings, so it will also change HTML output setting?! so it need parameter in each function!
 //	optionsBoxVertical->addWidget(markNotAvailable);
 //	optionsBoxVertical->addWidget(markBreak);
 //	optionsBoxVertical->addWidget(printSameStartingTime);
@@ -1096,9 +1096,9 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 		}
 		
 //		QHashIterator<QString, QString> i(hashColorStringIDsTimetable);
-//		qWarning("prepare css file");
+//		qWarning("prepare CSS file");
 //		while(i.hasNext()) {
-//			qWarning("add color in css file");
+//			qWarning("add color in CSS file");
 //			i.next();
 //			tmp+="td.c_"+i.value()+" { /* "+i.key()+" */\n ";
 //			
@@ -1415,6 +1415,10 @@ void TimetablePrintForm::print(){
 	//QPrintDialog *printDialog = new QPrintDialog(&printer, this);
 	QPrintDialog printDialog(&printer, this);
 	printDialog.setWindowTitle(tr("Print timetable"));
+	
+	//const QString settingsName=QString("TimetablePrintFormPrintDialog");
+	//restoreFETDialogGeometry(&printDialog, settingsName);
+	
 	if (printDialog.exec() == QDialog::Accepted) {
 		QTextDocument textDocument;
 		textDocument.documentLayout()->setPaintDevice(&printer);
@@ -1426,6 +1430,7 @@ void TimetablePrintForm::print(){
 		textDocument.setHtml(updateHtmlPrintString(true));
 		textDocument.print(&printer);
 	}
+	//saveFETDialogGeometry(&printDialog, settingsName);
 	//delete printDialog;
 #endif
 }
@@ -1471,7 +1476,13 @@ void TimetablePrintForm::printPreviewFull(){
 #endif
 	QPrintPreviewDialog printPreviewFull(&printer, this);
 	connect(&printPreviewFull, SIGNAL(paintRequested(QPrinter*)), SLOT(updatePreviewFull(QPrinter*)));
+
+	const QString settingsName=QString("TimetablePrintFormPrintPreviewFullDialog");
+	restoreFETDialogGeometry(&printPreviewFull, settingsName);
+
 	printPreviewFull.exec();
+
+	saveFETDialogGeometry(&printPreviewFull, settingsName);
 #endif
 }
 
@@ -1535,8 +1546,14 @@ void TimetablePrintForm::printPreviewSmall(){
 	printer.setPageMargins(leftPageMargin->value(), topPageMargin->value(), rightPageMargin->value(), bottomPageMargin->value(), QPrinter::Millimeter);
 #endif
 	QPrintPreviewDialog printPreviewSmall(&printer, this);
+
+	const QString settingsName=QString("TimetablePrintFormPrintPreviewSmallDialog");
+	restoreFETDialogGeometry(&printPreviewSmall, settingsName);
+
 	connect(&printPreviewSmall, SIGNAL(paintRequested(QPrinter*)), SLOT(updatePreviewSmall(QPrinter*)));
 	printPreviewSmall.exec();
+
+	saveFETDialogGeometry(&printPreviewSmall, settingsName);
 #endif
 }
 

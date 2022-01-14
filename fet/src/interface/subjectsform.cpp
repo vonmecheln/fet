@@ -312,7 +312,7 @@ void SubjectsForm::deactivateSubject()
 	QString subjectName=subjectsListWidget->currentItem()->text();
 	
 	int count=gt.rules.deactivateSubject(subjectName);
-	QMessageBox::information(this, tr("FET information"), tr("De-activated a number of %1 activities").arg(count));
+	QMessageBox::information(this, tr("FET information"), tr("Deactivated a number of %1 activities").arg(count));
 }
 
 void SubjectsForm::comments()

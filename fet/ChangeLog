@@ -2148,7 +2148,7 @@ Versions 5.40.0 - 5.40.3
 	- Updated to Qt 5.13.1.
 	- Added virtual rooms, which give the possibility for the user to specify more rooms for an activity, or to choose between a large room or more smaller
 	rooms for an activity, and might open the possibilities for other kinds of usage. Suggested by math on the forum, who had some very useful ideas.
-	These users also suggested more rooms for an activity: Volker Dirr, Anton Anthofer, dasa, sln_rj, and amin.
+	These users also suggested more rooms for an activity: Volker Dirr, Anton Anthofer, dasa, Thaneswer Patel, and amin.
 	Unfortunately, this feature might make FET about 5-10% slower even if you are not using virtual rooms, and I apologize for this,
 	but virtual rooms are useful.
 	- Added the possibility to allow a one day exception of max span plus one for the constraints of type teacher(s) max span per day
@@ -2439,3 +2439,12 @@ Versions 6.2.0 - 6.2.v
 - Version 6.2.4
 	- Updated to Qt 6.2.2.
 	- Updated and corrected the Bulgarian translation, by Asen Pashov.
+- Version 6.2.5
+	- Added a new type of constraint, teacher(s)/students (set) min gaps between activity tag (suggested by uni_instructor and Thaneswer Patel).
+	- Added an 'inverted' option for the filter in the activities and subactivities dialogs, to see the activities which are _not_ related to the
+	selected filter (suggested by uni_instructor, with further suggestions by Volker Dirr).
+	- The print preview dialogs will retain their size and position (suggested by Thaneswer Patel).
+	- Corrected the US English original strings (many typos/small errors were found using Ispell / Aspell).
+	- Corrected the Brazilian Portuguese translation, by Alexandre R. Soares (some typos/small errors were found using Ispell / Aspell).
+	- Updated the Bulgarian translation, by Asen Pashov.
+	- Updated the Russian translation, by Alexey Chernous.

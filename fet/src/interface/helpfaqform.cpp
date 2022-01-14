@@ -57,7 +57,7 @@ void HelpFaqForm::setText()
 		"\n"
 		"- Teachers."
 		"\n"
-		"- Subjects (the names of the possible courses, eg. Maths, Physics, etc.)."
+		"- Subjects (the names of the possible courses, eg. math, physics, etc.)."
 		"\n"
 		"- Activity tags (you can use them or not, option is yours: the type of activity: lab, course, seminary, or any other information attached to an activity)."
 		"\n"
@@ -136,7 +136,7 @@ void HelpFaqForm::setText()
 		"A: You can specify the maximum number of beginnings at second available hour (arrivals at third hour not possible).\n\n"
 		"If you input only partial data, please use with caution. If you add a constraint with max 0 beginnings at second "
 		"hour: you might for instance input only 4+4 hourly activities of math with the same teacher for 2 students "
-		"sets (each group of 4 activities must be ballanced - in different days). Then it is clear that you cannot place "
+		"sets (each group of 4 activities must be balanced - in different days). Then it is clear that you cannot place "
 		"all 8 activities in a 5 days week without breaking the students early constraint, so you will get no possible timetable.");
 
 	s+="\n\n";
@@ -300,7 +300,7 @@ void HelpFaqForm::setText()
 		"a group, then it is clear that the constraint cannot be respected, so the correct way is to specify under 100% weight "
 		"(percentage) for the corresponding min days constraint - best would be 0%.");
 	s+="\n\n";
-	s+=tr("You could try at first the 95% minimum recommended value, then highten the weight percentage up to maybe 100%. "
+	s+=tr("You could try at first the 95% minimum recommended value, then heighten the weight percentage up to maybe 100%. "
 		"I am not sure here, I have not enough sample files (please contribute with advice). If you would like to change "
 		"the 95% for another value for all constraints of this type, the easiest way is in Data/Time constraints/Min days between "
 		"activities dialog, where starting with version 5.3.6 there is a simple command for that.");
@@ -484,7 +484,7 @@ void HelpFaqForm::setText()
 		"1\n\n"
 		"contains groups 1_a, 1_b\n\n"
 		"You will have the possibility to add any activity, for a year or group\n\n"
-		"Currently, the interface for students is difficult to use. I am thinking of that. Maybe it is more simple for you if you try to work on the xml .fet file.");
+		"Currently, the interface for students is difficult to use. I am thinking of that. Maybe it is more simple for you if you try to work on the XML .fet file.");
 
 	s+="\n\n";
 	s+="--------------------";
@@ -492,8 +492,8 @@ void HelpFaqForm::setText()
 
 	s+=tr("Q-1-27-March-2008", "Mnemonic name for a particular question in the FAQ");
 	s+="\n\n";
-	s+=tr("Q: Example: I have 7 hours of Maths per 5 days week (7 is larger than 5). How to add correctly this split activity?\n\n"
-		"Complete Question: I have a large container activity split into more activities than the number of days per week. "
+	s+=tr("Q: Example: I have 7 hours of math per 5 days week (7 is larger than 5). How to add correctly this split activity?\n\n"
+		"Complete question: I have a large container activity split into more activities than the number of days per week. "
 		"How to add it and constraint min days between activities?\n\n"
 		"A: If you add directly a container activity split into more than the number of days per week and also add a constraint "
 		"min days between activities, it would be a very bad practice from the way the algorithm of generation works (it slows down the "
@@ -558,7 +558,7 @@ void HelpFaqForm::setText()
 	s+="\n\n";
 
 	s+=tr("Q: What type of files uses FET?\n\n"
-		"A: FET uses text files, xml or html or txt or csv (comma separated values - for import/export). The used encoding is UTF-8.");
+		"A: FET uses text files, XML, HTML, txt, or CSV (comma separated values - for import/export). The used encoding is UTF-8.");
 
 	s+="\n\n";
 	s+="--------------------";
@@ -572,10 +572,10 @@ void HelpFaqForm::setText()
 		"Starting times means that an activity may only start at these periods.\n\n"
 		"Time slots means more restrictive, that activity may only start and end and take place in these intervals (if activity has duration 2 "
 		"and on Monday is allowed 8:00, 9:00 and 10:00, then activity can only start at 8:00 or 9:00).\n\n"
-		"This is useful if you need for instance, if Maths lessons are 4-5 per week, to constrain that the first "
+		"This is useful if you need for instance, if math lessons are 4-5 per week, to constrain that the first "
 		"component and the second component must be early. You will add 2 constraints for that, with component number "
-		"1 and 2, both with subject Maths. Or, if you want for activities split into 4 that 2 lessons are early and for "
-		"activities split into 5 that 3 activities are early, add constraint Maths with split number 3, 4 and 5 (nice trick).\n\n"
+		"1 and 2, both with subject math. Or, if you want for activities split into 4 that 2 lessons are early and for "
+		"activities split into 5 that 3 activities are early, add constraint math with split number 3, 4 and 5 (nice trick).\n\n"
 		"Another thing: if you have 1 or 2 lessons per week for a subject, say biology, and want to constrain one "
 		"of the components if there are 2 per week, and none if there is only 1, you can add such a constraint for component number=2.");
 
@@ -668,26 +668,26 @@ void HelpFaqForm::setText()
 	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Q: (by Horatiu Halmajan) I met a situation: a teacher asks for maximum 2 working days, but these days "
+	s+=tr("Q: (by %1) I met a situation: a teacher asks for maximum 2 working days, but these days "
 		"should not be consecutive. Is there a way to implement it in .fet?\n\n"
 		"The only (manual) way I could think of is to set the teacher as unavailable on Tuesdays and Thursdays, thus "
-		"leaving him available on Monday, Wednesday and Friday (any two of these are unconsecutive).\n\n"
+		"leaving him available on Monday, Wednesday and Friday (any two of these are nonconsecutive).\n\n"
 		"Any other ideas...?\n\n"
 		"A: I have another idea: choose 2 activities of this teacher which clearly cannot be on the same day, "
 		"and add constraint min days between activities, 2 days, 100%.\n\n"
 		"Or add a dummy activity for this teacher, split into 2 per week, min days = 2, with 100%. You just need to "
 		"take care that this teacher has place for these dummy activities (enough slots in the day) and to consider "
-		"these dummy activities as possible gaps, so if teacher has max gaps 2 then make max gaps for him 0.");
+		"these dummy activities as possible gaps, so if teacher has max gaps 2 then make max gaps for him 0.").arg(QString::fromUtf8("Horațiu Hălmăjan"));
 
 	s+="\n\n";
 	s+="--------------------";
 	s+="\n\n";
 
 
-	s+=tr("Q: (by Horatiu Halmajan) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?\n\n"
+	s+=tr("Q: (by %1) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?\n\n"
 		"A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, duration 1, min days between "
 		"activities 1, weight 0%, select consecutive if same day. FET will never put more than 2 of these dummy activities "
-		"in a day. Add max gaps for students = 0 per week.");
+		"in a day. Add max gaps for students = 0 per week.").arg(QString::fromUtf8("Horațiu Hălmăjan"));
 
 	s+="\n\n";
 	s+="--------------------";
@@ -813,7 +813,7 @@ void HelpFaqForm::setText()
 		"when you generate the timetable.\n\n"
 		"Here is an example to explain this (it is an impractical example, but it is better as it is very simple): you have 4 students sets (Y1, Y2, Y3, Y4). "
 		"5 activities: A1 (Y1,Y2,Y3,Y4), A2 (Y1), A3 (Y2), A4 (Y3), A5 (Y4). You have a single day per week and 2 hours per day. You add a constraint students "
-		"max hours daily, max 1 hour, 95% weight percetange.\n"
+		"max hours daily, max 1 hour, 95% weight percentage.\n"
 		"1) Start to generate. After a while (maybe a few minutes), FET will be able to find a solution (with the max hours daily broken for all students sets).\n"
 		"2) Then, you lock A2, A3, A4 and A5 and try to generate again. In some cases FET will report impossible activity A1.\n"
 		"3) If you lock A1, A2, A3, A4 and A5, FET will be able to find a timetable very fast.\n\n"
@@ -994,7 +994,7 @@ void HelpFaqForm::setText()
 	s+="\n\n";
 		
 	s+=tr("If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables"
-		" on the hard disk, for operativity (the generation speed is not affected, only the overhead to write the partial/complete timetables"
+		" on the hard disk, for efficiency (the generation speed is not affected, only the overhead to write the partial/complete timetables"
 		" when stopping/finishing the simulation). The timetables taking the longest time are the subgroups, groups AND years ones.");
 	s+=" ";
 	s+=tr("(Also the conflicts timetable might take long to write, if the file is large.)");

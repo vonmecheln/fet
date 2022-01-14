@@ -1697,12 +1697,12 @@
   </action>
   <action name="helpContentsAction">
    <property name="text">
-    <string extracomment="menu Help-&gt;Online-&gt;Help contents, opens the webpage of FET documentation">Help contents</string>
+    <string extracomment="menu Help-&gt;Online-&gt;Help contents, opens the web page of FET documentation">Help contents</string>
    </property>
   </action>
   <action name="helpForumAction">
    <property name="text">
-    <string extracomment="menu Help-&gt;Forum, opens the webpage of FET forum">Forum</string>
+    <string extracomment="menu Help-&gt;Forum, opens the web page of FET forum">Forum</string>
    </property>
   </action>
   <action name="helpAddressesAction">

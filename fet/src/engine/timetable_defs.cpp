@@ -37,7 +37,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 FET version
 */
-const QString FET_VERSION="6.2.4";
+const QString FET_VERSION="6.2.5";
 
 /**
 FET language
@@ -57,7 +57,7 @@ bool LANGUAGE_STYLE_RIGHT_TO_LEFT;
 QString LANGUAGE_FOR_HTML;
 
 /**
-Timetable html css javaScript Level, by Volker Dirr
+Timetable HTML CSS JavaScript level, by Volker Dirr
 */
 int TIMETABLE_HTML_LEVEL;
 
@@ -79,7 +79,7 @@ bool TIMETABLE_HTML_REPEAT_NAMES;
 
 bool VERBOSE;
 
-//these hashes are needed to get the IDs for html and css in timetableexport and statistics
+//these hashes are needed to get the IDs for HTML and CSS in timetableexport and statistics
 /*QHash<QString, QString> hashSubjectIDs;
 QHash<QString, QString> hashActivityTagIDs;
 QHash<QString, QString> hashStudentIDs;
@@ -88,7 +88,7 @@ QHash<QString, QString> hashRoomIDs;
 QHash<QString, QString> hashDayIDs;*/
 
 /**
-A log file explaining how the xml input file was parsed
+A log file explaining how the XML input file was parsed
 */
 const QString XML_PARSING_LOG_FILENAME="file_open.log";
 

@@ -192,7 +192,7 @@ void Export::exportCSV(QWidget* parent){
 		dir.mkpath(DIRECTORY_CSV);
 
 	QDialog* newParent;
-	ok=selectSeparatorAndTextquote(parent, newParent, textquote, fieldSeparator, head);
+	ok=selectSeparatorAndTextQuote(parent, newParent, textquote, fieldSeparator, head);
 	
 	QString lastWarnings;
 	if(!ok){
@@ -425,7 +425,7 @@ bool Export::isActivityNotManualyEdited(int activityIndex, bool& diffTeachers, b
 }
 
 #ifndef FET_COMMAND_LINE
-bool Export::selectSeparatorAndTextquote(QWidget* parent, QDialog* &newParent, QString& textquote, QString& fieldSeparator, bool& head){
+bool Export::selectSeparatorAndTextQuote(QWidget* parent, QDialog* &newParent, QString& textquote, QString& fieldSeparator, bool& head){
 	assert(gt.rules.initialized);
 
 	newParent=((QDialog*)parent);
@@ -433,16 +433,16 @@ bool Export::selectSeparatorAndTextquote(QWidget* parent, QDialog* &newParent, Q
 	QStringList separators;
 	QStringList textquotes;
 	separators<<","<<";"<<"|";
-	//textquotes<<"\""<<"'"<<Export::tr("no textquote", "The translated field must contain at least 2 characters (normally it should), otherwise the export filter does not work");
-	const QString NO_TEXTQUOTE_TRANSLATED=Export::tr("no textquote", "Please use at least 2 characters for the translation of this field, so that the program works OK");
+	//textquotes<<"\""<<"'"<<Export::tr("no text quote", "The translated field must contain at least 2 characters (normally it should), otherwise the export filter does not work");
+	const QString NO_TEXTQUOTE_TRANSLATED=Export::tr("no text quote", "Please use at least 2 characters for the translation of this field, so that the program works OK");
 	textquotes<<"\""<<"'"<<NO_TEXTQUOTE_TRANSLATED;
 	const int NO_TEXTQUOTE_POS=2; //if you modify line above, modify also this variable to be the position of the no textquote (starts from 0)
 	//also, if you add textquotes longer than one character, take care of line 309 (later in the same function) (assert textquote.size()==1)
 	//it is permitted for position NO_TEXTQUOTE_POS to have a string longer than 1 QChar
 	
 	/*if(textquotes[2].size()<=1){
-		QMessageBox::warning(parent, tr("FET warning"), tr("Translation is wrong, because translation of 'no textquote' is too short - falling back to English words. Please report bug"));
-		textquote=QString("no textquote");
+		QMessageBox::warning(parent, tr("FET warning"), tr("Translation is wrong, because translation of 'no text quote' is too short - falling back to English words. Please report bug"));
+		textquote=QString("no text quote");
 	}
 	assert(textquotes[2].size()>1);*/
 	
@@ -535,7 +535,7 @@ bool Export::selectSeparatorAndTextquote(QWidget* parent, QDialog* &newParent, Q
 		textquote=textquoteCB->currentText();
 		if(textquoteCB->currentIndex()==NO_TEXTQUOTE_POS){
 			assert(textquote==NO_TEXTQUOTE_TRANSLATED);
-			textquote=QString("no tquote"); //must have length >= 2
+			textquote=QString("no text quote"); //must have length >= 2
 		}
 		else{
 			assert(textquote.size()==1);
@@ -1022,7 +1022,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 				aset.insert(aid);
 	
 				if(activitiesRepresentant.value(aid,0)==aid)
-					repres=aid; //does not matter if there are more representants in this constraint, the constraint will be skipped anyway in this case
+					repres=aid; //does not matter if there are more representatives in this constraint, the constraint will be skipped anyway in this case
 			}
 	
 			bool oktmp=false;
@@ -1495,7 +1495,7 @@ LastWarningsDialogE::LastWarningsDialogE(QWidget* parent, const QString& lastWar
 	lastWarningsText->setPlainText(lastWarning);
 
 	//Start Buttons
-	QPushButton* pb1=new QPushButton(tr("&Ok"));
+	QPushButton* pb1=new QPushButton(tr("&OK"));
 	//pb1->setAutoDefault(true);
 
 	QHBoxLayout* hl=new QHBoxLayout();

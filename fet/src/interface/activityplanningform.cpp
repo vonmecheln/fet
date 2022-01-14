@@ -549,10 +549,10 @@ void ActivityPlanningForm::computeActivitiesForDeletion(const QString& teacherNa
 	QList<bool>& _affectOtherSubjectsToBeRemoved, bool& _affectOtherSubjectsOverall)
 {
 	QHash<int, int> representantForId;
-	QHash<int, int> numberOfSubactivitiesForRepresentant;
-	QSet<int> affectStatusForRepresentantTeacher; //if in set, it affects
-	QSet<int> affectStatusForRepresentantStudent; //if in set, it affects
-	QSet<int> affectStatusForRepresentantSubject; //if in set, it affects
+	QHash<int, int> numberOfSubactivitiesForRepresentative;
+	QSet<int> affectStatusForRepresentativeTeacher; //if in set, it affects
+	QSet<int> affectStatusForRepresentativeStudent; //if in set, it affects
+	QSet<int> affectStatusForRepresentativeSubject; //if in set, it affects
 	for(Activity* act : qAsConst(gt.rules.activitiesList)){
 		int id=act->id;
 		
@@ -563,9 +563,9 @@ void ActivityPlanningForm::computeActivitiesForDeletion(const QString& teacherNa
 		assert(!representantForId.contains(id));
 		representantForId.insert(id, agid);
 		
-		int c=numberOfSubactivitiesForRepresentant.value(agid, 0);
+		int c=numberOfSubactivitiesForRepresentative.value(agid, 0);
 		c++;
-		numberOfSubactivitiesForRepresentant.insert(agid, c);
+		numberOfSubactivitiesForRepresentative.insert(agid, c);
 		
 		if(teacherName!=""){
 			bool af=true;
@@ -573,8 +573,8 @@ void ActivityPlanningForm::computeActivitiesForDeletion(const QString& teacherNa
 				if(act->teachersNames.at(0)==teacherName)
 					af=false;
 					
-			if( af && !affectStatusForRepresentantTeacher.contains(agid) )
-				affectStatusForRepresentantTeacher.insert(agid);
+			if( af && !affectStatusForRepresentativeTeacher.contains(agid) )
+				affectStatusForRepresentativeTeacher.insert(agid);
 		}
 		if(studentsSetName!=""){
 			bool af=true;
@@ -582,16 +582,16 @@ void ActivityPlanningForm::computeActivitiesForDeletion(const QString& teacherNa
 				if(act->studentsNames.at(0)==studentsSetName)
 					af=false;
 					
-			if( af && !affectStatusForRepresentantStudent.contains(agid) )
-				affectStatusForRepresentantStudent.insert(agid);
+			if( af && !affectStatusForRepresentativeStudent.contains(agid) )
+				affectStatusForRepresentativeStudent.insert(agid);
 		}
 		if(subjectName!=""){
 			bool af=true;
 			if(act->subjectName==subjectName)
 				af=false;
 				
-			if( af && !affectStatusForRepresentantSubject.contains(agid) )
-				affectStatusForRepresentantSubject.insert(agid);
+			if( af && !affectStatusForRepresentativeSubject.contains(agid) )
+				affectStatusForRepresentativeSubject.insert(agid);
 		}
 	}
 	
@@ -621,15 +621,15 @@ void ActivityPlanningForm::computeActivitiesForDeletion(const QString& teacherNa
 		if(!representantCounted.contains(repr)){
 			representantCounted.insert(repr);
 			
-			assert(numberOfSubactivitiesForRepresentant.contains(repr));
-			int n=numberOfSubactivitiesForRepresentant.value(repr);
+			assert(numberOfSubactivitiesForRepresentative.contains(repr));
+			int n=numberOfSubactivitiesForRepresentative.value(repr);
 			assert(n>0);
 			nTotalActsDeleted+=n;
 			
 			_idsToBeRemoved.append(id);
 			_agidsToBeRemoved.append(tmpGroupID.at(i));
 			
-			if(affectStatusForRepresentantTeacher.contains(repr)){
+			if(affectStatusForRepresentativeTeacher.contains(repr)){
 				_affectOtherTeachersToBeRemoved.append(true);
 				_affectOtherTeachersOverall=true;
 			}
@@ -637,7 +637,7 @@ void ActivityPlanningForm::computeActivitiesForDeletion(const QString& teacherNa
 				_affectOtherTeachersToBeRemoved.append(false);
 			}
 			
-			if(affectStatusForRepresentantStudent.contains(repr)){
+			if(affectStatusForRepresentativeStudent.contains(repr)){
 				_affectOtherStudentsSetsToBeRemoved.append(true);
 				_affectOtherStudentsSetsOverall=true;
 			}
@@ -645,7 +645,7 @@ void ActivityPlanningForm::computeActivitiesForDeletion(const QString& teacherNa
 				_affectOtherStudentsSetsToBeRemoved.append(false);
 			}
 			
-			if(affectStatusForRepresentantSubject.contains(repr)){
+			if(affectStatusForRepresentativeSubject.contains(repr)){
 				_affectOtherSubjectsToBeRemoved.append(true);
 				_affectOtherSubjectsOverall=true;
 			}
@@ -671,10 +671,10 @@ void ActivityPlanningForm::computeActivitiesForModification(const QString& teach
 	QList<bool>& _affectOtherSubjectsToBeModified, bool& _affectOtherSubjectsOverall)
 {
 	QHash<int, int> representantForId;
-	QHash<int, int> numberOfSubactivitiesForRepresentant;
-	QSet<int> affectStatusForRepresentantTeacher; //if in set, it affects
-	QSet<int> affectStatusForRepresentantStudent; //if in set, it affects
-	QSet<int> affectStatusForRepresentantSubject; //if in set, it affects
+	QHash<int, int> numberOfSubactivitiesForRepresentative;
+	QSet<int> affectStatusForRepresentativeTeacher; //if in set, it affects
+	QSet<int> affectStatusForRepresentativeStudent; //if in set, it affects
+	QSet<int> affectStatusForRepresentativeSubject; //if in set, it affects
 	for(Activity* act : qAsConst(gt.rules.activitiesList)){
 		int id=act->id;
 		
@@ -685,9 +685,9 @@ void ActivityPlanningForm::computeActivitiesForModification(const QString& teach
 		assert(!representantForId.contains(id));
 		representantForId.insert(id, agid);
 		
-		int c=numberOfSubactivitiesForRepresentant.value(agid, 0);
+		int c=numberOfSubactivitiesForRepresentative.value(agid, 0);
 		c++;
-		numberOfSubactivitiesForRepresentant.insert(agid, c);
+		numberOfSubactivitiesForRepresentative.insert(agid, c);
 		
 		if(teacherName!=""){
 			bool af=true;
@@ -695,8 +695,8 @@ void ActivityPlanningForm::computeActivitiesForModification(const QString& teach
 				if(act->teachersNames.at(0)==teacherName)
 					af=false;
 					
-			if( af && !affectStatusForRepresentantTeacher.contains(agid) )
-				affectStatusForRepresentantTeacher.insert(agid);
+			if( af && !affectStatusForRepresentativeTeacher.contains(agid) )
+				affectStatusForRepresentativeTeacher.insert(agid);
 		}
 		if(studentsSetName!=""){
 			bool af=true;
@@ -704,16 +704,16 @@ void ActivityPlanningForm::computeActivitiesForModification(const QString& teach
 				if(act->studentsNames.at(0)==studentsSetName)
 					af=false;
 					
-			if( af && !affectStatusForRepresentantStudent.contains(agid) )
-				affectStatusForRepresentantStudent.insert(agid);
+			if( af && !affectStatusForRepresentativeStudent.contains(agid) )
+				affectStatusForRepresentativeStudent.insert(agid);
 		}
 		if(subjectName!=""){
 			bool af=true;
 			if(act->subjectName==subjectName)
 				af=false;
 				
-			if( af && !affectStatusForRepresentantSubject.contains(agid) )
-				affectStatusForRepresentantSubject.insert(agid);
+			if( af && !affectStatusForRepresentativeSubject.contains(agid) )
+				affectStatusForRepresentativeSubject.insert(agid);
 		}
 	}
 	
@@ -743,8 +743,8 @@ void ActivityPlanningForm::computeActivitiesForModification(const QString& teach
 		if(!representantCounted.contains(repr)){
 			representantCounted.insert(repr);
 			
-			assert(numberOfSubactivitiesForRepresentant.contains(repr));
-			int n=numberOfSubactivitiesForRepresentant.value(repr);
+			assert(numberOfSubactivitiesForRepresentative.contains(repr));
+			int n=numberOfSubactivitiesForRepresentative.value(repr);
 			assert(n>0);
 			nTotalActsModified+=n;
 		}
@@ -752,7 +752,7 @@ void ActivityPlanningForm::computeActivitiesForModification(const QString& teach
 		_idsToBeModified.append(id);
 		_agidsToBeModified.append(tmpGroupID.at(i));
 		
-		if(affectStatusForRepresentantTeacher.contains(repr)){
+		if(affectStatusForRepresentativeTeacher.contains(repr)){
 			_affectOtherTeachersToBeModified.append(true);
 			_affectOtherTeachersOverall=true;
 		}
@@ -760,7 +760,7 @@ void ActivityPlanningForm::computeActivitiesForModification(const QString& teach
 			_affectOtherTeachersToBeModified.append(false);
 		}
 		
-		if(affectStatusForRepresentantStudent.contains(repr)){
+		if(affectStatusForRepresentativeStudent.contains(repr)){
 			_affectOtherStudentsSetsToBeModified.append(true);
 			_affectOtherStudentsSetsOverall=true;
 		}
@@ -768,7 +768,7 @@ void ActivityPlanningForm::computeActivitiesForModification(const QString& teach
 			_affectOtherStudentsSetsToBeModified.append(false);
 		}
 		
-		if(affectStatusForRepresentantSubject.contains(repr)){
+		if(affectStatusForRepresentativeSubject.contains(repr)){
 			_affectOtherSubjectsToBeModified.append(true);
 			_affectOtherSubjectsOverall=true;
 		}
@@ -986,7 +986,7 @@ void ActivityPlanningForm::swapTeachers(int studentsActivity1, int subjectActivi
 					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
 					if(act==nullptr){
 						assert(0==1);	//TODO: maybe just a warning
-						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+						//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 						break;
 					}
 					
@@ -1009,7 +1009,7 @@ void ActivityPlanningForm::swapTeachers(int studentsActivity1, int subjectActivi
 					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), nullptr);
 					if(act==nullptr){
 						assert(0==1);	//TODO: maybe just a warning
-						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+						//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 						break;
 					}
 					
@@ -1235,7 +1235,7 @@ void ActivityPlanningForm::swapStudents(int studentsActivity1, int subjectActivi
 					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
 					if(act==nullptr){
 						assert(0==1);	//TODO: maybe just a warning
-						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+						//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 						break;
 					}
 					QStringList students_names=studentsList2;
@@ -1257,7 +1257,7 @@ void ActivityPlanningForm::swapStudents(int studentsActivity1, int subjectActivi
 					Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), nullptr);
 					if(act==nullptr){
 						assert(0==1);	//TODO: maybe just a warning
-						//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+						//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 						break;
 					}
 					QStringList students_names=studentsList1;
@@ -1560,7 +1560,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
 							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
-								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+								//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 								break;
 							}
 							
@@ -1623,7 +1623,7 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
 							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
-								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+								//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 								break;
 							}
 							
@@ -1981,7 +1981,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
 							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
-								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+								//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 								break;
 							}
 							
@@ -2043,7 +2043,7 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
 							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
-								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+								//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 								break;
 							}
 							
@@ -2189,7 +2189,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				return;
 			}
 			
-			if(tmpActivities.count()==0){ //maybe representant is inactive
+			if(tmpActivities.count()==0){ //maybe representative is inactive
 				assert(tmpAGIds.count()>=1);
 			
 				for(int i=0; i<gt.rules.activitiesList.count(); i++){
@@ -2563,7 +2563,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 						Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
 						if(act==nullptr){
 							assert(0==1);	//TODO: maybe just a warning
-							//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+							//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 							break;
 						}
 						
@@ -2844,7 +2844,7 @@ void ActivityPlanningForm::teachersTableHorizontalHeaderClicked(int column){
 						Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
 						if(act==nullptr){
 							assert(0==1);	//TODO: maybe just a warning
-							//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+							//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 							break;
 						}
 						
@@ -3024,7 +3024,7 @@ void ActivityPlanningForm::teachersTableHorizontalHeaderClicked(int column){
 							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
 							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
-								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+								//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 								break;
 							}
 							
@@ -3048,7 +3048,7 @@ void ActivityPlanningForm::teachersTableHorizontalHeaderClicked(int column){
 							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), nullptr);
 							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
-								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+								//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 								break;
 							}
 							
@@ -3304,7 +3304,7 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 							Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
 							if(act==nullptr){
 								assert(0==1);	//TODO: maybe just a warning
-								//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+								//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 								break;
 							}
 							
@@ -3483,7 +3483,7 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 								Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified.at(i), nullptr);
 								if(act==nullptr){
 									assert(0==1);	//TODO: maybe just a warning
-									//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+									//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 									break;
 								}
 								
@@ -3507,7 +3507,7 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 								Activity* act=gt.rules.activitiesPointerHash.value(_idsToBeModified2.at(i), nullptr);
 								if(act==nullptr){
 									assert(0==1);	//TODO: maybe just a warning
-									//s+=QCoreApplication::translate("Activity", "Invalid (inexistent) id for activity");
+									//s+=QCoreApplication::translate("Activity", "Invalid (nonexistent) id for activity");
 									break;
 								}
 								

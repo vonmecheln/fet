@@ -2412,7 +2412,7 @@ From Anton Anthofer (see also item #275):
 - possibility to remove subactivities.
 - multicore generation for multiple timetables generation.
 
-Also suggested by sln_rj, on forum:
+Also suggested by Thaneswer Patel, on forum:
 
 Is it possible to edit a split option in activity once we entered the data in FET?
 
@@ -4426,7 +4426,7 @@ FET can really import and export almost all data. except constraints. if this fu
 
 Liviu: It is a bit weird to export the constraints - what format to choose?
 
-Also suggested by sln_rj, on forum.
+Also suggested by Thaneswer Patel, on forum.
 
 259---------------------------------------------------------
 From Benahmed Abdelkrim (on forum):
@@ -7543,3 +7543,10 @@ Add an ordering number scheme for the constraints list in the main form (for ins
 1.1 Max days per week for a teacher
 1.2 Min days per week for a teacher
 )
+
+447---------------------------------------------------------
+From Thaneswer Patel (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5056.0
+
+Can we give an option while generating a timetable not to print virtual rooms and other empty rooms where no class is assigned?
