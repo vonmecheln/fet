@@ -2436,3 +2436,6 @@ Versions 6.2.0 - 6.2.v
 	- Updated the Vietnamese translation, by Phạm Văn Quyền Anh, who is the new translator.
 	- Corrected the Romanian translation, by Liviu Lalescu (the typos/small errors were found using Ispell / Aspell).
 	- Corrected the Arabic translation, by Benahmed Abdelkrim (the typos/small errors were found using Ispell / Aspell).
+- Version 6.2.4
+	- Updated to Qt 6.2.2.
+	- Updated and corrected the Bulgarian translation, by Asen Pashov.

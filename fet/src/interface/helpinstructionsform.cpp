@@ -46,7 +46,7 @@ void HelpInstructionsForm::setText()
 
 	s+=tr("Instructions.");
 	s+="\n\n";
-	s+=tr("Last modified on %1.").arg(tr("12 October 2009"));
+	s+=tr("Last modified on %1.").arg(tr("2 November 2021"));
 	s+="\n\n";
 	s+=tr("These are some small instructions which you have to follow in order to input a solvable data set.");
 	s+="\n\n";
