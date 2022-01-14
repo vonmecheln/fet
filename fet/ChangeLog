@@ -2427,5 +2427,12 @@ Versions 6.2.0 - 6.2.v
 - Version 6.2.2
 	- Updated to Qt 6.2.1.
 	- Crash bugs fixed (rare, in the Mornings-Afternoons mode, if using constraints of type teacher(s)/students (set) min mornings/afternoons per week
-	for teachers/students sets who had no activities. Reported by Abdul Latif Al-Ablaq, Hisham Abu Ferdous, and Ahmed Moullafi (Ahmed Moullafi provided
+	for teachers/students sets who had no activities). Reported by Abdul Latif Al-Ablaq, Hisham Abu Ferdous, and Ahmed Moullafi (Ahmed Moullafi provided
 	an input file which was very useful in isolating the bugs).
+- Version 6.2.3
+	- Minor corrections in the documentation, reported by Alexey Chernous.
+	- Added an initial partial Bulgarian translation, by Asen Pashov.
+	- Updated the Russian translation, by Alexey Chernous (some typos/small errors were found using Ispell / Aspell).
+	- Updated the Vietnamese translation, by Phạm Văn Quyền Anh, who is the new translator.
+	- Corrected the Romanian translation, by Liviu Lalescu (the typos/small errors were found using Ispell / Aspell).
+	- Corrected the Arabic translation, by Benahmed Abdelkrim (the typos/small errors were found using Ispell / Aspell).

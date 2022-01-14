@@ -1608,7 +1608,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Divide HTML timetables with time-axis by days</string>
+    <string>Divide HTML timetables with time axis by days</string>
    </property>
   </action>
   <action name="helpSettingsAction">

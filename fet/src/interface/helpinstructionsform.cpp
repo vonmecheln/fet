@@ -155,10 +155,7 @@ void HelpInstructionsForm::setText()
 	s+=tr("16) If you have activities which you want to put in the last slots of a day (like say "
 		"the meetings with the class master), please use the constraint a set of activities end students day (or singular activity ends students day).");
 	s+="\n\n";
-	s+=tr("17) If you have activities split into 3 activities per week and need them to be not "
-		"in 3 consecutive days, there is an entry in the FAQ explaining how to specify this (question Q1-5-September-2008).");
-	s+="\n\n";
-	s+=tr("18) If you use the not perfect constraints activity tag max hours daily or students max gaps per day (there are 4+2"
+	s+=tr("17) If you use the not perfect constraints activity tag max hours daily or students max gaps per day (there are 4+2"
 		" types of constraints in this category), use them with caution not to obtain an impossible timetable. If the timetable is impossible, it may be because of them."
 		" You are advised to add such constraints only in the end, after you are sure that the other constraints are good and the timetable is possible.");
 		

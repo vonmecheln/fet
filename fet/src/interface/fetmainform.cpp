@@ -2803,6 +2803,7 @@ void FetMainForm::populateLanguagesMap(QMap<QString, QString>& languagesMap)
 	languagesMap.insert("cs", QString::fromUtf8("Český"));
 	languagesMap.insert("ja", QString::fromUtf8("日本語"));
 	languagesMap.insert("ru", QString::fromUtf8("Русский"));
+	languagesMap.insert("bg", QString::fromUtf8("Български"));
 
 	//We need to write the following language names in their native language, as above:
 	languagesMap.insert("hu", QString("Hungarian"));
@@ -4648,7 +4649,7 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	
 	s+=tr("Probably some settings which are more difficult to understand are these ones:");
 	s+="\n\n";
-	s+=tr("Option 'Divide html timetables with time-axis by days':"
+	s+=tr("Option 'Divide html timetables with time axis by days':"
 	" This means simply that the html timetables of type 'time horizontal' or 'time vertical' (see the generated html timetables)"
 	" should be or not divided according to the days.");
 	s+=" ";
@@ -10059,7 +10060,7 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+=tr("13")+QString(". ")+tr("Mark break slots with -X- in timetables will be %1", "%1 is true or false. Uppercase -X-").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("14")+QString(". ")+tr("Divide html timetables with time-axis by days will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("14")+QString(". ")+tr("Divide html timetables with time axis by days will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
 	s+=tr("15")+QString(". ")+tr("Duplicate vertical headers to the right will be %1", "%1 is true or false").arg(tr("false"));

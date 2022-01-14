@@ -239,8 +239,8 @@ void usage(QTextStream* out, const QString& error)
 		"(default 2, larger values have more details/facilities and larger file sizes).\n"
 		"\n"
 		"\t--language=LANG\n"
-		"\t\tLANG is one of: ar, ca, cs, da, de, el, en_GB, en_US, es, eu, fa, fr, gl, he, hu, id, it, ja, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sq, sr, tr, "
-		"uk, uz, vi, zh_CN, zh_TW (default en_US).\n"
+		"\t\tLANG is one of: ar, bg, ca, cs, da, de, el, en_GB, en_US, es, eu, fa, fr, gl, he, hu, id, it, ja, lt, mk, ms, nl, pl, pt_BR, ro, ru, si, sk, sq, sr, "
+		"tr, uk, uz, vi, zh_CN, zh_TW (default en_US).\n"
 		"\n"
 		"\t--writetimetableconflicts=WT1\n"
 		"\t--writetimetablesstatistics=WT2\n"
@@ -276,7 +276,7 @@ void usage(QTextStream* out, const QString& error)
 		"(default false).\n"
 		"\n"
 		"\t--dividetimeaxisbydays=DTAD\n"
-		"\t\tDTAD is either true or false, represents if you want the HTML timetables with time-axis divided by days (default false).\n"
+		"\t\tDTAD is either true or false, represents if you want the HTML timetables with time axis divided by days (default false).\n"
 		"\n"
 		"\t--duplicateverticalheaders=DVH\n"
 		"\t\tDVH is either true or false, represents if you want the HTML timetables to duplicate vertical headers to the right of the tables, for easier reading (default false).\n"
@@ -686,6 +686,7 @@ void initLanguagesSet()
 	languagesSet.insert("eu");
 	languagesSet.insert("cs");
 	languagesSet.insert("ja");
+	languagesSet.insert("bg");
 }
 
 #ifndef FET_COMMAND_LINE

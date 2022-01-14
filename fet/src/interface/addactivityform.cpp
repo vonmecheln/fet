@@ -1163,13 +1163,6 @@ void AddActivityForm::help()
 	s+=tr("'Separately' means that multiple activities will be added, one for each selected students set, separately.");
 	s+="\n\n";
 	
-	s+=tr("A first notice: "
-	 "If you use a 5 days week: "
-	 "when adding an activity split into only 2 components "
-	 "per week, the best practice is to add min days between activities to be 2. "
-	 "If you split an activity into 3 components per week - please read FAQ question Q1-5-September-2008");
-	s+="\n\n";
-	
 	s+=tr("You can select a teacher from all the teachers with the mouse or with the keyboard tab/up/down, then "
 	 "double click it to add it to the selected teachers for current activity. "
 	 "You can then choose to remove a teacher from the selected teachers. You can highlight it "

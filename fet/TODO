@@ -7535,3 +7535,11 @@ We work during the year on diferent projects with diferent groups/periods of stu
 In our case we create a "week"  from day1 to day 100. Then on that period we add activities and diferent groups and projects as they come.
 Since we  configure a period from  day1 to day100, we must translate (for example) day1=5/10,  day2 =6/10 and so on. It would we great if one could
 set starting date and ending date, for example  5/oct/2021 - 12/jan/2022 and also to select wich days of the week to include that would be excelent.
+
+446---------------------------------------------------------
+From Phạm Văn Quyền Anh:
+
+Add an ordering number scheme for the constraints list in the main form (for instance:
+1.1 Max days per week for a teacher
+1.2 Min days per week for a teacher
+)
