@@ -3910,9 +3910,9 @@ because :
 224------------------------DONE-----------------------------
 
 225---------------------------------------------------------
-From jillali elghazoui (on forum):
+From abdeljalil elghazoui (on forum):
 
-jillali:
+abdeljalil:
 At the end of the production time table
 we sometimes want to change instead of an activity
 But if we follow the normal route of fet its currency fully all activities
@@ -3931,7 +3931,7 @@ or
 
 But you may obtain an impossible timetable.
 
-jillali:
+abdeljalil:
 
 You're right, we can not get what we wanted
 Is it possible for this to work  a new property under the name:
@@ -5033,7 +5033,7 @@ The code could look like:
 to be added at the end of the function "bool computeTeachersMinHoursDaily(QWidget* parent)" of file src/engine/generate_pre.cpp.
 
 304---------------------------------------------------------
-From jillali elghazoui:
+From abdeljalil elghazoui:
 
 (Also suggested by bachiri401 and Benahmed Abdelkrim)
 
@@ -7550,3 +7550,29 @@ From Thaneswer Patel (on forum):
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5056.0
 
 Can we give an option while generating a timetable not to print virtual rooms and other empty rooms where no class is assigned?
+
+448---------------------------------------------------------
+From Arvind Kumar Agarwal (on guestbook):
+
+1. In set of activities we should be able to add or replace a teacher for a particular class. Presently it changes for whole set. It will help to
+assign two teacher for particular class like practical. Also when teacher is on leave, we can assign another teacher for that particular class.
+2. In the activity screen, we should be able to hide inactive activities.
+
+449---------------------------------------------------------
+From Bachir Sayah (on guestbook):
+
+If you can add a filter that allows you to manipulate the order of different matters .. for exemple mathematics and physics .. i want them to be
+separated by english or french for example !
+
+450---------------------------------------------------------
+From Prof info (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5064.0
+
+On the contrary with the constraint "A set of activities occupies max different rooms".
+
+Is it possible to add a constraint
+"A set of activities occupies min different rooms"
+That allows the activities of a teacher occupies at least in 2 or 3... different rooms from a list of rooms
+
+And if the number of teacher's activities equals the minimum number given as a parameter, each activity will have a different room from the other.

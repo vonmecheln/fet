@@ -103,7 +103,7 @@ meet: "Current activity's<new line symbol>
      description"
 you have to split your message if it is too wide (wider than the widest line).
 For instance, the translation would be:
-     "Descrierea activitatii<new line symbol>
+     "Descrierea activității<new line symbol>
      curente"
 
 New line symbol is a special sign in Linguist, you'll see it, it is like Greek symbol for Pi.

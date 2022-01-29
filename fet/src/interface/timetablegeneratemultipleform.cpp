@@ -29,6 +29,8 @@
 
 #include <ctime>
 
+#include <algorithm> //for std::max
+
 #include <QMessageBox>
 
 //#include <QMutex>
@@ -269,7 +271,7 @@ TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): Q
 	labels.append(textLabel);
 
 	nThreadsSpinBox->setMinimum(1);
-	nThreadsSpinBox->setMaximum(QThread::idealThreadCount());
+	nThreadsSpinBox->setMaximum(std::max(1, QThread::idealThreadCount()));
 	nThreadsSpinBox->setValue(1); //this is necessary, before the connection to nThreadsChanged(int)
 
 	connect(nThreadsSpinBox, SIGNAL(valueChanged(int)), this, SLOT(nThreadsChanged(int)));

@@ -62,13 +62,13 @@ AdvancedFilterForm::AdvancedFilterForm(QWidget* parent, bool all, QList<int> des
 		cb2->addItem(tr("Contains", "A text string contains other substring"));
 		cb2->addItem(tr("Does not contain", "A text string does not contain other substring"));
 		cb2->addItem(tr("Matches regular expr.", "A text string matches a regular expression (regexp)."
-			" Regular expressions are a complex notion, see definition on the internet if you don't know about them or how to translate the words.  "
+			" Regular expressions are a complex notion, see definition on the internet if you don't know about them or how to translate the words."
 			"\nDefinition from Wikipedia: 'In computing, regular expressions, also referred to as regex or regexp, provide a concise and flexible means "
 			"for identifying strings of text, such as particular characters, words, or patterns of characters. A regular expression is written in "
 			"a formal language that can be interpreted by a regular expression processor, a program that either serves as a parser generator or "
 			"examines text and identifies parts that match the provided specification."));
 		cb2->addItem(tr("Does not match reg. expr.", "A text string does not match a regular expression (regexp)."
-			" Regular expressions are a complex notion, see definition on the internet if you don't know about them or how to translate the words.  "
+			" Regular expressions are a complex notion, see definition on the internet if you don't know about them or how to translate the words."
 			"\nDefinition from Wikipedia: 'In computing, regular expressions, also referred to as regex or regexp, provide a concise and flexible means "
 			"for identifying strings of text, such as particular characters, words, or patterns of characters. A regular expression is written in "
 			"a formal language that can be interpreted by a regular expression processor, a program that either serves as a parser generator or "

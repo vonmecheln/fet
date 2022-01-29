@@ -7478,6 +7478,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				xmlReadingLog+="   Found "+xmlReader.name().toString()+" tag\n";
 				if(xmlReader.name()==QString("Activity")){
 					bool correct=true;
+					QStringList additionalErrorMessages; //in case correct is false
 				
 					QString cm=QString(""); //comments
 					QString tn="";
@@ -7559,17 +7560,23 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 								_teachersSet.insert(tn);
 							
 							tl.append(tn);
-							if(!allTeachers.contains(tn))
+							if(!allTeachers.contains(tn)){
 							//if(this->searchTeacher(tn)<0)
 								correct=false;
+								additionalErrorMessages.append(tr("Line %1, column %2: Teacher %3 was not found in the teachers list.")
+								 .arg(xmlReader.lineNumber()).arg(xmlReader.columnNumber()).arg(tn));
+							}
 						}
 						else if(xmlReader.name()==QString("Subject")){
 							QString text=xmlReader.readElementText();
 							sjn=text;
 							xmlReadingLog+="    Crt. activity subject="+sjn+"\n";
-							if(!allSubjects.contains(sjn))
+							if(!allSubjects.contains(sjn)){
 							//if(this->searchSubject(sjn)<0)
 								correct=false;
+								additionalErrorMessages.append(tr("Line %1, column %2: Subject %3 was not found in the subjects list.")
+								 .arg(xmlReader.lineNumber()).arg(xmlReader.columnNumber()).arg(sjn));
+							}
 						}
 						else if(xmlReader.name()==QString("Subject_Tag")){
 							QString text=xmlReader.readElementText();
@@ -7584,9 +7591,12 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 
 							if(atn!="")
 								atl.append(atn);
-							if(atn!="" && !allActivityTags.contains(atn))
+							if(atn!="" && !allActivityTags.contains(atn)){
 							//if(atn!="" && this->searchActivityTag(atn)<0)
 								correct=false;
+								additionalErrorMessages.append(tr("Line %1, column %2: Activity tag %3 was not found in the activity tags list.")
+								 .arg(xmlReader.lineNumber()).arg(xmlReader.columnNumber()).arg(atn));
+							}
 						}
 						else if(xmlReader.name()==QString("Activity_Tag")){
 							QString text=xmlReader.readElementText();
@@ -7600,9 +7610,12 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 							
 							if(atn!="")
 								atl.append(atn);
-							if(atn!="" && !allActivityTags.contains(atn))
+							if(atn!="" && !allActivityTags.contains(atn)){
 							//if(atn!="" && this->searchActivityTag(atn)<0)
 								correct=false;
+								additionalErrorMessages.append(tr("Line %1, column %2: Activity tag %3 was not found in the activity tags list.")
+								 .arg(xmlReader.lineNumber()).arg(xmlReader.columnNumber()).arg(atn));
+							}
 						}
 						else if(xmlReader.name()==QString("Students")){
 							QString text=xmlReader.readElementText();
@@ -7615,9 +7628,12 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 								_studentsSet.insert(stn);
 
 							stl.append(stn);
-							if(!studentsSetsCount.contains(stn))
+							if(!studentsSetsCount.contains(stn)){
 							//if(this->searchStudentsSet(stn)==nullptr)
 								correct=false;
+								additionalErrorMessages.append(tr("Line %1, column %2: Students set %3 was not found in the students sets list.")
+								 .arg(xmlReader.lineNumber()).arg(xmlReader.columnNumber()).arg(stn));
+							}
 						}
 						else if(xmlReader.name()==QString("Duration")){
 							QString text=xmlReader.readElementText();
@@ -7695,7 +7711,13 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 						xmlReadingLog+="   Added the activity\n";
 					}
 					else{
-						xmlReader.raiseError(tr("The activity with id=%1 contains incorrect data").arg(id));
+						QString s=tr("The activity with id=%1 contains incorrect data.").arg(id);
+						s+="\n\n";
+						s+=tr("Additional details:");
+						s+="\n";
+						assert(additionalErrorMessages.count()>=1);
+						s+=additionalErrorMessages.join("\n");
+						xmlReader.raiseError(s);
 						/*xmlReadingLog+="   Activity with id ="+CustomFETString::number(id)+" contains invalid data - skipping\n";
 						RulesReconcilableMessage::warning(parent, tr("FET information"),
 						 tr("Activity with id=%1 contains invalid data - skipping").arg(id));*/

@@ -79,14 +79,14 @@ void SparseTableView::resizeToFit()
 			k++;
 		if(k<this->horizontalHeader()->sectionSizeHint(i))
 			k=this->horizontalHeader()->sectionSizeHint(i);
-			
+		
 		//not too wide
 		horizontalSizesUntruncated.append(k);
 		
 		if(k>maxHorizontalHeaderSectionSize()){
 			k=maxHorizontalHeaderSectionSize();
 		}
-			
+		
 		this->horizontalHeader()->resizeSection(i, k);
 	}
 

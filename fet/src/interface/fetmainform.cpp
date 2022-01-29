@@ -780,11 +780,11 @@ FetMainForm::FetMainForm()
 			//to avoid code 406 from the server.
 #if QT_VERSION >= QT_VERSION_CHECK(5,4,0)
 			req.setHeader(QNetworkRequest::UserAgentHeader, QString("FET")+QString(" ")+FET_VERSION+
-			 QString(" (")+QSysInfo::prettyProductName()+QString("; ")+QSysInfo::currentCpuArchitecture()+QString(")"));
+			 QString(" (Qt ")+QString(qVersion())+QString("; ")+QSysInfo::prettyProductName()+QString("; ")+QSysInfo::currentCpuArchitecture()+QString(")"));
 #elif QT_VERSION >= QT_VERSION_CHECK(5,0,0)
-			req.setHeader(QNetworkRequest::UserAgentHeader, QString("FET")+QString(" ")+FET_VERSION);
+			req.setHeader(QNetworkRequest::UserAgentHeader, QString("FET")+QString(" ")+FET_VERSION+QString(" (Qt ")+QString(qVersion())+QString(")"));
 #else
-			req.setRawHeader("User-Agent", (QString("FET")+QString(" ")+FET_VERSION).toUtf8());
+			req.setRawHeader("User-Agent", (QString("FET")+QString(" ")+FET_VERSION+QString(" (Qt ")+QString(qVersion())+QString(")")).toUtf8());
 #endif
 			networkManager->get(req);
 		}
@@ -2885,7 +2885,8 @@ void FetMainForm::checkForUpdatesToggled(bool checked)
 			"request for this file will be visible on the server, along with your IP address and access time.")
 			.arg("https://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
 		s+=" ";
-		s+=tr("Also, there will be visible on the server your current FET version, your operating system name and version, and your processor architecture type.");
+		s+=tr("Also, there will be visible on the server your current FET version, your current Qt version (the C++ toolkit used by FET), "
+			"your operating system name and version, and your processor architecture type.");
 		s+=" ";
 		s+=tr("Thus, it could be deduced if and when you use FET.");
 		s+="\n\n";

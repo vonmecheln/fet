@@ -1792,7 +1792,7 @@ Versions 5.27.0 - 5.27.9
 	- Fixed a compilation error under CentOS 6 (reported by azaer).
 - Version 5.27.3
 	- Updated to Qt 5.4.2.
-	- Added the "duration" filter in activities preferred starting times and preferred time slots (suggested by Volker Dirr and jillali elghazoui).
+	- Added the "duration" filter in activities preferred starting times and preferred time slots (suggested by Volker Dirr and abdeljalil elghazoui).
 - Version 5.27.4
 	- Updated to Qt 5.5.0.
 	- Added a new complete French translation, by Pascal Cohen.
@@ -2448,3 +2448,7 @@ Versions 6.2.0 - 6.2.v
 	- Corrected the Brazilian Portuguese translation, by Alexandre R. Soares (some typos/small errors were found using Ispell / Aspell).
 	- Updated the Bulgarian translation, by Asen Pashov.
 	- Updated the Russian translation, by Alexey Chernous.
+- Version 6.2.6
+	- Potential crash bug fix (most certainly not met in practice).
+	- More detailed reports when reading a .fet file with wrong teachers, subject, activity tags, or students sets in the activities. Suggested by math.
+	- The search for updates on startup will now also send the current Qt version to the server.
