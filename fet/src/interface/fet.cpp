@@ -973,6 +973,25 @@ void SomeQtTranslations()
 
 	QString s27=QCoreApplication::translate("QGnomeTheme", "Help");
 	Q_UNUSED(s27);
+	
+	QString s28=QCoreApplication::translate("QFontDialog", "Select Font");
+	Q_UNUSED(s28);
+	QString s29=QCoreApplication::translate("QFontDialog", "&Font", "Accelerator key (letter after ampersand) for &Font, Font st&yle, &Size, Stri&keout, &Underline, Wr&iting System, must be different");
+	Q_UNUSED(s29);
+	QString s30=QCoreApplication::translate("QFontDialog", "Font st&yle", "Accelerator key (letter after ampersand) for &Font, Font st&yle, &Size, Stri&keout, &Underline, Wr&iting System, must be different");
+	Q_UNUSED(s30);
+	QString s31=QCoreApplication::translate("QFontDialog", "&Size", "Accelerator key (letter after ampersand) for &Font, Font st&yle, &Size, Stri&keout, &Underline, Wr&iting System, must be different");
+	Q_UNUSED(s31);
+	QString s32=QCoreApplication::translate("QFontDialog", "Effects");
+	Q_UNUSED(s32);
+	QString s33=QCoreApplication::translate("QFontDialog", "Stri&keout", "Accelerator key (letter after ampersand) for &Font, Font st&yle, &Size, Stri&keout, &Underline, Wr&iting System, must be different");
+	Q_UNUSED(s33);
+	QString s34=QCoreApplication::translate("QFontDialog", "&Underline", "Accelerator key (letter after ampersand) for &Font, Font st&yle, &Size, Stri&keout, &Underline, Wr&iting System, must be different");
+	Q_UNUSED(s34);
+	QString s35=QCoreApplication::translate("QFontDialog", "Sample");
+	Q_UNUSED(s35);
+	QString s36=QCoreApplication::translate("QFontDialog", "Wr&iting System", "Accelerator key (letter after ampersand) for &Font, Font st&yle, &Size, Stri&keout, &Underline, Wr&iting System, must be different");
+	Q_UNUSED(s36);
 }
 
 /**

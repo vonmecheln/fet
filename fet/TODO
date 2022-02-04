@@ -2622,7 +2622,7 @@ From agemagician (on forum):
 2- Print the schedule from right to left rather than left to right "very useful for Arabic countries like our academy". - Qt bug (Liviu)
 3- Make a bold line between each day in the printing and light line between periods.
 4- Make a bold line between groups in the printing.
-5- Change the font in the printing.
+5- Change the font in the printing. -> DONE on 31 January 2022 in FET-6.2.7.
 6- Export the schedule to excel.
 
 171---------------------------------------------------------

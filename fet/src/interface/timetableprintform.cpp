@@ -1010,42 +1010,42 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	if(CBBreak->currentIndex()==1 || CBBreak->currentIndex()==2){
 		tmp+="        page-break-after: always;";
 	} //else {
-	//tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug. (*1*)
-	//tmp+="        padding-bottom: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug. (*1*)
+	//tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: Qt bug. (*1*)
+	//tmp+="        padding-bottom: "+QString::number(tablePadding->value())+"px;\n";	//not possible: Qt bug. (*1*)
 	//}
 	tmp+="      }\n";
 	tmp+="      table.odd_table {\n";
 	if(CBBreak->currentIndex()==1){
 		tmp+="        page-break-after: always;";
 	} //else {
-	//tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug. (*1*)
-	//tmp+="        padding-bottom: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug. (*1*)
+	//tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: Qt bug. (*1*)
+	//tmp+="        padding-bottom: "+QString::number(tablePadding->value())+"px;\n";	//not possible: Qt bug. (*1*)
 	//}
 	tmp+="      }\n";
 */
 	
-	//start. the "back" stuff is needed because of a qt bug (*1*). it also solves the last empty page problem.
-	tmp+="      p.back0 {\n";	//i can't to that with a class in table, because of a qt bug
+	//start. the "back" stuff is needed because of a Qt bug (*1*). it also solves the last empty page problem.
+	tmp+="      p.back0 {\n";	//I can't to that with a class in table, because of a Qt bug
 	if(CBBreak->currentIndex()==0)
-		tmp+="        font-size: "+QString::number(tablePadding->value())+"pt;\n";	//i can't do that in table, because it will also affect detailed table cells. it is not possible with a class, because of a qt bug.
+		tmp+="        font-size: "+QString::number(tablePadding->value())+"pt;\n";	//I can't do that in table, because it will also affect detailed table cells. It is not possible with a class, because of a Qt bug.
 	else
 		tmp+="        font-size: 1pt;\n";	//font size 0 is not possible.
-//	tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug.
-//	tmp+="        padding-bottom: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug.
+//	tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: Qt bug.
+//	tmp+="        padding-bottom: "+QString::number(tablePadding->value())+"px;\n";	//not possible: Qt bug.
 	if(CBBreak->currentIndex()==1 || CBBreak->currentIndex()==2)
 		tmp+="        page-break-after: always;";
 	tmp+="      }\n";
-	tmp+="      p.back1 {\n";	//i can't to that with a class in table, because of a qt bug
+	tmp+="      p.back1 {\n";	//I can't to that with a class in table, because of a Qt bug
 	if(CBBreak->currentIndex()==0 || CBBreak->currentIndex()==2)
-		tmp+="        font-size: "+QString::number(tablePadding->value())+"pt;\n";	//i can't do that in table, because it will also affect detailed table cells. it is not possible with a class, because of a qt bug.
+		tmp+="        font-size: "+QString::number(tablePadding->value())+"pt;\n";	//I can't do that in table, because it will also affect detailed table cells. It is not possible with a class, because of a Qt bug.
 	else
 		tmp+="        font-size: 1pt;\n";	//font size 0 is not possible.
-//	tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug.
-//	tmp+="        padding-bottom: "+QString::number(tablePadding->value())+"px;\n";	//not possible: qt bug.
+//	tmp+="        padding-top: "+QString::number(tablePadding->value())+"px;\n";	//not possible: Qt bug.
+//	tmp+="        padding-bottom: "+QString::number(tablePadding->value())+"px;\n";	//not possible: Qt bug.
 	if(CBBreak->currentIndex()==1)
 		tmp+="        page-break-after: always;";
 	tmp+="      }\n";
-	//end. the "back" stuff is only needed because of a qt bug (*1*). delete this as soon as bug is solved
+	//end. the "back" stuff is only needed because of a Qt bug (*1*). delete this as soon as bug is solved
 	
 	int htmlLevel=3;
 	if(automaticColors->isChecked()){
@@ -1122,12 +1122,12 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	tmp+="        page-break-inside: avoid;\n";
 	tmp+="      }\n";
 	tmp+="      th {\n";
-	tmp+="        text-align: center;\n"; //currently no effect because of a qt bug (compare http://bugreports.qt.nokia.com/browse/QTBUG-2730 )
+	tmp+="        text-align: center;\n"; //currently no effect because of a Qt bug (compare http://bugreports.qt.nokia.com/browse/QTBUG-2730 )
 	tmp+="        vertical-align: middle;\n";
 	tmp+="        white-space: "+CBWhiteSpace->currentText()+";\n";
 	tmp+="      }\n";
 	tmp+="      td {\n";
-	tmp+="        text-align: center;\n"; //currently no effect because of a qt bug (compare http://bugreports.qt.nokia.com/browse/QTBUG-2730 )
+	tmp+="        text-align: center;\n"; //currently no effect because of a Qt bug (compare http://bugreports.qt.nokia.com/browse/QTBUG-2730 )
 	tmp+="        vertical-align: middle;\n";
 	tmp+="        white-space: "+CBWhiteSpace->currentText()+";\n";
 	tmp+="        padding-left: "+QString::number(activitiesPadding->value())+"px;\n";

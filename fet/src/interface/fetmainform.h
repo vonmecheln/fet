@@ -411,6 +411,7 @@ public slots:
 	void showSubgroupsInComboBoxesToggled(bool checked);
 	void showSubgroupsInActivityPlanningToggled(bool checked);
 	void on_settingsShowShortcutsOnMainWindowAction_toggled();
+	void on_settingsFontAction_triggered();
 	void on_settingsShowToolTipsForConstraintsWithTablesAction_toggled();
 	
 	void on_timetablesToWriteOnDiskAction_triggered();

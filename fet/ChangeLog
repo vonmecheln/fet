@@ -2450,5 +2450,9 @@ Versions 6.2.0 - 6.2.v
 	- Updated the Russian translation, by Alexey Chernous.
 - Version 6.2.6
 	- Potential crash bug fix (most certainly not met in practice).
-	- More detailed reports when reading a .fet file with wrong teachers, subject, activity tags, or students sets in the activities. Suggested by math.
+	- More detailed reports when reading a .fet file with wrong teachers, subject, activity tags, or students sets in the activities list. Suggested by math.
 	- The search for updates on startup will now also send the current Qt version to the server.
+- Version 6.2.7
+	- Updated to Qt 6.2.3.
+	- The font of the text of the interface is now customizable (suggested by khelifi). This font type will also be applied when printing the timetables
+	(suggested by agemagician).

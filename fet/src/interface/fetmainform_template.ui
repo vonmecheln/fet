@@ -1198,6 +1198,8 @@
      <property name="title">
       <string>Interface</string>
      </property>
+     <addaction name="settingsFontAction"/>
+     <addaction name="separator"/>
      <addaction name="settingsShowShortcutsOnMainWindowAction"/>
      <addaction name="separator"/>
      <addaction name="settingsUseColorsAction"/>
@@ -2169,6 +2171,11 @@
    </property>
    <property name="text">
     <string>Order subgroups' timetables alphabetically</string>
+   </property>
+  </action>
+  <action name="settingsFontAction">
+   <property name="text">
+    <string comment="The user can select here the font of the text of the interface">Font</string>
    </property>
   </action>
  </widget>

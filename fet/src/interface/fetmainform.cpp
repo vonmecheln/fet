@@ -461,6 +461,9 @@
 
 #include <QRect>
 
+#include <QFont>
+#include <QFontDialog>
+
 QRect mainFormSettingsRect;
 int MAIN_FORM_SHORTCUTS_TAB_POSITION;
 
@@ -513,6 +516,8 @@ extern QApplication* pqapplication;
 Rules rules2;
 
 #ifndef FET_COMMAND_LINE
+static QFont originalFont;
+
 static int ORIGINAL_WIDTH;
 static int ORIGINAL_HEIGHT;
 //static int ORIGINAL_X;
@@ -594,6 +599,15 @@ FetMainForm::FetMainForm()
 	updateMode(true); //true means force
 	
 	QSettings settings(COMPANY, PROGRAM);
+	
+	originalFont=qApp->font();
+	if(settings.contains(QString("FetMainForm/interface-font"))){
+		QFont interfaceFont;
+		bool ok=interfaceFont.fromString(settings.value(QString("FetMainForm/interface-font")).toString());
+		if(ok)
+			qApp->setFont(interfaceFont);
+	}
+	
 	int nRec=settings.value(QString("FetMainForm/number-of-recent-files"), 0).toInt();
 	if(nRec>MAX_RECENT_FILES)
 		nRec=MAX_RECENT_FILES;
@@ -2956,6 +2970,14 @@ void FetMainForm::showSubgroupsInActivityPlanningToggled(bool checked)
 	SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING=checked;
 }
 
+void FetMainForm::on_settingsFontAction_triggered()
+{
+	bool ok;
+	QFont newFont=QFontDialog::getFont(&ok, qApp->font(), this, tr("Please choose the new font"));
+	if(ok)
+		qApp->setFont(newFont);
+}
+
 void FetMainForm::on_modeOfficialAction_triggered()
 {
 	if(!gt.rules.initialized){
@@ -3494,6 +3516,10 @@ void FetMainForm::closeEvent(QCloseEvent* event)
 FetMainForm::~FetMainForm()
 {
 	QSettings settings(COMPANY, PROGRAM);
+	
+	QFont interfaceFont=qApp->font();
+	settings.setValue(QString("FetMainForm/interface-font"), interfaceFont.toString());
+	
 	settings.setValue(QString("FetMainForm/number-of-recent-files"), recentFiles.count());
 	settings.remove(QString("FetMainForm/recent-file"));
 	for(int i=0; i<recentFiles.count(); i++)
@@ -10331,6 +10357,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 
 	s+=tr("60")+QString(". ")+tr("Write HTML timetables for subgroups in sorted order will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
+	
+	s+=tr("61")+QString(". ")+tr("The interface font will be reset to default");
+	s+="\n";
 
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
@@ -10342,6 +10371,8 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 
 	QSettings settings(COMPANY, PROGRAM);
 	settings.clear();
+	
+	qApp->setFont(originalFont);
 	
 	recentFiles.clear();
 	updateRecentFileActions();
