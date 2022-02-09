@@ -601,11 +601,19 @@ FetMainForm::FetMainForm()
 	QSettings settings(COMPANY, PROGRAM);
 	
 	originalFont=qApp->font();
-	if(settings.contains(QString("FetMainForm/interface-font"))){
+	if(settings.contains(QString("interface-font"))){
+		QFont interfaceFont;
+		bool ok=interfaceFont.fromString(settings.value(QString("interface-font")).toString());
+		if(ok)
+			qApp->setFont(interfaceFont);
+	}
+	else if(settings.contains(QString("FetMainForm/interface-font"))){ //obsolete style
 		QFont interfaceFont;
 		bool ok=interfaceFont.fromString(settings.value(QString("FetMainForm/interface-font")).toString());
 		if(ok)
 			qApp->setFont(interfaceFont);
+		
+		//settings.remove(QString("FetMainForm/interface-font"));
 	}
 	
 	int nRec=settings.value(QString("FetMainForm/number-of-recent-files"), 0).toInt();
@@ -3518,7 +3526,7 @@ FetMainForm::~FetMainForm()
 	QSettings settings(COMPANY, PROGRAM);
 	
 	QFont interfaceFont=qApp->font();
-	settings.setValue(QString("FetMainForm/interface-font"), interfaceFont.toString());
+	settings.setValue(QString("interface-font"), interfaceFont.toString());
 	
 	settings.setValue(QString("FetMainForm/number-of-recent-files"), recentFiles.count());
 	settings.remove(QString("FetMainForm/recent-file"));

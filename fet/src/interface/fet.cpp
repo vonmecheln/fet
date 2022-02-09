@@ -382,7 +382,7 @@ void FetSettings::readSimulationParameters()
 		gt.rules.mode=TERMS;
 	else{
 		QMessageBox::warning(nullptr, FetTranslate::tr("FET warning"), FetTranslate::tr("Incorrect startup mode read from the settings - making"
-		 " it %1.").arg(tr("Official")));
+		 " it %1.").arg(FetTranslate::tr("Official")));
 		gt.rules.mode=OFFICIAL;
 		//assert(0);
 	}
@@ -521,9 +521,28 @@ void FetSettings::readSimulationParameters()
 	mainFormSettingsRect=rect;
 	//MAIN_FORM_SHORTCUTS_TAB_POSITION=newSettings.value("FetMainForm/shortcuts-tab-position", "0").toInt();
 	MAIN_FORM_SHORTCUTS_TAB_POSITION=0; //always restoring to the first page, as suggested by a user
-	SHOW_SHORTCUTS_ON_MAIN_WINDOW=newSettings.value("FetMainForm/show-shortcuts", "true").toBool();
+	
+	if(newSettings.contains("FetMainForm/show-shortcut-buttons")){
+		SHOW_SHORTCUTS_ON_MAIN_WINDOW=newSettings.value("FetMainForm/show-shortcut-buttons").toBool();
+	}
+	else if(newSettings.contains("FetMainForm/show-shortcuts")){ //obsolete style
+		SHOW_SHORTCUTS_ON_MAIN_WINDOW=newSettings.value("FetMainForm/show-shortcuts").toBool();
+		//newSettings.remove("FetMainForm/show-shortcuts");
+	}
+	else{
+		SHOW_SHORTCUTS_ON_MAIN_WINDOW=true;
+	}
 
-	SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=newSettings.value("FetMainForm/show-tooltips-for-constraints-with-tables", "false").toBool();
+	if(newSettings.contains("show-tooltips-for-constraints-with-tables")){
+		SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=newSettings.value("show-tooltips-for-constraints-with-tables").toBool();
+	}
+	else if(newSettings.contains("FetMainForm/show-tooltips-for-constraints-with-tables")){ //obsolete style
+		SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=newSettings.value("FetMainForm/show-tooltips-for-constraints-with-tables").toBool();
+		//newSettings.remove("FetMainForm/show-tooltips-for-constraints-with-tables");
+	}
+	else{
+		SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES=false;
+	}
 	
 	BEEP_AT_END_OF_GENERATION=newSettings.value("beep-at-the-end-of-generation", "true").toBool();
 	ENABLE_COMMAND_AT_END_OF_GENERATION=newSettings.value("enable-command-at-the-end-of-generation", "false").toBool();
@@ -625,9 +644,9 @@ void FetSettings::writeSimulationParameters()
 	settings.setValue("FetMainForm/geometry", mainFormSettingsRect);
 	//settings.setValue("FetMainForm/shortcuts-tab-position", MAIN_FORM_SHORTCUTS_TAB_POSITION);
 	//settings.setValue("FetMainForm/shortcuts-tab-position", 0); //always starting on the first page, as suggested by a user
-	settings.setValue("FetMainForm/show-shortcuts", SHOW_SHORTCUTS_ON_MAIN_WINDOW);
+	settings.setValue("FetMainForm/show-shortcut-buttons", SHOW_SHORTCUTS_ON_MAIN_WINDOW);
 
-	settings.setValue("FetMainForm/show-tooltips-for-constraints-with-tables", SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES);
+	settings.setValue("show-tooltips-for-constraints-with-tables", SHOW_TOOLTIPS_FOR_CONSTRAINTS_WITH_TABLES);
 
 	settings.setValue("beep-at-the-end-of-generation", BEEP_AT_END_OF_GENERATION);
 	settings.setValue("enable-command-at-the-end-of-generation", ENABLE_COMMAND_AT_END_OF_GENERATION);
