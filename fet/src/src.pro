@@ -255,6 +255,13 @@ SOURCES += \
 	interface/addconstraintteachersmaxthreeconsecutivedaysform.cpp \
 	interface/modifyconstraintteachersmaxthreeconsecutivedaysform.cpp \
 	\
+	interface/constraintstudentssetmaxthreeconsecutivedaysform.cpp \
+	interface/addconstraintstudentssetmaxthreeconsecutivedaysform.cpp \
+	interface/modifyconstraintstudentssetmaxthreeconsecutivedaysform.cpp \
+	interface/constraintstudentsmaxthreeconsecutivedaysform.cpp \
+	interface/addconstraintstudentsmaxthreeconsecutivedaysform.cpp \
+	interface/modifyconstraintstudentsmaxthreeconsecutivedaysform.cpp \
+	\
 	interface/constraintteachermindaysperweekform.cpp \
 	interface/addconstraintteachermindaysperweekform.cpp \
 	interface/modifyconstraintteachermindaysperweekform.cpp \
@@ -1192,6 +1199,13 @@ HEADERS += \
 	interface/addconstraintteachersmaxthreeconsecutivedaysform.h \
 	interface/modifyconstraintteachersmaxthreeconsecutivedaysform.h \
 	\
+	interface/constraintstudentssetmaxthreeconsecutivedaysform.h \
+	interface/addconstraintstudentssetmaxthreeconsecutivedaysform.h \
+	interface/modifyconstraintstudentssetmaxthreeconsecutivedaysform.h \
+	interface/constraintstudentsmaxthreeconsecutivedaysform.h \
+	interface/addconstraintstudentsmaxthreeconsecutivedaysform.h \
+	interface/modifyconstraintstudentsmaxthreeconsecutivedaysform.h \
+	\
 	interface/constraintteachermindaysperweekform.h \
 	interface/addconstraintteachermindaysperweekform.h \
 	interface/modifyconstraintteachermindaysperweekform.h \
@@ -2120,6 +2134,13 @@ FORMS += \
 	interface/constraintteachersmaxthreeconsecutivedaysform_template.ui \
 	interface/addconstraintteachersmaxthreeconsecutivedaysform_template.ui \
 	interface/modifyconstraintteachersmaxthreeconsecutivedaysform_template.ui \
+	\
+	interface/constraintstudentssetmaxthreeconsecutivedaysform_template.ui \
+	interface/addconstraintstudentssetmaxthreeconsecutivedaysform_template.ui \
+	interface/modifyconstraintstudentssetmaxthreeconsecutivedaysform_template.ui \
+	interface/constraintstudentsmaxthreeconsecutivedaysform_template.ui \
+	interface/addconstraintstudentsmaxthreeconsecutivedaysform_template.ui \
+	interface/modifyconstraintstudentsmaxthreeconsecutivedaysform_template.ui \
 	\
 	interface/constraintteachermindaysperweekform_template.ui \
 	interface/addconstraintteachermindaysperweekform_template.ui \

@@ -304,6 +304,9 @@ private:
 	QAction* dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction;
 	QAction* dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction;
 
+	QAction* dataTimeConstraintsStudentsSetMaxThreeConsecutiveDaysAction;
+	QAction* dataTimeConstraintsStudentsMaxThreeConsecutiveDaysAction;
+
 	//block-planning
 	QAction* dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction;
 	QAction* dataTimeConstraintsMaxGapsBetweenActivitiesAction;
@@ -750,6 +753,9 @@ public slots:
 
 	void dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction_triggered();
 	void dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction_triggered();
+
+	void dataTimeConstraintsStudentsSetMaxThreeConsecutiveDaysAction_triggered();
+	void dataTimeConstraintsStudentsMaxThreeConsecutiveDaysAction_triggered();
 
 	//block-planning
 	void dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction_triggered();

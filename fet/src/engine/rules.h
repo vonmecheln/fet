@@ -774,6 +774,9 @@ private:
 	TimeConstraint* readTeacherMaxThreeConsecutiveDays(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMaxThreeConsecutiveDays(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readStudentsSetMaxThreeConsecutiveDays(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxThreeConsecutiveDays(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	TimeConstraint* readTeachersMaxDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readTeacherMinDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);

@@ -6210,28 +6210,33 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 				}
 			}
 			else{
+				/*
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 				QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[permutation[i]].constBegin(), subgroupsWithMaxDaysPerWeekForActivities[permutation[i]].constEnd());
+				QSet<int> st_smtd=QSet<int>(subgroupsWithMaxThreeConsecutiveDaysForActivities[permutation[i]].constBegin(), subgroupsWithMaxThreeConsecutiveDaysForActivities[permutation[i]].constEnd());
 				QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[permutation[i]].constBegin(), subgroupsWithMaxRealDaysPerWeekForActivities[permutation[i]].constEnd());
 				QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[permutation[i]].constBegin(), subgroupsWithMaxAfternoonsPerWeekForActivities[permutation[i]].constEnd());
 				QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[permutation[i]].constBegin(), subgroupsWithMaxMorningsPerWeekForActivities[permutation[i]].constEnd());
 #else
 				QSet<int> st_smhd=subgroupsWithMaxDaysPerWeekForActivities[permutation[i]].toSet();
+				QSet<int> st_smtd=subgroupsWithMaxThreeConsecutiveDaysForActivities[permutation[i]].toSet();
 				QSet<int> st_smd=subgroupsWithMaxRealDaysPerWeekForActivities[permutation[i]].toSet();
 				QSet<int> st_sma=subgroupsWithMaxAfternoonsPerWeekForActivities[permutation[i]].toSet();
 				QSet<int> st_smm=subgroupsWithMaxMorningsPerWeekForActivities[permutation[i]].toSet();
 #endif
-				QSet<int> st_smda=st_smhd+st_smd+st_sma;
-				QSet<int> st_smdm=st_smhd+st_smd+st_smm;
+				QSet<int> st_smda=st_smhd+st_smtd+st_smd+st_sma;
+				QSet<int> st_smdm=st_smhd+st_smtd+st_smd+st_smm;
+				*/
 
+				//speed improvement on 2022-02-16
 				if(d%2==1){
-					for(int j : qAsConst(st_smda)){
+					for(int j : qAsConst(/*st_smda*/ subgroupsForActivitiesOfTheDayAfternoons[permutation[i]])){
 						assert(subgroupActivitiesOfTheDay(j,d).indexOf(permutation[i])==-1);
 						subgroupActivitiesOfTheDay(j,d).append(permutation[i]);
 					}
 				}
 				else{
-					for(int j : qAsConst(st_smdm)){
+					for(int j : qAsConst(/*st_smdm*/ subgroupsForActivitiesOfTheDayMornings[permutation[i]])){
 						assert(subgroupActivitiesOfTheDay(j,d).indexOf(permutation[i])==-1);
 						subgroupActivitiesOfTheDay(j,d).append(permutation[i]);
 					}
@@ -6319,6 +6324,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 				}
 			}
 			else{
+				/*
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 				QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[permutation[i]].constBegin(), teachersWithMaxDaysPerWeekForActivities[permutation[i]].constEnd());
 				QSet<int> smtd=QSet<int>(teachersWithMaxThreeConsecutiveDaysForActivities[permutation[i]].constBegin(), teachersWithMaxThreeConsecutiveDaysForActivities[permutation[i]].constEnd());
@@ -6336,15 +6342,17 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 #endif
 				QSet<int> smda=smhd+smtd+smd+sma+smn1n2n3;
 				QSet<int> smdm=smhd+smtd+smd+smm+smn1n2n3;
+				*/
 
+				//speed improvement on 2022-02-16
 				if(d%2==1){
-					for(int j : qAsConst(smda)){
+					for(int j : qAsConst(/*smda*/ teachersForActivitiesOfTheDayAfternoons[permutation[i]])){
 						assert(teacherActivitiesOfTheDay(j,d).indexOf(permutation[i])==-1);
 						teacherActivitiesOfTheDay(j,d).append(permutation[i]);
 					}
 				}
 				else{
-					for(int j : qAsConst(smdm)){
+					for(int j : qAsConst(/*smdm*/ teachersForActivitiesOfTheDayMornings[permutation[i]])){
 						assert(teacherActivitiesOfTheDay(j,d).indexOf(permutation[i])==-1);
 						teacherActivitiesOfTheDay(j,d).append(permutation[i]);
 					}
@@ -6719,28 +6727,33 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				//update students' list of activities for each day
 				/////////////////
 
+				/*
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 				QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxDaysPerWeekForActivities[ai].constEnd());
+				QSet<int> st_smtd=QSet<int>(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
 				QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxRealDaysPerWeekForActivities[ai].constEnd());
 				QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
 				QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxMorningsPerWeekForActivities[ai].constEnd());
 #else
 				QSet<int> st_smhd=subgroupsWithMaxDaysPerWeekForActivities[ai].toSet();
+				QSet<int> st_smtd=subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].toSet();
 				QSet<int> st_smd=subgroupsWithMaxRealDaysPerWeekForActivities[ai].toSet();
 				QSet<int> st_sma=subgroupsWithMaxAfternoonsPerWeekForActivities[ai].toSet();
 				QSet<int> st_smm=subgroupsWithMaxMorningsPerWeekForActivities[ai].toSet();
 #endif
-				QSet<int> st_smda=st_smhd+st_smd+st_sma;
-				QSet<int> st_smdm=st_smhd+st_smd+st_smm;
+				QSet<int> st_smda=st_smhd+st_smtd+st_smd+st_sma;
+				QSet<int> st_smdm=st_smhd+st_smtd+st_smd+st_smm;
+				*/
 
+				//speed improvement on 2022-02-16
 				if(d%2==1){
-					for(int sbg : qAsConst(st_smda)){
+					for(int sbg : qAsConst(/*st_smda*/ subgroupsForActivitiesOfTheDayAfternoons[ai])){
 						int tt=subgroupActivitiesOfTheDay(sbg,d).removeAll(ai);
 						assert(tt==1);
 					}
 				}
 				else{
-					for(int sbg : qAsConst(st_smdm)){
+					for(int sbg : qAsConst(/*st_smdm*/ subgroupsForActivitiesOfTheDayMornings[ai])){
 						int tt=subgroupActivitiesOfTheDay(sbg,d).removeAll(ai);
 						assert(tt==1);
 					}
@@ -6791,6 +6804,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 				//update teachers' list of activities for each day
 				/////////////////
+				/*
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 				QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxDaysPerWeekForActivities[ai].constEnd());
 				QSet<int> smtd=QSet<int>(teachersWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), teachersWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
@@ -6808,15 +6822,17 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 #endif
 				QSet<int> smda=smhd+smtd+smd+sma+smn1n2n3;
 				QSet<int> smdm=smhd+smtd+smd+smm+smn1n2n3;
+				*/
 
+				//speed improvement on 2022-02-16
 				if(d%2==1){
-					for(int tch : qAsConst(smda)){
+					for(int tch : qAsConst(/*smda*/ teachersForActivitiesOfTheDayAfternoons[ai])){
 						int tt=teacherActivitiesOfTheDay(tch,d).removeAll(ai);
 						assert(tt==1);
 					}
 				}
 				else{
-					for(int tch : qAsConst(smdm)){
+					for(int tch : qAsConst(/*smdm*/ teachersForActivitiesOfTheDayMornings[ai])){
 						int tt=teacherActivitiesOfTheDay(tch,d).removeAll(ai);
 						assert(tt==1);
 					}
@@ -6931,28 +6947,33 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				//update students' list of activities for each day
 				/////////////////
 
+				/*
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 				QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxDaysPerWeekForActivities[ai].constEnd());
+				QSet<int> st_smtd=QSet<int>(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
 				QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxRealDaysPerWeekForActivities[ai].constEnd());
 				QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
 				QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxMorningsPerWeekForActivities[ai].constEnd());
 #else
 				QSet<int> st_smhd=subgroupsWithMaxDaysPerWeekForActivities[ai].toSet();
+				QSet<int> st_smtd=subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].toSet();
 				QSet<int> st_smd=subgroupsWithMaxRealDaysPerWeekForActivities[ai].toSet();
 				QSet<int> st_sma=subgroupsWithMaxAfternoonsPerWeekForActivities[ai].toSet();
 				QSet<int> st_smm=subgroupsWithMaxMorningsPerWeekForActivities[ai].toSet();
 #endif
-				QSet<int> st_smda=st_smhd+st_smd+st_sma;
-				QSet<int> st_smdm=st_smhd+st_smd+st_smm;
+				QSet<int> st_smda=st_smhd+st_smtd+st_smd+st_sma;
+				QSet<int> st_smdm=st_smhd+st_smtd+st_smd+st_smm;
+				*/
 
+				//speed improvement on 2022-02-16
 				if(d%2==1){
-					for(int sbg : qAsConst(st_smda)){
+					for(int sbg : qAsConst(/*st_smda*/ subgroupsForActivitiesOfTheDayAfternoons[ai])){
 						assert(subgroupActivitiesOfTheDay(sbg,d).indexOf(ai)==-1);
 						subgroupActivitiesOfTheDay(sbg,d).append(ai);
 					}
 				}
 				else{
-					for(int sbg : qAsConst(st_smdm)){
+					for(int sbg : qAsConst(/*st_smdm*/ subgroupsForActivitiesOfTheDayMornings[ai])){
 						assert(subgroupActivitiesOfTheDay(sbg,d).indexOf(ai)==-1);
 						subgroupActivitiesOfTheDay(sbg,d).append(ai);
 					}
@@ -7005,6 +7026,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 				//update teachers' list of activities for each day
 				/////////////////
+				/*
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 				QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxDaysPerWeekForActivities[ai].constEnd());
 				QSet<int> smtd=QSet<int>(teachersWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), teachersWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
@@ -7022,15 +7044,17 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 #endif
 				QSet<int> smda=smhd+smtd+smd+sma+smn1n2n3;
 				QSet<int> smdm=smhd+smtd+smd+smm+smn1n2n3;
+				*/
 
+				//speed improvement on 2022-02-16
 				if(d%2==1){
-					for(int tch : qAsConst(smda)){
+					for(int tch : qAsConst(/*smda*/ teachersForActivitiesOfTheDayAfternoons[ai])){
 						assert(teacherActivitiesOfTheDay(tch,d).indexOf(ai)==-1);
 						teacherActivitiesOfTheDay(tch,d).append(ai);
 					}
 				}
 				else{
-					for(int tch : qAsConst(smdm)){
+					for(int tch : qAsConst(/*smdm*/ teachersForActivitiesOfTheDayMornings[ai])){
 						assert(teacherActivitiesOfTheDay(tch,d).indexOf(ai)==-1);
 						teacherActivitiesOfTheDay(tch,d).append(ai);
 					}
@@ -7169,6 +7193,7 @@ again_if_impossible_activity:
 		bool okactivityendsteachersday;
 
 		bool okstudentsmaxdaysperweek;
+		bool okstudentsmaxthreeconsecutivedays;
 		bool okstudentsmaxrealdaysperweek;
 		bool okstudentsintervalmaxdaysperweek;
 
@@ -7204,6 +7229,7 @@ again_if_impossible_activity:
 
 		bool okteachersmaxdaysperweek;
 		bool okteachersmaxthreeconsecutivedays;
+		bool okteachersmaxrealdaysperweek;
 		bool okteachersintervalmaxdaysperweek;
 
 		bool okteachersafternoonsearlymaxbeginningsatsecondhour;
@@ -7213,8 +7239,6 @@ again_if_impossible_activity:
 		bool okteachermaxmorningsperweek;
 		bool okteachersmorningintervalmaxdaysperweek;
 		bool okteachersafternoonintervalmaxdaysperweek;
-
-		bool okteachermaxrealdaysperweek;
 
 		bool okteachersmaxspanperday;
 		bool okteachersminrestinghours;
@@ -10641,11 +10665,381 @@ impossiblestudentsmaxdaysperweek:
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+		//not breaking the students max three consecutive days
+		////////////////////////////BEGIN max three consecutive days for students
+		okstudentsmaxthreeconsecutivedays=true;
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(int sbg : qAsConst(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai])){
+				if(!skipRandom(subgroupsMaxThreeConsecutiveDaysPercentages[sbg])){
+					int maxDays=3;
+					bool allowExceptionAMAM=subgroupsMaxThreeConsecutiveDaysAllowAMAMException[sbg];
+					
+					//preliminary test
+					int _nOc=1;
+					int _dstart=d, _dend=d;
+					for(int d2=d-1; d2>=0; d2--){
+						if(subgroupActivitiesOfTheDay(sbg,d2).count()>0){
+							_nOc++;
+							_dstart=d2;
+						}
+						else{
+							break;
+						}
+					}
+					for(int d2=d+1; d2<gt.rules.nDaysPerWeek; d2++){
+						if(subgroupActivitiesOfTheDay(sbg,d2).count()>0){
+							_nOc++;
+							_dend=d2;
+						}
+						else{
+							break;
+						}
+					}
+
+					assert(_dstart>=0);
+					assert(_dend>=0);
+
+					if(_nOc<=maxDays || (allowExceptionAMAM && _dend-_dstart==maxDays && _dstart%2==1 && _dend%2==0))
+						continue; //OK, preliminary
+
+					if(level>0){
+						occupiedDay[d]=true;
+						canEmptyDay[d]=false;
+					
+						for(int d2=d-1; d2>=0; d2--){
+							occupiedDay[d2]=false;
+							canEmptyDay[d2]=true;
+
+							_nConflActivities[d2]=0;
+							_activitiesForDay[d2].clear();
+							
+							if(subgroupActivitiesOfTheDay(sbg,d2).count()>0){
+								for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(sbg,d2))){
+									if(ai2>=0){
+										if(!conflActivities[newtime].contains(ai2)){
+											occupiedDay[d2]=true;
+											if(fixedTimeActivity[ai2] || swappedActivities[ai2])
+												canEmptyDay[d2]=false;
+											else if(!_activitiesForDay[d2].contains(ai2)){
+												_nConflActivities[d2]++;
+												_activitiesForDay[d2].append(ai2);
+												assert(_nConflActivities[d2]==_activitiesForDay[d2].count());
+											}
+										}
+									}
+								}
+							}
+
+							if(!occupiedDay[d2])
+								break;
+						}
+						
+						for(int d2=d+1; d2<gt.rules.nDaysPerWeek; d2++){
+							occupiedDay[d2]=false;
+							canEmptyDay[d2]=true;
+
+							_nConflActivities[d2]=0;
+							_activitiesForDay[d2].clear();
+							
+							if(subgroupActivitiesOfTheDay(sbg,d2).count()>0){
+								for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(sbg,d2))){
+									if(ai2>=0){
+										if(!conflActivities[newtime].contains(ai2)){
+											occupiedDay[d2]=true;
+											if(fixedTimeActivity[ai2] || swappedActivities[ai2])
+												canEmptyDay[d2]=false;
+											else if(!_activitiesForDay[d2].contains(ai2)){
+												_nConflActivities[d2]++;
+												_activitiesForDay[d2].append(ai2);
+												assert(_nConflActivities[d2]==_activitiesForDay[d2].count());
+											}
+										}
+									}
+								}
+							}
+
+							if(!occupiedDay[d2])
+								break;
+						}
+
+						for(;;){
+							int dstart=d, dend=d;
+							int nOc=1;
+
+							for(int d2=d-1; d2>=0; d2--){
+								if(occupiedDay[d2]){
+									nOc++;
+									dstart=d2;
+								}
+								else{
+									break;
+								}
+							}
+							for(int d2=d+1; d2<gt.rules.nDaysPerWeek; d2++){
+								if(occupiedDay[d2]){
+									nOc++;
+									dend=d2;
+								}
+								else{
+									break;
+								}
+							}
+
+							if(nOc<=maxDays || (allowExceptionAMAM && dend-dstart==maxDays && dstart%2==1 && dend%2==0))
+								break;
+							
+							bool canChooseDay=false;
+							
+							for(int j=dstart; j<=dend; j++)
+								if(occupiedDay[j]){
+									if(canEmptyDay[j]){
+										canChooseDay=true;
+									}
+								}
+							
+							if(!canChooseDay){
+								if(level==0){
+									//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+									//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
+								}
+								okstudentsmaxthreeconsecutivedays=false;
+								goto impossiblestudentsmaxthreeconsecutivedays;
+							}
+							
+							int d2=-1;
+							
+							////////////////
+							//choose a random day from those with minimum number of conflicting activities
+							QList<int> candidateDays;
+							
+							int m=gt.rules.nInternalActivities;
+							
+							for(int kk=dstart; kk<=dend; kk++)
+								if(occupiedDay[kk] && canEmptyDay[kk])
+									if(m>_nConflActivities[kk])
+										m=_nConflActivities[kk];
+							
+							candidateDays.clear();
+							for(int kk=dstart; kk<=dend; kk++)
+								if(occupiedDay[kk] && canEmptyDay[kk])
+									if(m==_nConflActivities[kk])
+										candidateDays.append(kk);
+							
+							assert(candidateDays.count()>0);
+							d2=candidateDays.at(rng.intMRG32k3a(candidateDays.count()));
+							/////////////////
+							
+							assert(d2>=0);
+
+							assert(_activitiesForDay[d2].count()>0);
+
+							for(int ai2 : qAsConst(_activitiesForDay[d2])){
+								assert(ai2!=ai);
+								assert(!swappedActivities[ai2]);
+								assert(!fixedTimeActivity[ai2]);
+								assert(!conflActivities[newtime].contains(ai2));
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+							}
+							
+							occupiedDay[d2]=false;
+							canEmptyDay[d2]=true;
+						}
+					}
+					else{
+						assert(level==0);
+
+						occupiedDay[d]=true;
+						canEmptyDay[d]=false;
+					
+						for(int d2=d-1; d2>=0; d2--){
+							occupiedDay[d2]=false;
+							canEmptyDay[d2]=true;
+
+							_minWrong[d2]=INF;
+							_nWrong[d2]=0;
+							_nConflActivities[d2]=0;
+							_minIndexAct[d2]=gt.rules.nInternalActivities;
+							_activitiesForDay[d2].clear();
+							
+							if(subgroupActivitiesOfTheDay(sbg,d2).count()>0){
+								for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(sbg,d2))){
+									if(ai2>=0){
+										if(!conflActivities[newtime].contains(ai2)){
+											occupiedDay[d2]=true;
+											if(fixedTimeActivity[ai2] || swappedActivities[ai2])
+												canEmptyDay[d2]=false;
+											else if(!_activitiesForDay[d2].contains(ai2)){
+												_minWrong[d2] = min (_minWrong[d2], triedRemovals(ai2,c.times[ai2]));
+												_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);
+												_nWrong[d2]+=triedRemovals(ai2,c.times[ai2]);
+												_nConflActivities[d2]++;
+												_activitiesForDay[d2].append(ai2);
+												assert(_nConflActivities[d2]==_activitiesForDay[d2].count());
+											}
+										}
+									}
+								}
+							}
+
+							if(!occupiedDay[d2])
+								break;
+						}
+						
+						for(int d2=d+1; d2<gt.rules.nDaysPerWeek; d2++){
+							occupiedDay[d2]=false;
+							canEmptyDay[d2]=true;
+
+							_minWrong[d2]=INF;
+							_nWrong[d2]=0;
+							_nConflActivities[d2]=0;
+							_minIndexAct[d2]=gt.rules.nInternalActivities;
+							_activitiesForDay[d2].clear();
+							
+							if(subgroupActivitiesOfTheDay(sbg,d2).count()>0){
+								for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(sbg,d2))){
+									if(ai2>=0){
+										if(!conflActivities[newtime].contains(ai2)){
+											occupiedDay[d2]=true;
+											if(fixedTimeActivity[ai2] || swappedActivities[ai2])
+												canEmptyDay[d2]=false;
+											else if(!_activitiesForDay[d2].contains(ai2)){
+												_minWrong[d2] = min (_minWrong[d2], triedRemovals(ai2,c.times[ai2]));
+												_minIndexAct[d2]=min(_minIndexAct[d2], invPermutation[ai2]);
+												_nWrong[d2]+=triedRemovals(ai2,c.times[ai2]);
+												_nConflActivities[d2]++;
+												_activitiesForDay[d2].append(ai2);
+												assert(_nConflActivities[d2]==_activitiesForDay[d2].count());
+											}
+										}
+									}
+								}
+							}
+
+							if(!occupiedDay[d2])
+								break;
+						}
+
+						for(;;){
+							int dstart=d, dend=d;
+							int nOc=1;
+
+							for(int d2=d-1; d2>=0; d2--){
+								if(occupiedDay[d2]){
+									nOc++;
+									dstart=d2;
+								}
+								else{
+									break;
+								}
+							}
+							for(int d2=d+1; d2<gt.rules.nDaysPerWeek; d2++){
+								if(occupiedDay[d2]){
+									nOc++;
+									dend=d2;
+								}
+								else{
+									break;
+								}
+							}
+
+							if(nOc<=maxDays || (allowExceptionAMAM && dend-dstart==maxDays && dstart%2==1 && dend%2==0))
+								break;
+							
+							bool canChooseDay=false;
+							
+							for(int j=dstart; j<=dend; j++)
+								if(occupiedDay[j]){
+									if(canEmptyDay[j]){
+										canChooseDay=true;
+									}
+								}
+							
+							if(!canChooseDay){
+								if(level==0){
+									//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+									//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
+								}
+								okstudentsmaxthreeconsecutivedays=false;
+								goto impossiblestudentsmaxthreeconsecutivedays;
+							}
+							
+							int d2=-1;
+							
+							////////////////
+							//choose a random day from those with minimum number of conflicting activities
+							QList<int> candidateDays;
+							
+							int _mW=INF;
+							int _nW=INF;
+							int _mCA=gt.rules.nInternalActivities;
+							int _mIA=gt.rules.nInternalActivities;
+							
+							for(int kk=dstart; kk<=dend; kk++)
+								if(occupiedDay[kk] && canEmptyDay[kk])
+									if(_mW>_minWrong[kk] ||
+									 (_mW==_minWrong[kk] && _nW>_nWrong[kk]) ||
+									 (_mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA>_nConflActivities[kk]) ||
+									 (_mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA==_nConflActivities[kk] && _mIA>_minIndexAct[kk])){
+										_mW=_minWrong[kk];
+										_nW=_nWrong[kk];
+										_mCA=_nConflActivities[kk];
+										_mIA=_minIndexAct[kk];
+									}
+							
+							candidateDays.clear();
+							for(int kk=dstart; kk<=dend; kk++)
+								if(occupiedDay[kk] && canEmptyDay[kk])
+									if(_mW==_minWrong[kk] && _nW==_nWrong[kk] && _mCA==_nConflActivities[kk] && _mIA==_minIndexAct[kk])
+										candidateDays.append(kk);
+							
+							assert(candidateDays.count()>0);
+							d2=candidateDays.at(rng.intMRG32k3a(candidateDays.count()));
+							/////////////////
+							
+							assert(d2>=0);
+
+							assert(_activitiesForDay[d2].count()>0);
+
+							for(int ai2 : qAsConst(_activitiesForDay[d2])){
+								assert(ai2!=ai);
+								assert(!swappedActivities[ai2]);
+								assert(!fixedTimeActivity[ai2]);
+								assert(!conflActivities[newtime].contains(ai2));
+								conflActivities[newtime].append(ai2);
+								nConflActivities[newtime]++;
+								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+							}
+							
+							occupiedDay[d2]=false;
+							canEmptyDay[d2]=true;
+						}
+					}
+				}
+			}
+		}
+impossiblestudentsmaxthreeconsecutivedays:
+		if(!okstudentsmaxthreeconsecutivedays){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+		////////////////////////////END students max three consecutive days
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 		//not breaking the students max real days per week constraints
 		////////////////////////////BEGIN max real days per week for students
 		okstudentsmaxrealdaysperweek=true;
+		//comments taken from teachers constraint:
 		//for(int tch : qAsConst(act->iTeachersList)){
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			//comments taken from teachers constraint:
 			//for(int tch : qAsConst(act->iTeachersList)){
 			for(int st : qAsConst(subgroupsWithMaxRealDaysPerWeekForActivities[ai])){
 				if(skipRandom(subgroupsMaxRealDaysPerWeekWeightPercentages[st]))
@@ -17927,9 +18321,9 @@ impossibleteachersmaxthreeconsecutivedays:
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-		//not breaking the teacher max real days per week constraints
+		//not breaking the teachers max real days per week constraints
 		////////////////////////////BEGIN max real days per week for teachers
-		okteachermaxrealdaysperweek=true;
+		okteachersmaxrealdaysperweek=true;
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			//for(int tch : qAsConst(act->iTeachersList)){
 			for(int tch : qAsConst(teachersWithMaxRealDaysPerWeekForActivities[ai])){
@@ -18047,8 +18441,8 @@ impossibleteachersmaxthreeconsecutivedays:
 								//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
 								//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
 							}
-							okteachermaxrealdaysperweek=false;
-							goto impossibleteachermaxrealdaysperweek;
+							okteachersmaxrealdaysperweek=false;
+							goto impossibleteachersmaxrealdaysperweek;
 						}
 
 						int d2=-1;
@@ -18122,8 +18516,8 @@ impossibleteachersmaxthreeconsecutivedays:
 				}
 			}
 		}
-impossibleteachermaxrealdaysperweek:
-		if(!okteachermaxrealdaysperweek){
+impossibleteachersmaxrealdaysperweek:
+		if(!okteachersmaxrealdaysperweek){
 			if(updateSubgroups || updateTeachers)
 				removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);

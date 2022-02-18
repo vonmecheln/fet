@@ -256,6 +256,17 @@ extern Matrix1D<QList<int>> teachersWithMaxThreeConsecutiveDaysForActivities;
 bool computeMaxThreeConsecutiveDaysForTeachers(QWidget* parent);
 ////////END   teachers max three consecutive days
 
+////////BEGIN students max three consecutive days
+//activities indices (in 0..gt.rules.nInternalActivities-1) for each subgroup
+extern Matrix1D<bool> subgroupsMaxThreeConsecutiveDaysAllowAMAMException;
+extern Matrix1D<double> subgroupsMaxThreeConsecutiveDaysPercentages; //-1 for not existing
+//it is practically better to use the variable below and to put it exactly like in generate.cpp,
+//the order of activities changes
+extern Matrix1D<QList<int>> subgroupsWithMaxThreeConsecutiveDaysForActivities;
+
+bool computeMaxThreeConsecutiveDaysForStudents(QWidget* parent);
+////////END   students max three consecutive days
+
 
 //for mornings-afternoons
 //activities indices (in 0..gt.rules.nInternalActivities-1) for each teacher
@@ -1164,6 +1175,15 @@ extern Matrix1D<QList<TeacherActivityTagMinHoursDaily_item*>> tatmhdListForTeach
 extern bool haveTeachersActivityTagMinHoursDaily;
 
 bool computeTeachersActivityTagMinHoursDaily(QWidget* parent);
+
+//2022-02-16 - speed improvements in the Mornings-Afternoons mode
+extern Matrix1D<QList<int>> subgroupsForActivitiesOfTheDayMornings;
+extern Matrix1D<QList<int>> subgroupsForActivitiesOfTheDayAfternoons;
+////
+extern Matrix1D<QList<int>> teachersForActivitiesOfTheDayMornings;
+extern Matrix1D<QList<int>> teachersForActivitiesOfTheDayAfternoons;
+////
+void computeSubgroupsTeachersForActivitiesOfTheDay();
 
 /////////////////////////////////////////////////////////////////////////
 

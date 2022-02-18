@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.2.5">
+<fet version="6.3.0">
 
 <Mode>Mornings_Afternoons</Mode>
 
@@ -2410,6 +2410,19 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintStudentsMinGapsBetweenActivityTag>
+<ConstraintStudentsSetMaxThreeConsecutiveDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Students>y2</Students>
+	<Allow_Afternoon_Morning_Afternoon_Morning_Exception>false</Allow_Afternoon_Morning_Afternoon_Morning_Exception>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMaxThreeConsecutiveDays>
+<ConstraintStudentsMaxThreeConsecutiveDays>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Allow_Afternoon_Morning_Afternoon_Morning_Exception>true</Allow_Afternoon_Morning_Afternoon_Morning_Exception>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMaxThreeConsecutiveDays>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

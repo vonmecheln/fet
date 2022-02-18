@@ -284,6 +284,17 @@ Matrix1D<QList<int>> teachersWithMaxThreeConsecutiveDaysForActivities;
 //bool computeMaxThreeDaysConsecutiveForTeachers(QWidget* parent);
 ////////END   teachers max three consecutive days
 
+////////BEGIN students max three consecutive days
+//activities indices (in 0..gt.rules.nInternalActivities-1) for each subgroup
+Matrix1D<bool> subgroupsMaxThreeConsecutiveDaysAllowAMAMException;
+Matrix1D<double> subgroupsMaxThreeConsecutiveDaysPercentages; //-1 for not existing
+//it is practically better to use the variable below and to put it exactly like in generate.cpp,
+//the order of activities changes
+Matrix1D<QList<int>> subgroupsWithMaxThreeConsecutiveDaysForActivities;
+
+//bool computeMaxThreeDaysConsecutiveForStudents(QWidget* parent);
+////////END   students max three consecutive days
+
 
 Matrix1D<double> teachersAfternoonsEarlyMaxBeginningsAtSecondHourPercentage;
 Matrix1D<int> teachersAfternoonsEarlyMaxBeginningsAtSecondHourMaxBeginnings;
@@ -948,6 +959,15 @@ bool haveTeachersActivityTagMinHoursDaily;
 
 //bool computeTeachersActivityTagMinHoursDaily(QWidget* parent);
 
+//2022-02-16 - speed improvement in the Mornings-Afternoons mode
+Matrix1D<QList<int>> subgroupsForActivitiesOfTheDayMornings;
+Matrix1D<QList<int>> subgroupsForActivitiesOfTheDayAfternoons;
+////
+Matrix1D<QList<int>> teachersForActivitiesOfTheDayMornings;
+Matrix1D<QList<int>> teachersForActivitiesOfTheDayAfternoons;
+////
+//void computeSubgroupsTeachersForActivitiesOfTheDay();
+
 /////////////////////////////////////////////////////////////////////////
 
 Matrix1D<bool> fixedTimeActivity;
@@ -1159,6 +1179,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//
 	teachersMaxThreeConsecutiveDaysAllowAMAMException.resize(gt.rules.nInternalTeachers);
 	teachersMaxThreeConsecutiveDaysPercentages.resize(gt.rules.nInternalTeachers); //-1 for not existing
+	//
+	subgroupsMaxThreeConsecutiveDaysAllowAMAMException.resize(gt.rules.nInternalSubgroups);
+	subgroupsMaxThreeConsecutiveDaysPercentages.resize(gt.rules.nInternalSubgroups); //-1 for not existing
 	//
 	teachersMaxGapsPerWeekPercentage.resize(gt.rules.nInternalTeachers);
 	teachersMaxGapsPerWeekMaxGaps.resize(gt.rules.nInternalTeachers);
@@ -1400,6 +1423,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	subgroupsWithMaxDaysPerWeekForActivities.resize(gt.rules.nInternalActivities);
 
 	teachersWithMaxThreeConsecutiveDaysForActivities.resize(gt.rules.nInternalActivities);
+	subgroupsWithMaxThreeConsecutiveDaysForActivities.resize(gt.rules.nInternalActivities);
 
 	teachersWithMaxRealDaysPerWeekForActivities.resize(gt.rules.nInternalActivities);
 
@@ -1571,6 +1595,13 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 
 	//2013-09-14
 	asricListForActivity.resize(gt.rules.nInternalActivities);
+	
+	//2022-02-16
+	subgroupsForActivitiesOfTheDayMornings.resize(gt.rules.nInternalActivities);
+	subgroupsForActivitiesOfTheDayAfternoons.resize(gt.rules.nInternalActivities);
+	////
+	teachersForActivitiesOfTheDayMornings.resize(gt.rules.nInternalActivities);
+	teachersForActivitiesOfTheDayAfternoons.resize(gt.rules.nInternalActivities);
 
 	//////////////////end resizing - new feature
 	
@@ -1616,6 +1647,10 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	
 	/////3.5. STUDENTS MAX DAYS PER WEEK
 	t=computeMaxDaysPerWeekForStudents(parent);
+	if(!t)
+		return false;
+
+	t=computeMaxThreeConsecutiveDaysForStudents(parent);
 	if(!t)
 		return false;
 
@@ -2086,6 +2121,8 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	
 	computeMustComputeTimetableSubgroups();
 	computeMustComputeTimetableTeachers();
+	
+	computeSubgroupsTeachersForActivitiesOfTheDay();
 	
 	//!after computeActivitiesRoomsPreferences!
 	t=computeFixedActivities(parent);
@@ -10948,6 +10985,89 @@ bool computeMaxThreeConsecutiveDaysForTeachers(QWidget* parent)
 	return ok;
 }
 
+bool computeMaxThreeConsecutiveDaysForStudents(QWidget* parent)
+{
+	for(int j=0; j<gt.rules.nInternalSubgroups; j++){
+		subgroupsMaxThreeConsecutiveDaysAllowAMAMException[j]=true;
+		subgroupsMaxThreeConsecutiveDaysPercentages[j]=-1;
+	}
+
+	bool ok=true;
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintStudentsSetMaxThreeConsecutiveDays* cn=(ConstraintStudentsSetMaxThreeConsecutiveDays*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students set max three consecutive days with"
+				 " weight (percentage) below 100% for students set %1. It is only possible to use 100% weight for such constraints."
+				 " Please make weight 100% and try again.")
+				 .arg(cn->students),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+
+			for(int q=0; q<cn->iSubgroupsList.count(); q++){
+				int sbg=cn->iSubgroupsList.at(q);
+				if(subgroupsMaxThreeConsecutiveDaysPercentages[sbg]==-1 ||
+				 (subgroupsMaxThreeConsecutiveDaysPercentages[sbg]>=0 &&
+				 subgroupsMaxThreeConsecutiveDaysAllowAMAMException[sbg]==true)){
+					subgroupsMaxThreeConsecutiveDaysPercentages[sbg]=cn->weightPercentage;
+					subgroupsMaxThreeConsecutiveDaysAllowAMAMException[sbg]=cn->allowAMAMException;
+				}
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintStudentsMaxThreeConsecutiveDays* cn=(ConstraintStudentsMaxThreeConsecutiveDays*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students max three consecutive days with"
+				 " weight (percentage) below 100%. It is only possible to use 100% weight for such constraints. Please make weight 100% and try again."),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				if(subgroupsMaxThreeConsecutiveDaysPercentages[sbg]==-1 ||
+				 (subgroupsMaxThreeConsecutiveDaysPercentages[sbg]>=0 &&
+				 subgroupsMaxThreeConsecutiveDaysAllowAMAMException[sbg]==true)){
+					subgroupsMaxThreeConsecutiveDaysPercentages[sbg]=cn->weightPercentage;
+					subgroupsMaxThreeConsecutiveDaysAllowAMAMException[sbg]=cn->allowAMAMException;
+				}
+			}
+		}
+	}
+	
+	if(ok){
+		for(int i=0; i<gt.rules.nInternalActivities; i++){
+			subgroupsWithMaxThreeConsecutiveDaysForActivities[i].clear();
+		
+			Activity* act=&gt.rules.internalActivitiesList[i];
+			for(int j=0; j<act->iSubgroupsList.count(); j++){
+				int sbg=act->iSubgroupsList.at(j);
+				
+				if(subgroupsMaxThreeConsecutiveDaysPercentages[sbg]>=0){
+					assert(subgroupsWithMaxThreeConsecutiveDaysForActivities[i].indexOf(sbg)==-1);
+					subgroupsWithMaxThreeConsecutiveDaysForActivities[i].append(sbg);
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
 bool computeMaxDaysPerWeekForStudents(QWidget* parent)
 {
 	for(int j=0; j<gt.rules.nInternalSubgroups; j++){
@@ -10993,7 +11113,7 @@ bool computeMaxDaysPerWeekForStudents(QWidget* parent)
 				 " weight (percentage) below 100. Please make weight 100% and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
-			 	
+				
 				if(t==0)
 					return false;
 			}
@@ -17194,6 +17314,81 @@ void computeMustComputeTimetableTeachers()
 				mustComputeTimetableTeachers[ai].append(tch);
 				mustComputeTimetableTeacher[tch]=true;
 			}
+	}
+}
+
+//2022-02-16
+void computeSubgroupsTeachersForActivitiesOfTheDay()
+{
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		//students
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+		QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[ai].begin(), subgroupsWithMaxDaysPerWeekForActivities[ai].end());
+		QSet<int> st_smtd=QSet<int>(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].begin(), subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].end());
+		QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[ai].begin(), subgroupsWithMaxRealDaysPerWeekForActivities[ai].end());
+		QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[ai].begin(), subgroupsWithMaxAfternoonsPerWeekForActivities[ai].end());
+		QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[ai].begin(), subgroupsWithMaxMorningsPerWeekForActivities[ai].end());
+#else
+		QSet<int> st_smhd=subgroupsWithMaxDaysPerWeekForActivities[ai].toSet();
+		QSet<int> st_smtd=subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].toSet();
+		QSet<int> st_smd=subgroupsWithMaxRealDaysPerWeekForActivities[ai].toSet();
+		QSet<int> st_sma=subgroupsWithMaxAfternoonsPerWeekForActivities[ai].toSet();
+		QSet<int> st_smm=subgroupsWithMaxMorningsPerWeekForActivities[ai].toSet();
+#endif
+		QSet<int> st_smda=st_smhd+st_smtd+st_smd+st_sma;
+		QSet<int> st_smdm=st_smhd+st_smtd+st_smd+st_smm;
+		
+		QList<int> st_lmda;
+		QList<int> st_lmdm;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+		st_lmda=QList<int>(st_smda.begin(), st_smda.end());
+		st_lmdm=QList<int>(st_smdm.begin(), st_smdm.end());
+#else
+		st_lmda=st_smda.toList();
+		st_lmdm=st_smdm.toList();
+#endif
+		std::stable_sort(st_lmda.begin(), st_lmda.end()); //not needed, the generation behavior (random seed) stays the same with any order of st_lmda - see the corresponding code in generate.cpp
+		std::stable_sort(st_lmdm.begin(), st_lmdm.end()); //not needed, the generation behavior (random seed) stays the same with any order of st_lmdm - see the corresponding code in generate.cpp
+
+		subgroupsForActivitiesOfTheDayAfternoons[ai]=st_lmda;
+		subgroupsForActivitiesOfTheDayMornings[ai]=st_lmdm;
+	}
+	
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
+		//teachers
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+		QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[ai].begin(), teachersWithMaxDaysPerWeekForActivities[ai].end());
+		QSet<int> smtd=QSet<int>(teachersWithMaxThreeConsecutiveDaysForActivities[ai].begin(), teachersWithMaxThreeConsecutiveDaysForActivities[ai].end());
+		QSet<int> smd=QSet<int>(teachersWithMaxRealDaysPerWeekForActivities[ai].begin(), teachersWithMaxRealDaysPerWeekForActivities[ai].end());
+		QSet<int> smn1n2n3=QSet<int>(teachersWithN1N2N3ForActivities[ai].begin(), teachersWithN1N2N3ForActivities[ai].end());
+		QSet<int> sma=QSet<int>(teachersWithMaxAfternoonsPerWeekForActivities[ai].begin(), teachersWithMaxAfternoonsPerWeekForActivities[ai].end());
+		QSet<int> smm=QSet<int>(teachersWithMaxMorningsPerWeekForActivities[ai].begin(), teachersWithMaxMorningsPerWeekForActivities[ai].end());
+#else
+		QSet<int> smhd=teachersWithMaxDaysPerWeekForActivities[ai].toSet();
+		QSet<int> smtd=teachersWithMaxThreeConsecutiveDaysForActivities[ai].toSet();
+		QSet<int> smd=teachersWithMaxRealDaysPerWeekForActivities[ai].toSet();
+		QSet<int> smn1n2n3=teachersWithN1N2N3ForActivities[ai].toSet();
+		QSet<int> sma=teachersWithMaxAfternoonsPerWeekForActivities[ai].toSet();
+		QSet<int> smm=teachersWithMaxMorningsPerWeekForActivities[ai].toSet();
+#endif
+		QSet<int> smda=smhd+smtd+smd+sma+smn1n2n3;
+		QSet<int> smdm=smhd+smtd+smd+smm+smn1n2n3;
+		
+		QList<int> lmda;
+		QList<int> lmdm;
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+		lmda=QList<int>(smda.begin(), smda.end());
+		lmdm=QList<int>(smdm.begin(), smdm.end());
+#else
+		lmda=smda.toList();
+		lmdm=smdm.toList();
+#endif
+		std::stable_sort(lmda.begin(), lmda.end()); //not needed, the generation behavior (random seed) stays the same with any order of lmda - see the corresponding code in generate.cpp
+		std::stable_sort(lmdm.begin(), lmdm.end()); //not needed, the generation behavior (random seed) stays the same with any order of lmdm - see the corresponding code in generate.cpp
+
+		teachersForActivitiesOfTheDayAfternoons[ai]=lmda;
+		teachersForActivitiesOfTheDayMornings[ai]=lmdm;
 	}
 }
 

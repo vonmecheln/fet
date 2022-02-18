@@ -256,6 +256,9 @@
 #include "modifyconstraintteachermaxthreeconsecutivedaysform.h"
 #include "modifyconstraintteachersmaxthreeconsecutivedaysform.h"
 
+#include "modifyconstraintstudentssetmaxthreeconsecutivedaysform.h"
+#include "modifyconstraintstudentsmaxthreeconsecutivedaysform.h"
+
 //block planning
 #include "modifyconstraintmaxgapsbetweenactivitiesform.h"
 
@@ -1771,6 +1774,19 @@ void AllTimeConstraintsForm::modifyConstraint()
 	//181
 	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
 		ModifyConstraintTeachersMinGapsBetweenActivityTagForm form(this, (ConstraintTeachersMinGapsBetweenActivityTag*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//2022-02-15
+	//182
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_THREE_CONSECUTIVE_DAYS){
+		ModifyConstraintStudentsSetMaxThreeConsecutiveDaysForm form(this, (ConstraintStudentsSetMaxThreeConsecutiveDays*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//183
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_THREE_CONSECUTIVE_DAYS){
+		ModifyConstraintStudentsMaxThreeConsecutiveDaysForm form(this, (ConstraintStudentsMaxThreeConsecutiveDays*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
