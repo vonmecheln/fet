@@ -77,6 +77,11 @@ SubactivitiesForm::SubactivitiesForm(QWidget* parent, const QString& teacherName
 	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
 	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(subactivityComments()));
 
+	invertedTeacherCheckBox->setChecked(false);
+	invertedStudentsCheckBox->setChecked(false);
+	invertedSubjectCheckBox->setChecked(false);
+	invertedActivityTagCheckBox->setChecked(false);
+
 	connect(invertedTeacherCheckBox, SIGNAL(toggled(bool)), this, SLOT(filterChanged()));
 	connect(invertedStudentsCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
 	connect(invertedSubjectCheckBox, SIGNAL(toggled(bool)), this, SLOT(filterChanged()));

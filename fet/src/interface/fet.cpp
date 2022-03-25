@@ -1468,12 +1468,13 @@ int main(int argc, char **argv)
 			else if(showVersion){
 				cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
 				cout<<"Free timetabling software, licensed under the GNU Affero General Public License version 3 or later"<<endl;
-				cout<<"Copyright (C) 2002-2021 Liviu Lalescu, Volker Dirr"<<endl;
+				cout<<"Copyright (C) 2002-2022 Liviu Lalescu, Volker Dirr"<<endl;
 				cout<<"Homepage: https://lalescu.ro/liviu/fet/"<<endl;
 				cout<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<endl;
 				cout<<"Depending on the platform and compiler, this program may use libraries from:"<<endl;
 				cout<<"  gcc, Copyright (C) Free Software Foundation, Inc."<<endl;
-				cout<<"  mingw-w64, Copyright (c) by the mingw-w64 project"<<endl;
+				cout<<"  MinGW-w64, Copyright (c) by the mingw-w64 project"<<endl;
+				cout<<"  Clang"<<endl;
 				return 0;
 			}
 			else{

@@ -41,18 +41,28 @@ HelpAboutLibrariesForm::HelpAboutLibrariesForm(QWidget* parent): QDialog(parent)
 	QString about=QString("");
 	about+=tr("In addition to Qt (see Help -> About Qt), depending on the platform and compiler,"
 	 " this program may use libraries from:");
+	
 	about+="<br /><br />";
 	about+=QString("&nbsp;&nbsp;&nbsp;&nbsp;");
 	about+=QString("gcc, Copyright (C) Free Software Foundation, Inc.");
 	about+="<br />";
 	about+=QString("&nbsp;&nbsp;&nbsp;&nbsp;");
 	about+=tr("Homepage: %1").arg("<a href=\"https://gcc.gnu.org/\">https://gcc.gnu.org/</a>");
+	
 	about+="<br /><br />";
 	about+=QString("&nbsp;&nbsp;&nbsp;&nbsp;");
-	about+=QString("mingw-w64, Copyright (c) by the mingw-w64 project.");
+	about+=QString("MinGW-w64, Copyright (c) by the mingw-w64 project.");
 	about+="<br />";
 	about+=QString("&nbsp;&nbsp;&nbsp;&nbsp;");
-	about+=tr("Homepage: %1").arg("<a href=\"http://mingw-w64.org/\">http://mingw-w64.org/</a>");
+	about+=tr("Homepage: %1").arg("<a href=\"https://www.mingw-w64.org/\">https://www.mingw-w64.org/</a>");
+	
+	about+="<br /><br />";
+	about+=QString("&nbsp;&nbsp;&nbsp;&nbsp;");
+	about+=QString("Clang.");
+	about+="<br />";
+	about+=QString("&nbsp;&nbsp;&nbsp;&nbsp;");
+	about+=tr("Homepage: %1").arg("<a href=\"https://clang.llvm.org/\">https://clang.llvm.org/</a>");
+
 	about+="<br />";
 	
 	aboutLibrariesTextBrowser->setHtml(about);

@@ -1,5 +1,5 @@
 0.5--------------------------------------------------------
-From different old custom FET-MA users, for the new mornings-afternoons mode, on forum:
+From different old custom FET-MA users, for the new Mornings-Afternoons mode, on the forum:
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=4519.0
 
@@ -7576,3 +7576,27 @@ Is it possible to add a constraint
 That allows the activities of a teacher occupies at least in 2 or 3... different rooms from a list of rooms
 
 And if the number of teacher's activities equals the minimum number given as a parameter, each activity will have a different room from the other.
+
+451---------------------------------------------------------
+From uni_instructor (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5097.0
+
+Yesterday I had an idea concerning the activity-tags:
+When I create new activities I have to add some standard-tags in the majority of all cases.
+That task causes many additional mouse clicking.  :(
+
+It would be a real help if I could pre-define a set of default tags that will be added automatically when an new activity is opened for editing.
+At least a kind of "Add default tags"-button in the "Add activity"-dialog would be helpful. The default-tags to be added can be defined/changed
+in the "Activity tags" dialog.
+As I see there already exist two "Printable/Not printable" buttons for activity-tags.
+Adding two "Set as default / Set as no-default"-buttons would fit well into the "Activity tags" dialog window.
+
+452---------------------------------------------------------
+From rjmillett:
+
+it would be helpful if you introduce an import/export option in the
+activities dialog so whenever we are setting up teaching periods
+we could use this to quickly setup
+
+currently one has to close then go to file -> import/export

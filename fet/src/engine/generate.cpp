@@ -7450,7 +7450,7 @@ impossiblebasictime:
 					//if(fixedTimeActivity[ai] && minDaysListOfWeightPercentages[ai].at(i)<100.0)
 					//	okrand=true;
 				
-					if(minDaysListOfConsecutiveIfSameDay[ai].at(i)==true){ //must place them adjacent if on same day
+					if(minDaysListOfConsecutiveIfSameDay[ai].at(i)==true){ //must place them consecutive (in any order) if on same day
 						if(okrand &&
 						 ((gt.rules.mode!=MORNINGS_AFTERNOONS && ( (d==d2 && (h+act->duration==h2 || h2+gt.rules.internalActivitiesList[ai2].duration==h)) || d!=d2 ))
 						 ||

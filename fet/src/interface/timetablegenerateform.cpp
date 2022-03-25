@@ -44,7 +44,7 @@
 #include <QtGlobal>
 
 #include <QProcess>
-#include <QTimer>
+//#include <QTimer>
 
 #include "longtextmessagebox.h"
 

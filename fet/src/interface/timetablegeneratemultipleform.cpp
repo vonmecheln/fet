@@ -45,7 +45,7 @@
 #include <QtGlobal>
 
 #include <QProcess>
-#include <QTimer>
+//#include <QTimer>
 
 #include <QDate>
 #include <QTime>

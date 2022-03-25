@@ -2464,3 +2464,5 @@ Versions 6.3.0 - 6.3.v
 	- Added a new type of constraint in the Mornings-Afternoons mode: students (set) max three consecutive days (suggested by Benahmed Abdelkrim).
 	- Improvement in the speed of generation in the Mornings-Afternoons mode.
 	- Minor bug fixes.
+- Version 6.3.1
+	- Updated to Qt 6.2.4.

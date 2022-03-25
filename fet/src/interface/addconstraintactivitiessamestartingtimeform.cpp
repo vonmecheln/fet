@@ -35,6 +35,8 @@ AddConstraintActivitiesSameStartingTimeForm::AddConstraintActivitiesSameStarting
 	
 	allActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedActivitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	
+	blockCheckBox->setChecked(false);
 
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addConstraint()));
