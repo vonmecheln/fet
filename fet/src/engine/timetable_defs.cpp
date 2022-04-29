@@ -37,12 +37,14 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 FET version
 */
-const QString FET_VERSION="6.3.2";
+const QString FET_VERSION="6.3.3";
 
 /**
 FET language
 */
 QString FET_LANGUAGE="en_US";
+
+QString FET_LANGUAGE_WITH_LOCALE="en_US";
 
 /**
 The output directory. Please be careful when editing it,

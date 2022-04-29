@@ -2470,3 +2470,8 @@ Versions 6.3.0 - 6.3.v
 	- Updated to Qt 6.3.0.
 	- Minor improvements.
 	- Updated the Russian translation, by Alexey Chernous.
+- Version 6.3.3
+	- Interface bug fix: when switching from a language with a right-to-left layout to one with a left-to-right layout, the interface layout remained
+	right-to-left.
+	- Code cleanup.
+	- The Arabic translation will now use Western Arabic numerals (suggested by wldchtgmlcm and Benahmed Abdelkrim).

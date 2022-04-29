@@ -5783,7 +5783,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 
 	QDate dat=QDate::currentDate();
 	QTime tim=QTime::currentTime();
-	QLocale loc(FET_LANGUAGE);
+	QLocale loc(FET_LANGUAGE_WITH_LOCALE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 
 	QString reducedXmlLog="";

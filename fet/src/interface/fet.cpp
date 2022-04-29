@@ -426,6 +426,11 @@ void FetSettings::readSimulationParameters()
 	}
 #endif
 	
+	if(FET_LANGUAGE=="ar")
+		FET_LANGUAGE_WITH_LOCALE="ar_DZ";
+	else
+		FET_LANGUAGE_WITH_LOCALE=FET_LANGUAGE;
+	
 	WORKING_DIRECTORY=newSettings.value("working-directory", "examples").toString();
 	IMPORT_DIRECTORY=newSettings.value("import-directory", OUTPUT_DIR).toString();
 	
@@ -765,12 +770,15 @@ void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 		FET_LANGUAGE="en_US";
 	}
 	
-	if(FET_LANGUAGE=="ar" || FET_LANGUAGE=="he" || FET_LANGUAGE=="fa" || FET_LANGUAGE=="ur" /* and others? */){
+	if(FET_LANGUAGE=="ar")
+		FET_LANGUAGE_WITH_LOCALE="ar_DZ";
+	else
+		FET_LANGUAGE_WITH_LOCALE=FET_LANGUAGE;
+	
+	if(FET_LANGUAGE=="ar" || FET_LANGUAGE=="he" || FET_LANGUAGE=="fa" || FET_LANGUAGE=="ur" /* and others? */)
 		LANGUAGE_STYLE_RIGHT_TO_LEFT=true;
-	}
-	else{
+	else
 		LANGUAGE_STYLE_RIGHT_TO_LEFT=false;
-	}
 	
 	if(FET_LANGUAGE=="zh_CN"){
 		LANGUAGE_FOR_HTML="zh-Hans";
@@ -792,6 +800,8 @@ void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 #ifndef FET_COMMAND_LINE
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==true)
 		qapplication.setLayoutDirection(Qt::RightToLeft);
+	else
+		qapplication.setLayoutDirection(Qt::LeftToRight);
 	
 	//retranslate
 	//QList<QWidget*> tlwl=qapplication.topLevelWidgets();
@@ -1155,6 +1165,7 @@ int main(int argc, char **argv)
 		PRINT_DETAILED_HTML_TEACHERS_FREE_PERIODS=true;
 
 		FET_LANGUAGE="en_US";
+		FET_LANGUAGE_WITH_LOCALE=FET_LANGUAGE;
 		
 		TIMETABLES_SUBGROUPS_SORTED=false;
 		
@@ -1234,8 +1245,14 @@ int main(int argc, char **argv)
 				if(s.right(5)=="false")
 					PRINT_DETAILED_HTML_TEACHERS_FREE_PERIODS=false;
 			}
-			else if(s.left(11)=="--language=")
+			else if(s.left(11)=="--language="){
 				FET_LANGUAGE=s.right(s.length()-11);
+
+				if(FET_LANGUAGE=="ar")
+					FET_LANGUAGE_WITH_LOCALE="ar_DZ";
+				else
+					FET_LANGUAGE_WITH_LOCALE=FET_LANGUAGE;
+			}
 			else if(s.left(20)=="--printnotavailable="){
 				if(s.right(5)=="false")
 					PRINT_NOT_AVAILABLE_TIME_SLOTS=false;

@@ -105,7 +105,7 @@ inline bool compareFunctionGeneratePre(int i, int j);
 
 inline bool compareFunctionGeneratePreWithGroupedActivities(int i, int j);
 
-extern Matrix1D<int> permutation;
+//extern Matrix1D<int> permutation;
 extern Matrix1D<int> copyOfInitialPermutation;
 //the permutation matrix to obtain activities in decreasing difficulty order
 

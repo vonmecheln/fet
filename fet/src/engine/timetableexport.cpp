@@ -388,7 +388,7 @@ void TimetableExport::writeSimulationResults(QWidget* parent){
 	//now get the time. TODO: maybe write it in XML too? so do it a few lines earlier!
 	QDate dat=QDate::currentDate();
 	QTime tim=QTime::currentTime();
-	QLocale loc(FET_LANGUAGE);
+	QLocale loc(FET_LANGUAGE_WITH_LOCALE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 	generationLocalizedTime=sTime;
 	
@@ -640,7 +640,7 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	//now get the time. TODO: maybe write it in XML too? so do it a few lines earlier!
 	QDate dat=QDate::currentDate();
 	QTime tim=QTime::currentTime();
-	QLocale loc(FET_LANGUAGE);
+	QLocale loc(FET_LANGUAGE_WITH_LOCALE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 	generationLocalizedTime=sTime;
 	
@@ -890,7 +890,7 @@ void TimetableExport::writeRandomSeedFile(QWidget* parent, const MRG32k3a& rng, 
 
 	QDate dat=QDate::currentDate();
 	QTime tim=QTime::currentTime();
-	QLocale loc(FET_LANGUAGE);
+	QLocale loc(FET_LANGUAGE_WITH_LOCALE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 	
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
@@ -1238,7 +1238,7 @@ void TimetableExport::writeSimulationResults(QWidget* parent, int n, bool highes
 	//now get the time. TODO: maybe write it in XML too? so do it a few lines earlier!
 	QDate dat=QDate::currentDate();
 	QTime tim=QTime::currentTime();
-	QLocale loc(FET_LANGUAGE);
+	QLocale loc(FET_LANGUAGE_WITH_LOCALE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 	generationLocalizedTime=sTime;
 
@@ -1552,7 +1552,7 @@ void TimetableExport::writeSimulationResultsCommandLine(QWidget* parent, const Q
 	//get the time
 	QDate dat=QDate::currentDate();
 	QTime tim=QTime::currentTime();
-	QLocale loc(FET_LANGUAGE);
+	QLocale loc(FET_LANGUAGE_WITH_LOCALE);
 	QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 	generationLocalizedTime=sTime; //really unneeded, but just to be similar to the other parts
 	
