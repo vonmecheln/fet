@@ -2861,8 +2861,8 @@ bool ConstraintActivityTagsNotOverlapping::isRelatedToActivity(Rules& r, Activit
 	Q_UNUSED(r);
 	
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	QSet<QString> ats(activityTagsNames.begin(), activityTagsNames.end());
-	QSet<QString> aats(a->activityTagsNames.begin(), a->activityTagsNames.end());
+	QSet<QString> ats(activityTagsNames.constBegin(), activityTagsNames.constEnd());
+	QSet<QString> aats(a->activityTagsNames.constBegin(), a->activityTagsNames.constEnd());
 #else
 	QSet<QString> ats=activityTagsNames.toSet();
 	QSet<QString> aats=a->activityTagsNames.toSet();
@@ -2892,7 +2892,7 @@ bool ConstraintActivityTagsNotOverlapping::isRelatedToSubject(Subject* s)
 bool ConstraintActivityTagsNotOverlapping::isRelatedToActivityTag(ActivityTag* s)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	QSet<QString> ats(activityTagsNames.begin(), activityTagsNames.end());
+	QSet<QString> ats(activityTagsNames.constBegin(), activityTagsNames.constEnd());
 #else
 	QSet<QString> ats=activityTagsNames.toSet();
 #endif

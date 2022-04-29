@@ -2224,7 +2224,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 
 	if(SHOW_WARNING_FOR_ACTIVITIES_FIXED_SPACE_VIRTUAL_REAL_ROOMS_BUT_NOT_FIXED_TIME && !fixedVirtualSpaceNonZeroButNotTimeActivities.isEmpty()){
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-		QList<int> tl=QList<int>(fixedVirtualSpaceNonZeroButNotTimeActivities.begin(), fixedVirtualSpaceNonZeroButNotTimeActivities.end());
+		QList<int> tl=QList<int>(fixedVirtualSpaceNonZeroButNotTimeActivities.constBegin(), fixedVirtualSpaceNonZeroButNotTimeActivities.constEnd());
 #else
 		QList<int> tl=fixedVirtualSpaceNonZeroButNotTimeActivities.toList();
 #endif
@@ -14183,7 +14183,7 @@ bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent)
 			ActivitiesOccupyMaxTimeSlotsFromSelection_item item;
 			item.activitiesList=cn->_activitiesIndices;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.activitiesSet=QSet<int>(item.activitiesList.begin(), item.activitiesList.end());
+			item.activitiesSet=QSet<int>(item.activitiesList.constBegin(), item.activitiesList.constEnd());
 #else
 			item.activitiesSet=item.activitiesList.toSet();
 #endif
@@ -14191,7 +14191,7 @@ bool computeActivitiesOccupyMaxTimeSlotsFromSelection(QWidget* parent)
 			for(int t=0; t < cn->selectedDays.count(); t++)
 				item.selectedTimeSlotsList.append(cn->selectedDays.at(t)+cn->selectedHours.at(t)*gt.rules.nDaysPerWeek);
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.begin(), item.selectedTimeSlotsList.end());
+			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
 #else
 			item.selectedTimeSlotsSet=item.selectedTimeSlotsList.toSet();
 #endif
@@ -14280,7 +14280,7 @@ bool computeActivitiesOccupyMinTimeSlotsFromSelection(QWidget* parent)
 			ActivitiesOccupyMinTimeSlotsFromSelection_item item;
 			item.activitiesList=cn->_activitiesIndices;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.activitiesSet=QSet<int>(item.activitiesList.begin(), item.activitiesList.end());
+			item.activitiesSet=QSet<int>(item.activitiesList.constBegin(), item.activitiesList.constEnd());
 #else
 			item.activitiesSet=item.activitiesList.toSet();
 #endif
@@ -14288,7 +14288,7 @@ bool computeActivitiesOccupyMinTimeSlotsFromSelection(QWidget* parent)
 			for(int t=0; t < cn->selectedDays.count(); t++)
 				item.selectedTimeSlotsList.append(cn->selectedDays.at(t)+cn->selectedHours.at(t)*gt.rules.nDaysPerWeek);
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.begin(), item.selectedTimeSlotsList.end());
+			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
 #else
 			item.selectedTimeSlotsSet=item.selectedTimeSlotsList.toSet();
 #endif
@@ -14341,7 +14341,7 @@ bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent)
 			ActivitiesMaxSimultaneousInSelectedTimeSlots_item item;
 			item.activitiesList=cn->_activitiesIndices;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.activitiesSet=QSet<int>(item.activitiesList.begin(), item.activitiesList.end());
+			item.activitiesSet=QSet<int>(item.activitiesList.constBegin(), item.activitiesList.constEnd());
 #else
 			item.activitiesSet=item.activitiesList.toSet();
 #endif
@@ -14349,7 +14349,7 @@ bool computeActivitiesMaxSimultaneousInSelectedTimeSlots(QWidget* parent)
 			for(int t=0; t < cn->selectedDays.count(); t++)
 				item.selectedTimeSlotsList.append(cn->selectedDays.at(t)+cn->selectedHours.at(t)*gt.rules.nDaysPerWeek);
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.begin(), item.selectedTimeSlotsList.end());
+			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
 #else
 			item.selectedTimeSlotsSet=item.selectedTimeSlotsList.toSet();
 #endif
@@ -14425,7 +14425,7 @@ bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent)
 			ActivitiesMinSimultaneousInSelectedTimeSlots_item item;
 			item.activitiesList=cn->_activitiesIndices;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.activitiesSet=QSet<int>(item.activitiesList.begin(), item.activitiesList.end());
+			item.activitiesSet=QSet<int>(item.activitiesList.constBegin(), item.activitiesList.constEnd());
 #else
 			item.activitiesSet=item.activitiesList.toSet();
 #endif
@@ -14433,7 +14433,7 @@ bool computeActivitiesMinSimultaneousInSelectedTimeSlots(QWidget* parent)
 			for(int t=0; t < cn->selectedDays.count(); t++)
 				item.selectedTimeSlotsList.append(cn->selectedDays.at(t)+cn->selectedHours.at(t)*gt.rules.nDaysPerWeek);
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.begin(), item.selectedTimeSlotsList.end());
+			item.selectedTimeSlotsSet=QSet<int>(item.selectedTimeSlotsList.constBegin(), item.selectedTimeSlotsList.constEnd());
 #else
 			item.selectedTimeSlotsSet=item.selectedTimeSlotsList.toSet();
 #endif
@@ -14627,7 +14627,7 @@ bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 			
 			StudentsMinGapsBetweenOrderedPairOfActivityTags_item item;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.begin(), cn->canonicalSubgroupsList.end());
+			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.constBegin(), cn->canonicalSubgroupsList.constEnd());
 #else
 			item.canonicalSetOfSubgroups=cn->canonicalSubgroupsList.toSet();
 #endif
@@ -14643,7 +14643,7 @@ bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-				QSet<int> studentsSet(act->iSubgroupsList.begin(), act->iSubgroupsList.end());
+				QSet<int> studentsSet(act->iSubgroupsList.constBegin(), act->iSubgroupsList.constEnd());
 #else
 				QSet<int> studentsSet=act->iSubgroupsList.toSet();
 #endif
@@ -14707,7 +14707,7 @@ bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 
 			StudentsMinGapsBetweenOrderedPairOfActivityTags_item item;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.begin(), cn->canonicalSubgroupsList.end());
+			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.constBegin(), cn->canonicalSubgroupsList.constEnd());
 #else
 			item.canonicalSetOfSubgroups=cn->canonicalSubgroupsList.toSet();
 #endif
@@ -14723,7 +14723,7 @@ bool computeStudentsMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-				QSet<int> studentsSet(act->iSubgroupsList.begin(), act->iSubgroupsList.end());
+				QSet<int> studentsSet(act->iSubgroupsList.constBegin(), act->iSubgroupsList.constEnd());
 #else
 				QSet<int> studentsSet=act->iSubgroupsList.toSet();
 #endif
@@ -14802,7 +14802,7 @@ bool computeStudentsMinGapsBetweenActivityTag(QWidget* parent)
 			
 			StudentsMinGapsBetweenActivityTag_item item;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.begin(), cn->canonicalSubgroupsList.end());
+			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.constBegin(), cn->canonicalSubgroupsList.constEnd());
 #else
 			item.canonicalSetOfSubgroups=cn->canonicalSubgroupsList.toSet();
 #endif
@@ -14816,7 +14816,7 @@ bool computeStudentsMinGapsBetweenActivityTag(QWidget* parent)
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-				QSet<int> studentsSet(act->iSubgroupsList.begin(), act->iSubgroupsList.end());
+				QSet<int> studentsSet(act->iSubgroupsList.constBegin(), act->iSubgroupsList.constEnd());
 #else
 				QSet<int> studentsSet=act->iSubgroupsList.toSet();
 #endif
@@ -14861,7 +14861,7 @@ bool computeStudentsMinGapsBetweenActivityTag(QWidget* parent)
 
 			StudentsMinGapsBetweenActivityTag_item item;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.begin(), cn->canonicalSubgroupsList.end());
+			item.canonicalSetOfSubgroups=QSet<int>(cn->canonicalSubgroupsList.constBegin(), cn->canonicalSubgroupsList.constEnd());
 #else
 			item.canonicalSetOfSubgroups=cn->canonicalSubgroupsList.toSet();
 #endif
@@ -14875,7 +14875,7 @@ bool computeStudentsMinGapsBetweenActivityTag(QWidget* parent)
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-				QSet<int> studentsSet(act->iSubgroupsList.begin(), act->iSubgroupsList.end());
+				QSet<int> studentsSet(act->iSubgroupsList.constBegin(), act->iSubgroupsList.constEnd());
 #else
 				QSet<int> studentsSet=act->iSubgroupsList.toSet();
 #endif
@@ -14936,7 +14936,7 @@ bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 			
 			TeachersMinGapsBetweenOrderedPairOfActivityTags_item item;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.begin(), cn->canonicalTeachersList.end());
+			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.constBegin(), cn->canonicalTeachersList.constEnd());
 #else
 			item.canonicalSetOfTeachers=cn->canonicalTeachersList.toSet();
 #endif
@@ -15010,7 +15010,7 @@ bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 
 			TeachersMinGapsBetweenOrderedPairOfActivityTags_item item;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.begin(), cn->canonicalTeachersList.end());
+			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.constBegin(), cn->canonicalTeachersList.constEnd());
 #else
 			item.canonicalSetOfTeachers=cn->canonicalTeachersList.toSet();
 #endif
@@ -15026,7 +15026,7 @@ bool computeTeachersMinGapsBetweenOrderedPairOfActivityTags(QWidget* parent)
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-				QSet<int> teachersSet(act->iTeachersList.begin(), act->iTeachersList.end());
+				QSet<int> teachersSet(act->iTeachersList.constBegin(), act->iTeachersList.constEnd());
 #else
 				QSet<int> teachersSet=act->iTeachersList.toSet();
 #endif
@@ -15106,7 +15106,7 @@ bool computeTeachersMinGapsBetweenActivityTag(QWidget* parent)
 			
 			TeachersMinGapsBetweenActivityTag_item item;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.begin(), cn->canonicalTeachersList.end());
+			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.constBegin(), cn->canonicalTeachersList.constEnd());
 #else
 			item.canonicalSetOfTeachers=cn->canonicalTeachersList.toSet();
 #endif
@@ -15159,7 +15159,7 @@ bool computeTeachersMinGapsBetweenActivityTag(QWidget* parent)
 
 			TeachersMinGapsBetweenActivityTag_item item;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.begin(), cn->canonicalTeachersList.end());
+			item.canonicalSetOfTeachers=QSet<int>(cn->canonicalTeachersList.constBegin(), cn->canonicalTeachersList.constEnd());
 #else
 			item.canonicalSetOfTeachers=cn->canonicalTeachersList.toSet();
 #endif
@@ -15173,7 +15173,7 @@ bool computeTeachersMinGapsBetweenActivityTag(QWidget* parent)
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-				QSet<int> teachersSet(act->iTeachersList.begin(), act->iTeachersList.end());
+				QSet<int> teachersSet(act->iTeachersList.constBegin(), act->iTeachersList.constEnd());
 #else
 				QSet<int> teachersSet=act->iTeachersList.toSet();
 #endif
@@ -15231,7 +15231,7 @@ bool computeActivitiesOccupyMaxDifferentRooms(QWidget* parent)
 			ActivitiesOccupyMaxDifferentRooms_item item;
 			item.activitiesList=cn->_activitiesIndices;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.activitiesSet=QSet<int>(item.activitiesList.begin(), item.activitiesList.end());
+			item.activitiesSet=QSet<int>(item.activitiesList.constBegin(), item.activitiesList.constEnd());
 #else
 			item.activitiesSet=item.activitiesList.toSet();
 #endif
@@ -15278,7 +15278,7 @@ bool computeActivitiesSameRoomIfConsecutive(QWidget* parent)
 			ActivitiesSameRoomIfConsecutive_item item;
 			item.activitiesList=cn->_activitiesIndices;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			item.activitiesSet=QSet<int>(item.activitiesList.begin(), item.activitiesList.end());
+			item.activitiesSet=QSet<int>(item.activitiesList.constBegin(), item.activitiesList.constEnd());
 #else
 			item.activitiesSet=item.activitiesList.toSet();
 #endif
@@ -16025,7 +16025,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					
 					if(begin){
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						it.preferredRooms=QSet<int>(spr->_rooms.begin(), spr->_rooms.end());
+						it.preferredRooms=QSet<int>(spr->_rooms.constBegin(), spr->_rooms.constEnd());
 #else
 						it.preferredRooms=spr->_rooms.toSet();
 #endif
@@ -16033,7 +16033,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					}
 					else{
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						it.preferredRooms.intersect(QSet<int>(spr->_rooms.begin(), spr->_rooms.end()));
+						it.preferredRooms.intersect(QSet<int>(spr->_rooms.constBegin(), spr->_rooms.constEnd()));
 #else
 						it.preferredRooms.intersect(spr->_rooms.toSet());
 #endif
@@ -16057,7 +16057,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					
 					if(begin){
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						it.preferredRooms=QSet<int>(spr->_rooms.begin(), spr->_rooms.end());
+						it.preferredRooms=QSet<int>(spr->_rooms.constBegin(), spr->_rooms.constEnd());
 #else
 						it.preferredRooms=spr->_rooms.toSet();
 #endif
@@ -16065,7 +16065,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					}
 					else{
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						it.preferredRooms.intersect(QSet<int>(spr->_rooms.begin(), spr->_rooms.end()));
+						it.preferredRooms.intersect(QSet<int>(spr->_rooms.constBegin(), spr->_rooms.constEnd()));
 #else
 						it.preferredRooms.intersect(spr->_rooms.toSet());
 #endif
@@ -16089,7 +16089,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					
 					if(begin){
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						it.preferredRooms=QSet<int>(spr->_rooms.begin(), spr->_rooms.end());
+						it.preferredRooms=QSet<int>(spr->_rooms.constBegin(), spr->_rooms.constEnd());
 #else
 						it.preferredRooms=spr->_rooms.toSet();
 #endif
@@ -16097,7 +16097,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					}
 					else{
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						it.preferredRooms.intersect(QSet<int>(spr->_rooms.begin(), spr->_rooms.end()));
+						it.preferredRooms.intersect(QSet<int>(spr->_rooms.constBegin(), spr->_rooms.constEnd()));
 #else
 						it.preferredRooms.intersect(spr->_rooms.toSet());
 #endif
@@ -16121,7 +16121,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					
 					if(begin){
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						it.preferredRooms=QSet<int>(spr->_rooms.begin(), spr->_rooms.end());
+						it.preferredRooms=QSet<int>(spr->_rooms.constBegin(), spr->_rooms.constEnd());
 #else
 						it.preferredRooms=spr->_rooms.toSet();
 #endif
@@ -16129,7 +16129,7 @@ bool computeActivitiesRoomsPreferences(QWidget* parent)
 					}
 					else{
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-						it.preferredRooms.intersect(QSet<int>(spr->_rooms.begin(), spr->_rooms.end()));
+						it.preferredRooms.intersect(QSet<int>(spr->_rooms.constBegin(), spr->_rooms.constEnd()));
 #else
 						it.preferredRooms.intersect(spr->_rooms.toSet());
 #endif
@@ -17323,11 +17323,11 @@ void computeSubgroupsTeachersForActivitiesOfTheDay()
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		//students
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-		QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[ai].begin(), subgroupsWithMaxDaysPerWeekForActivities[ai].end());
-		QSet<int> st_smtd=QSet<int>(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].begin(), subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].end());
-		QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[ai].begin(), subgroupsWithMaxRealDaysPerWeekForActivities[ai].end());
-		QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[ai].begin(), subgroupsWithMaxAfternoonsPerWeekForActivities[ai].end());
-		QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[ai].begin(), subgroupsWithMaxMorningsPerWeekForActivities[ai].end());
+		QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxDaysPerWeekForActivities[ai].constEnd());
+		QSet<int> st_smtd=QSet<int>(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
+		QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxRealDaysPerWeekForActivities[ai].constEnd());
+		QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
+		QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxMorningsPerWeekForActivities[ai].constEnd());
 #else
 		QSet<int> st_smhd=subgroupsWithMaxDaysPerWeekForActivities[ai].toSet();
 		QSet<int> st_smtd=subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].toSet();
@@ -17341,8 +17341,8 @@ void computeSubgroupsTeachersForActivitiesOfTheDay()
 		QList<int> st_lmda;
 		QList<int> st_lmdm;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-		st_lmda=QList<int>(st_smda.begin(), st_smda.end());
-		st_lmdm=QList<int>(st_smdm.begin(), st_smdm.end());
+		st_lmda=QList<int>(st_smda.constBegin(), st_smda.constEnd());
+		st_lmdm=QList<int>(st_smdm.constBegin(), st_smdm.constEnd());
 #else
 		st_lmda=st_smda.toList();
 		st_lmdm=st_smdm.toList();
@@ -17357,12 +17357,12 @@ void computeSubgroupsTeachersForActivitiesOfTheDay()
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		//teachers
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-		QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[ai].begin(), teachersWithMaxDaysPerWeekForActivities[ai].end());
-		QSet<int> smtd=QSet<int>(teachersWithMaxThreeConsecutiveDaysForActivities[ai].begin(), teachersWithMaxThreeConsecutiveDaysForActivities[ai].end());
-		QSet<int> smd=QSet<int>(teachersWithMaxRealDaysPerWeekForActivities[ai].begin(), teachersWithMaxRealDaysPerWeekForActivities[ai].end());
-		QSet<int> smn1n2n3=QSet<int>(teachersWithN1N2N3ForActivities[ai].begin(), teachersWithN1N2N3ForActivities[ai].end());
-		QSet<int> sma=QSet<int>(teachersWithMaxAfternoonsPerWeekForActivities[ai].begin(), teachersWithMaxAfternoonsPerWeekForActivities[ai].end());
-		QSet<int> smm=QSet<int>(teachersWithMaxMorningsPerWeekForActivities[ai].begin(), teachersWithMaxMorningsPerWeekForActivities[ai].end());
+		QSet<int> smhd=QSet<int>(teachersWithMaxDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxDaysPerWeekForActivities[ai].constEnd());
+		QSet<int> smtd=QSet<int>(teachersWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), teachersWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
+		QSet<int> smd=QSet<int>(teachersWithMaxRealDaysPerWeekForActivities[ai].constBegin(), teachersWithMaxRealDaysPerWeekForActivities[ai].constEnd());
+		QSet<int> smn1n2n3=QSet<int>(teachersWithN1N2N3ForActivities[ai].constBegin(), teachersWithN1N2N3ForActivities[ai].constEnd());
+		QSet<int> sma=QSet<int>(teachersWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), teachersWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
+		QSet<int> smm=QSet<int>(teachersWithMaxMorningsPerWeekForActivities[ai].constBegin(), teachersWithMaxMorningsPerWeekForActivities[ai].constEnd());
 #else
 		QSet<int> smhd=teachersWithMaxDaysPerWeekForActivities[ai].toSet();
 		QSet<int> smtd=teachersWithMaxThreeConsecutiveDaysForActivities[ai].toSet();
@@ -17378,8 +17378,8 @@ void computeSubgroupsTeachersForActivitiesOfTheDay()
 		QList<int> lmdm;
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-		lmda=QList<int>(smda.begin(), smda.end());
-		lmdm=QList<int>(smdm.begin(), smdm.end());
+		lmda=QList<int>(smda.constBegin(), smda.constEnd());
+		lmdm=QList<int>(smdm.constBegin(), smdm.constEnd());
 #else
 		lmda=smda.toList();
 		lmdm=smdm.toList();
@@ -17526,7 +17526,7 @@ bool computeFixedActivities(QWidget* parent)
 		for(const PreferredRoomsItem& it : qAsConst(activitiesPreferredRoomsList[ai]))
 			if(it.percentage==100.0 && it.preferredRooms.count()==1){
 				//int rm=it.preferredRooms.toList().at(0);
-				int rm=*(it.preferredRooms.begin());
+				int rm=*(it.preferredRooms.constBegin());
 				assert(rm>=0 && rm<gt.rules.nInternalRooms);
 				
 				/*

@@ -51,7 +51,7 @@ ActivitiesRoomsStatisticsForm::ActivitiesRoomsStatisticsForm(QWidget* parent): Q
 			continue;
 	
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-		QSet<QString> currentActivityTagsSet(act->activityTagsNames.begin(), act->activityTagsNames.end());
+		QSet<QString> currentActivityTagsSet(act->activityTagsNames.constBegin(), act->activityTagsNames.constEnd());
 #else
 		QSet<QString> currentActivityTagsSet=act->activityTagsNames.toSet();
 #endif

@@ -25,7 +25,7 @@
        <enum>Qt::Vertical</enum>
       </property>
       <widget class="QPlainTextEdit" name="detailsTextEdit"/>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QGroupBox" name="groupBox_3">
@@ -40,15 +40,15 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="0" rowspan="2">
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="widthSpinBox"/>
+           </item>
+           <item row="1" column="0">
             <widget class="QLabel" name="heightTextLabel">
              <property name="text">
               <string>Height</string>
              </property>
             </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QSpinBox" name="widthSpinBox"/>
            </item>
            <item row="1" column="1">
             <widget class="QSpinBox" name="heightSpinBox"/>

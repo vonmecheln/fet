@@ -1326,8 +1326,8 @@ bool ConstraintActivityPreferredRoom::operator==(ConstraintActivityPreferredRoom
 	if(this->roomName!=c.roomName)
 		return false;
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	if(QSet<QString>(this->preferredRealRoomsNames.begin(), this->preferredRealRoomsNames.end()) !=
-	 QSet<QString>(c.preferredRealRoomsNames.begin(), c.preferredRealRoomsNames.end()))
+	if(QSet<QString>(this->preferredRealRoomsNames.constBegin(), this->preferredRealRoomsNames.constEnd()) !=
+	 QSet<QString>(c.preferredRealRoomsNames.constBegin(), c.preferredRealRoomsNames.constEnd()))
 #else
 	if(this->preferredRealRoomsNames.toSet()!=c.preferredRealRoomsNames.toSet())
 #endif
@@ -1551,7 +1551,7 @@ double ConstraintActivityPreferredRoom::fitness(
 			assert(this->weightPercentage==100.0);
 		
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-			if(preferredRealRooms!=QSet<int>(c.realRoomsList[this->_activity].begin(), c.realRoomsList[this->_activity].end())){
+			if(preferredRealRooms!=QSet<int>(c.realRoomsList[this->_activity].constBegin(), c.realRoomsList[this->_activity].constEnd())){
 #else
 			if(preferredRealRooms!=c.realRoomsList[this->_activity].toSet()){
 #endif

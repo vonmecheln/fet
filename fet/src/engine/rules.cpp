@@ -3672,7 +3672,7 @@ void Rules::removeActivities(const QList<int>& _idsList, bool updateConstraints)
 		return;
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	QSet<int> _removedIdsSet=QSet<int>(_idsList.begin(), _idsList.end());
+	QSet<int> _removedIdsSet=QSet<int>(_idsList.constBegin(), _idsList.constEnd());
 #else
 	QSet<int> _removedIdsSet=_idsList.toSet();
 #endif
@@ -4466,7 +4466,7 @@ bool Rules::removeTimeConstraint(TimeConstraint* ctr)
 bool Rules::removeTimeConstraints(QList<TimeConstraint*> _tcl)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	QSet<TimeConstraint*> _tcs=QSet<TimeConstraint*>(_tcl.begin(), _tcl.end());
+	QSet<TimeConstraint*> _tcs=QSet<TimeConstraint*>(_tcl.constBegin(), _tcl.constEnd());
 #else
 	QSet<TimeConstraint*> _tcs=_tcl.toSet();
 #endif
@@ -4691,7 +4691,7 @@ bool Rules::removeSpaceConstraint(SpaceConstraint* ctr)
 bool Rules::removeSpaceConstraints(QList<SpaceConstraint*> _scl)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	QSet<SpaceConstraint*> _scs=QSet<SpaceConstraint*>(_scl.begin(), _scl.end());
+	QSet<SpaceConstraint*> _scs=QSet<SpaceConstraint*>(_scl.constBegin(), _scl.constEnd());
 #else
 	QSet<SpaceConstraint*> _scs=_scl.toSet();
 #endif

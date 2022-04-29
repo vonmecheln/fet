@@ -2466,3 +2466,7 @@ Versions 6.3.0 - 6.3.v
 	- Minor bug fixes.
 - Version 6.3.1
 	- Updated to Qt 6.2.4.
+- Version 6.3.2
+	- Updated to Qt 6.3.0.
+	- Minor improvements.
+	- Updated the Russian translation, by Alexey Chernous.
