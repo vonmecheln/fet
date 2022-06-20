@@ -213,7 +213,12 @@ bool SpaceConstraint::canBeUsedInMorningsAfternoonsMode()
 	 type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_REAL_DAY ||
 	 type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_REAL_DAY ||
 	 type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY ||
-	 type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY)
+	 type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY ||
+
+	 type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY ||
+	 type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY ||
+	 type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY ||
+	 type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY)
 		return true;
 
 	return false;
@@ -4616,7 +4621,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerDay::fitness(
 			}
 		/////////////
 	
-		for(int d2=0; d2<r.nDaysPerWeek; d2++){			
+		for(int d2=0; d2<r.nDaysPerWeek; d2++){
 			int crt_building=-1;
 			int n_changes=0;
 			for(int h2=0; h2<r.nHoursPerDay; h2++){
@@ -4628,7 +4633,7 @@ double ConstraintStudentsSetMaxBuildingChangesPerDay::fitness(
 					}
 				}
 			}
-						
+			
 			if(n_changes>this->maxBuildingChangesPerDay){
 				nbroken+=-this->maxBuildingChangesPerDay+n_changes;
 		
@@ -12255,3 +12260,1059 @@ bool ConstraintTeachersMaxRoomChangesPerRealDay::repairWrongDayOrHour(Rules& r)
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsMaxBuildingChangesPerRealDay::ConstraintStudentsMaxBuildingChangesPerRealDay()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY;
+}
+
+ConstraintStudentsMaxBuildingChangesPerRealDay::ConstraintStudentsMaxBuildingChangesPerRealDay(double wp, int mc)
+	: SpaceConstraint(wp)
+{
+	this->type=CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY;
+	this->maxBuildingChangesPerDay=mc;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+
+	return true;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerRealDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+
+	return false;
+}
+
+QString ConstraintStudentsMaxBuildingChangesPerRealDay::getXmlDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString s="<ConstraintStudentsMaxBuildingChangesPerRealDay>\n";
+
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintStudentsMaxBuildingChangesPerRealDay>\n";
+
+	return s;
+}
+
+QString ConstraintStudentsMaxBuildingChangesPerRealDay::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s=tr("Students max building changes per real day"); s+=", ";
+
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+
+	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsMaxBuildingChangesPerRealDay::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Space constraint"); s+="\n";
+
+	s+=tr("Students maximum building changes per real day"); s+="\n";
+
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintStudentsMaxBuildingChangesPerRealDay::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	FakeString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	Matrix2D<int> crtBuildingsTimetable;
+	crtBuildingsTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
+	for(int sbg=0; sbg<r.nInternalSubgroups; sbg++){
+		//Better, less memory
+		StudentsSubgroup* sbgpointer=r.internalSubgroupsList[sbg];
+		for(int d2=0; d2<r.nDaysPerWeek; d2++)
+			for(int h2=0; h2<r.nHoursPerDay; h2++)
+				crtBuildingsTimetable[d2][h2]=-1;
+
+		for(int ai : qAsConst(sbgpointer->activitiesForSubgroup))
+			if(c.times[ai]!=UNALLOCATED_TIME){
+				int d2=c.times[ai]%r.nDaysPerWeek;
+				int h2=c.times[ai]/r.nDaysPerWeek;
+
+				for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+					assert(h2+dur<r.nHoursPerDay);
+					assert(crtBuildingsTimetable[d2][h2+dur]==-1);
+					if(c.rooms[ai]!=UNSPECIFIED_ROOM && c.rooms[ai]!=UNALLOCATED_SPACE){
+						assert(c.rooms[ai]>=0 && c.rooms[ai]<r.nInternalRooms);
+						crtBuildingsTimetable[d2][h2+dur]=r.internalRoomsList[c.rooms[ai]]->buildingIndex;
+					}
+				}
+			}
+		/////////////
+
+		for(int d2=0; d2<r.nDaysPerWeek/2; d2++){
+			int crt_building=-1;
+			int n_changes=0;
+			for(int h2=0; h2<r.nHoursPerDay; h2++){
+				if(crtBuildingsTimetable[2*d2][h2]!=-1){
+					if(crt_building!=crtBuildingsTimetable[2*d2][h2]){
+						if(crt_building!=-1)
+							n_changes++;
+						crt_building=crtBuildingsTimetable[2*d2][h2];
+					}
+				}
+			}
+			for(int h2=0; h2<r.nHoursPerDay; h2++){
+				if(crtBuildingsTimetable[2*d2+1][h2]!=-1){
+					if(crt_building!=crtBuildingsTimetable[2*d2+1][h2]){
+						if(crt_building!=-1)
+							n_changes++;
+						crt_building=crtBuildingsTimetable[2*d2+1][h2];
+					}
+				}
+			}
+
+			if(n_changes>this->maxBuildingChangesPerDay){
+				nbroken+=-this->maxBuildingChangesPerDay+n_changes;
+
+				if(conflictsString!=nullptr){
+					QString s=tr("Space constraint students max building changes per real day broken for subgroup=%1 on real day number %2")
+						.arg(r.internalSubgroupsList[sbg]->name)
+						.arg(d2);
+					s += ". ";
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
+
+					dl.append(s);
+					cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
+
+					*conflictsString+=s+"\n";
+				}
+			}
+		}
+	}
+
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerRealDay::isRelatedToActivity(Activity* a)
+{
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerRealDay::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerRealDay::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerRealDay::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerRealDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return true;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerRealDay::isRelatedToRoom(Room* r)
+{
+	Q_UNUSED(r);
+
+	return false;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerRealDay::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBuildingChangesPerDay>2*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerRealDay::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintStudentsMaxBuildingChangesPerRealDay::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(maxBuildingChangesPerDay>2*r.nHoursPerDay)
+		maxBuildingChangesPerDay=2*r.nHoursPerDay;
+
+	return true;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsSetMaxBuildingChangesPerRealDay::ConstraintStudentsSetMaxBuildingChangesPerRealDay()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY;
+}
+
+ConstraintStudentsSetMaxBuildingChangesPerRealDay::ConstraintStudentsSetMaxBuildingChangesPerRealDay(double wp, QString st, int mc)
+	: SpaceConstraint(wp)
+{
+	this->type=CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY;
+	this->studentsName=st;
+	this->maxBuildingChangesPerDay=mc;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	this->iSubgroupsList.clear();
+
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->studentsName);
+	StudentsSet* ss=r.studentsHash.value(studentsName, nullptr);
+
+	if(ss==nullptr){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint students set max building changes per real day is wrong because it refers to nonexistent students set."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+
+		return false;
+	}
+
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+
+	/*if(ss->type==STUDENTS_SUBGROUP){
+		int tmp;
+		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
+		assert(tmp>=0);
+		assert(tmp<r.nInternalSubgroups);
+		this->iSubgroupsList.append(tmp);
+	}
+	else if(ss->type==STUDENTS_GROUP){
+		StudentsGroup* stg=(StudentsGroup*)ss;
+		for(int i=0; i<stg->subgroupsList.size(); i++){
+			StudentsSubgroup* sts=stg->subgroupsList[i];
+			int tmp;
+			tmp=sts->indexInInternalSubgroupsList;
+			assert(tmp>=0);
+			assert(tmp<r.nInternalSubgroups);
+			this->iSubgroupsList.append(tmp);
+		}
+	}
+	else if(ss->type==STUDENTS_YEAR){
+		StudentsYear* sty=(StudentsYear*)ss;
+		for(int i=0; i<sty->groupsList.size(); i++){
+			StudentsGroup* stg=sty->groupsList[i];
+			for(int j=0; j<stg->subgroupsList.size(); j++){
+				StudentsSubgroup* sts=stg->subgroupsList[j];
+				int tmp;
+				tmp=sts->indexInInternalSubgroupsList;
+				assert(tmp>=0);
+				assert(tmp<r.nInternalSubgroups);
+				this->iSubgroupsList.append(tmp);
+			}
+		}
+	}
+	else
+		assert(0);*/
+
+	return true;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+
+	return false;
+}
+
+QString ConstraintStudentsSetMaxBuildingChangesPerRealDay::getXmlDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString s="<ConstraintStudentsSetMaxBuildingChangesPerRealDay>\n";
+
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Students>"+protect(this->studentsName)+"</Students>\n";
+	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintStudentsSetMaxBuildingChangesPerRealDay>\n";
+
+	return s;
+}
+
+QString ConstraintStudentsSetMaxBuildingChangesPerRealDay::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s=tr("Students set max building changes per real day"); s+=", ";
+
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+
+	s+=tr("St:%1", "St means students").arg(this->studentsName);s+=", ";
+
+	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsSetMaxBuildingChangesPerRealDay::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Space constraint"); s+="\n";
+
+	s+=tr("Students set maximum building changes per real day"); s+="\n";
+
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	s+=tr("Students=%1").arg(this->studentsName);s+="\n";
+
+	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintStudentsSetMaxBuildingChangesPerRealDay::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	FakeString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	Matrix2D<int> crtBuildingsTimetable;
+	crtBuildingsTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
+	for(int sbg : qAsConst(this->iSubgroupsList)){
+		//Better, less memory
+		StudentsSubgroup* sbgpointer=r.internalSubgroupsList[sbg];
+		for(int d2=0; d2<r.nDaysPerWeek; d2++)
+			for(int h2=0; h2<r.nHoursPerDay; h2++)
+				crtBuildingsTimetable[d2][h2]=-1;
+
+		for(int ai : qAsConst(sbgpointer->activitiesForSubgroup))
+			if(c.times[ai]!=UNALLOCATED_TIME){
+				int d2=c.times[ai]%r.nDaysPerWeek;
+				int h2=c.times[ai]/r.nDaysPerWeek;
+
+				for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+					assert(h2+dur<r.nHoursPerDay);
+					assert(crtBuildingsTimetable[d2][h2+dur]==-1);
+					if(c.rooms[ai]!=UNSPECIFIED_ROOM && c.rooms[ai]!=UNALLOCATED_SPACE){
+						assert(c.rooms[ai]>=0 && c.rooms[ai]<r.nInternalRooms);
+						crtBuildingsTimetable[d2][h2+dur]=r.internalRoomsList[c.rooms[ai]]->buildingIndex;
+					}
+				}
+			}
+		/////////////
+
+		for(int d2=0; d2<r.nDaysPerWeek/2; d2++){
+			int crt_building=-1;
+			int n_changes=0;
+			for(int h2=0; h2<r.nHoursPerDay; h2++){
+				if(crtBuildingsTimetable[2*d2][h2]!=-1){
+					if(crt_building!=crtBuildingsTimetable[2*d2][h2]){
+						if(crt_building!=-1)
+							n_changes++;
+						crt_building=crtBuildingsTimetable[2*d2][h2];
+					}
+				}
+			}
+			for(int h2=0; h2<r.nHoursPerDay; h2++){
+				if(crtBuildingsTimetable[2*d2+1][h2]!=-1){
+					if(crt_building!=crtBuildingsTimetable[2*d2+1][h2]){
+						if(crt_building!=-1)
+							n_changes++;
+						crt_building=crtBuildingsTimetable[2*d2+1][h2];
+					}
+				}
+			}
+
+			if(n_changes>this->maxBuildingChangesPerDay){
+				nbroken+=-this->maxBuildingChangesPerDay+n_changes;
+
+				if(conflictsString!=nullptr){
+					QString s=tr("Space constraint students set max building changes per real day broken for subgroup=%1 on real day number %2")
+						.arg(r.internalSubgroupsList[sbg]->name)
+						.arg(d2);
+					s += ". ";
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
+
+					dl.append(s);
+					cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
+
+					*conflictsString+=s+"\n";
+				}
+			}
+		}
+	}
+
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::isRelatedToActivity(Activity* a)
+{
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	return r.setsShareStudents(s->name, this->studentsName);
+
+	return true;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::isRelatedToRoom(Room* r)
+{
+	Q_UNUSED(r);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBuildingChangesPerDay>2*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintStudentsSetMaxBuildingChangesPerRealDay::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(maxBuildingChangesPerDay>2*r.nHoursPerDay)
+		maxBuildingChangesPerDay=2*r.nHoursPerDay;
+
+	return true;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeacherMaxBuildingChangesPerRealDay::ConstraintTeacherMaxBuildingChangesPerRealDay()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY;
+}
+
+ConstraintTeacherMaxBuildingChangesPerRealDay::ConstraintTeacherMaxBuildingChangesPerRealDay(double wp, QString tc, int mc)
+	: SpaceConstraint(wp)
+{
+	this->type=CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY;
+	this->teacherName=tc;
+	this->maxBuildingChangesPerDay=mc;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
+
+	if(this->teacher_ID<0){
+		SpaceConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint teacher max building changes per real day is wrong because it refers to nonexistent teacher."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+
+		return false;
+	}
+
+	return true;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerRealDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+
+	return false;
+}
+
+QString ConstraintTeacherMaxBuildingChangesPerRealDay::getXmlDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString s="<ConstraintTeacherMaxBuildingChangesPerRealDay>\n";
+
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Teacher>"+protect(this->teacherName)+"</Teacher>\n";
+	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintTeacherMaxBuildingChangesPerRealDay>\n";
+
+	return s;
+}
+
+QString ConstraintTeacherMaxBuildingChangesPerRealDay::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s=tr("Teacher max building changes per real day"); s+=", ";
+
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+
+	s+=tr("T:%1", "T means teacher").arg(this->teacherName);s+=", ";
+
+	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeacherMaxBuildingChangesPerRealDay::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Space constraint"); s+="\n";
+
+	s+=tr("Teacher maximum building changes per real day"); s+="\n";
+
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
+
+	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeacherMaxBuildingChangesPerRealDay::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	FakeString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	int tch=this->teacher_ID;
+
+	//Better, less memory
+	Teacher* tchpointer=r.internalTeachersList[tch];
+
+	Matrix2D<int> crtBuildingsTimetable;
+	crtBuildingsTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
+
+	for(int d2=0; d2<r.nDaysPerWeek; d2++)
+		for(int h2=0; h2<r.nHoursPerDay; h2++)
+			crtBuildingsTimetable[d2][h2]=-1;
+
+	for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+		if(c.times[ai]!=UNALLOCATED_TIME){
+			int d2=c.times[ai]%r.nDaysPerWeek;
+			int h2=c.times[ai]/r.nDaysPerWeek;
+
+			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+				assert(h2+dur<r.nHoursPerDay);
+				assert(crtBuildingsTimetable[d2][h2+dur]==-1);
+				if(c.rooms[ai]!=UNSPECIFIED_ROOM && c.rooms[ai]!=UNALLOCATED_SPACE){
+					assert(c.rooms[ai]>=0 && c.rooms[ai]<r.nInternalRooms);
+					crtBuildingsTimetable[d2][h2+dur]=r.internalRoomsList[c.rooms[ai]]->buildingIndex;
+				}
+			}
+		}
+	/////////////
+
+	for(int d2=0; d2<r.nDaysPerWeek/2; d2++){
+		int crt_building=-1;
+		int n_changes=0;
+		for(int h2=0; h2<r.nHoursPerDay; h2++){
+			if(crtBuildingsTimetable[2*d2][h2]!=-1){
+				if(crt_building!=crtBuildingsTimetable[2*d2][h2]){
+					if(crt_building!=-1)
+						n_changes++;
+					crt_building=crtBuildingsTimetable[2*d2][h2];
+				}
+			}
+		}
+		for(int h2=0; h2<r.nHoursPerDay; h2++){
+			if(crtBuildingsTimetable[2*d2+1][h2]!=-1){
+				if(crt_building!=crtBuildingsTimetable[2*d2+1][h2]){
+					if(crt_building!=-1)
+						n_changes++;
+					crt_building=crtBuildingsTimetable[2*d2+1][h2];
+				}
+			}
+		}
+
+		if(n_changes>this->maxBuildingChangesPerDay){
+			nbroken+=-this->maxBuildingChangesPerDay+n_changes;
+
+			if(conflictsString!=nullptr){
+				QString s=tr("Space constraint teacher max building changes per real day broken for teacher=%1 on real day number %2")
+					.arg(this->teacherName)
+					.arg(d2);
+				s += ". ";
+				s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
+
+				dl.append(s);
+				cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
+
+				*conflictsString+=s+"\n";
+			}
+		}
+	}
+
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerRealDay::isRelatedToActivity(Activity* a)
+{
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerRealDay::isRelatedToTeacher(Teacher* t)
+{
+	return this->teacherName==t->name;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerRealDay::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerRealDay::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerRealDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerRealDay::isRelatedToRoom(Room* r)
+{
+	Q_UNUSED(r);
+
+	return false;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerRealDay::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBuildingChangesPerDay>2*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerRealDay::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintTeacherMaxBuildingChangesPerRealDay::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(maxBuildingChangesPerDay>2*r.nHoursPerDay)
+		maxBuildingChangesPerDay=2*r.nHoursPerDay;
+
+	return true;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeachersMaxBuildingChangesPerRealDay::ConstraintTeachersMaxBuildingChangesPerRealDay()
+	: SpaceConstraint()
+{
+	this->type=CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY;
+}
+
+ConstraintTeachersMaxBuildingChangesPerRealDay::ConstraintTeachersMaxBuildingChangesPerRealDay(double wp, int mc)
+	: SpaceConstraint(wp)
+{
+	this->type=CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY;
+	this->maxBuildingChangesPerDay=mc;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerRealDay::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+
+	return true;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerRealDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+
+	return false;
+}
+
+QString ConstraintTeachersMaxBuildingChangesPerRealDay::getXmlDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString s="<ConstraintTeachersMaxBuildingChangesPerRealDay>\n";
+
+	s+="	<Weight_Percentage>"+CustomFETString::number(weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Max_Building_Changes_Per_Day>"+CustomFETString::number(this->maxBuildingChangesPerDay)+"</Max_Building_Changes_Per_Day>\n";
+
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintTeachersMaxBuildingChangesPerRealDay>\n";
+
+	return s;
+}
+
+QString ConstraintTeachersMaxBuildingChangesPerRealDay::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s=tr("Teachers max building changes per real day"); s+=", ";
+
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+
+	s+=tr("MC:%1", "MC means max changes").arg(this->maxBuildingChangesPerDay);
+
+	return begin+s+end;
+}
+
+QString ConstraintTeachersMaxBuildingChangesPerRealDay::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Space constraint"); s+="\n";
+
+	s+=tr("Teachers maximum building changes per real day"); s+="\n";
+
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeachersMaxBuildingChangesPerRealDay::fitness(
+	Solution& c,
+	Rules& r,
+	QList<double>& cl,
+	QList<QString>& dl,
+	FakeString* conflictsString)
+{
+	//if the matrix roomsMatrix is already calculated, do not calculate it again!
+	if(!c.roomsMatrixReady){
+		c.roomsMatrixReady=true;
+		rooms_conflicts = c.getRoomsMatrix(r, roomsMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	Matrix2D<int> crtBuildingsTimetable;
+	crtBuildingsTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
+
+	for(int tch=0; tch<r.nInternalTeachers; tch++){
+		//Better, less memory
+		Teacher* tchpointer=r.internalTeachersList[tch];
+		for(int d2=0; d2<r.nDaysPerWeek; d2++)
+			for(int h2=0; h2<r.nHoursPerDay; h2++)
+				crtBuildingsTimetable[d2][h2]=-1;
+
+		for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+			if(c.times[ai]!=UNALLOCATED_TIME){
+				int d2=c.times[ai]%r.nDaysPerWeek;
+				int h2=c.times[ai]/r.nDaysPerWeek;
+
+				for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
+					assert(h2+dur<r.nHoursPerDay);
+					assert(crtBuildingsTimetable[d2][h2+dur]==-1);
+					if(c.rooms[ai]!=UNSPECIFIED_ROOM && c.rooms[ai]!=UNALLOCATED_SPACE){
+						assert(c.rooms[ai]>=0 && c.rooms[ai]<r.nInternalRooms);
+						crtBuildingsTimetable[d2][h2+dur]=r.internalRoomsList[c.rooms[ai]]->buildingIndex;
+					}
+				}
+			}
+		/////////////
+
+		for(int d2=0; d2<r.nDaysPerWeek/2; d2++){
+			int crt_building=-1;
+			int n_changes=0;
+			for(int h2=0; h2<r.nHoursPerDay; h2++){
+				if(crtBuildingsTimetable[2*d2][h2]!=-1){
+					if(crt_building!=crtBuildingsTimetable[2*d2][h2]){
+						if(crt_building!=-1)
+							n_changes++;
+						crt_building=crtBuildingsTimetable[2*d2][h2];
+					}
+				}
+			}
+			for(int h2=0; h2<r.nHoursPerDay; h2++){
+				if(crtBuildingsTimetable[2*d2+1][h2]!=-1){
+					if(crt_building!=crtBuildingsTimetable[2*d2+1][h2]){
+						if(crt_building!=-1)
+							n_changes++;
+						crt_building=crtBuildingsTimetable[2*d2+1][h2];
+					}
+				}
+			}
+
+			if(n_changes>this->maxBuildingChangesPerDay){
+				nbroken+=-this->maxBuildingChangesPerDay+n_changes;
+
+				if(conflictsString!=nullptr){
+					QString s=tr("Space constraint teachers max building changes per real day broken for teacher=%1 on real day number %2")
+						.arg(r.internalTeachersList[tch]->name)
+						.arg(d2);
+					s += ". ";
+					s += tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes)));
+
+					dl.append(s);
+					cl.append(weightPercentage/100* (-maxBuildingChangesPerDay+n_changes));
+
+					*conflictsString+=s+"\n";
+				}
+			}
+		}
+	}
+
+	if(this->weightPercentage==100)
+		assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerRealDay::isRelatedToActivity(Activity* a)
+{
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerRealDay::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return true;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerRealDay::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerRealDay::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerRealDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerRealDay::isRelatedToRoom(Room* r)
+{
+	Q_UNUSED(r);
+
+	return false;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerRealDay::hasWrongDayOrHour(Rules& r)
+{
+	if(maxBuildingChangesPerDay>2*r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerRealDay::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintTeachersMaxBuildingChangesPerRealDay::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(maxBuildingChangesPerDay>2*r.nHoursPerDay)
+		maxBuildingChangesPerDay=2*r.nHoursPerDay;
+
+	return true;
+}

@@ -946,6 +946,15 @@ private:
 	TimeConstraint* readTeacherMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxTwoActivityTagsPerDayFromN1N2N3(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	TimeConstraint* readTeacherMinRealDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMinRealDaysPerWeek(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
@@ -1122,6 +1131,11 @@ private:
 	SpaceConstraint* readTeachersMaxRoomChangesPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readStudentsSetMaxRoomChangesPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readStudentsMaxRoomChangesPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	SpaceConstraint* readTeacherMaxBuildingChangesPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readTeachersMaxBuildingChangesPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readStudentsSetMaxBuildingChangesPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	SpaceConstraint* readStudentsMaxBuildingChangesPerRealDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	SpaceConstraint* readOldMATeacherMaxRoomChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	SpaceConstraint* readOldMATeachersMaxRoomChangesPerDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);

@@ -110,6 +110,11 @@ const int CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_REAL_DAY			=1043;
 const int CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY				=1044;
 const int CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY				=1045;
 
+const int CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY			=1046;
+const int CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY		=1047;
+const int CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY			=1048;
+const int CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY			=1049;
+
 /**
 This class represents a space constraint
 */
@@ -2265,6 +2270,178 @@ public:
 	ConstraintTeachersMaxRoomChangesPerRealDay();
 
 	ConstraintTeachersMaxRoomChangesPerRealDay(double wp, int mc);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Activity* a);
+
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsMaxBuildingChangesPerRealDay: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMaxBuildingChangesPerRealDay)
+
+public:
+
+	int maxBuildingChangesPerDay;
+
+	ConstraintStudentsMaxBuildingChangesPerRealDay();
+
+	ConstraintStudentsMaxBuildingChangesPerRealDay(double wp, int mc);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Activity* a);
+
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintStudentsSetMaxBuildingChangesPerRealDay: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMaxBuildingChangesPerRealDay)
+
+public:
+	//internal variables
+	QList<int> iSubgroupsList;
+
+public:
+
+	int maxBuildingChangesPerDay;
+
+	QString studentsName;
+
+	ConstraintStudentsSetMaxBuildingChangesPerRealDay();
+
+	ConstraintStudentsSetMaxBuildingChangesPerRealDay(double wp, QString st, int mc);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Activity* a);
+
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeacherMaxBuildingChangesPerRealDay: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMaxBuildingChangesPerRealDay)
+
+public:
+	//internal variables
+	int teacher_ID;
+
+public:
+
+	int maxBuildingChangesPerDay;
+
+	QString teacherName;
+
+	ConstraintTeacherMaxBuildingChangesPerRealDay();
+
+	ConstraintTeacherMaxBuildingChangesPerRealDay(double wp, QString tc, int mc);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Activity* a);
+
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool isRelatedToRoom(Room* r);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintTeachersMaxBuildingChangesPerRealDay: public SpaceConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxBuildingChangesPerRealDay)
+
+public:
+
+	int maxBuildingChangesPerDay;
+
+	ConstraintTeachersMaxBuildingChangesPerRealDay();
+
+	ConstraintTeachersMaxBuildingChangesPerRealDay(double wp, int mc);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 

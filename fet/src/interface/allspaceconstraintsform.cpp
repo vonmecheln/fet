@@ -50,6 +50,9 @@
 #include "modifyconstraintstudentssetmaxroomchangesperrealdayform.h"
 #include "modifyconstraintstudentsmaxroomchangesperrealdayform.h"
 
+#include "modifyconstraintstudentssetmaxbuildingchangesperrealdayform.h"
+#include "modifyconstraintstudentsmaxbuildingchangesperrealdayform.h"
+
 #include "modifyconstraintstudentssetmaxroomchangesperdayform.h"
 #include "modifyconstraintstudentsmaxroomchangesperdayform.h"
 #include "modifyconstraintstudentssetmaxroomchangesperweekform.h"
@@ -59,6 +62,9 @@
 
 #include "modifyconstraintteachermaxroomchangesperrealdayform.h"
 #include "modifyconstraintteachersmaxroomchangesperrealdayform.h"
+
+#include "modifyconstraintteachermaxbuildingchangesperrealdayform.h"
+#include "modifyconstraintteachersmaxbuildingchangesperrealdayform.h"
 
 #include "modifyconstraintteachermaxroomchangesperdayform.h"
 #include "modifyconstraintteachersmaxroomchangesperdayform.h"
@@ -749,6 +755,30 @@ void AllSpaceConstraintsForm::modifyConstraint()
 	//45
 	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY){
 		ModifyConstraintTeachersMaxRoomChangesPerRealDayForm form(this, (ConstraintTeachersMaxRoomChangesPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//46
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+		ModifyConstraintStudentsSetMaxBuildingChangesPerRealDayForm form(this, (ConstraintStudentsSetMaxBuildingChangesPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//47
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+		ModifyConstraintStudentsMaxBuildingChangesPerRealDayForm form(this, (ConstraintStudentsMaxBuildingChangesPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//48
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+		ModifyConstraintTeacherMaxBuildingChangesPerRealDayForm form(this, (ConstraintTeacherMaxBuildingChangesPerRealDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//49
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+		ModifyConstraintTeachersMaxBuildingChangesPerRealDayForm form(this, (ConstraintTeachersMaxBuildingChangesPerRealDay*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

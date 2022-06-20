@@ -638,10 +638,10 @@ bool haveActivityEndsTeachersDay;
 
 
 bool checkMinDays100Percent(QWidget* parent);
-bool checkMinDaysConsecutiveIfSameDay(QWidget* parent);
+bool checkMinDaysMaxTwoOnSameDay(QWidget* parent);
 
 bool checkMinHalfDays100Percent(QWidget* parent);
-bool checkMinHalfDaysConsecutiveIfSameDay(QWidget* parent);
+bool checkMinHalfDaysMaxTwoOnSameDay(QWidget* parent);
 
 
 bool checkMaxHoursForActivityDuration(QWidget* parent);
@@ -761,6 +761,12 @@ Matrix1D<double> teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages;
 Matrix1D<int> activityTagN1N2N3;
 Matrix1D<QList<int>> teachersWithN1N2N3ForActivities;
 
+Matrix1D<double> subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages;
+Matrix1D<QList<int>> subgroupsWithN1N2N3ForActivities;
+
+Matrix1D<double> teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages;
+Matrix1D<double> subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages;
+
 
 ////////BEGIN rooms
 //bool computeBasicSpace(QWidget* parent);
@@ -810,6 +816,16 @@ Matrix1D<int> maxBuildingChangesPerDayForTeachersMaxChanges;
 Matrix1D<double> minGapsBetweenBuildingChangesForTeachersPercentages;
 Matrix1D<int> minGapsBetweenBuildingChangesForTeachersMinGaps;
 //bool computeMinGapsBetweenBuildingChangesForTeachers(QWidget* parent);
+
+//BEGIN building changes per real day for teachers
+Matrix1D<double> maxBuildingChangesPerRealDayForTeachersPercentages;
+Matrix1D<int> maxBuildingChangesPerRealDayForTeachersMaxChanges;
+//END   building changes per real day for teachers
+
+//BEGIN building changes per real day for students
+Matrix1D<double> maxBuildingChangesPerRealDayForSubgroupsPercentages;
+Matrix1D<int> maxBuildingChangesPerRealDayForSubgroupsMaxChanges;
+//END   building changes per real day for students
 ////////END   building changes
 
 
@@ -1344,6 +1360,10 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersMinRestingHoursBetweenMorningAndAfternoonPercentages.resize(gt.rules.nInternalTeachers);
 	//
 	teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages.resize(gt.rules.nInternalTeachers);
+	subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages.resize(gt.rules.nInternalSubgroups);
+	//
+	teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages.resize(gt.rules.nInternalTeachers);
+	subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages.resize(gt.rules.nInternalSubgroups);
 	//
 	subgroupsMinRestingHoursBetweenMorningAndAfternoonMinHours.resize(gt.rules.nInternalSubgroups);
 	subgroupsMinRestingHoursBetweenMorningAndAfternoonPercentages.resize(gt.rules.nInternalSubgroups);
@@ -1376,6 +1396,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	minGapsBetweenBuildingChangesForTeachersPercentages.resize(gt.rules.nInternalTeachers);
 	minGapsBetweenBuildingChangesForTeachersMinGaps.resize(gt.rules.nInternalTeachers);
 	//
+	maxBuildingChangesPerRealDayForTeachersPercentages.resize(gt.rules.nInternalTeachers);
+	maxBuildingChangesPerRealDayForTeachersMaxChanges.resize(gt.rules.nInternalTeachers);
+	//
 	maxRoomChangesPerRealDayForTeachersPercentages.resize(gt.rules.nInternalTeachers);
 	maxRoomChangesPerRealDayForTeachersMaxChanges.resize(gt.rules.nInternalTeachers);
 	//
@@ -1385,6 +1408,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	maxRoomChangesPerDayForStudentsMaxChanges.resize(gt.rules.nInternalSubgroups);
 	minGapsBetweenRoomChangesForStudentsPercentages.resize(gt.rules.nInternalSubgroups);
 	minGapsBetweenRoomChangesForStudentsMinGaps.resize(gt.rules.nInternalSubgroups);
+	//
+	maxBuildingChangesPerRealDayForSubgroupsPercentages.resize(gt.rules.nInternalSubgroups);
+	maxBuildingChangesPerRealDayForSubgroupsMaxChanges.resize(gt.rules.nInternalSubgroups);
 	//
 	maxRoomChangesPerRealDayForSubgroupsPercentages.resize(gt.rules.nInternalSubgroups);
 	maxRoomChangesPerRealDayForSubgroupsMaxChanges.resize(gt.rules.nInternalSubgroups);
@@ -1589,6 +1615,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersActivityTagMaxHoursContinuouslyPercentage.resize(gt.rules.nInternalTeachers);
 
 	teachersWithN1N2N3ForActivities.resize(gt.rules.nInternalActivities);
+	subgroupsWithN1N2N3ForActivities.resize(gt.rules.nInternalActivities);
 
 	subgroupsActivityTagMaxHoursDailyMaxHours.resize(gt.rules.nInternalSubgroups);
 	subgroupsActivityTagMaxHoursDailyActivityTag.resize(gt.rules.nInternalSubgroups);
@@ -1943,7 +1970,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	t=checkMinDays100Percent(parent);
 	if(!t)
 		return false;
-	t=checkMinDaysConsecutiveIfSameDay(parent);
+	t=checkMinDaysMaxTwoOnSameDay(parent);
 	if(!t)
 		return false;
 	
@@ -1951,7 +1978,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	t=checkMinHalfDays100Percent(parent);
 	if(!t)
 		return false;
-	t=checkMinHalfDaysConsecutiveIfSameDay(parent);
+	t=checkMinHalfDaysMaxTwoOnSameDay(parent);
 	if(!t)
 		return false;
 	
@@ -2181,6 +2208,14 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 	t=computeMaxRoomChangesPerRealDayForStudents(parent);
+	if(!t)
+		return false;
+	//////////////////
+
+	t=computeMaxBuildingChangesPerRealDayForTeachers(parent);
+	if(!t)
+		return false;
+	t=computeMaxBuildingChangesPerRealDayForStudents(parent);
 	if(!t)
 		return false;
 	//////////////////
@@ -13611,29 +13646,58 @@ bool checkMinDays100Percent(QWidget* parent)
 		 &&gt.rules.internalTimeConstraintsList[i]->weightPercentage==100.0){
 			ConstraintMinDaysBetweenActivities* md=(ConstraintMinDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
 			
-			if(md->minDays>=1){
-				int na=md->_n_activities;
-				int nd=md->minDays;
-				if((na-1)*nd+1 > gt.rules.nDaysPerWeek){
-					ok=false;
+			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+				if(md->minDays>=1){
+					int na=md->_n_activities;
+					int nd=md->minDays;
+					if((na-1)*nd+1 > gt.rules.nDaysPerWeek){
+						ok=false;
 						
-					QString s=GeneratePreTranslate::tr("%1 cannot be respected because it contains %2 activities,"
-					 " has weight 100% and has min number of days between activities=%3. The minimum required number of days per week for"
-					 " that would be (nactivities-1)*mindays+1=%4, and you have only %5 days per week - impossible. Please correct this constraint.", "%1 is the detailed description of a constraint"
-					)
-					 .arg(md->getDetailedDescription(gt.rules))
-					 .arg(na)
-					 .arg(nd)
-					 .arg((na-1)*nd+1)
-					 .arg(gt.rules.nDaysPerWeek)
-					 ;
+						QString s=GeneratePreTranslate::tr("%1 cannot be respected because it contains %2 activities,"
+						 " has weight 100% and has min number of days between activities=%3. The minimum required number of days per week for"
+						 " that would be (nactivities-1)*mindays+1=%4, and you have only %5 days per week - impossible. Please correct this constraint.", "%1 is the detailed description of a constraint"
+						)
+						 .arg(md->getDetailedDescription(gt.rules))
+						 .arg(na)
+						 .arg(nd)
+						 .arg((na-1)*nd+1)
+						 .arg(gt.rules.nDaysPerWeek)
+						 ;
 
-					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
-					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
-					 1, 0 );
-					
-					if(t==0)
-						return ok;
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+						
+						if(t==0)
+							return ok;
+					}
+				}
+			}
+			else{
+				if(md->minDays>=1){
+					int na=md->_n_activities;
+					int nd=md->minDays;
+					if((na-1)*nd+1 > gt.rules.nDaysPerWeek/2){
+						ok=false;
+						
+						QString s=GeneratePreTranslate::tr("%1 cannot be respected because it contains %2 activities,"
+						 " has weight 100% and has min number of real days between activities=%3. The minimum required number of real days per week for"
+						 " that would be (nactivities-1)*mindays+1=%4, and you have only %5 real days per week - impossible. Please correct this constraint.", "%1 is the detailed description of a constraint"
+						)
+						 .arg(md->getDetailedDescription(gt.rules))
+						 .arg(na)
+						 .arg(nd)
+						 .arg((na-1)*nd+1)
+						 .arg(gt.rules.nDaysPerWeek/2)
+						 ;
+
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+						
+						if(t==0)
+							return ok;
+					}
 				}
 			}
 			
@@ -13707,131 +13771,269 @@ bool checkMinDays100Percent(QWidget* parent)
 	return ok;
 }
 
-bool checkMinDaysConsecutiveIfSameDay(QWidget* parent)
+bool checkMinDaysMaxTwoOnSameDay(QWidget* parent)
 {
 	bool ok=true;
 
-	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
-		daysTeacherIsAvailable[tc]=0;
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+			daysTeacherIsAvailable[tc]=0;
 
-		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
-			bool dayAvailable=false;
-			for(int h=0; h<gt.rules.nHoursPerDay; h++)
-				if(!breakDayHour[d][h] && !teacherNotAvailableDayHour[tc][d][h]){
-					dayAvailable=true;
-					break;
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+				bool dayAvailable=false;
+				for(int h=0; h<gt.rules.nHoursPerDay; h++)
+					if(!breakDayHour[d][h] && !teacherNotAvailableDayHour[tc][d][h]){
+						dayAvailable=true;
+						break;
+					}
+
+				if(dayAvailable)
+					daysTeacherIsAvailable[tc]++;
+			}
+
+			if(teachersMaxDaysPerWeekMaxDays[tc]>=0){ //it has compulsory 100% weight
+				assert(teachersMaxDaysPerWeekWeightPercentages[tc]==100);
+				daysTeacherIsAvailable[tc]=min(daysTeacherIsAvailable[tc], teachersMaxDaysPerWeekMaxDays[tc]);
+			}
+
+			/*if(gt.rules.mode==MORNINGS_AFTERNOONS){
+				if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){ //it has compulsory 100% weight
+					assert(teachersMaxRealDaysPerWeekWeightPercentages[tc]==100);
+					daysTeacherIsAvailable[tc]=min(daysTeacherIsAvailable[tc], teachersMaxRealDaysPerWeekMaxDays[tc]);
 				}
-				
-			if(dayAvailable)
-				daysTeacherIsAvailable[tc]++;
+			}*/
 		}
 
-		if(teachersMaxDaysPerWeekMaxDays[tc]>=0){ //it has compulsory 100% weight
-			assert(teachersMaxDaysPerWeekWeightPercentages[tc]==100);
-			daysTeacherIsAvailable[tc]=min(daysTeacherIsAvailable[tc], teachersMaxDaysPerWeekMaxDays[tc]);
+		for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+			daysSubgroupIsAvailable[sb]=0;
+
+			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+				bool dayAvailable=false;
+				for(int h=0; h<gt.rules.nHoursPerDay; h++)
+					if(!breakDayHour[d][h] && !subgroupNotAvailableDayHour[sb][d][h]){
+						dayAvailable=true;
+						break;
+					}
+
+				if(dayAvailable)
+					daysSubgroupIsAvailable[sb]++;
+			}
+
+			if(subgroupsMaxDaysPerWeekMaxDays[sb]>=0){ //it has compulsory 100% weight
+				assert(subgroupsMaxDaysPerWeekWeightPercentages[sb]==100);
+				daysSubgroupIsAvailable[sb]=min(daysSubgroupIsAvailable[sb], subgroupsMaxDaysPerWeekMaxDays[sb]);
+			}
+
+			/*if(gt.rules.mode==MORNINGS_AFTERNOONS){
+				if(subgroupsMaxRealDaysPerWeekMaxDays[sb]>=0){ //it has compulsory 100% weight
+					assert(subgroupsMaxRealDaysPerWeekWeightPercentages[sb]==100);
+					daysSubgroupIsAvailable[sb]=min(daysSubgroupIsAvailable[sb], subgroupsMaxRealDaysPerWeekMaxDays[sb]);
+				}
+			}*/
 		}
 
-		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+				ConstraintMinDaysBetweenActivities* md=(ConstraintMinDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
+				if(1/*md->consecutiveIfSameDay*/){
+					for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
+						nReqForTeacher[tc]=0;
+					for(int j=0; j<md->_n_activities; j++){
+						int ai=md->_activities[j];
+						for(int k=0; k<gt.rules.internalActivitiesList[ai].iTeachersList.count(); k++){
+							int tc=gt.rules.internalActivitiesList[ai].iTeachersList.at(k);
+							nReqForTeacher[tc]++;
+						}
+					}
+
+					for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+						if(2*daysTeacherIsAvailable[tc] < nReqForTeacher[tc]){
+							ok=false;
+
+							QString s=GeneratePreTranslate::tr("%1 cannot be respected because teacher %2 has at most"
+							" %3 available days. Currently FET cannot put more than 2 activities in the same day."
+							" You have 2*available days<number of activities in this constraint.",
+							"%1 is the detailed description of a constraint"
+							)
+							.arg(md->getDetailedDescription(gt.rules))
+							.arg(gt.rules.internalTeachersList[tc]->name)
+							.arg(daysTeacherIsAvailable[tc]);
+
+							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+							GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+							1, 0 );
+
+							if(t==0)
+								return ok;
+						}
+					}
+
+					for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++)
+						nReqForSubgroup[sb]=0;
+					for(int j=0; j<md->_n_activities; j++){
+						int ai=md->_activities[j];
+						for(int k=0; k<gt.rules.internalActivitiesList[ai].iSubgroupsList.count(); k++){
+							int sb=gt.rules.internalActivitiesList[ai].iSubgroupsList.at(k);
+							nReqForSubgroup[sb]++;
+						}
+					}
+
+					for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+						if(2*daysSubgroupIsAvailable[sb] < nReqForSubgroup[sb]){
+							ok=false;
+
+							QString s=GeneratePreTranslate::tr("%1 cannot be respected because subgroup %2 has at most"
+							" %3 available days. Currently FET cannot put more than 2 activities in the same day."
+							" You have 2*available days<number of activities in this constraint.",
+							"%1 is the detailed description of a constraint"
+							)
+							.arg(md->getDetailedDescription(gt.rules))
+							.arg(gt.rules.internalSubgroupsList[sb]->name)
+							.arg(daysSubgroupIsAvailable[sb]);
+
+							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+							GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+							1, 0 );
+
+							if(t==0)
+								return ok;
+						}
+					}
+				}
+			}
+		}
+	}
+	else{
+		for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+			daysTeacherIsAvailable[tc]=0;
+
+			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++){
+				bool dayAvailable=false;
+				for(int h=0; h<gt.rules.nHoursPerDay; h++){
+					if(!breakDayHour[2*d][h] && !teacherNotAvailableDayHour[tc][2*d][h]){
+						dayAvailable=true;
+						break;
+					}
+					if(!breakDayHour[2*d+1][h] && !teacherNotAvailableDayHour[tc][2*d+1][h]){
+						dayAvailable=true;
+						break;
+					}
+				}
+
+				if(dayAvailable)
+					daysTeacherIsAvailable[tc]++;
+			}
+
+			//Careful: here we cannot divide by 2.
+			if(teachersMaxDaysPerWeekMaxDays[tc]>=0){ //it has compulsory 100% weight
+				assert(teachersMaxDaysPerWeekWeightPercentages[tc]==100);
+				daysTeacherIsAvailable[tc]=min(daysTeacherIsAvailable[tc], teachersMaxDaysPerWeekMaxDays[tc]);
+			}
+
 			if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){ //it has compulsory 100% weight
 				assert(teachersMaxRealDaysPerWeekWeightPercentages[tc]==100);
 				daysTeacherIsAvailable[tc]=min(daysTeacherIsAvailable[tc], teachersMaxRealDaysPerWeekMaxDays[tc]);
 			}
 		}
-	}
 
-	for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
-		daysSubgroupIsAvailable[sb]=0;
+		for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+			daysSubgroupIsAvailable[sb]=0;
 
-		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
-			bool dayAvailable=false;
-			for(int h=0; h<gt.rules.nHoursPerDay; h++)
-				if(!breakDayHour[d][h] && !subgroupNotAvailableDayHour[sb][d][h]){
-					dayAvailable=true;
-					break;
+			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++){
+				bool dayAvailable=false;
+				for(int h=0; h<gt.rules.nHoursPerDay; h++){
+					if(!breakDayHour[2*d][h] && !subgroupNotAvailableDayHour[sb][2*d][h]){
+						dayAvailable=true;
+						break;
+					}
+					if(!breakDayHour[2*d+1][h] && !subgroupNotAvailableDayHour[sb][2*d+1][h]){
+						dayAvailable=true;
+						break;
+					}
 				}
-				
-			if(dayAvailable)
-				daysSubgroupIsAvailable[sb]++;
-		}
 
-		if(subgroupsMaxDaysPerWeekMaxDays[sb]>=0){ //it has compulsory 100% weight
-			assert(subgroupsMaxDaysPerWeekWeightPercentages[sb]==100);
-			daysSubgroupIsAvailable[sb]=min(daysSubgroupIsAvailable[sb], subgroupsMaxDaysPerWeekMaxDays[sb]);
-		}
+				if(dayAvailable)
+					daysSubgroupIsAvailable[sb]++;
+			}
 
-		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			//Careful: here we cannot divide by 2.
+			if(subgroupsMaxDaysPerWeekMaxDays[sb]>=0){ //it has compulsory 100% weight
+				assert(subgroupsMaxDaysPerWeekWeightPercentages[sb]==100);
+				daysSubgroupIsAvailable[sb]=min(daysSubgroupIsAvailable[sb], subgroupsMaxDaysPerWeekMaxDays[sb]);
+			}
+
 			if(subgroupsMaxRealDaysPerWeekMaxDays[sb]>=0){ //it has compulsory 100% weight
 				assert(subgroupsMaxRealDaysPerWeekWeightPercentages[sb]==100);
 				daysSubgroupIsAvailable[sb]=min(daysSubgroupIsAvailable[sb], subgroupsMaxRealDaysPerWeekMaxDays[sb]);
 			}
 		}
-	}
-	
-	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
-		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
-			ConstraintMinDaysBetweenActivities* md=(ConstraintMinDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
-			if(1/*md->consecutiveIfSameDay*/){
-				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
-					nReqForTeacher[tc]=0;
-				for(int j=0; j<md->_n_activities; j++){
-					int ai=md->_activities[j];
-					for(int k=0; k<gt.rules.internalActivitiesList[ai].iTeachersList.count(); k++){
-						int tc=gt.rules.internalActivitiesList[ai].iTeachersList.at(k);
-						nReqForTeacher[tc]++;
-					}
-				}
-			
-				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
-					if(2*daysTeacherIsAvailable[tc] < nReqForTeacher[tc]){
-						ok=false;
-						
-						QString s=GeneratePreTranslate::tr("%1 cannot be respected because teacher %2 has at most"
-						 " %3 available days. Currently FET cannot put more than 2 activities in the same day."
-						 " You have 2*available days<number of activities in this constraint.",
-						 "%1 is the detailed description of a constraint"
-						)
-						 .arg(md->getDetailedDescription(gt.rules))
-						 .arg(gt.rules.internalTeachersList[tc]->name)
-						 .arg(daysTeacherIsAvailable[tc]);
-	
-						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
-						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
-						 1, 0 );
-						
-						if(t==0)
-							return ok;
-					}
-				}
 
-				for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++)
-					nReqForSubgroup[sb]=0;
-				for(int j=0; j<md->_n_activities; j++){
-					int ai=md->_activities[j];
-					for(int k=0; k<gt.rules.internalActivitiesList[ai].iSubgroupsList.count(); k++){
-						int sb=gt.rules.internalActivitiesList[ai].iSubgroupsList.at(k);
-						nReqForSubgroup[sb]++;
+		for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+				ConstraintMinDaysBetweenActivities* md=(ConstraintMinDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
+				if(1/*md->consecutiveIfSameDay*/){
+					for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
+						nReqForTeacher[tc]=0;
+					for(int j=0; j<md->_n_activities; j++){
+						int ai=md->_activities[j];
+						for(int k=0; k<gt.rules.internalActivitiesList[ai].iTeachersList.count(); k++){
+							int tc=gt.rules.internalActivitiesList[ai].iTeachersList.at(k);
+							nReqForTeacher[tc]++;
+						}
 					}
-				}
-			
-				for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
-					if(2*daysSubgroupIsAvailable[sb] < nReqForSubgroup[sb]){
-						ok=false;
-						
-						QString s=GeneratePreTranslate::tr("%1 cannot be respected because subgroup %2 has at most"
-						 " %3 available days. Currently FET cannot put more than 2 activities in the same day."
-						 " You have 2*available days<number of activities in this constraint.",
-						 "%1 is the detailed description of a constraint"
-						)
-						 .arg(md->getDetailedDescription(gt.rules))
-						 .arg(gt.rules.internalSubgroupsList[sb]->name)
-						 .arg(daysSubgroupIsAvailable[sb]);
 
-						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
-						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
-						 1, 0 );
-					
-						if(t==0)
-							return ok;
+					for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+						if(2*daysTeacherIsAvailable[tc] < nReqForTeacher[tc]){
+							ok=false;
+
+							QString s=GeneratePreTranslate::tr("%1 cannot be respected because teacher %2 has at most"
+							" %3 available real days. Currently FET cannot put more than 2 activities in the same real day."
+							" You have 2*available days<number of activities in this constraint.",
+							"%1 is the detailed description of a constraint"
+							)
+							.arg(md->getDetailedDescription(gt.rules))
+							.arg(gt.rules.internalTeachersList[tc]->name)
+							.arg(daysTeacherIsAvailable[tc]);
+
+							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+							GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+							1, 0 );
+
+							if(t==0)
+								return ok;
+						}
+					}
+
+					for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++)
+						nReqForSubgroup[sb]=0;
+					for(int j=0; j<md->_n_activities; j++){
+						int ai=md->_activities[j];
+						for(int k=0; k<gt.rules.internalActivitiesList[ai].iSubgroupsList.count(); k++){
+							int sb=gt.rules.internalActivitiesList[ai].iSubgroupsList.at(k);
+							nReqForSubgroup[sb]++;
+						}
+					}
+
+					for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+						if(2*daysSubgroupIsAvailable[sb] < nReqForSubgroup[sb]){
+							ok=false;
+
+							QString s=GeneratePreTranslate::tr("%1 cannot be respected because subgroup %2 has at most"
+							" %3 available real days. Currently FET cannot put more than 2 activities in the same real day."
+							" You have 2*available days<number of activities in this constraint.",
+							"%1 is the detailed description of a constraint"
+							)
+							.arg(md->getDetailedDescription(gt.rules))
+							.arg(gt.rules.internalSubgroupsList[sb]->name)
+							.arg(daysSubgroupIsAvailable[sb]);
+
+							int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+							GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+							1, 0 );
+
+							if(t==0)
+								return ok;
+						}
 					}
 				}
 			}
@@ -14005,7 +14207,7 @@ bool checkMinHalfDays100Percent(QWidget* parent)
 	return ok;
 }
 
-bool checkMinHalfDaysConsecutiveIfSameDay(QWidget* parent)
+bool checkMinHalfDaysMaxTwoOnSameDay(QWidget* parent)
 {
 	bool ok=true;
 
@@ -17666,7 +17868,7 @@ bool computeMaxRoomChangesPerRealDayForTeachers(QWidget* parent)
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teacher max room changes per day"
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teacher max room changes per real day"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
@@ -17688,7 +17890,7 @@ bool computeMaxRoomChangesPerRealDayForTeachers(QWidget* parent)
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teachers max room changes per day"
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teachers max room changes per real day"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
@@ -17727,7 +17929,7 @@ bool computeMaxRoomChangesPerRealDayForStudents(QWidget* parent)
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students set max room changes per day"
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students set max room changes per real day"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
@@ -17751,7 +17953,7 @@ bool computeMaxRoomChangesPerRealDayForStudents(QWidget* parent)
 				ok=false;
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students max room changes per day"
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students max room changes per real day"
 				 " with weight under 100%. Please correct and try again"),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 				 1, 0 );
@@ -17766,6 +17968,130 @@ bool computeMaxRoomChangesPerRealDayForStudents(QWidget* parent)
 					maxRoomChangesPerRealDayForSubgroupsMaxChanges[sbg]=spr->maxRoomChangesPerDay;
 				else
 					maxRoomChangesPerRealDayForSubgroupsMaxChanges[sbg]=min(maxRoomChangesPerRealDayForSubgroupsMaxChanges[sbg], spr->maxRoomChangesPerDay);
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeMaxBuildingChangesPerRealDayForTeachers(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalTeachers; i++){
+		maxBuildingChangesPerRealDayForTeachersPercentages[i]=-1;
+		maxBuildingChangesPerRealDayForTeachersMaxChanges[i]=-1;
+	}
+
+	bool ok=true;
+
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+			ConstraintTeacherMaxBuildingChangesPerRealDay* spr=(ConstraintTeacherMaxBuildingChangesPerRealDay*)gt.rules.internalSpaceConstraintsList[i];
+
+			if(spr->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teacher max building changes per real day"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+
+			maxBuildingChangesPerRealDayForTeachersPercentages[spr->teacher_ID]=100;
+			if(maxBuildingChangesPerRealDayForTeachersMaxChanges[spr->teacher_ID]<0)
+				maxBuildingChangesPerRealDayForTeachersMaxChanges[spr->teacher_ID]=spr->maxBuildingChangesPerDay;
+			else
+				maxBuildingChangesPerRealDayForTeachersMaxChanges[spr->teacher_ID]=min(maxBuildingChangesPerRealDayForTeachersMaxChanges[spr->teacher_ID], spr->maxBuildingChangesPerDay);
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+			ConstraintTeachersMaxBuildingChangesPerRealDay* spr=(ConstraintTeachersMaxBuildingChangesPerRealDay*)gt.rules.internalSpaceConstraintsList[i];
+
+			if(spr->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint teachers max building changes per real day"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+				maxBuildingChangesPerRealDayForTeachersPercentages[tch]=100;
+				if(maxBuildingChangesPerRealDayForTeachersMaxChanges[tch]<0)
+					maxBuildingChangesPerRealDayForTeachersMaxChanges[tch]=spr->maxBuildingChangesPerDay;
+				else
+					maxBuildingChangesPerRealDayForTeachersMaxChanges[tch]=min(maxBuildingChangesPerRealDayForTeachersMaxChanges[tch], spr->maxBuildingChangesPerDay);
+			}
+		}
+	}
+
+	return ok;
+}
+
+bool computeMaxBuildingChangesPerRealDayForStudents(QWidget* parent)
+{
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		maxBuildingChangesPerRealDayForSubgroupsPercentages[i]=-1;
+		maxBuildingChangesPerRealDayForSubgroupsMaxChanges[i]=-1;
+	}
+
+	bool ok=true;
+
+	for(int i=0; i<gt.rules.nInternalSpaceConstraints; i++){
+		if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+			ConstraintStudentsSetMaxBuildingChangesPerRealDay* spr=(ConstraintStudentsSetMaxBuildingChangesPerRealDay*)gt.rules.internalSpaceConstraintsList[i];
+
+			if(spr->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students set max building changes per real day"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+
+			for(int sbg : spr->iSubgroupsList){
+				maxBuildingChangesPerRealDayForSubgroupsPercentages[sbg]=100;
+				if(maxBuildingChangesPerRealDayForSubgroupsMaxChanges[sbg]<0)
+					maxBuildingChangesPerRealDayForSubgroupsMaxChanges[sbg]=spr->maxBuildingChangesPerDay;
+				else
+					maxBuildingChangesPerRealDayForSubgroupsMaxChanges[sbg]=min(maxBuildingChangesPerRealDayForSubgroupsMaxChanges[sbg], spr->maxBuildingChangesPerDay);
+			}
+		}
+		else if(gt.rules.internalSpaceConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+			ConstraintStudentsMaxBuildingChangesPerRealDay* spr=(ConstraintStudentsMaxBuildingChangesPerRealDay*)gt.rules.internalSpaceConstraintsList[i];
+
+			if(spr->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because there is a space constraint students max building changes per real day"
+				 " with weight under 100%. Please correct and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				maxBuildingChangesPerRealDayForSubgroupsPercentages[sbg]=100;
+				if(maxBuildingChangesPerRealDayForSubgroupsMaxChanges[sbg]<0)
+					maxBuildingChangesPerRealDayForSubgroupsMaxChanges[sbg]=spr->maxBuildingChangesPerDay;
+				else
+					maxBuildingChangesPerRealDayForSubgroupsMaxChanges[sbg]=min(maxBuildingChangesPerRealDayForSubgroupsMaxChanges[sbg], spr->maxBuildingChangesPerDay);
 			}
 		}
 	}
@@ -17832,8 +18158,12 @@ void computeMustComputeTimetableSubgroups()
 			  subgroupsAfternoonIntervalMaxDaysPerWeekPercentages[sbg].count()>0 ||
 
 			  maxRoomChangesPerRealDayForSubgroupsPercentages[sbg]>=0 ||
+			  maxBuildingChangesPerRealDayForSubgroupsPercentages[sbg]>=0 ||
 
 			  subgroupsActivityTagMaxHoursDailyRealDaysPercentage[sbg].count()>0 ||
+
+			  subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[sbg]>=0 ||
+			  subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[sbg]>=0 ||
 
 			  subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0 ||
 			  subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[sbg]>=0
@@ -17908,10 +18238,12 @@ void computeMustComputeTimetableTeachers()
 			  teachersAfternoonIntervalMaxDaysPerWeekPercentages[tch].count()>0 ||
 
 			  maxRoomChangesPerRealDayForTeachersPercentages[tch]>=0 ||
+			  maxBuildingChangesPerRealDayForTeachersPercentages[tch]>=0 ||
 
 			  teachersActivityTagMaxHoursDailyRealDaysPercentage[tch].count()>0 ||
 
 			  teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tch]>=0 ||
+			  teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[tch]>=0 ||
 
 			  teachersAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[tch]>=0 ||
 			  teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[tch]>=0 ||
@@ -17937,16 +18269,18 @@ void computeSubgroupsTeachersForActivitiesOfTheDay()
 		QSet<int> st_smtd=QSet<int>(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
 		QSet<int> st_smd=QSet<int>(subgroupsWithMaxRealDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxRealDaysPerWeekForActivities[ai].constEnd());
 		QSet<int> st_sma=QSet<int>(subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxAfternoonsPerWeekForActivities[ai].constEnd());
+		QSet<int> st_smn1n2n3=QSet<int>(subgroupsWithN1N2N3ForActivities[ai].constBegin(), subgroupsWithN1N2N3ForActivities[ai].constEnd());
 		QSet<int> st_smm=QSet<int>(subgroupsWithMaxMorningsPerWeekForActivities[ai].constBegin(), subgroupsWithMaxMorningsPerWeekForActivities[ai].constEnd());
 #else
 		QSet<int> st_smhd=subgroupsWithMaxDaysPerWeekForActivities[ai].toSet();
 		QSet<int> st_smtd=subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].toSet();
 		QSet<int> st_smd=subgroupsWithMaxRealDaysPerWeekForActivities[ai].toSet();
+		QSet<int> st_smn1n2n3=subgroupsWithN1N2N3ForActivities[ai].toSet();
 		QSet<int> st_sma=subgroupsWithMaxAfternoonsPerWeekForActivities[ai].toSet();
 		QSet<int> st_smm=subgroupsWithMaxMorningsPerWeekForActivities[ai].toSet();
 #endif
-		QSet<int> st_smda=st_smhd+st_smtd+st_smd+st_sma;
-		QSet<int> st_smdm=st_smhd+st_smtd+st_smd+st_smm;
+		QSet<int> st_smda=st_smhd+st_smtd+st_smd+st_sma+st_smn1n2n3;
+		QSet<int> st_smdm=st_smhd+st_smtd+st_smd+st_smm+st_smn1n2n3;
 		
 		QList<int> st_lmda;
 		QList<int> st_lmdm;
@@ -18006,28 +18340,50 @@ bool computeN1N2N3(QWidget* parent)
 {
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
 		teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[i]=-1.0;
+		teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[i]=-1.0;
 	}
 	
-	//bool haveN1N2N3=false;
-
+	for(int i=0; i<gt.rules.nInternalSubgroups; i++){
+		subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[i]=-1.0;
+		subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[i]=-1.0;
+	}
+	
 	bool ok=true;
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
-			//haveN1N2N3=true;
-
 			ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3* tn=(ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3*)gt.rules.internalTimeConstraintsList[i];
-
 			teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tn->teacher_ID]=100.0;
 		}
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
-			//haveN1N2N3=true;
-
-			//ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3* tn=(ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3*)gt.rules.internalTimeConstraintsList[i];
-
-			//teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tn->teacher_ID]=100.0;
 			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++)
 				teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tch]=100.0;
-			break;
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+			ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3* sn=(ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3*)gt.rules.internalTimeConstraintsList[i];
+			for(int sbg : qAsConst(sn->iSubgroupsList))
+				subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[sbg]=100.0;
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++)
+				subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[sbg]=100.0;
+		}
+
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+			ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3* tn=(ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3*)gt.rules.internalTimeConstraintsList[i];
+			teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[tn->teacher_ID]=100.0;
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+			for(int tch=0; tch<gt.rules.nInternalTeachers; tch++)
+				teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[tch]=100.0;
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+			ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3* sn=(ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3*)gt.rules.internalTimeConstraintsList[i];
+			for(int sbg : qAsConst(sn->iSubgroupsList))
+				subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[sbg]=100.0;
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++)
+				subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[sbg]=100.0;
 		}
 	}
 
@@ -18038,9 +18394,23 @@ bool computeN1N2N3(QWidget* parent)
 		for(int j=0; j<act->iTeachersList.count(); j++){
 			int tch=act->iTeachersList.at(j);
 
-			if(teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tch]>=0){
+			if(teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tch]>=0 || teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[tch]>=0){
 				assert(teachersWithN1N2N3ForActivities[i].indexOf(tch)==-1);
 				teachersWithN1N2N3ForActivities[i].append(tch);
+			}
+		}
+	}
+
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		subgroupsWithN1N2N3ForActivities[i].clear();
+
+		Activity* act=&gt.rules.internalActivitiesList[i];
+		for(int j=0; j<act->iSubgroupsList.count(); j++){
+			int sbg=act->iSubgroupsList.at(j);
+
+			if(subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[sbg]>=0 || subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[sbg]>=0){
+				assert(subgroupsWithN1N2N3ForActivities[i].indexOf(sbg)==-1);
+				subgroupsWithN1N2N3ForActivities[i].append(sbg);
 			}
 		}
 	}
@@ -18065,11 +18435,11 @@ bool computeN1N2N3(QWidget* parent)
 		if(cnt==0){
 			activityTagN1N2N3[ai]=3; //none
 		}
-		else if(teachersWithN1N2N3ForActivities[ai].count()>=1 && cnt>=2){
+		else if((teachersWithN1N2N3ForActivities[ai].count()>=1 || subgroupsWithN1N2N3ForActivities[ai].count()>=1) && cnt>=2){
 			ok=false;
 		
 			QString s=GeneratePreTranslate::tr("Activity with id=%1 has more than one activity tag from N1, N2, and N3, and you have"
-			 " at least a constraint of type teacher(s) max two activity tags from N1, N2, and N3 per day for the teacher(s) of this activity - please correct that.")
+			 " at least a constraint of type teacher(s)/students (set) max two activity tags from N1, N2, and N3 per (real) day for the teacher(s)/students of this activity - please correct that.")
 			 .arg(gt.rules.internalActivitiesList[ai].id);
 			int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
 			 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),

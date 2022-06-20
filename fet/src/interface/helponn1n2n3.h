@@ -24,7 +24,10 @@ class HelpOnN1N2N3{
 	Q_DECLARE_TR_FUNCTIONS(HelpOnN1N2N3);
 	
 public:
-	static void help(QWidget* parent);
+	static void helpOnTeachersConstraintsDays(QWidget* parent);
+	static void helpOnStudentsConstraintsDays(QWidget* parent);
+	static void helpOnTeachersConstraintsRealDays(QWidget* parent);
+	static void helpOnStudentsConstraintsRealDays(QWidget* parent);
 };
 
 #endif

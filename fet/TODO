@@ -45,6 +45,11 @@ ghani1990 says on that forum topic that this is to ensure that optional activiti
 perfect way to do this would be to divide the students and add all the activities for a students set, all the activities
 without the optional ones for another students set, and add max zero gaps for these students.
 
+Also suggested by Ali Doussary here: https://lalescu.ro/liviu/fet/forum/index.php?topic=5155.0 :
+- We need a constraint of the kind "a set of activities end students day". But we want the constraint to allow a set of activities
+to "start" or to "end" students day. The aim is to have some activities as the first or last activities the students do during
+a "Fet day", not a real day.
+
 From bachiri401:
 - Constraints teacher(s)/students (set) min hours per afternoon.
 -> And in general every constraint referring to days should have a corresponding constraint for real days,
@@ -7601,3 +7606,22 @@ applied/added. For example, if the user has 60 teachers and need to add the cons
 these 40 names and add this constraint at once.
 
 See also TODO items #82 and #84.
+
+456---------------------------------------------------------
+From Benahmed Abdelkrim:
+
+He refers to the constraints max two activity tags out of N1, N2, N3 in the Mornings-Afternoons mode.
+
+Is it possible to add this constraint for the following general situation: max 2 activity tags from a set of activity tags(?)
+
+457---------------------------------------------------------
+From mikkojoo (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4387.msg28616#msg28616
+
+mikkojoo refers to the Terms mode:
+
+About statistics, it would be nice to see sums of activities in a term:
+1. per teacher
+2. per group
+even 3. per teacher and subject but this could end up being not very easy to read.

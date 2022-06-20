@@ -189,6 +189,15 @@
 #include "modifyconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form.h"
 #include "modifyconstraintteachersmaxtwoactivitytagsperdayfromn1n2n3form.h"
 
+#include "modifyconstraintstudentssetmaxtwoactivitytagsperdayfromn1n2n3form.h"
+#include "modifyconstraintstudentsmaxtwoactivitytagsperdayfromn1n2n3form.h"
+
+#include "modifyconstraintteachermaxtwoactivitytagsperrealdayfromn1n2n3form.h"
+#include "modifyconstraintteachersmaxtwoactivitytagsperrealdayfromn1n2n3form.h"
+
+#include "modifyconstraintstudentssetmaxtwoactivitytagsperrealdayfromn1n2n3form.h"
+#include "modifyconstraintstudentsmaxtwoactivitytagsperrealdayfromn1n2n3form.h"
+
 #include "modifyconstraintteachersactivitytagmaxhoursdailyrealdaysform.h"
 #include "modifyconstraintteacheractivitytagmaxhoursdailyrealdaysform.h"
 
@@ -1813,6 +1822,42 @@ void AllTimeConstraintsForm::modifyConstraint()
 	//187
 	else if(ctr->type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES){
 		ModifyConstraintMaxTermsBetweenActivitiesForm form(this, (ConstraintMaxTermsBetweenActivities*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//188
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+		ModifyConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3Form form(this, (ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//189
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+		ModifyConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3Form form(this, (ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//190
+	else if(ctr->type==CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+		ModifyConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3Form form(this, (ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//191
+	else if(ctr->type==CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+		ModifyConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3Form form(this, (ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//192
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+		ModifyConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3Form form(this, (ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//193
+	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+		ModifyConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Form form(this, (ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

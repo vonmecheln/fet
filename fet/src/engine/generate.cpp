@@ -4824,6 +4824,161 @@ inline bool Generate::checkRoomChanges(int sbg, int tch, const QList<int>& globa
 	return true;
 }
 
+inline bool Generate::checkBuildingChangesPerRealDay(int sbg, int tch, const QList<int>& globalConflActivities, int rm, int level, const Activity* act, int ai, int d, int h, QList<int>& tmp_list)
+{
+	assert((sbg==-1 && tch>=0) || (sbg>=0 && tch==-1));
+	if(sbg>=0){
+		assert(sbg<gt.rules.nInternalSubgroups);
+		assert(maxBuildingChangesPerRealDayForSubgroupsPercentages[sbg]>=0);
+	}
+	else if(tch>=0){
+		assert(tch<gt.rules.nInternalTeachers);
+		assert(maxBuildingChangesPerRealDayForTeachersPercentages[tch]>=0);
+	}
+
+	//int rooms[2*MAX_HOURS_PER_DAY], activities[2*MAX_HOURS_PER_DAY];
+	for(int q=0; q<2; q++){
+		for(int h2=0; h2<gt.rules.nHoursPerDay; h2++){
+			int ai2;
+			if(tch>=0)
+				ai2=newTeachersTimetable(tch,(d/2)*2+q,h2);
+			else
+				ai2=newSubgroupsTimetable(sbg,(d/2)*2+q,h2);
+
+			if(ai2>=0 && !globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
+				int rm2;
+				if((d==(d/2)*2+q) && (h2>=h && h2<h+act->duration)){
+					assert(ai2==ai);
+					rm2=rm;
+				}
+				else
+					rm2=c.rooms[ai2];
+				if(rm2!=UNALLOCATED_SPACE && rm2!=UNSPECIFIED_ROOM){
+					assert(rm2>=0);
+					activitiesx2[h2+q*gt.rules.nHoursPerDay]=ai2;
+					buildingsx2[h2+q*gt.rules.nHoursPerDay]=gt.rules.internalRoomsList[rm2]->buildingIndex;
+				}
+				else{
+					activitiesx2[h2+q*gt.rules.nHoursPerDay]=ai2;
+					buildingsx2[h2+q*gt.rules.nHoursPerDay]=-1;
+				}
+			}
+			else{
+				buildingsx2[h2+q*gt.rules.nHoursPerDay]=-1;
+				activitiesx2[h2+q*gt.rules.nHoursPerDay]=-1;
+			}
+		}
+	}
+
+	if(buildingsx2[h+(d%2)*gt.rules.nHoursPerDay]==-1){ //we entered here assuming rm is a valid room
+		assert(0);
+		return true;
+	}
+
+	double perc;
+	int mc;
+	if(tch>=0){
+		perc=maxBuildingChangesPerRealDayForTeachersPercentages[tch];
+		mc=maxBuildingChangesPerRealDayForTeachersMaxChanges[tch];
+	}
+	else{
+		perc=maxBuildingChangesPerRealDayForSubgroupsPercentages[sbg];
+		mc=maxBuildingChangesPerRealDayForSubgroupsMaxChanges[sbg];
+	}
+
+	if(perc>=0){
+		int crt_building=-1;
+		int n_changes=0;
+		for(int h2=0; h2<2*gt.rules.nHoursPerDay; h2++)
+			if(buildingsx2[h2]!=-1){
+				if(crt_building!=buildingsx2[h2]){
+					if(crt_building!=-1)
+						n_changes++;
+					crt_building=buildingsx2[h2];
+				}
+			}
+
+		if(n_changes>mc){ //not OK
+			if(level>=LEVEL_STOP_CONFLICTS_CALCULATION)
+				return false;
+
+			QList<int> removableActsList;
+			for(int h2=0; h2<2*gt.rules.nHoursPerDay; h2++){
+				if(!(h2>=h+(d%2)*gt.rules.nHoursPerDay && h2<h+act->duration+(d%2)*gt.rules.nHoursPerDay))
+					if(buildingsx2[h2]!=-1 && activitiesx2[h2]>=0 && !swappedActivities[activitiesx2[h2]] && !(fixedTimeActivity[activitiesx2[h2]]&&fixedSpaceActivity[activitiesx2[h2]]))
+						if(!removableActsList.contains(activitiesx2[h2])){
+							removableActsList.append(activitiesx2[h2]);
+							assert(!globalConflActivities.contains(activitiesx2[h2]));
+							assert(!tmp_list.contains(activitiesx2[h2]));
+						}
+			}
+
+			for(;;){
+				int ai2=-1;
+				QList<int> optimalRemovableActs;
+				if(level==0){
+					int nWrong=INF;
+					for(int a : qAsConst(removableActsList))
+						if(nWrong>triedRemovals(a,c.times[a]) ){
+							nWrong=triedRemovals(a,c.times[a]);
+						}
+					for(int a : qAsConst(removableActsList))
+						if(nWrong==triedRemovals(a,c.times[a]))
+							optimalRemovableActs.append(a);
+				}
+				else
+					optimalRemovableActs=removableActsList;
+
+				if(removableActsList.count()>0)
+					assert(optimalRemovableActs.count()>0);
+
+				if(optimalRemovableActs.count()==0)
+					return false;
+
+				ai2=optimalRemovableActs.at(rng.intMRG32k3a(optimalRemovableActs.count()));
+
+				assert(!swappedActivities[ai2]);
+				assert(!(fixedTimeActivity[ai2]&&fixedSpaceActivity[ai2]));
+				assert(!globalConflActivities.contains(ai2));
+				assert(!tmp_list.contains(ai2));
+				assert(ai2>=0);
+
+				tmp_list.append(ai2);
+
+				int t=removableActsList.removeAll(ai2);
+				assert(t==1);
+
+				int ha=c.times[ai2]/gt.rules.nDaysPerWeek;
+				int da=c.times[ai2]%gt.rules.nDaysPerWeek;
+				int dura=gt.rules.internalActivitiesList[ai2].duration;
+				for(int h2=ha; h2<ha+dura; h2++){
+					assert(activitiesx2[h2+(da%2)*gt.rules.nHoursPerDay]==ai2);
+					assert(buildingsx2[h2+(da%2)*gt.rules.nHoursPerDay]!=-1);
+					buildingsx2[h2+(da%2)*gt.rules.nHoursPerDay]=-1;
+					activitiesx2[h2+(da%2)*gt.rules.nHoursPerDay]=-1;
+				}
+
+				int crt_building=-1;
+				int n_changes=0;
+				for(int h2=0; h2<2*gt.rules.nHoursPerDay; h2++)
+					if(buildingsx2[h2]!=-1){
+						if(crt_building!=buildingsx2[h2]){
+							if(crt_building!=-1)
+								n_changes++;
+							crt_building=buildingsx2[h2];
+						}
+					}
+
+				if(n_changes<=mc){ //OK
+					break;
+				}
+			}
+		}
+	}
+
+	return true;
+}
+
 inline bool Generate::checkRoomChangesPerRealDay(int sbg, int tch, const QList<int>& globalConflActivities, int rm, int level, const Activity* act, int ai, int d, int h, QList<int>& tmp_list)
 {
 	assert((sbg==-1 && tch>=0) || (sbg>=0 && tch==-1));
@@ -5652,6 +5807,32 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 
 						if(!ok)
 							continue;
+
+						if(gt.rules.mode==MORNINGS_AFTERNOONS){
+							//building changes per real day for students
+							for(int sbg : qAsConst(act->iSubgroupsList)){
+								if(maxBuildingChangesPerRealDayForSubgroupsPercentages[sbg]>=0){
+									ok=checkBuildingChangesPerRealDay(sbg, -1, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
+									if(!ok)
+										break;
+								}
+							}
+	
+							if(!ok)
+								continue;
+	
+							//building changes per real day for teachers
+							for(int tch : qAsConst(act->iTeachersList)){
+								if(maxBuildingChangesPerRealDayForTeachersPercentages[tch]>=0){
+									ok=checkBuildingChangesPerRealDay(-1, tch, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
+									if(!ok)
+										break;
+								}
+							}
+	
+							if(!ok)
+								continue;
+						}
 					}
 				}
 
@@ -5974,11 +6155,12 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	//2021-03-17
 	difficultActivities.resize(gt.rules.nInternalActivities);
 	//
-	buildings.resize(gt.rules.nHoursPerDay);
 	activities.resize(gt.rules.nHoursPerDay);
 	rooms.resize(gt.rules.nHoursPerDay);
+	buildings.resize(gt.rules.nHoursPerDay);
 	activitiesx2.resize(2*gt.rules.nHoursPerDay);
 	roomsx2.resize(2*gt.rules.nHoursPerDay);
+	buildingsx2.resize(2*gt.rules.nHoursPerDay);
 	weekBuildings.resize(gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 	weekActivities.resize(gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
 	weekRooms.resize(gt.rules.nDaysPerWeek, gt.rules.nHoursPerDay);
@@ -6344,6 +6526,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			}
 			else{
 				/*
+				Consider also N1N2N3, as for teachers
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 				QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[permutation[i]].constBegin(), subgroupsWithMaxDaysPerWeekForActivities[permutation[i]].constEnd());
 				QSet<int> st_smtd=QSet<int>(subgroupsWithMaxThreeConsecutiveDaysForActivities[permutation[i]].constBegin(), subgroupsWithMaxThreeConsecutiveDaysForActivities[permutation[i]].constEnd());
@@ -6861,6 +7044,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				/////////////////
 
 				/*
+				Consider also N1N2N3, as for teachers
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 				QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxDaysPerWeekForActivities[ai].constEnd());
 				QSet<int> st_smtd=QSet<int>(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
@@ -7081,6 +7265,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				/////////////////
 
 				/*
+				Consider also N1N2N3, as for teachers
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 				QSet<int> st_smhd=QSet<int>(subgroupsWithMaxDaysPerWeekForActivities[ai].constBegin(), subgroupsWithMaxDaysPerWeekForActivities[ai].constEnd());
 				QSet<int> st_smtd=QSet<int>(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constBegin(), subgroupsWithMaxThreeConsecutiveDaysForActivities[ai].constEnd());
@@ -7419,6 +7604,9 @@ again_if_impossible_activity:
 		bool okteachersmingapsbetweenactivitytag;
 
 		bool okteachersmaxtwoactivitytagsperdayfromn1n2n3;
+		bool okstudentsmaxtwoactivitytagsperdayfromn1n2n3;
+		bool okteachersmaxtwoactivitytagsperrealdayfromn1n2n3;
+		bool okstudentsmaxtwoactivitytagsperrealdayfromn1n2n3;
 		bool okteachersmaxhoursperallafternoons;
 
 		//2011-09-25
@@ -9109,7 +9297,7 @@ impossibleactivityendsteachersday:
 									canChooseDay=true;
 								}
 							}
-								
+						
 						if(!canChooseDay){
 							if(level==0){
 								//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
@@ -9117,9 +9305,9 @@ impossibleactivityendsteachersday:
 							okteachersmorningsafternoonsbehavior=false;
 							goto impossibleteachersmorningsafternoonsbehavior;
 						}
-							
+						
 						int d2=-1;
-							
+						
 						if(level!=0){
 							//choose random day from those with minimum number of conflicting activities
 							QList<int> candidateDays;
@@ -9135,7 +9323,7 @@ impossibleactivityendsteachersday:
 							for(int kk=0; kk<3; kk++)
 								if(canEmptyDay[kk] && m==_nConflActivities[kk])
 									candidateDays.append(kk);
-									
+							
 							assert(candidateDays.count()>0);
 							d2=candidateDays.at(rng.intMRG32k3a(candidateDays.count()));
 						}
@@ -17649,6 +17837,441 @@ impossiblestudentsminmorningsafternoonsperweek:
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+		/////////begin students (set) max two activity tags per day from N1 N2 N3
+
+		okstudentsmaxtwoactivitytagsperdayfromn1n2n3=true;
+
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(int sbg : qAsConst(act->iSubgroupsList)){
+				if(subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[sbg]>=0){
+					assert(subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[sbg]==100);
+					int cnt[4]; //cnt[3] is for activities which have no tag from N1, N2, or N3. Crash bug fixed on 2021-07-25.
+					cnt[0]=cnt[1]=cnt[2]=cnt[3]=0;
+					for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][d]))
+						if(!conflActivities[newtime].contains(ai2)){
+							int actTag=activityTagN1N2N3[ai2];
+							cnt[actTag]++;
+						}
+
+					int cntTags=0;
+					for(int i=0; i<3; i++)
+						if(cnt[i]>0)
+							cntTags++;
+					assert(cntTags<=2);
+					for(int i=0; i<3; i++){
+						int c0, c1, c2;
+						if(i==0){
+							c0=0; c1=1; c2=2;
+						}
+						else if(i==1){
+							c0=0; c1=2; c2=1;
+						}
+						else if(i==2){
+							c0=1; c1=2; c2=0;
+						}
+						else{
+							assert(0);
+						}
+
+						if(cnt[c0]>0 && cnt[c1]>0 && activityTagN1N2N3[ai]==c2){
+							bool canEmptyc0=true;
+							bool canEmptyc1=true;
+							QList<int> activitiesWithc0;
+							QList<int> activitiesWithc1;
+							
+							for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][d])){
+								if(activityTagN1N2N3[ai2]==c0 && !conflActivities[newtime].contains(ai2)){
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+										activitiesWithc0.append(ai2);
+									}
+									else{
+										canEmptyc0=false;
+										break;
+									}
+								}
+							}
+
+							for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][d])){
+								if(activityTagN1N2N3[ai2]==c1 && !conflActivities[newtime].contains(ai2)){
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+										activitiesWithc1.append(ai2);
+									}
+									else{
+										canEmptyc1=false;
+										break;
+									}
+								}
+							}
+							
+							if(!canEmptyc0 && !canEmptyc1){
+								okstudentsmaxtwoactivitytagsperdayfromn1n2n3=false;
+								goto impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3;
+							}
+							else if(canEmptyc0 && !canEmptyc1){
+								for(int ai2 : qAsConst(activitiesWithc0)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+								}
+							}
+							else if(!canEmptyc0 && canEmptyc1){
+								for(int ai2 : qAsConst(activitiesWithc1)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+								}
+							}
+							else{
+								assert(canEmptyc0 && canEmptyc1);
+								if(level>0){
+									if(activitiesWithc0.count()<activitiesWithc1.count()){
+										for(int ai2 : qAsConst(activitiesWithc0)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+									else if(activitiesWithc0.count()>activitiesWithc1.count()){
+										for(int ai2 : qAsConst(activitiesWithc1)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+									else{
+										int rnd=rng.intMRG32k3a(2);
+										if(rnd==0){
+											for(int ai2 : qAsConst(activitiesWithc0)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+										else{
+											assert(rnd==1);
+											for(int ai2 : qAsConst(activitiesWithc1)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+									}
+								}
+								else{
+									assert(level==0);
+
+									int _minWrong[3];
+									int _nWrong[3];
+									int _nConflActivities[3];
+									int _minIndexAct[3];
+									
+									_minWrong[c0]=INF;
+									_nWrong[c0]=0;
+									_nConflActivities[c0]=activitiesWithc0.count();
+									_minIndexAct[c0]=gt.rules.nInternalActivities;
+
+									for(int ai2 : qAsConst(activitiesWithc0)){
+										_minWrong[c0] = min (_minWrong[c0], triedRemovals(ai2,c.times[ai2]));
+										_minIndexAct[c0]=min(_minIndexAct[c0], invPermutation[ai2]);
+										_nWrong[c0]+=triedRemovals(ai2,c.times[ai2]);
+									}
+
+									_minWrong[c1]=INF;
+									_nWrong[c1]=0;
+									_nConflActivities[c1]=activitiesWithc1.count();
+									_minIndexAct[c1]=gt.rules.nInternalActivities;
+									
+									for(int ai2 : qAsConst(activitiesWithc1)){
+										_minWrong[c1] = min (_minWrong[c1], triedRemovals(ai2,c.times[ai2]));
+										_minIndexAct[c1]=min(_minIndexAct[c1], invPermutation[ai2]);
+										_nWrong[c1]+=triedRemovals(ai2,c.times[ai2]);
+									}
+
+									if(_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]==_minIndexAct[c1]){
+										int rnd=rng.intMRG32k3a(2);
+										if(rnd==0){
+											for(int ai2 : qAsConst(activitiesWithc0)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+										else{
+											assert(rnd==1);
+											for(int ai2 : qAsConst(activitiesWithc1)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+									}
+									else if(_minWrong[c0]>_minWrong[c1] ||
+									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]>_nWrong[c1]) ||
+									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]>_nConflActivities[c1]) ||
+									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]>_minIndexAct[c1])){
+										//choose c1
+										for(int ai2 : qAsConst(activitiesWithc1)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+									else{
+										assert(_minWrong[c1]>_minWrong[c0] ||
+										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]>_nWrong[c0]) ||
+										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]>_nConflActivities[c0]) ||
+										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]==_nConflActivities[c0] && _minIndexAct[c1]>_minIndexAct[c0]));
+										//choose c0
+										for(int ai2 : qAsConst(activitiesWithc0)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
+		if(!okstudentsmaxtwoactivitytagsperdayfromn1n2n3){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+		/////////end students (set) max two activity tags per day from N1 N2 N3
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		/////////begin students (set) max two activity tags per real day from N1 N2 N3
+
+		okstudentsmaxtwoactivitytagsperrealdayfromn1n2n3=true;
+
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(int sbg : qAsConst(act->iSubgroupsList)){
+				if(subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[sbg]>=0){
+					assert(subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[sbg]==100);
+					int cnt[4]; //cnt[3] is for activities which have no tag from N1, N2, or N3. Crash bug fixed on 2021-07-25.
+					cnt[0]=cnt[1]=cnt[2]=cnt[3]=0;
+					for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][d]))
+						if(!conflActivities[newtime].contains(ai2)){
+							int actTag=activityTagN1N2N3[ai2];
+							cnt[actTag]++;
+						}
+					for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][dpair]))
+						if(!conflActivities[newtime].contains(ai2)){
+							int actTag=activityTagN1N2N3[ai2];
+							cnt[actTag]++;
+						}
+
+					int cntTags=0;
+					for(int i=0; i<3; i++)
+						if(cnt[i]>0)
+							cntTags++;
+					assert(cntTags<=2);
+					for(int i=0; i<3; i++){
+						int c0, c1, c2;
+						if(i==0){
+							c0=0; c1=1; c2=2;
+						}
+						else if(i==1){
+							c0=0; c1=2; c2=1;
+						}
+						else if(i==2){
+							c0=1; c1=2; c2=0;
+						}
+						else{
+							assert(0);
+						}
+
+						if(cnt[c0]>0 && cnt[c1]>0 && activityTagN1N2N3[ai]==c2){
+							bool canEmptyc0=true;
+							bool canEmptyc1=true;
+							QList<int> activitiesWithc0;
+							QList<int> activitiesWithc1;
+							
+							for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][d])){
+								if(activityTagN1N2N3[ai2]==c0 && !conflActivities[newtime].contains(ai2)){
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+										activitiesWithc0.append(ai2);
+									}
+									else{
+										canEmptyc0=false;
+										break;
+									}
+								}
+							}
+							if(canEmptyc0){
+								for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][dpair])){
+									if(activityTagN1N2N3[ai2]==c0 && !conflActivities[newtime].contains(ai2)){
+										if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+											activitiesWithc0.append(ai2);
+										}
+										else{
+											canEmptyc0=false;
+											break;
+										}
+									}
+								}
+							}
+
+							for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][d])){
+								if(activityTagN1N2N3[ai2]==c1 && !conflActivities[newtime].contains(ai2)){
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+										activitiesWithc1.append(ai2);
+									}
+									else{
+										canEmptyc1=false;
+										break;
+									}
+								}
+							}
+							if(canEmptyc1){
+								for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][dpair])){
+									if(activityTagN1N2N3[ai2]==c1 && !conflActivities[newtime].contains(ai2)){
+										if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+											activitiesWithc1.append(ai2);
+										}
+										else{
+											canEmptyc1=false;
+											break;
+										}
+									}
+								}
+							}
+							
+							if(!canEmptyc0 && !canEmptyc1){
+								okstudentsmaxtwoactivitytagsperrealdayfromn1n2n3=false;
+								goto impossiblestudentsmaxtwoactivitytagsperrealdayfromn1n2n3;
+							}
+							else if(canEmptyc0 && !canEmptyc1){
+								for(int ai2 : qAsConst(activitiesWithc0)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+								}
+							}
+							else if(!canEmptyc0 && canEmptyc1){
+								for(int ai2 : qAsConst(activitiesWithc1)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+								}
+							}
+							else{
+								assert(canEmptyc0 && canEmptyc1);
+								if(level>0){
+									if(activitiesWithc0.count()<activitiesWithc1.count()){
+										for(int ai2 : qAsConst(activitiesWithc0)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+									else if(activitiesWithc0.count()>activitiesWithc1.count()){
+										for(int ai2 : qAsConst(activitiesWithc1)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+									else{
+										int rnd=rng.intMRG32k3a(2);
+										if(rnd==0){
+											for(int ai2 : qAsConst(activitiesWithc0)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+										else{
+											assert(rnd==1);
+											for(int ai2 : qAsConst(activitiesWithc1)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+									}
+								}
+								else{
+									assert(level==0);
+
+									int _minWrong[3];
+									int _nWrong[3];
+									int _nConflActivities[3];
+									int _minIndexAct[3];
+									
+									_minWrong[c0]=INF;
+									_nWrong[c0]=0;
+									_nConflActivities[c0]=activitiesWithc0.count();
+									_minIndexAct[c0]=gt.rules.nInternalActivities;
+
+									for(int ai2 : qAsConst(activitiesWithc0)){
+										_minWrong[c0] = min (_minWrong[c0], triedRemovals(ai2,c.times[ai2]));
+										_minIndexAct[c0]=min(_minIndexAct[c0], invPermutation[ai2]);
+										_nWrong[c0]+=triedRemovals(ai2,c.times[ai2]);
+									}
+
+									_minWrong[c1]=INF;
+									_nWrong[c1]=0;
+									_nConflActivities[c1]=activitiesWithc1.count();
+									_minIndexAct[c1]=gt.rules.nInternalActivities;
+									
+									for(int ai2 : qAsConst(activitiesWithc1)){
+										_minWrong[c1] = min (_minWrong[c1], triedRemovals(ai2,c.times[ai2]));
+										_minIndexAct[c1]=min(_minIndexAct[c1], invPermutation[ai2]);
+										_nWrong[c1]+=triedRemovals(ai2,c.times[ai2]);
+									}
+
+									if(_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]==_minIndexAct[c1]){
+										int rnd=rng.intMRG32k3a(2);
+										if(rnd==0){
+											for(int ai2 : qAsConst(activitiesWithc0)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+										else{
+											assert(rnd==1);
+											for(int ai2 : qAsConst(activitiesWithc1)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+									}
+									else if(_minWrong[c0]>_minWrong[c1] ||
+									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]>_nWrong[c1]) ||
+									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]>_nConflActivities[c1]) ||
+									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]>_minIndexAct[c1])){
+										//choose c1
+										for(int ai2 : qAsConst(activitiesWithc1)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+									else{
+										assert(_minWrong[c1]>_minWrong[c0] ||
+										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]>_nWrong[c0]) ||
+										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]>_nConflActivities[c0]) ||
+										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]==_nConflActivities[c0] && _minIndexAct[c1]>_minIndexAct[c0]));
+										//choose c0
+										for(int ai2 : qAsConst(activitiesWithc0)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+impossiblestudentsmaxtwoactivitytagsperrealdayfromn1n2n3:
+		if(!okstudentsmaxtwoactivitytagsperrealdayfromn1n2n3){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+		/////////end students (set) max two activity tags per real day from N1 N2 N3
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 		//2020-06-28
 		//students max hours per all afternoons.
 
@@ -18295,7 +18918,7 @@ impossiblestudentsmingapsbetweenactivitytag:
 				}
 				else{
 					assert(level==0);
-	
+					
 					///getTchTimetable(tch, conflActivities[newtime]);
 					///tchGetNHoursGaps(tch);
 
@@ -18312,7 +18935,7 @@ impossiblestudentsmingapsbetweenactivitytag:
 					for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 						if(d2==d)
 							continue;
-					
+						
 						occupiedDay[d2]=false;
 						canEmptyDay[d2]=true;
 						
@@ -25748,33 +26371,148 @@ impossibleteachersminmorningsafternoonsperweek:
 						}
 
 						if(cnt[c0]>0 && cnt[c1]>0 && activityTagN1N2N3[ai]==c2){
-							int rnd=rng.intMRG32k3a(2);
-							if(rnd==0){
-								//empty c0
-								for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d])){
-									if(!conflActivities[newtime].contains(ai2) && activityTagN1N2N3[ai2]==c0){
-										if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
-											conflActivities[newtime].append(ai2);
-											nConflActivities[newtime]++;
-										}
-										else{
-											okteachersmaxtwoactivitytagsperdayfromn1n2n3=false;
-											goto impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3;
-										}
+							bool canEmptyc0=true;
+							bool canEmptyc1=true;
+							QList<int> activitiesWithc0;
+							QList<int> activitiesWithc1;
+							
+							for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d])){
+								if(activityTagN1N2N3[ai2]==c0 && !conflActivities[newtime].contains(ai2)){
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+										activitiesWithc0.append(ai2);
+									}
+									else{
+										canEmptyc0=false;
+										break;
 									}
 								}
 							}
+
+							for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d])){
+								if(activityTagN1N2N3[ai2]==c1 && !conflActivities[newtime].contains(ai2)){
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+										activitiesWithc1.append(ai2);
+									}
+									else{
+										canEmptyc1=false;
+										break;
+									}
+								}
+							}
+							
+							if(!canEmptyc0 && !canEmptyc1){
+								okteachersmaxtwoactivitytagsperdayfromn1n2n3=false;
+								goto impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3;
+							}
+							else if(canEmptyc0 && !canEmptyc1){
+								for(int ai2 : qAsConst(activitiesWithc0)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+								}
+							}
+							else if(!canEmptyc0 && canEmptyc1){
+								for(int ai2 : qAsConst(activitiesWithc1)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+								}
+							}
 							else{
-								//empty c1
-								for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d])){
-									if(!conflActivities[newtime].contains(ai2) && activityTagN1N2N3[ai2]==c1){
-										if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+								assert(canEmptyc0 && canEmptyc1);
+								if(level>0){
+									if(activitiesWithc0.count()<activitiesWithc1.count()){
+										for(int ai2 : qAsConst(activitiesWithc0)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
+									}
+									else if(activitiesWithc0.count()>activitiesWithc1.count()){
+										for(int ai2 : qAsConst(activitiesWithc1)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+									else{
+										int rnd=rng.intMRG32k3a(2);
+										if(rnd==0){
+											for(int ai2 : qAsConst(activitiesWithc0)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
 										else{
-											okteachersmaxtwoactivitytagsperdayfromn1n2n3=false;
-											goto impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3;
+											assert(rnd==1);
+											for(int ai2 : qAsConst(activitiesWithc1)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+									}
+								}
+								else{
+									assert(level==0);
+
+									int _minWrong[3];
+									int _nWrong[3];
+									int _nConflActivities[3];
+									int _minIndexAct[3];
+									
+									_minWrong[c0]=INF;
+									_nWrong[c0]=0;
+									_nConflActivities[c0]=activitiesWithc0.count();
+									_minIndexAct[c0]=gt.rules.nInternalActivities;
+
+									for(int ai2 : qAsConst(activitiesWithc0)){
+										_minWrong[c0] = min (_minWrong[c0], triedRemovals(ai2,c.times[ai2]));
+										_minIndexAct[c0]=min(_minIndexAct[c0], invPermutation[ai2]);
+										_nWrong[c0]+=triedRemovals(ai2,c.times[ai2]);
+									}
+
+									_minWrong[c1]=INF;
+									_nWrong[c1]=0;
+									_nConflActivities[c1]=activitiesWithc1.count();
+									_minIndexAct[c1]=gt.rules.nInternalActivities;
+									
+									for(int ai2 : qAsConst(activitiesWithc1)){
+										_minWrong[c1] = min (_minWrong[c1], triedRemovals(ai2,c.times[ai2]));
+										_minIndexAct[c1]=min(_minIndexAct[c1], invPermutation[ai2]);
+										_nWrong[c1]+=triedRemovals(ai2,c.times[ai2]);
+									}
+
+									if(_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]==_minIndexAct[c1]){
+										int rnd=rng.intMRG32k3a(2);
+										if(rnd==0){
+											for(int ai2 : qAsConst(activitiesWithc0)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+										else{
+											assert(rnd==1);
+											for(int ai2 : qAsConst(activitiesWithc1)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+									}
+									else if(_minWrong[c0]>_minWrong[c1] ||
+									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]>_nWrong[c1]) ||
+									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]>_nConflActivities[c1]) ||
+									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]>_minIndexAct[c1])){
+										//choose c1
+										for(int ai2 : qAsConst(activitiesWithc1)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+									else{
+										assert(_minWrong[c1]>_minWrong[c0] ||
+										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]>_nWrong[c0]) ||
+										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]>_nConflActivities[c0]) ||
+										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]==_nConflActivities[c0] && _minIndexAct[c1]>_minIndexAct[c0]));
+										//choose c0
+										for(int ai2 : qAsConst(activitiesWithc0)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
 										}
 									}
 								}
@@ -25795,6 +26533,239 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 		}
 
 		/////////end teacher(s) max two activity tags per day from N1 N2 N3
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		/////////begin teacher(s) max two activity tags per real day from N1 N2 N3
+
+		okteachersmaxtwoactivitytagsperrealdayfromn1n2n3=true;
+
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(int tch : qAsConst(act->iTeachersList)){
+				if(teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[tch]>=0){
+					assert(teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[tch]==100);
+					int cnt[4]; //cnt[3] is for activities which have no tag from N1, N2, or N3. Crash bug fixed on 2021-07-25.
+					cnt[0]=cnt[1]=cnt[2]=cnt[3]=0;
+					for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d]))
+						if(!conflActivities[newtime].contains(ai2)){
+							int actTag=activityTagN1N2N3[ai2];
+							cnt[actTag]++;
+						}
+					for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][dpair]))
+						if(!conflActivities[newtime].contains(ai2)){
+							int actTag=activityTagN1N2N3[ai2];
+							cnt[actTag]++;
+						}
+
+					int cntTags=0;
+					for(int i=0; i<3; i++)
+						if(cnt[i]>0)
+							cntTags++;
+					assert(cntTags<=2);
+					for(int i=0; i<3; i++){
+						int c0, c1, c2;
+						if(i==0){
+							c0=0; c1=1; c2=2;
+						}
+						else if(i==1){
+							c0=0; c1=2; c2=1;
+						}
+						else if(i==2){
+							c0=1; c1=2; c2=0;
+						}
+						else{
+							assert(0);
+						}
+
+						if(cnt[c0]>0 && cnt[c1]>0 && activityTagN1N2N3[ai]==c2){
+							bool canEmptyc0=true;
+							bool canEmptyc1=true;
+							QList<int> activitiesWithc0;
+							QList<int> activitiesWithc1;
+							
+							for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d])){
+								if(activityTagN1N2N3[ai2]==c0 && !conflActivities[newtime].contains(ai2)){
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+										activitiesWithc0.append(ai2);
+									}
+									else{
+										canEmptyc0=false;
+										break;
+									}
+								}
+							}
+							if(canEmptyc0){
+								for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][dpair])){
+									if(activityTagN1N2N3[ai2]==c0 && !conflActivities[newtime].contains(ai2)){
+										if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+											activitiesWithc0.append(ai2);
+										}
+										else{
+											canEmptyc0=false;
+											break;
+										}
+									}
+								}
+							}
+
+							for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d])){
+								if(activityTagN1N2N3[ai2]==c1 && !conflActivities[newtime].contains(ai2)){
+									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+										activitiesWithc1.append(ai2);
+									}
+									else{
+										canEmptyc1=false;
+										break;
+									}
+								}
+							}
+							if(canEmptyc1){
+								for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][dpair])){
+									if(activityTagN1N2N3[ai2]==c1 && !conflActivities[newtime].contains(ai2)){
+										if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
+											activitiesWithc1.append(ai2);
+										}
+										else{
+											canEmptyc1=false;
+											break;
+										}
+									}
+								}
+							}
+							
+							if(!canEmptyc0 && !canEmptyc1){
+								okteachersmaxtwoactivitytagsperrealdayfromn1n2n3=false;
+								goto impossibleteachersmaxtwoactivitytagsperrealdayfromn1n2n3;
+							}
+							else if(canEmptyc0 && !canEmptyc1){
+								for(int ai2 : qAsConst(activitiesWithc0)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+								}
+							}
+							else if(!canEmptyc0 && canEmptyc1){
+								for(int ai2 : qAsConst(activitiesWithc1)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+								}
+							}
+							else{
+								assert(canEmptyc0 && canEmptyc1);
+								if(level>0){
+									if(activitiesWithc0.count()<activitiesWithc1.count()){
+										for(int ai2 : qAsConst(activitiesWithc0)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+									else if(activitiesWithc0.count()>activitiesWithc1.count()){
+										for(int ai2 : qAsConst(activitiesWithc1)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+									else{
+										int rnd=rng.intMRG32k3a(2);
+										if(rnd==0){
+											for(int ai2 : qAsConst(activitiesWithc0)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+										else{
+											assert(rnd==1);
+											for(int ai2 : qAsConst(activitiesWithc1)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+									}
+								}
+								else{
+									assert(level==0);
+
+									int _minWrong[3];
+									int _nWrong[3];
+									int _nConflActivities[3];
+									int _minIndexAct[3];
+									
+									_minWrong[c0]=INF;
+									_nWrong[c0]=0;
+									_nConflActivities[c0]=activitiesWithc0.count();
+									_minIndexAct[c0]=gt.rules.nInternalActivities;
+
+									for(int ai2 : qAsConst(activitiesWithc0)){
+										_minWrong[c0] = min (_minWrong[c0], triedRemovals(ai2,c.times[ai2]));
+										_minIndexAct[c0]=min(_minIndexAct[c0], invPermutation[ai2]);
+										_nWrong[c0]+=triedRemovals(ai2,c.times[ai2]);
+									}
+
+									_minWrong[c1]=INF;
+									_nWrong[c1]=0;
+									_nConflActivities[c1]=activitiesWithc1.count();
+									_minIndexAct[c1]=gt.rules.nInternalActivities;
+									
+									for(int ai2 : qAsConst(activitiesWithc1)){
+										_minWrong[c1] = min (_minWrong[c1], triedRemovals(ai2,c.times[ai2]));
+										_minIndexAct[c1]=min(_minIndexAct[c1], invPermutation[ai2]);
+										_nWrong[c1]+=triedRemovals(ai2,c.times[ai2]);
+									}
+
+									if(_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]==_minIndexAct[c1]){
+										int rnd=rng.intMRG32k3a(2);
+										if(rnd==0){
+											for(int ai2 : qAsConst(activitiesWithc0)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+										else{
+											assert(rnd==1);
+											for(int ai2 : qAsConst(activitiesWithc1)){
+												conflActivities[newtime].append(ai2);
+												nConflActivities[newtime]++;
+											}
+										}
+									}
+									else if(_minWrong[c0]>_minWrong[c1] ||
+									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]>_nWrong[c1]) ||
+									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]>_nConflActivities[c1]) ||
+									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]>_minIndexAct[c1])){
+										//choose c1
+										for(int ai2 : qAsConst(activitiesWithc1)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+									else{
+										assert(_minWrong[c1]>_minWrong[c0] ||
+										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]>_nWrong[c0]) ||
+										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]>_nConflActivities[c0]) ||
+										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]==_nConflActivities[c0] && _minIndexAct[c1]>_minIndexAct[c0]));
+										//choose c0
+										for(int ai2 : qAsConst(activitiesWithc0)){
+											conflActivities[newtime].append(ai2);
+											nConflActivities[newtime]++;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+impossibleteachersmaxtwoactivitytagsperrealdayfromn1n2n3:
+		if(!okteachersmaxtwoactivitytagsperrealdayfromn1n2n3){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+		/////////end teacher(s) max two activity tags per real day from N1 N2 N3
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 

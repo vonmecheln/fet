@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>646</width>
+    <width>645</width>
     <height>661</height>
    </rect>
   </property>
@@ -23,7 +23,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Min days is for real days, consecutive if same day is for half days.</string>
+      <string>Min days is for real days. If the activities are on the same real day and consecutive if same day is checked, they must be consecutive and on the same half day.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

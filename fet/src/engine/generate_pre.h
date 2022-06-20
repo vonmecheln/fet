@@ -710,10 +710,10 @@ extern bool haveActivityEndsTeachersDay;
 
 
 bool checkMinDays100Percent(QWidget* parent);
-bool checkMinDaysConsecutiveIfSameDay(QWidget* parent);
+bool checkMinDaysMaxTwoOnSameDay(QWidget* parent);
 
 bool checkMinHalfDays100Percent(QWidget* parent);
-bool checkMinHalfDaysConsecutiveIfSameDay(QWidget* parent);
+bool checkMinHalfDaysMaxTwoOnSameDay(QWidget* parent);
 
 
 bool checkMaxHoursForActivityDuration(QWidget* parent);
@@ -837,7 +837,13 @@ extern Matrix1D<double> teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages;
 extern Matrix1D<int> activityTagN1N2N3;
 extern Matrix1D<QList<int>> teachersWithN1N2N3ForActivities;
 
+extern Matrix1D<double> subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages;
+extern Matrix1D<QList<int>> subgroupsWithN1N2N3ForActivities;
+
 bool computeN1N2N3(QWidget* parent);
+
+extern Matrix1D<double> teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages;
+extern Matrix1D<double> subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages;
 
 
 ////////BEGIN rooms
@@ -883,6 +889,19 @@ bool computeMaxBuildingChangesPerDayForTeachers(QWidget* parent);
 extern Matrix1D<double> minGapsBetweenBuildingChangesForTeachersPercentages;
 extern Matrix1D<int> minGapsBetweenBuildingChangesForTeachersMinGaps;
 bool computeMinGapsBetweenBuildingChangesForTeachers(QWidget* parent);
+
+//BEGIN building changes per real day for teachers
+extern Matrix1D<double> maxBuildingChangesPerRealDayForTeachersPercentages;
+extern Matrix1D<int> maxBuildingChangesPerRealDayForTeachersMaxChanges;
+bool computeMaxBuildingChangesPerRealDayForTeachers(QWidget* parent);
+//END   building changes per real day for teachers
+
+//BEGIN building changes per real day for students
+extern Matrix1D<double> maxBuildingChangesPerRealDayForSubgroupsPercentages;
+extern Matrix1D<int> maxBuildingChangesPerRealDayForSubgroupsMaxChanges;
+bool computeMaxBuildingChangesPerRealDayForStudents(QWidget* parent);
+//END   building changes per real day for students
+
 ////////END   building changes
 
 

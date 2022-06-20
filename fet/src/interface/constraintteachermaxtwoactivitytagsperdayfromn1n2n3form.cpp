@@ -188,5 +188,5 @@ void ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3Form::removeConstraint()
 
 void ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3Form::help()
 {
-	HelpOnN1N2N3::help(this);
+	HelpOnN1N2N3::helpOnTeachersConstraintsDays(this);
 }
