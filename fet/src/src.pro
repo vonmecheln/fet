@@ -500,6 +500,10 @@ SOURCES += \
 	interface/addconstraintmindaysbetweenactivitiesform.cpp \
 	interface/modifyconstraintmindaysbetweenactivitiesform.cpp \
 	\
+	interface/constraintminhalfdaysbetweenactivitiesform.cpp \
+	interface/addconstraintminhalfdaysbetweenactivitiesform.cpp \
+	interface/modifyconstraintminhalfdaysbetweenactivitiesform.cpp \
+	\
 	interface/groupactivitiesininitialorderitemsform.cpp \
 	interface/addgroupactivitiesininitialorderitemform.cpp \
 	interface/modifygroupactivitiesininitialorderitemform.cpp \
@@ -525,6 +529,7 @@ SOURCES += \
 	interface/splityearform.cpp \
 	\
 	interface/changemindaysselectivelyform.cpp \
+	interface/changeminhalfdaysselectivelyform.cpp \
 	\
 	interface/spreadmindaysconstraintsfivedaysform.cpp \
 	interface/spreadconfirmationform.cpp \
@@ -1444,6 +1449,10 @@ HEADERS += \
 	interface/addconstraintmindaysbetweenactivitiesform.h \
 	interface/modifyconstraintmindaysbetweenactivitiesform.h \
 	\
+	interface/constraintminhalfdaysbetweenactivitiesform.h \
+	interface/addconstraintminhalfdaysbetweenactivitiesform.h \
+	interface/modifyconstraintminhalfdaysbetweenactivitiesform.h \
+	\
 	interface/groupactivitiesininitialorderitemsform.h \
 	interface/addgroupactivitiesininitialorderitemform.h \
 	interface/modifygroupactivitiesininitialorderitemform.h \
@@ -1471,6 +1480,7 @@ HEADERS += \
 	interface/splityearform.h\
 	\
 	interface/changemindaysselectivelyform.h \
+	interface/changeminhalfdaysselectivelyform.h \
 	\
 	interface/spreadmindaysconstraintsfivedaysform.h \
 	interface/spreadconfirmationform.h \
@@ -1900,6 +1910,7 @@ FORMS += \
 	interface/settingstimetablehtmllevelform_template.ui \
 	\
 	interface/changemindaysselectivelyform_template.ui \
+	interface/changeminhalfdaysselectivelyform_template.ui \
 	interface/spreadmindaysconstraintsfivedaysform_template.ui \
 	interface/spreadconfirmationform_template.ui \
 	\
@@ -2379,6 +2390,10 @@ FORMS += \
 	interface/constraintmindaysbetweenactivitiesform_template.ui \
 	interface/addconstraintmindaysbetweenactivitiesform_template.ui \
 	interface/modifyconstraintmindaysbetweenactivitiesform_template.ui \
+	\
+	interface/constraintminhalfdaysbetweenactivitiesform_template.ui \
+	interface/addconstraintminhalfdaysbetweenactivitiesform_template.ui \
+	interface/modifyconstraintminhalfdaysbetweenactivitiesform_template.ui \
 	\
 	interface/groupactivitiesininitialorderitemsform_template.ui \
 	interface/addgroupactivitiesininitialorderitemform_template.ui \

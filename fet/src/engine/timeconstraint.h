@@ -310,6 +310,12 @@ const int CONSTRAINT_STUDENTS_MAX_THREE_CONSECUTIVE_DAYS							=182;
 const int CONSTRAINT_STUDENTS_SET_MAX_THREE_CONSECUTIVE_DAYS						=183;
 //End   for mornings-afternoons - 2021-02-15
 
+//Begin for mornings-afternoons - 2022-05-14
+const int CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES								=184;
+//End   for mornings-afternoons - 2022-05-14
+
+const int CONSTRAINT_ACTIVITY_PREFERRED_DAY											=185;
+
 QString getActivityDetailedDescription(Rules& r, int id);
 
 /**
@@ -9228,5 +9234,143 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 //End   mornings-afternoons 2022-02-15
+
+//Begin mornings-afternoons 2022-05-14
+class ConstraintMinHalfDaysBetweenActivities: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintMinHalfDaysBetweenActivities)
+
+public:
+	bool consecutiveIfSameDay;
+
+	/**
+	The number of activities involved in this constraint
+	*/
+	int n_activities;
+
+	/**
+	The activities involved in this constraint (id)
+	*/
+	QList<int> activitiesId;
+	//int activitiesId[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
+
+	/**
+	The number of minimum days between each 2 activities
+	*/
+	int minDays;
+
+	//internal structure (redundant)
+
+	/**
+	The number of activities involved in this constraint - internal structure
+	*/
+	int _n_activities;
+
+	/**
+	The activities involved in this constraint (index in the rules) - internal structure
+	*/
+	QList<int> _activities;
+	//int _activities[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
+
+	ConstraintMinHalfDaysBetweenActivities();
+
+	/**
+	Constructor, using:
+	the weight, the number of activities and the list of activities.
+	*/
+	//ConstraintMinDaysBetweenActivities(double wp, bool adjacentIfBroken, int n_act, const int act[], int n);
+	ConstraintMinHalfDaysBetweenActivities(double wp, bool adjacentIfBroken, int n_act, const QList<int>& act, int n);
+
+	/**
+	Comparison operator - to be sure that we do not introduce duplicates
+	*/
+	bool operator==(ConstraintMinHalfDaysBetweenActivities& c);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules &r);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+//End   mornings-afternoons 2022-05-14
+
+class ConstraintActivityPreferredDay: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivityPreferredDay)
+
+public:
+	/**
+	Activity id
+	*/
+	int activityId;
+
+	/**
+	The preferred day.
+	*/
+	int day;
+
+	//bool permanentlyLocked; //if this is true, then this activity cannot be unlocked from the timetable view form
+
+	//internal variables
+	/**
+	The index of the activity in the rules (from 0 to rules.nActivities-1) - it is not the id of the activity
+	*/
+	int activityIndex;
+	
+	ConstraintActivityPreferredDay();
+
+	ConstraintActivityPreferredDay(double wp, int actId, int d/*, bool perm*/);
+
+	/**
+	Comparison operator - to be sure that we do not introduce duplicates
+	*/
+	bool operator==(const ConstraintActivityPreferredDay& c);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
 
 #endif

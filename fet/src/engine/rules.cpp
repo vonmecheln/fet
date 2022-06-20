@@ -143,8 +143,10 @@ void Rules::init() //initializes the rules (empty, but with default hours and da
 	btSet.clear();
 	bcsSet.clear();
 	apstHash.clear();
+	apdHash.clear();
 	aprHash.clear();
 	mdbaHash.clear();
+	mhdbaHash.clear();
 	tnatHash.clear();
 	ssnatHash.clear();
 	
@@ -1034,8 +1036,10 @@ void Rules::kill() //clears memory for the rules, destroys them
 	btSet.clear();
 	bcsSet.clear();
 	apstHash.clear();
+	apdHash.clear();
 	aprHash.clear();
 	mdbaHash.clear();
+	mhdbaHash.clear();
 	tnatHash.clear();
 	ssnatHash.clear();
 	
@@ -3703,6 +3707,10 @@ void Rules::removeActivities(const QList<int>& _idsList, bool updateConstraints)
 				int t=mdbaHash.remove(id);
 				assert(t==1);
 			}
+			if(mhdbaHash.contains(id)){
+				int t=mhdbaHash.remove(id);
+				assert(t==1);
+			}
 		}
 	}
 
@@ -4205,12 +4213,55 @@ bool Rules::addTimeConstraint(TimeConstraint* ctr)
 			ok=false;*/
 	}
 
+	//check if this constraint is already added, for ConstraintActivityPreferredDay
+	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_DAY){
+		ConstraintActivityPreferredDay* c=(ConstraintActivityPreferredDay*) ctr;
+		QSet<ConstraintActivityPreferredDay*> cs=apdHash.value(c->activityId, QSet<ConstraintActivityPreferredDay*>());
+		for(ConstraintActivityPreferredDay* oldc : qAsConst(cs)){
+			if((*oldc)==(*c)){
+				ok=false;
+				break;
+			}
+		}
+	}
+
 	//check if this constraint is already added, for ConstraintMinDaysBetweenActivities
 	else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 		ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) ctr;
 		for(int aid : qAsConst(c->activitiesId)){
 			QSet<ConstraintMinDaysBetweenActivities*> cs=mdbaHash.value(aid, QSet<ConstraintMinDaysBetweenActivities*>());
 			for(ConstraintMinDaysBetweenActivities* oldc : qAsConst(cs)){
+				if((*oldc)==(*c)){
+					ok=false;
+					break;
+				}
+			}
+			if(!ok)
+				break;
+		}
+
+		/*int i;
+		for(i=0; i<this->timeConstraintsList.size(); i++){
+			TimeConstraint* ctr2=this->timeConstraintsList[i];
+			if(ctr2->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES)
+				if(
+				 *((ConstraintMinDaysBetweenActivities*)ctr2)
+				 ==
+				 *((ConstraintMinDaysBetweenActivities*)ctr)
+				 )
+					break;
+		}
+
+		if(i<this->timeConstraintsList.size())
+			ok=false;*/
+	}
+	
+	//check if this constraint is already added, for ConstraintMinHalfDaysBetweenActivities
+	else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+		ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) ctr;
+		for(int aid : qAsConst(c->activitiesId)){
+			QSet<ConstraintMinHalfDaysBetweenActivities*> cs=mhdbaHash.value(aid, QSet<ConstraintMinHalfDaysBetweenActivities*>());
+			for(ConstraintMinHalfDaysBetweenActivities* oldc : qAsConst(cs)){
 				if((*oldc)==(*c)){
 					ok=false;
 					break;
@@ -4329,6 +4380,14 @@ bool Rules::addTimeConstraint(TimeConstraint* ctr)
 			apstHash.insert(c->activityId, cs);
 		}
 
+		else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_DAY){
+			ConstraintActivityPreferredDay* c=(ConstraintActivityPreferredDay*) ctr;
+			QSet<ConstraintActivityPreferredDay*> cs=apdHash.value(c->activityId, QSet<ConstraintActivityPreferredDay*>());
+			assert(!cs.contains(c));
+			cs.insert(c);
+			apdHash.insert(c->activityId, cs);
+		}
+
 		else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 			ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) ctr;
 			for(int aid : qAsConst(c->activitiesId)){
@@ -4336,6 +4395,16 @@ bool Rules::addTimeConstraint(TimeConstraint* ctr)
 				assert(!cs.contains(c));
 				cs.insert(c);
 				mdbaHash.insert(aid, cs);
+			}
+		}
+
+		else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) ctr;
+			for(int aid : qAsConst(c->activitiesId)){
+				QSet<ConstraintMinHalfDaysBetweenActivities*> cs=mhdbaHash.value(aid, QSet<ConstraintMinHalfDaysBetweenActivities*>());
+				assert(!cs.contains(c));
+				cs.insert(c);
+				mhdbaHash.insert(aid, cs);
 			}
 		}
 
@@ -4393,6 +4462,20 @@ bool Rules::removeTimeConstraint(TimeConstraint* ctr)
 				}
 			}
 
+			else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_DAY){
+				ConstraintActivityPreferredDay* c=(ConstraintActivityPreferredDay*) ctr;
+				QSet<ConstraintActivityPreferredDay*> cs=apdHash.value(c->activityId, QSet<ConstraintActivityPreferredDay*>());
+				assert(cs.contains(c));
+				cs.remove(c);
+				if(!cs.isEmpty()){
+					apdHash.insert(c->activityId, cs);
+				}
+				else{
+					int t=apdHash.remove(c->activityId);
+					assert(t==1);
+				}
+			}
+
 			else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 				ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) ctr;
 				for(int aid : qAsConst(c->activitiesId)){
@@ -4404,6 +4487,22 @@ bool Rules::removeTimeConstraint(TimeConstraint* ctr)
 					}
 					else{
 						int t=mdbaHash.remove(aid);
+						assert(t==1);
+					}
+				}
+			}
+
+			else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+				ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) ctr;
+				for(int aid : qAsConst(c->activitiesId)){
+					QSet<ConstraintMinHalfDaysBetweenActivities*> cs=mhdbaHash.value(aid, QSet<ConstraintMinHalfDaysBetweenActivities*>());
+					assert(cs.contains(c));
+					cs.remove(c);
+					if(!cs.isEmpty()){
+						mhdbaHash.insert(aid, cs);
+					}
+					else{
+						int t=mhdbaHash.remove(aid);
 						assert(t==1);
 					}
 				}
@@ -4489,6 +4588,20 @@ bool Rules::removeTimeConstraints(QList<TimeConstraint*> _tcl)
 				}
 			}
 
+			else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_DAY){
+				ConstraintActivityPreferredDay* c=(ConstraintActivityPreferredDay*) ctr;
+				QSet<ConstraintActivityPreferredDay*> cs=apdHash.value(c->activityId, QSet<ConstraintActivityPreferredDay*>());
+				assert(cs.contains(c));
+				cs.remove(c);
+				if(!cs.isEmpty()){
+					apdHash.insert(c->activityId, cs);
+				}
+				else{
+					int t=apdHash.remove(c->activityId);
+					assert(t==1);
+				}
+			}
+
 			else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 				ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) ctr;
 				for(int aid : qAsConst(c->activitiesId)){
@@ -4500,6 +4613,22 @@ bool Rules::removeTimeConstraints(QList<TimeConstraint*> _tcl)
 					}
 					else{
 						int t=mdbaHash.remove(aid);
+						assert(t==1);
+					}
+				}
+			}
+
+			else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+				ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) ctr;
+				for(int aid : qAsConst(c->activitiesId)){
+					QSet<ConstraintMinHalfDaysBetweenActivities*> cs=mhdbaHash.value(aid, QSet<ConstraintMinHalfDaysBetweenActivities*>());
+					assert(cs.contains(c));
+					cs.remove(c);
+					if(!cs.isEmpty()){
+						mhdbaHash.insert(aid, cs);
+					}
+					else{
+						int t=mhdbaHash.remove(aid);
 						assert(t==1);
 					}
 				}
@@ -4865,6 +4994,12 @@ void Rules::updateConstraintsAfterRemoval()
 			if(c->n_activities<2)
 				toBeRemovedTime.append(tc);
 		}
+		else if(tc->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*)tc;
+			c->removeUseless(*this);
+			if(c->n_activities<2)
+				toBeRemovedTime.append(tc);
+		}
 		else if(tc->type==CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
 			ConstraintMaxDaysBetweenActivities* c=(ConstraintMaxDaysBetweenActivities*)tc;
 			c->removeUseless(*this);
@@ -5022,6 +5157,11 @@ void Rules::updateConstraintsAfterRemoval()
 				toBeRemovedTime.append(tc);
 				recomputeTime=true;
 			}
+		}
+		else if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_DAY){
+			ConstraintActivityPreferredDay* c=(ConstraintActivityPreferredDay*)tc;
+			if(!existingActivitiesIds.contains(c->activityId))
+				toBeRemovedTime.append(tc);
 		}
 		else if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
 			ConstraintActivityPreferredTimeSlots* c=(ConstraintActivityPreferredTimeSlots*)tc;
@@ -8101,6 +8241,9 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()==QString("ConstraintMinDaysBetweenActivities")){
 					crt_constraint=readMinDaysBetweenActivities(parent, xmlReader, xmlReadingLog);
 				}
+				else if(xmlReader.name()==QString("ConstraintMinHalfDaysBetweenActivities")){
+					crt_constraint=readMinHalfDaysBetweenActivities(parent, xmlReader, xmlReadingLog);
+				}
 				else if(xmlReader.name()==QString("ConstraintMaxDaysBetweenActivities")){
 					crt_constraint=readMaxDaysBetweenActivities(xmlReader, xmlReadingLog);
 				}
@@ -8288,6 +8431,9 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				else if(xmlReader.name()==QString("ConstraintActivityPreferredStartingTime")){
 					crt_constraint=readActivityPreferredStartingTime(parent, xmlReader, xmlReadingLog,
 						reportUnspecifiedPermanentlyLockedTime, reportUnspecifiedDayOrHourPreferredStartingTime);
+				}
+				else if(xmlReader.name()==QString("ConstraintActivityPreferredDay")){
+					crt_constraint=readActivityPreferredDay(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintActivityEndsStudentsDay")){
 					crt_constraint=readActivityEndsStudentsDay(xmlReader, xmlReadingLog);
@@ -11789,7 +11935,7 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, QXmlStream
 		int t=QMessageBox::warning(parent, tr("FET warning"), s,
 			tr("Skip rest"), tr("See next"), QString(),
 			1, 0 );
-										
+		
 		if(t==0)
 			reportIncorrectMinDays=false;
 	}
@@ -11932,7 +12078,150 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, QXmlStreamR
 		int t=QMessageBox::warning(parent, tr("FET warning"), s,
 			tr("Skip rest"), tr("See next"), QString(),
 			1, 0 );
-										
+		
+		if(t==0)
+			reportIncorrectMinDays=false;
+	}
+#endif
+*/
+}
+
+TimeConstraint* Rules::readMinHalfDaysBetweenActivities(QWidget* parent, QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintMinHalfDaysBetweenActivities"));
+	
+	ConstraintMinHalfDaysBetweenActivities* cn=new ConstraintMinHalfDaysBetweenActivities();
+	cn->n_activities=0;
+	bool foundCISD=false;
+	int n_act=0;
+	cn->activitiesId.clear();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight")){
+			//cn->weight=customFETStrToDouble(text);
+			xmlReader.skipCurrentElement();
+			xmlReadingLog+="    Ignoring old tag - weight - generating weightPercentage=95%\n";
+			cn->weightPercentage=95;
+		}
+		else if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weightPercentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Consecutive_If_Same_Day") || xmlReader.name()==QString("Adjacent_If_Broken")){
+			QString text=xmlReader.readElementText();
+			if(text=="yes" || text=="true" || text=="1"){
+				cn->consecutiveIfSameDay=true;
+				foundCISD=true;
+				xmlReadingLog+="    Current constraint has consecutive if same day=true\n";
+			}
+			else{
+				if(!(text=="no" || text=="false" || text=="0")){
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
+						tr("Found constraint min half days between activities with tag consecutive if same day"
+						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+						" The tag will be considered false",
+						"Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+				}
+				//assert(text=="no" || text=="false" || text=="0");
+				cn->consecutiveIfSameDay=false;
+				foundCISD=true;
+				xmlReadingLog+="    Current constraint has consecutive if same day=false\n";
+			}
+		}
+		else if(xmlReader.name()==QString("Compulsory")){
+			QString text=xmlReader.readElementText();
+			if(text=="yes"){
+				//cn->compulsory=true;
+				xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+				cn->weightPercentage=95;
+				cn->consecutiveIfSameDay=true;
+				foundCISD=true;
+			}
+			else{
+				//cn->compulsory=false;
+				xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+				cn->weightPercentage=0;
+				cn->consecutiveIfSameDay=false;
+				foundCISD=true;
+			}
+		}
+		else if(xmlReader.name()==QString("Number_of_Activities")){
+			QString text=xmlReader.readElementText();
+			cn->n_activities=text.toInt();
+			xmlReadingLog+="    Read n_activities="+CustomFETString::number(cn->n_activities)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Id")){
+			QString text=xmlReader.readElementText();
+			//cn->activitiesId[n_act]=text.toInt();
+			cn->activitiesId.append(text.toInt());
+			assert(n_act==cn->activitiesId.count()-1);
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			n_act++;
+		}
+		else if(xmlReader.name()==QString("MinDays")){
+			QString text=xmlReader.readElementText();
+			cn->minDays=text.toInt();
+			xmlReadingLog+="    Read MinDays="+CustomFETString::number(cn->minDays)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(!foundCISD){
+		xmlReadingLog+="    Could not find consecutive if same day information - making it true\n";
+		cn->consecutiveIfSameDay=true;
+	}
+	if(!(n_act==cn->n_activities)){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(n_act==cn->n_activities);
+	return cn;
+/*
+#if 0
+	if(0 && reportIncorrectMinDays && cn->n_activities > this->nDaysPerWeek){
+		QString s=tr("You have a constraint min days between activities with more activities than the number of days per week.");
+		s+=" ";
+		s+=tr("Constraint is:");
+		s+="\n";
+		s+=crt_constraint->getDescription(*this);
+		s+="\n";
+		s+=tr("This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).");
+		s+="\n\n";
+		s+=tr("To improve your file, you are advised to remove the corresponding activities and constraint and add activities again, respecting the following rules:");
+		s+="\n\n";
+		s+=tr("1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
+			". Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components"
+			" (possibly raising the weight of added constraint min days between activities up to 100%)");
+		s+="\n\n";
+
+		s+=tr("2. If you don't add 'force consecutive if same day', then add a larger activity split into a number of"
+			" activities equal with the number of days per week and the remaining components into other larger split activity."
+			" For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities,"
+			" first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1"
+			" (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)");
+		
+		int t=QMessageBox::warning(parent, tr("FET warning"), s,
+			tr("Skip rest"), tr("See next"), QString(),
+			1, 0 );
+		
 		if(t==0)
 			reportIncorrectMinDays=false;
 	}
@@ -14843,6 +15132,172 @@ bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPr
 		delete cn;
 		return cgood;
 	}
+	
+	return cn;
+}
+
+TimeConstraint* Rules::readActivityPreferredDay(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintActivityPreferredDay"));
+	ConstraintActivityPreferredDay* cn=new ConstraintActivityPreferredDay();
+	cn->day = -1;
+	//cn->permanentlyLocked=false; //default false
+	//bool foundLocked=false;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight")){
+			//cn->weight=customFETStrToDouble(text);
+			xmlReader.skipCurrentElement();
+			xmlReadingLog+="    Ignoring old tag - weight - making weight percentage=100\n";
+			cn->weightPercentage=100;
+		}
+		else if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Compulsory")){
+			QString text=xmlReader.readElementText();
+			if(text=="yes"){
+				//cn->compulsory=true;
+				xmlReadingLog+="    Ignoring old tag - Current constraint is compulsory\n";
+				cn->weightPercentage=100;
+			}
+			else{
+				//cn->compulsory=false;
+				xmlReadingLog+="    Old tag - current constraint is not compulsory - making weightPercentage=0%\n";
+				cn->weightPercentage=0;
+			}
+		}
+		/*else if(xmlReader.name()==QString("Permanently_Locked")){
+			QString text=xmlReader.readElementText();
+			if(text=="true" || text=="1" || text=="yes"){
+				xmlReadingLog+="    Permanently locked\n";
+				cn->permanentlyLocked=true;
+			}
+			else{
+				if(!(text=="no" || text=="false" || text=="0")){
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
+						tr("Found constraint activity preferred starting time with tag permanently locked"
+						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+						" The tag will be considered false",
+						"Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+				}
+				//assert(text=="false" || text=="0" || text=="no");
+				xmlReadingLog+="    Not permanently locked\n";
+				cn->permanentlyLocked=false;
+			}
+			foundLocked=true;
+		}*/
+		else if(xmlReader.name()==QString("Activity_Id")){
+			QString text=xmlReader.readElementText();
+			cn->activityId=text.toInt();
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activityId)+"\n";
+
+			if(!this->apdHash.value(cn->activityId, QSet<ConstraintActivityPreferredDay*>()).isEmpty()){
+				xmlReader.raiseError(tr("It is not allowed to have more than one constraint of type activity preferred day for an activity;"
+				 " this condition is not respected for the activity id %1").arg(cn->activityId));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+		}
+		else if(xmlReader.name()==QString("Preferred_Day")){
+			QString text=xmlReader.readElementText();
+			for(cn->day=0; cn->day<this->nDaysPerWeek; cn->day++)
+				if(this->daysOfTheWeek[cn->day]==text)
+					break;
+			if(cn->day>=this->nDaysPerWeek){
+				xmlReader.raiseError(tr("Day %1 is nonexistent").arg(text));
+				/*RulesReconcilableMessage::information(parent, tr("FET information"),
+					tr("Constraint ActivityPreferredStartingTime day corrupt for activity with id %1, day %2 is nonexistent ... ignoring constraint")
+					.arg(cn->activityId)
+					.arg(text));*/
+				delete cn;
+				cn=nullptr;
+				//goto corruptConstraintTime;
+				return nullptr;
+			}
+			assert(cn->day<this->nDaysPerWeek);
+			xmlReadingLog+="    Preferred day="+this->daysOfTheWeek[cn->day]+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	//crt_constraint=cn;
+
+	/*if(cn->hour>=0 && cn->day>=0 && !foundLocked && reportUnspecifiedPermanentlyLockedTime){
+		int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+			tr("Found constraint activity preferred starting time, with unspecified tag"
+			" 'permanently locked' - this tag will be set to 'false' by default. You can always modify it"
+			" by editing the constraint in the 'Data' menu")+"\n\n"
+			+tr("Explanation: starting with version 5.8.0 (January 2009), the constraint"
+			" activity preferred starting time has"
+			" a new tag, 'permanently locked' (true or false)."
+			" It is recommended to make the tag 'permanently locked' true for the constraints you"
+			" need to be not modifiable from the 'Timetable' menu"
+			" and leave this tag false for the constraints you need to be modifiable from the 'Timetable' menu"
+			" (the 'permanently locked' tag can be modified by editing the constraint from the 'Data' menu)."
+			" This way, when viewing the timetable"
+			" and locking/unlocking some activities, you will not unlock the constraints which"
+			" need to be locked all the time."
+			),
+			tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+		if(t==0)
+			reportUnspecifiedPermanentlyLockedTime=false;
+	}*/
+
+	/*if(cn->hour==-1 || cn->day==-1){
+		if(reportUnspecifiedDayOrHourPreferredStartingTime){
+			int t=RulesReconcilableMessage::information(parent, tr("FET information"),
+				tr("Found constraint activity preferred starting time, with unspecified day or hour."
+				" This constraint will be transformed into constraint activity preferred starting times (a set of times, not only one)."
+				" This change is done in FET versions 5.8.1 and higher."
+				),
+				tr("Skip rest"), tr("See next"), QString(), 1, 0 );
+			if(t==0)
+				reportUnspecifiedDayOrHourPreferredStartingTime=false;
+		}
+			
+		ConstraintActivityPreferredStartingTimes* cgood=new ConstraintActivityPreferredStartingTimes();
+		if(cn->day==-1){
+			cgood->activityId=cn->activityId;
+			cgood->weightPercentage=cn->weightPercentage;
+			cgood->nPreferredStartingTimes_L=this->nDaysPerWeek;
+			for(int i=0; i<cgood->nPreferredStartingTimes_L; i++){
+				cgood->days_L.append(i);
+				cgood->hours_L.append(cn->hour);
+			}
+		}
+		else{
+			assert(cn->hour==-1);
+			cgood->activityId=cn->activityId;
+			cgood->weightPercentage=cn->weightPercentage;
+			cgood->nPreferredStartingTimes_L=this->nHoursPerDay;
+			for(int i=0; i<cgood->nPreferredStartingTimes_L; i++){
+				cgood->days_L.append(cn->day);
+				cgood->hours_L.append(i);
+			}
+		}
+		
+		delete cn;
+		return cgood;
+	}*/
 	
 	return cn;
 }

@@ -94,6 +94,7 @@ private:
 	QAction* dataTimeConstraintsActivitiesNotOverlappingAction;
 	QAction* dataTimeConstraintsActivityTagsNotOverlappingAction;
 	QAction* dataTimeConstraintsMinDaysBetweenActivitiesAction;
+	QAction* dataTimeConstraintsMinHalfDaysBetweenActivitiesAction;
 	QAction* dataSpaceConstraintsBasicCompulsorySpaceAction;
 	QAction* dataSpaceConstraintsRoomNotAvailableTimesAction;
 	QAction* dataSpaceConstraintsTeacherRoomNotAvailableTimesAction;
@@ -541,6 +542,7 @@ public slots:
 	void dataTimeConstraintsActivitiesNotOverlappingAction_triggered();
 	void dataTimeConstraintsActivityTagsNotOverlappingAction_triggered();
 	void dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered();
+	void dataTimeConstraintsMinHalfDaysBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsActivityEndsStudentsDayAction_triggered();

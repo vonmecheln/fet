@@ -7179,6 +7179,7 @@ again_if_impossible_activity:
 
 		bool okbasictime;
 		bool okmindays;
+		bool okminhalfdays;
 		bool okmaxdays;
 		bool oksamestartingtime;
 		bool oksamestartinghour;
@@ -7450,7 +7451,7 @@ impossiblebasictime:
 					//if(fixedTimeActivity[ai] && minDaysListOfWeightPercentages[ai].at(i)<100.0)
 					//	okrand=true;
 				
-					if(minDaysListOfConsecutiveIfSameDay[ai].at(i)==true){ //must place them consecutive (in any order) if on same day
+					if(minDaysListOfConsecutiveIfSameDay[ai].at(i)==true){ //must place them consecutive (in any order) if on the same day
 						if(okrand &&
 						 ((gt.rules.mode!=MORNINGS_AFTERNOONS && ( (d==d2 && (h+act->duration==h2 || h2+gt.rules.internalActivitiesList[ai2].duration==h)) || d!=d2 ))
 						 ||
@@ -7474,6 +7475,31 @@ impossiblebasictime:
 					}
 					else{ //can place them anywhere
 						if(okrand){
+							//From version 6.4.0: no more than 2 subactivities on the same day (real day in case of MORNINGS_AFTERNOONS mode)
+							if((gt.rules.mode!=MORNINGS_AFTERNOONS && d==d2) || (gt.rules.mode==MORNINGS_AFTERNOONS && d/2==d2/2)){
+								for(int ai3 : qAsConst(*minDaysListOfActivitiesFromTheSameConstraint[ai].at(i))){
+									if(ai3!=ai && ai3!=ai2){
+										int ai3time=c.times[ai3];
+										if(ai3time!=UNALLOCATED_TIME){
+											int d3=ai3time%gt.rules.nDaysPerWeek;
+											if((gt.rules.mode!=MORNINGS_AFTERNOONS && d3==d) || (gt.rules.mode==MORNINGS_AFTERNOONS && d3/2==d/2)){
+												assert((gt.rules.mode!=MORNINGS_AFTERNOONS && d3==d2) || (gt.rules.mode==MORNINGS_AFTERNOONS && d3/2==d2/2));
+												if(fixedTimeActivity[ai3] || swappedActivities[ai3]){
+													okmindays=false;
+													goto impossiblemindays;
+												}
+												
+												if(!conflActivities[newtime].contains(ai3)){
+													conflActivities[newtime].append(ai3);
+													nConflActivities[newtime]++;
+													assert(nConflActivities[newtime]==conflActivities[newtime].count());
+												}
+											}
+										}
+									}
+								}
+							}
+						
 						 	//nMinDaysBroken[newtime]++;
 						 	nMinDaysBroken[newtime]+=minDaysListOfWeightPercentages[ai].at(i)/100.0;
 						}
@@ -7495,6 +7521,100 @@ impossiblebasictime:
 		}
 impossiblemindays:
 		if(!okmindays){
+			//if(updateSubgroups || updateTeachers)
+			//	removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//care about min half days between activities
+		okminhalfdays=true;
+		
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(int i=0; i<minHalfDaysListOfActivities[ai].count(); i++){
+				int ai2=minHalfDaysListOfActivities[ai].at(i);
+				int md=minHalfDaysListOfMinDays[ai].at(i);
+				int ai2time=c.times[ai2];
+				if(ai2time!=UNALLOCATED_TIME){
+					int d2=ai2time%gt.rules.nDaysPerWeek;
+					int h2=ai2time/gt.rules.nDaysPerWeek;
+					if(md>abs(d-d2)){
+						bool okrand=skipRandom(minHalfDaysListOfWeightPercentages[ai].at(i));
+						//if(fixedTimeActivity[ai] && minHalfDaysListOfWeightPercentages[ai].at(i)<100.0)
+						//	okrand=true;
+
+						if(minHalfDaysListOfConsecutiveIfSameDay[ai].at(i)==true){ //must place them consecutive (in any order) if on the same day
+							if(okrand &&
+							((d==d2 && (h+act->duration==h2 || h2+gt.rules.internalActivitiesList[ai2].duration==h)) || d!=d2 )){
+								//nMinDaysBroken[newtime]++;
+								nMinDaysBroken[newtime]+=minHalfDaysListOfWeightPercentages[ai].at(i)/100.0;
+							}
+							else{
+								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+									okminhalfdays=false;
+									goto impossibleminhalfdays;
+								}
+
+								if(!conflActivities[newtime].contains(ai2)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(nConflActivities[newtime]==conflActivities[newtime].count());
+								}
+							}
+						}
+						else{ //can place them anywhere
+							if(okrand){
+								//From version 6.4.0: no more than 2 subactivities on the same half day
+								if(d==d2){
+									for(int ai3 : qAsConst(*minHalfDaysListOfActivitiesFromTheSameConstraint[ai].at(i))){
+										if(ai3!=ai && ai3!=ai2){
+											int ai3time=c.times[ai3];
+											if(ai3time!=UNALLOCATED_TIME){
+												int d3=ai3time%gt.rules.nDaysPerWeek;
+												if(d3==d){
+													assert(d3==d2);
+													if(fixedTimeActivity[ai3] || swappedActivities[ai3]){
+														okminhalfdays=false;
+														goto impossibleminhalfdays;
+													}
+													
+													if(!conflActivities[newtime].contains(ai3)){
+														conflActivities[newtime].append(ai3);
+														nConflActivities[newtime]++;
+														assert(nConflActivities[newtime]==conflActivities[newtime].count());
+													}
+												}
+											}
+										}
+									}
+								}
+						
+								//nMinDaysBroken[newtime]++;
+								nMinDaysBroken[newtime]+=minHalfDaysListOfWeightPercentages[ai].at(i)/100.0;
+							}
+							else{
+								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+									okminhalfdays=false;
+									goto impossibleminhalfdays;
+								}
+
+								if(!conflActivities[newtime].contains(ai2)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(nConflActivities[newtime]==conflActivities[newtime].count());
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+impossibleminhalfdays:
+		if(!okminhalfdays){
 			//if(updateSubgroups || updateTeachers)
 			//	removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);

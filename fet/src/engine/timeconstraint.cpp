@@ -393,7 +393,9 @@ bool TimeConstraint::canBeUsedInOfficialMode()
 	 type==CONSTRAINT_ACTIVITY_ENDS_TEACHERS_DAY ||
 	 type==CONSTRAINT_ACTIVITIES_END_TEACHERS_DAY ||
 
-	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED)
+	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED ||
+
+	 type==CONSTRAINT_ACTIVITY_PREFERRED_DAY)
 		return true;
 
 	return false;
@@ -642,14 +644,18 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 	 type==CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR ||
 	
 	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED ||
-	 
+	
 	 //2021-09-26
 	 type==CONSTRAINT_TEACHERS_MAX_THREE_CONSECUTIVE_DAYS ||
 	 type==CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS ||
 
 	 //2022-02-15
 	 type==CONSTRAINT_STUDENTS_MAX_THREE_CONSECUTIVE_DAYS ||
-	 type==CONSTRAINT_STUDENTS_SET_MAX_THREE_CONSECUTIVE_DAYS)
+	 type==CONSTRAINT_STUDENTS_SET_MAX_THREE_CONSECUTIVE_DAYS ||
+	
+	 type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES ||
+
+	 type==CONSTRAINT_ACTIVITY_PREFERRED_DAY)
 		return true;
 
 	return false;
@@ -784,7 +790,9 @@ bool TimeConstraint::canBeUsedInBlockPlanningMode()
 	 type==CONSTRAINT_MAX_TOTAL_ACTIVITIES_FROM_SET_IN_SELECTED_TIME_SLOTS ||
 	 type==CONSTRAINT_MAX_GAPS_BETWEEN_ACTIVITIES ||
 	
-	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED)
+	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED ||
+
+	 type==CONSTRAINT_ACTIVITY_PREFERRED_DAY)
 		return true;
 
 	return false;
@@ -919,7 +927,9 @@ bool TimeConstraint::canBeUsedInTermsMode()
 	 type==CONSTRAINT_ACTIVITIES_MAX_IN_A_TERM ||
 	 type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS ||
 	
-	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED)
+	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED ||
+
+	 type==CONSTRAINT_ACTIVITY_PREFERRED_DAY)
 		return true;
 
 	return false;
@@ -3239,6 +3249,43 @@ double ConstraintMinDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 					}
 				}
 			}
+		}
+	}
+	
+	if(1/*!this->consecutiveIfSameDay*/){ //from version 6.4.0, not allowed more than two activities on the same (real) day
+		if(r.mode!=MORNINGS_AFTERNOONS){
+			Matrix1D<int> na;
+			na.resize(r.nDaysPerWeek);
+			for(int d=0; d<r.nDaysPerWeek; d++)
+				na[d]=0;
+			
+			for(int i=0; i<this->_n_activities; i++){
+				int t=c.times[this->_activities[i]];
+				if(t!=UNALLOCATED_TIME){
+					int day=t%r.nDaysPerWeek;
+					na[day]++;
+				}
+			}
+			
+			for(int d=0; d<r.nDaysPerWeek; d++)
+				assert(na[d]<=2);
+		}
+		else{
+			Matrix1D<int> na;
+			na.resize(r.nDaysPerWeek/2);
+			for(int d=0; d<r.nDaysPerWeek/2; d++)
+				na[d]=0;
+			
+			for(int i=0; i<this->_n_activities; i++){
+				int t=c.times[this->_activities[i]];
+				if(t!=UNALLOCATED_TIME){
+					int day=t%r.nDaysPerWeek;
+					na[day/2]++;
+				}
+			}
+			
+			for(int d=0; d<r.nDaysPerWeek/2; d++)
+				assert(na[d]<=2);
 		}
 	}
 
@@ -48783,4 +48830,642 @@ bool ConstraintStudentsMaxThreeConsecutiveDays::repairWrongDayOrHour(Rules& r)
 	assert(0); //should check hasWrongDayOrHour, firstly
 
 	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintMinHalfDaysBetweenActivities::ConstraintMinHalfDaysBetweenActivities()
+	: TimeConstraint()
+{
+	type=CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES;
+}
+
+ConstraintMinHalfDaysBetweenActivities::ConstraintMinHalfDaysBetweenActivities(double wp, bool cisd, int nact, const QList<int>& act, int n)
+ : TimeConstraint(wp)
+ {
+	this->consecutiveIfSameDay=cisd;
+
+	assert(nact>=2);
+	assert(act.count()==nact);
+	this->n_activities=nact;
+	this->activitiesId.clear();
+	for(int i=0; i<nact; i++)
+		this->activitiesId.append(act.at(i));
+
+	assert(n>0);
+	this->minDays=n;
+
+	this->type=CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES;
+}
+
+bool ConstraintMinHalfDaysBetweenActivities::operator==(ConstraintMinHalfDaysBetweenActivities& c){
+	assert(this->n_activities==this->activitiesId.count());
+	assert(c.n_activities==c.activitiesId.count());
+
+	if(this->n_activities!=c.n_activities)
+		return false;
+	for(int i=0; i<this->n_activities; i++)
+		if(this->activitiesId[i]!=c.activitiesId[i])
+			return false;
+	if(this->minDays!=c.minDays)
+		return false;
+	if(this->weightPercentage!=c.weightPercentage)
+		return false;
+	if(this->consecutiveIfSameDay!=c.consecutiveIfSameDay)
+		return false;
+	return true;
+}
+
+bool ConstraintMinHalfDaysBetweenActivities::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	//compute the indices of the activities,
+	//based on their unique ID
+
+	assert(this->n_activities==this->activitiesId.count());
+
+	this->_activities.clear();
+	for(int i=0; i<this->n_activities; i++){
+		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		//assert(j>=0);
+		if(j>=0)
+			_activities.append(j);
+		/*Activity* act;
+		for(j=0; j<r.nInternalActivities; j++){
+			act=&r.internalActivitiesList[j];
+			if(act->id==this->activitiesId[i]){
+				this->_activities.append(j);
+				break;
+			}
+		}*/
+	}
+	this->_n_activities=this->_activities.count();
+	
+	if(this->_n_activities<=1){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+		//assert(0);
+		return false;
+	}
+
+	return true;
+}
+
+void ConstraintMinHalfDaysBetweenActivities::removeUseless(Rules& r)
+{
+	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	
+	assert(this->n_activities==this->activitiesId.count());
+
+	QList<int> tmpList;
+
+	for(int i=0; i<this->n_activities; i++){
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		if(act!=nullptr)
+			tmpList.append(act->id);
+		/*for(int k=0; k<r.activitiesList.size(); k++){
+			Activity* act=r.activitiesList[k];
+			if(act->id==this->activitiesId[i]){
+				tmpList.append(act->id);
+				break;
+			}
+		}*/
+	}
+	
+	this->activitiesId=tmpList;
+	this->n_activities=this->activitiesId.count();
+
+	r.internalStructureComputed=false;
+}
+
+bool ConstraintMinHalfDaysBetweenActivities::hasInactiveActivities(Rules& r)
+{
+	int count=0;
+
+	for(int i=0; i<this->n_activities; i++)
+		if(r.inactiveActivities.contains(this->activitiesId[i]))
+			count++;
+
+	if(this->n_activities-count<=1)
+		return true;
+	else
+		return false;
+}
+
+QString ConstraintMinHalfDaysBetweenActivities::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintMinHalfDaysBetweenActivities>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Consecutive_If_Same_Day>";s+=trueFalse(this->consecutiveIfSameDay);s+="</Consecutive_If_Same_Day>\n";
+	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
+	for(int i=0; i<this->n_activities; i++)
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesId[i])+"</Activity_Id>\n";
+	s+="	<MinDays>"+CustomFETString::number(this->minDays)+"</MinDays>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintMinHalfDaysBetweenActivities>\n";
+	return s;
+}
+
+QString ConstraintMinHalfDaysBetweenActivities::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Min half days between activities");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	for(int i=0; i<this->n_activities; i++){
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);s+=", ";
+	}
+	s+=tr("mD:%1", "Min days").arg(this->minDays);s+=", ";
+	s+=tr("CSD:%1", "Consecutive if same day").arg(yesNoTranslated(this->consecutiveIfSameDay));
+
+	return begin+s+end;
+}
+
+QString ConstraintMinHalfDaysBetweenActivities::getDetailedDescription(Rules& r)
+{
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("Minimum number of half days between activities");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
+	for(int i=0; i<this->n_activities; i++){
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			.arg(this->activitiesId[i])
+			.arg(getActivityDetailedDescription(r, this->activitiesId[i]));
+		s+="\n";
+	}
+	s+=tr("Minimum number of days=%1").arg(this->minDays);s+="\n";
+	s+=tr("Consecutive if same day=%1").arg(yesNoTranslated(this->consecutiveIfSameDay));s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintMinHalfDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	assert(r.internalStructureComputed);
+
+	int nbroken;
+
+	//We do not use the matrices 'subgroupsMatrix' nor 'teachersMatrix'.
+
+	//sum the overlapping hours for all pairs of activities.
+	//without logging
+	if(conflictsString==nullptr){
+		nbroken=0;
+		for(int i=1; i<this->_n_activities; i++){
+			int t1=c.times[this->_activities[i]];
+			if(t1!=UNALLOCATED_TIME){
+				int day1=t1%r.nDaysPerWeek;
+				int hour1=t1/r.nDaysPerWeek;
+				int duration1=r.internalActivitiesList[this->_activities[i]].duration;
+
+				for(int j=0; j<i; j++){
+					int t2=c.times[this->_activities[j]];
+					if(t2!=UNALLOCATED_TIME){
+						int day2=t2%r.nDaysPerWeek;
+						int hour2=t2/r.nDaysPerWeek;
+						int duration2=r.internalActivitiesList[this->_activities[j]].duration;
+					
+						int tmp;
+						int tt=0;
+						int dist = abs(day1-day2);
+						if(dist<minDays){
+							tt=minDays-dist;
+							
+							if(this->consecutiveIfSameDay && day1==day2)
+								assert( day1==day2 && (hour1+duration1==hour2 || hour2+duration2==hour1) );
+						}
+						
+						tmp=tt;
+	
+						nbroken+=tmp;
+					}
+				}
+			}
+		}
+	}
+	//with logging
+	else{
+		nbroken=0;
+		for(int i=1; i<this->_n_activities; i++){
+			int t1=c.times[this->_activities[i]];
+			if(t1!=UNALLOCATED_TIME){
+				int day1=t1%r.nDaysPerWeek;
+				int hour1=t1/r.nDaysPerWeek;
+				int duration1=r.internalActivitiesList[this->_activities[i]].duration;
+
+				for(int j=0; j<i; j++){
+					int t2=c.times[this->_activities[j]];
+					if(t2!=UNALLOCATED_TIME){
+						int day2=t2%r.nDaysPerWeek;
+						int hour2=t2/r.nDaysPerWeek;
+						int duration2=r.internalActivitiesList[this->_activities[j]].duration;
+					
+						int tmp;
+						int tt=0;
+						int dist = abs(day1-day2);
+
+						if(dist<minDays){
+							tt=minDays-dist;
+							
+							if(this->consecutiveIfSameDay && day1==day2)
+								assert( day1==day2 && (hour1+duration1==hour2 || hour2+duration2==hour1) );
+						}
+
+						tmp=tt;
+	
+						nbroken+=tmp;
+
+						if(tt>0 && conflictsString!=nullptr){
+							QString s=tr("Time constraint min half days between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), being %5 days too close, on days %6 and %7",
+							 "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr. Close here means near")
+							 .arg(this->activitiesId[i])
+							 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))
+							 .arg(this->activitiesId[j])
+							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]))
+							 .arg(tt)
+							 .arg(r.daysOfTheWeek[day1])
+							 .arg(r.daysOfTheWeek[day2]);
+							 ;
+
+							s+=", ";
+							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
+							s+=".";
+							
+							if(this->consecutiveIfSameDay && day1==day2){
+								s+=" ";
+								s+=tr("The activities are placed consecutively in the timetable, because you selected this option"
+								 " in case the activities are in the same day");
+							}
+							
+							dl.append(s);
+							cl.append(tmp*weightPercentage/100);
+							
+							*conflictsString+= s+"\n";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(1/*!this->consecutiveIfSameDay*/){ //from version 6.4.0, not allowed more than two activities on the same half day
+		Matrix1D<int> na;
+		na.resize(r.nDaysPerWeek);
+		for(int d=0; d<r.nDaysPerWeek; d++)
+			na[d]=0;
+		
+		for(int i=0; i<this->_n_activities; i++){
+			int t=c.times[this->_activities[i]];
+			if(t!=UNALLOCATED_TIME){
+				int day=t%r.nDaysPerWeek;
+				na[day]++;
+			}
+		}
+		
+		for(int d=0; d<r.nDaysPerWeek; d++)
+			assert(na[d]<=2);
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintMinHalfDaysBetweenActivities::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+
+	for(int i=0; i<this->n_activities; i++)
+		if(this->activitiesId[i]==a->id)
+			return true;
+	return false;
+}
+
+bool ConstraintMinHalfDaysBetweenActivities::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintMinHalfDaysBetweenActivities::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintMinHalfDaysBetweenActivities::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintMinHalfDaysBetweenActivities::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintMinHalfDaysBetweenActivities::hasWrongDayOrHour(Rules& r)
+{
+	if(minDays>=r.nDaysPerWeek)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintMinHalfDaysBetweenActivities::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintMinHalfDaysBetweenActivities::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(minDays>=r.nDaysPerWeek)
+		minDays=r.nDaysPerWeek-1;
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivityPreferredDay::ConstraintActivityPreferredDay()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_ACTIVITY_PREFERRED_DAY;
+}
+
+ConstraintActivityPreferredDay::ConstraintActivityPreferredDay(double wp, int actId, int d/*, bool perm*/)
+	: TimeConstraint(wp)
+{
+	this->activityId = actId;
+	this->day = d;
+	this->type = CONSTRAINT_ACTIVITY_PREFERRED_DAY;
+	//this->permanentlyLocked=perm;
+}
+
+bool ConstraintActivityPreferredDay::operator==(const ConstraintActivityPreferredDay& c){
+	if(this->day!=c.day)
+		return false;
+	if(this->activityId!=c.activityId)
+		return false;
+	if(this->weightPercentage!=c.weightPercentage)
+		return false;
+	if(this->active!=c.active)
+		return false;
+	//no need to care about permanently locked
+	return true;
+}
+
+bool ConstraintActivityPreferredDay::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	/*Activity* act;
+	int i;
+	for(i=0; i<r.nInternalActivities; i++){
+		act=&r.internalActivitiesList[i];
+		if(act->id==this->activityId)
+			break;
+	}*/
+	
+	int i=r.activitiesHash.value(activityId, r.nInternalActivities);
+	
+	if(i==r.nInternalActivities){
+		//assert(0);
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+
+	if(this->day >= r.nDaysPerWeek){
+		TimeConstraintIrreconcilableMessage::information(parent, tr("FET information"),
+		 tr("Constraint activity preferred starting time is wrong because it refers to removed day. Please correct"
+		 " and try again. Correcting means editing the constraint and updating information. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+		
+		return false;
+	}
+
+	this->activityIndex=i;
+	return true;
+}
+
+bool ConstraintActivityPreferredDay::hasInactiveActivities(Rules& r)
+{
+	if(r.inactiveActivities.contains(this->activityId))
+		return true;
+	return false;
+}
+
+QString ConstraintActivityPreferredDay::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintActivityPreferredDay>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
+	if(this->day>=0)
+		s+="	<Preferred_Day>"+protect(r.daysOfTheWeek[this->day])+"</Preferred_Day>\n";
+	//s+="	<Permanently_Locked>";s+=trueFalse(this->permanentlyLocked);s+="</Permanently_Locked>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintActivityPreferredDay>\n";
+	return s;
+}
+
+QString ConstraintActivityPreferredDay::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Act. id: %1 (%2) has a preferred day: %3", "%1 is the id, %2 is the detailed description of the activity. %3 is day")
+	 .arg(this->activityId)
+	 .arg(getActivityDetailedDescription(r, this->activityId))
+	 .arg(r.daysOfTheWeek[this->day]);
+
+	s+=", ";
+
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+	//s+=", ";
+	//s+=tr("PL:%1", "Abbreviation for permanently locked").arg(yesNoTranslated(this->permanentlyLocked));
+
+	return begin+s+end;
+}
+
+QString ConstraintActivityPreferredDay::getDetailedDescription(Rules& r)
+{
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+		.arg(this->activityId)
+		.arg(getActivityDetailedDescription(r, this->activityId));
+	s+="\n";
+
+	s+=tr("has a preferred day:");
+	s+="\n";
+	s+=tr("Day=%1").arg(r.daysOfTheWeek[this->day]);
+	s+="\n";
+
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	/*if(this->permanentlyLocked){
+		s+=tr("This activity is permanently locked, which means you cannot unlock it from the 'Timetable' menu"
+		" (you can unlock this activity by removing the constraint from the constraints dialog or by setting the 'permanently"
+		" locked' attribute false when editing this constraint)");
+	}
+	else{
+		s+=tr("This activity is not permanently locked, which means you can unlock it from the 'Timetable' menu");
+	}
+	s+="\n";*/
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintActivityPreferredDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+
+	assert(r.internalStructureComputed);
+
+	nbroken=0;
+	if(c.times[this->activityIndex]!=UNALLOCATED_TIME){
+		int d=c.times[this->activityIndex]%r.nDaysPerWeek; //the day when this activity was scheduled
+		//int h=c.times[this->activityIndex]/r.nDaysPerWeek; //the hour
+		if(this->day>=0)
+			nbroken+=abs(this->day-d);
+		//if(this->hour>=0)
+		//	nbroken+=abs(this->hour-h);
+	}
+	if(nbroken>0)
+		nbroken=1;
+
+	if(conflictsString!=nullptr && nbroken>0){
+		QString s=tr("Time constraint activity preferred day broken for activity with id=%1 (%2), increases conflicts total by %3",
+			"%1 is the id, %2 is the detailed description of the activity")
+			.arg(this->activityId)
+			.arg(getActivityDetailedDescription(r, this->activityId))
+			.arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
+
+		dl.append(s);
+		cl.append(weightPercentage/100*nbroken);
+	
+		*conflictsString+= s+"\n";
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return nbroken * weightPercentage/100;
+}
+
+bool ConstraintActivityPreferredDay::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+
+	if(this->activityId==a->id)
+		return true;
+	return false;
+}
+
+bool ConstraintActivityPreferredDay::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintActivityPreferredDay::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivityPreferredDay::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivityPreferredDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+		
+	return false;
+}
+
+bool ConstraintActivityPreferredDay::hasWrongDayOrHour(Rules& r)
+{
+	if(day<0 || day>=r.nDaysPerWeek)
+		return true;
+	return false;
+}
+
+bool ConstraintActivityPreferredDay::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return false;
+}
+
+bool ConstraintActivityPreferredDay::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return false;
 }

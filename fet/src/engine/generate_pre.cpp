@@ -128,9 +128,23 @@ Matrix1D<QList<int>> minDaysListOfActivities;
 Matrix1D<QList<int>> minDaysListOfMinDays;
 Matrix1D<QList<double>> minDaysListOfWeightPercentages;
 Matrix1D<QList<bool>> minDaysListOfConsecutiveIfSameDay;
+std::list<QList<int>> minDaysListOfActivitiesFromThisConstraint;
+Matrix1D<QList<QList<int>*>> minDaysListOfActivitiesFromTheSameConstraint;
 
 //bool computeMinDays(QWidget* parent);
 ////////END   MIN DAYS TIME CONSTRAINTS
+
+
+////////BEGIN MIN HALF DAYS TIME CONSTRAINTS - only for the Mornings-Afternoons mode
+Matrix1D<QList<int>> minHalfDaysListOfActivities;
+Matrix1D<QList<int>> minHalfDaysListOfMinDays;
+Matrix1D<QList<double>> minHalfDaysListOfWeightPercentages;
+Matrix1D<QList<bool>> minHalfDaysListOfConsecutiveIfSameDay;
+std::list<QList<int>> minHalfDaysListOfActivitiesFromThisConstraint;
+Matrix1D<QList<QList<int>*>> minHalfDaysListOfActivitiesFromTheSameConstraint;
+
+//bool computeMinHalfDays(QWidget* parent);
+////////END   MIN HALF DAYS TIME CONSTRAINTS - only for the Mornings-Afternoons mode
 
 
 ////////BEGIN MAX DAYS TIME CONSTRAINTS
@@ -616,6 +630,9 @@ bool haveActivityEndsTeachersDay;
 
 bool checkMinDays100Percent(QWidget* parent);
 bool checkMinDaysConsecutiveIfSameDay(QWidget* parent);
+
+bool checkMinHalfDays100Percent(QWidget* parent);
+bool checkMinHalfDaysConsecutiveIfSameDay(QWidget* parent);
 
 
 bool checkMaxHoursForActivityDuration(QWidget* parent);
@@ -1403,6 +1420,14 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	minDaysListOfMinDays.resize(gt.rules.nInternalActivities);
 	minDaysListOfWeightPercentages.resize(gt.rules.nInternalActivities);
 	minDaysListOfConsecutiveIfSameDay.resize(gt.rules.nInternalActivities);
+	minDaysListOfActivitiesFromTheSameConstraint.resize(gt.rules.nInternalActivities);
+	
+	//MIN HALF DAYS BETWEEN ACTIVITIES
+	minHalfDaysListOfActivities.resize(gt.rules.nInternalActivities);
+	minHalfDaysListOfMinDays.resize(gt.rules.nInternalActivities);
+	minHalfDaysListOfWeightPercentages.resize(gt.rules.nInternalActivities);
+	minHalfDaysListOfConsecutiveIfSameDay.resize(gt.rules.nInternalActivities);
+	minHalfDaysListOfActivitiesFromTheSameConstraint.resize(gt.rules.nInternalActivities);
 
 	//MAX DAYS BETWEEN ACTIVITIES
 	maxDaysListOfActivities.resize(gt.rules.nInternalActivities);
@@ -1434,7 +1459,6 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	subgroupsWithMaxMorningsPerWeekForActivities.resize(gt.rules.nInternalActivities);
 
 	subgroupsWithMaxRealDaysPerWeekForActivities.resize(gt.rules.nInternalActivities);
-
 
 	//activities same starting time
 	activitiesSameStartingTimeActivities.resize(gt.rules.nInternalActivities);
@@ -1616,6 +1640,12 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	
 	/////2. min days between activities
 	t=computeMinDays(parent);
+	if(!t)
+		return false;
+	/////////////////////////////////////
+	
+	/////2.1 min half days between activities
+	t=computeMinHalfDays(parent);
 	if(!t)
 		return false;
 	/////////////////////////////////////
@@ -1887,6 +1917,14 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 	t=checkMinDaysConsecutiveIfSameDay(parent);
+	if(!t)
+		return false;
+	
+	//check for impossible min half days
+	t=checkMinHalfDays100Percent(parent);
+	if(!t)
+		return false;
+	t=checkMinHalfDaysConsecutiveIfSameDay(parent);
 	if(!t)
 		return false;
 	
@@ -12316,7 +12354,35 @@ bool computeNotAllowedTimesPercentages(QWidget* parent)
 					break;
 				//assert(0);
 			}
-		}	
+		}
+
+		//ACTIVITY preferred day
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_DAY){
+			ConstraintActivityPreferredDay* ap=(ConstraintActivityPreferredDay*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(ap->day>=0){
+				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
+					for(int h=0; h<gt.rules.nHoursPerDay; h++)
+						if(d!=ap->day)
+							if(notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]<ap->weightPercentage)
+								notAllowedTimesPercentages[ap->activityIndex][d+h*gt.rules.nDaysPerWeek]=ap->weightPercentage;
+			}
+			else{
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
+					"activity preferred day with no day selected (for activity with id=%1). "
+					"Please modify your data accordingly (remove or edit constraint) and try again.")
+					.arg(gt.rules.internalActivitiesList[ap->activityIndex].id),
+					GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				1, 0 );
+
+				if(t==0)
+					break;
+				//assert(0);
+			}
+		}
 
 		//ACTIVITY preferred starting times
 		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
@@ -12532,11 +12598,13 @@ bool computeMinDays(QWidget* parent)
 
 	bool ok=true;
 
+	minDaysListOfActivitiesFromThisConstraint.clear();
 	for(int j=0; j<gt.rules.nInternalActivities; j++){
 		minDaysListOfActivities[j].clear();
 		minDaysListOfMinDays[j].clear();
 		minDaysListOfConsecutiveIfSameDay[j].clear();
 		minDaysListOfWeightPercentages[j].clear();
+		minDaysListOfActivitiesFromTheSameConstraint[j].clear();
 		
 		//for(int k=0; k<gt.rules.nInternalActivities; k++)
 		//	minDays[j][k]=0;
@@ -12548,6 +12616,7 @@ bool computeMinDays(QWidget* parent)
 			ConstraintMinDaysBetweenActivities* md=
 			 (ConstraintMinDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
 			
+			minDaysListOfActivitiesFromThisConstraint.push_back(md->_activities);
 			for(int j=0; j<md->_n_activities; j++){
 				int ai1=md->_activities[j];
 				for(int k=0; k<md->_n_activities; k++)
@@ -12560,7 +12629,7 @@ bool computeMinDays(QWidget* parent)
 								mdset.insert(md);
 						
 								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-								 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint min days with duplicate activities. The constraint "
+								 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint min days between activities with duplicate activities. The constraint "
 								 "is: %1. Please correct that.").arg(md->getDetailedDescription(gt.rules)),
 								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 								 1, 0 );
@@ -12575,9 +12644,10 @@ bool computeMinDays(QWidget* parent)
 						
 						minDaysListOfActivities[ai1].append(ai2);
 						minDaysListOfMinDays[ai1].append(m);
-						assert(md->weightPercentage >=0 && md->weightPercentage<=100);
+						assert(md->weightPercentage>=0 && md->weightPercentage<=100);
 						minDaysListOfWeightPercentages[ai1].append(md->weightPercentage);
 						minDaysListOfConsecutiveIfSameDay[ai1].append(md->consecutiveIfSameDay);
+						minDaysListOfActivitiesFromTheSameConstraint[ai1].append(&minDaysListOfActivitiesFromThisConstraint.back());
 					}
 			}
 		}
@@ -12588,6 +12658,77 @@ bool computeMinDays(QWidget* parent)
 				assert(j!=k);
 				minDaysListOfActivities[j].append(k);
 				minDaysListOfMinDays[j].append(minDays[j][k]);
+			}*/
+			
+	return ok;
+}
+
+bool computeMinHalfDays(QWidget* parent)
+{
+	QSet<ConstraintMinHalfDaysBetweenActivities*> mdset;
+
+	bool ok=true;
+
+	minHalfDaysListOfActivitiesFromThisConstraint.clear();
+	for(int j=0; j<gt.rules.nInternalActivities; j++){
+		minHalfDaysListOfActivities[j].clear();
+		minHalfDaysListOfMinDays[j].clear();
+		minHalfDaysListOfConsecutiveIfSameDay[j].clear();
+		minHalfDaysListOfWeightPercentages[j].clear();
+		minHalfDaysListOfActivitiesFromTheSameConstraint[j].clear();
+		
+		//for(int k=0; k<gt.rules.nInternalActivities; k++)
+		//	minDays[j][k]=0;
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES
+		 /*&&gt.rules.internalTimeConstraintsList[i]->compulsory==true*/){
+			ConstraintMinHalfDaysBetweenActivities* md=
+			 (ConstraintMinHalfDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
+			
+			minHalfDaysListOfActivitiesFromThisConstraint.push_back(md->_activities);
+			for(int j=0; j<md->_n_activities; j++){
+				int ai1=md->_activities[j];
+				for(int k=0; k<md->_n_activities; k++)
+					if(j!=k){
+						int ai2=md->_activities[k];
+						if(ai1==ai2){
+							ok=false;
+							
+							if(!mdset.contains(md)){
+								mdset.insert(md);
+						
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint min half days between activities with duplicate activities. The constraint "
+								 "is: %1. Please correct that.").arg(md->getDetailedDescription(gt.rules)),
+								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+								 1, 0 );
+					
+								if(t==0)
+									return ok;
+							}
+						}
+						int m=md->minDays;
+						/*if(m>minDays[ai1][ai2])
+							minDays[ai1][ai2]=minDays[ai2][ai1]=m;*/
+						
+						minHalfDaysListOfActivities[ai1].append(ai2);
+						minHalfDaysListOfMinDays[ai1].append(m);
+						assert(md->weightPercentage>=0 && md->weightPercentage<=100);
+						minHalfDaysListOfWeightPercentages[ai1].append(md->weightPercentage);
+						minHalfDaysListOfConsecutiveIfSameDay[ai1].append(md->consecutiveIfSameDay);
+						minHalfDaysListOfActivitiesFromTheSameConstraint[ai1].append(&minHalfDaysListOfActivitiesFromThisConstraint.back());
+					}
+			}
+		}
+
+	/*for(int j=0; j<gt.rules.nInternalActivities; j++)
+		for(int k=0; k<gt.rules.nInternalActivities; k++)
+			if(minDays[j][k]>0){
+				assert(j!=k);
+				minHalfDaysListOfActivities[j].append(k);
+				minHalfDaysListOfMinDays[j].append(minDays[j][k]);
 			}*/
 			
 	return ok;
@@ -13470,7 +13611,7 @@ bool checkMinDays100Percent(QWidget* parent)
 	
 	return ok;
 }
-	
+
 bool checkMinDaysConsecutiveIfSameDay(QWidget* parent)
 {
 	bool ok=true;
@@ -13534,7 +13675,7 @@ bool checkMinDaysConsecutiveIfSameDay(QWidget* parent)
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
 		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 			ConstraintMinDaysBetweenActivities* md=(ConstraintMinDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
-			if(md->consecutiveIfSameDay){
+			if(1/*md->consecutiveIfSameDay*/){
 				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
 					nReqForTeacher[tc]=0;
 				for(int j=0; j<md->_n_activities; j++){
@@ -13550,12 +13691,9 @@ bool checkMinDaysConsecutiveIfSameDay(QWidget* parent)
 						ok=false;
 						
 						QString s=GeneratePreTranslate::tr("%1 cannot be respected because teacher %2 has at most"
-						 " %3 available days. You specified for this constraint consecutive if same day=true."
-						 " Currently FET cannot put more than 2 activities in the same day"
-						 " if consecutive if same day is true. You have 2*available days<number of activities in this constraint."
-						 " This is a very unlikely situation, that is why I didn't care too much about it."
-						 " If you encounter it, please please modify your file (uncheck consecutive if same day"
-						 " or add other activities with larger duration).", "%1 is the detailed description of a constraint"
+						 " %3 available days. Currently FET cannot put more than 2 activities in the same day."
+						 " You have 2*available days<number of activities in this constraint.",
+						 "%1 is the detailed description of a constraint"
 						)
 						 .arg(md->getDetailedDescription(gt.rules))
 						 .arg(gt.rules.internalTeachersList[tc]->name)
@@ -13585,12 +13723,310 @@ bool checkMinDaysConsecutiveIfSameDay(QWidget* parent)
 						ok=false;
 						
 						QString s=GeneratePreTranslate::tr("%1 cannot be respected because subgroup %2 has at most"
-						 " %3 available days. You specified for this constraint consecutive if same day=true."
-						 " Currently FET cannot put more than 2 activities in the same day"
-						 " if consecutive if same day is true. You have 2*available days<number of activities in this constraint."
-						 " This is a very unlikely situation, that is why I didn't care too much about it."
-						 " If you encounter it, please modify your file (uncheck consecutive if same day"
-						 " or add other activities with larger duration).", "%1 is the detailed description of a constraint"
+						 " %3 available days. Currently FET cannot put more than 2 activities in the same day."
+						 " You have 2*available days<number of activities in this constraint.",
+						 "%1 is the detailed description of a constraint"
+						)
+						 .arg(md->getDetailedDescription(gt.rules))
+						 .arg(gt.rules.internalSubgroupsList[sb]->name)
+						 .arg(daysSubgroupIsAvailable[sb]);
+
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+					
+						if(t==0)
+							return ok;
+					}
+				}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool checkMinHalfDays100Percent(QWidget* parent)
+{
+	bool ok=true;
+	
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS)
+		return ok;
+	
+	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+		daysTeacherIsAvailable[tc]=0;
+
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			bool dayAvailable=false;
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				if(!breakDayHour[d][h] && !teacherNotAvailableDayHour[tc][d][h]){
+					dayAvailable=true;
+					break;
+				}
+				
+			if(dayAvailable)
+				daysTeacherIsAvailable[tc]++;
+		}
+
+		if(teachersMaxDaysPerWeekMaxDays[tc]>=0){ //it has compulsory 100% weight
+			assert(teachersMaxDaysPerWeekWeightPercentages[tc]==100);
+			daysTeacherIsAvailable[tc]=min(daysTeacherIsAvailable[tc], teachersMaxDaysPerWeekMaxDays[tc]);
+		}
+
+		/*if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){ //it has compulsory 100% weight
+				assert(teachersMaxRealDaysPerWeekWeightPercentages[tc]==100);
+				daysTeacherIsAvailable[tc]=min(daysTeacherIsAvailable[tc], teachersMaxRealDaysPerWeekMaxDays[tc]);
+			}
+		}*/
+	}
+
+	for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+		daysSubgroupIsAvailable[sb]=0;
+
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			bool dayAvailable=false;
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				if(!breakDayHour[d][h] && !subgroupNotAvailableDayHour[sb][d][h]){
+					dayAvailable=true;
+					break;
+				}
+				
+			if(dayAvailable)
+				daysSubgroupIsAvailable[sb]++;
+		}
+
+		if(subgroupsMaxDaysPerWeekMaxDays[sb]>=0){ //it has compulsory 100% weight
+			assert(subgroupsMaxDaysPerWeekWeightPercentages[sb]==100);
+			daysSubgroupIsAvailable[sb]=min(daysSubgroupIsAvailable[sb], subgroupsMaxDaysPerWeekMaxDays[sb]);
+		}
+
+		/*if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			if(subgroupsMaxRealDaysPerWeekMaxDays[sb]>=0){ //it has compulsory 100% weight
+				assert(subgroupsMaxRealDaysPerWeekWeightPercentages[sb]==100);
+				daysSubgroupIsAvailable[sb]=min(daysSubgroupIsAvailable[sb], subgroupsMaxRealDaysPerWeekMaxDays[sb]);
+			}
+		}*/
+	}
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES
+		 &&gt.rules.internalTimeConstraintsList[i]->weightPercentage==100.0){
+			ConstraintMinHalfDaysBetweenActivities* md=(ConstraintMinHalfDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(md->minDays>=1){
+				int na=md->_n_activities;
+				int nd=md->minDays;
+				if((na-1)*nd+1 > gt.rules.nDaysPerWeek){
+					ok=false;
+					
+					QString s=GeneratePreTranslate::tr("%1 cannot be respected because it contains %2 activities,"
+					 " has weight 100% and has min number of half days between activities=%3. The minimum required number of days per week for"
+					 " that would be (nactivities-1)*mindays+1=%4, and you have only %5 days per week - impossible. Please correct this constraint.", "%1 is the detailed description of a constraint"
+					)
+					 .arg(md->getDetailedDescription(gt.rules))
+					 .arg(na)
+					 .arg(nd)
+					 .arg((na-1)*nd+1)
+					 .arg(gt.rules.nDaysPerWeek)
+					 ;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+					
+					if(t==0)
+						return ok;
+				}
+			}
+			
+			if(md->minDays>=1){
+				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
+					requestedDaysForTeachers[tc]=0;
+				for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++)
+					requestedDaysForSubgroups[sb]=0;
+			
+				for(int j=0; j<md->_n_activities; j++){
+					int ai=md->_activities[j];
+					for(int k=0; k<gt.rules.internalActivitiesList[ai].iTeachersList.count(); k++){
+						int tc=gt.rules.internalActivitiesList[ai].iTeachersList.at(k);
+						requestedDaysForTeachers[tc]++;
+					}
+					for(int k=0; k<gt.rules.internalActivitiesList[ai].iSubgroupsList.count(); k++){
+						int sb=gt.rules.internalActivitiesList[ai].iSubgroupsList.at(k);
+						requestedDaysForSubgroups[sb]++;
+					}
+				}
+				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
+					if(requestedDaysForTeachers[tc]>daysTeacherIsAvailable[tc]){
+						ok=false;
+						
+						QString s=GeneratePreTranslate::tr("%1 cannot be respected because teacher %2 has at most"
+						 " %3 available half days from teacher not available, breaks and teacher max days per week."
+						 " Please lower the weight of this constraint to a value below 100% (it depends"
+						 " on your situation, if 0% is too little, make it 90%, 95% or even 99.75%."
+						 " Even a large weight should not slow down much the program."
+						 " A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4"
+						 " possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)", "%1 is the detailed description of a constraint"
+						)
+						 .arg(md->getDetailedDescription(gt.rules))
+						 .arg(gt.rules.internalTeachersList[tc]->name)
+						 .arg(daysTeacherIsAvailable[tc]);
+
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+					
+						if(t==0)
+							return ok;
+					}
+				for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++)
+					if(requestedDaysForSubgroups[sb]>daysSubgroupIsAvailable[sb]){
+						ok=false;
+						
+						QString s=GeneratePreTranslate::tr("%1 cannot be respected because subgroup %2 has at most"
+						 " %3 available half days from students set not available and breaks."
+						 " Please lower the weight of this constraint to a value below 100% (it depends"
+						 " on your situation, if 0% is too little, make it 90%, 95% or even 99.75%."
+						 " Even a large weight should not slow down much the program."
+						 " A situation where you may need to make it larger than 0% is for instance if you have 5 activities with 4"
+						 " possible days. You want to spread them 1, 1, 1 and 2, not 2, 2 and 1)", "%1 is the detailed description of a constraint"
+						 )
+						 .arg(md->getDetailedDescription(gt.rules))
+						 .arg(gt.rules.internalSubgroupsList[sb]->name)
+						 .arg(daysSubgroupIsAvailable[sb]);
+
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+					
+						if(t==0)
+							return ok;
+					}
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool checkMinHalfDaysConsecutiveIfSameDay(QWidget* parent)
+{
+	bool ok=true;
+
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS)
+		return ok;
+
+	for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+		daysTeacherIsAvailable[tc]=0;
+
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			bool dayAvailable=false;
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				if(!breakDayHour[d][h] && !teacherNotAvailableDayHour[tc][d][h]){
+					dayAvailable=true;
+					break;
+				}
+				
+			if(dayAvailable)
+				daysTeacherIsAvailable[tc]++;
+		}
+
+		if(teachersMaxDaysPerWeekMaxDays[tc]>=0){ //it has compulsory 100% weight
+			assert(teachersMaxDaysPerWeekWeightPercentages[tc]==100);
+			daysTeacherIsAvailable[tc]=min(daysTeacherIsAvailable[tc], teachersMaxDaysPerWeekMaxDays[tc]);
+		}
+
+		/*if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){ //it has compulsory 100% weight
+				assert(teachersMaxRealDaysPerWeekWeightPercentages[tc]==100);
+				daysTeacherIsAvailable[tc]=min(daysTeacherIsAvailable[tc], teachersMaxRealDaysPerWeekMaxDays[tc]);
+			}
+		}*/
+	}
+
+	for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+		daysSubgroupIsAvailable[sb]=0;
+
+		for(int d=0; d<gt.rules.nDaysPerWeek; d++){
+			bool dayAvailable=false;
+			for(int h=0; h<gt.rules.nHoursPerDay; h++)
+				if(!breakDayHour[d][h] && !subgroupNotAvailableDayHour[sb][d][h]){
+					dayAvailable=true;
+					break;
+				}
+				
+			if(dayAvailable)
+				daysSubgroupIsAvailable[sb]++;
+		}
+
+		if(subgroupsMaxDaysPerWeekMaxDays[sb]>=0){ //it has compulsory 100% weight
+			assert(subgroupsMaxDaysPerWeekWeightPercentages[sb]==100);
+			daysSubgroupIsAvailable[sb]=min(daysSubgroupIsAvailable[sb], subgroupsMaxDaysPerWeekMaxDays[sb]);
+		}
+
+		/*if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			if(subgroupsMaxRealDaysPerWeekMaxDays[sb]>=0){ //it has compulsory 100% weight
+				assert(subgroupsMaxRealDaysPerWeekWeightPercentages[sb]==100);
+				daysSubgroupIsAvailable[sb]=min(daysSubgroupIsAvailable[sb], subgroupsMaxRealDaysPerWeekMaxDays[sb]);
+			}
+		}*/
+	}
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMinHalfDaysBetweenActivities* md=(ConstraintMinHalfDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
+			if(1/*md->consecutiveIfSameDay*/){
+				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++)
+					nReqForTeacher[tc]=0;
+				for(int j=0; j<md->_n_activities; j++){
+					int ai=md->_activities[j];
+					for(int k=0; k<gt.rules.internalActivitiesList[ai].iTeachersList.count(); k++){
+						int tc=gt.rules.internalActivitiesList[ai].iTeachersList.at(k);
+						nReqForTeacher[tc]++;
+					}
+				}
+			
+				for(int tc=0; tc<gt.rules.nInternalTeachers; tc++){
+					if(2*daysTeacherIsAvailable[tc] < nReqForTeacher[tc]){
+						ok=false;
+						
+						QString s=GeneratePreTranslate::tr("%1 cannot be respected because teacher %2 has at most"
+						 " %3 available half days. Currently FET cannot put more than 2 activities in the same day."
+						 " You have 2*available days<number of activities in this constraint.",
+						 "%1 is the detailed description of a constraint"
+						)
+						 .arg(md->getDetailedDescription(gt.rules))
+						 .arg(gt.rules.internalTeachersList[tc]->name)
+						 .arg(daysTeacherIsAvailable[tc]);
+	
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"), s,
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+						
+						if(t==0)
+							return ok;
+					}
+				}
+
+				for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++)
+					nReqForSubgroup[sb]=0;
+				for(int j=0; j<md->_n_activities; j++){
+					int ai=md->_activities[j];
+					for(int k=0; k<gt.rules.internalActivitiesList[ai].iSubgroupsList.count(); k++){
+						int sb=gt.rules.internalActivitiesList[ai].iSubgroupsList.at(k);
+						nReqForSubgroup[sb]++;
+					}
+				}
+			
+				for(int sb=0; sb<gt.rules.nInternalSubgroups; sb++){
+					if(2*daysSubgroupIsAvailable[sb] < nReqForSubgroup[sb]){
+						ok=false;
+						
+						QString s=GeneratePreTranslate::tr("%1 cannot be respected because subgroup %2 has at most"
+						 " %3 available half days. Currently FET cannot put more than 2 activities in the same day."
+						 " You have 2*available days<number of activities in this constraint.",
+						 "%1 is the detailed description of a constraint"
 						)
 						 .arg(md->getDetailedDescription(gt.rules))
 						 .arg(gt.rules.internalSubgroupsList[sb]->name)
@@ -18167,7 +18603,7 @@ void sortActivities(QWidget* parent, const QHash<int, int>& reprSameStartingTime
 			assert(allowedSlotForFixedActivity.contains(i));
 			int si=allowedSlotForFixedActivity.value(i);
 			int di=si%gt.rules.nDaysPerWeek;
-		
+			
 			for(int d=0; d<minDaysListOfActivities[i].count(); d++){
 				int j=minDaysListOfActivities[i].at(d);
 				if(!fixedTimeActivity[j])
@@ -18184,6 +18620,26 @@ void sortActivities(QWidget* parent, const QHash<int, int>& reprSameStartingTime
 					dist=abs(di-dj);
 				else
 					dist=abs(di/2-dj/2);
+				if(dist<m){
+					//careful, don't assert weight is <100.0, because the data may be impossible and we get assert failed
+					nMinDaysConstraintsBroken[i]*=(1.0-w);
+				}
+			}
+			
+			for(int d=0; d<minHalfDaysListOfActivities[i].count(); d++){
+				int j=minHalfDaysListOfActivities[i].at(d);
+				if(!fixedTimeActivity[j])
+					continue;
+				int m=minHalfDaysListOfMinDays[i].at(d);
+				double w=minHalfDaysListOfWeightPercentages[i].at(d)/100.0;
+				
+				assert(allowedSlotForFixedActivity.contains(j));
+				int sj=allowedSlotForFixedActivity.value(j);
+				int dj=sj%gt.rules.nDaysPerWeek;
+				
+				int dist;
+				assert(gt.rules.mode==MORNINGS_AFTERNOONS);
+				dist=abs(di-dj);
 				if(dist<m){
 					//careful, don't assert weight is <100.0, because the data may be impossible and we get assert failed
 					nMinDaysConstraintsBroken[i]*=(1.0-w);

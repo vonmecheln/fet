@@ -127,9 +127,23 @@ extern Matrix1D<QList<int>> minDaysListOfActivities;
 extern Matrix1D<QList<int>> minDaysListOfMinDays;
 extern Matrix1D<QList<double>> minDaysListOfWeightPercentages;
 extern Matrix1D<QList<bool>> minDaysListOfConsecutiveIfSameDay;
+extern std::list<QList<int>> minDaysListOfActivitiesFromThisConstraint;
+extern Matrix1D<QList<QList<int>*>> minDaysListOfActivitiesFromTheSameConstraint;
 
 bool computeMinDays(QWidget* parent);
 ////////END   MIN DAYS TIME CONSTRAINTS
+
+
+////////BEGIN MIN HALF DAYS TIME CONSTRAINTS - only for the Mornings-Afternoons mode
+extern Matrix1D<QList<int>> minHalfDaysListOfActivities;
+extern Matrix1D<QList<int>> minHalfDaysListOfMinDays;
+extern Matrix1D<QList<double>> minHalfDaysListOfWeightPercentages;
+extern Matrix1D<QList<bool>> minHalfDaysListOfConsecutiveIfSameDay;
+extern std::list<QList<int>> minHalfDaysListOfActivitiesFromThisConstraint;
+extern Matrix1D<QList<QList<int>*>> minHalfDaysListOfActivitiesFromTheSameConstraint;
+
+bool computeMinHalfDays(QWidget* parent);
+////////END   MIN HALF DAYS TIME CONSTRAINTS - only for the Mornings-Afternoons mode
 
 
 ////////BEGIN MAX DAYS TIME CONSTRAINTS
@@ -688,6 +702,9 @@ extern bool haveActivityEndsTeachersDay;
 
 bool checkMinDays100Percent(QWidget* parent);
 bool checkMinDaysConsecutiveIfSameDay(QWidget* parent);
+
+bool checkMinHalfDays100Percent(QWidget* parent);
+bool checkMinHalfDaysConsecutiveIfSameDay(QWidget* parent);
 
 
 bool checkMaxHoursForActivityDuration(QWidget* parent);

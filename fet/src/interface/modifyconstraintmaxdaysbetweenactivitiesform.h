@@ -26,7 +26,7 @@
 #include <QList>
 
 class ModifyConstraintMaxDaysBetweenActivitiesForm : public QDialog, Ui::ModifyConstraintMaxDaysBetweenActivitiesForm_template  {
-	Q_OBJECT	
+	Q_OBJECT
 
 public:
 	ModifyConstraintMaxDaysBetweenActivitiesForm(QWidget* parent, ConstraintMaxDaysBetweenActivities* ctr);

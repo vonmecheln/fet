@@ -52,6 +52,9 @@ RemoveRedundantConfirmationForm::RemoveRedundantConfirmationForm(QWidget* parent
 	s+="\n\n";
 	s+=tr("Please SAVE/BACKUP your current file and keep it safe, in case anything goes wrong, and only continue if "
 	"you did that already. Current function might modify much your data");
+	s+="\n\n";
+	s+=tr("Starting with FET version 6.4.0, if you use the Mornings-Afternoons mode, this function will also remove redundant "
+	"constraints of type min half days between activities");
 	
 	plainTextEdit->setPlainText(s);
 }

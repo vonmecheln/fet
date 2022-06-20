@@ -90,6 +90,9 @@ HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)
 	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "And indeed, Liviu Lalescu says this: I checked the code. There is no need for a new constraint. Please use a constraint min gaps between activities"
 	 " with min gaps = the number of hours per half day (the maximum FET allows). Add all the math and sport activities for a students set for your example. It is implemented"
 	 " efficiently for this case.");
+	s+="\n\n";
+	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "Note: in FET version %1, suggested by %2, it was added a new type of constraint probably useful in this case:"
+	 " min half days between activities, so that the trick above is now no longer necessary.").arg("6.4.0").arg("ngoctp29121982");
 	
 	textBrowser->setText(s);
 }

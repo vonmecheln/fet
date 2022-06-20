@@ -183,6 +183,7 @@
 #include "constraintactivitiesnotoverlappingform.h"
 #include "constraintactivitytagsnotoverlappingform.h"
 #include "constraintmindaysbetweenactivitiesform.h"
+#include "constraintminhalfdaysbetweenactivitiesform.h"
 #include "constraintmaxdaysbetweenactivitiesform.h"
 #include "constraintmingapsbetweenactivitiesform.h"
 #include "constraintactivitypreferredtimeslotsform.h"
@@ -1146,6 +1147,7 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsActivitiesNotOverlappingAction = new QAction(this);
 	dataTimeConstraintsActivityTagsNotOverlappingAction = new QAction(this);
 	dataTimeConstraintsMinDaysBetweenActivitiesAction = new QAction(this);
+	dataTimeConstraintsMinHalfDaysBetweenActivitiesAction = new QAction(this);
 	dataSpaceConstraintsBasicCompulsorySpaceAction = new QAction(this);
 	dataSpaceConstraintsRoomNotAvailableTimesAction = new QAction(this);
 	dataSpaceConstraintsTeacherRoomNotAvailableTimesAction = new QAction(this);
@@ -1387,6 +1389,7 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsActivitiesNotOverlappingAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesNotOverlappingAction_triggered()));
 	connect(dataTimeConstraintsActivityTagsNotOverlappingAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityTagsNotOverlappingAction_triggered()));
 	connect(dataTimeConstraintsMinDaysBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered()));
+	connect(dataTimeConstraintsMinHalfDaysBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMinHalfDaysBetweenActivitiesAction_triggered()));
 	connect(dataSpaceConstraintsBasicCompulsorySpaceAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsBasicCompulsorySpaceAction_triggered()));
 	connect(dataSpaceConstraintsRoomNotAvailableTimesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsRoomNotAvailableTimesAction_triggered()));
 	connect(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction, SIGNAL(triggered()), this, SLOT(dataSpaceConstraintsTeacherRoomNotAvailableTimesAction_triggered()));
@@ -1661,6 +1664,7 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsActivitiesNotOverlappingAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities are not overlapping", nullptr));
 	dataTimeConstraintsActivityTagsNotOverlappingAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activity tags are not overlapping", nullptr));
 	dataTimeConstraintsMinDaysBetweenActivitiesAction->setText(QCoreApplication::translate("FetMainForm_template", "Min days between a set of activities", nullptr));
+	dataTimeConstraintsMinHalfDaysBetweenActivitiesAction->setText(QCoreApplication::translate("FetMainForm_template", "Min half days between a set of activities", nullptr));
 	dataSpaceConstraintsBasicCompulsorySpaceAction->setText(QCoreApplication::translate("FetMainForm_template", "Basic compulsory space constraints", nullptr));
 	dataSpaceConstraintsRoomNotAvailableTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "A room's not available times", nullptr));
 	dataSpaceConstraintsTeacherRoomNotAvailableTimesAction->setText(QCoreApplication::translate("FetMainForm_template", "A teacher+a room's not available times", nullptr));
@@ -2355,6 +2359,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_preferred_times_time_constraints->addAction(dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction);
 
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinHalfDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
@@ -7457,6 +7462,25 @@ void FetMainForm::dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered()
 	}
 
 	ConstraintMinDaysBetweenActivitiesForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsMinHalfDaysBetweenActivitiesAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintMinHalfDaysBetweenActivitiesForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }

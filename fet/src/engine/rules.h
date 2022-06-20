@@ -174,8 +174,10 @@ public:
 	QSet<ConstraintBreakTimes*> btSet;
 	QSet<ConstraintBasicCompulsorySpace*> bcsSet;
 	QHash<int, QSet<ConstraintActivityPreferredStartingTime*>> apstHash;
+	QHash<int, QSet<ConstraintActivityPreferredDay*>> apdHash;
 	QHash<int, QSet<ConstraintActivityPreferredRoom*>> aprHash;
 	QHash<int, QSet<ConstraintMinDaysBetweenActivities*>> mdbaHash;
+	QHash<int, QSet<ConstraintMinHalfDaysBetweenActivities*>> mhdbaHash;
 	QHash<QString, QSet<ConstraintTeacherNotAvailableTimes*>> tnatHash;
 	QHash<QString, QSet<ConstraintStudentsSetNotAvailableTimes*>> ssnatHash;
 	
@@ -792,6 +794,7 @@ private:
 	TimeConstraint* readStudentsSetNotAvailableTimes(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readMinNDaysBetweenActivities(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readMinDaysBetweenActivities(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readMinHalfDaysBetweenActivities(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readMaxDaysBetweenActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readMinGapsBetweenActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readMaxGapsBetweenActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);
@@ -845,6 +848,8 @@ private:
 		bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPreferredStartingTime);
 	TimeConstraint* readActivityPreferredStartingTime(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog,
 		bool& reportUnspecifiedPermanentlyLockedTime, bool& reportUnspecifiedDayOrHourPreferredStartingTime);
+
+	TimeConstraint* readActivityPreferredDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readActivityEndsStudentsDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesEndStudentsDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);

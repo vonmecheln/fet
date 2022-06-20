@@ -2459,7 +2459,7 @@ Versions 6.2.0 - 6.2.8
 - Version 6.2.8
 	- Minor improvements.
 ---------------------------------------------------------------------------------
-Versions 6.3.0 - 6.3.v
+Versions 6.3.0 - 6.3.4
 - Version 6.3.0
 	- Added a new type of constraint in the Mornings-Afternoons mode: students (set) max three consecutive days (suggested by Benahmed Abdelkrim).
 	- Improvement in the speed of generation in the Mornings-Afternoons mode.
@@ -2479,3 +2479,19 @@ Versions 6.3.0 - 6.3.v
 	- Minor improvements.
 	- Minor correction in the Arabic translation, by Benahmed Abdelkrim.
 	- Updated the Russian translation, by Alexey Chernous.
+---------------------------------------------------------------------------------
+Versions 6.4.0 - 6.4.v
+- Version 6.4.0
+	- Improvement: now the algorithm won't put more than two subactivities from the same larger activity on the same day (real day for the
+	Mornings-Afternoons mode), even if 'consecutive if same day' is not selected (suggested by Benahmed Abdelkrim). Unfortunately, some locked timetables
+	might become impossible with this change - in this case please unlock them and generate again.
+	- Added a new type of constraint in the Mornings-Afternoons mode: min half days between activities (suggested by ngoctp29121982, with a further
+	suggestion by bachiri401).
+	- Added the option to lock activities to their scheduled day, useful for timetables which change over the year, due to teacher arrival/leaving.
+	This option is available in the students/teachers view timetable time horizontal dialogs. Suggested by Vangelis Karafillidis and Alexey Chernous.
+	- Improved the behavior of the timetable view students/teachers/rooms days horizontal dialogs, as suggested by Vangelis Karafillidis.
+	- Updated the Romanian translation, by Liviu Lalescu.
+	- Updated the Russian translation, by Alexey Chernous.
+	- Updated the French translation, by Pascal Cohen.
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.

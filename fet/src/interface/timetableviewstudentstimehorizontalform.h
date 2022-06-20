@@ -82,6 +82,11 @@ public slots:
 	void lockTime();
 	void lockSpace();
 	void lockTimeSpace();
+
+	void lockDays();
+	void unlockDays();
+	void unlockAllDays();
+
 	void updateStudentsTimetableTable();
 
 	void currentItemChanged(QTableWidgetItem* current, QTableWidgetItem* previous);

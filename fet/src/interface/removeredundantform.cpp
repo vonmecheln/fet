@@ -45,6 +45,9 @@ RemoveRedundantForm::RemoveRedundantForm(QWidget* parent): QDialog(parent)
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS)
+		minHalfDaysGroupBox->setEnabled(false);
+	
 	okPushButton->setDefault(true);
 	
 	connect(okPushButton, SIGNAL(clicked()), this, SLOT(wasAccepted()));
@@ -207,6 +210,111 @@ void RemoveRedundantForm::wasAccepted()
 		}
 	}
 
+	QList<ConstraintMinHalfDaysBetweenActivities*> mhdcList;
+	
+	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList)){
+		if(tc->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+			mhdcList.append((ConstraintMinHalfDaysBetweenActivities*)tc);
+		}
+	}
+	std::reverse(mhdcList.begin(), mhdcList.end()); //inverse order, so earlier constraints are not removed (remove the older ones)
+
+	QList<ConstraintMinHalfDaysBetweenActivities*> toBeRemovedHalfList;
+	
+	for(int i=0; i<mhdcList.count()-1; i++){
+		ConstraintMinHalfDaysBetweenActivities* c1=mhdcList.at(i);
+		
+		QList<int> a1List;
+		for(int k=0; k<c1->n_activities; k++){
+			int m=repr.value(c1->activitiesId[k], -1);
+			assert(m>0);
+			a1List.append(m);
+		}
+		
+		//qSort(a1List);
+		std::stable_sort(a1List.begin(), a1List.end());
+		
+		for(int j=i+1; j<mhdcList.count(); j++){
+			ConstraintMinHalfDaysBetweenActivities* c2=mhdcList.at(j);
+
+			QList<int> a2List;
+			for(int k=0; k<c2->n_activities; k++){
+				int m=repr.value(c2->activitiesId[k], -1);
+				assert(m>0);
+				a2List.append(m);
+			}
+			
+			//qSort(a2List);
+			std::stable_sort(a2List.begin(), a2List.end());
+			
+			bool equal=true;
+			
+			if(a1List.count()!=a2List.count())
+				equal=false;
+			if(a1List!=a2List)
+				equal=false;
+			if(c1->minDays!=c2->minDays)
+				equal=false;
+				
+			//if(c1->weightPercentage!=c2->weightPercentage)
+			//	equal=false;
+			//if(c1->consecutiveIfSameDay!=c2->consecutiveIfSameDay)
+			//	equal=false;
+			if(c1->weightPercentage > c2->weightPercentage){
+				if(!c1->consecutiveIfSameDay && c2->consecutiveIfSameDay){
+					equal=false;
+				}
+			}
+			else if(c1->weightPercentage < c2->weightPercentage){
+				if(c1->consecutiveIfSameDay && !c2->consecutiveIfSameDay){
+					equal=false;
+				}
+			}
+			else{
+				//
+			}
+			
+			if(equal){
+				if(c1->weightPercentage > c2->weightPercentage){
+					ConstraintMinHalfDaysBetweenActivities* tmp;
+					tmp=mhdcList[i];
+					mhdcList[i]=mhdcList[j];
+					mhdcList[j]=tmp;
+
+					c1=mhdcList.at(i);
+					c2=mhdcList.at(j);
+				}
+				if(c1->weightPercentage==c2->weightPercentage && c1->consecutiveIfSameDay && !c2->consecutiveIfSameDay){
+					ConstraintMinHalfDaysBetweenActivities* tmp;
+					tmp=mhdcList[i];
+					mhdcList[i]=mhdcList[j];
+					mhdcList[j]=tmp;
+
+					c1=mhdcList.at(i);
+					c2=mhdcList.at(j);
+				}
+				
+				assert( ! (c1->consecutiveIfSameDay && !c2->consecutiveIfSameDay) );
+				assert(c1->weightPercentage <= c2->weightPercentage);
+				
+				int kk=0;
+				for(kk=0; kk<toBeRemovedHalfList.count(); kk++)
+					if(toBeRemovedHalfList.at(kk)->activitiesId[0] >= c1->activitiesId[0])
+						break;
+				toBeRemovedHalfList.insert(kk, c1);
+				
+				//toBeRemovedHalfList.prepend(c1);
+				break;
+			}
+		}
+	}
+	
+	QList<TimeConstraint*> toBeRemovedCombinedList;
+	for(ConstraintMinDaysBetweenActivities* c : qAsConst(toBeRemovedList))
+		toBeRemovedCombinedList.append(c);
+	for(ConstraintMinHalfDaysBetweenActivities* c : qAsConst(toBeRemovedHalfList))
+		toBeRemovedCombinedList.append(c);
+
 	///////////
 	QDialog dialog(this);
 	dialog.setWindowTitle(tr("Last confirmation needed"));
@@ -230,7 +338,8 @@ void RemoveRedundantForm::wasAccepted()
 	
 	QString s=tr("The following time constraints will be inactivated (their weight will be made 0%):");
 	s+="\n\n";
-	for(ConstraintMinDaysBetweenActivities* ctr : qAsConst(toBeRemovedList)){
+	//for(ConstraintMinDaysBetweenActivities* ctr : qAsConst(toBeRemovedList)){
+	for(TimeConstraint* ctr : qAsConst(toBeRemovedCombinedList)){
 		if(ctr->weightPercentage>0.0){
 			s+=ctr->getDetailedDescription(gt.rules);
 			s+="\n";
@@ -262,7 +371,7 @@ void RemoveRedundantForm::wasAccepted()
 	saveFETDialogGeometry(&dialog, settingsName);
 	
 	if(res==QDialog::Rejected){
-		toBeRemovedList.clear();
+		toBeRemovedCombinedList.clear();
 
 		return;
 	}
@@ -272,11 +381,11 @@ void RemoveRedundantForm::wasAccepted()
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 	
-	for(ConstraintMinDaysBetweenActivities* mdc : qAsConst(toBeRemovedList))
+	for(TimeConstraint* mdc : qAsConst(toBeRemovedCombinedList))
 		mdc->weightPercentage=0.0;
-		
-	toBeRemovedList.clear();
-		
+	
+	toBeRemovedCombinedList.clear();
+	
 	this->accept();
 }
 
@@ -292,5 +401,15 @@ void RemoveRedundantForm::on_removeRedundantCheckBox_toggled()
 		removeRedundantCheckBox->setChecked(true);
 		QMessageBox::information(this, tr("FET information"), tr("This box must remain checked, so that you can remove"
 		 " redundant constraints of type min days between activities"));
+	}
+}
+
+void RemoveRedundantForm::on_removeRedundantHalfCheckBox_toggled()
+{
+	int k=removeRedundantHalfCheckBox->isChecked();
+	if(!k){
+		removeRedundantHalfCheckBox->setChecked(true);
+		QMessageBox::information(this, tr("FET information"), tr("This box must remain checked, so that you can remove"
+		 " redundant constraints of type min half days between activities"));
 	}
 }

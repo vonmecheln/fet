@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="5.27.3-ma11">
+<fet version="6.4.0">
+
+<Mode>Mornings_Afternoons</Mode>
 
 <Institution_Name>المنشأة الافتراضية</Institution_Name>
 
@@ -62,210 +64,283 @@
 </Hour>
 </Hours_List>
 
-<Students_List>
-<Year>
-	<Name>4م</Name>
-	<Number_of_Students>0</Number_of_Students>
-	<Group>
-		<Name>4م1_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>4م1_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>4م2_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>4م2_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>4م3_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>4م3_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>4م4_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>4م4_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-</Year>
-<Year>
-	<Name>3م</Name>
-	<Number_of_Students>0</Number_of_Students>
-	<Group>
-		<Name>3م1_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>3م1_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>3م2_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>3م2_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>3م3_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>3م3_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>3م4_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>3م4_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>3م5_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>3م5_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-</Year>
-<Year>
-	<Name>2م</Name>
-	<Number_of_Students>0</Number_of_Students>
-	<Group>
-		<Name>2م1_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>2م1_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>2م2_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>2م2_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>2م3_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>2م3_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>2م4_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>2م4_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>2م5_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>2م5_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-</Year>
-<Year>
-	<Name>1م</Name>
-	<Number_of_Students>0</Number_of_Students>
-	<Group>
-		<Name>1م1_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>1م1_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>1م2_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>1م2_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>1م3_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>1م3_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>1م4_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>1م4_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>1م5_ف1</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-	<Group>
-		<Name>1م5_ف2</Name>
-		<Number_of_Students>0</Number_of_Students>
-	</Group>
-</Year>
-</Students_List>
-
-<Teachers_List>
-<Teacher>
-	<Name>R1</Name>
-	<Mornings_Afternoons_Behavior>One day exception</Mornings_Afternoons_Behavior>
-</Teacher>
-<Teacher>
-	<Name>R2</Name>
-	<Mornings_Afternoons_Behavior>One day exception</Mornings_Afternoons_Behavior>
-</Teacher>
-<Teacher>
-	<Name>Q</Name>
-	<Mornings_Afternoons_Behavior>One day exception</Mornings_Afternoons_Behavior>
-</Teacher>
-<Teacher>
-	<Name>Inf</Name>
-	<Mornings_Afternoons_Behavior>One day exception</Mornings_Afternoons_Behavior>
-</Teacher>
-</Teachers_List>
-
 <Subjects_List>
 <Subject>
 	<Name>ت.بد.ر</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>ت.مو</Name>
+	<Comments></Comments>
 </Subject>
 <Subject>
 	<Name>معلو</Name>
+	<Comments></Comments>
 </Subject>
 </Subjects_List>
 
 <Activity_Tags_List>
 </Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>R1</Name>
+	<Mornings_Afternoons_Behavior>One day exception</Mornings_Afternoons_Behavior>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>R2</Name>
+	<Mornings_Afternoons_Behavior>One day exception</Mornings_Afternoons_Behavior>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>Q</Name>
+	<Mornings_Afternoons_Behavior>One day exception</Mornings_Afternoons_Behavior>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>Inf</Name>
+	<Mornings_Afternoons_Behavior>One day exception</Mornings_Afternoons_Behavior>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+</Teachers_List>
+
+<Students_List>
+<Year>
+	<Name>4م</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
+	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->
+	<Number_of_Categories>0</Number_of_Categories>
+	<Separator> </Separator>
+	<Group>
+		<Name>4م1_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>4م1_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>4م2_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>4م2_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>4م3_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>4م3_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>4م4_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>4م4_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+</Year>
+<Year>
+	<Name>3م</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
+	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->
+	<Number_of_Categories>0</Number_of_Categories>
+	<Separator> </Separator>
+	<Group>
+		<Name>3م1_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>3م1_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>3م2_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>3م2_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>3م3_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>3م3_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>3م4_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>3م4_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>3م5_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>3م5_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+</Year>
+<Year>
+	<Name>2م</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
+	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->
+	<Number_of_Categories>0</Number_of_Categories>
+	<Separator> </Separator>
+	<Group>
+		<Name>2م1_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>2م1_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>2م2_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>2م2_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>2م3_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>2م3_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>2م4_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>2م4_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>2م5_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>2م5_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+</Year>
+<Year>
+	<Name>1م</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
+	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->
+	<Number_of_Categories>0</Number_of_Categories>
+	<Separator> </Separator>
+	<Group>
+		<Name>1م1_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>1م1_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>1م2_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>1م2_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>1م3_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>1م3_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>1م4_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>1م4_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>1م5_ف1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>1م5_ف2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+</Year>
+</Students_List>
 
 <Activities_List>
 <Activity>
@@ -1468,12 +1543,12 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTeachersMaxAfternoonsPerWeek>
-<ConstraintTeachersMaxHoursDaily>
+<ConstraintTeachersMaxHoursDailyRealDays>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Maximum_Hours_Daily>8</Maximum_Hours_Daily>
 	<Active>true</Active>
 	<Comments></Comments>
-</ConstraintTeachersMaxHoursDaily>
+</ConstraintTeachersMaxHoursDailyRealDays>
 <ConstraintTeacherNotAvailableTimes>
 	<Weight_Percentage>100</Weight_Percentage>
 	<Teacher>R1</Teacher>

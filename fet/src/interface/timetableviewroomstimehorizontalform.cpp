@@ -124,7 +124,6 @@ void TimetableViewRoomsTimeHorizontalDelegate::paint(QPainter* painter, const QS
 		painter->drawLine(option.rect.bottomLeft(), option.rect.bottomRight());
 }
 
-
 TimetableViewRoomsTimeHorizontalForm::TimetableViewRoomsTimeHorizontalForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
@@ -760,25 +759,32 @@ void TimetableViewRoomsTimeHorizontalForm::updateRoomsTimetableTable(){
 					QString descr="";
 					QString tt="";
 					if(idsOfPermanentlyLockedTime.contains(act->id)){
-						descr+=QCoreApplication::translate("TimetableViewForm", "PLT", "Abbreviation for permanently locked time. There are 4 strings: permanently locked time, permanently locked space, "
-							"locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them."
+						descr+=QCoreApplication::translate("TimetableViewForm", "PLT", "Abbreviation for permanently locked time. There are 5 strings: permanently locked time, permanently locked space, "
+							"locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them."
 							" These abbreviations may appear also in other places, please use the same abbreviations.");
 						tt=", ";
 					}
 					else if(idsOfLockedTime.contains(act->id)){
-						descr+=QCoreApplication::translate("TimetableViewForm", "LT", "Abbreviation for locked time. There are 4 strings: permanently locked time, permanently locked space, "
-						"locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them."
+						descr+=QCoreApplication::translate("TimetableViewForm", "LT", "Abbreviation for locked time. There are 5 strings: permanently locked time, permanently locked space, "
+						"locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them."
 							" These abbreviations may appear also in other places, please use the same abbreviations.");
 						tt=", ";
 					}
 					if(idsOfPermanentlyLockedSpace.contains(act->id)){
-						descr+=tt+QCoreApplication::translate("TimetableViewForm", "PLS", "Abbreviation for permanently locked space. There are 4 strings: permanently locked time, permanently locked space, "
-							"locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them."
+						descr+=tt+QCoreApplication::translate("TimetableViewForm", "PLS", "Abbreviation for permanently locked space. There are 5 strings: permanently locked time, permanently locked space, "
+							"locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them."
 							" These abbreviations may appear also in other places, please use the same abbreviations.");
+						tt=", ";
 					}
 					else if(idsOfLockedSpace.contains(act->id)){
-						descr+=tt+QCoreApplication::translate("TimetableViewForm", "LS", "Abbreviation for locked space. There are 4 strings: permanently locked time, permanently locked space, "
-							"locked time, locked space. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them."
+						descr+=tt+QCoreApplication::translate("TimetableViewForm", "LS", "Abbreviation for locked space. There are 5 strings: permanently locked time, permanently locked space, "
+							"locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them."
+							" These abbreviations may appear also in other places, please use the same abbreviations.");
+						tt=", ";
+					}
+					if(!gt.rules.apdHash.value(act->id, QSet<ConstraintActivityPreferredDay*>()).isEmpty()){
+						descr+=tt+QCoreApplication::translate("TimetableViewForm", "PD", "Abbreviation for preferred day. There are 5 strings: permanently locked time, permanently locked space, "
+							"locked time, locked space, preferred day. Make sure their abbreviations contain different letters and are visually different, so user can easily differentiate between them."
 							" These abbreviations may appear also in other places, please use the same abbreviations.");
 					}
 					if(descr!=""){
@@ -806,6 +812,17 @@ void TimetableViewRoomsTimeHorizontalForm::updateRoomsTimetableTable(){
 					else{
 						QFont font(roomsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->font());
 						font.setItalic(false);
+						roomsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->setFont(font);
+					}
+
+					if(!gt.rules.apdHash.value(act->id, QSet<ConstraintActivityPreferredDay*>()).isEmpty()){
+						QFont font(roomsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->font());
+						font.setUnderline(true);
+						roomsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->setFont(font);
+					}
+					else{
+						QFont font(roomsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->font());
+						font.setUnderline(false);
 						roomsTimetableTable->item(t, d*gt.rules.nHoursPerDay+h)->setFont(font);
 					}
 
@@ -984,9 +1001,14 @@ void TimetableViewRoomsTimeHorizontalForm::detailActivity(QTableWidgetItem* item
 				}
 				if(idsOfPermanentlyLockedSpace.contains(act->id)){
 					descr+=tt+QCoreApplication::translate("TimetableViewForm", "permanently locked space", "refers to activity");
+					tt=", ";
 				}
 				else if(idsOfLockedSpace.contains(act->id)){
 					descr+=tt+QCoreApplication::translate("TimetableViewForm", "locked space", "refers to activity");
+					tt=", ";
+				}
+				if(!gt.rules.apdHash.value(act->id, QSet<ConstraintActivityPreferredDay*>()).isEmpty()){
+					descr+=tt+QCoreApplication::translate("TimetableViewForm", "preferred day", "refers to activity");
 				}
 				if(descr!=""){
 					descr.prepend("\n(");
@@ -1456,17 +1478,19 @@ void TimetableViewRoomsTimeHorizontalForm::help()
 	s+=QCoreApplication::translate("TimetableViewForm", "Locking time constraints are constraints of type activity preferred starting time. Locking space constraints are constraints of type"
 		" activity preferred room. You can see these constraints in the corresponding constraints dialogs. New locking constraints are added at the end of the list of constraints.");
 	s+="\n\n";
-	s+=QCoreApplication::translate("TimetableViewForm", "If a cell is (permanently) locked in time or space, it contains abbreviations to show that: PLT (permanently locked time), LT (locked time), "
-		"PLS (permanently locked space) or LS (locked space).", "Translate the abbreviations also. Make sure the abbreviations in your language are different between themselves "
-		"and the user can differentiate easily between them. These abbreviations may appear also in other places, please use the same abbreviations.");
+	s+=QCoreApplication::translate("TimetableViewForm", "If a cell is (permanently) locked in time or space or has a preferred day, it contains abbreviations to show that: PLT (permanently locked time),"
+		" LT (locked time), PLS (permanently locked space), LS (locked space), or PD (preferred day), as a tooltip.", "Translate the abbreviations also. Make sure the abbreviations in your language are different between"
+		" themselves and the user can differentiate easily between them. These abbreviations may appear also in other places, please use the same abbreviations.");
+
+	s+="\n\n";
+	s+=QCoreApplication::translate("TimetableViewForm", "If a whole column (day+hour) is selected, the activities with no room from that column will NOT be locked/unlocked.");
 	
 	s+="\n\n";
-	s+=tr("If a whole column (day+hour) is selected, the activities with no room from that column will NOT be locked/unlocked.");
-	
-	s+="\n\n";
-	s+=tr("A bold font cell means that the activity is locked in time, either permanently or not.");
+	s+=QCoreApplication::translate("TimetableViewForm", "A bold font cell means that the activity is locked in time, either permanently or not.");
 	s+=" ";
-	s+=tr("An italic font cell means that the activity is locked in space, either permanently or not.");
+	s+=QCoreApplication::translate("TimetableViewForm", "An italic font cell means that the activity is locked in space, either permanently or not.");
+	s+=" ";
+	s+=QCoreApplication::translate("TimetableViewForm", "An underlined font cell means that the activity has a preferred day constraint (with any weight).");
 
 	s+="\n\n";
 	s+=QCoreApplication::translate("TimetableViewForm", "Note: In this dialog, the virtual rooms' timetable will be empty.");

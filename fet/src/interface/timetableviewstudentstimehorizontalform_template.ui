@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string extracomment="Title of dialog to view the students timetable">View students time horizontal timetable</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_3">
+  <layout class="QGridLayout" name="gridLayout_5">
    <item row="0" column="0">
     <widget class="QSplitter" name="horizontalSplitter">
      <property name="orientation">
@@ -34,24 +34,55 @@
           </property>
           <layout class="QGridLayout" name="gridLayout">
            <item row="0" column="0">
-            <widget class="QLabel" name="label">
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Width</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="widthSpinBox"/>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QLabel" name="heightLabel">
+               <property name="text">
+                <string>Height</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="heightSpinBox"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_6">
+          <property name="title">
+           <string/>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_6">
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="teachersCheckBox">
              <property name="text">
-              <string>Width</string>
+              <string>Teachers</string>
              </property>
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QSpinBox" name="widthSpinBox"/>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="heightLabel">
+            <widget class="QCheckBox" name="subjectsCheckBox">
              <property name="text">
-              <string>Height</string>
+              <string>Subjects</string>
              </property>
             </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QSpinBox" name="heightSpinBox"/>
            </item>
           </layout>
          </widget>
@@ -63,48 +94,63 @@
             <property name="title">
              <string/>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_3">
-             <item>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="0" column="0">
               <widget class="QRadioButton" name="lockRadioButton">
                <property name="text">
                 <string>Lock</string>
                </property>
               </widget>
              </item>
-             <item>
+             <item row="2" column="1">
+              <widget class="QPushButton" name="lockSpacePushButton">
+               <property name="text">
+                <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Space</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
               <widget class="QRadioButton" name="unlockRadioButton">
                <property name="text">
                 <string>Unlock</string>
                </property>
               </widget>
              </item>
-             <item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="lockTimePushButton">
+               <property name="text">
+                <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
               <widget class="QRadioButton" name="toggleRadioButton">
                <property name="text">
                 <string>Toggle</string>
                </property>
               </widget>
              </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGroupBox" name="groupBox_4">
-            <property name="title">
-             <string/>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_2">
-             <item row="1" column="0">
-              <widget class="QCheckBox" name="teachersCheckBox">
-               <property name="text">
-                <string>Teachers</string>
+             <item row="1" column="1">
+              <widget class="Line" name="line">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
                </property>
               </widget>
              </item>
-             <item row="2" column="0">
-              <widget class="QCheckBox" name="subjectsCheckBox">
+             <item row="4" column="1">
+              <widget class="QPushButton" name="lockTimeSpacePushButton">
                <property name="text">
-                <string>Subjects</string>
+                <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Both</string>
+               </property>
+               <property name="shortcut">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="Line" name="line_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
                </property>
               </widget>
              </item>
@@ -114,46 +160,52 @@
          </layout>
         </item>
         <item>
-         <widget class="QGroupBox" name="groupBox">
+         <widget class="QGroupBox" name="groupBox_5">
           <property name="title">
-           <string extracomment="This is a group box for locking/unlocking buttons"/>
+           <string/>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_4">
-           <item>
-            <widget class="QPushButton" name="lockTimePushButton">
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="1" colspan="2">
+            <widget class="QLineEdit" name="lockToDaysWeightLineEdit"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QPushButton" name="lockToDaysPushButton">
              <property name="text">
-              <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Time</string>
+              <string>Lock to days</string>
              </property>
             </widget>
            </item>
-           <item>
-            <widget class="Line" name="line_2">
+           <item row="2" column="0" colspan="2">
+            <widget class="QPushButton" name="unlockFromDaysPushButton">
+             <property name="text">
+              <string>Unlock from days</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="4">
+            <widget class="Line" name="line_4">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
             </widget>
            </item>
-           <item>
-            <widget class="QPushButton" name="lockSpacePushButton">
+           <item row="2" column="2" colspan="2">
+            <widget class="QPushButton" name="unlockAllFromDaysPushButton">
              <property name="text">
-              <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Space</string>
+              <string comment="It refers to activities">All</string>
              </property>
             </widget>
            </item>
-           <item>
-            <widget class="Line" name="line">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+           <item row="0" column="3">
+            <widget class="QLabel" name="lockToDaysWeightLabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
              </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="lockTimeSpacePushButton">
              <property name="text">
-              <string extracomment="This is a button in a timetable view dialog (There are 3 buttons in total, user can toggle locked/unlocked time, space or both).">Both</string>
-             </property>
-             <property name="shortcut">
-              <string/>
+              <string comment="The percentage symbol">%</string>
              </property>
             </widget>
            </item>

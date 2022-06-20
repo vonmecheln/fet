@@ -33,6 +33,7 @@ public slots:
 	void wasCanceled();
 	
 	void on_removeRedundantCheckBox_toggled();
+	void on_removeRedundantHalfCheckBox_toggled();
 };
 
 #endif

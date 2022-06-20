@@ -230,7 +230,7 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 	  	 "\n\n"+
 		 tr("Do you want to add current constraint as it is now (not recommended) or cancel and edit as instructed?");
 	
-		int t=QMessageBox::warning(this, tr("FET warning"),	s,
+		int t=QMessageBox::warning(this, tr("FET warning"), s,
 		 QMessageBox::Yes, QMessageBox::Cancel);
 		if(t==QMessageBox::Cancel)
 			return;

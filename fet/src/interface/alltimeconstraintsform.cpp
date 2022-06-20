@@ -46,6 +46,7 @@
 #include "modifyconstraintactivitiesnotoverlappingform.h"
 #include "modifyconstraintactivitytagsnotoverlappingform.h"
 #include "modifyconstraintmindaysbetweenactivitiesform.h"
+#include "modifyconstraintminhalfdaysbetweenactivitiesform.h"
 #include "modifyconstraintmaxdaysbetweenactivitiesform.h"
 #include "modifyconstraintmingapsbetweenactivitiesform.h"
 #include "modifyconstraintactivityendsstudentsdayform.h"
@@ -1789,6 +1790,17 @@ void AllTimeConstraintsForm::modifyConstraint()
 		ModifyConstraintStudentsMaxThreeConsecutiveDaysForm form(this, (ConstraintStudentsMaxThreeConsecutiveDays*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
+	}
+	//184
+	else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+		ModifyConstraintMinHalfDaysBetweenActivitiesForm form(this, (ConstraintMinHalfDaysBetweenActivities*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//185
+	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_DAY){
+		QMessageBox::warning(this, tr("FET warning"), tr("The constraints of type activity preferred day cannot be edited. They can only be added/removed"
+		 " from the students/teachers timetable view time horizontal dialog or they can be removed from this dialog."));
 	}
 	else{
 		QMessageBox::critical(this, tr("FET critical"), tr("You have found a bug in FET. Please report it. This kind of constraint"
