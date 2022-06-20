@@ -3881,7 +3881,7 @@ void FetMainForm::openFile(const QString& fileName)
 			 tr("Please do not use quotation marks \" in filename, the HTML CSS code does not work."
 			  " File was not loaded. Please rename it, removing not allowed characters and open it after that with FET."));
 			return;
-		}		
+		}
 		if(s2.indexOf(";") >= 0){
 			QMessageBox::warning(this, tr("FET information"),
 			 tr("Please do not use semicolon ; in filename, the HTML CSS code does not work."

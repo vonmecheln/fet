@@ -2521,3 +2521,7 @@ Versions 6.5.0 - 6.5.v
 	- Improvements in the constraints teacher(s)/students (set) max two activity tags from N1, N2, and N3 per (real) day (in the Mornings-Afternoons mode).
 	- Minor improvements for the Mornings-Afternoons mode, suggested by Ngọc Ngô Minh.
 	- Updated the Vietnamese translation, by Ngọc Ngô Minh, who is the new translator.
+- Version 6.5.3
+	- Updated to Qt 6.3.1.
+	- Minor interface bug fixes: in the timetable view teachers/students/rooms days horizontal, the cells marked with -x- or -X- were sometimes shown
+	with bold, italic or underlined font when changing the teacher/students set/room if there were locked activities in the timetable.

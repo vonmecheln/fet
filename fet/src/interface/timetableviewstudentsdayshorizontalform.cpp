@@ -668,6 +668,12 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 	assert(i<gt.rules.nInternalSubgroups);
 	for(int j=0; j<gt.rules.nHoursPerDay && j<studentsTimetableTable->rowCount(); j++){
 		for(int k=0; k<gt.rules.nDaysPerWeek && k<studentsTimetableTable->columnCount(); k++){
+			QFont font(studentsTimetableTable->item(j, k)->font());
+			font.setBold(false);
+			font.setItalic(false);
+			font.setUnderline(false);
+			studentsTimetableTable->item(j, k)->setFont(font);
+
 			//begin by Marco Vassura
 			// add colors (start)
 			//if(USE_GUI_COLORS) {
@@ -762,31 +768,14 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 					font.setBold(true);
 					studentsTimetableTable->item(j, k)->setFont(font);
 				}
-				else{
-					QFont font(studentsTimetableTable->item(j, k)->font());
-					font.setBold(false);
-					studentsTimetableTable->item(j, k)->setFont(font);
-				}
-
 				if(idsOfPermanentlyLockedSpace.contains(act->id) || idsOfLockedSpace.contains(act->id)){
 					QFont font(studentsTimetableTable->item(j, k)->font());
 					font.setItalic(true);
 					studentsTimetableTable->item(j, k)->setFont(font);
 				}
-				else{
-					QFont font(studentsTimetableTable->item(j, k)->font());
-					font.setItalic(false);
-					studentsTimetableTable->item(j, k)->setFont(font);
-				}
-
 				if(!gt.rules.apdHash.value(act->id, QSet<ConstraintActivityPreferredDay*>()).isEmpty()){
 					QFont font(studentsTimetableTable->item(j, k)->font());
 					font.setUnderline(true);
-					studentsTimetableTable->item(j, k)->setFont(font);
-				}
-				else{
-					QFont font(studentsTimetableTable->item(j, k)->font());
-					font.setUnderline(false);
 					studentsTimetableTable->item(j, k)->setFont(font);
 				}
 

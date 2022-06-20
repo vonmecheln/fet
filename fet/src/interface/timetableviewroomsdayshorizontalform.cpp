@@ -430,6 +430,12 @@ void TimetableViewRoomsDaysHorizontalForm::updateRoomsTimetableTable(){
 
 	for(int j=0; j<gt.rules.nHoursPerDay && j<roomsTimetableTable->rowCount(); j++){
 		for(int k=0; k<gt.rules.nDaysPerWeek && k<roomsTimetableTable->columnCount(); k++){
+			QFont font(roomsTimetableTable->item(j, k)->font());
+			font.setBold(false);
+			font.setItalic(false);
+			font.setUnderline(false);
+			roomsTimetableTable->item(j, k)->setFont(font);
+
 			//begin by Marco Vassura
 			// add colors (start)
 			//if(USE_GUI_COLORS) {
@@ -510,31 +516,14 @@ void TimetableViewRoomsDaysHorizontalForm::updateRoomsTimetableTable(){
 					font.setBold(true);
 					roomsTimetableTable->item(j, k)->setFont(font);
 				}
-				else{
-					QFont font(roomsTimetableTable->item(j, k)->font());
-					font.setBold(false);
-					roomsTimetableTable->item(j, k)->setFont(font);
-				}
-
 				if(idsOfPermanentlyLockedSpace.contains(act->id) || idsOfLockedSpace.contains(act->id)){
 					QFont font(roomsTimetableTable->item(j, k)->font());
 					font.setItalic(true);
 					roomsTimetableTable->item(j, k)->setFont(font);
 				}
-				else{
-					QFont font(roomsTimetableTable->item(j, k)->font());
-					font.setItalic(false);
-					roomsTimetableTable->item(j, k)->setFont(font);
-				}
-
 				if(!gt.rules.apdHash.value(act->id, QSet<ConstraintActivityPreferredDay*>()).isEmpty()){
 					QFont font(roomsTimetableTable->item(j, k)->font());
 					font.setUnderline(true);
-					roomsTimetableTable->item(j, k)->setFont(font);
-				}
-				else{
-					QFont font(roomsTimetableTable->item(j, k)->font());
-					font.setUnderline(false);
 					roomsTimetableTable->item(j, k)->setFont(font);
 				}
 
