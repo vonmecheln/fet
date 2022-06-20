@@ -2007,7 +2007,7 @@ int main(int argc, char **argv)
 			Export::exportCSV(&gen.highestStageSolution, &gen.c);
 			OUTPUT_DIR=oldDir;
 		}
-		//2012-01-24 - suggestion and code by Ian Holden (ian@ianholden.com), to write best and current timetable on time exceeded
+		//2012-01-24 - suggestion and code by Ian Holden (ian AT ianholden.com), to write best and current timetable on time exceeded
 		//previously, FET saved best and current timetable only on receiving SIGTERM
 		//by Ian Holden (begin)
 		else if(timeExceeded || gen.abortOptimization){
