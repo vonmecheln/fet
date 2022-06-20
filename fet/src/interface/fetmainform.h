@@ -199,6 +199,7 @@ private:
 	QAction* dataTimeConstraintsTeachersMaxDaysPerWeekAction;
 	QAction* dataTimeConstraintsThreeActivitiesGroupedAction;
 	QAction* dataTimeConstraintsMaxDaysBetweenActivitiesAction;
+	QAction* dataTimeConstraintsMaxTermsBetweenActivitiesAction;
 	QAction* dataTimeConstraintsTeacherMinDaysPerWeekAction;
 	QAction* dataTimeConstraintsTeachersMinDaysPerWeekAction;
 	QAction* dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction;
@@ -314,6 +315,7 @@ private:
 
 	//terms
 	QAction* dataTimeConstraintsActivitiesMaxInATermAction;
+	QAction* dataTimeConstraintsActivitiesMinInATermAction;
 	QAction* dataTimeConstraintsActivitiesOccupyMaxTermsAction;
 
 	QLabel modeLabel;
@@ -544,6 +546,7 @@ public slots:
 	void dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsMinHalfDaysBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered();
+	void dataTimeConstraintsMaxTermsBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsActivityEndsStudentsDayAction_triggered();
 	void dataTimeConstraintsActivitiesEndStudentsDayAction_triggered();
@@ -765,6 +768,7 @@ public slots:
 
 	//terms
 	void dataTimeConstraintsActivitiesMaxInATermAction_triggered();
+	void dataTimeConstraintsActivitiesMinInATermAction_triggered();
 	void dataTimeConstraintsActivitiesOccupyMaxTermsAction_triggered();
 
 	void on_helpMoroccoAction_triggered();

@@ -2480,7 +2480,7 @@ Versions 6.3.0 - 6.3.4
 	- Minor correction in the Arabic translation, by Benahmed Abdelkrim.
 	- Updated the Russian translation, by Alexey Chernous.
 ---------------------------------------------------------------------------------
-Versions 6.4.0 - 6.4.v
+Version 6.4.0
 - Version 6.4.0
 	- Improvement: now the algorithm won't put more than two subactivities from the same larger activity on the same day (real day for the
 	Mornings-Afternoons mode), even if 'consecutive if same day' is not selected (suggested by Benahmed Abdelkrim). Unfortunately, some locked timetables
@@ -2495,3 +2495,19 @@ Versions 6.4.0 - 6.4.v
 	- Updated the French translation, by Pascal Cohen.
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
 	- Updated the Arabic translation, by Benahmed Abdelkrim.
+---------------------------------------------------------------------------------
+Versions 6.5.0 - 6.5.v
+- Version 6.5.0
+	- Important generation bug fix, when using constraints of type students (set) max span per (real) day. This bug was found with the help of
+	Vangelis Karafillidis. Unfortunately, this bug fix means that the generation might take longer (for the contrived example
+	FET-5-official/Romania/Pedagogic-High-School-Tg-Mures/2007-2008_sem1-d-test-students-max-span-per-day.fet the generation time might
+	be even with 50% longer on average). But the algorithm is correct now and hopefully on real-life examples the behavior will be better;
+	for this same contrived example, cycling (which is very very bad), which appeared when locking the activities to days, is not a problem anymore.
+	- Bug fixes in the interface: when modifying the number of hours per half day in the Mornings-Afternoons mode, the constraints of type
+	'max span per real day' were forced to reduce their maximum span to the number of hours per half day, not to the number of hours per real day.
+	- Added two new types of constraints for the Terms mode: activities min in a term and max terms between activities (suggested by mikkojoo).
+	- Added a new example file from Algeria, by Benahmed Abdelkrim.
+- Version 6.5.1
+	- Bug fix in the Terms mode: decreasing the number of terms will now report the number of affected constraints (of type 'max terms between
+	activities' and 'activities occupy max terms') and update them correctly.
+	- Improved the teachers and students XML output timetable files, by including the id-s of the activities in the time slots (suggested by Fred).

@@ -1,4 +1,4 @@
-This is FET version 6.4.0
+This is FET version 6.5.1
 
 
 Program description:
@@ -14,16 +14,16 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.17.7, Xfce 4.16,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.17.9, Xfce 4.16,
 	Xfce Terminal Emulator 1.0.2, Midnight Commander 4.8.28, Krusader 2.7.2, Kate 22.04.0, KDiff3 0.9.98, grep 3.7, sed 4.8,
-	Thunar Bulk Rename 4.16.11, Qt 6.3.0, QMake 3.1, CMake 3.22.1, Qt Creator 7.0.1, GCC 12.1.0, Clang 14.0.3, GNU Make 4.3,
+	Thunar Bulk Rename 4.16.11, Qt 6.3.0, QMake 3.1, CMake 3.22.1, Qt Creator 7.0.2, GCC 12.1.0, Clang 14.0.3, GNU Make 4.3,
 	GDB 11.1, Valgrind 3.19.0, Coverity Scan 2020.09, Cppcheck 2.6, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0, Inkscape 1.1.2,
 	GIMP 2.10.30, ImageMagick 7.1.0, Ispell 3.4.00 / Aspell 0.60.8, tar 1.34, Gzip 1.12, bzip2 1.0.8, linuxdeploy 1-alpha,
 	other great software (most of them are free software, in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 10 operating system,
 	Command Prompt, Total Commander 10.00, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.21.1, Ninja 1.10.2, Qt 6.3.0,
-	QMake 3.1, Qt Creator 7.0.0, MinGW 11.2.0, Microsoft Visual C++ 2019, 7-Zip 21.07.
+	QMake 3.1, Qt Creator 7.0.2, MinGW 11.2.0, Microsoft Visual C++ 2019, 7-Zip 21.07.
 
 	FET is a C++ application and uses Qt, a C++ toolkit for cross-platform application development.
 	FET can be run on any platform supported by Qt (GNU/Linux, Windows, Mac OS X, and maybe others).

@@ -1389,7 +1389,7 @@ lots of teachers in the university).
 Suggested also by Zafar Allah Askar (on forum), on 26 October 2019 (https://lalescu.ro/liviu/fet/forum/index.php?topic=4313.0):
 	Create lists of teachers to be added to a constraint.
 
-See also TODO item #84.
+See also TODO items #84 and #455.
 
 83---------------------------------------------------------
 From Massimo Mancini:
@@ -1446,7 +1446,7 @@ This concept is already used in FET in two places:
 - Set all available, set all not available
 - subject has a set of prefered rooms
 
-See also TODO item #82.
+See also TODO items #82 and #455.
 
 85---------------------------------------------------------
 From Massimo Mancini:
@@ -7557,3 +7557,47 @@ activities dialog so whenever we are setting up teaching periods
 we could use this to quickly setup
 
 currently one has to close then go to file -> import/export
+
+453---------------------------------------------------------
+From wcmvusd (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5141.msg28550#msg28550
+
+One thing I found is it would be great if there was an 'A Set of Activities has minimum simultaneous in selected time slots' constraint so that
+I could group all students into gender groups and set each gender group to have a minimum per period instead of assigning each activity to the
+constraint individually. Something like the 'A Set of Activities has a Set of Preferred Time Slots' constraint, but for Min/Max?
+
+Also, on https://lalescu.ro/liviu/fet/forum/index.php?topic=5141.msg28554#msg28554 :
+
+A constraint of 'A set of activities occupies X time slots from selection' would be great.
+
+Liviu: wcmvusd's suggestions refer to adding a filter like in activities preferred times instead of listing all the activities. And the second
+suggestions also combines min+max in a single constraint.
+
+454---------------------------------------------------------
+From Vangelis Karafillidis (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5143.0
+
+Sometimes, the user needs to modify the timetable of a single day because a couple of teachers are absent. It would be really useful, if the user
+could export a new .fet file (from the generated timetable) for a selected day. For example, if the user needs to modify his timetable for Monday,
+because two teachers are absent, he could extract a new .fet file with
+days = 1
+teachers the same as the original file
+students the same as the original file
+and activities the activities of this specific day.
+Most of the time constraints should be removed, but some constraints such as teacher not available times, teacher max hour continuously,
+teacher max gaps per day, etc could be selected by the user in order to be extracted to the new (generated) .fet file. Then the user could add some
+constraints in order to avoid the gaps for the students groups, and generate a new timetable.
+
+455---------------------------------------------------------
+From Vangelis Karafillidis (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5142.0
+
+Some constraints (such as teacher max hours continuously) need much time to be added. The reason is that the user has to add one by one the constraint
+of each teacher (in this example). I was thinking of a different approach. The user could select the teachers for whom the constraint should be
+applied/added. For example, if the user has 60 teachers and need to add the constraint max hours continuously to 40 of them, he could just select
+these 40 names and add this constraint at once.
+
+See also TODO items #82 and #84.

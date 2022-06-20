@@ -1208,7 +1208,7 @@ void TimetableExport::writeSimulationResults(QWidget* parent, int n, bool highes
 
 	if(!dir.exists(finalDestDir))
 		dir.mkpath(finalDestDir);
-		
+	
 	finalDestDir+=FILE_SEP;
 
 	QString s3=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);
@@ -1923,6 +1923,7 @@ void TimetableExport::writeSubgroupsTimetableXml(QWidget* parent, const QString&
 				if(ai!=UNALLOCATED_ACTIVITY){
 					//Activity* act=gt.rules.activitiesList.at(ai);
 					Activity* act=&gt.rules.internalActivitiesList[ai];
+					tos<<"<Activity id=\""<<CustomFETString::number(act->id)<<"\"></Activity>";
 					for(QStringList::const_iterator it=act->teachersNames.constBegin(); it!=act->teachersNames.constEnd(); it++)
 						tos<<"<Teacher name=\""<<protect(*it)<<"\"></Teacher>";
 					tos<<"<Subject name=\""<<protect(act->subjectName)<<"\"></Subject>";
@@ -1994,6 +1995,7 @@ void TimetableExport::writeTeachersTimetableXml(QWidget* parent, const QString& 
 				//Activity* act=gt.rules.activitiesList.at(ai);
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
+					tos<<"<Activity id=\""<<CustomFETString::number(act->id)<<"\"></Activity>";
 					tos<<"<Subject name=\""<<protect(act->subjectName)<<"\"></Subject>";
 					for(const QString& atn : qAsConst(act->activityTagsNames))
 						tos<<"<Activity_Tag name=\""<<protect(atn)<<"\"></Activity_Tag>";

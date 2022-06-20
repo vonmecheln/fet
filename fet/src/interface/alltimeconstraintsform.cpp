@@ -48,6 +48,7 @@
 #include "modifyconstraintmindaysbetweenactivitiesform.h"
 #include "modifyconstraintminhalfdaysbetweenactivitiesform.h"
 #include "modifyconstraintmaxdaysbetweenactivitiesform.h"
+#include "modifyconstraintmaxtermsbetweenactivitiesform.h"
 #include "modifyconstraintmingapsbetweenactivitiesform.h"
 #include "modifyconstraintactivityendsstudentsdayform.h"
 
@@ -267,6 +268,7 @@
 
 //terms
 #include "modifyconstraintactivitiesmaxinatermform.h"
+#include "modifyconstraintactivitiesmininatermform.h"
 #include "modifyconstraintactivitiesoccupymaxtermsform.h"
 
 #include "lockunlock.h"
@@ -1801,6 +1803,18 @@ void AllTimeConstraintsForm::modifyConstraint()
 	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_DAY){
 		QMessageBox::warning(this, tr("FET warning"), tr("The constraints of type activity preferred day cannot be edited. They can only be added/removed"
 		 " from the students/teachers timetable view time horizontal dialog or they can be removed from this dialog."));
+	}
+	//186
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_MIN_IN_A_TERM){
+		ModifyConstraintActivitiesMinInATermForm form(this, (ConstraintActivitiesMinInATerm*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//187
+	else if(ctr->type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES){
+		ModifyConstraintMaxTermsBetweenActivitiesForm form(this, (ConstraintMaxTermsBetweenActivities*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
 	}
 	else{
 		QMessageBox::critical(this, tr("FET critical"), tr("You have found a bug in FET. Please report it. This kind of constraint"

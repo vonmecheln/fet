@@ -21,6 +21,8 @@
 
 #include "termsform.h"
 
+#include <QMessageBox>
+
 extern Timetable gt;
 
 extern const QString COMPANY;
@@ -54,6 +56,32 @@ TermsForm::~TermsForm()
 
 void TermsForm::ok()
 {
+	int cnt_mod=0;
+	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList)){
+		if(tc->type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES){
+			ConstraintMaxTermsBetweenActivities* cmt=(ConstraintMaxTermsBetweenActivities*)tc;
+			if(cmt->maxTerms>=numberOfTermsSpinBox->value())
+				cnt_mod++;
+		}
+		else if(tc->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS){
+			ConstraintActivitiesOccupyMaxTerms* camt=(ConstraintActivitiesOccupyMaxTerms*)tc;
+			if(camt->maxOccupiedTerms>numberOfTermsSpinBox->value())
+				cnt_mod++;
+		}
+	}
+	
+	QString s=QString("");
+	if(cnt_mod>0){
+		s+=tr("%1 constraints will be modified.", "%1 is the number of constraints").arg(cnt_mod);
+		s+=" ";
+	}
+	s+=tr("Do you want to continue?");
+
+	int res=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::Cancel);
+	
+	if(res==QMessageBox::Cancel)
+		return;
+	
 	gt.rules.setTerms(numberOfTermsSpinBox->value(), numberOfDaysPerTermSpinBox->value());
 	
 	this->close();

@@ -316,6 +316,11 @@ const int CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES								=184;
 
 const int CONSTRAINT_ACTIVITY_PREFERRED_DAY											=185;
 
+//Begin for terms - 2022-05-20
+const int CONSTRAINT_ACTIVITIES_MIN_IN_A_TERM										=187;
+const int CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES									=186;
+//End   for terms - 2022-05-20
+
 QString getActivityDetailedDescription(Rules& r, int id);
 
 /**
@@ -783,7 +788,7 @@ public:
 
 	/**
 	Constructor, using:
-	the weight, the number of activities and the list of activities.
+	the weight, consecutive if same day, the number of activities, the list of activities, and the min number of days.
 	*/
 	//ConstraintMinDaysBetweenActivities(double wp, bool adjacentIfBroken, int n_act, const int act[], int n);
 	ConstraintMinDaysBetweenActivities(double wp, bool adjacentIfBroken, int n_act, const QList<int>& act, int n);
@@ -857,7 +862,7 @@ public:
 
 	/**
 	Constructor, using:
-	the weight, the number of activities and the list of activities.
+	the weight, the number of activities, the list of activities, and the max number of days.
 	*/
 	ConstraintMaxDaysBetweenActivities(double wp, int n_act, const QList<int>& act, int n);
 
@@ -925,7 +930,7 @@ public:
 
 	/**
 	Constructor, using:
-	the weight, the number of activities and the list of activities.
+	the weight, the number of activities, the list of activities, and the min number of gaps.
 	*/
 	//ConstraintMinGapsBetweenActivities(double wp, int n_act, const int act[], int ngaps);
 	ConstraintMinGapsBetweenActivities(double wp, int n_act, const QList<int>& actList, int ngaps);
@@ -994,7 +999,7 @@ public:
 
 	/**
 	Constructor, using:
-	the weight, the number of activities and the list of activities.
+	the weight, the number of activities, the list of activities, and the max number of gaps.
 	*/
 	//ConstraintMaxGapsBetweenActivities(double wp, int n_act, const int act[], int ngaps);
 	ConstraintMaxGapsBetweenActivities(double wp, int n_act, const QList<int>& actList, int ngaps);
@@ -9357,6 +9362,120 @@ public:
 	QString getDetailedDescription(Rules& r);
 
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintActivitiesMinInATerm: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesMinInATerm)
+
+public:
+	QList<int> activitiesIds;
+
+	int minActivitiesInATerm;
+	
+	bool allowEmptyTerms;
+
+	//internal variables
+	QList<int> _activitiesIndices;
+
+	ConstraintActivitiesMinInATerm();
+
+	ConstraintActivitiesMinInATerm(double wp, QList<int> a_L, int min_acts, bool allow_empty_terms);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules& r);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintMaxTermsBetweenActivities: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintMaxTermsBetweenActivities)
+
+public:
+	/**
+	The number of activities involved in this constraint
+	*/
+	int n_activities;
+
+	/**
+	The activities involved in this constraint (id)
+	*/
+	QList<int> activitiesId;
+
+	/**
+	The number of maximum terms between each 2 activities
+	*/
+	int maxTerms;
+
+	//internal structure (redundant)
+
+	/**
+	The number of activities involved in this constraint - internal structure
+	*/
+	int _n_activities;
+
+	/**
+	The activities involved in this constraint (index in the rules) - internal structure
+	*/
+	QList<int> _activities;
+
+	ConstraintMaxTermsBetweenActivities();
+
+	/**
+	Constructor, using:
+	the weight, the number of activities, the list of activities, and the max number of terms.
+	*/
+	ConstraintMaxTermsBetweenActivities(double wp, int n_act, const QList<int>& act, int n);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules &r);
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	

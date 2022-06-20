@@ -155,6 +155,15 @@ bool computeMaxDays(QWidget* parent);
 ////////END   MAX DAYS TIME CONSTRAINTS
 
 
+////////BEGIN MAX TERMS TIME CONSTRAINTS
+extern Matrix1D<QList<int>> maxTermsListOfActivities;
+extern Matrix1D<QList<int>> maxTermsListOfMaxTerms;
+extern Matrix1D<QList<double>> maxTermsListOfWeightPercentages;
+
+bool computeMaxTerms(QWidget* parent);
+////////END   MAX TERMS TIME CONSTRAINTS
+
+
 ////////BEGIN MIN GAPS between activities TIME CONSTRAINTS
 extern Matrix1D<QList<int>> minGapsBetweenActivitiesListOfActivities;
 extern Matrix1D<QList<int>> minGapsBetweenActivitiesListOfMinGaps;
@@ -1046,6 +1055,24 @@ extern std::list<ActivitiesMaxInATerm_item> amiatList;
 extern Matrix1D<QList<ActivitiesMaxInATerm_item*>> amiatListForActivity;
 
 bool computeActivitiesMaxInATerm(QWidget* parent);
+
+//2022-05-19 - Constraint activities min in a term
+
+class ActivitiesMinInATerm_item
+{
+public:
+	//double weight; -> must be 100.0%
+	QList<int> activitiesList;
+	int minActivitiesInATerm;
+	bool allowEmptyTerms;
+};
+
+//The next variable should be a std::list!!!
+//We need the references to the elements to be valid
+extern std::list<ActivitiesMinInATerm_item> aminiatList;
+extern Matrix1D<QList<ActivitiesMinInATerm_item*>> aminiatListForActivity;
+
+bool computeActivitiesMinInATerm(QWidget* parent);
 
 //2020-01-14 - Constraint activities occupy max terms
 

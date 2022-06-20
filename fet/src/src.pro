@@ -512,6 +512,10 @@ SOURCES += \
 	interface/addconstraintmaxdaysbetweenactivitiesform.cpp \
 	interface/modifyconstraintmaxdaysbetweenactivitiesform.cpp \
 	\
+	interface/constraintmaxtermsbetweenactivitiesform.cpp \
+	interface/addconstraintmaxtermsbetweenactivitiesform.cpp \
+	interface/modifyconstraintmaxtermsbetweenactivitiesform.cpp \
+	\
 	interface/constraintmingapsbetweenactivitiesform.cpp \
 	interface/addconstraintmingapsbetweenactivitiesform.cpp \
 	interface/modifyconstraintmingapsbetweenactivitiesform.cpp \
@@ -940,6 +944,10 @@ SOURCES += \
 	interface/constraintactivitiesmaxinatermform.cpp \
 	interface/addconstraintactivitiesmaxinatermform.cpp \
 	interface/modifyconstraintactivitiesmaxinatermform.cpp \
+	\
+	interface/constraintactivitiesmininatermform.cpp \
+	interface/addconstraintactivitiesmininatermform.cpp \
+	interface/modifyconstraintactivitiesmininatermform.cpp \
 	\
 	interface/constraintactivitiesoccupymaxtermsform.cpp \
 	interface/addconstraintactivitiesoccupymaxtermsform.cpp \
@@ -1461,6 +1469,10 @@ HEADERS += \
 	interface/addconstraintmaxdaysbetweenactivitiesform.h \
 	interface/modifyconstraintmaxdaysbetweenactivitiesform.h \
 	\
+	interface/constraintmaxtermsbetweenactivitiesform.h \
+	interface/addconstraintmaxtermsbetweenactivitiesform.h \
+	interface/modifyconstraintmaxtermsbetweenactivitiesform.h \
+	\
 	interface/constraintmingapsbetweenactivitiesform.h \
 	interface/addconstraintmingapsbetweenactivitiesform.h \
 	interface/modifyconstraintmingapsbetweenactivitiesform.h \
@@ -1892,6 +1904,10 @@ HEADERS += \
 	interface/constraintactivitiesmaxinatermform.h \
 	interface/addconstraintactivitiesmaxinatermform.h \
 	interface/modifyconstraintactivitiesmaxinatermform.h \
+	\
+	interface/constraintactivitiesmininatermform.h \
+	interface/addconstraintactivitiesmininatermform.h \
+	interface/modifyconstraintactivitiesmininatermform.h \
 	\
 	interface/constraintactivitiesoccupymaxtermsform.h \
 	interface/addconstraintactivitiesoccupymaxtermsform.h \
@@ -2403,6 +2419,10 @@ FORMS += \
 	interface/addconstraintmaxdaysbetweenactivitiesform_template.ui \
 	interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui \
 	\
+	interface/constraintmaxtermsbetweenactivitiesform_template.ui \
+	interface/addconstraintmaxtermsbetweenactivitiesform_template.ui \
+	interface/modifyconstraintmaxtermsbetweenactivitiesform_template.ui \
+	\
 	interface/constraintmingapsbetweenactivitiesform_template.ui \
 	interface/addconstraintmingapsbetweenactivitiesform_template.ui \
 	interface/modifyconstraintmingapsbetweenactivitiesform_template.ui \
@@ -2804,6 +2824,10 @@ FORMS += \
 	interface/constraintactivitiesmaxinatermform_template.ui \
 	interface/addconstraintactivitiesmaxinatermform_template.ui \
 	interface/modifyconstraintactivitiesmaxinatermform_template.ui \
+	\
+	interface/constraintactivitiesmininatermform_template.ui \
+	interface/addconstraintactivitiesmininatermform_template.ui \
+	interface/modifyconstraintactivitiesmininatermform_template.ui \
 	\
 	interface/constraintactivitiesoccupymaxtermsform_template.ui \
 	interface/addconstraintactivitiesoccupymaxtermsform_template.ui \

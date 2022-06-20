@@ -145,7 +145,7 @@
       <widget class="QSpinBox" name="maxDaysSpinBox"/>
      </item>
      <item row="0" column="0">
-      <widget class="QLabel" name="minDaysTextLabel">
+      <widget class="QLabel" name="maxDaysTextLabel">
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
        </property>

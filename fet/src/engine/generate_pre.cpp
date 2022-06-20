@@ -156,6 +156,15 @@ Matrix1D<QList<double>> maxDaysListOfWeightPercentages;
 ////////END   MAX DAYS TIME CONSTRAINTS
 
 
+////////BEGIN MAX TERMS TIME CONSTRAINTS
+Matrix1D<QList<int>> maxTermsListOfActivities;
+Matrix1D<QList<int>> maxTermsListOfMaxTerms;
+Matrix1D<QList<double>> maxTermsListOfWeightPercentages;
+
+//bool computeMaxTerms(QWidget* parent);
+////////END   MAX TERMS TIME CONSTRAINTS
+
+
 ////////BEGIN MIN GAPS between activities TIME CONSTRAINTS
 Matrix1D<QList<int>> minGapsBetweenActivitiesListOfActivities;
 Matrix1D<QList<int>> minGapsBetweenActivitiesListOfMinGaps;
@@ -904,6 +913,11 @@ std::list<ActivitiesMaxInATerm_item> amiatList;
 Matrix1D<QList<ActivitiesMaxInATerm_item*>> amiatListForActivity;
 //bool computeActivitiesMaxInATerm(QWidget* parent);
 
+//2022-05-19 - Constraint activities min in a term
+std::list<ActivitiesMinInATerm_item> aminiatList;
+Matrix1D<QList<ActivitiesMinInATerm_item*>> aminiatListForActivity;
+//bool computeActivitiesMinInATerm(QWidget* parent);
+
 //2020-01-14 - Constraint activities occupy max terms
 std::list<ActivitiesOccupyMaxTerms_item> aomtList;
 Matrix1D<QList<ActivitiesOccupyMaxTerms_item*>> aomtListForActivity;
@@ -1434,6 +1448,11 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	maxDaysListOfMaxDays.resize(gt.rules.nInternalActivities);
 	maxDaysListOfWeightPercentages.resize(gt.rules.nInternalActivities);
 
+	//MAX TERMS BETWEEN ACTIVITIES
+	maxTermsListOfActivities.resize(gt.rules.nInternalActivities);
+	maxTermsListOfMaxTerms.resize(gt.rules.nInternalActivities);
+	maxTermsListOfWeightPercentages.resize(gt.rules.nInternalActivities);
+
 	//MIN GAPS BETWEEN ACTIVITIES
 	minGapsBetweenActivitiesListOfActivities.resize(gt.rules.nInternalActivities);
 	minGapsBetweenActivitiesListOfMinGaps.resize(gt.rules.nInternalActivities);
@@ -1601,6 +1620,8 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	//for terms
 	//2020-01-14
 	amiatListForActivity.resize(gt.rules.nInternalActivities);
+	//2022-05-19
+	aminiatListForActivity.resize(gt.rules.nInternalActivities);
 	//2020-01-14
 	aomtListForActivity.resize(gt.rules.nInternalActivities);
 
@@ -1652,6 +1673,12 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	
 	/////2.3. max days between activities
 	t=computeMaxDays(parent);
+	if(!t)
+		return false;
+	/////////////////////////////////////
+	
+	/////2.4. max terms between activities
+	t=computeMaxTerms(parent);
 	if(!t)
 		return false;
 	/////////////////////////////////////
@@ -2036,6 +2063,11 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	////////////////
 	//2020-01-14
 	t=computeActivitiesMaxInATerm(parent);
+	if(!t)
+		return false;
+
+	//2022-05-19
+	t=computeActivitiesMinInATerm(parent);
 	if(!t)
 		return false;
 
@@ -12797,6 +12829,69 @@ bool computeMaxDays(QWidget* parent)
 	return ok;
 }
 
+bool computeMaxTerms(QWidget* parent)
+{
+	QSet<ConstraintMaxTermsBetweenActivities*> mtset;
+
+	bool ok=true;
+
+	for(int j=0; j<gt.rules.nInternalActivities; j++){
+		maxTermsListOfActivities[j].clear();
+		maxTermsListOfMaxTerms[j].clear();
+		maxTermsListOfWeightPercentages[j].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES
+		 /*&&gt.rules.internalTimeConstraintsList[i]->compulsory==true*/){
+			ConstraintMaxTermsBetweenActivities* mt=
+			 (ConstraintMaxTermsBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
+			
+			for(int j=0; j<mt->_n_activities; j++){
+				int ai1=mt->_activities[j];
+				for(int k=0; k<mt->_n_activities; k++)
+					if(j!=k){
+						int ai2=mt->_activities[k];
+						if(ai1==ai2){
+							ok=false;
+							
+							if(!mtset.contains(mt)){
+								mtset.insert(mt);
+						
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint max terms between activities with duplicate activities. The constraint "
+								 "is: %1. Please correct that.").arg(mt->getDetailedDescription(gt.rules)),
+								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+								 1, 0 );
+					
+								if(t==0)
+									return ok;
+							}
+						}
+						int m=mt->maxTerms;
+						/*if(m>minDays[ai1][ai2])
+							minDays[ai1][ai2]=minDays[ai2][ai1]=m;*/
+						
+						maxTermsListOfActivities[ai1].append(ai2);
+						maxTermsListOfMaxTerms[ai1].append(m);
+						assert(mt->weightPercentage >=0 && mt->weightPercentage<=100);
+						maxTermsListOfWeightPercentages[ai1].append(mt->weightPercentage);
+						//maxDaysListOfConsecutiveIfSameDay[ai1].append(md->consecutiveIfSameDay);
+					}
+			}
+		}
+
+	/*for(int j=0; j<gt.rules.nInternalActivities; j++)
+		for(int k=0; k<gt.rules.nInternalActivities; k++)
+			if(minDays[j][k]>0){
+				assert(j!=k);
+				minDaysListOfActivities[j].append(k);
+				minDaysListOfMinDays[j].append(minDays[j][k]);
+			}*/
+			
+	return ok;
+}
+
 bool computeMinGapsBetweenActivities(QWidget* parent)
 {
 	QSet<ConstraintMinGapsBetweenActivities*> mgset;
@@ -14980,6 +15075,85 @@ bool computeActivitiesMaxInATerm(QWidget* parent)
 			ActivitiesMaxInATerm_item* p_item=&amiatList.back();
 			for(int ai : qAsConst(cn->_activitiesIndices)){
 				amiatListForActivity[ai].append(p_item);
+			}
+		}
+	}
+
+	return ok;
+}
+
+//for terms
+//20220-05-19
+bool computeActivitiesMinInATerm(QWidget* parent)
+{
+	bool ok=true;
+
+	aminiatList.clear();
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		aminiatListForActivity[i].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_MIN_IN_A_TERM){
+
+			ConstraintActivitiesMinInATerm* cn=(ConstraintActivitiesMinInATerm*)gt.rules.internalTimeConstraintsList[i];
+
+			if(cn->weightPercentage!=100.0){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint(s) of type 'activities min in a term'"
+				 " with weight (percentage) below 100.0%. Please make the weight 100.0% and try again")
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+
+			if(cn->_activitiesIndices.count()>0 && cn->_activitiesIndices.count()<cn->minActivitiesInATerm){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'activities min in a term'"
+				 " which is impossible to satisfy. The number of activities in the constraint is greater than 0 and less than the"
+				 " minimum number of activities allowed in a term. The constraint is:\n%1\nPlease correct and try again.")
+				 .arg(cn->getDetailedDescription(gt.rules))
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+
+			if(!cn->allowEmptyTerms && cn->_activitiesIndices.count()<cn->minActivitiesInATerm*gt.rules.nTerms){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint of type 'activities min in a term'"
+				 " which is impossible to satisfy. The number of activities in the constraint is less than the minimum number of"
+				 " activities allowed in a term x the number of terms (the constraint does not allow empty terms)."
+				 " The constraint is:\n%1\nPlease correct and try again.")
+				 .arg(cn->getDetailedDescription(gt.rules))
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+
+			ActivitiesMinInATerm_item item;
+			item.activitiesList=cn->_activitiesIndices;
+			item.minActivitiesInATerm=cn->minActivitiesInATerm;
+			item.allowEmptyTerms=cn->allowEmptyTerms;
+
+			aminiatList.push_back(item);
+			ActivitiesMinInATerm_item* p_item=&aminiatList.back();
+			for(int ai : qAsConst(cn->_activitiesIndices)){
+				aminiatListForActivity[ai].append(p_item);
 			}
 		}
 	}
