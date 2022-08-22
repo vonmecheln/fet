@@ -512,6 +512,10 @@ SOURCES += \
 	interface/addconstraintmaxdaysbetweenactivitiesform.cpp \
 	interface/modifyconstraintmaxdaysbetweenactivitiesform.cpp \
 	\
+	interface/constraintmaxhalfdaysbetweenactivitiesform.cpp \
+	interface/addconstraintmaxhalfdaysbetweenactivitiesform.cpp \
+	interface/modifyconstraintmaxhalfdaysbetweenactivitiesform.cpp \
+	\
 	interface/constraintmaxtermsbetweenactivitiesform.cpp \
 	interface/addconstraintmaxtermsbetweenactivitiesform.cpp \
 	interface/modifyconstraintmaxtermsbetweenactivitiesform.cpp \
@@ -1504,6 +1508,10 @@ HEADERS += \
 	interface/addconstraintmaxdaysbetweenactivitiesform.h \
 	interface/modifyconstraintmaxdaysbetweenactivitiesform.h \
 	\
+	interface/constraintmaxhalfdaysbetweenactivitiesform.h \
+	interface/addconstraintmaxhalfdaysbetweenactivitiesform.h \
+	interface/modifyconstraintmaxhalfdaysbetweenactivitiesform.h \
+	\
 	interface/constraintmaxtermsbetweenactivitiesform.h \
 	interface/addconstraintmaxtermsbetweenactivitiesform.h \
 	interface/modifyconstraintmaxtermsbetweenactivitiesform.h \
@@ -2488,6 +2496,10 @@ FORMS += \
 	interface/constraintmaxdaysbetweenactivitiesform_template.ui \
 	interface/addconstraintmaxdaysbetweenactivitiesform_template.ui \
 	interface/modifyconstraintmaxdaysbetweenactivitiesform_template.ui \
+	\
+	interface/constraintmaxhalfdaysbetweenactivitiesform_template.ui \
+	interface/addconstraintmaxhalfdaysbetweenactivitiesform_template.ui \
+	interface/modifyconstraintmaxhalfdaysbetweenactivitiesform_template.ui \
 	\
 	interface/constraintmaxtermsbetweenactivitiesform_template.ui \
 	interface/addconstraintmaxtermsbetweenactivitiesform_template.ui \

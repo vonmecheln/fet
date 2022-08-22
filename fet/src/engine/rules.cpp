@@ -5061,6 +5061,12 @@ void Rules::updateConstraintsAfterRemoval()
 			if(c->n_activities<2)
 				toBeRemovedTime.append(tc);
 		}
+		else if(tc->type==CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMaxHalfDaysBetweenActivities* c=(ConstraintMaxHalfDaysBetweenActivities*)tc;
+			c->removeUseless(*this);
+			if(c->n_activities<2)
+				toBeRemovedTime.append(tc);
+		}
 		else if(tc->type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES){
 			ConstraintMaxTermsBetweenActivities* c=(ConstraintMaxTermsBetweenActivities*)tc;
 			c->removeUseless(*this);
@@ -8339,6 +8345,9 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				}
 				else if(xmlReader.name()==QString("ConstraintMaxDaysBetweenActivities")){
 					crt_constraint=readMaxDaysBetweenActivities(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintMaxHalfDaysBetweenActivities")){
+					crt_constraint=readMaxHalfDaysBetweenActivities(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintMaxTermsBetweenActivities")){
 					crt_constraint=readMaxTermsBetweenActivities(xmlReader, xmlReadingLog);
@@ -12371,6 +12380,67 @@ TimeConstraint* Rules::readMaxDaysBetweenActivities(QXmlStreamReader& xmlReader,
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintMaxDaysBetweenActivities"));
 	
 	ConstraintMaxDaysBetweenActivities* cn=new ConstraintMaxDaysBetweenActivities();
+	cn->n_activities=0;
+	int n_act=0;
+	cn->activitiesId.clear();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weightPercentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Number_of_Activities")){
+			QString text=xmlReader.readElementText();
+			cn->n_activities=text.toInt();
+			xmlReadingLog+="    Read n_activities="+CustomFETString::number(cn->n_activities)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Id")){
+			QString text=xmlReader.readElementText();
+			cn->activitiesId.append(text.toInt());
+			assert(n_act==cn->activitiesId.count()-1);
+			//cn->activitiesId[n_act]=text.toInt();
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			n_act++;
+		}
+		else if(xmlReader.name()==QString("MaxDays")){
+			QString text=xmlReader.readElementText();
+			cn->maxDays=text.toInt();
+			xmlReadingLog+="    Read MaxDays="+CustomFETString::number(cn->maxDays)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(!(n_act==cn->n_activities)){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(n_act==cn->n_activities);
+	return cn;
+}
+
+TimeConstraint* Rules::readMaxHalfDaysBetweenActivities(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintMaxHalfDaysBetweenActivities"));
+	
+	ConstraintMaxHalfDaysBetweenActivities* cn=new ConstraintMaxHalfDaysBetweenActivities();
 	cn->n_activities=0;
 	int n_act=0;
 	cn->activitiesId.clear();

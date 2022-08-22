@@ -155,6 +155,15 @@ bool computeMaxDays(QWidget* parent);
 ////////END   MAX DAYS TIME CONSTRAINTS
 
 
+////////BEGIN MAX HALF DAYS TIME CONSTRAINTS
+extern Matrix1D<QList<int>> maxHalfDaysListOfActivities;
+extern Matrix1D<QList<int>> maxHalfDaysListOfMaxDays;
+extern Matrix1D<QList<double>> maxHalfDaysListOfWeightPercentages;
+
+bool computeMaxHalfDays(QWidget* parent);
+////////END   MAX HALF DAYS TIME CONSTRAINTS
+
+
 ////////BEGIN MAX TERMS TIME CONSTRAINTS
 extern Matrix1D<QList<int>> maxTermsListOfActivities;
 extern Matrix1D<QList<int>> maxTermsListOfMaxTerms;

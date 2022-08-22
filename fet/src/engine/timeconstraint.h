@@ -329,6 +329,10 @@ const int CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3		=1
 const int CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3	=192;
 const int CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3		=193;
 
+//Begin for mornings-afternoons - 2022-07-31
+const int CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES								=194;
+//End   for mornings-afternoons - 2022-07-31
+
 QString getActivityDetailedDescription(Rules& r, int id);
 
 /**
@@ -9738,6 +9742,74 @@ public:
 
 	bool isRelatedToActivityTag(ActivityTag* s);
 
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintMaxHalfDaysBetweenActivities: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintMaxHalfDaysBetweenActivities)
+
+public:
+	/**
+	The number of activities involved in this constraint
+	*/
+	int n_activities;
+
+	/**
+	The activities involved in this constraint (id)
+	*/
+	QList<int> activitiesId;
+
+	/**
+	The number of maximum days between each 2 activities
+	*/
+	int maxDays;
+
+	//internal structure (redundant)
+
+	/**
+	The number of activities involved in this constraint - internal structure
+	*/
+	int _n_activities;
+
+	/**
+	The activities involved in this constraint (index in the rules) - internal structure
+	*/
+	QList<int> _activities;
+
+	ConstraintMaxHalfDaysBetweenActivities();
+
+	/**
+	Constructor, using:
+	the weight, the number of activities, the list of activities, and the max number of days.
+	*/
+	ConstraintMaxHalfDaysBetweenActivities(double wp, int n_act, const QList<int>& act, int n);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules &r);
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
 	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
 
 	bool hasWrongDayOrHour(Rules& r);

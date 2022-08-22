@@ -156,6 +156,15 @@ Matrix1D<QList<double>> maxDaysListOfWeightPercentages;
 ////////END   MAX DAYS TIME CONSTRAINTS
 
 
+////////BEGIN MAX HALF DAYS TIME CONSTRAINTS
+Matrix1D<QList<int>> maxHalfDaysListOfActivities;
+Matrix1D<QList<int>> maxHalfDaysListOfMaxDays;
+Matrix1D<QList<double>> maxHalfDaysListOfWeightPercentages;
+
+//bool computeMaxHalfDays(QWidget* parent);
+////////END   MAX HALF DAYS TIME CONSTRAINTS
+
+
 ////////BEGIN MAX TERMS TIME CONSTRAINTS
 Matrix1D<QList<int>> maxTermsListOfActivities;
 Matrix1D<QList<int>> maxTermsListOfMaxTerms;
@@ -1474,6 +1483,11 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	maxDaysListOfMaxDays.resize(gt.rules.nInternalActivities);
 	maxDaysListOfWeightPercentages.resize(gt.rules.nInternalActivities);
 
+	//MAX HALF DAYS BETWEEN ACTIVITIES
+	maxHalfDaysListOfActivities.resize(gt.rules.nInternalActivities);
+	maxHalfDaysListOfMaxDays.resize(gt.rules.nInternalActivities);
+	maxHalfDaysListOfWeightPercentages.resize(gt.rules.nInternalActivities);
+
 	//MAX TERMS BETWEEN ACTIVITIES
 	maxTermsListOfActivities.resize(gt.rules.nInternalActivities);
 	maxTermsListOfMaxTerms.resize(gt.rules.nInternalActivities);
@@ -1704,6 +1718,12 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		return false;
 	/////////////////////////////////////
 	
+	/////2.35. max half days between activities
+	t=computeMaxHalfDays(parent);
+	if(!t)
+		return false;
+	/////////////////////////////////////
+	
 	/////2.4. max terms between activities
 	t=computeMaxTerms(parent);
 	if(!t)
@@ -1870,7 +1890,7 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	if(!t)
 		return false;
 
-	//must be after teachers min hours daily
+	//must be after teachers min hours daily and min hours daily real days
 	t=computeTeachersMinDaysPerWeek(parent);
 	if(!t)
 		return false;
@@ -2514,7 +2534,7 @@ bool computeSubgroupsMaxHoursDaily(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 				dayAvailable[d]=1;
 			if(subgroupsMaxDaysPerWeekMaxDays[sb]>=0){
-				//n days per week has 100% weight
+				//max days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					dayAvailable[d]=0;
 				assert(subgroupsMaxDaysPerWeekMaxDays[sb]<=gt.rules.nDaysPerWeek);
@@ -2575,7 +2595,7 @@ bool computeSubgroupsMaxHoursDaily(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 				dayAvailable[d]=1;
 			if(subgroupsMaxDaysPerWeekMaxDays[sb]>=0){
-				//n days per week has 100% weight
+				//max days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					dayAvailable[d]=0;
 				assert(subgroupsMaxDaysPerWeekMaxDays[sb]<=gt.rules.nDaysPerWeek);
@@ -2771,7 +2791,7 @@ bool computeSubgroupsMaxHoursDailyRealDays(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 				dayAvailable[d]=1;
 			if(subgroupsMaxRealDaysPerWeekMaxDays[sb]>=0){
-				//n days per week has 100% weight
+				//max days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 					dayAvailable[d]=0;
 				assert(subgroupsMaxRealDaysPerWeekMaxDays[sb]<=gt.rules.nDaysPerWeek/2);
@@ -2835,7 +2855,7 @@ bool computeSubgroupsMaxHoursDailyRealDays(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 				dayAvailable[d]=1;
 			if(subgroupsMaxRealDaysPerWeekMaxDays[sb]>=0){
-				//n days per week has 100% weight
+				//max days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 					dayAvailable[d]=0;
 				assert(subgroupsMaxRealDaysPerWeekMaxDays[sb]<=gt.rules.nDaysPerWeek/2);
@@ -2976,7 +2996,7 @@ bool computeSubgroupsMaxSpanPerDay(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 				dayAvailable[d]=1;
 			if(subgroupsMaxDaysPerWeekMaxDays[sb]>=0){
-				//n days per week has 100% weight
+				//max days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					dayAvailable[d]=0;
 				assert(subgroupsMaxDaysPerWeekMaxDays[sb]<=gt.rules.nDaysPerWeek);
@@ -3120,7 +3140,7 @@ bool computeSubgroupsMaxSpanPerRealDay(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 				dayAvailable[d]=1;
 			if(subgroupsMaxRealDaysPerWeekMaxDays[sb]>=0){
-				//n days per week has 100% weight
+				//max days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 					dayAvailable[d]=0;
 				assert(subgroupsMaxRealDaysPerWeekMaxDays[sb]<=gt.rules.nDaysPerWeek/2);
@@ -5039,7 +5059,7 @@ bool computeTeachersMaxHoursDaily(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 				dayAvailable[d]=1;
 			if(teachersMaxDaysPerWeekMaxDays[tc]>=0){
-				//n days per week has 100% weight
+				//max days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					dayAvailable[d]=0;
 				assert(teachersMaxDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek);
@@ -5100,7 +5120,7 @@ bool computeTeachersMaxHoursDaily(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 				dayAvailable[d]=1;
 			if(teachersMaxDaysPerWeekMaxDays[tc]>=0){
-				//n days per week has 100% weight
+				//max days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					dayAvailable[d]=0;
 				assert(teachersMaxDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek);
@@ -5162,7 +5182,7 @@ bool computeTeachersMaxHoursDaily(QWidget* parent)
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					dayAvailable[d]=1;
 				if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){
-					//n days per week has 100% weight
+					//max days per week has 100% weight
 					for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 						dayAvailable[d]=0;
 					assert(teachersMaxRealDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek/2);
@@ -5228,7 +5248,7 @@ bool computeTeachersMaxHoursDaily(QWidget* parent)
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					dayAvailable[d]=1;
 				if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){
-					//n days per week has 100% weight
+					//max days per week has 100% weight
 					for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 						dayAvailable[d]=0;
 					assert(teachersMaxRealDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek/2);
@@ -5453,7 +5473,7 @@ bool computeTeachersMaxHoursDailyRealDays(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 				dayAvailable[d]=1;
 			if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){
-				//n days per week has 100% weight
+				//max days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 					dayAvailable[d]=0;
 				assert(teachersMaxRealDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek/2);
@@ -5517,7 +5537,7 @@ bool computeTeachersMaxHoursDailyRealDays(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 				dayAvailable[d]=1;
 			if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){
-				//n days per week has 100% weight
+				//max days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 					dayAvailable[d]=0;
 				assert(teachersMaxRealDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek/2);
@@ -5690,7 +5710,7 @@ bool computeTeachersMaxSpanPerDay(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 				dayAvailable[d]=1;
 			if(teachersMaxDaysPerWeekMaxDays[tc]>=0){
-				//n days per week has 100% weight
+				//max days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					dayAvailable[d]=0;
 				assert(teachersMaxDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek);
@@ -5868,7 +5888,7 @@ bool computeTeachersMaxSpanPerRealDay(QWidget* parent)
 			for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 				dayAvailable[d]=1;
 			if(teachersMaxRealDaysPerWeekMaxDays[tc]>=0){
-				//n days per week has 100% weight
+				//max days per week has 100% weight
 				for(int d=0; d<gt.rules.nDaysPerWeek/2; d++)
 					dayAvailable[d]=0;
 				assert(teachersMaxRealDaysPerWeekMaxDays[tc]<=gt.rules.nDaysPerWeek/2);
@@ -7440,7 +7460,7 @@ bool computeTeachersActivityTagMinHoursDaily(QWidget* parent)
 	return ok;
 }
 
-//must be after min hours for teachers
+//must be after min hours for teachers (and min hours daily real days)
 bool computeTeachersMinDaysPerWeek(QWidget* parent)
 {
 	bool ok=true;
@@ -9635,7 +9655,7 @@ bool computeNHoursPerTeacher(QWidget* parent)
 		}
 	}
 	
-	//n days per week has 100% weight
+	//max days per week has 100% weight
 	for(int i=0; i<gt.rules.nInternalTeachers; i++)
 		if(teachersMaxDaysPerWeekMaxDays[i]>=0){
 			int nd=teachersMaxDaysPerWeekMaxDays[i];
@@ -9658,7 +9678,7 @@ bool computeNHoursPerTeacher(QWidget* parent)
 			}
 		}
 
-	//n days per week has 100% weight
+	//max days per week has 100% weight
 	if(gt.rules.mode==MORNINGS_AFTERNOONS){
 		for(int i=0; i<gt.rules.nInternalTeachers; i++)
 			if(teachersMaxRealDaysPerWeekMaxDays[i]>=0){
@@ -9683,8 +9703,8 @@ bool computeNHoursPerTeacher(QWidget* parent)
 			}
 	}
 
-	//n days per week has 100% weight
-	//check n days per week together with not available and breaks
+	//max days per week has 100% weight
+	//check max days per week together with not available and breaks
 
 	Matrix1D<int> nAllowedSlotsPerDay;
 	nAllowedSlotsPerDay.resize(gt.rules.nDaysPerWeek);
@@ -10789,7 +10809,7 @@ bool computeNHoursPerSubgroup(QWidget* parent)
 		}
 	}
 	
-	//n days per week has 100% weight
+	//max days per week has 100% weight
 	for(int i=0; i<gt.rules.nInternalSubgroups; i++)
 		if(subgroupsMaxDaysPerWeekMaxDays[i]>=0){
 			int nd=subgroupsMaxDaysPerWeekMaxDays[i];
@@ -10812,7 +10832,7 @@ bool computeNHoursPerSubgroup(QWidget* parent)
 			}
 		}
 
-	//n days per week has 100% weight
+	//max days per week has 100% weight
 	if(gt.rules.mode==MORNINGS_AFTERNOONS){
 		for(int i=0; i<gt.rules.nInternalSubgroups; i++)
 			if(subgroupsMaxRealDaysPerWeekMaxDays[i]>=0){
@@ -10836,8 +10856,8 @@ bool computeNHoursPerSubgroup(QWidget* parent)
 				}
 			}
 	}
-	//n days per week has 100% weight
-	//check n days per week together with not available and breaks
+	//max days per week has 100% weight
+	//check max days per week together with not available and breaks
 
 	Matrix1D<int> nAllowedSlotsPerDay;
 	nAllowedSlotsPerDay.resize(gt.rules.nDaysPerWeek);
@@ -12848,6 +12868,69 @@ bool computeMaxDays(QWidget* parent)
 						maxDaysListOfMaxDays[ai1].append(m);
 						assert(md->weightPercentage >=0 && md->weightPercentage<=100);
 						maxDaysListOfWeightPercentages[ai1].append(md->weightPercentage);
+						//maxDaysListOfConsecutiveIfSameDay[ai1].append(md->consecutiveIfSameDay);
+					}
+			}
+		}
+
+	/*for(int j=0; j<gt.rules.nInternalActivities; j++)
+		for(int k=0; k<gt.rules.nInternalActivities; k++)
+			if(minDays[j][k]>0){
+				assert(j!=k);
+				minDaysListOfActivities[j].append(k);
+				minDaysListOfMinDays[j].append(minDays[j][k]);
+			}*/
+			
+	return ok;
+}
+
+bool computeMaxHalfDays(QWidget* parent)
+{
+	QSet<ConstraintMaxHalfDaysBetweenActivities*> mdset;
+
+	bool ok=true;
+
+	for(int j=0; j<gt.rules.nInternalActivities; j++){
+		maxHalfDaysListOfActivities[j].clear();
+		maxHalfDaysListOfMaxDays[j].clear();
+		maxHalfDaysListOfWeightPercentages[j].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES
+		 /*&&gt.rules.internalTimeConstraintsList[i]->compulsory==true*/){
+			ConstraintMaxHalfDaysBetweenActivities* md=
+			 (ConstraintMaxHalfDaysBetweenActivities*)gt.rules.internalTimeConstraintsList[i];
+			
+			for(int j=0; j<md->_n_activities; j++){
+				int ai1=md->_activities[j];
+				for(int k=0; k<md->_n_activities; k++)
+					if(j!=k){
+						int ai2=md->_activities[k];
+						if(ai1==ai2){
+							ok=false;
+							
+							if(!mdset.contains(md)){
+								mdset.insert(md);
+						
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint max half days between activities with duplicate activities. The constraint "
+								 "is: %1. Please correct that.").arg(md->getDetailedDescription(gt.rules)),
+								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+								 1, 0 );
+					
+								if(t==0)
+									return ok;
+							}
+						}
+						int m=md->maxDays;
+						/*if(m>minDays[ai1][ai2])
+							minDays[ai1][ai2]=minDays[ai2][ai1]=m;*/
+						
+						maxHalfDaysListOfActivities[ai1].append(ai2);
+						maxHalfDaysListOfMaxDays[ai1].append(m);
+						assert(md->weightPercentage >=0 && md->weightPercentage<=100);
+						maxHalfDaysListOfWeightPercentages[ai1].append(md->weightPercentage);
 						//maxDaysListOfConsecutiveIfSameDay[ai1].append(md->consecutiveIfSameDay);
 					}
 			}

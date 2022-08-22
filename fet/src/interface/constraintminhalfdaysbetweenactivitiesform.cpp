@@ -33,8 +33,10 @@ ConstraintMinHalfDaysBetweenActivitiesForm::ConstraintMinHalfDaysBetweenActiviti
 {
 	setupUi(this);
 	
-	if(gt.rules.mode!=MORNINGS_AFTERNOONS)
+	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+		assert(0);
 		instructionsLabel->setEnabled(false);
+	}
 
 	currentConstraintTextEdit->setReadOnly(true);
 	

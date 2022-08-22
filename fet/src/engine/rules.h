@@ -796,6 +796,7 @@ private:
 	TimeConstraint* readMinDaysBetweenActivities(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readMinHalfDaysBetweenActivities(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readMaxDaysBetweenActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readMaxHalfDaysBetweenActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readMaxTermsBetweenActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readMinGapsBetweenActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readMaxGapsBetweenActivities(QXmlStreamReader& xml, FakeString& xmlReadingLog);

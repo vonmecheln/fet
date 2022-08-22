@@ -3,8 +3,6 @@ From different old custom FET-MA users, for the new Mornings-Afternoons mode, on
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=4519.0
 
-- Students (set) min half-days per week (suggested by Abdeljalil Elghazoui) - but is it needed, considering we have available min mornings/afternoons and min hours daily without allowing empty real days?
-
 - Max days per week for a room,
 - Max hours daily (half day) for a room,
 - Max hours daily (real day) for a room (suggested by bachiri401).
@@ -1393,6 +1391,8 @@ lots of teachers in the university).
 
 Suggested also by Zafar Allah Askar (on forum), on 26 October 2019 (https://lalescu.ro/liviu/fet/forum/index.php?topic=4313.0):
 	Create lists of teachers to be added to a constraint.
+
+Suggested also by nouvakis, mbarsan, and pgsrihr, here: https://lalescu.ro/liviu/fet/forum/index.php?topic=1110.msg28848#msg28848
 
 See also TODO items #84 and #455.
 
@@ -7625,3 +7625,25 @@ About statistics, it would be nice to see sums of activities in a term:
 1. per teacher
 2. per group
 even 3. per teacher and subject but this could end up being not very easy to read.
+
+458---------------------------------------------------------
+From henriquebelo (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5189.0
+
+What about this new constraint?
+
+An activitie starts a teacher day?
+
+Is usefull for situations when the teacher don't star to work at the first hour.
+
+459---------------------------------------------------------
+From Christian (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5203.0
+
+As you know, and as I've seen, printing the tables to paper is a discussed topic through the years.
+I'm fine with editing the css. I have a table which keeps the same geometry with colorcoded teachers etc.
+But if I generate multiple tables, do I really have to copy my custom css into every folder?
+Unfortunately the css has a different name in every folder, so this won't work, I think.
+Wouldn't it be nice, to adress a custom css-File or include custom css-commands as a matter of fet project preferences?

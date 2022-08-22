@@ -185,6 +185,7 @@
 #include "constraintmindaysbetweenactivitiesform.h"
 #include "constraintminhalfdaysbetweenactivitiesform.h"
 #include "constraintmaxdaysbetweenactivitiesform.h"
+#include "constraintmaxhalfdaysbetweenactivitiesform.h"
 #include "constraintmaxtermsbetweenactivitiesform.h"
 #include "constraintmingapsbetweenactivitiesform.h"
 #include "constraintactivitypreferredtimeslotsform.h"
@@ -1268,6 +1269,7 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsTeachersMaxDaysPerWeekAction = new QAction(this);
 	dataTimeConstraintsThreeActivitiesGroupedAction = new QAction(this);
 	dataTimeConstraintsMaxDaysBetweenActivitiesAction = new QAction(this);
+	dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction = new QAction(this);
 	dataTimeConstraintsMaxTermsBetweenActivitiesAction = new QAction(this);
 	dataTimeConstraintsTeacherMinDaysPerWeekAction = new QAction(this);
 	dataTimeConstraintsTeachersMinDaysPerWeekAction = new QAction(this);
@@ -1523,6 +1525,7 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsTeachersMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxDaysPerWeekAction_triggered()));
 	connect(dataTimeConstraintsThreeActivitiesGroupedAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsThreeActivitiesGroupedAction_triggered()));
 	connect(dataTimeConstraintsMaxDaysBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered()));
+	connect(dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction_triggered()));
 	connect(dataTimeConstraintsMaxTermsBetweenActivitiesAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsMaxTermsBetweenActivitiesAction_triggered()));
 	connect(dataTimeConstraintsTeacherMinDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinDaysPerWeekAction_triggered()));
 	connect(dataTimeConstraintsTeachersMinDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinDaysPerWeekAction_triggered()));
@@ -1811,6 +1814,7 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsTeachersMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Max days per week for all teachers", nullptr));
 	dataTimeConstraintsThreeActivitiesGroupedAction->setText(QCoreApplication::translate("FetMainForm_template", "Three activities are grouped", nullptr));
 	dataTimeConstraintsMaxDaysBetweenActivitiesAction->setText(QCoreApplication::translate("FetMainForm_template", "Max days between a set of activities", nullptr));
+	dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction->setText(QCoreApplication::translate("FetMainForm_template", "Max half days between a set of activities", nullptr));
 	dataTimeConstraintsMaxTermsBetweenActivitiesAction->setText(QCoreApplication::translate("FetMainForm_template", "Max terms between a set of activities", nullptr));
 	dataTimeConstraintsTeacherMinDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min days per week for a teacher", nullptr));
 	dataTimeConstraintsTeachersMinDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "Min days per week for all teachers", nullptr));
@@ -2213,6 +2217,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction);
 
+		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMinDaysPerWeekAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMinRealDaysPerWeekAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMinMorningsPerWeekAction);
 		menuA_teacher_1_time_constraints->addAction(dataTimeConstraintsTeacherMinAfternoonsPerWeekAction);
@@ -2269,6 +2274,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction);
 
+		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMinDaysPerWeekAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMinRealDaysPerWeekAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMinMorningsPerWeekAction);
 		menuAll_teachers_1_time_constraints->addAction(dataTimeConstraintsTeachersMinAfternoonsPerWeekAction);
@@ -2425,6 +2431,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinHalfDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
@@ -7589,6 +7596,25 @@ void FetMainForm::dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered()
 	}
 
 	ConstraintMaxDaysBetweenActivitiesForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintMaxHalfDaysBetweenActivitiesForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }

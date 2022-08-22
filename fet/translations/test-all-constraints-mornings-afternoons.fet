@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.5.2">
+<fet version="6.5.5">
 
 <Mode>Mornings_Afternoons</Mode>
 
@@ -2467,6 +2467,29 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3>
+<ConstraintTeacherMinDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Minimum_Days_Per_Week>3</Minimum_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinDaysPerWeek>
+<ConstraintTeachersMinDaysPerWeek>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Days_Per_Week>3</Minimum_Days_Per_Week>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinDaysPerWeek>
+<ConstraintMaxHalfDaysBetweenActivities>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>6</Activity_Id>
+	<Activity_Id>3</Activity_Id>
+	<Activity_Id>2</Activity_Id>
+	<MaxDays>9</MaxDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMaxHalfDaysBetweenActivities>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

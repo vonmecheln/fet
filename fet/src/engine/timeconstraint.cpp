@@ -471,8 +471,8 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 	 type==CONSTRAINT_THREE_ACTIVITIES_GROUPED ||
 	 type==CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES ||
 
-//	 type==CONSTRAINT_TEACHERS_MIN_DAYS_PER_WEEK ||
-//	 type==CONSTRAINT_TEACHER_MIN_DAYS_PER_WEEK ||
+	 type==CONSTRAINT_TEACHERS_MIN_DAYS_PER_WEEK ||
+	 type==CONSTRAINT_TEACHER_MIN_DAYS_PER_WEEK ||
 
 //	 type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_DAILY ||
 //	 type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_DAILY ||
@@ -663,7 +663,9 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 	 type==CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3 ||
 	 type==CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3 ||
 	 type==CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3 ||
-	 type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3)
+	 type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3 ||
+	
+	 type==CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES)
 		return true;
 
 	return false;
@@ -51279,5 +51281,341 @@ bool ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3::repairWrongDayOrH
 {
 	assert(hasWrongDayOrHour(r));
 
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintMaxHalfDaysBetweenActivities::ConstraintMaxHalfDaysBetweenActivities()
+	: TimeConstraint()
+{
+	type=CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES;
+}
+
+ConstraintMaxHalfDaysBetweenActivities::ConstraintMaxHalfDaysBetweenActivities(double wp, int nact, const QList<int>& act, int n)
+ : TimeConstraint(wp)
+ {
+  	assert(nact>=2);
+  	assert(act.count()==nact);
+	this->n_activities=nact;
+	this->activitiesId.clear();
+	for(int i=0; i<nact; i++)
+		this->activitiesId.append(act.at(i));
+
+	assert(n>=0);
+	this->maxDays=n;
+
+	this->type=CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES;
+}
+
+bool ConstraintMaxHalfDaysBetweenActivities::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	//compute the indices of the activities,
+	//based on their unique ID
+
+	assert(this->n_activities==this->activitiesId.count());
+
+	this->_activities.clear();
+	for(int i=0; i<this->n_activities; i++){
+		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		//assert(j>=0);
+		if(j>=0)
+			_activities.append(j);
+		/*int j;
+		Activity* act;
+		for(j=0; j<r.nInternalActivities; j++){
+			act=&r.internalActivitiesList[j];
+			if(act->id==this->activitiesId[i]){
+				this->_activities.append(j);
+				break;
+			}
+		}*/
+	}
+	this->_n_activities=this->_activities.count();
+	
+	if(this->_n_activities<=1){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+		//assert(0);
+		return false;
+	}
+
+	return true;
+}
+
+void ConstraintMaxHalfDaysBetweenActivities::removeUseless(Rules& r)
+{
+	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	
+	assert(this->n_activities==this->activitiesId.count());
+
+	QList<int> tmpList;
+
+	for(int i=0; i<this->n_activities; i++){
+		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		if(act!=nullptr)
+			tmpList.append(act->id);
+		/*for(int k=0; k<r.activitiesList.size(); k++){
+			Activity* act=r.activitiesList[k];
+			if(act->id==this->activitiesId[i]){
+				tmpList.append(act->id);
+				break;
+			}
+		}*/
+	}
+	
+	this->activitiesId=tmpList;
+	this->n_activities=this->activitiesId.count();
+
+	r.internalStructureComputed=false;
+}
+
+bool ConstraintMaxHalfDaysBetweenActivities::hasInactiveActivities(Rules& r)
+{
+	int count=0;
+
+	for(int i=0; i<this->n_activities; i++)
+		if(r.inactiveActivities.contains(this->activitiesId[i]))
+			count++;
+
+	if(this->n_activities-count<=1)
+		return true;
+	else
+		return false;
+}
+
+QString ConstraintMaxHalfDaysBetweenActivities::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintMaxHalfDaysBetweenActivities>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
+	for(int i=0; i<this->n_activities; i++)
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesId[i])+"</Activity_Id>\n";
+	s+="	<MaxDays>"+CustomFETString::number(this->maxDays)+"</MaxDays>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintMaxHalfDaysBetweenActivities>\n";
+	return s;
+}
+
+QString ConstraintMaxHalfDaysBetweenActivities::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Max half days between activities");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	for(int i=0; i<this->n_activities; i++){
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);s+=", ";
+	}
+	s+=tr("MD:%1", "Abbreviation for maximum days").arg(this->maxDays);
+
+	return begin+s+end;
+}
+
+QString ConstraintMaxHalfDaysBetweenActivities::getDetailedDescription(Rules& r)
+{
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("Maximum number of half days between activities");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
+	for(int i=0; i<this->n_activities; i++){
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			.arg(this->activitiesId[i])
+			.arg(getActivityDetailedDescription(r, this->activitiesId[i]));
+		s+="\n";
+	}
+	s+=tr("Maximum number of days=%1").arg(this->maxDays);s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintMaxHalfDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	assert(r.internalStructureComputed);
+
+	int nbroken;
+
+	//We do not use the matrices 'subgroupsMatrix' nor 'teachersMatrix'.
+
+	//without logging
+	if(conflictsString==nullptr){
+		nbroken=0;
+		for(int i=1; i<this->_n_activities; i++){
+			int t1=c.times[this->_activities[i]];
+			if(t1!=UNALLOCATED_TIME){
+				int day1=t1%r.nDaysPerWeek;
+				//int hour1=t1/r.nDaysPerWeek;
+				//int duration1=r.internalActivitiesList[this->_activities[i]].duration;
+
+				for(int j=0; j<i; j++){
+					int t2=c.times[this->_activities[j]];
+					if(t2!=UNALLOCATED_TIME){
+						int day2=t2%r.nDaysPerWeek;
+						//int hour2=t2/r.nDaysPerWeek;
+						//int duration2=r.internalActivitiesList[this->_activities[j]].duration;
+						
+						int tmp;
+						int tt=0;
+						int dist = abs(day1-day2);
+						if(dist>maxDays){
+							tt=dist-maxDays;
+							
+							//if(this->consecutiveIfSameDay && day1==day2)
+							//	assert( day1==day2 && (hour1+duration1==hour2 || hour2+duration2==hour1) );
+						}
+						
+						tmp=tt;
+	
+						nbroken+=tmp;
+					}
+				}
+			}
+		}
+	}
+	//with logging
+	else{
+		nbroken=0;
+		for(int i=1; i<this->_n_activities; i++){
+			int t1=c.times[this->_activities[i]];
+			if(t1!=UNALLOCATED_TIME){
+				int day1=t1%r.nDaysPerWeek;
+				//int hour1=t1/r.nDaysPerWeek;
+				//int duration1=r.internalActivitiesList[this->_activities[i]].duration;
+
+				for(int j=0; j<i; j++){
+					int t2=c.times[this->_activities[j]];
+					if(t2!=UNALLOCATED_TIME){
+						int day2=t2%r.nDaysPerWeek;
+						//int hour2=t2/r.nDaysPerWeek;
+						//int duration2=r.internalActivitiesList[this->_activities[j]].duration;
+					
+						int tmp;
+						int tt=0;
+						int dist = abs(day1-day2);
+						if(dist>maxDays){
+							tt=dist-maxDays;
+							
+							//if(this->consecutiveIfSameDay && day1==day2)
+							//	assert( day1==day2 && (hour1+duration1==hour2 || hour2+duration2==hour1) );
+						}
+
+						tmp=tt;
+
+						nbroken+=tmp;
+
+						if(tt>0 && conflictsString!=nullptr){
+							QString s=tr("Time constraint max half days between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), being %5 days too far away"
+							 ", on days %6 and %7", "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
+							 .arg(this->activitiesId[i])
+							 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))
+							 .arg(this->activitiesId[j])
+							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]))
+							 .arg(tt)
+							 .arg(r.daysOfTheWeek[day1])
+							 .arg(r.daysOfTheWeek[day2]);
+							
+							s+=", ";
+							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
+							s+=".";
+							
+							dl.append(s);
+							cl.append(tmp*weightPercentage/100);
+							
+							*conflictsString+= s+"\n";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintMaxHalfDaysBetweenActivities::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+
+	for(int i=0; i<this->n_activities; i++)
+		if(this->activitiesId[i]==a->id)
+			return true;
+	return false;
+}
+
+bool ConstraintMaxHalfDaysBetweenActivities::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintMaxHalfDaysBetweenActivities::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintMaxHalfDaysBetweenActivities::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintMaxHalfDaysBetweenActivities::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintMaxHalfDaysBetweenActivities::hasWrongDayOrHour(Rules& r)
+{
+	if(maxDays>=r.nDaysPerWeek)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintMaxHalfDaysBetweenActivities::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintMaxHalfDaysBetweenActivities::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxDays>=r.nDaysPerWeek)
+		maxDays=r.nDaysPerWeek-1;
+	
 	return true;
 }

@@ -2524,4 +2524,12 @@ Versions 6.5.0 - 6.5.v
 - Version 6.5.3
 	- Updated to Qt 6.3.1.
 	- Minor interface bug fixes: in the timetable view teachers/students/rooms days horizontal, the cells marked with -x- or -X- were sometimes shown
-	with bold, italic or underlined font when changing the teacher/students set/room if there were locked activities in the timetable.
+	with bold, italic, or underlined font when changing the teacher/students set/room if there were locked activities in the timetable.
+- Version 6.5.4
+	- Added a new type of constraint, teacher(s) min days per week, in the Mornings-Afternoons mode (suggested by Abdeljalil Elghazoui and Benahmed Abdelkrim).
+	(This constraint was already available in the other modes, but in the Mornings-Afternoons mode there was available only the constraint teacher(s)
+	min real days per week.)
+	- Added a new example file from Algeria, by Benahmed Abdelkrim.
+	- Updated the Russian translation, by Alexey Chernous.
+- Version 6.5.5
+	- Added a new type of constraint, max half days between activities, in the Mornings-Afternoons mode (suggested by Mohamed Ait Ichou and fourat).

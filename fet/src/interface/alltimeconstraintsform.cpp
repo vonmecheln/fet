@@ -48,6 +48,7 @@
 #include "modifyconstraintmindaysbetweenactivitiesform.h"
 #include "modifyconstraintminhalfdaysbetweenactivitiesform.h"
 #include "modifyconstraintmaxdaysbetweenactivitiesform.h"
+#include "modifyconstraintmaxhalfdaysbetweenactivitiesform.h"
 #include "modifyconstraintmaxtermsbetweenactivitiesform.h"
 #include "modifyconstraintmingapsbetweenactivitiesform.h"
 #include "modifyconstraintactivityendsstudentsdayform.h"
@@ -1858,6 +1859,12 @@ void AllTimeConstraintsForm::modifyConstraint()
 	//193
 	else if(ctr->type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
 		ModifyConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3Form form(this, (ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//194
+	else if(ctr->type==CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES){
+		ModifyConstraintMaxHalfDaysBetweenActivitiesForm form(this, (ConstraintMaxHalfDaysBetweenActivities*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

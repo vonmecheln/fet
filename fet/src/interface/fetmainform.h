@@ -199,6 +199,7 @@ private:
 	QAction* dataTimeConstraintsTeachersMaxDaysPerWeekAction;
 	QAction* dataTimeConstraintsThreeActivitiesGroupedAction;
 	QAction* dataTimeConstraintsMaxDaysBetweenActivitiesAction;
+	QAction* dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction;
 	QAction* dataTimeConstraintsMaxTermsBetweenActivitiesAction;
 	QAction* dataTimeConstraintsTeacherMinDaysPerWeekAction;
 	QAction* dataTimeConstraintsTeachersMinDaysPerWeekAction;
@@ -557,6 +558,7 @@ public slots:
 	void dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsMinHalfDaysBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered();
+	void dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsMaxTermsBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsActivityEndsStudentsDayAction_triggered();

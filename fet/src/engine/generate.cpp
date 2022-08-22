@@ -7499,6 +7499,7 @@ again_if_impossible_activity:
 		bool okmindays;
 		bool okminhalfdays;
 		bool okmaxdays;
+		bool okmaxhalfdays;
 		//For terms - max terms between activities
 		bool okmaxterms;
 		bool oksamestartingtime;
@@ -7980,6 +7981,44 @@ impossibleminhalfdays:
 		}
 impossiblemaxdays:
 		if(!okmaxdays){
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//care about max half days between activities
+		okmaxhalfdays=true;
+		
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(int i=0; i<maxHalfDaysListOfActivities[ai].count(); i++){
+				int ai2=maxHalfDaysListOfActivities[ai].at(i);
+				int md=maxHalfDaysListOfMaxDays[ai].at(i);
+				int ai2time=c.times[ai2];
+				if(ai2time!=UNALLOCATED_TIME){
+					int d2=ai2time%gt.rules.nDaysPerWeek;
+					//int h2=ai2time/gt.rules.nDaysPerWeek;
+					if(md<abs(d-d2)){
+						bool okrand=skipRandom(maxHalfDaysListOfWeightPercentages[ai].at(i));
+						if(!okrand){
+							if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+								okmaxhalfdays=false;
+								goto impossiblemaxhalfdays;
+							}
+							
+							if(!conflActivities[newtime].contains(ai2)){
+								conflActivities[newtime].append(ai2);
+
+								nConflActivities[newtime]++;
+								assert(nConflActivities[newtime]==conflActivities[newtime].count());
+							}
+						}
+					}
+				}
+			}
+		}
+impossiblemaxhalfdays:
+		if(!okmaxhalfdays){
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}
@@ -24816,7 +24855,6 @@ impossibleteachersactivitytagmaxhourscontinuously:
 						bool _ok;
 						if(teachersMaxGapsPerWeekPercentage[tch]==-1){
 							int _reqHours=0;
-							int _usedDays=0;
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
 								if(newTeachersDayNHours(tch,d2)>0){
 									//_usedDays++;
@@ -24851,18 +24889,38 @@ impossibleteachersactivitytagmaxhourscontinuously:
 										}
 									}
 								}
-							for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
-								if(newTeachersDayNHours(tch,2*d2)>0 || newTeachersDayNHours(tch,2*d2+1)>0)
-									_usedDays++;
+							
+							int _plusMDPW=0;
+							if(teachersMinDaysPerWeekPercentages[tch]>=0){
+								int _usedDays=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+									if(newTeachersDayNHours(tch,d2)>0)
+										_usedDays++;
 
+								assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
+								assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
+								int _md=teachersMinDaysPerWeekMinDays[tch];
+								assert(_md>=0);
+								if(_md>_usedDays)
+									_plusMDPW=(_md-_usedDays)*teachersMinHoursDailyMinHours[tch][1];
+							}
+
+							int _plusMRDPW=0;
 							if(teachersMinRealDaysPerWeekPercentages[tch]>=0){
-								assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek/2);
+								int _usedRealDays=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
+									if(newTeachersDayNHours(tch,2*d2)>0 || newTeachersDayNHours(tch,2*d2+1)>0)
+										_usedRealDays++;
+
+								assert(_usedRealDays>=0 && _usedRealDays<=gt.rules.nDaysPerWeek/2);
 								assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
 								int _md=teachersMinRealDaysPerWeekMinDays[tch];
 								assert(_md>=0);
-								if(_md>_usedDays)
-									_reqHours+=(_md-_usedDays)*teachersMinHoursDailyMinHours[tch][1];
+								if(_md>_usedRealDays)
+									_plusMRDPW=(_md-_usedRealDays)*teachersMinHoursDailyMinHours[tch][1];
 							}
+							
+							_reqHours+=max(_plusMDPW, _plusMRDPW);
 
 							if(_reqHours <= nHoursPerTeacher[tch])
 								_ok=true; //ok
@@ -24872,7 +24930,6 @@ impossibleteachersactivitytagmaxhourscontinuously:
 						else{
 							int remG=0;
 							int totalH=0;
-							int _usedDays=0;
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 								int remGDay=newTeachersDayNGaps(tch,d2);
 								int h=newTeachersDayNHours(tch,d2);
@@ -24919,18 +24976,38 @@ impossibleteachersactivitytagmaxhourscontinuously:
 								if(remGDay>0)
 									remG+=remGDay;
 							}
-							for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
-								if(newTeachersDayNHours(tch,2*d2)>0 || newTeachersDayNHours(tch,2*d2+1)>0)
-									_usedDays++;
+							
+							int _plusMDPW=0;
+							if(teachersMinDaysPerWeekPercentages[tch]>=0){
+								int _usedDays=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+									if(newTeachersDayNHours(tch,d2)>0)
+										_usedDays++;
+								
+								assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
+								assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
+								int _md=teachersMinDaysPerWeekMinDays[tch];
+								assert(_md>=0);
+								if(_md>_usedDays)
+									_plusMDPW=(_md-_usedDays)*teachersMinHoursDailyMinHours[tch][1];
+							}
 
+							int _plusMRDPW=0;
 							if(teachersMinRealDaysPerWeekPercentages[tch]>=0){
-								assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek/2);
+								int _usedRealDays=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
+									if(newTeachersDayNHours(tch,2*d2)>0 || newTeachersDayNHours(tch,2*d2+1)>0)
+										_usedRealDays++;
+
+								assert(_usedRealDays>=0 && _usedRealDays<=gt.rules.nDaysPerWeek/2);
 								assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
 								int _md=teachersMinRealDaysPerWeekMinDays[tch];
 								assert(_md>=0);
-								if(_md>_usedDays)
-									totalH+=(_md-_usedDays)*teachersMinHoursDailyMinHours[tch][1];
+								if(_md>_usedRealDays)
+									_plusMRDPW=(_md-_usedRealDays)*teachersMinHoursDailyMinHours[tch][1];
 							}
+							
+							totalH+=max(_plusMDPW, _plusMRDPW);
 
 							if(remG+totalH<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
 							  && totalH<=nHoursPerTeacher[tch])
@@ -24954,7 +25031,6 @@ impossibleteachersactivitytagmaxhourscontinuously:
 							bool ok;
 							if(teachersMaxGapsPerWeekPercentage[tch]==-1){
 								int _reqHours=0;
-								int _usedDays=0;
 								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
 									if(tchDayNHours[d2]>0){
 										//_usedDays++;
@@ -24989,18 +25065,38 @@ impossibleteachersactivitytagmaxhourscontinuously:
 											}
 										}
 									}
-								for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
-									if(tchDayNHours[2*d2]>0 || tchDayNHours[2*d2+1]>0)
-										_usedDays++;
 
+								int _plusMDPW=0;
+								if(teachersMinDaysPerWeekPercentages[tch]>=0){
+									int _usedDays=0;
+									for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+										if(tchDayNHours[d2]>0)
+											_usedDays++;
+
+									assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
+									assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
+									int _md=teachersMinDaysPerWeekMinDays[tch];
+									assert(_md>=0);
+									if(_md>_usedDays)
+										_plusMDPW=(_md-_usedDays)*teachersMinHoursDailyMinHours[tch][1];
+								}
+
+								int _plusMRDPW=0;
 								if(teachersMinRealDaysPerWeekPercentages[tch]>=0){
-									assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek/2);
+									int _usedRealDays=0;
+									for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
+										if(tchDayNHours[2*d2]>0 || tchDayNHours[2*d2+1]>0)
+											_usedRealDays++;
+
+									assert(_usedRealDays>=0 && _usedRealDays<=gt.rules.nDaysPerWeek/2);
 									assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
 									int _md=teachersMinRealDaysPerWeekMinDays[tch];
 									assert(_md>=0);
-									if(_md>_usedDays)
-										_reqHours+=(_md-_usedDays)*teachersMinHoursDailyMinHours[tch][1];
+									if(_md>_usedRealDays)
+										_plusMRDPW=(_md-_usedRealDays)*teachersMinHoursDailyMinHours[tch][1];
 								}
+								
+								_reqHours+=max(_plusMDPW, _plusMRDPW);
 
 								if(_reqHours <= nHoursPerTeacher[tch])
 									ok=true; //ok
@@ -25010,7 +25106,6 @@ impossibleteachersactivitytagmaxhourscontinuously:
 							else{
 								int remG=0;
 								int totalH=0;
-								int _usedDays=0;
 								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 									int remGDay=tchDayNGaps[d2];
 									int h=tchDayNHours[d2];
@@ -25056,17 +25151,38 @@ impossibleteachersactivitytagmaxhourscontinuously:
 									if(remGDay>0)
 										remG+=remGDay;
 								}
-								for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
-									if(tchDayNHours[2*d2]>0 || tchDayNHours[2*d2+1]>0)
-										_usedDays++;
+
+								int _plusMDPW=0;
+								if(teachersMinDaysPerWeekPercentages[tch]>=0){
+									int _usedDays=0;
+									for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+										if(tchDayNHours[d2]>0)
+											_usedDays++;
+
+									assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
+									assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
+									int _md=teachersMinDaysPerWeekMinDays[tch];
+									assert(_md>=0);
+									if(_md>_usedDays)
+										_plusMDPW=(_md-_usedDays)*teachersMinHoursDailyMinHours[tch][1];
+								}
+
+								int _plusMRDPW=0;
 								if(teachersMinRealDaysPerWeekPercentages[tch]>=0){
-									assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek/2);
+									int _usedRealDays=0;
+									for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
+										if(tchDayNHours[2*d2]>0 || tchDayNHours[2*d2+1]>0)
+											_usedRealDays++;
+
+									assert(_usedRealDays>=0 && _usedRealDays<=gt.rules.nDaysPerWeek/2);
 									assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
 									int _md=teachersMinRealDaysPerWeekMinDays[tch];
 									assert(_md>=0);
-									if(_md>_usedDays)
-										totalH+=(_md-_usedDays)*teachersMinHoursDailyMinHours[tch][1];
+									if(_md>_usedRealDays)
+										_plusMRDPW=(_md-_usedRealDays)*teachersMinHoursDailyMinHours[tch][1];
 								}
+								
+								totalH+=max(_plusMDPW, _plusMRDPW);
 
 								if(remG+totalH<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
 								  && totalH<=nHoursPerTeacher[tch])
@@ -25148,7 +25264,6 @@ impossibleteachersminhoursdaily:
 						bool _ok;
 						if(teachersMaxGapsPerWeekPercentage[tch]==-1){
 							int _reqHours=0;
-							int _usedDays=0;
 							for(int rd=0; rd<gt.rules.nDaysPerWeek/2; rd++){
 								int d1=rd*2;
 								int d2=rd*2+1;
@@ -25232,21 +25347,22 @@ impossibleteachersminhoursdaily:
 									_reqHours+=max(_crtReqHoursHalfDays, _crtReqHoursWholeDay);
 							}
 
-							for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
-								if(newTeachersDayNHours(tch,2*d2)>0 || newTeachersDayNHours(tch,2*d2+1)>0)
-									_usedDays++;
-
 							if(teachersMinRealDaysPerWeekPercentages[tch]>=0){
-								assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek/2);
+								int _usedRealDays=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
+									if(newTeachersDayNHours(tch,2*d2)>0 || newTeachersDayNHours(tch,2*d2+1)>0)
+										_usedRealDays++;
+
+								assert(_usedRealDays>=0 && _usedRealDays<=gt.rules.nDaysPerWeek/2);
 								assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
 								int _md=teachersMinRealDaysPerWeekMinDays[tch];
 								assert(_md>=0);
-								if(_md>_usedDays){
+								if(_md>_usedRealDays){
 									if(teachersMinHoursDailyMinHours[tch][1]>=0){
-										_reqHours+=(_md-_usedDays)*max(teachersMinHoursDailyMinHours[tch][1], teachersMinHoursDailyRealDaysMinHours[tch]);
+										_reqHours+=(_md-_usedRealDays)*max(teachersMinHoursDailyMinHours[tch][1], teachersMinHoursDailyRealDaysMinHours[tch]);
 									}
 									else{
-										_reqHours+=(_md-_usedDays)*teachersMinHoursDailyRealDaysMinHours[tch];
+										_reqHours+=(_md-_usedRealDays)*teachersMinHoursDailyRealDaysMinHours[tch];
 									}
 								}
 							}
@@ -25263,7 +25379,6 @@ impossibleteachersminhoursdaily:
 							//int totalH1=0;
 							//int totalH2=0;
 							int totalH=0;
-							int _usedDays=0;
 							for(int rd=0; rd<gt.rules.nDaysPerWeek/2; rd++){
 								int d1=rd*2;
 								int d2=rd*2+1;
@@ -25340,21 +25455,22 @@ impossibleteachersminhoursdaily:
 										remG+=remGDay;
 								}
 							}
-							for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
-								if(newTeachersDayNHours(tch,2*d2)>0 || newTeachersDayNHours(tch,2*d2+1)>0)
-									_usedDays++;
-
 							if(teachersMinRealDaysPerWeekPercentages[tch]>=0){
-								assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek/2);
+								int _usedRealDays=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
+									if(newTeachersDayNHours(tch,2*d2)>0 || newTeachersDayNHours(tch,2*d2+1)>0)
+										_usedRealDays++;
+
+								assert(_usedRealDays>=0 && _usedRealDays<=gt.rules.nDaysPerWeek/2);
 								assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
 								int _md=teachersMinRealDaysPerWeekMinDays[tch];
 								assert(_md>=0);
-								if(_md>_usedDays){
+								if(_md>_usedRealDays){
 									if(teachersMinHoursDailyMinHours[tch][1]>=0){
-										totalH+=(_md-_usedDays)*max(teachersMinHoursDailyMinHours[tch][1], teachersMinHoursDailyRealDaysMinHours[tch]);
+										totalH+=(_md-_usedRealDays)*max(teachersMinHoursDailyMinHours[tch][1], teachersMinHoursDailyRealDaysMinHours[tch]);
 									}
 									else{
-										totalH+=(_md-_usedDays)*teachersMinHoursDailyRealDaysMinHours[tch];
+										totalH+=(_md-_usedRealDays)*teachersMinHoursDailyRealDaysMinHours[tch];
 									}
 								}
 							}
@@ -25383,7 +25499,6 @@ impossibleteachersminhoursdaily:
 							bool ok;
 							if(teachersMaxGapsPerWeekPercentage[tch]==-1){
 								int _reqHours=0;
-								int _usedDays=0;
 								for(int rd=0; rd<gt.rules.nDaysPerWeek/2; rd++){
 									int d1=rd*2;
 									int d2=rd*2+1;
@@ -25464,21 +25579,22 @@ impossibleteachersminhoursdaily:
 									if(tchDayNHours[d1]>0 || tchDayNHours[d2]>0) //this 'if' is useless
 										_reqHours+=max(_crtReqHoursHalfDays, _crtReqHoursWholeDay);
 								}
-								for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
-									if(tchDayNHours[2*d2]>0 || tchDayNHours[2*d2+1]>0)
-										_usedDays++;
-
 								if(teachersMinRealDaysPerWeekPercentages[tch]>=0){
-									assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek/2);
+									int _usedRealDays=0;
+									for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
+										if(tchDayNHours[2*d2]>0 || tchDayNHours[2*d2+1]>0)
+											_usedRealDays++;
+
+									assert(_usedRealDays>=0 && _usedRealDays<=gt.rules.nDaysPerWeek/2);
 									assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
 									int _md=teachersMinRealDaysPerWeekMinDays[tch];
 									assert(_md>=0);
-									if(_md>_usedDays){
+									if(_md>_usedRealDays){
 										if(teachersMinHoursDailyMinHours[tch][1]>=0){
-											_reqHours+=(_md-_usedDays)*max(teachersMinHoursDailyMinHours[tch][1], teachersMinHoursDailyRealDaysMinHours[tch]);
+											_reqHours+=(_md-_usedRealDays)*max(teachersMinHoursDailyMinHours[tch][1], teachersMinHoursDailyRealDaysMinHours[tch]);
 										}
 										else{
-											_reqHours+=(_md-_usedDays)*teachersMinHoursDailyRealDaysMinHours[tch];
+											_reqHours+=(_md-_usedRealDays)*teachersMinHoursDailyRealDaysMinHours[tch];
 										}
 									}
 								}
@@ -25495,7 +25611,6 @@ impossibleteachersminhoursdaily:
 								//int totalH1=0;
 								//int totalH2=0;
 								int totalH=0;
-								int _usedDays=0;
 								for(int rd=0; rd<gt.rules.nDaysPerWeek/2; rd++){
 									int d1=rd*2;
 									int d2=rd*2+1;
@@ -25571,21 +25686,22 @@ impossibleteachersminhoursdaily:
 											remG+=remGDay;
 									}
 								}
-								for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
-									if(tchDayNHours[2*d2]>0 || tchDayNHours[2*d2+1]>0)
-										_usedDays++;
-
 								if(teachersMinRealDaysPerWeekPercentages[tch]>=0){
-									assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek/2);
+									int _usedRealDays=0;
+									for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
+										if(tchDayNHours[2*d2]>0 || tchDayNHours[2*d2+1]>0)
+											_usedRealDays++;
+
+									assert(_usedRealDays>=0 && _usedRealDays<=gt.rules.nDaysPerWeek/2);
 									assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
 									int _md=teachersMinRealDaysPerWeekMinDays[tch];
 									assert(_md>=0);
-									if(_md>_usedDays){
+									if(_md>_usedRealDays){
 										if(teachersMinHoursDailyMinHours[tch][1]>=0){
-											totalH+=(_md-_usedDays)*max(teachersMinHoursDailyMinHours[tch][1], teachersMinHoursDailyRealDaysMinHours[tch]);
+											totalH+=(_md-_usedRealDays)*max(teachersMinHoursDailyMinHours[tch][1], teachersMinHoursDailyRealDaysMinHours[tch]);
 										}
 										else{
-											totalH+=(_md-_usedDays)*teachersMinHoursDailyRealDaysMinHours[tch];
+											totalH+=(_md-_usedRealDays)*teachersMinHoursDailyRealDaysMinHours[tch];
 										}
 									}
 								}
@@ -25655,133 +25771,57 @@ impossibleteachersminhoursdailyrealdays:
 
 		/////////begin teacher(s) min days per week
 		
-		//Put this routine after min hours daily
+		//Put this routine after min hours daily and min hours daily real days
 		
 		//Added on 11 September 2009
 
 		okteachersmindaysperweek=true;
-		for(int tch : qAsConst(act->iTeachersList)){
-			if(teachersMinDaysPerWeekMinDays[tch]>=0 && teachersMinHoursDailyMinHours[tch][MIN_HOURS_DAILY_INDEX_IN_ARRAY]==-1){ //no need to recheck, if min hours daily is set, because I tested above.
-				assert(teachersMinDaysPerWeekPercentages[tch]==100);
-			
-				bool skip=skipRandom(teachersMinDaysPerWeekPercentages[tch]);
-				if(!skip){
-					//preliminary test
-					bool _ok;
-					if(teachersMaxGapsPerWeekPercentage[tch]==-1){
-						int _reqHours=0;
-						int _usedDays=0;
-						for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
-							if(newTeachersDayNHours(tch,d2)>0){
-								_usedDays++;
-								if(teachersMaxGapsPerDayPercentage[tch]==-1){
-									_reqHours+=newTeachersDayNHours(tch,d2);
-								}
-								else{
-									int nh=max(0, newTeachersDayNGaps(tch,d2)-teachersMaxGapsPerDayMaxGaps[tch]);
-									_reqHours+=newTeachersDayNHours(tch,d2)+nh;
-								}
-							}
-							
-						assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
-						assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
-						int _md=teachersMinDaysPerWeekMinDays[tch];
-						assert(_md>=0);
-						if(_md>_usedDays)
-							_reqHours+=(_md-_usedDays)*1; //one hour per day minimum
-						
-						if(_reqHours <= nHoursPerTeacher[tch])
-							_ok=true; //ok
-						else
-							_ok=false;
-					}
-					else{
-						int remG=0;
-						int totalH=0;
-						int _usedDays=0;
-						for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
-							int remGDay=newTeachersDayNGaps(tch,d2);
-							int h=newTeachersDayNHours(tch,d2);
-							if(h>0){
-								_usedDays++;
-							}
-							int addh;
-							if(teachersMaxGapsPerDayPercentage[tch]>=0)
-								addh=max(0, remGDay-teachersMaxGapsPerDayMaxGaps[tch]);
-							else
-								addh=0;
-							remGDay-=addh;
-							assert(remGDay>=0);
-							h+=addh;
-							if(h>0)
-								totalH+=h;
-							if(remGDay>0)
-								remG+=remGDay;
-						}
+		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+			for(int tch : qAsConst(act->iTeachersList)){
+				if(teachersMinDaysPerWeekMinDays[tch]>=0 && teachersMinHoursDailyMinHours[tch][MIN_HOURS_DAILY_INDEX_IN_ARRAY]==-1){ //no need to recheck, if min hours daily is set, because I tested above.
+					assert(teachersMinDaysPerWeekPercentages[tch]==100);
 
-						assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
-						assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
-						int _md=teachersMinDaysPerWeekMinDays[tch];
-						assert(_md>=0);
-						if(_md>_usedDays)
-							totalH+=(_md-_usedDays)*1; //min 1 hour per day
-						
-						if(remG+totalH<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
-						  && totalH<=nHoursPerTeacher[tch])
-						  	_ok=true;
-						else
-							_ok=false;
-					}
-					
-					if(_ok)
-						continue;
-				
-					if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
-						okteachersmindaysperweek=false;
-						goto impossibleteachersmindaysperweek;
-					}
-
-					getTchTimetable(tch, conflActivities[newtime]);
-					tchGetNHoursGaps(tch);
-		
-					for(;;){
-						bool ok;
+					bool skip=skipRandom(teachersMinDaysPerWeekPercentages[tch]);
+					if(!skip){
+						//preliminary test
+						bool _ok;
 						if(teachersMaxGapsPerWeekPercentage[tch]==-1){
 							int _reqHours=0;
 							int _usedDays=0;
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
-								if(tchDayNHours[d2]>0){
+								if(newTeachersDayNHours(tch,d2)>0){
 									_usedDays++;
 									if(teachersMaxGapsPerDayPercentage[tch]==-1){
-										_reqHours+=tchDayNHours[d2];
+										_reqHours+=newTeachersDayNHours(tch,d2);
 									}
 									else{
-										int nh=max(0, tchDayNGaps[d2]-teachersMaxGapsPerDayMaxGaps[tch]);
-										_reqHours+=tchDayNHours[d2]+nh;
+										int nh=max(0, newTeachersDayNGaps(tch,d2)-teachersMaxGapsPerDayMaxGaps[tch]);
+										_reqHours+=newTeachersDayNHours(tch,d2)+nh;
 									}
 								}
-	
+
 							assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
 							assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
 							int _md=teachersMinDaysPerWeekMinDays[tch];
 							assert(_md>=0);
 							if(_md>_usedDays)
-								_reqHours+=(_md-_usedDays)*1; //min 1 hour for each day
-							
+								_reqHours+=(_md-_usedDays)*1; //one hour per day minimum
+
 							if(_reqHours <= nHoursPerTeacher[tch])
-								ok=true; //ok
+								_ok=true; //ok
 							else
-								ok=false;
+								_ok=false;
 						}
 						else{
 							int remG=0;
 							int totalH=0;
 							int _usedDays=0;
 							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
-								int remGDay=tchDayNGaps[d2];
-								int h=tchDayNHours[d2];
-								if(h>0)
+								int remGDay=newTeachersDayNGaps(tch,d2);
+								int h=newTeachersDayNHours(tch,d2);
+								if(h>0){
 									_usedDays++;
+								}
 								int addh;
 								if(teachersMaxGapsPerDayPercentage[tch]>=0)
 									addh=max(0, remGDay-teachersMaxGapsPerDayMaxGaps[tch]);
@@ -25795,88 +25835,143 @@ impossibleteachersminhoursdailyrealdays:
 								if(remGDay>0)
 									remG+=remGDay;
 							}
+
 							assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
 							assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
 							int _md=teachersMinDaysPerWeekMinDays[tch];
 							assert(_md>=0);
 							if(_md>_usedDays)
-								totalH+=(_md-_usedDays)*1; //min 1 hour each day
-							
+								totalH+=(_md-_usedDays)*1; //min 1 hour per day
+
 							if(remG+totalH<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
-							  && totalH<=nHoursPerTeacher[tch])
-							  	ok=true;
+							&& totalH<=nHoursPerTeacher[tch])
+								_ok=true;
 							else
-								ok=false;
+								_ok=false;
 						}
-						
-						if(ok)
-							break;
-							
-						int ai2=-1;
-						
-						bool k=teacherRemoveAnActivityFromBeginOrEnd(level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
-						assert(conflActivities[newtime].count()==nConflActivities[newtime]);
-						if(!k){
-							bool ka=teacherRemoveAnActivityFromAnywhere(level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
-							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
-							
-							if(!ka){
-								if(level==0){
-									//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
-									//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
-								}
-								okteachersmindaysperweek=false;
-								goto impossibleteachersmindaysperweek;
+
+						if(_ok)
+							continue;
+
+						if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
+							okteachersmindaysperweek=false;
+							goto impossibleteachersmindaysperweek;
+						}
+
+						getTchTimetable(tch, conflActivities[newtime]);
+						tchGetNHoursGaps(tch);
+
+						for(;;){
+							bool ok;
+							if(teachersMaxGapsPerWeekPercentage[tch]==-1){
+								int _reqHours=0;
+								int _usedDays=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+									if(tchDayNHours[d2]>0){
+										_usedDays++;
+										if(teachersMaxGapsPerDayPercentage[tch]==-1){
+											_reqHours+=tchDayNHours[d2];
+										}
+										else{
+											int nh=max(0, tchDayNGaps[d2]-teachersMaxGapsPerDayMaxGaps[tch]);
+											_reqHours+=tchDayNHours[d2]+nh;
+										}
+									}
+
+								assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
+								assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
+								int _md=teachersMinDaysPerWeekMinDays[tch];
+								assert(_md>=0);
+								if(_md>_usedDays)
+									_reqHours+=(_md-_usedDays)*1; //min 1 hour for each day
+
+								if(_reqHours <= nHoursPerTeacher[tch])
+									ok=true; //ok
+								else
+									ok=false;
 							}
+							else{
+								int remG=0;
+								int totalH=0;
+								int _usedDays=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+									int remGDay=tchDayNGaps[d2];
+									int h=tchDayNHours[d2];
+									if(h>0)
+										_usedDays++;
+									int addh;
+									if(teachersMaxGapsPerDayPercentage[tch]>=0)
+										addh=max(0, remGDay-teachersMaxGapsPerDayMaxGaps[tch]);
+									else
+										addh=0;
+									remGDay-=addh;
+									assert(remGDay>=0);
+									h+=addh;
+									if(h>0)
+										totalH+=h;
+									if(remGDay>0)
+										remG+=remGDay;
+								}
+								assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
+								assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
+								int _md=teachersMinDaysPerWeekMinDays[tch];
+								assert(_md>=0);
+								if(_md>_usedDays)
+									totalH+=(_md-_usedDays)*1; //min 1 hour each day
+
+								if(remG+totalH<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
+								&& totalH<=nHoursPerTeacher[tch])
+									ok=true;
+								else
+									ok=false;
+							}
+
+							if(ok)
+								break;
+
+							int ai2=-1;
+
+							bool k=teacherRemoveAnActivityFromBeginOrEnd(level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
+							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+							if(!k){
+								bool ka=teacherRemoveAnActivityFromAnywhere(level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
+								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+
+								if(!ka){
+									if(level==0){
+										//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+										//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
+									}
+									okteachersmindaysperweek=false;
+									goto impossibleteachersmindaysperweek;
+								}
+							}
+
+							assert(ai2>=0);
+
+							/*Activity* act2=&gt.rules.internalActivitiesList[ai2];
+							int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
+							int h2=c.times[ai2]/gt.rules.nDaysPerWeek;
+
+							for(int dur2=0; dur2<act2->duration; dur2++){
+								assert(tchTimetable(d2,h2+dur2)==ai2);
+								tchTimetable(d2,h2+dur2)=-1;
+							}*/
+
+							removeAi2FromTchTimetable(ai2);
+							updateTchNHoursGaps(tch, c.times[ai2]%gt.rules.nDaysPerWeek);
 						}
-
-						assert(ai2>=0);
-
-						/*Activity* act2=&gt.rules.internalActivitiesList[ai2];
-						int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
-						int h2=c.times[ai2]/gt.rules.nDaysPerWeek;
-						
-						for(int dur2=0; dur2<act2->duration; dur2++){
-							assert(tchTimetable(d2,h2+dur2)==ai2);
-							tchTimetable(d2,h2+dur2)=-1;
-						}*/
-
-						removeAi2FromTchTimetable(ai2);
-						updateTchNHoursGaps(tch, c.times[ai2]%gt.rules.nDaysPerWeek);
 					}
 				}
 			}
 		}
-		
-impossibleteachersmindaysperweek:
-		if(!okteachersmindaysperweek){
-			if(updateSubgroups || updateTeachers)
-				removeAiFromNewTimetable(ai, act, d, h);
-			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
-
-			nConflActivities[newtime]=MAX_ACTIVITIES;
-			continue;
-		}
-		
-		/////////end teacher(s) min days per week
-
-/////////////////////////////////////////////////////////////////////////////////////////////
-
-		/////////begin teacher(s) min real days per week
-
-		//Maybe old comments below:
-		//Put this routine after min hours daily
-
-		//Added on 11 September 2009
-
-		okteachersminrealdaysperweek=true;
-		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		else{
 			for(int tch : qAsConst(act->iTeachersList)){
-				if(teachersMinRealDaysPerWeekMinDays[tch]>=0 && teachersMinHoursDailyMinHours[tch][1]==-1 && teachersMinHoursDailyRealDaysMinHours[tch]==-1){
-				//no need to recheck, if min hours daily (or for a real day) is set, because I tested above.
-					assert(teachersMinRealDaysPerWeekPercentages[tch]==100);
+				if(teachersMinDaysPerWeekMinDays[tch]>=0 && teachersMinHoursDailyMinHours[tch][1]==-1 /* && teachersMinHoursDailyRealDaysMinHours[tch]==-1 */){
+				//no need to recheck, if min hours daily (BUT NOT: for real days) is set, because I tested above.
+					assert(teachersMinDaysPerWeekPercentages[tch]==100);
 
-					bool skip=skipRandom(teachersMinRealDaysPerWeekPercentages[tch]);
+					bool skip=skipRandom(teachersMinDaysPerWeekPercentages[tch]);
 					if(!skip){
 						//preliminary test
 						bool _ok;
@@ -25917,13 +26012,13 @@ impossibleteachersmindaysperweek:
 										}
 									}
 								}
-							for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
-								if(newTeachersDayNHours(tch,2*d2)>0 || newTeachersDayNHours(tch,2*d2+1)>0)
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+								if(newTeachersDayNHours(tch,d2)>0)
 									_usedDays++;
 
-							assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek/2);
-							assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
-							int _md=teachersMinRealDaysPerWeekMinDays[tch];
+							assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
+							assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
+							int _md=teachersMinDaysPerWeekMinDays[tch];
 							assert(_md>=0);
 							if(_md>_usedDays)
 								_reqHours+=(_md-_usedDays)*1; //one hour per day minimum
@@ -25977,13 +26072,14 @@ impossibleteachersmindaysperweek:
 								if(remGDay>0)
 									remG+=remGDay;
 							}
-							for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
-								if(newTeachersDayNHours(tch,2*d2)>0 || newTeachersDayNHours(tch,2*d2+1)>0)
+							
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+								if(newTeachersDayNHours(tch,d2)>0)
 									_usedDays++;
-
-							assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek/2);
-							assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
-							int _md=teachersMinRealDaysPerWeekMinDays[tch];
+							assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
+							
+							assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
+							int _md=teachersMinDaysPerWeekMinDays[tch];
 							assert(_md>=0);
 							if(_md>_usedDays)
 								totalH+=(_md-_usedDays)*1; //min 1 hour per day
@@ -25999,8 +26095,8 @@ impossibleteachersmindaysperweek:
 							continue;
 
 						if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
-							okteachersminrealdaysperweek=false;
-							goto impossibleteachersminrealdaysperweek;
+							okteachersmindaysperweek=false;
+							goto impossibleteachersmindaysperweek;
 						}
 
 						getTchTimetable(tch, conflActivities[newtime]);
@@ -26048,13 +26144,14 @@ impossibleteachersmindaysperweek:
 										}
 
 									}
-								for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
-									if(tchDayNHours[2*d2]>0 || tchDayNHours[2*d2+1]>0)
+								
+								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+									if(tchDayNHours[d2]>0)
 										_usedDays++;
 
-								assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek/2);
-								assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
-								int _md=teachersMinRealDaysPerWeekMinDays[tch];
+								assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
+								assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
+								int _md=teachersMinDaysPerWeekMinDays[tch];
 								assert(_md>=0);
 								if(_md>_usedDays)
 									_reqHours+=(_md-_usedDays)*1; //min 1 hour for each day
@@ -26107,15 +26204,332 @@ impossibleteachersmindaysperweek:
 									if(remGDay>0)
 										remG+=remGDay;
 								}
-								for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
-									if(tchDayNHours[2*d2]>0 || tchDayNHours[2*d2+1]>0)
+								
+								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+									if(tchDayNHours[d2]>0)
 										_usedDays++;
-								assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek/2);
-								assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
-								int _md=teachersMinRealDaysPerWeekMinDays[tch];
+								assert(_usedDays>=0 && _usedDays<=gt.rules.nDaysPerWeek);
+								assert(teachersMinDaysPerWeekPercentages[tch]==100.0);
+								int _md=teachersMinDaysPerWeekMinDays[tch];
 								assert(_md>=0);
 								if(_md>_usedDays)
 									totalH+=(_md-_usedDays)*1; //min 1 hour each day
+
+								if(remG+totalH<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
+								  && totalH<=nHoursPerTeacher[tch])
+									ok=true;
+								else
+									ok=false;
+							}
+
+							if(ok)
+								break;
+
+							int ai2=-1;
+
+							bool k=teacherRemoveAnActivityFromBeginOrEnd(level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
+							assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+							if(!k){
+								bool ka=teacherRemoveAnActivityFromAnywhere(level, ai, conflActivities[newtime], nConflActivities[newtime], ai2);
+								assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+
+								if(!ka){
+									if(level==0){
+										//Liviu: inactivated from version 5.12.4 (7 Feb. 2010), because it may take too long for some files
+										//cout<<"WARNING - mb - file "<<__FILE__<<" line "<<__LINE__<<endl;
+									}
+									okteachersmindaysperweek=false;
+									goto impossibleteachersmindaysperweek;
+								}
+							}
+
+							assert(ai2>=0);
+
+							/*Activity* act2=&gt.rules.internalActivitiesList[ai2];
+							int d2=c.times[ai2]%gt.rules.nDaysPerWeek;
+							int h2=c.times[ai2]/gt.rules.nDaysPerWeek;
+
+							for(int dur2=0; dur2<act2->duration; dur2++){
+								assert(tchTimetable(d2,h2+dur2)==ai2);
+								tchTimetable(d2,h2+dur2)=-1;
+							}*/
+
+							removeAi2FromTchTimetable(ai2);
+							updateTchNHoursGaps(tch, c.times[ai2]%gt.rules.nDaysPerWeek);
+						}
+					}
+				}
+			}
+		}
+
+impossibleteachersmindaysperweek:
+		if(!okteachersmindaysperweek){
+			if(updateSubgroups || updateTeachers)
+				removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+		/////////end teacher(s) min days per week
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		/////////begin teacher(s) min real days per week
+
+		//Maybe old comments below:
+		//Put this routine after min hours daily and min hours daily real days
+
+		//Added on 11 September 2009
+
+		okteachersminrealdaysperweek=true;
+		if(gt.rules.mode==MORNINGS_AFTERNOONS){
+			for(int tch : qAsConst(act->iTeachersList)){
+				if(teachersMinRealDaysPerWeekMinDays[tch]>=0 && teachersMinHoursDailyMinHours[tch][1]==-1 && teachersMinHoursDailyRealDaysMinHours[tch]==-1){
+				//no need to recheck, if min hours daily (or for real days) is set, because I tested above.
+					assert(teachersMinRealDaysPerWeekPercentages[tch]==100);
+
+					bool skip=skipRandom(teachersMinRealDaysPerWeekPercentages[tch]);
+					if(!skip){
+						//preliminary test
+						bool _ok;
+						if(teachersMaxGapsPerWeekPercentage[tch]==-1){
+							int _reqHours=0;
+							int _usedRealDays=0;
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+								if(newTeachersDayNHours(tch,d2)>0){
+									//_usedDays++;
+									//2019-09-13 - max gaps per afternoon = 0
+									if(teacherNoGapsPerAfternoon(tch)){
+										if(teachersMaxGapsPerDayPercentage[tch]==-1){
+											if(d2%2==0){
+												_reqHours+=newTeachersDayNHours(tch,d2);
+											}
+											else{
+												_reqHours+=newTeachersDayNHours(tch,d2)+newTeachersDayNGaps(tch,d2);
+											}
+										}
+										else{
+											if(d2%2==0){
+												int nh=max(0, newTeachersDayNGaps(tch,d2)-teachersMaxGapsPerDayMaxGaps[tch]);
+												_reqHours+=newTeachersDayNHours(tch,d2)+nh;
+											}
+											else{
+												int nh=max(0, newTeachersDayNGaps(tch,d2)-0/*teachersMaxGapsPerDayMaxGaps[tch]*/);
+												_reqHours+=newTeachersDayNHours(tch,d2)+nh;
+											}
+										}
+									}
+									else{
+										if(teachersMaxGapsPerDayPercentage[tch]==-1){
+											_reqHours+=newTeachersDayNHours(tch,d2);
+										}
+										else{
+											int nh=max(0, newTeachersDayNGaps(tch,d2)-teachersMaxGapsPerDayMaxGaps[tch]);
+											_reqHours+=newTeachersDayNHours(tch,d2)+nh;
+										}
+									}
+								}
+							for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
+								if(newTeachersDayNHours(tch,2*d2)>0 || newTeachersDayNHours(tch,2*d2+1)>0)
+									_usedRealDays++;
+
+							assert(_usedRealDays>=0 && _usedRealDays<=gt.rules.nDaysPerWeek/2);
+							assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
+							int _md=teachersMinRealDaysPerWeekMinDays[tch];
+							assert(_md>=0);
+							if(_md>_usedRealDays)
+								_reqHours+=(_md-_usedRealDays)*1; //one hour per day minimum
+
+							if(_reqHours <= nHoursPerTeacher[tch])
+								_ok=true; //ok
+							else
+								_ok=false;
+						}
+						else{
+							int remG=0;
+							int totalH=0;
+							int _usedRealDays=0;
+							for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+								int remGDay=newTeachersDayNGaps(tch,d2);
+								int h=newTeachersDayNHours(tch,d2);
+								//if(h>0){
+								//	_usedDays++;
+								//}
+								int addh;
+								//2019-09-13 - max gaps per afternoon = 0
+								if(teacherNoGapsPerAfternoon(tch)){
+									if(teachersMaxGapsPerDayPercentage[tch]>=0){
+										if(d2%2==0){
+											addh=max(0, remGDay-teachersMaxGapsPerDayMaxGaps[tch]);
+										}
+										else{
+											addh=max(0, remGDay-0/*teachersMaxGapsPerDayMaxGaps[tch]*/);
+										}
+									}
+									else{
+										if(d2%2==0){
+											addh=0;
+										}
+										else{
+											addh=max(0, remGDay-0/*teachersMaxGapsPerDayMaxGaps[tch]*/);
+										}
+									}
+								}
+								else{
+									if(teachersMaxGapsPerDayPercentage[tch]>=0)
+										addh=max(0, remGDay-teachersMaxGapsPerDayMaxGaps[tch]);
+									else
+										addh=0;
+								}
+								remGDay-=addh;
+								assert(remGDay>=0);
+								h+=addh;
+								if(h>0)
+									totalH+=h;
+								if(remGDay>0)
+									remG+=remGDay;
+							}
+							for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
+								if(newTeachersDayNHours(tch,2*d2)>0 || newTeachersDayNHours(tch,2*d2+1)>0)
+									_usedRealDays++;
+
+							assert(_usedRealDays>=0 && _usedRealDays<=gt.rules.nDaysPerWeek/2);
+							assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
+							int _md=teachersMinRealDaysPerWeekMinDays[tch];
+							assert(_md>=0);
+							if(_md>_usedRealDays)
+								totalH+=(_md-_usedRealDays)*1; //min 1 hour per day
+
+							if(remG+totalH<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
+							  && totalH<=nHoursPerTeacher[tch])
+								_ok=true;
+							else
+								_ok=false;
+						}
+
+						if(_ok)
+							continue;
+
+						if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
+							okteachersminrealdaysperweek=false;
+							goto impossibleteachersminrealdaysperweek;
+						}
+
+						getTchTimetable(tch, conflActivities[newtime]);
+						tchGetNHoursGaps(tch);
+
+						for(;;){
+							bool ok;
+							if(teachersMaxGapsPerWeekPercentage[tch]==-1){
+								int _reqHours=0;
+								int _usedRealDays=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++)
+									if(tchDayNHours[d2]>0){
+										//_usedDays++;
+										//2019-09-13 - max gaps per afternoon = 0
+
+										if(teacherNoGapsPerAfternoon(tch)){
+											if(teachersMaxGapsPerDayPercentage[tch]==-1){
+												if(d2%2==0){
+													_reqHours+=tchDayNHours[d2];
+												}
+												else{
+													int nh=max(0, tchDayNGaps[d2]-0/*teachersMaxGapsPerDayMaxGaps[tch]*/);
+													_reqHours+=tchDayNHours[d2]+nh;
+												}
+											}
+											else{
+												if(d2%2==0){
+													int nh=max(0, tchDayNGaps[d2]-teachersMaxGapsPerDayMaxGaps[tch]);
+													_reqHours+=tchDayNHours[d2]+nh;
+												}
+												else{
+													int nh=max(0, tchDayNGaps[d2]-0/*teachersMaxGapsPerDayMaxGaps[tch]*/);
+													_reqHours+=tchDayNHours[d2]+nh;
+												}
+											}
+										}
+										else{
+											if(teachersMaxGapsPerDayPercentage[tch]==-1){
+												_reqHours+=tchDayNHours[d2];
+											}
+											else{
+												int nh=max(0, tchDayNGaps[d2]-teachersMaxGapsPerDayMaxGaps[tch]);
+												_reqHours+=tchDayNHours[d2]+nh;
+											}
+										}
+
+									}
+								for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
+									if(tchDayNHours[2*d2]>0 || tchDayNHours[2*d2+1]>0)
+										_usedRealDays++;
+
+								assert(_usedRealDays>=0 && _usedRealDays<=gt.rules.nDaysPerWeek/2);
+								assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
+								int _md=teachersMinRealDaysPerWeekMinDays[tch];
+								assert(_md>=0);
+								if(_md>_usedRealDays)
+									_reqHours+=(_md-_usedRealDays)*1; //min 1 hour for each day
+
+								if(_reqHours <= nHoursPerTeacher[tch])
+									ok=true; //ok
+								else
+									ok=false;
+							}
+							else{
+								int remG=0;
+								int totalH=0;
+								int _usedRealDays=0;
+								for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
+									int remGDay=tchDayNGaps[d2];
+									int h=tchDayNHours[d2];
+									//if(h>0)
+									//	_usedDays++;
+									int addh;
+									//2019-09-13 - max gaps per afternoon = 0
+									if(teacherNoGapsPerAfternoon(tch)){
+										if(teachersMaxGapsPerDayPercentage[tch]>=0){
+											if(d2%2==0){
+												addh=max(0, remGDay-teachersMaxGapsPerDayMaxGaps[tch]);
+											}
+											else{
+												addh=max(0, remGDay-0/*teachersMaxGapsPerDayMaxGaps[tch]*/);
+											}
+										}
+										else{
+											if(d2%2==0){
+												addh=0;
+											}
+											else{
+												addh=max(0, remGDay-0/*teachersMaxGapsPerDayMaxGaps[tch]*/);
+											}
+										}
+									}
+									else{
+										if(teachersMaxGapsPerDayPercentage[tch]>=0)
+											addh=max(0, remGDay-teachersMaxGapsPerDayMaxGaps[tch]);
+										else
+											addh=0;
+									}
+									remGDay-=addh;
+									assert(remGDay>=0);
+									h+=addh;
+									if(h>0)
+										totalH+=h;
+									if(remGDay>0)
+										remG+=remGDay;
+								}
+								for(int d2=0; d2<gt.rules.nDaysPerWeek/2; d2++)
+									if(tchDayNHours[2*d2]>0 || tchDayNHours[2*d2+1]>0)
+										_usedRealDays++;
+								assert(_usedRealDays>=0 && _usedRealDays<=gt.rules.nDaysPerWeek/2);
+								assert(teachersMinRealDaysPerWeekPercentages[tch]==100.0);
+								int _md=teachersMinRealDaysPerWeekMinDays[tch];
+								assert(_md>=0);
+								if(_md>_usedRealDays)
+									totalH+=(_md-_usedRealDays)*1; //min 1 hour each day
 
 								if(remG+totalH<=nHoursPerTeacher[tch]+teachersMaxGapsPerWeekMaxGaps[tch]
 								  && totalH<=nHoursPerTeacher[tch])
