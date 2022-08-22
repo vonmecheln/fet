@@ -2533,3 +2533,5 @@ Versions 6.5.0 - 6.5.v
 	- Updated the Russian translation, by Alexey Chernous.
 - Version 6.5.5
 	- Added a new type of constraint, max half days between activities, in the Mornings-Afternoons mode (suggested by Mohamed Ait Ichou and fourat).
+- Version 6.5.6
+	- Added a new type of constraint: activity(ies) begin(s) students'/teachers' day (suggested by Henrique Belo).

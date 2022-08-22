@@ -82,11 +82,18 @@
 #include "fet.h"
 
 #include "groupactivitiesininitialorderitemsform.h"
+
 #include "constraintactivityendsstudentsdayform.h"
 #include "constraintactivitiesendstudentsdayform.h"
 
 #include "constraintactivityendsteachersdayform.h"
 #include "constraintactivitiesendteachersdayform.h"
+
+#include "constraintactivitybeginsstudentsdayform.h"
+#include "constraintactivitiesbeginstudentsdayform.h"
+
+#include "constraintactivitybeginsteachersdayform.h"
+#include "constraintactivitiesbeginteachersdayform.h"
 
 #include "constrainttwoactivitiesconsecutiveform.h"
 #include "constrainttwoactivitiesgroupedform.h"
@@ -1195,6 +1202,10 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsTwoActivitiesConsecutiveAction = new QAction(this);
 	dataTimeConstraintsActivityEndsStudentsDayAction = new QAction(this);
 	dataTimeConstraintsActivityEndsTeachersDayAction = new QAction(this);
+
+	dataTimeConstraintsActivityBeginsStudentsDayAction = new QAction(this);
+	dataTimeConstraintsActivityBeginsTeachersDayAction = new QAction(this);
+
 	dataTimeConstraintsTeachersMinHoursDailyAction = new QAction(this);
 	dataTimeConstraintsTeacherMinHoursDailyAction = new QAction(this);
 	dataTimeConstraintsTeachersMaxGapsPerDayAction = new QAction(this);
@@ -1259,6 +1270,10 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction = new QAction(this);
 	dataTimeConstraintsActivitiesEndStudentsDayAction = new QAction(this);
 	dataTimeConstraintsActivitiesEndTeachersDayAction = new QAction(this);
+
+	dataTimeConstraintsActivitiesBeginStudentsDayAction = new QAction(this);
+	dataTimeConstraintsActivitiesBeginTeachersDayAction = new QAction(this);
+
 	dataTimeConstraintsTwoActivitiesGroupedAction = new QAction(this);
 	dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction = new QAction(this);
 	dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction = new QAction(this);
@@ -1451,6 +1466,10 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsTwoActivitiesConsecutiveAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoActivitiesConsecutiveAction_triggered()));
 	connect(dataTimeConstraintsActivityEndsStudentsDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityEndsStudentsDayAction_triggered()));
 	connect(dataTimeConstraintsActivityEndsTeachersDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityEndsTeachersDayAction_triggered()));
+
+	connect(dataTimeConstraintsActivityBeginsStudentsDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityBeginsStudentsDayAction_triggered()));
+	connect(dataTimeConstraintsActivityBeginsTeachersDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivityBeginsTeachersDayAction_triggered()));
+
 	connect(dataTimeConstraintsTeachersMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinHoursDailyAction_triggered()));
 	connect(dataTimeConstraintsTeacherMinHoursDailyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinHoursDailyAction_triggered()));
 	connect(dataTimeConstraintsTeachersMaxGapsPerDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxGapsPerDayAction_triggered()));
@@ -1515,6 +1534,10 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_triggered()));
 	connect(dataTimeConstraintsActivitiesEndStudentsDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesEndStudentsDayAction_triggered()));
 	connect(dataTimeConstraintsActivitiesEndTeachersDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesEndTeachersDayAction_triggered()));
+
+	connect(dataTimeConstraintsActivitiesBeginStudentsDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesBeginStudentsDayAction_triggered()));
+	connect(dataTimeConstraintsActivitiesBeginTeachersDayAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsActivitiesBeginTeachersDayAction_triggered()));
+
 	connect(dataTimeConstraintsTwoActivitiesGroupedAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTwoActivitiesGroupedAction_triggered()));
 	connect(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction_triggered()));
 	connect(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction_triggered()));
@@ -1740,6 +1763,10 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsTwoActivitiesConsecutiveAction->setText(QCoreApplication::translate("FetMainForm_template", "Two activities are consecutive", nullptr));
 	dataTimeConstraintsActivityEndsStudentsDayAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity ends students day", nullptr));
 	dataTimeConstraintsActivityEndsTeachersDayAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity ends teachers day", nullptr));
+
+	dataTimeConstraintsActivityBeginsStudentsDayAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity begins students day", nullptr));
+	dataTimeConstraintsActivityBeginsTeachersDayAction->setText(QCoreApplication::translate("FetMainForm_template", "An activity begins teachers day", nullptr));
+
 	dataTimeConstraintsTeachersMinHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily for all teachers", nullptr));
 	dataTimeConstraintsTeacherMinHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily for a teacher", nullptr));
 	dataTimeConstraintsTeachersMaxGapsPerDayAction->setText(QCoreApplication::translate("FetMainForm_template", "Max gaps per day for all teachers", nullptr));
@@ -1804,6 +1831,10 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction->setText(QCoreApplication::translate("FetMainForm_template", "All students work in an hourly interval max days per week", nullptr));
 	dataTimeConstraintsActivitiesEndStudentsDayAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities end students day", nullptr));
 	dataTimeConstraintsActivitiesEndTeachersDayAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities end teachers day", nullptr));
+
+	dataTimeConstraintsActivitiesBeginStudentsDayAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities begin students day", nullptr));
+	dataTimeConstraintsActivitiesBeginTeachersDayAction->setText(QCoreApplication::translate("FetMainForm_template", "A set of activities begin teachers day", nullptr));
+
 	dataTimeConstraintsTwoActivitiesGroupedAction->setText(QCoreApplication::translate("FetMainForm_template", "Two activities are grouped", nullptr));
 	dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours continuously with an activity tag for a students set", nullptr));
 	dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours continuously with an activity tag for all students", nullptr));
@@ -2083,19 +2114,29 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
+
+		menuActivities_others_1_time_constraints->addSeparator();
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsStudentsDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginStudentsDayAction);
+		menuActivities_others_1_time_constraints->addSeparator();
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsTeachersDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginTeachersDayAction);
+
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+		menuActivities_others_2_time_constraints->addSeparator();
 
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction);
@@ -2432,19 +2473,29 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinHalfDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction);
+
+		menuActivities_others_1_time_constraints->addSeparator();
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsStudentsDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginStudentsDayAction);
+		menuActivities_others_1_time_constraints->addSeparator();
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsTeachersDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginTeachersDayAction);
+
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+		menuActivities_others_2_time_constraints->addSeparator();
 
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction);
@@ -2633,19 +2684,29 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
+
+		menuActivities_others_1_time_constraints->addSeparator();
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsStudentsDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginStudentsDayAction);
+		menuActivities_others_1_time_constraints->addSeparator();
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsTeachersDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginTeachersDayAction);
+
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+		menuActivities_others_2_time_constraints->addSeparator();
 
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlotsAction);
 		menuActivities_others_2_time_constraints->addSeparator();
@@ -2825,19 +2886,29 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMinDaysBetweenActivitiesAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsMaxDaysBetweenActivitiesAction);
+
+		menuActivities_others_1_time_constraints->addSeparator();
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsStudentsDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginStudentsDayAction);
+		menuActivities_others_1_time_constraints->addSeparator();
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityBeginsTeachersDayAction);
+		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesBeginTeachersDayAction);
+
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsStudentsDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndStudentsDayAction);
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivityEndsTeachersDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesEndTeachersDayAction);
+
 		menuActivities_others_1_time_constraints->addSeparator();
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingTimeAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingDayAction);
 		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesSameStartingHourAction);
-		menuActivities_others_1_time_constraints->addSeparator();
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
-		menuActivities_others_1_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAction);
+		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAction);
+		menuActivities_others_2_time_constraints->addSeparator();
 
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoActivitiesOrderedAction);
 		menuActivities_others_2_time_constraints->addAction(dataTimeConstraintsTwoSetsOfActivitiesOrderedAction);
@@ -5345,6 +5416,82 @@ void FetMainForm::dataTimeConstraintsActivitiesEndTeachersDayAction_triggered()
 	}
 
 	ConstraintActivitiesEndTeachersDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsActivityBeginsStudentsDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivityBeginsStudentsDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsActivitiesBeginStudentsDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivitiesBeginStudentsDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsActivityBeginsTeachersDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivityBeginsTeachersDayForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsActivitiesBeginTeachersDayAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintActivitiesBeginTeachersDayForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }

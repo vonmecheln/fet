@@ -718,6 +718,19 @@ extern bool haveActivityEndsTeachersDay;
 ////////////END   activity ends teachers day
 
 
+////////////BEGIN activity begins students day
+extern Matrix1D<double> activityBeginsStudentsDayPercentages; //-1 for not existing
+bool computeActivityBeginsStudentsDayPercentages(QWidget* parent);
+extern bool haveActivityBeginsStudentsDay;
+////////////END   activity begins students day
+
+////////////BEGIN activity begins teachers day
+extern Matrix1D<double> activityBeginsTeachersDayPercentages; //-1 for not existing
+bool computeActivityBeginsTeachersDayPercentages(QWidget* parent);
+extern bool haveActivityBeginsTeachersDay;
+////////////END   activity begins teachers day
+
+
 bool checkMinDays100Percent(QWidget* parent);
 bool checkMinDaysMaxTwoOnSameDay(QWidget* parent);
 

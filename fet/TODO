@@ -7626,16 +7626,7 @@ About statistics, it would be nice to see sums of activities in a term:
 2. per group
 even 3. per teacher and subject but this could end up being not very easy to read.
 
-458---------------------------------------------------------
-From henriquebelo (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=5189.0
-
-What about this new constraint?
-
-An activitie starts a teacher day?
-
-Is usefull for situations when the teacher don't star to work at the first hour.
+458----------DONE since version 6.5.6 on 2 August 2022------
 
 459---------------------------------------------------------
 From Christian (on forum):
@@ -7647,3 +7638,22 @@ I'm fine with editing the css. I have a table which keeps the same geometry with
 But if I generate multiple tables, do I really have to copy my custom css into every folder?
 Unfortunately the css has a different name in every folder, so this won't work, I think.
 Wouldn't it be nice, to adress a custom css-File or include custom css-commands as a matter of fet project preferences?
+
+460---------------------------------------------------------
+From jza3 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5217.0
+
+For the Mornings-Afternoons mode:
+
+We would like to limit the number of activities on a real day based on whether there is a certain tag among these activities or not.
+For example, I have tagged certain activities with "tagX". I want the number of activities to be 6 or less during a real day if one of them is tagged with "tagx".
+Let's say I tagged math activities with tag "ma". So, whenever there is a math activity (1 hour) on a certain day, I want 5 hours maximum from other subjects to go with that math activity, so the whole number of activities does not exceed 6 hours.
+
+Let me explain better. The Moroccan students normally study maximum 7 hours per real day, not more. What I want is an additional contraint to make students study only 6 hours per real day when one of the hours is a sports activity. In other words, when students have sports, they should study 5 hours + the sports hour, which limits the number to 6 hours only, not the normal 7 hours. I hope I have been clearer.
+
+Liviu, explaining a possible trick (but not perfect):
+
+Add n_activities_of_sport dummy activities for the students set (no teacher, a dummy subject), and then max (real) days between each such dummy activity and an activity of sport = 0. Then I am not sure it works perfectly for the other constraints like gaps, but you might force the dummy activities to be at the beginning or at the end of the day with preferred times, or end students (half) day.
+
+Otherwise it is difficult to implement exactly what you suggest and I cannot think of a good name for a new constraint.

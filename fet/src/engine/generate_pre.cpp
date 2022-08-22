@@ -646,6 +646,19 @@ bool haveActivityEndsTeachersDay;
 ////////////END   activity ends teachers day
 
 
+////////////BEGIN activity begins students day
+Matrix1D<double> activityBeginsStudentsDayPercentages; //-1 for not existing
+//bool computeActivityBeginsStudentsDayPercentages(QWidget* parent);
+bool haveActivityBeginsStudentsDay;
+////////////END   activity begins students day
+
+////////////BEGIN activity begins teachers day
+Matrix1D<double> activityBeginsTeachersDayPercentages; //-1 for not existing
+//bool computeActivityBeginsTeachersDayPercentages(QWidget* parent);
+bool haveActivityBeginsTeachersDay;
+////////////END   activity begins teachers day
+
+
 bool checkMinDays100Percent(QWidget* parent);
 bool checkMinDaysMaxTwoOnSameDay(QWidget* parent);
 
@@ -1350,6 +1363,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	activityEndsStudentsDayPercentages.resize(gt.rules.nInternalActivities);
 	activityEndsTeachersDayPercentages.resize(gt.rules.nInternalActivities);
 	//
+	activityBeginsStudentsDayPercentages.resize(gt.rules.nInternalActivities);
+	activityBeginsTeachersDayPercentages.resize(gt.rules.nInternalActivities);
+	//
 	teachersMaxSpanPerDayMaxSpan.resize(gt.rules.nInternalTeachers);
 	teachersMaxSpanPerDayPercentages.resize(gt.rules.nInternalTeachers);
 	teachersMaxSpanPerDayAllowOneDayExceptionPlusOne.resize(gt.rules.nInternalTeachers);
@@ -1983,6 +1999,14 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		return false;
 
 	t=computeActivityEndsTeachersDayPercentages(parent);
+	if(!t)
+		return false;
+		
+	t=computeActivityBeginsStudentsDayPercentages(parent);
+	if(!t)
+		return false;
+
+	t=computeActivityBeginsTeachersDayPercentages(parent);
 	if(!t)
 		return false;
 		
@@ -13552,7 +13576,7 @@ bool computeActivityEndsStudentsDayPercentages(QWidget* parent)
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-				 "activity activity ends students day for activity with id=%1 with weight percentage under 100%. "
+				 "activity ends students day for activity with id=%1 with weight percentage under 100%. "
 				 "Constraint activity ends students day can only have weight percentage 100%. "
 				 "Please modify your data accordingly (remove or edit constraint) and try again.")
 				 .arg(gt.rules.internalActivitiesList[cae->activityIndex].id),
@@ -13618,7 +13642,7 @@ bool computeActivityEndsTeachersDayPercentages(QWidget* parent)
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-				 "activity activity ends teachers day for activity with id==%1 with weight percentage under 100%. "
+				 "activity ends teachers day for activity with id==%1 with weight percentage under 100%. "
 				 "Constraint activity ends teachers day can only have weight percentage 100%. "
 				 "Please modify your data accordingly (remove or edit constraint) and try again.")
 				 .arg(gt.rules.internalActivitiesList[cae->activityIndex].id),
@@ -13657,6 +13681,138 @@ bool computeActivityEndsTeachersDayPercentages(QWidget* parent)
 				int ai=cae->activitiesIndices[i];
 				if(activityEndsTeachersDayPercentages[ai] < cae->weightPercentage)
 					activityEndsTeachersDayPercentages[ai] = cae->weightPercentage;
+			}
+		}
+	}
+		
+	return ok;
+}
+
+bool computeActivityBeginsStudentsDayPercentages(QWidget* parent)
+{
+	bool ok=true;
+
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++)
+		activityBeginsStudentsDayPercentages[ai]=-1;
+	
+	haveActivityBeginsStudentsDay=false;
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY){
+			haveActivityBeginsStudentsDay=true;
+		
+			ConstraintActivityBeginsStudentsDay* cae=(ConstraintActivityBeginsStudentsDay*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(cae->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
+				 "activity begins students day for activity with id=%1 with weight percentage under 100%. "
+				 "Constraint activity begins students day can only have weight percentage 100%. "
+				 "Please modify your data accordingly (remove or edit constraint) and try again.")
+				 .arg(gt.rules.internalActivitiesList[cae->activityIndex].id),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				1, 0 );
+				
+				if(t==0)
+					break;
+			}
+			
+			int ai=cae->activityIndex;
+			if(activityBeginsStudentsDayPercentages[ai] < cae->weightPercentage)
+				activityBeginsStudentsDayPercentages[ai] = cae->weightPercentage;
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY){
+			haveActivityBeginsStudentsDay=true;
+		
+			ConstraintActivitiesBeginStudentsDay* cae=(ConstraintActivitiesBeginStudentsDay*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(cae->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
+				 "activities begin students day with weight percentage under 100%. "
+				 "Constraint activities begin students day can only have weight percentage 100%. "
+				 "Please modify your data accordingly (remove or edit constraint) and try again."),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				1, 0 );
+				
+				if(t==0)
+					break;
+			}
+			
+			for(int i=0; i<cae->nActivities; i++){
+				int ai=cae->activitiesIndices[i];
+				if(activityBeginsStudentsDayPercentages[ai] < cae->weightPercentage)
+					activityBeginsStudentsDayPercentages[ai] = cae->weightPercentage;
+			}
+		}
+	}
+	
+	return ok;
+}
+
+bool computeActivityBeginsTeachersDayPercentages(QWidget* parent)
+{
+	bool ok=true;
+
+	for(int ai=0; ai<gt.rules.nInternalActivities; ai++)
+		activityBeginsTeachersDayPercentages[ai]=-1;
+	
+	haveActivityBeginsTeachersDay=false;
+	
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY){
+			haveActivityBeginsTeachersDay=true;
+		
+			ConstraintActivityBeginsTeachersDay* cae=(ConstraintActivityBeginsTeachersDay*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(cae->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
+				 "activity begins teachers day for activity with id==%1 with weight percentage under 100%. "
+				 "Constraint activity begins teachers day can only have weight percentage 100%. "
+				 "Please modify your data accordingly (remove or edit constraint) and try again.")
+				 .arg(gt.rules.internalActivitiesList[cae->activityIndex].id),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				1, 0 );
+				
+				if(t==0)
+					break;
+			}
+			
+			int ai=cae->activityIndex;
+			if(activityBeginsTeachersDayPercentages[ai] < cae->weightPercentage)
+				activityBeginsTeachersDayPercentages[ai] = cae->weightPercentage;
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY){
+			haveActivityBeginsTeachersDay=true;
+		
+			ConstraintActivitiesBeginTeachersDay* cae=(ConstraintActivitiesBeginTeachersDay*)gt.rules.internalTimeConstraintsList[i];
+			
+			if(cae->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
+				 "activities begin teachers day with weight percentage under 100%. "
+				 "Constraint activities begin teachers day can only have weight percentage 100%. "
+				 "Please modify your data accordingly (remove or edit constraint) and try again."),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				1, 0 );
+				
+				if(t==0)
+					break;
+			}
+			
+			for(int i=0; i<cae->nActivities; i++){
+				int ai=cae->activitiesIndices[i];
+				if(activityBeginsTeachersDayPercentages[ai] < cae->weightPercentage)
+					activityBeginsTeachersDayPercentages[ai] = cae->weightPercentage;
 			}
 		}
 	}

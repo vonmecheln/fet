@@ -859,6 +859,12 @@ private:
 	TimeConstraint* readActivityEndsTeachersDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readActivitiesEndTeachersDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readActivityBeginsStudentsDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesBeginStudentsDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	
+	TimeConstraint* readActivityBeginsTeachersDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readActivitiesBeginTeachersDay(QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	/*old, with 2 and 3*/
 	TimeConstraint* read2ActivitiesConsecutive(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* read2ActivitiesGrouped(QXmlStreamReader& xml, FakeString& xmlReadingLog);

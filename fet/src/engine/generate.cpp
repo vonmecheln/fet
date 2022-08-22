@@ -7514,6 +7514,9 @@ again_if_impossible_activity:
 		bool okactivityendsstudentsday;
 		bool okactivityendsteachersday;
 
+		bool okactivitybeginsstudentsday;
+		bool okactivitybeginsteachersday;
+
 		bool okstudentsmaxdaysperweek;
 		bool okstudentsmaxthreeconsecutivedays;
 		bool okstudentsmaxrealdaysperweek;
@@ -9078,11 +9081,101 @@ impossibletwoactivitiesorderedifsameday:
 		
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+		//allowed from activity begins students day
+		okactivitybeginsstudentsday=true;
+		
+		if(haveActivityBeginsStudentsDay){
+			//1. If the current activity needs to be at the beginning
+			if(activityBeginsStudentsDayPercentages[ai]>=0){
+				bool skip=skipRandom(activityBeginsStudentsDayPercentages[ai]);
+				if(!skip){
+					for(int sb : qAsConst(act->iSubgroupsList)){
+						if(subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sb]==0){
+							int cnt;
+							for(cnt=0; cnt<gt.rules.nHoursPerDay; cnt++)
+								if(!breakDayHour(d,cnt) && !subgroupNotAvailableDayHour(sb,d,cnt))
+									break;
+							
+							if(h>cnt){
+								okactivitybeginsstudentsday=false;
+								goto impossibleactivitybeginsstudentsday;
+							}
+						}
+						else if(subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sb]>=1){
+							int cnt;
+							for(cnt=0; cnt<gt.rules.nHoursPerDay; cnt++)
+								if(!breakDayHour(d,cnt) && !subgroupNotAvailableDayHour(sb,d,cnt))
+									break;
+							cnt++;
+							for(; cnt<gt.rules.nHoursPerDay; cnt++)
+								if(!breakDayHour(d,cnt) && !subgroupNotAvailableDayHour(sb,d,cnt))
+									break;
+							
+							if(h>cnt){
+								okactivitybeginsstudentsday=false;
+								goto impossibleactivitybeginsstudentsday;
+							}
+						}
+						for(int hh=h-1; hh>=0; hh--){
+							int ai2=subgroupsTimetable(sb,d,hh);
+							if(ai2>=0){
+								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+									okactivitybeginsstudentsday=false;
+									goto impossibleactivitybeginsstudentsday;
+								}
+								
+								if(!conflActivities[newtime].contains(ai2)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			//2. Check the activities which have to be at the beginning, on the same day with the current activity
+			for(int sb : qAsConst(act->iSubgroupsList)){
+				for(int hh=h+act->duration; hh<gt.rules.nHoursPerDay; hh++){
+					int ai2=subgroupsTimetable(sb,d,hh);
+					if(ai2>=0)
+						if(activityBeginsStudentsDayPercentages[ai2]>=0){
+							bool skip=skipRandom(activityBeginsStudentsDayPercentages[ai2]);
+							if(!skip){
+								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+									okactivitybeginsstudentsday=false;
+									goto impossibleactivitybeginsstudentsday;
+								}
+								
+								if(!conflActivities[newtime].contains(ai2)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+								}
+							}
+						}
+				}
+			}
+		}
+
+impossibleactivitybeginsstudentsday:
+		if(!okactivitybeginsstudentsday){
+			//if(updateSubgroups || updateTeachers)
+			//	removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 		//allowed from activity ends students day
 		okactivityendsstudentsday=true;
 		
 		if(haveActivityEndsStudentsDay){
-			//1. If current activity needs to be at the end
+			//1. If the current activity needs to be at the end
 			if(activityEndsStudentsDayPercentages[ai]>=0){
 				bool skip=skipRandom(activityEndsStudentsDayPercentages[ai]);
 				if(!skip){
@@ -9106,7 +9199,7 @@ impossibletwoactivitiesorderedifsameday:
 				}
 			}
 
-			//2. Check activities which have to be at the end, in the same day with current activity
+			//2. Check the activities which have to be at the end, on the same day with the current activity
 			for(int sb : qAsConst(act->iSubgroupsList)){
 				for(int hh=h-1; hh>=0; hh--){
 					int ai2=subgroupsTimetable(sb,d,hh);
@@ -9132,6 +9225,70 @@ impossibletwoactivitiesorderedifsameday:
 
 impossibleactivityendsstudentsday:
 		if(!okactivityendsstudentsday){
+			//if(updateSubgroups || updateTeachers)
+			//	removeAiFromNewTimetable(ai, act, d, h);
+			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
+
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+		
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+		//allowed from activity begins teachers day
+		okactivitybeginsteachersday=true;
+		
+		if(haveActivityBeginsTeachersDay){
+			//1. If the current activity needs to be at the beginning
+			if(activityBeginsTeachersDayPercentages[ai]>=0){
+				bool skip=skipRandom(activityBeginsTeachersDayPercentages[ai]);
+				if(!skip){
+					for(int tch : qAsConst(act->iTeachersList)){
+						for(int hh=h-1; hh>=0; hh--){
+							int ai2=teachersTimetable(tch,d,hh);
+							if(ai2>=0){
+								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+									okactivitybeginsteachersday=false;
+									goto impossibleactivitybeginsteachersday;
+								}
+								
+								if(!conflActivities[newtime].contains(ai2)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			//2. Check the activities which have to be at the beginning, on the same day with the current activity
+			for(int tch : qAsConst(act->iTeachersList)){
+				for(int hh=h+act->duration; hh<gt.rules.nHoursPerDay; hh++){
+					int ai2=teachersTimetable(tch,d,hh);
+					if(ai2>=0)
+						if(activityBeginsTeachersDayPercentages[ai2]>=0){
+							bool skip=skipRandom(activityBeginsTeachersDayPercentages[ai2]);
+							if(!skip){
+								if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+									okactivitybeginsteachersday=false;
+									goto impossibleactivitybeginsteachersday;
+								}
+								
+								if(!conflActivities[newtime].contains(ai2)){
+									conflActivities[newtime].append(ai2);
+									nConflActivities[newtime]++;
+									assert(conflActivities[newtime].count()==nConflActivities[newtime]);
+								}
+							}
+						}
+				}
+			}
+		}
+
+impossibleactivitybeginsteachersday:
+		if(!okactivitybeginsteachersday){
 			//if(updateSubgroups || updateTeachers)
 			//	removeAiFromNewTimetable(ai, act, d, h);
 			//removeConflActivities(conflActivities[newtime], nConflActivities[newtime], act, newtime);
@@ -9170,7 +9327,7 @@ impossibleactivityendsstudentsday:
 				}
 			}
 
-			//2. Check activities which have to be at the end, in the same day with current activity
+			//2. Check the activities which have to be at the end, on the same day with the current activity
 			for(int tch : qAsConst(act->iTeachersList)){
 				for(int hh=h-1; hh>=0; hh--){
 					int ai2=teachersTimetable(tch,d,hh);

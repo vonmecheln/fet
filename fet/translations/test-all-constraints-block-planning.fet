@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.2.5">
+<fet version="6.5.6">
 
 <Mode>Block_Planning</Mode>
 
@@ -2027,6 +2027,36 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintStudentsMinGapsBetweenActivityTag>
+<ConstraintActivityBeginsStudentsDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>4</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityBeginsStudentsDay>
+<ConstraintActivitiesBeginStudentsDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name></Teacher_Name>
+	<Students_Name></Students_Name>
+	<Subject_Name></Subject_Name>
+	<Activity_Tag_Name>at3</Activity_Tag_Name>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesBeginStudentsDay>
+<ConstraintActivityBeginsTeachersDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>2</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityBeginsTeachersDay>
+<ConstraintActivitiesBeginTeachersDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name></Teacher_Name>
+	<Students_Name></Students_Name>
+	<Subject_Name>s1</Subject_Name>
+	<Activity_Tag_Name>at1</Activity_Tag_Name>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivitiesBeginTeachersDay>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

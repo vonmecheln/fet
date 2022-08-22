@@ -395,7 +395,12 @@ bool TimeConstraint::canBeUsedInOfficialMode()
 
 	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED ||
 
-	 type==CONSTRAINT_ACTIVITY_PREFERRED_DAY)
+	 type==CONSTRAINT_ACTIVITY_PREFERRED_DAY ||
+	
+	 type==CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY ||
+	 type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY ||
+	 type==CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY ||
+	 type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY)
 		return true;
 
 	return false;
@@ -665,7 +670,12 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 	 type==CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3 ||
 	 type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3 ||
 	
-	 type==CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES)
+	 type==CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES ||
+
+	 type==CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY ||
+	 type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY ||
+	 type==CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY ||
+	 type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY)
 		return true;
 
 	return false;
@@ -802,7 +812,13 @@ bool TimeConstraint::canBeUsedInBlockPlanningMode()
 	
 	 type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED ||
 
-	 type==CONSTRAINT_ACTIVITY_PREFERRED_DAY)
+	 type==CONSTRAINT_ACTIVITY_PREFERRED_DAY ||
+	
+	 type==CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY ||
+	 type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY ||
+	 type==CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY ||
+	 type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY)
+
 		return true;
 
 	return false;
@@ -941,7 +957,12 @@ bool TimeConstraint::canBeUsedInTermsMode()
 	 type==CONSTRAINT_ACTIVITY_PREFERRED_DAY ||
 	
 	 type==CONSTRAINT_ACTIVITIES_MIN_IN_A_TERM ||
-	 type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES)
+	 type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES ||
+	
+	 type==CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY ||
+	 type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY ||
+	 type==CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY ||
+	 type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY)
 		return true;
 
 	return false;
@@ -51617,5 +51638,1087 @@ bool ConstraintMaxHalfDaysBetweenActivities::repairWrongDayOrHour(Rules& r)
 	if(maxDays>=r.nDaysPerWeek)
 		maxDays=r.nDaysPerWeek-1;
 	
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivityBeginsStudentsDay::ConstraintActivityBeginsStudentsDay()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY;
+}
+
+ConstraintActivityBeginsStudentsDay::ConstraintActivityBeginsStudentsDay(double wp, int actId)
+	: TimeConstraint(wp)
+{
+	this->activityId = actId;
+	this->type = CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY;
+}
+
+bool ConstraintActivityBeginsStudentsDay::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	/*Activity* act;
+	int i;
+	for(i=0; i<r.nInternalActivities; i++){
+		act=&r.internalActivitiesList[i];
+		if(act->id==this->activityId)
+			break;
+	}*/
+	
+	int i=r.activitiesHash.value(activityId, r.nInternalActivities);
+	
+	if(i==r.nInternalActivities){
+		//assert(0);
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+
+	this->activityIndex=i;
+	return true;
+}
+
+bool ConstraintActivityBeginsStudentsDay::hasInactiveActivities(Rules& r)
+{
+	if(r.inactiveActivities.contains(this->activityId))
+		return true;
+	return false;
+}
+
+QString ConstraintActivityBeginsStudentsDay::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintActivityBeginsStudentsDay>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintActivityBeginsStudentsDay>\n";
+	return s;
+}
+
+QString ConstraintActivityBeginsStudentsDay::getDescription(Rules& r)
+{
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Act. id: %1 (%2) must begin students' day",
+		"%1 is the id, %2 is the detailed description of the activity.")
+		.arg(this->activityId)
+		.arg(getActivityDetailedDescription(r, this->activityId));
+	s+=", ";
+
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+
+	return begin+s+end;
+}
+
+QString ConstraintActivityBeginsStudentsDay::getDetailedDescription(Rules& r)
+{
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("Activity must begin students' day");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
+		.arg(this->activityId)
+		.arg(getActivityDetailedDescription(r, this->activityId));s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintActivityBeginsStudentsDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+
+	assert(r.internalStructureComputed);
+
+	nbroken=0;
+	if(c.times[this->activityIndex]!=UNALLOCATED_TIME){
+		int d=c.times[this->activityIndex]%r.nDaysPerWeek; //the day when this activity was scheduled
+		int h=c.times[this->activityIndex]/r.nDaysPerWeek; //the hour
+		
+		int i=this->activityIndex;
+		for(int j=0; j<r.internalActivitiesList[i].iSubgroupsList.count(); j++){
+			int sb=r.internalActivitiesList[i].iSubgroupsList.at(j);
+			for(int hh=h-1; hh>=0; hh--)
+				if(subgroupsMatrix[sb][d][hh]>0){
+					nbroken=1;
+					break;
+				}
+			if(nbroken)
+				break;
+		}
+	}
+
+	if(conflictsString!=nullptr && nbroken>0){
+		QString s=tr("Time constraint activity begins students' day broken for activity with id=%1 (%2), increases conflicts total by %3",
+		 "%1 is the id, %2 is the detailed description of the activity")
+		 .arg(this->activityId)
+		 .arg(getActivityDetailedDescription(r, this->activityId))
+		 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
+
+		dl.append(s);
+		cl.append(weightPercentage/100*nbroken);
+	
+		*conflictsString+= s+"\n";
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return nbroken * weightPercentage/100;
+}
+
+bool ConstraintActivityBeginsStudentsDay::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+
+	if(this->activityId==a->id)
+		return true;
+	return false;
+}
+
+bool ConstraintActivityBeginsStudentsDay::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintActivityBeginsStudentsDay::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivityBeginsStudentsDay::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivityBeginsStudentsDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+		
+	return false;
+}
+
+bool ConstraintActivityBeginsStudentsDay::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintActivityBeginsStudentsDay::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+	
+	return true;
+}
+
+bool ConstraintActivityBeginsStudentsDay::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivitiesBeginStudentsDay::ConstraintActivitiesBeginStudentsDay()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY;
+}
+
+ConstraintActivitiesBeginStudentsDay::ConstraintActivitiesBeginStudentsDay(double wp, const QString& te,
+	const QString& st, const QString& su, const QString& sut)
+	: TimeConstraint(wp)
+{
+	this->teacherName=te;
+	this->subjectName=su;
+	this->activityTagName=sut;
+	this->studentsName=st;
+	this->type=CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY;
+}
+
+bool ConstraintActivitiesBeginStudentsDay::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	this->nActivities=0;
+	this->activitiesIndices.clear();
+
+	int it;
+	Activity* act;
+	int i;
+	for(i=0; i<r.nInternalActivities; i++){
+		act=&r.internalActivitiesList[i];
+
+		//check if this activity has the corresponding teacher
+		if(this->teacherName!=""){
+			it = act->teachersNames.indexOf(this->teacherName);
+			if(it==-1)
+				continue;
+		}
+		//check if this activity has the corresponding students
+		if(this->studentsName!=""){
+			bool commonStudents=false;
+			for(const QString& st : qAsConst(act->studentsNames))
+				if(r.augmentedSetsShareStudentsFaster(st, studentsName)){
+					commonStudents=true;
+					break;
+				}
+		
+			if(!commonStudents)
+				continue;
+		}
+		//check if this activity has the corresponding subject
+		if(this->subjectName!="" && act->subjectName!=this->subjectName){
+				continue;
+		}
+		//check if this activity has the corresponding activity tag
+		if(this->activityTagName!="" && !act->activityTagsNames.contains(this->activityTagName)){
+				continue;
+		}
+	
+		assert(this->nActivities < r.nInternalActivities);
+		this->nActivities++;
+		this->activitiesIndices.append(i);
+	}
+	
+	assert(this->activitiesIndices.count()==this->nActivities);
+
+	if(this->nActivities>0)
+		return true;
+	else{
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+}
+
+bool ConstraintActivitiesBeginStudentsDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintActivitiesBeginStudentsDay::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintActivitiesBeginStudentsDay>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Students_Name>"+protect(this->studentsName)+"</Students_Name>\n";
+	s+="	<Subject_Name>"+protect(this->subjectName)+"</Subject_Name>\n";
+	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintActivitiesBeginStudentsDay>\n";
+	return s;
+}
+
+QString ConstraintActivitiesBeginStudentsDay::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString tc, st, su, at;
+	
+	if(this->teacherName!="")
+		tc=tr("teacher=%1").arg(this->teacherName);
+	else
+		tc=tr("all teachers");
+		
+	if(this->studentsName!="")
+		st=tr("students=%1").arg(this->studentsName);
+	else
+		st=tr("all students");
+		
+	if(this->subjectName!="")
+		su=tr("subject=%1").arg(this->subjectName);
+	else
+		su=tr("all subjects");
+		
+	if(this->activityTagName!="")
+		at=tr("activity tag=%1").arg(this->activityTagName);
+	else
+		at=tr("all activity tags");
+	
+	QString s;
+	s+=tr("Activities with %1, %2, %3, %4, must begin students' day", "%1...%4 are conditions for the activities").arg(tc).arg(st).arg(su).arg(at);
+
+	s+=", ";
+
+	s+=tr("WP:%1%", "Abbreviation for Weight Percentage").arg(CustomFETString::number(this->weightPercentage));
+
+	return begin+s+end;
+}
+
+QString ConstraintActivitiesBeginStudentsDay::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("Activities with:");s+="\n";
+
+	if(this->teacherName!="")
+		s+=tr("Teacher=%1").arg(this->teacherName);
+	else
+		s+=tr("All teachers");
+	s+="\n";
+		
+	if(this->studentsName!="")
+		s+=tr("Students=%1").arg(this->studentsName);
+	else
+		s+=tr("All students");
+	s+="\n";
+		
+	if(this->subjectName!="")
+		s+=tr("Subject=%1").arg(this->subjectName);
+	else
+		s+=tr("All subjects");
+	s+="\n";
+		
+	if(this->activityTagName!="")
+		s+=tr("Activity tag=%1").arg(this->activityTagName);
+	else
+		s+=tr("All activity tags");
+	s+="\n";
+
+	s+=tr("must begin students' day");
+	s+="\n";
+
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintActivitiesBeginStudentsDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	assert(r.internalStructureComputed);
+
+	for(int kk=0; kk<this->nActivities; kk++){
+		int tmp=0;
+		int ai=this->activitiesIndices[kk];
+	
+		if(c.times[ai]!=UNALLOCATED_TIME){
+			int d=c.times[ai]%r.nDaysPerWeek; //the day when this activity was scheduled
+			int h=c.times[ai]/r.nDaysPerWeek; //the hour
+		
+			for(int j=0; j<r.internalActivitiesList[ai].iSubgroupsList.count(); j++){
+				int sb=r.internalActivitiesList[ai].iSubgroupsList.at(j);
+				for(int hh=h-1; hh>=0; hh--)
+					if(subgroupsMatrix[sb][d][hh]>0){
+						nbroken++;
+						tmp=1;
+						break;
+					}
+				if(tmp>0)
+					break;
+			}
+
+			if(conflictsString!=nullptr && tmp>0){
+				QString s=tr("Time constraint activities begin students' day broken for activity with id=%1 (%2), increases conflicts total by %3",
+				 "%1 is the id, %2 is the detailed description of the activity")
+				 .arg(r.internalActivitiesList[ai].id)
+				 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[ai].id))
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*tmp));
+
+				dl.append(s);
+				cl.append(weightPercentage/100*tmp);
+	
+				*conflictsString+= s+"\n";
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return nbroken * weightPercentage/100;
+}
+
+bool ConstraintActivitiesBeginStudentsDay::isRelatedToActivity(Rules& r, Activity* a)
+{
+	int it;
+
+	//check if this activity has the corresponding teacher
+	if(this->teacherName!=""){
+		it = a->teachersNames.indexOf(this->teacherName);
+		if(it==-1)
+			return false;
+	}
+	//check if this activity has the corresponding students
+	if(this->studentsName!=""){
+		bool commonStudents=false;
+		for(const QString& st : qAsConst(a->studentsNames)){
+			if(r.setsShareStudents(st, this->studentsName)){
+				commonStudents=true;
+				break;
+			}
+		}
+		if(!commonStudents)
+			return false;
+	}
+	//check if this activity has the corresponding subject
+	if(this->subjectName!="" && a->subjectName!=this->subjectName)
+		return false;
+	//check if this activity has the corresponding activity tag
+	if(this->activityTagName!="" && !a->activityTagsNames.contains(this->activityTagName))
+		return false;
+
+	return true;
+}
+
+bool ConstraintActivitiesBeginStudentsDay::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintActivitiesBeginStudentsDay::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesBeginStudentsDay::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesBeginStudentsDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+		
+	return false;
+}
+
+bool ConstraintActivitiesBeginStudentsDay::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintActivitiesBeginStudentsDay::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+	
+	return true;
+}
+
+bool ConstraintActivitiesBeginStudentsDay::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivityBeginsTeachersDay::ConstraintActivityBeginsTeachersDay()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY;
+}
+
+ConstraintActivityBeginsTeachersDay::ConstraintActivityBeginsTeachersDay(double wp, int actId)
+	: TimeConstraint(wp)
+{
+	this->activityId = actId;
+	this->type = CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY;
+}
+
+bool ConstraintActivityBeginsTeachersDay::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	/*Activity* act;
+	int i;
+	for(i=0; i<r.nInternalActivities; i++){
+		act=&r.internalActivitiesList[i];
+		if(act->id==this->activityId)
+			break;
+	}*/
+	
+	int i=r.activitiesHash.value(activityId, r.nInternalActivities);
+	
+	if(i==r.nInternalActivities){
+		//assert(0);
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"), 
+			tr("Following constraint is wrong (because it refers to invalid activity id). Please correct it (maybe removing it is a solution):\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+
+	this->activityIndex=i;
+	return true;
+}
+
+bool ConstraintActivityBeginsTeachersDay::hasInactiveActivities(Rules& r)
+{
+	if(r.inactiveActivities.contains(this->activityId))
+		return true;
+	return false;
+}
+
+QString ConstraintActivityBeginsTeachersDay::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintActivityBeginsTeachersDay>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Activity_Id>"+CustomFETString::number(this->activityId)+"</Activity_Id>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintActivityBeginsTeachersDay>\n";
+	return s;
+}
+
+QString ConstraintActivityBeginsTeachersDay::getDescription(Rules& r)
+{
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Act. id: %1 (%2) must begin teachers' day",
+		"%1 is the id, %2 is the detailed description of the activity.")
+		.arg(this->activityId)
+		.arg(getActivityDetailedDescription(r, this->activityId));
+	s+=", ";
+
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
+
+	return begin+s+end;
+}
+
+QString ConstraintActivityBeginsTeachersDay::getDetailedDescription(Rules& r)
+{
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("Activity must begin teachers' day");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Activity id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
+		.arg(this->activityId)
+		.arg(getActivityDetailedDescription(r, this->activityId));s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintActivityBeginsTeachersDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString> &dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken;
+
+	assert(r.internalStructureComputed);
+
+	nbroken=0;
+	if(c.times[this->activityIndex]!=UNALLOCATED_TIME){
+		int d=c.times[this->activityIndex]%r.nDaysPerWeek; //the day when this activity was scheduled
+		int h=c.times[this->activityIndex]/r.nDaysPerWeek; //the hour
+		
+		int i=this->activityIndex;
+		for(int j=0; j<r.internalActivitiesList[i].iTeachersList.count(); j++){
+			int tch=r.internalActivitiesList[i].iTeachersList.at(j);
+			for(int hh=h-1; hh>=0; hh--)
+				if(teachersMatrix[tch][d][hh]>0){
+					nbroken=1;
+					break;
+				}
+			if(nbroken)
+				break;
+		}
+	}
+
+	if(conflictsString!=nullptr && nbroken>0){
+		QString s=tr("Time constraint activity begins teachers' day broken for activity with id=%1 (%2), increases conflicts total by %3",
+		 "%1 is the id, %2 is the detailed description of the activity")
+		 .arg(this->activityId)
+		 .arg(getActivityDetailedDescription(r, this->activityId))
+		 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*nbroken));
+
+		dl.append(s);
+		cl.append(weightPercentage/100*nbroken);
+	
+		*conflictsString+= s+"\n";
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return nbroken * weightPercentage/100;
+}
+
+bool ConstraintActivityBeginsTeachersDay::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+
+	if(this->activityId==a->id)
+		return true;
+	return false;
+}
+
+bool ConstraintActivityBeginsTeachersDay::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintActivityBeginsTeachersDay::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivityBeginsTeachersDay::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivityBeginsTeachersDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+		
+	return false;
+}
+
+bool ConstraintActivityBeginsTeachersDay::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintActivityBeginsTeachersDay::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+	
+	return true;
+}
+
+bool ConstraintActivityBeginsTeachersDay::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivitiesBeginTeachersDay::ConstraintActivitiesBeginTeachersDay()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY;
+}
+
+ConstraintActivitiesBeginTeachersDay::ConstraintActivitiesBeginTeachersDay(double wp, const QString& te,
+	const QString& st, const QString& su, const QString& sut)
+	: TimeConstraint(wp)
+{
+	this->teacherName=te;
+	this->subjectName=su;
+	this->activityTagName=sut;
+	this->studentsName=st;
+	this->type=CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY;
+}
+
+bool ConstraintActivitiesBeginTeachersDay::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	this->nActivities=0;
+	this->activitiesIndices.clear();
+
+	int it;
+	Activity* act;
+	int i;
+	for(i=0; i<r.nInternalActivities; i++){
+		act=&r.internalActivitiesList[i];
+
+		//check if this activity has the corresponding teacher
+		if(this->teacherName!=""){
+			it = act->teachersNames.indexOf(this->teacherName);
+			if(it==-1)
+				continue;
+		}
+		//check if this activity has the corresponding students
+		if(this->studentsName!=""){
+			bool commonStudents=false;
+			for(const QString& st : qAsConst(act->studentsNames))
+				if(r.augmentedSetsShareStudentsFaster(st, studentsName)){
+					commonStudents=true;
+					break;
+				}
+		
+			if(!commonStudents)
+				continue;
+		}
+		//check if this activity has the corresponding subject
+		if(this->subjectName!="" && act->subjectName!=this->subjectName){
+				continue;
+		}
+		//check if this activity has the corresponding activity tag
+		if(this->activityTagName!="" && !act->activityTagsNames.contains(this->activityTagName)){
+				continue;
+		}
+	
+		assert(this->nActivities < MAX_ACTIVITIES);
+		this->nActivities++;
+		this->activitiesIndices.append(i);
+	}
+	
+	assert(this->activitiesIndices.count()==this->nActivities);
+
+	if(this->nActivities>0)
+		return true;
+	else{
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (refers to no activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+		return false;
+	}
+}
+
+bool ConstraintActivitiesBeginTeachersDay::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintActivitiesBeginTeachersDay::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintActivitiesBeginTeachersDay>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Students_Name>"+protect(this->studentsName)+"</Students_Name>\n";
+	s+="	<Subject_Name>"+protect(this->subjectName)+"</Subject_Name>\n";
+	s+="	<Activity_Tag_Name>"+protect(this->activityTagName)+"</Activity_Tag_Name>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintActivitiesBeginTeachersDay>\n";
+	return s;
+}
+
+QString ConstraintActivitiesBeginTeachersDay::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+	
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString tc, st, su, at;
+	
+	if(this->teacherName!="")
+		tc=tr("teacher=%1").arg(this->teacherName);
+	else
+		tc=tr("all teachers");
+		
+	if(this->studentsName!="")
+		st=tr("students=%1").arg(this->studentsName);
+	else
+		st=tr("all students");
+		
+	if(this->subjectName!="")
+		su=tr("subject=%1").arg(this->subjectName);
+	else
+		su=tr("all subjects");
+		
+	if(this->activityTagName!="")
+		at=tr("activity tag=%1").arg(this->activityTagName);
+	else
+		at=tr("all activity tags");
+	
+	QString s;
+	s+=tr("Activities with %1, %2, %3, %4, must begin teachers' day", "%1...%4 are conditions for the activities").arg(tc).arg(st).arg(su).arg(at);
+
+	s+=", ";
+
+	s+=tr("WP:%1%", "Abbreviation for Weight Percentage").arg(CustomFETString::number(this->weightPercentage));
+
+	return begin+s+end;
+}
+
+QString ConstraintActivitiesBeginTeachersDay::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("Activities with:");s+="\n";
+
+	if(this->teacherName!="")
+		s+=tr("Teacher=%1").arg(this->teacherName);
+	else
+		s+=tr("All teachers");
+	s+="\n";
+		
+	if(this->studentsName!="")
+		s+=tr("Students=%1").arg(this->studentsName);
+	else
+		s+=tr("All students");
+	s+="\n";
+		
+	if(this->subjectName!="")
+		s+=tr("Subject=%1").arg(this->subjectName);
+	else
+		s+=tr("All subjects");
+	s+="\n";
+		
+	if(this->activityTagName!="")
+		s+=tr("Activity tag=%1").arg(this->activityTagName);
+	else
+		s+=tr("All activity tags");
+	s+="\n";
+
+	s+=tr("must begin teachers' day");
+	s+="\n";
+
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintActivitiesBeginTeachersDay::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString> &dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int nbroken=0;
+
+	assert(r.internalStructureComputed);
+
+	for(int kk=0; kk<this->nActivities; kk++){
+		int tmp=0;
+		int ai=this->activitiesIndices[kk];
+	
+		if(c.times[ai]!=UNALLOCATED_TIME){
+			int d=c.times[ai]%r.nDaysPerWeek; //the day when this activity was scheduled
+			int h=c.times[ai]/r.nDaysPerWeek; //the hour
+		
+			for(int j=0; j<r.internalActivitiesList[ai].iTeachersList.count(); j++){
+				int tch=r.internalActivitiesList[ai].iTeachersList.at(j);
+				for(int hh=h-1; hh>=0; hh--)
+					if(teachersMatrix[tch][d][hh]>0){
+						nbroken++;
+						tmp=1;
+						break;
+					}
+				if(tmp>0)
+					break;
+			}
+
+			if(conflictsString!=nullptr && tmp>0){
+				QString s=tr("Time constraint activities begin teachers' day broken for activity with id=%1 (%2), increases conflicts total by %3",
+				 "%1 is the id, %2 is the detailed description of the activity")
+				 .arg(r.internalActivitiesList[ai].id)
+				 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[ai].id))
+				 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*tmp));
+
+				dl.append(s);
+				cl.append(weightPercentage/100*tmp);
+	
+				*conflictsString+= s+"\n";
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return nbroken * weightPercentage/100;
+}
+
+bool ConstraintActivitiesBeginTeachersDay::isRelatedToActivity(Rules& r, Activity* a)
+{
+	int it;
+
+	//check if this activity has the corresponding teacher
+	if(this->teacherName!=""){
+		it = a->teachersNames.indexOf(this->teacherName);
+		if(it==-1)
+			return false;
+	}
+	//check if this activity has the corresponding students
+	if(this->studentsName!=""){
+		bool commonStudents=false;
+		for(const QString& st : qAsConst(a->studentsNames)){
+			if(r.setsShareStudents(st, this->studentsName)){
+				commonStudents=true;
+				break;
+			}
+		}
+		if(!commonStudents)
+			return false;
+	}
+	//check if this activity has the corresponding subject
+	if(this->subjectName!="" && a->subjectName!=this->subjectName)
+		return false;
+	//check if this activity has the corresponding activity tag
+	if(this->activityTagName!="" && !a->activityTagsNames.contains(this->activityTagName))
+		return false;
+
+	return true;
+}
+
+bool ConstraintActivitiesBeginTeachersDay::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintActivitiesBeginTeachersDay::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesBeginTeachersDay::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesBeginTeachersDay::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+		
+	return false;
+}
+
+bool ConstraintActivitiesBeginTeachersDay::hasWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+bool ConstraintActivitiesBeginTeachersDay::canRepairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0);
+	
+	return true;
+}
+
+bool ConstraintActivitiesBeginTeachersDay::repairWrongDayOrHour(Rules& r)
+{
+	Q_UNUSED(r);
+	assert(0); //should check hasWrongDayOrHour, firstly
+
 	return true;
 }

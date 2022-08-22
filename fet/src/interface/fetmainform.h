@@ -125,6 +125,8 @@ private:
 	QAction* dataTimeConstraintsTwoActivitiesConsecutiveAction;
 	QAction* dataTimeConstraintsActivityEndsStudentsDayAction;
 	QAction* dataTimeConstraintsActivityEndsTeachersDayAction;
+	QAction* dataTimeConstraintsActivityBeginsStudentsDayAction;
+	QAction* dataTimeConstraintsActivityBeginsTeachersDayAction;
 	QAction* dataTimeConstraintsTeachersMinHoursDailyAction;
 	QAction* dataTimeConstraintsTeacherMinHoursDailyAction;
 	QAction* dataTimeConstraintsTeachersMaxGapsPerDayAction;
@@ -189,6 +191,8 @@ private:
 	QAction* dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction;
 	QAction* dataTimeConstraintsActivitiesEndStudentsDayAction;
 	QAction* dataTimeConstraintsActivitiesEndTeachersDayAction;
+	QAction* dataTimeConstraintsActivitiesBeginStudentsDayAction;
+	QAction* dataTimeConstraintsActivitiesBeginTeachersDayAction;
 	QAction* dataTimeConstraintsTwoActivitiesGroupedAction;
 	QAction* dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyAction;
 	QAction* dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyAction;
@@ -561,11 +565,18 @@ public slots:
 	void dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsMaxTermsBetweenActivitiesAction_triggered();
 	void dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered();
+
 	void dataTimeConstraintsActivityEndsStudentsDayAction_triggered();
 	void dataTimeConstraintsActivitiesEndStudentsDayAction_triggered();
 
 	void dataTimeConstraintsActivityEndsTeachersDayAction_triggered();
 	void dataTimeConstraintsActivitiesEndTeachersDayAction_triggered();
+
+	void dataTimeConstraintsActivityBeginsStudentsDayAction_triggered();
+	void dataTimeConstraintsActivitiesBeginStudentsDayAction_triggered();
+
+	void dataTimeConstraintsActivityBeginsTeachersDayAction_triggered();
+	void dataTimeConstraintsActivitiesBeginTeachersDayAction_triggered();
 
 	void dataTimeConstraintsTeacherNotAvailableTimesAction_triggered();
 	void dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered();

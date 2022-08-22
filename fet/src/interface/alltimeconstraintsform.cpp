@@ -51,12 +51,16 @@
 #include "modifyconstraintmaxhalfdaysbetweenactivitiesform.h"
 #include "modifyconstraintmaxtermsbetweenactivitiesform.h"
 #include "modifyconstraintmingapsbetweenactivitiesform.h"
+
 #include "modifyconstraintactivityendsstudentsdayform.h"
-
 #include "modifyconstraintactivitiesendstudentsdayform.h"
-
 #include "modifyconstraintactivityendsteachersdayform.h"
 #include "modifyconstraintactivitiesendteachersdayform.h"
+
+#include "modifyconstraintactivitybeginsstudentsdayform.h"
+#include "modifyconstraintactivitiesbeginstudentsdayform.h"
+#include "modifyconstraintactivitybeginsteachersdayform.h"
+#include "modifyconstraintactivitiesbeginteachersdayform.h"
 
 #include "modifyconstraintteachernotavailabletimesform.h"
 #include "modifyconstraintteachersmaxgapsperweekform.h"
@@ -1865,6 +1869,30 @@ void AllTimeConstraintsForm::modifyConstraint()
 	//194
 	else if(ctr->type==CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES){
 		ModifyConstraintMaxHalfDaysBetweenActivitiesForm form(this, (ConstraintMaxHalfDaysBetweenActivities*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//195
+	else if(ctr->type==CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY){
+		ModifyConstraintActivityBeginsStudentsDayForm form(this, (ConstraintActivityBeginsStudentsDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//196
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY){
+		ModifyConstraintActivitiesBeginStudentsDayForm form(this, (ConstraintActivitiesBeginStudentsDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//197
+	else if(ctr->type==CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY){
+		ModifyConstraintActivityBeginsTeachersDayForm form(this, (ConstraintActivityBeginsTeachersDay*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//198
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY){
+		ModifyConstraintActivitiesBeginTeachersDayForm form(this, (ConstraintActivitiesBeginTeachersDay*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}

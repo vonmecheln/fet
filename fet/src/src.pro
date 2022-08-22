@@ -342,6 +342,7 @@ SOURCES += \
 	interface/constraintactivitypreferredstartingtimeform.cpp \
 	interface/addconstraintactivitypreferredstartingtimeform.cpp \
 	interface/modifyconstraintactivitypreferredstartingtimeform.cpp \
+	\
 	interface/constraintactivityendsstudentsdayform.cpp \
 	interface/addconstraintactivityendsstudentsdayform.cpp \
 	interface/modifyconstraintactivityendsstudentsdayform.cpp \
@@ -357,6 +358,22 @@ SOURCES += \
 	interface/constraintactivitiesendteachersdayform.cpp \
 	interface/addconstraintactivitiesendteachersdayform.cpp \
 	interface/modifyconstraintactivitiesendteachersdayform.cpp \
+	\
+	interface/constraintactivitybeginsstudentsdayform.cpp \
+	interface/addconstraintactivitybeginsstudentsdayform.cpp \
+	interface/modifyconstraintactivitybeginsstudentsdayform.cpp \
+	\
+	interface/constraintactivitiesbeginstudentsdayform.cpp \
+	interface/addconstraintactivitiesbeginstudentsdayform.cpp \
+	interface/modifyconstraintactivitiesbeginstudentsdayform.cpp \
+	\
+	interface/constraintactivitybeginsteachersdayform.cpp \
+	interface/addconstraintactivitybeginsteachersdayform.cpp \
+	interface/modifyconstraintactivitybeginsteachersdayform.cpp \
+	\
+	interface/constraintactivitiesbeginteachersdayform.cpp \
+	interface/addconstraintactivitiesbeginteachersdayform.cpp \
+	interface/modifyconstraintactivitiesbeginteachersdayform.cpp \
 	\
 	interface/constraintstudentssetmaxgapsperweekform.cpp \
 	interface/addconstraintstudentssetmaxgapsperweekform.cpp \
@@ -1338,6 +1355,7 @@ HEADERS += \
 	interface/constraintactivitypreferredstartingtimeform.h \
 	interface/addconstraintactivitypreferredstartingtimeform.h \
 	interface/modifyconstraintactivitypreferredstartingtimeform.h \
+	\
 	interface/constraintactivityendsstudentsdayform.h \
 	interface/addconstraintactivityendsstudentsdayform.h \
 	interface/modifyconstraintactivityendsstudentsdayform.h \
@@ -1353,6 +1371,22 @@ HEADERS += \
 	interface/constraintactivitiesendteachersdayform.h \
 	interface/addconstraintactivitiesendteachersdayform.h \
 	interface/modifyconstraintactivitiesendteachersdayform.h \
+	\
+	interface/constraintactivitybeginsstudentsdayform.h \
+	interface/addconstraintactivitybeginsstudentsdayform.h \
+	interface/modifyconstraintactivitybeginsstudentsdayform.h \
+	\
+	interface/constraintactivitiesbeginstudentsdayform.h \
+	interface/addconstraintactivitiesbeginstudentsdayform.h \
+	interface/modifyconstraintactivitiesbeginstudentsdayform.h \
+	\
+	interface/constraintactivitybeginsteachersdayform.h \
+	interface/addconstraintactivitybeginsteachersdayform.h \
+	interface/modifyconstraintactivitybeginsteachersdayform.h \
+	\
+	interface/constraintactivitiesbeginteachersdayform.h \
+	interface/addconstraintactivitiesbeginteachersdayform.h \
+	interface/modifyconstraintactivitiesbeginteachersdayform.h \
 	\
 	interface/constraintstudentssetmaxgapsperweekform.h \
 	interface/addconstraintstudentssetmaxgapsperweekform.h \
@@ -2327,6 +2361,7 @@ FORMS += \
 	interface/constraintactivitypreferredstartingtimeform_template.ui \
 	interface/addconstraintactivitypreferredstartingtimeform_template.ui \
 	interface/modifyconstraintactivitypreferredstartingtimeform_template.ui \
+	\
 	interface/constraintactivityendsstudentsdayform_template.ui \
 	interface/addconstraintactivityendsstudentsdayform_template.ui \
 	interface/modifyconstraintactivityendsstudentsdayform_template.ui \
@@ -2342,6 +2377,22 @@ FORMS += \
 	interface/constraintactivitiesendteachersdayform_template.ui \
 	interface/addconstraintactivitiesendteachersdayform_template.ui \
 	interface/modifyconstraintactivitiesendteachersdayform_template.ui \
+	\
+	interface/constraintactivitybeginsstudentsdayform_template.ui \
+	interface/addconstraintactivitybeginsstudentsdayform_template.ui \
+	interface/modifyconstraintactivitybeginsstudentsdayform_template.ui \
+	\
+	interface/constraintactivitiesbeginstudentsdayform_template.ui \
+	interface/addconstraintactivitiesbeginstudentsdayform_template.ui \
+	interface/modifyconstraintactivitiesbeginstudentsdayform_template.ui \
+	\
+	interface/constraintactivitybeginsteachersdayform_template.ui \
+	interface/addconstraintactivitybeginsteachersdayform_template.ui \
+	interface/modifyconstraintactivitybeginsteachersdayform_template.ui \
+	\
+	interface/constraintactivitiesbeginteachersdayform_template.ui \
+	interface/addconstraintactivitiesbeginteachersdayform_template.ui \
+	interface/modifyconstraintactivitiesbeginteachersdayform_template.ui \
 	\
 	interface/constraintstudentssetmaxgapsperweekform_template.ui \
 	interface/addconstraintstudentssetmaxgapsperweekform_template.ui \
