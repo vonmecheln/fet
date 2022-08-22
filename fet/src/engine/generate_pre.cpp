@@ -5714,7 +5714,7 @@ bool computeTeachersMaxSpanPerDay(QWidget* parent)
 		bool exceptionUsed=false;
 		if(!teachersMaxSpanPerDayAllowOneDayExceptionPlusOne[tc])
 			exceptionUsed=true;
-			
+		
 		if(teachersMaxSpanPerDayPercentages[tc]==100){
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++){
 				nAllowedSlotsPerDay[d]=0;

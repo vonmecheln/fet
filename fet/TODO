@@ -48,6 +48,12 @@ Also suggested by Ali Doussary here: https://lalescu.ro/liviu/fet/forum/index.ph
 to "start" or to "end" students day. The aim is to have some activities as the first or last activities the students do during
 a "Fet day", not a real day.
 
+Also suggested by YOUSSEF HOUIET here: https://lalescu.ro/liviu/fet/forum/index.php?topic=5254.0 :
+Is it possible to combine two constraints:
+Activities begin student/teacher's day
++Activities end student/teacher's day
+to allow an activity to be in begin _or_ end of students/teacher's day.
+
 From bachiri401:
 - Constraints teacher(s)/students (set) min hours per afternoon.
 -> And in general every constraint referring to days should have a corresponding constraint for real days,
@@ -7657,3 +7663,146 @@ Liviu, explaining a possible trick (but not perfect):
 Add n_activities_of_sport dummy activities for the students set (no teacher, a dummy subject), and then max (real) days between each such dummy activity and an activity of sport = 0. Then I am not sure it works perfectly for the other constraints like gaps, but you might force the dummy activities to be at the beginning or at the end of the day with preferred times, or end students (half) day.
 
 Otherwise it is difficult to implement exactly what you suggest and I cannot think of a good name for a new constraint.
+
+461---------------------------------------------------------
+From Vangelis Karafillidis:
+
+when the user generates multiple timetables...
+(for example 30 timetables)
+there is no way to find which one is each one of them... when viewing the html file... for example... if the one the user has opened is the 4th or the 25th...
+
+Liviu:
+you can see the report.txt file or the list of generating, and the number of the directory on the disk is the timetable number.
+
+Vangelis:
+what I mean is...
+it would be very helpful...
+if the user could find INSIDE the html file this information...
+
+let's say...
+an indication...
+"generated with FET" blabla... multiple timetables no.17
+or...
+"generated with FET" blabla...
+single timetable
+
+Liviu:
+I will add this in the TODO
+
+Vangelis:
+or... some kind of heading in the html file...
+above the Educational Institution...
+
+Liviu:
+but not everybody might want this
+
+Vangelis:
+at the beginning of each html file...
+look...
+let's say that a user... has generated 50 timetables..
+he opens the html files
+in order to compare them and... choose the best for his needs...
+he finds the best one...
+but...
+doesn't know which one of them is the one he has chosen...
+for example... let's say that the user has opened 50 files at the teachers time horizontal view...
+(this is that I actually used to do....)
+
+Liviu:
+OK, I understood
+I will add this in the TODO
+but the user might want to add the timetable to the web
+and he needs to remove this info
+
+Vangelis:
+maybe... a dialog in the generation menu could be a solution?
+something like "embed detailed info"...
+
+Some more from Vangelis:
+I could just batch rename the files
+I think that there are some tools that automatically rename files...
+
+when generating multiple timetables..
+the directories are named 1,2,3 etc, aren't they?
+could they be named (for two digit generations, for example 32 timetables) 01, 02, 03, etc
+or for three digit multiple generations 001, 002, 003 etc?
+an option in the multiple generation dialogue?
+is it possible to implement it?
+
+Liviu: It could be implemented, but also the timetables are not 1, 2, ..., n, n+1, but some numbers
+will be missing.
+
+462---------------------------------------------------------
+From ngoctp29121982 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5234.0
+
+ngoctp29121982:
+The FET already has a minimum teaching hours per teacher in the morning and a minimum number of hours per day actually per teacher as well as all teachers,
+but I don't see the FET having a constraint on the minimum number of hours per afternoon per teacher. teachers and all teachers. For example: I want the
+minimum number of teaching hours in the morning to be 2 and in the afternoon to be 3, then the FET only has mornings?
+
+Liviu:
+Unfortunately, it is very difficult now, since FET-MA was designed from the start assuming min hours per morning >= min hours per afternoon.
+
+ngoctp29121982:
+So I want the minimum number of teaching hours in the morning to be 2 and in the afternoon to be 3, can the FET do it?
+
+Liviu:
+A code change is needed, but it is very complicated and I cannot do it.
+
+ngoctp29121982:
+I see that RB has the minimum number of teaching hours in the morning, why is it not in the afternoon. This is necessary for every school, every country.
+Please consider changing.
+
+463---------------------------------------------------------
+From Mohamed Ait Ichou (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5240.0
+
+Is there a possibility to add a maximum real day restriction for teachers that does not exceed a certain number of hours, meaning that
+the user determines the number of hours to which the restriction will be applied.
+
+YOUSSEF HOUIET:
+We need something like this:
+automatically add constraints "Max days per week for teacher" from number of teacher hours
+Nbr days= roundup(Nbr hrs modulo 4)
+
+If
+16< nbr of theacher's hours <=20
+Then
+Max half days: 5
+12< nbr of theacher's hours <=16
+Then
+Max half days: 4
+...
+
+464---------------------------------------------------------
+From ngoctp29121982:
+
+In the teachers dialog, add the possibility of seeing and modifying the constraints of each teacher.
+
+465---------------------------------------------------------
+From Mohamed Ait Ichou (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5252.0
+
+Is it possible for teachers to be grouped according to subjects?
+
+466---------------------------------------------------------
+From Phạm Văn Quyền Anh:
+
+Suggestion to add constraints: "Max span per day for a/all teacher"
+for Morning-Afternoon mode
+
+The goal is that if there is a lecture at the beginning of the day,
+there is no class at the end of the day, and vice versa
+
+467---------------------------------------------------------
+From ngoctp29121982 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5264.0
+
+I have a proposal to add subject groups to have the teachers divided into different groups. For example: Math, physics, chemistry, biology teacher,
+he belongs to the Science and History group, Geography, civics belongs to the Social Sciences group... The purpose of dividing into groups is to add
+Constraints or view the constraints of the group. It's easier for teachers in specialized groups.

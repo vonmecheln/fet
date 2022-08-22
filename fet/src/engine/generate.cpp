@@ -19,6 +19,10 @@ File generate.cpp
  *                                                                         *
  ***************************************************************************/
 
+//Note 2022-08-16: The code in the constraints of type activity(ies) start students/teachers day and students/teachers max span per real day
+//is not perfect, but cannot be written perfectly It might take care of students/teachers begins mornings/afternoons early max beginnings at second hour,
+//but it is very risky and too complicated.
+
 //Note 2022-05-22: In FET version 6.5.0 the code for the constraints students max span per (real) day was improved.
 /*Note 2018-07-28: The code for students max span per day, students early max beginnings at second hour, students/teachers max gaps per day/week,
 students/teachers min/max hours daily can and should be theoretically corrected. But it is very risky. Many examples and variants should be tested.

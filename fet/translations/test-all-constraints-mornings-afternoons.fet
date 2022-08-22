@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.5.6">
+<fet version="6.5.7">
 
 <Mode>Mornings_Afternoons</Mode>
 
@@ -2520,6 +2520,21 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintActivitiesBeginTeachersDay>
+<ConstraintTeacherMaxSpanPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t1</Teacher_Name>
+	<Max_Span>3</Max_Span>
+	<Allow_One_Day_Exception_of_Plus_One>true</Allow_One_Day_Exception_of_Plus_One>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMaxSpanPerDay>
+<ConstraintTeachersMaxSpanPerDay>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Max_Span>4</Max_Span>
+	<Allow_One_Day_Exception_of_Plus_One>false</Allow_One_Day_Exception_of_Plus_One>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMaxSpanPerDay>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

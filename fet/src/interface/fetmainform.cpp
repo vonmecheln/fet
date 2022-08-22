@@ -2277,6 +2277,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction);
+		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerDayAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMaxSpanPerRealDayAction);
 		
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysAction);
@@ -2334,6 +2335,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction);
+		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerDayAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMaxSpanPerRealDayAction);
 		
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAction);
