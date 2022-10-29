@@ -7967,3 +7967,22 @@ In this way you can go to modify the constraint only on here 5 teachers by modif
 In the end I did not manually enter 40 constraints, but only 1 (40 constraints for all) and then 5 with modification on each individual teacher.
 
 See also TODO items #82, #84, and #455.
+
+477---------------------------------------------------------
+From Dao Anh Van (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5349.0
+
+For example, after block A, there are classrooms from A1, A2, A3, A4, A5.
+To constrain a teacher X who has no Friday lessons in block A.
+Then must be bound in turn:
+ Teacher X does not have class on Friday in classroom A1.
+ Teacher X does not have class on Friday in classroom A2.
+ Teacher X does not have class on Friday in classroom A3.
+ Teacher X doesn't have class on Friday in classroom A4.
+ Teacher X does not have class on Friday in classroom A5.
+All five of the above constraints can be replaced by one as follows:
+Teacher X doesn't have class on Friday at block A.
+(So in the process of creating constraints scheduling will be faster)
+
+(Liviu: I think Dao Anh Van refers to space constraints of type "a teacher+a room's not available times".)

@@ -2550,3 +2550,7 @@ Versions 6.6.0 - 6.6.v
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
 - Version 6.6.1
 	- Added a complete Italian translation, by Francesco Rizzo, who is the new translator.
+- Version 6.6.2
+	- Minor bug fixes in the reporting of the soft conflicts, when having some types of time constraints related to inactive activities.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.
+	- Updated the Vietnamese translation, by Phạm Văn Quyền Anh, who is again the assigned translator (he translated also in the past).

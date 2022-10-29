@@ -2295,13 +2295,13 @@ double ConstraintActivitiesSameStartingTime::fitness(Solution& c, Rules& r, QLis
 						if(tmp>0 && conflictsString!=nullptr){
 							QString s=tr("Time constraint activities same starting time broken, because activity with id=%1 (%2) is not at the same starting time with activity with id=%3 (%4)",
 							"%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
-							 .arg(this->activitiesId[i])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))
-							 .arg(this->activitiesId[j])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]));
+							 .arg(r.internalActivitiesList[this->_activities[i]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[i]].id))
+							 .arg(r.internalActivitiesList[this->_activities[j]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[j]].id));
 							s+=". ";
 							s+=tr("Conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
-						
+							
 							dl.append(s);
 							cl.append(tmp*weightPercentage/100);
 							
@@ -2617,10 +2617,10 @@ double ConstraintActivitiesNotOverlapping::fitness(Solution& c, Rules& r, QList<
 
 							QString s=tr("Time constraint activities not overlapping broken: activity with id=%1 (%2) overlaps with activity with id=%3 (%4) on a number of %5 periods",
 							 "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
-							 .arg(this->activitiesId[i])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))
-							 .arg(this->activitiesId[j])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]))
+							 .arg(r.internalActivitiesList[this->_activities[i]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[i]].id))
+							 .arg(r.internalActivitiesList[this->_activities[j]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[j]].id))
 							 .arg(tt);
 							s+=", ";
 							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
@@ -3259,10 +3259,10 @@ double ConstraintMinDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 						if(tt>0 && conflictsString!=nullptr){
 							QString s=tr("Time constraint min days between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), being %5 days too close, on days %6 and %7",
 							 "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr. Close here means near")
-							 .arg(this->activitiesId[i])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))
-							 .arg(this->activitiesId[j])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]))
+							 .arg(r.internalActivitiesList[this->_activities[i]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[i]].id))
+							 .arg(r.internalActivitiesList[this->_activities[j]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[j]].id))
 							 .arg(tt)
 							 .arg(r.daysOfTheWeek[day1])
 							 .arg(r.daysOfTheWeek[day2]);
@@ -3652,10 +3652,10 @@ double ConstraintMaxDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 						if(tt>0 && conflictsString!=nullptr){
 							QString s=tr("Time constraint max days between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), being %5 days too far away"
 							 ", on days %6 and %7", "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
-							 .arg(this->activitiesId[i])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))
-							 .arg(this->activitiesId[j])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]))
+							 .arg(r.internalActivitiesList[this->_activities[i]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[i]].id))
+							 .arg(r.internalActivitiesList[this->_activities[j]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[j]].id))
 							 .arg(tt)
 							 .arg(r.daysOfTheWeek[day1])
 							 .arg(r.daysOfTheWeek[day2]);
@@ -3970,10 +3970,10 @@ double ConstraintMinGapsBetweenActivities::fitness(Solution& c, Rules& r, QList<
 					if(tt>0 && conflictsString!=nullptr){
 						QString s=tr("Time constraint min gaps between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), they are on the same day %5 and there are %6 more needed hours between them",
 							"%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
-						 .arg(this->activitiesId[i])
-						 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))
-						 .arg(this->activitiesId[j])
-						 .arg(getActivityDetailedDescription(r, this->activitiesId[j]))
+						 .arg(r.internalActivitiesList[this->_activities[i]].id)
+						 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[i]].id))
+						 .arg(r.internalActivitiesList[this->_activities[j]].id)
+						 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[j]].id))
 						 .arg(r.daysOfTheWeek[day1])
 						 .arg(tt);
 
@@ -4271,10 +4271,10 @@ double ConstraintMaxGapsBetweenActivities::fitness(Solution& c, Rules& r, QList<
 					if(tt>0 && conflictsString!=nullptr){
 						QString s=tr("Time constraint max gaps between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), they are on the same day %5 and there are %6 extra hours between them",
 							"%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
-						 .arg(this->activitiesId[i])
-						 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))
-						 .arg(this->activitiesId[j])
-						 .arg(getActivityDetailedDescription(r, this->activitiesId[j]))
+						 .arg(r.internalActivitiesList[this->_activities[i]].id)
+						 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[i]].id))
+						 .arg(r.internalActivitiesList[this->_activities[j]].id)
+						 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[j]].id))
 						 .arg(r.daysOfTheWeek[day1])
 						 .arg(tt);
 
@@ -14253,7 +14253,7 @@ double ConstraintActivitiesSameStartingHour::fitness(Solution& c, Rules& r, QLis
 						int hour2=t2/r.nDaysPerWeek;
 						int tmp=0;
 
-						//	tmp = abs(hour1-hour2);						
+						//	tmp = abs(hour1-hour2);
 						if(hour1!=hour2)
 							tmp=1;
 
@@ -14262,10 +14262,10 @@ double ConstraintActivitiesSameStartingHour::fitness(Solution& c, Rules& r, QLis
 						if(tmp>0 && conflictsString!=nullptr){
 							QString s=tr("Time constraint activities same starting hour broken, because activity with id=%1 (%2) is not at the same hour with activity with id=%3 (%4)"
 							 , "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
-							 .arg(this->activitiesId[i])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))
-							 .arg(this->activitiesId[j])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]));
+							 .arg(r.internalActivitiesList[this->_activities[i]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[i]].id))
+							 .arg(r.internalActivitiesList[this->_activities[j]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[j]].id));
 							s+=". ";
 							s+=tr("Conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 							
@@ -14568,10 +14568,10 @@ double ConstraintActivitiesSameStartingDay::fitness(Solution& c, Rules& r, QList
 						if(tmp>0 && conflictsString!=nullptr){
 							QString s=tr("Time constraint activities same starting day broken, because activity with id=%1 (%2) is not in the same day with activity with id=%3 (%4)"
 							 , "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
-							 .arg(this->activitiesId[i])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))
-							 .arg(this->activitiesId[j])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]));
+							 .arg(r.internalActivitiesList[this->_activities[i]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[i]].id))
+							 .arg(r.internalActivitiesList[this->_activities[j]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[j]].id));
 							s+=". ";
 							s+=tr("Conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
 							
@@ -16067,8 +16067,8 @@ double ConstraintTwoSetsOfActivitiesOrdered::fitness(Solution& c, Rules& r, QLis
 			totalBroken+=nbroken;
 
 			if(conflictsString!=nullptr && nbroken>0){
-				int firstActivityId=this->firstActivitiesIdsList[i];
-				int secondActivityId=this->secondActivitiesIdsList[j];
+				int firstActivityId=r.internalActivitiesList[firstActivityIndex].id;
+				int secondActivityId=r.internalActivitiesList[secondActivityIndex].id;
 			
 				QString s=tr("Time constraint two sets of activities ordered broken for first activity with id=%1 (%2) and "
 				 "second activity with id=%3 (%4), increases conflicts total by %5", "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
@@ -49135,10 +49135,10 @@ double ConstraintMinHalfDaysBetweenActivities::fitness(Solution& c, Rules& r, QL
 						if(tt>0 && conflictsString!=nullptr){
 							QString s=tr("Time constraint min half days between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), being %5 days too close, on days %6 and %7",
 							 "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr. Close here means near")
-							 .arg(this->activitiesId[i])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))
-							 .arg(this->activitiesId[j])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]))
+							 .arg(r.internalActivitiesList[this->_activities[i]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[i]].id))
+							 .arg(r.internalActivitiesList[this->_activities[j]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[j]].id))
 							 .arg(tt)
 							 .arg(r.daysOfTheWeek[day1])
 							 .arg(r.daysOfTheWeek[day2]);
@@ -50015,10 +50015,10 @@ double ConstraintMaxTermsBetweenActivities::fitness(Solution& c, Rules& r, QList
 						if(tt>0 && conflictsString!=nullptr){
 							QString s=tr("Time constraint max terms between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), being %5 terms too far away"
 							 ", on terms %6 and %7", "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
-							 .arg(this->activitiesId[i])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))
-							 .arg(this->activitiesId[j])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]))
+							 .arg(r.internalActivitiesList[this->_activities[i]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[i]].id))
+							 .arg(r.internalActivitiesList[this->_activities[j]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[j]].id))
 							 .arg(tt)
 							 .arg(term1)
 							 .arg(term2);
@@ -51554,10 +51554,10 @@ double ConstraintMaxHalfDaysBetweenActivities::fitness(Solution& c, Rules& r, QL
 						if(tt>0 && conflictsString!=nullptr){
 							QString s=tr("Time constraint max half days between activities broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), being %5 days too far away"
 							 ", on days %6 and %7", "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
-							 .arg(this->activitiesId[i])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[i]))
-							 .arg(this->activitiesId[j])
-							 .arg(getActivityDetailedDescription(r, this->activitiesId[j]))
+							 .arg(r.internalActivitiesList[this->_activities[i]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[i]].id))
+							 .arg(r.internalActivitiesList[this->_activities[j]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[j]].id))
 							 .arg(tt)
 							 .arg(r.daysOfTheWeek[day1])
 							 .arg(r.daysOfTheWeek[day2]);
