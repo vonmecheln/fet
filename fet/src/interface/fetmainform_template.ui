@@ -1189,6 +1189,9 @@
      <addaction name="enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction"/>
      <addaction name="showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction"/>
      <addaction name="separator"/>
+     <addaction name="enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction"/>
+     <addaction name="showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction"/>
+     <addaction name="separator"/>
      <addaction name="enableGroupActivitiesInInitialOrderAction"/>
      <addaction name="showWarningForGroupActivitiesInInitialOrderAction"/>
      <addaction name="separator"/>
@@ -2113,6 +2116,28 @@
    </property>
    <property name="text">
     <string>Warn if using students min hours per morning with empty mornings</string>
+   </property>
+  </action>
+  <action name="enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Enable students min hours per afternoon with empty afternoons</string>
+   </property>
+  </action>
+  <action name="showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Warn if using students min hours per afternoon with empty afternoon</string>
    </property>
   </action>
   <action name="helpMoroccoAction">

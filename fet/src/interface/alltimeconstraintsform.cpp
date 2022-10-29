@@ -183,6 +183,9 @@
 #include "modifyconstraintteachersminhourspermorningform.h"
 #include "modifyconstraintteacherminhourspermorningform.h"
 
+#include "modifyconstraintteachersminhoursperafternoonform.h"
+#include "modifyconstraintteacherminhoursperafternoonform.h"
+
 #include "modifyconstraintteacherminrealdaysperweekform.h"
 #include "modifyconstraintteachersminrealdaysperweekform.h"
 
@@ -231,6 +234,9 @@
 
 #include "modifyconstraintstudentsminhourspermorningform.h"
 #include "modifyconstraintstudentssetminhourspermorningform.h"
+
+#include "modifyconstraintstudentsminhoursperafternoonform.h"
+#include "modifyconstraintstudentssetminhoursperafternoonform.h"
 
 #include "modifyconstraintstudentssetactivitytagmaxhoursdailyrealdaysform.h"
 #include "modifyconstraintstudentsactivitytagmaxhoursdailyrealdaysform.h"
@@ -1896,6 +1902,32 @@ void AllTimeConstraintsForm::modifyConstraint()
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
+
+	//199
+	else if(ctr->type==CONSTRAINT_TEACHERS_MIN_HOURS_PER_AFTERNOON){
+		ModifyConstraintTeachersMinHoursPerAfternoonForm form(this, (ConstraintTeachersMinHoursPerAfternoon*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//200
+	else if(ctr->type==CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON){
+		ModifyConstraintTeacherMinHoursPerAfternoonForm form(this, (ConstraintTeacherMinHoursPerAfternoon*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//201
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON){
+		ModifyConstraintStudentsSetMinHoursPerAfternoonForm form(this, (ConstraintStudentsSetMinHoursPerAfternoon*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+	//202
+	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_HOURS_PER_AFTERNOON){
+		ModifyConstraintStudentsMinHoursPerAfternoonForm form(this, (ConstraintStudentsMinHoursPerAfternoon*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+
 	else{
 		QMessageBox::critical(this, tr("FET critical"), tr("You have found a bug in FET. Please report it. This kind of constraint"
 		 " is not correctly recognized in all time constraints dialog. FET will skip this error, so that you can continue work."

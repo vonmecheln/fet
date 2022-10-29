@@ -11945,6 +11945,12 @@ impossiblestudentsmaxrealdaysperweek:
 						if(subgroupsMinHoursDailyMinHours[sbg][0]>=0)
 							mhm=subgroupsMinHoursDailyMinHours[sbg][0];
 						assert(mhm>=mhd);
+
+						int mhaft=mhd; //min hours per afternoon
+						if(subgroupsMinHoursPerAfternoonMinHours[sbg]>=0)
+							mhaft=subgroupsMinHoursPerAfternoonMinHours[sbg];
+						assert(mhaft>=mhd);
+
 						bool maxGapsZero=false;
 						if(subgroupsMaxGapsPerDayMaxGaps[sbg]==0 ||
 						 subgroupsMaxGapsPerWeekMaxGaps[sbg]==0 ||
@@ -11978,8 +11984,8 @@ impossiblestudentsmaxrealdaysperweek:
 									if(newSubgroupsDayNHours(sbg,d2)>0){
 										int _nh=newSubgroupsDayNHours(sbg,d2);
 										if(newSubgroupsDayNFirstGaps(sbg,d2)==1){
-											if(_nh<mhd){
-												_nh=mhd;
+											if(_nh<mhaft){
+												_nh=mhaft;
 											}
 											else{
 												_nfg++;
@@ -11989,7 +11995,7 @@ impossiblestudentsmaxrealdaysperweek:
 											_nh++;
 										}
 
-										_nHours+=max(_nh, mhd);
+										_nHours+=max(_nh, mhaft);
 										_nUsedAfternoons++;
 									}
 								}
@@ -11997,8 +12003,8 @@ impossiblestudentsmaxrealdaysperweek:
 									if(newSubgroupsDayNHours(sbg,d2)>0){
 										int _nh=newSubgroupsDayNHours(sbg,d2)+newSubgroupsDayNGaps(sbg,d2);
 										if(newSubgroupsDayNFirstGaps(sbg,d2)==1){
-											if(_nh<mhd){
-												_nh=mhd;
+											if(_nh<mhaft){
+												_nh=mhaft;
 											}
 											else{
 												_nfg++;
@@ -12006,15 +12012,15 @@ impossiblestudentsmaxrealdaysperweek:
 										}
 										else if(newSubgroupsDayNFirstGaps(sbg,d2)>=2){
 											_nh+=newSubgroupsDayNFirstGaps(sbg,d2)-1;
-											if(_nh<mhd){
-												_nh=mhd;
+											if(_nh<mhaft){
+												_nh=mhaft;
 											}
 											else{
 												_nfg++;
 											}
 										}
 
-										_nHours+=max(_nh, mhd);
+										_nHours+=max(_nh, mhaft);
 										_nUsedAfternoons++;
 									}
 								}
@@ -12030,7 +12036,7 @@ impossiblestudentsmaxrealdaysperweek:
 
 						if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0)
 							if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>_nUsedAfternoons)
-								_nHours+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-_nUsedAfternoons)*mhd;
+								_nHours+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-_nUsedAfternoons)*mhaft;
 
 						if(_nHours > nHoursPerSubgroup[sbg]){
 							if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
@@ -12068,8 +12074,8 @@ impossiblestudentsmaxrealdaysperweek:
 											if(sbgDayNHours[d2]>0){
 												int nh=sbgDayNHours[d2];
 												if(sbgDayNFirstGaps[d2]==1){
-													if(nh<mhd){
-														nh=mhd;
+													if(nh<mhaft){
+														nh=mhaft;
 													}
 													else{
 														nfg++;
@@ -12079,7 +12085,7 @@ impossiblestudentsmaxrealdaysperweek:
 													nh++;
 												}
 
-												nHours+=max(nh, mhd);
+												nHours+=max(nh, mhaft);
 												nUsedAfternoons++;
 											}
 										}
@@ -12087,8 +12093,8 @@ impossiblestudentsmaxrealdaysperweek:
 											if(sbgDayNHours[d2]>0){
 												int nh=sbgDayNHours[d2]+sbgDayNGaps[d2];
 												if(sbgDayNFirstGaps[d2]==1){
-													if(nh<mhd){
-														nh=mhd;
+													if(nh<mhaft){
+														nh=mhaft;
 													}
 													else{
 														nfg++;
@@ -12096,15 +12102,15 @@ impossiblestudentsmaxrealdaysperweek:
 												}
 												else if(sbgDayNFirstGaps[d2]>=2){
 													nh+=sbgDayNFirstGaps[d2]-1;
-													if(nh<mhd){
-														nh=mhd;
+													if(nh<mhaft){
+														nh=mhaft;
 													}
 													else{
 														nfg++;
 													}
 												}
 
-												nHours+=max(nh, mhd);
+												nHours+=max(nh, mhaft);
 												nUsedAfternoons++;
 											}
 										}
@@ -12120,7 +12126,7 @@ impossiblestudentsmaxrealdaysperweek:
 
 								if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0)
 									if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>nUsedAfternoons)
-										nHours+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhd;
+										nHours+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhaft;
 
 								int ai2=-1;
 
@@ -12187,6 +12193,12 @@ impossiblestudentsafternoonsearlymaxbeginningsatsecondhour:
 						if(subgroupsMinHoursDailyMinHours[sbg][0]>=0)
 							mhm=subgroupsMinHoursDailyMinHours[sbg][0];
 						assert(mhm>=mhd);
+
+						int mhaft=mhd; //min hours per afternoon
+						if(subgroupsMinHoursPerAfternoonMinHours[sbg]>=0)
+							mhaft=subgroupsMinHoursPerAfternoonMinHours[sbg];
+						assert(mhaft>=mhd);
+
 						bool maxGapsZero=false;
 						if(subgroupsMaxGapsPerDayMaxGaps[sbg]==0 ||
 						 subgroupsMaxGapsPerWeekMaxGaps[sbg]==0 ||
@@ -12250,13 +12262,13 @@ impossiblestudentsafternoonsearlymaxbeginningsatsecondhour:
 							else{ //afternoon
 								if(!maxGapsZero){
 									if(newSubgroupsDayNHours(sbg,d2)>0){
-										_nHours+=max(newSubgroupsDayNHours(sbg,d2), mhd);
+										_nHours+=max(newSubgroupsDayNHours(sbg,d2), mhaft);
 										_nUsedAfternoons++;
 									}
 								}
 								else{
 									if(newSubgroupsDayNHours(sbg,d2)>0){
-										_nHours+=max(newSubgroupsDayNHours(sbg,d2)+newSubgroupsDayNGaps(sbg,d2), mhd);
+										_nHours+=max(newSubgroupsDayNHours(sbg,d2)+newSubgroupsDayNGaps(sbg,d2), mhaft);
 										_nUsedAfternoons++;
 									}
 								}
@@ -12272,7 +12284,7 @@ impossiblestudentsafternoonsearlymaxbeginningsatsecondhour:
 
 						if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0)
 							if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>_nUsedAfternoons)
-								_nHours+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-_nUsedAfternoons)*mhd;
+								_nHours+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-_nUsedAfternoons)*mhaft;
 
 						if(_nHours > nHoursPerSubgroup[sbg]){
 							if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
@@ -12340,13 +12352,13 @@ impossiblestudentsafternoonsearlymaxbeginningsatsecondhour:
 									else{ //afternoon
 										if(!maxGapsZero){
 											if(sbgDayNHours[d2]>0){
-												nHours+=max(sbgDayNHours[d2], mhd);
+												nHours+=max(sbgDayNHours[d2], mhaft);
 												nUsedAfternoons++;
 											}
 										}
 										else{
 											if(sbgDayNHours[d2]>0){
-												nHours+=max(sbgDayNHours[d2]+sbgDayNGaps[d2], mhd);
+												nHours+=max(sbgDayNHours[d2]+sbgDayNGaps[d2], mhaft);
 												nUsedAfternoons++;
 											}
 										}
@@ -12362,7 +12374,7 @@ impossiblestudentsafternoonsearlymaxbeginningsatsecondhour:
 
 								if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0)
 									if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>nUsedAfternoons)
-										nHours+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhd;
+										nHours+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhaft;
 
 								int ai2=-1;
 
@@ -17185,6 +17197,8 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 					bool allowEmptyDays=subgroupsMinHoursDailyAllowEmptyDays[sbg];
 					bool allowEmptyMornings=subgroupsMinHoursPerMorningAllowEmptyMornings[sbg];
 
+					bool allowEmptyAfternoons=subgroupsMinHoursPerAfternoonAllowEmptyAfternoons[sbg];
+
 					int mhd=1; //min hours per day
 					if(subgroupsMinHoursDailyMinHours[sbg][1]>=0)
 						mhd=subgroupsMinHoursDailyMinHours[sbg][1];
@@ -17193,6 +17207,11 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 					if(subgroupsMinHoursDailyMinHours[sbg][0]>=0)
 						mhm=subgroupsMinHoursDailyMinHours[sbg][0];
 					assert(mhm>=mhd);
+
+					int mhaft=mhd; //min hours per afternoon
+					if(subgroupsMinHoursPerAfternoonMinHours[sbg]>=0)
+						mhaft=subgroupsMinHoursPerAfternoonMinHours[sbg];
+					assert(mhaft>=mhd);
 
 					bool skip=skipRandom(subgroupsMinHoursDailyPercentages[sbg][1]);
 					if(!skip){
@@ -17210,10 +17229,16 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 									for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 										int remGDay=newSubgroupsDayNFirstGaps(sbg,d2)+newSubgroupsDayNGaps(sbg,d2);
-										if(/*1*/ /*!allowEmptyDays ||*/ newSubgroupsDayNHours(sbg,d2)>0 || (!allowEmptyMornings && (d2%2)==0)){
-											if(newSubgroupsDayNHours(sbg,d2)<subgroupsMinHoursDailyMinHours[sbg][d2%2]){
-												remGDay-=subgroupsMinHoursDailyMinHours[sbg][d2%2]-newSubgroupsDayNHours(sbg,d2);
-												totalH+=subgroupsMinHoursDailyMinHours[sbg][d2%2];
+										if(/*1*/ /*!allowEmptyDays ||*/ newSubgroupsDayNHours(sbg,d2)>0 || (!allowEmptyMornings && (d2%2)==0) || (!allowEmptyAfternoons && (d2%2)==1)){
+											int tm=-1;
+											if(d2%2==0)
+												tm=mhm;
+											else
+												tm=mhaft;
+											assert(tm>=1);
+											if(newSubgroupsDayNHours(sbg,d2)</*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm){
+												remGDay-=/*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm-newSubgroupsDayNHours(sbg,d2);
+												totalH+=/*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm;
 											}
 											else
 												totalH+=newSubgroupsDayNHours(sbg,d2);
@@ -17235,7 +17260,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 									if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0)
 										if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>nUsedAfternoons)
-											totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhd;
+											totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhaft;
 
 									if((remG+totalH <= nHoursPerSubgroup[sbg]
 									  +subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]+subgroupsMaxGapsPerWeekMaxGaps[sbg])
@@ -17281,10 +17306,16 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 									for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 										int remGDay=0;
-										if(/*1*/ /*!allowEmptyDays ||*/ newSubgroupsDayNHours(sbg,d2)>0 || (!allowEmptyMornings && (d2%2)==0)){
-											if(newSubgroupsDayNHours(sbg,d2)<subgroupsMinHoursDailyMinHours[sbg][d2%2]){
+										if(/*1*/ /*!allowEmptyDays ||*/ newSubgroupsDayNHours(sbg,d2)>0 || (!allowEmptyMornings && (d2%2)==0) || (!allowEmptyAfternoons && (d2%2)==1)){
+											int tm=-1;
+											if(d2%2==0)
+												tm=mhm;
+											else
+												tm=mhaft;
+											assert(tm>=1);
+											if(newSubgroupsDayNHours(sbg,d2)</*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm){
 												remGDay=0;
-												totalH+=subgroupsMinHoursDailyMinHours[sbg][d2%2];
+												totalH+=/*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm;
 											}
 											else{
 												totalH+=newSubgroupsDayNHours(sbg,d2);
@@ -17314,7 +17345,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 									if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0)
 										if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>nUsedAfternoons)
-											totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhd;
+											totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhaft;
 
 									if((remG+totalH <= nHoursPerSubgroup[sbg]+subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg])
 									  && (totalH <= nHoursPerSubgroup[sbg]))
@@ -17377,10 +17408,16 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 									for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 										int remGDay=newSubgroupsDayNGaps(sbg,d2);
-										if(/*1*/ /*!allowEmptyDays ||*/ newSubgroupsDayNHours(sbg,d2)>0 || (!allowEmptyMornings && (d2%2)==0)){
-											if(newSubgroupsDayNHours(sbg,d2)<subgroupsMinHoursDailyMinHours[sbg][d2%2]){
-												remGDay-=subgroupsMinHoursDailyMinHours[sbg][d2%2]-newSubgroupsDayNHours(sbg,d2);
-												totalH+=subgroupsMinHoursDailyMinHours[sbg][d2%2];
+										if(/*1*/ /*!allowEmptyDays ||*/ newSubgroupsDayNHours(sbg,d2)>0 || (!allowEmptyMornings && (d2%2)==0) || (!allowEmptyAfternoons && (d2%2)==1)){
+											int tm=-1;
+											if(d2%2==0)
+												tm=mhm;
+											else
+												tm=mhaft;
+											assert(tm>=1);
+											if(newSubgroupsDayNHours(sbg,d2)</*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm){
+												remGDay-=/*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm-newSubgroupsDayNHours(sbg,d2);
+												totalH+=/*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm;
 											}
 											else
 												totalH+=newSubgroupsDayNHours(sbg,d2);
@@ -17401,7 +17438,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 									if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0)
 										if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>nUsedAfternoons)
-											totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhd;
+											totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhaft;
 
 									if((remG+totalH <= nHoursPerSubgroup[sbg]+subgroupsMaxGapsPerWeekMaxGaps[sbg])
 									  && (totalH <= nHoursPerSubgroup[sbg]))
@@ -17442,9 +17479,15 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 									int nUsedAfternoons=0;
 
 									for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
-										if(/*1*/ /*!allowEmptyDays ||*/ newSubgroupsDayNHours(sbg,d2)>0 || (!allowEmptyMornings && (d2%2)==0)){
-											if(newSubgroupsDayNHours(sbg,d2)<subgroupsMinHoursDailyMinHours[sbg][d2%2])
-												totalH+=subgroupsMinHoursDailyMinHours[sbg][d2%2];
+										if(/*1*/ /*!allowEmptyDays ||*/ newSubgroupsDayNHours(sbg,d2)>0 || (!allowEmptyMornings && (d2%2)==0) || (!allowEmptyAfternoons && (d2%2)==1)){
+											int tm=-1;
+											if(d2%2==0)
+												tm=mhm;
+											else
+												tm=mhaft;
+											assert(tm>=1);
+											if(newSubgroupsDayNHours(sbg,d2)</*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm)
+												totalH+=/*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm;
 											else
 												totalH+=newSubgroupsDayNHours(sbg,d2);
 										}
@@ -17462,7 +17505,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 									if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0)
 										if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>nUsedAfternoons)
-											totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhd;
+											totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhaft;
 
 									if(totalH <= nHoursPerSubgroup[sbg])
 										;//_ok=true;
@@ -17518,10 +17561,16 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 										for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 											int remGDay=sbgDayNFirstGaps[d2]+sbgDayNGaps[d2];
-											if(/*1*/ /*!allowEmptyDays ||*/ sbgDayNHours[d2]>0 || (!allowEmptyMornings && (d2%2)==0)){
-												if(sbgDayNHours[d2]<subgroupsMinHoursDailyMinHours[sbg][d2%2]){
-													remGDay-=subgroupsMinHoursDailyMinHours[sbg][d2%2]-sbgDayNHours[d2];
-													totalH+=subgroupsMinHoursDailyMinHours[sbg][d2%2];
+											if(/*1*/ /*!allowEmptyDays ||*/ sbgDayNHours[d2]>0 || (!allowEmptyMornings && (d2%2)==0) || (!allowEmptyAfternoons && (d2%2)==1)){
+												int tm=-1;
+												if(d2%2==0)
+													tm=mhm;
+												else
+													tm=mhaft;
+												assert(tm>=1);
+												if(sbgDayNHours[d2]</*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm){
+													remGDay-=/*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm-sbgDayNHours[d2];
+													totalH+=/*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm;
 												}
 												else
 													totalH+=sbgDayNHours[d2];
@@ -17543,7 +17592,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 										if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0)
 											if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>nUsedAfternoons)
-												totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhd;
+												totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhaft;
 
 										if((remG+totalH <= nHoursPerSubgroup[sbg]
 										  +subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg]+subgroupsMaxGapsPerWeekMaxGaps[sbg])
@@ -17587,10 +17636,16 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 										for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 											int remGDay=0;
-											if(/*1*/ /*!allowEmptyDays ||*/ sbgDayNHours[d2]>0 || (!allowEmptyMornings && (d2%2)==0)){
-												if(sbgDayNHours[d2]<subgroupsMinHoursDailyMinHours[sbg][d2%2]){
+											if(/*1*/ /*!allowEmptyDays ||*/ sbgDayNHours[d2]>0 || (!allowEmptyMornings && (d2%2)==0) || (!allowEmptyAfternoons && (d2%2)==1)){
+												int tm=-1;
+												if(d2%2==0)
+													tm=mhm;
+												else
+													tm=mhaft;
+												assert(tm>=1);
+												if(sbgDayNHours[d2]</*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm){
 													remGDay=0;
-													totalH+=subgroupsMinHoursDailyMinHours[sbg][d2%2];
+													totalH+=/*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm;
 												}
 												else{
 													totalH+=sbgDayNHours[d2];
@@ -17621,7 +17676,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 										if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0)
 											if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>nUsedAfternoons)
-												totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhd;
+												totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhaft;
 
 										if((remG+totalH <= nHoursPerSubgroup[sbg]+subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sbg])
 										  && (totalH <= nHoursPerSubgroup[sbg]))
@@ -17684,17 +17739,23 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 										for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
 											int remGDay=sbgDayNGaps[d2];
-											if(/*1*/ /*!allowEmptyDays ||*/ sbgDayNHours[d2]>0 || (!allowEmptyMornings && (d2%2)==0)){
-											if(sbgDayNHours[d2]<subgroupsMinHoursDailyMinHours[sbg][d2%2]){
-													remGDay-=subgroupsMinHoursDailyMinHours[sbg][d2%2]-sbgDayNHours[d2];
-													totalH+=subgroupsMinHoursDailyMinHours[sbg][d2%2];
+											if(/*1*/ /*!allowEmptyDays ||*/ sbgDayNHours[d2]>0 || (!allowEmptyMornings && (d2%2)==0) || (!allowEmptyAfternoons && (d2%2)==1)){
+												int tm=-1;
+												if(d2%2==0)
+													tm=mhm;
+												else
+													tm=mhaft;
+												assert(tm>=1);
+												if(sbgDayNHours[d2]</*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm){
+													remGDay-=/*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm-sbgDayNHours[d2];
+													totalH+=/*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm;
 												}
 												else
 													totalH+=sbgDayNHours[d2];
 											}
 											if(remGDay>0)
 												remG+=remGDay;
-
+	
 											if(sbgDayNHours[d2]>0){
 												if(d2%2==0)
 													nUsedMornings++;
@@ -17709,7 +17770,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 										if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0)
 											if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>nUsedAfternoons)
-												totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhd;
+												totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhaft;
 
 										if((remG+totalH <= nHoursPerSubgroup[sbg]+subgroupsMaxGapsPerWeekMaxGaps[sbg])
 										  && (totalH <= nHoursPerSubgroup[sbg]))
@@ -17750,9 +17811,15 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 										int nUsedAfternoons=0;
 
 										for(int d2=0; d2<gt.rules.nDaysPerWeek; d2++){
-											if(/*1*/ /*!allowEmptyDays ||*/ sbgDayNHours[d2]>0 || (!allowEmptyMornings && (d2%2)==0)){
-												if(sbgDayNHours[d2]<subgroupsMinHoursDailyMinHours[sbg][d2%2])
-													totalH+=subgroupsMinHoursDailyMinHours[sbg][d2%2];
+											if(/*1*/ /*!allowEmptyDays ||*/ sbgDayNHours[d2]>0 || (!allowEmptyMornings && (d2%2)==0) || (!allowEmptyAfternoons && (d2%2)==1)){
+												int tm=-1;
+												if(d2%2==0)
+													tm=mhm;
+												else
+													tm=mhaft;
+												assert(tm>=1);
+												if(sbgDayNHours[d2]</*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm)
+													totalH+=/*subgroupsMinHoursDailyMinHours[sbg][d2%2]*/tm;
 												else
 													totalH+=sbgDayNHours[d2];
 											}
@@ -17770,7 +17837,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 
 										if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0)
 											if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>nUsedAfternoons)
-												totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhd;
+												totalH+=(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]-nUsedAfternoons)*mhaft;
 
 										if(totalH <= nHoursPerSubgroup[sbg])
 											;//ok=true;
@@ -17871,6 +17938,12 @@ impossiblestudentsminhoursdaily:
 						assert(mhd[0]<subgroupsMinHoursDailyMinHours[sbg][0]);
 						mhd[0]=subgroupsMinHoursDailyMinHours[sbg][0];
 					}
+
+					if(subgroupsMinHoursPerAfternoonPercentages[sbg]==100){
+						assert(mhd[1]<=subgroupsMinHoursPerAfternoonMinHours[sbg]);
+						mhd[1]=subgroupsMinHoursPerAfternoonMinHours[sbg];
+					}
+
 					//assert(teachersMaxGapsPerWeekMaxGaps[tch]==0 || teachersMaxGapsPerDayMaxGaps[tch]==0);
 
 					bool skip=false;
@@ -19854,6 +19927,12 @@ impossibleteachersmaxrealdaysperweek:
 						if(teachersMinHoursDailyMinHours[tch][0]>=0)
 							mhm=teachersMinHoursDailyMinHours[tch][0];
 						assert(mhm>=mhd);
+
+						int mhaft=mhd; //min hours per afternoon
+						if(teachersMinHoursPerAfternoonMinHours[tch]>=0)
+							mhaft=teachersMinHoursPerAfternoonMinHours[tch];
+						assert(mhaft>=mhd);
+
 						bool maxGapsZero=false;
 						if(teachersMaxGapsPerDayMaxGaps[tch]==0 ||
 						 teachersMaxGapsPerWeekMaxGaps[tch]==0 ||
@@ -19887,8 +19966,8 @@ impossibleteachersmaxrealdaysperweek:
 									if(newTeachersDayNHours(tch,d2)>0){
 										int _nh=newTeachersDayNHours(tch,d2);
 										if(newTeachersDayNFirstGaps(tch,d2)==1){
-											if(_nh<mhd){
-												_nh=mhd;
+											if(_nh<mhaft){
+												_nh=mhaft;
 											}
 											else{
 												_nfg++;
@@ -19898,7 +19977,7 @@ impossibleteachersmaxrealdaysperweek:
 											_nh++;
 										}
 
-										_nHours+=max(_nh, mhd);
+										_nHours+=max(_nh, mhaft);
 										_nUsedAfternoons++;
 									}
 								}
@@ -19906,8 +19985,8 @@ impossibleteachersmaxrealdaysperweek:
 									if(newTeachersDayNHours(tch,d2)>0){
 										int _nh=newTeachersDayNHours(tch,d2)+newTeachersDayNGaps(tch,d2);
 										if(newTeachersDayNFirstGaps(tch,d2)==1){
-											if(_nh<mhd){
-												_nh=mhd;
+											if(_nh<mhaft){
+												_nh=mhaft;
 											}
 											else{
 												_nfg++;
@@ -19915,15 +19994,15 @@ impossibleteachersmaxrealdaysperweek:
 										}
 										else if(newTeachersDayNFirstGaps(tch,d2)>=2){
 											_nh+=newTeachersDayNFirstGaps(tch,d2)-1;
-											if(_nh<mhd){
-												_nh=mhd;
+											if(_nh<mhaft){
+												_nh=mhaft;
 											}
 											else{
 												_nfg++;
 											}
 										}
 
-										_nHours+=max(_nh, mhd);
+										_nHours+=max(_nh, mhaft);
 										_nUsedAfternoons++;
 									}
 								}
@@ -19939,7 +20018,7 @@ impossibleteachersmaxrealdaysperweek:
 
 						if(teachersMinAfternoonsPerWeekMinAfternoons[tch]>=0)
 							if(teachersMinAfternoonsPerWeekMinAfternoons[tch]>_nUsedAfternoons)
-								_nHours+=(teachersMinAfternoonsPerWeekMinAfternoons[tch]-_nUsedAfternoons)*mhd;
+								_nHours+=(teachersMinAfternoonsPerWeekMinAfternoons[tch]-_nUsedAfternoons)*mhaft;
 
 						if(_nHours > nHoursPerTeacher[tch]){
 							if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
@@ -19977,8 +20056,8 @@ impossibleteachersmaxrealdaysperweek:
 											if(tchDayNHours[d2]>0){
 												int nh=tchDayNHours[d2];
 												if(tchDayNFirstGaps[d2]==1){
-													if(nh<mhd){
-														nh=mhd;
+													if(nh<mhaft){
+														nh=mhaft;
 													}
 													else{
 														nfg++;
@@ -19988,7 +20067,7 @@ impossibleteachersmaxrealdaysperweek:
 													nh++;
 												}
 
-												nHours+=max(nh, mhd);
+												nHours+=max(nh, mhaft);
 												nUsedAfternoons++;
 											}
 										}
@@ -19996,8 +20075,8 @@ impossibleteachersmaxrealdaysperweek:
 											if(tchDayNHours[d2]>0){
 												int nh=tchDayNHours[d2]+tchDayNGaps[d2];
 												if(tchDayNFirstGaps[d2]==1){
-													if(nh<mhd){
-														nh=mhd;
+													if(nh<mhaft){
+														nh=mhaft;
 													}
 													else{
 														nfg++;
@@ -20005,15 +20084,15 @@ impossibleteachersmaxrealdaysperweek:
 												}
 												else if(tchDayNFirstGaps[d2]>=2){
 													nh+=tchDayNFirstGaps[d2]-1;
-													if(nh<mhd){
-														nh=mhd;
+													if(nh<mhaft){
+														nh=mhaft;
 													}
 													else{
 														nfg++;
 													}
 												}
 
-												nHours+=max(nh, mhd);
+												nHours+=max(nh, mhaft);
 												nUsedAfternoons++;
 											}
 										}
@@ -20029,7 +20108,7 @@ impossibleteachersmaxrealdaysperweek:
 
 								if(teachersMinAfternoonsPerWeekMinAfternoons[tch]>=0)
 									if(teachersMinAfternoonsPerWeekMinAfternoons[tch]>nUsedAfternoons)
-										nHours+=(teachersMinAfternoonsPerWeekMinAfternoons[tch]-nUsedAfternoons)*mhd;
+										nHours+=(teachersMinAfternoonsPerWeekMinAfternoons[tch]-nUsedAfternoons)*mhaft;
 
 								int ai2=-1;
 
@@ -20098,6 +20177,12 @@ impossibleteachersafternoonsearlymaxbeginningsatsecondhour:
 						if(teachersMinHoursDailyMinHours[tch][0]>=0)
 							mhm=teachersMinHoursDailyMinHours[tch][0];
 						assert(mhm>=mhd);
+
+						int mhaft=mhd; //min hours per afternoon
+						if(teachersMinHoursPerAfternoonMinHours[tch]>=0)
+							mhaft=teachersMinHoursPerAfternoonMinHours[tch];
+						assert(mhaft>=mhd);
+
 						bool maxGapsZero=false;
 						if(teachersMaxGapsPerDayMaxGaps[tch]==0 ||
 						 teachersMaxGapsPerWeekMaxGaps[tch]==0 ||
@@ -20161,13 +20246,13 @@ impossibleteachersafternoonsearlymaxbeginningsatsecondhour:
 							else{ //afternoon
 								if(!teacherNoGapsPerAfternoon(tch) && !maxGapsZero){
 									if(newTeachersDayNHours(tch,d2)>0){
-										_nHours+=max(newTeachersDayNHours(tch,d2), mhd);
+										_nHours+=max(newTeachersDayNHours(tch,d2), mhaft);
 										_nUsedAfternoons++;
 									}
 								}
 								else{
 									if(newTeachersDayNHours(tch,d2)>0){
-										_nHours+=max(newTeachersDayNHours(tch,d2)+newTeachersDayNGaps(tch,d2), mhd);
+										_nHours+=max(newTeachersDayNHours(tch,d2)+newTeachersDayNGaps(tch,d2), mhaft);
 										_nUsedAfternoons++;
 									}
 								}
@@ -20183,7 +20268,7 @@ impossibleteachersafternoonsearlymaxbeginningsatsecondhour:
 
 						if(teachersMinAfternoonsPerWeekMinAfternoons[tch]>=0)
 							if(teachersMinAfternoonsPerWeekMinAfternoons[tch]>_nUsedAfternoons)
-								_nHours+=(teachersMinAfternoonsPerWeekMinAfternoons[tch]-_nUsedAfternoons)*mhd;
+								_nHours+=(teachersMinAfternoonsPerWeekMinAfternoons[tch]-_nUsedAfternoons)*mhaft;
 
 						if(_nHours > nHoursPerTeacher[tch]){
 							if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
@@ -20251,13 +20336,13 @@ impossibleteachersafternoonsearlymaxbeginningsatsecondhour:
 									else{ //afternoon
 										if(!teacherNoGapsPerAfternoon(tch) && !maxGapsZero){
 											if(tchDayNHours[d2]>0){
-												nHours+=max(tchDayNHours[d2], mhd);
+												nHours+=max(tchDayNHours[d2], mhaft);
 												nUsedAfternoons++;
 											}
 										}
 										else{
 											if(tchDayNHours[d2]>0){
-												nHours+=max(tchDayNHours[d2]+tchDayNGaps[d2], mhd);
+												nHours+=max(tchDayNHours[d2]+tchDayNGaps[d2], mhaft);
 												nUsedAfternoons++;
 											}
 										}
@@ -20273,7 +20358,7 @@ impossibleteachersafternoonsearlymaxbeginningsatsecondhour:
 
 								if(teachersMinAfternoonsPerWeekMinAfternoons[tch]>=0)
 									if(teachersMinAfternoonsPerWeekMinAfternoons[tch]>nUsedAfternoons)
-										nHours+=(teachersMinAfternoonsPerWeekMinAfternoons[tch]-nUsedAfternoons)*mhd;
+										nHours+=(teachersMinAfternoonsPerWeekMinAfternoons[tch]-nUsedAfternoons)*mhaft;
 
 								int ai2=-1;
 
@@ -20341,6 +20426,12 @@ impossibleteachersmorningsearlymaxbeginningsatsecondhour:
 						if(teachersMinHoursDailyMinHours[tch][0]>=0)
 							mhm=teachersMinHoursDailyMinHours[tch][0];
 						assert(mhm>=mhd);
+
+						int mhaft=mhd; //min hours per afternoon
+						if(teachersMinHoursPerAfternoonMinHours[tch]>=0)
+							mhaft=teachersMinHoursPerAfternoonMinHours[tch];
+						assert(mhaft>=mhd);
+
 						bool maxGapsZero=false;
 						if(teachersMaxGapsPerDayMaxGaps[tch]==0 ||
 						 teachersMaxGapsPerWeekMaxGaps[tch]==0 ||
@@ -20406,8 +20497,8 @@ impossibleteachersmorningsearlymaxbeginningsatsecondhour:
 									if(newTeachersDayNHours(tch,d2)>0){
 										int _nh=newTeachersDayNHours(tch,d2);
 										if(newTeachersDayNFirstGaps(tch,d2)==1){
-											if(_nh<mhd){
-												_nh=mhd;
+											if(_nh<mhaft){
+												_nh=mhaft;
 											}
 											else{
 												_nfg++;
@@ -20417,7 +20508,7 @@ impossibleteachersmorningsearlymaxbeginningsatsecondhour:
 											_nh++;
 										}
 
-										_nHours+=max(_nh, mhd);
+										_nHours+=max(_nh, mhaft);
 										_nUsedAfternoons++;
 									}
 								}
@@ -20425,8 +20516,8 @@ impossibleteachersmorningsearlymaxbeginningsatsecondhour:
 									if(newTeachersDayNHours(tch,d2)>0){
 										int _nh=newTeachersDayNHours(tch,d2)+newTeachersDayNGaps(tch,d2);
 										if(newTeachersDayNFirstGaps(tch,d2)==1){
-											if(_nh<mhd){
-												_nh=mhd;
+											if(_nh<mhaft){
+												_nh=mhaft;
 											}
 											else{
 												_nfg++;
@@ -20434,15 +20525,15 @@ impossibleteachersmorningsearlymaxbeginningsatsecondhour:
 										}
 										else if(newTeachersDayNFirstGaps(tch,d2)>=2){
 											_nh+=newTeachersDayNFirstGaps(tch,d2)-1;
-											if(_nh<mhd){
-												_nh=mhd;
+											if(_nh<mhaft){
+												_nh=mhaft;
 											}
 											else{
 												_nfg++;
 											}
 										}
 
-										_nHours+=max(_nh, mhd);
+										_nHours+=max(_nh, mhaft);
 										_nUsedAfternoons++;
 									}
 								}
@@ -20459,7 +20550,7 @@ impossibleteachersmorningsearlymaxbeginningsatsecondhour:
 
 						if(teachersMinAfternoonsPerWeekMinAfternoons[tch]>=0)
 							if(teachersMinAfternoonsPerWeekMinAfternoons[tch]>_nUsedAfternoons)
-								_nHours+=(teachersMinAfternoonsPerWeekMinAfternoons[tch]-_nUsedAfternoons)*mhd;
+								_nHours+=(teachersMinAfternoonsPerWeekMinAfternoons[tch]-_nUsedAfternoons)*mhaft;
 
 						if(_nHours > nHoursPerTeacher[tch]){
 							if(level>=LEVEL_STOP_CONFLICTS_CALCULATION){
@@ -20529,8 +20620,8 @@ impossibleteachersmorningsearlymaxbeginningsatsecondhour:
 											if(tchDayNHours[d2]>0){
 												int nh=tchDayNHours[d2];
 												if(tchDayNFirstGaps[d2]==1){
-													if(nh<mhd){
-														nh=mhd;
+													if(nh<mhaft){
+														nh=mhaft;
 													}
 													else{
 														nfg++;
@@ -20540,7 +20631,7 @@ impossibleteachersmorningsearlymaxbeginningsatsecondhour:
 													nh++;
 												}
 
-												nHours+=max(nh, mhd);
+												nHours+=max(nh, mhaft);
 												nUsedAfternoons++;
 											}
 										}
@@ -20548,8 +20639,8 @@ impossibleteachersmorningsearlymaxbeginningsatsecondhour:
 											if(tchDayNHours[d2]>0){
 												int nh=tchDayNHours[d2]+tchDayNGaps[d2];
 												if(tchDayNFirstGaps[d2]==1){
-													if(nh<mhd){
-														nh=mhd;
+													if(nh<mhaft){
+														nh=mhaft;
 													}
 													else{
 														nfg++;
@@ -20557,15 +20648,15 @@ impossibleteachersmorningsearlymaxbeginningsatsecondhour:
 												}
 												else if(tchDayNFirstGaps[d2]>=2){
 													nh+=tchDayNFirstGaps[d2]-1;
-													if(nh<mhd){
-														nh=mhd;
+													if(nh<mhaft){
+														nh=mhaft;
 													}
 													else{
 														nfg++;
 													}
 												}
 
-												nHours+=max(nh, mhd);
+												nHours+=max(nh, mhaft);
 												nUsedAfternoons++;
 											}
 										}
@@ -20582,7 +20673,7 @@ impossibleteachersmorningsearlymaxbeginningsatsecondhour:
 
 								if(teachersMinAfternoonsPerWeekMinAfternoons[tch]>=0)
 									if(teachersMinAfternoonsPerWeekMinAfternoons[tch]>nUsedAfternoons)
-										nHours+=(teachersMinAfternoonsPerWeekMinAfternoons[tch]-nUsedAfternoons)*mhd;
+										nHours+=(teachersMinAfternoonsPerWeekMinAfternoons[tch]-nUsedAfternoons)*mhaft;
 
 								int ai2=-1;
 
@@ -25012,6 +25103,23 @@ impossibleteachersactivitytagmaxhourscontinuously:
 
 					bool skip=skipRandom(teachersMinHoursDailyPercentages[tch][1]);
 					if(!skip){
+						int mhd[2];
+						mhd[1]=1; //afternoon
+						mhd[0]=1; //morning, at least as large as for daily
+						if(teachersMinHoursDailyPercentages[tch][1]==100){
+							assert(mhd[1]<teachersMinHoursDailyMinHours[tch][1]);
+							mhd[1]=teachersMinHoursDailyMinHours[tch][1];
+						}
+						if(teachersMinHoursDailyPercentages[tch][0]==100){
+							assert(mhd[0]<teachersMinHoursDailyMinHours[tch][0]);
+							mhd[0]=teachersMinHoursDailyMinHours[tch][0];
+						}
+
+						if(teachersMinHoursPerAfternoonPercentages[tch]==100){
+							assert(mhd[1]<=teachersMinHoursPerAfternoonMinHours[tch]);
+							mhd[1]=teachersMinHoursPerAfternoonMinHours[tch];
+						}
+						
 						//preliminary test
 						bool _ok;
 						if(teachersMaxGapsPerWeekPercentage[tch]==-1){
@@ -25023,30 +25131,30 @@ impossibleteachersactivitytagmaxhourscontinuously:
 										//2019-09-13 - max gaps per afternoon = 0
 										if(teachersMaxGapsPerDayPercentage[tch]==-1){
 											if(d2%2==0){ //morning
-												_reqHours+=max(newTeachersDayNHours(tch,d2), teachersMinHoursDailyMinHours[tch][d2%2]);
+												_reqHours+=max(newTeachersDayNHours(tch,d2), /*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]);
 											}
 											else{ //afternoon
-												_reqHours+=max(newTeachersDayNHours(tch,d2)+newTeachersDayNGaps(tch,d2), teachersMinHoursDailyMinHours[tch][d2%2]);
+												_reqHours+=max(newTeachersDayNHours(tch,d2)+newTeachersDayNGaps(tch,d2), /*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]);
 											}
 										}
 										else{
 											if(d2%2==0){ //morning
 												int nh=max(0, newTeachersDayNGaps(tch,d2)-teachersMaxGapsPerDayMaxGaps[tch]);
-												_reqHours+=max(newTeachersDayNHours(tch,d2)+nh, teachersMinHoursDailyMinHours[tch][d2%2]);
+												_reqHours+=max(newTeachersDayNHours(tch,d2)+nh, /*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]);
 											}
 											else{ //afternoon
 												int nh=max(0, newTeachersDayNGaps(tch,d2)-0);
-												_reqHours+=max(newTeachersDayNHours(tch,d2)+nh, teachersMinHoursDailyMinHours[tch][d2%2]);
+												_reqHours+=max(newTeachersDayNHours(tch,d2)+nh, /*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]);
 											}
 										}
 									}
 									else{
 										if(teachersMaxGapsPerDayPercentage[tch]==-1){
-											_reqHours+=max(newTeachersDayNHours(tch,d2), teachersMinHoursDailyMinHours[tch][d2%2]);
+											_reqHours+=max(newTeachersDayNHours(tch,d2), /*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]);
 										}
 										else{
 											int nh=max(0, newTeachersDayNGaps(tch,d2)-teachersMaxGapsPerDayMaxGaps[tch]);
-											_reqHours+=max(newTeachersDayNHours(tch,d2)+nh, teachersMinHoursDailyMinHours[tch][d2%2]);
+											_reqHours+=max(newTeachersDayNHours(tch,d2)+nh, /*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]);
 										}
 									}
 								}
@@ -25127,9 +25235,9 @@ impossibleteachersactivitytagmaxhourscontinuously:
 								assert(remGDay>=0);
 								h+=addh;
 								if(h>0){
-									if(h<teachersMinHoursDailyMinHours[tch][d2%2]){
-										remGDay-=teachersMinHoursDailyMinHours[tch][d2%2]-h;
-										totalH+=teachersMinHoursDailyMinHours[tch][d2%2];
+									if(h</*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]){
+										remGDay-=/*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]-h;
+										totalH+=/*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2];
 									}
 									else
 										totalH+=h;
@@ -25199,30 +25307,30 @@ impossibleteachersactivitytagmaxhourscontinuously:
 											//2019-09-13 - max gaps per afternoon = 0
 											if(teachersMaxGapsPerDayPercentage[tch]==-1){
 												if(d2%2==0){ //morning
-													_reqHours+=max(tchDayNHours[d2], teachersMinHoursDailyMinHours[tch][d2%2]);
+													_reqHours+=max(tchDayNHours[d2], /*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]);
 												}
 												else{ //afternoon
-													_reqHours+=max(tchDayNHours[d2]+tchDayNGaps[d2], teachersMinHoursDailyMinHours[tch][d2%2]);
+													_reqHours+=max(tchDayNHours[d2]+tchDayNGaps[d2], /*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]);
 												}
 											}
 											else{
 												if(d2%2==0){ //morning
 													int nh=max(0, tchDayNGaps[d2]-teachersMaxGapsPerDayMaxGaps[tch]);
-													_reqHours+=max(tchDayNHours[d2]+nh, teachersMinHoursDailyMinHours[tch][d2%2]);
+													_reqHours+=max(tchDayNHours[d2]+nh, /*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]);
 												}
 												else{ //afternoon
 													int nh=max(0, tchDayNGaps[d2]-0);
-													_reqHours+=max(tchDayNHours[d2]+nh, teachersMinHoursDailyMinHours[tch][d2%2]);
+													_reqHours+=max(tchDayNHours[d2]+nh, /*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]);
 												}
 											}
 										}
 										else{
 											if(teachersMaxGapsPerDayPercentage[tch]==-1){
-												_reqHours+=max(tchDayNHours[d2], teachersMinHoursDailyMinHours[tch][d2%2]);
+												_reqHours+=max(tchDayNHours[d2], /*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]);
 											}
 											else{
 												int nh=max(0, tchDayNGaps[d2]-teachersMaxGapsPerDayMaxGaps[tch]);
-												_reqHours+=max(tchDayNHours[d2]+nh, teachersMinHoursDailyMinHours[tch][d2%2]);
+												_reqHours+=max(tchDayNHours[d2]+nh, /*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]);
 											}
 										}
 									}
@@ -25302,9 +25410,9 @@ impossibleteachersactivitytagmaxhourscontinuously:
 									assert(remGDay>=0);
 									h+=addh;
 									if(h>0){
-										if(h<teachersMinHoursDailyMinHours[tch][d2%2]){
-											remGDay-=teachersMinHoursDailyMinHours[tch][d2%2]-h;
-											totalH+=teachersMinHoursDailyMinHours[tch][d2%2];
+										if(h</*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]){
+											remGDay-=/*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2]-h;
+											totalH+=/*teachersMinHoursDailyMinHours[tch][d2%2]*/mhd[d2%2];
 										}
 										else
 											totalH+=h;
@@ -25432,43 +25540,60 @@ impossibleteachersminhoursdaily:
 								int _crtReqHoursWholeDay=0;
 
 								if(teachersMinHoursDailyMinHours[tch][1]>=0){
+									int mhd[2];
+									mhd[1]=1; //afternoon
+									mhd[0]=1; //morning, at least as large as for daily
+									if(teachersMinHoursDailyPercentages[tch][1]==100){
+										assert(mhd[1]<teachersMinHoursDailyMinHours[tch][1]);
+										mhd[1]=teachersMinHoursDailyMinHours[tch][1];
+									}
+									if(teachersMinHoursDailyPercentages[tch][0]==100){
+										assert(mhd[0]<teachersMinHoursDailyMinHours[tch][0]);
+										mhd[0]=teachersMinHoursDailyMinHours[tch][0];
+									}
+
+									if(teachersMinHoursPerAfternoonPercentages[tch]==100){
+										assert(mhd[1]<=teachersMinHoursPerAfternoonMinHours[tch]);
+										mhd[1]=teachersMinHoursPerAfternoonMinHours[tch];
+									}
+
 									if(teacherNoGapsPerAfternoon(tch)){
 										//2019-09-13 - max gaps per afternoon = 0
 										if(teachersMaxGapsPerDayPercentage[tch]==-1){
 											if(newTeachersDayNHours(tch,d1)>0)
-												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d1), teachersMinHoursDailyMinHours[tch][0]);
+												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d1), /*teachersMinHoursDailyMinHours[tch][0]*/mhd[0]);
 											if(newTeachersDayNHours(tch,d2)>0){
 												//_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d2), teachersMinHoursDailyMinHours[tch][1]);
 												int nh=max(0, newTeachersDayNGaps(tch,d2)-0/*teachersMaxGapsPerDayMaxGaps[tch]*/);
-												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d2)+nh, teachersMinHoursDailyMinHours[tch][1]);
+												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d2)+nh, /*teachersMinHoursDailyMinHours[tch][1]*/mhd[1]);
 											}
 										}
 										else{
 											if(newTeachersDayNHours(tch,d1)>0){
 												int nh=max(0, newTeachersDayNGaps(tch,d1)-teachersMaxGapsPerDayMaxGaps[tch]);
-												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d1)+nh, teachersMinHoursDailyMinHours[tch][0]);
+												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d1)+nh, /*teachersMinHoursDailyMinHours[tch][0]*/mhd[0]);
 											}
 											if(newTeachersDayNHours(tch,d2)>0){
 												int nh=max(0, newTeachersDayNGaps(tch,d2)-0/*teachersMaxGapsPerDayMaxGaps[tch]*/);
-												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d2)+nh, teachersMinHoursDailyMinHours[tch][1]);
+												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d2)+nh, /*teachersMinHoursDailyMinHours[tch][1]*/mhd[1]);
 											}
 										}
 									}
 									else{
 										if(teachersMaxGapsPerDayPercentage[tch]==-1){
 											if(newTeachersDayNHours(tch,d1)>0)
-												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d1), teachersMinHoursDailyMinHours[tch][0]);
+												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d1), /*teachersMinHoursDailyMinHours[tch][0]*/mhd[0]);
 											if(newTeachersDayNHours(tch,d2)>0)
-												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d2), teachersMinHoursDailyMinHours[tch][1]);
+												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d2), /*teachersMinHoursDailyMinHours[tch][1]*/mhd[1]);
 										}
 										else{
 											if(newTeachersDayNHours(tch,d1)>0){
 												int nh=max(0, newTeachersDayNGaps(tch,d1)-teachersMaxGapsPerDayMaxGaps[tch]);
-												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d1)+nh, teachersMinHoursDailyMinHours[tch][0]);
+												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d1)+nh, /*teachersMinHoursDailyMinHours[tch][0]*/mhd[0]);
 											}
 											if(newTeachersDayNHours(tch,d2)>0){
 												int nh=max(0, newTeachersDayNGaps(tch,d2)-teachersMaxGapsPerDayMaxGaps[tch]);
-												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d2)+nh, teachersMinHoursDailyMinHours[tch][1]);
+												_crtReqHoursHalfDays+=max(newTeachersDayNHours(tch,d2)+nh, /*teachersMinHoursDailyMinHours[tch][1]*/mhd[1]);
 											}
 										}
 									}
@@ -25667,42 +25792,59 @@ impossibleteachersminhoursdaily:
 									int _crtReqHoursWholeDay=0;
 
 									if(teachersMinHoursDailyMinHours[tch][1]>=0){
+										int mhd[2];
+										mhd[1]=1; //afternoon
+										mhd[0]=1; //morning, at least as large as for daily
+										if(teachersMinHoursDailyPercentages[tch][1]==100){
+											assert(mhd[1]<teachersMinHoursDailyMinHours[tch][1]);
+											mhd[1]=teachersMinHoursDailyMinHours[tch][1];
+										}
+										if(teachersMinHoursDailyPercentages[tch][0]==100){
+											assert(mhd[0]<teachersMinHoursDailyMinHours[tch][0]);
+											mhd[0]=teachersMinHoursDailyMinHours[tch][0];
+										}
+
+										if(teachersMinHoursPerAfternoonPercentages[tch]==100){
+											assert(mhd[1]<=teachersMinHoursPerAfternoonMinHours[tch]);
+											mhd[1]=teachersMinHoursPerAfternoonMinHours[tch];
+										}
+
 										if(teacherNoGapsPerAfternoon(tch)){
 											//2019-09-13 - max gaps per afternoon = 0
 											if(teachersMaxGapsPerDayPercentage[tch]==-1){
 												if(tchDayNHours[d1]>0)
-													_crtReqHoursHalfDays+=max(tchDayNHours[d1], teachersMinHoursDailyMinHours[tch][0]);
+													_crtReqHoursHalfDays+=max(tchDayNHours[d1], /*teachersMinHoursDailyMinHours[tch][0]*/mhd[0]);
 												if(tchDayNHours[d2]>0){
 													int nh=max(0, tchDayNGaps[d2]-0/*teachersMaxGapsPerDayMaxGaps[tch]*/);
-													_crtReqHoursHalfDays+=max(tchDayNHours[d2]+nh, teachersMinHoursDailyMinHours[tch][1]);
+													_crtReqHoursHalfDays+=max(tchDayNHours[d2]+nh, /*teachersMinHoursDailyMinHours[tch][1]*/mhd[1]);
 												}
 											}
 											else{
 												if(tchDayNHours[d1]>0){
 													int nh=max(0, tchDayNGaps[d1]-teachersMaxGapsPerDayMaxGaps[tch]);
-													_crtReqHoursHalfDays+=max(tchDayNHours[d1]+nh, teachersMinHoursDailyMinHours[tch][0]);
+													_crtReqHoursHalfDays+=max(tchDayNHours[d1]+nh, /*teachersMinHoursDailyMinHours[tch][0]*/mhd[0]);
 												}
 												if(tchDayNHours[d2]>0){
 													int nh=max(0, tchDayNGaps[d2]-0/*teachersMaxGapsPerDayMaxGaps[tch]*/);
-													_crtReqHoursHalfDays+=max(tchDayNHours[d2]+nh, teachersMinHoursDailyMinHours[tch][1]);
+													_crtReqHoursHalfDays+=max(tchDayNHours[d2]+nh, /*teachersMinHoursDailyMinHours[tch][1]*/mhd[1]);
 												}
 											}
 										}
 										else{
 											if(teachersMaxGapsPerDayPercentage[tch]==-1){
 												if(tchDayNHours[d1]>0)
-													_crtReqHoursHalfDays+=max(tchDayNHours[d1], teachersMinHoursDailyMinHours[tch][0]);
+													_crtReqHoursHalfDays+=max(tchDayNHours[d1], /*teachersMinHoursDailyMinHours[tch][0]*/mhd[0]);
 												if(tchDayNHours[d2]>0)
-													_crtReqHoursHalfDays+=max(tchDayNHours[d2], teachersMinHoursDailyMinHours[tch][1]);
+													_crtReqHoursHalfDays+=max(tchDayNHours[d2], /*teachersMinHoursDailyMinHours[tch][1]*/mhd[1]);
 											}
 											else{
 												if(tchDayNHours[d1]>0){
 													int nh=max(0, tchDayNGaps[d1]-teachersMaxGapsPerDayMaxGaps[tch]);
-													_crtReqHoursHalfDays+=max(tchDayNHours[d1]+nh, teachersMinHoursDailyMinHours[tch][0]);
+													_crtReqHoursHalfDays+=max(tchDayNHours[d1]+nh, /*teachersMinHoursDailyMinHours[tch][0]*/mhd[0]);
 												}
 												if(tchDayNHours[d2]>0){
 													int nh=max(0, tchDayNGaps[d2]-teachersMaxGapsPerDayMaxGaps[tch]);
-													_crtReqHoursHalfDays+=max(tchDayNHours[d2]+nh, teachersMinHoursDailyMinHours[tch][1]);
+													_crtReqHoursHalfDays+=max(tchDayNHours[d2]+nh, /*teachersMinHoursDailyMinHours[tch][1]*/mhd[1]);
 												}
 											}
 										}
@@ -26770,6 +26912,12 @@ impossibleteachersminrealdaysperweek:
 						assert(mhd[0]<teachersMinHoursDailyMinHours[tch][0]);
 						mhd[0]=teachersMinHoursDailyMinHours[tch][0];
 					}
+
+					if(teachersMinHoursPerAfternoonPercentages[tch]==100){
+						assert(mhd[1]<=teachersMinHoursPerAfternoonMinHours[tch]);
+						mhd[1]=teachersMinHoursPerAfternoonMinHours[tch];
+					}
+					
 					//assert(teachersMaxGapsPerWeekMaxGaps[tch]==0 || teachersMaxGapsPerDayMaxGaps[tch]==0);
 
 					bool skip=false;

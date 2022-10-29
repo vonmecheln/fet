@@ -471,6 +471,9 @@ Matrix1D<QList<double>> teachersActivityTagMaxHoursContinuouslyPercentage;
 Matrix2D<double> teachersMinHoursDailyPercentages;
 Matrix2D<int> teachersMinHoursDailyMinHours;
 
+Matrix1D<double> teachersMinHoursPerAfternoonPercentages;
+Matrix1D<int> teachersMinHoursPerAfternoonMinHours;
+
 //bool computeTeachersMinHoursDaily(QWidget* parent);
 ////////END   teacher(s) min hours daily
 
@@ -579,7 +582,12 @@ Matrix2D<double> subgroupsMinHoursDailyPercentages;
 Matrix2D<int> subgroupsMinHoursDailyMinHours;
 Matrix1D<bool> subgroupsMinHoursDailyAllowEmptyDays;
 Matrix1D<bool> subgroupsMinHoursPerMorningAllowEmptyMornings;
-bool haveStudentsMinHoursDailyMorningsAllowEmptyDays;
+
+Matrix1D<double> subgroupsMinHoursPerAfternoonPercentages;
+Matrix1D<int> subgroupsMinHoursPerAfternoonMinHours;
+Matrix1D<bool> subgroupsMinHoursPerAfternoonAllowEmptyAfternoons;
+
+bool haveStudentsMinHoursDailyMorningsAfternoonsAllowEmptyDays;
 //bool computeSubgroupsMinHoursDaily(QWidget* parent);
 ////////END   students (set) min hours daily
 
@@ -1274,6 +1282,9 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	teachersMinHoursDailyMinHours.resize(gt.rules.nInternalTeachers, 2);
 	teachersMinHoursDailyRealDaysPercentages.resize(gt.rules.nInternalTeachers);
 	teachersMinHoursDailyRealDaysMinHours.resize(gt.rules.nInternalTeachers);
+
+	teachersMinHoursPerAfternoonPercentages.resize(gt.rules.nInternalTeachers);
+	teachersMinHoursPerAfternoonMinHours.resize(gt.rules.nInternalTeachers);
 	//
 	teachersMinDaysPerWeekPercentages.resize(gt.rules.nInternalTeachers);
 	teachersMinDaysPerWeekMinDays.resize(gt.rules.nInternalTeachers);
@@ -1338,6 +1349,10 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	subgroupsMinHoursDailyMinHours.resize(gt.rules.nInternalSubgroups, 2);
 	subgroupsMinHoursDailyAllowEmptyDays.resize(gt.rules.nInternalSubgroups);
 	subgroupsMinHoursPerMorningAllowEmptyMornings.resize(gt.rules.nInternalSubgroups);
+
+	subgroupsMinHoursPerAfternoonPercentages.resize(gt.rules.nInternalSubgroups);
+	subgroupsMinHoursPerAfternoonMinHours.resize(gt.rules.nInternalSubgroups);
+	subgroupsMinHoursPerAfternoonAllowEmptyAfternoons.resize(gt.rules.nInternalSubgroups);
 	//
 	subgroupsMaxGapsPerRealDayPercentage.resize(gt.rules.nInternalSubgroups);
 	subgroupsMaxGapsPerRealDayMaxGaps.resize(gt.rules.nInternalSubgroups);
@@ -2326,8 +2341,8 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	}
 
 	if(gt.rules.mode!=MORNINGS_AFTERNOONS && SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS){
-		if(haveStudentsMinHoursDailyAllowEmptyDays || haveStudentsMinHoursDailyMorningsAllowEmptyDays){
-			QString s=GeneratePreTranslate::tr("Your data contains constraints students min hours daily/per morning which allow empty days/mornings.");
+		if(haveStudentsMinHoursDailyAllowEmptyDays || haveStudentsMinHoursDailyMorningsAfternoonsAllowEmptyDays){
+			QString s=GeneratePreTranslate::tr("Your data contains constraints students min hours daily/per morning/per afternoon which allow empty days/mornings/afternoons.");
 			s+="\n\n";
 			s+=GeneratePreTranslate::tr("These constraints are nonstandard. They are recommended only if the students can have free days and a solution with free days for students exists."
 			 " Otherwise the solution might be impossible for FET to find.");
@@ -4308,6 +4323,10 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 		subgroupsMinHoursDailyPercentages[i][1]=-1;
 		subgroupsMinHoursDailyAllowEmptyDays[i]=true;
 		subgroupsMinHoursPerMorningAllowEmptyMornings[i]=true;
+
+		subgroupsMinHoursPerAfternoonMinHours[i]=-1;
+		subgroupsMinHoursPerAfternoonPercentages[i]=-1;
+		subgroupsMinHoursPerAfternoonAllowEmptyAfternoons[i]=true;
 	}
 
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
@@ -4591,12 +4610,139 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 		}
 	}
 
-	haveStudentsMinHoursDailyMorningsAllowEmptyDays=false;
+
+	//2022-09-10
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON){
+			ConstraintStudentsSetMinHoursPerAfternoon* smd=(ConstraintStudentsSetMinHoursPerAfternoon*)gt.rules.internalTimeConstraintsList[i];
+
+			//////////
+			if(smd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students set min hours per afternoon for students set %1 with"
+				 " weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible"
+				 " to use 100% weight for such constraints. Please make weight 100% and try again")
+				 .arg(smd->students),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+			//////////
+
+			//////////
+			if(smd->minHoursPerAfternoon>gt.rules.nHoursPerDay){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students set min hours per afternoon for students set %1 with"
+				 " %2 min hours per afternoon, and the number of working hours per day is only %3. Please correct and try again")
+				 .arg(smd->students)
+				 .arg(smd->minHoursPerAfternoon)
+				 .arg(gt.rules.nHoursPerDay),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+			//////////
+
+			for(int sbg : qAsConst(smd->iSubgroupsList)){
+				if(subgroupsMinHoursDailyMinHours[sbg][1]==-1){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students set min hours per afternoon for subgroup %1 but not also"
+					 " min hours daily for him. Please add a constraint students (set) min hours daily affecting this subgroup.")
+					 .arg(gt.rules.internalSubgroupsList[sbg]->name),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}
+
+				if(subgroupsMinHoursPerAfternoonMinHours[sbg]==-1 || subgroupsMinHoursPerAfternoonMinHours[sbg]<smd->minHoursPerAfternoon){
+					subgroupsMinHoursPerAfternoonMinHours[sbg]=smd->minHoursPerAfternoon;
+					subgroupsMinHoursPerAfternoonPercentages[sbg]=100;
+				}
+
+				if(subgroupsMinHoursPerAfternoonAllowEmptyAfternoons[sbg]==true && smd->allowEmptyAfternoons==false)
+					subgroupsMinHoursPerAfternoonAllowEmptyAfternoons[sbg]=false;
+			}
+		}
+		else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_STUDENTS_MIN_HOURS_PER_AFTERNOON){
+			ConstraintStudentsMinHoursPerAfternoon* smd=(ConstraintStudentsMinHoursPerAfternoon*)gt.rules.internalTimeConstraintsList[i];
+
+			//////////
+			if(smd->weightPercentage!=100){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students min hours per afternoon with"
+				 " weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible"
+				 " to use 100% weight for such constraints. Please make weight 100% and try again"),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+			//////////
+
+			//////////
+			if(smd->minHoursPerAfternoon>gt.rules.nHoursPerDay){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students min hours per afternoon with"
+				 " %1 min hours per afternoon, and the number of working hours per day is only %2. Please correct and try again")
+				 .arg(smd->minHoursPerAfternoon)
+				 .arg(gt.rules.nHoursPerDay),
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+
+				if(t==0)
+					return false;
+			}
+			//////////
+
+			for(int sbg=0; sbg<gt.rules.nInternalSubgroups; sbg++){
+				if(subgroupsMinHoursDailyMinHours[sbg][1]==-1){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students set min hours per afternoon for subgroup %1 but not also"
+					 " min hours daily for him. Please add a constraint students (set) min hours daily affecting this subgroup.")
+					 .arg(gt.rules.internalSubgroupsList[sbg]->name),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}
+
+				if(subgroupsMinHoursPerAfternoonMinHours[sbg]==-1 || subgroupsMinHoursPerAfternoonMinHours[sbg]<smd->minHoursPerAfternoon){
+					subgroupsMinHoursPerAfternoonMinHours[sbg]=smd->minHoursPerAfternoon;
+					subgroupsMinHoursPerAfternoonPercentages[sbg]=100;
+				}
+
+				if(subgroupsMinHoursPerAfternoonAllowEmptyAfternoons[sbg]==true && smd->allowEmptyAfternoons==false)
+					subgroupsMinHoursPerAfternoonAllowEmptyAfternoons[sbg]=false;
+			}
+		}
+	}
+
+	haveStudentsMinHoursDailyMorningsAfternoonsAllowEmptyDays=false;
 
 	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 		for(int i=0; i<gt.rules.nInternalSubgroups; i++){
-			if(subgroupsMinHoursDailyMinHours[i][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0 && subgroupsMinHoursDailyAllowEmptyDays[i]==true && !haveStudentsMinHoursDailyMorningsAllowEmptyDays)
-				haveStudentsMinHoursDailyMorningsAllowEmptyDays=true;
+			if(subgroupsMinHoursDailyMinHours[i][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0 && subgroupsMinHoursDailyAllowEmptyDays[i]==true && !haveStudentsMinHoursDailyMorningsAfternoonsAllowEmptyDays)
+				haveStudentsMinHoursDailyMorningsAfternoonsAllowEmptyDays=true;
 
 			if(subgroupsMinHoursDailyMinHours[i][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0 && subgroupsMinHoursDailyAllowEmptyDays[i]==false){
 				if(gt.rules.nDaysPerWeek*subgroupsMinHoursDailyMinHours[i][MIN_HOURS_DAILY_INDEX_IN_ARRAY] > nHoursPerSubgroup[i]){
@@ -4675,8 +4821,9 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 	}
 	else{
 		for(int i=0; i<gt.rules.nInternalSubgroups; i++){
-			if(subgroupsMinHoursDailyMinHours[i][1]>=0 && (subgroupsMinHoursDailyAllowEmptyDays[i]==true||subgroupsMinHoursPerMorningAllowEmptyMornings[i]==true) && !haveStudentsMinHoursDailyMorningsAllowEmptyDays)
-				haveStudentsMinHoursDailyMorningsAllowEmptyDays=true;
+			if(subgroupsMinHoursDailyMinHours[i][1]>=0 && (subgroupsMinHoursDailyAllowEmptyDays[i]==true
+			 || subgroupsMinHoursPerMorningAllowEmptyMornings[i]==true || subgroupsMinHoursPerAfternoonAllowEmptyAfternoons[i]==true) && !haveStudentsMinHoursDailyMorningsAfternoonsAllowEmptyDays)
+				haveStudentsMinHoursDailyMorningsAfternoonsAllowEmptyDays=true;
 
 			if(subgroupsMinHoursDailyMinHours[i][1]>=0 && subgroupsMinHoursDailyAllowEmptyDays[i]==false){
 				if(gt.rules.nDaysPerWeek/2*subgroupsMinHoursDailyMinHours[i][1] > nHoursPerSubgroup[i]){
@@ -4758,6 +4905,22 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("For subgroup %1 you have too little activities to respect the constraint(s)"
 					 " of type min hours per morning (the constraint(s) do not allow empty mornings). Please modify your data accordingly and try again.")
+					 .arg(gt.rules.internalSubgroupsList[i]->name),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}
+			}
+
+			if(subgroupsMinHoursPerAfternoonMinHours[i]>=0 && subgroupsMinHoursPerAfternoonAllowEmptyAfternoons[i]==false){
+				if(gt.rules.nDaysPerWeek/2*subgroupsMinHoursPerAfternoonMinHours[i] > nHoursPerSubgroup[i]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("For subgroup %1 you have too little activities to respect the constraint(s)"
+					 " of type min hours per afternoon (the constraint(s) do not allow empty afternoons). Please modify your data accordingly and try again.")
 					 .arg(gt.rules.internalSubgroupsList[i]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 					 1, 0 );
@@ -6947,6 +7110,9 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
 		teachersMinHoursDailyMinHours[i][1]=-1;
 		teachersMinHoursDailyPercentages[i][1]=-1;
+
+		teachersMinHoursPerAfternoonMinHours[i]=-1;
+		teachersMinHoursPerAfternoonPercentages[i]=-1;
 	}
 
 	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
@@ -7141,8 +7307,12 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 						ok=false;
 
 						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers min hours per morning for teacher %1 but not also"
+						 " min hours daily for him. Please add a constraint teacher(s) min hours daily affecting this teacher.")
+						 .arg(gt.rules.internalTeachersList[tch]->name),
+						/*int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 						 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers min hours per morning for all the teachers but not also"
-						 " min hours daily for them. Please add one or more constraints teacher(s) min hours daily."),
+						 " min hours daily for them. Please add one or more constraints teacher(s) min hours daily."),*/
 						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
 
@@ -7153,6 +7323,126 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 					if(teachersMinHoursDailyMinHours[tch][0]==-1 || teachersMinHoursDailyMinHours[tch][0]<tmd->minHoursPerMorning){
 						teachersMinHoursDailyMinHours[tch][0]=tmd->minHoursPerMorning;
 						teachersMinHoursDailyPercentages[tch][0]=100;
+					}
+				}
+			}
+		}
+
+		//2022-09-10
+		for(int i=0; i<gt.rules.nInternalTimeConstraints; i++){
+			if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON){
+				ConstraintTeacherMinHoursPerAfternoon* tmd=(ConstraintTeacherMinHoursPerAfternoon*)gt.rules.internalTimeConstraintsList[i];
+
+				//////////
+				if(tmd->weightPercentage!=100){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher min hours per afternoon for teacher %1 with"
+					 " weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible"
+					 " to use 100% weight for such constraints. Please make weight 100% and try again")
+					 .arg(tmd->teacherName),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}
+				//////////
+
+				//////////
+				if(tmd->minHoursPerAfternoon>gt.rules.nHoursPerDay){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher min hours per afternoon for teacher %1 with"
+					 " %2 min hours per afternoon, and the number of working hours per day is only %3. Please correct and try again")
+					 .arg(tmd->teacherName)
+					 .arg(tmd->minHoursPerAfternoon)
+					 .arg(gt.rules.nHoursPerDay),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}
+				//////////
+
+				if(teachersMinHoursDailyMinHours[tmd->teacher_ID][1]==-1){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teacher min hours per afternoon for teacher %1 but not also"
+					 " min hours daily for him. Please add a constraint teacher(s) min hours daily affecting this teacher.")
+					 .arg(tmd->teacherName),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}
+
+				if(teachersMinHoursPerAfternoonMinHours[tmd->teacher_ID]==-1 || teachersMinHoursPerAfternoonMinHours[tmd->teacher_ID]<tmd->minHoursPerAfternoon){
+					teachersMinHoursPerAfternoonMinHours[tmd->teacher_ID]=tmd->minHoursPerAfternoon;
+					teachersMinHoursPerAfternoonPercentages[tmd->teacher_ID]=100;
+				}
+			}
+			else if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_TEACHERS_MIN_HOURS_PER_AFTERNOON){
+				ConstraintTeachersMinHoursPerAfternoon* tmd=(ConstraintTeachersMinHoursPerAfternoon*)gt.rules.internalTimeConstraintsList[i];
+
+				//////////
+				if(tmd->weightPercentage!=100){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers min hours per afternoon with"
+					 " weight (percentage) below 100. Starting with FET version 5.4.0 it is only possible"
+					 " to use 100% weight for such constraints. Please make weight 100% and try again"),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}
+				//////////
+
+				//////////
+				if(tmd->minHoursPerAfternoon>gt.rules.nHoursPerDay){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers min hours per afternoon with"
+					 " %1 min hours per afternoon, and the number of working hours per day is only %2. Please correct and try again")
+					 .arg(tmd->minHoursPerAfternoon)
+					 .arg(gt.rules.nHoursPerDay),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}
+				//////////
+				for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+					if(teachersMinHoursDailyMinHours[tch][1]==-1){
+						ok=false;
+
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers min hours per afternoon for teacher %1 but not also"
+						 " min hours daily for him. Please add a constraint teacher(s) min hours daily affecting this teacher.")
+						 .arg(gt.rules.internalTeachersList[tch]->name),
+						/*int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						 GeneratePreTranslate::tr("Cannot optimize, because you have constraint teachers min hours per afternoon for all the teachers but not also"
+						 " min hours daily for them. Please add one or more constraints teacher(s) min hours daily."),*/
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+
+						if(t==0)
+							return false;
+					}
+
+					if(teachersMinHoursPerAfternoonMinHours[tch]==-1 || teachersMinHoursPerAfternoonMinHours[tch]<tmd->minHoursPerAfternoon){
+						teachersMinHoursPerAfternoonMinHours[tch]=tmd->minHoursPerAfternoon;
+						teachersMinHoursPerAfternoonPercentages[tch]=100;
 					}
 				}
 			}
@@ -7195,6 +7485,38 @@ bool computeTeachersMinHoursDaily(QWidget* parent)
 				if(t==0)
 					return false;
 			}
+
+			/*if(teachersMinHoursDailyMinHours[tc][0]>=0 && teachersMinHoursPerMorningAllowEmptyMornings[tc]==false){
+				if(gt.rules.nDaysPerWeek/2*teachersMinHoursDailyMinHours[tc][0] > nHoursPerTeacher[tc]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("For teacher %1 you have too little activities to respect the constraint(s)"
+					 " of type min hours per morning (the constraint(s) do not allow empty mornings). Please modify your data accordingly and try again.")
+					 .arg(gt.rules.internalTeachersList[tc]->name),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}
+			}
+
+			if(teachersMinHoursPerAfternoonMinHours[tc]>=0 && teachersMinHoursPerAfternoonAllowEmptyAfternoons[tc]==false){
+				if(gt.rules.nDaysPerWeek/2*teachersMinHoursPerAfternoonMinHours[tc] > nHoursPerTeacher[tc]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("For teacher %1 you have too little activities to respect the constraint(s)"
+					 " of type min hours per afternoon (the constraint(s) do not allow empty afternoons). Please modify your data accordingly and try again.")
+					 .arg(gt.rules.internalTeachersList[tc]->name),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return false;
+				}
+			}*/
 		}
 	}
 
@@ -8517,6 +8839,28 @@ bool computeTeachersMinMorningsAfternoonsPerWeek(QWidget* parent)
 						return false;
 				}
 			}
+
+			if(teachersMinHoursPerAfternoonMinHours[tc]>=0 && teachersMinHoursPerAfternoonMinHours[tc]>teachersMinHoursDailyMinHours[tc][MIN_HOURS_DAILY_INDEX_IN_ARRAY]){
+				int mh=teachersMinHoursPerAfternoonMinHours[tc];
+				
+				if(md*mh>nHoursPerTeacher[tc]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min afternoons per week %2 and min hours per afternoon %3"
+					 " and he has only %4 working hours - impossible. Please correct and try again.")
+					 .arg(gt.rules.internalTeachersList[tc]->name)
+					 .arg(md)
+					 .arg(mh)
+					 .arg(nHoursPerTeacher[tc])
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+			 	
+					if(t==0)
+						return false;
+				}
+			}
 		}
 	}
 
@@ -8565,6 +8909,114 @@ bool computeTeachersMinMorningsAfternoonsPerWeek(QWidget* parent)
 			}
 		}
 	}
+
+	/*for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
+		if(teachersMinMorningsPerWeekMinMornings[tch]>=0){
+			int md=teachersMinMorningsPerWeekMinMornings[tch];
+			if(md>gt.rules.internalTeachersList[tch]->activitiesForTeacher.count()){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min mornings per week %2 and it has only %3 activities - impossible."
+				 " Please correct and try again.")
+				 .arg(gt.rules.internalTeachersList[tch]->name)
+				 .arg(md)
+				 .arg(gt.rules.internalTeachersList[tch]->activitiesForTeacher.count())
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(teachersMinHoursDailyMinHours[tch][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0){
+				int mh=teachersMinHoursDailyMinHours[tch][MIN_HOURS_DAILY_INDEX_IN_ARRAY];
+				
+				if(md*mh>nHoursPerTeacher[tch]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min mornings per week %2 and min hours daily %3"
+					 " and it has only %4 working hours - impossible. Please correct and try again.")
+					 .arg(gt.rules.internalTeachersList[tch]->name)
+					 .arg(md)
+					 .arg(mh)
+					 .arg(nHoursPerTeacher[tch])
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+			 	
+					if(t==0)
+						return false;
+				}
+			}
+
+			if(teachersMinHoursDailyMinHours[tch][0]>=0 && teachersMinHoursDailyMinHours[tch][0]>teachersMinHoursDailyMinHours[tch][MIN_HOURS_DAILY_INDEX_IN_ARRAY]){
+				int mh=teachersMinHoursDailyMinHours[tch][0];
+				
+				if(md*mh>nHoursPerTeacher[tch]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min mornings per week %2 and min hours per morning %3"
+					 " and it has only %4 working hours - impossible. Please correct and try again.")
+					 .arg(gt.rules.internalTeachersList[tch]->name)
+					 .arg(md)
+					 .arg(mh)
+					 .arg(nHoursPerTeacher[tch])
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+			 	
+					if(t==0)
+						return false;
+				}
+			}
+		}
+
+		if(teachersMinAfternoonsPerWeekMinAfternoons[tch]>=0){
+			int md=teachersMinAfternoonsPerWeekMinAfternoons[tch];
+			if(md>gt.rules.internalTeachersList[tch]->activitiesForTeacher.count()){
+				ok=false;
+
+				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+				 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min afternoons per week %2 and it has only %3 activities - impossible."
+				 " Please correct and try again.")
+				 .arg(gt.rules.internalTeachersList[tch]->name)
+				 .arg(md)
+				 .arg(gt.rules.internalTeachersList[tch]->activitiesForTeacher.count())
+				 ,
+				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+				 1, 0 );
+			 	
+				if(t==0)
+					return false;
+			}
+			
+			if(teachersMinHoursDailyMinHours[tch][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0){
+				int mh=teachersMinHoursDailyMinHours[tch][MIN_HOURS_DAILY_INDEX_IN_ARRAY];
+				
+				if(md*mh>nHoursPerTeacher[tch]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize because for teacher %1 you have min afternoons per week %2 and min hours daily %3"
+					 " and it has only %4 working hours - impossible. Please correct and try again.")
+					 .arg(gt.rules.internalTeachersList[tch]->name)
+					 .arg(md)
+					 .arg(mh)
+					 .arg(nHoursPerTeacher[tch])
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+			 	
+					if(t==0)
+						return false;
+				}
+			}
+		}
+	}*/
 
 	/*for(int tch=0; tch<gt.rules.nInternalTeachers; tch++){
 		if(teachersMinMorningsPerWeekMinMornings[tch]>=0 || teachersMinAfternoonsPerWeekMinAfternoons[tch]>=0){
@@ -8837,6 +9289,7 @@ bool computeStudentsMinMorningsAfternoonsPerWeek(QWidget* parent)
 						return false;
 				}
 			}
+
 		}
 
 		if(subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0){
@@ -8866,6 +9319,28 @@ bool computeStudentsMinMorningsAfternoonsPerWeek(QWidget* parent)
 
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize because for subgroup %1 you have min afternoons per week %2 and min hours daily %3"
+					 " and it has only %4 working hours - impossible. Please correct and try again.")
+					 .arg(gt.rules.internalSubgroupsList[sbg]->name)
+					 .arg(md)
+					 .arg(mh)
+					 .arg(nHoursPerSubgroup[sbg])
+					 ,
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+			 	
+					if(t==0)
+						return false;
+				}
+			}
+
+			if(subgroupsMinHoursPerAfternoonMinHours[sbg]>=0 && subgroupsMinHoursPerAfternoonMinHours[sbg]>subgroupsMinHoursDailyMinHours[sbg][MIN_HOURS_DAILY_INDEX_IN_ARRAY]){
+				int mh=subgroupsMinHoursPerAfternoonMinHours[sbg];
+				
+				if(md*mh>nHoursPerSubgroup[sbg]){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("Cannot optimize because for subgroup %1 you have min afternoons per week %2 and min hours per afternoon %3"
 					 " and it has only %4 working hours - impossible. Please correct and try again.")
 					 .arg(gt.rules.internalSubgroupsList[sbg]->name)
 					 .arg(md)
@@ -18384,6 +18859,7 @@ void computeMustComputeTimetableSubgroups()
 			  subgroupsMaxHoursDailyRealDaysPercentages1[sbg]>=0 ||
 			  subgroupsMaxHoursDailyRealDaysPercentages2[sbg]>=0 ||
 			  subgroupsMinHoursDailyPercentages[sbg][0]>=0 || //mornings-afternoons: morning (daily or morning constraint)
+			  subgroupsMinHoursPerAfternoonPercentages[sbg]>=0 ||
 
 			  subgroupsMaxHoursPerAllAfternoonsPercentages[sbg]>=0 ||
 
@@ -18462,6 +18938,7 @@ void computeMustComputeTimetableTeachers()
 			  teachersMaxHoursDailyRealDaysPercentages2[tch]>=0 ||
 
 			  teachersMinHoursDailyPercentages[tch][0]>=0 || //mornings-afternoons: morning (daily or morning constraint)
+			  teachersMinHoursPerAfternoonPercentages[tch]>=0 ||
 			  teachersMinHoursDailyRealDaysPercentages[tch]>=0 ||
 
 			  teachersMaxHoursPerAllAfternoonsPercentages[tch]>=0 ||

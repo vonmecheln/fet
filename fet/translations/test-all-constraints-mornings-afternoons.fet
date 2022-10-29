@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.5.7">
+<fet version="6.6.0">
 
 <Mode>Mornings_Afternoons</Mode>
 
@@ -2535,6 +2535,36 @@
 	<Active>true</Active>
 	<Comments></Comments>
 </ConstraintTeachersMaxSpanPerDay>
+<ConstraintTeacherMinHoursPerAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Teacher_Name>t2</Teacher_Name>
+	<Minimum_Hours_Per_Afternoon>3</Minimum_Hours_Per_Afternoon>
+	<Allow_Empty_Afternoons>true</Allow_Empty_Afternoons>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeacherMinHoursPerAfternoon>
+<ConstraintTeachersMinHoursPerAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Per_Afternoon>2</Minimum_Hours_Per_Afternoon>
+	<Allow_Empty_Afternoons>true</Allow_Empty_Afternoons>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintTeachersMinHoursPerAfternoon>
+<ConstraintStudentsSetMinHoursPerAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Per_Afternoon>3</Minimum_Hours_Per_Afternoon>
+	<Students>y2</Students>
+	<Allow_Empty_Afternoons>true</Allow_Empty_Afternoons>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsSetMinHoursPerAfternoon>
+<ConstraintStudentsMinHoursPerAfternoon>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Minimum_Hours_Per_Afternoon>2</Minimum_Hours_Per_Afternoon>
+	<Allow_Empty_Afternoons>false</Allow_Empty_Afternoons>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintStudentsMinHoursPerAfternoon>
 </Time_Constraints_List>
 
 <Space_Constraints_List>

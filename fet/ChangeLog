@@ -2496,7 +2496,7 @@ Version 6.4.0
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
 	- Updated the Arabic translation, by Benahmed Abdelkrim.
 ---------------------------------------------------------------------------------
-Versions 6.5.0 - 6.5.v
+Versions 6.5.0 - 6.5.7
 - Version 6.5.0
 	- Important generation bug fix, when using constraints of type students (set) max span per (real) day. This bug was found with the help of
 	Vangelis Karafillidis. Unfortunately, this bug fix means that the generation might take longer (for the contrived example
@@ -2538,4 +2538,13 @@ Versions 6.5.0 - 6.5.v
 - Version 6.5.7
 	- Added a new type of constraint, teacher(s) max span per day, in the Mornings-Afternoons mode (suggested by Phạm Văn Quyền Anh). (This constraint type was
 	already implemented for the other modes, but in the Mornings-Afternoons mode there was available only the constraint type teacher(s) max span per real day.)
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
+---------------------------------------------------------------------------------
+Versions 6.6.0 - 6.6.v
+- Version 6.6.0
+	- Updated to Qt 6.3.2.
+	- Added a new type of constraint in the Mornings-Afternoons mode, students (set)/teacher(s) min hours per afternoon (suggested by bachiri401 and Hocine Berrou).
+	- Bug fixes when modifying/removing subjects/activity tags/students sets/teachers attached to constraints of type activities begin students'/teachers' day
+	(reported by YOUSSEF HOUIET).
+	- Updated the Russian translation, by Alexey Chernous.
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.

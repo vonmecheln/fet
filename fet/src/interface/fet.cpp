@@ -516,6 +516,9 @@ void FetSettings::readSimulationParameters()
 	ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=newSettings.value("enable-students-min-hours-per-morning-with-allow-empty-mornings", "false").toBool();
 	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=newSettings.value("warn-if-using-students-min-hours-per-morning-with-allow-empty-mornings", "true").toBool();
 
+	ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=newSettings.value("enable-students-min-hours-per-afternoon-with-allow-empty-afternoons", "false").toBool();
+	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=newSettings.value("warn-if-using-students-min-hours-per-afternoon-with-allow-empty-afternoons", "true").toBool();
+
 	ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER=newSettings.value("enable-group-activities-in-initial-order", "false").toBool();
 	SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=newSettings.value("warn-if-using-group-activities-in-initial-order", "true").toBool();
 
@@ -639,6 +642,9 @@ void FetSettings::writeSimulationParameters()
 
 	settings.setValue("enable-students-min-hours-per-morning-with-allow-empty-mornings", ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
 	settings.setValue("warn-if-using-students-min-hours-per-morning-with-allow-empty-mornings", SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
+
+	settings.setValue("enable-students-min-hours-per-afternoon-with-allow-empty-afternoon", ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS);
+	settings.setValue("warn-if-using-students-min-hours-per-afternoon-with-allow-empty-afternoon", SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS);
 
 	settings.setValue("enable-group-activities-in-initial-order", ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	settings.setValue("warn-if-using-group-activities-in-initial-order", SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);

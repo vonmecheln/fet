@@ -669,13 +669,18 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
 	 type==CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3 ||
 	 type==CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3 ||
 	 type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3 ||
-	
+
 	 type==CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES ||
 
 	 type==CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY ||
 	 type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY ||
 	 type==CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY ||
-	 type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY)
+	 type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY ||
+	
+ 	 type==CONSTRAINT_TEACHERS_MIN_HOURS_PER_AFTERNOON ||
+	 type==CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON ||
+	 type==CONSTRAINT_STUDENTS_MIN_HOURS_PER_AFTERNOON ||
+	 type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON)
 		return true;
 
 	return false;
@@ -30812,8 +30817,8 @@ bool ConstraintTeachersMinHoursPerMorning::computeInternalStructure(QWidget* par
 	Q_UNUSED(r);
 
 	if(allowEmptyMornings==false){
-		QString s=tr("Cannot generate a timetable with a constraint teachers min hours per morning with allow empty days=false. Please modify it,"
-			" so that it allows empty days. If you need a facility like that, please use constraint teachers min days per week");
+		QString s=tr("Cannot generate a timetable with a constraint teachers min hours per morning with allow empty mornings=false. Please modify it,"
+			" so that it allows empty mornings. If you need a facility like that, please use constraint teachers min mornings per week");
 		s+="\n\n";
 		s+=tr("Constraint is:")+"\n"+this->getDetailedDescription(r);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"), s);
@@ -31056,8 +31061,8 @@ bool ConstraintTeacherMinHoursPerMorning::computeInternalStructure(QWidget* pare
 	assert(this->teacher_ID>=0);
 
 	if(allowEmptyMornings==false){
-		QString s=tr("Cannot generate a timetable with a constraint teacher min hours per morning with allow empty days=false. Please modify it,"
-			" so that it allows empty days. If you need a facility like that, please use constraint teacher min days per week");
+		QString s=tr("Cannot generate a timetable with a constraint teacher min hours per morning with allow empty mornings=false. Please modify it,"
+			" so that it allows empty mornings. If you need a facility like that, please use constraint teacher min mornings per week");
 		s+="\n\n";
 		s+=tr("Constraint is:")+"\n"+this->getDetailedDescription(r);
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"), s);
@@ -52719,6 +52724,1066 @@ bool ConstraintActivitiesBeginTeachersDay::repairWrongDayOrHour(Rules& r)
 {
 	Q_UNUSED(r);
 	assert(0); //should check hasWrongDayOrHour, firstly
+
+	return true;
+}
+
+//2022-09-10
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeachersMinHoursPerAfternoon::ConstraintTeachersMinHoursPerAfternoon()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHERS_MIN_HOURS_PER_AFTERNOON;
+
+	this->allowEmptyAfternoons=true;
+}
+
+ConstraintTeachersMinHoursPerAfternoon::ConstraintTeachersMinHoursPerAfternoon(double wp, int minhours, bool _allowEmptyAfternoons)
+ : TimeConstraint(wp)
+ {
+	assert(minhours>0);
+	this->minHoursPerAfternoon=minhours;
+
+	this->allowEmptyAfternoons=_allowEmptyAfternoons;
+
+	this->type=CONSTRAINT_TEACHERS_MIN_HOURS_PER_AFTERNOON;
+}
+
+bool ConstraintTeachersMinHoursPerAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(r);
+
+	if(allowEmptyAfternoons==false){
+		QString s=tr("Cannot generate a timetable with a constraint teachers min hours per afternoon with allow empty afternoons=false. Please modify it,"
+			" so that it allows empty afternoons. If you need a facility like that, please use constraint teachers min afternoons per week");
+		s+="\n\n";
+		s+=tr("Constraint is:")+"\n"+this->getDetailedDescription(r);
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"), s);
+
+		return false;
+	}
+
+	return true;
+}
+
+bool ConstraintTeachersMinHoursPerAfternoon::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeachersMinHoursPerAfternoon::getXmlDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString s="<ConstraintTeachersMinHoursPerAfternoon>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Minimum_Hours_Per_Afternoon>"+CustomFETString::number(this->minHoursPerAfternoon)+"</Minimum_Hours_Per_Afternoon>\n";
+	if(this->allowEmptyAfternoons)
+		s+="	<Allow_Empty_Afternoons>true</Allow_Empty_Afternoons>\n";
+	else
+		s+="	<Allow_Empty_Afternoons>false</Allow_Empty_Afternoons>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintTeachersMinHoursPerAfternoon>\n";
+	return s;
+}
+
+QString ConstraintTeachersMinHoursPerAfternoon::getDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s;
+	s+=tr("Teachers min hours per afternoon");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("mH:%1", "Min hours (per afternoon)").arg(this->minHoursPerAfternoon);s+=", ";
+	s+=tr("AEA:%1", "Allow empty afternoons").arg(yesNoTranslated(this->allowEmptyAfternoons));
+
+	return begin+s+end;
+}
+
+QString ConstraintTeachersMinHoursPerAfternoon::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("All teachers must respect the minimum number of hours per afternoon"); s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Minimum hours per afternoon=%1").arg(this->minHoursPerAfternoon);s+="\n";
+	s+=tr("Allow empty afternoons=%1").arg(yesNoTranslated(this->allowEmptyAfternoons));s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeachersMinHoursPerAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	assert(this->allowEmptyAfternoons==true);
+
+	int nbroken;
+
+	//without logging
+	if(conflictsString==nullptr){
+		nbroken=0;
+		for(int i=0; i<r.nInternalTeachers; i++){
+			for(int d=0; d<r.nDaysPerWeek; d++){
+				if(d%2==0)
+					continue;
+				int n_hours_per_afternoon=0;
+				for(int h=0; h<r.nHoursPerDay; h++)
+					if(teachersMatrix[i][d][h]>0)
+						n_hours_per_afternoon++;
+
+				if(n_hours_per_afternoon>0 && n_hours_per_afternoon<this->minHoursPerAfternoon){
+					nbroken++;
+				}
+			}
+		}
+	}
+	//with logging
+	else{
+		nbroken=0;
+		for(int i=0; i<r.nInternalTeachers; i++){
+			for(int d=0; d<r.nDaysPerWeek; d++){
+				if(d%2==0)
+					continue;
+				int n_hours_per_afternoon=0;
+				for(int h=0; h<r.nHoursPerDay; h++)
+					if(teachersMatrix[i][d][h]>0)
+						n_hours_per_afternoon++;
+
+				if(n_hours_per_afternoon>0 && n_hours_per_afternoon<this->minHoursPerAfternoon){
+					nbroken++;
+
+					if(conflictsString!=nullptr){
+						QString s=(tr("Time constraint teachers min %1 hours per afternoon broken for teacher %2, on day %3, length=%4.")
+						 .arg(CustomFETString::number(this->minHoursPerAfternoon))
+						 .arg(r.internalTeachersList[i]->name)
+						 .arg(r.daysOfTheWeek[d])
+						 .arg(n_hours_per_afternoon)
+						 )
+						 +
+						 " "
+						 +
+						 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
+
+						dl.append(s);
+						cl.append(weightPercentage/100);
+
+						*conflictsString+= s+"\n";
+					}
+				}
+			}
+		}
+	}
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)
+			assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeachersMinHoursPerAfternoon::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(a);
+	Q_UNUSED(r);
+
+	return false;
+}
+
+bool ConstraintTeachersMinHoursPerAfternoon::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return true;
+}
+
+bool ConstraintTeachersMinHoursPerAfternoon::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMinHoursPerAfternoon::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMinHoursPerAfternoon::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeachersMinHoursPerAfternoon::hasWrongDayOrHour(Rules& r)
+{
+	if(minHoursPerAfternoon>r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeachersMinHoursPerAfternoon::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintTeachersMinHoursPerAfternoon::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(minHoursPerAfternoon>r.nHoursPerDay)
+		minHoursPerAfternoon=r.nHoursPerDay;
+
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintTeacherMinHoursPerAfternoon::ConstraintTeacherMinHoursPerAfternoon()
+	: TimeConstraint()
+{
+	this->type=CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON;
+
+	this->allowEmptyAfternoons=true;
+}
+
+ConstraintTeacherMinHoursPerAfternoon::ConstraintTeacherMinHoursPerAfternoon(double wp, int minhours, const QString& teacher, bool _allowEmptyAfternoons)
+ : TimeConstraint(wp)
+ {
+	assert(minhours>0);
+	this->minHoursPerAfternoon=minhours;
+	this->teacherName=teacher;
+
+	this->allowEmptyAfternoons=_allowEmptyAfternoons;
+
+	this->type=CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON;
+}
+
+bool ConstraintTeacherMinHoursPerAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	//this->teacher_ID=r.searchTeacher(this->teacherName);
+	teacher_ID=r.teachersHash.value(teacherName, -1);
+	assert(this->teacher_ID>=0);
+
+	if(allowEmptyAfternoons==false){
+		QString s=tr("Cannot generate a timetable with a constraint teacher min hours per afternoon with allow empty afternoons=false. Please modify it,"
+			" so that it allows empty afternoons. If you need a facility like that, please use constraint teacher min afternoons per week");
+		s+="\n\n";
+		s+=tr("Constraint is:")+"\n"+this->getDetailedDescription(r);
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"), s);
+
+		return false;
+	}
+
+	return true;
+}
+
+bool ConstraintTeacherMinHoursPerAfternoon::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintTeacherMinHoursPerAfternoon::getXmlDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString s="<ConstraintTeacherMinHoursPerAfternoon>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Teacher_Name>"+protect(this->teacherName)+"</Teacher_Name>\n";
+	s+="	<Minimum_Hours_Per_Afternoon>"+CustomFETString::number(this->minHoursPerAfternoon)+"</Minimum_Hours_Per_Afternoon>\n";
+	if(this->allowEmptyAfternoons)
+		s+="	<Allow_Empty_Afternoons>true</Allow_Empty_Afternoons>\n";
+	else
+		s+="	<Allow_Empty_Afternoons>false</Allow_Empty_Afternoons>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintTeacherMinHoursPerAfternoon>\n";
+	return s;
+}
+
+QString ConstraintTeacherMinHoursPerAfternoon::getDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s;
+	s+=tr("Teacher min hours per afternoon");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("T:%1", "Teacher").arg(this->teacherName);s+=", ";
+	s+=tr("mH:%1", "Minimum hours (per afternoon)").arg(this->minHoursPerAfternoon);s+=", ";
+	s+=tr("AEA:%1", "Allow empty afternoons").arg(yesNoTranslated(this->allowEmptyAfternoons));
+
+	return begin+s+end;
+}
+
+QString ConstraintTeacherMinHoursPerAfternoon::getDetailedDescription(Rules& r){
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("A teacher must respect the minimum number of hours per afternoon");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
+	s+=tr("Minimum hours per afternoon=%1").arg(this->minHoursPerAfternoon);s+="\n";
+	s+=tr("Allow empty afternoons=%1").arg(yesNoTranslated(this->allowEmptyAfternoons));s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintTeacherMinHoursPerAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	assert(this->allowEmptyAfternoons==true);
+
+	int nbroken;
+
+	//without logging
+	if(conflictsString==nullptr){
+		nbroken=0;
+		int i=this->teacher_ID;
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			if(d%2==0)
+				continue;
+			int n_hours_per_afternoon=0;
+			for(int h=0; h<r.nHoursPerDay; h++)
+				if(teachersMatrix[i][d][h]>0)
+					n_hours_per_afternoon++;
+
+			if(n_hours_per_afternoon>0 && n_hours_per_afternoon<this->minHoursPerAfternoon){
+				nbroken++;
+			}
+		}
+	}
+	//with logging
+	else{
+		nbroken=0;
+		int i=this->teacher_ID;
+		for(int d=0; d<r.nDaysPerWeek; d++){
+			if(d%2==0)
+				continue;
+			int n_hours_per_afternoon=0;
+			for(int h=0; h<r.nHoursPerDay; h++)
+				if(teachersMatrix[i][d][h]>0)
+					n_hours_per_afternoon++;
+
+			if(n_hours_per_afternoon>0 && n_hours_per_afternoon<this->minHoursPerAfternoon){
+				nbroken++;
+
+				if(conflictsString!=nullptr){
+					QString s=(tr(
+					 "Time constraint teacher min %1 hours per afternoon broken for teacher %2, on day %3, length=%4.")
+					 .arg(CustomFETString::number(this->minHoursPerAfternoon))
+					 .arg(r.internalTeachersList[i]->name)
+					 .arg(r.daysOfTheWeek[d])
+					 .arg(n_hours_per_afternoon)
+					 )
+					 +" "
+					 +
+					 tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100));
+
+					dl.append(s);
+					cl.append(weightPercentage/100);
+
+					*conflictsString+= s+"\n";
+				}
+			}
+		}
+	}
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100)
+			assert(nbroken==0);
+
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintTeacherMinHoursPerAfternoon::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintTeacherMinHoursPerAfternoon::isRelatedToTeacher(Teacher* t)
+{
+	if(this->teacherName==t->name)
+		return true;
+	return false;
+}
+
+bool ConstraintTeacherMinHoursPerAfternoon::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMinHoursPerAfternoon::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMinHoursPerAfternoon::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintTeacherMinHoursPerAfternoon::hasWrongDayOrHour(Rules& r)
+{
+	if(minHoursPerAfternoon>r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintTeacherMinHoursPerAfternoon::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintTeacherMinHoursPerAfternoon::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(minHoursPerAfternoon>r.nHoursPerDay)
+		minHoursPerAfternoon=r.nHoursPerDay;
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsMinHoursPerAfternoon::ConstraintStudentsMinHoursPerAfternoon()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_STUDENTS_MIN_HOURS_PER_AFTERNOON;
+	this->minHoursPerAfternoon = -1;
+
+	this->allowEmptyAfternoons=false;
+}
+
+ConstraintStudentsMinHoursPerAfternoon::ConstraintStudentsMinHoursPerAfternoon(double wp, int minnh, bool _allowEmptyAfternoons)
+	: TimeConstraint(wp)
+{
+	this->minHoursPerAfternoon = minnh;
+	this->type = CONSTRAINT_STUDENTS_MIN_HOURS_PER_AFTERNOON;
+
+	this->allowEmptyAfternoons=_allowEmptyAfternoons;
+}
+
+bool ConstraintStudentsMinHoursPerAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	Q_UNUSED(parent);
+	Q_UNUSED(r);
+
+	return true;
+}
+
+bool ConstraintStudentsMinHoursPerAfternoon::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsMinHoursPerAfternoon::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintStudentsMinHoursPerAfternoon>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	if(this->minHoursPerAfternoon>=0)
+		s+="	<Minimum_Hours_Per_Afternoon>"+CustomFETString::number(this->minHoursPerAfternoon)+"</Minimum_Hours_Per_Afternoon>\n";
+	else
+		assert(0);
+	if(this->allowEmptyAfternoons)
+		s+="	<Allow_Empty_Afternoons>true</Allow_Empty_Afternoons>\n";
+	else
+		s+="	<Allow_Empty_Afternoons>false</Allow_Empty_Afternoons>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintStudentsMinHoursPerAfternoon>\n";
+	return s;
+}
+
+QString ConstraintStudentsMinHoursPerAfternoon::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s;
+
+	if(this->allowEmptyAfternoons)
+		s+="! ";
+	s+=tr("Students min hours per afternoon");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("mH:%1", "Min hours (per afternoon)").arg(this->minHoursPerAfternoon);s+=", ";
+	s+=tr("AEA:%1", "Allow empty afternoons").arg(yesNoTranslated(this->allowEmptyAfternoons));
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsMinHoursPerAfternoon::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	if(this->allowEmptyAfternoons==true){
+		s+=tr("(nonstandard, students may have empty afternoons)");
+		s+="\n";
+	}
+	s+=tr("All students must respect the minimum number of hours per afternoon");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Minimum hours per afternoon=%1").arg(this->minHoursPerAfternoon);s+="\n";
+	s+=tr("Allow empty afternoons=%1").arg(yesNoTranslated(this->allowEmptyAfternoons));s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintStudentsMinHoursPerAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int tmp1/*, tmp2*/;
+	int too_little;
+
+	assert(this->minHoursPerAfternoon>=0);
+
+	too_little=0;
+	for(int i=0; i<r.nInternalSubgroups; i++)
+		for(int j=0; j<r.nDaysPerWeek/2; j++){
+			tmp1=0;
+			for(int k=0; k<r.nHoursPerDay; k++){
+				if(subgroupsMatrix[i][2*j+1][k]>=1)
+					tmp1++;
+			}
+
+			if(tmp1>0 && tmp1<this->minHoursPerAfternoon){
+				too_little += - tmp1 + this->minHoursPerAfternoon;
+
+				if(conflictsString!=nullptr){
+					QString s=tr("Time constraint students min hours per afternoon broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
+					 .arg(r.internalSubgroupsList[i]->name)
+					 .arg(r.daysOfTheWeek[2*j+1])
+					 .arg(CustomFETString::number(tmp1))
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*(-tmp1+this->minHoursPerAfternoon)));
+
+					dl.append(s);
+					cl.append(weightPercentage/100*(-tmp1+this->minHoursPerAfternoon));
+
+					*conflictsString+= s+"\n";
+				}
+			}
+
+			/*tmp2=0;
+			for(int k=0; k<r.nHoursPerDay; k++){
+				if(subgroupsMatrix[i][2*j+1][k]>=1)
+					tmp2++;
+			}
+
+			if(tmp2>0 && tmp2<this->minHoursDaily){
+				too_little += - tmp2 + this->minHoursDaily;
+
+				if(conflictsString!=nullptr){
+					QString s=tr("Time constraint students min hours daily broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
+					 .arg(r.internalSubgroupsList[i]->name)
+					 .arg(r.daysOfTheWeek[2*j+1])
+					 .arg(CustomFETString::number(tmp2))
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*(-tmp2+this->minHoursDaily)));
+
+					dl.append(s);
+					cl.append(weightPercentage/100*(-tmp2+this->minHoursDaily));
+
+					*conflictsString+= s+"\n";
+				}
+			}*/
+
+			if(!this->allowEmptyAfternoons==true)
+				if(tmp1/*+tmp2*/==0){
+					too_little++;
+
+					if(conflictsString!=nullptr){
+						QString s=tr("Time constraint students min hours per afternoon broken for subgroup: %1, day: %2, empty afternoon, but"
+						 " the constraint does not allow empty afternoons, conflict increase=%3")
+						 .arg(r.internalSubgroupsList[i]->name)
+						 .arg(r.daysOfTheWeek[2*j+1])
+						 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*(1)));
+
+						dl.append(s);
+						cl.append(weightPercentage/100*1);
+
+						*conflictsString+= s+"\n";
+					}
+				}
+		}
+
+	assert(too_little>=0);
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100) //does not work for partial solutions
+			assert(too_little==0);
+
+	return too_little * weightPercentage/100;
+}
+
+bool ConstraintStudentsMinHoursPerAfternoon::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsMinHoursPerAfternoon::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsMinHoursPerAfternoon::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMinHoursPerAfternoon::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsMinHoursPerAfternoon::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return true;
+}
+
+bool ConstraintStudentsMinHoursPerAfternoon::hasWrongDayOrHour(Rules& r)
+{
+	if(minHoursPerAfternoon>r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsMinHoursPerAfternoon::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintStudentsMinHoursPerAfternoon::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(minHoursPerAfternoon>r.nHoursPerDay)
+		minHoursPerAfternoon=r.nHoursPerDay;
+
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintStudentsSetMinHoursPerAfternoon::ConstraintStudentsSetMinHoursPerAfternoon()
+	: TimeConstraint()
+{
+	this->type = CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON;
+	this->minHoursPerAfternoon = -1;
+
+	this->allowEmptyAfternoons=false;
+}
+
+ConstraintStudentsSetMinHoursPerAfternoon::ConstraintStudentsSetMinHoursPerAfternoon(double wp, int minnh, QString s, bool _allowEmptyAfternoons)
+	: TimeConstraint(wp)
+{
+	this->minHoursPerAfternoon = minnh;
+	this->students = s;
+	this->type = CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON;
+
+	this->allowEmptyAfternoons=_allowEmptyAfternoons;
+}
+
+bool ConstraintStudentsSetMinHoursPerAfternoon::hasInactiveActivities(Rules& r)
+{
+	Q_UNUSED(r);
+	return false;
+}
+
+QString ConstraintStudentsSetMinHoursPerAfternoon::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintStudentsSetMinHoursPerAfternoon>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Minimum_Hours_Per_Afternoon>"+CustomFETString::number(this->minHoursPerAfternoon)+"</Minimum_Hours_Per_Afternoon>\n";
+	s+="	<Students>"+protect(this->students)+"</Students>\n";
+	if(this->allowEmptyAfternoons)
+		s+="	<Allow_Empty_Afternoons>true</Allow_Empty_Afternoons>\n";
+	else
+		s+="	<Allow_Empty_Afternoons>false</Allow_Empty_Afternoons>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintStudentsSetMinHoursPerAfternoon>\n";
+	return s;
+}
+
+QString ConstraintStudentsSetMinHoursPerAfternoon::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+
+	QString s;
+
+	if(this->allowEmptyAfternoons)
+		s+="! ";
+	s+=tr("Students set min hours per afternoon");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("St:%1", "Students (set)").arg(this->students);s+=", ";
+	s+=tr("mH:%1", "Min hours (per afternoon)").arg(this->minHoursPerAfternoon);s+=", ";
+	s+=tr("AEA:%1", "Allow empty afternoons").arg(yesNoTranslated(this->allowEmptyAfternoons));
+
+	return begin+s+end;
+}
+
+QString ConstraintStudentsSetMinHoursPerAfternoon::getDetailedDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s=tr("Time constraint");s+="\n";
+	if(this->allowEmptyAfternoons==true){
+		s+=tr("(nonstandard, students may have empty afternoons)");
+		s+="\n";
+	}
+	s+=tr("A students set must respect the minimum number of hours per afternoon");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Students set=%1").arg(this->students);s+="\n";
+	s+=tr("Minimum hours per afternoon=%1").arg(this->minHoursPerAfternoon);s+="\n";
+	s+=tr("Allow empty afternoons=%1").arg(yesNoTranslated(this->allowEmptyAfternoons));s+="\n";
+
+	if(!active){
+		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+bool ConstraintStudentsSetMinHoursPerAfternoon::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	//StudentsSet* ss=r.searchAugmentedStudentsSet(this->students);
+	StudentsSet* ss=r.studentsHash.value(students, nullptr);
+
+	if(ss==nullptr){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
+		 tr("Constraint students set min hours per afternoon is wrong because it refers to nonexistent students set."
+		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
+
+		return false;
+	}
+
+	assert(ss!=nullptr);
+
+	populateInternalSubgroupsList(r, ss, this->iSubgroupsList);
+	/*this->iSubgroupsList.clear();
+	if(ss->type==STUDENTS_SUBGROUP){
+		int tmp;
+		tmp=((StudentsSubgroup*)ss)->indexInInternalSubgroupsList;
+		assert(tmp>=0);
+		assert(tmp<r.nInternalSubgroups);
+		if(!this->iSubgroupsList.contains(tmp))
+			this->iSubgroupsList.append(tmp);
+	}
+	else if(ss->type==STUDENTS_GROUP){
+		StudentsGroup* stg=(StudentsGroup*)ss;
+		for(int i=0; i<stg->subgroupsList.size(); i++){
+			StudentsSubgroup* sts=stg->subgroupsList[i];
+			int tmp;
+			tmp=sts->indexInInternalSubgroupsList;
+			assert(tmp>=0);
+			assert(tmp<r.nInternalSubgroups);
+			if(!this->iSubgroupsList.contains(tmp))
+				this->iSubgroupsList.append(tmp);
+		}
+	}
+	else if(ss->type==STUDENTS_YEAR){
+		StudentsYear* sty=(StudentsYear*)ss;
+		for(int i=0; i<sty->groupsList.size(); i++){
+			StudentsGroup* stg=sty->groupsList[i];
+			for(int j=0; j<stg->subgroupsList.size(); j++){
+				StudentsSubgroup* sts=stg->subgroupsList[j];
+				int tmp;
+				tmp=sts->indexInInternalSubgroupsList;
+				assert(tmp>=0);
+				assert(tmp<r.nInternalSubgroups);
+				if(!this->iSubgroupsList.contains(tmp))
+					this->iSubgroupsList.append(tmp);
+			}
+		}
+	}
+	else
+		assert(0);*/
+
+	return true;
+}
+
+double ConstraintStudentsSetMinHoursPerAfternoon::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>&dl, FakeString* conflictsString)
+{
+	//if the matrices subgroupsMatrix and teachersMatrix are already calculated, do not calculate them again!
+	if(!c.teachersMatrixReady || !c.subgroupsMatrixReady){
+		c.teachersMatrixReady=true;
+		c.subgroupsMatrixReady=true;
+		subgroups_conflicts = c.getSubgroupsMatrix(r, subgroupsMatrix);
+		teachers_conflicts = c.getTeachersMatrix(r, teachersMatrix);
+
+		c.changedForMatrixCalculation=false;
+	}
+
+	int tmp1/*, tmp2*/;
+	int too_little;
+
+	assert(this->minHoursPerAfternoon>=0);
+
+	too_little=0;
+	for(int sg=0; sg<this->iSubgroupsList.count(); sg++){
+		int i=iSubgroupsList.at(sg);
+		for(int j=0; j<r.nDaysPerWeek/2; j++){
+			tmp1=0;
+			for(int k=0; k<r.nHoursPerDay; k++){
+				if(subgroupsMatrix[i][2*j+1][k]>=1)
+					tmp1++;
+			}
+
+			if(tmp1>0 && tmp1<this->minHoursPerAfternoon){
+				too_little += - tmp1 + this->minHoursPerAfternoon;
+
+				if(conflictsString!=nullptr){
+					QString s=tr("Time constraint students set min hours per afternoon broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
+					 .arg(r.internalSubgroupsList[i]->name)
+					 .arg(r.daysOfTheWeek[2*j+1])
+					 .arg(CustomFETString::number(tmp1))
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*(-tmp1+this->minHoursPerAfternoon)));
+
+					dl.append(s);
+					cl.append(weightPercentage/100*(-tmp1+this->minHoursPerAfternoon));
+
+					*conflictsString+= s+"\n";
+				}
+			}
+
+			/*tmp2=0;
+			for(int k=0; k<r.nHoursPerDay; k++){
+				if(subgroupsMatrix[i][2*j+1][k]>=1)
+					tmp2++;
+			}
+
+			if(tmp2>0 && tmp2<this->minHoursDaily){
+				too_little += - tmp2 + this->minHoursDaily;
+
+				if(conflictsString!=nullptr){
+					QString s=tr("Time constraint students set min hours daily broken for subgroup: %1, day: %2, length=%3, conflict increase=%4")
+					 .arg(r.internalSubgroupsList[i]->name)
+					 .arg(r.daysOfTheWeek[2*j+1])
+					 .arg(CustomFETString::number(tmp2))
+					 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*(-tmp2+this->minHoursDaily)));
+
+					dl.append(s);
+					cl.append(weightPercentage/100*(-tmp2+this->minHoursDaily));
+
+					*conflictsString+= s+"\n";
+				}
+			}*/
+
+			if(!this->allowEmptyAfternoons==true)
+				if(tmp1/*+tmp2*/==0){
+					too_little++;
+
+					if(conflictsString!=nullptr){
+						QString s=tr("Time constraint students set min hours per afternoon broken for subgroup: %1, day: %2, empty afternoon, but"
+						 " the constraint does not allow empty afternoons, conflict increase=%3")
+						 .arg(r.internalSubgroupsList[i]->name)
+						 .arg(r.daysOfTheWeek[2*j+1])
+						 .arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100*(1)));
+
+						dl.append(s);
+						cl.append(weightPercentage/100*1);
+
+						*conflictsString+= s+"\n";
+					}
+				}
+		}
+	}
+
+	assert(too_little>=0);
+
+	if(c.nPlacedActivities==r.nInternalActivities)
+		if(weightPercentage==100) //does not work for partial solutions
+			assert(too_little==0);
+
+	return too_little * weightPercentage / 100.0;
+}
+
+bool ConstraintStudentsSetMinHoursPerAfternoon::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(a);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMinHoursPerAfternoon::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMinHoursPerAfternoon::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMinHoursPerAfternoon::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintStudentsSetMinHoursPerAfternoon::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	return r.setsShareStudents(this->students, s->name);
+}
+
+bool ConstraintStudentsSetMinHoursPerAfternoon::hasWrongDayOrHour(Rules& r)
+{
+	if(minHoursPerAfternoon>r.nHoursPerDay)
+		return true;
+
+	return false;
+}
+
+bool ConstraintStudentsSetMinHoursPerAfternoon::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	return true;
+}
+
+bool ConstraintStudentsSetMinHoursPerAfternoon::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+
+	if(minHoursPerAfternoon>r.nHoursPerDay)
+		minHoursPerAfternoon=r.nHoursPerDay;
 
 	return true;
 }

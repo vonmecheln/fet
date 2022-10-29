@@ -1,4 +1,4 @@
-This is FET version 6.5.7
+This is FET version 6.6.0
 
 
 Program description:
@@ -14,16 +14,16 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.19.1, Xfce 4.16,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 5.19.8, Xfce 4.16,
 	Xfce Terminal Emulator 1.0.2, Midnight Commander 4.8.28, Krusader 2.7.2, Kate 22.04.0, KDiff3 0.9.98, grep 3.7, sed 4.8,
-	Thunar Bulk Rename 4.16.11, Qt 6.3.1, QMake 3.1, CMake 3.22.1, Qt Creator 7.0.2, GCC 12.1.1, Clang 14.0.3, GNU Make 4.3,
+	Thunar Bulk Rename 4.16.11, Qt 6.3.2, QMake 3.1, CMake 3.22.1, Qt Creator 8.0.1, GCC 12.1.1, Clang 14.0.3, GNU Make 4.3,
 	GDB 11.1, Valgrind 3.19.0, Coverity Scan 2020.09, Cppcheck 2.6, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0, Inkscape 1.1.2,
 	GIMP 2.10.32, ImageMagick 7.1.0, Ispell 3.4.00 / Aspell 0.60.8, tar 1.34, Gzip 1.12, bzip2 1.0.8, linuxdeploy 1-alpha,
 	other great software (most of them are free software, in the sense defined by The Free Software Foundation).
 
 	The executable version of FET for Windows is obtained in the following environment: Windows 10 operating system,
-	Command Prompt, Total Commander 10.50, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.21.1, Ninja 1.10.2, Qt 6.3.1,
-	QMake 3.1, Qt Creator 7.0.2, MinGW 11.2.0, Microsoft Visual C++ 2019, 7-Zip 22.01.
+	Command Prompt, Total Commander 10.51, Notepad, Python 3.9.7, ActivePerl 5.28, CMake 3.21.1, Ninja 1.10.2, Qt 6.3.2,
+	QMake 3.1, Qt Creator 8.0.1, MinGW 11.2.0, Microsoft Visual C++ 2019, 7-Zip 22.01.
 
 	FET is a C++ application and uses Qt, a C++ toolkit for cross-platform application development.
 	FET can be run on any platform supported by Qt (GNU/Linux, Windows, Mac OS X, and maybe others).
@@ -35,7 +35,7 @@ Requirements:
 	For compiling, you will need this software:
 		Make 4.2.1 or similar (GNU Make).
 		GCC 12.1.1 or similar.
-		Qt 6.3.1 or compatible. Qt 5 should be fine. (The authors tried to maintain backwards source compatibility even with Qt 4,
+		Qt 6.3.2 or compatible. Qt 5 should be fine. (The authors tried to maintain backwards source compatibility even with Qt 4,
 			but beware that multiple generation on multiple threads is very slow with such an old Qt version.)
 		QMake 3.1 or compatible (usually available with Qt).
 
@@ -72,7 +72,7 @@ Getting - compiling - installing Qt:
 
 	Qt homepage: https://www.qt.io/
 
-	You will need Qt 6.3.1 or compatible to compile FET. Qt 5 should be fine (the authors also tried to maintain backwards source
+	You will need Qt 6.3.2 or compatible to compile FET. Qt 5 should be fine (the authors also tried to maintain backwards source
 		compatibility with Qt 4, but beware that multiple generation on multiple threads is very slow with such an old Qt version).
 	You can get the corresponding version of Qt with your package manager or from the internet (preferably from the Qt homepage).
 	Qt can be used with the GNU (L)GPL or commercial license (The authors chose the GNU (L)GPL license).
@@ -84,19 +84,19 @@ Getting - compiling - installing Qt:
 	enabled by default, so there is no need to compile Qt. But in case there is such need, these are the instructions:
 	To compile Qt from the sources using the additional configure option "-schannel" (this is done to ensure that SSL will work in FET using the
 	available SSL dll-s from Windows): You can choose to download/compile/install only the qtbase component, with a configure command which might look like:
-	"configure.bat -opensource -confirm-license -platform win32-g++ -schannel -opengl desktop -release -nomake examples -nomake tests -prefix C:\Qt\6.3.1".
+	"configure.bat -opensource -confirm-license -platform win32-g++ -schannel -opengl desktop -release -nomake examples -nomake tests -prefix C:\Qt\6.3.2".
 	(When we tried to use the recommended option "-opengl dynamic" we got a compiler error.)
 	Note that to be able to open ui files with Qt Designer or ts files with Qt Linguist you need to install the Qt component qttools
 	(or the whole Qt package).
 
 	Mac OS X:
-	Install Qt (the current version is 6.3.1) from https://www.qt.io. The default install location is /Users/YOURUSERNAME/Qt, and you can create
+	Install Qt (the current version is 6.3.2) from https://www.qt.io. The default install location is /Users/YOURUSERNAME/Qt, and you can create
 	a (free) Qt account. [Update: if you're just using Qt for FET, you should select to "download for open source".]
 
 	Note about the Qt "QMAKESPEC" variable: advanced topic, read this if you get Qt errors about the environment not being set, or environment
 	variable QMAKESPEC not being set, or if the Qt environment is not set correctly: Qt needs to know the environment you are using. It is usually
 	something like: linux-g++, macx-g++ or win32-g++ (platform-compiler). You can find all the supported platforms in the directory "mkspecs" of Qt
-	(some usual locations are /usr/share/qt5/mkspecs or /usr/lib/qt5/mkspecs on GNU/Linux or C:\Qt\6.3.1\mkspecs on Windows).
+	(some usual locations are /usr/share/qt5/mkspecs or /usr/lib/qt5/mkspecs on GNU/Linux or C:\Qt\6.3.2\mkspecs on Windows).
 	It seems that Qt automatically finds the platform (there is a default configuration in the "default" subdirectory of the "mkspecs" directory,
 	which is created automatically when you install Qt). If the default configuration is not working or is wrong, you may need to set the
 	correct QMAKESPEC variable for your platform. Under Windows, you can create an environment variable QMAKESPEC equal to win32-g++
@@ -151,7 +151,7 @@ Compiling FET:
 	to keep a core free for other tasks, write "make -j 3"). This is proven to work under GNU/Linux and Mac OS X. Under Windows it depends on the C++ compiler (you
 	may try it to see if it works).
 
-	Currently FET can be compiled with a C++ compiler, using Qt version 6.3.1 or compatible.
+	Currently FET can be compiled with a C++ compiler, using Qt version 6.3.2 or compatible.
 
 	Note NUseSystemLocale: If you want FET to autodetect the system locale language, type <<qmake fet.pro "DEFINES+=USE_SYSTEM_LOCALE">>
 	or simply <<qmake "DEFINES+=USE_SYSTEM_LOCALE">>. This will work if you recompile from the beginning all the FET package (remove
@@ -176,7 +176,7 @@ Compiling FET:
 
 
 	GNU/Linux:
-	- You will need Qt 6.3.1 or compatible to compile this program.
+	- You will need Qt 6.3.2 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use QMake from Qt 6 series (this command is executed very fast, so don't worry if you
 		get immediate return from it)
 	See also notes NUseSystemLocale and Note4 above.
@@ -188,7 +188,7 @@ Compiling FET:
 	3 Variants:
 
 	1. First variant, if you use the GCC compiler:
-	- You will need Qt 6.3.1 or compatible to compile this program.
+	- You will need Qt 6.3.2 or compatible to compile this program.
 	- type "qmake fet.pro" or simply "qmake". You have to use QMake from Qt 6 series.
 	(this command is executed very fast, so don't worry if you get immediate return from it)
 	- IMPORTANT: you might need to write: "qmake -spec macx-g++ fet.pro", if "qmake fet.pro"
@@ -200,21 +200,21 @@ Compiling FET:
 	2. Another variant:
 	- Type "qmake fet.pro" and then "xcodebuild".
 
-	3. Another variant, if you use the Clang C++ compiler (which seems to be the default for Qt 6.3.1 on Mac):
+	3. Another variant, if you use the Clang C++ compiler (which seems to be the default for Qt 6.3.2 on Mac):
 	It seems that you need to type:
-	/Users/YOURUSERNAME/Qt/6.3.1/macos/bin/qmake -r -spec /Users/YOURUSERNAME/Qt/6.3.1/macos/mkspecs/macx-clang
+	/Users/YOURUSERNAME/Qt/6.3.2/macos/bin/qmake -r -spec /Users/YOURUSERNAME/Qt/6.3.2/macos/mkspecs/macx-clang
 	(the -r parameter might not be necessary.)
 
 	If you are compiling on a computer with Mac silicon (e.g., an M1 MacBook, etc.) and want to create a version that will run on Intel processors as well,
 	instead of the command above, use
-	/Users/YOURUSERNAME/Qt/6.3.1/macos/bin/qmake -r -spec /Users/YOURUSERNAME/Qt/6.3.1/macos/mkspecs/macx-clang QMAKE_APPLE_DEVICE_ARCHS="x86_64 arm64"
+	/Users/YOURUSERNAME/Qt/6.3.2/macos/bin/qmake -r -spec /Users/YOURUSERNAME/Qt/6.3.2/macos/mkspecs/macx-clang QMAKE_APPLE_DEVICE_ARCHS="x86_64 arm64"
 
 	Then "make" (this takes a long time, maybe even 1 hour). See also note NMkJobs above ("make -j 16" for instance will be much faster on a 16 threads processor).
 	To remove the compiled objects/executable: "make clean" and/or "make distclean".
 	Please see: https://lalescu.ro/liviu/fet/forum/index.php?topic=2488.msg13425#msg13425 (and also see the whole topic there.)
 
 
-	Windows: MinGW C++ compiler: you need Qt 6.3.1 or compatible, and MinGW.
+	Windows: MinGW C++ compiler: you need Qt 6.3.2 or compatible, and MinGW.
 	You might use other C++ compilers if you want, please see the Qt documentation.
 	for other variants. Any C++ compiler that supports Qt should be good.
 	You need to run "qmake fet.pro" or "qmake" (this command is executed very fast, so don't worry if you get
@@ -234,7 +234,7 @@ Installing FET:
 	Type "make install" with root permissions.
 	
 	Mac OS X: The user Darren McDonald reported that one can obtain a universal Mac OS X executable with:
-	cd /Users/YOURUSERNAME/Qt/6.3.1/macos/bin/
+	cd /Users/YOURUSERNAME/Qt/6.3.2/macos/bin/
 	./macdeployqt /Users/YOURUSERNAME/Downloads/fet-v.v.v/fet.app
 	
 	Windows:

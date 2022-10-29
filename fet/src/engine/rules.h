@@ -1009,6 +1009,9 @@ private:
 	TimeConstraint* readTeachersMinHoursPerMorning(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeacherMinHoursPerMorning(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
+	TimeConstraint* readTeachersMinHoursPerAfternoon(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readTeacherMinHoursPerAfternoon(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
 	TimeConstraint* readTeachersMinHoursDailyRealDays(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeacherMinHoursDailyRealDays(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
@@ -1020,6 +1023,9 @@ private:
 
 	TimeConstraint* readStudentsMinHoursPerMorning(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readStudentsSetMinHoursPerMorning(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+
+	TimeConstraint* readStudentsMinHoursPerAfternoon(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
+	TimeConstraint* readStudentsSetMinHoursPerAfternoon(QWidget* parent, QXmlStreamReader& xml, FakeString& xmlReadingLog);
 
 	TimeConstraint* readTeacherMaxZeroGapsPerAfternoon(QXmlStreamReader& xml, FakeString& xmlReadingLog);
 	TimeConstraint* readTeachersMaxZeroGapsPerAfternoon(QXmlStreamReader& xml, FakeString& xmlReadingLog);

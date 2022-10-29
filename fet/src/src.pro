@@ -802,6 +802,13 @@ SOURCES += \
 	interface/addconstraintteacherminhourspermorningform.cpp \
 	interface/modifyconstraintteacherminhourspermorningform.cpp \
 	\
+	interface/constraintteachersminhoursperafternoonform.cpp \
+	interface/addconstraintteachersminhoursperafternoonform.cpp \
+	interface/modifyconstraintteachersminhoursperafternoonform.cpp \
+	interface/constraintteacherminhoursperafternoonform.cpp \
+	interface/addconstraintteacherminhoursperafternoonform.cpp \
+	interface/modifyconstraintteacherminhoursperafternoonform.cpp \
+	\
 	interface/constraintteachersminhoursdailyrealdaysform.cpp \
 	interface/addconstraintteachersminhoursdailyrealdaysform.cpp \
 	interface/modifyconstraintteachersminhoursdailyrealdaysform.cpp \
@@ -878,6 +885,13 @@ SOURCES += \
 	interface/constraintstudentsminhourspermorningform.cpp \
 	interface/addconstraintstudentsminhourspermorningform.cpp \
 	interface/modifyconstraintstudentsminhourspermorningform.cpp \
+	\
+	interface/constraintstudentssetminhoursperafternoonform.cpp \
+	interface/addconstraintstudentssetminhoursperafternoonform.cpp \
+	interface/modifyconstraintstudentssetminhoursperafternoonform.cpp \
+	interface/constraintstudentsminhoursperafternoonform.cpp \
+	interface/addconstraintstudentsminhoursperafternoonform.cpp \
+	interface/modifyconstraintstudentsminhoursperafternoonform.cpp \
 	\
 	interface/constraintteachermaxtwoactivitytagsperdayfromn1n2n3form.cpp \
 	interface/addconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form.cpp \
@@ -1818,6 +1832,13 @@ HEADERS += \
 	interface/addconstraintteacherminhourspermorningform.h \
 	interface/modifyconstraintteacherminhourspermorningform.h \
 	\
+	interface/constraintteachersminhoursperafternoonform.h \
+	interface/addconstraintteachersminhoursperafternoonform.h \
+	interface/modifyconstraintteachersminhoursperafternoonform.h \
+	interface/constraintteacherminhoursperafternoonform.h \
+	interface/addconstraintteacherminhoursperafternoonform.h \
+	interface/modifyconstraintteacherminhoursperafternoonform.h \
+	\
 	interface/constraintteachersminhoursdailyrealdaysform.h \
 	interface/addconstraintteachersminhoursdailyrealdaysform.h \
 	interface/modifyconstraintteachersminhoursdailyrealdaysform.h \
@@ -1894,6 +1915,13 @@ HEADERS += \
 	interface/constraintstudentsminhourspermorningform.h \
 	interface/addconstraintstudentsminhourspermorningform.h \
 	interface/modifyconstraintstudentsminhourspermorningform.h \
+	\
+	interface/constraintstudentssetminhoursperafternoonform.h \
+	interface/addconstraintstudentssetminhoursperafternoonform.h \
+	interface/modifyconstraintstudentssetminhoursperafternoonform.h \
+	interface/constraintstudentsminhoursperafternoonform.h \
+	interface/addconstraintstudentsminhoursperafternoonform.h \
+	interface/modifyconstraintstudentsminhoursperafternoonform.h \
 	\
 	interface/constraintteachermaxtwoactivitytagsperdayfromn1n2n3form.h \
 	interface/addconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form.h \
@@ -2796,6 +2824,13 @@ FORMS += \
 	interface/addconstraintteacherminhourspermorningform_template.ui \
 	interface/modifyconstraintteacherminhourspermorningform_template.ui \
 	\
+	interface/constraintteachersminhoursperafternoonform_template.ui \
+	interface/addconstraintteachersminhoursperafternoonform_template.ui \
+	interface/modifyconstraintteachersminhoursperafternoonform_template.ui \
+	interface/constraintteacherminhoursperafternoonform_template.ui \
+	interface/addconstraintteacherminhoursperafternoonform_template.ui \
+	interface/modifyconstraintteacherminhoursperafternoonform_template.ui \
+	\
 	interface/constraintteachersminhoursdailyrealdaysform_template.ui \
 	interface/addconstraintteachersminhoursdailyrealdaysform_template.ui \
 	interface/modifyconstraintteachersminhoursdailyrealdaysform_template.ui \
@@ -2872,6 +2907,13 @@ FORMS += \
 	interface/constraintstudentsminhourspermorningform_template.ui \
 	interface/addconstraintstudentsminhourspermorningform_template.ui \
 	interface/modifyconstraintstudentsminhourspermorningform_template.ui \
+	\
+	interface/constraintstudentssetminhoursperafternoonform_template.ui \
+	interface/addconstraintstudentssetminhoursperafternoonform_template.ui \
+	interface/modifyconstraintstudentssetminhoursperafternoonform_template.ui \
+	interface/constraintstudentsminhoursperafternoonform_template.ui \
+	interface/addconstraintstudentsminhoursperafternoonform_template.ui \
+	interface/modifyconstraintstudentsminhoursperafternoonform_template.ui \
 	\
 	interface/constraintteachermaxtwoactivitytagsperdayfromn1n2n3form_template.ui \
 	interface/addconstraintteachermaxtwoactivitytagsperdayfromn1n2n3form_template.ui \

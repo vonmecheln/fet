@@ -79,7 +79,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "or a combination of these), %2 are the copyright holders").arg("2002-2022").arg("Liviu Lalescu, Volker Dirr");
 	about+="<br /><br />";
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "August")).arg("2022");
+	 .arg(QCoreApplication::translate("MonthsNames", "September")).arg("2022");
 	about+="<br /><br />";
 	about+=tr("Licensed under the GNU Affero General Public License version 3 or later.");
 	about+="<br /><br />";
@@ -1102,6 +1102,24 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("Christian");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("jza3");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("muhmath2023");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("ayreon");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Amine Bouhmad");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Hocine Berrou");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Thành Nam");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Elbouche Mourad");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Smail Smail");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("Abdelhakim Zoumar");
+	thanksTo+=QString("<br />");
+	thanksTo+=QString("attaciro");
 	thanksTo+=QString("<br />");
 
 	thanksToTextBrowser->setHtml(thanksTo);

@@ -55,8 +55,7 @@ Activities begin student/teacher's day
 to allow an activity to be in begin _or_ end of students/teacher's day.
 
 From bachiri401:
-- Constraints teacher(s)/students (set) min hours per afternoon.
--> And in general every constraint referring to days should have a corresponding constraint for real days,
+-> In general every constraint referring to days should have a corresponding constraint for real days,
 and every constraint referring to mornings should have a corresponding one referring to afternoons.
 
 From Mohamed Ait Ichou: He suggests good printing and output.
@@ -66,6 +65,21 @@ Mohamed Ait Ichou: Yes, morning and evening combined in one day in case of print
 From Ziani Ben Alia: Please add the following condition: Maximum rest periods between morning and evening for teachers.
 Liviu Lalescu: I am sorry, but this is too difficult. But maybe you could use max gaps per real day and max span per real day.
 Also suggested by saidmechri: Max resting hours between morning and afternoon for teacher (https://lalescu.ro/liviu/fet/forum/index.php?topic=4951.0).
+
+From Elbouche Mourad, on Facebook: Just a note, can't you improve the feature of printing individual and group tables?
+
+From Smail Smail, on Facebook: We would only like if you improve the output of tables in your program, especially to Excel.
+
+From Abdelhakim Zoumar, on Facebook: We would be very pleased if you make the output manipuable : to make minor changes such as to replace , add , or delete... .
+
+0.75-------------------------------------------------------
+From Thành Nam:
+
+Vietnam K-12 schools have some constraints such as: max (min) hours per morning; max (min) sessions (morning/afternoon) per week, max gaps between
+morning vs afternoon. Some schools also work at night, so they need the mode of mornings-afternoons-nights. Are you going to implement new version
+of FET to adapt that ?
+
+Note from Liviu: Some suggested constraints are already implemented.
 
 1----------------------------------------------------------
 From Liviu Lalescu:
@@ -7806,3 +7820,52 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=5264.0
 I have a proposal to add subject groups to have the teachers divided into different groups. For example: Math, physics, chemistry, biology teacher,
 he belongs to the Science and History group, Geography, civics belongs to the Social Sciences group... The purpose of dividing into groups is to add
 Constraints or view the constraints of the group. It's easier for teachers in specialized groups.
+
+468---------------------------------------------------------
+From muhmath2023 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5284.0
+
+suggestion for update fet gui :
+in some screens buttons up and down are missing please add this
+enable crtl and shift to delete more than one item at once or select more than one item
+
+other suggestion
+we need option to print double lessons in html results as singles
+
+469---------------------------------------------------------
+From ayreon (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=4801.msg29273#msg29273
+
+In the past I had the need to modify the split of some activities so I created a small program to do so, maybe you can do something similar in FET?
+Removing a subactivity is easy, just delete it and change the total duration of the owner, when I need to increase it I create a new subactivity
+with a new ID that is computed as the maximum ID+1, this way ID are preserved and all works well. Optionally, I recompute all the IDs (to make them increasing)
+preserving constraints links
+
+470---------------------------------------------------------
+From YOUSSEF HOUIET (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5304.0
+
+In the window of multiple generation of tables, is it possible to add a text field or label to display in real time the maximum of the activities placed
+among all the generations started, and also the id of the generation concerned, to know which is the best generation, without perusing each time the tab
+of generations.
+
+471---------------------------------------------------------
+From Amine Bouhmad:
+
+In the Add activity dialog, add two buttons: add (select) all teachers and add all students sets.
+
+472---------------------------------------------------------
+From attaciro (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5325.0
+
+Italian:
+
+Avrei una domanda, una volta generato l'orario è possibile stampare per ogni classe tutti i docenti inseriti per quella classe?
+
+English translation by Google Translate:
+
+I have a question, once the timetable has been generated is it possible to print all the teachers entered for that class for each class?

@@ -1324,6 +1324,18 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 			if(initialTeacherName == crt_constraint->teacherName)
 				crt_constraint->teacherName=finalTeacherName;
 		}
+
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY){
+			ConstraintActivitiesBeginStudentsDay* crt_constraint=(ConstraintActivitiesBeginStudentsDay*)ctr;
+			if(initialTeacherName == crt_constraint->teacherName)
+				crt_constraint->teacherName=finalTeacherName;
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY){
+			ConstraintActivitiesBeginTeachersDay* crt_constraint=(ConstraintActivitiesBeginTeachersDay*)ctr;
+			if(initialTeacherName == crt_constraint->teacherName)
+				crt_constraint->teacherName=finalTeacherName;
+		}
+
 		else if(ctr->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS){
 			ConstraintSubactivitiesPreferredTimeSlots* crt_constraint=(ConstraintSubactivitiesPreferredTimeSlots*)ctr;
 			if(initialTeacherName == crt_constraint->p_teacherName)
@@ -1391,6 +1403,11 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 		//
 		else if(ctr->type==CONSTRAINT_TEACHER_MIN_HOURS_PER_MORNING){
 			ConstraintTeacherMinHoursPerMorning* crt_constraint=(ConstraintTeacherMinHoursPerMorning*)ctr;
+			if(initialTeacherName == crt_constraint->teacherName)
+				crt_constraint->teacherName=finalTeacherName;
+		}
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON){
+			ConstraintTeacherMinHoursPerAfternoon* crt_constraint=(ConstraintTeacherMinHoursPerAfternoon*)ctr;
 			if(initialTeacherName == crt_constraint->teacherName)
 				crt_constraint->teacherName=finalTeacherName;
 		}
@@ -1704,6 +1721,18 @@ bool Rules::modifySubject(const QString& initialSubjectName, const QString& fina
 			if(initialSubjectName == crt_constraint->subjectName)
 				crt_constraint->subjectName=finalSubjectName;
 		}
+
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY){
+			ConstraintActivitiesBeginStudentsDay* crt_constraint=(ConstraintActivitiesBeginStudentsDay*)ctr;
+			if(initialSubjectName == crt_constraint->subjectName)
+				crt_constraint->subjectName=finalSubjectName;
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY){
+			ConstraintActivitiesBeginTeachersDay* crt_constraint=(ConstraintActivitiesBeginTeachersDay*)ctr;
+			if(initialSubjectName == crt_constraint->subjectName)
+				crt_constraint->subjectName=finalSubjectName;
+		}
+
 		else if(ctr->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS){
 			ConstraintSubactivitiesPreferredTimeSlots* crt_constraint=(ConstraintSubactivitiesPreferredTimeSlots*)ctr;
 			if(initialSubjectName == crt_constraint->p_subjectName)
@@ -1987,6 +2016,18 @@ bool Rules::modifyActivityTag(const QString& initialActivityTagName, const QStri
 			if(initialActivityTagName == crt_constraint->activityTagName)
 				crt_constraint->activityTagName=finalActivityTagName;
 		}
+
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY){
+			ConstraintActivitiesBeginStudentsDay* crt_constraint=(ConstraintActivitiesBeginStudentsDay*)ctr;
+			if(initialActivityTagName == crt_constraint->activityTagName)
+				crt_constraint->activityTagName=finalActivityTagName;
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY){
+			ConstraintActivitiesBeginTeachersDay* crt_constraint=(ConstraintActivitiesBeginTeachersDay*)ctr;
+			if(initialActivityTagName == crt_constraint->activityTagName)
+				crt_constraint->activityTagName=finalActivityTagName;
+		}
+
 		else if(ctr->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS){
 			ConstraintSubactivitiesPreferredTimeSlots* crt_constraint=(ConstraintSubactivitiesPreferredTimeSlots*)ctr;
 			if(initialActivityTagName == crt_constraint->p_activityTagName)
@@ -2587,6 +2628,18 @@ bool Rules::modifyStudentsSet(const QString& initialStudentsSetName, const QStri
 				if(initialStudentsSetName == crt_constraint->studentsName)
 					crt_constraint->studentsName=finalStudentsSetName;
 			}
+
+			else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY){
+				ConstraintActivitiesBeginStudentsDay* crt_constraint=(ConstraintActivitiesBeginStudentsDay*)ctr;
+				if(initialStudentsSetName == crt_constraint->studentsName)
+					crt_constraint->studentsName=finalStudentsSetName;
+			}
+			else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY){
+				ConstraintActivitiesBeginTeachersDay* crt_constraint=(ConstraintActivitiesBeginTeachersDay*)ctr;
+				if(initialStudentsSetName == crt_constraint->studentsName)
+					crt_constraint->studentsName=finalStudentsSetName;
+			}
+
 			else if(ctr->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS){
 				ConstraintSubactivitiesPreferredTimeSlots* crt_constraint=(ConstraintSubactivitiesPreferredTimeSlots*)ctr;
 				if(initialStudentsSetName == crt_constraint->p_studentsName)
@@ -2662,6 +2715,11 @@ bool Rules::modifyStudentsSet(const QString& initialStudentsSetName, const QStri
 			}
 			else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_MORNING){
 				ConstraintStudentsSetMinHoursPerMorning* crt_constraint=(ConstraintStudentsSetMinHoursPerMorning*)ctr;
+				if(initialStudentsSetName == crt_constraint->students)
+					crt_constraint->students=finalStudentsSetName;
+			}
+			else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON){
+				ConstraintStudentsSetMinHoursPerAfternoon* crt_constraint=(ConstraintStudentsSetMinHoursPerAfternoon*)ctr;
 				if(initialStudentsSetName == crt_constraint->students)
 					crt_constraint->students=finalStudentsSetName;
 			}
@@ -2906,6 +2964,18 @@ bool Rules::modifyStudentsSets(const QHash<QString, QString>& oldAndNewStudentsS
 			if(oldAndNewStudentsSetNames.contains(crt_constraint->studentsName))
 				crt_constraint->studentsName=oldAndNewStudentsSetNames.value(crt_constraint->studentsName);
 		}
+
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY){
+			ConstraintActivitiesBeginStudentsDay* crt_constraint=(ConstraintActivitiesBeginStudentsDay*)ctr;
+			if(oldAndNewStudentsSetNames.contains(crt_constraint->studentsName))
+				crt_constraint->studentsName=oldAndNewStudentsSetNames.value(crt_constraint->studentsName);
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY){
+			ConstraintActivitiesBeginTeachersDay* crt_constraint=(ConstraintActivitiesBeginTeachersDay*)ctr;
+			if(oldAndNewStudentsSetNames.contains(crt_constraint->studentsName))
+				crt_constraint->studentsName=oldAndNewStudentsSetNames.value(crt_constraint->studentsName);
+		}
+
 		else if(ctr->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS){
 			ConstraintSubactivitiesPreferredTimeSlots* crt_constraint=(ConstraintSubactivitiesPreferredTimeSlots*)ctr;
 			if(oldAndNewStudentsSetNames.contains(crt_constraint->p_studentsName))
@@ -2981,6 +3051,11 @@ bool Rules::modifyStudentsSets(const QHash<QString, QString>& oldAndNewStudentsS
 		}
 		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_MORNING){
 			ConstraintStudentsSetMinHoursPerMorning* crt_constraint=(ConstraintStudentsSetMinHoursPerMorning*)ctr;
+			if(oldAndNewStudentsSetNames.contains(crt_constraint->students))
+				crt_constraint->students=oldAndNewStudentsSetNames.value(crt_constraint->students);
+		}
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON){
+			ConstraintStudentsSetMinHoursPerAfternoon* crt_constraint=(ConstraintStudentsSetMinHoursPerAfternoon*)ctr;
 			if(oldAndNewStudentsSetNames.contains(crt_constraint->students))
 				crt_constraint->students=oldAndNewStudentsSetNames.value(crt_constraint->students);
 		}
@@ -5372,6 +5447,24 @@ void Rules::updateConstraintsAfterRemoval()
 			 (c->activityTagName!="" && !existingActivityTagsNames.contains(c->activityTagName)) )
 				toBeRemovedTime.append(tc);
 		}
+
+		else if(tc->type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY){
+			ConstraintActivitiesBeginStudentsDay* c=(ConstraintActivitiesBeginStudentsDay*)tc;
+			if( (c->teacherName!="" && !existingTeachersNames.contains(c->teacherName)) ||
+			 (c->studentsName!="" && !permanentStudentsHash.contains(c->studentsName)) ||
+			 (c->subjectName!="" && !existingSubjectsNames.contains(c->subjectName)) ||
+			 (c->activityTagName!="" && !existingActivityTagsNames.contains(c->activityTagName)) )
+				toBeRemovedTime.append(tc);
+		}
+		else if(tc->type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY){
+			ConstraintActivitiesBeginTeachersDay* c=(ConstraintActivitiesBeginTeachersDay*)tc;
+			if( (c->teacherName!="" && !existingTeachersNames.contains(c->teacherName)) ||
+			 (c->studentsName!="" && !permanentStudentsHash.contains(c->studentsName)) ||
+			 (c->subjectName!="" && !existingSubjectsNames.contains(c->subjectName)) ||
+			 (c->activityTagName!="" && !existingActivityTagsNames.contains(c->activityTagName)) )
+				toBeRemovedTime.append(tc);
+		}
+
 		else if(tc->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_DAILY){
 			ConstraintTeachersActivityTagMaxHoursDaily* c=(ConstraintTeachersActivityTagMaxHoursDaily*)tc;
 			if(!existingActivityTagsNames.contains(c->activityTagName))
@@ -5611,6 +5704,11 @@ void Rules::updateConstraintsAfterRemoval()
 			if(!permanentStudentsHash.contains(c->students))
 				toBeRemovedTime.append(tc);
 		}
+		else if(tc->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON){
+			ConstraintStudentsSetMinHoursPerAfternoon* c=(ConstraintStudentsSetMinHoursPerAfternoon*)tc;
+			if(!permanentStudentsHash.contains(c->students))
+				toBeRemovedTime.append(tc);
+		}
 		//2020-06-28
 		else if(tc->type==CONSTRAINT_TEACHER_MAX_HOURS_PER_ALL_AFTERNOONS){
 			ConstraintTeacherMaxHoursPerAllAfternoons* c=(ConstraintTeacherMaxHoursPerAllAfternoons*)tc;
@@ -5620,6 +5718,11 @@ void Rules::updateConstraintsAfterRemoval()
 		//
 		else if(tc->type==CONSTRAINT_TEACHER_MIN_HOURS_PER_MORNING){
 			ConstraintTeacherMinHoursPerMorning* c=(ConstraintTeacherMinHoursPerMorning*)tc;
+			if(!existingTeachersNames.contains(c->teacherName))
+				toBeRemovedTime.append(tc);
+		}
+		else if(tc->type==CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON){
+			ConstraintTeacherMinHoursPerAfternoon* c=(ConstraintTeacherMinHoursPerAfternoon*)tc;
 			if(!existingTeachersNames.contains(c->teacherName))
 				toBeRemovedTime.append(tc);
 		}
@@ -9226,6 +9329,13 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 					crt_constraint=readTeacherMinHoursPerMorning(parent, xmlReader, xmlReadingLog);
 				}
 
+				else if(xmlReader.name()==QString("ConstraintTeachersMinHoursPerAfternoon")){
+					crt_constraint=readTeachersMinHoursPerAfternoon(parent, xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintTeacherMinHoursPerAfternoon")){
+					crt_constraint=readTeacherMinHoursPerAfternoon(parent, xmlReader, xmlReadingLog);
+				}
+
 				else if((!version6AndAbove && (probably5Morocco || probably5Algeria || probably5MA))
 				 && xmlReader.name()==QString("ConstraintStudentsMaxHoursDaily")){
 					if(reportMA5OldTimeConstraintsChange){
@@ -9299,6 +9409,13 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QSt
 				}
 				else if(xmlReader.name()==QString("ConstraintStudentsSetMinHoursPerMorning")){
 					crt_constraint=readStudentsSetMinHoursPerMorning(parent, xmlReader, xmlReadingLog);
+				}
+
+				else if(xmlReader.name()==QString("ConstraintStudentsMinHoursPerAfternoon")){
+					crt_constraint=readStudentsMinHoursPerAfternoon(parent, xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintStudentsSetMinHoursPerAfternoon")){
+					crt_constraint=readStudentsSetMinHoursPerAfternoon(parent, xmlReader, xmlReadingLog);
 				}
 
 				else if(xmlReader.name()==QString("ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour")){
@@ -24416,6 +24533,125 @@ TimeConstraint* Rules::readTeacherMinHoursPerMorning(QWidget* parent, QXmlStream
 	return cn;
 }
 
+TimeConstraint* Rules::readTeachersMinHoursPerAfternoon(QWidget* parent, QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMinHoursPerAfternoon"));
+	ConstraintTeachersMinHoursPerAfternoon* cn=new ConstraintTeachersMinHoursPerAfternoon();
+	cn->allowEmptyAfternoons=true;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Minimum_Hours_Per_Afternoon")){
+			QString text=xmlReader.readElementText();
+			cn->minHoursPerAfternoon=text.toInt();
+			xmlReadingLog+="    Read minHoursPerAfternoon="+CustomFETString::number(cn->minHoursPerAfternoon)+"\n";
+		}
+		else if(xmlReader.name()==QString("Allow_Empty_Afternoons")){
+			QString text=xmlReader.readElementText();
+			if(text=="true" || text=="1" || text=="yes"){
+				xmlReadingLog+="    Read allow empty afternoons=true\n";
+				cn->allowEmptyAfternoons=true;
+			}
+			else{
+				if(!(text=="no" || text=="false" || text=="0")){
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
+						tr("Found constraint teachers min hours per afternoon with tag allow empty afternoons"
+						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+						" The tag will be considered false",
+						"Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+				}
+				//assert(text=="false" || text=="0" || text=="no");
+				xmlReadingLog+="    Read allow empty afternoons=false\n";
+				cn->allowEmptyAfternoons=false;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
+TimeConstraint* Rules::readTeacherMinHoursPerAfternoon(QWidget* parent, QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeacherMinHoursPerAfternoon"));
+	ConstraintTeacherMinHoursPerAfternoon* cn=new ConstraintTeacherMinHoursPerAfternoon();
+	cn->allowEmptyAfternoons=true;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Minimum_Hours_Per_Afternoon")){
+			QString text=xmlReader.readElementText();
+			cn->minHoursPerAfternoon=text.toInt();
+			xmlReadingLog+="    Read minHoursPerAfternoon="+CustomFETString::number(cn->minHoursPerAfternoon)+"\n";
+		}
+		else if(xmlReader.name()==QString("Teacher_Name")){
+			QString text=xmlReader.readElementText();
+			cn->teacherName=text;
+			xmlReadingLog+="    Read teacher name="+cn->teacherName+"\n";
+		}
+		else if(xmlReader.name()==QString("Allow_Empty_Afternoons")){
+			QString text=xmlReader.readElementText();
+			if(text=="true" || text=="1" || text=="yes"){
+				xmlReadingLog+="    Read allow empty afternoons=true\n";
+				cn->allowEmptyAfternoons=true;
+			}
+			else{
+				if(!(text=="no" || text=="false" || text=="0")){
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
+						tr("Found constraint teacher min hours per afternoon with tag allow empty afternoons"
+						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+						" The tag will be considered false",
+						"Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+				}
+				//assert(text=="false" || text=="0" || text=="no");
+				xmlReadingLog+="    Read allow empty afternoons=false\n";
+				cn->allowEmptyAfternoons=false;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	return cn;
+}
+
 TimeConstraint* Rules::readTeachersMinHoursDailyRealDays(QWidget* parent, QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
 	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintTeachersMinHoursDailyRealDays"));
 	ConstraintTeachersMinHoursDailyRealDays* cn=new ConstraintTeachersMinHoursDailyRealDays();
@@ -25279,6 +25515,153 @@ TimeConstraint* Rules::readStudentsSetMinHoursPerMorning(QWidget* parent, QXmlSt
 		return nullptr;
 	}
 	assert(cn->minHoursPerMorning>=0);
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsMinHoursPerAfternoon(QWidget* parent, QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsMinHoursPerAfternoon"));
+	ConstraintStudentsMinHoursPerAfternoon* cn=new ConstraintStudentsMinHoursPerAfternoon();
+	cn->minHoursPerAfternoon=-1;
+	cn->allowEmptyAfternoons=true;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Minimum_Hours_Per_Afternoon")){
+			QString text=xmlReader.readElementText();
+			cn->minHoursPerAfternoon=text.toInt();
+			if(cn->minHoursPerAfternoon<0){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Minimum_Hours_Per_Afternoon"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read minHoursPerAfternoon="+CustomFETString::number(cn->minHoursPerAfternoon)+"\n";
+		}
+		else if(xmlReader.name()==QString("Allow_Empty_Afternoons")){
+			QString text=xmlReader.readElementText();
+			if(text=="true" || text=="1" || text=="yes"){
+				xmlReadingLog+="    Read allow empty afternoons=true\n";
+				cn->allowEmptyAfternoons=true;
+			}
+			else{
+				if(!(text=="no" || text=="false" || text=="0")){
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
+						tr("Found constraint students min hours per afternoon with tag allow empty afternoons"
+						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+						" The tag will be considered false",
+						"Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+				}
+				//assert(text=="false" || text=="0" || text=="no");
+				xmlReadingLog+="    Read allow empty afternoons=false\n";
+				cn->allowEmptyAfternoons=false;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(cn->minHoursPerAfternoon<0){
+		xmlReader.raiseError(tr("%1 not found").arg("Minimum_Hours_Per_Afternoon"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->minHoursPerAfternoon>=0);
+	return cn;
+}
+
+TimeConstraint* Rules::readStudentsSetMinHoursPerAfternoon(QWidget* parent, QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintStudentsSetMinHoursPerAfternoon"));
+	ConstraintStudentsSetMinHoursPerAfternoon* cn=new ConstraintStudentsSetMinHoursPerAfternoon();
+	cn->minHoursPerAfternoon=-1;
+	cn->allowEmptyAfternoons=true;
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weight percentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Minimum_Hours_Per_Afternoon")){
+			QString text=xmlReader.readElementText();
+			cn->minHoursPerAfternoon=text.toInt();
+			if(cn->minHoursPerAfternoon<0){
+				xmlReader.raiseError(tr("%1 is incorrect").arg("Minimum_Hours_Per_Afternoon"));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			xmlReadingLog+="    Read minHoursPerAfternoon="+CustomFETString::number(cn->minHoursPerAfternoon)+"\n";
+		}
+		else if(xmlReader.name()==QString("Students")){
+			QString text=xmlReader.readElementText();
+			cn->students=text;
+			xmlReadingLog+="    Read students name="+cn->students+"\n";
+		}
+		else if(xmlReader.name()==QString("Allow_Empty_Afternoons")){
+			QString text=xmlReader.readElementText();
+			if(text=="true" || text=="1" || text=="yes"){
+				xmlReadingLog+="    Read allow empty afternoons=true\n";
+				cn->allowEmptyAfternoons=true;
+			}
+			else{
+				if(!(text=="no" || text=="false" || text=="0")){
+					RulesReconcilableMessage::warning(parent, tr("FET warning"),
+						tr("Found constraint students set min hours per afternoon with tag allow empty afternoons"
+						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
+						" The tag will be considered false",
+						"Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
+				}
+				//assert(text=="false" || text=="0" || text=="no");
+				xmlReadingLog+="    Read allow empty afternoons=false\n";
+				cn->allowEmptyAfternoons=false;
+			}
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(cn->minHoursPerAfternoon<0){
+		xmlReader.raiseError(tr("%1 not found").arg("Minimum_Hours_Per_Afternoon"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(cn->minHoursPerAfternoon>=0);
 	return cn;
 }
 

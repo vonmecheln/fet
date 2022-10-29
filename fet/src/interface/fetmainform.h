@@ -245,6 +245,13 @@ private:
 	QAction* dataTimeConstraintsStudentsMinHoursPerMorningAction;
 	QAction* dataTimeConstraintsStudentsSetMinHoursPerMorningAction;
 	QAction* dataTimeConstraintsTeachersMinHoursPerMorningAction;
+
+	//2022-09-10
+	QAction* dataTimeConstraintsStudentsMinHoursPerAfternoonAction;
+	QAction* dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction;
+	QAction* dataTimeConstraintsTeachersMinHoursPerAfternoonAction;
+	QAction* dataTimeConstraintsTeacherMinHoursPerAfternoonAction;
+
 	QAction* dataTimeConstraintsTeachersMinHoursDailyRealDaysAction;
 	QAction* dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction;
 	QAction* dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction;
@@ -470,6 +477,9 @@ public slots:
 
 	void enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool checked);
 	void showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool checked);
+
+	void enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool checked);
+	void showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool checked);
 
 	void enableGroupActivitiesInInitialOrderToggled(bool checked);
 	void showWarningForGroupActivitiesInInitialOrderToggled(bool checked);
@@ -722,6 +732,9 @@ public slots:
 	void dataTimeConstraintsTeachersMinHoursPerMorningAction_triggered();
 	void dataTimeConstraintsTeacherMinHoursPerMorningAction_triggered();
 
+	void dataTimeConstraintsTeachersMinHoursPerAfternoonAction_triggered();
+	void dataTimeConstraintsTeacherMinHoursPerAfternoonAction_triggered();
+
 	void dataTimeConstraintsTeachersMinHoursDailyRealDaysAction_triggered();
 	void dataTimeConstraintsTeacherMinHoursDailyRealDaysAction_triggered();
 
@@ -783,6 +796,9 @@ public slots:
 
 	void dataTimeConstraintsStudentsMinHoursPerMorningAction_triggered();
 	void dataTimeConstraintsStudentsSetMinHoursPerMorningAction_triggered();
+
+	void dataTimeConstraintsStudentsMinHoursPerAfternoonAction_triggered();
+	void dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction_triggered();
 
 	void dataTimeConstraintsTeacherMaxSpanPerRealDayAction_triggered();
 	void dataTimeConstraintsTeachersMaxSpanPerRealDayAction_triggered();

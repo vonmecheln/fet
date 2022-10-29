@@ -311,6 +311,9 @@
 #include "constraintteachersminhourspermorningform.h"
 #include "constraintteacherminhourspermorningform.h"
 
+#include "constraintteachersminhoursperafternoonform.h"
+#include "constraintteacherminhoursperafternoonform.h"
+
 #include "constraintteachersminhoursdailyrealdaysform.h"
 #include "constraintteacherminhoursdailyrealdaysform.h"
 
@@ -362,6 +365,9 @@
 
 #include "constraintstudentsminhourspermorningform.h"
 #include "constraintstudentssetminhourspermorningform.h"
+
+#include "constraintstudentsminhoursperafternoonform.h"
+#include "constraintstudentssetminhoursperafternoonform.h"
 
 #include "constraintstudentssetactivitytagmaxhoursdailyrealdaysform.h"
 #include "constraintstudentsactivitytagmaxhoursdailyrealdaysform.h"
@@ -583,6 +589,9 @@ bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
 
 bool ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=false;
 bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=true;
+
+bool ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=false;
+bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=true;
 
 bool ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER=false;
 bool SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
@@ -884,6 +893,9 @@ FetMainForm::FetMainForm()
 	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setCheckable(true);
 	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setCheckable(true);
 
+	enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setCheckable(true);
+	showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setCheckable(true);
+
 	enableGroupActivitiesInInitialOrderAction->setCheckable(true);
 	showWarningForGroupActivitiesInInitialOrderAction->setCheckable(true);
 	
@@ -904,6 +916,9 @@ FetMainForm::FetMainForm()
 
 	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
 	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
+
+	enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS);
+	showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS);
 
 	enableGroupActivitiesInInitialOrderAction->setChecked(ENABLE_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
 	showWarningForGroupActivitiesInInitialOrderAction->setChecked(SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER);
@@ -930,6 +945,9 @@ FetMainForm::FetMainForm()
 
 	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
 	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+
+	connect(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool)));
+	connect(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool)));
 
 	connect(enableGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(enableGroupActivitiesInInitialOrderToggled(bool)));
 	connect(showWarningForGroupActivitiesInInitialOrderAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForGroupActivitiesInInitialOrderToggled(bool)));
@@ -1133,6 +1151,9 @@ void FetMainForm::updateMode(bool forceUpdate)
 
 		enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setEnabled(false);
 		showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setEnabled(false);
+
+		enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setEnabled(false);
+		showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setEnabled(false);
 	}
 	else{
 		enableActivityTagMaxHoursDailyAction->setText(QCoreApplication::translate("FetMainForm_template", "Enable activity tag max hours daily / per real day", nullptr));
@@ -1146,6 +1167,9 @@ void FetMainForm::updateMode(bool forceUpdate)
 
 		enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setEnabled(false);
 		showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setEnabled(false);
+
+		enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setEnabled(false);
+		showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setEnabled(false);
 	}
 
 	createMenusOfActionsForConstraints();
@@ -1328,6 +1352,13 @@ void FetMainForm::createActionsForConstraints()
 	dataTimeConstraintsStudentsMinHoursPerMorningAction = new QAction(this);
 	dataTimeConstraintsStudentsSetMinHoursPerMorningAction = new QAction(this);
 	dataTimeConstraintsTeachersMinHoursPerMorningAction = new QAction(this);
+
+	//2022-09-10
+	dataTimeConstraintsStudentsMinHoursPerAfternoonAction = new QAction(this);
+	dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction = new QAction(this);
+	dataTimeConstraintsTeachersMinHoursPerAfternoonAction = new QAction(this);
+	dataTimeConstraintsTeacherMinHoursPerAfternoonAction = new QAction(this);
+
 	dataTimeConstraintsTeachersMinHoursDailyRealDaysAction = new QAction(this);
 	dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction = new QAction(this);
 	dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction = new QAction(this);
@@ -1592,6 +1623,13 @@ void FetMainForm::createActionsForConstraints()
 	connect(dataTimeConstraintsStudentsMinHoursPerMorningAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinHoursPerMorningAction_triggered()));
 	connect(dataTimeConstraintsStudentsSetMinHoursPerMorningAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinHoursPerMorningAction_triggered()));
 	connect(dataTimeConstraintsTeachersMinHoursPerMorningAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinHoursPerMorningAction_triggered()));
+
+	//2022-09-10
+	connect(dataTimeConstraintsStudentsMinHoursPerAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsMinHoursPerAfternoonAction_triggered()));
+	connect(dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction_triggered()));
+	connect(dataTimeConstraintsTeachersMinHoursPerAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinHoursPerAfternoonAction_triggered()));
+	connect(dataTimeConstraintsTeacherMinHoursPerAfternoonAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMinHoursPerAfternoonAction_triggered()));
+
 	connect(dataTimeConstraintsTeachersMinHoursDailyRealDaysAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMinHoursDailyRealDaysAction_triggered()));
 	connect(dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction_triggered()));
 	connect(dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction, SIGNAL(triggered()), this, SLOT(dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction_triggered()));
@@ -1889,6 +1927,13 @@ void FetMainForm::retranslateConstraints()
 	dataTimeConstraintsStudentsMinHoursPerMorningAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours per morning for all students", nullptr));
 	dataTimeConstraintsStudentsSetMinHoursPerMorningAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours per morning for a students set", nullptr));
 	dataTimeConstraintsTeachersMinHoursPerMorningAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours per morning for all teachers", nullptr));
+
+	//2022-09-10
+	dataTimeConstraintsStudentsMinHoursPerAfternoonAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours per afternoon for all students", nullptr));
+	dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours per afternoon for a students set", nullptr));
+	dataTimeConstraintsTeachersMinHoursPerAfternoonAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours per afternoon for all teachers", nullptr));
+	dataTimeConstraintsTeacherMinHoursPerAfternoonAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours per afternoon for a teacher", nullptr));
+
 	dataTimeConstraintsTeachersMinHoursDailyRealDaysAction->setText(QCoreApplication::translate("FetMainForm_template", "Min hours daily per real day for all teachers", nullptr));
 	dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours per all afternoons for a teacher", nullptr));
 	dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction->setText(QCoreApplication::translate("FetMainForm_template", "Max hours per all afternoons for all teachers", nullptr));
@@ -2288,6 +2333,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursDailyAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursDailyRealDaysAction);
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursPerMorningAction);
+		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherMinHoursPerAfternoonAction);
 
 		menuA_teacher_2_time_constraints->addAction(dataTimeConstraintsTeacherActivityTagMinHoursDailyAction);
 		
@@ -2346,6 +2392,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursDailyAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursDailyRealDaysAction);
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursPerMorningAction);
+		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersMinHoursPerAfternoonAction);
 
 		menuAll_teachers_2_time_constraints->addAction(dataTimeConstraintsTeachersActivityTagMinHoursDailyAction);
 		
@@ -2396,6 +2443,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMinHoursDailyAction);
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMinHoursPerMorningAction);
+		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction);
 
 		menuA_students_set_2_time_constraints->addAction(dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction);
 		
@@ -2443,6 +2491,7 @@ void FetMainForm::createMenusOfActionsForConstraints()
 		
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMinHoursDailyAction);
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMinHoursPerMorningAction);
+		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsMinHoursPerAfternoonAction);
 
 		menuAll_students_2_time_constraints->addAction(dataTimeConstraintsStudentsActivityTagMinHoursDailyAction);
 		
@@ -9286,6 +9335,44 @@ void FetMainForm::dataTimeConstraintsTeacherMinHoursPerMorningAction_triggered()
 	form.exec();
 }
 
+void FetMainForm::dataTimeConstraintsTeachersMinHoursPerAfternoonAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeachersMinHoursPerAfternoonForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsTeacherMinHoursPerAfternoonAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintTeacherMinHoursPerAfternoonForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
 void FetMainForm::dataTimeConstraintsTeachersMinHoursDailyRealDaysAction_triggered()
 {
 	if(!gt.rules.initialized){
@@ -9978,6 +10065,44 @@ void FetMainForm::dataTimeConstraintsStudentsMinHoursPerMorningAction_triggered(
 	}
 
 	ConstraintStudentsMinHoursPerMorningForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsSetMinHoursPerAfternoonForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::dataTimeConstraintsStudentsMinHoursPerAfternoonAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(simulation_running || simulation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Allocation in course.\nPlease stop simulation before this."));
+		return;
+	}
+
+	ConstraintStudentsMinHoursPerAfternoonForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }
@@ -10921,6 +11046,13 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+=tr("61")+QString(". ")+tr("The interface font will be reset to default");
 	s+="\n";
 
+	s+=tr("62")+QString(". ")+tr("Enable constraints students min hours per afternoon with empty afternoons will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+
+	s+=tr("63")+QString(". ")+tr("Warn if using constraints students min hours per afternoon with empty afternoons will be %1", "%1 is true or false. This is a warning if user uses a nonstandard constraint"
+		" students min hours per morning with allowed empty mornings").arg(tr("true"));
+	s+="\n";
+
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -11091,6 +11223,16 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	disconnect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
 	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
 	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+
+	ENABLE_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=false;
+	disconnect(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool)));
+	enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setChecked(ENABLE_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS);
+	connect(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool)));
+
+	SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=true;
+	disconnect(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool)));
+	showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction->setChecked(SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS);
+	connect(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool)));
 
 	///////////
 	
@@ -11775,6 +11917,36 @@ void FetMainForm::showWarningForStudentsMinHoursPerMorningWithAllowEmptyMornings
 	return;
 }
 
+void FetMainForm::enableStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool checked)
+{
+	Q_UNUSED(checked);
+
+	assert(0); //Yes, this option is always disabled
+
+	/*QMessageBox::information(this, tr("FET information"), tr("This option must remain selected in the custom FET version MA"));
+
+	disconnect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(true);
+	connect(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(enableStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
+
+	return;
+}
+
+void FetMainForm::showWarningForStudentsMinHoursPerAfternoonWithAllowEmptyAfternoonsToggled(bool checked)
+{
+	Q_UNUSED(checked);
+
+	assert(0); //Yes, this option is always disabled
+
+	/*QMessageBox::information(this, tr("FET information"), tr("This option must remain unselected in the custom FET version MA"));
+
+	disconnect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));
+	showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction->setChecked(false);
+	connect(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsAction, SIGNAL(toggled(bool)), this, SLOT(showWarningForStudentsMinHoursPerMorningWithAllowEmptyMorningsToggled(bool)));*/
+
+	return;
+}
+
 void FetMainForm::enableGroupActivitiesInInitialOrderToggled(bool checked)
 {
 	if(checked==true){
@@ -12030,6 +12202,8 @@ bool SHOW_WARNING_FOR_NOT_PERFECT_CONSTRAINTS=true;
 bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_DAILY_WITH_ALLOW_EMPTY_DAYS=true;
 
 bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_MORNING_WITH_ALLOW_EMPTY_MORNINGS=true;
+
+bool SHOW_WARNING_FOR_STUDENTS_MIN_HOURS_PER_AFTERNOON_WITH_ALLOW_EMPTY_AFTERNOONS=true;
 
 bool SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER=true;
 #endif

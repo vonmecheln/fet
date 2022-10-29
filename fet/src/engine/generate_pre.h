@@ -518,6 +518,9 @@ bool computeTeachersActivityTagMaxHoursContinuously(QWidget* parent);
 extern Matrix2D<double> teachersMinHoursDailyPercentages; //If having mornings-afternoons: 0 is for morning, 1 is for afternoon
 extern Matrix2D<int> teachersMinHoursDailyMinHours; //If having official: both should be equal, but we use 1.
 
+extern Matrix1D<double> teachersMinHoursPerAfternoonPercentages;
+extern Matrix1D<int> teachersMinHoursPerAfternoonMinHours;
+
 bool computeTeachersMinHoursDaily(QWidget* parent);
 
 //real days
@@ -652,6 +655,11 @@ extern Matrix2D<double> subgroupsMinHoursDailyPercentages; //If having mornings-
 extern Matrix2D<int> subgroupsMinHoursDailyMinHours; //If having official: both should be equal, but we use 1.
 extern Matrix1D<bool> subgroupsMinHoursDailyAllowEmptyDays;
 extern Matrix1D<bool> subgroupsMinHoursPerMorningAllowEmptyMornings;
+
+extern Matrix1D<double> subgroupsMinHoursPerAfternoonPercentages;
+extern Matrix1D<int> subgroupsMinHoursPerAfternoonMinHours;
+extern Matrix1D<bool> subgroupsMinHoursPerAfternoonAllowEmptyAfternoons;
+
 bool computeSubgroupsMinHoursDaily(QWidget* parent);
 ////////END   students (set) min hours daily
 

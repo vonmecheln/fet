@@ -895,7 +895,7 @@ void AddActivityForm::addMultipleActivities()
 	QStringList students_names;
 	if(selectedStudentsListWidget->count()<=1){
 		QMessageBox::warning(this, tr("FET question"),
-		 tr("If you intend to add multiple activities for students, please select at least 2 students sets."));
+		 tr("If you intend to add multiple activities for students (option 'Separately' is checked), please select at least 2 students sets."));
 
 		return;
 	}
@@ -1227,9 +1227,7 @@ void AddActivityForm::help()
 
 	s+="\n\n";
 
-	s+=tr("The current algorithm cannot schedule 3 activities in the same day if consecutive is checked, so "
-	 "you will get no solution in such extreme cases (for instance, if you have 3 lessons and a teacher which works only 1 day per week, "
-	 "and select 'force consecutive if same day', you will get an impossible timetable. But these are extremely unlikely cases).");
+	s+=tr("The current algorithm will not schedule 3 or more activities on the same day if you add a min days between activities constraint.");
 
 	s+="\n\n";
 	
