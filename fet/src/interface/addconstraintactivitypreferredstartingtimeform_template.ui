@@ -212,7 +212,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Select this if you want this constraint not to be unlock-able from the 'Timetable' menu (recommended). You can always remove this constraint from the constraints dialogs or uncheck &quot;permanently locked&quot; checkbox by editing this constraint</string>
+        <string>Select this if you want this constraint not to be unlockable from the 'Timetable' menu (recommended). You can always remove this constraint from the constraints dialogs or uncheck &quot;permanently locked&quot; checkbox by editing this constraint</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignVCenter</set>

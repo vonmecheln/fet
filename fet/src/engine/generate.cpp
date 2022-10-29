@@ -9487,12 +9487,12 @@ impossibleactivityendsteachersday:
 								canEmptyDay[d2]=false;
 						}
 					
-						int nOc=0;
+						//int nOc=0;
 						bool canChooseDay=false;
 					
 						for(int j=0; j<3; j++)
 							if(occupiedDay[j]){
-								nOc++;
+								//nOc++;
 								if(canEmptyDay[j]){
 									canChooseDay=true;
 								}
@@ -9692,12 +9692,12 @@ impossibleactivityendsteachersday:
 								canEmptyDay[d2]=false;
 						}
 					
-						int nOc=0;
+						//int nOc=0;
 						bool canChooseDay=false;
 					
 						for(int j=0; j<3+2; j++)
 							if(occupiedDay[j]){
-								nOc++;
+								//nOc++;
 								if(canEmptyDay[j]){
 									canChooseDay=true;
 								}
@@ -9919,12 +9919,12 @@ impossibleactivityendsteachersday:
 								canEmptyDay[d2]=false;
 						}
 					
-						int nOc=0;
+						//int nOc=0;
 						bool canChooseDay=false;
 					
 						for(int j=0; j<3+2+2; j++)
 							if(occupiedDay[j]){
-								nOc++;
+								//nOc++;
 								if(canEmptyDay[j]){
 									canChooseDay=true;
 								}
@@ -10164,12 +10164,12 @@ impossibleactivityendsteachersday:
 								canEmptyDay[d2]=false;
 						}
 					
-						int nOc=0;
+						//int nOc=0;
 						bool canChooseDay=false;
 					
 						for(int j=0; j<3+2+2+2; j++)
 							if(occupiedDay[j]){
-								nOc++;
+								//nOc++;
 								if(canEmptyDay[j]){
 									canChooseDay=true;
 								}
@@ -10428,12 +10428,12 @@ impossibleactivityendsteachersday:
 								canEmptyDay[d2]=false;
 						}
 					
-						int nOc=0;
+						//int nOc=0;
 						bool canChooseDay=false;
 					
 						for(int j=0; j<3+2+2+2+2; j++)
 							if(occupiedDay[j]){
-								nOc++;
+								//nOc++;
 								if(canEmptyDay[j]){
 									canChooseDay=true;
 								}

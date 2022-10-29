@@ -2540,7 +2540,7 @@ Versions 6.5.0 - 6.5.7
 	already implemented for the other modes, but in the Mornings-Afternoons mode there was available only the constraint type teacher(s) max span per real day.)
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.
 ---------------------------------------------------------------------------------
-Versions 6.6.0 - 6.6.v
+Versions 6.6.0 - 6.6.2
 - Version 6.6.0
 	- Updated to Qt 6.3.2.
 	- Added a new type of constraint in the Mornings-Afternoons mode, students (set)/teacher(s) min hours per afternoon (suggested by bachiri401 and Hocine Berrou).
@@ -2554,3 +2554,11 @@ Versions 6.6.0 - 6.6.v
 	- Minor bug fixes in the reporting of the soft conflicts, when having some types of time constraints related to inactive activities.
 	- Updated the Arabic translation, by Benahmed Abdelkrim.
 	- Updated the Vietnamese translation, by Phạm Văn Quyền Anh, who is again the assigned translator (he translated also in the past).
+---------------------------------------------------------------------------------
+Versions 6.7.0 - 6.7.v
+- Version 6.7.0
+	- Added simple support for the credit hour system (American system) (suggested by Imad). The new feature is that you can add multiple constraints
+	of type activities same starting hour / activities occupy max different rooms with a single click.
+	- Corrected a few compiler warnings (some reported by Clang, some reported by the new Qt 6.4.0).
+	- Updated the Russian translation, by Alexey Chernous.
+	- Updated the Vietnamese translation, by Phạm Văn Quyền Anh.

@@ -1024,8 +1024,8 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 
 	//bool report=false;
 	
-	int addedTime=0, duplicatesTime=0;
-	int addedSpace=0, duplicatesSpace=0;
+	//int addedTime=0, duplicatesTime=0;
+	//int addedSpace=0, duplicatesSpace=0;
 
 	//lock selected activities
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
@@ -1039,11 +1039,11 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 			bool t=rules2.addTimeConstraint(ctr);
 			
 			if(t){
-				addedTime++;
+				//addedTime++;
 				lockTimeConstraintsList.append(ctr);
 			}
-			else
-				duplicatesTime++;
+			//else
+			//	duplicatesTime++;
 
 			QString s;
 			
@@ -1082,11 +1082,11 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 			QString s;
 			
 			if(t){
-				addedSpace++;
+				//addedSpace++;
 				lockSpaceConstraintsList.append(ctr);
 			}
-			else
-				duplicatesSpace++;
+			//else
+			//	duplicatesSpace++;
 
 			if(t)
 				s=tr("Added the following constraint to saved file:")+"\n"+ctr->getDetailedDescription(gt.rules);

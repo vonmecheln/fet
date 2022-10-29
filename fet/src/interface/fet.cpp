@@ -1926,7 +1926,7 @@ int main(int argc, char **argv)
 			TimetableExport::getStudentsTeachersRoomsTimetable(cc);
 
 			QString toc=outputDirectory;
-			if(toc!="" && toc.count()>=1 && toc.endsWith(FILE_SEP)){
+			if(toc!="" && toc.length()>=1 && toc.endsWith(FILE_SEP)){
 				toc.chop(1);
 				toc+=QString("-current"+FILE_SEP);
 			}
@@ -1994,7 +1994,7 @@ int main(int argc, char **argv)
 			TimetableExport::getStudentsTeachersRoomsTimetable(ch);
 
 			QString toh=outputDirectory;
-			if(toh!="" && toh.count()>=1 && toh.endsWith(FILE_SEP)){
+			if(toh!="" && toh.length()>=1 && toh.endsWith(FILE_SEP)){
 				toh.chop(1);
 				toh+=QString("-highest"+FILE_SEP);
 			}
@@ -2049,7 +2049,7 @@ int main(int argc, char **argv)
 			TimetableExport::getStudentsTeachersRoomsTimetable(cc);
 
 			QString toc=outputDirectory;
-			if(toc!="" && toc.count()>=1 && toc.endsWith(FILE_SEP)){
+			if(toc!="" && toc.length()>=1 && toc.endsWith(FILE_SEP)){
 				toc.chop(1);
 				toc+=QString("-current"+FILE_SEP);
 			}
@@ -2136,7 +2136,7 @@ int main(int argc, char **argv)
 			TimetableExport::getStudentsTeachersRoomsTimetable(ch);
 
 			QString toh=outputDirectory;
-			if(toh!="" && toh.count()>=1 && toh.endsWith(FILE_SEP)){
+			if(toh!="" && toh.length()>=1 && toh.endsWith(FILE_SEP)){
 				toh.chop(1);
 				toh+=QString("-highest"+FILE_SEP);
 			}

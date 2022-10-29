@@ -1,0 +1,36 @@
+/***************************************************************************
+                          addremovemultipleconstraintsactivitiesoccupymaxdifferentroomsform.h  -  description
+                             -------------------
+    begin                : 2022
+    copyright            : (C) 2022 by Lalescu Liviu
+    email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
+ ***************************************************************************/
+
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software: you can redistribute it and/or modify  *
+ *   it under the terms of the GNU Affero General Public License as        *
+ *   published by the Free Software Foundation, either version 3 of the    *
+ *   License, or (at your option) any later version.                       *
+ *                                                                         *
+ ***************************************************************************/
+
+#ifndef ADDREMOVEMULTIPLECONSTRAINTSACTIVITIESOCCUPYMAXDIFFERENTROOMSFORM_H
+#define ADDREMOVEMULTIPLECONSTRAINTSACTIVITIESOCCUPYMAXDIFFERENTROOMSFORM_H
+
+#include "ui_addremovemultipleconstraintsactivitiesoccupymaxdifferentroomsform_template.h"
+
+class AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm : public QDialog, Ui::AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm_template{
+	Q_OBJECT
+	
+public:
+	AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm(QWidget* parent);
+	~AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm();
+
+public slots:
+	void addAllConstraints();
+	void removeAllConstraints();
+	void help();
+};
+
+#endif

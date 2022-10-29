@@ -1023,7 +1023,10 @@ SOURCES += \
 	interface/addconstraintactivitiesoccupymaxtermsform.cpp \
 	interface/modifyconstraintactivitiesoccupymaxtermsform.cpp \
 	\
-	interface/termsform.cpp
+	interface/termsform.cpp \
+	\
+	interface/addremovemultipleconstraintsactivitiessamestartinghourform.cpp \
+	interface/addremovemultipleconstraintsactivitiesoccupymaxdifferentroomsform.cpp
 
 HEADERS += \
 	engine/timetableexport.h \
@@ -2053,8 +2056,11 @@ HEADERS += \
 	interface/addconstraintactivitiesoccupymaxtermsform.h \
 	interface/modifyconstraintactivitiesoccupymaxtermsform.h \
 	\
-	interface/termsform.h
-
+	interface/termsform.h \
+	\
+	interface/addremovemultipleconstraintsactivitiessamestartinghourform.h \
+	interface/addremovemultipleconstraintsactivitiesoccupymaxdifferentroomsform.h
+	
 FORMS += \
 	interface/fetmainform_template.ui \
 	interface/helpaboutform_template.ui \
@@ -3043,7 +3049,10 @@ FORMS += \
 	interface/addconstraintactivitiesoccupymaxtermsform_template.ui \
 	interface/modifyconstraintactivitiesoccupymaxtermsform_template.ui \
 	\
-	interface/termsform_template.ui
+	interface/termsform_template.ui \
+	\
+	interface/addremovemultipleconstraintsactivitiessamestartinghourform_template.ui \
+	interface/addremovemultipleconstraintsactivitiesoccupymaxdifferentroomsform_template.ui
 
 TRANSLATIONS += \
 	../translations/fet_ar.ts \

@@ -100,12 +100,12 @@ void ModifyStudentsYearForm::ok()
 		for(StudentsYear* year : qAsConst(gt.rules.yearsList)){
 			if(this->_initialYearName != year->name){
 				for(StudentsGroup* group : qAsConst(year->groupsList)){
-					if(group->name.left(this->_initialYearName.count())==this->_initialYearName){
+					if(group->name.left(this->_initialYearName.length())==this->_initialYearName){
 						wontBeRenamed1+=tr("%1 in %2", "For instance group '1 a' in year '1'").arg(group->name).arg(year->name)+"\n";
 						//It's correct for example if there is year "1" and year "10"
 					}
 					for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList)){
-						if(subgroup->name.left(this->_initialYearName.count())==this->_initialYearName){
+						if(subgroup->name.left(this->_initialYearName.length())==this->_initialYearName){
 							wontBeRenamed1+=tr("%1 in %2 in %3", "For instance subgroup '1 a DE' in group '1 a' in year '1'").arg(subgroup->name).arg(group->name).arg(year->name)+"\n";
 							//It's correct for example if there is year "1" and year "10"
 						}
@@ -114,11 +114,11 @@ void ModifyStudentsYearForm::ok()
 			} else {
 				for(StudentsGroup* group : qAsConst(year->groupsList)){
 					for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList)){
-						if(subgroup->name.left(this->_initialYearName.count())!=this->_initialYearName){
+						if(subgroup->name.left(this->_initialYearName.length())!=this->_initialYearName){
 							wontBeRenamed2+=tr("%1 in %2 in %3", "For instance subgroup '1 a DE' in group '1 a' in year '1'").arg(subgroup->name).arg(group->name).arg(year->name)+"\n";
 						} else {
 							QString tmpName=subgroup->name;
-							tmpName.remove(0, this->_initialYearName.count());
+							tmpName.remove(0, this->_initialYearName.length());
 							assert(!tmpName.isEmpty());
 							QString newName=nameLineEdit->text();
 							newName.append(tmpName);
@@ -134,11 +134,11 @@ void ModifyStudentsYearForm::ok()
 							}
 						}
 					}
-					if(group->name.left(this->_initialYearName.count())!=this->_initialYearName){
+					if(group->name.left(this->_initialYearName.length())!=this->_initialYearName){
 						wontBeRenamed2+=tr("%1 in %2", "For instance group '1 a' in year '1'").arg(group->name).arg(year->name)+"\n";
 					} else {
 						QString tmpName=group->name;
-						tmpName.remove(0, this->_initialYearName.count());
+						tmpName.remove(0, this->_initialYearName.length());
 						assert(!tmpName.isEmpty());
 						QString newName=nameLineEdit->text();
 						newName.append(tmpName);

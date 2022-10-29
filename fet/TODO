@@ -7986,3 +7986,40 @@ Teacher X doesn't have class on Friday at block A.
 (So in the process of creating constraints scheduling will be faster)
 
 (Liviu: I think Dao Anh Van refers to space constraints of type "a teacher+a room's not available times".)
+
+478---------------------------------------------------------
+From fartoto_dz2004 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5364.0
+
+Thanks for the constraint "min resting hours between morning and afternoon for teacher(s)" in M-A mode but if you can modify the weight to be
+between 0 and 100 like that the program will test if it can achieve the condition otherwise the program will not give any or less resting hours
+(meaning let the constraint be crashable).
+
+Liviu: Unfortunately, this is probably very difficult or impossible to make, but I'll write down your suggestion.
+
+479---------------------------------------------------------
+From Phạm Văn Quyền Anh (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5366.0
+
+I have a problem
+After arranging the timetable
+fixed schedule on Monday, rearranged schedule from Tuesday to Friday (the school is adding teachers). I used the lock and unlock function in the FET. However, when adding teachers and activities, I cannot see the timetable (which days are locked and which are not). This caused me to use sketches (pen and paper) to record actions, which I did wrong and had to redo many times.
+Checking in the "All time contraints" section is difficult when the number of activities locked in a day is large but sorted by list (up to 50)
+On the other hand, many people who don't understand FET well will also have difficulty when some activities are locked but cannot be viewed in the teacher/student interface, affecting the binding resulting can't create new timetable
+Suggestion: Can view/check locked activities (no need to Generate new timetable) in teacher/student interface or any other way can easily view and check locked activities easy way by matrix
+
+480---------------------------------------------------------
+From Abidine Premier (on Facebook):
+
+We ask you to add a button to know the number of teachers who will be present in the institution every day, morning and evening (after producing the class schedule)
+
+481---------------------------------------------------------
+From Phạm Văn Quyền Anh (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5386.0
+
+When adding the constraint "A student set's not available time" to each class I have to count the number of available spaces multiple times.
+
+It is possible to add an automatic space (allowed) counting function available in the "student set's not available time" interface so that the user does not have to re-count when the number of lessons is sporadic

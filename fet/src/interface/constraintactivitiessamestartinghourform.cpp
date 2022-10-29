@@ -23,6 +23,8 @@
 #include "addconstraintactivitiessamestartinghourform.h"
 #include "modifyconstraintactivitiessamestartinghourform.h"
 
+#include "addremovemultipleconstraintsactivitiessamestartinghourform.h"
+
 #include <QListWidget>
 #include <QScrollBar>
 #include <QAbstractItemView>
@@ -43,6 +45,8 @@ ConstraintActivitiesSameStartingHourForm::ConstraintActivitiesSameStartingHourFo
 	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged(int)));
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
+
+	connect(addRemoveMultipleConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addRemoveMultipleConstraints()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -281,4 +285,13 @@ void ConstraintActivitiesSameStartingHourForm::removeConstraint()
 		constraintsListWidget->setCurrentRow(i);
 	else
 		this->constraintChanged(-1);
+}
+
+void ConstraintActivitiesSameStartingHourForm::addRemoveMultipleConstraints()
+{
+	AddRemoveMultipleConstraintsActivitiesSameStartingHourForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+
+	filterChanged();
 }

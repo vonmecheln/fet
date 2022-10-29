@@ -321,7 +321,7 @@ void SubactivitiesForm::studentsFilterChanged()
 
 void SubactivitiesForm::filterChanged()
 {
-	int nacts=0, nsubacts=0, nh=0;
+	int /*nacts=0,*/ nsubacts=0, nh=0;
 	int ninact=0, ninacth=0;
 
 	QString s;
@@ -340,8 +340,8 @@ void SubactivitiesForm::filterChanged()
 			if(USE_GUI_COLORS && !act->active)
 				subactivitiesListWidget->item(k-1)->setBackground(subactivitiesListWidget->palette().alternateBase());
 			
-			if(act->id==act->activityGroupId || act->activityGroupId==0)
-				nacts++;
+			//if(act->id==act->activityGroupId || act->activityGroupId==0)
+			//	nacts++;
 			nsubacts++;
 			
 			nh+=act->duration;

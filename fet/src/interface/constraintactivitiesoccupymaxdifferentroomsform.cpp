@@ -23,6 +23,8 @@
 #include "addconstraintactivitiesoccupymaxdifferentroomsform.h"
 #include "modifyconstraintactivitiesoccupymaxdifferentroomsform.h"
 
+#include "addremovemultipleconstraintsactivitiesoccupymaxdifferentroomsform.h"
+
 #include <QListWidget>
 #include <QScrollBar>
 #include <QAbstractItemView>
@@ -45,6 +47,8 @@ ConstraintActivitiesOccupyMaxDifferentRoomsForm::ConstraintActivitiesOccupyMaxDi
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
 
 	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+
+	connect(addRemoveMultipleConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addRemoveMultipleConstraints()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -294,4 +298,13 @@ void ConstraintActivitiesOccupyMaxDifferentRoomsForm::help()
 	 "throughout the week, by adding all Physics activities for this students set and making max different rooms = 1.");
 
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
+}
+
+void ConstraintActivitiesOccupyMaxDifferentRoomsForm::addRemoveMultipleConstraints()
+{
+	AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+
+	filterChanged();
 }
