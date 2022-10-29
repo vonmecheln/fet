@@ -514,6 +514,8 @@ For multiple generation:
 
 Maybe add a checkbox "shutdown after job is done".
 
+See also item #475
+
 26---------------------------------------------------------
 (see also entry #194)
 From Volker Dirr:
@@ -1414,7 +1416,7 @@ Suggested also by Zafar Allah Askar (on forum), on 26 October 2019 (https://lale
 
 Suggested also by nouvakis, mbarsan, and pgsrihr, here: https://lalescu.ro/liviu/fet/forum/index.php?topic=1110.msg28848#msg28848
 
-See also TODO items #84 and #455.
+See also TODO items #84, #455, and #476.
 
 83---------------------------------------------------------
 From Massimo Mancini:
@@ -1471,7 +1473,7 @@ This concept is already used in FET in two places:
 - Set all available, set all not available
 - subject has a set of prefered rooms
 
-See also TODO items #82 and #455.
+See also TODO items #82, #455, and #476.
 
 85---------------------------------------------------------
 From Massimo Mancini:
@@ -7040,8 +7042,8 @@ an opportunity to refresh the icon design itself.
 409---------------------------------------------------------
 From Francesco Rizzo:
 
-He proposes a filter teacher combo box in the all time constraints dialog (as opposed to writing the name of the teacher in the
-advanced filter there).
+He proposes a filter teacher as a combo box in the all time constraints dialog (as opposed to writing the name of the teacher in the
+advanced filter there) and a filter with the room name as a combo box in the all space constraints dialog.
 
 410---------------------------------------------------------
 From bachiri401:
@@ -7625,7 +7627,7 @@ of each teacher (in this example). I was thinking of a different approach. The u
 applied/added. For example, if the user has 60 teachers and need to add the constraint max hours continuously to 40 of them, he could just select
 these 40 names and add this constraint at once.
 
-See also TODO items #82 and #84.
+See also TODO items #82, #84, and #476.
 
 456---------------------------------------------------------
 From Benahmed Abdelkrim:
@@ -7869,3 +7871,99 @@ Avrei una domanda, una volta generato l'orario è possibile stampare per ogni cl
 English translation by Google Translate:
 
 I have a question, once the timetable has been generated is it possible to print all the teachers entered for that class for each class?
+
+473---------------------------------------------------------
+From Moissa213 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5258.msg29410#msg29410
+
+French:
+
+Je demande à Monsieur Livio de faire quelque chose pour faciliter  le diagnostic des erreurs qu'on commis nous les utilisateurs surtout dans la phase finale
+souvent le travail est bien fait mais le logiciel ne produit l'emploi du temps.parce que on souffre dans la phase finale on teste beaucoup de choses pour
+trouver la cause du blocage.
+
+English translation by Google Translate:
+
+I ask Mr. Livio to do something to facilitate the diagnosis of the errors that we the users made especially in the final phase often the work is well done
+but the software does not produces the schedule. because we suffer in the final phase we test many things to find the cause of the blockage.
+
+474---------------------------------------------------------
+From Salvo2 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5334.0
+
+Italian:
+
+E' possibile ricavare (vedere, stampare) una statistica dei giorni liberi: vedere per ogni giorno della settimana quali insegnati sono liberi, non disponibili?
+Non riesco a trovare la funzione nel menù.
+
+English translation by Google Translate:
+
+Is it possible to obtain (see, print) a statistic of the days off: see for each day of the week which teachers are free, not available? I can't find the
+function in the menu.
+
+Liviu:
+
+Maybe in the timetables, Teachers' Free Periods.
+
+Salvo2:
+
+Italian:
+
+E' possibile invece vedere l'elenco dei giorni liberi, prima di generare l'orario? Quando non si riesce a generarlo?
+
+English translation by Google Translate:
+
+Is it possible to see the list of free days instead, before generating the timetable? When can it not be generated?
+
+475---------------------------------------------------------
+From Sauro (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5333.msg29443#msg29443
+
+Since sometimes the software runs over nighttime or unattended anyhow, expecially when runs multiple timetables, it would be nice to have the option
+to turn-off PC when done.
+
+See also item #25.
+
+476---------------------------------------------------------
+From Fritzlang (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5339.0
+
+Italian:
+
+Volevo indicare un suggerimento sull'inserimento dei vincoli:
+
+Tra i vincoli esiste la possibilità di inserire un vincolo per ogni singolo insegnante oppure per tutti gli insegnanti (questo vincolo ha la priorità su quello dei singoli insegnanti).
+
+E' possibile, per i vincoli su tutti gli insegnanti, selezionare tramite una opzione dedicata,  inserire il vincolo automaticamente su ogni singolo insegnante, per tutti gli insegnanti?
+In questo modo quando vi sono 30 o più insegnanti e di questi solo pochi hanno lo stesso vincolo ma più restrittivo, basterà soltanto modificare i valori dello stesso vincolo su i pochi insegnanti, lasciando il vincolo meno restrittivo agli altri insegnanti.
+
+Ad esempio:
+40 insegnanti. 35 hanno minimo 3 ore al giorno di lezione e solo 5 minimo 2 ore al giorno.
+Adesso è necessario selezionare uno per uno i 40 insegnanti, e inserire 35 vincoli con 3 ore minimo e 5 con 2 ore minimo.
+Invece sarebbe possibile (con un quadratino di scelta) sull' opzione TUTTI GLI INSEGNANTI inserire in automatico su ogni insegnante (quindi su tutti i 40 insegnanti) il vincolo a 3 ore minimo al giorno.
+In questo modo si può andare a modificare il vincolo solo su qui 5 insegnanti modificandoli a 2 ore minimo.
+
+Alla fine non ho inserito manualmente 40 vincoli, ma 1 solo (40 vincoli per tutti) e poi  5 con modifica su ogni singolo insegnante.
+
+English translation by Google Translate:
+
+I wanted to indicate a suggestion on inserting constraints:
+
+Among the constraints there is the possibility of inserting a constraint for each individual teacher or for all teachers (this constraint has priority over that of individual teachers).
+
+Is it possible, for the constraints on all teachers, to select through a dedicated option, insert the constraint automatically on each individual teacher, for all teachers?
+In this way, when there are 30 or more teachers and of these only a few have the same but more restrictive constraint, it will be sufficient to modify the values of the same constraint on the few teachers, leaving the less restrictive constraint to the other teachers.
+
+For example:
+40 teachers. 35 have a minimum of 3 hours a day of lessons and only 5 have a minimum of 2 hours a day.
+Now it is necessary to select one by one the 40 teachers, and insert 35 constraints with a minimum of 3 hours and 5 with a minimum of 2 hours.
+Instead it would be possible (with a selection box) on the ALL TEACHERS option to automatically insert on each teacher (therefore on all 40 teachers) the constraint of 3 hours minimum per day.
+In this way you can go to modify the constraint only on here 5 teachers by modifying them to 2 hours minimum.
+
+In the end I did not manually enter 40 constraints, but only 1 (40 constraints for all) and then 5 with modification on each individual teacher.
+
+See also TODO items #82, #84, and #455.
