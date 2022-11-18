@@ -2562,3 +2562,7 @@ Versions 6.7.0 - 6.7.v
 	- Corrected a few compiler warnings (some reported by Clang, some reported by the new Qt 6.4.0).
 	- Updated the Russian translation, by Alexey Chernous.
 	- Updated the Vietnamese translation, by Phạm Văn Quyền Anh.
+- Version 6.7.1
+	- Crashing bugs fixed, when generating multiple on more threads (hopefully they are all fixed now, and hopefully no new ones are introduced. If you experience
+	crashes or lockings of the program while generating single or multiple on more threads please report them).
+	- Minor improvements.

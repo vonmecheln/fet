@@ -20,7 +20,7 @@ File generate.cpp
  ***************************************************************************/
 
 //Note 2022-08-16: The code in the constraints of type activity(ies) start students/teachers day and students/teachers max span per real day
-//is not perfect, but cannot be written perfectly It might take care of students/teachers begins mornings/afternoons early max beginnings at second hour,
+//is not perfect, but cannot be written perfectly. It might take care of students/teachers begins mornings/afternoons early max beginnings at second hour,
 //but it is very risky and too complicated.
 
 //Note 2022-05-22: In FET version 6.5.0 the code for the constraints students max span per (real) day was improved.
@@ -6119,6 +6119,14 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 	}
 }
 
+void Generate::generateWithSemaphore(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
+{
+	isRunning=true;
+	generate(maxSeconds, impossible, timeExceeded, threaded, maxPlacedActivityStream);
+	semaphoreFinished.release();
+	isRunning=false;
+}
+
 void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
 {
 	permutation.resize(gt.rules.nInternalActivities);
@@ -6154,7 +6162,6 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 		conflictingActivitiesBipartiteMatching.resize(j);
 	}
 	//end - for the maximum bipartite matching algorithm
-	restoreRealRoomsList.resize(2*gt.rules.nInternalActivities);
 
 	//2021-03-17
 	difficultActivities.resize(gt.rules.nInternalActivities);
@@ -6280,7 +6287,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	if(threaded){
 		myMutex.lock();
 	}
-	isRunning=true;
+	//isRunning=true;
 	c.makeUnallocated(gt.rules);
 	
 	nDifficultActivities=0;
@@ -6346,7 +6353,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			myMutex.lock();
 		}
 		if(abortOptimization){
-			isRunning=false;
+			//isRunning=false;
 			
 			if(threaded){
 				myMutex.unlock();
@@ -6358,7 +6365,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 		searchTime=int(difftime(crt_time, starting_time));
 		
 		if(searchTime>=maxSeconds){
-			isRunning=false;
+			//isRunning=false;
 
 			timeExceeded=true;
 			
@@ -6722,7 +6729,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 		
 		if(!foundGoodSwap){
 			if(impossibleActivity){
-				isRunning=false;
+				//isRunning=false;
 
 				nDifficultActivities=1;
 				difficultActivities[0]=permutation[added_act];
@@ -6857,6 +6864,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 				//semaphorePlacedActivity.acquire();
 				//cvForPlacedActivity.wait(lck);
 				myMutex.unlock();
+				
 				semaphorePlacedActivity.acquire();
 			}
 			//}
@@ -6903,19 +6911,20 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 				//semaphorePlacedActivity.acquire();
 				//cvForPlacedActivity.wait(lck);
 				myMutex.unlock();
+
 				semaphorePlacedActivity.acquire();
 
 				//semaphorePlacedActivity.acquire();
 				myMutex.lock();
 			}
-			if(added_act==gt.rules.nInternalActivities && foundGoodSwap){
-				isRunning=false;
+			/*if(added_act==gt.rules.nInternalActivities && foundGoodSwap){ //Should be added_act+1==...
+				//isRunning=false;
 
 				if(threaded){
 					myMutex.unlock();
 				}
 				break;
-			}
+			}*/
 			
 			bool ok=true;
 			for(int i=0; i<=added_act; i++){
@@ -6971,7 +6980,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		int h=fromslot/gt.rules.nDaysPerWeek;
 		
 		////////////////rooms
-		int rm=c.rooms[ai];
+		int rm=fromroom;
 		if(rm!=UNSPECIFIED_ROOM && rm!=UNALLOCATED_SPACE){
 			for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
 				assert(dd+h<gt.rules.nHoursPerDay);
@@ -7191,7 +7200,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 		int h=toslot/gt.rules.nDaysPerWeek;
 		
 		////////////////rooms
-		int rm=c.rooms[ai];
+		int rm=toroom;
 		if(rm!=UNSPECIFIED_ROOM && rm!=UNALLOCATED_SPACE){
 			for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
 				assert(dd+h<gt.rules.nHoursPerDay);
@@ -13510,7 +13519,7 @@ impossiblestudentsmorningintervalmaxdaysperweek:
 					}
 				}
 				//respecting students interval max days per week
-	impossiblestudentsafternoonintervalmaxdaysperweek:
+impossiblestudentsafternoonintervalmaxdaysperweek:
 				if(!okstudentsafternoonintervalmaxdaysperweek){
 					if(updateSubgroups || updateTeachers)
 						removeAiFromNewTimetable(ai, act, d, h);

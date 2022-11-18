@@ -41,6 +41,7 @@
 #include <QDir>
 
 #include <QApplication>
+#include <QCoreApplication>
 #include <QtGlobal>
 
 #include <QProcess>
@@ -100,7 +101,8 @@ void runSingle()
 	const int INF=2000000000;
 	bool impossible, timeExceeded;
 
-	gen.generate(INF, impossible, timeExceeded, true); //true means threaded
+	assert(gen.semaphoreFinished.available()==0);
+	gen.generateWithSemaphore(INF, impossible, timeExceeded, true); //true means threaded
 }
 
 TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)
@@ -218,8 +220,12 @@ void TimetableGenerateForm::stop()
 	gen.myMutex.lock();
 	gen.abortOptimization=true;
 	gen.myMutex.unlock();
+	
+	QCoreApplication::sendPostedEvents();
+	
+	gen.semaphoreFinished.acquire();
 
-	gen.myMutex.lock();
+	//gen.myMutex.lock();
 
 	Solution& c=gen.c;
 
@@ -325,7 +331,7 @@ void TimetableGenerateForm::stop()
 		s+="\n";
 	}
 
-	gen.myMutex.unlock();
+	//gen.myMutex.unlock();
 
 	//show the message in a dialog
 	QDialog dialog(this);
@@ -364,8 +370,8 @@ void TimetableGenerateForm::stop()
 
 	//generateThread.quit();
 	//generateThread.wait();
-	if(singleThread.joinable())
-		singleThread.join();
+	//if(singleThread.joinable())
+	//	singleThread.join();
 }
 
 void TimetableGenerateForm::stopHighest()
@@ -379,8 +385,12 @@ void TimetableGenerateForm::stopHighest()
 	gen.myMutex.lock();
 	gen.abortOptimization=true;
 	gen.myMutex.unlock();
+	
+	QCoreApplication::sendPostedEvents();
 
-	gen.myMutex.lock();
+	gen.semaphoreFinished.acquire();
+
+	//gen.myMutex.lock();
 
 	Solution& c=gen.highestStageSolution;
 
@@ -462,7 +472,7 @@ void TimetableGenerateForm::stopHighest()
 
 	s+="\n";
 
-	gen.myMutex.unlock();
+	//gen.myMutex.unlock();
 
 	//show the message in a dialog
 	QDialog dialog(this);
@@ -502,8 +512,8 @@ void TimetableGenerateForm::stopHighest()
 
 	//generateThread.quit();
 	//generateThread.wait();
-	if(singleThread.joinable())
-		singleThread.join();
+	//if(singleThread.joinable())
+	//	singleThread.join();
 }
 
 void TimetableGenerateForm::impossibleToSolve()
@@ -518,7 +528,11 @@ void TimetableGenerateForm::impossibleToSolve()
 	gen.abortOptimization=true;
 	gen.myMutex.unlock();
 
-	gen.myMutex.lock();
+	QCoreApplication::sendPostedEvents();
+
+	gen.semaphoreFinished.acquire();
+
+	//gen.myMutex.lock();
 
 	Solution& c=gen.c;
 
@@ -590,7 +604,7 @@ void TimetableGenerateForm::impossibleToSolve()
 		s+="\n";
 	}
 
-	gen.myMutex.unlock();
+	//gen.myMutex.unlock();
 
 	//show the message in a dialog
 	QDialog dialog(this);
@@ -660,8 +674,8 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	//generateThread.quit();
 	//generateThread.wait();
-	if(singleThread.joinable())
-		singleThread.join();
+	//if(singleThread.joinable())
+	//	singleThread.join();
 }
 
 void TimetableGenerateForm::simulationFinished()
@@ -672,9 +686,13 @@ void TimetableGenerateForm::simulationFinished()
 
 	simulation_running=false;
 
+	QCoreApplication::sendPostedEvents();
+
+	gen.semaphoreFinished.acquire();
+
 	//gen.finishedSemaphore.acquire();
 
-	gen.myMutex.lock();
+	//gen.myMutex.lock();
 
 	TimetableExport::writeRandomSeed(this, gen.rng, false); //false represents 'before' state
 
@@ -744,7 +762,7 @@ void TimetableGenerateForm::simulationFinished()
 	s+=QString("\n\n");
 	s+=tr("The results were saved in the directory %1.").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk));
 
-	gen.myMutex.unlock();
+	//gen.myMutex.unlock();
 
 //Old comment below (2020-08-14).
 //On Windows we do not beep for Qt >= 5.14.1, because the QMessageBox below beeps itself.
@@ -802,8 +820,8 @@ void TimetableGenerateForm::simulationFinished()
 
 	//generateThread.quit();
 	//generateThread.wait();
-	if(singleThread.joinable())
-		singleThread.join();
+	//if(singleThread.joinable())
+	//	singleThread.join();
 }
 
 void TimetableGenerateForm::activityPlaced(int nThread, int na){
@@ -815,9 +833,11 @@ void TimetableGenerateForm::activityPlaced(int nThread, int na){
 	int t=gen.searchTime; //seconds
 	int mact=gen.maxActivitiesPlaced;
 	int seconds=gen.timeToHighestStage;
+
 	gen.myMutex.unlock();
 
 	gen.semaphorePlacedActivity.release();
+
 	//gen.cvForPlacedActivity.notify_one();
 
 	//write to the Qt interface
@@ -1015,7 +1035,9 @@ void TimetableGenerateForm::closePressed()
 	//if(singleThread.joinable())
 	//	singleThread.join();
 	//if(!generateThread.isRunning())
-	if(!singleThread.joinable())
+
+	if(!simulation_running)
+	//if(!singleThread.joinable())
 		this->close();
 }
 

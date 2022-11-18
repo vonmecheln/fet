@@ -39,6 +39,8 @@ File generate.h
 //#include <semaphore>
 //#include <condition_variable>
 
+#include <atomic>
+
 class Activity;
 
 class QWidget;
@@ -53,12 +55,16 @@ public:
 	//QMutex myMutex;
 	std::mutex myMutex;
 	
+	std::atomic<bool> isRunning;
+	
 	int nThread; //for multiple generation, otherwise it is 0.
 
 	QSemaphore semaphorePlacedActivity;
 	//std::binary_semaphore semaphorePlacedActivity;
 	//std::condition_variable cvForPlacedActivity;
-	bool placedActivityProcessed;
+	//bool placedActivityProcessed;
+	
+	QSemaphore semaphoreFinished;
 
 private:
 	bool foundGoodSwap;
@@ -239,7 +245,7 @@ private:
 public:
 	MRG32k3a rng;
 	
-	bool isRunning;
+	//bool isRunning;
 	
 	int maxActivitiesPlaced;
 	Solution highestStageSolution;
@@ -350,6 +356,7 @@ public:
 	
 	bool precompute(QWidget* parent, QTextStream* maxPlacedActivityStream=nullptr);
 	
+	void generateWithSemaphore(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=nullptr);
 	void generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream=nullptr);
 	
 	void moveActivity(int ai, int fromslot, int toslot, int fromroom, int toroom, const QList<int>& fromRealRoomsList, const QList<int>& toRealRoomsList);

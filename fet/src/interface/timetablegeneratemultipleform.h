@@ -97,6 +97,7 @@ class TimetableGenerateMultipleForm : public QDialog, Ui::TimetableGenerateMulti
 	QList<int> nTimetableForHighestStageSolutions;
 	QList<int> nThreadForHighest;
 	QList<bool> simulationTimedOutForHighest;
+	QList<int> timeForHighestStageSolutions;
 
 public:
 	TimetableGenerateMultipleForm(QWidget* parent);

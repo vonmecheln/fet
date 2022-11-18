@@ -42,6 +42,7 @@
 #include <QDir>
 
 #include <QApplication>
+#include <QCoreApplication>
 #include <QtGlobal>
 
 #include <QProcess>
@@ -122,7 +123,8 @@ void TimetablingThread::startGenerating()
 	//emit(timetableStarted(_nThread/*, nOverallTimetable+1*/));
 	//semaphoreTimetableStarted[_nThread].acquire();
 
-	genMultiMatrix[_nThread].generate(timeLimit, impossible, timeExceeded, true); //true means threaded
+	assert(genMultiMatrix[_nThread].semaphoreFinished.available()==0);
+	genMultiMatrix[_nThread].generateWithSemaphore(timeLimit, impossible, timeExceeded, true); //true means threaded
 	QString s;
 	
 	bool ok;
@@ -208,6 +210,7 @@ void TimetablingThread::startGenerating()
 	//emit(resultReady(_nThread, s, ok));
 
 	emit(timetableGenerated(_nThread, nOverallTimetable+1, s, ok));
+
 	semaphoreTimetableFinished[_nThread].acquire();
 	/*std::mutex mtx;
 	std::unique_lock<std::mutex> lck(mtx);
@@ -301,6 +304,7 @@ TimetableGenerateMultipleForm::~TimetableGenerateMultipleForm()
 	nTimetableForHighestStageSolutions.clear();
 	nThreadForHighest.clear();
 	simulationTimedOutForHighest.clear();
+	timeForHighestStageSolutions.clear();
 	
 	//assert(controllersList.count()==0);
 }
@@ -412,6 +416,7 @@ void TimetableGenerateMultipleForm::start(){
 	nTimetableForHighestStageSolutions.clear();
 	nThreadForHighest.clear();
 	simulationTimedOutForHighest.clear();
+	timeForHighestStageSolutions.clear();
 	
 	for(int t=0; t<nThreads; t++){
 		/*genMultiMatrix[t].rng.s10=(gen.rng.s10*nThreads+t)%gen.rng.m1;
@@ -525,7 +530,7 @@ void TimetableGenerateMultipleForm::start(){
 		timetablingThreads[t]._nThread=t;
 
 		genMultiMatrix[t].nThread=t;
-		genMultiMatrix[t].isRunning=false;
+		//genMultiMatrix[t].isRunning=false;
 
 		connect(&genMultiMatrix[t], SIGNAL(activityPlaced(int, int)), this, SLOT(activityPlaced(int, int)));
 		connect(&timetablingThreads[t], SIGNAL(timetableGenerated(int, int, const QString&, bool)), this, SLOT(timetableGenerated(int, int, const QString&, bool)));
@@ -582,6 +587,12 @@ void TimetableGenerateMultipleForm::timetableStarted(int nThread, int timetable)
 
 void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetable, const QString& description, bool ok)
 {
+	assert(!genMultiMatrix[nThread].isRunning);
+	
+	QCoreApplication::sendPostedEvents();
+
+	genMultiMatrix[nThread].semaphoreFinished.acquire();
+
 	nGeneratedTimetables++;
 	numberOfGeneratedTimetablesLabel->setText(tr("Generated: %1").arg(nGeneratedTimetables));
 	if(ok){
@@ -599,20 +610,24 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 			nTimetableForHighestStageSolutions.clear();
 			nThreadForHighest.clear();
 			simulationTimedOutForHighest.clear();
+			timeForHighestStageSolutions.clear();
 			Solution* sol=new Solution();
 			sol->copyForHighestStage(gt.rules, genMultiMatrix[nThread].highestStageSolution);
 			highestStageSolutions.append(sol);
 			nTimetableForHighestStageSolutions.append(timetable);
 			nThreadForHighest.append(nThread);
 			simulationTimedOutForHighest.append(true);
+			timeForHighestStageSolutions.append(genMultiMatrix[nThread].timeToHighestStage);
 		}
-		else if(highestPlacedActivities==genMultiMatrix[nThread].maxActivitiesPlaced){
+		else if(highestPlacedActivities==genMultiMatrix[nThread].maxActivitiesPlaced
+		 && !nTimetableForHighestStageSolutions.contains(timetable) /*not very nice test this 'contains' :-( , but sometimes we could have ended up with duplicates in the list*/){
 			Solution* sol=new Solution();
 			sol->copyForHighestStage(gt.rules, genMultiMatrix[nThread].highestStageSolution);
 			highestStageSolutions.append(sol);
 			nTimetableForHighestStageSolutions.append(timetable);
 			nThreadForHighest.append(nThread);
 			simulationTimedOutForHighest.append(true);
+			timeForHighestStageSolutions.append(genMultiMatrix[nThread].timeToHighestStage);
 		}
 	}
 
@@ -676,8 +691,8 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 	//}
 	//assert(generateMultipleThread[nThread].isFinished());
 	if(nGeneratedTimetables<nTimetables && simulation_running_multi){
-		if(timetablingThreads[nThread]._internalGeneratingThread.joinable())
-			timetablingThreads[nThread]._internalGeneratingThread.join();
+		//if(timetablingThreads[nThread]._internalGeneratingThread.joinable())
+		//	timetablingThreads[nThread]._internalGeneratingThread.join();
 	
 		//Controller* oldController=controllersList.at(nThread);
 		//controllersList.removeAt(nThread);
@@ -701,6 +716,9 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 		
 		//timetableStarted(nThread, controller->nOverallTimetable+1/*+allNThreads*/);
 		timetableStarted(nThread, timetablingThreads[nThread].nOverallTimetable+1);
+
+		//QCoreApplication::sendPostedEvents();
+
 		semaphoreTimetableStarted[nThread].acquire();
 		/*std::mutex mtx;
 		std::unique_lock<std::mutex> lck(mtx);
@@ -716,16 +734,27 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 		for(int t=0; t<allNThreads; t++){
 			//This is always done (1 || stuff) because we need to disconnnect the Generate.
 			//if(1 || generateMultipleThread[t].isRunning()){
-			genMultiMatrix[t].myMutex.lock();
-			genMultiMatrix[t].abortOptimization=true;
-			//genMultiMatrix[t].disconnect();
-			genMultiMatrix[t].myMutex.unlock();
+			if(t!=nThread){
+				if(genMultiMatrix[t].isRunning){
+					genMultiMatrix[t].myMutex.lock();
+					genMultiMatrix[t].abortOptimization=true;
+					//genMultiMatrix[t].disconnect();
+					genMultiMatrix[t].myMutex.unlock();
+	
+					QCoreApplication::sendPostedEvents();
+		
+					genMultiMatrix[t].semaphoreFinished.acquire();
+				}
+			}
+			else{
+				assert(!genMultiMatrix[t].isRunning);
+			}
 			
 			//delete controllersList[t];
 			//}
 			
-			if(timetablingThreads[t]._internalGeneratingThread.joinable())
-				timetablingThreads[t]._internalGeneratingThread.join();
+			//if(timetablingThreads[t]._internalGeneratingThread.joinable())
+			//	timetablingThreads[t]._internalGeneratingThread.join();
 
 			if(highestPlacedActivities<genMultiMatrix[t].maxActivitiesPlaced){
 				highestPlacedActivities=genMultiMatrix[t].maxActivitiesPlaced;
@@ -735,20 +764,24 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 				nTimetableForHighestStageSolutions.clear();
 				nThreadForHighest.clear();
 				simulationTimedOutForHighest.clear();
+				timeForHighestStageSolutions.clear();
 				Solution* sol=new Solution();
 				sol->copyForHighestStage(gt.rules, genMultiMatrix[t].highestStageSolution);
 				highestStageSolutions.append(sol);
 				nTimetableForHighestStageSolutions.append(timetablingThreads[t].nOverallTimetable+1);
 				nThreadForHighest.append(t);
 				simulationTimedOutForHighest.append(true);
+				timeForHighestStageSolutions.append(genMultiMatrix[t].timeToHighestStage);
 			}
-			else if(highestPlacedActivities==genMultiMatrix[t].maxActivitiesPlaced){
+			else if(highestPlacedActivities==genMultiMatrix[t].maxActivitiesPlaced
+			 && !nTimetableForHighestStageSolutions.contains(timetablingThreads[t].nOverallTimetable+1) /*not very nice test this 'contains' :-( , but sometimes we could have ended up with duplicates in the list*/){
 				Solution* sol=new Solution();
 				sol->copyForHighestStage(gt.rules, genMultiMatrix[t].highestStageSolution);
 				highestStageSolutions.append(sol);
 				nTimetableForHighestStageSolutions.append(timetablingThreads[t].nOverallTimetable+1);
 				nThreadForHighest.append(t);
 				simulationTimedOutForHighest.append(true);
+				timeForHighestStageSolutions.append(genMultiMatrix[t].timeToHighestStage);
 			}
 		}
 		simulationFinished();
@@ -766,13 +799,20 @@ void TimetableGenerateMultipleForm::stop()
 	//assert(controllersList.count()==nThreadsSpinBox->value());
 
 	for(int t=0; t<nThreadsSpinBox->value(); t++){
-		//cout<<"1. t="<<t<<endl;
-		genMultiMatrix[t].myMutex.lock();
-		genMultiMatrix[t].abortOptimization=true;
-		genMultiMatrix[t].myMutex.unlock();
+		if(genMultiMatrix[t].isRunning){
+			//cout<<"1. t="<<t<<endl;
+			genMultiMatrix[t].myMutex.lock();
+			genMultiMatrix[t].abortOptimization=true;
+			genMultiMatrix[t].myMutex.unlock();
+
+			QCoreApplication::sendPostedEvents();
+
+			genMultiMatrix[t].semaphoreFinished.acquire();
+		}
+
 		//cout<<"2. t="<<t<<endl;
-		if(timetablingThreads[t]._internalGeneratingThread.joinable())
-			timetablingThreads[t]._internalGeneratingThread.join();
+		//if(timetablingThreads[t]._internalGeneratingThread.joinable())
+		//	timetablingThreads[t]._internalGeneratingThread.join();
 		//cout<<"3. t="<<t<<endl;
 		//if(timetablingThreads[t].joinable())
 		//	timetablingThreads[t].join();
@@ -790,6 +830,7 @@ void TimetableGenerateMultipleForm::stop()
 				nTimetableForHighestStageSolutions.clear();
 				nThreadForHighest.clear();
 				simulationTimedOutForHighest.clear();
+				timeForHighestStageSolutions.clear();
 				Solution* sol=new Solution();
 				sol->copyForHighestStage(gt.rules, genMultiMatrix[t].highestStageSolution);
 				highestStageSolutions.append(sol);
@@ -797,8 +838,10 @@ void TimetableGenerateMultipleForm::stop()
 				nTimetableForHighestStageSolutions.append(timetablingThreads[t].nOverallTimetable+1);
 				nThreadForHighest.append(t);
 				simulationTimedOutForHighest.append(false);
+				timeForHighestStageSolutions.append(genMultiMatrix[t].timeToHighestStage);
 			}
-			else if(highestPlacedActivities==genMultiMatrix[t].maxActivitiesPlaced){
+			else if(highestPlacedActivities==genMultiMatrix[t].maxActivitiesPlaced
+			 && !nTimetableForHighestStageSolutions.contains(timetablingThreads[t].nOverallTimetable+1) /*not very nice test this 'contains' :-( , but sometimes we could have ended up with duplicates in the list*/){
 				Solution* sol=new Solution();
 				sol->copyForHighestStage(gt.rules, genMultiMatrix[t].highestStageSolution);
 				highestStageSolutions.append(sol);
@@ -806,6 +849,7 @@ void TimetableGenerateMultipleForm::stop()
 				nTimetableForHighestStageSolutions.append(timetablingThreads[t].nOverallTimetable+1);
 				nThreadForHighest.append(t);
 				simulationTimedOutForHighest.append(false);
+				timeForHighestStageSolutions.append(genMultiMatrix[t].timeToHighestStage);
 			}
 		}
 
@@ -857,6 +901,15 @@ void TimetableGenerateMultipleForm::stop()
 			int nTimetable=nTimetableForHighestStageSolutions.at(i);
 			int nThread=nThreadForHighest.at(i);
 			bool timedOut=simulationTimedOutForHighest.at(i);
+			
+			int secondsToHighestStage=timeForHighestStageSolutions.at(i);
+			bool zero=(secondsToHighestStage==0);
+			int hours=secondsToHighestStage/3600;
+			secondsToHighestStage%=3600;
+			int minutes=secondsToHighestStage/60;
+			secondsToHighestStage%=60;
+			int seconds=secondsToHighestStage;
+			
 			QString description=tr("(Thread %1)").arg(nThread+1);
 			description+=QString(" ");
 			if(timedOut)
@@ -864,7 +917,26 @@ void TimetableGenerateMultipleForm::stop()
 			else
 				description+=tr("Simulation stopped.");
 			description+=QString(" ");
-			description+=tr("Maximum placed activities: %1.").arg(highestPlacedActivities);
+
+			//description+=tr("Maximum placed activities: %1.").arg(highestPlacedActivities);
+
+			QString tim;
+			if(hours>0){
+				tim+=" ";
+				tim+=tr("%1 h", "hours").arg(hours);
+			}
+			if(minutes>0){
+				tim+=" ";
+				tim+=tr("%1 m", "minutes").arg(minutes);
+			}
+			if(seconds>0 || zero){
+				tim+=" ";
+				tim+=tr("%1 s", "seconds").arg(seconds);
+			}
+			tim.remove(0, 1);
+			description+=tr("Maximum placed activities: %1 (at %2).", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(highestPlacedActivities).arg(tim);
+			//description+=QString(".");
+			
 			if(i>=1 || currentResultsTextEdit->toPlainText().isEmpty())
 				currentResultsTextEdit->appendPlainText(tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")
 				 .arg(nTimetable).arg(description));
@@ -1003,6 +1075,15 @@ void TimetableGenerateMultipleForm::simulationFinished()
 			int nTimetable=nTimetableForHighestStageSolutions.at(i);
 			int nThread=nThreadForHighest.at(i);
 			bool timedOut=simulationTimedOutForHighest.at(i);
+
+			int secondsToHighestStage=timeForHighestStageSolutions.at(i);
+			bool zero=(secondsToHighestStage==0);
+			int hours=secondsToHighestStage/3600;
+			secondsToHighestStage%=3600;
+			int minutes=secondsToHighestStage/60;
+			secondsToHighestStage%=60;
+			int seconds=secondsToHighestStage;
+
 			QString description=tr("(Thread %1)").arg(nThread+1);
 			description+=QString(" ");
 			if(timedOut)
@@ -1010,7 +1091,26 @@ void TimetableGenerateMultipleForm::simulationFinished()
 			else
 				description+=tr("Simulation stopped.");
 			description+=QString(" ");
-			description+=tr("Maximum placed activities: %1.").arg(highestPlacedActivities);
+
+			//description+=tr("Maximum placed activities: %1.").arg(highestPlacedActivities);
+
+			QString tim;
+			if(hours>0){
+				tim+=" ";
+				tim+=tr("%1 h", "hours").arg(hours);
+			}
+			if(minutes>0){
+				tim+=" ";
+				tim+=tr("%1 m", "minutes").arg(minutes);
+			}
+			if(seconds>0 || zero){
+				tim+=" ";
+				tim+=tr("%1 s", "seconds").arg(seconds);
+			}
+			tim.remove(0, 1);
+			description+=tr("Maximum placed activities: %1 (at %2).", "%1 represents the maximum number of activities placed, %2 is a time interval").arg(highestPlacedActivities).arg(tim);
+			//description+=QString(".");
+
 			if(i>=1 || currentResultsTextEdit->toPlainText().isEmpty())
 				currentResultsTextEdit->appendPlainText(tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description")
 				 .arg(nTimetable).arg(description));
