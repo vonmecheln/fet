@@ -33,40 +33,40 @@ class LongTextMessageBox: public QObject
 	
 public:
 	static int confirmation
-	 ( QWidget * parent, const QString & title, const QString & text,
+	 (QWidget* parent, const QString& title, const QString& text,
 	 const QString& button0Text, const QString& button1Text, const QString& button2Text,
 	 int defaultButton, int escapeButton );
 
 	static int largeConfirmation
-	 ( QWidget * parent, const QString & title, const QString & text,
+	 (QWidget* parent, const QString& title, const QString& text,
 	 const QString& button0Text, const QString& button1Text, const QString& button2Text,
 	 int defaultButton, int escapeButton );
 
 	static int mediumConfirmation
-	 ( QWidget * parent, const QString & title, const QString & text,
+	 (QWidget* parent, const QString& title, const QString& text,
 	 const QString& button0Text, const QString& button1Text, const QString& button2Text,
 	 int defaultButton, int escapeButton );
 
 	static void information
-	 ( QWidget * parent, const QString & title, const QString & text);
+	 (QWidget* parent, const QString& title, const QString& text);
 
 	static void largeInformation
-	 ( QWidget * parent, const QString & title, const QString & text);
+	 (QWidget* parent, const QString& title, const QString& text);
 
 	static void mediumInformation
-	 ( QWidget * parent, const QString & title, const QString & text);
+	 (QWidget* parent, const QString& title, const QString& text);
 
 	static int confirmationWithDimensions
-	 ( QWidget * parent, const QString & title, const QString & text,
+	 (QWidget* parent, const QString& title, const QString& text,
 	 const QString& button0Text, const QString& button1Text, const QString& button2Text,
 	 int defaultButton, int escapeButton, int MINW, int MAXW, int MINH, int MAXH );
 
 	static void informationWithDimensions
-	 ( QWidget * parent, const QString & title, const QString & text, int MINW, int MAXW, int MINH, int MAXH);
+	 (QWidget* parent, const QString& title, const QString& text, int MINW, int MAXW, int MINH, int MAXH);
 
 	//Used only in modifystudentsyearform.cpp
 	static int largeConfirmationWithDimensionsThreeButtonsYesNoCancel
-	 ( QWidget * parent, const QString & title, const QString & text,
+	 (QWidget* parent, const QString& title, const QString& text,
 	 const QString& button0Text, const QString& button1Text, const QString& button2Text,
 	 int defaultButton, int escapeButton );
 	 //Yes, No, Cancel, in this order

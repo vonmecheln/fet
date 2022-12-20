@@ -2566,3 +2566,11 @@ Versions 6.7.0 - 6.7.v
 	- Crashing bugs fixed, when generating multiple on more threads (hopefully they are all fixed now, and hopefully no new ones are introduced. If you experience
 	crashes or lockings of the program while generating single or multiple on more threads please report them).
 	- Minor improvements.
+- Version 6.7.2
+	- Updated to Qt 6.4.1.
+	- Minor improvements.
+- Version 6.7.3
+	- Bug fix: when generating an impossible file on multiple threads, the program could hang (discovered with the help of math). The bug was isolated with the help
+	of GDB (GNU Debugger).
+	- Improved the generation on some locked timetables for which the program would report impossible generation, even if these files were solved when they were
+	unlocked (reported by math).

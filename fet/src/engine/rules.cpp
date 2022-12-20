@@ -6087,7 +6087,7 @@ void Rules::updateConstraintsAfterRemoval()
 	}
 }
 
-bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, QString commandLineDirectory) //commandLineDirectory has trailing FILE_SEP
+bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, const QString& commandLineDirectory) //commandLineDirectory has trailing FILE_SEP
 {
 	QFile file(fileName);
 	if(!file.open(QIODevice::ReadOnly)){

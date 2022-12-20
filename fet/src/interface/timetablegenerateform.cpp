@@ -101,6 +101,8 @@ void runSingle()
 	const int INF=2000000000;
 	bool impossible, timeExceeded;
 
+	gen.semaphorePlacedActivity.tryAcquire(); //this has effect after stopping the simulation or impossible to solve
+	assert(gen.semaphorePlacedActivity.available()==0);
 	assert(gen.semaphoreFinished.available()==0);
 	gen.generateWithSemaphore(INF, impossible, timeExceeded, true); //true means threaded
 }
@@ -217,13 +219,16 @@ void TimetableGenerateForm::stop()
 
 	simulation_running=false;
 
-	gen.myMutex.lock();
+	//gen.myMutex.lock();
 	gen.abortOptimization=true;
-	gen.myMutex.unlock();
+	//gen.myMutex.unlock();
 	
-	QCoreApplication::sendPostedEvents();
+	//QCoreApplication::sendPostedEvents();
+	gen.semaphorePlacedActivity.release();
 	
 	gen.semaphoreFinished.acquire();
+
+	//gen.semaphorePlacedActivity.tryAcquire();
 
 	//gen.myMutex.lock();
 
@@ -382,13 +387,16 @@ void TimetableGenerateForm::stopHighest()
 
 	simulation_running=false;
 
-	gen.myMutex.lock();
+	//gen.myMutex.lock();
 	gen.abortOptimization=true;
-	gen.myMutex.unlock();
+	//gen.myMutex.unlock();
 	
-	QCoreApplication::sendPostedEvents();
+	//QCoreApplication::sendPostedEvents();
+	gen.semaphorePlacedActivity.release();
 
 	gen.semaphoreFinished.acquire();
+
+	//gen.semaphorePlacedActivity.tryAcquire();
 
 	//gen.myMutex.lock();
 
@@ -524,13 +532,16 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	simulation_running=false;
 
-	gen.myMutex.lock();
+	//gen.myMutex.lock();
 	gen.abortOptimization=true;
-	gen.myMutex.unlock();
+	//gen.myMutex.unlock();
 
-	QCoreApplication::sendPostedEvents();
+	//QCoreApplication::sendPostedEvents();
+	gen.semaphorePlacedActivity.release();
 
 	gen.semaphoreFinished.acquire();
+
+	//gen.semaphorePlacedActivity.tryAcquire();
 
 	//gen.myMutex.lock();
 
@@ -686,9 +697,12 @@ void TimetableGenerateForm::simulationFinished()
 
 	simulation_running=false;
 
-	QCoreApplication::sendPostedEvents();
+	//QCoreApplication::sendPostedEvents();
+	//gen.semaphorePlacedActivity.release();
 
 	gen.semaphoreFinished.acquire();
+
+	//gen.semaphorePlacedActivity.tryAcquire();
 
 	//gen.finishedSemaphore.acquire();
 

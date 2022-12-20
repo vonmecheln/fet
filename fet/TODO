@@ -8029,3 +8029,94 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=5386.0
 When adding the constraint "A student set's not available time" to each class I have to count the number of available spaces multiple times.
 
 It is possible to add an automatic space (allowed) counting function available in the "student set's not available time" interface so that the user does not have to re-count when the number of lessons is sporadic
+
+482---------------------------------------------------------
+From ngoctp29121982 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5413.0
+
+Fet already has class card N1,N2,N3 so how can I add a teacher card.
+For example, teachers 1,2,3,4,5,6 tag a few periods, teachers 7,8,9,10,11 tag full periods. Then I only need 1 constraint: the card for a few lessons teaches up to 4 days, and the card with full lessons teaches up to 5 days. That way it is much faster and more convenient.
+If so, the binding for the teacher is much faster than if I go to create each binding, teacher 1 teaches up to 4 days, teacher 2 teaches up to 4 days, teacher 11 teaches up to 5 days,....
+
+483---------------------------------------------------------
+From ngoctp29121982 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5415.msg29777#msg29777
+
+Can you add minimum half day column in csv file and allow user to import from csv into software half day minimum =1 with 100% weight?
+
+484-----------PARTIALLY SOLVED in FET-6.7.3 on 2022-11-23---
+From math (on forum), bug report:
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5422.0
+
+I have a weird problem here with FET that is reproducable with the currentmost version (6.7.2) of FET. I configured a relatively small timetable with only 23 activities which succeeds to compute after some minutes of compute time.
+Then I selected "Timetable -> Advanced lock/unlock -> Lock all activities of current timetable" for locking all assignments of starting time and rooms to the activities.
+Now the weird part is happening. I expected that the schedule now can be recomputed in an instant, since all time/space assignments are locked (at least this is my experience). But instead FET is displaying an error message saying that the current timetable cannot be computed.
+If I remove the time/space locks of all activities, the schedule becomes computable again (after some minutes of runtime).
+
+In my eyes this behavior is a little bit surprising. Shouldn't a schedule be computable if all activities are locked directly after a successful generation?
+
+Liviu:
+
+Thank you for the report!
+
+I think I know where it comes from and I was hoping this will not show in the real life. Unfortunately it might be a feature and not a bug and remain like this in the future.
+
+First of all, please send me both your input .fet files (here, archived, or to fet4 att lalescu.ro).
+
+I think you have 2 impossible constraints with 99.9999%. Let me explain: in the fixed timetable, FET tries to put an affected activity in the fixed slot 400,000 times (this is a FET constant, chosen by compromise), each time trying to break the constraint. It will break the constraint in 0.0001% of cases on average. So again on average FET needs to try at level 0 a number of 1/0.000001=1,000,000 times. So, in some more cases it will fail and in some few cases it will succeed (you can try to generate multiple and check that indeed in some cases it will succeed).
+
+I really don't know what to do for sure. I think keeping the current behavior is the best. Increasing that 400,000 1000 times (to care even for weights like 99.999999%, which is the maximum precision in FET) would be not good, because the program will seem to freeze for some really impossible timetables. Increasing this value maybe 10 times, so that it will solve your file, might not be too beneficial also.
+
+The temporary solution is to decrease the weight from 99.9999% to 99.99%. This is also a very strong constraint. Or on the locked file you can disable these two impossible constraints.
+
+Please send me both your files (unlocked and locked), I am very interested. And I'll think about it. Maybe it would be good to add your bug report in the TODO, what do you think?
+
+More precise calculations: since FET needs to break a 99.9999% constraint and is trying 400,000 times, the probability to fail the generation is 0.999999^400,000~=0.67. So the probability to succeed the generation (breaking the constraint in at most 400,000 tries) is ~=0.33, or 33%.
+
+math:
+
+I just mailed the fet input file to the specified email address. In this file all activities are locked so that the schedule cannot be computed. If you unlock all activities and wait for some minutes, the schedule will be generated successfully.
+You guessed correctly: I have some constraints with 99.9999% significance. I will change them to 99.99% and check if the problem still occurs.
+Regarding the underlying problem:
+If time and space is locked for all activities of a schedule, this means that the user wants to have the schedule in exactly this way. This means that there is nothing to compute for FET, but just to check the schedule against the specified constraints.
+But since all activities have been locked for space and time, this is just a validation and not a computation. So can't all constraints with less than 100% significance simply be left out of consideration in this situation?
+
+Liviu:
+
+Yes, exactly as I imagined. If you try more times on your original locked file, it will generate, in the end. And if you go to 99.99% for all constraints, the time to generate the unlocked file will be much shorter and the results will be the same (those pesky two impossible constraints barrier - but not always the same two constraints or two activities).
+
+You are right. A locked file/timetable should not be checked, theoretically. Unfortunately, when Volker came with the idea of locked activities, we used constraints activity preferred starting time constraints activity preferred room. We don't have a global parameter "This timetable is fixed and constraints with weight strictly <100% should be ignored".
+
+Maybe such a global parameter would be a solution? But there are many problems with it, such as users locking partially generated timetables, or adding activities after locking a timetable, or... .
+
+I'll think about it and add this problem in the TODO.
+
+Liviu: I increased the retries at level 0 to 2000000000 and now the file is solvable (unfortunately, not instantly). I cannot see other solution.
+
+485---------------------------------------------------------
+From Darren McDonald:
+
+I wonder whether it would be possible to make the Block Planning version of FET easier to use. In order to do this, I wonder whether it would make sense to separate the
+"Block Planner” from the other FET versions.
+
+I have two reasons for suggesting that a “Block Planner” be separated from FET.
+
+Unlike the other FET modes, someone using the Block Planner is often going to then need to use one of the other FET modes as a second step (this is how I’ve been using
+it). Making the transition from the Block Planning mode to (in my case) the Official mode requires quite a bit of manual work (much of which I accomplish using a Python
+script to take the csv file output from the Block Planning mode to create a student csv file and an activities csv file that can then be imported into a file using the
+Official mode). I’m sure it would be very helpful for other users to have an option within FET that would automate this process. Within this “Block Planner” it would
+ideally be possible, for example, to specify that the course(s) assigned to Block A have a “2+1+1+1+1” structure, Block B courses have a “2+2+1+1” structure, etc.
+This extra information wouldn’t be relevant to the other FET modes, and I don’t know whether or not it would be easy to add, say, another tab for entering this sort of
+information that would be available only in the Block Planning mode.
+
+On the other hand, this sort of Block Planning software would be useful for those who don’t need to generate a timetable as a second step. For example, in my school at
+the start of our school year the Outdoor Education department organized several days of camp activities. Students fill out a Google Form (that yields a csv file) in which
+they choose what they’d like to do (hiking, mountain biking, rafting, etc.) and then the Outdoor Education department has to assign them to groups and times like
+“Morning Day 1”, “Afternoon Day 1”, etc. This is a task perfect for the Block Planning mode of FET, but, of course, the members of that department don’t know how to use
+the regular version of FET, and it’s difficult to explain to someone how to use FET in this way because the language used in FET is written for the other versions
+(“Days” are really teachers/events, “Activities” are really individual student choices, etc.). For those users who only need to create groups with students and teachers
+assigned to a time slot, the Block Planning mode is challenging to learn, and a dedicated Block Planner could be written with language that matches the “real” meanings.
+Thus would make it easier for a beginner to use if creating these sorts of groups is all they require.

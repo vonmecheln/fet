@@ -349,7 +349,7 @@ void SubgroupsForm::purgeSubgroup()
 		"The related activities and constraints were not removed"));*/
 }
 
-void SubgroupsForm::yearChanged(const QString &yearName)
+void SubgroupsForm::yearChanged(const QString& yearName)
 {
 	int yearIndex=gt.rules.searchYear(yearName);
 	if(yearIndex<0){
@@ -374,7 +374,7 @@ void SubgroupsForm::yearChanged(const QString &yearName)
 	}
 }
 
-void SubgroupsForm::groupChanged(const QString &groupName)
+void SubgroupsForm::groupChanged(const QString& groupName)
 {
 	QString yearName=yearsListWidget->currentItem()->text();
 	int yearIndex=gt.rules.searchYear(yearName);
@@ -403,7 +403,7 @@ void SubgroupsForm::groupChanged(const QString &groupName)
 		subgroupTextEdit->setPlainText(QString(""));
 }
 
-void SubgroupsForm::subgroupChanged(const QString &subgroupName)
+void SubgroupsForm::subgroupChanged(const QString& subgroupName)
 {
 	StudentsSet* ss=gt.rules.searchStudentsSet(subgroupName);
 	if(ss==nullptr){

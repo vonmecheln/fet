@@ -298,7 +298,7 @@ void GroupsForm::purgeGroup()
 			"The related subgroups, activities and constraints were not removed"));*/
 }
 
-void GroupsForm::yearChanged(const QString &yearName)
+void GroupsForm::yearChanged(const QString& yearName)
 {
 	int yearIndex=gt.rules.searchYear(yearName);
 	if(yearIndex<0){
@@ -321,7 +321,7 @@ void GroupsForm::yearChanged(const QString &yearName)
 		groupTextEdit->setPlainText(QString(""));
 }
 
-void GroupsForm::groupChanged(const QString &groupName)
+void GroupsForm::groupChanged(const QString& groupName)
 {
 	StudentsSet* ss=gt.rules.searchStudentsSet(groupName);
 	if(ss==nullptr){

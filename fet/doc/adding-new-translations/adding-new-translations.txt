@@ -1,7 +1,7 @@
 This document was written by Liviu Lalescu. Fair use of this document is allowed/encouraged/expected.
 
 Begin: 2003.
-Last modified on: 10 May 2021.
+Last modified on: 16 November 2022.
 
 
 FET - How to add new translations (languages):
@@ -71,7 +71,7 @@ Qt homepage: https://www.qt.io/
 For GNU/Linux it is available if you type "linguist" (possibly preceded by the path to Qt executables) on the
 command-line (Linguist is part of Qt development tools).
 For Windows, you will have to download the latest Qt from the Qt homepage.
-For Mac OS X, maybe you have Qt Linguist precompiled available for download from your package manager,
+For macOS, maybe you have Qt Linguist precompiled available for download from your package manager,
 or you can download the latest Qt from the Qt homepage.
 
 fet_**.ts: You will have to open this file using Qt Linguist.
@@ -146,9 +146,9 @@ these files/functions:
 also the alternative procedure for STEP 1).
 Then recompile. But this is complicated and unneeded.
 
-Note: under Mac OS X, to test your translation, you need to put it into the directory /usr/share/fet/translations/
-or fet.app/Contents/MaxOS/translations/ (information provided by a translator).
-More notes for the Mac OS X platform, from a user: copying the translation file fet_**.qm into the directory fet.app/Contents/MacOS/translations
+Note: under macOS, to test your translation, you need to put it into the directory /usr/share/fet/translations/,
+fet.app/Contents/MacOS/translations/, or fet.app/Contents/MacOS/ (information provided by a translator).
+More notes for the macOS platform, from a user: copying the translation file fet_**.qm into the directory fet.app/Contents/MacOS/translations
 is possible from the command line in X11 xterm (but it is not possible with the finder program, because the file extension ".app" is
 exclusive for applications, so the program finder interprets a directory with the extension ".app" as an application).
 

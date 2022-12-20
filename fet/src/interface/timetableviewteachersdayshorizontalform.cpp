@@ -338,7 +338,7 @@ void TimetableViewTeachersDaysHorizontalForm::resizeRowsAfterShow()
 	teachersTimetableTable->resizeRowsToContents();
 }
 
-void TimetableViewTeachersDaysHorizontalForm::teacherChanged(const QString &teacherName)
+void TimetableViewTeachersDaysHorizontalForm::teacherChanged(const QString& teacherName)
 {
 	if(!(students_schedule_ready && teachers_schedule_ready)){
 		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view teachers timetable dialog - please generate a new timetable"));

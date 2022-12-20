@@ -30545,7 +30545,7 @@ ConstraintStudentsSetMaxHoursDailyRealDays::ConstraintStudentsSetMaxHoursDailyRe
 	this->maxHoursDaily = -1;
 }
 
-ConstraintStudentsSetMaxHoursDailyRealDays::ConstraintStudentsSetMaxHoursDailyRealDays(double wp, int maxnh, QString s)
+ConstraintStudentsSetMaxHoursDailyRealDays::ConstraintStudentsSetMaxHoursDailyRealDays(double wp, int maxnh, const QString& s)
 	: TimeConstraint(wp)
 {
 	this->maxHoursDaily = maxnh;
@@ -34761,7 +34761,7 @@ ConstraintStudentsSetMaxRealDaysPerWeek::ConstraintStudentsSetMaxRealDaysPerWeek
 	this->type=CONSTRAINT_STUDENTS_SET_MAX_REAL_DAYS_PER_WEEK;
 }
 
-ConstraintStudentsSetMaxRealDaysPerWeek::ConstraintStudentsSetMaxRealDaysPerWeek(double wp, int maxnd, QString sn)
+ConstraintStudentsSetMaxRealDaysPerWeek::ConstraintStudentsSetMaxRealDaysPerWeek(double wp, int maxnd, const QString& sn)
 	 : TimeConstraint(wp)
 {
 	this->students = sn;
@@ -40139,7 +40139,7 @@ ConstraintStudentsSetMinHoursPerMorning::ConstraintStudentsSetMinHoursPerMorning
 	this->allowEmptyMornings=false;
 }
 
-ConstraintStudentsSetMinHoursPerMorning::ConstraintStudentsSetMinHoursPerMorning(double wp, int minnh, QString s, bool _allowEmptyMornings)
+ConstraintStudentsSetMinHoursPerMorning::ConstraintStudentsSetMinHoursPerMorning(double wp, int minnh, const QString& s, bool _allowEmptyMornings)
 	: TimeConstraint(wp)
 {
 	this->minHoursPerMorning = minnh;
@@ -42712,7 +42712,7 @@ ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::ConstraintStudentsSetMorning
 	this->type=CONSTRAINT_STUDENTS_SET_MORNING_INTERVAL_MAX_DAYS_PER_WEEK;
 }
 
-ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::ConstraintStudentsSetMorningIntervalMaxDaysPerWeek(double wp, int maxnd, QString sn, int sh, int eh)
+ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::ConstraintStudentsSetMorningIntervalMaxDaysPerWeek(double wp, int maxnd, const QString& sn, int sh, int eh)
 	 : TimeConstraint(wp)
 {
 	this->students = sn;
@@ -43272,7 +43272,7 @@ ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::ConstraintStudentsSetAfter
 	this->type=CONSTRAINT_STUDENTS_SET_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK;
 }
 
-ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek(double wp, int maxnd, QString sn, int sh, int eh)
+ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek(double wp, int maxnd, const QString& sn, int sh, int eh)
 	 : TimeConstraint(wp)
 {
 	this->students = sn;
@@ -53489,7 +53489,7 @@ ConstraintStudentsSetMinHoursPerAfternoon::ConstraintStudentsSetMinHoursPerAfter
 	this->allowEmptyAfternoons=false;
 }
 
-ConstraintStudentsSetMinHoursPerAfternoon::ConstraintStudentsSetMinHoursPerAfternoon(double wp, int minnh, QString s, bool _allowEmptyAfternoons)
+ConstraintStudentsSetMinHoursPerAfternoon::ConstraintStudentsSetMinHoursPerAfternoon(double wp, int minnh, const QString& s, bool _allowEmptyAfternoons)
 	: TimeConstraint(wp)
 {
 	this->minHoursPerAfternoon = minnh;

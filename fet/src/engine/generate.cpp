@@ -111,7 +111,8 @@ const int LEVEL_STOP_CONFLICTS_CALCULATION=MAX_LEVEL;
 
 const int INF=2000000000;
 
-const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=400000;
+//const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=400000;
+const int MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0=2000000000;
 
 bool Generate::compareConflictsIncreasing(int a, int b)
 {
@@ -6328,7 +6329,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		swappedActivities[permutation[i]]=false;
 
-	time_t starting_time;
+	//time_t starting_time;
 	time(&starting_time);
 	
 	if(threaded){
@@ -6348,18 +6349,21 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	
 	for(int added_act=0; added_act<gt.rules.nInternalActivities; added_act++){
 		prevvalue:
+		
+		if(abortOptimization)
+			return;
 
 		if(threaded){
 			myMutex.lock();
 		}
-		if(abortOptimization){
+		/*if(abortOptimization){
 			//isRunning=false;
 			
 			if(threaded){
 				myMutex.unlock();
 			}
 			return;
-		}
+		}*/
 		time_t crt_time;
 		time(&crt_time);
 		searchTime=int(difftime(crt_time, starting_time));
@@ -6725,9 +6729,17 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 
 		nRestore=0;
 		ncallsrandomswap=0;
+		currentlyNPlacedActivities=added_act;
 		randomSwap(permutation[added_act], 0);
 		
 		if(!foundGoodSwap){
+			if(abortOptimization){
+				if(threaded){
+					myMutex.unlock();
+				}
+				
+				return;
+			}
 			if(impossibleActivity){
 				//isRunning=false;
 
@@ -29243,11 +29255,24 @@ skip_here_if_already_allocated_in_time:
 
 	if(level==0 && (nConflActivities[perm[0]]==MAX_ACTIVITIES)){
 		//to check if the generation was stopped
-		if(this->isThreaded){
+		/*if(this->isThreaded){
 			myMutex.unlock();
 			myMutex.lock();
-		}
+		}*/
 		if(!abortOptimization && activity_count_impossible_tries<MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0){
+			if(activity_count_impossible_tries%10000==0){
+				time_t crt_time;
+				time(&crt_time);
+				searchTime=int(difftime(crt_time, starting_time));
+
+				emit(activityPlaced(nThread, currentlyNPlacedActivities));
+				if(isThreaded){
+					myMutex.unlock();
+					semaphorePlacedActivity.acquire();
+					myMutex.lock();
+				}
+			}
+
 			activity_count_impossible_tries++;
 			goto again_if_impossible_activity;
 		}

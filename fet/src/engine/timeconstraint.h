@@ -2637,8 +2637,8 @@ public:
 
 	ConstraintActivitiesPreferredTimeSlots();
 
-	//ConstraintActivitiesPreferredTimeSlots(double wp, QString te,
-	//	QString st, QString su, QString sut, int nPT, int d[], int h[]);
+	//ConstraintActivitiesPreferredTimeSlots(double wp, const QString& te,
+	//	const QString& st, const QString& su, const QString& sut, int nPT, int d[], int h[]);
 	ConstraintActivitiesPreferredTimeSlots(double wp, const QString& te,
 		const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L);
 
@@ -2729,8 +2729,8 @@ public:
 
 	ConstraintSubactivitiesPreferredTimeSlots();
 
-	//ConstraintSubactivitiesPreferredTimeSlots(double wp, int compNo, QString te,
-	//	QString st, QString su, QString sut, int nPT, int d[], int h[]);
+	//ConstraintSubactivitiesPreferredTimeSlots(double wp, int compNo, const QString& te,
+	//	const QString& st, const QString& su, const QString& sut, int nPT, int d[], int h[]);
 	ConstraintSubactivitiesPreferredTimeSlots(double wp, int compNo, const QString& te,
 		const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L);
 
@@ -2819,8 +2819,8 @@ public:
 
 	ConstraintActivitiesPreferredStartingTimes();
 
-	//ConstraintActivitiesPreferredStartingTimes(double wp, QString te,
-	//	QString st, QString su, QString sut, int nPT, int d[], int h[]);
+	//ConstraintActivitiesPreferredStartingTimes(double wp, const QString& te,
+	//	const QString& st, const QString& su, const QString& sut, int nPT, int d[], int h[]);
 	ConstraintActivitiesPreferredStartingTimes(double wp, const QString& te,
 		const QString& st, const QString& su, const QString& sut, int dur, int nPT_L, QList<int> d_L, QList<int> h_L);
 
@@ -5989,7 +5989,7 @@ public:
 
 	ConstraintStudentsSetMaxHoursDailyRealDays();
 
-	ConstraintStudentsSetMaxHoursDailyRealDays(double wp, int maxnh, QString s);
+	ConstraintStudentsSetMaxHoursDailyRealDays(double wp, int maxnh, const QString& s);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -6712,7 +6712,7 @@ public:
 
 	ConstraintStudentsSetMaxRealDaysPerWeek();
 
-	ConstraintStudentsSetMaxRealDaysPerWeek(double wp, int maxnd, QString sn);
+	ConstraintStudentsSetMaxRealDaysPerWeek(double wp, int maxnd, const QString& sn);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -7778,7 +7778,7 @@ public:
 
 	ConstraintStudentsSetMinHoursPerMorning();
 
-	ConstraintStudentsSetMinHoursPerMorning(double wp, int minnh, QString s, bool _allowEmptyMornings);
+	ConstraintStudentsSetMinHoursPerMorning(double wp, int minnh, const QString& s, bool _allowEmptyMornings);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -8228,7 +8228,7 @@ public:
 
 	ConstraintStudentsSetMorningIntervalMaxDaysPerWeek();
 
-	ConstraintStudentsSetMorningIntervalMaxDaysPerWeek(double wp, int maxnd, QString sn, int sh, int eh);
+	ConstraintStudentsSetMorningIntervalMaxDaysPerWeek(double wp, int maxnd, const QString& sn, int sh, int eh);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -8334,7 +8334,7 @@ public:
 
 	ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek();
 
-	ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek(double wp, int maxnd, QString sn, int sh, int eh);
+	ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek(double wp, int maxnd, const QString& sn, int sh, int eh);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -10214,7 +10214,7 @@ public:
 
 	ConstraintStudentsSetMinHoursPerAfternoon();
 
-	ConstraintStudentsSetMinHoursPerAfternoon(double wp, int minnh, QString s, bool _allowEmptyAfternoons);
+	ConstraintStudentsSetMinHoursPerAfternoon(double wp, int minnh, const QString& s, bool _allowEmptyAfternoons);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 

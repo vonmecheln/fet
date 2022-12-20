@@ -11456,7 +11456,7 @@ ConstraintStudentsSetMaxRoomChangesPerRealDay::ConstraintStudentsSetMaxRoomChang
 	this->type=CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_REAL_DAY;
 }
 
-ConstraintStudentsSetMaxRoomChangesPerRealDay::ConstraintStudentsSetMaxRoomChangesPerRealDay(double wp, QString st, int mc)
+ConstraintStudentsSetMaxRoomChangesPerRealDay::ConstraintStudentsSetMaxRoomChangesPerRealDay(double wp, const QString& st, int mc)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_REAL_DAY;
@@ -11756,7 +11756,7 @@ ConstraintTeacherMaxRoomChangesPerRealDay::ConstraintTeacherMaxRoomChangesPerRea
 	this->type=CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY;
 }
 
-ConstraintTeacherMaxRoomChangesPerRealDay::ConstraintTeacherMaxRoomChangesPerRealDay(double wp, QString tc, int mc)
+ConstraintTeacherMaxRoomChangesPerRealDay::ConstraintTeacherMaxRoomChangesPerRealDay(double wp, const QString& tc, int mc)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY;
@@ -12515,7 +12515,7 @@ ConstraintStudentsSetMaxBuildingChangesPerRealDay::ConstraintStudentsSetMaxBuild
 	this->type=CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY;
 }
 
-ConstraintStudentsSetMaxBuildingChangesPerRealDay::ConstraintStudentsSetMaxBuildingChangesPerRealDay(double wp, QString st, int mc)
+ConstraintStudentsSetMaxBuildingChangesPerRealDay::ConstraintStudentsSetMaxBuildingChangesPerRealDay(double wp, const QString& st, int mc)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY;
@@ -12815,7 +12815,7 @@ ConstraintTeacherMaxBuildingChangesPerRealDay::ConstraintTeacherMaxBuildingChang
 	this->type=CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY;
 }
 
-ConstraintTeacherMaxBuildingChangesPerRealDay::ConstraintTeacherMaxBuildingChangesPerRealDay(double wp, QString tc, int mc)
+ConstraintTeacherMaxBuildingChangesPerRealDay::ConstraintTeacherMaxBuildingChangesPerRealDay(double wp, const QString& tc, int mc)
 	: SpaceConstraint(wp)
 {
 	this->type=CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY;

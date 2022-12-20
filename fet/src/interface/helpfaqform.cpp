@@ -967,7 +967,7 @@ void HelpFaqForm::setText()
 	 " If you remove this file, all FET settings on this computer will be reset to defaults."
 	 ).arg("$HOME/.config").arg("fet").arg("fettimetabling.conf");
 	s+="\n\n";
-	s+=tr("Mac OS X: It seems that the configuration file might be %1").arg("$HOME/Library/Preferences/com.fet.fettimetabling.plist");
+	s+=tr("macOS: It seems that the configuration file might be %1").arg("$HOME/Library/Preferences/com.fet.fettimetabling.plist");
 	s+="\n\n";
 	s+=tr("Windows: Run regedit.exe (Registry Editor) and search for the key \"%1\". You will find a section with this name,"
 	 " with the subsection \"%2\". You can export this section to a file, and import it from this file on the same or another computer."

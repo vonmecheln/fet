@@ -368,7 +368,7 @@ void TimetableViewRoomsDaysHorizontalForm::resizeRowsAfterShow()
 	roomsTimetableTable->resizeRowsToContents();
 }
 
-void TimetableViewRoomsDaysHorizontalForm::roomChanged(const QString &roomName)
+void TimetableViewRoomsDaysHorizontalForm::roomChanged(const QString& roomName)
 {
 	if(!(students_schedule_ready && teachers_schedule_ready)){
 		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable"));

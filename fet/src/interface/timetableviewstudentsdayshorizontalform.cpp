@@ -515,7 +515,7 @@ void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 	}
 }
 
-void TimetableViewStudentsDaysHorizontalForm::yearChanged(const QString &yearName)
+void TimetableViewStudentsDaysHorizontalForm::yearChanged(const QString& yearName)
 {
 	if(!(students_schedule_ready && teachers_schedule_ready)){
 		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view students timetable dialog - please generate a new timetable"));
@@ -546,7 +546,7 @@ void TimetableViewStudentsDaysHorizontalForm::yearChanged(const QString &yearNam
 		groupsListWidget->setCurrentRow(0);
 }
 
-void TimetableViewStudentsDaysHorizontalForm::groupChanged(const QString &groupName)
+void TimetableViewStudentsDaysHorizontalForm::groupChanged(const QString& groupName)
 {
 	if(!(students_schedule_ready && teachers_schedule_ready)){
 		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view students timetable dialog - please generate a new timetable"));
@@ -603,7 +603,7 @@ void TimetableViewStudentsDaysHorizontalForm::groupChanged(const QString &groupN
 		subgroupsListWidget->setCurrentRow(0);
 }
 
-void TimetableViewStudentsDaysHorizontalForm::subgroupChanged(const QString &subgroupName)
+void TimetableViewStudentsDaysHorizontalForm::subgroupChanged(const QString& subgroupName)
 {
 	Q_UNUSED(subgroupName);
 	

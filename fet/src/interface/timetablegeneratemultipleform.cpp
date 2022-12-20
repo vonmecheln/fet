@@ -123,6 +123,8 @@ void TimetablingThread::startGenerating()
 	//emit(timetableStarted(_nThread/*, nOverallTimetable+1*/));
 	//semaphoreTimetableStarted[_nThread].acquire();
 
+	genMultiMatrix[_nThread].semaphorePlacedActivity.tryAcquire(); //this has effect after forcingly stopping the simulation on this thread
+	assert(genMultiMatrix[_nThread].semaphorePlacedActivity.available()==0);
 	assert(genMultiMatrix[_nThread].semaphoreFinished.available()==0);
 	genMultiMatrix[_nThread].generateWithSemaphore(timeLimit, impossible, timeExceeded, true); //true means threaded
 	QString s;
@@ -549,6 +551,9 @@ void TimetableGenerateMultipleForm::start(){
 	
 	simulation_running_multi=true;
 
+	numberOfGeneratedTimetablesLabel->setText(tr("Generated: %1").arg(0));
+	numberOfSuccessfullyGeneratedTimetablesLabel->setText(tr("Successfully: %1").arg(0));
+
 	time(&all_processes_start_time);
 	
 	//assert(controllersList.count()==nThreads);
@@ -579,7 +584,7 @@ void TimetableGenerateMultipleForm::start(){
 
 void TimetableGenerateMultipleForm::timetableStarted(int nThread, int timetable)
 {
-	TimetableExport::writeRandomSeed(this, genMultiMatrix[nThread].rng, timetable, true); //true represents 'before' state
+	TimetableExport::writeRandomSeed(this, genMultiMatrix[nThread].rng, timetable, true); //true represents the 'before' state
 	
 	semaphoreTimetableStarted[nThread].release();
 	//cvTimetableStarted[nThread].notify_one();
@@ -589,9 +594,12 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 {
 	assert(!genMultiMatrix[nThread].isRunning);
 	
-	QCoreApplication::sendPostedEvents();
+	//QCoreApplication::sendPostedEvents();
+	//genMultiMatrix[nThread].semaphorePlacedActivity.release();
 
 	genMultiMatrix[nThread].semaphoreFinished.acquire();
+
+	//genMultiMatrix[nThread].semaphorePlacedActivity.tryAcquire();
 
 	nGeneratedTimetables++;
 	numberOfGeneratedTimetablesLabel->setText(tr("Generated: %1").arg(nGeneratedTimetables));
@@ -620,7 +628,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 			timeForHighestStageSolutions.append(genMultiMatrix[nThread].timeToHighestStage);
 		}
 		else if(highestPlacedActivities==genMultiMatrix[nThread].maxActivitiesPlaced
-		 && !nTimetableForHighestStageSolutions.contains(timetable) /*not very nice test this 'contains' :-( , but sometimes we could have ended up with duplicates in the list*/){
+		 && !nTimetableForHighestStageSolutions.contains(timetable) /*not a very nice test this 'contains' :-( , but sometimes we could have ended up with duplicates in the list*/){
 			Solution* sol=new Solution();
 			sol->copyForHighestStage(gt.rules, genMultiMatrix[nThread].highestStageSolution);
 			highestStageSolutions.append(sol);
@@ -633,7 +641,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 
 	if(nGeneratedTimetables<=nTimetables){
 		if(ok)
-			TimetableExport::writeRandomSeed(this, genMultiMatrix[nThread].rng, timetable, false); //false represents 'before' state
+			TimetableExport::writeRandomSeed(this, genMultiMatrix[nThread].rng, timetable, false); //false represents the 'before' state
 
 		QString s=QString("");
 		s+=tr("Timetable no: %1 => %2", "%1 is the number of this timetable when generating multiple timetables, %2 is its description").arg(timetable).arg(description);
@@ -732,18 +740,26 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 	else if(simulation_running_multi){
 		//assert(controllersList.count()==allNThreads);
 		for(int t=0; t<allNThreads; t++){
-			//This is always done (1 || stuff) because we need to disconnnect the Generate.
+			//This is always done (1 || stuff) because we need to disconnect the Generate.
 			//if(1 || generateMultipleThread[t].isRunning()){
+
+			/*genMultiMatrix[t].myMutex.lock();
+			bool iR=genMultiMatrix[t].isRunning;
+			genMultiMatrix[t].myMutex.unlock();*/
+
 			if(t!=nThread){
 				if(genMultiMatrix[t].isRunning){
-					genMultiMatrix[t].myMutex.lock();
+					//genMultiMatrix[t].myMutex.lock();
 					genMultiMatrix[t].abortOptimization=true;
 					//genMultiMatrix[t].disconnect();
-					genMultiMatrix[t].myMutex.unlock();
+					//genMultiMatrix[t].myMutex.unlock();
 	
-					QCoreApplication::sendPostedEvents();
+					//QCoreApplication::sendPostedEvents();
+					genMultiMatrix[t].semaphorePlacedActivity.release();
 		
 					genMultiMatrix[t].semaphoreFinished.acquire();
+
+					//genMultiMatrix[t].semaphorePlacedActivity.tryAcquire();
 				}
 			}
 			else{
@@ -774,7 +790,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 				timeForHighestStageSolutions.append(genMultiMatrix[t].timeToHighestStage);
 			}
 			else if(highestPlacedActivities==genMultiMatrix[t].maxActivitiesPlaced
-			 && !nTimetableForHighestStageSolutions.contains(timetablingThreads[t].nOverallTimetable+1) /*not very nice test this 'contains' :-( , but sometimes we could have ended up with duplicates in the list*/){
+			 && !nTimetableForHighestStageSolutions.contains(timetablingThreads[t].nOverallTimetable+1) /*not a very nice test this 'contains' :-( , but sometimes we could have ended up with duplicates in the list*/){
 				Solution* sol=new Solution();
 				sol->copyForHighestStage(gt.rules, genMultiMatrix[t].highestStageSolution);
 				highestStageSolutions.append(sol);
@@ -799,15 +815,22 @@ void TimetableGenerateMultipleForm::stop()
 	//assert(controllersList.count()==nThreadsSpinBox->value());
 
 	for(int t=0; t<nThreadsSpinBox->value(); t++){
+		/*genMultiMatrix[t].myMutex.lock();
+		bool iR=genMultiMatrix[t].isRunning;
+		genMultiMatrix[t].myMutex.unlock();*/
+
 		if(genMultiMatrix[t].isRunning){
 			//cout<<"1. t="<<t<<endl;
-			genMultiMatrix[t].myMutex.lock();
+			//genMultiMatrix[t].myMutex.lock();
 			genMultiMatrix[t].abortOptimization=true;
-			genMultiMatrix[t].myMutex.unlock();
+			//genMultiMatrix[t].myMutex.unlock();
 
-			QCoreApplication::sendPostedEvents();
+			//QCoreApplication::sendPostedEvents();
+			genMultiMatrix[t].semaphorePlacedActivity.release();
 
 			genMultiMatrix[t].semaphoreFinished.acquire();
+
+			//genMultiMatrix[t].semaphorePlacedActivity.tryAcquire();
 		}
 
 		//cout<<"2. t="<<t<<endl;
@@ -841,7 +864,7 @@ void TimetableGenerateMultipleForm::stop()
 				timeForHighestStageSolutions.append(genMultiMatrix[t].timeToHighestStage);
 			}
 			else if(highestPlacedActivities==genMultiMatrix[t].maxActivitiesPlaced
-			 && !nTimetableForHighestStageSolutions.contains(timetablingThreads[t].nOverallTimetable+1) /*not very nice test this 'contains' :-( , but sometimes we could have ended up with duplicates in the list*/){
+			 && !nTimetableForHighestStageSolutions.contains(timetablingThreads[t].nOverallTimetable+1) /*not a very nice test this 'contains' :-( , but sometimes we could have ended up with duplicates in the list*/){
 				Solution* sol=new Solution();
 				sol->copyForHighestStage(gt.rules, genMultiMatrix[t].highestStageSolution);
 				highestStageSolutions.append(sol);

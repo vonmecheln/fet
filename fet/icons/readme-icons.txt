@@ -29,5 +29,5 @@ obtained from fet.svg as well).
 The fet.ico file was obtained using ImageMagick from the 256x256 and 128x128 resolution png icons, with this command:
 magick convert 256x256/fet.png fet.png fet.ico
 
-The fet.icns file was kindly contributed by Darren McDonald (who created it from fet.svg using specific Mac OS X tools, by following the instructions
+The fet.icns file was kindly contributed by Darren McDonald (who created it from fet.svg using specific macOS tools, by following the instructions
 provided on: https://developer.apple.com/library/archive/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Optimizing/Optimizing.html).

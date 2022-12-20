@@ -22,6 +22,10 @@ File generate.h
 #ifndef GENERATE_H
 #define GENERATE_H
 
+#include <atomic>
+
+#include <ctime>
+
 #include "timetable_defs.h"
 #include "solution.h"
 #include "matrix.h"
@@ -38,8 +42,6 @@ File generate.h
 #include <mutex>
 //#include <semaphore>
 //#include <condition_variable>
-
-#include <atomic>
 
 class Activity;
 
@@ -352,7 +354,7 @@ public:
 	
 	int timeToHighestStage; //seconds
 	
-	bool abortOptimization;
+	std::atomic<bool> abortOptimization;
 	
 	bool precompute(QWidget* parent, QTextStream* maxPlacedActivityStream=nullptr);
 	
@@ -372,6 +374,9 @@ signals:
 	
 private:
 	bool isThreaded;
+	
+	int currentlyNPlacedActivities;
+	time_t starting_time;
 };
 
 #endif

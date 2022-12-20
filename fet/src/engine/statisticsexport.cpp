@@ -338,7 +338,7 @@ void StatisticsExport::getNamesAndHours(FetStatistics *statisticValues){
 	tmp.clear();
 }
 
-bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString saveTime, FetStatistics statisticValues){
+bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues){
 	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 
@@ -481,7 +481,7 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, QString sa
 	return true;
 }
 
-bool StatisticsExport::exportStatisticsIndex(QWidget* parent, QString saveTime){
+bool StatisticsExport::exportStatisticsIndex(QWidget* parent, const QString& saveTime){
 	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 	
@@ -598,7 +598,7 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, QString saveTime){
 	return true;
 }
 
-bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel){
+bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel){
 	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 
@@ -679,7 +679,7 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, QString
 	return true;
 }
 
-QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int> *excludedNames){
+QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int>* excludedNames){
 	int colspan=0;
 	for(int teacher=0; teacher<statisticValues.allTeachersNames.count() && colspan<maxNames; teacher++){
 		if(!(*excludedNames).contains(teacher)){
@@ -903,7 +903,7 @@ QString StatisticsExport::exportStatisticsTeachersSubjectsHtml(QWidget* parent, 
 	return tmp;
 }
 
-bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel){
+bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel){
 	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 
@@ -985,7 +985,7 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, QString
 	return true;
 }
 
-QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int> *excludedNames){
+QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int>* excludedNames){
 	int colspan=0;
 	for(int subject=0; subject<statisticValues.allSubjectsNames.count() && colspan<maxNames; subject++){
 		if(!(*excludedNames).contains(subject)){
@@ -1207,7 +1207,7 @@ QString StatisticsExport::exportStatisticsSubjectsTeachersHtml(QWidget* parent, 
 	return tmp;
 }
 
-bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel){
+bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel){
 	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 
@@ -1289,7 +1289,7 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, QString
 	return true;
 }
 
-QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int> *excludedNames){
+QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int>* excludedNames){
 	int colspan=0;
 	for(int teacher=0; teacher<statisticValues.allTeachersNames.count() && colspan<maxNames; teacher++){
 		if(!(*excludedNames).contains(teacher)){
@@ -1512,7 +1512,7 @@ QString StatisticsExport::exportStatisticsTeachersStudentsHtml(QWidget* parent, 
 	return tmp;
 }
 
-bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel){
+bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel){
 	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 
@@ -1594,7 +1594,7 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, QString
 	return true;
 }
 
-QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int> *excludedNames){
+QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int>* excludedNames){
 	int colspan=0;
 	for(int students=0; students<statisticValues.allStudentsNames.count() && colspan<maxNames; students++){
 		if(!(*excludedNames).contains(students)){
@@ -1817,7 +1817,7 @@ QString StatisticsExport::exportStatisticsStudentsTeachersHtml(QWidget* parent, 
 	return tmp;
 }
 
-bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel){
+bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel){
 	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 
@@ -1899,7 +1899,7 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, QString
 	return true;
 }
 
-QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int> *excludedNames){
+QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int>* excludedNames){
 	int colspan=0;
 	for(int subject=0; subject<statisticValues.allSubjectsNames.count() && colspan<maxNames; subject++){
 		if(!(*excludedNames).contains(subject)){
@@ -2122,7 +2122,7 @@ QString StatisticsExport::exportStatisticsSubjectsStudentsHtml(QWidget* parent, 
 	return tmp;
 }
 
-bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel){
+bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel){
 	assert(gt.rules.initialized); // && gt.rules.internalStructureComputed);
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 
@@ -2203,7 +2203,7 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, QString
 	return true;
 }
 
-QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, QString saveTime, FetStatistics statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int> *excludedNames){
+QString StatisticsExport::exportStatisticsStudentsSubjectsHtml(QWidget* parent, const QString& saveTime, const FetStatistics& statisticValues, int htmlLevel, bool printActivityTags, int maxNames, QSet<int>* excludedNames){
 	int colspan=0;
 	for(int students=0; students<statisticValues.allStudentsNames.count() && colspan<maxNames; students++){
 		if(!(*excludedNames).contains(students)){

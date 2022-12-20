@@ -737,7 +737,7 @@ public:
 	Reads the rules from the XML data file.
 	Returns true on success, false on failure (nonexistent file or wrong format)
 	*/
-	bool read(QWidget* parent, const QString& fileName, bool commandLine=false, QString commandLineDirectory=QString());
+	bool read(QWidget* parent, const QString& fileName, bool commandLine=false, const QString& commandLineDirectory=QString());
 
 	/**
 	Write the rules to the XML data file.
