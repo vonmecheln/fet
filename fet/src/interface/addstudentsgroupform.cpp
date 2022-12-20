@@ -94,7 +94,7 @@ void AddStudentsGroupForm::addStudentsGroup()
 			"If you want to make a new group, independent, "
 			"please abort now and give it another name.")+"\n\n"+tr("Note: the number of students for the added group will be the number of students of the already existing group"
 			" (you can modify the number of students in the modify group dialog)."),
-			tr("Add"),tr("Abort"), 0, 0, 1 ) == 1){
+			tr("Add"),tr("Abort"), QString(), 0, 1 ) == 1){
 
 			nameLineEdit->selectAll();
 			nameLineEdit->setFocus();

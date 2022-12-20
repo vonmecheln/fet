@@ -2574,3 +2574,9 @@ Versions 6.7.0 - 6.7.v
 	of GDB (GNU Debugger).
 	- Improved the generation on some locked timetables for which the program would report impossible generation, even if these files were solved when they were
 	unlocked (reported by math).
+- Version 6.7.4
+	- Added the possibility to select, in the Mornings-Afternoons mode, instead of min days between activities, the number of min _half_ days between activities,
+	when adding activities from the interface or when importing them from CSV files (suggested by ngoctp29121982, who's advice was very useful).
+	The export of the activities to CSV files in this case is also updated (if there are constraints of type min half days between activities, they will be exported
+	in a format compatible with the importing).
+	- Code cleanup.

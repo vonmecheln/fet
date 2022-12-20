@@ -271,7 +271,7 @@ void GroupActivitiesInInitialOrderItemsForm::removeItem()
 	s+=item->getDetailedDescription(gt.rules);
 	
 	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
-		s, tr("Yes"), tr("No"), 0, 0, 1 ) ){
+		s, tr("Yes"), tr("No"), QString(), 0, 1 ) ){
 	case 0: // The user clicked the OK button or pressed Enter
 		for(int j=0; j<gt.rules.groupActivitiesInInitialOrderList.count(); j++)
 			if(visibleItemsList.at(i) == gt.rules.groupActivitiesInInitialOrderList[j]){

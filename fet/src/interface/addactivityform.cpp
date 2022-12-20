@@ -123,7 +123,7 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 	connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
 	connect(clearTeacherPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
 
-	connect(minDayDistanceSpinBox, SIGNAL(valueChanged(int)), this, SLOT(minDaysChanged()));
+	connect(minDaysDistanceSpinBox, SIGNAL(valueChanged(int)), this, SLOT(minDaysChanged()));
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -166,19 +166,21 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 	selectedTeachersListWidget->clear();
 
 	if(gt.rules.mode!=MORNINGS_AFTERNOONS)
-		minDayDistanceSpinBox->setMaximum(gt.rules.nDaysPerWeek-1);
+		minDaysDistanceSpinBox->setMaximum(gt.rules.nDaysPerWeek-1);
 	else
-		minDayDistanceSpinBox->setMaximum(gt.rules.nDaysPerWeek/2-1);
-	minDayDistanceSpinBox->setMinimum(0);
-	minDayDistanceSpinBox->setValue(1);
+		minDaysDistanceSpinBox->setMaximum(gt.rules.nDaysPerWeek/2-1);
+	minDaysDistanceSpinBox->setMinimum(0);
+	minDaysDistanceSpinBox->setValue(1);
 	
 	int nSplit=splitSpinBox->value();
-	
-	minDayDistanceTextLabel->setEnabled(nSplit>=2);
-	minDayDistanceSpinBox->setEnabled(nSplit>=2);
-	percentageTextLabel->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
-	percentageLineEdit->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
-	forceConsecutiveCheckBox->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
+
+	halfCheckBox->setChecked(false);
+	halfCheckBox->setEnabled(nSplit>=2 && gt.rules.mode==MORNINGS_AFTERNOONS);
+	minDaysDistanceTextLabel->setEnabled(nSplit>=2);
+	minDaysDistanceSpinBox->setEnabled(nSplit>=2);
+	percentageTextLabel->setEnabled(nSplit>=2 && minDaysDistanceSpinBox->value()>0);
+	percentageLineEdit->setEnabled(nSplit>=2 && minDaysDistanceSpinBox->value()>0);
+	forceConsecutiveCheckBox->setEnabled(nSplit>=2 && minDaysDistanceSpinBox->value()>0);
 	
 	nStudentsSpinBox->setMinimum(-1);
 	nStudentsSpinBox->setMaximum(MAX_ROOM_CAPACITY);
@@ -466,11 +468,12 @@ void AddActivityForm::splitChanged()
 {
 	int nSplit=splitSpinBox->value();
 	
-	minDayDistanceTextLabel->setEnabled(nSplit>=2);
-	minDayDistanceSpinBox->setEnabled(nSplit>=2);
-	percentageTextLabel->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
-	percentageLineEdit->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
-	forceConsecutiveCheckBox->setEnabled(nSplit>=2 && minDayDistanceSpinBox->value()>0);
+	halfCheckBox->setEnabled(nSplit>=2 && gt.rules.mode==MORNINGS_AFTERNOONS);
+	minDaysDistanceTextLabel->setEnabled(nSplit>=2);
+	minDaysDistanceSpinBox->setEnabled(nSplit>=2);
+	percentageTextLabel->setEnabled(nSplit>=2 && minDaysDistanceSpinBox->value()>0);
+	percentageLineEdit->setEnabled(nSplit>=2 && minDaysDistanceSpinBox->value()>0);
+	forceConsecutiveCheckBox->setEnabled(nSplit>=2 && minDaysDistanceSpinBox->value()>0);
 
 	populateSubactivitiesTabWidget(nSplit);
 }
@@ -727,7 +730,7 @@ void AddActivityForm::addActivity()
 	}
 	else{ //split activity
 		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-			if(minDayDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek){
+			if(minDaysDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek){
 				int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
 				 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
 				 tr("You want to add a container activity split into more than the number of days per week and also add a constraint min days between activities."
@@ -754,7 +757,7 @@ void AddActivityForm::addActivity()
 			}
 		}
 		else{
-			if(minDayDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek/2){
+			if(!halfCheckBox->isChecked() && minDaysDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek/2){
 				int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
 				 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
 				 tr("You want to add a container activity split into more than the number of real days per week and also add a constraint min days between activities."
@@ -771,6 +774,31 @@ void AddActivityForm::addActivity()
 				  " For example, suppose you need to add 7 activities with duration 1 in a 5 real days week. Add 2 larger container activities,"
 				  " first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1"
 				  " (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)")+
+			  	 "\n\n"+
+				 tr("Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?")
+				  ,
+				 tr("Yes"), tr("No"), QString(), 0, 1);
+
+				if(t==1)
+					return;
+			}
+			else if(halfCheckBox->isChecked() && minDaysDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek){
+				int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
+				 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
+				 tr("You want to add a container activity split into more than the number of days per week and also add a constraint min half days between activities."
+				  " This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).")+
+				 "\n\n"+
+				 tr("The best way to add the activities would be:")+
+				 "\n\n"+
+				 tr("1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
+				  ". Example: 12 activities with duration 1 in a 10 days week, then transform into 10 activities with durations: 2,2,1,1,1,1,1,1,1,1 and add a single container"
+				  " activity with these 10 components (possibly raising the weight of added constraint min half days between activities up to 100%)")+
+				  "\n\n"+
+				 tr("2. If you don't add 'force consecutive if same day', then add a larger activity split into a number of"
+				  " activities equal with the number of days per week and the remaining components into other larger split activity."
+				  " For example, suppose you need to add 12 activities with duration 1 in a 10 days week. Add 2 larger container activities,"
+				  " first one split into 10 activities with duration 1 and second one split into 2 activities with duration 1"
+				  " (possibly raising the weight of added constraints min half days between activities for each of the 2 containers up to 100%)")+
 			  	 "\n\n"+
 				 tr("Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?")
 				  ,
@@ -806,12 +834,12 @@ void AddActivityForm::addActivity()
 		}
 		firstactivityid++;
 
-		int minD=minDayDistanceSpinBox->value();
+		int minD=minDaysDistanceSpinBox->value();
 		bool tmp=gt.rules.addSplitActivityFast(this, firstactivityid, firstactivityid,
 			teachers_names, subject_name, activity_tags_names, students_names,
 			nsplit, totalduration, durations,
 			active, minD, weight, forceConsecutiveCheckBox->isChecked(),
-			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value(), numberOfStudents);
+			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value(), numberOfStudents, halfCheckBox->isChecked());
 		if(tmp){
 			if(minD>1 && weight<100.0){
 				SecondMinDaysDialog second(this, minD, weight);
@@ -824,7 +852,12 @@ void AddActivityForm::addActivity()
 					for(int i=0; i<nsplit; i++){
 						acts.append(firstactivityid+i);
 					}
-					TimeConstraint* c=new ConstraintMinDaysBetweenActivities(second.weight, forceConsecutiveCheckBox->isChecked(), nsplit, acts, minD-1);
+
+					TimeConstraint* c;
+					if(!halfCheckBox->isChecked())
+						c=new ConstraintMinDaysBetweenActivities(second.weight, forceConsecutiveCheckBox->isChecked(), nsplit, acts, minD-1);
+					else
+						c=new ConstraintMinHalfDaysBetweenActivities(second.weight, forceConsecutiveCheckBox->isChecked(), nsplit, acts, minD-1);
 					bool tmp=gt.rules.addTimeConstraint(c);
 					assert(tmp);
 				}
@@ -977,7 +1010,7 @@ void AddActivityForm::addMultipleActivities()
 	}
 	else{ //split activity
 		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-			if(minDayDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek){
+			if(minDaysDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek){
 				int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
 				 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
 				 tr("You want to add a container activity split into more than the number of days per week and also add a constraint min days between activities."
@@ -1004,7 +1037,7 @@ void AddActivityForm::addMultipleActivities()
 			}
 		}
 		else{
-			if(minDayDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek/2){
+			if(!halfCheckBox->isChecked() && minDaysDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek/2){
 				int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
 				 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
 				 tr("You want to add a container activity split into more than the number of real days per week and also add a constraint min days between activities."
@@ -1021,6 +1054,31 @@ void AddActivityForm::addMultipleActivities()
 				  " For example, suppose you need to add 7 activities with duration 1 in a 5 real days week. Add 2 larger container activities,"
 				  " first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1"
 				  " (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)")+
+			  	 "\n\n"+
+				 tr("Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?")
+				  ,
+				 tr("Yes"), tr("No"), QString(), 0, 1);
+
+				if(t==1)
+					return;
+			}
+			else if(halfCheckBox->isChecked() && minDaysDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek){
+				int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
+				 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
+				 tr("You want to add a container activity split into more than the number of days per week and also add a constraint min half days between activities."
+				  " This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).")+
+				 "\n\n"+
+				 tr("The best way to add the activities would be:")+
+				 "\n\n"+
+				 tr("1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
+				  ". Example: 12 activities with duration 1 in a 10 days week, then transform into 10 activities with durations: 2,2,1,1,1,1,1,1,1,1 and add a single container"
+				  " activity with these 10 components (possibly raising the weight of added constraint min half days between activities up to 100%)")+
+				  "\n\n"+
+				 tr("2. If you don't add 'force consecutive if same day', then add a larger activity split into a number of"
+				  " activities equal with the number of days per week and the remaining components into other larger split activity."
+				  " For example, suppose you need to add 12 activities with duration 1 in a 10 days week. Add 2 larger container activities,"
+				  " first one split into 10 activities with duration 1 and second one split into 2 activities with duration 1"
+				  " (possibly raising the weight of added constraints min half days between activities for each of the 2 containers up to 100%)")+
 			  	 "\n\n"+
 				 tr("Do you want to add current activities as they are now (not recommended) or cancel and edit them as instructed?")
 				  ,
@@ -1070,12 +1128,12 @@ void AddActivityForm::addMultipleActivities()
 			else
 				n2=nStudentsSpinBox->value();
 
-			int minD=minDayDistanceSpinBox->value();
+			int minD=minDaysDistanceSpinBox->value();
 			bool tmp=gt.rules.addSplitActivityFast(this, firstactivityid, firstactivityid,
 				teachers_names, subject_name, activity_tags_names, QStringList(students_names.at(st)),
 				nsplit, totalduration, durations,
 				active, minD, weight, forceConsecutiveCheckBox->isChecked(),
-				(nStudentsSpinBox->value()==-1), n1, n2);
+				(nStudentsSpinBox->value()==-1), n1, n2, halfCheckBox->isChecked());
 			if(tmp){
 				firstactivityid+=nsplit;
 				cnt_act++;
@@ -1096,7 +1154,11 @@ void AddActivityForm::addMultipleActivities()
 						for(int i=0; i<nsplit; i++){
 							acts.append(firstactivityid+i-nsplit);
 						}
-						TimeConstraint* c=new ConstraintMinDaysBetweenActivities(secondWeight, forceConsecutiveCheckBox->isChecked(), nsplit, acts, minD-1);
+						TimeConstraint* c;
+						if(!halfCheckBox->isChecked())
+							c=new ConstraintMinDaysBetweenActivities(secondWeight, forceConsecutiveCheckBox->isChecked(), nsplit, acts, minD-1);
+						else
+							c=new ConstraintMinHalfDaysBetweenActivities(secondWeight, forceConsecutiveCheckBox->isChecked(), nsplit, acts, minD-1);
 						bool tmp=gt.rules.addTimeConstraint(c);
 						assert(tmp);
 					}
@@ -1111,7 +1173,11 @@ void AddActivityForm::addMultipleActivities()
 					for(int i=0; i<nsplit; i++){
 						acts.append(firstactivityid+i-nsplit);
 					}
-					TimeConstraint* c=new ConstraintMinDaysBetweenActivities(secondWeight, forceConsecutiveCheckBox->isChecked(), nsplit, acts, minD-1);
+					TimeConstraint* c;
+					if(!halfCheckBox->isChecked())
+						c=new ConstraintMinDaysBetweenActivities(secondWeight, forceConsecutiveCheckBox->isChecked(), nsplit, acts, minD-1);
+					else
+						c=new ConstraintMinHalfDaysBetweenActivities(secondWeight, forceConsecutiveCheckBox->isChecked(), nsplit, acts, minD-1);
 					bool tmp=gt.rules.addTimeConstraint(c);
 					assert(tmp);
 				}
@@ -1147,6 +1213,9 @@ void AddActivityForm::help()
 	s+=tr("'Students' (the text near the spin box), means 'Number of students (-1 for automatic)'");
 	s+="\n";
 	s+=tr("'Split' means 'Split into ... activities per week'");
+	s+="\n";
+	s+=tr("'Half' is only useful in the Mornings-Afternoons mode and it means that, instead of min days between activities, the "
+	 "automatically added constraint(s) will be 'min _half_ days between activities'");
 	s+="\n";
 	s+=tr("'Min days' means 'The minimum required distance in days between each pair of activities'");
 	s+="\n";
@@ -1272,7 +1341,16 @@ void AddActivityForm::help()
 
 void AddActivityForm::minDaysChanged()
 {
-	percentageTextLabel->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
-	percentageLineEdit->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
-	forceConsecutiveCheckBox->setEnabled(splitSpinBox->value()>=2 && minDayDistanceSpinBox->value()>0);
+	percentageTextLabel->setEnabled(splitSpinBox->value()>=2 && minDaysDistanceSpinBox->value()>0);
+	percentageLineEdit->setEnabled(splitSpinBox->value()>=2 && minDaysDistanceSpinBox->value()>0);
+	forceConsecutiveCheckBox->setEnabled(splitSpinBox->value()>=2 && minDaysDistanceSpinBox->value()>0);
+}
+
+void AddActivityForm::on_halfCheckBox_toggled()
+{
+	assert(gt.rules.mode==MORNINGS_AFTERNOONS);
+	if(halfCheckBox->isChecked())
+		minDaysDistanceSpinBox->setMaximum(gt.rules.nDaysPerWeek-1);
+	else
+		minDaysDistanceSpinBox->setMaximum(gt.rules.nDaysPerWeek/2-1);
 }

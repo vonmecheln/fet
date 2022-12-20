@@ -242,7 +242,7 @@ void SubgroupsForm::removeSubgroup()
 
 	/*if(QMessageBox::warning( this, tr("FET"),
 		tr("Are you sure you want to delete subgroup %1 and all related activities and constraints?").arg(subgroupName),
-		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
 		return;*/
 
 	bool tmp=gt.rules.removeSubgroup(yearName, groupName, subgroupName);
@@ -323,7 +323,7 @@ void SubgroupsForm::purgeSubgroup()
 
 	/*if(QMessageBox::warning( this, tr("FET"),
 		tr("Are you sure you want to delete subgroup %1 and all related activities and constraints?").arg(subgroupName),
-		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
 		return;*/
 
 	bool tmp=gt.rules.purgeSubgroup(subgroupName);

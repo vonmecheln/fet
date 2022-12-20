@@ -201,7 +201,7 @@ void GroupsForm::removeGroup()
 
 	/*if(QMessageBox::warning( this, tr("FET"),
 		tr("Are you sure you want to delete group %1 and all related subgroups, activities and constraints?").arg(groupName),
-		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
 		return;*/
 
 	bool tmp=gt.rules.removeGroup(yearsListWidget->currentItem()->text(), groupName);
@@ -272,7 +272,7 @@ void GroupsForm::purgeGroup()
 
 	/*if(QMessageBox::warning( this, tr("FET"),
 		tr("Are you sure you want to delete group %1 and all related subgroups, activities and constraints?").arg(groupName),
-		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
 		return;*/
 
 	bool tmp=gt.rules.purgeGroup(groupName);

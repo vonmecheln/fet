@@ -577,7 +577,7 @@ again_here_1:
 	
 	if(!description.isEmpty()){
 		int lres=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
-		 description, tr("Yes"), tr("No"), 0, 0, 1);
+		 description, tr("Yes"), tr("No"), QString(), 0, 1);
 		if(lres!=0){
 			return;
 		}

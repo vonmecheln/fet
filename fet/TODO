@@ -8039,12 +8039,7 @@ Fet already has class card N1,N2,N3 so how can I add a teacher card.
 For example, teachers 1,2,3,4,5,6 tag a few periods, teachers 7,8,9,10,11 tag full periods. Then I only need 1 constraint: the card for a few lessons teaches up to 4 days, and the card with full lessons teaches up to 5 days. That way it is much faster and more convenient.
 If so, the binding for the teacher is much faster than if I go to create each binding, teacher 1 teaches up to 4 days, teacher 2 teaches up to 4 days, teacher 11 teaches up to 5 days,....
 
-483---------------------------------------------------------
-From ngoctp29121982 (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=5415.msg29777#msg29777
-
-Can you add minimum half day column in csv file and allow user to import from csv into software half day minimum =1 with 100% weight?
+483-----------DONE since FET-6.7.4 on 2022-11-27------------
 
 484-----------PARTIALLY SOLVED in FET-6.7.3 on 2022-11-23---
 From math (on forum), bug report:

@@ -1127,18 +1127,45 @@ int Import::readFields(QWidget* parent){
 						}
 						if(ok && (i==FIELD_YEAR_NUMBER_OF_STUDENTS || i==FIELD_GROUP_NUMBER_OF_STUDENTS || i==FIELD_SUBGROUP_NUMBER_OF_STUDENTS || i==FIELD_ROOM_CAPACITY || i==FIELD_TOTAL_DURATION || i==FIELD_MIN_DAYS)){
 							if(!itemOfField[i].isEmpty()){
-								int value=itemOfField[i].toInt(&ok, 10);
-								if(!ok)
-									warnText+=Import::tr("Skipped line %1: Field '%2' doesn't contain an integer value.").arg(lineNumber).arg(fieldName[i])+"\n";
-								else {
-									if(value<0){
-										warnText+=Import::tr("Skipped line %1: Field '%2' contains an invalid integer value.").arg(lineNumber).arg(fieldName[i])+"\n";
-										ok=false;
+								if(gt.rules.mode==MORNINGS_AFTERNOONS && i==FIELD_MIN_DAYS && itemOfField[i].endsWith("h")){
+									QString tmps=itemOfField[i];
+									tmps.chop(1);
+
+									int value=tmps.toInt(&ok, 10);
+									if(!ok)
+										warnText+=Import::tr("Skipped line %1: Field '%2' doesn't contain an integer value or an integer value followed by 'h'.").arg(lineNumber).arg(fieldName[i])+"\n";
+									else{
+										if(value<0){
+											warnText+=Import::tr("Skipped line %1: Field '%2' contains an invalid integer value followed by 'h'.").arg(lineNumber).arg(fieldName[i])+"\n";
+											ok=false;
+										}
+									}
+								}
+								else if(gt.rules.mode==MORNINGS_AFTERNOONS && i==FIELD_MIN_DAYS){
+									int value=itemOfField[i].toInt(&ok, 10);
+									if(!ok)
+										warnText+=Import::tr("Skipped line %1: Field '%2' doesn't contain an integer value or an integer value followed by 'h'.").arg(lineNumber).arg(fieldName[i])+"\n";
+									else{
+										if(value<0){
+											warnText+=Import::tr("Skipped line %1: Field '%2' contains an invalid integer value.").arg(lineNumber).arg(fieldName[i])+"\n";
+											ok=false;
+										}
+									}
+								}
+								else{
+									int value=itemOfField[i].toInt(&ok, 10);
+									if(!ok)
+										warnText+=Import::tr("Skipped line %1: Field '%2' doesn't contain an integer value.").arg(lineNumber).arg(fieldName[i])+"\n";
+									else{
+										if(value<0){
+											warnText+=Import::tr("Skipped line %1: Field '%2' contains an invalid integer value.").arg(lineNumber).arg(fieldName[i])+"\n";
+											ok=false;
+										}
 									}
 								}
 							} else if(i==FIELD_TOTAL_DURATION){
-								 assert(true);
-							}else{
+								assert(true);
+							} else {
 								ok=false;
 								warnText+=Import::tr("Skipped line %1: Field '%2' doesn't contain an integer value.").arg(lineNumber).arg(fieldName[i])+"\n";
 								//because of bug reported by murad on 25 May 2010, crash when importing rooms, if capacity is empty
@@ -2725,8 +2752,20 @@ void Import::importCSVActivities(QWidget* parent){
 			if(durationOK){
 				assert(totalduration==fieldList[FIELD_TOTAL_DURATION][i].toInt(&ok2));
 				assert(ok2);
-		
-				int minD=fieldList[FIELD_MIN_DAYS][i].toInt(&ok2);
+
+				int minD;
+				bool half;
+				if(fieldList[FIELD_MIN_DAYS][i].endsWith("h")){
+					assert(gt.rules.mode==MORNINGS_AFTERNOONS); //checked before
+					QString tmps=fieldList[FIELD_MIN_DAYS][i];
+					tmps.chop(1);
+					minD=tmps.toInt(&ok2);
+					half=true;
+				}
+				else{
+					minD=fieldList[FIELD_MIN_DAYS][i].toInt(&ok2);
+					half=false;
+				}
 				assert(ok2);
 				bool force;
 				
@@ -2756,7 +2795,7 @@ void Import::importCSVActivities(QWidget* parent){
 				bool tmp=gt.rules.addSplitActivityFast(newParent, activityid, activityid,
 					teachers_names, subject_name, activity_tags_names, students_names,
 					nsplit, totalduration, durations,
-					active, minD, weight, force, true, -1, numberOfStudents);
+					active, minD, weight, force, true, -1, numberOfStudents, half);
 				if(fieldNumber[FIELD_COMMENTS]!=DO_NOT_IMPORT){
 					assert(gt.rules.activitiesList.count()>=nsplit);
 					for(int j=1; j<=nsplit; j++)

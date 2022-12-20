@@ -153,11 +153,66 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 			assert(activitiesForRepresentant[i].count()==1);
 	}
 	
+	QList<int> moreThanDaysPerWeek;
+	for(int i=0; i<nActs; i++){
+		QList<int> cl=activitiesForRepresentant[i];
+		assert(cl.count()>=1);
+		if((gt.rules.mode!=MORNINGS_AFTERNOONS && cl.count()>gt.rules.nDaysPerWeek) ||
+		 (gt.rules.mode==MORNINGS_AFTERNOONS && cl.count()>gt.rules.nDaysPerWeek/2))
+			moreThanDaysPerWeek.append(i);
+	}
+	if(moreThanDaysPerWeek.count()>=1){
+		QString s;
+		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+			s=tr("Warning: there are activities divided into more than the number of days per week.");
+		}
+		else{
+			s=tr("Warning: there are activities divided into more than the number of real days per week.");
+		}
+		s+=" ";
+		s+=tr("These activities are listed below.");
+		s+=" ";
+		s+=tr("It is not recommended to add a constraint min 1 days between activities for such activities.");
+		s+=" ";
+		s+=tr("A workaround is to divide them again (remove and add them again), with less divisions, and come back to this dialog.");
+		s+=" ";
+		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+			s+=tr("If you want them consecutive if on the same day, reduce the number of subactivities from the larger split activity and increase the duration"
+			 " of some subactivities (you will have number_of_days_per_week subactivities in a single larger split activity)."
+			 " If not, add two or more larger split activities.");
+		}
+		else{
+			s+=tr("If you want them consecutive if on the same day, reduce the number of subactivities from the larger split activity and increase the duration"
+			 " of some subactivities (you will have number_of_real_days_per_week subactivities in a single larger split activity)."
+			 " If not, add two or more larger split activities.");
+			s+=" ";
+			s+=tr("(Alternatively, if the number of subactivities is at most number_of_half_days_per_week and you want to add a constraint min 1 half days"
+			 " between activities for them then, after spreading the activities with this dialog, modify the constraints accordingly. There will be no"
+			 " constraints min half days between activities removed or added after using this dialog.)");
+		}
+		s+="\n\n";
+		for(int i=0; i<nActs; i++){
+			QList<int> cl=activitiesForRepresentant[i];
+			assert(cl.count()>=1);
+			if((gt.rules.mode!=MORNINGS_AFTERNOONS && cl.count()>gt.rules.nDaysPerWeek) ||
+			 (gt.rules.mode==MORNINGS_AFTERNOONS && cl.count()>gt.rules.nDaysPerWeek/2)){
+				QStringList lst;
+				for(int ai : qAsConst(cl))
+					lst.append(QString::number(ai));
+				s+=tr("Number of activities: %1, activities ids: %2.").arg(cl.count()).arg(lst.join(", "));
+			}
+		}
+		
+		int res=LongTextMessageBox::largeConfirmation(this, tr("FET warning"), s, tr("Continue"), tr("Cancel"), QString(), 0, 1);
+		if(res==1)
+			return;
+	}
+	
 	QList<ConstraintMinDaysBetweenActivities*> constraintsToBeRemoved;
 	
 	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList)){
 		if(tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
-			ConstraintMinDaysBetweenActivities* mdc=(ConstraintMinDaysBetweenActivities*) tc;
+			ConstraintMinDaysBetweenActivities* mdc=(ConstraintMinDaysBetweenActivities*)tc;
 			
 			//find representative
 			int reprIndex=-1;
@@ -240,7 +295,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 				delete c1;
 				return;
 			}
-				
+			
 			aloneComponent--;
 			notAloneComp1--;
 			notAloneComp2--;
@@ -266,7 +321,7 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 			acts.append(cl.at(aloneComponent));
 			//acts[1]=cl.at(notAloneComp2);
 			acts.append(cl.at(notAloneComp2));
-				
+			
 			c3=new ConstraintMinDaysBetweenActivities(weight3, consecutiveIfSameDay, n_acts, acts, 2);
 		}
 		if(cl.count()==2 && spread2){

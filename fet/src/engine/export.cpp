@@ -994,7 +994,8 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 	//better detection of min days constraint
 	QHash<int, int> activitiesRepresentant;
 	QHash<int, int> activitiesNumberOfSubactivities;
-	QHash<int, ConstraintMinDaysBetweenActivities*>activitiesConstraints;
+	//QHash<int, ConstraintMinDaysBetweenActivities*> activitiesConstraints;
+	QHash<int, TimeConstraint*> activitiesConstraints; //can be ConstraintMinDaysBetweenActivities* or ConstraintMinHalfDaysBetweenActivities*
 	
 	activitiesRepresentant.clear();
 	activitiesNumberOfSubactivities.clear();
@@ -1044,49 +1045,146 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 			}
 	
 			if(oktmp){
-				ConstraintMinDaysBetweenActivities* oldc=activitiesConstraints.value(repres, nullptr);
-				if(oldc!=nullptr){
-					if(oldc->weightPercentage < c->weightPercentage){
+				TimeConstraint* generic_oldc=activitiesConstraints.value(repres, nullptr);
+				if(generic_oldc!=nullptr){
+					if(generic_oldc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+						ConstraintMinDaysBetweenActivities* oldc=(ConstraintMinDaysBetweenActivities*)generic_oldc;
+						if(oldc->weightPercentage < c->weightPercentage){
+							activitiesConstraints.insert(repres, c); //overwrites old value
+							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+								" there exists another constraint of this type with larger weight percentage, referring to the same activities")
+								.arg(oldc->getDescription(gt.rules))+"\n";
+						}
+						else if(oldc->weightPercentage > c->weightPercentage){
+							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+								" there exists another constraint of this type with larger weight percentage, referring to the same activities")
+								.arg(c->getDescription(gt.rules))+"\n";
+						}
+		
+						//equal weights - choose the lowest number of min days
+						else if(oldc->minDays > c->minDays){
+							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+								" there exists another constraint of this type with the same weight percentage and higher number of min days, referring to the same activities")
+								.arg(c->getDescription(gt.rules))+"\n";
+						}
+						else if(oldc->minDays < c->minDays){
+							activitiesConstraints.insert(repres, c); //overwrites old value
+							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+								" there exists another constraint of this type with the same weight percentage and higher number of min days, referring to the same activities")
+								.arg(oldc->getDescription(gt.rules))+"\n";
+						}
+		
+						//equal weights and min days - choose the one with consecutive is same day true
+						else if(oldc->consecutiveIfSameDay==true){
+							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+								" there exists another constraint of this type with the same weight percentage and same number of min days and"
+								" consecutive if same day true, referring to the same activities").arg(c->getDescription(gt.rules))+"\n";
+						}
+						else if(c->consecutiveIfSameDay==true){
+							activitiesConstraints.insert(repres, c); //overwrites old value
+							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+								" there exists another constraint of this type with the same weight percentage and same number of min days and"
+								" consecutive if same day true, referring to the same activities").arg(oldc->getDescription(gt.rules))+"\n";
+						}
+					}
+					else if(generic_oldc->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
 						activitiesConstraints.insert(repres, c); //overwrites old value
 						lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
-							" there exists another constraint of this type with larger weight percentage, referring to the same activities")
-							.arg(oldc->getDescription(gt.rules))+"\n";
+							" there exists another constraint of type min days between activities referring to the same activities"
+							" (a min days between activities constraint is considered stronger than a min half days between activities constraint)")
+							.arg(generic_oldc->getDescription(gt.rules))+"\n";
 					}
-					else if(oldc->weightPercentage > c->weightPercentage){
-						lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
-							" there exists another constraint of this type with larger weight percentage, referring to the same activities")
-							.arg(c->getDescription(gt.rules))+"\n";
-					}
-	
-					//equal weights - choose the lowest number of min days
-					else if(oldc->minDays > c->minDays){
-						lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
-							" there exists another constraint of this type with the same weight percentage and higher number of min days, referring to the same activities")
-							.arg(c->getDescription(gt.rules))+"\n";
-					}
-					else if(oldc->minDays < c->minDays){
-						activitiesConstraints.insert(repres, c); //overwrites old value
-						lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
-							" there exists another constraint of this type with the same weight percentage and higher number of min days, referring to the same activities")
-							.arg(oldc->getDescription(gt.rules))+"\n";
-					}
-	
-					//equal weights and min days - choose the one with consecutive is same day true
-					else if(oldc->consecutiveIfSameDay==true){
-						lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
-							" there exists another constraint of this type with the same weight percentage and same number of min days and"
-							" consecutive if same day true, referring to the same activities").arg(c->getDescription(gt.rules))+"\n";
-					}
-					else if(c->consecutiveIfSameDay==true){
-						activitiesConstraints.insert(repres, c); //overwrites old value
-						lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
-							" there exists another constraint of this type with the same weight percentage and same number of min days and"
-							" consecutive if same day true, referring to the same activities").arg(oldc->getDescription(gt.rules))+"\n";
-					}
-	
 				}
-				else
+				else{
 					activitiesConstraints.insert(repres, c);
+				}
+			}
+		}
+		else if(tc->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES && tc->active){
+			ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) tc;
+	
+			QSet<int> aset;
+			int repres=-1;
+	
+			for(int i=0; i<c->n_activities; i++){
+				int aid=c->activitiesId[i];
+				aset.insert(aid);
+	
+				if(activitiesRepresentant.value(aid,0)==aid)
+					repres=aid; //does not matter if there are more representatives in this constraint, the constraint will be skipped anyway in this case
+			}
+	
+			bool oktmp=false;
+	
+			if(repres>0){
+				if(aset.count()==activitiesNumberOfSubactivities.value(repres, 0)){
+					oktmp=true;
+					for(int aid : qAsConst(aset))
+						if(activitiesRepresentant.value(aid, 0)!=repres){
+							oktmp=false;
+							break;
+						}
+				}
+			}
+	
+			if(!oktmp){
+				lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+				" it does not refer to a whole larger container activity").arg(c->getDescription(gt.rules))+"\n";
+			}
+	
+			if(oktmp){
+				TimeConstraint* generic_oldc=activitiesConstraints.value(repres, nullptr);
+				if(generic_oldc!=nullptr){
+					if(generic_oldc->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+						ConstraintMinHalfDaysBetweenActivities* oldc=(ConstraintMinHalfDaysBetweenActivities*)generic_oldc;
+						if(oldc->weightPercentage < c->weightPercentage){
+							activitiesConstraints.insert(repres, c); //overwrites old value
+							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+								" there exists another constraint of this type with larger weight percentage, referring to the same activities")
+								.arg(oldc->getDescription(gt.rules))+"\n";
+						}
+						else if(oldc->weightPercentage > c->weightPercentage){
+							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+								" there exists another constraint of this type with larger weight percentage, referring to the same activities")
+								.arg(c->getDescription(gt.rules))+"\n";
+						}
+		
+						//equal weights - choose the lowest number of min days
+						else if(oldc->minDays > c->minDays){
+							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+								" there exists another constraint of this type with the same weight percentage and higher number of min days, referring to the same activities")
+								.arg(c->getDescription(gt.rules))+"\n";
+						}
+						else if(oldc->minDays < c->minDays){
+							activitiesConstraints.insert(repres, c); //overwrites old value
+							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+								" there exists another constraint of this type with the same weight percentage and higher number of min days, referring to the same activities")
+								.arg(oldc->getDescription(gt.rules))+"\n";
+						}
+		
+						//equal weights and min days - choose the one with consecutive is same day true
+						else if(oldc->consecutiveIfSameDay==true){
+							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+								" there exists another constraint of this type with the same weight percentage and same number of min days and"
+								" consecutive if same day true, referring to the same activities").arg(c->getDescription(gt.rules))+"\n";
+						}
+						else if(c->consecutiveIfSameDay==true){
+							activitiesConstraints.insert(repres, c); //overwrites old value
+							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+								" there exists another constraint of this type with the same weight percentage and same number of min days and"
+								" consecutive if same day true, referring to the same activities").arg(oldc->getDescription(gt.rules))+"\n";
+						}
+					}
+					else if(generic_oldc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+						lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
+							" there exists another constraint of type min days between activities referring to the same activities"
+							" (a min days between activities constraint is considered stronger than a min half days between activities constraint)")
+							.arg(c->getDescription(gt.rules))+"\n";
+					}
+				}
+				else{
+					activitiesConstraints.insert(repres, c);
+				}
 			}
 		}
 	}
@@ -1184,31 +1282,64 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 			//min days
 			//start new code, because of Liviu's detection
 			bool careAboutMinDays=false;
-			ConstraintMinDaysBetweenActivities* tcmd=activitiesConstraints.value(acti->id, nullptr);
-			if(acti->id==acti->activityGroupId){
-				if(tcmd!=nullptr){
-					careAboutMinDays=true;
+			
+			TimeConstraint* tc=activitiesConstraints.value(acti->id, nullptr);
+			
+			if(tc!=nullptr){
+				if(tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+					ConstraintMinDaysBetweenActivities* tcmd=(ConstraintMinDaysBetweenActivities*)tc;
+					if(acti->id==acti->activityGroupId)
+						careAboutMinDays=true;
+					//end new code
+					if(careAboutMinDays)
+						tosExport<<CustomFETString::number(tcmd->minDays);
+					tosExport<<fieldSeparator;
+					//min days weight
+					if(careAboutMinDays)
+						tosExport<<CustomFETString::number(tcmd->weightPercentage);
+					tosExport<<fieldSeparator;
+					//min days consecutive
+					if(careAboutMinDays)
+						tosExport<<tcmd->consecutiveIfSameDay;
+					tosExport<<fieldSeparator<<textquote<<protectCSVComments(acti->comments)<<textquote;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+					tosExport<<Qt::endl;
+#else
+					tosExport<<endl;
+#endif
+				}
+				else{
+					assert(tc->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES);
+					ConstraintMinHalfDaysBetweenActivities* tcmd=(ConstraintMinHalfDaysBetweenActivities*)tc;
+					if(acti->id==acti->activityGroupId)
+						careAboutMinDays=true;
+					//end new code
+					if(careAboutMinDays)
+						tosExport<<CustomFETString::number(tcmd->minDays)<<"h";
+					tosExport<<fieldSeparator;
+					//min days weight
+					if(careAboutMinDays)
+						tosExport<<CustomFETString::number(tcmd->weightPercentage);
+					tosExport<<fieldSeparator;
+					//min days consecutive
+					if(careAboutMinDays)
+						tosExport<<tcmd->consecutiveIfSameDay;
+					tosExport<<fieldSeparator<<textquote<<protectCSVComments(acti->comments)<<textquote;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+					tosExport<<Qt::endl;
+#else
+					tosExport<<endl;
+#endif
 				}
 			}
-			//end new code
-			if(careAboutMinDays){
-				assert(tcmd->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES);
-				tosExport<<CustomFETString::number(tcmd->minDays);
-			}
-			tosExport<<fieldSeparator;
-			//min days weight
-			if(careAboutMinDays)
-				tosExport<<CustomFETString::number(tcmd->weightPercentage);
-			tosExport<<fieldSeparator;
-			//min days consecutive
-			if(careAboutMinDays)
-				tosExport<<tcmd->consecutiveIfSameDay;
-			tosExport<<fieldSeparator<<textquote<<protectCSVComments(acti->comments)<<textquote;
+			else{
+				tosExport<<fieldSeparator<<fieldSeparator<<fieldSeparator<<textquote<<protectCSVComments(acti->comments)<<textquote;
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-			tosExport<<Qt::endl;
+				tosExport<<Qt::endl;
 #else
-			tosExport<<endl;
+				tosExport<<endl;
 #endif
+			}
 		}
 		//}
 	}

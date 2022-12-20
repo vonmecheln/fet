@@ -3732,7 +3732,8 @@ bool Rules::addSplitActivityFast(
 	bool _consecutiveIfSameDay,
 	bool _computeNTotalStudents,
 	int _nTotalStudents,
-	int _computedNumberOfStudents)
+	int _computedNumberOfStudents,
+	bool _halfDays)
 {
 	//check for duplicates - idea and code by Volker Dirr
 	int t=QStringList(_teachersNames).removeDuplicates();
@@ -3769,7 +3770,11 @@ bool Rules::addSplitActivityFast(
 	}
 
 	if(_minDayDistance>0){
-		TimeConstraint *constr=new ConstraintMinDaysBetweenActivities(_weightPercentage, _consecutiveIfSameDay, _nSplits, acts, _minDayDistance);
+		TimeConstraint *constr;
+		if(!_halfDays)
+			constr=new ConstraintMinDaysBetweenActivities(_weightPercentage, _consecutiveIfSameDay, _nSplits, acts, _minDayDistance);
+		else
+			constr=new ConstraintMinHalfDaysBetweenActivities(_weightPercentage, _consecutiveIfSameDay, _nSplits, acts, _minDayDistance);
 		bool tmp=this->addTimeConstraint(constr);
 		assert(tmp);
 	}

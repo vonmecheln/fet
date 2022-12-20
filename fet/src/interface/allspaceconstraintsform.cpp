@@ -824,8 +824,8 @@ void AllSpaceConstraintsForm::removeConstraint()
 	QListWidgetItem* item;
 	
 	int lres=LongTextMessageBox::confirmation( this, tr("FET confirmation"),
-		s, tr("Yes"), tr("No"), 0, 0, 1 );
-		
+		s, tr("Yes"), tr("No"), QString(), 0, 1 );
+	
 	if(lres==0){ //The user clicked the OK button or pressed Enter
 		QMessageBox::StandardButton wr=QMessageBox::Yes;
 		

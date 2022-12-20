@@ -95,7 +95,7 @@ void AddStudentsSubgroupForm::addStudentsSubgroup()
 			"If you want to make a new subgroup, independent, "
 			"please abort now and give it another name.")+"\n\n"+tr("Note: the number of students for the added subgroup will be the number of students of the already existing subgroup "
 			"(you can modify the number of students in the modify subgroup dialog)."),
-			tr("Add"), tr("Abort"), 0, 0, 1 ) == 1){
+			tr("Add"), tr("Abort"), QString(), 0, 1 ) == 1){
 
 			nameLineEdit->selectAll();
 			nameLineEdit->setFocus();

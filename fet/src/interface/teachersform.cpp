@@ -159,7 +159,7 @@ void TeachersForm::removeTeacher()
 
 	/*if(QMessageBox::warning( this, tr("FET"),
 		tr("Are you sure you want to delete this teacher and all related activities and constraints?"),
-		tr("Yes"), tr("No"), 0, 0, 1 ) == 1)
+		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
 		return;*/
 	if(QMessageBox::warning( this, tr("FET"),
 		tr("Are you sure you want to delete this teacher and all related activities and constraints?"),

@@ -586,7 +586,8 @@ public:
 		bool _consecutiveIfSameDay,
 		bool _computeNTotalStudents,
 		int _nTotalStudents,
-		int _computedNumberOfStudents);
+		int _computedNumberOfStudents,
+		bool _halfDays=false);
 
 	/**
 	Removes only the activity with this id.
