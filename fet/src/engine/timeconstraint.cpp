@@ -1673,10 +1673,9 @@ double ConstraintTeacherNotAvailableTimes::fitness(Solution& c, Rules& r, QList<
 
 bool ConstraintTeacherNotAvailableTimes::isRelatedToActivity(Rules& r, Activity* a)
 {
-	Q_UNUSED(a);
 	Q_UNUSED(r);
-
-	return false;
+	
+	return a->teachersNames.contains(this->teacher);
 }
 
 bool ConstraintTeacherNotAvailableTimes::isRelatedToTeacher(Teacher* t)
@@ -1995,8 +1994,9 @@ double ConstraintStudentsSetNotAvailableTimes::fitness(Solution& c, Rules& r, QL
 
 bool ConstraintStudentsSetNotAvailableTimes::isRelatedToActivity(Rules& r, Activity* a)
 {
-	Q_UNUSED(a);
-	Q_UNUSED(r);
+	for(const QString& st : a->studentsNames)
+		if(r.setsShareStudents(st, this->students))
+			return true;
 
 	return false;
 }
@@ -2939,15 +2939,7 @@ bool ConstraintActivityTagsNotOverlapping::isRelatedToSubject(Subject* s)
 
 bool ConstraintActivityTagsNotOverlapping::isRelatedToActivityTag(ActivityTag* s)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	QSet<QString> ats(activityTagsNames.constBegin(), activityTagsNames.constEnd());
-#else
-	QSet<QString> ats=activityTagsNames.toSet();
-#endif
-	if(ats.contains(s->name))
-		return true;
-
-	return false;
+	return activityTagsNames.contains(s->name);
 }
 
 bool ConstraintActivityTagsNotOverlapping::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
@@ -4951,7 +4943,7 @@ double ConstraintTeachersMaxHoursContinuously::fitness(Solution& c, Rules& r, QL
 					 " "
 					 +
 					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
-							
+					
 					dl.append(s);
 					cl.append(weightPercentage/100);
 				
@@ -4961,7 +4953,7 @@ double ConstraintTeachersMaxHoursContinuously::fitness(Solution& c, Rules& r, QL
 		}
 	}
 
-	if(weightPercentage==100)	
+	if(weightPercentage==100)
 		assert(nbroken==0);
 	return weightPercentage/100 * nbroken;
 }
@@ -5184,7 +5176,7 @@ double ConstraintTeacherMaxHoursContinuously::fitness(Solution& c, Rules& r, QLi
 				 " "
 				 +
 				 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
-						
+				
 				dl.append(s);
 				cl.append(weightPercentage/100);
 			
@@ -5457,7 +5449,7 @@ double ConstraintTeachersActivityTagMaxHoursContinuously::fitness(Solution& c, R
 					 " "
 					 +
 					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
-							
+					
 					dl.append(s);
 					cl.append(weightPercentage/100);
 				
@@ -5467,7 +5459,7 @@ double ConstraintTeachersActivityTagMaxHoursContinuously::fitness(Solution& c, R
 		}
 	}
 
-	if(weightPercentage==100)	
+	if(weightPercentage==100)
 		assert(nbroken==0);
 	return weightPercentage/100 * nbroken;
 }
@@ -5734,7 +5726,7 @@ double ConstraintTeacherActivityTagMaxHoursContinuously::fitness(Solution& c, Ru
 					 " "
 					 +
 					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
-							
+					
 					dl.append(s);
 					cl.append(weightPercentage/100);
 				
@@ -5744,7 +5736,7 @@ double ConstraintTeacherActivityTagMaxHoursContinuously::fitness(Solution& c, Ru
 		}
 	}
 
-	if(weightPercentage==100)	
+	if(weightPercentage==100)
 		assert(nbroken==0);
 	return weightPercentage/100 * nbroken;
 }
@@ -6428,7 +6420,7 @@ double ConstraintTeachersMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<do
 					.arg(CustomFETString::numberPlusTwoDigitsPrecision((tg-maxGaps)*weightPercentage/100));
 					
 				*conflictsString+= s+"\n";
-						
+				
 				dl.append(s);
 				cl.append((tg-maxGaps)*weightPercentage/100);
 			}
@@ -6439,7 +6431,7 @@ double ConstraintTeachersMaxGapsPerWeek::fitness(Solution& c, Rules& r, QList<do
 		if(weightPercentage==100){
 			assert(totalGaps==0); //for partial solutions this rule might be broken
 		}
-			
+	
 	return weightPercentage/100 * totalGaps;
 }
 
@@ -9498,7 +9490,7 @@ double ConstraintStudentsMaxHoursContinuously::fitness(Solution& c, Rules& r, QL
 					 " "
 					 +
 					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
-							
+					
 					dl.append(s);
 					cl.append(weightPercentage/100);
 				
@@ -9508,7 +9500,7 @@ double ConstraintStudentsMaxHoursContinuously::fitness(Solution& c, Rules& r, QL
 		}
 	}
 
-	if(weightPercentage==100)	
+	if(weightPercentage==100)
 		assert(nbroken==0);
 	return weightPercentage/100 * nbroken;
 }
@@ -9778,7 +9770,7 @@ double ConstraintStudentsSetMaxHoursContinuously::fitness(Solution& c, Rules& r,
 					 " "
 					 +
 					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
-							
+					
 					dl.append(s);
 					cl.append(weightPercentage/100);
 				
@@ -10054,7 +10046,7 @@ double ConstraintStudentsActivityTagMaxHoursContinuously::fitness(Solution& c, R
 					 " "
 					 +
 					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
-							
+					
 					dl.append(s);
 					cl.append(weightPercentage/100);
 				
@@ -10064,7 +10056,7 @@ double ConstraintStudentsActivityTagMaxHoursContinuously::fitness(Solution& c, R
 		}
 	}
 
-	if(weightPercentage==100)	
+	if(weightPercentage==100)
 		assert(nbroken==0);
 	return weightPercentage/100 * nbroken;
 }
@@ -10379,7 +10371,7 @@ double ConstraintStudentsSetActivityTagMaxHoursContinuously::fitness(Solution& c
 					 " "
 					 +
 					 (tr("This increases the conflicts total by %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(weightPercentage/100)));
-							
+					
 					dl.append(s);
 					cl.append(weightPercentage/100);
 				
@@ -10389,7 +10381,7 @@ double ConstraintStudentsSetActivityTagMaxHoursContinuously::fitness(Solution& c
 		}
 	}
 
-	if(weightPercentage==100)	
+	if(weightPercentage==100)
 		assert(nbroken==0);
 	return weightPercentage/100 * nbroken;
 }
@@ -21744,7 +21736,7 @@ double ConstraintStudentsMaxGapsPerDay::fitness(Solution& c, Rules& r, QList<dou
 			tIllegalGaps+=illegalGaps;
 		}
 	}
-		
+	
 	if(c.nPlacedActivities==r.nInternalActivities)
 		if(weightPercentage==100)    //for partial solutions it might be broken
 			assert(tIllegalGaps==0);

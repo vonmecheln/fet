@@ -2193,7 +2193,6 @@ bool Rules::setsShareStudents(const QString& studentsSet1, const QString& studen
 		assert(0);
 	
 	return false;
-	
 }
 
 bool Rules::augmentedSetsShareStudentsFaster(const QString& studentsSet1, const QString& studentsSet2)
@@ -2258,7 +2257,6 @@ bool Rules::augmentedSetsShareStudentsFaster(const QString& studentsSet1, const 
 		assert(0);
 	
 	return false;
-	
 }
 
 void Rules::computePermanentStudentsHash()
@@ -2318,7 +2316,7 @@ StudentsSet* Rules::searchStudentsSet(const QString& setName)
 	return nullptr;*/
 }
 
-StudentsSet* Rules::searchAugmentedStudentsSet(const QString& setName)
+/*StudentsSet* Rules::searchAugmentedStudentsSet(const QString& setName)
 {
 	for(int i=0; i<this->augmentedYearsList.size(); i++){
 		StudentsYear* sty=this->augmentedYearsList[i];
@@ -2336,7 +2334,7 @@ StudentsSet* Rules::searchAugmentedStudentsSet(const QString& setName)
 		}
 	}
 	return nullptr;
-}
+}*/
 
 bool Rules::addYear(StudentsYear* year)
 {
@@ -3210,7 +3208,7 @@ bool Rules::addGroup(const QString& yearName, StudentsGroup* group)
 		if(sty->name==yearName)
 			break;
 	}
-	assert(sty);
+	assert(sty!=nullptr);
 	
 	for(int i=0; i<sty->groupsList.size(); i++){
 		StudentsGroup* stg=sty->groupsList[i];
@@ -3426,7 +3424,7 @@ int Rules::searchAugmentedGroup(const QString& yearName, const QString& groupNam
 void Rules::sortGroupsAlphabetically(const QString& yearName)
 {
 	StudentsYear* sty=this->yearsList[this->searchYear(yearName)];
-	assert(sty);
+	assert(sty!=nullptr);
 
 	std::stable_sort(sty->groupsList.begin(), sty->groupsList.end(), groupsAscending);
 
@@ -3441,9 +3439,9 @@ void Rules::sortGroupsAlphabetically(const QString& yearName)
 bool Rules::addSubgroup(const QString& yearName, const QString& groupName, StudentsSubgroup* subgroup)
 {
 	StudentsYear* sty=this->yearsList.at(this->searchYear(yearName));
-	assert(sty);
+	assert(sty!=nullptr);
 	StudentsGroup* stg=sty->groupsList.at(this->searchGroup(yearName, groupName));
-	assert(stg);
+	assert(stg!=nullptr);
 
 	for(int i=0; i<stg->subgroupsList.size(); i++){
 		StudentsSubgroup* sts=stg->subgroupsList[i];
@@ -3652,9 +3650,9 @@ int Rules::searchAugmentedSubgroup(const QString& yearName, const QString& group
 void Rules::sortSubgroupsAlphabetically(const QString& yearName, const QString& groupName)
 {
 	StudentsYear* sty=this->yearsList.at(this->searchYear(yearName));
-	assert(sty);
+	assert(sty!=nullptr);
 	StudentsGroup* stg=sty->groupsList.at(this->searchGroup(yearName, groupName));
-	assert(stg);
+	assert(stg!=nullptr);
 
 	std::stable_sort(stg->subgroupsList.begin(), stg->subgroupsList.end(), subgroupsAscending);
 	

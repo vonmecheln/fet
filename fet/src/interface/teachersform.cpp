@@ -381,7 +381,7 @@ void TeachersForm::teacherChanged(int index)
 	}
 	
 	Teacher* t=gt.rules.teachersList.at(index);
-	assert(t);
+	assert(t!=nullptr);
 	QString s=t->getDetailedDescriptionWithConstraints(gt.rules);
 	currentTeacherTextEdit->setPlainText(s);
 }

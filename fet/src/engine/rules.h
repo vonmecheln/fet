@@ -403,7 +403,7 @@ public:
 	*/
 	StudentsSet* searchStudentsSet(const QString& setName);
 	
-	StudentsSet* searchAugmentedStudentsSet(const QString& setName);
+	//StudentsSet* searchAugmentedStudentsSet(const QString& setName);
 	
 	/**
 	True if the students sets contain one common subgroup.

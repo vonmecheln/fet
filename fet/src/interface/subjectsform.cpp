@@ -284,7 +284,7 @@ void SubjectsForm::subjectChanged(int index)
 	}
 	
 	Subject* sb=gt.rules.subjectsList.at(index);
-	assert(sb);
+	assert(sb!=nullptr);
 	QString s=sb->getDetailedDescriptionWithConstraints(gt.rules);
 	currentSubjectTextEdit->setPlainText(s);
 }

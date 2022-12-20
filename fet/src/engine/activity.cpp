@@ -357,7 +357,7 @@ void Activity::computeInternalStructure(Rules& r)
 	QSet<int> iSubgroupsSet;
 	for(QStringList::const_iterator it=this->studentsNames.constBegin(); it!=this->studentsNames.constEnd(); it++){
 		StudentsSet* ss=r.studentsHash.value(*it, nullptr); //r.searchAugmentedStudentsSet(*it);
-		assert(ss);
+		assert(ss!=nullptr);
 		if(ss->type==STUDENTS_SUBGROUP){
 			int tmp;
 			/*for(tmp=0; tmp<r.nInternalSubgroups; tmp++)

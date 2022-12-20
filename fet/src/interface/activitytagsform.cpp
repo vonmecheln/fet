@@ -289,7 +289,7 @@ void ActivityTagsForm::activityTagChanged(int index)
 	}
 	
 	ActivityTag* st=gt.rules.activityTagsList.at(index);
-	assert(st);
+	assert(st!=nullptr);
 	QString s=st->getDetailedDescriptionWithConstraints(gt.rules);
 	currentActivityTagTextEdit->setPlainText(s);
 }
