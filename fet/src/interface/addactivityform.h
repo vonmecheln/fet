@@ -84,7 +84,7 @@ public slots:
 	
 	void minDaysChanged();
 	
-	void on_halfCheckBox_toggled();
+	void halfCheckBoxToggled();
 };
 
 class SecondMinDaysDialog: public QDialog

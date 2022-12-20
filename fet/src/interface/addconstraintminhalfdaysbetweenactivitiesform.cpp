@@ -29,6 +29,8 @@
 AddConstraintMinHalfDaysBetweenActivitiesForm::AddConstraintMinHalfDaysBetweenActivitiesForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
+	
+	consecutiveIfSameDayCheckBox->setChecked(true);
 
 	addConstraintPushButton->setDefault(true);
 	

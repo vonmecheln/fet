@@ -2580,3 +2580,6 @@ Versions 6.7.0 - 6.7.v
 	The export of the activities to CSV files in this case is also updated (if there are constraints of type min half days between activities, they will be exported
 	in a format compatible with the importing).
 	- Code cleanup.
+- Version 6.7.5
+	- Minor corrections.
+	- Code cleanup.

@@ -29,6 +29,8 @@
 AddConstraintMinDaysBetweenActivitiesForm::AddConstraintMinDaysBetweenActivitiesForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
+	
+	consecutiveIfSameDayCheckBox->setChecked(true);
 
 	addConstraintPushButton->setDefault(true);
 	
@@ -44,7 +46,7 @@ AddConstraintMinDaysBetweenActivitiesForm::AddConstraintMinDaysBetweenActivities
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
 	QSize tmp2=studentsComboBox->minimumSizeHint();

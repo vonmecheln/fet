@@ -123,8 +123,6 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 	connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
 	connect(clearTeacherPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
 
-	connect(minDaysDistanceSpinBox, SIGNAL(valueChanged(int)), this, SLOT(minDaysChanged()));
-	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
@@ -172,6 +170,8 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 	minDaysDistanceSpinBox->setMinimum(0);
 	minDaysDistanceSpinBox->setValue(1);
 	
+	connect(minDaysDistanceSpinBox, SIGNAL(valueChanged(int)), this, SLOT(minDaysChanged()));
+	
 	int nSplit=splitSpinBox->value();
 
 	halfCheckBox->setChecked(false);
@@ -180,7 +180,10 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 	minDaysDistanceSpinBox->setEnabled(nSplit>=2);
 	percentageTextLabel->setEnabled(nSplit>=2 && minDaysDistanceSpinBox->value()>0);
 	percentageLineEdit->setEnabled(nSplit>=2 && minDaysDistanceSpinBox->value()>0);
+	forceConsecutiveCheckBox->setChecked(true);
 	forceConsecutiveCheckBox->setEnabled(nSplit>=2 && minDaysDistanceSpinBox->value()>0);
+	
+	connect(halfCheckBox, SIGNAL(toggled(bool)), this, SLOT(halfCheckBoxToggled()));
 	
 	nStudentsSpinBox->setMinimum(-1);
 	nStudentsSpinBox->setMaximum(MAX_ROOM_CAPACITY);
@@ -1346,9 +1349,11 @@ void AddActivityForm::minDaysChanged()
 	forceConsecutiveCheckBox->setEnabled(splitSpinBox->value()>=2 && minDaysDistanceSpinBox->value()>0);
 }
 
-void AddActivityForm::on_halfCheckBox_toggled()
+void AddActivityForm::halfCheckBoxToggled()
 {
-	assert(gt.rules.mode==MORNINGS_AFTERNOONS);
+	//The assert below should be OK, because if the mode is not Mornings-Afternoons the check box should be disabled,
+	//and the connection is done in the constructor after unchecking it and disabling it. But I consider that it is better to disable the assert.
+	//assert(gt.rules.mode==MORNINGS_AFTERNOONS);
 	if(halfCheckBox->isChecked())
 		minDaysDistanceSpinBox->setMaximum(gt.rules.nDaysPerWeek-1);
 	else

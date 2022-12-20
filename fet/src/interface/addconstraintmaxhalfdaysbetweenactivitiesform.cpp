@@ -57,8 +57,8 @@ AddConstraintMaxHalfDaysBetweenActivitiesForm::AddConstraintMaxHalfDaysBetweenAc
 	Q_UNUSED(tmp4);
 
 	maxDaysSpinBox->setMinimum(0);
-	maxDaysSpinBox->setValue(gt.rules.nDaysPerWeek-1);
 	maxDaysSpinBox->setMaximum(gt.rules.nDaysPerWeek-1);
+	maxDaysSpinBox->setValue(gt.rules.nDaysPerWeek-1);
 
 	teachersComboBox->addItem("");
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
