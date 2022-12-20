@@ -2583,3 +2583,6 @@ Versions 6.7.0 - 6.7.v
 - Version 6.7.5
 	- Minor corrections.
 	- Code cleanup.
+- Version 6.7.6
+	- Interface bug fix: in the activities dialog, in the list of the related space constraints for the selected activity, the constraints of type teacher/students set
+	home room(s) which affected this activity were not shown. Reported by giardiniere and Volker Dirr.

@@ -1945,12 +1945,12 @@ bool ConstraintStudentsSetHomeRoom::computeInternalStructure(QWidget* parent, Ru
 		act=&r.internalActivitiesList[ac];
 
 		//check if this activity has the corresponding students
-		bool commonStudents=false;
+		bool sameStudents=false;
 		if(act->studentsNames.count()==1)
 			if(act->studentsNames.at(0)==studentsName)
-				commonStudents=true;
+				sameStudents=true;
 	
-		if(!commonStudents)
+		if(!sameStudents)
 			continue;
 		
 		this->_activities.append(ac);
@@ -2114,7 +2114,9 @@ double ConstraintStudentsSetHomeRoom::fitness(
 
 bool ConstraintStudentsSetHomeRoom::isRelatedToActivity(Activity* a)
 {
-	Q_UNUSED(a);
+	if(a->studentsNames.count()==1)
+		if(a->studentsNames.at(0)==studentsName)
+			return true;
 
 	return false;
 }
@@ -2207,12 +2209,12 @@ bool ConstraintStudentsSetHomeRooms::computeInternalStructure(QWidget* parent, R
 		act=&r.internalActivitiesList[ac];
 
 		//check if this activity has the corresponding students
-		bool commonStudents=false;
+		bool sameStudents=false;
 		if(act->studentsNames.count()==1)
 			if(act->studentsNames.at(0)==studentsName)
-				commonStudents=true;
+				sameStudents=true;
 	
-		if(!commonStudents)
+		if(!sameStudents)
 			continue;
 		
 		this->_activities.append(ac);
@@ -2393,7 +2395,9 @@ double ConstraintStudentsSetHomeRooms::fitness(
 
 bool ConstraintStudentsSetHomeRooms::isRelatedToActivity(Activity* a)
 {
-	Q_UNUSED(a);
+	if(a->studentsNames.count()==1)
+		if(a->studentsNames.at(0)==studentsName)
+			return true;
 
 	return false;
 }
@@ -2654,7 +2658,9 @@ double ConstraintTeacherHomeRoom::fitness(
 
 bool ConstraintTeacherHomeRoom::isRelatedToActivity(Activity* a)
 {
-	Q_UNUSED(a);
+	if(a->teachersNames.count()==1)
+		if(a->teachersNames.at(0)==teacherName)
+			return true;
 
 	return false;
 }
@@ -2932,7 +2938,9 @@ double ConstraintTeacherHomeRooms::fitness(
 
 bool ConstraintTeacherHomeRooms::isRelatedToActivity(Activity* a)
 {
-	Q_UNUSED(a);
+	if(a->teachersNames.count()==1)
+		if(a->teachersNames.at(0)==teacherName)
+			return true;
 
 	return false;
 }
