@@ -20,7 +20,6 @@
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitypreferredroomsform.h"
-#include "spaceconstraint.h"
 
 #include <QListWidget>
 #include <QAbstractItemView>

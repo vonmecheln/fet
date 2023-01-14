@@ -121,12 +121,6 @@ void ModifyConstraintActivitiesMaxInATermForm::ok()
 		return;
 	}
 	
-	this->_ctr->weightPercentage=weight;
-
-	int maxActivitiesInATerm=maxActivitiesInATermSpinBox->value();
-	
-	this->_ctr->maxActivitiesInATerm=maxActivitiesInATerm;
-
 	if(this->selectedActivitiesList.count()==0){
 		QMessageBox::warning(this, tr("FET information"),
 		 tr("Empty list of activities"));
@@ -139,6 +133,12 @@ void ModifyConstraintActivitiesMaxInATermForm::ok()
 		return;
 	}*/
 	
+	this->_ctr->weightPercentage=weight;
+
+	int maxActivitiesInATerm=maxActivitiesInATermSpinBox->value();
+	
+	this->_ctr->maxActivitiesInATerm=maxActivitiesInATerm;
+
 	this->_ctr->activitiesIds=selectedActivitiesList;
 	this->_ctr->recomputeActivitiesSet();
 	

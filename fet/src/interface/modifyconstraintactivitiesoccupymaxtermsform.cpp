@@ -121,12 +121,6 @@ void ModifyConstraintActivitiesOccupyMaxTermsForm::ok()
 		return;
 	}
 	
-	this->_ctr->weightPercentage=weight;
-
-	int maxOccupiedTerms=maxOccupiedTermsSpinBox->value();
-	
-	this->_ctr->maxOccupiedTerms=maxOccupiedTerms;
-
 	if(this->selectedActivitiesList.count()==0){
 		QMessageBox::warning(this, tr("FET information"),
 		 tr("Empty list of activities"));
@@ -139,6 +133,12 @@ void ModifyConstraintActivitiesOccupyMaxTermsForm::ok()
 		return;
 	}*/
 	
+	this->_ctr->weightPercentage=weight;
+
+	int maxOccupiedTerms=maxOccupiedTermsSpinBox->value();
+	
+	this->_ctr->maxOccupiedTerms=maxOccupiedTerms;
+
 	this->_ctr->activitiesIds=selectedActivitiesList;
 	this->_ctr->recomputeActivitiesSet();
 	

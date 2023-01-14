@@ -2608,3 +2608,8 @@ Versions 6.8.0 - 6.8.v
 	- Updated the French translation, by Pascal Cohen.
 	- Updated the Arabic translation, by Benahmed Abdelkrim.
 	- Updated the German translation, by Volker Dirr.
+- Version 6.8.1
+	- Added the possibility to lock/unlock the activities selected with an advanced filter (suggested by giardiniere).
+	- Interface bug fixes.
+	- Code cleanup.
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares.

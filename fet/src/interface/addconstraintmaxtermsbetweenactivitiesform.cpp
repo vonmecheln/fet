@@ -22,7 +22,6 @@
 #include "longtextmessagebox.h"
 
 #include "addconstraintmaxtermsbetweenactivitiesform.h"
-#include "spaceconstraint.h"
 
 #include <QListWidget>
 #include <QAbstractItemView>

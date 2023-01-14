@@ -18,7 +18,6 @@
 #include <QMessageBox>
 
 #include "modifygroupactivitiesininitialorderitemform.h"
-#include "spaceconstraint.h"
 
 #include <QList>
 

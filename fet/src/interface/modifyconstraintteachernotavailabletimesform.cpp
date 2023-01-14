@@ -243,7 +243,7 @@ void ModifyConstraintTeacherNotAvailableTimesForm::ok()
 				return;
 			}
 		}
-			
+	
 	this->_ctr->weightPercentage=weight;
 
 	if(_ctr->teacher!=teacher_name){

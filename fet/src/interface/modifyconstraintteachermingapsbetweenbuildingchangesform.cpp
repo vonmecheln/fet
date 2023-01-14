@@ -18,7 +18,6 @@
 #include <QMessageBox>
 
 #include "modifyconstraintteachermingapsbetweenbuildingchangesform.h"
-#include "spaceconstraint.h"
 
 ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm::ModifyConstraintTeacherMinGapsBetweenBuildingChangesForm(QWidget* parent, ConstraintTeacherMinGapsBetweenBuildingChanges* ctr): QDialog(parent)
 {

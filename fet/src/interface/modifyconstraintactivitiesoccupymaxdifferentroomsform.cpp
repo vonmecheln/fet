@@ -20,7 +20,6 @@
 #include "longtextmessagebox.h"
 
 #include "modifyconstraintactivitiesoccupymaxdifferentroomsform.h"
-#include "spaceconstraint.h"
 
 #include <QListWidget>
 #include <QAbstractItemView>
@@ -121,12 +120,6 @@ void ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::ok()
 		return;
 	}
 	
-	this->_ctr->weightPercentage=weight;
-
-	int maxDifferentRooms=maxDifferentRoomsSpinBox->value();
-	
-	this->_ctr->maxDifferentRooms=maxDifferentRooms;
-
 	if(this->selectedActivitiesList.count()==0){
 		QMessageBox::warning(this, tr("FET information"),
 		 tr("Empty list of activities"));
@@ -138,6 +131,12 @@ void ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::ok()
 		return;
 	}
 	
+	this->_ctr->weightPercentage=weight;
+
+	int maxDifferentRooms=maxDifferentRoomsSpinBox->value();
+	
+	this->_ctr->maxDifferentRooms=maxDifferentRooms;
+
 	this->_ctr->activitiesIds=selectedActivitiesList;
 	this->_ctr->recomputeActivitiesSet();
 	

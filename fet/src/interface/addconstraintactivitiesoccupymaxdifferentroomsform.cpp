@@ -20,7 +20,6 @@
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitiesoccupymaxdifferentroomsform.h"
-#include "spaceconstraint.h"
 
 #include <QListWidget>
 #include <QAbstractItemView>

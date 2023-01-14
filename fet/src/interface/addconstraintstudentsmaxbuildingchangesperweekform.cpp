@@ -20,7 +20,6 @@
 #include "longtextmessagebox.h"
 
 #include "addconstraintstudentsmaxbuildingchangesperweekform.h"
-#include "spaceconstraint.h"
 
 AddConstraintStudentsMaxBuildingChangesPerWeekForm::AddConstraintStudentsMaxBuildingChangesPerWeekForm(QWidget* parent): QDialog(parent)
 {
@@ -33,7 +32,7 @@ AddConstraintStudentsMaxBuildingChangesPerWeekForm::AddConstraintStudentsMaxBuil
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	maxChangesSpinBox->setMinimum(0);
 	maxChangesSpinBox->setMaximum(gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay);
 	maxChangesSpinBox->setValue(3);

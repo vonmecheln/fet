@@ -18,7 +18,6 @@
 #include <QMessageBox>
 
 #include "modifyconstraintsubjectactivitytagpreferredroomform.h"
-#include "spaceconstraint.h"
 
 ModifyConstraintSubjectActivityTagPreferredRoomForm::ModifyConstraintSubjectActivityTagPreferredRoomForm(QWidget* parent, ConstraintSubjectActivityTagPreferredRoom* ctr): QDialog(parent)
 {

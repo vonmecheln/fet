@@ -20,7 +20,6 @@
 #include <QMessageBox>
 
 #include "modifyconstraintroomnotavailabletimesform.h"
-#include "spaceconstraint.h"
 
 #include <QHeaderView>
 #include <QTableWidget>

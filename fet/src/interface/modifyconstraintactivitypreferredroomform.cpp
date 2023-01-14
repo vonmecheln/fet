@@ -18,7 +18,6 @@
 #include <QMessageBox>
 
 #include "modifyconstraintactivitypreferredroomform.h"
-#include "spaceconstraint.h"
 
 #include "lockunlock.h"
 

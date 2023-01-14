@@ -78,10 +78,6 @@ void ModifyConstraintTeacherMaxSpanPerRealDayForm::ok()
 		return;
 	}
 
-	this->_ctr->weightPercentage=weight;
-	
-	this->_ctr->maxSpanPerDay=maxSpanSpinBox->value();
-
 	QString teacher_name=teachersComboBox->currentText();
 	int teacher_ID=gt.rules.searchTeacher(teacher_name);
 	if(teacher_ID<0){
@@ -89,6 +85,11 @@ void ModifyConstraintTeacherMaxSpanPerRealDayForm::ok()
 			tr("Invalid teacher"));
 		return;
 	}
+
+	this->_ctr->weightPercentage=weight;
+	
+	this->_ctr->maxSpanPerDay=maxSpanSpinBox->value();
+
 	this->_ctr->teacherName=teacher_name;
 	
 	this->_ctr->allowOneDayExceptionPlusOne=exceptionCheckBox->isChecked();

@@ -17,11 +17,10 @@
 
 #include <QMessageBox>
 
-#include "modifyconstraintactivitytagpreferredroomsform.h"
-#include "spaceconstraint.h"
-
 #include <QListWidget>
 #include <QAbstractItemView>
+
+#include "modifyconstraintactivitytagpreferredroomsform.h"
 
 ModifyConstraintActivityTagPreferredRoomsForm::ModifyConstraintActivityTagPreferredRoomsForm(QWidget* parent, ConstraintActivityTagPreferredRooms* ctr): QDialog(parent)
 {

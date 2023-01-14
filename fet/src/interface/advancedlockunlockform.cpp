@@ -28,6 +28,8 @@
 
 #include <QMessageBox>
 
+#include <QProgressDialog>
+
 #include <algorithm>
 //using namespace std;
 
@@ -64,6 +66,9 @@ const QString lockEndStudentsDaySettingsString=QString("AdvancedLockUnlockFormLo
 const QString unlockEndStudentsDaySettingsString=QString("AdvancedLockUnlockFormUnlockEndStudentsDay");
 const QString lockActivityTagSettingsString=QString("AdvancedLockUnlockFormLockActivityTag");
 const QString unlockActivityTagSettingsString=QString("AdvancedLockUnlockFormUnlockActivityTag");
+///
+const QString lockAdvancedFilterSettingsString=QString("AdvancedLockUnlockFormLockAdvancedFilter");
+const QString unlockAdvancedFilterSettingsString=QString("AdvancedLockUnlockFormUnlockAdvancedFilter");
 
 const QString lockDayConfirmationSettingsString=QString("AdvancedLockUnlockFormLockDayConfirmation");
 const QString unlockDayConfirmationSettingsString=QString("AdvancedLockUnlockFormUnlockDayConfirmation");
@@ -73,6 +78,21 @@ const QString lockEndStudentsDayConfirmationSettingsString=QString("AdvancedLock
 const QString unlockEndStudentsDayConfirmationSettingsString=QString("AdvancedLockUnlockFormUnlockEndStudentsDayConfirmation");
 const QString lockActivityTagConfirmationSettingsString=QString("AdvancedLockUnlockFormLockActivityTagConfirmation");
 const QString unlockActivityTagConfirmationSettingsString=QString("AdvancedLockUnlockFormUnlockActivityTagConfirmation");
+///
+const QString lockAdvancedFilterConfirmationSettingsString=QString("AdvancedLockUnlockFormLockAdvancedFilterConfirmation");
+const QString unlockAdvancedFilterConfirmationSettingsString=QString("AdvancedLockUnlockFormUnlockAdvancedFilterConfirmation");
+
+extern const QString COMPANY;
+extern const QString PROGRAM;
+
+const int DESCRIPTION=0;
+const int DETDESCRIPTION=1;
+const int DETDESCRIPTIONWITHCONSTRAINTS=2;
+
+const int CONTAINS=0;
+const int DOESNOTCONTAIN=1;
+const int REGEXP=2;
+const int NOTREGEXP=3;
 
 bool compareTimeConstraintsActivityPreferredStartingTimeActivitiesIds(TimeConstraint* a, TimeConstraint* b)
 {
@@ -174,9 +194,9 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
 	restoreFETDialogGeometry(&taDialog, lockDaySettingsString);
-	bool ok=taDialog.exec();
+	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, lockDaySettingsString);
-	if(!ok)
+	if(ok==QDialog::Rejected)
 		return;
 		
 	bool lockTime=timeCheckBox->isChecked();
@@ -715,9 +735,9 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
 	restoreFETDialogGeometry(&taDialog, lockEndStudentsDaySettingsString);
-	bool ok=taDialog.exec();
+	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, lockEndStudentsDaySettingsString);
-	if(!ok)
+	if(ok==QDialog::Rejected)
 		return;
 		
 	bool lockTime=timeCheckBox->isChecked();
@@ -1021,9 +1041,9 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
 	restoreFETDialogGeometry(&taDialog, unlockEndStudentsDaySettingsString);
-	bool ok=taDialog.exec();
+	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, unlockEndStudentsDaySettingsString);
-	if(!ok)
+	if(ok==QDialog::Rejected)
 		return;
 		
 	bool unlockTime=timeCheckBox->isChecked();
@@ -1277,9 +1297,9 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
 	restoreFETDialogGeometry(&taDialog, lockAllSettingsString);
-	bool ok=taDialog.exec();
+	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, lockAllSettingsString);
-	if(!ok)
+	if(ok==QDialog::Rejected)
 		return;
 		
 	bool lockTime=timeCheckBox->isChecked();
@@ -1797,9 +1817,9 @@ void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
 	restoreFETDialogGeometry(&taDialog, unlockAllSettingsString);
-	bool ok=taDialog.exec();
+	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, unlockAllSettingsString);
-	if(!ok)
+	if(ok==QDialog::Rejected)
 		return;
 		
 	bool unlockTime=timeCheckBox->isChecked();
@@ -2067,9 +2087,9 @@ void AdvancedLockUnlockForm::unlockDayWithoutTimetable(QWidget* parent)
 	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
 	restoreFETDialogGeometry(&taDialog, unlockDaySettingsString);
-	bool ok=taDialog.exec();
+	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, unlockDaySettingsString);
-	if(!ok)
+	if(ok==QDialog::Rejected)
 		return;
 		
 	bool unlockTime=timeCheckBox->isChecked();
@@ -2349,9 +2369,9 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
 	restoreFETDialogGeometry(&taDialog, lockActivityTagSettingsString);
-	bool ok=taDialog.exec();
+	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, lockActivityTagSettingsString);
-	if(!ok)
+	if(ok==QDialog::Rejected)
 		return;
 		
 	bool lockTime=timeCheckBox->isChecked();
@@ -2919,9 +2939,9 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 	taDialog.resize(w,h);
 	centerWidgetOnScreen(&taDialog);
 	restoreFETDialogGeometry(&taDialog, unlockActivityTagSettingsString);
-	bool ok=taDialog.exec();
+	int ok=taDialog.exec();
 	saveFETDialogGeometry(&taDialog, unlockActivityTagSettingsString);
-	if(!ok)
+	if(ok==QDialog::Rejected)
 		return;
 		
 	bool unlockTime=timeCheckBox->isChecked();
@@ -2957,6 +2977,1097 @@ void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 					Activity* act=gt.rules.activitiesPointerHash.value(c->activityId, nullptr);
 					assert(act!=nullptr);
 					if(act->activityTagsNames.contains(selectedActivityTagString)){
+						actsSet.insert(c->activityId);
+						if(unlockTime){
+							if(!c->permanentlyLocked){
+								removedTimeConstraints.append((TimeConstraint*)c);
+								//removedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+								removedTime++;
+							}
+							else{
+								notRemovedTimeConstraints.append((TimeConstraint*)c);
+								//notRemovedTimeConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+								notRemovedTime++;
+							}
+						}
+					}
+				}
+			}
+			
+	if(unlockSpace)
+		for(SpaceConstraint* sc : qAsConst(gt.rules.spaceConstraintsList))
+			if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+				ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) sc;
+				if(c->weightPercentage==100.0 && actsSet.contains(c->activityId) &&
+				 (!virtualRooms.contains(c->roomName) || (virtualRooms.contains(c->roomName) && !c->preferredRealRoomsNames.isEmpty()))){
+					if(!c->permanentlyLocked){
+						removedSpaceConstraints.append((SpaceConstraint*)c);
+						//removedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						removedSpace++;
+					}
+					else{
+						notRemovedSpaceConstraints.append((SpaceConstraint*)c);
+						//notRemovedSpaceConstraintsString+=c->getDetailedDescription(gt.rules)+"\n";
+						notRemovedSpace++;
+					}
+				}
+			}
+
+	std::stable_sort(removedTimeConstraints.begin(), removedTimeConstraints.end(), compareTimeConstraintsActivityPreferredStartingTimeActivitiesIds);
+	for(TimeConstraint* tc : qAsConst(removedTimeConstraints))
+		removedTimeConstraintsString+=tc->getDetailedDescription(gt.rules)+"\n";
+		
+	std::stable_sort(notRemovedTimeConstraints.begin(), notRemovedTimeConstraints.end(), compareTimeConstraintsActivityPreferredStartingTimeActivitiesIds);
+	for(TimeConstraint* tc : qAsConst(notRemovedTimeConstraints))
+		notRemovedTimeConstraintsString+=tc->getDetailedDescription(gt.rules)+"\n";
+
+	std::stable_sort(removedSpaceConstraints.begin(), removedSpaceConstraints.end(), compareSpaceConstraintsActivityPreferredRoomActivitiesIds);
+	for(SpaceConstraint* sc : qAsConst(removedSpaceConstraints))
+		removedSpaceConstraintsString+=sc->getDetailedDescription(gt.rules)+"\n";
+
+	std::stable_sort(notRemovedSpaceConstraints.begin(), notRemovedSpaceConstraints.end(), compareSpaceConstraintsActivityPreferredRoomActivitiesIds);
+	for(SpaceConstraint* sc : qAsConst(notRemovedSpaceConstraints))
+		notRemovedSpaceConstraintsString+=sc->getDetailedDescription(gt.rules)+"\n";
+
+	////////////
+	//last confirmation dialog
+	QDialog lastConfirmationDialog(&taDialog);
+	lastConfirmationDialog.setWindowTitle(tr("Last confirmation needed"));
+
+	QVBoxLayout* lastMainLayout=new QVBoxLayout(&lastConfirmationDialog);
+
+	QPushButton* lastpb1=new QPushButton(tr("Cancel"));
+	QPushButton* lastpb2=new QPushButton(tr("OK"));
+	QHBoxLayout* lastButtons=new QHBoxLayout();
+	lastButtons->addStretch();
+	lastButtons->addWidget(lastpb1);
+	lastButtons->addWidget(lastpb2);
+	
+	////texts
+	QVBoxLayout* left=new QVBoxLayout();
+	QVBoxLayout* right=new QVBoxLayout();
+	QHBoxLayout* all=new QHBoxLayout();
+	all->addLayout(left);
+	all->addLayout(right);
+	
+	QPlainTextEdit* remTim=new QPlainTextEdit();
+	remTim->setReadOnly(true);
+	remTim->setPlainText(removedTimeConstraintsString);
+	QLabel* labRemTim=new QLabel(tr("These time constraints will be removed"));
+	labRemTim->setWordWrap(true);
+	labRemTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	left->addWidget(labRemTim);
+	left->addWidget(remTim);
+
+	QPlainTextEdit* notRemTim=new QPlainTextEdit();
+	notRemTim->setReadOnly(true);
+	notRemTim->setPlainText(notRemovedTimeConstraintsString);
+	QLabel* labNotRemTim=new QLabel(tr("These time constraints will NOT be removed"));
+	labNotRemTim->setWordWrap(true);
+	labNotRemTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	left->addWidget(labNotRemTim);
+	left->addWidget(notRemTim);
+
+	QPlainTextEdit* remSpa=new QPlainTextEdit();
+	remSpa->setReadOnly(true);
+	remSpa->setPlainText(removedSpaceConstraintsString);
+	QLabel* labRemSpa=new QLabel(tr("These space constraints will be removed"));
+	labRemSpa->setWordWrap(true);
+	labRemSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	right->addWidget(labRemSpa);
+	right->addWidget(remSpa);
+	
+	QPlainTextEdit* notRemSpa=new QPlainTextEdit();
+	notRemSpa->setReadOnly(true);
+	notRemSpa->setPlainText(notRemovedSpaceConstraintsString);
+	QLabel* labNotRemSpa=new QLabel(tr("These space constraints will NOT be removed"));
+	labNotRemSpa->setWordWrap(true);
+	labNotRemSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	right->addWidget(labNotRemSpa);
+	right->addWidget(notRemSpa);
+	////end texts
+	
+	////////
+	lastMainLayout->addLayout(all);
+	//lastMainLayout->addStretch();
+	lastMainLayout->addLayout(lastButtons);
+
+	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
+	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+
+	lastpb2->setDefault(true);
+	lastpb2->setFocus();
+	
+	int lw=lastConfirmationDialog.sizeHint().width();
+	int lh=lastConfirmationDialog.sizeHint().height();
+	lastConfirmationDialog.resize(lw,lh);
+	centerWidgetOnScreen(&lastConfirmationDialog);
+	restoreFETDialogGeometry(&lastConfirmationDialog, unlockActivityTagConfirmationSettingsString);
+	ok=lastConfirmationDialog.exec();
+	saveFETDialogGeometry(&lastConfirmationDialog, unlockActivityTagConfirmationSettingsString);
+	if(!ok)
+		return;
+	////////////
+	
+	bool t=gt.rules.removeTimeConstraints(removedTimeConstraints);
+	assert(t);
+	
+	removedTimeConstraints.clear();
+	notRemovedTimeConstraints.clear();
+
+	t=gt.rules.removeSpaceConstraints(removedSpaceConstraints);
+	assert(t);
+	
+	removedSpaceConstraints.clear();
+	notRemovedSpaceConstraints.clear();
+
+	QMessageBox::information(&lastConfirmationDialog, tr("FET information"), tr("There were removed %1 locking time constraints and"
+		" %2 locking space constraints. There were not removed %3 locking time constraints and %4 locking space constraints, because"
+		" these activities were permanently locked").arg(removedTime).arg(removedSpace).arg(notRemovedTime).arg(notRemovedSpace));
+	
+	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+	LockUnlock::increaseCommunicationSpinBox();
+}
+
+//2023-01-13
+
+LockAdvancedDialog::LockAdvancedDialog(QWidget* parent) : QDialog(parent)
+{
+	setWindowTitle(tr("FET - Lock the activities which correspond to the selected advanced filter"));
+	
+	numberLabel=new QLabel(QString("No: 1000 / 1000"));
+	numberLabel->setAlignment(Qt::AlignCenter);
+	durationLabel=new QLabel(QString("Dur: 1000 / 1000"));
+	durationLabel->setAlignment(Qt::AlignCenter);
+	QHBoxLayout* labelsLayout=new QHBoxLayout();
+	labelsLayout->addWidget(numberLabel);
+	labelsLayout->addWidget(durationLabel);
+
+	QVBoxLayout* taMainLayout=new QVBoxLayout(this);
+
+	QLabel* taLabel=new QLabel();
+	taLabel->setWordWrap(true);
+	taLabel->setText(tr("All the filtered activities will be locked"));
+//	taLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	
+	selectedActivitiesLW=new QListWidget();
+	
+	filterCheckBox=new QCheckBox(tr("Filter"));
+	filterCheckBox->setChecked(false);
+	QPushButton* tapb1=new QPushButton(tr("Cancel"));
+	QPushButton* tapb2=new QPushButton(tr("OK"));
+	
+	QHBoxLayout* buttons=new QHBoxLayout();
+	buttons->addWidget(filterCheckBox);
+	buttons->addStretch();
+	buttons->addWidget(tapb1);
+	buttons->addWidget(tapb2);
+	
+	////////
+	QGroupBox* selectorsGroupBox=new QGroupBox();
+	selectorsGroupBox->setTitle(tr("Lock"));
+	
+	QHBoxLayout* groupLayout=new QHBoxLayout(selectorsGroupBox);
+	
+	timeCheckBox=new QCheckBox();
+	timeCheckBox->setChecked(true);
+	timeCheckBox->setText(tr("Time"));
+	spaceCheckBox=new QCheckBox();
+	spaceCheckBox->setChecked(true);
+	spaceCheckBox->setText(tr("Space"));
+
+	groupLayout->addWidget(timeCheckBox);
+	groupLayout->addWidget(spaceCheckBox);
+	groupLayout->addStretch();
+	/////////
+	
+	taMainLayout->addLayout(labelsLayout);
+	taMainLayout->addWidget(taLabel);
+	taMainLayout->addWidget(selectedActivitiesLW);
+	taMainLayout->addWidget(selectorsGroupBox);
+	taMainLayout->addLayout(buttons);
+
+	connect(tapb2, SIGNAL(clicked()), this, SLOT(accept()));
+	connect(tapb1, SIGNAL(clicked()), this, SLOT(reject()));
+	connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+
+	//////////////////
+	QSettings settings(COMPANY, PROGRAM);
+
+	QString settingsName="LockAdvancedDialog";
+	
+	all=settings.value(settingsName+"/all-conditions", "true").toBool();
+	
+	descrDetDescrDetDescrWithConstraints.clear();
+	int n=settings.value(settingsName+"/number-of-descriptions", "1").toInt();
+	for(int i=0; i<n; i++)
+		descrDetDescrDetDescrWithConstraints.append(settings.value(settingsName+"/description/"+CustomFETString::number(i+1), CustomFETString::number(DESCRIPTION)).toInt());
+	
+	contains.clear();
+	n=settings.value(settingsName+"/number-of-contains", "1").toInt();
+	for(int i=0; i<n; i++)
+		contains.append(settings.value(settingsName+"/contains/"+CustomFETString::number(i+1), CustomFETString::number(CONTAINS)).toInt());
+	
+	text.clear();
+	n=settings.value(settingsName+"/number-of-texts", "1").toInt();
+	for(int i=0; i<n; i++)
+		text.append(settings.value(settingsName+"/text/"+CustomFETString::number(i+1), QString("")).toString());
+	
+	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
+	
+	assert(filterCheckBox->isChecked()==false);
+	//////////////////
+	
+	tapb2->setDefault(true);
+	tapb2->setFocus();
+	
+	int w=this->sizeHint().width();
+	int h=this->sizeHint().height();
+	if(w<MIN_WIDTH)
+		w=MIN_WIDTH;
+	if(h<MIN_HEIGHT)
+		h=MIN_HEIGHT;
+	this->resize(w,h);
+	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this, lockAdvancedFilterSettingsString);
+	
+	filterChanged();
+}
+
+LockAdvancedDialog::~LockAdvancedDialog()
+{
+	saveFETDialogGeometry(this, lockAdvancedFilterSettingsString);
+
+	QSettings settings(COMPANY, PROGRAM);
+
+	QString settingsName="LockAdvancedDialog";
+	
+	settings.setValue(settingsName+"/all-conditions", all);
+	
+	settings.setValue(settingsName+"/number-of-descriptions", descrDetDescrDetDescrWithConstraints.count());
+	settings.remove(settingsName+"/description");
+	for(int i=0; i<descrDetDescrDetDescrWithConstraints.count(); i++)
+		settings.setValue(settingsName+"/description/"+CustomFETString::number(i+1), descrDetDescrDetDescrWithConstraints.at(i));
+	
+	settings.setValue(settingsName+"/number-of-contains", contains.count());
+	settings.remove(settingsName+"/contains");
+	for(int i=0; i<contains.count(); i++)
+		settings.setValue(settingsName+"/contains/"+CustomFETString::number(i+1), contains.at(i));
+	
+	settings.setValue(settingsName+"/number-of-texts", text.count());
+	settings.remove(settingsName+"/text");
+	for(int i=0; i<text.count(); i++)
+		settings.setValue(settingsName+"/text/"+CustomFETString::number(i+1), text.at(i));
+	
+	settings.setValue(settingsName+"/case-sensitive", caseSensitive);
+}
+
+bool LockAdvancedDialog::filterOk(Activity* act)
+{
+	if(!filterCheckBox->isChecked()){
+		return true;
+	}
+	else{
+		/////////////////////advanced filter
+		assert(descrDetDescrDetDescrWithConstraints.count()==contains.count());
+		assert(contains.count()==text.count());
+
+		Qt::CaseSensitivity csens=Qt::CaseSensitive;
+		if(!caseSensitive)
+			csens=Qt::CaseInsensitive;
+
+		QList<bool> okPartial;
+
+		QString cachedS=QString("");
+		for(int i=0; i<descrDetDescrDetDescrWithConstraints.count(); i++){
+			if(descrDetDescrDetDescrWithConstraints.at(i)==DETDESCRIPTIONWITHCONSTRAINTS){
+				cachedS=act->getDetailedDescriptionWithConstraints(gt.rules); //warning: time consuming operation, goes through all the constraints.
+				break;
+			}
+		}
+
+		for(int i=0; i<descrDetDescrDetDescrWithConstraints.count(); i++){
+			QString s;
+			if(descrDetDescrDetDescrWithConstraints.at(i)==DESCRIPTION){
+				s=act->getDescription(gt.rules);
+			}
+			else if(descrDetDescrDetDescrWithConstraints.at(i)==DETDESCRIPTION){
+				s=act->getDetailedDescription(gt.rules);
+			}
+			else{
+				assert(descrDetDescrDetDescrWithConstraints.at(i)==DETDESCRIPTIONWITHCONSTRAINTS);
+				s=cachedS;
+				//s=act->getDetailedDescriptionWithConstraints(gt.rules); //warning: time consuming operation, goes through all the constraints.
+			}
+
+			QString t=text.at(i);
+			if(contains.at(i)==CONTAINS){
+				okPartial.append(s.contains(t, csens));
+			}
+			else if(contains.at(i)==DOESNOTCONTAIN){
+				okPartial.append(!(s.contains(t, csens)));
+			}
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+			else if(contains.at(i)==REGEXP){
+				QRegularExpression regExp(t);
+				if(!caseSensitive)
+					regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+				okPartial.append((regExp.match(s)).hasMatch());
+			}
+			else if(contains.at(i)==NOTREGEXP){
+				QRegularExpression regExp(t);
+				if(!caseSensitive)
+					regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+				okPartial.append(!(regExp.match(s)).hasMatch());
+			}
+#else
+			else if(contains.at(i)==REGEXP){
+				QRegExp regExp(t);
+				regExp.setCaseSensitivity(csens);
+				okPartial.append(regExp.indexIn(s)>=0);
+			}
+			else if(contains.at(i)==NOTREGEXP){
+				QRegExp regExp(t);
+				regExp.setCaseSensitivity(csens);
+				okPartial.append(regExp.indexIn(s)<0);
+			}
+#endif
+			else
+				assert(0);
+		}
+
+		if(all){
+			bool ok=true;
+			for(bool b : qAsConst(okPartial))
+				ok = ok && b;
+
+			return ok;
+		}
+		else{ //any
+			bool ok=false;
+			for(bool b : qAsConst(okPartial))
+				ok = ok || b;
+
+			return ok;
+		}
+	}
+}
+
+void LockAdvancedDialog::filterChanged()
+{
+	int /*nacts=0,*/ nsubacts=0, nh=0;
+	int ninact=0, ninacth=0;
+
+	filteredActivitiesIndicesList.clear();
+	selectedActivitiesLW->clear();
+	
+	QProgressDialog progress(this);
+	progress.setWindowTitle(tr("Filtering the activities", "Title of a progress dialog"));
+	progress.setLabelText(tr("Filtering the activities ... please wait"));
+	progress.setRange(0, qMax(gt.rules.nInternalActivities, 1));
+	progress.setModal(true);
+	
+	int k=0;
+
+	for(int i=0; i<gt.rules.nInternalActivities; i++){
+		progress.setValue(i);
+		if(progress.wasCanceled()){
+			QMessageBox::warning(this, tr("FET warning"), tr("You canceled the filtering of the activities - the list of activities will be incomplete.")+QString(" ")+
+			 tr("Note: if filtering of the activities takes too much, it might be because you are filtering on the detailed description with constraints of the activities,"
+			 " which checks each activity against each time constraint, each space constraint, and each group activities in the initial order item, which might be too much."
+			 " Please consider filtering on the description or detailed description of the activities, instead."));
+			break;
+		}
+		
+		if(best_solution.times[i]!=UNALLOCATED_TIME){
+			Activity* act=&gt.rules.internalActivitiesList[i];
+			if(filterOk(act)){
+
+				filteredActivitiesIndicesList.append(i);
+				selectedActivitiesLW->addItem(act->getDescription(gt.rules));
+				
+				k++;
+
+				if(USE_GUI_COLORS && !act->active)
+					selectedActivitiesLW->item(k-1)->setBackground(selectedActivitiesLW->palette().alternateBase());
+				
+				//if(act->id==act->activityGroupId || act->activityGroupId==0)
+				//	nacts++;
+				nsubacts++;
+				
+				nh+=act->duration;
+				
+				if(!act->active){
+					ninact++;
+					ninacth+=act->duration;
+				}
+			}
+		}
+	}
+
+	progress.setValue(qMax(gt.rules.activitiesList.size(), 1));
+
+	assert(nsubacts-ninact>=0);
+	int NA=nsubacts-ninact;
+	int NT=nsubacts;
+	assert(nh-ninacth>=0);
+	int DA=nh-ninacth;
+	int DT=nh;
+	numberLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
+		" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
+	durationLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
+		" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
+}
+
+void LockAdvancedDialog::filter(bool selected)
+{
+	if(!selected){
+		filterChanged();
+		return;
+	}
+	
+	filterForm=new AdvancedFilterForm(this, tr("Advanced filter for activities"), true, all, descrDetDescrDetDescrWithConstraints, contains, text, caseSensitive, "ActivitiesLockAdvancedDialog");
+
+	int t=filterForm->exec();
+	if(t==QDialog::Accepted){
+		if(filterForm->allRadio->isChecked())
+			all=true;
+		else if(filterForm->anyRadio->isChecked())
+			all=false;
+		else
+			assert(0);
+		
+		caseSensitive=filterForm->caseSensitiveCheckBox->isChecked();
+		
+		descrDetDescrDetDescrWithConstraints.clear();
+		contains.clear();
+		text.clear();
+		
+		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->contNContReNReComboBoxList.count());
+		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->textLineEditList.count());
+		for(int i=0; i<filterForm->rows; i++){
+			QComboBox* cb1=filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.at(i);
+			QComboBox* cb2=filterForm->contNContReNReComboBoxList.at(i);
+			QLineEdit* tl=filterForm->textLineEditList.at(i);
+			
+			descrDetDescrDetDescrWithConstraints.append(cb1->currentIndex());
+			contains.append(cb2->currentIndex());
+			text.append(tl->text());
+		}
+		
+		filterChanged();
+	}
+	else{
+		disconnect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+		filterCheckBox->setChecked(false);
+		connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+	}
+	
+	delete filterForm;
+}
+
+void AdvancedLockUnlockForm::lockAdvancedFilter(QWidget* parent)
+{
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+		return;
+	}
+	
+	//New Dialog
+	LockAdvancedDialog taDialog(parent);
+
+	int ok=taDialog.exec();
+	if(ok==QDialog::Rejected)
+		return;
+	
+	bool lockTime=taDialog.timeCheckBox->isChecked();
+	bool lockSpace=taDialog.spaceCheckBox->isChecked();
+
+	QString addedTimeConstraintsString;
+	QString notAddedTimeConstraintsString;
+	
+	QList<ConstraintActivityPreferredStartingTime*> addedTimeConstraints;
+	QList<ConstraintActivityPreferredStartingTime*> notAddedTimeConstraints;
+	
+	QString addedSpaceConstraintsString;
+	QString notAddedSpaceConstraintsString;
+	
+	QList<ConstraintActivityPreferredRoom*> addedSpaceConstraints;
+	QList<ConstraintActivityPreferredRoom*> notAddedSpaceConstraints;
+	
+	int addedTime=0, notAddedTime=0;
+	int addedSpace=0, notAddedSpace=0;
+
+	for(int i : qAsConst(taDialog.filteredActivitiesIndicesList)){
+		//Activity* act=&gt.rules.internalActivitiesList[i];
+		if(best_solution.times[i]!=UNALLOCATED_TIME){
+			assert(best_solution.times[i]>=0 && best_solution.times[i]<gt.rules.nHoursPerWeek);
+			int d=best_solution.times[i]%gt.rules.nDaysPerWeek;
+			int h=best_solution.times[i]/gt.rules.nDaysPerWeek;
+			
+			ConstraintActivityPreferredStartingTime* newTimeCtr=nullptr;
+			
+			ConstraintActivityPreferredRoom* newSpaceCtr=nullptr;
+			
+			if(lockTime){
+				newTimeCtr=new ConstraintActivityPreferredStartingTime(100.0, gt.rules.internalActivitiesList[i].id, d, h, false);
+			}
+			
+			if(lockSpace){
+				if(best_solution.rooms[i]!=UNALLOCATED_SPACE && best_solution.rooms[i]!=UNSPECIFIED_ROOM){
+					QStringList tl;
+					if(gt.rules.internalRoomsList[best_solution.rooms[i]]->isVirtual==false)
+						assert(best_solution.realRoomsList[i].isEmpty());
+					else
+						for(int rr : qAsConst(best_solution.realRoomsList[i]))
+							tl.append(gt.rules.internalRoomsList[rr]->name);
+
+					newSpaceCtr=new ConstraintActivityPreferredRoom(100.0, gt.rules.internalActivitiesList[i].id, gt.rules.internalRoomsList[best_solution.rooms[i]]->name, tl, false);
+				}
+			}
+			
+			int aid=gt.rules.internalActivitiesList[i].id;
+			
+			if(newTimeCtr!=nullptr){
+				bool add=true;
+				
+				for(ConstraintActivityPreferredStartingTime* tc : gt.rules.apstHash.value(aid, QSet<ConstraintActivityPreferredStartingTime*>())){
+					if((*tc) == (*newTimeCtr)){
+						add=false;
+						break;
+					}
+				}
+				
+				if(add){
+					addedTimeConstraintsString+=newTimeCtr->getDetailedDescription(gt.rules)+"\n";
+					addedTimeConstraints.append(newTimeCtr);
+					
+					addedTime++;
+				}
+				else{
+					notAddedTimeConstraintsString+=newTimeCtr->getDetailedDescription(gt.rules)+"\n";
+					notAddedTimeConstraints.append(newTimeCtr);
+					
+					notAddedTime++;
+				}
+			}
+
+			if(newSpaceCtr!=nullptr){
+				bool add=true;
+				
+				for(ConstraintActivityPreferredRoom* tc : gt.rules.aprHash.value(aid, QSet<ConstraintActivityPreferredRoom*>())){
+					if((*tc) == (*newSpaceCtr)){
+						add=false;
+						break;
+					}
+				}
+				
+				if(add){
+					addedSpaceConstraintsString+=newSpaceCtr->getDetailedDescription(gt.rules)+"\n";
+					addedSpaceConstraints.append(newSpaceCtr);
+					
+					addedSpace++;
+				}
+				else{
+					notAddedSpaceConstraintsString+=newSpaceCtr->getDetailedDescription(gt.rules)+"\n";
+					notAddedSpaceConstraints.append(newSpaceCtr);
+					
+					notAddedSpace++;
+				}
+			}
+		}
+	}
+	
+	////////////
+	//last confirmation dialog
+	QDialog lastConfirmationDialog(&taDialog);
+	lastConfirmationDialog.setWindowTitle(tr("Last confirmation needed"));
+
+	QVBoxLayout* lastMainLayout=new QVBoxLayout(&lastConfirmationDialog);
+
+	QPushButton* lastpb1=new QPushButton(tr("Cancel"));
+	QPushButton* lastpb2=new QPushButton(tr("OK"));
+	QHBoxLayout* lastButtons=new QHBoxLayout();
+	lastButtons->addStretch();
+	lastButtons->addWidget(lastpb1);
+	lastButtons->addWidget(lastpb2);
+	
+	////texts
+	QVBoxLayout* left=new QVBoxLayout();
+	QVBoxLayout* right=new QVBoxLayout();
+	QHBoxLayout* all=new QHBoxLayout();
+	all->addLayout(left);
+	all->addLayout(right);
+	
+	QPlainTextEdit* addTim=new QPlainTextEdit();
+	addTim->setReadOnly(true);
+	addTim->setPlainText(addedTimeConstraintsString);
+	QLabel* labAddTim=new QLabel(tr("These time constraints will be added"));
+	labAddTim->setWordWrap(true);
+	labAddTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	left->addWidget(labAddTim);
+	left->addWidget(addTim);
+
+	QPlainTextEdit* notAddTim=new QPlainTextEdit();
+	notAddTim->setReadOnly(true);
+	notAddTim->setPlainText(notAddedTimeConstraintsString);
+	QLabel* labNotAddTim=new QLabel(tr("These time constraints will NOT be added"));
+	labNotAddTim->setWordWrap(true);
+	labNotAddTim->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	left->addWidget(labNotAddTim);
+	left->addWidget(notAddTim);
+
+	QPlainTextEdit* addSpa=new QPlainTextEdit();
+	addSpa->setReadOnly(true);
+	addSpa->setPlainText(addedSpaceConstraintsString);
+	QLabel* labAddSpa=new QLabel(tr("These space constraints will be added"));
+	labAddSpa->setWordWrap(true);
+	labAddSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	right->addWidget(labAddSpa);
+	right->addWidget(addSpa);
+	
+	QPlainTextEdit* notAddSpa=new QPlainTextEdit();
+	notAddSpa->setReadOnly(true);
+	notAddSpa->setPlainText(notAddedSpaceConstraintsString);
+	QLabel* labNotAddSpa=new QLabel(tr("These space constraints will NOT be added"));
+	labNotAddSpa->setWordWrap(true);
+	labNotAddSpa->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	right->addWidget(labNotAddSpa);
+	right->addWidget(notAddSpa);
+	////end texts
+	
+	////////
+	lastMainLayout->addLayout(all);
+	//lastMainLayout->addStretch();
+	lastMainLayout->addLayout(lastButtons);
+
+	QObject::connect(lastpb2, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(accept()));
+	QObject::connect(lastpb1, SIGNAL(clicked()), &lastConfirmationDialog, SLOT(reject()));
+
+	lastpb2->setDefault(true);
+	lastpb2->setFocus();
+	
+	int lw=lastConfirmationDialog.sizeHint().width();
+	int lh=lastConfirmationDialog.sizeHint().height();
+	lastConfirmationDialog.resize(lw,lh);
+	centerWidgetOnScreen(&lastConfirmationDialog);
+	restoreFETDialogGeometry(&lastConfirmationDialog, lockActivityTagConfirmationSettingsString);
+	ok=lastConfirmationDialog.exec();
+	saveFETDialogGeometry(&lastConfirmationDialog, lockActivityTagConfirmationSettingsString);
+	if(!ok)
+		return;
+	////////////
+	
+	for(TimeConstraint* tc : qAsConst(addedTimeConstraints)){
+		bool t=gt.rules.addTimeConstraint(tc);
+		assert(t);
+	}
+	addedTimeConstraints.clear();
+	for(TimeConstraint* tc : qAsConst(notAddedTimeConstraints)){
+		delete tc;
+	}
+	notAddedTimeConstraints.clear();
+	
+	for(SpaceConstraint* sc : qAsConst(addedSpaceConstraints)){
+		bool t=gt.rules.addSpaceConstraint(sc);
+		assert(t);
+	}
+	addedSpaceConstraints.clear();
+	for(SpaceConstraint* sc : qAsConst(notAddedSpaceConstraints)){
+		delete sc;
+	}
+	notAddedSpaceConstraints.clear();
+	
+	QMessageBox::information(&lastConfirmationDialog, tr("FET information"), tr("There were added %1 locking time constraints and"
+		" %2 locking space constraints. There were not added %3 locking time constraints and %4 locking space constraints, because"
+		" these activities were already locked").arg(addedTime).arg(addedSpace).arg(notAddedTime).arg(notAddedSpace));
+	
+	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+	LockUnlock::increaseCommunicationSpinBox();
+}
+
+UnlockAdvancedDialog::UnlockAdvancedDialog(QWidget* parent) : QDialog(parent)
+{
+	setWindowTitle(tr("FET - Unlock the activities which correspond to the selected advanced filter"));
+
+	QVBoxLayout* taMainLayout=new QVBoxLayout(this);
+
+	numberLabel=new QLabel(QString("No: 1000 / 1000"));
+	numberLabel->setAlignment(Qt::AlignCenter);
+	durationLabel=new QLabel(QString("Dur: 1000 / 1000"));
+	durationLabel->setAlignment(Qt::AlignCenter);
+	QHBoxLayout* labelsLayout=new QHBoxLayout();
+	labelsLayout->addWidget(numberLabel);
+	labelsLayout->addWidget(durationLabel);
+
+	QLabel* taLabel=new QLabel();
+	taLabel->setWordWrap(true);
+	taLabel->setText(tr("All the filtered activities will be unlocked"));
+	//taLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	
+	selectedActivitiesLW=new QListWidget();
+	
+	filterCheckBox=new QCheckBox(tr("Filter"));
+	filterCheckBox->setChecked(false);
+	QPushButton* tapb1=new QPushButton(tr("Cancel"));
+	QPushButton* tapb2=new QPushButton(tr("OK"));
+	
+	QHBoxLayout* buttons=new QHBoxLayout();
+	buttons->addWidget(filterCheckBox);
+	buttons->addStretch();
+	buttons->addWidget(tapb1);
+	buttons->addWidget(tapb2);
+	
+	////////
+	QGroupBox* selectorsGroupBox=new QGroupBox();
+	selectorsGroupBox->setTitle(tr("Unlock"));
+	
+	QHBoxLayout* groupLayout=new QHBoxLayout(selectorsGroupBox);
+	
+	timeCheckBox=new QCheckBox();
+	timeCheckBox->setChecked(true);
+	timeCheckBox->setText(tr("Time"));
+	spaceCheckBox=new QCheckBox();
+	spaceCheckBox->setChecked(true);
+	spaceCheckBox->setText(tr("Space"));
+
+	groupLayout->addWidget(timeCheckBox);
+	groupLayout->addWidget(spaceCheckBox);
+	groupLayout->addStretch();
+	/////////
+	
+	taMainLayout->addLayout(labelsLayout);
+	taMainLayout->addWidget(taLabel);
+	taMainLayout->addWidget(selectedActivitiesLW);
+	taMainLayout->addWidget(selectorsGroupBox);
+	taMainLayout->addLayout(buttons);
+
+	connect(tapb2, SIGNAL(clicked()), this, SLOT(accept()));
+	connect(tapb1, SIGNAL(clicked()), this, SLOT(reject()));
+	connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+
+	//////////////////
+	QSettings settings(COMPANY, PROGRAM);
+
+	QString settingsName="UnlockAdvancedDialog";
+	
+	all=settings.value(settingsName+"/all-conditions", "true").toBool();
+	
+	descrDetDescrDetDescrWithConstraints.clear();
+	int n=settings.value(settingsName+"/number-of-descriptions", "1").toInt();
+	for(int i=0; i<n; i++)
+		descrDetDescrDetDescrWithConstraints.append(settings.value(settingsName+"/description/"+CustomFETString::number(i+1), CustomFETString::number(DESCRIPTION)).toInt());
+	
+	contains.clear();
+	n=settings.value(settingsName+"/number-of-contains", "1").toInt();
+	for(int i=0; i<n; i++)
+		contains.append(settings.value(settingsName+"/contains/"+CustomFETString::number(i+1), CustomFETString::number(CONTAINS)).toInt());
+	
+	text.clear();
+	n=settings.value(settingsName+"/number-of-texts", "1").toInt();
+	for(int i=0; i<n; i++)
+		text.append(settings.value(settingsName+"/text/"+CustomFETString::number(i+1), QString("")).toString());
+	
+	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
+	
+	assert(filterCheckBox->isChecked()==false);
+	//////////////////
+	
+	tapb2->setDefault(true);
+	tapb2->setFocus();
+	
+	int w=this->sizeHint().width();
+	int h=this->sizeHint().height();
+	if(w<MIN_WIDTH)
+		w=MIN_WIDTH;
+	if(h<MIN_HEIGHT)
+		h=MIN_HEIGHT;
+	this->resize(w,h);
+	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this, unlockAdvancedFilterSettingsString);
+	
+	filterChanged();
+}
+
+UnlockAdvancedDialog::~UnlockAdvancedDialog()
+{
+	saveFETDialogGeometry(this, unlockAdvancedFilterSettingsString);
+	
+	QSettings settings(COMPANY, PROGRAM);
+
+	QString settingsName="UnlockAdvancedDialog";
+	
+	settings.setValue(settingsName+"/all-conditions", all);
+	
+	settings.setValue(settingsName+"/number-of-descriptions", descrDetDescrDetDescrWithConstraints.count());
+	settings.remove(settingsName+"/description");
+	for(int i=0; i<descrDetDescrDetDescrWithConstraints.count(); i++)
+		settings.setValue(settingsName+"/description/"+CustomFETString::number(i+1), descrDetDescrDetDescrWithConstraints.at(i));
+	
+	settings.setValue(settingsName+"/number-of-contains", contains.count());
+	settings.remove(settingsName+"/contains");
+	for(int i=0; i<contains.count(); i++)
+		settings.setValue(settingsName+"/contains/"+CustomFETString::number(i+1), contains.at(i));
+	
+	settings.setValue(settingsName+"/number-of-texts", text.count());
+	settings.remove(settingsName+"/text");
+	for(int i=0; i<text.count(); i++)
+		settings.setValue(settingsName+"/text/"+CustomFETString::number(i+1), text.at(i));
+	
+	settings.setValue(settingsName+"/case-sensitive", caseSensitive);
+}
+
+bool UnlockAdvancedDialog::filterOk(Activity* act)
+{
+	if(!filterCheckBox->isChecked()){
+		return true;
+	}
+	else{
+		/////////////////////advanced filter
+		assert(descrDetDescrDetDescrWithConstraints.count()==contains.count());
+		assert(contains.count()==text.count());
+
+		Qt::CaseSensitivity csens=Qt::CaseSensitive;
+		if(!caseSensitive)
+			csens=Qt::CaseInsensitive;
+
+		QList<bool> okPartial;
+
+		QString cachedS=QString("");
+		for(int i=0; i<descrDetDescrDetDescrWithConstraints.count(); i++){
+			if(descrDetDescrDetDescrWithConstraints.at(i)==DETDESCRIPTIONWITHCONSTRAINTS){
+				cachedS=act->getDetailedDescriptionWithConstraints(gt.rules); //warning: time consuming operation, goes through all the constraints.
+				break;
+			}
+		}
+
+		for(int i=0; i<descrDetDescrDetDescrWithConstraints.count(); i++){
+			QString s;
+			if(descrDetDescrDetDescrWithConstraints.at(i)==DESCRIPTION){
+				s=act->getDescription(gt.rules);
+			}
+			else if(descrDetDescrDetDescrWithConstraints.at(i)==DETDESCRIPTION){
+				s=act->getDetailedDescription(gt.rules);
+			}
+			else{
+				assert(descrDetDescrDetDescrWithConstraints.at(i)==DETDESCRIPTIONWITHCONSTRAINTS);
+				s=cachedS;
+				//s=act->getDetailedDescriptionWithConstraints(gt.rules); //warning: time consuming operation, goes through all the constraints.
+			}
+
+			QString t=text.at(i);
+			if(contains.at(i)==CONTAINS){
+				okPartial.append(s.contains(t, csens));
+			}
+			else if(contains.at(i)==DOESNOTCONTAIN){
+				okPartial.append(!(s.contains(t, csens)));
+			}
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+			else if(contains.at(i)==REGEXP){
+				QRegularExpression regExp(t);
+				if(!caseSensitive)
+					regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+				okPartial.append((regExp.match(s)).hasMatch());
+			}
+			else if(contains.at(i)==NOTREGEXP){
+				QRegularExpression regExp(t);
+				if(!caseSensitive)
+					regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+				okPartial.append(!(regExp.match(s)).hasMatch());
+			}
+#else
+			else if(contains.at(i)==REGEXP){
+				QRegExp regExp(t);
+				regExp.setCaseSensitivity(csens);
+				okPartial.append(regExp.indexIn(s)>=0);
+			}
+			else if(contains.at(i)==NOTREGEXP){
+				QRegExp regExp(t);
+				regExp.setCaseSensitivity(csens);
+				okPartial.append(regExp.indexIn(s)<0);
+			}
+#endif
+			else
+				assert(0);
+		}
+
+		if(all){
+			bool ok=true;
+			for(bool b : qAsConst(okPartial))
+				ok = ok && b;
+
+			return ok;
+		}
+		else{ //any
+			bool ok=false;
+			for(bool b : qAsConst(okPartial))
+				ok = ok || b;
+
+			return ok;
+		}
+	}
+}
+
+void UnlockAdvancedDialog::filterChanged()
+{
+	int /*nacts=0,*/ nsubacts=0, nh=0;
+	int ninact=0, ninacth=0;
+
+	filteredActivitiesIdsList.clear();
+	selectedActivitiesLW->clear();
+	
+	QProgressDialog progress(this);
+	progress.setWindowTitle(tr("Filtering the activities", "Title of a progress dialog"));
+	progress.setLabelText(tr("Filtering the activities ... please wait"));
+	progress.setRange(0, qMax(gt.rules.activitiesList.size(), 1));
+	progress.setModal(true);
+
+	int k=0;
+
+	for(int i=0; i<gt.rules.activitiesList.size(); i++){
+		progress.setValue(i);
+		if(progress.wasCanceled()){
+			QMessageBox::warning(this, tr("FET warning"), tr("You canceled the filtering of the activities - the list of activities will be incomplete.")+QString(" ")+
+			 tr("Note: if filtering of the activities takes too much, it might be because you are filtering on the detailed description with constraints of the activities,"
+			 " which checks each activity against each time constraint, each space constraint, and each group activities in the initial order item, which might be too much."
+			 " Please consider filtering on the description or detailed description of the activities, instead."));
+			break;
+		}
+		
+		Activity* act=gt.rules.activitiesList.at(i);
+		if(filterOk(act)){
+			filteredActivitiesIdsList.append(act->id);
+			selectedActivitiesLW->addItem(act->getDescription(gt.rules));
+
+			k++;
+
+			if(USE_GUI_COLORS && !act->active)
+				selectedActivitiesLW->item(k-1)->setBackground(selectedActivitiesLW->palette().alternateBase());
+			
+			//if(act->id==act->activityGroupId || act->activityGroupId==0)
+			//	nacts++;
+			nsubacts++;
+			
+			nh+=act->duration;
+			
+			if(!act->active){
+				ninact++;
+				ninacth+=act->duration;
+			}
+		}
+	}
+
+	progress.setValue(qMax(gt.rules.activitiesList.size(), 1));
+
+	assert(nsubacts-ninact>=0);
+	int NA=nsubacts-ninact;
+	int NT=nsubacts;
+	assert(nh-ninacth>=0);
+	int DA=nh-ninacth;
+	int DT=nh;
+	numberLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
+		" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
+	durationLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
+		" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
+}
+
+void UnlockAdvancedDialog::filter(bool selected)
+{
+	if(!selected){
+		filterChanged();
+		return;
+	}
+	
+	filterForm=new AdvancedFilterForm(this, tr("Advanced filter for activities"), true, all, descrDetDescrDetDescrWithConstraints, contains, text, caseSensitive, "ActivitiesUnlockAdvancedDialog");
+	int t=filterForm->exec();
+	if(t==QDialog::Accepted){
+		if(filterForm->allRadio->isChecked())
+			all=true;
+		else if(filterForm->anyRadio->isChecked())
+			all=false;
+		else
+			assert(0);
+		
+		caseSensitive=filterForm->caseSensitiveCheckBox->isChecked();
+		
+		descrDetDescrDetDescrWithConstraints.clear();
+		contains.clear();
+		text.clear();
+		
+		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->contNContReNReComboBoxList.count());
+		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->textLineEditList.count());
+		for(int i=0; i<filterForm->rows; i++){
+			QComboBox* cb1=filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.at(i);
+			QComboBox* cb2=filterForm->contNContReNReComboBoxList.at(i);
+			QLineEdit* tl=filterForm->textLineEditList.at(i);
+			
+			descrDetDescrDetDescrWithConstraints.append(cb1->currentIndex());
+			contains.append(cb2->currentIndex());
+			text.append(tl->text());
+		}
+		
+		filterChanged();
+	}
+	else{
+		disconnect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+		filterCheckBox->setChecked(false);
+		connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+	}
+	
+	delete filterForm;
+}
+
+void AdvancedLockUnlockForm::unlockAdvancedFilterWithoutTimetable(QWidget* parent)
+{
+	/*if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+		return;
+	}*/
+	QSet<QString> virtualRooms;
+	for(Room* rm : qAsConst(gt.rules.roomsList))
+		if(rm->isVirtual==true)
+			virtualRooms.insert(rm->name);
+	
+	//New Dialog
+	UnlockAdvancedDialog taDialog(parent);
+	
+	int ok=taDialog.exec();
+	if(ok==QDialog::Rejected)
+		return;
+	
+	bool unlockTime=taDialog.timeCheckBox->isChecked();
+	bool unlockSpace=taDialog.spaceCheckBox->isChecked();
+	//We need to consider non-internal data, because the timetable is not available
+	//int selectedActivityTagInt=taLW->currentIndex();
+	//assert(selectedActivityTagInt>=0 && selectedActivityTagInt<gt.rules.nInternalActivityTags);
+
+	int removedTime=0, notRemovedTime=0;
+	int removedSpace=0, notRemovedSpace=0;
+	
+	QString removedTimeConstraintsString;
+	QString notRemovedTimeConstraintsString;
+
+	QList<TimeConstraint*> removedTimeConstraints;
+	QList<TimeConstraint*> notRemovedTimeConstraints;
+	
+	QString removedSpaceConstraintsString;
+	QString notRemovedSpaceConstraintsString;
+
+	QList<SpaceConstraint*> removedSpaceConstraints;
+	QList<SpaceConstraint*> notRemovedSpaceConstraints;
+	
+	QSet<int> actsSet;
+	
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	QSet<int> filteredActivitiesIdsSet=QSet<int>(taDialog.filteredActivitiesIdsList.constBegin(), taDialog.filteredActivitiesIdsList.constEnd());
+#else
+	QSet<int> filteredActivitiesIdsSet=taDialog.filteredActivitiesIdsList.toSet();
+#endif
+	
+	if(unlockTime || unlockSpace) // ||unlockSpace is added on 2018-06-26, correcting a bug if the user only selected Space and the timetable was not generated.
+		for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList))
+			if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+				ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*)tc;
+				if(c->weightPercentage==100.0 && c->day>=0 && c->hour>=0){
+					if(filteredActivitiesIdsSet.contains(c->activityId)){
 						actsSet.insert(c->activityId);
 						if(unlockTime){
 							if(!c->permanentlyLocked){

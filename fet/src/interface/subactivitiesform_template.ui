@@ -22,7 +22,7 @@
      <widget class="QWidget" name="layoutWidget">
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
-        <widget class="QLabel" name="activeTextLabel">
+        <widget class="QLabel" name="numberTextLabel">
          <property name="text">
           <string notr="true">No: 1000 / 1000</string>
          </property>
@@ -35,7 +35,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLabel" name="totalTextLabel">
+        <widget class="QLabel" name="durationTextLabel">
          <property name="text">
           <string notr="true">Dur: 1000 / 1000</string>
          </property>
@@ -221,7 +221,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string comment="Advanced filter for the activities">Filter</string>
+          <string comment="Advanced filter for the subactivities">Filter</string>
          </property>
         </widget>
        </item>
@@ -251,7 +251,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string comment="Refers to activating all the listed activities">Activate all</string>
+          <string comment="Refers to activating all the listed subactivities">Activate all</string>
          </property>
         </widget>
        </item>
@@ -281,7 +281,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string comment="Refers to deactivating all the listed activities">Deactivate all</string>
+          <string comment="Refers to deactivating all the listed subactivities">Deactivate all</string>
          </property>
         </widget>
        </item>

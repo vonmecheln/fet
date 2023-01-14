@@ -278,6 +278,26 @@ void ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::ok()
 		return;
 	}
 	
+	int minOccupiedSlots=minOccupiedSpinBox->value();
+	
+	if(minOccupiedSlots==0){
+		QMessageBox::warning(this, tr("FET information"), tr("You specified min occupied time slots to be 0. This results in "
+		 "a useless constraint. Please correct."));
+		return;
+	}
+	
+	if(this->selectedActivitiesList.count()==0){
+		QMessageBox::warning(this, tr("FET information"),
+		 tr("Empty list of activities"));
+		return;
+	}
+	//we allow even only one activity
+	/*if(this->selectedActivitiesList.count()==1){
+		QMessageBox::warning(this, tr("FET information"),
+		 tr("Only one selected activity"));
+		return;
+	}*/
+	
 	this->_ctr->weightPercentage=weight;
 
 	QList<int> days;
@@ -291,28 +311,8 @@ void ModifyConstraintActivitiesOccupyMinTimeSlotsFromSelectionForm::ok()
 	this->_ctr->selectedDays=days;
 	this->_ctr->selectedHours=hours;
 	
-	int minOccupiedSlots=minOccupiedSpinBox->value();
-	
-	if(minOccupiedSlots==0){
-		QMessageBox::warning(this, tr("FET information"), tr("You specified min occupied time slots to be 0. This results in "
-		 "a useless constraint. Please correct."));
-		return;
-	}
-	
 	this->_ctr->minOccupiedTimeSlots=minOccupiedSlots;
 
-	if(this->selectedActivitiesList.count()==0){
-		QMessageBox::warning(this, tr("FET information"),
-		 tr("Empty list of activities"));
-		return;
-	}
-	//we allow even only one activity
-	/*if(this->selectedActivitiesList.count()==1){
-		QMessageBox::warning(this, tr("FET information"),
-		 tr("Only one selected activity"));
-		return;
-	}*/
-	
 	this->_ctr->activitiesIds=selectedActivitiesList;
 	this->_ctr->recomputeActivitiesSet();
 	

@@ -961,6 +961,9 @@
      <addaction name="separator"/>
      <addaction name="timetableLockActivitiesWithASpecifiedActivityTagAction"/>
      <addaction name="timetableUnlockActivitiesWithASpecifiedActivityTagAction"/>
+     <addaction name="separator"/>
+     <addaction name="timetableLockActivitiesWithAdvancedFilterAction"/>
+     <addaction name="timetableUnlockActivitiesWithAdvancedFilterAction"/>
     </widget>
     <widget class="QMenu" name="menuView_teachers">
      <property name="title">
@@ -2018,6 +2021,16 @@
   <action name="timetableUnlockActivitiesWithASpecifiedActivityTagAction">
    <property name="text">
     <string comment="It means unlock all the activities which have attached a specified activity tag">Unlock all activities with a specified activity tag</string>
+   </property>
+  </action>
+  <action name="timetableLockActivitiesWithAdvancedFilterAction">
+   <property name="text">
+    <string comment="It means lock all the activities selected with an advanced filter">Lock all activities selected with an advanced filter</string>
+   </property>
+  </action>
+  <action name="timetableUnlockActivitiesWithAdvancedFilterAction">
+   <property name="text">
+    <string comment="It means unlock all the activities selected with an advanced filter">Unlock all activities selected with an advanced filter</string>
    </property>
   </action>
   <action name="settingsShowVirtualRoomsInTimetablesAction">

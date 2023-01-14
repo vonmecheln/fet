@@ -726,6 +726,10 @@ FetMainForm::FetMainForm()
 	shortcutTimetableLockingMenu->addSeparator();
 	shortcutTimetableLockingMenu->addAction(timetableLockActivitiesWithASpecifiedActivityTagAction);
 	shortcutTimetableLockingMenu->addAction(timetableUnlockActivitiesWithASpecifiedActivityTagAction);
+	//2023-01-13
+	shortcutTimetableLockingMenu->addSeparator();
+	shortcutTimetableLockingMenu->addAction(timetableLockActivitiesWithAdvancedFilterAction);
+	shortcutTimetableLockingMenu->addAction(timetableUnlockActivitiesWithAdvancedFilterAction);
 	
 	shortcutTimetableAdvancedMenu=new QMenu();
 	shortcutTimetableAdvancedMenu->addAction(groupActivitiesInInitialOrderAction);
@@ -10696,6 +10700,43 @@ void FetMainForm::on_timetableUnlockActivitiesWithASpecifiedActivityTagAction_tr
 
 	//AdvancedLockUnlockForm::unlockActivityTag(this);
 	AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(this);
+}
+
+void FetMainForm::on_timetableLockActivitiesWithAdvancedFilterAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		return;
+	}
+
+	AdvancedLockUnlockForm::lockAdvancedFilter(this);
+}
+
+void FetMainForm::on_timetableUnlockActivitiesWithAdvancedFilterAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
+		return;
+	}
+
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+		//QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
+		QMessageBox::information(this, tr("FET information"), tr("The timetable is not generated, but anyway FET will proceed now"));
+		
+		AdvancedLockUnlockForm::unlockAdvancedFilterWithoutTimetable(this);
+		
+		return;
+	}
+
+	//AdvancedLockUnlockForm::unlockActivityTag(this);
+	AdvancedLockUnlockForm::unlockAdvancedFilterWithoutTimetable(this);
 }
 
 void FetMainForm::on_languageAction_triggered()

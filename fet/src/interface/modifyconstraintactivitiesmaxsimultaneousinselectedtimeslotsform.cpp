@@ -278,6 +278,27 @@ void ModifyConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::ok()
 		return;
 	}
 	
+	int maxSimultaneous=maxSimultaneousSpinBox->value();
+	
+	if(maxSimultaneous==0){
+		QMessageBox::warning(this, tr("FET information"), tr("You specified max simultaneous activities to be 0. This is "
+		 "not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, "
+		 "and help FET to find a timetable easier and faster, with an equivalent result. Please correct."));
+		return;
+	}
+	
+	if(this->selectedActivitiesList.count()==0){
+		QMessageBox::warning(this, tr("FET information"),
+		 tr("Empty list of activities"));
+		return;
+	}
+	//we allow even only one activity
+	/*if(this->selectedActivitiesList.count()==1){
+		QMessageBox::warning(this, tr("FET information"),
+		 tr("Only one selected activity"));
+		return;
+	}*/
+	
 	this->_ctr->weightPercentage=weight;
 
 	QList<int> days;
@@ -291,29 +312,8 @@ void ModifyConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::ok()
 	this->_ctr->selectedDays=days;
 	this->_ctr->selectedHours=hours;
 	
-	int maxSimultaneous=maxSimultaneousSpinBox->value();
-	
-	if(maxSimultaneous==0){
-		QMessageBox::warning(this, tr("FET information"), tr("You specified max simultaneous activities to be 0. This is "
-		 "not perfect from efficiency point of view, because you can use instead constraint activity(ies) preferred time slots, "
-		 "and help FET to find a timetable easier and faster, with an equivalent result. Please correct."));
-		return;
-	}
-	
 	this->_ctr->maxSimultaneous=maxSimultaneous;
 
-	if(this->selectedActivitiesList.count()==0){
-		QMessageBox::warning(this, tr("FET information"),
-		 tr("Empty list of activities"));
-		return;
-	}
-	//we allow even only one activity
-	/*if(this->selectedActivitiesList.count()==1){
-		QMessageBox::warning(this, tr("FET information"),
-		 tr("Only one selected activity"));
-		return;
-	}*/
-	
 	this->_ctr->activitiesIds=selectedActivitiesList;
 	this->_ctr->recomputeActivitiesSet();
 	

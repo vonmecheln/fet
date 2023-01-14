@@ -20,7 +20,6 @@
 #include "longtextmessagebox.h"
 
 #include "addconstraintminhalfdaysbetweenactivitiesform.h"
-#include "spaceconstraint.h"
 
 #include <QListWidget>
 #include <QAbstractItemView>

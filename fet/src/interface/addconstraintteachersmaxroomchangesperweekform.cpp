@@ -20,7 +20,6 @@
 #include "longtextmessagebox.h"
 
 #include "addconstraintteachersmaxroomchangesperweekform.h"
-#include "spaceconstraint.h"
 
 AddConstraintTeachersMaxRoomChangesPerWeekForm::AddConstraintTeachersMaxRoomChangesPerWeekForm(QWidget* parent): QDialog(parent)
 {

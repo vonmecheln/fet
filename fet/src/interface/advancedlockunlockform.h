@@ -20,7 +20,16 @@
 #ifndef ADVANCEDLOCKUNLOCKFORM_H
 #define ADVANCEDLOCKUNLOCKFORM_H
 
+#include <QList>
+
 #include <QObject>
+
+#include <QCheckBox>
+#include <QListWidget>
+
+#include "advancedfilterform.h"
+
+class Activity;
 
 class TimeConstraint;
 class SpaceConstraint;
@@ -28,7 +37,75 @@ class SpaceConstraint;
 bool compareTimeConstraintsActivityPreferredStartingTimeActivitiesIds(TimeConstraint* a, TimeConstraint* b);
 bool compareSpaceConstraintsActivityPreferredRoomActivitiesIds(SpaceConstraint* a, SpaceConstraint* b);
 
-class AdvancedLockUnlockForm: public QObject{
+class LockAdvancedDialog : public QDialog{
+	Q_OBJECT
+	
+	QCheckBox* filterCheckBox;
+	
+	QLabel* numberLabel;
+	QLabel* durationLabel;
+	
+	bool all; //all or any, true means all, false means any
+	QList<int> descrDetDescrDetDescrWithConstraints;
+	QList<int> contains;
+	QStringList text;
+	bool caseSensitive;
+	
+	bool filterOk(Activity* act);
+
+	void filterChanged();
+
+public:
+	AdvancedFilterForm* filterForm;
+
+	QList<int> filteredActivitiesIndicesList; //indices in the internal activities list.
+	QCheckBox* timeCheckBox;
+	QCheckBox* spaceCheckBox;
+	
+	QListWidget* selectedActivitiesLW;
+	
+	LockAdvancedDialog(QWidget* parent);
+	~LockAdvancedDialog();
+	
+public slots:
+	void filter(bool selected);
+};
+
+class UnlockAdvancedDialog : public QDialog{
+	Q_OBJECT
+	
+	QCheckBox* filterCheckBox;
+	
+	QLabel* numberLabel;
+	QLabel* durationLabel;
+
+	bool all; //all or any, true means all, false means any
+	QList<int> descrDetDescrDetDescrWithConstraints;
+	QList<int> contains;
+	QStringList text;
+	bool caseSensitive;
+	
+	bool filterOk(Activity* act);
+
+	void filterChanged();
+
+public:
+	AdvancedFilterForm* filterForm;
+
+	QList<int> filteredActivitiesIdsList; //ids in the activities list.
+	QCheckBox* timeCheckBox;
+	QCheckBox* spaceCheckBox;
+	
+	QListWidget* selectedActivitiesLW;
+	
+	UnlockAdvancedDialog(QWidget* parent);
+	~UnlockAdvancedDialog();
+
+public slots:
+	void filter(bool selected);
+};
+
+class AdvancedLockUnlockForm : public QObject{
 	Q_OBJECT
 
 public:
@@ -49,6 +126,9 @@ public:
 //	static void unlockActivityTag(QWidget* parent);
 
 	static void unlockActivityTagWithoutTimetable(QWidget* parent);
+
+	static void lockAdvancedFilter(QWidget* parent);
+	static void unlockAdvancedFilterWithoutTimetable(QWidget* parent);
 };
 
 #endif

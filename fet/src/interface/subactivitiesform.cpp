@@ -48,6 +48,10 @@
 #include <QtAlgorithms>
 #include <QtGlobal>
 
+extern bool teachers_schedule_ready;
+extern bool students_schedule_ready;
+extern bool rooms_schedule_ready;
+
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
@@ -534,9 +538,9 @@ void SubactivitiesForm::filterChanged()
 	assert(nh-ninacth>=0);
 	DA=nh-ninacth;
 	DT=nh;
-	activeTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active subactivities, %2 is the total number of subactivities."
+	numberTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active subactivities, %2 is the total number of subactivities."
 		" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
-	totalTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active subactivities, %2 is the total duration of subactivities."
+	durationTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active subactivities, %2 is the total duration of subactivities."
 		" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
 	
 	if(subactivitiesListWidget->count()>0)
@@ -620,15 +624,15 @@ void SubactivitiesForm::help()
 	s+="\n\n";
 	s+=tr("Example: No: 100 / 102, Dur: 114 / 117. They represent: 100 - the number of active (sub)activities,"
 		" then 102 - the number of total (sub)activities,"
-		" 114 - the duration of active activities (in periods or FET hours) and 117 - the duration of total activities"
-		" (in periods or FET hours). In this example we have 2 inactive activities with their combined duration being 3 periods.");
+		" 114 - the duration of active (sub)activities (in periods or FET hours) and 117 - the duration of total (sub)activities"
+		" (in periods or FET hours). In this example we have 2 inactive (sub)activities with their combined duration being 3 periods.");
 
 	s+="\n\n";
-	s+=tr("Explanation of the short description of an activity: first comes the id."
-		" If the activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration."
+	s+=tr("Explanation of the short description of a (sub)activity: first comes the id."
+		" If the (sub)activity is inactive, an X follows. Then the duration. Then, if the activity is split, a slash and the total duration."
 		" Then teachers, subject, activity tag (if it is not void) and students. Then the number of students (if specified).");
 	s+="\n\n";
-	s+=tr("The activities which are inactive:");
+	s+=tr("The (sub)activities which are inactive:");
 	s+="\n";
 	s+=" -";
 	s+=tr("have an X mark after the id.");
@@ -713,6 +717,10 @@ void SubactivitiesForm::subactivityComments()
 	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
+
+		teachers_schedule_ready=false;
+		students_schedule_ready=false;
+		rooms_schedule_ready=false;
 
 		subactivitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
 		subactivityChanged();
@@ -799,6 +807,10 @@ void SubactivitiesForm::activateSubactivity()
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
+		teachers_schedule_ready=false;
+		students_schedule_ready=false;
+		rooms_schedule_ready=false;
+
 		if(!filterOk(act)){ //Maybe the subactivity is no longer visible in the list widget, because of the filter.
 			visibleSubactivitiesList.removeAt(i);
 			subactivitiesListWidget->setCurrentRow(-1);
@@ -822,9 +834,9 @@ void SubactivitiesForm::activateSubactivity()
 		///////
 		NA++;
 		DA+=act->duration;
-		activeTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active subactivities, %2 is the total number of subactivities."
+		numberTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active subactivities, %2 is the total number of subactivities."
 			" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
-		totalTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active subactivities, %2 is the total duration of subactivities."
+		durationTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active subactivities, %2 is the total duration of subactivities."
 			" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
 	}
 	
@@ -851,6 +863,10 @@ void SubactivitiesForm::deactivateSubactivity()
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
+		teachers_schedule_ready=false;
+		students_schedule_ready=false;
+		rooms_schedule_ready=false;
+
 		if(!filterOk(act)){ //Maybe the subactivity is no longer visible in the list widget, because of the filter.
 			visibleSubactivitiesList.removeAt(i);
 			subactivitiesListWidget->setCurrentRow(-1);
@@ -876,9 +892,9 @@ void SubactivitiesForm::deactivateSubactivity()
 		assert(NA>=0);
 		DA-=act->duration;
 		assert(DA>=0);
-		activeTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active subactivities, %2 is the total number of subactivities."
+		numberTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active subactivities, %2 is the total number of subactivities."
 			" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
-		totalTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active subactivities, %2 is the total duration of subactivities."
+		durationTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active subactivities, %2 is the total duration of subactivities."
 			" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
 	}
 	
@@ -905,6 +921,10 @@ void SubactivitiesForm::activateAllSubactivities()
 	if(cnt>0){
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
+
+		teachers_schedule_ready=false;
+		students_schedule_ready=false;
+		rooms_schedule_ready=false;
 		
 		filterChanged();
 		
@@ -934,6 +954,10 @@ void SubactivitiesForm::deactivateAllSubactivities()
 	if(cnt>0){
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
+
+		teachers_schedule_ready=false;
+		students_schedule_ready=false;
+		rooms_schedule_ready=false;
 		
 		filterChanged();
 		

@@ -78,12 +78,6 @@ void ModifyConstraintTeacherMaxGapsPerRealDayForm::ok()
 		return;
 	}
 
-	this->_ctr->weightPercentage=weight;
-	
-	this->_ctr->maxGaps=maxGapsSpinBox->value();
-
-	this->_ctr->allowOneDayExceptionPlusOne=exceptionCheckBox->isChecked();
-
 	QString teacher_name=teachersComboBox->currentText();
 	int teacher_ID=gt.rules.searchTeacher(teacher_name);
 	if(teacher_ID<0){
@@ -91,6 +85,13 @@ void ModifyConstraintTeacherMaxGapsPerRealDayForm::ok()
 			tr("Invalid teacher"));
 		return;
 	}
+
+	this->_ctr->weightPercentage=weight;
+	
+	this->_ctr->maxGaps=maxGapsSpinBox->value();
+
+	this->_ctr->allowOneDayExceptionPlusOne=exceptionCheckBox->isChecked();
+
 	this->_ctr->teacherName=teacher_name;
 
 	gt.rules.internalStructureComputed=false;

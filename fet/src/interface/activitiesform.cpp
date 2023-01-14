@@ -50,6 +50,10 @@
 #include <QtAlgorithms>
 #include <QtGlobal>
 
+extern bool teachers_schedule_ready;
+extern bool students_schedule_ready;
+extern bool rooms_schedule_ready;
+
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
@@ -538,9 +542,9 @@ void ActivitiesForm::filterChanged()
 	assert(nh-ninacth>=0);
 	DA=nh-ninacth;
 	DT=nh;
-	activeTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
+	numberTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
 		" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
-	totalTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
+	durationTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
 		" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
 	
 	if(activitiesListWidget->count()>0)
@@ -862,6 +866,10 @@ void ActivitiesForm::activityComments()
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
+		teachers_schedule_ready=false;
+		students_schedule_ready=false;
+		rooms_schedule_ready=false;
+
 		activitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
 		activityChanged();
 	}
@@ -946,7 +954,11 @@ void ActivitiesForm::activateActivity()
 		
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
-
+		
+		teachers_schedule_ready=false;
+		students_schedule_ready=false;
+		rooms_schedule_ready=false;
+		
 		if(!filterOk(act)){ //Maybe the activity is no longer visible in the list widget, because of the filter.
 			visibleActivitiesList.removeAt(i);
 			activitiesListWidget->setCurrentRow(-1);
@@ -970,9 +982,9 @@ void ActivitiesForm::activateActivity()
 		///////
 		NA++;
 		DA+=act->duration;
-		activeTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
+		numberTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
 			" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
-		totalTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
+		durationTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
 			" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
 	}
 	
@@ -999,6 +1011,10 @@ void ActivitiesForm::deactivateActivity()
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
+		teachers_schedule_ready=false;
+		students_schedule_ready=false;
+		rooms_schedule_ready=false;
+
 		if(!filterOk(act)){ //Maybe the activity is no longer visible in the list widget, because of the filter.
 			visibleActivitiesList.removeAt(i);
 			activitiesListWidget->setCurrentRow(-1);
@@ -1024,9 +1040,9 @@ void ActivitiesForm::deactivateActivity()
 		assert(NA>=0);
 		DA-=act->duration;
 		assert(DA>=0);
-		activeTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
+		numberTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
 			" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
-		totalTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
+		durationTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
 			" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
 	}
 	
@@ -1053,6 +1069,10 @@ void ActivitiesForm::activateAllActivities()
 	if(cnt>0){
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
+
+		teachers_schedule_ready=false;
+		students_schedule_ready=false;
+		rooms_schedule_ready=false;
 		
 		filterChanged();
 		
@@ -1082,6 +1102,10 @@ void ActivitiesForm::deactivateAllActivities()
 	if(cnt>0){
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
+
+		teachers_schedule_ready=false;
+		students_schedule_ready=false;
+		rooms_schedule_ready=false;
 		
 		filterChanged();
 		

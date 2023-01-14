@@ -20,7 +20,6 @@
 #include "longtextmessagebox.h"
 
 #include "addconstraintsubjectpreferredroomform.h"
-#include "spaceconstraint.h"
 
 AddConstraintSubjectPreferredRoomForm::AddConstraintSubjectPreferredRoomForm(QWidget* parent): QDialog(parent)
 {

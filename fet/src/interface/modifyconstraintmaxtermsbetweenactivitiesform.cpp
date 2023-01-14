@@ -17,14 +17,13 @@
 
 #include <QMessageBox>
 
-#include "modifyconstraintmaxtermsbetweenactivitiesform.h"
-#include "spaceconstraint.h"
-
 #include <QList>
 
 #include <QListWidget>
 #include <QAbstractItemView>
 #include <QScrollBar>
+
+#include "modifyconstraintmaxtermsbetweenactivitiesform.h"
 
 ModifyConstraintMaxTermsBetweenActivitiesForm::ModifyConstraintMaxTermsBetweenActivitiesForm(QWidget* parent, ConstraintMaxTermsBetweenActivities* ctr): QDialog(parent)
 {

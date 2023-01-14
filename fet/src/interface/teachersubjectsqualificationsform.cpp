@@ -20,7 +20,6 @@
 #include "longtextmessagebox.h"
 
 #include "teachersubjectsqualificationsform.h"
-#include "spaceconstraint.h"
 #include "teacher.h"
 
 #include <QListWidget>

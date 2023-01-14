@@ -20,7 +20,6 @@
 #include "longtextmessagebox.h"
 
 #include "addconstraintteacherhomeroomform.h"
-#include "spaceconstraint.h"
 
 AddConstraintTeacherHomeRoomForm::AddConstraintTeacherHomeRoomForm(QWidget* parent): QDialog(parent)
 {

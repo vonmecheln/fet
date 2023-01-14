@@ -17,12 +17,12 @@
 
 #include <QMessageBox>
 
+#include <QSet>
+
 #include "longtextmessagebox.h"
 
 #include "addconstraintactivitypreferredroomform.h"
-#include "spaceconstraint.h"
 
-#include <QSet>
 #include "lockunlock.h"
 
 AddConstraintActivityPreferredRoomForm::AddConstraintActivityPreferredRoomForm(QWidget* parent): QDialog(parent)

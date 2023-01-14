@@ -17,15 +17,14 @@
 
 #include <QMessageBox>
 
-#include "modifyconstraintteacherroomnotavailabletimesform.h"
-#include "spaceconstraint.h"
-
 #include <QHeaderView>
 #include <QTableWidget>
 #include <QTableWidgetItem>
 
 #include <QBrush>
 #include <QColor>
+
+#include "modifyconstraintteacherroomnotavailabletimesform.h"
 
 #define YES		(QString("X"))
 #define NO		(QString(" "))

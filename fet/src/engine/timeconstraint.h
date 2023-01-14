@@ -1682,7 +1682,7 @@ class ConstraintTeachersMaxGapsPerWeek: public TimeConstraint{
 	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxGapsPerWeek)
 
 public:
-	int maxGaps;	
+	int maxGaps;
 
 	ConstraintTeachersMaxGapsPerWeek();
 
@@ -6261,7 +6261,6 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-
 //morning
 class ConstraintTeacherMorningIntervalMaxDaysPerWeek: public TimeConstraint{
 	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherMorningIntervalMaxDaysPerWeek)
@@ -6363,7 +6362,7 @@ public:
 
 //afternoon
 class ConstraintTeacherAfternoonIntervalMaxDaysPerWeek: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherIntervalMaxDaysPerWeek)
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeacherAfternoonIntervalMaxDaysPerWeek)
 
 public:
 	/**
@@ -6417,7 +6416,7 @@ public:
 };
 
 class ConstraintTeachersAfternoonIntervalMaxDaysPerWeek: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersIntervalMaxDaysPerWeek)
+	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersAfternoonIntervalMaxDaysPerWeek)
 
 public:
 	/**
@@ -8264,7 +8263,7 @@ public:
 
 //2020-06-26
 class ConstraintStudentsSetMorningIntervalMaxDaysPerWeek: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetIntervalMaxDaysPerWeek)
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetMorningIntervalMaxDaysPerWeek)
 
 public:
 	/**
@@ -8325,7 +8324,7 @@ public:
 };
 
 class ConstraintStudentsMorningIntervalMaxDaysPerWeek: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsIntervalMaxDaysPerWeek)
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsMorningIntervalMaxDaysPerWeek)
 
 public:
 	/**
@@ -8370,7 +8369,7 @@ public:
 };
 
 class ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetIntervalMaxDaysPerWeek)
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek)
 
 public:
 	/**
@@ -8431,7 +8430,7 @@ public:
 };
 
 class ConstraintStudentsAfternoonIntervalMaxDaysPerWeek: public TimeConstraint{
-	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsIntervalMaxDaysPerWeek)
+	Q_DECLARE_TR_FUNCTIONS(ConstraintStudentsAfternoonIntervalMaxDaysPerWeek)
 
 public:
 	/**

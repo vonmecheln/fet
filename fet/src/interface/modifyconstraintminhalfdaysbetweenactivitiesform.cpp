@@ -18,7 +18,6 @@
 #include <QMessageBox>
 
 #include "modifyconstraintminhalfdaysbetweenactivitiesform.h"
-#include "spaceconstraint.h"
 
 #include <QList>
 

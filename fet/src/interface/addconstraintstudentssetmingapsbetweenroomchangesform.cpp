@@ -20,7 +20,6 @@
 #include "longtextmessagebox.h"
 
 #include "addconstraintstudentssetmingapsbetweenroomchangesform.h"
-#include "spaceconstraint.h"
 
 AddConstraintStudentsSetMinGapsBetweenRoomChangesForm::AddConstraintStudentsSetMinGapsBetweenRoomChangesForm(QWidget* parent): QDialog(parent)
 {

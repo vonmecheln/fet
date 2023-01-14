@@ -17,14 +17,13 @@
 
 #include <QMessageBox>
 
-#include "modifyconstraintmindaysbetweenactivitiesform.h"
-#include "spaceconstraint.h"
-
 #include <QList>
 
 #include <QListWidget>
 #include <QAbstractItemView>
 #include <QScrollBar>
+
+#include "modifyconstraintmindaysbetweenactivitiesform.h"
 
 ModifyConstraintMinDaysBetweenActivitiesForm::ModifyConstraintMinDaysBetweenActivitiesForm(QWidget* parent, ConstraintMinDaysBetweenActivities* ctr): QDialog(parent)
 {

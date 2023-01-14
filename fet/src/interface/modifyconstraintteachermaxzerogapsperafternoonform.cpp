@@ -72,8 +72,6 @@ void ModifyConstraintTeacherMaxZeroGapsPerAfternoonForm::ok()
 		return;
 	}
 
-	this->_ctr->weightPercentage=weight;
-	
 	QString teacher_name=teachersComboBox->currentText();
 	int teacher_ID=gt.rules.searchTeacher(teacher_name);
 	if(teacher_ID<0){
@@ -81,6 +79,9 @@ void ModifyConstraintTeacherMaxZeroGapsPerAfternoonForm::ok()
 			tr("Invalid teacher"));
 		return;
 	}
+
+	this->_ctr->weightPercentage=weight;
+	
 	this->_ctr->teacherName=teacher_name;
 
 	gt.rules.internalStructureComputed=false;

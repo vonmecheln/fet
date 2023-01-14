@@ -17,14 +17,13 @@
 
 #include <QMessageBox>
 
-#include "modifyconstraintactivitiessamestartingdayform.h"
-#include "spaceconstraint.h"
-
 #include <QList>
 
 #include <QListWidget>
 #include <QAbstractItemView>
 #include <QScrollBar>
+
+#include "modifyconstraintactivitiessamestartingdayform.h"
 
 ModifyConstraintActivitiesSameStartingDayForm::ModifyConstraintActivitiesSameStartingDayForm(QWidget* parent, ConstraintActivitiesSameStartingDay* ctr): QDialog(parent)
 {

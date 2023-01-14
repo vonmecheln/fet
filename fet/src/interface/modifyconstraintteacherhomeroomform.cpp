@@ -18,7 +18,6 @@
 #include <QMessageBox>
 
 #include "modifyconstraintteacherhomeroomform.h"
-#include "spaceconstraint.h"
 
 ModifyConstraintTeacherHomeRoomForm::ModifyConstraintTeacherHomeRoomForm(QWidget* parent, ConstraintTeacherHomeRoom* ctr): QDialog(parent)
 {

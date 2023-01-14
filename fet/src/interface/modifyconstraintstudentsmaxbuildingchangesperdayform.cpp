@@ -18,7 +18,6 @@
 #include <QMessageBox>
 
 #include "modifyconstraintstudentsmaxbuildingchangesperdayform.h"
-#include "spaceconstraint.h"
 
 ModifyConstraintStudentsMaxBuildingChangesPerDayForm::ModifyConstraintStudentsMaxBuildingChangesPerDayForm(QWidget* parent, ConstraintStudentsMaxBuildingChangesPerDay* ctr): QDialog(parent)
 {

@@ -20,7 +20,6 @@
 #include "longtextmessagebox.h"
 
 #include "addconstraintteachermaxroomchangesperweekform.h"
-#include "spaceconstraint.h"
 
 AddConstraintTeacherMaxRoomChangesPerWeekForm::AddConstraintTeacherMaxRoomChangesPerWeekForm(QWidget* parent): QDialog(parent)
 {
@@ -36,7 +35,7 @@ AddConstraintTeacherMaxRoomChangesPerWeekForm::AddConstraintTeacherMaxRoomChange
 
 	QSize tmp1=teachersComboBox->minimumSizeHint();
 	Q_UNUSED(tmp1);
-		
+	
 	maxChangesSpinBox->setMinimum(0);
 	maxChangesSpinBox->setMaximum(gt.rules.nHoursPerDay*gt.rules.nDaysPerWeek);
 	maxChangesSpinBox->setValue(3);

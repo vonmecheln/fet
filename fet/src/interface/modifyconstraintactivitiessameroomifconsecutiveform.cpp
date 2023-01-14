@@ -17,14 +17,13 @@
 
 #include <QMessageBox>
 
-#include "longtextmessagebox.h"
-
-#include "modifyconstraintactivitiessameroomifconsecutiveform.h"
-#include "spaceconstraint.h"
-
 #include <QListWidget>
 #include <QAbstractItemView>
 #include <QScrollBar>
+
+#include "longtextmessagebox.h"
+
+#include "modifyconstraintactivitiessameroomifconsecutiveform.h"
 
 ModifyConstraintActivitiesSameRoomIfConsecutiveForm::ModifyConstraintActivitiesSameRoomIfConsecutiveForm(QWidget* parent, ConstraintActivitiesSameRoomIfConsecutive* ctr): QDialog(parent)
 {
@@ -117,8 +116,6 @@ void ModifyConstraintActivitiesSameRoomIfConsecutiveForm::ok()
 		return;
 	}
 	
-	this->_ctr->weightPercentage=weight;
-
 	if(this->selectedActivitiesList.count()==0){
 		QMessageBox::warning(this, tr("FET information"),
 		 tr("Empty list of activities"));
@@ -130,6 +127,8 @@ void ModifyConstraintActivitiesSameRoomIfConsecutiveForm::ok()
 		return;
 	}
 	
+	this->_ctr->weightPercentage=weight;
+
 	this->_ctr->activitiesIds=selectedActivitiesList;
 	this->_ctr->recomputeActivitiesSet();
 	

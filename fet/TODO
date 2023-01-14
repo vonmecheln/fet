@@ -8176,3 +8176,15 @@ original/translation checks.
 Liviu Lalescu:
 
 6. and 7. were done a time ago with the help of Ispell / Aspell.
+
+487---------------------------------------------------------
+From Vangelis Karafillidis:
+
+I am thinking if it's possible to add some buttons regarding already implemented features of FET in the window "View teachers time horizontal timetable"
+in order to facilitate the modification of the already generated timetable.
+
+Is it possible to add a button at this window... for deactivating/activating selected activities?
+
+Liviu Lalescu:
+
+It is possible, but it is bad to mix the data with the timetable.

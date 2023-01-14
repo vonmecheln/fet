@@ -19,17 +19,16 @@
 
 #include <QMessageBox>
 
-#include "longtextmessagebox.h"
-
-#include "addconstraintroomnotavailabletimesform.h"
-#include "spaceconstraint.h"
-
 #include <QHeaderView>
 #include <QTableWidget>
 #include <QTableWidgetItem>
 
 #include <QBrush>
 #include <QColor>
+
+#include "longtextmessagebox.h"
+
+#include "addconstraintroomnotavailabletimesform.h"
 
 #define YES		(QString("X"))
 #define NO		(QString(" "))

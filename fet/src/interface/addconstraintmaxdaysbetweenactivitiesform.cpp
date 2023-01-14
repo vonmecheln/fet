@@ -22,7 +22,6 @@
 #include "longtextmessagebox.h"
 
 #include "addconstraintmaxdaysbetweenactivitiesform.h"
-#include "spaceconstraint.h"
 
 #include <QListWidget>
 #include <QAbstractItemView>

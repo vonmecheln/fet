@@ -133,12 +133,6 @@ void ModifyConstraintActivitiesMinInATermForm::ok()
 		return;
 	}
 	
-	this->_ctr->weightPercentage=weight;
-	
-	this->_ctr->minActivitiesInATerm=minActivitiesInATerm;
-
-	this->_ctr->allowEmptyTerms=allowEmptyTerms;
-
 	if(this->selectedActivitiesList.count()==0){
 		QMessageBox::warning(this, tr("FET information"),
 		 tr("Empty list of activities"));
@@ -151,6 +145,12 @@ void ModifyConstraintActivitiesMinInATermForm::ok()
 		return;
 	}*/
 	
+	this->_ctr->weightPercentage=weight;
+	
+	this->_ctr->minActivitiesInATerm=minActivitiesInATerm;
+
+	this->_ctr->allowEmptyTerms=allowEmptyTerms;
+
 	this->_ctr->activitiesIds=selectedActivitiesList;
 	this->_ctr->recomputeActivitiesSet();
 	
