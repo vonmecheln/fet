@@ -5,7 +5,7 @@ File export.cpp
 /***************************************************************************
                                 FET
                           -------------------
-   copyright            : (C) by Lalescu Liviu
+   copyright            : (C) by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************
                           export.cpp  -  description
@@ -1213,7 +1213,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 				if(diffStudents)
 					s.append(tr("different students"));
 				if(diffCompNStud)
-					s.append(tr("different boolean variable 'must compute n total students'"));
+					s.append(tr("different Boolean variable 'must compute n total students'"));
 				if(diffNStud)
 					s.append(tr("different number of students"));
 				if(diffActive)

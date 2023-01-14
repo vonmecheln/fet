@@ -1730,11 +1730,14 @@ From Silver (on forum):
 
 He needs "teachers_rooms.html" in the statistics folder, he thinks it would be useful for the examination timetable.
 
-107---------------------------------------------------------
+107-----------partially DONE in FET-6.8.0-------------------
 From Horatiu Halmajan and Yush Yuen:
 
 They suggest the possibility of selecting more constraints in the all time/space constraints dialogs and
 de(activate)/remove them in a single operation.
+
+Liviu Lalescu, 8 January 2023: In FET-6.8.0 it is now possible to activate/deactivate all the constraints listed in the all time/space constraints
+dialog (and it was possible since a long time now to select an advanced filter there).
 
 108---------------------------------------------------------
 From skinkone (on forum):
@@ -2519,7 +2522,7 @@ completed version, unlock some year, then let the program to run again.
 Liviu: I did such a custom version for Yush, but it turns out not to work
 as needed, because of broken soft constraints.
 
-158---------------------------------------------------------
+158------------------partially DONE in FET-6.8.0------------
 From Yush Yuen:
 
 (Also suggested by daviodan: multiple selection with Ctrl or Shift in the
@@ -2533,6 +2536,10 @@ student view of the generated timetable, select all, then click unlock time.
 
 It would be nice if I can just do multiple selection and click the "remove"
 or deactivate button just once.
+
+Liviu Lalescu, 8 January 2023: In FET-6.8.0 it is now possible to activate/deactivate
+all the constraints listed in the all time/space constraints dialog (and it was
+possible since a long time now to select an advanced filter there).
 
 159---------------------------------------------------------
 From Volker Dirr:
@@ -4295,10 +4302,7 @@ It should be some general option in FET allowing user to decide wether show this
 When timetable is finished it should be easy switched off visibility of the two tags in all timetable in HTML files.
 I don't want to insert these tags manually in activity dialog because it is some cumbersome.
 
-246---------------------------------------------------------
-From Nguyễn Hữu Duyệt (on forum):
-
-Activate/deactivate more activities at once.
+246---------------DONE since FET-6.8.0----------------------
 
 247---------------------------------------------------------
 From Volker Dirr:
@@ -4823,12 +4827,7 @@ I moved the constraint to Students....
 
 I think that this condition can be found at pre-compute... sum of the hours of all the splits with the tags / number of working days should be <= max daily hour with tag
 
-286---------------------------------------------------------
-From noddy11:
-
-He asks if there is an easier way to activate/deactivate activities. It is to complicated since he needs do it many times.
-A first solution might be that the "active" checkbox in activities will be related to all subactivities. Activating subactivities only by the modify subactivities form.
-An other solution might be activating similar to the activating of constraints.
+286----------------------DONE since FET 6.8.0---------------
 
 287---------------------------------------------------------
 From Davide Cottignoli (on forum):
@@ -6383,7 +6382,7 @@ Volker has a private file which sometimes is solvable, but sometimes may cycle. 
 
 366---------------DONE since FET-5.40.1 2019-11-14----------
 
-367---------------------------------------------------------
+367---------------partially DONE since FET-6.8.0------------
 From Anthony Siaudeau:
 
 Is there a possibility to have tags to constraints (for example to activate/inactivate a group of constraints with one click) ?
@@ -6398,6 +6397,9 @@ it only much more complicated to users with low skills since they won't understa
 Anthony Siaudeau:
 
 I understand the risks for soft users. Is it possible to add in advanced settings an unlock button for active check boxes ?
+
+Liviu Lalescu: since FET-6.8.0 (2023-01-08) it is possible to activate/deactivate all the listed time/space constraints and activities. There is also
+an advanced filter there (for the time/space constraints available since a long time now, for activities starting with this FET version).
 
 368---------------------------------------------------------
 (see also items #58, #149, and #396)
@@ -8115,3 +8117,62 @@ the regular version of FET, and it’s difficult to explain to someone how to us
 (“Days” are really teachers/events, “Activities” are really individual student choices, etc.). For those users who only need to create groups with students and teachers
 assigned to a time slot, the Block Planning mode is challenging to learn, and a dedicated Block Planner could be written with language that matches the “real” meanings.
 Thus would make it easier for a beginner to use if creating these sorts of groups is all they require.
+
+486---------------------------------------------------------
+From Volker Dirr:
+
+how about writing a programm/script that checks the translation file.
+
+1. check if it is marked as translated, even there is no translation.
+
+2. warn if a string is translated different at an other location (that 
+might be correct, but i guess in most cases the translations should be 
+the same. so warn if you find that)
+
+3. do the opposite check from 2. so read all translated strings and 
+check if the original string is always the same.
+
+4. write the original strings alphabetically sorted, since a human can 
+maybe see sentences that are very similar (but should be the same. just 
+a misspelling, a missing character/space).
+
+5. do it similar as in 4 for the translated strings
+
+this is maybe too nasty:
+
+6. split the original strings into words. then sort them alphabetically 
+and write them, so a human or a spellchecker can read them.
+
+7. do the same for translation strings
+
+8. check for double characters. (of course it is ok for numbers and 
+letters, but not for space, dot (might be correct, so just warn, so a 
+human can check), comma, dash, enter/return, ...
+
+9. count if number of new lines is similar in original string and 
+translation.
+
+10. count opening braces and check if count of closing braces is the 
+same. do it for (, { and [. do it for original and translation
+
+11. count braces and compare number of in original and translation
+
+12. count dots and check if number in original and translation is the 
+same. maybe also count oder characters like :, -, ?, ! and compare.
+
+13. check if original.length() is max 2*translation() string (since it 
+depend on the languarges a user must be able to modify that value. Do 
+similar for translation() is max 2*original.length().
+
+14. do similar like in 13, just with counting words
+
+15. support other translation files, not only qt linguist.
+
+...
+
+so it is a tool like cppcheck for sourcecode, just for doing static 
+original/translation checks.
+
+Liviu Lalescu:
+
+6. and 7. were done a time ago with the help of Ispell / Aspell.

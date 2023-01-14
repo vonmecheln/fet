@@ -2,7 +2,7 @@
                           activitiesform.cpp  -  description
                              -------------------
     begin                : Wed Apr 23 2003
-    copyright            : (C) 2003 by Lalescu Liviu
+    copyright            : (C) 2003 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -27,6 +27,8 @@
 
 #include "activityplanningform.h"
 
+#include "advancedfilterform.h"
+
 #include <QString>
 #include <QMessageBox>
 
@@ -44,14 +46,29 @@
 #include <QObject>
 #include <QMetaObject>
 
+#include <QProgressDialog>
+#include <QtAlgorithms>
+#include <QtGlobal>
+
 extern const QString COMPANY;
 extern const QString PROGRAM;
+
+const int DESCRIPTION=0;
+const int DETDESCRIPTION=1;
+const int DETDESCRIPTIONWITHCONSTRAINTS=2;
+
+const int CONTAINS=0;
+const int DOESNOTCONTAIN=1;
+const int REGEXP=2;
+const int NOTREGEXP=3;
 
 ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, const QString& studentsSetName, const QString& subjectName, const QString& activityTagName): QDialog(parent)
 {
 	setupUi(this);
+
+	filterCheckBox->setChecked(false);
 	
-	activityTextEdit->setReadOnly(true);
+	currentActivityTextEdit->setReadOnly(true);
 
 	modifyActivityPushButton->setDefault(true);
 
@@ -75,11 +92,47 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	connect(removeActivityPushButton, SIGNAL(clicked()), this, SLOT(removeActivity()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
+	connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+
 	connect(modifyActivityPushButton, SIGNAL(clicked()), this, SLOT(modifyActivity()));
 	connect(activitiesListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyActivity()));
 	connect(showRelatedCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
 	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
+
+	connect(activatePushButton, SIGNAL(clicked()), this, SLOT(activateActivity()));
+	connect(deactivatePushButton, SIGNAL(clicked()), this, SLOT(deactivateActivity()));
+
+	connect(activateAllPushButton, SIGNAL(clicked()), this, SLOT(activateAllActivities()));
+	connect(deactivateAllPushButton, SIGNAL(clicked()), this, SLOT(deactivateAllActivities()));
+
 	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(activityComments()));
+
+	//////////////////
+	QString settingsName="ActivitiesAdvancedFilterForm";
+	
+	all=settings.value(settingsName+"/all-conditions", "true").toBool();
+	
+	descrDetDescrDetDescrWithConstraints.clear();
+	int n=settings.value(settingsName+"/number-of-descriptions", "1").toInt();
+	for(int i=0; i<n; i++)
+		descrDetDescrDetDescrWithConstraints.append(settings.value(settingsName+"/description/"+CustomFETString::number(i+1), CustomFETString::number(DESCRIPTION)).toInt());
+	
+	contains.clear();
+	n=settings.value(settingsName+"/number-of-contains", "1").toInt();
+	for(int i=0; i<n; i++)
+		contains.append(settings.value(settingsName+"/contains/"+CustomFETString::number(i+1), CustomFETString::number(CONTAINS)).toInt());
+	
+	text.clear();
+	n=settings.value(settingsName+"/number-of-texts", "1").toInt();
+	for(int i=0; i<n; i++)
+		text.append(settings.value(settingsName+"/text/"+CustomFETString::number(i+1), QString("")).toString());
+
+	caseSensitive=settings.value(settingsName+"/case-sensitive", "false").toBool();
+	
+	useFilter=false;
+	
+	assert(filterCheckBox->isChecked()==false);
+	//////////////////
 
 	invertedTeacherCheckBox->setChecked(false);
 	invertedStudentsCheckBox->setChecked(false);
@@ -179,6 +232,27 @@ ActivitiesForm::~ActivitiesForm()
 	settings.setValue(this->metaObject()->className()+QString("/inverted-students-check-box-state"), invertedStudentsCheckBox->isChecked());
 	settings.setValue(this->metaObject()->className()+QString("/inverted-subject-check-box-state"), invertedSubjectCheckBox->isChecked());
 	settings.setValue(this->metaObject()->className()+QString("/inverted-activity-tag-check-box-state"), invertedActivityTagCheckBox->isChecked());*/
+
+	QString settingsName="ActivitiesAdvancedFilterForm";
+	
+	settings.setValue(settingsName+"/all-conditions", all);
+	
+	settings.setValue(settingsName+"/number-of-descriptions", descrDetDescrDetDescrWithConstraints.count());
+	settings.remove(settingsName+"/description");
+	for(int i=0; i<descrDetDescrDetDescrWithConstraints.count(); i++)
+		settings.setValue(settingsName+"/description/"+CustomFETString::number(i+1), descrDetDescrDetDescrWithConstraints.at(i));
+	
+	settings.setValue(settingsName+"/number-of-contains", contains.count());
+	settings.remove(settingsName+"/contains");
+	for(int i=0; i<contains.count(); i++)
+		settings.setValue(settingsName+"/contains/"+CustomFETString::number(i+1), contains.at(i));
+	
+	settings.setValue(settingsName+"/number-of-texts", text.count());
+	settings.remove(settingsName+"/text");
+	for(int i=0; i<text.count(); i++)
+		settings.setValue(settingsName+"/text/"+CustomFETString::number(i+1), text.at(i));
+	
+	settings.setValue(settingsName+"/case-sensitive", caseSensitive);
 }
 
 bool ActivitiesForm::filterOk(Activity* act)
@@ -261,7 +335,91 @@ bool ActivitiesForm::filterOk(Activity* act)
 			ok=false;
 	}
 	
-	return ok;
+	if(!useFilter || !ok)
+		return ok;
+
+	/////////////////////advanced filter
+	assert(descrDetDescrDetDescrWithConstraints.count()==contains.count());
+	assert(contains.count()==text.count());
+	
+	Qt::CaseSensitivity csens=Qt::CaseSensitive;
+	if(!caseSensitive)
+		csens=Qt::CaseInsensitive;
+	
+	QList<bool> okPartial;
+	
+	QString cachedS=QString("");
+	for(int i=0; i<descrDetDescrDetDescrWithConstraints.count(); i++){
+		if(descrDetDescrDetDescrWithConstraints.at(i)==DETDESCRIPTIONWITHCONSTRAINTS){
+			cachedS=act->getDetailedDescriptionWithConstraints(gt.rules); //warning: time consuming operation, goes through all the constraints.
+			break;
+		}
+	}
+	
+	for(int i=0; i<descrDetDescrDetDescrWithConstraints.count(); i++){
+		QString s;
+		if(descrDetDescrDetDescrWithConstraints.at(i)==DESCRIPTION){
+			s=act->getDescription(gt.rules);
+		}
+		else if(descrDetDescrDetDescrWithConstraints.at(i)==DETDESCRIPTION){
+			s=act->getDetailedDescription(gt.rules);
+		}
+		else{
+			assert(descrDetDescrDetDescrWithConstraints.at(i)==DETDESCRIPTIONWITHCONSTRAINTS);
+			s=cachedS;
+			//s=act->getDetailedDescriptionWithConstraints(gt.rules); //warning: time consuming operation, goes through all the constraints.
+		}
+		
+		QString t=text.at(i);
+		if(contains.at(i)==CONTAINS){
+			okPartial.append(s.contains(t, csens));
+		}
+		else if(contains.at(i)==DOESNOTCONTAIN){
+			okPartial.append(!(s.contains(t, csens)));
+		}
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+		else if(contains.at(i)==REGEXP){
+			QRegularExpression regExp(t);
+			if(!caseSensitive)
+				regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+			okPartial.append((regExp.match(s)).hasMatch());
+		}
+		else if(contains.at(i)==NOTREGEXP){
+			QRegularExpression regExp(t);
+			if(!caseSensitive)
+				regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+			okPartial.append(!(regExp.match(s)).hasMatch());
+		}
+#else
+		else if(contains.at(i)==REGEXP){
+			QRegExp regExp(t);
+			regExp.setCaseSensitivity(csens);
+			okPartial.append(regExp.indexIn(s)>=0);
+		}
+		else if(contains.at(i)==NOTREGEXP){
+			QRegExp regExp(t);
+			regExp.setCaseSensitivity(csens);
+			okPartial.append(regExp.indexIn(s)<0);
+		}
+#endif
+		else
+			assert(0);
+	}
+	
+	if(all){
+		bool ok=true;
+		for(bool b : qAsConst(okPartial))
+			ok = ok && b;
+			
+		return ok;
+	}
+	else{ //any
+		bool ok=false;
+		for(bool b : qAsConst(okPartial))
+			ok = ok || b;
+			
+		return ok;
+	}
 }
 
 void ActivitiesForm::studentsFilterChanged()
@@ -332,8 +490,23 @@ void ActivitiesForm::filterChanged()
 	activitiesListWidget->clear();
 	visibleActivitiesList.clear();
 	
+	QProgressDialog progress(this);
+	progress.setWindowTitle(tr("Filtering the activities", "Title of a progress dialog"));
+	progress.setLabelText(tr("Filtering the activities ... please wait"));
+	progress.setRange(0, qMax(gt.rules.activitiesList.size(), 1));
+	progress.setModal(true);
+	
 	int k=0;
 	for(int i=0; i<gt.rules.activitiesList.size(); i++){
+		progress.setValue(i);
+		if(progress.wasCanceled()){
+			QMessageBox::warning(this, tr("FET warning"), tr("You canceled the filtering of the activities - the list of activities will be incomplete.")+QString(" ")+
+			 tr("Note: if filtering of the activities takes too much, it might be because you are filtering on the detailed description with constraints of the activities,"
+			 " which checks each activity against each time constraint, each space constraint, and each group activities in the initial order item, which might be too much."
+			 " Please consider filtering on the description or detailed description of the activities, instead."));
+			break;
+		}
+		
 		Activity* act=gt.rules.activitiesList[i];
 		if(this->filterOk(act)){
 			s=act->getDescription(gt.rules);
@@ -357,17 +530,23 @@ void ActivitiesForm::filterChanged()
 		}
 	}
 	
+	progress.setValue(qMax(gt.rules.activitiesList.size(), 1));
+
 	assert(nsubacts-ninact>=0);
+	NA=nsubacts-ninact;
+	NT=nsubacts;
 	assert(nh-ninacth>=0);
+	DA=nh-ninacth;
+	DT=nh;
 	activeTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
-		" Please leave spaces between fields, so that they are better visible").arg(nsubacts-ninact).arg(nsubacts));
+		" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
 	totalTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
-		" Please leave spaces between fields, so that they are better visible").arg(nh-ninacth).arg(nh));
+		" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
 	
 	if(activitiesListWidget->count()>0)
 		activitiesListWidget->setCurrentRow(0);
 	else
-		activityTextEdit->setPlainText(QString(""));
+		currentActivityTextEdit->setPlainText(QString(""));
 }
 
 void ActivitiesForm::addActivity()
@@ -468,7 +647,7 @@ void ActivitiesForm::modifyActivity()
 			if(diffStudents)
 				s.append(tr("different students"));
 			if(diffComputeNTotalStudents)
-				s.append(tr("different boolean variable 'must compute n total students'"));
+				s.append(tr("different Boolean variable 'must compute n total students'"));
 			if(diffNTotalStudents)
 				s.append(tr("different number of students"));
 				
@@ -561,11 +740,11 @@ void ActivitiesForm::activityChanged()
 	int index=activitiesListWidget->currentRow();
 	
 	if(index<0){
-		activityTextEdit->setPlainText(QString(""));
+		currentActivityTextEdit->setPlainText(QString(""));
 		return;
 	}
 	if(index>=visibleActivitiesList.count()){
-		activityTextEdit->setPlainText(tr("Invalid activity"));
+		currentActivityTextEdit->setPlainText(tr("Invalid activity"));
 		return;
 	}
 
@@ -574,7 +753,7 @@ void ActivitiesForm::activityChanged()
 
 	assert(act!=nullptr);
 	s=act->getDetailedDescriptionWithConstraints(gt.rules);
-	activityTextEdit->setPlainText(s);
+	currentActivityTextEdit->setPlainText(s);
 }
 
 void ActivitiesForm::help()
@@ -613,8 +792,16 @@ void ActivitiesForm::help()
 	s+=tr("Show related: if you select this, there will be listed activities for groups and subgroups contained also in the current set (if the current set"
 		" is a year or a group) and also higher ranked year or group (if the current set is a group or a subgroup).");
 	
+	s+=tr("There are two possible filters: one is simple, based on the teacher, students, subject, or activity tag, the other one is more advanced (select the 'Filter' check box)."
+		" The resulted overall filter is the combined AND of these two filters, if both filters are active, or the active one, if only one is active. If no filters are active,"
+		" all the activities will be shown.");
+	
 	s+="\n\n";
-	s+=tr("Inverted: this will show all the activities which _don't_ respect the selected filter.");
+	s+=tr("Inverted: this will show all the activities which _don't_ respect the selected filter for the teacher, students, subject, or activity tag.");
+	
+	s+="\n\n";
+	s+=tr("Note that it is possible to activate/deactivate an activity in two different ways: by modifying an activity and selecting/deselecting the 'Active'"
+		" check box, or directly, by clicking the corresponding buttons in this dialog.");
 	
 	LongTextMessageBox::largeInformation(this, tr("FET Help"), s);
 }
@@ -678,4 +865,228 @@ void ActivitiesForm::activityComments()
 		activitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
 		activityChanged();
 	}
+}
+
+void ActivitiesForm::filter(bool active)
+{
+	if(!active){
+		assert(useFilter==true);
+		useFilter=false;
+		
+		filterChanged();
+	
+		return;
+	}
+	
+	assert(active);
+	
+	filterForm=new AdvancedFilterForm(this, tr("Advanced filter for activities"), true, all, descrDetDescrDetDescrWithConstraints, contains, text, caseSensitive, "ActivitiesAdvancedFilterForm");
+
+	int t=filterForm->exec();
+	
+	if(t==QDialog::Accepted){
+		assert(useFilter==false);
+		useFilter=true;
+	
+		if(filterForm->allRadio->isChecked())
+			all=true;
+		else if(filterForm->anyRadio->isChecked())
+			all=false;
+		else
+			assert(0);
+		
+		caseSensitive=filterForm->caseSensitiveCheckBox->isChecked();
+		
+		descrDetDescrDetDescrWithConstraints.clear();
+		contains.clear();
+		text.clear();
+		
+		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->contNContReNReComboBoxList.count());
+		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->textLineEditList.count());
+		for(int i=0; i<filterForm->rows; i++){
+			QComboBox* cb1=filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.at(i);
+			QComboBox* cb2=filterForm->contNContReNReComboBoxList.at(i);
+			QLineEdit* tl=filterForm->textLineEditList.at(i);
+			
+			descrDetDescrDetDescrWithConstraints.append(cb1->currentIndex());
+			contains.append(cb2->currentIndex());
+			text.append(tl->text());
+		}
+		
+		filterChanged();
+	}
+	else{
+		assert(useFilter==false);
+		useFilter=false;
+	
+		disconnect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+		filterCheckBox->setChecked(false);
+		connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
+	}
+	
+	delete filterForm;
+}
+
+void ActivitiesForm::activateActivity()
+{
+	int i=activitiesListWidget->currentRow();
+	if(i<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity"));
+	
+		activitiesListWidget->setFocus();
+
+		return;
+	}
+	
+	assert(i<visibleActivitiesList.count());
+	Activity* act=visibleActivitiesList.at(i);
+	
+	if(!act->active){
+		act->active=true;
+		
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		if(!filterOk(act)){ //Maybe the activity is no longer visible in the list widget, because of the filter.
+			visibleActivitiesList.removeAt(i);
+			activitiesListWidget->setCurrentRow(-1);
+			QListWidgetItem* item=activitiesListWidget->takeItem(i);
+			delete item;
+
+			if(i>=activitiesListWidget->count())
+				i=activitiesListWidget->count()-1;
+			if(i>=0)
+				activitiesListWidget->setCurrentRow(i);
+			else
+				currentActivityTextEdit->setPlainText(QString(""));
+		}
+		else{
+			activitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
+			if(USE_GUI_COLORS)
+				activitiesListWidget->currentItem()->setBackground(activitiesListWidget->palette().base());
+			activityChanged();
+		}
+
+		///////
+		NA++;
+		DA+=act->duration;
+		activeTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
+			" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
+		totalTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
+			" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
+	}
+	
+	activitiesListWidget->setFocus();
+}
+
+void ActivitiesForm::deactivateActivity()
+{
+	int i=activitiesListWidget->currentRow();
+	if(i<0){
+		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity"));
+	
+		activitiesListWidget->setFocus();
+
+		return;
+	}
+	
+	assert(i<visibleActivitiesList.count());
+	Activity* act=visibleActivitiesList.at(i);
+
+	if(act->active){
+		act->active=false;
+		
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+
+		if(!filterOk(act)){ //Maybe the activity is no longer visible in the list widget, because of the filter.
+			visibleActivitiesList.removeAt(i);
+			activitiesListWidget->setCurrentRow(-1);
+			QListWidgetItem* item=activitiesListWidget->takeItem(i);
+			delete item;
+
+			if(i>=activitiesListWidget->count())
+				i=activitiesListWidget->count()-1;
+			if(i>=0)
+				activitiesListWidget->setCurrentRow(i);
+			else
+				currentActivityTextEdit->setPlainText(QString(""));
+		}
+		else{
+			activitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
+			if(USE_GUI_COLORS)
+				activitiesListWidget->currentItem()->setBackground(activitiesListWidget->palette().alternateBase());
+			activityChanged();
+		}
+		
+		///////
+		NA--;
+		assert(NA>=0);
+		DA-=act->duration;
+		assert(DA>=0);
+		activeTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
+			" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
+		totalTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
+			" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
+	}
+	
+	activitiesListWidget->setFocus();
+}
+
+void ActivitiesForm::activateAllActivities()
+{
+	QMessageBox::StandardButton ret=QMessageBox::No;
+	QString s=tr("Are you sure you want to activate all the listed activities?");
+	ret=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+	if(ret==QMessageBox::No){
+		activitiesListWidget->setFocus();
+		return;
+	}
+
+	int cnt=0;
+	for(Activity* act : qAsConst(visibleActivitiesList)){
+		if(!act->active){
+			cnt++;
+			act->active=true;
+		}
+	}
+	if(cnt>0){
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+		
+		filterChanged();
+		
+		QMessageBox::information(this, tr("FET information"), tr("Activated %1 activities").arg(cnt));
+	}
+	
+	activitiesListWidget->setFocus();
+}
+
+void ActivitiesForm::deactivateAllActivities()
+{
+	QMessageBox::StandardButton ret=QMessageBox::No;
+	QString s=tr("Are you sure you want to deactivate all the listed activities?");
+	ret=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+	if(ret==QMessageBox::No){
+		activitiesListWidget->setFocus();
+		return;
+	}
+
+	int cnt=0;
+	for(Activity* act : qAsConst(visibleActivitiesList)){
+		if(act->active){
+			cnt++;
+			act->active=false;
+		}
+	}
+	if(cnt>0){
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+		
+		filterChanged();
+		
+		QMessageBox::information(this, tr("FET information"), tr("Deactivated %1 activities").arg(cnt));
+	}
+
+	activitiesListWidget->setFocus();
 }

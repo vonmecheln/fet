@@ -2555,7 +2555,7 @@ Versions 6.6.0 - 6.6.2
 	- Updated the Arabic translation, by Benahmed Abdelkrim.
 	- Updated the Vietnamese translation, by Phạm Văn Quyền Anh, who is again the assigned translator (he translated also in the past).
 ---------------------------------------------------------------------------------
-Versions 6.7.0 - 6.7.v
+Versions 6.7.0 - 6.7.8
 - Version 6.7.0
 	- Added simple support for the credit hour system (American system) (suggested by Imad). The new feature is that you can add multiple constraints
 	of type activities same starting hour / activities occupy max different rooms with a single click.
@@ -2594,3 +2594,17 @@ Versions 6.7.0 - 6.7.v
 - Version 6.7.8
 	- Updated to Qt 6.4.2.
 	- Code cleanup.
+---------------------------------------------------------------------------------
+Versions 6.8.0 - 6.8.v
+- Version 6.8.0
+	- Added an advanced filter in the activities/subactivities dialog (similar to the existing advanced filter in the all time/space constraints dialog).
+	Also, it is now simpler to activate/deactivate the (sub)activities in these dialogs - there were added activate/deactivate buttons, such that it is no longer
+	needed to enter the "Modify (sub)activity dialog". Also, it is now possible to activate/deactivate with a single button all the listed (filtered) (sub)activities.
+	Also, in the all time/space constraints dialog, it is now possible to activate/deactivate with a single button all the listed (filtered) time/space constraints.
+	Suggested by Horațiu Hălmăjan, Yush Yuen, Constantin Romulus, Nguyễn Hữu Duyệt, noddy11, Anthony Siaudeau, Vangelis Karafillidis, and Liviu Lalescu.
+	- Various improvements and minor bug fixes.
+	- Updated the Romanian translation, by Liviu Lalescu.
+	- Updated the Greek translation, by Vangelis Karafillidis.
+	- Updated the French translation, by Pascal Cohen.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.
+	- Updated the German translation, by Volker Dirr.

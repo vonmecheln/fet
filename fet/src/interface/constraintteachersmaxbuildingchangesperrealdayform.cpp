@@ -2,7 +2,7 @@
                           constraintteachersmaxbuildingchangesperrealdayform.cpp  -  description
                              -------------------
     begin                : 2022
-    copyright            : (C) 2022 by Lalescu Liviu
+    copyright            : (C) 2022 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 

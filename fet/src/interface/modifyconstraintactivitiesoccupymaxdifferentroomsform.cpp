@@ -2,7 +2,7 @@
                           modifyconstraintactivitiesoccupymaxdifferentroomsform.cpp  -  description
                              -------------------
     begin                : Apr 29, 2012
-    copyright            : (C) 2012 by Lalescu Liviu
+    copyright            : (C) 2012 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -139,6 +139,7 @@ void ModifyConstraintActivitiesOccupyMaxDifferentRoomsForm::ok()
 	}
 	
 	this->_ctr->activitiesIds=selectedActivitiesList;
+	this->_ctr->recomputeActivitiesSet();
 	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

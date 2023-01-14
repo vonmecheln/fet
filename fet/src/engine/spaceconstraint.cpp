@@ -6,7 +6,7 @@ File spaceconstraint.cpp
                           spaceconstraint.cpp  -  description
                              -------------------
     begin                : 2002
-    copyright            : (C) 2002 by Lalescu Liviu
+    copyright            : (C) 2002 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -423,7 +423,7 @@ QString ConstraintBasicCompulsorySpace::getDetailedDescription(Rules& r)
 	s+=QString("- "); s+=tr("activities with more students than the capacity of the room"); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -786,7 +786,7 @@ QString ConstraintRoomNotAvailableTimes::getDetailedDescription(Rules& r)
 	s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -1082,7 +1082,7 @@ QString ConstraintTeacherRoomNotAvailableTimes::getDetailedDescription(Rules& r)
 	s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -1494,7 +1494,7 @@ QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules& r)
 	s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -1780,7 +1780,7 @@ QString ConstraintActivityPreferredRooms::getDetailedDescription(Rules& r)
 	}
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -2027,7 +2027,7 @@ QString ConstraintStudentsSetHomeRoom::getDetailedDescription(Rules& r)
 	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -2306,7 +2306,7 @@ QString ConstraintStudentsSetHomeRooms::getDetailedDescription(Rules& r)
 	}
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -2572,7 +2572,7 @@ QString ConstraintTeacherHomeRoom::getDetailedDescription(Rules& r)
 	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -2849,7 +2849,7 @@ QString ConstraintTeacherHomeRooms::getDetailedDescription(Rules& r)
 	}
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -3094,7 +3094,7 @@ QString ConstraintSubjectPreferredRoom::getDetailedDescription(Rules& r)
 	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -3337,7 +3337,7 @@ QString ConstraintSubjectPreferredRooms::getDetailedDescription(Rules& r)
 	}
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -3576,7 +3576,7 @@ QString ConstraintSubjectActivityTagPreferredRoom::getDetailedDescription(Rules&
 	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -3825,7 +3825,7 @@ QString ConstraintSubjectActivityTagPreferredRooms::getDetailedDescription(Rules
 	}
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -4060,7 +4060,7 @@ QString ConstraintActivityTagPreferredRoom::getDetailedDescription(Rules& r)
 	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -4304,7 +4304,7 @@ QString ConstraintActivityTagPreferredRooms::getDetailedDescription(Rules& r)
 	}
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -4575,7 +4575,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerDay::getDetailedDescription(Ru
 	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -4813,7 +4813,7 @@ QString ConstraintStudentsMaxBuildingChangesPerDay::getDetailedDescription(Rules
 	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -5105,7 +5105,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerWeek::getDetailedDescription(R
 	s+=tr("Maximum building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -5343,7 +5343,7 @@ QString ConstraintStudentsMaxBuildingChangesPerWeek::getDetailedDescription(Rule
 	s+=tr("Maximum building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -5634,7 +5634,7 @@ QString ConstraintStudentsSetMinGapsBetweenBuildingChanges::getDetailedDescripti
 	s+=tr("Minimum gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -5884,7 +5884,7 @@ QString ConstraintStudentsMinGapsBetweenBuildingChanges::getDetailedDescription(
 	s+=tr("Minimum gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -6151,7 +6151,7 @@ QString ConstraintTeacherMaxBuildingChangesPerDay::getDetailedDescription(Rules&
 	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -6390,7 +6390,7 @@ QString ConstraintTeachersMaxBuildingChangesPerDay::getDetailedDescription(Rules
 	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -6645,7 +6645,7 @@ QString ConstraintTeacherMaxBuildingChangesPerWeek::getDetailedDescription(Rules
 	s+=tr("Maximum building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -6884,7 +6884,7 @@ QString ConstraintTeachersMaxBuildingChangesPerWeek::getDetailedDescription(Rule
 	s+=tr("Maximum building changes per week=%1").arg(this->maxBuildingChangesPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -7139,7 +7139,7 @@ QString ConstraintTeacherMinGapsBetweenBuildingChanges::getDetailedDescription(R
 	s+=tr("Minimum gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -7390,7 +7390,7 @@ QString ConstraintTeachersMinGapsBetweenBuildingChanges::getDetailedDescription(
 	s+=tr("Minimum gaps between building changes=%1").arg(this->minGapsBetweenBuildingChanges);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -7695,7 +7695,7 @@ QString ConstraintStudentsSetMaxRoomChangesPerDay::getDetailedDescription(Rules&
 	s+=tr("Maximum room changes per day=%1").arg(this->maxRoomChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -7933,7 +7933,7 @@ QString ConstraintStudentsMaxRoomChangesPerDay::getDetailedDescription(Rules& r)
 	s+=tr("Maximum room changes per day=%1").arg(this->maxRoomChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -8225,7 +8225,7 @@ QString ConstraintStudentsSetMaxRoomChangesPerWeek::getDetailedDescription(Rules
 	s+=tr("Maximum room changes per week=%1").arg(this->maxRoomChangesPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -8463,7 +8463,7 @@ QString ConstraintStudentsMaxRoomChangesPerWeek::getDetailedDescription(Rules& r
 	s+=tr("Maximum room changes per week=%1").arg(this->maxRoomChangesPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -8754,7 +8754,7 @@ QString ConstraintStudentsSetMinGapsBetweenRoomChanges::getDetailedDescription(R
 	s+=tr("Minimum gaps between room changes=%1").arg(this->minGapsBetweenRoomChanges);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -9004,7 +9004,7 @@ QString ConstraintStudentsMinGapsBetweenRoomChanges::getDetailedDescription(Rule
 	s+=tr("Minimum gaps between room changes=%1").arg(this->minGapsBetweenRoomChanges);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -9271,7 +9271,7 @@ QString ConstraintTeacherMaxRoomChangesPerDay::getDetailedDescription(Rules& r)
 	s+=tr("Maximum room changes per day=%1").arg(this->maxRoomChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -9510,7 +9510,7 @@ QString ConstraintTeachersMaxRoomChangesPerDay::getDetailedDescription(Rules& r)
 	s+=tr("Maximum room changes per day=%1").arg(this->maxRoomChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -9765,7 +9765,7 @@ QString ConstraintTeacherMaxRoomChangesPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Maximum room changes per week=%1").arg(this->maxRoomChangesPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -10004,7 +10004,7 @@ QString ConstraintTeachersMaxRoomChangesPerWeek::getDetailedDescription(Rules& r
 	s+=tr("Maximum room changes per week=%1").arg(this->maxRoomChangesPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -10259,7 +10259,7 @@ QString ConstraintTeacherMinGapsBetweenRoomChanges::getDetailedDescription(Rules
 	s+=tr("Minimum gaps between room changes=%1").arg(this->minGapsBetweenRoomChanges);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -10510,7 +10510,7 @@ QString ConstraintTeachersMinGapsBetweenRoomChanges::getDetailedDescription(Rule
 	s+=tr("Minimum gaps between room changes=%1").arg(this->minGapsBetweenRoomChanges);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -10807,7 +10807,7 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getDetailedDescription(Rule
 	s+=tr("Maximum number of different rooms=%1").arg(CustomFETString::number(this->maxDifferentRooms)); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -10876,13 +10876,26 @@ void ConstraintActivitiesOccupyMaxDifferentRooms::removeUseless(Rules& r)
 		//if(validActs.contains(aid))
 			newActs.append(aid);
 	}
-			
+	
 	activitiesIds=newActs;
+	
+	r.internalStructureComputed=false;
+}
+
+void ConstraintActivitiesOccupyMaxDifferentRooms::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+#else
+	activitiesIdsSet=activitiesIds.toSet();
+#endif
 }
 
 bool ConstraintActivitiesOccupyMaxDifferentRooms::isRelatedToActivity(Activity* a)
 {
-	return this->activitiesIds.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
+
+	//return this->activitiesIds.contains(a->id);
 }
 
 bool ConstraintActivitiesOccupyMaxDifferentRooms::isRelatedToTeacher(Teacher* t)
@@ -11061,7 +11074,7 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getDetailedDescription(Rules&
 		s+="\n";
 	}
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -11140,13 +11153,26 @@ void ConstraintActivitiesSameRoomIfConsecutive::removeUseless(Rules& r)
 		//if(validActs.contains(aid))
 			newActs.append(aid);
 	}
-			
+	
 	activitiesIds=newActs;
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintActivitiesSameRoomIfConsecutive::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+#else
+	activitiesIdsSet=activitiesIds.toSet();
+#endif
 }
 
 bool ConstraintActivitiesSameRoomIfConsecutive::isRelatedToActivity(Activity* a)
 {
-	return this->activitiesIds.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
+
+	//return this->activitiesIds.contains(a->id);
 }
 
 bool ConstraintActivitiesSameRoomIfConsecutive::isRelatedToTeacher(Teacher* t)
@@ -11287,7 +11313,7 @@ QString ConstraintStudentsMaxRoomChangesPerRealDay::getDetailedDescription(Rules
 	s+=tr("Maximum room changes per day=%1").arg(this->maxRoomChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -11588,7 +11614,7 @@ QString ConstraintStudentsSetMaxRoomChangesPerRealDay::getDetailedDescription(Ru
 	s+=tr("Maximum room changes per day=%1").arg(this->maxRoomChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -11849,7 +11875,7 @@ QString ConstraintTeacherMaxRoomChangesPerRealDay::getDetailedDescription(Rules&
 	s+=tr("Maximum room changes per day=%1").arg(this->maxRoomChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -12097,7 +12123,7 @@ QString ConstraintTeachersMaxRoomChangesPerRealDay::getDetailedDescription(Rules
 	s+=tr("Maximum room changes per day=%1").arg(this->maxRoomChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -12346,7 +12372,7 @@ QString ConstraintStudentsMaxBuildingChangesPerRealDay::getDetailedDescription(R
 	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -12647,7 +12673,7 @@ QString ConstraintStudentsSetMaxBuildingChangesPerRealDay::getDetailedDescriptio
 	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -12908,7 +12934,7 @@ QString ConstraintTeacherMaxBuildingChangesPerRealDay::getDetailedDescription(Ru
 	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -13156,7 +13182,7 @@ QString ConstraintTeachersMaxBuildingChangesPerRealDay::getDetailedDescription(R
 	s+=tr("Maximum building changes per day=%1").arg(this->maxBuildingChangesPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active space constraint=%1", "Represents a yes/no value, if a space constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){

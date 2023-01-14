@@ -5,7 +5,7 @@ File import.cpp
 /***************************************************************************
                                 FET
                           -------------------
-   copyright            : (C) by Lalescu Liviu
+   copyright            : (C) by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************
                           import.cpp  -  description
@@ -2818,7 +2818,7 @@ void Import::importCSVActivities(QWidget* parent){
 ifUserCanceledProgress4:
 
 	if(incorrect_bool_consecutive){
-		lastWarning.insert(0, tr("Warning: found tags for the 'consecutive' field of min days which are not a valid boolean value (%1) - making them %2").arg("1, 0, yes, no, y, n, true, false, t, f").arg("true")+"\n");
+		lastWarning.insert(0, tr("Warning: found tags for the 'consecutive' field of min days which are not a valid Boolean value (%1) - making them %2").arg("1, 0, yes, no, y, n, true, false, t, f").arg("true")+"\n");
 	}
 
 	if(!lastWarning.isEmpty())

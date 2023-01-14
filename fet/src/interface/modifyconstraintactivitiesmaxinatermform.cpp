@@ -2,7 +2,7 @@
                           modifyconstraintactivitiesmaxinatermform.cpp  -  description
                              -------------------
     begin                : 2020
-    copyright            : (C) 2020 by Lalescu Liviu
+    copyright            : (C) 2020 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -140,6 +140,7 @@ void ModifyConstraintActivitiesMaxInATermForm::ok()
 	}*/
 	
 	this->_ctr->activitiesIds=selectedActivitiesList;
+	this->_ctr->recomputeActivitiesSet();
 	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

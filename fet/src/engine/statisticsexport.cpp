@@ -5,7 +5,7 @@ File statisticsexport.cpp
 /***************************************************************************
                                 FET
                           -------------------
-   copyright            : (C) by Lalescu Liviu
+   copyright            : (C) by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************
                       statisticsexport.cpp  -  description

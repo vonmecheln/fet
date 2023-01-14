@@ -2,7 +2,7 @@
                           modifyconstraintactivitiessameroomifconsecutiveform.cpp  -  description
                              -------------------
     begin                : Sept 14, 2013
-    copyright            : (C) 2013 by Lalescu Liviu
+    copyright            : (C) 2013 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -131,6 +131,7 @@ void ModifyConstraintActivitiesSameRoomIfConsecutiveForm::ok()
 	}
 	
 	this->_ctr->activitiesIds=selectedActivitiesList;
+	this->_ctr->recomputeActivitiesSet();
 	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

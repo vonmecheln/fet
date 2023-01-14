@@ -1,7 +1,7 @@
 /***************************************************************************
                                 FET
                           -------------------
-   copyright            : (C) by Lalescu Liviu
+   copyright            : (C) by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************
                       activityplanning.cpp  -  description
@@ -2267,7 +2267,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 						if(diffStudents)
 							s.append(tr("different students"));
 						if(diffComputeNTotalStudents)
-							s.append(tr("different boolean variable 'must compute n total students'"));
+							s.append(tr("different Boolean variable 'must compute n total students'"));
 						if(diffNTotalStudents)
 							s.append(tr("different number of students"));
 							

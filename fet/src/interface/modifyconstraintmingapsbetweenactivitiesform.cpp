@@ -2,7 +2,7 @@
                           modifyconstraintmingapsbetweenactivitiesform.cpp  -  description
                              -------------------
     begin                : July 10, 2008
-    copyright            : (C) 2008 by Lalescu Liviu
+    copyright            : (C) 2008 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -199,7 +199,8 @@ void ModifyConstraintMinGapsBetweenActivitiesForm::ok()
 		this->_ctr->activitiesId.append(*it);
 	this->_ctr->n_activities=i;
 	assert(i==this->_ctr->activitiesId.count());
-		
+	this->_ctr->recomputeActivitiesSet();
+	
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->minGaps=minGapsSpinBox->value();
 	

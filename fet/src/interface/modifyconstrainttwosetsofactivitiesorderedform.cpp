@@ -2,7 +2,7 @@
                           modifyconstrainttwosetsofactivitiesorderedform.cpp  -  description
                              -------------------
     begin                : 2021
-    copyright            : (C) 2021 by Lalescu Liviu
+    copyright            : (C) 2021 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -229,6 +229,7 @@ void ModifyConstraintTwoSetsOfActivitiesOrderedForm::ok()
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->firstActivitiesIdsList=this->firstSelectedActivitiesList;
 	this->_ctr->secondActivitiesIdsList=this->secondSelectedActivitiesList;
+	this->_ctr->recomputeActivitiesSets();
 	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

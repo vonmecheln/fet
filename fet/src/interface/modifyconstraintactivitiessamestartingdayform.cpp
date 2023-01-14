@@ -2,7 +2,7 @@
                           modifyconstraintactivitiessamestartingdayform.cpp  -  description
                              -------------------
     begin                : Feb 15, 2005
-    copyright            : (C) 2005 by Lalescu Liviu
+    copyright            : (C) 2005 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -196,7 +196,8 @@ void ModifyConstraintActivitiesSameStartingDayForm::ok()
 		this->_ctr->activitiesId.append(*it);
 	}
 	this->_ctr->n_activities=i;
-		
+	this->_ctr->recomputeActivitiesSet();
+	
 	this->_ctr->weightPercentage=weight;
 	
 	gt.rules.internalStructureComputed=false;

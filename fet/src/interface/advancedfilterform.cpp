@@ -2,7 +2,7 @@
                           advancedfilterform.cpp  -  description
                              -------------------
     begin                : 2009
-    copyright            : (C) 2009 by Lalescu Liviu
+    copyright            : (C) 2009 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -19,17 +19,17 @@
 
 #include "timetable_defs.h"
 
-AdvancedFilterForm::AdvancedFilterForm(QWidget* parent, bool all, QList<int> descrDetDescr, QList<int> contNCont, QStringList text, bool caseSensitive, const QString& textToSettings): QDialog(parent)
+AdvancedFilterForm::AdvancedFilterForm(QWidget* parent, const QString& title, bool detDescrWithConstraints, bool all, QList<int> descrDetDescrDetDescrWithConstraints, QList<int> contNCont, QStringList text, bool caseSensitive, const QString& textToSettings): QDialog(parent)
 {
 	atts=textToSettings;
 
-	assert(descrDetDescr.count()==contNCont.count());
+	assert(descrDetDescrDetDescrWithConstraints.count()==contNCont.count());
 	assert(contNCont.count()==text.count());
 	assert(text.count()>=ADVANCED_FILTER_MIN_ROWS && text.count()<=ADVANCED_FILTER_MAX_ROWS);
 	
-	rows=descrDetDescr.count();
+	rows=descrDetDescrDetDescrWithConstraints.count();
 	
-	setWindowTitle(tr("Advanced filter for constraints"));
+	setWindowTitle(title);
 	
 	allRadio=new QRadioButton(tr("Match all of the following:"));
 	anyRadio=new QRadioButton(tr("Match any of the following:"));
@@ -53,8 +53,10 @@ AdvancedFilterForm::AdvancedFilterForm(QWidget* parent, bool all, QList<int> des
 		QComboBox* cb1=new QComboBox();
 		cb1->addItem(tr("Description"));
 		cb1->addItem(tr("Detailed description"));
+		if(detDescrWithConstraints)
+			cb1->addItem(tr("Det. descr. with constraints", "Detailed description with constraints, but please abbreviate to keep the field short"));
 		if(i<rows)
-			cb1->setCurrentIndex(descrDetDescr.at(i));
+			cb1->setCurrentIndex(descrDetDescrDetDescrWithConstraints.at(i));
 		else
 			cb1->setCurrentIndex(0);
 		
@@ -84,18 +86,18 @@ AdvancedFilterForm::AdvancedFilterForm(QWidget* parent, bool all, QList<int> des
 		else
 			ln1->setText(QString(""));
 		
-		descrDetDescrComboBoxList.append(cb1);
+		descrDetDescrDetDescrWithConstraintsComboBoxList.append(cb1);
 		contNContReNReComboBoxList.append(cb2);
 		textLineEditList.append(ln1);
 	}
 	
 	filtersLayout=new QGridLayout();
 
-	assert(descrDetDescrComboBoxList.count()==contNContReNReComboBoxList.count());
-	assert(descrDetDescrComboBoxList.count()==textLineEditList.count());
-	assert(descrDetDescrComboBoxList.count()==ADVANCED_FILTER_MAX_ROWS);
+	assert(descrDetDescrDetDescrWithConstraintsComboBoxList.count()==contNContReNReComboBoxList.count());
+	assert(descrDetDescrDetDescrWithConstraintsComboBoxList.count()==textLineEditList.count());
+	assert(descrDetDescrDetDescrWithConstraintsComboBoxList.count()==ADVANCED_FILTER_MAX_ROWS);
 	for(int i=0; i<ADVANCED_FILTER_MAX_ROWS; i++){
-		QComboBox* cb1=descrDetDescrComboBoxList.at(i);
+		QComboBox* cb1=descrDetDescrDetDescrWithConstraintsComboBoxList.at(i);
 		QComboBox* cb2=contNContReNReComboBoxList.at(i);
 		QLineEdit* ln1=textLineEditList.at(i);
 		
@@ -144,7 +146,7 @@ AdvancedFilterForm::AdvancedFilterForm(QWidget* parent, bool all, QList<int> des
 	restoreFETDialogGeometry(this, atts);
 	
 	for(int i=0; i<ADVANCED_FILTER_MAX_ROWS; i++){
-		descrDetDescrComboBoxList.at(i)->setVisible(i<rows);
+		descrDetDescrDetDescrWithConstraintsComboBoxList.at(i)->setVisible(i<rows);
 		contNContReNReComboBoxList.at(i)->setVisible(i<rows);
 		textLineEditList.at(i)->setVisible(i<rows);
 	}
@@ -161,9 +163,9 @@ AdvancedFilterForm::~AdvancedFilterForm()
 
 void AdvancedFilterForm::reset()
 {
-	assert(descrDetDescrComboBoxList.count()==contNContReNReComboBoxList.count());
-	assert(descrDetDescrComboBoxList.count()==textLineEditList.count());
-	assert(descrDetDescrComboBoxList.count()==ADVANCED_FILTER_MAX_ROWS);
+	assert(descrDetDescrDetDescrWithConstraintsComboBoxList.count()==contNContReNReComboBoxList.count());
+	assert(descrDetDescrDetDescrWithConstraintsComboBoxList.count()==textLineEditList.count());
+	assert(descrDetDescrDetDescrWithConstraintsComboBoxList.count()==ADVANCED_FILTER_MAX_ROWS);
 	
 	rows=1;
 
@@ -172,12 +174,12 @@ void AdvancedFilterForm::reset()
 	
 	for(int i=0; i<ADVANCED_FILTER_MAX_ROWS; i++){
 		if(i<rows){
-			descrDetDescrComboBoxList.at(i)->setVisible(true);
+			descrDetDescrDetDescrWithConstraintsComboBoxList.at(i)->setVisible(true);
 		}
 		else{
-			descrDetDescrComboBoxList.at(i)->setVisible(false);
+			descrDetDescrDetDescrWithConstraintsComboBoxList.at(i)->setVisible(false);
 		}
-		descrDetDescrComboBoxList.at(i)->setCurrentIndex(0);
+		descrDetDescrDetDescrWithConstraintsComboBoxList.at(i)->setCurrentIndex(0);
 
 		if(i<rows){
 			contNContReNReComboBoxList.at(i)->setVisible(true);
@@ -203,17 +205,17 @@ void AdvancedFilterForm::reset()
 
 void AdvancedFilterForm::more()
 {
-	assert(descrDetDescrComboBoxList.count()==contNContReNReComboBoxList.count());
-	assert(descrDetDescrComboBoxList.count()==textLineEditList.count());
-	assert(descrDetDescrComboBoxList.count()==ADVANCED_FILTER_MAX_ROWS);
+	assert(descrDetDescrDetDescrWithConstraintsComboBoxList.count()==contNContReNReComboBoxList.count());
+	assert(descrDetDescrDetDescrWithConstraintsComboBoxList.count()==textLineEditList.count());
+	assert(descrDetDescrDetDescrWithConstraintsComboBoxList.count()==ADVANCED_FILTER_MAX_ROWS);
 	
 	assert(rows<ADVANCED_FILTER_MAX_ROWS);
 	
-	descrDetDescrComboBoxList.at(rows)->setCurrentIndex(0);
+	descrDetDescrDetDescrWithConstraintsComboBoxList.at(rows)->setCurrentIndex(0);
 	contNContReNReComboBoxList.at(rows)->setCurrentIndex(0);
 	textLineEditList.at(rows)->setText(QString(""));
 	
-	descrDetDescrComboBoxList.at(rows)->setVisible(true);
+	descrDetDescrDetDescrWithConstraintsComboBoxList.at(rows)->setVisible(true);
 	contNContReNReComboBoxList.at(rows)->setVisible(true);
 	textLineEditList.at(rows)->setVisible(true);
 	
@@ -225,19 +227,19 @@ void AdvancedFilterForm::more()
 
 void AdvancedFilterForm::fewer()
 {
-	assert(descrDetDescrComboBoxList.count()==contNContReNReComboBoxList.count());
-	assert(descrDetDescrComboBoxList.count()==textLineEditList.count());
-	assert(descrDetDescrComboBoxList.count()==ADVANCED_FILTER_MAX_ROWS);
+	assert(descrDetDescrDetDescrWithConstraintsComboBoxList.count()==contNContReNReComboBoxList.count());
+	assert(descrDetDescrDetDescrWithConstraintsComboBoxList.count()==textLineEditList.count());
+	assert(descrDetDescrDetDescrWithConstraintsComboBoxList.count()==ADVANCED_FILTER_MAX_ROWS);
 	
 	assert(rows>ADVANCED_FILTER_MIN_ROWS);
 	
 	rows--;
 	
-	descrDetDescrComboBoxList.at(rows)->setCurrentIndex(0);
+	descrDetDescrDetDescrWithConstraintsComboBoxList.at(rows)->setCurrentIndex(0);
 	contNContReNReComboBoxList.at(rows)->setCurrentIndex(0);
 	textLineEditList.at(rows)->setText(QString(""));
 	
-	descrDetDescrComboBoxList.at(rows)->setVisible(false);
+	descrDetDescrDetDescrWithConstraintsComboBoxList.at(rows)->setVisible(false);
 	contNContReNReComboBoxList.at(rows)->setVisible(false);
 	textLineEditList.at(rows)->setVisible(false);
 	

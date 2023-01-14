@@ -6,7 +6,7 @@ File rules.h
                           rules.h  -  description
                              -------------------
     begin                : 2003
-    copyright            : (C) 2003 by Lalescu Liviu
+    copyright            : (C) 2003 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 

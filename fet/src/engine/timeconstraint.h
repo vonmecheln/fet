@@ -6,7 +6,7 @@ File timeconstraint.h
                           timeconstraint.h  -  description
                              -------------------
     begin                : 2002
-    copyright            : (C) 2002 by Lalescu Liviu
+    copyright            : (C) 2002 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -29,6 +29,8 @@ File timeconstraint.h
 #include <QString>
 #include <QList>
 #include <QStringList>
+
+#include <QSet>
 
 class Rules;
 class Solution;
@@ -606,6 +608,8 @@ public:
 	QList<int> activitiesId;
 	//int activitiesId[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME];
 
+	QSet<int> activitiesIdSet;
+
 	/**
 	The number of activities involved in this constraint - internal structure
 	*/
@@ -639,6 +643,8 @@ public:
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules& r);
+	
+	void recomputeActivitiesSet();
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
@@ -676,6 +682,8 @@ public:
 	QList<int> activitiesId;
 	//int activitiesId[MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING];
 
+	QSet<int> activitiesIdSet;
+
 	/**
 	The number of activities involved in this constraint - internal structure
 	*/
@@ -708,6 +716,8 @@ public:
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules &r);
+
+	void recomputeActivitiesSet();
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
@@ -788,6 +798,8 @@ public:
 	QList<int> activitiesId;
 	//int activitiesId[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
 
+	QSet<int> activitiesIdSet;
+
 	/**
 	The number of minimum days between each 2 activities
 	*/
@@ -834,6 +846,8 @@ public:
 
 	void removeUseless(Rules &r);
 
+	void recomputeActivitiesSet();
+
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
@@ -862,6 +876,8 @@ public:
 	The activities involved in this constraint (id)
 	*/
 	QList<int> activitiesId;
+
+	QSet<int> activitiesIdSet;
 
 	/**
 	The number of maximum days between each 2 activities
@@ -902,6 +918,8 @@ public:
 
 	void removeUseless(Rules &r);
 
+	void recomputeActivitiesSet();
+
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
@@ -930,6 +948,8 @@ public:
 	The activities involved in this constraint (id)
 	*/
 	QList<int> activitiesId;
+
+	QSet<int> activitiesIdSet;
 
 	/**
 	The number of minimum gaps between each 2 activities, if on the same day
@@ -971,6 +991,8 @@ public:
 
 	void removeUseless(Rules &r);
 
+	void recomputeActivitiesSet();
+
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
@@ -999,6 +1021,8 @@ public:
 	The activities involved in this constraint (id)
 	*/
 	QList<int> activitiesId;
+
+	QSet<int> activitiesIdSet;
 
 	/**
 	The number of maximum gaps between each 2 activities, if on the same day
@@ -1039,6 +1063,8 @@ public:
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules &r);
+
+	void recomputeActivitiesSet();
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 
@@ -2956,6 +2982,8 @@ public:
 	QList<int> activitiesId;
 	//int activitiesId[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR];
 
+	QSet<int> activitiesIdSet;
+
 	/**
 	The number of activities involved in this constraint - internal structure
 	*/
@@ -2990,9 +3018,10 @@ public:
 
 	void removeUseless(Rules& r);
 
+	void recomputeActivitiesSet();
+
 	bool isRelatedToActivity(Rules& r, Activity* a);
 
-	
 	bool isRelatedToTeacher(Teacher* t);
 
 	bool isRelatedToSubject(Subject* s);
@@ -3020,6 +3049,8 @@ public:
 	*/
 	QList<int> activitiesId;
 	//int activitiesId[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY];
+
+	QSet<int> activitiesIdSet;
 
 	/**
 	The number of activities involved in this constraint - internal structure
@@ -3054,6 +3085,8 @@ public:
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules& r);
+
+	void recomputeActivitiesSet();
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
@@ -3306,6 +3339,10 @@ public:
 
 	QList<int> secondActivitiesIdsList;
 
+	QSet<int> firstActivitiesIdsSet;
+
+	QSet<int> secondActivitiesIdsSet;
+
 	//internal variables
 	QList<int> firstActivitiesIndicesList;
 
@@ -3328,6 +3365,8 @@ public:
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules &r);
+
+	void recomputeActivitiesSets();
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
@@ -4426,6 +4465,8 @@ class ConstraintActivitiesOccupyMaxTimeSlotsFromSelection: public TimeConstraint
 
 public:
 	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
 	
 	QList<int> selectedDays;
 	QList<int> selectedHours;
@@ -4453,6 +4494,8 @@ public:
 
 	void removeUseless(Rules& r);
 
+	void recomputeActivitiesSet();
+
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
@@ -4473,6 +4516,8 @@ class ConstraintActivitiesOccupyMinTimeSlotsFromSelection: public TimeConstraint
 
 public:
 	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
 	
 	QList<int> selectedDays;
 	QList<int> selectedHours;
@@ -4500,6 +4545,8 @@ public:
 
 	void removeUseless(Rules& r);
 
+	void recomputeActivitiesSet();
+
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
@@ -4520,6 +4567,8 @@ class ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots: public TimeConstra
 
 public:
 	QList<int> activitiesIds;
+	
+	QSet<int> activitiesIdsSet;
 	
 	QList<int> selectedDays;
 	QList<int> selectedHours;
@@ -4547,6 +4596,8 @@ public:
 
 	void removeUseless(Rules& r);
 
+	void recomputeActivitiesSet();
+
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
@@ -4567,6 +4618,8 @@ class ConstraintActivitiesMinSimultaneousInSelectedTimeSlots: public TimeConstra
 
 public:
 	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
 	
 	QList<int> selectedDays;
 	QList<int> selectedHours;
@@ -4596,6 +4649,8 @@ public:
 
 	void removeUseless(Rules& r);
 
+	void recomputeActivitiesSet();
+
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
 	bool isRelatedToTeacher(Teacher* t);
@@ -4616,6 +4671,8 @@ class ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots: public TimeConstra
 
 public:
 	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
 
 	QList<int> selectedDays;
 	QList<int> selectedHours;
@@ -4643,6 +4700,8 @@ public:
 
 	void removeUseless(Rules& r);
 
+	void recomputeActivitiesSet();
+
 	bool isRelatedToActivity(Rules& r, Activity* a);
 
 	bool isRelatedToTeacher(Teacher* t);
@@ -4663,6 +4722,8 @@ class ConstraintActivitiesMaxInATerm: public TimeConstraint{
 
 public:
 	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
 
 	int maxActivitiesInATerm;
 
@@ -4687,6 +4748,8 @@ public:
 
 	void removeUseless(Rules& r);
 
+	void recomputeActivitiesSet();
+
 	bool isRelatedToActivity(Rules& r, Activity* a);
 
 	bool isRelatedToTeacher(Teacher* t);
@@ -4707,6 +4770,8 @@ class ConstraintActivitiesOccupyMaxTerms: public TimeConstraint{
 
 public:
 	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
 
 	int maxOccupiedTerms;
 
@@ -4730,6 +4795,8 @@ public:
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules& r);
+
+	void recomputeActivitiesSet();
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 
@@ -9279,6 +9346,8 @@ public:
 	QList<int> activitiesId;
 	//int activitiesId[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
 
+	QSet<int> activitiesIdSet;
+
 	/**
 	The number of minimum days between each 2 activities
 	*/
@@ -9324,6 +9393,8 @@ public:
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules &r);
+
+	void recomputeActivitiesSet();
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
@@ -9405,6 +9476,8 @@ class ConstraintActivitiesMinInATerm: public TimeConstraint{
 public:
 	QList<int> activitiesIds;
 
+	QSet<int> activitiesIdsSet;
+
 	int minActivitiesInATerm;
 	
 	bool allowEmptyTerms;
@@ -9429,6 +9502,8 @@ public:
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules& r);
+
+	void recomputeActivitiesSet();
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 
@@ -9458,6 +9533,8 @@ public:
 	The activities involved in this constraint (id)
 	*/
 	QList<int> activitiesId;
+
+	QSet<int> activitiesIdSet;
 
 	/**
 	The number of maximum terms between each 2 activities
@@ -9497,6 +9574,8 @@ public:
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules &r);
+
+	void recomputeActivitiesSet();
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	
@@ -9773,6 +9852,8 @@ public:
 	*/
 	QList<int> activitiesId;
 
+	QSet<int> activitiesIdSet;
+
 	/**
 	The number of maximum days between each 2 activities
 	*/
@@ -9811,6 +9892,8 @@ public:
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules &r);
+
+	void recomputeActivitiesSet();
 
 	bool isRelatedToActivity(Rules& r, Activity* a);
 	

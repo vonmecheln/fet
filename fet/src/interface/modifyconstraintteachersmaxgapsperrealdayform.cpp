@@ -2,7 +2,7 @@
                           modifyconstraintteachersmaxgapsperrealdayform.cpp  -  description
                              -------------------
     begin                : 2018
-    copyright            : (C) 2018 by Lalescu Liviu
+    copyright            : (C) 2018 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 

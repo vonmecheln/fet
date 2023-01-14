@@ -2,7 +2,7 @@
                           modifyconstraintactivitiesminsimultaneousinselectedtimeslotsform.cpp  -  description
                              -------------------
     begin                : 2019
-    copyright            : (C) 2019 by Lalescu Liviu
+    copyright            : (C) 2019 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -318,6 +318,7 @@ void ModifyConstraintActivitiesMinSimultaneousInSelectedTimeSlotsForm::ok()
 	}*/
 	
 	this->_ctr->activitiesIds=selectedActivitiesList;
+	this->_ctr->recomputeActivitiesSet();
 	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

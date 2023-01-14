@@ -2,7 +2,7 @@
                           helpaboutform.cpp  -  description
                              -------------------
     begin                : Tue Apr 22 2003
-    copyright            : (C) 2003 by Lalescu Liviu
+    copyright            : (C) 2003 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -757,7 +757,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("orange");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString("nguyenhuuduyet");
+	thanksTo+=QString::fromUtf8("Nguyễn Hữu Duyệt");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Vanyo Georgiev");
 	thanksTo+=QString("<br />");

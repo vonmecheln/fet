@@ -6,7 +6,7 @@ File spaceconstraint.h
                           spaceconstraint.h  -  description
                              -------------------
     begin                : 2002
-    copyright            : (C) 2002 by Lalescu Liviu
+    copyright            : (C) 2002 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -2043,6 +2043,8 @@ class ConstraintActivitiesOccupyMaxDifferentRooms: public SpaceConstraint{
 
 public:
 	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
 	
 	int maxDifferentRooms;
 
@@ -2066,6 +2068,8 @@ public:
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules& r);
+	
+	void recomputeActivitiesSet();
 
 	bool isRelatedToActivity(Activity* a);
 	
@@ -2089,6 +2093,8 @@ class ConstraintActivitiesSameRoomIfConsecutive: public SpaceConstraint{
 
 public:
 	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
 	
 	//internal variables
 	QList<int> _activitiesIndices;
@@ -2110,6 +2116,8 @@ public:
 	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
 
 	void removeUseless(Rules& r);
+
+	void recomputeActivitiesSet();
 
 	bool isRelatedToActivity(Activity* a);
 	

@@ -2,7 +2,7 @@
                           teachersubjectsqualificationsform.cpp  -  description
                              -------------------
     begin                : 2016
-    copyright            : (C) 2016 by Lalescu Liviu
+    copyright            : (C) 2016 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 

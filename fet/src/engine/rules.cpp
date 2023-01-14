@@ -6,7 +6,7 @@ File rules.cpp
                           rules.cpp  -  description
                              -------------------
     begin                : 2002
-    copyright            : (C) 2002 by Lalescu Liviu
+    copyright            : (C) 2002 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -4503,6 +4503,87 @@ bool Rules::addTimeConstraint(TimeConstraint* ctr)
 	}
 	
 	if(ok){
+		if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
+			ConstraintActivitiesSameStartingTime* c=(ConstraintActivitiesSameStartingTime*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
+			ConstraintActivitiesNotOverlapping* c=(ConstraintActivitiesNotOverlapping*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMaxDaysBetweenActivities* c=(ConstraintMaxDaysBetweenActivities*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES){
+			ConstraintMinGapsBetweenActivities* c=(ConstraintMinGapsBetweenActivities*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_MAX_GAPS_BETWEEN_ACTIVITIES){
+			ConstraintMaxGapsBetweenActivities* c=(ConstraintMaxGapsBetweenActivities*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR){
+			ConstraintActivitiesSameStartingHour* c=(ConstraintActivitiesSameStartingHour*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY){
+			ConstraintActivitiesSameStartingDay* c=(ConstraintActivitiesSameStartingDay*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED){
+			ConstraintTwoSetsOfActivitiesOrdered* c=(ConstraintTwoSetsOfActivitiesOrdered*) ctr;
+			c->recomputeActivitiesSets();
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TIME_SLOTS_FROM_SELECTION){
+			ConstraintActivitiesOccupyMaxTimeSlotsFromSelection* c=(ConstraintActivitiesOccupyMaxTimeSlotsFromSelection*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MIN_TIME_SLOTS_FROM_SELECTION){
+			ConstraintActivitiesOccupyMinTimeSlotsFromSelection* c=(ConstraintActivitiesOccupyMinTimeSlotsFromSelection*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
+			ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots* c=(ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_MIN_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
+			ConstraintActivitiesMinSimultaneousInSelectedTimeSlots* c=(ConstraintActivitiesMinSimultaneousInSelectedTimeSlots*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_MAX_TOTAL_ACTIVITIES_FROM_SET_IN_SELECTED_TIME_SLOTS){
+			ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots* c=(ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_IN_A_TERM){
+			ConstraintActivitiesMaxInATerm* c=(ConstraintActivitiesMaxInATerm*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS){
+			ConstraintActivitiesOccupyMaxTerms* c=(ConstraintActivitiesOccupyMaxTerms*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_MIN_IN_A_TERM){
+			ConstraintActivitiesMinInATerm* c=(ConstraintActivitiesMinInATerm*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES){
+			ConstraintMaxTermsBetweenActivities* c=(ConstraintMaxTermsBetweenActivities*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMaxHalfDaysBetweenActivities* c=(ConstraintMaxHalfDaysBetweenActivities*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		
 		this->timeConstraintsList << ctr; //append
 		
 		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
@@ -4895,6 +4976,15 @@ bool Rules::addSpaceConstraint(SpaceConstraint* ctr)
 	}
 
 	if(ok){
+		if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS){
+			ConstraintActivitiesOccupyMaxDifferentRooms* c=(ConstraintActivitiesOccupyMaxDifferentRooms*) ctr;
+			c->recomputeActivitiesSet();
+		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE){
+			ConstraintActivitiesSameRoomIfConsecutive* c=(ConstraintActivitiesSameRoomIfConsecutive*) ctr;
+			c->recomputeActivitiesSet();
+		}
+	
 		this->spaceConstraintsList << ctr; //append
 		
 		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){

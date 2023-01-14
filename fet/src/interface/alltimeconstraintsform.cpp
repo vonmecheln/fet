@@ -2,7 +2,7 @@
                           alltimeconstraintsform.cpp  -  description
                              -------------------
     begin                : Feb 10, 2005
-    copyright            : (C) 2005 by Lalescu Liviu
+    copyright            : (C) 2005 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -328,7 +328,7 @@ extern const QString COMPANY;
 extern const QString PROGRAM;
 
 const int DESCRIPTION=0;
-//const int DETDESCRIPTION=1;
+const int DETDESCRIPTION=1;
 
 const int CONTAINS=0;
 const int DOESNOTCONTAIN=1;
@@ -361,6 +361,10 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 	connect(sortedCheckBox, SIGNAL(toggled(bool)), this, SLOT(sortedChanged(bool)));
 	connect(activatePushButton, SIGNAL(clicked()), this, SLOT(activateConstraint()));
 	connect(deactivatePushButton, SIGNAL(clicked()), this, SLOT(deactivateConstraint()));
+
+	connect(activateAllPushButton, SIGNAL(clicked()), this, SLOT(activateAllConstraints()));
+	connect(deactivateAllPushButton, SIGNAL(clicked()), this, SLOT(deactivateAllConstraints()));
+
 	//connect(sortByCommentsPushButton, SIGNAL(clicked()), this, SLOT(sortConstraintsByComments()));
 	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(constraintComments()));
 
@@ -370,7 +374,7 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 	QSettings settings(COMPANY, PROGRAM);
 	if(settings.contains(this->metaObject()->className()+QString("/splitter-state")))
 		splitter->restoreState(settings.value(this->metaObject()->className()+QString("/splitter-state")).toByteArray());
-		
+	
 	QString settingsName="AllTimeConstraintsAdvancedFilterForm";
 	
 	all=settings.value(settingsName+"/all-conditions", "true").toBool();
@@ -445,11 +449,14 @@ bool AllTimeConstraintsForm::filterOk(TimeConstraint* ctr)
 	
 	for(int i=0; i<descrDetDescr.count(); i++){
 		QString s;
-		if(descrDetDescr.at(i)==DESCRIPTION)
+		if(descrDetDescr.at(i)==DESCRIPTION){
 			s=ctr->getDescription(gt.rules);
-		else
+		}
+		else{
+			assert(descrDetDescr.at(i)==DETDESCRIPTION);
 			s=ctr->getDetailedDescription(gt.rules);
-			
+		}
+		
 		QString t=text.at(i);
 		if(contains.at(i)==CONTAINS){
 			okPartial.append(s.contains(t, csens));
@@ -2046,7 +2053,7 @@ void AllTimeConstraintsForm::filter(bool active)
 	
 	assert(active);
 	
-	filterForm=new AdvancedFilterForm(this, all, descrDetDescr, contains, text, caseSensitive, "AllTimeConstraintsAdvancedFilterForm");
+	filterForm=new AdvancedFilterForm(this, tr("Advanced filter for time constraints"), false, all, descrDetDescr, contains, text, caseSensitive, "AllTimeConstraintsAdvancedFilterForm");
 
 	int t=filterForm->exec();
 	
@@ -2067,10 +2074,10 @@ void AllTimeConstraintsForm::filter(bool active)
 		contains.clear();
 		text.clear();
 			
-		assert(filterForm->descrDetDescrComboBoxList.count()==filterForm->contNContReNReComboBoxList.count());
-		assert(filterForm->descrDetDescrComboBoxList.count()==filterForm->textLineEditList.count());
+		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->contNContReNReComboBoxList.count());
+		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->textLineEditList.count());
 		for(int i=0; i<filterForm->rows; i++){
-			QComboBox* cb1=filterForm->descrDetDescrComboBoxList.at(i);
+			QComboBox* cb1=filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.at(i);
 			QComboBox* cb2=filterForm->contNContReNReComboBoxList.at(i);
 			QLineEdit* tl=filterForm->textLineEditList.at(i);
 			
@@ -2209,6 +2216,81 @@ void AllTimeConstraintsForm::deactivateConstraint()
 		constraintsTextLabel->setText(tr("%1 / %2 time constraints",
 		 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
 		 .arg(n_active).arg(visibleTimeConstraintsList.count()));
+	}
+	
+	constraintsListWidget->setFocus();
+}
+
+void AllTimeConstraintsForm::activateAllConstraints()
+{
+	QMessageBox::StandardButton ret=QMessageBox::No;
+	QString s=tr("Are you sure you want to activate all the listed time constraints?");
+	ret=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+	if(ret==QMessageBox::No){
+		constraintsListWidget->setFocus();
+		return;
+	}
+
+	int cnt=0;
+	bool recomputeTime=false;
+	for(TimeConstraint* ctr : qAsConst(visibleTimeConstraintsList)){
+		if(!ctr->active){
+			cnt++;
+			ctr->active=true;
+			if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME)
+				recomputeTime=true;
+		}
+	}
+	if(cnt>0){
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+		
+		filterChanged();
+		
+		QMessageBox::information(this, tr("FET information"), tr("Activated %1 time constraints").arg(cnt));
+	}
+	if(recomputeTime){
+		LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
+		LockUnlock::increaseCommunicationSpinBox();
+	}
+	
+	constraintsListWidget->setFocus();
+}
+
+void AllTimeConstraintsForm::deactivateAllConstraints()
+{
+	QMessageBox::StandardButton ret=QMessageBox::No;
+	QString s=tr("Are you sure you want to deactivate all the listed time constraints? "
+	 "(Note that the basic compulsory time constraints will not be deactivated, even if they are in the list.)");
+	ret=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+	if(ret==QMessageBox::No){
+		constraintsListWidget->setFocus();
+		return;
+	}
+
+	int cnt=0;
+	bool recomputeTime=false;
+	for(TimeConstraint* ctr : qAsConst(visibleTimeConstraintsList)){
+		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME)
+			continue;
+		if(ctr->active){
+			cnt++;
+			ctr->active=false;
+			if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME)
+				recomputeTime=true;
+		}
+	}
+	if(cnt>0){
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+		
+		filterChanged();
+		
+		QMessageBox::information(this, tr("FET information"), tr("Deactivated %1 time constraints").arg(cnt));
+	}
+	if(recomputeTime){
+		LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
+		LockUnlock::increaseCommunicationSpinBox();
 	}
 	
 	constraintsListWidget->setFocus();

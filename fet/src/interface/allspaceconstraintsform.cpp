@@ -2,7 +2,7 @@
                           allspaceconstraintsform.cpp  -  description
                              -------------------
     begin                : Feb 13, 2005
-    copyright            : (C) 2005 by Lalescu Liviu
+    copyright            : (C) 2005 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -121,7 +121,7 @@ extern const QString COMPANY;
 extern const QString PROGRAM;
 
 const int DESCRIPTION=0;
-//const int DETDESCRIPTION=1;
+const int DETDESCRIPTION=1;
 
 const int CONTAINS=0;
 const int DOESNOTCONTAIN=1;
@@ -154,6 +154,10 @@ AllSpaceConstraintsForm::AllSpaceConstraintsForm(QWidget* parent): QDialog(paren
 	connect(sortedCheckBox, SIGNAL(toggled(bool)), this, SLOT(sortedChanged(bool)));
 	connect(activatePushButton, SIGNAL(clicked()), this, SLOT(activateConstraint()));
 	connect(deactivatePushButton, SIGNAL(clicked()), this, SLOT(deactivateConstraint()));
+
+	connect(activateAllPushButton, SIGNAL(clicked()), this, SLOT(activateAllConstraints()));
+	connect(deactivateAllPushButton, SIGNAL(clicked()), this, SLOT(deactivateAllConstraints()));
+
 	//connect(sortByCommentsPushButton, SIGNAL(clicked()), this, SLOT(sortConstraintsByComments()));
 	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(constraintComments()));
 
@@ -238,11 +242,14 @@ bool AllSpaceConstraintsForm::filterOk(SpaceConstraint* ctr)
 	
 	for(int i=0; i<descrDetDescr.count(); i++){
 		QString s;
-		if(descrDetDescr.at(i)==DESCRIPTION)
+		if(descrDetDescr.at(i)==DESCRIPTION){
 			s=ctr->getDescription(gt.rules);
-		else
+		}
+		else{
+			assert(descrDetDescr.at(i)==DETDESCRIPTION);
 			s=ctr->getDetailedDescription(gt.rules);
-			
+		}
+		
 		QString t=text.at(i);
 		if(contains.at(i)==CONTAINS){
 			okPartial.append(s.contains(t, csens));
@@ -897,7 +904,7 @@ void AllSpaceConstraintsForm::filter(bool active)
 	
 	assert(active);
 	
-	filterForm=new AdvancedFilterForm(this, all, descrDetDescr, contains, text, caseSensitive, "AllSpaceConstraintsAdvancedFilterForm");
+	filterForm=new AdvancedFilterForm(this, tr("Advanced filter for space constraints"), false, all, descrDetDescr, contains, text, caseSensitive, "AllSpaceConstraintsAdvancedFilterForm");
 
 	int t=filterForm->exec();
 	
@@ -918,10 +925,10 @@ void AllSpaceConstraintsForm::filter(bool active)
 		contains.clear();
 		text.clear();
 			
-		assert(filterForm->descrDetDescrComboBoxList.count()==filterForm->contNContReNReComboBoxList.count());
-		assert(filterForm->descrDetDescrComboBoxList.count()==filterForm->textLineEditList.count());
+		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->contNContReNReComboBoxList.count());
+		assert(filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.count()==filterForm->textLineEditList.count());
 		for(int i=0; i<filterForm->rows; i++){
-			QComboBox* cb1=filterForm->descrDetDescrComboBoxList.at(i);
+			QComboBox* cb1=filterForm->descrDetDescrDetDescrWithConstraintsComboBoxList.at(i);
 			QComboBox* cb2=filterForm->contNContReNReComboBoxList.at(i);
 			QLineEdit* tl=filterForm->textLineEditList.at(i);
 			
@@ -1060,6 +1067,81 @@ void AllSpaceConstraintsForm::deactivateConstraint()
 		constraintsTextLabel->setText(tr("%1 / %2 space constraints",
 		 "%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints")
 		 .arg(n_active).arg(visibleSpaceConstraintsList.count()));
+	}
+	
+	constraintsListWidget->setFocus();
+}
+
+void AllSpaceConstraintsForm::activateAllConstraints()
+{
+	QMessageBox::StandardButton ret=QMessageBox::No;
+	QString s=tr("Are you sure you want to activate all the listed space constraints?");
+	ret=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+	if(ret==QMessageBox::No){
+		constraintsListWidget->setFocus();
+		return;
+	}
+
+	int cnt=0;
+	bool recomputeSpace=false;
+	for(SpaceConstraint* ctr : qAsConst(visibleSpaceConstraintsList)){
+		if(!ctr->active){
+			cnt++;
+			ctr->active=true;
+			if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM)
+				recomputeSpace=true;
+		}
+	}
+	if(cnt>0){
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+		
+		filterChanged();
+		
+		QMessageBox::information(this, tr("FET information"), tr("Activated %1 space constraints").arg(cnt));
+	}
+	if(recomputeSpace){
+		LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
+		LockUnlock::increaseCommunicationSpinBox();
+	}
+	
+	constraintsListWidget->setFocus();
+}
+
+void AllSpaceConstraintsForm::deactivateAllConstraints()
+{
+	QMessageBox::StandardButton ret=QMessageBox::No;
+	QString s=tr("Are you sure you want to deactivate all the listed space constraints? "
+	 "(Note that the basic compulsory space constraints will not be deactivated, even if they are in the list.)");
+	ret=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+	if(ret==QMessageBox::No){
+		constraintsListWidget->setFocus();
+		return;
+	}
+
+	int cnt=0;
+	bool recomputeSpace=false;
+	for(SpaceConstraint* ctr : qAsConst(visibleSpaceConstraintsList)){
+		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE)
+			continue;
+		if(ctr->active){
+			cnt++;
+			ctr->active=false;
+			if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM)
+				recomputeSpace=true;
+		}
+	}
+	if(cnt>0){
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
+		
+		filterChanged();
+		
+		QMessageBox::information(this, tr("FET information"), tr("Deactivated %1 space constraints").arg(cnt));
+	}
+	if(recomputeSpace){
+		LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
+		LockUnlock::increaseCommunicationSpinBox();
 	}
 	
 	constraintsListWidget->setFocus();

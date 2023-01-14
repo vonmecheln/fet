@@ -2,7 +2,7 @@
                           addconstraintstudentsminrestinghoursform.h  -  description
                              -------------------
     begin                : 2017
-    copyright            : (C) 2017 by Lalescu Liviu
+    copyright            : (C) 2017 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 

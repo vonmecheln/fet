@@ -2,7 +2,7 @@
                           addconstraintstudentsmorningintervalmaxdaysperweekform.cpp  -  description
                              -------------------
     begin                : 2020
-    copyright            : (C) 2020 by Lalescu Liviu
+    copyright            : (C) 2020 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 

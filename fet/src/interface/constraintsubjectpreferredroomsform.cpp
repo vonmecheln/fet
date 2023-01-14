@@ -2,7 +2,7 @@
                           constraintsubjectpreferredroomsform.cpp  -  description
                              -------------------
     begin                : 8 April 2005
-    copyright            : (C) 2005 by Lalescu Liviu
+    copyright            : (C) 2005 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 

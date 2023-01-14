@@ -2,7 +2,7 @@
                           activitiesform.h  -  description
                              -------------------
     begin                : Wed Apr 23 2003
-    copyright            : (C) 2003 by Lalescu Liviu
+    copyright            : (C) 2003 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -22,6 +22,8 @@
 
 #include "activity.h"
 
+#include "advancedfilterform.h"
+
 #include <QSet>
 #include <QString>
 
@@ -30,6 +32,21 @@ class ActivitiesForm : public QDialog, Ui::ActivitiesForm_template{
 	
 private:
 	QSet<QString> showedStudents;
+
+	AdvancedFilterForm* filterForm;
+
+	bool all; //all or any, true means all, false means any
+	QList<int> descrDetDescrDetDescrWithConstraints;
+	QList<int> contains;
+	QStringList text;
+	bool caseSensitive;
+	
+	bool useFilter;
+	
+	int NA;
+	int NT;
+	int DA;
+	int DT;
 	
 public:
 	ActivitiesList visibleActivitiesList;
@@ -46,10 +63,17 @@ public slots:
 	void activityChanged();
 	void filterChanged();
 	
+	void filter(bool active);
+	
 	void studentsFilterChanged();
 	
 	void help();
 	
+	void activateActivity();
+	void deactivateActivity();
+	void activateAllActivities();
+	void deactivateAllActivities();
+
 	void activityComments();
 };
 

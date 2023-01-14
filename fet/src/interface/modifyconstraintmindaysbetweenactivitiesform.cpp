@@ -2,7 +2,7 @@
                           modifyconstraintmindaysbetweenactivitiesform.cpp  -  description
                              -------------------
     begin                : Feb 11, 2005
-    copyright            : (C) 2005 by Lalescu Liviu
+    copyright            : (C) 2005 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -260,7 +260,7 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 					duplicate=true;
 					break;
 				}
-				
+		
 		if(duplicate){
 			QMessageBox::warning(this, tr("FET information"), tr("Cannot proceed, current constraint is equal to another one (it is duplicated)"));
 			return;
@@ -284,6 +284,7 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 		
 		_ctr->activitiesId=selectedActivitiesList;
 		_ctr->n_activities=_ctr->activitiesId.count();
+		_ctr->recomputeActivitiesSet();
 	}
 
 	/*int i;
@@ -292,8 +293,9 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++){
 		this->_ctr->activitiesId.append(*it);
 	}
-	this->_ctr->n_activities=i;*/
-		
+	this->_ctr->n_activities=i;
+	this->_ctr->recomputeActivitiesSet();*/
+	
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->consecutiveIfSameDay=consecutiveIfSameDayCheckBox->isChecked();
 	this->_ctr->minDays=minDaysSpinBox->value();

@@ -6,7 +6,7 @@ File activity.h
                           activity.h  -  description
                              -------------------
     begin                : 2002
-    copyright            : (C) 2002 by Lalescu Liviu
+    copyright            : (C) 2002 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -47,6 +47,7 @@ public:
 	bool active;
 
 	QList<int> ids;
+	QSet<int> idsSet;
 	QList<int> indices; //in the rules internal activities list
 
 	QString getXmlDescription(Rules& r);
@@ -54,6 +55,8 @@ public:
 	QString getDetailedDescription(Rules& r);
 	
 	void removeUseless(Rules& r);
+	
+	void recomputeActivitiesSet();
 };
 
 typedef QList<GroupActivitiesInInitialOrderItem*> GroupActivitiesInInitialOrderList;
@@ -288,6 +291,8 @@ public:
 	bool isSplit();
 	
 	bool representsComponentNumber(int compNumber);
+	
+	int componentNumber();
 };
 
 #endif

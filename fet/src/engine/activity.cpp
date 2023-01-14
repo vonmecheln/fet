@@ -6,7 +6,7 @@ File activity.cpp
                           activity.cpp  -  description
                              -------------------
     begin                : 2002
-    copyright            : (C) 2002 by Lalescu Liviu
+    copyright            : (C) 2002 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -48,6 +48,16 @@ void GroupActivitiesInInitialOrderItem::removeUseless(Rules& r)
 	}
 	
 	ids=tmpList;
+	
+	r.internalStructureComputed=false;
+}
+
+void GroupActivitiesInInitialOrderItem::recomputeActivitiesSet(){
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	idsSet=QSet<int>(ids.constBegin(), ids.constEnd());
+#else
+	idsSet=ids.toSet();
+#endif
 }
 
 QString GroupActivitiesInInitialOrderItem::getXmlDescription(Rules& r)
@@ -115,7 +125,7 @@ QString GroupActivitiesInInitialOrderItem::getDetailedDescription(Rules& r)
 	else
 		activeYesNo=tr("no");
 	if(!active){
-		s+=tr("Active=%1", "Represents a boolean value, if a 'group activities in initial order' item is active or not, %1 is yes or no").arg(activeYesNo);
+		s+=tr("Active group activities in initial order item=%1", "Represents a yes/no value, if a 'group activities in initial order' item is active or not, %1 is yes or no").arg(activeYesNo);
 		s+="\n";
 	}
 
@@ -614,6 +624,15 @@ QString Activity::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 
+	if(!this->isSplit()){
+		s+=tr("Component number=%1 (single component activity)", "The split index of this (sub)activity, which will always be equal to 1").arg(this->componentNumber());
+		s+="\n";
+	}
+	else{
+		s+=tr("Component number=%1 (in a larger split activity)", "The split index of this subactivity in the larger split activity").arg(this->componentNumber());
+		s+="\n";
+	}
+	
 	//Dur, TD
 	s+=tr("Duration=%1").arg(CustomFETString::number(this->duration));
 	s+="\n";
@@ -667,7 +686,7 @@ QString Activity::getDetailedDescription(Rules& r)
 	else
 		activeYesNo=tr("no");
 	if(!active){
-		s+=tr("Active=%1", "Represents a boolean value, if activity is active or not, %1 is yes or no").arg(activeYesNo);
+		s+=tr("Active activity=%1", "Represents a yes/no value, if an activity is active or not, %1 is yes or no").arg(activeYesNo);
 		s+="\n";
 	}
 
@@ -712,7 +731,7 @@ QString Activity::getDetailedDescriptionWithConstraints(Rules& r)
 		s+="\n";
 		for(int i=0; i<r.groupActivitiesInInitialOrderList.count(); i++){
 			GroupActivitiesInInitialOrderItem* item=r.groupActivitiesInInitialOrderList[i];
-			if(item->ids.contains(id)){
+			if(item->idsSet.contains(id)){
 				s+="\n";
 				s+=item->getDetailedDescription(r);
 			}
@@ -737,4 +756,12 @@ bool Activity::representsComponentNumber(int index)
 	//assert(this->activityGroupId>0);
 	
 	return index == (this->id - this->activityGroupId + 1);
+}
+
+int Activity::componentNumber()
+{
+	if(this->activityGroupId==0)
+		return 1;
+	
+	return this->id - this->activityGroupId + 1;
 }

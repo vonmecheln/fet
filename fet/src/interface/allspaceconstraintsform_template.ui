@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>560</width>
+    <width>574</width>
     <height>520</height>
    </rect>
   </property>
@@ -64,78 +64,112 @@
    <item row="1" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="modifyConstraintPushButton">
-       <property name="text">
-        <string>Modify</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QPushButton" name="modifyConstraintPushButton">
+         <property name="text">
+          <string>Modify</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="filterCheckBox">
+         <property name="text">
+          <string>Filter</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
-      <widget class="QPushButton" name="removeConstraintPushButton">
-       <property name="text">
-        <string>Remove</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QPushButton" name="removeConstraintPushButton">
+         <property name="text">
+          <string>Remove</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="sortedCheckBox">
+         <property name="text">
+          <string comment="It refers to space constraints">Sorted</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
-      <widget class="QPushButton" name="moveSpaceConstraintUpPushButton">
-       <property name="text">
-        <string comment="It means move the item up in the list">Up</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QPushButton" name="moveSpaceConstraintUpPushButton">
+         <property name="text">
+          <string comment="It means move the item up in the list">Up</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="moveSpaceConstraintDownPushButton">
+         <property name="text">
+          <string comment="It means move the item down in the list">Down</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
-      <widget class="QPushButton" name="activatePushButton">
-       <property name="text">
-        <string comment="Refers to activating a space constraint">Activate</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QPushButton" name="activatePushButton">
+         <property name="text">
+          <string comment="Refers to activating a space constraint">Activate</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="activateAllPushButton">
+         <property name="text">
+          <string comment="Refers to activating all the listed space constraints">Activate all</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
-      <widget class="QPushButton" name="deactivatePushButton">
-       <property name="text">
-        <string comment="Refers to deactivating a space constraint">Deactivate</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="2" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QCheckBox" name="filterCheckBox">
-       <property name="text">
-        <string>Filter</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="sortedCheckBox">
-       <property name="text">
-        <string comment="It refers to space constraints">Sorted</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QPushButton" name="deactivatePushButton">
+         <property name="text">
+          <string comment="Refers to deactivating a space constraint">Deactivate</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="deactivateAllPushButton">
+         <property name="text">
+          <string comment="Refers to deactivating all the listed space constraints">Deactivate all</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
-      <widget class="QPushButton" name="moveSpaceConstraintDownPushButton">
-       <property name="text">
-        <string comment="It means move the item down in the list">Down</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="commentsPushButton">
-       <property name="text">
-        <string>Comments</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="closePushButton">
-       <property name="text">
-        <string>Close</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item>
+        <widget class="QPushButton" name="commentsPushButton">
+         <property name="text">
+          <string>Comments</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="closePushButton">
+         <property name="text">
+          <string>Close</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>

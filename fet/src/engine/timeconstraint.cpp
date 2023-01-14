@@ -6,7 +6,7 @@ File timeconstraint.cpp
                           timeconstraint.cpp  -  description
                              -------------------
     begin                : 2002
-    copyright            : (C) 2002 by Lalescu Liviu
+    copyright            : (C) 2002 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -1042,7 +1042,7 @@ QString ConstraintBasicCompulsoryTime::getDetailedDescription(Rules& r)
 	s+=QString("- ");s+=tr("students assigned to more than one activity simultaneously");s+="\n";
 	
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -1562,7 +1562,7 @@ QString ConstraintTeacherNotAvailableTimes::getDetailedDescription(Rules& r)
 	s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -1930,7 +1930,7 @@ QString ConstraintStudentsSetNotAvailableTimes::getDetailedDescription(Rules& r)
 	s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -2155,6 +2155,15 @@ void ConstraintActivitiesSameStartingTime::removeUseless(Rules& r)
 	r.internalStructureComputed=false;
 }
 
+void ConstraintActivitiesSameStartingTime::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+#else
+	activitiesIdSet=activitiesId.toSet();
+#endif
+}
+
 bool ConstraintActivitiesSameStartingTime::hasInactiveActivities(Rules& r)
 {
 	int count=0;
@@ -2223,7 +2232,7 @@ QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r)
 	}
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -2321,11 +2330,13 @@ double ConstraintActivitiesSameStartingTime::fitness(Solution& c, Rules& r, QLis
 bool ConstraintActivitiesSameStartingTime::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
-
-	for(int i=0; i<this->n_activities; i++)
+	
+	return activitiesIdSet.contains(a->id);
+	
+	/*for(int i=0; i<this->n_activities; i++)
 		if(this->activitiesId[i]==a->id)
 			return true;
-	return false;
+	return false;*/
 }
 
 bool ConstraintActivitiesSameStartingTime::isRelatedToTeacher(Teacher* t)
@@ -2463,6 +2474,15 @@ void ConstraintActivitiesNotOverlapping::removeUseless(Rules& r)
 	r.internalStructureComputed=false;
 }
 
+void ConstraintActivitiesNotOverlapping::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+#else
+	activitiesIdSet=activitiesId.toSet();
+#endif
+}
+
 bool ConstraintActivitiesNotOverlapping::hasInactiveActivities(Rules& r)
 {
 	int count=0;
@@ -2530,7 +2550,7 @@ QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r)
 	}
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -2644,11 +2664,13 @@ double ConstraintActivitiesNotOverlapping::fitness(Solution& c, Rules& r, QList<
 bool ConstraintActivitiesNotOverlapping::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
-
-	for(int i=0; i<this->n_activities; i++)
+	
+	return activitiesIdSet.contains(a->id);
+	
+	/*for(int i=0; i<this->n_activities; i++)
 		if(this->activitiesId[i]==a->id)
 			return true;
-	return false;
+	return false;*/
 }
 
 bool ConstraintActivitiesNotOverlapping::isRelatedToTeacher(Teacher* t)
@@ -2822,7 +2844,7 @@ QString ConstraintActivityTagsNotOverlapping::getDetailedDescription(Rules& r)
 	}
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -3078,6 +3100,15 @@ void ConstraintMinDaysBetweenActivities::removeUseless(Rules& r)
 	r.internalStructureComputed=false;
 }
 
+void ConstraintMinDaysBetweenActivities::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+#else
+	activitiesIdSet=activitiesId.toSet();
+#endif
+}
+
 bool ConstraintMinDaysBetweenActivities::hasInactiveActivities(Rules& r)
 {
 	int count=0;
@@ -3150,7 +3181,7 @@ QString ConstraintMinDaysBetweenActivities::getDetailedDescription(Rules& r)
 	s+=tr("Consecutive if same day=%1").arg(yesNoTranslated(this->consecutiveIfSameDay));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -3326,11 +3357,13 @@ double ConstraintMinDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 bool ConstraintMinDaysBetweenActivities::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
-
-	for(int i=0; i<this->n_activities; i++)
+	
+	return activitiesIdSet.contains(a->id);
+	
+	/*for(int i=0; i<this->n_activities; i++)
 		if(this->activitiesId[i]==a->id)
 			return true;
-	return false;
+	return false;*/
 }
 
 bool ConstraintMinDaysBetweenActivities::isRelatedToTeacher(Teacher* t)
@@ -3486,6 +3519,15 @@ void ConstraintMaxDaysBetweenActivities::removeUseless(Rules& r)
 	r.internalStructureComputed=false;
 }
 
+void ConstraintMaxDaysBetweenActivities::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+#else
+	activitiesIdSet=activitiesId.toSet();
+#endif
+}
+
 bool ConstraintMaxDaysBetweenActivities::hasInactiveActivities(Rules& r)
 {
 	int count=0;
@@ -3555,7 +3597,7 @@ QString ConstraintMaxDaysBetweenActivities::getDetailedDescription(Rules& r)
 	s+=tr("Maximum number of days=%1").arg(this->maxDays);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -3676,10 +3718,12 @@ bool ConstraintMaxDaysBetweenActivities::isRelatedToActivity(Rules& r, Activity*
 {
 	Q_UNUSED(r);
 
-	for(int i=0; i<this->n_activities; i++)
+	return activitiesIdSet.contains(a->id);
+
+	/*for(int i=0; i<this->n_activities; i++)
 		if(this->activitiesId[i]==a->id)
 			return true;
-	return false;
+	return false;*/
 }
 
 bool ConstraintMaxDaysBetweenActivities::isRelatedToTeacher(Teacher* t)
@@ -3834,6 +3878,15 @@ void ConstraintMinGapsBetweenActivities::removeUseless(Rules& r)
 	r.internalStructureComputed=false;
 }
 
+void ConstraintMinGapsBetweenActivities::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+#else
+	activitiesIdSet=activitiesId.toSet();
+#endif
+}
+
 bool ConstraintMinGapsBetweenActivities::hasInactiveActivities(Rules& r)
 {
 	int count=0;
@@ -3903,7 +3956,7 @@ QString ConstraintMinGapsBetweenActivities::getDetailedDescription(Rules& r)
 	s+=tr("Minimum number of gaps=%1").arg(this->minGaps);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -3992,10 +4045,12 @@ bool ConstraintMinGapsBetweenActivities::isRelatedToActivity(Rules& r, Activity*
 {
 	Q_UNUSED(r);
 
-	for(int i=0; i<this->n_activities; i++)
+	return activitiesIdSet.contains(a->id);
+
+	/*for(int i=0; i<this->n_activities; i++)
 		if(this->activitiesId[i]==a->id)
 			return true;
-	return false;
+	return false;*/
 }
 
 bool ConstraintMinGapsBetweenActivities::isRelatedToTeacher(Teacher* t)
@@ -4138,6 +4193,15 @@ void ConstraintMaxGapsBetweenActivities::removeUseless(Rules& r)
 	r.internalStructureComputed=false;
 }
 
+void ConstraintMaxGapsBetweenActivities::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+#else
+	activitiesIdSet=activitiesId.toSet();
+#endif
+}
+
 bool ConstraintMaxGapsBetweenActivities::hasInactiveActivities(Rules& r)
 {
 	int count=0;
@@ -4204,7 +4268,7 @@ QString ConstraintMaxGapsBetweenActivities::getDetailedDescription(Rules& r){
 	s+=tr("Maximum number of gaps=%1").arg(this->maxGaps);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -4293,10 +4357,12 @@ bool ConstraintMaxGapsBetweenActivities::isRelatedToActivity(Rules& r, Activity*
 {
 	Q_UNUSED(r);
 
-	for(int i=0; i<this->n_activities; i++)
+	return activitiesIdSet.contains(a->id);
+
+	/*for(int i=0; i<this->n_activities; i++)
 		if(this->activitiesId[i]==a->id)
 			return true;
-	return false;
+	return false;*/
 }
 
 bool ConstraintMaxGapsBetweenActivities::isRelatedToTeacher(Teacher* t)
@@ -4428,7 +4494,7 @@ QString ConstraintTeachersMaxHoursDaily::getDetailedDescription(Rules& r)
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -4652,7 +4718,7 @@ QString ConstraintTeacherMaxHoursDaily::getDetailedDescription(Rules& r)
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -4868,7 +4934,7 @@ QString ConstraintTeachersMaxHoursContinuously::getDetailedDescription(Rules& r)
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -5101,7 +5167,7 @@ QString ConstraintTeacherMaxHoursContinuously::getDetailedDescription(Rules& r)
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -5348,7 +5414,7 @@ QString ConstraintTeachersActivityTagMaxHoursContinuously::getDetailedDescriptio
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -5625,7 +5691,7 @@ QString ConstraintTeacherActivityTagMaxHoursContinuously::getDetailedDescription
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -5879,7 +5945,7 @@ QString ConstraintTeacherMaxDaysPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -6115,7 +6181,7 @@ QString ConstraintTeachersMaxDaysPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -6364,7 +6430,7 @@ QString ConstraintTeachersMaxGapsPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Maximum gaps per week=%1").arg(this->maxGaps); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -6577,7 +6643,7 @@ QString ConstraintTeacherMaxGapsPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Maximum gaps per week=%1").arg(this->maxGaps); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -6783,7 +6849,7 @@ QString ConstraintTeachersMaxGapsPerDay::getDetailedDescription(Rules& r)
 	s+=tr("Maximum gaps per day=%1").arg(this->maxGaps); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -6995,7 +7061,7 @@ QString ConstraintTeacherMaxGapsPerDay::getDetailedDescription(Rules& r)
 	s+=tr("Maximum gaps per day=%1").arg(this->maxGaps); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -7202,7 +7268,7 @@ QString ConstraintTeachersMaxGapsPerMorningAndAfternoon::getDetailedDescription(
 	s+=tr("Maximum gaps per morning and afternoon=%1").arg(this->maxGaps); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -7431,7 +7497,7 @@ QString ConstraintTeacherMaxGapsPerMorningAndAfternoon::getDetailedDescription(R
 	s+=tr("Maximum gaps per morning and afternoon=%1").arg(this->maxGaps); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -7680,7 +7746,7 @@ QString ConstraintBreakTimes::getDetailedDescription(Rules& r)
 	s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -7933,7 +7999,7 @@ QString ConstraintStudentsMaxGapsPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Maximum gaps per week=%1").arg(this->maxGaps);s+="\n";
 	
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -8198,7 +8264,7 @@ QString ConstraintStudentsSetMaxGapsPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Students=%1").arg(this->students); s+="\n";
 	
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -8409,7 +8475,7 @@ QString ConstraintStudentsEarlyMaxBeginningsAtSecondHour::getDetailedDescription
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -8712,7 +8778,7 @@ QString ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::getDetailedDescript
 	s+=tr("Maximum number of arrivals at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -8958,7 +9024,7 @@ QString ConstraintStudentsMaxHoursDaily::getDetailedDescription(Rules& r)
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -9155,7 +9221,7 @@ QString ConstraintStudentsSetMaxHoursDaily::getDetailedDescription(Rules& r)
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -9415,7 +9481,7 @@ QString ConstraintStudentsMaxHoursContinuously::getDetailedDescription(Rules& r)
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -9637,7 +9703,7 @@ QString ConstraintStudentsSetMaxHoursContinuously::getDetailedDescription(Rules&
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -9945,7 +10011,7 @@ QString ConstraintStudentsActivityTagMaxHoursContinuously::getDetailedDescriptio
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -10193,7 +10259,7 @@ QString ConstraintStudentsSetActivityTagMaxHoursContinuously::getDetailedDescrip
 	s+=tr("Maximum hours continuously=%1").arg(this->maxHoursContinuously);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -10539,7 +10605,7 @@ QString ConstraintStudentsMinHoursDaily::getDetailedDescription(Rules& r)
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -10844,7 +10910,7 @@ QString ConstraintStudentsSetMinHoursDaily::getDetailedDescription(Rules& r)
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -11277,7 +11343,7 @@ QString ConstraintActivityPreferredStartingTime::getDetailedDescription(Rules& r
 	s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -11559,7 +11625,7 @@ QString ConstraintActivityPreferredTimeSlots::getDetailedDescription(Rules& r)
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -12024,7 +12090,7 @@ QString ConstraintActivitiesPreferredTimeSlots::getDetailedDescription(Rules& r)
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -12540,7 +12606,7 @@ QString ConstraintSubactivitiesPreferredTimeSlots::getDetailedDescription(Rules&
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -12891,7 +12957,7 @@ QString ConstraintActivityPreferredStartingTimes::getDetailedDescription(Rules& 
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -13346,7 +13412,7 @@ QString ConstraintActivitiesPreferredStartingTimes::getDetailedDescription(Rules
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -13845,7 +13911,7 @@ QString ConstraintSubactivitiesPreferredStartingTimes::getDetailedDescription(Ru
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -14114,6 +14180,15 @@ void ConstraintActivitiesSameStartingHour::removeUseless(Rules& r)
 	r.internalStructureComputed=false;
 }
 
+void ConstraintActivitiesSameStartingHour::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+#else
+	activitiesIdSet=activitiesId.toSet();
+#endif
+}
+
 bool ConstraintActivitiesSameStartingHour::hasInactiveActivities(Rules& r)
 {
 	int count=0;
@@ -14184,7 +14259,7 @@ QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r)
 	}
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -14281,10 +14356,12 @@ bool ConstraintActivitiesSameStartingHour::isRelatedToActivity(Rules& r, Activit
 {
 	Q_UNUSED(r);
 
-	for(int i=0; i<this->n_activities; i++)
+	return activitiesIdSet.contains(a->id);
+
+	/*for(int i=0; i<this->n_activities; i++)
 		if(this->activitiesId[i]==a->id)
 			return true;
-	return false;
+	return false;*/
 }
 
 bool ConstraintActivitiesSameStartingHour::isRelatedToTeacher(Teacher* t)
@@ -14422,6 +14499,15 @@ void ConstraintActivitiesSameStartingDay::removeUseless(Rules& r)
 	r.internalStructureComputed=false;
 }
 
+void ConstraintActivitiesSameStartingDay::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+#else
+	activitiesIdSet=activitiesId.toSet();
+#endif
+}
+
 bool ConstraintActivitiesSameStartingDay::hasInactiveActivities(Rules& r)
 {
 	int count=0;
@@ -14492,7 +14578,7 @@ QString ConstraintActivitiesSameStartingDay::getDetailedDescription(Rules& r)
 	}
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -14587,10 +14673,12 @@ bool ConstraintActivitiesSameStartingDay::isRelatedToActivity(Rules& r, Activity
 {
 	Q_UNUSED(r);
 
-	for(int i=0; i<this->n_activities; i++)
+	return activitiesIdSet.contains(a->id);
+
+	/*for(int i=0; i<this->n_activities; i++)
 		if(this->activitiesId[i]==a->id)
 			return true;
-	return false;
+	return false;*/
 }
 
 bool ConstraintActivitiesSameStartingDay::isRelatedToTeacher(Teacher* t)
@@ -14780,7 +14868,7 @@ QString ConstraintTwoActivitiesConsecutive::getDetailedDescription(Rules& r)
 	s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -15054,7 +15142,7 @@ QString ConstraintTwoActivitiesGrouped::getDetailedDescription(Rules& r)
 	s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -15370,7 +15458,7 @@ QString ConstraintThreeActivitiesGrouped::getDetailedDescription(Rules& r)
 	s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -15709,7 +15797,7 @@ QString ConstraintTwoActivitiesOrdered::getDetailedDescription(Rules& r)
 	s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -16007,7 +16095,7 @@ QString ConstraintTwoSetsOfActivitiesOrdered::getDetailedDescription(Rules& r)
 	}
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -16112,17 +16200,30 @@ void ConstraintTwoSetsOfActivitiesOrdered::removeUseless(Rules& r)
 	r.internalStructureComputed=false;
 }
 
+void ConstraintTwoSetsOfActivitiesOrdered::recomputeActivitiesSets()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	firstActivitiesIdsSet=QSet<int>(firstActivitiesIdsList.constBegin(), firstActivitiesIdsList.constEnd());
+	secondActivitiesIdsSet=QSet<int>(secondActivitiesIdsList.constBegin(), secondActivitiesIdsList.constEnd());
+#else
+	firstActivitiesIdsSet=firstActivitiesIdsList.toSet();
+	secondActivitiesIdsSet=secondActivitiesIdsList.toSet();
+#endif
+}
+
 bool ConstraintTwoSetsOfActivitiesOrdered::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
 	
-	for(int ai : qAsConst(this->firstActivitiesIdsList))
+	return firstActivitiesIdsSet.contains(a->id) || secondActivitiesIdsSet.contains(a->id);
+
+	/*for(int ai : qAsConst(this->firstActivitiesIdsList))
 		if(ai==a->id)
 			return true;
 	for(int ai : qAsConst(this->secondActivitiesIdsList))
 		if(ai==a->id)
 			return true;
-	return false;
+	return false;*/
 }
 
 bool ConstraintTwoSetsOfActivitiesOrdered::isRelatedToTeacher(Teacher* t)
@@ -16314,7 +16415,7 @@ QString ConstraintTwoActivitiesOrderedIfSameDay::getDetailedDescription(Rules& r
 	s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -16528,7 +16629,7 @@ QString ConstraintActivityEndsStudentsDay::getDetailedDescription(Rules& r)
 		.arg(getActivityDetailedDescription(r, this->activityId));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -16745,7 +16846,7 @@ QString ConstraintTeachersMinHoursDaily::getDetailedDescription(Rules& r)
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -16991,7 +17092,7 @@ QString ConstraintTeacherMinHoursDaily::getDetailedDescription(Rules& r)
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -17217,7 +17318,7 @@ QString ConstraintTeacherMinDaysPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Minimum days per week=%1").arg(this->minDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -17418,7 +17519,7 @@ QString ConstraintTeachersMinDaysPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Minimum days per week=%1").arg(this->minDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -17671,7 +17772,7 @@ QString ConstraintTeacherIntervalMaxDaysPerWeek::getDetailedDescription(Rules& r
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -17926,7 +18027,7 @@ QString ConstraintTeachersIntervalMaxDaysPerWeek::getDetailedDescription(Rules& 
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -18238,7 +18339,7 @@ QString ConstraintStudentsSetIntervalMaxDaysPerWeek::getDetailedDescription(Rule
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -18490,7 +18591,7 @@ QString ConstraintStudentsIntervalMaxDaysPerWeek::getDetailedDescription(Rules& 
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -18803,7 +18904,7 @@ QString ConstraintActivitiesEndStudentsDay::getDetailedDescription(Rules& r)
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -19044,7 +19145,7 @@ QString ConstraintActivityEndsTeachersDay::getDetailedDescription(Rules& r)
 		.arg(getActivityDetailedDescription(r, this->activityId));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -19344,7 +19445,7 @@ QString ConstraintActivitiesEndTeachersDay::getDetailedDescription(Rules& r)
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -19592,7 +19693,7 @@ QString ConstraintTeachersActivityTagMaxHoursDaily::getDetailedDescription(Rules
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -19838,7 +19939,7 @@ QString ConstraintTeacherActivityTagMaxHoursDaily::getDetailedDescription(Rules&
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -20083,7 +20184,7 @@ QString ConstraintStudentsActivityTagMaxHoursDaily::getDetailedDescription(Rules
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -20300,7 +20401,7 @@ QString ConstraintStudentsSetActivityTagMaxHoursDaily::getDetailedDescription(Ru
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -20626,7 +20727,7 @@ QString ConstraintTeachersActivityTagMinHoursDaily::getDetailedDescription(Rules
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -20882,7 +20983,7 @@ QString ConstraintTeacherActivityTagMinHoursDaily::getDetailedDescription(Rules&
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -21137,7 +21238,7 @@ QString ConstraintStudentsActivityTagMinHoursDaily::getDetailedDescription(Rules
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -21365,7 +21466,7 @@ QString ConstraintStudentsSetActivityTagMinHoursDaily::getDetailedDescription(Ru
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -21665,7 +21766,7 @@ QString ConstraintStudentsMaxGapsPerDay::getDetailedDescription(Rules& r)
 	s+=tr("Maximum gaps per day=%1").arg(this->maxGaps);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -21934,7 +22035,7 @@ QString ConstraintStudentsSetMaxGapsPerDay::getDetailedDescription(Rules& r)
 	s+=tr("Students=%1").arg(this->students); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -22259,7 +22360,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDetailedDescript
 	s+=tr("Maximum number of occupied slots from selection=%1").arg(CustomFETString::number(this->maxOccupiedTimeSlots)); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -22345,15 +22446,28 @@ void ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::removeUseless(Rules& r
 		if(act!=nullptr)
 			newActs.append(aid);
 	}
-			
+	
 	activitiesIds=newActs;
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+#else
+	activitiesIdsSet=activitiesIds.toSet();
+#endif
 }
 
 bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
 
-	return this->activitiesIds.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
+
+	//return this->activitiesIds.contains(a->id);
 }
 
 bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::isRelatedToTeacher(Teacher* t)
@@ -22622,7 +22736,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDetailedDescript
 	s+=tr("Minimum number of occupied slots from selection=%1").arg(CustomFETString::number(this->minOccupiedTimeSlots)); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -22717,15 +22831,28 @@ void ConstraintActivitiesOccupyMinTimeSlotsFromSelection::removeUseless(Rules& r
 		if(act!=nullptr)
 			newActs.append(aid);
 	}
-			
+	
 	activitiesIds=newActs;
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintActivitiesOccupyMinTimeSlotsFromSelection::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+#else
+	activitiesIdsSet=activitiesIds.toSet();
+#endif
 }
 
 bool ConstraintActivitiesOccupyMinTimeSlotsFromSelection::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
 
-	return this->activitiesIds.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
+
+	//return this->activitiesIds.contains(a->id);
 }
 
 bool ConstraintActivitiesOccupyMinTimeSlotsFromSelection::isRelatedToTeacher(Teacher* t)
@@ -22994,7 +23121,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDetailedDescr
 	s+=tr("Maximum number of simultaneous activities in each selected time slot=%1").arg(CustomFETString::number(this->maxSimultaneous)); s+="\n";
 	
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -23078,15 +23205,28 @@ void ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::removeUseless(Rules
 		if(act!=nullptr)
 			newActs.append(aid);
 	}
-			
+	
 	activitiesIds=newActs;
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+#else
+	activitiesIdsSet=activitiesIds.toSet();
+#endif
 }
 
 bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
 
-	return this->activitiesIds.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
+
+	//return this->activitiesIds.contains(a->id);
 }
 
 bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::isRelatedToTeacher(Teacher* t)
@@ -23358,7 +23498,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDetailedDescr
 	s+=tr("Allow empty slots=%1").arg(yesNoTranslated(allowEmptySlots)); s+="\n";
 	
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -23453,15 +23593,28 @@ void ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::removeUseless(Rules
 		if(act!=nullptr)
 			newActs.append(aid);
 	}
-			
+	
 	activitiesIds=newActs;
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+#else
+	activitiesIdsSet=activitiesIds.toSet();
+#endif
 }
 
 bool ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
 
-	return this->activitiesIds.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
+
+	//return this->activitiesIds.contains(a->id);
 }
 
 bool ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::isRelatedToTeacher(Teacher* t)
@@ -23728,7 +23881,7 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDetailedDescr
 	s+=tr("Maximum total number of activities in selected time slots=%1").arg(CustomFETString::number(this->maxActivities)); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -23808,13 +23961,26 @@ void ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::removeUseless(Rules
 	}
 
 	activitiesIds=newActs;
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+#else
+	activitiesIdsSet=activitiesIds.toSet();
+#endif
 }
 
 bool ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
 
-	return this->activitiesIds.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
+
+	//return this->activitiesIds.contains(a->id);
 }
 
 bool ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::isRelatedToTeacher(Teacher* t)
@@ -24021,7 +24187,7 @@ QString ConstraintActivitiesMaxInATerm::getDetailedDescription(Rules& r)
 	s+=tr("Maximum number of activities in a term=%1").arg(CustomFETString::number(this->maxActivitiesInATerm)); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -24093,13 +24259,26 @@ void ConstraintActivitiesMaxInATerm::removeUseless(Rules& r)
 	}
 
 	activitiesIds=newActs;
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintActivitiesMaxInATerm::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+#else
+	activitiesIdsSet=activitiesIds.toSet();
+#endif
 }
 
 bool ConstraintActivitiesMaxInATerm::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
 
-	return this->activitiesIds.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
+
+	//return this->activitiesIds.contains(a->id);
 }
 
 bool ConstraintActivitiesMaxInATerm::isRelatedToTeacher(Teacher* t)
@@ -24279,7 +24458,7 @@ QString ConstraintActivitiesOccupyMaxTerms::getDetailedDescription(Rules& r)
 	s+=tr("Maximum number of occupied terms=%1").arg(CustomFETString::number(this->maxOccupiedTerms)); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -24355,13 +24534,26 @@ void ConstraintActivitiesOccupyMaxTerms::removeUseless(Rules& r)
 	}
 
 	activitiesIds=newActs;
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintActivitiesOccupyMaxTerms::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+#else
+	activitiesIdsSet=activitiesIds.toSet();
+#endif
 }
 
 bool ConstraintActivitiesOccupyMaxTerms::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
 
-	return this->activitiesIds.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
+
+	//return this->activitiesIds.contains(a->id);
 }
 
 bool ConstraintActivitiesOccupyMaxTerms::isRelatedToTeacher(Teacher* t)
@@ -24541,7 +24733,7 @@ QString ConstraintStudentsSetMaxDaysPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -24738,7 +24930,7 @@ QString ConstraintStudentsMaxDaysPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -24953,7 +25145,7 @@ QString ConstraintTeacherMaxSpanPerDay::getDetailedDescription(Rules& r)
 	s+=tr("Allow one day exception of plus one=%1").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -25163,7 +25355,7 @@ QString ConstraintTeachersMaxSpanPerDay::getDetailedDescription(Rules& r)
 	s+=tr("Allow one day exception of plus one=%1").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -25363,7 +25555,7 @@ QString ConstraintStudentsSetMaxSpanPerDay::getDetailedDescription(Rules& r)
 	s+=tr("Maximum span per day=%1").arg(this->maxSpanPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -25604,7 +25796,7 @@ QString ConstraintStudentsMaxSpanPerDay::getDetailedDescription(Rules& r)
 	s+=tr("Maximum span per day=%1").arg(this->maxSpanPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -25819,7 +26011,7 @@ QString ConstraintTeacherMinRestingHours::getDetailedDescription(Rules& r)
 	s+=tr("Circular=%1").arg(yesNoTranslated(circular));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -26016,7 +26208,7 @@ QString ConstraintTeachersMinRestingHours::getDetailedDescription(Rules& r)
 	s+=tr("Circular=%1").arg(yesNoTranslated(circular));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -26209,7 +26401,7 @@ QString ConstraintStudentsSetMinRestingHours::getDetailedDescription(Rules& r)
 	s+=tr("Circular=%1").arg(yesNoTranslated(circular));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -26453,7 +26645,7 @@ QString ConstraintStudentsMinRestingHours::getDetailedDescription(Rules& r)
 	s+=tr("Circular=%1").arg(yesNoTranslated(circular));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -26663,7 +26855,7 @@ QString ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::getDetaile
 	s+=tr("Minimum gaps=%1").arg(this->minGaps);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -26988,7 +27180,7 @@ QString ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::getDetailedDe
 	s+=tr("Minimum gaps=%1").arg(this->minGaps);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -27268,7 +27460,7 @@ QString ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::getDetailedDes
 	s+=tr("Minimum gaps=%1").arg(this->minGaps);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -27553,7 +27745,7 @@ QString ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::getDetailedDe
 	s+=tr("Minimum gaps=%1").arg(this->minGaps);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -27830,7 +28022,7 @@ QString ConstraintStudentsSetMinGapsBetweenActivityTag::getDetailedDescription(R
 	s+=tr("Minimum gaps=%1").arg(this->minGaps);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -28139,7 +28331,7 @@ QString ConstraintStudentsMinGapsBetweenActivityTag::getDetailedDescription(Rule
 	s+=tr("Minimum gaps=%1").arg(this->minGaps);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -28402,7 +28594,7 @@ QString ConstraintTeacherMinGapsBetweenActivityTag::getDetailedDescription(Rules
 	s+=tr("Minimum gaps=%1").arg(this->minGaps);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -28670,7 +28862,7 @@ QString ConstraintTeachersMinGapsBetweenActivityTag::getDetailedDescription(Rule
 	s+=tr("Minimum gaps=%1").arg(this->minGaps);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -28933,7 +29125,7 @@ QString ConstraintTeachersMaxHoursDailyRealDays::getDetailedDescription(Rules& r
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -29160,7 +29352,7 @@ QString ConstraintTeacherMaxHoursDailyRealDays::getDetailedDescription(Rules& r)
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -29383,7 +29575,7 @@ QString ConstraintTeacherMaxRealDaysPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -29626,7 +29818,7 @@ QString ConstraintTeachersMaxRealDaysPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -29888,7 +30080,7 @@ QString ConstraintTeachersMaxGapsPerRealDay::getDetailedDescription(Rules& r){
 	s+=tr("Allow one day exception of plus one=%1").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -30148,7 +30340,7 @@ QString ConstraintTeacherMaxGapsPerRealDay::getDetailedDescription(Rules& r){
 	s+=tr("Allow one day exception of plus one=%1").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -30399,7 +30591,7 @@ QString ConstraintStudentsMaxHoursDailyRealDays::getDetailedDescription(Rules& r
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -30597,7 +30789,7 @@ QString ConstraintStudentsSetMaxHoursDailyRealDays::getDetailedDescription(Rules
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -30873,7 +31065,7 @@ QString ConstraintTeachersMinHoursPerMorning::getDetailedDescription(Rules& r){
 	s+=tr("Allow empty mornings=%1").arg(yesNoTranslated(this->allowEmptyMornings));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -31120,7 +31312,7 @@ QString ConstraintTeacherMinHoursPerMorning::getDetailedDescription(Rules& r){
 	s+=tr("Allow empty mornings=%1").arg(yesNoTranslated(this->allowEmptyMornings));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -31360,7 +31552,7 @@ QString ConstraintTeachersMinHoursDailyRealDays::getDetailedDescription(Rules& r
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -31609,7 +31801,7 @@ QString ConstraintTeacherMinHoursDailyRealDays::getDetailedDescription(Rules& r)
 	s+=tr("Allow empty days=%1").arg(yesNoTranslated(this->allowEmptyDays));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -31838,7 +32030,7 @@ QString ConstraintTeacherMinRealDaysPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("Minimum days per week=%1").arg(this->minDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -32036,7 +32228,7 @@ QString ConstraintTeachersMinRealDaysPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("Minimum days per week=%1").arg(this->minDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -32289,7 +32481,7 @@ QString ConstraintTeacherMorningIntervalMaxDaysPerWeek::getDetailedDescription(R
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -32543,7 +32735,7 @@ QString ConstraintTeachersMorningIntervalMaxDaysPerWeek::getDetailedDescription(
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -32802,7 +32994,7 @@ QString ConstraintTeacherAfternoonIntervalMaxDaysPerWeek::getDetailedDescription
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -33056,7 +33248,7 @@ QString ConstraintTeachersAfternoonIntervalMaxDaysPerWeek::getDetailedDescriptio
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -33287,7 +33479,7 @@ QString ConstraintTeachersActivityTagMaxHoursDailyRealDays::getDetailedDescripti
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -33534,7 +33726,7 @@ QString ConstraintTeacherActivityTagMaxHoursDailyRealDays::getDetailedDescriptio
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -33783,7 +33975,7 @@ QString ConstraintStudentsActivityTagMaxHoursDailyRealDays::getDetailedDescripti
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -34004,7 +34196,7 @@ QString ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::getDetailedDescri
 	s+=tr("Maximum hours daily=%1").arg(this->maxHoursDaily);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -34306,7 +34498,7 @@ QString ConstraintStudentsMaxGapsPerRealDay::getDetailedDescription(Rules& r)
 	s+=tr("Maximum gaps per real day=%1").arg(this->maxGaps);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -34589,7 +34781,7 @@ QString ConstraintStudentsSetMaxGapsPerRealDay::getDetailedDescription(Rules& r)
 	s+=tr("Students=%1").arg(this->students); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -34869,7 +35061,7 @@ QString ConstraintStudentsSetMaxRealDaysPerWeek::getDetailedDescription(Rules& r
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -35072,7 +35264,7 @@ QString ConstraintStudentsMaxRealDaysPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -35292,7 +35484,7 @@ QString ConstraintTeacherMaxSpanPerRealDay::getDetailedDescription(Rules& r){
 	s+=tr("Allow one day exception of plus one=%1").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -35505,7 +35697,7 @@ QString ConstraintTeachersMaxSpanPerRealDay::getDetailedDescription(Rules& r){
 	s+=tr("Allow one day exception of plus one=%1").arg(yesNoTranslated(this->allowOneDayExceptionPlusOne));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -35711,7 +35903,7 @@ QString ConstraintStudentsSetMaxSpanPerRealDay::getDetailedDescription(Rules& r)
 	s+=tr("Maximum span per day=%1").arg(this->maxSpanPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -35958,7 +36150,7 @@ QString ConstraintStudentsMaxSpanPerRealDay::getDetailedDescription(Rules& r)
 	s+=tr("Maximum span per day=%1").arg(this->maxSpanPerDay);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -36168,7 +36360,7 @@ QString ConstraintTeacherMaxAfternoonsPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("Maximum afternoons per week=%1").arg(this->maxAfternoonsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -36409,7 +36601,7 @@ QString ConstraintTeachersMaxAfternoonsPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Maximum afternoons per week=%1").arg(this->maxAfternoonsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -36666,7 +36858,7 @@ QString ConstraintTeacherMaxMorningsPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("Maximum mornings per week=%1").arg(this->maxMorningsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -36907,7 +37099,7 @@ QString ConstraintTeachersMaxMorningsPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("Maximum mornings per week=%1").arg(this->maxMorningsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -37160,7 +37352,7 @@ QString ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3::getDetailedDescript
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -37354,7 +37546,7 @@ QString ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3::getDetailedDescrip
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -37559,7 +37751,7 @@ QString ConstraintTeacherMinMorningsPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("Minimum mornings per week=%1").arg(this->minMorningsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -37757,7 +37949,7 @@ QString ConstraintTeachersMinMorningsPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("Minimum mornings per week=%1").arg(this->minMorningsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -37965,7 +38157,7 @@ QString ConstraintTeacherMinAfternoonsPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("Minimum afternoons per week=%1").arg(this->minAfternoonsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -38163,7 +38355,7 @@ QString ConstraintTeachersMinAfternoonsPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Minimum afternoons per week=%1").arg(this->minAfternoonsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -38365,7 +38557,7 @@ QString ConstraintTeacherMaxTwoConsecutiveMornings::getDetailedDescription(Rules
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -38628,7 +38820,7 @@ QString ConstraintTeachersMaxTwoConsecutiveMornings::getDetailedDescription(Rule
 //	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -38892,7 +39084,7 @@ QString ConstraintTeacherMaxTwoConsecutiveAfternoons::getDetailedDescription(Rul
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -39155,7 +39347,7 @@ QString ConstraintTeachersMaxTwoConsecutiveAfternoons::getDetailedDescription(Ru
 //	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -39423,7 +39615,7 @@ QString ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedD
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -39682,7 +39874,7 @@ QString ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedDe
 	s+=tr("Maximum number of arrivals at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -39952,7 +40144,7 @@ QString ConstraintStudentsMinHoursPerMorning::getDetailedDescription(Rules& r)
 	s+=tr("Allow empty mornings=%1").arg(yesNoTranslated(this->allowEmptyMornings));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -40206,7 +40398,7 @@ QString ConstraintStudentsSetMinHoursPerMorning::getDetailedDescription(Rules& r
 	s+=tr("Allow empty mornings=%1").arg(yesNoTranslated(this->allowEmptyMornings));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -40503,7 +40695,7 @@ QString ConstraintTeacherMaxZeroGapsPerAfternoon::getDetailedDescription(Rules& 
 	s+=tr("Teacher=%1").arg(this->teacherName); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -40701,7 +40893,7 @@ QString ConstraintTeachersMaxZeroGapsPerAfternoon::getDetailedDescription(Rules&
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -40958,7 +41150,7 @@ QString ConstraintStudentsSetMaxAfternoonsPerWeek::getDetailedDescription(Rules&
 	s+=tr("Maximum afternoons per week=%1").arg(this->maxAfternoonsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -41162,7 +41354,7 @@ QString ConstraintStudentsMaxAfternoonsPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Maximum afternoons per week=%1").arg(this->maxAfternoonsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -41423,7 +41615,7 @@ QString ConstraintStudentsSetMaxMorningsPerWeek::getDetailedDescription(Rules& r
 	s+=tr("Maximum mornings per week=%1").arg(this->maxMorningsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -41627,7 +41819,7 @@ QString ConstraintStudentsMaxMorningsPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("Maximum mornings per week=%1").arg(this->maxMorningsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -41889,7 +42081,7 @@ QString ConstraintStudentsSetMinAfternoonsPerWeek::getDetailedDescription(Rules&
 	s+=tr("Minimum afternoons per week=%1").arg(this->minAfternoonsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -42093,7 +42285,7 @@ QString ConstraintStudentsMinAfternoonsPerWeek::getDetailedDescription(Rules& r)
 	s+=tr("Minimum afternoons per week=%1").arg(this->minAfternoonsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -42354,7 +42546,7 @@ QString ConstraintStudentsSetMinMorningsPerWeek::getDetailedDescription(Rules& r
 	s+=tr("Minimum mornings per week=%1").arg(this->minMorningsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -42558,7 +42750,7 @@ QString ConstraintStudentsMinMorningsPerWeek::getDetailedDescription(Rules& r){
 	s+=tr("Minimum mornings per week=%1").arg(this->minMorningsPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -42869,7 +43061,7 @@ QString ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::getDetailedDescripti
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -43119,7 +43311,7 @@ QString ConstraintStudentsMorningIntervalMaxDaysPerWeek::getDetailedDescription(
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -43429,7 +43621,7 @@ QString ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::getDetailedDescrip
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -43679,7 +43871,7 @@ QString ConstraintStudentsAfternoonIntervalMaxDaysPerWeek::getDetailedDescriptio
 	s+=tr("Maximum days per week=%1").arg(this->maxDaysPerWeek);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -43895,7 +44087,7 @@ QString ConstraintTeacherMaxHoursPerAllAfternoons::getDetailedDescription(Rules&
 	s+=tr("Maximum hours per all afternoons=%1").arg(this->maxHoursPerAllAfternoons);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -44075,7 +44267,7 @@ QString ConstraintTeachersMaxHoursPerAllAfternoons::getDetailedDescription(Rules
 	s+=tr("Maximum hours per all afternoons=%1").arg(this->maxHoursPerAllAfternoons);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -44311,7 +44503,7 @@ QString ConstraintStudentsSetMaxHoursPerAllAfternoons::getDetailedDescription(Ru
 	s+=tr("Maximum hours per all afternoons=%1").arg(this->maxHoursPerAllAfternoons);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -44489,7 +44681,7 @@ QString ConstraintStudentsMaxHoursPerAllAfternoons::getDetailedDescription(Rules
 	s+=tr("Maximum hours per all afternoons=%1").arg(this->maxHoursPerAllAfternoons);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -44677,7 +44869,7 @@ QString ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon::getDetailedD
 	s+=tr("Minimum resting hours=%1").arg(this->minRestingHours);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -44866,7 +45058,7 @@ QString ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon::getDetailed
 	s+=tr("Minimum resting hours=%1").arg(this->minRestingHours);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -45054,7 +45246,7 @@ QString ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::getDetai
 	s+=tr("Minimum resting hours=%1").arg(this->minRestingHours);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -45293,7 +45485,7 @@ QString ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon::getDetailed
 	s+=tr("Minimum resting hours=%1").arg(this->minRestingHours);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -45494,7 +45686,7 @@ QString ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour::getDetailedD
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -45800,7 +45992,7 @@ QString ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::getDetail
 	s+=tr("Maximum number of arrivals at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -46047,7 +46239,7 @@ QString ConstraintTeachersMaxGapsPerWeekForRealDays::getDetailedDescription(Rule
 	s+=tr("Maximum gaps per week for real day=%1").arg(this->maxGaps); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -46276,7 +46468,7 @@ QString ConstraintTeacherMaxGapsPerWeekForRealDays::getDetailedDescription(Rules
 	s+=tr("Maximum gaps per week for real days=%1").arg(this->maxGaps); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -46499,7 +46691,7 @@ QString ConstraintStudentsMaxGapsPerWeekForRealDays::getDetailedDescription(Rule
 	s+=tr("Maximum gaps per week for real days=%1").arg(this->maxGaps);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -46780,7 +46972,7 @@ QString ConstraintStudentsSetMaxGapsPerWeekForRealDays::getDetailedDescription(R
 	s+=tr("Students=%1").arg(this->students); s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -47009,7 +47201,7 @@ QString ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDes
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -47268,7 +47460,7 @@ QString ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDesc
 	s+=tr("Maximum number of arrivals at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -47518,7 +47710,7 @@ QString ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour::getDetailedDes
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -47824,7 +48016,7 @@ QString ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::getDetailed
 	s+=tr("Maximum number of arrivals at the second hour=%1").arg(this->maxBeginningsAtSecondHour);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -48075,7 +48267,7 @@ QString ConstraintTeacherMaxThreeConsecutiveDays::getDetailedDescription(Rules& 
 	s+=tr("Allow afternoon-morning-afternoon-morning exception=%1").arg(yesNoTranslated(this->allowAMAMException));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -48273,7 +48465,7 @@ QString ConstraintTeachersMaxThreeConsecutiveDays::getDetailedDescription(Rules&
 	s+=tr("Allow afternoon-morning-afternoon-morning exception=%1").arg(yesNoTranslated(this->allowAMAMException));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -48530,7 +48722,7 @@ QString ConstraintStudentsSetMaxThreeConsecutiveDays::getDetailedDescription(Rul
 	s+=tr("Allow afternoon-morning-afternoon-morning exception=%1").arg(yesNoTranslated(this->allowAMAMException));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -48731,7 +48923,7 @@ QString ConstraintStudentsMaxThreeConsecutiveDays::getDetailedDescription(Rules&
 	s+=tr("Allow afternoon-morning-afternoon-morning exception=%1").arg(yesNoTranslated(this->allowAMAMException));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -48966,6 +49158,15 @@ void ConstraintMinHalfDaysBetweenActivities::removeUseless(Rules& r)
 	r.internalStructureComputed=false;
 }
 
+void ConstraintMinHalfDaysBetweenActivities::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+#else
+	activitiesIdSet=activitiesId.toSet();
+#endif
+}
+
 bool ConstraintMinHalfDaysBetweenActivities::hasInactiveActivities(Rules& r)
 {
 	int count=0;
@@ -49038,7 +49239,7 @@ QString ConstraintMinHalfDaysBetweenActivities::getDetailedDescription(Rules& r)
 	s+=tr("Consecutive if same day=%1").arg(yesNoTranslated(this->consecutiveIfSameDay));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -49184,10 +49385,12 @@ bool ConstraintMinHalfDaysBetweenActivities::isRelatedToActivity(Rules& r, Activ
 {
 	Q_UNUSED(r);
 
-	for(int i=0; i<this->n_activities; i++)
+	return activitiesIdSet.contains(a->id);
+
+	/*for(int i=0; i<this->n_activities; i++)
 		if(this->activitiesId[i]==a->id)
 			return true;
-	return false;
+	return false;*/
 }
 
 bool ConstraintMinHalfDaysBetweenActivities::isRelatedToTeacher(Teacher* t)
@@ -49381,7 +49584,7 @@ QString ConstraintActivityPreferredDay::getDetailedDescription(Rules& r)
 	s+="\n";*/
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -49633,7 +49836,7 @@ QString ConstraintActivitiesMinInATerm::getDetailedDescription(Rules& r)
 	s+=tr("Allow empty terms=%1").arg(yesNoTranslated(this->allowEmptyTerms));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -49715,13 +49918,26 @@ void ConstraintActivitiesMinInATerm::removeUseless(Rules& r)
 	}
 
 	activitiesIds=newActs;
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintActivitiesMinInATerm::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+#else
+	activitiesIdsSet=activitiesIds.toSet();
+#endif
 }
 
 bool ConstraintActivitiesMinInATerm::isRelatedToActivity(Rules& r, Activity* a)
 {
 	Q_UNUSED(r);
 
-	return this->activitiesIds.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
+
+	//return this->activitiesIds.contains(a->id);
 }
 
 bool ConstraintActivitiesMinInATerm::isRelatedToTeacher(Teacher* t)
@@ -49861,6 +50077,15 @@ void ConstraintMaxTermsBetweenActivities::removeUseless(Rules& r)
 	r.internalStructureComputed=false;
 }
 
+void ConstraintMaxTermsBetweenActivities::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+#else
+	activitiesIdSet=activitiesId.toSet();
+#endif
+}
+
 bool ConstraintMaxTermsBetweenActivities::hasInactiveActivities(Rules& r)
 {
 	int count=0;
@@ -49930,7 +50155,7 @@ QString ConstraintMaxTermsBetweenActivities::getDetailedDescription(Rules& r)
 	s+=tr("Maximum number of terms=%1").arg(this->maxTerms);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -50039,10 +50264,12 @@ bool ConstraintMaxTermsBetweenActivities::isRelatedToActivity(Rules& r, Activity
 {
 	Q_UNUSED(r);
 
-	for(int i=0; i<this->n_activities; i++)
+	return activitiesIdSet.contains(a->id);
+
+	/*for(int i=0; i<this->n_activities; i++)
 		if(this->activitiesId[i]==a->id)
 			return true;
-	return false;
+	return false;*/
 }
 
 bool ConstraintMaxTermsBetweenActivities::isRelatedToTeacher(Teacher* t)
@@ -50176,7 +50403,7 @@ QString ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3::getDetailedDesc
 	s+=tr("Students=%1").arg(this->students);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -50367,7 +50594,7 @@ QString ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3::getDetailedDescrip
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -50566,7 +50793,7 @@ QString ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3::getDetailedDesc
 	s+=tr("Teacher=%1").arg(this->teacherName);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -50764,7 +50991,7 @@ QString ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3::getDetailedDes
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -50976,7 +51203,7 @@ QString ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3::getDetailed
 	s+=tr("Students=%1").arg(this->students);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -51171,7 +51398,7 @@ QString ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3::getDetailedDes
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -51389,6 +51616,15 @@ void ConstraintMaxHalfDaysBetweenActivities::removeUseless(Rules& r)
 	r.internalStructureComputed=false;
 }
 
+void ConstraintMaxHalfDaysBetweenActivities::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+#else
+	activitiesIdSet=activitiesId.toSet();
+#endif
+}
+
 bool ConstraintMaxHalfDaysBetweenActivities::hasInactiveActivities(Rules& r)
 {
 	int count=0;
@@ -51458,7 +51694,7 @@ QString ConstraintMaxHalfDaysBetweenActivities::getDetailedDescription(Rules& r)
 	s+=tr("Maximum number of days=%1").arg(this->maxDays);s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -51578,10 +51814,12 @@ bool ConstraintMaxHalfDaysBetweenActivities::isRelatedToActivity(Rules& r, Activ
 {
 	Q_UNUSED(r);
 
-	for(int i=0; i<this->n_activities; i++)
+	return activitiesIdSet.contains(a->id);
+
+	/*for(int i=0; i<this->n_activities; i++)
 		if(this->activitiesId[i]==a->id)
 			return true;
-	return false;
+	return false;*/
 }
 
 bool ConstraintMaxHalfDaysBetweenActivities::isRelatedToTeacher(Teacher* t)
@@ -51729,7 +51967,7 @@ QString ConstraintActivityBeginsStudentsDay::getDetailedDescription(Rules& r)
 		.arg(getActivityDetailedDescription(r, this->activityId));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -52029,7 +52267,7 @@ QString ConstraintActivitiesBeginStudentsDay::getDetailedDescription(Rules& r)
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -52270,7 +52508,7 @@ QString ConstraintActivityBeginsTeachersDay::getDetailedDescription(Rules& r)
 		.arg(getActivityDetailedDescription(r, this->activityId));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -52570,7 +52808,7 @@ QString ConstraintActivitiesBeginTeachersDay::getDetailedDescription(Rules& r)
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -52812,7 +53050,7 @@ QString ConstraintTeachersMinHoursPerAfternoon::getDetailedDescription(Rules& r)
 	s+=tr("Allow empty afternoons=%1").arg(yesNoTranslated(this->allowEmptyAfternoons));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -53059,7 +53297,7 @@ QString ConstraintTeacherMinHoursPerAfternoon::getDetailedDescription(Rules& r){
 	s+=tr("Allow empty afternoons=%1").arg(yesNoTranslated(this->allowEmptyAfternoons));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -53302,7 +53540,7 @@ QString ConstraintStudentsMinHoursPerAfternoon::getDetailedDescription(Rules& r)
 	s+=tr("Allow empty afternoons=%1").arg(yesNoTranslated(this->allowEmptyAfternoons));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){
@@ -53556,7 +53794,7 @@ QString ConstraintStudentsSetMinHoursPerAfternoon::getDetailedDescription(Rules&
 	s+=tr("Allow empty afternoons=%1").arg(yesNoTranslated(this->allowEmptyAfternoons));s+="\n";
 
 	if(!active){
-		s+=tr("Active=%1", "Refers to a constraint").arg(yesNoTranslated(active));
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
 		s+="\n";
 	}
 	if(!comments.isEmpty()){

@@ -2,7 +2,7 @@
                           modifyconstraintmaxhalfdaysbetweenactivitiesform.cpp  -  description
                              -------------------
     begin                : 2022
-    copyright            : (C) 2022 by Lalescu Liviu
+    copyright            : (C) 2022 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -200,7 +200,8 @@ void ModifyConstraintMaxHalfDaysBetweenActivitiesForm::ok()
 	for(i=0, it=this->selectedActivitiesList.constBegin(); it!=this->selectedActivitiesList.constEnd(); it++, i++)
 		this->_ctr->activitiesId.append(*it);
 	this->_ctr->n_activities=i;
-		
+	this->_ctr->recomputeActivitiesSet();
+	
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->maxDays=maxDaysSpinBox->value();
 	

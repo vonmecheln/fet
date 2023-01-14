@@ -2,7 +2,7 @@
                           addconstraintactivitiessamestartingtimeform.cpp  -  description
                              -------------------
     begin                : Wed June 23 2004
-    copyright            : (C) 2004 by Lalescu Liviu
+    copyright            : (C) 2004 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 

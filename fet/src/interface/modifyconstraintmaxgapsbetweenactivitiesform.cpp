@@ -2,7 +2,7 @@
                           modifyconstraintmaxgapsbetweenactivitiesform.cpp  -  description
                              -------------------
     begin                : 2020
-    copyright            : (C) 2020 by Lalescu Liviu
+    copyright            : (C) 2020 by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
@@ -199,7 +199,8 @@ void ModifyConstraintMaxGapsBetweenActivitiesForm::ok()
 		this->_ctr->activitiesId.append(*it);
 	this->_ctr->n_activities=i;
 	assert(i==this->_ctr->activitiesId.count());
-		
+	this->_ctr->recomputeActivitiesSet();
+	
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->maxGaps=maxGapsSpinBox->value();
 	
