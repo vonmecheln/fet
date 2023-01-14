@@ -7,7 +7,7 @@ File timetable_defs.cpp
                              -------------------
     begin                : Sat Mar 15 2003
     copyright            : (C) 2003 by Lalescu Liviu
-    email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
+    email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
 /***************************************************************************
@@ -37,7 +37,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 FET version
 */
-const QString FET_VERSION="6.7.7";
+const QString FET_VERSION="6.7.8";
 
 /**
 FET language

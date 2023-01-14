@@ -3,7 +3,7 @@
                              -------------------
     begin                : Feb 10, 2005
     copyright            : (C) 2005 by Lalescu Liviu
-    email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
+    email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************/
 
 /***************************************************************************
@@ -48,7 +48,7 @@ AddConstraintBreakTimesForm::AddConstraintBreakTimesForm(QWidget* parent): QDial
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-							
+	
 	notAllowedTimesTable->setRowCount(gt.rules.nHoursPerDay);
 	notAllowedTimesTable->setColumnCount(gt.rules.nDaysPerWeek);
 

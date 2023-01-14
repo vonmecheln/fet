@@ -6,7 +6,7 @@ File export.cpp
                                 FET
                           -------------------
    copyright            : (C) by Lalescu Liviu
-    email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
+    email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************
                           export.cpp  -  description
                              -------------------
@@ -515,7 +515,7 @@ bool Export::selectSeparatorAndTextQuote(QWidget* parent, QDialog* &newParent, Q
 	
 	QObject::connect(pb, SIGNAL(clicked()), &separatorsDialog, SLOT(accept()));
 	QObject::connect(cancelpb, SIGNAL(clicked()), &separatorsDialog, SLOT(reject()));
-		
+	
 	int w=separatorsDialog.sizeHint().width();
 	int h=separatorsDialog.sizeHint().height();
 	separatorsDialog.resize(w,h);

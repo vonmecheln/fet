@@ -6,7 +6,7 @@ File lockunlock.h
                                 FET
                           -------------------
    copyright            : (C) by Lalescu Liviu
-    email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)
+    email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************
                           lockunlock.h  -  description
                              -------------------

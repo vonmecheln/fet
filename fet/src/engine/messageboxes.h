@@ -3,7 +3,7 @@
 // Description: This file is part of FET
 //
 //
-// Author: Liviu Lalescu <https://lalescu.ro/liviu/>
+// Author: Liviu Lalescu (Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address))
 // Copyright (C) 2013 Liviu Lalescu <https://lalescu.ro/liviu/>
 //
 /***************************************************************************

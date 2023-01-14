@@ -3,7 +3,7 @@
 // Description: This file is part of FET
 //
 //
-// Author: Lalescu Liviu <Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find here the e-mail address)>
+// Author: Lalescu Liviu (Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address))
 // Copyright (C) 2003 Liviu Lalescu <https://lalescu.ro/liviu/>
 //
 /***************************************************************************
@@ -34,7 +34,7 @@ SettingsTimetableHtmlLevelForm::SettingsTimetableHtmlLevelForm(QWidget* parent):
 	
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
-		
+	
 	if(TIMETABLE_HTML_LEVEL==0)
 		level0RadioButton->setChecked(true);
 	else if(TIMETABLE_HTML_LEVEL==1)

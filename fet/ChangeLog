@@ -1415,7 +1415,7 @@ Version 5.11.0
 	- Converted all dialogs to Qt 4 Designer files - suggested by George Miliotis.
 	Compilation time is now shorter and intermediary and executable files are smaller.
 	- Added constraint teacher(s) min days per week (suggested by several users).
-	- Added constraint teacher(s) or students (set) for an activity tag maximum hours daily (suggested by several users).
+	- Added constraint teacher(s) or students (set) activity tag maximum hours daily (suggested by several users).
 	It is not perfect and must be enabled from settings menu.
 	- Added constraint students (set) max gaps per day. It is not perfect and must be enabled from settings menu.
 	- Very rare crash bug fix (reported by Marco Barsotti).
@@ -2590,4 +2590,7 @@ Versions 6.7.0 - 6.7.v
 	- Interface improvement: in the activities dialog, in the list of time constraints directly related to the selected activity, there will be shown the related
 	constraints of type teacher/students set not available times.
 	- Minor improvements.
+	- Code cleanup.
+- Version 6.7.8
+	- Updated to Qt 6.4.2.
 	- Code cleanup.
