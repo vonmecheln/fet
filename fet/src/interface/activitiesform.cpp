@@ -29,14 +29,21 @@
 
 #include "advancedfilterform.h"
 
+#include "longtextmessagebox.h"
+
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
+#else
+#include <QRegExp>
+#endif
+
 #include <QString>
 #include <QMessageBox>
 
 #include <QListWidget>
 #include <QScrollBar>
 #include <QAbstractItemView>
-
-#include "longtextmessagebox.h"
 
 #include <QBrush>
 #include <QPalette>
@@ -50,6 +57,8 @@
 #include <QtAlgorithms>
 #include <QtGlobal>
 
+#include <algorithm>
+
 extern bool teachers_schedule_ready;
 extern bool students_schedule_ready;
 extern bool rooms_schedule_ready;
@@ -57,6 +66,8 @@ extern bool rooms_schedule_ready;
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
+//The order is important: we must have DESCRIPTION < DETDESCRIPTION < DETDESCRIPTIONWITHCONSTRAINTS, because we use std::stable_sort to put
+//the hopefully simpler/faster/easier to check filters first.
 const int DESCRIPTION=0;
 const int DETDESCRIPTION=1;
 const int DETDESCRIPTIONWITHCONSTRAINTS=2;
@@ -350,80 +361,97 @@ bool ActivitiesForm::filterOk(Activity* act)
 	if(!caseSensitive)
 		csens=Qt::CaseInsensitive;
 	
-	QList<bool> okPartial;
-	
-	QString cachedS=QString("");
-	for(int i=0; i<descrDetDescrDetDescrWithConstraints.count(); i++){
-		if(descrDetDescrDetDescrWithConstraints.at(i)==DETDESCRIPTIONWITHCONSTRAINTS){
-			cachedS=act->getDetailedDescriptionWithConstraints(gt.rules); //warning: time consuming operation, goes through all the constraints.
-			break;
+	QList<int> perm;
+	for(int i=0; i<descrDetDescrDetDescrWithConstraints.count(); i++)
+		perm.append(i);
+	//Below we do a stable sorting, so that first inputted filters are hopefully filtering out more entries. This is written in the help when interrupting the
+	//filtering of the activities, see the progress.wasCanceled() message.
+	std::stable_sort(perm.begin(), perm.end(), [this](int a, int b){return descrDetDescrDetDescrWithConstraints.at(a)<descrDetDescrDetDescrWithConstraints.at(b);});
+	for(int i=0; i<perm.count()-1; i++)
+		assert(descrDetDescrDetDescrWithConstraints.at(perm.at(i))<=descrDetDescrDetDescrWithConstraints.at(perm.at(i+1)));
+
+	int firstPosWithDescr=-1;
+	int firstPosWithDetDescr=-1;
+	int firstPosWithConstraints=-1;
+	for(int i=0; i<perm.count(); i++){
+		if(descrDetDescrDetDescrWithConstraints.at(perm.at(i))==DESCRIPTION && firstPosWithDescr==-1){
+			firstPosWithDescr=i;
+		}
+		else if(descrDetDescrDetDescrWithConstraints.at(perm.at(i))==DETDESCRIPTION && firstPosWithDetDescr==-1){
+			firstPosWithDetDescr=i;
+		}
+		else if(descrDetDescrDetDescrWithConstraints.at(perm.at(i))==DETDESCRIPTIONWITHCONSTRAINTS && firstPosWithConstraints==-1){
+			firstPosWithConstraints=i;
 		}
 	}
 	
-	for(int i=0; i<descrDetDescrDetDescrWithConstraints.count(); i++){
-		QString s;
-		if(descrDetDescrDetDescrWithConstraints.at(i)==DESCRIPTION){
-			s=act->getDescription(gt.rules);
+	QString s=QString("");
+	for(int i=0; i<perm.count(); i++){
+		if(descrDetDescrDetDescrWithConstraints.at(perm.at(i))==DESCRIPTION){
+			assert(firstPosWithDescr>=0);
+			
+			if(i==firstPosWithDescr)
+				s=act->getDescription(gt.rules);
 		}
-		else if(descrDetDescrDetDescrWithConstraints.at(i)==DETDESCRIPTION){
-			s=act->getDetailedDescription(gt.rules);
+		else if(descrDetDescrDetDescrWithConstraints.at(perm.at(i))==DETDESCRIPTION){
+			assert(firstPosWithDetDescr>=0);
+			
+			if(i==firstPosWithDetDescr)
+				s=act->getDetailedDescription(gt.rules);
 		}
 		else{
-			assert(descrDetDescrDetDescrWithConstraints.at(i)==DETDESCRIPTIONWITHCONSTRAINTS);
-			s=cachedS;
-			//s=act->getDetailedDescriptionWithConstraints(gt.rules); //warning: time consuming operation, goes through all the constraints.
+			assert(descrDetDescrDetDescrWithConstraints.at(perm.at(i))==DETDESCRIPTIONWITHCONSTRAINTS);
+			
+			assert(firstPosWithConstraints>=0);
+			
+			if(i==firstPosWithConstraints)
+				s=act->getDetailedDescriptionWithConstraints(gt.rules); //warning: time consuming operation, goes through all the constraints and group activities in.initial order items.
 		}
 		
-		QString t=text.at(i);
-		if(contains.at(i)==CONTAINS){
-			okPartial.append(s.contains(t, csens));
+		bool okPartial=true; //We initialize okPartial to silence a MinGW 11.2.0 warning of type 'this variable might be used uninitialized'.
+		
+		QString t=text.at(perm.at(i));
+		if(contains.at(perm.at(i))==CONTAINS){
+			okPartial=s.contains(t, csens);
 		}
-		else if(contains.at(i)==DOESNOTCONTAIN){
-			okPartial.append(!(s.contains(t, csens)));
+		else if(contains.at(perm.at(i))==DOESNOTCONTAIN){
+			okPartial=!(s.contains(t, csens));
 		}
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
-		else if(contains.at(i)==REGEXP){
+		else if(contains.at(perm.at(i))==REGEXP){
 			QRegularExpression regExp(t);
 			if(!caseSensitive)
 				regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
-			okPartial.append((regExp.match(s)).hasMatch());
+			okPartial=(regExp.match(s)).hasMatch();
 		}
-		else if(contains.at(i)==NOTREGEXP){
+		else if(contains.at(perm.at(i))==NOTREGEXP){
 			QRegularExpression regExp(t);
 			if(!caseSensitive)
 				regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
-			okPartial.append(!(regExp.match(s)).hasMatch());
+			okPartial=!(regExp.match(s)).hasMatch();
 		}
 #else
-		else if(contains.at(i)==REGEXP){
+		else if(contains.at(perm.at(i))==REGEXP){
 			QRegExp regExp(t);
 			regExp.setCaseSensitivity(csens);
-			okPartial.append(regExp.indexIn(s)>=0);
+			okPartial=(regExp.indexIn(s)>=0);
 		}
-		else if(contains.at(i)==NOTREGEXP){
+		else if(contains.at(perm.at(i))==NOTREGEXP){
 			QRegExp regExp(t);
 			regExp.setCaseSensitivity(csens);
-			okPartial.append(regExp.indexIn(s)<0);
+			okPartial=(regExp.indexIn(s)<0);
 		}
 #endif
 		else
 			assert(0);
+			
+		if(all && !okPartial)
+			return false;
+		else if(!all && okPartial)
+			return true;
 	}
 	
-	if(all){
-		bool ok=true;
-		for(bool b : qAsConst(okPartial))
-			ok = ok && b;
-			
-		return ok;
-	}
-	else{ //any
-		bool ok=false;
-		for(bool b : qAsConst(okPartial))
-			ok = ok || b;
-			
-		return ok;
-	}
+	return all;
 }
 
 void ActivitiesForm::studentsFilterChanged()
@@ -504,10 +532,15 @@ void ActivitiesForm::filterChanged()
 	for(int i=0; i<gt.rules.activitiesList.size(); i++){
 		progress.setValue(i);
 		if(progress.wasCanceled()){
-			QMessageBox::warning(this, tr("FET warning"), tr("You canceled the filtering of the activities - the list of activities will be incomplete.")+QString(" ")+
+			LongTextMessageBox::largeInformation(this, tr("FET warning"), tr("You canceled the filtering of the activities - the list of activities will be incomplete.")+QString(" ")+
 			 tr("Note: if filtering of the activities takes too much, it might be because you are filtering on the detailed description with constraints of the activities,"
 			 " which checks each activity against each time constraint, each space constraint, and each group activities in the initial order item, which might be too much."
-			 " Please consider filtering on the description or detailed description of the activities, instead."));
+			 " Please consider filtering on the description or detailed description of the activities, instead.")+QString("\n\n")+tr("Note: if you are using more filters,"
+			 " like 'the activity should have a certain teacher', you might obtain much faster results if you filter on the description/detailed description of the activity"
+			 " for the teacher and on the detailed description with constraints for other filters (meaning that you should prefer using the description/detailed description"
+			 " instead of the detailed description with constraints, whenever it is possible).")+QString(" ")+tr("Also, the order of the detailed description with constraints"
+			 " filters is important: you should put firstly the ones who filter out more activities (if you selected the 'All' radio button) or put firstly the ones who"
+			 " accept immediately more activities (if you selected the 'Any' radio button)."));
 			break;
 		}
 		
@@ -767,14 +800,14 @@ void ActivitiesForm::help()
 	s+=tr("Useful instructions/tips:");
 	s+="\n\n";
 	
-	s+=tr("Above the (sub)activities list, we have 2 labels, containing 4 numbers. The first label contains text: No: a / b. The first number a is the"
-		" number of active (sub)activities (we number each individual subactivity as 1), while the second number b is the number of total (sub)activities."
-		" The second label contains text: Dur: c / d. The third number c is the duration of active (sub)activities, in periods"
-		" (or FET hours), while the fourth number d is the duration of total (sub)activities, in periods (or FET hours)."
+	s+=tr("Above the activities list we have 2 labels, containing 4 numbers. The first label contains text: No: a / b. The first number a is the"
+		" number of active activities (we number each individual subactivity as 1), while the second number b is the number of total activities."
+		" The second label contains text: Dur: c / d. The third number c is the duration of active activities, in periods"
+		" (or FET hours), while the fourth number d is the duration of total activities, in periods (or FET hours)."
 		" So, No means number and Dur means duration.");
 	s+="\n\n";
-	s+=tr("Example: No: 100 / 102, Dur: 114 / 117. They represent: 100 - the number of active (sub)activities,"
-		" then 102 - the number of total (sub)activities,"
+	s+=tr("Example: No: 100 / 102, Dur: 114 / 117. They represent: 100 - the number of active activities,"
+		" then 102 - the number of total activities,"
 		" 114 - the duration of active activities (in periods or FET hours) and 117 - the duration of total activities"
 		" (in periods or FET hours). In this example we have 2 inactive activities with their combined duration being 3 periods.");
 	

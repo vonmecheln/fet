@@ -44,7 +44,7 @@ class LockAdvancedDialog : public QDialog{
 	
 	QLabel* numberLabel;
 	QLabel* durationLabel;
-	
+
 	bool all; //all or any, true means all, false means any
 	QList<int> descrDetDescrDetDescrWithConstraints;
 	QList<int> contains;
@@ -69,6 +69,7 @@ public:
 	
 public slots:
 	void filter(bool selected);
+	void help();
 };
 
 class UnlockAdvancedDialog : public QDialog{
@@ -78,7 +79,7 @@ class UnlockAdvancedDialog : public QDialog{
 	
 	QLabel* numberLabel;
 	QLabel* durationLabel;
-
+	
 	bool all; //all or any, true means all, false means any
 	QList<int> descrDetDescrDetDescrWithConstraints;
 	QList<int> contains;
@@ -103,6 +104,7 @@ public:
 
 public slots:
 	void filter(bool selected);
+	void help();
 };
 
 class AdvancedLockUnlockForm : public QObject{

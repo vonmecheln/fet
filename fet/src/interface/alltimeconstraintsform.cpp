@@ -15,8 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <Qt>
-
 #include "longtextmessagebox.h"
 
 #include "alltimeconstraintsform.h"
@@ -295,6 +293,8 @@
 
 #include "advancedfilterform.h"
 
+#include <Qt>
+
 #include <QMessageBox>
 
 #include <QPlainTextEdit>
@@ -327,6 +327,8 @@
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
+//The order is important: we must have DESCRIPTION < DETDESCRIPTION, because we use std::stable_sort to put
+//the hopefully simpler/faster/easier to check filters first.
 const int DESCRIPTION=0;
 const int DETDESCRIPTION=1;
 
@@ -445,68 +447,86 @@ bool AllTimeConstraintsForm::filterOk(TimeConstraint* ctr)
 	if(!caseSensitive)
 		csens=Qt::CaseInsensitive;
 	
-	QList<bool> okPartial;
+	QList<int> perm;
+	for(int i=0; i<descrDetDescr.count(); i++)
+		perm.append(i);
+	//Below we do a stable sorting, so that first inputted filters are hopefully filtering out more entries.
+	std::stable_sort(perm.begin(), perm.end(), [this](int a, int b){return descrDetDescr.at(a)<descrDetDescr.at(b);});
+	for(int i=0; i<perm.count()-1; i++)
+		assert(descrDetDescr.at(perm.at(i))<=descrDetDescr.at(perm.at(i+1)));
 	
-	for(int i=0; i<descrDetDescr.count(); i++){
-		QString s;
-		if(descrDetDescr.at(i)==DESCRIPTION){
-			s=ctr->getDescription(gt.rules);
+	int firstPosWithDescr=-1;
+	int firstPosWithDetDescr=-1;
+	for(int i=0; i<perm.count(); i++){
+		if(descrDetDescr.at(perm.at(i))==DESCRIPTION && firstPosWithDescr==-1){
+			firstPosWithDescr=i;
+		}
+		else if(descrDetDescr.at(perm.at(i))==DETDESCRIPTION && firstPosWithDetDescr==-1){
+			firstPosWithDetDescr=i;
+		}
+	}
+	
+	QString s=QString("");
+	for(int i=0; i<perm.count(); i++){
+		if(descrDetDescr.at(perm.at(i))==DESCRIPTION){
+			assert(firstPosWithDescr>=0);
+			
+			if(i==firstPosWithDescr)
+				s=ctr->getDescription(gt.rules);
 		}
 		else{
-			assert(descrDetDescr.at(i)==DETDESCRIPTION);
-			s=ctr->getDetailedDescription(gt.rules);
+			assert(descrDetDescr.at(perm.at(i))==DETDESCRIPTION);
+			
+			assert(firstPosWithDetDescr>=0);
+			
+			if(i==firstPosWithDetDescr)
+				s=ctr->getDetailedDescription(gt.rules);
 		}
+
+		bool okPartial=true; //We initialize okPartial to silence a MinGW 11.2.0 warning of type 'this variable might be used uninitialized'.
 		
-		QString t=text.at(i);
-		if(contains.at(i)==CONTAINS){
-			okPartial.append(s.contains(t, csens));
+		QString t=text.at(perm.at(i));
+		if(contains.at(perm.at(i))==CONTAINS){
+			okPartial=s.contains(t, csens);
 		}
-		else if(contains.at(i)==DOESNOTCONTAIN){
-			okPartial.append(!(s.contains(t, csens)));
+		else if(contains.at(perm.at(i))==DOESNOTCONTAIN){
+			okPartial=!(s.contains(t, csens));
 		}
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
-		else if(contains.at(i)==REGEXP){
+		else if(contains.at(perm.at(i))==REGEXP){
 			QRegularExpression regExp(t);
 			if(!caseSensitive)
 				regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
-			okPartial.append((regExp.match(s)).hasMatch());
+			okPartial=(regExp.match(s)).hasMatch();
 		}
-		else if(contains.at(i)==NOTREGEXP){
+		else if(contains.at(perm.at(i))==NOTREGEXP){
 			QRegularExpression regExp(t);
 			if(!caseSensitive)
 				regExp.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
-			okPartial.append(!(regExp.match(s)).hasMatch());
+			okPartial=!(regExp.match(s)).hasMatch();
 		}
 #else
-		else if(contains.at(i)==REGEXP){
+		else if(contains.at(perm.at(i))==REGEXP){
 			QRegExp regExp(t);
 			regExp.setCaseSensitivity(csens);
-			okPartial.append(regExp.indexIn(s)>=0);
+			okPartial=(regExp.indexIn(s)>=0);
 		}
-		else if(contains.at(i)==NOTREGEXP){
+		else if(contains.at(perm.at(i))==NOTREGEXP){
 			QRegExp regExp(t);
 			regExp.setCaseSensitivity(csens);
-			okPartial.append(regExp.indexIn(s)<0);
+			okPartial=(regExp.indexIn(s)<0);
 		}
 #endif
 		else
 			assert(0);
+			
+		if(all && !okPartial)
+			return false;
+		else if(!all && okPartial)
+			return true;
 	}
 	
-	if(all){
-		bool ok=true;
-		for(bool b : qAsConst(okPartial))
-			ok = ok && b;
-			
-		return ok;
-	}
-	else{ //any
-		bool ok=false;
-		for(bool b : qAsConst(okPartial))
-			ok = ok || b;
-			
-		return ok;
-	}
+	return all;
 }
 
 void AllTimeConstraintsForm::moveTimeConstraintUp()

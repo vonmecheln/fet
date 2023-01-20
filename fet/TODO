@@ -8188,3 +8188,42 @@ Is it possible to add a button at this window... for deactivating/activating sel
 Liviu Lalescu:
 
 It is possible, but it is bad to mix the data with the timetable.
+
+488---------------------------------------------------------
+From darkwindow (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5461.0
+
+I was thinking about a little improvement. When FET is opened, a blank timetable is set by default (named Untitled on the top left corner).
+
+I go to File > Open... > and select what FET file I want to continue working.
+
+After I opened the file, the Print option is not available. It says "Please generate, firstly".
+
+However, yesterday I have generated a timetable and in the timetable's folder it has all .html files. Everything is correct.
+
+So I suggest that the Print option is enabled so that the print view can be accessed more quickly, instead of having to search for the containing folder on the computer.
+
+I think this can prevent certain people who are sparse, not knowing that a folder is created on the computer, from regenerating the timetable and losing the distribution
+they had achieved after closing FET.
+
+Liviu Lalescu:
+
+The suggestion is good, unfortunately it cannot be solved elegantly, because the input data is different from the timetable.
+
+But: For each successfully generated timetable, you have in the results directory the file filename_data_and_timetable.fet. This file will be overwritten only
+on successful generations. For partial timetables it will remain the same from the previous successful generation. So you can open it and generate with FET on it.
+It should generate in an instant and provide the same timetable.
+
+489---------------------------------------------------------
+From Vangelis Karafillidis:
+
+He suggests adding a button "Remove all" in the all time/space constraints dialogs. But it is very risky for the user.
+
+490---------------------------------------------------------
+From Vangelis Karafillidis:
+
+A bug report, which is unfortunately a feature: say he wants to remove the day Monday (the first of the week). Then, if a teacher was not available at
+some hours on Monday, he will now be not available at the same hours on Tuesday.
+
+(He would like to remove 4 days and leave only 1, so that he can do substitutions for this day. But this is impossible with the current code.)

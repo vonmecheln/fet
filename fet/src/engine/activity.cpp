@@ -645,11 +645,12 @@ QString Activity::getDetailedDescription(Rules& r)
 		s+=tr("No teachers for this activity");
 		s+="\n";
 	}
-	else
+	else{
 		for(QStringList::const_iterator it=this->teachersNames.constBegin(); it!=this->teachersNames.constEnd(); it++){
 			s+=tr("Teacher=%1").arg(*it);
 			s+="\n";
 		}
+	}
 
 	s+=tr("Subject=%1").arg(this->subjectName);
 	s+="\n";
@@ -663,19 +664,21 @@ QString Activity::getDetailedDescription(Rules& r)
 		s+=tr("No students sets for this activity");
 		s+="\n";
 	}
-	else
+	else{
 		for(QStringList::const_iterator it=this->studentsNames.constBegin(); it!=this->studentsNames.constEnd(); it++){
 			s+=tr("Students=%1").arg(*it);
 			s+="\n";
 		}
+	}
 	
 	if(this->computeNTotalStudents==true){
 		s+=tr("Total number of students=%1").arg(this->nTotalStudents);
+		s+=" ("+tr("computed", "Computed means that the total number of students was computed for the activity, from the number of students of the constituent students sets")+")";
 		s+="\n";
 	}
 	else{
 		s+=tr("Total number of students=%1").arg(this->nTotalStudents);
-		s+=" ("+tr("specified", "Specified means that the total number of students was specified separately for the activity")+")";
+		s+=" ("+tr("specified", "Specified means that the total number of students was specified for the activity")+")";
 		s+="\n";
 	}
 	

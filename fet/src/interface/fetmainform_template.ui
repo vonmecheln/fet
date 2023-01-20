@@ -2150,7 +2150,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Warn if using students min hours per afternoon with empty afternoon</string>
+    <string>Warn if using students min hours per afternoon with empty afternoons</string>
    </property>
   </action>
   <action name="helpMoroccoAction">
