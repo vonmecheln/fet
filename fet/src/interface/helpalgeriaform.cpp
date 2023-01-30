@@ -32,11 +32,11 @@ HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)
 
 	QString s=QString("");
 	
-	s+=tr("This help by Liviu Lalescu, last modified on %1").arg(tr("10 June 2020"));
+	s+=tr("This help by %1, last modified on %2", "%1 is a person").arg("Liviu Lalescu").arg(tr("10 June 2020"));
 	s+="\n\n";
 
-	s+=tr("FET mornings-afternoons with unrestricted mornings/afternoons for teachers was originally designed for Algerian schools (as requested by the user aissa)"
-	 ", but it can be used in other institutions working in two shifts where teachers can work both in the morning and in the evening on the same day.");
+	s+=tr("FET mornings-afternoons with unrestricted mornings/afternoons for teachers was originally designed for Algerian schools (as requested by the user %1)"
+	 ", but it can be used in other institutions working in two shifts where teachers can work both in the morning and in the evening on the same day.").arg("aissa");
 
 	s+="\n\n";
 
@@ -78,21 +78,22 @@ HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)
 	
 	s+="\n\n";
 
-	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "This question and answer by bachiri401 and Liviu Lalescu:");
+	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "This question and answer by %1 and %2:", "%1 and %2 are two persons").arg("bachiri401").arg("Liviu Lalescu");
 	s+="\n\n";
-	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "bachiri401: In Algeria, we can not teach the same subject in the same real day. For example a subject divided into 3 activities (1+1+1)"
-	 " must be on three different real days. The constraint min days between activities here is great (working for real days).");
+	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "%1: In Algeria, we can not teach the same subject in the same real day. For example a subject divided into 3 activities (1+1+1)"
+	 " must be on three different real days. The constraint min days between activities here is great (working for real days).", "%1 is the name of the person writing this paragraph").arg("bachiri401");
 	s+="\n\n";
 	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "But for example we have students studying math and sport. We want math and sport not to be on the same half day but they can be on the same real day.");
 	s+="\n\n";
-	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "bachiri401 also said that for this problem he uses a trick, adding a constraint min gaps between the activities.");
+	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "%1 also said that for this problem he uses a trick, adding a constraint min gaps between the activities.",
+	 "%1 is the name of a person").arg("bachiri401");
 	s+="\n\n";
-	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "And indeed, Liviu Lalescu says this: I checked the code. There is no need for a new constraint. Please use a constraint min gaps between activities"
+	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "And indeed, %1 says this: I checked the code. There is no need for a new constraint. Please use a constraint min gaps between activities"
 	 " with min gaps = the number of hours per half day (the maximum FET allows). Add all the math and sport activities for a students set for your example. It is implemented"
-	 " efficiently for this case.");
+	 " efficiently for this case.", "%1 is the name of a person").arg("Liviu Lalescu");
 	s+="\n\n";
 	s+=QCoreApplication::translate("HelpForMorningsAfternoons", "Note: in FET version %1, suggested by %2, it was added a new type of constraint probably useful in this case:"
-	 " min half days between activities, so that the trick above is now no longer necessary.").arg("6.4.0").arg("ngoctp29121982");
+	 " min half days between activities, so that the trick above is now no longer necessary.", "%1 is the FET version number, %2 is a person").arg("6.4.0").arg("ngoctp29121982");
 	
 	textBrowser->setText(s);
 }

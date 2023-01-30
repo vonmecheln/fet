@@ -70,7 +70,7 @@ From Elbouche Mourad, on Facebook: Just a note, can't you improve the feature of
 
 From Smail Smail, on Facebook: We would only like if you improve the output of tables in your program, especially to Excel.
 
-From Abdelhakim Zoumar, on Facebook: We would be very pleased if you make the output manipuable : to make minor changes such as to replace , add , or delete... .
+From Abdelhakim Zoumar, on Facebook: We would be very pleased if you make the output manipulable : to make minor changes such as to replace , add , or delete... .
 
 0.75-------------------------------------------------------
 From Thành Nam:
@@ -1788,7 +1788,7 @@ Liviu's note: I think that kdrosos refers to the Greek FET. In the English FET, 
 115---------------------------------------------------------
 From nouvakis:
 
-I've seen that with html files you save a "xxx_data_and_timetable.fet" file.
+I've seen that with html files you save a "xyz_data_and_timetable.fet" file.
 In this xml file, you save
 <Time_Constraints_List> element which contains many <ConstraintActivityPreferredStartingTime>.
 
@@ -2041,7 +2041,7 @@ From Volker Dirr:
 >> i saved settings with QSettings and i reload that settings on an other
 >> function.
 >> the strange thing was this:
->> i saved QSettings in the destructor ~xxx and reload it in an other
+>> i saved QSettings in the destructor ~xyz and reload it in an other
 >> function/file again, but it look like Qsettings didn't save. the
 >> strange things was that visible/correct as soon as i restarted that
 >> reload function a bit later.
@@ -2050,7 +2050,7 @@ From Volker Dirr:
 >> it look like my "update"-function already run before the destructor
 >> source was done.
 >>
->> now i removed the destructor ~xxx and replaced it by a protected: void
+>> now i removed the destructor ~xyz and replaced it by a protected: void
 >> closeEvent(QCloseEvent *event);
 >>
 >> now all work fine. it look like the protected: void
@@ -2213,7 +2213,7 @@ subactivities? 9, 99, 999?)
 
 2. below the check *consecutive*
 
-the format of the label can be as little as T:xxx (5 chars).
+the format of the label can be as little as T:xyz (5 chars).
 
 Just this afternoon I spent 2 hours correcting mistakes that I would have
 avoided if such counter was in place. Consider the input of a sequence of activities with
@@ -5112,7 +5112,7 @@ Unfortunately, I think this is (very?) complicated.
 Rodolfo Ribeiro Gomes:
 
 Maybe a hash of room name?
-table_roomXXXX where XXXX is a hash?
+table_roomXYZ where XYZ is a hash?
 
 ---
 
@@ -8227,3 +8227,50 @@ A bug report, which is unfortunately a feature: say he wants to remove the day M
 some hours on Monday, he will now be not available at the same hours on Tuesday.
 
 (He would like to remove 4 days and leave only 1, so that he can do substitutions for this day. But this is impossible with the current code.)
+
+491---------------------------------------------------------
+From castonepatha (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5469.0
+
+castonepatha:
+
+It would help us a lot at school if we could display the ID of the activity in the html page of the schedule.
+
+Liviu Lalescu:
+
+I implemented this as a custom version for him.
+
+castonepatha:
+
+It would be great if you will implemented this function in main version as well. Or with some possibility to turn it off and on.
+
+Liviu Lalescu:
+
+I will write down your suggestion in the TODO list. It is not at all difficult, but until now we did not consider it useful -- on the contrary, we considered that
+it might clutter the timetables.
+
+castonepatha:
+
+It is really very useful. Mainly for the back check of activities and subsequent corrections. Imagine that someone sends you requests for changes. For me,
+the ID is more important than the subject name (more repeated subjects and groups). It can be solved in a different way, but it will be great this way.
+
+492---------------------------------------------------------
+From ngoctp29121982 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5475.0
+
+ngoctp29121982:
+
+Maximum number of teaching sessions per week for one teacher and the like:
+According to me There is 1 more filter button, sort by number of operations ascending or descending, For example: 2,4,5,6,7....... and much easier to control.
+Do the same thing when importing from csv: the teacher has 12 activities to give away 3 sessions.........
+
+Liviu Lalescu:
+
+I don't understand, sorry.
+
+ngoctp29121982:
+
+Maximum number of teaching sessions in a week for 1 teacher
+In this constraint, there is a dialog box to sort the teachers with the number of lessons from small to large

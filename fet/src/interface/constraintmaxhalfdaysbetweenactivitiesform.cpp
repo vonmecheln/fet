@@ -120,7 +120,7 @@ bool ConstraintMaxHalfDaysBetweenActivitiesForm::filterOk(TimeConstraint* ctr)
 	bool foundTeacher=false, foundStudents=false, foundSubject=false, foundActivityTag=false;
 		
 	for(int i=0; i<c->n_activities; i++){
-		int id=c->activitiesId[i];
+		int id=c->activitiesIds[i];
 		/*Activity* act=nullptr;
 		for(Activity* a : qAsConst(gt.rules.activitiesList))
 			if(a->id==id)
@@ -297,7 +297,7 @@ void ConstraintMaxHalfDaysBetweenActivitiesForm::help()
 	s+=tr("1)")+QString(" ");
 	s+=tr("This constraint was suggested by %1, so that a teacher does not work both on the afternoon of the last day of the week and the morning"
 	 " of the first day of the week. The user needs to add all the activities of the teacher, max half days between them = n_half_days_per_week-2."
-	 " See the forum topic %2 for more details.").arg("Mohamed Ait Ichou").arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=5207.0");
+	 " See the forum topic %2 for more details.", "%1 is a person").arg("Mohamed Ait Ichou").arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=5207.0");
 	s+="\n\n";
 	s+=tr("2)")+QString(" ");
 	s+=tr("Also, this constraint was suggested by %1, to do the timetable for two weeks using tricks. Here are this user's words:"
@@ -305,7 +305,7 @@ void ConstraintMaxHalfDaysBetweenActivitiesForm::help()
 	 " min days between activities 6, max days between activities 6 and the same starting hour with max different rooms 1. I added a trick so that"
 	 " the two activities are in the same half of the day: for each real room I created two rooms, one valid in the morning and the other valid in"
 	 " the evening; to avoid this bypass, is it possible to add a max half days between activities constraint?' (Note: The constraint type min half days"
-	 " between activities was existing at the time of this post.) See the forum topic %2 for more details.")
+	 " between activities was existing at the time of this post.) See the forum topic %2 for more details.", "%1 is a person")
 	 .arg("fourat").arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=5208.0");
 
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);

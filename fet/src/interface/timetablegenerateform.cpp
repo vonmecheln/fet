@@ -176,7 +176,7 @@ void TimetableGenerateForm::start(){
 		return;
 	}
 
-	currentResultsTextEdit->setPlainText(TimetableGenerateForm::tr("Entering simulation....precomputing, please be patient"));
+	currentResultsTextEdit->setPlainText(TimetableGenerateForm::tr("Entering simulation ... precomputing, please be patient"));
 
 	gen.abortOptimization=false;
 	bool ok=gen.precompute(this);

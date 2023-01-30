@@ -199,7 +199,7 @@ private:
 	static void writeTeachersStatisticsHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeStudentsStatisticsHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 
-	//the following functions return QStrings, because they are 'only' subfunctions to the writeXxxHtml functions
+	//the following functions return QStrings, because they are 'only' subfunctions to the writeXyzHtml functions
 	static QString writeActivityStudents(int htmlLevel, int ai, int day, int hour, bool notAvailable, bool colspan, bool rowspan, bool printActivityTags, const QString& skipStudentsSet);
 	static QString writeActivitiesStudents(int htmlLevel, const QList<int>& allActivities, bool printActivityTags);
 	static QString writeActivityTeacher(int htmlLevel, int teacher, int day, int hour, bool colspan, bool rowspan, bool printActivityTags, const QString& skipTeacher);
@@ -209,7 +209,7 @@ private:
 	static QString writeActivitiesSubjects(int htmlLevel, const QList<int>& allActivities, bool printActivityTags);
 	static QString writeActivitiesActivityTags(int htmlLevel, const QList<int>& allActivities, bool printActivityTags);
 
-	//the following functions return QStrings, because they are 'only' subfunctions to the writeActivity-iesXxx functions
+	//the following functions return QStrings, because they are 'only' subfunctions to the writeActivity-iesXyz functions
 	static QString writeHead(bool java, int placedActivities, bool printInstitution);
 	static QString writeTOCDays();
 	static QString writeStartTagTDofActivities(int htmlLevel, const Activity* act, bool detailed, bool colspan, bool rowspan, int colorBy);

@@ -72,7 +72,8 @@ void RandomSeedForm::help()
 	
 	s+=tr("You can set the initial state (seed) of the random number generator of FET using this option.")+"\n\n";
 
-	s+=tr("FET uses the random number generator named %1, authored by %2 (used with permission).").arg("MRG32k3a").arg("Pierre L'Ecuyer")+" "
+	s+=tr("FET uses the random number generator named %1, authored by %2 (used with permission).", "%2 is a person")
+	 .arg("MRG32k3a").arg("Pierre L'Ecuyer")+" "
 	 +tr("(The original code was a bit modified to use 64-bit integer operations instead of the not so reliable 'double' real number format.)"
 	 , "It is indicated to keep the word 'double' as in English, but you are allowed to translate it if you consider this to be more appropriate.")
 	 +" "+tr("This random number generator has a large period of about %1 or about %2 and an internal state of %3 32-bit integers.",

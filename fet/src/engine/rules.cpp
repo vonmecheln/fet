@@ -4361,7 +4361,7 @@ bool Rules::addTimeConstraint(TimeConstraint* ctr)
 	//check if this constraint is already added, for ConstraintMinDaysBetweenActivities
 	else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 		ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) ctr;
-		for(int aid : qAsConst(c->activitiesId)){
+		for(int aid : qAsConst(c->activitiesIds)){
 			QSet<ConstraintMinDaysBetweenActivities*> cs=mdbaHash.value(aid, QSet<ConstraintMinDaysBetweenActivities*>());
 			for(ConstraintMinDaysBetweenActivities* oldc : qAsConst(cs)){
 				if((*oldc)==(*c)){
@@ -4392,7 +4392,7 @@ bool Rules::addTimeConstraint(TimeConstraint* ctr)
 	//check if this constraint is already added, for ConstraintMinHalfDaysBetweenActivities
 	else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
 		ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) ctr;
-		for(int aid : qAsConst(c->activitiesId)){
+		for(int aid : qAsConst(c->activitiesIds)){
 			QSet<ConstraintMinHalfDaysBetweenActivities*> cs=mhdbaHash.value(aid, QSet<ConstraintMinHalfDaysBetweenActivities*>());
 			for(ConstraintMinHalfDaysBetweenActivities* oldc : qAsConst(cs)){
 				if((*oldc)==(*c)){
@@ -4604,7 +4604,7 @@ bool Rules::addTimeConstraint(TimeConstraint* ctr)
 
 		else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 			ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) ctr;
-			for(int aid : qAsConst(c->activitiesId)){
+			for(int aid : qAsConst(c->activitiesIds)){
 				QSet<ConstraintMinDaysBetweenActivities*> cs=mdbaHash.value(aid, QSet<ConstraintMinDaysBetweenActivities*>());
 				assert(!cs.contains(c));
 				cs.insert(c);
@@ -4614,7 +4614,7 @@ bool Rules::addTimeConstraint(TimeConstraint* ctr)
 
 		else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
 			ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) ctr;
-			for(int aid : qAsConst(c->activitiesId)){
+			for(int aid : qAsConst(c->activitiesIds)){
 				QSet<ConstraintMinHalfDaysBetweenActivities*> cs=mhdbaHash.value(aid, QSet<ConstraintMinHalfDaysBetweenActivities*>());
 				assert(!cs.contains(c));
 				cs.insert(c);
@@ -4692,7 +4692,7 @@ bool Rules::removeTimeConstraint(TimeConstraint* ctr)
 
 			else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 				ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) ctr;
-				for(int aid : qAsConst(c->activitiesId)){
+				for(int aid : qAsConst(c->activitiesIds)){
 					QSet<ConstraintMinDaysBetweenActivities*> cs=mdbaHash.value(aid, QSet<ConstraintMinDaysBetweenActivities*>());
 					assert(cs.contains(c));
 					cs.remove(c);
@@ -4708,7 +4708,7 @@ bool Rules::removeTimeConstraint(TimeConstraint* ctr)
 
 			else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
 				ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) ctr;
-				for(int aid : qAsConst(c->activitiesId)){
+				for(int aid : qAsConst(c->activitiesIds)){
 					QSet<ConstraintMinHalfDaysBetweenActivities*> cs=mhdbaHash.value(aid, QSet<ConstraintMinHalfDaysBetweenActivities*>());
 					assert(cs.contains(c));
 					cs.remove(c);
@@ -4818,7 +4818,7 @@ bool Rules::removeTimeConstraints(QList<TimeConstraint*> _tcl)
 
 			else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 				ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) ctr;
-				for(int aid : qAsConst(c->activitiesId)){
+				for(int aid : qAsConst(c->activitiesIds)){
 					QSet<ConstraintMinDaysBetweenActivities*> cs=mdbaHash.value(aid, QSet<ConstraintMinDaysBetweenActivities*>());
 					assert(cs.contains(c));
 					cs.remove(c);
@@ -4834,7 +4834,7 @@ bool Rules::removeTimeConstraints(QList<TimeConstraint*> _tcl)
 
 			else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
 				ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) ctr;
-				for(int aid : qAsConst(c->activitiesId)){
+				for(int aid : qAsConst(c->activitiesIds)){
 					QSet<ConstraintMinHalfDaysBetweenActivities*> cs=mhdbaHash.value(aid, QSet<ConstraintMinHalfDaysBetweenActivities*>());
 					assert(cs.contains(c));
 					cs.remove(c);
@@ -6888,8 +6888,9 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 									else if(!subjectsRead.contains(text)){
 										xmlReader.raiseError(tr("The teacher %1 has attached an nonexistent qualified subject %2."
 										 " Please note that starting with FET version %3 the list of subjects (tag <Subjects_List> in the .fet XML file)"
-										 " must appear before the list of teachers (tag <Teachers_List> in the .fet XML file)", "Please keep <Subjects_List> and"
-										 " <Teachers_List> untranslated, as in the original English string")
+										 " must appear before the list of teachers (tag <Teachers_List> in the .fet XML file)",
+										 "%3 is the FET version number. Please keep <Subjects_List> and <Teachers_List> untranslated, as in the"
+										 " original English string")
 										 .arg(teacher->name).arg(text).arg("5.30.0"));
 									}
 									else{
@@ -12188,7 +12189,7 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, QXmlStream
 	cn->n_activities=0;
 	bool foundCISD=false;
 	int n_act=0;
-	cn->activitiesId.clear();
+	cn->activitiesIds.clear();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight")){
@@ -12257,10 +12258,10 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, QXmlStream
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
-			//cn->activitiesId[n_act]=text.toInt();
-			cn->activitiesId.append(text.toInt());
-			assert(n_act==cn->activitiesId.count()-1);
-			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			//cn->activitiesIds[n_act]=text.toInt();
+			cn->activitiesIds.append(text.toInt());
+			assert(n_act==cn->activitiesIds.count()-1);
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
 		}
 		else if(xmlReader.name()==QString("MinDays")){
@@ -12331,7 +12332,7 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, QXmlStreamR
 	cn->n_activities=0;
 	bool foundCISD=false;
 	int n_act=0;
-	cn->activitiesId.clear();
+	cn->activitiesIds.clear();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight")){
@@ -12400,10 +12401,10 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, QXmlStreamR
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
-			//cn->activitiesId[n_act]=text.toInt();
-			cn->activitiesId.append(text.toInt());
-			assert(n_act==cn->activitiesId.count()-1);
-			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			//cn->activitiesIds[n_act]=text.toInt();
+			cn->activitiesIds.append(text.toInt());
+			assert(n_act==cn->activitiesIds.count()-1);
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
 		}
 		else if(xmlReader.name()==QString("MinDays")){
@@ -12474,7 +12475,7 @@ TimeConstraint* Rules::readMinHalfDaysBetweenActivities(QWidget* parent, QXmlStr
 	cn->n_activities=0;
 	bool foundCISD=false;
 	int n_act=0;
-	cn->activitiesId.clear();
+	cn->activitiesIds.clear();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight")){
@@ -12543,10 +12544,10 @@ TimeConstraint* Rules::readMinHalfDaysBetweenActivities(QWidget* parent, QXmlStr
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
-			//cn->activitiesId[n_act]=text.toInt();
-			cn->activitiesId.append(text.toInt());
-			assert(n_act==cn->activitiesId.count()-1);
-			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			//cn->activitiesIds[n_act]=text.toInt();
+			cn->activitiesIds.append(text.toInt());
+			assert(n_act==cn->activitiesIds.count()-1);
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
 		}
 		else if(xmlReader.name()==QString("MinDays")){
@@ -12616,7 +12617,7 @@ TimeConstraint* Rules::readMaxDaysBetweenActivities(QXmlStreamReader& xmlReader,
 	ConstraintMaxDaysBetweenActivities* cn=new ConstraintMaxDaysBetweenActivities();
 	cn->n_activities=0;
 	int n_act=0;
-	cn->activitiesId.clear();
+	cn->activitiesIds.clear();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){
@@ -12641,10 +12642,10 @@ TimeConstraint* Rules::readMaxDaysBetweenActivities(QXmlStreamReader& xmlReader,
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
-			cn->activitiesId.append(text.toInt());
-			assert(n_act==cn->activitiesId.count()-1);
-			//cn->activitiesId[n_act]=text.toInt();
-			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			cn->activitiesIds.append(text.toInt());
+			assert(n_act==cn->activitiesIds.count()-1);
+			//cn->activitiesIds[n_act]=text.toInt();
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
 		}
 		else if(xmlReader.name()==QString("MaxDays")){
@@ -12677,7 +12678,7 @@ TimeConstraint* Rules::readMaxHalfDaysBetweenActivities(QXmlStreamReader& xmlRea
 	ConstraintMaxHalfDaysBetweenActivities* cn=new ConstraintMaxHalfDaysBetweenActivities();
 	cn->n_activities=0;
 	int n_act=0;
-	cn->activitiesId.clear();
+	cn->activitiesIds.clear();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){
@@ -12702,10 +12703,10 @@ TimeConstraint* Rules::readMaxHalfDaysBetweenActivities(QXmlStreamReader& xmlRea
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
-			cn->activitiesId.append(text.toInt());
-			assert(n_act==cn->activitiesId.count()-1);
-			//cn->activitiesId[n_act]=text.toInt();
-			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			cn->activitiesIds.append(text.toInt());
+			assert(n_act==cn->activitiesIds.count()-1);
+			//cn->activitiesIds[n_act]=text.toInt();
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
 		}
 		else if(xmlReader.name()==QString("MaxDays")){
@@ -12738,7 +12739,7 @@ TimeConstraint* Rules::readMaxTermsBetweenActivities(QXmlStreamReader& xmlReader
 	ConstraintMaxTermsBetweenActivities* cn=new ConstraintMaxTermsBetweenActivities();
 	cn->n_activities=0;
 	int n_act=0;
-	cn->activitiesId.clear();
+	cn->activitiesIds.clear();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){
@@ -12763,10 +12764,10 @@ TimeConstraint* Rules::readMaxTermsBetweenActivities(QXmlStreamReader& xmlReader
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
-			cn->activitiesId.append(text.toInt());
-			assert(n_act==cn->activitiesId.count()-1);
-			//cn->activitiesId[n_act]=text.toInt();
-			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			cn->activitiesIds.append(text.toInt());
+			assert(n_act==cn->activitiesIds.count()-1);
+			//cn->activitiesIds[n_act]=text.toInt();
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
 		}
 		else if(xmlReader.name()==QString("MaxTerms")){
@@ -12798,7 +12799,7 @@ TimeConstraint* Rules::readMinGapsBetweenActivities(QXmlStreamReader& xmlReader,
 	ConstraintMinGapsBetweenActivities* cn=new ConstraintMinGapsBetweenActivities();
 	cn->n_activities=0;
 	int n_act=0;
-	cn->activitiesId.clear();
+	cn->activitiesIds.clear();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){
@@ -12823,9 +12824,9 @@ TimeConstraint* Rules::readMinGapsBetweenActivities(QXmlStreamReader& xmlReader,
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
-			cn->activitiesId.append(text.toInt());
-			assert(n_act==cn->activitiesId.count()-1);
-			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			cn->activitiesIds.append(text.toInt());
+			assert(n_act==cn->activitiesIds.count()-1);
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
 		}
 		else if(xmlReader.name()==QString("MinGaps")){
@@ -12857,7 +12858,7 @@ TimeConstraint* Rules::readMaxGapsBetweenActivities(QXmlStreamReader& xmlReader,
 	ConstraintMaxGapsBetweenActivities* cn=new ConstraintMaxGapsBetweenActivities();
 	cn->n_activities=0;
 	int n_act=0;
-	cn->activitiesId.clear();
+	cn->activitiesIds.clear();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){
@@ -12882,9 +12883,9 @@ TimeConstraint* Rules::readMaxGapsBetweenActivities(QXmlStreamReader& xmlReader,
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
-			cn->activitiesId.append(text.toInt());
-			assert(n_act==cn->activitiesId.count()-1);
-			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			cn->activitiesIds.append(text.toInt());
+			assert(n_act==cn->activitiesIds.count()-1);
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
 		}
 		else if(xmlReader.name()==QString("MaxGaps")){
@@ -12916,7 +12917,7 @@ TimeConstraint* Rules::readActivitiesNotOverlapping(QXmlStreamReader& xmlReader,
 	ConstraintActivitiesNotOverlapping* cn=new ConstraintActivitiesNotOverlapping();
 	cn->n_activities=0;
 	int n_act=0;
-	cn->activitiesId.clear();
+	cn->activitiesIds.clear();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight")){
@@ -12960,10 +12961,10 @@ TimeConstraint* Rules::readActivitiesNotOverlapping(QXmlStreamReader& xmlReader,
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
-			//cn->activitiesId[n_act]=text.toInt();
-			cn->activitiesId.append(text.toInt());
-			assert(n_act==cn->activitiesId.count()-1);
-			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			//cn->activitiesIds[n_act]=text.toInt();
+			cn->activitiesIds.append(text.toInt());
+			assert(n_act==cn->activitiesIds.count()-1);
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
 		}
 		else{
@@ -13076,7 +13077,7 @@ TimeConstraint* Rules::readActivitiesSameStartingTime(QXmlStreamReader& xmlReade
 	ConstraintActivitiesSameStartingTime* cn=new ConstraintActivitiesSameStartingTime();
 	cn->n_activities=0;
 	int n_act=0;
-	cn->activitiesId.clear();
+	cn->activitiesIds.clear();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight")){
@@ -13120,10 +13121,10 @@ TimeConstraint* Rules::readActivitiesSameStartingTime(QXmlStreamReader& xmlReade
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
-			//cn->activitiesId[n_act]=text.toInt();
-			cn->activitiesId.append(text.toInt());
-			assert(n_act==cn->activitiesId.count()-1);
-			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			//cn->activitiesIds[n_act]=text.toInt();
+			cn->activitiesIds.append(text.toInt());
+			assert(n_act==cn->activitiesIds.count()-1);
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
 		}
 		else{
@@ -13150,7 +13151,7 @@ TimeConstraint* Rules::readActivitiesSameStartingHour(QXmlStreamReader& xmlReade
 	ConstraintActivitiesSameStartingHour* cn=new ConstraintActivitiesSameStartingHour();
 	cn->n_activities=0;
 	int n_act=0;
-	cn->activitiesId.clear();
+	cn->activitiesIds.clear();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight")){
@@ -13194,10 +13195,10 @@ TimeConstraint* Rules::readActivitiesSameStartingHour(QXmlStreamReader& xmlReade
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
-			//cn->activitiesId[n_act]=text.toInt();
-			cn->activitiesId.append(text.toInt());
-			assert(n_act==cn->activitiesId.count()-1);
-			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			//cn->activitiesIds[n_act]=text.toInt();
+			cn->activitiesIds.append(text.toInt());
+			assert(n_act==cn->activitiesIds.count()-1);
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
 		}
 		else{
@@ -13224,7 +13225,7 @@ TimeConstraint* Rules::readActivitiesSameStartingDay(QXmlStreamReader& xmlReader
 	ConstraintActivitiesSameStartingDay* cn=new ConstraintActivitiesSameStartingDay();
 	cn->n_activities=0;
 	int n_act=0;
-	cn->activitiesId.clear();
+	cn->activitiesIds.clear();
 	while(xmlReader.readNextStartElement()){
 		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
 		if(xmlReader.name()==QString("Weight_Percentage")){
@@ -13249,10 +13250,10 @@ TimeConstraint* Rules::readActivitiesSameStartingDay(QXmlStreamReader& xmlReader
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
-			//cn->activitiesId[n_act]=text.toInt();
-			cn->activitiesId.append(text.toInt());
-			assert(n_act==cn->activitiesId.count()-1);
-			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesId[n_act])+"\n";
+			//cn->activitiesIds[n_act]=text.toInt();
+			cn->activitiesIds.append(text.toInt());
+			assert(n_act==cn->activitiesIds.count()-1);
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
 		}
 		else{

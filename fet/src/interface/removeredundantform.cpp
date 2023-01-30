@@ -69,16 +69,16 @@ void RemoveRedundantForm::wasAccepted()
 				ConstraintActivitiesSameStartingTime* cst=(ConstraintActivitiesSameStartingTime*) tc;
 				
 				for(int i=1; i<cst->n_activities; i++){
-					adjMatrix.insert(cst->activitiesId[0], cst->activitiesId[i]);
-					adjMatrix.insert(cst->activitiesId[i], cst->activitiesId[0]);
+					adjMatrix.insert(cst->activitiesIds[0], cst->activitiesIds[i]);
+					adjMatrix.insert(cst->activitiesIds[i], cst->activitiesIds[0]);
 				}
 			}
 			else if(tc->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY){
 				ConstraintActivitiesSameStartingDay* csd=(ConstraintActivitiesSameStartingDay*) tc;
 
 				for(int i=1; i<csd->n_activities; i++){
-					adjMatrix.insert(csd->activitiesId[0], csd->activitiesId[i]);
-					adjMatrix.insert(csd->activitiesId[i], csd->activitiesId[0]);
+					adjMatrix.insert(csd->activitiesIds[0], csd->activitiesIds[i]);
+					adjMatrix.insert(csd->activitiesIds[i], csd->activitiesIds[0]);
 				}
 			}
 		}
@@ -127,7 +127,7 @@ void RemoveRedundantForm::wasAccepted()
 		
 		QList<int> a1List;
 		for(int k=0; k<c1->n_activities; k++){
-			int m=repr.value(c1->activitiesId[k], -1);
+			int m=repr.value(c1->activitiesIds[k], -1);
 			assert(m>0);
 			a1List.append(m);
 		}
@@ -140,7 +140,7 @@ void RemoveRedundantForm::wasAccepted()
 
 			QList<int> a2List;
 			for(int k=0; k<c2->n_activities; k++){
-				int m=repr.value(c2->activitiesId[k], -1);
+				int m=repr.value(c2->activitiesIds[k], -1);
 				assert(m>0);
 				a2List.append(m);
 			}
@@ -200,7 +200,7 @@ void RemoveRedundantForm::wasAccepted()
 				
 				int kk=0;
 				for(kk=0; kk<toBeRemovedList.count(); kk++)
-					if(toBeRemovedList.at(kk)->activitiesId[0] >= c1->activitiesId[0])
+					if(toBeRemovedList.at(kk)->activitiesIds[0] >= c1->activitiesIds[0])
 						break;
 				toBeRemovedList.insert(kk, c1);
 				
@@ -226,7 +226,7 @@ void RemoveRedundantForm::wasAccepted()
 		
 		QList<int> a1List;
 		for(int k=0; k<c1->n_activities; k++){
-			int m=repr.value(c1->activitiesId[k], -1);
+			int m=repr.value(c1->activitiesIds[k], -1);
 			assert(m>0);
 			a1List.append(m);
 		}
@@ -239,7 +239,7 @@ void RemoveRedundantForm::wasAccepted()
 
 			QList<int> a2List;
 			for(int k=0; k<c2->n_activities; k++){
-				int m=repr.value(c2->activitiesId[k], -1);
+				int m=repr.value(c2->activitiesIds[k], -1);
 				assert(m>0);
 				a2List.append(m);
 			}
@@ -299,7 +299,7 @@ void RemoveRedundantForm::wasAccepted()
 				
 				int kk=0;
 				for(kk=0; kk<toBeRemovedHalfList.count(); kk++)
-					if(toBeRemovedHalfList.at(kk)->activitiesId[0] >= c1->activitiesId[0])
+					if(toBeRemovedHalfList.at(kk)->activitiesIds[0] >= c1->activitiesIds[0])
 						break;
 				toBeRemovedHalfList.insert(kk, c1);
 				

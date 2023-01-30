@@ -189,7 +189,8 @@ void ConstraintTeacherMaxThreeConsecutiveDaysForm::removeConstraint()
 
 void ConstraintTeacherMaxThreeConsecutiveDaysForm::help()
 {
-	QString s=tr("This constraint was suggested by %1, %2, and other users on this FET forum topic: %3.").arg("Benahmed Abdelkrim").arg("Hiba Hadi")
+	QString s=tr("This constraint was suggested by %1, %2, and other users on this FET forum topic: %3.", "%1 and %2 are two persons, %3 is an internet link")
+	 .arg("Benahmed Abdelkrim").arg("Hiba Hadi")
 	 .arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=4990.0");
 	s+="\n\n";
 	s+=tr("It was designed to disallow a teacher to have activities in two consecutive real days, morning and afternoon on both,"

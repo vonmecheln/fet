@@ -1741,7 +1741,8 @@ void TimetableViewTeachersTimeHorizontalForm::help()
 	s+=" ";
 	s+=QCoreApplication::translate("TimetableViewForm", "This feature was suggested by %1 and %2 and might be useful in countries or regions in which"
 		" the teachers structure changes over the first months of the teaching period. Teachers may come and go and a regeneration of the timetable"
-		" is needed, but in such a way that most activities retain their scheduled day, to keep for instance exams/tests on the same day as in the old timetable.")
+		" is needed, but in such a way that most activities retain their scheduled day, to keep for instance exams/tests on the same day as in the old timetable.",
+		"%1 and %2 are two persons")
 		.arg("Vangelis Karafillidis").arg("Alexey Chernous");
 
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);

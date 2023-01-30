@@ -46,8 +46,6 @@
 #include <QTableWidget>
 #include <QHeaderView>
 
-#include <QKeySequence>
-
 #include "activitiesform.h"
 #include "addactivityform.h"
 #include "subactivitiesform.h"

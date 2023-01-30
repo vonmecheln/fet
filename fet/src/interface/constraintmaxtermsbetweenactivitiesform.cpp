@@ -115,7 +115,7 @@ bool ConstraintMaxTermsBetweenActivitiesForm::filterOk(TimeConstraint* ctr)
 	bool foundTeacher=false, foundStudents=false, foundSubject=false, foundActivityTag=false;
 		
 	for(int i=0; i<c->n_activities; i++){
-		int id=c->activitiesId[i];
+		int id=c->activitiesIds[i];
 		/*Activity* act=nullptr;
 		for(Activity* a : qAsConst(gt.rules.activitiesList))
 			if(a->id==id)

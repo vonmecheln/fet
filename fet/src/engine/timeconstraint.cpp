@@ -2086,9 +2086,9 @@ ConstraintActivitiesSameStartingTime::ConstraintActivitiesSameStartingTime(doubl
 	assert(nact>=2);
 	assert(act.count()==nact);
 	this->n_activities=nact;
-	this->activitiesId.clear();
+	this->activitiesIds.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId.append(act.at(i));
+		this->activitiesIds.append(act.at(i));
 
 	this->type=CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME;
 }
@@ -2098,11 +2098,11 @@ bool ConstraintActivitiesSameStartingTime::computeInternalStructure(QWidget* par
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		int j=r.activitiesHash.value(activitiesIds.at(i), -1);
 		//assert(j>=0);
 		if(j>=0)
 			_activities.append(j);
@@ -2110,7 +2110,7 @@ bool ConstraintActivitiesSameStartingTime::computeInternalStructure(QWidget* par
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				this->_activities.append(j);
 				break;
 			}
@@ -2130,27 +2130,27 @@ bool ConstraintActivitiesSameStartingTime::computeInternalStructure(QWidget* par
 
 void ConstraintActivitiesSameStartingTime::removeUseless(Rules& r)
 {
-	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	//remove the activitiesIds which no longer exist (used after the deletion of an activity)
 	
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		Activity* act=r.activitiesPointerHash.value(activitiesIds[i], nullptr);
 		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				tmpList.append(act->id);
 				break;
 			}
 		}*/
 	}
 	
-	this->activitiesId=tmpList;
-	this->n_activities=this->activitiesId.count();
+	this->activitiesIds=tmpList;
+	this->n_activities=this->activitiesIds.count();
 
 	r.internalStructureComputed=false;
 }
@@ -2158,9 +2158,9 @@ void ConstraintActivitiesSameStartingTime::removeUseless(Rules& r)
 void ConstraintActivitiesSameStartingTime::recomputeActivitiesSet()
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
 #else
-	activitiesIdSet=activitiesId.toSet();
+	activitiesIdsSet=activitiesIds.toSet();
 #endif
 }
 
@@ -2169,7 +2169,7 @@ bool ConstraintActivitiesSameStartingTime::hasInactiveActivities(Rules& r)
 	int count=0;
 
 	for(int i=0; i<this->n_activities; i++)
-		if(r.inactiveActivities.contains(this->activitiesId[i]))
+		if(r.inactiveActivities.contains(this->activitiesIds[i]))
 			count++;
 
 	if(this->n_activities-count<=1)
@@ -2186,7 +2186,7 @@ QString ConstraintActivitiesSameStartingTime::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
 	for(int i=0; i<this->n_activities; i++)
-		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesId[i])+"</Activity_Id>\n";
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesIds[i])+"</Activity_Id>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintActivitiesSameStartingTime>\n";
@@ -2210,7 +2210,7 @@ QString ConstraintActivitiesSameStartingTime::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);
 		if(i<this->n_activities-1)
 			s+=", ";
 	}
@@ -2227,7 +2227,7 @@ QString ConstraintActivitiesSameStartingTime::getDetailedDescription(Rules& r)
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity").arg(this->activitiesId[i]).arg(getActivityDetailedDescription(r, this->activitiesId[i]));
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity").arg(this->activitiesIds[i]).arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
 
@@ -2331,10 +2331,10 @@ bool ConstraintActivitiesSameStartingTime::isRelatedToActivity(Rules& r, Activit
 {
 	Q_UNUSED(r);
 	
-	return activitiesIdSet.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
 	
 	/*for(int i=0; i<this->n_activities; i++)
-		if(this->activitiesId[i]==a->id)
+		if(this->activitiesIds[i]==a->id)
 			return true;
 	return false;*/
 }
@@ -2405,9 +2405,9 @@ ConstraintActivitiesNotOverlapping::ConstraintActivitiesNotOverlapping(double wp
   	assert(nact>=2);
   	assert(act.count()==nact);
 	this->n_activities=nact;
-	this->activitiesId.clear();
+	this->activitiesIds.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId.append(act.at(i));
+		this->activitiesIds.append(act.at(i));
 
 	this->type=CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING;
 }
@@ -2417,11 +2417,11 @@ bool ConstraintActivitiesNotOverlapping::computeInternalStructure(QWidget* paren
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		int j=r.activitiesHash.value(activitiesIds.at(i), -1);
 		//assert(j>=0);
 		if(j>=0)
 			_activities.append(j);
@@ -2429,7 +2429,7 @@ bool ConstraintActivitiesNotOverlapping::computeInternalStructure(QWidget* paren
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				this->_activities.append(j);
 				break;
 			}
@@ -2449,27 +2449,27 @@ bool ConstraintActivitiesNotOverlapping::computeInternalStructure(QWidget* paren
 
 void ConstraintActivitiesNotOverlapping::removeUseless(Rules& r)
 {
-	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	//remove the activitiesIds which no longer exist (used after the deletion of an activity)
 	
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		Activity* act=r.activitiesPointerHash.value(activitiesIds[i], nullptr);
 		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				tmpList.append(act->id);
 				break;
 			}
 		}*/
 	}
 	
-	this->activitiesId=tmpList;
-	this->n_activities=this->activitiesId.count();
+	this->activitiesIds=tmpList;
+	this->n_activities=this->activitiesIds.count();
 
 	r.internalStructureComputed=false;
 }
@@ -2477,9 +2477,9 @@ void ConstraintActivitiesNotOverlapping::removeUseless(Rules& r)
 void ConstraintActivitiesNotOverlapping::recomputeActivitiesSet()
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
 #else
-	activitiesIdSet=activitiesId.toSet();
+	activitiesIdsSet=activitiesIds.toSet();
 #endif
 }
 
@@ -2488,7 +2488,7 @@ bool ConstraintActivitiesNotOverlapping::hasInactiveActivities(Rules& r)
 	int count=0;
 
 	for(int i=0; i<this->n_activities; i++)
-		if(r.inactiveActivities.contains(this->activitiesId[i]))
+		if(r.inactiveActivities.contains(this->activitiesIds[i]))
 			count++;
 
 	if(this->n_activities-count<=1)
@@ -2505,7 +2505,7 @@ QString ConstraintActivitiesNotOverlapping::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
 	for(int i=0; i<this->n_activities; i++)
-		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesId[i])+"</Activity_Id>\n";
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesIds[i])+"</Activity_Id>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintActivitiesNotOverlapping>\n";
@@ -2529,7 +2529,7 @@ QString ConstraintActivitiesNotOverlapping::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);
 		if(i<this->n_activities-1)
 			s+=", ";
 	}
@@ -2545,7 +2545,7 @@ QString ConstraintActivitiesNotOverlapping::getDetailedDescription(Rules& r)
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesId[i]).arg(getActivityDetailedDescription(r, this->activitiesId[i]));
+			.arg(this->activitiesIds[i]).arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
 
@@ -2665,10 +2665,10 @@ bool ConstraintActivitiesNotOverlapping::isRelatedToActivity(Rules& r, Activity*
 {
 	Q_UNUSED(r);
 	
-	return activitiesIdSet.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
 	
 	/*for(int i=0; i<this->n_activities; i++)
-		if(this->activitiesId[i]==a->id)
+		if(this->activitiesIds[i]==a->id)
 			return true;
 	return false;*/
 }
@@ -3011,9 +3011,9 @@ ConstraintMinDaysBetweenActivities::ConstraintMinDaysBetweenActivities(double wp
 	assert(nact>=2);
 	assert(act.count()==nact);
 	this->n_activities=nact;
-	this->activitiesId.clear();
+	this->activitiesIds.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId.append(act.at(i));
+		this->activitiesIds.append(act.at(i));
 
 	assert(n>0);
 	this->minDays=n;
@@ -3022,13 +3022,13 @@ ConstraintMinDaysBetweenActivities::ConstraintMinDaysBetweenActivities(double wp
 }
 
 bool ConstraintMinDaysBetweenActivities::operator==(ConstraintMinDaysBetweenActivities& c){
-	assert(this->n_activities==this->activitiesId.count());
-	assert(c.n_activities==c.activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
+	assert(c.n_activities==c.activitiesIds.count());
 
 	if(this->n_activities!=c.n_activities)
 		return false;
 	for(int i=0; i<this->n_activities; i++)
-		if(this->activitiesId[i]!=c.activitiesId[i])
+		if(this->activitiesIds[i]!=c.activitiesIds[i])
 			return false;
 	if(this->minDays!=c.minDays)
 		return false;
@@ -3044,18 +3044,18 @@ bool ConstraintMinDaysBetweenActivities::computeInternalStructure(QWidget* paren
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		int j=r.activitiesHash.value(activitiesIds.at(i), -1);
 		//assert(j>=0);
 		if(j>=0)
 			_activities.append(j);
 		/*Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				this->_activities.append(j);
 				break;
 			}
@@ -3075,27 +3075,27 @@ bool ConstraintMinDaysBetweenActivities::computeInternalStructure(QWidget* paren
 
 void ConstraintMinDaysBetweenActivities::removeUseless(Rules& r)
 {
-	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	//remove the activitiesIds which no longer exist (used after the deletion of an activity)
 	
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		Activity* act=r.activitiesPointerHash.value(activitiesIds[i], nullptr);
 		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				tmpList.append(act->id);
 				break;
 			}
 		}*/
 	}
 	
-	this->activitiesId=tmpList;
-	this->n_activities=this->activitiesId.count();
+	this->activitiesIds=tmpList;
+	this->n_activities=this->activitiesIds.count();
 
 	r.internalStructureComputed=false;
 }
@@ -3103,9 +3103,9 @@ void ConstraintMinDaysBetweenActivities::removeUseless(Rules& r)
 void ConstraintMinDaysBetweenActivities::recomputeActivitiesSet()
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
 #else
-	activitiesIdSet=activitiesId.toSet();
+	activitiesIdsSet=activitiesIds.toSet();
 #endif
 }
 
@@ -3114,7 +3114,7 @@ bool ConstraintMinDaysBetweenActivities::hasInactiveActivities(Rules& r)
 	int count=0;
 
 	for(int i=0; i<this->n_activities; i++)
-		if(r.inactiveActivities.contains(this->activitiesId[i]))
+		if(r.inactiveActivities.contains(this->activitiesIds[i]))
 			count++;
 
 	if(this->n_activities-count<=1)
@@ -3132,7 +3132,7 @@ QString ConstraintMinDaysBetweenActivities::getXmlDescription(Rules& r)
 	s+="	<Consecutive_If_Same_Day>";s+=trueFalse(this->consecutiveIfSameDay);s+="</Consecutive_If_Same_Day>\n";
 	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
 	for(int i=0; i<this->n_activities; i++)
-		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesId[i])+"</Activity_Id>\n";
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesIds[i])+"</Activity_Id>\n";
 	s+="	<MinDays>"+CustomFETString::number(this->minDays)+"</MinDays>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -3157,7 +3157,7 @@ QString ConstraintMinDaysBetweenActivities::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
 	}
 	s+=tr("mD:%1", "Min days").arg(this->minDays);s+=", ";
 	s+=tr("CSD:%1", "Consecutive if same day").arg(yesNoTranslated(this->consecutiveIfSameDay));
@@ -3173,8 +3173,8 @@ QString ConstraintMinDaysBetweenActivities::getDetailedDescription(Rules& r)
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesId[i])
-			.arg(getActivityDetailedDescription(r, this->activitiesId[i]));
+			.arg(this->activitiesIds[i])
+			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
 	s+=tr("Minimum number of days=%1").arg(this->minDays);s+="\n";
@@ -3358,10 +3358,10 @@ bool ConstraintMinDaysBetweenActivities::isRelatedToActivity(Rules& r, Activity*
 {
 	Q_UNUSED(r);
 	
-	return activitiesIdSet.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
 	
 	/*for(int i=0; i<this->n_activities; i++)
-		if(this->activitiesId[i]==a->id)
+		if(this->activitiesIds[i]==a->id)
 			return true;
 	return false;*/
 }
@@ -3447,9 +3447,9 @@ ConstraintMaxDaysBetweenActivities::ConstraintMaxDaysBetweenActivities(double wp
   	assert(nact>=2);
   	assert(act.count()==nact);
 	this->n_activities=nact;
-	this->activitiesId.clear();
+	this->activitiesIds.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId.append(act.at(i));
+		this->activitiesIds.append(act.at(i));
 
 	assert(n>=0);
 	this->maxDays=n;
@@ -3462,11 +3462,11 @@ bool ConstraintMaxDaysBetweenActivities::computeInternalStructure(QWidget* paren
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		int j=r.activitiesHash.value(activitiesIds.at(i), -1);
 		//assert(j>=0);
 		if(j>=0)
 			_activities.append(j);
@@ -3474,7 +3474,7 @@ bool ConstraintMaxDaysBetweenActivities::computeInternalStructure(QWidget* paren
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				this->_activities.append(j);
 				break;
 			}
@@ -3494,27 +3494,27 @@ bool ConstraintMaxDaysBetweenActivities::computeInternalStructure(QWidget* paren
 
 void ConstraintMaxDaysBetweenActivities::removeUseless(Rules& r)
 {
-	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	//remove the activitiesIds which no longer exist (used after the deletion of an activity)
 	
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		Activity* act=r.activitiesPointerHash.value(activitiesIds[i], nullptr);
 		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				tmpList.append(act->id);
 				break;
 			}
 		}*/
 	}
 	
-	this->activitiesId=tmpList;
-	this->n_activities=this->activitiesId.count();
+	this->activitiesIds=tmpList;
+	this->n_activities=this->activitiesIds.count();
 
 	r.internalStructureComputed=false;
 }
@@ -3522,9 +3522,9 @@ void ConstraintMaxDaysBetweenActivities::removeUseless(Rules& r)
 void ConstraintMaxDaysBetweenActivities::recomputeActivitiesSet()
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
 #else
-	activitiesIdSet=activitiesId.toSet();
+	activitiesIdsSet=activitiesIds.toSet();
 #endif
 }
 
@@ -3533,7 +3533,7 @@ bool ConstraintMaxDaysBetweenActivities::hasInactiveActivities(Rules& r)
 	int count=0;
 
 	for(int i=0; i<this->n_activities; i++)
-		if(r.inactiveActivities.contains(this->activitiesId[i]))
+		if(r.inactiveActivities.contains(this->activitiesIds[i]))
 			count++;
 
 	if(this->n_activities-count<=1)
@@ -3550,7 +3550,7 @@ QString ConstraintMaxDaysBetweenActivities::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
 	for(int i=0; i<this->n_activities; i++)
-		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesId[i])+"</Activity_Id>\n";
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesIds[i])+"</Activity_Id>\n";
 	s+="	<MaxDays>"+CustomFETString::number(this->maxDays)+"</MaxDays>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -3575,7 +3575,7 @@ QString ConstraintMaxDaysBetweenActivities::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
 	}
 	s+=tr("MD:%1", "Abbreviation for maximum days").arg(this->maxDays);
 
@@ -3590,8 +3590,8 @@ QString ConstraintMaxDaysBetweenActivities::getDetailedDescription(Rules& r)
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesId[i])
-			.arg(getActivityDetailedDescription(r, this->activitiesId[i]));
+			.arg(this->activitiesIds[i])
+			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
 	s+=tr("Maximum number of days=%1").arg(this->maxDays);s+="\n";
@@ -3718,10 +3718,10 @@ bool ConstraintMaxDaysBetweenActivities::isRelatedToActivity(Rules& r, Activity*
 {
 	Q_UNUSED(r);
 
-	return activitiesIdSet.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
 
 	/*for(int i=0; i<this->n_activities; i++)
-		if(this->activitiesId[i]==a->id)
+		if(this->activitiesIds[i]==a->id)
 			return true;
 	return false;*/
 }
@@ -3806,9 +3806,9 @@ ConstraintMinGapsBetweenActivities::ConstraintMinGapsBetweenActivities(double wp
  {
 	this->n_activities=nact;
 	assert(nact==actList.count());
-	this->activitiesId.clear();
+	this->activitiesIds.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId.append(actList.at(i));
+		this->activitiesIds.append(actList.at(i));
 
 	assert(ngaps>0);
 	this->minGaps=ngaps;
@@ -3821,11 +3821,11 @@ bool ConstraintMinGapsBetweenActivities::computeInternalStructure(QWidget* paren
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		int j=r.activitiesHash.value(activitiesIds.at(i), -1);
 		//assert(j>=0);
 		if(j>=0)
 			_activities.append(j);
@@ -3833,7 +3833,7 @@ bool ConstraintMinGapsBetweenActivities::computeInternalStructure(QWidget* paren
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				this->_activities.append(j);
 				break;
 			}
@@ -3853,27 +3853,27 @@ bool ConstraintMinGapsBetweenActivities::computeInternalStructure(QWidget* paren
 
 void ConstraintMinGapsBetweenActivities::removeUseless(Rules& r)
 {
-	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	//remove the activitiesIds which no longer exist (used after the deletion of an activity)
 	
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		Activity* act=r.activitiesPointerHash.value(activitiesIds[i], nullptr);
 		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				tmpList.append(act->id);
 				break;
 			}
 		}*/
 	}
 	
-	this->activitiesId=tmpList;
-	this->n_activities=this->activitiesId.count();
+	this->activitiesIds=tmpList;
+	this->n_activities=this->activitiesIds.count();
 
 	r.internalStructureComputed=false;
 }
@@ -3881,9 +3881,9 @@ void ConstraintMinGapsBetweenActivities::removeUseless(Rules& r)
 void ConstraintMinGapsBetweenActivities::recomputeActivitiesSet()
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
 #else
-	activitiesIdSet=activitiesId.toSet();
+	activitiesIdsSet=activitiesIds.toSet();
 #endif
 }
 
@@ -3892,7 +3892,7 @@ bool ConstraintMinGapsBetweenActivities::hasInactiveActivities(Rules& r)
 	int count=0;
 
 	for(int i=0; i<this->n_activities; i++)
-		if(r.inactiveActivities.contains(this->activitiesId[i]))
+		if(r.inactiveActivities.contains(this->activitiesIds[i]))
 			count++;
 
 	if(this->n_activities-count<=1)
@@ -3909,7 +3909,7 @@ QString ConstraintMinGapsBetweenActivities::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
 	for(int i=0; i<this->n_activities; i++)
-		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesId[i])+"</Activity_Id>\n";
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesIds[i])+"</Activity_Id>\n";
 	s+="	<MinGaps>"+CustomFETString::number(this->minGaps)+"</MinGaps>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -3934,7 +3934,7 @@ QString ConstraintMinGapsBetweenActivities::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
 	}
 	s+=tr("mG:%1", "Minimum number of gaps").arg(this->minGaps);
 
@@ -3949,8 +3949,8 @@ QString ConstraintMinGapsBetweenActivities::getDetailedDescription(Rules& r)
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesId[i])
-			.arg(getActivityDetailedDescription(r, this->activitiesId[i]));
+			.arg(this->activitiesIds[i])
+			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
 	s+=tr("Minimum number of gaps=%1").arg(this->minGaps);s+="\n";
@@ -4045,10 +4045,10 @@ bool ConstraintMinGapsBetweenActivities::isRelatedToActivity(Rules& r, Activity*
 {
 	Q_UNUSED(r);
 
-	return activitiesIdSet.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
 
 	/*for(int i=0; i<this->n_activities; i++)
-		if(this->activitiesId[i]==a->id)
+		if(this->activitiesIds[i]==a->id)
 			return true;
 	return false;*/
 }
@@ -4121,9 +4121,9 @@ ConstraintMaxGapsBetweenActivities::ConstraintMaxGapsBetweenActivities(double wp
  {
 	this->n_activities=nact;
 	assert(nact==actList.count());
-	this->activitiesId.clear();
+	this->activitiesIds.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId.append(actList.at(i));
+		this->activitiesIds.append(actList.at(i));
 
 	assert(ngaps>0);
 	this->maxGaps=ngaps;
@@ -4136,11 +4136,11 @@ bool ConstraintMaxGapsBetweenActivities::computeInternalStructure(QWidget* paren
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		int j=r.activitiesHash.value(activitiesIds.at(i), -1);
 		//assert(j>=0);
 		if(j>=0)
 			_activities.append(j);
@@ -4148,7 +4148,7 @@ bool ConstraintMaxGapsBetweenActivities::computeInternalStructure(QWidget* paren
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				this->_activities.append(j);
 				break;
 			}
@@ -4168,27 +4168,27 @@ bool ConstraintMaxGapsBetweenActivities::computeInternalStructure(QWidget* paren
 
 void ConstraintMaxGapsBetweenActivities::removeUseless(Rules& r)
 {
-	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	//remove the activitiesIds which no longer exist (used after the deletion of an activity)
 
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		Activity* act=r.activitiesPointerHash.value(activitiesIds[i], nullptr);
 		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				tmpList.append(act->id);
 				break;
 			}
 		}*/
 	}
 
-	this->activitiesId=tmpList;
-	this->n_activities=this->activitiesId.count();
+	this->activitiesIds=tmpList;
+	this->n_activities=this->activitiesIds.count();
 
 	r.internalStructureComputed=false;
 }
@@ -4196,9 +4196,9 @@ void ConstraintMaxGapsBetweenActivities::removeUseless(Rules& r)
 void ConstraintMaxGapsBetweenActivities::recomputeActivitiesSet()
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
 #else
-	activitiesIdSet=activitiesId.toSet();
+	activitiesIdsSet=activitiesIds.toSet();
 #endif
 }
 
@@ -4207,7 +4207,7 @@ bool ConstraintMaxGapsBetweenActivities::hasInactiveActivities(Rules& r)
 	int count=0;
 
 	for(int i=0; i<this->n_activities; i++)
-		if(r.inactiveActivities.contains(this->activitiesId[i]))
+		if(r.inactiveActivities.contains(this->activitiesIds[i]))
 			count++;
 
 	if(this->n_activities-count<=1)
@@ -4223,7 +4223,7 @@ QString ConstraintMaxGapsBetweenActivities::getXmlDescription(Rules& r){
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
 	for(int i=0; i<this->n_activities; i++)
-		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesId[i])+"</Activity_Id>\n";
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesIds[i])+"</Activity_Id>\n";
 	s+="	<MaxGaps>"+CustomFETString::number(this->maxGaps)+"</MaxGaps>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -4247,7 +4247,7 @@ QString ConstraintMaxGapsBetweenActivities::getDescription(Rules& r){
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
 	}
 	s+=tr("MG:%1", "Maximum number of gaps").arg(this->maxGaps);
 
@@ -4261,8 +4261,8 @@ QString ConstraintMaxGapsBetweenActivities::getDetailedDescription(Rules& r){
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesId[i])
-			.arg(getActivityDetailedDescription(r, this->activitiesId[i]));
+			.arg(this->activitiesIds[i])
+			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
 	s+=tr("Maximum number of gaps=%1").arg(this->maxGaps);s+="\n";
@@ -4357,10 +4357,10 @@ bool ConstraintMaxGapsBetweenActivities::isRelatedToActivity(Rules& r, Activity*
 {
 	Q_UNUSED(r);
 
-	return activitiesIdSet.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
 
 	/*for(int i=0; i<this->n_activities; i++)
-		if(this->activitiesId[i]==a->id)
+		if(this->activitiesIds[i]==a->id)
 			return true;
 	return false;*/
 }
@@ -14112,9 +14112,9 @@ ConstraintActivitiesSameStartingHour::ConstraintActivitiesSameStartingHour(doubl
 	assert(nact>=2);
 	assert(act.count()==nact);
 	this->n_activities=nact;
-	this->activitiesId.clear();
+	this->activitiesIds.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId.append(act.at(i));
+		this->activitiesIds.append(act.at(i));
 
 	this->type=CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR;
 }
@@ -14124,18 +14124,18 @@ bool ConstraintActivitiesSameStartingHour::computeInternalStructure(QWidget* par
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		int j=r.activitiesHash.value(activitiesIds.at(i), -1);
 		//assert(j>=0);
 		if(j>=0)
 			_activities.append(j);
 		/*Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				this->_activities.append(j);
 				break;
 			}
@@ -14155,27 +14155,27 @@ bool ConstraintActivitiesSameStartingHour::computeInternalStructure(QWidget* par
 
 void ConstraintActivitiesSameStartingHour::removeUseless(Rules& r)
 {
-	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	//remove the activitiesIds which no longer exist (used after the deletion of an activity)
 	
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		Activity* act=r.activitiesPointerHash.value(activitiesIds[i], nullptr);
 		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				tmpList.append(act->id);
 				break;
 			}
 		}*/
 	}
 	
-	this->activitiesId=tmpList;
-	this->n_activities=this->activitiesId.count();
+	this->activitiesIds=tmpList;
+	this->n_activities=this->activitiesIds.count();
 
 	r.internalStructureComputed=false;
 }
@@ -14183,9 +14183,9 @@ void ConstraintActivitiesSameStartingHour::removeUseless(Rules& r)
 void ConstraintActivitiesSameStartingHour::recomputeActivitiesSet()
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
 #else
-	activitiesIdSet=activitiesId.toSet();
+	activitiesIdsSet=activitiesIds.toSet();
 #endif
 }
 
@@ -14194,7 +14194,7 @@ bool ConstraintActivitiesSameStartingHour::hasInactiveActivities(Rules& r)
 	int count=0;
 
 	for(int i=0; i<this->n_activities; i++)
-		if(r.inactiveActivities.contains(this->activitiesId[i]))
+		if(r.inactiveActivities.contains(this->activitiesIds[i]))
 			count++;
 
 	if(this->n_activities-count<=1)
@@ -14211,7 +14211,7 @@ QString ConstraintActivitiesSameStartingHour::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
 	for(int i=0; i<this->n_activities; i++)
-		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesId[i])+"</Activity_Id>\n";
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesIds[i])+"</Activity_Id>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintActivitiesSameStartingHour>\n";
@@ -14235,7 +14235,7 @@ QString ConstraintActivitiesSameStartingHour::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);
 		if(i<this->n_activities-1)
 			s+=", ";
 	}
@@ -14253,8 +14253,8 @@ QString ConstraintActivitiesSameStartingHour::getDetailedDescription(Rules& r)
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-			.arg(this->activitiesId[i])
-			.arg(getActivityDetailedDescription(r, this->activitiesId[i]));
+			.arg(this->activitiesIds[i])
+			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
 
@@ -14356,10 +14356,10 @@ bool ConstraintActivitiesSameStartingHour::isRelatedToActivity(Rules& r, Activit
 {
 	Q_UNUSED(r);
 
-	return activitiesIdSet.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
 
 	/*for(int i=0; i<this->n_activities; i++)
-		if(this->activitiesId[i]==a->id)
+		if(this->activitiesIds[i]==a->id)
 			return true;
 	return false;*/
 }
@@ -14430,9 +14430,9 @@ ConstraintActivitiesSameStartingDay::ConstraintActivitiesSameStartingDay(double 
 	assert(nact>=2);
 	assert(act.count()==nact);
 	this->n_activities=nact;
-	this->activitiesId.clear();
+	this->activitiesIds.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId.append(act.at(i));
+		this->activitiesIds.append(act.at(i));
 
 	this->type=CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY;
 }
@@ -14442,11 +14442,11 @@ bool ConstraintActivitiesSameStartingDay::computeInternalStructure(QWidget* pare
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		int j=r.activitiesHash.value(activitiesIds.at(i), -1);
 		//assert(j>=0);
 		if(j>=0)
 			_activities.append(j);
@@ -14454,7 +14454,7 @@ bool ConstraintActivitiesSameStartingDay::computeInternalStructure(QWidget* pare
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				this->_activities.append(j);
 				break;
 			}
@@ -14474,27 +14474,27 @@ bool ConstraintActivitiesSameStartingDay::computeInternalStructure(QWidget* pare
 
 void ConstraintActivitiesSameStartingDay::removeUseless(Rules& r)
 {
-	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	//remove the activitiesIds which no longer exist (used after the deletion of an activity)
 	
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		Activity* act=r.activitiesPointerHash.value(activitiesIds[i], nullptr);
 		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				tmpList.append(act->id);
 				break;
 			}
 		}*/
 	}
 	
-	this->activitiesId=tmpList;
-	this->n_activities=this->activitiesId.count();
+	this->activitiesIds=tmpList;
+	this->n_activities=this->activitiesIds.count();
 
 	r.internalStructureComputed=false;
 }
@@ -14502,9 +14502,9 @@ void ConstraintActivitiesSameStartingDay::removeUseless(Rules& r)
 void ConstraintActivitiesSameStartingDay::recomputeActivitiesSet()
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
 #else
-	activitiesIdSet=activitiesId.toSet();
+	activitiesIdsSet=activitiesIds.toSet();
 #endif
 }
 
@@ -14513,7 +14513,7 @@ bool ConstraintActivitiesSameStartingDay::hasInactiveActivities(Rules& r)
 	int count=0;
 
 	for(int i=0; i<this->n_activities; i++)
-		if(r.inactiveActivities.contains(this->activitiesId[i]))
+		if(r.inactiveActivities.contains(this->activitiesIds[i]))
 			count++;
 
 	if(this->n_activities-count<=1)
@@ -14530,7 +14530,7 @@ QString ConstraintActivitiesSameStartingDay::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
 	for(int i=0; i<this->n_activities; i++)
-		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesId[i])+"</Activity_Id>\n";
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesIds[i])+"</Activity_Id>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
 	s+="</ConstraintActivitiesSameStartingDay>\n";
@@ -14554,7 +14554,7 @@ QString ConstraintActivitiesSameStartingDay::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);
 		if(i<this->n_activities-1)
 			s+=", ";
 	}
@@ -14572,8 +14572,8 @@ QString ConstraintActivitiesSameStartingDay::getDetailedDescription(Rules& r)
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity.")
-			.arg(this->activitiesId[i])
-			.arg(getActivityDetailedDescription(r, this->activitiesId[i]));
+			.arg(this->activitiesIds[i])
+			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
 
@@ -14673,10 +14673,10 @@ bool ConstraintActivitiesSameStartingDay::isRelatedToActivity(Rules& r, Activity
 {
 	Q_UNUSED(r);
 
-	return activitiesIdSet.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
 
 	/*for(int i=0; i<this->n_activities; i++)
-		if(this->activitiesId[i]==a->id)
+		if(this->activitiesIds[i]==a->id)
 			return true;
 	return false;*/
 }
@@ -16173,7 +16173,7 @@ double ConstraintTwoSetsOfActivitiesOrdered::fitness(Solution& c, Rules& r, QLis
 
 void ConstraintTwoSetsOfActivitiesOrdered::removeUseless(Rules& r)
 {
-	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	//remove the activitiesIds which no longer exist (used after the deletion of an activity)
 	
 	QList<int> tmpList;
 
@@ -49069,9 +49069,9 @@ ConstraintMinHalfDaysBetweenActivities::ConstraintMinHalfDaysBetweenActivities(d
 	assert(nact>=2);
 	assert(act.count()==nact);
 	this->n_activities=nact;
-	this->activitiesId.clear();
+	this->activitiesIds.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId.append(act.at(i));
+		this->activitiesIds.append(act.at(i));
 
 	assert(n>0);
 	this->minDays=n;
@@ -49080,13 +49080,13 @@ ConstraintMinHalfDaysBetweenActivities::ConstraintMinHalfDaysBetweenActivities(d
 }
 
 bool ConstraintMinHalfDaysBetweenActivities::operator==(ConstraintMinHalfDaysBetweenActivities& c){
-	assert(this->n_activities==this->activitiesId.count());
-	assert(c.n_activities==c.activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
+	assert(c.n_activities==c.activitiesIds.count());
 
 	if(this->n_activities!=c.n_activities)
 		return false;
 	for(int i=0; i<this->n_activities; i++)
-		if(this->activitiesId[i]!=c.activitiesId[i])
+		if(this->activitiesIds[i]!=c.activitiesIds[i])
 			return false;
 	if(this->minDays!=c.minDays)
 		return false;
@@ -49102,18 +49102,18 @@ bool ConstraintMinHalfDaysBetweenActivities::computeInternalStructure(QWidget* p
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		int j=r.activitiesHash.value(activitiesIds.at(i), -1);
 		//assert(j>=0);
 		if(j>=0)
 			_activities.append(j);
 		/*Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				this->_activities.append(j);
 				break;
 			}
@@ -49133,27 +49133,27 @@ bool ConstraintMinHalfDaysBetweenActivities::computeInternalStructure(QWidget* p
 
 void ConstraintMinHalfDaysBetweenActivities::removeUseless(Rules& r)
 {
-	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	//remove the activitiesIds which no longer exist (used after the deletion of an activity)
 	
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		Activity* act=r.activitiesPointerHash.value(activitiesIds[i], nullptr);
 		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				tmpList.append(act->id);
 				break;
 			}
 		}*/
 	}
 	
-	this->activitiesId=tmpList;
-	this->n_activities=this->activitiesId.count();
+	this->activitiesIds=tmpList;
+	this->n_activities=this->activitiesIds.count();
 
 	r.internalStructureComputed=false;
 }
@@ -49161,9 +49161,9 @@ void ConstraintMinHalfDaysBetweenActivities::removeUseless(Rules& r)
 void ConstraintMinHalfDaysBetweenActivities::recomputeActivitiesSet()
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
 #else
-	activitiesIdSet=activitiesId.toSet();
+	activitiesIdsSet=activitiesIds.toSet();
 #endif
 }
 
@@ -49172,7 +49172,7 @@ bool ConstraintMinHalfDaysBetweenActivities::hasInactiveActivities(Rules& r)
 	int count=0;
 
 	for(int i=0; i<this->n_activities; i++)
-		if(r.inactiveActivities.contains(this->activitiesId[i]))
+		if(r.inactiveActivities.contains(this->activitiesIds[i]))
 			count++;
 
 	if(this->n_activities-count<=1)
@@ -49190,7 +49190,7 @@ QString ConstraintMinHalfDaysBetweenActivities::getXmlDescription(Rules& r)
 	s+="	<Consecutive_If_Same_Day>";s+=trueFalse(this->consecutiveIfSameDay);s+="</Consecutive_If_Same_Day>\n";
 	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
 	for(int i=0; i<this->n_activities; i++)
-		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesId[i])+"</Activity_Id>\n";
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesIds[i])+"</Activity_Id>\n";
 	s+="	<MinDays>"+CustomFETString::number(this->minDays)+"</MinDays>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -49215,7 +49215,7 @@ QString ConstraintMinHalfDaysBetweenActivities::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
 	}
 	s+=tr("mD:%1", "Min days").arg(this->minDays);s+=", ";
 	s+=tr("CSD:%1", "Consecutive if same day").arg(yesNoTranslated(this->consecutiveIfSameDay));
@@ -49231,8 +49231,8 @@ QString ConstraintMinHalfDaysBetweenActivities::getDetailedDescription(Rules& r)
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesId[i])
-			.arg(getActivityDetailedDescription(r, this->activitiesId[i]));
+			.arg(this->activitiesIds[i])
+			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
 	s+=tr("Minimum number of days=%1").arg(this->minDays);s+="\n";
@@ -49385,10 +49385,10 @@ bool ConstraintMinHalfDaysBetweenActivities::isRelatedToActivity(Rules& r, Activ
 {
 	Q_UNUSED(r);
 
-	return activitiesIdSet.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
 
 	/*for(int i=0; i<this->n_activities; i++)
-		if(this->activitiesId[i]==a->id)
+		if(this->activitiesIds[i]==a->id)
 			return true;
 	return false;*/
 }
@@ -50005,9 +50005,9 @@ ConstraintMaxTermsBetweenActivities::ConstraintMaxTermsBetweenActivities(double 
   	assert(nact>=2);
   	assert(act.count()==nact);
 	this->n_activities=nact;
-	this->activitiesId.clear();
+	this->activitiesIds.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId.append(act.at(i));
+		this->activitiesIds.append(act.at(i));
 
 	assert(n>=0);
 	this->maxTerms=n;
@@ -50020,11 +50020,11 @@ bool ConstraintMaxTermsBetweenActivities::computeInternalStructure(QWidget* pare
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		int j=r.activitiesHash.value(activitiesIds.at(i), -1);
 		//assert(j>=0);
 		if(j>=0)
 			_activities.append(j);
@@ -50032,7 +50032,7 @@ bool ConstraintMaxTermsBetweenActivities::computeInternalStructure(QWidget* pare
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				this->_activities.append(j);
 				break;
 			}
@@ -50052,27 +50052,27 @@ bool ConstraintMaxTermsBetweenActivities::computeInternalStructure(QWidget* pare
 
 void ConstraintMaxTermsBetweenActivities::removeUseless(Rules& r)
 {
-	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	//remove the activitiesIds which no longer exist (used after the deletion of an activity)
 	
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		Activity* act=r.activitiesPointerHash.value(activitiesIds[i], nullptr);
 		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				tmpList.append(act->id);
 				break;
 			}
 		}*/
 	}
 	
-	this->activitiesId=tmpList;
-	this->n_activities=this->activitiesId.count();
+	this->activitiesIds=tmpList;
+	this->n_activities=this->activitiesIds.count();
 
 	r.internalStructureComputed=false;
 }
@@ -50080,9 +50080,9 @@ void ConstraintMaxTermsBetweenActivities::removeUseless(Rules& r)
 void ConstraintMaxTermsBetweenActivities::recomputeActivitiesSet()
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
 #else
-	activitiesIdSet=activitiesId.toSet();
+	activitiesIdsSet=activitiesIds.toSet();
 #endif
 }
 
@@ -50091,7 +50091,7 @@ bool ConstraintMaxTermsBetweenActivities::hasInactiveActivities(Rules& r)
 	int count=0;
 
 	for(int i=0; i<this->n_activities; i++)
-		if(r.inactiveActivities.contains(this->activitiesId[i]))
+		if(r.inactiveActivities.contains(this->activitiesIds[i]))
 			count++;
 
 	if(this->n_activities-count<=1)
@@ -50108,7 +50108,7 @@ QString ConstraintMaxTermsBetweenActivities::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
 	for(int i=0; i<this->n_activities; i++)
-		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesId[i])+"</Activity_Id>\n";
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesIds[i])+"</Activity_Id>\n";
 	s+="	<MaxTerms>"+CustomFETString::number(this->maxTerms)+"</MaxTerms>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -50133,7 +50133,7 @@ QString ConstraintMaxTermsBetweenActivities::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
 	}
 	s+=tr("MT:%1", "Abbreviation for maximum terms").arg(this->maxTerms);
 
@@ -50148,8 +50148,8 @@ QString ConstraintMaxTermsBetweenActivities::getDetailedDescription(Rules& r)
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesId[i])
-			.arg(getActivityDetailedDescription(r, this->activitiesId[i]));
+			.arg(this->activitiesIds[i])
+			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
 	s+=tr("Maximum number of terms=%1").arg(this->maxTerms);s+="\n";
@@ -50264,10 +50264,10 @@ bool ConstraintMaxTermsBetweenActivities::isRelatedToActivity(Rules& r, Activity
 {
 	Q_UNUSED(r);
 
-	return activitiesIdSet.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
 
 	/*for(int i=0; i<this->n_activities; i++)
-		if(this->activitiesId[i]==a->id)
+		if(this->activitiesIds[i]==a->id)
 			return true;
 	return false;*/
 }
@@ -51544,9 +51544,9 @@ ConstraintMaxHalfDaysBetweenActivities::ConstraintMaxHalfDaysBetweenActivities(d
   	assert(nact>=2);
   	assert(act.count()==nact);
 	this->n_activities=nact;
-	this->activitiesId.clear();
+	this->activitiesIds.clear();
 	for(int i=0; i<nact; i++)
-		this->activitiesId.append(act.at(i));
+		this->activitiesIds.append(act.at(i));
 
 	assert(n>=0);
 	this->maxDays=n;
@@ -51559,11 +51559,11 @@ bool ConstraintMaxHalfDaysBetweenActivities::computeInternalStructure(QWidget* p
 	//compute the indices of the activities,
 	//based on their unique ID
 
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	this->_activities.clear();
 	for(int i=0; i<this->n_activities; i++){
-		int j=r.activitiesHash.value(activitiesId.at(i), -1);
+		int j=r.activitiesHash.value(activitiesIds.at(i), -1);
 		//assert(j>=0);
 		if(j>=0)
 			_activities.append(j);
@@ -51571,7 +51571,7 @@ bool ConstraintMaxHalfDaysBetweenActivities::computeInternalStructure(QWidget* p
 		Activity* act;
 		for(j=0; j<r.nInternalActivities; j++){
 			act=&r.internalActivitiesList[j];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				this->_activities.append(j);
 				break;
 			}
@@ -51591,27 +51591,27 @@ bool ConstraintMaxHalfDaysBetweenActivities::computeInternalStructure(QWidget* p
 
 void ConstraintMaxHalfDaysBetweenActivities::removeUseless(Rules& r)
 {
-	//remove the activitiesId which no longer exist (used after the deletion of an activity)
+	//remove the activitiesIds which no longer exist (used after the deletion of an activity)
 	
-	assert(this->n_activities==this->activitiesId.count());
+	assert(this->n_activities==this->activitiesIds.count());
 
 	QList<int> tmpList;
 
 	for(int i=0; i<this->n_activities; i++){
-		Activity* act=r.activitiesPointerHash.value(activitiesId[i], nullptr);
+		Activity* act=r.activitiesPointerHash.value(activitiesIds[i], nullptr);
 		if(act!=nullptr)
 			tmpList.append(act->id);
 		/*for(int k=0; k<r.activitiesList.size(); k++){
 			Activity* act=r.activitiesList[k];
-			if(act->id==this->activitiesId[i]){
+			if(act->id==this->activitiesIds[i]){
 				tmpList.append(act->id);
 				break;
 			}
 		}*/
 	}
 	
-	this->activitiesId=tmpList;
-	this->n_activities=this->activitiesId.count();
+	this->activitiesIds=tmpList;
+	this->n_activities=this->activitiesIds.count();
 
 	r.internalStructureComputed=false;
 }
@@ -51619,9 +51619,9 @@ void ConstraintMaxHalfDaysBetweenActivities::removeUseless(Rules& r)
 void ConstraintMaxHalfDaysBetweenActivities::recomputeActivitiesSet()
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	activitiesIdSet=QSet<int>(activitiesId.constBegin(), activitiesId.constEnd());
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
 #else
-	activitiesIdSet=activitiesId.toSet();
+	activitiesIdsSet=activitiesIds.toSet();
 #endif
 }
 
@@ -51630,7 +51630,7 @@ bool ConstraintMaxHalfDaysBetweenActivities::hasInactiveActivities(Rules& r)
 	int count=0;
 
 	for(int i=0; i<this->n_activities; i++)
-		if(r.inactiveActivities.contains(this->activitiesId[i]))
+		if(r.inactiveActivities.contains(this->activitiesIds[i]))
 			count++;
 
 	if(this->n_activities-count<=1)
@@ -51647,7 +51647,7 @@ QString ConstraintMaxHalfDaysBetweenActivities::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
 	for(int i=0; i<this->n_activities; i++)
-		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesId[i])+"</Activity_Id>\n";
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesIds[i])+"</Activity_Id>\n";
 	s+="	<MaxDays>"+CustomFETString::number(this->maxDays)+"</MaxDays>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -51672,7 +51672,7 @@ QString ConstraintMaxHalfDaysBetweenActivities::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
 	for(int i=0; i<this->n_activities; i++){
-		s+=tr("Id:%1", "Id of activity").arg(this->activitiesId[i]);s+=", ";
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
 	}
 	s+=tr("MD:%1", "Abbreviation for maximum days").arg(this->maxDays);
 
@@ -51687,8 +51687,8 @@ QString ConstraintMaxHalfDaysBetweenActivities::getDetailedDescription(Rules& r)
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
-			.arg(this->activitiesId[i])
-			.arg(getActivityDetailedDescription(r, this->activitiesId[i]));
+			.arg(this->activitiesIds[i])
+			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
 		s+="\n";
 	}
 	s+=tr("Maximum number of days=%1").arg(this->maxDays);s+="\n";
@@ -51814,10 +51814,10 @@ bool ConstraintMaxHalfDaysBetweenActivities::isRelatedToActivity(Rules& r, Activ
 {
 	Q_UNUSED(r);
 
-	return activitiesIdSet.contains(a->id);
+	return activitiesIdsSet.contains(a->id);
 
 	/*for(int i=0; i<this->n_activities; i++)
-		if(this->activitiesId[i]==a->id)
+		if(this->activitiesIds[i]==a->id)
 			return true;
 	return false;*/
 }

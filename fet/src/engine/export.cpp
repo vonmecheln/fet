@@ -1019,7 +1019,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 			int repres=-1;
 	
 			for(int i=0; i<c->n_activities; i++){
-				int aid=c->activitiesId[i];
+				int aid=c->activitiesIds[i];
 				aset.insert(aid);
 	
 				if(activitiesRepresentant.value(aid,0)==aid)
@@ -1107,7 +1107,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 			int repres=-1;
 	
 			for(int i=0; i<c->n_activities; i++){
-				int aid=c->activitiesId[i];
+				int aid=c->activitiesIds[i];
 				aset.insert(aid);
 	
 				if(activitiesRepresentant.value(aid,0)==aid)

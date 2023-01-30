@@ -59,7 +59,7 @@ ModifyConstraintMinDaysBetweenActivitiesForm::ModifyConstraintMinDaysBetweenActi
 	selectedActivitiesList.clear();
 	selectedActivitiesListWidget->clear();
 	for(int i=0; i<ctr->n_activities; i++){
-		int actId=ctr->activitiesId[i];
+		int actId=ctr->activitiesIds[i];
 		this->selectedActivitiesList.append(actId);
 		Activity *act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 		assert(act!=nullptr);
@@ -241,9 +241,9 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 
 		int i;
 		QList<int>::const_iterator it;
-		adc.activitiesId.clear();
+		adc.activitiesIds.clear();
 		for(i=0, it=this->selectedActivitiesList.constBegin(); it!=this->selectedActivitiesList.constEnd(); it++, i++){
-			adc.activitiesId.append(*it);
+			adc.activitiesIds.append(*it);
 		}
 		adc.n_activities=i;
 		
@@ -266,8 +266,8 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 		}
 	}
 	
-	if(_ctr->activitiesId!=selectedActivitiesList){
-		for(int oldId : qAsConst(_ctr->activitiesId)){
+	if(_ctr->activitiesIds!=selectedActivitiesList){
+		for(int oldId : qAsConst(_ctr->activitiesIds)){
 			QSet<ConstraintMinDaysBetweenActivities*> cs=gt.rules.mdbaHash.value(oldId, QSet<ConstraintMinDaysBetweenActivities*>());
 			assert(cs.contains(_ctr));
 			cs.remove(_ctr);
@@ -281,16 +281,16 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 			gt.rules.mdbaHash.insert(newId, cs);
 		}
 		
-		_ctr->activitiesId=selectedActivitiesList;
-		_ctr->n_activities=_ctr->activitiesId.count();
+		_ctr->activitiesIds=selectedActivitiesList;
+		_ctr->n_activities=_ctr->activitiesIds.count();
 		_ctr->recomputeActivitiesSet();
 	}
 
 	/*int i;
 	QList<int>::iterator it;
-	this->_ctr->activitiesId.clear();
+	this->_ctr->activitiesIds.clear();
 	for(i=0, it=this->selectedActivitiesList.begin(); it!=this->selectedActivitiesList.end(); it++, i++){
-		this->_ctr->activitiesId.append(*it);
+		this->_ctr->activitiesIds.append(*it);
 	}
 	this->_ctr->n_activities=i;
 	this->_ctr->recomputeActivitiesSet();*/

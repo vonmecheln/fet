@@ -126,7 +126,7 @@ bool ConstraintThreeActivitiesGroupedForm::filterOk(TimeConstraint* ctr)
 			
 		assert(id>=0);
 	
-		//int id=c->activitiesId[i];
+		//int id=c->activitiesIds[i];
 		/*Activity* act=nullptr;
 		for(Activity* a : qAsConst(gt.rules.activitiesList))
 			if(a->id==id)

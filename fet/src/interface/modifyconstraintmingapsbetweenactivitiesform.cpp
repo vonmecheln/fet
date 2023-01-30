@@ -59,7 +59,7 @@ ModifyConstraintMinGapsBetweenActivitiesForm::ModifyConstraintMinGapsBetweenActi
 	selectedActivitiesList.clear();
 	selectedActivitiesListWidget->clear();
 	for(int i=0; i<ctr->n_activities; i++){
-		int actId=ctr->activitiesId[i];
+		int actId=ctr->activitiesIds[i];
 		this->selectedActivitiesList.append(actId);
 		Activity *act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 		assert(act!=nullptr);
@@ -194,11 +194,11 @@ void ModifyConstraintMinGapsBetweenActivitiesForm::ok()
 
 	int i;
 	QList<int>::const_iterator it;
-	this->_ctr->activitiesId.clear();
+	this->_ctr->activitiesIds.clear();
 	for(i=0, it=this->selectedActivitiesList.constBegin(); it!=this->selectedActivitiesList.constEnd(); it++, i++)
-		this->_ctr->activitiesId.append(*it);
+		this->_ctr->activitiesIds.append(*it);
 	this->_ctr->n_activities=i;
-	assert(i==this->_ctr->activitiesId.count());
+	assert(i==this->_ctr->activitiesIds.count());
 	this->_ctr->recomputeActivitiesSet();
 	
 	this->_ctr->weightPercentage=weight;

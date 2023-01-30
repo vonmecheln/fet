@@ -603,12 +603,12 @@ public:
 	int n_activities;
 
 	/**
-	The activities involved in this constraint (id)
+	The activities involved in this constraint (id-s)
 	*/
-	QList<int> activitiesId;
-	//int activitiesId[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME];
+	QList<int> activitiesIds;
+	//int activitiesIds[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME];
 
-	QSet<int> activitiesIdSet;
+	QSet<int> activitiesIdsSet;
 
 	/**
 	The number of activities involved in this constraint - internal structure
@@ -677,12 +677,12 @@ public:
 	int n_activities;
 
 	/**
-	The activities involved in this constraint (id)
+	The activities involved in this constraint (id-s)
 	*/
-	QList<int> activitiesId;
-	//int activitiesId[MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING];
+	QList<int> activitiesIds;
+	//int activitiesIds[MAX_CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING];
 
-	QSet<int> activitiesIdSet;
+	QSet<int> activitiesIdsSet;
 
 	/**
 	The number of activities involved in this constraint - internal structure
@@ -793,12 +793,12 @@ public:
 	int n_activities;
 
 	/**
-	The activities involved in this constraint (id)
+	The activities involved in this constraint (id-s)
 	*/
-	QList<int> activitiesId;
-	//int activitiesId[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
+	QList<int> activitiesIds;
+	//int activitiesIds[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
 
-	QSet<int> activitiesIdSet;
+	QSet<int> activitiesIdsSet;
 
 	/**
 	The number of minimum days between each 2 activities
@@ -873,11 +873,11 @@ public:
 	int n_activities;
 
 	/**
-	The activities involved in this constraint (id)
+	The activities involved in this constraint (id-s)
 	*/
-	QList<int> activitiesId;
+	QList<int> activitiesIds;
 
-	QSet<int> activitiesIdSet;
+	QSet<int> activitiesIdsSet;
 
 	/**
 	The number of maximum days between each 2 activities
@@ -945,11 +945,11 @@ public:
 	int n_activities;
 
 	/**
-	The activities involved in this constraint (id)
+	The activities involved in this constraint (id-s)
 	*/
-	QList<int> activitiesId;
+	QList<int> activitiesIds;
 
-	QSet<int> activitiesIdSet;
+	QSet<int> activitiesIdsSet;
 
 	/**
 	The number of minimum gaps between each 2 activities, if on the same day
@@ -1018,11 +1018,11 @@ public:
 	int n_activities;
 
 	/**
-	The activities involved in this constraint (id)
+	The activities involved in this constraint (id-s)
 	*/
-	QList<int> activitiesId;
+	QList<int> activitiesIds;
 
-	QSet<int> activitiesIdSet;
+	QSet<int> activitiesIdsSet;
 
 	/**
 	The number of maximum gaps between each 2 activities, if on the same day
@@ -2977,12 +2977,12 @@ public:
 	int n_activities;
 
 	/**
-	The activities involved in this constraint (id)
+	The activities involved in this constraint (id-s)
 	*/
-	QList<int> activitiesId;
-	//int activitiesId[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR];
+	QList<int> activitiesIds;
+	//int activitiesIds[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR];
 
-	QSet<int> activitiesIdSet;
+	QSet<int> activitiesIdsSet;
 
 	/**
 	The number of activities involved in this constraint - internal structure
@@ -3045,12 +3045,12 @@ public:
 	int n_activities;
 
 	/**
-	The activities involved in this constraint (id)
+	The activities involved in this constraint (id-s)
 	*/
-	QList<int> activitiesId;
-	//int activitiesId[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY];
+	QList<int> activitiesIds;
+	//int activitiesIds[MAX_CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY];
 
-	QSet<int> activitiesIdSet;
+	QSet<int> activitiesIdsSet;
 
 	/**
 	The number of activities involved in this constraint - internal structure
@@ -9340,12 +9340,12 @@ public:
 	int n_activities;
 
 	/**
-	The activities involved in this constraint (id)
+	The activities involved in this constraint (id-s)
 	*/
-	QList<int> activitiesId;
-	//int activitiesId[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
+	QList<int> activitiesIds;
+	//int activitiesIds[MAX_CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES];
 
-	QSet<int> activitiesIdSet;
+	QSet<int> activitiesIdsSet;
 
 	/**
 	The number of minimum days between each 2 activities
@@ -9529,11 +9529,11 @@ public:
 	int n_activities;
 
 	/**
-	The activities involved in this constraint (id)
+	The activities involved in this constraint (id-s)
 	*/
-	QList<int> activitiesId;
+	QList<int> activitiesIds;
 
-	QSet<int> activitiesIdSet;
+	QSet<int> activitiesIdsSet;
 
 	/**
 	The number of maximum terms between each 2 activities
@@ -9847,11 +9847,11 @@ public:
 	int n_activities;
 
 	/**
-	The activities involved in this constraint (id)
+	The activities involved in this constraint (id-s)
 	*/
-	QList<int> activitiesId;
+	QList<int> activitiesIds;
 
-	QSet<int> activitiesIdSet;
+	QSet<int> activitiesIdsSet;
 
 	/**
 	The number of maximum days between each 2 activities

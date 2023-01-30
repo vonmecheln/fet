@@ -380,7 +380,7 @@ void TimetableGenerateMultipleForm::help()
 	 .arg(gen.rng.m1).arg(gen.rng.m2)
 	 +" "+tr("(If the component of a such computed seed will be all zeroes, we will add to the components of that seed the total number of threads instead"
 	 " of the thread number starting from zero.)")
-	 +" "+tr("This method was suggested by %1.").arg("Chichi Lalescu")
+	 +" "+tr("This method was suggested by %1.", "%1 is a person").arg("Chichi Lalescu")
 	 +" "+tr("After generating multiple, the global seed will become equal to the seed of the first thread.")
 	 +"\n\n"
 	 +tr("The number of threads is limited by your computer processor(s). If you have for example an 8 core/16 thread processor, the maximum allowed"

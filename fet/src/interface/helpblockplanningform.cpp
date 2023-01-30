@@ -48,19 +48,21 @@ void HelpBlockPlanningForm::setText()
 	s+="\n\n";
 	s+=tr("Last modified on %1.").arg(tr("27 March 2021"));
 	s+="\n\n";
-	s+=tr("The block-planning mode was suggested, chronologically, by these users: Jude G, ChicagoPianoTuner, and Darren McDonald. You can follow a"
-	 " forum discussion about it here: %1").arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=4151.0");
+	s+=tr("The block-planning mode was suggested, chronologically, by these users: %1, %2, and %3. You can follow a forum discussion about it here: %4",
+	 "%1, %2, and %3 are three persons, %4 is an internet link").arg("Jude G").arg("ChicagoPianoTuner").arg("Darren McDonald")
+	 .arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=4151.0");
 	s+="\n\n";
 	s+=tr("The main ideas:");
 	s+="\n\n";
-	s+=tr("- The user Jude G wanted to allocate activities to teachers based on qualifications.");
+	s+=tr("- The user %1 wanted to allocate the activities to teachers based on qualifications.", "%1 is a person").arg("Jude G");
 	s+="\n\n";
-	s+=tr("- The user Jude G and then ChicagoPianoTuner suggested this: the FET days are real-life teachers, and the FET hours are real-life"
+	s+=tr("- The user %1 and then %2 suggested this: the FET days are real-life teachers, and the FET hours are real-life"
 	 " time slots. Activities with common students cannot intersect in the real-life slots, so they cannot have overlapping FET hours."
 	 " Similarly, if rooms are assigned, activities with common rooms also cannot have overlapping FET hours. Note that rooms can only"
-	 " be assigned if \"teacher\" activities are used (see the note about speeding up timetable generation below).");
+	 " be assigned if \"teacher\" activities are used (see the note about speeding up timetable generation below).",
+	 "%1 and %2 are two persons").arg("Jude G").arg("ChicagoPianoTuner");
 	s+="\n\n";
-	s+=tr("- The user ChicagoPianoTuner suggested these:");
+	s+=tr("- The user %1 suggested these:", "%1 is a person").arg("ChicagoPianoTuner");
 	s+="\n\n";
 	s+=tr("    FET days are real teachers.");
 	s+="\n\n";
@@ -83,7 +85,7 @@ void HelpBlockPlanningForm::setText()
 	 " different teachers - it depends on what is desired. If I want the maximum number of students to be 22, I can use \"max simultaneous from"
 	 " a set in selected time slots\".");
 	s+="\n\n";
-	s+=tr("- Liviu Lalescu suggested this:");
+	s+=tr("- %1 suggested this:", "%1 is a person").arg("Liviu Lalescu");
 	s+="\n\n";
 	s+=tr("    Constraint \"a set of activities occupies max time slots from selected\" can be used to ensure that a teacher doesn't have too"
 	 " many blocks of activities assigned.");
@@ -91,18 +93,18 @@ void HelpBlockPlanningForm::setText()
 	s+=tr("    Constraint \"max total activities from a set in selected time slots\" can be used with an overflow/fake block (see below) to"
 	 " restrict the allowed number of activities that cannot be placed in a \"real\" block.");
 	s+="\n\n";
-	s+=tr("- Darren McDonald suggested this:");
+	s+=tr("- %1 suggested this:", "%1 is a person").arg("Darren McDonald");
 	s+="\n\n";
 	s+=tr("    Constraint \"Break\" under the Time tab can be used to mark blocks in which a teacher is unavailable.");
 	s+="\n\n";
-	s+=tr("- With ideas from ChicagoPianoTuner, Darren McDonald, and Liviu Lalescu:");
+	s+=tr("- With ideas from %1, %2, and %3:", "%1, %2, and %3 are three persons").arg("ChicagoPianoTuner").arg("Darren McDonald").arg("Liviu Lalescu");
 	s+="\n\n";
 	s+=tr("    If not all the options of the students can be respected, add one or more overflow/fake block, at the end of the day, so that"
 	 " impossible activities get scheduled there. And constrain the maximum number of activities there with the new constraint designed especially"
 	 " for the block-planning mode, max total activities from a set in selected time slots. You could use a progressive approach, decreasing the"
 	 " maximum allowed total number of activities in the overflow/fake slot(s) until no solution is possible anymore.");
 	s+="\n\n";
-	s+=tr("- With ideas from ChicagoPianoTuner, Darren McDonald:");
+	s+=tr("- With ideas from %1 and %2:", "%1 and %2 are two persons").arg("ChicagoPianoTuner").arg("Darren McDonald");
 	s+="\n\n";
 	s+=tr("    While activity tags can be used with the constraint \"activity tags not overlapping\" to prevent a teacher who can teach more"
 	 " than one subject from having those subjects placed in the same block, this may also prevent impossible activities from being placed in"
@@ -116,7 +118,7 @@ void HelpBlockPlanningForm::setText()
 	s+=tr("    As an example of the second approach, one could add a number of fake blocks equal to the maximum number of unique courses taught"
 	 " by any teacher. For example, if one teacher has at most 3 distinct subjects they might teach, then 3 fake/overflow blocks could be used.");
 	s+="\n\n";
-	s+=tr("- The user Darren McDonald described the following use case:");
+	s+=tr("- The user %1 described the following use case:", "%1 is a person").arg("Darren McDonald");
 	s+="\n\n";
 	s+=tr("I am planning to use a two-stage process: using the 'Block-planning' mode to plan blocks, then using the 'Official' mode to prepare a final"
 	 " timetable. A little bit more detail about my timetabling situation may help explain.");
@@ -139,19 +141,19 @@ void HelpBlockPlanningForm::setText()
 	 " to be answered has two parts: which assignments of students to sections allows us to form blocks (subject/section groups) in which"
 	 " each student is able to take the courses they've selected, and what are the resulting blocks?");
 	s+="\n\n";
-	s+=tr("To answer that question, the block-planning mode can be used, using constraints as suggested by ChicagoPianoTuner. At my school we"
-	 " are using seven blocks, so in block-planning I need only 7 hours per day. Geography SL is a subject, with one activity for each student"
-	 " enrolled in the course. Similarly, Mathematics SL is a subject, with one activity for each student. At this stage, then, there is no need"
-	 " to take into account the number of times a course meets in a week, etc., so one activity per student per course is all that's required."
-	 " A successfully generated block-planning mode timetable will allow me to identify which courses should go in Block A (block-planning mode FET Hour 1),"
+	s+=tr("To answer that question, the block-planning mode can be used, using constraints as suggested by %1. At my school we are using seven"
+	 " blocks, so in block-planning I need only 7 hours per day. Geography SL is a subject, with one activity for each student enrolled in the"
+	 " course. Similarly, Mathematics SL is a subject, with one activity for each student. At this stage, then, there is no need to take into"
+	 " account the number of times a course meets in a week, etc., so one activity per student per course is all that's required. A successfully"
+	 " generated block-planning mode timetable will allow me to identify which courses should go in Block A (block-planning mode FET Hour 1),"
 	 " Block B (block-planning FET Hour 2), etc., and which students should be allocated to each section. (This actually needs to be done only for"
-	 " Grade 11, since students in Grade 12 can keep the same blocks they had in the previous year.)");
+	 " Grade 11, since students in Grade 12 can keep the same blocks they had in the previous year.)", "%1 is a person").arg("ChicagoPianoTuner");
 	s+="\n\n";
 	s+=tr("With that information, I could move to the official mode to generate the real timetable: Block A becomes an activity tag which"
 	 " could be used to ensure activities in the same block get the same actual time, and I know that students assigned to a section have no"
 	 " conflicts within the blocks.");
 	s+="\n\n";
-	s+=tr("- The user ChicagoPianoTuner described the following use case:");
+	s+=tr("- The user %1 described the following use case:", "%1 is a person").arg("ChicagoPianoTuner");
 	s+="\n\n";
 	s+=tr("There are real 8 blocks (A-H).");
 	s+="\n";
@@ -163,7 +165,8 @@ void HelpBlockPlanningForm::setText()
 	s+=tr("The remaining courses are listed in preference order. There are 4 preferences, ranked 1-4. It is desired that 2 of these fall in the"
 	 " real blocks. The other 2 may be considered 'reserve' choices and should hopefully fall in fake blocks.");
 	s+="\n\n";
-	s+=tr("Two approaches using block-planning to treat this case were suggested by ChicagoPianoTuner and Darren McDonald:");
+	s+=tr("Two approaches using block-planning to treat this case were suggested by %1 and %2:", "%1 and %2 are two persons").arg("ChicagoPianoTuner")
+	 .arg("Darren McDonald");
 	s+="\n\n";
 	s+=tr("- If, say, you have 50 distinct courses and 40 teachers, you could add 10 fake teacher slots (FET days) so that there are 50 teacher"
 	 " slots (in general, max(number of courses, number of teachers) teacher slots would be required). Then, adjust your \"A set of activities has"
@@ -175,7 +178,8 @@ void HelpBlockPlanningForm::setText()
 	 " taught by any teacher (3 in this toy example), so instead of 4 fake blocks, I have 12: F1_a, F1_b, F1_c, F2_a,... , F4_c."
 	 " Then \"first choice\" could happen in F1_a, F1_b, or F1_c, and \"second choice\" in F2_a, etc.");
 	s+="\n\n";
-	s+=tr("- The users Volker Dirr and ChicagoPianoTuner suggested that the following method may help improve the speed of timetable generation:");
+	s+=tr("- The users %1 and %2 suggested that the following method may help improve the speed of timetable generation:", "%1 and %2 are two persons")
+	 .arg("Volker Dirr").arg("ChicagoPianoTuner");
 	s+="\n\n";
 	s+=tr("In addition to having one activity per student choice, create one activity per teacher-section. E.g. if teacher T1 teaches"
 	 " subject S1, S2, S2, S2, and S3 (five hours, three unique subjects), create five activities, no FET students, FET teacher = real teacher,"
@@ -189,7 +193,7 @@ void HelpBlockPlanningForm::setText()
 	 " tag = \"teacher_activity,\" and then generated again. Doing this brought my conflicts from 80 down to 38, and the second generation"
 	 " took ~15 seconds.");
 	s+="\n\n";
-	s+=tr("Further instructions by ChicagoPianoTuner, regarding tricks to make a two semester timetable:");
+	s+=tr("Further instructions by %1, regarding tricks to make a two semester timetable:", "%1 is a person").arg("ChicagoPianoTuner");
 	s+=tr("If your students have some different courses in semester 1 and semester 2, there are a few things you need to do. First, double"
 	 " the number of hours in your FET day, creating an hour for each block in semester 1, and another for semester 2, including fakes."
 	 " The structure should be A_sem1, B_sem1, ..., FAKE_1_sem1, ... A_sem2, B_sem2, FAKE_1_sem2, ... FAKE_N_sem2. Now, for subjects that"

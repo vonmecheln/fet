@@ -220,15 +220,15 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 			bool toBeRemoved=true;
 			
 			for(int i=0; i<mdc->n_activities; i++){
-				if(!activityGroupIdHash.contains(mdc->activitiesId[i])){
+				if(!activityGroupIdHash.contains(mdc->activitiesIds[i])){
 					QMessageBox::critical(this, tr("FET bug"), tr("You found a probable bug in FET - constraint %1\ncontains invalid activity id %2\n"
-					 "\nPlease report error. FET will now abort current operation").arg(mdc->getDetailedDescription(gt.rules)).arg(mdc->activitiesId[i]));
+					 "\nPlease report error. FET will now abort current operation").arg(mdc->getDetailedDescription(gt.rules)).arg(mdc->activitiesIds[i]));
 					return;
 				}
-				assert(activityGroupIdHash.contains(mdc->activitiesId[i]));
+				assert(activityGroupIdHash.contains(mdc->activitiesIds[i]));
 				if(reprIndex==-1)
-					reprIndex=activityGroupIdHash.value(mdc->activitiesId[i]);
-				else if(reprIndex!=activityGroupIdHash.value(mdc->activitiesId[i])){
+					reprIndex=activityGroupIdHash.value(mdc->activitiesIds[i]);
+				else if(reprIndex!=activityGroupIdHash.value(mdc->activitiesIds[i])){
 					toBeRemoved=false;
 					break;
 				}

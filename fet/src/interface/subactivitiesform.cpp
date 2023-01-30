@@ -670,9 +670,6 @@ void SubactivitiesForm::help()
 	s+=" -";
 	s+=tr("have an X mark after the id.");
 	s+="\n";
-/*	s+=" -";
-	s+=tr("are shown with lowercase letters.");
-	s+="\n";*/
 	s+=" -";
 	s+=tr("if you use colors in interface (see Settings/Interface menu), they will appear with different background color.");
 	s+="\n\n";

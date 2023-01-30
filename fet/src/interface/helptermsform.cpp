@@ -46,10 +46,11 @@ void HelpTermsForm::setText()
 	
 	s+=tr("Instructions for the terms mode (Finland).");
 	s+="\n\n";
-	s+=tr("Last modified on %1.").arg(tr("29 March 2021"));
+	s+=tr("Last modified on %1.", "%1 is a date").arg(tr("29 March 2021"));
 	s+="\n\n";
-	s+=tr("The terms mode was suggested, chronologically, by these users: mathmake and mikkojoo. You can follow a"
-	 " forum discussion about it here: %1").arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=4387.0");
+	s+=tr("The terms mode was suggested, chronologically, by these users: %1 and %2. You can follow a forum discussion about it here: %3",
+	 "%1 and %2 are two persons, %3 is an internet link").arg("mathmake").arg("mikkojoo")
+	 .arg("https://lalescu.ro/liviu/fet/forum/index.php?topic=4387.0");
 	s+="\n\n";
 	s+=tr("The main ideas:");
 	s+="\n\n";

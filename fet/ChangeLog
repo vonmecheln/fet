@@ -2620,3 +2620,13 @@ Versions 6.8.0 - 6.8.v
 	- Updated the Greek translation, by Vangelis Karafillidis.
 	- Updated the German translation, by Volker Dirr.
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares. It is now almost complete.
+- Version 6.8.3
+	- Code cleanup.
+	- Updated some strings in the English original text.
+	- Updated the Italian translation, by Francesco Rizzo.
+	- Updated the German translation, by Volker Dirr.
+	- Updated the Romanian translation, by Liviu Lalescu.
+	- Updated the French translation, by Pascal Cohen.
+	- Updated the Greek translation, by Vangelis Karafillidis.
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares. It is now complete.
+	- Updated the Arabic translation, by Benahmed Abdelkrim.

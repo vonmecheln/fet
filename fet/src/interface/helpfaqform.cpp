@@ -642,7 +642,7 @@ void HelpFaqForm::setText()
 	s+="--------------------";
 	s+="\n\n";
 	
-	s+=tr("Q and A From Anestis Vovos: A very difficult to diagnose unresolved case\n\n"
+	s+=tr("Q and A From %1: A very difficult to diagnose unresolved case\n\n"
 		"Since I started working on our school's timetable I had a problem with a specific day and teacher. No matter what I tried in FET I couldn't "
 		"reduce the in-school hours for this specific teacher and day down from 7 (7 hours is the full school day, so he had 6 teaching hours and 1 gap). "
 		"It was too much (other teachers have 5 teaching hours max) but he didn't mind so we kept FET solution."
@@ -654,7 +654,8 @@ void HelpFaqForm::setText()
 		"(and it wasn't just cases of teacher not available but usually restrictions on teaching on specific hours and max gaps, so it was very "
 		"difficult to look through it). So this specific teacher (because of the restrictions on the other teachers and the loose restrictions on "
 		"himself) had to teach 6 hours with 1 gap so that he could cover a first and a last hour!\n\n"
-		"...Not that I will fall again for it but based on the difficulty to diagnose on my part it will help others that might face the same problem.");
+		"...Not that I will fall again for it but based on the difficulty to diagnose on my part it will help others that might face the same problem.",
+		"%1 is a person").arg("Anestis Vovos");
 
 	s+="\n\n";
 	s+="--------------------";
@@ -677,17 +678,17 @@ void HelpFaqForm::setText()
 		"and add constraint min days between activities, 2 days, 100%.\n\n"
 		"Or add a dummy activity for this teacher, split into 2 per week, min days = 2, with 100%. You just need to "
 		"take care that this teacher has place for these dummy activities (enough slots in the day) and to consider "
-		"these dummy activities as possible gaps, so if teacher has max gaps 2 then make max gaps for him 0.").arg(QString::fromUtf8("Horațiu Hălmăjan"));
+		"these dummy activities as possible gaps, so if teacher has max gaps 2 then make max gaps for him 0.",
+		"%1 is a person").arg(QString::fromUtf8("Horațiu Hălmăjan"));
 
 	s+="\n\n";
 	s+="--------------------";
 	s+="\n\n";
 
-
 	s+=tr("Q: (by %1) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?\n\n"
 		"A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, duration 1, min days between "
 		"activities 1, weight 0%, select consecutive if same day. FET will never put more than 2 of these dummy activities "
-		"in a day. Add max gaps for students = 0 per week.").arg(QString::fromUtf8("Horațiu Hălmăjan"));
+		"in a day. Add max gaps for students = 0 per week.", "%1 is a person").arg(QString::fromUtf8("Horațiu Hălmăjan"));
 
 	s+="\n\n";
 	s+="--------------------";
@@ -847,7 +848,7 @@ void HelpFaqForm::setText()
 	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("-- This entry by Regis Bouguin --");
+	s+=tr("-- This entry by %1 --", "%1 is a person").arg("Regis Bouguin");
 	s+="\n\n";
 	s+=tr("Q: A trick to deal with fortnightly activities (my institution has a lot of fortnightly activities):");
 	s+="\n\n";
@@ -1058,12 +1059,13 @@ void HelpFaqForm::setText()
 	s+="\n\n";
 	s+=tr("A:", "Answer");
 	s+=" ";
-	s+=tr("This constraint was suggested by Henrique Belo, who gave the following example: You can use this constraint for instance if you have"
+	s+=tr("This constraint was suggested by %1, who gave the following example: You can use this constraint for instance if you have"
 		" young and old students with Sport activities, and you don't want young students having the Sport activities at the same time with the"
 		" old students. You then need to add an activity tag, say SY, to all the young students' Sport activities, and another activity tag,"
 		" say SO, to all the old students' Sport activities, and add a constraint activity tags not overlapping for the activity tags SY and SO."
 		" You can even create more categories of students' age, like SO1, SO2, SO3, and SO4, and add a single constraint activity tags not"
-		" overlapping, so that at a single time slot only a single activity tag out of these four will be present in the timetable.");
+		" overlapping, so that at a single time slot only a single activity tag out of these four will be present in the timetable.", "%1 is a person")
+		.arg("Henrique Belo");
 	s+="\n\n";
 	s+=tr("This constraint is related to the constraint of type activities not overlapping, but is much easier to use in the described example above,"
 		" because you only need to add a single constraint instead of possibly very many constraints activities not overlapping.");
