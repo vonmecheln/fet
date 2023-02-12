@@ -771,9 +771,9 @@ void SplitYearForm::help()
 		" the disk at all, and if you have many total subgroups, a good idea is to disable writing the subgroups, groups AND years timetables"
 		" to the hard disk, as these take a long time to compute (not only subgroups, but also groups and years!).");
 	s+=" ";
-	s+=tr("(Also the conflicts timetable might take long to write, if the file is big.)");
+	s+=tr("(Also the conflicts timetable might take long to write, if the file is large.)");
 	s+=" ";
-	s+=tr("After that, you can re-enable writing the students timetables on the disk, and re-generate.");
+	s+=tr("After that, you can enable the writing of the students timetables on the disk, and regenerate.");
 	
 	s+="\n\n";
 	s+=tr("About using a large number of categories, divisions per category and subgroups: it is highly recommended to"

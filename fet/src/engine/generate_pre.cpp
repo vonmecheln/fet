@@ -5754,7 +5754,7 @@ bool computeTeachersMaxHoursDailyRealDays(QWidget* parent)
 				 " max %2 hours daily per real day with 100% weight which cannot be respected because of number of days per week,"
 				 " number of hours per day, teacher(s) max real days per week, teacher not available and/or breaks."
 				 " The number of total hours for this teacher is"
-				 " %3 and the number of available slots is, considering max hours daily and all other constraints, %4.")
+				 " %3 and the number of available slots is, considering max hours daily per real day and all other constraints, %4.")
 				 .arg(gt.rules.internalTeachersList[tc]->name)
 				 .arg(teachersMaxHoursDailyRealDaysMaxHours2[tc])
 				 .arg(nHoursPerTeacher[tc])
@@ -14565,7 +14565,7 @@ bool checkMinDaysMaxTwoOnSameDay(QWidget* parent)
 							ok=false;
 
 							QString s=GeneratePreTranslate::tr("%1 cannot be respected because teacher %2 has at most"
-							" %3 available days. Currently FET cannot put more than 2 activities in the same day."
+							" %3 available days. Currently FET cannot put more than 2 activities on the same day."
 							" You have 2*available days<number of activities in this constraint.",
 							"%1 is the detailed description of a constraint"
 							)
@@ -14597,7 +14597,7 @@ bool checkMinDaysMaxTwoOnSameDay(QWidget* parent)
 							ok=false;
 
 							QString s=GeneratePreTranslate::tr("%1 cannot be respected because subgroup %2 has at most"
-							" %3 available days. Currently FET cannot put more than 2 activities in the same day."
+							" %3 available days. Currently FET cannot put more than 2 activities on the same day."
 							" You have 2*available days<number of activities in this constraint.",
 							"%1 is the detailed description of a constraint"
 							)
@@ -15003,7 +15003,7 @@ bool checkMinHalfDaysMaxTwoOnSameDay(QWidget* parent)
 						ok=false;
 						
 						QString s=GeneratePreTranslate::tr("%1 cannot be respected because teacher %2 has at most"
-						 " %3 available half days. Currently FET cannot put more than 2 activities in the same day."
+						 " %3 available half days. Currently FET cannot put more than 2 activities on the same day."
 						 " You have 2*available days<number of activities in this constraint.",
 						 "%1 is the detailed description of a constraint"
 						)
@@ -15035,7 +15035,7 @@ bool checkMinHalfDaysMaxTwoOnSameDay(QWidget* parent)
 						ok=false;
 						
 						QString s=GeneratePreTranslate::tr("%1 cannot be respected because subgroup %2 has at most"
-						 " %3 available half days. Currently FET cannot put more than 2 activities in the same day."
+						 " %3 available half days. Currently FET cannot put more than 2 activities on the same day."
 						 " You have 2*available days<number of activities in this constraint.",
 						 "%1 is the detailed description of a constraint"
 						)

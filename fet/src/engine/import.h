@@ -27,6 +27,8 @@ File import.h
 
 #include <QDialog>
 
+#include <QString>
+
 #include "timetable.h"
 #include "timetable_defs.h"
 
@@ -102,7 +104,7 @@ private:
 class ChooseFieldsDialog: public QDialog{
 	Q_OBJECT
 	
-public:							//can be this done privat, too?
+public:							//could this be done private, too?
 	ChooseFieldsDialog(QWidget *parent);
 	~ChooseFieldsDialog();
 

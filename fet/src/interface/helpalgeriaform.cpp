@@ -64,9 +64,9 @@ HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)
 
 	s+="\n\n";
 
-	s+=tr("If your data is too difficult (impossible), maybe you can deactivate force consecutive if same day "
-	 "for all constraints min days between activities (from the modify multiple constraints at once dialog "
-	 "which can be activated from the min days constraints dialog).");
+	s+=tr("If your data is too difficult (impossible), maybe you can deactivate force consecutive if same day for"
+	 " all constraints min days between activities (from the modify multiple constraints at once dialog,"
+	 " which can be activated from the constraints min days between activities dialog).");
 
 	s+="\n\n";
 

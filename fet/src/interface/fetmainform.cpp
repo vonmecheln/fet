@@ -449,6 +449,9 @@
 
 #include <QMessageBox>
 
+#include <QFileInfo>
+#include <QFile>
+
 #include <QFileDialog>
 #include <QString>
 #include <QDir>
@@ -476,9 +479,6 @@
 
 #include <QCursor>
 #include <QSettings>
-
-#include <QFileInfo>
-#include <QFile>
 
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
@@ -5039,7 +5039,7 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	s+=" ";
 	s+=tr("(Also the conflicts timetable might take long to write, if the file is large.)");
 	s+=" ";
-	s+=tr("After that, you can re-enable writing of the timetables and re-generate.");
+	s+=tr("After that, you can enable the writing of the timetables and regenerate.");
 
 	s+="\n\n";
 	s+=tr("Show tool tips for constraints with tables: in the add/modify constraint dialogs which use tables, like the 'not available times' ones,"

@@ -23,7 +23,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>This constraint forces 3 activities to be in the same day, one immediately following the other, as a block of 3 activities, in any order, possibly separated by breaks</string>
+      <string>This constraint forces 3 activities to be on the same day, one immediately following the other, as a block of 3 activities, in any order, possibly separated by breaks</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

@@ -99,11 +99,11 @@ void HelpTipsForm::setText()
 	
 	s+="\n\n";
 	s+=tr("3) About constraints two activities grouped, two activities consecutive and three activities grouped:"
-	 " It is a bad practice to add such constraints if the involved activities are also constrained not to be in the same day"
+	 " It is a bad practice to add such constraints if the involved activities are also constrained not to be on the same day"
 	 " by constraints min days between activities.");
 	s+="\n\n";
-	s+=tr("If A1 and A2 are constrained not to be in the same day with 95% weight or any other weight, it is a bad practice "
-	"to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be in the same day, "
+	s+=tr("If A1 and A2 are constrained not to be on the same day with 95% weight or any other weight, it is a bad practice "
+	"to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be on the same day, "
 	"the timetable is impossible; if the weight is below 100%, the timetable is more difficult to find than using the correct way."
 	" The correct way would probably be to consider A1 and A2 = a single activity A12', or to modify the related constraint "
 	"min days between activities. Or maybe you can find other ways.");

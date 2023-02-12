@@ -39,7 +39,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Select if when placing 2 activities from the same container in the same day, activities should be consecutive (this only happens for constraints with weight below 100.0%, which are not respected)</string>
+         <string>Select if when placing 2 activities from the same container on the same day, the activities should be consecutive (this only happens for constraints with weight below 100.0%, which are not respected)</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>

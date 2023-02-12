@@ -321,6 +321,7 @@ QString StudentsSubgroup::getDetailedDescriptionWithConstraints(Rules& r)
 int yearsAscending(const StudentsYear* y1, const StudentsYear* y2)
 {
 	//return y1->name < y2->name;
+	
 	//by Rodolfo Ribeiro Gomes
 	return y1->name.localeAwareCompare(y2->name)<0;
 }
@@ -328,6 +329,7 @@ int yearsAscending(const StudentsYear* y1, const StudentsYear* y2)
 int groupsAscending(const StudentsGroup* g1, const StudentsGroup* g2)
 {
 	//return g1->name < g2->name;
+	
 	//by Rodolfo Ribeiro Gomes
 	return g1->name.localeAwareCompare(g2->name)<0;
 }
@@ -335,6 +337,7 @@ int groupsAscending(const StudentsGroup* g1, const StudentsGroup* g2)
 int subgroupsAscending(const StudentsSubgroup* s1, const StudentsSubgroup* s2)
 {
 	//return s1->name < s2->name;
+	
 	//by Rodolfo Ribeiro Gomes
 	return s1->name.localeAwareCompare(s2->name)<0;
 }

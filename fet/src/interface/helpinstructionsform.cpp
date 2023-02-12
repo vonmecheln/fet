@@ -65,9 +65,9 @@ void HelpInstructionsForm::setText()
 		"number of hours (periods) per day to your required needs, not larger. It is a good practice to choose a value for the number "
 		"of days and number of hours from the beginning (you can change their names anytime you want afterwards).");
 	s+="\n\n";
-	s+=tr("1) To say that component activities of a larger split activity are not in the same day, FET automatically adds a "
+	s+=tr("1) To say that component activities of a larger split activity are not on the same day, FET automatically adds a "
 		"constraint min days between activities with default 95% weight. If you want to ensure no two activities of same type "
-		"are in the same day, you will have to modify the weight from 95% to higher values (see these constraints in the Time constraints "
+		"are on the same day, you will have to modify the weight from 95% to higher values (see these constraints in the Time constraints "
 		"menu->Activities->Min days between a set of activities constraints. You have there a powerful filter to change many "
 		"constraints with a few clicks).");
 	s+="\n\n";

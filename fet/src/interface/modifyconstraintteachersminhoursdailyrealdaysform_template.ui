@@ -29,7 +29,7 @@
       <enum>QFrame::Plain</enum>
      </property>
      <property name="text">
-      <string>It is recommended to start with 2 min hours. Maybe you could try higher values after that, but they might be too large and you might get a impossible timetable.</string>
+      <string>It is recommended to start with 2 min hours. Maybe you could try higher values after that, but they might be too large and you might get an impossible timetable.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

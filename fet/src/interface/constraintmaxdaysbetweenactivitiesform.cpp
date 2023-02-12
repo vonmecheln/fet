@@ -293,7 +293,7 @@ void ConstraintMaxDaysBetweenActivitiesForm::help()
 	s+=tr("This constraint was suggested for the following situation: a user needed that activities A1, A2 and A3 to be in consecutive days"
 	 " (like: A1 on Tuesday, A2 on Wednesday and A3 on Thursday. So, they must be in 3 consecutive days). This is simple: add a constraint"
 	 " max days between activities for A1, A2 and A3, with max 2 days between them. It is supposed that these activities are constrained"
-	 " not to be in the same day by a constraint min days between activities.");
+	 " not to be on the same day by a constraint min days between activities.");
 	s+="\n\n";
 	s+=tr("So, the general situation: this constraint ensures that between each pair from the selected activities, the distance in days is at most the selected value."
 	" Distance = 1 day between a pair A1 and A2 means that A1 and A2 are in consecutive days (like Thursday and Friday)."

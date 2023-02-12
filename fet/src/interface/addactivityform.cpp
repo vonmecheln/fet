@@ -1251,7 +1251,7 @@ void AddActivityForm::help()
 	
 	 s+=tr("If you split a larger activity into more activities per week, you have a multitude of choices:\n"
 	 "You can choose the minimum distance in days between each pair of activities."
-	 " Please note that a minimum distance of 1 means that the activities must not be in the same day, "
+	 " Please note that a minimum distance of 1 means that the activities must not be on the same day, "
 	 "a minimum distance of 2 means that the activities must be separated by one day (distance from Monday"
 	 " to Wednesday for instance is 2 days), etc.");
 
@@ -1290,7 +1290,7 @@ void AddActivityForm::help()
 
 	s+="\n\n";
 
-	s+=tr("There is another option, if the activities are in the same day, force consecutive activities. You can select "
+	s+=tr("There is another option, if the activities are on the same day, force consecutive activities. You can select "
 	 "this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects "
 	 "fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and "
 	 "add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. "

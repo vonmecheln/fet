@@ -127,16 +127,16 @@ void TimetablingThread::startGenerating()
 	assert(genMultiMatrix[_nThread].semaphorePlacedActivity.available()==0);
 	assert(genMultiMatrix[_nThread].semaphoreFinished.available()==0);
 	genMultiMatrix[_nThread].generateWithSemaphore(timeLimit, impossible, timeExceeded, true); //true means threaded
-	QString s;
-	
-	bool ok;
-
 	//genMultiMatrix[_nThread].myMutex.lock();
 	if(genMultiMatrix[_nThread].abortOptimization){
 		//genMultiMatrix[_nThread].myMutex.unlock();
 		//cout<<"returning, because abortOptimization of _nThread="<<_nThread<<endl;
 		return;
 	}
+
+	QString s;
+	
+	bool ok;
 
 	if(allNThreads>=2)
 		s=tr("(Thread %1)").arg(_nThread+1)+QString(" ");
@@ -933,8 +933,11 @@ void TimetableGenerateMultipleForm::stop()
 			secondsToHighestStage%=60;
 			int seconds=secondsToHighestStage;
 			
-			QString description=tr("(Thread %1)").arg(nThread+1);
-			description+=QString(" ");
+			QString description;
+			if(allNThreads>=2)
+				description=tr("(Thread %1)").arg(nThread+1)+QString(" ");
+			else
+				description=QString("");
 			if(timedOut)
 				description+=tr("Time exceeded.");
 			else
@@ -1107,8 +1110,11 @@ void TimetableGenerateMultipleForm::simulationFinished()
 			secondsToHighestStage%=60;
 			int seconds=secondsToHighestStage;
 
-			QString description=tr("(Thread %1)").arg(nThread+1);
-			description+=QString(" ");
+			QString description;
+			if(allNThreads>=2)
+				description=tr("(Thread %1)").arg(nThread+1)+QString(" ");
+			else
+				description=QString("");
 			if(timedOut)
 				description+=tr("Time exceeded.");
 			else

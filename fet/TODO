@@ -1914,7 +1914,7 @@ The best would be other buttons: "Activate/deactivate all constraints for select
 Because the button says "Activate/deactivate all activities for selected students year" (it refers only to activities).
 
 124---------------------------------------------------------
-From rjmillett (on guest book):
+From rjmillett (on guestbook):
 
 there are many things i would like to have in FET:
 
@@ -8274,3 +8274,162 @@ ngoctp29121982:
 
 Maximum number of teaching sessions in a week for 1 teacher
 In this constraint, there is a dialog box to sort the teachers with the number of lessons from small to large
+
+493---------------------------------------------------------
+From ngoctp29121982 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5478.0
+
+Add a constraint on the maximum number of evenings in a week using a CSV file:
+
+Adding the maximum number of sessions or the maximum number of days in a school week is very time consuming because it cannot have a dialog box to filter.
+You say there are many dialog boxes in FET software, but I find all the dialogs you create very useful. Now we teachers from Vietnam really want you to create
+that dialog box and add the constraint of maximum number of nights or maximum number of days in a week using a CSV file. We always support your development.
+
+494---------------------------------------------------------
+From Volker Dirr and Liviu Lalescu:
+
+Liviu Lalescu:
+
+What do you say, should we consider import/export of constraints as CSV/text?
+
+Volker Dirr:
+
+As you know i suggested myself to write a new csv import.
+
+But my idea is/was NOT to single constraints, even that is the "FET
+style". But there are too many and it the "FET style" is maybe
+complicating things, since they allow to much.
+
+In my opinion it is useful to write (a second) the teachers.csv import.
+
+This time headers are fixed, but number of fields is optional.
+
+So you can still import teachers with the old csv export file format.
+
+But now optional fields can be added. Of course they must be fixed and I
+think only importing 100% weight is enough (or if you want/need more:
+only one constraint with weight X can be added; OR if you want more: 2
+constraints can be added: 1. with weight 100%, the other with X%; or if
+you want more: I fear then the "FET style" is needed. But in my opinion
+that is much too much)
+
+So for example we set the head like this:
+name; max number of hours per day; min number of hours per day; ...
+
+So you can import:
+teachers1
+or
+teacher2;5
+or
+teacher3;5;2
+
+So always with 100%.
+If you think more is needed, then maybe variant 2:
+name; max number of hours per day; weight maxnhpd; min number of hours
+per day; weight minnhpd...
+So you can still import:
+teacher1
+or
+teacher1;5;100;2;50
+...
+
+Or if you think that is not enough variant 3:
+name; max number of hours per day 100%;max number of hours per day;
+weight maxnhpd; min number of hours per day100%; min number of hours per
+day; weight minnhpd...
+So you can import for example:
+teacher1;5;4;40;2;3;50
+
+Disadvantage is of course you can't do everything, but i think for
+everything you should use the xml file.
+Advantage of these Variants is that they are sticking data together, so
+it will be easier for a human to edit that csv files.
+
+Volker Dirr:
+
+in fact i think it is a also a good idea if someone code an alternative 
+GUI:
+it should contain only 3 big tables (teachers, students, activities) and 
+not all that single constraints. All constraint should be added in this 
+3 tables.
+So like Variant 3 that i just de scripted. Of course there are many 
+constraints, so a lot of empty fields. That can be solved like in the 
+activities planning tab: Display only the used constraints. Of course 
+change like in the activities planning and show all (constraints). I 
+guess in a few schools that might be still to large, so a 3th option 
+like displaying selectable constraints will be helpful.
+It is true, by this we will loose a few features. Currently it is 
+possible to do stuff like this:
+teacher A, min 2 hours per day=100%;
+teacher A, min 3 hours per day=50%;
+teacher A, min 4 hours per day=10%
+teacher A, min 5 hours per day=5;
+...
+
+While my variant allows only 2. But i think the other are not useful. If 
+there is really a good reason for a third constraint like this, then the 
+interface must get a new line/column for this.
+Also the requested sorting (see 
+https://lalescu.ro/liviu/fet/forum/index.php?msg=30166 will be easy in 
+that case: just clicking into the table header. Qt can sort 
+automatically tables like that. (compare like i done it in TiTiTo and 
+StElTo). I guess in that case a CSV might be also unneeded, since you 
+can edit in FET quicker/nicer.
+
+If a new CSV is added we should also rethink about how to care about 
+adding/deleting items. Currently it just add. Maybe (optional) it should 
+also delete existing teachers, students, room, activities, constraints 
+if they are missing? Or maybe optional remove them if they got a value 
+0. So if teacher A get min 0 hours per day with 100%, then the 
+old/existing min hours per day with 100% should be removed. (So 0 is 
+different from empty. 0 = remove, empty = keep it).
+
+(Maybe it other way around is better?
+0 = keep old one and empty is remove.
+
+I am not sure. Both variants have got different advantages and 
+disadvantages.)
+
+Liviu Lalescu:
+
+Min hours daily is only with 100%.
+
+Max hours daily is recommended with 100%, but can be any. To generate,
+the resultant of all them must be convertible to two constraints of this
+type.
+
+495---------------------------------------------------------
+From rjmillett:
+
+*Kindly put an import from (csv) file BUTTON on the main button page,
+activities dialog page*
+
+*i have to go file imports -> ->*
+
+Liviu Lalescu:
+
+Thank you for the suggestion! Unfortunately, I don't consider this to
+be added, because import is used seldom, and there is not enough space
+in the shortcuts buttons and in the activities dialog.
+
+I will add your suggestion in the TODO. Please confirm me you were
+thinking about adding import from CSV to two places: shortcut buttons
+and activities dialog.
+
+rjmillett:
+
+either place would be of help
+
+Especially when setting up a new timetable importing from a CSV file makes
+the process a lot easier
+
+in the activity dialog if you're considering would suffice
+
+At our school the timetable gets changed quite often especially when
+teachers retire or leave and new ones are appointed
+
+And most often I start with a new empty FET file and set up a new timetable
+
+I work with a blueprint in excel, import the information into a CSV file
+then use FET to import the activities from the CSV file

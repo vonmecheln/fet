@@ -181,7 +181,7 @@ void ConstraintSubactivitiesPreferredStartingTimesForm::help()
 {
 	LongTextMessageBox::largeInformation(this, tr("FET help"), tr(
 	 "This constraint is used to specify that for some components of a type of"
-	" activities, for instance for Mathematics activities, you need that from say 4-5"
+	" activities, for instance for math activities, you need that from say 4-5"
 	" per week, at least the first 2 to start early (say in the first 4 hours).")+
 	+"\n\n"+
 	tr("This is simple: just add 2 constraints of this type, with the component"

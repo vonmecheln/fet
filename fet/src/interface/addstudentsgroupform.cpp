@@ -59,7 +59,7 @@ void AddStudentsGroupForm::addStudentsGroup()
 
 	if(gt.rules.searchGroup(yearName, groupName)>=0){
 		QMessageBox::information( this, tr("Group insertion dialog"),
-			tr("Could not insert item. Duplicate"));
+			tr("Could not insert item. Must be a duplicate"));
 
 		nameLineEdit->selectAll();
 		nameLineEdit->setFocus();

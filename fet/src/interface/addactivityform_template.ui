@@ -183,7 +183,7 @@
            <item>
             <widget class="QCheckBox" name="forceConsecutiveCheckBox">
              <property name="text">
-              <string comment="Refers to forcing component activities consecutive if they are in the same day. Please keep translation short">Consecutive</string>
+              <string comment="Refers to forcing component activities consecutive if they are on the same day. Please keep translation short">Consecutive</string>
              </property>
              <property name="checked">
               <bool>true</bool>

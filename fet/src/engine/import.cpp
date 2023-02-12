@@ -46,6 +46,9 @@ File import.cpp
 #include <QList>
 #include <QPair>
 
+#include <QFile>
+#include <QFileDialog>
+
 extern Timetable gt;
 
 // maybe I can add some of them again as parameter into function name?
@@ -504,16 +507,16 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 
 	fileName=QFileDialog::getOpenFileName(parent, Import::tr("FET - Import %1 from CSV file").arg(importThing), IMPORT_DIRECTORY,
 		Import::tr("Text Files")+" (*.csv *.dat *.txt)" + ";;" + Import::tr("All Files") + " (*)");
+	if(fileName.isEmpty()){
+		return false;
+	}
 
 	const QString NO_SEPARATOR_TRANSLATED=Import::tr("no separator");
-	fieldSeparator=NO_SEPARATOR_TRANSLATED;	//needed, because a csv file contain maybe just one field!
+	fieldSeparator=NO_SEPARATOR_TRANSLATED; //needed, because a CSV file might contain just one field!
 	const QString NO_TEXTQUOTE_TRANSLATED=Import::tr("no text quote");
 	textquote=NO_TEXTQUOTE_TRANSLATED;
 	fields.clear();
 	QFile file(fileName);
-	if(fileName.isEmpty()){
-		return false;
-	}
 	if(!file.open(QIODevice::ReadOnly|QIODevice::Text)){
 		return false;
 	}
@@ -2462,7 +2465,7 @@ void Import::importCSVActivities(QWidget* parent){
 			if(tmpSet.contains(teachers[t]) || teachers[t]=="")
 				add=false;
 			if(add){
-				dataWarning<<Import::tr("%1 %2 will be added.", "For instance 'Subject Math will be added', so use singular").arg(fieldName[FIELD_TEACHER_NAME]).arg(teachers[t]);
+				dataWarning<<Import::tr("%1 %2 will be added.", "For instance 'Subject math will be added', so use singular").arg(fieldName[FIELD_TEACHER_NAME]).arg(teachers[t]);
 				tmpSet.insert(teachers[t]);
 				fieldList[FIELD_TEACHER_NAME]<<teachers[t];
 			}
@@ -2479,7 +2482,7 @@ void Import::importCSVActivities(QWidget* parent){
 		if(tmpSet.contains(fieldList[FIELD_SUBJECT_NAME][sn]) || fieldList[FIELD_SUBJECT_NAME][sn]=="")
 			add=false;
 		if(add){
-			dataWarning<<Import::tr("%1 %2 will be added.", "For instance 'Subject Math will be added', so use singular").arg(fieldName[FIELD_SUBJECT_NAME]).arg(fieldList[FIELD_SUBJECT_NAME][sn]);
+			dataWarning<<Import::tr("%1 %2 will be added.", "For instance 'Subject math will be added', so use singular").arg(fieldName[FIELD_SUBJECT_NAME]).arg(fieldList[FIELD_SUBJECT_NAME][sn]);
 			tmpSet.insert(fieldList[FIELD_SUBJECT_NAME][sn]);
 		}
 	}
@@ -2505,7 +2508,7 @@ void Import::importCSVActivities(QWidget* parent){
 			if(tmpSet.contains(activityTags[at]) || activityTags[at]=="")
 				add=false;
 			if(add){
-				dataWarning<<Import::tr("%1 %2 will be added.", "For instance 'Subject Math will be added', so use singular").arg(fieldName[FIELD_ACTIVITY_TAG_NAME]).arg(activityTags[at]);
+				dataWarning<<Import::tr("%1 %2 will be added.", "For instance 'Subject math will be added', so use singular").arg(fieldName[FIELD_ACTIVITY_TAG_NAME]).arg(activityTags[at]);
 				tmpSet.insert(activityTags[at]);
 				fieldList[FIELD_ACTIVITY_TAG_NAME]<<activityTags[at];
 			}

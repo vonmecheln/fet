@@ -23,7 +23,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>This constraint ensures, for a set of activities: if any pair of activities is in the same day, they must be separated by at least min gaps (hours).</string>
+      <string>This constraint ensures, for a set of activities: if any pair of activities are on the same day, they must be separated by at least min gaps (hours).</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

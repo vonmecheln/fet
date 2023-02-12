@@ -23,7 +23,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Note: a home room for a students set means that every activity which has this and ONLY this students set will have these home rooms (not other superior or inferior set). You can add home rooms for a group, for a year or for a subgroup, careful not to make impossible timetables. Preferred rooms override the home rooms.</string>
+      <string>Note: home rooms for a students set means that every activity which has this and ONLY this students set will have these home rooms (not other superior or inferior set). You can add home rooms for a group, for a year or for a subgroup, careful not to make impossible timetables. Preferred rooms override the home rooms.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

@@ -223,7 +223,7 @@ void HelpFaqForm::setText()
 	s+=tr("Q: Help on ConstraintMinDaysBetweenActivities.\n\n"
 		"A: It refers to a set of activities and involves a constant, N. For every pair of activities in the set, "
 		"it does not allow the distance (in days) between them to be less than N. If you specify N=1, then this "
-		"constraint means that no two activities can be scheduled in the same day. N=2 means that each two activities "
+		"constraint means that no two activities can be scheduled on the same day. N=2 means that each two activities "
 		"must be separated by at least one day\n\n"
 		"Example: 3 activities and N=2. Then, one can place them on Monday, Wednesday and Friday (5 days week).\n\n"
 		"Example2: 2 activities, N=3. Then, one can place them on Monday and Thursday, on Monday and Friday, then on Tuesday and Friday (5 days week).\n\n"
@@ -231,10 +231,10 @@ void HelpFaqForm::setText()
 		"because FET can detect impossible constraints this way and avoid them. The weight is subjective.\n\n"
 		"You can specify consecutive if same day. Please be careful, even if constraint min days between activities has 0% "
 		"weight, if you select this consecutive if same day, this consecutive will be forced. You will not be able to find "
-		"a timetable with the two activities in the same day, separated by break, not available or other activities, even "
+		"a timetable with the two activities on the same day, separated by break, not available or other activities, even "
 		"if the constraint has weight 0%, if you select consecutive if same day.\n\n"
-		"Currently FET can put at most 2 activities in the same day if 'consecutive if same day' is true. "
-		"FET cannot put 3 or more activities in the same day if 'consecutive if same day' is true.");
+		"Currently FET can put at most 2 activities on the same day if 'consecutive if same day' is true. "
+		"FET cannot put 3 or more activities on the same day if 'consecutive if same day' is true.");
 	s+="\n\n";
 	s+=tr("Important: please do not input unnecessary duplicates. If you input for instance 2 constraints:\n\n"
 		"1. Activities 1 and 2, min days 1, consecutive if same day=true, weight=95%\n"
@@ -549,7 +549,7 @@ void HelpFaqForm::setText()
 		"subject, if they are on the same day. This constraint does that. If you want for instance to make teacher John to have "
 		"at least one gap between all his activities, select filter 'John' and add all his activities to a "
 		"constraint of this type. If you want to make teacher John to have at least one gap between all "
-		"his Math activities, select filter 'John' and 'Math' and add all these activities to a constraint of this type.\n\n"
+		"his math activities, select filter 'John' and 'math' and add all these activities to a constraint of this type.\n\n"
 		"Please take care that the selected activities are not forced consecutive by constraint two activities consecutive or "
 		"by constraint min days between activities which have consecutive if same day selected.");
 
@@ -629,10 +629,10 @@ void HelpFaqForm::setText()
 	s+="\n\n";
 	
 	s+=tr("Q: I have a double duration activity. Is it possible that it is spread over the break period, like:\n\n"
-		"Activity Math, duration 2, id say 100\n\n"
-		"Hour 10:00 Math (first hour of act. 100)\n"
-		"Hour 11:00 Break\n"
-		"Hour 12:00 Math (second hour of act. 100)?\n\n"
+		"Activity math, duration 2, id say 100\n\n"
+		"Hour 10:00 math (first hour of act. 100)\n"
+		"Hour 11:00 break\n"
+		"Hour 12:00 math (second hour of act. 100)?\n\n"
 		"A: No, the activity must respect the break, so it is before or after the break with all the hours of it.");
 	s+=" ";
 	s+=tr("Alternative solutions: either you can split that activity into two subactivities with duration 1 (without a min days constraint "
@@ -661,7 +661,7 @@ void HelpFaqForm::setText()
 	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Q: I want to define hard subjects (Math, Physics and Chemistry) and I want students not to have more than 1 (or another variant 2) difficult subjects in a row.\n\n"
+	s+=tr("Q: I want to define hard subjects (math, physics and chemistry) and I want students not to have more than 1 (or another variant 2) difficult subjects in a row.\n\n"
 		"A: Define activity tag 'Difficult' and add it to all MA, PH and CH lessons. Then add constraint maximum 1 (or 2) "
 		"hours continuously for all students and an activity tag 'Difficult'. Please take care if you may have double lessons.");
 
@@ -702,9 +702,9 @@ void HelpFaqForm::setText()
 	s+="\n\n";
 
 	s+=tr("Question 1/16 August 2009: How to add constraint two activities grouped, two activities consecutive and three "
-		"activities grouped if the activities are constrained not to be in the same day by constraints min days between activities?\n\n"
-		"If A1 and A2 are constrained not to be in the same day with 95% weight or any other weight, it is a bad practice "
-		"to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be in the "
+		"activities grouped if the activities are constrained not to be on the same day by constraints min days between activities?\n\n"
+		"If A1 and A2 are constrained not to be on the same day with 95% weight or any other weight, it is a bad practice "
+		"to add a constraint grouped or consecutive to them. If they are constrained with weight 100% not to be on the "
 		"same day, the timetable is impossible; if the weight is under 100%, the timetable is more difficult to find than "
 		"using the correct way.\n\n"
 		"The correct way would probably be to consider A1 and A2 = a single activity A12', or to modify the related constraint "
@@ -1000,7 +1000,7 @@ void HelpFaqForm::setText()
 	s+=" ";
 	s+=tr("(Also the conflicts timetable might take long to write, if the file is large.)");
 	s+=" ";
-	s+=tr("After that, you can re-enable writing of the timetables and re-generate.");
+	s+=tr("After that, you can enable the writing of the timetables and regenerate.");
 
 	s+="\n\n";
 	s+="--------------------";

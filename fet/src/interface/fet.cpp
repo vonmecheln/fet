@@ -2014,7 +2014,7 @@ int main(int argc, char **argv)
 			OUTPUT_DIR=oldDir;
 		}
 		//2012-01-24 - suggestion and code by Ian Holden (ian AT ianholden.com), to write best and current timetable on time exceeded
-		//previously, FET saved best and current timetable only on receiving SIGTERM
+		//previously, FET saved best and current timetable only on receiving SIGTERM (or SIGBREAK, on Windows)
 		//by Ian Holden (begin)
 		else if(timeExceeded || gen.abortOptimization){
 			if(timeExceeded){
@@ -2026,11 +2026,11 @@ int main(int argc, char **argv)
 #endif
 			}
 			else if(gen.abortOptimization){
-				cout<<"Simulation stopped"<<endl;
+				cout<<"Simulation interrupted"<<endl;
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-				out<<"Simulation stopped"<<Qt::endl;
+				out<<"Simulation interrupted"<<Qt::endl;
 #else
-				out<<"Simulation stopped"<<endl;
+				out<<"Simulation interrupted"<<endl;
 #endif
 			}
 			//by Ian Holden (end)

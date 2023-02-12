@@ -98,7 +98,7 @@ void AddConstraintTeacherHomeRoomForm::addConstraint()
 	}
 	else{
 		QMessageBox::warning(this, tr("FET information"),
-			tr("Constraint NOT added - error ?"));
+			tr("Constraint NOT added - error?"));
 		delete ctr;
 	}
 }

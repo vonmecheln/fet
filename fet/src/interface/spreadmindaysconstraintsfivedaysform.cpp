@@ -497,6 +497,6 @@ void SpreadMinDaysConstraintsFiveDaysForm::on_spread4OrMoreCheckBox_toggled()
 	if(!k){
 		spread4OrMoreCheckBox->setChecked(true);
 		QMessageBox::information(this, tr("FET information"), tr("This box must remain checked, so that split activities"
-		 " are not in the same day (with the probability you write below)"));
+		 " are not on the same day (with the probability you write below)"));
 	}
 }

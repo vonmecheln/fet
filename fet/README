@@ -1,4 +1,4 @@
-This is FET version 6.8.3
+This is FET version 6.8.4
 
 
 Program description:
@@ -417,7 +417,7 @@ Running FET:
 		--warnifusingmaxhoursdailywithlessthan100percentweight=WMHDWLT100PW
 			WMHDWLT100PW is either true or false, represents whether you want the program to issue a warning if you are using constraints of type
 			teacher(s)/students (set) max hours daily with a weight less than 100% (default true).
-			
+
 		--verbose=VBS
 			VBS is either true or false, represents whether you want additional generation messages and other messages to be shown on the command
 			line (default false).

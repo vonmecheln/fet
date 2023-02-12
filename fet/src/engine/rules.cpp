@@ -6473,7 +6473,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 		 "You are advised to make a backup of your old file before saving in new format.\n\n"
 		 "Please note that the default weight percentage of constraints min days between activities "
 		 "will be 95% (mainly satisfied, not always) and 'force consecutive if same day' will be set to true "
-		 "(meaning that if the activities are in the same day, they will be placed continuously, in a bigger duration activity). "
+		 "(meaning that if the activities are on the same day, they will be placed continuously, in a bigger duration activity). "
 		 "If you want, you can modify this percent to be 100%, manually in the fet input file "
 		 "or from the interface"));
 	}

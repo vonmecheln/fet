@@ -326,7 +326,7 @@ void AddConstraintActivityPreferredRoomForm::addConstraint()
 	}
 	else{
 		QMessageBox::warning(this, tr("FET information"),
-			tr("Constraint NOT added - must be a duplicate"));
+			tr("Constraint NOT added - it must be a duplicate"));
 		delete ctr;
 	}
 }

@@ -185,7 +185,7 @@ void AddConstraintActivityBeginsStudentsDayForm::addCurrentConstraint()
 			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
 	else{
 		QMessageBox::warning(this, tr("FET information"),
-			tr("Constraint NOT added - please report bug"));
+			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
 }

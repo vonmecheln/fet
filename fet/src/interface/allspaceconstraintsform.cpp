@@ -444,6 +444,7 @@ void AllSpaceConstraintsForm::sortedChanged(bool checked)
 static int spaceConstraintsAscendingByDescription(SpaceConstraint* s1, SpaceConstraint* s2)
 {
 	//return s1->getDescription(gt.rules) < s2->getDescription(gt.rules);
+	
 	//by Rodolfo Ribeiro Gomes
 	return s1->getDescription(gt.rules).localeAwareCompare(s2->getDescription(gt.rules))<0;
 }

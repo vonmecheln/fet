@@ -114,7 +114,7 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	 " can be on Monday afternoon and Wednesday morning, but not on Monday and Tuesday).");
 	s+="\n\n";
 	s+=tr("If your data is too difficult (impossible), maybe you can deactivate force consecutive if same day for"
-	 " all constraints min days between activities (from the modify multiple constraints at once,"
+	 " all constraints min days between activities (from the modify multiple constraints at once dialog,"
 	 " which can be activated from the constraints min days between activities dialog).");
 	s+="\n\n";
 	s+=tr("Constraint max days between activities considers real days.");
