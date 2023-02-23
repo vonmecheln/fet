@@ -232,9 +232,10 @@ void HelpFaqForm::setText()
 		"You can specify consecutive if same day. Please be careful, even if constraint min days between activities has 0% "
 		"weight, if you select this consecutive if same day, this consecutive will be forced. You will not be able to find "
 		"a timetable with the two activities on the same day, separated by break, not available or other activities, even "
-		"if the constraint has weight 0%, if you select consecutive if same day.\n\n"
-		"Currently FET can put at most 2 activities on the same day if 'consecutive if same day' is true. "
-		"FET cannot put 3 or more activities on the same day if 'consecutive if same day' is true.");
+		"if the constraint has weight 0%, if you select consecutive if same day.");
+	s+="\n\n";
+	s+=tr("Note: FET will not place more than two activities involved in this constraint on the same day, if the constraint is broken "
+		"(you may end up with more days containing two involved activities, though, if the constraint is to be broken more times).");
 	s+="\n\n";
 	s+=tr("Important: please do not input unnecessary duplicates. If you input for instance 2 constraints:\n\n"
 		"1. Activities 1 and 2, min days 1, consecutive if same day=true, weight=95%\n"
@@ -688,7 +689,7 @@ void HelpFaqForm::setText()
 	s+=tr("Q: (by %1) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?\n\n"
 		"A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, duration 1, min days between "
 		"activities 1, weight 0%, select consecutive if same day. FET will never put more than 2 of these dummy activities "
-		"in a day. Add max gaps for students = 0 per week.", "%1 is a person").arg(QString::fromUtf8("Horațiu Hălmăjan"));
+		"on a day. Add max gaps for students = 0 per week.", "%1 is a person").arg(QString::fromUtf8("Horațiu Hălmăjan"));
 
 	s+="\n\n";
 	s+="--------------------";
@@ -750,20 +751,19 @@ void HelpFaqForm::setText()
 	s+="--------------------";
 	s+="\n\n";
 	
-	s+=tr("3 hints from an anonymous Polish user, who uses FET for very large data:");
+	s+=tr("Three hints from an anonymous Polish user, who uses FET for very large data sets:");
 	s+="\n\n";
-	s+=tr("The first hint for other users is to start with minimum number of constraints and if FET would generate "
-		"the plan then thinking about adding the next ones.");
+	s+=tr("The first hint for other users is to start with a minimum number of constraints and see if FET can generate a timetable "
+		"with those constraints before thinking about adding the next ones.");
 	s+="\n\n";
-	s+=tr("The second hint is not to change too many constraints in one simulation as it may lead to impossible timetable "
-		"and then it is difficult to say which particular constraint was too much.");
+	s+=tr("The second hint is not to change too many constraints in one simulation. If it is impossible to generate a timetable with those added constraints, "
+		"it is difficult to say which particular constraint was responsible.");
 	s+="\n\n";
-	s+=tr("For instance even when two consecutive activities are placed at one day "
-		"(the same group and the same teacher) sometimes they are placed at different rooms what would force them to needless "
-		"changing room. I guess that FET is focused on fulfilling constraints but not on optimizing timetable. Sometimes "
-		"simple changing of two activities makes plan better both for students and teachers. I think that manually improving "
-		"generated plan is faster than creating many many more constraints and repeating simulations. And this is the third hint.");
-
+	s+=tr("It may happen, for example, that even when two consecutive activities are placed on the same day (with the same group and the same teacher) "
+		"sometimes they are placed in different rooms, which would force them to needlessly change rooms. I guess that FET is focused on fulfilling constraints "
+		"but not on optimizing timetables. Sometimes simply changing the two activities is better both for the students and the teachers. I think that manually "
+		"improving a generated timetable is faster than creating many more constraints and repeating simulations. And this is the third hint.");
+	
 	s+="\n\n";
 	s+="--------------------";
 	s+="\n\n";
@@ -870,8 +870,8 @@ void HelpFaqForm::setText()
 	s+="--------------------";
 	s+="\n\n";
 
-	s+=tr("Q: I need to add a split activity with total duration 4, which can be either 2+2 or 2+1+1 (two hours in a day and two hours in another day,"
-		" or two hours in a day, one hour in another day and one hour in another day).");
+	s+=tr("Q: I need to add a split activity with total duration 4, which can be either 2+2 or 2+1+1 (two hours on a day and two hours on another day,"
+		" or two hours on a day, one hour on another day and one hour on another day).");
 	s+="\n\n";
 	s+=tr("A: Add 3 activities (let us assume that their id-s are 1, 2 and 3), with durations respectively 2, 1 and 1. It is preferable to add them as"
 		" 3 single/independent activities (see note below).\n\n"

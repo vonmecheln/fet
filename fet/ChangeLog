@@ -2636,3 +2636,6 @@ Versions 6.8.0 - 6.8.v
 	- Updated the Greek translation, by Vangelis Karafillidis.
 	- Minor corrections in the Romanian translation, by Liviu Lalescu. The typos were found using a program written by Volker Dirr.
 	- Updated the German translation, by Volker Dirr.
+- Version 6.8.5
+	- Code cleanup.
+	- Minor corrections in the English text, by Darren McDonald and Liviu Lalescu.

@@ -58,11 +58,11 @@ ModifyActivityForm::ModifyActivityForm(QWidget* parent, int id, int activityGrou
 	setupUi(this);
 
 	for(Teacher* tch : qAsConst(gt.rules.teachersList))
-		teacherNamesSet.insert(tch->name);
+		teachersNamesSet.insert(tch->name);
 	for(Subject* sbj : qAsConst(gt.rules.subjectsList))
-		subjectNamesSet.insert(sbj->name);
+		subjectsNamesSet.insert(sbj->name);
 	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
-		activityTagNamesSet.insert(at->name);
+		activityTagsNamesSet.insert(at->name);
 
 	allTeachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedTeachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -82,13 +82,13 @@ ModifyActivityForm::ModifyActivityForm(QWidget* parent, int id, int activityGrou
 
 	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(cancel()));
 	connect(okPushButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(clearTeacherPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
+	connect(clearTeachersPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
 	connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
 	connect(allTeachersListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addTeacher()));
 	connect(selectedTeachersListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeTeacher()));
 	connect(allStudentsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addStudents()));
 	connect(selectedStudentsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeStudents()));
-	connect(clearActivityTagPushButton, SIGNAL(clicked()), this, SLOT(clearActivityTags()));
+	connect(clearActivityTagsPushButton, SIGNAL(clicked()), this, SLOT(clearActivityTags()));
 	connect(allActivityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivityTag()));
 	connect(selectedActivityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivityTag()));
 	connect(showYearsCheckBox, SIGNAL(toggled(bool)), this, SLOT(showYearsChanged()));
@@ -275,7 +275,7 @@ void ModifyActivityForm::updateAllTeachersListWidget()
 		else{
 			assert(qualifiedTeachersRadioButton->isChecked());
 			assert(subjectsComboBox->currentText()!="");
-			assert(subjectNamesSet.contains(subjectsComboBox->currentText()));
+			assert(subjectsNamesSet.contains(subjectsComboBox->currentText()));
 			if(tch->qualifiedSubjectsHash.contains(subjectsComboBox->currentText())){
 				allTeachersListWidget->addItem(tch->name);
 			}
@@ -467,7 +467,7 @@ void ModifyActivityForm::ok()
 	QString subject_name=subjectsComboBox->currentText();
 	/*int subject_index=gt.rules.searchSubject(subject_name);
 	if(subject_index<0){*/
-	bool found=subjectNamesSet.contains(subject_name);
+	bool found=subjectsNamesSet.contains(subject_name);
 	if(!found){
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Invalid subject"));
@@ -478,7 +478,7 @@ void ModifyActivityForm::ok()
 	QStringList activity_tags_names;
 	for(int i=0; i<selectedActivityTagsListWidget->count(); i++){
 		//assert(gt.rules.searchActivityTag(selectedActivityTagsListWidget->item(i)->text())>=0);
-		assert(activityTagNamesSet.contains(selectedActivityTagsListWidget->item(i)->text()));
+		assert(activityTagsNamesSet.contains(selectedActivityTagsListWidget->item(i)->text()));
 		activity_tags_names.append(selectedActivityTagsListWidget->item(i)->text());
 	}
 
@@ -495,7 +495,7 @@ void ModifyActivityForm::ok()
 	else{
 		for(int i=0; i<selectedTeachersListWidget->count(); i++){
 			//assert(gt.rules.searchTeacher(selectedTeachersListWidget->item(i)->text())>=0);
-			assert(teacherNamesSet.contains(selectedTeachersListWidget->item(i)->text()));
+			assert(teachersNamesSet.contains(selectedTeachersListWidget->item(i)->text()));
 			teachers_names.append(selectedTeachersListWidget->item(i)->text());
 		}
 	}

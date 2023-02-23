@@ -51,7 +51,7 @@
           <widget class="QListWidget" name="selectedActivityTagsListWidget"/>
          </item>
          <item>
-          <widget class="QPushButton" name="clearActivityTagPushButton">
+          <widget class="QPushButton" name="clearActivityTagsPushButton">
            <property name="text">
             <string>Clear</string>
            </property>
@@ -319,7 +319,7 @@
           <widget class="QListWidget" name="selectedTeachersListWidget"/>
          </item>
          <item>
-          <widget class="QPushButton" name="clearTeacherPushButton">
+          <widget class="QPushButton" name="clearTeachersPushButton">
            <property name="text">
             <string>Clear</string>
            </property>

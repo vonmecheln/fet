@@ -1081,10 +1081,6 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
-/**
-This is a constraint, aimed at obtaining timetables
-which do not allow more than X hours in a day for any teacher
-*/
 class ConstraintTeachersMaxHoursDaily: public TimeConstraint{
 	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxHoursDaily)
 
@@ -5643,10 +5639,6 @@ public:
 };
 
 //Begin for mornings-afternoons
-/**
-This is a constraint, aimed at obtaining timetables
-which do not allow more than X hours in a day for any teacher
-*/
 class ConstraintTeachersMaxHoursDailyRealDays: public TimeConstraint{
 	Q_DECLARE_TR_FUNCTIONS(ConstraintTeachersMaxHoursDailyRealDays)
 

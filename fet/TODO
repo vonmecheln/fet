@@ -8433,3 +8433,10 @@ And most often I start with a new empty FET file and set up a new timetable
 
 I work with a blueprint in excel, import the information into a CSV file
 then use FET to import the activities from the CSV file
+
+496---------------------------------------------------------
+From castonepatha:
+
+For his institution, he needed the students to have their onsite activities on maximum two consecutive days. The onsite activities are specified by some activity tags.
+He has many students sets. The solution would be to add many constraints of type max 1 days between activities, but it is difficult and error-prone to add them manually.
+A custom solution was done for him, but he suggests implementing this customization in the official FET.

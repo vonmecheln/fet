@@ -32,9 +32,9 @@ class ModifySubactivityForm : public QDialog, Ui::ModifySubactivityForm_template
 	Q_OBJECT
 	
 private:
-	QSet<QString> teacherNamesSet;
-	QSet<QString> subjectNamesSet;
-	QSet<QString> activityTagNamesSet;
+	QSet<QString> teachersNamesSet;
+	QSet<QString> subjectsNamesSet;
+	QSet<QString> activityTagsNamesSet;
 	//QHash<QString, int> numberOfStudentsHash;
 
 public:

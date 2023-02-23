@@ -3944,7 +3944,7 @@ QString ConstraintMinGapsBetweenActivities::getDescription(Rules& r)
 QString ConstraintMinGapsBetweenActivities::getDetailedDescription(Rules& r)
 {
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("Minimum gaps between activities (if activities on the same day)");s+="\n";
+	s+=tr("Minimum gaps between activities (if the activities are on the same day)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){
@@ -4256,7 +4256,7 @@ QString ConstraintMaxGapsBetweenActivities::getDescription(Rules& r){
 
 QString ConstraintMaxGapsBetweenActivities::getDetailedDescription(Rules& r){
 	QString s=tr("Time constraint");s+="\n";
-	s+=tr("Maximum gaps between activities (if activities on the same day)");s+="\n";
+	s+=tr("Maximum gaps between activities (if the activities are on the same day)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
 	for(int i=0; i<this->n_activities; i++){

@@ -37,9 +37,9 @@ private:
 	QSpinBox* dur(int i);
 	QCheckBox* activ(int i);
 	
-	QSet<QString> teacherNamesSet;
-	QSet<QString> subjectNamesSet;
-	QSet<QString> activityTagNamesSet;
+	QSet<QString> teachersNamesSet;
+	QSet<QString> subjectsNamesSet;
+	QSet<QString> activityTagsNamesSet;
 
 public:
 	QList<QString> canonicalStudentsSetsNames;

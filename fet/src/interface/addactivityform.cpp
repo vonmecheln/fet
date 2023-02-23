@@ -71,11 +71,11 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 	studentsSeparatelyCheckBox->setChecked(false);
 
 	for(Teacher* tch : qAsConst(gt.rules.teachersList))
-		teacherNamesSet.insert(tch->name);
+		teachersNamesSet.insert(tch->name);
 	for(Subject* sbj : qAsConst(gt.rules.subjectsList))
-		subjectNamesSet.insert(sbj->name);
+		subjectsNamesSet.insert(sbj->name);
 	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
-		activityTagNamesSet.insert(at->name);
+		activityTagsNamesSet.insert(at->name);
 	
 	allTeachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 	selectedTeachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -119,9 +119,9 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 	connect(allActivityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(addActivityTag()));
 	connect(selectedActivityTagsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(removeActivityTag()));
 
-	connect(clearActivityTagPushButton, SIGNAL(clicked()), this, SLOT(clearActivityTags()));
+	connect(clearActivityTagsPushButton, SIGNAL(clicked()), this, SLOT(clearActivityTags()));
 	connect(clearStudentsPushButton, SIGNAL(clicked()), this, SLOT(clearStudents()));
-	connect(clearTeacherPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
+	connect(clearTeachersPushButton, SIGNAL(clicked()), this, SLOT(clearTeachers()));
 
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
@@ -293,7 +293,7 @@ void AddActivityForm::updateAllTeachersListWidget()
 		else{
 			assert(qualifiedTeachersRadioButton->isChecked());
 			assert(subjectsComboBox->currentText()!="");
-			assert(subjectNamesSet.contains(subjectsComboBox->currentText()));
+			assert(subjectsNamesSet.contains(subjectsComboBox->currentText()));
 			if(tch->qualifiedSubjectsHash.contains(subjectsComboBox->currentText())){
 				allTeachersListWidget->addItem(tch->name);
 			}
@@ -613,7 +613,7 @@ void AddActivityForm::addActivity()
 
 	//subject
 	QString subject_name=subjectsComboBox->currentText();
-	bool found=subjectNamesSet.contains(subject_name);
+	bool found=subjectsNamesSet.contains(subject_name);
 	/*int subject_index=gt.rules.searchSubject(subject_name);
 	if(subject_index<0){*/
 	if(!found){
@@ -625,7 +625,7 @@ void AddActivityForm::addActivity()
 	QStringList activity_tags_names;
 	for(int i=0; i<selectedActivityTagsListWidget->count(); i++){
 		//assert(gt.rules.searchActivityTag(selectedActivityTagsListWidget->item(i)->text())>=0);
-		assert(activityTagNamesSet.contains(selectedActivityTagsListWidget->item(i)->text()));
+		assert(activityTagsNamesSet.contains(selectedActivityTagsListWidget->item(i)->text()));
 		activity_tags_names.append(selectedActivityTagsListWidget->item(i)->text());
 	}
 
@@ -642,7 +642,7 @@ void AddActivityForm::addActivity()
 	else{
 		for(int i=0; i<selectedTeachersListWidget->count(); i++){
 			//assert(gt.rules.searchTeacher(selectedTeachersListWidget->item(i)->text())>=0);
-			assert(teacherNamesSet.contains(selectedTeachersListWidget->item(i)->text()));
+			assert(teachersNamesSet.contains(selectedTeachersListWidget->item(i)->text()));
 			teachers_names.append(selectedTeachersListWidget->item(i)->text());
 		}
 	}
@@ -892,7 +892,7 @@ void AddActivityForm::addMultipleActivities()
 
 	//subject
 	QString subject_name=subjectsComboBox->currentText();
-	bool found=subjectNamesSet.contains(subject_name);
+	bool found=subjectsNamesSet.contains(subject_name);
 	/*int subject_index=gt.rules.searchSubject(subject_name);
 	if(subject_index<0){*/
 	if(!found){
@@ -904,7 +904,7 @@ void AddActivityForm::addMultipleActivities()
 	QStringList activity_tags_names;
 	for(int i=0; i<selectedActivityTagsListWidget->count(); i++){
 		//assert(gt.rules.searchActivityTag(selectedActivityTagsListWidget->item(i)->text())>=0);
-		assert(activityTagNamesSet.contains(selectedActivityTagsListWidget->item(i)->text()));
+		assert(activityTagsNamesSet.contains(selectedActivityTagsListWidget->item(i)->text()));
 		activity_tags_names.append(selectedActivityTagsListWidget->item(i)->text());
 	}
 
@@ -921,7 +921,7 @@ void AddActivityForm::addMultipleActivities()
 	else{
 		for(int i=0; i<selectedTeachersListWidget->count(); i++){
 			//assert(gt.rules.searchTeacher(selectedTeachersListWidget->item(i)->text())>=0);
-			assert(teacherNamesSet.contains(selectedTeachersListWidget->item(i)->text()));
+			assert(teachersNamesSet.contains(selectedTeachersListWidget->item(i)->text()));
 			teachers_names.append(selectedTeachersListWidget->item(i)->text());
 		}
 	}
@@ -1224,7 +1224,7 @@ void AddActivityForm::help()
 	s+="\n";
 	s+=tr("'Weight %' means 'Percentage of added constraint (min days between activities constraint). Recommended: 95.0%-100.0%'");
 	s+="\n";
-	s+=tr("'Consecutive' means 'If activities on same day, force consecutive?'");
+	s+=tr("'Consecutive' means 'If two activities are on the same day, make them consecutive'");
 	s+="\n";
 	s+=tr("The 'Duration' spin box and the 'Active' check box refer to each component of current activity, you can change "
 	 "them for each component, separately, by selecting the corresponding tab in the tab widget.");
@@ -1293,7 +1293,7 @@ void AddActivityForm::help()
 	s+=tr("There is another option, if the activities are on the same day, force consecutive activities. You can select "
 	 "this option for instance if you have 5 lessons of math in 5 days, and there is no timetable which respects "
 	 "fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and "
-	 "add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson in another day. "
+	 "add consecutive if same day. You will have as results say 3 lessons with duration 1 and a 2 hours lesson on another day. "
 	 "Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be "
 	 "consecutive.");
 
