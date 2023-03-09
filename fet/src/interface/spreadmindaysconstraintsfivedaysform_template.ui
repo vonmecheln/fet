@@ -17,13 +17,13 @@
    <item row="0" column="0" colspan="4">
     <widget class="QGroupBox" name="groupBox_5">
      <property name="title">
-      <string>Consecutive if same day?</string>
+      <string>Consecutive if on the same day?</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0">
        <widget class="QCheckBox" name="consecutiveIfSameDayCheckBox">
         <property name="text">
-         <string>Force consecutive if 2 components are on the same day</string>
+         <string>If 2 components are on the same day, make them consecutive</string>
         </property>
         <property name="checked">
          <bool>true</bool>

@@ -53,9 +53,9 @@ void HelpTipsForm::setText()
 	s+=tr("1) Say you add a split activity or you add a constraint min days between activities (say na activities),"
 	 " when your week has nd days. Do not add a constraint with na>nd (number of activities strictly greater than number of days per week).");
 	s+="\n\n";
-	s+=tr("The correct way: if you want consecutive if same day, consider activities having a longer duration."
-	 " Instead of adding activities 1+1+1+1+1+1+1 in a 5 days week, add them as 2+2+1+1+1. If you don't want "
-	 "consecutive if same day, add 1+1+1+1+1 firstly and 1+1 after that.");
+	s+=tr("The correct way: if you selected consecutive if on the same day, consider activities having a longer duration."
+	 " Instead of adding activities 1+1+1+1+1+1+1 in a 5 days week, add them as 2+2+1+1+1. If you didn't select "
+	 "consecutive if on the same day, add 1+1+1+1+1 firstly and 1+1 after that.");
 	s+="\n\n";
 	s+=tr("The generation will be much faster and easier using this approach (more than 10 times faster sometimes).");
 	
@@ -98,7 +98,7 @@ void HelpTipsForm::setText()
 	 " But, again, better to remove redundant constraints as a precaution.");
 	
 	s+="\n\n";
-	s+=tr("3) About constraints two activities grouped, two activities consecutive and three activities grouped:"
+	s+=tr("3) About the constraints of type two activities grouped, two activities consecutive and three activities grouped:"
 	 " It is a bad practice to add such constraints if the involved activities are also constrained not to be on the same day"
 	 " by constraints min days between activities.");
 	s+="\n\n";

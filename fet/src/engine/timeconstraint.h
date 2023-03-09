@@ -822,10 +822,9 @@ public:
 
 	/**
 	Constructor, using:
-	the weight, consecutive if same day, the number of activities, the list of activities, and the min number of days.
+	the weight, consecutive if on the same day, the number of activities, the list of activities, and the min number of days.
 	*/
-	//ConstraintMinDaysBetweenActivities(double wp, bool adjacentIfBroken, int n_act, const int act[], int n);
-	ConstraintMinDaysBetweenActivities(double wp, bool adjacentIfBroken, int n_act, const QList<int>& act, int n);
+	ConstraintMinDaysBetweenActivities(double wp, bool cisd, int n_act, const QList<int>& act, int n);
 
 	/**
 	Comparison operator - to be sure that we do not introduce duplicates
@@ -9363,8 +9362,7 @@ public:
 	Constructor, using:
 	the weight, the number of activities and the list of activities.
 	*/
-	//ConstraintMinDaysBetweenActivities(double wp, bool adjacentIfBroken, int n_act, const int act[], int n);
-	ConstraintMinHalfDaysBetweenActivities(double wp, bool adjacentIfBroken, int n_act, const QList<int>& act, int n);
+	ConstraintMinHalfDaysBetweenActivities(double wp, bool cisd, int n_act, const QList<int>& act, int n);
 
 	/**
 	Comparison operator - to be sure that we do not introduce duplicates

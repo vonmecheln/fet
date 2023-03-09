@@ -213,7 +213,7 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 		QList<int>::const_iterator it;
 		for(it=this->selectedActivitiesList.constBegin(); it!=this->selectedActivitiesList.constEnd(); it++){
 			int _id=(*it);
-			int tmp=0; //tmp represents the number of sub-activities represented by the current (sub)activity
+			int tmp=0; //tmp represents the number of subactivities represented by the current (sub)activity
 
 			for(int i=0; i<gt.rules.activitiesList.size(); i++){
 				Activity* act=gt.rules.activitiesList[i];
@@ -239,13 +239,13 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 			}
 			else{
 				if(tmp!=nConstraints){
-					QString s=tr("Sub-activities do not correspond. Mistake:");
+					QString s=tr("Subactivities do not correspond. Mistake:");
 					s+="\n";
-					s+=tr("1. First (sub)activity has id=%1 and represents %2 sub-activities")
+					s+=tr("1. First (sub)activity has id=%1 and represents %2 subactivities")
 						.arg(this->selectedActivitiesList.at(0))
 						.arg(nConstraints);
 					s+="\n";
-					s+=tr("2. Current (sub)activity has id=%1 and represents %2 sub-activities")
+					s+=tr("2. Current (sub)activity has id=%1 and represents %2 subactivities")
 						.arg(_id)
 						.arg(tmp);
 					QMessageBox::warning(this, tr("FET information"), s);
@@ -263,7 +263,7 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 		int k;
 		for(k=0, it=this->selectedActivitiesList.constBegin(); it!=this->selectedActivitiesList.constEnd(); k++, it++){
 			int _id=(*it);
-			int tmp=0; //tmp represents the number of sub-activities represented by the current (sub)activity
+			int tmp=0; //tmp represents the number of subactivities represented by the current (sub)activity
 
 			for(int i=0; i<gt.rules.activitiesList.size(); i++){
 				Activity* act=gt.rules.activitiesList[i];
@@ -404,10 +404,10 @@ void AddConstraintActivitiesSameStartingTimeForm::help()
 {
 	QString s;
 	
-	s=tr("Add multiple constraints: this is a check box. Select this if you want to input only the representatives of sub-activities and FET to add multiple constraints,"
-	" for all sub-activities from the same components, in turn, respectively."
+	s=tr("Add multiple constraints: this is a check box. Select this if you want to input only the representatives of subactivities and FET to add multiple constraints,"
+	" for all subactivities from the same components, in turn, respectively."
 	" There will be added more constraints activities same starting time, one for each corresponding tuple. The number of"
-	" sub-activities must match for the representatives and be careful to the order, to be what you need");
+	" subactivities must match for the representatives and be careful to the order, to be what you need");
 
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

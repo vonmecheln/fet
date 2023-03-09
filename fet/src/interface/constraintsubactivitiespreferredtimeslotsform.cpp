@@ -197,6 +197,6 @@ void ConstraintSubactivitiesPreferredTimeSlotsForm::help()
  	 " it is considered to have component number 1. As an advice, if you have activities of say biology split into 1"
  	 " or 2 per week and want to constrain only one component if there are 2 per week, add a constraint for biology with component number=2")
  	 +"\n\n"+
- 	 tr("Note: if a teacher or a students set cannot have lessons in some slots because of this constraint, gaps will be counted (if you have max gaps constraints)"
- 	  ". So be careful if you add this constraint for all sub-activities, for only a teacher or for only a students set"));
+ 	 tr("Note: if a teacher or a students set cannot have activities in some slots because of this constraint, gaps will be counted (if you have max gaps constraints)"
+ 	  ". So be careful if you add this constraint for all subactivities, for only a teacher or for only a students set"));
 }

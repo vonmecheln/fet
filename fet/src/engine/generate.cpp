@@ -11048,7 +11048,7 @@ impossibleteachersmorningsafternoonsbehavior:
 				//shouldn't appear - too few FET days (real half days) per week
 			}
 
-	impossible_max_two_consecutive_mornings_afternoons:
+impossible_max_two_consecutive_mornings_afternoons:
 			if(!ok_max_two_consecutive_mornings_afternoons){
 				//if(updateSubgroups || updateTeachers)
 				//	removeAiFromNewTimetable(ai, act, d, h);

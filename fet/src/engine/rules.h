@@ -596,9 +596,9 @@ public:
 
 	/**
 	If _activityGroupId==0, then this is a non-split activity
-	(if >0, then this is a single sub-activity from a split activity.
+	(if >0, then this is a single subactivity from a split activity.
 	Removes this activity from the list of activities.
-	For split activities, it removes all the sub-activities that are contained in it.
+	For split activities, it removes all the subactivities that are contained in it.
 	*/
 	void removeActivity(int _id, int _activityGroupId);
 	
@@ -606,8 +606,8 @@ public:
 	
 	/**
 	A function to modify the information of a certain activity.
-	If this is a sub-activity of a split activity,
-	all the sub-activities will be modified.
+	If this is a subactivity of a split activity,
+	all the subactivities will be modified.
 	*/
 	void modifyActivity(
 		int _id,

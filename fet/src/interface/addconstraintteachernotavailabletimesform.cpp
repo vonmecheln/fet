@@ -235,7 +235,7 @@ void AddConstraintTeacherNotAvailableTimesForm::help()
 {
 	QString s;
 	
-	s=tr("This constraint does not induce gaps for teachers. If a teacher has lessons"
+	s=tr("This constraint does not induce gaps for teachers. If a teacher has activities"
 	 " before and after a not available period, gaps will not be counted.");
 	
 	s+="\n\n";

@@ -286,7 +286,7 @@ void ConstraintMinGapsBetweenActivitiesForm::help()
 {
 	QString s=tr("Please make sure that the selected activities are not forced to be"
 		" consecutive by some other constraint 'min days between activities' (with"
-		" 'consecutive if same day' true), by a constraint 'two activities consecutive',"
+		" 'consecutive if on the same day' true), by a constraint 'two activities consecutive',"
 		" or by a constraint 'two activities grouped' (also, if you have a constraint"
 		" 'three activities grouped' related to the selected activities, make sure that the"
 		" constraints do not contradict).");

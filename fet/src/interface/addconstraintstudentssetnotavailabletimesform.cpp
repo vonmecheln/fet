@@ -232,7 +232,7 @@ void AddConstraintStudentsSetNotAvailableTimesForm::help()
 {
 	QString s;
 	
-	s=tr("This constraint does not induce gaps (or early gaps) for students. If a student set has lessons"
+	s=tr("This constraint does not induce gaps (or early gaps) for students. If a student set has activities"
 	 " before and after a not available period, gaps will not be counted.");
 	
 	s+="\n\n";

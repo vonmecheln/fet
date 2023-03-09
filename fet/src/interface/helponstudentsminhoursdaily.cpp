@@ -29,7 +29,7 @@ extern Timetable gt;
 void HelpOnStudentsMinHoursDaily::help(QWidget* parent)
 {
 	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-		QString s=tr("Important information about constraints students (set) min hours daily:");
+		QString s=tr("Important information about the constraints of type students (set) min hours daily:");
 	
 		s+="\n\n";
 	
@@ -51,7 +51,7 @@ void HelpOnStudentsMinHoursDaily::help(QWidget* parent)
 		LongTextMessageBox::largeInformation(parent, tr("FET information"), s);
 	}
 	else{
-		QString s=tr("Important information about constraints students (set) min hours daily:");
+		QString s=tr("Important information about the constraints of type students (set) min hours daily:");
 	
 		s+="\n\n";
 		

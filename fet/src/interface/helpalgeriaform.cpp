@@ -45,11 +45,11 @@ HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)
 
 	s+="\n\n";
 
-	s+=tr("Very important about constraint min days between activities: probably you will need to "
+	s+=tr("Very important advice about the constraint min days between activities: probably you will need to "
 	 "add min days = 1 for all constraints. I modified the sources and min 1 day means "
-	 "that the activities must be in different real days, so it cannot be that one activity "
+	 "that the activities must be on different real days, so it cannot be that one activity "
 	 "is in the morning and another is in the afternoon. If you need constraint to be always respected, "
-	 "please use 100% weight. If you allow weight under 100% and select consecutive if same day, "
+	 "please use 100% weight. If you allow weight under 100% and select consecutive if on the same day, "
 	 "then activities must be either in the morning or exclusively in the afternoon.");
 
 	s+="\n\n";
@@ -64,9 +64,9 @@ HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)
 
 	s+="\n\n";
 
-	s+=tr("If your data is too difficult (impossible), maybe you can deactivate force consecutive if same day for"
+	s+=tr("If your data is too difficult (impossible), maybe you can deactivate consecutive if on the same day for"
 	 " all constraints min days between activities (from the modify multiple constraints at once dialog,"
-	 " which can be activated from the constraints min days between activities dialog).");
+	 " which can be opened from the constraints min days between activities dialog).");
 
 	s+="\n\n";
 

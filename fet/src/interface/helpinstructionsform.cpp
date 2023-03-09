@@ -96,7 +96,7 @@ void HelpInstructionsForm::setText()
 		"activities per week from the same group, you can add 2 constraints, min 2 days and min 1 day, both with 95%. This will ensure that "
 		"in 99.75% of cases the min 1 day will be respected.");
 	s+="\n\n";
-	s+=tr("2) If you have a course lesson with say 4-5 activities per week, difficult lessons (math), which you would like to schedule "
+	s+=tr("2) If you have a course activity with say 4-5 activities per week, difficult activities (math), which you would like to schedule "
 		"in the beginning of the day (say 3 out of 4-5 need to be in the first half of the day), the best approach is to use constraint "
 		"subactivities preferred time slots or starting times, specifying possibly the subject and component number: 1, 2 and maybe 3"
 		", adding 3 constraints for this subject (see FAQ for more details). You can also add constraints for component numbers 3, 4 "
@@ -142,7 +142,7 @@ void HelpInstructionsForm::setText()
 		"min hours daily (probably with 2 hours), but please make sure your timetable is possible. This constraint is "
 		"smart, it only considers non-empty days.");
 	s+="\n\n";
-	s+=tr("13) If you have for instance 7 hours of math on a 5 days week (more lessons than days), "
+	s+=tr("13) If you have for instance 7 hours of math on a 5 days week (more activities than days), "
 		"please respect the correct way to add these as a split activity. See question Q-1-27-March-2008 from FAQ. It is important!");
 	s+="\n\n";
 	s+=tr("14) It is recommended to remove redundant min days between activities constraints after adding constraints same starting day or time "

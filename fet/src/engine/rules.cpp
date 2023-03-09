@@ -6472,7 +6472,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 		 "assigning weight percentages to constraints and dropping parity for activities. "
 		 "You are advised to make a backup of your old file before saving in new format.\n\n"
 		 "Please note that the default weight percentage of constraints min days between activities "
-		 "will be 95% (mainly satisfied, not always) and 'force consecutive if same day' will be set to true "
+		 "will be 95% (mainly satisfied, not always) and 'consecutive if on the same day' will be set to true "
 		 "(meaning that if the activities are on the same day, they will be placed continuously, in a bigger duration activity). "
 		 "If you want, you can modify this percent to be 100%, manually in the fet input file "
 		 "or from the interface"));
@@ -12218,12 +12218,12 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, QXmlStream
 			if(text=="yes" || text=="true" || text=="1"){
 				cn->consecutiveIfSameDay=true;
 				foundCISD=true;
-				xmlReadingLog+="    Current constraint has consecutive if same day=true\n";
+				xmlReadingLog+="    Current constraint has consecutive if on the same day=true\n";
 			}
 			else{
 				if(!(text=="no" || text=="false" || text=="0")){
 					RulesReconcilableMessage::warning(parent, tr("FET warning"),
-						tr("Found constraint min days between activities with tag consecutive if same day"
+						tr("Found constraint min days between activities with tag consecutive if on the same day"
 						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
 						" The tag will be considered false",
 						"Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
@@ -12231,7 +12231,7 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, QXmlStream
 				//assert(text=="no" || text=="false" || text=="0");
 				cn->consecutiveIfSameDay=false;
 				foundCISD=true;
-				xmlReadingLog+="    Current constraint has consecutive if same day=false\n";
+				xmlReadingLog+="    Current constraint has consecutive if on the same day=false\n";
 			}
 		}
 		else if(xmlReader.name()==QString("Compulsory")){
@@ -12279,7 +12279,7 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, QXmlStream
 		}
 	}
 	if(!foundCISD){
-		xmlReadingLog+="    Could not find consecutive if same day information - making it true\n";
+		xmlReadingLog+="    Could not find consecutive if on the same day information - making it true\n";
 		cn->consecutiveIfSameDay=true;
 	}
 	if(!(n_act==cn->n_activities)){
@@ -12303,16 +12303,19 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, QXmlStream
 		s+="\n\n";
 		s+=tr("To improve your file, you are advised to remove the corresponding activities and constraint and add activities again, respecting the following rules:");
 		s+="\n\n";
-		s+=tr("1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
+		s+=tr("1. If you selected 'consecutive if on the same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
 			". Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components"
 			" (possibly raising the weight of added constraint min days between activities up to 100%)");
 		s+="\n\n";
 
-		s+=tr("2. If you don't add 'force consecutive if same day', then add a larger activity split into a number of"
+		s+=tr("2. If you didn't select 'consecutive if on the same day', then add a larger activity split into a number of"
 			" activities equal with the number of days per week and the remaining components into other larger split activity."
 			" For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities,"
 			" first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1"
 			" (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)");
+
+		s+="\n\n";
+		s+=tr("Note: If the weight of the added constraint min days between activities is 0% or a low value, you can safely ignore this warning.");
 		
 		int t=QMessageBox::warning(parent, tr("FET warning"), s,
 			tr("Skip rest"), tr("See next"), QString(),
@@ -12361,12 +12364,12 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, QXmlStreamR
 			if(text=="yes" || text=="true" || text=="1"){
 				cn->consecutiveIfSameDay=true;
 				foundCISD=true;
-				xmlReadingLog+="    Current constraint has consecutive if same day=true\n";
+				xmlReadingLog+="    Current constraint has consecutive if on the same day=true\n";
 			}
 			else{
 				if(!(text=="no" || text=="false" || text=="0")){
 					RulesReconcilableMessage::warning(parent, tr("FET warning"),
-						tr("Found constraint min days between activities with tag consecutive if same day"
+						tr("Found constraint min days between activities with tag consecutive if on the same day"
 						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
 						" The tag will be considered false",
 						"Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
@@ -12374,7 +12377,7 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, QXmlStreamR
 				//assert(text=="no" || text=="false" || text=="0");
 				cn->consecutiveIfSameDay=false;
 				foundCISD=true;
-				xmlReadingLog+="    Current constraint has consecutive if same day=false\n";
+				xmlReadingLog+="    Current constraint has consecutive if on the same day=false\n";
 			}
 		}
 		else if(xmlReader.name()==QString("Compulsory")){
@@ -12422,7 +12425,7 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, QXmlStreamR
 		}
 	}
 	if(!foundCISD){
-		xmlReadingLog+="    Could not find consecutive if same day information - making it true\n";
+		xmlReadingLog+="    Could not find consecutive if on the same day information - making it true\n";
 		cn->consecutiveIfSameDay=true;
 	}
 	if(!(n_act==cn->n_activities)){
@@ -12446,16 +12449,19 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, QXmlStreamR
 		s+="\n\n";
 		s+=tr("To improve your file, you are advised to remove the corresponding activities and constraint and add activities again, respecting the following rules:");
 		s+="\n\n";
-		s+=tr("1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
+		s+=tr("1. If you selected 'consecutive if on the same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
 			". Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components"
 			" (possibly raising the weight of added constraint min days between activities up to 100%)");
 		s+="\n\n";
 
-		s+=tr("2. If you don't add 'force consecutive if same day', then add a larger activity split into a number of"
+		s+=tr("2. If you didn't select 'consecutive if on the same day', then add a larger activity split into a number of"
 			" activities equal with the number of days per week and the remaining components into other larger split activity."
 			" For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities,"
 			" first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1"
 			" (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)");
+
+		s+="\n\n";
+		s+=tr("Note: If the weight of the added constraint min days between activities is 0% or a low value, you can safely ignore this warning.");
 		
 		int t=QMessageBox::warning(parent, tr("FET warning"), s,
 			tr("Skip rest"), tr("See next"), QString(),
@@ -12504,12 +12510,12 @@ TimeConstraint* Rules::readMinHalfDaysBetweenActivities(QWidget* parent, QXmlStr
 			if(text=="yes" || text=="true" || text=="1"){
 				cn->consecutiveIfSameDay=true;
 				foundCISD=true;
-				xmlReadingLog+="    Current constraint has consecutive if same day=true\n";
+				xmlReadingLog+="    Current constraint has consecutive if on the same day=true\n";
 			}
 			else{
 				if(!(text=="no" || text=="false" || text=="0")){
 					RulesReconcilableMessage::warning(parent, tr("FET warning"),
-						tr("Found constraint min half days between activities with tag consecutive if same day"
+						tr("Found constraint min half days between activities with tag consecutive if on the same day"
 						" which is not 'true', 'false', 'yes', 'no', '1' or '0'."
 						" The tag will be considered false",
 						"Instructions for translators: please leave the 'true', 'false', 'yes' and 'no' fields untranslated, as they are in English"));
@@ -12517,7 +12523,7 @@ TimeConstraint* Rules::readMinHalfDaysBetweenActivities(QWidget* parent, QXmlStr
 				//assert(text=="no" || text=="false" || text=="0");
 				cn->consecutiveIfSameDay=false;
 				foundCISD=true;
-				xmlReadingLog+="    Current constraint has consecutive if same day=false\n";
+				xmlReadingLog+="    Current constraint has consecutive if on the same day=false\n";
 			}
 		}
 		else if(xmlReader.name()==QString("Compulsory")){
@@ -12565,7 +12571,7 @@ TimeConstraint* Rules::readMinHalfDaysBetweenActivities(QWidget* parent, QXmlStr
 		}
 	}
 	if(!foundCISD){
-		xmlReadingLog+="    Could not find consecutive if same day information - making it true\n";
+		xmlReadingLog+="    Could not find consecutive if on the same day information - making it true\n";
 		cn->consecutiveIfSameDay=true;
 	}
 	if(!(n_act==cn->n_activities)){
@@ -12589,16 +12595,19 @@ TimeConstraint* Rules::readMinHalfDaysBetweenActivities(QWidget* parent, QXmlStr
 		s+="\n\n";
 		s+=tr("To improve your file, you are advised to remove the corresponding activities and constraint and add activities again, respecting the following rules:");
 		s+="\n\n";
-		s+=tr("1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
+		s+=tr("1. If you selected 'consecutive if on the same day', then couple extra activities in pairs to obtain a number of activities equal to the number of days per week"
 			". Example: 7 activities with duration 1 in a 5 days week, then transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 components"
 			" (possibly raising the weight of added constraint min days between activities up to 100%)");
 		s+="\n\n";
 
-		s+=tr("2. If you don't add 'force consecutive if same day', then add a larger activity split into a number of"
+		s+=tr("2. If you didn't select 'consecutive if on the same day', then add a larger activity split into a number of"
 			" activities equal with the number of days per week and the remaining components into other larger split activity."
 			" For example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities,"
 			" first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1"
 			" (possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)");
+
+		s+="\n\n";
+		s+=tr("Note: If the weight of the added constraint min days between activities is 0% or a low value, you can safely ignore this warning.");
 		
 		int t=QMessageBox::warning(parent, tr("FET warning"), s,
 			tr("Skip rest"), tr("See next"), QString(),

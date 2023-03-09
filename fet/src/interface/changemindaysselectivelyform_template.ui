@@ -23,7 +23,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Please input old values (filters) and the new values. All old values (weight, min days and consecutive if same day) of corresponding constraints will be changed to the new ones. New weight is recommended at least 95.0 (or -1)</string>
+      <string>Please input old values (filters) and the new values. All old values (weight, min days and consecutive if on the same day) of corresponding constraints will be changed to the new ones. New weight is recommended at least 95.0 (or -1)</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -83,7 +83,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>Consecutive if same day</string>
+         <string>Consecutive if on the same day</string>
         </property>
        </widget>
       </item>
@@ -150,7 +150,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_8">
         <property name="text">
-         <string>Consecutive if same day</string>
+         <string>Consecutive if on the same day</string>
         </property>
        </widget>
       </item>

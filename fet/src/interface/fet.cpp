@@ -2068,7 +2068,7 @@ int main(int argc, char **argv)
 			if(gen.maxActivitiesPlaced>=0 && gen.maxActivitiesPlaced<gt.rules.nInternalActivities
 			 && initialOrderOfActivitiesIndices[gen.maxActivitiesPlaced]>=0 && initialOrderOfActivitiesIndices[gen.maxActivitiesPlaced]<gt.rules.nInternalActivities){
 				s=FetTranslate::tr("FET managed to schedule correctly the first %1 most difficult activities."
-				 " You can see initial order of placing the activities in the corresponding output file. The activity which might cause problems"
+				 " You can see the initial order of placing the activities in the corresponding output file. The activity which might cause problems"
 				 " might be the next activity in the initial order of evaluation. This activity is listed below:").arg(gen.maxActivitiesPlaced);
 				s+=QString("\n\n");
 			

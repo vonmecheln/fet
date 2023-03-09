@@ -229,20 +229,20 @@ void HelpFaqForm::setText()
 		"Example2: 2 activities, N=3. Then, one can place them on Monday and Thursday, on Monday and Friday, then on Tuesday and Friday (5 days week).\n\n"
 		"The weight is recommended to be between 95.0%-100.0%. The best might be 99.75% or a value a little under 100%, "
 		"because FET can detect impossible constraints this way and avoid them. The weight is subjective.\n\n"
-		"You can specify consecutive if same day. Please be careful, even if constraint min days between activities has 0% "
-		"weight, if you select this consecutive if same day, this consecutive will be forced. You will not be able to find "
+		"You can specify consecutive if on the same day. Please be careful, even if the constraint min days between activities has 0% "
+		"weight, if you select consecutive if on the same day, this 'consecutive' property will be forced. You will not be able to find "
 		"a timetable with the two activities on the same day, separated by break, not available or other activities, even "
-		"if the constraint has weight 0%, if you select consecutive if same day.");
+		"if the constraint has weight 0%, if you select consecutive if on the same day.");
 	s+="\n\n";
 	s+=tr("Note: FET will not place more than two activities involved in this constraint on the same day, if the constraint is broken "
 		"(you may end up with more days containing two involved activities, though, if the constraint is to be broken more times).");
 	s+="\n\n";
 	s+=tr("Important: please do not input unnecessary duplicates. If you input for instance 2 constraints:\n\n"
-		"1. Activities 1 and 2, min days 1, consecutive if same day=true, weight=95%\n"
-		"2. Activities 1 and 2, min days 1, consecutive if same day=false, weight=95%\n"
+		"1. Activities 1 and 2, min days 1, consecutive if on the same day=true, weight=95%\n"
+		"2. Activities 1 and 2, min days 1, consecutive if on the same day=false, weight=95%\n"
 		"(these are different constraints),\n"
 		"then the outcome of these 2 constraints will be a constraint:\n\n"
-		"Activities 1 and 2, min days 1, consecutive if same day=true, weight=100%-5%*5%=99.75%, very high. This is because of FET algorithm.\n\n"
+		"Activities 1 and 2, min days 1, consecutive if on the same day=true, weight=100%-5%*5%=99.75%, very high. This is because of FET algorithm.\n\n"
 		"You may however add 2 constraints for the same activities if you want 95% with min 2 days and 100% with min 1 day. These are not duplicates.\n\n"
 		"You might get an impossible timetable with duplicates, so beware.");
 	s+=tr("If you need to balance 3 activities in a 5 days week, you can add, in the new version 5.5.8 and higher, "
@@ -297,7 +297,7 @@ void HelpFaqForm::setText()
 	s+=tr("Q: How to choose the weight percentage of constraint min days between activities?\n\n"
 		"A: You can use for the constraint min days the weight you want. It can be 95%, 99%, 99.75% or even 100%, but please make sure "
 		"your timetable is not too constrained. Please take care of the impossible constraints, they should have under 100% weight "
-		"(percentage) - best would be 0%. For instance, if a teacher teaches only two days per week and has 3 math lessons for "
+		"(percentage) - best would be 0%. For instance, if a teacher teaches only two days per week and has 3 math activities for "
 		"a group, then it is clear that the constraint cannot be respected, so the correct way is to specify under 100% weight "
 		"(percentage) for the corresponding min days constraint - best would be 0%.");
 	s+="\n\n";
@@ -500,15 +500,17 @@ void HelpFaqForm::setText()
 		"min days between activities, it would be a very bad practice from the way the algorithm of generation works (it slows down the "
 		"generation and makes it harder to find a solution).\n\n"
 		"The best way to add the activities would be:\n\n"
-		"1. If you add 'force consecutive if same day', then couple extra activities in pairs to obtain a number of "
+		"1. If you selected 'consecutive if on the same day', then couple extra activities in pairs to obtain a number of "
 		"activities equal to the number of days per week. Example: 7 activities with duration 1 in a 5 days week, then "
 		"transform into 5 activities with durations: 2,2,1,1,1 and add a single container activity with these 5 "
 		"components (possibly raising the weight of added constraint min days between activities up to 100%)\n\n"
-		"2. If you don't add 'force consecutive if same day', then add a larger activity split into a number of "
+		"2. If you didn't select 'consecutive if on the same day', then add a larger activity split into a number of "
 		"activities equal with the number of days per week and the remaining components into other larger split activity. For "
 		"example, suppose you need to add 7 activities with duration 1 in a 5 days week. Add 2 larger container activities, "
 		"first one split into 5 activities with duration 1 and second one split into 2 activities with duration 1 ("
 		"possibly raising the weight of added constraints min days between activities for each of the 2 containers up to 100%)");
+	s+="\n\n";
+	s+=tr("Note: If the weight of the added constraint min days between activities is 0% or a low value, you can safely ignore this warning.");
 
 	s+="\n\n";
 	s+="--------------------";
@@ -552,7 +554,7 @@ void HelpFaqForm::setText()
 		"constraint of this type. If you want to make teacher John to have at least one gap between all "
 		"his math activities, select filter 'John' and 'math' and add all these activities to a constraint of this type.\n\n"
 		"Please take care that the selected activities are not forced consecutive by constraint two activities consecutive or "
-		"by constraint min days between activities which have consecutive if same day selected.");
+		"by constraint min days between activities which have consecutive if on the same day selected.");
 
 	s+="\n\n";
 	s+="--------------------";
@@ -573,11 +575,11 @@ void HelpFaqForm::setText()
 		"Starting times means that an activity may only start at these periods.\n\n"
 		"Time slots means more restrictive, that activity may only start and end and take place in these intervals (if activity has duration 2 "
 		"and on Monday is allowed 8:00, 9:00 and 10:00, then activity can only start at 8:00 or 9:00).\n\n"
-		"This is useful if you need for instance, if math lessons are 4-5 per week, to constrain that the first "
+		"This is useful if you need for instance, if math activities are 4-5 per week, to constrain that the first "
 		"component and the second component must be early. You will add 2 constraints for that, with component number "
-		"1 and 2, both with subject math. Or, if you want for activities split into 4 that 2 lessons are early and for "
+		"1 and 2, both with subject math. Or, if you want for activities split into 4 that 2 activities are early and for "
 		"activities split into 5 that 3 activities are early, add constraint math with split number 3, 4 and 5 (nice trick).\n\n"
-		"Another thing: if you have 1 or 2 lessons per week for a subject, say biology, and want to constrain one "
+		"Another thing: if you have 1 or 2 activities per week for a subject, say biology, and want to constrain one "
 		"of the components if there are 2 per week, and none if there is only 1, you can add such a constraint for component number=2.");
 
 	s+="\n\n";
@@ -663,8 +665,8 @@ void HelpFaqForm::setText()
 	s+="\n\n";
 
 	s+=tr("Q: I want to define hard subjects (math, physics and chemistry) and I want students not to have more than 1 (or another variant 2) difficult subjects in a row.\n\n"
-		"A: Define activity tag 'Difficult' and add it to all MA, PH and CH lessons. Then add constraint maximum 1 (or 2) "
-		"hours continuously for all students and an activity tag 'Difficult'. Please take care if you may have double lessons.");
+		"A: Define activity tag 'Difficult' and add it to all MA, PH and CH activities. Then add constraint maximum 1 (or 2) "
+		"hours continuously for all students and an activity tag 'Difficult'. Please take care if you may have double activities.");
 
 	s+="\n\n";
 	s+="--------------------";
@@ -688,7 +690,7 @@ void HelpFaqForm::setText()
 
 	s+=tr("Q: (by %1) The students must have max 4 gaps per week, maximum 2 per day, continuous gaps. How to solve this?\n\n"
 		"A: Add for each subgroup a dummy activity (no teachers) split into 4 per week, duration 1, min days between "
-		"activities 1, weight 0%, select consecutive if same day. FET will never put more than 2 of these dummy activities "
+		"activities 1, weight 0%, select consecutive if on the same day. FET will never put more than 2 of these dummy activities "
 		"on a day. Add max gaps for students = 0 per week.", "%1 is a person").arg(QString::fromUtf8("Horațiu Hălmăjan"));
 
 	s+="\n\n";
@@ -876,7 +878,7 @@ void HelpFaqForm::setText()
 	s+=tr("A: Add 3 activities (let us assume that their id-s are 1, 2 and 3), with durations respectively 2, 1 and 1. It is preferable to add them as"
 		" 3 single/independent activities (see note below).\n\n"
 		"Add two constraints min 1 day between activities with id-s 1 and 2 and between activities with id-s 1 and 3, 100% weight percentage.\n\n"
-		"Add another constraint: min 1 day between activities with id-s 2 and 3, consecutive if same day = yes, 0% weight percentage.");
+		"Add another constraint: min 1 day between activities with id-s 2 and 3, consecutive if on the same day = yes, 0% weight percentage.");
 	s+="\n\n";
 	s+=tr("Note: It is advisable to add the 3 activities as single/independent ones (not a larger split activity with 3 components). The reason is that if you want"
 		" to apply spreading of activities over the week, this operation won't add/remove constraints of type min days between activities for these 3 activities."

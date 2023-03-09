@@ -23,7 +23,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Note: An activity with duration greater than 1 cannot be split over a break. Also, the activities constrained by min days between activities constraints with 'consecutive if same day' = true cannot spread over a break.</string>
+      <string>Note: An activity with duration greater than 1 cannot be split over a break. Also, the activities constrained by min days between activities constraints with 'consecutive if on the same day' = true cannot spread over a break.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

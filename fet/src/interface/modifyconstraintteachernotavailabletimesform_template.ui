@@ -23,7 +23,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>This constraint does not induce gaps for teachers. If a teacher has lessons before and after this not available period, there will be no gaps counted</string>
+      <string>This constraint does not induce gaps for teachers. If a teacher has activities before and after this not available period, there will be no gaps counted</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

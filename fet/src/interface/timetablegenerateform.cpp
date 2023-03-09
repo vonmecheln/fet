@@ -284,17 +284,17 @@ void TimetableGenerateForm::stop()
 
 	s+="\n\n";
 
-	s+=TimetableGenerateForm::tr("Additional information relating impossible to schedule activities:");
+	s+=TimetableGenerateForm::tr("Additional information relating the impossible to schedule activities:");
 	s+="\n\n";
 
 	s+=tr("FET managed to schedule correctly the first %1 most difficult activities."
-	 " You can see initial order of placing the activities in the generate dialog. The activity which might cause problems"
+	 " You can see the initial order of placing the activities in the generate dialog. The activity which might cause problems"
 	 " might be the next activity in the initial order of evaluation. This activity is listed below:")
 	 .arg(gen.maxActivitiesPlaced);
 	
 	s+="\n\n";
 	
-	s+=tr("Please check constraints related to following possibly problematic activity (or teacher(s), or students set(s)):");
+	s+=tr("Please check the constraints related to following possibly problematic activity (or teacher(s), or students set(s)):");
 	s+="\n";
 	s+="-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ";
 	s+="\n";
@@ -452,17 +452,17 @@ void TimetableGenerateForm::stopHighest()
 
 	s+="\n\n";
 
-	s+=TimetableGenerateForm::tr("Additional information relating impossible to schedule activities:");
+	s+=TimetableGenerateForm::tr("Additional information relating the impossible to schedule activities:");
 	s+="\n\n";
 
 	s+=tr("FET managed to schedule correctly the first %1 most difficult activities."
-	 " You can see initial order of placing the activities in the generate dialog. The activity which might cause problems"
+	 " You can see the initial order of placing the activities in the generate dialog. The activity which might cause problems"
 	 " might be the next activity in the initial order of evaluation. This activity is listed below:")
 	 .arg(gen.maxActivitiesPlaced);
 	
 	s+="\n\n";
 	
-	s+=tr("Please check constraints related to following possibly problematic activity (or teacher(s), or students set(s)):");
+	s+=tr("Please check the constraints related to following possibly problematic activity (or teacher(s), or students set(s)):");
 	s+="\n";
 	s+="-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ";
 	s+="\n";
@@ -596,7 +596,7 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	s+="\n\n";
 
-	s+=TimetableGenerateForm::tr("Additional information relating impossible to schedule activities:");
+	s+=TimetableGenerateForm::tr("Additional information relating the impossible to schedule activities:");
 	s+="\n\n";
 	s+=TimetableGenerateForm::tr("Please check the constraints related to the "
 	 "activity below, which might be impossible to schedule:");

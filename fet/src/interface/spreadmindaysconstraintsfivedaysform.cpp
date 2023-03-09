@@ -164,10 +164,10 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 	if(moreThanDaysPerWeek.count()>=1){
 		QString s;
 		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-			s=tr("Warning: there are activities divided into more than the number of days per week.");
+			s=tr("Warning: there are activities which are divided into more subactivities than the number of days per week.");
 		}
 		else{
-			s=tr("Warning: there are activities divided into more than the number of real days per week.");
+			s=tr("Warning: there are activities which are divided into more subactivities than the number of real days per week.");
 		}
 		s+=" ";
 		s+=tr("These activities are listed below.");

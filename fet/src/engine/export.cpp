@@ -1078,13 +1078,13 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 						else if(oldc->consecutiveIfSameDay==true){
 							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
 								" there exists another constraint of this type with the same weight percentage and same number of min days and"
-								" consecutive if same day true, referring to the same activities").arg(c->getDescription(gt.rules))+"\n";
+								" consecutive if on the same day true, referring to the same activities").arg(c->getDescription(gt.rules))+"\n";
 						}
 						else if(c->consecutiveIfSameDay==true){
 							activitiesConstraints.insert(repres, c); //overwrites old value
 							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
 								" there exists another constraint of this type with the same weight percentage and same number of min days and"
-								" consecutive if same day true, referring to the same activities").arg(oldc->getDescription(gt.rules))+"\n";
+								" consecutive if on the same day true, referring to the same activities").arg(oldc->getDescription(gt.rules))+"\n";
 						}
 					}
 					else if(generic_oldc->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
@@ -1166,13 +1166,13 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 						else if(oldc->consecutiveIfSameDay==true){
 							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
 								" there exists another constraint of this type with the same weight percentage and same number of min days and"
-								" consecutive if same day true, referring to the same activities").arg(c->getDescription(gt.rules))+"\n";
+								" consecutive if on the same day true, referring to the same activities").arg(c->getDescription(gt.rules))+"\n";
 						}
 						else if(c->consecutiveIfSameDay==true){
 							activitiesConstraints.insert(repres, c); //overwrites old value
 							lastWarnings+=Export::tr("Note: Constraint %1 was skipped, because"
 								" there exists another constraint of this type with the same weight percentage and same number of min days and"
-								" consecutive if same day true, referring to the same activities").arg(oldc->getDescription(gt.rules))+"\n";
+								" consecutive if on the same day true, referring to the same activities").arg(oldc->getDescription(gt.rules))+"\n";
 						}
 					}
 					else if(generic_oldc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){

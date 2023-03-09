@@ -286,7 +286,7 @@ public:
 	QString getDetailedDescriptionWithConstraints(Rules& r);
 
 	/**
-	Returns true if this activity is split into more lessons per week.
+	Returns true if this activity is split into more subactivities per week.
 	*/
 	bool isSplit();
 	

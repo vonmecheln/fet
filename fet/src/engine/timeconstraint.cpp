@@ -3160,7 +3160,7 @@ QString ConstraintMinDaysBetweenActivities::getDescription(Rules& r)
 		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
 	}
 	s+=tr("mD:%1", "Min days").arg(this->minDays);s+=", ";
-	s+=tr("CSD:%1", "Consecutive if same day").arg(yesNoTranslated(this->consecutiveIfSameDay));
+	s+=tr("CSD:%1", "Consecutive if on the same day").arg(yesNoTranslated(this->consecutiveIfSameDay));
 
 	return begin+s+end;
 }
@@ -3178,7 +3178,7 @@ QString ConstraintMinDaysBetweenActivities::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 	s+=tr("Minimum number of days=%1").arg(this->minDays);s+="\n";
-	s+=tr("Consecutive if same day=%1").arg(yesNoTranslated(this->consecutiveIfSameDay));s+="\n";
+	s+=tr("Consecutive if on the same day=%1").arg(yesNoTranslated(this->consecutiveIfSameDay));s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
@@ -49218,7 +49218,7 @@ QString ConstraintMinHalfDaysBetweenActivities::getDescription(Rules& r)
 		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
 	}
 	s+=tr("mD:%1", "Min days").arg(this->minDays);s+=", ";
-	s+=tr("CSD:%1", "Consecutive if same day").arg(yesNoTranslated(this->consecutiveIfSameDay));
+	s+=tr("CSD:%1", "Consecutive if on the same day").arg(yesNoTranslated(this->consecutiveIfSameDay));
 
 	return begin+s+end;
 }
@@ -49236,7 +49236,7 @@ QString ConstraintMinHalfDaysBetweenActivities::getDetailedDescription(Rules& r)
 		s+="\n";
 	}
 	s+=tr("Minimum number of days=%1").arg(this->minDays);s+="\n";
-	s+=tr("Consecutive if same day=%1").arg(yesNoTranslated(this->consecutiveIfSameDay));s+="\n";
+	s+=tr("Consecutive if on the same day=%1").arg(yesNoTranslated(this->consecutiveIfSameDay));s+="\n";
 
 	if(!active){
 		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));

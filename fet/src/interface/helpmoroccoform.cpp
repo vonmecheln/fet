@@ -73,7 +73,7 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	s+=tr("- Students and teachers must have at least 2 hours per period (Empty periods are OK.)");
 	s+="\n";
 	s+="\t";
-	s+=tr("- Teachers can only have lesson either in morning or afternoon. Never both.");
+	s+=tr("- Teachers can only have activities either in the morning or in the afternoon. Never both.");
 	s+="\n\n";
 	s+=tr("3 - The key hint to use this version");
 	s+="\n\n";
@@ -100,12 +100,12 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	s+=" ";
 	s+=tr("(Recently, it is also possible to allow 3, 4, or 5 days exceptions.)");
 	s+="\n\n";
-	s+=tr("Very important about constraint min days between activities: probably you will need to"
-	 " add min days = 1 for all constraints. I modified the sources and min 1 day means"
-	 " that the activities must be in different real days, so it cannot be that one activity"
-	 " is in the morning and another is in the afternoon. If you need constraint to be always respected,"
-	 " please use 100% weight. If you allow weight under 100% and select consecutive if same day,"
-	 " then activities must be either in the morning or exclusively in the afternoon.");
+	s+=tr("Very important advice about the constraints of type min days between activities: probably you will need to"
+	 " add min days = 1 for all the constraints. I modified the sources and min 1 day means"
+	 " that the activities must be on different real days, so it cannot be that one activity"
+	 " is in the morning and another is in the afternoon. If you need the constraint to be always respected,"
+	 " please use 100% weight. If you allow weight under 100% and select consecutive if on the same day,"
+	 " then the activities must be either in the morning or exclusively in the afternoon.");
 	s+="\n\n";
 	s+=tr("Min 1 day means that the activities cannot be in REAL same day (so they can be"
 	 " on Monday afternoon and Tuesday morning, but not both on Monday).");
@@ -113,9 +113,9 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	s+=tr("Min 2 days means that the activities must be 2 REAL days apart (so they"
 	 " can be on Monday afternoon and Wednesday morning, but not on Monday and Tuesday).");
 	s+="\n\n";
-	s+=tr("If your data is too difficult (impossible), maybe you can deactivate force consecutive if same day for"
+	s+=tr("If your data is too difficult (impossible), maybe you can deactivate consecutive if on the same day for"
 	 " all constraints min days between activities (from the modify multiple constraints at once dialog,"
-	 " which can be activated from the constraints min days between activities dialog).");
+	 " which can be opened from the constraints min days between activities dialog).");
 	s+="\n\n";
 	s+=tr("Constraint max days between activities considers real days.");
 	s+="\n\n";
