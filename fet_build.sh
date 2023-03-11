@@ -1,5 +1,5 @@
 #!/bin/bash
-#rm -fr build
+rm -fr build
 
 mkdir -p build
 mkdir -p build/translations
