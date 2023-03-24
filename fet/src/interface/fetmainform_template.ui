@@ -1204,6 +1204,7 @@
      <property name="title">
       <string>Interface</string>
      </property>
+     <addaction name="settingsFontIsUserSelectableAction"/>
      <addaction name="settingsFontAction"/>
      <addaction name="separator"/>
      <addaction name="settingsShowShortcutsOnMainWindowAction"/>
@@ -2214,6 +2215,17 @@
   <action name="settingsFontAction">
    <property name="text">
     <string comment="The user can select here the font of the text of the interface">Font</string>
+   </property>
+  </action>
+  <action name="settingsFontIsUserSelectableAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>The font is user selectable</string>
    </property>
   </action>
  </widget>

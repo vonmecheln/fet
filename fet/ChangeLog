@@ -2642,3 +2642,7 @@ Versions 6.8.0 - 6.8.v
 - Version 6.8.6
 	- Code cleanup.
 	- Minor corrections in the English text.
+- Version 6.8.7
+	- Updated to Qt 6.4.3.
+	- Improved the method of selection of the interface font (suggested by giardiniere).
+	- Updated the Italian translation, by Andrea Primiani, who is the new translator.

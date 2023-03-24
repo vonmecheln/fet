@@ -249,7 +249,9 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
 	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Marco Barsotti").arg("mbarsan AT gmail.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Francesco Rizzo").arg("francesco.rizzo79 AT gmail.com");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Francesco Rizzo").arg("francesco.rizzo79 AT gmail.com");
+	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
+	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Andrea Primiani").arg("primiani AT dag.it");
 	translators+=QString("<br /><br /><br />");
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("ja").arg(tr("Japanese translation"));
@@ -805,7 +807,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Maouhoub");
 	thanksTo+=QString("<br />");
-	thanksTo+=QString("flauta");
+	thanksTo+=QString("Andrea Primiani");
 	thanksTo+=QString("<br />");
 	thanksTo+=QString("Marco Vassura");
 	thanksTo+=QString("<br />");

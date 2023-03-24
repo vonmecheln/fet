@@ -551,6 +551,8 @@ extern QApplication* pqapplication;
 Rules rules2;
 
 #ifndef FET_COMMAND_LINE
+static bool fontIsUserSelectable=false;
+static bool userChoseAFont=false;
 static QFont originalFont;
 
 static int ORIGINAL_WIDTH;
@@ -639,19 +641,20 @@ FetMainForm::FetMainForm()
 	QSettings settings(COMPANY, PROGRAM);
 	
 	originalFont=qApp->font();
-	if(settings.contains(QString("interface-font"))){
-		QFont interfaceFont;
-		bool ok=interfaceFont.fromString(settings.value(QString("interface-font")).toString());
-		if(ok)
-			qApp->setFont(interfaceFont);
-	}
-	else if(settings.contains(QString("FetMainForm/interface-font"))){ //obsolete style
-		QFont interfaceFont;
-		bool ok=interfaceFont.fromString(settings.value(QString("FetMainForm/interface-font")).toString());
-		if(ok)
-			qApp->setFont(interfaceFont);
-		
-		//settings.remove(QString("FetMainForm/interface-font"));
+	fontIsUserSelectable=settings.value(QString("font-is-user-selectable"), QString("false")).toBool();
+	userChoseAFont=false;
+	if(fontIsUserSelectable){
+		if(settings.contains(QString("font"))){
+			QString s=settings.value(QString("font")).toString();
+			if(s!=QString("")){
+				QFont interfaceFont;
+				bool ok=interfaceFont.fromString(s);
+				if(ok){
+					qApp->setFont(interfaceFont);
+					userChoseAFont=true;
+				}
+			}
+		}
 	}
 	
 	int nRec=settings.value(QString("FetMainForm/number-of-recent-files"), 0).toInt();
@@ -785,6 +788,9 @@ FetMainForm::FetMainForm()
 	rooms_schedule_ready=false;
 	
 	assert(!gt.rules.initialized);
+	
+	settingsFontIsUserSelectableAction->setCheckable(true);
+	settingsFontIsUserSelectableAction->setChecked(fontIsUserSelectable);
 	
 	settingsShowShortcutsOnMainWindowAction->setCheckable(true);
 	settingsShowShortcutsOnMainWindowAction->setChecked(SHOW_SHORTCUTS_ON_MAIN_WINDOW);
@@ -3202,12 +3208,29 @@ void FetMainForm::showSubgroupsInActivityPlanningToggled(bool checked)
 	SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING=checked;
 }
 
+void FetMainForm::on_settingsFontIsUserSelectableAction_toggled()
+{
+	fontIsUserSelectable=settingsFontIsUserSelectableAction->isChecked();
+	if(!fontIsUserSelectable){
+		qApp->setFont(originalFont);
+		userChoseAFont=false;
+	}
+}
+
 void FetMainForm::on_settingsFontAction_triggered()
 {
+	if(!fontIsUserSelectable){
+		QMessageBox::warning(this, tr("FET warning"), tr("You are not allowed to select the font, because the check box 'The font is user selectable' is unchecked."
+		 " Please select that option, firstly. You can find that option immediately above the 'Font' entry."));
+		return;
+	}
+
 	bool ok;
 	QFont newFont=QFontDialog::getFont(&ok, qApp->font(), this, tr("Please choose the new font"));
-	if(ok)
+	if(ok){
 		qApp->setFont(newFont);
+		userChoseAFont=true;
+	}
 }
 
 void FetMainForm::on_modeOfficialAction_triggered()
@@ -3750,7 +3773,11 @@ FetMainForm::~FetMainForm()
 	QSettings settings(COMPANY, PROGRAM);
 	
 	QFont interfaceFont=qApp->font();
-	settings.setValue(QString("interface-font"), interfaceFont.toString());
+	settings.setValue(QString("font-is-user-selectable"), fontIsUserSelectable);
+	if(fontIsUserSelectable && userChoseAFont)
+		settings.setValue(QString("font"), interfaceFont.toString());
+	else
+		settings.setValue(QString("font"), QString(""));
 	
 	settings.setValue(QString("FetMainForm/number-of-recent-files"), recentFiles.count());
 	settings.remove(QString("FetMainForm/recent-file"));
@@ -11084,13 +11111,16 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+=tr("60")+QString(". ")+tr("Write HTML timetables for subgroups in sorted order will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 	
-	s+=tr("61")+QString(". ")+tr("The interface font will be reset to default");
+	s+=tr("61")+QString(". ")+tr("The Boolean value 'The font is user selectable' will be %1", "%1 is true or false").arg(tr("false"));
 	s+="\n";
 
-	s+=tr("62")+QString(". ")+tr("Enable constraints students min hours per afternoon with empty afternoons will be %1", "%1 is true or false").arg(tr("false"));
+	s+=tr("62")+QString(". ")+tr("The font will be reset to default");
 	s+="\n";
 
-	s+=tr("63")+QString(". ")+tr("Warn if using constraints students min hours per afternoon with empty afternoons will be %1", "%1 is true or false. This is a warning if user uses a nonstandard constraint"
+	s+=tr("63")+QString(". ")+tr("Enable constraints students min hours per afternoon with empty afternoons will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+
+	s+=tr("64")+QString(". ")+tr("Warn if using constraints students min hours per afternoon with empty afternoons will be %1", "%1 is true or false. This is a warning if user uses a nonstandard constraint"
 		" students min hours per morning with allowed empty mornings").arg(tr("true"));
 	s+="\n";
 
@@ -11105,6 +11135,8 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	QSettings settings(COMPANY, PROGRAM);
 	settings.clear();
 	
+	fontIsUserSelectable=false;
+	userChoseAFont=false;
 	qApp->setFont(originalFont);
 	
 	recentFiles.clear();
