@@ -119,22 +119,20 @@ bool Export::okToWrite(QWidget* parent, const QString& file, QMessageBox::Standa
 		else if(msgBoxButton==QMessageBox::No ||
 		 msgBoxButton==QMessageBox::Yes ||
 		 msgBoxButton==QMessageBox::NoButton){
-		
-			QMessageBox msgBox(parent);
+			/*QMessageBox msgBox(parent);
 			msgBox.setWindowTitle(tr("FET warning"));
 			msgBox.setIcon(QMessageBox::Warning);
 			msgBox.setText(tr("File %1 exists - are you sure you want to overwrite existing file?").arg(file));
 			msgBox.setStandardButtons(QMessageBox::Yes|QMessageBox::No|QMessageBox::YesToAll|QMessageBox::NoToAll);
 			msgBox.setDefaultButton(QMessageBox::Yes);
 			
-			msgBoxButton=((QMessageBox::StandardButton)(msgBox.exec()));
+			msgBoxButton=(QMessageBox::StandardButton)(msgBox.exec());
+			*/
 			
-/*			msgBoxButton=QMessageBox::warning(parent, tr("FET warning"),
-			 tr("File %1 exists - are you sure you want to overwrite existing file?")
-			 .arg(file),
-			 QMessageBox::Yes|QMessageBox::No|QMessageBox::YesToAll|QMessageBox::NoToAll,
-			 QMessageBox::Yes
-			 );*/
+			msgBoxButton=QMessageBox::warning(parent, tr("FET warning"),
+			 tr("File %1 exists - are you sure you want to overwrite existing file?").arg(file),
+			 QMessageBox::Yes | QMessageBox::No | QMessageBox::YesToAll | QMessageBox::NoToAll,
+			 QMessageBox::Yes);
 			
 			if(msgBoxButton==QMessageBox::No || msgBoxButton==QMessageBox::NoToAll)
 				return false;
@@ -215,7 +213,7 @@ void Export::exportCSV(QWidget* parent){
 		
 		lastWarnings.insert(0,Export::tr("CSV files were exported to directory %1.").arg(QDir::toNativeSeparators(DIRECTORY_CSV))+"\n");
 		if(ok)
-			lastWarnings.insert(0,Export::tr("Exported complete")+"\n");
+			lastWarnings.insert(0,Export::tr("Export complete")+"\n");
 		else
 			lastWarnings.insert(0,Export::tr("Export incomplete")+"\n");
 	}
@@ -334,11 +332,11 @@ void Export::exportCSV(Solution* bestOrHighest, Solution* current){
 	
 	lastWarnings.insert(0,Export::tr("CSV files were exported to directory %1.").arg(QDir::toNativeSeparators(DIRECTORY_CSV))+"\n");
 	if(ok)
-		lastWarnings.insert(0,Export::tr("Exported complete")+"\n");
+		lastWarnings.insert(0,Export::tr("Export complete")+"\n");
 	else
 		lastWarnings.insert(0,Export::tr("Export incomplete")+"\n");
 		
-	cout<<qPrintable(tr("FET - export comment", "The comment of the exporting operation"))<<endl;
+	cout<<qPrintable(tr("FET - export comments", "The comments of the exporting operation"))<<endl;
 	cout<<qPrintable(lastWarnings); //no endl here - there is one already
 }
 #endif
@@ -428,7 +426,7 @@ bool Export::isActivityNotManualyEdited(int activityIndex, bool& diffTeachers, b
 bool Export::selectSeparatorAndTextQuote(QWidget* parent, QDialog* &newParent, QString& textquote, QString& fieldSeparator, bool& head){
 	assert(gt.rules.initialized);
 
-	newParent=((QDialog*)parent);
+	newParent=(QDialog*)parent;
 
 	QStringList separators;
 	QStringList textquotes;
@@ -1346,7 +1344,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 	
 #ifndef FET_COMMAND_LINE
 	if(manuallyEdited){
-		QMessageBox msgBox(parent);
+		/*QMessageBox msgBox(parent);
 		msgBox.setWindowTitle(tr("FET warning"));
 		msgBox.setIcon(QMessageBox::Warning);
 		msgBox.setText(tr("There are subactivities which were modified separately - so the "
@@ -1354,7 +1352,10 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 		msgBox.setStandardButtons(QMessageBox::Ok);
 		msgBox.setDefaultButton(QMessageBox::Ok);
 		
-		msgBox.exec();
+		msgBox.exec();*/
+		
+		QMessageBox::warning(parent, tr("FET warning"), tr("There are subactivities which were modified separately - so the "
+		 "components had different values for subject, activity tags, teachers, students or number of students from the representative subactivity. The export was done, but it is not very accurate."));
 	}
 #else
 	if(manuallyEdited){
@@ -1615,7 +1616,7 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString& textquote,
 #ifndef FET_COMMAND_LINE
 LastWarningsDialogE::LastWarningsDialogE(QWidget* parent, const QString& lastWarning): QDialog(parent)
 {
-	this->setWindowTitle(tr("FET - export comment", "The comment of the exporting operation"));
+	this->setWindowTitle(tr("FET - export comments", "The comments of the exporting operation"));
 	QVBoxLayout* lastWarningsMainLayout=new QVBoxLayout(this);
 
 	QPlainTextEdit* lastWarningsText=new QPlainTextEdit();

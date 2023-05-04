@@ -2595,7 +2595,7 @@ Versions 6.7.0 - 6.7.8
 	- Updated to Qt 6.4.2.
 	- Code cleanup.
 ---------------------------------------------------------------------------------
-Versions 6.8.0 - 6.8.v
+Versions 6.8.0 - 6.8.7
 - Version 6.8.0
 	- Added an advanced filter in the activities/subactivities dialog (similar to the existing advanced filter in the all time/space constraints dialog).
 	Also, it is now simpler to activate/deactivate the (sub)activities in these dialogs - there were added activate/deactivate buttons, such that it is no longer
@@ -2646,3 +2646,15 @@ Versions 6.8.0 - 6.8.v
 	- Updated to Qt 6.4.3.
 	- Improved the method of selection of the interface font (suggested by giardiniere).
 	- Updated the Italian translation, by Andrea Primiani, who is the new translator.
+---------------------------------------------------------------------------------
+Versions 6.9.0 - 6.9.v
+- Version 6.9.0
+	- Updated to Qt 6.5.0.
+	- Added two batch files for Windows, making it possible to start the FET interface in the Fusion or Windows styles (suggested by Volker Dirr).
+	Unlike the standard Qt style, these styles respect the dark mode on the Windows operating system, if the user selected it.
+	- Improvement: if there are present 'group activities in the initial order' items in the data file, but all of them are inactive,
+	there will not be issued a warning regarding this advanced feature at the start of the generation of the timetable.
+	- Improved the dialog of 'group activities in the initial order' items.
+	- Code cleanup (suggested by Volker Dirr, found using the function 'Analyze > Clang-Tidy and Clazy' of Qt Creator).
+	- Updated the Italian translation, by Andrea Primiani.
+	- Updated the Greek translation, by Vangelis Karafillidis.

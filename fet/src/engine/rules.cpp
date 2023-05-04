@@ -42,7 +42,6 @@ using namespace std;
 
 #include <QTranslator>
 
-#include <QtAlgorithms>
 #include <QtGlobal>
 
 #include <QSet>
@@ -855,7 +854,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	assert(_c>=this->nInternalSpaceConstraints); //because some constraints may have toSkipSpace false, but computeInternalStructure also false
 	//assert(this->nInternalSpaceConstraints<=MAX_SPACE_CONSTRAINTS);
 	
-	//group activities in initial order
+	//group activities in the initial order
 	if(groupActivitiesInInitialOrderList.count()>0){
 		QStringList fetBugs;
 		QStringList userErrors;

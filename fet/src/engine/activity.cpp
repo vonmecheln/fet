@@ -93,7 +93,7 @@ QString GroupActivitiesInInitialOrderItem::getDescription(Rules& r)
 	if(!active)
 		begin="X - ";
 
-	QString s=tr("Group activities in initial order item");
+	QString s=tr("Group activities in the initial order item");
 	s+=QString(", ");
 	s+=tr("NA:%1", "Number of activities").arg(ids.count());
 	for(int id : qAsConst(ids))
@@ -109,7 +109,7 @@ QString GroupActivitiesInInitialOrderItem::getDescription(Rules& r)
 QString GroupActivitiesInInitialOrderItem::getDetailedDescription(Rules& r)
 {
 	QString s=tr("Timetable generation option"); s+=QString("\n");
-	s+=tr("Group activities in initial order item"); s+=QString("\n");
+	s+=tr("Group activities in the initial order item"); s+=QString("\n");
 	s+=tr("Number of activities=%1").arg(ids.count()); s+=QString("\n");
 	for(int id : qAsConst(ids)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
@@ -125,7 +125,7 @@ QString GroupActivitiesInInitialOrderItem::getDetailedDescription(Rules& r)
 	else
 		activeYesNo=tr("no");
 	if(!active){
-		s+=tr("Active group activities in initial order item=%1", "Represents a yes/no value, if a 'group activities in initial order' item is active or not, %1 is yes or no").arg(activeYesNo);
+		s+=tr("Active group activities in the initial order item=%1", "Represents a yes/no value, if a 'group activities in initial order' item is active or not, %1 is yes or no").arg(activeYesNo);
 		s+="\n";
 	}
 

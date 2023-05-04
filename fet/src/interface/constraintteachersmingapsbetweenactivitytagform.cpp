@@ -69,7 +69,7 @@ bool ConstraintTeachersMinGapsBetweenActivityTagForm::filterOk(TimeConstraint* c
 {
 	if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
 		ConstraintTeachersMinGapsBetweenActivityTag* c=(ConstraintTeachersMinGapsBetweenActivityTag*) ctr;
-		return (c->activityTag==activityTagComboBox->currentText() || activityTagComboBox->currentText()=="");
+		return c->activityTag==activityTagComboBox->currentText() || activityTagComboBox->currentText()=="";
 	}
 	else
 		return false;

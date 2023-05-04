@@ -79,7 +79,7 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 	 "or a combination of these), %2 are the copyright holders").arg("2002-2023").arg("Liviu Lalescu, Volker Dirr");
 	about+="<br /><br />";
 	about+=tr("Version: %1 (%2 %3).", "%1 is the current FET version, %2 is the current release month, %3 is the current release year").arg(FET_VERSION)
-	 .arg(QCoreApplication::translate("MonthsNames", "March")).arg("2023");
+	 .arg(QCoreApplication::translate("MonthsNames", "April")).arg("2023");
 	about+="<br /><br />";
 	about+=tr("Licensed under the GNU Affero General Public License version 3 or later.");
 	about+="<br /><br />";
@@ -169,9 +169,9 @@ HelpAboutForm::HelpAboutForm(QWidget* parent): QDialog(parent)
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("de").arg(tr("German translation"));
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Volker Dirr").arg("https://www.timetabling.de/");
+	translators+=tr("former translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Robert Hairgrove").arg("code AT roberthairgrove.com");
 	translators+=QString("<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;");
-	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Robert Hairgrove").arg("code AT roberthairgrove.com");
+	translators+=tr("current translator: %1 (%2)", "%1 is the name of the translator, %2 is his or her email or web address").arg("Volker Dirr").arg("https://www.timetabling.de/");
 	translators+=QString("<br /><br /><br />");
 
 	translators+=tr("%1 - %2", "%1 is the international abbreviation of the language, %2 is the name of the language, translated").arg("el").arg(tr("Greek translation"));

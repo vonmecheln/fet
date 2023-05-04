@@ -33,7 +33,6 @@ using namespace std;
 
 #include "messageboxes.h"
 
-#include <QtAlgorithms>
 #include <QtGlobal>
 
 #include <QPair>
@@ -2364,7 +2363,15 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	}
 
 	if(SHOW_WARNING_FOR_GROUP_ACTIVITIES_IN_INITIAL_ORDER){
-		if(gt.rules.groupActivitiesInInitialOrderList.count()>0){
+		bool hasActiveGroupActivitiesInInitialOrder=false;
+		for(GroupActivitiesInInitialOrderItem* item : qAsConst(gt.rules.groupActivitiesInInitialOrderList)){
+			if(item->active){
+				hasActiveGroupActivitiesInInitialOrder=true;
+				break;
+			}
+		}
+		
+		if(hasActiveGroupActivitiesInInitialOrder){
 			QString s=GeneratePreTranslate::tr("Your data contains the option to group activities in the initial order.");
 			s+="\n\n";
 			s+=GeneratePreTranslate::tr("This option is nonstandard. It is recommended only if you know what you are doing,"
@@ -19742,7 +19749,7 @@ void sortActivities(QWidget* parent, const QHash<int, int>& reprSameStartingTime
 	}
 	//new Volker (end)
 	
-	//2014-06-30 - group activities in initial order
+	//2014-06-30 - group activities in the initial order
 	if(gt.rules.groupActivitiesInInitialOrderList.count()>0){
 		for(int i=0; i<gt.rules.nInternalActivities; i++)
 			fatherActivityInInitialOrder[i]=-1;
@@ -19758,7 +19765,7 @@ void sortActivities(QWidget* parent, const QHash<int, int>& reprSameStartingTime
 			
 			if(item->indices.count()<2){
 				if(report){
-					QString s=GeneratePreTranslate::tr("Group activities in initial order item number %1 is ignored, because it contains less than"
+					QString s=GeneratePreTranslate::tr("Group activities in the initial order item number %1 is ignored, because it contains less than"
 					 " two active activities").arg(j);
 				
 					int t=GeneratePreReconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),

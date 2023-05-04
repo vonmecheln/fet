@@ -23,30 +23,48 @@
 #include "timetable.h"
 #include "fet.h"
 
+#include "advancedfilterform.h"
+
 class GroupActivitiesInInitialOrderItemsForm : public QDialog, Ui::GroupActivitiesInInitialOrderItemsForm_template  {
 	Q_OBJECT
 
-public:
-	QList<GroupActivitiesInInitialOrderItem*> visibleItemsList;
+private:
+	AdvancedFilterForm* filterForm;
 
+	QList<GroupActivitiesInInitialOrderItem*> visibleItemsList;
+	
+	bool all; //all or any, true means all, false means any
+	QList<int> descrDetDescr;
+	QList<int> contains;
+	QStringList text;
+	bool caseSensitive;
+	
+	bool useFilter;
+
+public:
 	GroupActivitiesInInitialOrderItemsForm(QWidget* parent);
 	~GroupActivitiesInInitialOrderItemsForm();
 
-	bool filterOk(const GroupActivitiesInInitialOrderItem& item);
+	bool filterOk(GroupActivitiesInInitialOrderItem* item);
 	
 public slots:
 	void itemChanged(int index);
 	void addItem();
 	void modifyItem();
 	void removeItem();
+	void filterChanged();
+	
+	void filter(bool active);
+	
+	void moveItemUp();
+	void moveItemDown();
 	
 	void help();
 
-	void filterChanged();
-	
-	void sortItemsByComments();
 	void activateItem();
 	void deactivateItem();
+	void activateAllItems();
+	void deactivateAllItems();
 	void itemComments();
 };
 

@@ -71,7 +71,7 @@ bool ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3Form::filterOk(TimeConst
 {
 	if(ctr->type==CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
 		ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3* ct=(ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3*) ctr;
-		return (ct->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="");
+		return ct->teacherName==teachersComboBox->currentText() || teachersComboBox->currentText()=="";
 	}
 	else
 		return false;

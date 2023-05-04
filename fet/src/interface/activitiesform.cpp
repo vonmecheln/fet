@@ -54,7 +54,6 @@
 #include <QMetaObject>
 
 #include <QProgressDialog>
-#include <QtAlgorithms>
 #include <QtGlobal>
 
 #include <algorithm>

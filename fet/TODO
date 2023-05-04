@@ -278,7 +278,7 @@ Now have a closer look:
 so if i also add working groups (lets say 5, but there are more!)
 then we have total 400 subgroups.
 
-that is stupid, because i have only around 100 students in a year!
+that is absurd, because i have only around 100 students in a year!
 
 i think in that case it is wise to enter data not in groups, add
 students
@@ -374,7 +374,7 @@ If you make it how it is now with years, groups and subgroups, it will not
 be complicated for entering and even will not need change in most
 constraint dialogs. What I mean - define "groups of subjects", and allow
 "group of subjects" name to be used in every place where subject can be
-used. Much  like it is now with student sets - both student years, groups
+used. Much like it is now with student sets - both student years, groups
 and subgroups are placed in one control and added from one place.
 
 But of course, I don't know how this will fit with FET internals. And FET
@@ -394,7 +394,7 @@ maybe it's possible to do Form::setLayoutDirection(Form::LeftToRight) only to th
 From Volker Dirr:
 
 I saw at Les's timetable, that he called hour==period.
-also at wikipedia it´s called period. (see School_timetables chapter, terminology)
+also at Wikipedia it´s called period. (see School_timetables chapter, terminology)
 
 I am not sure about that. in German we have the also the word "periode",
 but we don´t use it for timetables. we say hour.
@@ -416,7 +416,7 @@ so maybe we should write "period (hour)".
 22---------------------------------------------------------
 From Volker Dirr:
 
-maybe change "current constaint" into "description", "constraint
+maybe change "current constraint" into "description", "constraint
 information", "description of the selected constraint", ... (very very low
 priority, maybe one day)
 
@@ -693,7 +693,7 @@ My suggestion is that It will be better If FET can update to Sambilan from Afida
 From kdsayang:
 
 I have some other suggestion.
- 
+
 1. It will be GREAT if FET can be turn to tree structure. We can show/hide the structure
 2. In the tree structure, we can use the copy, cut and paste to edit the subject, activities, etc in the tree structure
 
@@ -746,7 +746,7 @@ From Massimo Mancini:
 
 This is a request for a new feature...
 For Teachers and Subjects I like to use a brief description (BD), a code, and I optionally convert it to corresponding long description (LD) in the generated timetables (I refer to my current timetable procedures). So I need to define two new fields. Example:
-Theacher:  MANC, MANCINI
+Teacher:  MANC, MANCINI
 Subjects: MAT, MATEMATICA
 
 I think that this can be achieved without any change to current interface, simply using the format above. Of course I want use the BD only in defining activities and when I have to specify subject and Teacher.
@@ -820,7 +820,7 @@ what you want or maybe not)
 WHEN: all new future are always ASAP :-D (the programmer says...)
 
 FURTHER DEVELOPMENTS: a templates system for automatic generation of activity based
-on year and subjects expected for a class of that year (normal italian
+on year and subjects expected for a class of that year (normal Italian
 situation, abroad I don't know ;-)
 
 46---------------------------------------------------------
@@ -875,7 +875,7 @@ activities.
 if 2 activities are consecutive, turn of min n day.
 if 2 activitives have same starting time, turn of min n day.
 
-or the opposite, bedending on what has a higher weight.
+or the opposite, depending on what has a higher weight.
 
 maybe instead of turning of maybe just warn the user that this two
 constraints are not acceptable at the same time and tell him he should
@@ -927,11 +927,11 @@ There is no easy way to remove a component.
 
 Chafik Graiguer:
 well
-to re-use  last year .fet file,
+to re-use last year .fet file,
 what about
 -removing all activities at once, so Data keeps only subjects, teachers and groups ?
 or
-- removing all teachers from all activities (because teachers dont teach the same groups every year)
+- removing all teachers from all activities (because teachers don't teach the same groups every year)
 or
 - removing all groups from all activities
 
@@ -1182,7 +1182,7 @@ activities with min days = 0%.
 
 62------------------------DONE-----------------------------
 
-63-----------------------DONE------------------------------
+63------------------------DONE-----------------------------
 
 64---------------------------------------------------------
 From aliponte:
@@ -1300,10 +1300,7 @@ So I've two suggestion immedi:
 - when FET checks this (and similar) constraints, would tolerate this
 - can deactivate the students set (and related activities, constraints, etc.)
 
-73---------------------------------------------------------
-From Zsolt Udvari (on forum):
-
-It would be nice when can filter in activities list by "no teacher" and "no students".
+73---------------------------DONE--------------------------
 
 74---------------------------DONE--------------------------
 
@@ -1362,10 +1359,10 @@ From Chafik Graiguer (on forum):
 Filter teachers:
 
 Students are easily filtered because they are grouped using years then groups
-So at Students set not available time window, we can, for example, apply unvailability to only one year, thus affecting  groups under that year
-We can also apply unvailability to group, thus affecting  Subgroups under that group.
+So at Students set not available time window, we can, for example, apply unvailability to only one year, thus affecting groups under that year
+We can also apply unvailability to group, thus affecting subgroups under that group.
 
-Unfortunately , teachers are treated either individually or totally (constraints for ALL teachers): ONE or ALL
+Unfortunately, teachers are treated either individually or totally (constraints for ALL teachers): ONE or ALL
 Zsolt Udvari already wrote:
 Quote:
 It would be nice when can pair teachers with his/her subjects and can filter in the activity dialog.
@@ -1504,7 +1501,7 @@ conflicts): they are too long.
 You must well understand that the unlucky timetable maker need to see the
 troubles at a glance: reading long sentences with absolutely redundant
 parts is very difficult and time consuming.
-This is a problem in english but the solution can be achieved also and only in
+This is a problem in English but the solution can be achieved also and only in
 translations... (a buon intenditor...;-)
 
 So in the following you will find an example of that I think is a good list.
@@ -1631,7 +1628,7 @@ But maybe we could use XSL for this.
 From aang (on forum):
 
 I have a problem though in the formatting of the html files and consequently the printing. Now, an activity will be printed with six subgroups on the timetable
-making it unusually wide(or tall) and the subgroup names do not actually reflect the student set that should be displayed e.g Mwaniki-CRE-4 E BIOCRE1, 4 E PHYCRE1,
+making it unusually wide (or tall) and the subgroup names do not actually reflect the student set that should be displayed e.g Mwaniki-CRE-4 E BIOCRE1, 4 E PHYCRE1,
 4 W BIOCRE1, 4 W PHYCRE1, 4 N BIOCRE1, 4 N PHYCRE1, 4 S BIOCRE1, 4 S PHYCRE1
 instead of Mwaniki-CRE-4 CRE1 or Mwaniki-CRE-4. This means i edit the timetable manually after every generation to make this changes. I suggest adding a displayname
 tag to the activity which defaults to the current display name (without the activityID) and using this to determine what is displayed for the activity.
@@ -1643,20 +1640,11 @@ of days or lessons (depending on the selected timetable)? This way it is easier 
 
 96--------------------------DONE---------------------------
 
-97---------------------------------------------------------
-From liquid (on forum):
+97--------------------------DONE---------------------------
 
-Based on what I experience while creating not an easy timetable I would do suggest to enable more categories than 3. Max number of categories I need years to split to is 7. I do it manually at the moment but it is time and mind consuming. I know it might seem unusual however requirements for the timetable are indeed real not theoretical.
+98--------------------------DONE---------------------------
 
-Liviu: Too many categories might slow down the generation and consume too much memory (there will be many empty subgroups). Anyway, anybody can consider as many categories as needed, by adding groups/subgroups manually or using another program to generate the .fet XML file.
-
-liquid: I'd like to mention something that might be worth to consider. As we said earlier we can always make our own division of the year to groups and subgroups which are going to be most suitable to one's needs. It would be good to have the possibility to delete unused (empty) subgroups from all groups. Now, FET kindly informs us that a subgroup belongs to another group and you have to delete it again and again from every other group. 
-
-Update: The maximum number of categories now is 4.
-
-98------------------------DONE-----------------------------
-
-99-------------------------DONE----------------------------
+99--------------------------DONE---------------------------
 
 100---------------------------------------------------------
 From Chafik Graiguer (on forum):
@@ -1756,12 +1744,7 @@ It would be nice to have a fourth dimension.
 Explanation from Liviu Lalescu: He considers students (1), teachers (2) and rooms (3) as three dimensions. He would like to allocate activities
 to teachers (4) (and these teachers should be the fourth dimension, different in concept from the second dimension, but similar to the third dimension).
 
-110---------------------------------------------------------
-From Liviu Lalescu:
-
-Possibility (check box, default checked) of safe saving for File/Save and Save as. Maybe even for Timetable/Save data and timetable as.
-
-Safe saving means: create a temporary file (make sure it is truncated), write the data to it, remove the original file and rename the temporary file to the original file.
+110-------------------------DONE----------------------------
 
 111-------DONE since FET-5.35.0-(21 December 2017)----------
 
@@ -1897,7 +1880,9 @@ From Robert Sutcliffe:
 I need to print out all the rules and constraints to document the settings to supply to another system, and for peer review.
 Staff availability, activities, room allocation rules, not-overlapping activity selections - everything!
 Is there any way to do this?
+
 ---Answer Liviu Lalescu: no, there is no direct way in FET---
+
 If not, another web report that details all these settings would be ideal.
 
 123---------------------------------------------------------
@@ -1919,7 +1904,6 @@ From rjmillett (on guestbook):
 there are many things i would like to have in FET:
 
 1. when adding activities there should be a choice list similar to the new print option now included in 5.18
-
 to add multiple classes (sub-groups) with the same choice of periods and teacher in one click i.e. all same
 
 2. there should be a similar option in the preview to choose a class and teacher preview both at the same time so as to make changes without having to go back and every time i.e. side by side view at one time click in drop down box
@@ -1928,7 +1912,7 @@ to add multiple classes (sub-groups) with the same choice of periods and teacher
 
 4. print preview choice button on main panel
 
-5. un/lock buton on main panel
+5. un/lock button on main panel
 
 6. an import and export to EXCEL or txt other than CSV file
 
@@ -1996,8 +1980,7 @@ Could you please recommend a manner in which I should split the classes in
 order to make it possible for all the subject choices?
 
 
-2) Thanks Liviu, Volker did help while you were away so I have sorted out the
-problem.
+2) Thanks Liviu, Volker did help so I have sorted out the problem.
 
 What I also discussed with Volker was the possibility of a forth category
 split. I know it will slow down the generation but for me that is not too
@@ -2168,7 +2151,7 @@ is unchecked).
 if you use click, then something is called only once.
 
 130---------------------------------------------------------
-From Daniel (on forum, see https://lalescu.ro/liviu/fet/forum/index.php?topic=1224.0):
+From Daniel (on forum: https://lalescu.ro/liviu/fet/forum/index.php?topic=1224.0):
 
 Allow activities to span over breaks. (For the moment, a solution is to split activities
 and add constraints two (or three) activities grouped. Another solution is to not
@@ -2192,7 +2175,7 @@ This total must be updated changing the number/duration of subactivities.
 A good place for this changing label could be near number of sub in
 group *divide*:
 
-In my mind (italian one) I know that a teacher have 6 hours of a subject,
+In my mind (Italian one) I know that a teacher have 6 hours of a subject,
 only then I think about how divide them.
 See the total expedite and reduce input errors.
 
@@ -2227,7 +2210,7 @@ From Massimo Mancini:
 
 First, consider this situation...
 1. I'm working on teachers not avalaible (TNA) constraint
-2. I filter on MANC, fet show a blank windows: the constraint on MANC not
+2. I filter on MANC, fet shows a blank window: the constraint on MANC not
 exist.
 3. Good. I add it but the dialog not inherit MANC as selected teacher :-(
 why? In general the dialog add/modify is not linked with existing constraints. Fet
@@ -2275,15 +2258,10 @@ prevent mistakes, without the need to close the new activity dialog.
 From Pietro (on forum):
 
 I think the "pseudo activities" shouldn't be shown in the teacher statistics, or
-should be shown in a separate column. Infact, with actual situation the user can
+should be shown in a separate column. In fact, with actual situation the user can
 confuse real activity with pseudo one and don't know the real situation.
 
-138---------------------------------------------------------
-From Massimo Mancini:
-
-If you close and reopen FET, the central tab widget remain on the tab it
-was when you terminated the program.
-When FET start, the focus should be always on the File tab.
+138-------------------------DONE----------------------------
 
 139---------------------------------------------------------
 From Massimo Mancini:
@@ -2297,7 +2275,7 @@ When you set the constraints of the times in which the teachers are not availabl
 maybe you don't know how many teachers wil be finally available for each time slot
 (unless you count them manually). So, my suggestion is to include a new statistic
 to show that information, in order to correct impossible constraints before start
-the timetable generation. Of course, an authomatic detection (less teachers
+the timetable generation. Of course, an automatic detection (less teachers
 available than needed) would be better!.
 
 Liviu Lalescu: Sorry, but I do not understand. I already do a check on the number
@@ -2348,15 +2326,9 @@ comfortable.
 143---------------------------------------------------------
 From Etlau (on forum):
 
-Will be nice to click-and-drop and lock activities in shedule directly.
+Will be nice to drag-and-drop and lock activities in schedule directly.
 
-144---------------------------------------------------------
-From Etlau (on forum):
-
-Add "start student day" for activity, like "end student day"
-
-Liviu Lalescu: I'll add this in the TODO. But if students begin at first hour,
-add preferred times for the activities in the first hours.
+144------------------------DONE-----------------------------
 
 145------------DONE since FET-5.41.0 - 2019-11-20-----------
 
@@ -2365,7 +2337,7 @@ From Frans (on forum):
 
 I just wonder how the following can be done.
 
-Let say I set a timetable for a specific term with constraints. The timetable is accepted by everyone and published.
+Let's say I set a timetable for a specific term with constraints. The timetable is accepted by everyone and published.
 
 What I do now for the next term is to export the information, I am interested in the activities, as csv files. These files are send to the people in charge to make changes for the second term for example. What I want to do now is to import the activity files using Fet to set the timetable for the specific term.
 
@@ -2423,7 +2395,7 @@ From uni_instructor (on forum):
 Finding a good optimized timetable means playing around with the parameters and constraints.
 
 In my opinion an UNDO (button) would be a helpful feature, since I could add / or modify some constraints and test the feasibility of the new timetable. Otherwise I can undo my last modifications and retry the timetable generation with other settings.
-I conceive an UNDO function as it can be seen e.g. in MS-office showing a history of my last n modifications, where n ist the number of undoable steps.
+I conceive an UNDO function as it can be seen e.g. in MS-office showing a history of my last n modifications, where n is the number of undoable steps.
 The "history" of modification-steps would give me a good hint on what steps I could try otherwise.
 
 150---------------------------------------------------------
@@ -2431,7 +2403,7 @@ From Nemo (on forum):
 
 Issue is I am always having to make changes as teachers leave, swap etc. I of course have the timetable 'fixed' but it is quite laborious to make changes to rooms etc.
 
-What it really needs now is a front end any one can use for room changes/teacher changes for a fixed timetable. I have plenty of programming experience (from a  long time ago though) so using FET no issue for me. But even the ICT teachers can't understand it easily.
+What it really needs now is a front end any one can use for room changes/teacher changes for a fixed timetable. I have plenty of programming experience (from a long time ago though) so using FET no issue for me. But even the ICT teachers can't understand it easily.
 
 The other major issues we face is cover - would be fantastic to have a cover generator. That takes up a lot of time practically as teachers are off sick and the time taken to check their timetable and find others free is a job that would be nice at a click of a button. I know these are "nice to haves" but I bet a lot of FET users have the same practical issues day to day.
 
@@ -2541,15 +2513,7 @@ Liviu Lalescu, 8 January 2023: In FET-6.8.0 it is now possible to activate/deact
 all the constraints listed in the all time/space constraints dialog (and it was
 possible since a long time now to select an advanced filter there).
 
-159---------------------------------------------------------
-From Volker Dirr:
-
-FET -> Data -> Time Constraints -> Activities -> A set of subactivities
-have a set of preferred starting times / time slots.
-Need also the value to select all activities with the same duration.
-(because activities with duration 2 should start only in 1., 3. and 5. hour).
-With this constraint a user would need only to set a single constraint instead
-of adding a lot of constraints or activity tags.
+159--------------------------DONE---------------------------
 
 160---------------------------------------------------------
 From Volker Dirr:
@@ -2564,10 +2528,10 @@ for example:
 From Volker Dirr:
 
 if fet can't generate the data ("Cannot generate - please modify your
-data"), then the "view difficult activities" pushbutton is disabled. So a
-user can't search the bug. so a) enable the pushbutton or (maybe even
+data"), then the "view difficult activities" push button is disabled. So a
+user can't search the bug. so a) enable the push button or (maybe even
 better (but only if you use only 100% constraints?)), display the
-difficult activities in that textedit with the "Cannot generate - please
+difficult activities in that text edit with the "Cannot generate - please
 modify your data" string.
 
 162---------------------------------------------------------
@@ -2579,7 +2543,7 @@ generation_pre request: warn if activities has 100% same starting time and
 163---------------------------------------------------------
 From Volker Dirr:
 
-do an other check in generation_pre.cpp:
+do another check in generation_pre.cpp:
 if an activity has only 100% one room possible (by one or more
 constraints), then sum all hours of the same room and check if (number of
 available time slots for room) >= (number of 100% needed slots for this
@@ -2628,8 +2592,11 @@ index of array after each removal), so I did the simple remove all instead.
 It worked great for me. So, maybe you can consider something similar for
 your official release.
 
+Note Liviu: in FET 6.8.0 it is possible to deactivate all the filtered
+time/space constraints in the dialogs of all time/space constraints.
+
 167---------------------------------------------------------
-From karim (forum personal message to Liviu Lalescu):
+From karim:
 
 max gaps (hours) between a set of activities
 
@@ -2660,7 +2627,7 @@ From agemagician (on forum):
 6- Export the schedule to excel.
 
 171---------------------------------------------------------
-From Vlăduț Frățiman (personal email to Liviu Lalescu):
+From Vlăduț Frățiman:
 
 He suggests to drop activities ids and use instead the teacher, students and subject, because ids might puzzle the new user.
 
@@ -2724,7 +2691,7 @@ Liviu Lalescu: since version 5.20.2 we added a detailed report for multiple gene
 178---------------------------------------------------------
 From Silver (on forum):
 
-I suggest you add new window (interface or small editor) for css .
+I suggest you add new window (interface or small editor) for css.
 for hide and view rooms and subject in "teachers_time_horizontal.html" and other timetables.
 
 179---------------------------------------------------------
@@ -2771,9 +2738,7 @@ From nouvakis (on forum):
 
 The Min days between activities constraint has a weight percentage which I set to 95%.
 
-I think that there should be another weight percentage for the option "if activities in same day, force activities consecutive" (when checked) because you handle it as a 100%.
-
-If this is possible, then the word force should be replaced by something else.
+I think that there should be another weight percentage for the option "if two activities are on the same day, make them consecutive" (when checked) because you handle it as a 100%.
 
 184---------------------------------------------------------
 From Tonny Chan:
@@ -2850,13 +2815,7 @@ the problem is:
 how to implement both features ("year-group-subgroup" fet and enable only
 a "year-group" one.) at the same time without confusing a user?
 
-191---------------------------------------------------------
-From Boubker (on forum):
-
-Je tente de générer un emploi  du temps pour mon collège  et je  bute sur un petit problème est le suivant :
-Pour un enseignant  donné  « T »  j’ai affecté des classes répartis sur 3 niveaux (N1, N2 et N3) et je désire que cet enseignant  se voie attribuer  des classes de deux niveaux max par jour :
-C’est-à-dire que  cet enseignant  aura dans un jour de travail des classes des niveaux (N1 et N2) ou bien (N1 et N3)  ou bien (N2 et  N3).
-Es ce que vous pouvez me dire comment faire ?
+191------------------------DONE-----------------------------
 
 192---------------------------------------------------------
 From mbarsan (on forum):
@@ -2864,7 +2823,7 @@ From mbarsan (on forum):
 We have a school with 8 periods per day, with a short break every 2 hours.
 There are 3 buildings.
 Teacher may change building during those short breaks.
-So we  haven't to say to FET any duration to change buildings. This may be done at beginning of hours nn. 3, 5 and 7.
+So we haven't to say to FET any duration to change buildings. This may be done at beginning of hours nn. 3, 5 and 7.
 If a teacher works in a building at first and second periods, he may change building and work at third period.
 
 We may chose to insert breaks times (students and teachers not available) between periods 2 and 3, 4 and 5, 6 and 7 to allow building change in a period. But now we can handle 3 hours lessons only with the constraint "two activities are grouped", using the same teacher and same class with (sub)activities of 1 and 2 hours. We have also problems with subactivities with duration 2 that FET may not put with a break inside (so we have to use the same trick as above).
@@ -3082,7 +3041,7 @@ Unfortunately, I cannot think of how to adapt the FET algorithm to multiple core
 202---------------------------------------------------------
 From Vanyo Georgiev (on forum):
 
-The last opened FET XML file is opened again at start up.
+The last opened FET XML file is opened again on startup.
 
 (Vanyo Georgiev provided the necessary code changes to do this.)
 
@@ -3092,7 +3051,7 @@ From Vanyo Georgiev (on forum):
 One more place to check for a language .qm file - the work path.
 
 (Vanyo Georgiev provided the necessary code changes to do this:
-	translation_loaded=translator.load("fet_"+FET_LANGUAGE, QDir::currentPath());
+translation_loaded=translator.load("fet_"+FET_LANGUAGE, QDir::currentPath());
 in fet.cpp.)
 
 This change makes possible by setting the Working directory of the exe file in QtCreator to test the current translation without copying the .qm file to another directory.
@@ -3782,71 +3741,14 @@ From mercurialuser (on forum):
 
 I'd just like to report some thing that may give a little speedup to the code and to avoid duplicates.
 
-For example in ::generate several matrixes are reset first and then assigned. The exact same code is used for loading teachersTimetable and newTeachersTimetable but they could be compacted in one loop. There may be probably less cache hits for accessing these 2 matrixes but I think that the multiple loops and retrieving act variable multiple times are more cpu expensive anyway.
+For example in ::generate several matrices are reset first and then assigned. The exact same code is used for loading teachersTimetable and newTeachersTimetable but they could be compacted in one loop. There may be probably less cache hits for accessing these 2 matrixes but I think that the multiple loops and retrieving act variable multiple times are more cpu expensive anyway.
 
 For assigning these matrixes and some others the code loops (there are 2 variants with different variable names):
 for(int j=0; j<gt.rules.nInternalActivities/*added_act*/; j++){
 
 The code in the loop does some checks that are replicated in several other loops but they check on data that, as far as I understand, can't change between consecutive checks. So it seems to me that they are redundant.
 
-217---------------------------------------------------------
-From Bob Hairgrove:
-
-Liviu:
-
-> > I wrote in the advice on how to translate to not translate the
-> > large 5 fields in HelpAboutForm_template (which contain difficult
-> > and large fields, subject to future changes). If you check now,
-> > your translation of the About is lost (but it is inevitable).
-
----
-
-Bob:
-
-> Wouldn't it be better to have the strings in a separate file where
-> they could be translated, then build the HTML text in a function
-> which is not routed through the tr() macros? None of the HTML stuff
-> should be in the .ts file, anyway ... IMHO.
-> 
-> Should be easy enough since (I assume) there is only one "About..."
-> form. I wouldn't necessarily translate the list of translators, but
-> the names of the languages could be translated and the HTML code built
-> outside of the tr() function as described above.
-
----
-
-Liviu:
-
-Unfortunately, I see no easy way to do this. Using a separate file for
-these is not good.
-
-Even if I used simple text instead of HTML, for each new entry I add
-all the previous translated text is lost, if I lupdate with -noobsolete.
-
-I will add this correspondence, and your next email which I just
-received, to the TODO list.
-
-I am not sure what to do.
-
-----
-
-Part 2:
-
-Bob:
-
-Of course, if you don't want the HTML in this form to be translated,
-there is a much easier way to get rid of it (see attached
-screenshot). ;)
-
-(Bob is referring to the property "translatable" of the string.)
-
----
-
-Liviu:
-
-:-) Yes, sure, I thought of this, but some people might really want to
-translate in a hypothetical situation. All strings in FET should be
-translatable, I think (I am not sure, though).
+217-----------------------DONE------------------------------
 
 218---------------------------------------------------------
 From Volker Dirr:
@@ -3861,23 +3763,7 @@ settings for year 5-6 and save settings for year 7-10. i am not sure if
 into the fet file or into a separate file. it has different advantages and
 disadvantages. but i think into a new separate file is a bit better.
 
-219---------------------------------------------------------
-From chintu and Volker Dirr (on forum):
-
-chintu: I have 80 teachers in school, in an academic year if one teacher
-leaves the school the work load of the teacher is shared with 5 teachers
-and say about 15 teacher in overall is effected. but remaining 65 teachers
-time table is still the same. If i re generate the time table all 80 teachers
-time table will be effected, i want to retain the time table same for 65
-teachers and only change for 15 how can i achieve this?
-
-Liviu: You can generate the timetable, then view the timetable for teachers,
-and select all activities for a teacher and click "Toggle lock/unlock".
-
-Volker: Maybe we should make the unlocking possible without generating the
-timetable, as in the "Advanced lock/unlock" menus.
-
-Liviu: In this case, do it also for students?
+219-------------------------DONE----------------------------
 
 220---------------------------------------------------------
 From Volker Dirr (on forum):
@@ -3939,7 +3825,7 @@ From youssouf (on forum):
 My suggestion is : activating the partition button when modifying the teacher's task.
 because :
 1. We enter the teacher's tasks ( choice - subject - Partition - period - etc.)
-2. When we want to edit the task of a teacher , we find that the division button is not enabled and we will be forced to delete that task and we retype spot again.
+2. When we want to edit the task of a teacher, we find that the division button is not enabled and we will be forced to delete that task and we retype spot again.
 
 224------------------------DONE-----------------------------
 
@@ -4141,35 +4027,7 @@ the combobox of this dialog only need a "all teachers" as first item.
 i prefer variant b, because it will save a lot of code, memory, 
 translations, ...
 
-238---------------------------------------------------------
-From Volker Dirr:
-
-The activity description must be more detailed.
-
-Example:
-If i check FET->Data->time constraint->activities->min days between 
-activities
-the right information box is not detailed enough. i need to more 
-information if i want to decide if the activity should keep 100% or if i 
-can reduce it.
-i need to know also the Duration.
-So instead of for example:
-Activity with id=9 (T:LAL, S:Ek, AT:16, St:5a)
-Activity with id=10 (T:LAL, S:Ek, AT:16, St:5a)
-
-it should display:
-Activity with id=9 (T:LAL, S:Ek, AT:16, St:5a, D:1)
-Activity with id=10 (T:LAL, S:Ek, AT:16, St:5a, D:1)
-
-because in that case i will keep maybe reduce the weight of that 
-constraint down to 0%.
-
-but is it for example this:
-Activity with id=9 (T:LAL, S:Ek, AT:16, St:5a, D:2)
-Activity with id=10 (T:LAL, S:Ek, AT:16, St:5a, D:1)
-
-then i will never reduce it under 100%, because a 3 hour activity is to 
-long.
+238-------------------------DONE----------------------------
 
 239---------------------------------------------------------
 From Volker Dirr:
@@ -4295,12 +4153,15 @@ After timetable generation
 in timetable tab (teachers, students etc.)
 I can see which activities are time or space locked ( I see LT or/and LS acronims)
 and I can toggle these constraints for one or more activities whith mouse highlighting.
-It would be very usefull If I can see the same signature in HTML files.
+It would be very useful If I can see the same signature in HTML files.
 When I updates timetable many times on website
 I would like to tell people that some their activities are already fixed time or place.
-It should be some general option in FET allowing user to decide wether show this tags or not in HTML files.
+It should be some general option in FET allowing user to decide wether show these tags or not in HTML files.
 When timetable is finished it should be easy switched off visibility of the two tags in all timetable in HTML files.
 I don't want to insert these tags manually in activity dialog because it is some cumbersome.
+
+Note Liviu Lalescu: in FET-6.4.0 and subsequent versions the activities locked in time are shown in bold
+and those locked in space are shown in italic.
 
 246---------------DONE since FET-6.8.0----------------------
 
@@ -4405,7 +4266,7 @@ I have two suggestions:
                 why not add in the folder fet-results, file that lets you know the times of empty rooms? as the file: Teachers Free Periods
                 This file will help better control the electric power by turning off the light as long as these rooms is empty.
   the second:
-                   this operation that now done manually. can we make it automatic via a software related to FET?       
+                   this operation that now done manually. can we make it automatic via a software related to FET?
 
 Volker Dirr:
 
@@ -4462,8 +4323,8 @@ Also suggested by Thaneswer Patel, on forum.
 259---------------------------------------------------------
 From Benahmed Abdelkrim (on forum):
 
-write directly into cells Activity planning, especially for the activities which are not divided(not split).
-for the activities that are divided, we can momentarily kept the weight by fefaut (95%), and later change it if we want.
+write directly into cells Activity planning, especially for the activities which are not divided (not split).
+for the activities that are divided, we can momentarily kept the weight by default (95%), and later change it if we want.
 
 260----------------------DONE-------------------------------
 
@@ -4483,7 +4344,7 @@ From Volker Dirr:
 
 add a new column in "fet -> Statistics -> Teachers Statistics"
 the column get the name "teachers qualification".
-so the user can see the the data that he entered.
+so the user can see the data that he entered.
 
 and:
 
@@ -4641,7 +4502,7 @@ From Lizio (on forum):
 
 It could be helpful to put disable and enable buttons in every windows about constraints, not only in the "All" ones.
 
-It could be helpful too to put those buttons also on windows about activities.
+DONE-->It could be helpful too to put those buttons also on windows about activities.
 
 281---------------------------------------------------------
 From Lizio (on forum):
@@ -4838,16 +4699,16 @@ This can speed up manual adjustment when a timetable is generated and, virtually
 288---------------------------------------------------------
 From Devrim Altınkurt (on forum):
 
- think, maybe you can think about only place AN ACTIVITY (not two acts / subacts) over a break.
-i know it is diffucult problem. but i know there are another schools which want you do this in Turkey.
+think, maybe you can think about only place AN ACTIVITY (not two acts / subacts) over a break.
+i know it is difficult problem. but i know there are other schools which want you do this in Turkey.
 maybe you add an option ([ X ] can place over a break) for each activity (not subacts)
 and the users can choice if the lesson place like this or not.
 
 289---------------------------------------------------------
 From Davide Cottignoli (on forum):
 
-He suggests that it is possible for the user to change from LT (locked time) to PLT (permanently locked time) and viceversa and from
-LS (locked space) to PLS (permanently locked space) and viceversa, from the timetable view dialogs, by selecting cells.
+He suggests that it is possible for the user to change from locked time to permanently locked time and viceversa, and from
+locked space to permanently locked space and viceversa, from the timetable view dialogs, by selecting cells.
 
 290---------------------------------------------------------
 From Devrim Altınkurt (on forum):
@@ -5058,16 +4919,7 @@ The code could look like:
 
 to be added at the end of the function "bool computeTeachersMinHoursDaily(QWidget* parent)" of file src/engine/generate_pre.cpp.
 
-304---------------------------------------------------------
-From abdeljalil elghazoui:
-
-(Also suggested by bachiri401 and Benahmed Abdelkrim)
-
-In the Add activity dialog, add a check box near Selected (students) list widget. The check box may be called "Activities separately"
-and, if selected, will add more activities, one for each selected students set.
-
-Liviu Lalescu: I am so sorry, but I think it is not a good thing to add in the official version. It will complicate unnecessarily the interface.
-However, this feature was added in the customized versions for Algeria and Morocco.
+304-----------------------DONE------------------------------
 
 305-----------------------DONE------------------------------
 
@@ -5224,6 +5076,8 @@ With this suggestion, we add the splits and duration 1 time for the subject.
 Exmple: Physics1 have 2 split in the week, so why I add this info in every activity for Physics1?!
 
 314---------------------------------------------------------
+DONE in FET-6.0.0 and subsequent versions:
+
 From Benahmed Abdelkrim and Volker Dirr (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=3141.0
@@ -6750,7 +6604,7 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=4367.0
 You wrote to another request concerning this topic:
 "Unfortunately, there is no Undo button, because it is too difficult to implement one now"
 
-As I see there a a few requests related to the missing UNDO function. (my own request included).
+As I see there are a few requests related to the missing UNDO function. (my own request included).
 Some users made suggestions concerning possible solutions by using powerful CVS approaches like GIT or Mercurial.
 
 I know implementing a reasonable CVS in FET would be a tough job. So why not keeping it simple?

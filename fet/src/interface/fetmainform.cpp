@@ -5003,7 +5003,7 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	s+=tr("all time constraints and all space constraints dialogs, the inactive constraints will have a distinctive background color");
 	s+="\n";
 	s+=" -";
-	s+=tr("group activities in initial order items, the inactive items will have a distinctive background color");
+	s+=tr("group activities in the initial order items, the inactive items will have a distinctive background color");
 	s+="\n";
 	s+=" -";
 	s+=tr("the timetable view dialogs");

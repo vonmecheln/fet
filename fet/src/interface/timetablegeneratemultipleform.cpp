@@ -120,7 +120,7 @@ void TimetablingThread::startGenerating()
 	bool impossible;
 	bool timeExceeded;
 
-	//emit(timetableStarted(_nThread/*, nOverallTimetable+1*/));
+	//emit timetableStarted(_nThread/*, nOverallTimetable+1*/);
 	//semaphoreTimetableStarted[_nThread].acquire();
 
 	genMultiMatrix[_nThread].semaphorePlacedActivity.tryAcquire(); //this has effect after forcingly stopping the simulation on this thread
@@ -209,9 +209,9 @@ void TimetablingThread::startGenerating()
 		 .arg(seconds);
 	}
 	//genMultiMatrix[_nThread].myMutex.unlock();
-	//emit(resultReady(_nThread, s, ok));
+	//emit resultReady(_nThread, s, ok);
 
-	emit(timetableGenerated(_nThread, nOverallTimetable+1, s, ok));
+	emit timetableGenerated(_nThread, nOverallTimetable+1, s, ok);
 
 	semaphoreTimetableFinished[_nThread].acquire();
 	/*std::mutex mtx;
@@ -237,13 +237,13 @@ Controller::~Controller()
 
 void Controller::handleResults(int nThread, const QString& s, bool ok)
 {
-	emit(timetableGenerated(nThread, nOverallTimetable+1, s, ok));
+	emit timetableGenerated(nThread, nOverallTimetable+1, s, ok);
 	semaphoreTimetableFinished[_nThread].acquire();
 }
 
 void Controller::startOperate(int nThread)
 {
-	emit(operate(nThread));
+	emit operate(nThread);
 }*/
 
 TimetableGenerateMultipleForm::TimetableGenerateMultipleForm(QWidget* parent): QDialog(parent)

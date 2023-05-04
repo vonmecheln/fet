@@ -112,8 +112,6 @@
 #include <QBrush>
 #include <QPalette>
 
-#include <QtAlgorithms>
-
 #include <algorithm>
 //using namespace std;
 

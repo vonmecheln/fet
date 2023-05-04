@@ -4071,7 +4071,7 @@ void PlanningCommunicationSpinBox::increaseValue()
 	if(value>maxValue)
 		value=minValue;
 		
-	emit(valueChanged(value));
+	emit valueChanged(value);
 }
 
 void PlanningChanged::increasePlanningCommunicationSpinBox()

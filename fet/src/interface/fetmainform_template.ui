@@ -1878,7 +1878,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Enable group activities in initial order</string>
+    <string>Enable group activities in the initial order</string>
    </property>
   </action>
   <action name="showWarningForGroupActivitiesInInitialOrderAction">
@@ -1889,7 +1889,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Warn if using group activities in initial order</string>
+    <string>Warn if using group activities in the initial order</string>
    </property>
   </action>
   <action name="settingsShowSubgroupsInComboBoxesAction">

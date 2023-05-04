@@ -183,7 +183,7 @@ void AddGroupActivitiesInInitialOrderItemForm::addItem()
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 
-	QString s=tr("Added group activities in initial order item");
+	QString s=tr("Added group activities in the initial order item");
 	s+="\n\n";
 	s+=item->getDetailedDescription(gt.rules);
 	LongTextMessageBox::information(this, tr("FET information"), s);

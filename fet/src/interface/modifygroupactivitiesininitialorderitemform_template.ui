@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="This is the title of the dialog to modify a constraint of this type">Modify group activities in initial order item</string>
+   <string extracomment="This is the title of the dialog to modify a group activities in the initial order item">Modify group activities in the initial order item</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">

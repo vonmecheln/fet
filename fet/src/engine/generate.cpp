@@ -65,7 +65,6 @@ So at least for now FET will use QList.*/
 
 #include <Qt>
 #include <QtGlobal>
-#include <QtAlgorithms>
 
 #include <iostream>
 #include <algorithm>
@@ -6752,7 +6751,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 					myMutex.unlock();
 				}
 
-				emit(impossibleToSolve());
+				emit impossibleToSolve();
 				
 				return;
 			}
@@ -6869,7 +6868,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			}*/
 	
 			//if(semaphorePlacedActivity){
-			emit(activityPlaced(nThread, q+1));
+			emit activityPlaced(nThread, q+1);
 			if(threaded){
 				//std::mutex mtx;
 				//std::unique_lock<std::mutex> lck(mtx);
@@ -6916,7 +6915,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			/*if(threaded){
 				myMutex.unlock();
 			}*/
-			emit(activityPlaced(nThread, added_act+1));
+			emit activityPlaced(nThread, added_act+1);
 			if(threaded){
 				//std::mutex mtx;
 				//std::unique_lock<std::mutex> lck(mtx);
@@ -6968,7 +6967,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	}
 #endif
 
-	emit(simulationFinished());
+	emit simulationFinished();
 	
 	//if(threaded)
 	//	finishedSemaphore.release();
@@ -29265,7 +29264,7 @@ skip_here_if_already_allocated_in_time:
 				time(&crt_time);
 				searchTime=int(difftime(crt_time, starting_time));
 
-				emit(activityPlaced(nThread, currentlyNPlacedActivities));
+				emit activityPlaced(nThread, currentlyNPlacedActivities);
 				if(isThreaded){
 					myMutex.unlock();
 					semaphorePlacedActivity.acquire();
@@ -29453,8 +29452,6 @@ skip_here_if_already_allocated_in_time:
 
 			foundGoodSwap=false;
 			
-			ok=false;
-
 			assert(conflActivities[newtime].count()>0);
 			ok=true;
 			

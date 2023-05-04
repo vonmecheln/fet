@@ -438,7 +438,7 @@ void ChooseFieldsDialog::chooseFieldsDialogClose(){
 
 LastWarningsDialog::LastWarningsDialog(QWidget *parent): QDialog(parent)
 {
-	this->setWindowTitle(tr("FET - import %1 comment", "The comment of the importing of the category named %1").arg(importThing));
+	this->setWindowTitle(tr("FET - import %1 comments", "The comments of the importing of the category named %1").arg(importThing));
 	QVBoxLayout* lastWarningsMainLayout=new QVBoxLayout(this);
 
 	QPlainTextEdit* lastWarningsText=new QPlainTextEdit();
@@ -476,7 +476,7 @@ LastWarningsDialog::~LastWarningsDialog()
 int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	assert(gt.rules.initialized);
 	
-	newParent=((QDialog*)parent);
+	newParent=(QDialog*)parent;
 	
 	QString settingsName;
 
@@ -1253,7 +1253,7 @@ int Import::readFields(QWidget* parent){
 }
 
 int Import::showFieldsAndWarnings(QWidget* parent, QDialog* &newParent){
-	newParent=((QDialog*)parent);
+	newParent=(QDialog*)parent;
 
 	int ok=true;
 

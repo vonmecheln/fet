@@ -72,7 +72,7 @@ bool ConstraintStudentsActivityTagMaxHoursDailyRealDaysForm::filterOk(TimeConstr
 {
 	if(ctr->type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS){
 		ConstraintStudentsActivityTagMaxHoursDailyRealDays* c=(ConstraintStudentsActivityTagMaxHoursDailyRealDays*) ctr;
-		return (c->activityTagName==activityTagsComboBox->currentText() || activityTagsComboBox->currentText()=="");
+		return c->activityTagName==activityTagsComboBox->currentText() || activityTagsComboBox->currentText()=="";
 	}
 	else
 		return false;
