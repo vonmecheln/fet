@@ -200,6 +200,8 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 				for(int ai : qAsConst(cl))
 					lst.append(QString::number(ai));
 				s+=tr("Number of activities: %1, activities ids: %2.").arg(cl.count()).arg(lst.join(", "));
+				if(i<nActs-1)
+					s+="\n";
 			}
 		}
 		

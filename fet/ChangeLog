@@ -2651,10 +2651,16 @@ Versions 6.9.0 - 6.9.v
 - Version 6.9.0
 	- Updated to Qt 6.5.0.
 	- Added two batch files for Windows, making it possible to start the FET interface in the Fusion or Windows styles (suggested by Volker Dirr).
-	Unlike the standard Qt style, these styles respect the dark mode on the Windows operating system, if the user selected it.
+	Unlike the standard Qt style, these styles respect the dark mode on the Windows operating system, if the user selected it (starting with
+	Qt version 6.5.0).
 	- Improvement: if there are present 'group activities in the initial order' items in the data file, but all of them are inactive,
 	there will not be issued a warning regarding this advanced feature at the start of the generation of the timetable.
 	- Improved the dialog of 'group activities in the initial order' items.
 	- Code cleanup (suggested by Volker Dirr, found using the function 'Analyze > Clang-Tidy and Clazy' of Qt Creator).
+	- Updated the Italian translation, by Andrea Primiani.
+	- Updated the Greek translation, by Vangelis Karafillidis.
+- Version 6.9.1
+	- Updated to Qt 6.5.1.
+	- Corrected a few English fields, by Vangelis Karafillidis.
 	- Updated the Italian translation, by Andrea Primiani.
 	- Updated the Greek translation, by Vangelis Karafillidis.

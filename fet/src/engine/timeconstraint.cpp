@@ -40689,7 +40689,7 @@ QString ConstraintTeacherMaxZeroGapsPerAfternoon::getDetailedDescription(Rules& 
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint"); s+="\n";
-	s+=tr("A teacher must respect a zero number of gaps per afternoon"); s+="\n";
+	s+=tr("A teacher must respect a number of zero gaps per afternoon"); s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 	s+=tr("Teacher=%1").arg(this->teacherName); s+="\n";
@@ -40888,7 +40888,7 @@ QString ConstraintTeachersMaxZeroGapsPerAfternoon::getDetailedDescription(Rules&
 	Q_UNUSED(r);
 
 	QString s=tr("Time constraint"); s+="\n";
-	s+=tr("All teachers must respect a zero number of gaps per afternoon"); s+="\n";
+	s+=tr("All teachers must respect a number of zero gaps per afternoon"); s+="\n";
 	s+=tr("(breaks and teacher not available not counted)");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 
@@ -51144,7 +51144,7 @@ bool ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3::computeInterna
 	
 	if(ss==nullptr){
 		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET warning"),
-		 tr("Constraint students set max two activity tags per day from N1, N2, N3 is wrong because it refers to nonexistent students set."
+		 tr("Constraint students set max two activity tags per real day from N1, N2, N3 is wrong because it refers to nonexistent students set."
 		 " Please correct it (removing it might be a solution). Please report potential bug. Constraint is:\n%1").arg(this->getDetailedDescription(r)));
 		
 		return false;

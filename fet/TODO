@@ -10,6 +10,10 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=4519.0
 - Default 100% or saving the value of min days between activities constraints when adding a split activity (suggested by Mohamed Ait Ichou).
 
 - Another suggestion, is it possible to combine morning and evening periods during viewing. That is, it is not divided between morning and evening periods (suggested by Mohamed Ait Ichou).
+Also suggested by danghoan, here: https://lalescu.ro/liviu/fet/forum/index.php?topic=5550.0
+(Is it possible to design the teacher and class morning-afternoon timetable view in the following format for easy viewing? If possible, add the HTML output as well.
+Liviu Lalescu: "The following format" is suggested by two pictures, with each morning followed vertically by the corresponding afternoon, and the number of visual days
+per week being the number of real days per week.)
 
 - Drag and drop manual timetabling in the time horizontal view timetables (suggested by Abdeljalil Elghazoui).
 
@@ -6969,7 +6973,7 @@ not available in the same slot, then also the teacher is not available in that s
 a lot of constraints students set not available.)
 
 415---------------------------------------------------------
-From henriquebelo (on forum):
+From Henrique Belo (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=4568.0
 
@@ -8294,3 +8298,39 @@ From castonepatha:
 For his institution, he needed the students to have their onsite activities on maximum two consecutive days. The onsite activities are specified by some activity tags.
 He has many students sets. The solution would be to add many constraints of type max 1 days between activities, but it is difficult and error-prone to add them manually.
 A custom solution was done for him, but he suggests implementing this customization in the official FET.
+
+497---------------------------------------------------------
+From CarolStott (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5547.0
+
+Is there an option for putting custom colors for subjects for students, years for classes, etc.? If not, may I suggest this as a feature?
+
+Liviu Lalescu:
+
+Could you please clarify a bit your suggestion? Do you mean "colors for subjects, students, rooms"? Or something else?
+
+In the HTML results, if you generate with level 7 (colors), there is a CSS file. I looked over it and the first short list of colors is for subjects. This will
+appear in the students' timetable. I admit it is difficult to change manually those RGB values. Then follows a longer list of colors for (subject+students).
+This is unfortunately even more difficult to change, being longer. It will appear in the teachers' timetables.
+
+CarolStott:
+
+My suggestion is for colors for subjects (for the ease of students) and students (for the ease of teachers), and to be able to change this directly in the UI
+(using HEX/RGB/CMYK codes, etc), rather than through the CSS/HTML files.
+
+498---------------------------------------------------------
+From Henrique Belo (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5552.0
+
+We are currently working on ending the school year and arranging all student timetables to ensure that all classes finish on time.
+
+To achieve this, we replicate one timetable for 6 or 7 weeks to determine the number of classes of each subject required to complete the total number of classes.
+
+I have noticed that having a button to deactivate an activity in the timetable view, just like the one that currently exists in the activities section,
+would make it much easier to manage timetables, we can manage this by see the activitie ID and going to the Data-> activities and Deactivate, but in the
+Timetable view is better and fast.
+
+However, it should be a note saying that deactivating an activity could have certain limitations that might prevent the timetable from being generated correctly
+because some related constraints.
