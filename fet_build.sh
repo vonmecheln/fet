@@ -8,5 +8,6 @@ rm fet* -rf
 qmake ../fet/fet.pro
 make -j 8
 
+cd ..
 # cp ../fet/fet/translations /usr/share/fet/ -r
 cp ../fet/fet/translations build/ -r
