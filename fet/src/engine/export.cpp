@@ -1600,7 +1600,7 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString& textquote,
 #endif
 				}
 			}
-		}	
+		}
 		lastWarnings+=Export::tr("%1 scheduled activities exported.").arg(exportedActivities)+"\n";
 	} else {
 		lastWarnings+=Export::tr("0 scheduled activities exported, because no timetable was generated.")+"\n";

@@ -1768,7 +1768,7 @@ This can also allow a "School's name field" as:
 
 "Faculty of FET: Department of FET"
 
-Liviu's note: I think that kdrosos refers to the Greek FET. In the English FET, the string is "Institution name".
+Liviu Lalescu's note: I think that kdrosos refers to the Greek FET. In the English FET, the string is "Institution name".
 
 114-------DONE since FET-5.40.0-(20 September 2019)--------
 
@@ -8334,3 +8334,13 @@ Timetable view is better and fast.
 
 However, it should be a note saying that deactivating an activity could have certain limitations that might prevent the timetable from being generated correctly
 because some related constraints.
+
+499---------------------------------------------------------
+From victorcapel (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5561.0
+
+Liviu Lalescu's words:
+
+Add the constraints teachers/students min gaps between building changes per real day and/or
+the constraints teachers/students min gaps between ordered pair of activity tags per real day.

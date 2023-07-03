@@ -67,6 +67,7 @@ void GetModeForNewFileForm::help()
 	s+=tr("Mode: mornings-afternoons. This mode assumes that the number of FET days is the double of the real number of days per week, such that the first FET day"
 	 " is the morning of the first real day, the second FET day is the afternoon of the first real day, the third FET day is the morning of the second real day,"
 	 " and so on. This mode was developed with suggestions from the users of FET from Morocco and Algeria. It may be used in other countries as well.");
+	s+="\n\n";
 	s+=tr("Mode: block-planning. This mode assigns activities with a subject and students to FET hours (real-life time slots, day and hour) and to FET days"
 	 " (real-life teachers). Be careful, the basic time and space constraints are much stronger, and each students set may have a single occupied column from"
 	 " all the columns of a row.");

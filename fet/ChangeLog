@@ -20,7 +20,7 @@ Versions 2.0 - 2.6 - Liviu Lalescu
 Versions 2.7.0 - 2.7.8 - Liviu Lalescu
 - Version 2.7.0 - added CHRActivitiesNotSameDay;
 	- added split activities (for high-schools);
-	- changed numbering of the versions (Carsten's suggestion).
+	- changed numbering of the versions (Carsten Niehaus's suggestion).
 - Version 2.7.1 - added CHRTeachersNoMoreThanXHoursContinuously.
 - Version 2.7.2 - implemented menu item Timetable/Show(teachers) (shows the the timetable for a certain teacher).
 - Version 2.7.3 - user can change the number of hours and days;
@@ -2664,3 +2664,7 @@ Versions 6.9.0 - 6.9.v
 	- Corrected a few English fields, by Vangelis Karafillidis.
 	- Updated the Italian translation, by Andrea Primiani.
 	- Updated the Greek translation, by Vangelis Karafillidis.
+- Version 6.9.2
+	- Minor improvements in the add/modify constraint min half days between activities dialogs, when using the Mornings-Afternoons mode
+	(suggested by Vũ Ngọc Thành).
+	- Updated the Russian translation, by Alexey Chernous.

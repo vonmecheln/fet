@@ -27839,7 +27839,7 @@ impossibleteachersactivitytagminhoursdaily:
 			nConflActivities[newtime]=MAX_ACTIVITIES;
 			continue;
 		}
-				
+		
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		//allowed from teachers min gaps between ordered pair of activity tags

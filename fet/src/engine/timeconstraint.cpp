@@ -192,7 +192,6 @@ QString getActivityDetailedDescription(Rules& r, int id)
 	}
 
 	return s;
-
 }
 
 void populateInternalSubgroupsList(const Rules& r, const StudentsSet* ss, QList<int>& iSubgroupsList){

@@ -180,7 +180,7 @@
      <item>
       <widget class="QCheckBox" name="consecutiveIfSameDayCheckBox">
        <property name="text">
-        <string comment="Keep translation short. Check how the dialog looks (dialog of add constraint min half days between activities)">If two activities are on the same day,
+        <string comment="Keep translation short. Check how the dialog looks (dialog of add constraint min half days between activities)">If two activities are on the same half day,
 make them consecutive</string>
        </property>
        <property name="checked">

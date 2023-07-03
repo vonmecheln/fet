@@ -2440,7 +2440,7 @@ bool Rules::removeYear(const QString& yearName/*, bool removeAlsoThisYear*/)
 	
 		delete studentsSet;
 	}
-		
+	
 	if(toBeRemoved.count()>0)
 		updateConstraintsAfterRemoval();
 	
@@ -3372,7 +3372,7 @@ bool Rules::purgeGroup(const QString& groupName)
 	
 		delete studentsSet;
 	}
-		
+	
 	if(toBeRemoved.count()>0)
 		updateConstraintsAfterRemoval();
 	
@@ -3534,7 +3534,7 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 	
 		delete studentsSet;
 	}
-		
+	
 	if(toBeRemoved.count()>0)
 		updateConstraintsAfterRemoval();
 	
