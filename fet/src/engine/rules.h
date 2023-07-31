@@ -579,14 +579,34 @@ public:
 		const QStringList& _studentsNames,
 		int _nSplits,
 		int _totalDuration,
-		QList<int> _durations,
-		QList<bool> _active,
+		const QList<int>& _durations,
+		const QList<bool>& _active,
 		int _minDayDistance,
 		double _weightPercentage,
 		bool _consecutiveIfSameDay,
 		bool _computeNTotalStudents,
 		int _nTotalStudents,
 		int _computedNumberOfStudents,
+		bool _halfDays=false);
+
+	bool addSplitActivityFastWithComponents(
+		QWidget* parent,
+		int _firstActivityId,
+		int _activityGroupId,
+		const QList<QStringList>& _teachersNames,
+		const QList<QString>& _subjectName,
+		const QList<QStringList>& _activityTagsNames,
+		const QList<QStringList>& _studentsNames,
+		int _nSplits,
+		int _totalDuration,
+		const QList<int>& _durations,
+		const QList<bool>& _active,
+		int _minDayDistance,
+		double _weightPercentage,
+		bool _consecutiveIfSameDay,
+		bool _computeNTotalStudents,
+		int _nTotalStudents,
+		const QList<int>& _computedNumberOfStudents,
 		bool _halfDays=false);
 
 	/**
@@ -618,8 +638,8 @@ public:
 		const QStringList& _studentsNames,
 	 	int _nSplits,
 		int _totalDuration,
-		QList<int> _durations,
-		QList<bool> _active,
+		const QList<int>& _durations,
+		const QList<bool>& _active,
 		bool _computeNTotalStudents,
 		int _nTotalStudents);
 
@@ -725,8 +745,8 @@ public:
 	*/
 	bool removeSpaceConstraint(SpaceConstraint* ctr);
 	
-	bool removeTimeConstraints(QList<TimeConstraint*> _tcl);
-	bool removeSpaceConstraints(QList<SpaceConstraint*> _scl);
+	bool removeTimeConstraints(const QList<TimeConstraint*>& _tcl);
+	bool removeSpaceConstraints(const QList<SpaceConstraint*>& _scl);
 
 	int xmlReaderNumberOfUnrecognizedFields;
 

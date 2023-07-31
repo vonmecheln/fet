@@ -8344,3 +8344,320 @@ Liviu Lalescu's words:
 
 Add the constraints teachers/students min gaps between building changes per real day and/or
 the constraints teachers/students min gaps between ordered pair of activity tags per real day.
+
+500---------------------------------------------------------
+From Neury Nunes Cardoso:
+
+On the teacher's schedule grid visualization screen, could there be a
+function in which it was possible to mark activities to be grouped? It
+would be like this, the user would mark the activities with CTRL+Click
+and then have access to a button to insert the group of activities that
+would always be together (2 or 3 activities that are already existing
+functions).
+
+Volker Dirr:
+>>>> hmm... I fear i don't understand 2 parts of your mail (since i  
+>> don't  
+>>>> know your dataset and constraints). That is why i can't give a  
+> good  
+>>>> feedback.
+>>>> 
+>>>> So your "grouping" is "only" needed to have a rotation that look a  
+>>> bit  
+>>>> 
+>>>> similar to the old timetable?
+>>>> 
+>>>> Why are you rotating schedules?
+
+Neury Nunes Cardoso:
+>>>> I believe that the way of organizing the schedules, between my
+>>>> reality here and yours there or in other places is very different  
+>>> but  
+>>>> I will clarify a little more how I use the FET.
+>>>> My base of the FET file is formed only by the registration of
+>>>> professors and their availability for 1 semester, in addition we  
+>>> feed  
+>>>> the FET with the set of disciplines of our courses, there are more
+>>>> than 20 undergraduate courses. These courses use specific teachers  
+>>> and  
+>>>> common teachers because our courses are organized in cores, such  
+>> as:  
+>>>> Technology
+>>>> Management
+>>>> Health
+>>>> Social Sciences
+>>>> Art and Creativity
+>>>> And others ...
+>>>> The structure of the students is organized in Units / Shifts /  
+> Days  
+>>> of  
+>>>> the week and when we rotate the schedules we do this for all  
+>> courses  
+>>>> of a given semester, for example 2023.2 (second semester of 2023).  
+>>> So,  
+>>>> there is a need to organize teachers' schedules to optimize their
+>>>> occupation, since a large part of them also work in other  
+>>> educational  
+>>>> institutions. It is a complex system that may not be a reality in  
+>>> all  
+>>>> locations. FET gives me this flexibility because it is a “blank
+>>>> canvas” where we can create structures that adapt to different
+>>>> realities.
+
+Volker Dirr
+>>> I am not working at a university. Just at school (pupils age  
+> 10-16).  
+>>> And
+>>> even schools here have a lot of different ways how to do it. I  
+>> always  
+>>> just try to understand it and try to think how to do it better. Of
+>>> course i can't always find a better solution, but i already found  
+> it  
+>>> several times.
+>>> 
+>>> I read your post, but i must admit i still can't see why "grouping"
+>>> later that ways is useful. I understand why grouping before
+>>> calculating
+>>> might be useful.
+>>> 
+>>> In normal case I care about "teachers' schedules to optimize their
+>>> occupation" by using not available times, max gaps per day and  
+> week,  
+>>> max
+>>> days per week, max hours per day, min hours per day, min days  
+>> between,  
+>>> 
+>>> max room changes, spread the activities well, ... but not grouping
+>>> something that was randomly grouped only. It sounds for me like a  
+>> min  
+>>> gap will affect the same much better then grouping.
+>>> I must admit that i still don't understand the reason.
+>>> 
+>>> I will forward your suggestion to Liviu, but i guess he will max  
+>> write  
+>>> 
+>>> on the TODO list.
+
+Neury Nunes Cardoso:
+>>> Yes,
+>>> 
+>>>  We really live in different realities, neither better nor worse,  
+>> just  
+>>> different, lol
+>>> 
+>>>  Maybe I can explain it better like this:
+>>> 
+>>>  Looking at this screen, imagine that I want to keep activities 169
+>>> and 133 from Thursday / morning always together in any order. In  
+>> this  
+>>> same splint I would just mark the activities and then access a new
+>>> button in the upper right corner of the interface that would
+>>> automatically take me to the routine performed by the menu option
+>>> highlighted below:
+
+Volker Dirr:
+
+>> I understood your request.
+>> I wrote it to Liviu. He added it into the TODO list.
+>> I won't code it, because...
+>> a) there are a lot of other constraints that might be added like  
+> this  
+>> (so if we add it, then it should be done similar for the other
+>> constraints also)
+>> b) i can't see an advantage. What is the advantage? In my opinion it
+>> is
+>> a disadvanatge, since guy will try to add a lot of constraints like
+>> that, making the timetable maybe even impossible, but for what
+>> advanatge? The only advanatge is that the teacher has "randomly"  
+> again  
+>> 
+>> the same activities grouped?
+>> 
+>> Maybe Liviu or an other guy will code it.
+
+Neury Nunes Cardoso:
+
+>> I really appreciate your attention in understanding the suggestion  
+> and  
+>> sharing it with others, but the advantage for me is that, due to the
+>> way I use the tool, I don't know in advance which are the best
+>> groupings for a given teacher, in fact I put the activities without
+>> consider no grouping for teachers, only for students, as they can be
+>> from different groups. Yes, the tool suggests random groups of
+>> activities, but they are not always the best to optimize the  
+> teacher's  
+>> use, so my proposal would be, starting from the grouping created by
+>> the tool, to refine this grouping by visually analyzing the  
+> teacher's  
+>> distribution and using the tool to ensure an optimal grouping to  
+> serve  
+>> students and teachers, remembering that teachers are not exclusive  
+> to  
+>> the school, being able to work in several different schools  
+> throughout  
+>> the week.
+>> But I thank you again for the time you dedicated to listening to me
+>> and understanding the suggestion even if it doesn't seem useful, and  
+> I  
+>> reinforce how much I like the tool !!
+
+Volker Dirr:
+
+> FET can't know what "good" grouping is, since it doesn't know how to
+> detect good groups.
+> 
+> So you know rules how to group. Do you mainly detect them by knowing
+> "good" activities that should be grouped or by detecting "bad"
+> activities that shouldn't be grouped?
+> 
+> I just ask, because there might be much better variants to improve
+> your
+> timetables. Maybe it is a good idea to add diffrent activity tags for
+> the actvities and then you in need a new constraint like "activities
+> with the same activity tag should be grouped for teachers" or the
+> oppistite: "activities with different activities should never be
+> grouped
+> for teachers"?
+
+Neury Nunes Cardoso:
+> I think I understood what you wanted to say.....
+> 
+> So I can create some tags with specific names to define these groups
+> before running the times, so the FET will already consider these
+> groups "tags" in this process.
+> 
+>  I think the concept is good and I can try to do it this way in the
+> next works. What I do is exactly the opposite, because when I load the
+> activities to the FET I load them in full from several courses and as
+> a single teacher can be used for more than one course, his activities
+> are spread out in the structure of the activities, perhaps a good idea
+> is load them ordered by professors and not by courses. However, the
+> method I use of loading without worrying about the groups and then
+> visually identifying the best groups in the teachers' grid allows me a
+> better analysis. The inconvenience is that I have to go back to the
+> main menu to access the routines for defining groups of 2 or 3
+> activities grouped together on the same day.
+> 
+
+Volker Dirr:
+
+Currently it is not possible to do it that way, since there is no such 
+constraint yet.
+But if you think that the concept is good, i will suggest Liviu to add 
+those concepts.
+The disadvantage is, that it won't work if you already use activity tags 
+for other stuff.
+Also a disadvanatge is, that it is a bit more more if you do it the 
+first time.
+But in my opinion there are 2 big advanagtes:
+It is a more general constraint and once you added it, it will be much 
+easier to generate timetables in the next works.
+
+I can see your current disadvantage if you do it with the current FET 
+version,
+but your suggestion is too specific. If it should be added, then it must 
+be added more general.
+So it must be possible the same way for other constraints and it should 
+be also possible in the ohter views (teachers and rooms).
+
+501---------------------------------------------------------
+From wojgp (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5597.0
+
+I think the missing option is to set by one click that a splitted activity should take place in the same room.
+For example phisical education has rooms PE1, PE2. Group A has 2 hours of p.e., but first takes place in room PE1 and another in PE2. In this time group B has only one hour of p.e. and it is assigned to PE1 while it could take place in PE2. Thanks to this group A could have 2 consecutive hours in room PE1.
+Temporary perhaps it could be done by adding subactivities of the same type (2 x 1/2) as a one constraint. Unfortunately when there are a lot of splitted activities there has to be a lot of room constraints entered manualy.
+Perhaps there should be an option to set room constraint for a whole activity. Now I have to group all subactivities into constraint as on attached picture. All activities in my case are phisical education :) I don't want students to change room for consecutive activities.
+Is there any option to do it in easier way ?
+
+Liviu Lalescu:
+
+A better approach might be to use the constraints activities occupy max 1 different rooms (so even if not consecutive they have the same room).
+
+Unfortunately, there is no easy way to implement this.
+
+502---------------------------------------------------------
+From wojgp (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5598.0
+
+1. Activities dialog
+I miss the option to sort by Teacher's name, currently sorted by ID ONLY.
+
+2. Students
+Students
+In add activity I see all options except one.
+My groups are listed by Years : 1,2,3,4,5 and then each is divided:
+category 1: A, B, C, D, E
+category 2: Girls, Boys
+category 3: (1), (2) -division into languages and computer science (1 for novice and 2 for expert) :)
+
+In activities I can assign whole year like '1', '2' etc
+Certain class: like "1B" which is a group of girls and boys
+Selecting a subgroup with label "1 Girls" selects all girls from all 1st classes which is 1A, 1B, 1C, 1D, 1E classes
+Selecting a subgroup with label "1A Girls" selects all girls from 1A class only
+Selecting a subgroup with label "1 (1)" selects all students assign to (1) subgroup from all 1st classes which is 1A, 1B, 1C, 1D, 1E
+
+Unfortunately I cannot select particular subgroup 1A (1), 1B (2) etc., so instead of 1A (1) I have to select:
+1A Girls (1)
+1A Boys (1)
+and instead of 1B (2) I have to select:
+1B Girls (2)
+1B Boys (2)
+
+It would be good to allow all possible combinations and add necessary number of check boxes for displaying subgroups within a tree (cat 1, cat 2, cat 3, cat 4 ...)
+
+3. Teacher home rooms
+- Missing option to select a group of Rooms (left window) to move into "Selected" table easily and quickly.
+I have to add one by one and it is easy to miss something clicking that way :) Maybe it would be quicker to select with check boxes and then copy selections from one constraint into another (clone).
+There are activities to which I want to assign all existing rooms or rooms except specified. I have to click all constraints one by one.
+Possibly it would be more convinient to combine rooms into categories (groups).
+Example of groups:
+a) Any subject room
+b) Room for dedicated subject and any - math rooms, chemistry rooms etc., but also can handle other subjects
+c) Gym room
+
+4. List of Rooms
+Missing option to sort in alphabetical order. 'Sort' button does not sort in alphabetical order. Currently after sorting I have 1,14,15,16,17,18,19,2,20,21... etc
+
+Liviu Lalescu:
+
+About (2.): you could create additional groups, with the option Add existing subgroup, so only click on the subgroup. Then use these groups in the activities.
+
+About (4.): your suggestion is a kind of numerical ordering?
+
+wojgp:
+
+ad 2. I added a lot of groups manualy.
+The only missing thing is a possibility to sort it in "Add activity" window as on the attached screen.
+Also when generating time line I get multiple subgroups - screen shot attached. 
+
+Although I entered all divisions I had to add a lot of subgroups manualy. It would be really great to be able to add these combinations automaticaly. 
+
+I've already created all the groups manualy, but maybe someone will need this feature.
+
+503---------------------------------------------------------
+From ngoctp29121982 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5588.0
+
+Adding Nam|Binh|An|An directly from the lecture button on the FET software, so users will add more lectures with more teachers faster.
+An activity split into 4 components, each having different teachers. In FET-6.9.3 it was introduced the possibility of dealing with this
+from the export/import CSV activities, but not from the interface.
+
+504---------------------------------------------------------
+From wojgp (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5598.msg30873#msg30873
+
+We have an option to set constraints for a single teacher or all teachers. Setting single teachers is not a problem, but if we want to set for "ALL except just a few" then it could be a trouble. My idea is to add a dialogue window with check list like:
+"name of the teacher 1" "check box" "value1"
+"name of the teacher 2" "check box" "value2"
+"name of the teacher 3" "check box" "value3"
+etc.
+It would be good also to allow entering values by TAB key (not with arrows) to speed up data entry. This solution could work also for "Students"
+
+For example I have 30 teachers and I want to set time min. 3 hours daily for a teacher, but except one of them. Then I have to click 29 teachers and set each seperately.
+
+Other option could be to add "Select All" instead a drop down list in "Add teacher min hours daily" and then modify just a single teacher or remove unwanted constraint.

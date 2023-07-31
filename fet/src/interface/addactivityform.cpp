@@ -239,7 +239,7 @@ void AddActivityForm::populateSubactivitiesTabWidget(int n)
 		for(int i=oldN; i<n; i++){
 			QWidget* wd=new QWidget(subactivitiesTabWidget);
 			
-			QCheckBox* cb=new QCheckBox(tr("Active"), wd);
+			QCheckBox* cb=new QCheckBox(tr("Active", "It refers to a (sub)activity"), wd);
 			cb->setChecked(true);
 			QSpinBox* sb=new QSpinBox(wd);
 			sb->setMinimum(1);

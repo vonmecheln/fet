@@ -1036,8 +1036,28 @@ int Import::readFields(QWidget* parent){
 					if(fieldNumber[i]>=0){
 						itemOfField[i].clear();
 						itemOfField[i] = fields[fieldNumber[i]];
-						if(itemOfField[i].isEmpty()){
-							if(i==FIELD_YEAR_NAME || i==FIELD_TEACHER_NAME || i==FIELD_SUBJECT_NAME){
+						
+						if(i==FIELD_SUBJECT_NAME){
+							QStringList subjects;
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+							subjects=itemOfField[i].split("|", Qt::KeepEmptyParts);
+#else
+							subjects=itemOfField[i].split("|", QString::KeepEmptyParts);
+#endif
+							if(subjects.contains("")){
+								if(!itemOfField[i].contains("|")){
+									warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(lineNumber).arg(fieldName[i])+"\n";
+									ok=false;
+								}
+								else{
+									warnText+=Import::tr("Skipped line %1: Field '%2' contains empty components.").arg(lineNumber).arg(fieldName[i])+"\n";
+									ok=false;
+								}
+							}
+						}
+						
+						if(ok && itemOfField[i].isEmpty()){
+							if(i==FIELD_YEAR_NAME || i==FIELD_TEACHER_NAME /*|| i==FIELD_SUBJECT_NAME*/){
 								warnText+=Import::tr("Skipped line %1: Field '%2' is empty.").arg(lineNumber).arg(fieldName[i])+"\n";
 								ok=false;
 							}
@@ -1090,7 +1110,7 @@ int Import::readFields(QWidget* parent){
 											ok=false;
 										}
 									} else {
-										warnText+=Import::tr("Skipped line %1: Field '%2' contain incorrect data.").arg(lineNumber).arg(fieldName[FIELD_TOTAL_DURATION])+"\n";
+										warnText+=Import::tr("Skipped line %1: Field '%2' contains incorrect data.").arg(lineNumber).arg(fieldName[FIELD_TOTAL_DURATION])+"\n";
 										ok=false;
 									}
 								} else {
@@ -1285,9 +1305,9 @@ int Import::showFieldsAndWarnings(QWidget* parent, QDialog* &newParent){
 	tmp=fileName.size()-tmp-1;
 	QString shortFileName=fileName.right(tmp);
 	if(!warnText.isEmpty())
-		headWarningsText->setText(Import::tr("There are several problems in file\n%1").arg(shortFileName));
+		headWarningsText->setText(Import::tr("There are problems in the file\n%1").arg(shortFileName));
 	else
-		headWarningsText->setText(Import::tr("There are no problems in file\n%1").arg(shortFileName));
+		headWarningsText->setText(Import::tr("There are no problems in the file\n%1").arg(shortFileName));
 
 //TODO
 /*
@@ -2407,10 +2427,21 @@ void Import::importCSVActivities(QWidget* parent){
 		line=fieldList[FIELD_STUDENTS_SET][i];
 		students.clear();
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-		students=line.split("+", Qt::SkipEmptyParts);
+		students=line.split("|", Qt::KeepEmptyParts);
 #else
-		students=line.split("+", QString::SkipEmptyParts);
+		students=line.split("|", QString::KeepEmptyParts);
 #endif
+		
+		QStringList students2;
+		for(const QString& st : qAsConst(students)){
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			students2.append(st.split("+", Qt::SkipEmptyParts));
+#else
+			students2.append(st.split("+", QString::SkipEmptyParts));
+#endif
+		}
+		students=students2;
+		
 		if(!fieldList[FIELD_STUDENTS_SET][i].isEmpty()){
 			for(int s=0; s<students.size(); s++){
 				//StudentsSet* ss=gt.rules.searchStudentsSet(students[s]);
@@ -2421,7 +2452,7 @@ void Import::importCSVActivities(QWidget* parent){
 						"students sets. You must add (or import) years, groups and subgroups first.")+"\n"+
 						tr("It is recommended to import also teachers, rooms, buildings, subjects and activity tags before "
 						"importing activities. It is not needed, because FET will automatically do it, but you can "
-						"check the activity csv file by that.")+"\n";
+						"check the activities CSV file by that.")+"\n";
 						firstWarning=false;
 					}
 					lastWarning+=Import::tr("Students set %1 doesn't exist. You must add (or import) years, groups and subgroups first.").arg(students[s])+"\n";
@@ -2456,10 +2487,21 @@ void Import::importCSVActivities(QWidget* parent){
 		line=fieldList[FIELD_TEACHERS_SET][i];
 		teachers.clear();
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-		teachers=line.split("+", Qt::SkipEmptyParts);
+		teachers=line.split("|", Qt::KeepEmptyParts);
 #else
-		teachers=line.split("+", QString::SkipEmptyParts);
+		teachers=line.split("|", QString::KeepEmptyParts);
 #endif
+		
+		QStringList teachers2;
+		for(const QString& t : qAsConst(teachers)){
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			teachers2.append(t.split("+", Qt::SkipEmptyParts));
+#else
+			teachers2.append(t.split("+", QString::SkipEmptyParts));
+#endif
+		}
+		teachers=teachers2;
+		
 		for(int t=0; t<teachers.size(); t++){
 			bool add=true;
 			if(tmpSet.contains(teachers[t]) || teachers[t]=="")
@@ -2477,13 +2519,24 @@ void Import::importCSVActivities(QWidget* parent){
 		Subject* s=gt.rules.subjectsList[i];
 		tmpSet.insert(s->name);
 	}
+	QStringList subjects;
+	QStringList subjectsToBeAdded;
 	for(int sn=0; sn<fieldList[FIELD_SUBJECT_NAME].size(); sn++){
-		bool add=true;
-		if(tmpSet.contains(fieldList[FIELD_SUBJECT_NAME][sn]) || fieldList[FIELD_SUBJECT_NAME][sn]=="")
-			add=false;
-		if(add){
-			dataWarning<<Import::tr("%1 %2 will be added.", "For instance 'Subject math will be added', so use singular").arg(fieldName[FIELD_SUBJECT_NAME]).arg(fieldList[FIELD_SUBJECT_NAME][sn]);
-			tmpSet.insert(fieldList[FIELD_SUBJECT_NAME][sn]);
+		line=fieldList[FIELD_SUBJECT_NAME][sn];
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+		subjects=line.split("|", Qt::KeepEmptyParts);
+#else
+		subjects=line.split("|", QString::KeepEmptyParts);
+#endif
+		for(const QString& s : subjects){
+			bool add=true;
+			if(tmpSet.contains(s) || s=="")
+				add=false;
+			if(add){
+				dataWarning<<Import::tr("%1 %2 will be added.", "For instance 'Subject math will be added', so use singular").arg(s).arg(s);
+				tmpSet.insert(s);
+				subjectsToBeAdded.append(s);
+			}
 		}
 	}
 	//check if activity tag is in memory
@@ -2499,10 +2552,21 @@ void Import::importCSVActivities(QWidget* parent){
 		line=fieldList[FIELD_ACTIVITY_TAGS_SET][i];
 		activityTags.clear();
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-		activityTags=line.split("+", Qt::SkipEmptyParts);
+		activityTags=line.split("|", Qt::KeepEmptyParts);
 #else
-		activityTags=line.split("+", QString::SkipEmptyParts);
+		activityTags=line.split("|", QString::KeepEmptyParts);
 #endif
+		
+		QStringList activityTags2;
+		for(const QString& at : qAsConst(activityTags)){
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			activityTags2.append(at.split("+", Qt::SkipEmptyParts));
+#else
+			activityTags2.append(at.split("+", QString::SkipEmptyParts));
+#endif
+		}
+		activityTags=activityTags2;
+		
 		for(int at=0; at<activityTags.size(); at++){
 			bool add=true;
 			if(tmpSet.contains(activityTags[at]) || activityTags[at]=="")
@@ -2553,10 +2617,24 @@ void Import::importCSVActivities(QWidget* parent){
 	for(Subject* sbj : qAsConst(gt.rules.subjectsList))
 		tmpSet.insert(sbj->name);
 	count=0;
+	/*
 	for(int i=0; i<fieldList[FIELD_SUBJECT_NAME].size(); i++){
 		if(!fieldList[FIELD_SUBJECT_NAME][i].isEmpty() && !tmpSet.contains(fieldList[FIELD_SUBJECT_NAME][i])){
 			Subject* s=new Subject();
 			s->name=fieldList[FIELD_SUBJECT_NAME][i];
+			assert(!tmpSet.contains(s->name));
+			if(!gt.rules.addSubjectFast(s)){
+				delete s;
+				assert(0);
+			} else
+				count++;
+			tmpSet.insert(s->name);
+		}
+	}*/
+	for(const QString& sn : qAsConst(subjectsToBeAdded)){
+		if(!sn.isEmpty() && !tmpSet.contains(sn)){
+			Subject* s=new Subject();
+			s->name=sn;
 			assert(!tmpSet.contains(s->name));
 			if(!gt.rules.addSubjectFast(s)){
 				delete s;
@@ -2625,6 +2703,7 @@ void Import::importCSVActivities(QWidget* parent){
 		double weight=customFETStrToDouble(tmpStr, &ok2);
 		assert(ok2);
 
+		/*
 		QStringList teachers_namesFromFile;
 		if(!fieldList[FIELD_TEACHERS_SET][i].isEmpty())
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
@@ -2632,22 +2711,77 @@ void Import::importCSVActivities(QWidget* parent){
 #else
 			teachers_namesFromFile = fieldList[FIELD_TEACHERS_SET][i].split("+", QString::SkipEmptyParts);
 #endif
-		
-		QStringList teachers_names;
-		QSet<QString> _teachersSet;
-		for(const QString& teacherName : qAsConst(teachers_namesFromFile)){
-			//assert(teachersHash.contains(teacherName));
-			if(!_teachersSet.contains(teacherName)){
-				_teachersSet.insert(teacherName);
-				teachers_names<<teacherName;
-			} else {
-				lastWarning+=tr("Line %1: Activity contains duplicate teacher %2 - please correct that").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(teacherName)+"\n";
+		*/
+
+		QStringList tl;
+		if(!fieldList[FIELD_TEACHERS_SET][i].isEmpty())
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			tl = fieldList[FIELD_TEACHERS_SET][i].split("|", Qt::KeepEmptyParts);
+#else
+			tl = fieldList[FIELD_TEACHERS_SET][i].split("|", QString::KeepEmptyParts);
+#endif
+		QList<QStringList> tl2;
+		for(const QString& t : qAsConst(tl)){
+			if(!t.isEmpty()){
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				tl2.append(t.split("+", Qt::SkipEmptyParts));
+#else
+				tl2.append(t.split("+", QString::SkipEmptyParts));
+#endif
+			}
+			else{
+				tl2.append(QStringList());
 			}
 		}
 		
-		QString subject_name = fieldList[FIELD_SUBJECT_NAME][i];
+		if(tl2.isEmpty()){
+			QStringList t;
+			//t.append(""); critical, don't add it!!!
+			tl2.append(t);
+		}
 		
-		QStringList activity_tags_namesFromFile;
+		QList<QStringList> teachers_names;
+		for(const QStringList& tl : qAsConst(tl2)){
+			QSet<QString> _teachersSet;
+			QStringList _tl;
+			for(const QString& teacherName : qAsConst(tl)){
+				//assert(teachersHash.contains(teacherName));
+				if(!_teachersSet.contains(teacherName)){
+					_teachersSet.insert(teacherName);
+					_tl<<teacherName;
+				} else {
+					lastWarning+=tr("Line %1: Activity contains duplicate teacher %2 - please correct that").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(teacherName)+"\n";
+				}
+			}
+			teachers_names.append(_tl);
+		}
+		
+		//QString subject_name = fieldList[FIELD_SUBJECT_NAME][i];
+		
+		QStringList sl;
+		if(!fieldList[FIELD_SUBJECT_NAME][i].isEmpty())
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			sl = fieldList[FIELD_SUBJECT_NAME][i].split("|", Qt::KeepEmptyParts);
+#else
+			sl = fieldList[FIELD_SUBJECT_NAME][i].split("|", QString::KeepEmptyParts);
+#endif
+		QList<QString> sl2;
+		for(const QString& s : qAsConst(sl)){
+			if(!s.isEmpty()){
+				sl2.append(s);
+			}
+			else{
+				sl2.append(QString(""));
+			}
+		}
+		
+		if(sl2.isEmpty()){
+			sl2.append("");
+		}
+		
+		QList<QString> subjects_names=sl2;
+		
+		/*QStringList activity_tags_namesFromFile;
 		if(!fieldList[FIELD_ACTIVITY_TAGS_SET][i].isEmpty())
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 			activity_tags_namesFromFile = fieldList[FIELD_ACTIVITY_TAGS_SET][i].split("+", Qt::SkipEmptyParts);
@@ -2665,9 +2799,52 @@ void Import::importCSVActivities(QWidget* parent){
 			} else {
 				lastWarning+=tr("Line %1: Activity contains duplicate activity tag %2 - please correct that").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(activityTag)+"\n";
 			}
+		}*/
+
+		QStringList atl;
+		if(!fieldList[FIELD_ACTIVITY_TAGS_SET][i].isEmpty())
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			atl = fieldList[FIELD_ACTIVITY_TAGS_SET][i].split("|", Qt::KeepEmptyParts);
+#else
+			atl = fieldList[FIELD_ACTIVITY_TAGS_SET][i].split("|", QString::KeepEmptyParts);
+#endif
+		QList<QStringList> atl2;
+		for(const QString& at : qAsConst(atl)){
+			if(!at.isEmpty()){
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				atl2.append(at.split("+", Qt::SkipEmptyParts));
+#else
+				atl2.append(at.split("+", QString::SkipEmptyParts));
+#endif
+			}
+			else{
+				atl2.append(QStringList());
+			}
 		}
 		
-		QStringList students_namesFromFile;
+		if(atl2.isEmpty()){
+			QStringList at;
+			//at.append(""); critical, don't add it!!!
+			atl2.append(at);
+		}
+		
+		QList<QStringList> activity_tags_names;
+		for(const QStringList& atl : qAsConst(atl2)){
+			QSet<QString> _activityTagsSet;
+			QStringList _atl;
+			for(const QString& activityTagName : qAsConst(atl)){
+				//assert(teachersHash.contains(teacherName));
+				if(!_activityTagsSet.contains(activityTagName)){
+					_activityTagsSet.insert(activityTagName);
+					_atl<<activityTagName;
+				} else {
+					lastWarning+=tr("Line %1: Activity contains duplicate activity tag %2 - please correct that").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(activityTagName)+"\n";
+				}
+			}
+			activity_tags_names.append(_atl);
+		}
+		
+		/*QStringList students_namesFromFile;
 		if(!fieldList[FIELD_STUDENTS_SET][i].isEmpty())
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 			students_namesFromFile = fieldList[FIELD_STUDENTS_SET][i].split("+", Qt::SkipEmptyParts);
@@ -2687,6 +2864,56 @@ void Import::importCSVActivities(QWidget* parent){
 				lastWarning+=tr("Line %1: Activity contains duplicate students set %2 - please correct that").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(studentsSet)+"\n";
 			}
 			numberOfStudents+=studentsHash.value(studentsSet)->numberOfStudents;
+		}*/
+
+		QStringList stl;
+		if(!fieldList[FIELD_STUDENTS_SET][i].isEmpty())
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+			stl = fieldList[FIELD_STUDENTS_SET][i].split("|", Qt::KeepEmptyParts);
+#else
+			stl = fieldList[FIELD_STUDENTS_SET][i].split("|", QString::KeepEmptyParts);
+#endif
+		QList<QStringList> stl2;
+		for(const QString& st : qAsConst(stl)){
+			if(!st.isEmpty()){
+#if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
+				stl2.append(st.split("+", Qt::SkipEmptyParts));
+#else
+				stl2.append(st.split("+", QString::SkipEmptyParts));
+#endif
+			}
+			else{
+				stl2.append(QStringList());
+			}
+		}
+		
+		if(stl2.isEmpty()){
+			QStringList st;
+			//st.append(""); critical, don't add it!!!
+			stl2.append(st);
+		}
+		
+		QList<int> numberOfStudentsPerComponent;
+		QList<QStringList> students_names;
+		for(const QStringList& stl : qAsConst(stl2)){
+			int numberOfStudents=0;
+			QSet<QString> _studentsSet;
+			QStringList _stl;
+			for(const QString& studentsName : qAsConst(stl)){
+				//assert(teachersHash.contains(teacherName));
+				if(!studentsName.isEmpty())
+					assert(studentsHash.contains(studentsName));
+				if(!_studentsSet.contains(studentsName)){
+					_studentsSet.insert(studentsName);
+					_stl<<studentsName;
+				} else {
+					lastWarning+=tr("Line %1: Activity contains duplicate students set %2 - please correct that").arg(fieldList[FIELD_LINE_NUMBER][i]).arg(studentsName)+"\n";
+				}
+				if(!studentsName.isEmpty())
+					numberOfStudents+=studentsHash.value(studentsName)->numberOfStudents;
+			}
+			students_names.append(_stl);
+			numberOfStudentsPerComponent.append(numberOfStudents);
 		}
 
 		QStringList splitDurationList;
@@ -2719,8 +2946,8 @@ void Import::importCSVActivities(QWidget* parent){
 				lastWarning+=Import::tr("Activity %1 already exists. A duplicate activity is imported. Please check the dataset!").arg(activityid)+"\n";
 			}*/
 			if(duration>0){
-				bool tmp=gt.rules.addSimpleActivityFast(newParent, activityid, 0, teachers_names, subject_name, activity_tags_names,
-					students_names, duration, duration, active, true, -1, numberOfStudents);
+				bool tmp=gt.rules.addSimpleActivityFast(newParent, activityid, 0, teachers_names.at(0), subjects_names.at(0), activity_tags_names.at(0),
+					students_names.at(0), duration, duration, active, true, -1, numberOfStudentsPerComponent.at(0));
 				if(fieldNumber[FIELD_COMMENTS]!=DO_NOT_IMPORT){
 					assert(!gt.rules.activitiesList.isEmpty());
 					gt.rules.activitiesList.last()->comments=fieldList[FIELD_COMMENTS][i];
@@ -2795,10 +3022,11 @@ void Import::importCSVActivities(QWidget* parent){
 				/*QStringList activity_tag_names;
 				activity_tag_names<<activity_tag_name;*/
 				//workaround only. Please rethink. (end)
-				bool tmp=gt.rules.addSplitActivityFast(newParent, activityid, activityid,
-					teachers_names, subject_name, activity_tags_names, students_names,
+				assert(!teachers_names.isEmpty());
+				bool tmp=gt.rules.addSplitActivityFastWithComponents(newParent, activityid, activityid,
+					teachers_names, subjects_names, activity_tags_names, students_names,
 					nsplit, totalduration, durations,
-					active, minD, weight, force, true, -1, numberOfStudents, half);
+					active, minD, weight, force, true, -1, numberOfStudentsPerComponent, half);
 				if(fieldNumber[FIELD_COMMENTS]!=DO_NOT_IMPORT){
 					assert(gt.rules.activitiesList.count()>=nsplit);
 					for(int j=1; j<=nsplit; j++)

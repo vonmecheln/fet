@@ -161,6 +161,7 @@ bool Export::okToWrite(const QString& file)
 void Export::exportCSV(QWidget* parent){
 	QString fieldSeparator=",";
 	QString textquote="\"";
+	QString componentSeparator="|";
 	QString setSeparator="+";
 	bool head=true;
 	bool ok=true;
@@ -200,11 +201,11 @@ void Export::exportCSV(QWidget* parent){
 
 		QMessageBox::StandardButton msgBoxButton=QMessageBox::NoButton;
 
-		okat=exportCSVActivityTags(newParent, lastWarnings, textquote, fieldSeparator, head, setSeparator, msgBoxButton);
+		okat=exportCSVActivityTags(newParent, lastWarnings, textquote, fieldSeparator, head, componentSeparator, setSeparator, msgBoxButton);
 		okr=exportCSVRoomsAndBuildings(newParent, lastWarnings, textquote, fieldSeparator, head, msgBoxButton);
-		oks=exportCSVSubjects(newParent, lastWarnings, textquote, fieldSeparator, head, msgBoxButton);
-		okt=exportCSVTeachers(newParent, lastWarnings, textquote, fieldSeparator, head, setSeparator, msgBoxButton);
-		okst=exportCSVStudents(newParent, lastWarnings, textquote, fieldSeparator, head, setSeparator, msgBoxButton);
+		oks=exportCSVSubjects(newParent, lastWarnings, textquote, fieldSeparator, head, componentSeparator, msgBoxButton);
+		okt=exportCSVTeachers(newParent, lastWarnings, textquote, fieldSeparator, head, componentSeparator, setSeparator, msgBoxButton);
+		okst=exportCSVStudents(newParent, lastWarnings, textquote, fieldSeparator, head, componentSeparator, setSeparator, msgBoxButton);
 		okact=exportCSVActivities(newParent, lastWarnings, textquote, fieldSeparator, head, msgBoxButton);
 		okacts=exportCSVActivitiesStatistics(newParent, lastWarnings, textquote, fieldSeparator, head, msgBoxButton);
 		oktim=exportCSVTimetable(newParent, lastWarnings, textquote, fieldSeparator, head, msgBoxButton);
@@ -251,6 +252,7 @@ void Export::exportCSV(Solution* bestOrHighest, Solution* current){
 	else
 		assert(0);
 
+	QString componentSeparator="|";
 	QString setSeparator="+";
 	bool head=EXPORT_FIRST_LINE_IS_HEADING;
 	bool ok=true;
@@ -287,11 +289,11 @@ void Export::exportCSV(Solution* bestOrHighest, Solution* current){
 
 	bool okat, okr, oks, okt, okst, okact, okacts, oktim1, oktim2;
 
-	okat=exportCSVActivityTags(lastWarnings, textquote, fieldSeparator, head, setSeparator);
+	okat=exportCSVActivityTags(lastWarnings, textquote, fieldSeparator, head, componentSeparator, setSeparator);
 	okr=exportCSVRoomsAndBuildings(lastWarnings, textquote, fieldSeparator, head);
-	oks=exportCSVSubjects(lastWarnings, textquote, fieldSeparator, head);
-	okt=exportCSVTeachers(lastWarnings, textquote, fieldSeparator, head, setSeparator);
-	okst=exportCSVStudents(lastWarnings, textquote, fieldSeparator, head, setSeparator);
+	oks=exportCSVSubjects(lastWarnings, textquote, fieldSeparator, head, componentSeparator);
+	okt=exportCSVTeachers(lastWarnings, textquote, fieldSeparator, head, componentSeparator, setSeparator);
+	okst=exportCSVStudents(lastWarnings, textquote, fieldSeparator, head, componentSeparator, setSeparator);
 	okact=exportCSVActivities(lastWarnings, textquote, fieldSeparator, head);
 	okacts=exportCSVActivitiesStatistics(lastWarnings, textquote, fieldSeparator, head);
 	
@@ -360,8 +362,15 @@ bool Export::checkSetSeparator(const QString& str, const QString& setSeparator){
 	return true;
 }
 
-bool Export::isActivityNotManualyEdited(int activityIndex, bool& diffTeachers, bool& diffSubject, bool& diffActivityTags, bool& diffStudents, bool& diffCompNStud, bool& diffNStud, bool& diffActive){ //similar to ActivitiesForm::modifyActivity() by Liviu Lalescu, but added diffActive
-	diffTeachers=diffSubject=diffActivityTags=diffStudents=diffCompNStud=diffNStud=diffActive=false;
+bool Export::checkComponentSeparator(const QString& str, const QString& componentSeparator){
+	if(str.contains(componentSeparator))
+		return false;
+	return true;
+}
+
+bool Export::isActivityNotManuallyEditedPart1(int activityIndex, bool& diffTeachers, bool& diffSubject, bool& diffActivityTags, bool& diffStudents,
+		QString& tl, QString& sl, QString& atl, QString& stl){ //similar to ActivitiesForm::modifyActivity() by Liviu Lalescu, but added diffActive
+	diffTeachers=diffSubject=diffActivityTags=diffStudents=false;
 
 	assert(activityIndex>=0);
 	assert(activityIndex<gt.rules.activitiesList.size());
@@ -374,14 +383,9 @@ bool Export::isActivityNotManualyEdited(int activityIndex, bool& diffTeachers, b
 	QStringList activityTags=act->activityTagsNames;
 	QStringList students=act->studentsNames;
 	
-	int nTotalStudents=act->nTotalStudents;
-	
-	bool computeNTotalStudents=act->computeNTotalStudents;
-	bool active=act->active;
-
 	if(act->isSplit()){
-		for(int i=activityIndex; i<gt.rules.activitiesList.size(); i++){	//possible speed improvement: not i=0. do i=act->activityGroupId
-			Activity* act2=gt.rules.activitiesList[i];			//possible speed improvement: if(act2->activityGroupId changed) break;
+		for(int i=activityIndex; i<gt.rules.activitiesList.size(); i++){	//Probably old comment: possible speed improvement: not i=0. do i=act->activityGroupId
+			Activity* act2=gt.rules.activitiesList[i];			//Probably old comment: possible speed improvement: if(act2->activityGroupId changed) break;
 			if(act2->activityGroupId!=0 && act2->activityGroupId==act->activityGroupId){
 				if(teachers!=act2->teachersNames){
 					//return false;
@@ -399,6 +403,218 @@ bool Export::isActivityNotManualyEdited(int activityIndex, bool& diffTeachers, b
 					diffStudents=true;
 					//return false;
 				}
+			}
+			else
+				i=gt.rules.activitiesList.size();
+		}
+	}
+	/*
+	if(!diffTeachers && !diffSubject && !diffActivityTags && !diffStudents){
+		//students
+		stl="";
+		for(int s=0; s<act->studentsNames.size(); s++){
+			if(s!=0)
+				stl+="+";
+			stl+=protectCSV(act->studentsNames[s]);
+		}
+		
+		//subject
+		sl="";
+		sl+=protectCSV(act->subjectName);
+		
+		//teachers
+		tl="";
+		for(int t=0; t<act->teachersNames.size(); t++){
+			if(t!=0)
+				tl+="+";
+			tl+=protectCSV(act->teachersNames[t]);
+		}
+		
+		//activity tags
+		atl="";
+		for(int s=0; s<act->activityTagsNames.size(); s++){
+			if(s!=0)
+				atl+="+";
+			atl+=protectCSV(act->activityTagsNames[s]);
+		}
+		
+		return true;
+	}
+	else{
+		stl="";
+		sl="";
+		tl="";
+		atl="";
+		for(int i=activityIndex; i<gt.rules.activitiesList.size(); i++){	//Probably old comment: possible speed improvement: not i=0. do i=act->activityGroupId
+			Activity* act2=gt.rules.activitiesList[i];			//Probably old comment: possible speed improvement: if(act2->activityGroupId changed) break;
+			if(act2->activityGroupId!=0 && act2->activityGroupId==act->activityGroupId){
+				if(i!=activityIndex){
+					stl+="|";
+					sl+="|";
+					tl+="|";
+					atl+="|";
+				}
+				
+				//students
+				for(int s=0; s<act2->studentsNames.size(); s++){
+					if(s!=0)
+						stl+="+";
+					stl+=protectCSV(act2->studentsNames[s]);
+				}
+				
+				//subject
+				sl+=protectCSV(act2->subjectName);
+				
+				//teachers
+				for(int t=0; t<act2->teachersNames.size(); t++){
+					if(t!=0)
+						tl+="+";
+					tl+=protectCSV(act2->teachersNames[t]);
+				}
+				
+				//activity tags
+				for(int s=0; s<act2->activityTagsNames.size(); s++){
+					if(s!=0)
+						atl+="+";
+					atl+=protectCSV(act2->activityTagsNames[s]);
+				}
+			}
+			else
+				i=gt.rules.activitiesList.size();
+		}
+		
+		return false;
+	}
+	*/
+	
+	//students
+	stl="";
+	if(!diffStudents){
+		for(int s=0; s<act->studentsNames.size(); s++){
+			if(s!=0)
+				stl+="+";
+			stl+=protectCSV(act->studentsNames[s]);
+		}
+	}
+	else{
+		for(int i=activityIndex; i<gt.rules.activitiesList.size(); i++){	//Probably old comment: possible speed improvement: not i=0. do i=act->activityGroupId
+			Activity* act2=gt.rules.activitiesList[i];			//Probably old comment: possible speed improvement: if(act2->activityGroupId changed) break;
+			if(act2->activityGroupId!=0 && act2->activityGroupId==act->activityGroupId){
+				if(i!=activityIndex){
+					stl+="|";
+				}
+				
+				for(int s=0; s<act2->studentsNames.size(); s++){
+					if(s!=0)
+						stl+="+";
+					stl+=protectCSV(act2->studentsNames[s]);
+				}
+			}
+			else
+				i=gt.rules.activitiesList.size();
+		}
+	}
+	
+	//subject
+	sl="";
+	if(!diffSubject){
+		sl+=protectCSV(act->subjectName);
+	}
+	else{
+		for(int i=activityIndex; i<gt.rules.activitiesList.size(); i++){	//Probably old comment: possible speed improvement: not i=0. do i=act->activityGroupId
+			Activity* act2=gt.rules.activitiesList[i];			//Probably old comment: possible speed improvement: if(act2->activityGroupId changed) break;
+			if(act2->activityGroupId!=0 && act2->activityGroupId==act->activityGroupId){
+				if(i!=activityIndex){
+					sl+="|";
+				}
+				
+				sl+=protectCSV(act2->subjectName);
+			}
+			else
+				i=gt.rules.activitiesList.size();
+		}
+	}
+	
+	//teachers
+	tl="";
+	if(!diffTeachers){
+		for(int t=0; t<act->teachersNames.size(); t++){
+			if(t!=0)
+				tl+="+";
+			tl+=protectCSV(act->teachersNames[t]);
+		}
+	}
+	else{
+		for(int i=activityIndex; i<gt.rules.activitiesList.size(); i++){	//Probably old comment: possible speed improvement: not i=0. do i=act->activityGroupId
+			Activity* act2=gt.rules.activitiesList[i];			//Probably old comment: possible speed improvement: if(act2->activityGroupId changed) break;
+			if(act2->activityGroupId!=0 && act2->activityGroupId==act->activityGroupId){
+				if(i!=activityIndex){
+					tl+="|";
+				}
+				
+				for(int t=0; t<act2->teachersNames.size(); t++){
+					if(t!=0)
+						tl+="+";
+					tl+=protectCSV(act2->teachersNames[t]);
+				}
+			}
+			else
+				i=gt.rules.activitiesList.size();
+		}
+	}
+	
+		//activity tags
+	atl="";
+	if(!diffActivityTags){
+		for(int s=0; s<act->activityTagsNames.size(); s++){
+			if(s!=0)
+				atl+="+";
+			atl+=protectCSV(act->activityTagsNames[s]);
+		}
+	}
+	else{
+		for(int i=activityIndex; i<gt.rules.activitiesList.size(); i++){	//Probably old comment: possible speed improvement: not i=0. do i=act->activityGroupId
+			Activity* act2=gt.rules.activitiesList[i];			//Probably old comment: possible speed improvement: if(act2->activityGroupId changed) break;
+			if(act2->activityGroupId!=0 && act2->activityGroupId==act->activityGroupId){
+				if(i!=activityIndex){
+					atl+="|";
+				}
+				
+				for(int s=0; s<act2->activityTagsNames.size(); s++){
+					if(s!=0)
+						atl+="+";
+					atl+=protectCSV(act2->activityTagsNames[s]);
+				}
+			}
+			else
+				i=gt.rules.activitiesList.size();
+		}
+	}
+	
+	if(!diffTeachers && !diffSubject && !diffActivityTags && !diffStudents)
+		return true;
+	else
+		return false;
+}
+
+bool Export::isActivityNotManuallyEditedPart2(int activityIndex, bool& diffCompNStud, bool& diffNStud, bool& diffActive){ //similar to ActivitiesForm::modifyActivity() by Liviu Lalescu, but added diffActive
+	diffCompNStud=diffNStud=diffActive=false;
+
+	assert(activityIndex>=0);
+	assert(activityIndex<gt.rules.activitiesList.size());
+
+	Activity* act=gt.rules.activitiesList[activityIndex];
+	assert(act!=nullptr);
+	
+	int nTotalStudents=act->nTotalStudents;
+	
+	bool computeNTotalStudents=act->computeNTotalStudents;
+	bool active=act->active;
+
+	if(act->isSplit()){
+		for(int i=activityIndex; i<gt.rules.activitiesList.size(); i++){	//Probably old comment: possible speed improvement: not i=0. do i=act->activityGroupId
+			Activity* act2=gt.rules.activitiesList[i];			//Probably old comment: possible speed improvement: if(act2->activityGroupId changed) break;
+			if(act2->activityGroupId!=0 && act2->activityGroupId==act->activityGroupId){
 				if( /* !computeNTotalStudents && !act2->computeNTotalStudents && */ nTotalStudents!=act2->nTotalStudents){
 					diffNStud=true;
 					//return false;
@@ -416,7 +632,7 @@ bool Export::isActivityNotManualyEdited(int activityIndex, bool& diffTeachers, b
 				i=gt.rules.activitiesList.size();
 		}
 	}
-	if(!diffTeachers && !diffSubject && !diffActivityTags && !diffStudents && !diffCompNStud && !diffNStud && !diffActive)
+	if(!diffCompNStud && !diffNStud && !diffActive)
 		return true;
 	else
 		return false;
@@ -558,9 +774,9 @@ bool Export::selectSeparatorAndTextQuote(QWidget* parent, QDialog* &newParent, Q
 #endif
 
 #ifndef FET_COMMAND_LINE
-bool Export::exportCSVActivityTags(QWidget* parent, QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& setSeparator, QMessageBox::StandardButton& msgBoxButton){
+bool Export::exportCSVActivityTags(QWidget* parent, QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& componentSeparator, const QString& setSeparator, QMessageBox::StandardButton& msgBoxButton){
 #else
-bool Export::exportCSVActivityTags(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& setSeparator){
+bool Export::exportCSVActivityTags(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& componentSeparator, const QString& setSeparator){
 #endif
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 
@@ -607,6 +823,8 @@ bool Export::exportCSVActivityTags(QString& lastWarnings, const QString& textquo
 #else
 		tosExport<<textquote<<protectCSV(a->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(a->comments)<<textquote<<endl;
 #endif
+		if(!checkComponentSeparator(a->name, componentSeparator))
+			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.").arg(a->name)+"\n";
 		if(!checkSetSeparator(a->name, setSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(a->name)+"\n";
 	}
@@ -712,9 +930,9 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString& te
 }
 
 #ifndef FET_COMMAND_LINE
-bool Export::exportCSVSubjects(QWidget* parent, QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, QMessageBox::StandardButton& msgBoxButton){
+bool Export::exportCSVSubjects(QWidget* parent, QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& componentSeparator, QMessageBox::StandardButton& msgBoxButton){
 #else
-bool Export::exportCSVSubjects(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head){
+bool Export::exportCSVSubjects(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& componentSeparator){
 #endif
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 
@@ -761,6 +979,8 @@ bool Export::exportCSVSubjects(QString& lastWarnings, const QString& textquote, 
 #else
 		tosExport<<textquote<<protectCSV(s->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(s->comments)<<textquote<<endl;
 #endif
+		if(!checkComponentSeparator(s->name, componentSeparator))
+			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.").arg(s->name)+"\n";
 	}
 
 	lastWarnings+=Export::tr("%1 subjects exported.").arg(gt.rules.subjectsList.size())+"\n";
@@ -773,9 +993,9 @@ bool Export::exportCSVSubjects(QString& lastWarnings, const QString& textquote, 
 }
 
 #ifndef FET_COMMAND_LINE
-bool Export::exportCSVTeachers(QWidget* parent, QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& setSeparator, QMessageBox::StandardButton& msgBoxButton){
+bool Export::exportCSVTeachers(QWidget* parent, QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& componentSeparator, const QString& setSeparator, QMessageBox::StandardButton& msgBoxButton){
 #else
-bool Export::exportCSVTeachers(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& setSeparator){
+bool Export::exportCSVTeachers(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& componentSeparator, const QString& setSeparator){
 #endif
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 
@@ -822,6 +1042,8 @@ bool Export::exportCSVTeachers(QString& lastWarnings, const QString& textquote, 
 #else
 		tosExport<<textquote<<protectCSV(t->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(t->comments)<<textquote<<endl;
 #endif
+		if(!checkComponentSeparator(t->name, componentSeparator))
+			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.").arg(t->name)+"\n";
 		if(!checkSetSeparator(t->name, setSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(t->name)+"\n";
 	}
@@ -836,9 +1058,9 @@ bool Export::exportCSVTeachers(QString& lastWarnings, const QString& textquote, 
 }
 
 #ifndef FET_COMMAND_LINE
-bool Export::exportCSVStudents(QWidget* parent, QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& setSeparator, QMessageBox::StandardButton& msgBoxButton){
+bool Export::exportCSVStudents(QWidget* parent, QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& componentSeparator, const QString& setSeparator, QMessageBox::StandardButton& msgBoxButton){
 #else
-bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& setSeparator){
+bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, const QString& fieldSeparator, const bool head, const QString& componentSeparator, const QString& setSeparator){
 #endif
 	QString s2=INPUT_FILENAME_XML.right(INPUT_FILENAME_XML.length()-INPUT_FILENAME_XML.lastIndexOf(FILE_SEP)-1);	//TODO: remove s2, because too long filenames!
 
@@ -893,6 +1115,8 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 #else
 					<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<textquote<<protectCSVComments(sty->comments)<<textquote<<endl;
 #endif
+		if(!checkComponentSeparator(sty->name, componentSeparator))
+			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.").arg(sty->name)+"\n";
 		if(!checkSetSeparator(sty->name, setSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(sty->name)+"\n";
 		for(StudentsGroup* stg : qAsConst(sty->groupsList)){
@@ -905,6 +1129,8 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 #else
 					<<CustomFETString::number(stg->numberOfStudents)<<fieldSeparator<<fieldSeparator<<fieldSeparator<<textquote<<protectCSVComments(stg->comments)<<textquote<<endl;
 #endif
+			if(!checkComponentSeparator(stg->name, componentSeparator))
+				lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.").arg(stg->name)+"\n";
 			if(!checkSetSeparator(stg->name, setSeparator))
 				lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(stg->name)+"\n";
 			for(StudentsSubgroup* sts : qAsConst(stg->subgroupsList)){
@@ -919,6 +1145,8 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 #else
 						<<CustomFETString::number(sts->numberOfStudents)<<fieldSeparator<<textquote<<protectCSVComments(sts->comments)<<textquote<<endl;
 #endif
+				if(!checkComponentSeparator(sts->name, componentSeparator))
+					lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.").arg(sts->name)+"\n";
 				if(!checkSetSeparator(sts->name, setSeparator))
 					lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(sts->name)+"\n";
 			}
@@ -1188,17 +1416,22 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 	}
 	//code by Liviu Lalescu (end)
 	
-	bool manuallyEdited=false;
+	bool manuallyEditedPart1=false;
+	bool manuallyEditedPart2=false;
 
 	Activity* acti;
 	Activity* actiNext;
 	int countExportedActivities=0;
 	for(int ai=0; ai<gt.rules.activitiesList.size(); ai++){
 		acti=gt.rules.activitiesList[ai];
+		QString tl;
+		QString sl;
+		QString atl;
+		QString stl;
 		//if(acti->active){
 		if((acti->activityGroupId==acti->id)||(acti->activityGroupId==0)){
 			bool diffTeachers, diffSubject, diffActivityTag, diffStudents, diffCompNStud, diffNStud, diffActive;
-			if(isActivityNotManualyEdited(ai, diffTeachers, diffSubject, diffActivityTag, diffStudents, diffCompNStud, diffNStud, diffActive)){
+			if(isActivityNotManuallyEditedPart1(ai, diffTeachers, diffSubject, diffActivityTag, diffStudents, tl, sl, atl, stl)){
 			}
 			else{
 				QStringList s;
@@ -1210,51 +1443,82 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 					s.append(tr("different activity tags"));
 				if(diffStudents)
 					s.append(tr("different students"));
+				
+				manuallyEditedPart1=true;
+				
+				lastWarnings+=tr("The subactivities with the activity group id %1 are different between themselves (they were separately edited)."
+					" The fields which are different are: %2. These fields will be separated by the %3 symbol, one group for each subactivity.")
+					.arg(CustomFETString::number(acti->activityGroupId)).arg(s.join(", ")).arg("|")+"\n";
+			}
+			if(isActivityNotManuallyEditedPart2(ai, diffCompNStud, diffNStud, diffActive)){
+			}
+			else if(!diffCompNStud && !diffActive){
+			}
+			else{
+				QStringList s;
 				if(diffCompNStud)
 					s.append(tr("different Boolean variable 'must compute n total students'"));
-				if(diffNStud)
+				if(diffNStud && diffCompNStud)
 					s.append(tr("different number of students"));
 				if(diffActive)
 					s.append(tr("different active flag"));
 				
-				manuallyEdited=true;
+				manuallyEditedPart2=true;
 				
-				lastWarnings+=tr("Subactivities with activity group id %1 are different between themselves (they were separately edited),"
-					" so the export will not be very accurate. The fields which are different will be considered those of the representative subactivity. Fields which were"
-					" different are: %2").arg(CustomFETString::number(acti->activityGroupId)).arg(s.join(", "))+"\n";
+				lastWarnings+=tr("The subactivities with the activity group id %1 are different between themselves (they were separately edited),"
+					" so the export will not be very accurate. The fields which are different will be considered those of the representative subactivity."
+					" The fields which are different are: %2").arg(CustomFETString::number(acti->activityGroupId)).arg(s.join(", "))+"\n";
 			}
 			if(!acti->active){
 				if(acti->activityGroupId==0)
-					lastWarnings+=tr("Activity with id %1 has disabled active flag but it is exported.").arg(CustomFETString::number(acti->id))+"\n";
+					lastWarnings+=tr("The activity with id %1 has disabled active flag but it is exported.").arg(CustomFETString::number(acti->id))+"\n";
 				else
-					lastWarnings+=tr("Subactivities with activity group id %1 have disabled active flag but they are exported.").arg(CustomFETString::number(acti->activityGroupId))+"\n";
+					lastWarnings+=tr("The subactivities with activity group id %1 have disabled active flag but they are exported.").arg(CustomFETString::number(acti->activityGroupId))+"\n";
 			}
 			
 			countExportedActivities++;
 			//students set
 			tosExport<<textquote;
+			/*
 			for(int s=0; s<acti->studentsNames.size(); s++){
 				if(s!=0)
 					tosExport<<"+";
 				tosExport<<protectCSV(acti->studentsNames[s]);
 			}
+			*/
+			
+			tosExport<<stl;
+			
 			tosExport<<textquote<<fieldSeparator<<textquote;
 			//subject
-			tosExport<<protectCSV(acti->subjectName);
+			/*tosExport<<protectCSV(acti->subjectName);*/
+			
+			tosExport<<sl;
+			
 			tosExport<<textquote<<fieldSeparator<<textquote;
 			//teachers
+			/*
 			for(int t=0; t<acti->teachersNames.size(); t++){
 				if(t!=0)
 					tosExport<<"+";
 				tosExport<<protectCSV(acti->teachersNames[t]);
 			}
+			*/
+			
+			tosExport<<tl;
+			
 			tosExport<<textquote<<fieldSeparator<<textquote;
 			//activity tags
+			/*
 			for(int s=0; s<acti->activityTagsNames.size(); s++){
 				if(s!=0)
 					tosExport<<"+";
 				tosExport<<protectCSV(acti->activityTagsNames[s]);
 			}
+			*/
+			
+			tosExport<<atl;
+			
 			tosExport<<textquote<<fieldSeparator;
 			//total duration
 			tosExport<<CustomFETString::number(acti->totalDuration);
@@ -1343,25 +1607,29 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 	}
 	
 #ifndef FET_COMMAND_LINE
-	if(manuallyEdited){
-		/*QMessageBox msgBox(parent);
-		msgBox.setWindowTitle(tr("FET warning"));
-		msgBox.setIcon(QMessageBox::Warning);
-		msgBox.setText(tr("There are subactivities which were modified separately - so the "
-		 "components had different values for subject, activity tags, teachers, students or number of students from the representative subactivity. The export was done, but it is not very accurate."));
-		msgBox.setStandardButtons(QMessageBox::Ok);
-		msgBox.setDefaultButton(QMessageBox::Ok);
-		
-		msgBox.exec();*/
-		
+	if(manuallyEditedPart1){
 		QMessageBox::warning(parent, tr("FET warning"), tr("There are subactivities which were modified separately - so the "
-		 "components had different values for subject, activity tags, teachers, students or number of students from the representative subactivity. The export was done, but it is not very accurate."));
+		 "components had different values for subject, activity tags, teachers, or students. The export is done, "
+		 "but for each field which is different there will be added n_subactivities fields, separated by the %1 symbol.").arg("|"));
+	}
+	if(manuallyEditedPart2){
+		QMessageBox::warning(parent, tr("FET warning"), tr("There are subactivities which were modified separately - so the "
+		 "components had different values for 'must compute n total students' or number of students from the representative subactivity. "
+		 "The export is done, but it is not very accurate."));
 	}
 #else
-	if(manuallyEdited){
+	if(manuallyEditedPart1){
 		cout<<qPrintable(tr("FET warning"))<<endl;
 		cout<<qPrintable(tr("There are subactivities which were modified separately - so the "
-		 "components had different values for subject, activity tags, teachers, students or number of students from the representative subactivity. The export was done, but it is not very accurate."))
+		 "components had different values for subject, activity tags, teachers, or students. The export is done, "
+		 "but for each field which is different there will be added n_subactivities fields, separated by the %1 symbol.").arg("|"))
+		 <<endl;
+	}
+	if(manuallyEditedPart2){
+		cout<<qPrintable(tr("FET warning"))<<endl;
+		cout<<qPrintable(tr("There are subactivities which were modified separately - so the "
+		 "components had different values for 'must compute n total students' or number of students from the representative subactivity. "
+		 "The export is done, but it is not very accurate."))
 		 <<endl;
 	}
 #endif

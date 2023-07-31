@@ -3534,7 +3534,7 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 	
 		delete studentsSet;
 	}
-	
+		
 	if(toBeRemoved.count()>0)
 		updateConstraintsAfterRemoval();
 	
@@ -3722,8 +3722,8 @@ bool Rules::addSplitActivityFast(
 	const QStringList& _studentsNames,
 	int _nSplits,
 	int _totalDuration,
-	QList<int> _durations,
-	QList<bool> _active,
+	const QList<int>& _durations,
+	const QList<bool>& _active,
 	int _minDayDistance,
 	double _weightPercentage,
 	bool _consecutiveIfSameDay,
@@ -3757,6 +3757,120 @@ bool Rules::addSplitActivityFast(
 		Activity *act=new Activity(*this, _firstActivityId+i, _activityGroupId,
 		 _teachersNames, _subjectName, _activityTagsNames, _studentsNames,
 		 _durations[i], _totalDuration, _active[i], _computeNTotalStudents, _nTotalStudents, _computedNumberOfStudents);
+
+		this->activitiesList << act; //append
+
+		assert(!activitiesPointerHash.contains(act->id));
+		activitiesPointerHash.insert(act->id, act);
+
+		acts.append(_firstActivityId+i);
+	}
+
+	if(_minDayDistance>0){
+		TimeConstraint *constr;
+		if(!_halfDays)
+			constr=new ConstraintMinDaysBetweenActivities(_weightPercentage, _consecutiveIfSameDay, _nSplits, acts, _minDayDistance);
+		else
+			constr=new ConstraintMinHalfDaysBetweenActivities(_weightPercentage, _consecutiveIfSameDay, _nSplits, acts, _minDayDistance);
+		bool tmp=this->addTimeConstraint(constr);
+		assert(tmp);
+	}
+
+	this->internalStructureComputed=false;
+	setRulesModifiedAndOtherThings(this);
+
+	teachers_schedule_ready=false;
+	students_schedule_ready=false;
+	rooms_schedule_ready=false;
+
+	return true;
+}
+
+bool Rules::addSplitActivityFastWithComponents(
+	QWidget* parent,
+	int _firstActivityId,
+	int _activityGroupId,
+	const QList<QStringList>& _teachersNames,
+	const QList<QString>& _subjectName,
+	const QList<QStringList>& _activityTagsNames,
+	const QList<QStringList>& _studentsNames,
+	int _nSplits,
+	int _totalDuration,
+	const QList<int>& _durations,
+	const QList<bool>& _active,
+	int _minDayDistance,
+	double _weightPercentage,
+	bool _consecutiveIfSameDay,
+	bool _computeNTotalStudents,
+	int _nTotalStudents,
+	const QList<int>& _computedNumberOfStudents,
+	bool _halfDays)
+{
+	QList<QStringList> tempTN=_teachersNames;
+	if(_teachersNames.count()<_nSplits){
+		for(int i=0; i<_nSplits-_teachersNames.count(); i++){
+			tempTN.append(_teachersNames.at(0));
+		}
+	}
+	
+	QList<QString> tempSN=_subjectName;
+	if(_subjectName.count()<_nSplits){
+		for(int i=0; i<_nSplits-_subjectName.count(); i++){
+			tempSN.append(_subjectName.at(0));
+		}
+	}
+	
+	QList<QStringList> tempATN=_activityTagsNames;
+	if(_activityTagsNames.count()<_nSplits){
+		for(int i=0; i<_nSplits-_activityTagsNames.count(); i++){
+			tempATN.append(_activityTagsNames.at(0));
+		}
+	}
+	
+	QList<QStringList> tempSTN=_studentsNames;
+	if(_studentsNames.count()<_nSplits){
+		for(int i=0; i<_nSplits-_studentsNames.count(); i++){
+			tempSTN.append(_studentsNames.at(0));
+		}
+	}
+	
+	QList<int> tempCNOS=_computedNumberOfStudents;
+	if(_computedNumberOfStudents.count()<_nSplits){
+		for(int i=0; i<_nSplits-_computedNumberOfStudents.count(); i++){
+			tempCNOS.append(_computedNumberOfStudents.at(0));
+		}
+	}
+
+	//check for duplicates - idea and code by Volker Dirr
+	for(int i=0; i<_nSplits; i++){
+		const QStringList& tl=tempTN.at(i);
+		int t=QStringList(tl).removeDuplicates();
+		if(t>0)
+			RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("The activity with id=%1 contains %2 duplicate teachers - please correct that")
+			 .arg(_firstActivityId+i).arg(t));
+
+		const QStringList& stl=tempSTN.at(i);
+		t=QStringList(stl).removeDuplicates();
+		if(t>0)
+			RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("The activity with id=%1 contains %2 duplicate students sets - please correct that")
+			 .arg(_firstActivityId+i).arg(t));
+
+		const QStringList& atl=tempATN.at(i);
+		t=QStringList(atl).removeDuplicates();
+		if(t>0)
+			RulesReconcilableMessage::warning(parent, tr("FET warning"), tr("The activity with id=%1 contains %2 duplicate activity tags - please correct that")
+			 .arg(_firstActivityId+i).arg(t));
+	}
+
+	assert(_firstActivityId==_activityGroupId);
+
+	QList<int> acts;
+
+	acts.clear();
+	for(int i=0; i<_nSplits; i++){
+		Activity *act=new Activity(*this, _firstActivityId+i, _activityGroupId,
+		 tempTN.at(i), tempSN.at(i), tempATN.at(i), tempSTN.at(i),
+		 _durations[i], _totalDuration, _active[i], _computeNTotalStudents, _nTotalStudents, /*_computedNumberOfStudents*/ tempCNOS.at(i));
 
 		this->activitiesList << act; //append
 
@@ -3876,9 +3990,9 @@ void Rules::modifyActivity(
 	//int _nTotalStudents,
 	int _nSplits,
 	int _totalDuration,
-	QList<int> _durations,
+	const QList<int>& _durations,
 	//int _parities[],
-	QList<bool> _active,
+	const QList<bool>& _active,
 	bool _computeNTotalStudents,
 	int _nTotalStudents)
 {
@@ -4775,7 +4889,7 @@ bool Rules::removeTimeConstraint(TimeConstraint* ctr)
 	return false;
 }
 
-bool Rules::removeTimeConstraints(QList<TimeConstraint*> _tcl)
+bool Rules::removeTimeConstraints(const QList<TimeConstraint*>& _tcl)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	QSet<TimeConstraint*> _tcs=QSet<TimeConstraint*>(_tcl.constBegin(), _tcl.constEnd());
@@ -5039,7 +5153,7 @@ bool Rules::removeSpaceConstraint(SpaceConstraint* ctr)
 	return false;
 }
 
-bool Rules::removeSpaceConstraints(QList<SpaceConstraint*> _scl)
+bool Rules::removeSpaceConstraints(const QList<SpaceConstraint*>& _scl)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
 	QSet<SpaceConstraint*> _scs=QSet<SpaceConstraint*>(_scl.constBegin(), _scl.constEnd());
