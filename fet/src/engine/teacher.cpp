@@ -92,7 +92,7 @@ QString Teacher::getDescription(const Rules& r)
 		else
 			assert(0);
 		s+=", ";
-		s+=tr("MAB: %1", "Mornings afternoons behavior").arg(mab);
+		s+=tr("MAB: %1", "Mornings-afternoons behavior").arg(mab);
 	}
 	
 	QString end=QString("");
@@ -127,7 +127,7 @@ QString Teacher::getDetailedDescription(const Rules& r)
 			mab=tr("Five days exception");
 		else
 			assert(0);
-		s+=tr("Mornings afternoons behavior=%1").arg(mab);
+		s+=tr("Mornings-afternoons behavior=%1").arg(mab);
 		s+="\n";
 	}
 	

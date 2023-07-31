@@ -52,7 +52,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Explanation: If you use constraints activities same starting time and/or constraints activities same starting days, maybe you will obtain redundant constraints min half days between activities, which are not good (your timetable is more difficult to find, or even impossible). This menu enables you to remove these redundant min half days between activities constraints</string>
+         <string>Explanation: If you use constraints activities same starting time and/or constraints activities same starting day, maybe you will obtain redundant constraints min half days between activities, which are not good (your timetable is more difficult to find, or even impossible). This menu enables you to remove these redundant min half days between activities constraints</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
@@ -103,7 +103,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Explanation: If you use constraints activities same starting time and/or constraints activities same starting days, maybe you will obtain redundant constraints min days between activities, which are not good (your timetable is more difficult to find, or even impossible). This menu enables you to remove these redundant min days between activities constraints</string>
+         <string>Explanation: If you use constraints activities same starting time and/or constraints activities same starting day, maybe you will obtain redundant constraints min days between activities, which are not good (your timetable is more difficult to find, or even impossible). This menu enables you to remove these redundant min days between activities constraints</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>

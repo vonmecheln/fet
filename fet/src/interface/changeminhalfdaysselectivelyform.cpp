@@ -39,7 +39,7 @@ ChangeMinHalfDaysSelectivelyForm::ChangeMinHalfDaysSelectivelyForm(QWidget* pare
 	Q_UNUSED(tmp6);
 	
 	oldConsecutiveComboBox->clear();
-	oldConsecutiveComboBox->addItem(tr("Any"));
+	oldConsecutiveComboBox->addItem(tr("Any", "Any value of 'consecutive if on the same day', yes or no."));
 	oldConsecutiveComboBox->addItem(tr("Yes"));
 	oldConsecutiveComboBox->addItem(tr("No"));
 	oldConsecutiveComboBox->setCurrentIndex(0);
@@ -66,7 +66,6 @@ ChangeMinHalfDaysSelectivelyForm::ChangeMinHalfDaysSelectivelyForm(QWidget* pare
 ChangeMinHalfDaysSelectivelyForm::~ChangeMinHalfDaysSelectivelyForm()
 {
 	saveFETDialogGeometry(this);
-
 }
 
 void ChangeMinHalfDaysSelectivelyForm::ok()

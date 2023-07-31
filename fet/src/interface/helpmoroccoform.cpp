@@ -77,7 +77,7 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	s+="\n\n";
 	s+=tr("3 - The key hint to use this version");
 	s+="\n\n";
-	s+=tr("We have 6 REAL day, with 8 working time slots");
+	s+=tr("We have 6 REAL days, with 8 working time slots");
 	s+="\n\n";
 	s+=tr("We should input 6x2 = 12 days, with 4 working time slots ONLY");
 	s+="\n\n";
@@ -107,7 +107,7 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	 " please use 100% weight. If you allow weight under 100% and select consecutive if on the same day,"
 	 " then the activities must be either in the morning or exclusively in the afternoon.");
 	s+="\n\n";
-	s+=tr("Min 1 day means that the activities cannot be in REAL same day (so they can be"
+	s+=tr("Min 1 day means that the activities cannot be in same REAL day (so they can be"
 	 " on Monday afternoon and Tuesday morning, but not both on Monday).");
 	s+="\n\n";
 	s+=tr("Min 2 days means that the activities must be 2 REAL days apart (so they"

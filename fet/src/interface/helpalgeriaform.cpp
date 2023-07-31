@@ -54,7 +54,7 @@ HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)
 
 	s+="\n\n";
 
-	s+=tr("Min 1 day means that the activities cannot be in REAL same day (so they can be "
+	s+=tr("Min 1 day means that the activities cannot be in same REAL day (so they can be "
 	"on Monday afternoon and Tuesday morning, but not both on Monday).");
 
 	s+="\n\n";

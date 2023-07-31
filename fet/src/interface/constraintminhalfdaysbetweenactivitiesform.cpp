@@ -309,7 +309,7 @@ void ConstraintMinHalfDaysBetweenActivitiesForm::changeSelectively()
 		}
 		else{
 			QMessageBox::critical(this, tr("FET information"),
-			 tr("FET has meet a critical error - aborting current operation, please report bug (old weight is not -1 and not (>=0.0 and <=100.0))"));
+			 tr("FET has met a critical error - aborting current operation, please report bug (old weight is not -1 and not (>=0.0 and <=100.0))"));
 			return;
 		}
 

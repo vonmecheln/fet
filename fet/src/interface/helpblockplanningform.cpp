@@ -194,6 +194,7 @@ void HelpBlockPlanningForm::setText()
 	 " took ~15 seconds.");
 	s+="\n\n";
 	s+=tr("Further instructions by %1, regarding tricks to make a two semester timetable:", "%1 is a person").arg("ChicagoPianoTuner");
+	s+=" ";
 	s+=tr("If your students have some different courses in semester 1 and semester 2, there are a few things you need to do. First, double"
 	 " the number of hours in your FET day, creating an hour for each block in semester 1, and another for semester 2, including fakes."
 	 " The structure should be A_sem1, B_sem1, ..., FAKE_1_sem1, ... A_sem2, B_sem2, FAKE_1_sem2, ... FAKE_N_sem2. Now, for subjects that"
@@ -204,7 +205,7 @@ void HelpBlockPlanningForm::setText()
 	 " teacher activity. They should already be constrained to occur on specific FET days corresponding to real teachers. If there are multiple"
 	 " teachers for the same subject, you need to add a constraint to each student activity must occur on the same day to ensure the students"
 	 " have the same teacher for semester 1 as semester 2. If you want those activities to occur in the same block in semester 1 as semester 2"
-	 " (which you probably do to avoid confusion, but it is not strictly necessary in some cases), two constraints for each pair of"
+	 " (which you probably do to avoid confusion, but it is not strictly necessary in some cases), add two constraints for each pair of"
 	 " activities: \"min gaps (hours) between a set of activities,\" and \"max gaps (hours) between a set of activities\"."
 	 " The number of hours, N, should be the same for both constraints. N should be equal to the number of real blocks + number of"
 	 " fake blocks - 1, assuming the courses have duration 1 (each activity occupies exactly one block). If your courses occupy more than one"

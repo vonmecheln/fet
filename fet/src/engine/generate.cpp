@@ -7524,6 +7524,9 @@ again_if_impossible_activity:
 		bool okminhalfdays;
 		bool okmaxdays;
 		bool okmaxhalfdays;
+		
+		bool okmaxhourlyspan;
+		
 		//For terms - max terms between activities
 		bool okmaxterms;
 		bool oksamestartingtime;
@@ -7794,9 +7797,9 @@ impossiblebasictime:
 		
 		for(int i=0; i<minDaysListOfActivities[ai].count(); i++){
 			int ai2=minDaysListOfActivities[ai].at(i);
-			int md=minDaysListOfMinDays[ai].at(i);
 			int ai2time=c.times[ai2];
 			if(ai2time!=UNALLOCATED_TIME){
+				int md=minDaysListOfMinDays[ai].at(i);
 				int d2=ai2time%gt.rules.nDaysPerWeek;
 				int h2=ai2time/gt.rules.nDaysPerWeek;
 				if((gt.rules.mode!=MORNINGS_AFTERNOONS && md>abs(d-d2)) || (gt.rules.mode==MORNINGS_AFTERNOONS && md>abs(d/2-d2/2))){
@@ -7890,9 +7893,9 @@ impossiblemindays:
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			for(int i=0; i<minHalfDaysListOfActivities[ai].count(); i++){
 				int ai2=minHalfDaysListOfActivities[ai].at(i);
-				int md=minHalfDaysListOfMinDays[ai].at(i);
 				int ai2time=c.times[ai2];
 				if(ai2time!=UNALLOCATED_TIME){
+					int md=minHalfDaysListOfMinDays[ai].at(i);
 					int d2=ai2time%gt.rules.nDaysPerWeek;
 					int h2=ai2time/gt.rules.nDaysPerWeek;
 					if(md>abs(d-d2)){
@@ -7983,9 +7986,9 @@ impossibleminhalfdays:
 		
 		for(int i=0; i<maxDaysListOfActivities[ai].count(); i++){
 			int ai2=maxDaysListOfActivities[ai].at(i);
-			int md=maxDaysListOfMaxDays[ai].at(i);
 			int ai2time=c.times[ai2];
 			if(ai2time!=UNALLOCATED_TIME){
+				int md=maxDaysListOfMaxDays[ai].at(i);
 				int d2=ai2time%gt.rules.nDaysPerWeek;
 				//int h2=ai2time/gt.rules.nDaysPerWeek;
 				if((gt.rules.mode!=MORNINGS_AFTERNOONS && md<abs(d-d2)) || (gt.rules.mode==MORNINGS_AFTERNOONS && md<abs(d/2-d2/2))){
@@ -8020,9 +8023,9 @@ impossiblemaxdays:
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			for(int i=0; i<maxHalfDaysListOfActivities[ai].count(); i++){
 				int ai2=maxHalfDaysListOfActivities[ai].at(i);
-				int md=maxHalfDaysListOfMaxDays[ai].at(i);
 				int ai2time=c.times[ai2];
 				if(ai2time!=UNALLOCATED_TIME){
+					int md=maxHalfDaysListOfMaxDays[ai].at(i);
 					int d2=ai2time%gt.rules.nDaysPerWeek;
 					//int h2=ai2time/gt.rules.nDaysPerWeek;
 					if(md<abs(d-d2)){
@@ -8052,6 +8055,47 @@ impossiblemaxhalfdays:
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+		//care about max hourly span of activities
+		okmaxhourlyspan=true;
+		
+		for(int i=0; i<maxHourlySpanListOfActivities[ai].count(); i++){
+			int ai2=maxHourlySpanListOfActivities[ai].at(i);
+			int ai2time=c.times[ai2];
+			if(ai2time!=UNALLOCATED_TIME){
+				int ms=maxHourlySpanListOfMaxSpan[ai].at(i);
+				//int d2=ai2time%gt.rules.nDaysPerWeek;
+				int h2=ai2time/gt.rules.nDaysPerWeek;
+				int duration2=gt.rules.internalActivitiesList[ai2].duration;
+				assert(act->duration<=ms); //checked in generate_pre.cpp
+				assert(duration2<=ms); //checked in generate_pre.cpp
+				int t1=abs(h-(h2+duration2));
+				int t2=abs(h2-(h+act->duration));
+				if(t1>ms || t2>ms){
+					bool okrand=skipRandom(maxHourlySpanListOfWeightPercentages[ai].at(i));
+					if(!okrand){
+						if(fixedTimeActivity[ai2] || swappedActivities[ai2]){
+							okmaxhourlyspan=false;
+							goto impossiblemaxhourlyspan;
+						}
+						
+						if(!conflActivities[newtime].contains(ai2)){
+							conflActivities[newtime].append(ai2);
+
+							nConflActivities[newtime]++;
+							assert(nConflActivities[newtime]==conflActivities[newtime].count());
+						}
+					}
+				}
+			}
+		}
+impossiblemaxhourlyspan:
+		if(!okmaxhourlyspan){
+			nConflActivities[newtime]=MAX_ACTIVITIES;
+			continue;
+		}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 		//for the Terms mode - care about max terms between activities
 		okmaxterms=true;
 
@@ -8059,9 +8103,9 @@ impossiblemaxhalfdays:
 			int termai = (newtime%gt.rules.nDaysPerWeek)/gt.rules.nDaysPerTerm;
 			for(int i=0; i<maxTermsListOfActivities[ai].count(); i++){
 				int ai2=maxTermsListOfActivities[ai].at(i);
-				int mt=maxTermsListOfMaxTerms[ai].at(i);
 				int ai2time=c.times[ai2];
 				if(ai2time!=UNALLOCATED_TIME){
+					int mt=maxTermsListOfMaxTerms[ai].at(i);
 					int termai2 = (ai2time%gt.rules.nDaysPerWeek)/gt.rules.nDaysPerTerm;
 					if(mt<abs(termai-termai2)){
 						bool okrand=skipRandom(maxTermsListOfWeightPercentages[ai].at(i));
@@ -8094,9 +8138,9 @@ impossiblemaxterms:
 		
 		for(int i=0; i<minGapsBetweenActivitiesListOfActivities[ai].count(); i++){
 			int ai2=minGapsBetweenActivitiesListOfActivities[ai].at(i);
-			int mg=minGapsBetweenActivitiesListOfMinGaps[ai].at(i);
 			int ai2time=c.times[ai2];
 			if(ai2time!=UNALLOCATED_TIME){
+				int mg=minGapsBetweenActivitiesListOfMinGaps[ai].at(i);
 				int d2=ai2time%gt.rules.nDaysPerWeek;
 				int h2=ai2time/gt.rules.nDaysPerWeek;
 				int duration2=gt.rules.internalActivitiesList[ai2].duration;
@@ -8154,9 +8198,9 @@ impossiblemingapsbetweenactivities:
 		if(gt.rules.mode==BLOCK_PLANNING){
 			for(int i=0; i<maxGapsBetweenActivitiesListOfActivities[ai].count(); i++){
 				int ai2=maxGapsBetweenActivitiesListOfActivities[ai].at(i);
-				int mg=maxGapsBetweenActivitiesListOfMaxGaps[ai].at(i);
 				int ai2time=c.times[ai2];
 				if(ai2time!=UNALLOCATED_TIME){
+					int mg=maxGapsBetweenActivitiesListOfMaxGaps[ai].at(i);
 					int d2=ai2time%gt.rules.nDaysPerWeek;
 					int h2=ai2time/gt.rules.nDaysPerWeek;
 					int duration2=gt.rules.internalActivitiesList[ai2].duration;

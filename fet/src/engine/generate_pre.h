@@ -164,6 +164,15 @@ bool computeMaxHalfDays(QWidget* parent);
 ////////END   MAX HALF DAYS TIME CONSTRAINTS
 
 
+////////BEGIN MAX HOURLY SPAN TIME CONSTRAINTS
+extern Matrix1D<QList<int>> maxHourlySpanListOfActivities;
+extern Matrix1D<QList<int>> maxHourlySpanListOfMaxSpan;
+extern Matrix1D<QList<double>> maxHourlySpanListOfWeightPercentages;
+
+bool computeMaxHourlySpan(QWidget* parent);
+////////END   MAX HOURLY SPAN TIME CONSTRAINTS
+
+
 ////////BEGIN MAX TERMS TIME CONSTRAINTS
 extern Matrix1D<QList<int>> maxTermsListOfActivities;
 extern Matrix1D<QList<int>> maxTermsListOfMaxTerms;

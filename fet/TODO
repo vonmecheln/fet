@@ -8661,3 +8661,37 @@ It would be good also to allow entering values by TAB key (not with arrows) to s
 For example I have 30 teachers and I want to set time min. 3 hours daily for a teacher, but except one of them. Then I have to click 29 teachers and set each seperately.
 
 Other option could be to add "Select All" instead a drop down list in "Add teacher min hours daily" and then modify just a single teacher or remove unwanted constraint.
+
+505---------------------------------------------------------
+From Mohamed Ait Ichou (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5606.0
+
+Is it possible to improve the max half days between activities constraint by adding the constraint for all teachers at once but in a way that each teacher is divided separately?
+
+506---------------------------------------------------------
+From Vangelis Karafillidis:
+
+(see also item #312)
+
+Constraint two sets of activities share min/max common time slots from selection.
+
+They are very rarely used, but they might be useful.
+
+Example for min:
+
+We have the following activities (teacher-group-subject)
+
+John A1 Math 4 hours per week
+Mary B2 History 3 hour per week
+George C1 Physics 3 hours per week
+Vangelis C4 Chemistry 2 hours per week...
+
+We need any of the 2 hours of Vangelis (1 of them) to coincide with ANY of the hours of John, Mary, or George...
+
+507---------------------------------------------------------
+From Vangelis Karafillidis:
+
+(see also item #323)
+
+He proposes a time horizontal view of all the teachers' not available constraints. Also for students and rooms. What about the rooms with <100%?

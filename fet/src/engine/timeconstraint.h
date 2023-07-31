@@ -345,6 +345,8 @@ const int CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON								=200;
 const int CONSTRAINT_STUDENTS_MIN_HOURS_PER_AFTERNOON								=201;
 const int CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON							=202;
 
+const int CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN										=203;
+
 QString getActivityDetailedDescription(Rules& r, int id);
 
 /**
@@ -902,6 +904,78 @@ public:
 	the weight, the number of activities, the list of activities, and the max number of days.
 	*/
 	ConstraintMaxDaysBetweenActivities(double wp, int n_act, const QList<int>& act, int n);
+
+	bool computeInternalStructure(QWidget* parent, Rules& r);
+
+	bool hasInactiveActivities(Rules& r);
+
+	QString getXmlDescription(Rules& r);
+
+	QString getDescription(Rules& r);
+
+	QString getDetailedDescription(Rules& r);
+
+	double fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString=nullptr);
+
+	void removeUseless(Rules &r);
+
+	void recomputeActivitiesSet();
+
+	bool isRelatedToActivity(Rules& r, Activity* a);
+	
+	bool isRelatedToTeacher(Teacher* t);
+
+	bool isRelatedToSubject(Subject* s);
+
+	bool isRelatedToActivityTag(ActivityTag* s);
+	
+	bool isRelatedToStudentsSet(Rules& r, StudentsSet* s);
+
+	bool hasWrongDayOrHour(Rules& r);
+	bool canRepairWrongDayOrHour(Rules& r);
+	bool repairWrongDayOrHour(Rules& r);
+};
+
+class ConstraintActivitiesMaxHourlySpan: public TimeConstraint{
+	Q_DECLARE_TR_FUNCTIONS(ConstraintActivitiesMaxHourlySpan)
+
+public:
+	/**
+	The number of activities involved in this constraint
+	*/
+	int n_activities;
+
+	/**
+	The activities involved in this constraint (id-s)
+	*/
+	QList<int> activitiesIds;
+
+	QSet<int> activitiesIdsSet;
+
+	/**
+	The number of maximum hourly span of each pair of 2 activities
+	*/
+	int maxHourlySpan;
+
+	//internal structure (redundant)
+
+	/**
+	The number of activities involved in this constraint - internal structure
+	*/
+	int _n_activities;
+
+	/**
+	The activities involved in this constraint (index in the rules) - internal structure
+	*/
+	QList<int> _activities;
+
+	ConstraintActivitiesMaxHourlySpan();
+
+	/**
+	Constructor, using:
+	the weight, the number of activities, the list of activities, and the max hourly span.
+	*/
+	ConstraintActivitiesMaxHourlySpan(double wp, int n_act, const QList<int>& act, int n);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 

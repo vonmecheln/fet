@@ -184,7 +184,7 @@ void AddTeacherForm::addTeacher()
 			tch->morningsAfternoonsBehavior=TEACHER_FIVE_DAYS_EXCEPTION;
 		}
 		else{
-			QMessageBox::information(this, tr("FET warning"), tr("Please select an option for the mornings afternoons behavior.")+QString(" ")+
+			QMessageBox::information(this, tr("FET warning"), tr("Please select an option for the mornings-afternoons behavior.")+QString(" ")+
 			 tr("You can press the Help button to read the information on how to correctly choose this option."));
 			delete tch;
 			return;

@@ -824,9 +824,9 @@ bool Export::exportCSVActivityTags(QString& lastWarnings, const QString& textquo
 		tosExport<<textquote<<protectCSV(a->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(a->comments)<<textquote<<endl;
 #endif
 		if(!checkComponentSeparator(a->name, componentSeparator))
-			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.").arg(a->name)+"\n";
+			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is an activity tag's name").arg(a->name)+"\n";
 		if(!checkSetSeparator(a->name, setSeparator))
-			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(a->name)+"\n";
+			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.", "%1 is an activity tag's name").arg(a->name)+"\n";
 	}
 
 	lastWarnings+=Export::tr("%1 activity tags exported.").arg(gt.rules.activityTagsList.size())+"\n";
@@ -980,7 +980,7 @@ bool Export::exportCSVSubjects(QString& lastWarnings, const QString& textquote, 
 		tosExport<<textquote<<protectCSV(s->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(s->comments)<<textquote<<endl;
 #endif
 		if(!checkComponentSeparator(s->name, componentSeparator))
-			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.").arg(s->name)+"\n";
+			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is a subject's name").arg(s->name)+"\n";
 	}
 
 	lastWarnings+=Export::tr("%1 subjects exported.").arg(gt.rules.subjectsList.size())+"\n";
@@ -1043,9 +1043,9 @@ bool Export::exportCSVTeachers(QString& lastWarnings, const QString& textquote, 
 		tosExport<<textquote<<protectCSV(t->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(t->comments)<<textquote<<endl;
 #endif
 		if(!checkComponentSeparator(t->name, componentSeparator))
-			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.").arg(t->name)+"\n";
+			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is a teacher's name").arg(t->name)+"\n";
 		if(!checkSetSeparator(t->name, setSeparator))
-			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(t->name)+"\n";
+			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.", "%1 is a teacher's name").arg(t->name)+"\n";
 	}
 
 	lastWarnings+=Export::tr("%1 teachers exported.").arg(gt.rules.teachersList.size())+"\n";
@@ -1116,9 +1116,9 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 					<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<textquote<<protectCSVComments(sty->comments)<<textquote<<endl;
 #endif
 		if(!checkComponentSeparator(sty->name, componentSeparator))
-			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.").arg(sty->name)+"\n";
+			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is a students year's name").arg(sty->name)+"\n";
 		if(!checkSetSeparator(sty->name, setSeparator))
-			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(sty->name)+"\n";
+			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.", "%1 is a students year's name").arg(sty->name)+"\n";
 		for(StudentsGroup* stg : qAsConst(sty->groupsList)){
 			ig++;
 			tosExport	<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
@@ -1130,9 +1130,9 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 					<<CustomFETString::number(stg->numberOfStudents)<<fieldSeparator<<fieldSeparator<<fieldSeparator<<textquote<<protectCSVComments(stg->comments)<<textquote<<endl;
 #endif
 			if(!checkComponentSeparator(stg->name, componentSeparator))
-				lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.").arg(stg->name)+"\n";
+				lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is a students group's name").arg(stg->name)+"\n";
 			if(!checkSetSeparator(stg->name, setSeparator))
-				lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(stg->name)+"\n";
+				lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.", "%1 is a students group's name").arg(stg->name)+"\n";
 			for(StudentsSubgroup* sts : qAsConst(stg->subgroupsList)){
 				is++;
 				tosExport	<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
@@ -1146,9 +1146,9 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 						<<CustomFETString::number(sts->numberOfStudents)<<fieldSeparator<<textquote<<protectCSVComments(sts->comments)<<textquote<<endl;
 #endif
 				if(!checkComponentSeparator(sts->name, componentSeparator))
-					lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.").arg(sts->name)+"\n";
+					lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is a students subgroup's name").arg(sts->name)+"\n";
 				if(!checkSetSeparator(sts->name, setSeparator))
-					lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.").arg(sts->name)+"\n";
+					lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.", "%1 is a students subgroup's name").arg(sts->name)+"\n";
 			}
 		}
 	}

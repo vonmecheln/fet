@@ -2670,7 +2670,12 @@ Versions 6.9.0 - 6.9.v
 	- Updated the Russian translation, by Alexey Chernous.
 - Version 6.9.3
 	- Updated to Qt 6.5.2.
-	- The activities import/export from/to CSV files will now process correctly the individually modified subactivities.
-	The different components will be separated by the | symbol. Suggested by ngoctp29121982 and Volker Dirr.
+	- The activities import/export from/to CSV files will now process correctly the individually modified teachers, subjects, activity tags,
+	and students of the subactivities. The different components will be separated by the | symbol. Suggested by ngoctp29121982 and Volker Dirr.
+	- Corrected a few English fields, by Vangelis Karafillidis.
+	- Updated the Greek translation, by Vangelis Karafillidis.
+- Version 6.9.4
+	- Added a new type of constraint, max hourly span of a set of activities (suggested by pnlshd).
+	- Minor code improvements.
 	- Corrected a few English fields, by Vangelis Karafillidis.
 	- Updated the Greek translation, by Vangelis Karafillidis.

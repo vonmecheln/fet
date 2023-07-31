@@ -164,6 +164,15 @@ Matrix1D<QList<double>> maxHalfDaysListOfWeightPercentages;
 ////////END   MAX HALF DAYS TIME CONSTRAINTS
 
 
+////////BEGIN MAX HOURLY SPAN TIME CONSTRAINTS
+Matrix1D<QList<int>> maxHourlySpanListOfActivities;
+Matrix1D<QList<int>> maxHourlySpanListOfMaxSpan;
+Matrix1D<QList<double>> maxHourlySpanListOfWeightPercentages;
+
+//bool computeMaxHourlySpan(QWidget* parent);
+////////END   MAX HOURLY SPAN TIME CONSTRAINTS
+
+
 ////////BEGIN MAX TERMS TIME CONSTRAINTS
 Matrix1D<QList<int>> maxTermsListOfActivities;
 Matrix1D<QList<int>> maxTermsListOfMaxTerms;
@@ -1518,6 +1527,11 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	maxHalfDaysListOfMaxDays.resize(gt.rules.nInternalActivities);
 	maxHalfDaysListOfWeightPercentages.resize(gt.rules.nInternalActivities);
 
+	//MAX HOURLY SPAN BETWEEN ACTIVITIES
+	maxHourlySpanListOfActivities.resize(gt.rules.nInternalActivities);
+	maxHourlySpanListOfMaxSpan.resize(gt.rules.nInternalActivities);
+	maxHourlySpanListOfWeightPercentages.resize(gt.rules.nInternalActivities);
+
 	//MAX TERMS BETWEEN ACTIVITIES
 	maxTermsListOfActivities.resize(gt.rules.nInternalActivities);
 	maxTermsListOfMaxTerms.resize(gt.rules.nInternalActivities);
@@ -1754,6 +1768,12 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		return false;
 	/////////////////////////////////////
 	
+	/////2.37. max hourly span between activities
+	t=computeMaxHourlySpan(parent);
+	if(!t)
+		return false;
+	/////////////////////////////////////
+	
 	/////2.4. max terms between activities
 	t=computeMaxTerms(parent);
 	if(!t)
@@ -1845,7 +1865,6 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 		return false;
 	//////////////////////////////////
 	
-	
 	/////6. TEACHERS MAX GAPS PER WEEK/DAY
 	t=computeNHoursPerTeacher(parent);
 	if(!t)
@@ -1906,7 +1925,6 @@ bool processTimeSpaceConstraints(QWidget* parent, QTextStream* initialOrderStrea
 	t=computeTeachersActivityTagMaxHoursDailyRealDays(parent);
 	if(!t)
 		return false;
-
 
 	t=computeTeachersActivityTagMaxHoursContinuously(parent);
 	if(!t)
@@ -13437,6 +13455,89 @@ bool computeMaxHalfDays(QWidget* parent)
 						maxHalfDaysListOfMaxDays[ai1].append(m);
 						assert(md->weightPercentage >=0 && md->weightPercentage<=100);
 						maxHalfDaysListOfWeightPercentages[ai1].append(md->weightPercentage);
+						//maxDaysListOfConsecutiveIfSameDay[ai1].append(md->consecutiveIfSameDay);
+					}
+			}
+		}
+
+	/*for(int j=0; j<gt.rules.nInternalActivities; j++)
+		for(int k=0; k<gt.rules.nInternalActivities; k++)
+			if(minDays[j][k]>0){
+				assert(j!=k);
+				minDaysListOfActivities[j].append(k);
+				minDaysListOfMinDays[j].append(minDays[j][k]);
+			}*/
+			
+	return ok;
+}
+
+bool computeMaxHourlySpan(QWidget* parent)
+{
+	QSet<ConstraintActivitiesMaxHourlySpan*> msset1;
+	QSet<ConstraintActivitiesMaxHourlySpan*> msset2;
+
+	bool ok=true;
+
+	for(int j=0; j<gt.rules.nInternalActivities; j++){
+		maxHourlySpanListOfActivities[j].clear();
+		maxHourlySpanListOfMaxSpan[j].clear();
+		maxHourlySpanListOfWeightPercentages[j].clear();
+	}
+
+	for(int i=0; i<gt.rules.nInternalTimeConstraints; i++)
+		if(gt.rules.internalTimeConstraintsList[i]->type==CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN
+		 /*&&gt.rules.internalTimeConstraintsList[i]->compulsory==true*/){
+			ConstraintActivitiesMaxHourlySpan* ms=
+			 (ConstraintActivitiesMaxHourlySpan*)gt.rules.internalTimeConstraintsList[i];
+			
+			for(int j=0; j<ms->_n_activities; j++){
+				int ai1=ms->_activities[j];
+
+				if(gt.rules.internalActivitiesList[ai1].duration > ms->maxHourlySpan){
+					ok=false;
+					
+					if(!msset1.contains(ms)){
+						msset1.insert(ms);
+						
+						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+						 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint activities max hourly span with the activity id=%1 with"
+						 " the duration=%2, which is greater than the maximum allowed hourly span. The constraint is: %3. Please correct that.")
+						 .arg(gt.rules.internalActivitiesList[ai1].id).arg(ms->maxHourlySpan).arg(ms->getDetailedDescription(gt.rules)),
+						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+						 1, 0 );
+						
+						if(t==0)
+							return ok;
+					}
+				}
+
+				for(int k=0; k<ms->_n_activities; k++)
+					if(j!=k){
+						int ai2=ms->_activities[k];
+						if(ai1==ai2){
+							ok=false;
+							
+							if(!msset2.contains(ms)){
+								msset2.insert(ms);
+						
+								int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+								 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint activities max hourly span with duplicate activities. The constraint "
+								 "is: %1. Please correct that.").arg(ms->getDetailedDescription(gt.rules)),
+								 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+								 1, 0 );
+					
+								if(t==0)
+									return ok;
+							}
+						}
+						int m=ms->maxHourlySpan;
+						/*if(m>minDays[ai1][ai2])
+							minDays[ai1][ai2]=minDays[ai2][ai1]=m;*/
+						
+						maxHourlySpanListOfActivities[ai1].append(ai2);
+						maxHourlySpanListOfMaxSpan[ai1].append(m);
+						assert(ms->weightPercentage >=0 && ms->weightPercentage<=100);
+						maxHourlySpanListOfWeightPercentages[ai1].append(ms->weightPercentage);
 						//maxDaysListOfConsecutiveIfSameDay[ai1].append(md->consecutiveIfSameDay);
 					}
 			}

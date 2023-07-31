@@ -50,7 +50,7 @@
       </sizepolicy>
      </property>
      <property name="title">
-      <string>Mornings afternoons behavior:</string>
+      <string>Mornings-afternoons behavior:</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">

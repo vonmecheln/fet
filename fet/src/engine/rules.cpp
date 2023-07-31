@@ -4632,6 +4632,10 @@ bool Rules::addTimeConstraint(TimeConstraint* ctr)
 			ConstraintMaxDaysBetweenActivities* c=(ConstraintMaxDaysBetweenActivities*) ctr;
 			c->recomputeActivitiesSet();
 		}
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN){
+			ConstraintActivitiesMaxHourlySpan* c=(ConstraintActivitiesMaxHourlySpan*) ctr;
+			c->recomputeActivitiesSet();
+		}
 		else if(ctr->type==CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES){
 			ConstraintMinGapsBetweenActivities* c=(ConstraintMinGapsBetweenActivities*) ctr;
 			c->recomputeActivitiesSet();
@@ -5338,6 +5342,12 @@ void Rules::updateConstraintsAfterRemoval()
 		}
 		else if(tc->type==CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
 			ConstraintMaxDaysBetweenActivities* c=(ConstraintMaxDaysBetweenActivities*)tc;
+			c->removeUseless(*this);
+			if(c->n_activities<2)
+				toBeRemovedTime.append(tc);
+		}
+		else if(tc->type==CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN){
+			ConstraintActivitiesMaxHourlySpan* c=(ConstraintActivitiesMaxHourlySpan*)tc;
 			c->removeUseless(*this);
 			if(c->n_activities<2)
 				toBeRemovedTime.append(tc);
@@ -6820,7 +6830,9 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				}
 				else{
 					if(!(tmp==nDaysPerWeek))
-						xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond").arg("Days_List").arg(numberString).arg(dayString));
+						xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of days,"
+						 " %3 is the number of actually read days.")
+						 .arg("Days_List").arg(numberString).arg(dayString));
 					else
 						assert(tmp==this->nDaysPerWeek);
 				}
@@ -6914,14 +6926,18 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 					if(numberString=="Number"){
 						//some older files contain also the end of day hour, so tmp==nHoursPerDay+1 in this case
 						if(!(tmp==nHoursPerDay || tmp==nHoursPerDay+1))
-							xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond").arg("Hours_List").arg(numberString).arg(hourString));
+							xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of hours,"
+							 " %3 is the number of actually read hours.")
+							 .arg("Hours_List").arg(numberString).arg(hourString));
 						else
 							assert(tmp==nHoursPerDay || tmp==nHoursPerDay+1);
 					}
 					else{
 						assert(numberString=="Number_of_Hours");
 						if(!(tmp==nHoursPerDay))
-							xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond").arg("Hours_List").arg(numberString).arg(hourString));
+							xmlReader.raiseError(tr("%1: %2 and the number of %3 read do not correspond", "%1 is an XML string, %2 is the specified number of hours,"
+							 " %3 is the number of actually read hours.")
+							 .arg("Hours_List").arg(numberString).arg(hourString));
 						else
 							assert(tmp==nHoursPerDay);
 					}
@@ -6973,7 +6989,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 									teacher->morningsAfternoonsBehavior=TEACHER_FOUR_DAYS_EXCEPTION;
 								else if(text=="Five days exception")
 									teacher->morningsAfternoonsBehavior=TEACHER_FIVE_DAYS_EXCEPTION;
-								xmlReadingLog+="    Read teacher mornings afternoons behavior: "+QString::number(teacher->morningsAfternoonsBehavior)+"\n";
+								xmlReadingLog+="    Read teacher mornings-afternoons behavior: "+QString::number(teacher->morningsAfternoonsBehavior)+"\n";
 							}
 							else{
 								unrecognizedXmlTags.append(xmlReader.name().toString());
@@ -7081,7 +7097,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 
 			if(reportMoroccoTeachers && !probably5Morocco){
 				RulesReconcilableMessage::information(parent, tr("FET information"),
-				 tr("You are opening an old Morocco file. All the teachers will have mornings afternoons behavior"
+				 tr("You are opening an old Morocco file. All the teachers will have mornings-afternoons behavior"
 				 " 'Exclusive mornings/afternoons' by default, and the exceptions will be recognized correctly."
 				 " If this is a mistake and your file is not an old Morocco file, please report the bug.")+QString(" ")+
 				 tr("(The program detected this because your file contains the section %1.)").arg("'Exception_Teachers_One_Day_List'")+
@@ -8665,6 +8681,9 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 				}
 				else if(xmlReader.name()==QString("ConstraintMaxDaysBetweenActivities")){
 					crt_constraint=readMaxDaysBetweenActivities(xmlReader, xmlReadingLog);
+				}
+				else if(xmlReader.name()==QString("ConstraintActivitiesMaxHourlySpan")){
+					crt_constraint=readActivitiesMaxHourlySpan(xmlReader, xmlReadingLog);
 				}
 				else if(xmlReader.name()==QString("ConstraintMaxHalfDaysBetweenActivities")){
 					crt_constraint=readMaxHalfDaysBetweenActivities(xmlReader, xmlReadingLog);
@@ -12774,6 +12793,67 @@ TimeConstraint* Rules::readMaxDaysBetweenActivities(QXmlStreamReader& xmlReader,
 			QString text=xmlReader.readElementText();
 			cn->maxDays=text.toInt();
 			xmlReadingLog+="    Read MaxDays="+CustomFETString::number(cn->maxDays)+"\n";
+		}
+		else{
+			unrecognizedXmlTags.append(xmlReader.name().toString());
+			unrecognizedXmlLineNumbers.append(xmlReader.lineNumber());
+			unrecognizedXmlColumnNumbers.append(xmlReader.columnNumber());
+
+			xmlReader.skipCurrentElement();
+			xmlReaderNumberOfUnrecognizedFields++;
+		}
+	}
+	if(!(n_act==cn->n_activities)){
+		xmlReader.raiseError(tr("%1 does not coincide with the number of read %2").arg("Number_of_Activities").arg("Activity_Id"));
+		delete cn;
+		cn=nullptr;
+		return nullptr;
+	}
+	assert(n_act==cn->n_activities);
+	return cn;
+}
+
+TimeConstraint* Rules::readActivitiesMaxHourlySpan(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){
+	assert(xmlReader.isStartElement() && xmlReader.name()==QString("ConstraintActivitiesMaxHourlySpan"));
+	
+	ConstraintActivitiesMaxHourlySpan* cn=new ConstraintActivitiesMaxHourlySpan();
+	cn->n_activities=0;
+	int n_act=0;
+	cn->activitiesIds.clear();
+	while(xmlReader.readNextStartElement()){
+		xmlReadingLog+="    Found "+xmlReader.name().toString()+" tag\n";
+		if(xmlReader.name()==QString("Weight_Percentage")){
+			QString text=xmlReader.readElementText();
+			cn->weightPercentage=customFETStrToDouble(text);
+			xmlReadingLog+="    Adding weightPercentage="+CustomFETString::number(cn->weightPercentage)+"\n";
+		}
+		else if(xmlReader.name()==QString("Active")){
+			QString text=xmlReader.readElementText();
+			if(text=="false"){
+				cn->active=false;
+			}
+		}
+		else if(xmlReader.name()==QString("Comments")){
+			QString text=xmlReader.readElementText();
+			cn->comments=text;
+		}
+		else if(xmlReader.name()==QString("Number_of_Activities")){
+			QString text=xmlReader.readElementText();
+			cn->n_activities=text.toInt();
+			xmlReadingLog+="    Read n_activities="+CustomFETString::number(cn->n_activities)+"\n";
+		}
+		else if(xmlReader.name()==QString("Activity_Id")){
+			QString text=xmlReader.readElementText();
+			cn->activitiesIds.append(text.toInt());
+			assert(n_act==cn->activitiesIds.count()-1);
+			//cn->activitiesIds[n_act]=text.toInt();
+			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
+			n_act++;
+		}
+		else if(xmlReader.name()==QString("MaxHourlySpan")){
+			QString text=xmlReader.readElementText();
+			cn->maxHourlySpan=text.toInt();
+			xmlReadingLog+="    Read MaxHourlySpan="+CustomFETString::number(cn->maxHourlySpan)+"\n";
 		}
 		else{
 			unrecognizedXmlTags.append(xmlReader.name().toString());

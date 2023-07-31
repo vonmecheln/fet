@@ -208,7 +208,7 @@ void AddConstraintMaxDaysBetweenActivitiesForm::addConstraint()
 	}
 	else{
 		QMessageBox::warning(this, tr("FET information"),
-			tr("Constraint NOT added - it must be a duplicate"));
+			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
 }

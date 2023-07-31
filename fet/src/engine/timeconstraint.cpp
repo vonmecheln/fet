@@ -399,7 +399,9 @@ bool TimeConstraint::canBeUsedInOfficialMode()
 	 type==CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY ||
 	 type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY ||
 	 type==CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY ||
-	 type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY)
+	 type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY ||
+	
+	 type==CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN)
 		return true;
 
 	return false;
@@ -679,7 +681,9 @@ bool TimeConstraint::canBeUsedInMorningsAfternoonsMode()
  	 type==CONSTRAINT_TEACHERS_MIN_HOURS_PER_AFTERNOON ||
 	 type==CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON ||
 	 type==CONSTRAINT_STUDENTS_MIN_HOURS_PER_AFTERNOON ||
-	 type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON)
+	 type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON ||
+	
+	 type==CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN)
 		return true;
 
 	return false;
@@ -821,7 +825,9 @@ bool TimeConstraint::canBeUsedInBlockPlanningMode()
 	 type==CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY ||
 	 type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY ||
 	 type==CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY ||
-	 type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY)
+	 type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY ||
+	
+	 type==CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN)
 
 		return true;
 
@@ -966,7 +972,9 @@ bool TimeConstraint::canBeUsedInTermsMode()
 	 type==CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY ||
 	 type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY ||
 	 type==CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY ||
-	 type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY)
+	 type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY ||
+	
+	 type==CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN)
 		return true;
 
 	return false;
@@ -3788,6 +3796,371 @@ bool ConstraintMaxDaysBetweenActivities::repairWrongDayOrHour(Rules& r)
 			maxDays=r.nDaysPerWeek/2-1;
 	}
 
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ConstraintActivitiesMaxHourlySpan::ConstraintActivitiesMaxHourlySpan()
+	: TimeConstraint()
+{
+	type=CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN;
+}
+
+ConstraintActivitiesMaxHourlySpan::ConstraintActivitiesMaxHourlySpan(double wp, int nact, const QList<int>& act, int n)
+ : TimeConstraint(wp)
+ {
+  	assert(nact>=2);
+  	assert(act.count()==nact);
+	this->n_activities=nact;
+	this->activitiesIds.clear();
+	for(int i=0; i<nact; i++)
+		this->activitiesIds.append(act.at(i));
+
+	assert(n>=0);
+	this->maxHourlySpan=n;
+
+	this->type=CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN;
+}
+
+bool ConstraintActivitiesMaxHourlySpan::computeInternalStructure(QWidget* parent, Rules& r)
+{
+	//compute the indices of the activities,
+	//based on their unique ID
+
+	assert(this->n_activities==this->activitiesIds.count());
+
+	this->_activities.clear();
+	for(int i=0; i<this->n_activities; i++){
+		int j=r.activitiesHash.value(activitiesIds.at(i), -1);
+		//assert(j>=0);
+		if(j>=0)
+			_activities.append(j);
+		/*int j;
+		Activity* act;
+		for(j=0; j<r.nInternalActivities; j++){
+			act=&r.internalActivitiesList[j];
+			if(act->id==this->activitiesIds[i]){
+				this->_activities.append(j);
+				break;
+			}
+		}*/
+	}
+	this->_n_activities=this->_activities.count();
+	
+	if(this->_n_activities<=1){
+		TimeConstraintIrreconcilableMessage::warning(parent, tr("FET error in data"),
+			tr("Following constraint is wrong (because you need 2 or more activities). Please correct it:\n%1").arg(this->getDetailedDescription(r)));
+		//assert(0);
+		return false;
+	}
+
+	return true;
+}
+
+void ConstraintActivitiesMaxHourlySpan::removeUseless(Rules& r)
+{
+	//remove the activitiesIds which no longer exist (used after the deletion of an activity)
+	
+	assert(this->n_activities==this->activitiesIds.count());
+
+	QList<int> tmpList;
+
+	for(int i=0; i<this->n_activities; i++){
+		Activity* act=r.activitiesPointerHash.value(activitiesIds[i], nullptr);
+		if(act!=nullptr)
+			tmpList.append(act->id);
+		/*for(int k=0; k<r.activitiesList.size(); k++){
+			Activity* act=r.activitiesList[k];
+			if(act->id==this->activitiesIds[i]){
+				tmpList.append(act->id);
+				break;
+			}
+		}*/
+	}
+	
+	this->activitiesIds=tmpList;
+	this->n_activities=this->activitiesIds.count();
+
+	r.internalStructureComputed=false;
+}
+
+void ConstraintActivitiesMaxHourlySpan::recomputeActivitiesSet()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	activitiesIdsSet=QSet<int>(activitiesIds.constBegin(), activitiesIds.constEnd());
+#else
+	activitiesIdsSet=activitiesIds.toSet();
+#endif
+}
+
+bool ConstraintActivitiesMaxHourlySpan::hasInactiveActivities(Rules& r)
+{
+	int count=0;
+
+	for(int i=0; i<this->n_activities; i++)
+		if(r.inactiveActivities.contains(this->activitiesIds[i]))
+			count++;
+
+	if(this->n_activities-count<=1)
+		return true;
+	else
+		return false;
+}
+
+QString ConstraintActivitiesMaxHourlySpan::getXmlDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString s="<ConstraintActivitiesMaxHourlySpan>\n";
+	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
+	s+="	<Number_of_Activities>"+CustomFETString::number(this->n_activities)+"</Number_of_Activities>\n";
+	for(int i=0; i<this->n_activities; i++)
+		s+="	<Activity_Id>"+CustomFETString::number(this->activitiesIds[i])+"</Activity_Id>\n";
+	s+="	<MaxHourlySpan>"+CustomFETString::number(this->maxHourlySpan)+"</MaxHourlySpan>\n";
+	s+="	<Active>"+trueFalse(active)+"</Active>\n";
+	s+="	<Comments>"+protect(comments)+"</Comments>\n";
+	s+="</ConstraintActivitiesMaxHourlySpan>\n";
+	return s;
+}
+
+QString ConstraintActivitiesMaxHourlySpan::getDescription(Rules& r)
+{
+	Q_UNUSED(r);
+
+	QString begin=QString("");
+	if(!active)
+		begin="X - ";
+		
+	QString end=QString("");
+	if(!comments.isEmpty())
+		end=", "+tr("C: %1", "Comments").arg(comments);
+		
+	QString s;
+	s+=tr("Activities max hourly span");s+=", ";
+	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
+	s+=tr("NA:%1", "Number of activities").arg(this->n_activities);s+=", ";
+	for(int i=0; i<this->n_activities; i++){
+		s+=tr("Id:%1", "Id of activity").arg(this->activitiesIds[i]);s+=", ";
+	}
+	s+=tr("MHS:%1", "Abbreviation for maximum hourly span").arg(this->maxHourlySpan);
+
+	return begin+s+end;
+}
+
+QString ConstraintActivitiesMaxHourlySpan::getDetailedDescription(Rules& r)
+{
+	QString s=tr("Time constraint");s+="\n";
+	s+=tr("Activities max hourly span");s+="\n";
+	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
+	s+=tr("Number of activities=%1").arg(this->n_activities);s+="\n";
+	for(int i=0; i<this->n_activities; i++){
+		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
+			.arg(this->activitiesIds[i])
+			.arg(getActivityDetailedDescription(r, this->activitiesIds[i]));
+		s+="\n";
+	}
+	s+=tr("Maximum hourly span=%1").arg(this->maxHourlySpan);s+="\n";
+
+	if(!active){
+		s+=tr("Active time constraint=%1", "Represents a yes/no value, if a time constraint is active or not, %1 is yes or no").arg(yesNoTranslated(active));
+		s+="\n";
+	}
+	if(!comments.isEmpty()){
+		s+=tr("Comments=%1").arg(comments);
+		s+="\n";
+	}
+
+	return s;
+}
+
+double ConstraintActivitiesMaxHourlySpan::fitness(Solution& c, Rules& r, QList<double>& cl, QList<QString>& dl, FakeString* conflictsString)
+{
+	assert(r.internalStructureComputed);
+
+	int nbroken;
+
+	//We do not use the matrices 'subgroupsMatrix' nor 'teachersMatrix'.
+
+	//without logging
+	if(conflictsString==nullptr){
+		nbroken=0;
+		for(int i=1; i<this->_n_activities; i++){
+			int t1=c.times[this->_activities[i]];
+			if(t1!=UNALLOCATED_TIME){
+				//int day1=t1%r.nDaysPerWeek;
+				int hour1=t1/r.nDaysPerWeek;
+				int duration1=r.internalActivitiesList[this->_activities[i]].duration;
+
+				for(int j=0; j<i; j++){
+					int t2=c.times[this->_activities[j]];
+					if(t2!=UNALLOCATED_TIME){
+						//int day2=t2%r.nDaysPerWeek;
+						int hour2=t2/r.nDaysPerWeek;
+						int duration2=r.internalActivitiesList[this->_activities[j]].duration;
+					
+						int tmp;
+						int tt=0;
+						int td1 = abs(hour1-(hour2+duration2));
+						int td2 = abs(hour2-(hour1+duration1));
+						//int dist = abs(day1-day2);
+
+						if(td1>maxHourlySpan || td2>maxHourlySpan)
+							tt=std::max(maxHourlySpan-td1, maxHourlySpan-td2);
+
+						/*if(dist>maxDays){
+							tt=dist-maxDays;
+							
+							//if(this->consecutiveIfSameDay && day1==day2)
+							//	assert( day1==day2 && (hour1+duration1==hour2 || hour2+duration2==hour1) );
+						}*/
+
+						tmp=tt;
+	
+						nbroken+=tmp;
+					}
+				}
+			}
+		}
+	}
+	//with logging
+	else{
+		nbroken=0;
+		for(int i=1; i<this->_n_activities; i++){
+			int t1=c.times[this->_activities[i]];
+			if(t1!=UNALLOCATED_TIME){
+				//int day1=t1%r.nDaysPerWeek;
+				int hour1=t1/r.nDaysPerWeek;
+				int duration1=r.internalActivitiesList[this->_activities[i]].duration;
+
+				for(int j=0; j<i; j++){
+					int t2=c.times[this->_activities[j]];
+					if(t2!=UNALLOCATED_TIME){
+						//int day2=t2%r.nDaysPerWeek;
+						int hour2=t2/r.nDaysPerWeek;
+						int duration2=r.internalActivitiesList[this->_activities[j]].duration;
+					
+						int tmp;
+						int tt=0;
+						int td1 = abs(hour1-(hour2+duration2));
+						int td2 = abs(hour2-(hour1+duration1));
+						//int dist = abs(day1-day2);
+
+						if(td1>maxHourlySpan || td2>maxHourlySpan)
+							tt=std::max(maxHourlySpan-td1, maxHourlySpan-td2);
+
+						/*if(dist>maxDays){
+							tt=dist-maxDays;
+							
+							//if(this->consecutiveIfSameDay && day1==day2)
+							//	assert( day1==day2 && (hour1+duration1==hour2 || hour2+duration2==hour1) );
+						}*/
+
+						tmp=tt;
+	
+						nbroken+=tmp;
+
+						if(tt>0 && conflictsString!=nullptr){
+							int day1=t1%r.nDaysPerWeek;
+							int day2=t2%r.nDaysPerWeek;
+							
+							QString s=tr("Time constraint activities max hourly span broken: activity with id=%1 (%2) conflicts with activity with id=%3 (%4), spanning %5 hours too much."
+							 " The first activity begins on day %6, hour %7, and the second activity begins on day %8, hour %9",
+							 "%1 is the id, %2 is the detailed description of the activity, %3 id, %4 det. descr.")
+							 .arg(r.internalActivitiesList[this->_activities[i]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[i]].id))
+							 .arg(r.internalActivitiesList[this->_activities[j]].id)
+							 .arg(getActivityDetailedDescription(r, r.internalActivitiesList[this->_activities[j]].id))
+							 .arg(tt)
+							 .arg(r.daysOfTheWeek[day1])
+							 .arg(r.hoursOfTheDay[hour1])
+							 .arg(r.daysOfTheWeek[day2])
+							 .arg(r.hoursOfTheDay[hour2]);
+							
+							s+=", ";
+							s+=tr("conflicts factor increase=%1").arg(CustomFETString::numberPlusTwoDigitsPrecision(tmp*weightPercentage/100));
+							s+=".";
+							
+							dl.append(s);
+							cl.append(tmp*weightPercentage/100);
+							
+							*conflictsString+= s+"\n";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if(weightPercentage==100)
+		assert(nbroken==0);
+	return weightPercentage/100 * nbroken;
+}
+
+bool ConstraintActivitiesMaxHourlySpan::isRelatedToActivity(Rules& r, Activity* a)
+{
+	Q_UNUSED(r);
+
+	return activitiesIdsSet.contains(a->id);
+
+	/*for(int i=0; i<this->n_activities; i++)
+		if(this->activitiesIds[i]==a->id)
+			return true;
+	return false;*/
+}
+
+bool ConstraintActivitiesMaxHourlySpan::isRelatedToTeacher(Teacher* t)
+{
+	Q_UNUSED(t);
+
+	return false;
+}
+
+bool ConstraintActivitiesMaxHourlySpan::isRelatedToSubject(Subject* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesMaxHourlySpan::isRelatedToActivityTag(ActivityTag* s)
+{
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesMaxHourlySpan::isRelatedToStudentsSet(Rules& r, StudentsSet* s)
+{
+	Q_UNUSED(r);
+	Q_UNUSED(s);
+
+	return false;
+}
+
+bool ConstraintActivitiesMaxHourlySpan::hasWrongDayOrHour(Rules& r)
+{
+	if(maxHourlySpan>r.nHoursPerDay)
+		return true;
+	
+	return false;
+}
+
+bool ConstraintActivitiesMaxHourlySpan::canRepairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	return true;
+}
+
+bool ConstraintActivitiesMaxHourlySpan::repairWrongDayOrHour(Rules& r)
+{
+	assert(hasWrongDayOrHour(r));
+	
+	if(maxHourlySpan>r.nHoursPerDay)
+		maxHourlySpan=r.nHoursPerDay;
+	
 	return true;
 }
 

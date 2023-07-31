@@ -46,6 +46,9 @@
 #include "modifyconstraintmindaysbetweenactivitiesform.h"
 #include "modifyconstraintminhalfdaysbetweenactivitiesform.h"
 #include "modifyconstraintmaxdaysbetweenactivitiesform.h"
+
+#include "modifyconstraintactivitiesmaxhourlyspanform.h"
+
 #include "modifyconstraintmaxhalfdaysbetweenactivitiesform.h"
 #include "modifyconstraintmaxtermsbetweenactivitiesform.h"
 #include "modifyconstraintmingapsbetweenactivitiesform.h"
@@ -1950,6 +1953,13 @@ void AllTimeConstraintsForm::modifyConstraint()
 	//202
 	else if(ctr->type==CONSTRAINT_STUDENTS_MIN_HOURS_PER_AFTERNOON){
 		ModifyConstraintStudentsMinHoursPerAfternoonForm form(this, (ConstraintStudentsMinHoursPerAfternoon*)ctr);
+		setParentAndOtherThings(&form, this);
+		form.exec();
+	}
+
+	//203
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN){
+		ModifyConstraintActivitiesMaxHourlySpanForm form(this, (ConstraintActivitiesMaxHourlySpan*)ctr);
 		setParentAndOtherThings(&form, this);
 		form.exec();
 	}
