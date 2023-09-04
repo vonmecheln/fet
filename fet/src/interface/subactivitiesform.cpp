@@ -534,8 +534,8 @@ void SubactivitiesForm::filterChanged()
 			 +tr("Note: if you are using more filters, like 'the subactivity should have a certain teacher', you might obtain much faster results if you filter on the"
 			 " description/detailed description of the subactivity for the teacher and on the detailed description with constraints for other filters (meaning that you should"
 			 " prefer using the description/detailed description instead of the detailed description with constraints, whenever it is possible).")+QString(" ")
-			 +tr("Also, the order of the detailed description with constraints filters is important: you should put firstly the ones who filter out more subactivities"
-			 " (if you selected the 'All' radio button) or put firstly the ones who accept immediately more subactivities (if you selected the 'Any' radio button)."));
+			 +tr("Also, the order of the detailed description with constraints filters is important: you should put firstly the ones which filter out more subactivities"
+			 " (if you selected the 'All' radio button) or put firstly the ones which accept immediately more subactivities (if you selected the 'Any' radio button)."));
 			break;
 		}
 		
@@ -677,7 +677,7 @@ void SubactivitiesForm::help()
 	s+=tr("Show related: if you select this, there will be listed subactivities for groups and subgroups contained also in the current set (if the current set"
 		" is a year or a group) and also higher ranked year or group (if the current set is a group or a subgroup).");
 	
-	s+=tr("There are two possible filters: one is simple, based on the teacher, students, subject, or activity tag, the other one is more advanced (select the 'Filter' check box)."
+	s+=tr("There are two available filters: one is simple, based on the teacher, students, subject, or activity tag, the other one is more advanced (select the 'Filter' check box)."
 		" The resulted overall filter is the combined AND of these two filters, if both filters are active, or the active one, if only one is active. If no filters are active,"
 		" all the subactivities will be shown.");
 	

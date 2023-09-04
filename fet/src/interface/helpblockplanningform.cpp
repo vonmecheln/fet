@@ -79,15 +79,15 @@ void HelpBlockPlanningForm::setText()
 	s+=tr("    Constraint \"activity tags not overlapping\" (each tag = the subject) ensures that activities with different subjects aren't placed"
 	 " at the same hour on the same FET day (real teacher).");
 	s+="\n\n";
-	s+=tr("    Constraint \"max simultaneous from a set in selected time slots\" can be used to make sure that no section of a subject has too many"
-	 " students enrolled. My notation: a \"section\" is an instance of a subject. So the subject is \"physics\" and if there are 40 students"
+	s+=tr("    Constraint \"activities max simultaneous from a set in selected time slots\" can be used to make sure that no section of a subject has"
+	 " too many students enrolled. My notation: a \"section\" is an instance of a subject. So the subject is \"physics\" and if there are 40 students"
 	 " taking physics, that is too big for one group. So there must be two \"sections\" of that subject. They may be with the same teacher or"
 	 " different teachers - it depends on what is desired. If I want the maximum number of students to be 22, I can use \"max simultaneous from"
 	 " a set in selected time slots\".");
 	s+="\n\n";
 	s+=tr("- %1 suggested this:", "%1 is a person").arg("Liviu Lalescu");
 	s+="\n\n";
-	s+=tr("    Constraint \"a set of activities occupies max time slots from selected\" can be used to ensure that a teacher doesn't have too"
+	s+=tr("    Constraint \"a set of activities occupies max time slots from selection\" can be used to ensure that a teacher doesn't have too"
 	 " many blocks of activities assigned.");
 	s+="\n\n";
 	s+=tr("    Constraint \"max total activities from a set in selected time slots\" can be used with an overflow/fake block (see below) to"

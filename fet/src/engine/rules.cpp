@@ -6592,7 +6592,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 	if(!version5AndAbove){
 		RulesReconcilableMessage::warning(parent, tr("FET information"),
 		 tr("Opening older file - it will be converted to latest format, automatically "
-		 "assigning weight percentages to constraints and dropping parity for activities. "
+		 "assigning weight percentages to constraints and dropping parity (weekly/fortnightly) for activities. "
 		 "You are advised to make a backup of your old file before saving in new format.\n\n"
 		 "Please note that the default weight percentage of constraints min days between activities "
 		 "will be 95% (mainly satisfied, not always) and 'consecutive if on the same day' will be set to true "

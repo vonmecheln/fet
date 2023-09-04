@@ -1305,7 +1305,7 @@ void AddActivityForm::help()
 	s+=tr("There is another option, if the activities are on the same day, make the activities consecutive. You can select "
 	 "this option for instance if you have 5 activities of math in 5 days, and there is no timetable which respects "
 	 "fully the days separation. Then, you can set the weight percent of the min days constraint to 95% and "
-	 "select consecutive if on the same day. You will have as results say 3 activities with duration 1 and a 2 hours activity on another day. "
+	 "select consecutive if on the same day. You will have as a result say 3 activities with duration 1 and a 2 hours activity on another day. "
 	 "Please be careful: if the activities are on the same day, even if the constraint has 0% weight, then the activities are forced to be "
 	 "consecutive.");
 

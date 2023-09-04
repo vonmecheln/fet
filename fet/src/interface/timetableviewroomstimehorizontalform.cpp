@@ -1478,7 +1478,7 @@ void TimetableViewRoomsTimeHorizontalForm::help()
 	s+=QCoreApplication::translate("TimetableViewForm", "Locking time constraints are constraints of type activity preferred starting time. Locking space constraints are constraints of type"
 		" activity preferred room. You can see these constraints in the corresponding constraints dialogs. New locking constraints are added at the end of the list of constraints.");
 	s+="\n\n";
-	s+=QCoreApplication::translate("TimetableViewForm", "If a cell is (permanently) locked in time or space or has a preferred day, it contains abbreviations to show that: PLT (permanently locked time),"
+	s+=QCoreApplication::translate("TimetableViewForm", "If the activity displayed in a cell is (permanently) locked in time or space or has a preferred day, it contains abbreviations to show that: PLT (permanently locked time),"
 		" LT (locked time), PLS (permanently locked space), LS (locked space), or PD (preferred day), as a tooltip.", "Translate the abbreviations also. Make sure the abbreviations in your language are different between"
 		" themselves and the user can differentiate easily between them. These abbreviations may appear also in other places, please use the same abbreviations.");
 

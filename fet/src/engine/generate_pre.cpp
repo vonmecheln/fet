@@ -4555,7 +4555,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students set min hours per morning for subgroup %1 but not also"
-					 " min hours daily for him. Please add a constraint students (set) min hours daily affecting this subgroup.")
+					 " min hours daily for it. Please add a constraint students (set) min hours daily affecting this subgroup.")
 					 .arg(gt.rules.internalSubgroupsList[sbg]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 					 1, 0 );
@@ -4615,7 +4615,7 @@ bool computeSubgroupsMinHoursDaily(QWidget* parent)
 
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 					 GeneratePreTranslate::tr("Cannot optimize, because you have constraint students set min hours per morning for subgroup %1 but not also"
-					 " min hours daily for him. Please add a constraint students (set) min hours daily affecting this subgroup.")
+					 " min hours daily for it. Please add a constraint students (set) min hours daily affecting this subgroup.")
 					 .arg(gt.rules.internalSubgroupsList[sbg]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 					 1, 0 );
@@ -6513,7 +6513,7 @@ bool computeTeachersActivityTagMaxHoursDaily(QWidget* parent)
 					ok=false;
 					
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there is a constraint activity tag %2 max %3 hours daily for it with weight 100%"
+					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there is a constraint activity tag %2 max %3 hours daily for him with weight 100%"
 					 " which cannot be satisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5)"
 					 ". Please correct and try again.", "%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint")
 					 .arg(gt.rules.internalTeachersList[i]->name).arg(gt.rules.activityTagsList.at(at)->name).arg(mh).arg(ava).arg(totalAt),
@@ -6741,7 +6741,7 @@ bool computeTeachersActivityTagMaxHoursDailyRealDays(QWidget* parent)
 					ok=false;
 
 					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there is a constraint activity tag %2 max %3 hours daily per real day for it with weight 100%"
+					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there is a constraint activity tag %2 max %3 hours daily per real day for him with weight 100%"
 					 " which cannot be satisfied, considering the number of available slots (%4) and total duration of activities with this activity tag (%5)"
 					 ". Please correct and try again.", "%2 is the activity tag for this constraint, %3 is the max number of hours daily for this constraint")
 					 .arg(gt.rules.internalTeachersList[i]->name).arg(gt.rules.activityTagsList.at(at)->name).arg(mh).arg(ava).arg(totalAt),
@@ -10740,7 +10740,7 @@ bool computeTeachersMaxGapsPerWeekPercentage(QWidget* parent)
 					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are two constraints"
 					 " of type max gaps per week relating to him, and the weight percentage is higher on the constraint"
 					 " with more gaps allowed. You are allowed only to have for each teacher"
-					 " the most important constraint with maximum weight percentage and minimum gaps allowed"
+					 " the most important constraint with maximum weight percentage and least maximum gaps allowed"
 					 ". Please modify your data accordingly and try again")
 					 .arg(gt.rules.internalTeachersList[j]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -10770,7 +10770,7 @@ bool computeTeachersMaxGapsPerWeekPercentage(QWidget* parent)
 				 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are two constraints"
 				 " of type max gaps per week relating to him, and the weight percentage is higher on the constraint"
 				 " with more gaps allowed. You are allowed only to have for each teacher"
-				 " the most important constraint with maximum weight percentage and minimum gaps allowed"
+				 " the most important constraint with maximum weight percentage and least maximum gaps allowed"
 				 ". Please modify your data accordingly and try again")
 				 .arg(gt.rules.internalTeachersList[j]->name),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -10850,7 +10850,7 @@ bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent)
 					 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are two constraints"
 					 " of type max gaps per day relating to him, and the weight percentage is higher on the constraint"
 					 " with more gaps allowed. You are allowed only to have for each teacher"
-					 " the most important constraint with maximum weight percentage and minimum gaps allowed"
+					 " the most important constraint with maximum weight percentage and least maximum gaps allowed"
 					 ". Please modify your data accordingly and try again")
 					 .arg(gt.rules.internalTeachersList[j]->name),
 					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -10880,7 +10880,7 @@ bool computeTeachersMaxGapsPerDayPercentage(QWidget* parent)
 				 GeneratePreTranslate::tr("Cannot optimize for teacher %1, because there are two constraints"
 				 " of type max gaps per day relating to him, and the weight percentage is higher on the constraint"
 				 " with more gaps allowed. You are allowed only to have for each teacher"
-				 " the most important constraint with maximum weight percentage and minimum gaps allowed"
+				 " the most important constraint with maximum weight percentage and least maximum gaps allowed"
 				 ". Please modify your data accordingly and try again")
 				 .arg(gt.rules.internalTeachersList[j]->name),
 				 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
@@ -13500,8 +13500,8 @@ bool computeMaxHourlySpan(QWidget* parent)
 						msset1.insert(ms);
 						
 						int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
-						 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint activities max hourly span with the activity id=%1 with"
-						 " the duration=%2, which is greater than the maximum allowed hourly span. The constraint is: %3. Please correct that.")
+						 GeneratePreTranslate::tr("Cannot optimize, because you have a constraint activities max hourly span containing the activity with id=%1"
+						 " having duration=%2, which is greater than the maximum allowed hourly span. The constraint is: %3. Please correct that.")
 						 .arg(gt.rules.internalActivitiesList[ai1].id).arg(ms->maxHourlySpan).arg(ms->getDetailedDescription(gt.rules)),
 						 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
 						 1, 0 );
@@ -14225,7 +14225,7 @@ bool computeActivityEndsTeachersDayPercentages(QWidget* parent)
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-				 "activity ends teachers day for activity with id==%1 with weight percentage under 100%. "
+				 "activity ends teachers day for activity with id=%1 with weight percentage under 100%. "
 				 "Constraint activity ends teachers day can only have weight percentage 100%. "
 				 "Please modify your data accordingly (remove or edit constraint) and try again.")
 				 .arg(gt.rules.internalActivitiesList[cae->activityIndex].id),
@@ -14357,7 +14357,7 @@ bool computeActivityBeginsTeachersDayPercentages(QWidget* parent)
 
 				int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
 				 GeneratePreTranslate::tr("Cannot optimize, because you have constraints of type "
-				 "activity begins teachers day for activity with id==%1 with weight percentage under 100%. "
+				 "activity begins teachers day for activity with id=%1 with weight percentage under 100%. "
 				 "Constraint activity begins teachers day can only have weight percentage 100%. "
 				 "Please modify your data accordingly (remove or edit constraint) and try again.")
 				 .arg(gt.rules.internalActivitiesList[cae->activityIndex].id),

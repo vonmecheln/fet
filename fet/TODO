@@ -8694,4 +8694,48 @@ From Vangelis Karafillidis:
 
 (see also item #323)
 
-He proposes a time horizontal view of all the teachers' not available constraints. Also for students and rooms. What about the rooms with <100%?
+He proposes a time horizontal view of all the teachers' not available constraints. Also for students and rooms.
+
+Liviu Lalescu: what about the rooms with <100% or multiple not available constraints (which is allowed)?
+
+Vangelis Karafillidis:
+
+About this time-horizontal view for "not available times"
+
+1) I think that at least an HTML report with ALL the "not available times" constraints would be highly useful.
+For the rooms each cell is going to include ALL the weights of each one of the constraints.
+
+2) Moreover, instead of implementing (coding) a completely interactive dialog it might be easier if you could implement a time-horizontal view,
+and instead of modifying the "not available times" constraints in this dialog,
+the user could just press (for example) on the teacher, OR the students set, OR the room in order to open the already existing day-horizontal dialog
+for the respective constraint (for example, of the selected teacher)
+
+At least this HTML report is very important. Imagine for example that a typical Greek secondary school (in a city) has around 50 teachers.
+Music schools have much more teachers.
+
+Imagine for example a music school with 300 students and each student is a "group" by himself regarding the musical instruments lessons.
+
+508---------------------------------------------------------
+From balacco (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5614.0
+
+Teachers/students all gaps on the same day must be consecutive.
+
+Liviu Lalescu:
+
+I think it was already suggested in the past by other users and I think a solution is impossible or too complicated.
+
+509---------------------------------------------------------
+From Bachir Sayah (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5615.0
+
+I hope in the next update we will be able to make changes in the number of divisions for an activity .. to make more or less divisions after
+adding an activity.
+
+510---------------------------------------------------------
+From Alexandre R. Soares:
+
+Maybe some sentences should have gender inflection, p eg., "...for teacher %1 but not also min hours daily for him/her...".
+I've considered it in the Portuguese version.

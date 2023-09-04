@@ -46,7 +46,7 @@ HelpAlgeriaForm::HelpAlgeriaForm(QWidget* parent): QDialog(parent)
 	s+="\n\n";
 
 	s+=tr("Very important advice about the constraint min days between activities: probably you will need to "
-	 "add min days = 1 for all constraints. I modified the sources and min 1 day means "
+	 "add min days = 1 for all constraints. I modified the source code and min 1 day means "
 	 "that the activities must be on different real days, so it cannot be that one activity "
 	 "is in the morning and another is in the afternoon. If you need constraint to be always respected, "
 	 "please use 100% weight. If you allow weight under 100% and select consecutive if on the same day, "

@@ -95,13 +95,13 @@ HelpMoroccoForm::HelpMoroccoForm(QWidget* parent): QDialog(parent)
 	s+=tr("A teacher can have hours in first day or second day, but not both. Same for third and fourth, fifth and sixth, and so on."
 	 " (in fact, there are 2*normal days, first is morning, second is afternoon).");
 	s+="\n\n";
-	s+=tr("Exception teachers: it allows for some teachers to work in double morning+afternoon for a single day (1 exception)"
+	s+=tr("Exceptions for teachers: they allow for some teachers to work in double morning+afternoon for a single day (1 exception)"
 	 " or for 2 days (2 exception).");
 	s+=" ";
 	s+=tr("(Recently, it is also possible to allow 3, 4, or 5 days exceptions.)");
 	s+="\n\n";
 	s+=tr("Very important advice about the constraints of type min days between activities: probably you will need to"
-	 " add min days = 1 for all the constraints. I modified the sources and min 1 day means"
+	 " add min days = 1 for all the constraints. I modified the source code and min 1 day means"
 	 " that the activities must be on different real days, so it cannot be that one activity"
 	 " is in the morning and another is in the afternoon. If you need the constraint to be always respected,"
 	 " please use 100% weight. If you allow weight under 100% and select consecutive if on the same day,"

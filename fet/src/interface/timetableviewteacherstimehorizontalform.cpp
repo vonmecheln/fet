@@ -1719,7 +1719,7 @@ void TimetableViewTeachersTimeHorizontalForm::help()
 	s+=QCoreApplication::translate("TimetableViewForm", "Locking time constraints are constraints of type activity preferred starting time. Locking space constraints are constraints of type"
 		" activity preferred room. You can see these constraints in the corresponding constraints dialogs. New locking constraints are added at the end of the list of constraints.");
 	s+="\n\n";
-	s+=QCoreApplication::translate("TimetableViewForm", "If a cell is (permanently) locked in time or space or has a preferred day, it contains abbreviations to show that: PLT (permanently locked time),"
+	s+=QCoreApplication::translate("TimetableViewForm", "If the activity displayed in a cell is (permanently) locked in time or space or has a preferred day, it contains abbreviations to show that: PLT (permanently locked time),"
 		" LT (locked time), PLS (permanently locked space), LS (locked space), or PD (preferred day), as a tooltip.", "Translate the abbreviations also. Make sure the abbreviations in your language are different between"
 		" themselves and the user can differentiate easily between them. These abbreviations may appear also in other places, please use the same abbreviations.");
 
@@ -1739,11 +1739,16 @@ void TimetableViewTeachersTimeHorizontalForm::help()
 		" from all the activities, even if they are present or not in this timetable view dialog (they may be dummy activities - without any teacher, or"
 		" not scheduled yet).");
 	s+=" ";
-	s+=QCoreApplication::translate("TimetableViewForm", "This feature was suggested by %1 and %2 and might be useful in countries or regions in which"
-		" the teachers structure changes over the first months of the teaching period. Teachers may come and go and a regeneration of the timetable"
-		" is needed, but in such a way that most activities retain their scheduled day, to keep for instance exams/tests on the same day as in the old timetable.",
-		"%1 and %2 are two persons")
-		.arg("Vangelis Karafillidis").arg("Alexey Chernous");
+	//s+=QCoreApplication::translate("TimetableViewForm", "This feature was suggested by %1 and %2 and might be useful in countries or regions in which"
+	//	" the teachers structure changes over the first months of the teaching period. Teachers may come and go and a regeneration of the timetable"
+	//	" is needed, but in such a way that most activities retain their scheduled day, to keep for instance exams/tests on the same day as in the old timetable.")
+	//	.arg("Vangelis Karafillidis").arg("Alexey Chernous");
+	s+=QCoreApplication::translate("TimetableViewForm", "This feature was suggested by %1 and %2 and may be useful in countries or regions where "
+		"teachers are not all hired from the beginning of the school year, but are hired gradually, as well as teacher turnover "
+		"(changes in their placement in schools by the competent authority) during the first months of the school year. In cases where a new "
+		"teacher is hired, or another teacher's placement changes, the timetable needs to be updated, but in such a way that as many activities "
+		"as possible remain on the same day on which they were scheduled (placed), so that - for example - the scheduled tests do not need to change "
+		"their initially scheduled day.", "%1 and %2 are two users").arg("Vangelis Karafillidis").arg("Alexey Chernous");
 
 	LongTextMessageBox::largeInformation(this, tr("FET help"), s);
 }

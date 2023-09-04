@@ -3410,7 +3410,7 @@ void LockAdvancedDialog::filterChanged()
 			 " like 'the activity should have a certain teacher', you might obtain much faster results if you filter on the description/detailed description of the activity"
 			 " for the teacher and on the detailed description with constraints for other filters (meaning that you should prefer using the description/detailed description"
 			 " instead of the detailed description with constraints, whenever it is possible).")+QString(" ")+tr("Also, the order of the detailed description with constraints"
-			 " filters is important: you should put firstly the ones who filter out more activities (if you selected the 'All' radio button) or put firstly the ones who"
+			 " filters is important: you should put firstly the ones which filter out more activities (if you selected the 'All' radio button) or put firstly the ones which"
 			 " accept immediately more activities (if you selected the 'Any' radio button)."));
 			break;
 		}
@@ -4007,7 +4007,7 @@ void UnlockAdvancedDialog::filterChanged()
 			 " like 'the activity should have a certain teacher', you might obtain much faster results if you filter on the description/detailed description of the activity"
 			 " for the teacher and on the detailed description with constraints for other filters (meaning that you should prefer using the description/detailed description"
 			 " instead of the detailed description with constraints, whenever it is possible).")+QString(" ")+tr("Also, the order of the detailed description with constraints"
-			 " filters is important: you should put firstly the ones who filter out more activities (if you selected the 'All' radio button) or put firstly the ones who"
+			 " filters is important: you should put firstly the ones which filter out more activities (if you selected the 'All' radio button) or put firstly the ones which"
 			 " accept immediately more activities (if you selected the 'Any' radio button)."));
 			break;
 		}

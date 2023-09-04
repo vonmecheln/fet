@@ -186,9 +186,9 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 			 " of some subactivities (you will have number_of_real_days_per_week subactivities in a single larger split activity)."
 			 " If not, add two or more larger split activities.");
 			s+=" ";
-			s+=tr("(Alternatively, if the number of subactivities is at most number_of_half_days_per_week and you want to add a constraint min 1 half days"
-			 " between activities for them then, after spreading the activities with this dialog, modify the constraints accordingly. There will be no"
-			 " constraints min half days between activities removed or added after using this dialog.)");
+			s+=tr("(Alternatively, if the number of subactivities is at most equal to the number_of_half_days_per_week and you want to add a constraint"
+			 " min 1 half days between activities for them then, after spreading the activities with this dialog, modify the constraints accordingly."
+			 " There will be no constraints min half days between activities removed or added after using this dialog.)");
 		}
 		s+="\n\n";
 		for(int i=0; i<nActs; i++){
