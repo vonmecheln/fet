@@ -1111,7 +1111,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 
 	//QMessageBox::information(parent, tr("FET information"), tr("Added %1 locking time constraints and %2 locking space constraints to saved file,"
 	// " ignored %3 activities which were already fixed in time and %4 activities which were already fixed in space").arg(addedTime).arg(addedSpace).arg(duplicatesTime).arg(duplicatesSpace));
-		
+	
 	bool result=rules2.write(parent, filename);
 	
 	for(TimeConstraint* tc : qAsConst(lockTimeConstraintsList))

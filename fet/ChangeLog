@@ -2682,3 +2682,7 @@ Versions 6.9.0 - 6.9.v
 - Version 6.9.5
 	- Corrected a few English fields, by Vangelis Karafillidis.
 	- Updated the Greek translation, by Vangelis Karafillidis. It is now complete.
+- Version 6.9.6
+	- Updated to Qt 6.5.3.
+	- Very rare crash bugs fixed (reported by Rouge Rosé).
+	- Code cleanup.

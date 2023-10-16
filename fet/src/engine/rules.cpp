@@ -5067,7 +5067,7 @@ bool Rules::addSpaceConstraint(SpaceConstraint* ctr)
 		for(i=0; i<this->spaceConstraintsList.size(); i++){
 			SpaceConstraint* ctr2=this->spaceConstraintsList[i];
 			if(ctr2->type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES){
-				ConstraintRoomNotAvailableTimes* c2=(ConstraintRoomNotAvailableTimes*)ctr2;				
+				ConstraintRoomNotAvailableTimes* c2=(ConstraintRoomNotAvailableTimes*)ctr2;
 				if(c->room==c2->room)
 					break;
 			}
@@ -12390,8 +12390,17 @@ TimeConstraint* Rules::readMinNDaysBetweenActivities(QWidget* parent, QXmlStream
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
+			
+			int ti=text.toInt();
+			if(cn->activitiesIds.contains(ti)){
+				xmlReader.raiseError(tr("Activity id %1 is a duplicate in this constraint").arg(ti));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			
 			//cn->activitiesIds[n_act]=text.toInt();
-			cn->activitiesIds.append(text.toInt());
+			cn->activitiesIds.append(ti);
 			assert(n_act==cn->activitiesIds.count()-1);
 			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
@@ -12536,8 +12545,17 @@ TimeConstraint* Rules::readMinDaysBetweenActivities(QWidget* parent, QXmlStreamR
 		}
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
+			
+			int ti=text.toInt();
+			if(cn->activitiesIds.contains(ti)){
+				xmlReader.raiseError(tr("Activity id %1 is a duplicate in this constraint").arg(ti));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			
 			//cn->activitiesIds[n_act]=text.toInt();
-			cn->activitiesIds.append(text.toInt());
+			cn->activitiesIds.append(ti);
 			assert(n_act==cn->activitiesIds.count()-1);
 			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;
@@ -12683,7 +12701,16 @@ TimeConstraint* Rules::readMinHalfDaysBetweenActivities(QWidget* parent, QXmlStr
 		else if(xmlReader.name()==QString("Activity_Id")){
 			QString text=xmlReader.readElementText();
 			//cn->activitiesIds[n_act]=text.toInt();
-			cn->activitiesIds.append(text.toInt());
+			
+			int ti=text.toInt();
+			if(cn->activitiesIds.contains(ti)){
+				xmlReader.raiseError(tr("Activity id %1 is a duplicate in this constraint").arg(ti));
+				delete cn;
+				cn=nullptr;
+				return nullptr;
+			}
+			
+			cn->activitiesIds.append(ti);
 			assert(n_act==cn->activitiesIds.count()-1);
 			xmlReadingLog+="    Read activity id="+CustomFETString::number(cn->activitiesIds[n_act])+"\n";
 			n_act++;

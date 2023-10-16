@@ -18959,7 +18959,7 @@ impossiblestudentsactivitytagminhoursdaily:
 
 			if(first){
 				assert(!second);
-				//after the first activity tag we need to have at least minGaps until the second activity tag.
+				//after the first activity tag we need to have at least minGaps until the second activity tag, on each day.
 				for(int sbg : qAsConst(act->iSubgroupsList)){
 					if(item->canonicalSetOfSubgroups.contains(sbg)){
 						for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
@@ -18987,7 +18987,7 @@ impossiblestudentsactivitytagminhoursdaily:
 			}
 			else{
 				assert(second);
-				//before the second activity tag we need to have at least minGaps until the first activity tag.
+				//before the second activity tag we need to have at least minGaps until the first activity tag, on each day.
 				for(int sbg : qAsConst(act->iSubgroupsList)){
 					if(item->canonicalSetOfSubgroups.contains(sbg)){
 						for(int endFirst=h-1; endFirst>=0; endFirst--){
@@ -19040,7 +19040,7 @@ impossiblestudentsmingapsbetweenorderedpairofactivitytags:
 				hasTag=false;
 
 			if(hasTag){
-				//before and after the activity tag we need to have at least minGaps until the same activity tag.
+				//before and after the activity tag we need to have at least minGaps until the same activity tag, on each day.
 				for(int sbg : qAsConst(act->iSubgroupsList)){
 					if(item->canonicalSetOfSubgroups.contains(sbg)){
 						//after the current activity
@@ -27906,7 +27906,7 @@ impossibleteachersactivitytagminhoursdaily:
 
 			if(first){
 				assert(!second);
-				//after the first activity tag we need to have at least minGaps until the second activity tag.
+				//after the first activity tag we need to have at least minGaps until the second activity tag, on each day.
 
 				for(int tch : qAsConst(act->iTeachersList)){
 					if(item->canonicalSetOfTeachers.contains(tch)){
@@ -27935,7 +27935,7 @@ impossibleteachersactivitytagminhoursdaily:
 			}
 			else{
 				assert(second);
-				//before the second activity tag we need to have at least minGaps until the first activity tag.
+				//before the second activity tag we need to have at least minGaps until the first activity tag, on each day.
 
 				for(int tch : qAsConst(act->iTeachersList)){
 					if(item->canonicalSetOfTeachers.contains(tch)){
@@ -27989,7 +27989,7 @@ impossibleteachersmingapsbetweenorderedpairofactivitytags:
 				hasTag=false;
 
 			if(hasTag){
-				//before and after the activity tag we need to have at least minGaps until the same activity tag.
+				//before and after the activity tag we need to have at least minGaps until the same activity tag, on each day.
 				for(int tch : qAsConst(act->iTeachersList)){
 					if(item->canonicalSetOfTeachers.contains(tch)){
 						//after the current activity

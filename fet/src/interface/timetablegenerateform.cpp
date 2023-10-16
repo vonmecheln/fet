@@ -86,7 +86,7 @@ QString getActivityDetailedDescription(Rules& r, int id);
 
 const QString settingsName=QString("TimetableGenerateUnsuccessfulForm");
 
-static std::thread singleThread;
+//static std::thread singleThread;
 
 /*void GenerateThread::run()
 {
@@ -207,8 +207,9 @@ void TimetableGenerateForm::start(){
 	TimetableExport::writeRandomSeed(this, gen.rng, true); //true represents 'before' state
 
 	//generateThread.start();
-	singleThread=std::thread(runSingle);
-	singleThread.detach();
+	/*singleThread=std::thread(runSingle);
+	singleThread.detach();*/
+	std::thread(runSingle).detach();
 }
 
 void TimetableGenerateForm::stop()

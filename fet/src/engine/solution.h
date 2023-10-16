@@ -91,8 +91,8 @@ public:
 	//void init(Rules& r);
 
 	/**
-	Marks the starting time of all the activities as undefined
-	(all activities are unallocated).
+	Marks the starting time and rooms of all the activities
+	as unallocated.
 	*/
 	void makeUnallocated(Rules& r);
 

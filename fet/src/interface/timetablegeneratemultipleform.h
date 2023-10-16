@@ -35,15 +35,14 @@ class TimetablingThread: public QObject
 	Q_OBJECT
 
 public:
-	std::thread _internalGeneratingThread;
+	//std::thread _internalGeneratingThread;
 	int _nThread;
 	int nOverallTimetable;
 
+	void startGenerating();
+
 signals:
 	void timetableGenerated(int nThread, int timetable, const QString& description, bool ok);
-
-public slots:
-	void startGenerating();
 };
 
 /*class Worker: public QObject

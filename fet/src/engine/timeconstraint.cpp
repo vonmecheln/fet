@@ -3319,7 +3319,10 @@ double ConstraintMinDaysBetweenActivities::fitness(Solution& c, Rules& r, QList<
 		}
 	}
 	
-	if(1/*!this->consecutiveIfSameDay*/){ //from version 6.4.0, not allowed more than two activities on the same (real) day
+	if(1 && minDays>=1 /*!this->consecutiveIfSameDay*/){ //from version 6.4.0, not allowed more than two activities on the same (real) day
+	//The test minDays>=1 was added in FET-6.9.6, after the crash report by Rouge Rosé on 2023-09-17. If minDays was 0, FET crashed if there were
+	//more than two activities from this constraint on the same day. It is possible to have minDays==0 is the .fet file is created manually or
+	//with another tool, or if the user decreases the number of days to 1 after adding one or more constraint(s) of type min days between activities.
 		if(r.mode!=MORNINGS_AFTERNOONS){
 			Matrix1D<int> na;
 			na.resize(r.nDaysPerWeek);
@@ -49730,7 +49733,10 @@ double ConstraintMinHalfDaysBetweenActivities::fitness(Solution& c, Rules& r, QL
 		}
 	}
 
-	if(1/*!this->consecutiveIfSameDay*/){ //from version 6.4.0, not allowed more than two activities on the same half day
+	if(1 && minDays>=1 /*!this->consecutiveIfSameDay*/){ //from version 6.4.0, not allowed more than two activities on the same half day
+	//The test minDays>=1 was added in FET-6.9.6, after the crash report by Rouge Rosé on 2023-09-17. If minDays was 0, FET crashed if there were
+	//more than two activities from this constraint on the same day. It is possible to have minDays==0 is the .fet file is created manually or
+	//with another tool, or if the user decreases the number of days to 1 after adding one or more constraint(s) of type min days between activities.
 		Matrix1D<int> na;
 		na.resize(r.nDaysPerWeek);
 		for(int d=0; d<r.nDaysPerWeek; d++)

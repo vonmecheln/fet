@@ -577,8 +577,15 @@ void TimetableGenerateMultipleForm::start(){
 		cvTimetableStarted[t].wait(lck);*/
 
 		//timetablingThreads[t].startGenerating();
-		timetablingThreads[t]._internalGeneratingThread=std::thread([=]{timetablingThreads[t].startGenerating();});
-		timetablingThreads[t]._internalGeneratingThread.detach();
+
+		/*timetablingThreads[t]._internalGeneratingThread=std::thread([=]{timetablingThreads[t].startGenerating();});
+		timetablingThreads[t]._internalGeneratingThread.detach();*/
+
+		//old comment below:
+		//2023-09-27: Must put [=] here, [&] does not work, gives various crashes. I am not sure why, I think maybe because
+		//the TimetablingThread must be reinstantiated in the detached thread. Probably t goes out of scope.
+		//std::thread([=]{timetablingThreads[t].startGenerating();}).detach();
+		std::thread([t]{timetablingThreads[t].startGenerating();}).detach();
 	}
 }
 
@@ -733,8 +740,15 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 		cvTimetableStarted[nThread].wait(lck);*/
 
 		//timetablingThreads[nThread]._internalGeneratingThread=std::thread(timetablingThreads[nThread].startGenerating);
-		timetablingThreads[nThread]._internalGeneratingThread=std::thread([=]{timetablingThreads[nThread].startGenerating();});
-		timetablingThreads[nThread]._internalGeneratingThread.detach();
+		/*timetablingThreads[nThread]._internalGeneratingThread=std::thread([=]{timetablingThreads[nThread].startGenerating();});
+		timetablingThreads[nThread]._internalGeneratingThread.detach();*/
+
+		//old comment below:
+		//2023-09-27: Must put [=] here, [&] does not work, gives various crashes. I am not sure why, I think maybe because
+		//the TimetablingThread must be reinstantiated in the detached thread. Probably nThread goes out of scope.
+		//std::thread([=]{timetablingThreads[nThread].startGenerating();}).detach();
+		std::thread([nThread]{timetablingThreads[nThread].startGenerating();}).detach();
+
 		//controller->startOperate(nThread);
 	}
 	else if(simulation_running_multi){

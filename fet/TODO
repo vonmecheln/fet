@@ -8739,3 +8739,133 @@ From Alexandre R. Soares:
 
 Maybe some sentences should have gender inflection, p eg., "...for teacher %1 but not also min hours daily for him/her...".
 I've considered it in the Portuguese version.
+
+511---------------------------------------------------------
+From ayreon (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5640.0
+
+Maybe I did not get how the constraint StudentsMaxBuildingChangesPerWeek works.
+I have a dataset with two buildings with different room. I want that if a group of students goes in a building then it remains in that building for that day and also for all week.
+If I set StudentsMaxBuildingChangesPerDay = 0 I get that a group of students remain in that building for all the day. But if I set StudentsMaxBuildingChangesPerWeek = 0 the building changes between days.
+What am I doing wrong?
+Also, is it correct to assume that if StudentsMaxBuildingChangesPerWeek = 0 I can skip StudentsMaxBuildingChangesPerDay?
+
+Liviu Lalescu: Unfortunately, it is a bug, not a feature. However, I added this in the TODO.
+
+512---------------------------------------------------------
+From fartoto_dz2004 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5668.0
+
+Can you add multiple selection on constraints lists when deleting (mean deleting multiple constaints)?
+
+513---------------------------------------------------------
+From sebi1972 (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5707.0
+
+Romanian:
+
+Foarte buna constrangerea
+"Un set de studenti incepe devreme (max inceperi la ora a doua)"
+
+Dar am nevoie si de constrangerea
+"Un profesor incepe devreme (max inceperi la ora a doua)"
+se poate implementa? Sau o pot substitui cumva altfel?
+Am incercat cu etichete, am etichetat toate activitatile unui profesor dar nu stiu ce constrangere sa pun ca activitatile etichetate sa fie puse cat mai devreme posibil.
+Am nevoie ca profesorul respectiv sa aiba activitatile cat mai devreme posibil puse.
+
+English:
+
+Implement the constraint type "Teacher begins early max beginnings at second hour".
+
+514---------------------------------------------------------
+From Daniele Rocci:
+
+I have a question that may involve future development: is it possible to set a constraint for all teachers except a small list?
+In practice, in my case, out of 93 teachers, I can set the same constraint for the empty slots for 80 of them. It would be faster
+to specify the 10 exceptions rather than adding a single constraint to all of them.
+
+Liviu Lalescu: suggested also in many other TODO items.
+
+515---------------------------------------------------------
+From ggscuola (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5712.0
+
+ggscuola:
+
+1) All teachers/A teacher start(s) the day in a specific building. [end(s) the day in a specific building].
+2) All students/A students set cannot have two specific subjects on the same day.
+3) All teachers/A teacher work in a hourly interval min days per week (there is MAX option in current version).
+
+Liviu Lalescu:
+
+(2) can probably be solved with min days between activities or students activity tag max hours daily.
+(3) can probably be solved with activities occupy min time slots from selection.
+
+ggscuola:
+
+Regarding point (2):
+If I have multiple teachers teaching the same subject (with a lot of students sets and sub-activities) and I don't want students to have English and French,
+Arts and Tech, Music and Sport activities on the same day, it would be hard to set up "min days between single activities".
+And I don't see how "max hours daily" could work either, because some teachers teach the same subject 1 hour with a set of students and 2 hours with other sets.
+Plus, some days last 6 hours, some days last 5, 7 or 8 hours... Some students go to school on Saturdays and others don't. So I cannot set hours between
+activities for all the teachers and students sets.
+That's why I was suggesting a possible new constraint which would avoid that two chosen "subjects" (or tags) fall on the same day.
+
+Liviu Lalescu:
+
+(2): If it is assumed that there are no two activities of English on the same day, and no two activities of French on the same day, you can add all the
+activities of English and French, 100%, min 1 days between them.
+
+If not, I just thought of another trick: use two constraints students min gaps between ordered pair of activity tags, min gaps = n_hours_per_day.
+One from French to English and one from English to French.
+
+516---------------------------------------------------------
+From Nelson Gomes:
+
+I'd like to make a few suggestions to implement in future versions of FET.
+One of them is when you define that an activity must occupy max time slots from selection, you can't define a weight percentage under 100%.
+In our case, and since your students have classes in the morning (6 periods of classes) and in the afternoon (only 2 periods), we'd like that,
+as a principle, a specific subject wouldn't be in more than one afternoon - but if there are other constraints, that rule could be broken,
+if it helps to achieve an timetable.
+
+The other one (this one is easily solvable with other constraints, but if this could be implemented would save some time...) is that a activity
+starts OR ends teacher (or students) day - as the current options, we can define an activity to be the one that starts or the one that ends the day,
+but not starting or ending.
+
+Liviu Lalescu:
+
+- About activities occupy max slots from selection - I am not sure if
+  this can be made <100% even temporarily as a custom version, but I
+  think it is not a good idea, the timetable will be bad, the
+  constraint will be broken many times. But another good idea for your
+  exact problem is simple: say you have subject mathematics 1+1+1+1,
+  and a single 1 can be in the afternoon all the time and another
+  single 1 can be in the afternoon only if no other solution exists. In
+  this case, add 3 constraints subactivities preferred times: split
+  index 1, respectively 2, not allowed in the afternoon, 100% both, and
+  split index 3 not allowed in the afternoon with 90%.
+
+- About starts or ends day: it is not possible elegantly (perfectly). I
+  did a customization for a user some time ago and if you are interested
+  I can direct you to this and maybe if you need it I can help with
+  adding again this custom code to the latest FET version as
+  a customization for you. But I think I might know why you want this:
+  you have either fortnightly activities or a difficult students'
+  structure and you need the timetables for all the students to be
+  without gaps. In this case, as I recommended a college in my country,
+  you can triple the weekly activities, adding them to another students
+  sets, then set same starting time for each set of three, and use
+  max 0 gaps for all the students. Hmm... I did a custom program for
+  that user to add this and it is quite a big task... Please see this
+  forum post: https://lalescu.ro/liviu/fet/forum/index.php?topic=5370.0
+
+Nelson Gomes:
+
+As I stated, the last request isn't a big deal for me - I circumvent the lack of that option defining that some activity has a set of preferred time slots,
+allowing only the first or last slots of the day. We don't use this feature all that much, so isn't a big deal (only when a teacher is going to be
+substituted by another colleague for a short time - few weeks, one month -, to assure that this activity doesn't act as a gap to the teacher that usually
+doesn't have that set of students.
