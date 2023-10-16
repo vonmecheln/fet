@@ -179,7 +179,7 @@ double Solution::fitness(Rules& r, FakeString* conflictsString){
 	}
 		
 	this->conflictsTotal=0;
-	for(double cn : qAsConst(conflictsWeightList)){
+	for(double cn : std::as_const(conflictsWeightList)){
 		//cout<<"cn=="<<cn<<endl;
 		conflictsTotal+=cn;
 	}
@@ -409,7 +409,7 @@ void Solution::getTeachersTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<i
 			for(tch=0; tch<r.nInternalTeachers; tch++)
 				visited[tch]=false;
 			for(int tfp=0; tfp<TEACHERS_FREE_PERIODS_N_CATEGORIES; tfp++){
-				for(int tch : qAsConst(b[tfp][d][h])){
+				for(int tch : std::as_const(b[tfp][d][h])){
 					assert(!visited[tch]);
 					visited[tch]=true;
 				}
@@ -482,7 +482,7 @@ int Solution::getRoomsMatrix(
 				else{
 					a[room][day][hour+dd]++;
 
-					for(int rr : qAsConst(realRoomsList[i])){
+					for(int rr : std::as_const(realRoomsList[i])){
 						int tmp=a[rr][day][hour+dd];
 						conflicts += tmp==0 ? 0 : 1;
 						a[rr][day][hour+dd]++;
@@ -535,7 +535,7 @@ void Solution::getRoomsTimetable(
 				else{
 					assert(a[room][day][hour+dd]==UNALLOCATED_ACTIVITY);
 					va[room][day][hour+dd].append(i);
-					for(int rr : qAsConst(realRoomsList[i])){
+					for(int rr : std::as_const(realRoomsList[i])){
 						assert(a[rr][day][hour+dd]==UNALLOCATED_ACTIVITY);
 						a[rr][day][hour+dd]=i;
 					}

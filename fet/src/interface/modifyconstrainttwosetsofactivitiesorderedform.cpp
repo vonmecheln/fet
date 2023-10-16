@@ -101,7 +101,7 @@ ModifyConstraintTwoSetsOfActivitiesOrderedForm::ModifyConstraintTwoSetsOfActivit
 	firstSelectedActivitiesListWidget->clear();
 	this->firstSelectedActivitiesList.clear();
 
-	for(int actId : qAsConst(ctr->firstActivitiesIdsList)){
+	for(int actId : std::as_const(ctr->firstActivitiesIdsList)){
 		this->firstSelectedActivitiesList.append(actId);
 		Activity *act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 		assert(act!=nullptr);
@@ -111,7 +111,7 @@ ModifyConstraintTwoSetsOfActivitiesOrderedForm::ModifyConstraintTwoSetsOfActivit
 	secondSelectedActivitiesListWidget->clear();
 	this->secondSelectedActivitiesList.clear();
 
-	for(int actId : qAsConst(ctr->secondActivitiesIdsList)){
+	for(int actId : std::as_const(ctr->secondActivitiesIdsList)){
 		this->secondSelectedActivitiesList.append(actId);
 		Activity* act=nullptr;
 		for(int k=0; k<gt.rules.activitiesList.size(); k++){
@@ -371,13 +371,13 @@ void ModifyConstraintTwoSetsOfActivitiesOrderedForm::swap()
 	firstSelectedActivitiesListWidget->clear();
 	secondSelectedActivitiesListWidget->clear();
 
-	for(int actId : qAsConst(this->firstSelectedActivitiesList)){
+	for(int actId : std::as_const(this->firstSelectedActivitiesList)){
 		Activity *act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 		assert(act!=nullptr);
 		firstSelectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
 	}
 
-	for(int actId : qAsConst(this->secondSelectedActivitiesList)){
+	for(int actId : std::as_const(this->secondSelectedActivitiesList)){
 		Activity *act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 		assert(act!=nullptr);
 		secondSelectedActivitiesListWidget->addItem(act->getDescription(gt.rules));

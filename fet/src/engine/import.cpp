@@ -1125,7 +1125,7 @@ int Import::readFields(QWidget* parent){
 #endif
 								if(splitList.size()<=MAX_SPLIT_OF_AN_ACTIVITY){
 									int tmpInt=0;
-									for(const QString& split : qAsConst(splitList)){
+									for(const QString& split : std::as_const(splitList)){
 										tmpInt+=split.toInt(&ok, 10);
 										if(!ok)
 											warnText+=Import::tr("Skipped line %1: Field '%2' doesn't contain an integer value.").arg(lineNumber).arg(fieldName[FIELD_SPLIT_DURATION])+"\n";
@@ -1506,7 +1506,7 @@ void Import::importCSVActivityTags(QWidget* parent){
 
 	//add activity tags (start) - similar to teachersform.cpp by Liviu modified by Volker
 	tmpSet.clear();
-	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
 		tmpSet.insert(at->name);
 	int count=0;
 	for(int i=0; i<fieldList[FIELD_ACTIVITY_TAG_NAME].size(); i++){
@@ -1631,7 +1631,7 @@ void Import::importCSVRoomsAndBuildings(QWidget* parent){
 
 	//add buildings (start) - similar to teachersform.cpp by Liviu modified by Volker
 	tmpSet.clear();
-	for(Building* bu : qAsConst(gt.rules.buildingsList))
+	for(Building* bu : std::as_const(gt.rules.buildingsList))
 		tmpSet.insert(bu->name);
 	int count=0;
 	for(int i=0; i<fieldList[FIELD_BUILDING_NAME].size(); i++){
@@ -1649,7 +1649,7 @@ void Import::importCSVRoomsAndBuildings(QWidget* parent){
 
 	//add rooms (start) - similar to teachersform.cpp by Liviu modified by Volker
 	tmpSet.clear();
-	for(Room* rm : qAsConst(gt.rules.roomsList))
+	for(Room* rm : std::as_const(gt.rules.roomsList))
 		tmpSet.insert(rm->name);
 	int countroom=0;
 	for(int i=0; i<fieldList[FIELD_ROOM_NAME].size(); i++){
@@ -1744,7 +1744,7 @@ void Import::importCSVSubjects(QWidget* parent){
 
 	//add subjects (start) - similar to teachersform.cpp by Liviu modified by Volker
 	tmpSet.clear();
-	for(Subject* sbj : qAsConst(gt.rules.subjectsList))
+	for(Subject* sbj : std::as_const(gt.rules.subjectsList))
 		tmpSet.insert(sbj->name);
 	int count=0;
 	for(int i=0; i<fieldList[FIELD_SUBJECT_NAME].size(); i++){
@@ -1827,7 +1827,7 @@ void Import::importCSVTeachers(QWidget* parent){
 
 	//add teachers (start) - similar to teachersform.cpp by Liviu modified by Volker
 	tmpSet.clear();
-	for(Teacher* tch : qAsConst(gt.rules.teachersList))
+	for(Teacher* tch : std::as_const(gt.rules.teachersList))
 		tmpSet.insert(tch->name);
 	int count=0;
 	for(int i=0; i<fieldList[FIELD_TEACHER_NAME].size(); i++){
@@ -2041,12 +2041,12 @@ void Import::importCSVStudents(QWidget* parent){
 	QHash<QString, StudentsSet*> studentsHash;
 	QSet<QPair<QString, QString>> groupsInYearSet; //first year, then group
 	QSet<QPair<QString, QString>> subgroupsInGroupSet; //first group, then subgroup
-	for(StudentsYear* year : qAsConst(gt.rules.yearsList)){
+	for(StudentsYear* year : std::as_const(gt.rules.yearsList)){
 		studentsHash.insert(year->name, year);
-		for(StudentsGroup* group : qAsConst(year->groupsList)){
+		for(StudentsGroup* group : std::as_const(year->groupsList)){
 			studentsHash.insert(group->name, group);
 			groupsInYearSet.insert(QPair<QString, QString> (year->name, group->name));
-			for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList)){
+			for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
 				studentsHash.insert(subgroup->name, subgroup);
 				subgroupsInGroupSet.insert(QPair<QString, QString> (group->name, subgroup->name));
 			}
@@ -2407,11 +2407,11 @@ void Import::importCSVActivities(QWidget* parent){
 	//check if already in memory (start)
 	//check if students set is in memory
 	/*QHash<QString, StudentsSet*> studentsHash;
-	for(StudentsYear* year : qAsConst(gt.rules.yearsList)){
+	for(StudentsYear* year : std::as_const(gt.rules.yearsList)){
 		studentsHash.insert(year->name, year);
-		for(StudentsGroup* group : qAsConst(year->groupsList)){
+		for(StudentsGroup* group : std::as_const(year->groupsList)){
 			studentsHash.insert(group->name, group);
-			for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList)){
+			for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
 				studentsHash.insert(subgroup->name, subgroup);
 			}
 		}
@@ -2433,7 +2433,7 @@ void Import::importCSVActivities(QWidget* parent){
 #endif
 		
 		QStringList students2;
-		for(const QString& st : qAsConst(students)){
+		for(const QString& st : std::as_const(students)){
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 			students2.append(st.split("+", Qt::SkipEmptyParts));
 #else
@@ -2493,7 +2493,7 @@ void Import::importCSVActivities(QWidget* parent){
 #endif
 		
 		QStringList teachers2;
-		for(const QString& t : qAsConst(teachers)){
+		for(const QString& t : std::as_const(teachers)){
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 			teachers2.append(t.split("+", Qt::SkipEmptyParts));
 #else
@@ -2558,7 +2558,7 @@ void Import::importCSVActivities(QWidget* parent){
 #endif
 		
 		QStringList activityTags2;
-		for(const QString& at : qAsConst(activityTags)){
+		for(const QString& at : std::as_const(activityTags)){
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 			activityTags2.append(at.split("+", Qt::SkipEmptyParts));
 #else
@@ -2590,7 +2590,7 @@ void Import::importCSVActivities(QWidget* parent){
 	//add teachers
 	//maybe TODO write a function, so also import teacher csv can share this code
 	tmpSet.clear();
-	for(Teacher* tch : qAsConst(gt.rules.teachersList))
+	for(Teacher* tch : std::as_const(gt.rules.teachersList))
 		tmpSet.insert(tch->name);
 	int count=0;
 	for(int i=0; i<fieldList[FIELD_TEACHER_NAME].size(); i++){
@@ -2614,7 +2614,7 @@ void Import::importCSVActivities(QWidget* parent){
 	//add subjects
 	//maybe TODO write a function, so also import subjects csv can share this code
 	tmpSet.clear();
-	for(Subject* sbj : qAsConst(gt.rules.subjectsList))
+	for(Subject* sbj : std::as_const(gt.rules.subjectsList))
 		tmpSet.insert(sbj->name);
 	count=0;
 	/*
@@ -2631,7 +2631,7 @@ void Import::importCSVActivities(QWidget* parent){
 			tmpSet.insert(s->name);
 		}
 	}*/
-	for(const QString& sn : qAsConst(subjectsToBeAdded)){
+	for(const QString& sn : std::as_const(subjectsToBeAdded)){
 		if(!sn.isEmpty() && !tmpSet.contains(sn)){
 			Subject* s=new Subject();
 			s->name=sn;
@@ -2649,7 +2649,7 @@ void Import::importCSVActivities(QWidget* parent){
 	//add activity tags
 	//maybe TODO write a function, so also import activity tags csv can share this code
 	tmpSet.clear();
-	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
 		tmpSet.insert(at->name);
 	count=0;
 	for(int i=0; i<fieldList[FIELD_ACTIVITY_TAG_NAME].size(); i++){
@@ -2721,7 +2721,7 @@ void Import::importCSVActivities(QWidget* parent){
 			tl = fieldList[FIELD_TEACHERS_SET][i].split("|", QString::KeepEmptyParts);
 #endif
 		QList<QStringList> tl2;
-		for(const QString& t : qAsConst(tl)){
+		for(const QString& t : std::as_const(tl)){
 			if(!t.isEmpty()){
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 				tl2.append(t.split("+", Qt::SkipEmptyParts));
@@ -2741,10 +2741,10 @@ void Import::importCSVActivities(QWidget* parent){
 		}
 		
 		QList<QStringList> teachers_names;
-		for(const QStringList& tl : qAsConst(tl2)){
+		for(const QStringList& tl : std::as_const(tl2)){
 			QSet<QString> _teachersSet;
 			QStringList _tl;
-			for(const QString& teacherName : qAsConst(tl)){
+			for(const QString& teacherName : std::as_const(tl)){
 				//assert(teachersHash.contains(teacherName));
 				if(!_teachersSet.contains(teacherName)){
 					_teachersSet.insert(teacherName);
@@ -2766,7 +2766,7 @@ void Import::importCSVActivities(QWidget* parent){
 			sl = fieldList[FIELD_SUBJECT_NAME][i].split("|", QString::KeepEmptyParts);
 #endif
 		QList<QString> sl2;
-		for(const QString& s : qAsConst(sl)){
+		for(const QString& s : std::as_const(sl)){
 			if(!s.isEmpty()){
 				sl2.append(s);
 			}
@@ -2791,7 +2791,7 @@ void Import::importCSVActivities(QWidget* parent){
 		
 		QStringList activity_tags_names;
 		QSet<QString> _activityTagsSet;
-		for(const QString& activityTag : qAsConst(activity_tags_namesFromFile)){
+		for(const QString& activityTag : std::as_const(activity_tags_namesFromFile)){
 			//assert(activityTagsHash.contains(activityTag));
 			if(!_activityTagsSet.contains(activityTag)){
 				_activityTagsSet.insert(activityTag);
@@ -2809,7 +2809,7 @@ void Import::importCSVActivities(QWidget* parent){
 			atl = fieldList[FIELD_ACTIVITY_TAGS_SET][i].split("|", QString::KeepEmptyParts);
 #endif
 		QList<QStringList> atl2;
-		for(const QString& at : qAsConst(atl)){
+		for(const QString& at : std::as_const(atl)){
 			if(!at.isEmpty()){
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 				atl2.append(at.split("+", Qt::SkipEmptyParts));
@@ -2829,10 +2829,10 @@ void Import::importCSVActivities(QWidget* parent){
 		}
 		
 		QList<QStringList> activity_tags_names;
-		for(const QStringList& atl : qAsConst(atl2)){
+		for(const QStringList& atl : std::as_const(atl2)){
 			QSet<QString> _activityTagsSet;
 			QStringList _atl;
-			for(const QString& activityTagName : qAsConst(atl)){
+			for(const QString& activityTagName : std::as_const(atl)){
 				//assert(teachersHash.contains(teacherName));
 				if(!_activityTagsSet.contains(activityTagName)){
 					_activityTagsSet.insert(activityTagName);
@@ -2855,7 +2855,7 @@ void Import::importCSVActivities(QWidget* parent){
 		int numberOfStudents=0;
 		QStringList students_names;
 		QSet<QString> _studentsSet;
-		for(const QString& studentsSet : qAsConst(students_namesFromFile)){
+		for(const QString& studentsSet : std::as_const(students_namesFromFile)){
 			assert(studentsHash.contains(studentsSet));
 			if(!_studentsSet.contains(studentsSet)){
 				_studentsSet.insert(studentsSet);
@@ -2874,7 +2874,7 @@ void Import::importCSVActivities(QWidget* parent){
 			stl = fieldList[FIELD_STUDENTS_SET][i].split("|", QString::KeepEmptyParts);
 #endif
 		QList<QStringList> stl2;
-		for(const QString& st : qAsConst(stl)){
+		for(const QString& st : std::as_const(stl)){
 			if(!st.isEmpty()){
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 				stl2.append(st.split("+", Qt::SkipEmptyParts));
@@ -2895,11 +2895,11 @@ void Import::importCSVActivities(QWidget* parent){
 		
 		QList<int> numberOfStudentsPerComponent;
 		QList<QStringList> students_names;
-		for(const QStringList& stl : qAsConst(stl2)){
+		for(const QStringList& stl : std::as_const(stl2)){
 			int numberOfStudents=0;
 			QSet<QString> _studentsSet;
 			QStringList _stl;
-			for(const QString& studentsName : qAsConst(stl)){
+			for(const QString& studentsName : std::as_const(stl)){
 				//assert(teachersHash.contains(teacherName));
 				if(!studentsName.isEmpty())
 					assert(studentsHash.contains(studentsName));

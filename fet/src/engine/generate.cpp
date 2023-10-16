@@ -129,7 +129,7 @@ bool Generate::compareConflictsIncreasingAtLevel0(int a, int b)
 	int minWrongA=INF;
 	int nWrongA=0;
 	int minIndexActA=gt.rules.nInternalActivities;
-	for(int ai2 : qAsConst(conflictingActivitiesBipartiteMatching[a])){
+	for(int ai2 : std::as_const(conflictingActivitiesBipartiteMatching[a])){
 		minWrongA=min(minWrongA, triedRemovals(ai2, tmpGlobalSolutionCompareLevel0->times[ai2]));
 		nWrongA+=triedRemovals(ai2, tmpGlobalSolutionCompareLevel0->times[ai2]);
 		minIndexActA=min(minIndexActA, invPermutation[ai2]);
@@ -138,7 +138,7 @@ bool Generate::compareConflictsIncreasingAtLevel0(int a, int b)
 	int minWrongB=INF;
 	int nWrongB=0;
 	int minIndexActB=gt.rules.nInternalActivities;
-	for(int ai2 : qAsConst(conflictingActivitiesBipartiteMatching[b])){
+	for(int ai2 : std::as_const(conflictingActivitiesBipartiteMatching[b])){
 		minWrongB=min(minWrongB, triedRemovals(ai2, tmpGlobalSolutionCompareLevel0->times[ai2]));
 		nWrongB+=triedRemovals(ai2, tmpGlobalSolutionCompareLevel0->times[ai2]);
 		minIndexActB=min(minIndexActB, invPermutation[ai2]);
@@ -184,7 +184,7 @@ bool Generate::compareConflictsIncreasingAtLevel0(int a, int b)
 	while(!q.isEmpty()){
 		int u=q.dequeue();
 		if(dist[u]<dist[NIL_NODE]){
-			for(int v : qAsConst(adj[u])){
+			for(int v : std::as_const(adj[u])){
 				if(dist[pairNode[v]]==INF_DIST){
 					dist[pairNode[v]]=dist[u]+1;
 					q.enqueue(pairNode[v]);
@@ -199,7 +199,7 @@ bool Generate::compareConflictsIncreasingAtLevel0(int a, int b)
 bool depthFirstSearch(int u)
 {
 	if(u!=NIL_NODE){
-		for(int v : qAsConst(adj[u])){
+		for(int v : std::as_const(adj[u])){
 			if(dist[pairNode[v]]==dist[u]+1){
 				if(depthFirstSearch(pairNode[v])==true){
 					pairNode[v]=u;
@@ -247,7 +247,7 @@ bool Generate::depthFirstSearch(int u)
 			return false;
 	
 		visited[u]=true;
-		for(int v : qAsConst(adj[u])){
+		for(int v : std::as_const(adj[u])){
 			if(depthFirstSearch(pairNode[v])==true){
 				pairNode[v]=u;
 				pairNode[u]=v; //useless assignment
@@ -295,7 +295,7 @@ inline bool teacherNoGapsPerAfternoon(int tch)
 
 inline void Generate::addAiToNewTimetable(int ai, const Activity* act, int d, int h)
 {
-	for(int tch : qAsConst(mustComputeTimetableTeachers[ai])){
+	for(int tch : std::as_const(mustComputeTimetableTeachers[ai])){
 		for(int dur=0; dur<act->duration; dur++){
 			oldTeachersTimetable(tch,d,h+dur)=newTeachersTimetable(tch,d,h+dur);
 			newTeachersTimetable(tch,d,h+dur)=ai;
@@ -304,7 +304,7 @@ inline void Generate::addAiToNewTimetable(int ai, const Activity* act, int d, in
 		oldTeachersDayNGaps(tch,d)=newTeachersDayNGaps(tch,d);
 	}
 
-	for(int sbg : qAsConst(mustComputeTimetableSubgroups[ai])){
+	for(int sbg : std::as_const(mustComputeTimetableSubgroups[ai])){
 		for(int dur=0; dur<act->duration; dur++){
 			oldSubgroupsTimetable(sbg,d,h+dur)=newSubgroupsTimetable(sbg,d,h+dur);
 			newSubgroupsTimetable(sbg,d,h+dur)=ai;
@@ -316,21 +316,21 @@ inline void Generate::addAiToNewTimetable(int ai, const Activity* act, int d, in
 
 	if(gt.rules.mode==MORNINGS_AFTERNOONS){
 		if(haveTeachersAfternoonsEarly && (d%2)==1)
-			for(int tch : qAsConst(mustComputeTimetableTeachers[ai]))
+			for(int tch : std::as_const(mustComputeTimetableTeachers[ai]))
 				oldTeachersDayNFirstGaps(tch,d)=newTeachersDayNFirstGaps(tch,d);
 		else if(haveTeachersMorningsEarly && (d%2)==0)
-			for(int tch : qAsConst(mustComputeTimetableTeachers[ai]))
+			for(int tch : std::as_const(mustComputeTimetableTeachers[ai]))
 				oldTeachersDayNFirstGaps(tch,d)=newTeachersDayNFirstGaps(tch,d);
 
 		if(haveTeachersMaxGapsPerRealDay){
-			for(int tch : qAsConst(mustComputeTimetableTeachers[ai])){
+			for(int tch : std::as_const(mustComputeTimetableTeachers[ai])){
 				oldTeachersRealDayNHours(tch,d/2)=newTeachersRealDayNHours(tch,d/2);
 				oldTeachersRealDayNGaps(tch,d/2)=newTeachersRealDayNGaps(tch,d/2);
 			}
 		}
 
 		if(haveStudentsMaxGapsPerRealDay){
-			for(int sbg : qAsConst(mustComputeTimetableSubgroups[ai])){
+			for(int sbg : std::as_const(mustComputeTimetableSubgroups[ai])){
 				oldSubgroupsRealDayNHours(sbg,d/2)=newSubgroupsRealDayNHours(sbg,d/2);
 				oldSubgroupsRealDayNGaps(sbg,d/2)=newSubgroupsRealDayNGaps(sbg,d/2);
 				oldSubgroupsRealDayNFirstGaps(sbg,d/2)=newSubgroupsRealDayNFirstGaps(sbg,d/2);
@@ -341,7 +341,7 @@ inline void Generate::addAiToNewTimetable(int ai, const Activity* act, int d, in
 
 inline void Generate::removeAiFromNewTimetable(int ai, const Activity* act, int d, int h)
 {
-	for(int tch : qAsConst(mustComputeTimetableTeachers[ai])){
+	for(int tch : std::as_const(mustComputeTimetableTeachers[ai])){
 		for(int dur=0; dur<act->duration; dur++){
 			assert(newTeachersTimetable(tch,d,h+dur)==ai);
 			newTeachersTimetable(tch,d,h+dur)=oldTeachersTimetable(tch,d,h+dur);
@@ -350,7 +350,7 @@ inline void Generate::removeAiFromNewTimetable(int ai, const Activity* act, int 
 		newTeachersDayNGaps(tch,d)=oldTeachersDayNGaps(tch,d);
 	}
 
-	for(int sbg : qAsConst(mustComputeTimetableSubgroups[ai])){
+	for(int sbg : std::as_const(mustComputeTimetableSubgroups[ai])){
 		for(int dur=0; dur<act->duration; dur++){
 			assert(newSubgroupsTimetable(sbg,d,h+dur)==ai);
 			newSubgroupsTimetable(sbg,d,h+dur)=oldSubgroupsTimetable(sbg,d,h+dur);
@@ -362,21 +362,21 @@ inline void Generate::removeAiFromNewTimetable(int ai, const Activity* act, int 
 
 	if(gt.rules.mode==MORNINGS_AFTERNOONS){
 		if(haveTeachersAfternoonsEarly && (d%2)==1)
-			for(int tch : qAsConst(mustComputeTimetableTeachers[ai]))
+			for(int tch : std::as_const(mustComputeTimetableTeachers[ai]))
 				newTeachersDayNFirstGaps(tch,d)=oldTeachersDayNFirstGaps(tch,d);
 		else if(haveTeachersMorningsEarly && (d%2)==0)
-			for(int tch : qAsConst(mustComputeTimetableTeachers[ai]))
+			for(int tch : std::as_const(mustComputeTimetableTeachers[ai]))
 				newTeachersDayNFirstGaps(tch,d)=oldTeachersDayNFirstGaps(tch,d);
 
 		if(haveTeachersMaxGapsPerRealDay){
-			for(int tch : qAsConst(mustComputeTimetableTeachers[ai])){
+			for(int tch : std::as_const(mustComputeTimetableTeachers[ai])){
 				newTeachersRealDayNHours(tch,d/2)=oldTeachersRealDayNHours(tch,d/2);
 				newTeachersRealDayNGaps(tch,d/2)=oldTeachersRealDayNGaps(tch,d/2);
 			}
 		}
 
 		if(haveStudentsMaxGapsPerRealDay){
-			for(int sbg : qAsConst(mustComputeTimetableSubgroups[ai])){
+			for(int sbg : std::as_const(mustComputeTimetableSubgroups[ai])){
 				newSubgroupsRealDayNHours(sbg,d/2)=oldSubgroupsRealDayNHours(sbg,d/2);
 				newSubgroupsRealDayNGaps(sbg,d/2)=oldSubgroupsRealDayNGaps(sbg,d/2);
 				newSubgroupsRealDayNFirstGaps(sbg,d/2)=oldSubgroupsRealDayNFirstGaps(sbg,d/2);
@@ -630,7 +630,7 @@ inline void Generate::updateSbgNHoursGapsRealDay(int sbg, int real_d)
 inline void Generate::updateTeachersNHoursGaps(int ai, int d)
 {
 	if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-		for(int tch : qAsConst(mustComputeTimetableTeachers[ai])){
+		for(int tch : std::as_const(mustComputeTimetableTeachers[ai])){
 			int hours=0, gaps=0;
 
 			int h;
@@ -652,7 +652,7 @@ inline void Generate::updateTeachersNHoursGaps(int ai, int d)
 		}
 	}
 	else{
-		for(int tch : qAsConst(mustComputeTimetableTeachers[ai])){
+		for(int tch : std::as_const(mustComputeTimetableTeachers[ai])){
 			int hours=0, gaps=0, nfirstgaps=0;
 
 			int h;
@@ -699,7 +699,7 @@ inline void Generate::updateTeachersNHoursGapsRealDay(int ai, int real_d)
 {
 	assert(gt.rules.mode==MORNINGS_AFTERNOONS);
 
-	for(int tch : qAsConst(mustComputeTimetableTeachers[ai])){
+	for(int tch : std::as_const(mustComputeTimetableTeachers[ai])){
 		int hours=0, gaps=0;
 
 		int h;
@@ -736,7 +736,7 @@ inline void Generate::updateTeachersNHoursGapsRealDay(int ai, int real_d)
 
 inline void Generate::updateSubgroupsNHoursGaps(int ai, int d)
 {
-	for(int sbg : qAsConst(mustComputeTimetableSubgroups[ai])){
+	for(int sbg : std::as_const(mustComputeTimetableSubgroups[ai])){
 		int hours=0, gaps=0, nfirstgaps=0;
 
 		int h;
@@ -769,7 +769,7 @@ inline void Generate::updateSubgroupsNHoursGapsRealDay(int ai, int real_d)
 {
 	assert(gt.rules.mode==MORNINGS_AFTERNOONS);
 
-	for(int sbg : qAsConst(mustComputeTimetableSubgroups[ai])){
+	for(int sbg : std::as_const(mustComputeTimetableSubgroups[ai])){
 		int hours=0, gaps=0, nfirstgaps=0;
 		int hours_first_half=0;
 		int nfirstgaps_first_half=0;
@@ -4287,11 +4287,11 @@ inline bool Generate::checkBuildingChanges(int sbg, int tch, const QList<int>& g
 				QList<int> optimalRemovableActs;
 				if(level==0){
 					int nWrong=INF;
-					for(int a : qAsConst(removableActsList))
+					for(int a : std::as_const(removableActsList))
 						if(nWrong>triedRemovals(a,c.times[a])){
 							nWrong=triedRemovals(a,c.times[a]);
 						}
-					for(int a : qAsConst(removableActsList))
+					for(int a : std::as_const(removableActsList))
 						if(nWrong==triedRemovals(a,c.times[a]))
 							optimalRemovableActs.append(a);
 				}
@@ -4430,11 +4430,11 @@ inline bool Generate::checkBuildingChanges(int sbg, int tch, const QList<int>& g
 			QList<int> optimalRemovableActs;
 			if(level==0){
 				int nWrong=INF;
-				for(int a : qAsConst(removableActsList))
+				for(int a : std::as_const(removableActsList))
 					if(nWrong>triedRemovals(a,c.times[a])){
 						nWrong=triedRemovals(a,c.times[a]);
 					}
-				for(int a : qAsConst(removableActsList))
+				for(int a : std::as_const(removableActsList))
 					if(nWrong==triedRemovals(a,c.times[a]))
 						optimalRemovableActs.append(a);
 			}
@@ -4623,11 +4623,11 @@ inline bool Generate::checkRoomChanges(int sbg, int tch, const QList<int>& globa
 				QList<int> optimalRemovableActs;
 				if(level==0){
 					int nWrong=INF;
-					for(int a : qAsConst(removableActsList))
+					for(int a : std::as_const(removableActsList))
 						if(nWrong>triedRemovals(a,c.times[a])){
 							nWrong=triedRemovals(a,c.times[a]);
 						}
-					for(int a : qAsConst(removableActsList))
+					for(int a : std::as_const(removableActsList))
 						if(nWrong==triedRemovals(a,c.times[a]))
 							optimalRemovableActs.append(a);
 				}
@@ -4766,11 +4766,11 @@ inline bool Generate::checkRoomChanges(int sbg, int tch, const QList<int>& globa
 			QList<int> optimalRemovableActs;
 			if(level==0){
 				int nWrong=INF;
-				for(int a : qAsConst(removableActsList))
+				for(int a : std::as_const(removableActsList))
 					if(nWrong>triedRemovals(a,c.times[a])){
 						nWrong=triedRemovals(a,c.times[a]);
 					}
-				for(int a : qAsConst(removableActsList))
+				for(int a : std::as_const(removableActsList))
 					if(nWrong==triedRemovals(a,c.times[a]))
 						optimalRemovableActs.append(a);
 			}
@@ -4922,11 +4922,11 @@ inline bool Generate::checkBuildingChangesPerRealDay(int sbg, int tch, const QLi
 				QList<int> optimalRemovableActs;
 				if(level==0){
 					int nWrong=INF;
-					for(int a : qAsConst(removableActsList))
+					for(int a : std::as_const(removableActsList))
 						if(nWrong>triedRemovals(a,c.times[a]) ){
 							nWrong=triedRemovals(a,c.times[a]);
 						}
-					for(int a : qAsConst(removableActsList))
+					for(int a : std::as_const(removableActsList))
 						if(nWrong==triedRemovals(a,c.times[a]))
 							optimalRemovableActs.append(a);
 				}
@@ -5077,11 +5077,11 @@ inline bool Generate::checkRoomChangesPerRealDay(int sbg, int tch, const QList<i
 				QList<int> optimalRemovableActs;
 				if(level==0){
 					int nWrong=INF;
-					for(int a : qAsConst(removableActsList))
+					for(int a : std::as_const(removableActsList))
 						if(nWrong>triedRemovals(a,c.times[a]) ){
 							nWrong=triedRemovals(a,c.times[a]);
 						}
-					for(int a : qAsConst(removableActsList))
+					for(int a : std::as_const(removableActsList))
 						if(nWrong==triedRemovals(a,c.times[a]))
 							optimalRemovableActs.append(a);
 				}
@@ -5141,10 +5141,10 @@ inline bool Generate::checkRoomChangesPerRealDay(int sbg, int tch, const QList<i
 //2012-04-29
 inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& globalConflActivities, int rm, int level, int ai, QList<int>& tmp_list)
 {
-	for(ActivitiesOccupyMaxDifferentRooms_item* item : qAsConst(aomdrListForActivity[ai])){
+	for(ActivitiesOccupyMaxDifferentRooms_item* item : std::as_const(aomdrListForActivity[ai])){
 		//preliminary
 		QSet<int> occupiedRoomsSet;
-		for(int ai2 : qAsConst(item->activitiesList))
+		for(int ai2 : std::as_const(item->activitiesList))
 			if(ai2!=ai && !globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
 				int rm2=c.rooms[ai2];
 				if(rm2!=UNALLOCATED_SPACE && rm2!=UNSPECIFIED_ROOM)
@@ -5170,7 +5170,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 		QHash<int, int> roomIndexInOccupiedRoomsList;
 		QList<bool> canEmptyRoom;
 		
-		for(int ai2 : qAsConst(item->activitiesList))
+		for(int ai2 : std::as_const(item->activitiesList))
 			if(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
 				int rm2;
 				if(ai2==ai)
@@ -5207,7 +5207,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 		assert(occupiedRoomsSet.count()==item->maxDifferentRooms+1);
 		
 		QList<int> candidates;
-		for(int rm2 : qAsConst(occupiedRoomsList)){
+		for(int rm2 : std::as_const(occupiedRoomsList)){
 			assert(roomIndexInOccupiedRoomsList.contains(rm2));
 			int ind=roomIndexInOccupiedRoomsList.value(rm2);
 			if(canEmptyRoom.at(ind)==true)
@@ -5223,7 +5223,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 			int optMinIndexAct=gt.rules.nInternalActivities;
 
 			//phase 1
-			for(int ind : qAsConst(candidates)){
+			for(int ind : std::as_const(candidates)){
 				const QSet<int>& activitiesForCandidate=activitiesInRoom.at(ind);
 				
 				int tmp_n_confl_acts=activitiesForCandidate.count();
@@ -5232,7 +5232,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 				int tmp_minIndexAct=gt.rules.nInternalActivities;
 				
 				if(activitiesForCandidate.count()>0){
-					for(int ai2 : qAsConst(activitiesForCandidate)){
+					for(int ai2 : std::as_const(activitiesForCandidate)){
 						tmp_minWrong=min(tmp_minWrong, triedRemovals(ai2,c.times[ai2]));
 						tmp_nWrong+=triedRemovals(ai2,c.times[ai2]);
 						tmp_minIndexAct=min(tmp_minIndexAct, invPermutation[ai2]);
@@ -5257,7 +5257,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 			}
 
 			//phase 2
-			for(int ind : qAsConst(candidates)){
+			for(int ind : std::as_const(candidates)){
 				const QSet<int>& activitiesForCandidate=activitiesInRoom.at(ind);
 				
 				int tmp_n_confl_acts=activitiesForCandidate.count();
@@ -5266,7 +5266,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 				int tmp_minIndexAct=gt.rules.nInternalActivities;
 				
 				if(activitiesForCandidate.count()>0){
-					for(int ai2 : qAsConst(activitiesForCandidate)){
+					for(int ai2 : std::as_const(activitiesForCandidate)){
 						tmp_minWrong=min(tmp_minWrong, triedRemovals(ai2,c.times[ai2]));
 						tmp_nWrong+=triedRemovals(ai2,c.times[ai2]);
 						tmp_minIndexAct=min(tmp_minIndexAct, invPermutation[ai2]);
@@ -5294,7 +5294,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 			
 			int optConflActivities=MAX_ACTIVITIES;
 
-			for(int ind : qAsConst(candidates)){
+			for(int ind : std::as_const(candidates)){
 				if(activitiesInRoom.at(ind).count()<optConflActivities){
 					optConflActivities=activitiesInRoom.at(ind).count();
 					finalCandidates.clear();
@@ -5331,7 +5331,7 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 			tmpListFromSet[i+r]=t;
 		}
 		
-		for(int ai2 : qAsConst(tmpListFromSet)){
+		for(int ai2 : std::as_const(tmpListFromSet)){
 			assert(!globalConflActivities.contains(ai2) && !tmp_list.contains(ai2));
 			assert(ai2!=ai && !(fixedTimeActivity[ai2] && fixedSpaceActivity[ai2]) && !swappedActivities[ai2]);
 			tmp_list.append(ai2);
@@ -5344,8 +5344,8 @@ inline bool Generate::checkActivitiesOccupyMaxDifferentRooms(const QList<int>& g
 //2013-09-14
 inline bool Generate::checkActivitiesSameRoomIfConsecutive(const QList<int>& globalConflActivities, int rm, int ai, int d, int h, QList<int>& tmp_list)
 {
-	for(ActivitiesSameRoomIfConsecutive_item* item : qAsConst(asricListForActivity[ai])){
-		for(int ai2 : qAsConst(item->activitiesList)){
+	for(ActivitiesSameRoomIfConsecutive_item* item : std::as_const(asricListForActivity[ai])){
+		for(int ai2 : std::as_const(item->activitiesList)){
 			if(ai2!=ai && !globalConflActivities.contains(ai2) && !tmp_list.contains(ai2)){
 				int rm2=c.rooms[ai2];
 				if(rm2!=UNALLOCATED_SPACE && rm2!=UNSPECIFIED_ROOM){
@@ -5398,7 +5398,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 	
 	QHash<int, QList<int>> realRoomsHash;
 	
-	for(int rm : qAsConst(listOfRooms)){
+	for(int rm : std::as_const(listOfRooms)){
 		int dur;
 		for(dur=0; dur<act->duration; dur++){
 			if(notAllowedRoomTimePercentages[rm][newtime+dur*gt.rules.nDaysPerWeek]>=0 &&
@@ -5407,7 +5407,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 			
 			if(haveTeacherRoomNotAllowedTimesConstraints){
 				bool ok=true;
-				for(int tch : qAsConst(act->iTeachersList)){
+				for(int tch : std::as_const(act->iTeachersList)){
 					double wp=notAllowedTeacherRoomTimePercentages.value(QPair<qint64, qint64>(teacherRoomQInt64Combination(tch, rm), dayHourQInt64Combination(d, h+dur)), -1);
 					if(wp>=0 && !skipRandom(wp)){
 						ok=false;
@@ -5484,9 +5484,9 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 					QList<int> acceptedRoomsList;
 					QHash<int, int> nConflictingActivitiesHash;
 					QHash<int, QSet<int>> conflictingActivitiesHash;
-					for(const QList<int>& tl : qAsConst(rrsl)){
+					for(const QList<int>& tl : std::as_const(rrsl)){
 						QList<int> nrs; //new rooms set
-						for(int rr : qAsConst(tl)){ //real room
+						for(int rr : std::as_const(tl)){ //real room
 							if(acceptedRoomsSet.contains(rr)){
 								nrs.append(rr);
 								continue;
@@ -5503,7 +5503,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 
 								if(haveTeacherRoomNotAllowedTimesConstraints){
 									bool ok=true;
-									for(int tch : qAsConst(act->iTeachersList)){
+									for(int tch : std::as_const(act->iTeachersList)){
 										double wp=notAllowedTeacherRoomTimePercentages.value(QPair<qint64, qint64>(teacherRoomQInt64Combination(tch, rr), dayHourQInt64Combination(d, h+dur3)), -1);
 										if(wp>=0 && !skipRandom(wp)){
 											ok=false;
@@ -5650,15 +5650,15 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 						QHash<int, int> realRoomsHash;
 						
 						int q=0;
-						for(int t : qAsConst(acceptedRoomsList)){
+						for(int t : std::as_const(acceptedRoomsList)){
 							realRoomsHash.insert(t, q);
 							adj[q].clear();
 							q++;
 						}
 						
 						q=0;
-						for(const QList<int>& tl2 : qAsConst(nrrsl)){
-							for(int rr : qAsConst(tl2)){
+						for(const QList<int>& tl2 : std::as_const(nrrsl)){
+							for(int rr : std::as_const(tl2)){
 								int tr=realRoomsHash.value(rr, -1);
 								assert(tr>=0);
 								
@@ -5731,7 +5731,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 					//check the room changes for the students and for the teachers
 				
 					//room changes for students
-					for(int sbg : qAsConst(act->iSubgroupsList)){
+					for(int sbg : std::as_const(act->iSubgroupsList)){
 						if(minGapsBetweenRoomChangesForStudentsPercentages[sbg]>=0 || maxRoomChangesPerDayForStudentsPercentages[sbg]>=0
 						  || maxRoomChangesPerWeekForStudentsPercentages[sbg]>=0){
 							ok=checkRoomChanges(sbg, -1, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
@@ -5744,7 +5744,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 						continue;
 			
 					//room changes for teachers
-					for(int tch : qAsConst(act->iTeachersList)){
+					for(int tch : std::as_const(act->iTeachersList)){
 						if(minGapsBetweenRoomChangesForTeachersPercentages[tch]>=0 || maxRoomChangesPerDayForTeachersPercentages[tch]>=0
 						  || maxRoomChangesPerWeekForTeachersPercentages[tch]>=0){
 							ok=checkRoomChanges(-1, tch, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
@@ -5758,7 +5758,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 
 					if(gt.rules.mode==MORNINGS_AFTERNOONS){
 						//room changes per day for students
-						for(int sbg : qAsConst(act->iSubgroupsList)){
+						for(int sbg : std::as_const(act->iSubgroupsList)){
 							if(maxRoomChangesPerRealDayForSubgroupsPercentages[sbg]>=0){
 								ok=checkRoomChangesPerRealDay(sbg, -1, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
 								if(!ok)
@@ -5770,7 +5770,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 							continue;
 
 						//room changes per real for teachers
-						for(int tch : qAsConst(act->iTeachersList)){
+						for(int tch : std::as_const(act->iTeachersList)){
 							if(maxRoomChangesPerRealDayForTeachersPercentages[tch]>=0){
 								ok=checkRoomChangesPerRealDay(-1, tch, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
 								if(!ok)
@@ -5787,7 +5787,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 						//check the building changes for the students and for the teachers
 						
 						//building changes for students
-						for(int sbg : qAsConst(act->iSubgroupsList)){
+						for(int sbg : std::as_const(act->iSubgroupsList)){
 							if(minGapsBetweenBuildingChangesForStudentsPercentages[sbg]>=0 || maxBuildingChangesPerDayForStudentsPercentages[sbg]>=0
 							  || maxBuildingChangesPerWeekForStudentsPercentages[sbg]>=0){
 								ok=checkBuildingChanges(sbg, -1, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
@@ -5800,7 +5800,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 							continue;
 			
 						//building changes for teachers
-						for(int tch : qAsConst(act->iTeachersList)){
+						for(int tch : std::as_const(act->iTeachersList)){
 							if(minGapsBetweenBuildingChangesForTeachersPercentages[tch]>=0 || maxBuildingChangesPerDayForTeachersPercentages[tch]>=0
 							  || maxBuildingChangesPerWeekForTeachersPercentages[tch]>=0){
 								ok=checkBuildingChanges(-1, tch, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
@@ -5814,7 +5814,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 
 						if(gt.rules.mode==MORNINGS_AFTERNOONS){
 							//building changes per real day for students
-							for(int sbg : qAsConst(act->iSubgroupsList)){
+							for(int sbg : std::as_const(act->iSubgroupsList)){
 								if(maxBuildingChangesPerRealDayForSubgroupsPercentages[sbg]>=0){
 									ok=checkBuildingChangesPerRealDay(sbg, -1, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
 									if(!ok)
@@ -5826,7 +5826,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 								continue;
 	
 							//building changes per real day for teachers
-							for(int tch : qAsConst(act->iTeachersList)){
+							for(int tch : std::as_const(act->iTeachersList)){
 								if(maxBuildingChangesPerRealDayForTeachersPercentages[tch]>=0){
 									ok=checkBuildingChangesPerRealDay(-1, tch, globalConflActivities, rm, level, act, ai, d, h, tmp_list);
 									if(!ok)
@@ -5863,7 +5863,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 				
 				if(level==0){
 					if(tmp_list.count()>0){ //serious bug corrected on 2012-05-02, but it seems that it didn't affect the users until now
-						for(int ai2 : qAsConst(tmp_list)){
+						for(int ai2 : std::as_const(tmp_list)){
 							tmp_minWrong=min(tmp_minWrong, triedRemovals(ai2,c.times[ai2]));
 							tmp_nWrong+=triedRemovals(ai2,c.times[ai2]);
 							tmp_minIndexAct=min(tmp_minIndexAct, invPermutation[ai2]);
@@ -5957,7 +5957,7 @@ inline bool Generate::chooseRoom(const QList<int>& listOfRooms, const QList<int>
 									//22 May 2020: If localConflActivities is not emptied between the call to getPreferredRoom() and getHomeRoom(),
 									//we would get a crash bug (if localConflActivities would contain duplicates) or a non-observable bug (otherwise).
 	
-	for(int a : qAsConst(conflActivitiesRooms.at(t))){
+	for(int a : std::as_const(conflActivitiesRooms.at(t))){
 		assert(!globalConflActivities.contains(a));
 		assert(!localConflActivities.contains(a)); ///////////Liviu: added 22 August 2008.
 		localConflActivities.append(a);
@@ -5981,7 +5981,7 @@ inline bool Generate::getPreferredRoom(const QList<int>& globalConflActivities, 
 	
 	bool unspecifiedRoom=true;
 	QSet<int> allowedRooms;
-	for(const PreferredRoomsItem& it : qAsConst(activitiesPreferredRoomsList[ai])){
+	for(const PreferredRoomsItem& it : std::as_const(activitiesPreferredRoomsList[ai])){
 		bool skip=skipRandom(it.percentage);
 		
 		if(!skip){
@@ -6004,7 +6004,7 @@ inline bool Generate::getPreferredRoom(const QList<int>& globalConflActivities, 
 	}
 	
 	QList<int> allowedRoomsList;
-	for(int rm : qAsConst(allowedRooms))
+	for(int rm : std::as_const(allowedRooms))
 		allowedRoomsList.append(rm);
 	std::stable_sort(allowedRoomsList.begin(), allowedRoomsList.end()); //To keep the generation identical on all computers - 2013-01-03
 	//Randomize list
@@ -6036,7 +6036,7 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 		else{
 			okh=getHomeRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities, realRoomsList);
 			if(okh){
-				for(int t : qAsConst(localConflActivities)){
+				for(int t : std::as_const(localConflActivities)){
 					conflActivities.append(t);
 					nConflActivities++;
 				}
@@ -6067,7 +6067,7 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 				
 				okh=getHomeRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities, realRoomsList);
 				if(okh){
-					for(int t : qAsConst(localConflActivities)){
+					for(int t : std::as_const(localConflActivities)){
 						conflActivities.append(t);
 						nConflActivities++;
 					}
@@ -6079,7 +6079,7 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 				}
 			}
 			else{
-				for(int t : qAsConst(localConflActivities)){
+				for(int t : std::as_const(localConflActivities)){
 					conflActivities.append(t);
 					nConflActivities++;
 				}
@@ -6100,7 +6100,7 @@ inline bool Generate::getRoom(int level, const Activity* act, int ai, int d, int
 				
 				okh=getHomeRoom(conflActivities, level, act, ai, d, h, roomSlot, selectedSlot, localConflActivities, realRoomsList);
 				if(okh){
-					for(int t : qAsConst(localConflActivities)){
+					for(int t : std::as_const(localConflActivities)){
 						conflActivities.append(t);
 						nConflActivities++;
 					}
@@ -6442,7 +6442,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 					assert(gt.rules.internalRoomsList[rm]->rrsl.count()==c.realRoomsList[i].count());
 					
 					int k=0;
-					for(int rr : qAsConst(c.realRoomsList[i])){
+					for(int rr : std::as_const(c.realRoomsList[i])){
 						assert(gt.rules.internalRoomsList[rm]->rrsl.at(k).contains(rr));
 						
 						for(int dd=0; dd<act->duration; dd++){
@@ -6479,7 +6479,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			Activity* act=&gt.rules.internalActivitiesList[i];
 			int hour=c.times[i]/gt.rules.nDaysPerWeek;
 			int day=c.times[i]%gt.rules.nDaysPerWeek;
-			for(int sb : qAsConst(act->iSubgroupsList)){
+			for(int sb : std::as_const(act->iSubgroupsList)){
 				for(int dd=0; dd<act->duration && hour+dd<gt.rules.nHoursPerDay; dd++){
 					assert(subgroupsTimetable(sb,day,hour+dd)==-1);
 					subgroupsTimetable(sb,day,hour+dd)=i;
@@ -6506,7 +6506,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			Activity* act=&gt.rules.internalActivitiesList[i];
 			int hour=c.times[i]/gt.rules.nDaysPerWeek;
 			int day=c.times[i]%gt.rules.nDaysPerWeek;
-			for(int sb : qAsConst(act->iSubgroupsList)){
+			for(int sb : std::as_const(act->iSubgroupsList)){
 				for(int dd=0; dd<act->duration && hour+dd<gt.rules.nHoursPerDay; dd++){
 					assert(newSubgroupsTimetable(sb,day,hour+dd)==-1);
 					newSubgroupsTimetable(sb,day,hour+dd)=i;
@@ -6533,7 +6533,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			int d=c.times[permutation[i]]%gt.rules.nDaysPerWeek;
 			
 			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-				for(int j : qAsConst(subgroupsWithMaxDaysPerWeekForActivities[permutation[i]])){
+				for(int j : std::as_const(subgroupsWithMaxDaysPerWeekForActivities[permutation[i]])){
 					assert(subgroupActivitiesOfTheDay(j,d).indexOf(permutation[i])==-1);
 					subgroupActivitiesOfTheDay(j,d).append(permutation[i]);
 				}
@@ -6560,13 +6560,13 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 
 				//speed improvement on 2022-02-16
 				if(d%2==1){
-					for(int j : qAsConst(/*st_smda*/ subgroupsForActivitiesOfTheDayAfternoons[permutation[i]])){
+					for(int j : std::as_const(/*st_smda*/ subgroupsForActivitiesOfTheDayAfternoons[permutation[i]])){
 						assert(subgroupActivitiesOfTheDay(j,d).indexOf(permutation[i])==-1);
 						subgroupActivitiesOfTheDay(j,d).append(permutation[i]);
 					}
 				}
 				else{
-					for(int j : qAsConst(/*st_smdm*/ subgroupsForActivitiesOfTheDayMornings[permutation[i]])){
+					for(int j : std::as_const(/*st_smdm*/ subgroupsForActivitiesOfTheDayMornings[permutation[i]])){
 						assert(subgroupActivitiesOfTheDay(j,d).indexOf(permutation[i])==-1);
 						subgroupActivitiesOfTheDay(j,d).append(permutation[i]);
 					}
@@ -6594,7 +6594,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			Activity* act=&gt.rules.internalActivitiesList[i];
 			int hour=c.times[i]/gt.rules.nDaysPerWeek;
 			int day=c.times[i]%gt.rules.nDaysPerWeek;
-			for(int tc : qAsConst(act->iTeachersList)){
+			for(int tc : std::as_const(act->iTeachersList)){
 				for(int dd=0; dd<act->duration && hour+dd<gt.rules.nHoursPerDay; dd++){
 					assert(teachersTimetable(tc,day,hour+dd)==-1);
 					teachersTimetable(tc,day,hour+dd)=i;
@@ -6621,7 +6621,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			Activity* act=&gt.rules.internalActivitiesList[i];
 			int hour=c.times[i]/gt.rules.nDaysPerWeek;
 			int day=c.times[i]%gt.rules.nDaysPerWeek;
-			for(int tc : qAsConst(act->iTeachersList)){
+			for(int tc : std::as_const(act->iTeachersList)){
 				for(int dd=0; dd<act->duration && hour+dd<gt.rules.nHoursPerDay; dd++){
 					assert(newTeachersTimetable(tc,day,hour+dd)==-1);
 					newTeachersTimetable(tc,day,hour+dd)=i;
@@ -6648,7 +6648,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			int d=c.times[permutation[i]]%gt.rules.nDaysPerWeek;
 			
 			if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-				for(int j : qAsConst(teachersWithMaxDaysPerWeekForActivities[permutation[i]])){
+				for(int j : std::as_const(teachersWithMaxDaysPerWeekForActivities[permutation[i]])){
 					assert(teacherActivitiesOfTheDay(j,d).indexOf(permutation[i])==-1);
 					teacherActivitiesOfTheDay(j,d).append(permutation[i]);
 				}
@@ -6676,13 +6676,13 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 
 				//speed improvement on 2022-02-16
 				if(d%2==1){
-					for(int j : qAsConst(/*smda*/ teachersForActivitiesOfTheDayAfternoons[permutation[i]])){
+					for(int j : std::as_const(/*smda*/ teachersForActivitiesOfTheDayAfternoons[permutation[i]])){
 						assert(teacherActivitiesOfTheDay(j,d).indexOf(permutation[i])==-1);
 						teacherActivitiesOfTheDay(j,d).append(permutation[i]);
 					}
 				}
 				else{
-					for(int j : qAsConst(/*smdm*/ teachersForActivitiesOfTheDayMornings[permutation[i]])){
+					for(int j : std::as_const(/*smdm*/ teachersForActivitiesOfTheDayMornings[permutation[i]])){
 						assert(teacherActivitiesOfTheDay(j,d).indexOf(permutation[i])==-1);
 						teacherActivitiesOfTheDay(j,d).append(permutation[i]);
 					}
@@ -6769,7 +6769,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			
 			if(VERBOSE){
 				cout<<"conflActivitiesTimeSlot.count()=="<<conflActivitiesTimeSlot.count()<<endl;
-				for(int i : qAsConst(conflActivitiesTimeSlot)){
+				for(int i : std::as_const(conflActivitiesTimeSlot)){
 					cout<<"Confl activity id:"<<gt.rules.internalActivitiesList[i].id;
 					cout<<" time of this activity:"<<c.times[i];
 					if(c.rooms[i]!=UNSPECIFIED_ROOM)
@@ -6822,7 +6822,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 			
 			int j=0;
 			int tmp=permutation[added_act];
-			for(int k : qAsConst(ok)){
+			for(int k : std::as_const(ok)){
 				permutation[j]=k;
 				invPermutation[k]=j;
 				j++;
@@ -6835,7 +6835,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 				cout<<"id of permutation[j=="<<j-1<<"]=="<<gt.rules.internalActivitiesList[permutation[j-1]].id<<endl;
 				cout<<"conflicting:"<<endl;
 			}
-			for(int k : qAsConst(confl)){
+			for(int k : std::as_const(confl)){
 				permutation[j]=k;
 				invPermutation[k]=j;
 				j++;
@@ -7010,7 +7010,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				assert(rm==fromroom); //this test could also be done for real rooms, above?
 				assert(fromRealRoomsList.count()==gt.rules.internalRoomsList[rm]->rrsl.count());
 				int i=0;
-				for(int rr : qAsConst(fromRealRoomsList)){
+				for(int rr : std::as_const(fromRealRoomsList)){
 					assert(gt.rules.internalRoomsList[rm]->rrsl.at(i).contains(rr));
 				
 					for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
@@ -7039,7 +7039,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				}
 			}
 
-			for(int sb : qAsConst(mustComputeTimetableSubgroups[ai])){
+			for(int sb : std::as_const(mustComputeTimetableSubgroups[ai])){
 				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
 					assert(dd+h<gt.rules.nHoursPerDay);
 				
@@ -7053,7 +7053,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 				//update students' list of activities for each day
 				/////////////////
-				for(int st : qAsConst(subgroupsWithMaxDaysPerWeekForActivities[ai])){
+				for(int st : std::as_const(subgroupsWithMaxDaysPerWeekForActivities[ai])){
 					int tt=subgroupActivitiesOfTheDay(st,d).removeAll(ai);
 					assert(tt==1);
 				}
@@ -7088,19 +7088,19 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 				//speed improvement on 2022-02-16
 				if(d%2==1){
-					for(int sbg : qAsConst(/*st_smda*/ subgroupsForActivitiesOfTheDayAfternoons[ai])){
+					for(int sbg : std::as_const(/*st_smda*/ subgroupsForActivitiesOfTheDayAfternoons[ai])){
 						int tt=subgroupActivitiesOfTheDay(sbg,d).removeAll(ai);
 						assert(tt==1);
 					}
 				}
 				else{
-					for(int sbg : qAsConst(/*st_smdm*/ subgroupsForActivitiesOfTheDayMornings[ai])){
+					for(int sbg : std::as_const(/*st_smdm*/ subgroupsForActivitiesOfTheDayMornings[ai])){
 						int tt=subgroupActivitiesOfTheDay(sbg,d).removeAll(ai);
 						assert(tt==1);
 					}
 				}
 
-				/*for(int st : qAsConst(subgroupsWithMaxRealDaysPerWeekForActivities[ai])){
+				/*for(int st : std::as_const(subgroupsWithMaxRealDaysPerWeekForActivities[ai])){
 					int tt=subgroupActivitiesOfTheDay(st,d).removeAll(ai);
 					assert(tt==1);
 				}*/
@@ -7118,7 +7118,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				}
 			}
 	
-			for(int tch : qAsConst(mustComputeTimetableTeachers[ai])){
+			for(int tch : std::as_const(mustComputeTimetableTeachers[ai])){
 				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
 					assert(dd+h<gt.rules.nHoursPerDay);
 				
@@ -7132,7 +7132,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 				//update teachers' list of activities for each day
 				/////////////////
-				for(int tch : qAsConst(teachersWithMaxDaysPerWeekForActivities[ai])){
+				for(int tch : std::as_const(teachersWithMaxDaysPerWeekForActivities[ai])){
 					int tt=teacherActivitiesOfTheDay(tch,d).removeAll(ai);
 					assert(tt==1);
 				}
@@ -7167,19 +7167,19 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 				//speed improvement on 2022-02-16
 				if(d%2==1){
-					for(int tch : qAsConst(/*smda*/ teachersForActivitiesOfTheDayAfternoons[ai])){
+					for(int tch : std::as_const(/*smda*/ teachersForActivitiesOfTheDayAfternoons[ai])){
 						int tt=teacherActivitiesOfTheDay(tch,d).removeAll(ai);
 						assert(tt==1);
 					}
 				}
 				else{
-					for(int tch : qAsConst(/*smdm*/ teachersForActivitiesOfTheDayMornings[ai])){
+					for(int tch : std::as_const(/*smdm*/ teachersForActivitiesOfTheDayMornings[ai])){
 						int tt=teacherActivitiesOfTheDay(tch,d).removeAll(ai);
 						assert(tt==1);
 					}
 				}
 
-				/*for(int tch : qAsConst(teachersWithMaxRealDaysPerWeekForActivities[ai])){
+				/*for(int tch : std::as_const(teachersWithMaxRealDaysPerWeekForActivities[ai])){
 					int tt=teacherActivitiesOfTheDay(tch,d).removeAll(ai);
 					assert(tt==1);
 				}*/
@@ -7231,7 +7231,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				assert(rm==toroom); //this test could also be done for real rooms, above?
 				assert(toRealRoomsList.count()==gt.rules.internalRoomsList[rm]->rrsl.count());
 				int i=0;
-				for(int rr : qAsConst(toRealRoomsList)){
+				for(int rr : std::as_const(toRealRoomsList)){
 					assert(gt.rules.internalRoomsList[rm]->rrsl.at(i).contains(rr));
 				
 					for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
@@ -7260,7 +7260,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				}
 			}
 	
-			for(int sb : qAsConst(mustComputeTimetableSubgroups[ai])){
+			for(int sb : std::as_const(mustComputeTimetableSubgroups[ai])){
 				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
 					assert(dd+h<gt.rules.nHoursPerDay);
 				
@@ -7274,7 +7274,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 				//update students' list of activities for each day
 				/////////////////
-				for(int st : qAsConst(subgroupsWithMaxDaysPerWeekForActivities[ai])){
+				for(int st : std::as_const(subgroupsWithMaxDaysPerWeekForActivities[ai])){
 					assert(subgroupActivitiesOfTheDay(st,d).indexOf(ai)==-1);
 					subgroupActivitiesOfTheDay(st,d).append(ai);
 				}
@@ -7309,19 +7309,19 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 				//speed improvement on 2022-02-16
 				if(d%2==1){
-					for(int sbg : qAsConst(/*st_smda*/ subgroupsForActivitiesOfTheDayAfternoons[ai])){
+					for(int sbg : std::as_const(/*st_smda*/ subgroupsForActivitiesOfTheDayAfternoons[ai])){
 						assert(subgroupActivitiesOfTheDay(sbg,d).indexOf(ai)==-1);
 						subgroupActivitiesOfTheDay(sbg,d).append(ai);
 					}
 				}
 				else{
-					for(int sbg : qAsConst(/*st_smdm*/ subgroupsForActivitiesOfTheDayMornings[ai])){
+					for(int sbg : std::as_const(/*st_smdm*/ subgroupsForActivitiesOfTheDayMornings[ai])){
 						assert(subgroupActivitiesOfTheDay(sbg,d).indexOf(ai)==-1);
 						subgroupActivitiesOfTheDay(sbg,d).append(ai);
 					}
 				}
 
-				/*for(int st : qAsConst(subgroupsWithMaxRealDaysPerWeekForActivities[ai])){
+				/*for(int st : std::as_const(subgroupsWithMaxRealDaysPerWeekForActivities[ai])){
 					assert(subgroupActivitiesOfTheDay(st,d).indexOf(ai)==-1);
 					subgroupActivitiesOfTheDay(st,d).append(ai);
 				}*/
@@ -7339,7 +7339,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 				}
 			}
 	
-			for(int tch : qAsConst(mustComputeTimetableTeachers[ai])){
+			for(int tch : std::as_const(mustComputeTimetableTeachers[ai])){
 				for(int dd=0; dd<gt.rules.internalActivitiesList[ai].duration; dd++){
 					assert(dd+h<gt.rules.nHoursPerDay);
 				
@@ -7354,7 +7354,7 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 				//update teachers' list of activities for each day
 				/////////////////
-				for(int tch : qAsConst(teachersWithMaxDaysPerWeekForActivities[ai])){
+				for(int tch : std::as_const(teachersWithMaxDaysPerWeekForActivities[ai])){
 					assert(teacherActivitiesOfTheDay(tch,d).indexOf(ai)==-1);
 					teacherActivitiesOfTheDay(tch,d).append(ai);
 				}
@@ -7390,19 +7390,19 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 
 				//speed improvement on 2022-02-16
 				if(d%2==1){
-					for(int tch : qAsConst(/*smda*/ teachersForActivitiesOfTheDayAfternoons[ai])){
+					for(int tch : std::as_const(/*smda*/ teachersForActivitiesOfTheDayAfternoons[ai])){
 						assert(teacherActivitiesOfTheDay(tch,d).indexOf(ai)==-1);
 						teacherActivitiesOfTheDay(tch,d).append(ai);
 					}
 				}
 				else{
-					for(int tch : qAsConst(/*smdm*/ teachersForActivitiesOfTheDayMornings[ai])){
+					for(int tch : std::as_const(/*smdm*/ teachersForActivitiesOfTheDayMornings[ai])){
 						assert(teacherActivitiesOfTheDay(tch,d).indexOf(ai)==-1);
 						teacherActivitiesOfTheDay(tch,d).append(ai);
 					}
 				}
 
-				/*for(int tch : qAsConst(teachersWithMaxRealDaysPerWeekForActivities[ai])){
+				/*for(int tch : std::as_const(teachersWithMaxRealDaysPerWeekForActivities[ai])){
 					assert(teacherActivitiesOfTheDay(tch,d).indexOf(ai)==-1);
 					teacherActivitiesOfTheDay(tch,d).append(ai);
 				}*/
@@ -7702,7 +7702,7 @@ again_if_impossible_activity:
 		//same teacher?
 		for(int dur=0; dur<act->duration; dur++){
 			assert(h+dur<gt.rules.nHoursPerDay);
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				if(teachersTimetable(tch,d,h+dur)>=0){
 					int ai2=teachersTimetable(tch,d,h+dur);
 					assert(ai2!=ai);
@@ -7727,7 +7727,7 @@ again_if_impossible_activity:
 		if(gt.rules.mode!=BLOCK_PLANNING){
 			for(int dur=0; dur<act->duration; dur++){
 				assert(h+dur<gt.rules.nHoursPerDay);
-				for(int sbg : qAsConst(act->iSubgroupsList)){
+				for(int sbg : std::as_const(act->iSubgroupsList)){
 					if(subgroupsTimetable(sbg,d,h+dur)>=0){
 						int ai2=subgroupsTimetable(sbg,d,h+dur);
 						assert(ai2!=ai);
@@ -7753,7 +7753,7 @@ again_if_impossible_activity:
 			//same subgroup in real life time slots?
 			for(int dur=0; dur<act->duration; dur++){
 				assert(h+dur<gt.rules.nHoursPerDay);
-				for(int sbg : qAsConst(act->iSubgroupsList)){
+				for(int sbg : std::as_const(act->iSubgroupsList)){
 					for(int day_tch=0; day_tch<gt.rules.nDaysPerWeek; day_tch++){
 						if(subgroupsTimetable(sbg,day_tch,h+dur)>=0){
 							int ai2=subgroupsTimetable(sbg,day_tch,h+dur);
@@ -7833,7 +7833,7 @@ impossiblebasictime:
 						if(okrand){
 							//From version 6.4.0: no more than 2 subactivities on the same day (real day in case of MORNINGS_AFTERNOONS mode)
 							if((gt.rules.mode!=MORNINGS_AFTERNOONS && d==d2) || (gt.rules.mode==MORNINGS_AFTERNOONS && d/2==d2/2)){
-								for(int ai3 : qAsConst(*minDaysListOfActivitiesFromTheSameConstraint[ai].at(i))){
+								for(int ai3 : std::as_const(*minDaysListOfActivitiesFromTheSameConstraint[ai].at(i))){
 									if(ai3!=ai && ai3!=ai2){
 										int ai3time=c.times[ai3];
 										if(ai3time!=UNALLOCATED_TIME){
@@ -7926,7 +7926,7 @@ impossiblemindays:
 							if(okrand){
 								//From version 6.4.0: no more than 2 subactivities on the same half day
 								if(d==d2){
-									for(int ai3 : qAsConst(*minHalfDaysListOfActivitiesFromTheSameConstraint[ai].at(i))){
+									for(int ai3 : std::as_const(*minHalfDaysListOfActivitiesFromTheSameConstraint[ai].at(i))){
 										if(ai3!=ai && ai3!=ai2){
 											int ai3time=c.times[ai3];
 											if(ai3time!=UNALLOCATED_TIME){
@@ -9157,7 +9157,7 @@ impossibletwoactivitiesorderedifsameday:
 			if(activityBeginsStudentsDayPercentages[ai]>=0){
 				bool skip=skipRandom(activityBeginsStudentsDayPercentages[ai]);
 				if(!skip){
-					for(int sb : qAsConst(act->iSubgroupsList)){
+					for(int sb : std::as_const(act->iSubgroupsList)){
 						if(subgroupsEarlyMaxBeginningsAtSecondHourMaxBeginnings[sb]==0){
 							int cnt;
 							for(cnt=0; cnt<gt.rules.nHoursPerDay; cnt++)
@@ -9204,7 +9204,7 @@ impossibletwoactivitiesorderedifsameday:
 			}
 
 			//2. Check the activities which have to be at the beginning, on the same day with the current activity
-			for(int sb : qAsConst(act->iSubgroupsList)){
+			for(int sb : std::as_const(act->iSubgroupsList)){
 				for(int hh=h+act->duration; hh<gt.rules.nHoursPerDay; hh++){
 					int ai2=subgroupsTimetable(sb,d,hh);
 					if(ai2>=0)
@@ -9247,7 +9247,7 @@ impossibleactivitybeginsstudentsday:
 			if(activityEndsStudentsDayPercentages[ai]>=0){
 				bool skip=skipRandom(activityEndsStudentsDayPercentages[ai]);
 				if(!skip){
-					for(int sb : qAsConst(act->iSubgroupsList)){
+					for(int sb : std::as_const(act->iSubgroupsList)){
 						for(int hh=h+act->duration; hh<gt.rules.nHoursPerDay; hh++){
 							int ai2=subgroupsTimetable(sb,d,hh);
 							if(ai2>=0){
@@ -9268,7 +9268,7 @@ impossibleactivitybeginsstudentsday:
 			}
 
 			//2. Check the activities which have to be at the end, on the same day with the current activity
-			for(int sb : qAsConst(act->iSubgroupsList)){
+			for(int sb : std::as_const(act->iSubgroupsList)){
 				for(int hh=h-1; hh>=0; hh--){
 					int ai2=subgroupsTimetable(sb,d,hh);
 					if(ai2>=0)
@@ -9311,7 +9311,7 @@ impossibleactivityendsstudentsday:
 			if(activityBeginsTeachersDayPercentages[ai]>=0){
 				bool skip=skipRandom(activityBeginsTeachersDayPercentages[ai]);
 				if(!skip){
-					for(int tch : qAsConst(act->iTeachersList)){
+					for(int tch : std::as_const(act->iTeachersList)){
 						for(int hh=h-1; hh>=0; hh--){
 							int ai2=teachersTimetable(tch,d,hh);
 							if(ai2>=0){
@@ -9332,7 +9332,7 @@ impossibleactivityendsstudentsday:
 			}
 
 			//2. Check the activities which have to be at the beginning, on the same day with the current activity
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				for(int hh=h+act->duration; hh<gt.rules.nHoursPerDay; hh++){
 					int ai2=teachersTimetable(tch,d,hh);
 					if(ai2>=0)
@@ -9375,7 +9375,7 @@ impossibleactivitybeginsteachersday:
 			if(activityEndsTeachersDayPercentages[ai]>=0){
 				bool skip=skipRandom(activityEndsTeachersDayPercentages[ai]);
 				if(!skip){
-					for(int tch : qAsConst(act->iTeachersList)){
+					for(int tch : std::as_const(act->iTeachersList)){
 						for(int hh=h+act->duration; hh<gt.rules.nHoursPerDay; hh++){
 							int ai2=teachersTimetable(tch,d,hh);
 							if(ai2>=0){
@@ -9396,7 +9396,7 @@ impossibleactivitybeginsteachersday:
 			}
 
 			//2. Check the activities which have to be at the end, on the same day with the current activity
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				for(int hh=h-1; hh>=0; hh--){
 					int ai2=teachersTimetable(tch,d,hh);
 					if(ai2>=0)
@@ -9450,7 +9450,7 @@ impossibleactivityendsteachersday:
 		okteachersmorningsafternoonsbehavior=true;
 		
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int tc : qAsConst(act->iTeachersList)){
+			for(int tc : std::as_const(act->iTeachersList)){
 				int morningsAfternoonsBehavior=gt.rules.internalTeachersList[tc]->morningsAfternoonsBehavior;
 
 				if(morningsAfternoonsBehavior==TEACHER_ONE_DAY_EXCEPTION)
@@ -9527,7 +9527,7 @@ impossibleactivityendsteachersday:
 							else if(d2==2)
 								tmp=afternoonOther;
 							
-							for(int ai2 : qAsConst(tmp)){
+							for(int ai2 : std::as_const(tmp)){
 								assert(ai2>=0);
 								if(ai2>=0){
 									if(!conflActivities[newtime].contains(ai2)){
@@ -9627,7 +9627,7 @@ impossibleactivityendsteachersday:
 		
 						assert(_activitiesForDay[d2].count()>0);
 		
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -9732,7 +9732,7 @@ impossibleactivityendsteachersday:
 							else if(d2==4)
 								tmp=afternoonOther2;
 							
-							for(int ai2 : qAsConst(tmp)){
+							for(int ai2 : std::as_const(tmp)){
 								assert(ai2>=0);
 								if(ai2>=0){
 									if(!conflActivities[newtime].contains(ai2)){
@@ -9832,7 +9832,7 @@ impossibleactivityendsteachersday:
 		
 						assert(_activitiesForDay[d2].count()>0);
 		
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -9959,7 +9959,7 @@ impossibleactivityendsteachersday:
 							else if(d2==6)
 								tmp=afternoonOther3;
 							
-							for(int ai2 : qAsConst(tmp)){
+							for(int ai2 : std::as_const(tmp)){
 								assert(ai2>=0);
 								if(ai2>=0){
 									if(!conflActivities[newtime].contains(ai2)){
@@ -10059,7 +10059,7 @@ impossibleactivityendsteachersday:
 		
 						assert(_activitiesForDay[d2].count()>0);
 		
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -10204,7 +10204,7 @@ impossibleactivityendsteachersday:
 							else if(d2==8)
 								tmp=afternoonOther4;
 							
-							for(int ai2 : qAsConst(tmp)){
+							for(int ai2 : std::as_const(tmp)){
 								assert(ai2>=0);
 								if(ai2>=0){
 									if(!conflActivities[newtime].contains(ai2)){
@@ -10304,7 +10304,7 @@ impossibleactivityendsteachersday:
 		
 						assert(_activitiesForDay[d2].count()>0);
 		
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -10468,7 +10468,7 @@ impossibleactivityendsteachersday:
 							else if(d2==10)
 								tmp=afternoonOther5;
 							
-							for(int ai2 : qAsConst(tmp)){
+							for(int ai2 : std::as_const(tmp)){
 								assert(ai2>=0);
 								if(ai2>=0){
 									if(!conflActivities[newtime].contains(ai2)){
@@ -10568,7 +10568,7 @@ impossibleactivityendsteachersday:
 		
 						assert(_activitiesForDay[d2].count()>0);
 		
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -10627,7 +10627,7 @@ impossibleteachersmorningsafternoonsbehavior:
 			d_after=d+2;
 
 			if((d_pre>=0 && d_after<gt.rules.nDaysPerWeek) || d_first>=0 || d_last<gt.rules.nDaysPerWeek){
-				for(int tc : qAsConst(act->iTeachersList)){
+				for(int tc : std::as_const(act->iTeachersList)){
 					if((d%2==0 && teachersMaxTwoConsecutiveMorningsPercentage[tc]>=0) || (d%2==1 && teachersMaxTwoConsecutiveAfternoonsPercentage[tc]>=0)){
 						if(d_pre>=0 && d_after<gt.rules.nDaysPerWeek){
 							//d is in the middle
@@ -10677,7 +10677,7 @@ impossibleteachersmorningsafternoonsbehavior:
 									else
 										tmp=d_after_activities_list;
 
-									for(int ai2 : qAsConst(tmp)){
+									for(int ai2 : std::as_const(tmp)){
 										assert(ai2>=0);
 										assert(!conflActivities[newtime].contains(ai2));
 
@@ -10764,7 +10764,7 @@ impossibleteachersmorningsafternoonsbehavior:
 
 								assert(_activitiesForDay[d2].count()>0);
 
-								for(int ai2 : qAsConst(_activitiesForDay[d2])){
+								for(int ai2 : std::as_const(_activitiesForDay[d2])){
 									assert(ai2!=ai);
 									assert(!swappedActivities[ai2]);
 									assert(!fixedTimeActivity[ai2]);
@@ -10836,7 +10836,7 @@ impossibleteachersmorningsafternoonsbehavior:
 									else
 										tmp=d_pre_activities_list;
 
-									for(int ai2 : qAsConst(tmp)){
+									for(int ai2 : std::as_const(tmp)){
 										assert(ai2>=0);
 										assert(!conflActivities[newtime].contains(ai2));
 
@@ -10923,7 +10923,7 @@ impossibleteachersmorningsafternoonsbehavior:
 
 								assert(_activitiesForDay[d2].count()>0);
 
-								for(int ai2 : qAsConst(_activitiesForDay[d2])){
+								for(int ai2 : std::as_const(_activitiesForDay[d2])){
 									assert(ai2!=ai);
 									assert(!swappedActivities[ai2]);
 									assert(!fixedTimeActivity[ai2]);
@@ -10986,7 +10986,7 @@ impossibleteachersmorningsafternoonsbehavior:
 									else
 										tmp=d_last_activities_list;
 
-									for(int ai2 : qAsConst(tmp)){
+									for(int ai2 : std::as_const(tmp)){
 										assert(ai2>=0);
 										assert(!conflActivities[newtime].contains(ai2));
 
@@ -11073,7 +11073,7 @@ impossibleteachersmorningsafternoonsbehavior:
 
 								assert(_activitiesForDay[d2].count()>0);
 
-								for(int ai2 : qAsConst(_activitiesForDay[d2])){
+								for(int ai2 : std::as_const(_activitiesForDay[d2])){
 									assert(ai2!=ai);
 									assert(!swappedActivities[ai2]);
 									assert(!fixedTimeActivity[ai2]);
@@ -11129,7 +11129,7 @@ impossible_max_two_consecutive_mornings_afternoons:
 		//not breaking the students max days per week constraints
 		////////////////////////////BEGIN max days per week for students
 		okstudentsmaxdaysperweek=true;
-		for(int st : qAsConst(subgroupsWithMaxDaysPerWeekForActivities[ai])){
+		for(int st : std::as_const(subgroupsWithMaxDaysPerWeekForActivities[ai])){
 			if(skipRandom(subgroupsMaxDaysPerWeekWeightPercentages[st]))
 				continue;
 
@@ -11186,7 +11186,7 @@ impossible_max_two_consecutive_mornings_afternoons:
 						//_minIndexAct[d2]=gt.rules.nInternalActivities;
 						_activitiesForDay[d2].clear();
 						
-						for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(st,d2))){
+						for(int ai2 : std::as_const(subgroupActivitiesOfTheDay(st,d2))){
 							if(ai2>=0){
 								if(!conflActivities[newtime].contains(ai2)){
 									occupiedDay[d2]=true;
@@ -11260,7 +11260,7 @@ impossible_max_two_consecutive_mornings_afternoons:
 
 						assert(_activitiesForDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -11299,7 +11299,7 @@ impossible_max_two_consecutive_mornings_afternoons:
 						_minIndexAct[d2]=gt.rules.nInternalActivities;
 						_activitiesForDay[d2].clear();
 						
-						for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(st,d2))){
+						for(int ai2 : std::as_const(subgroupActivitiesOfTheDay(st,d2))){
 							if(ai2>=0){
 								if(!conflActivities[newtime].contains(ai2)){
 									occupiedDay[d2]=true;
@@ -11385,7 +11385,7 @@ impossible_max_two_consecutive_mornings_afternoons:
 
 						assert(_activitiesForDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -11416,7 +11416,7 @@ impossiblestudentsmaxdaysperweek:
 		////////////////////////////BEGIN max three consecutive days for students
 		okstudentsmaxthreeconsecutivedays=true;
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int sbg : qAsConst(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai])){
+			for(int sbg : std::as_const(subgroupsWithMaxThreeConsecutiveDaysForActivities[ai])){
 				if(!skipRandom(subgroupsMaxThreeConsecutiveDaysPercentages[sbg])){
 					int maxDays=3;
 					bool allowExceptionAMAM=subgroupsMaxThreeConsecutiveDaysAllowAMAMException[sbg];
@@ -11461,7 +11461,7 @@ impossiblestudentsmaxdaysperweek:
 							_activitiesForDay[d2].clear();
 							
 							if(subgroupActivitiesOfTheDay(sbg,d2).count()>0){
-								for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(sbg,d2))){
+								for(int ai2 : std::as_const(subgroupActivitiesOfTheDay(sbg,d2))){
 									if(ai2>=0){
 										if(!conflActivities[newtime].contains(ai2)){
 											occupiedDay[d2]=true;
@@ -11489,7 +11489,7 @@ impossiblestudentsmaxdaysperweek:
 							_activitiesForDay[d2].clear();
 							
 							if(subgroupActivitiesOfTheDay(sbg,d2).count()>0){
-								for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(sbg,d2))){
+								for(int ai2 : std::as_const(subgroupActivitiesOfTheDay(sbg,d2))){
 									if(ai2>=0){
 										if(!conflActivities[newtime].contains(ai2)){
 											occupiedDay[d2]=true;
@@ -11580,7 +11580,7 @@ impossiblestudentsmaxdaysperweek:
 
 							assert(_activitiesForDay[d2].count()>0);
 
-							for(int ai2 : qAsConst(_activitiesForDay[d2])){
+							for(int ai2 : std::as_const(_activitiesForDay[d2])){
 								assert(ai2!=ai);
 								assert(!swappedActivities[ai2]);
 								assert(!fixedTimeActivity[ai2]);
@@ -11611,7 +11611,7 @@ impossiblestudentsmaxdaysperweek:
 							_activitiesForDay[d2].clear();
 							
 							if(subgroupActivitiesOfTheDay(sbg,d2).count()>0){
-								for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(sbg,d2))){
+								for(int ai2 : std::as_const(subgroupActivitiesOfTheDay(sbg,d2))){
 									if(ai2>=0){
 										if(!conflActivities[newtime].contains(ai2)){
 											occupiedDay[d2]=true;
@@ -11645,7 +11645,7 @@ impossiblestudentsmaxdaysperweek:
 							_activitiesForDay[d2].clear();
 							
 							if(subgroupActivitiesOfTheDay(sbg,d2).count()>0){
-								for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(sbg,d2))){
+								for(int ai2 : std::as_const(subgroupActivitiesOfTheDay(sbg,d2))){
 									if(ai2>=0){
 										if(!conflActivities[newtime].contains(ai2)){
 											occupiedDay[d2]=true;
@@ -11749,7 +11749,7 @@ impossiblestudentsmaxdaysperweek:
 
 							assert(_activitiesForDay[d2].count()>0);
 
-							for(int ai2 : qAsConst(_activitiesForDay[d2])){
+							for(int ai2 : std::as_const(_activitiesForDay[d2])){
 								assert(ai2!=ai);
 								assert(!swappedActivities[ai2]);
 								assert(!fixedTimeActivity[ai2]);
@@ -11784,11 +11784,11 @@ impossiblestudentsmaxthreeconsecutivedays:
 		////////////////////////////BEGIN max real days per week for students
 		okstudentsmaxrealdaysperweek=true;
 		//comments taken from teachers constraint:
-		//for(int tch : qAsConst(act->iTeachersList)){
+		//for(int tch : std::as_const(act->iTeachersList)){
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			//comments taken from teachers constraint:
-			//for(int tch : qAsConst(act->iTeachersList)){
-			for(int st : qAsConst(subgroupsWithMaxRealDaysPerWeekForActivities[ai])){
+			//for(int tch : std::as_const(act->iTeachersList)){
+			for(int st : std::as_const(subgroupsWithMaxRealDaysPerWeekForActivities[ai])){
 				if(skipRandom(subgroupsMaxRealDaysPerWeekWeightPercentages[st]))
 					continue;
 
@@ -11844,7 +11844,7 @@ impossiblestudentsmaxthreeconsecutivedays:
 						_minIndexAct[d2]=gt.rules.nInternalActivities;
 						_activitiesForDay[d2].clear();
 
-						for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(st,2*d2))){
+						for(int ai2 : std::as_const(subgroupActivitiesOfTheDay(st,2*d2))){
 							if(ai2>=0){
 								if(!conflActivities[newtime].contains(ai2)){
 									occupiedDay[d2]=true;
@@ -11861,7 +11861,7 @@ impossiblestudentsmaxthreeconsecutivedays:
 								}
 							}
 						}
-						for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(st,2*d2+1))){
+						for(int ai2 : std::as_const(subgroupActivitiesOfTheDay(st,2*d2+1))){
 							if(ai2>=0){
 								if(!conflActivities[newtime].contains(ai2)){
 									occupiedDay[d2]=true;
@@ -11965,7 +11965,7 @@ impossiblestudentsmaxthreeconsecutivedays:
 
 						assert(_activitiesForDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -11998,7 +11998,7 @@ impossiblestudentsmaxrealdaysperweek:
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			//for lakhdarbe - 2020-07-24
 			if(haveStudentsAfternoonsEarly){
-				for(int sbg : qAsConst(act->iSubgroupsList))
+				for(int sbg : std::as_const(act->iSubgroupsList))
 					if(!skipRandom(subgroupsAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[sbg])){
 						//preliminary check
 						int mhd=1; //min hours per day
@@ -12246,7 +12246,7 @@ impossiblestudentsafternoonsearlymaxbeginningsatsecondhour:
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			if(haveStudentsMorningsEarly){
-				for(int sbg : qAsConst(act->iSubgroupsList))
+				for(int sbg : std::as_const(act->iSubgroupsList))
 					if(!skipRandom(subgroupsMorningsEarlyMaxBeginningsAtSecondHourPercentage[sbg])){
 						//preliminary check
 						int mhd=1; //min hours per day
@@ -12494,8 +12494,8 @@ impossiblestudentsmorningsearlymaxbeginningsatsecondhour:
 		////////////////////////////BEGIN max afternoons per week for students
 		okstudentsmaxafternoonsperweek=true;
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			//for(int tch : qAsConst(act->iTeachersList)){
-			for(int sbg : qAsConst(subgroupsWithMaxAfternoonsPerWeekForActivities[ai])){
+			//for(int tch : std::as_const(act->iTeachersList)){
+			for(int sbg : std::as_const(subgroupsWithMaxAfternoonsPerWeekForActivities[ai])){
 				if(skipRandom(subgroupsMaxAfternoonsPerWeekWeightPercentages[sbg]))
 					continue;
 
@@ -12550,7 +12550,7 @@ impossiblestudentsmorningsearlymaxbeginningsatsecondhour:
 						_minIndexAct[d2]=gt.rules.nInternalActivities;
 						_activitiesForDay[d2].clear();
 
-						for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(sbg,d2))){
+						for(int ai2 : std::as_const(subgroupActivitiesOfTheDay(sbg,d2))){
 							if(ai2>=0){
 								if(!conflActivities[newtime].contains(ai2)){
 									occupiedDay[d2]=true;
@@ -12654,7 +12654,7 @@ impossiblestudentsmorningsearlymaxbeginningsatsecondhour:
 
 						assert(_activitiesForDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -12686,8 +12686,8 @@ impossiblestudentsmaxafternoonsperweek:
 		////////////////////////////BEGIN max mornings per week for students
 		okstudentsmaxmorningsperweek=true;
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			//for(int tch : qAsConst(act->iTeachersList)){
-			for(int sbg : qAsConst(subgroupsWithMaxMorningsPerWeekForActivities[ai])){
+			//for(int tch : std::as_const(act->iTeachersList)){
+			for(int sbg : std::as_const(subgroupsWithMaxMorningsPerWeekForActivities[ai])){
 				if(skipRandom(subgroupsMaxMorningsPerWeekWeightPercentages[sbg]))
 					continue;
 
@@ -12742,7 +12742,7 @@ impossiblestudentsmaxafternoonsperweek:
 						_minIndexAct[d2]=gt.rules.nInternalActivities;
 						_activitiesForDay[d2].clear();
 
-						for(int ai2 : qAsConst(subgroupActivitiesOfTheDay(sbg,d2))){
+						for(int ai2 : std::as_const(subgroupActivitiesOfTheDay(sbg,d2))){
 							if(ai2>=0){
 								if(!conflActivities[newtime].contains(ai2)){
 									occupiedDay[d2]=true;
@@ -12846,7 +12846,7 @@ impossiblestudentsmaxafternoonsperweek:
 
 						assert(_activitiesForDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -12876,7 +12876,7 @@ impossiblestudentsmaxmorningsperweek:
 
 		//BEGIN students interval max days per week
 		okstudentsintervalmaxdaysperweek=true;
-		for(int sbg : qAsConst(act->iSubgroupsList)){
+		for(int sbg : std::as_const(act->iSubgroupsList)){
 			for(int cnt=0; cnt<subgroupsIntervalMaxDaysPerWeekPercentages[sbg].count(); cnt++){
 				double perc=subgroupsIntervalMaxDaysPerWeekPercentages[sbg].at(cnt);
 				int maxDays=subgroupsIntervalMaxDaysPerWeekMaxDays[sbg].at(cnt);
@@ -13020,7 +13020,7 @@ impossiblestudentsmaxmorningsperweek:
 
 						assert(_activitiesForIntervalDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForIntervalDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForIntervalDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -13142,7 +13142,7 @@ impossiblestudentsmaxmorningsperweek:
 
 						assert(_activitiesForIntervalDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForIntervalDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForIntervalDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -13174,7 +13174,7 @@ impossiblestudentsintervalmaxdaysperweek:
 			//BEGIN students morning interval max days per week
 			if(d%2==0){ //d is a morning
 				okstudentsmorningintervalmaxdaysperweek=true;
-				for(int sbg : qAsConst(act->iSubgroupsList)){
+				for(int sbg : std::as_const(act->iSubgroupsList)){
 					for(int cnt=0; cnt<subgroupsMorningIntervalMaxDaysPerWeekPercentages[sbg].count(); cnt++){
 						double perc=subgroupsMorningIntervalMaxDaysPerWeekPercentages[sbg].at(cnt);
 						int maxDays=subgroupsMorningIntervalMaxDaysPerWeekMaxDays[sbg].at(cnt);
@@ -13246,7 +13246,7 @@ impossiblestudentsintervalmaxdaysperweek:
 
 								for(int h2=sth; h2<endh; h2++){
 									int ai2=subgroupsTimetable(sbg,d2,h2);
-								//for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+								//for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,d2))){
 									if(ai2>=0){
 										if(!conflActivities[newtime].contains(ai2)){
 											occupiedIntervalDay[d2]=true;
@@ -13350,7 +13350,7 @@ impossiblestudentsintervalmaxdaysperweek:
 
 							assert(_activitiesForIntervalDay[d2].count()>0);
 
-							for(int ai2 : qAsConst(_activitiesForIntervalDay[d2])){
+							for(int ai2 : std::as_const(_activitiesForIntervalDay[d2])){
 								assert(ai2!=ai);
 								assert(!swappedActivities[ai2]);
 								assert(!fixedTimeActivity[ai2]);
@@ -13384,7 +13384,7 @@ impossiblestudentsmorningintervalmaxdaysperweek:
 			//BEGIN students afternoon interval max days per week
 			if(d%2==1){ //d is an afternoon
 				okstudentsafternoonintervalmaxdaysperweek=true;
-				for(int sbg : qAsConst(act->iSubgroupsList)){
+				for(int sbg : std::as_const(act->iSubgroupsList)){
 					for(int cnt=0; cnt<subgroupsAfternoonIntervalMaxDaysPerWeekPercentages[sbg].count(); cnt++){
 						double perc=subgroupsAfternoonIntervalMaxDaysPerWeekPercentages[sbg].at(cnt);
 						int maxDays=subgroupsAfternoonIntervalMaxDaysPerWeekMaxDays[sbg].at(cnt);
@@ -13456,7 +13456,7 @@ impossiblestudentsmorningintervalmaxdaysperweek:
 
 								for(int h2=sth; h2<endh; h2++){
 									int ai2=subgroupsTimetable(sbg,d2,h2);
-								//for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+								//for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,d2))){
 									if(ai2>=0){
 										if(!conflActivities[newtime].contains(ai2)){
 											occupiedIntervalDay[d2]=true;
@@ -13560,7 +13560,7 @@ impossiblestudentsmorningintervalmaxdaysperweek:
 
 							assert(_activitiesForIntervalDay[d2].count()>0);
 
-							for(int ai2 : qAsConst(_activitiesForIntervalDay[d2])){
+							for(int ai2 : std::as_const(_activitiesForIntervalDay[d2])){
 								assert(ai2!=ai);
 								assert(!swappedActivities[ai2]);
 								assert(!fixedTimeActivity[ai2]);
@@ -13595,7 +13595,7 @@ impossiblestudentsafternoonintervalmaxdaysperweek:
 		//Rodolfo Ribeiro Gomes's code (https://bitbucket.org/rodolforg/fet/src/dev/) was a source of inspiration for the following constraint
 
 		okstudentsmaxspanperday=true;
-		for(int sbg : qAsConst(act->iSubgroupsList))
+		for(int sbg : std::as_const(act->iSubgroupsList))
 			if(subgroupsMaxSpanPerDayPercentages[sbg]>=0){
 				//percentage is 100%
 				int maxSpanPerDay=subgroupsMaxSpanPerDayMaxSpan[sbg];
@@ -13824,7 +13824,7 @@ impossiblestudentsmaxspanperday:
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			okstudentsmaxspanperrealday=true;
-			for(int sbg : qAsConst(act->iSubgroupsList))
+			for(int sbg : std::as_const(act->iSubgroupsList))
 				if(subgroupsMaxSpanPerRealDayPercentages[sbg]>=0){
 					//percentage is 100%
 					int maxSpanPerDay=subgroupsMaxSpanPerRealDayMaxSpan[sbg];
@@ -14254,7 +14254,7 @@ impossiblestudentsmaxspanperrealday:
 
 		okstudentsminrestinghours=true;
 
-		for(int sbg : qAsConst(act->iSubgroupsList)){
+		for(int sbg : std::as_const(act->iSubgroupsList)){
 			for(int qq=0; qq<2; qq++){
 				double percentage;
 				int minRestingHours;
@@ -14469,7 +14469,7 @@ impossiblestudentsminrestinghours:
 		okstudentsminrestinghoursbetweenmorningandafternoon=true;
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int sbg : qAsConst(act->iSubgroupsList)){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
 				double percentage=subgroupsMinRestingHoursBetweenMorningAndAfternoonPercentages[sbg];
 				int minRestingHours=subgroupsMinRestingHoursBetweenMorningAndAfternoonMinHours[sbg];
 
@@ -14673,7 +14673,7 @@ impossiblestudentsminrestinghoursbetweenmorningandafternoon:
 		//see file fet-v.v.v/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
 		okstudentsearlymaxbeginningsatsecondhour=true;
 		
-		for(int sbg : qAsConst(act->iSubgroupsList))
+		for(int sbg : std::as_const(act->iSubgroupsList))
 			if(!skipRandom(subgroupsEarlyMaxBeginningsAtSecondHourPercentage[sbg])){
 				//preliminary check
 				int _nHours=0;
@@ -14841,7 +14841,7 @@ impossiblestudentsearlymaxbeginningsatsecondhour:
 		//see file fet-v.v.v/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
 		okstudentsmaxgapsperweek=true;
 		
-		for(int sbg : qAsConst(act->iSubgroupsList))
+		for(int sbg : std::as_const(act->iSubgroupsList))
 			if(!skipRandom(subgroupsMaxGapsPerWeekPercentage[sbg])){
 				//preliminary test
 				int _nHours=0;
@@ -14940,7 +14940,7 @@ impossiblestudentsmaxgapsperweek:
 	
 	if(haveStudentsMaxGapsPerDay){
 		//okstudentsmaxgapsperday=true;
-		for(int sbg : qAsConst(act->iSubgroupsList))
+		for(int sbg : std::as_const(act->iSubgroupsList))
 			if(!skipRandom(subgroupsMaxGapsPerDayPercentage[sbg])){
 				assert(subgroupsMaxGapsPerDayPercentage[sbg]==100);
 
@@ -15127,7 +15127,7 @@ impossiblestudentsmaxgapsperday:
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			if(haveStudentsMaxGapsPerRealDay){
 				//okstudentsmaxgapsperrealday=true;
-				for(int sbg : qAsConst(act->iSubgroupsList))
+				for(int sbg : std::as_const(act->iSubgroupsList))
 					if(!skipRandom(subgroupsMaxGapsPerWeekForRealDaysPercentage[sbg])){
 						assert(subgroupsMaxGapsPerWeekForRealDaysPercentage[sbg]==100);
 
@@ -15293,7 +15293,7 @@ impossiblestudentsmaxgapsperweekforrealdays:
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			if(haveStudentsMaxGapsPerRealDay){
 				//okstudentsmaxgapsperrealday=true;
-				for(int sbg : qAsConst(act->iSubgroupsList))
+				for(int sbg : std::as_const(act->iSubgroupsList))
 					if(!skipRandom(subgroupsMaxGapsPerRealDayPercentage[sbg])){
 						assert(subgroupsMaxGapsPerRealDayPercentage[sbg]==100);
 
@@ -15470,7 +15470,7 @@ impossiblestudentsmaxgapsperrealday:
 		//see file fet-v.v.v/doc/algorithm/improve-studentsmaxgapsperday.txt for advice and (unstable) code on how to make students max gaps per day constraint perfect
 		okstudentsmaxhoursdaily=true;
 		
-		for(int sbg : qAsConst(act->iSubgroupsList)){
+		for(int sbg : std::as_const(act->iSubgroupsList)){
 			for(int count=0; count<2; count++){
 				int limitHoursDaily;
 				double percentage;
@@ -15869,7 +15869,7 @@ impossiblestudentsmaxhoursdaily:
 		okstudentsmaxhoursdailyrealdays=true;
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int sbg : qAsConst(act->iSubgroupsList)){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
 				for(int count=0; count<2; count++){
 					int limitHoursDaily;
 					double percentage;
@@ -16281,7 +16281,7 @@ impossiblestudentsmaxhoursdailyrealdays:
 		
 		okstudentsmaxhourscontinuously=true;
 		
-		for(int sbg : qAsConst(act->iSubgroupsList)){
+		for(int sbg : std::as_const(act->iSubgroupsList)){
 			for(int count=0; count<2; count++){
 				int limitHoursCont;
 				double percentage;
@@ -16468,7 +16468,7 @@ impossiblestudentsmaxhourscontinuously:
 		
 		if(haveStudentsActivityTagMaxHoursDaily){
 	
-			for(int sbg : qAsConst(act->iSubgroupsList)){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
 				for(int cnt=0; cnt<subgroupsActivityTagMaxHoursDailyMaxHours[sbg].count(); cnt++){
 					int activityTag=subgroupsActivityTagMaxHoursDailyActivityTag[sbg].at(cnt);
 				
@@ -16622,7 +16622,7 @@ impossiblestudentsactivitytagmaxhoursdaily:
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			if(haveStudentsActivityTagMaxHoursDailyRealDays){
-				for(int sbg : qAsConst(act->iSubgroupsList)){
+				for(int sbg : std::as_const(act->iSubgroupsList)){
 					for(int cnt=0; cnt<subgroupsActivityTagMaxHoursDailyRealDaysMaxHours[sbg].count(); cnt++){
 						int activityTag=subgroupsActivityTagMaxHoursDailyRealDaysActivityTag[sbg].at(cnt);
 
@@ -16794,7 +16794,7 @@ impossiblestudentsactivitytagmaxhoursdailyrealdays:
 		
 		if(haveStudentsActivityTagMaxHoursContinuously){
 	
-			for(int sbg : qAsConst(act->iSubgroupsList)){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
 				for(int cnt=0; cnt<subgroupsActivityTagMaxHoursContinuouslyMaxHours[sbg].count(); cnt++){
 					int activityTag=subgroupsActivityTagMaxHoursContinuouslyActivityTag[sbg].at(cnt);
 				
@@ -16999,7 +16999,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 		okstudentsminhoursdaily=true;
 		
 		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-			for(int sbg : qAsConst(act->iSubgroupsList)){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
 				if(subgroupsMinHoursDailyMinHours[sbg][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0){
 					assert(subgroupsMinHoursDailyPercentages[sbg][MIN_HOURS_DAILY_INDEX_IN_ARRAY]==100);
 
@@ -17254,7 +17254,7 @@ impossiblestudentsactivitytagmaxhourscontinuously:
 			}
 		}
 		else{
-			for(int sbg : qAsConst(act->iSubgroupsList)){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
 				if(subgroupsMinHoursDailyMinHours[sbg][1]>=0){
 					assert(subgroupsMinHoursDailyPercentages[sbg][1]==100);
 
@@ -17988,7 +17988,7 @@ impossiblestudentsminhoursdaily:
 		okstudentsminmorningsafternoonsperweek=true;
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int sbg : qAsConst(act->iSubgroupsList)){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
 				if(subgroupsMinMorningsPerWeekMinMornings[sbg]>=0 || subgroupsMinAfternoonsPerWeekMinAfternoons[sbg]>=0){
 					//assert(teachersMinHoursDailyPercentages[tch]==100);
 					int mhd[2];
@@ -18179,12 +18179,12 @@ impossiblestudentsminmorningsafternoonsperweek:
 		okstudentsmaxtwoactivitytagsperdayfromn1n2n3=true;
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int sbg : qAsConst(act->iSubgroupsList)){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
 				if(subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[sbg]>=0){
 					assert(subgroupsMaxTwoActivityTagsPerDayFromN1N2N3Percentages[sbg]==100);
 					int cnt[4]; //cnt[3] is for activities which have no tag from N1, N2, or N3. Crash bug fixed on 2021-07-25.
 					cnt[0]=cnt[1]=cnt[2]=cnt[3]=0;
-					for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][d]))
+					for(int ai2 : std::as_const(subgroupActivitiesOfTheDay[sbg][d]))
 						if(!conflActivities[newtime].contains(ai2)){
 							int actTag=activityTagN1N2N3[ai2];
 							cnt[actTag]++;
@@ -18216,7 +18216,7 @@ impossiblestudentsminmorningsafternoonsperweek:
 							QList<int> activitiesWithc0;
 							QList<int> activitiesWithc1;
 							
-							for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][d])){
+							for(int ai2 : std::as_const(subgroupActivitiesOfTheDay[sbg][d])){
 								if(activityTagN1N2N3[ai2]==c0 && !conflActivities[newtime].contains(ai2)){
 									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 										activitiesWithc0.append(ai2);
@@ -18228,7 +18228,7 @@ impossiblestudentsminmorningsafternoonsperweek:
 								}
 							}
 
-							for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][d])){
+							for(int ai2 : std::as_const(subgroupActivitiesOfTheDay[sbg][d])){
 								if(activityTagN1N2N3[ai2]==c1 && !conflActivities[newtime].contains(ai2)){
 									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 										activitiesWithc1.append(ai2);
@@ -18245,13 +18245,13 @@ impossiblestudentsminmorningsafternoonsperweek:
 								goto impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3;
 							}
 							else if(canEmptyc0 && !canEmptyc1){
-								for(int ai2 : qAsConst(activitiesWithc0)){
+								for(int ai2 : std::as_const(activitiesWithc0)){
 									conflActivities[newtime].append(ai2);
 									nConflActivities[newtime]++;
 								}
 							}
 							else if(!canEmptyc0 && canEmptyc1){
-								for(int ai2 : qAsConst(activitiesWithc1)){
+								for(int ai2 : std::as_const(activitiesWithc1)){
 									conflActivities[newtime].append(ai2);
 									nConflActivities[newtime]++;
 								}
@@ -18260,13 +18260,13 @@ impossiblestudentsminmorningsafternoonsperweek:
 								assert(canEmptyc0 && canEmptyc1);
 								if(level>0){
 									if(activitiesWithc0.count()<activitiesWithc1.count()){
-										for(int ai2 : qAsConst(activitiesWithc0)){
+										for(int ai2 : std::as_const(activitiesWithc0)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
 									}
 									else if(activitiesWithc0.count()>activitiesWithc1.count()){
-										for(int ai2 : qAsConst(activitiesWithc1)){
+										for(int ai2 : std::as_const(activitiesWithc1)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
@@ -18274,14 +18274,14 @@ impossiblestudentsminmorningsafternoonsperweek:
 									else{
 										int rnd=rng.intMRG32k3a(2);
 										if(rnd==0){
-											for(int ai2 : qAsConst(activitiesWithc0)){
+											for(int ai2 : std::as_const(activitiesWithc0)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
 										}
 										else{
 											assert(rnd==1);
-											for(int ai2 : qAsConst(activitiesWithc1)){
+											for(int ai2 : std::as_const(activitiesWithc1)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
@@ -18301,7 +18301,7 @@ impossiblestudentsminmorningsafternoonsperweek:
 									_nConflActivities[c0]=activitiesWithc0.count();
 									_minIndexAct[c0]=gt.rules.nInternalActivities;
 
-									for(int ai2 : qAsConst(activitiesWithc0)){
+									for(int ai2 : std::as_const(activitiesWithc0)){
 										_minWrong[c0] = min (_minWrong[c0], triedRemovals(ai2,c.times[ai2]));
 										_minIndexAct[c0]=min(_minIndexAct[c0], invPermutation[ai2]);
 										_nWrong[c0]+=triedRemovals(ai2,c.times[ai2]);
@@ -18312,7 +18312,7 @@ impossiblestudentsminmorningsafternoonsperweek:
 									_nConflActivities[c1]=activitiesWithc1.count();
 									_minIndexAct[c1]=gt.rules.nInternalActivities;
 									
-									for(int ai2 : qAsConst(activitiesWithc1)){
+									for(int ai2 : std::as_const(activitiesWithc1)){
 										_minWrong[c1] = min (_minWrong[c1], triedRemovals(ai2,c.times[ai2]));
 										_minIndexAct[c1]=min(_minIndexAct[c1], invPermutation[ai2]);
 										_nWrong[c1]+=triedRemovals(ai2,c.times[ai2]);
@@ -18321,14 +18321,14 @@ impossiblestudentsminmorningsafternoonsperweek:
 									if(_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]==_minIndexAct[c1]){
 										int rnd=rng.intMRG32k3a(2);
 										if(rnd==0){
-											for(int ai2 : qAsConst(activitiesWithc0)){
+											for(int ai2 : std::as_const(activitiesWithc0)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
 										}
 										else{
 											assert(rnd==1);
-											for(int ai2 : qAsConst(activitiesWithc1)){
+											for(int ai2 : std::as_const(activitiesWithc1)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
@@ -18339,7 +18339,7 @@ impossiblestudentsminmorningsafternoonsperweek:
 									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]>_nConflActivities[c1]) ||
 									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]>_minIndexAct[c1])){
 										//choose c1
-										for(int ai2 : qAsConst(activitiesWithc1)){
+										for(int ai2 : std::as_const(activitiesWithc1)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
@@ -18350,7 +18350,7 @@ impossiblestudentsminmorningsafternoonsperweek:
 										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]>_nConflActivities[c0]) ||
 										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]==_nConflActivities[c0] && _minIndexAct[c1]>_minIndexAct[c0]));
 										//choose c0
-										for(int ai2 : qAsConst(activitiesWithc0)){
+										for(int ai2 : std::as_const(activitiesWithc0)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
@@ -18381,17 +18381,17 @@ impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
 		okstudentsmaxtwoactivitytagsperrealdayfromn1n2n3=true;
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int sbg : qAsConst(act->iSubgroupsList)){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
 				if(subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[sbg]>=0){
 					assert(subgroupsMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[sbg]==100);
 					int cnt[4]; //cnt[3] is for activities which have no tag from N1, N2, or N3. Crash bug fixed on 2021-07-25.
 					cnt[0]=cnt[1]=cnt[2]=cnt[3]=0;
-					for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][d]))
+					for(int ai2 : std::as_const(subgroupActivitiesOfTheDay[sbg][d]))
 						if(!conflActivities[newtime].contains(ai2)){
 							int actTag=activityTagN1N2N3[ai2];
 							cnt[actTag]++;
 						}
-					for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][dpair]))
+					for(int ai2 : std::as_const(subgroupActivitiesOfTheDay[sbg][dpair]))
 						if(!conflActivities[newtime].contains(ai2)){
 							int actTag=activityTagN1N2N3[ai2];
 							cnt[actTag]++;
@@ -18423,7 +18423,7 @@ impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
 							QList<int> activitiesWithc0;
 							QList<int> activitiesWithc1;
 							
-							for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][d])){
+							for(int ai2 : std::as_const(subgroupActivitiesOfTheDay[sbg][d])){
 								if(activityTagN1N2N3[ai2]==c0 && !conflActivities[newtime].contains(ai2)){
 									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 										activitiesWithc0.append(ai2);
@@ -18435,7 +18435,7 @@ impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
 								}
 							}
 							if(canEmptyc0){
-								for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][dpair])){
+								for(int ai2 : std::as_const(subgroupActivitiesOfTheDay[sbg][dpair])){
 									if(activityTagN1N2N3[ai2]==c0 && !conflActivities[newtime].contains(ai2)){
 										if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 											activitiesWithc0.append(ai2);
@@ -18448,7 +18448,7 @@ impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
 								}
 							}
 
-							for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][d])){
+							for(int ai2 : std::as_const(subgroupActivitiesOfTheDay[sbg][d])){
 								if(activityTagN1N2N3[ai2]==c1 && !conflActivities[newtime].contains(ai2)){
 									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 										activitiesWithc1.append(ai2);
@@ -18460,7 +18460,7 @@ impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
 								}
 							}
 							if(canEmptyc1){
-								for(int ai2 : qAsConst(subgroupActivitiesOfTheDay[sbg][dpair])){
+								for(int ai2 : std::as_const(subgroupActivitiesOfTheDay[sbg][dpair])){
 									if(activityTagN1N2N3[ai2]==c1 && !conflActivities[newtime].contains(ai2)){
 										if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 											activitiesWithc1.append(ai2);
@@ -18478,13 +18478,13 @@ impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
 								goto impossiblestudentsmaxtwoactivitytagsperrealdayfromn1n2n3;
 							}
 							else if(canEmptyc0 && !canEmptyc1){
-								for(int ai2 : qAsConst(activitiesWithc0)){
+								for(int ai2 : std::as_const(activitiesWithc0)){
 									conflActivities[newtime].append(ai2);
 									nConflActivities[newtime]++;
 								}
 							}
 							else if(!canEmptyc0 && canEmptyc1){
-								for(int ai2 : qAsConst(activitiesWithc1)){
+								for(int ai2 : std::as_const(activitiesWithc1)){
 									conflActivities[newtime].append(ai2);
 									nConflActivities[newtime]++;
 								}
@@ -18493,13 +18493,13 @@ impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
 								assert(canEmptyc0 && canEmptyc1);
 								if(level>0){
 									if(activitiesWithc0.count()<activitiesWithc1.count()){
-										for(int ai2 : qAsConst(activitiesWithc0)){
+										for(int ai2 : std::as_const(activitiesWithc0)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
 									}
 									else if(activitiesWithc0.count()>activitiesWithc1.count()){
-										for(int ai2 : qAsConst(activitiesWithc1)){
+										for(int ai2 : std::as_const(activitiesWithc1)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
@@ -18507,14 +18507,14 @@ impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
 									else{
 										int rnd=rng.intMRG32k3a(2);
 										if(rnd==0){
-											for(int ai2 : qAsConst(activitiesWithc0)){
+											for(int ai2 : std::as_const(activitiesWithc0)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
 										}
 										else{
 											assert(rnd==1);
-											for(int ai2 : qAsConst(activitiesWithc1)){
+											for(int ai2 : std::as_const(activitiesWithc1)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
@@ -18534,7 +18534,7 @@ impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
 									_nConflActivities[c0]=activitiesWithc0.count();
 									_minIndexAct[c0]=gt.rules.nInternalActivities;
 
-									for(int ai2 : qAsConst(activitiesWithc0)){
+									for(int ai2 : std::as_const(activitiesWithc0)){
 										_minWrong[c0] = min (_minWrong[c0], triedRemovals(ai2,c.times[ai2]));
 										_minIndexAct[c0]=min(_minIndexAct[c0], invPermutation[ai2]);
 										_nWrong[c0]+=triedRemovals(ai2,c.times[ai2]);
@@ -18545,7 +18545,7 @@ impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
 									_nConflActivities[c1]=activitiesWithc1.count();
 									_minIndexAct[c1]=gt.rules.nInternalActivities;
 									
-									for(int ai2 : qAsConst(activitiesWithc1)){
+									for(int ai2 : std::as_const(activitiesWithc1)){
 										_minWrong[c1] = min (_minWrong[c1], triedRemovals(ai2,c.times[ai2]));
 										_minIndexAct[c1]=min(_minIndexAct[c1], invPermutation[ai2]);
 										_nWrong[c1]+=triedRemovals(ai2,c.times[ai2]);
@@ -18554,14 +18554,14 @@ impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
 									if(_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]==_minIndexAct[c1]){
 										int rnd=rng.intMRG32k3a(2);
 										if(rnd==0){
-											for(int ai2 : qAsConst(activitiesWithc0)){
+											for(int ai2 : std::as_const(activitiesWithc0)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
 										}
 										else{
 											assert(rnd==1);
-											for(int ai2 : qAsConst(activitiesWithc1)){
+											for(int ai2 : std::as_const(activitiesWithc1)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
@@ -18572,7 +18572,7 @@ impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
 									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]>_nConflActivities[c1]) ||
 									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]>_minIndexAct[c1])){
 										//choose c1
-										for(int ai2 : qAsConst(activitiesWithc1)){
+										for(int ai2 : std::as_const(activitiesWithc1)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
@@ -18583,7 +18583,7 @@ impossiblestudentsmaxtwoactivitytagsperdayfromn1n2n3:
 										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]>_nConflActivities[c0]) ||
 										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]==_nConflActivities[c0] && _minIndexAct[c1]>_minIndexAct[c0]));
 										//choose c0
-										for(int ai2 : qAsConst(activitiesWithc0)){
+										for(int ai2 : std::as_const(activitiesWithc0)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
@@ -18615,7 +18615,7 @@ impossiblestudentsmaxtwoactivitytagsperrealdayfromn1n2n3:
 		okstudentsmaxhoursperallafternoons=true;
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int sbg : qAsConst(act->iSubgroupsList)){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
 				if(subgroupsMaxHoursPerAllAfternoonsMaxHours[sbg]>=0){
 					assert(subgroupsMaxHoursPerAllAfternoonsPercentages[sbg]==100.0);
 
@@ -18687,7 +18687,7 @@ impossiblestudentsmaxtwoactivitytagsperrealdayfromn1n2n3:
 									int optMinWrong=INF;
 									QList<int> tl;
 
-									for(int t2 : qAsConst(tmpSortedList)){
+									for(int t2 : std::as_const(tmpSortedList)){
 										int ai3=slotActivity[t2];
 										if(optMinWrong>triedRemovals(ai3,c.times[ai3])){
 											optMinWrong=triedRemovals(ai3,c.times[ai3]);
@@ -18756,8 +18756,8 @@ impossiblestudentsmaxhoursperallafternoons:
 		okstudentsactivitytagminhoursdaily=true;
 		
 		if(haveStudentsActivityTagMinHoursDaily){
-			for(int sbg : qAsConst(act->iSubgroupsList)){
-				for(SubgroupActivityTagMinHoursDaily_item* item : qAsConst(satmhdListForSubgroup[sbg])){
+			for(int sbg : std::as_const(act->iSubgroupsList)){
+				for(SubgroupActivityTagMinHoursDaily_item* item : std::as_const(satmhdListForSubgroup[sbg])){
 					if(!gt.rules.internalActivitiesList[ai].iActivityTagsSet.contains(item->activityTag))
 						continue;
 					
@@ -18849,7 +18849,7 @@ impossiblestudentsmaxhoursperallafternoons:
 	
 									QList<int> tl;
 			
-									for(int ai3 : qAsConst(candidatesList)){
+									for(int ai3 : std::as_const(candidatesList)){
 										if(optMinWrong>triedRemovals(ai3,c.times[ai3])){
 										 	optMinWrong=triedRemovals(ai3,c.times[ai3]);
 										 	tl.clear();
@@ -18943,7 +18943,7 @@ impossiblestudentsactivitytagminhoursdaily:
 		
 		okstudentsmingapsbetweenorderedpairofactivitytags=true;
 		
-		for(StudentsMinGapsBetweenOrderedPairOfActivityTags_item* item : qAsConst(smgbopoatListForActivity[ai])){
+		for(StudentsMinGapsBetweenOrderedPairOfActivityTags_item* item : std::as_const(smgbopoatListForActivity[ai])){
 			bool first, second;
 			if(act->iActivityTagsSet.contains(item->firstActivityTag))
 				first=true;
@@ -18960,7 +18960,7 @@ impossiblestudentsactivitytagminhoursdaily:
 			if(first){
 				assert(!second);
 				//after the first activity tag we need to have at least minGaps until the second activity tag, on each day.
-				for(int sbg : qAsConst(act->iSubgroupsList)){
+				for(int sbg : std::as_const(act->iSubgroupsList)){
 					if(item->canonicalSetOfSubgroups.contains(sbg)){
 						for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
 							if(startSecond-h-act->duration >= item->minGaps)
@@ -18988,7 +18988,7 @@ impossiblestudentsactivitytagminhoursdaily:
 			else{
 				assert(second);
 				//before the second activity tag we need to have at least minGaps until the first activity tag, on each day.
-				for(int sbg : qAsConst(act->iSubgroupsList)){
+				for(int sbg : std::as_const(act->iSubgroupsList)){
 					if(item->canonicalSetOfSubgroups.contains(sbg)){
 						for(int endFirst=h-1; endFirst>=0; endFirst--){
 							if(h-1-endFirst >= item->minGaps)
@@ -19032,7 +19032,7 @@ impossiblestudentsmingapsbetweenorderedpairofactivitytags:
 		
 		okstudentsmingapsbetweenactivitytag=true;
 		
-		for(StudentsMinGapsBetweenActivityTag_item* item : qAsConst(smgbatListForActivity[ai])){
+		for(StudentsMinGapsBetweenActivityTag_item* item : std::as_const(smgbatListForActivity[ai])){
 			bool hasTag;
 			if(act->iActivityTagsSet.contains(item->activityTag))
 				hasTag=true;
@@ -19041,7 +19041,7 @@ impossiblestudentsmingapsbetweenorderedpairofactivitytags:
 
 			if(hasTag){
 				//before and after the activity tag we need to have at least minGaps until the same activity tag, on each day.
-				for(int sbg : qAsConst(act->iSubgroupsList)){
+				for(int sbg : std::as_const(act->iSubgroupsList)){
 					if(item->canonicalSetOfSubgroups.contains(sbg)){
 						//after the current activity
 						for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
@@ -19111,7 +19111,7 @@ impossiblestudentsmingapsbetweenactivitytag:
 		//not breaking the teachers max days per week constraints
 		////////////////////////////BEGIN max days per week for teachers
 		okteachersmaxdaysperweek=true;
-		for(int tch : qAsConst(teachersWithMaxDaysPerWeekForActivities[ai])){
+		for(int tch : std::as_const(teachersWithMaxDaysPerWeekForActivities[ai])){
 			if(skipRandom(teachersMaxDaysPerWeekWeightPercentages[tch]))
 				continue;
 
@@ -19167,7 +19167,7 @@ impossiblestudentsmingapsbetweenactivitytag:
 						//_minIndexAct[d2]=gt.rules.nInternalActivities;
 						_activitiesForDay[d2].clear();
 						
-						for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+						for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,d2))){
 							if(ai2>=0){
 								if(!conflActivities[newtime].contains(ai2)){
 									occupiedDay[d2]=true;
@@ -19241,7 +19241,7 @@ impossiblestudentsmingapsbetweenactivitytag:
 
 						assert(_activitiesForDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -19282,7 +19282,7 @@ impossiblestudentsmingapsbetweenactivitytag:
 						_minIndexAct[d2]=gt.rules.nInternalActivities;
 						_activitiesForDay[d2].clear();
 						
-						for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+						for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,d2))){
 							if(ai2>=0){
 								if(!conflActivities[newtime].contains(ai2)){
 									occupiedDay[d2]=true;
@@ -19368,7 +19368,7 @@ impossiblestudentsmingapsbetweenactivitytag:
 
 						assert(_activitiesForDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -19400,7 +19400,7 @@ impossibleteachersmaxdaysperweek:
 		////////////////////////////BEGIN max three consecutive days for teachers
 		okteachersmaxthreeconsecutivedays=true;
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(teachersWithMaxThreeConsecutiveDaysForActivities[ai])){
+			for(int tch : std::as_const(teachersWithMaxThreeConsecutiveDaysForActivities[ai])){
 				if(!skipRandom(teachersMaxThreeConsecutiveDaysPercentages[tch])){
 					int maxDays=3;
 					bool allowExceptionAMAM=teachersMaxThreeConsecutiveDaysAllowAMAMException[tch];
@@ -19445,7 +19445,7 @@ impossibleteachersmaxdaysperweek:
 							_activitiesForDay[d2].clear();
 							
 							if(teacherActivitiesOfTheDay(tch,d2).count()>0){
-								for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+								for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,d2))){
 									if(ai2>=0){
 										if(!conflActivities[newtime].contains(ai2)){
 											occupiedDay[d2]=true;
@@ -19473,7 +19473,7 @@ impossibleteachersmaxdaysperweek:
 							_activitiesForDay[d2].clear();
 							
 							if(teacherActivitiesOfTheDay(tch,d2).count()>0){
-								for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+								for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,d2))){
 									if(ai2>=0){
 										if(!conflActivities[newtime].contains(ai2)){
 											occupiedDay[d2]=true;
@@ -19564,7 +19564,7 @@ impossibleteachersmaxdaysperweek:
 
 							assert(_activitiesForDay[d2].count()>0);
 
-							for(int ai2 : qAsConst(_activitiesForDay[d2])){
+							for(int ai2 : std::as_const(_activitiesForDay[d2])){
 								assert(ai2!=ai);
 								assert(!swappedActivities[ai2]);
 								assert(!fixedTimeActivity[ai2]);
@@ -19595,7 +19595,7 @@ impossibleteachersmaxdaysperweek:
 							_activitiesForDay[d2].clear();
 							
 							if(teacherActivitiesOfTheDay(tch,d2).count()>0){
-								for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+								for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,d2))){
 									if(ai2>=0){
 										if(!conflActivities[newtime].contains(ai2)){
 											occupiedDay[d2]=true;
@@ -19629,7 +19629,7 @@ impossibleteachersmaxdaysperweek:
 							_activitiesForDay[d2].clear();
 							
 							if(teacherActivitiesOfTheDay(tch,d2).count()>0){
-								for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+								for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,d2))){
 									if(ai2>=0){
 										if(!conflActivities[newtime].contains(ai2)){
 											occupiedDay[d2]=true;
@@ -19733,7 +19733,7 @@ impossibleteachersmaxdaysperweek:
 
 							assert(_activitiesForDay[d2].count()>0);
 
-							for(int ai2 : qAsConst(_activitiesForDay[d2])){
+							for(int ai2 : std::as_const(_activitiesForDay[d2])){
 								assert(ai2!=ai);
 								assert(!swappedActivities[ai2]);
 								assert(!fixedTimeActivity[ai2]);
@@ -19768,8 +19768,8 @@ impossibleteachersmaxthreeconsecutivedays:
 		////////////////////////////BEGIN max real days per week for teachers
 		okteachersmaxrealdaysperweek=true;
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			//for(int tch : qAsConst(act->iTeachersList)){
-			for(int tch : qAsConst(teachersWithMaxRealDaysPerWeekForActivities[ai])){
+			//for(int tch : std::as_const(act->iTeachersList)){
+			for(int tch : std::as_const(teachersWithMaxRealDaysPerWeekForActivities[ai])){
 				if(skipRandom(teachersMaxRealDaysPerWeekWeightPercentages[tch]))
 					continue;
 
@@ -19824,7 +19824,7 @@ impossibleteachersmaxthreeconsecutivedays:
 						_minIndexAct[d2]=gt.rules.nInternalActivities;
 						_activitiesForDay[d2].clear();
 
-						for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,2*d2))){
+						for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,2*d2))){
 							if(ai2>=0){
 								if(!conflActivities[newtime].contains(ai2)){
 									occupiedDay[d2]=true;
@@ -19841,7 +19841,7 @@ impossibleteachersmaxthreeconsecutivedays:
 								}
 							}
 						}
-						for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,2*d2+1))){
+						for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,2*d2+1))){
 							if(ai2>=0){
 								if(!conflActivities[newtime].contains(ai2)){
 									occupiedDay[d2]=true;
@@ -19945,7 +19945,7 @@ impossibleteachersmaxthreeconsecutivedays:
 
 						assert(_activitiesForDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -19980,7 +19980,7 @@ impossibleteachersmaxrealdaysperweek:
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			//for Said213 - 2019-08-18
 			if(haveTeachersAfternoonsEarly){
-				for(int tch : qAsConst(act->iTeachersList))
+				for(int tch : std::as_const(act->iTeachersList))
 					if(!skipRandom(teachersAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[tch])){
 						//preliminary check
 						int mhd=1; //min hours per day
@@ -20230,7 +20230,7 @@ impossibleteachersafternoonsearlymaxbeginningsatsecondhour:
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			if(haveTeachersMorningsEarly){
-				for(int tch : qAsConst(act->iTeachersList))
+				for(int tch : std::as_const(act->iTeachersList))
 					if(!skipRandom(teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[tch])){
 						//preliminary check
 						int mhd=1; //min hours per day
@@ -20479,7 +20479,7 @@ impossibleteachersmorningsearlymaxbeginningsatsecondhour:
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			if(haveTeachersAfternoonsEarly && haveTeachersMorningsEarly){
-				for(int tch : qAsConst(act->iTeachersList))
+				for(int tch : std::as_const(act->iTeachersList))
 					if(!skipRandom(teachersAfternoonsEarlyMaxBeginningsAtSecondHourPercentage[tch]) && !skipRandom(teachersMorningsEarlyMaxBeginningsAtSecondHourPercentage[tch])){
 						//preliminary check
 						int mhd=1; //min hours per day
@@ -20793,8 +20793,8 @@ impossibleteachersmorningsafternoonsearlymaxbeginningsatsecondhour:
 		////////////////////////////BEGIN max afternoons per week for teachers
 		okteachermaxafternoonsperweek=true;
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			//for(int tch : qAsConst(act->iTeachersList)){
-			for(int tch : qAsConst(teachersWithMaxAfternoonsPerWeekForActivities[ai])){
+			//for(int tch : std::as_const(act->iTeachersList)){
+			for(int tch : std::as_const(teachersWithMaxAfternoonsPerWeekForActivities[ai])){
 				if(skipRandom(teachersMaxAfternoonsPerWeekWeightPercentages[tch]))
 					continue;
 
@@ -20849,7 +20849,7 @@ impossibleteachersmorningsafternoonsearlymaxbeginningsatsecondhour:
 						_minIndexAct[d2]=gt.rules.nInternalActivities;
 						_activitiesForDay[d2].clear();
 
-						for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+						for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,d2))){
 							if(ai2>=0){
 								if(!conflActivities[newtime].contains(ai2)){
 									occupiedDay[d2]=true;
@@ -20953,7 +20953,7 @@ impossibleteachersmorningsafternoonsearlymaxbeginningsatsecondhour:
 
 						assert(_activitiesForDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -20985,8 +20985,8 @@ impossibleteachermaxafternoonsperweek:
 		////////////////////////////BEGIN max mornings per week for teachers
 		okteachermaxmorningsperweek=true;
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			//for(int tch : qAsConst(act->iTeachersList)){
-			for(int tch : qAsConst(teachersWithMaxMorningsPerWeekForActivities[ai])){
+			//for(int tch : std::as_const(act->iTeachersList)){
+			for(int tch : std::as_const(teachersWithMaxMorningsPerWeekForActivities[ai])){
 				if(skipRandom(teachersMaxMorningsPerWeekWeightPercentages[tch]))
 					continue;
 
@@ -21041,7 +21041,7 @@ impossibleteachermaxafternoonsperweek:
 						_minIndexAct[d2]=gt.rules.nInternalActivities;
 						_activitiesForDay[d2].clear();
 
-						for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+						for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,d2))){
 							if(ai2>=0){
 								if(!conflActivities[newtime].contains(ai2)){
 									occupiedDay[d2]=true;
@@ -21145,7 +21145,7 @@ impossibleteachermaxafternoonsperweek:
 
 						assert(_activitiesForDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -21174,7 +21174,7 @@ impossibleteachermaxmorningsperweek:
 		//BEGIN teachers interval max days per week
 
 		okteachersintervalmaxdaysperweek=true;
-		for(int tch : qAsConst(act->iTeachersList)){
+		for(int tch : std::as_const(act->iTeachersList)){
 			for(int cnt=0; cnt<teachersIntervalMaxDaysPerWeekPercentages[tch].count(); cnt++){
 				double perc=teachersIntervalMaxDaysPerWeekPercentages[tch].at(cnt);
 				int maxDays=teachersIntervalMaxDaysPerWeekMaxDays[tch].at(cnt);
@@ -21318,7 +21318,7 @@ impossibleteachermaxmorningsperweek:
 
 						assert(_activitiesForIntervalDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForIntervalDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForIntervalDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -21441,7 +21441,7 @@ impossibleteachermaxmorningsperweek:
 
 						assert(_activitiesForIntervalDay[d2].count()>0);
 
-						for(int ai2 : qAsConst(_activitiesForIntervalDay[d2])){
+						for(int ai2 : std::as_const(_activitiesForIntervalDay[d2])){
 							assert(ai2!=ai);
 							assert(!swappedActivities[ai2]);
 							assert(!fixedTimeActivity[ai2]);
@@ -21474,7 +21474,7 @@ impossibleteachersintervalmaxdaysperweek:
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			if(d%2==0){ //d is a morning
 				okteachersmorningintervalmaxdaysperweek=true;
-				for(int tch : qAsConst(act->iTeachersList)){
+				for(int tch : std::as_const(act->iTeachersList)){
 					for(int cnt=0; cnt<teachersMorningIntervalMaxDaysPerWeekPercentages[tch].count(); cnt++){
 						double perc=teachersMorningIntervalMaxDaysPerWeekPercentages[tch].at(cnt);
 						int maxDays=teachersMorningIntervalMaxDaysPerWeekMaxDays[tch].at(cnt);
@@ -21546,7 +21546,7 @@ impossibleteachersintervalmaxdaysperweek:
 
 								for(int h2=sth; h2<endh; h2++){
 									int ai2=teachersTimetable(tch,d2,h2);
-								//for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+								//for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,d2))){
 									if(ai2>=0){
 										if(!conflActivities[newtime].contains(ai2)){
 											occupiedIntervalDay[d2]=true;
@@ -21650,7 +21650,7 @@ impossibleteachersintervalmaxdaysperweek:
 
 							assert(_activitiesForIntervalDay[d2].count()>0);
 
-							for(int ai2 : qAsConst(_activitiesForIntervalDay[d2])){
+							for(int ai2 : std::as_const(_activitiesForIntervalDay[d2])){
 								assert(ai2!=ai);
 								assert(!swappedActivities[ai2]);
 								assert(!fixedTimeActivity[ai2]);
@@ -21684,7 +21684,7 @@ impossibleteachersmorningintervalmaxdaysperweek:
 			//BEGIN teachers afternoon interval max days per week
 			if(d%2==1){ //d is an afternoon
 				okteachersafternoonintervalmaxdaysperweek=true;
-				for(int tch : qAsConst(act->iTeachersList)){
+				for(int tch : std::as_const(act->iTeachersList)){
 					for(int cnt=0; cnt<teachersAfternoonIntervalMaxDaysPerWeekPercentages[tch].count(); cnt++){
 						double perc=teachersAfternoonIntervalMaxDaysPerWeekPercentages[tch].at(cnt);
 						int maxDays=teachersAfternoonIntervalMaxDaysPerWeekMaxDays[tch].at(cnt);
@@ -21756,7 +21756,7 @@ impossibleteachersmorningintervalmaxdaysperweek:
 
 								for(int h2=sth; h2<endh; h2++){
 									int ai2=teachersTimetable(tch,d2,h2);
-								//for(int ai2 : qAsConst(teacherActivitiesOfTheDay(tch,d2))){
+								//for(int ai2 : std::as_const(teacherActivitiesOfTheDay(tch,d2))){
 									if(ai2>=0){
 										if(!conflActivities[newtime].contains(ai2)){
 											occupiedIntervalDay[d2]=true;
@@ -21860,7 +21860,7 @@ impossibleteachersmorningintervalmaxdaysperweek:
 
 							assert(_activitiesForIntervalDay[d2].count()>0);
 
-							for(int ai2 : qAsConst(_activitiesForIntervalDay[d2])){
+							for(int ai2 : std::as_const(_activitiesForIntervalDay[d2])){
 								assert(ai2!=ai);
 								assert(!swappedActivities[ai2]);
 								assert(!fixedTimeActivity[ai2]);
@@ -21895,7 +21895,7 @@ impossibleteachersafternoonintervalmaxdaysperweek:
 		//Rodolfo Ribeiro Gomes's code (https://bitbucket.org/rodolforg/fet/src/dev/) was a source of inspiration for the following constraint
 
 		okteachersmaxspanperday=true;
-		for(int tch : qAsConst(act->iTeachersList))
+		for(int tch : std::as_const(act->iTeachersList))
 			if(teachersMaxSpanPerDayPercentages[tch]>=0){
 				//percentage is 100%
 				int maxSpanPerDay=teachersMaxSpanPerDayMaxSpan[tch];
@@ -22117,7 +22117,7 @@ impossibleteachersmaxspanperday:
 
 		okteachersmaxspanperrealday=true;
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList))
+			for(int tch : std::as_const(act->iTeachersList))
 				if(teachersMaxSpanPerRealDayPercentages[tch]>=0){
 					//percentage is 100%
 					int maxSpanPerDay=teachersMaxSpanPerRealDayMaxSpan[tch];
@@ -22383,7 +22383,7 @@ impossibleteachersmaxspanperrealday:
 
 		okteachersminrestinghours=true;
 
-		for(int tch : qAsConst(act->iTeachersList)){
+		for(int tch : std::as_const(act->iTeachersList)){
 			for(int qq=0; qq<2; qq++){
 				double percentage;
 				int minRestingHours;
@@ -22598,7 +22598,7 @@ impossibleteachersminrestinghours:
 		okteachersminrestinghoursbetweenmorningandafternoon=true;
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				double percentage=teachersMinRestingHoursBetweenMorningAndAfternoonPercentages[tch];
 				int minRestingHours=teachersMinRestingHoursBetweenMorningAndAfternoonMinHours[tch];
 
@@ -22799,7 +22799,7 @@ impossibleteachersminrestinghoursbetweenmorningandafternoon:
 
 		//not causing more than teachersMaxGapsPerWeek teachers gaps
 		okteachersmaxgapsperweek=true;
-		for(int tch : qAsConst(act->iTeachersList))
+		for(int tch : std::as_const(act->iTeachersList))
 			if(!skipRandom(teachersMaxGapsPerWeekPercentage[tch])){
 				assert(teachersMaxGapsPerWeekPercentage[tch]==100);
 				
@@ -22873,7 +22873,7 @@ impossibleteachersmaxgapsperweek:
 		//not causing more than teachersMaxGapsPerDay teachers gaps
 		okteachersmaxgapsperday=true;
 		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList))
+			for(int tch : std::as_const(act->iTeachersList))
 				if(!skipRandom(teachersMaxGapsPerDayPercentage[tch])){
 					assert(teachersMaxGapsPerDayPercentage[tch]==100);
 
@@ -22930,7 +22930,7 @@ impossibleteachersmaxgapsperweek:
 				}
 		}
 		else{
-			for(int tch : qAsConst(act->iTeachersList))
+			for(int tch : std::as_const(act->iTeachersList))
 				if(!skipRandom(teachersMaxGapsPerDayPercentage[tch])){
 					assert(teachersMaxGapsPerDayPercentage[tch]==100);
 
@@ -23037,7 +23037,7 @@ impossibleteachersmaxgapsperday:
 		//not causing more than teachersMaxGapsPerMorningAndAfternoon teachers gaps
 		okteachersmaxgapspermorningandafternoon=true;
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList))
+			for(int tch : std::as_const(act->iTeachersList))
 				if(!skipRandom(teachersMaxGapsPerMorningAndAfternoonPercentage[tch])){
 					assert(teachersMaxGapsPerMorningAndAfternoonPercentage[tch]==100);
 
@@ -23138,7 +23138,7 @@ impossibleteachersmaxgapspermorningandafternoon:
 		//2019-09-13 - max 0 gaps per afternoon
 		okteachersmax0gapsperafternoon=true;
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList))
+			for(int tch : std::as_const(act->iTeachersList))
 				if(teacherNoGapsPerAfternoon(tch)){
 					//assert(teachersMaxGapsPerDayPercentage[tch]==100);
 
@@ -23240,7 +23240,7 @@ impossibleteachersmax0gapsperafternoon:
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			if(haveTeachersMaxGapsPerRealDay){
-				for(int tch : qAsConst(act->iTeachersList))
+				for(int tch : std::as_const(act->iTeachersList))
 					if(!skipRandom(teachersMaxGapsPerWeekForRealDaysPercentage[tch])){
 						assert(teachersMaxGapsPerWeekForRealDaysPercentage[tch]==100);
 
@@ -23315,7 +23315,7 @@ impossibleteachersmaxgapsperweekforrealdays:
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			if(haveTeachersMaxGapsPerRealDay){
-				for(int tch : qAsConst(act->iTeachersList))
+				for(int tch : std::as_const(act->iTeachersList))
 					if(!skipRandom(teachersMaxGapsPerRealDayPercentage[tch])){
 						assert(teachersMaxGapsPerRealDayPercentage[tch]==100);
 
@@ -23426,7 +23426,7 @@ impossibleteachersmaxgapsperrealday:
 		okteachersmaxhoursdailyrealdays=true;
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				for(int count=0; count<2; count++){
 					int limitHoursDaily;
 					double percentage;
@@ -23722,7 +23722,7 @@ impossibleteachersmaxhoursdailyrealdays:
 		okteachersmaxhoursdaily=true;
 
 		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				for(int count=0; count<2; count++){
 					int limitHoursDaily;
 					double percentage;
@@ -23942,7 +23942,7 @@ impossibleteachersmaxhoursdailyrealdays:
 			}
 		}
 		else{ //max hours daily for half-days for the mornings-afternoons version
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				for(int count=0; count<2; count++){
 					int limitHoursDaily;
 					double percentage;
@@ -24245,7 +24245,7 @@ impossibleteachersmaxhoursdaily:
 		
 		okteachersmaxhourscontinuously=true;
 		
-		for(int tch : qAsConst(act->iTeachersList)){
+		for(int tch : std::as_const(act->iTeachersList)){
 			for(int count=0; count<2; count++){
 				int limitHoursCont;
 				double percentage;
@@ -24432,7 +24432,7 @@ impossibleteachersmaxhourscontinuously:
 		
 		if(haveTeachersActivityTagMaxHoursDaily){
 	
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				for(int cnt=0; cnt<teachersActivityTagMaxHoursDailyMaxHours[tch].count(); cnt++){
 					int activityTag=teachersActivityTagMaxHoursDailyActivityTag[tch].at(cnt);
 				
@@ -24586,7 +24586,7 @@ impossibleteachersactivitytagmaxhoursdaily:
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
 			if(haveTeachersActivityTagMaxHoursDailyRealDays){
-				for(int tch : qAsConst(act->iTeachersList)){
+				for(int tch : std::as_const(act->iTeachersList)){
 					for(int cnt=0; cnt<teachersActivityTagMaxHoursDailyRealDaysMaxHours[tch].count(); cnt++){
 						int activityTag=teachersActivityTagMaxHoursDailyRealDaysActivityTag[tch].at(cnt);
 
@@ -24757,7 +24757,7 @@ impossibleteachersactivitytagmaxhoursdailyrealdays:
 		
 		if(haveTeachersActivityTagMaxHoursContinuously){
 		
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				for(int cnt=0; cnt<teachersActivityTagMaxHoursContinuouslyMaxHours[tch].count(); cnt++){
 					int activityTag=teachersActivityTagMaxHoursContinuouslyActivityTag[tch].at(cnt);
 					
@@ -24959,7 +24959,7 @@ impossibleteachersactivitytagmaxhourscontinuously:
 
 		okteachersminhoursdaily=true;
 		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				if(teachersMinHoursDailyMinHours[tch][MIN_HOURS_DAILY_INDEX_IN_ARRAY]>=0){
 					assert(teachersMinHoursDailyPercentages[tch][MIN_HOURS_DAILY_INDEX_IN_ARRAY]==100);
 
@@ -25161,7 +25161,7 @@ impossibleteachersactivitytagmaxhourscontinuously:
 			}
 		}
 		else{
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				if(teachersMinHoursDailyMinHours[tch][1]>=0){
 					assert(teachersMinHoursDailyPercentages[tch][1]==100);
 
@@ -25587,7 +25587,7 @@ impossibleteachersminhoursdaily:
 
 		okteachersminhoursdailyrealdays=true;
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				if(teachersMinHoursDailyRealDaysMinHours[tch]>=0){
 					assert(teachersMinHoursDailyRealDaysPercentages[tch]==100);
 
@@ -26144,7 +26144,7 @@ impossibleteachersminhoursdailyrealdays:
 
 		okteachersmindaysperweek=true;
 		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				if(teachersMinDaysPerWeekMinDays[tch]>=0 && teachersMinHoursDailyMinHours[tch][MIN_HOURS_DAILY_INDEX_IN_ARRAY]==-1){ //no need to recheck, if min hours daily is set, because I tested above.
 					assert(teachersMinDaysPerWeekPercentages[tch]==100);
 
@@ -26333,7 +26333,7 @@ impossibleteachersminhoursdailyrealdays:
 			}
 		}
 		else{
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				if(teachersMinDaysPerWeekMinDays[tch]>=0 && teachersMinHoursDailyMinHours[tch][1]==-1 /* && teachersMinHoursDailyRealDaysMinHours[tch]==-1 */){
 				//no need to recheck, if min hours daily (BUT NOT: for real days) is set, because I tested above.
 					assert(teachersMinDaysPerWeekPercentages[tch]==100);
@@ -26652,7 +26652,7 @@ impossibleteachersmindaysperweek:
 
 		okteachersminrealdaysperweek=true;
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				if(teachersMinRealDaysPerWeekMinDays[tch]>=0 && teachersMinHoursDailyMinHours[tch][1]==-1 && teachersMinHoursDailyRealDaysMinHours[tch]==-1){
 				//no need to recheck, if min hours daily (or for real days) is set, because I tested above.
 					assert(teachersMinRealDaysPerWeekPercentages[tch]==100);
@@ -26962,7 +26962,7 @@ impossibleteachersminrealdaysperweek:
 		okteachersminmorningsafternoonsperweek=true;
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				if(teachersMinMorningsPerWeekMinMornings[tch]>=0 || teachersMinAfternoonsPerWeekMinAfternoons[tch]>=0){
 					//assert(teachersMinHoursDailyPercentages[tch]==100);
 					int mhd[2];
@@ -27126,12 +27126,12 @@ impossibleteachersminmorningsafternoonsperweek:
 		okteachersmaxtwoactivitytagsperdayfromn1n2n3=true;
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				if(teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tch]>=0){
 					assert(teachersMaxTwoActivityTagsPerDayFromN1N2N3Percentages[tch]==100);
 					int cnt[4]; //cnt[3] is for activities which have no tag from N1, N2, or N3. Crash bug fixed on 2021-07-25.
 					cnt[0]=cnt[1]=cnt[2]=cnt[3]=0;
-					for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d]))
+					for(int ai2 : std::as_const(teacherActivitiesOfTheDay[tch][d]))
 						if(!conflActivities[newtime].contains(ai2)){
 							int actTag=activityTagN1N2N3[ai2];
 							cnt[actTag]++;
@@ -27163,7 +27163,7 @@ impossibleteachersminmorningsafternoonsperweek:
 							QList<int> activitiesWithc0;
 							QList<int> activitiesWithc1;
 							
-							for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d])){
+							for(int ai2 : std::as_const(teacherActivitiesOfTheDay[tch][d])){
 								if(activityTagN1N2N3[ai2]==c0 && !conflActivities[newtime].contains(ai2)){
 									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 										activitiesWithc0.append(ai2);
@@ -27175,7 +27175,7 @@ impossibleteachersminmorningsafternoonsperweek:
 								}
 							}
 
-							for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d])){
+							for(int ai2 : std::as_const(teacherActivitiesOfTheDay[tch][d])){
 								if(activityTagN1N2N3[ai2]==c1 && !conflActivities[newtime].contains(ai2)){
 									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 										activitiesWithc1.append(ai2);
@@ -27192,13 +27192,13 @@ impossibleteachersminmorningsafternoonsperweek:
 								goto impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3;
 							}
 							else if(canEmptyc0 && !canEmptyc1){
-								for(int ai2 : qAsConst(activitiesWithc0)){
+								for(int ai2 : std::as_const(activitiesWithc0)){
 									conflActivities[newtime].append(ai2);
 									nConflActivities[newtime]++;
 								}
 							}
 							else if(!canEmptyc0 && canEmptyc1){
-								for(int ai2 : qAsConst(activitiesWithc1)){
+								for(int ai2 : std::as_const(activitiesWithc1)){
 									conflActivities[newtime].append(ai2);
 									nConflActivities[newtime]++;
 								}
@@ -27207,13 +27207,13 @@ impossibleteachersminmorningsafternoonsperweek:
 								assert(canEmptyc0 && canEmptyc1);
 								if(level>0){
 									if(activitiesWithc0.count()<activitiesWithc1.count()){
-										for(int ai2 : qAsConst(activitiesWithc0)){
+										for(int ai2 : std::as_const(activitiesWithc0)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
 									}
 									else if(activitiesWithc0.count()>activitiesWithc1.count()){
-										for(int ai2 : qAsConst(activitiesWithc1)){
+										for(int ai2 : std::as_const(activitiesWithc1)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
@@ -27221,14 +27221,14 @@ impossibleteachersminmorningsafternoonsperweek:
 									else{
 										int rnd=rng.intMRG32k3a(2);
 										if(rnd==0){
-											for(int ai2 : qAsConst(activitiesWithc0)){
+											for(int ai2 : std::as_const(activitiesWithc0)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
 										}
 										else{
 											assert(rnd==1);
-											for(int ai2 : qAsConst(activitiesWithc1)){
+											for(int ai2 : std::as_const(activitiesWithc1)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
@@ -27248,7 +27248,7 @@ impossibleteachersminmorningsafternoonsperweek:
 									_nConflActivities[c0]=activitiesWithc0.count();
 									_minIndexAct[c0]=gt.rules.nInternalActivities;
 
-									for(int ai2 : qAsConst(activitiesWithc0)){
+									for(int ai2 : std::as_const(activitiesWithc0)){
 										_minWrong[c0] = min (_minWrong[c0], triedRemovals(ai2,c.times[ai2]));
 										_minIndexAct[c0]=min(_minIndexAct[c0], invPermutation[ai2]);
 										_nWrong[c0]+=triedRemovals(ai2,c.times[ai2]);
@@ -27259,7 +27259,7 @@ impossibleteachersminmorningsafternoonsperweek:
 									_nConflActivities[c1]=activitiesWithc1.count();
 									_minIndexAct[c1]=gt.rules.nInternalActivities;
 									
-									for(int ai2 : qAsConst(activitiesWithc1)){
+									for(int ai2 : std::as_const(activitiesWithc1)){
 										_minWrong[c1] = min (_minWrong[c1], triedRemovals(ai2,c.times[ai2]));
 										_minIndexAct[c1]=min(_minIndexAct[c1], invPermutation[ai2]);
 										_nWrong[c1]+=triedRemovals(ai2,c.times[ai2]);
@@ -27268,14 +27268,14 @@ impossibleteachersminmorningsafternoonsperweek:
 									if(_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]==_minIndexAct[c1]){
 										int rnd=rng.intMRG32k3a(2);
 										if(rnd==0){
-											for(int ai2 : qAsConst(activitiesWithc0)){
+											for(int ai2 : std::as_const(activitiesWithc0)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
 										}
 										else{
 											assert(rnd==1);
-											for(int ai2 : qAsConst(activitiesWithc1)){
+											for(int ai2 : std::as_const(activitiesWithc1)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
@@ -27286,7 +27286,7 @@ impossibleteachersminmorningsafternoonsperweek:
 									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]>_nConflActivities[c1]) ||
 									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]>_minIndexAct[c1])){
 										//choose c1
-										for(int ai2 : qAsConst(activitiesWithc1)){
+										for(int ai2 : std::as_const(activitiesWithc1)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
@@ -27297,7 +27297,7 @@ impossibleteachersminmorningsafternoonsperweek:
 										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]>_nConflActivities[c0]) ||
 										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]==_nConflActivities[c0] && _minIndexAct[c1]>_minIndexAct[c0]));
 										//choose c0
-										for(int ai2 : qAsConst(activitiesWithc0)){
+										for(int ai2 : std::as_const(activitiesWithc0)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
@@ -27328,17 +27328,17 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 		okteachersmaxtwoactivitytagsperrealdayfromn1n2n3=true;
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				if(teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[tch]>=0){
 					assert(teachersMaxTwoActivityTagsPerRealDayFromN1N2N3Percentages[tch]==100);
 					int cnt[4]; //cnt[3] is for activities which have no tag from N1, N2, or N3. Crash bug fixed on 2021-07-25.
 					cnt[0]=cnt[1]=cnt[2]=cnt[3]=0;
-					for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d]))
+					for(int ai2 : std::as_const(teacherActivitiesOfTheDay[tch][d]))
 						if(!conflActivities[newtime].contains(ai2)){
 							int actTag=activityTagN1N2N3[ai2];
 							cnt[actTag]++;
 						}
-					for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][dpair]))
+					for(int ai2 : std::as_const(teacherActivitiesOfTheDay[tch][dpair]))
 						if(!conflActivities[newtime].contains(ai2)){
 							int actTag=activityTagN1N2N3[ai2];
 							cnt[actTag]++;
@@ -27370,7 +27370,7 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 							QList<int> activitiesWithc0;
 							QList<int> activitiesWithc1;
 							
-							for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d])){
+							for(int ai2 : std::as_const(teacherActivitiesOfTheDay[tch][d])){
 								if(activityTagN1N2N3[ai2]==c0 && !conflActivities[newtime].contains(ai2)){
 									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 										activitiesWithc0.append(ai2);
@@ -27382,7 +27382,7 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 								}
 							}
 							if(canEmptyc0){
-								for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][dpair])){
+								for(int ai2 : std::as_const(teacherActivitiesOfTheDay[tch][dpair])){
 									if(activityTagN1N2N3[ai2]==c0 && !conflActivities[newtime].contains(ai2)){
 										if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 											activitiesWithc0.append(ai2);
@@ -27395,7 +27395,7 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 								}
 							}
 
-							for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][d])){
+							for(int ai2 : std::as_const(teacherActivitiesOfTheDay[tch][d])){
 								if(activityTagN1N2N3[ai2]==c1 && !conflActivities[newtime].contains(ai2)){
 									if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 										activitiesWithc1.append(ai2);
@@ -27407,7 +27407,7 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 								}
 							}
 							if(canEmptyc1){
-								for(int ai2 : qAsConst(teacherActivitiesOfTheDay[tch][dpair])){
+								for(int ai2 : std::as_const(teacherActivitiesOfTheDay[tch][dpair])){
 									if(activityTagN1N2N3[ai2]==c1 && !conflActivities[newtime].contains(ai2)){
 										if(!fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 											activitiesWithc1.append(ai2);
@@ -27425,13 +27425,13 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 								goto impossibleteachersmaxtwoactivitytagsperrealdayfromn1n2n3;
 							}
 							else if(canEmptyc0 && !canEmptyc1){
-								for(int ai2 : qAsConst(activitiesWithc0)){
+								for(int ai2 : std::as_const(activitiesWithc0)){
 									conflActivities[newtime].append(ai2);
 									nConflActivities[newtime]++;
 								}
 							}
 							else if(!canEmptyc0 && canEmptyc1){
-								for(int ai2 : qAsConst(activitiesWithc1)){
+								for(int ai2 : std::as_const(activitiesWithc1)){
 									conflActivities[newtime].append(ai2);
 									nConflActivities[newtime]++;
 								}
@@ -27440,13 +27440,13 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 								assert(canEmptyc0 && canEmptyc1);
 								if(level>0){
 									if(activitiesWithc0.count()<activitiesWithc1.count()){
-										for(int ai2 : qAsConst(activitiesWithc0)){
+										for(int ai2 : std::as_const(activitiesWithc0)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
 									}
 									else if(activitiesWithc0.count()>activitiesWithc1.count()){
-										for(int ai2 : qAsConst(activitiesWithc1)){
+										for(int ai2 : std::as_const(activitiesWithc1)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
@@ -27454,14 +27454,14 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 									else{
 										int rnd=rng.intMRG32k3a(2);
 										if(rnd==0){
-											for(int ai2 : qAsConst(activitiesWithc0)){
+											for(int ai2 : std::as_const(activitiesWithc0)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
 										}
 										else{
 											assert(rnd==1);
-											for(int ai2 : qAsConst(activitiesWithc1)){
+											for(int ai2 : std::as_const(activitiesWithc1)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
@@ -27481,7 +27481,7 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 									_nConflActivities[c0]=activitiesWithc0.count();
 									_minIndexAct[c0]=gt.rules.nInternalActivities;
 
-									for(int ai2 : qAsConst(activitiesWithc0)){
+									for(int ai2 : std::as_const(activitiesWithc0)){
 										_minWrong[c0] = min (_minWrong[c0], triedRemovals(ai2,c.times[ai2]));
 										_minIndexAct[c0]=min(_minIndexAct[c0], invPermutation[ai2]);
 										_nWrong[c0]+=triedRemovals(ai2,c.times[ai2]);
@@ -27492,7 +27492,7 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 									_nConflActivities[c1]=activitiesWithc1.count();
 									_minIndexAct[c1]=gt.rules.nInternalActivities;
 									
-									for(int ai2 : qAsConst(activitiesWithc1)){
+									for(int ai2 : std::as_const(activitiesWithc1)){
 										_minWrong[c1] = min (_minWrong[c1], triedRemovals(ai2,c.times[ai2]));
 										_minIndexAct[c1]=min(_minIndexAct[c1], invPermutation[ai2]);
 										_nWrong[c1]+=triedRemovals(ai2,c.times[ai2]);
@@ -27501,14 +27501,14 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 									if(_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]==_minIndexAct[c1]){
 										int rnd=rng.intMRG32k3a(2);
 										if(rnd==0){
-											for(int ai2 : qAsConst(activitiesWithc0)){
+											for(int ai2 : std::as_const(activitiesWithc0)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
 										}
 										else{
 											assert(rnd==1);
-											for(int ai2 : qAsConst(activitiesWithc1)){
+											for(int ai2 : std::as_const(activitiesWithc1)){
 												conflActivities[newtime].append(ai2);
 												nConflActivities[newtime]++;
 											}
@@ -27519,7 +27519,7 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]>_nConflActivities[c1]) ||
 									  (_minWrong[c0]==_minWrong[c1] && _nWrong[c0]==_nWrong[c1] && _nConflActivities[c0]==_nConflActivities[c1] && _minIndexAct[c0]>_minIndexAct[c1])){
 										//choose c1
-										for(int ai2 : qAsConst(activitiesWithc1)){
+										for(int ai2 : std::as_const(activitiesWithc1)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
@@ -27530,7 +27530,7 @@ impossibleteachersmaxtwoactivitytagsperdayfromn1n2n3:
 										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]>_nConflActivities[c0]) ||
 										  (_minWrong[c1]==_minWrong[c0] && _nWrong[c1]==_nWrong[c0] && _nConflActivities[c1]==_nConflActivities[c0] && _minIndexAct[c1]>_minIndexAct[c0]));
 										//choose c0
-										for(int ai2 : qAsConst(activitiesWithc0)){
+										for(int ai2 : std::as_const(activitiesWithc0)){
 											conflActivities[newtime].append(ai2);
 											nConflActivities[newtime]++;
 										}
@@ -27562,7 +27562,7 @@ impossibleteachersmaxtwoactivitytagsperrealdayfromn1n2n3:
 		okteachersmaxhoursperallafternoons=true;
 
 		if(gt.rules.mode==MORNINGS_AFTERNOONS){
-			for(int tch : qAsConst(act->iTeachersList)){
+			for(int tch : std::as_const(act->iTeachersList)){
 				if(teachersMaxHoursPerAllAfternoonsMaxHours[tch]>=0){
 					assert(teachersMaxHoursPerAllAfternoonsPercentages[tch]==100.0);
 
@@ -27634,7 +27634,7 @@ impossibleteachersmaxtwoactivitytagsperrealdayfromn1n2n3:
 									int optMinWrong=INF;
 									QList<int> tl;
 
-									for(int t2 : qAsConst(tmpSortedList)){
+									for(int t2 : std::as_const(tmpSortedList)){
 										int ai3=slotActivity[t2];
 										if(optMinWrong>triedRemovals(ai3,c.times[ai3])){
 											optMinWrong=triedRemovals(ai3,c.times[ai3]);
@@ -27703,8 +27703,8 @@ impossibleteachersmaxhoursperallafternoons:
 		okteachersactivitytagminhoursdaily=true;
 		
 		if(haveTeachersActivityTagMinHoursDaily){
-			for(int tch : qAsConst(act->iTeachersList)){
-				for(TeacherActivityTagMinHoursDaily_item* item : qAsConst(tatmhdListForTeacher[tch])){
+			for(int tch : std::as_const(act->iTeachersList)){
+				for(TeacherActivityTagMinHoursDaily_item* item : std::as_const(tatmhdListForTeacher[tch])){
 					if(!gt.rules.internalActivitiesList[ai].iActivityTagsSet.contains(item->activityTag))
 						continue;
 					
@@ -27796,7 +27796,7 @@ impossibleteachersmaxhoursperallafternoons:
 	
 									QList<int> tl;
 			
-									for(int ai3 : qAsConst(candidatesList)){
+									for(int ai3 : std::as_const(candidatesList)){
 										if(optMinWrong>triedRemovals(ai3,c.times[ai3])){
 										 	optMinWrong=triedRemovals(ai3,c.times[ai3]);
 										 	tl.clear();
@@ -27890,7 +27890,7 @@ impossibleteachersactivitytagminhoursdaily:
 		
 		okteachersmingapsbetweenorderedpairofactivitytags=true;
 		
-		for(TeachersMinGapsBetweenOrderedPairOfActivityTags_item* item : qAsConst(tmgbopoatListForActivity[ai])){
+		for(TeachersMinGapsBetweenOrderedPairOfActivityTags_item* item : std::as_const(tmgbopoatListForActivity[ai])){
 			bool first, second;
 			if(act->iActivityTagsSet.contains(item->firstActivityTag))
 				first=true;
@@ -27908,7 +27908,7 @@ impossibleteachersactivitytagminhoursdaily:
 				assert(!second);
 				//after the first activity tag we need to have at least minGaps until the second activity tag, on each day.
 
-				for(int tch : qAsConst(act->iTeachersList)){
+				for(int tch : std::as_const(act->iTeachersList)){
 					if(item->canonicalSetOfTeachers.contains(tch)){
 						for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
 							if(startSecond-h-act->duration >= item->minGaps)
@@ -27937,7 +27937,7 @@ impossibleteachersactivitytagminhoursdaily:
 				assert(second);
 				//before the second activity tag we need to have at least minGaps until the first activity tag, on each day.
 
-				for(int tch : qAsConst(act->iTeachersList)){
+				for(int tch : std::as_const(act->iTeachersList)){
 					if(item->canonicalSetOfTeachers.contains(tch)){
 						for(int endFirst=h-1; endFirst>=0; endFirst--){
 							if(h-1-endFirst >= item->minGaps)
@@ -27981,7 +27981,7 @@ impossibleteachersmingapsbetweenorderedpairofactivitytags:
 		
 		okteachersmingapsbetweenactivitytag=true;
 		
-		for(TeachersMinGapsBetweenActivityTag_item* item : qAsConst(tmgbatListForActivity[ai])){
+		for(TeachersMinGapsBetweenActivityTag_item* item : std::as_const(tmgbatListForActivity[ai])){
 			bool hasTag;
 			if(act->iActivityTagsSet.contains(item->activityTag))
 				hasTag=true;
@@ -27990,7 +27990,7 @@ impossibleteachersmingapsbetweenorderedpairofactivitytags:
 
 			if(hasTag){
 				//before and after the activity tag we need to have at least minGaps until the same activity tag, on each day.
-				for(int tch : qAsConst(act->iTeachersList)){
+				for(int tch : std::as_const(act->iTeachersList)){
 					if(item->canonicalSetOfTeachers.contains(tch)){
 						//after the current activity
 						for(int startSecond=h+act->duration; startSecond<gt.rules.nHoursPerDay; startSecond++){
@@ -28063,7 +28063,7 @@ impossibleteachersmingapsbetweenactivitytag:
 		if(haveActivitiesMaxSimultaneousConstraints && activityHasMaxSimultaneousConstraints[ai]){
 			okactivitiesmaxsimultaneousinselectedtimeslots=true;
 			
-			for(ActivitiesMaxSimultaneousInSelectedTimeSlots_item* item : qAsConst(amsistsListForActivity[ai])){
+			for(ActivitiesMaxSimultaneousInSelectedTimeSlots_item* item : std::as_const(amsistsListForActivity[ai])){
 				bool inSpecifiedTimeSlots=false;
 				for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek)
 					if(item->selectedTimeSlotsSet.contains(t)){
@@ -28113,7 +28113,7 @@ impossibleteachersmingapsbetweenactivitytag:
 								QSet<int> tmpSet;
 								
 								assert(slotSetOfActivities[t].count() == item->maxSimultaneous+1);
-								for(int ai2 : qAsConst(slotSetOfActivities[t]))
+								for(int ai2 : std::as_const(slotSetOfActivities[t]))
 									if(ai2!=ai && !fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 										tmpSet.insert(ai2);
 										if(!allCandidates.contains(ai2))
@@ -28125,7 +28125,7 @@ impossibleteachersmingapsbetweenactivitytag:
 						}
 					}
 					
-					for(const QSet<int>& tmpSet : qAsConst(candidates))
+					for(const QSet<int>& tmpSet : std::as_const(candidates))
 						if(tmpSet.count()==0){
 							okactivitiesmaxsimultaneousinselectedtimeslots=false;
 							goto impossibleactivitiesmaxsimultaneousinselectedtimeslots;
@@ -28158,7 +28158,7 @@ impossibleteachersmingapsbetweenactivitytag:
 							int optMinWrong=INF;
 							QList<int> tl;
 			
-							for(int ai3 : qAsConst(tmpSortedList)){
+							for(int ai3 : std::as_const(tmpSortedList)){
 								if(optMinWrong>triedRemovals(ai3,c.times[ai3])){
 								 	optMinWrong=triedRemovals(ai3,c.times[ai3]);
 								 	tl.clear();
@@ -28189,7 +28189,7 @@ impossibleteachersmingapsbetweenactivitytag:
 						QList<QSet<int>> newCandidates;
 						QSet<int> newAllCandidates;
 						
-						for(const QSet<int>& tmpSet : qAsConst(candidates))
+						for(const QSet<int>& tmpSet : std::as_const(candidates))
 							if(!tmpSet.contains(ai2)){
 								newCandidates.append(tmpSet);
 								newAllCandidates.unite(tmpSet);
@@ -28224,7 +28224,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 		if(haveActivitiesOccupyMaxConstraints && activityHasOccupyMaxConstraints[ai]){
 			okactivitiesoccupymaxtimeslotsfromselection=true;
 			
-			for(ActivitiesOccupyMaxTimeSlotsFromSelection_item* item : qAsConst(aomtsListForActivity[ai])){
+			for(ActivitiesOccupyMaxTimeSlotsFromSelection_item* item : std::as_const(aomtsListForActivity[ai])){
 				//preliminary, for speed
 				bool contained=false;
 				for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek)
@@ -28236,7 +28236,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 					continue;
 
 				int _nOcc=0;
-				for(int t : qAsConst(item->selectedTimeSlotsList))
+				for(int t : std::as_const(item->selectedTimeSlotsList))
 					if(activitiesAtTime[t].count()>0)
 						_nOcc++;
 				for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek)
@@ -28247,12 +28247,12 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 					continue;
 				///////
 			
-				for(int t : qAsConst(item->selectedTimeSlotsList)){
+				for(int t : std::as_const(item->selectedTimeSlotsList)){
 					slotSetOfActivities[t].clear();
 					slotCanEmpty[t]=true;
 				}
 				
-				for(int ai2 : qAsConst(item->activitiesList)){
+				for(int ai2 : std::as_const(item->activitiesList)){
 					if(ai2!=ai && c.times[ai2]!=UNALLOCATED_TIME && !conflActivities[newtime].contains(ai2)){
 						for(int t=c.times[ai2]; t<c.times[ai2]+gt.rules.internalActivitiesList[ai2].duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 							if(item->selectedTimeSlotsSet.contains(t)){
@@ -28275,7 +28275,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 				
 				int nOccupied=0;
 				QSet<int> candidates;
-				for(int t : qAsConst(item->selectedTimeSlotsList)){
+				for(int t : std::as_const(item->selectedTimeSlotsList)){
 					if(slotSetOfActivities[t].count()>0){
 						nOccupied++;
 						
@@ -28318,7 +28318,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 							int optNWrong=INF;
 							int optMinIndexAct=gt.rules.nInternalActivities;
 
-							for(int k : qAsConst(tmpSortedList)){
+							for(int k : std::as_const(tmpSortedList)){
 								const QSet<int>& acts=slotSetOfActivities[k];
 								assert(acts.count()>0);
 								
@@ -28327,7 +28327,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 								int tmp_nWrong=0;
 								int tmp_minIndexAct=gt.rules.nInternalActivities;
 								
-								for(int ai2 : qAsConst(acts)){
+								for(int ai2 : std::as_const(acts)){
 									tmp_minWrong=min(tmp_minWrong, triedRemovals(ai2,c.times[ai2]));
 									tmp_nWrong+=triedRemovals(ai2,c.times[ai2]);
 									tmp_minIndexAct=min(tmp_minIndexAct, invPermutation[ai2]);
@@ -28374,7 +28374,7 @@ impossibleactivitiesmaxsimultaneousinselectedtimeslots:
 							tmpListFromSet[i+r]=t;
 						}
 						
-						for(int ai2 : qAsConst(tmpListFromSet)){
+						for(int ai2 : std::as_const(tmpListFromSet)){
 							assert(ai2!=ai);
 							assert(c.times[ai2]!=UNALLOCATED_TIME);
 							assert(!fixedTimeActivity[ai2] && !swappedActivities[ai2]);
@@ -28426,7 +28426,7 @@ impossibleactivitiesoccupymaxtimeslotsfromselection:
 		okmaxtotalactivitiesfromsetinselectedtimeslots=true;
 
 		if(gt.rules.mode==BLOCK_PLANNING){
-			for(ActivitiesMaxTotalFromSetInSelectedTimeSlots_item* item : qAsConst(amtfsistsListForActivity[ai])){
+			for(ActivitiesMaxTotalFromSetInSelectedTimeSlots_item* item : std::as_const(amtfsistsListForActivity[ai])){
 				bool aiContained=false;
 				for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 					if(item->selectedTimeSlotsSet.contains(t)){
@@ -28440,7 +28440,7 @@ impossibleactivitiesoccupymaxtimeslotsfromselection:
 
 					QList<int> candidatesList;
 
-					for(int ai2 : qAsConst(item->activitiesList)){
+					for(int ai2 : std::as_const(item->activitiesList)){
 						if(ai2!=ai && c.times[ai2]!=UNALLOCATED_TIME && !conflActivities[newtime].contains(ai2)){
 							for(int t=c.times[ai2]; t<c.times[ai2]+gt.rules.internalActivitiesList[ai2].duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 								if(item->selectedTimeSlotsSet.contains(t)){
@@ -28475,7 +28475,7 @@ impossibleactivitiesoccupymaxtimeslotsfromselection:
 
 								QList<int> tl;
 
-								for(int ai3 : qAsConst(candidatesList)){
+								for(int ai3 : std::as_const(candidatesList)){
 									if(optMinWrong>triedRemovals(ai3,c.times[ai3])){
 										optMinWrong=triedRemovals(ai3,c.times[ai3]);
 										tl.clear();
@@ -28532,14 +28532,14 @@ impossiblemaxtotalactivitiesfromsetinselectedtimeslots:
 			conflActivitiesSet=conflActivities[newtime].toSet();
 #endif
 
-		for(ActivitiesOccupyMinTimeSlotsFromSelection_item* item : qAsConst(aomintsListForActivity[ai])){
+		for(ActivitiesOccupyMinTimeSlotsFromSelection_item* item : std::as_const(aomintsListForActivity[ai])){
 			int availableDuration=0;
 			int nOccupied=0;
 			//static int aminoCnt[MAX_DAYS_PER_WEEK*MAX_HOURS_PER_DAY];
 
-			for(int t : qAsConst(item->selectedTimeSlotsList))
+			for(int t : std::as_const(item->selectedTimeSlotsList))
 				aminoCnt[t]=0;
-			for(int ai2 : qAsConst(item->activitiesList)){
+			for(int ai2 : std::as_const(item->activitiesList)){
 				if(ai2==ai){
 					for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 						if(item->selectedTimeSlotsSet.contains(t)){
@@ -28576,7 +28576,7 @@ impossiblemaxtotalactivitiesfromsetinselectedtimeslots:
 				//not OK
 				for(;;){
 					QList<int> candidatesList;
-					for(int ai2 : qAsConst(item->activitiesList)){
+					for(int ai2 : std::as_const(item->activitiesList)){
 						if(ai2!=ai && c.times[ai2]!=UNALLOCATED_TIME && !conflActivitiesSet.contains(ai2) && !fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 							for(int t=c.times[ai2]; t<c.times[ai2]+gt.rules.internalActivitiesList[ai2].duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 								if(item->selectedTimeSlotsSet.contains(t)){
@@ -28611,7 +28611,7 @@ impossiblemaxtotalactivitiesfromsetinselectedtimeslots:
 
 							QList<int> tl;
 			
-							for(int ai3 : qAsConst(candidatesList)){
+							for(int ai3 : std::as_const(candidatesList)){
 								if(optMinWrong>triedRemovals(ai3,c.times[ai3])){
 									optMinWrong=triedRemovals(ai3,c.times[ai3]);
 									tl.clear();
@@ -28687,7 +28687,7 @@ impossibleactivitiesoccupymintimeslotsfromselection:
 			conflActivitiesSet=conflActivities[newtime].toSet();
 #endif
 		
-		for(ActivitiesMinSimultaneousInSelectedTimeSlots_item* item : qAsConst(aminsistsListForActivity[ai])){
+		for(ActivitiesMinSimultaneousInSelectedTimeSlots_item* item : std::as_const(aminsistsListForActivity[ai])){
 			int totalRequired;
 			if(!item->allowEmptySlots)
 				totalRequired = item->selectedTimeSlotsList.count() * item->minSimultaneous;
@@ -28701,11 +28701,11 @@ impossibleactivitiesoccupymintimeslotsfromselection:
 			
 			//static bool possibleToEmptySlot[MAX_DAYS_PER_WEEK*MAX_HOURS_PER_DAY];
 			
-			for(int t : qAsConst(item->selectedTimeSlotsList)){
+			for(int t : std::as_const(item->selectedTimeSlotsList)){
 				aminsCnt[t]=0;
 				possibleToEmptySlot[t]=true;
 			}
-			for(int ai2 : qAsConst(item->activitiesList)){
+			for(int ai2 : std::as_const(item->activitiesList)){
 				if(ai2==ai){
 					for(int t=newtime; t<newtime+act->duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 						if(item->selectedTimeSlotsSet.contains(t)){
@@ -28754,7 +28754,7 @@ impossibleactivitiesoccupymintimeslotsfromselection:
 				//not OK
 				for(;;){
 					QList<int> candidatesList;
-					for(int ai2 : qAsConst(item->activitiesList)){
+					for(int ai2 : std::as_const(item->activitiesList)){
 						if(ai2!=ai && c.times[ai2]!=UNALLOCATED_TIME && !conflActivitiesSet.contains(ai2) && !fixedTimeActivity[ai2] && !swappedActivities[ai2]){
 							for(int t=c.times[ai2]; t<c.times[ai2]+gt.rules.internalActivitiesList[ai2].duration*gt.rules.nDaysPerWeek; t+=gt.rules.nDaysPerWeek){
 								if(item->selectedTimeSlotsSet.contains(t)){
@@ -28788,7 +28788,7 @@ impossibleactivitiesoccupymintimeslotsfromselection:
 	
 							QList<int> tl;
 			
-							for(int ai3 : qAsConst(candidatesList)){
+							for(int ai3 : std::as_const(candidatesList)){
 								if(optMinWrong>triedRemovals(ai3,c.times[ai3])){
 								 	optMinWrong=triedRemovals(ai3,c.times[ai3]);
 								 	tl.clear();
@@ -28858,11 +28858,11 @@ impossibleactivitiesminsimultaneousinselectedtimeslots:
 		if(gt.rules.mode==TERMS){
 			if(amiatListForActivity[ai].count()>0){
 				int termai = (newtime%gt.rules.nDaysPerWeek)/gt.rules.nDaysPerTerm;
-				for(ActivitiesMaxInATerm_item* item : qAsConst(amiatListForActivity[ai])){
+				for(ActivitiesMaxInATerm_item* item : std::as_const(amiatListForActivity[ai])){
 					int countTerm=1; //ai
 					QList<int> candidates;
 
-					for(int ai2 : qAsConst(item->activitiesList))
+					for(int ai2 : std::as_const(item->activitiesList))
 						if(ai2!=ai && c.times[ai2]!=UNALLOCATED_TIME && !conflActivities[newtime].contains(ai2)){
 							int termai2 = (c.times[ai2]%gt.rules.nDaysPerWeek)/gt.rules.nDaysPerTerm;
 							if(termai2==termai){
@@ -28889,7 +28889,7 @@ impossibleactivitiesminsimultaneousinselectedtimeslots:
 
 							QList<int> tl;
 
-							for(int ai3 : qAsConst(candidates)){
+							for(int ai3 : std::as_const(candidates)){
 								if(optMinWrong>triedRemovals(ai3,c.times[ai3])){
 									optMinWrong=triedRemovals(ai3,c.times[ai3]);
 									tl.clear();
@@ -28940,7 +28940,7 @@ impossibleactivitiesmaxinaterm:
 				conflActivitiesSet=conflActivities[newtime].toSet();
 #endif
 				int termai = (newtime%gt.rules.nDaysPerWeek)/gt.rules.nDaysPerTerm;
-				for(ActivitiesMinInATerm_item* item : qAsConst(aminiatListForActivity[ai])){
+				for(ActivitiesMinInATerm_item* item : std::as_const(aminiatListForActivity[ai])){
 					//int nAvailableActivities=0;
 					
 					for(int t=0; t<gt.rules.nTerms; t++){
@@ -28950,7 +28950,7 @@ impossibleactivitiesmaxinaterm:
 					
 					//int nOccupiedTerms=0;
 
-					for(int ai2 : qAsConst(item->activitiesList)){
+					for(int ai2 : std::as_const(item->activitiesList)){
 						if(ai2==ai){
 							termActivities[termai].append(ai);
 							//if(termActivities[termai].count()==1)
@@ -28996,13 +28996,13 @@ impossibleactivitiesmaxinaterm:
 							if(item->allowEmptyTerms){
 								for(int t=0; t<gt.rules.nTerms; t++){
 									if(canEmptyTerm[t]){
-										for(int ai2 : qAsConst(termActivities[t])){
+										for(int ai2 : std::as_const(termActivities[t])){
 											assert(ai2!=ai && !(fixedTimeActivity[ai2] || swappedActivities[ai2]));
 											candidates.append(ai2);
 										}
 									}
 									else if(termActivities[t].count()>item->minActivitiesInATerm){
-										for(int ai2 : qAsConst(termActivities[t])){
+										for(int ai2 : std::as_const(termActivities[t])){
 											if(ai2!=ai && !(fixedTimeActivity[ai2] || swappedActivities[ai2])){
 												candidates.append(ai2);
 											}
@@ -29013,7 +29013,7 @@ impossibleactivitiesmaxinaterm:
 							else{
 								for(int t=0; t<gt.rules.nTerms; t++){
 									if(termActivities[t].count()>item->minActivitiesInATerm){
-										for(int ai2 : qAsConst(termActivities[t])){
+										for(int ai2 : std::as_const(termActivities[t])){
 											if(ai2!=ai && !(fixedTimeActivity[ai2] || swappedActivities[ai2])){
 												candidates.append(ai2);
 											}
@@ -29038,7 +29038,7 @@ impossibleactivitiesmaxinaterm:
 
 								QList<int> tl;
 
-								for(int ai3 : qAsConst(candidates)){
+								for(int ai3 : std::as_const(candidates)){
 									if(optMinWrong>triedRemovals(ai3,c.times[ai3])){
 										optMinWrong=triedRemovals(ai3,c.times[ai3]);
 										tl.clear();
@@ -29109,7 +29109,7 @@ impossibleactivitiesmininaterm:
 		if(gt.rules.mode==TERMS){
 			if(aomtListForActivity[ai].count()>0){
 				int termai = (newtime%gt.rules.nDaysPerWeek)/gt.rules.nDaysPerTerm;
-				for(ActivitiesOccupyMaxTerms_item* item : qAsConst(aomtListForActivity[ai])){
+				for(ActivitiesOccupyMaxTerms_item* item : std::as_const(aomtListForActivity[ai])){
 					//bool canEmptyTerm[5];
 					for(int i=0; i<gt.rules.nTerms; i++)
 						canEmptyTerm[i]=true;
@@ -29121,7 +29121,7 @@ impossibleactivitiesmininaterm:
 					termActivities[termai].append(ai);
 					canEmptyTerm[termai]=false;
 
-					for(int ai2 : qAsConst(item->activitiesList))
+					for(int ai2 : std::as_const(item->activitiesList))
 						if(ai2!=ai && c.times[ai2]!=UNALLOCATED_TIME && !conflActivities[newtime].contains(ai2)){
 							int termai2 = (c.times[ai2]%gt.rules.nDaysPerWeek)/gt.rules.nDaysPerTerm;
 							termActivities[termai2].append(ai2);
@@ -29161,7 +29161,7 @@ impossibleactivitiesmininaterm:
 							int optNWrong=INF;
 							int optMinIndexAct=gt.rules.nInternalActivities;
 
-							for(int k : qAsConst(candidateTerms)){
+							for(int k : std::as_const(candidateTerms)){
 								assert(canEmptyTerm[k]);
 								QList<int> acts=termActivities[k];
 								assert(acts.count()>0);
@@ -29171,7 +29171,7 @@ impossibleactivitiesmininaterm:
 								int tmp_nWrong=0;
 								int tmp_minIndexAct=gt.rules.nInternalActivities;
 
-								for(int ai2 : qAsConst(acts)){
+								for(int ai2 : std::as_const(acts)){
 									tmp_minWrong=min(tmp_minWrong, triedRemovals(ai2,c.times[ai2]));
 									tmp_nWrong+=triedRemovals(ai2,c.times[ai2]);
 									tmp_minIndexAct=min(tmp_minIndexAct, invPermutation[ai2]);
@@ -29203,7 +29203,7 @@ impossibleactivitiesmininaterm:
 						assert(canEmptyTerm[t]);
 						assert(termActivities[t].count()>0);
 
-						for(int ai2 : qAsConst(termActivities[t])){
+						for(int ai2 : std::as_const(termActivities[t])){
 							assert(ai2!=ai);
 							assert(c.times[ai2]!=UNALLOCATED_TIME);
 							assert(!fixedTimeActivity[ai2] && !swappedActivities[ai2]);
@@ -29346,10 +29346,10 @@ skip_here_if_already_allocated_in_time:
 			impossibleActivity=true;
 		}
 		if(tim.count()>0){
-			for(int i : qAsConst(tim)){
+			for(int i : std::as_const(tim)){
 				int cnt=0;
 				int m=gt.rules.nInternalActivities;
-				for(int aii : qAsConst(conflActivities[i])){
+				for(int aii : std::as_const(conflActivities[i])){
 					if(triedRemovals(aii,c.times[aii])>0)
 						cnt+=triedRemovals(aii,c.times[aii]);
 						
@@ -29370,7 +29370,7 @@ skip_here_if_already_allocated_in_time:
 			int optNConflActs=gt.rules.nInternalActivities;
 			int j=-1;
 			
-			for(int i : qAsConst(tim)){
+			for(int i : std::as_const(tim)){
 				//choose a random time out of those with the minimum number of wrongly replaced activities
 				if(optMinWrong>l0minWrong[i]
 				 || (optMinWrong==l0minWrong[i] && optNWrong>l0nWrong[i])
@@ -29386,7 +29386,7 @@ skip_here_if_already_allocated_in_time:
 			
 			assert(j>=0);
 			QList<int> tim2;
-			for(int i : qAsConst(tim))
+			for(int i : std::as_const(tim))
 				if(optNWrong==l0nWrong[i] && l0minWrong[i]==optMinWrong && optNConflActs==nConflActivities[i] && optMinIndex==l0minIndexAct[i])
 					tim2.append(i);
 			assert(tim2.count()>0);
@@ -29445,7 +29445,7 @@ skip_here_if_already_allocated_in_time:
 			}
 		
 			int ok=true;
-			for(int a : qAsConst(conflActivities[newtime])){
+			for(int a : std::as_const(conflActivities[newtime])){
 				if(swappedActivities[a]){
 					assert(0);
 					ok=false;
@@ -29466,7 +29466,7 @@ skip_here_if_already_allocated_in_time:
 			////////////////
 			assert(conflActivities[newtime].count()>0);
 			
-			for(int a : qAsConst(conflActivities[newtime])){
+			for(int a : std::as_const(conflActivities[newtime])){
 				restoreActIndex[nRestore]=a;
 				restoreTime[nRestore]=c.times[a];
 				restoreRoom[nRestore]=c.rooms[a];
@@ -29491,7 +29491,7 @@ skip_here_if_already_allocated_in_time:
 			moveActivity(ai, c.times[ai], newtime, c.rooms[ai], selectedRoom[newtime], c.realRoomsList[ai], realRoomsListLevel[newtime]);
 			//////////////////
 			
-			for(int a : qAsConst(conflActivities[newtime]))
+			for(int a : std::as_const(conflActivities[newtime]))
 				swappedActivities[a]=true;
 
 			foundGoodSwap=false;
@@ -29499,7 +29499,7 @@ skip_here_if_already_allocated_in_time:
 			assert(conflActivities[newtime].count()>0);
 			ok=true;
 			
-			for(int a : qAsConst(conflActivities[newtime])){
+			for(int a : std::as_const(conflActivities[newtime])){
 				randomSwap(a, level+1);
 				if(!foundGoodSwap){
 					ok=false;
@@ -29511,7 +29511,7 @@ skip_here_if_already_allocated_in_time:
 			}
 			
 			if(ok){
-				for(int a : qAsConst(conflActivities[newtime]))
+				for(int a : std::as_const(conflActivities[newtime]))
 					assert(c.times[a]!=UNALLOCATED_TIME);
 				assert(c.times[ai]!=UNALLOCATED_TIME);
 			
@@ -29533,7 +29533,7 @@ skip_here_if_already_allocated_in_time:
 			nRestore=oldNRestore;
 
 			//////////////////////////////
-			for(int a : qAsConst(conflActivities[newtime])){
+			for(int a : std::as_const(conflActivities[newtime])){
 				assert(c.times[a]!=UNALLOCATED_TIME);
 				assert(c.rooms[a]!=UNALLOCATED_SPACE);
 				//nothing to assert for realRoomsList

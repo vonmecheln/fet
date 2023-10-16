@@ -114,7 +114,7 @@ bool ConstraintTwoSetsOfActivitiesOrderedForm::filterOk(TimeConstraint* ctr)
 	
 	QList<int> tl=c->firstActivitiesIdsList+c->secondActivitiesIdsList;
 	
-	for(int id : qAsConst(tl)){
+	for(int id : std::as_const(tl)){
 		Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
 		
 		if(act!=nullptr){

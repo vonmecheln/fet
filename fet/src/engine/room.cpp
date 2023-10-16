@@ -70,10 +70,10 @@ void Room::computeInternalStructureRealRoomsSetsList(Rules& r)
 	assert(this->isVirtual==true);
 	
 	this->rrsl.clear();
-	for(const QStringList& setsList : qAsConst(this->realRoomsSetsList)){
+	for(const QStringList& setsList : std::as_const(this->realRoomsSetsList)){
 		QList<int> sl;
 		
-		for(const QString& realRoom : qAsConst(setsList)){
+		for(const QString& realRoom : std::as_const(setsList)){
 			int rr=r.roomsHash.value(realRoom, -1);
 			assert(rr>=0);
 			
@@ -108,7 +108,7 @@ QString Room::getDescription()
 		s+=", ";
 		s+=tr("V:%1", "The room is virtual: yes or no.").arg(yesNoTranslated(this->isVirtual));
 		int i=0;
-		for(const QStringList& sl : qAsConst(this->realRoomsSetsList)){
+		for(const QStringList& sl : std::as_const(this->realRoomsSetsList)){
 			s+=", ";
 			s+=tr("S%1(%2)", "Set %1 is composed of rooms, which form the list %2").arg(i+1).arg(sl.join(","));
 			
@@ -145,7 +145,7 @@ QString Room::getDetailedDescription()
 		s+=tr("Virtual=%1", "The room is virtual: yes or no.").arg(yesNoTranslated(this->isVirtual));
 		s+="\n";
 		int i=0;
-		for(const QStringList& sl : qAsConst(this->realRoomsSetsList)){
+		for(const QStringList& sl : std::as_const(this->realRoomsSetsList)){
 			s+=tr("Set number %1=(%2)", "Set %1 is composed of rooms, which form the list %2").arg(i+1).arg(sl.join(", "));
 			s+="\n";
 			
@@ -172,10 +172,10 @@ QString Room::getXmlDescription()
 	s+="	<Virtual>"+trueFalse(this->isVirtual)+"</Virtual>\n";
 	if(this->isVirtual){
 		s+="	<Number_of_Sets_of_Real_Rooms>"+QString::number(this->realRoomsSetsList.count())+"</Number_of_Sets_of_Real_Rooms>\n";
-		for(const QStringList& sl : qAsConst(this->realRoomsSetsList)){
+		for(const QStringList& sl : std::as_const(this->realRoomsSetsList)){
 			s+="	<Set_of_Real_Rooms>\n";
 			s+="		<Number_of_Real_Rooms>"+QString::number(sl.count())+"</Number_of_Real_Rooms>\n";
-			for(const QString& rn : qAsConst(sl))
+			for(const QString& rn : std::as_const(sl))
 				s+="		<Real_Room>"+protect(rn)+"</Real_Room>\n";
 			s+="	</Set_of_Real_Rooms>\n";
 		}

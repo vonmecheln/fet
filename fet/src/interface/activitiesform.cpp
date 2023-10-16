@@ -472,16 +472,16 @@ void ActivitiesForm::studentsFilterChanged()
 			if(studentsSet->type==STUDENTS_YEAR){
 				StudentsYear* year=(StudentsYear*)studentsSet;
 				showedStudents.insert(year->name);
-				for(StudentsGroup* group : qAsConst(year->groupsList)){
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
 					showedStudents.insert(group->name);
-					for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList))
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
 						showedStudents.insert(subgroup->name);
 				}
 			}
 			else if(studentsSet->type==STUDENTS_GROUP){
 				StudentsGroup* group=(StudentsGroup*)studentsSet;
 				showedStudents.insert(group->name);
-				for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList))
+				for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
 					showedStudents.insert(subgroup->name);
 			}
 			else if(studentsSet->type==STUDENTS_SUBGROUP){
@@ -493,12 +493,12 @@ void ActivitiesForm::studentsFilterChanged()
 				
 			//up
 			QString crt=studentsComboBox->currentText();
-			for(StudentsYear* year : qAsConst(gt.rules.yearsList)){
-				for(StudentsGroup* group : qAsConst(year->groupsList)){
+			for(StudentsYear* year : std::as_const(gt.rules.yearsList)){
+				for(StudentsGroup* group : std::as_const(year->groupsList)){
 					if(group->name==crt){
 						showedStudents.insert(year->name);
 					}
-					for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList)){
+					for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
 						if(subgroup->name==crt){
 							showedStudents.insert(year->name);
 							showedStudents.insert(group->name);
@@ -1092,7 +1092,7 @@ void ActivitiesForm::activateAllActivities()
 	}
 
 	int cnt=0;
-	for(Activity* act : qAsConst(visibleActivitiesList)){
+	for(Activity* act : std::as_const(visibleActivitiesList)){
 		if(!act->active){
 			cnt++;
 			act->active=true;
@@ -1125,7 +1125,7 @@ void ActivitiesForm::deactivateAllActivities()
 	}
 
 	int cnt=0;
-	for(Activity* act : qAsConst(visibleActivitiesList)){
+	for(Activity* act : std::as_const(visibleActivitiesList)){
 		if(act->active){
 			cnt++;
 			act->active=false;

@@ -3477,7 +3477,7 @@ bool FetMainForm::getLastConfirmation(int newMode)
 	QString removedSpaceConstraintsString;
 
 	QList<TimeConstraint*> removedTimeConstraintsList;
-	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList))
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList))
 		if((newMode==OFFICIAL && !tc->canBeUsedInOfficialMode())
 		 || (newMode==MORNINGS_AFTERNOONS && !tc->canBeUsedInMorningsAfternoonsMode())
 		 || (newMode==BLOCK_PLANNING && !tc->canBeUsedInBlockPlanningMode())
@@ -3487,7 +3487,7 @@ bool FetMainForm::getLastConfirmation(int newMode)
 		}
 
 	QList<SpaceConstraint*> removedSpaceConstraintsList;
-	for(SpaceConstraint* sc : qAsConst(gt.rules.spaceConstraintsList))
+	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList))
 		if((newMode==OFFICIAL && !sc->canBeUsedInOfficialMode())
 		 || (newMode==MORNINGS_AFTERNOONS && !sc->canBeUsedInMorningsAfternoonsMode())
 		 || (newMode==BLOCK_PLANNING && !sc->canBeUsedInBlockPlanningMode())
@@ -3738,7 +3738,7 @@ void FetMainForm::closeOtherWindows()
 {
 	QList<QWidget*> tlwl=qApp->topLevelWidgets();
 	
-	for(QWidget* wi : qAsConst(tlwl))
+	for(QWidget* wi : std::as_const(tlwl))
 		if(wi->isVisible() && wi!=this)
 			wi->close();
 }
@@ -3857,7 +3857,7 @@ void FetMainForm::setCurrentFile(const QString& fileName)
 void FetMainForm::updateRecentFileActions()
 {
 	QStringList existingNames;
-	for(const QString& tn : qAsConst(recentFiles))
+	for(const QString& tn : std::as_const(recentFiles))
 		if(QFile::exists(tn))
 			existingNames.append(tn);
 	recentFiles=existingNames;
@@ -4579,7 +4579,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 				if(gt.rules.internalRoomsList[ri]->isVirtual==false)
 					assert(tc->realRoomsList[ai].isEmpty());
 				else
-					for(int rr : qAsConst(tc->realRoomsList[ai]))
+					for(int rr : std::as_const(tc->realRoomsList[ai]))
 						tl.append(gt.rules.internalRoomsList[rr]->name);
 				
 				ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, tl, false); //false means not permanently locked
@@ -4615,10 +4615,10 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 		
 		Q_UNUSED(result);
 		
-		for(TimeConstraint* tc : qAsConst(lockTimeConstraintsList))
+		for(TimeConstraint* tc : std::as_const(lockTimeConstraintsList))
 			delete tc;
 		lockTimeConstraintsList.clear();
-		for(SpaceConstraint* sc : qAsConst(lockSpaceConstraintsList))
+		for(SpaceConstraint* sc : std::as_const(lockSpaceConstraintsList))
 			delete sc;
 		lockSpaceConstraintsList.clear();
 
@@ -4940,7 +4940,7 @@ void FetMainForm::on_dataTeachersSubjectsQualificationsStatisticsAction_triggere
 
 	QHash<QString, Teacher*> teachersHash;
 	
-	for(Teacher* tch : qAsConst(gt.rules.teachersList))
+	for(Teacher* tch : std::as_const(gt.rules.teachersList))
 		teachersHash.insert(tch->name, tch);
 		
 	bool unqualifiedExist=false;
@@ -4950,10 +4950,10 @@ void FetMainForm::on_dataTeachersSubjectsQualificationsStatisticsAction_triggere
 	
 	bool begin=true;
 
-	for(Activity* act : qAsConst(gt.rules.activitiesList)){
+	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		bool alreadyAdded=false;
 		QString subject=act->subjectName;
-		for(const QString& teacher : qAsConst(act->teachersNames)){
+		for(const QString& teacher : std::as_const(act->teachersNames)){
 			Teacher* tch=teachersHash.value(teacher, nullptr);
 			assert(tch!=nullptr);
 			if(!tch->qualifiedSubjectsHash.contains(subject)){

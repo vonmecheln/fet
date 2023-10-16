@@ -3113,7 +3113,7 @@ DEFINES += \
 	QT_NO_LINKED_LIST \
 	QT_STRICT_ITERATORS
 
-CONFIG += release warn_on c++11
+CONFIG += release warn_on c++17
 QT += network
 
 greaterThan(QT_MAJOR_VERSION, 4) {

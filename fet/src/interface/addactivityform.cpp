@@ -70,11 +70,11 @@ AddActivityForm::AddActivityForm(QWidget* parent, const QString& teacherName, co
 
 	studentsSeparatelyCheckBox->setChecked(false);
 
-	for(Teacher* tch : qAsConst(gt.rules.teachersList))
+	for(Teacher* tch : std::as_const(gt.rules.teachersList))
 		teachersNamesSet.insert(tch->name);
-	for(Subject* sbj : qAsConst(gt.rules.subjectsList))
+	for(Subject* sbj : std::as_const(gt.rules.subjectsList))
 		subjectsNamesSet.insert(sbj->name);
-	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
 		activityTagsNamesSet.insert(at->name);
 	
 	allTeachersListWidget->setSelectionMode(QAbstractItemView::SingleSelection);

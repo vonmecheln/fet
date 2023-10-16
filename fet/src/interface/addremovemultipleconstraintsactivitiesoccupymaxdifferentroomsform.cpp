@@ -66,7 +66,7 @@ void AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::addAllCo
 	int cnt=0;
 	QMap<std::tuple<QString, QStringList, QStringList, QStringList>, QList<int>> mp;
 	
-	for(Activity* act : qAsConst(gt.rules.activitiesList)){
+	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		QString sbj=QString();
 		if(sameSubjectCheckBox->isChecked())
 			sbj=act->subjectName;
@@ -111,7 +111,7 @@ void AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::removeAl
 		return;
 	
 	QList<SpaceConstraint*> scl;
-	for(SpaceConstraint* sc : qAsConst(gt.rules.spaceConstraintsList))
+	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList))
 		if(sc->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS)
 			scl.append(sc);
 	int t=scl.count();

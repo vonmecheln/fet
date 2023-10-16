@@ -111,7 +111,7 @@ bool ConstraintActivityPreferredTimeSlotsForm::filterOk(TimeConstraint* ctr)
 	
 	int id=c->p_activityId;
 	/*Activity* act=nullptr;
-	for(Activity* a : qAsConst(gt.rules.activitiesList))
+	for(Activity* a : std::as_const(gt.rules.activitiesList))
 		if(a->id==id)
 			act=a;*/
 	Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);

@@ -187,7 +187,7 @@
      <item>
       <widget class="QPushButton" name="addConstraintPushButton">
        <property name="text">
-        <string>Add constraint</string>
+        <string>Add constraint(s)</string>
        </property>
       </widget>
      </item>

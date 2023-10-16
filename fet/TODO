@@ -8869,3 +8869,35 @@ As I stated, the last request isn't a big deal for me - I circumvent the lack of
 allowing only the first or last slots of the day. We don't use this feature all that much, so isn't a big deal (only when a teacher is going to be
 substituted by another colleague for a short time - few weeks, one month -, to assure that this activity doesn't act as a gap to the teacher that usually
 doesn't have that set of students.
+
+517---------------------------------------------------------
+From Crizalid, Volker Dirr, and Liviu Lalescu (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5721.0
+
+The idea would be that fet-cl (FET used from the command-line) could have a parameter maybe like that of the GNU/Linux make command, -j n_processes,
+so that it will generate multiple timetables in parallel on n_processes threads, like in the FET GUI generate multiple option.
+
+518---------------------------------------------------------
+From Vangelis Karafillidis:
+
+About import/export from/to CSV:
+
+1) Add a corresponding buttons also in the dialogs (of students, teachers, subjects, activity tags, activities), because having it only in the File menu
+might not be noticeable by the user.
+
+2) Implement import/export of not available constraints from a text matrix (maybe with x and o for not available or available).
+
+519---------------------------------------------------------
+From Vangelis Karafillidis:
+
+Improve the name of the constraint teachers/students work in an
+hourly interval max days per week to teachers/students DO NOT work
+in an hourly interval MIN days per week.
+
+Liviu Lalescu: Sorry, but for now I prefer the current approach.
+
+520---------------------------------------------------------
+From Vangelis Karafillidis:
+
+In the activities list, add the possibility to select multiple activities and activate/deactivate them with a single click.

@@ -71,7 +71,7 @@ RoomMakeEditVirtualForm::RoomMakeEditVirtualForm(QWidget* parent, Room* _editedR
 	setsListWidget->setCurrentRow(0);
 	
 	allRealRoomsListWidget->clear();
-	for(Room* rm : qAsConst(gt.rules.roomsList))
+	for(Room* rm : std::as_const(gt.rules.roomsList))
 		if(rm!=editedRoom)
 			if(rm->isVirtual==false)
 				allRealRoomsListWidget->addItem(rm->name);
@@ -98,7 +98,7 @@ void RoomMakeEditVirtualForm::setChanged()
 		assert(si<sets.count());
 		
 		selectedRealRoomsListWidget->clear();
-		for(const QString& tr : qAsConst(sets[si]))
+		for(const QString& tr : std::as_const(sets[si]))
 			selectedRealRoomsListWidget->addItem(tr);
 		
 		selectedRealRoomsListWidget->setCurrentRow(0);
@@ -248,7 +248,7 @@ void RoomMakeEditVirtualForm::ok()
 		return;
 	}
 	int i=0;
-	for(const QStringList& tl : qAsConst(sets)){
+	for(const QStringList& tl : std::as_const(sets)){
 		if(tl.count()==0){
 			QMessageBox::information(this, tr("FET information"), tr("The set of real rooms number %1 has no real rooms - incorrect,"
 			 " because each set must be nonvoid.").arg(i+1));

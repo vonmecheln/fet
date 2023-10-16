@@ -54,11 +54,11 @@ ConstraintTeacherHomeRoomForm::ConstraintTeacherHomeRoomForm(QWidget* parent): Q
 	Q_UNUSED(tmp5);
 	
 	teachersComboBox->addItem("");
-	for(Teacher* tch : qAsConst(gt.rules.teachersList))
+	for(Teacher* tch : std::as_const(gt.rules.teachersList))
 		teachersComboBox->addItem(tch->name);
 	
 	roomsComboBox->addItem("");
-	for(Room* rm : qAsConst(gt.rules.roomsList))
+	for(Room* rm : std::as_const(gt.rules.roomsList))
 		roomsComboBox->addItem(rm->name);
 
 	this->filterChanged();

@@ -117,7 +117,7 @@ bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlotsForm::filterOk(TimeCo
 	for(int i=0; i<c->activitiesIds.count(); i++){
 		int id=c->activitiesIds.at(i);
 		/*Activity* act=nullptr;
-		for(Activity* a : qAsConst(gt.rules.activitiesList))
+		for(Activity* a : std::as_const(gt.rules.activitiesList))
 			if(a->id==id)
 				act=a;*/
 		Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);

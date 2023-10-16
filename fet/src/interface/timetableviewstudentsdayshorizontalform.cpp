@@ -205,13 +205,13 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 		yearsListWidget->setCurrentRow(0);
 		
 		groupsListWidget->clear();
-		for(StudentsGroup* stg : qAsConst(gt.rules.augmentedYearsList[0]->groupsList))
+		for(StudentsGroup* stg : std::as_const(gt.rules.augmentedYearsList[0]->groupsList))
 			groupsListWidget->addItem(stg->name);
 		if(groupsListWidget->count()>0){
 			groupsListWidget->setCurrentRow(0);
 			
 			subgroupsListWidget->clear();
-			for(StudentsSubgroup* sts : qAsConst(gt.rules.augmentedYearsList[0]->groupsList.at(0)->subgroupsList))
+			for(StudentsSubgroup* sts : std::as_const(gt.rules.augmentedYearsList[0]->groupsList.at(0)->subgroupsList))
 				subgroupsListWidget->addItem(sts->name);
 			if(subgroupsListWidget->count()>0)
 				subgroupsListWidget->setCurrentRow(0);
@@ -444,7 +444,7 @@ void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 		QSet<QString> groupsSet;
 		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
 			StudentsYear* sty=gt.rules.augmentedYearsList[i];
-			for(StudentsGroup* stg : qAsConst(sty->groupsList))
+			for(StudentsGroup* stg : std::as_const(sty->groupsList))
 				if(!groupsSet.contains(stg->name)){
 					groupsListWidget->addItem(stg->name);
 					groupsSet.insert(stg->name);
@@ -467,8 +467,8 @@ void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 		QSet<QString> subgroupsSet;
 		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
 			StudentsYear* sty=gt.rules.augmentedYearsList[i];
-			for(StudentsGroup* stg : qAsConst(sty->groupsList))
-				for(StudentsSubgroup* sts : qAsConst(stg->subgroupsList))
+			for(StudentsGroup* stg : std::as_const(sty->groupsList))
+				for(StudentsSubgroup* sts : std::as_const(stg->subgroupsList))
 					if(!subgroupsSet.contains(sts->name)){
 						subgroupsListWidget->addItem(sts->name);
 						subgroupsSet.insert(sts->name);
@@ -493,15 +493,15 @@ void TimetableViewStudentsDaysHorizontalForm::shownComboBoxChanged()
 		QList<StudentsSubgroup*> lst;
 		for(int i=0; i<gt.rules.augmentedYearsList.size(); i++){
 			StudentsYear* sty=gt.rules.augmentedYearsList[i];
-			for(StudentsGroup* stg : qAsConst(sty->groupsList))
-				for(StudentsSubgroup* sts : qAsConst(stg->subgroupsList))
+			for(StudentsGroup* stg : std::as_const(sty->groupsList))
+				for(StudentsSubgroup* sts : std::as_const(stg->subgroupsList))
 					if(!subgroupsSet.contains(sts->name)){
 						lst.append(sts);
 						subgroupsSet.insert(sts->name);
 					}
 		}
 		std::stable_sort(lst.begin(), lst.end(), subgroupsAscending);
-		for(StudentsSubgroup* s : qAsConst(lst))
+		for(StudentsSubgroup* s : std::as_const(lst))
 			subgroupsListWidget->addItem(s->name);
 		
 		if(subgroupsListWidget->count()>0)
@@ -718,7 +718,7 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 
 					if(gt.rules.internalRoomsList[r]->isVirtual==true){
 						QStringList tsl;
-						for(int i : qAsConst(best_solution.realRoomsList[ai]))
+						for(int i : std::as_const(best_solution.realRoomsList[ai]))
 							tsl.append(gt.rules.internalRoomsList[i]->name);
 						s+=QString(" (")+tsl.join(", ")+QString(")");
 					}
@@ -825,7 +825,7 @@ QColor TimetableViewStudentsDaysHorizontalForm::stringToColor(const QString& s)
 	// CRC-24 based on RFC 2440 Section 6.1
 	unsigned long int crc = 0xB704CEUL;
 	QByteArray ba=s.toUtf8();
-	for(char c : qAsConst(ba)){
+	for(char c : std::as_const(ba)){
 		unsigned char uc=(unsigned char)(c);
 		crc ^= (uc & 0xFF) << 16;
 		for (int i = 0; i < 8; i++) {
@@ -946,7 +946,7 @@ void TimetableViewStudentsDaysHorizontalForm::detailActivity(QTableWidgetItem* i
 
 				if(gt.rules.internalRoomsList[r]->isVirtual==true){
 					QStringList tsl;
-					for(int i : qAsConst(best_solution.realRoomsList[ai]))
+					for(int i : std::as_const(best_solution.realRoomsList[ai]))
 						tsl.append(gt.rules.internalRoomsList[i]->name);
 					s+=QString(" (")+tsl.join(", ")+QString(")");
 				}
@@ -1160,7 +1160,7 @@ void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 							if(count!=1)
 								QMessageBox::warning(this, tr("FET warning"), tr("You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints").arg(tmptc.size()));
 
-							for(TimeConstraint* deltc : qAsConst(tmptc)){
+							for(TimeConstraint* deltc : std::as_const(tmptc)){
 								s+=tr("The following constraint will be deleted:")+"\n"+deltc->getDetailedDescription(gt.rules)+"\n";
 								gt.rules.removeTimeConstraint(deltc);
 								//delete deltc; - this is done by rules.removeTimeConstraint(...)
@@ -1191,7 +1191,7 @@ void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 						if(gt.rules.internalRoomsList[ri]->isVirtual==false)
 							assert(tc->realRoomsList[ai].isEmpty());
 						else
-							for(int rr : qAsConst(tc->realRoomsList[ai]))
+							for(int rr : std::as_const(tc->realRoomsList[ai]))
 								tl.append(gt.rules.internalRoomsList[rr]->name);
 						
 						ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, tl, false);
@@ -1246,7 +1246,7 @@ void TimetableViewStudentsDaysHorizontalForm::lock(bool lockTime, bool lockSpace
 							if(count!=1)
 								QMessageBox::warning(this, tr("FET warning"), tr("You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints").arg(tmpsc.size()));
 
-							for(SpaceConstraint* delsc : qAsConst(tmpsc)){
+							for(SpaceConstraint* delsc : std::as_const(tmpsc)){
 								s+=tr("The following constraint will be deleted:")+"\n"+delsc->getDetailedDescription(gt.rules)+"\n";
 								gt.rules.removeSpaceConstraint(delsc);
 								idsOfLockedSpace.remove(act->id);

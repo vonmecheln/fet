@@ -57,13 +57,13 @@ ModifyConstraintActivityPreferredRoomForm::ModifyConstraintActivityPreferredRoom
 	updateRoomsComboBox();
 
 	allRealRoomsListWidget->clear();
-	for(Room* rm : qAsConst(gt.rules.roomsList))
+	for(Room* rm : std::as_const(gt.rules.roomsList))
 		if(rm->isVirtual==false)
 			allRealRoomsListWidget->addItem(rm->name);
 	allRealRoomsListWidget->setCurrentRow(0);
 
 	selectedRealRoomsListWidget->clear();
-	for(const QString& rrn : qAsConst(_ctr->preferredRealRoomsNames))
+	for(const QString& rrn : std::as_const(_ctr->preferredRealRoomsNames))
 		selectedRealRoomsListWidget->addItem(rrn);
 	selectedRealRoomsListWidget->setCurrentRow(0);
 }
@@ -203,8 +203,8 @@ void ModifyConstraintActivityPreferredRoomForm::ok()
 		}
 		
 		QSet<QString> rrs;
-		for(const QStringList& tl : qAsConst(rm->realRoomsSetsList))
-			for(const QString& s : qAsConst(tl))
+		for(const QStringList& tl : std::as_const(rm->realRoomsSetsList))
+			for(const QString& s : std::as_const(tl))
 				if(!rrs.contains(s))
 					rrs.insert(s);
 		

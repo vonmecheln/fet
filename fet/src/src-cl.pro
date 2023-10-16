@@ -59,7 +59,7 @@ DEFINES += \
 	QT_NO_LINKED_LIST \
 	QT_STRICT_ITERATORS
 
-CONFIG += release warn_on c++11
+CONFIG += release warn_on c++17
 
 # The "cmdline" value was introduced in Qt 5.12.2.
 greaterThan(QT_MAJOR_VERSION, 5) {

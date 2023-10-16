@@ -86,13 +86,13 @@ AddExistingStudentsSubgroupsForm::~AddExistingStudentsSubgroupsForm()
 void AddExistingStudentsSubgroupsForm::sortedToggled()
 {
 	QSet<StudentsSubgroup*> ts;
-	for(StudentsSubgroup* sts : qAsConst(group->subgroupsList))
+	for(StudentsSubgroup* sts : std::as_const(group->subgroupsList))
 		ts.insert(sts);
 	
 	allSubgroupsList.clear();
 	QSet<StudentsSubgroup*> allSubgroupsSet;
-	for(StudentsGroup* stg : qAsConst(this->year->groupsList))
-		for(StudentsSubgroup* sts : qAsConst(stg->subgroupsList))
+	for(StudentsGroup* stg : std::as_const(this->year->groupsList))
+		for(StudentsSubgroup* sts : std::as_const(stg->subgroupsList))
 			if(!allSubgroupsSet.contains(sts) && !ts.contains(sts)){
 				allSubgroupsList.append(sts);
 				allSubgroupsSet.insert(sts);
@@ -102,13 +102,13 @@ void AddExistingStudentsSubgroupsForm::sortedToggled()
 		std::stable_sort(allSubgroupsList.begin(), allSubgroupsList.end(), alphabeticCompareFunction);
 	
 	allSubgroupsListWidget->clear();
-	for(StudentsSubgroup* sts : qAsConst(allSubgroupsList))
+	for(StudentsSubgroup* sts : std::as_const(allSubgroupsList))
 		allSubgroupsListWidget->addItem(sts->name);
 }
 
 void AddExistingStudentsSubgroupsForm::ok()
 {
-	for(StudentsSubgroup* sts : qAsConst(selectedSubgroupsList))
+	for(StudentsSubgroup* sts : std::as_const(selectedSubgroupsList))
 		gt.rules.addSubgroupFast(year, group, sts);
 		
 	this->accept();

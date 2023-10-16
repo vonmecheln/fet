@@ -150,7 +150,7 @@ TimetableGenerateForm::~TimetableGenerateForm()
 	if(simulation_running)
 		this->stop();
 		
-	/*for(QProcess* myProcess : qAsConst(commandProcesses))
+	/*for(QProcess* myProcess : std::as_const(commandProcesses))
 		//if(myProcess->state()!=QProcess::NotRunning)
 			myProcess->close();*/
 	
@@ -256,7 +256,7 @@ void TimetableGenerateForm::stop()
 	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
 	conflictsString+="\n";
 
-	for(const QString& t : qAsConst(c.conflictsDescriptionList))
+	for(const QString& t : std::as_const(c.conflictsDescriptionList))
 		conflictsString+=t+"\n";
 	
 	updateAllTimetableViewDialogs();
@@ -424,7 +424,7 @@ void TimetableGenerateForm::stopHighest()
 	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
 	conflictsString+="\n";
 
-	for(const QString& t : qAsConst(c.conflictsDescriptionList))
+	for(const QString& t : std::as_const(c.conflictsDescriptionList))
 		conflictsString+=t+"\n";
 
 	updateAllTimetableViewDialogs();
@@ -569,7 +569,7 @@ void TimetableGenerateForm::impossibleToSolve()
 	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
 	conflictsString+="\n";
 
-	for(const QString& t : qAsConst(c.conflictsDescriptionList))
+	for(const QString& t : std::as_const(c.conflictsDescriptionList))
 		conflictsString+=t+"\n";
 
 	updateAllTimetableViewDialogs();
@@ -737,7 +737,7 @@ void TimetableGenerateForm::simulationFinished()
 	conflictsString+=TimetableGenerateForm::tr("Soft conflicts listing (in decreasing order):");
 	conflictsString+="\n";
 
-	for(const QString& t : qAsConst(c.conflictsDescriptionList))
+	for(const QString& t : std::as_const(c.conflictsDescriptionList))
 		conflictsString+=t+"\n";
 
 	updateAllTimetableViewDialogs();
@@ -967,7 +967,7 @@ void TimetableGenerateForm::write(){
 	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
 	conflictsString+="\n";
 
-	for(const QString& t : qAsConst(c.conflictsDescriptionList))
+	for(const QString& t : std::as_const(c.conflictsDescriptionList))
 		conflictsString+=t+"\n";
 
 	updateAllTimetableViewDialogs();
@@ -1019,7 +1019,7 @@ void TimetableGenerateForm::writeHighestStage(){
 	conflictsString+=TimetableGenerateForm::tr("Conflicts listing (in decreasing order):");
 	conflictsString+="\n";
 
-	for(const QString& t : qAsConst(c.conflictsDescriptionList))
+	for(const QString& t : std::as_const(c.conflictsDescriptionList))
 		conflictsString+=t+"\n";
 
 	updateAllTimetableViewDialogs();

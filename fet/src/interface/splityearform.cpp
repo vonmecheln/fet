@@ -385,18 +385,18 @@ void SplitYearForm::ok()
 	
 	//warn if there are too many total subgroups - suggested by Volker Dirr
 	QSet<QString> tmpSet;
-	for(StudentsYear* sty : qAsConst(gt.rules.yearsList)){
+	for(StudentsYear* sty : std::as_const(gt.rules.yearsList)){
 		if(sty->name!=year){
 			if(sty->groupsList.count()==0){
 				tmpSet.insert(sty->name);
 			}
 			else{
-				for(StudentsGroup* stg : qAsConst(sty->groupsList)){
+				for(StudentsGroup* stg : std::as_const(sty->groupsList)){
 					if(stg->subgroupsList.count()==0){
 						tmpSet.insert(stg->name);
 					}
 					else{
-						for(StudentsSubgroup* sts : qAsConst(stg->subgroupsList))
+						for(StudentsSubgroup* sts : std::as_const(stg->subgroupsList))
 							tmpSet.insert(sts->name);
 					}
 				}
@@ -435,14 +435,14 @@ void SplitYearForm::ok()
 		}
 		
 	QSet<QString> existingNames;
-	for(StudentsYear* sty : qAsConst(gt.rules.yearsList)){
+	for(StudentsYear* sty : std::as_const(gt.rules.yearsList)){
 		assert(!existingNames.contains(sty->name));
 		existingNames.insert(sty->name);
 		if(sty->name!=year){
-			for(StudentsGroup* group : qAsConst(sty->groupsList)){
+			for(StudentsGroup* group : std::as_const(sty->groupsList)){
 				if(!existingNames.contains(group->name))
 					existingNames.insert(group->name);
-				for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList)){
+				for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
 					if(!existingNames.contains(subgroup->name))
 						existingNames.insert(subgroup->name);
 				}
@@ -513,12 +513,12 @@ again_here_1:
 	QSet<QString> notExistingSubgroupsSet;
 	QStringList notExistingGroupsList;
 	QStringList notExistingSubgroupsList;
-	for(StudentsGroup* group : qAsConst(yearPointer->groupsList)){
+	for(StudentsGroup* group : std::as_const(yearPointer->groupsList)){
 		if(!existingNames.contains(group->name) && !newStudentsSets.contains(group->name) && !notExistingGroupsSet.contains(group->name)){
 			notExistingGroupsSet.insert(group->name);
 			notExistingGroupsList.append(group->name);
 		}
-		for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList)){
+		for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
 			if(!existingNames.contains(subgroup->name) && !newStudentsSets.contains(subgroup->name) && !notExistingSubgroupsSet.contains(subgroup->name)){
 				notExistingSubgroupsSet.insert(subgroup->name);
 				notExistingSubgroupsList.append(subgroup->name);
@@ -596,9 +596,9 @@ again_here_1:
 	newYear->indexInAugmentedYearsList=yearPointer->indexInAugmentedYearsList;
 	
 	QHash<QString, int> numberOfStudents;
-	for(StudentsGroup* group : qAsConst(yearPointer->groupsList)){
+	for(StudentsGroup* group : std::as_const(yearPointer->groupsList)){
 		numberOfStudents.insert(group->name, group->numberOfStudents);
-		for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList))
+		for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
 			numberOfStudents.insert(subgroup->name, subgroup->numberOfStudents);
 	}
 	

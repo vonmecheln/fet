@@ -49,12 +49,12 @@ TeacherSubjectsQualificationsForm::TeacherSubjectsQualificationsForm(QWidget* pa
 	restoreFETDialogGeometry(this);
 	
 	QSet<QString> allSubjects;
-	for(Subject* subject : qAsConst(gt.rules.subjectsList)){
+	for(Subject* subject : std::as_const(gt.rules.subjectsList)){
 		allSubjects.insert(subject->name);
 		subjectsListWidget->addItem(subject->name);
 	}
 	
-	for(const QString& subject : qAsConst(teacher->qualifiedSubjectsList)){
+	for(const QString& subject : std::as_const(teacher->qualifiedSubjectsList)){
 		assert(allSubjects.contains(subject));
 		selectedSubjectsListWidget->addItem(subject);
 	}

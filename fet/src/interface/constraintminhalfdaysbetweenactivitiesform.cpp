@@ -124,7 +124,7 @@ bool ConstraintMinHalfDaysBetweenActivitiesForm::filterOk(TimeConstraint* ctr)
 	for(int i=0; i<c->n_activities; i++){
 		int id=c->activitiesIds[i];
 		/*Activity* act=nullptr;
-		for(Activity* a : qAsConst(gt.rules.activitiesList))
+		for(Activity* a : std::as_const(gt.rules.activitiesList))
 			if(a->id==id)
 				act=a;*/
 		Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
@@ -372,7 +372,7 @@ void ConstraintMinHalfDaysBetweenActivitiesForm::changeSelectively()
 		
 		int count=0;
 
-		for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList))
+		for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList))
 			if(tc->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
 				ConstraintMinHalfDaysBetweenActivities* mc=(ConstraintMinHalfDaysBetweenActivities*)tc;
 				bool okw, okd, okc, okn;

@@ -235,7 +235,7 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::ok()
 		return;
 	}
 
-	for(TimeConstraint* c : qAsConst(gt.rules.timeConstraintsList))
+	for(TimeConstraint* c : std::as_const(gt.rules.timeConstraintsList))
 		if(c!=this->_ctr && c->type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES){
 			ConstraintStudentsSetNotAvailableTimes* cc=(ConstraintStudentsSetNotAvailableTimes*)c;
 			if(cc->students==students_name){

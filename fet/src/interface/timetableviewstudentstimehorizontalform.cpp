@@ -216,7 +216,7 @@ TimetableViewStudentsTimeHorizontalForm::TimetableViewStudentsTimeHorizontalForm
 	usedStudentsSet.clear();
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		Activity* act=&gt.rules.internalActivitiesList[i];
-		for(const QString& students : qAsConst(act->studentsNames)){
+		for(const QString& students : std::as_const(act->studentsNames)){
 			if(!usedStudentsSet.contains(students))
 				usedStudentsSet.insert(students);
 		}
@@ -232,17 +232,17 @@ TimetableViewStudentsTimeHorizontalForm::TimetableViewStudentsTimeHorizontalForm
 	
 	QSet<QString> studentsSet2;
 	usedStudentsList.clear();
-	for(StudentsYear* year : qAsConst(gt.rules.augmentedYearsList)){
+	for(StudentsYear* year : std::as_const(gt.rules.augmentedYearsList)){
 		if(usedStudentsSet.contains(year->name) && !studentsSet2.contains(year->name)){
 			usedStudentsList.append(year->name);
 			studentsSet2.insert(year->name);
 		}
-		for(StudentsGroup* group : qAsConst(year->groupsList)){
+		for(StudentsGroup* group : std::as_const(year->groupsList)){
 			if(usedStudentsSet.contains(group->name) && !studentsSet2.contains(group->name)){
 				usedStudentsList.append(group->name);
 				studentsSet2.insert(group->name);
 			}
-			for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList)){
+			for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
 				if(usedStudentsSet.contains(subgroup->name) && !studentsSet2.contains(subgroup->name)){
 					usedStudentsList.append(subgroup->name);
 					studentsSet2.insert(subgroup->name);
@@ -489,7 +489,7 @@ void TimetableViewStudentsTimeHorizontalForm::newTimetableGenerated()
 	usedStudentsSet.clear();
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		Activity* act=&gt.rules.internalActivitiesList[i];
-		for(const QString& students : qAsConst(act->studentsNames)){
+		for(const QString& students : std::as_const(act->studentsNames)){
 			if(!usedStudentsSet.contains(students))
 				usedStudentsSet.insert(students);
 		}
@@ -505,17 +505,17 @@ void TimetableViewStudentsTimeHorizontalForm::newTimetableGenerated()
 	
 	QSet<QString> studentsSet2;
 	usedStudentsList.clear();
-	for(StudentsYear* year : qAsConst(gt.rules.augmentedYearsList)){
+	for(StudentsYear* year : std::as_const(gt.rules.augmentedYearsList)){
 		if(usedStudentsSet.contains(year->name) && !studentsSet2.contains(year->name)){
 			usedStudentsList.append(year->name);
 			studentsSet2.insert(year->name);
 		}
-		for(StudentsGroup* group : qAsConst(year->groupsList)){
+		for(StudentsGroup* group : std::as_const(year->groupsList)){
 			if(usedStudentsSet.contains(group->name) && !studentsSet2.contains(group->name)){
 				usedStudentsList.append(group->name);
 				studentsSet2.insert(group->name);
 			}
-			for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList)){
+			for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
 				if(usedStudentsSet.contains(subgroup->name) && !studentsSet2.contains(subgroup->name)){
 					usedStudentsList.append(subgroup->name);
 					studentsSet2.insert(subgroup->name);
@@ -1001,7 +1001,7 @@ QColor TimetableViewStudentsTimeHorizontalForm::stringToColor(const QString& s)
 	// CRC-24 based on RFC 2440 Section 6.1
 	unsigned long int crc = 0xB704CEUL;
 	QByteArray ba=s.toUtf8();
-	for(char c : qAsConst(ba)){
+	for(char c : std::as_const(ba)){
 		unsigned char uc=(unsigned char)(c);
 		crc ^= (uc & 0xFF) << 16;
 		for (int i = 0; i < 8; i++) {
@@ -1132,7 +1132,7 @@ void TimetableViewStudentsTimeHorizontalForm::detailActivity(QTableWidgetItem* i
 
 				if(gt.rules.internalRoomsList[r]->isVirtual==true){
 					QStringList tsl;
-					for(int i : qAsConst(best_solution.realRoomsList[ai]))
+					for(int i : std::as_const(best_solution.realRoomsList[ai]))
 						tsl.append(gt.rules.internalRoomsList[i]->name);
 					s+=QString(" (")+tsl.join(", ")+QString(")");
 				}
@@ -1389,7 +1389,7 @@ void TimetableViewStudentsTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 					if(count>=2)
 						QMessageBox::warning(this, tr("FET warning"), tr("You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints").arg(tmptc.size()));
 
-					for(TimeConstraint* deltc : qAsConst(tmptc)){
+					for(TimeConstraint* deltc : std::as_const(tmptc)){
 						s+=tr("The following constraint will be deleted:")+"\n"+deltc->getDetailedDescription(gt.rules)+"\n";
 						gt.rules.removeTimeConstraint(deltc);
 						idsOfLockedTime.remove(act->id);
@@ -1463,7 +1463,7 @@ void TimetableViewStudentsTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 					if(gt.rules.internalRoomsList[ri]->isVirtual==false)
 						assert(tc->realRoomsList[ai].isEmpty());
 					else
-						for(int rr : qAsConst(tc->realRoomsList[ai]))
+						for(int rr : std::as_const(tc->realRoomsList[ai]))
 							tl.append(gt.rules.internalRoomsList[rr]->name);
 					
 					ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, tl, false);
@@ -1487,7 +1487,7 @@ void TimetableViewStudentsTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 					if(count>=2)
 						QMessageBox::warning(this, tr("FET warning"), tr("You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints").arg(tmpsc.size()));
 
-					for(SpaceConstraint* delsc : qAsConst(tmpsc)){
+					for(SpaceConstraint* delsc : std::as_const(tmpsc)){
 						s+=tr("The following constraint will be deleted:")+"\n"+delsc->getDetailedDescription(gt.rules)+"\n";
 						gt.rules.removeSpaceConstraint(delsc);
 						idsOfLockedSpace.remove(act->id);
@@ -1945,7 +1945,7 @@ void TimetableViewStudentsTimeHorizontalForm::lockDays()
 			Activity* act=&gt.rules.internalActivitiesList[ai];
 			/*if(!gt.rules.apstHash.value(act->id, QSet<ConstraintActivityPreferredStartingTime*>()).isEmpty()){
 				QSet<ConstraintActivityPreferredStartingTime*> lc=gt.rules.apstHash.value(act->id, QSet<ConstraintActivityPreferredStartingTime*>());
-				for(const ConstraintActivityPreferredStartingTime* ctr : qAsConst(lc)){
+				for(const ConstraintActivityPreferredStartingTime* ctr : std::as_const(lc)){
 					if(!ctr->permanentlyLocked){
 						lockedNotPermanentlyTimeActivities.append(act->id);
 						break;

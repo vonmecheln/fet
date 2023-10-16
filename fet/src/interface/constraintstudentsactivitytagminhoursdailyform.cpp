@@ -56,7 +56,7 @@ ConstraintStudentsActivityTagMinHoursDailyForm::ConstraintStudentsActivityTagMin
 	
 	activityTagsComboBox->clear();
 	activityTagsComboBox->addItem("");
-	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
 		activityTagsComboBox->addItem(at->name);
 
 	this->filterChanged();

@@ -52,7 +52,7 @@ ConstraintTeachersMinGapsBetweenActivityTagForm::ConstraintTeachersMinGapsBetwee
 	
 	activityTagComboBox->clear();
 	activityTagComboBox->addItem("");
-	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
 		activityTagComboBox->addItem(at->name);
 
 	this->filterChanged();

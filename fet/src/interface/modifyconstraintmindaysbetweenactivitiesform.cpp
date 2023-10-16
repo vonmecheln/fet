@@ -255,7 +255,7 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 		
 		bool duplicate=false;
 		
-		for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList))
+		for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList))
 			if(tc!=this->_ctr && tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES)
 				if( ( *((ConstraintMinDaysBetweenActivities*)tc) ) == adc){
 					duplicate=true;
@@ -269,14 +269,14 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 	}
 	
 	if(_ctr->activitiesIds!=selectedActivitiesList){
-		for(int oldId : qAsConst(_ctr->activitiesIds)){
+		for(int oldId : std::as_const(_ctr->activitiesIds)){
 			QSet<ConstraintMinDaysBetweenActivities*> cs=gt.rules.mdbaHash.value(oldId, QSet<ConstraintMinDaysBetweenActivities*>());
 			assert(cs.contains(_ctr));
 			cs.remove(_ctr);
 			gt.rules.mdbaHash.insert(oldId, cs);
 		}
 		
-		for(int newId : qAsConst(selectedActivitiesList)){
+		for(int newId : std::as_const(selectedActivitiesList)){
 			QSet<ConstraintMinDaysBetweenActivities*> cs=gt.rules.mdbaHash.value(newId, QSet<ConstraintMinDaysBetweenActivities*>());
 			assert(!cs.contains(_ctr));
 			cs.insert(_ctr);

@@ -60,7 +60,7 @@ QString Teacher::getXmlDescription(const Rules& r)
 
 	s+="	<Target_Number_of_Hours>"+CustomFETString::number(targetNumberOfHours)+"</Target_Number_of_Hours>\n";
 	s+="	<Qualified_Subjects>\n";
-	for(const QString& sbj : qAsConst(qualifiedSubjectsList))
+	for(const QString& sbj : std::as_const(qualifiedSubjectsList))
 		s+="		<Qualified_Subject>"+protect(sbj)+"</Qualified_Subject>\n";
 	s+="	</Qualified_Subjects>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -136,7 +136,7 @@ QString Teacher::getDetailedDescription(const Rules& r)
 
 	s+=tr("Qualified subjects:", "The list of qualified subjects for a teacher");
 	s+="\n";
-	for(const QString& sbj : qAsConst(qualifiedSubjectsList)){
+	for(const QString& sbj : std::as_const(qualifiedSubjectsList)){
 		s+=sbj;
 		s+="\n";
 	}

@@ -147,7 +147,7 @@ void SubgroupsForm::addExistingSubgroups()
 	
 	StudentsYear* year=nullptr;
 	
-	for(StudentsYear* sty : qAsConst(gt.rules.yearsList))
+	for(StudentsYear* sty : std::as_const(gt.rules.yearsList))
 		if(sty->name==yearName){
 			year=sty;
 			break;
@@ -163,7 +163,7 @@ void SubgroupsForm::addExistingSubgroups()
 	
 	StudentsGroup* group=nullptr;
 	
-	for(StudentsGroup* stg : qAsConst(year->groupsList))
+	for(StudentsGroup* stg : std::as_const(year->groupsList))
 		if(stg->name==groupName){
 			group=stg;
 			break;
@@ -216,9 +216,9 @@ void SubgroupsForm::removeSubgroup()
 	
 	QList<QPair<QString, QString>> yearsGroupsContainingSubgroup_List;
 	//QSet<QPair<QString, QString>> yearsGroupsContainingSubgroup_Set;
-	for(StudentsYear* year : qAsConst(gt.rules.yearsList))
-		for(StudentsGroup* group : qAsConst(year->groupsList))
-			for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList))
+	for(StudentsYear* year : std::as_const(gt.rules.yearsList))
+		for(StudentsGroup* group : std::as_const(year->groupsList))
+			for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
 				if(subgroup->name==subgroupName)
 					yearsGroupsContainingSubgroup_List.append(QPair<QString, QString>(year->name, group->name));
 			
@@ -231,7 +231,7 @@ void SubgroupsForm::removeSubgroup()
 		s=tr("This subgroup exists in more places, listed below. It will only be removed from the current year/group,"
 		 " and the related activities and constraints will not be removed. Do you want to continue?");
 		s+="\n";
-		for(const QPair<QString, QString>& pair : qAsConst(yearsGroupsContainingSubgroup_List))
+		for(const QPair<QString, QString>& pair : std::as_const(yearsGroupsContainingSubgroup_List))
 			s+=QString("\n")+pair.first+QString(", ")+pair.second;
 	}
 	
@@ -297,9 +297,9 @@ void SubgroupsForm::purgeSubgroup()
 	
 	QList<QPair<QString, QString>> yearsGroupsContainingSubgroup_List;
 	//QSet<QPair<QString, QString>> yearsGroupsContainingSubgroup_Set;
-	for(StudentsYear* year : qAsConst(gt.rules.yearsList))
-		for(StudentsGroup* group : qAsConst(year->groupsList))
-			for(StudentsSubgroup* subgroup : qAsConst(group->subgroupsList))
+	for(StudentsYear* year : std::as_const(gt.rules.yearsList))
+		for(StudentsGroup* group : std::as_const(year->groupsList))
+			for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList))
 				if(subgroup->name==subgroupName)
 					yearsGroupsContainingSubgroup_List.append(QPair<QString, QString>(year->name, group->name));
 			
@@ -312,7 +312,7 @@ void SubgroupsForm::purgeSubgroup()
 		s=tr("This subgroup exists in more places, listed below. It will be removed from all these places."
 		 " All the related activities and constraints will be removed. Do you want to continue?");
 		s+="\n";
-		for(const QPair<QString, QString>& pair : qAsConst(yearsGroupsContainingSubgroup_List))
+		for(const QPair<QString, QString>& pair : std::as_const(yearsGroupsContainingSubgroup_List))
 			s+=QString("\n")+pair.first+QString(", ")+pair.second;
 	}
 	

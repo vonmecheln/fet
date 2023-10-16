@@ -73,13 +73,13 @@ void AddConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::update
 
 void AddConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::updateFirstActivityTagComboBox()
 {
-	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
 		firstActivityTagComboBox->addItem(at->name);
 }
 
 void AddConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::updateSecondActivityTagComboBox()
 {
-	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
 		secondActivityTagComboBox->addItem(at->name);
 }
 

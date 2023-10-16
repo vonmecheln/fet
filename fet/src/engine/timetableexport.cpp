@@ -213,7 +213,7 @@ void TimetableExport::stringToColor(const QString& s, int& r, int& g, int& b)
 	// CRC-24 based on RFC 2440 Section 6.1
 	unsigned long int crc = 0xB704CEUL;
 	QByteArray ba=s.toUtf8();
-	for(char c : qAsConst(ba)){
+	for(char c : std::as_const(ba)){
 		unsigned char uc=(unsigned char)(c);
 		crc ^= (uc & 0xFF) << 16;
 		for (int i = 0; i < 8; i++) {
@@ -1073,7 +1073,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 			if(gt.rules.internalRoomsList[ri]->isVirtual==false)
 				assert(tc->realRoomsList[ai].isEmpty());
 			else
-				for(int rr : qAsConst(tc->realRoomsList[ai]))
+				for(int rr : std::as_const(tc->realRoomsList[ai]))
 					tl.append(gt.rules.internalRoomsList[rr]->name);
 			
 			ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, tl, false); //permanently locked is false
@@ -1114,10 +1114,10 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 	
 	bool result=rules2.write(parent, filename);
 	
-	for(TimeConstraint* tc : qAsConst(lockTimeConstraintsList))
+	for(TimeConstraint* tc : std::as_const(lockTimeConstraintsList))
 		delete tc;
 	lockTimeConstraintsList.clear();
-	for(SpaceConstraint* sc : qAsConst(lockSpaceConstraintsList))
+	for(SpaceConstraint* sc : std::as_const(lockSpaceConstraintsList))
 		delete sc;
 	lockSpaceConstraintsList.clear();
 	//while(!lockTimeConstraintsList.isEmpty())
@@ -1847,7 +1847,7 @@ void TimetableExport::writeConflictsTxt(QWidget* parent, const QString& filename
 		tos<<TimetableExport::tr("Number of broken soft constraints: %1").arg(best_solution.conflictsWeightList.count())<<"\n";
 		tos<<TimetableExport::tr("Total soft conflicts: %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(best_solution.conflictsTotal))<<"\n\n";
 		tos<<TimetableExport::tr("Soft conflicts list (in decreasing order):")<<"\n\n";
-		for(const QString& t : qAsConst(best_solution.conflictsDescriptionList))
+		for(const QString& t : std::as_const(best_solution.conflictsDescriptionList))
 			tos<<t<<"\n";
 		tos<<"\n"<<TimetableExport::tr("End of file.")<<"\n";
 	}
@@ -1863,7 +1863,7 @@ void TimetableExport::writeConflictsTxt(QWidget* parent, const QString& filename
 		tos<<TimetableExport::tr("Number of broken constraints: %1").arg(best_solution.conflictsWeightList.count())<<"\n";
 		tos<<TimetableExport::tr("Total conflicts: %1").arg(CustomFETString::numberPlusTwoDigitsPrecision(best_solution.conflictsTotal))<<"\n\n";
 		tos<<TimetableExport::tr("Conflicts list (in decreasing order):")<<"\n\n";
-		for(const QString& t : qAsConst(best_solution.conflictsDescriptionList))
+		for(const QString& t : std::as_const(best_solution.conflictsDescriptionList))
 			tos<<t<<"\n";
 		tos<<"\n"<<TimetableExport::tr("End of file.")<<"\n";
 	}
@@ -1927,14 +1927,14 @@ void TimetableExport::writeSubgroupsTimetableXml(QWidget* parent, const QString&
 					for(QStringList::const_iterator it=act->teachersNames.constBegin(); it!=act->teachersNames.constEnd(); it++)
 						tos<<"<Teacher name=\""<<protect(*it)<<"\"></Teacher>";
 					tos<<"<Subject name=\""<<protect(act->subjectName)<<"\"></Subject>";
-					for(const QString& atn : qAsConst(act->activityTagsNames))
+					for(const QString& atn : std::as_const(act->activityTagsNames))
 						tos<<"<Activity_Tag name=\""<<protect(atn)<<"\"></Activity_Tag>";
 
 					int r=best_solution.rooms[ai];
 					if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 						tos<<"<Room name=\""<<protect(gt.rules.internalRoomsList[r]->name)<<"\"></Room>";
 						if(gt.rules.internalRoomsList[r]->isVirtual==true)
-							for(int rr : qAsConst(best_solution.realRoomsList[ai]))
+							for(int rr : std::as_const(best_solution.realRoomsList[ai]))
 								tos<<"<Real_Room name=\""<<protect(gt.rules.internalRoomsList[rr]->name)<<"\"></Real_Room>";
 					}
 				}
@@ -1997,7 +1997,7 @@ void TimetableExport::writeTeachersTimetableXml(QWidget* parent, const QString& 
 					Activity* act=&gt.rules.internalActivitiesList[ai];
 					tos<<"<Activity id=\""<<CustomFETString::number(act->id)<<"\"></Activity>";
 					tos<<"<Subject name=\""<<protect(act->subjectName)<<"\"></Subject>";
-					for(const QString& atn : qAsConst(act->activityTagsNames))
+					for(const QString& atn : std::as_const(act->activityTagsNames))
 						tos<<"<Activity_Tag name=\""<<protect(atn)<<"\"></Activity_Tag>";
 					for(QStringList::const_iterator it=act->studentsNames.constBegin(); it!=act->studentsNames.constEnd(); it++)
 						tos << "<Students name=\"" << protect(*it) << "\"></Students>";
@@ -2006,7 +2006,7 @@ void TimetableExport::writeTeachersTimetableXml(QWidget* parent, const QString& 
 					if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 						tos<<"<Room name=\""<<protect(gt.rules.internalRoomsList[r]->name)<<"\"></Room>";
 						if(gt.rules.internalRoomsList[r]->isVirtual==true)
-							for(int rr : qAsConst(best_solution.realRoomsList[ai]))
+							for(int rr : std::as_const(best_solution.realRoomsList[ai]))
 								tos<<"<Real_Room name=\""<<protect(gt.rules.internalRoomsList[rr]->name)<<"\"></Real_Room>";
 					}
 				}
@@ -2084,7 +2084,7 @@ void TimetableExport::writeActivitiesTimetableXml(QWidget* parent, const QString
 			int r=best_solution.rooms[i];
 			if(gt.rules.internalRoomsList[r]->isVirtual==true){
 				assert(gt.rules.internalRoomsList[r]->rrsl.count()==best_solution.realRoomsList[i].count());
-				for(int rr : qAsConst(best_solution.realRoomsList[i])){
+				for(int rr : std::as_const(best_solution.realRoomsList[i])){
 					assert(rr>=0 && rr<gt.rules.nInternalRooms);
 					tos<<"	<Real_Room>"<<protect(gt.rules.internalRoomsList[rr]->name)<<"</Real_Room>\n";
 				}
@@ -2469,7 +2469,7 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 	//get used students	//TODO: do it the same way in statistics.cpp
 	QSet<QString> usedStudents;
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
-		for(const QString& st : qAsConst(gt.rules.internalActivitiesList[i].studentsNames)){
+		for(const QString& st : std::as_const(gt.rules.internalActivitiesList[i].studentsNames)){
 			if(!usedStudents.contains(st))
 				usedStudents<<st;
 		}
@@ -2534,7 +2534,7 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 	//By Liviu, with ideas from Volker
 	if(TIMETABLE_HTML_LEVEL==7){ //must be written before LEVEL 3, because LEVEL 3 should have higher priority
 		int cnt=0;
-		for(int i : qAsConst(activeHashActivityColorBySubject)){
+		for(int i : std::as_const(activeHashActivityColorBySubject)){
 			Activity* act=&gt.rules.internalActivitiesList[i];
 			
 			QString tmpString=act->subjectName;
@@ -2553,7 +2553,7 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 			//similar to the coloring by Marco Vassura (end)
 			cnt++;
 		}
-		for(int i : qAsConst(activeHashActivityColorBySubjectAndStudents)){
+		for(int i : std::as_const(activeHashActivityColorBySubjectAndStudents)){
 			Activity* act=&gt.rules.internalActivitiesList[i];
 			
 			QString tmpString=act->subjectName+" "+act->studentsNames.join(", ");
@@ -5364,11 +5364,11 @@ bool TimetableExport::addActivitiesWithSameStartingTime(QList<int>& allActivitie
 	if(PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME){
 		bool activitiesWithSameStartingtime=false;
 		QList<int> allActivitiesNew;
-		for(int tmpAct : qAsConst(allActivities)){
+		for(int tmpAct : std::as_const(allActivities)){
 			allActivitiesNew<<tmpAct;
 			if(activitiesWithSameStartingTime.contains(tmpAct)){
 				QList<int> sameTimeList=activitiesWithSameStartingTime.value(tmpAct);
-				for(int sameTimeAct : qAsConst(sameTimeList)){
+				for(int sameTimeAct : std::as_const(sameTimeList)){
 					if(!allActivitiesNew.contains(sameTimeAct) && !allActivities.contains(sameTimeAct)){
 						if(best_solution.times[sameTimeAct]!=UNALLOCATED_TIME){
 							Activity* act=&gt.rules.internalActivitiesList[sameTimeAct];
@@ -5479,7 +5479,7 @@ QString TimetableExport::writeStartTagTDofActivities(int htmlLevel, const Activi
 			tmp+="s_"+hashSubjectIDsTimetable.value(act->subjectName);
 		}
 		if(act->activityTagsNames.size()>0){
-			for(const QString& atn : qAsConst(act->activityTagsNames)){
+			for(const QString& atn : std::as_const(act->activityTagsNames)){
 				assert(hashActivityTagIDsTimetable.contains(atn));
 				int id=hashActivityTagIDsTimetable.value(atn, "0").toInt()-1;
 				assert(id>=0);
@@ -5490,11 +5490,11 @@ QString TimetableExport::writeStartTagTDofActivities(int htmlLevel, const Activi
 			}
 		}
 		if(act->studentsNames.size()>0){
-			for(const QString& st : qAsConst(act->studentsNames))
+			for(const QString& st : std::as_const(act->studentsNames))
 				tmp+=" ss_"+hashStudentIDsTimetable.value(st);
 		}
 		if(act->teachersNames.size()>0){
-			for(const QString& t : qAsConst(act->teachersNames))
+			for(const QString& t : std::as_const(act->teachersNames))
 				tmp+=" t_"+hashTeacherIDsTimetable.value(t);
 		}
 		//i need ai for this!!! so i need a parameter ai?! //TODO
@@ -5546,7 +5546,7 @@ QString TimetableExport::writeSubjectAndActivityTags(int htmlLevel, const Activi
 		}
 		if(act->activityTagsNames.size()>0 && printActivityTags){
 			bool writeTags=false;
-			for(const QString& atn : qAsConst(act->activityTagsNames)){
+			for(const QString& atn : std::as_const(act->activityTagsNames)){
 				assert(hashActivityTagIDsTimetable.contains(atn));
 				int id=hashActivityTagIDsTimetable.value(atn, "0").toInt()-1;
 				assert(id>=0);
@@ -5561,7 +5561,7 @@ QString TimetableExport::writeSubjectAndActivityTags(int htmlLevel, const Activi
 						tmp+="<span class=\"activitytag\">";
 					}
 				}
-				for(const QString& atn : qAsConst(act->activityTagsNames)){
+				for(const QString& atn : std::as_const(act->activityTagsNames)){
 					assert(hashActivityTagIDsTimetable.contains(atn));
 					int id=hashActivityTagIDsTimetable.value(atn, "0").toInt()-1;
 					assert(id>=0);
@@ -5600,7 +5600,7 @@ QString TimetableExport::writeStudents(int htmlLevel, const Activity* act, const
 	if(act->studentsNames.size()>0){
 		if(startTag=="div" && htmlLevel>=3)
 			tmp+="<"+startTag+startTagAttribute+">";
-		for(const QString& st : qAsConst(act->studentsNames)){
+		for(const QString& st : std::as_const(act->studentsNames)){
 			switch(htmlLevel){
 				case 4 : tmp+="<span class=\"ss_"+hashStudentIDsTimetable.value(st)+"\">"+protect2(st)+"</span>"; break;
 				case 5 : ;
@@ -5625,7 +5625,7 @@ QString TimetableExport::writeTeachers(int htmlLevel, const Activity* act, const
 	if(act->teachersNames.size()>0){
 		if(startTag=="div" && htmlLevel>=3)
 			tmp+="<"+startTag+startTagAttribute+">";
-		for(const QString& t : qAsConst(act->teachersNames)){
+		for(const QString& t : std::as_const(act->teachersNames)){
 			switch(htmlLevel){
 				case 4 : tmp+="<span class=\"t_"+hashTeacherIDsTimetable.value(t)+"\">"+protect2(t)+"</span>"; break;
 				case 5 : ;
@@ -5671,7 +5671,7 @@ QString TimetableExport::writeRoom(int htmlLevel, int ai, const QString& startTa
 				//tmp+="Virtual Room X";
 				tmp+=" (";
 			}
-			for(int rr : qAsConst(best_solution.realRoomsList[ai])){
+			for(int rr : std::as_const(best_solution.realRoomsList[ai])){
 				QString room;
 				switch(htmlLevel){
 					case 4 : room+="<span class=\"r_"+hashRoomIDsTimetable.value(gt.rules.internalRoomsList[rr]->name)+"\">"+protect2(gt.rules.internalRoomsList[rr]->name)+"</span>"; break;
@@ -9048,7 +9048,7 @@ QString TimetableExport::singleSubjectsTimetableDaysHorizontalHtml(int htmlLevel
 	for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 		for(int h=0; h<gt.rules.nHoursPerDay; h++)
 			activitiesForCurrentSubject[d][h].clear();
-	for(int ai : qAsConst(gt.rules.activitiesForSubjectList[subject]))
+	for(int ai : std::as_const(gt.rules.activitiesForSubjectList[subject]))
 		if(best_solution.times[ai]!=UNALLOCATED_TIME){
 			int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
 			int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
@@ -9153,7 +9153,7 @@ QString TimetableExport::singleSubjectsTimetableDaysVerticalHtml(int htmlLevel, 
 	for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 		for(int h=0; h<gt.rules.nHoursPerDay; h++)
 			activitiesForCurrentSubject[d][h].clear();
-	for(int ai : qAsConst(gt.rules.activitiesForSubjectList[subject]))
+	for(int ai : std::as_const(gt.rules.activitiesForSubjectList[subject]))
 		if(best_solution.times[ai]!=UNALLOCATED_TIME){
 			int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
 			int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
@@ -9299,7 +9299,7 @@ QString TimetableExport::singleSubjectsTimetableTimeVerticalHtml(int htmlLevel, 
 					QList<int> allActivities;
 					allActivities.clear();
 					
-					for(int ai : qAsConst(gt.rules.activitiesForSubjectList[subject]))
+					for(int ai : std::as_const(gt.rules.activitiesForSubjectList[subject]))
 						if(activitiesAtTime[day][hour].contains(ai)){
 							assert(!allActivities.contains(ai));
 							allActivities.append(ai);
@@ -9401,7 +9401,7 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 				for(int h=0; h<gt.rules.nHoursPerDay; h++)
 					activitiesForCurrentSubject[d][h].clear();
-			for(int ai : qAsConst(gt.rules.activitiesForSubjectList[subject]))
+			for(int ai : std::as_const(gt.rules.activitiesForSubjectList[subject]))
 				if(best_solution.times[ai]!=UNALLOCATED_TIME){
 					int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
 					int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
@@ -9511,7 +9511,7 @@ QString TimetableExport::singleSubjectsTimetableTimeVerticalDailyHtml(int htmlLe
 				QList<int> allActivities;
 				allActivities.clear();
 				
-				for(int ai : qAsConst(gt.rules.activitiesForSubjectList[subject]))
+				for(int ai : std::as_const(gt.rules.activitiesForSubjectList[subject]))
 					if(activitiesAtTime[day][hour].contains(ai)){
 						assert(!allActivities.contains(ai));
 						allActivities.append(ai);
@@ -9610,7 +9610,7 @@ QString TimetableExport::singleSubjectsTimetableTimeHorizontalDailyHtml(int html
 			for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 				for(int h=0; h<gt.rules.nHoursPerDay; h++)
 					activitiesForCurrentSubject[d][h].clear();
-			for(int ai : qAsConst(gt.rules.activitiesForSubjectList[subject]))
+			for(int ai : std::as_const(gt.rules.activitiesForSubjectList[subject]))
 				if(best_solution.times[ai]!=UNALLOCATED_TIME){
 					int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
 					int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
@@ -9682,7 +9682,7 @@ QString TimetableExport::singleActivityTagsTimetableDaysHorizontalHtml(int htmlL
 	for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 		for(int h=0; h<gt.rules.nHoursPerDay; h++)
 			activitiesForCurrentActivityTag[d][h].clear();
-	for(int ai : qAsConst(gt.rules.activitiesForActivityTagList[activityTag]))
+	for(int ai : std::as_const(gt.rules.activitiesForActivityTagList[activityTag]))
 		if(best_solution.times[ai]!=UNALLOCATED_TIME){
 			int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
 			int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
@@ -9764,7 +9764,7 @@ QString TimetableExport::singleActivityTagsTimetableDaysVerticalHtml(int htmlLev
 	for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 		for(int h=0; h<gt.rules.nHoursPerDay; h++)
 			activitiesForCurrentActivityTag[d][h].clear();
-	for(int ai : qAsConst(gt.rules.activitiesForActivityTagList[activityTag]))
+	for(int ai : std::as_const(gt.rules.activitiesForActivityTagList[activityTag]))
 		if(best_solution.times[ai]!=UNALLOCATED_TIME){
 			int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
 			int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
@@ -9889,7 +9889,7 @@ QString TimetableExport::singleActivityTagsTimetableTimeVerticalHtml(int htmlLev
 						QList<int> allActivities;
 						allActivities.clear();
 						
-						for(int ai : qAsConst(gt.rules.activitiesForActivityTagList[activityTag]))
+						for(int ai : std::as_const(gt.rules.activitiesForActivityTagList[activityTag]))
 							if(activitiesAtTime[day][hour].contains(ai)){
 								assert(!allActivities.contains(ai));
 								allActivities.append(ai);
@@ -9972,7 +9972,7 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalHtml(int htmlL
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					for(int h=0; h<gt.rules.nHoursPerDay; h++)
 						activitiesForCurrentActivityTag[d][h].clear();
-				for(int ai : qAsConst(gt.rules.activitiesForActivityTagList[activityTag]))
+				for(int ai : std::as_const(gt.rules.activitiesForActivityTagList[activityTag]))
 					if(best_solution.times[ai]!=UNALLOCATED_TIME){
 						int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
 						int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;
@@ -10064,7 +10064,7 @@ QString TimetableExport::singleActivityTagsTimetableTimeVerticalDailyHtml(int ht
 					QList<int> allActivities;
 					allActivities.clear();
 					
-					for(int ai : qAsConst(gt.rules.activitiesForActivityTagList[activityTag]))
+					for(int ai : std::as_const(gt.rules.activitiesForActivityTagList[activityTag]))
 						if(activitiesAtTime[day][hour].contains(ai)){
 							assert(!allActivities.contains(ai));
 							allActivities.append(ai);
@@ -10144,7 +10144,7 @@ QString TimetableExport::singleActivityTagsTimetableTimeHorizontalDailyHtml(int 
 				for(int d=0; d<gt.rules.nDaysPerWeek; d++)
 					for(int h=0; h<gt.rules.nHoursPerDay; h++)
 						activitiesForCurrentActivityTag[d][h].clear();
-				for(int ai : qAsConst(gt.rules.activitiesForActivityTagList[activityTag]))
+				for(int ai : std::as_const(gt.rules.activitiesForActivityTagList[activityTag]))
 					if(best_solution.times[ai]!=UNALLOCATED_TIME){
 						int d=best_solution.times[ai]%gt.rules.nDaysPerWeek;
 						int h=best_solution.times[ai]/gt.rules.nDaysPerWeek;

@@ -300,7 +300,7 @@ TimetableGenerateMultipleForm::~TimetableGenerateMultipleForm()
 	if(simulation_running_multi)
 		this->stop();
 
-	for(Solution* sol : qAsConst(highestStageSolutions))
+	for(Solution* sol : std::as_const(highestStageSolutions))
 		delete sol;
 	highestStageSolutions.clear();
 	nTimetableForHighestStageSolutions.clear();
@@ -412,7 +412,7 @@ void TimetableGenerateMultipleForm::start(){
 	//cvTimetableFinished.resize(nThreads);
 	allNThreads=nThreads;
 
-	for(Solution* sol : qAsConst(highestStageSolutions))
+	for(Solution* sol : std::as_const(highestStageSolutions))
 		delete sol;
 	highestStageSolutions.clear();
 	nTimetableForHighestStageSolutions.clear();
@@ -619,7 +619,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 	else{
 		if(highestPlacedActivities<genMultiMatrix[nThread].maxActivitiesPlaced){
 			highestPlacedActivities=genMultiMatrix[nThread].maxActivitiesPlaced;
-			for(Solution* sol : qAsConst(highestStageSolutions))
+			for(Solution* sol : std::as_const(highestStageSolutions))
 				delete sol;
 			highestStageSolutions.clear();
 			nTimetableForHighestStageSolutions.clear();
@@ -688,7 +688,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 			conflictsString+="\n";
 			conflictsString+=tr("Soft conflicts listing (in decreasing order):")+"\n";
 
-			for(const QString& t : qAsConst(best_solution.conflictsDescriptionList))
+			for(const QString& t : std::as_const(best_solution.conflictsDescriptionList))
 				conflictsString+=t+"\n";
 			
 			updateAllTimetableViewDialogs();
@@ -788,7 +788,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 
 			if(highestPlacedActivities<genMultiMatrix[t].maxActivitiesPlaced){
 				highestPlacedActivities=genMultiMatrix[t].maxActivitiesPlaced;
-				for(Solution* sol : qAsConst(highestStageSolutions))
+				for(Solution* sol : std::as_const(highestStageSolutions))
 					delete sol;
 				highestStageSolutions.clear();
 				nTimetableForHighestStageSolutions.clear();
@@ -861,7 +861,7 @@ void TimetableGenerateMultipleForm::stop()
 		if(nSuccessfullyGeneratedTimetables==0){
 			if(highestPlacedActivities<genMultiMatrix[t].maxActivitiesPlaced){
 				highestPlacedActivities=genMultiMatrix[t].maxActivitiesPlaced;
-				for(Solution* sol : qAsConst(highestStageSolutions))
+				for(Solution* sol : std::as_const(highestStageSolutions))
 					delete sol;
 				highestStageSolutions.clear();
 				nTimetableForHighestStageSolutions.clear();
@@ -1012,7 +1012,7 @@ void TimetableGenerateMultipleForm::stop()
 			conflictsString+="\n";
 			conflictsString+=tr("Conflicts listing (in decreasing order):")+"\n";
 
-			for(const QString& t : qAsConst(sol->conflictsDescriptionList))
+			for(const QString& t : std::as_const(sol->conflictsDescriptionList))
 				conflictsString+=t+"\n";
 		}
 		updateAllTimetableViewDialogs();
@@ -1060,7 +1060,7 @@ void TimetableGenerateMultipleForm::stop()
 	gen.rng.initializeMRG32k3a(genMultiMatrix[0].rng.s10, genMultiMatrix[0].rng.s11, genMultiMatrix[0].rng.s12,
 	 genMultiMatrix[0].rng.s20, genMultiMatrix[0].rng.s21, genMultiMatrix[0].rng.s22);
 
-	/*for(Controller* tc : qAsConst(controllersList))
+	/*for(Controller* tc : std::as_const(controllersList))
 		//delete tc;
 		tc->deleteLater();
 	controllersList.clear();*/
@@ -1189,7 +1189,7 @@ void TimetableGenerateMultipleForm::simulationFinished()
 			conflictsString+="\n";
 			conflictsString+=tr("Conflicts listing (in decreasing order):")+"\n";
 
-			for(const QString& t : qAsConst(sol->conflictsDescriptionList))
+			for(const QString& t : std::as_const(sol->conflictsDescriptionList))
 				conflictsString+=t+"\n";
 		}
 		updateAllTimetableViewDialogs();
@@ -1283,7 +1283,7 @@ void TimetableGenerateMultipleForm::simulationFinished()
 	gen.rng.initializeMRG32k3a(genMultiMatrix[0].rng.s10, genMultiMatrix[0].rng.s11, genMultiMatrix[0].rng.s12,
 	 genMultiMatrix[0].rng.s20, genMultiMatrix[0].rng.s21, genMultiMatrix[0].rng.s22);
 
-	/*for(Controller* tc : qAsConst(controllersList))
+	/*for(Controller* tc : std::as_const(controllersList))
 		//delete tc;
 		tc->deleteLater();
 	controllersList.clear();*/

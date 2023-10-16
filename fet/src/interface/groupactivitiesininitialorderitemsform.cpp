@@ -205,7 +205,7 @@ bool GroupActivitiesInInitialOrderItemsForm::filterOk(GroupActivitiesInInitialOr
 	for(int i=0; i<item->ids.count(); i++){
 		int id=item->ids.at(i);
 		/*Activity* act=nullptr;
-		for(Activity* a : qAsConst(gt.rules.activitiesList))
+		for(Activity* a : std::as_const(gt.rules.activitiesList))
 			if(a->id==id)
 				act=a;*/
 		Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);
@@ -457,11 +457,11 @@ void GroupActivitiesInInitialOrderItemsForm::filterChanged()
 	visibleItemsList.clear();
 	itemsListWidget->clear();
 	int n_active=0;
-	for(GroupActivitiesInInitialOrderItem* item : qAsConst(gt.rules.groupActivitiesInInitialOrderList))
+	for(GroupActivitiesInInitialOrderItem* item : std::as_const(gt.rules.groupActivitiesInInitialOrderList))
 		if(filterOk(item))
 			visibleItemsList.append(item);
 	
-	for(GroupActivitiesInInitialOrderItem* item : qAsConst(visibleItemsList)){
+	for(GroupActivitiesInInitialOrderItem* item : std::as_const(visibleItemsList)){
 		assert(filterOk(item));
 		itemsListWidget->addItem(item->getDescription(gt.rules));
 
@@ -621,7 +621,7 @@ void GroupActivitiesInInitialOrderItemsForm::activateItem()
 		itemChanged(itemsListWidget->currentRow());
 	
 		int n_active=0;
-		for(GroupActivitiesInInitialOrderItem* item2 : qAsConst(gt.rules.groupActivitiesInInitialOrderList))
+		for(GroupActivitiesInInitialOrderItem* item2 : std::as_const(gt.rules.groupActivitiesInInitialOrderList))
 			if(filterOk(item2)){
 				if(item2->active)
 					n_active++;
@@ -656,7 +656,7 @@ void GroupActivitiesInInitialOrderItemsForm::deactivateItem()
 		itemChanged(itemsListWidget->currentRow());
 
 		int n_active=0;
-		for(GroupActivitiesInInitialOrderItem* item2 : qAsConst(gt.rules.groupActivitiesInInitialOrderList))
+		for(GroupActivitiesInInitialOrderItem* item2 : std::as_const(gt.rules.groupActivitiesInInitialOrderList))
 			if(filterOk(item2)){
 				if(item2->active)
 					n_active++;
@@ -824,7 +824,7 @@ void GroupActivitiesInInitialOrderItemsForm::activateAllItems()
 	}
 
 	int cnt=0;
-	for(GroupActivitiesInInitialOrderItem* item : qAsConst(visibleItemsList)){
+	for(GroupActivitiesInInitialOrderItem* item : std::as_const(visibleItemsList)){
 		if(!item->active){
 			cnt++;
 			item->active=true;
@@ -853,7 +853,7 @@ void GroupActivitiesInInitialOrderItemsForm::deactivateAllItems()
 	}
 
 	int cnt=0;
-	for(GroupActivitiesInInitialOrderItem* item : qAsConst(visibleItemsList)){
+	for(GroupActivitiesInInitialOrderItem* item : std::as_const(visibleItemsList)){
 		if(item->active){
 			cnt++;
 			item->active=false;

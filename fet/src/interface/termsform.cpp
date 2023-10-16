@@ -57,7 +57,7 @@ TermsForm::~TermsForm()
 void TermsForm::ok()
 {
 	int cnt_mod=0;
-	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList)){
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
 		if(tc->type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES){
 			ConstraintMaxTermsBetweenActivities* cmt=(ConstraintMaxTermsBetweenActivities*)tc;
 			if(cmt->maxTerms>=numberOfTermsSpinBox->value())

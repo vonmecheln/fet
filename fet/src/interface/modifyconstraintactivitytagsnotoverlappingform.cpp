@@ -51,7 +51,7 @@ ModifyConstraintActivityTagsNotOverlappingForm::ModifyConstraintActivityTagsNotO
 	}
 	
 	notOverlappingActivityTagsListWidget->clear();
-	for(const QString& at : qAsConst(ctr->activityTagsNames))
+	for(const QString& at : std::as_const(ctr->activityTagsNames))
 		this->notOverlappingActivityTagsListWidget->addItem(at);
 	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));

@@ -80,11 +80,11 @@ void LockUnlock::computeLockedUnlockedActivitiesTimeSpace()
 	idsOfPermanentlyLockedSpace.clear();
 	
 	QSet<QString> virtualRooms;
-	for(Room* rm : qAsConst(gt.rules.roomsList))
+	for(Room* rm : std::as_const(gt.rules.roomsList))
 		if(rm->isVirtual==true)
 			virtualRooms.insert(rm->name);
 
-	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList)){
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
 		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME && tc->weightPercentage==100.0 && tc->active){
 			ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*) tc;
 			if(c->day >= 0  &&  c->hour >= 0) {
@@ -96,7 +96,7 @@ void LockUnlock::computeLockedUnlockedActivitiesTimeSpace()
 		}
 	}
 	
-	for(SpaceConstraint* sc : qAsConst(gt.rules.spaceConstraintsList)){
+	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList)){
 		if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM && sc->weightPercentage==100.0 && sc->active){
 			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) sc;
 
@@ -118,7 +118,7 @@ void LockUnlock::computeLockedUnlockedActivitiesOnlyTime()
 	idsOfLockedTime.clear();
 	idsOfPermanentlyLockedTime.clear();
 
-	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList)){
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
 		if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME && tc->weightPercentage==100.0 && tc->active){
 			ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*) tc;
 			if(c->day >= 0  &&  c->hour >= 0) {
@@ -138,11 +138,11 @@ void LockUnlock::computeLockedUnlockedActivitiesOnlySpace()
 	idsOfPermanentlyLockedSpace.clear();
 
 	QSet<QString> virtualRooms;
-	for(Room* rm : qAsConst(gt.rules.roomsList))
+	for(Room* rm : std::as_const(gt.rules.roomsList))
 		if(rm->isVirtual==true)
 			virtualRooms.insert(rm->name);
 
-	for(SpaceConstraint* sc : qAsConst(gt.rules.spaceConstraintsList)){
+	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList)){
 		if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM && sc->weightPercentage==100.0 && sc->active){
 			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) sc;
 			if(!virtualRooms.contains(c->roomName) || (virtualRooms.contains(c->roomName) && !c->preferredRealRoomsNames.isEmpty())){

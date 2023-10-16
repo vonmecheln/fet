@@ -27,24 +27,14 @@ File timetable_defs.h
 #endif
 #include <cassert>
 
+//std::as_const
+#include <utility>
+
 #include <QString>
 
 #include <QtGlobal>
 
 #include "centerwidgetonscreen.h"
-
-#if QT_VERSION < QT_VERSION_CHECK(5,7,0)
-#include <type_traits>
-namespace std
-{
-	template<class T> using add_const_t = typename add_const<T>::type;
-}
-template<class T> constexpr std::add_const_t<T>& qAsConst(T& t) noexcept
-{
-	return t;
-}
-template<class T> void qAsConst(const T&&) = delete;
-#endif
 
 class QWidget;
 

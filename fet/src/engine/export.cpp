@@ -817,7 +817,7 @@ bool Export::exportCSVActivityTags(QString& lastWarnings, const QString& textquo
 		tosExport<<textquote<<"Activity Tag"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<endl;
 #endif
 
-	for(ActivityTag* a : qAsConst(gt.rules.activityTagsList)){
+	for(ActivityTag* a : std::as_const(gt.rules.activityTagsList)){
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		tosExport<<textquote<<protectCSV(a->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(a->comments)<<textquote<<Qt::endl;
 #else
@@ -846,7 +846,7 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString& te
 
 	bool usingVirtualRooms=false;
 
-	for(Room* r : qAsConst(gt.rules.roomsList))
+	for(Room* r : std::as_const(gt.rules.roomsList))
 		if(r->isVirtual==true){
 			usingVirtualRooms=true;
 			break;
@@ -903,7 +903,7 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString& te
 #endif
 				
 	QStringList checkBuildings;
-	for(Room* r : qAsConst(gt.rules.roomsList)){
+	for(Room* r : std::as_const(gt.rules.roomsList)){
 		tosExport	<<textquote<<protectCSV(r->name)<<textquote<<fieldSeparator
 				<<CustomFETString::number(r->capacity)<<fieldSeparator
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
@@ -973,7 +973,7 @@ bool Export::exportCSVSubjects(QString& lastWarnings, const QString& textquote, 
 		tosExport<<textquote<<"Subject"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<endl;
 #endif
 
-	for(Subject* s : qAsConst(gt.rules.subjectsList)){
+	for(Subject* s : std::as_const(gt.rules.subjectsList)){
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		tosExport<<textquote<<protectCSV(s->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(s->comments)<<textquote<<Qt::endl;
 #else
@@ -1036,7 +1036,7 @@ bool Export::exportCSVTeachers(QString& lastWarnings, const QString& textquote, 
 		tosExport<<textquote<<"Teacher"<<textquote<<fieldSeparator<<textquote<<"Comments"<<textquote<<endl;
 #endif
 
-	for(Teacher* t : qAsConst(gt.rules.teachersList)){
+	for(Teacher* t : std::as_const(gt.rules.teachersList)){
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 		tosExport<<textquote<<protectCSV(t->name)<<textquote<<fieldSeparator<<textquote<<protectCSVComments(t->comments)<<textquote<<Qt::endl;
 #else
@@ -1108,7 +1108,7 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 
 	int ig=0;
 	int is=0;
-	for(StudentsYear* sty : qAsConst(gt.rules.yearsList)){
+	for(StudentsYear* sty : std::as_const(gt.rules.yearsList)){
 		tosExport<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 					<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<fieldSeparator<<textquote<<protectCSVComments(sty->comments)<<textquote<<Qt::endl;
@@ -1119,7 +1119,7 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is a students year's name").arg(sty->name)+"\n";
 		if(!checkSetSeparator(sty->name, setSeparator))
 			lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.", "%1 is a students year's name").arg(sty->name)+"\n";
-		for(StudentsGroup* stg : qAsConst(sty->groupsList)){
+		for(StudentsGroup* stg : std::as_const(sty->groupsList)){
 			ig++;
 			tosExport	<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
 					<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator
@@ -1133,7 +1133,7 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 				lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes component separator |.", "%1 is a students group's name").arg(stg->name)+"\n";
 			if(!checkSetSeparator(stg->name, setSeparator))
 				lastWarnings+=Export::tr("Warning! Import of activities will fail, because %1 includes set separator +.", "%1 is a students group's name").arg(stg->name)+"\n";
-			for(StudentsSubgroup* sts : qAsConst(stg->subgroupsList)){
+			for(StudentsSubgroup* sts : std::as_const(stg->subgroupsList)){
 				is++;
 				tosExport	<<textquote<<protectCSV(sty->name)<<textquote<<fieldSeparator
 						<<CustomFETString::number(sty->numberOfStudents)<<fieldSeparator
@@ -1227,7 +1227,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 	activitiesNumberOfSubactivities.clear();
 	activitiesConstraints.clear();
 	
-	for(Activity* act : qAsConst(gt.rules.activitiesList)){
+	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		assert(!activitiesRepresentant.contains(act->id));
 		activitiesRepresentant.insert(act->id, act->activityGroupId); //act->id is key, act->agid is value
 	
@@ -1237,7 +1237,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 			activitiesNumberOfSubactivities.insert(act->activityGroupId, n); //overwrites old value
 		}
 	}
-	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList)){
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
 		if(tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES && tc->active){
 			ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) tc;
 	
@@ -1257,7 +1257,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 			if(repres>0){
 				if(aset.count()==activitiesNumberOfSubactivities.value(repres, 0)){
 					oktmp=true;
-					for(int aid : qAsConst(aset))
+					for(int aid : std::as_const(aset))
 						if(activitiesRepresentant.value(aid, 0)!=repres){
 							oktmp=false;
 							break;
@@ -1345,7 +1345,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 			if(repres>0){
 				if(aset.count()==activitiesNumberOfSubactivities.value(repres, 0)){
 					oktmp=true;
-					for(int aid : qAsConst(aset))
+					for(int aid : std::as_const(aset))
 						if(activitiesRepresentant.value(aid, 0)!=repres){
 							oktmp=false;
 							break;
@@ -1848,7 +1848,7 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString& textquote,
 							tosExport<<protectCSV(gt.rules.internalRoomsList[r]->name);
 						} else {
 							QStringList rooms;
-							for(int x : qAsConst(best_solution.realRoomsList[i])){
+							for(int x : std::as_const(best_solution.realRoomsList[i])){
 								rooms.append(gt.rules.internalRoomsList[x]->name);
 							}
 							if(SHOW_VIRTUAL_ROOMS_IN_TIMETABLES)

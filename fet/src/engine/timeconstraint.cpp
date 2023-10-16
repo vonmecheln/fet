@@ -2759,7 +2759,7 @@ bool ConstraintActivityTagsNotOverlapping::computeInternalStructure(QWidget* par
 
 	activityTagsIndices.clear();
 	activitiesIndicesLists.clear();
-	for(const QString& activityTagName : qAsConst(activityTagsNames)){
+	for(const QString& activityTagName : std::as_const(activityTagsNames)){
 		int activityTagIndex=r.activityTagsHash.value(activityTagName, -1);
 		assert(activityTagIndex>=0);
 		activityTagsIndices.append(activityTagIndex);
@@ -2802,7 +2802,7 @@ QString ConstraintActivityTagsNotOverlapping::getXmlDescription(Rules& r)
 	QString s="<ConstraintActivityTagsNotOverlapping>\n";
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<Number_of_Activity_Tags>"+QString::number(this->activityTagsNames.count())+"</Number_of_Activity_Tags>\n";
-	for(const QString& atn : qAsConst(activityTagsNames))
+	for(const QString& atn : std::as_const(activityTagsNames))
 		s+="	<Activity_Tag>"+protect(atn)+"</Activity_Tag>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
 	s+="	<Comments>"+protect(comments)+"</Comments>\n";
@@ -2827,7 +2827,7 @@ QString ConstraintActivityTagsNotOverlapping::getDescription(Rules& r)
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));s+=", ";
 	s+=tr("NAT:%1", "Number of activity tags").arg(this->activityTagsNames.count());s+=", ";
 	int i=0;
-	for(const QString& atn : qAsConst(activityTagsNames)){
+	for(const QString& atn : std::as_const(activityTagsNames)){
 		s+=tr("AT:%1", "Activity tag").arg(atn);
 		if(i<this->activityTagsNames.count()-1)
 			s+=", ";
@@ -2845,7 +2845,7 @@ QString ConstraintActivityTagsNotOverlapping::getDetailedDescription(Rules& r)
 	s+=tr("Activity tags must not overlap");s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage));s+="\n";
 	s+=tr("Number of activity tags=%1").arg(this->activityTagsNames.count());s+="\n";
-	for(const QString& atn : qAsConst(activityTagsNames)){
+	for(const QString& atn : std::as_const(activityTagsNames)){
 		s+=tr("Activity tag=%1").arg(atn);
 		s+="\n";
 	}
@@ -2878,14 +2878,14 @@ double ConstraintActivityTagsNotOverlapping::fitness(Solution& c, Rules& r, QLis
 		for(int k2=0; k2<k1; k2++){
 			const QList<int>& l2=activitiesIndicesLists.at(k2);
 			
-			for(int i : qAsConst(l1)){
+			for(int i : std::as_const(l1)){
 				int t1=c.times[i];
 				if(t1!=UNALLOCATED_TIME){
 					int day1=t1%r.nDaysPerWeek;
 					int hour1=t1/r.nDaysPerWeek;
 					int duration1=r.internalActivitiesList[i].duration;
 
-					for(int j : qAsConst(l2)){
+					for(int j : std::as_const(l2)){
 						int t2=c.times[j];
 						if(t2!=UNALLOCATED_TIME){
 							int day2=t2%r.nDaysPerWeek;
@@ -5725,7 +5725,7 @@ bool ConstraintTeachersActivityTagMaxHoursContinuously::computeInternalStructure
 		bool found=false;
 	
 		Teacher* tch=r.internalTeachersList[i];
-		for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+		for(int actIndex : std::as_const(tch->activitiesForTeacher)){
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 				found=true;
 				break;
@@ -5819,12 +5819,12 @@ double ConstraintTeachersActivityTagMaxHoursContinuously::fitness(Solution& c, R
 	Matrix2D<int> crtTeacherTimetableActivityTag;
 	crtTeacherTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 	
-	for(int i : qAsConst(this->canonicalTeachersList)){
+	for(int i : std::as_const(this->canonicalTeachersList)){
 		Teacher* tch=r.internalTeachersList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -6001,7 +6001,7 @@ bool ConstraintTeacherActivityTagMaxHoursContinuously::computeInternalStructure(
 	bool found=false;
 	
 	Teacher* tch=r.internalTeachersList[i];
-	for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+	for(int actIndex : std::as_const(tch->activitiesForTeacher)){
 		if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 			found=true;
 			break;
@@ -6096,12 +6096,12 @@ double ConstraintTeacherActivityTagMaxHoursContinuously::fitness(Solution& c, Ru
 	Matrix2D<int> crtTeacherTimetableActivityTag;
 	crtTeacherTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 	
-	for(int i : qAsConst(this->canonicalTeachersList)){
+	for(int i : std::as_const(this->canonicalTeachersList)){
 		Teacher* tch=r.internalTeachersList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -9180,7 +9180,7 @@ double ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour::fitness(Solution& c,
 	
 	int conflTotal=0;
 
-	for(int i : qAsConst(this->iSubgroupsList)){
+	for(int i : std::as_const(this->iSubgroupsList)){
 		int nGapsFirstHour=0;
 		for(int j=0; j<r.nDaysPerWeek; j++){
 			int k;
@@ -10162,7 +10162,7 @@ double ConstraintStudentsSetMaxHoursContinuously::fitness(Solution& c, Rules& r,
 	int nbroken;
 
 	nbroken=0;
-	for(int i : qAsConst(this->iSubgroupsList)){
+	for(int i : std::as_const(this->iSubgroupsList)){
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			int nc=0;
 			for(int h=0; h<r.nHoursPerDay; h++){
@@ -10316,7 +10316,7 @@ bool ConstraintStudentsActivityTagMaxHoursContinuously::computeInternalStructure
 		bool found=false;
 	
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
-		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+		for(int actIndex : std::as_const(sbg->activitiesForSubgroup)){
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 				found=true;
 				break;
@@ -10416,12 +10416,12 @@ double ConstraintStudentsActivityTagMaxHoursContinuously::fitness(Solution& c, R
 	Matrix2D<int> crtSubgroupTimetableActivityTag;
 	crtSubgroupTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 	
-	for(int i : qAsConst(this->canonicalSubgroupsList)){
+	for(int i : std::as_const(this->canonicalSubgroupsList)){
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
-		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -10706,11 +10706,11 @@ bool ConstraintStudentsSetActivityTagMaxHoursContinuously::computeInternalStruct
 		
 	/////////////
 	this->canonicalSubgroupsList.clear();
-	for(int i : qAsConst(this->iSubgroupsList)){
+	for(int i : std::as_const(this->iSubgroupsList)){
 		bool found=false;
 	
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
-		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+		for(int actIndex : std::as_const(sbg->activitiesForSubgroup)){
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 				found=true;
 				break;
@@ -10743,12 +10743,12 @@ double ConstraintStudentsSetActivityTagMaxHoursContinuously::fitness(Solution& c
 	Matrix2D<int> crtSubgroupTimetableActivityTag;
 	crtSubgroupTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
-	for(int i : qAsConst(this->canonicalSubgroupsList)){
+	for(int i : std::as_const(this->canonicalSubgroupsList)){
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
-		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -12203,7 +12203,7 @@ bool ConstraintActivitiesPreferredTimeSlots::computeInternalStructure(QWidget* p
 		//check if this activity has the corresponding students
 		if(this->p_studentsName!=""){
 			bool commonStudents=false;
-			for(const QString& st : qAsConst(act->studentsNames))
+			for(const QString& st : std::as_const(act->studentsNames))
 				if(r.augmentedSetsShareStudentsFaster(st, p_studentsName)){
 					commonStudents=true;
 					break;
@@ -12294,7 +12294,7 @@ bool ConstraintActivitiesPreferredTimeSlots::hasInactiveActivities(Rules& r)
 		//check if this activity has the corresponding students
 		if(this->p_studentsName!=""){
 			bool commonStudents=false;
-			for(const QString& st : qAsConst(act->studentsNames))
+			for(const QString& st : std::as_const(act->studentsNames))
 				if(r.setsShareStudents(st, p_studentsName)){
 					commonStudents=true;
 					break;
@@ -12555,7 +12555,7 @@ bool ConstraintActivitiesPreferredTimeSlots::isRelatedToActivity(Rules& r, Activ
 	//check if this activity has the corresponding students
 	if(this->p_studentsName!=""){
 		bool commonStudents=false;
-		for(const QString& st : qAsConst(a->studentsNames)){
+		for(const QString& st : std::as_const(a->studentsNames)){
 			if(r.setsShareStudents(st, this->p_studentsName)){
 				commonStudents=true;
 				break;
@@ -12708,7 +12708,7 @@ bool ConstraintSubactivitiesPreferredTimeSlots::computeInternalStructure(QWidget
 		//check if this activity has the corresponding students
 		if(this->p_studentsName!=""){
 			bool commonStudents=false;
-			for(const QString& st : qAsConst(act->studentsNames))
+			for(const QString& st : std::as_const(act->studentsNames))
 				if(r.augmentedSetsShareStudentsFaster(st, p_studentsName)){
 					commonStudents=true;
 					break;
@@ -12802,7 +12802,7 @@ bool ConstraintSubactivitiesPreferredTimeSlots::hasInactiveActivities(Rules& r)
 		//check if this activity has the corresponding students
 		if(this->p_studentsName!=""){
 			bool commonStudents=false;
-			for(const QString& st : qAsConst(act->studentsNames))
+			for(const QString& st : std::as_const(act->studentsNames))
 				if(r.setsShareStudents(st, p_studentsName)){
 					commonStudents=true;
 					break;
@@ -13075,7 +13075,7 @@ bool ConstraintSubactivitiesPreferredTimeSlots::isRelatedToActivity(Rules& r, Ac
 	//check if this activity has the corresponding students
 	if(this->p_studentsName!=""){
 		bool commonStudents=false;
-		for(const QString& st : qAsConst(a->studentsNames)){
+		for(const QString& st : std::as_const(a->studentsNames)){
 			if(r.setsShareStudents(st, this->p_studentsName)){
 				commonStudents=true;
 				break;
@@ -13530,7 +13530,7 @@ bool ConstraintActivitiesPreferredStartingTimes::computeInternalStructure(QWidge
 		//check if this activity has the corresponding students
 		if(this->studentsName!=""){
 			bool commonStudents=false;
-			for(const QString& st : qAsConst(act->studentsNames))
+			for(const QString& st : std::as_const(act->studentsNames))
 				if(r.augmentedSetsShareStudentsFaster(st, studentsName)){
 					commonStudents=true;
 					break;
@@ -13614,7 +13614,7 @@ bool ConstraintActivitiesPreferredStartingTimes::hasInactiveActivities(Rules& r)
 		//check if this activity has the corresponding students
 		if(this->studentsName!=""){
 			bool commonStudents=false;
-			for(const QString& st : qAsConst(act->studentsNames))
+			for(const QString& st : std::as_const(act->studentsNames))
 				if(r.setsShareStudents(st, studentsName)){
 					commonStudents=true;
 					break;
@@ -13869,7 +13869,7 @@ bool ConstraintActivitiesPreferredStartingTimes::isRelatedToActivity(Rules& r, A
 	//check if this activity has the corresponding students
 	if(this->studentsName!=""){
 		bool commonStudents=false;
-		for(const QString& st : qAsConst(a->studentsNames)){
+		for(const QString& st : std::as_const(a->studentsNames)){
 			if(r.setsShareStudents(st, this->studentsName)){
 				commonStudents=true;
 				break;
@@ -14022,7 +14022,7 @@ bool ConstraintSubactivitiesPreferredStartingTimes::computeInternalStructure(QWi
 		//check if this activity has the corresponding students
 		if(this->studentsName!=""){
 			bool commonStudents=false;
-			for(const QString& st : qAsConst(act->studentsNames))
+			for(const QString& st : std::as_const(act->studentsNames))
 				if(r.augmentedSetsShareStudentsFaster(st, studentsName)){
 					commonStudents=true;
 					break;
@@ -14109,7 +14109,7 @@ bool ConstraintSubactivitiesPreferredStartingTimes::hasInactiveActivities(Rules&
 		//check if this activity has the corresponding students
 		if(this->studentsName!=""){
 			bool commonStudents=false;
-			for(const QString& st : qAsConst(act->studentsNames))
+			for(const QString& st : std::as_const(act->studentsNames))
 				if(r.setsShareStudents(st, studentsName)){
 					commonStudents=true;
 					break;
@@ -14372,7 +14372,7 @@ bool ConstraintSubactivitiesPreferredStartingTimes::isRelatedToActivity(Rules& r
 	//check if this activity has the corresponding students
 	if(this->studentsName!=""){
 		bool commonStudents=false;
-		for(const QString& st : qAsConst(a->studentsNames)){
+		for(const QString& st : std::as_const(a->studentsNames)){
 			if(r.setsShareStudents(st, this->studentsName)){
 				commonStudents=true;
 				break;
@@ -16317,7 +16317,7 @@ bool ConstraintTwoSetsOfActivitiesOrdered::computeInternalStructure(QWidget* par
 	QSet<int> sf;
 	
 	this->firstActivitiesIndicesList.clear();
-	for(int firstActivityId : qAsConst(this->firstActivitiesIdsList)){
+	for(int firstActivityId : std::as_const(this->firstActivitiesIdsList)){
 		int i=r.activitiesHash.value(firstActivityId, r.nInternalActivities);
 	
 		if(i<r.nInternalActivities){
@@ -16336,7 +16336,7 @@ bool ConstraintTwoSetsOfActivitiesOrdered::computeInternalStructure(QWidget* par
 
 	bool intersect=false;
 	this->secondActivitiesIndicesList.clear();
-	for(int secondActivityId : qAsConst(this->secondActivitiesIdsList)){
+	for(int secondActivityId : std::as_const(this->secondActivitiesIdsList)){
 		int i=r.activitiesHash.value(secondActivityId, r.nInternalActivities);
 	
 		if(i<r.nInternalActivities){
@@ -16393,12 +16393,12 @@ QString ConstraintTwoSetsOfActivitiesOrdered::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	s+="	<First_Activities_Ids_Set>\n";
 	s+="		<Number_of_Activities>"+QString::number(this->firstActivitiesIdsList.count())+"</Number_of_Activities>\n";
-	for(int ai : qAsConst(this->firstActivitiesIdsList))
+	for(int ai : std::as_const(this->firstActivitiesIdsList))
 		s+="		<Activity_Id>"+CustomFETString::number(ai)+"</Activity_Id>\n";
 	s+="	</First_Activities_Ids_Set>\n";
 	s+="	<Second_Activities_Ids_Set>\n";
 	s+="		<Number_of_Activities>"+QString::number(this->secondActivitiesIdsList.count())+"</Number_of_Activities>\n";
-	for(int ai : qAsConst(this->secondActivitiesIdsList))
+	for(int ai : std::as_const(this->secondActivitiesIdsList))
 		s+="		<Activity_Id>"+CustomFETString::number(ai)+"</Activity_Id>\n";
 	s+="	</Second_Activities_Ids_Set>\n";
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -16428,14 +16428,14 @@ QString ConstraintTwoSetsOfActivitiesOrdered::getDescription(Rules& r)
 	s+=" ";
 	s+=tr("NA:%1", "Number of activities").arg(this->firstActivitiesIdsList.count());
 	s+=", ";
-	for(int ai : qAsConst(this->firstActivitiesIdsList))
+	for(int ai : std::as_const(this->firstActivitiesIdsList))
 		s+=tr("Id:%1").arg(ai)+", ";
 
 	s+=tr("second activities set:");
 	s+=" ";
 	s+=tr("NA:%1", "Number of activities").arg(this->secondActivitiesIdsList.count());
 	s+=", ";
-	for(int ai : qAsConst(this->secondActivitiesIdsList))
+	for(int ai : std::as_const(this->secondActivitiesIdsList))
 		s+=tr("Id:%1").arg(ai)+", ";
 
 	s+=tr("WP:%1%", "Weight percentage").arg(CustomFETString::number(this->weightPercentage));
@@ -16454,7 +16454,7 @@ QString ConstraintTwoSetsOfActivitiesOrdered::getDetailedDescription(Rules& r)
 	s+=tr("First activities set ids:");
 	s+="\n";
 	s+=tr("Number of activities=%1").arg(this->firstActivitiesIdsList.count());s+="\n";
-	for(int ai : qAsConst(this->firstActivitiesIdsList)){
+	for(int ai : std::as_const(this->firstActivitiesIdsList)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 			.arg(ai).arg(getActivityDetailedDescription(r, ai));
 		s+="\n";
@@ -16463,7 +16463,7 @@ QString ConstraintTwoSetsOfActivitiesOrdered::getDetailedDescription(Rules& r)
 	s+=tr("Second activities set ids:");
 	s+="\n";
 	s+=tr("Number of activities=%1").arg(this->secondActivitiesIdsList.count());s+="\n";
-	for(int ai : qAsConst(this->secondActivitiesIdsList)){
+	for(int ai : std::as_const(this->secondActivitiesIdsList)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 			.arg(ai).arg(getActivityDetailedDescription(r, ai));
 		s+="\n";
@@ -16553,7 +16553,7 @@ void ConstraintTwoSetsOfActivitiesOrdered::removeUseless(Rules& r)
 	QList<int> tmpList;
 
 	tmpList.clear();
-	for(int ai : qAsConst(this->firstActivitiesIdsList)){
+	for(int ai : std::as_const(this->firstActivitiesIdsList)){
 		Activity* act=r.activitiesPointerHash.value(ai, nullptr);
 		if(act!=nullptr){
 			assert(act->id==ai);
@@ -16563,7 +16563,7 @@ void ConstraintTwoSetsOfActivitiesOrdered::removeUseless(Rules& r)
 	this->firstActivitiesIdsList=tmpList;
 	
 	tmpList.clear();
-	for(int ai : qAsConst(this->secondActivitiesIdsList)){
+	for(int ai : std::as_const(this->secondActivitiesIdsList)){
 		Activity* act=r.activitiesPointerHash.value(ai, nullptr);
 		if(act!=nullptr){
 			assert(act->id==ai);
@@ -16592,10 +16592,10 @@ bool ConstraintTwoSetsOfActivitiesOrdered::isRelatedToActivity(Rules& r, Activit
 	
 	return firstActivitiesIdsSet.contains(a->id) || secondActivitiesIdsSet.contains(a->id);
 
-	/*for(int ai : qAsConst(this->firstActivitiesIdsList))
+	/*for(int ai : std::as_const(this->firstActivitiesIdsList))
 		if(ai==a->id)
 			return true;
-	for(int ai : qAsConst(this->secondActivitiesIdsList))
+	for(int ai : std::as_const(this->secondActivitiesIdsList))
 		if(ai==a->id)
 			return true;
 	return false;*/
@@ -18743,7 +18743,7 @@ double ConstraintStudentsSetIntervalMaxDaysPerWeek::fitness(Solution& c, Rules& 
 	
 	Matrix1D<bool> ocDay;
 	ocDay.resize(r.nDaysPerWeek);
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			ocDay[d]=false;
 			for(int h=startHour; h<endHour; h++){
@@ -19142,7 +19142,7 @@ bool ConstraintActivitiesEndStudentsDay::computeInternalStructure(QWidget* paren
 		//check if this activity has the corresponding students
 		if(this->studentsName!=""){
 			bool commonStudents=false;
-			for(const QString& st : qAsConst(act->studentsNames))
+			for(const QString& st : std::as_const(act->studentsNames))
 				if(r.augmentedSetsShareStudentsFaster(st, studentsName)){
 					commonStudents=true;
 					break;
@@ -19359,7 +19359,7 @@ bool ConstraintActivitiesEndStudentsDay::isRelatedToActivity(Rules& r, Activity*
 	//check if this activity has the corresponding students
 	if(this->studentsName!=""){
 		bool commonStudents=false;
-		for(const QString& st : qAsConst(a->studentsNames)){
+		for(const QString& st : std::as_const(a->studentsNames)){
 			if(r.setsShareStudents(st, this->studentsName)){
 				commonStudents=true;
 				break;
@@ -19683,7 +19683,7 @@ bool ConstraintActivitiesEndTeachersDay::computeInternalStructure(QWidget* paren
 		//check if this activity has the corresponding students
 		if(this->studentsName!=""){
 			bool commonStudents=false;
-			for(const QString& st : qAsConst(act->studentsNames))
+			for(const QString& st : std::as_const(act->studentsNames))
 				if(r.augmentedSetsShareStudentsFaster(st, studentsName)){
 					commonStudents=true;
 					break;
@@ -19900,7 +19900,7 @@ bool ConstraintActivitiesEndTeachersDay::isRelatedToActivity(Rules& r, Activity*
 	//check if this activity has the corresponding students
 	if(this->studentsName!=""){
 		bool commonStudents=false;
-		for(const QString& st : qAsConst(a->studentsNames)){
+		for(const QString& st : std::as_const(a->studentsNames)){
 			if(r.setsShareStudents(st, this->studentsName)){
 				commonStudents=true;
 				break;
@@ -20002,7 +20002,7 @@ bool ConstraintTeachersActivityTagMaxHoursDaily::computeInternalStructure(QWidge
 		bool found=false;
 	
 		Teacher* tch=r.internalTeachersList[i];
-		for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+		for(int actIndex : std::as_const(tch->activitiesForTeacher)){
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 				found=true;
 				break;
@@ -20097,13 +20097,13 @@ double ConstraintTeachersActivityTagMaxHoursDaily::fitness(Solution& c, Rules& r
 	crtTeacherTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
 	nbroken=0;
-	for(int i : qAsConst(this->canonicalTeachersList)){
+	for(int i : std::as_const(this->canonicalTeachersList)){
 		Teacher* tch=r.internalTeachersList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
 				
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -20247,7 +20247,7 @@ bool ConstraintTeacherActivityTagMaxHoursDaily::computeInternalStructure(QWidget
 	bool found=false;
 	
 	Teacher* tch=r.internalTeachersList[i];
-	for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+	for(int actIndex : std::as_const(tch->activitiesForTeacher)){
 		if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 			found=true;
 			break;
@@ -20343,13 +20343,13 @@ double ConstraintTeacherActivityTagMaxHoursDaily::fitness(Solution& c, Rules& r,
 	crtTeacherTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
 	nbroken=0;
-	for(int i : qAsConst(this->canonicalTeachersList)){
+	for(int i : std::as_const(this->canonicalTeachersList)){
 		Teacher* tch=r.internalTeachersList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
 				
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -20487,7 +20487,7 @@ bool ConstraintStudentsActivityTagMaxHoursDaily::computeInternalStructure(QWidge
 		bool found=false;
 	
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
-		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+		for(int actIndex : std::as_const(sbg->activitiesForSubgroup)){
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 				found=true;
 				break;
@@ -20589,12 +20589,12 @@ double ConstraintStudentsActivityTagMaxHoursDaily::fitness(Solution& c, Rules& r
 	Matrix2D<int> crtSubgroupTimetableActivityTag;
 	crtSubgroupTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
-	for(int i : qAsConst(this->canonicalSubgroupsList)){
+	for(int i : std::as_const(this->canonicalSubgroupsList)){
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
-		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -20848,11 +20848,11 @@ bool ConstraintStudentsSetActivityTagMaxHoursDaily::computeInternalStructure(QWi
 		
 	/////////////
 	this->canonicalSubgroupsList.clear();
-	for(int i : qAsConst(this->iSubgroupsList)){
+	for(int i : std::as_const(this->iSubgroupsList)){
 		bool found=false;
 	
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
-		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+		for(int actIndex : std::as_const(sbg->activitiesForSubgroup)){
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 				found=true;
 				break;
@@ -20885,12 +20885,12 @@ double ConstraintStudentsSetActivityTagMaxHoursDaily::fitness(Solution& c, Rules
 	Matrix2D<int> crtSubgroupTimetableActivityTag;
 	crtSubgroupTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 	
-	for(int i : qAsConst(this->canonicalSubgroupsList)){
+	for(int i : std::as_const(this->canonicalSubgroupsList)){
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
-		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -21030,7 +21030,7 @@ bool ConstraintTeachersActivityTagMinHoursDaily::computeInternalStructure(QWidge
 		bool found=false;
 	
 		Teacher* tch=r.internalTeachersList[i];
-		for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+		for(int actIndex : std::as_const(tch->activitiesForTeacher)){
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 				found=true;
 				break;
@@ -21131,13 +21131,13 @@ double ConstraintTeachersActivityTagMinHoursDaily::fitness(Solution& c, Rules& r
 	crtTeacherTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
 	nbroken=0;
-	for(int i : qAsConst(this->canonicalTeachersList)){
+	for(int i : std::as_const(this->canonicalTeachersList)){
 		Teacher* tch=r.internalTeachersList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
 				
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -21285,7 +21285,7 @@ bool ConstraintTeacherActivityTagMinHoursDaily::computeInternalStructure(QWidget
 	bool found=false;
 	
 	Teacher* tch=r.internalTeachersList[i];
-	for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+	for(int actIndex : std::as_const(tch->activitiesForTeacher)){
 		if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 			found=true;
 			break;
@@ -21387,13 +21387,13 @@ double ConstraintTeacherActivityTagMinHoursDaily::fitness(Solution& c, Rules& r,
 	crtTeacherTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
 	nbroken=0;
-	for(int i : qAsConst(this->canonicalTeachersList)){
+	for(int i : std::as_const(this->canonicalTeachersList)){
 		Teacher* tch=r.internalTeachersList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
 				
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -21535,7 +21535,7 @@ bool ConstraintStudentsActivityTagMinHoursDaily::computeInternalStructure(QWidge
 		bool found=false;
 	
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
-		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+		for(int actIndex : std::as_const(sbg->activitiesForSubgroup)){
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 				found=true;
 				break;
@@ -21643,12 +21643,12 @@ double ConstraintStudentsActivityTagMinHoursDaily::fitness(Solution& c, Rules& r
 	Matrix2D<int> crtSubgroupTimetableActivityTag;
 	crtSubgroupTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 	
-	for(int i : qAsConst(this->canonicalSubgroupsList)){
+	for(int i : std::as_const(this->canonicalSubgroupsList)){
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
-		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -21913,11 +21913,11 @@ bool ConstraintStudentsSetActivityTagMinHoursDaily::computeInternalStructure(QWi
 		
 	/////////////
 	this->canonicalSubgroupsList.clear();
-	for(int i : qAsConst(this->iSubgroupsList)){
+	for(int i : std::as_const(this->iSubgroupsList)){
 		bool found=false;
 	
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
-		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+		for(int actIndex : std::as_const(sbg->activitiesForSubgroup)){
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 				found=true;
 				break;
@@ -21950,12 +21950,12 @@ double ConstraintStudentsSetActivityTagMinHoursDaily::fitness(Solution& c, Rules
 
 	nbroken=0;
 	
-	for(int i : qAsConst(this->canonicalSubgroupsList)){
+	for(int i : std::as_const(this->canonicalSubgroupsList)){
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
-		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -22575,7 +22575,7 @@ bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::computeInternalStructu
 {
 	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
 	_activitiesIndices.clear();
-	for(int id : qAsConst(activitiesIds)){
+	for(int id : std::as_const(activitiesIds)){
 		int i=r.activitiesHash.value(id, -1);
 		if(i>=0)
 			_activitiesIndices.append(i);
@@ -22640,7 +22640,7 @@ bool ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::hasInactiveActivities(
 {
 	//returns true if all activities are inactive
 	
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		if(!r.inactiveActivities.contains(aid))
 			return false;
 
@@ -22656,7 +22656,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getXmlDescription(R
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
 	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
 	s+="	<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
@@ -22687,7 +22687,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDescription(Rule
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 		
@@ -22712,7 +22712,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDetailedDescript
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 		
@@ -22725,7 +22725,7 @@ QString ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::getDetailedDescript
 	s+=tr("Activities occupy max time slots from selection"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : qAsConst(this->activitiesIds)){
+	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
 		 .arg(getActivityDetailedDescription(r, id));
@@ -22769,7 +22769,7 @@ double ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::fitness(Solution& c,
 		for(int h=0; h<r.nHoursPerDay; h++)
 			used[d][h]=false;
 	
-	for(int ai : qAsConst(this->_activitiesIndices)){
+	for(int ai : std::as_const(this->_activitiesIndices)){
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			Activity* act=&r.internalActivitiesList[ai];
 			int d=c.times[ai]%r.nDaysPerWeek;
@@ -22816,7 +22816,7 @@ void ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::removeUseless(Rules& r
 {
 	QList<int> newActs;
 	
-	for(int aid : qAsConst(activitiesIds)){
+	for(int aid : std::as_const(activitiesIds)){
 		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
 		if(act!=nullptr)
 			newActs.append(aid);
@@ -22951,7 +22951,7 @@ bool ConstraintActivitiesOccupyMinTimeSlotsFromSelection::computeInternalStructu
 {
 	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
 	_activitiesIndices.clear();
-	for(int id : qAsConst(activitiesIds)){
+	for(int id : std::as_const(activitiesIds)){
 		int i=r.activitiesHash.value(id, -1);
 		if(i>=0)
 			_activitiesIndices.append(i);
@@ -23016,7 +23016,7 @@ bool ConstraintActivitiesOccupyMinTimeSlotsFromSelection::hasInactiveActivities(
 {
 	//returns true if all activities are inactive
 	
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		if(!r.inactiveActivities.contains(aid))
 			return false;
 
@@ -23032,7 +23032,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getXmlDescription(R
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
 	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
 	s+="	<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
@@ -23063,7 +23063,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDescription(Rule
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 		
@@ -23088,7 +23088,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDetailedDescript
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 		
@@ -23101,7 +23101,7 @@ QString ConstraintActivitiesOccupyMinTimeSlotsFromSelection::getDetailedDescript
 	s+=tr("Activities occupy min time slots from selection"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : qAsConst(this->activitiesIds)){
+	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
 		 .arg(getActivityDetailedDescription(r, id));
@@ -23145,7 +23145,7 @@ double ConstraintActivitiesOccupyMinTimeSlotsFromSelection::fitness(Solution& c,
 		for(int h=0; h<r.nHoursPerDay; h++)
 			used[d][h]=false;
 	
-	for(int ai : qAsConst(this->_activitiesIndices)){
+	for(int ai : std::as_const(this->_activitiesIndices)){
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			Activity* act=&r.internalActivitiesList[ai];
 			int d=c.times[ai]%r.nDaysPerWeek;
@@ -23201,7 +23201,7 @@ void ConstraintActivitiesOccupyMinTimeSlotsFromSelection::removeUseless(Rules& r
 {
 	QList<int> newActs;
 	
-	for(int aid : qAsConst(activitiesIds)){
+	for(int aid : std::as_const(activitiesIds)){
 		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
 		if(act!=nullptr)
 			newActs.append(aid);
@@ -23336,7 +23336,7 @@ bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::computeInternalStru
 {
 	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
 	_activitiesIndices.clear();
-	for(int id : qAsConst(activitiesIds)){
+	for(int id : std::as_const(activitiesIds)){
 		int i=r.activitiesHash.value(id, -1);
 		if(i>=0)
 			_activitiesIndices.append(i);
@@ -23401,7 +23401,7 @@ bool ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::hasInactiveActiviti
 {
 	//returns true if all activities are inactive
 	
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		if(!r.inactiveActivities.contains(aid))
 			return false;
 
@@ -23417,7 +23417,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getXmlDescriptio
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
 	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
 	s+="	<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
@@ -23448,7 +23448,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDescription(R
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 		
@@ -23473,7 +23473,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDetailedDescr
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 		
@@ -23486,7 +23486,7 @@ QString ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::getDetailedDescr
 	s+=tr("Activities max simultaneous in selected time slots"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : qAsConst(this->activitiesIds)){
+	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
 		 .arg(getActivityDetailedDescription(r, id));
@@ -23531,7 +23531,7 @@ double ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::fitness(Solution&
 		for(int h=0; h<r.nHoursPerDay; h++)
 			count[d][h]=0;
 	
-	for(int ai : qAsConst(this->_activitiesIndices)){
+	for(int ai : std::as_const(this->_activitiesIndices)){
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			Activity* act=&r.internalActivitiesList[ai];
 			int d=c.times[ai]%r.nDaysPerWeek;
@@ -23575,7 +23575,7 @@ void ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::removeUseless(Rules
 {
 	QList<int> newActs;
 	
-	for(int aid : qAsConst(activitiesIds)){
+	for(int aid : std::as_const(activitiesIds)){
 		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
 		if(act!=nullptr)
 			newActs.append(aid);
@@ -23709,7 +23709,7 @@ bool ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::computeInternalStru
 {
 	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
 	_activitiesIndices.clear();
-	for(int id : qAsConst(activitiesIds)){
+	for(int id : std::as_const(activitiesIds)){
 		int i=r.activitiesHash.value(id, -1);
 		if(i>=0)
 			_activitiesIndices.append(i);
@@ -23774,7 +23774,7 @@ bool ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::hasInactiveActiviti
 {
 	//returns true if all activities are inactive
 	
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		if(!r.inactiveActivities.contains(aid))
 			return false;
 
@@ -23790,7 +23790,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getXmlDescriptio
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
 	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
 	s+="	<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
@@ -23822,7 +23822,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDescription(R
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 		
@@ -23849,7 +23849,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDetailedDescr
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 		
@@ -23862,7 +23862,7 @@ QString ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::getDetailedDescr
 	s+=tr("Activities min simultaneous in selected time slots"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : qAsConst(this->activitiesIds)){
+	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
 		 .arg(getActivityDetailedDescription(r, id));
@@ -23908,7 +23908,7 @@ double ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::fitness(Solution&
 		for(int h=0; h<r.nHoursPerDay; h++)
 			count[d][h]=0;
 	
-	for(int ai : qAsConst(this->_activitiesIndices)){
+	for(int ai : std::as_const(this->_activitiesIndices)){
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			Activity* act=&r.internalActivitiesList[ai];
 			int d=c.times[ai]%r.nDaysPerWeek;
@@ -23963,7 +23963,7 @@ void ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::removeUseless(Rules
 {
 	QList<int> newActs;
 	
-	for(int aid : qAsConst(activitiesIds)){
+	for(int aid : std::as_const(activitiesIds)){
 		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
 		if(act!=nullptr)
 			newActs.append(aid);
@@ -24096,7 +24096,7 @@ bool ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::computeInternalStru
 {
 	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
 	_activitiesIndices.clear();
-	for(int id : qAsConst(activitiesIds)){
+	for(int id : std::as_const(activitiesIds)){
 		int i=r.activitiesHash.value(id, -1);
 		if(i>=0)
 			_activitiesIndices.append(i);
@@ -24161,7 +24161,7 @@ bool ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::hasInactiveActiviti
 {
 	//returns true if all activities are inactive
 
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		if(!r.inactiveActivities.contains(aid))
 			return false;
 
@@ -24177,7 +24177,7 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getXmlDescriptio
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
 	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 
 	s+="	<Number_of_Selected_Time_Slots>"+QString::number(this->selectedDays.count())+"</Number_of_Selected_Time_Slots>\n";
@@ -24208,7 +24208,7 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDescription(R
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 
@@ -24233,7 +24233,7 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDetailedDescr
 	assert(this->selectedDays.count()==this->selectedHours.count());
 
 	/*QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);*/
 
@@ -24246,7 +24246,7 @@ QString ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::getDetailedDescr
 	s+=tr("Max total activities from set in selected time slots"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : qAsConst(this->activitiesIds)){
+	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
 		 .arg(getActivityDetailedDescription(r, id));
@@ -24290,7 +24290,7 @@ double ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::fitness(Solution&
 		selectedTimeSlotsSet.insert(selectedDays.at(i)+selectedHours.at(i)*r.nDaysPerWeek);
 
 	int cnt=0;
-	for(int ai : qAsConst(this->_activitiesIndices)){
+	for(int ai : std::as_const(this->_activitiesIndices)){
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			Activity* act=&r.internalActivitiesList[ai];
 			for(int dur=0; dur<act->duration; dur++){
@@ -24329,7 +24329,7 @@ void ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::removeUseless(Rules
 {
 	QList<int> newActs;
 
-	for(int aid : qAsConst(activitiesIds)){
+	for(int aid : std::as_const(activitiesIds)){
 		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
 		if(act!=nullptr)
 			newActs.append(aid);
@@ -24458,7 +24458,7 @@ bool ConstraintActivitiesMaxInATerm::computeInternalStructure(QWidget* parent, R
 {
 	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
 	_activitiesIndices.clear();
-	for(int id : qAsConst(activitiesIds)){
+	for(int id : std::as_const(activitiesIds)){
 		int i=r.activitiesHash.value(id, -1);
 		if(i>=0)
 			_activitiesIndices.append(i);
@@ -24488,7 +24488,7 @@ bool ConstraintActivitiesMaxInATerm::hasInactiveActivities(Rules& r)
 {
 	//returns true if all activities are inactive
 
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		if(!r.inactiveActivities.contains(aid))
 			return false;
 
@@ -24504,7 +24504,7 @@ QString ConstraintActivitiesMaxInATerm::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
 	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 
 	s+="	<Max_Number_of_Activities_in_A_Term>"+CustomFETString::number(this->maxActivitiesInATerm)+"</Max_Number_of_Activities_in_A_Term>\n";
@@ -24528,7 +24528,7 @@ QString ConstraintActivitiesMaxInATerm::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 
@@ -24545,7 +24545,7 @@ QString ConstraintActivitiesMaxInATerm::getDescription(Rules& r)
 QString ConstraintActivitiesMaxInATerm::getDetailedDescription(Rules& r)
 {
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 
@@ -24553,7 +24553,7 @@ QString ConstraintActivitiesMaxInATerm::getDetailedDescription(Rules& r)
 	s+=tr("Activities max in a term"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : qAsConst(this->activitiesIds)){
+	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
 		 .arg(getActivityDetailedDescription(r, id));
@@ -24593,7 +24593,7 @@ double ConstraintActivitiesMaxInATerm::fitness(Solution& c, Rules& r, QList<doub
 	cnt.resize(r.nTerms);
 	for(int i=0; i<r.nTerms; i++)
 		cnt[i]=0;
-	for(int ai : qAsConst(this->_activitiesIndices))
+	for(int ai : std::as_const(this->_activitiesIndices))
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int term=d/r.nDaysPerTerm;
@@ -24627,7 +24627,7 @@ void ConstraintActivitiesMaxInATerm::removeUseless(Rules& r)
 {
 	QList<int> newActs;
 
-	for(int aid : qAsConst(activitiesIds)){
+	for(int aid : std::as_const(activitiesIds)){
 		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
 		if(act!=nullptr)
 			newActs.append(aid);
@@ -24729,7 +24729,7 @@ bool ConstraintActivitiesOccupyMaxTerms::computeInternalStructure(QWidget* paren
 {
 	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
 	_activitiesIndices.clear();
-	for(int id : qAsConst(activitiesIds)){
+	for(int id : std::as_const(activitiesIds)){
 		int i=r.activitiesHash.value(id, -1);
 		if(i>=0)
 			_activitiesIndices.append(i);
@@ -24759,7 +24759,7 @@ bool ConstraintActivitiesOccupyMaxTerms::hasInactiveActivities(Rules& r)
 {
 	//returns true if all activities are inactive
 
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		if(!r.inactiveActivities.contains(aid))
 			return false;
 
@@ -24775,7 +24775,7 @@ QString ConstraintActivitiesOccupyMaxTerms::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
 	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 
 	s+="	<Max_Number_of_Occupied_Terms>"+CustomFETString::number(this->maxOccupiedTerms)+"</Max_Number_of_Occupied_Terms>\n";
@@ -24799,7 +24799,7 @@ QString ConstraintActivitiesOccupyMaxTerms::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 
@@ -24816,7 +24816,7 @@ QString ConstraintActivitiesOccupyMaxTerms::getDescription(Rules& r)
 QString ConstraintActivitiesOccupyMaxTerms::getDetailedDescription(Rules& r)
 {
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 
@@ -24824,7 +24824,7 @@ QString ConstraintActivitiesOccupyMaxTerms::getDetailedDescription(Rules& r)
 	s+=tr("Activities occupy max terms"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : qAsConst(this->activitiesIds)){
+	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
 		 .arg(getActivityDetailedDescription(r, id));
@@ -24864,7 +24864,7 @@ double ConstraintActivitiesOccupyMaxTerms::fitness(Solution& c, Rules& r, QList<
 	occupiedTerm.resize(r.nTerms);
 	for(int i=0; i<r.nTerms; i++)
 		occupiedTerm[i]=false;
-	for(int ai : qAsConst(this->_activitiesIndices))
+	for(int ai : std::as_const(this->_activitiesIndices))
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int term=d/r.nDaysPerTerm;
@@ -24902,7 +24902,7 @@ void ConstraintActivitiesOccupyMaxTerms::removeUseless(Rules& r)
 {
 	QList<int> newActs;
 
-	for(int aid : qAsConst(activitiesIds)){
+	for(int aid : std::as_const(activitiesIds)){
 		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
 		if(act!=nullptr)
 			newActs.append(aid);
@@ -25137,7 +25137,7 @@ double ConstraintStudentsSetMaxDaysPerWeek::fitness(Solution& c, Rules& r, QList
 	
 	Matrix1D<bool> ocDay;
 	ocDay.resize(r.nDaysPerWeek);
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			ocDay[d]=false;
 			for(int h=0; h<r.nHoursPerDay; h++){
@@ -26019,7 +26019,7 @@ double ConstraintStudentsSetMaxSpanPerDay::fitness(Solution& c, Rules& r, QList<
 	
 	int nbroken=0;
 	
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			int begin=-1;
 			int end=-1;
@@ -26865,7 +26865,7 @@ double ConstraintStudentsSetMinRestingHours::fitness(Solution& c, Rules& r, QLis
 	
 	int nbroken=0;
 
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		for(int d=0; d<=r.nDaysPerWeek-2+(circular?1:0); d++){
 			int cnt=0;
 			for(int h=r.nHoursPerDay-1; h>=0; h--){
@@ -27305,12 +27305,12 @@ bool ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::computeIntern
 		
 	/////////////
 	this->canonicalSubgroupsList.clear();
-	for(int i : qAsConst(iSubgroupsList)){
+	for(int i : std::as_const(iSubgroupsList)){
 		bool foundF=false; //found first
 		bool foundS=false; //found second
 	
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
-		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+		for(int actIndex : std::as_const(sbg->activitiesForSubgroup)){
 			if(!foundF)
 				if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_firstActivityTagIndex))
 					foundF=true;
@@ -27346,14 +27346,14 @@ double ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags::fitness(Sol
 	Matrix2D<int> crtSubgroupTimetableActivityTag;
 	crtSubgroupTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
-	for(int i : qAsConst(this->canonicalSubgroupsList)){
+	for(int i : std::as_const(this->canonicalSubgroupsList)){
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
 
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -27582,7 +27582,7 @@ bool ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::computeInternalS
 		bool foundS=false; //found second
 	
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
-		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+		for(int actIndex : std::as_const(sbg->activitiesForSubgroup)){
 			if(!foundF)
 				if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_firstActivityTagIndex))
 					foundF=true;
@@ -27618,14 +27618,14 @@ double ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags::fitness(Soluti
 	Matrix2D<int> crtSubgroupTimetableActivityTag;
 	crtSubgroupTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
-	for(int i : qAsConst(this->canonicalSubgroupsList)){
+	for(int i : std::as_const(this->canonicalSubgroupsList)){
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
 
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -27872,7 +27872,7 @@ bool ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::computeInternalSt
 	
 	Teacher* tch=r.internalTeachersList[teacherIndex];
 	
-	for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+	for(int actIndex : std::as_const(tch->activitiesForTeacher)){
 		if(!foundF)
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_firstActivityTagIndex))
 				foundF=true;
@@ -27907,14 +27907,14 @@ double ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags::fitness(Solutio
 	Matrix2D<int> crtTeacherTimetableActivityTag;
 	crtTeacherTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
-	for(int i : qAsConst(this->canonicalTeachersList)){
+	for(int i : std::as_const(this->canonicalTeachersList)){
 		Teacher* tch=r.internalTeachersList[i];
 
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -28150,7 +28150,7 @@ bool ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::computeInternalS
 	
 		Teacher* tch=r.internalTeachersList[teacherIndex];
 	
-		for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+		for(int actIndex : std::as_const(tch->activitiesForTeacher)){
 			if(!foundF)
 				if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_firstActivityTagIndex))
 					foundF=true;
@@ -28185,14 +28185,14 @@ double ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags::fitness(Soluti
 	Matrix2D<int> crtTeacherTimetableActivityTag;
 	crtTeacherTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
-	for(int i : qAsConst(this->canonicalTeachersList)){
+	for(int i : std::as_const(this->canonicalTeachersList)){
 		Teacher* tch=r.internalTeachersList[i];
 
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -28469,11 +28469,11 @@ bool ConstraintStudentsSetMinGapsBetweenActivityTag::computeInternalStructure(QW
 		
 	/////////////
 	this->canonicalSubgroupsList.clear();
-	for(int i : qAsConst(iSubgroupsList)){
+	for(int i : std::as_const(iSubgroupsList)){
 		bool found=false;
 	
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
-		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+		for(int actIndex : std::as_const(sbg->activitiesForSubgroup)){
 			if(!found)
 				if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_activityTagIndex))
 					found=true;
@@ -28506,14 +28506,14 @@ double ConstraintStudentsSetMinGapsBetweenActivityTag::fitness(Solution& c, Rule
 	Matrix2D<int> crtSubgroupTimetableActivityTag;
 	crtSubgroupTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
-	for(int i : qAsConst(this->canonicalSubgroupsList)){
+	for(int i : std::as_const(this->canonicalSubgroupsList)){
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
 
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -28729,7 +28729,7 @@ bool ConstraintStudentsMinGapsBetweenActivityTag::computeInternalStructure(QWidg
 		bool found=false;
 	
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
-		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+		for(int actIndex : std::as_const(sbg->activitiesForSubgroup)){
 			if(!found)
 				if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_activityTagIndex))
 					found=true;
@@ -28762,14 +28762,14 @@ double ConstraintStudentsMinGapsBetweenActivityTag::fitness(Solution& c, Rules& 
 	Matrix2D<int> crtSubgroupTimetableActivityTag;
 	crtSubgroupTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
-	for(int i : qAsConst(this->canonicalSubgroupsList)){
+	for(int i : std::as_const(this->canonicalSubgroupsList)){
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
 
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -29002,7 +29002,7 @@ bool ConstraintTeacherMinGapsBetweenActivityTag::computeInternalStructure(QWidge
 	
 	Teacher* tch=r.internalTeachersList[teacherIndex];
 	
-	for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+	for(int actIndex : std::as_const(tch->activitiesForTeacher)){
 		if(!found)
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_activityTagIndex))
 				found=true;
@@ -29034,14 +29034,14 @@ double ConstraintTeacherMinGapsBetweenActivityTag::fitness(Solution& c, Rules& r
 	Matrix2D<int> crtTeacherTimetableActivityTag;
 	crtTeacherTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
-	for(int i : qAsConst(this->canonicalTeachersList)){
+	for(int i : std::as_const(this->canonicalTeachersList)){
 		Teacher* tch=r.internalTeachersList[i];
 
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -29263,7 +29263,7 @@ bool ConstraintTeachersMinGapsBetweenActivityTag::computeInternalStructure(QWidg
 	
 		Teacher* tch=r.internalTeachersList[teacherIndex];
 	
-		for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+		for(int actIndex : std::as_const(tch->activitiesForTeacher)){
 			if(!found)
 				if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->_activityTagIndex))
 					found=true;
@@ -29295,14 +29295,14 @@ double ConstraintTeachersMinGapsBetweenActivityTag::fitness(Solution& c, Rules& 
 	Matrix2D<int> crtTeacherTimetableActivityTag;
 	crtTeacherTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
-	for(int i : qAsConst(this->canonicalTeachersList)){
+	for(int i : std::as_const(this->canonicalTeachersList)){
 		Teacher* tch=r.internalTeachersList[i];
 
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -33791,7 +33791,7 @@ bool ConstraintTeachersActivityTagMaxHoursDailyRealDays::computeInternalStructur
 		bool found=false;
 
 		Teacher* tch=r.internalTeachersList[i];
-		for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+		for(int actIndex : std::as_const(tch->activitiesForTeacher)){
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 				found=true;
 				break;
@@ -33882,13 +33882,13 @@ double ConstraintTeachersActivityTagMaxHoursDailyRealDays::fitness(Solution& c, 
 	nbroken=0;
 	Matrix2D<int> crtTeacherTimetableActivityTag;
 	crtTeacherTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
-	for(int i : qAsConst(this->canonicalTeachersList)){
+	for(int i : std::as_const(this->canonicalTeachersList)){
 		Teacher* tch=r.internalTeachersList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -34037,7 +34037,7 @@ bool ConstraintTeacherActivityTagMaxHoursDailyRealDays::computeInternalStructure
 	bool found=false;
 
 	Teacher* tch=r.internalTeachersList[i];
-	for(int actIndex : qAsConst(tch->activitiesForTeacher)){
+	for(int actIndex : std::as_const(tch->activitiesForTeacher)){
 		if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 			found=true;
 			break;
@@ -34129,13 +34129,13 @@ double ConstraintTeacherActivityTagMaxHoursDailyRealDays::fitness(Solution& c, R
 	nbroken=0;
 	Matrix2D<int> crtTeacherTimetableActivityTag;
 	crtTeacherTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
-	for(int i : qAsConst(this->canonicalTeachersList)){
+	for(int i : std::as_const(this->canonicalTeachersList)){
 		Teacher* tch=r.internalTeachersList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -34278,7 +34278,7 @@ bool ConstraintStudentsActivityTagMaxHoursDailyRealDays::computeInternalStructur
 		bool found=false;
 
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
-		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+		for(int actIndex : std::as_const(sbg->activitiesForSubgroup)){
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 				found=true;
 				break;
@@ -34379,12 +34379,12 @@ double ConstraintStudentsActivityTagMaxHoursDailyRealDays::fitness(Solution& c, 
 
 	Matrix2D<int> crtSubgroupTimetableActivityTag;
 	crtSubgroupTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
-	for(int i : qAsConst(this->canonicalSubgroupsList)){
+	for(int i : std::as_const(this->canonicalSubgroupsList)){
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
-		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -34643,11 +34643,11 @@ bool ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::computeInternalStruc
 
 	/////////////
 	this->canonicalSubgroupsList.clear();
-	for(int i : qAsConst(this->iSubgroupsList)){
+	for(int i : std::as_const(this->iSubgroupsList)){
 		bool found=false;
 
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
-		for(int actIndex : qAsConst(sbg->activitiesForSubgroup)){
+		for(int actIndex : std::as_const(sbg->activitiesForSubgroup)){
 			if(r.internalActivitiesList[actIndex].iActivityTagsSet.contains(this->activityTagIndex)){
 				found=true;
 				break;
@@ -34680,12 +34680,12 @@ double ConstraintStudentsSetActivityTagMaxHoursDailyRealDays::fitness(Solution& 
 
 	Matrix2D<int> crtSubgroupTimetableActivityTag;
 	crtSubgroupTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
-	for(int i : qAsConst(this->canonicalSubgroupsList)){
+	for(int i : std::as_const(this->canonicalSubgroupsList)){
 		StudentsSubgroup* sbg=r.internalSubgroupsList[i];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
-		for(int ai : qAsConst(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(sbg->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -35463,7 +35463,7 @@ double ConstraintStudentsSetMaxRealDaysPerWeek::fitness(Solution& c, Rules& r, Q
 
 	nbroken=0;
 
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		/*bool ocDay[MAX_DAYS_PER_WEEK];
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			ocDay[d]=false;
@@ -36367,7 +36367,7 @@ double ConstraintStudentsSetMaxSpanPerRealDay::fitness(Solution& c, Rules& r, QL
 
 	int nbroken=0;
 
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		for(int d=0; d<r.nDaysPerWeek/2; d++){
 			int begin=-1;
 			int end=-1;
@@ -37763,7 +37763,7 @@ double ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3::fitness(Solution& c,
 		for(int h=0; h<r.nHoursPerDay; h++)
 			crtTeacherTimetableActivityTag[d][h]=-1;
 
-	for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+	for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 		int d=c.times[ai]%r.nDaysPerWeek;
 		int h=c.times[ai]/r.nDaysPerWeek;
 		for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -37958,7 +37958,7 @@ double ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3::fitness(Solution& c
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -41552,7 +41552,7 @@ double ConstraintStudentsSetMaxAfternoonsPerWeek::fitness(Solution& c, Rules& r,
 
 	nbroken=0;
 
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		/*bool ocDay[MAX_DAYS_PER_WEEK];
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			ocDay[d]=false;
@@ -42017,7 +42017,7 @@ double ConstraintStudentsSetMaxMorningsPerWeek::fitness(Solution& c, Rules& r, Q
 
 	nbroken=0;
 
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		/*bool ocDay[MAX_DAYS_PER_WEEK];
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			ocDay[d]=false;
@@ -42483,7 +42483,7 @@ double ConstraintStudentsSetMinAfternoonsPerWeek::fitness(Solution& c, Rules& r,
 
 	nbroken=0;
 
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		/*bool ocDay[MAX_DAYS_PER_WEEK];
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			ocDay[d]=false;
@@ -42948,7 +42948,7 @@ double ConstraintStudentsSetMinMorningsPerWeek::fitness(Solution& c, Rules& r, Q
 
 	nbroken=0;
 
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		/*bool ocDay[MAX_DAYS_PER_WEEK];
 		for(int d=0; d<r.nDaysPerWeek; d++){
 			ocDay[d]=false;
@@ -43465,7 +43465,7 @@ double ConstraintStudentsSetMorningIntervalMaxDaysPerWeek::fitness(Solution& c, 
 
 	Matrix1D<bool> ocDay;
 	ocDay.resize(r.nDaysPerWeek);
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		for(int d=0; d<r.nDaysPerWeek; d+=2){ //morning
 			ocDay[d]=false;
 			for(int h=startHour; h<endHour; h++){
@@ -44025,7 +44025,7 @@ double ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek::fitness(Solution& c
 
 	Matrix1D<bool> ocDay;
 	ocDay.resize(r.nDaysPerWeek);
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		for(int d=1; d<r.nDaysPerWeek; d+=2){ //afternoon
 			ocDay[d]=false;
 			for(int h=startHour; h<endHour; h++){
@@ -44907,7 +44907,7 @@ double ConstraintStudentsSetMaxHoursPerAllAfternoons::fitness(Solution& c, Rules
 
 	int nbroken=0;
 
-	for(int i : qAsConst(this->iSubgroupsList)){
+	for(int i : std::as_const(this->iSubgroupsList)){
 		int n_hours=0;
 		for(int d=1; d<r.nDaysPerWeek; d+=2) //afternoon
 			for(int h=0; h<r.nHoursPerDay; h++)
@@ -45710,7 +45710,7 @@ double ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon::fitness(S
 
 	int nbroken=0;
 
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		for(int d=0; d<r.nDaysPerWeek; d+=2){ //morning
 			int cnt=0;
 			for(int h=r.nHoursPerDay-1; h>=0; h--){
@@ -46394,7 +46394,7 @@ double ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour::fitness(So
 
 	int conflTotal=0;
 
-	for(int i : qAsConst(this->iSubgroupsList)){
+	for(int i : std::as_const(this->iSubgroupsList)){
 		int nGapsFirstHour=0;
 		for(int j=0; j<r.nDaysPerWeek; j++){
 			if(j%2==0)
@@ -48418,7 +48418,7 @@ double ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour::fitness(Solu
 
 	int conflTotal=0;
 
-	for(int i : qAsConst(this->iSubgroupsList)){
+	for(int i : std::as_const(this->iSubgroupsList)){
 		int nGapsFirstHour=0;
 		for(int j=0; j<r.nDaysPerWeek; j++){
 			if(j%2==1)
@@ -50102,7 +50102,7 @@ bool ConstraintActivitiesMinInATerm::computeInternalStructure(QWidget* parent, R
 {
 	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
 	_activitiesIndices.clear();
-	for(int id : qAsConst(activitiesIds)){
+	for(int id : std::as_const(activitiesIds)){
 		int i=r.activitiesHash.value(id, -1);
 		if(i>=0)
 			_activitiesIndices.append(i);
@@ -50132,7 +50132,7 @@ bool ConstraintActivitiesMinInATerm::hasInactiveActivities(Rules& r)
 {
 	//returns true if all activities are inactive
 
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		if(!r.inactiveActivities.contains(aid))
 			return false;
 
@@ -50148,7 +50148,7 @@ QString ConstraintActivitiesMinInATerm::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 
 	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 
 	s+="	<Min_Number_of_Activities_in_A_Term>"+CustomFETString::number(this->minActivitiesInATerm)+"</Min_Number_of_Activities_in_A_Term>\n";
@@ -50177,7 +50177,7 @@ QString ConstraintActivitiesMinInATerm::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 
@@ -50195,7 +50195,7 @@ QString ConstraintActivitiesMinInATerm::getDescription(Rules& r)
 QString ConstraintActivitiesMinInATerm::getDetailedDescription(Rules& r)
 {
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 
@@ -50203,7 +50203,7 @@ QString ConstraintActivitiesMinInATerm::getDetailedDescription(Rules& r)
 	s+=tr("Activities min in a term"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : qAsConst(this->activitiesIds)){
+	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
 		 .arg(getActivityDetailedDescription(r, id));
@@ -50245,7 +50245,7 @@ double ConstraintActivitiesMinInATerm::fitness(Solution& c, Rules& r, QList<doub
 	cnt.resize(r.nTerms);
 	for(int i=0; i<r.nTerms; i++)
 		cnt[i]=0;
-	for(int ai : qAsConst(this->_activitiesIndices))
+	for(int ai : std::as_const(this->_activitiesIndices))
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int term=d/r.nDaysPerTerm;
@@ -50289,7 +50289,7 @@ void ConstraintActivitiesMinInATerm::removeUseless(Rules& r)
 {
 	QList<int> newActs;
 
-	for(int aid : qAsConst(activitiesIds)){
+	for(int aid : std::as_const(activitiesIds)){
 		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
 		if(act!=nullptr)
 			newActs.append(aid);
@@ -50812,13 +50812,13 @@ double ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3::fitness(Solution
 
 	Matrix2D<int> crtSubgroupTimetableActivityTag;
 	crtSubgroupTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		StudentsSubgroup* ss=r.internalSubgroupsList[sbg];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(ss->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(ss->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -51009,7 +51009,7 @@ double ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3::fitness(Solution& c
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(ss->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(ss->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -51207,7 +51207,7 @@ double ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3::fitness(Solution
 		for(int h=0; h<r.nHoursPerDay; h++)
 			crtTeacherTimetableActivityTag[d][h]=-1;
 
-	for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+	for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 		int d=c.times[ai]%r.nDaysPerWeek;
 		int h=c.times[ai]/r.nDaysPerWeek;
 		for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -51406,7 +51406,7 @@ double ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3::fitness(Solutio
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtTeacherTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(tch->activitiesForTeacher)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -51612,13 +51612,13 @@ double ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3::fitness(Solu
 
 	Matrix2D<int> crtSubgroupTimetableActivityTag;
 	crtSubgroupTimetableActivityTag.resize(r.nDaysPerWeek, r.nHoursPerDay);
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		StudentsSubgroup* ss=r.internalSubgroupsList[sbg];
 		for(int d=0; d<r.nDaysPerWeek; d++)
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(ss->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(ss->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -51813,7 +51813,7 @@ double ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3::fitness(Solutio
 			for(int h=0; h<r.nHoursPerDay; h++)
 				crtSubgroupTimetableActivityTag[d][h]=-1;
 
-		for(int ai : qAsConst(ss->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
+		for(int ai : std::as_const(ss->activitiesForSubgroup)) if(c.times[ai]!=UNALLOCATED_TIME){
 			int d=c.times[ai]%r.nDaysPerWeek;
 			int h=c.times[ai]/r.nDaysPerWeek;
 			for(int dur=0; dur<r.internalActivitiesList[ai].duration; dur++){
@@ -52508,7 +52508,7 @@ bool ConstraintActivitiesBeginStudentsDay::computeInternalStructure(QWidget* par
 		//check if this activity has the corresponding students
 		if(this->studentsName!=""){
 			bool commonStudents=false;
-			for(const QString& st : qAsConst(act->studentsNames))
+			for(const QString& st : std::as_const(act->studentsNames))
 				if(r.augmentedSetsShareStudentsFaster(st, studentsName)){
 					commonStudents=true;
 					break;
@@ -52725,7 +52725,7 @@ bool ConstraintActivitiesBeginStudentsDay::isRelatedToActivity(Rules& r, Activit
 	//check if this activity has the corresponding students
 	if(this->studentsName!=""){
 		bool commonStudents=false;
-		for(const QString& st : qAsConst(a->studentsNames)){
+		for(const QString& st : std::as_const(a->studentsNames)){
 			if(r.setsShareStudents(st, this->studentsName)){
 				commonStudents=true;
 				break;
@@ -53049,7 +53049,7 @@ bool ConstraintActivitiesBeginTeachersDay::computeInternalStructure(QWidget* par
 		//check if this activity has the corresponding students
 		if(this->studentsName!=""){
 			bool commonStudents=false;
-			for(const QString& st : qAsConst(act->studentsNames))
+			for(const QString& st : std::as_const(act->studentsNames))
 				if(r.augmentedSetsShareStudentsFaster(st, studentsName)){
 					commonStudents=true;
 					break;
@@ -53266,7 +53266,7 @@ bool ConstraintActivitiesBeginTeachersDay::isRelatedToActivity(Rules& r, Activit
 	//check if this activity has the corresponding students
 	if(this->studentsName!=""){
 		bool commonStudents=false;
-		for(const QString& st : qAsConst(a->studentsNames)){
+		for(const QString& st : std::as_const(a->studentsNames)){
 			if(r.setsShareStudents(st, this->studentsName)){
 				commonStudents=true;
 				break;

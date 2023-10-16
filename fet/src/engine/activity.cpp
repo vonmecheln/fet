@@ -41,7 +41,7 @@ void GroupActivitiesInInitialOrderItem::removeUseless(Rules& r)
 {
 	QList<int> tmpList;
 	
-	for(int id : qAsConst(ids)){
+	for(int id : std::as_const(ids)){
 		Activity* act=r.activitiesPointerHash.value(id, nullptr);
 		if(act!=nullptr)
 			tmpList.append(id);
@@ -68,7 +68,7 @@ QString GroupActivitiesInInitialOrderItem::getXmlDescription(Rules& r)
 
 	s+="<GroupActivitiesInInitialOrder>\n";
 	s+="	<Number_of_Activities>"+QString::number(ids.count())+"</Number_of_Activities>\n";
-	for(int id : qAsConst(ids))
+	for(int id : std::as_const(ids))
 		s+=QString("	<Activity_Id>")+CustomFETString::number(id)+QString("</Activity_Id>\n");
 
 	s+="	<Active>";
@@ -96,7 +96,7 @@ QString GroupActivitiesInInitialOrderItem::getDescription(Rules& r)
 	QString s=tr("Group activities in the initial order item");
 	s+=QString(", ");
 	s+=tr("NA:%1", "Number of activities").arg(ids.count());
-	for(int id : qAsConst(ids))
+	for(int id : std::as_const(ids))
 		s+=QString(", ")+tr("Id:%1", "Id of activity").arg(id);
 
 	QString end=QString("");
@@ -111,7 +111,7 @@ QString GroupActivitiesInInitialOrderItem::getDetailedDescription(Rules& r)
 	QString s=tr("Timetable generation option"); s+=QString("\n");
 	s+=tr("Group activities in the initial order item"); s+=QString("\n");
 	s+=tr("Number of activities=%1").arg(ids.count()); s+=QString("\n");
-	for(int id : qAsConst(ids)){
+	for(int id : std::as_const(ids)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
 		 .arg(getActivityDetailedDescription(r, id));
@@ -352,7 +352,7 @@ void Activity::computeInternalStructure(Rules& r)
 
 	//activity tags
 	this->iActivityTagsSet.clear();
-	for(const QString& tag : qAsConst(this->activityTagsNames)){
+	for(const QString& tag : std::as_const(this->activityTagsNames)){
 		assert(tag!="");
 		int index=r.activityTagsHash.value(tag, -1); //r.searchActivityTag(tag);
 		assert(index>=0);
@@ -476,7 +476,7 @@ QString Activity::getXmlDescription(Rules& r)
 
 	s+="	<Subject>" + protect(this->subjectName) + "</Subject>\n";
 
-	for(const QString& tag : qAsConst(this->activityTagsNames))
+	for(const QString& tag : std::as_const(this->activityTagsNames))
 		s+="	<Activity_Tag>" + protect(tag) + "</Activity_Tag>\n";
 
 	for(QStringList::const_iterator it=this->studentsNames.constBegin(); it!=this->studentsNames.constEnd(); it++)
@@ -654,7 +654,7 @@ QString Activity::getDetailedDescription(Rules& r)
 
 	s+=tr("Subject=%1").arg(this->subjectName);
 	s+="\n";
-	for(const QString& tag : qAsConst(this->activityTagsNames)){
+	for(const QString& tag : std::as_const(this->activityTagsNames)){
 		assert(tag!="");
 		s+=tr("Activity tag=%1").arg(tag);
 		s+="\n";

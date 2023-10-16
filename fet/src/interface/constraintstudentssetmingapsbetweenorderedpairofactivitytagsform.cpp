@@ -58,12 +58,12 @@ ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTagsForm::ConstraintStud
 	
 	firstActivityTagComboBox->clear();
 	firstActivityTagComboBox->addItem("");
-	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
 		firstActivityTagComboBox->addItem(at->name);
 
 	secondActivityTagComboBox->clear();
 	secondActivityTagComboBox->addItem("");
-	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
 		secondActivityTagComboBox->addItem(at->name);
 
 	this->filterChanged();

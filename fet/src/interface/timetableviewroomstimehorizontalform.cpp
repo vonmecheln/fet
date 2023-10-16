@@ -884,7 +884,7 @@ QColor TimetableViewRoomsTimeHorizontalForm::stringToColor(const QString& s)
 	// CRC-24 based on RFC 2440 Section 6.1
 	unsigned long int crc = 0xB704CEUL;
 	QByteArray ba=s.toUtf8();
-	for(char c : qAsConst(ba)){
+	for(char c : std::as_const(ba)){
 		unsigned char uc=(unsigned char)(c);
 		crc ^= (uc & 0xFF) << 16;
 		for (int i = 0; i < 8; i++) {
@@ -969,7 +969,7 @@ void TimetableViewRoomsTimeHorizontalForm::detailActivity(QTableWidgetItem* item
 
 					if(gt.rules.internalRoomsList[r]->isVirtual==true){
 						QStringList tsl;
-						for(int i : qAsConst(best_solution.realRoomsList[ai]))
+						for(int i : std::as_const(best_solution.realRoomsList[ai]))
 							tsl.append(gt.rules.internalRoomsList[i]->name);
 						s+=QString(" (")+tsl.join(", ")+QString(")");
 					}
@@ -1196,7 +1196,7 @@ void TimetableViewRoomsTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 					if(count>=2)
 						QMessageBox::warning(this, tr("FET warning"), tr("You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints").arg(tmptc.size()));
 
-					for(TimeConstraint* deltc : qAsConst(tmptc)){
+					for(TimeConstraint* deltc : std::as_const(tmptc)){
 						s+=tr("The following constraint will be deleted:")+"\n"+deltc->getDetailedDescription(gt.rules)+"\n";
 						gt.rules.removeTimeConstraint(deltc);
 						idsOfLockedTime.remove(act->id);
@@ -1270,7 +1270,7 @@ void TimetableViewRoomsTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 					if(gt.rules.internalRoomsList[ri]->isVirtual==false)
 						assert(tc->realRoomsList[ai].isEmpty());
 					else
-						for(int rr : qAsConst(tc->realRoomsList[ai]))
+						for(int rr : std::as_const(tc->realRoomsList[ai]))
 							tl.append(gt.rules.internalRoomsList[rr]->name);
 					
 					ConstraintActivityPreferredRoom* ctr=new ConstraintActivityPreferredRoom(100, act->id, (gt.rules.internalRoomsList[ri])->name, tl, false);
@@ -1294,7 +1294,7 @@ void TimetableViewRoomsTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 					if(count>=2)
 						QMessageBox::warning(this, tr("FET warning"), tr("You may have a problem, because FET expected to delete 1 constraint, but will delete %1 constraints").arg(tmpsc.size()));
 
-					for(SpaceConstraint* delsc : qAsConst(tmpsc)){
+					for(SpaceConstraint* delsc : std::as_const(tmpsc)){
 						s+=tr("The following constraint will be deleted:")+"\n"+delsc->getDetailedDescription(gt.rules)+"\n";
 						gt.rules.removeSpaceConstraint(delsc);
 						idsOfLockedSpace.remove(act->id);

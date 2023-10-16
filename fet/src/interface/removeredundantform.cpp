@@ -63,7 +63,7 @@ void RemoveRedundantForm::wasAccepted()
 {
 	QMultiHash<int, int> adjMatrix;
 
-	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList)){
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
 		if(tc->weightPercentage==100.0){
 			if(tc->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
 				ConstraintActivitiesSameStartingTime* cst=(ConstraintActivitiesSameStartingTime*) tc;
@@ -88,7 +88,7 @@ void RemoveRedundantForm::wasAccepted()
 	
 	QQueue<int> queue;
 
-	for(Activity* act : qAsConst(gt.rules.activitiesList)){
+	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		int start=act->id;
 		
 		if(repr.value(start, -1)==-1){ //not visited
@@ -98,7 +98,7 @@ void RemoveRedundantForm::wasAccepted()
 				int crtHead=queue.dequeue();
 				assert(repr.value(crtHead, -1)==start);
 				QList<int> neighList=adjMatrix.values(crtHead);
-				for(int neigh : qAsConst(neighList)){
+				for(int neigh : std::as_const(neighList)){
 					if(repr.value(neigh, -1)==-1){
 						queue.enqueue(neigh);
 						repr.insert(neigh, start);
@@ -113,7 +113,7 @@ void RemoveRedundantForm::wasAccepted()
 	
 	QList<ConstraintMinDaysBetweenActivities*> mdcList;
 	
-	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList)){
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
 		if(tc->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
 			mdcList.append((ConstraintMinDaysBetweenActivities*)tc);
 		}
@@ -212,7 +212,7 @@ void RemoveRedundantForm::wasAccepted()
 
 	QList<ConstraintMinHalfDaysBetweenActivities*> mhdcList;
 	
-	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList)){
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
 		if(tc->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
 			mhdcList.append((ConstraintMinHalfDaysBetweenActivities*)tc);
 		}
@@ -310,9 +310,9 @@ void RemoveRedundantForm::wasAccepted()
 	}
 	
 	QList<TimeConstraint*> toBeRemovedCombinedList;
-	for(ConstraintMinDaysBetweenActivities* c : qAsConst(toBeRemovedList))
+	for(ConstraintMinDaysBetweenActivities* c : std::as_const(toBeRemovedList))
 		toBeRemovedCombinedList.append(c);
-	for(ConstraintMinHalfDaysBetweenActivities* c : qAsConst(toBeRemovedHalfList))
+	for(ConstraintMinHalfDaysBetweenActivities* c : std::as_const(toBeRemovedHalfList))
 		toBeRemovedCombinedList.append(c);
 
 	///////////
@@ -338,8 +338,8 @@ void RemoveRedundantForm::wasAccepted()
 	
 	QString s=tr("The following time constraints will be inactivated (their weight will be made 0%):");
 	s+="\n\n";
-	//for(ConstraintMinDaysBetweenActivities* ctr : qAsConst(toBeRemovedList)){
-	for(TimeConstraint* ctr : qAsConst(toBeRemovedCombinedList)){
+	//for(ConstraintMinDaysBetweenActivities* ctr : std::as_const(toBeRemovedList)){
+	for(TimeConstraint* ctr : std::as_const(toBeRemovedCombinedList)){
 		if(ctr->weightPercentage>0.0){
 			s+=ctr->getDetailedDescription(gt.rules);
 			s+="\n";
@@ -381,7 +381,7 @@ void RemoveRedundantForm::wasAccepted()
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 	
-	for(TimeConstraint* mdc : qAsConst(toBeRemovedCombinedList))
+	for(TimeConstraint* mdc : std::as_const(toBeRemovedCombinedList))
 		mdc->weightPercentage=0.0;
 	
 	toBeRemovedCombinedList.clear();

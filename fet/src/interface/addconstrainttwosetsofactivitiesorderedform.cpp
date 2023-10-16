@@ -347,13 +347,13 @@ void AddConstraintTwoSetsOfActivitiesOrderedForm::swap()
 	firstSelectedActivitiesListWidget->clear();
 	secondSelectedActivitiesListWidget->clear();
 
-	for(int actId : qAsConst(this->firstSelectedActivitiesList)){
+	for(int actId : std::as_const(this->firstSelectedActivitiesList)){
 		Activity *act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 		assert(act!=nullptr);
 		firstSelectedActivitiesListWidget->addItem(act->getDescription(gt.rules));
 	}
 
-	for(int actId : qAsConst(this->secondSelectedActivitiesList)){
+	for(int actId : std::as_const(this->secondSelectedActivitiesList)){
 		Activity *act=gt.rules.activitiesPointerHash.value(actId, nullptr);
 		assert(act!=nullptr);
 		secondSelectedActivitiesListWidget->addItem(act->getDescription(gt.rules));

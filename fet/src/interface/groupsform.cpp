@@ -132,7 +132,7 @@ void GroupsForm::addExistingGroups()
 	
 	StudentsYear* year=nullptr;
 	
-	for(StudentsYear* sty : qAsConst(gt.rules.yearsList))
+	for(StudentsYear* sty : std::as_const(gt.rules.yearsList))
 		if(sty->name==yearName){
 			year=sty;
 			break;
@@ -176,8 +176,8 @@ void GroupsForm::removeGroup()
 
 	QList<QString> yearsContainingGroup_List;
 	//QSet<QString> yearsContainingGroup_Set;
-	for(StudentsYear* year : qAsConst(gt.rules.yearsList))
-		for(StudentsGroup* group : qAsConst(year->groupsList))
+	for(StudentsYear* year : std::as_const(gt.rules.yearsList))
+		for(StudentsGroup* group : std::as_const(year->groupsList))
 			if(group->name==groupName)
 				yearsContainingGroup_List.append(year->name);
 			
@@ -190,7 +190,7 @@ void GroupsForm::removeGroup()
 		s=tr("This group exists in more places, listed below. It will only be removed from the current year,"
 		 " and the related activities and constraints will not be removed. Do you want to continue?");
 		s+="\n";
-		for(const QString& str : qAsConst(yearsContainingGroup_List))
+		for(const QString& str : std::as_const(yearsContainingGroup_List))
 			s+=QString("\n")+str;
 	}
 	
@@ -247,8 +247,8 @@ void GroupsForm::purgeGroup()
 
 	QList<QString> yearsContainingGroup_List;
 	//QSet<QString> yearsContainingGroup_Set;
-	for(StudentsYear* year : qAsConst(gt.rules.yearsList))
-		for(StudentsGroup* group : qAsConst(year->groupsList))
+	for(StudentsYear* year : std::as_const(gt.rules.yearsList))
+		for(StudentsGroup* group : std::as_const(year->groupsList))
 			if(group->name==groupName)
 				yearsContainingGroup_List.append(year->name);
 			
@@ -261,7 +261,7 @@ void GroupsForm::purgeGroup()
 		s=tr("This group exists in more places, listed below. It will be removed from all these places."
 		 " All the related activities and constraints will be removed. Do you want to continue?");
 		s+="\n";
-		for(const QString& str : qAsConst(yearsContainingGroup_List))
+		for(const QString& str : std::as_const(yearsContainingGroup_List))
 			s+=QString("\n")+str;
 	}
 	

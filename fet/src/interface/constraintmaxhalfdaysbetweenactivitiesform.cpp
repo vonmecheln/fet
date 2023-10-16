@@ -122,7 +122,7 @@ bool ConstraintMaxHalfDaysBetweenActivitiesForm::filterOk(TimeConstraint* ctr)
 	for(int i=0; i<c->n_activities; i++){
 		int id=c->activitiesIds[i];
 		/*Activity* act=nullptr;
-		for(Activity* a : qAsConst(gt.rules.activitiesList))
+		for(Activity* a : std::as_const(gt.rules.activitiesList))
 			if(a->id==id)
 				act=a;*/
 		Activity* act=gt.rules.activitiesPointerHash.value(id, nullptr);

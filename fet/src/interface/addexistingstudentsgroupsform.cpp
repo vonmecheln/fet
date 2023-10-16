@@ -85,13 +85,13 @@ AddExistingStudentsGroupsForm::~AddExistingStudentsGroupsForm()
 void AddExistingStudentsGroupsForm::sortedToggled()
 {
 	QSet<StudentsGroup*> ts;
-	for(StudentsGroup* stg : qAsConst(year->groupsList))
+	for(StudentsGroup* stg : std::as_const(year->groupsList))
 		ts.insert(stg);
 	
 	allGroupsList.clear();
 	QSet<StudentsGroup*> allGroupsSet;
-	for(StudentsYear* sty : qAsConst(gt.rules.yearsList))
-		for(StudentsGroup* stg : qAsConst(sty->groupsList))
+	for(StudentsYear* sty : std::as_const(gt.rules.yearsList))
+		for(StudentsGroup* stg : std::as_const(sty->groupsList))
 			if(!allGroupsSet.contains(stg) && !ts.contains(stg)){
 				allGroupsList.append(stg);
 				allGroupsSet.insert(stg);
@@ -101,13 +101,13 @@ void AddExistingStudentsGroupsForm::sortedToggled()
 		std::stable_sort(allGroupsList.begin(), allGroupsList.end(), alphabeticCompareFunction);
 	
 	allGroupsListWidget->clear();
-	for(StudentsGroup* stg : qAsConst(allGroupsList))
+	for(StudentsGroup* stg : std::as_const(allGroupsList))
 		allGroupsListWidget->addItem(stg->name);
 }
 
 void AddExistingStudentsGroupsForm::ok()
 {
-	for(StudentsGroup* stg : qAsConst(selectedGroupsList))
+	for(StudentsGroup* stg : std::as_const(selectedGroupsList))
 		gt.rules.addGroupFast(year, stg);
 		
 	this->accept();

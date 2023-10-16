@@ -151,11 +151,11 @@ void RoomsForm::removeRoom()
 	int nv=0;
 	int nvtotal=0;
 	if(rm->isVirtual==false){
-		for(Room* rr : qAsConst(gt.rules.roomsList)){
+		for(Room* rr : std::as_const(gt.rules.roomsList)){
 			bool met=false;
 			if(rr->isVirtual==true){
 				assert(rr->name!=rm->name);
-				for(const QStringList& tl : qAsConst(rr->realRoomsSetsList)){
+				for(const QStringList& tl : std::as_const(rr->realRoomsSetsList)){
 					if(tl.contains(rm->name)){
 						nvtotal++;
 						met=true;
@@ -416,7 +416,7 @@ void RoomsForm::makeReal()
 		return;
 	}
 	
-	for(SpaceConstraint* ctr : qAsConst(gt.rules.spaceConstraintsList))
+	for(SpaceConstraint* ctr : std::as_const(gt.rules.spaceConstraintsList))
 		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*)ctr;
 			
@@ -473,10 +473,10 @@ void RoomsForm::makeEditVirtual()
 	
 	QStringList vlcr; //virtual rooms containing rm
 	if(rm->isVirtual==false)
-		for(Room* rm2 : qAsConst(gt.rules.roomsList))
+		for(Room* rm2 : std::as_const(gt.rules.roomsList))
 			if(rm2!=rm)
 				if(rm2->isVirtual==true)
-					for(const QStringList& tl : qAsConst(rm2->realRoomsSetsList))
+					for(const QStringList& tl : std::as_const(rm2->realRoomsSetsList))
 						if(tl.contains(rm->name)){
 							vlcr.append(rm2->name);
 							break;
@@ -489,7 +489,7 @@ void RoomsForm::makeEditVirtual()
 	}
 
 	if(rm->isVirtual==false)
-		for(SpaceConstraint* ctr : qAsConst(gt.rules.spaceConstraintsList))
+		for(SpaceConstraint* ctr : std::as_const(gt.rules.spaceConstraintsList))
 			if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 				ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*)ctr;
 				

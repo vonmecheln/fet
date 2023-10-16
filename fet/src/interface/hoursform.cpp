@@ -192,7 +192,7 @@ void HoursForm::ok()
 	int oldHours=gt.rules.nHoursPerDay;
 	gt.rules.nHoursPerDay=nHours;
 	
-	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList))
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList))
 		if(tc->hasWrongDayOrHour(gt.rules)){
 			if(tc->canRepairWrongDayOrHour(gt.rules))
 				cnt_mod++;
@@ -200,7 +200,7 @@ void HoursForm::ok()
 				cnt_rem++;
 		}
 
-	for(SpaceConstraint* sc : qAsConst(gt.rules.spaceConstraintsList))
+	for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList))
 		if(sc->hasWrongDayOrHour(gt.rules)){
 			if(sc->canRepairWrongDayOrHour(gt.rules))
 				cnt_mod++;
@@ -236,7 +236,7 @@ void HoursForm::ok()
 
 		//time
 		QList<TimeConstraint*> toBeRemovedTime;
-		for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList)){
+		for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList)){
 			if(tc->hasWrongDayOrHour(gt.rules)){
 				bool tmp=tc->canRepairWrongDayOrHour(gt.rules);
 				if(tmp){
@@ -251,7 +251,7 @@ void HoursForm::ok()
 		bool recomputeTime=false;
 
 		if(toBeRemovedTime.count()>0){
-			for(TimeConstraint* tc : qAsConst(toBeRemovedTime)){
+			for(TimeConstraint* tc : std::as_const(toBeRemovedTime)){
 				if(tc->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME)
 					recomputeTime=true;
 				bool tmp=gt.rules.removeTimeConstraint(tc);
@@ -262,7 +262,7 @@ void HoursForm::ok()
 
 		//space
 		QList<SpaceConstraint*> toBeRemovedSpace;
-		for(SpaceConstraint* sc : qAsConst(gt.rules.spaceConstraintsList)){
+		for(SpaceConstraint* sc : std::as_const(gt.rules.spaceConstraintsList)){
 			if(sc->hasWrongDayOrHour(gt.rules)){
 				bool tmp=sc->canRepairWrongDayOrHour(gt.rules);
 				if(tmp){
@@ -278,7 +278,7 @@ void HoursForm::ok()
 		bool recomputeSpace=false;
 
 		if(toBeRemovedSpace.count()>0){
-			for(SpaceConstraint* sc : qAsConst(toBeRemovedSpace)){
+			for(SpaceConstraint* sc : std::as_const(toBeRemovedSpace)){
 				if(sc->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM)
 					recomputeSpace=true;
 				bool tmp=gt.rules.removeSpaceConstraint(sc);

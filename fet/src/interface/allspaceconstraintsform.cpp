@@ -452,14 +452,14 @@ void AllSpaceConstraintsForm::filterChanged()
 	visibleSpaceConstraintsList.clear();
 	constraintsListWidget->clear();
 	int n_active=0;
-	for(SpaceConstraint* ctr : qAsConst(gt.rules.spaceConstraintsList))
+	for(SpaceConstraint* ctr : std::as_const(gt.rules.spaceConstraintsList))
 		if(filterOk(ctr))
 			visibleSpaceConstraintsList.append(ctr);
 			
 	if(sortedCheckBox->isChecked())
 		std::stable_sort(visibleSpaceConstraintsList.begin(), visibleSpaceConstraintsList.end(), spaceConstraintsAscendingByDescription);
 	
-	for(SpaceConstraint* ctr : qAsConst(visibleSpaceConstraintsList)){
+	for(SpaceConstraint* ctr : std::as_const(visibleSpaceConstraintsList)){
 		assert(filterOk(ctr));
 		constraintsListWidget->addItem(ctr->getDescription(gt.rules));
 
@@ -883,7 +883,7 @@ void AllSpaceConstraintsForm::removeConstraint()
 			delete item;
 			
 			int n_active=0;
-			for(SpaceConstraint* ctr2 : qAsConst(visibleSpaceConstraintsList))
+			for(SpaceConstraint* ctr2 : std::as_const(visibleSpaceConstraintsList))
 				if(ctr2->active)
 					n_active++;
 		
@@ -1016,7 +1016,7 @@ void AllSpaceConstraintsForm::activateConstraint()
 		}
 	
 		int n_active=0;
-		for(SpaceConstraint* ctr2 : qAsConst(visibleSpaceConstraintsList))
+		for(SpaceConstraint* ctr2 : std::as_const(visibleSpaceConstraintsList))
 			if(ctr2->active)
 				n_active++;
 		
@@ -1079,7 +1079,7 @@ void AllSpaceConstraintsForm::deactivateConstraint()
 		}
 	
 		int n_active=0;
-		for(SpaceConstraint* ctr2 : qAsConst(visibleSpaceConstraintsList))
+		for(SpaceConstraint* ctr2 : std::as_const(visibleSpaceConstraintsList))
 			if(ctr2->active)
 				n_active++;
 		
@@ -1103,7 +1103,7 @@ void AllSpaceConstraintsForm::activateAllConstraints()
 
 	int cnt=0;
 	bool recomputeSpace=false;
-	for(SpaceConstraint* ctr : qAsConst(visibleSpaceConstraintsList)){
+	for(SpaceConstraint* ctr : std::as_const(visibleSpaceConstraintsList)){
 		if(!ctr->active){
 			cnt++;
 			ctr->active=true;
@@ -1140,7 +1140,7 @@ void AllSpaceConstraintsForm::deactivateAllConstraints()
 
 	int cnt=0;
 	bool recomputeSpace=false;
-	for(SpaceConstraint* ctr : qAsConst(visibleSpaceConstraintsList)){
+	for(SpaceConstraint* ctr : std::as_const(visibleSpaceConstraintsList)){
 		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE)
 			continue;
 		if(ctr->active){
@@ -1259,7 +1259,7 @@ void AllSpaceConstraintsForm::constraintComments()
 				currentConstraintTextEdit->setPlainText(QString(""));
 
 			int n_active=0;
-			for(SpaceConstraint* ctr2 : qAsConst(visibleSpaceConstraintsList))
+			for(SpaceConstraint* ctr2 : std::as_const(visibleSpaceConstraintsList))
 				if(ctr2->active)
 					n_active++;
 		

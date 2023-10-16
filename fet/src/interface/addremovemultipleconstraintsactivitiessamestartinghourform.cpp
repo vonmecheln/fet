@@ -62,7 +62,7 @@ void AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::addAllConstrain
 	int cnt=0;
 	QMap<std::tuple<QString, QStringList, QStringList, QStringList>, QList<int>> mp;
 	
-	for(Activity* act : qAsConst(gt.rules.activitiesList)){
+	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		QString sbj=QString();
 		if(sameSubjectCheckBox->isChecked())
 			sbj=act->subjectName;
@@ -107,7 +107,7 @@ void AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::removeAllConstr
 		return;
 	
 	QList<TimeConstraint*> tcl;
-	for(TimeConstraint* tc : qAsConst(gt.rules.timeConstraintsList))
+	for(TimeConstraint* tc : std::as_const(gt.rules.timeConstraintsList))
 		if(tc->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR)
 			tcl.append(tc);
 	int t=tcl.count();

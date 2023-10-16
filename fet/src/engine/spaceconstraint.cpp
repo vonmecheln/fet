@@ -1171,7 +1171,7 @@ double ConstraintTeacherRoomNotAvailableTimes::fitness(
 		for(int h2=0; h2<r.nHoursPerDay; h2++)
 			crtRoomsTimetable[d2][h2].clear();
 
-	for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+	for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 		if(c.times[ai]!=UNALLOCATED_TIME && c.rooms[ai]!=UNALLOCATED_SPACE && c.rooms[ai]!=UNSPECIFIED_ROOM){
 			int d2=c.times[ai]%r.nDaysPerWeek;
 			int h2=c.times[ai]/r.nDaysPerWeek;
@@ -1184,7 +1184,7 @@ double ConstraintTeacherRoomNotAvailableTimes::fitness(
 
 				Room* vr=r.internalRoomsList[c.rooms[ai]];
 				if(vr->isVirtual){
-					for(int rr : qAsConst(c.realRoomsList[ai])){
+					for(int rr : std::as_const(c.realRoomsList[ai])){
 						assert(!crtRoomsTimetable[d2][h2+dur].contains(rr));
 						assert(rr>=0 && rr<r.nInternalRooms);
 						crtRoomsTimetable[d2][h2+dur].insert(rr);
@@ -1379,7 +1379,7 @@ bool ConstraintActivityPreferredRoom::computeInternalStructure(QWidget* parent, 
 	assert(this->_room>=0);
 	
 	preferredRealRooms.clear();
-	for(const QString& rrn : qAsConst(preferredRealRoomsNames)){
+	for(const QString& rrn : std::as_const(preferredRealRoomsNames)){
 		int rr=r.roomsHash.value(rrn, -1);
 
 		if(rr<0){
@@ -1415,7 +1415,7 @@ QString ConstraintActivityPreferredRoom::getXmlDescription(Rules& r)
 
 	if(!preferredRealRoomsNames.isEmpty()){
 		s+="	<Number_of_Real_Rooms>"+QString::number(preferredRealRoomsNames.count())+"</Number_of_Real_Rooms>\n";
-		for(const QString& rrn : qAsConst(preferredRealRoomsNames))
+		for(const QString& rrn : std::as_const(preferredRealRoomsNames))
 			s+="	<Real_Room>"+protect(rrn)+"</Real_Room>\n";
 	}
 	
@@ -1452,7 +1452,7 @@ QString ConstraintActivityPreferredRoom::getDescription(Rules& r)
 	if(!preferredRealRoomsNames.isEmpty()){
 		s+=" (";
 		QStringList sl;
-		for(const QString& rrn : qAsConst(preferredRealRoomsNames))
+		for(const QString& rrn : std::as_const(preferredRealRoomsNames))
 			sl.append(tr("RR:%1", "Real room").arg(rrn));
 		s+=sl.join(", ");
 		s+=")";
@@ -1478,7 +1478,7 @@ QString ConstraintActivityPreferredRoom::getDetailedDescription(Rules& r)
 	s+=tr("Room=%1").arg(this->roomName);s+="\n";
 
 	if(!preferredRealRoomsNames.isEmpty())
-		for(const QString& rrn : qAsConst(preferredRealRoomsNames)){
+		for(const QString& rrn : std::as_const(preferredRealRoomsNames)){
 			s+=tr("Real room=%1").arg(rrn);
 			s+="\n";
 		}
@@ -1695,7 +1695,7 @@ bool ConstraintActivityPreferredRooms::computeInternalStructure(QWidget* parent,
 	}
 	
 	this->_rooms.clear();
-	for(const QString& rm : qAsConst(this->roomsNames)){
+	for(const QString& rm : std::as_const(this->roomsNames)){
 		//int t=r.searchRoom(rm);
 		int t=r.roomsHash.value(rm, -1);
 
@@ -2064,7 +2064,7 @@ double ConstraintStudentsSetHomeRoom::fitness(
 	bool ok2=true;
 
 	nbroken=0;
-	for(int ac : qAsConst(this->_activities)){
+	for(int ac : std::as_const(this->_activities)){
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE) //counted as unallocated
 			continue;
@@ -2077,7 +2077,7 @@ double ConstraintStudentsSetHomeRoom::fitness(
 		} //OK
 		else{ //other room, from subject (activity tag) pref. room(s)
 			bool okk=false;
-			for(const PreferredRoomsItem& it : qAsConst(activitiesPreferredRoomsList[ac]))
+			for(const PreferredRoomsItem& it : std::as_const(activitiesPreferredRoomsList[ac]))
 				if(it.preferredRooms.contains(rm))
 					okk=true;
 			assert(okk);
@@ -2222,7 +2222,7 @@ bool ConstraintStudentsSetHomeRooms::computeInternalStructure(QWidget* parent, R
 
 	this->_rooms.clear();
 
-	for(const QString& rm : qAsConst(this->roomsNames)){
+	for(const QString& rm : std::as_const(this->roomsNames)){
 		//int t=r.searchRoom(rm);
 		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
@@ -2343,7 +2343,7 @@ double ConstraintStudentsSetHomeRooms::fitness(
 	bool ok2=true;
 
 	nbroken=0;
-	for(int ac : qAsConst(this->_activities)){
+	for(int ac : std::as_const(this->_activities)){
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE)
 			continue;
@@ -2358,7 +2358,7 @@ double ConstraintStudentsSetHomeRooms::fitness(
 				ok=false;
 			else{
 				bool okk=false;
-				for(const PreferredRoomsItem& it : qAsConst(activitiesPreferredRoomsList[ac]))
+				for(const PreferredRoomsItem& it : std::as_const(activitiesPreferredRoomsList[ac]))
 					if(it.preferredRooms.contains(rm))
 						okk=true;
 				assert(okk);
@@ -2609,7 +2609,7 @@ double ConstraintTeacherHomeRoom::fitness(
 	bool ok2=true;
 
 	nbroken=0;
-	for(int ac : qAsConst(this->_activities)){
+	for(int ac : std::as_const(this->_activities)){
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE) //counted as unallocated
 			continue;
@@ -2621,7 +2621,7 @@ double ConstraintTeacherHomeRoom::fitness(
 		} //OK
 		else{ //other room, from subject (activity tag) pref. room(s)
 			bool okk=false;
-			for(const PreferredRoomsItem& it : qAsConst(activitiesPreferredRoomsList[ac]))
+			for(const PreferredRoomsItem& it : std::as_const(activitiesPreferredRoomsList[ac]))
 				if(it.preferredRooms.contains(rm))
 					okk=true;
 			assert(okk);
@@ -2765,7 +2765,7 @@ bool ConstraintTeacherHomeRooms::computeInternalStructure(QWidget* parent, Rules
 
 	this->_rooms.clear();
 
-	for(const QString& rm : qAsConst(this->roomsNames)){
+	for(const QString& rm : std::as_const(this->roomsNames)){
 		//int t=r.searchRoom(rm);
 		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
@@ -2886,7 +2886,7 @@ double ConstraintTeacherHomeRooms::fitness(
 	bool ok2=true;
 
 	nbroken=0;
-	for(int ac : qAsConst(this->_activities)){
+	for(int ac : std::as_const(this->_activities)){
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE)
 			continue;
@@ -2901,7 +2901,7 @@ double ConstraintTeacherHomeRooms::fitness(
 				ok=false;
 			else{
 				bool okk=false;
-				for(const PreferredRoomsItem& it : qAsConst(activitiesPreferredRoomsList[ac]))
+				for(const PreferredRoomsItem& it : std::as_const(activitiesPreferredRoomsList[ac]))
 					if(it.preferredRooms.contains(rm))
 						okk=true;
 				assert(okk);
@@ -3131,7 +3131,7 @@ double ConstraintSubjectPreferredRoom::fitness(
 	bool ok2=true;
 
 	nbroken=0;
-	for(int ac : qAsConst(this->_activities)){
+	for(int ac : std::as_const(this->_activities)){
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE) //counted as unallocated
 			continue;
@@ -3259,7 +3259,7 @@ bool ConstraintSubjectPreferredRooms::computeInternalStructure(QWidget* parent, 
 		}
 	
 	this->_rooms.clear();
-	for(const QString& rm : qAsConst(this->roomsNames)){
+	for(const QString& rm : std::as_const(this->roomsNames)){
 		//int t=r.searchRoom(rm);
 		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
@@ -3374,7 +3374,7 @@ double ConstraintSubjectPreferredRooms::fitness(
 	bool ok2=true;
 
 	nbroken=0;
-	for(int ac : qAsConst(this->_activities)){
+	for(int ac : std::as_const(this->_activities)){
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE)
 			continue;
@@ -3613,7 +3613,7 @@ double ConstraintSubjectActivityTagPreferredRoom::fitness(
 	bool ok2=true;
 
 	nbroken=0;
-	for(int ac : qAsConst(this->_activities)){
+	for(int ac : std::as_const(this->_activities)){
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE) //counted as unallocated
 			continue;
@@ -3744,7 +3744,7 @@ bool ConstraintSubjectActivityTagPreferredRooms::computeInternalStructure(QWidge
 		}
 
 	this->_rooms.clear();
-	for(const QString& rm : qAsConst(roomsNames)){
+	for(const QString& rm : std::as_const(roomsNames)){
 		//int t=r.searchRoom(rm);
 		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
@@ -3862,7 +3862,7 @@ double ConstraintSubjectActivityTagPreferredRooms::fitness(
 	bool ok2=true;
 
 	nbroken=0;
-	for(int ac : qAsConst(this->_activities)){
+	for(int ac : std::as_const(this->_activities)){
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE)
 			continue;
@@ -4097,7 +4097,7 @@ double ConstraintActivityTagPreferredRoom::fitness(
 	bool ok2=true;
 
 	nbroken=0;
-	for(int ac : qAsConst(this->_activities)){
+	for(int ac : std::as_const(this->_activities)){
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE) //counted as unallocated
 			continue;
@@ -4226,7 +4226,7 @@ bool ConstraintActivityTagPreferredRooms::computeInternalStructure(QWidget* pare
 		}
 
 	this->_rooms.clear();
-	for(const QString& rm : qAsConst(roomsNames)){
+	for(const QString& rm : std::as_const(roomsNames)){
 		//int t=r.searchRoom(rm);
 		int t=r.roomsHash.value(rm, -1);
 		if(t<0){
@@ -4341,7 +4341,7 @@ double ConstraintActivityTagPreferredRooms::fitness(
 	bool ok2=true;
 
 	nbroken=0;
-	for(int ac : qAsConst(this->_activities)){
+	for(int ac : std::as_const(this->_activities)){
 		int rm=c.rooms[ac];
 		if(rm==UNALLOCATED_SPACE)
 			continue;
@@ -4606,14 +4606,14 @@ double ConstraintStudentsSetMaxBuildingChangesPerDay::fitness(
 	Matrix2D<int> crtBuildingsTimetable;
 	crtBuildingsTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
 	
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		//Better, less memory
 		StudentsSubgroup* sts=r.internalSubgroupsList[sbg];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
 				
-		for(int ai : qAsConst(sts->activitiesForSubgroup))
+		for(int ai : std::as_const(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -4851,7 +4851,7 @@ double ConstraintStudentsMaxBuildingChangesPerDay::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
 				
-		for(int ai : qAsConst(sts->activitiesForSubgroup))
+		for(int ai : std::as_const(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -5136,14 +5136,14 @@ double ConstraintStudentsSetMaxBuildingChangesPerWeek::fitness(
 	Matrix2D<int> crtBuildingsTimetable;
 	crtBuildingsTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		//Better, less memory
 		StudentsSubgroup* sts=r.internalSubgroupsList[sbg];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
 		
-		for(int ai : qAsConst(sts->activitiesForSubgroup))
+		for(int ai : std::as_const(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -5381,7 +5381,7 @@ double ConstraintStudentsMaxBuildingChangesPerWeek::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
 		
-		for(int ai : qAsConst(sts->activitiesForSubgroup))
+		for(int ai : std::as_const(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -5665,14 +5665,14 @@ double ConstraintStudentsSetMinGapsBetweenBuildingChanges::fitness(
 	Matrix2D<int> crtBuildingsTimetable;
 	crtBuildingsTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
 
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		//Better, less memory
 		StudentsSubgroup* sts=r.internalSubgroupsList[sbg];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
 				
-		for(int ai : qAsConst(sts->activitiesForSubgroup))
+		for(int ai : std::as_const(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -5922,7 +5922,7 @@ double ConstraintStudentsMinGapsBetweenBuildingChanges::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
 				
-		for(int ai : qAsConst(sts->activitiesForSubgroup))
+		for(int ai : std::as_const(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -6190,7 +6190,7 @@ double ConstraintTeacherMaxBuildingChangesPerDay::fitness(
 		for(int h2=0; h2<r.nHoursPerDay; h2++)
 			crtBuildingsTimetable[d2][h2]=-1;
 			
-	for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+	for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			int d2=c.times[ai]%r.nDaysPerWeek;
 			int h2=c.times[ai]/r.nDaysPerWeek;
@@ -6428,7 +6428,7 @@ double ConstraintTeachersMaxBuildingChangesPerDay::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
 				
-		for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+		for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -6684,7 +6684,7 @@ double ConstraintTeacherMaxBuildingChangesPerWeek::fitness(
 		for(int h2=0; h2<r.nHoursPerDay; h2++)
 			crtBuildingsTimetable[d2][h2]=-1;
 			
-	for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+	for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			int d2=c.times[ai]%r.nDaysPerWeek;
 			int h2=c.times[ai]/r.nDaysPerWeek;
@@ -6922,7 +6922,7 @@ double ConstraintTeachersMaxBuildingChangesPerWeek::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
 		
-		for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+		for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -7178,7 +7178,7 @@ double ConstraintTeacherMinGapsBetweenBuildingChanges::fitness(
 		for(int h2=0; h2<r.nHoursPerDay; h2++)
 			crtBuildingsTimetable[d2][h2]=-1;
 			
-	for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+	for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			int d2=c.times[ai]%r.nDaysPerWeek;
 			int h2=c.times[ai]/r.nDaysPerWeek;
@@ -7428,7 +7428,7 @@ double ConstraintTeachersMinGapsBetweenBuildingChanges::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
 				
-		for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+		for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -7726,14 +7726,14 @@ double ConstraintStudentsSetMaxRoomChangesPerDay::fitness(
 	Matrix2D<int> crtRoomsTimetable;
 	crtRoomsTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
 	
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		//Better, less memory
 		StudentsSubgroup* sts=r.internalSubgroupsList[sbg];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
 				
-		for(int ai : qAsConst(sts->activitiesForSubgroup))
+		for(int ai : std::as_const(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -7971,7 +7971,7 @@ double ConstraintStudentsMaxRoomChangesPerDay::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
 				
-		for(int ai : qAsConst(sts->activitiesForSubgroup))
+		for(int ai : std::as_const(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -8256,14 +8256,14 @@ double ConstraintStudentsSetMaxRoomChangesPerWeek::fitness(
 	Matrix2D<int> crtRoomsTimetable;
 	crtRoomsTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
 	
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		//Better, less memory
 		StudentsSubgroup* sts=r.internalSubgroupsList[sbg];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
 		
-		for(int ai : qAsConst(sts->activitiesForSubgroup))
+		for(int ai : std::as_const(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -8501,7 +8501,7 @@ double ConstraintStudentsMaxRoomChangesPerWeek::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
 		
-		for(int ai : qAsConst(sts->activitiesForSubgroup))
+		for(int ai : std::as_const(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -8785,14 +8785,14 @@ double ConstraintStudentsSetMinGapsBetweenRoomChanges::fitness(
 	Matrix2D<int> crtRoomsTimetable;
 	crtRoomsTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
 	
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		//Better, less memory
 		StudentsSubgroup* sts=r.internalSubgroupsList[sbg];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
 				
-		for(int ai : qAsConst(sts->activitiesForSubgroup))
+		for(int ai : std::as_const(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -9042,7 +9042,7 @@ double ConstraintStudentsMinGapsBetweenRoomChanges::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
 				
-		for(int ai : qAsConst(sts->activitiesForSubgroup))
+		for(int ai : std::as_const(sts->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -9310,7 +9310,7 @@ double ConstraintTeacherMaxRoomChangesPerDay::fitness(
 		for(int h2=0; h2<r.nHoursPerDay; h2++)
 			crtRoomsTimetable[d2][h2]=-1;
 			
-	for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+	for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			int d2=c.times[ai]%r.nDaysPerWeek;
 			int h2=c.times[ai]/r.nDaysPerWeek;
@@ -9548,7 +9548,7 @@ double ConstraintTeachersMaxRoomChangesPerDay::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
 				
-		for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+		for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -9804,7 +9804,7 @@ double ConstraintTeacherMaxRoomChangesPerWeek::fitness(
 		for(int h2=0; h2<r.nHoursPerDay; h2++)
 			crtRoomsTimetable[d2][h2]=-1;
 	
-	for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+	for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			int d2=c.times[ai]%r.nDaysPerWeek;
 			int h2=c.times[ai]/r.nDaysPerWeek;
@@ -10042,7 +10042,7 @@ double ConstraintTeachersMaxRoomChangesPerWeek::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
 		
-		for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+		for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -10298,7 +10298,7 @@ double ConstraintTeacherMinGapsBetweenRoomChanges::fitness(
 		for(int h2=0; h2<r.nHoursPerDay; h2++)
 			crtRoomsTimetable[d2][h2]=-1;
 			
-	for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+	for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			int d2=c.times[ai]%r.nDaysPerWeek;
 			int h2=c.times[ai]/r.nDaysPerWeek;
@@ -10548,7 +10548,7 @@ double ConstraintTeachersMinGapsBetweenRoomChanges::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
 				
-		for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+		for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -10705,7 +10705,7 @@ bool ConstraintActivitiesOccupyMaxDifferentRooms::computeInternalStructure(QWidg
 {
 	this->_activitiesIndices.clear();
 	
-	for(int id : qAsConst(activitiesIds)){
+	for(int id : std::as_const(activitiesIds)){
 		int index=r.activitiesHash.value(id, -1);
 		//assert(index>=0);
 		if(index>=0) //take care of inactive activities
@@ -10730,7 +10730,7 @@ bool ConstraintActivitiesOccupyMaxDifferentRooms::hasInactiveActivities(Rules& r
 	//returns true if all or all but one activities are inactive
 	
 	int cnt=0;
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		if(r.inactiveActivities.contains(aid))
 			cnt++;
 			
@@ -10749,7 +10749,7 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
 	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
 	s+="	<Max_Number_of_Different_Rooms>"+CustomFETString::number(this->maxDifferentRooms)+"</Max_Number_of_Different_Rooms>\n";
@@ -10773,7 +10773,7 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 		
@@ -10790,7 +10790,7 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getDescription(Rules& r)
 QString ConstraintActivitiesOccupyMaxDifferentRooms::getDetailedDescription(Rules& r)
 {
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 		
@@ -10798,7 +10798,7 @@ QString ConstraintActivitiesOccupyMaxDifferentRooms::getDetailedDescription(Rule
 	s+=tr("Activities occupy max different rooms"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : qAsConst(this->activitiesIds)){
+	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
 		 .arg(getActivityDetailedDescription(r, id));
@@ -10839,7 +10839,7 @@ double ConstraintActivitiesOccupyMaxDifferentRooms::fitness(
 	
 	QSet<int> usedRooms;
 	
-	for(int ai : qAsConst(this->_activitiesIndices)){
+	for(int ai : std::as_const(this->_activitiesIndices)){
 		if(c.rooms[ai]!=UNALLOCATED_SPACE && c.rooms[ai]!=UNSPECIFIED_ROOM)
 			if(!usedRooms.contains(c.rooms[ai]))
 				usedRooms.insert(c.rooms[ai]);
@@ -10870,7 +10870,7 @@ void ConstraintActivitiesOccupyMaxDifferentRooms::removeUseless(Rules& r)
 {
 	QList<int> newActs;
 	
-	for(int aid : qAsConst(activitiesIds)){
+	for(int aid : std::as_const(activitiesIds)){
 		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
 		if(act!=nullptr)
 		//if(validActs.contains(aid))
@@ -10978,7 +10978,7 @@ bool ConstraintActivitiesSameRoomIfConsecutive::computeInternalStructure(QWidget
 {
 	//this cares about inactive activities, also, so do not assert this->_actIndices.count()==this->actIds.count()
 	_activitiesIndices.clear();
-	for(int id : qAsConst(activitiesIds)){
+	for(int id : std::as_const(activitiesIds)){
 		int i=r.activitiesHash.value(id, -1);
 		if(i>=0)
 			_activitiesIndices.append(i);
@@ -11002,7 +11002,7 @@ bool ConstraintActivitiesSameRoomIfConsecutive::hasInactiveActivities(Rules& r)
 	//returns true if all or all but one activities are inactive
 	
 	int cnt=0;
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		if(r.inactiveActivities.contains(aid))
 			cnt++;
 			
@@ -11021,7 +11021,7 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getXmlDescription(Rules& r)
 	s+="	<Weight_Percentage>"+CustomFETString::number(this->weightPercentage)+"</Weight_Percentage>\n";
 	
 	s+="	<Number_of_Activities>"+QString::number(this->activitiesIds.count())+"</Number_of_Activities>\n";
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		s+="	<Activity_Id>"+CustomFETString::number(aid)+"</Activity_Id>\n";
 	
 	s+="	<Active>"+trueFalse(active)+"</Active>\n";
@@ -11043,7 +11043,7 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getDescription(Rules& r)
 		end=", "+tr("C: %1", "Comments").arg(comments);
 		
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 		
@@ -11059,7 +11059,7 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getDescription(Rules& r)
 QString ConstraintActivitiesSameRoomIfConsecutive::getDetailedDescription(Rules& r)
 {
 	QString actids=QString("");
-	for(int aid : qAsConst(this->activitiesIds))
+	for(int aid : std::as_const(this->activitiesIds))
 		actids+=CustomFETString::number(aid)+QString(", ");
 	actids.chop(2);
 		
@@ -11067,7 +11067,7 @@ QString ConstraintActivitiesSameRoomIfConsecutive::getDetailedDescription(Rules&
 	s+=tr("Activities same room if consecutive"); s+="\n";
 	s+=tr("Weight (percentage)=%1%").arg(CustomFETString::number(this->weightPercentage)); s+="\n";
 	s+=tr("Number of activities=%1").arg(QString::number(this->activitiesIds.count())); s+="\n";
-	for(int id : qAsConst(this->activitiesIds)){
+	for(int id : std::as_const(this->activitiesIds)){
 		s+=tr("Activity with id=%1 (%2)", "%1 is the id, %2 is the detailed description of the activity")
 		 .arg(id)
 		 .arg(getActivityDetailedDescription(r, id));
@@ -11147,7 +11147,7 @@ void ConstraintActivitiesSameRoomIfConsecutive::removeUseless(Rules& r)
 {
 	QList<int> newActs;
 	
-	for(int aid : qAsConst(activitiesIds)){
+	for(int aid : std::as_const(activitiesIds)){
 		Activity* act=r.activitiesPointerHash.value(aid, nullptr);
 		if(act!=nullptr)
 		//if(validActs.contains(aid))
@@ -11350,7 +11350,7 @@ double ConstraintStudentsMaxRoomChangesPerRealDay::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
 
-		for(int ai : qAsConst(sbgpointer->activitiesForSubgroup))
+		for(int ai : std::as_const(sbgpointer->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -11644,14 +11644,14 @@ double ConstraintStudentsSetMaxRoomChangesPerRealDay::fitness(
 
 	Matrix2D<int> crtRoomsTimetable;
 	crtRoomsTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		//Better, less memory
 		StudentsSubgroup* sbgpointer=r.internalSubgroupsList[sbg];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
 
-		for(int ai : qAsConst(sbgpointer->activitiesForSubgroup))
+		for(int ai : std::as_const(sbgpointer->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -11915,7 +11915,7 @@ double ConstraintTeacherMaxRoomChangesPerRealDay::fitness(
 		for(int h2=0; h2<r.nHoursPerDay; h2++)
 			crtRoomsTimetable[d2][h2]=-1;
 
-	for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+	for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			int d2=c.times[ai]%r.nDaysPerWeek;
 			int h2=c.times[ai]/r.nDaysPerWeek;
@@ -12161,7 +12161,7 @@ double ConstraintTeachersMaxRoomChangesPerRealDay::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtRoomsTimetable[d2][h2]=-1;
 
-		for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+		for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -12409,7 +12409,7 @@ double ConstraintStudentsMaxBuildingChangesPerRealDay::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
 
-		for(int ai : qAsConst(sbgpointer->activitiesForSubgroup))
+		for(int ai : std::as_const(sbgpointer->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -12703,14 +12703,14 @@ double ConstraintStudentsSetMaxBuildingChangesPerRealDay::fitness(
 
 	Matrix2D<int> crtBuildingsTimetable;
 	crtBuildingsTimetable.resize(r.nDaysPerWeek, r.nHoursPerDay);
-	for(int sbg : qAsConst(this->iSubgroupsList)){
+	for(int sbg : std::as_const(this->iSubgroupsList)){
 		//Better, less memory
 		StudentsSubgroup* sbgpointer=r.internalSubgroupsList[sbg];
 		for(int d2=0; d2<r.nDaysPerWeek; d2++)
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
 
-		for(int ai : qAsConst(sbgpointer->activitiesForSubgroup))
+		for(int ai : std::as_const(sbgpointer->activitiesForSubgroup))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;
@@ -12974,7 +12974,7 @@ double ConstraintTeacherMaxBuildingChangesPerRealDay::fitness(
 		for(int h2=0; h2<r.nHoursPerDay; h2++)
 			crtBuildingsTimetable[d2][h2]=-1;
 
-	for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+	for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 		if(c.times[ai]!=UNALLOCATED_TIME){
 			int d2=c.times[ai]%r.nDaysPerWeek;
 			int h2=c.times[ai]/r.nDaysPerWeek;
@@ -13220,7 +13220,7 @@ double ConstraintTeachersMaxBuildingChangesPerRealDay::fitness(
 			for(int h2=0; h2<r.nHoursPerDay; h2++)
 				crtBuildingsTimetable[d2][h2]=-1;
 
-		for(int ai : qAsConst(tchpointer->activitiesForTeacher))
+		for(int ai : std::as_const(tchpointer->activitiesForTeacher))
 			if(c.times[ai]!=UNALLOCATED_TIME){
 				int d2=c.times[ai]%r.nDaysPerWeek;
 				int h2=c.times[ai]/r.nDaysPerWeek;

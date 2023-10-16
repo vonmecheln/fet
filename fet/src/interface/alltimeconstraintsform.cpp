@@ -662,14 +662,14 @@ void AllTimeConstraintsForm::filterChanged()
 	visibleTimeConstraintsList.clear();
 	constraintsListWidget->clear();
 	int n_active=0;
-	for(TimeConstraint* ctr : qAsConst(gt.rules.timeConstraintsList))
+	for(TimeConstraint* ctr : std::as_const(gt.rules.timeConstraintsList))
 		if(filterOk(ctr))
 			visibleTimeConstraintsList.append(ctr);
 		
 	if(sortedCheckBox->isChecked())
 		std::stable_sort(visibleTimeConstraintsList.begin(), visibleTimeConstraintsList.end(), timeConstraintsAscendingByDescription);
 
-	for(TimeConstraint* ctr : qAsConst(visibleTimeConstraintsList)){
+	for(TimeConstraint* ctr : std::as_const(visibleTimeConstraintsList)){
 		assert(filterOk(ctr));
 		constraintsListWidget->addItem(ctr->getDescription(gt.rules));
 		
@@ -2042,7 +2042,7 @@ void AllTimeConstraintsForm::removeConstraint()
 			delete item;
 
 			int n_active=0;
-			for(TimeConstraint* ctr2 : qAsConst(visibleTimeConstraintsList))
+			for(TimeConstraint* ctr2 : std::as_const(visibleTimeConstraintsList))
 				if(ctr2->active)
 					n_active++;
 	
@@ -2175,7 +2175,7 @@ void AllTimeConstraintsForm::activateConstraint()
 		}
 		
 		int n_active=0;
-		for(TimeConstraint* ctr2 : qAsConst(visibleTimeConstraintsList))
+		for(TimeConstraint* ctr2 : std::as_const(visibleTimeConstraintsList))
 			if(ctr2->active)
 				n_active++;
 	
@@ -2238,7 +2238,7 @@ void AllTimeConstraintsForm::deactivateConstraint()
 		}
 
 		int n_active=0;
-		for(TimeConstraint* ctr2 : qAsConst(visibleTimeConstraintsList))
+		for(TimeConstraint* ctr2 : std::as_const(visibleTimeConstraintsList))
 			if(ctr2->active)
 				n_active++;
 	
@@ -2262,7 +2262,7 @@ void AllTimeConstraintsForm::activateAllConstraints()
 
 	int cnt=0;
 	bool recomputeTime=false;
-	for(TimeConstraint* ctr : qAsConst(visibleTimeConstraintsList)){
+	for(TimeConstraint* ctr : std::as_const(visibleTimeConstraintsList)){
 		if(!ctr->active){
 			cnt++;
 			ctr->active=true;
@@ -2299,7 +2299,7 @@ void AllTimeConstraintsForm::deactivateAllConstraints()
 
 	int cnt=0;
 	bool recomputeTime=false;
-	for(TimeConstraint* ctr : qAsConst(visibleTimeConstraintsList)){
+	for(TimeConstraint* ctr : std::as_const(visibleTimeConstraintsList)){
 		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME)
 			continue;
 		if(ctr->active){
@@ -2418,7 +2418,7 @@ void AllTimeConstraintsForm::constraintComments()
 				currentConstraintTextEdit->setPlainText(QString(""));
 
 			int n_active=0;
-			for(TimeConstraint* ctr2 : qAsConst(visibleTimeConstraintsList))
+			for(TimeConstraint* ctr2 : std::as_const(visibleTimeConstraintsList))
 				if(ctr2->active)
 					n_active++;
 	

@@ -414,7 +414,7 @@ void FetSettings::readSimulationParameters()
 		FET_LANGUAGE=QLocale::system().name();
 
 		bool ok=false;
-		for(const QString& s : qAsConst(languagesSet)){
+		for(const QString& s : std::as_const(languagesSet)){
 			if(FET_LANGUAGE.left(s.length())==s){
 				FET_LANGUAGE=s;
 				ok=true;
@@ -813,7 +813,7 @@ void setLanguage(QCoreApplication& qapplication, QWidget* parent)
 	//QList<QWidget*> tlwl=qapplication.topLevelWidgets();
 	QWidgetList tlwl=QApplication::topLevelWidgets();
 
-	for(QWidget* wi : qAsConst(tlwl))
+	for(QWidget* wi : std::as_const(tlwl))
 		if(1){
 		//if(wi->isVisible()){
 			FetMainForm* mainform=qobject_cast<FetMainForm*>(wi);
@@ -1478,7 +1478,7 @@ int main(int argc, char **argv)
 		
 		if(filename==""){
 			if(unrecognizedOptions.count()>0){
-				for(const QString& s : qAsConst(unrecognizedOptions)){
+				for(const QString& s : std::as_const(unrecognizedOptions)){
 					cout<<"Unrecognized option: "<<qPrintable(s)<<endl;
 				}
 				cout<<endl;
@@ -1507,7 +1507,7 @@ int main(int argc, char **argv)
 		}
 		else if(!QFile::exists(filename)){
 			if(unrecognizedOptions.count()>0){
-				for(const QString& s : qAsConst(unrecognizedOptions)){
+				for(const QString& s : std::as_const(unrecognizedOptions)){
 					cout<<"Unrecognized option: "<<qPrintable(s)<<endl;
 				}
 				cout<<endl;
@@ -1566,7 +1566,7 @@ int main(int argc, char **argv)
 		///////
 		
 		if(unrecognizedOptions.count()>0){
-			for(const QString& s : qAsConst(unrecognizedOptions)){
+			for(const QString& s : std::as_const(unrecognizedOptions)){
 				cout<<"Unrecognized option: "<<qPrintable(s)<<endl;
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
 				out<<"Unrecognized option: "<<qPrintable(s)<<Qt::endl;

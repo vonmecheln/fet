@@ -56,7 +56,7 @@ ConstraintStudentsSetHomeRoomForm::ConstraintStudentsSetHomeRoomForm(QWidget* pa
 	populateStudentsComboBox(studentsComboBox, QString(""), true);
 	
 	roomsComboBox->addItem("");
-	for(Room* rm : qAsConst(gt.rules.roomsList))
+	for(Room* rm : std::as_const(gt.rules.roomsList))
 		roomsComboBox->addItem(rm->name);
 
 	this->filterChanged();

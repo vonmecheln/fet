@@ -58,13 +58,13 @@ AddConstraintTeacherMinGapsBetweenActivityTagForm::~AddConstraintTeacherMinGapsB
 
 void AddConstraintTeacherMinGapsBetweenActivityTagForm::updateTeacherComboBox()
 {
-	for(Teacher* tch : qAsConst(gt.rules.teachersList))
+	for(Teacher* tch : std::as_const(gt.rules.teachersList))
 		teacherComboBox->addItem(tch->name);
 }
 
 void AddConstraintTeacherMinGapsBetweenActivityTagForm::updateActivityTagComboBox()
 {
-	for(ActivityTag* at : qAsConst(gt.rules.activityTagsList))
+	for(ActivityTag* at : std::as_const(gt.rules.activityTagsList))
 		activityTagComboBox->addItem(at->name);
 }
 

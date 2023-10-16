@@ -2686,3 +2686,7 @@ Versions 6.9.0 - 6.9.v
 	- Updated to Qt 6.5.3.
 	- Very rare crash bugs fixed (reported by Rouge Rosé).
 	- Code cleanup.
+- Version 6.9.7
+	- Updated to Qt 6.6.0. This involved updating the FET code in many places (using an easy search-and-replace), to get rid of the many new
+	compilation warnings. Now you will need a C++17 complying C++ compiler to compile FET.
+	- Minor improvement in an English field.
