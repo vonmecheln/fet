@@ -98,8 +98,13 @@ private:
 //	QCheckBox* markBreak;
 //	QCheckBox* printSameStartingTime;
 	QCheckBox* printDetailedTables;
-	QCheckBox* printActivityTags;	//TODO: to this with combo box: "always", "never", "if available".
-									//maybe TODO: do it similar with students, teachers, rooms, ...
+	QCheckBox* printActivityTags;	//TODO: do this with combo box: "always", "never", "if available".
+	
+	QCheckBox* printSubjects;
+	QCheckBox* printTeachers;
+	QCheckBox* printStudents;
+	QCheckBox* printRooms;
+	
 	QCheckBox* repeatNames;
 	QCheckBox* automaticColors;
 	

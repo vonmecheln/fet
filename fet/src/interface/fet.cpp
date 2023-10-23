@@ -260,8 +260,22 @@ void usage(QTextStream* out, const QString& error)
 		"\t--writetimetablesactivities=WT16\n"
 		"\t\tWT1 to WT16 are either true or false and represent whether you want the corresponding timetables to be written on the disk (default true).\n"
 		"\n"
+		
+		"\t--printsubjects=PS\n"
+		"\t\tPS is either true or false and represets if you want the subjects to be present in the final HTML timetables (default true).\n"
+		"\n"
 		"\t--printactivitytags=PAT\n"
-		"\t\tPAT is either true or false and represets if you want activity tags to be present in the final HTML timetables (default true).\n"
+		"\t\tPAT is either true or false and represets if you want the activity tags to be present in the final HTML timetables (default true).\n"
+		"\n"
+		"\t--printteachers=PT\n"
+		"\t\tPT is either true or false and represets if you want the teachers to be present in the final HTML timetables (default true).\n"
+		"\n"
+		"\t--printstudents=PSt\n"
+		"\t\tPSt is either true or false and represets if you want the students to be present in the final HTML timetables (default true).\n"
+		"\n"
+		"\t--printrooms=PR\n"
+		"\t\tPR is either true or false and represets if you want the rooms to be present in the final HTML timetables (default true).\n"
+		
 		"\n"
 		"\t--printnotavailable=PNA\n"
 		"\t\tPNA is either true or false and represents if you want -x- (for true) or --- (for false) in the generated timetables for the "
@@ -458,6 +472,12 @@ void FetSettings::readSimulationParameters()
 	}
 	TIMETABLES_SUBGROUPS_SORTED=newSettings.value("timetables-subgroups-sorted", "false").toBool();
 	TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=newSettings.value("print-activity-tags", "true").toBool();
+	
+	TIMETABLE_HTML_PRINT_SUBJECTS=newSettings.value("print-subjects", "true").toBool();
+	TIMETABLE_HTML_PRINT_TEACHERS=newSettings.value("print-teachers", "true").toBool();
+	TIMETABLE_HTML_PRINT_STUDENTS=newSettings.value("print-students", "true").toBool();
+	TIMETABLE_HTML_PRINT_ROOMS=newSettings.value("print-rooms", "true").toBool();
+	
 	PRINT_DETAILED_HTML_TIMETABLES=newSettings.value("print-detailed-timetables", "true").toBool();
 	PRINT_DETAILED_HTML_TEACHERS_FREE_PERIODS=newSettings.value("print-detailed-teachers-free-periods-timetables", "true").toBool();
 	PRINT_ACTIVITIES_WITH_SAME_STARTING_TIME=newSettings.value("print-activities-with-same-starting-time", "false").toBool();
@@ -587,6 +607,12 @@ void FetSettings::writeSimulationParameters()
 	settings.setValue("check-for-updates", checkForUpdates);
 	settings.setValue("html-level", TIMETABLE_HTML_LEVEL);
 	settings.setValue("print-activity-tags", TIMETABLE_HTML_PRINT_ACTIVITY_TAGS);
+	
+	settings.setValue("print-subjects", TIMETABLE_HTML_PRINT_SUBJECTS);
+	settings.setValue("print-teachers", TIMETABLE_HTML_PRINT_TEACHERS);
+	settings.setValue("print-students", TIMETABLE_HTML_PRINT_STUDENTS);
+	settings.setValue("print-rooms", TIMETABLE_HTML_PRINT_ROOMS);
+	
 	settings.setValue("timetables-subgroups-sorted", TIMETABLES_SUBGROUPS_SORTED);
 	settings.setValue("print-detailed-timetables", PRINT_DETAILED_HTML_TIMETABLES);
 	settings.setValue("print-detailed-teachers-free-periods-timetables", PRINT_DETAILED_HTML_TEACHERS_FREE_PERIODS);
@@ -1166,6 +1192,11 @@ int main(int argc, char **argv)
 		
 		TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=true;
 
+		TIMETABLE_HTML_PRINT_SUBJECTS=true;
+		TIMETABLE_HTML_PRINT_TEACHERS=true;
+		TIMETABLE_HTML_PRINT_STUDENTS=true;
+		TIMETABLE_HTML_PRINT_ROOMS=true;
+
 		PRINT_DETAILED_HTML_TIMETABLES=true;
 
 		PRINT_DETAILED_HTML_TEACHERS_FREE_PERIODS=true;
@@ -1243,6 +1274,24 @@ int main(int argc, char **argv)
 				if(s.right(5)=="false")
 					TIMETABLE_HTML_PRINT_ACTIVITY_TAGS=false;
 			}
+			
+			else if(s.left(16)=="--printsubjects="){
+				if(s.right(5)=="false")
+					TIMETABLE_HTML_PRINT_SUBJECTS=false;
+			}
+			else if(s.left(17)=="--printsteachers="){
+				if(s.right(5)=="false")
+					TIMETABLE_HTML_PRINT_TEACHERS=false;
+			}
+			else if(s.left(16)=="--printstudents="){
+				if(s.right(5)=="false")
+					TIMETABLE_HTML_PRINT_STUDENTS=false;
+			}
+			else if(s.left(13)=="--printrooms="){
+				if(s.right(5)=="false")
+					TIMETABLE_HTML_PRINT_ROOMS=false;
+			}
+			
 			else if(s.left(26)=="--printdetailedtimetables="){
 				if(s.right(5)=="false")
 					PRINT_DETAILED_HTML_TIMETABLES=false;

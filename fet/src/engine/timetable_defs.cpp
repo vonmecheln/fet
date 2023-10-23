@@ -37,7 +37,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 FET version
 */
-const QString FET_VERSION="6.9.7";
+const QString FET_VERSION="6.10.0";
 
 /**
 FET language
@@ -64,6 +64,11 @@ Timetable HTML CSS JavaScript level, by Volker Dirr
 int TIMETABLE_HTML_LEVEL;
 
 bool TIMETABLE_HTML_PRINT_ACTIVITY_TAGS;
+
+bool TIMETABLE_HTML_PRINT_SUBJECTS;
+bool TIMETABLE_HTML_PRINT_TEACHERS;
+bool TIMETABLE_HTML_PRINT_STUDENTS;
+bool TIMETABLE_HTML_PRINT_ROOMS;
 
 bool PRINT_DETAILED_HTML_TIMETABLES;
 
@@ -456,12 +461,12 @@ void MRG32k3a::initializeMRG32k3a()
 	//Using ideas and code from https://stackoverflow.com/questions/19555121/how-to-get-current-timestamp-in-milliseconds-since-1970-just-the-way-java-gets
 	//and https://stackoverflow.com/questions/31255486/c-how-do-i-convert-a-stdchronotime-point-to-long-and-back
 	//and https://stackoverflow.com/questions/18022927/convert-high-resolution-clock-time-into-an-integer-chrono/18023064
-	std::chrono::nanoseconds ns=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch());
-	qint64 nsi=static_cast<qint64>(ns.count());
-	//cout<<"nsi=="<<nsi<<endl;
-	assert(nsi>=0);
+	std::chrono::nanoseconds ns1=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch());
+	qint64 nsi1=static_cast<qint64>(ns1.count());
+	//cout<<"nsi1=="<<nsi1<<endl;
+	assert(nsi1>=0);
 
-	_s11=nsi%1000000000;
+	_s11=nsi1%1000000000;
 
 	std::chrono::nanoseconds ns2=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch());
 	qint64 nsi2=static_cast<qint64>(ns2.count());

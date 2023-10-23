@@ -1,4 +1,4 @@
-This is FET version 6.9.7
+This is FET version 6.10.0
 
 
 Program description:
@@ -16,7 +16,7 @@ Requirements:
 
 	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.5.6, Xfce 4.18,
 	Xfce Terminal Emulator 1.1.0, Midnight Commander 4.8.30, Krusader 2.8.0, Kate 23.08.1, KDiff3 0.9.98, grep 3.11, sed 4.9,
-	Thunar Bulk Rename 4.18.7, Qt 6.6.0, QMake 3.1, CMake 3.27.2, Ninja 1.10.2, Qt Creator 11.0.3, GCC 13.2.1, Clang 16.0.6,
+	Thunar Bulk Rename 4.18.7, Qt 6.6.0, QMake 3.1, CMake 3.27.2, Ninja 1.10.2, Qt Creator 11.0.3, GCC 13.2.1, Clang 17.0.2,
 	GNU Make 4.4.1, GDB 13.2, Valgrind 3.21.0, Coverity Scan 2020.09, Cppcheck 2.10, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
 	Inkscape 1.3, GIMP 2.10.34, ImageMagick 7.1.1, Ispell 3.4.05 / Aspell 0.60.8, tar 1.34, Gzip 1.13, bzip2 1.0.8, linuxdeploy 1-alpha,
 	other great software (most of them are free software, in the sense defined by The Free Software Foundation).
@@ -347,8 +347,20 @@ Running FET:
 		--writetimetablesactivities=WT16
 			WT1 to WT16 are either true or false and represent whether you want the corresponding timetables to be written on the disk (default true).
 
+		--printsubjects=PS
+			PS is either true or false and represets if you want the subjects to be present in the final HTML timetables (default true).
+
 		--printactivitytags=PAT
-			PAT is either true or false and represets if you want activity tags to be present in the final HTML timetables (default true).
+			PAT is either true or false and represets if you want the activity tags to be present in the final HTML timetables (default true).
+
+		--printteachers=PT
+			PT is either true or false and represets if you want the teachers to be present in the final HTML timetables (default true).
+
+		--printstudents=PSt
+			PSt is either true or false and represets if you want the students to be present in the final HTML timetables (default true).
+
+		--printrooms=PR
+			PR is either true or false and represets if you want the rooms to be present in the final HTML timetables (default true).
 
 		--printnotavailable=PNA
 			PNA is either true or false and represents if you want -x- (for true) or --- (for false) in the generated timetables for the not available

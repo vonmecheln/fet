@@ -691,39 +691,55 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 				assert(act!=nullptr);
 				
-				assert(act->studentsNames.count()>=1);
-				if((act->studentsNames.count()==1 && act->studentsNames.at(0)!=subgroupname) || act->studentsNames.count()>=2){
-					s+=act->studentsNames.join(", ");
-					s+="\n";
-				}
-				
-				if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
-					QString ats=act->activityTagsNames.join(", ");
-					s+=act->subjectName +" "+ ats;
-				}
-				else{
-					s+=act->subjectName;
-				}
-				if(act->teachersNames.count()>0){
-					s+="\n";
-					s+=act->teachersNames.join(", ");
-				}
-				
-				int r=best_solution.rooms[ai];
-				if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
-					//s+=" ";
-					//s+=tr("R:%1", "Room").arg(gt.rules.internalRoomsList[r]->name);
-					s+="\n";
-					s+=gt.rules.internalRoomsList[r]->name;
-
-					if(gt.rules.internalRoomsList[r]->isVirtual==true){
-						QStringList tsl;
-						for(int i : std::as_const(best_solution.realRoomsList[ai]))
-							tsl.append(gt.rules.internalRoomsList[i]->name);
-						s+=QString(" (")+tsl.join(", ")+QString(")");
+				if(TIMETABLE_HTML_PRINT_STUDENTS){
+					assert(act->studentsNames.count()>=1);
+					if((act->studentsNames.count()==1 && act->studentsNames.at(0)!=subgroupname) || act->studentsNames.count()>=2){
+						s+=act->studentsNames.join(", ");
+						s+="\n";
 					}
 				}
-
+				
+				if(TIMETABLE_HTML_PRINT_SUBJECTS){
+					if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+						QString ats=act->activityTagsNames.join(", ");
+						s+=act->subjectName +" "+ ats;
+					}
+					else{
+						s+=act->subjectName;
+					}
+					s+="\n";
+				}
+				else if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+					s+=act->activityTagsNames.join(", ");
+					s+="\n";
+				}
+				
+				if(TIMETABLE_HTML_PRINT_TEACHERS){
+					if(act->teachersNames.count()>0){
+						s+=act->teachersNames.join(", ");
+					}
+					s+="\n";
+				}
+				
+				s.chop(1);
+				
+				if(TIMETABLE_HTML_PRINT_ROOMS){
+					int r=best_solution.rooms[ai];
+					if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
+						//s+=" ";
+						//s+=tr("R:%1", "Room").arg(gt.rules.internalRoomsList[r]->name);
+						s+="\n";
+						s+=gt.rules.internalRoomsList[r]->name;
+						
+						if(gt.rules.internalRoomsList[r]->isVirtual==true){
+							QStringList tsl;
+							for(int i : std::as_const(best_solution.realRoomsList[ai]))
+								tsl.append(gt.rules.internalRoomsList[i]->name);
+							s+=QString(" (")+tsl.join(", ")+QString(")");
+						}
+					}
+				}
+				
 				//added by Volker Dirr (start)
 				QString descr="";
 				QString tt="";

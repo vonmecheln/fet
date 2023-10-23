@@ -2692,11 +2692,10 @@ maximum level of conflict.
 
 Liviu Lalescu: since version 5.20.2 we added a detailed report for multiple generation of timetables.
 
-178---------------------------------------------------------
+178----------DONE in FET-6.10.0-17-October-2023-------------
 From Silver (on forum):
 
-I suggest you add new window (interface or small editor) for css.
-for hide and view rooms and subject in "teachers_time_horizontal.html" and other timetables.
+--DONE--
 
 179---------------------------------------------------------
 From nouvakis (on forum):

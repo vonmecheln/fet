@@ -1225,10 +1225,10 @@
      <addaction name="timetablesToWriteOnDiskAction"/>
      <addaction name="settingsTimetableHtmlLevelAction"/>
      <addaction name="separator"/>
+     <addaction name="settingsDataToPrintInTimetablesAction"/>
+     <addaction name="separator"/>
      <addaction name="settingsPrintDetailedTimetablesAction"/>
      <addaction name="settingsPrintDetailedTeachersFreePeriodsTimetablesAction"/>
-     <addaction name="separator"/>
-     <addaction name="settingsPrintActivityTagsAction"/>
      <addaction name="separator"/>
      <addaction name="settingsPrintNotAvailableSlotsAction"/>
      <addaction name="settingsPrintBreakSlotsAction"/>
@@ -1838,17 +1838,6 @@
     <string extracomment="This is the shortcut for menu item Timetable-&gt;Print. It is recommended to translate with Ctrl+P, the same as original, or with Ctrl+other letter you prefer (do not make duplicates with other shortcuts). All shortcuts are: Ctrl+N (New), Ctrl+O (Open), Ctrl+S (Save), Ctrl+Q (Quit), Ctrl+G (Generate), Ctrl+P (Print), Ctrl+A (Activity planning). Please use the English keyboard modifiers name, for instance Ctrl, because otherwise the shortcuts do not work (so, even if your keyboard has another name for the Ctrl key, write 'Ctrl'. It will work OK on all platforms. Even if you are on German keyboard, write 'Ctrl' as in English). Maybe it would be good to translate with 'Ctrl+P', the same as the English original, to keep things standard.">Ctrl+P</string>
    </property>
   </action>
-  <action name="settingsPrintActivityTagsAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Print activity tags in timetables</string>
-   </property>
-  </action>
   <action name="statisticsPrintAction">
    <property name="text">
     <string>Print advanced statistics</string>
@@ -2226,6 +2215,11 @@
    </property>
    <property name="text">
     <string>The font is user selectable</string>
+   </property>
+  </action>
+  <action name="settingsDataToPrintInTimetablesAction">
+   <property name="text">
+    <string comment="It is a menu item, means that the user selects the data to print in the timetables (he can turn on/off printing of subjects, activity tags, teachers, students, and rooms)">Data to print in timetables</string>
    </property>
   </action>
  </widget>

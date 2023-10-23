@@ -9945,21 +9945,21 @@ bool computeActivitiesSameStartingTime(QWidget* parent, QHash<int, int>& reprSam
 	QHash<int, int> repr;
 	//repr.clear();
 	
-	QQueue<int> queue;
+	QQueue<int> myQueue;
 	
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		int start=i;
 		
 		if(repr.value(start, -1)==-1){ //not visited
 			repr.insert(start, start);
-			queue.enqueue(start);
-			while(!queue.isEmpty()){
-				int crtHead=queue.dequeue();
+			myQueue.enqueue(start);
+			while(!myQueue.isEmpty()){
+				int crtHead=myQueue.dequeue();
 				assert(repr.value(crtHead, -1)==start);
 				QList<int> neighList=adjMatrix.values(crtHead);
 				for(int neigh : std::as_const(neighList)){
 					if(repr.value(neigh, -1)==-1){
-						queue.enqueue(neigh);
+						myQueue.enqueue(neigh);
 						repr.insert(neigh, start);
 					}
 					else{
@@ -19696,21 +19696,21 @@ void sortActivities(QWidget* parent, const QHash<int, int>& reprSameStartingTime
 	QHash<int, int> repr;
 	//repr.clear();
 	
-	QQueue<int> queue;
+	QQueue<int> myQueue;
 	
 	for(int i=0; i<gt.rules.nInternalActivities; i++){
 		int start=i;
 		
 		if(repr.value(start, -1)==-1){ //not visited
 			repr.insert(start, start);
-			queue.enqueue(start);
-			while(!queue.isEmpty()){
-				int crtHead=queue.dequeue();
+			myQueue.enqueue(start);
+			while(!myQueue.isEmpty()){
+				int crtHead=myQueue.dequeue();
 				assert(repr.value(crtHead, -1)==start);
 				QList<int> neighList=adjMatrix.values(crtHead);
 				for(int neigh : std::as_const(neighList)){
 					if(repr.value(neigh, -1)==-1){
-						queue.enqueue(neigh);
+						myQueue.enqueue(neigh);
 						repr.insert(neigh, start);
 					}
 					else{

@@ -452,23 +452,32 @@ void TimetableViewRoomsDaysHorizontalForm::updateRoomsTimetableTable(){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 				assert(act!=nullptr);
 				
-				if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
-					QString ats=act->activityTagsNames.join(", ");
-					s += act->subjectName + " " + ats;
+				if(TIMETABLE_HTML_PRINT_SUBJECTS){
+					if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+						QString ats=act->activityTagsNames.join(", ");
+						s += act->subjectName + " " + ats;
+					}
+					else{
+						s += act->subjectName;
+					}
+					s+="\n";
 				}
-				else{
-					s += act->subjectName;
+				else if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+					s+=act->activityTagsNames.join(", ");
+					s+="\n";
 				}
 				
-				if(act->teachersNames.count()>0){
-					s+="\n";
+				if(TIMETABLE_HTML_PRINT_TEACHERS && act->teachersNames.count()>0){
 					s+=act->teachersNames.join(", ");
+					s+="\n";
 				}
 				
-				if(act->studentsNames.count()>0){
-					s+="\n";
+				if(TIMETABLE_HTML_PRINT_STUDENTS && act->studentsNames.count()>0){
 					s+=act->studentsNames.join(", ");
+					s+="\n";
 				}
+				
+				s.chop(1);
 				
 				//added by Volker Dirr (start)
 				QString descr="";

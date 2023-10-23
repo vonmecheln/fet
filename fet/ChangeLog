@@ -2647,7 +2647,7 @@ Versions 6.8.0 - 6.8.7
 	- Improved the method of selection of the interface font (suggested by giardiniere).
 	- Updated the Italian translation, by Andrea Primiani, who is the new translator.
 ---------------------------------------------------------------------------------
-Versions 6.9.0 - 6.9.v
+Versions 6.9.0 - 6.9.7
 - Version 6.9.0
 	- Updated to Qt 6.5.0.
 	- Added two batch files for Windows, making it possible to start the FET interface in the Fusion or Windows styles (suggested by Volker Dirr).
@@ -2688,5 +2688,14 @@ Versions 6.9.0 - 6.9.v
 	- Code cleanup.
 - Version 6.9.7
 	- Updated to Qt 6.6.0. This involved updating the FET code in many places (using an easy search-and-replace), to get rid of the many new
-	compilation warnings. Now you will need a C++17 complying C++ compiler to compile FET.
+	compilation warnings (referring to the use of the deprecated function qAsConst). Now you will need a C++17 complying C++ compiler to compile FET.
 	- Minor improvement in an English field.
+---------------------------------------------------------------------------------
+Versions 6.10.0 - 6.10.v
+- Version 6.10.0
+	- Important bug fixes and improvements concerning the advanced function of removing the redundant constraints. Some of the bugs were present since
+	the introduction of this function, in FET version 5.7.1, released on 6 October 2008, and others were present since the introduction of the facility
+	to activate/deactivate constraints, in FET version 5.16.0, released on 12 December 2011.
+	- Added the option to show/hide the subjects, teachers, students, and rooms, in the Print dialog and in the HTML timetables, in addition to
+	the already existing facility of this type for the activity tags. Suggested by Silver, Drago, xtzetzias, and maybe other users.
+	- Updated the German translation, by Volker Dirr.

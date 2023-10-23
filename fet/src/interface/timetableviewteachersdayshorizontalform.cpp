@@ -414,46 +414,61 @@ void TimetableViewTeachersDaysHorizontalForm::updateTeachersTimetableTable(){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
 				assert(act!=nullptr);
 				
-				if(act->teachersNames.count()==1){
-					//Don't do the assert below, because it crashes if you change the teacher's name and view the teachers' timetable,
-					//without generating again (as reported by Yush Yuen).
-					//assert(act->teachersNames.at(0)==teachername);
-				}
-				else{
-					assert(act->teachersNames.count()>=2);
-					//Don't do the assert below, because it crashes if you change the teacher's name and view the teachers' timetable,
-					//without generating again (as reported by Yush Yuen).
-					//assert(act->teachersNames.contains(teachername));
-					s+=act->teachersNames.join(", ");
-					s+="\n";
+				if(TIMETABLE_HTML_PRINT_TEACHERS){
+					if(act->teachersNames.count()==1){
+						//Don't do the assert below, because it crashes if you change the teacher's name and view the teachers' timetable,
+						//without generating again (as reported by Yush Yuen).
+						//assert(act->teachersNames.at(0)==teachername);
+					}
+					else{
+						assert(act->teachersNames.count()>=2);
+						//Don't do the assert below, because it crashes if you change the teacher's name and view the teachers' timetable,
+						//without generating again (as reported by Yush Yuen).
+						//assert(act->teachersNames.contains(teachername));
+						s+=act->teachersNames.join(", ");
+						s+="\n";
+					}
 				}
 				
-				if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
-					QString ats=act->activityTagsNames.join(", ");
-					s += act->subjectName+" "+ats;
+				if(TIMETABLE_HTML_PRINT_SUBJECTS){
+					if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+						QString ats=act->activityTagsNames.join(", ");
+						s += act->subjectName+" "+ats;
+					}
+					else{
+						s += act->subjectName;
+					}
+					s+="\n";
 				}
-				else{
-					s += act->subjectName;
+				else if(TIMETABLE_HTML_PRINT_ACTIVITY_TAGS){
+					s+=act->activityTagsNames.join(", ");
+					s+="\n";
 				}
 				
 				//students
-				if(act->studentsNames.count()>0){
-					s+="\n";
-					s+=act->studentsNames.join(", ");
+				if(TIMETABLE_HTML_PRINT_STUDENTS){
+					if(act->studentsNames.count()>0){
+						s+=act->studentsNames.join(", ");
+						s+="\n";
+					}
 				}
 				
-				int r=best_solution.rooms[ai];
-				if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
-					//s+=" ";
-					//s+=tr("R:%1", "Room").arg(gt.rules.internalRoomsList[r]->name);
-					s+="\n";
-					s+=gt.rules.internalRoomsList[r]->name;
-
-					if(gt.rules.internalRoomsList[r]->isVirtual==true){
-						QStringList tsl;
-						for(int i : std::as_const(best_solution.realRoomsList[ai]))
-							tsl.append(gt.rules.internalRoomsList[i]->name);
-						s+=QString(" (")+tsl.join(", ")+QString(")");
+				s.chop(1);
+				
+				if(TIMETABLE_HTML_PRINT_ROOMS){
+					int r=best_solution.rooms[ai];
+					if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
+						//s+=" ";
+						//s+=tr("R:%1", "Room").arg(gt.rules.internalRoomsList[r]->name);
+						s+="\n";
+						s+=gt.rules.internalRoomsList[r]->name;
+						
+						if(gt.rules.internalRoomsList[r]->isVirtual==true){
+							QStringList tsl;
+							for(int i : std::as_const(best_solution.realRoomsList[ai]))
+								tsl.append(gt.rules.internalRoomsList[i]->name);
+							s+=QString(" (")+tsl.join(", ")+QString(")");
+						}
 					}
 				}
 				

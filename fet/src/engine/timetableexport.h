@@ -46,13 +46,13 @@ public:
 	~TimetableExport();
 	
 	static void stringToColor(const QString& s, int& r, int& g, int& b);
-
+	
 	/*static void getStudentsTimetable(Solution& c);
 	static void getTeachersTimetable(Solution& c);
 	static void getRoomsTimetable(Solution& c);*/
 	static void getStudentsTeachersRoomsTimetable(Solution& c);
 	static void getNumberOfPlacedActivities(int& number1, int& number2);
-
+	
 	static void writeSimulationResults(QWidget* parent);
 	static void writeHighestStageResults(QWidget* parent);
 	static void writeSimulationResults(QWidget* parent, int n, bool highest=false); //write in a directory with number n (for multiple generation)
@@ -69,54 +69,150 @@ public:
 	static void writeReportForMultiple(QWidget* parent, const QString& description, bool begin);
 	
 	//the following functions return a single HTML table (needed for HTML file export and printing)
-	static QString singleSubgroupsTimetableDaysHorizontalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
-	static QString singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel, int subgroup, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
-	static QString singleSubgroupsTimetableTimeHorizontalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
-	static QString singleSubgroupsTimetableTimeVerticalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
-	static QString singleSubgroupsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
-	static QString singleSubgroupsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
-	static QString singleGroupsTimetableDaysHorizontalHtml(int htmlLevel, int group, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
-	static QString singleGroupsTimetableDaysVerticalHtml(int htmlLevel, int group, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
-	static QString singleGroupsTimetableTimeHorizontalHtml(int htmlLevel, int maxGroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
-	static QString singleGroupsTimetableTimeVerticalHtml(int htmlLevel, int maxGroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
-	static QString singleGroupsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxGroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
-	static QString singleGroupsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxGroups, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
-	static QString singleYearsTimetableDaysHorizontalHtml(int htmlLevel, int year, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
-	static QString singleYearsTimetableDaysVerticalHtml(int htmlLevel, int year, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
-	static QString singleYearsTimetableTimeHorizontalHtml(int htmlLevel, int maxYears, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
-	static QString singleYearsTimetableTimeVerticalHtml(int htmlLevel, int maxYears, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
-	static QString singleYearsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxYears, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
-	static QString singleYearsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxYears, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool detailed, bool repeatNames);
-	static QString singleAllActivitiesTimetableDaysHorizontalHtml(int htmlLevel, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleAllActivitiesTimetableDaysVerticalHtml(int htmlLevel, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleAllActivitiesTimetableTimeHorizontalHtml(int htmlLevel, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleAllActivitiesTimetableTimeVerticalHtml(int htmlLevel, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleAllActivitiesTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleAllActivitiesTimetableTimeVerticalDailyHtml(int htmlLevel, int day, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleTeachersTimetableDaysHorizontalHtml(int htmlLevel, int teacher, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleTeachersTimetableDaysVerticalHtml(int htmlLevel, int teacher, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleTeachersTimetableTimeHorizontalHtml(int htmlLevel, int maxTeachers, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleTeachersTimetableTimeVerticalHtml(int htmlLevel, int maxTeachers, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleTeachersTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxTeachers, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleTeachersTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxTeachers, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleRoomsTimetableDaysHorizontalHtml(int htmlLevel, int room, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleRoomsTimetableDaysVerticalHtml(int htmlLevel, int room, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleRoomsTimetableTimeHorizontalHtml(int htmlLevel, int maxRooms, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleRoomsTimetableTimeVerticalHtml(int htmlLevel, int maxRooms, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleRoomsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxRooms, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleRoomsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxRooms, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleSubjectsTimetableDaysHorizontalHtml(int htmlLevel, int subject, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleSubjectsTimetableDaysVerticalHtml(int htmlLevel, int subject, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel, int maxSubjects, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleSubjectsTimetableTimeVerticalHtml(int htmlLevel, int maxSubjects, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleSubjectsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxSubjects, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleSubjectsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxSubjects, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleActivityTagsTimetableDaysHorizontalHtml(int htmlLevel, int activityTag, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleActivityTagsTimetableDaysVerticalHtml(int htmlLevel, int activityTag, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleActivityTagsTimetableTimeHorizontalHtml(int htmlLevel, int maxActivityTag, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleActivityTagsTimetableTimeVerticalHtml(int htmlLevel, int maxActivityTag, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleActivityTagsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxActivityTag, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
-	static QString singleActivityTagsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxActivityTag, QSet<int>& excludedNames, const QString& saveTime, bool printActivityTags, bool repeatNames);
+	static QString singleSubgroupsTimetableDaysHorizontalHtml(int htmlLevel, int subgroup, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static QString singleSubgroupsTimetableDaysVerticalHtml(int htmlLevel, int subgroup, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static QString singleSubgroupsTimetableTimeHorizontalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static QString singleSubgroupsTimetableTimeVerticalHtml(int htmlLevel, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static QString singleSubgroupsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static QString singleSubgroupsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxSubgroups, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames, const QList<int>& subgroupsSortedOrder=QList<int>());
+	static QString singleGroupsTimetableDaysHorizontalHtml(int htmlLevel, int group, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool detailed, bool repeatNames);
+	static QString singleGroupsTimetableDaysVerticalHtml(int htmlLevel, int group, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool detailed, bool repeatNames);
+	static QString singleGroupsTimetableTimeHorizontalHtml(int htmlLevel, int maxGroups, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool detailed, bool repeatNames);
+	static QString singleGroupsTimetableTimeVerticalHtml(int htmlLevel, int maxGroups, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool detailed, bool repeatNames);
+	static QString singleGroupsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxGroups, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool detailed, bool repeatNames);
+	static QString singleGroupsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxGroups, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool detailed, bool repeatNames);
+	static QString singleYearsTimetableDaysHorizontalHtml(int htmlLevel, int year, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool detailed, bool repeatNames);
+	static QString singleYearsTimetableDaysVerticalHtml(int htmlLevel, int year, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool detailed, bool repeatNames);
+	static QString singleYearsTimetableTimeHorizontalHtml(int htmlLevel, int maxYears, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool detailed, bool repeatNames);
+	static QString singleYearsTimetableTimeVerticalHtml(int htmlLevel, int maxYears, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool detailed, bool repeatNames);
+	static QString singleYearsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxYears, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool detailed, bool repeatNames);
+	static QString singleYearsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxYears, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool detailed, bool repeatNames);
+	static QString singleAllActivitiesTimetableDaysHorizontalHtml(int htmlLevel, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleAllActivitiesTimetableDaysVerticalHtml(int htmlLevel, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleAllActivitiesTimetableTimeHorizontalHtml(int htmlLevel, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleAllActivitiesTimetableTimeVerticalHtml(int htmlLevel, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleAllActivitiesTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleAllActivitiesTimetableTimeVerticalDailyHtml(int htmlLevel, int day, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleTeachersTimetableDaysHorizontalHtml(int htmlLevel, int teacher, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleTeachersTimetableDaysVerticalHtml(int htmlLevel, int teacher, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleTeachersTimetableTimeHorizontalHtml(int htmlLevel, int maxTeachers, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleTeachersTimetableTimeVerticalHtml(int htmlLevel, int maxTeachers, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleTeachersTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxTeachers, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleTeachersTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxTeachers, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleRoomsTimetableDaysHorizontalHtml(int htmlLevel, int room, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleRoomsTimetableDaysVerticalHtml(int htmlLevel, int room, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleRoomsTimetableTimeHorizontalHtml(int htmlLevel, int maxRooms, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleRoomsTimetableTimeVerticalHtml(int htmlLevel, int maxRooms, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleRoomsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxRooms, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleRoomsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxRooms, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleSubjectsTimetableDaysHorizontalHtml(int htmlLevel, int subject, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleSubjectsTimetableDaysVerticalHtml(int htmlLevel, int subject, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleSubjectsTimetableTimeHorizontalHtml(int htmlLevel, int maxSubjects, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleSubjectsTimetableTimeVerticalHtml(int htmlLevel, int maxSubjects, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleSubjectsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxSubjects, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleSubjectsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxSubjects, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleActivityTagsTimetableDaysHorizontalHtml(int htmlLevel, int activityTag, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleActivityTagsTimetableDaysVerticalHtml(int htmlLevel, int activityTag, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleActivityTagsTimetableTimeHorizontalHtml(int htmlLevel, int maxActivityTag, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleActivityTagsTimetableTimeVerticalHtml(int htmlLevel, int maxActivityTag, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleActivityTagsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxActivityTag, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleActivityTagsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxActivityTag, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
 	static QString singleTeachersFreePeriodsTimetableDaysHorizontalHtml(int htmlLevel, const QString& saveTime, bool detailed, bool repeatNames);
 	static QString singleTeachersFreePeriodsTimetableDaysVerticalHtml(int htmlLevel, const QString& saveTime, bool detailed, bool repeatNames);
 	static QString singleTeachersStatisticsHtml(int htmlLevel, const QString& saveTime, bool detailed, bool repeatNames, bool printAll);
@@ -124,11 +220,11 @@ public:
 	
 	static void computeHashActivityColorBySubject();
 	static void computeHashActivityColorBySubjectAndStudents();
-
+	
 private:
 	//this function must be called before export HTML files, because it compute the IDs
 	static void computeHashForIDsTimetable();
-
+	
 	//this function must be called before export HTML files, because it is needed for the allActivities tables
 	static void computeActivitiesAtTime();
 	
@@ -136,13 +232,13 @@ private:
 	static void computeActivitiesWithSameStartingTime();
 	//this function add activities with same starting time into the allActivities list
 	static bool addActivitiesWithSameStartingTime(QList<int>& allActivities, int hour);
-
+	
 	//the following functions write the conflicts as text and the XML files
 	static void writeSubgroupsTimetableXml(QWidget* parent, const QString& xmlfilename, const QList<int>& subgroupsSortedOrder=QList<int>());
 	static void writeTeachersTimetableXml(QWidget* parent, const QString& xmlfilename);
 	static void writeActivitiesTimetableXml(QWidget* parent, const QString& xmlfilename);
 	static void writeConflictsTxt(QWidget* parent, const QString& filename, const QString& saveTime, int placedActivities);
-
+	
 	//the following functions write the CSS and HTML timetable files
 	static void writeIndexHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeStylesheetCss(QWidget* parent, const QString& cssfilename, const QString& saveTime, int placedActivities);
@@ -198,17 +294,28 @@ private:
 	static void writeTeachersFreePeriodsTimetableDaysVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeTeachersStatisticsHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeStudentsStatisticsHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
-
+	
 	//the following functions return QStrings, because they are 'only' subfunctions to the writeXyzHtml functions
-	static QString writeActivityStudents(int htmlLevel, int ai, int day, int hour, bool notAvailable, bool colspan, bool rowspan, bool printActivityTags, const QString& skipStudentsSet);
-	static QString writeActivitiesStudents(int htmlLevel, const QList<int>& allActivities, bool printActivityTags);
-	static QString writeActivityTeacher(int htmlLevel, int teacher, int day, int hour, bool colspan, bool rowspan, bool printActivityTags, const QString& skipTeacher);
-	static QString writeActivitiesTeachers(int htmlLevel, const QList<int>& allActivities, bool printActivityTags);
-	static QString writeActivityRoom(int htmlLevel, int room, int day, int hour, bool colspan, bool rowspan, bool printActivityTags/*, const QString& skipRoom*/); //currently unneeded, because FET supports only one room per activity
-	static QString writeActivitiesRooms(int htmlLevel, const QList<int>& allActivities, bool printActivityTags);
-	static QString writeActivitiesSubjects(int htmlLevel, const QList<int>& allActivities, bool printActivityTags);
-	static QString writeActivitiesActivityTags(int htmlLevel, const QList<int>& allActivities, bool printActivityTags);
-
+	static QString writeActivityStudents(int htmlLevel, int ai, int day, int hour, bool notAvailable, bool colspan, bool rowspan,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		const QString& skipStudentsSet);
+	static QString writeActivitiesStudents(int htmlLevel, const QList<int>& allActivities,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
+	static QString writeActivityTeacher(int htmlLevel, int teacher, int day, int hour, bool colspan, bool rowspan,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		const QString& skipTeacher);
+	static QString writeActivitiesTeachers(int htmlLevel, const QList<int>& allActivities,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
+	static QString writeActivityRoom(int htmlLevel, int room, int day, int hour, bool colspan, bool rowspan,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms
+		/*, const QString& skipRoom*/); //currently unneeded, because FET supports only one room per activity
+	static QString writeActivitiesRooms(int htmlLevel, const QList<int>& allActivities,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
+	static QString writeActivitiesSubjects(int htmlLevel, const QList<int>& allActivities,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
+	static QString writeActivitiesActivityTags(int htmlLevel, const QList<int>& allActivities,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
+	
 	//the following functions return QStrings, because they are 'only' subfunctions to the writeActivity-iesXyz functions
 	static QString writeHead(bool java, int placedActivities, bool printInstitution);
 	static QString writeTOCDays();

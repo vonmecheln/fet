@@ -882,19 +882,21 @@ public slots:
 	
 	void on_settingsDivideTimetablesByDaysAction_toggled();
 	void on_settingsDuplicateVerticalNamesAction_toggled();
-
+	
 	void on_settingsRestoreDefaultsAction_triggered();
-
+	
 	void on_settingsTimetableHtmlLevelAction_triggered();
-	void on_settingsPrintActivityTagsAction_toggled();
+	
+	void on_settingsDataToPrintInTimetablesAction_triggered();
+	
 	void on_settingsOrderSubgroupsInTimetablesAction_toggled();
 	void on_settingsPrintDetailedTimetablesAction_toggled();
 	void on_settingsPrintDetailedTeachersFreePeriodsTimetablesAction_toggled();
 	void on_settingsPrintNotAvailableSlotsAction_toggled();
 	void on_settingsPrintBreakSlotsAction_toggled();
-
+	
 	void on_settingsPrintActivitiesWithSameStartingTimeAction_toggled();
-
+	
 	void on_selectOutputDirAction_triggered();
 	
 	void on_statisticsExportToDiskAction_triggered();
@@ -906,7 +908,7 @@ public slots:
 	void on_shortcutStudentsTimeConstraintsPushButton_clicked();
 	void on_shortcutActivitiesTimeConstraintsPushButton_clicked();
 	void on_shortcutAdvancedTimeConstraintsPushButton_clicked();
-
+	
 	void on_shortcutAllSpaceConstraintsPushButton_clicked();
 	void on_shortcutRoomsSpaceConstraintsPushButton_clicked();
 	void on_shortcutTeachersSpaceConstraintsPushButton_clicked();
