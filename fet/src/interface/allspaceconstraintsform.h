@@ -52,7 +52,7 @@ public:
 public slots:
 	void constraintChanged();
 	void modifyConstraint();
-	void removeConstraint();
+	void removeConstraints();
 	void filter(bool active);
 
 	void moveSpaceConstraintUp();
@@ -60,10 +60,10 @@ public slots:
 
 	void sortedChanged(bool checked);
 
-	void activateConstraint();
-	void deactivateConstraint();
-	void activateAllConstraints();
-	void deactivateAllConstraints();
+	void activateConstraints();
+	void deactivateConstraints();
+	//void activateAllConstraints();
+	//void deactivateAllConstraints();
 	void constraintComments();
 };
 

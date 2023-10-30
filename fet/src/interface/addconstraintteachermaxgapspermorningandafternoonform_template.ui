@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>721</width>
-    <height>372</height>
+    <width>818</width>
+    <height>436</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -142,6 +142,13 @@ Note: teacher not available and break are not counted as gaps.</string>
       <widget class="QPushButton" name="addConstraintPushButton">
        <property name="text">
         <string>Add constraint</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="addConstraintsPushButton">
+       <property name="text">
+        <string>Add constraints</string>
        </property>
       </widget>
      </item>

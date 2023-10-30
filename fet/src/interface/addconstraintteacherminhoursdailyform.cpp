@@ -29,6 +29,7 @@ AddConstraintTeacherMinHoursDailyForm::AddConstraintTeacherMinHoursDailyForm(QWi
 	addConstraintPushButton->setDefault(true);
 
 	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
 	centerWidgetOnScreen(this);
@@ -110,6 +111,55 @@ void AddConstraintTeacherMinHoursDailyForm::addCurrentConstraint()
 			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
+}
+
+
+void AddConstraintTeacherMinHoursDailyForm::addCurrentConstraints()
+{
+	QMessageBox::StandardButton res=QMessageBox::question(this, tr("FET question"),
+	 tr("Warning: This operation will add multiple constraints, one for each teacher. Are you sure?"),
+	 QMessageBox::Cancel | QMessageBox::Yes);
+	if(res==QMessageBox::Cancel)
+		return;
+
+	double weight;
+	QString tmp=weightLineEdit->text();
+	weight_sscanf(tmp, "%lf", &weight);
+	if(weight<0.0 || weight>100.0){
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage)"));
+		return;
+	}
+	if(weight!=100.0){
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - must be 100%"));
+		return;
+	}
+
+	if(!allowEmptyDaysCheckBox->isChecked()){
+		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
+			QMessageBox::warning(this, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for the teachers, "
+				"please use the constraint teachers min days per week"));
+			return;
+		}
+		else{
+			QMessageBox::warning(this, tr("FET information"), tr("Allow empty days check box must be checked. If you need to not allow empty days for a teacher, "
+				"please use the constraint teacher min days per week (but the min days per week constraint is for real days. You can also use the "
+				"constraints teacher min mornings/afternoons per week.)"));
+			return;
+		}
+	}
+
+	int min_hours=minHoursSpinBox->value();
+
+	for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+		TimeConstraint *ctr=new ConstraintTeacherMinHoursDaily(weight, min_hours, tch->name, allowEmptyDaysCheckBox->isChecked());
+		bool tmp2=gt.rules.addTimeConstraint(ctr);
+		assert(tmp2);
+	}
+
+	QMessageBox::information(this, tr("FET information"), tr("Added %1 time constraints. Please note that these constraints"
+	 " will be visible as constraints for individual teachers.").arg(gt.rules.teachersList.count()));
 }
 
 void AddConstraintTeacherMinHoursDailyForm::on_allowEmptyDaysCheckBox_toggled()

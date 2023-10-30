@@ -5558,7 +5558,10 @@ QString TimetableExport::writeTOCDays(){
 }
 
 // by Volker Dirr
-QString TimetableExport::writeStartTagTDofActivities(int htmlLevel, const Activity* act, bool detailed, bool colspan, bool rowspan, int colorBy){
+QString TimetableExport::writeStartTagTDofActivities(int htmlLevel, const Activity* act, bool detailed, bool colspan, bool rowspan, int colorBy,
+ bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms){
+	Q_UNUSED(printRooms);
+	
 	QString tmp;
 	assert(!(colspan && rowspan));
 	if(detailed)
@@ -5570,35 +5573,46 @@ QString TimetableExport::writeStartTagTDofActivities(int htmlLevel, const Activi
 		tmp+=" rowspan=\""+CustomFETString::number(act->duration)+"\"";
 	if(colspan && act->duration>1)
 		tmp+=" colspan=\""+CustomFETString::number(act->duration)+"\"";
-	if(htmlLevel==6){
+	if(htmlLevel==6 &&
+	 (printSubjects
+	 || (printActivityTags && !act->activityTagsNames.isEmpty())
+	 || (printTeachers && !act->teachersNames.isEmpty())
+	 || (printStudents && !act->studentsNames.isEmpty()))){
 		tmp+=" class=\"";
-		if(act->subjectName.size()>0){
+		if(printSubjects && act->subjectName.size()>0){
 			tmp+="s_"+hashSubjectIDsTimetable.value(act->subjectName);
+			tmp+=" ";
 		}
-		if(act->activityTagsNames.size()>0){
+		if(printActivityTags && act->activityTagsNames.size()>0){
 			for(const QString& atn : std::as_const(act->activityTagsNames)){
 				assert(hashActivityTagIDsTimetable.contains(atn));
 				int id=hashActivityTagIDsTimetable.value(atn, "0").toInt()-1;
 				assert(id>=0);
 				assert(id<gt.rules.nInternalActivityTags);
 				if(gt.rules.internalActivityTagsList[id]->printable){
-					tmp+=" at_"+hashActivityTagIDsTimetable.value(atn);
+					tmp+="at_"+hashActivityTagIDsTimetable.value(atn);
+					tmp+=" ";
 				}
 			}
 		}
-		if(act->studentsNames.size()>0){
-			for(const QString& st : std::as_const(act->studentsNames))
-				tmp+=" ss_"+hashStudentIDsTimetable.value(st);
+		if(printStudents && act->studentsNames.size()>0){
+			for(const QString& st : std::as_const(act->studentsNames)){
+				tmp+="ss_"+hashStudentIDsTimetable.value(st);
+				tmp+=" ";
+			}
 		}
-		if(act->teachersNames.size()>0){
-			for(const QString& t : std::as_const(act->teachersNames))
-				tmp+=" t_"+hashTeacherIDsTimetable.value(t);
+		if(printTeachers && act->teachersNames.size()>0){
+			for(const QString& t : std::as_const(act->teachersNames)){
+				tmp+="t_"+hashTeacherIDsTimetable.value(t);
+				tmp+=" ";
+			}
 		}
 		//i need ai for this!!! so i need a parameter ai?! //TODO
 		/*int r=best_solution.rooms[ai];
 		if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 			tmp+=" room_"+protect2id(gt.rules.internalRoomsList[r]->name);
 		}*/
+		tmp.chop(1);
 		if(detailed)
 			tmp+=" detailed";
 		tmp+="\"";
@@ -5846,7 +5860,7 @@ QString TimetableExport::writeActivityStudents(int htmlLevel, int ai, int day, i
 	if(ai!=UNALLOCATED_ACTIVITY){
 		if(best_solution.times[ai]==currentTime){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(htmlLevel, act, false, colspan, rowspan, COLOR_BY_SUBJECT);
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, false, colspan, rowspan, COLOR_BY_SUBJECT, printSubjects, printActivityTags, printTeachers, printStudents, printRooms);
 			//TODO line0
 			bool skipLine0=false;
 			if(act->studentsNames.size()==1){
@@ -5898,7 +5912,8 @@ QString TimetableExport::writeActivitiesStudents(int htmlLevel, const QList<int>
 			int ai=allActivities[a];
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT)+writeStudents(htmlLevel, act, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeStudents(htmlLevel, act, "", "")+"</td>";
 			}
 		}
 		tmp+="</tr>";
@@ -5926,7 +5941,8 @@ QString TimetableExport::writeActivitiesStudents(int htmlLevel, const QList<int>
 				int ai=allActivities[a];
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
-					tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT)+writeSubjectAndActivityTags(htmlLevel, act, "", "", !printSubjects, printActivityTags)+"</td>";
+					tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+					 +writeSubjectAndActivityTags(htmlLevel, act, "", "", !printSubjects, printActivityTags)+"</td>";
 				}
 			}
 			tmp+="</tr>";
@@ -5940,7 +5956,8 @@ QString TimetableExport::writeActivitiesStudents(int htmlLevel, const QList<int>
 			int ai=allActivities[a];
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT)+writeTeachers(htmlLevel, act, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeTeachers(htmlLevel, act, "", "")+"</td>";
 			}
 		}
 		tmp+="</tr>";
@@ -5953,7 +5970,8 @@ QString TimetableExport::writeActivitiesStudents(int htmlLevel, const QList<int>
 			int ai=allActivities[a];
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT)+writeRoom(htmlLevel, ai, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeRoom(htmlLevel, ai, "", "")+"</td>";
 			}
 		}
 		tmp+="</tr>";
@@ -5972,7 +5990,7 @@ QString TimetableExport::writeActivityTeacher(int htmlLevel, int teacher, int da
 	if(ai!=UNALLOCATED_ACTIVITY){
 		if(best_solution.times[ai]==currentTime){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(htmlLevel, act, false, colspan, rowspan, COLOR_BY_SUBJECT_STUDENTS);
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, false, colspan, rowspan, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms);
 			//TODO line0
 			bool skipLine0=false;
 			if(act->teachersNames.size()==1){
@@ -6025,7 +6043,8 @@ QString TimetableExport::writeActivitiesTeachers(int htmlLevel, const QList<int>
 			int ai=allActivities[a];
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeTeachers(htmlLevel, act, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeTeachers(htmlLevel, act, "", "")+"</td>";
 			}
 		}
 		tmp+="</tr>";
@@ -6038,7 +6057,8 @@ QString TimetableExport::writeActivitiesTeachers(int htmlLevel, const QList<int>
 			int ai=allActivities[a];
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeStudents(htmlLevel, act, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeStudents(htmlLevel, act, "", "")+"</td>";
 			}
 		}
 		tmp+="</tr>";
@@ -6066,7 +6086,8 @@ QString TimetableExport::writeActivitiesTeachers(int htmlLevel, const QList<int>
 				int ai=allActivities[a];
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
-					tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeSubjectAndActivityTags(htmlLevel, act, "", "", !printSubjects, printActivityTags)+"</td>";
+					tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+					 +writeSubjectAndActivityTags(htmlLevel, act, "", "", !printSubjects, printActivityTags)+"</td>";
 				}
 			}
 			tmp+="</tr>";
@@ -6080,7 +6101,8 @@ QString TimetableExport::writeActivitiesTeachers(int htmlLevel, const QList<int>
 			int ai=allActivities[a];
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeRoom(htmlLevel, ai, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeRoom(htmlLevel, ai, "", "")+"</td>";
 			}
 		}
 		tmp+="</tr>";
@@ -6099,7 +6121,7 @@ QString TimetableExport::writeActivityRoom(int htmlLevel, int room, int day, int
 	if(ai!=UNALLOCATED_ACTIVITY){
 		if(best_solution.times[ai]==currentTime){
 			Activity* act=&gt.rules.internalActivitiesList[ai];
-			tmp+=writeStartTagTDofActivities(htmlLevel, act, false, colspan, rowspan, COLOR_BY_SUBJECT_STUDENTS);
+			tmp+=writeStartTagTDofActivities(htmlLevel, act, false, colspan, rowspan, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms);
 			//Each activity has only a single room. So there is no need for line0. Modify this as soon as FET supports multiple rooms per activity.
 			if(printStudents)
 				tmp+=writeStudents(htmlLevel, act, "div", " class=\"studentsset line1\"");
@@ -6141,7 +6163,8 @@ QString TimetableExport::writeActivitiesRooms(int htmlLevel, const QList<int>& a
 			int ai=allActivities[a];
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeRoom(htmlLevel, ai, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeRoom(htmlLevel, ai, "", "")+"</td>";
 			}
 		}
 		tmp+="</tr>";
@@ -6154,7 +6177,8 @@ QString TimetableExport::writeActivitiesRooms(int htmlLevel, const QList<int>& a
 			int ai=allActivities[a];
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeStudents(htmlLevel, act, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeStudents(htmlLevel, act, "", "")+"</td>";
 			}
 		}
 		tmp+="</tr>";
@@ -6167,7 +6191,8 @@ QString TimetableExport::writeActivitiesRooms(int htmlLevel, const QList<int>& a
 			int ai=allActivities[a];
 			if(ai!=UNALLOCATED_ACTIVITY){
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeTeachers(htmlLevel, act, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeTeachers(htmlLevel, act, "", "")+"</td>";
 			}
 		}
 		tmp+="</tr>";
@@ -6195,7 +6220,8 @@ QString TimetableExport::writeActivitiesRooms(int htmlLevel, const QList<int>& a
 				int ai=allActivities[a];
 				if(ai!=UNALLOCATED_ACTIVITY){
 					Activity* act=&gt.rules.internalActivitiesList[ai];
-					tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeSubjectAndActivityTags(htmlLevel, act, "", "", !printSubjects, printActivityTags)+"</td>";
+					tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+					 +writeSubjectAndActivityTags(htmlLevel, act, "", "", !printSubjects, printActivityTags)+"</td>";
 				}
 			}
 			tmp+="</tr>";
@@ -6277,9 +6303,11 @@ QString TimetableExport::writeActivitiesSubjects(int htmlLevel, const QList<int>
 					Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];
 					Activity* act0=&gt.rules.internalActivitiesList[allActivities[0]];	//Because this is always the original subject. We don't need to repeat it, because it is displayed in the tables head
 					if(act->subjectName==act0->subjectName){
-						tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeSubjectAndActivityTags(htmlLevel, act, "", "", true, printActivityTags)+"</td>";
+						tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+						 +writeSubjectAndActivityTags(htmlLevel, act, "", "", true, printActivityTags)+"</td>";
 					} else {
-						tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeSubjectAndActivityTags(htmlLevel, act, "", "", !printSubjects, printActivityTags)+"</td>";
+						tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+						 +writeSubjectAndActivityTags(htmlLevel, act, "", "", !printSubjects, printActivityTags)+"</td>";
 					}
 				}
 				tmp+="</tr>";
@@ -6291,7 +6319,8 @@ QString TimetableExport::writeActivitiesSubjects(int htmlLevel, const QList<int>
 			else	tmp+="<tr>";
 			for(int a=0; a<allActivities.size(); a++){
 				Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeStudents(htmlLevel, act, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeStudents(htmlLevel, act, "", "")+"</td>";
 			}
 			tmp+="</tr>";
 		}
@@ -6301,7 +6330,8 @@ QString TimetableExport::writeActivitiesSubjects(int htmlLevel, const QList<int>
 			else	tmp+="<tr>";
 			for(int a=0; a<allActivities.size(); a++){
 				Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeTeachers(htmlLevel, act, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeTeachers(htmlLevel, act, "", "")+"</td>";
 			}
 			tmp+="</tr>";
 		}
@@ -6312,7 +6342,8 @@ QString TimetableExport::writeActivitiesSubjects(int htmlLevel, const QList<int>
 			for(int a=0; a<allActivities.size(); a++){
 				int ai=allActivities[a];
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeRoom(htmlLevel, ai, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeRoom(htmlLevel, ai, "", "")+"</td>";
 			}
 			tmp+="</tr>";
 		}
@@ -6356,7 +6387,8 @@ QString TimetableExport::writeActivitiesActivityTags(int htmlLevel, const QList<
 					int ai=allActivities[a];
 					if(ai!=UNALLOCATED_ACTIVITY){
 						Activity* act=&gt.rules.internalActivitiesList[ai];
-						tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeSubjectAndActivityTags(htmlLevel, act, "", "", !printSubjects, printActivityTags)+"</td>";
+						tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+						 +writeSubjectAndActivityTags(htmlLevel, act, "", "", !printSubjects, printActivityTags)+"</td>";
 					}
 				}
 				tmp+="</tr>";
@@ -6368,7 +6400,8 @@ QString TimetableExport::writeActivitiesActivityTags(int htmlLevel, const QList<
 			else	tmp+="<tr>";
 			for(int a=0; a<allActivities.size(); a++){
 				Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeStudents(htmlLevel, act, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeStudents(htmlLevel, act, "", "")+"</td>";
 			}
 			tmp+="</tr>";
 		}
@@ -6378,7 +6411,8 @@ QString TimetableExport::writeActivitiesActivityTags(int htmlLevel, const QList<
 			else	tmp+="<tr>";
 			for(int a=0; a<allActivities.size(); a++){
 				Activity* act=&gt.rules.internalActivitiesList[allActivities[a]];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeTeachers(htmlLevel, act, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeTeachers(htmlLevel, act, "", "")+"</td>";
 			}
 			tmp+="</tr>";
 		}
@@ -6389,7 +6423,8 @@ QString TimetableExport::writeActivitiesActivityTags(int htmlLevel, const QList<
 			for(int a=0; a<allActivities.size(); a++){
 				int ai=allActivities[a];
 				Activity* act=&gt.rules.internalActivitiesList[ai];
-				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS)+writeRoom(htmlLevel, ai, "", "")+"</td>";
+				tmp+=writeStartTagTDofActivities(htmlLevel, act, true, false, false, COLOR_BY_SUBJECT_STUDENTS, printSubjects, printActivityTags, printTeachers, printStudents, printRooms)
+				 +writeRoom(htmlLevel, ai, "", "")+"</td>";
 			}
 			tmp+="</tr>";
 		}

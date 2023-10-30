@@ -58,7 +58,7 @@ public:
 
 public slots:
 	void addActivity();
-	void removeActivity();
+	void removeActivities();
 	void modifyActivity();
 	void activityChanged();
 	void filterChanged();
@@ -69,10 +69,10 @@ public slots:
 	
 	void help();
 	
-	void activateActivity();
-	void deactivateActivity();
-	void activateAllActivities();
-	void deactivateAllActivities();
+	void activateActivities();
+	void deactivateActivities();
+	//void activateAllActivities();
+	//void deactivateAllActivities();
 
 	void activityComments();
 };

@@ -151,7 +151,7 @@
       </widget>
      </item>
      <item row="1" column="3">
-      <widget class="QPushButton" name="pushButton5">
+      <widget class="QPushButton" name="helpPushButton">
        <property name="text">
         <string>Help</string>
        </property>

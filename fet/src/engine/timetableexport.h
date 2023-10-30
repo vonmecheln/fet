@@ -319,7 +319,8 @@ private:
 	//the following functions return QStrings, because they are 'only' subfunctions to the writeActivity-iesXyz functions
 	static QString writeHead(bool java, int placedActivities, bool printInstitution);
 	static QString writeTOCDays();
-	static QString writeStartTagTDofActivities(int htmlLevel, const Activity* act, bool detailed, bool colspan, bool rowspan, int colorBy);
+	static QString writeStartTagTDofActivities(int htmlLevel, const Activity* act, bool detailed, bool colspan, bool rowspan, int colorBy,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
 	static QString writeSubjectAndActivityTags(int htmlLevel, const Activity* act, const QString& startTag, const QString& startTagAttribute, bool activityTagsOnly, bool printActivityTags);
 	static QString writeStudents(int htmlLevel, const Activity* act, const QString& startTag, const QString& startTagAttribute);
 	static QString writeTeachers(int htmlLevel, const Activity* act, const QString& startTag, const QString& startTagAttribute);

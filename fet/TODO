@@ -90,7 +90,7 @@ From Liviu Lalescu:
 
 These are some rather technical problems, for developers, referring to some possible improvements in the generation code:
 
-- In the initial order, in nIncompatible, consider also teachers(students)intervalMaxDaysPerWeek, like in teacherMaxDaysPerWeek
+- In the initial order, in nIncompatible, consider also teachers(students)IntervalMaxDaysPerWeek, like in teacherMaxDaysPerWeek
 
 - Make students max gaps per day perfect. This is very difficult/complicated. Any bug/mistake would be critical.
 
@@ -838,7 +838,7 @@ then I can not define the surveillance activities.
 - We try that all the teachers work maximum 2 afternoons per week. This has been easy to define with "All teachers work in an hourly interval max days per week".
 But we try also that teachers who work two days per week in the afternoon to have a free morning. I don't know how to define this situation.
 
-47---------------------------------------------------------
+47------------PARTIALLY DONE IN FET-6.11.0 on 23 October 2023
 From T. Renganathan:
 
 You can include a provision for multiple selection of subjects, teachers,
@@ -1382,7 +1382,7 @@ or
 
 81----------------------------DONE-------------------------
 
-82---------------------------------------------------------
+82-----PARTIALLY-DONE in FET-6.11.0 22 October 2023--------
 From Valdo (on forum):
 
 Conclusion: he has many teachers, and almost all should have max 2 gaps per week, with 2 exceptions, who may have more gaps. He
@@ -1428,7 +1428,7 @@ that teacher
 3. Then I press Add. I expect the teacher field filled with the name I used in
 filter... but currently FET propose always the first teacher in list.
 
-84---------------------------------------------------------
+84-----PARTIALLY-DONE in FET-6.11.0 22 October 2023--------
 From Massimo Mancini and Chafik Graiguer:
 
 Consider this:
@@ -2498,7 +2498,7 @@ completed version, unlock some year, then let the program to run again.
 Liviu: I did such a custom version for Yush, but it turns out not to work
 as needed, because of broken soft constraints.
 
-158------------------partially DONE in FET-6.8.0------------
+158----partially DONE in FET-6.8.0 and FET-6.11.0 on 23 October 2023
 From Yush Yuen:
 
 (Also suggested by daviodan: multiple selection with Ctrl or Shift in the
@@ -4507,7 +4507,7 @@ It could be helpful to put disable and enable buttons in every windows about con
 
 DONE-->It could be helpful too to put those buttons also on windows about activities.
 
-281---------------------------------------------------------
+281--------PARTIALLY DONE IN FET-6.11.0 on 23 October 2023--
 From Lizio (on forum):
 
 I think it could be very helpful to let multiple selection in every window about data and constraints.
@@ -5317,7 +5317,7 @@ I do not agree with this idea. But I added it in the TODO.
 
 Please note that max gaps per week/day for students/teachers constraints can only have 100% weight.
 
-323---------------------------------------------------------
+323------------DONE FOR TEACHERS AND STUDENTS IN FET-6.11.0-
 From Vangelis Karafillidis:
 
 He suggests that all the constraints teacher not available could be presented in a teachers time horizontal manner (teacher as row, day+hour as column).
@@ -7482,7 +7482,7 @@ Most of the time constraints should be removed, but some constraints such as tea
 teacher max gaps per day, etc could be selected by the user in order to be extracted to the new (generated) .fet file. Then the user could add some
 constraints in order to avoid the gaps for the students groups, and generate a new timetable.
 
-455---------------------------------------------------------
+455-----PARTIALLY-DONE in FET-6.11.0 22 October 2023--------
 From Vangelis Karafillidis (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5142.0
@@ -7792,7 +7792,7 @@ to turn-off PC when done.
 
 See also item #25.
 
-476---------------------------------------------------------
+476-----PARTIALLY-DONE in FET-6.11.0 22 October 2023--------
 From Fritzlang (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5339.0
@@ -8688,7 +8688,7 @@ Vangelis C4 Chemistry 2 hours per week...
 
 We need any of the 2 hours of Vangelis (1 of them) to coincide with ANY of the hours of John, Mary, or George...
 
-507---------------------------------------------------------
+507------------DONE FOR TEACHERS AND STUDENTS-IN-FET-6.11.0-
 From Vangelis Karafillidis:
 
 (see also item #323)
@@ -8752,7 +8752,7 @@ Also, is it correct to assume that if StudentsMaxBuildingChangesPerWeek = 0 I ca
 
 Liviu Lalescu: Unfortunately, it is a bug, not a feature. However, I added this in the TODO.
 
-512---------------------------------------------------------
+512----PARTIALLY DONE IN FET-6.11.0 on 23 October 2023------
 From fartoto_dz2004 (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5668.0
@@ -8896,7 +8896,25 @@ in an hourly interval MIN days per week.
 
 Liviu Lalescu: Sorry, but for now I prefer the current approach.
 
-520---------------------------------------------------------
+520------DONE IN FET-6.11.0 on 23 October 2023--------------
 From Vangelis Karafillidis:
 
 In the activities list, add the possibility to select multiple activities and activate/deactivate them with a single click.
+
+521---------------------------------------------------------
+From fourat (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5746.0
+
+I work with two weeks week A and week B with weekly activities and others fortnightly.
+Is it possible to add to the constraint a teacher max span per day an exception with two days (for week A and week B)??
+
+Liviu Lalescu:
+
+Unfortunately, the constraint allowing one day exception was already very complicated to implement. With two days exceptions,
+seems too complicated, at least for now.
+
+522---------------------------------------------------------
+From Volker Dirr:
+
+Merge the "single" type and "all" type of constraints into a single dialog (instead of two).

@@ -367,6 +367,9 @@ TimetableViewStudentsTimeHorizontalForm::TimetableViewStudentsTimeHorizontalForm
 	heightSpinBox->setValue(h);
 	heightSpinBox->setSpecialValueText(tr("Automatic"));
 	
+	studentsTimetableTable->horizontalHeader()->setMinimumSectionSize(MINIMUM_WIDTH_SPIN_BOX_VALUE);
+	studentsTimetableTable->verticalHeader()->setMinimumSectionSize(MINIMUM_HEIGHT_SPIN_BOX_VALUE);
+	
 	widthSpinBoxValueChanged();
 	heightSpinBoxValueChanged();
 	

@@ -29,6 +29,7 @@ AddConstraintTeachersActivityTagMinHoursDailyForm::AddConstraintTeachersActivity
 	addConstraintPushButton->setDefault(true);
 
 	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
 	centerWidgetOnScreen(this);
@@ -96,4 +97,46 @@ void AddConstraintTeachersActivityTagMinHoursDailyForm::addCurrentConstraint()
 			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
+}
+
+void AddConstraintTeachersActivityTagMinHoursDailyForm::addCurrentConstraints()
+{
+	QMessageBox::StandardButton res=QMessageBox::question(this, tr("FET question"),
+	 tr("Warning: This operation will add multiple constraints, one for each teacher. Are you sure?"),
+	 QMessageBox::Cancel | QMessageBox::Yes);
+	if(res==QMessageBox::Cancel)
+		return;
+
+	double weight;
+	QString tmp=weightLineEdit->text();
+	weight_sscanf(tmp, "%lf", &weight);
+	if(weight<100.0 || weight>100.0){
+		QMessageBox::warning(this, tr("FET warning"),
+			tr("Invalid weight (percentage). It has to be 100"));
+		return;
+	}
+
+	QString activityTagName=activityTagsComboBox->currentText();
+	int activityTagIndex=gt.rules.searchActivityTag(activityTagName);
+	if(activityTagIndex<0){
+		QMessageBox::warning(this, tr("FET warning"),
+			tr("Invalid activity tag"));
+		return;
+	}
+
+	if(allowEmptyDaysCheckBox->isChecked() && minHoursSpinBox->value()==1){
+		QMessageBox::warning(this, tr("FET warning"), tr("Allow empty days is selected and min hours daily is 1, so this would be a useless constraint."));
+		return;
+	}
+
+	int min_hours=minHoursSpinBox->value();
+
+	for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+		TimeConstraint *ctr=new ConstraintTeacherActivityTagMinHoursDaily(weight, min_hours, allowEmptyDaysCheckBox->isChecked(), tch->name, activityTagName);
+		bool tmp2=gt.rules.addTimeConstraint(ctr);
+		assert(tmp2);
+	}
+
+	QMessageBox::information(this, tr("FET information"), tr("Added %1 time constraints. Please note that these constraints"
+	 " will be visible as constraints for individual teachers.").arg(gt.rules.teachersList.count()));
 }

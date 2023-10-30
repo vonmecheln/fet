@@ -327,6 +327,9 @@ TimetableViewRoomsTimeHorizontalForm::TimetableViewRoomsTimeHorizontalForm(QWidg
 	heightSpinBox->setValue(h);
 	heightSpinBox->setSpecialValueText(tr("Automatic"));
 	
+	roomsTimetableTable->horizontalHeader()->setMinimumSectionSize(MINIMUM_WIDTH_SPIN_BOX_VALUE);
+	roomsTimetableTable->verticalHeader()->setMinimumSectionSize(MINIMUM_HEIGHT_SPIN_BOX_VALUE);
+	
 	widthSpinBoxValueChanged();
 	heightSpinBoxValueChanged();
 	

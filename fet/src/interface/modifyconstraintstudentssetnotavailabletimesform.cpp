@@ -49,7 +49,7 @@ ModifyConstraintStudentsSetNotAvailableTimesForm::ModifyConstraintStudentsSetNot
 
 	QSize tmp2=studentsComboBox->minimumSizeHint();
 	Q_UNUSED(tmp2);
-		
+	
 	this->_ctr=ctr;
 	
 	weightLineEdit->setText(CustomFETString::number(ctr->weightPercentage));
@@ -234,17 +234,26 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::ok()
 			tr("Invalid students set"));
 		return;
 	}
-
-	for(TimeConstraint* c : std::as_const(gt.rules.timeConstraintsList))
+	
+	if(this->_ctr->students!=students_name){
+		QSet<ConstraintStudentsSetNotAvailableTimes*> cs=gt.rules.ssnatHash.value(students_name, QSet<ConstraintStudentsSetNotAvailableTimes*>());
+		if(!cs.isEmpty()){
+			QMessageBox::warning(this, tr("FET information"),
+			 tr("A constraint of this type exists for the same students set - cannot proceed"));
+			return;
+		}
+	}
+	
+	/*for(TimeConstraint* c : std::as_const(gt.rules.timeConstraintsList))
 		if(c!=this->_ctr && c->type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES){
 			ConstraintStudentsSetNotAvailableTimes* cc=(ConstraintStudentsSetNotAvailableTimes*)c;
 			if(cc->students==students_name){
 				QMessageBox::warning(this, tr("FET information"),
-				tr("A constraint of this type exists for the same students set - cannot proceed"));
+				 tr("A constraint of this type exists for the same students set - cannot proceed"));
 				return;
 			}
-		}
-		
+		}*/
+	
 	this->_ctr->weightPercentage=weight;
 	
 	if(_ctr->students!=students_name){
@@ -252,12 +261,15 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::ok()
 		QString newName=students_name;
 
 		QSet<ConstraintStudentsSetNotAvailableTimes*> cs=gt.rules.ssnatHash.value(oldName, QSet<ConstraintStudentsSetNotAvailableTimes*>());
+		assert(cs.count()==1);
 		assert(cs.contains(_ctr));
-		cs.remove(_ctr);
-		gt.rules.ssnatHash.insert(oldName, cs);
+		//cs.remove(_ctr);
+		//gt.rules.ssnatHash.insert(oldName, cs);
+		gt.rules.ssnatHash.remove(oldName);
 
 		cs=gt.rules.ssnatHash.value(newName, QSet<ConstraintStudentsSetNotAvailableTimes*>());
-		assert(!cs.contains(_ctr));
+		//assert(!cs.contains(_ctr));
+		assert(cs.isEmpty());
 		cs.insert(_ctr);
 		gt.rules.ssnatHash.insert(newName, cs);
 

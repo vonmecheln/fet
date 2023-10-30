@@ -29,6 +29,7 @@ AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::AddConstraintT
 	addConstraintPushButton->setDefault(true);
 
 	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
 	connect(swapPushButton, SIGNAL(clicked()), this, SLOT(swap()));
@@ -124,6 +125,59 @@ void AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::addCurren
 			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
+}
+
+void AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::addCurrentConstraints()
+{
+	QMessageBox::StandardButton res=QMessageBox::question(this, tr("FET question"),
+	 tr("Warning: This operation will add multiple constraints, one for each teacher. Are you sure?"),
+	 QMessageBox::Cancel | QMessageBox::Yes);
+	if(res==QMessageBox::Cancel)
+		return;
+
+	double weight;
+	QString tmp=weightLineEdit->text();
+	weight_sscanf(tmp, "%lf", &weight);
+	if(weight<0.0 || weight>100.0){
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight"));
+		return;
+	}
+	if(weight!=100.0){
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - must be 100%"));
+		return;
+	}
+
+	int minGaps=minGapsSpinBox->value();
+
+	QString firstActivityTagName=firstActivityTagComboBox->currentText();
+	int facttagindex=gt.rules.searchActivityTag(firstActivityTagName);
+	if(facttagindex<0){
+		QMessageBox::warning(this, tr("FET warning"), tr("Invalid first activity tag"));
+		return;
+	}
+
+	QString secondActivityTagName=secondActivityTagComboBox->currentText();
+	int sacttagindex=gt.rules.searchActivityTag(secondActivityTagName);
+	if(sacttagindex<0){
+		QMessageBox::warning(this, tr("FET warning"), tr("Invalid second activity tag"));
+		return;
+	}
+
+	if(firstActivityTagName==secondActivityTagName){
+		QMessageBox::warning(this, tr("FET warning"), tr("The two activity tags cannot be the same"));
+		return;
+	}
+
+	for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+		TimeConstraint *ctr=new ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags(weight, tch->name, minGaps, firstActivityTagName, secondActivityTagName);
+		bool tmp2=gt.rules.addTimeConstraint(ctr);
+		assert(tmp2);
+	}
+
+	QMessageBox::information(this, tr("FET information"), tr("Added %1 time constraints. Please note that these constraints"
+	 " will be visible as constraints for individual teachers.").arg(gt.rules.teachersList.count()));
 }
 
 void AddConstraintTeachersMinGapsBetweenOrderedPairOfActivityTagsForm::swap()

@@ -31,6 +31,7 @@ public:
 
 public slots:
 	void addCurrentConstraint();
+	void addCurrentConstraints();
 };
 
 #endif

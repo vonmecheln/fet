@@ -233,16 +233,25 @@ void ModifyConstraintTeacherNotAvailableTimesForm::ok()
 			tr("Invalid teacher"));
 		return;
 	}
+	
+	if(this->_ctr->teacher!=teacher_name){
+		QSet<ConstraintTeacherNotAvailableTimes*> cs=gt.rules.tnatHash.value(teacher_name, QSet<ConstraintTeacherNotAvailableTimes*>());
+		if(!cs.isEmpty()){
+			QMessageBox::warning(this, tr("FET information"),
+			 tr("A constraint of this type exists for the same teacher - cannot proceed"));
+			return;
+		}
+	}
 
-	for(TimeConstraint* c : std::as_const(gt.rules.timeConstraintsList))
+	/*for(TimeConstraint* c : std::as_const(gt.rules.timeConstraintsList))
 		if(c!=this->_ctr && c->type==CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES){
 			ConstraintTeacherNotAvailableTimes* cc=(ConstraintTeacherNotAvailableTimes*)c;
 			if(cc->teacher==teacher_name){
 				QMessageBox::warning(this, tr("FET information"),
-					tr("A constraint of this type exists for the same teacher - cannot proceed"));
+				 tr("A constraint of this type exists for the same teacher - cannot proceed"));
 				return;
 			}
-		}
+		}*/
 	
 	this->_ctr->weightPercentage=weight;
 
@@ -251,12 +260,15 @@ void ModifyConstraintTeacherNotAvailableTimesForm::ok()
 		QString newName=teacher_name;
 
 		QSet<ConstraintTeacherNotAvailableTimes*> cs=gt.rules.tnatHash.value(oldName, QSet<ConstraintTeacherNotAvailableTimes*>());
+		assert(cs.count()==1);
 		assert(cs.contains(_ctr));
-		cs.remove(_ctr);
-		gt.rules.tnatHash.insert(oldName, cs);
+		//cs.remove(_ctr);
+		//gt.rules.tnatHash.insert(oldName, cs);
+		gt.rules.tnatHash.remove(oldName);
 
 		cs=gt.rules.tnatHash.value(newName, QSet<ConstraintTeacherNotAvailableTimes*>());
-		assert(!cs.contains(_ctr));
+		//assert(!cs.contains(_ctr));
+		assert(cs.isEmpty());
 		cs.insert(_ctr);
 		gt.rules.tnatHash.insert(newName, cs);
 		

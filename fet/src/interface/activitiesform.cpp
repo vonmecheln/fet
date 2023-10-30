@@ -86,7 +86,7 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 
 	modifyActivityPushButton->setDefault(true);
 
-	activitiesListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	activitiesListWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
 	QSettings settings(COMPANY, PROGRAM);
 	centerWidgetOnScreen(this);
@@ -103,7 +103,7 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	
 	connect(activitiesListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(activityChanged()));
 	connect(addActivityPushButton, SIGNAL(clicked()), this, SLOT(addActivity()));
-	connect(removeActivityPushButton, SIGNAL(clicked()), this, SLOT(removeActivity()));
+	connect(removeActivitiesPushButton, SIGNAL(clicked()), this, SLOT(removeActivities()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
 	connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
@@ -113,11 +113,11 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	connect(showRelatedCheckBox, SIGNAL(toggled(bool)), this, SLOT(studentsFilterChanged()));
 	connect(helpPushButton, SIGNAL(clicked()), this, SLOT(help()));
 
-	connect(activatePushButton, SIGNAL(clicked()), this, SLOT(activateActivity()));
-	connect(deactivatePushButton, SIGNAL(clicked()), this, SLOT(deactivateActivity()));
+	connect(activatePushButton, SIGNAL(clicked()), this, SLOT(activateActivities()));
+	connect(deactivatePushButton, SIGNAL(clicked()), this, SLOT(deactivateActivities()));
 
-	connect(activateAllPushButton, SIGNAL(clicked()), this, SLOT(activateAllActivities()));
-	connect(deactivateAllPushButton, SIGNAL(clicked()), this, SLOT(deactivateAllActivities()));
+	//connect(activateAllPushButton, SIGNAL(clicked()), this, SLOT(activateAllActivities()));
+	//connect(deactivateAllPushButton, SIGNAL(clicked()), this, SLOT(deactivateAllActivities()));
 
 	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(activityComments()));
 
@@ -578,6 +578,7 @@ void ActivitiesForm::filterChanged()
 		" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
 	durationTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
 		" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
+	mSLabel->setText(tr("Multiple selection", "The list can have multiple selection. Keep translation short."));
 	
 	if(activitiesListWidget->count()>0)
 		activitiesListWidget->setCurrentRow(0);
@@ -726,49 +727,50 @@ void ActivitiesForm::modifyActivity()
 	}
 }
 
-void ActivitiesForm::removeActivity()
+void ActivitiesForm::removeActivities()
 {
-	int ind=activitiesListWidget->currentRow();
-	if(ind<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity"));
-		return;
-	}
-	
-	assert(ind<visibleActivitiesList.count());
+	QList<int> tl;
 
-	int valv=activitiesListWidget->verticalScrollBar()->value();
-	int valh=activitiesListWidget->horizontalScrollBar()->value();
-
-	Activity* act=visibleActivitiesList[ind];
-	assert(act!=nullptr);
-
-	QString s;
-	s=tr("Remove activity?");
-	s+="\n";
-	if(act->isSplit())
-		s+=tr("There will also be removed the related activities from the same larger split activity");
+	QString s=tr("Remove these selected activities?");
+	s+=" ";
+	s+=tr("(If you select subactivities from a larger split activity, all the subactivities with the same group id will be automatically removed, "
+	 "even if they are not selected.)");
 	s+="\n\n";
-	s+=act->getDetailedDescription(gt.rules);
-	s+="\n";
+	for(int i=0; i<activitiesListWidget->count(); i++)
+		if(activitiesListWidget->item(i)->isSelected()){
+			assert(i<visibleActivitiesList.count());
+			Activity* act=visibleActivitiesList.at(i);
+			assert(act!=nullptr);
 
-	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
-	s, tr("Yes"), tr("No"), QString(), 0, 1 ) ){
-	case 0: // The user clicked the OK button or pressed Enter
+			tl.append(act->id);
+
+			/*if(act->isSplit()){
+				s+=tr("There will also be removed the related activities from the same larger split activity.");
+				s+="\n";
+			}*/
+			s+=act->getDetailedDescription(gt.rules);
+			s+="\n";
+		}
+
+	int t=LongTextMessageBox::confirmation( this, tr("FET confirmation"),
+	 s, tr("Yes"), tr("No"), QString(), 0, 1 );
+	if(t==1)
+		return;
+
+	gt.rules.removeActivities(tl, true);
+	PlanningChanged::increasePlanningCommunicationSpinBox();
+	filterChanged();
+
+	activitiesListWidget->setFocus();
+
+	/*case 0: // The user clicked the OK button or pressed Enter
 		gt.rules.removeActivity(act->id, act->activityGroupId);
 		PlanningChanged::increasePlanningCommunicationSpinBox();
 		filterChanged();
 		break;
 	case 1: // The user clicked the Cancel or pressed Escape
-		break;
-	}
-
-	activitiesListWidget->verticalScrollBar()->setValue(valv);
-	activitiesListWidget->horizontalScrollBar()->setValue(valh);
-
-	if(ind >= activitiesListWidget->count())
-		ind = activitiesListWidget->count()-1;
-	if(ind>=0)
-		activitiesListWidget->setCurrentRow(ind);
+		return;
+	}*/
 }
 
 void ActivitiesForm::activityChanged()
@@ -905,6 +907,8 @@ void ActivitiesForm::activityComments()
 		activitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
 		activityChanged();
 	}
+
+	activitiesListWidget->setFocus();
 }
 
 void ActivitiesForm::filter(bool active)
@@ -967,137 +971,27 @@ void ActivitiesForm::filter(bool active)
 	delete filterForm;
 }
 
-void ActivitiesForm::activateActivity()
-{
-	int i=activitiesListWidget->currentRow();
-	if(i<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity"));
-	
-		activitiesListWidget->setFocus();
-
-		return;
-	}
-	
-	assert(i<visibleActivitiesList.count());
-	Activity* act=visibleActivitiesList.at(i);
-	
-	if(!act->active){
-		act->active=true;
-		
-		gt.rules.internalStructureComputed=false;
-		setRulesModifiedAndOtherThings(&gt.rules);
-		
-		teachers_schedule_ready=false;
-		students_schedule_ready=false;
-		rooms_schedule_ready=false;
-		
-		if(!filterOk(act)){ //Maybe the activity is no longer visible in the list widget, because of the filter.
-			visibleActivitiesList.removeAt(i);
-			activitiesListWidget->setCurrentRow(-1);
-			QListWidgetItem* item=activitiesListWidget->takeItem(i);
-			delete item;
-
-			if(i>=activitiesListWidget->count())
-				i=activitiesListWidget->count()-1;
-			if(i>=0)
-				activitiesListWidget->setCurrentRow(i);
-			else
-				currentActivityTextEdit->setPlainText(QString(""));
-		}
-		else{
-			activitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
-			if(USE_GUI_COLORS)
-				activitiesListWidget->currentItem()->setBackground(activitiesListWidget->palette().base());
-			activityChanged();
-		}
-
-		///////
-		NA++;
-		DA+=act->duration;
-		numberTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
-			" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
-		durationTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
-			" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
-	}
-	
-	activitiesListWidget->setFocus();
-}
-
-void ActivitiesForm::deactivateActivity()
-{
-	int i=activitiesListWidget->currentRow();
-	if(i<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected activity"));
-	
-		activitiesListWidget->setFocus();
-
-		return;
-	}
-	
-	assert(i<visibleActivitiesList.count());
-	Activity* act=visibleActivitiesList.at(i);
-
-	if(act->active){
-		act->active=false;
-		
-		gt.rules.internalStructureComputed=false;
-		setRulesModifiedAndOtherThings(&gt.rules);
-
-		teachers_schedule_ready=false;
-		students_schedule_ready=false;
-		rooms_schedule_ready=false;
-
-		if(!filterOk(act)){ //Maybe the activity is no longer visible in the list widget, because of the filter.
-			visibleActivitiesList.removeAt(i);
-			activitiesListWidget->setCurrentRow(-1);
-			QListWidgetItem* item=activitiesListWidget->takeItem(i);
-			delete item;
-
-			if(i>=activitiesListWidget->count())
-				i=activitiesListWidget->count()-1;
-			if(i>=0)
-				activitiesListWidget->setCurrentRow(i);
-			else
-				currentActivityTextEdit->setPlainText(QString(""));
-		}
-		else{
-			activitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
-			if(USE_GUI_COLORS)
-				activitiesListWidget->currentItem()->setBackground(activitiesListWidget->palette().alternateBase());
-			activityChanged();
-		}
-		
-		///////
-		NA--;
-		assert(NA>=0);
-		DA-=act->duration;
-		assert(DA>=0);
-		numberTextLabel->setText(tr("No: %1 / %2", "No means number, %1 is the number of active activities, %2 is the total number of activities."
-			" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
-		durationTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
-			" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
-	}
-	
-	activitiesListWidget->setFocus();
-}
-
-void ActivitiesForm::activateAllActivities()
+void ActivitiesForm::activateActivities()
 {
 	QMessageBox::StandardButton ret=QMessageBox::No;
-	QString s=tr("Are you sure you want to activate all the listed activities?");
-	ret=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+	QString s=tr("Activate the selected activities?");
+	ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 	if(ret==QMessageBox::No){
 		activitiesListWidget->setFocus();
 		return;
 	}
 
 	int cnt=0;
-	for(Activity* act : std::as_const(visibleActivitiesList)){
-		if(!act->active){
-			cnt++;
-			act->active=true;
+	for(int i=0; i<activitiesListWidget->count(); i++)
+		if(activitiesListWidget->item(i)->isSelected()){
+			assert(i<visibleActivitiesList.count());
+			Activity* act=visibleActivitiesList.at(i);
+			assert(act!=nullptr);
+			if(!act->active){
+				cnt++;
+				act->active=true;
+			}
 		}
-	}
 	if(cnt>0){
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -1114,23 +1008,27 @@ void ActivitiesForm::activateAllActivities()
 	activitiesListWidget->setFocus();
 }
 
-void ActivitiesForm::deactivateAllActivities()
+void ActivitiesForm::deactivateActivities()
 {
 	QMessageBox::StandardButton ret=QMessageBox::No;
-	QString s=tr("Are you sure you want to deactivate all the listed activities?");
-	ret=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+	QString s=tr("Deactivate the selected activities?");
+	ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 	if(ret==QMessageBox::No){
 		activitiesListWidget->setFocus();
 		return;
 	}
 
 	int cnt=0;
-	for(Activity* act : std::as_const(visibleActivitiesList)){
-		if(act->active){
-			cnt++;
-			act->active=false;
+	for(int i=0; i<activitiesListWidget->count(); i++)
+		if(activitiesListWidget->item(i)->isSelected()){
+			assert(i<visibleActivitiesList.count());
+			Activity* act=visibleActivitiesList.at(i);
+			assert(act!=nullptr);
+			if(act->active){
+				cnt++;
+				act->active=false;
+			}
 		}
-	}
 	if(cnt>0){
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);

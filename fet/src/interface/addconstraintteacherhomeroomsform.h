@@ -36,7 +36,7 @@ public slots:
 	void removeRoom();
 
 	void addConstraint();
-	
+
 	void clear();
 };
 

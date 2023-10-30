@@ -76,6 +76,13 @@ allowed: 0.0%-100.0%)</string>
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="addConstraintsPushButton">
+       <property name="text">
+        <string>Add constraints</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="closePushButton">
        <property name="text">
         <string>Close</string>

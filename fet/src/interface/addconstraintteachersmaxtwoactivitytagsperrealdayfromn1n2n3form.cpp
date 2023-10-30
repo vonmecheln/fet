@@ -29,6 +29,7 @@ AddConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3Form::AddConstraintTe
 	addConstraintPushButton->setDefault(true);
 
 	connect(addConstraintPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraint()));
+	connect(addConstraintsPushButton, SIGNAL(clicked()), this, SLOT(addCurrentConstraints()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 
 	centerWidgetOnScreen(this);
@@ -69,4 +70,36 @@ void AddConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3Form::addCurrent
 			tr("Constraint NOT added - please report error"));
 		delete ctr;
 	}
+}
+
+void AddConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3Form::addCurrentConstraints()
+{
+	QMessageBox::StandardButton res=QMessageBox::question(this, tr("FET question"),
+	 tr("Warning: This operation will add multiple constraints, one for each teacher. Are you sure?"),
+	 QMessageBox::Cancel | QMessageBox::Yes);
+	if(res==QMessageBox::Cancel)
+		return;
+
+	double weight;
+	QString tmp=weightLineEdit->text();
+	weight_sscanf(tmp, "%lf", &weight);
+	if(weight<0.0 || weight>100.0){
+		QMessageBox::warning(this, tr("FET warning"),
+			tr("Invalid weight (percentage)"));
+		return;
+	}
+	if(weight!=100.0){
+		QMessageBox::warning(this, tr("FET information"),
+			tr("Invalid weight (percentage) - must be 100%"));
+		return;
+	}
+
+	for(Teacher* tch : std::as_const(gt.rules.teachersList)){
+		TimeConstraint *ctr=new ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3(weight, tch->name);
+		bool tmp2=gt.rules.addTimeConstraint(ctr);
+		assert(tmp2);
+	}
+
+	QMessageBox::information(this, tr("FET information"), tr("Added %1 time constraints. Please note that these constraints"
+	 " will be visible as constraints for individual teachers.").arg(gt.rules.teachersList.count()));
 }

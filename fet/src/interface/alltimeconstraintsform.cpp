@@ -349,11 +349,11 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 	
 	modifyConstraintPushButton->setDefault(true);
 	
-	constraintsListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+	constraintsListWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
 	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
-	connect(removeConstraintPushButton, SIGNAL(clicked()), this, SLOT(removeConstraint()));
+	connect(removeConstraintsPushButton, SIGNAL(clicked()), this, SLOT(removeConstraints()));
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
 	connect(constraintsListWidget, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(modifyConstraint()));
 	connect(filterCheckBox, SIGNAL(toggled(bool)), this, SLOT(filter(bool)));
@@ -362,11 +362,11 @@ AllTimeConstraintsForm::AllTimeConstraintsForm(QWidget* parent): QDialog(parent)
 	connect(moveTimeConstraintDownPushButton, SIGNAL(clicked()), this, SLOT(moveTimeConstraintDown()));
 
 	connect(sortedCheckBox, SIGNAL(toggled(bool)), this, SLOT(sortedChanged(bool)));
-	connect(activatePushButton, SIGNAL(clicked()), this, SLOT(activateConstraint()));
-	connect(deactivatePushButton, SIGNAL(clicked()), this, SLOT(deactivateConstraint()));
+	connect(activatePushButton, SIGNAL(clicked()), this, SLOT(activateConstraints()));
+	connect(deactivatePushButton, SIGNAL(clicked()), this, SLOT(deactivateConstraints()));
 
-	connect(activateAllPushButton, SIGNAL(clicked()), this, SLOT(activateAllConstraints()));
-	connect(deactivateAllPushButton, SIGNAL(clicked()), this, SLOT(deactivateAllConstraints()));
+	//connect(activateAllPushButton, SIGNAL(clicked()), this, SLOT(activateAllConstraints()));
+	//connect(deactivateAllPushButton, SIGNAL(clicked()), this, SLOT(deactivateAllConstraints()));
 
 	//connect(sortByCommentsPushButton, SIGNAL(clicked()), this, SLOT(sortConstraintsByComments()));
 	connect(commentsPushButton, SIGNAL(clicked()), this, SLOT(constraintComments()));
@@ -684,9 +684,10 @@ void AllTimeConstraintsForm::filterChanged()
 	else
 		constraintsListWidget->setCurrentRow(0);
 	
-	constraintsTextLabel->setText(tr("%1 / %2 time constraints",
+	constraintsTextLabel->setText(tr("No: %1 / %2",
 	 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
 	 .arg(n_active).arg(visibleTimeConstraintsList.count()));
+	mSLabel->setText(tr("Multiple selection", "The list can have multiple selection. Keep translation short."));
 }
 
 void AllTimeConstraintsForm::constraintChanged()
@@ -1986,87 +1987,63 @@ void AllTimeConstraintsForm::modifyConstraint()
 	constraintsListWidget->setFocus();
 }
 
-void AllTimeConstraintsForm::removeConstraint()
+void AllTimeConstraintsForm::removeConstraints()
 {
-	int i=constraintsListWidget->currentRow();
-	if(i<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
-		return;
-	}
-	
-	assert(i<visibleTimeConstraintsList.count());
-	TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
+	bool recompute=false;
 
-	QString s;
-	s=tr("Remove constraint?");
-	s+="\n\n";
-	s+=ctr->getDetailedDescription(gt.rules);
-	
-	bool t;
-	
-	bool recompute;
-	
-	QListWidgetItem* item;
-	
-	int lres=LongTextMessageBox::confirmation( this, tr("FET confirmation"),
-		s, tr("Yes"), tr("No"), QString(), 0, 1 );
-		
-	if(lres==0){ //The user clicked the OK button or pressed Enter
-		QMessageBox::StandardButton wr=QMessageBox::Yes;
-		
-		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME){ //additional confirmation for this one
-			QString s=tr("Do you really want to remove the basic compulsory time constraint?");
-			s+=" ";
-			s+=tr("You cannot generate a timetable without this constraint.");
-			s+="\n\n";
-			s+=tr("Note: you can add again a constraint of this type from the menu Data -> Time constraints -> "
-				"Miscellaneous -> Basic compulsory time constraints.");
-				
-			wr=QMessageBox::warning(this, tr("FET warning"), s,
-				QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
-		}
-		
-		if(wr==QMessageBox::Yes){
-			if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+	QList<TimeConstraint*> tl;
+
+	bool firstBasic=true;
+
+	for(int i=0; i<constraintsListWidget->count(); i++)
+		if(constraintsListWidget->item(i)->isSelected()){
+			assert(i<visibleTimeConstraintsList.count());
+			TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
+			tl.append(ctr);
+
+			if(firstBasic && ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME){
+				firstBasic=false;
+
+				QMessageBox::StandardButton wr;
+
+				QString s=tr("Your selection contains the basic compulsory time constraint(s). Do you really want to remove all the selected "
+				 "constraints, including this (these) one(s)? You cannot generate a timetable without this (these) constraint(s).");
+				s+="\n\n";
+				s+=tr("Note: you can add again a constraint of this type from the menu Data -> Time constraints -> "
+					"Miscellaneous -> Basic compulsory time constraints.");
+
+				wr=QMessageBox::warning(this, tr("FET warning"), s,
+					QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+
+				if(wr==QMessageBox::No)
+					return;
+			}
+			else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
 				recompute=true;
 			}
-			else{
-				recompute=false;
-			}
-		
-			t=gt.rules.removeTimeConstraint(ctr);
-			assert(t);
-			visibleTimeConstraintsList.removeAt(i);
-			constraintsListWidget->setCurrentRow(-1);
-			item=constraintsListWidget->takeItem(i);
-			delete item;
-
-			int n_active=0;
-			for(TimeConstraint* ctr2 : std::as_const(visibleTimeConstraintsList))
-				if(ctr2->active)
-					n_active++;
-	
-			constraintsTextLabel->setText(tr("%1 / %2 time constraints",
-			 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
-			 .arg(n_active).arg(visibleTimeConstraintsList.count()));
-
-			//constraintsTextLabel->setText(tr("%1 Time Constraints", "%1 represents the number of constraints").arg(visibleTimeConstraintsList.count()));
-		
-			if(recompute){
-				LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
-				LockUnlock::increaseCommunicationSpinBox();
-			}
 		}
-	}
-	//else if(lres==1){ //The user clicked the Cancel button or pressed Escape
-	//}
 
-	if(i>=constraintsListWidget->count())
-		i=constraintsListWidget->count()-1;
-	if(i>=0)
-		constraintsListWidget->setCurrentRow(i);
-	else
-		currentConstraintTextEdit->setPlainText(QString(""));
+	QString s;
+	s=tr("Remove these selected time constraints?");
+	s+="\n\n";
+	for(TimeConstraint* ctr : std::as_const(tl))
+		s+=ctr->getDetailedDescription(gt.rules)+"\n";
+	int lres=LongTextMessageBox::confirmation(this, tr("FET confirmation"),
+		s, tr("Yes"), tr("No"), QString(), 0, 1 );
+
+	if(lres!=0)
+		return;
+
+	//The user clicked the OK button or pressed Enter
+	gt.rules.removeTimeConstraints(tl);
+	if(recompute){
+		LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
+		LockUnlock::increaseCommunicationSpinBox();
+	}
+
+	filterChanged();
+
+	constraintsListWidget->setFocus();
 }
 
 void AllTimeConstraintsForm::filter(bool active)
@@ -2129,132 +2106,11 @@ void AllTimeConstraintsForm::filter(bool active)
 	delete filterForm;
 }
 
-void AllTimeConstraintsForm::activateConstraint()
-{
-	int i=constraintsListWidget->currentRow();
-	if(i<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
-	
-		constraintsListWidget->setFocus();
-
-		return;
-	}
-	
-	assert(i<visibleTimeConstraintsList.count());
-	TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
-	
-	if(!ctr->active){
-		ctr->active=true;
-		
-		gt.rules.internalStructureComputed=false;
-		setRulesModifiedAndOtherThings(&gt.rules);
-
-		if(!filterOk(ctr)){ //Maybe the constraint is no longer visible in the list widget, because of the filter.
-			visibleTimeConstraintsList.removeAt(i);
-			constraintsListWidget->setCurrentRow(-1);
-			QListWidgetItem* item=constraintsListWidget->takeItem(i);
-			delete item;
-
-			if(i>=constraintsListWidget->count())
-				i=constraintsListWidget->count()-1;
-			if(i>=0)
-				constraintsListWidget->setCurrentRow(i);
-			else
-				currentConstraintTextEdit->setPlainText(QString(""));
-		}
-		else{
-			constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
-			if(USE_GUI_COLORS)
-				constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().base());
-			constraintChanged();
-		}
-		
-		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
-			LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
-			LockUnlock::increaseCommunicationSpinBox();
-		}
-		
-		int n_active=0;
-		for(TimeConstraint* ctr2 : std::as_const(visibleTimeConstraintsList))
-			if(ctr2->active)
-				n_active++;
-	
-		constraintsTextLabel->setText(tr("%1 / %2 time constraints",
-		 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
-		 .arg(n_active).arg(visibleTimeConstraintsList.count()));
-	}
-	
-	constraintsListWidget->setFocus();
-}
-
-void AllTimeConstraintsForm::deactivateConstraint()
-{
-	int i=constraintsListWidget->currentRow();
-	if(i<0){
-		QMessageBox::information(this, tr("FET information"), tr("Invalid selected constraint"));
-	
-		constraintsListWidget->setFocus();
-
-		return;
-	}
-	
-	assert(i<visibleTimeConstraintsList.count());
-	TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
-
-	if(ctr->active){
-		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME){
-			QMessageBox::warning(this, tr("FET warning"), tr("You are not allowed to deactivate the basic compulsory time constraints"));
-			return;
-		}
-	
-		ctr->active=false;
-		
-		gt.rules.internalStructureComputed=false;
-		setRulesModifiedAndOtherThings(&gt.rules);
-
-		if(!filterOk(ctr)){ //Maybe the constraint is no longer visible in the list widget, because of the filter.
-			visibleTimeConstraintsList.removeAt(i);
-			constraintsListWidget->setCurrentRow(-1);
-			QListWidgetItem* item=constraintsListWidget->takeItem(i);
-			delete item;
-
-			if(i>=constraintsListWidget->count())
-				i=constraintsListWidget->count()-1;
-			if(i>=0)
-				constraintsListWidget->setCurrentRow(i);
-			else
-				currentConstraintTextEdit->setPlainText(QString(""));
-		}
-		else{
-			constraintsListWidget->currentItem()->setText(ctr->getDescription(gt.rules));
-			if(USE_GUI_COLORS)
-				constraintsListWidget->currentItem()->setBackground(constraintsListWidget->palette().alternateBase());
-			constraintChanged();
-		}
-		
-		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
-			LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
-			LockUnlock::increaseCommunicationSpinBox();
-		}
-
-		int n_active=0;
-		for(TimeConstraint* ctr2 : std::as_const(visibleTimeConstraintsList))
-			if(ctr2->active)
-				n_active++;
-	
-		constraintsTextLabel->setText(tr("%1 / %2 time constraints",
-		 "%1 represents the number of visible active time constraints, %2 represents the total number of visible time constraints")
-		 .arg(n_active).arg(visibleTimeConstraintsList.count()));
-	}
-	
-	constraintsListWidget->setFocus();
-}
-
-void AllTimeConstraintsForm::activateAllConstraints()
+void AllTimeConstraintsForm::activateConstraints()
 {
 	QMessageBox::StandardButton ret=QMessageBox::No;
-	QString s=tr("Are you sure you want to activate all the listed time constraints?");
-	ret=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+	QString s=tr("Activate the selected time constraints?");
+	ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 	if(ret==QMessageBox::No){
 		constraintsListWidget->setFocus();
 		return;
@@ -2262,14 +2118,19 @@ void AllTimeConstraintsForm::activateAllConstraints()
 
 	int cnt=0;
 	bool recomputeTime=false;
-	for(TimeConstraint* ctr : std::as_const(visibleTimeConstraintsList)){
-		if(!ctr->active){
-			cnt++;
-			ctr->active=true;
-			if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME)
-				recomputeTime=true;
+
+	for(int i=0; i<constraintsListWidget->count(); i++)
+		if(constraintsListWidget->item(i)->isSelected()){
+			assert(i<visibleTimeConstraintsList.count());
+			TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
+			if(!ctr->active){
+				cnt++;
+				ctr->active=true;
+				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME)
+					recomputeTime=true;
+			}
 		}
-	}
+
 	if(cnt>0){
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -2286,12 +2147,12 @@ void AllTimeConstraintsForm::activateAllConstraints()
 	constraintsListWidget->setFocus();
 }
 
-void AllTimeConstraintsForm::deactivateAllConstraints()
+void AllTimeConstraintsForm::deactivateConstraints()
 {
 	QMessageBox::StandardButton ret=QMessageBox::No;
-	QString s=tr("Are you sure you want to deactivate all the listed time constraints? "
-	 "(Note that the basic compulsory time constraints will not be deactivated, even if they are in the list.)");
-	ret=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+	QString s=tr("Deactivate the selected time constraints? "
+	 "(Note that the basic compulsory time constraints will not be deactivated, even if they are selected.)");
+	ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 	if(ret==QMessageBox::No){
 		constraintsListWidget->setFocus();
 		return;
@@ -2299,16 +2160,20 @@ void AllTimeConstraintsForm::deactivateAllConstraints()
 
 	int cnt=0;
 	bool recomputeTime=false;
-	for(TimeConstraint* ctr : std::as_const(visibleTimeConstraintsList)){
-		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME)
-			continue;
-		if(ctr->active){
-			cnt++;
-			ctr->active=false;
-			if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME)
-				recomputeTime=true;
+
+	for(int i=0; i<constraintsListWidget->count(); i++)
+		if(constraintsListWidget->item(i)->isSelected()){
+			assert(i<visibleTimeConstraintsList.count());
+			TimeConstraint* ctr=visibleTimeConstraintsList.at(i);
+			if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME)
+				continue;
+			if(ctr->active){
+				cnt++;
+				ctr->active=false;
+				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME)
+					recomputeTime=true;
+			}
 		}
-	}
 	if(cnt>0){
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -2324,31 +2189,6 @@ void AllTimeConstraintsForm::deactivateAllConstraints()
 	
 	constraintsListWidget->setFocus();
 }
-
-/*static int timeConstraintsAscendingByComments(const TimeConstraint* t1, const TimeConstraint* t2)
-{
-	return t1->comments < t2->comments;
-}
-
-void AllTimeConstraintsForm::sortConstraintsByComments()
-{
-	QMessageBox::StandardButton t=QMessageBox::question(this, tr("Sort constraints?"),
-	 tr("This will sort the time constraints list ascending according to their comments. You can obtain "
-	 "a custom ordering by adding comments to some or all time constraints, for example 'rank #1 ... other comments', "
-	 "'rank #2 ... other different comments'.")
-	 +" "+tr("Are you sure you want to continue?"),
-	 QMessageBox::Yes|QMessageBox::Cancel);
-	
-	if(t==QMessageBox::Cancel)
-		return;
-	
-	std::stable_sort(gt.rules.timeConstraintsList.begin(), gt.rules.timeConstraintsList.end(), timeConstraintsAscendingByComments);
-
-	gt.rules.internalStructureComputed=false;
-	setRulesModifiedAndOtherThings(&gt.rules);
-	
-	filterChanged();
-}*/
 
 void AllTimeConstraintsForm::constraintComments()
 {

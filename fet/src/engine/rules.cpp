@@ -3965,7 +3965,7 @@ void Rules::removeActivities(const QList<int>& _idsList, bool updateConstraints)
 	toBeRemoved.clear();
 	//while(!toBeRemoved.isEmpty())
 	//	delete toBeRemoved.takeFirst();
-		
+	
 	activitiesList=newActivitiesList;
 	
 	updateGroupActivitiesInInitialOrderAfterRemoval();

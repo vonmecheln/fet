@@ -7,47 +7,67 @@
     <x>0</x>
     <y>0</y>
     <width>790</width>
-    <height>544</height>
+    <height>604</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string extracomment="This is the title of the activities dialog">Activities dialog</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_3">
+  <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
     <widget class="QSplitter" name="splitter">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
      <widget class="QWidget" name="layoutWidget">
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QLabel" name="numberTextLabel">
-         <property name="text">
-          <string notr="true">No: 1000 / 1000</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="wordWrap">
-          <bool>false</bool>
-         </property>
-        </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="numberTextLabel">
+           <property name="text">
+            <string notr="true">No: 1000 / 1000</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="durationTextLabel">
+           <property name="text">
+            <string notr="true">Dur: 1000 / 1000</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="mSLabel">
+           <property name="text">
+            <string comment="The list can have multiple selection. Keep translation short.">Multiple selection</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="durationTextLabel">
-         <property name="text">
-          <string notr="true">Dur: 1000 / 1000</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="wordWrap">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" colspan="2">
+       <item>
         <widget class="QListWidget" name="activitiesListWidget"/>
        </item>
       </layout>
@@ -243,7 +263,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="removeActivityPushButton">
+        <widget class="QPushButton" name="removeActivitiesPushButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -273,23 +293,6 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="activateAllPushButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string comment="Refers to activating all the listed activities">Activate all</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
-       <item>
         <widget class="QPushButton" name="deactivatePushButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -299,19 +302,6 @@
          </property>
          <property name="text">
           <string comment="Refers to deactivating an activity">Deactivate</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="deactivateAllPushButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string comment="Refers to deactivating all the listed activities">Deactivate all</string>
          </property>
         </widget>
        </item>
