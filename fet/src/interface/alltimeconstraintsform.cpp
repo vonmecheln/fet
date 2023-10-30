@@ -570,7 +570,7 @@ void AllTimeConstraintsForm::moveTimeConstraintUp()
 	visibleTimeConstraintsList[i]=tc2;
 	visibleTimeConstraintsList[i-1]=tc1;
 	
-	if(USE_GUI_COLORS){
+	if(true || USE_GUI_COLORS){
 		if(tc2->active)
 			constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().base());
 		else
@@ -626,7 +626,7 @@ void AllTimeConstraintsForm::moveTimeConstraintDown()
 	visibleTimeConstraintsList[i]=tc2;
 	visibleTimeConstraintsList[i+1]=tc1;
 	
-	if(USE_GUI_COLORS){
+	if(true || USE_GUI_COLORS){
 		if(tc2->active)
 			constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().base());
 		else
@@ -675,7 +675,7 @@ void AllTimeConstraintsForm::filterChanged()
 		
 		if(ctr->active)
 			n_active++;
-		else if(USE_GUI_COLORS)
+		else if(true || USE_GUI_COLORS)
 			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
 	}
 	
@@ -2015,8 +2015,10 @@ void AllTimeConstraintsForm::removeConstraints()
 				wr=QMessageBox::warning(this, tr("FET warning"), s,
 					QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 
-				if(wr==QMessageBox::No)
+				if(wr==QMessageBox::No){
+					constraintsListWidget->setFocus();
 					return;
+				}
 			}
 			else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
 				recompute=true;
@@ -2031,8 +2033,13 @@ void AllTimeConstraintsForm::removeConstraints()
 	int lres=LongTextMessageBox::confirmation(this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), QString(), 0, 1 );
 
-	if(lres!=0)
+	if(lres!=0){
+		constraintsListWidget->setFocus();
 		return;
+	}
+
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
 
 	//The user clicked the OK button or pressed Enter
 	gt.rules.removeTimeConstraints(tl);
@@ -2042,6 +2049,9 @@ void AllTimeConstraintsForm::removeConstraints()
 	}
 
 	filterChanged();
+
+	constraintsListWidget->verticalScrollBar()->setValue(valv);
+	constraintsListWidget->horizontalScrollBar()->setValue(valh);
 
 	constraintsListWidget->setFocus();
 }
@@ -2116,6 +2126,9 @@ void AllTimeConstraintsForm::activateConstraints()
 		return;
 	}
 
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
+
 	int cnt=0;
 	bool recomputeTime=false;
 
@@ -2136,6 +2149,9 @@ void AllTimeConstraintsForm::activateConstraints()
 		setRulesModifiedAndOtherThings(&gt.rules);
 		
 		filterChanged();
+
+		constraintsListWidget->verticalScrollBar()->setValue(valv);
+		constraintsListWidget->horizontalScrollBar()->setValue(valh);
 		
 		QMessageBox::information(this, tr("FET information"), tr("Activated %1 time constraints").arg(cnt));
 	}
@@ -2158,6 +2174,9 @@ void AllTimeConstraintsForm::deactivateConstraints()
 		return;
 	}
 
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
+
 	int cnt=0;
 	bool recomputeTime=false;
 
@@ -2179,6 +2198,9 @@ void AllTimeConstraintsForm::deactivateConstraints()
 		setRulesModifiedAndOtherThings(&gt.rules);
 		
 		filterChanged();
+
+		constraintsListWidget->verticalScrollBar()->setValue(valv);
+		constraintsListWidget->horizontalScrollBar()->setValue(valh);
 		
 		QMessageBox::information(this, tr("FET information"), tr("Deactivated %1 time constraints").arg(cnt));
 	}

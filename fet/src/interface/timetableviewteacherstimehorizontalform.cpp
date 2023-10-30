@@ -112,15 +112,23 @@ void TimetableViewTeachersTimeHorizontalDelegate::paint(QPainter* painter, const
 
 	painter->setPen(pen);*/
 	
-	if(hour==0)
+	if(hour==0){
 		painter->drawLine(option.rect.topLeft(), option.rect.bottomLeft());
-	if(hour==nColumns-1)
+		painter->drawLine(option.rect.topLeft().x()+1, option.rect.topLeft().y(), option.rect.bottomLeft().x()+1, option.rect.bottomLeft().y());
+	}
+	if(hour==nColumns-1){
 		painter->drawLine(option.rect.topRight(), option.rect.bottomRight());
+		painter->drawLine(option.rect.topRight().x()-1, option.rect.topRight().y(), option.rect.bottomRight().x()-1, option.rect.bottomRight().y());
+	}
 
-	if(index.row()==0)
+	if(index.row()==0){
 		painter->drawLine(option.rect.topLeft(), option.rect.topRight());
-	if(index.row()==nRows-1)
+		painter->drawLine(option.rect.topLeft().x(), option.rect.topLeft().y()+1, option.rect.topRight().x(), option.rect.topRight().y()+1);
+	}
+	if(index.row()==nRows-1){
 		painter->drawLine(option.rect.bottomLeft(), option.rect.bottomRight());
+		painter->drawLine(option.rect.bottomLeft().x(), option.rect.bottomLeft().y()-1, option.rect.bottomRight().x(), option.rect.bottomRight().y()-1);
+	}
 }
 
 TimetableViewTeachersTimeHorizontalForm::TimetableViewTeachersTimeHorizontalForm(QWidget* parent): QDialog(parent)
@@ -1319,66 +1327,66 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 #if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 		if(addedT>0){
 			added << QCoreApplication::translate("TimetableViewForm", "Added %n locking time constraint(s).",
-			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 "Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section 'Handling Plurals'."
-			 "You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
+			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
+			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
+			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
 			 " (open these files with Qt Linguist and see the translation of this field).",
 			 addedT);
 		}
 		if(addedS>0){
 			added << QCoreApplication::translate("TimetableViewForm", "Added %n locking space constraint(s).",
-			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 "Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section 'Handling Plurals'."
-			 "You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
+			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
+			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
+			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
 			 " (open these files with Qt Linguist and see the translation of this field).",
 			 addedS);
 		}
 		if(unlockedT>0){
 			removed << QCoreApplication::translate("TimetableViewForm", "Removed %n locking time constraint(s).",
-			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 "Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section 'Handling Plurals'."
-			 "You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
+			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
+			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
+			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
 			 " (open these files with Qt Linguist and see the translation of this field).",
 			 unlockedT);
 		}
 		if(unlockedS>0){
 			removed << QCoreApplication::translate("TimetableViewForm", "Removed %n locking space constraint(s).",
-			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 "Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section 'Handling Plurals'."
-			 "You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
+			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
+			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
+			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
 			 " (open these files with Qt Linguist and see the translation of this field).",
 			 unlockedS);
 		}
 #else
 		if(addedT>0){
 			added << QCoreApplication::translate("TimetableViewForm", "Added %n locking time constraint(s).",
-			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 "Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section 'Handling Plurals'."
-			 "You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
+			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
+			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
+			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
 			 " (open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
 			 addedT);
 		}
 		if(addedS>0){
 			added << QCoreApplication::translate("TimetableViewForm", "Added %n locking space constraint(s).",
-			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 "Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section 'Handling Plurals'."
-			 "You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
+			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
+			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
+			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
 			 " (open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
 			 addedS);
 		}
 		if(unlockedT>0){
 			removed << QCoreApplication::translate("TimetableViewForm", "Removed %n locking time constraint(s).",
-			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 "Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section 'Handling Plurals'."
-			 "You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
+			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
+			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
+			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
 			 " (open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
 			 unlockedT);
 		}
 		if(unlockedS>0){
 			removed << QCoreApplication::translate("TimetableViewForm", "Removed %n locking space constraint(s).",
-			 "See http://doc.qt.io/qt-5/i18n-plural-rules.html for advice on how to correctly translate this field."
-			 "Also, see http://doc.qt.io/qt-5/i18n-source-translation.html, section 'Handling Plurals'."
-			 "You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
+			 "See https://doc.qt.io/qt-6/i18n-plural-rules.html for advice on how to correctly translate this field."
+			 " Also, see https://doc.qt.io/qt-6/i18n-source-translation.html, section 'Handle Plural Forms'."
+			 " You have two examples on how to translate this field in fet_en_GB.ts and in fet_ro.ts"
 			 " (open these files with Qt Linguist and see the translation of this field).", QCoreApplication::UnicodeUTF8,
 			 unlockedS);
 		}

@@ -3424,7 +3424,7 @@ void LockAdvancedDialog::filterChanged()
 				
 				k++;
 
-				if(USE_GUI_COLORS && !act->active)
+				if((true || USE_GUI_COLORS) && !act->active)
 					selectedActivitiesLW->item(k-1)->setBackground(selectedActivitiesLW->palette().alternateBase());
 				
 				//if(act->id==act->activityGroupId || act->activityGroupId==0)
@@ -4019,7 +4019,7 @@ void UnlockAdvancedDialog::filterChanged()
 
 			k++;
 
-			if(USE_GUI_COLORS && !act->active)
+			if((true || USE_GUI_COLORS) && !act->active)
 				selectedActivitiesLW->item(k-1)->setBackground(selectedActivitiesLW->palette().alternateBase());
 			
 			//if(act->id==act->activityGroupId || act->activityGroupId==0)

@@ -2712,3 +2712,9 @@ Versions 6.11.0 - 6.11.v
 	- The cells in the three timetable view time horizontal dialogs can now be made very small, so that you can have a better view of the overall timetable.
 	- Minor bug fixes / improvements in the export of the timetables if using HTML level 6.
 	- Minor improvements.
+- Version 6.11.1
+	- Minor improvements in the time horizontal view dialogs of the teachers / students not available times, which were introduced in the previous FET version.
+	Suggested by Liviu Lalescu and Vangelis Karafillidis.
+	- Improvements in the dialogs of not available times for teachers / students and teachers / students / rooms timetable view time horizontal,
+	the lines separating the days are thicker.
+	- Other minor improvements.

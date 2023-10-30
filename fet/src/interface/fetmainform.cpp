@@ -5033,7 +5033,7 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	s+=tr("add/modify constraints break, not available, preferred starting times or time slots, occupy max time slots from selection or"
 		" max simultaneous in selected time slots (the table cells will have green or red colors).");
 	s+="\n";
-	s+=" -";
+	/*s+=" -";
 	s+=tr("activities and subactivities dialogs, the inactive activities will have a distinctive background color");
 	s+="\n";
 	s+=" -";
@@ -5041,7 +5041,7 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	s+="\n";
 	s+=" -";
 	s+=tr("group activities in the initial order items, the inactive items will have a distinctive background color");
-	s+="\n";
+	s+="\n";*/
 	s+=" -";
 	s+=tr("the timetable view dialogs");
 	

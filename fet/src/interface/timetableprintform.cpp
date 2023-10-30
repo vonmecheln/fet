@@ -1100,12 +1100,12 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	QString saveTime=generationLocalizedTime;
 	QString tmp;
 	tmp+="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tmp+="  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tmp+="  \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 	
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
-		tmp+="<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\">\n";
+		tmp+="<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\">\n";
 	else
-		tmp+="<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\" dir=\"rtl\">\n";
+		tmp+="<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\" dir=\"rtl\">\n";
 
 	//QTBUG-9438
 	//QTBUG-2730
@@ -1232,12 +1232,12 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	tmp+="        page-break-inside: avoid;\n";
 	tmp+="      }\n";
 	tmp+="      th {\n";
-	tmp+="        text-align: center;\n"; //currently no effect because of a Qt bug (compare http://bugreports.qt.nokia.com/browse/QTBUG-2730 )
+	tmp+="        text-align: center;\n"; //currently no effect because of a Qt bug (compare https://bugreports.qt.io/browse/QTBUG-2730)
 	tmp+="        vertical-align: middle;\n";
 	tmp+="        white-space: "+CBWhiteSpace->currentText()+";\n";
 	tmp+="      }\n";
 	tmp+="      td {\n";
-	tmp+="        text-align: center;\n"; //currently no effect because of a Qt bug (compare http://bugreports.qt.nokia.com/browse/QTBUG-2730 )
+	tmp+="        text-align: center;\n"; //currently no effect because of a Qt bug (compare https://bugreports.qt.io/browse/QTBUG-2730)
 	tmp+="        vertical-align: middle;\n";
 	tmp+="        white-space: "+CBWhiteSpace->currentText()+";\n";
 	tmp+="        padding-left: "+QString::number(activitiesPadding->value())+"px;\n";

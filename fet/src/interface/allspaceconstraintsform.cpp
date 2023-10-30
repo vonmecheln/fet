@@ -360,7 +360,7 @@ void AllSpaceConstraintsForm::moveSpaceConstraintUp()
 	visibleSpaceConstraintsList[i]=sc2;
 	visibleSpaceConstraintsList[i-1]=sc1;
 	
-	if(USE_GUI_COLORS){
+	if(true || USE_GUI_COLORS){
 		if(sc2->active)
 			constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().base());
 		else
@@ -416,7 +416,7 @@ void AllSpaceConstraintsForm::moveSpaceConstraintDown()
 	visibleSpaceConstraintsList[i]=sc2;
 	visibleSpaceConstraintsList[i+1]=sc1;
 	
-	if(USE_GUI_COLORS){
+	if(true || USE_GUI_COLORS){
 		if(sc2->active)
 			constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().base());
 		else
@@ -465,7 +465,7 @@ void AllSpaceConstraintsForm::filterChanged()
 
 		if(ctr->active)
 			n_active++;
-		else if(USE_GUI_COLORS)
+		else if(true || USE_GUI_COLORS)
 			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
 	}
 	
@@ -859,8 +859,10 @@ void AllSpaceConstraintsForm::removeConstraints()
 				wr=QMessageBox::warning(this, tr("FET warning"), s,
 					QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 
-				if(wr==QMessageBox::No)
+				if(wr==QMessageBox::No){
+					constraintsListWidget->setFocus();
 					return;
+				}
 			}
 			else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
 				recompute=true;
@@ -875,8 +877,13 @@ void AllSpaceConstraintsForm::removeConstraints()
 	int lres=LongTextMessageBox::confirmation(this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), QString(), 0, 1 );
 
-	if(lres!=0)
+	if(lres!=0){
+		constraintsListWidget->setFocus();
 		return;
+	}
+
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
 
 	//The user clicked the OK button or pressed Enter
 	gt.rules.removeSpaceConstraints(tl);
@@ -886,6 +893,9 @@ void AllSpaceConstraintsForm::removeConstraints()
 	}
 
 	filterChanged();
+
+	constraintsListWidget->verticalScrollBar()->setValue(valv);
+	constraintsListWidget->horizontalScrollBar()->setValue(valh);
 
 	constraintsListWidget->setFocus();
 }
@@ -960,6 +970,9 @@ void AllSpaceConstraintsForm::activateConstraints()
 		return;
 	}
 
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
+
 	int cnt=0;
 	bool recomputeSpace=false;
 
@@ -980,6 +993,9 @@ void AllSpaceConstraintsForm::activateConstraints()
 		setRulesModifiedAndOtherThings(&gt.rules);
 
 		filterChanged();
+
+		constraintsListWidget->verticalScrollBar()->setValue(valv);
+		constraintsListWidget->horizontalScrollBar()->setValue(valh);
 
 		QMessageBox::information(this, tr("FET information"), tr("Activated %1 space constraints").arg(cnt));
 	}
@@ -1002,6 +1018,9 @@ void AllSpaceConstraintsForm::deactivateConstraints()
 		return;
 	}
 
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
+
 	int cnt=0;
 	bool recomputeSpace=false;
 
@@ -1023,6 +1042,9 @@ void AllSpaceConstraintsForm::deactivateConstraints()
 		setRulesModifiedAndOtherThings(&gt.rules);
 
 		filterChanged();
+
+		constraintsListWidget->verticalScrollBar()->setValue(valv);
+		constraintsListWidget->horizontalScrollBar()->setValue(valh);
 
 		QMessageBox::information(this, tr("FET information"), tr("Deactivated %1 space constraints").arg(cnt));
 	}

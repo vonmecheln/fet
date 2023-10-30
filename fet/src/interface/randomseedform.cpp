@@ -82,7 +82,7 @@ void RandomSeedForm::help()
 	s+=tr("Reference for the %1 random number generator code:", "%1 is the name of the random number generator").arg("MRG32k3a");
 	s+="\n\n";
 	s+=QString("P. L'Ecuyer, ``Good Parameter Sets for Combined Multiple Recursive Random Number Generators'', Shorter version in Operations Research, 47, "
-	 "1 (1999), 159--164.\n<http://pubsonline.informs.org/doi/abs/10.1287/opre.47.1.159>");
+	 "1 (1999), 159--164.\n<https://pubsonline.informs.org/doi/abs/10.1287/opre.47.1.159>");
 	s+="\n\n";
 	s+=tr("Includes ideas and code from the files: %1, %2, and/or %3.", "%1, %2, and %3 are files from the internet")
 	 .arg("http://simul.iro.umontreal.ca/rng/MRG32k3a.h").arg("http://simul.iro.umontreal.ca/rng/MRG32k3a.c")

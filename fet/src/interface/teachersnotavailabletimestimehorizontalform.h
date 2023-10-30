@@ -56,6 +56,7 @@ private:
 	TeachersNotAvailableTimesTimeHorizontalDelegate* newItemDelegate;
 
 	Matrix3D<bool> tnaMatrix;
+	Matrix1D<bool> inactiveConstraint;
 
 public:
 	TeachersNotAvailableTimesTimeHorizontalForm(QWidget* parent);

@@ -56,6 +56,7 @@ private:
 	StudentsNotAvailableTimesTimeHorizontalDelegate* newItemDelegate;
 
 	Matrix3D<bool> snaMatrix;
+	Matrix1D<bool> inactiveConstraint;
 	
 	QList<QString> allStudentsNames;
 	QList<int> allStudentsType;

@@ -546,7 +546,7 @@ void SubactivitiesForm::filterChanged()
 			subactivitiesListWidget->addItem(s);
 			k++;
 			
-			if(USE_GUI_COLORS && !act->active)
+			if((true || USE_GUI_COLORS) && !act->active)
 				subactivitiesListWidget->item(k-1)->setBackground(subactivitiesListWidget->palette().alternateBase());
 			
 			//if(act->id==act->activityGroupId || act->activityGroupId==0)
@@ -670,7 +670,7 @@ void SubactivitiesForm::help()
 	s+=tr("have an X mark after the id.");
 	s+="\n";
 	s+=" -";
-	s+=tr("if you use colors in interface (see Settings/Interface menu), they will appear with different background color.");
+	s+=tr("will appear with different background color.");
 	s+="\n\n";
 	s+=tr("To modify a subactivity, you can also double click it.");
 	s+="\n\n";
@@ -911,7 +911,7 @@ void SubactivitiesForm::deactivateSubactivity()
 		}
 		else{
 			subactivitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
-			if(USE_GUI_COLORS)
+			if(true || USE_GUI_COLORS)
 				subactivitiesListWidget->currentItem()->setBackground(subactivitiesListWidget->palette().alternateBase());
 			subactivityChanged();
 		}

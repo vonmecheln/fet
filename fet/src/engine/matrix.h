@@ -19,7 +19,7 @@
 //
 //		Hints from Ted Jensen's Tutorial on Pointers and Arrays in C -
 //			- Chapter 9: Pointers and Dynamic Allocation of Memory - improvement so that the elements of a matrix are in a contiguous memory location:
-//			-> http://pweb.netcom.com/~tjensen/ptr/ (broken link? A working link might be: https://pdos.csail.mit.edu/6.828/2014/readings/pointers.pdf)
+//			-> https://pdos.csail.mit.edu/6.828/2014/readings/pointers.pdf)
 //
 //		Hints from C++ FAQ LITE by Marshall Cline -
 //			- Section [13] - Operator overloading, article [13.12] - advice about the () operator for matrices:

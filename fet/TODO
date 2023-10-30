@@ -8918,3 +8918,23 @@ seems too complicated, at least for now.
 From Volker Dirr:
 
 Merge the "single" type and "all" type of constraints into a single dialog (instead of two).
+
+523---------------------------------------------------------
+From pekuon (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5712.msg31594#msg31594
+
+Sometimes I add constraints, resulting in an unscheduled schedule, but don't remember what the last constraint was.
+- I want a binding change history.
+
+524---------------------------------------------------------
+From ygoldblatt (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5749.0
+
+Is there a way to control the order that the lessons appear on the printout of the timetable? It seems to be random and I would like to control it
+
+525---------------------------------------------------------
+From Vangelis Karafillidis:
+
+Automatic saving of the .fet data file every say 3 minutes.

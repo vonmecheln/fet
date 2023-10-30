@@ -550,7 +550,7 @@ void ActivitiesForm::filterChanged()
 			activitiesListWidget->addItem(s);
 			k++;
 			
-			if(USE_GUI_COLORS && !act->active)
+			if((true || USE_GUI_COLORS) && !act->active)
 				activitiesListWidget->item(k-1)->setBackground(activitiesListWidget->palette().alternateBase());
 			
 			//if(act->id==act->activityGroupId || act->activityGroupId==0)
@@ -609,6 +609,7 @@ void ActivitiesForm::addActivity()
 		if(ind>=0)
 			activitiesListWidget->setCurrentRow(ind);
 	}
+	activitiesListWidget->setFocus();
 }
 
 void ActivitiesForm::modifyActivity()
@@ -754,12 +755,20 @@ void ActivitiesForm::removeActivities()
 
 	int t=LongTextMessageBox::confirmation( this, tr("FET confirmation"),
 	 s, tr("Yes"), tr("No"), QString(), 0, 1 );
-	if(t==1)
+	if(t==1){
+		activitiesListWidget->setFocus();
 		return;
+	}
+
+	int valv=activitiesListWidget->verticalScrollBar()->value();
+	int valh=activitiesListWidget->horizontalScrollBar()->value();
 
 	gt.rules.removeActivities(tl, true);
 	PlanningChanged::increasePlanningCommunicationSpinBox();
 	filterChanged();
+
+	activitiesListWidget->verticalScrollBar()->setValue(valv);
+	activitiesListWidget->horizontalScrollBar()->setValue(valh);
 
 	activitiesListWidget->setFocus();
 
@@ -823,7 +832,7 @@ void ActivitiesForm::help()
 	s+=tr("have an X mark after the id.", "It refers to inactive activities, which have this mark after the id.");
 	s+="\n";
 	s+=" -";
-	s+=tr("if you use colors in interface (see Settings/Interface menu), they will appear with different background color.", "It refers to inactive activities");
+	s+=tr("will appear with different background color.", "It refers to inactive activities");
 	s+="\n\n";
 	s+=tr("To modify an activity, you can also double click it.");
 	s+="\n\n";
@@ -993,6 +1002,9 @@ void ActivitiesForm::activateActivities()
 			}
 		}
 	if(cnt>0){
+		int valv=activitiesListWidget->verticalScrollBar()->value();
+		int valh=activitiesListWidget->horizontalScrollBar()->value();
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
@@ -1002,6 +1014,9 @@ void ActivitiesForm::activateActivities()
 		
 		filterChanged();
 		
+		activitiesListWidget->verticalScrollBar()->setValue(valv);
+		activitiesListWidget->horizontalScrollBar()->setValue(valh);
+
 		QMessageBox::information(this, tr("FET information"), tr("Activated %1 activities").arg(cnt));
 	}
 	
@@ -1030,6 +1045,9 @@ void ActivitiesForm::deactivateActivities()
 			}
 		}
 	if(cnt>0){
+		int valv=activitiesListWidget->verticalScrollBar()->value();
+		int valh=activitiesListWidget->horizontalScrollBar()->value();
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
@@ -1039,6 +1057,9 @@ void ActivitiesForm::deactivateActivities()
 		
 		filterChanged();
 		
+		activitiesListWidget->verticalScrollBar()->setValue(valv);
+		activitiesListWidget->horizontalScrollBar()->setValue(valh);
+
 		QMessageBox::information(this, tr("FET information"), tr("Deactivated %1 activities").arg(cnt));
 	}
 

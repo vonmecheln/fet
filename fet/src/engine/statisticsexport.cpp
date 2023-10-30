@@ -513,12 +513,12 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, const QString& sav
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
 	else
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
@@ -630,12 +630,12 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, const Q
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
 	else
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
@@ -936,12 +936,12 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, const Q
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
 	else
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
@@ -1240,12 +1240,12 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, const Q
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
 	else
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
@@ -1545,12 +1545,12 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, const Q
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
 	else
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
@@ -1850,12 +1850,12 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, const Q
 	tos.setGenerateByteOrderMark(true);
 
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
 	else
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";
@@ -2154,12 +2154,12 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, const Q
 #endif
 	tos.setGenerateByteOrderMark(true);
 	tos<<"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tos<<"  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tos<<"  \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
 	if(LANGUAGE_STYLE_RIGHT_TO_LEFT==false)
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\">\n";
 	else
-		tos<<"<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
+		tos<<"<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""<<LANGUAGE_FOR_HTML<<"\" xml:lang=\""<<LANGUAGE_FOR_HTML<<"\" dir=\"rtl\">\n";
 	tos<<"  <head>\n";
 	tos<<"    <title>"<<protect2(gt.rules.institutionName)<<"</title>\n";
 	tos<<"    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";

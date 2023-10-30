@@ -2202,7 +2202,7 @@ void TimetableExport::writeIndexHtml(QWidget* parent, const QString& htmlfilenam
 
 		tos<<"      <thead>\n        <tr><td rowspan=\"2\"></td><th colspan=\"4\">"+tr("Timetables")+"</th></tr>\n";
 		tos<<"        <tr>\n          <!-- span -->\n";
-		tos<<"          <th>"+tr("Days Horizontal")+"</th><th>"+tr("Days Vertical")+"</th><th>"+tr("Time Horizontal")+"</th><th>"+tr("Time Vertical")+"</th>";
+		tos<<"          <th>"+tr("Days Horizontal")+"</th><th>"+tr("Days Vertical")+"</th><th>"+tr("Time Horizontal")+"</th><th>"+tr("Time Vertical")+"</th>\n";
 		tos<<"        </tr>\n";
 		tos<<"      </thead>\n";
 		tos<<"      <tbody>\n";
@@ -5493,12 +5493,12 @@ bool TimetableExport::addActivitiesWithSameStartingTime(QList<int>& allActivitie
 QString TimetableExport::writeHead(bool java, int placedActivities, bool printInstitution){
 	QString tmp;
 	tmp+="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n";
-	tmp+="  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
+	tmp+="  \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n";
 
 	if(!LANGUAGE_STYLE_RIGHT_TO_LEFT)
-		tmp+="<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\">\n";
+		tmp+="<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\">\n";
 	else
-		tmp+="<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\" dir=\"rtl\">\n";
+		tmp+="<html xmlns=\"https://www.w3.org/1999/xhtml/\" lang=\""+LANGUAGE_FOR_HTML+"\" xml:lang=\""+LANGUAGE_FOR_HTML+"\" dir=\"rtl\">\n";
 	tmp+="  <head>\n";
 	tmp+="    <title>"+protect2(gt.rules.institutionName)+"</title>\n";
 	tmp+="    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n";

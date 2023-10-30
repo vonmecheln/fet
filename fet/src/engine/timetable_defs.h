@@ -343,7 +343,7 @@ public:
 double customFETStrToDouble(const QString& str, bool* ok=0);
 ////////////////////////////////////////////////
 
-//Trick found on http://www.qtcentre.org/threads/53066-QMap-sorting-according-to-QLocale
+//Trick found on https://www.qtcentre.org/threads/53066-QMap-sorting-according-to-QLocale
 //to create a QMap<QString, ...> ordered by locale order.
 //Third post, by ChrisW67.
 class LocaleString: public QString{
@@ -400,7 +400,7 @@ int randomKnuth(int k); //a random between 0 and k-1
 //P. L'Ecuyer, ``Good Parameter Sets for Combined Multiple Recursive
 //Random Number Generators'', Shorter version in Operations Research, 47,
 //1 (1999), 159--164.
-//<http://pubsonline.informs.org/doi/abs/10.1287/opre.47.1.159>
+//<https://pubsonline.informs.org/doi/abs/10.1287/opre.47.1.159>
 
 //Includes ideas and code from the files: http://simul.iro.umontreal.ca/rng/MRG32k3a.h, http://simul.iro.umontreal.ca/rng/MRG32k3a.c,
 //and/or https://www.iro.umontreal.ca/~lecuyer/myftp/papers/combmrg2.c
