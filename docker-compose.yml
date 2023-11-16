@@ -1,0 +1,21 @@
+---
+
+version: '3'
+
+services:
+  builder:
+    image: debian:${DEBIAN_VERSION}
+    hostname: debian
+
+    command: ["/bin/bash", "-c", "ls -la /root/fet"]
+
+    volumes:
+      # ---- Format: ----
+      # HOST-DIRECTORY : DOCKER-DIRECTORY
+
+      - fet-src:/root/fet:rw${MOUNT_OPTIONS}
+      - fet-build:/root/build:rw${MOUNT_OPTIONS}
+
+volumes:
+  fet-src:
+  fet-build:
