@@ -22,6 +22,8 @@ File rules.cpp
 #include "timetable_defs.h"
 #include "rules.h"
 
+#include <QIODevice>
+
 #include <QDir>
 
 #include <algorithm>
@@ -50,6 +52,9 @@ using namespace std;
 #include <list>
 #include <iterator>
 
+#include <QDataStream>
+#include <QByteArray>
+
 //#include <QApplication>
 #ifndef FET_COMMAND_LINE
 #include <QProgressDialog>
@@ -75,6 +80,20 @@ extern bool students_schedule_ready;
 extern bool rooms_schedule_ready;
 extern bool teachers_schedule_ready;
 
+#ifndef FET_COMMAND_LINE
+int cntUndoRedoStackIterator=0;
+std::list<QByteArray> oldRulesArchived; //.front() is oldest, .back() is newest
+std::list<QString> operationWhichWasDone; //as above
+std::list<QPair<QDate, QTime>> operationDateTime; //as above
+std::list<int> unarchivedSizes; //as above
+//std::list<QString> stateFileName; //as above
+
+std::list<QByteArray>::const_iterator crtBAIt;
+//std::list<QString>::const_iterator crtFNIt;
+
+int savedStateIterator=0;
+#endif
+
 FakeString::FakeString()
 {
 }
@@ -99,6 +118,3406 @@ void FakeString::operator+=(const char* str)
 	Q_UNUSED(str);
 }
 
+#ifndef FET_COMMAND_LINE
+QDataStream& operator<<(QDataStream& stream, const Rules& rules)
+{
+	stream<<rules.mode;
+
+	stream<<rules.institutionName;
+	stream<<rules.comments;
+
+	stream<<rules.nDaysPerWeek;
+	stream<<rules.daysOfTheWeek;
+
+	stream<<rules.nHoursPerDay;
+	stream<<rules.hoursOfTheDay;
+
+	stream<<rules.nTerms;
+	stream<<rules.nDaysPerTerm;
+
+	//Important note: below, need to convert teachersList.count() to an int to push it into the stream. Same for the rest of count()-s.
+	
+	int ntch=rules.teachersList.count();
+	stream<<ntch;
+	for(int i=0; i<ntch; i++)
+		stream<<*(rules.teachersList.at(i));
+
+	int nsbj=rules.subjectsList.count();
+	stream<<nsbj;
+	for(int i=0; i<nsbj; i++)
+		stream<<*(rules.subjectsList.at(i));
+
+	int nat=rules.activityTagsList.count();
+	stream<<nat;
+	for(int i=0; i<nat; i++)
+		stream<<*(rules.activityTagsList.at(i));
+
+	/*int ny=rules.yearsList.count();
+	stream<<ny;
+	for(int i=0; i<ny; i++)
+		stream<<*(rules.yearsList.at(i));*/
+	QList<StudentsSet*> allStudentsSetsList;
+	QHash<StudentsSet*, int> indexForStudentsSet;
+	int cnt=0;
+
+	////////////////
+	for(StudentsYear* year : std::as_const(rules.yearsList)){
+		assert(!indexForStudentsSet.contains(year));
+		allStudentsSetsList.append(year);
+		indexForStudentsSet.insert(year, cnt);
+		cnt++;
+		
+		for(StudentsGroup* group : std::as_const(year->groupsList)){
+			if(!indexForStudentsSet.contains(group)){
+				allStudentsSetsList.append(group);
+				indexForStudentsSet.insert(group, cnt);
+				cnt++;
+
+				for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
+					if(!indexForStudentsSet.contains(subgroup)){
+						allStudentsSetsList.append(subgroup);
+						indexForStudentsSet.insert(subgroup, cnt);
+						cnt++;
+					}
+				}
+			}
+		}
+	}
+
+	QHash<StudentsSet*, QList<int>> containedStudentsSetsList;
+	for(StudentsSet* ss : std::as_const(allStudentsSetsList)){
+		if(ss->type==STUDENTS_YEAR){
+			StudentsYear* year=(StudentsYear*)ss;
+			QList<int> cg;
+			for(StudentsGroup* group : std::as_const(year->groupsList)){
+				assert(indexForStudentsSet.contains(group));
+				cg.append(indexForStudentsSet.value(group));
+			}
+			assert(!containedStudentsSetsList.contains(year));
+			if(!cg.isEmpty()){
+				containedStudentsSetsList.insert(year, cg);
+			}
+		}
+		else if(ss->type==STUDENTS_GROUP){
+			StudentsGroup* group=(StudentsGroup*)ss;
+			QList<int> cs;
+			for(StudentsSubgroup* subgroup : std::as_const(group->subgroupsList)){
+				assert(indexForStudentsSet.contains(subgroup));
+				cs.append(indexForStudentsSet.value(subgroup));
+			}
+			assert(!containedStudentsSetsList.contains(group));
+			if(!cs.isEmpty()){
+				containedStudentsSetsList.insert(group, cs);
+			}
+		}
+	}
+	/////////////////
+
+	assert(cnt==allStudentsSetsList.count());
+	stream<<cnt;
+	for(int i=0; i<cnt; i++){
+		StudentsSet* ss=allStudentsSetsList.at(i);
+		stream<<ss->type;
+		if(ss->type==STUDENTS_YEAR){
+			StudentsYear* year=(StudentsYear*)ss;
+			stream<<year->name;
+			stream<<year->numberOfStudents;
+			//stream<<year->type;
+
+			stream<<year->comments;
+
+			//NOT: assert(containedStudentsSetsList.contains(year));
+			stream<<containedStudentsSetsList.value(year, QList<int>());
+
+			stream<<year->divisions;
+			stream<<year->separator; //The separator when dividing a year by categories.
+		}
+		else if(ss->type==STUDENTS_GROUP){
+			StudentsGroup* group=(StudentsGroup*)ss;
+			stream<<group->name;
+			stream<<group->numberOfStudents;
+			//stream<<group->type;
+
+			stream<<group->comments;
+
+			//NOT: assert(containedStudentsSetsList.contains(group));
+			stream<<containedStudentsSetsList.value(group, QList<int>());
+		}
+		else if(ss->type==STUDENTS_SUBGROUP){
+			StudentsSubgroup* subgroup=(StudentsSubgroup*)ss;
+			stream<<subgroup->name;
+			stream<<subgroup->numberOfStudents;
+			//stream<<subgroup->type;
+
+			stream<<subgroup->comments;
+
+			assert(!containedStudentsSetsList.contains(subgroup));
+		}
+		else{
+			assert(0);
+		}
+	}
+
+	int na=rules.activitiesList.count();
+	stream<<na;
+	for(int i=0; i<na; i++)
+		stream<<*(rules.activitiesList.at(i));
+
+	int nrm=rules.roomsList.count();
+	stream<<nrm;
+	for(int i=0; i<nrm; i++)
+		stream<<*(rules.roomsList.at(i));
+
+	int nbd=rules.buildingsList.count();
+	stream<<nbd;
+	for(int i=0; i<nbd; i++)
+		stream<<*(rules.buildingsList.at(i));
+
+	int ntc=rules.timeConstraintsList.count();
+	stream<<ntc;
+	for(int i=0; i<ntc; i++){
+		TimeConstraint* ctr=rules.timeConstraintsList.at(i);
+		stream<<ctr->type;
+
+		//1
+		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME){
+			ConstraintBasicCompulsoryTime* c=(ConstraintBasicCompulsoryTime*)ctr;
+			stream<<*c;
+		}
+		//2
+		else if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE){
+			ConstraintTwoActivitiesConsecutive* c=(ConstraintTwoActivitiesConsecutive*)ctr;
+			stream<<*c;
+		}
+		//3
+		else if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_ORDERED){
+			ConstraintTwoActivitiesOrdered* c=(ConstraintTwoActivitiesOrdered*)ctr;
+			stream<<*c;
+		}
+		//4
+		else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
+			ConstraintActivityPreferredTimeSlots* c=(ConstraintActivityPreferredTimeSlots*)ctr;
+			stream<<*c;
+		}
+		//5
+		else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
+			ConstraintActivityPreferredStartingTimes* c=(ConstraintActivityPreferredStartingTimes*)ctr;
+			stream<<*c;
+		}
+		//6
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* c=(ConstraintActivitiesPreferredTimeSlots*)ctr;
+			stream<<*c;
+		}
+		//7
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* c=(ConstraintActivitiesPreferredStartingTimes*)ctr;
+			stream<<*c;
+		}
+		//8
+		else if(ctr->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintSubactivitiesPreferredTimeSlots* c=(ConstraintSubactivitiesPreferredTimeSlots*)ctr;
+			stream<<*c;
+		}
+		//9
+		else if(ctr->type==CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintSubactivitiesPreferredStartingTimes* c=(ConstraintSubactivitiesPreferredStartingTimes*)ctr;
+			stream<<*c;
+		}
+		//10
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
+			ConstraintActivitiesSameStartingTime* c=(ConstraintActivitiesSameStartingTime*)ctr;
+			stream<<*c;
+		}
+		//11
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR){
+			ConstraintActivitiesSameStartingHour* c=(ConstraintActivitiesSameStartingHour*)ctr;
+			stream<<*c;
+		}
+		//12
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY){
+			ConstraintActivitiesSameStartingDay* c=(ConstraintActivitiesSameStartingDay*)ctr;
+			stream<<*c;
+		}
+		//13
+		else if(ctr->type==CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES){
+			ConstraintTeacherNotAvailableTimes* c=(ConstraintTeacherNotAvailableTimes*)ctr;
+			stream<<*c;
+		}
+		//14
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES){
+			ConstraintStudentsSetNotAvailableTimes* c=(ConstraintStudentsSetNotAvailableTimes*)ctr;
+			stream<<*c;
+		}
+		//15
+		else if(ctr->type==CONSTRAINT_BREAK_TIMES){
+			ConstraintBreakTimes* c=(ConstraintBreakTimes*)ctr;
+			stream<<*c;
+		}
+		//16
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK){
+			ConstraintTeacherMaxDaysPerWeek* c=(ConstraintTeacherMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//17
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_HOURS_DAILY){
+			ConstraintTeachersMaxHoursDaily* c=(ConstraintTeachersMaxHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//18
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY){
+			ConstraintTeacherMaxHoursDaily* c=(ConstraintTeacherMaxHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//19
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeachersMaxHoursContinuously* c=(ConstraintTeachersMaxHoursContinuously*)ctr;
+			stream<<*c;
+		}
+		//20
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeacherMaxHoursContinuously* c=(ConstraintTeacherMaxHoursContinuously*)ctr;
+			stream<<*c;
+		}
+		//21
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_HOURS_DAILY){
+			ConstraintTeachersMinHoursDaily* c=(ConstraintTeachersMinHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//22
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_HOURS_DAILY){
+			ConstraintTeacherMinHoursDaily* c=(ConstraintTeacherMinHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//23
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK){
+			ConstraintTeachersMaxGapsPerWeek* c=(ConstraintTeachersMaxGapsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//24
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK){
+			ConstraintTeacherMaxGapsPerWeek* c=(ConstraintTeacherMaxGapsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//25
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_DAY){
+			ConstraintTeachersMaxGapsPerDay* c=(ConstraintTeachersMaxGapsPerDay*)ctr;
+			stream<<*c;
+		}
+		//26
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY){
+			ConstraintTeacherMaxGapsPerDay* c=(ConstraintTeacherMaxGapsPerDay*)ctr;
+			stream<<*c;
+		}
+		//27
+		else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+			ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*)ctr;
+			stream<<*c;
+		}
+		//28
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK){
+			ConstraintStudentsSetMaxGapsPerWeek* c=(ConstraintStudentsSetMaxGapsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//29
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK){
+			ConstraintStudentsMaxGapsPerWeek* c=(ConstraintStudentsMaxGapsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//30
+		else if(ctr->type==CONSTRAINT_STUDENTS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsEarlyMaxBeginningsAtSecondHour* c=(ConstraintStudentsEarlyMaxBeginningsAtSecondHour*)ctr;
+			stream<<*c;
+		}
+		//31
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* c=(ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour*)ctr;
+			stream<<*c;
+		}
+		//32
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
+			ConstraintStudentsSetMaxHoursDaily* c=(ConstraintStudentsSetMaxHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//33
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_HOURS_DAILY){
+			ConstraintStudentsMaxHoursDaily* c=(ConstraintStudentsMaxHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//34
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetMaxHoursContinuously* c=(ConstraintStudentsSetMaxHoursContinuously*)ctr;
+			stream<<*c;
+		}
+		//35
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsMaxHoursContinuously* c=(ConstraintStudentsMaxHoursContinuously*)ctr;
+			stream<<*c;
+		}
+		//36
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
+			ConstraintStudentsSetMinHoursDaily* c=(ConstraintStudentsSetMinHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//37
+		else if(ctr->type==CONSTRAINT_STUDENTS_MIN_HOURS_DAILY){
+			ConstraintStudentsMinHoursDaily* c=(ConstraintStudentsMinHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//38
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
+			ConstraintActivitiesNotOverlapping* c=(ConstraintActivitiesNotOverlapping*)ctr;
+			stream<<*c;
+		}
+		//39
+		else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*)ctr;
+			stream<<*c;
+		}
+		//40
+		else if(ctr->type==CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES){
+			ConstraintMinGapsBetweenActivities* c=(ConstraintMinGapsBetweenActivities*)ctr;
+			stream<<*c;
+		}
+		//41
+		else if(ctr->type==CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY){
+			ConstraintActivityEndsStudentsDay* c=(ConstraintActivityEndsStudentsDay*)ctr;
+			stream<<*c;
+		}
+		//42
+		else if(ctr->type==CONSTRAINT_TEACHER_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeacherIntervalMaxDaysPerWeek* c=(ConstraintTeacherIntervalMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//43
+		else if(ctr->type==CONSTRAINT_TEACHERS_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeachersIntervalMaxDaysPerWeek* c=(ConstraintTeachersIntervalMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//44
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetIntervalMaxDaysPerWeek* c=(ConstraintStudentsSetIntervalMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//45
+		else if(ctr->type==CONSTRAINT_STUDENTS_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsIntervalMaxDaysPerWeek* c=(ConstraintStudentsIntervalMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//46
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_END_STUDENTS_DAY){
+			ConstraintActivitiesEndStudentsDay* c=(ConstraintActivitiesEndStudentsDay*)ctr;
+			stream<<*c;
+		}
+		//47
+		else if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_GROUPED){
+			ConstraintTwoActivitiesGrouped* c=(ConstraintTwoActivitiesGrouped*)ctr;
+			stream<<*c;
+		}
+		//48
+		else if(ctr->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeachersActivityTagMaxHoursContinuously* c=(ConstraintTeachersActivityTagMaxHoursContinuously*)ctr;
+			stream<<*c;
+		}
+		//49
+		else if(ctr->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeacherActivityTagMaxHoursContinuously* c=(ConstraintTeacherActivityTagMaxHoursContinuously*)ctr;
+			stream<<*c;
+		}
+		//50
+		else if(ctr->type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsActivityTagMaxHoursContinuously* c=(ConstraintStudentsActivityTagMaxHoursContinuously*)ctr;
+			stream<<*c;
+		}
+		//51
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetActivityTagMaxHoursContinuously* c=(ConstraintStudentsSetActivityTagMaxHoursContinuously*)ctr;
+			stream<<*c;
+		}
+		//52
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_DAYS_PER_WEEK){
+			ConstraintTeachersMaxDaysPerWeek* c=(ConstraintTeachersMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//53
+		else if(ctr->type==CONSTRAINT_THREE_ACTIVITIES_GROUPED){
+			ConstraintThreeActivitiesGrouped* c=(ConstraintThreeActivitiesGrouped*)ctr;
+			stream<<*c;
+		}
+		//54
+		else if(ctr->type==CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMaxDaysBetweenActivities* c=(ConstraintMaxDaysBetweenActivities*)ctr;
+			stream<<*c;
+		}
+		//55
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_DAYS_PER_WEEK){
+			ConstraintTeachersMinDaysPerWeek* c=(ConstraintTeachersMinDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//56
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_DAYS_PER_WEEK){
+			ConstraintTeacherMinDaysPerWeek* c=(ConstraintTeacherMinDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//57
+		else if(ctr->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_DAILY){
+			ConstraintTeachersActivityTagMaxHoursDaily* c=(ConstraintTeachersActivityTagMaxHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//58
+		else if(ctr->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_DAILY){
+			ConstraintTeacherActivityTagMaxHoursDaily* c=(ConstraintTeacherActivityTagMaxHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//59
+		else if(ctr->type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_DAILY){
+			ConstraintStudentsActivityTagMaxHoursDaily* c=(ConstraintStudentsActivityTagMaxHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//60
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_DAILY){
+			ConstraintStudentsSetActivityTagMaxHoursDaily* c=(ConstraintStudentsSetActivityTagMaxHoursDaily*)ctr;
+			stream<<*c;
+		}
+
+		//61
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_DAY){
+			ConstraintStudentsSetMaxGapsPerDay* c=(ConstraintStudentsSetMaxGapsPerDay*)ctr;
+			stream<<*c;
+		}
+		//62
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_GAPS_PER_DAY){
+			ConstraintStudentsMaxGapsPerDay* c=(ConstraintStudentsMaxGapsPerDay*)ctr;
+			stream<<*c;
+		}
+		//63
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TIME_SLOTS_FROM_SELECTION){
+			ConstraintActivitiesOccupyMaxTimeSlotsFromSelection* c=(ConstraintActivitiesOccupyMaxTimeSlotsFromSelection*)ctr;
+			stream<<*c;
+		}
+		//64
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
+			ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots* c=(ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots*)ctr;
+			stream<<*c;
+		}
+		//65
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetMaxDaysPerWeek* c=(ConstraintStudentsSetMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//66
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsMaxDaysPerWeek* c=(ConstraintStudentsMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//2017-02-07
+		//67
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_SPAN_PER_DAY){
+			ConstraintTeacherMaxSpanPerDay* c=(ConstraintTeacherMaxSpanPerDay*)ctr;
+			stream<<*c;
+		}
+		//68
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_SPAN_PER_DAY){
+			ConstraintTeachersMaxSpanPerDay* c=(ConstraintTeachersMaxSpanPerDay*)ctr;
+			stream<<*c;
+		}
+		//69
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_SPAN_PER_DAY){
+			ConstraintStudentsSetMaxSpanPerDay* c=(ConstraintStudentsSetMaxSpanPerDay*)ctr;
+			stream<<*c;
+		}
+		//70
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_SPAN_PER_DAY){
+			ConstraintStudentsMaxSpanPerDay* c=(ConstraintStudentsMaxSpanPerDay*)ctr;
+			stream<<*c;
+		}
+		//71
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_RESTING_HOURS){
+			ConstraintTeacherMinRestingHours* c=(ConstraintTeacherMinRestingHours*)ctr;
+			stream<<*c;
+		}
+		//72
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_RESTING_HOURS){
+			ConstraintTeachersMinRestingHours* c=(ConstraintTeachersMinRestingHours*)ctr;
+			stream<<*c;
+		}
+		//73
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_RESTING_HOURS){
+			ConstraintStudentsSetMinRestingHours* c=(ConstraintStudentsSetMinRestingHours*)ctr;
+			stream<<*c;
+		}
+		//74
+		else if(ctr->type==CONSTRAINT_STUDENTS_MIN_RESTING_HOURS){
+			ConstraintStudentsMinRestingHours* c=(ConstraintStudentsMinRestingHours*)ctr;
+			stream<<*c;
+		}
+		//2018-06-13
+		//75
+		else if(ctr->type==CONSTRAINT_TWO_ACTIVITIES_ORDERED_IF_SAME_DAY){
+			ConstraintTwoActivitiesOrderedIfSameDay* c=(ConstraintTwoActivitiesOrderedIfSameDay*)ctr;
+			stream<<*c;
+		}
+		//2019-06-09
+		//76
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS){
+			ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags* c=(ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags*)ctr;
+			stream<<*c;
+		}
+		//77
+		else if(ctr->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS){
+			ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags* c=(ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags*)ctr;
+			stream<<*c;
+		}
+		//78
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS){
+			ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags* c=(ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags*)ctr;
+			stream<<*c;
+		}
+		//79
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS){
+			ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags* c=(ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags*)ctr;
+			stream<<*c;
+		}
+		//80
+		else if(ctr->type==CONSTRAINT_ACTIVITY_TAGS_NOT_OVERLAPPING){
+			ConstraintActivityTagsNotOverlapping* c=(ConstraintActivityTagsNotOverlapping*)ctr;
+			stream<<*c;
+		}
+		//81
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MIN_TIME_SLOTS_FROM_SELECTION){
+			ConstraintActivitiesOccupyMinTimeSlotsFromSelection* c=(ConstraintActivitiesOccupyMinTimeSlotsFromSelection*)ctr;
+			stream<<*c;
+		}
+		//82
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_MIN_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
+			ConstraintActivitiesMinSimultaneousInSelectedTimeSlots* c=(ConstraintActivitiesMinSimultaneousInSelectedTimeSlots*)ctr;
+			stream<<*c;
+		}
+
+		//83
+		else if(ctr->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MIN_HOURS_DAILY){
+			ConstraintTeachersActivityTagMinHoursDaily* c=(ConstraintTeachersActivityTagMinHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//84
+		else if(ctr->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MIN_HOURS_DAILY){
+			ConstraintTeacherActivityTagMinHoursDaily* c=(ConstraintTeacherActivityTagMinHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//85
+		else if(ctr->type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MIN_HOURS_DAILY){
+			ConstraintStudentsActivityTagMinHoursDaily* c=(ConstraintStudentsActivityTagMinHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//86
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MIN_HOURS_DAILY){
+			ConstraintStudentsSetActivityTagMinHoursDaily* c=(ConstraintStudentsSetActivityTagMinHoursDaily*)ctr;
+			stream<<*c;
+		}
+		//87
+		else if(ctr->type==CONSTRAINT_ACTIVITY_ENDS_TEACHERS_DAY){
+			ConstraintActivityEndsTeachersDay* c=(ConstraintActivityEndsTeachersDay*)ctr;
+			stream<<*c;
+		}
+		//88
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_END_TEACHERS_DAY){
+			ConstraintActivitiesEndTeachersDay* c=(ConstraintActivitiesEndTeachersDay*)ctr;
+			stream<<*c;
+		}
+
+		//mornings-afternoons
+		//89
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_AFTERNOONS_PER_WEEK){
+			ConstraintTeacherMaxAfternoonsPerWeek* c=(ConstraintTeacherMaxAfternoonsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//90
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_AFTERNOONS_PER_WEEK){
+			ConstraintTeachersMaxAfternoonsPerWeek* c=(ConstraintTeachersMaxAfternoonsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//91
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_MORNINGS_PER_WEEK){
+			ConstraintTeacherMaxMorningsPerWeek* c=(ConstraintTeacherMaxMorningsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//92
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_MORNINGS_PER_WEEK){
+			ConstraintTeachersMaxMorningsPerWeek* c=(ConstraintTeachersMaxMorningsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//93
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+			ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3* c=(ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3*)ctr;
+			stream<<*c;
+		}
+		//94
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+			ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3* c=(ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3*)ctr;
+			stream<<*c;
+		}
+		//95
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_MORNINGS_PER_WEEK){
+			ConstraintTeacherMinMorningsPerWeek* c=(ConstraintTeacherMinMorningsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//96
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_MORNINGS_PER_WEEK){
+			ConstraintTeachersMinMorningsPerWeek* c=(ConstraintTeachersMinMorningsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//97
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_AFTERNOONS_PER_WEEK){
+			ConstraintTeacherMinAfternoonsPerWeek* c=(ConstraintTeacherMinAfternoonsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//98
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_AFTERNOONS_PER_WEEK){
+			ConstraintTeachersMinAfternoonsPerWeek* c=(ConstraintTeachersMinAfternoonsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//99
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_TWO_CONSECUTIVE_MORNINGS){
+			ConstraintTeacherMaxTwoConsecutiveMornings* c=(ConstraintTeacherMaxTwoConsecutiveMornings*)ctr;
+			stream<<*c;
+		}
+		//100
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_TWO_CONSECUTIVE_MORNINGS){
+			ConstraintTeachersMaxTwoConsecutiveMornings* c=(ConstraintTeachersMaxTwoConsecutiveMornings*)ctr;
+			stream<<*c;
+		}
+		//101
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_TWO_CONSECUTIVE_AFTERNOONS){
+			ConstraintTeacherMaxTwoConsecutiveAfternoons* c=(ConstraintTeacherMaxTwoConsecutiveAfternoons*)ctr;
+			stream<<*c;
+		}
+		//102
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_TWO_CONSECUTIVE_AFTERNOONS){
+			ConstraintTeachersMaxTwoConsecutiveAfternoons* c=(ConstraintTeachersMaxTwoConsecutiveAfternoons*)ctr;
+			stream<<*c;
+		}
+		//103
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_REAL_DAY){
+			ConstraintTeachersMaxGapsPerRealDay* c=(ConstraintTeachersMaxGapsPerRealDay*)ctr;
+			stream<<*c;
+		}
+		//104
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_REAL_DAY){
+			ConstraintTeacherMaxGapsPerRealDay* c=(ConstraintTeacherMaxGapsPerRealDay*)ctr;
+			stream<<*c;
+		}
+		//105
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_REAL_DAY){
+			ConstraintStudentsSetMaxGapsPerRealDay* c=(ConstraintStudentsSetMaxGapsPerRealDay*)ctr;
+			stream<<*c;
+		}
+		//106
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_GAPS_PER_REAL_DAY){
+			ConstraintStudentsMaxGapsPerRealDay* c=(ConstraintStudentsMaxGapsPerRealDay*)ctr;
+			stream<<*c;
+		}
+
+		//107
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_HOURS_DAILY_REAL_DAYS){
+			ConstraintTeachersMinHoursDailyRealDays* c=(ConstraintTeachersMinHoursDailyRealDays*)ctr;
+			stream<<*c;
+		}
+		//108
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_HOURS_DAILY_REAL_DAYS){
+			ConstraintTeacherMinHoursDailyRealDays* c=(ConstraintTeacherMinHoursDailyRealDays*)ctr;
+			stream<<*c;
+		}
+
+		//109
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_HOURS_PER_MORNING){
+			ConstraintTeachersMinHoursPerMorning* c=(ConstraintTeachersMinHoursPerMorning*)ctr;
+			stream<<*c;
+		}
+		//110
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_HOURS_PER_MORNING){
+			ConstraintTeacherMinHoursPerMorning* c=(ConstraintTeacherMinHoursPerMorning*)ctr;
+			stream<<*c;
+		}
+		//2017-02-07
+		//111
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_SPAN_PER_REAL_DAY){
+			ConstraintTeacherMaxSpanPerRealDay* c=(ConstraintTeacherMaxSpanPerRealDay*)ctr;
+			stream<<*c;
+		}
+		//112
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_SPAN_PER_REAL_DAY){
+			ConstraintTeachersMaxSpanPerRealDay* c=(ConstraintTeachersMaxSpanPerRealDay*)ctr;
+			stream<<*c;
+		}
+		//113
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_SPAN_PER_REAL_DAY){
+			ConstraintStudentsSetMaxSpanPerRealDay* c=(ConstraintStudentsSetMaxSpanPerRealDay*)ctr;
+			stream<<*c;
+		}
+		//114
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_SPAN_PER_REAL_DAY){
+			ConstraintStudentsMaxSpanPerRealDay* c=(ConstraintStudentsMaxSpanPerRealDay*)ctr;
+			stream<<*c;
+		}
+
+		//115
+		else if(ctr->type==CONSTRAINT_TEACHER_MORNING_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeacherMorningIntervalMaxDaysPerWeek* c=(ConstraintTeacherMorningIntervalMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//116
+		else if(ctr->type==CONSTRAINT_TEACHERS_MORNING_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeachersMorningIntervalMaxDaysPerWeek* c=(ConstraintTeachersMorningIntervalMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+
+		//117
+		else if(ctr->type==CONSTRAINT_TEACHER_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeacherAfternoonIntervalMaxDaysPerWeek* c=(ConstraintTeacherAfternoonIntervalMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//118
+		else if(ctr->type==CONSTRAINT_TEACHERS_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeachersAfternoonIntervalMaxDaysPerWeek* c=(ConstraintTeachersAfternoonIntervalMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//119
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_MORNING){
+			ConstraintStudentsSetMinHoursPerMorning* c=(ConstraintStudentsSetMinHoursPerMorning*)ctr;
+			stream<<*c;
+		}
+		//120
+		else if(ctr->type==CONSTRAINT_STUDENTS_MIN_HOURS_PER_MORNING){
+			ConstraintStudentsMinHoursPerMorning* c=(ConstraintStudentsMinHoursPerMorning*)ctr;
+			stream<<*c;
+		}
+
+		//121
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_ZERO_GAPS_PER_AFTERNOON){
+			ConstraintTeachersMaxZeroGapsPerAfternoon* c=(ConstraintTeachersMaxZeroGapsPerAfternoon*)ctr;
+			stream<<*c;
+		}
+		//122
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_ZERO_GAPS_PER_AFTERNOON){
+			ConstraintTeacherMaxZeroGapsPerAfternoon* c=(ConstraintTeacherMaxZeroGapsPerAfternoon*)ctr;
+			stream<<*c;
+		}
+		//123
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_AFTERNOONS_PER_WEEK){
+			ConstraintStudentsSetMaxAfternoonsPerWeek* c=(ConstraintStudentsSetMaxAfternoonsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//124
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_AFTERNOONS_PER_WEEK){
+			ConstraintStudentsMaxAfternoonsPerWeek* c=(ConstraintStudentsMaxAfternoonsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//125
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_MORNINGS_PER_WEEK){
+			ConstraintStudentsSetMaxMorningsPerWeek* c=(ConstraintStudentsSetMaxMorningsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//126
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_MORNINGS_PER_WEEK){
+			ConstraintStudentsMaxMorningsPerWeek* c=(ConstraintStudentsMaxMorningsPerWeek*)ctr;
+			stream<<*c;
+		}
+		/////
+		//127
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_AFTERNOONS_PER_WEEK){
+			ConstraintStudentsSetMinAfternoonsPerWeek* c=(ConstraintStudentsSetMinAfternoonsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//128
+		else if(ctr->type==CONSTRAINT_STUDENTS_MIN_AFTERNOONS_PER_WEEK){
+			ConstraintStudentsMinAfternoonsPerWeek* c=(ConstraintStudentsMinAfternoonsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//129
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_MORNINGS_PER_WEEK){
+			ConstraintStudentsSetMinMorningsPerWeek* c=(ConstraintStudentsSetMinMorningsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//130
+		else if(ctr->type==CONSTRAINT_STUDENTS_MIN_MORNINGS_PER_WEEK){
+			ConstraintStudentsMinMorningsPerWeek* c=(ConstraintStudentsMinMorningsPerWeek*)ctr;
+			stream<<*c;
+		}
+		//131
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MORNING_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetMorningIntervalMaxDaysPerWeek* c=(ConstraintStudentsSetMorningIntervalMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//132
+		else if(ctr->type==CONSTRAINT_STUDENTS_MORNING_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsMorningIntervalMaxDaysPerWeek* c=(ConstraintStudentsMorningIntervalMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//133
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek* c=(ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//134
+		else if(ctr->type==CONSTRAINT_STUDENTS_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsAfternoonIntervalMaxDaysPerWeek* c=(ConstraintStudentsAfternoonIntervalMaxDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//2020-06-28
+		//135
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_PER_ALL_AFTERNOONS){
+			ConstraintTeacherMaxHoursPerAllAfternoons* c=(ConstraintTeacherMaxHoursPerAllAfternoons*)ctr;
+			stream<<*c;
+		}
+		//136
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_HOURS_PER_ALL_AFTERNOONS){
+			ConstraintTeachersMaxHoursPerAllAfternoons* c=(ConstraintTeachersMaxHoursPerAllAfternoons*)ctr;
+			stream<<*c;
+		}
+		//137
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_PER_ALL_AFTERNOONS){
+			ConstraintStudentsSetMaxHoursPerAllAfternoons* c=(ConstraintStudentsSetMaxHoursPerAllAfternoons*)ctr;
+			stream<<*c;
+		}
+		//138
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_HOURS_PER_ALL_AFTERNOONS){
+			ConstraintStudentsMaxHoursPerAllAfternoons* c=(ConstraintStudentsMaxHoursPerAllAfternoons*)ctr;
+			stream<<*c;
+		}
+
+		//139
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON){
+			ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon* c=(ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon*)ctr;
+			stream<<*c;
+		}
+		//140
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON){
+			ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon* c=(ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon*)ctr;
+			stream<<*c;
+		}
+		//141
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON){
+			ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon* c=(ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon*)ctr;
+			stream<<*c;
+		}
+		//142
+		else if(ctr->type==CONSTRAINT_STUDENTS_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON){
+			ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon* c=(ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon*)ctr;
+			stream<<*c;
+		}
+		/////////
+		//143
+		else if(ctr->type==CONSTRAINT_STUDENTS_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour* c=(ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour*)ctr;
+			stream<<*c;
+		}
+		//144
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour* c=(ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour*)ctr;
+			stream<<*c;
+		}
+
+		//145
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS){
+			ConstraintTeachersMaxGapsPerWeekForRealDays* c=(ConstraintTeachersMaxGapsPerWeekForRealDays*)ctr;
+			stream<<*c;
+		}
+		//146
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS){
+			ConstraintTeacherMaxGapsPerWeekForRealDays* c=(ConstraintTeacherMaxGapsPerWeekForRealDays*)ctr;
+			stream<<*c;
+		}
+		//147
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS){
+			ConstraintStudentsSetMaxGapsPerWeekForRealDays* c=(ConstraintStudentsSetMaxGapsPerWeekForRealDays*)ctr;
+			stream<<*c;
+		}
+		//148
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS){
+			ConstraintStudentsMaxGapsPerWeekForRealDays* c=(ConstraintStudentsMaxGapsPerWeekForRealDays*)ctr;
+			stream<<*c;
+		}
+
+		//149
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_REAL_DAYS_PER_WEEK){
+			ConstraintTeacherMaxRealDaysPerWeek* c=(ConstraintTeacherMaxRealDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//150
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintTeachersMaxHoursDailyRealDays* c=(ConstraintTeachersMaxHoursDailyRealDays*)ctr;
+			stream<<*c;
+		}
+		//151
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintTeacherMaxHoursDailyRealDays* c=(ConstraintTeacherMaxHoursDailyRealDays*)ctr;
+			stream<<*c;
+		}
+		//152
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintStudentsSetMaxHoursDailyRealDays* c=(ConstraintStudentsSetMaxHoursDailyRealDays*)ctr;
+			stream<<*c;
+		}
+		//153
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintStudentsMaxHoursDailyRealDays* c=(ConstraintStudentsMaxHoursDailyRealDays*)ctr;
+			stream<<*c;
+		}
+		//154
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_REAL_DAYS_PER_WEEK){
+			ConstraintTeachersMaxRealDaysPerWeek* c=(ConstraintTeachersMaxRealDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//155
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_REAL_DAYS_PER_WEEK){
+			ConstraintTeachersMinRealDaysPerWeek* c=(ConstraintTeachersMinRealDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//156
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_REAL_DAYS_PER_WEEK){
+			ConstraintTeacherMinRealDaysPerWeek* c=(ConstraintTeacherMinRealDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//157
+		else if(ctr->type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintTeachersActivityTagMaxHoursDailyRealDays* c=(ConstraintTeachersActivityTagMaxHoursDailyRealDays*)ctr;
+			stream<<*c;
+		}
+		//158
+		else if(ctr->type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintTeacherActivityTagMaxHoursDailyRealDays* c=(ConstraintTeacherActivityTagMaxHoursDailyRealDays*)ctr;
+			stream<<*c;
+		}
+		//159
+		else if(ctr->type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintStudentsActivityTagMaxHoursDailyRealDays* c=(ConstraintStudentsActivityTagMaxHoursDailyRealDays*)ctr;
+			stream<<*c;
+		}
+		//160
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintStudentsSetActivityTagMaxHoursDailyRealDays* c=(ConstraintStudentsSetActivityTagMaxHoursDailyRealDays*)ctr;
+			stream<<*c;
+		}
+
+		//161
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_REAL_DAYS_PER_WEEK){
+			ConstraintStudentsSetMaxRealDaysPerWeek* c=(ConstraintStudentsSetMaxRealDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//162
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_REAL_DAYS_PER_WEEK){
+			ConstraintStudentsMaxRealDaysPerWeek* c=(ConstraintStudentsMaxRealDaysPerWeek*)ctr;
+			stream<<*c;
+		}
+		//163
+		else if(ctr->type==CONSTRAINT_TEACHERS_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour* c=(ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour*)ctr;
+			stream<<*c;
+		}
+		//164
+		else if(ctr->type==CONSTRAINT_TEACHER_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour* c=(ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour*)ctr;
+			stream<<*c;
+		}
+		//block-planning
+		//165
+		else if(ctr->type==CONSTRAINT_MAX_TOTAL_ACTIVITIES_FROM_SET_IN_SELECTED_TIME_SLOTS){
+			ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots* c=(ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots*)ctr;
+			stream<<*c;
+		}
+		//166
+		else if(ctr->type==CONSTRAINT_MAX_GAPS_BETWEEN_ACTIVITIES){
+			ConstraintMaxGapsBetweenActivities* c=(ConstraintMaxGapsBetweenActivities*)ctr;
+			stream<<*c;
+		}
+		//terms
+		//167
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_IN_A_TERM){
+			ConstraintActivitiesMaxInATerm* c=(ConstraintActivitiesMaxInATerm*)ctr;
+			stream<<*c;
+		}
+		//168
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS){
+			ConstraintActivitiesOccupyMaxTerms* c=(ConstraintActivitiesOccupyMaxTerms*)ctr;
+			stream<<*c;
+		}
+		//169
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_MORNING_AND_AFTERNOON){
+			ConstraintTeachersMaxGapsPerMorningAndAfternoon* c=(ConstraintTeachersMaxGapsPerMorningAndAfternoon*)ctr;
+			stream<<*c;
+		}
+		//170
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON){
+			ConstraintTeacherMaxGapsPerMorningAndAfternoon* c=(ConstraintTeacherMaxGapsPerMorningAndAfternoon*)ctr;
+			stream<<*c;
+		}
+		//171
+		else if(ctr->type==CONSTRAINT_STUDENTS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour* c=(ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour*)ctr;
+			stream<<*c;
+		}
+		//172
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour* c=(ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour*)ctr;
+			stream<<*c;
+		}
+		//173
+		else if(ctr->type==CONSTRAINT_TEACHERS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour* c=(ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour*)ctr;
+			stream<<*c;
+		}
+		//174
+		else if(ctr->type==CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour* c=(ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour*)ctr;
+			stream<<*c;
+		}
+		//175
+		else if(ctr->type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED){
+			ConstraintTwoSetsOfActivitiesOrdered* c=(ConstraintTwoSetsOfActivitiesOrdered*)ctr;
+			stream<<*c;
+		}
+		//176
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintTeacherMaxThreeConsecutiveDays* c=(ConstraintTeacherMaxThreeConsecutiveDays*)ctr;
+			stream<<*c;
+		}
+		//177
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintTeachersMaxThreeConsecutiveDays* c=(ConstraintTeachersMaxThreeConsecutiveDays*)ctr;
+			stream<<*c;
+		}
+		//2021-12-15
+		//178
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+			ConstraintStudentsSetMinGapsBetweenActivityTag* c=(ConstraintStudentsSetMinGapsBetweenActivityTag*)ctr;
+			stream<<*c;
+		}
+		//179
+		else if(ctr->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+			ConstraintStudentsMinGapsBetweenActivityTag* c=(ConstraintStudentsMinGapsBetweenActivityTag*)ctr;
+			stream<<*c;
+		}
+		//180
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+			ConstraintTeacherMinGapsBetweenActivityTag* c=(ConstraintTeacherMinGapsBetweenActivityTag*)ctr;
+			stream<<*c;
+		}
+		//181
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+			ConstraintTeachersMinGapsBetweenActivityTag* c=(ConstraintTeachersMinGapsBetweenActivityTag*)ctr;
+			stream<<*c;
+		}
+		//2022-02-15
+		//182
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintStudentsSetMaxThreeConsecutiveDays* c=(ConstraintStudentsSetMaxThreeConsecutiveDays*)ctr;
+			stream<<*c;
+		}
+		//183
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintStudentsMaxThreeConsecutiveDays* c=(ConstraintStudentsMaxThreeConsecutiveDays*)ctr;
+			stream<<*c;
+		}
+		//184
+		else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*)ctr;
+			stream<<*c;
+		}
+		//185
+		else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_DAY){
+			ConstraintActivityPreferredDay* c=(ConstraintActivityPreferredDay*)ctr;
+			stream<<*c;
+		}
+		//186
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_MIN_IN_A_TERM){
+			ConstraintActivitiesMinInATerm* c=(ConstraintActivitiesMinInATerm*)ctr;
+			stream<<*c;
+		}
+		//187
+		else if(ctr->type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES){
+			ConstraintMaxTermsBetweenActivities* c=(ConstraintMaxTermsBetweenActivities*)ctr;
+			stream<<*c;
+		}
+		//188
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+			ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3* c=(ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3*)ctr;
+			stream<<*c;
+		}
+		//189
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+			ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3* c=(ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3*)ctr;
+			stream<<*c;
+		}
+		//190
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+			ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3* c=(ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr;
+			stream<<*c;
+		}
+		//191
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+			ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3* c=(ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr;
+			stream<<*c;
+		}
+		//192
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+			ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3* c=(ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr;
+			stream<<*c;
+		}
+		//193
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+			ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3* c=(ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3*)ctr;
+			stream<<*c;
+		}
+		//194
+		else if(ctr->type==CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMaxHalfDaysBetweenActivities* c=(ConstraintMaxHalfDaysBetweenActivities*)ctr;
+			stream<<*c;
+		}
+		//195
+		else if(ctr->type==CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY){
+			ConstraintActivityBeginsStudentsDay* c=(ConstraintActivityBeginsStudentsDay*)ctr;
+			stream<<*c;
+		}
+		//196
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY){
+			ConstraintActivitiesBeginStudentsDay* c=(ConstraintActivitiesBeginStudentsDay*)ctr;
+			stream<<*c;
+		}
+		//197
+		else if(ctr->type==CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY){
+			ConstraintActivityBeginsTeachersDay* c=(ConstraintActivityBeginsTeachersDay*)ctr;
+			stream<<*c;
+		}
+		//198
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY){
+			ConstraintActivitiesBeginTeachersDay* c=(ConstraintActivitiesBeginTeachersDay*)ctr;
+			stream<<*c;
+		}
+
+		//199
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_HOURS_PER_AFTERNOON){
+			ConstraintTeachersMinHoursPerAfternoon* c=(ConstraintTeachersMinHoursPerAfternoon*)ctr;
+			stream<<*c;
+		}
+		//200
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON){
+			ConstraintTeacherMinHoursPerAfternoon* c=(ConstraintTeacherMinHoursPerAfternoon*)ctr;
+			stream<<*c;
+		}
+		//201
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON){
+			ConstraintStudentsSetMinHoursPerAfternoon* c=(ConstraintStudentsSetMinHoursPerAfternoon*)ctr;
+			stream<<*c;
+		}
+		//202
+		else if(ctr->type==CONSTRAINT_STUDENTS_MIN_HOURS_PER_AFTERNOON){
+			ConstraintStudentsMinHoursPerAfternoon* c=(ConstraintStudentsMinHoursPerAfternoon*)ctr;
+			stream<<*c;
+		}
+
+		//203
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN){
+			ConstraintActivitiesMaxHourlySpan* c=(ConstraintActivitiesMaxHourlySpan*)ctr;
+			stream<<*c;
+		}
+
+		else{
+			assert(0);
+		}
+	}
+	
+	//stream<<rules.spaceConstraintsList;
+	int nsc=rules.spaceConstraintsList.count();
+	stream<<nsc;
+	for(int i=0; i<nsc; i++){
+		SpaceConstraint* ctr=rules.spaceConstraintsList.at(i);
+		stream<<ctr->type;
+
+
+		//1
+		if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE){
+			ConstraintBasicCompulsorySpace* c=(ConstraintBasicCompulsorySpace*)ctr;
+			stream<<*c;
+		}
+		//2
+		else if(ctr->type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES){
+			ConstraintRoomNotAvailableTimes* c=(ConstraintRoomNotAvailableTimes*)ctr;
+			stream<<*c;
+		}
+		//3
+		else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*)ctr;
+			stream<<*c;
+		}
+		//4
+		else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOMS){
+			ConstraintActivityPreferredRooms* c=(ConstraintActivityPreferredRooms*)ctr;
+			stream<<*c;
+		}
+		//5
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_HOME_ROOM){
+			ConstraintStudentsSetHomeRoom* c=(ConstraintStudentsSetHomeRoom*)ctr;
+			stream<<*c;
+		}
+		//6
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_HOME_ROOMS){
+			ConstraintStudentsSetHomeRooms* c=(ConstraintStudentsSetHomeRooms*)ctr;
+			stream<<*c;
+		}
+		//7
+		else if(ctr->type==CONSTRAINT_TEACHER_HOME_ROOM){
+			ConstraintTeacherHomeRoom* c=(ConstraintTeacherHomeRoom*)ctr;
+			stream<<*c;
+		}
+		//8
+		else if(ctr->type==CONSTRAINT_TEACHER_HOME_ROOMS){
+			ConstraintTeacherHomeRooms* c=(ConstraintTeacherHomeRooms*)ctr;
+			stream<<*c;
+		}
+		//9
+		else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOM){
+			ConstraintSubjectPreferredRoom* c=(ConstraintSubjectPreferredRoom*)ctr;
+			stream<<*c;
+		}
+		//10
+		else if(ctr->type==CONSTRAINT_SUBJECT_PREFERRED_ROOMS){
+			ConstraintSubjectPreferredRooms* c=(ConstraintSubjectPreferredRooms*)ctr;
+			stream<<*c;
+		}
+		//11
+		else if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM){
+			ConstraintSubjectActivityTagPreferredRoom* c=(ConstraintSubjectActivityTagPreferredRoom*)ctr;
+			stream<<*c;
+		}
+		//12
+		else if(ctr->type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS){
+			ConstraintSubjectActivityTagPreferredRooms* c=(ConstraintSubjectActivityTagPreferredRooms*)ctr;
+			stream<<*c;
+		}
+		///6 apr 2009
+		//13
+		else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM){
+			ConstraintActivityTagPreferredRoom* c=(ConstraintActivityTagPreferredRoom*)ctr;
+			stream<<*c;
+		}
+		//14
+		else if(ctr->type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS){
+			ConstraintActivityTagPreferredRooms* c=(ConstraintActivityTagPreferredRooms*)ctr;
+			stream<<*c;
+		}
+		///
+		//15
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY){
+			ConstraintStudentsSetMaxBuildingChangesPerDay* c=(ConstraintStudentsSetMaxBuildingChangesPerDay*)ctr;
+			stream<<*c;
+		}
+		//16
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_DAY){
+			ConstraintStudentsMaxBuildingChangesPerDay* c=(ConstraintStudentsMaxBuildingChangesPerDay*)ctr;
+			stream<<*c;
+		}
+		//17
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_WEEK){
+			ConstraintStudentsSetMaxBuildingChangesPerWeek* c=(ConstraintStudentsSetMaxBuildingChangesPerWeek*)ctr;
+			stream<<*c;
+		}
+		//18
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_WEEK){
+			ConstraintStudentsMaxBuildingChangesPerWeek* c=(ConstraintStudentsMaxBuildingChangesPerWeek*)ctr;
+			stream<<*c;
+		}
+		//19
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
+			ConstraintStudentsSetMinGapsBetweenBuildingChanges* c=(ConstraintStudentsSetMinGapsBetweenBuildingChanges*)ctr;
+			stream<<*c;
+		}
+		//20
+		else if(ctr->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
+			ConstraintStudentsMinGapsBetweenBuildingChanges* c=(ConstraintStudentsMinGapsBetweenBuildingChanges*)ctr;
+			stream<<*c;
+		}
+		//21
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY){
+			ConstraintTeacherMaxBuildingChangesPerDay* c=(ConstraintTeacherMaxBuildingChangesPerDay*)ctr;
+			stream<<*c;
+		}
+		//22
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY){
+			ConstraintTeachersMaxBuildingChangesPerDay* c=(ConstraintTeachersMaxBuildingChangesPerDay*)ctr;
+			stream<<*c;
+		}
+		//23
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_WEEK){
+			ConstraintTeacherMaxBuildingChangesPerWeek* c=(ConstraintTeacherMaxBuildingChangesPerWeek*)ctr;
+			stream<<*c;
+		}
+		//24
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_WEEK){
+			ConstraintTeachersMaxBuildingChangesPerWeek* c=(ConstraintTeachersMaxBuildingChangesPerWeek*)ctr;
+			stream<<*c;
+		}
+		//25
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
+			ConstraintTeacherMinGapsBetweenBuildingChanges* c=(ConstraintTeacherMinGapsBetweenBuildingChanges*)ctr;
+			stream<<*c;
+		}
+		//26
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
+			ConstraintTeachersMinGapsBetweenBuildingChanges* c=(ConstraintTeachersMinGapsBetweenBuildingChanges*)ctr;
+			stream<<*c;
+		}
+		//27
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS){
+			ConstraintActivitiesOccupyMaxDifferentRooms* c=(ConstraintActivitiesOccupyMaxDifferentRooms*)ctr;
+			stream<<*c;
+		}
+		//28
+		else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE){
+			ConstraintActivitiesSameRoomIfConsecutive* c=(ConstraintActivitiesSameRoomIfConsecutive*)ctr;
+			stream<<*c;
+		}
+		//2019-11-14
+		//29
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_DAY){
+			ConstraintStudentsSetMaxRoomChangesPerDay* c=(ConstraintStudentsSetMaxRoomChangesPerDay*)ctr;
+			stream<<*c;
+		}
+		//30
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_DAY){
+			ConstraintStudentsMaxRoomChangesPerDay* c=(ConstraintStudentsMaxRoomChangesPerDay*)ctr;
+			stream<<*c;
+		}
+		//31
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_WEEK){
+			ConstraintStudentsSetMaxRoomChangesPerWeek* c=(ConstraintStudentsSetMaxRoomChangesPerWeek*)ctr;
+			stream<<*c;
+		}
+		//32
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_WEEK){
+			ConstraintStudentsMaxRoomChangesPerWeek* c=(ConstraintStudentsMaxRoomChangesPerWeek*)ctr;
+			stream<<*c;
+		}
+		//33
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+			ConstraintStudentsSetMinGapsBetweenRoomChanges* c=(ConstraintStudentsSetMinGapsBetweenRoomChanges*)ctr;
+			stream<<*c;
+		}
+		//34
+		else if(ctr->type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+			ConstraintStudentsMinGapsBetweenRoomChanges* c=(ConstraintStudentsMinGapsBetweenRoomChanges*)ctr;
+			stream<<*c;
+		}
+		//35
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_DAY){
+			ConstraintTeacherMaxRoomChangesPerDay* c=(ConstraintTeacherMaxRoomChangesPerDay*)ctr;
+			stream<<*c;
+		}
+		//36
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_DAY){
+			ConstraintTeachersMaxRoomChangesPerDay* c=(ConstraintTeachersMaxRoomChangesPerDay*)ctr;
+			stream<<*c;
+		}
+		//37
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_WEEK){
+			ConstraintTeacherMaxRoomChangesPerWeek* c=(ConstraintTeacherMaxRoomChangesPerWeek*)ctr;
+			stream<<*c;
+		}
+		//38
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_WEEK){
+			ConstraintTeachersMaxRoomChangesPerWeek* c=(ConstraintTeachersMaxRoomChangesPerWeek*)ctr;
+			stream<<*c;
+		}
+		//39
+		else if(ctr->type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+			ConstraintTeacherMinGapsBetweenRoomChanges* c=(ConstraintTeacherMinGapsBetweenRoomChanges*)ctr;
+			stream<<*c;
+		}
+		//40
+		else if(ctr->type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+			ConstraintTeachersMinGapsBetweenRoomChanges* c=(ConstraintTeachersMinGapsBetweenRoomChanges*)ctr;
+			stream<<*c;
+		}
+		//41
+		else if(ctr->type==CONSTRAINT_TEACHER_ROOM_NOT_AVAILABLE_TIMES){
+			ConstraintTeacherRoomNotAvailableTimes* c=(ConstraintTeacherRoomNotAvailableTimes*)ctr;
+			stream<<*c;
+		}
+		//for mornings-afternoons
+		//42
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_REAL_DAY){
+			ConstraintStudentsSetMaxRoomChangesPerRealDay* c=(ConstraintStudentsSetMaxRoomChangesPerRealDay*)ctr;
+			stream<<*c;
+		}
+		//43
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_REAL_DAY){
+			ConstraintStudentsMaxRoomChangesPerRealDay* c=(ConstraintStudentsMaxRoomChangesPerRealDay*)ctr;
+			stream<<*c;
+		}
+		//44
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY){
+			ConstraintTeacherMaxRoomChangesPerRealDay* c=(ConstraintTeacherMaxRoomChangesPerRealDay*)ctr;
+			stream<<*c;
+		}
+		//45
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY){
+			ConstraintTeachersMaxRoomChangesPerRealDay* c=(ConstraintTeachersMaxRoomChangesPerRealDay*)ctr;
+			stream<<*c;
+		}
+		//46
+		else if(ctr->type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+			ConstraintStudentsSetMaxBuildingChangesPerRealDay* c=(ConstraintStudentsSetMaxBuildingChangesPerRealDay*)ctr;
+			stream<<*c;
+		}
+		//47
+		else if(ctr->type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+			ConstraintStudentsMaxBuildingChangesPerRealDay* c=(ConstraintStudentsMaxBuildingChangesPerRealDay*)ctr;
+			stream<<*c;
+		}
+		//48
+		else if(ctr->type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+			ConstraintTeacherMaxBuildingChangesPerRealDay* c=(ConstraintTeacherMaxBuildingChangesPerRealDay*)ctr;
+			stream<<*c;
+		}
+		//49
+		else if(ctr->type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+			ConstraintTeachersMaxBuildingChangesPerRealDay* c=(ConstraintTeachersMaxBuildingChangesPerRealDay*)ctr;
+			stream<<*c;
+		}
+		else{
+			assert(0);
+		}
+	}
+
+	//stream<<rules.groupActivitiesInInitialOrderList;
+	int nga=rules.groupActivitiesInInitialOrderList.count();
+	stream<<nga;
+	for(int i=0; i<nga; i++)
+		stream<<*(rules.groupActivitiesInInitialOrderList.at(i));
+
+	return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, Rules& rules)
+{
+	rules.clear();
+	rules.init();
+
+	stream>>rules.mode;
+
+	stream>>rules.institutionName;
+	stream>>rules.comments;
+
+	stream>>rules.nDaysPerWeek;
+	stream>>rules.daysOfTheWeek;
+
+	stream>>rules.nHoursPerDay;
+	stream>>rules.hoursOfTheDay;
+
+	stream>>rules.nTerms;
+	stream>>rules.nDaysPerTerm;
+
+	int ntch;
+	stream>>ntch;
+	for(int i=0; i<ntch; i++){
+		Teacher* tch=new Teacher;
+		stream>>*tch;
+		rules.teachersList.append(tch);
+		tch->recomputeQualifiedSubjectsHash();
+	}
+
+	int nsbj;
+	stream>>nsbj;
+	for(int i=0; i<nsbj; i++){
+		Subject* sbj=new Subject;
+		stream>>*sbj;
+		rules.subjectsList.append(sbj);
+	}
+
+	int nat;
+	stream>>nat;
+	for(int i=0; i<nat; i++){
+		ActivityTag* at=new ActivityTag;
+		stream>>*at;
+		rules.activityTagsList.append(at);
+	}
+
+	/*int ny;
+	stream>>ny;
+	//cout<<"ny="<<ny<<endl;
+	for(int i=0; i<ny; i++){
+		StudentsYear* year=new StudentsYear;
+		stream>>*year;
+		rules.yearsList.append(year);
+	}*/
+	int nss;
+	stream>>nss;
+	//cout<<"nss="<<nss<<endl;
+	QHash<StudentsSet*, QList<int>> containedStudentsSetsList;
+	QList<StudentsSet*> readStudentsSetsList;
+	for(int i=0; i<nss; i++){
+		int type;
+		stream>>type;
+		if(type==STUDENTS_YEAR){
+			StudentsYear* year=new StudentsYear;
+			rules.yearsList.append(year);
+			readStudentsSetsList.append(year);
+			stream>>year->name;
+			stream>>year->numberOfStudents;
+			//stream>>year->type;
+			
+			stream>>year->comments;
+			
+			QList<int> tl;
+			stream>>tl;
+			if(!tl.empty())
+				containedStudentsSetsList.insert(year, tl);
+			
+			stream>>year->divisions;
+			stream>>year->separator;
+		}
+		else if(type==STUDENTS_GROUP){
+			StudentsGroup* group=new StudentsGroup;
+			readStudentsSetsList.append(group);
+			stream>>group->name;
+			stream>>group->numberOfStudents;
+			//stream>>group->type;
+			
+			stream>>group->comments;
+			
+			QList<int> tl;
+			stream>>tl;
+			if(!tl.empty())
+				containedStudentsSetsList.insert(group, tl);
+		}
+		else if(type==STUDENTS_SUBGROUP){
+			StudentsSubgroup* subgroup=new StudentsSubgroup;
+			readStudentsSetsList.append(subgroup);
+			stream>>subgroup->name;
+			stream>>subgroup->numberOfStudents;
+			//stream>>subgroup->type;
+			
+			stream>>subgroup->comments;
+		}
+		else{
+			assert(0);
+		}
+	}
+	for(int i=0; i<nss; i++){
+		StudentsSet* ss=readStudentsSetsList.at(i);
+		if(ss->type==STUDENTS_YEAR){
+			StudentsYear* year=(StudentsYear*)ss;
+			QList<int> tl=containedStudentsSetsList.value(year, QList<int>());
+			for(int gi : std::as_const(tl)){
+				StudentsSet* ss2=readStudentsSetsList.at(gi);
+				assert(ss2->type==STUDENTS_GROUP);
+				year->groupsList.append((StudentsGroup*)ss2);
+			}
+		}
+		else if(ss->type==STUDENTS_GROUP){
+			StudentsGroup* group=(StudentsGroup*)ss;
+			QList<int> tl=containedStudentsSetsList.value(group, QList<int>());
+			for(int si : std::as_const(tl)){
+				StudentsSet* ss2=readStudentsSetsList.at(si);
+				assert(ss2->type==STUDENTS_SUBGROUP);
+				group->subgroupsList.append((StudentsSubgroup*)ss2);
+			}
+		}
+		else{
+			assert(ss->type==STUDENTS_SUBGROUP);
+		}
+	}
+	assert(rules.permanentStudentsHash.isEmpty()); //done in init() above. Also, it will be cleared again in computePermanentStudentsHash() below.
+	rules.computePermanentStudentsHash();
+
+	int na;
+	stream>>na;
+	//cout<<"na="<<na<<endl;
+	for(int i=0; i<na; i++){
+		Activity* act=new Activity;
+		stream>>*act;
+		
+		//cout<<"act->id="<<act->id<<endl;
+		//cout<<"act->agid="<<act->activityGroupId<<endl;
+		//cout<<endl;
+		
+		rules.activitiesList.append(act);
+	}
+	//rules.activitiesPointerHash.clear();
+	assert(rules.activitiesPointerHash.isEmpty()); //done in init() above
+	for(Activity* act : std::as_const(rules.activitiesList)){
+		//if(rules.activitiesPointerHash.contains(act->id))
+		//	cout<<"act->id="<<act->id<<endl;
+		assert(!rules.activitiesPointerHash.contains(act->id));
+		rules.activitiesPointerHash.insert(act->id, act);
+	}
+
+	int nrm;
+	stream>>nrm;
+	for(int i=0; i<nrm; i++){
+		Room* rm=new Room;
+		stream>>*rm;
+		rules.roomsList.append(rm);
+	}
+
+	int nbd;
+	stream>>nbd;
+	for(int i=0; i<nbd; i++){
+		Building* bd=new Building;
+		stream>>*bd;
+		rules.buildingsList.append(bd);
+	}
+
+	//stream>>rules.timeConstraintsList;
+	int ntc;
+	stream>>ntc;
+	//cout<<"ntc="<<ntc<<endl;
+	for(int i=0; i<ntc; i++){
+		int type;
+		stream>>type;
+		
+		//1
+		if(type==CONSTRAINT_BASIC_COMPULSORY_TIME){
+			ConstraintBasicCompulsoryTime* c=new ConstraintBasicCompulsoryTime;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//2
+		else if(type==CONSTRAINT_TWO_ACTIVITIES_CONSECUTIVE){
+			ConstraintTwoActivitiesConsecutive* c=new ConstraintTwoActivitiesConsecutive;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//3
+		else if(type==CONSTRAINT_TWO_ACTIVITIES_ORDERED){
+			ConstraintTwoActivitiesOrdered* c=new ConstraintTwoActivitiesOrdered;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//4
+		else if(type==CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS){
+			ConstraintActivityPreferredTimeSlots* c=new ConstraintActivityPreferredTimeSlots;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//5
+		else if(type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES){
+			ConstraintActivityPreferredStartingTimes* c=new ConstraintActivityPreferredStartingTimes;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//6
+		else if(type==CONSTRAINT_ACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintActivitiesPreferredTimeSlots* c=new ConstraintActivitiesPreferredTimeSlots;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//7
+		else if(type==CONSTRAINT_ACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintActivitiesPreferredStartingTimes* c=new ConstraintActivitiesPreferredStartingTimes;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//8
+		else if(type==CONSTRAINT_SUBACTIVITIES_PREFERRED_TIME_SLOTS){
+			ConstraintSubactivitiesPreferredTimeSlots* c=new ConstraintSubactivitiesPreferredTimeSlots;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//9
+		else if(type==CONSTRAINT_SUBACTIVITIES_PREFERRED_STARTING_TIMES){
+			ConstraintSubactivitiesPreferredStartingTimes* c=new ConstraintSubactivitiesPreferredStartingTimes;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//10
+		else if(type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
+			ConstraintActivitiesSameStartingTime* c=new ConstraintActivitiesSameStartingTime;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//11
+		else if(type==CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR){
+			ConstraintActivitiesSameStartingHour* c=new ConstraintActivitiesSameStartingHour;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//12
+		else if(type==CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY){
+			ConstraintActivitiesSameStartingDay* c=new ConstraintActivitiesSameStartingDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//13
+		else if(type==CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES){
+			ConstraintTeacherNotAvailableTimes* c=new ConstraintTeacherNotAvailableTimes;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//14
+		else if(type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES){
+			ConstraintStudentsSetNotAvailableTimes* c=new ConstraintStudentsSetNotAvailableTimes;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//15
+		else if(type==CONSTRAINT_BREAK_TIMES){
+			ConstraintBreakTimes* c=new ConstraintBreakTimes;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//16
+		else if(type==CONSTRAINT_TEACHER_MAX_DAYS_PER_WEEK){
+			ConstraintTeacherMaxDaysPerWeek* c=new ConstraintTeacherMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//17
+		else if(type==CONSTRAINT_TEACHERS_MAX_HOURS_DAILY){
+			ConstraintTeachersMaxHoursDaily* c=new ConstraintTeachersMaxHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//18
+		else if(type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY){
+			ConstraintTeacherMaxHoursDaily* c=new ConstraintTeacherMaxHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//19
+		else if(type==CONSTRAINT_TEACHERS_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeachersMaxHoursContinuously* c=new ConstraintTeachersMaxHoursContinuously;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//20
+		else if(type==CONSTRAINT_TEACHER_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeacherMaxHoursContinuously* c=new ConstraintTeacherMaxHoursContinuously;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//21
+		else if(type==CONSTRAINT_TEACHERS_MIN_HOURS_DAILY){
+			ConstraintTeachersMinHoursDaily* c=new ConstraintTeachersMinHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//22
+		else if(type==CONSTRAINT_TEACHER_MIN_HOURS_DAILY){
+			ConstraintTeacherMinHoursDaily* c=new ConstraintTeacherMinHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//23
+		else if(type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK){
+			ConstraintTeachersMaxGapsPerWeek* c=new ConstraintTeachersMaxGapsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//24
+		else if(type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK){
+			ConstraintTeacherMaxGapsPerWeek* c=new ConstraintTeacherMaxGapsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//25
+		else if(type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_DAY){
+			ConstraintTeachersMaxGapsPerDay* c=new ConstraintTeachersMaxGapsPerDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//26
+		else if(type==CONSTRAINT_TEACHER_MAX_GAPS_PER_DAY){
+			ConstraintTeacherMaxGapsPerDay* c=new ConstraintTeacherMaxGapsPerDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//27
+		else if(type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+			ConstraintActivityPreferredStartingTime* c=new ConstraintActivityPreferredStartingTime;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//28
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK){
+			ConstraintStudentsSetMaxGapsPerWeek* c=new ConstraintStudentsSetMaxGapsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//29
+		else if(type==CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK){
+			ConstraintStudentsMaxGapsPerWeek* c=new ConstraintStudentsMaxGapsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//30
+		else if(type==CONSTRAINT_STUDENTS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsEarlyMaxBeginningsAtSecondHour* c=new ConstraintStudentsEarlyMaxBeginningsAtSecondHour;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//31
+		else if(type==CONSTRAINT_STUDENTS_SET_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour* c=new ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//32
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY){
+			ConstraintStudentsSetMaxHoursDaily* c=new ConstraintStudentsSetMaxHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//33
+		else if(type==CONSTRAINT_STUDENTS_MAX_HOURS_DAILY){
+			ConstraintStudentsMaxHoursDaily* c=new ConstraintStudentsMaxHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//34
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetMaxHoursContinuously* c=new ConstraintStudentsSetMaxHoursContinuously;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//35
+		else if(type==CONSTRAINT_STUDENTS_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsMaxHoursContinuously* c=new ConstraintStudentsMaxHoursContinuously;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//36
+		else if(type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_DAILY){
+			ConstraintStudentsSetMinHoursDaily* c=new ConstraintStudentsSetMinHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//37
+		else if(type==CONSTRAINT_STUDENTS_MIN_HOURS_DAILY){
+			ConstraintStudentsMinHoursDaily* c=new ConstraintStudentsMinHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//38
+		else if(type==CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
+			ConstraintActivitiesNotOverlapping* c=new ConstraintActivitiesNotOverlapping;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//39
+		else if(type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMinDaysBetweenActivities* c=new ConstraintMinDaysBetweenActivities;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//40
+		else if(type==CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES){
+			ConstraintMinGapsBetweenActivities* c=new ConstraintMinGapsBetweenActivities;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//41
+		else if(type==CONSTRAINT_ACTIVITY_ENDS_STUDENTS_DAY){
+			ConstraintActivityEndsStudentsDay* c=new ConstraintActivityEndsStudentsDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//42
+		else if(type==CONSTRAINT_TEACHER_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeacherIntervalMaxDaysPerWeek* c=new ConstraintTeacherIntervalMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//43
+		else if(type==CONSTRAINT_TEACHERS_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeachersIntervalMaxDaysPerWeek* c=new ConstraintTeachersIntervalMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//44
+		else if(type==CONSTRAINT_STUDENTS_SET_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetIntervalMaxDaysPerWeek* c=new ConstraintStudentsSetIntervalMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//45
+		else if(type==CONSTRAINT_STUDENTS_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsIntervalMaxDaysPerWeek* c=new ConstraintStudentsIntervalMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//46
+		else if(type==CONSTRAINT_ACTIVITIES_END_STUDENTS_DAY){
+			ConstraintActivitiesEndStudentsDay* c=new ConstraintActivitiesEndStudentsDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//47
+		else if(type==CONSTRAINT_TWO_ACTIVITIES_GROUPED){
+			ConstraintTwoActivitiesGrouped* c=new ConstraintTwoActivitiesGrouped;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//48
+		else if(type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeachersActivityTagMaxHoursContinuously* c=new ConstraintTeachersActivityTagMaxHoursContinuously;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//49
+		else if(type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintTeacherActivityTagMaxHoursContinuously* c=new ConstraintTeacherActivityTagMaxHoursContinuously;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//50
+		else if(type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsActivityTagMaxHoursContinuously* c=new ConstraintStudentsActivityTagMaxHoursContinuously;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//51
+		else if(type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_CONTINUOUSLY){
+			ConstraintStudentsSetActivityTagMaxHoursContinuously* c=new ConstraintStudentsSetActivityTagMaxHoursContinuously;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//52
+		else if(type==CONSTRAINT_TEACHERS_MAX_DAYS_PER_WEEK){
+			ConstraintTeachersMaxDaysPerWeek* c=new ConstraintTeachersMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//53
+		else if(type==CONSTRAINT_THREE_ACTIVITIES_GROUPED){
+			ConstraintThreeActivitiesGrouped* c=new ConstraintThreeActivitiesGrouped;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//54
+		else if(type==CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMaxDaysBetweenActivities* c=new ConstraintMaxDaysBetweenActivities;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//55
+		else if(type==CONSTRAINT_TEACHERS_MIN_DAYS_PER_WEEK){
+			ConstraintTeachersMinDaysPerWeek* c=new ConstraintTeachersMinDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//56
+		else if(type==CONSTRAINT_TEACHER_MIN_DAYS_PER_WEEK){
+			ConstraintTeacherMinDaysPerWeek* c=new ConstraintTeacherMinDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//57
+		else if(type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_DAILY){
+			ConstraintTeachersActivityTagMaxHoursDaily* c=new ConstraintTeachersActivityTagMaxHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//58
+		else if(type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_DAILY){
+			ConstraintTeacherActivityTagMaxHoursDaily* c=new ConstraintTeacherActivityTagMaxHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//59
+		else if(type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_DAILY){
+			ConstraintStudentsActivityTagMaxHoursDaily* c=new ConstraintStudentsActivityTagMaxHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//60
+		else if(type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_DAILY){
+			ConstraintStudentsSetActivityTagMaxHoursDaily* c=new ConstraintStudentsSetActivityTagMaxHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//61
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_DAY){
+			ConstraintStudentsSetMaxGapsPerDay* c=new ConstraintStudentsSetMaxGapsPerDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//62
+		else if(type==CONSTRAINT_STUDENTS_MAX_GAPS_PER_DAY){
+			ConstraintStudentsMaxGapsPerDay* c=new ConstraintStudentsMaxGapsPerDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//63
+		else if(type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TIME_SLOTS_FROM_SELECTION){
+			ConstraintActivitiesOccupyMaxTimeSlotsFromSelection* c=new ConstraintActivitiesOccupyMaxTimeSlotsFromSelection;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//64
+		else if(type==CONSTRAINT_ACTIVITIES_MAX_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
+			ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots* c=new ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//65
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetMaxDaysPerWeek* c=new ConstraintStudentsSetMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//66
+		else if(type==CONSTRAINT_STUDENTS_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsMaxDaysPerWeek* c=new ConstraintStudentsMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//2017-02-07
+		//67
+		else if(type==CONSTRAINT_TEACHER_MAX_SPAN_PER_DAY){
+			ConstraintTeacherMaxSpanPerDay* c=new ConstraintTeacherMaxSpanPerDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//68
+		else if(type==CONSTRAINT_TEACHERS_MAX_SPAN_PER_DAY){
+			ConstraintTeachersMaxSpanPerDay* c=new ConstraintTeachersMaxSpanPerDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//69
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_SPAN_PER_DAY){
+			ConstraintStudentsSetMaxSpanPerDay* c=new ConstraintStudentsSetMaxSpanPerDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//70
+		else if(type==CONSTRAINT_STUDENTS_MAX_SPAN_PER_DAY){
+			ConstraintStudentsMaxSpanPerDay* c=new ConstraintStudentsMaxSpanPerDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//71
+		else if(type==CONSTRAINT_TEACHER_MIN_RESTING_HOURS){
+			ConstraintTeacherMinRestingHours* c=new ConstraintTeacherMinRestingHours;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//72
+		else if(type==CONSTRAINT_TEACHERS_MIN_RESTING_HOURS){
+			ConstraintTeachersMinRestingHours* c=new ConstraintTeachersMinRestingHours;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//73
+		else if(type==CONSTRAINT_STUDENTS_SET_MIN_RESTING_HOURS){
+			ConstraintStudentsSetMinRestingHours* c=new ConstraintStudentsSetMinRestingHours;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//74
+		else if(type==CONSTRAINT_STUDENTS_MIN_RESTING_HOURS){
+			ConstraintStudentsMinRestingHours* c=new ConstraintStudentsMinRestingHours;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//2018-06-13
+		//75
+		else if(type==CONSTRAINT_TWO_ACTIVITIES_ORDERED_IF_SAME_DAY){
+			ConstraintTwoActivitiesOrderedIfSameDay* c=new ConstraintTwoActivitiesOrderedIfSameDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//2019-06-09
+		//76
+		else if(type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS){
+			ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags* c=new ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//77
+		else if(type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS){
+			ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags* c=new ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//78
+		else if(type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS){
+			ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags* c=new ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//79
+		else if(type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ORDERED_PAIR_OF_ACTIVITY_TAGS){
+			ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags* c=new ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//80
+		else if(type==CONSTRAINT_ACTIVITY_TAGS_NOT_OVERLAPPING){
+			ConstraintActivityTagsNotOverlapping* c=new ConstraintActivityTagsNotOverlapping;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//81
+		else if(type==CONSTRAINT_ACTIVITIES_OCCUPY_MIN_TIME_SLOTS_FROM_SELECTION){
+			ConstraintActivitiesOccupyMinTimeSlotsFromSelection* c=new ConstraintActivitiesOccupyMinTimeSlotsFromSelection;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//82
+		else if(type==CONSTRAINT_ACTIVITIES_MIN_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
+			ConstraintActivitiesMinSimultaneousInSelectedTimeSlots* c=new ConstraintActivitiesMinSimultaneousInSelectedTimeSlots;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//83
+		else if(type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MIN_HOURS_DAILY){
+			ConstraintTeachersActivityTagMinHoursDaily* c=new ConstraintTeachersActivityTagMinHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//84
+		else if(type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MIN_HOURS_DAILY){
+			ConstraintTeacherActivityTagMinHoursDaily* c=new ConstraintTeacherActivityTagMinHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//85
+		else if(type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MIN_HOURS_DAILY){
+			ConstraintStudentsActivityTagMinHoursDaily* c=new ConstraintStudentsActivityTagMinHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//86
+		else if(type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MIN_HOURS_DAILY){
+			ConstraintStudentsSetActivityTagMinHoursDaily* c=new ConstraintStudentsSetActivityTagMinHoursDaily;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//87
+		else if(type==CONSTRAINT_ACTIVITY_ENDS_TEACHERS_DAY){
+			ConstraintActivityEndsTeachersDay* c=new ConstraintActivityEndsTeachersDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//88
+		else if(type==CONSTRAINT_ACTIVITIES_END_TEACHERS_DAY){
+			ConstraintActivitiesEndTeachersDay* c=new ConstraintActivitiesEndTeachersDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//mornings-afternoons
+		//89
+		else if(type==CONSTRAINT_TEACHER_MAX_AFTERNOONS_PER_WEEK){
+			ConstraintTeacherMaxAfternoonsPerWeek* c=new ConstraintTeacherMaxAfternoonsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//90
+		else if(type==CONSTRAINT_TEACHERS_MAX_AFTERNOONS_PER_WEEK){
+			ConstraintTeachersMaxAfternoonsPerWeek* c=new ConstraintTeachersMaxAfternoonsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//91
+		else if(type==CONSTRAINT_TEACHER_MAX_MORNINGS_PER_WEEK){
+			ConstraintTeacherMaxMorningsPerWeek* c=new ConstraintTeacherMaxMorningsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//92
+		else if(type==CONSTRAINT_TEACHERS_MAX_MORNINGS_PER_WEEK){
+			ConstraintTeachersMaxMorningsPerWeek* c=new ConstraintTeachersMaxMorningsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//93
+		else if(type==CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+			ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3* c=new ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//94
+		else if(type==CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+			ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3* c=new ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//95
+		else if(type==CONSTRAINT_TEACHER_MIN_MORNINGS_PER_WEEK){
+			ConstraintTeacherMinMorningsPerWeek* c=new ConstraintTeacherMinMorningsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//96
+		else if(type==CONSTRAINT_TEACHERS_MIN_MORNINGS_PER_WEEK){
+			ConstraintTeachersMinMorningsPerWeek* c=new ConstraintTeachersMinMorningsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//97
+		else if(type==CONSTRAINT_TEACHER_MIN_AFTERNOONS_PER_WEEK){
+			ConstraintTeacherMinAfternoonsPerWeek* c=new ConstraintTeacherMinAfternoonsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//98
+		else if(type==CONSTRAINT_TEACHERS_MIN_AFTERNOONS_PER_WEEK){
+			ConstraintTeachersMinAfternoonsPerWeek* c=new ConstraintTeachersMinAfternoonsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//99
+		else if(type==CONSTRAINT_TEACHER_MAX_TWO_CONSECUTIVE_MORNINGS){
+			ConstraintTeacherMaxTwoConsecutiveMornings* c=new ConstraintTeacherMaxTwoConsecutiveMornings;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//100
+		else if(type==CONSTRAINT_TEACHERS_MAX_TWO_CONSECUTIVE_MORNINGS){
+			ConstraintTeachersMaxTwoConsecutiveMornings* c=new ConstraintTeachersMaxTwoConsecutiveMornings;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//101
+		else if(type==CONSTRAINT_TEACHER_MAX_TWO_CONSECUTIVE_AFTERNOONS){
+			ConstraintTeacherMaxTwoConsecutiveAfternoons* c=new ConstraintTeacherMaxTwoConsecutiveAfternoons;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//102
+		else if(type==CONSTRAINT_TEACHERS_MAX_TWO_CONSECUTIVE_AFTERNOONS){
+			ConstraintTeachersMaxTwoConsecutiveAfternoons* c=new ConstraintTeachersMaxTwoConsecutiveAfternoons;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//103
+		else if(type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_REAL_DAY){
+			ConstraintTeachersMaxGapsPerRealDay* c=new ConstraintTeachersMaxGapsPerRealDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//104
+		else if(type==CONSTRAINT_TEACHER_MAX_GAPS_PER_REAL_DAY){
+			ConstraintTeacherMaxGapsPerRealDay* c=new ConstraintTeacherMaxGapsPerRealDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//105
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_REAL_DAY){
+			ConstraintStudentsSetMaxGapsPerRealDay* c=new ConstraintStudentsSetMaxGapsPerRealDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//106
+		else if(type==CONSTRAINT_STUDENTS_MAX_GAPS_PER_REAL_DAY){
+			ConstraintStudentsMaxGapsPerRealDay* c=new ConstraintStudentsMaxGapsPerRealDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//107
+		else if(type==CONSTRAINT_TEACHERS_MIN_HOURS_DAILY_REAL_DAYS){
+			ConstraintTeachersMinHoursDailyRealDays* c=new ConstraintTeachersMinHoursDailyRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//108
+		else if(type==CONSTRAINT_TEACHER_MIN_HOURS_DAILY_REAL_DAYS){
+			ConstraintTeacherMinHoursDailyRealDays* c=new ConstraintTeacherMinHoursDailyRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//109
+		else if(type==CONSTRAINT_TEACHERS_MIN_HOURS_PER_MORNING){
+			ConstraintTeachersMinHoursPerMorning* c=new ConstraintTeachersMinHoursPerMorning;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//110
+		else if(type==CONSTRAINT_TEACHER_MIN_HOURS_PER_MORNING){
+			ConstraintTeacherMinHoursPerMorning* c=new ConstraintTeacherMinHoursPerMorning;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//2017-02-07
+		//111
+		else if(type==CONSTRAINT_TEACHER_MAX_SPAN_PER_REAL_DAY){
+			ConstraintTeacherMaxSpanPerRealDay* c=new ConstraintTeacherMaxSpanPerRealDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//112
+		else if(type==CONSTRAINT_TEACHERS_MAX_SPAN_PER_REAL_DAY){
+			ConstraintTeachersMaxSpanPerRealDay* c=new ConstraintTeachersMaxSpanPerRealDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//113
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_SPAN_PER_REAL_DAY){
+			ConstraintStudentsSetMaxSpanPerRealDay* c=new ConstraintStudentsSetMaxSpanPerRealDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//114
+		else if(type==CONSTRAINT_STUDENTS_MAX_SPAN_PER_REAL_DAY){
+			ConstraintStudentsMaxSpanPerRealDay* c=new ConstraintStudentsMaxSpanPerRealDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//115
+		else if(type==CONSTRAINT_TEACHER_MORNING_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeacherMorningIntervalMaxDaysPerWeek* c=new ConstraintTeacherMorningIntervalMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//116
+		else if(type==CONSTRAINT_TEACHERS_MORNING_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeachersMorningIntervalMaxDaysPerWeek* c=new ConstraintTeachersMorningIntervalMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//117
+		else if(type==CONSTRAINT_TEACHER_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeacherAfternoonIntervalMaxDaysPerWeek* c=new ConstraintTeacherAfternoonIntervalMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//118
+		else if(type==CONSTRAINT_TEACHERS_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintTeachersAfternoonIntervalMaxDaysPerWeek* c=new ConstraintTeachersAfternoonIntervalMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//119
+		else if(type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_MORNING){
+			ConstraintStudentsSetMinHoursPerMorning* c=new ConstraintStudentsSetMinHoursPerMorning;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//120
+		else if(type==CONSTRAINT_STUDENTS_MIN_HOURS_PER_MORNING){
+			ConstraintStudentsMinHoursPerMorning* c=new ConstraintStudentsMinHoursPerMorning;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//121
+		else if(type==CONSTRAINT_TEACHERS_MAX_ZERO_GAPS_PER_AFTERNOON){
+			ConstraintTeachersMaxZeroGapsPerAfternoon* c=new ConstraintTeachersMaxZeroGapsPerAfternoon;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//122
+		else if(type==CONSTRAINT_TEACHER_MAX_ZERO_GAPS_PER_AFTERNOON){
+			ConstraintTeacherMaxZeroGapsPerAfternoon* c=new ConstraintTeacherMaxZeroGapsPerAfternoon;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//123
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_AFTERNOONS_PER_WEEK){
+			ConstraintStudentsSetMaxAfternoonsPerWeek* c=new ConstraintStudentsSetMaxAfternoonsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//124
+		else if(type==CONSTRAINT_STUDENTS_MAX_AFTERNOONS_PER_WEEK){
+			ConstraintStudentsMaxAfternoonsPerWeek* c=new ConstraintStudentsMaxAfternoonsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//125
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_MORNINGS_PER_WEEK){
+			ConstraintStudentsSetMaxMorningsPerWeek* c=new ConstraintStudentsSetMaxMorningsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//126
+		else if(type==CONSTRAINT_STUDENTS_MAX_MORNINGS_PER_WEEK){
+			ConstraintStudentsMaxMorningsPerWeek* c=new ConstraintStudentsMaxMorningsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		/////
+		//127
+		else if(type==CONSTRAINT_STUDENTS_SET_MIN_AFTERNOONS_PER_WEEK){
+			ConstraintStudentsSetMinAfternoonsPerWeek* c=new ConstraintStudentsSetMinAfternoonsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//128
+		else if(type==CONSTRAINT_STUDENTS_MIN_AFTERNOONS_PER_WEEK){
+			ConstraintStudentsMinAfternoonsPerWeek* c=new ConstraintStudentsMinAfternoonsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//129
+		else if(type==CONSTRAINT_STUDENTS_SET_MIN_MORNINGS_PER_WEEK){
+			ConstraintStudentsSetMinMorningsPerWeek* c=new ConstraintStudentsSetMinMorningsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//130
+		else if(type==CONSTRAINT_STUDENTS_MIN_MORNINGS_PER_WEEK){
+			ConstraintStudentsMinMorningsPerWeek* c=new ConstraintStudentsMinMorningsPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//131
+		else if(type==CONSTRAINT_STUDENTS_SET_MORNING_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetMorningIntervalMaxDaysPerWeek* c=new ConstraintStudentsSetMorningIntervalMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//132
+		else if(type==CONSTRAINT_STUDENTS_MORNING_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsMorningIntervalMaxDaysPerWeek* c=new ConstraintStudentsMorningIntervalMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//133
+		else if(type==CONSTRAINT_STUDENTS_SET_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek* c=new ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//134
+		else if(type==CONSTRAINT_STUDENTS_AFTERNOON_INTERVAL_MAX_DAYS_PER_WEEK){
+			ConstraintStudentsAfternoonIntervalMaxDaysPerWeek* c=new ConstraintStudentsAfternoonIntervalMaxDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//2020-06-28
+		//135
+		else if(type==CONSTRAINT_TEACHER_MAX_HOURS_PER_ALL_AFTERNOONS){
+			ConstraintTeacherMaxHoursPerAllAfternoons* c=new ConstraintTeacherMaxHoursPerAllAfternoons;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//136
+		else if(type==CONSTRAINT_TEACHERS_MAX_HOURS_PER_ALL_AFTERNOONS){
+			ConstraintTeachersMaxHoursPerAllAfternoons* c=new ConstraintTeachersMaxHoursPerAllAfternoons;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//137
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_PER_ALL_AFTERNOONS){
+			ConstraintStudentsSetMaxHoursPerAllAfternoons* c=new ConstraintStudentsSetMaxHoursPerAllAfternoons;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//138
+		else if(type==CONSTRAINT_STUDENTS_MAX_HOURS_PER_ALL_AFTERNOONS){
+			ConstraintStudentsMaxHoursPerAllAfternoons* c=new ConstraintStudentsMaxHoursPerAllAfternoons;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//139
+		else if(type==CONSTRAINT_TEACHER_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON){
+			ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon* c=new ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//140
+		else if(type==CONSTRAINT_TEACHERS_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON){
+			ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon* c=new ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//141
+		else if(type==CONSTRAINT_STUDENTS_SET_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON){
+			ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon* c=new ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//142
+		else if(type==CONSTRAINT_STUDENTS_MIN_RESTING_HOURS_BETWEEN_MORNING_AND_AFTERNOON){
+			ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon* c=new ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		/////////
+		//143
+		else if(type==CONSTRAINT_STUDENTS_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour* c=new ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//144
+		else if(type==CONSTRAINT_STUDENTS_SET_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour* c=new ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//145
+		else if(type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS){
+			ConstraintTeachersMaxGapsPerWeekForRealDays* c=new ConstraintTeachersMaxGapsPerWeekForRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//146
+		else if(type==CONSTRAINT_TEACHER_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS){
+			ConstraintTeacherMaxGapsPerWeekForRealDays* c=new ConstraintTeacherMaxGapsPerWeekForRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//147
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS){
+			ConstraintStudentsSetMaxGapsPerWeekForRealDays* c=new ConstraintStudentsSetMaxGapsPerWeekForRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//148
+		else if(type==CONSTRAINT_STUDENTS_MAX_GAPS_PER_WEEK_FOR_REAL_DAYS){
+			ConstraintStudentsMaxGapsPerWeekForRealDays* c=new ConstraintStudentsMaxGapsPerWeekForRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//149
+		else if(type==CONSTRAINT_TEACHER_MAX_REAL_DAYS_PER_WEEK){
+			ConstraintTeacherMaxRealDaysPerWeek* c=new ConstraintTeacherMaxRealDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//150
+		else if(type==CONSTRAINT_TEACHERS_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintTeachersMaxHoursDailyRealDays* c=new ConstraintTeachersMaxHoursDailyRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//151
+		else if(type==CONSTRAINT_TEACHER_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintTeacherMaxHoursDailyRealDays* c=new ConstraintTeacherMaxHoursDailyRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//152
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintStudentsSetMaxHoursDailyRealDays* c=new ConstraintStudentsSetMaxHoursDailyRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//153
+		else if(type==CONSTRAINT_STUDENTS_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintStudentsMaxHoursDailyRealDays* c=new ConstraintStudentsMaxHoursDailyRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//154
+		else if(type==CONSTRAINT_TEACHERS_MAX_REAL_DAYS_PER_WEEK){
+			ConstraintTeachersMaxRealDaysPerWeek* c=new ConstraintTeachersMaxRealDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//155
+		else if(type==CONSTRAINT_TEACHERS_MIN_REAL_DAYS_PER_WEEK){
+			ConstraintTeachersMinRealDaysPerWeek* c=new ConstraintTeachersMinRealDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//156
+		else if(type==CONSTRAINT_TEACHER_MIN_REAL_DAYS_PER_WEEK){
+			ConstraintTeacherMinRealDaysPerWeek* c=new ConstraintTeacherMinRealDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//157
+		else if(type==CONSTRAINT_TEACHERS_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintTeachersActivityTagMaxHoursDailyRealDays* c=new ConstraintTeachersActivityTagMaxHoursDailyRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//158
+		else if(type==CONSTRAINT_TEACHER_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintTeacherActivityTagMaxHoursDailyRealDays* c=new ConstraintTeacherActivityTagMaxHoursDailyRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//159
+		else if(type==CONSTRAINT_STUDENTS_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintStudentsActivityTagMaxHoursDailyRealDays* c=new ConstraintStudentsActivityTagMaxHoursDailyRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//160
+		else if(type==CONSTRAINT_STUDENTS_SET_ACTIVITY_TAG_MAX_HOURS_DAILY_REAL_DAYS){
+			ConstraintStudentsSetActivityTagMaxHoursDailyRealDays* c=new ConstraintStudentsSetActivityTagMaxHoursDailyRealDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//161
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_REAL_DAYS_PER_WEEK){
+			ConstraintStudentsSetMaxRealDaysPerWeek* c=new ConstraintStudentsSetMaxRealDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//162
+		else if(type==CONSTRAINT_STUDENTS_MAX_REAL_DAYS_PER_WEEK){
+			ConstraintStudentsMaxRealDaysPerWeek* c=new ConstraintStudentsMaxRealDaysPerWeek;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//163
+		else if(type==CONSTRAINT_TEACHERS_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour* c=new ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//164
+		else if(type==CONSTRAINT_TEACHER_AFTERNOONS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour* c=new ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//block-planning
+		//165
+		else if(type==CONSTRAINT_MAX_TOTAL_ACTIVITIES_FROM_SET_IN_SELECTED_TIME_SLOTS){
+			ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots* c=new ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//166
+		else if(type==CONSTRAINT_MAX_GAPS_BETWEEN_ACTIVITIES){
+			ConstraintMaxGapsBetweenActivities* c=new ConstraintMaxGapsBetweenActivities;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//terms
+		//167
+		else if(type==CONSTRAINT_ACTIVITIES_MAX_IN_A_TERM){
+			ConstraintActivitiesMaxInATerm* c=new ConstraintActivitiesMaxInATerm;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//168
+		else if(type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS){
+			ConstraintActivitiesOccupyMaxTerms* c=new ConstraintActivitiesOccupyMaxTerms;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//169
+		else if(type==CONSTRAINT_TEACHERS_MAX_GAPS_PER_MORNING_AND_AFTERNOON){
+			ConstraintTeachersMaxGapsPerMorningAndAfternoon* c=new ConstraintTeachersMaxGapsPerMorningAndAfternoon;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//170
+		else if(type==CONSTRAINT_TEACHER_MAX_GAPS_PER_MORNING_AND_AFTERNOON){
+			ConstraintTeacherMaxGapsPerMorningAndAfternoon* c=new ConstraintTeacherMaxGapsPerMorningAndAfternoon;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//171
+		else if(type==CONSTRAINT_STUDENTS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour* c=new ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//172
+		else if(type==CONSTRAINT_STUDENTS_SET_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour* c=new ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//173
+		else if(type==CONSTRAINT_TEACHERS_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour* c=new ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//174
+		else if(type==CONSTRAINT_TEACHER_MORNINGS_EARLY_MAX_BEGINNINGS_AT_SECOND_HOUR){
+			ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour* c=new ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//175
+		else if(type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED){
+			ConstraintTwoSetsOfActivitiesOrdered* c=new ConstraintTwoSetsOfActivitiesOrdered;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//176
+		else if(type==CONSTRAINT_TEACHER_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintTeacherMaxThreeConsecutiveDays* c=new ConstraintTeacherMaxThreeConsecutiveDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//177
+		else if(type==CONSTRAINT_TEACHERS_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintTeachersMaxThreeConsecutiveDays* c=new ConstraintTeachersMaxThreeConsecutiveDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//2021-12-15
+		//178
+		else if(type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+			ConstraintStudentsSetMinGapsBetweenActivityTag* c=new ConstraintStudentsSetMinGapsBetweenActivityTag;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//179
+		else if(type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+			ConstraintStudentsMinGapsBetweenActivityTag* c=new ConstraintStudentsMinGapsBetweenActivityTag;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//180
+		else if(type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+			ConstraintTeacherMinGapsBetweenActivityTag* c=new ConstraintTeacherMinGapsBetweenActivityTag;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//181
+		else if(type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ACTIVITY_TAG){
+			ConstraintTeachersMinGapsBetweenActivityTag* c=new ConstraintTeachersMinGapsBetweenActivityTag;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//2022-02-15
+		//182
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintStudentsSetMaxThreeConsecutiveDays* c=new ConstraintStudentsSetMaxThreeConsecutiveDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//183
+		else if(type==CONSTRAINT_STUDENTS_MAX_THREE_CONSECUTIVE_DAYS){
+			ConstraintStudentsMaxThreeConsecutiveDays* c=new ConstraintStudentsMaxThreeConsecutiveDays;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//184
+		else if(type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMinHalfDaysBetweenActivities* c=new ConstraintMinHalfDaysBetweenActivities;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//185
+		else if(type==CONSTRAINT_ACTIVITY_PREFERRED_DAY){
+			ConstraintActivityPreferredDay* c=new ConstraintActivityPreferredDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//186
+		else if(type==CONSTRAINT_ACTIVITIES_MIN_IN_A_TERM){
+			ConstraintActivitiesMinInATerm* c=new ConstraintActivitiesMinInATerm;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//187
+		else if(type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES){
+			ConstraintMaxTermsBetweenActivities* c=new ConstraintMaxTermsBetweenActivities;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//188
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+			ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3* c=new ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//189
+		else if(type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_DAY_FROM_N1N2N3){
+			ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3* c=new ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//190
+		else if(type==CONSTRAINT_TEACHER_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+			ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3* c=new ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//191
+		else if(type==CONSTRAINT_TEACHERS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+			ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3* c=new ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//192
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+			ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3* c=new ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//193
+		else if(type==CONSTRAINT_STUDENTS_MAX_TWO_ACTIVITY_TAGS_PER_REAL_DAY_FROM_N1N2N3){
+			ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3* c=new ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//194
+		else if(type==CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES){
+			ConstraintMaxHalfDaysBetweenActivities* c=new ConstraintMaxHalfDaysBetweenActivities;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//195
+		else if(type==CONSTRAINT_ACTIVITY_BEGINS_STUDENTS_DAY){
+			ConstraintActivityBeginsStudentsDay* c=new ConstraintActivityBeginsStudentsDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//196
+		else if(type==CONSTRAINT_ACTIVITIES_BEGIN_STUDENTS_DAY){
+			ConstraintActivitiesBeginStudentsDay* c=new ConstraintActivitiesBeginStudentsDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//197
+		else if(type==CONSTRAINT_ACTIVITY_BEGINS_TEACHERS_DAY){
+			ConstraintActivityBeginsTeachersDay* c=new ConstraintActivityBeginsTeachersDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//198
+		else if(type==CONSTRAINT_ACTIVITIES_BEGIN_TEACHERS_DAY){
+			ConstraintActivitiesBeginTeachersDay* c=new ConstraintActivitiesBeginTeachersDay;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//199
+		else if(type==CONSTRAINT_TEACHERS_MIN_HOURS_PER_AFTERNOON){
+			ConstraintTeachersMinHoursPerAfternoon* c=new ConstraintTeachersMinHoursPerAfternoon;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//200
+		else if(type==CONSTRAINT_TEACHER_MIN_HOURS_PER_AFTERNOON){
+			ConstraintTeacherMinHoursPerAfternoon* c=new ConstraintTeacherMinHoursPerAfternoon;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//201
+		else if(type==CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON){
+			ConstraintStudentsSetMinHoursPerAfternoon* c=new ConstraintStudentsSetMinHoursPerAfternoon;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+		//202
+		else if(type==CONSTRAINT_STUDENTS_MIN_HOURS_PER_AFTERNOON){
+			ConstraintStudentsMinHoursPerAfternoon* c=new ConstraintStudentsMinHoursPerAfternoon;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		//203
+		else if(type==CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN){
+			ConstraintActivitiesMaxHourlySpan* c=new ConstraintActivitiesMaxHourlySpan;
+			stream>>*c;
+			rules.timeConstraintsList.append(c);
+		}
+
+		else{
+			assert(0);
+		}
+	}
+
+	assert(rules.bctSet.isEmpty()); //done in init() above
+	assert(rules.btSet.isEmpty());
+	assert(rules.apstHash.isEmpty());
+	assert(rules.apdHash.isEmpty());
+	assert(rules.mdbaHash.isEmpty());
+	assert(rules.mhdbaHash.isEmpty());
+	assert(rules.tnatHash.isEmpty());
+	assert(rules.ssnatHash.isEmpty());
+	for(TimeConstraint* ctr : std::as_const(rules.timeConstraintsList)){
+		rules.recomputeActivitiesSetForTimeConstraint(ctr);
+		rules.insertTimeConstraintInHash(ctr);
+	}
+
+	//stream>>rules.spaceConstraintsList;
+	int nsc;
+	stream>>nsc;
+	//cout<<"nsc="<<nsc<<endl;
+	for(int i=0; i<nsc; i++){
+		int type;
+		stream>>type;
+
+		//1
+		if(type==CONSTRAINT_BASIC_COMPULSORY_SPACE){
+			ConstraintBasicCompulsorySpace* c=new ConstraintBasicCompulsorySpace;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//2
+		else if(type==CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES){
+			ConstraintRoomNotAvailableTimes* c=new ConstraintRoomNotAvailableTimes;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//3
+		else if(type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+			ConstraintActivityPreferredRoom* c=new ConstraintActivityPreferredRoom;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//4
+		else if(type==CONSTRAINT_ACTIVITY_PREFERRED_ROOMS){
+			ConstraintActivityPreferredRooms* c=new ConstraintActivityPreferredRooms;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//5
+		else if(type==CONSTRAINT_STUDENTS_SET_HOME_ROOM){
+			ConstraintStudentsSetHomeRoom* c=new ConstraintStudentsSetHomeRoom;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//6
+		else if(type==CONSTRAINT_STUDENTS_SET_HOME_ROOMS){
+			ConstraintStudentsSetHomeRooms* c=new ConstraintStudentsSetHomeRooms;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//7
+		else if(type==CONSTRAINT_TEACHER_HOME_ROOM){
+			ConstraintTeacherHomeRoom* c=new ConstraintTeacherHomeRoom;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//8
+		else if(type==CONSTRAINT_TEACHER_HOME_ROOMS){
+			ConstraintTeacherHomeRooms* c=new ConstraintTeacherHomeRooms;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//9
+		else if(type==CONSTRAINT_SUBJECT_PREFERRED_ROOM){
+			ConstraintSubjectPreferredRoom* c=new ConstraintSubjectPreferredRoom;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//10
+		else if(type==CONSTRAINT_SUBJECT_PREFERRED_ROOMS){
+			ConstraintSubjectPreferredRooms* c=new ConstraintSubjectPreferredRooms;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//11
+		else if(type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOM){
+			ConstraintSubjectActivityTagPreferredRoom* c=new ConstraintSubjectActivityTagPreferredRoom;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//12
+		else if(type==CONSTRAINT_SUBJECT_ACTIVITY_TAG_PREFERRED_ROOMS){
+			ConstraintSubjectActivityTagPreferredRooms* c=new ConstraintSubjectActivityTagPreferredRooms;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		///6 apr 2009
+		//13
+		else if(type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOM){
+			ConstraintActivityTagPreferredRoom* c=new ConstraintActivityTagPreferredRoom;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//14
+		else if(type==CONSTRAINT_ACTIVITY_TAG_PREFERRED_ROOMS){
+			ConstraintActivityTagPreferredRooms* c=new ConstraintActivityTagPreferredRooms;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		///
+		//15
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_DAY){
+			ConstraintStudentsSetMaxBuildingChangesPerDay* c=new ConstraintStudentsSetMaxBuildingChangesPerDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//16
+		else if(type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_DAY){
+			ConstraintStudentsMaxBuildingChangesPerDay* c=new ConstraintStudentsMaxBuildingChangesPerDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//17
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_WEEK){
+			ConstraintStudentsSetMaxBuildingChangesPerWeek* c=new ConstraintStudentsSetMaxBuildingChangesPerWeek;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//18
+		else if(type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_WEEK){
+			ConstraintStudentsMaxBuildingChangesPerWeek* c=new ConstraintStudentsMaxBuildingChangesPerWeek;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//19
+		else if(type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
+			ConstraintStudentsSetMinGapsBetweenBuildingChanges* c=new ConstraintStudentsSetMinGapsBetweenBuildingChanges;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//20
+		else if(type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
+			ConstraintStudentsMinGapsBetweenBuildingChanges* c=new ConstraintStudentsMinGapsBetweenBuildingChanges;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//21
+		else if(type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_DAY){
+			ConstraintTeacherMaxBuildingChangesPerDay* c=new ConstraintTeacherMaxBuildingChangesPerDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//22
+		else if(type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_DAY){
+			ConstraintTeachersMaxBuildingChangesPerDay* c=new ConstraintTeachersMaxBuildingChangesPerDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//23
+		else if(type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_WEEK){
+			ConstraintTeacherMaxBuildingChangesPerWeek* c=new ConstraintTeacherMaxBuildingChangesPerWeek;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//24
+		else if(type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_WEEK){
+			ConstraintTeachersMaxBuildingChangesPerWeek* c=new ConstraintTeachersMaxBuildingChangesPerWeek;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//25
+		else if(type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
+			ConstraintTeacherMinGapsBetweenBuildingChanges* c=new ConstraintTeacherMinGapsBetweenBuildingChanges;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//26
+		else if(type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_BUILDING_CHANGES){
+			ConstraintTeachersMinGapsBetweenBuildingChanges* c=new ConstraintTeachersMinGapsBetweenBuildingChanges;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//27
+		else if(type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS){
+			ConstraintActivitiesOccupyMaxDifferentRooms* c=new ConstraintActivitiesOccupyMaxDifferentRooms;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//28
+		else if(type==CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE){
+			ConstraintActivitiesSameRoomIfConsecutive* c=new ConstraintActivitiesSameRoomIfConsecutive;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//2019-11-14
+		//29
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_DAY){
+			ConstraintStudentsSetMaxRoomChangesPerDay* c=new ConstraintStudentsSetMaxRoomChangesPerDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//30
+		else if(type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_DAY){
+			ConstraintStudentsMaxRoomChangesPerDay* c=new ConstraintStudentsMaxRoomChangesPerDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//31
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_WEEK){
+			ConstraintStudentsSetMaxRoomChangesPerWeek* c=new ConstraintStudentsSetMaxRoomChangesPerWeek;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//32
+		else if(type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_WEEK){
+			ConstraintStudentsMaxRoomChangesPerWeek* c=new ConstraintStudentsMaxRoomChangesPerWeek;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//33
+		else if(type==CONSTRAINT_STUDENTS_SET_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+			ConstraintStudentsSetMinGapsBetweenRoomChanges* c=new ConstraintStudentsSetMinGapsBetweenRoomChanges;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//34
+		else if(type==CONSTRAINT_STUDENTS_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+			ConstraintStudentsMinGapsBetweenRoomChanges* c=new ConstraintStudentsMinGapsBetweenRoomChanges;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//35
+		else if(type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_DAY){
+			ConstraintTeacherMaxRoomChangesPerDay* c=new ConstraintTeacherMaxRoomChangesPerDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//36
+		else if(type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_DAY){
+			ConstraintTeachersMaxRoomChangesPerDay* c=new ConstraintTeachersMaxRoomChangesPerDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//37
+		else if(type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_WEEK){
+			ConstraintTeacherMaxRoomChangesPerWeek* c=new ConstraintTeacherMaxRoomChangesPerWeek;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//38
+		else if(type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_WEEK){
+			ConstraintTeachersMaxRoomChangesPerWeek* c=new ConstraintTeachersMaxRoomChangesPerWeek;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//39
+		else if(type==CONSTRAINT_TEACHER_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+			ConstraintTeacherMinGapsBetweenRoomChanges* c=new ConstraintTeacherMinGapsBetweenRoomChanges;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//40
+		else if(type==CONSTRAINT_TEACHERS_MIN_GAPS_BETWEEN_ROOM_CHANGES){
+			ConstraintTeachersMinGapsBetweenRoomChanges* c=new ConstraintTeachersMinGapsBetweenRoomChanges;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//41
+		else if(type==CONSTRAINT_TEACHER_ROOM_NOT_AVAILABLE_TIMES){
+			ConstraintTeacherRoomNotAvailableTimes* c=new ConstraintTeacherRoomNotAvailableTimes;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//for mornings-afternoons
+		//42
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_ROOM_CHANGES_PER_REAL_DAY){
+			ConstraintStudentsSetMaxRoomChangesPerRealDay* c=new ConstraintStudentsSetMaxRoomChangesPerRealDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//43
+		else if(type==CONSTRAINT_STUDENTS_MAX_ROOM_CHANGES_PER_REAL_DAY){
+			ConstraintStudentsMaxRoomChangesPerRealDay* c=new ConstraintStudentsMaxRoomChangesPerRealDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//44
+		else if(type==CONSTRAINT_TEACHER_MAX_ROOM_CHANGES_PER_REAL_DAY){
+			ConstraintTeacherMaxRoomChangesPerRealDay* c=new ConstraintTeacherMaxRoomChangesPerRealDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//45
+		else if(type==CONSTRAINT_TEACHERS_MAX_ROOM_CHANGES_PER_REAL_DAY){
+			ConstraintTeachersMaxRoomChangesPerRealDay* c=new ConstraintTeachersMaxRoomChangesPerRealDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//46
+		else if(type==CONSTRAINT_STUDENTS_SET_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+			ConstraintStudentsSetMaxBuildingChangesPerRealDay* c=new ConstraintStudentsSetMaxBuildingChangesPerRealDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//47
+		else if(type==CONSTRAINT_STUDENTS_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+			ConstraintStudentsMaxBuildingChangesPerRealDay* c=new ConstraintStudentsMaxBuildingChangesPerRealDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//48
+		else if(type==CONSTRAINT_TEACHER_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+			ConstraintTeacherMaxBuildingChangesPerRealDay* c=new ConstraintTeacherMaxBuildingChangesPerRealDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		//49
+		else if(type==CONSTRAINT_TEACHERS_MAX_BUILDING_CHANGES_PER_REAL_DAY){
+			ConstraintTeachersMaxBuildingChangesPerRealDay* c=new ConstraintTeachersMaxBuildingChangesPerRealDay;
+			stream>>*c;
+			rules.spaceConstraintsList.append(c);
+		}
+		else{
+			assert(0);
+		}
+	}
+
+	assert(rules.bcsSet.isEmpty()); //done in init() above
+	assert(rules.aprHash.isEmpty());
+	for(SpaceConstraint* ctr : std::as_const(rules.spaceConstraintsList)){
+		rules.recomputeActivitiesSetForSpaceConstraint(ctr);
+		rules.insertSpaceConstraintInHash(ctr);
+	}
+
+	//stream>>rules.groupActivitiesInInitialOrderList;
+	int nga;
+	stream>>nga;
+	//cout<<"nga="<<nga<<endl;
+	for(int i=0; i<nga; i++){
+		GroupActivitiesInInitialOrderItem* it=new GroupActivitiesInInitialOrderItem;
+		stream>>*it;
+		rules.groupActivitiesInInitialOrderList.append(it);
+	}
+
+	return stream;
+}
+
+void Rules::addUndoPoint(const QString& description)
+{
+	if(!USE_UNDO_REDO)
+		return;
+
+	QByteArray oldRulesBA;
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	QDataStream ds(&oldRulesBA, QIODeviceBase::WriteOnly);
+#else
+	QDataStream ds(&oldRulesBA, QIODevice::WriteOnly);
+#endif
+	ds<<*this;
+
+	//ds>>oldRulesBA;
+
+	//QByteArray oldRulesArchivedBA=qCompress(oldRulesBA, UNDO_REDO_COMPRESSION_LEVEL);
+	QByteArray oldRulesArchivedBA=qCompress(oldRulesBA);
+
+	//cout<<"Adding an undo point with uncompressed size="<<oldRulesBA.size()<<" and compressed size="<<oldRulesArchivedBA.size()
+	// <<" and description: "<<qPrintable(description)<<endl;
+
+	assert(oldRulesArchived.size()==operationWhichWasDone.size());
+	assert(oldRulesArchived.size()==operationDateTime.size());
+	assert(oldRulesArchived.size()==unarchivedSizes.size());
+	//assert(oldRulesArchived.size()==stateFileName.size());
+	assert(cntUndoRedoStackIterator>=0);
+	//if(cntUndoRedoStackIterator>int(oldRulesArchived.size()))
+	//	cout<<"cntUndoRedoStackIterator="<<cntUndoRedoStackIterator<<", oldRulesArchived.size()="<<oldRulesArchived.size()<<endl;
+	assert(cntUndoRedoStackIterator<=int(oldRulesArchived.size()));
+	int statesToRemove=int(oldRulesArchived.size())-cntUndoRedoStackIterator;
+	//cout<<"Removing "<<statesToRemove<<" saved positions from the end"<<endl;
+	for(int i=0; i<statesToRemove; i++){
+		assert(!oldRulesArchived.empty());
+		oldRulesArchived.pop_back();
+		
+		assert(!operationWhichWasDone.empty());
+		//cout<<"Removing operation: "<<qPrintable(operationWhichWasDone.back())<<endl;
+		operationWhichWasDone.pop_back();
+		
+		assert(!operationDateTime.empty());
+		operationDateTime.pop_back();
+		
+		assert(!unarchivedSizes.empty());
+		unarchivedSizes.pop_back();
+		
+		//assert(!stateFileName.empty());
+		//stateFileName.pop_back();
+	}
+	if(savedStateIterator>int(oldRulesArchived.size()))
+		savedStateIterator=0;
+
+	oldRulesArchived.push_back(oldRulesArchivedBA);
+	operationWhichWasDone.push_back(description);
+	operationDateTime.push_back(QPair<QDate, QTime>(QDate::currentDate(), QTime::currentTime()));
+	unarchivedSizes.push_back(oldRulesBA.size());
+	//stateFileName.push_back(INPUT_FILENAME_XML);
+
+	assert(oldRulesArchived.size()==operationWhichWasDone.size());
+	assert(oldRulesArchived.size()==operationDateTime.size());
+	assert(oldRulesArchived.size()==unarchivedSizes.size());
+	//assert(oldRulesArchived.size()==stateFileName.size());
+
+	int ts=int(oldRulesArchived.size());
+	if(ts>UNDO_REDO_STEPS){
+		assert(ts==UNDO_REDO_STEPS+1);
+	
+		assert(!oldRulesArchived.empty());
+		oldRulesArchived.pop_front();
+		
+		assert(!operationWhichWasDone.empty());
+		operationWhichWasDone.pop_front();
+		
+		assert(!operationDateTime.empty());
+		operationDateTime.pop_front();
+		
+		assert(!unarchivedSizes.empty());
+		unarchivedSizes.pop_front();
+
+		//assert(!stateFileName.empty());
+		//stateFileName.pop_front();
+
+		savedStateIterator--;
+		if(savedStateIterator<0)
+			savedStateIterator=0;
+	}
+
+	cntUndoRedoStackIterator=int(oldRulesArchived.size());
+	crtBAIt=prev(oldRulesArchived.cend());
+	//crtDIt=prev(operationWhichWasDone.cend());
+	//crtDTIt=prev(operationDateTime.cend());
+	//crtFNIt=prev(stateFileName.cend());
+}
+
+void Rules::restoreState(int iterationsBackward)
+{
+	assert(USE_UNDO_REDO);
+
+	if(iterationsBackward==0){
+		assert(0);
+	}
+	else if(iterationsBackward>0){
+		if(iterationsBackward>=cntUndoRedoStackIterator){
+			//cout<<"iterationsBackward="<<iterationsBackward<<", cntUndoRedoStackIterator="<<cntUndoRedoStackIterator<<endl;
+			assert(0);
+		}
+		else{
+			cntUndoRedoStackIterator-=iterationsBackward;
+			for(int i=0; i<iterationsBackward; i++){
+				crtBAIt--;
+				//crtDIt--;
+				//crtDTIt--;
+				//crtFNIt--;
+			}
+		}
+	}
+	else if(iterationsBackward<0){
+		int iterationsForward=-iterationsBackward;
+		if(iterationsForward>int(oldRulesArchived.size())-cntUndoRedoStackIterator){
+			//cout<<"iterationsForward="<<iterationsForward<<", cntUndoRedoStackIterator="<<cntUndoRedoStackIterator
+			//  <<", oldRulesArchived.size()="<<oldRulesArchived.size()<<endl;
+			assert(0);
+		}
+		else{
+			cntUndoRedoStackIterator+=iterationsForward;
+			for(int i=0; i<iterationsForward; i++){
+				crtBAIt++;
+				//crtDIt++;
+				//crtDTIt++;
+				//crtFNIt++;
+			}
+		}
+	}
+	QByteArray oldRulesArchivedBA=*crtBAIt;
+	QByteArray oldRulesBA=qUncompress(oldRulesArchivedBA);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	QDataStream ds(&oldRulesBA, QIODeviceBase::ReadOnly);
+#else
+	QDataStream ds(&oldRulesBA, QIODevice::ReadOnly);
+#endif
+	//ds<<oldRulesBA;
+	ds>>*this;
+	
+	//this->modified=true;
+	this->modified = (cntUndoRedoStackIterator!=savedStateIterator);
+
+	//INPUT_FILENAME_XML=*crtFNIt;
+	updateFetMainFormAfterHistoryRestored(iterationsBackward);
+}
+#endif
 
 void Rules::init() //initializes the rules (empty, but with default hours and days)
 {
@@ -170,7 +3589,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	//After that, the time constraints.
 	//After that, the space constraints.
 
-	//kill augmented students sets
+	//clear augmented students sets
 	QList<StudentsYear*> ayears;
 	QList<StudentsGroup*> agroups;
 	QList<StudentsSubgroup*> asubgroups;
@@ -898,7 +4317,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	return ok;
 }
 
-void Rules::kill() //clears memory for the rules, destroys them
+void Rules::clear() //clears the memory for the rules.
 {
 	//Teachers
 	for(Teacher* tch : std::as_const(teachersList))
@@ -958,7 +4377,7 @@ void Rules::kill() //clears memory for the rules, destroys them
 	permanentStudentsHash.clear();
 	//////////////////
 
-	//kill augmented students sets
+	//clear augmented students sets
 	QList<StudentsYear*> ayears;
 	QList<StudentsGroup*> agroups;
 	QList<StudentsSubgroup*> asubgroups;
@@ -986,6 +4405,8 @@ void Rules::kill() //clears memory for the rules, destroys them
 		assert(subgroup!=nullptr);
 		delete subgroup;
 	}
+	internalGroupsList.clear();
+	
 	augmentedYearsList.clear();
 	//////////////////
 	
@@ -1063,12 +4484,14 @@ Rules::Rules()
 {
 	this->initialized=false;
 	this->modified=false;
+
+	//cntUndoRedoStackIterator=0;
 }
 
 Rules::~Rules()
 {
 	if(this->initialized)
-		this->kill();
+		this->clear();
 }
 
 void Rules::setMode(int newMode)
@@ -4426,6 +7849,161 @@ void Rules::sortBuildingsAlphabetically()
 	rooms_schedule_ready=false;
 }
 
+void Rules::recomputeActivitiesSetForTimeConstraint(TimeConstraint* ctr)
+{
+	if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
+		ConstraintActivitiesSameStartingTime* c=(ConstraintActivitiesSameStartingTime*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
+		ConstraintActivitiesNotOverlapping* c=(ConstraintActivitiesNotOverlapping*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+		ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
+		ConstraintMaxDaysBetweenActivities* c=(ConstraintMaxDaysBetweenActivities*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN){
+		ConstraintActivitiesMaxHourlySpan* c=(ConstraintActivitiesMaxHourlySpan*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES){
+		ConstraintMinGapsBetweenActivities* c=(ConstraintMinGapsBetweenActivities*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_MAX_GAPS_BETWEEN_ACTIVITIES){
+		ConstraintMaxGapsBetweenActivities* c=(ConstraintMaxGapsBetweenActivities*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR){
+		ConstraintActivitiesSameStartingHour* c=(ConstraintActivitiesSameStartingHour*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY){
+		ConstraintActivitiesSameStartingDay* c=(ConstraintActivitiesSameStartingDay*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED){
+		ConstraintTwoSetsOfActivitiesOrdered* c=(ConstraintTwoSetsOfActivitiesOrdered*) ctr;
+		c->recomputeActivitiesSets();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TIME_SLOTS_FROM_SELECTION){
+		ConstraintActivitiesOccupyMaxTimeSlotsFromSelection* c=(ConstraintActivitiesOccupyMaxTimeSlotsFromSelection*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MIN_TIME_SLOTS_FROM_SELECTION){
+		ConstraintActivitiesOccupyMinTimeSlotsFromSelection* c=(ConstraintActivitiesOccupyMinTimeSlotsFromSelection*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
+		ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots* c=(ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_MIN_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
+		ConstraintActivitiesMinSimultaneousInSelectedTimeSlots* c=(ConstraintActivitiesMinSimultaneousInSelectedTimeSlots*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_MAX_TOTAL_ACTIVITIES_FROM_SET_IN_SELECTED_TIME_SLOTS){
+		ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots* c=(ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_IN_A_TERM){
+		ConstraintActivitiesMaxInATerm* c=(ConstraintActivitiesMaxInATerm*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS){
+		ConstraintActivitiesOccupyMaxTerms* c=(ConstraintActivitiesOccupyMaxTerms*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+		ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_MIN_IN_A_TERM){
+		ConstraintActivitiesMinInATerm* c=(ConstraintActivitiesMinInATerm*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES){
+		ConstraintMaxTermsBetweenActivities* c=(ConstraintMaxTermsBetweenActivities*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES){
+		ConstraintMaxHalfDaysBetweenActivities* c=(ConstraintMaxHalfDaysBetweenActivities*) ctr;
+		c->recomputeActivitiesSet();
+	}
+}
+
+void Rules::insertTimeConstraintInHash(TimeConstraint* ctr)
+{
+	if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
+		ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*) ctr;
+		QSet<ConstraintActivityPreferredStartingTime*> cs=apstHash.value(c->activityId, QSet<ConstraintActivityPreferredStartingTime*>());
+		assert(!cs.contains(c));
+		cs.insert(c);
+		apstHash.insert(c->activityId, cs);
+	}
+
+	else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_DAY){
+		ConstraintActivityPreferredDay* c=(ConstraintActivityPreferredDay*) ctr;
+		QSet<ConstraintActivityPreferredDay*> cs=apdHash.value(c->activityId, QSet<ConstraintActivityPreferredDay*>());
+		assert(!cs.contains(c));
+		cs.insert(c);
+		apdHash.insert(c->activityId, cs);
+	}
+
+	else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
+		ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) ctr;
+		for(int aid : std::as_const(c->activitiesIds)){
+			QSet<ConstraintMinDaysBetweenActivities*> cs=mdbaHash.value(aid, QSet<ConstraintMinDaysBetweenActivities*>());
+			assert(!cs.contains(c));
+			cs.insert(c);
+			mdbaHash.insert(aid, cs);
+		}
+	}
+
+	else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
+		ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) ctr;
+		for(int aid : std::as_const(c->activitiesIds)){
+			QSet<ConstraintMinHalfDaysBetweenActivities*> cs=mhdbaHash.value(aid, QSet<ConstraintMinHalfDaysBetweenActivities*>());
+			assert(!cs.contains(c));
+			cs.insert(c);
+			mhdbaHash.insert(aid, cs);
+		}
+	}
+
+	else if(ctr->type==CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES){
+		ConstraintTeacherNotAvailableTimes* c=(ConstraintTeacherNotAvailableTimes*) ctr;
+		QSet<ConstraintTeacherNotAvailableTimes*> cs=tnatHash.value(c->teacher, QSet<ConstraintTeacherNotAvailableTimes*>());
+		assert(!cs.contains(c));
+		cs.insert(c);
+		tnatHash.insert(c->teacher, cs);
+	}
+
+	else if(ctr->type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES){
+		ConstraintStudentsSetNotAvailableTimes* c=(ConstraintStudentsSetNotAvailableTimes*) ctr;
+		QSet<ConstraintStudentsSetNotAvailableTimes*> cs=ssnatHash.value(c->students, QSet<ConstraintStudentsSetNotAvailableTimes*>());
+		assert(!cs.contains(c));
+		cs.insert(c);
+		ssnatHash.insert(c->students, cs);
+	}
+	else if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME){
+		ConstraintBasicCompulsoryTime* c=(ConstraintBasicCompulsoryTime*) ctr;
+		QSet<ConstraintBasicCompulsoryTime*> &cs=bctSet;
+		assert(!cs.contains(c));
+		cs.insert(c);
+	}
+	else if(ctr->type==CONSTRAINT_BREAK_TIMES){
+		ConstraintBreakTimes* c=(ConstraintBreakTimes*) ctr;
+		QSet<ConstraintBreakTimes*> &cs=btSet;
+		assert(!cs.contains(c));
+		cs.insert(c);
+	}
+}
+
 bool Rules::addTimeConstraint(TimeConstraint* ctr)
 {
 	bool ok=true;
@@ -4616,159 +8194,15 @@ bool Rules::addTimeConstraint(TimeConstraint* ctr)
 	}
 	
 	if(ok){
-		if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_TIME){
-			ConstraintActivitiesSameStartingTime* c=(ConstraintActivitiesSameStartingTime*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_NOT_OVERLAPPING){
-			ConstraintActivitiesNotOverlapping* c=(ConstraintActivitiesNotOverlapping*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
-			ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_MAX_DAYS_BETWEEN_ACTIVITIES){
-			ConstraintMaxDaysBetweenActivities* c=(ConstraintMaxDaysBetweenActivities*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN){
-			ConstraintActivitiesMaxHourlySpan* c=(ConstraintActivitiesMaxHourlySpan*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_MIN_GAPS_BETWEEN_ACTIVITIES){
-			ConstraintMinGapsBetweenActivities* c=(ConstraintMinGapsBetweenActivities*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_MAX_GAPS_BETWEEN_ACTIVITIES){
-			ConstraintMaxGapsBetweenActivities* c=(ConstraintMaxGapsBetweenActivities*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_HOUR){
-			ConstraintActivitiesSameStartingHour* c=(ConstraintActivitiesSameStartingHour*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_STARTING_DAY){
-			ConstraintActivitiesSameStartingDay* c=(ConstraintActivitiesSameStartingDay*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_TWO_SETS_OF_ACTIVITIES_ORDERED){
-			ConstraintTwoSetsOfActivitiesOrdered* c=(ConstraintTwoSetsOfActivitiesOrdered*) ctr;
-			c->recomputeActivitiesSets();
-		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TIME_SLOTS_FROM_SELECTION){
-			ConstraintActivitiesOccupyMaxTimeSlotsFromSelection* c=(ConstraintActivitiesOccupyMaxTimeSlotsFromSelection*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MIN_TIME_SLOTS_FROM_SELECTION){
-			ConstraintActivitiesOccupyMinTimeSlotsFromSelection* c=(ConstraintActivitiesOccupyMinTimeSlotsFromSelection*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
-			ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots* c=(ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_MIN_SIMULTANEOUS_IN_SELECTED_TIME_SLOTS){
-			ConstraintActivitiesMinSimultaneousInSelectedTimeSlots* c=(ConstraintActivitiesMinSimultaneousInSelectedTimeSlots*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_MAX_TOTAL_ACTIVITIES_FROM_SET_IN_SELECTED_TIME_SLOTS){
-			ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots* c=(ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_MAX_IN_A_TERM){
-			ConstraintActivitiesMaxInATerm* c=(ConstraintActivitiesMaxInATerm*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_TERMS){
-			ConstraintActivitiesOccupyMaxTerms* c=(ConstraintActivitiesOccupyMaxTerms*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
-			ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_MIN_IN_A_TERM){
-			ConstraintActivitiesMinInATerm* c=(ConstraintActivitiesMinInATerm*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_MAX_TERMS_BETWEEN_ACTIVITIES){
-			ConstraintMaxTermsBetweenActivities* c=(ConstraintMaxTermsBetweenActivities*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_MAX_HALF_DAYS_BETWEEN_ACTIVITIES){
-			ConstraintMaxHalfDaysBetweenActivities* c=(ConstraintMaxHalfDaysBetweenActivities*) ctr;
-			c->recomputeActivitiesSet();
-		}
+		recomputeActivitiesSetForTimeConstraint(ctr);
 		
 		this->timeConstraintsList << ctr; //append
-		
-		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIME){
-			ConstraintActivityPreferredStartingTime* c=(ConstraintActivityPreferredStartingTime*) ctr;
-			QSet<ConstraintActivityPreferredStartingTime*> cs=apstHash.value(c->activityId, QSet<ConstraintActivityPreferredStartingTime*>());
-			assert(!cs.contains(c));
-			cs.insert(c);
-			apstHash.insert(c->activityId, cs);
-		}
 
-		else if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_DAY){
-			ConstraintActivityPreferredDay* c=(ConstraintActivityPreferredDay*) ctr;
-			QSet<ConstraintActivityPreferredDay*> cs=apdHash.value(c->activityId, QSet<ConstraintActivityPreferredDay*>());
-			assert(!cs.contains(c));
-			cs.insert(c);
-			apdHash.insert(c->activityId, cs);
-		}
-
-		else if(ctr->type==CONSTRAINT_MIN_DAYS_BETWEEN_ACTIVITIES){
-			ConstraintMinDaysBetweenActivities* c=(ConstraintMinDaysBetweenActivities*) ctr;
-			for(int aid : std::as_const(c->activitiesIds)){
-				QSet<ConstraintMinDaysBetweenActivities*> cs=mdbaHash.value(aid, QSet<ConstraintMinDaysBetweenActivities*>());
-				assert(!cs.contains(c));
-				cs.insert(c);
-				mdbaHash.insert(aid, cs);
-			}
-		}
-
-		else if(ctr->type==CONSTRAINT_MIN_HALF_DAYS_BETWEEN_ACTIVITIES){
-			ConstraintMinHalfDaysBetweenActivities* c=(ConstraintMinHalfDaysBetweenActivities*) ctr;
-			for(int aid : std::as_const(c->activitiesIds)){
-				QSet<ConstraintMinHalfDaysBetweenActivities*> cs=mhdbaHash.value(aid, QSet<ConstraintMinHalfDaysBetweenActivities*>());
-				assert(!cs.contains(c));
-				cs.insert(c);
-				mhdbaHash.insert(aid, cs);
-			}
-		}
-
-		else if(ctr->type==CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES){
-			ConstraintTeacherNotAvailableTimes* c=(ConstraintTeacherNotAvailableTimes*) ctr;
-			QSet<ConstraintTeacherNotAvailableTimes*> cs=tnatHash.value(c->teacher, QSet<ConstraintTeacherNotAvailableTimes*>());
-			assert(!cs.contains(c));
-			cs.insert(c);
-			tnatHash.insert(c->teacher, cs);
-		}
-
-		else if(ctr->type==CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES){
-			ConstraintStudentsSetNotAvailableTimes* c=(ConstraintStudentsSetNotAvailableTimes*) ctr;
-			QSet<ConstraintStudentsSetNotAvailableTimes*> cs=ssnatHash.value(c->students, QSet<ConstraintStudentsSetNotAvailableTimes*>());
-			assert(!cs.contains(c));
-			cs.insert(c);
-			ssnatHash.insert(c->students, cs);
-		}
-		else if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_TIME){
-			ConstraintBasicCompulsoryTime* c=(ConstraintBasicCompulsoryTime*) ctr;
-			QSet<ConstraintBasicCompulsoryTime*> &cs=bctSet;
-			assert(!cs.contains(c));
-			cs.insert(c);
-		}
-		else if(ctr->type==CONSTRAINT_BREAK_TIMES){
-			ConstraintBreakTimes* c=(ConstraintBreakTimes*) ctr;
-			QSet<ConstraintBreakTimes*> &cs=btSet;
-			assert(!cs.contains(c));
-			cs.insert(c);
-		}
+		insertTimeConstraintInHash(ctr);
 
 		this->internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(this);
+
 		return true;
 	}
 	else
@@ -5031,6 +8465,35 @@ bool Rules::removeTimeConstraints(const QList<TimeConstraint*>& _tcl)
 	return ok;
 }
 
+void Rules::recomputeActivitiesSetForSpaceConstraint(SpaceConstraint* ctr)
+{
+	if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS){
+		ConstraintActivitiesOccupyMaxDifferentRooms* c=(ConstraintActivitiesOccupyMaxDifferentRooms*) ctr;
+		c->recomputeActivitiesSet();
+	}
+	else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE){
+		ConstraintActivitiesSameRoomIfConsecutive* c=(ConstraintActivitiesSameRoomIfConsecutive*) ctr;
+		c->recomputeActivitiesSet();
+	}
+}
+
+void Rules::insertSpaceConstraintInHash(SpaceConstraint* ctr)
+{
+	if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
+		ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) ctr;
+		QSet<ConstraintActivityPreferredRoom*> cs=aprHash.value(c->activityId, QSet<ConstraintActivityPreferredRoom*>());
+		assert(!cs.contains(c));
+		cs.insert(c);
+		aprHash.insert(c->activityId, cs);
+	}
+	else if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE){
+		ConstraintBasicCompulsorySpace* c=(ConstraintBasicCompulsorySpace*) ctr;
+		QSet<ConstraintBasicCompulsorySpace*> &cs=bcsSet;
+		assert(!cs.contains(c));
+		cs.insert(c);
+	}
+}
+
 bool Rules::addSpaceConstraint(SpaceConstraint* ctr)
 {
 	bool ok=true;
@@ -5093,33 +8556,15 @@ bool Rules::addSpaceConstraint(SpaceConstraint* ctr)
 	}
 
 	if(ok){
-		if(ctr->type==CONSTRAINT_ACTIVITIES_OCCUPY_MAX_DIFFERENT_ROOMS){
-			ConstraintActivitiesOccupyMaxDifferentRooms* c=(ConstraintActivitiesOccupyMaxDifferentRooms*) ctr;
-			c->recomputeActivitiesSet();
-		}
-		else if(ctr->type==CONSTRAINT_ACTIVITIES_SAME_ROOM_IF_CONSECUTIVE){
-			ConstraintActivitiesSameRoomIfConsecutive* c=(ConstraintActivitiesSameRoomIfConsecutive*) ctr;
-			c->recomputeActivitiesSet();
-		}
+		recomputeActivitiesSetForSpaceConstraint(ctr);
 	
 		this->spaceConstraintsList << ctr; //append
-		
-		if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM){
-			ConstraintActivityPreferredRoom* c=(ConstraintActivityPreferredRoom*) ctr;
-			QSet<ConstraintActivityPreferredRoom*> cs=aprHash.value(c->activityId, QSet<ConstraintActivityPreferredRoom*>());
-			assert(!cs.contains(c));
-			cs.insert(c);
-			aprHash.insert(c->activityId, cs);
-		}
-		else if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE){
-			ConstraintBasicCompulsorySpace* c=(ConstraintBasicCompulsorySpace*) ctr;
-			QSet<ConstraintBasicCompulsorySpace*> &cs=bcsSet;
-			assert(!cs.contains(c));
-			cs.insert(c);
-		}
+
+		insertSpaceConstraintInHash(ctr);
 		
 		this->internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(this);
+
 		return true;
 	}
 	else
@@ -5228,6 +8673,9 @@ void Rules::updateGroupActivitiesInInitialOrderAfterRemoval()
 	toBeRemovedList.clear();
 	//while(!toBeRemovedList.isEmpty())
 	//	delete toBeRemovedList.takeFirst();
+
+	for(GroupActivitiesInInitialOrderItem* item : std::as_const(groupActivitiesInInitialOrderList))
+		item->recomputeActivitiesSet();
 }
 
 void Rules::updateActivitiesWhenRemovingStudents(const QSet<StudentsSet*>& studentsSets, bool updateConstraints)
@@ -6306,7 +9754,11 @@ void Rules::updateConstraintsAfterRemoval()
 bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, const QString& commandLineDirectory) //commandLineDirectory has trailing FILE_SEP
 {
 	QFile file(fileName);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::ReadOnly)){
+#else
 	if(!file.open(QIODevice::ReadOnly)){
+#endif
 		//cout<<"Could not open file - not existing or in use\n";
 		RulesIrreconcilableMessage::warning(parent, tr("FET warning"), tr("Could not open file - not existing or in use"));
 		return false;
@@ -6369,7 +9821,11 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 		tmp=OUTPUT_DIR+FILE_SEP+"logs"+FILE_SEP+XML_PARSING_LOG_FILENAME;
 	QFile file2(tmp);
 	bool canWriteLogFile=true;
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file2.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file2.open(QIODevice::WriteOnly)){
+#endif
 		QString s=tr("FET cannot open the log file %1 for writing. This might mean that you don't"
 			" have write permissions in this location. You can continue operation, but you might not be able to save the generated timetables"
 			" as HTML files").arg(QDir::toNativeSeparators(tmp))+
@@ -6636,7 +10092,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 	
 	//Clear old rules, initialize new rules
 	if(this->initialized)
-		this->kill();
+		this->clear();
 	this->init();
 	
 	int oldMode=this->mode;
@@ -10313,6 +13769,7 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 					}
 					else{
 						assert(nActs==item->ids.count());
+						item->recomputeActivitiesSet();
 						groupActivitiesInInitialOrderList.append(item);
 					}
 				}
@@ -10436,7 +13893,11 @@ bool Rules::write(QWidget* parent, const QString& filename)
 	assert(!QFile::exists(filenameTmp));
 
 	QFile file(filenameTmp);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly | QIODeviceBase::Truncate)){
+#else
 	if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 tr("Cannot open %1 for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted").arg(QFileInfo(filenameTmp).fileName()));
 		
@@ -10709,6 +14170,9 @@ int Rules::activateActivityTag(const QString& activityTagName)
 			act->active=true;
 		}
 	}
+	
+	if(count==0)
+		return count;
 
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
@@ -10823,6 +14287,9 @@ int Rules::deactivateActivityTag(const QString& activityTagName)
 			act->active=false;
 		}
 	}
+	
+	if(count==0)
+		return count;
 
 	this->internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(this);
@@ -10834,7 +14301,7 @@ int Rules::deactivateActivityTag(const QString& activityTagName)
 	return count;
 }
 
-void Rules::makeActivityTagPrintable(const QString& activityTagName)
+bool Rules::makeActivityTagPrintable(const QString& activityTagName)
 {
 	int i=searchActivityTag(activityTagName);
 	assert(i>=0 && i<activityTagsList.count());
@@ -10850,10 +14317,14 @@ void Rules::makeActivityTagPrintable(const QString& activityTagName)
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
 		rooms_schedule_ready=false;
+		
+		return true;
 	}
+	
+	return false;
 }
 
-void Rules::makeActivityTagNotPrintable(const QString& activityTagName)
+bool Rules::makeActivityTagNotPrintable(const QString& activityTagName)
 {
 	int i=searchActivityTag(activityTagName);
 	assert(i>=0 && i<activityTagsList.count());
@@ -10869,7 +14340,11 @@ void Rules::makeActivityTagNotPrintable(const QString& activityTagName)
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
 		rooms_schedule_ready=false;
+		
+		return true;
 	}
+	
+	return false;
 }
 
 TimeConstraint* Rules::readBasicCompulsoryTime(QXmlStreamReader& xmlReader, FakeString& xmlReadingLog){

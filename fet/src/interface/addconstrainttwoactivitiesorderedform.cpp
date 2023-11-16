@@ -207,9 +207,12 @@ void AddConstraintTwoActivitiesOrderedForm::addCurrentConstraint()
 	ctr=new ConstraintTwoActivitiesOrdered(weight, fid, sid);
 
 	bool tmp4=gt.rules.addTimeConstraint(ctr);
-	if(tmp4)
+	if(tmp4){
 		LongTextMessageBox::information(this, tr("FET information"),
 			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
+
+		gt.rules.addUndoPoint(tr("Added the constraint:\n\n%1").arg(ctr->getDetailedDescription(gt.rules)));
+	}
 	else{
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Constraint NOT added - error?"));

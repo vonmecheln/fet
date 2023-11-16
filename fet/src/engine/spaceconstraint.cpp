@@ -37,7 +37,1279 @@ File spaceconstraint.cpp
 #include <QString>
 #include <QSet>
 
+#include <QDataStream>
+
 #include "messageboxes.h"
+
+//1
+QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsorySpace& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	return stream;
+}
+
+//2
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomNotAvailableTimes& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.days<<sc.hours<<sc.room;
+
+	return stream;
+}
+
+//3
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityPreferredRoom& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.activityId<<sc.permanentlyLocked<<sc.roomName<<sc.preferredRealRoomsNames;
+
+	return stream;
+}
+
+//4
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityPreferredRooms& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.activityId<<sc.roomsNames;
+
+	return stream;
+}
+
+//5
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetHomeRoom& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.roomName<<sc.studentsName;
+
+	return stream;
+}
+
+//6
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetHomeRooms& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.roomsNames<<sc.studentsName;
+
+	return stream;
+}
+
+//7
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherHomeRoom& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.roomName<<sc.teacherName;
+
+	return stream;
+}
+
+//8
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherHomeRooms& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.roomsNames<<sc.teacherName;
+
+	return stream;
+}
+
+//9
+QDataStream& operator<<(QDataStream& stream, const ConstraintSubjectPreferredRoom& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.roomName<<sc.subjectName;
+
+	return stream;
+}
+
+//10
+QDataStream& operator<<(QDataStream& stream, const ConstraintSubjectPreferredRooms& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.roomsNames<<sc.subjectName;
+
+	return stream;
+}
+
+//11
+QDataStream& operator<<(QDataStream& stream, const ConstraintSubjectActivityTagPreferredRoom& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.roomName<<sc.subjectName<<sc.activityTagName;
+
+	return stream;
+}
+
+//12
+QDataStream& operator<<(QDataStream& stream, const ConstraintSubjectActivityTagPreferredRooms& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.roomsNames<<sc.subjectName<<sc.activityTagName;
+
+	return stream;
+}
+
+//13
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxBuildingChangesPerDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxBuildingChangesPerDay;
+
+	return stream;
+}
+
+//14
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxBuildingChangesPerDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxBuildingChangesPerDay<<sc.studentsName;
+
+	return stream;
+}
+
+//15
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxBuildingChangesPerWeek& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxBuildingChangesPerWeek;
+
+	return stream;
+}
+
+//16
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxBuildingChangesPerWeek& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxBuildingChangesPerWeek<<sc.studentsName;
+
+	return stream;
+}
+
+//17
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinGapsBetweenBuildingChanges& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.minGapsBetweenBuildingChanges;
+
+	return stream;
+}
+
+//18
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinGapsBetweenBuildingChanges& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.minGapsBetweenBuildingChanges<<sc.studentsName;
+
+	return stream;
+}
+
+//19
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxBuildingChangesPerDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxBuildingChangesPerDay;
+
+	return stream;
+}
+
+//20
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxBuildingChangesPerDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxBuildingChangesPerDay<<sc.teacherName;
+
+	return stream;
+}
+
+//21
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxBuildingChangesPerWeek& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxBuildingChangesPerWeek;
+
+	return stream;
+}
+
+//22
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxBuildingChangesPerWeek& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxBuildingChangesPerWeek<<sc.teacherName;
+
+	return stream;
+}
+
+//23
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinGapsBetweenBuildingChanges& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.minGapsBetweenBuildingChanges;
+
+	return stream;
+}
+
+//24
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinGapsBetweenBuildingChanges& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.minGapsBetweenBuildingChanges<<sc.teacherName;
+
+	return stream;
+}
+
+//25
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityTagPreferredRoom& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.roomName<<sc.activityTagName;
+
+	return stream;
+}
+
+//26
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityTagPreferredRooms& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.roomsNames<<sc.activityTagName;
+
+	return stream;
+}
+
+//27
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesOccupyMaxDifferentRooms& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.activitiesIds<<sc.maxDifferentRooms;
+
+	return stream;
+}
+
+//28
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesSameRoomIfConsecutive& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.activitiesIds;
+
+	return stream;
+}
+
+//29
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxRoomChangesPerDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxRoomChangesPerDay;
+
+	return stream;
+}
+
+//30
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxRoomChangesPerDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxRoomChangesPerDay<<sc.studentsName;
+
+	return stream;
+}
+
+//31
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxRoomChangesPerWeek& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxRoomChangesPerWeek;
+
+	return stream;
+}
+
+//32
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxRoomChangesPerWeek& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxRoomChangesPerWeek<<sc.studentsName;
+
+	return stream;
+}
+
+//33
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinGapsBetweenRoomChanges& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.minGapsBetweenRoomChanges;
+
+	return stream;
+}
+
+//34
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinGapsBetweenRoomChanges& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.minGapsBetweenRoomChanges<<sc.studentsName;
+
+	return stream;
+}
+
+//35
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxRoomChangesPerDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxRoomChangesPerDay;
+
+	return stream;
+}
+
+//36
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxRoomChangesPerDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxRoomChangesPerDay<<sc.teacherName;
+
+	return stream;
+}
+
+//37
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxRoomChangesPerWeek& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxRoomChangesPerWeek;
+
+	return stream;
+}
+
+//38
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxRoomChangesPerWeek& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxRoomChangesPerWeek<<sc.teacherName;
+
+	return stream;
+}
+
+//39
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinGapsBetweenRoomChanges& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.minGapsBetweenRoomChanges;
+
+	return stream;
+}
+
+//40
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinGapsBetweenRoomChanges& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.minGapsBetweenRoomChanges<<sc.teacherName;
+
+	return stream;
+}
+
+//41
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherRoomNotAvailableTimes& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.days<<sc.hours<<sc.teacherName<<sc.room;
+
+	return stream;
+}
+
+//42
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxRoomChangesPerRealDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxRoomChangesPerDay;
+
+	return stream;
+}
+
+//43
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxRoomChangesPerRealDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxRoomChangesPerDay<<sc.studentsName;
+
+	return stream;
+}
+
+//44
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxRoomChangesPerRealDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxRoomChangesPerDay;
+
+	return stream;
+}
+
+//45
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxRoomChangesPerRealDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxRoomChangesPerDay<<sc.teacherName;
+
+	return stream;
+}
+
+//46
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxBuildingChangesPerRealDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxBuildingChangesPerDay;
+
+	return stream;
+}
+
+//47
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxBuildingChangesPerRealDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxBuildingChangesPerDay<<sc.studentsName;
+
+	return stream;
+}
+
+//48
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxBuildingChangesPerRealDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxBuildingChangesPerDay;
+
+	return stream;
+}
+
+//49
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxBuildingChangesPerRealDay& sc)
+{
+	//stream<<sc.type;
+	stream<<sc.weightPercentage;
+	stream<<sc.active;
+	stream<<sc.comments;
+
+	stream<<sc.maxBuildingChangesPerDay<<sc.teacherName;
+
+	return stream;
+}
+
+//1
+QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsorySpace& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	return stream;
+}
+
+//2
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomNotAvailableTimes& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.days>>sc.hours>>sc.room;
+
+	return stream;
+}
+
+//3
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityPreferredRoom& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.activityId>>sc.permanentlyLocked>>sc.roomName>>sc.preferredRealRoomsNames;
+
+	return stream;
+}
+
+//4
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityPreferredRooms& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.activityId>>sc.roomsNames;
+
+	return stream;
+}
+
+//5
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetHomeRoom& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.roomName>>sc.studentsName;
+
+	return stream;
+}
+
+//6
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetHomeRooms& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.roomsNames>>sc.studentsName;
+
+	return stream;
+}
+
+//7
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherHomeRoom& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.roomName>>sc.teacherName;
+
+	return stream;
+}
+
+//8
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherHomeRooms& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.roomsNames>>sc.teacherName;
+
+	return stream;
+}
+
+//9
+QDataStream& operator>>(QDataStream& stream, ConstraintSubjectPreferredRoom& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.roomName>>sc.subjectName;
+
+	return stream;
+}
+
+//10
+QDataStream& operator>>(QDataStream& stream, ConstraintSubjectPreferredRooms& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.roomsNames>>sc.subjectName;
+
+	return stream;
+}
+
+//11
+QDataStream& operator>>(QDataStream& stream, ConstraintSubjectActivityTagPreferredRoom& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.roomName>>sc.subjectName>>sc.activityTagName;
+
+	return stream;
+}
+
+//12
+QDataStream& operator>>(QDataStream& stream, ConstraintSubjectActivityTagPreferredRooms& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.roomsNames>>sc.subjectName>>sc.activityTagName;
+
+	return stream;
+}
+
+//13
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxBuildingChangesPerDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxBuildingChangesPerDay;
+
+	return stream;
+}
+
+//14
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxBuildingChangesPerDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxBuildingChangesPerDay>>sc.studentsName;
+
+	return stream;
+}
+
+//15
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxBuildingChangesPerWeek& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxBuildingChangesPerWeek;
+
+	return stream;
+}
+
+//16
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxBuildingChangesPerWeek& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxBuildingChangesPerWeek>>sc.studentsName;
+
+	return stream;
+}
+
+//17
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinGapsBetweenBuildingChanges& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.minGapsBetweenBuildingChanges;
+
+	return stream;
+}
+
+//18
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinGapsBetweenBuildingChanges& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.minGapsBetweenBuildingChanges>>sc.studentsName;
+
+	return stream;
+}
+
+//19
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxBuildingChangesPerDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxBuildingChangesPerDay;
+
+	return stream;
+}
+
+//20
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxBuildingChangesPerDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxBuildingChangesPerDay>>sc.teacherName;
+
+	return stream;
+}
+
+//21
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxBuildingChangesPerWeek& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxBuildingChangesPerWeek;
+
+	return stream;
+}
+
+//22
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxBuildingChangesPerWeek& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxBuildingChangesPerWeek>>sc.teacherName;
+
+	return stream;
+}
+
+//23
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinGapsBetweenBuildingChanges& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.minGapsBetweenBuildingChanges;
+
+	return stream;
+}
+
+//24
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinGapsBetweenBuildingChanges& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.minGapsBetweenBuildingChanges>>sc.teacherName;
+
+	return stream;
+}
+
+//25
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityTagPreferredRoom& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.roomName>>sc.activityTagName;
+
+	return stream;
+}
+
+//26
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityTagPreferredRooms& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.roomsNames>>sc.activityTagName;
+
+	return stream;
+}
+
+//27
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesOccupyMaxDifferentRooms& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.activitiesIds>>sc.maxDifferentRooms;
+
+	return stream;
+}
+
+//28
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesSameRoomIfConsecutive& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.activitiesIds;
+
+	return stream;
+}
+
+//29
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxRoomChangesPerDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxRoomChangesPerDay;
+
+	return stream;
+}
+
+//30
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxRoomChangesPerDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxRoomChangesPerDay>>sc.studentsName;
+
+	return stream;
+}
+
+//31
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxRoomChangesPerWeek& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxRoomChangesPerWeek;
+
+	return stream;
+}
+
+//32
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxRoomChangesPerWeek& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxRoomChangesPerWeek>>sc.studentsName;
+
+	return stream;
+}
+
+//33
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinGapsBetweenRoomChanges& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.minGapsBetweenRoomChanges;
+
+	return stream;
+}
+
+//34
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinGapsBetweenRoomChanges& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.minGapsBetweenRoomChanges>>sc.studentsName;
+
+	return stream;
+}
+
+//35
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxRoomChangesPerDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxRoomChangesPerDay;
+
+	return stream;
+}
+
+//36
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxRoomChangesPerDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxRoomChangesPerDay>>sc.teacherName;
+
+	return stream;
+}
+
+//37
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxRoomChangesPerWeek& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxRoomChangesPerWeek;
+
+	return stream;
+}
+
+//38
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxRoomChangesPerWeek& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxRoomChangesPerWeek>>sc.teacherName;
+
+	return stream;
+}
+
+//39
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinGapsBetweenRoomChanges& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.minGapsBetweenRoomChanges;
+
+	return stream;
+}
+
+//40
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinGapsBetweenRoomChanges& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.minGapsBetweenRoomChanges>>sc.teacherName;
+
+	return stream;
+}
+
+//41
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherRoomNotAvailableTimes& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.days>>sc.hours>>sc.teacherName>>sc.room;
+
+	return stream;
+}
+
+//42
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxRoomChangesPerRealDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxRoomChangesPerDay;
+
+	return stream;
+}
+
+//43
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxRoomChangesPerRealDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxRoomChangesPerDay>>sc.studentsName;
+
+	return stream;
+}
+
+//44
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxRoomChangesPerRealDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxRoomChangesPerDay;
+
+	return stream;
+}
+
+//45
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxRoomChangesPerRealDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxRoomChangesPerDay>>sc.teacherName;
+
+	return stream;
+}
+
+//46
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxBuildingChangesPerRealDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxBuildingChangesPerDay;
+
+	return stream;
+}
+
+//47
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxBuildingChangesPerRealDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxBuildingChangesPerDay>>sc.studentsName;
+
+	return stream;
+}
+
+//48
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxBuildingChangesPerRealDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxBuildingChangesPerDay;
+
+	return stream;
+}
+
+//49
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxBuildingChangesPerRealDay& sc)
+{
+	//stream>>sc.type;
+	stream>>sc.weightPercentage;
+	stream>>sc.active;
+	stream>>sc.comments;
+
+	stream>>sc.maxBuildingChangesPerDay>>sc.teacherName;
+
+	return stream;
+}
 
 static QString trueFalse(bool x)
 {

@@ -542,6 +542,8 @@ void ModifyActivityForm::ok()
 
 		totalduration+=durations[i];
 	}
+	
+	QString od=this->_activity->getDetailedDescription(gt.rules);
 
 	if(nStudentsSpinBox->value()==-1){
 		gt.rules.modifyActivity(this->_id, this->_activityGroupId, teachers_names, subject_name,
@@ -555,6 +557,17 @@ void ModifyActivityForm::ok()
 	}
 	
 	PlanningChanged::increasePlanningCommunicationSpinBox();
+
+	QString nd=this->_activity->getDetailedDescription(gt.rules);
+	
+	if(this->_activityGroupId==0)
+		gt.rules.addUndoPoint(tr("Modified the activity with id=%1.").arg(this->_id)
+		 +QString("\n\n")+tr("The old description was:\n%1").arg(od)
+		 +QString("\n")+tr("The new description was:\n%1", "It is 'was', not 'is', because this is a recorded history (undo/redo) point.").arg(nd));
+	else
+		gt.rules.addUndoPoint(tr("Modified the activity with id=%1 (and possibly the activities with group id=%2).").arg(this->_id).arg(this->_activityGroupId)
+		 +QString("\n\n")+tr("The old description was:\n%1").arg(od)
+		 +QString("\n")+tr("The new description was:\n%1", "It is 'was', not 'is', because this is a recorded history (undo/redo) point.").arg(nd));
 	
 	this->accept();
 }

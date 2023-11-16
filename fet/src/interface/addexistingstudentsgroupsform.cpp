@@ -107,9 +107,18 @@ void AddExistingStudentsGroupsForm::sortedToggled()
 
 void AddExistingStudentsGroupsForm::ok()
 {
-	for(StudentsGroup* stg : std::as_const(selectedGroupsList))
+	QStringList gl;
+	int cnt=0;
+
+	for(StudentsGroup* stg : std::as_const(selectedGroupsList)){
 		gt.rules.addGroupFast(year, stg);
-		
+		gl.append(stg->name);
+		cnt++;
+	}
+	
+	if(cnt>0)
+		gt.rules.addUndoPoint(tr("Added the existing groups %1 into the year %2.").arg(gl.join(", ")).arg(year->name));
+	
 	this->accept();
 }
 

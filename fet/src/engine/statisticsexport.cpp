@@ -56,7 +56,7 @@ File statisticsexport.cpp
 
 extern Timetable gt;
 
-//extern bool simulation_running;	//needed?
+//extern bool generation_running;	//needed?
 
 //TODO: use the external string!!!
 //extern const QString STRING_EMPTY_SLOT;
@@ -357,7 +357,11 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, const QStr
 	QString htmlfilename=PREFIX_STATISTICS+s2+bar+STYLESHEET_STATISTICS;
 
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
@@ -499,7 +503,11 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, const QString& sav
 	
 	QString htmlfilename=PREFIX_STATISTICS+s2+bar+INDEX_STATISTICS;
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
@@ -616,7 +624,11 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, const Q
 
 	QString htmlfilename=PREFIX_STATISTICS+s2+bar+TEACHERS_SUBJECTS_STATISTICS;
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
@@ -922,7 +934,11 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, const Q
 	QString htmlfilename=PREFIX_STATISTICS+s2+bar+SUBJECTS_TEACHERS_STATISTICS;
 
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
@@ -1226,7 +1242,11 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, const Q
 	QString htmlfilename=PREFIX_STATISTICS+s2+bar+TEACHERS_STUDENTS_STATISTICS;
 
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
@@ -1531,7 +1551,11 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, const Q
 	QString htmlfilename=PREFIX_STATISTICS+s2+bar+STUDENTS_TEACHERS_STATISTICS;
 
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
@@ -1836,7 +1860,11 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, const Q
 	QString htmlfilename=PREFIX_STATISTICS+s2+bar+SUBJECTS_STUDENTS_STATISTICS;
 
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;
@@ -2141,7 +2169,11 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, const Q
 	QString htmlfilename=PREFIX_STATISTICS+s2+bar+STUDENTS_SUBJECTS_STATISTICS;
 
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		QMessageBox::critical(parent, tr("FET critical"),
 		 StatisticsExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return false;

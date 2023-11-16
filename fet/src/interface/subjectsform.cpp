@@ -111,6 +111,8 @@ void SubjectsForm::addSubject()
 		else{
 			subjectsListWidget->addItem(sbj->name);
 			subjectsListWidget->setCurrentRow(subjectsListWidget->count()-1);
+
+			gt.rules.addUndoPoint(tr("Added the subject %1.").arg(sbj->name));
 		}
 	}
 	else{
@@ -158,6 +160,8 @@ void SubjectsForm::removeSubject()
 			subjectsListWidget->setCurrentRow(i);
 		else
 			currentSubjectTextEdit->setPlainText(QString(""));
+
+		gt.rules.addUndoPoint(tr("Removed the subject %1.").arg(text));
 	}
 }
 
@@ -192,6 +196,8 @@ void SubjectsForm::renameSubject()
 			gt.rules.modifySubject(initialSubjectName, finalSubjectName);
 			subjectsListWidget->item(i)->setText(finalSubjectName);
 			subjectChanged(subjectsListWidget->currentRow());
+
+			gt.rules.addUndoPoint(tr("Renamed the subject from %1 to %2.").arg(initialSubjectName).arg(finalSubjectName));
 		}
 	}
 }
@@ -225,6 +231,8 @@ void SubjectsForm::moveSubjectUp()
 	gt.rules.subjectsList[i]=sbj2;
 	gt.rules.subjectsList[i-1]=sbj1;
 	
+	gt.rules.addUndoPoint(tr("Moved the subject %1 up.").arg(s1));
+
 	subjectsListWidget->setCurrentRow(i-1);
 	subjectChanged(i-1);
 }
@@ -257,7 +265,9 @@ void SubjectsForm::moveSubjectDown()
 	
 	gt.rules.subjectsList[i]=sbj2;
 	gt.rules.subjectsList[i+1]=sbj1;
-	
+
+	gt.rules.addUndoPoint(tr("Moved the subject %1 down.").arg(s1));
+
 	subjectsListWidget->setCurrentRow(i+1);
 	subjectChanged(i+1);
 }
@@ -266,6 +276,8 @@ void SubjectsForm::sortSubjects()
 {
 	gt.rules.sortSubjectsAlphabetically();
 	
+	gt.rules.addUndoPoint(tr("Sorted the subjects."));
+
 	subjectsListWidget->clear();
 	for(int i=0; i<gt.rules.subjectsList.size(); i++){
 		Subject* sbj=gt.rules.subjectsList[i];
@@ -300,6 +312,9 @@ void SubjectsForm::activateSubject()
 	
 	int count=gt.rules.activateSubject(subjectName);
 	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
+
+	if(count>0)
+		gt.rules.addUndoPoint(tr("Activated the subject %1 (%2 activities).", "%2 is the number of activated activities").arg(subjectName).arg(count));
 }
 
 void SubjectsForm::deactivateSubject()
@@ -313,6 +328,9 @@ void SubjectsForm::deactivateSubject()
 	
 	int count=gt.rules.deactivateSubject(subjectName);
 	QMessageBox::information(this, tr("FET information"), tr("Deactivated a number of %1 activities").arg(count));
+
+	if(count>0)
+		gt.rules.addUndoPoint(tr("Deactivated subject %1 (%2 activities).", "%2 is the number of deactivated activities").arg(subjectName).arg(count));
 }
 
 void SubjectsForm::comments()
@@ -364,8 +382,12 @@ void SubjectsForm::comments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
+		QString oc=sbj->comments;
+
 		sbj->comments=commentsPT->toPlainText();
 	
+		gt.rules.addUndoPoint(tr("Changed the comments for the subject %1 from\n%2\nto\n%3.").arg(sbj->name).arg(oc).arg(sbj->comments));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 

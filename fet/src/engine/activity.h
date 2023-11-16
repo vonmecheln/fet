@@ -33,8 +33,17 @@ File activity.h
 
 class Rules;
 class Activity;
+class GroupActivitiesInInitialOrderItem;
 
 typedef QList<Activity*> ActivitiesList;
+
+class QDataStream;
+
+QDataStream& operator<<(QDataStream& stream, const Activity& act);
+QDataStream& operator>>(QDataStream& stream, Activity& act);
+
+QDataStream& operator<<(QDataStream& stream, const GroupActivitiesInInitialOrderItem& gaio);
+QDataStream& operator>>(QDataStream& stream, GroupActivitiesInInitialOrderItem& gaio);
 
 class GroupActivitiesInInitialOrderItem{
 	Q_DECLARE_TR_FUNCTIONS(GroupActivitiesInInitialOrderItem)

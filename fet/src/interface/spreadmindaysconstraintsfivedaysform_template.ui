@@ -137,7 +137,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Select this so the activities will not be in 2 consecutive days. There will be added 1 additional constraint to accomplish this</string>
+           <string>Select this so that the activities will not be on 2 consecutive days. There will be added 1 additional constraint to accomplish this</string>
           </property>
           <property name="wordWrap">
            <bool>true</bool>
@@ -190,7 +190,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Should not be in 3 consecutive days</string>
+         <string>Should not be on 3 consecutive days</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -206,7 +206,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Select this if you want activities split into 3 per week not to be in 3 consecutive days. There will be added 2 additional constraints to accomplish this, min 2 days between isolated component and each of the other 2 components. Note: usually, any isolated component: 1, 2 or 3 should work</string>
+         <string>Select this if you want the activities split into 3 components per week not to be on 3 consecutive days. There will be added 2 additional constraints to accomplish this, min 2 days between the isolated component and each of the other 2 components. Note: usually, any isolated component: 1, 2 or 3 should work</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>

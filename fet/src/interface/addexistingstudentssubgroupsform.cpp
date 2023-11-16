@@ -108,9 +108,18 @@ void AddExistingStudentsSubgroupsForm::sortedToggled()
 
 void AddExistingStudentsSubgroupsForm::ok()
 {
-	for(StudentsSubgroup* sts : std::as_const(selectedSubgroupsList))
+	QStringList sl;
+	int cnt=0;
+
+	for(StudentsSubgroup* sts : std::as_const(selectedSubgroupsList)){
+		cnt++;
 		gt.rules.addSubgroupFast(year, group, sts);
-		
+		sl.append(sts->name);
+	}
+	
+	if(cnt>0)
+		gt.rules.addUndoPoint(tr("Added the existing subgroups %1 into the group %2 from the year %3.").arg(sl.join(", ")).arg(group->name).arg(year->name));
+	
 	this->accept();
 }
 

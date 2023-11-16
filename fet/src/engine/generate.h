@@ -368,7 +368,7 @@ public:
 signals:
 	void activityPlaced(int, int);
 	
-	void simulationFinished();
+	void generationFinished();
 	
 	void impossibleToSolve();
 	

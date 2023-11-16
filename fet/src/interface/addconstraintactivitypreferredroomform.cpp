@@ -316,7 +316,9 @@ void AddConstraintActivityPreferredRoomForm::addConstraint()
 		s+="\n\n";
 		s+=ctr->getDetailedDescription(gt.rules);
 		LongTextMessageBox::information(this, tr("FET information"), s);
-		
+
+		gt.rules.addUndoPoint(tr("Added the constraint:\n\n%1").arg(ctr->getDetailedDescription(gt.rules)));
+
 		/*if(permLockedCheckBox->isChecked()) wrong, must take care of weight==100.0
 			idsOfPermanentlyLockedSpace.insert(id);
 		else

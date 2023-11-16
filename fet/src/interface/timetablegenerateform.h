@@ -62,7 +62,7 @@ public slots:
 private slots:
 	void activityPlaced(int nThread, int na);
 
-	void simulationFinished();
+	void generationFinished();
 
 	void impossibleToSolve();
 	

@@ -53,11 +53,11 @@ public:
 	static void getStudentsTeachersRoomsTimetable(Solution& c);
 	static void getNumberOfPlacedActivities(int& number1, int& number2);
 	
-	static void writeSimulationResults(QWidget* parent);
+	static void writeGenerationResults(QWidget* parent);
 	static void writeHighestStageResults(QWidget* parent);
-	static void writeSimulationResults(QWidget* parent, int n, bool highest=false); //write in a directory with number n (for multiple generation)
+	static void writeGenerationResults(QWidget* parent, int n, bool highest=false); //write in a directory with number n (for multiple generation)
 	//If highest==true, it writes a partial highest timetable.
-	static void writeSimulationResultsCommandLine(QWidget* parent, const QString& outputDirectory);
+	static void writeGenerationResultsCommandLine(QWidget* parent, const QString& outputDirectory);
 	
 	static void writeRandomSeed(QWidget* parent, const MRG32k3a& rng, bool before);
 	static void writeRandomSeed(QWidget* parent, const MRG32k3a& rng, int n, bool before); //write in a directory with number n (for multiple generation)

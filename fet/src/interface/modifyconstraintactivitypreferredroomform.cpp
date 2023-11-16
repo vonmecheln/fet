@@ -229,7 +229,9 @@ void ModifyConstraintActivityPreferredRoomForm::ok()
 			}
 		}
 	}
-	
+
+	QString oldcs=this->_ctr->getDetailedDescription(gt.rules);
+
 	QStringList lst;
 	for(int i=0; i<selectedRealRoomsListWidget->count(); i++)
 		lst.append(selectedRealRoomsListWidget->item(i)->text());
@@ -257,6 +259,9 @@ void ModifyConstraintActivityPreferredRoomForm::ok()
 	this->_ctr->permanentlyLocked=permLockedCheckBox->isChecked();
 	
 	_ctr->preferredRealRoomsNames=lst;
+
+	QString newcs=this->_ctr->getDetailedDescription(gt.rules);
+	gt.rules.addUndoPoint(tr("Modified the constraint:\n\n%1\ninto\n\n%2").arg(oldcs).arg(newcs));
 
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

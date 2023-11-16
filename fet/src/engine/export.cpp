@@ -798,7 +798,11 @@ bool Export::exportCSVActivityTags(QString& lastWarnings, const QString& textquo
 		return false;
 	
 	QFile fileExport(file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!fileExport.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!fileExport.open(QIODevice::WriteOnly)){
+#endif
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
 	}
@@ -881,7 +885,11 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString& te
 		return false;
 	
 	QFile fileExport(file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!fileExport.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!fileExport.open(QIODevice::WriteOnly)){
+#endif
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
 	}
@@ -954,7 +962,11 @@ bool Export::exportCSVSubjects(QString& lastWarnings, const QString& textquote, 
 		return false;
 	
 	QFile fileExport(file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!fileExport.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!fileExport.open(QIODevice::WriteOnly)){
+#endif
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
 	}
@@ -1017,7 +1029,11 @@ bool Export::exportCSVTeachers(QString& lastWarnings, const QString& textquote, 
 		return false;
 	
 	QFile fileExport(file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!fileExport.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!fileExport.open(QIODevice::WriteOnly)){
+#endif
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
 	}
@@ -1082,7 +1098,11 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 		return false;
 	
 	QFile fileExport(file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!fileExport.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!fileExport.open(QIODevice::WriteOnly)){
+#endif
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
 	}
@@ -1189,7 +1209,11 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 		return false;
 	
 	QFile fileExport(file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!fileExport.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!fileExport.open(QIODevice::WriteOnly)){
+#endif
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
 	}
@@ -1668,7 +1692,11 @@ bool Export::exportCSVActivitiesStatistics(QString& lastWarnings, const QString&
 		return false;
 	
 	QFile fileExport(file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!fileExport.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!fileExport.open(QIODevice::WriteOnly)){
+#endif
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
 	}
@@ -1767,7 +1795,11 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString& textquote,
 		return false;
 	
 	QFile fileExport(file);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!fileExport.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!fileExport.open(QIODevice::WriteOnly)){
+#endif
 		lastWarnings+=Export::tr("FET critical. Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(file)+"\n";
 		return false;
 	}

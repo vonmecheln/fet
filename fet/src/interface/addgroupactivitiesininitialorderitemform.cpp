@@ -180,10 +180,12 @@ void AddGroupActivitiesInInitialOrderItemForm::addItem()
 	item->recomputeActivitiesSet();
 	gt.rules.groupActivitiesInInitialOrderList.append(item);
 	
+	gt.rules.addUndoPoint(tr("Added the 'group activities in the initial order' item:\n\n%1").arg(item->getDetailedDescription(gt.rules)));
+	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 
-	QString s=tr("Added group activities in the initial order item");
+	QString s=tr("Added 'group activities in the initial order' item");
 	s+="\n\n";
 	s+=item->getDetailedDescription(gt.rules);
 	LongTextMessageBox::information(this, tr("FET information"), s);

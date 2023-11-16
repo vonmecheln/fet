@@ -134,6 +134,8 @@ void YearsForm::removeYear()
 	bool tmp=gt.rules.removeYear(yearName);
 	assert(tmp);
 	if(tmp){
+		gt.rules.addUndoPoint(tr("Removed the year %1.").arg(yearName));
+
 		int q=yearsListWidget->currentRow();
 
 		yearsListWidget->setCurrentRow(-1);
@@ -189,6 +191,8 @@ void YearsForm::moveYearUp()
 	gt.rules.yearsList[i]=sy2;
 	gt.rules.yearsList[i-1]=sy1;
 	
+	gt.rules.addUndoPoint(tr("Moved the year %1 up.").arg(s1));
+
 	yearsListWidget->setCurrentRow(i-1);
 	yearChanged(/*i-1*/);
 }
@@ -222,6 +226,8 @@ void YearsForm::moveYearDown()
 	gt.rules.yearsList[i]=sy2;
 	gt.rules.yearsList[i+1]=sy1;
 	
+	gt.rules.addUndoPoint(tr("Moved the year %1 down.").arg(s1));
+
 	yearsListWidget->setCurrentRow(i+1);
 	yearChanged(/*i+1*/);
 }
@@ -229,6 +235,8 @@ void YearsForm::moveYearDown()
 void YearsForm::sortYears()
 {
 	gt.rules.sortYearsAlphabetically();
+
+	gt.rules.addUndoPoint(tr("Sorted the years."));
 
 	yearsListWidget->clear();
 	for(int i=0; i<gt.rules.yearsList.size(); i++){
@@ -287,6 +295,9 @@ void YearsForm::activateStudents()
 	QString yearName=yearsListWidget->currentItem()->text();
 	int count=gt.rules.activateStudents(yearName);
 	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
+
+	if(count>0)
+		gt.rules.addUndoPoint(tr("Activated the year %1 (%2 activities).", "%2 is the number of activated activities").arg(yearName).arg(count));
 }
 
 void YearsForm::deactivateStudents()
@@ -299,6 +310,9 @@ void YearsForm::deactivateStudents()
 	QString yearName=yearsListWidget->currentItem()->text();
 	int count=gt.rules.deactivateStudents(yearName);
 	QMessageBox::information(this, tr("FET information"), tr("Deactivated a number of %1 activities").arg(count));
+
+	if(count>0)
+		gt.rules.addUndoPoint(tr("Deactivated year %1 (%2 activities).", "%2 is the number of deactivated activities").arg(yearName).arg(count));
 }
 
 void YearsForm::divideYear()
@@ -366,8 +380,12 @@ void YearsForm::comments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
+		QString ocs=studentsSet->comments;
+
 		studentsSet->comments=commentsPT->toPlainText();
-	
+
+		gt.rules.addUndoPoint(tr("Changed the comments for the year %1 from\n%2\nto\n%3.").arg(yearName).arg(ocs).arg(studentsSet->comments));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 

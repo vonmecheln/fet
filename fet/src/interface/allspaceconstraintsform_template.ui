@@ -38,7 +38,7 @@
             <enum>QFrame::Plain</enum>
            </property>
            <property name="text">
-            <string>Constraints</string>
+            <string notr="true">No: 1000 / 1000</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -51,7 +51,7 @@
          <item>
           <widget class="QLabel" name="mSLabel">
            <property name="text">
-            <string comment="The list can have multiple selection. Keep translation short.">Multiple selection</string>
+            <string notr="true">Multiple selection: 1000 / 1000</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>

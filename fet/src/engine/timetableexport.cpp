@@ -75,8 +75,8 @@ using namespace std;
 //std::stable_sort
 #include <algorithm>
 
-//Represents the current status of the simulation - running or stopped.
-//extern bool simulation_running;
+//Represents the current status of the generation - running or stopped.
+//extern bool generation_running;
 
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
@@ -324,7 +324,7 @@ void TimetableExport::getNumberOfPlacedActivities(int& number1, int& number2)
 			number2++;
 }
 
-void TimetableExport::writeSimulationResults(QWidget* parent){
+void TimetableExport::writeGenerationResults(QWidget* parent){
 	QList<int> subgroupsSortedOrder;
 	QList<StudentsSubgroup*> lst;
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++)
@@ -401,7 +401,7 @@ void TimetableExport::writeSimulationResults(QWidget* parent){
 	if(na==gt.rules.nInternalActivities && na==na2){
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
 		if(VERBOSE){
-			cout<<"Since the simulation is complete, FET will write also the timetable data file"<<endl;
+			cout<<"Since the generation is complete, FET will write also the timetable data file"<<endl;
 		}
 		writeTimetableDataFile(parent, s);
 	}
@@ -573,7 +573,7 @@ void TimetableExport::writeSimulationResults(QWidget* parent){
 	activeHashActivityColorBySubjectAndStudents.clear();
 */
 	if(VERBOSE){
-		cout<<"Writing simulation results to disk completed successfully"<<endl;
+		cout<<"Writing the generation results to disk completed successfully"<<endl;
 	}
 }
 
@@ -653,7 +653,7 @@ void TimetableExport::writeHighestStageResults(QWidget* parent){
 	if(na==gt.rules.nInternalActivities && na==na2){
 		s=OUTPUT_DIR_TIMETABLES+FILE_SEP+s2+bar+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
 		if(VERBOSE){
-			cout<<"Since the simulation is complete, FET will write also the timetable data file"<<endl;
+			cout<<"Since the generation is complete, FET will write also the timetable data file"<<endl;
 		}
 		writeTimetableDataFile(parent, s);
 	}
@@ -876,7 +876,11 @@ void TimetableExport::writeRandomSeedFile(QWidget* parent, const MRG32k3a& rng, 
 	QString s=filename;
 
 	QFile file(s);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(s));
 		return;
@@ -1164,7 +1168,7 @@ void TimetableExport::writeTimetableDataFile(QWidget* parent, const QString& fil
 	}
 }
 
-void TimetableExport::writeSimulationResults(QWidget* parent, int n, bool highest){
+void TimetableExport::writeGenerationResults(QWidget* parent, int n, bool highest){
 	QList<int> subgroupsSortedOrder;
 	QList<StudentsSubgroup*> lst;
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++)
@@ -1412,7 +1416,7 @@ void TimetableExport::writeSimulationResults(QWidget* parent, int n, bool highes
 	activeHashActivityColorBySubjectAndStudents.clear();
 */
 	if(VERBOSE){
-		cout<<"Writing multiple simulation results to disk completed successfully"<<endl;
+		cout<<"Writing the multiple generation results to disk completed successfully"<<endl;
 	}
 }
 
@@ -1489,7 +1493,11 @@ void TimetableExport::writeReportForMultiple(QWidget* parent, const QString& des
 	QString filename=destDir+FILE_SEP+QString("report.txt");
 
 	QFile file(filename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::Append)){
+#else
 	if(!file.open(QIODevice::Append)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(filename));
 		return;
@@ -1517,7 +1525,7 @@ void TimetableExport::writeReportForMultiple(QWidget* parent, const QString& des
 	file.close();
 }
 
-void TimetableExport::writeSimulationResultsCommandLine(QWidget* parent, const QString& outputDirectory){ //outputDirectory contains trailing FILE_SEP
+void TimetableExport::writeGenerationResultsCommandLine(QWidget* parent, const QString& outputDirectory){ //outputDirectory contains trailing FILE_SEP
 	QList<int> subgroupsSortedOrder;
 	QList<StudentsSubgroup*> lst;
 	for(int subgroup=0; subgroup<gt.rules.nInternalSubgroups; subgroup++)
@@ -1565,7 +1573,7 @@ void TimetableExport::writeSimulationResultsCommandLine(QWidget* parent, const Q
 	if(na==gt.rules.nInternalActivities && na==na2){
 		QString s=outputDirectory+add+MULTIPLE_TIMETABLE_DATA_RESULTS_FILE;
 		if(VERBOSE){
-			cout<<"Since the simulation is complete, FET will write also the timetable data file"<<endl;
+			cout<<"Since the generation is complete, FET will write also the timetable data file"<<endl;
 		}
 		writeTimetableDataFile(parent, s);
 	}
@@ -1824,7 +1832,11 @@ void TimetableExport::writeConflictsTxt(QWidget* parent, const QString& filename
 	}
 
 	QFile file(filename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(filename));
 		return;
@@ -1889,7 +1901,11 @@ void TimetableExport::writeSubgroupsTimetableXml(QWidget* parent, const QString&
 
 	//Now we print the results to an XML file
 	QFile file(xmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
@@ -1969,7 +1985,11 @@ void TimetableExport::writeTeachersTimetableXml(QWidget* parent, const QString& 
 
 	//Writing the timetable in XML format
 	QFile file(xmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
@@ -2041,7 +2061,11 @@ void TimetableExport::writeActivitiesTimetableXml(QWidget* parent, const QString
 
 	//Writing the timetable in XML format
 	QFile file(xmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(xmlfilename));
 		return;
@@ -2113,7 +2137,11 @@ void TimetableExport::writeIndexHtml(QWidget* parent, const QString& htmlfilenam
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -2478,7 +2506,11 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 
 	//Now we print the results to a CSS file
 	QFile file(cssfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(cssfilename));
 		return;
@@ -2724,7 +2756,11 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent,
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -2786,7 +2822,11 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -2849,7 +2889,11 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -2892,7 +2936,11 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -2935,7 +2983,11 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -2982,7 +3034,11 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* pa
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3029,7 +3085,11 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(QWidget* parent, co
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3089,7 +3149,11 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(QWidget* parent, cons
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3149,7 +3213,11 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(QWidget* parent, cons
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3194,7 +3262,11 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, co
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3238,7 +3310,11 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3285,7 +3361,11 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(QWidget* paren
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3334,7 +3414,11 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(QWidget* parent, con
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3389,7 +3473,11 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(QWidget* parent, const
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3444,7 +3532,11 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(QWidget* parent, const
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3489,7 +3581,11 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3534,7 +3630,11 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3581,7 +3681,11 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3630,7 +3734,11 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(QWidget* par
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3670,7 +3778,11 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(QWidget* paren
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3710,7 +3822,11 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(QWidget* paren
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3752,7 +3868,11 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(QWidget* par
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3794,7 +3914,11 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(QWidget* 
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3839,7 +3963,11 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(QWidget
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3888,7 +4016,11 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(QWidget* parent, 
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3941,7 +4073,11 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(QWidget* parent, co
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -3993,7 +4129,11 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(QWidget* parent, co
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4034,7 +4174,11 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(QWidget* parent, 
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4075,7 +4219,11 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(QWidget* paren
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4121,7 +4269,11 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(QWidget* par
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4168,7 +4320,11 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(QWidget* parent, con
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4224,7 +4380,11 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(QWidget* parent, const
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4282,7 +4442,11 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(QWidget* parent, const
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4328,7 +4492,11 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, con
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4375,7 +4543,11 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4426,7 +4598,11 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(QWidget* parent
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4480,7 +4656,11 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(QWidget* parent, 
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4534,7 +4714,11 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(QWidget* parent, co
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4587,7 +4771,11 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(QWidget* parent, co
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4629,7 +4817,11 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(QWidget* parent, 
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4672,7 +4864,11 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4720,7 +4916,11 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(QWidget* par
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4769,7 +4969,11 @@ void TimetableExport::writeActivityTagsTimetableDaysHorizontalHtml(QWidget* pare
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4827,7 +5031,11 @@ void TimetableExport::writeActivityTagsTimetableDaysVerticalHtml(QWidget* parent
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4884,7 +5092,11 @@ void TimetableExport::writeActivityTagsTimetableTimeVerticalHtml(QWidget* parent
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4926,7 +5138,11 @@ void TimetableExport::writeActivityTagsTimetableTimeHorizontalHtml(QWidget* pare
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -4969,7 +5185,11 @@ void TimetableExport::writeActivityTagsTimetableTimeVerticalDailyHtml(QWidget* p
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -5017,7 +5237,11 @@ void TimetableExport::writeActivityTagsTimetableTimeHorizontalDailyHtml(QWidget*
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -5064,7 +5288,11 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(QWidge
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -5116,7 +5344,11 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(QWidget*
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -5168,7 +5400,11 @@ void TimetableExport::writeTeachersStatisticsHtml(QWidget* parent, const QString
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;
@@ -5208,7 +5444,11 @@ void TimetableExport::writeStudentsStatisticsHtml(QWidget* parent, const QString
 
 	//Now we print the results to an HTML file
 	QFile file(htmlfilename);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::WriteOnly)){
+#else
 	if(!file.open(QIODevice::WriteOnly)){
+#endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
 		 TimetableExport::tr("Cannot open file %1 for writing. Please check your disk's free space. Saving of %1 aborted.").arg(htmlfilename));
 		return;

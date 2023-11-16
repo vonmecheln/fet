@@ -70,12 +70,12 @@ class FetSettings: public QObject{
 	Q_OBJECT
 
 public:
-	void readSimulationParameters();
+	void readGenerationParameters();
 
 public slots:
-	void writeSimulationParameters();
+	void writeGenerationParameters();
 };
-//void writeDefaultSimulationParameters();
+//void writeDefaultGenerationParameters();
 #endif
 
 #ifndef FET_COMMAND_LINE

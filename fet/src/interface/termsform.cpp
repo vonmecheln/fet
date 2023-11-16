@@ -70,19 +70,25 @@ void TermsForm::ok()
 		}
 	}
 	
-	QString s=QString("");
 	if(cnt_mod>0){
+		QString s=QString("");
 		s+=tr("%1 constraints will be modified.", "%1 is the number of constraints").arg(cnt_mod);
-		s+=" ";
-	}
-	s+=tr("Do you want to continue?");
+		s+=QString(" ");
+		s+=tr("Do you want to continue?");
 
-	int res=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::Cancel);
+		int res=QMessageBox::warning(this, tr("FET warning"), s, QMessageBox::Yes|QMessageBox::Cancel);
 	
-	if(res==QMessageBox::Cancel)
-		return;
+		if(res==QMessageBox::Cancel)
+			return;
+	}
 	
+	int oldnt=gt.rules.nTerms;
+	int oldndt=gt.rules.nDaysPerTerm;
+
 	gt.rules.setTerms(numberOfTermsSpinBox->value(), numberOfDaysPerTermSpinBox->value());
+
+	gt.rules.addUndoPoint(tr("The number of terms was changed from %1 to %2.").arg(oldnt).arg(gt.rules.nTerms)
+	  +QString(" ")+tr("The number of days per term was changed from %1 to %2.").arg(oldndt).arg(gt.rules.nDaysPerTerm));
 	
 	this->close();
 }

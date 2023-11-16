@@ -225,12 +225,17 @@ void ModifyConstraintTwoSetsOfActivitiesOrderedForm::ok()
 			tr("Empty list of selected activities in the second set"));
 		return;
 	}
-	
+
+	QString oldcs=this->_ctr->getDetailedDescription(gt.rules);
+
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->firstActivitiesIdsList=this->firstSelectedActivitiesList;
 	this->_ctr->secondActivitiesIdsList=this->secondSelectedActivitiesList;
 	this->_ctr->recomputeActivitiesSets();
 	
+	QString newcs=this->_ctr->getDetailedDescription(gt.rules);
+	gt.rules.addUndoPoint(tr("Modified the constraint:\n\n%1\ninto\n\n%2").arg(oldcs).arg(newcs));
+
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 	

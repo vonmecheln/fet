@@ -84,9 +84,12 @@ void AddConstraintStudentsSetMaxHoursPerAllAfternoonsForm::addCurrentConstraint(
 	ctr=new ConstraintStudentsSetMaxHoursPerAllAfternoons(weight, max_hours, students_name);
 
 	bool tmp2=gt.rules.addTimeConstraint(ctr);
-	if(tmp2)
+	if(tmp2){
 		LongTextMessageBox::information(this, tr("FET information"),
 			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
+
+		gt.rules.addUndoPoint(tr("Added the constraint:\n\n%1").arg(ctr->getDetailedDescription(gt.rules)));
+	}
 	else{
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Constraint NOT added - please report error"));

@@ -2700,7 +2700,7 @@ Version 6.10.0
 	the already existing facility of this type for the activity tags. Suggested by Silver, Drago, xtzetzias, and maybe other users.
 	- Updated the German translation, by Volker Dirr.
 ---------------------------------------------------------------------------------
-Versions 6.11.0 - 6.11.v
+Versions 6.11.0 - 6.11.1
 - Version 6.11.0
 	- In the dialogs of all activities, all time constraints, and all space constraints, the list of activities / time constraints / space constraints
 	is multi-selectable (suggested by T. Renganathan, Yush Yuen, daviodan, Lizio, fartoto_dz2004, Vangelis Karafillidis, and maybe other users).
@@ -2718,3 +2718,13 @@ Versions 6.11.0 - 6.11.v
 	- Improvements in the dialogs of not available times for teachers / students and teachers / students / rooms timetable view time horizontal,
 	the lines separating the days are thicker.
 	- Other minor improvements.
+---------------------------------------------------------------------------------
+Versions 6.12.0 - 6.12.v
+- Version 6.12.0
+	- Added an undo/redo system (actually, the possibility of saving and restoring data states to/from history). Suggested by: Massimo Mancini, uni_instructor,
+	Anthony Siaudeau, Zsolt Udvari, pekuon, and maybe other users. DT had some useful suggestions regarding this new feature.
+	- The confirmation for activating/deactivating activities/time constraints/space constraints can now be disabled (suggested by pnlshd).
+	- The dialogs for activities/all time constraints/all space constraints now contain a count of the selected items (suggested by pnlshd).
+	- Minor improvements.
+	- Updated the Russian translation, by Alexey Chernous.
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares. It is again complete.

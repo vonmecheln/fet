@@ -106,6 +106,8 @@ void AddStudentsYearForm::addStudentsYear()
 			" from this year."
 			*/
 			));
+			
+		gt.rules.addUndoPoint(tr("Added the year %1.").arg(sy->name));
 	}
 
 	nameLineEdit->selectAll();

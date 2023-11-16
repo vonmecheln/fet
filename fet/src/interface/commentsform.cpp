@@ -25,8 +25,8 @@
 
 extern Timetable gt;
 
-extern bool simulation_running;
-extern bool simulation_running_multi;
+extern bool generation_running;
+extern bool generation_running_multi;
 
 CommentsForm::CommentsForm(QWidget* parent): QDialog(parent)
 {
@@ -54,12 +54,17 @@ CommentsForm::~CommentsForm()
 
 void CommentsForm::ok()
 {
-	if(!simulation_running && !simulation_running_multi)
+	if(!generation_running && !generation_running_multi){
+		QString oc=gt.rules.comments;
+	
 		gt.rules.setComments(commentsTextEdit->toPlainText());
+		
+		gt.rules.addUndoPoint(tr("Changed the comments from %1 to %2.").arg(oc).arg(gt.rules.comments));
+	}
 	else{
 		QMessageBox::information(this, tr("FET information"),
-			tr("Cannot update comments during simulation."
-			" Please stop simulation before this"));
+			tr("Cannot update the comments during generation."
+			" Please stop the generation before this."));
 		return;
 	}
 

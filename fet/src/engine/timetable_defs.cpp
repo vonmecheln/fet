@@ -28,6 +28,10 @@ File timetable_defs.cpp
 
 #include <QLocale>
 
+bool USE_UNDO_REDO=true;
+int UNDO_REDO_STEPS=100;
+//int UNDO_REDO_COMPRESSION_LEVEL=-1;
+
 bool checkForUpdates;
 
 QString internetVersion;
@@ -37,7 +41,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 FET version
 */
-const QString FET_VERSION="6.11.1";
+const QString FET_VERSION="6.12.0";
 
 /**
 FET language

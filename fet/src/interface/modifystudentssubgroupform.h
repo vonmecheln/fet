@@ -30,7 +30,7 @@ public:
 //	QString _yearName;
 //	QString _groupName;
 	QString _initialSubgroupName;
-//	int _initialNumberOfStudents;
+	int _initialNumberOfStudents;
 	
 	ModifyStudentsSubgroupForm(QWidget* parent, const QString& yearName, const QString& groupName, const QString& initialSubgroupName, int initialNumberOfStudents);
 	~ModifyStudentsSubgroupForm();

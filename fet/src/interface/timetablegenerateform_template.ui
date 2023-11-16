@@ -35,7 +35,7 @@
     </widget>
    </item>
    <item row="2" column="0" colspan="2">
-    <widget class="QGroupBox" name="stopSimulationAndGroupBox">
+    <widget class="QGroupBox" name="stopTheGenerationAndGroupBox">
      <property name="title">
       <string>Stop the generation and...</string>
      </property>
@@ -64,9 +64,9 @@
     </widget>
    </item>
    <item row="3" column="0" colspan="2">
-    <widget class="QGroupBox" name="withoutStoppingTheSimulationGroupBox">
+    <widget class="QGroupBox" name="withoutStoppingTheGenerationGroupBox">
      <property name="title">
-      <string extracomment="This is the title of a group box with more buttons, and all buttons do their function without stopping the simulation">Without stopping the generation</string>
+      <string extracomment="This is the title of a group box with more buttons, and all the buttons do their function without stopping the generation">Without stopping the generation</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">

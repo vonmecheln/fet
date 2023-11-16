@@ -176,11 +176,17 @@ void ModifyGroupActivitiesInInitialOrderItemForm::ok()
 			tr("Only one selected activity"));
 		return;
 	}
+	
+	QString od=_item->getDetailedDescription(gt.rules);
 
 	QList<int> ids=selectedActivitiesList;
 	
 	_item->ids=ids;
 	_item->recomputeActivitiesSet();
+
+	QString nd=_item->getDetailedDescription(gt.rules);
+	
+	gt.rules.addUndoPoint(tr("Modified the 'group activities in the initial order' item from\n\n%1\ninto\n\n%2").arg(od).arg(nd));
 	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

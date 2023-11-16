@@ -30,6 +30,11 @@ class Rules;
 
 typedef QList<Subject*> SubjectsList;
 
+class QDataStream;
+
+QDataStream& operator<<(QDataStream& stream, const Subject& sbj);
+QDataStream& operator>>(QDataStream& stream, Subject& sbj);
+
 /**
 This class represents a subject
 

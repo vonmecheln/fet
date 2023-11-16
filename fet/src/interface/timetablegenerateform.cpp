@@ -64,8 +64,8 @@
 
 //QSemaphore finishedSemaphore;
 
-//Represents the current status of the simulation - running or stopped.
-extern bool simulation_running;
+//Represents the current status of the generation - running or stopped.
+extern bool generation_running;
 
 //extern bool students_schedule_ready;
 //extern bool teachers_schedule_ready;
@@ -101,7 +101,7 @@ void runSingle()
 	const int INF=2000000000;
 	bool impossible, timeExceeded;
 
-	gen.semaphorePlacedActivity.tryAcquire(); //this has effect after stopping the simulation or impossible to solve
+	gen.semaphorePlacedActivity.tryAcquire(); //this has effect after stopping the generation or if the timetable is impossible to solve
 	assert(gen.semaphorePlacedActivity.available()==0);
 	assert(gen.semaphoreFinished.available()==0);
 	gen.generateWithSemaphore(INF, impossible, timeExceeded, true); //true means threaded
@@ -126,7 +126,7 @@ TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)
 	centerWidgetOnScreen(this);
 	restoreFETDialogGeometry(this);
 	
-	simulation_running=false;
+	generation_running=false;
 
 	startPushButton->setDefault(true);
 
@@ -140,14 +140,14 @@ TimetableGenerateForm::TimetableGenerateForm(QWidget* parent): QDialog(parent)
 	seeInitialOrderPushButton->setDisabled(true);
 
 	connect(&gen, SIGNAL(activityPlaced(int, int)), this, SLOT(activityPlaced(int, int)));
-	connect(&gen, SIGNAL(simulationFinished()), this, SLOT(simulationFinished()));
+	connect(&gen, SIGNAL(generationFinished()), this, SLOT(generationFinished()));
 	connect(&gen, SIGNAL(impossibleToSolve()), this, SLOT(impossibleToSolve()));
 }
 
 TimetableGenerateForm::~TimetableGenerateForm()
 {
 	saveFETDialogGeometry(this);
-	if(simulation_running)
+	if(generation_running)
 		this->stop();
 		
 	/*for(QProcess* myProcess : std::as_const(commandProcesses))
@@ -170,13 +170,13 @@ void TimetableGenerateForm::start(){
 
 	if(!gt.rules.initialized || gt.rules.activitiesList.isEmpty()){
 		QMessageBox::critical(this, TimetableGenerateForm::tr("FET information"),
-			TimetableGenerateForm::tr("You have entered simulation with uninitialized rules or 0 activities...aborting"));
+			TimetableGenerateForm::tr("You have entered the generation with uninitialized rules or 0 activities...aborting"));
 		assert(0);
 		exit(1);
 		return;
 	}
 
-	currentResultsTextEdit->setPlainText(TimetableGenerateForm::tr("Entering simulation ... precomputing, please be patient"));
+	currentResultsTextEdit->setPlainText(TimetableGenerateForm::tr("Entering generation ... precomputing, please be patient"));
 
 	gen.abortOptimization=false;
 	bool ok=gen.precompute(this);
@@ -200,7 +200,7 @@ void TimetableGenerateForm::start(){
 	seeImpossiblePushButton->setEnabled(true);
 	seeInitialOrderPushButton->setEnabled(true);
 
-	simulation_running=true;
+	generation_running=true;
 	
 	gen.c.makeUnallocated(gt.rules);
 	
@@ -214,11 +214,11 @@ void TimetableGenerateForm::start(){
 
 void TimetableGenerateForm::stop()
 {
-	if(!simulation_running){
+	if(!generation_running){
 		return;
 	}
 
-	simulation_running=false;
+	generation_running=false;
 
 	//gen.myMutex.lock();
 	gen.abortOptimization=true;
@@ -261,10 +261,10 @@ void TimetableGenerateForm::stop()
 	
 	updateAllTimetableViewDialogs();
 
-	TimetableExport::writeSimulationResults(this);
+	TimetableExport::writeGenerationResults(this);
 
-	QString s=TimetableGenerateForm::tr("Simulation interrupted! FET could not find a timetable."
-	 " Maybe you can consider lowering the constraints.");
+	QString s=TimetableGenerateForm::tr("Generation interrupted! FET could not find a timetable."
+	 " Maybe you can consider relaxing the constraints.");
 
 	s+=" ";
 	
@@ -382,11 +382,11 @@ void TimetableGenerateForm::stop()
 
 void TimetableGenerateForm::stopHighest()
 {
-	if(!simulation_running){
+	if(!generation_running){
 		return;
 	}
 
-	simulation_running=false;
+	generation_running=false;
 
 	//gen.myMutex.lock();
 	gen.abortOptimization=true;
@@ -431,8 +431,8 @@ void TimetableGenerateForm::stopHighest()
 
 	TimetableExport::writeHighestStageResults(this);
 
-	QString s=TimetableGenerateForm::tr("Simulation interrupted! FET could not find a timetable."
-	 " Maybe you can consider lowering the constraints.");
+	QString s=TimetableGenerateForm::tr("Generation interrupted! FET could not find a timetable."
+	 " Maybe you can consider relaxing the constraints.");
 
 	s+=" ";
 	
@@ -527,11 +527,11 @@ void TimetableGenerateForm::stopHighest()
 
 void TimetableGenerateForm::impossibleToSolve()
 {
-	if(!simulation_running){
+	if(!generation_running){
 		return;
 	}
 
-	simulation_running=false;
+	generation_running=false;
 
 	//gen.myMutex.lock();
 	gen.abortOptimization=true;
@@ -574,9 +574,9 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	updateAllTimetableViewDialogs();
 
-	TimetableExport::writeSimulationResults(this);
+	TimetableExport::writeGenerationResults(this);
 
-	QString s=TimetableGenerateForm::tr("Simulation impossible! Maybe you can consider lowering the constraints.");
+	QString s=TimetableGenerateForm::tr("Generation impossible! Maybe you can consider relaxing the constraints.");
 
 	s+=" ";
 
@@ -690,13 +690,13 @@ void TimetableGenerateForm::impossibleToSolve()
 	//	singleThread.join();
 }
 
-void TimetableGenerateForm::simulationFinished()
+void TimetableGenerateForm::generationFinished()
 {
-	if(!simulation_running){
+	if(!generation_running){
 		return;
 	}
 
-	simulation_running=false;
+	generation_running=false;
 
 	//QCoreApplication::sendPostedEvents();
 	//gen.semaphorePlacedActivity.release();
@@ -742,7 +742,7 @@ void TimetableGenerateForm::simulationFinished()
 
 	updateAllTimetableViewDialogs();
 
-	TimetableExport::writeSimulationResults(this);
+	TimetableExport::writeGenerationResults(this);
 
 	QString kk;
 	kk=FILE_SEP;
@@ -757,11 +757,11 @@ void TimetableGenerateForm::simulationFinished()
 	kk.append("-single");
 
 /*	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
-		TimetableGenerateForm::tr("Allocation terminated successfully, remaining %1 weighted"
+		TimetableGenerateForm::tr("Generation finished successfully, remaining %1 weighted"
 		" soft conflicts from constraints with weight percentage lower than 100%"
 		" (see menu Timetable/Show soft conflicts or the text file in"
 		" the output directory for details)."
-		"\n\nSimulation results should be now written. You may check now Timetable/View."
+		"\n\nGeneration results should be now written. You may check now Timetable/View."
 		" The results are also saved in the directory %2 in"
 		" HTML and XML mode and the soft conflicts in txt mode").arg(c.conflictsTotal).arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk))
 		+". "+tr("Data+timetable is saved as a .fet data file (with activities locked by constraints)"
@@ -972,7 +972,7 @@ void TimetableGenerateForm::write(){
 
 	updateAllTimetableViewDialogs();
 
-	TimetableExport::writeSimulationResults(this);
+	TimetableExport::writeGenerationResults(this);
 
 	gen.myMutex.unlock();
 
@@ -989,7 +989,7 @@ void TimetableGenerateForm::write(){
 	kk.append("-single");
 
 	QMessageBox::information(this, TimetableGenerateForm::tr("FET information"),
-		TimetableGenerateForm::tr("Simulation results should now be written in the directory %1 in HTML and XML mode"
+		TimetableGenerateForm::tr("The generation results should now be written in the directory %1 in HTML and XML mode"
 		" and the conflicts in txt mode").arg(QDir::toNativeSeparators(OUTPUT_DIR+FILE_SEP+"timetables"+kk)));
 }
 
@@ -1051,7 +1051,7 @@ void TimetableGenerateForm::closePressed()
 	//	singleThread.join();
 	//if(!generateThread.isRunning())
 
-	if(!simulation_running)
+	if(!generation_running)
 	//if(!singleThread.joinable())
 		this->close();
 }

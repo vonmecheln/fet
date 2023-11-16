@@ -1128,12 +1128,12 @@ the teacher from list of teachers) or on students groups basis (always from
 a list) The lists are mentained from subsequent generations and saved with
 data.
 
-58---------------------------------------------------------
+58-----------DONE in FET-6.12.0 on 3 November 2023---------
 (see also items #149, #368, and #396)
 From Massimo Mancini:
 
 I have another suggestion: an history file where you record all the actions
-of the timetabler and theirs effects. If the history was visible in a a frame
+of the timetabler and theirs effects. If the history was visible in a frame
 in the View timetable forms, I would see scroll the messages without interruption
 and with the opportunity to review them (please don't answer that is too
 complicated... you can use a tab widget, a tab for the current situation
@@ -1276,7 +1276,7 @@ Frans:
 
 I understand what you say, but I am not talking about deactivating activities.  In my case however I had to deactivate a complete studens set and this one can only do from the data menu. In other words everything for a students set must be deactivated.
 
-Studens go out to work in private practice for a few months. During that period they are not on campus and everythig must therefore be deactivated as another students set takes their place and must be scheduled.
+Studens go out to work in private practice for a few months. During that period they are not on campus and everything must therefore be deactivated as another students set takes their place and must be scheduled.
 
 If it was possible to deactivate everything only when one uses the data menu.
 
@@ -2392,7 +2392,7 @@ So I want to avoid those two hour lessons for all 1+1+1+1 and 1+1+1 and 1+1 acti
 
 Liviu Lalescu: I think the best is a new constraint, students/teachers max building changes in a time interval, and each room is in a different building in your case.
 
-149---------------------------------------------------------
+149---------DONE in FET-6.12.0 on 3 November 2023-----------
 (see also items #58, #368, and #396)
 From uni_instructor (on forum):
 
@@ -6258,7 +6258,7 @@ I understand the risks for soft users. Is it possible to add in advanced setting
 Liviu Lalescu: since FET-6.8.0 (2023-01-08) it is possible to activate/deactivate all the listed time/space constraints and activities. There is also
 an advanced filter there (for the time/space constraints available since a long time now, for activities starting with this FET version).
 
-368---------------------------------------------------------
+368-----------DONE in FET-6.12.0 on 3 November 2023---------
 (see also items #58, #149, and #396)
 From Anthony Siaudeau:
 
@@ -6598,7 +6598,7 @@ the feature of assigning teachers automatically.
 
 This way the official FET can be used for both regular as well as exam timetables.
 
-396---------------------------------------------------------
+396----------DONE in FET-6.12.0 on 3 November 2023----------
 (see also items #58, #149, and #368)
 From uni_instructor (on forum):
 
@@ -8919,7 +8919,7 @@ From Volker Dirr:
 
 Merge the "single" type and "all" type of constraints into a single dialog (instead of two).
 
-523---------------------------------------------------------
+523------DONE in FET-6.12.0 on 3 November 2023--------------
 From pekuon (on forum):
 
 https://lalescu.ro/liviu/fet/forum/index.php?topic=5712.msg31594#msg31594
@@ -8938,3 +8938,34 @@ Is there a way to control the order that the lessons appear on the printout of t
 From Vangelis Karafillidis:
 
 Automatic saving of the .fet data file every say 3 minutes.
+
+526---------------------------------------------------------
+From Vũ Ngọc Thành (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5755.0
+
+What should I do if i want max Activity tag = 1 from selection?
+
+(in a table n_days x n_hours, he selected with X two slots.)
+
+---
+
+I have Two sets of activities:
+Activity 1 with: id1,id2,id3,id4,id5
+Activity 2 with: id6,id7,id8,id9,id10
+I want to put only 1 activities in there
+
+---
+
+I have Two sets of activities:
+sets of activities 1 with: id=1,id=2,id=3,id=4,id=5
+sets of activities 2 with: id=6,id=7,id=8,id=9,id=10
+I want to choose 1 set of activities for 2 lecture periods as shown in the picture.
+
+---
+
+Liviu Lalescu: So in the two slots selected with X there can be at most one activity tag?
+
+---
+
+Vũ Ngọc Thành: Thank you for understanding my thoughts correctly. I find this constraint does a lot of good for scheduling.

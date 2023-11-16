@@ -347,6 +347,8 @@ const int CONSTRAINT_STUDENTS_SET_MIN_HOURS_PER_AFTERNOON							=202;
 
 const int CONSTRAINT_ACTIVITIES_MAX_HOURLY_SPAN										=203;
 
+class QDataStream;
+
 QString getActivityDetailedDescription(Rules& r, int id);
 
 /**
@@ -10388,5 +10390,819 @@ public:
 	bool canRepairWrongDayOrHour(Rules& r);
 	bool repairWrongDayOrHour(Rules& r);
 };
+
+//1
+QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsoryTime& tc);
+//2
+QDataStream& operator<<(QDataStream& stream, const ConstraintBreakTimes& tc);
+//3
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherNotAvailableTimes& tc);
+//4
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxHoursDaily& tc);
+//5
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxDaysPerWeek& tc);
+//6
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxGapsPerWeek& tc);
+//7
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxGapsPerWeek& tc);
+//8
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxHoursDaily& tc);
+//9
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxHoursContinuously& tc);
+//10
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxHoursContinuously& tc);
+//11
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinHoursDaily& tc);
+//12
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinHoursDaily& tc);
+//13
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxGapsPerDay& tc);
+//14
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxGapsPerDay& tc);
+//15
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsEarlyMaxBeginningsAtSecondHour& tc);
+//16
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour& tc);
+//17
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetNotAvailableTimes& tc);
+//18
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxGapsPerWeek& tc);
+//19
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxGapsPerWeek& tc);
+//20
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxHoursDaily& tc);
+//21
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxHoursDaily& tc);
+//22
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxHoursContinuously& tc);
+//23
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxHoursContinuously& tc);
+//24
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinHoursDaily& tc);
+//25
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinHoursDaily& tc);
+//26
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityEndsStudentsDay& tc);
+//27
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityPreferredStartingTime& tc);
+//28
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesSameStartingTime& tc);
+//29
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesNotOverlapping& tc);
+//30
+QDataStream& operator<<(QDataStream& stream, const ConstraintMinDaysBetweenActivities& tc);
+//31
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityPreferredTimeSlots& tc);
+//32
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesPreferredTimeSlots& tc);
+//33
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityPreferredStartingTimes& tc);
+//34
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesPreferredStartingTimes& tc);
+//35
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesSameStartingHour& tc);
+//36
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesSameStartingDay& tc);
+//37
+QDataStream& operator<<(QDataStream& stream, const ConstraintTwoActivitiesConsecutive& tc);
+//38
+QDataStream& operator<<(QDataStream& stream, const ConstraintTwoActivitiesOrdered& tc);
+//39
+QDataStream& operator<<(QDataStream& stream, const ConstraintMinGapsBetweenActivities& tc);
+//40
+QDataStream& operator<<(QDataStream& stream, const ConstraintSubactivitiesPreferredTimeSlots& tc);
+//41
+QDataStream& operator<<(QDataStream& stream, const ConstraintSubactivitiesPreferredStartingTimes& tc);
+//42
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherIntervalMaxDaysPerWeek& tc);
+//43
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersIntervalMaxDaysPerWeek& tc);
+//44
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetIntervalMaxDaysPerWeek& tc);
+//45
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsIntervalMaxDaysPerWeek& tc);
+//46
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesEndStudentsDay& tc);
+//47
+QDataStream& operator<<(QDataStream& stream, const ConstraintTwoActivitiesGrouped& tc);
+//48
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersActivityTagMaxHoursContinuously& tc);
+//49
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherActivityTagMaxHoursContinuously& tc);
+//50
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsActivityTagMaxHoursContinuously& tc);
+//51
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetActivityTagMaxHoursContinuously& tc);
+//52
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxDaysPerWeek& tc);
+//53
+QDataStream& operator<<(QDataStream& stream, const ConstraintThreeActivitiesGrouped& tc);
+//54
+QDataStream& operator<<(QDataStream& stream, const ConstraintMaxDaysBetweenActivities& tc);
+//55
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinDaysPerWeek& tc);
+//56
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinDaysPerWeek& tc);
+//57
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersActivityTagMaxHoursDaily& tc);
+//58
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherActivityTagMaxHoursDaily& tc);
+//59
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsActivityTagMaxHoursDaily& tc);
+//60
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetActivityTagMaxHoursDaily& tc);
+//61
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxGapsPerDay& tc);
+//62
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxGapsPerDay& tc);
+//63
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesOccupyMaxTimeSlotsFromSelection& tc);
+//64
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots& tc);
+//65
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxDaysPerWeek& tc);
+//66
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxDaysPerWeek& tc);
+//67
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxSpanPerDay& tc);
+//68
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxSpanPerDay& tc);
+//69
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinRestingHours& tc);
+//70
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinRestingHours& tc);
+//71
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxSpanPerDay& tc);
+//72
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxSpanPerDay& tc);
+//73
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinRestingHours& tc);
+//74
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinRestingHours& tc);
+//75
+QDataStream& operator<<(QDataStream& stream, const ConstraintTwoActivitiesOrderedIfSameDay& tc);
+//76
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags& tc);
+//77
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags& tc);
+//78
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags& tc);
+//79
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags& tc);
+//80
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityTagsNotOverlapping& tc);
+//81
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesOccupyMinTimeSlotsFromSelection& tc);
+//82
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMinSimultaneousInSelectedTimeSlots& tc);
+//83
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersActivityTagMinHoursDaily& tc);
+//84
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherActivityTagMinHoursDaily& tc);
+//85
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsActivityTagMinHoursDaily& tc);
+//86
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetActivityTagMinHoursDaily& tc);
+//87
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityEndsTeachersDay& tc);
+//88
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesEndTeachersDay& tc);
+//89
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxHoursDailyRealDays& tc);
+//90
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxRealDaysPerWeek& tc);
+//91
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxHoursDailyRealDays& tc);
+//92
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxHoursDailyRealDays& tc);
+//93
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxHoursDailyRealDays& tc);
+//94
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxRealDaysPerWeek& tc);
+//95
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinRealDaysPerWeek& tc);
+//96
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinRealDaysPerWeek& tc);
+//97
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersActivityTagMaxHoursDailyRealDays& tc);
+//98
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherActivityTagMaxHoursDailyRealDays& tc);
+//99
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsActivityTagMaxHoursDailyRealDays& tc);
+//100
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetActivityTagMaxHoursDailyRealDays& tc);
+//101
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxAfternoonsPerWeek& tc);
+//102
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxAfternoonsPerWeek& tc);
+//103
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxMorningsPerWeek& tc);
+//104
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxMorningsPerWeek& tc);
+//105
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+//106
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+//107
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinMorningsPerWeek& tc);
+//108
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinMorningsPerWeek& tc);
+//109
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinAfternoonsPerWeek& tc);
+//110
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinAfternoonsPerWeek& tc);
+//111
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxTwoConsecutiveMornings& tc);
+//112
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxTwoConsecutiveMornings& tc);
+//113
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxTwoConsecutiveAfternoons& tc);
+//114
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxTwoConsecutiveAfternoons& tc);
+//115
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxGapsPerRealDay& tc);
+//116
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxGapsPerRealDay& tc);
+//117
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxGapsPerRealDay& tc);
+//118
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxGapsPerRealDay& tc);
+//119
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinHoursDailyRealDays& tc);
+//120
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinHoursDailyRealDays& tc);
+//121
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour& tc);
+//122
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour& tc);
+//123
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinHoursPerMorning& tc);
+//124
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinHoursPerMorning& tc);
+//125
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxSpanPerRealDay& tc);
+//126
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxSpanPerRealDay& tc);
+//127
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxSpanPerRealDay& tc);
+//128
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxSpanPerRealDay& tc);
+//129
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMorningIntervalMaxDaysPerWeek& tc);
+//130
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMorningIntervalMaxDaysPerWeek& tc);
+//131
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherAfternoonIntervalMaxDaysPerWeek& tc);
+//132
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersAfternoonIntervalMaxDaysPerWeek& tc);
+//133
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinHoursPerMorning& tc);
+//134
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinHoursPerMorning& tc);
+//135
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxZeroGapsPerAfternoon& tc);
+//136
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxZeroGapsPerAfternoon& tc);
+//137
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxAfternoonsPerWeek& tc);
+//138
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxAfternoonsPerWeek& tc);
+//139
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxMorningsPerWeek& tc);
+//140
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxMorningsPerWeek& tc);
+//141
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinMorningsPerWeek& tc);
+//142
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinMorningsPerWeek& tc);
+//143
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinAfternoonsPerWeek& tc);
+//144
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinAfternoonsPerWeek& tc);
+//145
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMorningIntervalMaxDaysPerWeek& tc);
+//146
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMorningIntervalMaxDaysPerWeek& tc);
+//147
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek& tc);
+//148
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsAfternoonIntervalMaxDaysPerWeek& tc);
+//149
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxHoursPerAllAfternoons& tc);
+//150
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxHoursPerAllAfternoons& tc);
+//151
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxHoursPerAllAfternoons& tc);
+//152
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxHoursPerAllAfternoons& tc);
+//153
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon& tc);
+//154
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon& tc);
+//155
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon& tc);
+//156
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon& tc);
+//157
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour& tc);
+//158
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour& tc);
+//159
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxGapsPerWeekForRealDays& tc);
+//160
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxGapsPerWeekForRealDays& tc);
+//161
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxGapsPerWeekForRealDays& tc);
+//162
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxGapsPerWeekForRealDays& tc);
+//163
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxRealDaysPerWeek& tc);
+//164
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxRealDaysPerWeek& tc);
+//165
+QDataStream& operator<<(QDataStream& stream, const ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots& tc);
+//166
+QDataStream& operator<<(QDataStream& stream, const ConstraintMaxGapsBetweenActivities& tc);
+//167
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMaxInATerm& tc);
+//168
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesOccupyMaxTerms& tc);
+//169
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxGapsPerMorningAndAfternoon& tc);
+//170
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxGapsPerMorningAndAfternoon& tc);
+//171
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour& tc);
+//172
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour& tc);
+//173
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour& tc);
+//174
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour& tc);
+//175
+QDataStream& operator<<(QDataStream& stream, const ConstraintTwoSetsOfActivitiesOrdered& tc);
+//176
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxThreeConsecutiveDays& tc);
+//177
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxThreeConsecutiveDays& tc);
+//178
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinGapsBetweenActivityTag& tc);
+//179
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinGapsBetweenActivityTag& tc);
+//180
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinGapsBetweenActivityTag& tc);
+//181
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinGapsBetweenActivityTag& tc);
+//182
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxThreeConsecutiveDays& tc);
+//183
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxThreeConsecutiveDays& tc);
+//184
+QDataStream& operator<<(QDataStream& stream, const ConstraintMinHalfDaysBetweenActivities& tc);
+//185
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityPreferredDay& tc);
+//186
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMinInATerm& tc);
+//187
+QDataStream& operator<<(QDataStream& stream, const ConstraintMaxTermsBetweenActivities& tc);
+//188
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+//189
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+//190
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+//191
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+//192
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+//193
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+//194
+QDataStream& operator<<(QDataStream& stream, const ConstraintMaxHalfDaysBetweenActivities& tc);
+//195
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityBeginsStudentsDay& tc);
+//196
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesBeginStudentsDay& tc);
+//197
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityBeginsTeachersDay& tc);
+//198
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesBeginTeachersDay& tc);
+//199
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinHoursPerAfternoon& tc);
+//200
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinHoursPerAfternoon& tc);
+//201
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinHoursPerAfternoon& tc);
+//202
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinHoursPerAfternoon& tc);
+//203
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMaxHourlySpan& tc);
+
+//1
+QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc);
+//2
+QDataStream& operator>>(QDataStream& stream, ConstraintBreakTimes& tc);
+//3
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherNotAvailableTimes& tc);
+//4
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxHoursDaily& tc);
+//5
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxDaysPerWeek& tc);
+//6
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxGapsPerWeek& tc);
+//7
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxGapsPerWeek& tc);
+//8
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxHoursDaily& tc);
+//9
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxHoursContinuously& tc);
+//10
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxHoursContinuously& tc);
+//11
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinHoursDaily& tc);
+//12
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinHoursDaily& tc);
+//13
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxGapsPerDay& tc);
+//14
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxGapsPerDay& tc);
+//15
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsEarlyMaxBeginningsAtSecondHour& tc);
+//16
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour& tc);
+//17
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetNotAvailableTimes& tc);
+//18
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxGapsPerWeek& tc);
+//19
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxGapsPerWeek& tc);
+//20
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxHoursDaily& tc);
+//21
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxHoursDaily& tc);
+//22
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxHoursContinuously& tc);
+//23
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxHoursContinuously& tc);
+//24
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinHoursDaily& tc);
+//25
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinHoursDaily& tc);
+//26
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityEndsStudentsDay& tc);
+//27
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityPreferredStartingTime& tc);
+//28
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesSameStartingTime& tc);
+//29
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesNotOverlapping& tc);
+//30
+QDataStream& operator>>(QDataStream& stream, ConstraintMinDaysBetweenActivities& tc);
+//31
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityPreferredTimeSlots& tc);
+//32
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesPreferredTimeSlots& tc);
+//33
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityPreferredStartingTimes& tc);
+//34
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesPreferredStartingTimes& tc);
+//35
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesSameStartingHour& tc);
+//36
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesSameStartingDay& tc);
+//37
+QDataStream& operator>>(QDataStream& stream, ConstraintTwoActivitiesConsecutive& tc);
+//38
+QDataStream& operator>>(QDataStream& stream, ConstraintTwoActivitiesOrdered& tc);
+//39
+QDataStream& operator>>(QDataStream& stream, ConstraintMinGapsBetweenActivities& tc);
+//40
+QDataStream& operator>>(QDataStream& stream, ConstraintSubactivitiesPreferredTimeSlots& tc);
+//41
+QDataStream& operator>>(QDataStream& stream, ConstraintSubactivitiesPreferredStartingTimes& tc);
+//42
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherIntervalMaxDaysPerWeek& tc);
+//43
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersIntervalMaxDaysPerWeek& tc);
+//44
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetIntervalMaxDaysPerWeek& tc);
+//45
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsIntervalMaxDaysPerWeek& tc);
+//46
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesEndStudentsDay& tc);
+//47
+QDataStream& operator>>(QDataStream& stream, ConstraintTwoActivitiesGrouped& tc);
+//48
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersActivityTagMaxHoursContinuously& tc);
+//49
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherActivityTagMaxHoursContinuously& tc);
+//50
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsActivityTagMaxHoursContinuously& tc);
+//51
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetActivityTagMaxHoursContinuously& tc);
+//52
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxDaysPerWeek& tc);
+//53
+QDataStream& operator>>(QDataStream& stream, ConstraintThreeActivitiesGrouped& tc);
+//54
+QDataStream& operator>>(QDataStream& stream, ConstraintMaxDaysBetweenActivities& tc);
+//55
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinDaysPerWeek& tc);
+//56
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinDaysPerWeek& tc);
+//57
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersActivityTagMaxHoursDaily& tc);
+//58
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherActivityTagMaxHoursDaily& tc);
+//59
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsActivityTagMaxHoursDaily& tc);
+//60
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetActivityTagMaxHoursDaily& tc);
+//61
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxGapsPerDay& tc);
+//62
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxGapsPerDay& tc);
+//63
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesOccupyMaxTimeSlotsFromSelection& tc);
+//64
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots& tc);
+//65
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxDaysPerWeek& tc);
+//66
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxDaysPerWeek& tc);
+//67
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxSpanPerDay& tc);
+//68
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxSpanPerDay& tc);
+//69
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinRestingHours& tc);
+//70
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinRestingHours& tc);
+//71
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxSpanPerDay& tc);
+//72
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxSpanPerDay& tc);
+//73
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinRestingHours& tc);
+//74
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinRestingHours& tc);
+//75
+QDataStream& operator>>(QDataStream& stream, ConstraintTwoActivitiesOrderedIfSameDay& tc);
+//76
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags& tc);
+//77
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags& tc);
+//78
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags& tc);
+//79
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags& tc);
+//80
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityTagsNotOverlapping& tc);
+//81
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesOccupyMinTimeSlotsFromSelection& tc);
+//82
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMinSimultaneousInSelectedTimeSlots& tc);
+//83
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersActivityTagMinHoursDaily& tc);
+//84
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherActivityTagMinHoursDaily& tc);
+//85
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsActivityTagMinHoursDaily& tc);
+//86
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetActivityTagMinHoursDaily& tc);
+//87
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityEndsTeachersDay& tc);
+//88
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesEndTeachersDay& tc);
+//89
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxHoursDailyRealDays& tc);
+//90
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxRealDaysPerWeek& tc);
+//91
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxHoursDailyRealDays& tc);
+//92
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxHoursDailyRealDays& tc);
+//93
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxHoursDailyRealDays& tc);
+//94
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxRealDaysPerWeek& tc);
+//95
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinRealDaysPerWeek& tc);
+//96
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinRealDaysPerWeek& tc);
+//97
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersActivityTagMaxHoursDailyRealDays& tc);
+//98
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherActivityTagMaxHoursDailyRealDays& tc);
+//99
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsActivityTagMaxHoursDailyRealDays& tc);
+//100
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetActivityTagMaxHoursDailyRealDays& tc);
+//101
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxAfternoonsPerWeek& tc);
+//102
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxAfternoonsPerWeek& tc);
+//103
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxMorningsPerWeek& tc);
+//104
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxMorningsPerWeek& tc);
+//105
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+//106
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+//107
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinMorningsPerWeek& tc);
+//108
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinMorningsPerWeek& tc);
+//109
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinAfternoonsPerWeek& tc);
+//110
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinAfternoonsPerWeek& tc);
+//111
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxTwoConsecutiveMornings& tc);
+//112
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxTwoConsecutiveMornings& tc);
+//113
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxTwoConsecutiveAfternoons& tc);
+//114
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxTwoConsecutiveAfternoons& tc);
+//115
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxGapsPerRealDay& tc);
+//116
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxGapsPerRealDay& tc);
+//117
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxGapsPerRealDay& tc);
+//118
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxGapsPerRealDay& tc);
+//119
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinHoursDailyRealDays& tc);
+//120
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinHoursDailyRealDays& tc);
+//121
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour& tc);
+//122
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour& tc);
+//123
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinHoursPerMorning& tc);
+//124
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinHoursPerMorning& tc);
+//125
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxSpanPerRealDay& tc);
+//126
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxSpanPerRealDay& tc);
+//127
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxSpanPerRealDay& tc);
+//128
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxSpanPerRealDay& tc);
+//129
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMorningIntervalMaxDaysPerWeek& tc);
+//130
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMorningIntervalMaxDaysPerWeek& tc);
+//131
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherAfternoonIntervalMaxDaysPerWeek& tc);
+//132
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersAfternoonIntervalMaxDaysPerWeek& tc);
+//133
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinHoursPerMorning& tc);
+//134
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinHoursPerMorning& tc);
+//135
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxZeroGapsPerAfternoon& tc);
+//136
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxZeroGapsPerAfternoon& tc);
+//137
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxAfternoonsPerWeek& tc);
+//138
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxAfternoonsPerWeek& tc);
+//139
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxMorningsPerWeek& tc);
+//140
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxMorningsPerWeek& tc);
+//141
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinMorningsPerWeek& tc);
+//142
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinMorningsPerWeek& tc);
+//143
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinAfternoonsPerWeek& tc);
+//144
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinAfternoonsPerWeek& tc);
+//145
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMorningIntervalMaxDaysPerWeek& tc);
+//146
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMorningIntervalMaxDaysPerWeek& tc);
+//147
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek& tc);
+//148
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsAfternoonIntervalMaxDaysPerWeek& tc);
+//149
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxHoursPerAllAfternoons& tc);
+//150
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxHoursPerAllAfternoons& tc);
+//151
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxHoursPerAllAfternoons& tc);
+//152
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxHoursPerAllAfternoons& tc);
+//153
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon& tc);
+//154
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon& tc);
+//155
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon& tc);
+//156
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon& tc);
+//157
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour& tc);
+//158
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour& tc);
+//159
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxGapsPerWeekForRealDays& tc);
+//160
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxGapsPerWeekForRealDays& tc);
+//161
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxGapsPerWeekForRealDays& tc);
+//162
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxGapsPerWeekForRealDays& tc);
+//163
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxRealDaysPerWeek& tc);
+//164
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxRealDaysPerWeek& tc);
+//165
+QDataStream& operator>>(QDataStream& stream, ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots& tc);
+//166
+QDataStream& operator>>(QDataStream& stream, ConstraintMaxGapsBetweenActivities& tc);
+//167
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxInATerm& tc);
+//168
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesOccupyMaxTerms& tc);
+//169
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxGapsPerMorningAndAfternoon& tc);
+//170
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxGapsPerMorningAndAfternoon& tc);
+//171
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour& tc);
+//172
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour& tc);
+//173
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour& tc);
+//174
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour& tc);
+//175
+QDataStream& operator>>(QDataStream& stream, ConstraintTwoSetsOfActivitiesOrdered& tc);
+//176
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxThreeConsecutiveDays& tc);
+//177
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxThreeConsecutiveDays& tc);
+//178
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinGapsBetweenActivityTag& tc);
+//179
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinGapsBetweenActivityTag& tc);
+//180
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinGapsBetweenActivityTag& tc);
+//181
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinGapsBetweenActivityTag& tc);
+//182
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxThreeConsecutiveDays& tc);
+//183
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxThreeConsecutiveDays& tc);
+//184
+QDataStream& operator>>(QDataStream& stream, ConstraintMinHalfDaysBetweenActivities& tc);
+//185
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityPreferredDay& tc);
+//186
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMinInATerm& tc);
+//187
+QDataStream& operator>>(QDataStream& stream, ConstraintMaxTermsBetweenActivities& tc);
+//188
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+//189
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3& tc);
+//190
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+//191
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+//192
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+//193
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3& tc);
+//194
+QDataStream& operator>>(QDataStream& stream, ConstraintMaxHalfDaysBetweenActivities& tc);
+//195
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityBeginsStudentsDay& tc);
+//196
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesBeginStudentsDay& tc);
+//197
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityBeginsTeachersDay& tc);
+//198
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesBeginTeachersDay& tc);
+//199
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinHoursPerAfternoon& tc);
+//200
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinHoursPerAfternoon& tc);
+//201
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinHoursPerAfternoon& tc);
+//202
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinHoursPerAfternoon& tc);
+//203
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxHourlySpan& tc);
 
 #endif

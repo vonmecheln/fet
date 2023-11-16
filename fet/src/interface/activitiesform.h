@@ -75,6 +75,8 @@ public slots:
 	//void deactivateAllActivities();
 
 	void activityComments();
+	
+	void selectionChanged();
 };
 
 #endif

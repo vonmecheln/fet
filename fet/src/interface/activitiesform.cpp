@@ -45,7 +45,6 @@
 #include <QScrollBar>
 #include <QAbstractItemView>
 
-#include <QBrush>
 #include <QPalette>
 
 #include <QSplitter>
@@ -102,6 +101,10 @@ ActivitiesForm::ActivitiesForm(QWidget* parent, const QString& teacherName, cons
 	invertedActivityTagCheckBox->setChecked(settings.value(this->metaObject()->className()+QString("/inverted-activity-tag-check-box-state"), "false").toBool());*/
 	
 	connect(activitiesListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(activityChanged()));
+	
+	//selectionChanged();
+	connect(activitiesListWidget, SIGNAL(itemSelectionChanged()), this, SLOT(selectionChanged()));
+	
 	connect(addActivityPushButton, SIGNAL(clicked()), this, SLOT(addActivity()));
 	connect(removeActivitiesPushButton, SIGNAL(clicked()), this, SLOT(removeActivities()));
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
@@ -514,6 +517,8 @@ void ActivitiesForm::studentsFilterChanged()
 
 void ActivitiesForm::filterChanged()
 {
+	disconnect(activitiesListWidget, SIGNAL(itemSelectionChanged()), this, SLOT(selectionChanged()));
+
 	int /*nacts=0,*/ nsubacts=0, nh=0;
 	int ninact=0, ninacth=0;
 
@@ -578,12 +583,15 @@ void ActivitiesForm::filterChanged()
 		" Please leave spaces between fields, so that they are better visible").arg(NA).arg(NT));
 	durationTextLabel->setText(tr("Dur: %1 / %2", "Dur means duration, %1 is the duration of active activities, %2 is the total duration of activities."
 		" Please leave spaces between fields, so that they are better visible").arg(DA).arg(DT));
-	mSLabel->setText(tr("Multiple selection", "The list can have multiple selection. Keep translation short."));
+	//mSLabel->setText(tr("Multiple selection", "The list can have multiple selection. Keep translation short."));
 	
 	if(activitiesListWidget->count()>0)
 		activitiesListWidget->setCurrentRow(0);
 	else
 		currentActivityTextEdit->setPlainText(QString(""));
+	
+	selectionChanged();
+	connect(activitiesListWidget, SIGNAL(itemSelectionChanged()), this, SLOT(selectionChanged()));
 }
 
 void ActivitiesForm::addActivity()
@@ -731,6 +739,8 @@ void ActivitiesForm::modifyActivity()
 void ActivitiesForm::removeActivities()
 {
 	QList<int> tl;
+	
+	QString su;
 
 	QString s=tr("Remove these selected activities?");
 	s+=" ";
@@ -751,6 +761,9 @@ void ActivitiesForm::removeActivities()
 			}*/
 			s+=act->getDetailedDescription(gt.rules);
 			s+="\n";
+
+			su+=act->getDetailedDescription(gt.rules);
+			su+="\n";
 		}
 
 	int t=LongTextMessageBox::confirmation( this, tr("FET confirmation"),
@@ -759,13 +772,26 @@ void ActivitiesForm::removeActivities()
 		activitiesListWidget->setFocus();
 		return;
 	}
+	
+	gt.rules.removeActivities(tl, true);
+	PlanningChanged::increasePlanningCommunicationSpinBox();
+
+	if(!tl.isEmpty())
+		gt.rules.addUndoPoint(tr("Removed %1 activities (plus all the subactivities from the same larger split activity, even if they were not selected):").arg(tl.count())+QString("\n\n")+su);
 
 	int valv=activitiesListWidget->verticalScrollBar()->value();
 	int valh=activitiesListWidget->horizontalScrollBar()->value();
 
-	gt.rules.removeActivities(tl, true);
-	PlanningChanged::increasePlanningCommunicationSpinBox();
+	int cr=activitiesListWidget->currentRow();
+
 	filterChanged();
+	
+	if(cr>=0){
+		if(cr<activitiesListWidget->count())
+			activitiesListWidget->setCurrentRow(cr);
+		else if(activitiesListWidget->count()>0)
+			activitiesListWidget->setCurrentRow(activitiesListWidget->count()-1);
+	}
 
 	activitiesListWidget->verticalScrollBar()->setValue(valv);
 	activitiesListWidget->horizontalScrollBar()->setValue(valh);
@@ -904,7 +930,11 @@ void ActivitiesForm::activityComments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
+		QString ab=act->getDetailedDescription(gt.rules);
+	
 		act->comments=commentsPT->toPlainText();
+
+		gt.rules.addUndoPoint(tr("Changed an activity's comments. Activity before:\n\n%1\nComments after:\n\n%2").arg(ab).arg(act->comments));
 	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -927,7 +957,9 @@ void ActivitiesForm::filter(bool active)
 		useFilter=false;
 		
 		filterChanged();
-	
+		
+		activitiesListWidget->setFocus();
+		
 		return;
 	}
 	
@@ -967,6 +999,8 @@ void ActivitiesForm::filter(bool active)
 		}
 		
 		filterChanged();
+
+		activitiesListWidget->setFocus();
 	}
 	else{
 		assert(useFilter==false);
@@ -982,13 +1016,17 @@ void ActivitiesForm::filter(bool active)
 
 void ActivitiesForm::activateActivities()
 {
-	QMessageBox::StandardButton ret=QMessageBox::No;
-	QString s=tr("Activate the selected activities?");
-	ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
-	if(ret==QMessageBox::No){
-		activitiesListWidget->setFocus();
-		return;
+	if(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS){
+		QMessageBox::StandardButton ret=QMessageBox::No;
+		QString s=tr("Activate the selected activities?");
+		ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+		if(ret==QMessageBox::No){
+			activitiesListWidget->setFocus();
+			return;
+		}
 	}
+	
+	QString su;
 
 	int cnt=0;
 	for(int i=0; i<activitiesListWidget->count(); i++)
@@ -997,14 +1035,15 @@ void ActivitiesForm::activateActivities()
 			Activity* act=visibleActivitiesList.at(i);
 			assert(act!=nullptr);
 			if(!act->active){
+				su+=act->getDetailedDescription(gt.rules)+QString("\n");
+
 				cnt++;
 				act->active=true;
 			}
 		}
 	if(cnt>0){
-		int valv=activitiesListWidget->verticalScrollBar()->value();
-		int valh=activitiesListWidget->horizontalScrollBar()->value();
-
+		gt.rules.addUndoPoint(tr("Activated %1 activities:", "%1 is the number of activated activities").arg(cnt)+QString("\n\n")+su);
+	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
@@ -1012,12 +1051,25 @@ void ActivitiesForm::activateActivities()
 		students_schedule_ready=false;
 		rooms_schedule_ready=false;
 		
+		int valv=activitiesListWidget->verticalScrollBar()->value();
+		int valh=activitiesListWidget->horizontalScrollBar()->value();
+
+		int cr=activitiesListWidget->currentRow();
+
 		filterChanged();
-		
+
+		if(cr>=0){
+			if(cr<activitiesListWidget->count())
+				activitiesListWidget->setCurrentRow(cr);
+			else if(activitiesListWidget->count()>0)
+				activitiesListWidget->setCurrentRow(activitiesListWidget->count()-1);
+		}
+
 		activitiesListWidget->verticalScrollBar()->setValue(valv);
 		activitiesListWidget->horizontalScrollBar()->setValue(valh);
 
-		QMessageBox::information(this, tr("FET information"), tr("Activated %1 activities").arg(cnt));
+		if(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS)
+			QMessageBox::information(this, tr("FET information"), tr("Activated %1 activities", "%1 is the number of activated activities").arg(cnt));
 	}
 	
 	activitiesListWidget->setFocus();
@@ -1025,13 +1077,17 @@ void ActivitiesForm::activateActivities()
 
 void ActivitiesForm::deactivateActivities()
 {
-	QMessageBox::StandardButton ret=QMessageBox::No;
-	QString s=tr("Deactivate the selected activities?");
-	ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
-	if(ret==QMessageBox::No){
-		activitiesListWidget->setFocus();
-		return;
+	if(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS){
+		QMessageBox::StandardButton ret=QMessageBox::No;
+		QString s=tr("Deactivate the selected activities?");
+		ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+		if(ret==QMessageBox::No){
+			activitiesListWidget->setFocus();
+			return;
+		}
 	}
+
+	QString su;
 
 	int cnt=0;
 	for(int i=0; i<activitiesListWidget->count(); i++)
@@ -1040,14 +1096,15 @@ void ActivitiesForm::deactivateActivities()
 			Activity* act=visibleActivitiesList.at(i);
 			assert(act!=nullptr);
 			if(act->active){
+				su+=act->getDetailedDescription(gt.rules)+QString("\n");
+
 				cnt++;
 				act->active=false;
 			}
 		}
 	if(cnt>0){
-		int valv=activitiesListWidget->verticalScrollBar()->value();
-		int valh=activitiesListWidget->horizontalScrollBar()->value();
-
+		gt.rules.addUndoPoint(tr("Deactivated %1 activities:", "%1 is the number of deactivated activities").arg(cnt)+QString("\n\n")+su);
+	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
@@ -1055,13 +1112,41 @@ void ActivitiesForm::deactivateActivities()
 		students_schedule_ready=false;
 		rooms_schedule_ready=false;
 		
+		int valv=activitiesListWidget->verticalScrollBar()->value();
+		int valh=activitiesListWidget->horizontalScrollBar()->value();
+
+		int cr=activitiesListWidget->currentRow();
+
 		filterChanged();
-		
+
+		if(cr>=0){
+			if(cr<activitiesListWidget->count())
+				activitiesListWidget->setCurrentRow(cr);
+			else if(activitiesListWidget->count()>0)
+				activitiesListWidget->setCurrentRow(activitiesListWidget->count()-1);
+		}
+
 		activitiesListWidget->verticalScrollBar()->setValue(valv);
 		activitiesListWidget->horizontalScrollBar()->setValue(valh);
 
-		QMessageBox::information(this, tr("FET information"), tr("Deactivated %1 activities").arg(cnt));
+		if(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS)
+			QMessageBox::information(this, tr("FET information"), tr("Deactivated %1 activities", "%1 is the number of deactivated activities").arg(cnt));
 	}
 
 	activitiesListWidget->setFocus();
+}
+
+void ActivitiesForm::selectionChanged()
+{
+	int nTotal=0;
+	int nActive=0;
+	assert(activitiesListWidget->count()==visibleActivitiesList.count());
+	for(int i=0; i<activitiesListWidget->count(); i++)
+		if(activitiesListWidget->item(i)->isSelected()){
+			nTotal++;
+			if(visibleActivitiesList.at(i)->active)
+				nActive++;
+		}
+	mSLabel->setText(tr("Multiple selection: %1 / %2", "It refers to the list of selected activities, %1 is the number of active"
+	 " selected activities, %2 is the total number of selected activities").arg(nActive).arg(nTotal));
 }

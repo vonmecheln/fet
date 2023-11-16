@@ -409,6 +409,11 @@ void TeachersNotAvailableTimesTimeHorizontalForm::ok()
 
 	QList<TimeConstraint*> tl;
 
+	QStringList addedNames;
+	QStringList emptyRemovedNames;
+	QStringList modifiedNames;
+	QStringList modifiedOrderNames;
+
 	for(int t=0; t<gt.rules.teachersList.count(); t++){
 		QList<int> daysList;
 		QList<int> hoursList;
@@ -455,6 +460,11 @@ void TeachersNotAvailableTimesTimeHorizontalForm::ok()
 						inactiveModifiedOrder--;
 						assert(inactiveModifiedOrder>=0);
 					}
+					
+					modifiedNames.append(gt.rules.teachersList.at(t)->name);
+				}
+				else{
+					modifiedOrderNames.append(gt.rules.teachersList.at(t)->name);
 				}
 
 				ctr->days=daysList;
@@ -466,15 +476,19 @@ void TeachersNotAvailableTimesTimeHorizontalForm::ok()
 				emptyRemoved++;
 				if(!ctr->active)
 					inactiveEmptyRemoved++;
+
+				emptyRemovedNames.append(gt.rules.teachersList.at(t)->name);
 			}
 		}
 		else{
 			if(!daysList.isEmpty()){
 				ConstraintTeacherNotAvailableTimes* ctr=new ConstraintTeacherNotAvailableTimes(100, gt.rules.teachersList.at(t)->name, daysList, hoursList);
-				bool t=gt.rules.addTimeConstraint(ctr);
-				assert(t);
+				bool tt=gt.rules.addTimeConstraint(ctr);
+				assert(tt);
 				
 				added++;
+
+				addedNames.append(gt.rules.teachersList.at(t)->name);
 			}
 		}
 	}
@@ -717,6 +731,30 @@ void TeachersNotAvailableTimesTimeHorizontalForm::ok()
 			s+=emptyRemovedS;
 		s.chop(1);
 		QMessageBox::information(this, tr("FET information"), s);
+		
+		QString s2;
+		if(added>0){
+			s2+=tr("Added constraints for these %1 teachers: %2.",
+			 "%1 is the number of affected teachers, %2 is their list of names").arg(added).arg(addedNames.join(", "));
+			s2+=QString("\n");
+		}
+		if(modified>0){
+			s2+=tr("Modified constraints for these %1 teachers: %2.",
+			 "%1 is the number of affected teachers, %2 is their list of names").arg(modified).arg(modifiedNames.join(", "));
+			s2+=QString("\n");
+		}
+		if(modifiedOrder>0){
+			s2+=tr("Modified order of the slots in the constraints for these %1 teachers: %2.",
+			 "%1 is the number of affected teachers, %2 is their list of names").arg(modifiedOrder).arg(modifiedOrderNames.join(", "));
+			s2+=QString("\n");
+		}
+		if(emptyRemoved>0){
+			s2+=tr("Removed constraints for these %1 teachers: %2.",
+			 "%1 is the number of affected teachers, %2 is their list of names").arg(emptyRemoved).arg(emptyRemovedNames.join(", "));
+			s2+=QString("\n");
+		}
+
+		gt.rules.addUndoPoint(tr("Modified the teachers' not available times constraints in the time horizontal view.")+QString("\n\n")+s+QString("\n\n")+s2);
 	}
 
 	this->close();

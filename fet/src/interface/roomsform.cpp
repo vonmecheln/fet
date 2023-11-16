@@ -177,8 +177,12 @@ void RoomsForm::removeRoom()
 			return;
 	}
 
+	QString od=rm->name;
+
 	bool tmp=gt.rules.removeRoom(rm->name);
 	assert(tmp);
+
+	gt.rules.addUndoPoint(tr("Removed the room %1.").arg(od));
 
 	visibleRoomsList.removeAt(ind);
 	roomsListWidget->setCurrentRow(-1);
@@ -236,7 +240,9 @@ void RoomsForm::moveRoomUp()
 	
 	gt.rules.roomsList[i]=rm2;
 	gt.rules.roomsList[i-1]=rm1;
-	
+
+	gt.rules.addUndoPoint(tr("Moved the room %1 up.").arg(s1));
+
 	//Begin bug fix on 2017-08-29
 	Room* vr1=visibleRoomsList[i];
 	Room* vr2=visibleRoomsList[i-1];
@@ -277,6 +283,8 @@ void RoomsForm::moveRoomDown()
 	gt.rules.roomsList[i]=rm2;
 	gt.rules.roomsList[i+1]=rm1;
 	
+	gt.rules.addUndoPoint(tr("Moved the room %1 down.").arg(s1));
+
 	//Begin bug fix on 2017-08-29
 	Room* vr1=visibleRoomsList[i];
 	Room* vr2=visibleRoomsList[i+1];
@@ -291,6 +299,8 @@ void RoomsForm::moveRoomDown()
 void RoomsForm::sortRooms()
 {
 	gt.rules.sortRoomsAlphabetically();
+
+	gt.rules.addUndoPoint(tr("Sorted the rooms."));
 
 	filterChanged();
 }
@@ -372,8 +382,12 @@ void RoomsForm::comments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
+		QString od=rm->getDetailedDescription();
+
 		rm->comments=commentsPT->toPlainText();
 	
+		gt.rules.addUndoPoint(tr("Modified the comments of the room\n\n%1\ninto\n\n%2").arg(od).arg(rm->comments));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
@@ -433,10 +447,15 @@ void RoomsForm::makeReal()
 		tr("Are you sure you want to make this room real? This will erase the list of sets of real rooms for this virtual room."),
 		QMessageBox::Yes | QMessageBox::No ) == QMessageBox::No)
 		return;
-	
+
+	QString od=rm->getDetailedDescription();
+
 	rm->isVirtual=false;
 	rm->realRoomsSetsList.clear();
 	
+	gt.rules.addUndoPoint(tr("Made the virtual room\n\n%1\nreal, into\n\n%2",
+	 "%1 is the old room description, %2 is the new room description").arg(od).arg(rm->getDetailedDescription()));
+
 	////////
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

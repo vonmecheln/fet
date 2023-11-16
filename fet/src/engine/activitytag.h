@@ -30,6 +30,11 @@ class Rules;
 
 typedef QList<ActivityTag*> ActivityTagsList;
 
+class QDataStream;
+
+QDataStream& operator<<(QDataStream& stream, const ActivityTag& at);
+QDataStream& operator>>(QDataStream& stream, ActivityTag& at);
+
 /**
 This class represents an activity tag
 

@@ -6967,7 +6967,7 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 	}
 #endif
 
-	emit simulationFinished();
+	emit generationFinished();
 	
 	//if(threaded)
 	//	finishedSemaphore.release();

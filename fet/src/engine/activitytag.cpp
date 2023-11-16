@@ -18,6 +18,26 @@
 #include "activitytag.h"
 #include "rules.h"
 
+#include <QDataStream>
+
+QDataStream& operator<<(QDataStream& stream, const ActivityTag& at)
+{
+	stream<<at.name;
+	stream<<at.printable;
+	stream<<at.comments;
+
+	return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, ActivityTag& at)
+{
+	stream>>at.name;
+	stream>>at.printable;
+	stream>>at.comments;
+
+	return stream;
+}
+
 ActivityTag::ActivityTag()
 {
 	printable=true;

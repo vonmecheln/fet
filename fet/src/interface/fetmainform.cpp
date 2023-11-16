@@ -18,6 +18,7 @@
 #include "timetable_defs.h"
 #include "timetable.h"
 #include "solution.h"
+#include "rules.h"
 
 #include <iostream>
 //using namespace std;
@@ -27,6 +28,9 @@
 #include <Qt>
 
 #include "fetmainform.h"
+
+#include "restoredatastateform.h"
+#include "settingsrestoredataform.h"
 
 #include "getmodefornewfileform.h"
 
@@ -513,9 +517,9 @@ int MAIN_FORM_SHORTCUTS_TAB_POSITION;
 
 #endif
 
-bool simulation_running; //true if the user started an allocation of the timetable
+bool generation_running; //true if the user started a generation of the timetable
 
-bool simulation_running_multi;
+bool generation_running_multi;
 
 bool students_schedule_ready;
 bool teachers_schedule_ready;
@@ -608,16 +612,62 @@ bool CONFIRM_SPREAD_ACTIVITIES=true;
 bool CONFIRM_REMOVE_REDUNDANT=true;
 bool CONFIRM_SAVE_TIMETABLE=true;
 
+bool CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS=true;
+
 //extern MRG32k3a rng;
 
 const int STATUS_BAR_MILLISECONDS=2500;
+
+//in rules.cpp
+extern int cntUndoRedoStackIterator;
+extern std::list<QByteArray> oldRulesArchived; //.front() is oldest, .back() is newest
+extern std::list<QString> operationWhichWasDone; //as above
+extern std::list<QPair<QDate, QTime>> operationDateTime; //as above
+extern std::list<int> unarchivedSizes; //as above
+//extern std::list<QString> stateFileName; //as above
+
+extern int savedStateIterator;
+
+extern FetMainForm* pFetMainForm;
+
+void updateFetMainFormAfterHistoryRestored(int iterationsBackward)
+{
+	if(pFetMainForm!=nullptr){
+		pFetMainForm->setCurrentFile(INPUT_FILENAME_XML);
+		/*if(!pFetMainForm->isWindowModified())
+			pFetMainForm->setWindowModified(true);*/
+		pFetMainForm->setWindowModified(gt.rules.modified);
+
+		if(iterationsBackward>0)
+			pFetMainForm->statusBar()->showMessage(FetMainForm::tr("Backward state restored"), STATUS_BAR_MILLISECONDS);
+		else if(iterationsBackward<0)
+			pFetMainForm->statusBar()->showMessage(FetMainForm::tr("Forward state restored"), STATUS_BAR_MILLISECONDS);
+		else
+			assert(0);
+		
+		pFetMainForm->updateMode();
+	}
+}
+
+void clearHistory()
+{
+	cntUndoRedoStackIterator=0;
+
+	oldRulesArchived.clear();
+	operationWhichWasDone.clear();
+	operationDateTime.clear();
+	unarchivedSizes.clear();
+	//stateFileName.clear();
+	
+	savedStateIterator=0;
+}
 
 FetMainForm::FetMainForm()
 {
 	setupUi(this);
 
-	simulation_running=false;
-	simulation_running_multi=false;
+	generation_running=false;
+	generation_running_multi=false;
 
 	menuA_teacher_time_constraints=nullptr;
 	menuAll_teachers_time_constraints=nullptr;
@@ -645,6 +695,14 @@ FetMainForm::FetMainForm()
 	
 	QSettings settings(COMPANY, PROGRAM);
 	
+	USE_UNDO_REDO=settings.value(QString("enable-data-states-recording"), QString("true")).toBool();
+	UNDO_REDO_STEPS=settings.value(QString("number-of-data-steps-to-record"), QString("100")).toInt();
+	if(UNDO_REDO_STEPS>1000)
+		UNDO_REDO_STEPS=1000;
+	if(UNDO_REDO_STEPS<=0)
+		UNDO_REDO_STEPS=1;
+	//UNDO_REDO_COMPRESSION_LEVEL=settings.value(QString("data-states-compression-level"), QString("-1")).toInt();
+
 	originalFont=qApp->font();
 	fontIsUserSelectable=settings.value(QString("font-is-user-selectable"), QString("false")).toBool();
 	userChoseAFont=false;
@@ -775,7 +833,7 @@ FetMainForm::FetMainForm()
 	
 	//new void data
 	if(gt.rules.initialized)
-		gt.rules.kill();
+		gt.rules.clear();
 	/*gt.rules.init();
 
 	gt.rules.modified=true; //to avoid the flickering of the main form modified flag
@@ -826,6 +884,9 @@ FetMainForm::FetMainForm()
 	
 	settingsConfirmSaveTimetableAction->setCheckable(true);
 	settingsConfirmSaveTimetableAction->setChecked(CONFIRM_SAVE_TIMETABLE);
+
+	settingsConfirmActivateDeactivateActivitiesConstraintsAction->setCheckable(true);
+	settingsConfirmActivateDeactivateActivitiesConstraintsAction->setChecked(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS);
 	///////
 	
 	settingsDivideTimetablesByDaysAction->setCheckable(true);
@@ -3309,7 +3370,9 @@ void FetMainForm::on_modeOfficialAction_triggered()
 		return;
 	}
 
-	bool ok2=getLastConfirmation(OFFICIAL);
+	int removedTime=0;
+	int removedSpace=0;
+	bool ok2=getLastConfirmation(OFFICIAL, removedTime, removedSpace);
 	if(!ok2){
 		modeOfficialAction->setChecked(false);
 		return;
@@ -3317,6 +3380,9 @@ void FetMainForm::on_modeOfficialAction_triggered()
 
 	gt.rules.setMode(OFFICIAL);
 	updateMode();
+
+	gt.rules.addUndoPoint(tr("Changed the mode to %1.").arg(tr("Official"))+QString(" ")+tr("There were removed %1 time constraints and"
+	 " %2 space constraints.").arg(removedTime).arg(removedSpace));
 }
 
 void FetMainForm::on_modeMorningsAfternoonsAction_triggered()
@@ -3361,7 +3427,9 @@ void FetMainForm::on_modeMorningsAfternoonsAction_triggered()
 		return;
 	}
 
-	bool ok2=getLastConfirmation(MORNINGS_AFTERNOONS);
+	int removedTime=0;
+	int removedSpace=0;
+	bool ok2=getLastConfirmation(MORNINGS_AFTERNOONS, removedTime, removedSpace);
 	if(!ok2){
 		modeMorningsAfternoonsAction->setChecked(false);
 		return;
@@ -3369,6 +3437,9 @@ void FetMainForm::on_modeMorningsAfternoonsAction_triggered()
 
 	gt.rules.setMode(MORNINGS_AFTERNOONS);
 	updateMode();
+
+	gt.rules.addUndoPoint(tr("Changed the mode to %1.").arg(tr("Mornings-Afternoons"))+QString(" ")+tr("There were removed %1 time constraints and"
+	 " %2 space constraints.").arg(removedTime).arg(removedSpace));
 }
 
 void FetMainForm::on_modeBlockPlanningAction_triggered()
@@ -3416,7 +3487,9 @@ void FetMainForm::on_modeBlockPlanningAction_triggered()
 		return;
 	}
 
-	bool ok2=getLastConfirmation(BLOCK_PLANNING);
+	int removedTime=0;
+	int removedSpace=0;
+	bool ok2=getLastConfirmation(BLOCK_PLANNING, removedTime, removedSpace);
 	if(!ok2){
 		modeBlockPlanningAction->setChecked(false);
 		return;
@@ -3424,6 +3497,9 @@ void FetMainForm::on_modeBlockPlanningAction_triggered()
 
 	gt.rules.setMode(BLOCK_PLANNING);
 	updateMode();
+
+	gt.rules.addUndoPoint(tr("Changed the mode to %1.").arg(tr("Block planning"))+QString(" ")+tr("There were removed %1 time constraints and"
+	 " %2 space constraints.").arg(removedTime).arg(removedSpace));
 }
 
 void FetMainForm::on_modeTermsAction_triggered()
@@ -3465,7 +3541,9 @@ void FetMainForm::on_modeTermsAction_triggered()
 		return;
 	}
 
-	bool ok2=getLastConfirmation(TERMS);
+	int removedTime=0;
+	int removedSpace=0;
+	bool ok2=getLastConfirmation(TERMS, removedTime, removedSpace);
 	if(!ok2){
 		modeTermsAction->setChecked(false);
 		return;
@@ -3473,6 +3551,9 @@ void FetMainForm::on_modeTermsAction_triggered()
 
 	gt.rules.setMode(TERMS);
 	updateMode();
+
+	gt.rules.addUndoPoint(tr("Changed the mode to %1.").arg(tr("Terms"))+QString(" ")+tr("There were removed %1 time constraints and"
+	 " %2 space constraints.").arg(removedTime).arg(removedSpace));
 }
 
 void FetMainForm::on_dataTermsAction_triggered()
@@ -3485,9 +3566,9 @@ void FetMainForm::on_dataTermsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -3496,7 +3577,7 @@ void FetMainForm::on_dataTermsAction_triggered()
 	form.exec();
 }
 
-bool FetMainForm::getLastConfirmation(int newMode)
+bool FetMainForm::getLastConfirmation(int newMode, int &ntm, int& nsm)
 {
 	QString removedTimeConstraintsString;
 	QString removedSpaceConstraintsString;
@@ -3600,6 +3681,21 @@ bool FetMainForm::getLastConfirmation(int newMode)
 	QMessageBox::information(&lastConfirmationDialog, tr("FET information"), tr("There were removed %1 time constraints and"
 	 " %2 space constraints.").arg(removedTime).arg(removedSpace));
 
+	QString ms;
+	if(newMode==OFFICIAL)
+		ms=tr("Official");
+	else if(newMode==MORNINGS_AFTERNOONS)
+		ms=tr("Mornings-Afternoons");
+	else if(newMode==BLOCK_PLANNING)
+		ms=tr("Block planning");
+	else if(newMode==TERMS)
+		ms=tr("Terms");
+	
+	ntm=removedTime;
+	nsm=removedSpace;
+	//gt.rules.addUndoPoint(tr("Changed the mode to %1.").arg(ms)+QString(" ")+tr("There were removed %1 time constraints and"
+	// " %2 space constraints.").arg(removedTime).arg(removedSpace));
+
 	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 	LockUnlock::increaseCommunicationSpinBox();
 
@@ -3626,6 +3722,12 @@ void FetMainForm::on_settingsConfirmSaveTimetableAction_toggled()
 {
 	CONFIRM_SAVE_TIMETABLE=settingsConfirmSaveTimetableAction->isChecked();
 }
+
+void FetMainForm::on_settingsConfirmActivateDeactivateActivitiesConstraintsAction_toggled()
+{
+	CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS=settingsConfirmActivateDeactivateActivitiesConstraintsAction->isChecked();
+}
+
 /////////
 
 void FetMainForm::on_settingsShowShortcutsOnMainWindowAction_toggled()
@@ -3651,9 +3753,9 @@ void FetMainForm::on_settingsDuplicateVerticalNamesAction_toggled()
 
 void FetMainForm::on_timetablesToWriteOnDiskAction_triggered()
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -3664,9 +3766,9 @@ void FetMainForm::on_timetablesToWriteOnDiskAction_triggered()
 
 void FetMainForm::on_studentsComboBoxesStyleAction_triggered()
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -3809,6 +3911,10 @@ FetMainForm::~FetMainForm()
 {
 	QSettings settings(COMPANY, PROGRAM);
 	
+	settings.setValue(QString("enable-data-states-recording"), USE_UNDO_REDO);
+	settings.setValue(QString("number-of-data-steps-to-record"), UNDO_REDO_STEPS);
+	//settings.setValue(QString("data-states-compression-level"), UNDO_REDO_COMPRESSION_LEVEL);
+
 	QFont interfaceFont=qApp->font();
 	settings.setValue(QString("font-is-user-selectable"), fontIsUserSelectable);
 	if(fontIsUserSelectable && userChoseAFont)
@@ -3843,9 +3949,9 @@ FetMainForm::~FetMainForm()
 
 void FetMainForm::on_fileQuitAction_triggered()
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -3904,9 +4010,9 @@ void FetMainForm::updateRecentFileActions()
 
 void FetMainForm::on_fileClearRecentFilesListAction_triggered()
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -3916,9 +4022,9 @@ void FetMainForm::on_fileClearRecentFilesListAction_triggered()
 
 void FetMainForm::on_fileNewAction_triggered()
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -3963,7 +4069,7 @@ void FetMainForm::on_fileNewAction_triggered()
 		setCurrentFile(INPUT_FILENAME_XML);
 	
 		if(gt.rules.initialized)
-			gt.rules.kill();
+			gt.rules.clear();
 		gt.rules.init();
 		
 		gt.rules.mode=tm;
@@ -3974,6 +4080,19 @@ void FetMainForm::on_fileNewAction_triggered()
 		assert(tmp);
 		tmp=gt.rules.addSpaceConstraint(new ConstraintBasicCompulsorySpace(100));
 		assert(tmp);
+		
+		QString ms;
+		if(gt.rules.mode==OFFICIAL)
+			ms=tr("Official");
+		else if(gt.rules.mode==MORNINGS_AFTERNOONS)
+			ms=tr("Mornings-Afternoons");
+		else if(gt.rules.mode==BLOCK_PLANNING)
+			ms=tr("Block planning");
+		else if(gt.rules.mode==TERMS)
+			ms=tr("Terms");
+		clearHistory();
+		gt.rules.addUndoPoint(tr("Created a new file with the mode %1.").arg(ms));
+		savedStateIterator=cntUndoRedoStackIterator;
 		
 		gt.rules.modified=true; //force update of the modified flag of the main window
 		setRulesUnmodifiedAndOtherThings(&gt.rules);
@@ -4006,9 +4125,9 @@ void FetMainForm::on_fileOpenAction_triggered()
 
 void FetMainForm::openFile(const QString& fileName)
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -4111,6 +4230,10 @@ void FetMainForm::openFile(const QString& fileName)
 
 				INPUT_FILENAME_XML = s;
 				
+				clearHistory();
+				gt.rules.addUndoPoint(tr("Opened the file %1").arg(QDir::toNativeSeparators(s)));
+				savedStateIterator=cntUndoRedoStackIterator;
+			
 				LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 				LockUnlock::increaseCommunicationSpinBox();
 
@@ -4135,7 +4258,7 @@ void FetMainForm::openFile(const QString& fileName)
 				//not needed, because if the file cannot be read we keep the old mode
 				//updateMode();
 				
-				assert(!simulation_running);
+				assert(!generation_running);
 				gt.rules.modified=false;
 				statusBar()->showMessage(tr("Loading file failed...", "This is a message in the status bar, that opening the chosen file failed"), STATUS_BAR_MILLISECONDS);
 				on_fileNewAction_triggered();
@@ -4233,6 +4356,9 @@ bool FetMainForm::fileSaveAs()
 	bool t=gt.rules.write(this, s);
 	if(t){
 		INPUT_FILENAME_XML = s;
+		
+		//gt.rules.addUndoPoint(tr("Saved the file as %1.").arg(QDir::toNativeSeparators(INPUT_FILENAME_XML)));
+		savedStateIterator=cntUndoRedoStackIterator;
 	
 		gt.rules.modified=true; //force update of the modified flag of the main window
 		setRulesUnmodifiedAndOtherThings(&gt.rules);
@@ -4253,6 +4379,44 @@ void FetMainForm::on_fileSaveAsAction_triggered()
 	fileSaveAs();
 }
 
+void FetMainForm::on_settingsHistoryAction_triggered()
+{
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	SettingsRestoreDataForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::on_restoreDataStateAction_triggered()
+{
+	if(!gt.rules.initialized){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Please start a new file or open an existing one before accessing the history."));
+		return;
+	}
+
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	if(!USE_UNDO_REDO){
+		QMessageBox::information(this, tr("FET information"),
+			tr("History saving and restoring is disabled from the History settings. Please enable it to proceed."));
+		return;
+	}
+
+	RestoreDataStateForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
 // Start of code contributed by Volker Dirr
 void FetMainForm::on_fileImportCSVRoomsBuildingsAction_triggered()
 {
@@ -4262,9 +4426,9 @@ void FetMainForm::on_fileImportCSVRoomsBuildingsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	Import::importCSVRoomsAndBuildings(this);
@@ -4278,9 +4442,9 @@ void FetMainForm::on_fileImportCSVSubjectsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	Import::importCSVSubjects(this);
@@ -4294,9 +4458,9 @@ void FetMainForm::on_fileImportCSVTeachersAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	Import::importCSVTeachers(this);
@@ -4310,9 +4474,9 @@ void FetMainForm::on_fileImportCSVActivitiesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	Import::importCSVActivities(this);
@@ -4332,9 +4496,9 @@ void FetMainForm::on_fileImportCSVActivityTagsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	Import::importCSVActivityTags(this);
@@ -4348,9 +4512,9 @@ void FetMainForm::on_fileImportCSVYearsGroupsSubgroupsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	Import::importCSVStudents(this);
@@ -4364,9 +4528,9 @@ void FetMainForm::on_fileExportCSVAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	Export::exportCSV(this);
@@ -4694,6 +4858,9 @@ bool FetMainForm::fileSave()
 		bool t=gt.rules.write(this, INPUT_FILENAME_XML);
 		
 		if(t){
+			//gt.rules.addUndoPoint(tr("Saved the file (the name was %1).").arg(QDir::toNativeSeparators(INPUT_FILENAME_XML)));
+			savedStateIterator=cntUndoRedoStackIterator;
+
 			gt.rules.modified=true; //force update of the modified flag of the main window
 			setRulesUnmodifiedAndOtherThings(&gt.rules);
 		
@@ -4721,9 +4888,9 @@ void FetMainForm::on_dataInstitutionNameAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -4740,9 +4907,9 @@ void FetMainForm::on_dataCommentsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -4759,9 +4926,9 @@ void FetMainForm::on_dataDaysAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -4778,9 +4945,9 @@ void FetMainForm::on_dataHoursAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -4797,9 +4964,9 @@ void FetMainForm::on_dataTeachersAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -4829,9 +4996,9 @@ void FetMainForm::on_dataSubjectsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -4861,9 +5028,9 @@ void FetMainForm::on_dataActivityTagsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -4880,9 +5047,9 @@ void FetMainForm::on_dataYearsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -4899,9 +5066,9 @@ void FetMainForm::on_dataGroupsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -4918,9 +5085,9 @@ void FetMainForm::on_dataSubgroupsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5099,7 +5266,7 @@ void FetMainForm::on_helpSettingsAction_triggered()
 	
 	s+=tr("If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables"
 		" on the hard disk, for efficiency (the generation speed is not affected, only the overhead to write the partial/complete timetables"
-		" when stopping/finishing the simulation). The timetables taking the longest time are the subgroups, groups AND years ones.");
+		" when stopping/finishing the generation). The timetables taking the longest time are the subgroups, groups AND years ones.");
 	s+=" ";
 	s+=tr("(Also the conflicts timetable might take long to write, if the file is large.)");
 	s+=" ";
@@ -5167,9 +5334,9 @@ void FetMainForm::on_dataActivitiesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5186,9 +5353,9 @@ void FetMainForm::on_dataSubactivitiesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5205,9 +5372,9 @@ void FetMainForm::on_dataRoomsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5224,9 +5391,9 @@ void FetMainForm::on_dataBuildingsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5243,9 +5410,9 @@ void FetMainForm::on_dataAllTimeConstraintsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5262,9 +5429,9 @@ void FetMainForm::on_dataAllSpaceConstraintsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5281,9 +5448,9 @@ void FetMainForm::dataTimeConstraintsTwoActivitiesConsecutiveAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5300,9 +5467,9 @@ void FetMainForm::dataTimeConstraintsTwoActivitiesGroupedAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5319,9 +5486,9 @@ void FetMainForm::dataTimeConstraintsThreeActivitiesGroupedAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5338,9 +5505,9 @@ void FetMainForm::dataTimeConstraintsTwoActivitiesOrderedAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5357,9 +5524,9 @@ void FetMainForm::dataTimeConstraintsTwoSetsOfActivitiesOrderedAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5376,9 +5543,9 @@ void FetMainForm::dataTimeConstraintsTwoActivitiesOrderedIfSameDayAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5395,9 +5562,9 @@ void FetMainForm::dataTimeConstraintsActivitiesPreferredTimeSlotsAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5414,9 +5581,9 @@ void FetMainForm::dataTimeConstraintsActivitiesPreferredStartingTimesAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5433,9 +5600,9 @@ void FetMainForm::dataTimeConstraintsSubactivitiesPreferredTimeSlotsAction_trigg
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5452,9 +5619,9 @@ void FetMainForm::dataTimeConstraintsSubactivitiesPreferredStartingTimesAction_t
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5471,9 +5638,9 @@ void FetMainForm::dataTimeConstraintsActivityEndsStudentsDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5490,9 +5657,9 @@ void FetMainForm::dataTimeConstraintsActivitiesEndStudentsDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5509,9 +5676,9 @@ void FetMainForm::dataTimeConstraintsActivityEndsTeachersDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5528,9 +5695,9 @@ void FetMainForm::dataTimeConstraintsActivitiesEndTeachersDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5547,9 +5714,9 @@ void FetMainForm::dataTimeConstraintsActivityBeginsStudentsDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5566,9 +5733,9 @@ void FetMainForm::dataTimeConstraintsActivitiesBeginStudentsDayAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5585,9 +5752,9 @@ void FetMainForm::dataTimeConstraintsActivityBeginsTeachersDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5604,9 +5771,9 @@ void FetMainForm::dataTimeConstraintsActivitiesBeginTeachersDayAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5623,9 +5790,9 @@ void FetMainForm::dataTimeConstraintsActivitiesSameStartingTimeAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5642,9 +5809,9 @@ void FetMainForm::dataTimeConstraintsActivitiesSameStartingHourAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5661,9 +5828,9 @@ void FetMainForm::dataTimeConstraintsActivitiesSameStartingDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5680,9 +5847,9 @@ void FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTimeSlotsFromSelectionAc
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5699,9 +5866,9 @@ void FetMainForm::dataTimeConstraintsActivitiesOccupyMinTimeSlotsFromSelectionAc
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5718,9 +5885,9 @@ void FetMainForm::dataTimeConstraintsActivitiesMaxSimultaneousInSelectedTimeSlot
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5737,9 +5904,9 @@ void FetMainForm::dataTimeConstraintsActivitiesMinSimultaneousInSelectedTimeSlot
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5756,9 +5923,9 @@ void FetMainForm::dataTimeConstraintsMaxTotalActivitiesFromSetInSelectedTimeSlot
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5775,9 +5942,9 @@ void FetMainForm::dataTimeConstraintsTeacherNotAvailableTimesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5794,9 +5961,9 @@ void FetMainForm::dataTimeConstraintsTeachersNotAvailableTimesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5813,9 +5980,9 @@ void FetMainForm::dataTimeConstraintsStudentsNotAvailableTimesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5832,9 +5999,9 @@ void FetMainForm::dataTimeConstraintsBasicCompulsoryTimeAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5851,9 +6018,9 @@ void FetMainForm::dataSpaceConstraintsBasicCompulsorySpaceAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5870,9 +6037,9 @@ void FetMainForm::dataSpaceConstraintsRoomNotAvailableTimesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5889,9 +6056,9 @@ void FetMainForm::dataSpaceConstraintsTeacherRoomNotAvailableTimesAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	
@@ -5908,9 +6075,9 @@ void FetMainForm::dataSpaceConstraintsActivityPreferredRoomAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5927,9 +6094,9 @@ void FetMainForm::dataSpaceConstraintsActivityPreferredRoomsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5946,9 +6113,9 @@ void FetMainForm::dataSpaceConstraintsSubjectPreferredRoomAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5965,9 +6132,9 @@ void FetMainForm::dataSpaceConstraintsSubjectPreferredRoomsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -5984,9 +6151,9 @@ void FetMainForm::dataSpaceConstraintsSubjectActivityTagPreferredRoomAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6003,9 +6170,9 @@ void FetMainForm::dataSpaceConstraintsSubjectActivityTagPreferredRoomsAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6023,9 +6190,9 @@ void FetMainForm::dataSpaceConstraintsActivityTagPreferredRoomAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6042,9 +6209,9 @@ void FetMainForm::dataSpaceConstraintsActivityTagPreferredRoomsAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6062,9 +6229,9 @@ void FetMainForm::dataSpaceConstraintsStudentsSetHomeRoomAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6081,9 +6248,9 @@ void FetMainForm::dataSpaceConstraintsStudentsSetHomeRoomsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6101,9 +6268,9 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerDayAction_
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6120,9 +6287,9 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6133,7 +6300,7 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerDayAction_tri
 
 void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction_triggered()
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 	if(!gt.rules.initialized){
 		QMessageBox::information(this, tr("FET information"),
 			tr("Please start a new file or open an existing one before accessing/modifying/saving/exporting the data."));
@@ -6141,7 +6308,7 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerWeekAction
 	}
 
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6158,9 +6325,9 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerWeekAction_tr
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6177,9 +6344,9 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMinGapsBetweenBuildingChangesAc
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6196,9 +6363,9 @@ void FetMainForm::dataSpaceConstraintsStudentsMinGapsBetweenBuildingChangesActio
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6215,9 +6382,9 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerDayAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6233,9 +6400,9 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerDayAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6252,9 +6419,9 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerWeekAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6271,9 +6438,9 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerWeekAction_tr
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6290,9 +6457,9 @@ void FetMainForm::dataSpaceConstraintsTeacherMinGapsBetweenBuildingChangesAction
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6309,9 +6476,9 @@ void FetMainForm::dataSpaceConstraintsTeachersMinGapsBetweenBuildingChangesActio
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6328,9 +6495,9 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerDayAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6347,9 +6514,9 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerDayAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6366,9 +6533,9 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerWeekAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6385,9 +6552,9 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerWeekAction_trigge
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6404,9 +6571,9 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMinGapsBetweenRoomChangesAction
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6423,9 +6590,9 @@ void FetMainForm::dataSpaceConstraintsStudentsMinGapsBetweenRoomChangesAction_tr
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6442,9 +6609,9 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerDayAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6460,9 +6627,9 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerDayAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6479,9 +6646,9 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerWeekAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6498,9 +6665,9 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerWeekAction_trigge
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6517,9 +6684,9 @@ void FetMainForm::dataSpaceConstraintsTeacherMinGapsBetweenRoomChangesAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6536,9 +6703,9 @@ void FetMainForm::dataSpaceConstraintsTeachersMinGapsBetweenRoomChangesAction_tr
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6555,9 +6722,9 @@ void FetMainForm::dataSpaceConstraintsTeacherHomeRoomAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6574,9 +6741,9 @@ void FetMainForm::dataSpaceConstraintsTeacherHomeRoomsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6593,9 +6760,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetNotAvailableTimesAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6612,9 +6779,9 @@ void FetMainForm::dataTimeConstraintsBreakTimesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6631,9 +6798,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxDaysPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6650,9 +6817,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxDaysPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6669,9 +6836,9 @@ void FetMainForm::dataTimeConstraintsTeacherMinDaysPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6688,9 +6855,9 @@ void FetMainForm::dataTimeConstraintsTeachersMinDaysPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6707,9 +6874,9 @@ void FetMainForm::dataTimeConstraintsTeacherIntervalMaxDaysPerWeekAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6726,9 +6893,9 @@ void FetMainForm::dataTimeConstraintsTeachersIntervalMaxDaysPerWeekAction_trigge
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6745,9 +6912,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxDaysPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6764,9 +6931,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxDaysPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6783,9 +6950,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetIntervalMaxDaysPerWeekAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6802,9 +6969,9 @@ void FetMainForm::dataTimeConstraintsStudentsIntervalMaxDaysPerWeekAction_trigge
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6821,9 +6988,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6840,9 +7007,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6859,9 +7026,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxHoursContinuouslyAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6878,9 +7045,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxHoursContinuouslyAction_triggered
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6897,9 +7064,9 @@ void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursContinuouslyActi
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6916,9 +7083,9 @@ void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursContinuouslyActio
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6935,9 +7102,9 @@ void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	
@@ -6959,9 +7126,9 @@ void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursDailyAction_trigg
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -6983,9 +7150,9 @@ void FetMainForm::dataTimeConstraintsTeachersActivityTagMinHoursDailyAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	
@@ -7007,9 +7174,9 @@ void FetMainForm::dataTimeConstraintsTeacherActivityTagMinHoursDailyAction_trigg
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7031,9 +7198,9 @@ void FetMainForm::dataTimeConstraintsTeachersMinHoursDailyAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7050,9 +7217,9 @@ void FetMainForm::dataTimeConstraintsTeacherMinHoursDailyAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7069,9 +7236,9 @@ void FetMainForm::dataTimeConstraintsActivityPreferredStartingTimeAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7088,9 +7255,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7107,9 +7274,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7127,9 +7294,9 @@ void FetMainForm::dataTimeConstraintsActivitiesMaxInATermAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7146,9 +7313,9 @@ void FetMainForm::dataTimeConstraintsActivitiesMinInATermAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7165,9 +7332,9 @@ void FetMainForm::dataTimeConstraintsActivitiesOccupyMaxTermsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7184,9 +7351,9 @@ void FetMainForm::on_groupActivitiesInInitialOrderAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7215,9 +7382,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7239,9 +7406,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	
@@ -7263,9 +7430,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7282,9 +7449,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7301,9 +7468,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7320,9 +7487,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7339,9 +7506,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerMorningAndAfternoonAction
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7358,9 +7525,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerMorningAndAfternoonAction_
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7377,9 +7544,9 @@ void FetMainForm::dataTimeConstraintsStudentsEarlyMaxBeginningsAtSecondHourActio
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7396,9 +7563,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetEarlyMaxBeginningsAtSecondHourAc
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7415,9 +7582,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7434,9 +7601,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7453,9 +7620,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursContinuouslyAction_trigg
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7472,9 +7639,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxHoursContinuouslyAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7491,9 +7658,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursContinuouslyA
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7510,9 +7677,9 @@ void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursContinuouslyActi
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7529,9 +7696,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyAction_t
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7553,9 +7720,9 @@ void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursDailyAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7577,9 +7744,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMinHoursDailyAction_t
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7601,9 +7768,9 @@ void FetMainForm::dataTimeConstraintsStudentsActivityTagMinHoursDailyAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7625,9 +7792,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinHoursDailyAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7644,9 +7811,9 @@ void FetMainForm::dataTimeConstraintsStudentsMinHoursDailyAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7663,9 +7830,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenOrderedPairOfActiv
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7682,9 +7849,9 @@ void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenOrderedPairOfActivity
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7701,9 +7868,9 @@ void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenOrderedPairOfActivityT
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7720,9 +7887,9 @@ void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenOrderedPairOfActivity
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7740,9 +7907,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinGapsBetweenActivityTagAction_
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7759,9 +7926,9 @@ void FetMainForm::dataTimeConstraintsStudentsMinGapsBetweenActivityTagAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7778,9 +7945,9 @@ void FetMainForm::dataTimeConstraintsTeacherMinGapsBetweenActivityTagAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7797,9 +7964,9 @@ void FetMainForm::dataTimeConstraintsTeachersMinGapsBetweenActivityTagAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7817,9 +7984,9 @@ void FetMainForm::dataTimeConstraintsActivitiesNotOverlappingAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7836,9 +8003,9 @@ void FetMainForm::dataTimeConstraintsActivityTagsNotOverlappingAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7855,9 +8022,9 @@ void FetMainForm::dataTimeConstraintsMinDaysBetweenActivitiesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7874,9 +8041,9 @@ void FetMainForm::dataTimeConstraintsMinHalfDaysBetweenActivitiesAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7893,9 +8060,9 @@ void FetMainForm::dataTimeConstraintsMaxDaysBetweenActivitiesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7912,9 +8079,9 @@ void FetMainForm::dataTimeConstraintsActivitiesMaxHourlySpanAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7931,9 +8098,9 @@ void FetMainForm::dataTimeConstraintsMaxHalfDaysBetweenActivitiesAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7950,9 +8117,9 @@ void FetMainForm::dataTimeConstraintsMaxTermsBetweenActivitiesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7969,9 +8136,9 @@ void FetMainForm::dataTimeConstraintsMinGapsBetweenActivitiesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -7988,9 +8155,9 @@ void FetMainForm::dataTimeConstraintsMaxGapsBetweenActivitiesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8007,9 +8174,9 @@ void FetMainForm::dataTimeConstraintsActivityPreferredTimeSlotsAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8026,9 +8193,9 @@ void FetMainForm::dataTimeConstraintsActivityPreferredStartingTimesAction_trigge
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8045,9 +8212,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxSpanPerDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8064,9 +8231,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxSpanPerDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8083,9 +8250,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxSpanPerDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8102,9 +8269,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxSpanPerDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8121,9 +8288,9 @@ void FetMainForm::dataTimeConstraintsTeacherMinRestingHoursAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8140,9 +8307,9 @@ void FetMainForm::dataTimeConstraintsTeachersMinRestingHoursAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8159,9 +8326,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinRestingHoursAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8178,9 +8345,9 @@ void FetMainForm::dataTimeConstraintsStudentsMinRestingHoursAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8198,9 +8365,9 @@ void FetMainForm::dataSpaceConstraintsActivitiesOccupyMaxDifferentRoomsAction_tr
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8218,9 +8385,9 @@ void FetMainForm::dataSpaceConstraintsActivitiesSameRoomIfConsecutiveAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8238,9 +8405,9 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxRoomChangesPerRealDayAction_
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8257,9 +8424,9 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxRoomChangesPerRealDayAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8276,9 +8443,9 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxRoomChangesPerRealDayAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8295,9 +8462,9 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxRoomChangesPerRealDayAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8314,9 +8481,9 @@ void FetMainForm::dataSpaceConstraintsStudentsSetMaxBuildingChangesPerRealDayAct
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8333,9 +8500,9 @@ void FetMainForm::dataSpaceConstraintsStudentsMaxBuildingChangesPerRealDayAction
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8352,9 +8519,9 @@ void FetMainForm::dataSpaceConstraintsTeacherMaxBuildingChangesPerRealDayAction_
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8371,9 +8538,9 @@ void FetMainForm::dataSpaceConstraintsTeachersMaxBuildingChangesPerRealDayAction
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8391,9 +8558,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxRealDaysPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8410,9 +8577,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxRealDaysPerWeekAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8429,9 +8596,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxAfternoonsPerWeekAction_triggered
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8448,9 +8615,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxAfternoonsPerWeekAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8467,9 +8634,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxMorningsPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8486,9 +8653,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxMorningsPerWeekAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8506,9 +8673,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxThreeConsecutiveDaysAction_trigge
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8525,9 +8692,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxThreeConsecutiveDaysAction_trigg
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8545,9 +8712,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxThreeConsecutiveDaysAction_tr
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8564,9 +8731,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxThreeConsecutiveDaysAction_trigg
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8584,9 +8751,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxTwoConsecutiveMorningsAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8603,9 +8770,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxTwoConsecutiveMorningsAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8622,9 +8789,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxTwoConsecutiveAfternoonsAction_tr
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8641,9 +8808,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxTwoConsecutiveAfternoonsAction_t
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8660,9 +8827,9 @@ void FetMainForm::dataTimeConstraintsTeacherMinRealDaysPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8679,9 +8846,9 @@ void FetMainForm::dataTimeConstraintsTeacherMinMorningsPerWeekAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8698,9 +8865,9 @@ void FetMainForm::dataTimeConstraintsTeachersMinMorningsPerWeekAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8717,9 +8884,9 @@ void FetMainForm::dataTimeConstraintsTeacherMinAfternoonsPerWeekAction_triggered
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8736,9 +8903,9 @@ void FetMainForm::dataTimeConstraintsTeachersMinAfternoonsPerWeekAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8755,9 +8922,9 @@ void FetMainForm::dataTimeConstraintsTeachersMinRealDaysPerWeekAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8774,9 +8941,9 @@ void FetMainForm::dataTimeConstraintsTeacherMorningIntervalMaxDaysPerWeekAction_
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8793,9 +8960,9 @@ void FetMainForm::dataTimeConstraintsTeachersMorningIntervalMaxDaysPerWeekAction
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8812,9 +8979,9 @@ void FetMainForm::dataTimeConstraintsTeacherAfternoonIntervalMaxDaysPerWeekActio
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8831,9 +8998,9 @@ void FetMainForm::dataTimeConstraintsTeachersAfternoonIntervalMaxDaysPerWeekActi
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8850,9 +9017,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxRealDaysPerWeekAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8869,9 +9036,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxRealDaysPerWeekAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8888,9 +9055,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxMorningsPerWeekAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8907,9 +9074,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxMorningsPerWeekAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8926,9 +9093,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxAfternoonsPerWeekAction_trigg
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8945,9 +9112,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxAfternoonsPerWeekAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8964,9 +9131,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinMorningsPerWeekAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -8983,9 +9150,9 @@ void FetMainForm::dataTimeConstraintsStudentsMinMorningsPerWeekAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9002,9 +9169,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinAfternoonsPerWeekAction_trigg
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9021,9 +9188,9 @@ void FetMainForm::dataTimeConstraintsStudentsMinAfternoonsPerWeekAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9040,9 +9207,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMorningIntervalMaxDaysPerWeekAct
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9059,9 +9226,9 @@ void FetMainForm::dataTimeConstraintsStudentsMorningIntervalMaxDaysPerWeekAction
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9078,9 +9245,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetAfternoonIntervalMaxDaysPerWeekA
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9097,9 +9264,9 @@ void FetMainForm::dataTimeConstraintsStudentsAfternoonIntervalMaxDaysPerWeekActi
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9116,9 +9283,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxHoursDailyRealDaysAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9135,9 +9302,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxHoursDailyRealDaysAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9154,9 +9321,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxTwoActivityTagsPerDayFromN1N2N3Ac
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9173,9 +9340,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxTwoActivityTagsPerDayFromN1N2N3A
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9192,9 +9359,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerDayFromN1N2
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9211,9 +9378,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxTwoActivityTagsPerDayFromN1N2N3A
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9230,9 +9397,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxTwoActivityTagsPerRealDayFromN1N2
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9249,9 +9416,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxTwoActivityTagsPerRealDayFromN1N
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9268,9 +9435,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxTwoActivityTagsPerRealDayFrom
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9287,9 +9454,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxTwoActivityTagsPerRealDayFromN1N
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9306,9 +9473,9 @@ void FetMainForm::dataTimeConstraintsTeachersActivityTagMaxHoursDailyRealDaysAct
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9330,9 +9497,9 @@ void FetMainForm::dataTimeConstraintsTeacherActivityTagMaxHoursDailyRealDaysActi
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9354,9 +9521,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxHoursPerAllAfternoonsAction_trigg
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9373,9 +9540,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxHoursPerAllAfternoonsAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9392,9 +9559,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursPerAllAfternoonsAction_t
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9411,9 +9578,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxHoursPerAllAfternoonsAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9430,9 +9597,9 @@ void FetMainForm::dataTimeConstraintsTeachersMinHoursPerMorningAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9449,9 +9616,9 @@ void FetMainForm::dataTimeConstraintsTeacherMinHoursPerMorningAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9468,9 +9635,9 @@ void FetMainForm::dataTimeConstraintsTeachersMinHoursPerAfternoonAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9487,9 +9654,9 @@ void FetMainForm::dataTimeConstraintsTeacherMinHoursPerAfternoonAction_triggered
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9506,9 +9673,9 @@ void FetMainForm::dataTimeConstraintsTeachersMinHoursDailyRealDaysAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9525,9 +9692,9 @@ void FetMainForm::dataTimeConstraintsTeacherMinHoursDailyRealDaysAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9544,9 +9711,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxSpanPerRealDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9563,9 +9730,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxSpanPerRealDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9582,9 +9749,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxSpanPerRealDayAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9601,9 +9768,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxSpanPerRealDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9620,9 +9787,9 @@ void FetMainForm::dataTimeConstraintsTeacherMinRestingHoursBetweenMorningAndAfte
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9639,9 +9806,9 @@ void FetMainForm::dataTimeConstraintsTeachersMinRestingHoursBetweenMorningAndAft
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9658,9 +9825,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinRestingHoursBetweenMorningAnd
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9677,9 +9844,9 @@ void FetMainForm::dataTimeConstraintsStudentsMinRestingHoursBetweenMorningAndAft
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9696,9 +9863,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerRealDayAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9720,9 +9887,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerRealDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9744,9 +9911,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerRealDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9768,9 +9935,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerRealDayAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9792,9 +9959,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxGapsPerWeekForRealDaysAction_
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9816,9 +9983,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxGapsPerWeekForRealDaysAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9840,9 +10007,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxGapsPerWeekForRealDaysAction_tri
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9864,9 +10031,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxGapsPerWeekForRealDaysAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9888,9 +10055,9 @@ void FetMainForm::dataTimeConstraintsTeachersMaxZeroGapsPerAfternoonAction_trigg
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9907,9 +10074,9 @@ void FetMainForm::dataTimeConstraintsTeacherMaxZeroGapsPerAfternoonAction_trigge
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9926,9 +10093,9 @@ void FetMainForm::dataTimeConstraintsTeachersAfternoonsEarlyMaxBeginningsAtSecon
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9945,9 +10112,9 @@ void FetMainForm::dataTimeConstraintsTeacherAfternoonsEarlyMaxBeginningsAtSecond
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9964,9 +10131,9 @@ void FetMainForm::dataTimeConstraintsStudentsAfternoonsEarlyMaxBeginningsAtSecon
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -9983,9 +10150,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetAfternoonsEarlyMaxBeginningsAtSe
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10002,9 +10169,9 @@ void FetMainForm::dataTimeConstraintsTeachersMorningsEarlyMaxBeginningsAtSecondH
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10021,9 +10188,9 @@ void FetMainForm::dataTimeConstraintsTeacherMorningsEarlyMaxBeginningsAtSecondHo
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10040,9 +10207,9 @@ void FetMainForm::dataTimeConstraintsStudentsMorningsEarlyMaxBeginningsAtSecondH
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10059,9 +10226,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMorningsEarlyMaxBeginningsAtSeco
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10078,9 +10245,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMaxHoursDailyRealDaysAction_trig
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10097,9 +10264,9 @@ void FetMainForm::dataTimeConstraintsStudentsMaxHoursDailyRealDaysAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10116,9 +10283,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetActivityTagMaxHoursDailyRealDays
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10140,9 +10307,9 @@ void FetMainForm::dataTimeConstraintsStudentsActivityTagMaxHoursDailyRealDaysAct
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10164,9 +10331,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinHoursPerMorningAction_trigger
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10183,9 +10350,9 @@ void FetMainForm::dataTimeConstraintsStudentsMinHoursPerMorningAction_triggered(
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10202,9 +10369,9 @@ void FetMainForm::dataTimeConstraintsStudentsSetMinHoursPerAfternoonAction_trigg
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10221,9 +10388,9 @@ void FetMainForm::dataTimeConstraintsStudentsMinHoursPerAfternoonAction_triggere
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10383,9 +10550,9 @@ void FetMainForm::on_timetableGenerateAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -10414,9 +10581,9 @@ void FetMainForm::on_timetableGenerateMultipleAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -11230,6 +11397,22 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 		" students min hours per morning with allowed empty mornings").arg(tr("true"));
 	s+="\n";
 
+	s+=tr("69")+QString(". ")+tr("Enable save and restore history will be %1", "%1 is true or false").arg(tr("true"));
+	s+="\n";
+
+	s+=tr("70")+QString(". ")+tr("The number of states to record in history will be %1", "%1 is a number").arg(100);
+	s+="\n";
+
+	s+="(";
+	s+=tr("If the history settings will change, the history will be cleared.");
+	s+=")\n";
+
+	s+=tr("71")+QString(". ")+tr("Confirm activating/deactivating activities/constraints will be %1", "%1 is true or false").arg(tr("true"));
+	s+="\n";
+
+	//s+=tr("71")+QString(". ")+tr("The compression level for the states in history will be %1 (the default compression level for zlib)").arg(-1);
+	//s+="\n";
+
 	switch( LongTextMessageBox::largeConfirmation( this, tr("FET confirmation"), s,
 	 tr("&Yes"), tr("&No"), QString(), 0 , 1 ) ) {
 	case 0: // Yes
@@ -11319,6 +11502,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	
 	CONFIRM_SAVE_TIMETABLE=true;
 	settingsConfirmSaveTimetableAction->setChecked(CONFIRM_SAVE_TIMETABLE);
+
+	CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS=true;
+	settingsConfirmActivateDeactivateActivitiesConstraintsAction->setChecked(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS);
 	///////
 
 	///////////
@@ -11460,9 +11646,78 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	BEEP_AT_END_OF_GENERATION=true;
 	ENABLE_COMMAND_AT_END_OF_GENERATION=false;
 	commandAtEndOfGeneration=QString("");
-//	DETACHED_NOTIFICATION=false;
-//	terminateCommandAfterSeconds=0;
-//	killCommandAfterSeconds=0;
+	//DETACHED_NOTIFICATION=false;
+	//terminateCommandAfterSeconds=0;
+	//killCommandAfterSeconds=0;
+
+	///////////////////////
+	/*if(!USE_UNDO_REDO){
+		int cs=oldRulesArchived.size();
+		assert(cs==int(operationWhichWasDone.size()));
+		assert(cs==int(operationDateTime.size()));
+		assert(cs==int(unarchivedSizes.size()));
+		//assert(cs==int(stateFileName.size()));
+
+		assert(cs==0);
+		assert(cntUndoRedoStackIterator==0);
+
+		USE_UNDO_REDO=true;
+	}
+	else{
+		int cs=oldRulesArchived.size();
+		assert(cs==int(operationWhichWasDone.size()));
+		assert(cs==int(operationDateTime.size()));
+		assert(cs==int(unarchivedSizes.size()));
+		//assert(cs==int(stateFileName.size()));
+
+		int ns=100;
+
+		if(ns<cs){
+			for(int i=0; i<cs-ns; i++){
+				assert(!oldRulesArchived.empty());
+				oldRulesArchived.pop_front();
+
+				assert(!operationWhichWasDone.empty());
+				operationWhichWasDone.pop_front();
+
+				assert(!operationDateTime.empty());
+				operationDateTime.pop_front();
+
+				assert(!unarchivedSizes.empty());
+				unarchivedSizes.pop_front();
+
+				//assert(!stateFileName.empty());
+				//stateFileName.pop_front();
+			}
+
+			cntUndoRedoStackIterator-=(cs-ns);
+			if(cntUndoRedoStackIterator<0)
+				cntUndoRedoStackIterator=0;
+
+			savedStateIterator-=(cs-ns);
+			if(savedStateIterator<0)
+				savedStateIterator=0;
+		}
+	}*/
+
+	if(USE_UNDO_REDO==true && UNDO_REDO_STEPS==100){
+		//do nothing
+	}
+	else{
+		USE_UNDO_REDO=true;
+
+		UNDO_REDO_STEPS=100;
+
+		//UNDO_REDO_COMPRESSION_LEVEL=-1;
+
+		clearHistory();
+		if(gt.rules.initialized && USE_UNDO_REDO){
+			gt.rules.addUndoPoint(tr("Cleared the history, because the history settings were modified when resetting all the settings to default."));
+			if(!gt.rules.modified)
+				savedStateIterator=cntUndoRedoStackIterator;
+		}
+	}
+	///////////////////////
 
 	setLanguage(*pqapplication, this);
 	setCurrentFile(INPUT_FILENAME_XML);
@@ -11473,9 +11728,9 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 
 void FetMainForm::on_settingsTimetableHtmlLevelAction_triggered()
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -11486,9 +11741,9 @@ void FetMainForm::on_settingsTimetableHtmlLevelAction_triggered()
 
 void FetMainForm::on_settingsDataToPrintInTimetablesAction_triggered()
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	
@@ -11547,9 +11802,9 @@ void FetMainForm::on_activityPlanningAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -11580,9 +11835,9 @@ void FetMainForm::on_spreadActivitiesAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	
@@ -11711,9 +11966,9 @@ void FetMainForm::on_statisticsExportToDiskAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -11728,9 +11983,9 @@ void FetMainForm::on_removeRedundantConstraintsAction_triggered()
 		return;
 	}
 
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 	
@@ -11766,7 +12021,11 @@ void FetMainForm::on_selectOutputDirAction_triggered()
 	if(!od.isNull()){
 		QFile test(od+FILE_SEP+"test_write_permissions_3.tmp");
 		bool existedBefore=test.exists();
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+		bool t=test.open(QIODeviceBase::ReadWrite);
+#else
 		bool t=test.open(QIODevice::ReadWrite);
+#endif
 		//if(!test.exists())
 		//	t=false;
 		if(!t){

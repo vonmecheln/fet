@@ -159,10 +159,16 @@ void ConstraintStudentsSetMaxBuildingChangesPerDayForm::removeConstraint()
 	
 	QListWidgetItem* item;
 
+	QString oc;
+
 	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), QString(), 0, 1 ) ){
 	case 0: // The user clicked the OK button or pressed Enter
+		oc=ctr->getDetailedDescription(gt.rules);
+
 		gt.rules.removeSpaceConstraint(ctr);
+
+		gt.rules.addUndoPoint(tr("Removed the constraint:\n\n%1").arg(ctr->getDetailedDescription(gt.rules)));
 		
 		visibleConstraintsList.removeAt(i);
 		constraintsListWidget->setCurrentRow(-1);

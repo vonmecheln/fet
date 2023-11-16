@@ -116,11 +116,16 @@ void ModifyConstraintActivityTagPreferredRoomsForm::ok()
 	QStringList roomsList;
 	for(int i=0; i<selectedRoomsListWidget->count(); i++)
 		roomsList.append(selectedRoomsListWidget->item(i)->text());
-	
+
+	QString oldcs=this->_ctr->getDetailedDescription(gt.rules);
+
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->activityTagName=activityTag;
 	this->_ctr->roomsNames=roomsList;
-	
+
+	QString newcs=this->_ctr->getDetailedDescription(gt.rules);
+	gt.rules.addUndoPoint(tr("Modified the constraint:\n\n%1\ninto\n\n%2").arg(oldcs).arg(newcs));
+
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 	

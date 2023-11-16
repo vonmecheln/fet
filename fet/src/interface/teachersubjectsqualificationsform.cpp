@@ -84,13 +84,25 @@ void TeacherSubjectsQualificationsForm::ok()
 	_teacher->qualifiedSubjectsList=newSubjectsList;
 	_teacher->qualifiedSubjectsHash=newSubjectsHash;*/
 
+	QString so;
+	for(const QString& s : std::as_const(_teacher->qualifiedSubjectsList))
+		so+=s+QString(", ");
+	so.chop(2);
+
 	_teacher->qualifiedSubjectsList.clear();
 	_teacher->qualifiedSubjectsHash.clear();
 	for(int i=0; i<selectedSubjectsListWidget->count(); i++){
 		_teacher->qualifiedSubjectsList.push_back(selectedSubjectsListWidget->item(i)->text());
 		_teacher->qualifiedSubjectsHash.insert(selectedSubjectsListWidget->item(i)->text(), std::prev(_teacher->qualifiedSubjectsList.end()));
 	}
-	
+
+	QString sn;
+	for(const QString& s : std::as_const(_teacher->qualifiedSubjectsList))
+		sn+=s+QString(", ");
+	sn.chop(2);
+
+	gt.rules.addUndoPoint(tr("Changed the list of qualified subjects for teacher %1 from:\n%2\nto\n%3.").arg(_teacher->name).arg(so).arg(sn));
+
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 	

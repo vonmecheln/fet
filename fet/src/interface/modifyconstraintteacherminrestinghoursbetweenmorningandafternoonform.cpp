@@ -84,11 +84,16 @@ void ModifyConstraintTeacherMinRestingHoursBetweenMorningAndAfternoonForm::ok()
 		return;
 	}
 
+	QString oldcs=this->_ctr->getDetailedDescription(gt.rules);
+
 	this->_ctr->weightPercentage=weight;
 	
 	this->_ctr->minRestingHours=minRestingHoursSpinBox->value();
 
 	this->_ctr->teacherName=teacher_name;
+
+	QString newcs=this->_ctr->getDetailedDescription(gt.rules);
+	gt.rules.addUndoPoint(tr("Modified the constraint:\n\n%1\ninto\n\n%2").arg(oldcs).arg(newcs));
 
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

@@ -95,7 +95,7 @@ class TimetableGenerateMultipleForm : public QDialog, Ui::TimetableGenerateMulti
 	QList<Solution*> highestStageSolutions;
 	QList<int> nTimetableForHighestStageSolutions;
 	QList<int> nThreadForHighest;
-	QList<bool> simulationTimedOutForHighest;
+	QList<bool> generationTimedOutForHighest;
 	QList<int> timeForHighestStageSolutions;
 
 public:
@@ -120,7 +120,7 @@ private slots:
 
 	void timetableGenerated(int nThread, int timetable, const QString& description, bool ok);
 	
-	void simulationFinished();
+	void generationFinished();
 	
 	void activityPlaced(int nThread, int na);
 };

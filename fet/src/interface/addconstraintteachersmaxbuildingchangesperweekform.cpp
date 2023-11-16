@@ -60,9 +60,12 @@ void AddConstraintTeachersMaxBuildingChangesPerWeekForm::addCurrentConstraint()
 	ctr=new ConstraintTeachersMaxBuildingChangesPerWeek(weight, maxChangesSpinBox->value());
 
 	bool tmp2=gt.rules.addSpaceConstraint(ctr);
-	if(tmp2)
+	if(tmp2){
 		LongTextMessageBox::information(this, tr("FET information"),
 			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
+
+		gt.rules.addUndoPoint(tr("Added the constraint:\n\n%1").arg(ctr->getDetailedDescription(gt.rules)));
+	}
 	else{
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Constraint NOT added - please report error"));
@@ -72,8 +75,8 @@ void AddConstraintTeachersMaxBuildingChangesPerWeekForm::addCurrentConstraint()
 
 void AddConstraintTeachersMaxBuildingChangesPerWeekForm::addCurrentConstraints()
 {
-	QMessageBox::StandardButton res=QMessageBox::question(this, tr("FET question"),
-	 tr("Warning: This operation will add multiple constraints, one for each teacher. Are you sure?"),
+	QMessageBox::StandardButton res=QMessageBox::question(this, tr("FET confirmation"),
+	 tr("This operation will add multiple constraints, one for each teacher. Do you want to continue?"),
 	 QMessageBox::Cancel | QMessageBox::Yes);
 	if(res==QMessageBox::Cancel)
 		return;
@@ -87,12 +90,19 @@ void AddConstraintTeachersMaxBuildingChangesPerWeekForm::addCurrentConstraints()
 		return;
 	}
 
+	QString ctrs;
 	for(Teacher* tch : std::as_const(gt.rules.teachersList)){
 		SpaceConstraint *ctr=new ConstraintTeacherMaxBuildingChangesPerWeek(weight, tch->name, maxChangesSpinBox->value());
 		bool tmp2=gt.rules.addSpaceConstraint(ctr);
 		assert(tmp2);
+
+		ctrs+=ctr->getDetailedDescription(gt.rules);
+		ctrs+="\n";
 	}
 
 	QMessageBox::information(this, tr("FET information"), tr("Added %1 space constraints. Please note that these constraints"
 	 " will be visible as constraints for individual teachers.").arg(gt.rules.teachersList.count()));
+
+	gt.rules.addUndoPoint(tr("Added %1 constraints, one for each teacher:\n\n%2", "%1 is the number of constraints, %2 is their detailed description")
+						  .arg(gt.rules.teachersList.count()).arg(ctrs));
 }

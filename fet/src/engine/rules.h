@@ -43,6 +43,12 @@ File rules.h
 
 #include <QCoreApplication>
 
+#include <QByteArray>
+
+#include <QPair>
+
+#include <list>
+
 class QXmlStreamReader;
 
 class QWidget;
@@ -54,7 +60,7 @@ const int TERMS=3;
 
 class FakeString
 /*
-fake string, so that the output log is not too large
+Fake string, so that the output log is not too large
 */
 {
 public:
@@ -66,6 +72,20 @@ public:
 	void operator+=(const char* str);
 };
 
+class QDataStream;
+class Rules;
+
+QDataStream& operator<<(QDataStream& stream, const Rules& rules);
+QDataStream& operator>>(QDataStream& stream, Rules& rules);
+
+class QDate;
+class QTime;
+
+#ifndef FET_COMMAND_LINE
+	void updateFetMainFormAfterHistoryRestored(int iterationsBackward);
+	void clearHistory();
+#endif
+
 /**
 This class contains all the information regarding
 the institution: teachers, students, activities, constraints, etc.
@@ -74,6 +94,16 @@ class Rules{
 	Q_DECLARE_TR_FUNCTIONS(Rules)
 
 public:
+#ifndef FET_COMMAND_LINE
+	void addUndoPoint(const QString& description);
+	void restoreState(int iterationsBackward); //iterationsBackward<0 means Redo, >0 means Undo, and ==0 is not allowed
+#endif
+
+	void recomputeActivitiesSetForTimeConstraint(TimeConstraint* ctr);
+	void insertTimeConstraintInHash(TimeConstraint* ctr);
+	void recomputeActivitiesSetForSpaceConstraint(SpaceConstraint* ctr);
+	void insertSpaceConstraintInHash(SpaceConstraint* ctr);
+
 	int mode;
 
 	bool modified;
@@ -275,7 +305,7 @@ public:
 	/**
 	Terminator - basically clears the memory for the constraints.
 	*/
-	void kill();
+	void clear();
 
 	Rules();
 
@@ -781,8 +811,8 @@ public:
 	
 	int deactivateActivityTag(const QString& activityTagName);
 	
-	void makeActivityTagPrintable(const QString& activityTagName);
-	void makeActivityTagNotPrintable(const QString& activityTagName);
+	bool makeActivityTagPrintable(const QString& activityTagName);
+	bool makeActivityTagNotPrintable(const QString& activityTagName);
 	
 	void updateActivitiesWhenRemovingStudents(const QSet<StudentsSet*>& studentsSets, bool updateConstraints);
 	void updateGroupActivitiesInInitialOrderAfterRemoval();

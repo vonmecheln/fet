@@ -441,6 +441,8 @@ void ModifySubactivityForm::ok()
 	}*/
 	int total_number_of_students=numberOfStudents;
 
+	QString od=this->_activity->getDetailedDescription(gt.rules);
+
 	if(nStudentsSpinBox->value()==-1){
 		gt.rules.modifySubactivity(this->_id, this->_activityGroupId, teachers_names, subject_name,
 		 activity_tags_names,students_names, durationSpinBox->value(), activeCheckBox->isChecked(),
@@ -454,6 +456,11 @@ void ModifySubactivityForm::ok()
 	
 	PlanningChanged::increasePlanningCommunicationSpinBox();
 	
+	QString nd=this->_activity->getDetailedDescription(gt.rules);
+	gt.rules.addUndoPoint(tr("Modified the subactivity with id=%1.").arg(this->_id)
+	 +QString("\n\n")+tr("The old description was:\n%1").arg(od)
+	 +QString("\n")+tr("The new description was:\n%1", "It is 'was', not 'is', because it is a recorded history (undo/redo) point.").arg(nd));
+
 	this->accept();
 }
 

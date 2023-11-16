@@ -19,6 +19,32 @@
 #include "rules.h"
 #include "messageboxes.h"
 
+#include <QDataStream>
+
+QDataStream& operator<<(QDataStream& stream, const Room& rm)
+{
+	stream<<rm.isVirtual;
+	stream<<rm.name;
+	stream<<rm.capacity;
+	stream<<rm.building;
+	stream<<rm.comments;
+	stream<<rm.realRoomsSetsList;
+
+	return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, Room& rm)
+{
+	stream>>rm.isVirtual;
+	stream>>rm.name;
+	stream>>rm.capacity;
+	stream>>rm.building;
+	stream>>rm.comments;
+	stream>>rm.realRoomsSetsList;
+
+	return stream;
+}
+
 static QString trueFalse(bool x)
 {
 	if(!x)

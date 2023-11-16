@@ -697,6 +697,9 @@ void AddActivityForm::addActivity()
 				activityid = act->id;
 		}
 		activityid++;
+		
+		int sfid=activityid;
+		
 		Activity a(gt.rules, activityid, 0, teachers_names, subject_name, activity_tags_names, students_names,
 			duration, duration, /*parity,*/ active, (nStudentsSpinBox->value()==-1), nStudentsSpinBox->value(), numberOfStudents);
 
@@ -726,16 +729,23 @@ void AddActivityForm::addActivity()
 		bool tmp=gt.rules.addSimpleActivityFast(this, activityid, 0, teachers_names, subject_name, activity_tags_names,
 			students_names, duration, duration, active,
 			(nStudentsSpinBox->value()==-1), nStudentsSpinBox->value(), numberOfStudents);
-		if(tmp)
+		if(tmp){
 			QMessageBox::information(this, tr("FET information"), tr("Activity added"));
-		else
+			
+			gt.rules.addUndoPoint(tr("Added an activity:\nId=%1\nTeachers=%2\nSubject=%3\nActivity tags=%4\n"
+			 "Students=%5")
+			 .arg(sfid).arg(teachers_names.join(", ")).arg(subject_name).arg(activity_tags_names.join(", "))
+			 .arg(students_names.join(", ")));
+		}
+		else{
 			QMessageBox::critical(this, tr("FET information"), tr("Activity NOT added - please report error"));
+		}
 	}
 	else{ //split activity
 		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 			if(minDaysDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek){
 				int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
-				 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
+				 tr("Possible incorrect settings. Are you sure you want to add current activity? See details below:")+"\n\n"+
 				 tr("You want to add a container activity split into more than the number of days per week and also add a constraint min days between activities."
 				  " This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).")+
 				 "\n\n"+
@@ -764,7 +774,7 @@ void AddActivityForm::addActivity()
 		else{
 			if(!halfCheckBox->isChecked() && minDaysDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek/2){
 				int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
-				 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
+				 tr("Possible incorrect settings. Are you sure you want to add current activity? See details below:")+"\n\n"+
 				 tr("You want to add a container activity split into more than the number of real days per week and also add a constraint min days between activities."
 				  " This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).")+
 				 "\n\n"+
@@ -791,7 +801,7 @@ void AddActivityForm::addActivity()
 			}
 			else if(halfCheckBox->isChecked() && minDaysDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek){
 				int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
-				 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
+				 tr("Possible incorrect settings. Are you sure you want to add current activity? See details below:")+"\n\n"+
 				 tr("You want to add a container activity split into more than the number of days per week and also add a constraint min half days between activities."
 				  " This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).")+
 				 "\n\n"+
@@ -843,6 +853,8 @@ void AddActivityForm::addActivity()
 		}
 		firstactivityid++;
 
+		int sfid=firstactivityid;
+
 		int minD=minDaysDistanceSpinBox->value();
 		bool tmp=gt.rules.addSplitActivityFast(this, firstactivityid, firstactivityid,
 			teachers_names, subject_name, activity_tags_names, students_names,
@@ -875,6 +887,10 @@ void AddActivityForm::addActivity()
 			QMessageBox::information(this, tr("FET information"), tr("Split activity added."
 			 " Please note that FET currently cannot check for duplicates when adding split activities"
 			 ". It is advisable to check the statistics after adding all the activities"));
+
+			gt.rules.addUndoPoint(tr("Added a split activity:\nFirst activity's id=%1\nTeachers=%2\nSubject=%3\nActivity tags=%4\nStudents=%5\nNumber of subactivities=%6")
+			 .arg(sfid).arg(teachers_names.join(", ")).arg(subject_name).arg(activity_tags_names.join(", "))
+			 .arg(students_names.join(", ")).arg(nsplit));
 		}
 		else
 			QMessageBox::critical(this, tr("FET information"), tr("Split activity NOT added - error???"));
@@ -969,6 +985,8 @@ void AddActivityForm::addMultipleActivities()
 		
 		int cnt_act=0;
 		activityid++;
+		
+		int sfid=activityid;
 
 		for(int st=0; st<students_names.count(); st++){
 			int n1=nStudentsSpinBox->value();
@@ -1016,12 +1034,16 @@ void AddActivityForm::addMultipleActivities()
 			}
 		}
 		QMessageBox::information(this, tr("FET information"), tr("%1 activities added").arg(cnt_act));
+
+		gt.rules.addUndoPoint(tr("Added multiple activities:\nFirst activity's id=%1\nTeachers=%2\nSubject=%3\nActivity tags=%4\nStudents (separately)=%5")
+		 .arg(sfid).arg(teachers_names.join(", ")).arg(subject_name).arg(activity_tags_names.join(", "))
+		 .arg(students_names.join(", ")));
 	}
 	else{ //split activity
 		if(gt.rules.mode!=MORNINGS_AFTERNOONS){
 			if(minDaysDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek){
 				int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
-				 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
+				 tr("Possible incorrect settings. Are you sure you want to add current activity? See details below:")+"\n\n"+
 				 tr("You want to add a container activity split into more than the number of days per week and also add a constraint min days between activities."
 				  " This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).")+
 				 "\n\n"+
@@ -1050,7 +1072,7 @@ void AddActivityForm::addMultipleActivities()
 		else{
 			if(!halfCheckBox->isChecked() && minDaysDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek/2){
 				int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
-				 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
+				 tr("Possible incorrect settings. Are you sure you want to add current activity? See details below:")+"\n\n"+
 				 tr("You want to add a container activity split into more than the number of real days per week and also add a constraint min days between activities."
 				  " This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).")+
 				 "\n\n"+
@@ -1077,7 +1099,7 @@ void AddActivityForm::addMultipleActivities()
 			}
 			else if(halfCheckBox->isChecked() && minDaysDistanceSpinBox->value()>0 && splitSpinBox->value()>gt.rules.nDaysPerWeek){
 				int t=LongTextMessageBox::largeConfirmation(this, tr("FET confirmation"),
-				 tr("Possible incorrect setting. Are you sure you want to add current activity? See details below:")+"\n\n"+
+				 tr("Possible incorrect settings. Are you sure you want to add current activity? See details below:")+"\n\n"+
 				 tr("You want to add a container activity split into more than the number of days per week and also add a constraint min half days between activities."
 				  " This is a very bad practice from the way the algorithm of generation works (it slows down the generation and makes it harder to find a solution).")+
 				 "\n\n"+
@@ -1128,6 +1150,8 @@ void AddActivityForm::addMultipleActivities()
 				firstactivityid = act->id;
 		}
 		firstactivityid++;
+
+		int sfid=firstactivityid;
 
 		int cnt_act=0;
 		
@@ -1199,6 +1223,11 @@ void AddActivityForm::addMultipleActivities()
 			}
 		}
 		QMessageBox::information(this, tr("FET information"), tr("%1 split activities added").arg(cnt_act));
+
+		gt.rules.addUndoPoint(tr("Added multiple split activities:\nFirst activity's id=%1\nTeachers=%2\nSubject=%3\nActivity tags=%4\nStudents (separately)=%5\n"
+		 "Number of subactivities in each larger split activity=%6")
+		 .arg(sfid).arg(teachers_names.join(", ")).arg(subject_name).arg(activity_tags_names.join(", "))
+		 .arg(students_names.join(", ")).arg(nsplit));
 	}
 
 	PlanningChanged::increasePlanningCommunicationSpinBox();

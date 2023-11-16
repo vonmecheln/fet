@@ -65,6 +65,8 @@ public slots:
 	//void activateAllConstraints();
 	//void deactivateAllConstraints();
 	void constraintComments();
+	
+	void selectionChanged();
 };
 
 #endif

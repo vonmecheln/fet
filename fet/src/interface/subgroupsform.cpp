@@ -248,6 +248,8 @@ void SubgroupsForm::removeSubgroup()
 	bool tmp=gt.rules.removeSubgroup(yearName, groupName, subgroupName);
 	assert(tmp);
 	if(tmp){
+		gt.rules.addUndoPoint(tr("Removed the subgroup %1 from the group %2, the year %3.").arg(subgroupName).arg(groupName).arg(yearName));
+
 		int q=subgroupsListWidget->currentRow();
 		
 		subgroupsListWidget->setCurrentRow(-1);
@@ -329,6 +331,8 @@ void SubgroupsForm::purgeSubgroup()
 	bool tmp=gt.rules.purgeSubgroup(subgroupName);
 	assert(tmp);
 	if(tmp){
+		gt.rules.addUndoPoint(tr("Removed the subgroup %1 from everywhere.").arg(subgroupName));
+
 		int q=subgroupsListWidget->currentRow();
 		
 		subgroupsListWidget->setCurrentRow(-1);
@@ -450,7 +454,9 @@ void SubgroupsForm::moveSubgroupUp()
 	
 	sg->subgroupsList[i]=ss2;
 	sg->subgroupsList[i-1]=ss1;
-	
+
+	gt.rules.addUndoPoint(tr("Moved the subgroup %1 up in the group %2, the year %3.").arg(ss1->name).arg(sg->name).arg(sy->name));
+
 	subgroupsListWidget->setCurrentRow(i-1);
 	subgroupChanged(/*i-1*/s1);
 }
@@ -491,7 +497,9 @@ void SubgroupsForm::moveSubgroupDown()
 	
 	sg->subgroupsList[i]=ss2;
 	sg->subgroupsList[i+1]=ss1;
-	
+
+	gt.rules.addUndoPoint(tr("Moved the subgroup %1 down in the group %2, the year %3.").arg(ss1->name).arg(sg->name).arg(sy->name));
+
 	subgroupsListWidget->setCurrentRow(i+1);
 	subgroupChanged(/*i+1*/s1);
 }
@@ -516,6 +524,8 @@ void SubgroupsForm::sortSubgroups()
 	
 	gt.rules.sortSubgroupsAlphabetically(yearName, groupName);
 	
+	gt.rules.addUndoPoint(tr("Sorted the subgroups in the group %1, the year %2.").arg(groupName).arg(yearName));
+
 	groupChanged(groupName);
 }
 
@@ -596,6 +606,9 @@ void SubgroupsForm::activateStudents()
 	QString subgroupName=subgroupsListWidget->currentItem()->text();
 	int count=gt.rules.activateStudents(subgroupName);
 	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
+
+	if(count>0)
+		gt.rules.addUndoPoint(tr("Activated the subgroup %1 (%2 activities).", "%2 is the number of activated activities").arg(subgroupName).arg(count));
 }
 
 void SubgroupsForm::deactivateStudents()
@@ -624,6 +637,9 @@ void SubgroupsForm::deactivateStudents()
 	QString subgroupName=subgroupsListWidget->currentItem()->text();
 	int count=gt.rules.deactivateStudents(subgroupName);
 	QMessageBox::information(this, tr("FET information"), tr("Deactivated a number of %1 activities").arg(count));
+
+	if(count>0)
+		gt.rules.addUndoPoint(tr("Deactivated the subgroup %1 (%2 activities).", "%2 is the number of deactivated activities").arg(subgroupName).arg(count));
 }
 
 void SubgroupsForm::comments()
@@ -677,8 +693,12 @@ void SubgroupsForm::comments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
+		QString ocs=studentsSet->comments;
+
 		studentsSet->comments=commentsPT->toPlainText();
 	
+		gt.rules.addUndoPoint(tr("Changed the comments for the subgroup %1 from\n%2\nto\n%3.").arg(subgroupName).arg(ocs).arg(studentsSet->comments));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 

@@ -306,11 +306,21 @@ void DaysForm::ok()
 		rooms_schedule_ready=false;
 	}
 	////////////
+	
+	QString od=tr("Old number of days: %1").arg(gt.rules.nDaysPerWeek);
+	od+=QString("\n");
+	od+=tr("Old days:\n%1").arg(gt.rules.daysOfTheWeek.join("\n"));
 
 	gt.rules.nDaysPerWeek=nDays;
 	gt.rules.daysOfTheWeek.clear();
 	for(int i=0; i<nDays; i++)
 		gt.rules.daysOfTheWeek.append(realNames.at(i));
+
+	QString nd=tr("New number of days: %1").arg(gt.rules.nDaysPerWeek);
+	nd+=QString("\n");
+	nd+=tr("New days:\n%1").arg(gt.rules.daysOfTheWeek.join("\n"));
+	
+	gt.rules.addUndoPoint(tr("The number and/or names of the days were changed from:\n\n%1\n\nto\n\n%2").arg(od).arg(nd));
 	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

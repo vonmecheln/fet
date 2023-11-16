@@ -53,6 +53,8 @@ void AddBuildingForm::addBuilding()
 	else{
 		QMessageBox::information(this, tr("Building insertion dialog"),
 			tr("Building added"));
+			
+		gt.rules.addUndoPoint(tr("Added the building %1.").arg(bu->name));
 	}
 
 	nameLineEdit->selectAll();

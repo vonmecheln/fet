@@ -365,7 +365,6 @@ private:
 	
 	void setEnabledIcon(QAction* action, bool enabled);
 	
-	void setCurrentFile(const QString& fileName);
 	QString strippedName(const QString& fullFileName);
 	void updateRecentFileActions();
 
@@ -374,28 +373,34 @@ private:
 	int currentMode;
 	bool dataAvailable;
 	bool oldDataAvailable;
-	void updateMode(bool forceUpdate=false);
 	
-	bool getLastConfirmation(int newMode);
+	bool getLastConfirmation(int newMode, int &ntm, int& nsm);
 	
 	void createActionsForConstraints();
 	void createMenusOfActionsForConstraints();
 	
-public:
-	FetMainForm();
-	~FetMainForm();
-	
-	void retranslateMode();
-	void retranslateConstraints();
-
 	void closeOtherWindows();
 	
 	void openFile(const QString& fileName);
 	bool fileSave();
 	bool fileSaveAs();
 	
+public:
+	FetMainForm();
+	~FetMainForm();
+	
+	void updateMode(bool forceUpdate=false);
+
+	void setCurrentFile(const QString& fileName);
+
+	void retranslateMode();
+	void retranslateConstraints();
+
 public slots:
 	void enableNotPerfectMessage();
+
+	void on_restoreDataStateAction_triggered();
+	void on_settingsHistoryAction_triggered();
 	
 	void on_modeOfficialAction_triggered();
 	void on_modeMorningsAfternoonsAction_triggered();
@@ -461,6 +466,7 @@ public slots:
 	void on_settingsConfirmSpreadActivitiesAction_toggled();
 	void on_settingsConfirmRemoveRedundantAction_toggled();
 	void on_settingsConfirmSaveTimetableAction_toggled();
+	void on_settingsConfirmActivateDeactivateActivitiesConstraintsAction_toggled();
 	//////
 
 	void showWarningForSubgroupsWithTheSameActivitiesToggled(bool checked);

@@ -19,7 +19,106 @@
 #include "rules.h"
 #include "timetable.h"
 
+//#include <QDataStream>
+
 extern Timetable gt;
+
+/*QDataStream& operator<<(QDataStream& stream, const StudentsYear& year)
+{
+	stream<<year.name;
+	stream<<year.numberOfStudents;
+	stream<<year.type;
+
+	stream<<year.comments;
+
+	int ng=year.groupsList.count(); //convert count() to int
+	stream<<ng;
+	for(int i=0; i<ng; i++)
+		stream<<*year.groupsList.at(i);
+
+	stream<<year.divisions;
+	stream<<year.separator; //The separator when dividing a year by categories.
+
+	return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, StudentsYear& year){
+	stream>>year.name;
+	stream>>year.numberOfStudents;
+	stream>>year.type;
+
+	stream>>year.comments;
+
+	int cntg;
+	stream>>cntg;
+	for(int i=0; i<cntg; i++){
+		StudentsGroup* group=new StudentsGroup;
+		stream>>*group;
+		year.groupsList.append(group);
+	}
+
+	stream>>year.divisions;
+	stream>>year.separator; //The separator when dividing a year by categories.
+
+	return stream;
+}
+
+QDataStream& operator<<(QDataStream& stream, const StudentsGroup& group)
+{
+	stream<<group.name;
+	stream<<group.numberOfStudents;
+	stream<<group.type;
+
+	stream<<group.comments;
+
+	int ns=group.subgroupsList.count(); //convert count() to int
+	stream<<ns;
+	for(int i=0; i<ns; i++)
+		stream<<*group.subgroupsList.at(i);
+
+	return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, StudentsGroup& group)
+{
+	stream>>group.name;
+	stream>>group.numberOfStudents;
+	stream>>group.type;
+
+	stream>>group.comments;
+
+	int cnts;
+	stream>>cnts;
+	for(int i=0; i<cnts; i++){
+		StudentsSubgroup* subgroup=new StudentsSubgroup;
+		stream>>*subgroup;
+		group.subgroupsList.append(subgroup);
+	}
+
+	return stream;
+}
+
+QDataStream& operator<<(QDataStream& stream, const StudentsSubgroup& subgroup)
+{
+	stream<<subgroup.name;
+	stream<<subgroup.numberOfStudents;
+	stream<<subgroup.type;
+
+	stream<<subgroup.comments;
+
+	return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, StudentsSubgroup& subgroup)
+{
+	stream>>subgroup.name;
+	stream>>subgroup.numberOfStudents;
+	stream>>subgroup.type;
+
+	stream>>subgroup.comments;
+
+	return stream;
+}*/
 
 StudentsSet::StudentsSet()
 {

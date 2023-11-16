@@ -263,10 +263,16 @@ void ConstraintMinDaysBetweenActivitiesForm::removeConstraint()
 	
 	QListWidgetItem* item;
 
+	QString oc;
+
 	switch( LongTextMessageBox::confirmation( this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), QString(), 0, 1 ) ){
 	case 0: // The user clicked the OK button or pressed Enter
+		oc=ctr->getDetailedDescription(gt.rules);
+
 		gt.rules.removeTimeConstraint(ctr);
+
+		gt.rules.addUndoPoint(tr("Removed the constraint:\n\n%1").arg(oc));
 
 		visibleConstraintsList.removeAt(i);
 		constraintsListWidget->setCurrentRow(-1);
@@ -447,6 +453,29 @@ void ConstraintMinDaysBetweenActivitiesForm::changeSelectively()
 		  " (after current operation) to apply the operation of removing redundant constraints.")
 		 +" "+tr("Read Help/Important tips - tip 2) for details.")
 		 );
+		
+		QString s=tr("Modified multiple constraints min days between activities with filter:");
+		s+=QString("\n");
+
+		s+=tr("Old weight percentage=%1").arg(oldWeight);
+		s+=QString("\n");
+		s+=tr("New weight percentage=%1").arg(newWeight);
+		s+=QString("\n");
+
+		s+=tr("Old consecutive if same day=%1").arg(oldConsecutive?tr("yes"):tr("no"));
+		s+=QString("\n");
+		s+=tr("New consecutive if same day=%1").arg(newConsecutive?tr("yes"):tr("no"));
+		s+=QString("\n");
+
+		s+=tr("Old min days=%1").arg(oldDays);
+		s+=QString("\n");
+		s+=tr("New min days=%1").arg(newDays);
+		s+=QString("\n");
+
+		s+=tr("Old number of activities=%1").arg(oldNActs);
+		s+=QString("\n");
+
+		gt.rules.addUndoPoint(s);
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);

@@ -344,6 +344,8 @@ void ModifyConstraintSubactivitiesPreferredTimeSlotsForm::ok()
 				return;
 	}
 
+	QString oldcs=this->_ctr->getDetailedDescription(gt.rules);
+
 	this->_ctr->weightPercentage=weight;
 
 	this->_ctr->componentNumber=componentNumberSpinBox->value();
@@ -357,6 +359,9 @@ void ModifyConstraintSubactivitiesPreferredTimeSlotsForm::ok()
 	this->_ctr->p_hours_L=hours_L;
 
 	this->_ctr->duration=duration;
+
+	QString newcs=this->_ctr->getDetailedDescription(gt.rules);
+	gt.rules.addUndoPoint(tr("Modified the constraint:\n\n%1\ninto\n\n%2").arg(oldcs).arg(newcs));
 
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

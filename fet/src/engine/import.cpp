@@ -517,7 +517,11 @@ int Import::getFileSeparatorFieldsAndHead(QWidget* parent, QDialog* &newParent){
 	textquote=NO_TEXTQUOTE_TRANSLATED;
 	fields.clear();
 	QFile file(fileName);
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::ReadOnly|QIODeviceBase::Text)){
+#else
 	if(!file.open(QIODevice::ReadOnly|QIODevice::Text)){
+#endif
 		return false;
 	}
 	QTextStream in(&file);
@@ -939,7 +943,11 @@ int Import::readFields(QWidget* parent){
 		QMessageBox::warning(parent, tr("FET warning"), tr("Empty filename."));
 		return false;
 	}
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	if(!file.open(QIODeviceBase::ReadOnly)){
+#else
 	if(!file.open(QIODevice::ReadOnly)){
+#endif
 		QMessageBox::warning(parent, tr("Error! Can't open file."), fileName);
 		return false;
 	}
@@ -1527,6 +1535,9 @@ void Import::importCSVActivityTags(QWidget* parent){
 	int tmp=fileName.lastIndexOf(FILE_SEP);
 	IMPORT_DIRECTORY=fileName.left(tmp);
 	//gt.rules.internalStructureComputed=false;
+	//setRulesModifiedAndOtherThings(&gt.rules);
+	if(count>0)
+		gt.rules.addUndoPoint(tr("%1 activity tags imported from the CSV file %2.").arg(count).arg(fileName));
 }
 
 void Import::importCSVRoomsAndBuildings(QWidget* parent){
@@ -1682,6 +1693,9 @@ void Import::importCSVRoomsAndBuildings(QWidget* parent){
 	int tmp=fileName.lastIndexOf(FILE_SEP);
 	IMPORT_DIRECTORY=fileName.left(tmp);
 	//gt.rules.internalStructureComputed=false;
+	//setRulesModifiedAndOtherThings(&gt.rules);
+	if(count>0 || countroom>0)
+		gt.rules.addUndoPoint(tr("%1 buildings and %2 rooms imported from the CSV file %3.").arg(count).arg(countroom).arg(fileName));
 }
 
 void Import::importCSVSubjects(QWidget* parent){
@@ -1765,6 +1779,9 @@ void Import::importCSVSubjects(QWidget* parent){
 	int tmp=fileName.lastIndexOf(FILE_SEP);
 	IMPORT_DIRECTORY=fileName.left(tmp);
 	//gt.rules.internalStructureComputed=false;
+	//setRulesModifiedAndOtherThings(&gt.rules);
+	if(count>0)
+		gt.rules.addUndoPoint(tr("%1 subjects imported from the CSV file %2.").arg(count).arg(fileName));
 }
 
 void Import::importCSVTeachers(QWidget* parent){
@@ -1850,6 +1867,9 @@ void Import::importCSVTeachers(QWidget* parent){
 	int tmp=fileName.lastIndexOf(FILE_SEP);
 	IMPORT_DIRECTORY=fileName.left(tmp);
 	//gt.rules.internalStructureComputed=false;
+	//setRulesModifiedAndOtherThings(&gt.rules);
+	if(count>0)
+		gt.rules.addUndoPoint(tr("%1 teachers imported from the CSV file %2.").arg(count).arg(fileName));
 }
 
 void Import::importCSVStudents(QWidget* parent){
@@ -2264,6 +2284,9 @@ ifUserCanceledProgress3:
 	int tmp=fileName.lastIndexOf(FILE_SEP);
 	IMPORT_DIRECTORY=fileName.left(tmp);
 	//gt.rules.internalStructureComputed=false;
+	//setRulesModifiedAndOtherThings(&gt.rules);
+	if(addedSubgroups>0 || addedGroups>0 || addedYears>0)
+		gt.rules.addUndoPoint(tr("%1 subgroups, %2 groups and %3 years imported from the CSV file %4.").arg(addedSubgroups).arg(addedGroups).arg(addedYears).arg(fileName));
 }
 
 void Import::importCSVActivities(QWidget* parent){
@@ -2611,6 +2634,7 @@ void Import::importCSVActivities(QWidget* parent){
 	fieldList[FIELD_TEACHER_NAME].clear();
 	if(count>0)
 		lastWarning+=Import::tr("%1 teachers added. Please check teachers form.").arg(count)+"\n";
+	int cnttch=count;
 	//add subjects
 	//maybe TODO write a function, so also import subjects csv can share this code
 	tmpSet.clear();
@@ -2646,6 +2670,7 @@ void Import::importCSVActivities(QWidget* parent){
 	}
 	if(count>0)
 		lastWarning+=Import::tr("%1 subjects added. Please check subjects form.").arg(count)+"\n";
+	int cntsb=count;
 	//add activity tags
 	//maybe TODO write a function, so also import activity tags csv can share this code
 	tmpSet.clear();
@@ -2667,6 +2692,7 @@ void Import::importCSVActivities(QWidget* parent){
 	}
 	if(count>0)
 		lastWarning+=Import::tr("%1 activity tags added. Please check activity tags form.").arg(count)+"\n";
+	int cntat=count;
 
 	//add activities (start) - similar to Liviu's code modified by Volker
 	count=0;
@@ -3071,4 +3097,8 @@ ifUserCanceledProgress4:
 	int tmp=fileName.lastIndexOf(FILE_SEP);
 	IMPORT_DIRECTORY=fileName.left(tmp);
 	//gt.rules.internalStructureComputed=false;
+	//setRulesModifiedAndOtherThings(&gt.rules);
+	if(count>0 || count2>0 || cnttch>0 || cntsb>0 || cntat>0)
+		gt.rules.addUndoPoint(tr("%1 container activities (%2 total activities) imported from the CSV file %3.").arg(count).arg(count2).arg(fileName)
+		 +QString(" ")+tr("This operation involved importing also %1 teachers, %2 subjects and %3 activity tags.").arg(cnttch).arg(cntsb).arg(cntat));
 }

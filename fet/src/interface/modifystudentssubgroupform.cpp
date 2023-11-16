@@ -38,7 +38,8 @@ ModifyStudentsSubgroupForm::ModifyStudentsSubgroupForm(QWidget* parent, const QS
 //	this->_yearName=yearName;
 //	this->_groupName=groupName;
 	this->_initialSubgroupName=initialSubgroupName;
-	
+	this->_initialNumberOfStudents=initialNumberOfStudents;
+
 	numberSpinBox->setValue(initialNumberOfStudents);
 	
 	yearNameLineEdit->setText(yearName);
@@ -81,8 +82,13 @@ void ModifyStudentsSubgroupForm::ok()
 		return;
 	}
 
+	QString od=tr("Subgroup name=%1\nNumber of students=%2").arg(this->_initialSubgroupName).arg(this->_initialNumberOfStudents);
+
 	bool t=gt.rules.modifyStudentsSet(this->_initialSubgroupName, subgroupName, numberSpinBox->value());
 	assert(t);
-	
+
+	QString nd=tr("Subgroup name=%1\nNumber of students=%2").arg(subgroupName).arg(numberSpinBox->value());
+	gt.rules.addUndoPoint(tr("The subgroup with description:\n\n%1\nwas modified into\n\n%2").arg(od).arg(nd));
+
 	this->close();
 }

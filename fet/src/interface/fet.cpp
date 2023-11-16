@@ -135,7 +135,7 @@ extern bool rooms_schedule_ready;
 //QMutex myMutex;
 //#endif
 
-void writeDefaultSimulationParameters();
+void writeDefaultGenerationParameters();
 
 QTranslator translator;
 
@@ -379,7 +379,7 @@ void usage(QTextStream* out, const QString& error)
 #endif
 
 #ifndef FET_COMMAND_LINE
-void FetSettings::readSimulationParameters()
+void FetSettings::readGenerationParameters()
 {
 	const QString predefDir=QDir::homePath()+FILE_SEP+"fet-results";
 
@@ -520,6 +520,7 @@ void FetSettings::readSimulationParameters()
 	CONFIRM_SPREAD_ACTIVITIES=newSettings.value("confirm-spread-activities", "true").toBool();
 	CONFIRM_REMOVE_REDUNDANT=newSettings.value("confirm-remove-redundant", "true").toBool();
 	CONFIRM_SAVE_TIMETABLE=newSettings.value("confirm-save-data-and-timetable", "true").toBool();
+	CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS=newSettings.value("confirm-activate-deactivate-activities-constraints", "true").toBool();
 /////////
 
 	ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY=newSettings.value("enable-activity-tag-max-hours-daily", "false").toBool();
@@ -584,7 +585,7 @@ void FetSettings::readSimulationParameters()
 	}
 }
 
-void FetSettings::writeSimulationParameters()
+void FetSettings::writeGenerationParameters()
 {
 	QSettings settings(COMPANY, PROGRAM);
 
@@ -653,6 +654,7 @@ void FetSettings::writeSimulationParameters()
 	settings.setValue("confirm-spread-activities", CONFIRM_SPREAD_ACTIVITIES);
 	settings.setValue("confirm-remove-redundant", CONFIRM_REMOVE_REDUNDANT);
 	settings.setValue("confirm-save-data-and-timetable", CONFIRM_SAVE_TIMETABLE);
+	settings.setValue("confirm-activate-deactivate-activities-constraints", CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS);
 ///////////
 
 	settings.setValue("enable-activity-tag-max-hours-daily", ENABLE_ACTIVITY_TAG_MAX_HOURS_DAILY);
@@ -1091,7 +1093,7 @@ int main(int argc, char **argv)
 
 #ifndef FET_COMMAND_LINE
 	if(_args.count()==1){
-		fetSettings.readSimulationParameters();
+		fetSettings.readGenerationParameters();
 	
 		QDir dir;
 	
@@ -1109,7 +1111,11 @@ int main(int argc, char **argv)
 		QString testFileName=OUTPUT_DIR+FILE_SEP+"test_write_permissions_1.tmp";
 		QFile test(testFileName);
 		bool existedBefore=test.exists();
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+		bool t_t=test.open(QIODeviceBase::ReadWrite);
+#else
 		bool t_t=test.open(QIODevice::ReadWrite);
+#endif
 		if(!t_t){
 			QMessageBox::critical(nullptr, FetTranslate::tr("FET critical"), FetTranslate::tr("You don't have write permissions in the output directory "
 			 "(FET cannot open or create file %1) - you might not be able to work correctly with FET. Maybe you can try to change the output directory from the 'Settings' menu."
@@ -1142,7 +1148,7 @@ int main(int argc, char **argv)
 		pFetMainForm=&fetMainForm;
 		fetMainForm.show();
 		
-		QObject::connect(&qapplication, SIGNAL(aboutToQuit()), &fetSettings, SLOT(writeSimulationParameters()));
+		QObject::connect(&qapplication, SIGNAL(aboutToQuit()), &fetSettings, SLOT(writeGenerationParameters()));
 
 		int tmp2=qapplication.exec();
 	
@@ -1605,7 +1611,11 @@ int main(int argc, char **argv)
 		
 		////////
 		QFile logFile(logsDir+"result.txt");
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+		bool tttt=logFile.open(QIODeviceBase::WriteOnly);
+#else
 		bool tttt=logFile.open(QIODevice::WriteOnly);
+#endif
 		if(!tttt){
 			cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(logsDir)<<"result.txt)."
 			 " If this is a bug - please report it."<<endl;
@@ -1650,7 +1660,11 @@ int main(int argc, char **argv)
 		QCoreApplication::setApplicationName(FetTranslate::tr("FET-CL"));
 		
 		QFile maxPlacedActivityFile(logsDir+"max_placed_activities.txt");
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+		maxPlacedActivityFile.open(QIODeviceBase::WriteOnly);
+#else
 		maxPlacedActivityFile.open(QIODevice::WriteOnly);
+#endif
 		QTextStream maxPlacedActivityStream(&maxPlacedActivityFile);
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
 		maxPlacedActivityStream.setEncoding(QStringConverter::Utf8);
@@ -1667,7 +1681,11 @@ int main(int argc, char **argv)
 #endif
 		
 		QFile initialOrderFile(logsDir+"initial_order.txt");
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+		initialOrderFile.open(QIODeviceBase::WriteOnly);
+#else
 		initialOrderFile.open(QIODevice::WriteOnly);
+#endif
 		QTextStream initialOrderStream(&initialOrderFile);
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
 		initialOrderStream.setEncoding(QStringConverter::Utf8);
@@ -1687,9 +1705,9 @@ int main(int argc, char **argv)
 		QLocale loc(FET_LANGUAGE);
 		QString sTime=loc.toString(dat, QLocale::ShortFormat)+" "+loc.toString(tim, QLocale::ShortFormat);
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-		out<<"FET command line simulation started on "<<qPrintable(sTime)<<Qt::endl<<Qt::endl;
+		out<<"FET command line generation started on "<<qPrintable(sTime)<<Qt::endl<<Qt::endl;
 #else
-		out<<"FET command line simulation started on "<<qPrintable(sTime)<<endl<<endl;
+		out<<"FET command line generation started on "<<qPrintable(sTime)<<endl<<endl;
 #endif
 		
 		if(outputDirectory!="")
@@ -1701,7 +1719,11 @@ int main(int argc, char **argv)
 			
 		QFile test(outputDirectory+"test_write_permissions_2.tmp");
 		bool existedBefore=test.exists();
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+		bool t_t=test.open(QIODeviceBase::ReadWrite);
+#else
 		bool t_t=test.open(QIODevice::ReadWrite);
+#endif
 		if(!t_t){
 			cout<<"fet: critical error - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(outputDirectory)<<"test_write_permissions_2.tmp)."
 			 " If this is a bug - please report it."<<endl;
@@ -1987,7 +2009,7 @@ int main(int argc, char **argv)
 				if(!dir.exists(toc))
 					dir.mkpath(toc);
 
-			TimetableExport::writeSimulationResultsCommandLine(nullptr, toc);
+			TimetableExport::writeGenerationResultsCommandLine(nullptr, toc);
 			
 			QString s;
 
@@ -2009,7 +2031,11 @@ int main(int argc, char **argv)
 			}
 
 			QFile difficultActivitiesFile(logsDir+"difficult_activities.txt");
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+			bool t=difficultActivitiesFile.open(QIODeviceBase::WriteOnly);
+#else
 			bool t=difficultActivitiesFile.open(QIODevice::WriteOnly);
+#endif
 			if(!t){
 				cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(logsDir)<<"difficult_activities.txt)."
 				 " If this is a bug - please report it."<<endl;
@@ -2055,7 +2081,7 @@ int main(int argc, char **argv)
 				if(!dir.exists(toh))
 					dir.mkpath(toh);
 
-			TimetableExport::writeSimulationResultsCommandLine(nullptr, toh);
+			TimetableExport::writeGenerationResultsCommandLine(nullptr, toh);
 
 			QString oldDir=OUTPUT_DIR;
 			OUTPUT_DIR=csvOutputDirectory;
@@ -2075,11 +2101,11 @@ int main(int argc, char **argv)
 #endif
 			}
 			else if(gen.abortOptimization){
-				cout<<"Simulation interrupted"<<endl;
+				cout<<"Generation interrupted"<<endl;
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-				out<<"Simulation interrupted"<<Qt::endl;
+				out<<"Generation interrupted"<<Qt::endl;
 #else
-				out<<"Simulation interrupted"<<endl;
+				out<<"Generation interrupted"<<endl;
 #endif
 			}
 			//by Ian Holden (end)
@@ -2110,7 +2136,7 @@ int main(int argc, char **argv)
 				if(!dir.exists(toc))
 					dir.mkpath(toc);
 
-			TimetableExport::writeSimulationResultsCommandLine(nullptr, toc);
+			TimetableExport::writeGenerationResultsCommandLine(nullptr, toc);
 			
 			QString s;
 
@@ -2151,7 +2177,11 @@ int main(int argc, char **argv)
 			}
 			
 			QFile difficultActivitiesFile(logsDir+"difficult_activities.txt");
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+			bool t=difficultActivitiesFile.open(QIODeviceBase::WriteOnly);
+#else
 			bool t=difficultActivitiesFile.open(QIODevice::WriteOnly);
+#endif
 			if(!t){
 				cout<<"FET critical - you don't have write permissions in the output directory - (FET cannot open or create file "<<qPrintable(logsDir)<<"difficult_activities.txt)."
 				 " If this is a bug - please report it."<<endl;
@@ -2197,7 +2227,7 @@ int main(int argc, char **argv)
 				if(!dir.exists(toh))
 					dir.mkpath(toh);
 
-			TimetableExport::writeSimulationResultsCommandLine(nullptr, toh);
+			TimetableExport::writeGenerationResultsCommandLine(nullptr, toh);
 
 			QString oldDir=OUTPUT_DIR;
 			OUTPUT_DIR=csvOutputDirectory;
@@ -2205,11 +2235,11 @@ int main(int argc, char **argv)
 			OUTPUT_DIR=oldDir;
 		}
 		else{
-			cout<<"Simulation successful"<<endl;
+			cout<<"Generation successful"<<endl;
 #if QT_VERSION >= QT_VERSION_CHECK(5,15,0)
-			out<<"Simulation successful"<<Qt::endl;
+			out<<"Generation successful"<<Qt::endl;
 #else
-			out<<"Simulation successful"<<endl;
+			out<<"Generation successful"<<endl;
 #endif
 		
 			TimetableExport::writeRandomSeedCommandLine(nullptr, gen.rng, outputDirectory, false); //false represents 'before' state
@@ -2225,7 +2255,7 @@ int main(int argc, char **argv)
 			TimetableExport::getRoomsTimetable(c);*/
 			TimetableExport::getStudentsTeachersRoomsTimetable(c);
 
-			TimetableExport::writeSimulationResultsCommandLine(nullptr, outputDirectory);
+			TimetableExport::writeGenerationResultsCommandLine(nullptr, outputDirectory);
 			
 			QString oldDir=OUTPUT_DIR;
 			OUTPUT_DIR=csvOutputDirectory;

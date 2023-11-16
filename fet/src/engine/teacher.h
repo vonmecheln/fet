@@ -42,6 +42,11 @@ const int TEACHER_THREE_DAYS_EXCEPTION=5;
 const int TEACHER_FOUR_DAYS_EXCEPTION=6;
 const int TEACHER_FIVE_DAYS_EXCEPTION=7;
 
+class QDataStream;
+
+QDataStream& operator<<(QDataStream& stream, const Teacher& tch);
+QDataStream& operator>>(QDataStream& stream, Teacher& tch);
+
 /**
 @author Liviu Lalescu
 */
@@ -70,6 +75,8 @@ public:
 	QString getDescription(const Rules& r);
 	QString getDetailedDescription(const Rules& r);
 	QString getDetailedDescriptionWithConstraints(Rules& r);
+
+	void recomputeQualifiedSubjectsHash();
 };
 
 int teachersAscending(const Teacher* t1, const Teacher* t2);

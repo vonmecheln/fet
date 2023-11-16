@@ -155,12 +155,20 @@ void ModifyTeacherForm::ok()
 	}
 	
 	if(tn!=oldName){
+		QString od=tch->getDetailedDescription(gt.rules);
+
 		gt.rules.modifyTeacher(oldName, tn);
 
 		tch->morningsAfternoonsBehavior=newMab;
+
+		gt.rules.addUndoPoint(tr("Modified the teacher from:\n\n%1\ninto\n\n%2").arg(od).arg(tch->getDetailedDescription(gt.rules)));
 	}
 	else{
+		QString od=tch->getDetailedDescription(gt.rules);
+
 		tch->morningsAfternoonsBehavior=newMab;
+
+		gt.rules.addUndoPoint(tr("Modified the teacher from:\n\n%1\ninto\n\n%2").arg(od).arg(tch->getDetailedDescription(gt.rules)));
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);

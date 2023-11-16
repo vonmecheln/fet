@@ -307,10 +307,20 @@ void HoursForm::ok()
 	}
 	////////////
 
+	QString oh=tr("Old number of hours: %1").arg(gt.rules.nHoursPerDay);
+	oh+=QString("\n");
+	oh+=tr("Old hours:\n%1").arg(gt.rules.hoursOfTheDay.join("\n"));
+
 	gt.rules.nHoursPerDay=nHours;
 	gt.rules.hoursOfTheDay.clear();
 	for(int i=0; i<nHours; i++)
 		gt.rules.hoursOfTheDay.append(realNames.at(i));
+
+	QString nh=tr("New number of hours: %1").arg(gt.rules.nHoursPerDay);
+	nh+=QString("\n");
+	nh+=tr("New hours:\n%1").arg(gt.rules.hoursOfTheDay.join("\n"));
+	
+	gt.rules.addUndoPoint(tr("The number and/or names of the hours were changed from:\n\n%1\n\nto\n\n%2").arg(oh).arg(nh));
 	
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

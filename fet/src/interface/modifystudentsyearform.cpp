@@ -73,8 +73,13 @@ void ModifyStudentsYearForm::ok()
 	}
 
 	if(this->_initialYearName==nameLineEdit->text()){
+		QString od=tr("Year name=%1\nNumber of students=%2").arg(this->_initialYearName).arg(this->_initialNumberOfStudents);
+
 		bool t=gt.rules.modifyStudentsSet(this->_initialYearName, nameLineEdit->text(), numberSpinBox->value());
 		assert(t);
+
+		QString nd=tr("Year name=%1\nNumber of students=%2").arg(nameLineEdit->text()).arg(numberSpinBox->value());
+		gt.rules.addUndoPoint(tr("The year with the description:\n\n%1\nwas modified into\n\n%2").arg(od).arg(nd));
 	}
 	else{
 		//rename groups and subgroups by Volker Dirr (start)
@@ -233,14 +238,25 @@ void ModifyStudentsYearForm::ok()
 		} else result=QMessageBox::No;
 
 		if(result==QMessageBox::Yes){
+			QString od=tr("Year name=%1\nNumber of students=%2").arg(this->_initialYearName).arg(this->_initialNumberOfStudents);
+
 			bool t=gt.rules.modifyStudentsSets(oldAndNewStudentsSetNamesForRenaming);
 			assert(t);
 			t=gt.rules.modifyStudentsSet(this->_initialYearName, nameLineEdit->text(), numberSpinBox->value());
 			assert(t);
+
+			QString nd=tr("Year name=%1\nNumber of students=%2").arg(nameLineEdit->text()).arg(numberSpinBox->value());
+			gt.rules.addUndoPoint(tr("The year (some or all of its groups and subgroups were renamed to match its new name) "
+			 "with description:\n\n%1\nwas modified into\n\n%2").arg(od).arg(nd));
 		} else if(result==QMessageBox::No) {
 		//rename groups and subgroups by Volker Dirr (end)
+			QString od=tr("Year name=%1\nNumber of students=%2").arg(this->_initialYearName).arg(this->_initialNumberOfStudents);
+
 			bool t=gt.rules.modifyStudentsSet(this->_initialYearName, nameLineEdit->text(), numberSpinBox->value());
 			assert(t);
+
+			QString nd=tr("Year name=%1\nNumber of students=%2").arg(nameLineEdit->text()).arg(numberSpinBox->value());
+			gt.rules.addUndoPoint(tr("The year with the description:\n\n%1\nwas modified into\n\n%2").arg(od).arg(nd));
 		} else {
 			assert(result==QMessageBox::Cancel);
 			return;

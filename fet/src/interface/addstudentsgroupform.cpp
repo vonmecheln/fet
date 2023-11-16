@@ -128,6 +128,8 @@ void AddStudentsGroupForm::addStudentsGroup()
 	gt.rules.addGroup(yearName, sg);
 	QMessageBox::information(this, tr("Group insertion dialog"),
 		tr("Group added"));
+		
+	gt.rules.addUndoPoint(tr("Added the group %1 in the year %2.").arg(sg->name).arg(yearName));
 
 	nameLineEdit->selectAll();
 	nameLineEdit->setFocus();

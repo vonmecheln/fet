@@ -25,6 +25,62 @@ File activity.cpp
 
 #include <QSet>
 
+#include <QDataStream>
+
+QDataStream& operator<<(QDataStream& stream, const Activity& act)
+{
+	stream<<act.comments;
+	stream<<act.teachersNames;
+	stream<<act.subjectName;
+	stream<<act.activityTagsNames;
+	stream<<act.studentsNames;
+	stream<<act.duration;
+	stream<<act.totalDuration;
+	stream<<act.id;
+	stream<<act.activityGroupId;
+	stream<<act.nTotalStudents;
+	stream<<act.computeNTotalStudents;
+	stream<<act.active;
+
+	return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, Activity& act)
+{
+	stream>>act.comments;
+	stream>>act.teachersNames;
+	stream>>act.subjectName;
+	stream>>act.activityTagsNames;
+	stream>>act.studentsNames;
+	stream>>act.duration;
+	stream>>act.totalDuration;
+	stream>>act.id;
+	stream>>act.activityGroupId;
+	stream>>act.nTotalStudents;
+	stream>>act.computeNTotalStudents;
+	stream>>act.active;
+
+	return stream;
+}
+
+QDataStream& operator<<(QDataStream& stream, const GroupActivitiesInInitialOrderItem& gaio)
+{
+	stream<<gaio.active;
+	stream<<gaio.comments;
+	stream<<gaio.ids;
+
+	return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, GroupActivitiesInInitialOrderItem& gaio)
+{
+	stream>>gaio.active;
+	stream>>gaio.comments;
+	stream>>gaio.ids;
+
+	return stream;
+}
+
 QString getActivityDetailedDescription(Rules& r, int id); //Implemented in timeconstraint.cpp
 
 GroupActivitiesInInitialOrderItem::GroupActivitiesInInitialOrderItem()

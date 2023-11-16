@@ -147,6 +147,8 @@ void ConstraintBasicCompulsorySpaceForm::removeConstraint()
 	
 	QListWidgetItem* item;
 
+	QString oc;
+
 	int lres=LongTextMessageBox::confirmation( this, tr("FET confirmation"),
 		s, tr("Yes"), tr("No"), QString(), 0, 1 );
 		
@@ -166,7 +168,11 @@ void ConstraintBasicCompulsorySpaceForm::removeConstraint()
 			QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 		
 		if(wr==QMessageBox::Yes){
+		oc=ctr->getDetailedDescription(gt.rules);
+
 			gt.rules.removeSpaceConstraint(ctr);
+
+		gt.rules.addUndoPoint(tr("Removed the constraint:\n\n%1").arg(ctr->getDetailedDescription(gt.rules)));
 
 			visibleConstraintsList.removeAt(i);
 			constraintsListWidget->setCurrentRow(-1);

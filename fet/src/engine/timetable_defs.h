@@ -38,6 +38,12 @@ File timetable_defs.h
 
 class QWidget;
 
+extern bool USE_UNDO_REDO;
+extern int UNDO_REDO_STEPS;
+//extern int UNDO_REDO_COMPRESSION_LEVEL;
+
+extern bool CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS;
+
 /**
 The version number
 */

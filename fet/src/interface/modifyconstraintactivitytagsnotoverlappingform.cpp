@@ -83,7 +83,9 @@ void ModifyConstraintActivityTagsNotOverlappingForm::ok()
 			tr("Only one selected activity tag"));
 		return;
 	}
-	
+
+	QString oldcs=this->_ctr->getDetailedDescription(gt.rules);
+
 	QStringList atl;
 	for(int i=0; i<notOverlappingActivityTagsListWidget->count(); i++)
 		atl.append(notOverlappingActivityTagsListWidget->item(i)->text());
@@ -91,6 +93,9 @@ void ModifyConstraintActivityTagsNotOverlappingForm::ok()
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->activityTagsNames=atl;
 	
+	QString newcs=this->_ctr->getDetailedDescription(gt.rules);
+	gt.rules.addUndoPoint(tr("Modified the constraint:\n\n%1\ninto\n\n%2").arg(oldcs).arg(newcs));
+
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 	

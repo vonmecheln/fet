@@ -590,6 +590,17 @@ again_here_1:
 			return;
 	}
 	
+	QString sb=tr("Number of categories: %1").arg(yearPointer->divisions.count());
+	sb+=QString("\n");
+	for(int i=0; i<yearPointer->divisions.count(); i++){
+		sb+=tr("Category %1: %2").arg(i+1).arg(yearPointer->divisions.at(i).join(", "));
+		sb+=QString("\n");
+	}
+	/*if(yearPointer->divisions.count()==0){
+		sb+=tr("No categories");
+		sb+=QString("\n");
+	}*/
+	
 	StudentsYear* newYear=new StudentsYear;
 	newYear->name=yearPointer->name;
 	newYear->numberOfStudents=yearPointer->numberOfStudents;
@@ -716,8 +727,21 @@ again_here_2:
 
 	//2020-09-03
 	newYear->separator=_sep;
-	for(int i=0; i<_nCategories; i++)
+	QString sa=tr("Number of categories: %1").arg(_nCategories);
+	sa+=QString("\n");
+	for(int i=0; i<_nCategories; i++){
 		newYear->divisions.append(_divisions[i]);
+
+		sa+=tr("Category %1: %2").arg(i+1).arg(_divisions[i].join(", "));
+		sa+=QString("\n");
+	}
+	/*if(_nCategories==0){
+		sa+=tr("No categories");
+		sa+=QString("\n");
+	}*/
+
+	gt.rules.addUndoPoint(tr("Modified the categories and the divisions of the year %1 from\n\n%2\ninto\n\n%3")
+	 .arg(newYear->name).arg(sb).arg(sa));
 	
 	//No need for gt.rules.internalStructureComputed=false and the rest of it, because there was invoked gt.rules.removeYearPointerAfterSplit(yearPointer)
 	//(and in case the number of categories is nonzero, there was also invoked addGroupFast and addSubgroupFast).

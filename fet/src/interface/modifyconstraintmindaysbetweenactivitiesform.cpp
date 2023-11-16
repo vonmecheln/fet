@@ -268,6 +268,8 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 		}
 	}
 	
+	QString oldcs=this->_ctr->getDetailedDescription(gt.rules);
+
 	if(_ctr->activitiesIds!=selectedActivitiesList){
 		for(int oldId : std::as_const(_ctr->activitiesIds)){
 			QSet<ConstraintMinDaysBetweenActivities*> cs=gt.rules.mdbaHash.value(oldId, QSet<ConstraintMinDaysBetweenActivities*>());
@@ -301,6 +303,9 @@ void ModifyConstraintMinDaysBetweenActivitiesForm::ok()
 	this->_ctr->consecutiveIfSameDay=consecutiveIfSameDayCheckBox->isChecked();
 	this->_ctr->minDays=minDaysSpinBox->value();
 	
+	QString newcs=this->_ctr->getDetailedDescription(gt.rules);
+	gt.rules.addUndoPoint(tr("Modified the constraint:\n\n%1\ninto\n\n%2").arg(oldcs).arg(newcs));
+
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 	

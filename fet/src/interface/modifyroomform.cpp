@@ -88,8 +88,13 @@ void ModifyRoomForm::ok()
 		return;
 	}
 	
+	QString od=tr("Name=%1\nBuilding=%2\nCapacity=%3").arg(this->_initialRoomName).arg(this->_initialRoomBuilding).arg(this->_initialRoomCapacity)+QString("\n");
+	
 	bool t=gt.rules.modifyRoom(this->_initialRoomName, nameLineEdit->text(), buildingsComboBox->currentText(), capacitySpinBox->value());
 	assert(t);
+
+	QString nd=tr("Name=%1\nBuilding=%2\nCapacity=%3").arg(nameLineEdit->text()).arg(buildingsComboBox->currentText()).arg(capacitySpinBox->value())+QString("\n");
+	gt.rules.addUndoPoint(tr("The room with description:\n\n%1\nwas modified into\n\n%2").arg(od).arg(nd));
 	
 	this->close();
 }

@@ -18,6 +18,24 @@
 #include "subject.h"
 #include "rules.h"
 
+#include <QDataStream>
+
+QDataStream& operator<<(QDataStream& stream, const Subject& sbj)
+{
+	stream<<sbj.name;
+	stream<<sbj.comments;
+
+	return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, Subject& sbj)
+{
+	stream>>sbj.name;
+	stream>>sbj.comments;
+
+	return stream;
+}
+
 Subject::Subject()
 {
 	comments=QString("");

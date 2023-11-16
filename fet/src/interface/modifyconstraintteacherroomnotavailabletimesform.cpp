@@ -260,6 +260,8 @@ void ModifyConstraintTeacherRoomNotAvailableTimesForm::ok()
 	
 	Room* room=gt.rules.roomsList.at(i);
 
+	QString oldcs=this->_ctr->getDetailedDescription(gt.rules);
+
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->teacherName=teacher->name;
 	this->_ctr->room=room->name;
@@ -275,6 +277,9 @@ void ModifyConstraintTeacherRoomNotAvailableTimesForm::ok()
 
 	this->_ctr->days=days;
 	this->_ctr->hours=hours;
+
+	QString newcs=this->_ctr->getDetailedDescription(gt.rules);
+	gt.rules.addUndoPoint(tr("Modified the constraint:\n\n%1\ninto\n\n%2").arg(oldcs).arg(newcs));
 
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

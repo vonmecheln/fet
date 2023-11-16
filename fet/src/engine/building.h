@@ -31,6 +31,11 @@ class Rules;
 
 typedef QList<Building*> BuildingsList;
 
+class QDataStream;
+
+QDataStream& operator<<(QDataStream& stream, const Building& bd);
+QDataStream& operator>>(QDataStream& stream, Building& bd);
+
 /**
 This class represents a building
 

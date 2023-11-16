@@ -43,6 +43,17 @@ typedef QList<StudentsGroup*> StudentsGroupsList;
 
 typedef QList<StudentsSubgroup*> StudentsSubgroupsList;
 
+class QDataStream;
+
+/*QDataStream& operator<<(QDataStream& stream, const StudentsYear& year);
+QDataStream& operator>>(QDataStream& stream, StudentsYear& year);
+
+QDataStream& operator<<(QDataStream& stream, const StudentsGroup& group);
+QDataStream& operator>>(QDataStream& stream, StudentsGroup& group);
+
+QDataStream& operator<<(QDataStream& stream, const StudentsSubgroup& subgroup);
+QDataStream& operator>>(QDataStream& stream, StudentsSubgroup& subgroup);*/
+
 /**
 This class represents a set of students, for instance years, groups or subgroups.
 

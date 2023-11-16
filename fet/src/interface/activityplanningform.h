@@ -4,7 +4,7 @@
    copyright            : (C) by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************
-                      activityplanning.h  -  description
+                      activityplanningform.h  -  description
                              -------------------
     begin                : 2009
     copyright            : (C) 2009 by Volker Dirr
@@ -121,7 +121,7 @@ private slots:
 	//void teachersCellSelected(QTableWidgetItem*);
 	void teachersCellSelected(const QModelIndex& index);
 	//mouseTracking (start 1/4)
-	//void ActivtiesCellEntered(int, int);
+	//void ActivitiesCellEntered(int, int);
 	//void TeachersCellEntered(int, int);
 	//mouseTracking (end 1/4)
 	void activitiesTableHorizontalHeaderClicked(int column);

@@ -204,7 +204,9 @@ void AddConstraintActivityPreferredStartingTimeForm::addCurrentConstraint()
 	if(tmp3){
 		LongTextMessageBox::information(this, tr("FET information"),
 			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
-		
+
+		gt.rules.addUndoPoint(tr("Added the constraint:\n\n%1").arg(ctr->getDetailedDescription(gt.rules)));
+
 		LockUnlock::computeLockedUnlockedActivitiesOnlyTime();
 		LockUnlock::increaseCommunicationSpinBox();
 	}

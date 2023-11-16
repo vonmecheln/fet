@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<fet version="6.9.4">
+<fet version="6.11.1">
 
 <Mode>Mornings_Afternoons</Mode>
 
@@ -2938,5 +2938,16 @@
 	<Comments></Comments>
 </ConstraintStudentsMaxBuildingChangesPerRealDay>
 </Space_Constraints_List>
+
+<Timetable_Generation_Options_List>
+<GroupActivitiesInInitialOrder>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>5</Activity_Id>
+	<Activity_Id>7</Activity_Id>
+	<Activity_Id>8</Activity_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</GroupActivitiesInInitialOrder>
+</Timetable_Generation_Options_List>
 
 </fet>

@@ -37,9 +37,5265 @@ File timeconstraint.cpp
 
 #include <QSet>
 
+#include <QDataStream>
+
 //for min max functions
 #include <algorithm>
 //using namespace std;
+
+//1
+QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsoryTime& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	return stream;
+}
+
+//2
+QDataStream& operator<<(QDataStream& stream, const ConstraintBreakTimes& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.days<<tc.hours;
+
+	return stream;
+}
+
+//3
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherNotAvailableTimes& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.days<<tc.hours<<tc.teacher;
+
+	return stream;
+}
+
+//4
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursDaily;
+
+	return stream;
+}
+
+//5
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek<<tc.teacherName;
+
+	return stream;
+}
+
+//6
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxGapsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps;
+
+	return stream;
+}
+
+//7
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxGapsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps<<tc.teacherName;
+
+	return stream;
+}
+
+//8
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursDaily<<tc.teacherName;
+
+	return stream;
+}
+
+//9
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxHoursContinuously& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursContinuously;
+
+	return stream;
+}
+
+//10
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxHoursContinuously& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursContinuously<<tc.teacherName;
+
+	return stream;
+}
+
+//11
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyDays<<tc.minHoursDaily;
+
+	return stream;
+}
+
+//12
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyDays<<tc.minHoursDaily<<tc.teacherName;
+
+	return stream;
+}
+
+//13
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxGapsPerDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps;
+
+	return stream;
+}
+
+//14
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxGapsPerDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps<<tc.teacherName;
+
+	return stream;
+}
+
+//15
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxBeginningsAtSecondHour;
+
+	return stream;
+}
+
+//16
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxBeginningsAtSecondHour<<tc.students;
+
+	return stream;
+}
+
+//17
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetNotAvailableTimes& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.days<<tc.hours<<tc.students;
+
+	return stream;
+}
+
+//18
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxGapsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps;
+
+	return stream;
+}
+
+//19
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxGapsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps<<tc.students;
+
+	return stream;
+}
+
+//20
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursDaily;
+
+	return stream;
+}
+
+//21
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursDaily<<tc.students;
+
+	return stream;
+}
+
+//22
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxHoursContinuously& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursContinuously;
+
+	return stream;
+}
+
+//23
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxHoursContinuously& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursContinuously<<tc.students;
+
+	return stream;
+}
+
+//24
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyDays<<tc.minHoursDaily;
+
+	return stream;
+}
+
+//25
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyDays<<tc.minHoursDaily<<tc.students;
+
+	return stream;
+}
+
+//26
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityEndsStudentsDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityId;
+
+	return stream;
+}
+
+//27
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityPreferredStartingTime& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityId<<tc.day<<tc.hour<<tc.permanentlyLocked;
+
+	return stream;
+}
+
+//28
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesSameStartingTime& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.n_activities;
+
+	return stream;
+}
+
+//29
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesNotOverlapping& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.n_activities;
+
+	return stream;
+}
+
+//30
+QDataStream& operator<<(QDataStream& stream, const ConstraintMinDaysBetweenActivities& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.n_activities<<tc.consecutiveIfSameDay<<tc.minDays;
+
+	return stream;
+}
+
+//31
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityPreferredTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.p_activityId<<tc.p_days_L<<tc.p_hours_L<<tc.p_nPreferredTimeSlots_L;
+
+	return stream;
+}
+
+//32
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesPreferredTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.duration<<tc.p_days_L<<tc.p_hours_L<<tc.p_nPreferredTimeSlots_L
+		 <<tc.p_activityTagName<<tc.p_studentsName<<tc.p_subjectName<<tc.p_teacherName;
+
+	return stream;
+}
+
+//33
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityPreferredStartingTimes& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityId<<tc.days_L<<tc.hours_L<<tc.nPreferredStartingTimes_L;
+
+	return stream;
+}
+
+//34
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesPreferredStartingTimes& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.duration<<tc.days_L<<tc.hours_L<<tc.nPreferredStartingTimes_L
+		 <<tc.activityTagName<<tc.studentsName<<tc.subjectName<<tc.teacherName;
+
+	return stream;
+}
+
+//35
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesSameStartingHour& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.n_activities;
+
+	return stream;
+}
+
+//36
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesSameStartingDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.n_activities;
+
+	return stream;
+}
+
+//37
+QDataStream& operator<<(QDataStream& stream, const ConstraintTwoActivitiesConsecutive& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.firstActivityId<<tc.secondActivityId;
+
+	return stream;
+}
+
+//38
+QDataStream& operator<<(QDataStream& stream, const ConstraintTwoActivitiesOrdered& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.firstActivityId<<tc.secondActivityId;
+
+	return stream;
+}
+
+//39
+QDataStream& operator<<(QDataStream& stream, const ConstraintMinGapsBetweenActivities& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.n_activities<<tc.minGaps;
+
+	return stream;
+}
+
+//40
+QDataStream& operator<<(QDataStream& stream, const ConstraintSubactivitiesPreferredTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.duration<<tc.p_days_L<<tc.p_hours_L<<tc.p_nPreferredTimeSlots_L
+		 <<tc.p_activityTagName<<tc.p_studentsName<<tc.p_subjectName<<tc.p_teacherName<<tc.componentNumber;
+
+	return stream;
+}
+
+//41
+QDataStream& operator<<(QDataStream& stream, const ConstraintSubactivitiesPreferredStartingTimes& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.duration<<tc.days_L<<tc.hours_L<<tc.nPreferredStartingTimes_L
+		 <<tc.activityTagName<<tc.studentsName<<tc.subjectName<<tc.teacherName<<tc.componentNumber;
+
+	return stream;
+}
+
+//42
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherIntervalMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.startHour<<tc.endHour<<tc.maxDaysPerWeek<<tc.teacherName;
+
+	return stream;
+}
+
+//43
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersIntervalMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.startHour<<tc.endHour<<tc.maxDaysPerWeek;
+
+	return stream;
+}
+
+//44
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetIntervalMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.startHour<<tc.endHour<<tc.maxDaysPerWeek<<tc.students;
+
+	return stream;
+}
+
+//45
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsIntervalMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.startHour<<tc.endHour<<tc.maxDaysPerWeek;
+
+	return stream;
+}
+
+//46
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesEndStudentsDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.studentsName<<tc.subjectName<<tc.teacherName;
+
+	return stream;
+}
+
+//47
+QDataStream& operator<<(QDataStream& stream, const ConstraintTwoActivitiesGrouped& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.firstActivityId<<tc.secondActivityId;
+
+	return stream;
+}
+
+//48
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersActivityTagMaxHoursContinuously& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.maxHoursContinuously;
+
+	return stream;
+}
+
+//49
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherActivityTagMaxHoursContinuously& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.maxHoursContinuously<<tc.teacherName;
+
+	return stream;
+}
+
+//50
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsActivityTagMaxHoursContinuously& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.maxHoursContinuously;
+
+	return stream;
+}
+
+//51
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetActivityTagMaxHoursContinuously& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.maxHoursContinuously<<tc.students;
+
+	return stream;
+}
+
+//52
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek;
+
+	return stream;
+}
+
+//53
+QDataStream& operator<<(QDataStream& stream, const ConstraintThreeActivitiesGrouped& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.firstActivityId<<tc.secondActivityId<<tc.thirdActivityId;
+
+	return stream;
+}
+
+//54
+QDataStream& operator<<(QDataStream& stream, const ConstraintMaxDaysBetweenActivities& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.n_activities<<tc.maxDays;
+
+	return stream;
+}
+
+//55
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minDaysPerWeek;
+
+	return stream;
+}
+
+//56
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minDaysPerWeek<<tc.teacherName;
+
+	return stream;
+}
+
+//57
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersActivityTagMaxHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.maxHoursDaily;
+
+	return stream;
+}
+
+//58
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherActivityTagMaxHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.maxHoursDaily<<tc.teacherName;
+
+	return stream;
+}
+
+//59
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsActivityTagMaxHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.maxHoursDaily;
+
+	return stream;
+}
+
+//60
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetActivityTagMaxHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.maxHoursDaily<<tc.students;
+
+	return stream;
+}
+
+//61
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxGapsPerDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps;
+
+	return stream;
+}
+
+//62
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxGapsPerDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps<<tc.students;
+
+	return stream;
+}
+
+//63
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesOccupyMaxTimeSlotsFromSelection& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.maxOccupiedTimeSlots<<tc.selectedDays<<tc.selectedHours;
+
+	return stream;
+}
+
+//64
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.maxSimultaneous<<tc.selectedDays<<tc.selectedHours;
+
+	return stream;
+}
+
+//65
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek<<tc.students;
+
+	return stream;
+}
+
+//66
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek;
+
+	return stream;
+}
+
+//67
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxSpanPerDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowOneDayExceptionPlusOne<<tc.maxSpanPerDay<<tc.teacherName;
+
+	return stream;
+}
+
+//68
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxSpanPerDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowOneDayExceptionPlusOne<<tc.maxSpanPerDay;
+
+	return stream;
+}
+
+//69
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinRestingHours& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.circular<<tc.minRestingHours<<tc.teacherName;
+
+	return stream;
+}
+
+//70
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinRestingHours& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.circular<<tc.minRestingHours;
+
+	return stream;
+}
+
+//71
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxSpanPerDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxSpanPerDay<<tc.students;
+
+	return stream;
+}
+
+//72
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxSpanPerDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxSpanPerDay;
+
+	return stream;
+}
+
+//73
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinRestingHours& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.circular<<tc.minRestingHours<<tc.students;
+
+	return stream;
+}
+
+//74
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinRestingHours& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.circular<<tc.minRestingHours;
+
+	return stream;
+}
+
+//75
+QDataStream& operator<<(QDataStream& stream, const ConstraintTwoActivitiesOrderedIfSameDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.firstActivityId<<tc.secondActivityId;
+
+	return stream;
+}
+
+//76
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.firstActivityTag<<tc.secondActivityTag<<tc.minGaps<<tc.students;
+
+	return stream;
+}
+
+//77
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.firstActivityTag<<tc.secondActivityTag<<tc.minGaps;
+
+	return stream;
+}
+
+//78
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.firstActivityTag<<tc.secondActivityTag<<tc.minGaps<<tc.teacher;
+
+	return stream;
+}
+
+//79
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.firstActivityTag<<tc.secondActivityTag<<tc.minGaps;
+
+	return stream;
+}
+
+//80
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityTagsNotOverlapping& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagsNames;
+
+	return stream;
+}
+
+//81
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesOccupyMinTimeSlotsFromSelection& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.minOccupiedTimeSlots<<tc.selectedDays<<tc.selectedHours;
+
+	return stream;
+}
+
+//82
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMinSimultaneousInSelectedTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.allowEmptySlots<<tc.minSimultaneous<<tc.selectedDays<<tc.selectedHours;
+
+	return stream;
+}
+
+//83
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersActivityTagMinHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.minHoursDaily<<tc.allowEmptyDays;
+
+	return stream;
+}
+
+//84
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherActivityTagMinHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.minHoursDaily<<tc.allowEmptyDays<<tc.teacherName;
+
+	return stream;
+}
+
+//85
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsActivityTagMinHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.minHoursDaily<<tc.allowEmptyDays;
+
+	return stream;
+}
+
+//86
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetActivityTagMinHoursDaily& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.minHoursDaily<<tc.allowEmptyDays<<tc.students;
+
+	return stream;
+}
+
+//87
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityEndsTeachersDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityId;
+
+	return stream;
+}
+
+//88
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesEndTeachersDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.studentsName<<tc.subjectName<<tc.teacherName;
+
+	return stream;
+}
+
+//89
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxHoursDailyRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursDaily;
+
+	return stream;
+}
+
+//90
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxRealDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek<<tc.teacherName;
+
+	return stream;
+}
+
+//91
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxHoursDailyRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursDaily<<tc.teacherName;
+
+	return stream;
+}
+
+//92
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxHoursDailyRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursDaily;
+
+	return stream;
+}
+
+//93
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxHoursDailyRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursDaily<<tc.students;
+
+	return stream;
+}
+
+//94
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxRealDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek;
+
+	return stream;
+}
+
+//95
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinRealDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minDaysPerWeek;
+
+	return stream;
+}
+
+//96
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinRealDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minDaysPerWeek<<tc.teacherName;
+
+	return stream;
+}
+
+//97
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersActivityTagMaxHoursDailyRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.maxHoursDaily;
+
+	return stream;
+}
+
+//98
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherActivityTagMaxHoursDailyRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.maxHoursDaily<<tc.teacherName;
+
+	return stream;
+}
+
+//99
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsActivityTagMaxHoursDailyRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.maxHoursDaily;
+
+	return stream;
+}
+
+//100
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetActivityTagMaxHoursDailyRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.maxHoursDaily<<tc.students;
+
+	return stream;
+}
+
+//101
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxAfternoonsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxAfternoonsPerWeek<<tc.teacherName;
+
+	return stream;
+}
+
+//102
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxAfternoonsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxAfternoonsPerWeek;
+
+	return stream;
+}
+
+//103
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxMorningsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxMorningsPerWeek<<tc.teacherName;
+
+	return stream;
+}
+
+//104
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxMorningsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxMorningsPerWeek;
+
+	return stream;
+}
+
+//105
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.teacherName;
+
+	return stream;
+}
+
+//106
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	return stream;
+}
+
+//107
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinMorningsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minMorningsPerWeek;
+
+	return stream;
+}
+
+//108
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinMorningsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minMorningsPerWeek<<tc.teacherName;
+
+	return stream;
+}
+
+//109
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinAfternoonsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minAfternoonsPerWeek;
+
+	return stream;
+}
+
+//110
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinAfternoonsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minAfternoonsPerWeek<<tc.teacherName;
+
+	return stream;
+}
+
+//111
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxTwoConsecutiveMornings& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.teacherName;
+
+	return stream;
+}
+
+//112
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxTwoConsecutiveMornings& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	return stream;
+}
+
+//113
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxTwoConsecutiveAfternoons& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.teacherName;
+
+	return stream;
+}
+
+//114
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxTwoConsecutiveAfternoons& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	return stream;
+}
+
+//115
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxGapsPerRealDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowOneDayExceptionPlusOne<<tc.maxGaps;
+
+	return stream;
+}
+
+//116
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxGapsPerRealDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowOneDayExceptionPlusOne<<tc.maxGaps<<tc.teacherName;
+
+	return stream;
+}
+
+//117
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxGapsPerRealDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps;
+
+	return stream;
+}
+
+//118
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxGapsPerRealDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps<<tc.students;
+
+	return stream;
+}
+
+//119
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinHoursDailyRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyDays<<tc.minHoursDaily;
+
+	return stream;
+}
+
+//120
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinHoursDailyRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyDays<<tc.minHoursDaily<<tc.teacherName;
+
+	return stream;
+}
+
+//121
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxBeginningsAtSecondHour;
+
+	return stream;
+}
+
+//122
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxBeginningsAtSecondHour<<tc.teacherName;
+
+	return stream;
+}
+
+//123
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinHoursPerMorning& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyMornings<<tc.minHoursPerMorning;
+
+	return stream;
+}
+
+//124
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinHoursPerMorning& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyMornings<<tc.minHoursPerMorning<<tc.teacherName;
+
+	return stream;
+}
+
+//125
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxSpanPerRealDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowOneDayExceptionPlusOne<<tc.maxSpanPerDay<<tc.teacherName;
+
+	return stream;
+}
+
+//126
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxSpanPerRealDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowOneDayExceptionPlusOne<<tc.maxSpanPerDay;
+
+	return stream;
+}
+
+//127
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxSpanPerRealDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxSpanPerDay<<tc.students;
+
+	return stream;
+}
+
+//128
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxSpanPerRealDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxSpanPerDay;
+
+	return stream;
+}
+
+//129
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMorningIntervalMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek<<tc.startHour<<tc.endHour<<tc.teacherName;
+
+	return stream;
+}
+
+//130
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMorningIntervalMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek<<tc.startHour<<tc.endHour;
+
+	return stream;
+}
+
+//131
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherAfternoonIntervalMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek<<tc.startHour<<tc.endHour<<tc.teacherName;
+
+	return stream;
+}
+
+//132
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersAfternoonIntervalMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek<<tc.startHour<<tc.endHour;
+
+	return stream;
+}
+
+//133
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinHoursPerMorning& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyMornings<<tc.minHoursPerMorning;
+
+	return stream;
+}
+
+//134
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinHoursPerMorning& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyMornings<<tc.minHoursPerMorning<<tc.students;
+
+	return stream;
+}
+
+//135
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxZeroGapsPerAfternoon& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.teacherName;
+
+	return stream;
+}
+
+//136
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxZeroGapsPerAfternoon& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	return stream;
+}
+
+//137
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxAfternoonsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxAfternoonsPerWeek<<tc.students;
+
+	return stream;
+}
+
+//138
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxAfternoonsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxAfternoonsPerWeek;
+
+	return stream;
+}
+
+//139
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxMorningsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxMorningsPerWeek<<tc.students;
+
+	return stream;
+}
+
+//140
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxMorningsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxMorningsPerWeek;
+
+	return stream;
+}
+
+//141
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinMorningsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minMorningsPerWeek;
+
+	return stream;
+}
+
+//142
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinMorningsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minMorningsPerWeek<<tc.students;
+
+	return stream;
+}
+
+//143
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinAfternoonsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minAfternoonsPerWeek;
+
+	return stream;
+}
+
+//144
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinAfternoonsPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minAfternoonsPerWeek<<tc.students;
+
+	return stream;
+}
+
+//145
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMorningIntervalMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek<<tc.startHour<<tc.endHour<<tc.students;
+
+	return stream;
+}
+
+//146
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMorningIntervalMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek<<tc.startHour<<tc.endHour;
+
+	return stream;
+}
+
+//147
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek<<tc.startHour<<tc.endHour<<tc.students;
+
+	return stream;
+}
+
+//148
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsAfternoonIntervalMaxDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek<<tc.startHour<<tc.endHour;
+
+	return stream;
+}
+
+//149
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxHoursPerAllAfternoons& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursPerAllAfternoons<<tc.teacherName;
+
+	return stream;
+}
+
+//150
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxHoursPerAllAfternoons& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursPerAllAfternoons;
+
+	return stream;
+}
+
+//151
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxHoursPerAllAfternoons& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursPerAllAfternoons<<tc.students;
+
+	return stream;
+}
+
+//152
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxHoursPerAllAfternoons& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxHoursPerAllAfternoons;
+
+	return stream;
+}
+
+//153
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minRestingHours<<tc.teacherName;
+
+	return stream;
+}
+
+//154
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minRestingHours;
+
+	return stream;
+}
+
+//155
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minRestingHours<<tc.students;
+
+	return stream;
+}
+
+//156
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.minRestingHours;
+
+	return stream;
+}
+
+//157
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxBeginningsAtSecondHour<<tc.students;
+
+	return stream;
+}
+
+//158
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxBeginningsAtSecondHour;
+
+	return stream;
+}
+
+//159
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxGapsPerWeekForRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps;
+
+	return stream;
+}
+
+//160
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxGapsPerWeekForRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps<<tc.teacherName;
+
+	return stream;
+}
+
+//161
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxGapsPerWeekForRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps;
+
+	return stream;
+}
+
+//162
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxGapsPerWeekForRealDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps<<tc.students;
+
+	return stream;
+}
+
+//163
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxRealDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek<<tc.students;
+
+	return stream;
+}
+
+//164
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxRealDaysPerWeek& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxDaysPerWeek;
+
+	return stream;
+}
+
+//165
+QDataStream& operator<<(QDataStream& stream, const ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.maxActivities<<tc.selectedDays<<tc.selectedHours;
+
+	return stream;
+}
+
+//166
+QDataStream& operator<<(QDataStream& stream, const ConstraintMaxGapsBetweenActivities& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.n_activities<<tc.maxGaps;
+
+	return stream;
+}
+
+//167
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMaxInATerm& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.maxActivitiesInATerm;
+
+	return stream;
+}
+
+//168
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesOccupyMaxTerms& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.maxOccupiedTerms;
+
+	return stream;
+}
+
+//169
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxGapsPerMorningAndAfternoon& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps;
+
+	return stream;
+}
+
+//170
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxGapsPerMorningAndAfternoon& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxGaps<<tc.teacherName;
+
+	return stream;
+}
+
+//171
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxBeginningsAtSecondHour;
+
+	return stream;
+}
+
+//172
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxBeginningsAtSecondHour<<tc.teacherName;
+
+	return stream;
+}
+
+//173
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxBeginningsAtSecondHour<<tc.students;
+
+	return stream;
+}
+
+//174
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.maxBeginningsAtSecondHour;
+
+	return stream;
+}
+
+//175
+QDataStream& operator<<(QDataStream& stream, const ConstraintTwoSetsOfActivitiesOrdered& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.firstActivitiesIdsList<<tc.secondActivitiesIdsList;
+
+	return stream;
+}
+
+//176
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxThreeConsecutiveDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowAMAMException;
+
+	return stream;
+}
+
+//177
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxThreeConsecutiveDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowAMAMException<<tc.teacherName;
+
+	return stream;
+}
+
+//178
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinGapsBetweenActivityTag& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTag<<tc.minGaps<<tc.students;
+
+	return stream;
+}
+
+//179
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinGapsBetweenActivityTag& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTag<<tc.minGaps;
+
+	return stream;
+}
+
+//180
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinGapsBetweenActivityTag& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTag<<tc.minGaps<<tc.teacher;
+
+	return stream;
+}
+
+//181
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinGapsBetweenActivityTag& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTag<<tc.minGaps;
+
+	return stream;
+}
+
+//182
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxThreeConsecutiveDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowAMAMException;
+
+	return stream;
+}
+
+//183
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxThreeConsecutiveDays& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowAMAMException<<tc.students;
+
+	return stream;
+}
+
+//184
+QDataStream& operator<<(QDataStream& stream, const ConstraintMinHalfDaysBetweenActivities& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.n_activities<<tc.consecutiveIfSameDay<<tc.minDays;
+
+	return stream;
+}
+
+//185
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityPreferredDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityId<<tc.day;
+
+	return stream;
+}
+
+//186
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMinInATerm& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.minActivitiesInATerm<<tc.allowEmptyTerms;
+
+	return stream;
+}
+
+//187
+QDataStream& operator<<(QDataStream& stream, const ConstraintMaxTermsBetweenActivities& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.n_activities<<tc.maxTerms;
+
+	return stream;
+}
+
+//188
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.students;
+
+	return stream;
+}
+
+//189
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	return stream;
+}
+
+//190
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.teacherName;
+
+	return stream;
+}
+
+//191
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	return stream;
+}
+
+//192
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.students;
+
+	return stream;
+}
+
+//193
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	return stream;
+}
+
+//194
+QDataStream& operator<<(QDataStream& stream, const ConstraintMaxHalfDaysBetweenActivities& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.n_activities<<tc.maxDays;
+
+	return stream;
+}
+
+//195
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityBeginsStudentsDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityId;
+
+	return stream;
+}
+
+//196
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesBeginStudentsDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.studentsName<<tc.subjectName<<tc.teacherName;
+
+	return stream;
+}
+
+//197
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityBeginsTeachersDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityId;
+
+	return stream;
+}
+
+//198
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesBeginTeachersDay& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activityTagName<<tc.studentsName<<tc.subjectName<<tc.teacherName;
+
+	return stream;
+}
+
+//199
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinHoursPerAfternoon& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyAfternoons<<tc.minHoursPerAfternoon;
+
+	return stream;
+}
+
+//200
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinHoursPerAfternoon& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyAfternoons<<tc.minHoursPerAfternoon<<tc.teacherName;
+
+	return stream;
+}
+
+//201
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinHoursPerAfternoon& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyAfternoons<<tc.minHoursPerAfternoon;
+
+	return stream;
+}
+
+//202
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinHoursPerAfternoon& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.allowEmptyAfternoons<<tc.minHoursPerAfternoon<<tc.students;
+
+	return stream;
+}
+
+//203
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesMaxHourlySpan& tc)
+{
+	//stream<<tc.type;
+	stream<<tc.weightPercentage;
+	stream<<tc.active;
+	stream<<tc.comments;
+
+	stream<<tc.activitiesIds<<tc.n_activities<<tc.maxHourlySpan;
+
+	return stream;
+}
+
+//1
+QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsoryTime& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	return stream;
+}
+
+//2
+QDataStream& operator>>(QDataStream& stream, ConstraintBreakTimes& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.days>>tc.hours;
+
+	return stream;
+}
+
+//3
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherNotAvailableTimes& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.days>>tc.hours>>tc.teacher;
+
+	return stream;
+}
+
+//4
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursDaily;
+
+	return stream;
+}
+
+//5
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek>>tc.teacherName;
+
+	return stream;
+}
+
+//6
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxGapsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps;
+
+	return stream;
+}
+
+//7
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxGapsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps>>tc.teacherName;
+
+	return stream;
+}
+
+//8
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursDaily>>tc.teacherName;
+
+	return stream;
+}
+
+//9
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxHoursContinuously& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursContinuously;
+
+	return stream;
+}
+
+//10
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxHoursContinuously& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursContinuously>>tc.teacherName;
+
+	return stream;
+}
+
+//11
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyDays>>tc.minHoursDaily;
+
+	return stream;
+}
+
+//12
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyDays>>tc.minHoursDaily>>tc.teacherName;
+
+	return stream;
+}
+
+//13
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxGapsPerDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps;
+
+	return stream;
+}
+
+//14
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxGapsPerDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps>>tc.teacherName;
+
+	return stream;
+}
+
+//15
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxBeginningsAtSecondHour;
+
+	return stream;
+}
+
+//16
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxBeginningsAtSecondHour>>tc.students;
+
+	return stream;
+}
+
+//17
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetNotAvailableTimes& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.days>>tc.hours>>tc.students;
+
+	return stream;
+}
+
+//18
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxGapsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps;
+
+	return stream;
+}
+
+//19
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxGapsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps>>tc.students;
+
+	return stream;
+}
+
+//20
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursDaily;
+
+	return stream;
+}
+
+//21
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursDaily>>tc.students;
+
+	return stream;
+}
+
+//22
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxHoursContinuously& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursContinuously;
+
+	return stream;
+}
+
+//23
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxHoursContinuously& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursContinuously>>tc.students;
+
+	return stream;
+}
+
+//24
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyDays>>tc.minHoursDaily;
+
+	return stream;
+}
+
+//25
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyDays>>tc.minHoursDaily>>tc.students;
+
+	return stream;
+}
+
+//26
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityEndsStudentsDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityId;
+
+	return stream;
+}
+
+//27
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityPreferredStartingTime& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityId>>tc.day>>tc.hour>>tc.permanentlyLocked;
+
+	return stream;
+}
+
+//28
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesSameStartingTime& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.n_activities;
+
+	return stream;
+}
+
+//29
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesNotOverlapping& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.n_activities;
+
+	return stream;
+}
+
+//30
+QDataStream& operator>>(QDataStream& stream, ConstraintMinDaysBetweenActivities& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.n_activities>>tc.consecutiveIfSameDay>>tc.minDays;
+
+	return stream;
+}
+
+//31
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityPreferredTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.p_activityId>>tc.p_days_L>>tc.p_hours_L>>tc.p_nPreferredTimeSlots_L;
+
+	return stream;
+}
+
+//32
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesPreferredTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.duration>>tc.p_days_L>>tc.p_hours_L>>tc.p_nPreferredTimeSlots_L
+		 >>tc.p_activityTagName>>tc.p_studentsName>>tc.p_subjectName>>tc.p_teacherName;
+
+	return stream;
+}
+
+//33
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityPreferredStartingTimes& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityId>>tc.days_L>>tc.hours_L>>tc.nPreferredStartingTimes_L;
+
+	return stream;
+}
+
+//34
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesPreferredStartingTimes& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.duration>>tc.days_L>>tc.hours_L>>tc.nPreferredStartingTimes_L
+		 >>tc.activityTagName>>tc.studentsName>>tc.subjectName>>tc.teacherName;
+
+	return stream;
+}
+
+//35
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesSameStartingHour& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.n_activities;
+
+	return stream;
+}
+
+//36
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesSameStartingDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.n_activities;
+
+	return stream;
+}
+
+//37
+QDataStream& operator>>(QDataStream& stream, ConstraintTwoActivitiesConsecutive& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.firstActivityId>>tc.secondActivityId;
+
+	return stream;
+}
+
+//38
+QDataStream& operator>>(QDataStream& stream, ConstraintTwoActivitiesOrdered& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.firstActivityId>>tc.secondActivityId;
+
+	return stream;
+}
+
+//39
+QDataStream& operator>>(QDataStream& stream, ConstraintMinGapsBetweenActivities& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.n_activities>>tc.minGaps;
+
+	return stream;
+}
+
+//40
+QDataStream& operator>>(QDataStream& stream, ConstraintSubactivitiesPreferredTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.duration>>tc.p_days_L>>tc.p_hours_L>>tc.p_nPreferredTimeSlots_L
+		 >>tc.p_activityTagName>>tc.p_studentsName>>tc.p_subjectName>>tc.p_teacherName>>tc.componentNumber;
+
+	return stream;
+}
+
+//41
+QDataStream& operator>>(QDataStream& stream, ConstraintSubactivitiesPreferredStartingTimes& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.duration>>tc.days_L>>tc.hours_L>>tc.nPreferredStartingTimes_L
+		 >>tc.activityTagName>>tc.studentsName>>tc.subjectName>>tc.teacherName>>tc.componentNumber;
+
+	return stream;
+}
+
+//42
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherIntervalMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.startHour>>tc.endHour>>tc.maxDaysPerWeek>>tc.teacherName;
+
+	return stream;
+}
+
+//43
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersIntervalMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.startHour>>tc.endHour>>tc.maxDaysPerWeek;
+
+	return stream;
+}
+
+//44
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetIntervalMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.startHour>>tc.endHour>>tc.maxDaysPerWeek>>tc.students;
+
+	return stream;
+}
+
+//45
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsIntervalMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.startHour>>tc.endHour>>tc.maxDaysPerWeek;
+
+	return stream;
+}
+
+//46
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesEndStudentsDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.studentsName>>tc.subjectName>>tc.teacherName;
+
+	return stream;
+}
+
+//47
+QDataStream& operator>>(QDataStream& stream, ConstraintTwoActivitiesGrouped& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.firstActivityId>>tc.secondActivityId;
+
+	return stream;
+}
+
+//48
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersActivityTagMaxHoursContinuously& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.maxHoursContinuously;
+
+	return stream;
+}
+
+//49
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherActivityTagMaxHoursContinuously& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.maxHoursContinuously>>tc.teacherName;
+
+	return stream;
+}
+
+//50
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsActivityTagMaxHoursContinuously& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.maxHoursContinuously;
+
+	return stream;
+}
+
+//51
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetActivityTagMaxHoursContinuously& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.maxHoursContinuously>>tc.students;
+
+	return stream;
+}
+
+//52
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek;
+
+	return stream;
+}
+
+//53
+QDataStream& operator>>(QDataStream& stream, ConstraintThreeActivitiesGrouped& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.firstActivityId>>tc.secondActivityId>>tc.thirdActivityId;
+
+	return stream;
+}
+
+//54
+QDataStream& operator>>(QDataStream& stream, ConstraintMaxDaysBetweenActivities& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.n_activities>>tc.maxDays;
+
+	return stream;
+}
+
+//55
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minDaysPerWeek;
+
+	return stream;
+}
+
+//56
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minDaysPerWeek>>tc.teacherName;
+
+	return stream;
+}
+
+//57
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersActivityTagMaxHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.maxHoursDaily;
+
+	return stream;
+}
+
+//58
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherActivityTagMaxHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.maxHoursDaily>>tc.teacherName;
+
+	return stream;
+}
+
+//59
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsActivityTagMaxHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.maxHoursDaily;
+
+	return stream;
+}
+
+//60
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetActivityTagMaxHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.maxHoursDaily>>tc.students;
+
+	return stream;
+}
+
+//61
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxGapsPerDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps;
+
+	return stream;
+}
+
+//62
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxGapsPerDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps>>tc.students;
+
+	return stream;
+}
+
+//63
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesOccupyMaxTimeSlotsFromSelection& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.maxOccupiedTimeSlots>>tc.selectedDays>>tc.selectedHours;
+
+	return stream;
+}
+
+//64
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.maxSimultaneous>>tc.selectedDays>>tc.selectedHours;
+
+	return stream;
+}
+
+//65
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek>>tc.students;
+
+	return stream;
+}
+
+//66
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek;
+
+	return stream;
+}
+
+//67
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxSpanPerDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowOneDayExceptionPlusOne>>tc.maxSpanPerDay>>tc.teacherName;
+
+	return stream;
+}
+
+//68
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxSpanPerDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowOneDayExceptionPlusOne>>tc.maxSpanPerDay;
+
+	return stream;
+}
+
+//69
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinRestingHours& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.circular>>tc.minRestingHours>>tc.teacherName;
+
+	return stream;
+}
+
+//70
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinRestingHours& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.circular>>tc.minRestingHours;
+
+	return stream;
+}
+
+//71
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxSpanPerDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxSpanPerDay>>tc.students;
+
+	return stream;
+}
+
+//72
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxSpanPerDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxSpanPerDay;
+
+	return stream;
+}
+
+//73
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinRestingHours& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.circular>>tc.minRestingHours>>tc.students;
+
+	return stream;
+}
+
+//74
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinRestingHours& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.circular>>tc.minRestingHours;
+
+	return stream;
+}
+
+//75
+QDataStream& operator>>(QDataStream& stream, ConstraintTwoActivitiesOrderedIfSameDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.firstActivityId>>tc.secondActivityId;
+
+	return stream;
+}
+
+//76
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinGapsBetweenOrderedPairOfActivityTags& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.firstActivityTag>>tc.secondActivityTag>>tc.minGaps>>tc.students;
+
+	return stream;
+}
+
+//77
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinGapsBetweenOrderedPairOfActivityTags& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.firstActivityTag>>tc.secondActivityTag>>tc.minGaps;
+
+	return stream;
+}
+
+//78
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinGapsBetweenOrderedPairOfActivityTags& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.firstActivityTag>>tc.secondActivityTag>>tc.minGaps>>tc.teacher;
+
+	return stream;
+}
+
+//79
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinGapsBetweenOrderedPairOfActivityTags& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.firstActivityTag>>tc.secondActivityTag>>tc.minGaps;
+
+	return stream;
+}
+
+//80
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityTagsNotOverlapping& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagsNames;
+
+	return stream;
+}
+
+//81
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesOccupyMinTimeSlotsFromSelection& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.minOccupiedTimeSlots>>tc.selectedDays>>tc.selectedHours;
+
+	return stream;
+}
+
+//82
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMinSimultaneousInSelectedTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.allowEmptySlots>>tc.minSimultaneous>>tc.selectedDays>>tc.selectedHours;
+
+	return stream;
+}
+
+//83
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersActivityTagMinHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.minHoursDaily>>tc.allowEmptyDays;
+
+	return stream;
+}
+
+//84
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherActivityTagMinHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.minHoursDaily>>tc.allowEmptyDays>>tc.teacherName;
+
+	return stream;
+}
+
+//85
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsActivityTagMinHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.minHoursDaily>>tc.allowEmptyDays;
+
+	return stream;
+}
+
+//86
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetActivityTagMinHoursDaily& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.minHoursDaily>>tc.allowEmptyDays>>tc.students;
+
+	return stream;
+}
+
+//87
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityEndsTeachersDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityId;
+
+	return stream;
+}
+
+//88
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesEndTeachersDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.studentsName>>tc.subjectName>>tc.teacherName;
+
+	return stream;
+}
+
+//89
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxHoursDailyRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursDaily;
+
+	return stream;
+}
+
+//90
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxRealDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek>>tc.teacherName;
+
+	return stream;
+}
+
+//91
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxHoursDailyRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursDaily>>tc.teacherName;
+
+	return stream;
+}
+
+//92
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxHoursDailyRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursDaily;
+
+	return stream;
+}
+
+//93
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxHoursDailyRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursDaily>>tc.students;
+
+	return stream;
+}
+
+//94
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxRealDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek;
+
+	return stream;
+}
+
+//95
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinRealDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minDaysPerWeek;
+
+	return stream;
+}
+
+//96
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinRealDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minDaysPerWeek>>tc.teacherName;
+
+	return stream;
+}
+
+//97
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersActivityTagMaxHoursDailyRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.maxHoursDaily;
+
+	return stream;
+}
+
+//98
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherActivityTagMaxHoursDailyRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.maxHoursDaily>>tc.teacherName;
+
+	return stream;
+}
+
+//99
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsActivityTagMaxHoursDailyRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.maxHoursDaily;
+
+	return stream;
+}
+
+//100
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetActivityTagMaxHoursDailyRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.maxHoursDaily>>tc.students;
+
+	return stream;
+}
+
+//101
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxAfternoonsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxAfternoonsPerWeek>>tc.teacherName;
+
+	return stream;
+}
+
+//102
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxAfternoonsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxAfternoonsPerWeek;
+
+	return stream;
+}
+
+//103
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxMorningsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxMorningsPerWeek>>tc.teacherName;
+
+	return stream;
+}
+
+//104
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxMorningsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxMorningsPerWeek;
+
+	return stream;
+}
+
+//105
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxTwoActivityTagsPerDayFromN1N2N3& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.teacherName;
+
+	return stream;
+}
+
+//106
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxTwoActivityTagsPerDayFromN1N2N3& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	return stream;
+}
+
+//107
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinMorningsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minMorningsPerWeek;
+
+	return stream;
+}
+
+//108
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinMorningsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minMorningsPerWeek>>tc.teacherName;
+
+	return stream;
+}
+
+//109
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinAfternoonsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minAfternoonsPerWeek;
+
+	return stream;
+}
+
+//110
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinAfternoonsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minAfternoonsPerWeek>>tc.teacherName;
+
+	return stream;
+}
+
+//111
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxTwoConsecutiveMornings& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.teacherName;
+
+	return stream;
+}
+
+//112
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxTwoConsecutiveMornings& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	return stream;
+}
+
+//113
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxTwoConsecutiveAfternoons& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.teacherName;
+
+	return stream;
+}
+
+//114
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxTwoConsecutiveAfternoons& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	return stream;
+}
+
+//115
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxGapsPerRealDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowOneDayExceptionPlusOne>>tc.maxGaps;
+
+	return stream;
+}
+
+//116
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxGapsPerRealDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowOneDayExceptionPlusOne>>tc.maxGaps>>tc.teacherName;
+
+	return stream;
+}
+
+//117
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxGapsPerRealDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps;
+
+	return stream;
+}
+
+//118
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxGapsPerRealDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps>>tc.students;
+
+	return stream;
+}
+
+//119
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinHoursDailyRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyDays>>tc.minHoursDaily;
+
+	return stream;
+}
+
+//120
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinHoursDailyRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyDays>>tc.minHoursDaily>>tc.teacherName;
+
+	return stream;
+}
+
+//121
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersAfternoonsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxBeginningsAtSecondHour;
+
+	return stream;
+}
+
+//122
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherAfternoonsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxBeginningsAtSecondHour>>tc.teacherName;
+
+	return stream;
+}
+
+//123
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinHoursPerMorning& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyMornings>>tc.minHoursPerMorning;
+
+	return stream;
+}
+
+//124
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinHoursPerMorning& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyMornings>>tc.minHoursPerMorning>>tc.teacherName;
+
+	return stream;
+}
+
+//125
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxSpanPerRealDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowOneDayExceptionPlusOne>>tc.maxSpanPerDay>>tc.teacherName;
+
+	return stream;
+}
+
+//126
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxSpanPerRealDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowOneDayExceptionPlusOne>>tc.maxSpanPerDay;
+
+	return stream;
+}
+
+//127
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxSpanPerRealDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxSpanPerDay>>tc.students;
+
+	return stream;
+}
+
+//128
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxSpanPerRealDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxSpanPerDay;
+
+	return stream;
+}
+
+//129
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMorningIntervalMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek>>tc.startHour>>tc.endHour>>tc.teacherName;
+
+	return stream;
+}
+
+//130
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMorningIntervalMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek>>tc.startHour>>tc.endHour;
+
+	return stream;
+}
+
+//131
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherAfternoonIntervalMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek>>tc.startHour>>tc.endHour>>tc.teacherName;
+
+	return stream;
+}
+
+//132
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersAfternoonIntervalMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek>>tc.startHour>>tc.endHour;
+
+	return stream;
+}
+
+//133
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinHoursPerMorning& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyMornings>>tc.minHoursPerMorning;
+
+	return stream;
+}
+
+//134
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinHoursPerMorning& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyMornings>>tc.minHoursPerMorning>>tc.students;
+
+	return stream;
+}
+
+//135
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxZeroGapsPerAfternoon& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.teacherName;
+
+	return stream;
+}
+
+//136
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxZeroGapsPerAfternoon& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	return stream;
+}
+
+//137
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxAfternoonsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxAfternoonsPerWeek>>tc.students;
+
+	return stream;
+}
+
+//138
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxAfternoonsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxAfternoonsPerWeek;
+
+	return stream;
+}
+
+//139
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxMorningsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxMorningsPerWeek>>tc.students;
+
+	return stream;
+}
+
+//140
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxMorningsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxMorningsPerWeek;
+
+	return stream;
+}
+
+//141
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinMorningsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minMorningsPerWeek;
+
+	return stream;
+}
+
+//142
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinMorningsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minMorningsPerWeek>>tc.students;
+
+	return stream;
+}
+
+//143
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinAfternoonsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minAfternoonsPerWeek;
+
+	return stream;
+}
+
+//144
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinAfternoonsPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minAfternoonsPerWeek>>tc.students;
+
+	return stream;
+}
+
+//145
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMorningIntervalMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek>>tc.startHour>>tc.endHour>>tc.students;
+
+	return stream;
+}
+
+//146
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMorningIntervalMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek>>tc.startHour>>tc.endHour;
+
+	return stream;
+}
+
+//147
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetAfternoonIntervalMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek>>tc.startHour>>tc.endHour>>tc.students;
+
+	return stream;
+}
+
+//148
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsAfternoonIntervalMaxDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek>>tc.startHour>>tc.endHour;
+
+	return stream;
+}
+
+//149
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxHoursPerAllAfternoons& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursPerAllAfternoons>>tc.teacherName;
+
+	return stream;
+}
+
+//150
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxHoursPerAllAfternoons& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursPerAllAfternoons;
+
+	return stream;
+}
+
+//151
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxHoursPerAllAfternoons& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursPerAllAfternoons>>tc.students;
+
+	return stream;
+}
+
+//152
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxHoursPerAllAfternoons& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxHoursPerAllAfternoons;
+
+	return stream;
+}
+
+//153
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinRestingHoursBetweenMorningAndAfternoon& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minRestingHours>>tc.teacherName;
+
+	return stream;
+}
+
+//154
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinRestingHoursBetweenMorningAndAfternoon& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minRestingHours;
+
+	return stream;
+}
+
+//155
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinRestingHoursBetweenMorningAndAfternoon& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minRestingHours>>tc.students;
+
+	return stream;
+}
+
+//156
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinRestingHoursBetweenMorningAndAfternoon& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.minRestingHours;
+
+	return stream;
+}
+
+//157
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetAfternoonsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxBeginningsAtSecondHour>>tc.students;
+
+	return stream;
+}
+
+//158
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsAfternoonsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxBeginningsAtSecondHour;
+
+	return stream;
+}
+
+//159
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxGapsPerWeekForRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps;
+
+	return stream;
+}
+
+//160
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxGapsPerWeekForRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps>>tc.teacherName;
+
+	return stream;
+}
+
+//161
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxGapsPerWeekForRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps;
+
+	return stream;
+}
+
+//162
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxGapsPerWeekForRealDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps>>tc.students;
+
+	return stream;
+}
+
+//163
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxRealDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek>>tc.students;
+
+	return stream;
+}
+
+//164
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxRealDaysPerWeek& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxDaysPerWeek;
+
+	return stream;
+}
+
+//165
+QDataStream& operator>>(QDataStream& stream, ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.maxActivities>>tc.selectedDays>>tc.selectedHours;
+
+	return stream;
+}
+
+//166
+QDataStream& operator>>(QDataStream& stream, ConstraintMaxGapsBetweenActivities& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.n_activities>>tc.maxGaps;
+
+	return stream;
+}
+
+//167
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxInATerm& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.maxActivitiesInATerm;
+
+	return stream;
+}
+
+//168
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesOccupyMaxTerms& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.maxOccupiedTerms;
+
+	return stream;
+}
+
+//169
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxGapsPerMorningAndAfternoon& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps;
+
+	return stream;
+}
+
+//170
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxGapsPerMorningAndAfternoon& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxGaps>>tc.teacherName;
+
+	return stream;
+}
+
+//171
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMorningsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxBeginningsAtSecondHour;
+
+	return stream;
+}
+
+//172
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMorningsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxBeginningsAtSecondHour>>tc.teacherName;
+
+	return stream;
+}
+
+//173
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMorningsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxBeginningsAtSecondHour>>tc.students;
+
+	return stream;
+}
+
+//174
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMorningsEarlyMaxBeginningsAtSecondHour& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.maxBeginningsAtSecondHour;
+
+	return stream;
+}
+
+//175
+QDataStream& operator>>(QDataStream& stream, ConstraintTwoSetsOfActivitiesOrdered& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.firstActivitiesIdsList>>tc.secondActivitiesIdsList;
+
+	return stream;
+}
+
+//176
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxThreeConsecutiveDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowAMAMException;
+
+	return stream;
+}
+
+//177
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxThreeConsecutiveDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowAMAMException>>tc.teacherName;
+
+	return stream;
+}
+
+//178
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinGapsBetweenActivityTag& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTag>>tc.minGaps>>tc.students;
+
+	return stream;
+}
+
+//179
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinGapsBetweenActivityTag& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTag>>tc.minGaps;
+
+	return stream;
+}
+
+//180
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinGapsBetweenActivityTag& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTag>>tc.minGaps>>tc.teacher;
+
+	return stream;
+}
+
+//181
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinGapsBetweenActivityTag& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTag>>tc.minGaps;
+
+	return stream;
+}
+
+//182
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxThreeConsecutiveDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowAMAMException;
+
+	return stream;
+}
+
+//183
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxThreeConsecutiveDays& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowAMAMException>>tc.students;
+
+	return stream;
+}
+
+//184
+QDataStream& operator>>(QDataStream& stream, ConstraintMinHalfDaysBetweenActivities& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.n_activities>>tc.consecutiveIfSameDay>>tc.minDays;
+
+	return stream;
+}
+
+//185
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityPreferredDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityId>>tc.day;
+
+	return stream;
+}
+
+//186
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMinInATerm& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.minActivitiesInATerm>>tc.allowEmptyTerms;
+
+	return stream;
+}
+
+//187
+QDataStream& operator>>(QDataStream& stream, ConstraintMaxTermsBetweenActivities& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.n_activities>>tc.maxTerms;
+
+	return stream;
+}
+
+//188
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxTwoActivityTagsPerDayFromN1N2N3& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.students;
+
+	return stream;
+}
+
+//189
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxTwoActivityTagsPerDayFromN1N2N3& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	return stream;
+}
+
+//190
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxTwoActivityTagsPerRealDayFromN1N2N3& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.teacherName;
+
+	return stream;
+}
+
+//191
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxTwoActivityTagsPerRealDayFromN1N2N3& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	return stream;
+}
+
+//192
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxTwoActivityTagsPerRealDayFromN1N2N3& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.students;
+
+	return stream;
+}
+
+//193
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxTwoActivityTagsPerRealDayFromN1N2N3& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	return stream;
+}
+
+//194
+QDataStream& operator>>(QDataStream& stream, ConstraintMaxHalfDaysBetweenActivities& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.n_activities>>tc.maxDays;
+
+	return stream;
+}
+
+//195
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityBeginsStudentsDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityId;
+
+	return stream;
+}
+
+//196
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesBeginStudentsDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.studentsName>>tc.subjectName>>tc.teacherName;
+
+	return stream;
+}
+
+//197
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityBeginsTeachersDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityId;
+
+	return stream;
+}
+
+//198
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesBeginTeachersDay& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activityTagName>>tc.studentsName>>tc.subjectName>>tc.teacherName;
+
+	return stream;
+}
+
+//199
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinHoursPerAfternoon& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyAfternoons>>tc.minHoursPerAfternoon;
+
+	return stream;
+}
+
+//200
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinHoursPerAfternoon& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyAfternoons>>tc.minHoursPerAfternoon>>tc.teacherName;
+
+	return stream;
+}
+
+//201
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinHoursPerAfternoon& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyAfternoons>>tc.minHoursPerAfternoon;
+
+	return stream;
+}
+
+//202
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinHoursPerAfternoon& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.allowEmptyAfternoons>>tc.minHoursPerAfternoon>>tc.students;
+
+	return stream;
+}
+
+//203
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesMaxHourlySpan& tc)
+{
+	//stream>>tc.type;
+	stream>>tc.weightPercentage;
+	stream>>tc.active;
+	stream>>tc.comments;
+
+	stream>>tc.activitiesIds>>tc.n_activities>>tc.maxHourlySpan;
+
+	return stream;
+}
 
 static QString trueFalse(bool x){
 	if(!x)

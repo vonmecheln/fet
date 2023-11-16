@@ -179,6 +179,8 @@ void TeachersForm::removeTeacher()
 			teachersListWidget->setCurrentRow(i);
 		else
 			currentTeacherTextEdit->setPlainText(QString(""));
+
+		gt.rules.addUndoPoint(tr("Removed the teacher %1.").arg(text));
 	}
 }
 
@@ -260,8 +262,12 @@ void TeachersForm::targetNumberOfHours()
 	 tch->targetNumberOfHours, 0, gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay, 1, &ok);
 
 	if(ok){
+		int ot=tch->targetNumberOfHours;
+
 		// user entered something and pressed OK
 		tch->targetNumberOfHours=newTargetNumberOfHours;
+
+		gt.rules.addUndoPoint(tr("Changed the target number of hours for teacher %1 from %2 to %3.").arg(tch->name).arg(ot).arg(tch->targetNumberOfHours));
 
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -322,6 +328,8 @@ void TeachersForm::moveTeacherUp()
 	gt.rules.teachersList[i]=at2;
 	gt.rules.teachersList[i-1]=at1;
 	
+	gt.rules.addUndoPoint(tr("Moved the teacher %1 up.").arg(s1));
+
 	teachersListWidget->setCurrentRow(i-1);
 	teacherChanged(i-1);
 }
@@ -354,7 +362,9 @@ void TeachersForm::moveTeacherDown()
 	
 	gt.rules.teachersList[i]=at2;
 	gt.rules.teachersList[i+1]=at1;
-	
+
+	gt.rules.addUndoPoint(tr("Moved the teacher %1 down.").arg(s1));
+
 	teachersListWidget->setCurrentRow(i+1);
 	teacherChanged(i+1);
 }
@@ -362,6 +372,8 @@ void TeachersForm::moveTeacherDown()
 void TeachersForm::sortTeachers()
 {
 	gt.rules.sortTeachersAlphabetically();
+
+	gt.rules.addUndoPoint(tr("Sorted the teachers."));
 
 	teachersListWidget->clear();
 	for(int i=0; i<gt.rules.teachersList.size(); i++){
@@ -396,6 +408,9 @@ void TeachersForm::activateTeacher()
 	QString teacherName=teachersListWidget->currentItem()->text();
 	int count=gt.rules.activateTeacher(teacherName);
 	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
+
+	if(count>0)
+		gt.rules.addUndoPoint(tr("Activated the teacher %1 (%2 activities).", "%2 is the number of activated activities").arg(teacherName).arg(count));
 }
 
 void TeachersForm::deactivateTeacher()
@@ -408,6 +423,9 @@ void TeachersForm::deactivateTeacher()
 	QString teacherName=teachersListWidget->currentItem()->text();
 	int count=gt.rules.deactivateTeacher(teacherName);
 	QMessageBox::information(this, tr("FET information"), tr("Deactivated a number of %1 activities").arg(count));
+
+	if(count>0)
+		gt.rules.addUndoPoint(tr("Deactivated teacher %1 (%2 activities).", "%2 is the number of deactivated activities").arg(teacherName).arg(count));
 }
 
 void TeachersForm::comments()
@@ -459,8 +477,12 @@ void TeachersForm::comments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
+		QString oc=tch->comments;
+
 		tch->comments=commentsPT->toPlainText();
-	
+
+		gt.rules.addUndoPoint(tr("Changed the comments for the teacher %1 from\n%2\nto\n%3.").arg(tch->name).arg(oc).arg(tch->comments));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 

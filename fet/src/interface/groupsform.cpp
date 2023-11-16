@@ -183,9 +183,10 @@ void GroupsForm::removeGroup()
 			
 	assert(yearsContainingGroup_List.count()>=1);
 	QString s;
-	if(yearsContainingGroup_List.count()==1)
+	if(yearsContainingGroup_List.count()==1){
 		s=tr("This group exists only in year %1. This means that"
 		 " all the related activities and constraints will be removed. Do you want to continue?").arg(yearsListWidget->currentItem()->text());
+	}
 	else{
 		s=tr("This group exists in more places, listed below. It will only be removed from the current year,"
 		 " and the related activities and constraints will not be removed. Do you want to continue?");
@@ -203,10 +204,12 @@ void GroupsForm::removeGroup()
 		tr("Are you sure you want to delete group %1 and all related subgroups, activities and constraints?").arg(groupName),
 		tr("Yes"), tr("No"), QString(), 0, 1 ) == 1)
 		return;*/
-
+		
 	bool tmp=gt.rules.removeGroup(yearsListWidget->currentItem()->text(), groupName);
 	assert(tmp);
 	if(tmp){
+		gt.rules.addUndoPoint(tr("Removed the group %1 from the year %2.").arg(groupName).arg(yearsListWidget->currentItem()->text()));
+
 		int q=groupsListWidget->currentRow();
 		
 		groupsListWidget->setCurrentRow(-1);
@@ -278,6 +281,8 @@ void GroupsForm::purgeGroup()
 	bool tmp=gt.rules.purgeGroup(groupName);
 	assert(tmp);
 	if(tmp){
+		gt.rules.addUndoPoint(tr("Removed the group %1 from everywhere.").arg(groupName));
+
 		int q=groupsListWidget->currentRow();
 		
 		groupsListWidget->setCurrentRow(-1);
@@ -365,6 +370,8 @@ void GroupsForm::moveGroupUp()
 	sy->groupsList[i]=sg2;
 	sy->groupsList[i-1]=sg1;
 	
+	gt.rules.addUndoPoint(tr("Moved the group %1 up in the year %2.").arg(s1).arg(sy->name));
+	
 	groupsListWidget->setCurrentRow(i-1);
 	groupChanged(/*i-1*/s1);
 }
@@ -401,6 +408,8 @@ void GroupsForm::moveGroupDown()
 	
 	sy->groupsList[i]=sg2;
 	sy->groupsList[i+1]=sg1;
+
+	gt.rules.addUndoPoint(tr("Moved the group %1 down in the year %2.").arg(s1).arg(sy->name));
 	
 	groupsListWidget->setCurrentRow(i+1);
 	groupChanged(/*i+1*/s1);
@@ -416,6 +425,8 @@ void GroupsForm::sortGroups()
 	assert(yearIndex>=0);
 	
 	gt.rules.sortGroupsAlphabetically(yearsListWidget->currentItem()->text());
+
+	gt.rules.addUndoPoint(tr("Sorted the groups in the year %1.").arg(yearsListWidget->currentItem()->text()));
 
 	yearChanged(yearsListWidget->currentItem()->text());
 }
@@ -483,6 +494,9 @@ void GroupsForm::activateStudents()
 	QString groupName=groupsListWidget->currentItem()->text();
 	int count=gt.rules.activateStudents(groupName);
 	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
+
+	if(count>0)
+		gt.rules.addUndoPoint(tr("Activated the group %1 (%2 activities).", "%2 is the number of activated activities").arg(groupName).arg(count));
 }
 
 void GroupsForm::deactivateStudents()
@@ -502,6 +516,9 @@ void GroupsForm::deactivateStudents()
 	QString groupName=groupsListWidget->currentItem()->text();
 	int count=gt.rules.deactivateStudents(groupName);
 	QMessageBox::information(this, tr("FET information"), tr("Deactivated a number of %1 activities").arg(count));
+	
+	if(count>0)
+		gt.rules.addUndoPoint(tr("Deactivated group %1 (%2 activities).", "%2 is the number of deactivated activities").arg(groupName).arg(count));
 }
 
 void GroupsForm::comments()
@@ -555,8 +572,12 @@ void GroupsForm::comments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
+		QString ocs=studentsSet->comments;
+	
 		studentsSet->comments=commentsPT->toPlainText();
 	
+		gt.rules.addUndoPoint(tr("Changed the comments for the group %1 from\n%2\nto\n%3.").arg(groupName).arg(ocs).arg(studentsSet->comments));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 

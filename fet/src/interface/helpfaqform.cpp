@@ -758,13 +758,13 @@ void HelpFaqForm::setText()
 	s+=tr("The first hint for other users is to start with a minimum number of constraints and see if FET can generate a timetable "
 		"with those constraints before thinking about adding the next ones.");
 	s+="\n\n";
-	s+=tr("The second hint is not to change too many constraints in one simulation. If it is impossible to generate a timetable with those added constraints, "
+	s+=tr("The second hint is not to change too many constraints in one generation. If it is impossible to generate a timetable with those added constraints, "
 		"it is difficult to say which particular constraint was responsible.");
 	s+="\n\n";
 	s+=tr("It may happen, for example, that even when two consecutive activities are placed on the same day (with the same group and the same teacher) "
 		"sometimes they are placed in different rooms, which would force them to needlessly change rooms. I guess that FET is focused on fulfilling constraints "
 		"but not on optimizing timetables. Sometimes simply changing the two activities is better both for the students and the teachers. I think that manually "
-		"improving a generated timetable is faster than creating many more constraints and repeating simulations. And this is the third hint.");
+		"improving a generated timetable is faster than creating many more constraints and repeating the generation. And this is the third hint.");
 	
 	s+="\n\n";
 	s+="--------------------";
@@ -998,7 +998,7 @@ void HelpFaqForm::setText()
 		
 	s+=tr("If you are only working on a timetable, and you do not need to publish it, you may want to disable writing some categories of timetables"
 		" on the hard disk, for efficiency (the generation speed is not affected, only the overhead to write the partial/complete timetables"
-		" when stopping/finishing the simulation). The timetables taking the longest time are the subgroups, groups AND years ones.");
+		" when stopping/finishing the generation). The timetables taking the longest time are the subgroups, groups AND years ones.");
 	s+=" ";
 	s+=tr("(Also the conflicts timetable might take long to write, if the file is large.)");
 	s+=" ";

@@ -253,7 +253,9 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::ok()
 				return;
 			}
 		}*/
-	
+
+	QString oldcs=this->_ctr->getDetailedDescription(gt.rules);
+
 	this->_ctr->weightPercentage=weight;
 	
 	if(_ctr->students!=students_name){
@@ -287,6 +289,9 @@ void ModifyConstraintStudentsSetNotAvailableTimesForm::ok()
 
 	this->_ctr->days=days;
 	this->_ctr->hours=hours;
+
+	QString newcs=this->_ctr->getDetailedDescription(gt.rules);
+	gt.rules.addUndoPoint(tr("Modified the constraint:\n\n%1\ninto\n\n%2").arg(oldcs).arg(newcs));
 
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);

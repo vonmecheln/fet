@@ -128,6 +128,8 @@ void AddStudentsSubgroupForm::addStudentsSubgroup()
 	gt.rules.addSubgroup(yearName, groupName, sts);
 	QMessageBox::information(this, tr("Subgroup insertion dialog"),
 		tr("Subgroup added"));
+		
+	gt.rules.addUndoPoint(tr("Added the subgroup %1 in the group %2, the year %3.").arg(sts->name).arg(groupName).arg(yearName));
 
 	nameLineEdit->selectAll();
 	nameLineEdit->setFocus();

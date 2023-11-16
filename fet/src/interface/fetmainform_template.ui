@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>560</width>
-    <height>389</height>
+    <width>614</width>
+    <height>411</height>
    </rect>
   </property>
   <widget class="QWidget" name="mainwidget">
@@ -851,7 +851,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>560</width>
+     <width>614</width>
      <height>26</height>
     </rect>
    </property>
@@ -1253,6 +1253,8 @@
      <addaction name="settingsConfirmRemoveRedundantAction"/>
      <addaction name="separator"/>
      <addaction name="settingsConfirmSaveTimetableAction"/>
+     <addaction name="separator"/>
+     <addaction name="settingsConfirmActivateDeactivateActivitiesConstraintsAction"/>
     </widget>
     <addaction name="checkForUpdatesAction"/>
     <addaction name="separator"/>
@@ -1282,8 +1284,17 @@
     <addaction name="separator"/>
     <addaction name="groupActivitiesInInitialOrderAction"/>
    </widget>
+   <widget class="QMenu" name="menuHistory">
+    <property name="title">
+     <string comment="View data history and select a previous state of data">History</string>
+    </property>
+    <addaction name="restoreDataStateAction"/>
+    <addaction name="separator"/>
+    <addaction name="settingsHistoryAction"/>
+   </widget>
    <addaction name="fileMenu"/>
    <addaction name="dataMenu"/>
+   <addaction name="menuHistory"/>
    <addaction name="menuStatistics"/>
    <addaction name="menuAdvanced"/>
    <addaction name="timetableMenu"/>
@@ -2220,6 +2231,27 @@
   <action name="settingsDataToPrintInTimetablesAction">
    <property name="text">
     <string comment="It is a menu item, means that the user selects the data to print in the timetables (he can turn on/off printing of subjects, activity tags, teachers, students, and rooms)">Data to print in timetables</string>
+   </property>
+  </action>
+  <action name="restoreDataStateAction">
+   <property name="text">
+    <string comment="Restore a previously saved state of the data">Restore state</string>
+   </property>
+  </action>
+  <action name="settingsHistoryAction">
+   <property name="text">
+    <string comment="Settings of the history of data">Settings</string>
+   </property>
+  </action>
+  <action name="settingsConfirmActivateDeactivateActivitiesConstraintsAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Confirm activating/deactivating activities/constraints</string>
    </property>
   </action>
  </widget>

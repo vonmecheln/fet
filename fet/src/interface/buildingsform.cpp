@@ -137,10 +137,14 @@ void BuildingsForm::removeBuilding()
 		tr("Are you sure you want to delete this building?"),
 		QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
 		return;
-		
+	
+	QString on=bu->name;
+	
 	bool tmp=gt.rules.removeBuilding(bu->name);
 	assert(tmp);
 	
+	gt.rules.addUndoPoint(tr("Removed the building %1.").arg(on));
+
 	visibleBuildingsList.removeAt(ind);
 	buildingsListWidget->setCurrentRow(-1);
 	QListWidgetItem* item=buildingsListWidget->takeItem(ind);
@@ -178,7 +182,7 @@ void BuildingsForm::moveBuildingUp()
 		return;
 	if(i==0)
 		return;
-		
+	
 	QString s1=buildingsListWidget->item(i)->text();
 	QString s2=buildingsListWidget->item(i-1)->text();
 	
@@ -197,6 +201,8 @@ void BuildingsForm::moveBuildingUp()
 	
 	gt.rules.buildingsList[i]=bu2;
 	gt.rules.buildingsList[i-1]=bu1;
+	
+	gt.rules.addUndoPoint(tr("Moved the building %1 up.").arg(bu1->name));
 	
 	//Begin bug fix on 2017-08-29
 	Building* vb1=visibleBuildingsList[i];
@@ -238,6 +244,8 @@ void BuildingsForm::moveBuildingDown()
 	gt.rules.buildingsList[i]=bu2;
 	gt.rules.buildingsList[i+1]=bu1;
 	
+	gt.rules.addUndoPoint(tr("Moved the building %1 down.").arg(bu1->name));
+	
 	//Begin bug fix on 2017-08-29
 	Building* vb1=visibleBuildingsList[i];
 	Building* vb2=visibleBuildingsList[i+1];
@@ -252,6 +260,8 @@ void BuildingsForm::moveBuildingDown()
 void BuildingsForm::sortBuildings()
 {
 	gt.rules.sortBuildingsAlphabetically();
+
+	gt.rules.addUndoPoint(tr("Sorted the buildings."));
 
 	filterChanged();
 }
@@ -333,7 +343,11 @@ void BuildingsForm::comments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
+		QString oc=bu->comments;
+	
 		bu->comments=commentsPT->toPlainText();
+		
+		gt.rules.addUndoPoint(tr("Changed the comments for the building %1 from\n%2\nto\n%3.").arg(bu->name).arg(oc).arg(bu->comments));
 	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);

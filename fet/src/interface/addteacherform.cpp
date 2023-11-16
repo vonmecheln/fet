@@ -198,6 +198,8 @@ void AddTeacherForm::addTeacher()
 	}
 	else{
 		QMessageBox::information(this, tr("FET information"), tr("Teacher added"));
+
+		gt.rules.addUndoPoint(tr("Added the teacher with the description:\n\n%1").arg(tch->getDetailedDescription(gt.rules)));
 	}
 	
 	teacherNameLineEdit->selectAll();

@@ -62,5 +62,7 @@ void ModifyBuildingForm::ok()
 	bool t=gt.rules.modifyBuilding(this->_initialBuildingName, nameLineEdit->text());
 	assert(t);
 	
+	gt.rules.addUndoPoint(tr("Modified the building %1 to %2.").arg(this->_initialBuildingName).arg(nameLineEdit->text()));
+	
 	this->close();
 }

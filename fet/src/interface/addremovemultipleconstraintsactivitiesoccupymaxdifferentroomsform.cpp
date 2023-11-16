@@ -66,22 +66,32 @@ void AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::addAllCo
 	int cnt=0;
 	QMap<std::tuple<QString, QStringList, QStringList, QStringList>, QList<int>> mp;
 	
+	QStringList descr;
+	
 	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		QString sbj=QString();
-		if(sameSubjectCheckBox->isChecked())
+		if(sameSubjectCheckBox->isChecked()){
 			sbj=act->subjectName;
+			descr.append(tr("same subject"));
+		}
 
 		QStringList atl=QStringList();
-		if(sameActivityTagsCheckBox->isChecked())
+		if(sameActivityTagsCheckBox->isChecked()){
 			atl=act->activityTagsNames;
+			descr.append(tr("same activity tags"));
+		}
 	
 		QStringList stl=QStringList();
-		if(sameStudentsCheckBox->isChecked())
+		if(sameStudentsCheckBox->isChecked()){
 			stl=act->studentsNames;
+			descr.append(tr("same students"));
+		}
 	
 		QStringList tnl=QStringList();
-		if(sameTeachersCheckBox->isChecked())
+		if(sameTeachersCheckBox->isChecked()){
 			tnl=act->teachersNames;
+			descr.append(tr("same teachers"));
+		}
 	
 		QList<int> tl=mp[std::make_tuple(sbj, atl, stl, tnl)];
 		tl.append(act->id);
@@ -100,6 +110,10 @@ void AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::addAllCo
 	}
 
 	QMessageBox::information(this, tr("FET information"), tr("There were added %1 space constraints").arg(cnt));
+	
+	if(cnt>0)
+		gt.rules.addUndoPoint(tr("Added %1 space constraints of type activities occupy max different rooms, with weight=%2%, conditions=%3, max different rooms=%4.")
+		 .arg(cnt).arg(100.0).arg(descr.join(", ")).arg(maxDifferentRoomsSpinBox->value()));
 }
 
 void AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::removeAllConstraints()
@@ -119,6 +133,10 @@ void AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::removeAl
 	gt.rules.removeSpaceConstraints(scl);
 	
 	QMessageBox::information(this, tr("FET information"), tr("There were removed %1 space constraints").arg(t));
+
+	if(scl.count()>0)
+		gt.rules.addUndoPoint(tr("Removed all the %1 space constraints of type activities occupy max different rooms.")
+		 .arg(scl.count()));
 }
 
 void AddRemoveMultipleConstraintsActivitiesOccupyMaxDifferentRoomsForm::help()

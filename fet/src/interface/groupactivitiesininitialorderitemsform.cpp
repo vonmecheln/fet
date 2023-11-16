@@ -34,6 +34,8 @@
 #include <QScrollBar>
 #include <QAbstractItemView>
 
+#include <QPalette>
+
 #include <algorithm>
 //using namespace std;
 
@@ -351,7 +353,7 @@ bool GroupActivitiesInInitialOrderItemsForm::filterOk(GroupActivitiesInInitialOr
 void GroupActivitiesInInitialOrderItemsForm::moveItemUp()
 {
 	if(filterCheckBox->isChecked()){
-		QMessageBox::information(this, tr("FET information"), tr("To move a 'group activities in the initial order' item, the 'Filter' check box must not be checked."));
+		QMessageBox::information(this, tr("FET information"), tr("To move a 'group activities in the initial order' item up, the 'Filter' check box must not be checked."));
 		return;
 	}
 	
@@ -384,6 +386,8 @@ void GroupActivitiesInInitialOrderItemsForm::moveItemUp()
 	visibleItemsList[i]=it2;
 	visibleItemsList[i-1]=it1;
 	
+	gt.rules.addUndoPoint(tr("Moved a 'group activities in the initial order' item up:\n\n%1", "%1 is the detailed description of the item").arg(it1->getDetailedDescription(gt.rules)));
+
 	if(true || USE_GUI_COLORS){
 		if(it2->active)
 			itemsListWidget->item(i)->setBackground(itemsListWidget->palette().base());
@@ -403,7 +407,7 @@ void GroupActivitiesInInitialOrderItemsForm::moveItemUp()
 void GroupActivitiesInInitialOrderItemsForm::moveItemDown()
 {
 	if(filterCheckBox->isChecked()){
-		QMessageBox::information(this, tr("FET information"), tr("To move a 'group activities in the initial order' item, the 'Filter' check box must not be checked."));
+		QMessageBox::information(this, tr("FET information"), tr("To move a 'group activities in the initial order' item down, the 'Filter' check box must not be checked."));
 		return;
 	}
 	
@@ -436,6 +440,8 @@ void GroupActivitiesInInitialOrderItemsForm::moveItemDown()
 	visibleItemsList[i]=it2;
 	visibleItemsList[i+1]=it1;
 	
+	gt.rules.addUndoPoint(tr("Moved a 'group activities in the initial order' item down:\n\n%1", "%1 is the detailed description of the item").arg(it1->getDetailedDescription(gt.rules)));
+
 	if(true || USE_GUI_COLORS){
 		if(it2->active)
 			itemsListWidget->item(i)->setBackground(itemsListWidget->palette().base());
@@ -553,7 +559,11 @@ void GroupActivitiesInInitialOrderItemsForm::removeItem()
 	case 0: // The user clicked the OK button or pressed Enter
 		for(int j=0; j<gt.rules.groupActivitiesInInitialOrderList.count(); j++)
 			if(visibleItemsList.at(i) == gt.rules.groupActivitiesInInitialOrderList[j]){
+				QString itd=item->getDetailedDescription(gt.rules);
+			
 				gt.rules.groupActivitiesInInitialOrderList.removeAt(j);
+				
+				gt.rules.addUndoPoint(tr("Removed a 'group activities in the initial order' item:\n\n%1", "%1 is the detailed description of the item").arg(itd));
 				
 				gt.rules.internalStructureComputed=false;
 				setRulesModifiedAndOtherThings(&gt.rules);
@@ -610,8 +620,12 @@ void GroupActivitiesInInitialOrderItemsForm::activateItem()
 	GroupActivitiesInInitialOrderItem* item=visibleItemsList.at(i);
 	
 	if(!item->active){
+		QString sb=item->getDetailedDescription(gt.rules);
+
 		item->active=true;
 		
+		gt.rules.addUndoPoint(tr("Activated a 'group activities in the initial order' item:\n\n%1", "%1 is the detailed description of the item").arg(sb));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
@@ -645,8 +659,12 @@ void GroupActivitiesInInitialOrderItemsForm::deactivateItem()
 	GroupActivitiesInInitialOrderItem* item=visibleItemsList.at(i);
 	
 	if(item->active){
+		QString sb=item->getDetailedDescription(gt.rules);
+
 		item->active=false;
-		
+
+		gt.rules.addUndoPoint(tr("Deactivated a 'group activities in the initial order' item:\n\n%1", "%1 is the detailed description of the item").arg(sb));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
@@ -743,8 +761,14 @@ void GroupActivitiesInInitialOrderItemsForm::itemComments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
+		QString oldid=item->getDetailedDescription(gt.rules);
+		
 		item->comments=commentsPT->toPlainText();
 	
+		gt.rules.addUndoPoint(tr("Changed a 'group activities in the initial order' item's comments:\n\n%1\nnow has the comments:\n\n%2",
+		 "%1 is the detailed description of the item, %2 are the new comments")
+		 .arg(oldid).arg(item->comments));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
@@ -823,14 +847,20 @@ void GroupActivitiesInInitialOrderItemsForm::activateAllItems()
 		return;
 	}
 
+	QString su;
 	int cnt=0;
 	for(GroupActivitiesInInitialOrderItem* item : std::as_const(visibleItemsList)){
 		if(!item->active){
+			su+=tr("Item:\n\n%1").arg(item->getDetailedDescription(gt.rules))+QString("\n");
+		
 			cnt++;
 			item->active=true;
 		}
 	}
 	if(cnt>0){
+		gt.rules.addUndoPoint(tr("Activated all the filtered 'group activities in the initial order' items:\n\n%1",
+		 "%1 is the list of detailed descriptions of the activated items").arg(su));
+	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 		
@@ -852,14 +882,20 @@ void GroupActivitiesInInitialOrderItemsForm::deactivateAllItems()
 		return;
 	}
 
+	QString su;
 	int cnt=0;
 	for(GroupActivitiesInInitialOrderItem* item : std::as_const(visibleItemsList)){
 		if(item->active){
+			su+=tr("Item:\n\n%1").arg(item->getDetailedDescription(gt.rules))+QString("\n");
+		
 			cnt++;
 			item->active=false;
 		}
 	}
 	if(cnt>0){
+		gt.rules.addUndoPoint(tr("Deactivated all the filtered 'group activities in the initial order' items:\n\n%1",
+		 "%1 is the list of detailed descriptions of the activated items").arg(su));
+		
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 		

@@ -4,7 +4,7 @@
    copyright            : (C) by Liviu Lalescu
     email                : Please see https://lalescu.ro/liviu/ for details about contacting Liviu Lalescu (in particular, you can find there the email address)
  ***************************************************************************
-                      activityplanning.cpp  -  description
+                      activityplanningform.cpp  -  description
                              -------------------
     begin                : Dec 2009
     copyright            : (C) by Volker Dirr
@@ -433,7 +433,7 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 	//connect(activitiesTableView, SIGNAL(cellClicked(int, int)), this, SLOT(activitiesCellSelected(int, int)));
 	connect(activitiesTableView, SIGNAL(activated(const QModelIndex&)), this, SLOT(activitiesCellSelected(const QModelIndex&)));
 	
-	//connect(activitiesTable, SIGNAL(cellDoubleClicked(int, int)), this, SLOT(ActivtiesCellSelected(int, int)));
+	//connect(activitiesTable, SIGNAL(cellDoubleClicked(int, int)), this, SLOT(ActivitiesCellSelected(int, int)));
 
 	//connect(teachersTable, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(teachersCellSelected(QTableWidgetItem*)));
 	connect(teachersTableView, SIGNAL(activated(const QModelIndex&)), this, SLOT(teachersCellSelected(const QModelIndex&)));
@@ -536,7 +536,6 @@ void ActivityPlanningForm::showHide()
 		buttonsVisible=true;
 	}
 }
-
 
 void ActivityPlanningForm::computeActivitiesForDeletion(const QString& teacherName, const QString& studentsSetName, const QString& subjectName,
 	const QList<int>& tmpID, const QList<int>& tmpGroupID,
@@ -1024,6 +1023,12 @@ void ActivityPlanningForm::swapTeachers(int studentsActivity1, int subjectActivi
 					//gt.rules.modifyActivity(_idsToBeModified2.at(i), _agidsToBeModified2.at(i), teachers_names, subject_name, activity_tags_names, students_names, duration, active, computeNTotalStudents, nTotalStudents);
 				}
 			}
+			gt.rules.addUndoPoint(tr("Activity planning: Swapped the teachers of the activities with students=%1 and subject=%2 with "
+			 "the teachers of the activities with students=%3 and subject=%4.")
+			 .arg(statisticValues.allStudentsNames.at(studentsActivity1))
+			 .arg(gt.rules.subjectsList.at(subjectActivity1)->name)
+			 .arg(statisticValues.allStudentsNames.at(studentsActivity2))
+			 .arg(gt.rules.subjectsList.at(subjectActivity2)->name));
 		}
 	}
 }
@@ -1271,6 +1276,12 @@ void ActivityPlanningForm::swapStudents(int studentsActivity1, int subjectActivi
 					//gt.rules.modifyActivity(_idsToBeModified2.at(i), _agidsToBeModified2.at(i), teachers_names, subject_name, activity_tags_names, students_names, duration, active, computeNTotalStudents, nTotalStudents);
 				}
 			}
+			gt.rules.addUndoPoint(tr("Activity planning: Swapped the students of the activities with students=%1 and subject=%2 with "
+			 "the students of the activities with the students=%3 and subject=%4.")
+			 .arg(statisticValues.allStudentsNames.at(studentsActivity1))
+			 .arg(gt.rules.subjectsList.at(subjectActivity1)->name)
+			 .arg(statisticValues.allStudentsNames.at(studentsActivity2))
+			 .arg(gt.rules.subjectsList.at(subjectActivity2)->name));
 		}
 	}
 }
@@ -1419,6 +1430,9 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 							gt.rules.removeActivity(_idsToBeRemoved.at(i), _agidsToBeRemoved.at(i));
 						}
 					}
+					gt.rules.addUndoPoint(tr("Activity planning: Deleted %1 activities of the students set %2.", "%1 is the number of activities")
+					 .arg(tmpIdentifySet.size())
+					 .arg(statisticValues.allStudentsNames[column]));
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
@@ -1453,6 +1467,9 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 							gt.rules.removeActivity(_idsToBeRemoved.at(i), _agidsToBeRemoved.at(i));
 						}
 					}
+					gt.rules.addUndoPoint(tr("Activity planning: Deleted %1 activities of the subject %2.", "%1 is the number of activities")
+					 .arg(tmpIdentifySet.size())
+					 .arg(statisticValues.allSubjectsNames[column]));
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
@@ -1577,6 +1594,10 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 							//gt.rules.modifyActivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
 						}
 					}
+					gt.rules.addUndoPoint(tr("Activity planning: Modified %1 activities of the students set %2. The new teacher is %3.", "%1 is the number of activities")
+					 .arg(tmpIdentifySet.size())
+					 .arg(statisticValues.allStudentsNames[column])
+					 .arg(item));
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
@@ -1640,6 +1661,10 @@ void ActivityPlanningForm::activitiesTableHorizontalHeaderClicked(int column){
 							//gt.rules.modifyActivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
 						}
 					}
+					gt.rules.addUndoPoint(tr("Activity planning: Modified %1 activities of the subject %2. The new teacher is %3.", "%1 is the number of activities")
+					 .arg(tmpIdentifySet.size())
+					 .arg(statisticValues.allSubjectsNames[column])
+					 .arg(item));
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
@@ -1839,6 +1864,9 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 							gt.rules.removeActivity(_idsToBeRemoved.at(i), _agidsToBeRemoved.at(i));
 						}
 					}
+					gt.rules.addUndoPoint(tr("Activity planning: Deleted %1 activities of the subject %2.", "%1 is the number of activities")
+					 .arg(tmpIdentifySet.size())
+					 .arg(statisticValues.allSubjectsNames[row]));
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
@@ -1873,6 +1901,9 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 							gt.rules.removeActivity(_idsToBeRemoved.at(i), _agidsToBeRemoved.at(i));
 						}
 					}
+					gt.rules.addUndoPoint(tr("Activity planning: Deleted %1 activities of the students set %2.", "%1 is the number of activities")
+					 .arg(tmpIdentifySet.size())
+					 .arg(statisticValues.allStudentsNames[row]));
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
@@ -1998,6 +2029,9 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 							//gt.rules.modifyActivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
 						}
 					}
+					gt.rules.addUndoPoint(tr("Activity planning: Modified %1 activities of the subject %2. The new teacher is %3.", "%1 is the number of activities")
+					 .arg(tmpIdentifySet.size())
+					 .arg(statisticValues.allSubjectsNames[row]).arg(item));
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
@@ -2060,6 +2094,9 @@ void ActivityPlanningForm::activitiesTableVerticalHeaderClicked(int row){
 							//gt.rules.modifyActivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
 						}
 					}
+					gt.rules.addUndoPoint(tr("Activity planning: Modified %1 activities of the students set %2. The new teacher is %3", "%1 is the number of activities")
+					 .arg(tmpIdentifySet.size())
+					 .arg(statisticValues.allStudentsNames[row]).arg(item));
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
@@ -2357,6 +2394,8 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 			bool _affectOtherSubjectsOverall;
 
 			QString s;
+			QString undoSubject;
+			QString undoStudents;
 			if(swapAxes->checkState()==Qt::Checked){
 				computeActivitiesForDeletion("", statisticValues.allStudentsNames[column], statisticValues.allSubjectsNames[row],
 					tmpID, tmpGroupID,
@@ -2372,6 +2411,8 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				s+=", ";
 				s+=tr("students=%1").arg(statisticValues.allStudentsNames[column]);
 				s+=")";
+				undoSubject=statisticValues.allSubjectsNames[row];
+				undoStudents=statisticValues.allStudentsNames[column];
 
 				assert(nTotalActsDeleted>=tmpIdentifySet.size());
 				if(nTotalActsDeleted>tmpIdentifySet.size()){
@@ -2395,6 +2436,8 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				s+=", ";
 				s+=tr("subject=%1").arg(statisticValues.allSubjectsNames[column]);
 				s+=")";
+				undoSubject=statisticValues.allSubjectsNames[column];
+				undoStudents=statisticValues.allStudentsNames[row];
 
 				assert(nTotalActsDeleted>=tmpIdentifySet.size());
 				if(nTotalActsDeleted>tmpIdentifySet.size()){
@@ -2424,6 +2467,9 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 						gt.rules.removeActivity(_idsToBeRemoved.at(i), _agidsToBeRemoved.at(i));
 					}
 				}
+				gt.rules.addUndoPoint(tr("Activity planning: Deleted the activities with the subject %1 and the students %2.")
+				 .arg(undoSubject)
+				 .arg(undoStudents));
 				PlanningChanged::increasePlanningCommunicationSpinBox();
 			}
 		}
@@ -2482,6 +2528,8 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 			bool _affectOtherSubjectsOverall;
 
 			QString s;
+			QString undoSubject;
+			QString undoStudents;
 			if(swapAxes->checkState()==Qt::Checked){
 				computeActivitiesForModification("", statisticValues.allStudentsNames[column], statisticValues.allSubjectsNames[row],
 					tmpID, tmpGroupID,
@@ -2497,6 +2545,8 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				s+=",\n";
 				s+=tr("students=%1").arg(statisticValues.allStudentsNames[column]);
 				s+=")";
+				undoSubject=statisticValues.allSubjectsNames[row];
+				undoStudents=statisticValues.allStudentsNames[column];
 
 				assert(nTotalActsModified>=tmpIdentifySet.size());
 				if(nTotalActsModified>tmpIdentifySet.size()){
@@ -2520,6 +2570,8 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 				s+=",\n";
 				s+=tr("subject=%1").arg(statisticValues.allSubjectsNames[column]);
 				s+=")";
+				undoSubject=statisticValues.allSubjectsNames[column];
+				undoStudents=statisticValues.allStudentsNames[row];
 
 				assert(nTotalActsModified>=tmpIdentifySet.size());
 				if(nTotalActsModified>tmpIdentifySet.size()){
@@ -2580,6 +2632,10 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 						//gt.rules.modifyActivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
 					}
 				}
+				gt.rules.addUndoPoint(tr("Activity planning: Modified the activities with the subject %1 and the students %2. The new teacher is %3.")
+				 .arg(undoSubject)
+				 .arg(undoStudents)
+				 .arg(item));
 				PlanningChanged::increasePlanningCommunicationSpinBox();
 			}
 		}
@@ -2640,7 +2696,7 @@ void ActivityPlanningForm::activitiesCellSelected(const QModelIndex& index){
 
 //mouseTracking (start 3/3)
 /*
-void ActivityPlanningForm::ActivtiesCellEntered(int row, int column){
+void ActivityPlanningForm::ActivitiesCellEntered(int row, int column){
 	activitiesTable->setCurrentCell(row, column);
 }
 
@@ -2749,6 +2805,9 @@ void ActivityPlanningForm::teachersTableHorizontalHeaderClicked(int column){
 						gt.rules.removeActivity(_idsToBeRemoved.at(i), _agidsToBeRemoved.at(i));
 					}
 				}
+				gt.rules.addUndoPoint(tr("Activity planning: Deleted %1 activities of the teacher %2.", "%1 is the number of activities")
+				 .arg(tmpIdentifySet.size())
+				 .arg(statisticValues.allTeachersNames[column]));
 				PlanningChanged::increasePlanningCommunicationSpinBox();
 			}
 		}
@@ -2861,6 +2920,10 @@ void ActivityPlanningForm::teachersTableHorizontalHeaderClicked(int column){
 						//gt.rules.modifyActivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
 					}
 				}
+				gt.rules.addUndoPoint(tr("Activity planning: Modified %1 activities of the teacher %2. The new teacher is %3.", "%1 is the number of activities")
+				 .arg(tmpIdentifySet.size())
+				 .arg(statisticValues.allTeachersNames[column])
+				 .arg(item));
 				PlanningChanged::increasePlanningCommunicationSpinBox();
 			}
 		}
@@ -3065,6 +3128,10 @@ void ActivityPlanningForm::teachersTableHorizontalHeaderClicked(int column){
 							//gt.rules.modifyActivity(_idsToBeModified2.at(i), _agidsToBeModified2.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
 						}
 					}
+					gt.rules.addUndoPoint(tr("Activity planning: Swapped %1 activities of the teacher %2 with the teacher %3.", "%1 is the number of activities")
+					 .arg(tmpIdentifySet.size())
+					 .arg(statisticValues.allTeachersNames[column])
+					 .arg(teacher2));
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
@@ -3089,6 +3156,9 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 		if(ok){
 			teachersTargetNumberOfHours[itcol]=targetHours;
 			
+			int tb=teachersList.at(itcol)->targetNumberOfHours;
+			int ta=targetHours;
+			
 			teachersList.at(itcol)->targetNumberOfHours=targetHours;
 			/*useless, because i also need to remove the table head item and i don't know how, so i redo the whole table
 			teachersTable->removeCellWidget(0, itcol);
@@ -3110,6 +3180,11 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 			//currently using not fast, but safe calculation
 			updateTables_Teachers();
 			updateTablesVisual();
+
+			gt.rules.addUndoPoint(tr("Activity planning: Changed the target number of hours for the teacher %1 from %2 to %3.")
+			 .arg(teachersList.at(itcol)->name)
+			 .arg(tb)
+			 .arg(ta));
 			
 			gt.rules.internalStructureComputed=false;
 			setRulesModifiedAndOtherThings(&gt.rules);
@@ -3210,6 +3285,9 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 							gt.rules.removeActivity(_idsToBeRemoved.at(i), _agidsToBeRemoved.at(i));
 						}
 					}
+					gt.rules.addUndoPoint(tr("Activity planning: Deleted %1 activities of the teacher %2.", "%1 is the number of activities")
+					 .arg(tmpIdentifySet.size())
+					 .arg(statisticValues.allTeachersNames[itcol]));
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
@@ -3321,6 +3399,10 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 							//gt.rules.modifyActivity(_idsToBeModified.at(i), _agidsToBeModified.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
 						}
 					}
+					gt.rules.addUndoPoint(tr("Activity planning: Modified %1 activities of the teacher %2. The new teacher is %3.", "%1 is the number of activities")
+					 .arg(tmpIdentifySet.size())
+					 .arg(statisticValues.allTeachersNames[itcol])
+					 .arg(item));
 					PlanningChanged::increasePlanningCommunicationSpinBox();
 				}
 			}
@@ -3524,6 +3606,10 @@ void ActivityPlanningForm::teachersCellSelected(const QModelIndex& index){
 								//gt.rules.modifyActivity(_idsToBeModified2.at(i), _agidsToBeModified2.at(i), teachers_names, subject_name, activity_tags_names,students_names, duration, active, computeNTotalStudents, nTotalStudents);
 							}
 						}
+						gt.rules.addUndoPoint(tr("Activity planning: Modified %1 activities of the teacher %2. The new teacher is %3.", "%1 is the number of activities")
+						 .arg(tmpIdentifySet.size())
+						 .arg(statisticValues.allTeachersNames[itcol])
+						 .arg(teacher2));
 						PlanningChanged::increasePlanningCommunicationSpinBox();
 					}
 				}
@@ -4007,6 +4093,9 @@ void ActivityPlanningForm::deleteAll(){
 				gt.rules.removeActivity(act->id, act->activityGroupId);
 			}*/
 			
+			if(idsToBeRemoved.count()>0)
+				gt.rules.addUndoPoint(tr("Activity planning: Deleted all the activities."));
+
 			PlanningChanged::increasePlanningCommunicationSpinBox();
 		}
 	}

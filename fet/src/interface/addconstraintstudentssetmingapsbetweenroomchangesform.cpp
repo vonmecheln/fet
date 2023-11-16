@@ -77,9 +77,12 @@ void AddConstraintStudentsSetMinGapsBetweenRoomChangesForm::addCurrentConstraint
 	ctr=new ConstraintStudentsSetMinGapsBetweenRoomChanges(weight, students_name, minGapsSpinBox->value());
 
 	bool tmp2=gt.rules.addSpaceConstraint(ctr);
-	if(tmp2)
+	if(tmp2){
 		LongTextMessageBox::information(this, tr("FET information"),
 			tr("Constraint added:")+"\n\n"+ctr->getDetailedDescription(gt.rules));
+
+		gt.rules.addUndoPoint(tr("Added the constraint:\n\n%1").arg(ctr->getDetailedDescription(gt.rules)));
+	}
 	else{
 		QMessageBox::warning(this, tr("FET information"),
 			tr("Constraint NOT added - please report error"));

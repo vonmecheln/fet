@@ -18,6 +18,42 @@
 #include "teacher.h"
 #include "rules.h"
 
+#include <QDataStream>
+
+QDataStream& operator<<(QDataStream& stream, const Teacher& tch)
+{
+	stream<<tch.name;
+	stream<<tch.morningsAfternoonsBehavior;
+	stream<<tch.targetNumberOfHours;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	stream<<QList<QString>(tch.qualifiedSubjectsList.cbegin(), tch.qualifiedSubjectsList.cend());
+#else
+	stream<<QList<QString>::fromStdList(tch.qualifiedSubjectsList);
+#endif
+	stream<<tch.comments;
+
+	return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, Teacher& tch)
+{
+	stream>>tch.name;
+	stream>>tch.morningsAfternoonsBehavior;
+	stream>>tch.targetNumberOfHours;
+
+	QList<QString> tl;
+	stream>>tl;
+#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+	tch.qualifiedSubjectsList=std::list<QString>(tl.constBegin(), tl.constEnd());
+#else
+	tch.qualifiedSubjectsList=tl.toStdList();
+#endif
+
+	stream>>tch.comments;
+
+	return stream;
+}
+
 Teacher::Teacher()
 {
 	targetNumberOfHours=0;
@@ -186,4 +222,14 @@ int teachersAscending(const Teacher* t1, const Teacher* t2)
 	
 	//by Rodolfo Ribeiro Gomes
 	return t1->name.localeAwareCompare(t2->name)<0;
+}
+
+void Teacher::recomputeQualifiedSubjectsHash()
+{
+	qualifiedSubjectsHash.clear();
+	//I don't know what it does not work with const_iterator, cbegin(), and cend().
+	for(std::list<QString>::iterator it=qualifiedSubjectsList.begin(); it!=qualifiedSubjectsList.end(); it++){
+		assert(!qualifiedSubjectsHash.contains(*it));
+		qualifiedSubjectsHash.insert(*it, it);
+	}
 }

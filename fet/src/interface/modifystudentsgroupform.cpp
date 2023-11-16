@@ -34,10 +34,10 @@ ModifyStudentsGroupForm::ModifyStudentsGroupForm(QWidget* parent, const QString&
 	numberSpinBox->setMaximum(MAX_ROOM_CAPACITY);
 	numberSpinBox->setMinimum(0);
 	numberSpinBox->setValue(0);
-				
-//	this->_yearName=yearName;
+	
+	//this->_yearName=yearName;
 	this->_initialGroupName=initialGroupName;
-//	this->_initialNumberOfStudents=initialNumberOfStudents;
+	this->_initialNumberOfStudents=initialNumberOfStudents;
 	numberSpinBox->setValue(initialNumberOfStudents);
 	yearNameLineEdit->setText(yearName);
 	nameLineEdit->setText(initialGroupName);
@@ -77,8 +77,13 @@ void ModifyStudentsGroupForm::ok()
 		return;
 	}
 	
+	QString od=tr("Group name=%1\nNumber of students=%2").arg(this->_initialGroupName).arg(this->_initialNumberOfStudents);
+	
 	bool t=gt.rules.modifyStudentsSet(this->_initialGroupName, groupName, numberSpinBox->value());
 	assert(t);
+
+	QString nd=tr("Group name=%1\nNumber of students=%2").arg(groupName).arg(numberSpinBox->value());
+	gt.rules.addUndoPoint(tr("The group with the description:\n\n%1\nwas modified into\n\n%2").arg(od).arg(nd));
 	
 	this->close();
 }

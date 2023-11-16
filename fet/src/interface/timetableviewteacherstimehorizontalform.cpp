@@ -69,8 +69,8 @@ extern bool teachers_schedule_ready;
 
 extern Solution best_solution;
 
-extern bool simulation_running;
-extern bool simulation_running_multi;
+extern bool generation_running;
+extern bool generation_running_multi;
 
 extern Matrix3D<bool> teacherNotAvailableDayHour;
 extern Matrix2D<bool> breakDayHour;
@@ -1029,9 +1029,9 @@ void TimetableViewTeachersTimeHorizontalForm::lockTimeSpace()
 			
 void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -1172,11 +1172,12 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 
 					for(TimeConstraint* deltc : std::as_const(tmptc)){
 						s+=tr("The following constraint will be deleted:")+"\n"+deltc->getDetailedDescription(gt.rules)+"\n";
-						gt.rules.removeTimeConstraint(deltc);
+						//gt.rules.removeTimeConstraint(deltc);
 						idsOfLockedTime.remove(act->id);
 						unlockedT++;
 						//delete deltc; - done by rules.removeTimeConstraint(...)
 					}
+					gt.rules.removeTimeConstraints(tmptc);
 				}
 				tmptc.clear();
 
@@ -1270,11 +1271,12 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 
 					for(SpaceConstraint* delsc : std::as_const(tmpsc)){
 						s+=tr("The following constraint will be deleted:")+"\n"+delsc->getDetailedDescription(gt.rules)+"\n";
-						gt.rules.removeSpaceConstraint(delsc);
+						//gt.rules.removeSpaceConstraint(delsc);
 						idsOfLockedSpace.remove(act->id);
 						unlockedS++;
 						//delete delsc; done by rules.removeSpaceConstraint(...)
 					}
+					gt.rules.removeSpaceConstraints(tmpsc);
 				}
 				tmpsc.clear();
 			
@@ -1404,7 +1406,11 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 		s=QCoreApplication::translate("TimetableViewForm", "No locking constraints added or removed.");
 	QMessageBox::information(this, tr("FET information"), s);
 
-////////// just for testing
+	if(addedT>0 || addedS>0 || unlockedT>0 || unlockedS>0)
+		gt.rules.addUndoPoint(tr("Locked/unlocked/toggled a selection of activities in the"
+		  " timetable view teachers time horizontal dialog. The summary of the added/removed locking constraints is:\n\n%1").arg(s)+QString("\n"));
+
+	////////// just for testing
 	QSet<int> backupLockedTime;
 	QSet<int> backupPermanentlyLockedTime;
 	QSet<int> backupLockedSpace;
@@ -1428,14 +1434,14 @@ void TimetableViewTeachersTimeHorizontalForm::lock(bool lockTime, bool lockSpace
 
 void TimetableViewTeachersTimeHorizontalForm::unlockDays()
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
 	if(!(students_schedule_ready && teachers_schedule_ready)){
-		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view students timetable dialog - please generate a new timetable"));
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view teachers timetable dialog - please generate a new timetable"));
 		return;
 	}
 	assert(students_schedule_ready && teachers_schedule_ready);
@@ -1495,7 +1501,7 @@ void TimetableViewTeachersTimeHorizontalForm::unlockDays()
 		}
 	}
 	
-	int nUnlocked=0;
+	QList<TimeConstraint*> tmptc;
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		assert( ! (realActivities.contains(ai) && dummyActivities.contains(ai)) );
 		if(realActivities.contains(ai) || dummyActivities.contains(ai)){
@@ -1507,27 +1513,33 @@ void TimetableViewTeachersTimeHorizontalForm::unlockDays()
 
 			assert(gt.rules.apdHash.value(act->id, QSet<ConstraintActivityPreferredDay*>()).count()<=1);
 			for(ConstraintActivityPreferredDay* c : gt.rules.apdHash.value(act->id, QSet<ConstraintActivityPreferredDay*>())){
-				gt.rules.removeTimeConstraint(c);
-				nUnlocked++;
+				tmptc.append(c);
 			}
 		}
 	}
+	int nUnlocked=tmptc.count();
+	gt.rules.removeTimeConstraints(tmptc);
+	tmptc.clear();
 
 	QMessageBox::information(this, tr("FET information"), tr("There were removed %1 constraints").arg(nUnlocked));
+
+	if(nUnlocked>0)
+		gt.rules.addUndoPoint(tr("Unlocked from days a selection of activities in the"
+		  " timetable view teachers time horizontal dialog. There were removed %1 locking constraints.").arg(nUnlocked)+QString("\n"));
 
 	LockUnlock::increaseCommunicationSpinBox();
 }
 
 void TimetableViewTeachersTimeHorizontalForm::unlockAllDays()
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
 	if(!(students_schedule_ready && teachers_schedule_ready)){
-		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view students timetable dialog - please generate a new timetable"));
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view teachers timetable dialog - please generate a new timetable"));
 		return;
 	}
 	assert(students_schedule_ready && teachers_schedule_ready);
@@ -1537,32 +1549,38 @@ void TimetableViewTeachersTimeHorizontalForm::unlockAllDays()
 		return;
 	}
 
-	int nUnlocked=0;
+	QList<TimeConstraint*> tmptc;
 	for(int ai=0; ai<gt.rules.nInternalActivities; ai++){
 		Activity* act=&gt.rules.internalActivitiesList[ai];
 
 		assert(gt.rules.apdHash.value(act->id, QSet<ConstraintActivityPreferredDay*>()).count()<=1);
 		for(ConstraintActivityPreferredDay* c : gt.rules.apdHash.value(act->id, QSet<ConstraintActivityPreferredDay*>())){
-			gt.rules.removeTimeConstraint(c);
-			nUnlocked++;
+			tmptc.append(c);
 		}
 	}
+	int nUnlocked=tmptc.count();
+	gt.rules.removeTimeConstraints(tmptc);
+	tmptc.clear();
 
 	QMessageBox::information(this, tr("FET information"), tr("There were removed %1 constraints").arg(nUnlocked));
+
+	if(nUnlocked>0)
+		gt.rules.addUndoPoint(tr("Unlocked from days all the activities in the"
+		  " timetable view teachers time horizontal dialog. There were removed %1 locking constraints.").arg(nUnlocked)+QString("\n"));
 
 	LockUnlock::increaseCommunicationSpinBox();
 }
 
 void TimetableViewTeachersTimeHorizontalForm::lockDays()
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
 	if(!(students_schedule_ready && teachers_schedule_ready)){
-		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view students timetable dialog - please generate a new timetable"));
+		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view teachers timetable dialog - please generate a new timetable"));
 		return;
 	}
 	assert(students_schedule_ready && teachers_schedule_ready);
@@ -1700,6 +1718,10 @@ void TimetableViewTeachersTimeHorizontalForm::lockDays()
 	}
 
 	QMessageBox::information(this, tr("FET information"), tr("There were added %1 constraints").arg(nLocked));
+
+	if(nLocked>0)
+		gt.rules.addUndoPoint(tr("Locked to days a selection of activities in the"
+		  " timetable view teachers time horizontal dialog. There were added %1 locking constraints.").arg(nLocked)+QString("\n"));
 
 	LockUnlock::increaseCommunicationSpinBox();
 }

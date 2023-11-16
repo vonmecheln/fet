@@ -25,8 +25,8 @@
 
 extern Timetable gt;
 
-extern bool simulation_running;
-extern bool simulation_running_multi;
+extern bool generation_running;
+extern bool generation_running_multi;
 
 InstitutionNameForm::InstitutionNameForm(QWidget* parent): QDialog(parent)
 {
@@ -52,12 +52,17 @@ InstitutionNameForm::~InstitutionNameForm()
 
 void InstitutionNameForm::ok()
 {
-	if(!simulation_running && !simulation_running_multi)
+	if(!generation_running && !generation_running_multi){
+		QString oin=gt.rules.institutionName;
+	
 		gt.rules.setInstitutionName(institutionNameLineEdit->text());
+		
+		gt.rules.addUndoPoint(tr("Changed the institution name from %1 to %2.").arg(oin).arg(gt.rules.institutionName));
+	}
 	else{
 		QMessageBox::information(this, tr("FET information"),
-			tr("Cannot update institution name during simulation\n"
-			"Please stop simulation before this"));
+			tr("Cannot update institution name during generation."
+			" Please stop the generation before this."));
 		return;
 	}
 

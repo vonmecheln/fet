@@ -43,7 +43,6 @@
 
 #include <QAbstractItemView>
 
-#include <QBrush>
 #include <QPalette>
 
 #include <QSplitter>
@@ -742,8 +741,12 @@ void SubactivitiesForm::subactivityComments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
+		QString sb=act->getDetailedDescription(gt.rules);
+
 		act->comments=commentsPT->toPlainText();
 	
+		gt.rules.addUndoPoint(tr("Changed a subactivity's comments. Subactivity before:\n\n%1\nComments after:\n\n%2").arg(sb).arg(act->comments));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
@@ -831,7 +834,11 @@ void SubactivitiesForm::activateSubactivity()
 	Activity* act=visibleSubactivitiesList.at(i);
 	
 	if(!act->active){
+		QString sb=act->getDetailedDescription(gt.rules);
+
 		act->active=true;
+
+		gt.rules.addUndoPoint(tr("Activated a subactivity:\n\n%1").arg(sb));
 		
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
@@ -887,8 +894,12 @@ void SubactivitiesForm::deactivateSubactivity()
 	Activity* act=visibleSubactivitiesList.at(i);
 
 	if(act->active){
+		QString sb=act->getDetailedDescription(gt.rules);
+
 		act->active=false;
-		
+
+		gt.rules.addUndoPoint(tr("Deactivated a subactivity:\n\n%1").arg(sb));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
@@ -940,14 +951,19 @@ void SubactivitiesForm::activateAllSubactivities()
 		return;
 	}
 
+	QString su;
 	int cnt=0;
 	for(Activity* act : std::as_const(visibleSubactivitiesList)){
 		if(!act->active){
+			su+=tr("Subactivity:\n\n%1").arg(act->getDetailedDescription(gt.rules))+QString("\n");
+
 			cnt++;
 			act->active=true;
 		}
 	}
 	if(cnt>0){
+		gt.rules.addUndoPoint(tr("Activated all the filtered subactivities:\n\n%1").arg(su));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
@@ -973,14 +989,19 @@ void SubactivitiesForm::deactivateAllSubactivities()
 		return;
 	}
 
+	QString su;
 	int cnt=0;
 	for(Activity* act : std::as_const(visibleSubactivitiesList)){
 		if(act->active){
+			su+=tr("Subactivity:\n\n%1").arg(act->getDetailedDescription(gt.rules))+QString("\n");
+
 			cnt++;
 			act->active=false;
 		}
 	}
 	if(cnt>0){
+		gt.rules.addUndoPoint(tr("Deactivated all the filtered subactivities:\n\n%1").arg(su));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 

@@ -116,6 +116,8 @@ void ActivityTagsForm::addActivityTag()
 		else{
 			activityTagsListWidget->addItem(at->name);
 			activityTagsListWidget->setCurrentRow(activityTagsListWidget->count()-1);
+			
+			gt.rules.addUndoPoint(tr("Added the activity tag %1.").arg(at->name));
 		}
 	}
 	else{
@@ -163,6 +165,8 @@ void ActivityTagsForm::removeActivityTag()
 			activityTagsListWidget->setCurrentRow(i);
 		else
 			currentActivityTagTextEdit->setPlainText(QString(""));
+
+		gt.rules.addUndoPoint(tr("Removed the activity tag %1.").arg(text));
 	}
 }
 
@@ -197,6 +201,8 @@ void ActivityTagsForm::renameActivityTag()
 			gt.rules.modifyActivityTag(initialActivityTagName, finalActivityTagName);
 			activityTagsListWidget->item(i)->setText(finalActivityTagName);
 			activityTagChanged(activityTagsListWidget->currentRow());
+			
+			gt.rules.addUndoPoint(tr("Renamed the activity tag from %1 to %2.").arg(initialActivityTagName).arg(finalActivityTagName));
 		}
 	}
 }
@@ -210,7 +216,7 @@ void ActivityTagsForm::moveActivityTagUp()
 		return;
 	if(i==0)
 		return;
-		
+	
 	QString s1=activityTagsListWidget->item(i)->text();
 	QString s2=activityTagsListWidget->item(i-1)->text();
 	
@@ -229,6 +235,8 @@ void ActivityTagsForm::moveActivityTagUp()
 	
 	gt.rules.activityTagsList[i]=at2;
 	gt.rules.activityTagsList[i-1]=at1;
+
+	gt.rules.addUndoPoint(tr("Moved the activity tag %1 up.").arg(s1));
 	
 	activityTagsListWidget->setCurrentRow(i-1);
 	activityTagChanged(i-1);
@@ -263,6 +271,8 @@ void ActivityTagsForm::moveActivityTagDown()
 	gt.rules.activityTagsList[i]=at2;
 	gt.rules.activityTagsList[i+1]=at1;
 	
+	gt.rules.addUndoPoint(tr("Moved the activity tag %1 down.").arg(s1));
+
 	activityTagsListWidget->setCurrentRow(i+1);
 	activityTagChanged(i+1);
 }
@@ -270,6 +280,8 @@ void ActivityTagsForm::moveActivityTagDown()
 void ActivityTagsForm::sortActivityTags()
 {
 	gt.rules.sortActivityTagsAlphabetically();
+
+	gt.rules.addUndoPoint(tr("Sorted the activity tags."));
 
 	activityTagsListWidget->clear();
 	for(int i=0; i<gt.rules.activityTagsList.size(); i++){
@@ -304,6 +316,9 @@ void ActivityTagsForm::activateActivityTag()
 	QString text=activityTagsListWidget->currentItem()->text();
 	int count=gt.rules.activateActivityTag(text);
 	QMessageBox::information(this, tr("FET information"), tr("Activated a number of %1 activities").arg(count));
+	
+	if(count>0)
+		gt.rules.addUndoPoint(tr("Activated the activity tag %1 (%2 activities).", "%2 is the number of activated activities").arg(text).arg(count));
 }
 
 void ActivityTagsForm::deactivateActivityTag()
@@ -316,6 +331,9 @@ void ActivityTagsForm::deactivateActivityTag()
 	QString text=activityTagsListWidget->currentItem()->text();
 	int count=gt.rules.deactivateActivityTag(text);
 	QMessageBox::information(this, tr("FET information"), tr("Deactivated a number of %1 activities").arg(count));
+	
+	if(count>0)
+		gt.rules.addUndoPoint(tr("Deactivated the activity tag %1 (%2 activities).", "%2 is the number of deactivated activities").arg(text).arg(count));
 }
 
 void ActivityTagsForm::printableActivityTag()
@@ -327,9 +345,12 @@ void ActivityTagsForm::printableActivityTag()
 
 	QString text=activityTagsListWidget->currentItem()->text();
 	
-	gt.rules.makeActivityTagPrintable(text);
+	bool t=gt.rules.makeActivityTagPrintable(text);
 
-	activityTagChanged(activityTagsListWidget->currentRow());
+	if(t){
+		activityTagChanged(activityTagsListWidget->currentRow());
+		gt.rules.addUndoPoint(tr("The activity tag %1 was made printable.").arg(text));
+	}
 }
 
 void ActivityTagsForm::notPrintableActivityTag()
@@ -341,9 +362,12 @@ void ActivityTagsForm::notPrintableActivityTag()
 
 	QString text=activityTagsListWidget->currentItem()->text();
 	
-	gt.rules.makeActivityTagNotPrintable(text);
-
-	activityTagChanged(activityTagsListWidget->currentRow());
+	bool t=gt.rules.makeActivityTagNotPrintable(text);
+	
+	if(t){
+		activityTagChanged(activityTagsListWidget->currentRow());
+		gt.rules.addUndoPoint(tr("The activity tag %1 was made not printable.").arg(text));
+	}
 }
 
 void ActivityTagsForm::help()
@@ -403,7 +427,11 @@ void ActivityTagsForm::comments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
+		QString oc=at->comments;
+	
 		at->comments=commentsPT->toPlainText();
+	
+		gt.rules.addUndoPoint(tr("Changed the comments for the activity tag %1 from\n%2\nto\n%3.").arg(at->name).arg(oc).arg(at->comments));
 	
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);

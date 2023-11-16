@@ -293,6 +293,7 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 		}
 	
 		////////////////phase 3 - add the constraints
+		QString ctrs;
 		for(k=0; k<nConstraints; k++){
 			ctr=new ConstraintActivitiesSameStartingTime(weight, this->selectedActivitiesList.count(), ids[k]);
 			bool tmp2=gt.rules.addTimeConstraint(ctr);
@@ -304,6 +305,9 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 				s+="\n\n";
 				s+=ctr->getDetailedDescription(gt.rules);
 				LongTextMessageBox::information(this, tr("FET information"), s);
+
+				ctrs+=ctr->getDetailedDescription(gt.rules);
+				ctrs+="\n";
 			}
 			else{
 				QMessageBox::warning(this, tr("FET information"),
@@ -311,6 +315,10 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 				delete ctr;
 			}
 		}
+
+		gt.rules.addUndoPoint(tr("Added %1 constraints (using the option to add multiple constraints):\n\n%2",
+								 "%1 is the number of constraints, %2 is their detailed description")
+								 .arg(nConstraints).arg(ctrs));
 	}
 	else{
 		QList<int> ids;
@@ -330,6 +338,8 @@ void AddConstraintActivitiesSameStartingTimeForm::addConstraint()
 			s+="\n\n";
 			s+=ctr->getDetailedDescription(gt.rules);
 			LongTextMessageBox::information(this, tr("FET information"), s);
+
+			gt.rules.addUndoPoint(tr("Added the constraint:\n\n%1").arg(ctr->getDetailedDescription(gt.rules)));
 		}
 		else{
 			QMessageBox::warning(this, tr("FET information"),
@@ -405,7 +415,7 @@ void AddConstraintActivitiesSameStartingTimeForm::help()
 	QString s;
 	
 	s=tr("Add multiple constraints: this is a check box. Select this if you want to input only the representatives of subactivities and FET to add multiple constraints,"
-	" for all subactivities from the same components, in turn, respectively."
+	" for all subactivities from the same larger split activity, in turn, respectively."
 	" There will be added more constraints activities same starting time, one for each corresponding tuple. The number of"
 	" subactivities must match for the representatives and be careful to the order, to be what you need");
 

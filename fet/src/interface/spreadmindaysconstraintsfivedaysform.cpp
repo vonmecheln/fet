@@ -452,6 +452,43 @@ void SpreadMinDaysConstraintsFiveDaysForm::wasAccepted()
 	 +" "+tr("Read Help/Important tips - tip 2) for details.");
 	QMessageBox::information(this, tr("FET information"), s2);
 	
+	QString su=tr("Spreaded the activities evenly over the week:");
+	su+=QString("\n");
+	
+	su+=tr("Consecutive if on the same day=%1.").arg(consecutiveIfSameDayCheckBox->isChecked()?tr("yes"):tr("no"));
+	su+=QString("\n");
+	
+	assert(spread2CheckBox->isChecked());
+	su+=tr("All split activities should be at least 1 day apart with weight=%1%.").arg(weight4LineEdit->text());
+	su+=QString("\n");
+
+	if(spread2CheckBox->isChecked()){
+		su+=tr("Activities split into 2 components should be at least 2 days apart with weight=%1%.").arg(weight2LineEdit->text());
+		su+=QString("\n");
+	}
+	
+	if(spread3CheckBox->isChecked()){
+		su+=tr("Activities split into 3 components should not be on 3 consecutive days with weight=%1%.").arg(weight3LineEdit->text());
+		su+=QString(" ");
+		if(type123RadioButton->isChecked()){
+			su+=tr("The isolated component is number 1.");
+			su+=QString("\n");
+		}
+		else if(type213RadioButton->isChecked()){
+			su+=tr("The isolated component is number 2.");
+			su+=QString("\n");
+		}
+		else if(type312RadioButton->isChecked()){
+			su+=tr("The isolated component is number 3.");
+			su+=QString("\n");
+		}
+		else{
+			assert(0);
+		}
+	}
+	
+	gt.rules.addUndoPoint(su);
+	
 	this->accept();
 }
 

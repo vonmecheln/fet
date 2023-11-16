@@ -193,6 +193,8 @@ void ModifyConstraintMaxTermsBetweenActivitiesForm::ok()
 		return;
 	}
 
+	QString oldcs=this->_ctr->getDetailedDescription(gt.rules);
+
 	int i;
 	QList<int>::const_iterator it;
 	this->_ctr->activitiesIds.clear();
@@ -204,6 +206,9 @@ void ModifyConstraintMaxTermsBetweenActivitiesForm::ok()
 	this->_ctr->weightPercentage=weight;
 	this->_ctr->maxTerms=maxTermsSpinBox->value();
 	
+	QString newcs=this->_ctr->getDetailedDescription(gt.rules);
+	gt.rules.addUndoPoint(tr("Modified the constraint:\n\n%1\ninto\n\n%2").arg(oldcs).arg(newcs));
+
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 	

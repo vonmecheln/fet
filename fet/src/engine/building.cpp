@@ -18,6 +18,24 @@
 #include "building.h"
 #include "rules.h"
 
+#include <QDataStream>
+
+QDataStream& operator<<(QDataStream& stream, const Building& bd)
+{
+	stream<<bd.name;
+	stream<<bd.comments;
+
+	return stream;
+}
+
+QDataStream& operator>>(QDataStream& stream, Building& bd)
+{
+	stream>>bd.name;
+	stream>>bd.comments;
+
+	return stream;
+}
+
 Building::Building()
 {
 	comments=QString("");

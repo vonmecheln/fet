@@ -74,6 +74,8 @@ void AddRoomForm::addRoom()
 	else{
 		QMessageBox::information(this, tr("Room insertion dialog"),
 			tr("Room added"));
+			
+		gt.rules.addUndoPoint(tr("Added the room %1.").arg(rm->name));
 	}
 
 	nameLineEdit->selectAll();

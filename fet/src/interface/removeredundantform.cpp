@@ -399,13 +399,16 @@ void RemoveRedundantForm::wasAccepted()
 	assert(res==QDialog::Accepted);
 	
 	if(toBeRemovedCombinedList.count()>0){
-		gt.rules.internalStructureComputed=false;
-		setRulesModifiedAndOtherThings(&gt.rules);
-		
 		for(TimeConstraint* mdc : std::as_const(toBeRemovedCombinedList))
 			mdc->weightPercentage=0.0;
-		
+
+		int cnt=toBeRemovedCombinedList.count();
 		toBeRemovedCombinedList.clear();
+
+		gt.rules.addUndoPoint(tr("Removed the redundant constraints, by making the weight of %1 time constraints equal with 0%.").arg(cnt));
+
+		gt.rules.internalStructureComputed=false;
+		setRulesModifiedAndOtherThings(&gt.rules);
 	}
 	
 	this->accept();

@@ -1035,7 +1035,11 @@ SOURCES += \
 	interface/settingsdatatoprintintimetablesform.cpp \
 	\
 	interface/teachersnotavailabletimestimehorizontalform.cpp \
-	interface/studentsnotavailabletimestimehorizontalform.cpp
+	interface/studentsnotavailabletimestimehorizontalform.cpp \
+	\
+	interface/restoredatastateform.cpp \
+	\
+	interface/settingsrestoredataform.cpp
 
 HEADERS += \
 	engine/timetableexport.h \
@@ -2077,8 +2081,12 @@ HEADERS += \
 	interface/settingsdatatoprintintimetablesform.h \
 	\
 	interface/teachersnotavailabletimestimehorizontalform.h \
-	interface/studentsnotavailabletimestimehorizontalform.h
-	
+	interface/studentsnotavailabletimestimehorizontalform.h \
+	\
+	interface/restoredatastateform.h \
+	\
+	interface/settingsrestoredataform.h
+
 FORMS += \
 	interface/fetmainform_template.ui \
 	interface/helpaboutform_template.ui \
@@ -3079,7 +3087,11 @@ FORMS += \
 	interface/settingsdatatoprintintimetablesform_template.ui \
 	\
 	interface/teachersnotavailabletimestimehorizontalform_template.ui \
-	interface/studentsnotavailabletimestimehorizontalform_template.ui
+	interface/studentsnotavailabletimestimehorizontalform_template.ui \
+	\
+	interface/restoredatastateform_template.ui \
+	\
+	interface/settingsrestoredataform_template.ui
 
 TRANSLATIONS += \
 	../translations/fet_ar.ts \

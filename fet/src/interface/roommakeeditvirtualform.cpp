@@ -257,10 +257,21 @@ void RoomMakeEditVirtualForm::ok()
 		i++;
 	}
 
+	bool oldvirt=editedRoom->isVirtual;
+	QString od=editedRoom->getDetailedDescription();
+
 	editedRoom->realRoomsSetsList=sets;
 	if(editedRoom->isVirtual==false)
 		editedRoom->isVirtual=true;
 	
+	QString nd=editedRoom->getDetailedDescription();
+	if(oldvirt)
+		gt.rules.addUndoPoint(tr("The room\n\n%1\nchanged its real rooms sets, becoming:\n\n%2",
+		 "%1 is the old room description, %2 is the new room description").arg(od).arg(nd));
+	else
+		gt.rules.addUndoPoint(tr("The room\n\n%1\nwas made virtual into:\n%2",
+		 "%1 is the old room description, %2 is the new room description").arg(od).arg(nd));
+
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 	

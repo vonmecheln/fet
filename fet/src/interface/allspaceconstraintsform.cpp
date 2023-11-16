@@ -109,7 +109,6 @@
 #include <QObject>
 #include <QMetaObject>
 
-#include <QBrush>
 #include <QPalette>
 
 #include <algorithm>
@@ -142,6 +141,10 @@ AllSpaceConstraintsForm::AllSpaceConstraintsForm(QWidget* parent): QDialog(paren
 	constraintsListWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
 	connect(constraintsListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(constraintChanged()));
+
+	//selectionChanged();
+	connect(constraintsListWidget, SIGNAL(itemSelectionChanged()), this, SLOT(selectionChanged()));
+
 	connect(closePushButton, SIGNAL(clicked()), this, SLOT(close()));
 	connect(removeConstraintsPushButton, SIGNAL(clicked()), this, SLOT(removeConstraints()));
 	connect(modifyConstraintPushButton, SIGNAL(clicked()), this, SLOT(modifyConstraint()));
@@ -323,11 +326,11 @@ bool AllSpaceConstraintsForm::filterOk(SpaceConstraint* ctr)
 void AllSpaceConstraintsForm::moveSpaceConstraintUp()
 {
 	if(filterCheckBox->isChecked()){
-		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint, the 'Filter' check box must not be checked."));
+		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint up, the 'Filter' check box must not be checked."));
 		return;
 	}
 	if(sortedCheckBox->isChecked()){
-		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint, the 'Sorted' check box must not be checked."));
+		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint up, the 'Sorted' check box must not be checked."));
 		return;
 	}
 	
@@ -338,7 +341,7 @@ void AllSpaceConstraintsForm::moveSpaceConstraintUp()
 		return;
 	if(i==0)
 		return;
-		
+	
 	QString s1=constraintsListWidget->item(i)->text();
 	QString s2=constraintsListWidget->item(i-1)->text();
 	
@@ -360,6 +363,8 @@ void AllSpaceConstraintsForm::moveSpaceConstraintUp()
 	visibleSpaceConstraintsList[i]=sc2;
 	visibleSpaceConstraintsList[i-1]=sc1;
 	
+	gt.rules.addUndoPoint(tr("A constraint was moved up:\n\n%1", "%1 is the detailed description of the constraint").arg(sc1->getDetailedDescription(gt.rules)));
+	
 	if(true || USE_GUI_COLORS){
 		if(sc2->active)
 			constraintsListWidget->item(i)->setBackground(constraintsListWidget->palette().base());
@@ -379,11 +384,11 @@ void AllSpaceConstraintsForm::moveSpaceConstraintUp()
 void AllSpaceConstraintsForm::moveSpaceConstraintDown()
 {
 	if(filterCheckBox->isChecked()){
-		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint, the 'Filter' check box must not be checked."));
+		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint down, the 'Filter' check box must not be checked."));
 		return;
 	}
 	if(sortedCheckBox->isChecked()){
-		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint, the 'Sorted' check box must not be checked."));
+		QMessageBox::information(this, tr("FET information"), tr("To move a space constraint down, the 'Sorted' check box must not be checked."));
 		return;
 	}
 	
@@ -403,7 +408,7 @@ void AllSpaceConstraintsForm::moveSpaceConstraintDown()
 	assert(sc1==visibleSpaceConstraintsList.at(i));
 	SpaceConstraint* sc2=gt.rules.spaceConstraintsList.at(i+1);
 	assert(sc2==visibleSpaceConstraintsList.at(i+1));
-	
+
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 	
@@ -415,6 +420,8 @@ void AllSpaceConstraintsForm::moveSpaceConstraintDown()
 	
 	visibleSpaceConstraintsList[i]=sc2;
 	visibleSpaceConstraintsList[i+1]=sc1;
+	
+	gt.rules.addUndoPoint(tr("A constraint was moved down:\n\n%1", "%1 is the detailed description of the constraint").arg(sc1->getDetailedDescription(gt.rules)));
 	
 	if(true || USE_GUI_COLORS){
 		if(sc2->active)
@@ -437,6 +444,8 @@ void AllSpaceConstraintsForm::sortedChanged(bool checked)
 	Q_UNUSED(checked);
 	
 	filterChanged();
+
+	constraintsListWidget->setFocus();
 }
 
 static int spaceConstraintsAscendingByDescription(SpaceConstraint* s1, SpaceConstraint* s2)
@@ -449,6 +458,8 @@ static int spaceConstraintsAscendingByDescription(SpaceConstraint* s1, SpaceCons
 
 void AllSpaceConstraintsForm::filterChanged()
 {
+	disconnect(constraintsListWidget, SIGNAL(itemSelectionChanged()), this, SLOT(selectionChanged()));
+
 	visibleSpaceConstraintsList.clear();
 	constraintsListWidget->clear();
 	int n_active=0;
@@ -468,7 +479,7 @@ void AllSpaceConstraintsForm::filterChanged()
 		else if(true || USE_GUI_COLORS)
 			constraintsListWidget->item(constraintsListWidget->count()-1)->setBackground(constraintsListWidget->palette().alternateBase());
 	}
-	
+
 	if(constraintsListWidget->count()<=0)
 		currentConstraintTextEdit->setPlainText("");
 	else
@@ -477,7 +488,10 @@ void AllSpaceConstraintsForm::filterChanged()
 	constraintsTextLabel->setText(tr("No: %1 / %2",
 	 "%1 represents the number of visible active space constraints, %2 represents the total number of visible space constraints")
 	 .arg(n_active).arg(visibleSpaceConstraintsList.count()));
-	mSLabel->setText(tr("Multiple selection", "The list can have multiple selection. Keep translation short."));
+	//mSLabel->setText(tr("Multiple selection", "The list can have multiple selection. Keep translation short."));
+
+	selectionChanged();
+	connect(constraintsListWidget, SIGNAL(itemSelectionChanged()), this, SLOT(selectionChanged()));
 }
 
 void AllSpaceConstraintsForm::constraintChanged()
@@ -838,7 +852,7 @@ void AllSpaceConstraintsForm::removeConstraints()
 	QList<SpaceConstraint*> tl;
 
 	bool firstBasic=true;
-
+	
 	for(int i=0; i<constraintsListWidget->count(); i++)
 		if(constraintsListWidget->item(i)->isSelected()){
 			assert(i<visibleSpaceConstraintsList.count());
@@ -882,17 +896,38 @@ void AllSpaceConstraintsForm::removeConstraints()
 		return;
 	}
 
-	int valv=constraintsListWidget->verticalScrollBar()->value();
-	int valh=constraintsListWidget->horizontalScrollBar()->value();
+	QString su;
+	if(!tl.isEmpty()){
+		su=tr("Removed %1 space constraints:").arg(tl.count());
+		su+=QString("\n\n");
+		for(SpaceConstraint* ctr : std::as_const(tl))
+			su+=ctr->getDetailedDescription(gt.rules)+"\n";
+	}
 
 	//The user clicked the OK button or pressed Enter
 	gt.rules.removeSpaceConstraints(tl);
+
+	if(!tl.isEmpty())
+		gt.rules.addUndoPoint(su);
+
 	if(recompute){
 		LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
 		LockUnlock::increaseCommunicationSpinBox();
 	}
 
+	int valv=constraintsListWidget->verticalScrollBar()->value();
+	int valh=constraintsListWidget->horizontalScrollBar()->value();
+
+	int cr=constraintsListWidget->currentRow();
+
 	filterChanged();
+
+	if(cr>=0){
+		if(cr<constraintsListWidget->count())
+			constraintsListWidget->setCurrentRow(cr);
+		else if(constraintsListWidget->count()>0)
+			constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
+	}
 
 	constraintsListWidget->verticalScrollBar()->setValue(valv);
 	constraintsListWidget->horizontalScrollBar()->setValue(valh);
@@ -907,6 +942,8 @@ void AllSpaceConstraintsForm::filter(bool active)
 		useFilter=false;
 		
 		filterChanged();
+		
+		constraintsListWidget->setFocus();
 	
 		return;
 	}
@@ -947,6 +984,8 @@ void AllSpaceConstraintsForm::filter(bool active)
 		}
 		
 		filterChanged();
+
+		constraintsListWidget->setFocus();
 	}
 	else{
 		assert(useFilter==false);
@@ -962,16 +1001,17 @@ void AllSpaceConstraintsForm::filter(bool active)
 
 void AllSpaceConstraintsForm::activateConstraints()
 {
-	QMessageBox::StandardButton ret=QMessageBox::No;
-	QString s=tr("Activate the selected space constraints?");
-	ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
-	if(ret==QMessageBox::No){
-		constraintsListWidget->setFocus();
-		return;
+	if(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS){
+		QMessageBox::StandardButton ret=QMessageBox::No;
+		QString s=tr("Activate the selected space constraints?");
+		ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+		if(ret==QMessageBox::No){
+			constraintsListWidget->setFocus();
+			return;
+		}
 	}
 
-	int valv=constraintsListWidget->verticalScrollBar()->value();
-	int valh=constraintsListWidget->horizontalScrollBar()->value();
+	QString su;
 
 	int cnt=0;
 	bool recomputeSpace=false;
@@ -981,6 +1021,8 @@ void AllSpaceConstraintsForm::activateConstraints()
 			assert(i<visibleSpaceConstraintsList.count());
 			SpaceConstraint* ctr=visibleSpaceConstraintsList.at(i);
 			if(!ctr->active){
+				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
+
 				cnt++;
 				ctr->active=true;
 				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM)
@@ -989,15 +1031,30 @@ void AllSpaceConstraintsForm::activateConstraints()
 		}
 
 	if(cnt>0){
+		gt.rules.addUndoPoint(tr("Activated %1 space constraints:", "%1 is the number of activated space constraints").arg(cnt)+QString("\n\n")+su);
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
+		int valv=constraintsListWidget->verticalScrollBar()->value();
+		int valh=constraintsListWidget->horizontalScrollBar()->value();
+
+		int cr=constraintsListWidget->currentRow();
+
 		filterChanged();
+
+		if(cr>=0){
+			if(cr<constraintsListWidget->count())
+				constraintsListWidget->setCurrentRow(cr);
+			else if(constraintsListWidget->count()>0)
+				constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
+		}
 
 		constraintsListWidget->verticalScrollBar()->setValue(valv);
 		constraintsListWidget->horizontalScrollBar()->setValue(valh);
 
-		QMessageBox::information(this, tr("FET information"), tr("Activated %1 space constraints").arg(cnt));
+		if(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS)
+			QMessageBox::information(this, tr("FET information"), tr("Activated %1 space constraints").arg(cnt));
 	}
 	if(recomputeSpace){
 		LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
@@ -1009,17 +1066,18 @@ void AllSpaceConstraintsForm::activateConstraints()
 
 void AllSpaceConstraintsForm::deactivateConstraints()
 {
-	QMessageBox::StandardButton ret=QMessageBox::No;
-	QString s=tr("Deactivate the selected space constraints? "
-	 "(Note that the basic compulsory space constraints will not be deactivated, even if they are selected.)");
-	ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
-	if(ret==QMessageBox::No){
-		constraintsListWidget->setFocus();
-		return;
+	if(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS){
+		QMessageBox::StandardButton ret=QMessageBox::No;
+		QString s=tr("Deactivate the selected space constraints? "
+		 "(Note that the basic compulsory space constraints will not be deactivated, even if they are selected.)");
+		ret=QMessageBox::question(this, tr("FET confirmation"), s, QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+		if(ret==QMessageBox::No){
+			constraintsListWidget->setFocus();
+			return;
+		}
 	}
 
-	int valv=constraintsListWidget->verticalScrollBar()->value();
-	int valh=constraintsListWidget->horizontalScrollBar()->value();
+	QString su;
 
 	int cnt=0;
 	bool recomputeSpace=false;
@@ -1031,6 +1089,8 @@ void AllSpaceConstraintsForm::deactivateConstraints()
 			if(ctr->type==CONSTRAINT_BASIC_COMPULSORY_SPACE)
 				continue;
 			if(ctr->active){
+				su+=ctr->getDetailedDescription(gt.rules)+QString("\n");
+
 				cnt++;
 				ctr->active=false;
 				if(ctr->type==CONSTRAINT_ACTIVITY_PREFERRED_ROOM)
@@ -1038,15 +1098,30 @@ void AllSpaceConstraintsForm::deactivateConstraints()
 			}
 		}
 	if(cnt>0){
+		gt.rules.addUndoPoint(tr("Deactivated %1 space constraints:", "%1 is the number of deactivated space constraints").arg(cnt)+QString("\n\n")+su);
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
+		int valv=constraintsListWidget->verticalScrollBar()->value();
+		int valh=constraintsListWidget->horizontalScrollBar()->value();
+
+		int cr=constraintsListWidget->currentRow();
+
 		filterChanged();
+
+		if(cr>=0){
+			if(cr<constraintsListWidget->count())
+				constraintsListWidget->setCurrentRow(cr);
+			else if(constraintsListWidget->count()>0)
+				constraintsListWidget->setCurrentRow(constraintsListWidget->count()-1);
+		}
 
 		constraintsListWidget->verticalScrollBar()->setValue(valv);
 		constraintsListWidget->horizontalScrollBar()->setValue(valh);
 
-		QMessageBox::information(this, tr("FET information"), tr("Deactivated %1 space constraints").arg(cnt));
+		if(CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS)
+			QMessageBox::information(this, tr("FET information"), tr("Deactivated %1 space constraints").arg(cnt));
 	}
 	if(recomputeSpace){
 		LockUnlock::computeLockedUnlockedActivitiesOnlySpace();
@@ -1105,8 +1180,12 @@ void AllSpaceConstraintsForm::constraintComments()
 	saveFETDialogGeometry(&getCommentsDialog, settingsName);
 	
 	if(t==QDialog::Accepted){
+		QString cb=ctr->getDetailedDescription(gt.rules);
+
 		ctr->comments=commentsPT->toPlainText();
 	
+		gt.rules.addUndoPoint(tr("Changed a constraint's comments. Constraint before:\n\n%1\nComments after:\n\n%2").arg(cb).arg(ctr->comments));
+
 		gt.rules.internalStructureComputed=false;
 		setRulesModifiedAndOtherThings(&gt.rules);
 
@@ -1137,4 +1216,19 @@ void AllSpaceConstraintsForm::constraintComments()
 			constraintChanged();
 		}
 	}
+}
+
+void AllSpaceConstraintsForm::selectionChanged()
+{
+	int nTotal=0;
+	int nActive=0;
+	assert(constraintsListWidget->count()==visibleSpaceConstraintsList.count());
+	for(int i=0; i<constraintsListWidget->count(); i++)
+		if(constraintsListWidget->item(i)->isSelected()){
+			nTotal++;
+			if(visibleSpaceConstraintsList.at(i)->active)
+				nActive++;
+		}
+	mSLabel->setText(tr("Multiple selection: %1 / %2", "It refers to the list of selected space constraints, %1 is the number of active"
+	 " selected space constraints, %2 is the total number of selected space constraints").arg(nActive).arg(nTotal));
 }

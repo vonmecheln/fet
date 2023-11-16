@@ -61,23 +61,33 @@ void AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::addAllConstrain
 		
 	int cnt=0;
 	QMap<std::tuple<QString, QStringList, QStringList, QStringList>, QList<int>> mp;
+
+	QStringList descr;
 	
 	for(Activity* act : std::as_const(gt.rules.activitiesList)){
 		QString sbj=QString();
-		if(sameSubjectCheckBox->isChecked())
+		if(sameSubjectCheckBox->isChecked()){
 			sbj=act->subjectName;
+			descr.append(tr("same subject"));
+		}
 
 		QStringList atl=QStringList();
-		if(sameActivityTagsCheckBox->isChecked())
+		if(sameActivityTagsCheckBox->isChecked()){
 			atl=act->activityTagsNames;
+			descr.append(tr("same activity tags"));
+		}
 	
 		QStringList stl=QStringList();
-		if(sameStudentsCheckBox->isChecked())
+		if(sameStudentsCheckBox->isChecked()){
 			stl=act->studentsNames;
+			descr.append(tr("same students"));
+		}
 	
 		QStringList tnl=QStringList();
-		if(sameTeachersCheckBox->isChecked())
+		if(sameTeachersCheckBox->isChecked()){
 			tnl=act->teachersNames;
+			descr.append(tr("same teachers"));
+		}
 	
 		QList<int> tl=mp[std::make_tuple(sbj, atl, stl, tnl)];
 		tl.append(act->id);
@@ -96,6 +106,10 @@ void AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::addAllConstrain
 	}
 
 	QMessageBox::information(this, tr("FET information"), tr("There were added %1 time constraints").arg(cnt));
+	
+	if(cnt>0)
+		gt.rules.addUndoPoint(tr("Added %1 time constraints of type activities same starting hour, with weight=%2%, conditions=%3.")
+		 .arg(cnt).arg(100.0).arg(descr.join(", ")));
 }
 
 void AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::removeAllConstraints()
@@ -115,6 +129,10 @@ void AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::removeAllConstr
 	gt.rules.removeTimeConstraints(tcl);
 	
 	QMessageBox::information(this, tr("FET information"), tr("There were removed %1 time constraints").arg(t));
+
+	if(tcl.count()>0)
+		gt.rules.addUndoPoint(tr("Removed all the %1 time constraints of type activities same starting hour.")
+		 .arg(tcl.count()));
 }
 
 void AddRemoveMultipleConstraintsActivitiesSameStartingHourForm::help()

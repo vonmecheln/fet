@@ -111,6 +111,9 @@ void ModifyConstraintActivityPreferredRoomsForm::ok()
 			tr("Invalid selected activity"));
 		return;
 	}
+
+	QString oldcs=this->_ctr->getDetailedDescription(gt.rules);
+
 	int id=gt.rules.activitiesList.at(activitiesComboBox->currentIndex())->id;
 	
 	QStringList roomsList;
@@ -121,6 +124,9 @@ void ModifyConstraintActivityPreferredRoomsForm::ok()
 	this->_ctr->activityId=id;
 	this->_ctr->roomsNames=roomsList;
 	
+	QString newcs=this->_ctr->getDetailedDescription(gt.rules);
+	gt.rules.addUndoPoint(tr("Modified the constraint:\n\n%1\ninto\n\n%2").arg(oldcs).arg(newcs));
+
 	gt.rules.internalStructureComputed=false;
 	setRulesModifiedAndOtherThings(&gt.rules);
 	

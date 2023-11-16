@@ -2480,4 +2480,202 @@ public:
 	bool repairWrongDayOrHour(Rules& r);
 };
 
+//1
+QDataStream& operator<<(QDataStream& stream, const ConstraintBasicCompulsorySpace& sc);
+//2
+QDataStream& operator<<(QDataStream& stream, const ConstraintRoomNotAvailableTimes& sc);
+//3
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityPreferredRoom& sc);
+//4
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityPreferredRooms& sc);
+//5
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetHomeRoom& sc);
+//6
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetHomeRooms& sc);
+//7
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherHomeRoom& sc);
+//8
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherHomeRooms& sc);
+//9
+QDataStream& operator<<(QDataStream& stream, const ConstraintSubjectPreferredRoom& sc);
+//10
+QDataStream& operator<<(QDataStream& stream, const ConstraintSubjectPreferredRooms& sc);
+//11
+QDataStream& operator<<(QDataStream& stream, const ConstraintSubjectActivityTagPreferredRoom& sc);
+//12
+QDataStream& operator<<(QDataStream& stream, const ConstraintSubjectActivityTagPreferredRooms& sc);
+//13
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxBuildingChangesPerDay& sc);
+//14
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxBuildingChangesPerDay& sc);
+//15
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxBuildingChangesPerWeek& sc);
+//16
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxBuildingChangesPerWeek& sc);
+//17
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinGapsBetweenBuildingChanges& sc);
+//18
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinGapsBetweenBuildingChanges& sc);
+//19
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxBuildingChangesPerDay& sc);
+//20
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxBuildingChangesPerDay& sc);
+//21
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxBuildingChangesPerWeek& sc);
+//22
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxBuildingChangesPerWeek& sc);
+//23
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinGapsBetweenBuildingChanges& sc);
+//24
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinGapsBetweenBuildingChanges& sc);
+//25
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityTagPreferredRoom& sc);
+//26
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivityTagPreferredRooms& sc);
+//27
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesOccupyMaxDifferentRooms& sc);
+//28
+QDataStream& operator<<(QDataStream& stream, const ConstraintActivitiesSameRoomIfConsecutive& sc);
+//29
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxRoomChangesPerDay& sc);
+//30
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxRoomChangesPerDay& sc);
+//31
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxRoomChangesPerWeek& sc);
+//32
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxRoomChangesPerWeek& sc);
+//33
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMinGapsBetweenRoomChanges& sc);
+//34
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMinGapsBetweenRoomChanges& sc);
+//35
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxRoomChangesPerDay& sc);
+//36
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxRoomChangesPerDay& sc);
+//37
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxRoomChangesPerWeek& sc);
+//38
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxRoomChangesPerWeek& sc);
+//39
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMinGapsBetweenRoomChanges& sc);
+//40
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMinGapsBetweenRoomChanges& sc);
+//41
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherRoomNotAvailableTimes& sc);
+//42
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxRoomChangesPerRealDay& sc);
+//43
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxRoomChangesPerRealDay& sc);
+//44
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxRoomChangesPerRealDay& sc);
+//45
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxRoomChangesPerRealDay& sc);
+//46
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsMaxBuildingChangesPerRealDay& sc);
+//47
+QDataStream& operator<<(QDataStream& stream, const ConstraintStudentsSetMaxBuildingChangesPerRealDay& sc);
+//48
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeachersMaxBuildingChangesPerRealDay& sc);
+//49
+QDataStream& operator<<(QDataStream& stream, const ConstraintTeacherMaxBuildingChangesPerRealDay& sc);
+
+//1
+QDataStream& operator>>(QDataStream& stream, ConstraintBasicCompulsorySpace& sc);
+//2
+QDataStream& operator>>(QDataStream& stream, ConstraintRoomNotAvailableTimes& sc);
+//3
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityPreferredRoom& sc);
+//4
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityPreferredRooms& sc);
+//5
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetHomeRoom& sc);
+//6
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetHomeRooms& sc);
+//7
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherHomeRoom& sc);
+//8
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherHomeRooms& sc);
+//9
+QDataStream& operator>>(QDataStream& stream, ConstraintSubjectPreferredRoom& sc);
+//10
+QDataStream& operator>>(QDataStream& stream, ConstraintSubjectPreferredRooms& sc);
+//11
+QDataStream& operator>>(QDataStream& stream, ConstraintSubjectActivityTagPreferredRoom& sc);
+//12
+QDataStream& operator>>(QDataStream& stream, ConstraintSubjectActivityTagPreferredRooms& sc);
+//13
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxBuildingChangesPerDay& sc);
+//14
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxBuildingChangesPerDay& sc);
+//15
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxBuildingChangesPerWeek& sc);
+//16
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxBuildingChangesPerWeek& sc);
+//17
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinGapsBetweenBuildingChanges& sc);
+//18
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinGapsBetweenBuildingChanges& sc);
+//19
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxBuildingChangesPerDay& sc);
+//20
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxBuildingChangesPerDay& sc);
+//21
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxBuildingChangesPerWeek& sc);
+//22
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxBuildingChangesPerWeek& sc);
+//23
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinGapsBetweenBuildingChanges& sc);
+//24
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinGapsBetweenBuildingChanges& sc);
+//25
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityTagPreferredRoom& sc);
+//26
+QDataStream& operator>>(QDataStream& stream, ConstraintActivityTagPreferredRooms& sc);
+//27
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesOccupyMaxDifferentRooms& sc);
+//28
+QDataStream& operator>>(QDataStream& stream, ConstraintActivitiesSameRoomIfConsecutive& sc);
+//29
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxRoomChangesPerDay& sc);
+//30
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxRoomChangesPerDay& sc);
+//31
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxRoomChangesPerWeek& sc);
+//32
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxRoomChangesPerWeek& sc);
+//33
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMinGapsBetweenRoomChanges& sc);
+//34
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMinGapsBetweenRoomChanges& sc);
+//35
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxRoomChangesPerDay& sc);
+//36
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxRoomChangesPerDay& sc);
+//37
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxRoomChangesPerWeek& sc);
+//38
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxRoomChangesPerWeek& sc);
+//39
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMinGapsBetweenRoomChanges& sc);
+//40
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMinGapsBetweenRoomChanges& sc);
+//41
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherRoomNotAvailableTimes& sc);
+//42
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxRoomChangesPerRealDay& sc);
+//43
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxRoomChangesPerRealDay& sc);
+//44
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxRoomChangesPerRealDay& sc);
+//45
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxRoomChangesPerRealDay& sc);
+//46
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsMaxBuildingChangesPerRealDay& sc);
+//47
+QDataStream& operator>>(QDataStream& stream, ConstraintStudentsSetMaxBuildingChangesPerRealDay& sc);
+//48
+QDataStream& operator>>(QDataStream& stream, ConstraintTeachersMaxBuildingChangesPerRealDay& sc);
+//49
+QDataStream& operator>>(QDataStream& stream, ConstraintTeacherMaxBuildingChangesPerRealDay& sc);
+
 #endif

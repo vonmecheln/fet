@@ -70,8 +70,8 @@ extern bool rooms_schedule_ready;
 
 extern Solution best_solution;
 
-extern bool simulation_running;
-extern bool simulation_running_multi;
+extern bool generation_running;
+extern bool generation_running_multi;
 
 extern Matrix2D<double> notAllowedRoomTimePercentages;
 extern Matrix2D<bool> breakDayHour;
@@ -1047,7 +1047,7 @@ void TimetableViewRoomsTimeHorizontalForm::lockTime()
 {
 	this->lock(true, false);
 }
-	
+
 void TimetableViewRoomsTimeHorizontalForm::lockSpace()
 {
 	this->lock(false, true);
@@ -1057,12 +1057,12 @@ void TimetableViewRoomsTimeHorizontalForm::lockTimeSpace()
 {
 	this->lock(true, true);
 }
-			
+
 void TimetableViewRoomsTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 {
-	if(simulation_running || simulation_running_multi){
+	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
-			tr("Allocation in course.\nPlease stop simulation before this."));
+			tr("Generation in progress. Please stop the generation before this."));
 		return;
 	}
 
@@ -1209,11 +1209,12 @@ void TimetableViewRoomsTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 
 					for(TimeConstraint* deltc : std::as_const(tmptc)){
 						s+=tr("The following constraint will be deleted:")+"\n"+deltc->getDetailedDescription(gt.rules)+"\n";
-						gt.rules.removeTimeConstraint(deltc);
+						//gt.rules.removeTimeConstraint(deltc);
 						idsOfLockedTime.remove(act->id);
 						unlockedT++;
 						//delete deltc; - done by rules.removeTimeConstraint(...)
 					}
+					gt.rules.removeTimeConstraints(tmptc);
 				}
 				tmptc.clear();
 
@@ -1307,11 +1308,12 @@ void TimetableViewRoomsTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 
 					for(SpaceConstraint* delsc : std::as_const(tmpsc)){
 						s+=tr("The following constraint will be deleted:")+"\n"+delsc->getDetailedDescription(gt.rules)+"\n";
-						gt.rules.removeSpaceConstraint(delsc);
+						//gt.rules.removeSpaceConstraint(delsc);
 						idsOfLockedSpace.remove(act->id);
 						unlockedS++;
 						//delete delsc; done by rules.removeSpaceConstraint(...)
 					}
+					gt.rules.removeSpaceConstraints(tmpsc);
 				}
 				tmpsc.clear();
 			
@@ -1440,6 +1442,10 @@ void TimetableViewRoomsTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 	if(s.isEmpty())
 		s=QCoreApplication::translate("TimetableViewForm", "No locking constraints added or removed.");
 	QMessageBox::information(this, tr("FET information"), s);
+
+	if(addedT>0 || addedS>0 || unlockedT>0 || unlockedS>0)
+		gt.rules.addUndoPoint(tr("Locked/unlocked/toggled a selection of activities in the"
+		  " timetable view rooms time horizontal dialog. The summary of the added/removed locking constraints is:\n\n%1").arg(s)+QString("\n"));
 
 ////////// just for testing
 	QSet<int> backupLockedTime;
