@@ -148,7 +148,7 @@ TimetableViewStudentsDaysHorizontalForm::TimetableViewStudentsDaysHorizontalForm
 	backupPermanentlyLockedSpace=idsOfPermanentlyLockedSpace;
 
 	//added by Volker Dirr
-	//these lines are not really needed - just to be safer
+	//this line is not really needed - just to be safer
 	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 	
 	assert(backupLockedTime==idsOfLockedTime);
@@ -310,7 +310,7 @@ void TimetableViewStudentsDaysHorizontalForm::newTimetableGenerated()
 	backupPermanentlyLockedSpace=idsOfPermanentlyLockedSpace;
 
 	//added by Volker Dirr
-	//these lines are not really needed - just to be safer
+	//this line is not really needed - just to be safer
 	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 	
 	assert(backupLockedTime==idsOfLockedTime);
@@ -721,14 +721,11 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 					s+="\n";
 				}
 				
-				s.chop(1);
-				
 				if(TIMETABLE_HTML_PRINT_ROOMS){
 					int r=best_solution.rooms[ai];
 					if(r!=UNALLOCATED_SPACE && r!=UNSPECIFIED_ROOM){
 						//s+=" ";
 						//s+=tr("R:%1", "Room").arg(gt.rules.internalRoomsList[r]->name);
-						s+="\n";
 						s+=gt.rules.internalRoomsList[r]->name;
 						
 						if(gt.rules.internalRoomsList[r]->isVirtual==true){
@@ -738,7 +735,11 @@ void TimetableViewStudentsDaysHorizontalForm::updateStudentsTimetableTable(){
 							s+=QString(" (")+tsl.join(", ")+QString(")");
 						}
 					}
+					s+="\n";
 				}
+				
+				if(!s.isEmpty())
+					s.chop(1);
 				
 				//added by Volker Dirr (start)
 				QString descr="";

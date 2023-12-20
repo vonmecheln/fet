@@ -285,7 +285,7 @@ public:
 
 	ConstraintRoomNotAvailableTimes();
 
-	ConstraintRoomNotAvailableTimes(double wp, const QString& rn, QList<int> d, QList<int> h);
+	ConstraintRoomNotAvailableTimes(double wp, const QString& rn, const QList<int>& d, const QList<int>& h);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -340,7 +340,7 @@ public:
 
 	ConstraintTeacherRoomNotAvailableTimes();
 
-	ConstraintTeacherRoomNotAvailableTimes(double wp, const QString& tn, const QString& rn, QList<int> d, QList<int> h);
+	ConstraintTeacherRoomNotAvailableTimes(double wp, const QString& tn, const QString& rn, const QList<int>& d, const QList<int>& h);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -2053,7 +2053,7 @@ public:
 
 	ConstraintActivitiesOccupyMaxDifferentRooms();
 
-	ConstraintActivitiesOccupyMaxDifferentRooms(double wp, QList<int> a_L, int max_rooms);
+	ConstraintActivitiesOccupyMaxDifferentRooms(double wp, const QList<int>& a_L, int max_rooms);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -2101,7 +2101,7 @@ public:
 
 	ConstraintActivitiesSameRoomIfConsecutive();
 
-	ConstraintActivitiesSameRoomIfConsecutive(double wp, QList<int> a_L);
+	ConstraintActivitiesSameRoomIfConsecutive(double wp, const QList<int>& a_L);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 

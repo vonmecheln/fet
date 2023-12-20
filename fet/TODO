@@ -8998,3 +8998,27 @@ For example, I have three activities for each teacher. I want at most one of the
 This is to ensure fairness in the room distribution among teachers.
 
 I can put a tag that only gets placed in these rooms but I don't want to choose the activity to be placed or be forced to count them myself.
+
+530---------------------------------------------------------
+From geokom (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5761.msg31697#msg31697
+
+If you could put a different vertical line in the pdf of the timetable that shows data in time horizontal format when the day changes so that
+the days can be distinguished from each other.
+
+531---------------------------------------------------------
+From Vangelis Karafillidis:
+
+What I would like FET to have is a warning when re-generating single timetables. I think that for multiple timetables FET asks if the user
+wants the solved timetables to be overwritten. I think that this should happen with single timetables, and I would like in addition to the warning
+the user to have the option to save the generated timetable(s) (let's say in a .zip file) as a backup, for example I generate a single timetable
+the file name is MusicSchool.fet. When I work with this file (without changing the name) and regenerate, the previous results are lost, so
+it would be useful if FET asked if I want the results to be lost and keep the same filename, or if I want to keep the results changing the filename,
+or if I want to keep the filename and keep a backup (.zip) file of the respective fet-results subfolder.
+
+Liviu Lalescu:
+The user would be annoyed to get a warning each time. Also, maybe too much disk usage if it changes the name each time.
+
+Vangelis Karafillidis:
+You could add an option in the settings "allow detailed warnings (highly recommended for new users)".

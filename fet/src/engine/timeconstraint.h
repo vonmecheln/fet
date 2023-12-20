@@ -520,7 +520,7 @@ public:
 
 	ConstraintTeacherNotAvailableTimes();
 
-	ConstraintTeacherNotAvailableTimes(double wp, const QString& tn, QList<int> d, QList<int> h);
+	ConstraintTeacherNotAvailableTimes(double wp, const QString& tn, const QList<int>& d, const QList<int>& h);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -568,7 +568,7 @@ public:
 
 	ConstraintStudentsSetNotAvailableTimes();
 
-	ConstraintStudentsSetNotAvailableTimes(double wp, const QString& sn, QList<int> d, QList<int> h);
+	ConstraintStudentsSetNotAvailableTimes(double wp, const QString& sn, const QList<int>& d, const QList<int>& h);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -1618,7 +1618,7 @@ public:
 
 	ConstraintBreakTimes();
 
-	ConstraintBreakTimes(double wp, QList<int> d, QList<int> h);
+	ConstraintBreakTimes(double wp, const QList<int>& d, const QList<int>& h);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -2576,7 +2576,7 @@ public:
 	ConstraintActivityPreferredTimeSlots();
 
 	//ConstraintActivityPreferredTimeSlots(double wp, int actId, int nPT, int d[], int h[]);
-	ConstraintActivityPreferredTimeSlots(double wp, int actId, int nPT_L, QList<int> d_L, QList<int> h_L);
+	ConstraintActivityPreferredTimeSlots(double wp, int actId, int nPT_L, const QList<int>& d_L, const QList<int>& h_L);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -2640,7 +2640,7 @@ public:
 	ConstraintActivityPreferredStartingTimes();
 
 	//ConstraintActivityPreferredStartingTimes(double wp, int actId, int nPT, int d[], int h[]);
-	ConstraintActivityPreferredStartingTimes(double wp, int actId, int nPT_L, QList<int> d_L, QList<int> h_L);
+	ConstraintActivityPreferredStartingTimes(double wp, int actId, int nPT_L, const QList<int>& d_L, const QList<int>& h_L);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -4549,7 +4549,7 @@ public:
 
 	ConstraintActivitiesOccupyMaxTimeSlotsFromSelection();
 
-	ConstraintActivitiesOccupyMaxTimeSlotsFromSelection(double wp, QList<int> a_L, QList<int> d_L, QList<int> h_L, int max_slots);
+	ConstraintActivitiesOccupyMaxTimeSlotsFromSelection(double wp, const QList<int>& a_L, const QList<int>& d_L, const QList<int>& h_L, int max_slots);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -4600,7 +4600,7 @@ public:
 
 	ConstraintActivitiesOccupyMinTimeSlotsFromSelection();
 
-	ConstraintActivitiesOccupyMinTimeSlotsFromSelection(double wp, QList<int> a_L, QList<int> d_L, QList<int> h_L, int min_slots);
+	ConstraintActivitiesOccupyMinTimeSlotsFromSelection(double wp, const QList<int>& a_L, const QList<int>& d_L, const QList<int>& h_L, int min_slots);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -4651,7 +4651,7 @@ public:
 
 	ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots();
 
-	ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots(double wp, QList<int> a_L, QList<int> d_L, QList<int> h_L, int max_simultaneous);
+	ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots(double wp, const QList<int>& a_L, const QList<int>& d_L, const QList<int>& h_L, int max_simultaneous);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -4704,7 +4704,7 @@ public:
 
 	ConstraintActivitiesMinSimultaneousInSelectedTimeSlots();
 
-	ConstraintActivitiesMinSimultaneousInSelectedTimeSlots(double wp, QList<int> a_L, QList<int> d_L, QList<int> h_L, int min_simultaneous, bool allow_empty_slots);
+	ConstraintActivitiesMinSimultaneousInSelectedTimeSlots(double wp, const QList<int>& a_L, const QList<int>& d_L, const QList<int>& h_L, int min_simultaneous, bool allow_empty_slots);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -4755,7 +4755,7 @@ public:
 
 	ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots();
 
-	ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots(double wp, QList<int> a_L, QList<int> d_L, QList<int> h_L, int max_activities);
+	ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots(double wp, const QList<int>& a_L, const QList<int>& d_L, const QList<int>& h_L, int max_activities);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -4803,7 +4803,7 @@ public:
 
 	ConstraintActivitiesMaxInATerm();
 
-	ConstraintActivitiesMaxInATerm(double wp, QList<int> a_L, int max_acts);
+	ConstraintActivitiesMaxInATerm(double wp, const QList<int>& a_L, int max_acts);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -4851,7 +4851,7 @@ public:
 
 	ConstraintActivitiesOccupyMaxTerms();
 
-	ConstraintActivitiesOccupyMaxTerms(double wp, QList<int> a_L, int max_occupied);
+	ConstraintActivitiesOccupyMaxTerms(double wp, const QList<int>& a_L, int max_occupied);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 
@@ -9552,7 +9552,7 @@ public:
 
 	ConstraintActivitiesMinInATerm();
 
-	ConstraintActivitiesMinInATerm(double wp, QList<int> a_L, int min_acts, bool allow_empty_terms);
+	ConstraintActivitiesMinInATerm(double wp, const QList<int>& a_L, int min_acts, bool allow_empty_terms);
 
 	bool computeInternalStructure(QWidget* parent, Rules& r);
 

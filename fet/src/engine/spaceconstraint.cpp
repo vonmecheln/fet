@@ -1963,7 +1963,7 @@ ConstraintRoomNotAvailableTimes::ConstraintRoomNotAvailableTimes()
 	this->type=CONSTRAINT_ROOM_NOT_AVAILABLE_TIMES;
 }
 
-ConstraintRoomNotAvailableTimes::ConstraintRoomNotAvailableTimes(double wp, const QString& rn, QList<int> d, QList<int> h)
+ConstraintRoomNotAvailableTimes::ConstraintRoomNotAvailableTimes(double wp, const QString& rn, const QList<int>& d, const QList<int>& h)
 	: SpaceConstraint(wp)
 {
 	this->room=rn;
@@ -2258,7 +2258,7 @@ ConstraintTeacherRoomNotAvailableTimes::ConstraintTeacherRoomNotAvailableTimes()
 	this->type=CONSTRAINT_TEACHER_ROOM_NOT_AVAILABLE_TIMES;
 }
 
-ConstraintTeacherRoomNotAvailableTimes::ConstraintTeacherRoomNotAvailableTimes(double wp, const QString& tn, const QString& rn, QList<int> d, QList<int> h)
+ConstraintTeacherRoomNotAvailableTimes::ConstraintTeacherRoomNotAvailableTimes(double wp, const QString& tn, const QString& rn, const QList<int>& d, const QList<int>& h)
 	: SpaceConstraint(wp)
 {
 	this->teacherName=tn;
@@ -11964,7 +11964,7 @@ ConstraintActivitiesOccupyMaxDifferentRooms::ConstraintActivitiesOccupyMaxDiffer
 }
 
 ConstraintActivitiesOccupyMaxDifferentRooms::ConstraintActivitiesOccupyMaxDifferentRooms(double wp,
-	QList<int> a_L, int max_different_rooms)
+	const QList<int>& a_L, int max_different_rooms)
 	: SpaceConstraint(wp)
 {
 	this->activitiesIds=a_L;
@@ -12238,7 +12238,7 @@ ConstraintActivitiesSameRoomIfConsecutive::ConstraintActivitiesSameRoomIfConsecu
 }
 
 ConstraintActivitiesSameRoomIfConsecutive::ConstraintActivitiesSameRoomIfConsecutive(double wp,
-	QList<int> a_L)
+	const QList<int>& a_L)
 	: SpaceConstraint(wp)
 {
 	this->activitiesIds=a_L;

@@ -6736,7 +6736,7 @@ ConstraintTeacherNotAvailableTimes::ConstraintTeacherNotAvailableTimes()
 	this->type=CONSTRAINT_TEACHER_NOT_AVAILABLE_TIMES;
 }
 
-ConstraintTeacherNotAvailableTimes::ConstraintTeacherNotAvailableTimes(double wp, const QString& tn, QList<int> d, QList<int> h)
+ConstraintTeacherNotAvailableTimes::ConstraintTeacherNotAvailableTimes(double wp, const QString& tn, const QList<int>& d, const QList<int>& h)
 	: TimeConstraint(wp)
 {
 	this->teacher=tn;
@@ -7023,7 +7023,7 @@ ConstraintStudentsSetNotAvailableTimes::ConstraintStudentsSetNotAvailableTimes()
 	this->type=CONSTRAINT_STUDENTS_SET_NOT_AVAILABLE_TIMES;
 }
 
-ConstraintStudentsSetNotAvailableTimes::ConstraintStudentsSetNotAvailableTimes(double wp, const QString& sn, QList<int> d, QList<int> h)
+ConstraintStudentsSetNotAvailableTimes::ConstraintStudentsSetNotAvailableTimes(double wp, const QString& sn, const QList<int>& d, const QList<int>& h)
 	 : TimeConstraint(wp){
 	this->students = sn;
 	assert(d.count()==h.count());
@@ -13287,7 +13287,7 @@ ConstraintBreakTimes::ConstraintBreakTimes()
 	this->type = CONSTRAINT_BREAK_TIMES;
 }
 
-ConstraintBreakTimes::ConstraintBreakTimes(double wp, QList<int> d, QList<int> h)
+ConstraintBreakTimes::ConstraintBreakTimes(double wp, const QList<int>& d, const QList<int>& h)
 	: TimeConstraint(wp)
 {
 	this->days = d;
@@ -17099,7 +17099,7 @@ ConstraintActivityPreferredTimeSlots::ConstraintActivityPreferredTimeSlots()
 	this->type = CONSTRAINT_ACTIVITY_PREFERRED_TIME_SLOTS;
 }
 
-ConstraintActivityPreferredTimeSlots::ConstraintActivityPreferredTimeSlots(double wp, int actId, int nPT_L, QList<int> d_L, QList<int> h_L)
+ConstraintActivityPreferredTimeSlots::ConstraintActivityPreferredTimeSlots(double wp, int actId, int nPT_L, const QList<int>& d_L, const QList<int>& h_L)
 	: TimeConstraint(wp)
 {
 	assert(d_L.count()==nPT_L);
@@ -18440,7 +18440,7 @@ ConstraintActivityPreferredStartingTimes::ConstraintActivityPreferredStartingTim
 	this->type = CONSTRAINT_ACTIVITY_PREFERRED_STARTING_TIMES;
 }
 
-ConstraintActivityPreferredStartingTimes::ConstraintActivityPreferredStartingTimes(double wp, int actId, int nPT_L, QList<int> d_L, QList<int> h_L)
+ConstraintActivityPreferredStartingTimes::ConstraintActivityPreferredStartingTimes(double wp, int actId, int nPT_L, const QList<int>& d_L, const QList<int>& h_L)
 	: TimeConstraint(wp)
 {
 	assert(d_L.count()==nPT_L);
@@ -27814,7 +27814,7 @@ ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::ConstraintActivitiesOccupyM
 }
 
 ConstraintActivitiesOccupyMaxTimeSlotsFromSelection::ConstraintActivitiesOccupyMaxTimeSlotsFromSelection(double wp,
-	QList<int> a_L, QList<int> d_L, QList<int> h_L, int max_slots)
+	const QList<int>& a_L, const QList<int>& d_L, const QList<int>& h_L, int max_slots)
 	: TimeConstraint(wp)
 {
 	assert(d_L.count()==h_L.count());
@@ -28190,7 +28190,7 @@ ConstraintActivitiesOccupyMinTimeSlotsFromSelection::ConstraintActivitiesOccupyM
 }
 
 ConstraintActivitiesOccupyMinTimeSlotsFromSelection::ConstraintActivitiesOccupyMinTimeSlotsFromSelection(double wp,
-	QList<int> a_L, QList<int> d_L, QList<int> h_L, int min_slots)
+	const QList<int>& a_L, const QList<int>& d_L, const QList<int>& h_L, int min_slots)
 	: TimeConstraint(wp)
 {
 	assert(d_L.count()==h_L.count());
@@ -28575,7 +28575,7 @@ ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::ConstraintActivitiesMaxS
 }
 
 ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots::ConstraintActivitiesMaxSimultaneousInSelectedTimeSlots(double wp,
-	QList<int> a_L, QList<int> d_L, QList<int> h_L, int max_simultaneous)
+	const QList<int>& a_L, const QList<int>& d_L, const QList<int>& h_L, int max_simultaneous)
 	: TimeConstraint(wp)
 {
 	assert(d_L.count()==h_L.count());
@@ -28947,7 +28947,7 @@ ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::ConstraintActivitiesMinS
 }
 
 ConstraintActivitiesMinSimultaneousInSelectedTimeSlots::ConstraintActivitiesMinSimultaneousInSelectedTimeSlots(double wp,
-	QList<int> a_L, QList<int> d_L, QList<int> h_L, int min_simultaneous, bool allow_empty_slots)
+	const QList<int>& a_L, const QList<int>& d_L, const QList<int>& h_L, int min_simultaneous, bool allow_empty_slots)
 	: TimeConstraint(wp)
 {
 	assert(d_L.count()==h_L.count());
@@ -29335,7 +29335,7 @@ ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::ConstraintMaxTotalActivi
 }
 
 ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots::ConstraintMaxTotalActivitiesFromSetInSelectedTimeSlots(double wp,
-	QList<int> a_L, QList<int> d_L, QList<int> h_L, int max_activities)
+	const QList<int>& a_L, const QList<int>& d_L, const QList<int>& h_L, int max_activities)
 	: TimeConstraint(wp)
 {
 	assert(d_L.count()==h_L.count());
@@ -29701,7 +29701,7 @@ ConstraintActivitiesMaxInATerm::ConstraintActivitiesMaxInATerm()
 }
 
 ConstraintActivitiesMaxInATerm::ConstraintActivitiesMaxInATerm(double wp,
-	QList<int> a_L, int max_acts)
+	const QList<int>& a_L, int max_acts)
 	: TimeConstraint(wp)
 {
 	this->activitiesIds=a_L;
@@ -29972,7 +29972,7 @@ ConstraintActivitiesOccupyMaxTerms::ConstraintActivitiesOccupyMaxTerms()
 }
 
 ConstraintActivitiesOccupyMaxTerms::ConstraintActivitiesOccupyMaxTerms(double wp,
-	QList<int> a_L, int max_occupied)
+	const QList<int>& a_L, int max_occupied)
 	: TimeConstraint(wp)
 {
 	this->activitiesIds=a_L;
@@ -55344,7 +55344,7 @@ ConstraintActivitiesMinInATerm::ConstraintActivitiesMinInATerm()
 }
 
 ConstraintActivitiesMinInATerm::ConstraintActivitiesMinInATerm(double wp,
-	QList<int> a_L, int min_acts, bool allow_empty_terms)
+	const QList<int>& a_L, int min_acts, bool allow_empty_terms)
 	: TimeConstraint(wp)
 {
 	this->activitiesIds=a_L;

@@ -193,7 +193,7 @@ TimetableViewRoomsTimeHorizontalForm::TimetableViewRoomsTimeHorizontalForm(QWidg
 	backupPermanentlyLockedSpace=idsOfPermanentlyLockedSpace;
 	
 	//added by Volker Dirr
-	//these 2 lines are not really needed - just to be safer
+	//this line is not really needed - just to be safer
 	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 	
 	assert(backupLockedTime==idsOfLockedTime);
@@ -446,7 +446,7 @@ void TimetableViewRoomsTimeHorizontalForm::newTimetableGenerated()
 	backupPermanentlyLockedSpace=idsOfPermanentlyLockedSpace;
 	
 	//added by Volker Dirr
-	//these 2 lines are not really needed - just to be safer
+	//this line is not really needed - just to be safer
 	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 	
 	assert(backupLockedTime==idsOfLockedTime);

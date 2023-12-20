@@ -3373,6 +3373,15 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 		rules.groupActivitiesInInitialOrderList.append(it);
 	}
 
+	//Done in the first line above: rules.clear();
+	/*students_schedule_ready=false;
+	rooms_schedule_ready=false;
+	teachers_schedule_ready=false;*/
+	
+	//Assertions failed fixed on 22 November 2023, reported by Vangelis Karafillidis.
+	LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
+	LockUnlock::increaseCommunicationSpinBox();
+	
 	return stream;
 }
 
@@ -3593,7 +3602,7 @@ void Rules::restoreState(int iterationsBackward)
 	
 	//this->modified=true;
 	this->modified = (cntUndoRedoStackIterator!=savedStateIterator);
-
+	
 	//INPUT_FILENAME_XML=*crtFNIt;
 	updateFetMainFormAfterHistoryRestored(iterationsBackward);
 }

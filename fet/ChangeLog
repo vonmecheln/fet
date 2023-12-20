@@ -2731,9 +2731,15 @@ Version 6.12.0
 ---------------------------------------------------------------------------------
 Versions 6.13.0 - 6.13.v
 - Version 6.13.0
-	- Added a kind of data file autosave feature (suggested by mohammed, Vangelis Karafillidis, DT, and maybe other users).
+	- Added a kind of data file autosave feature (suggested by mohammed, Vangelis Karafillidis, DT, and maybe other users). This feature is optional,
+	and by default it is disabled (it can be enabled from the 'File > Autosave settings' menu entry).
 	- If the description of the operation to be logged in history is too large, it will be truncated to maximum 20,000 characters, so that the history
 	won't occupy too much memory.
 	- When printing the timetables from the interface, without colors, the user can select the option that all the fonts will have the black color,
 	instead of gray and silver being used for some categories of text (suggested by Nikandros and Volker Dirr).
 	- Updated the Arabic translation, by Benahmed Abdelkrim. It is again complete.
+- Version 6.13.1
+	- Crash bugs fixed, when working with the new 'History' feature and locking/unlocking activities from the 'Timetable view' dialogs
+	(reported by Vangelis Karafillidis).
+	- Minor interface bug fixes (reported by Volker Dirr).
+	- Code cleanup.
