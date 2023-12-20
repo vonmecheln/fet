@@ -32,6 +32,12 @@ bool USE_UNDO_REDO=true;
 int UNDO_REDO_STEPS=100;
 //int UNDO_REDO_COMPRESSION_LEVEL=-1;
 
+bool USE_AUTOSAVE=false;
+int MINUTES_AUTOSAVE=3;
+int OPERATIONS_AUTOSAVE=1;
+QString DIRECTORY_AUTOSAVE="";
+QString SUFFIX_FILENAME_AUTOSAVE="_AUTOSAVE";
+
 bool checkForUpdates;
 
 QString internetVersion;
@@ -41,7 +47,7 @@ int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 /**
 FET version
 */
-const QString FET_VERSION="6.12.0";
+const QString FET_VERSION="6.13.0";
 
 /**
 FET language

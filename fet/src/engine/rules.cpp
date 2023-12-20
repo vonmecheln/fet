@@ -32,6 +32,7 @@ using namespace std;
 
 #include <QTextStream>
 #include <QFile>
+#include <QSaveFile>
 #include <QFileInfo>
 
 #include <QDate>
@@ -81,6 +82,8 @@ extern bool rooms_schedule_ready;
 extern bool teachers_schedule_ready;
 
 #ifndef FET_COMMAND_LINE
+#include <ctime>
+
 int cntUndoRedoStackIterator=0;
 std::list<QByteArray> oldRulesArchived; //.front() is oldest, .back() is newest
 std::list<QString> operationWhichWasDone; //as above
@@ -92,6 +95,10 @@ std::list<QByteArray>::const_iterator crtBAIt;
 //std::list<QString>::const_iterator crtFNIt;
 
 int savedStateIterator=0;
+
+class QWidget;
+class FetMainForm;
+extern FetMainForm* pFetMainForm;
 #endif
 
 FakeString::FakeString()
@@ -3369,8 +3376,70 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 	return stream;
 }
 
-void Rules::addUndoPoint(const QString& description)
+void Rules::addUndoPoint(const QString& description, bool autosave, bool resetCounter)
 {
+	//cout<<"Enter addUndoPoint, autosave="<<autosave<<", resetCounter="<<resetCounter<<endl;
+
+	if(USE_AUTOSAVE){
+		static qint64 cnt=0;
+		
+		if(resetCounter)
+			cnt=0;
+		
+		static time_t oldtime=0;
+		if(cnt==0)
+			time(&oldtime);
+		
+		if(autosave){
+			cnt++;
+		
+			time_t newtime;
+			time(&newtime);
+			
+			//cout<<"cnt="<<cnt<<", newtime-oldtime="<<int(difftime(newtime, oldtime))<<endl;
+			
+			if(int(difftime(newtime, oldtime))>=60*MINUTES_AUTOSAVE && cnt%OPERATIONS_AUTOSAVE==0){
+				QString sfn;
+				if(INPUT_FILENAME_XML!="")
+					sfn=QFileInfo(INPUT_FILENAME_XML).fileName();
+				else
+					sfn=QString("untitled.fet");
+				//assert(sfn.length()>=5);
+				//assert(sfn.endsWith(".fet"));
+				if(sfn.endsWith(".fet"))
+					sfn.chop(4);
+
+				QString das;
+				if(DIRECTORY_AUTOSAVE==""){
+					if(INPUT_FILENAME_XML=="")
+						das=WORKING_DIRECTORY;
+					else
+						das=QFileInfo(INPUT_FILENAME_XML).canonicalPath();
+				}
+				else{
+					das=DIRECTORY_AUTOSAVE;
+				}
+
+				QDir dir;
+				bool t=true;
+				if(!dir.exists(das))
+					t=dir.mkpath(das);
+				if(!t){
+					RulesIrreconcilableMessage::warning((QWidget*)pFetMainForm, tr("FET warning"), tr("Cannot create or use directory %1 - cannot autosave your data file - please change"
+					 " the chosen autosave directory or disable the autosave.")
+					 .arg(QDir::toNativeSeparators(das)));
+				}
+				else{
+					this->write((QWidget*)pFetMainForm, das+FILE_SEP+sfn+SUFFIX_FILENAME_AUTOSAVE+".fet");
+					//cout<<"Autosaved in "<<qPrintable(das+FILE_SEP+sfn+SUFFIX_FILENAME_AUTOSAVE+".fet")<<endl;
+					showStatusBarAutosaved();
+				}
+				
+				oldtime=newtime;
+			}
+		}
+	}
+
 	if(!USE_UNDO_REDO)
 		return;
 
@@ -3421,7 +3490,18 @@ void Rules::addUndoPoint(const QString& description)
 		savedStateIterator=0;
 
 	oldRulesArchived.push_back(oldRulesArchivedBA);
-	operationWhichWasDone.push_back(description);
+	if(description.length()<=20000){
+		operationWhichWasDone.push_back(description);
+	}
+	else{
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+		QString shortDescr=description.first(20000);
+#else
+		QString shortDescr=description.left(20000);
+#endif
+		shortDescr+=QString("\n...");
+		operationWhichWasDone.push_back(shortDescr);
+	}
 	operationDateTime.push_back(QPair<QDate, QTime>(QDate::currentDate(), QTime::currentTime()));
 	unarchivedSizes.push_back(oldRulesBA.size());
 	//stateFileName.push_back(INPUT_FILENAME_XML);
@@ -13870,7 +13950,7 @@ bool Rules::write(QWidget* parent, const QString& filename)
 
 	//QString s;
 	
-	bool exists=false;
+	/*bool exists=false;
 	QString filenameTmp=filename;
 	if(QFile::exists(filenameTmp)){
 		exists=true;
@@ -13892,14 +13972,17 @@ bool Rules::write(QWidget* parent, const QString& filename)
 
 	assert(!QFile::exists(filenameTmp));
 
-	QFile file(filenameTmp);
+	QFile file(filenameTmp);*/
+	
+	QSaveFile file(filename);
+	
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
 	if(!file.open(QIODeviceBase::WriteOnly | QIODeviceBase::Truncate)){
 #else
 	if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
 #endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 tr("Cannot open %1 for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted").arg(QFileInfo(filenameTmp).fileName()));
+		 tr("Cannot open %1 for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted").arg(QFileInfo(filename).fileName()));
 		
 		return false;
 	}
@@ -14048,23 +14131,22 @@ bool Rules::write(QWidget* parent, const QString& filename)
 	
 	if(file.error()>0){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 tr("Saved file gave error code %1, which means saving is compromised. Please check your disk free space")
+		 tr("Saved file gave error code %1, which means saving is compromised. Please check your disk's free space")
 		 .arg(file.error()));
 		
-		file.close();
-		return false;
+		//file.close();
+		//return false;
 	}
 	
-	file.close();
-	
-	if(exists){
+	/*if(exists){
 		bool tf=QFile::remove(filename);
 		assert(tf);
 		tf=QFile::rename(filenameTmp, filename);
 		assert(tf);
-	}
+	}*/
 	
-	return true;
+	bool res=file.commit();
+	return res;
 }
 
 int Rules::activateTeacher(const QString& teacherName)

@@ -107,6 +107,7 @@ private:
 	
 	QCheckBox* repeatNames;
 	QCheckBox* automaticColors;
+	QCheckBox* onlyBlackFonts;
 	
 	QPushButton* pbPrintPreviewSmall;
 	QPushButton* pbPrintPreviewFull;
@@ -128,6 +129,8 @@ private slots:
 	void updatePreviewFull(QPrinter* printer);
 	void printPreviewSmall();
 	void updatePreviewSmall(QPrinter* printer);
+	
+	void automaticColorsCheckBoxToggled();
 };
 
 #endif

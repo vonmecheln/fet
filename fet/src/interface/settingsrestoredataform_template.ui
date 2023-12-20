@@ -111,8 +111,17 @@
    </item>
    <item>
     <widget class="QLabel" name="maxStatesLabel2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
-      <string comment="1000 is the maximum number of states to record">(maximum allowed is 1000, to avoid using too much memory.)</string>
+      <string comment="100 is the default number of states to record, and 1000 is the maximum number of states to record">(Default is 100. Maximum allowed is 1000, to avoid using too much memory.)</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
      </property>
     </widget>
    </item>

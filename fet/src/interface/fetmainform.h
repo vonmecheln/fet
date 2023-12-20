@@ -398,6 +398,8 @@ public:
 
 public slots:
 	void enableNotPerfectMessage();
+	
+	void on_settingsAutosaveAction_triggered();
 
 	void on_restoreDataStateAction_triggered();
 	void on_settingsHistoryAction_triggered();

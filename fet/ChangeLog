@@ -2719,7 +2719,7 @@ Versions 6.11.0 - 6.11.1
 	the lines separating the days are thicker.
 	- Other minor improvements.
 ---------------------------------------------------------------------------------
-Versions 6.12.0 - 6.12.v
+Version 6.12.0
 - Version 6.12.0
 	- Added an undo/redo system (actually, the possibility of saving and restoring data states to/from history). Suggested by: Massimo Mancini, uni_instructor,
 	Anthony Siaudeau, Zsolt Udvari, pekuon, and maybe other users. DT had some useful suggestions regarding this new feature.
@@ -2728,3 +2728,12 @@ Versions 6.12.0 - 6.12.v
 	- Minor improvements.
 	- Updated the Russian translation, by Alexey Chernous.
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares. It is again complete.
+---------------------------------------------------------------------------------
+Versions 6.13.0 - 6.13.v
+- Version 6.13.0
+	- Added a kind of data file autosave feature (suggested by mohammed, Vangelis Karafillidis, DT, and maybe other users).
+	- If the description of the operation to be logged in history is too large, it will be truncated to maximum 20,000 characters, so that the history
+	won't occupy too much memory.
+	- When printing the timetables from the interface, without colors, the user can select the option that all the fonts will have the black color,
+	instead of gray and silver being used for some categories of text (suggested by Nikandros and Volker Dirr).
+	- Updated the Arabic translation, by Benahmed Abdelkrim. It is again complete.

@@ -759,11 +759,13 @@ void ActivitiesForm::removeActivities()
 				s+=tr("There will also be removed the related activities from the same larger split activity.");
 				s+="\n";
 			}*/
-			s+=act->getDetailedDescription(gt.rules);
-			s+="\n";
+			
+			QString tmps=act->getDetailedDescription(gt.rules);
+			tmps+="\n";
 
-			su+=act->getDetailedDescription(gt.rules);
-			su+="\n";
+			s+=tmps;
+			
+			su+=tmps;
 		}
 
 	int t=LongTextMessageBox::confirmation( this, tr("FET confirmation"),

@@ -20,8 +20,6 @@
 
 #include "ui_settingsrestoredataform_template.h"
 
-#include <QStringList>
-
 class SettingsRestoreDataForm : public QDialog, Ui::SettingsRestoreDataForm_template{
 	Q_OBJECT
 	

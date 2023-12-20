@@ -937,6 +937,8 @@
     <addaction name="fileSaveAction"/>
     <addaction name="fileSaveAsAction"/>
     <addaction name="separator"/>
+    <addaction name="settingsAutosaveAction"/>
+    <addaction name="separator"/>
     <addaction name="menuImport"/>
     <addaction name="menuExport"/>
     <addaction name="separator"/>
@@ -2252,6 +2254,11 @@
    </property>
    <property name="text">
     <string>Confirm activating/deactivating activities/constraints</string>
+   </property>
+  </action>
+  <action name="settingsAutosaveAction">
+   <property name="text">
+    <string comment="The settings for the autosave of the data file">Autosave settings</string>
    </property>
   </action>
  </widget>

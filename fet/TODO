@@ -5522,7 +5522,7 @@ From Emiliano Llano Díaz:
 Improvement suggestion: Is a nag that each time you open FET it does not "remember" the file it was working on (I know it is just 2 clicks away on
 file->open recent, but... you know humans are lazy 😁  )
 
-341---------------------------------------------------------
+341--Probably DONE in FET-6.13.0 on 14 November 2023 (autosave of the current file)--
 From mohammed (on forum):
 
 Nous voulons ajouter la fonction de sauvegarde automatique du programme, en cas de travail, l'alimentation s'éteint
@@ -8934,7 +8934,7 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=5749.0
 
 Is there a way to control the order that the lessons appear on the printout of the timetable? It seems to be random and I would like to control it
 
-525---------------------------------------------------------
+525----------DONE in FET-6.13.0 on 14 November 2023---------
 From Vangelis Karafillidis:
 
 Automatic saving of the .fet data file every say 3 minutes.
@@ -8969,3 +8969,32 @@ Liviu Lalescu: So in the two slots selected with X there can be at most one acti
 ---
 
 Vũ Ngọc Thành: Thank you for understanding my thoughts correctly. I find this constraint does a lot of good for scheduling.
+
+527---------------------------------------------------------
+From ngoctp29121982:
+
+FET-6.12 has a historical section.  If when you use the constraints of a schedule, you turn off the FET software and turn the FET software
+back on later, the history of those constraints appears, that's great.
+
+528---------------------------------------------------------
+From rozojc (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5760.0
+
+Constraint room max occupied time slots per week.
+
+529---------------------------------------------------------
+From pnlshd (on forum):
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5763.0
+
+Teacher has at most one activity per week in a certain room/set of rooms?
+
+---
+
+How can I do this?
+
+For example, I have three activities for each teacher. I want at most one of them (anyone) to be placed in a certain set of rooms.
+This is to ensure fairness in the room distribution among teachers.
+
+I can put a tag that only gets placed in these rooms but I don't want to choose the activity to be placed or be forced to count them myself.

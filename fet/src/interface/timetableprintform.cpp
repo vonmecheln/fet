@@ -118,6 +118,7 @@ const QString printRoomsState="/print-rooms-check-box-state";
 
 const QString printRepeatNamesState="/print-repeat-names-check-box-state";
 const QString printAutomaticColorsState="/print-automatic-colors-check-box-state";
+const QString printOnlyBlackFontsState="/print-only-black-fonts-check-box-state";
 
 const QString activitiesPaddingState="/activity-padding-spin-box-value-state";
 const QString tablePaddingState="/table-padding-spin-box-value-state";
@@ -389,6 +390,11 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	automaticColors=new QCheckBox(tr("Colors"));
 	automaticColors->setChecked(false);
 	
+	onlyBlackFonts=new QCheckBox(tr("Black", "Black font"));
+	onlyBlackFonts->setChecked(false);
+	
+	automaticColorsCheckBoxToggled();
+	
 	fontSizeTable=new QSpinBox;
 	fontSizeTable->setRange(4, 20);
 	fontSizeTable->setValue(8);
@@ -608,7 +614,15 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	optionsBoxGrid->addWidget(printDetailedTables,8,1);
 	
 	optionsBoxGrid->addWidget(repeatNames,9,0);
-	optionsBoxGrid->addWidget(automaticColors,9,1);
+	
+	/////////
+	QHBoxLayout* hl=new QHBoxLayout();
+	hl->addWidget(onlyBlackFonts);
+	hl->addWidget(automaticColors);
+	//optionsBoxGrid->addWidget(automaticColors,9,1);
+	//optionsBoxGrid->addWidget(onlyBlackFonts,9,1);
+	optionsBoxGrid->addLayout(hl, 9, 1);
+	/////////
 
 	optionsBox->setLayout(optionsBoxGrid);
 	optionsBox->setSizePolicy(QSizePolicy::Expanding, optionsBox->sizePolicy().verticalPolicy());
@@ -645,6 +659,8 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	connect(pbPrintPreviewSmall, SIGNAL(clicked()), this, SLOT(printPreviewSmall()));
 	connect(pbPrintPreviewFull, SIGNAL(clicked()), this, SLOT(printPreviewFull()));
 	connect(pbClose, SIGNAL(clicked()), this, SLOT(close()));
+	
+	connect(automaticColors, SIGNAL(stateChanged(int)), this, SLOT(automaticColorsCheckBoxToggled()));
 	
 	//connect(RBDaysHorizontal, SIGNAL(toggled(bool)), this, SLOT(updateCBDivideTimeAxisByDay()));
 	//connect(RBDaysVertical, SIGNAL(toggled(bool)), this, SLOT(updateCBDivideTimeAxisByDay()));
@@ -722,6 +738,9 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 		repeatNames->setChecked(settings.value(this->metaObject()->className()+printRepeatNamesState).toBool());
 	if(settings.contains(this->metaObject()->className()+printAutomaticColorsState))
 		automaticColors->setChecked(settings.value(this->metaObject()->className()+printAutomaticColorsState).toBool());
+
+	if(settings.contains(this->metaObject()->className()+printOnlyBlackFontsState))
+		onlyBlackFonts->setChecked(settings.value(this->metaObject()->className()+printOnlyBlackFontsState).toBool());
 	//
 	if(settings.contains(this->metaObject()->className()+activitiesPaddingState))
 		activitiesPadding->setValue(settings.value(this->metaObject()->className()+activitiesPaddingState).toInt());
@@ -775,6 +794,8 @@ TimetablePrintForm::~TimetablePrintForm(){
 	//
 	settings.setValue(this->metaObject()->className()+printRepeatNamesState, repeatNames->isChecked());
 	settings.setValue(this->metaObject()->className()+printAutomaticColorsState, automaticColors->isChecked());
+
+	settings.setValue(this->metaObject()->className()+printOnlyBlackFontsState, onlyBlackFonts->isChecked());
 	//
 	settings.setValue(this->metaObject()->className()+activitiesPaddingState, activitiesPadding->value());
 	settings.setValue(this->metaObject()->className()+tablePaddingState, tablePadding->value());
@@ -1258,7 +1279,10 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	tmp+="      tr.line0, div.line0 {\n";	//needs level 3
 	tmp+="        /*font-size: 12pt;*/\n";
 	if(htmlLevel!=7){
-		tmp+="        color: gray;\n";
+		if(onlyBlackFonts->isChecked())
+			tmp+="        /*color: gray;*/\n";
+		else
+			tmp+="        color: gray;\n";
 	}
 	tmp+="      }\n";
 	tmp+="      tr.line1, div.line1 {\n";	//needs level 3
@@ -1267,13 +1291,19 @@ QString TimetablePrintForm::updateHtmlPrintString(bool printAll){
 	tmp+="      tr.line2, div.line2 {\n";	//needs level 3
 	tmp+="        /*font-size: 12pt;*/\n";
 	if(htmlLevel!=7){
-		tmp+="        color: gray;\n";
+		if(onlyBlackFonts->isChecked())
+			tmp+="        /*color: gray;*/\n";
+		else
+			tmp+="        color: gray;\n";
 	}
 	tmp+="      }\n";
 	tmp+="      tr.line3, div.line3 {\n";	//needs level 3
 	tmp+="        /*font-size: 12pt;*/\n";
 	if(htmlLevel!=7){
-		tmp+="        color: silver;\n";
+		if(onlyBlackFonts->isChecked())
+			tmp+="        /*color: silver;*/\n";
+		else
+			tmp+="        color: silver;\n";
 	}
 	tmp+="      }\n";
 	tmp+="    </style>\n";
@@ -1792,4 +1822,9 @@ void TimetablePrintForm::updatePreviewSmall(QPrinter* printer){
 	textDocument.setHtml(updateHtmlPrintString(false));
 	textDocument.print(printer);
 #endif
+}
+
+void TimetablePrintForm::automaticColorsCheckBoxToggled()
+{
+	onlyBlackFonts->setDisabled(automaticColors->isChecked());
 }

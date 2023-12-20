@@ -1039,7 +1039,9 @@ SOURCES += \
 	\
 	interface/restoredatastateform.cpp \
 	\
-	interface/settingsrestoredataform.cpp
+	interface/settingsrestoredataform.cpp \
+	\
+	interface/settingsautosaveform.cpp
 
 HEADERS += \
 	engine/timetableexport.h \
@@ -2085,7 +2087,9 @@ HEADERS += \
 	\
 	interface/restoredatastateform.h \
 	\
-	interface/settingsrestoredataform.h
+	interface/settingsrestoredataform.h \
+	\
+	interface/settingsautosaveform.h
 
 FORMS += \
 	interface/fetmainform_template.ui \
@@ -3091,7 +3095,9 @@ FORMS += \
 	\
 	interface/restoredatastateform_template.ui \
 	\
-	interface/settingsrestoredataform_template.ui
+	interface/settingsrestoredataform_template.ui \
+	\
+	interface/settingsautosaveform_template.ui
 
 TRANSLATIONS += \
 	../translations/fet_ar.ts \

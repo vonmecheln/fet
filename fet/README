@@ -1,4 +1,4 @@
-This is FET version 6.12.0
+This is FET version 6.13.0
 
 
 Program description:
@@ -14,7 +14,7 @@ Program description:
 
 Requirements:
 
-	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.5.9, Xfce 4.18,
+	FET is created in the following environment: openSUSE Tumbleweed GNU/Linux distribution, Linux 6.6.1, Xfce 4.18,
 	Xfce Terminal Emulator 1.1.1, Midnight Commander 4.8.30, Krusader 2.8.0, Kate 23.08.1, KDiff3 0.9.98, grep 3.11, sed 4.9,
 	Thunar Bulk Rename 4.18.7, Qt 6.6.0, QMake 3.1, CMake 3.27.2, Ninja 1.10.2, Qt Creator 11.0.3, GCC 13.2.1, Clang 17.0.3,
 	GNU Make 4.4.1, GDB 13.2, Valgrind 3.21.0, Coverity Scan 2020.09, Cppcheck 2.10, SpeedCrunch 0.12, QCAD Community Edition 3.26.0.0,
@@ -35,8 +35,7 @@ Requirements:
 	For compiling, you will need this software:
 		Make 4.2.1 or similar (GNU Make).
 		GCC 13.1.1 or similar.
-		Qt 6.6.0 or compatible. Qt 5 should be fine. (The authors tried to maintain backwards source compatibility even with Qt 4,
-			but beware that multiple generation on multiple threads is very slow with such an old Qt version.)
+		Qt 6.6.0 or compatible. Qt 5.1 or later should be fine.
 		QMake 3.1 or compatible (usually available with Qt).
 
 		Note: You need a C++17 compliant C++ compiler. You might be able to use the Clang C++ compiler or other C++ compiler instead of GCC.
@@ -79,8 +78,7 @@ Getting - compiling - installing Qt:
 
 	Qt homepage: https://www.qt.io/
 
-	You will need Qt 6.6.0 or compatible to compile FET. Qt 5 should be fine (the authors also tried to maintain backwards source
-		compatibility with Qt 4, but beware that multiple generation on multiple threads is very slow with such an old Qt version).
+	You will need Qt 6.6.0 or compatible to compile FET. Qt 5.1 or later should be fine.
 	You can get the corresponding version of Qt with your package manager or from the internet (preferably from the Qt homepage).
 	Qt can be used with the GNU (L)GPL or commercial license (The authors chose the GNU (L)GPL license).
 

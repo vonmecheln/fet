@@ -32,6 +32,8 @@
 #include "restoredatastateform.h"
 #include "settingsrestoredataform.h"
 
+#include "settingsautosaveform.h"
+
 #include "getmodefornewfileform.h"
 
 #include "timetablegenerateform.h"
@@ -630,6 +632,12 @@ extern int savedStateIterator;
 
 extern FetMainForm* pFetMainForm;
 
+void showStatusBarAutosaved()
+{
+	if(pFetMainForm!=nullptr)
+		pFetMainForm->statusBar()->showMessage(FetMainForm::tr("File autosaved"), STATUS_BAR_MILLISECONDS);
+}
+
 void updateFetMainFormAfterHistoryRestored(int iterationsBackward)
 {
 	if(pFetMainForm!=nullptr){
@@ -702,6 +710,32 @@ FetMainForm::FetMainForm()
 	if(UNDO_REDO_STEPS<=0)
 		UNDO_REDO_STEPS=1;
 	//UNDO_REDO_COMPRESSION_LEVEL=settings.value(QString("data-states-compression-level"), QString("-1")).toInt();
+
+	USE_AUTOSAVE=settings.value(QString("enable-file-autosave"), QString("false")).toBool();
+	MINUTES_AUTOSAVE=settings.value(QString("minutes-for-autosave"), QString("3")).toInt();
+	if(MINUTES_AUTOSAVE>15)
+		MINUTES_AUTOSAVE=15;
+	if(MINUTES_AUTOSAVE<1)
+		MINUTES_AUTOSAVE=1;
+	OPERATIONS_AUTOSAVE=settings.value(QString("operations-for-autosave"), QString("1")).toInt();
+	if(OPERATIONS_AUTOSAVE>100)
+		OPERATIONS_AUTOSAVE=100;
+	if(OPERATIONS_AUTOSAVE<1)
+		OPERATIONS_AUTOSAVE=1;
+		
+	QString das=settings.value(QString("directory-for-autosave"), QString("")).toString();
+	if(das.isEmpty()){
+		DIRECTORY_AUTOSAVE=QString("");
+	}
+	else{
+		DIRECTORY_AUTOSAVE=QDir(das).canonicalPath();
+		if(!QDir(DIRECTORY_AUTOSAVE).exists())
+			DIRECTORY_AUTOSAVE=QString("");
+	}
+	
+	SUFFIX_FILENAME_AUTOSAVE=settings.value(QString("filename-suffix-for-autosave"), QString("_AUTOSAVE")).toString();
+	if(SUFFIX_FILENAME_AUTOSAVE!=QString("_AUTOSAVE"))
+		SUFFIX_FILENAME_AUTOSAVE=QString("_AUTOSAVE");
 
 	originalFont=qApp->font();
 	fontIsUserSelectable=settings.value(QString("font-is-user-selectable"), QString("false")).toBool();
@@ -3331,6 +3365,13 @@ void FetMainForm::on_settingsFontAction_triggered()
 	}
 }
 
+void FetMainForm::on_settingsAutosaveAction_triggered()
+{
+	SettingsAutosaveForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
 void FetMainForm::on_modeOfficialAction_triggered()
 {
 	if(!gt.rules.initialized){
@@ -3915,6 +3956,12 @@ FetMainForm::~FetMainForm()
 	settings.setValue(QString("number-of-data-steps-to-record"), UNDO_REDO_STEPS);
 	//settings.setValue(QString("data-states-compression-level"), UNDO_REDO_COMPRESSION_LEVEL);
 
+	settings.setValue(QString("enable-file-autosave"), USE_AUTOSAVE);
+	settings.setValue(QString("minutes-for-autosave"), MINUTES_AUTOSAVE);
+	settings.setValue(QString("operations-for-autosave"), OPERATIONS_AUTOSAVE);
+	settings.setValue(QString("directory-for-autosave"), DIRECTORY_AUTOSAVE);
+	settings.setValue(QString("filename-suffix-for-autosave"), SUFFIX_FILENAME_AUTOSAVE);
+
 	QFont interfaceFont=qApp->font();
 	settings.setValue(QString("font-is-user-selectable"), fontIsUserSelectable);
 	if(fontIsUserSelectable && userChoseAFont)
@@ -4091,7 +4138,7 @@ void FetMainForm::on_fileNewAction_triggered()
 		else if(gt.rules.mode==TERMS)
 			ms=tr("Terms");
 		clearHistory();
-		gt.rules.addUndoPoint(tr("Created a new file with the mode %1.").arg(ms));
+		gt.rules.addUndoPoint(tr("Created a new file with the mode %1.").arg(ms), false, true);
 		savedStateIterator=cntUndoRedoStackIterator;
 		
 		gt.rules.modified=true; //force update of the modified flag of the main window
@@ -4231,7 +4278,7 @@ void FetMainForm::openFile(const QString& fileName)
 				INPUT_FILENAME_XML = s;
 				
 				clearHistory();
-				gt.rules.addUndoPoint(tr("Opened the file %1").arg(QDir::toNativeSeparators(s)));
+				gt.rules.addUndoPoint(tr("Opened the file %1").arg(QDir::toNativeSeparators(s)), false, true);
 				savedStateIterator=cntUndoRedoStackIterator;
 			
 				LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
@@ -11410,6 +11457,17 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+=tr("71")+QString(". ")+tr("Confirm activating/deactivating activities/constraints will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
+	s+=tr("72")+QString(". ")+tr("Enable file autosave will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+	s+=tr("73")+QString(". ")+tr("The number of minutes before autosave will be %1", "%1 is an integer").arg(3);
+	s+="\n";
+	s+=tr("74")+QString(". ")+tr("The number of operations before autosave will be %1", "%1 is an integer").arg(1);
+	s+="\n";
+	s+=tr("75")+QString(". ")+tr("The directory for autosave will be '%1'", "%1 is a directory name").arg(QString(""));
+	s+="\n";
+	s+=tr("76")+QString(". ")+tr("The file name suffix for autosave will be '%1'", "%1 is a suffix to be added to the file name").arg(QString("_AUTOSAVE"));
+	s+="\n";
+
 	//s+=tr("71")+QString(". ")+tr("The compression level for the states in history will be %1 (the default compression level for zlib)").arg(-1);
 	//s+="\n";
 
@@ -11712,12 +11770,18 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 
 		clearHistory();
 		if(gt.rules.initialized && USE_UNDO_REDO){
-			gt.rules.addUndoPoint(tr("Cleared the history, because the history settings were modified when resetting all the settings to default."));
+			gt.rules.addUndoPoint(tr("Cleared the history, because the history settings were modified when resetting all the settings to default."), false, false);
 			if(!gt.rules.modified)
 				savedStateIterator=cntUndoRedoStackIterator;
 		}
 	}
 	///////////////////////
+
+	USE_AUTOSAVE=false;
+	MINUTES_AUTOSAVE=3;
+	OPERATIONS_AUTOSAVE=1;
+	DIRECTORY_AUTOSAVE="";
+	SUFFIX_FILENAME_AUTOSAVE="_AUTOSAVE";
 
 	setLanguage(*pqapplication, this);
 	setCurrentFile(INPUT_FILENAME_XML);

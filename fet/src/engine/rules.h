@@ -82,6 +82,7 @@ class QDate;
 class QTime;
 
 #ifndef FET_COMMAND_LINE
+	void showStatusBarAutosaved();
 	void updateFetMainFormAfterHistoryRestored(int iterationsBackward);
 	void clearHistory();
 #endif
@@ -95,7 +96,7 @@ class Rules{
 
 public:
 #ifndef FET_COMMAND_LINE
-	void addUndoPoint(const QString& description);
+	void addUndoPoint(const QString& description, bool autosave=true, bool resetCounter=false);
 	void restoreState(int iterationsBackward); //iterationsBackward<0 means Redo, >0 means Undo, and ==0 is not allowed
 #endif
 

@@ -37,14 +37,19 @@ extern int savedStateIterator;
 SettingsRestoreDataForm::SettingsRestoreDataForm(QWidget* parent): QDialog(parent)
 {
 	setupUi(this);
+	
+	centerWidgetOnScreen(this);
+	restoreFETDialogGeometry(this);
 
 	connect(buttonBox, SIGNAL(accepted()), this, SLOT(ok()));
 	connect(buttonBox, SIGNAL(rejected()), this, SLOT(cancel()));
 	
 	enableHistoryCheckBox->setChecked(USE_UNDO_REDO);
+	on_enableHistoryCheckBox_toggled();
 	
 	maxStatesLabel->setText(tr("Number of previous states to record:"));
-	maxStatesLabel2->setText(tr("(maximum allowed is %1, to avoid using too much memory.)", "%1 is the maximum number of states to record").arg(1000));
+	maxStatesLabel2->setText(tr("(Default is %1. Maximum allowed is %2, to avoid using too much memory.)",
+	 "%1 is the default number of states to record, %2 is the maximum number of states to record").arg(100).arg(1000));
 	
 	maxStatesSpinBox->setMinimum(1);
 	maxStatesSpinBox->setMaximum(1000);
@@ -85,7 +90,7 @@ void SettingsRestoreDataForm::ok()
 
 		clearHistory();
 		if(gt.rules.initialized && USE_UNDO_REDO){
-			gt.rules.addUndoPoint(tr("Cleared the history, because the history settings were modified."));
+			gt.rules.addUndoPoint(tr("Cleared the history, because the history settings were modified."), false, false);
 			if(!gt.rules.modified)
 				savedStateIterator=cntUndoRedoStackIterator;
 		}
