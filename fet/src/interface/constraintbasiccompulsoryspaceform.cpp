@@ -168,11 +168,11 @@ void ConstraintBasicCompulsorySpaceForm::removeConstraint()
 			QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 		
 		if(wr==QMessageBox::Yes){
-		oc=ctr->getDetailedDescription(gt.rules);
+			oc=ctr->getDetailedDescription(gt.rules);
 
 			gt.rules.removeSpaceConstraint(ctr);
 
-		gt.rules.addUndoPoint(tr("Removed the constraint:\n\n%1").arg(ctr->getDetailedDescription(gt.rules)));
+			gt.rules.addUndoPoint(tr("Removed the constraint:\n\n%1").arg(oc));
 
 			visibleConstraintsList.removeAt(i);
 			constraintsListWidget->setCurrentRow(-1);

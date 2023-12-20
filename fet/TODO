@@ -9044,3 +9044,24 @@ From Volker Dirr:
 Do we also need to print a table with activities that haven't got a building?
 And if yes: Do the teachers timetable need a table with activities
 without teachers? Similar to students, rooms, activity tags?
+
+534---------------------------------------------------------
+From Vangelis Karafillidis:
+
+I was thinking about this "parallel" processing of a single timetable.
+I have a 8 cores /16 threads CPU. Let's say that the user starts solving 16 timetables.
+FET... is able to write on the disk the "highest" timetable when generating.
+(when the users wants to). Right?
+
+Liviu Lalescu:
+In a single generation only or if you interrupt the multiple generation.
+
+Vangelis Karafillidis:
+Let's say that instead of letting the user interrupting the generation you make FET
+interrupt the generation and save the highest timetables. For example 16 timetables are generated
+Let's say that we have 500 activities.
+After 500xn (n might be 3,4,5... or more) attempts of placing activities,
+on each one of the threads each thread has its own "highest" timetable,
+which is recorded by FET. Then FET takes the 4 best highest timetables (it might be 2,3 timetables...)
+Stops the generation for all threads and starts a new generation.
+For example the 1 best is delivered to 4 threads (threads 1-4) which continue this generation.

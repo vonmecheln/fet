@@ -168,7 +168,7 @@ void ConstraintStudentsSetMaxRoomChangesPerDayForm::removeConstraint()
 
 		gt.rules.removeSpaceConstraint(ctr);
 
-		gt.rules.addUndoPoint(tr("Removed the constraint:\n\n%1").arg(ctr->getDetailedDescription(gt.rules)));
+		gt.rules.addUndoPoint(tr("Removed the constraint:\n\n%1").arg(oc));
 		
 		visibleConstraintsList.removeAt(i);
 		constraintsListWidget->setCurrentRow(-1);

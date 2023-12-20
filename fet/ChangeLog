@@ -2756,3 +2756,6 @@ Versions 6.14.0 - 6.14.v
 	- Implemented the HTML exporting and the printing of the timetables for the buildings (suggested by Benahmed Abdelkrim).
 	- Minor corrections in the HTML exporting and in the printing of the timetables.
 	- Code cleanup.
+- Version 6.14.1
+	- Critical crash bugs fixed, when removing space constraints from their dialogs (not from the 'all space constraints' dialog)
+	(reported by gerry). These bugs were present since FET version 6.12.0, released on 13 November 2023.

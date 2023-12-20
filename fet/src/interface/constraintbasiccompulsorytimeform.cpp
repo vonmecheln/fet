@@ -170,11 +170,11 @@ void ConstraintBasicCompulsoryTimeForm::removeConstraint()
 			QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 			
 		if(wr==QMessageBox::Yes){
-		oc=ctr->getDetailedDescription(gt.rules);
+			oc=ctr->getDetailedDescription(gt.rules);
 
 			gt.rules.removeTimeConstraint(ctr);
 
-		gt.rules.addUndoPoint(tr("Removed the constraint:\n\n%1").arg(oc));
+			gt.rules.addUndoPoint(tr("Removed the constraint:\n\n%1").arg(oc));
 
 			visibleConstraintsList.removeAt(i);
 			constraintsListWidget->setCurrentRow(-1);
