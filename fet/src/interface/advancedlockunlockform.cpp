@@ -61,10 +61,10 @@ extern Solution best_solution;
 
 extern Timetable gt;
 
-extern QSet<int> idsOfLockedTime;
+/*extern QSet<int> idsOfLockedTime;
 extern QSet<int> idsOfLockedSpace;
 extern QSet<int> idsOfPermanentlyLockedTime;
-extern QSet<int> idsOfPermanentlyLockedSpace;
+extern QSet<int> idsOfPermanentlyLockedSpace;*/
 
 const int MIN_WIDTH=400;
 const int MIN_HEIGHT=200;

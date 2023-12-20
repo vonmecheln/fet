@@ -377,6 +377,9 @@ private:
 	
 	int currentlyNPlacedActivities;
 	time_t starting_time;
+	
+	int activityRetryLevel0TimeLimit; //seconds
+	bool activityRetryLevel0TimeExceeded;
 };
 
 #endif

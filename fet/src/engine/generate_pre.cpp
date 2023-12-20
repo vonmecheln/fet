@@ -22,6 +22,8 @@
 #include "rules.h"
 #include "timetable.h"
 
+#include "teacher.h"
+
 #include "generate_pre.h"
 
 #include "matrix.h"
@@ -10155,6 +10157,133 @@ bool computeNHoursPerTeacher(QWidget* parent)
 			if(t==0)
 				return ok;
 		}
+	
+	if(gt.rules.mode==MORNINGS_AFTERNOONS){
+		assert(gt.rules.nDaysPerWeek%2==0);
+		for(int i=0; i<gt.rules.nInternalTeachers; i++){
+			Teacher* tch=gt.rules.internalTeachersList[i];
+			if(tch->morningsAfternoonsBehavior==TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS){
+				//nothing - already tested above
+			}
+			else if(tch->morningsAfternoonsBehavior==TEACHER_MORNING_OR_EXCLUSIVELY_AFTERNOON){
+				if(nHoursPerTeacher[i] > (gt.rules.nDaysPerWeek/2)*gt.rules.nHoursPerDay){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("It is impossible to generate the timetable, because the teacher %1 should work %2 hours, considering the sum of his"
+					 " active activities durations, but he can work only %3 half days per week (because his mornings-afternoons behavior is '%4') x %5 hours per half day.")
+					 .arg(gt.rules.internalTeachersList[i]->name)
+					 .arg(nHoursPerTeacher[i])
+					 .arg(gt.rules.nDaysPerWeek/2)
+					 .arg(GeneratePreTranslate::tr("exclusive", "Mornings-afternoons behavior of a teacher"))
+					 .arg(gt.rules.nHoursPerDay),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return ok;
+				}
+			}
+			else if(tch->morningsAfternoonsBehavior==TEACHER_ONE_DAY_EXCEPTION){
+				if(gt.rules.nDaysPerWeek>=2 && nHoursPerTeacher[i] > (gt.rules.nDaysPerWeek/2+1)*gt.rules.nHoursPerDay){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("It is impossible to generate the timetable, because the teacher %1 should work %2 hours, considering the sum of his"
+					 " active activities durations, but he can work only %3 half days per week (because his mornings-afternoons behavior is '%4') x %5 hours per half day.")
+					 .arg(gt.rules.internalTeachersList[i]->name)
+					 .arg(nHoursPerTeacher[i])
+					 .arg(gt.rules.nDaysPerWeek/2+1)
+					 .arg(GeneratePreTranslate::tr("one day exception", "Mornings-afternoons behavior of a teacher"))
+					 .arg(gt.rules.nHoursPerDay),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return ok;
+				}
+			}
+			else if(tch->morningsAfternoonsBehavior==TEACHER_TWO_DAYS_EXCEPTION){
+				if(gt.rules.nDaysPerWeek>=4 && nHoursPerTeacher[i] > (gt.rules.nDaysPerWeek/2+2)*gt.rules.nHoursPerDay){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("It is impossible to generate the timetable, because the teacher %1 should work %2 hours, considering the sum of his"
+					 " active activities durations, but he can work only %3 half days per week (because his mornings-afternoons behavior is '%4') x %5 hours per half day.")
+					 .arg(gt.rules.internalTeachersList[i]->name)
+					 .arg(nHoursPerTeacher[i])
+					 .arg(gt.rules.nDaysPerWeek/2+2)
+					 .arg(GeneratePreTranslate::tr("two days exception", "Mornings-afternoons behavior of a teacher"))
+					 .arg(gt.rules.nHoursPerDay),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return ok;
+				}
+			}
+			else if(tch->morningsAfternoonsBehavior==TEACHER_THREE_DAYS_EXCEPTION){
+				if(gt.rules.nDaysPerWeek>=6 && nHoursPerTeacher[i] > (gt.rules.nDaysPerWeek/2+3)*gt.rules.nHoursPerDay){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("It is impossible to generate the timetable, because the teacher %1 should work %2 hours, considering the sum of his"
+					 " active activities durations, but he can work only %3 half days per week (because his mornings-afternoons behavior is '%4') x %5 hours per half day.")
+					 .arg(gt.rules.internalTeachersList[i]->name)
+					 .arg(nHoursPerTeacher[i])
+					 .arg(gt.rules.nDaysPerWeek/2+3)
+					 .arg(GeneratePreTranslate::tr("three days exception", "Mornings-afternoons behavior of a teacher"))
+					 .arg(gt.rules.nHoursPerDay),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return ok;
+				}
+			}
+			else if(tch->morningsAfternoonsBehavior==TEACHER_FOUR_DAYS_EXCEPTION){
+				if(gt.rules.nDaysPerWeek>=8 && nHoursPerTeacher[i] > (gt.rules.nDaysPerWeek/2+4)*gt.rules.nHoursPerDay){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("It is impossible to generate the timetable, because the teacher %1 should work %2 hours, considering the sum of his"
+					 " active activities durations, but he can work only %3 half days per week (because his mornings-afternoons behavior is '%4') x %5 hours per half day.")
+					 .arg(gt.rules.internalTeachersList[i]->name)
+					 .arg(nHoursPerTeacher[i])
+					 .arg(gt.rules.nDaysPerWeek/2+4)
+					 .arg(GeneratePreTranslate::tr("four days exception", "Mornings-afternoons behavior of a teacher"))
+					 .arg(gt.rules.nHoursPerDay),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return ok;
+				}
+			}
+			else if(tch->morningsAfternoonsBehavior==TEACHER_FIVE_DAYS_EXCEPTION){
+				if(gt.rules.nDaysPerWeek>=10 && nHoursPerTeacher[i] > (gt.rules.nDaysPerWeek/2+5)*gt.rules.nHoursPerDay){
+					ok=false;
+
+					int t=GeneratePreIrreconcilableMessage::mediumConfirmation(parent, GeneratePreTranslate::tr("FET warning"),
+					 GeneratePreTranslate::tr("It is impossible to generate the timetable, because the teacher %1 should work %2 hours, considering the sum of his"
+					 " active activities durations, but he can work only %3 half days per week (because his mornings-afternoons behavior is '%4') x %5 hours per half day.")
+					 .arg(gt.rules.internalTeachersList[i]->name)
+					 .arg(nHoursPerTeacher[i])
+					 .arg(gt.rules.nDaysPerWeek/2+5)
+					 .arg(GeneratePreTranslate::tr("five days exception", "Mornings-afternoons behavior of a teacher"))
+					 .arg(gt.rules.nHoursPerDay),
+					 GeneratePreTranslate::tr("Skip rest"), GeneratePreTranslate::tr("See next"), QString(),
+					 1, 0 );
+
+					if(t==0)
+						return ok;
+				}
+			}
+			else{
+				assert(0);
+			}
+		}
+	}
 	
 	for(int i=0; i<gt.rules.nInternalTeachers; i++){
 		int freeSlots=0;

@@ -9022,3 +9022,18 @@ The user would be annoyed to get a warning each time. Also, maybe too much disk 
 
 Vangelis Karafillidis:
 You could add an option in the settings "allow detailed warnings (highly recommended for new users)".
+
+532---------------------------------------------------------
+From Volker Dirr:
+
+about:
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5774.0
+
+I sadly understand that it is a bit confusing. In fact it is a bit 
+strange in FET to have roomS constraint for a single room.
+Just be "room constraint from a set of rooms" while rooms can be also 
+just a single room.
+So merging the room and roomS constraint is my opinion useful, like 
+merging all "a teacher" and "teachers";
+and also merging "a student" and "all students" is useful, as i 
+suggested already some time ago.

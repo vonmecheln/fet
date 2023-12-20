@@ -6129,6 +6129,9 @@ void Generate::generateWithSemaphore(int maxSeconds, bool& impossible, bool& tim
 
 void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bool threaded, QTextStream* maxPlacedActivityStream)
 {
+	activityRetryLevel0TimeLimit=maxSeconds;
+	activityRetryLevel0TimeExceeded=false;
+
 	permutation.resize(gt.rules.nInternalActivities);
 	for(int i=0; i<gt.rules.nInternalActivities; i++)
 		permutation[i]=copyOfInitialPermutation[i];
@@ -6736,6 +6739,16 @@ void Generate::generate(int maxSeconds, bool& impossible, bool& timeExceeded, bo
 				if(threaded){
 					myMutex.unlock();
 				}
+				
+				return;
+			}
+			if(activityRetryLevel0TimeExceeded){ //should appear before "if(impossibleActivity)..." below, because in case the time is exceeded
+												 //with many retries at level 0, we have also impossibleActivity
+				if(threaded){
+					myMutex.unlock();
+				}
+				
+				timeExceeded=true;
 				
 				return;
 			}
@@ -29314,19 +29327,28 @@ skip_here_if_already_allocated_in_time:
 					semaphorePlacedActivity.acquire();
 					myMutex.lock();
 				}
+				
+				if(searchTime>=activityRetryLevel0TimeLimit){
+					activityRetryLevel0TimeExceeded=true;
+				}
+				else{
+					activity_count_impossible_tries++;
+					goto again_if_impossible_activity;
+				}
 			}
-
-			activity_count_impossible_tries++;
-			goto again_if_impossible_activity;
+			else{
+				activity_count_impossible_tries++;
+				goto again_if_impossible_activity;
+			}
 		}
 		else{
-			if(VERBOSE){
+			if(VERBOSE && activity_count_impossible_tries>=MAX_RETRIES_FOR_AN_ACTIVITY_AT_LEVEL_0){
 				cout<<__FILE__<<" line "<<__LINE__<<" - WARNING - after retrying for "<<activity_count_impossible_tries
 				<<" times - no possible time slot for activity with id=="<<gt.rules.internalActivitiesList[ai].id<<endl;
 			}
 		}
 	}
-	
+
 	if(level==0){
 		for(int i=0; i<gt.rules.nHoursPerWeek; i++){
 			l0nWrong[i]=INF;

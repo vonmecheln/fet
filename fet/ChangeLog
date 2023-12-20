@@ -2740,6 +2740,12 @@ Versions 6.13.0 - 6.13.v
 	- Updated the Arabic translation, by Benahmed Abdelkrim. It is again complete.
 - Version 6.13.1
 	- Crash bugs fixed, when working with the new 'History' feature and locking/unlocking activities from the 'Timetable view' dialogs
-	(reported by Vangelis Karafillidis).
+	(reported by Vangelis Karafillidis). These bugs appeared in version 6.12.0, with the introduction of the 'History' feature.
 	- Minor interface bug fixes (reported by Volker Dirr).
+	- Code cleanup.
+- Version 6.13.2
+	- Updated to Qt 6.6.1.
+	- Bug fix: when generating multiple from the GUI or generating from the command-line with a time limit, for some impossible timetables
+	the generation could go on indefinitely without respecting the specified time limit. The bug was introduced in version 6.7.3.
+	- Added an additional test for the feasibility of the generation in the Mornings-Afternoons mode (suggested by sunnysolanki76).
 	- Code cleanup.
