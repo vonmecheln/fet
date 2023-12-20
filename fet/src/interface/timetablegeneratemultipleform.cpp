@@ -671,7 +671,7 @@ void TimetableGenerateMultipleForm::timetableGenerated(int nThread, int timetabl
 			/*TimetableExport::getStudentsTimetable(genMultiMatrix[nThread].c);
 			TimetableExport::getTeachersTimetable(genMultiMatrix[nThread].c);
 			TimetableExport::getRoomsTimetable(genMultiMatrix[nThread].c);*/
-			TimetableExport::getStudentsTeachersRoomsTimetable(genMultiMatrix[nThread].c);
+			TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(genMultiMatrix[nThread].c);
 
 			TimetableExport::writeGenerationResults(this, timetable);
 
@@ -995,7 +995,7 @@ void TimetableGenerateMultipleForm::stop()
 			/*TimetableExport::getStudentsTimetable(*sol);
 			TimetableExport::getTeachersTimetable(*sol);
 			TimetableExport::getRoomsTimetable(*sol);*/
-			TimetableExport::getStudentsTeachersRoomsTimetable(*sol);
+			TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(*sol);
 
 			TimetableExport::writeGenerationResults(this, nTimetable, true);
 
@@ -1172,7 +1172,7 @@ void TimetableGenerateMultipleForm::generationFinished()
 			/*TimetableExport::getStudentsTimetable(*sol);
 			TimetableExport::getTeachersTimetable(*sol);
 			TimetableExport::getRoomsTimetable(*sol);*/
-			TimetableExport::getStudentsTeachersRoomsTimetable(*sol);
+			TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(*sol);
 
 			TimetableExport::writeGenerationResults(this, nTimetable, true);
 

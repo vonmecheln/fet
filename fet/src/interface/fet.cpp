@@ -163,6 +163,7 @@ Matrix3D<int> teachers_timetable_weekly;
 Matrix3D<int> students_timetable_weekly;
 Matrix3D<int> rooms_timetable_weekly;
 Matrix3D<QList<int>> virtual_rooms_timetable_weekly;
+Matrix3D<QList<int>> buildings_timetable_weekly;
 Matrix3D<QList<int>> teachers_free_periods_timetable_weekly;
 
 #ifndef FET_COMMAND_LINE
@@ -254,11 +255,12 @@ void usage(QTextStream* out, const QString& error)
 		"\t--writetimetablesyears=WT10\n"
 		"\t--writetimetablesteachers=WT11\n"
 		"\t--writetimetablesteachersfreeperiods=WT12\n"
-		"\t--writetimetablesrooms=WT13\n"
-		"\t--writetimetablessubjects=WT14\n"
-		"\t--writetimetablesactivitytags=WT15\n"
-		"\t--writetimetablesactivities=WT16\n"
-		"\t\tWT1 to WT16 are either true or false and represent whether you want the corresponding timetables to be written on the disk (default true).\n"
+		"\t--writetimetablesbuildings=WT13\n"
+		"\t--writetimetablesrooms=WT14\n"
+		"\t--writetimetablessubjects=WT15\n"
+		"\t--writetimetablesactivitytags=WT16\n"
+		"\t--writetimetablesactivities=WT17\n"
+		"\t\tWT1 to WT17 are either true or false and represent whether you want the corresponding timetables to be written on the disk (default true).\n"
 		"\n"
 		
 		"\t--printsubjects=PS\n"
@@ -505,6 +507,7 @@ void FetSettings::readGenerationParameters()
 	WRITE_TIMETABLES_YEARS=newSettings.value("write-timetables-years", "true").toBool();
 	WRITE_TIMETABLES_TEACHERS=newSettings.value("write-timetables-teachers", "true").toBool();
 	WRITE_TIMETABLES_TEACHERS_FREE_PERIODS=newSettings.value("write-timetables-teachers-free-periods", "true").toBool();
+	WRITE_TIMETABLES_BUILDINGS=newSettings.value("write-timetables-buildings", "true").toBool();
 	WRITE_TIMETABLES_ROOMS=newSettings.value("write-timetables-rooms", "true").toBool();
 	WRITE_TIMETABLES_SUBJECTS=newSettings.value("write-timetables-subjects", "true").toBool();
 	WRITE_TIMETABLES_ACTIVITY_TAGS=newSettings.value("write-timetables-activity-tags", "true").toBool();
@@ -642,6 +645,7 @@ void FetSettings::writeGenerationParameters()
 	settings.setValue("write-timetables-years", WRITE_TIMETABLES_YEARS);
 	settings.setValue("write-timetables-teachers", WRITE_TIMETABLES_TEACHERS);
 	settings.setValue("write-timetables-teachers-free-periods", WRITE_TIMETABLES_TEACHERS_FREE_PERIODS);
+	settings.setValue("write-timetables-buildings", WRITE_TIMETABLES_BUILDINGS);
 	settings.setValue("write-timetables-rooms", WRITE_TIMETABLES_ROOMS);
 	settings.setValue("write-timetables-subjects", WRITE_TIMETABLES_SUBJECTS);
 	settings.setValue("write-timetables-activity-tags", WRITE_TIMETABLES_ACTIVITY_TAGS);
@@ -1230,6 +1234,7 @@ int main(int argc, char **argv)
 		WRITE_TIMETABLES_YEARS=true;
 		WRITE_TIMETABLES_TEACHERS=true;
 		WRITE_TIMETABLES_TEACHERS_FREE_PERIODS=true;
+		WRITE_TIMETABLES_BUILDINGS=true;
 		WRITE_TIMETABLES_ROOMS=true;
 		WRITE_TIMETABLES_SUBJECTS=true;
 		WRITE_TIMETABLES_ACTIVITY_TAGS=true;
@@ -1484,6 +1489,10 @@ int main(int argc, char **argv)
 			else if(s.left(37)=="--writetimetablesteachersfreeperiods="){
 				if(s.right(5)=="false")
 					WRITE_TIMETABLES_TEACHERS_FREE_PERIODS=false;
+			}
+			else if(s.left(27)=="--writetimetablesbuildings="){
+				if(s.right(5)=="false")
+					WRITE_TIMETABLES_BUILDINGS=false;
 			}
 			else if(s.left(23)=="--writetimetablesrooms="){
 				if(s.right(5)=="false")
@@ -1994,7 +2003,7 @@ int main(int argc, char **argv)
 			/*TimetableExport::getStudentsTimetable(cc);
 			TimetableExport::getTeachersTimetable(cc);
 			TimetableExport::getRoomsTimetable(cc);*/
-			TimetableExport::getStudentsTeachersRoomsTimetable(cc);
+			TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(cc);
 
 			QString toc=outputDirectory;
 			if(toc!="" && toc.length()>=1 && toc.endsWith(FILE_SEP)){
@@ -2066,7 +2075,7 @@ int main(int argc, char **argv)
 			/*TimetableExport::getStudentsTimetable(ch);
 			TimetableExport::getTeachersTimetable(ch);
 			TimetableExport::getRoomsTimetable(ch);*/
-			TimetableExport::getStudentsTeachersRoomsTimetable(ch);
+			TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(ch);
 
 			QString toh=outputDirectory;
 			if(toh!="" && toh.length()>=1 && toh.endsWith(FILE_SEP)){
@@ -2121,7 +2130,7 @@ int main(int argc, char **argv)
 			/*TimetableExport::getStudentsTimetable(cc);
 			TimetableExport::getTeachersTimetable(cc);
 			TimetableExport::getRoomsTimetable(cc);*/
-			TimetableExport::getStudentsTeachersRoomsTimetable(cc);
+			TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(cc);
 
 			QString toc=outputDirectory;
 			if(toc!="" && toc.length()>=1 && toc.endsWith(FILE_SEP)){
@@ -2212,7 +2221,7 @@ int main(int argc, char **argv)
 			/*TimetableExport::getStudentsTimetable(ch);
 			TimetableExport::getTeachersTimetable(ch);
 			TimetableExport::getRoomsTimetable(ch);*/
-			TimetableExport::getStudentsTeachersRoomsTimetable(ch);
+			TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(ch);
 
 			QString toh=outputDirectory;
 			if(toh!="" && toh.length()>=1 && toh.endsWith(FILE_SEP)){
@@ -2253,7 +2262,7 @@ int main(int argc, char **argv)
 			/*TimetableExport::getStudentsTimetable(c);
 			TimetableExport::getTeachersTimetable(c);
 			TimetableExport::getRoomsTimetable(c);*/
-			TimetableExport::getStudentsTeachersRoomsTimetable(c);
+			TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(c);
 
 			TimetableExport::writeGenerationResultsCommandLine(nullptr, outputDirectory);
 			

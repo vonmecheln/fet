@@ -242,7 +242,7 @@ void TimetableGenerateForm::stop()
 	/*TimetableExport::getStudentsTimetable(c);
 	TimetableExport::getTeachersTimetable(c);
 	TimetableExport::getRoomsTimetable(c);*/
-	TimetableExport::getStudentsTeachersRoomsTimetable(c);
+	TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
@@ -410,7 +410,7 @@ void TimetableGenerateForm::stopHighest()
 	/*TimetableExport::getStudentsTimetable(c);
 	TimetableExport::getTeachersTimetable(c);
 	TimetableExport::getRoomsTimetable(c);*/
-	TimetableExport::getStudentsTeachersRoomsTimetable(c);
+	TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
@@ -555,7 +555,7 @@ void TimetableGenerateForm::impossibleToSolve()
 	/*TimetableExport::getStudentsTimetable(c);
 	TimetableExport::getTeachersTimetable(c);
 	TimetableExport::getRoomsTimetable(c);*/
-	TimetableExport::getStudentsTeachersRoomsTimetable(c);
+	TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
@@ -720,7 +720,7 @@ void TimetableGenerateForm::generationFinished()
 	/*TimetableExport::getStudentsTimetable(c);
 	TimetableExport::getTeachersTimetable(c);
 	TimetableExport::getRoomsTimetable(c);*/
-	TimetableExport::getStudentsTeachersRoomsTimetable(c);
+	TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Soft conflicts", "Title of dialog");
@@ -953,7 +953,7 @@ void TimetableGenerateForm::write(){
 	/*TimetableExport::getStudentsTimetable(c);
 	TimetableExport::getTeachersTimetable(c);
 	TimetableExport::getRoomsTimetable(c);*/
-	TimetableExport::getStudentsTeachersRoomsTimetable(c);
+	TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");
@@ -1005,7 +1005,7 @@ void TimetableGenerateForm::writeHighestStage(){
 	/*TimetableExport::getStudentsTimetable(c);
 	TimetableExport::getTeachersTimetable(c);
 	TimetableExport::getRoomsTimetable(c);*/
-	TimetableExport::getStudentsTeachersRoomsTimetable(c);
+	TimetableExport::getStudentsTeachersRoomsBuildingsTimetable(c);
 
 	//update the string representing the conflicts
 	conflictsStringTitle=TimetableGenerateForm::tr("Conflicts", "Title of dialog");

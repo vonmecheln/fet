@@ -105,19 +105,21 @@ public:
 	double fitness(Rules& r, FakeString* conflictsString=nullptr);
 
 	void getTeachersTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<int>>& b);
-	//return value is the number of conflicts, which must be 0
 
 	void getSubgroupsTimetable(Rules& r, Matrix3D<int>& a);
-	//return value is the number of conflicts, which must be 0
 
 	void getRoomsTimetable(Rules& r, Matrix3D<int>& a, Matrix3D<QList<int>>& va);
-	//return value is the number of conflicts, which must be 0
+	
+	void getBuildingsTimetable(Rules& r, Matrix3D<QList<int>>& a);
 
 	int getSubgroupsMatrix(Rules& r, Matrix3D<int>& a);
+	//return value is the number of conflicts, which must be 0
 
 	int getTeachersMatrix(Rules& r, Matrix3D<int>& a);
+	//return value is the number of conflicts, which must be 0
 
 	int getRoomsMatrix(Rules& r, Matrix3D<int>& a);
+	//return value is the number of conflicts, which must be 0
 };
 
 #endif

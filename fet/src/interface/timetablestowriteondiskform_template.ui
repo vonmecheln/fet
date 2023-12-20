@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>577</width>
-    <height>373</height>
+    <height>432</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -57,20 +57,30 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QCheckBox" name="groupsCheckBox">
+        <item row="7" column="0">
+         <widget class="QCheckBox" name="subjectsCheckBox">
           <property name="text">
-           <string>Groups</string>
+           <string>Subjects</string>
           </property>
           <property name="checked">
            <bool>true</bool>
           </property>
          </widget>
         </item>
-        <item row="2" column="0">
-         <widget class="QCheckBox" name="yearsCheckBox">
+        <item row="8" column="0">
+         <widget class="QCheckBox" name="activityTagsCheckBox">
           <property name="text">
-           <string>Years</string>
+           <string>Activity tags</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QCheckBox" name="activitiesCheckBox">
+          <property name="text">
+           <string>Activities</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -87,6 +97,26 @@
           </property>
          </widget>
         </item>
+        <item row="1" column="0">
+         <widget class="QCheckBox" name="groupsCheckBox">
+          <property name="text">
+           <string>Groups</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QCheckBox" name="roomsCheckBox">
+          <property name="text">
+           <string>Rooms</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
         <item row="4" column="0">
          <widget class="QCheckBox" name="teachersFreePeriodsCheckBox">
           <property name="text">
@@ -97,40 +127,20 @@
           </property>
          </widget>
         </item>
+        <item row="2" column="0">
+         <widget class="QCheckBox" name="yearsCheckBox">
+          <property name="text">
+           <string>Years</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
         <item row="5" column="0">
-         <widget class="QCheckBox" name="roomsCheckBox">
+         <widget class="QCheckBox" name="buildingsCheckBox">
           <property name="text">
-           <string>Rooms</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="0">
-         <widget class="QCheckBox" name="subjectsCheckBox">
-          <property name="text">
-           <string>Subjects</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="0">
-         <widget class="QCheckBox" name="activitiesCheckBox">
-          <property name="text">
-           <string>Activities</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="0">
-         <widget class="QCheckBox" name="activityTagsCheckBox">
-          <property name="text">
-           <string>Activity tags</string>
+           <string>Buildings</string>
           </property>
           <property name="checked">
            <bool>true</bool>

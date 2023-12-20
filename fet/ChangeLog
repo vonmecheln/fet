@@ -2729,7 +2729,7 @@ Version 6.12.0
 	- Updated the Russian translation, by Alexey Chernous.
 	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares. It is again complete.
 ---------------------------------------------------------------------------------
-Versions 6.13.0 - 6.13.v
+Versions 6.13.0 - 6.13.2
 - Version 6.13.0
 	- Added a kind of data file autosave feature (suggested by mohammed, Vangelis Karafillidis, DT, and maybe other users). This feature is optional,
 	and by default it is disabled (it can be enabled from the 'File > Autosave settings' menu entry).
@@ -2746,6 +2746,13 @@ Versions 6.13.0 - 6.13.v
 - Version 6.13.2
 	- Updated to Qt 6.6.1.
 	- Bug fix: when generating multiple from the GUI or generating from the command-line with a time limit, for some impossible timetables
-	the generation could go on indefinitely without respecting the specified time limit. The bug was introduced in version 6.7.3.
+	the generation could go on indefinitely without respecting the specified time limit. The bug was introduced in version 6.7.3, which was released
+	on 24 November 2022.
 	- Added an additional test for the feasibility of the generation in the Mornings-Afternoons mode (suggested by sunnysolanki76).
+	- Code cleanup.
+---------------------------------------------------------------------------------
+Versions 6.14.0 - 6.14.v
+- Version 6.14.0
+	- Implemented the HTML exporting and the printing of the timetables for the buildings (suggested by Benahmed Abdelkrim).
+	- Minor corrections in the HTML exporting and in the printing of the timetables.
 	- Code cleanup.

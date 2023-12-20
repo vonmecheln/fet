@@ -65,6 +65,11 @@ The timetable for the rooms
 extern Matrix3D<int> rooms_timetable_weekly;
 extern Matrix3D<QList<int>> virtual_rooms_timetable_weekly;
 
+/**
+The timetable for the buildings
+*/
+extern Matrix3D<QList<int>> buildings_timetable_weekly;
+
 #ifndef FET_COMMAND_LINE
 class FetSettings: public QObject{
 	Q_OBJECT

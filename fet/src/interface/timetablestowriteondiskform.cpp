@@ -45,6 +45,7 @@ TimetablesToWriteOnDiskForm::TimetablesToWriteOnDiskForm(QWidget* parent): QDial
 	yearsCheckBox->setChecked(WRITE_TIMETABLES_YEARS);
 	teachersCheckBox->setChecked(WRITE_TIMETABLES_TEACHERS);
 	teachersFreePeriodsCheckBox->setChecked(WRITE_TIMETABLES_TEACHERS_FREE_PERIODS);
+	buildingsCheckBox->setChecked(WRITE_TIMETABLES_BUILDINGS);
 	roomsCheckBox->setChecked(WRITE_TIMETABLES_ROOMS);
 	subjectsCheckBox->setChecked(WRITE_TIMETABLES_SUBJECTS);
 	activityTagsCheckBox->setChecked(WRITE_TIMETABLES_ACTIVITY_TAGS);
@@ -72,6 +73,7 @@ void TimetablesToWriteOnDiskForm::wasAccepted()
 	WRITE_TIMETABLES_YEARS=yearsCheckBox->isChecked();
 	WRITE_TIMETABLES_TEACHERS=teachersCheckBox->isChecked();
 	WRITE_TIMETABLES_TEACHERS_FREE_PERIODS=teachersFreePeriodsCheckBox->isChecked();
+	WRITE_TIMETABLES_BUILDINGS=buildingsCheckBox->isChecked();
 	WRITE_TIMETABLES_ROOMS=roomsCheckBox->isChecked();
 	WRITE_TIMETABLES_SUBJECTS=subjectsCheckBox->isChecked();
 	WRITE_TIMETABLES_ACTIVITY_TAGS=activityTagsCheckBox->isChecked();

@@ -50,7 +50,7 @@ public:
 	/*static void getStudentsTimetable(Solution& c);
 	static void getTeachersTimetable(Solution& c);
 	static void getRoomsTimetable(Solution& c);*/
-	static void getStudentsTeachersRoomsTimetable(Solution& c);
+	static void getStudentsTeachersRoomsBuildingsTimetable(Solution& c);
 	static void getNumberOfPlacedActivities(int& number1, int& number2);
 	
 	static void writeGenerationResults(QWidget* parent);
@@ -159,6 +159,26 @@ public:
 	static QString singleTeachersTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxTeachers, QSet<int>& excludedNames, const QString& saveTime,
 		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
 		bool repeatNames);
+
+	static QString singleBuildingsTimetableDaysHorizontalHtml(int htmlLevel, int building, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleBuildingsTimetableDaysVerticalHtml(int htmlLevel, int building, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleBuildingsTimetableTimeHorizontalHtml(int htmlLevel, int maxBuildings, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleBuildingsTimetableTimeVerticalHtml(int htmlLevel, int maxBuildings, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleBuildingsTimetableTimeHorizontalDailyHtml(int htmlLevel, int day, int maxBuildings, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+	static QString singleBuildingsTimetableTimeVerticalDailyHtml(int htmlLevel, int day, int maxBuildings, QSet<int>& excludedNames, const QString& saveTime,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
+		bool repeatNames);
+
 	static QString singleRoomsTimetableDaysHorizontalHtml(int htmlLevel, int room, const QString& saveTime,
 		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms,
 		bool repeatNames);
@@ -272,6 +292,14 @@ private:
 	static void writeTeachersTimetableTimeVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeTeachersTimetableTimeHorizontalDailyHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeTeachersTimetableTimeVerticalDailyHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
+
+	static void writeBuildingsTimetableDaysHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
+	static void writeBuildingsTimetableDaysVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
+	static void writeBuildingsTimetableTimeHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
+	static void writeBuildingsTimetableTimeVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
+	static void writeBuildingsTimetableTimeHorizontalDailyHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
+	static void writeBuildingsTimetableTimeVerticalDailyHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
+
 	static void writeRoomsTimetableDaysHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeRoomsTimetableDaysVerticalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
 	static void writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, const QString& htmlfilename, const QString& saveTime, int placedActivities);
@@ -306,6 +334,13 @@ private:
 		const QString& skipTeacher);
 	static QString writeActivitiesTeachers(int htmlLevel, const QList<int>& allActivities,
 		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
+
+	static QString writeActivityBuilding(int htmlLevel, int building, int day, int hour, bool colspan, bool rowspan,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms
+		/*, const QString& skipBuilding*/); //currently unneeded, because FET supports only one building per activity
+	static QString writeActivitiesBuildings(int htmlLevel, const QList<int>& allActivities,
+		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms);
+
 	static QString writeActivityRoom(int htmlLevel, int room, int day, int hour, bool colspan, bool rowspan,
 		bool printSubjects, bool printActivityTags, bool printTeachers, bool printStudents, bool printRooms
 		/*, const QString& skipRoom*/); //currently unneeded, because FET supports only one room per activity

@@ -544,3 +544,39 @@ void Solution::getRoomsTimetable(
 		}
 	}
 }
+
+void Solution::getBuildingsTimetable(
+	Rules& r,
+	Matrix3D<QList<int>>& a)
+{
+	assert(r.initialized);
+	assert(r.internalStructureComputed);
+	
+	a.resize(r.nInternalBuildings, r.nDaysPerWeek, r.nHoursPerDay);
+	
+	int i, j, k;
+	for(i=0; i<r.nInternalBuildings; i++)
+		for(j=0; j<r.nDaysPerWeek; j++)
+			for(k=0; k<r.nHoursPerDay; k++)
+				a[i][j][k].clear();
+
+	Activity *act;
+	for(i=0; i<r.nInternalActivities; i++){
+		act=&r.internalActivitiesList[i];
+		int room=this->rooms[i];
+		if(room!=UNALLOCATED_SPACE && room!=UNSPECIFIED_ROOM){
+			int building=r.internalRoomsList[room]->buildingIndex;
+			
+			if(times[i]!=UNALLOCATED_TIME && building>=0){
+				int hour=times[i]/r.nDaysPerWeek;
+				int day=times[i]%r.nDaysPerWeek;
+				
+				for(int dd=0; dd < act->duration; dd++){
+					assert(hour+dd<r.nHoursPerDay);
+					
+					a[building][day][hour+dd].append(i);
+				}
+			}
+		}
+	}
+}
