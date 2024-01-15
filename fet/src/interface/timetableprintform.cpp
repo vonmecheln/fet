@@ -662,7 +662,7 @@ TimetablePrintForm::TimetablePrintForm(QWidget *parent): QDialog(parent){
 	connect(pbPrintPreviewFull, SIGNAL(clicked()), this, SLOT(printPreviewFull()));
 	connect(pbClose, SIGNAL(clicked()), this, SLOT(close()));
 	
-	connect(automaticColors, SIGNAL(stateChanged(int)), this, SLOT(automaticColorsCheckBoxToggled()));
+	connect(automaticColors, SIGNAL(toggled(bool)), this, SLOT(automaticColorsCheckBoxToggled()));
 	
 	//connect(RBDaysHorizontal, SIGNAL(toggled(bool)), this, SLOT(updateCBDivideTimeAxisByDay()));
 	//connect(RBDaysVertical, SIGNAL(toggled(bool)), this, SLOT(updateCBDivideTimeAxisByDay()));

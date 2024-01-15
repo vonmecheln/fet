@@ -46,6 +46,7 @@ File statisticsexport.cpp
 #include <QDir>
 
 #include <QFile>
+#include <QFileDevice>
 #include <QTextStream>
 
 //#include <QApplication>
@@ -477,9 +478,10 @@ bool StatisticsExport::exportStatisticsStylesheetCss(QWidget* parent, const QStr
 	
 	tos<<"/* "<<StatisticsExport::tr("End of file.")<<" */\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		QMessageBox::critical(parent, tr("FET critical"),
-		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 StatisticsExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 		return false;
 	}
 	file.close();
@@ -598,9 +600,10 @@ bool StatisticsExport::exportStatisticsIndex(QWidget* parent, const QString& sav
 	tos<<"    </table>\n";
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		QMessageBox::critical(parent, tr("FET critical"),
-		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 StatisticsExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 		return false;
 	}
 	file.close();
@@ -683,9 +686,10 @@ bool StatisticsExport::exportStatisticsTeachersSubjects(QWidget* parent, const Q
 	tos<<exportStatisticsTeachersSubjectsHtml(parent, saveTime, statisticValues, htmlLevel, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, statisticValues.allTeachersNames.count(), &tmpSet);
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		QMessageBox::critical(parent, tr("FET critical"),
-		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 StatisticsExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 		return false;
 	}
 	file.close();
@@ -993,9 +997,10 @@ bool StatisticsExport::exportStatisticsSubjectsTeachers(QWidget* parent, const Q
 	tos<<StatisticsExport::exportStatisticsSubjectsTeachersHtml(parent, saveTime, statisticValues, htmlLevel, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, statisticValues.allSubjectsNames.count(), &tmpSet);
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		QMessageBox::critical(parent, tr("FET critical"),
-		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 StatisticsExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 		return false;
 	}
 	file.close();
@@ -1301,9 +1306,10 @@ bool StatisticsExport::exportStatisticsTeachersStudents(QWidget* parent, const Q
 	tos<<StatisticsExport::exportStatisticsTeachersStudentsHtml(parent, saveTime, statisticValues, htmlLevel, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, statisticValues.allTeachersNames.count(), &tmpSet);
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		QMessageBox::critical(parent, tr("FET critical"),
-		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 StatisticsExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 		return false;
 	}
 	file.close();
@@ -1610,9 +1616,10 @@ bool StatisticsExport::exportStatisticsStudentsTeachers(QWidget* parent, const Q
 	tos<<StatisticsExport::exportStatisticsStudentsTeachersHtml(parent, saveTime, statisticValues, htmlLevel, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, statisticValues.allStudentsNames.count(), &tmpSet);
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		QMessageBox::critical(parent, tr("FET critical"),
-		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 StatisticsExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 		return false;
 	}
 	file.close();
@@ -1919,9 +1926,10 @@ bool StatisticsExport::exportStatisticsSubjectsStudents(QWidget* parent, const Q
 	tos<<StatisticsExport::exportStatisticsSubjectsStudentsHtml(parent, saveTime, statisticValues, htmlLevel, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, statisticValues.allSubjectsNames.count(), &tmpSet);
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		QMessageBox::critical(parent, tr("FET critical"),
-		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 StatisticsExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 		return false;
 	}
 	file.close();
@@ -2227,9 +2235,10 @@ bool StatisticsExport::exportStatisticsStudentsSubjects(QWidget* parent, const Q
 	tos<<StatisticsExport::exportStatisticsStudentsSubjectsHtml(parent, saveTime, statisticValues, htmlLevel, TIMETABLE_HTML_PRINT_ACTIVITY_TAGS, statisticValues.allStudentsNames.count(), &tmpSet);
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		QMessageBox::critical(parent, tr("FET critical"),
-		 StatisticsExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 StatisticsExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 		return false;
 	}
 	file.close();

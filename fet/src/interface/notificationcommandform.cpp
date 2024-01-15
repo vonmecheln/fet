@@ -52,8 +52,8 @@ NotificationCommandForm::NotificationCommandForm(QWidget* parent): QDialog(paren
 	externalCommandCheckBox->setChecked(ENABLE_COMMAND_AT_END_OF_GENERATION);
 	//detachedCheckBox->setChecked(DETACHED_NOTIFICATION);
 
-	connect(externalCommandCheckBox, SIGNAL(stateChanged(int)), this, SLOT(externalCommandCheckBoxToggled()));
-	//connect(detachedCheckBox, SIGNAL(stateChanged(int)), this, SLOT(detachedCheckBoxToggled()));
+	connect(externalCommandCheckBox, SIGNAL(toggled(bool)), this, SLOT(externalCommandCheckBoxToggled()));
+	//connect(detachedCheckBox, SIGNAL(toggled(bool)), this, SLOT(detachedCheckBoxToggled()));
 
 	connect(browsePushButton, SIGNAL(clicked()), this, SLOT(browse()));
 

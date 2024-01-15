@@ -2705,8 +2705,8 @@ Versions 6.11.0 - 6.11.1
 	- In the dialogs of all activities, all time constraints, and all space constraints, the list of activities / time constraints / space constraints
 	is multi-selectable (suggested by T. Renganathan, Yush Yuen, daviodan, Lizio, fartoto_dz2004, Vangelis Karafillidis, and maybe other users).
 	- Added an option in the dialogs add time / space constraints for the teacher(s), so that you can now add individual constraints for each teacher
-	with a single click (suggested by Valdo, Julio González Gil, utismetis, Davide Cottignoli, mercurialuser, auriolar, Rodolfo Ribeiro Gomes, pg788,
-	satellite2, Zafar Allah Askar, nouvakis, mbarsan, pgsrihr, Massimo Mancini, Chafik Graiguer, Vangelis Karafillidis, Fritzlang, and maybe other users).
+	with a single click (suggested by Valdo, Julio González Gil, utismetis, Davide Cottignoli, mercurialuser, auriolar, Rodolfo Ribeiro Gomes, pg788, satellite2,
+	Zafar Allah Askar, nouvakis, mbarsan, pgsrihr, Massimo Mancini, Chafik Graiguer, Vangelis Karafillidis, Fritzlang, wojgp, and maybe other users).
 	- Implemented a time horizontal view of teachers / students not available times constraints (suggested by Vangelis Karafillidis). These views
 	are accessible from the teachers / students time constraints menus.
 	- The cells in the three timetable view time horizontal dialogs can now be made very small, so that you can have a better view of the overall timetable.
@@ -2759,3 +2759,7 @@ Versions 6.14.0 - 6.14.v
 - Version 6.14.1
 	- Critical crash bugs fixed, when removing space constraints from their dialogs (not from the 'all space constraints' dialog)
 	(reported by gerry). These bugs were present since FET version 6.12.0, released on 13 November 2023.
+- Version 6.14.2
+	- The 'printable' option of the activity tags will be considered when exporting the generated timetable as a CSV file (so that the nonprintable
+	activity tags will not appear). Suggested by pnlshd.
+	- Code cleanup.

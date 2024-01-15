@@ -838,7 +838,7 @@ then I can not define the surveillance activities.
 - We try that all the teachers work maximum 2 afternoons per week. This has been easy to define with "All teachers work in an hourly interval max days per week".
 But we try also that teachers who work two days per week in the afternoon to have a free morning. I don't know how to define this situation.
 
-47------------PARTIALLY DONE IN FET-6.11.0 on 23 October 2023
+47------------PARTIALLY DONE IN FET-6.11.0 on 23 October 2023 (done for activities and all time/space constraints)
 From T. Renganathan:
 
 You can include a provision for multiple selection of subjects, teachers,
@@ -1128,7 +1128,7 @@ the teacher from list of teachers) or on students groups basis (always from
 a list) The lists are mentained from subsequent generations and saved with
 data.
 
-58-----------DONE in FET-6.12.0 on 3 November 2023---------
+58---PARTIALLY-DONE in FET-6.12.0 on 3 November 2023--------
 (see also items #149, #368, and #396)
 From Massimo Mancini:
 
@@ -1211,7 +1211,8 @@ By the way, is it really necessary to have two dialogs? I could imagine a check 
 66---------------------------------------------------------
 From Chafik Graiguer and Pietro (see also items #145 and #248):
 
-DONE since FET-5.41.0 - 2019-11-20 --> -Min hours daily with an activity tag (to count real activities only leaving pseudo activities out of count) <-- DONE
+DONE since FET-5.41.0 - 2019-11-20 --> ... <-- DONE
+
 -Min hours continuously with an activity tag
 
 67---------------------------------------------------------
@@ -1722,14 +1723,7 @@ From Silver (on forum):
 
 He needs "teachers_rooms.html" in the statistics folder, he thinks it would be useful for the examination timetable.
 
-107-----------partially DONE in FET-6.8.0-------------------
-From Horatiu Halmajan and Yush Yuen:
-
-They suggest the possibility of selecting more constraints in the all time/space constraints dialogs and
-de(activate)/remove them in a single operation.
-
-Liviu Lalescu, 8 January 2023: In FET-6.8.0 it is now possible to activate/deactivate all the constraints listed in the all time/space constraints
-dialog (and it was possible since a long time now to select an advanced filter there).
+107-partially DONE in FET-6.8.0, then finally DONE in FET-6.11.0, released on 25 October 2023-
 
 108---------------------------------------------------------
 From skinkone (on forum):
@@ -2393,14 +2387,6 @@ So I want to avoid those two hour lessons for all 1+1+1+1 and 1+1+1 and 1+1 acti
 Liviu Lalescu: I think the best is a new constraint, students/teachers max building changes in a time interval, and each room is in a different building in your case.
 
 149---------DONE in FET-6.12.0 on 3 November 2023-----------
-(see also items #58, #368, and #396)
-From uni_instructor (on forum):
-
-Finding a good optimized timetable means playing around with the parameters and constraints.
-
-In my opinion an UNDO (button) would be a helpful feature, since I could add / or modify some constraints and test the feasibility of the new timetable. Otherwise I can undo my last modifications and retry the timetable generation with other settings.
-I conceive an UNDO function as it can be seen e.g. in MS-office showing a history of my last n modifications, where n is the number of undoable steps.
-The "history" of modification-steps would give me a good hint on what steps I could try otherwise.
 
 150---------------------------------------------------------
 From Nemo (on forum):
@@ -2498,24 +2484,7 @@ completed version, unlock some year, then let the program to run again.
 Liviu: I did such a custom version for Yush, but it turns out not to work
 as needed, because of broken soft constraints.
 
-158----partially DONE in FET-6.8.0 and FET-6.11.0 on 23 October 2023
-From Yush Yuen:
-
-(Also suggested by daviodan: multiple selection with Ctrl or Shift in the
-all time/space constraints and activate/deactivate them with a single click).
-
-It would be great if the list of "all time constraints" could be a
-multiple select box. Currently, the way I unlock allocated time is by going
-to the "all time constraints" list, filter out the years that I want to
-open, then remove them one at a time. Actually, before that, I go to the
-student view of the generated timetable, select all, then click unlock time.
-
-It would be nice if I can just do multiple selection and click the "remove"
-or deactivate button just once.
-
-Liviu Lalescu, 8 January 2023: In FET-6.8.0 it is now possible to activate/deactivate
-all the constraints listed in the all time/space constraints dialog (and it was
-possible since a long time now to select an advanced filter there).
+158----DONE in FET-6.8.0 and FET-6.11.0 on 23 October 2023--
 
 159--------------------------DONE---------------------------
 
@@ -2693,9 +2662,6 @@ maximum level of conflict.
 Liviu Lalescu: since version 5.20.2 we added a detailed report for multiple generation of timetables.
 
 178----------DONE in FET-6.10.0-17-October-2023-------------
-From Silver (on forum):
-
---DONE--
 
 179---------------------------------------------------------
 From nouvakis (on forum):
@@ -3032,12 +2998,16 @@ See also item #324
 (Added on 2014-10-12)
 From fromturkey (on forum):
 
-I think the program should be able to use multiple CPUs/cores. Especially when trying to generate difficult timetables it takes a lot of time processing. If the program could use multiple CPUs, it would take much more shorter.
+I think the program should be able to use multiple CPUs/cores. Especially when trying to generate difficult timetables it takes a lot
+of time processing. If the program could use multiple CPUs, it would take much more shorter.
+
 Is it possible with the current algorithm?
 
-Liviu:
+Liviu Lalescu:
 
 Unfortunately, I cannot think of how to adapt the FET algorithm to multiple cores.
+
+Also suggested by Benahmed Abdelkrim on the forum (https://lalescu.ro/liviu/fet/forum/index.php?topic=2420.0)
 
 201-------------------------DONE----------------------------
 
@@ -4195,8 +4165,7 @@ allocation and operation. I am not sure.
 249---------------------------------------------------------
 From Handaya:
 
-DONE since FET-5.29.0 on 15 March 2016 --> 1) what if the html result be colorful also as in the program ?
-(This point was also suggested by hudrea and by Udo Schütz). <-- DONE
+DONE since FET-5.29.0 on 15 March 2016 --> 1) <-- DONE
 2) what if the colors be the same for the same teacher ?
 3) what if the program allows marking a weekly meeting for all teachers
 without printing every name in the cell of timetable result ?
@@ -4205,9 +4174,7 @@ formats like doc and pdf ?
 
 Liviu:
 
-DONE since FET-5.29.0 on 15 March 2016 --> (1) - The HTML results can be colored by using the CSS file. It is too
-difficult for us, the programmers, to color them as in the FET
-interface. <-- DONE
+DONE since FET-5.29.0 on 15 March 2016 --> (1) <-- DONE
 
 (2) - In the interface, the colors are the same for the same
 subject/subject+students set. This is what we came to after some
@@ -5065,10 +5032,6 @@ Teacher(s) min gaps per day;
 Teacher(s) min gaps per week;
 A set of activities has min common time slots with another set of activities ( https://lalescu.ro/liviu/fet/forum/index.php?topic=3101.msg16795#msg16795 )
 
-DONE SINCE FET 5.41.0 on 2019-11-16: Min simultaneous activities from a set in selected time slots.
-
-DONE SINCE FET 5.41.0 on 2019-11-16: A set of activities occupies min time slots from a selection.
-
 Also suggested by auriolar, on forum: Teacher(s) max span per week.
 
 313---------------------------------------------------------
@@ -5078,94 +5041,7 @@ I suggest you add the split and duration in subject window, why we add the split
 With this suggestion, we add the splits and duration 1 time for the subject.
 Exmple: Physics1 have 2 split in the week, so why I add this info in every activity for Physics1?!
 
-314---------------------------------------------------------
-DONE in FET-6.0.0 and subsequent versions:
-
-From Benahmed Abdelkrim and Volker Dirr (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=3141.0
-
-1. Volker Dirr suggests renaming the Algeria and Morocco version to other better names, since they can be used more generally in other countries/institutions.
-
-2. They suggest to implement some new constraints in the official FET, so that the Algeria and Morocco versions can be simulated by the official FET.
-
-Volker Dirr:
-
-I think one (maybe) needed is following constraint:
-constraint teacher is working only in one out of two set of times.
-
-So if teachers should work only in the morning or in the evening, you need to add as many constraint as you have got days:
-the first constraint:
-    1. set of times contains all morning hours on Monday.
-    2. set of times contains all evening hours of Monday.
-
-the second constraint:
-similar with Tuesday.
-...
-
-
-This constraint can be also used to avoid the problem of an other user. I remember a guy with 3 shifts (morning, evening, night). His request was, that a teacher is not allowed to teach the night shift and then the next morning shift.
-That could be also solved with the constraint above: "constraint teacher is working only in one out of two set of times."
-So this time he need to setup like this:
-the first constraint:
-    1. set of times contains all night hours on Monday.
-    2. set of times contains all morning hours of Tuesday.
-
-the second constraint:
-...
-
-So again as many constraint as you have days (or days-1 if you don't work over weekend).
-
----
-
-Volker Dirr:
-
-The other will be the gaps constraints.
-So a constraint like:
-"max gaps per day in an interval" and "max gaps per week in an interval" might be maybe enough.
-
-So you maybe need to add only 2 constraints:
-1. "max gaps per day in an interval" with the interval : "first hour of of morning" up to "last hour of morning"
-2. "max gaps per day in an interval" with the interval : "first hour of of evening" up to "last hour of evening"
-
----
-
-Benahmed Abdelkrim:
-
-I believe it's time to rethink the 2 variants of FET with the official version.
-This work is feasible by the addition of new time constraints for teachers and students. I myself realized this fact through adding pseudo activities to teachers and student groups. These are considered gaps. I got acceptable timetables with all student groups. But for teachers there was one or two that I have to manually edit.
-
-It is while working on the official version that I recently discovered this bug that accelerated the release of version 5.31.5.
-
-There was a lot of work to be done, especially for teachers because they did not have the same number of hours per week, and I had to think of teachers one by one.
-
-The time was lengthened in this way (of the hours of waiting), which I have now abandoned this project.
-
-Now the idea has been raised again but in another way that has encouraged me to intervene here.
-
-I believe it is possible to use the official version to realize time tables in the Algerian or Moroccan way.
-For this purpose it must consider the addition of the following time constraints:
-
-1. Min hours in a time interval
-Interval = first hour of morning(or afternoon) - last hour of morning(or afternoon)
-2. max gaps in the last(or first) hour of morning(or afternoon) for students (set)
-3. activity(ies) ends students interval.
-
----
-
-Benahmed Abdelkrim:
-
-...So it is possible -in my opinion - to integrate both versions in official FET, reasoning not by day, but by interval.
-Can open a dialog with the user to define the number of intervals he wants.
-
- for example:
-Interval1 = first hour of morning - last hour of morning
-interval2 = first hour of afternoon - last hour of afternoon
-interval3 = first hour of evening - last hour of evening
-...etc.
-And can also define between each interval a constraint of break time.
-
-In this way can integrate the time constraints specific to 2 versions customized in official FET.
+314-------DONE in FET-6.0.0 and subsequent versions:--------
 
 315------------------DONE-----------------------------------
 
@@ -5247,7 +5123,7 @@ P1 pseudo-activity, and A2 real activity. If you want A1 and A2 not to be consec
 From Volker Dirr:
 
 get rid of max_days_per_week and max_hours_per_day.
-one needed step for that is redisigning the interface, since the 
+one needed step for that is redesigning the interface, since the 
 interface use it.
 it won't be too difficult to fix that.
 just add hours per day and days per week as a QStringList (like teacher 
@@ -5522,12 +5398,7 @@ From Emiliano Llano Díaz:
 Improvement suggestion: Is a nag that each time you open FET it does not "remember" the file it was working on (I know it is just 2 clicks away on
 file->open recent, but... you know humans are lazy 😁  )
 
-341--Probably DONE in FET-6.13.0 on 14 November 2023 (autosave of the current file)--
-From mohammed (on forum):
-
-Nous voulons ajouter la fonction de sauvegarde automatique du programme, en cas de travail, l'alimentation s'éteint
-
-(We would like to add the function of automatic save of the program, in case of work, the power goes off).
+341--------DONE in FET-6.13.0 on 14 November 2023-----------
 
 342---------------------------------------------------------
 From Vangelis Karafillidis:
@@ -5538,15 +5409,7 @@ All students must respect the maximum span (in number of hours) per day.
 
 Circular -> better write: Circularly.
 
-343---------------------------------------------------------
-From Rodolfo Ribeiro Gomes:
-
-What do you think about leaving the version number and date out of
-HelpAboutForm_template.ui ?
-Maybe leaving a placeholder there, and making use of FET_VERSION and a
-l10n version of date.
-
-That will reduce .ts diff a lot and reduces translator efforts ;)
+343------------------DONE-----------------------------------
 
 344---------------------------------------------------------
 From V Paul C Charlesraj (on forum):
@@ -5627,15 +5490,7 @@ From Taro Tada:
 
 Either allow two or more users to work concurrently on a unique FET file, or allow the merging of two or more .fet files.
 
-347---------------------------------------------------------
-From bachiri401 (on forum):
-
-For all students sets subject Sport cannot be followed immediately by a hard subject like Math.
-
-Liviu and Rodolfo Ribeiro Gomes:
-
-Constraint two activities not consecutive (to say that the situation A1, then immediately A2 is forbidden, any
-other situation is acceptable).
+347------------------DONE-----------------------------------
 
 348---------------------------------------------------------
 From Fernando A F Lordão (on forum):
@@ -5651,14 +5506,7 @@ times I included the constraint with the first name on the list, having so to st
 I think this mistake happens because our brain thinks: "I have already chosen the name", but it does NOT take into account that it was on the previous screen.
 So, how about we give a hand to the brain and inherit the values from filters to the next "Add" screen.
 
-349---------------------------------------------------------
-From Benahmed Abdelkrim (on forum):
-
-He complains that if a constraint min days between activities has consecutive if same day unselected, there can be 3 activities on the same day
-(or real day, for the custom Morocco and Algeria versions).
-
-Volker Dirr suggests to add a Boolean setting for the min days between activities constraints, so that only 2 activities are allowed on the same day
-if this value is true.
+349----------------DONE-------------------------------------
 
 350---------------------------------------------------------
 From aisse (on forum):
@@ -5737,9 +5585,9 @@ available but R1 not, A is impossible to place.
 357---------------------------------------------------------
 From Volker Dirr:
 
-The order of the activities are not always good. activities with a
+The order of the activities is not always good. Activities with a
 very low number of available slots might be much too late in the order.
-(for example pseudo activities "lunch".)
+(For example pseudo activities "lunch".)
 
 358---------------------------------------------------------
 From Volker Dirr:
@@ -6259,20 +6107,6 @@ Liviu Lalescu: since FET-6.8.0 (2023-01-08) it is possible to activate/deactivat
 an advanced filter there (for the time/space constraints available since a long time now, for activities starting with this FET version).
 
 368-----------DONE in FET-6.12.0 on 3 November 2023---------
-(see also items #58, #149, and #396)
-From Anthony Siaudeau:
-
-I know an undo button isn't possible but is it possible to have a change 
-history ?
-When I work hard to optimize a timetable the generation time could be 
-high. And few times, when I break the generation or when the generation 
-is succesfull, I forget my last modification. With a change history it 
-could be easier.
-Maybe such history needs discusssion about the level of details 
-integrated for each actions. For example said "activity n° 1234 had been 
-changed" had a lack of information while "teacher alpha had available 
-time changed monday hour1, monday hour 2, .... friday hour 7" will 
-probably be too much detail.
 
 369---------------------------------------------------------
 From George Milliotis (Corfiot) - on forum:
@@ -6599,137 +6433,6 @@ the feature of assigning teachers automatically.
 This way the official FET can be used for both regular as well as exam timetables.
 
 396----------DONE in FET-6.12.0 on 3 November 2023----------
-(see also items #58, #149, and #368)
-From uni_instructor (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=4367.0
-
-You wrote to another request concerning this topic:
-"Unfortunately, there is no Undo button, because it is too difficult to implement one now"
-
-As I see there are a few requests related to the missing UNDO function. (my own request included).
-Some users made suggestions concerning possible solutions by using powerful CVS approaches like GIT or Mercurial.
-
-I know implementing a reasonable CVS in FET would be a tough job. So why not keeping it simple?
-I remember there was a suggestion that I should do a manual versioning by saving my project data into new FET-files. That is what I am currently doing. Additionally I keep manual (paper) records and comments of my changes.
-But it is always a hassle and error-prone to keep all my manual recordings up to date.
-
-So I would like to suggest a simpler approach:
-
-FET uses internal data structures to store all basic data and planing constraints and FET can save these data structures into a .FET file.
-
-How much programming effort does it cost to create dynamic duplicates in memory of these data structures? I know it will cost additional system-memory and a little bit of time for storing the data-duplicates, but modern computers are fast and provide Gigabytes of memory, so why should we care about a few hundred Megabytes of additional memory consumption? Actually the real additional memory consumption should be rather low, as I found from my own tests an measurements, since FET has a rather small memory footprint.
-
-I conceive that it should be possible to implement a mechanism for creating/duplicating and switching dynamically between these data structures. In that way it will be possible to keep a history of all (or the last #n) changes and to step back to an earlier planning stage if necessary. A step back would also delete all succeeding planning stages / sets of planning/constraint data.
-Additionally it is possible to store in parallel some short (UNDO-) information that gives the user a hint about the last change steps. Furthermore the whole super-data structure (containing the current set of planning/constraint data and its predecessors ) could be saved into an extended .FET file, so that we can revert to previous planning stages even after a program restart.
-
-Below I added some figures illustrating my idea.
-
-  Dynamic pointer array/ buffer of max n stages
-    \
-     \
-      \
-  O    \
-  |     \
-  |     +--+
-  +---->|#1|------|EOL
-        +--+
-         |  +-------+
-         o--XInfo #1|
-         |  +-------+
-         |
-         |
-         |Step 1
-     +---X-----+
-     |Data #1  |
-     |+---++--+|
-     || A ||  ||
-     |+---+|T ||
-     |+---+|C ||
-     || R ||  ||
-     |+---++--+|
-     +---------+
-          A   Current stage
-          |
-          +----Data set containing
-               room/activities/time
-               constraints etc.
-======================================================================
- Data structure after #n change steps
-
-  Dynamic pointer array/ buffer of max n stages
-    \
-     \                    UNDO/Revert back to step #2
-      \                +---------------------------------+
-  O    \               |                                 |
-  |     \              V                                 |
-  |     +--+          +--+          +--+                +--+
-  +---->|#1|--------->|#2|--------->|#3|--------------->|#n|------|EOL
-        +--+          +--+          +--+                +--+
-         |  +-------+  |  +-------+  |  +-------+        |  +-------+
-         o--XInfo #1|  o--XInfo #2|  o--XInfo #3|        o--XInfo #n|
-         |  +-------+  |  +-------+  |  +-------+        |  +-------+
-         |             |             |                   |
-         |             |             |                   |
-         |Step 1       |Step 2       |Step 3             |Step n
-     +---X-----+   +---X-----+   +---X-----+         +---X-----+
-     |Data #1  |   |Data #2  |   |Data #3  |         |Data #n  |
-     |+---++--+|   |+---++--+|   |+---++--+|         |+---++--+|
-     || A ||  ||   || A ||  ||   || A ||  ||         || A ||  ||
-     |+---+|T ||   |+---+|T ||   |+---+|T || *  *  * |+---+|T ||
-     |+---+|C ||   |+---+|C ||   |+---+|C ||         |+---+|C ||
-     || R ||  ||   || R ||  ||   || R ||  ||         || R ||  ||
-     |+---++--+|   |+---++--+|   |+---++--+|         |+---++--+|
-     +---------+   +---------+   +---------+         +---------+
-                                                     Current stage
-
-======================================================================
- Data structure after UNDO and revert to change step #2
-
-  Dynamic pointer array/ buffer of max n stages
-    \
-     \
-      \
-  O    \
-  |     \
-  |     +--+          +--+
-  +---->|#1|--------->|#2| -----|EOL
-        +--+          +--+
-         |  +-------+  |  +-------+
-         o--XInfo #1|  o--XInfo #2|
-         |  +-------+  |  +-------+
-         |             |
-         |             |
-         |Step 1       |Step 2
-     +---X-----+   +---X-----+
-     |Data #1  |   |Data #2  |
-     |+---++--+|   |+---++--+|
-     || A ||  ||   || A ||  ||
-     |+---+|T ||   |+---+|T ||
-     |+---+|C ||   |+---+|C ||
-     || R ||  ||   || R ||  ||
-     |+---++--+|   |+---++--+|
-     +---------+   +---------+
-                   Current stage
-
-----------
-
-Liviu Lalescu:
-	Your ideas are interesting. I added your complete post in the TODO file. Thank you!
-uni_instructor:
-	Nice to read!   :)
-	At least it would be a possibility to implement an UNDO feature without a complete rewrite of FET.
-
-Liviu Lalescu:
-	To make a complete and perfect and memory efficient undo function would be a titanic task now, after all the code was written without undo in mind. And I admit I have no good knowledge of how to implement an undo function.
-uni_instructor:
-	I know, my suggested approach is not memory efficient and sophisticated, nevertheless it is a feasible approach.
-
-Liviu Lalescu:
-	To implement what you are suggesting is also complicated. But I do not quite like it because of the memory waste. And saving a file with say 1000 undo versions might lead to a 1 GB file if the file has 1 MB (the internal memory consumption is lower than the .fet XML file).
-uni_instructor:
-	I don't think that all FET users will need an UNDO with 1000 levels. Even MS-Office does not offer an infinite UNDO. But as I wrote, modern computers have a lot of memory - so who cares.
-	The number of UNDO-levels can be restricted, maybe an a user-defined setting. I think max. 10-25 UNDO-levels by default should be sufficient and this would not be such a significant memory waste.
 
 397---------------------------------------------------------
 From Corfiot (on forum):
@@ -6752,10 +6455,7 @@ It is an interesting idea. The problem is that constraints do not have an ID, so
 
 But Anthony Siaudeau and I have better ideas (there is an older custom version created for Anthony Siaudeau based on his suggestion). He suggested that a constraint can have a weight or a weight name. Weight names have modifiable values. You can create more weight names and assign them to the constraints. Then with only a click you can change the value of a weight name and thus modify the weights of more constraints at once. My idea is to do this also to enable/disable constraints (add some Boolean variables to be attached as the "enabled" state of some constraints). This is because many constraints can have only 100% weight, and they need to be disabled if you want this - their weight cannot simply be made 0.
 
-398------This will be DONE by Qt 6--------------------------
-
-In Qt 6 the classes QVector and QList will be united into QList, bringing the best performance of QList
-(there will be no reason/need to convert QList to QVector).
+398-----DONE by Qt 6-(QList is as efficient as QVector)-----
 
 399---------------------------------------------------------
 From math (on forum):
@@ -7792,46 +7492,7 @@ to turn-off PC when done.
 
 See also item #25.
 
-476-----PARTIALLY-DONE in FET-6.11.0 22 October 2023--------
-From Fritzlang (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=5339.0
-
-Italian:
-
-Volevo indicare un suggerimento sull'inserimento dei vincoli:
-
-Tra i vincoli esiste la possibilità di inserire un vincolo per ogni singolo insegnante oppure per tutti gli insegnanti (questo vincolo ha la priorità su quello dei singoli insegnanti).
-
-E' possibile, per i vincoli su tutti gli insegnanti, selezionare tramite una opzione dedicata,  inserire il vincolo automaticamente su ogni singolo insegnante, per tutti gli insegnanti?
-In questo modo quando vi sono 30 o più insegnanti e di questi solo pochi hanno lo stesso vincolo ma più restrittivo, basterà soltanto modificare i valori dello stesso vincolo su i pochi insegnanti, lasciando il vincolo meno restrittivo agli altri insegnanti.
-
-Ad esempio:
-40 insegnanti. 35 hanno minimo 3 ore al giorno di lezione e solo 5 minimo 2 ore al giorno.
-Adesso è necessario selezionare uno per uno i 40 insegnanti, e inserire 35 vincoli con 3 ore minimo e 5 con 2 ore minimo.
-Invece sarebbe possibile (con un quadratino di scelta) sull' opzione TUTTI GLI INSEGNANTI inserire in automatico su ogni insegnante (quindi su tutti i 40 insegnanti) il vincolo a 3 ore minimo al giorno.
-In questo modo si può andare a modificare il vincolo solo su qui 5 insegnanti modificandoli a 2 ore minimo.
-
-Alla fine non ho inserito manualmente 40 vincoli, ma 1 solo (40 vincoli per tutti) e poi  5 con modifica su ogni singolo insegnante.
-
-English translation by Google Translate:
-
-I wanted to indicate a suggestion on inserting constraints:
-
-Among the constraints there is the possibility of inserting a constraint for each individual teacher or for all teachers (this constraint has priority over that of individual teachers).
-
-Is it possible, for the constraints on all teachers, to select through a dedicated option, insert the constraint automatically on each individual teacher, for all teachers?
-In this way, when there are 30 or more teachers and of these only a few have the same but more restrictive constraint, it will be sufficient to modify the values of the same constraint on the few teachers, leaving the less restrictive constraint to the other teachers.
-
-For example:
-40 teachers. 35 have a minimum of 3 hours a day of lessons and only 5 have a minimum of 2 hours a day.
-Now it is necessary to select one by one the 40 teachers, and insert 35 constraints with a minimum of 3 hours and 5 with a minimum of 2 hours.
-Instead it would be possible (with a selection box) on the ALL TEACHERS option to automatically insert on each teacher (therefore on all 40 teachers) the constraint of 3 hours minimum per day.
-In this way you can go to modify the constraint only on here 5 teachers by modifying them to 2 hours minimum.
-
-In the end I did not manually enter 40 constraints, but only 1 (40 constraints for all) and then 5 with modification on each individual teacher.
-
-See also TODO items #82, #84, and #455.
+476---------------DONE in FET-6.11.0 22 October 2023--------
 
 477---------------------------------------------------------
 From Dao Anh Van (on forum):
@@ -7870,10 +7531,18 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=5366.0
 
 I have a problem
 After arranging the timetable
-fixed schedule on Monday, rearranged schedule from Tuesday to Friday (the school is adding teachers). I used the lock and unlock function in the FET. However, when adding teachers and activities, I cannot see the timetable (which days are locked and which are not). This caused me to use sketches (pen and paper) to record actions, which I did wrong and had to redo many times.
+
+fixed schedule on Monday, rearranged schedule from Tuesday to Friday (the school is adding teachers). I used the lock and unlock function in the FET.
+However, when adding teachers and activities, I cannot see the timetable (which days are locked and which are not). This caused me to use sketches
+(pen and paper) to record actions, which I did wrong and had to redo many times.
+
 Checking in the "All time contraints" section is difficult when the number of activities locked in a day is large but sorted by list (up to 50)
-On the other hand, many people who don't understand FET well will also have difficulty when some activities are locked but cannot be viewed in the teacher/student interface, affecting the binding resulting can't create new timetable
-Suggestion: Can view/check locked activities (no need to Generate new timetable) in teacher/student interface or any other way can easily view and check locked activities easy way by matrix
+
+On the other hand, many people who don't understand FET well will also have difficulty when some activities are locked but cannot be viewed in the
+teacher/student interface, affecting the binding resulting can't create new timetable
+
+Suggestion: Can view/check locked activities (no need to Generate new timetable) in teacher/student interface or any other way can easily view and
+check locked activities easy way by matrix
 
 480---------------------------------------------------------
 From Abidine Premier (on Facebook):
@@ -7887,7 +7556,8 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=5386.0
 
 When adding the constraint "A student set's not available time" to each class I have to count the number of available spaces multiple times.
 
-It is possible to add an automatic space (allowed) counting function available in the "student set's not available time" interface so that the user does not have to re-count when the number of lessons is sporadic
+It is possible to add an automatic space (allowed) counting function available in the "student set's not available time" interface so that the user does
+not have to re-count when the number of lessons is sporadic
 
 482---------------------------------------------------------
 From ngoctp29121982 (on forum):
@@ -7975,64 +7645,7 @@ the regular version of FET, and it’s difficult to explain to someone how to us
 assigned to a time slot, the Block Planning mode is challenging to learn, and a dedicated Block Planner could be written with language that matches the “real” meanings.
 Thus would make it easier for a beginner to use if creating these sorts of groups is all they require.
 
-486---------------------------------------------------------
-From Volker Dirr:
-
-how about writing a programm/script that checks the translation file.
-
-1. check if it is marked as translated, even there is no translation.
-
-2. warn if a string is translated different at an other location (that 
-might be correct, but i guess in most cases the translations should be 
-the same. so warn if you find that)
-
-3. do the opposite check from 2. so read all translated strings and 
-check if the original string is always the same.
-
-4. write the original strings alphabetically sorted, since a human can 
-maybe see sentences that are very similar (but should be the same. just 
-a misspelling, a missing character/space).
-
-5. do it similar as in 4 for the translated strings
-
-this is maybe too nasty:
-
-6. split the original strings into words. then sort them alphabetically 
-and write them, so a human or a spellchecker can read them.
-
-7. do the same for translation strings
-
-8. check for double characters. (of course it is ok for numbers and 
-letters, but not for space, dot (might be correct, so just warn, so a 
-human can check), comma, dash, enter/return, ...
-
-9. count if number of new lines is similar in original string and 
-translation.
-
-10. count opening braces and check if count of closing braces is the 
-same. do it for (, { and [. do it for original and translation
-
-11. count braces and compare number of in original and translation
-
-12. count dots and check if number in original and translation is the 
-same. maybe also count oder characters like :, -, ?, ! and compare.
-
-13. check if original.length() is max 2*translation() string (since it 
-depend on the languarges a user must be able to modify that value. Do 
-similar for translation() is max 2*original.length().
-
-14. do similar like in 13, just with counting words
-
-15. support other translation files, not only qt linguist.
-
-...
-
-so it is a tool like cppcheck for sourcecode, just for doing static 
-original/translation checks.
-
-Liviu Lalescu:
-
-6. and 7. were done a time ago with the help of Ispell / Aspell.
+486------DONE, Volker wrote TSC (translation source check)--
 
 487---------------------------------------------------------
 From Vangelis Karafillidis:
@@ -8072,10 +7685,7 @@ But: For each successfully generated timetable, you have in the results director
 on successful generations. For partial timetables it will remain the same from the previous successful generation. So you can open it and generate with FET on it.
 It should generate in an instant and provide the same timetable.
 
-489---------------------------------------------------------
-From Vangelis Karafillidis:
-
-He suggests adding a button "Remove all" in the all time/space constraints dialogs. But it is very risky for the user.
+489-------------DONE in FET-6.11.0, on 25 October 2023------
 
 490---------------------------------------------------------
 From Vangelis Karafillidis:
@@ -8630,9 +8240,9 @@ wojgp:
 
 ad 2. I added a lot of groups manualy.
 The only missing thing is a possibility to sort it in "Add activity" window as on the attached screen.
-Also when generating time line I get multiple subgroups - screen shot attached. 
+Also when generating time line I get multiple subgroups - screen shot attached.
 
-Although I entered all divisions I had to add a lot of subgroups manualy. It would be really great to be able to add these combinations automaticaly. 
+Although I entered all divisions I had to add a lot of subgroups manualy. It would be really great to be able to add these combinations automaticaly.
 
 I've already created all the groups manualy, but maybe someone will need this feature.
 
@@ -8645,21 +8255,7 @@ Adding Nam|Binh|An|An directly from the lecture button on the FET software, so u
 An activity split into 4 components, each having different teachers. In FET-6.9.3 it was introduced the possibility of dealing with this
 from the export/import CSV activities, but not from the interface.
 
-504---------------------------------------------------------
-From wojgp (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=5598.msg30873#msg30873
-
-We have an option to set constraints for a single teacher or all teachers. Setting single teachers is not a problem, but if we want to set for "ALL except just a few" then it could be a trouble. My idea is to add a dialogue window with check list like:
-"name of the teacher 1" "check box" "value1"
-"name of the teacher 2" "check box" "value2"
-"name of the teacher 3" "check box" "value3"
-etc.
-It would be good also to allow entering values by TAB key (not with arrows) to speed up data entry. This solution could work also for "Students"
-
-For example I have 30 teachers and I want to set time min. 3 hours daily for a teacher, but except one of them. Then I have to click 29 teachers and set each seperately.
-
-Other option could be to add "Select All" instead a drop down list in "Add teacher min hours daily" and then modify just a single teacher or remove unwanted constraint.
+504----DONE in FET-6.11.0 released on 25 October 2023-------
 
 505---------------------------------------------------------
 From Mohamed Ait Ichou (on forum):
@@ -8750,7 +8346,7 @@ If I set StudentsMaxBuildingChangesPerDay = 0 I get that a group of students rem
 What am I doing wrong?
 Also, is it correct to assume that if StudentsMaxBuildingChangesPerWeek = 0 I can skip StudentsMaxBuildingChangesPerDay?
 
-Liviu Lalescu: Unfortunately, it is a bug, not a feature. However, I added this in the TODO.
+Liviu Lalescu: Unfortunately, it is a feature, not a bug. However, I added this in the TODO.
 
 512----PARTIALLY DONE IN FET-6.11.0 on 23 October 2023------
 From fartoto_dz2004 (on forum):
@@ -8897,9 +8493,6 @@ in an hourly interval MIN days per week.
 Liviu Lalescu: Sorry, but for now I prefer the current approach.
 
 520------DONE IN FET-6.11.0 on 23 October 2023--------------
-From Vangelis Karafillidis:
-
-In the activities list, add the possibility to select multiple activities and activate/deactivate them with a single click.
 
 521---------------------------------------------------------
 From fourat (on forum):
@@ -8920,12 +8513,6 @@ From Volker Dirr:
 Merge the "single" type and "all" type of constraints into a single dialog (instead of two).
 
 523------DONE in FET-6.12.0 on 3 November 2023--------------
-From pekuon (on forum):
-
-https://lalescu.ro/liviu/fet/forum/index.php?topic=5712.msg31594#msg31594
-
-Sometimes I add constraints, resulting in an unscheduled schedule, but don't remember what the last constraint was.
-- I want a binding change history.
 
 524---------------------------------------------------------
 From ygoldblatt (on forum):
@@ -8935,9 +8522,6 @@ https://lalescu.ro/liviu/fet/forum/index.php?topic=5749.0
 Is there a way to control the order that the lessons appear on the printout of the timetable? It seems to be random and I would like to control it
 
 525----------DONE in FET-6.13.0 on 14 November 2023---------
-From Vangelis Karafillidis:
-
-Automatic saving of the .fet data file every say 3 minutes.
 
 526---------------------------------------------------------
 From Vũ Ngọc Thành (on forum):
@@ -9065,3 +8649,24 @@ on each one of the threads each thread has its own "highest" timetable,
 which is recorded by FET. Then FET takes the 4 best highest timetables (it might be 2,3 timetables...)
 Stops the generation for all threads and starts a new generation.
 For example the 1 best is delivered to 4 threads (threads 1-4) which continue this generation.
+
+535---------------------------------------------------------
+From Darren McDonald:
+
+It would be useful for me (and some of the other staff members at my school) to have a “Free Room” timetable,
+which shows a list of free rooms for each period (much like the Teachers' Free Periods timetable).
+This would be useful for finding rooms to accommodate courses that haven’t yet been assigned a room,
+and also for planning events throughout the year (where we often need to find, for example, three nearby rooms
+that are all free at the same time).
+
+536---------------------------------------------------------
+From ngoctp29121982:
+
+https://lalescu.ro/liviu/fet/forum/index.php?topic=5790.0
+
+I've been using version 6.11 guys Added option in dialog to add time/space constraints for teacher(s),
+so you can now add individual constraints for each teacher only with one click
+I think having the option in the dialog box to remove time/space constraints for the teacher(s),
+so that you can now remove individual constraints for each teacher with just one click would be great. Great
+
+Allows you to delete part or all of it with one click, thus making the teacher's time/space constraints more complete.

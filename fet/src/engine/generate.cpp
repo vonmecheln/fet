@@ -7020,7 +7020,6 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 			}
 
 			if(gt.rules.internalRoomsList[rm]->isVirtual){
-				assert(rm==fromroom); //this test could also be done for real rooms, above?
 				assert(fromRealRoomsList.count()==gt.rules.internalRoomsList[rm]->rrsl.count());
 				int i=0;
 				for(int rr : std::as_const(fromRealRoomsList)){
@@ -7241,7 +7240,6 @@ void Generate::moveActivity(int ai, int fromslot, int toslot, int fromroom, int 
 			}
 
 			if(gt.rules.internalRoomsList[rm]->isVirtual){
-				assert(rm==toroom); //this test could also be done for real rooms, above?
 				assert(toRealRoomsList.count()==gt.rules.internalRoomsList[rm]->rrsl.count());
 				int i=0;
 				for(int rr : std::as_const(toRealRoomsList)){

@@ -32,6 +32,7 @@ using namespace std;
 
 #include <QTextStream>
 #include <QFile>
+#include <QFileDevice>
 #include <QSaveFile>
 #include <QFileInfo>
 
@@ -13939,10 +13940,10 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 		logStream<<reducedXmlLog;
 	}
 
-	if(file2.error()>0){
+	if(file2.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 tr("Saving of logging gave error code %1, which means you cannot see the log of reading the file. Please check your disk free space")
-		 .arg(file2.error()));
+		 tr("Saving of logging gave error message '%1', which means you cannot see the log of reading the file. Please check your disk's free space.")
+		 .arg(file2.errorString()));
 	}
 
 	if(canWriteLogFile)
@@ -14138,10 +14139,10 @@ bool Rules::write(QWidget* parent, const QString& filename)
 
 	//tos<<s;
 	
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 tr("Saved file gave error code %1, which means saving is compromised. Please check your disk's free space")
-		 .arg(file.error()));
+		 tr("Saved file gave error message '%1', which means saving is compromised. Please check your disk's free space.")
+		 .arg(file.errorString()));
 		
 		//file.close();
 		//return false;

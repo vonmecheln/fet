@@ -993,9 +993,10 @@ void TimetableExport::writeRandomSeedFile(QWidget* parent, const MRG32k3a& rng, 
 	}
 #endif
 	
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(s).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(s).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -1577,9 +1578,10 @@ void TimetableExport::writeReportForMultiple(QWidget* parent, const QString& des
 	tos<<description<<endl;
 #endif
 	
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(filename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(filename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -1962,9 +1964,10 @@ void TimetableExport::writeConflictsTxt(QWidget* parent, const QString& filename
 		tos<<"\n"<<TimetableExport::tr("End of file.")<<"\n";
 	}
 	
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(filename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(filename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -2046,9 +2049,10 @@ void TimetableExport::writeSubgroupsTimetableXml(QWidget* parent, const QString&
 
 	tos << "</" << protect(STUDENTS_TIMETABLE_TAG) << ">\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(xmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(xmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -2122,9 +2126,10 @@ void TimetableExport::writeTeachersTimetableXml(QWidget* parent, const QString& 
 
 	tos << "</" << protect(TEACHERS_TIMETABLE_TAG) << ">\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(xmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(xmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -2202,9 +2207,10 @@ void TimetableExport::writeActivitiesTimetableXml(QWidget* parent, const QString
 
 	tos << "</" << protect(ACTIVITIES_TIMETABLE_TAG) << ">\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(xmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(xmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -2581,9 +2587,10 @@ void TimetableExport::writeIndexHtml(QWidget* parent, const QString& htmlfilenam
 
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -2842,9 +2849,10 @@ void TimetableExport::writeStylesheetCss(QWidget* parent, const QString& cssfile
 	}
 	tos<<"/* "<<TimetableExport::tr("End of file.")<<" */\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(cssfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(cssfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -2908,9 +2916,10 @@ void TimetableExport::writeSubgroupsTimetableDaysHorizontalHtml(QWidget* parent,
 	}
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -2975,9 +2984,10 @@ void TimetableExport::writeSubgroupsTimetableDaysVerticalHtml(QWidget* parent, c
 
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3022,10 +3032,11 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalHtml(QWidget* parent, c
 
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
-	}	
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
+	}
 	file.close();
 }
 
@@ -3069,9 +3080,10 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalHtml(QWidget* parent,
 
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3120,10 +3132,11 @@ void TimetableExport::writeSubgroupsTimetableTimeVerticalDailyHtml(QWidget* pare
 
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
-	}	
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
+	}
 	file.close();
 }
 
@@ -3170,9 +3183,10 @@ void TimetableExport::writeSubgroupsTimetableTimeHorizontalDailyHtml(QWidget* pa
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3235,9 +3249,10 @@ void TimetableExport::writeGroupsTimetableDaysHorizontalHtml(QWidget* parent, co
 	
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3299,9 +3314,10 @@ void TimetableExport::writeGroupsTimetableDaysVerticalHtml(QWidget* parent, cons
 	
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3348,9 +3364,10 @@ void TimetableExport::writeGroupsTimetableTimeVerticalHtml(QWidget* parent, cons
 	
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3396,9 +3413,10 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalHtml(QWidget* parent, co
 	
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3447,9 +3465,10 @@ void TimetableExport::writeGroupsTimetableTimeVerticalDailyHtml(QWidget* parent,
 	
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3498,9 +3517,10 @@ void TimetableExport::writeGroupsTimetableTimeHorizontalDailyHtml(QWidget* paren
 
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3559,9 +3579,10 @@ void TimetableExport::writeYearsTimetableDaysHorizontalHtml(QWidget* parent, con
 	
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3618,9 +3639,10 @@ void TimetableExport::writeYearsTimetableDaysVerticalHtml(QWidget* parent, const
 	
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3667,9 +3689,10 @@ void TimetableExport::writeYearsTimetableTimeVerticalHtml(QWidget* parent, const
 	
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3716,9 +3739,10 @@ void TimetableExport::writeYearsTimetableTimeHorizontalHtml(QWidget* parent, con
 	
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3767,9 +3791,10 @@ void TimetableExport::writeYearsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 	
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3818,9 +3843,10 @@ void TimetableExport::writeYearsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3864,9 +3890,10 @@ void TimetableExport::writeAllActivitiesTimetableDaysHorizontalHtml(QWidget* par
 		 TIMETABLE_HTML_REPEAT_NAMES);
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3908,9 +3935,10 @@ void TimetableExport::writeAllActivitiesTimetableDaysVerticalHtml(QWidget* paren
 		 TIMETABLE_HTML_REPEAT_NAMES);
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -3954,9 +3982,10 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalHtml(QWidget* paren
 
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4000,9 +4029,10 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalHtml(QWidget* par
 
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4049,9 +4079,10 @@ void TimetableExport::writeAllActivitiesTimetableTimeVerticalDailyHtml(QWidget* 
 	}
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4100,9 +4131,10 @@ void TimetableExport::writeAllActivitiesTimetableTimeHorizontalDailyHtml(QWidget
 
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4159,9 +4191,10 @@ void TimetableExport::writeTeachersTimetableDaysHorizontalHtml(QWidget* parent, 
 	}
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4215,9 +4248,10 @@ void TimetableExport::writeTeachersTimetableDaysVerticalHtml(QWidget* parent, co
 	}
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4260,9 +4294,10 @@ void TimetableExport::writeTeachersTimetableTimeVerticalHtml(QWidget* parent, co
 		 TIMETABLE_HTML_REPEAT_NAMES);
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4305,9 +4340,10 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalHtml(QWidget* parent, 
 		 TIMETABLE_HTML_REPEAT_NAMES);
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4355,9 +4391,10 @@ void TimetableExport::writeTeachersTimetableTimeVerticalDailyHtml(QWidget* paren
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4406,9 +4443,10 @@ void TimetableExport::writeTeachersTimetableTimeHorizontalDailyHtml(QWidget* par
 
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4466,9 +4504,10 @@ void TimetableExport::writeBuildingsTimetableDaysHorizontalHtml(QWidget* parent,
 	}
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4528,9 +4567,10 @@ void TimetableExport::writeBuildingsTimetableDaysVerticalHtml(QWidget* parent, c
 	}
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4578,9 +4618,10 @@ void TimetableExport::writeBuildingsTimetableTimeVerticalHtml(QWidget* parent, c
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4629,9 +4670,10 @@ void TimetableExport::writeBuildingsTimetableTimeHorizontalHtml(QWidget* parent,
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4684,9 +4726,10 @@ void TimetableExport::writeBuildingsTimetableTimeVerticalDailyHtml(QWidget* pare
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4740,9 +4783,10 @@ void TimetableExport::writeBuildingsTimetableTimeHorizontalDailyHtml(QWidget* pa
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4800,9 +4844,10 @@ void TimetableExport::writeRoomsTimetableDaysHorizontalHtml(QWidget* parent, con
 	}
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4862,9 +4907,10 @@ void TimetableExport::writeRoomsTimetableDaysVerticalHtml(QWidget* parent, const
 	}
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4912,9 +4958,10 @@ void TimetableExport::writeRoomsTimetableTimeVerticalHtml(QWidget* parent, const
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -4963,9 +5010,10 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalHtml(QWidget* parent, con
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5018,9 +5066,10 @@ void TimetableExport::writeRoomsTimetableTimeVerticalDailyHtml(QWidget* parent, 
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5074,9 +5123,10 @@ void TimetableExport::writeRoomsTimetableTimeHorizontalDailyHtml(QWidget* parent
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5134,9 +5184,10 @@ void TimetableExport::writeSubjectsTimetableDaysHorizontalHtml(QWidget* parent, 
 	}
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5191,9 +5242,10 @@ void TimetableExport::writeSubjectsTimetableDaysVerticalHtml(QWidget* parent, co
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5237,9 +5289,10 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalHtml(QWidget* parent, co
 		 TIMETABLE_HTML_REPEAT_NAMES);
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5284,9 +5337,10 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalHtml(QWidget* parent, 
 
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5336,9 +5390,10 @@ void TimetableExport::writeSubjectsTimetableTimeVerticalDailyHtml(QWidget* paren
 
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5387,9 +5442,10 @@ void TimetableExport::writeSubjectsTimetableTimeHorizontalDailyHtml(QWidget* par
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5451,9 +5507,10 @@ void TimetableExport::writeActivityTagsTimetableDaysHorizontalHtml(QWidget* pare
 	}
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5512,9 +5569,10 @@ void TimetableExport::writeActivityTagsTimetableDaysVerticalHtml(QWidget* parent
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5558,9 +5616,10 @@ void TimetableExport::writeActivityTagsTimetableTimeVerticalHtml(QWidget* parent
 		 TIMETABLE_HTML_REPEAT_NAMES);
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5605,9 +5664,10 @@ void TimetableExport::writeActivityTagsTimetableTimeHorizontalHtml(QWidget* pare
 
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5657,9 +5717,10 @@ void TimetableExport::writeActivityTagsTimetableTimeVerticalDailyHtml(QWidget* p
 
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5708,9 +5769,10 @@ void TimetableExport::writeActivityTagsTimetableTimeHorizontalDailyHtml(QWidget*
 	}
 	tos << "  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5764,9 +5826,10 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysHorizontalHtml(QWidge
 	
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5820,9 +5883,10 @@ void TimetableExport::writeTeachersFreePeriodsTimetableDaysVerticalHtml(QWidget*
 
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5864,9 +5928,10 @@ void TimetableExport::writeTeachersStatisticsHtml(QWidget* parent, const QString
 	tos<<singleTeachersStatisticsHtml(TIMETABLE_HTML_LEVEL, saveTime, PRINT_DETAILED, TIMETABLE_HTML_REPEAT_NAMES, true);
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }
@@ -5908,9 +5973,10 @@ void TimetableExport::writeStudentsStatisticsHtml(QWidget* parent, const QString
 
 	tos<<"  </body>\n</html>\n";
 
-	if(file.error()>0){
+	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 TimetableExport::tr("Writing %1 gave error code %2, which means saving is compromised. Please check your disk's free space.").arg(htmlfilename).arg(file.error()));
+		 TimetableExport::tr("Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		 "%1 is the name of a file").arg(htmlfilename).arg(file.errorString()));
 	}
 	file.close();
 }

@@ -27,7 +27,7 @@ SpreadConfirmationForm::SpreadConfirmationForm(QWidget* parent): QDialog(parent)
 	
 	connect(continuePushButton, SIGNAL(clicked()), this, SLOT(accept()));
 	connect(cancelPushButton, SIGNAL(clicked()), this, SLOT(reject()));
-	connect(dontShowAgainCheckBox, SIGNAL(stateChanged(int)), this, SLOT(dontShowAgainCheckBoxToggled()));
+	connect(dontShowAgainCheckBox, SIGNAL(toggled(bool)), this, SLOT(dontShowAgainCheckBoxToggled()));
 
 	dontShowAgain=dontShowAgainCheckBox->isChecked();
 	

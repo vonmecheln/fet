@@ -451,16 +451,16 @@ ActivityPlanningForm::ActivityPlanningForm(QWidget *parent): QDialog(parent)
 	connect(teachersTableView->horizontalHeader(), SIGNAL(sectionDoubleClicked(int)), this, SLOT(teachersTableHorizontalHeaderClicked(int)));
 	
 	connect(CBActive, SIGNAL(currentIndexChanged(int)), this, SLOT(updateTables()));
-	connect(showDuplicates, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
-	connect(showYears, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
-	connect(showGroups, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
+	connect(showDuplicates, SIGNAL(toggled(bool)), this, SLOT(updateTablesVisual()));
+	connect(showYears, SIGNAL(toggled(bool)), this, SLOT(updateTablesVisual()));
+	connect(showGroups, SIGNAL(toggled(bool)), this, SLOT(updateTablesVisual()));
 	if(SHOW_SUBGROUPS_IN_ACTIVITY_PLANNING)
-		connect(showSubgroups, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
-	connect(showTeachers, SIGNAL(stateChanged(int)), this, SLOT(updateTables()));
-	connect(showActivityTags, SIGNAL(stateChanged(int)), this, SLOT(updateTables()));
-	connect(hideEmptyLines, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
-	connect(hideUsedTeachers, SIGNAL(stateChanged(int)), this, SLOT(updateTablesVisual()));
-	connect(swapAxes, SIGNAL(stateChanged(int)), this, SLOT(updateTables()));
+		connect(showSubgroups, SIGNAL(toggled(bool)), this, SLOT(updateTablesVisual()));
+	connect(showTeachers, SIGNAL(toggled(bool)), this, SLOT(updateTables()));
+	connect(showActivityTags, SIGNAL(toggled(bool)), this, SLOT(updateTables()));
+	connect(hideEmptyLines, SIGNAL(toggled(bool)), this, SLOT(updateTablesVisual()));
+	connect(hideUsedTeachers, SIGNAL(toggled(bool)), this, SLOT(updateTablesVisual()));
+	connect(swapAxes, SIGNAL(toggled(bool)), this, SLOT(updateTables()));
 	connect(pbDeleteAll, SIGNAL(clicked()), this, SLOT(deleteAll()));
 	connect(pbPseudoActivities, SIGNAL(clicked()), this, SLOT(pseudoActivities()));
 	//connect(pbHelp, SIGNAL(clicked()), this, SLOT(help()));
