@@ -59,7 +59,7 @@ extern Timetable gt;
 extern Solution best_solution;
 extern bool teachers_schedule_ready;
 extern bool students_schedule_ready;
-extern bool rooms_schedule_ready;
+extern bool rooms_buildings_schedule_ready;
 
 const char CSVActivities[]="activities.csv";
 const char CSVActivitiesStatistics[]="statistics_activities.csv";
@@ -836,7 +836,7 @@ bool Export::exportCSVActivityTags(QString& lastWarnings, const QString& textquo
 
 	lastWarnings+=Export::tr("%1 activity tags exported.").arg(gt.rules.activityTagsList.size())+"\n";
 	if(fileExport.error()!=QFileDevice::NoError){
-		lastWarnings+=Export::tr("FET critical. Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		lastWarnings+=Export::tr("FET critical. Writing '%1' gave the error message '%2', which means the writing is compromised. Please check your disk's free space.",
 		 "%1 is the name of a file").arg(file).arg(fileExport.errorString())+QString("\n");
 		return false;
 	}
@@ -931,7 +931,7 @@ bool Export::exportCSVRoomsAndBuildings(QString& lastWarnings, const QString& te
 	}
 	
 	if(fileExport.error()!=QFileDevice::NoError){
-		lastWarnings+=Export::tr("FET critical. Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		lastWarnings+=Export::tr("FET critical. Writing '%1' gave the error message '%2', which means the writing is compromised. Please check your disk's free space.",
 		 "%1 is the name of a file").arg(file).arg(fileExport.errorString())+QString("\n");
 		return false;
 	}
@@ -1000,7 +1000,7 @@ bool Export::exportCSVSubjects(QString& lastWarnings, const QString& textquote, 
 
 	lastWarnings+=Export::tr("%1 subjects exported.").arg(gt.rules.subjectsList.size())+"\n";
 	if(fileExport.error()!=QFileDevice::NoError){
-		lastWarnings+=Export::tr("FET critical. Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		lastWarnings+=Export::tr("FET critical. Writing '%1' gave the error message '%2', which means the writing is compromised. Please check your disk's free space.",
 		 "%1 is the name of a file").arg(file).arg(fileExport.errorString())+QString("\n");
 		return false;
 	}
@@ -1070,7 +1070,7 @@ bool Export::exportCSVTeachers(QString& lastWarnings, const QString& textquote, 
 
 	lastWarnings+=Export::tr("%1 teachers exported.").arg(gt.rules.teachersList.size())+"\n";
 	if(fileExport.error()!=QFileDevice::NoError){
-		lastWarnings+=Export::tr("FET critical. Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		lastWarnings+=Export::tr("FET critical. Writing '%1' gave the error message '%2', which means the writing is compromised. Please check your disk's free space.",
 		 "%1 is the name of a file").arg(file).arg(fileExport.errorString())+QString("\n");
 		return false;
 	}
@@ -1182,7 +1182,7 @@ bool Export::exportCSVStudents(QString& lastWarnings, const QString& textquote, 
 	lastWarnings+=Export::tr("%1 groups exported.").arg(ig)+"\n";
 	lastWarnings+=Export::tr("%1 subgroups exported.").arg(is)+"\n";
 	if(fileExport.error()!=QFileDevice::NoError){
-		lastWarnings+=Export::tr("FET critical. Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		lastWarnings+=Export::tr("FET critical. Writing '%1' gave the error message '%2', which means the writing is compromised. Please check your disk's free space.",
 		 "%1 is the name of a file").arg(file).arg(fileExport.errorString())+QString("\n");
 		return false;
 	}
@@ -1666,7 +1666,7 @@ bool Export::exportCSVActivities(QString& lastWarnings, const QString& textquote
 
 	lastWarnings+=Export::tr("%1 activities exported.").arg(countExportedActivities)+"\n";
 	if(fileExport.error()!=QFileDevice::NoError){
-		lastWarnings+=Export::tr("FET critical. Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		lastWarnings+=Export::tr("FET critical. Writing '%1' gave the error message '%2', which means the writing is compromised. Please check your disk's free space.",
 		 "%1 is the name of a file").arg(file).arg(fileExport.errorString())+"\n";
 		return false;
 	}
@@ -1770,7 +1770,7 @@ bool Export::exportCSVActivitiesStatistics(QString& lastWarnings, const QString&
 
 	lastWarnings+=Export::tr("%1 active activities statistics exported.").arg(countExportedActivities)+"\n";
 	if(fileExport.error()!=QFileDevice::NoError){
-		lastWarnings+=Export::tr("FET critical. Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		lastWarnings+=Export::tr("FET critical. Writing '%1' gave the error message '%2', which means the writing is compromised. Please check your disk's free space.",
 		 "%1 is the name of a file").arg(file).arg(fileExport.errorString())+"\n";
 		return false;
 	}
@@ -1837,7 +1837,7 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString& textquote,
 #endif
 
 	if(gt.rules.initialized && gt.rules.internalStructureComputed
-	 && students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready){
+	 && students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready){
 		QSet<QString> printableActivityTagsSet;
 		for(int i=0; i<gt.rules.nInternalActivityTags; i++)
 			if(gt.rules.internalActivityTagsList[i]->printable)
@@ -1926,7 +1926,7 @@ bool Export::exportCSVTimetable(QString& lastWarnings, const QString& textquote,
 		lastWarnings+=Export::tr("0 scheduled activities exported, because no timetable was generated.")+"\n";
 	}
 	if(fileExport.error()!=QFileDevice::NoError){
-		lastWarnings+=Export::tr("FET critical. Writing '%1' gave error message '%2', which means saving is compromised. Please check your disk's free space.",
+		lastWarnings+=Export::tr("FET critical. Writing '%1' gave the error message '%2', which means the writing is compromised. Please check your disk's free space.",
 		 "%1 is the name of a file").arg(file).arg(fileExport.errorString())+"\n";
 		return false;
 	}

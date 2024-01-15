@@ -1039,7 +1039,8 @@ SOURCES += \
 	\
 	interface/restoredatastateform.cpp \
 	\
-	interface/settingsrestoredataform.cpp \
+	interface/settingsrestoredatafrommemoryform.cpp \
+	interface/settingsrestoredatafromdiskform.cpp \
 	\
 	interface/settingsautosaveform.cpp
 
@@ -2087,7 +2088,8 @@ HEADERS += \
 	\
 	interface/restoredatastateform.h \
 	\
-	interface/settingsrestoredataform.h \
+	interface/settingsrestoredatafrommemoryform.h \
+	interface/settingsrestoredatafromdiskform.h \
 	\
 	interface/settingsautosaveform.h
 
@@ -3095,7 +3097,8 @@ FORMS += \
 	\
 	interface/restoredatastateform_template.ui \
 	\
-	interface/settingsrestoredataform_template.ui \
+	interface/settingsrestoredatafrommemoryform_template.ui \
+	interface/settingsrestoredatafromdiskform_template.ui \
 	\
 	interface/settingsautosaveform_template.ui
 

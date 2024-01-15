@@ -59,7 +59,7 @@
 
 extern bool teachers_schedule_ready;
 extern bool students_schedule_ready;
-extern bool rooms_schedule_ready;
+extern bool rooms_buildings_schedule_ready;
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
@@ -943,7 +943,7 @@ void ActivitiesForm::activityComments()
 
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 
 		activitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
 		activityChanged();
@@ -1051,7 +1051,7 @@ void ActivitiesForm::activateActivities()
 
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 		
 		int valv=activitiesListWidget->verticalScrollBar()->value();
 		int valh=activitiesListWidget->horizontalScrollBar()->value();
@@ -1112,7 +1112,7 @@ void ActivitiesForm::deactivateActivities()
 
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 		
 		int valv=activitiesListWidget->verticalScrollBar()->value();
 		int valh=activitiesListWidget->horizontalScrollBar()->value();

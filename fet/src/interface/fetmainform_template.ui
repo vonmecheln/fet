@@ -1292,7 +1292,8 @@
     </property>
     <addaction name="restoreDataStateAction"/>
     <addaction name="separator"/>
-    <addaction name="settingsHistoryAction"/>
+    <addaction name="settingsHistoryMemoryAction"/>
+    <addaction name="settingsHistoryDiskAction"/>
    </widget>
    <addaction name="fileMenu"/>
    <addaction name="dataMenu"/>
@@ -2240,9 +2241,14 @@
     <string comment="Restore a previously saved state of the data">Restore state</string>
    </property>
   </action>
-  <action name="settingsHistoryAction">
+  <action name="settingsHistoryMemoryAction">
    <property name="text">
-    <string comment="Settings of the history of data">Settings</string>
+    <string comment="The settings for the history which is stored in the memory">Memory history settings</string>
+   </property>
+  </action>
+  <action name="settingsHistoryDiskAction">
+   <property name="text">
+    <string comment="The settings for the history which is stored on the disk">Disk history settings</string>
    </property>
   </action>
   <action name="settingsConfirmActivateDeactivateActivitiesConstraintsAction">

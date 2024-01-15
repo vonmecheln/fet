@@ -41,7 +41,7 @@ extern const QString PROGRAM;
 
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
-extern bool rooms_schedule_ready;
+extern bool rooms_buildings_schedule_ready;
 
 ModifyTeacherForm::ModifyTeacherForm(QWidget* parent, Teacher* _tch): QDialog(parent)
 {
@@ -175,7 +175,7 @@ void ModifyTeacherForm::ok()
 
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 	}
 	
 	this->close();

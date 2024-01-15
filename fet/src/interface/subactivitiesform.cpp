@@ -57,7 +57,7 @@
 
 extern bool teachers_schedule_ready;
 extern bool students_schedule_ready;
-extern bool rooms_schedule_ready;
+extern bool rooms_buildings_schedule_ready;
 
 extern const QString COMPANY;
 extern const QString PROGRAM;
@@ -752,7 +752,7 @@ void SubactivitiesForm::subactivityComments()
 
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 
 		subactivitiesListWidget->currentItem()->setText(act->getDescription(gt.rules));
 		subactivityChanged();
@@ -845,7 +845,7 @@ void SubactivitiesForm::activateSubactivity()
 
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 
 		if(!filterOk(act)){ //Maybe the subactivity is no longer visible in the list widget, because of the filter.
 			visibleSubactivitiesList.removeAt(i);
@@ -905,7 +905,7 @@ void SubactivitiesForm::deactivateSubactivity()
 
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 
 		if(!filterOk(act)){ //Maybe the subactivity is no longer visible in the list widget, because of the filter.
 			visibleSubactivitiesList.removeAt(i);
@@ -969,7 +969,7 @@ void SubactivitiesForm::activateAllSubactivities()
 
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 		
 		filterChanged();
 		
@@ -1007,7 +1007,7 @@ void SubactivitiesForm::deactivateAllSubactivities()
 
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 		
 		filterChanged();
 		

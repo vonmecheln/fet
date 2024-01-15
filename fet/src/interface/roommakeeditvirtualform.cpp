@@ -28,7 +28,7 @@
 #include <QAbstractItemView>
 
 extern bool students_schedule_ready;
-extern bool rooms_schedule_ready;
+extern bool rooms_buildings_schedule_ready;
 extern bool teachers_schedule_ready;
 
 RoomMakeEditVirtualForm::RoomMakeEditVirtualForm(QWidget* parent, Room* _editedRoom): QDialog(parent)
@@ -277,7 +277,7 @@ void RoomMakeEditVirtualForm::ok()
 	
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	
 	close();
 }

@@ -35,7 +35,7 @@ extern Timetable gt;
 
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
-extern bool rooms_schedule_ready;
+extern bool rooms_buildings_schedule_ready;
 
 HoursForm::HoursForm(QWidget* parent): QDialog(parent)
 {
@@ -229,7 +229,7 @@ void HoursForm::ok()
 
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 		
 		int _oldHours=gt.rules.nHoursPerDay;
 		gt.rules.nHoursPerDay=nHours;
@@ -303,7 +303,7 @@ void HoursForm::ok()
 	else{
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 	}
 	////////////
 

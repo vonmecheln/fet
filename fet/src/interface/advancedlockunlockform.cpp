@@ -55,7 +55,7 @@
 
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
-extern bool rooms_schedule_ready;
+extern bool rooms_buildings_schedule_ready;
 
 extern Solution best_solution;
 
@@ -131,7 +131,7 @@ bool compareSpaceConstraintsActivityPreferredRoomActivitiesIds(SpaceConstraint* 
 
 void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 {
-	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		return;
 	}
 	
@@ -426,7 +426,7 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 
 /*void AdvancedLockUnlockForm::unlockDay(QWidget* parent)
 {
-	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		return;
 	}
 	
@@ -690,7 +690,7 @@ void AdvancedLockUnlockForm::lockDay(QWidget* parent)
 
 void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 {
-	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		return;
 	}
 	
@@ -1000,7 +1000,7 @@ void AdvancedLockUnlockForm::lockEndStudentsDay(QWidget* parent)
 
 void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 {
-	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		return;
 	}
 	
@@ -1260,7 +1260,7 @@ void AdvancedLockUnlockForm::unlockEndStudentsDay(QWidget* parent)
 
 void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 {
-	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		return;
 	}
 	
@@ -1541,7 +1541,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 
 /*void AdvancedLockUnlockForm::unlockAll(QWidget* parent)
 {
-	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		return;
 	}
 	
@@ -1779,7 +1779,7 @@ void AdvancedLockUnlockForm::lockAll(QWidget* parent)
 
 void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 {
-	/*if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	/*if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		return;
 	}*/
 	
@@ -2039,7 +2039,7 @@ void AdvancedLockUnlockForm::unlockAllWithoutTimetable(QWidget* parent)
 
 void AdvancedLockUnlockForm::unlockDayWithoutTimetable(QWidget* parent)
 {
-	/*if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	/*if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		return;
 	}*/
 	
@@ -2324,7 +2324,7 @@ void AdvancedLockUnlockForm::unlockDayWithoutTimetable(QWidget* parent)
 
 void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 {
-	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		return;
 	}
 	
@@ -2626,7 +2626,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 
 /*void AdvancedLockUnlockForm::unlockActivityTag(QWidget* parent)
 {
-	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		return;
 	}
 	
@@ -2891,7 +2891,7 @@ void AdvancedLockUnlockForm::lockActivityTag(QWidget* parent)
 
 void AdvancedLockUnlockForm::unlockActivityTagWithoutTimetable(QWidget* parent)
 {
-	/*if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	/*if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		return;
 	}*/
 
@@ -3556,7 +3556,7 @@ void LockAdvancedDialog::help()
 
 void AdvancedLockUnlockForm::lockAdvancedFilter(QWidget* parent)
 {
-	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		return;
 	}
 	
@@ -4153,7 +4153,7 @@ void UnlockAdvancedDialog::help()
 
 void AdvancedLockUnlockForm::unlockAdvancedFilterWithoutTimetable(QWidget* parent)
 {
-	/*if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	/*if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		return;
 	}*/
 	QSet<QString> virtualRooms;

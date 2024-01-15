@@ -76,10 +76,10 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QLineEdit" name="fileNameLineEdit"/>
+       <widget class="QLineEdit" name="fileNameSuffixLineEdit"/>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="fileNameLabel">
+       <widget class="QLabel" name="fileNameSuffixLabel">
         <property name="text">
          <string>File name suffix</string>
         </property>
@@ -93,7 +93,7 @@
        </widget>
       </item>
       <item row="2" column="2" colspan="2">
-       <widget class="QLabel" name="fileNameLabel2">
+       <widget class="QLabel" name="fileNameSuffixLabel2">
         <property name="text">
          <string comment="The line edit for the autosave file name suffix is read-only">(read-only)</string>
         </property>

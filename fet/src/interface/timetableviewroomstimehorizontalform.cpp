@@ -66,7 +66,7 @@ extern const QString PROGRAM;
 
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
-extern bool rooms_schedule_ready;
+extern bool rooms_buildings_schedule_ready;
 
 extern Solution best_solution;
 
@@ -203,7 +203,7 @@ TimetableViewRoomsTimeHorizontalForm::TimetableViewRoomsTimeHorizontalForm(QWidg
 ///////////
 
 	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
-		assert(0); //should be taken care of by Rules - rooms_schedule_ready is false in the Rules if adding or removing rooms.
+		assert(0); //should be taken care of by Rules - rooms_buildings_schedule_ready is false in the Rules if adding or removing rooms.
 
 		initialRecommendedHeight=10;
 
@@ -456,7 +456,7 @@ void TimetableViewRoomsTimeHorizontalForm::newTimetableGenerated()
 ///////////
 
 	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
-		assert(0); //should be taken care of by Rules - rooms_schedule_ready is false in the Rules if adding or removing rooms.
+		assert(0); //should be taken care of by Rules - rooms_buildings_schedule_ready is false in the Rules if adding or removing rooms.
 	}
 
 	//DON'T UNCOMMENT THIS CODE -> LEADS TO CRASH IF THERE ARE MORE VIEWS OPENED.
@@ -677,12 +677,12 @@ void TimetableViewRoomsTimeHorizontalForm::updateRoomsTimetableTable(){
 	}
 	assert(students_schedule_ready && teachers_schedule_ready);
 
-	if(!rooms_schedule_ready){
+	if(!rooms_buildings_schedule_ready){
 		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable "
 		"or close the timetable view rooms dialog"));
 		return;
 	}
-	assert(rooms_schedule_ready);
+	assert(rooms_buildings_schedule_ready);
 
 	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
 		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));
@@ -927,11 +927,11 @@ void TimetableViewRoomsTimeHorizontalForm::detailActivity(QTableWidgetItem* item
 	}
 	assert(students_schedule_ready && teachers_schedule_ready);
 
-	if(!rooms_schedule_ready){
+	if(!rooms_buildings_schedule_ready){
 		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable"));
 		return;
 	}
-	assert(rooms_schedule_ready);
+	assert(rooms_buildings_schedule_ready);
 
 	if(item->row()>=gt.rules.nInternalRooms || item->column()>=gt.rules.nDaysPerWeek*gt.rules.nHoursPerDay){
 		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable "
@@ -1072,11 +1072,11 @@ void TimetableViewRoomsTimeHorizontalForm::lock(bool lockTime, bool lockSpace)
 	}
 	assert(students_schedule_ready && teachers_schedule_ready);
 
-	if(!rooms_schedule_ready){
+	if(!rooms_buildings_schedule_ready){
 		QMessageBox::warning(this, tr("FET warning"), tr("Timetable not available in view rooms timetable dialog - please generate a new timetable"));
 		return;
 	}
-	assert(rooms_schedule_ready);
+	assert(rooms_buildings_schedule_ready);
 
 	if(gt.rules.nInternalRooms!=gt.rules.roomsList.count()){
 		QMessageBox::warning(this, tr("FET warning"), tr("Cannot display the timetable, because you added or removed some rooms. Please regenerate the timetable and then view it"));

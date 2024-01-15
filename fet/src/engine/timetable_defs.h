@@ -42,6 +42,10 @@ extern bool USE_UNDO_REDO;
 extern int UNDO_REDO_STEPS;
 //extern int UNDO_REDO_COMPRESSION_LEVEL;
 
+extern bool USE_UNDO_REDO_SAVE;
+extern int UNDO_REDO_STEPS_SAVE;
+extern QString SUFFIX_FILENAME_SAVE_HISTORY;
+
 extern bool USE_AUTOSAVE;
 extern int MINUTES_AUTOSAVE;
 extern int OPERATIONS_AUTOSAVE;

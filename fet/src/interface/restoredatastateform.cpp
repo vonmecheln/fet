@@ -35,13 +35,17 @@
 
 #include <QSettings>
 
+#include <QByteArray>
+#include <QDataStream>
+
 extern const QString COMPANY;
 extern const QString PROGRAM;
 
 //in rules.cpp
 extern int cntUndoRedoStackIterator;
 extern std::list<QByteArray> oldRulesArchived; //.front() is oldest, .back() is newest
-extern std::list<QString> operationWhichWasDone; //as above
+//extern std::list<QString> operationWhichWasDone; //as above
+extern std::list<QByteArray> operationWhichWasDoneArchived; //as above
 extern std::list<QPair<QDate, QTime>> operationDateTime; //as above
 extern std::list<int> unarchivedSizes; //as above
 //extern std::list<QString> stateFileName; //as above
@@ -87,10 +91,18 @@ RestoreDataStateForm::RestoreDataStateForm(QWidget* parent): QDialog(parent)
 			s+=QString("] ");
 		}
 
-		if(dt.first==QDate::currentDate())
-			s+=tr("Today")+" "+loc.toString(dt.second, QLocale::ShortFormat);
-		else
-			s+=loc.toString(dt.first, QLocale::ShortFormat)+" "+loc.toString(dt.second, QLocale::ShortFormat);
+		if(!dt.first.isValid() || !dt.second.isValid()){
+			s+=tr("Corrupted date/time read from the memory or from the disk (but your data might be valid)")
+			 +QString(" ")+tr("If the problem is caused by the history file saved on the disk, you might want to exit FET, remove the corresponding history file"
+			 " ending in '%1', open FET again, and open your .fet data file again. Or just ignore the problem, until the history will be replaced with new, valid entries.")
+			 .arg(SUFFIX_FILENAME_SAVE_HISTORY);
+		}
+		else{
+			if(dt.first==QDate::currentDate())
+				s+=tr("Today")+" "+loc.toString(dt.second, QLocale::ShortFormat);
+			else
+				s+=loc.toString(dt.first, QLocale::ShortFormat)+" "+loc.toString(dt.second, QLocale::ShortFormat);
+		}
 		
 		s+=" (";
 		assert(ita!=oldRulesArchived.cend());
@@ -106,14 +118,14 @@ RestoreDataStateForm::RestoreDataStateForm(QWidget* parent): QDialog(parent)
 	}
 
 #if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
-	descriptions=QList<QString>(operationWhichWasDone.cbegin(), operationWhichWasDone.cend());
+	descriptionsArchivedBA=QList<QByteArray>(operationWhichWasDoneArchived.cbegin(), operationWhichWasDoneArchived.cend());
 	//fileNames=QList<QString>(stateFileName.cbegin(), stateFileName.cend());
 #else
-	descriptions=QList<QString>::fromStdList(operationWhichWasDone);
+	descriptionsArchivedBA=QList<QByteArray>::fromStdList(operationWhichWasDoneArchived);
 	//fileNames=QList<QString>::fromStdList(stateFileName);
 #endif
 
-	assert(descriptions.count()==restoreDataStateListWidget->count());
+	assert(descriptionsArchivedBA.count()==restoreDataStateListWidget->count());
 
 	if(restoreDataStateListWidget->count()>0){
 		assert(cntUndoRedoStackIterator>0);
@@ -138,6 +150,8 @@ RestoreDataStateForm::RestoreDataStateForm(QWidget* parent): QDialog(parent)
 	}
 	
 	memoryConsumptionLabel->setText(tr("Memory consumption (sum) = %1 bytes").arg(loc.toString(membytes)));
+	
+	restoreDataStateListWidget->setFocus();
 }
 
 RestoreDataStateForm::~RestoreDataStateForm()
@@ -151,8 +165,25 @@ RestoreDataStateForm::~RestoreDataStateForm()
 void RestoreDataStateForm::restoreDataStateListWidgetSelectionChanged()
 {
 	int i=restoreDataStateListWidget->currentRow();
-	if(i>=0 && i<restoreDataStateListWidget->count())
-		restoreDataStatePlainTextEdit->setPlainText(descriptions.at(i));
+	if(i>=0 && i<restoreDataStateListWidget->count()){
+		QByteArray descriptionBA=qUncompress(descriptionsArchivedBA.at(i));
+		if(descriptionBA.isEmpty()){
+			restoreDataStatePlainTextEdit->setPlainText(tr("Corrupted operation details read from the memory or from the disk (but your data might be valid).")
+			 +QString("\n\n")+tr("If the problem is caused by the history file saved on the disk, you might want to exit FET, remove the corresponding history file"
+			 " ending in '%1', open FET again, and open your .fet data file again. Or just ignore the problem, until the history will be replaced with new, valid entries.")
+			 .arg(SUFFIX_FILENAME_SAVE_HISTORY));
+		}
+		else{
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+			QDataStream dsd(&descriptionBA, QIODeviceBase::ReadOnly);
+#else
+			QDataStream dsd(&descriptionBA, QIODevice::ReadOnly);
+#endif
+			QString descr;
+			dsd>>descr;
+			restoreDataStatePlainTextEdit->setPlainText(descr);
+		}
+	}
 }
 
 void RestoreDataStateForm::ok()
@@ -172,7 +203,7 @@ void RestoreDataStateForm::ok()
 			QMessageBox::information(this, tr("FET information"), tr("Note: the name of your current file will be changed from %1 to %2.")
 			 .arg(INPUT_FILENAME_XML.isEmpty() ? QString("Untitled") : QDir::toNativeSeparators(INPUT_FILENAME_XML))
 			 .arg(fileNames.at(i).isEmpty() ? QString("Untitled") : QDir::toNativeSeparators(fileNames.at(i))));*/
-		gt.rules.restoreState(itb);
+		gt.rules.restoreState(this, itb);
 	}
 
 	this->close();

@@ -40,7 +40,7 @@ extern const QString COMPANY;
 extern const QString PROGRAM;
 
 extern bool students_schedule_ready;
-extern bool rooms_schedule_ready;
+extern bool rooms_buildings_schedule_ready;
 extern bool teachers_schedule_ready;
 
 RoomsForm::RoomsForm(QWidget* parent): QDialog(parent)
@@ -233,7 +233,7 @@ void RoomsForm::moveRoomUp()
 	
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	roomsListWidget->item(i)->setText(s2);
 	roomsListWidget->item(i-1)->setText(s1);
@@ -275,7 +275,7 @@ void RoomsForm::moveRoomDown()
 	
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	roomsListWidget->item(i)->setText(s2);
 	roomsListWidget->item(i+1)->setText(s1);
@@ -462,7 +462,7 @@ void RoomsForm::makeReal()
 	
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	////////
 	
 	filterChanged();

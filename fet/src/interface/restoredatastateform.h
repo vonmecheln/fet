@@ -20,14 +20,13 @@
 
 #include "ui_restoredatastateform_template.h"
 
-#include <QStringList>
+#include <QByteArrayList>
 
 class RestoreDataStateForm : public QDialog, Ui::RestoreDataStateForm_template{
 	Q_OBJECT
 	
 private:
-	QStringList descriptions;
-	QStringList fileNames;
+	QByteArrayList descriptionsArchivedBA;
 	
 public:
 	RestoreDataStateForm(QWidget* parent);

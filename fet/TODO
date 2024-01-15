@@ -1132,7 +1132,7 @@ data.
 (see also items #149, #368, and #396)
 From Massimo Mancini:
 
-I have another suggestion: an history file where you record all the actions
+I have another suggestion: a history file where you record all the actions
 of the timetabler and theirs effects. If the history was visible in a frame
 in the View timetable forms, I would see scroll the messages without interruption
 and with the opportunity to review them (please don't answer that is too
@@ -6432,7 +6432,7 @@ the feature of assigning teachers automatically.
 
 This way the official FET can be used for both regular as well as exam timetables.
 
-396----------DONE in FET-6.12.0 on 3 November 2023----------
+396----------DONE in FET-6.12.0 and in FET-6.15.0-----------
 
 397---------------------------------------------------------
 From Corfiot (on forum):
@@ -8554,11 +8554,7 @@ Liviu Lalescu: So in the two slots selected with X there can be at most one acti
 
 Vũ Ngọc Thành: Thank you for understanding my thoughts correctly. I find this constraint does a lot of good for scheduling.
 
-527---------------------------------------------------------
-From ngoctp29121982:
-
-FET-6.12 has a historical section.  If when you use the constraints of a schedule, you turn off the FET software and turn the FET software
-back on later, the history of those constraints appears, that's great.
+527------------------DONE in FET-6.15.0---------------------
 
 528---------------------------------------------------------
 From rozojc (on forum):

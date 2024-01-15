@@ -81,12 +81,6 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules);
 class QDate;
 class QTime;
 
-#ifndef FET_COMMAND_LINE
-	void showStatusBarAutosaved();
-	void updateFetMainFormAfterHistoryRestored(int iterationsBackward);
-	void clearHistory();
-#endif
-
 /**
 This class contains all the information regarding
 the institution: teachers, students, activities, constraints, etc.
@@ -97,7 +91,7 @@ class Rules{
 public:
 #ifndef FET_COMMAND_LINE
 	void addUndoPoint(const QString& description, bool autosave=true, bool resetCounter=false);
-	void restoreState(int iterationsBackward); //iterationsBackward<0 means Redo, >0 means Undo, and ==0 is not allowed
+	void restoreState(QWidget* parent, int iterationsBackward); //iterationsBackward<0 means Redo, >0 means Undo, and ==0 is not allowed
 #endif
 
 	void recomputeActivitiesSetForTimeConstraint(TimeConstraint* ctr);

@@ -2751,7 +2751,7 @@ Versions 6.13.0 - 6.13.2
 	- Added an additional test for the feasibility of the generation in the Mornings-Afternoons mode (suggested by sunnysolanki76).
 	- Code cleanup.
 ---------------------------------------------------------------------------------
-Versions 6.14.0 - 6.14.v
+Versions 6.14.0 - 6.14.2
 - Version 6.14.0
 	- Implemented the HTML exporting and the printing of the timetables for the buildings (suggested by Benahmed Abdelkrim).
 	- Minor corrections in the HTML exporting and in the printing of the timetables.
@@ -2762,4 +2762,10 @@ Versions 6.14.0 - 6.14.v
 - Version 6.14.2
 	- The 'printable' option of the activity tags will be considered when exporting the generated timetable as a CSV file (so that the nonprintable
 	activity tags will not appear). Suggested by pnlshd.
+	- Code cleanup.
+---------------------------------------------------------------------------------
+Versions 6.15.0 - 6.15.v
+	- Added the possibility of saving the history to the hard disk, next to the saved .fet data file (suggested by uni_instructor and ngoctp29121982).
+	This option is by default disabled and must be enabled from the settings.
+	- Minor improvements in the memory consumption (the comments of the history are now stored archived).
 	- Code cleanup.

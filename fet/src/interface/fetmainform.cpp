@@ -21,6 +21,8 @@
 #include "rules.h"
 
 #include <iostream>
+//for std::min
+#include <algorithm>
 //using namespace std;
 
 #ifndef FET_COMMAND_LINE
@@ -30,7 +32,8 @@
 #include "fetmainform.h"
 
 #include "restoredatastateform.h"
-#include "settingsrestoredataform.h"
+#include "settingsrestoredatafrommemoryform.h"
+#include "settingsrestoredatafromdiskform.h"
 
 #include "settingsautosaveform.h"
 
@@ -510,6 +513,12 @@
 #include <QFont>
 #include <QFontDialog>
 
+#include <list>
+#include <iterator>
+
+#include <QByteArray>
+#include <QDataStream>
+
 QRect mainFormSettingsRect;
 int MAIN_FORM_SHORTCUTS_TAB_POSITION;
 
@@ -525,7 +534,7 @@ bool generation_running_multi;
 
 bool students_schedule_ready;
 bool teachers_schedule_ready;
-bool rooms_schedule_ready;
+bool rooms_buildings_schedule_ready;
 
 Solution best_solution;
 
@@ -624,10 +633,13 @@ const int STATUS_BAR_MILLISECONDS=2500;
 //in rules.cpp
 extern int cntUndoRedoStackIterator;
 extern std::list<QByteArray> oldRulesArchived; //.front() is oldest, .back() is newest
-extern std::list<QString> operationWhichWasDone; //as above
+//extern std::list<QString> operationWhichWasDone; //as above
+extern std::list<QByteArray> operationWhichWasDoneArchived; //as above
 extern std::list<QPair<QDate, QTime>> operationDateTime; //as above
 extern std::list<int> unarchivedSizes; //as above
 //extern std::list<QString> stateFileName; //as above
+
+extern std::list<QByteArray>::const_iterator crtBAIt;
 
 extern int savedStateIterator;
 
@@ -663,12 +675,148 @@ void clearHistory()
 	cntUndoRedoStackIterator=0;
 
 	oldRulesArchived.clear();
-	operationWhichWasDone.clear();
+	operationWhichWasDoneArchived.clear();
 	operationDateTime.clear();
 	unarchivedSizes.clear();
 	//stateFileName.clear();
 	
 	savedStateIterator=0;
+}
+
+bool FetMainForm::openHistory()
+{
+	QString filename=INPUT_FILENAME_XML+SUFFIX_FILENAME_SAVE_HISTORY;
+
+	if(USE_UNDO_REDO && USE_UNDO_REDO_SAVE){
+		if(!QFile::exists(filename))
+			return false;
+
+		QFile file(filename);
+
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+		if(!file.open(QIODeviceBase::ReadOnly)){
+#else
+		if(!file.open(QIODevice::ReadOnly)){
+#endif
+			QMessageBox::critical(this, tr("FET critical"),
+			 tr("Cannot open %1 for reading the history ... please check the reading permissions of the selected directory. Reading of the history file aborted.").arg(QFileInfo(filename).fileName()));
+
+			return false;
+		}
+		
+		QDataStream tos(&file);
+
+		int stepsToRead;
+		tos>>stepsToRead;
+		
+		if(stepsToRead>=1)
+			clearHistory(); //so that the "opened file..." from the function openFile is removed.
+		
+		if(stepsToRead>UNDO_REDO_STEPS)
+			stepsToRead=UNDO_REDO_STEPS;
+		for(int i=0; i<stepsToRead; i++){
+			QByteArray oRAba;
+			QByteArray oWWDAba;
+			QPair<QDate, QTime> oDTp;
+			int uSi;
+			tos>>oRAba>>oWWDAba>>oDTp>>uSi;
+
+			oldRulesArchived.push_front(oRAba);
+			operationWhichWasDoneArchived.push_front(oWWDAba);
+			operationDateTime.push_front(oDTp);
+			unarchivedSizes.push_front(uSi);
+		}
+
+		/*if(stepsToRead==UNDO_REDO_STEPS+1){
+			//we have one extra history item, "file was opened..."
+			oldRulesArchived.pop_back();
+			operationWhichWasDoneArchived.pop_back();
+			operationDateTime.pop_back();
+			unarchivedSizes.pop_back();
+		}*/
+
+		cntUndoRedoStackIterator=int(oldRulesArchived.size());
+		savedStateIterator=cntUndoRedoStackIterator;
+		crtBAIt=prev(oldRulesArchived.cend());
+
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+bool FetMainForm::saveHistory()
+{
+	QString filename=INPUT_FILENAME_XML+SUFFIX_FILENAME_SAVE_HISTORY;
+
+	if(USE_UNDO_REDO && USE_UNDO_REDO_SAVE){
+		std::list<QByteArray>::const_iterator oRAit=oldRulesArchived.cbegin();
+		std::list<QByteArray>::const_iterator oWWDAit=operationWhichWasDoneArchived.cbegin();
+		std::list<QPair<QDate, QTime>>::const_iterator oDTit=operationDateTime.cbegin();
+		std::list<int>::const_iterator uSit=unarchivedSizes.cbegin();
+
+		assert(cntUndoRedoStackIterator==savedStateIterator);
+		assert(savedStateIterator>=0);
+		assert(savedStateIterator<=int(oldRulesArchived.size()));
+		if(savedStateIterator==0){
+			if(QFile::exists(filename))
+				return QFile::remove(filename);
+			else
+				return true;
+		}
+		else{
+			for(int i=1; i<savedStateIterator; i++){
+				oRAit++;
+				oWWDAit++;
+				oDTit++;
+				uSit++;
+			}
+
+			QSaveFile file(filename);
+
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+			if(!file.open(QIODeviceBase::WriteOnly | QIODeviceBase::Truncate)){
+#else
+			if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
+#endif
+				QMessageBox::critical(this, tr("FET critical"),
+				 tr("Cannot open %1 for writing of the history ... please check the write permissions of the selected directory and your disk free space. Saving of the file aborted.").arg(QFileInfo(filename).fileName()));
+
+				return false;
+			}
+
+			QDataStream tos(&file);
+
+			int stepsToSave=std::min(UNDO_REDO_STEPS_SAVE, savedStateIterator);
+			tos<<stepsToSave;
+			for(int i=stepsToSave-1; i>=0; i--){
+				tos<<*oRAit<<*oWWDAit<<*oDTit<<*uSit;
+
+				if(i>=1){
+					oRAit--;
+					oWWDAit--;
+					oDTit--;
+					uSit--;
+				}
+			}
+
+			if(file.error()!=QFileDevice::NoError){
+				QMessageBox::critical(this, tr("FET critical"),
+				 tr("Saving the history file gave the error message '%1', which means the saving is compromised. Please check your disk's free space.")
+				 .arg(file.errorString()));
+			}
+
+			bool res=file.commit();
+			return res;
+		}
+	}
+	else{
+		if(QFile::exists(filename))
+			return QFile::remove(filename);
+		else
+			return true;
+	}
 }
 
 FetMainForm::FetMainForm()
@@ -711,6 +859,16 @@ FetMainForm::FetMainForm()
 	if(UNDO_REDO_STEPS<=0)
 		UNDO_REDO_STEPS=1;
 	//UNDO_REDO_COMPRESSION_LEVEL=settings.value(QString("data-states-compression-level"), QString("-1")).toInt();
+
+	USE_UNDO_REDO_SAVE=settings.value(QString("enable-data-states-recording-on-disk"), QString("false")).toBool();
+	UNDO_REDO_STEPS_SAVE=settings.value(QString("number-of-data-steps-to-record-on-disk"), QString("20")).toInt();
+	if(UNDO_REDO_STEPS_SAVE>100)
+		UNDO_REDO_STEPS=100;
+	if(UNDO_REDO_STEPS_SAVE<=0)
+		UNDO_REDO_STEPS_SAVE=1;
+	SUFFIX_FILENAME_SAVE_HISTORY=settings.value(QString("filename-suffix-save-history"), QString(".his")).toString();
+	if(SUFFIX_FILENAME_SAVE_HISTORY!=QString(".his"))
+		SUFFIX_FILENAME_SAVE_HISTORY=QString(".his");
 
 	USE_AUTOSAVE=settings.value(QString("enable-file-autosave"), QString("false")).toBool();
 	MINUTES_AUTOSAVE=settings.value(QString("minutes-for-autosave"), QString("3")).toInt();
@@ -883,7 +1041,7 @@ FetMainForm::FetMainForm()
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	
 	assert(!gt.rules.initialized);
 	
@@ -3823,7 +3981,7 @@ void FetMainForm::replyFinished(QNetworkReply* networkReply)
 {
 	if(networkReply->error()!=QNetworkReply::NoError){
 		QString s=QString("");
-		s+=tr("Could not search for possible updates on the internet - error message is: %1.").arg(networkReply->errorString());
+		s+=tr("Could not search for possible updates on the internet - the error message is: %1.").arg(networkReply->errorString());
 		s+=QString("\n\n");
 		s+=tr("Searching for file %1.").arg("https://lalescu.ro/liviu/fet/crtversion/crtversion.txt");
 		s+=QString("\n\n");
@@ -3956,6 +4114,10 @@ FetMainForm::~FetMainForm()
 	settings.setValue(QString("enable-data-states-recording"), USE_UNDO_REDO);
 	settings.setValue(QString("number-of-data-steps-to-record"), UNDO_REDO_STEPS);
 	//settings.setValue(QString("data-states-compression-level"), UNDO_REDO_COMPRESSION_LEVEL);
+
+	settings.setValue(QString("enable-data-states-recording-on-disk"), USE_UNDO_REDO_SAVE);
+	settings.setValue(QString("number-of-data-steps-to-record-on-disk"), UNDO_REDO_STEPS_SAVE);
+	settings.setValue(QString("filename-suffix-save-history"), SUFFIX_FILENAME_SAVE_HISTORY);
 
 	settings.setValue(QString("enable-file-autosave"), USE_AUTOSAVE);
 	settings.setValue(QString("minutes-for-autosave"), MINUTES_AUTOSAVE);
@@ -4147,7 +4309,7 @@ void FetMainForm::on_fileNewAction_triggered()
 
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 
 		LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 		LockUnlock::increaseCommunicationSpinBox();
@@ -4274,14 +4436,16 @@ void FetMainForm::openFile(const QString& fileName)
 			if(gt.rules.read(this, s)){
 				teachers_schedule_ready=false;
 				students_schedule_ready=false;
-				rooms_schedule_ready=false;
+				rooms_buildings_schedule_ready=false;
 
 				INPUT_FILENAME_XML = s;
 				
 				clearHistory();
 				gt.rules.addUndoPoint(tr("Opened the file %1").arg(QDir::toNativeSeparators(s)), false, true);
 				savedStateIterator=cntUndoRedoStackIterator;
-			
+
+				openHistory();
+				
 				LockUnlock::computeLockedUnlockedActivitiesTimeSpace();
 				LockUnlock::increaseCommunicationSpinBox();
 
@@ -4407,6 +4571,8 @@ bool FetMainForm::fileSaveAs()
 		
 		//gt.rules.addUndoPoint(tr("Saved the file as %1.").arg(QDir::toNativeSeparators(INPUT_FILENAME_XML)));
 		savedStateIterator=cntUndoRedoStackIterator;
+
+		saveHistory();
 	
 		gt.rules.modified=true; //force update of the modified flag of the main window
 		setRulesUnmodifiedAndOtherThings(&gt.rules);
@@ -4427,7 +4593,7 @@ void FetMainForm::on_fileSaveAsAction_triggered()
 	fileSaveAs();
 }
 
-void FetMainForm::on_settingsHistoryAction_triggered()
+void FetMainForm::on_settingsHistoryMemoryAction_triggered()
 {
 	if(generation_running || generation_running_multi){
 		QMessageBox::information(this, tr("FET information"),
@@ -4435,7 +4601,27 @@ void FetMainForm::on_settingsHistoryAction_triggered()
 		return;
 	}
 
-	SettingsRestoreDataForm form(this);
+	SettingsRestoreDataFromMemoryForm form(this);
+	setParentAndOtherThings(&form, this);
+	form.exec();
+}
+
+void FetMainForm::on_settingsHistoryDiskAction_triggered()
+{
+	if(generation_running || generation_running_multi){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Generation in progress. Please stop the generation before this."));
+		return;
+	}
+
+	if(!USE_UNDO_REDO){
+		QMessageBox::information(this, tr("FET information"),
+			tr("Saving/restoring history to/from the memory is disabled. Please enable memory history before enabling disk history.",
+			 "Memory history is the history saved in the computer memory, and disk history is the history saved on the computer disk."));
+		return;
+	}
+
+	SettingsRestoreDataFromDiskForm form(this);
 	setParentAndOtherThings(&form, this);
 	form.exec();
 }
@@ -4593,7 +4779,7 @@ void FetMainForm::on_timetableSaveTimetableAsAction_triggered()
 		return;
 	}
 
-	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_schedule_ready){
+	if(!students_schedule_ready || !teachers_schedule_ready || !rooms_buildings_schedule_ready){
 		QMessageBox::warning(this, tr("FET - Warning"), tr("You have not yet generated a timetable - please generate firstly"));
 		return;
 	}
@@ -4908,6 +5094,8 @@ bool FetMainForm::fileSave()
 		if(t){
 			//gt.rules.addUndoPoint(tr("Saved the file (the name was %1).").arg(QDir::toNativeSeparators(INPUT_FILENAME_XML)));
 			savedStateIterator=cntUndoRedoStackIterator;
+
+			saveHistory();
 
 			gt.rules.modified=true; //force update of the modified flag of the main window
 			setRulesUnmodifiedAndOtherThings(&gt.rules);
@@ -10666,7 +10854,7 @@ void FetMainForm::on_timetableViewStudentsDaysHorizontalAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -10693,7 +10881,7 @@ void FetMainForm::on_timetableViewStudentsTimeHorizontalAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -10720,7 +10908,7 @@ void FetMainForm::on_timetableViewTeachersDaysHorizontalAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -10751,7 +10939,7 @@ void FetMainForm::on_timetableViewTeachersTimeHorizontalAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -10782,7 +10970,7 @@ void FetMainForm::on_timetableShowConflictsAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -10803,7 +10991,7 @@ void FetMainForm::on_timetableViewRoomsDaysHorizontalAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -10830,7 +11018,7 @@ void FetMainForm::on_timetableViewRoomsTimeHorizontalAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -10857,7 +11045,7 @@ void FetMainForm::on_timetablePrintAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -10893,7 +11081,7 @@ void FetMainForm::on_timetableLockAllActivitiesAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -10909,7 +11097,7 @@ void FetMainForm::on_timetableUnlockAllActivitiesAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		//QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		QMessageBox::information(this, tr("FET information"), tr("The timetable is not generated, but anyway FET will proceed now"));
 
@@ -10930,7 +11118,7 @@ void FetMainForm::on_timetableLockActivitiesDayAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -10946,7 +11134,7 @@ void FetMainForm::on_timetableUnlockActivitiesDayAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		//QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		QMessageBox::information(this, tr("FET information"), tr("The timetable is not generated, but anyway FET will proceed now"));
 		
@@ -10967,7 +11155,7 @@ void FetMainForm::on_timetableLockActivitiesEndStudentsDayAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -10983,7 +11171,7 @@ void FetMainForm::on_timetableUnlockActivitiesEndStudentsDayAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -11004,7 +11192,7 @@ void FetMainForm::on_timetableLockActivitiesWithASpecifiedActivityTagAction_trig
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -11025,7 +11213,7 @@ void FetMainForm::on_timetableUnlockActivitiesWithASpecifiedActivityTagAction_tr
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		//QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		QMessageBox::information(this, tr("FET information"), tr("The timetable is not generated, but anyway FET will proceed now"));
 		
@@ -11046,7 +11234,7 @@ void FetMainForm::on_timetableLockActivitiesWithAdvancedFilterAction_triggered()
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		return;
 	}
@@ -11062,7 +11250,7 @@ void FetMainForm::on_timetableUnlockActivitiesWithAdvancedFilterAction_triggered
 		return;
 	}
 
-	if(!(students_schedule_ready && teachers_schedule_ready && rooms_schedule_ready)){
+	if(!(students_schedule_ready && teachers_schedule_ready && rooms_buildings_schedule_ready)){
 		//QMessageBox::information(this, tr("FET information"), tr("Please generate, firstly"));
 		QMessageBox::information(this, tr("FET information"), tr("The timetable is not generated, but anyway FET will proceed now"));
 		
@@ -11448,10 +11636,10 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 		" students min hours per morning with allowed empty mornings").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("70")+QString(". ")+tr("Enable save and restore history will be %1", "%1 is true or false").arg(tr("true"));
+	s+=tr("70")+QString(". ")+tr("Enable save and restore history to/from the memory will be %1", "%1 is true or false").arg(tr("true"));
 	s+="\n";
 
-	s+=tr("71")+QString(". ")+tr("The number of states to record in history will be %1", "%1 is a number").arg(100);
+	s+=tr("71")+QString(". ")+tr("The number of states to record in history to the memory will be %1", "%1 is a number").arg(100);
 	s+="\n";
 
 	s+="(";
@@ -11470,6 +11658,13 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	s+=tr("76")+QString(". ")+tr("The directory for autosave will be '%1'", "%1 is a directory name").arg(QString(""));
 	s+="\n";
 	s+=tr("77")+QString(". ")+tr("The file name suffix for autosave will be '%1'", "%1 is a suffix to be added to the file name").arg(QString("_AUTOSAVE"));
+	s+="\n";
+
+	s+=tr("78")+QString(". ")+tr("Enable save and restore history to/from the disk will be %1", "%1 is true or false").arg(tr("false"));
+	s+="\n";
+	s+=tr("79")+QString(". ")+tr("The number of states to record in history to the disk will be %1", "%1 is a number").arg(20);
+	s+="\n";
+	s+=tr("80")+QString(". ")+tr("The file name suffix for saving the history to the disk will be '%1'", "%1 is a suffix to be added to the file name").arg(QString(".his"));
 	s+="\n";
 
 	//s+=tr("71")+QString(". ")+tr("The compression level for the states in history will be %1 (the default compression level for zlib)").arg(-1);
@@ -11782,6 +11977,10 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	}
 	///////////////////////
 
+	USE_UNDO_REDO_SAVE=false;
+	UNDO_REDO_STEPS_SAVE=20;
+	SUFFIX_FILENAME_SAVE_HISTORY=QString(".his");
+
 	USE_AUTOSAVE=false;
 	MINUTES_AUTOSAVE=3;
 	OPERATIONS_AUTOSAVE=1;
@@ -11791,7 +11990,7 @@ void FetMainForm::on_settingsRestoreDefaultsAction_triggered()
 	setLanguage(*pqapplication, this);
 	setCurrentFile(INPUT_FILENAME_XML);
 
-	if(teachers_schedule_ready && students_schedule_ready && rooms_schedule_ready)
+	if(teachers_schedule_ready && students_schedule_ready && rooms_buildings_schedule_ready)
 		LockUnlock::increaseCommunicationSpinBox(); //for GUI colors in timetables
 }
 

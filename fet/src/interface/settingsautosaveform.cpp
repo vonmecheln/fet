@@ -77,8 +77,8 @@ SettingsAutosaveForm::SettingsAutosaveForm(QWidget* parent): QDialog(parent)
 	////////////////
 	
 	directoryLineEdit->setText(QDir::toNativeSeparators(DIRECTORY_AUTOSAVE));
-	fileNameLineEdit->setText(SUFFIX_FILENAME_AUTOSAVE);
-	fileNameLineEdit->setReadOnly(true);
+	fileNameSuffixLineEdit->setText(SUFFIX_FILENAME_AUTOSAVE);
+	fileNameSuffixLineEdit->setReadOnly(true);
 }
 
 SettingsAutosaveForm::~SettingsAutosaveForm()
@@ -122,7 +122,7 @@ void SettingsAutosaveForm::ok()
 		DIRECTORY_AUTOSAVE=QString("");
 	else
 		DIRECTORY_AUTOSAVE=QDir(QDir::fromNativeSeparators(directoryLineEdit->text())).canonicalPath();
-	SUFFIX_FILENAME_AUTOSAVE=fileNameLineEdit->text();
+	SUFFIX_FILENAME_AUTOSAVE=fileNameSuffixLineEdit->text();
 
 	this->close();
 }

@@ -380,7 +380,10 @@ private:
 	void createMenusOfActionsForConstraints();
 	
 	void closeOtherWindows();
-	
+
+	bool openHistory();
+	bool saveHistory();
+
 	void openFile(const QString& fileName);
 	bool fileSave();
 	bool fileSaveAs();
@@ -402,7 +405,8 @@ public slots:
 	void on_settingsAutosaveAction_triggered();
 
 	void on_restoreDataStateAction_triggered();
-	void on_settingsHistoryAction_triggered();
+	void on_settingsHistoryMemoryAction_triggered();
+	void on_settingsHistoryDiskAction_triggered();
 	
 	void on_modeOfficialAction_triggered();
 	void on_modeMorningsAfternoonsAction_triggered();

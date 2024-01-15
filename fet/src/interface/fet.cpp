@@ -127,7 +127,7 @@ extern int MAIN_FORM_SHORTCUTS_TAB_POSITION;
 
 extern bool students_schedule_ready;
 extern bool teachers_schedule_ready;
-extern bool rooms_schedule_ready;
+extern bool rooms_buildings_schedule_ready;
 
 //#ifndef FET_COMMAND_LINE
 //extern QMutex myMutex;
@@ -1080,7 +1080,7 @@ int main(int argc, char **argv)
 	
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 #ifndef FET_COMMAND_LINE
 	QObject::connect(&qapplication, SIGNAL(lastWindowClosed()), &qapplication, SLOT(quit()));
@@ -1555,7 +1555,7 @@ int main(int argc, char **argv)
 			else if(showVersion){
 				cout<<"FET version "<<qPrintable(FET_VERSION)<<endl;
 				cout<<"Free timetabling software, licensed under the GNU Affero General Public License version 3 or later"<<endl;
-				cout<<"Copyright (C) 2002-2023 Liviu Lalescu, Volker Dirr"<<endl;
+				cout<<"Copyright (C) 2002-2024 Liviu Lalescu, Volker Dirr"<<endl;
 				cout<<"Homepage: https://lalescu.ro/liviu/fet/"<<endl;
 				cout<<"This program uses Qt version "<<qVersion()<<", Copyright (C) The Qt Company Ltd and other contributors."<<endl;
 				cout<<"Depending on the platform and compiler, this program may use libraries from:"<<endl;

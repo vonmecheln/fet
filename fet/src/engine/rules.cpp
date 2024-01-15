@@ -79,15 +79,17 @@ using namespace std;
 //extern QApplication* pqapplication;
 
 extern bool students_schedule_ready;
-extern bool rooms_schedule_ready;
+extern bool rooms_buildings_schedule_ready;
 extern bool teachers_schedule_ready;
 
 #ifndef FET_COMMAND_LINE
+#include <QMessageBox>
 #include <ctime>
 
 int cntUndoRedoStackIterator=0;
 std::list<QByteArray> oldRulesArchived; //.front() is oldest, .back() is newest
-std::list<QString> operationWhichWasDone; //as above
+//std::list<QString> operationWhichWasDone; //as above
+std::list<QByteArray> operationWhichWasDoneArchived; //as above
 std::list<QPair<QDate, QTime>> operationDateTime; //as above
 std::list<int> unarchivedSizes; //as above
 //std::list<QString> stateFileName; //as above
@@ -100,6 +102,10 @@ int savedStateIterator=0;
 class QWidget;
 class FetMainForm;
 extern FetMainForm* pFetMainForm;
+
+void showStatusBarAutosaved();
+void updateFetMainFormAfterHistoryRestored(int iterationsBackward);
+//void clearHistory();
 #endif
 
 FakeString::FakeString()
@@ -3376,7 +3382,7 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 
 	//Done in the first line above: rules.clear();
 	/*students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	teachers_schedule_ready=false;*/
 	
 	//Assertions failed fixed on 22 November 2023, reported by Vangelis Karafillidis.
@@ -3455,11 +3461,11 @@ void Rules::addUndoPoint(const QString& description, bool autosave, bool resetCo
 
 	QByteArray oldRulesBA;
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
-	QDataStream ds(&oldRulesBA, QIODeviceBase::WriteOnly);
+	QDataStream dsr(&oldRulesBA, QIODeviceBase::WriteOnly);
 #else
-	QDataStream ds(&oldRulesBA, QIODevice::WriteOnly);
+	QDataStream dsr(&oldRulesBA, QIODevice::WriteOnly);
 #endif
-	ds<<*this;
+	dsr<<*this;
 
 	//ds>>oldRulesBA;
 
@@ -3469,7 +3475,7 @@ void Rules::addUndoPoint(const QString& description, bool autosave, bool resetCo
 	//cout<<"Adding an undo point with uncompressed size="<<oldRulesBA.size()<<" and compressed size="<<oldRulesArchivedBA.size()
 	// <<" and description: "<<qPrintable(description)<<endl;
 
-	assert(oldRulesArchived.size()==operationWhichWasDone.size());
+	assert(oldRulesArchived.size()==operationWhichWasDoneArchived.size());
 	assert(oldRulesArchived.size()==operationDateTime.size());
 	assert(oldRulesArchived.size()==unarchivedSizes.size());
 	//assert(oldRulesArchived.size()==stateFileName.size());
@@ -3483,9 +3489,9 @@ void Rules::addUndoPoint(const QString& description, bool autosave, bool resetCo
 		assert(!oldRulesArchived.empty());
 		oldRulesArchived.pop_back();
 		
-		assert(!operationWhichWasDone.empty());
+		assert(!operationWhichWasDoneArchived.empty());
 		//cout<<"Removing operation: "<<qPrintable(operationWhichWasDone.back())<<endl;
-		operationWhichWasDone.pop_back();
+		operationWhichWasDoneArchived.pop_back();
 		
 		assert(!operationDateTime.empty());
 		operationDateTime.pop_back();
@@ -3500,8 +3506,15 @@ void Rules::addUndoPoint(const QString& description, bool autosave, bool resetCo
 		savedStateIterator=0;
 
 	oldRulesArchived.push_back(oldRulesArchivedBA);
+
+	QByteArray descrBA;
+#if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+	QDataStream dsd(&descrBA, QIODeviceBase::WriteOnly);
+#else
+	QDataStream dsd(&descrBA, QIODevice::WriteOnly);
+#endif
 	if(description.length()<=20000){
-		operationWhichWasDone.push_back(description);
+		dsd<<description;
 	}
 	else{
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
@@ -3510,13 +3523,20 @@ void Rules::addUndoPoint(const QString& description, bool autosave, bool resetCo
 		QString shortDescr=description.left(20000);
 #endif
 		shortDescr+=QString("\n...");
-		operationWhichWasDone.push_back(shortDescr);
+		dsd<<shortDescr;
 	}
+
+	//QByteArray oldRulesArchivedBA=qCompress(oldRulesBA, UNDO_REDO_COMPRESSION_LEVEL);
+	QByteArray descrArchivedBA=qCompress(descrBA);
+	operationWhichWasDoneArchived.push_back(descrArchivedBA);
+
+	//cout<<"Adding an undo point with uncompressed size="<<descrBA.size()<<" and compressed size="<<descrArchivedBA.size()<<endl;
+
 	operationDateTime.push_back(QPair<QDate, QTime>(QDate::currentDate(), QTime::currentTime()));
 	unarchivedSizes.push_back(oldRulesBA.size());
 	//stateFileName.push_back(INPUT_FILENAME_XML);
 
-	assert(oldRulesArchived.size()==operationWhichWasDone.size());
+	assert(oldRulesArchived.size()==operationWhichWasDoneArchived.size());
 	assert(oldRulesArchived.size()==operationDateTime.size());
 	assert(oldRulesArchived.size()==unarchivedSizes.size());
 	//assert(oldRulesArchived.size()==stateFileName.size());
@@ -3528,8 +3548,8 @@ void Rules::addUndoPoint(const QString& description, bool autosave, bool resetCo
 		assert(!oldRulesArchived.empty());
 		oldRulesArchived.pop_front();
 		
-		assert(!operationWhichWasDone.empty());
-		operationWhichWasDone.pop_front();
+		assert(!operationWhichWasDoneArchived.empty());
+		operationWhichWasDoneArchived.pop_front();
 		
 		assert(!operationDateTime.empty());
 		operationDateTime.pop_front();
@@ -3552,9 +3572,12 @@ void Rules::addUndoPoint(const QString& description, bool autosave, bool resetCo
 	//crtFNIt=prev(stateFileName.cend());
 }
 
-void Rules::restoreState(int iterationsBackward)
+void Rules::restoreState(QWidget* parent, int iterationsBackward)
 {
 	assert(USE_UNDO_REDO);
+
+	std::list<QByteArray>::const_iterator savedCrtBAIt=crtBAIt;
+	int savedCntUndoRedoStackIterator=cntUndoRedoStackIterator;
 
 	if(iterationsBackward==0){
 		assert(0);
@@ -3593,19 +3616,29 @@ void Rules::restoreState(int iterationsBackward)
 	}
 	QByteArray oldRulesArchivedBA=*crtBAIt;
 	QByteArray oldRulesBA=qUncompress(oldRulesArchivedBA);
+	if(oldRulesBA.isEmpty()){
+		QMessageBox::critical(parent, tr("FET critical"), tr("Corrupted state read from the memory or from the hard disk ... returning to the previous state.")+
+		 QString("\n\n")+tr("If the problem is caused by the history file saved on the disk, you might want to exit FET, remove the corresponding history file"
+		 " ending in '%1', open FET again, and open your .fet data file again. Or just ignore the problem, until the history will be replaced with new, valid entries.")
+		 .arg(SUFFIX_FILENAME_SAVE_HISTORY));
+		crtBAIt=savedCrtBAIt;
+		cntUndoRedoStackIterator=savedCntUndoRedoStackIterator;
+	}
+	else{
 #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
-	QDataStream ds(&oldRulesBA, QIODeviceBase::ReadOnly);
+		QDataStream dsr(&oldRulesBA, QIODeviceBase::ReadOnly);
 #else
-	QDataStream ds(&oldRulesBA, QIODevice::ReadOnly);
+		QDataStream dsr(&oldRulesBA, QIODevice::ReadOnly);
 #endif
-	//ds<<oldRulesBA;
-	ds>>*this;
-	
-	//this->modified=true;
-	this->modified = (cntUndoRedoStackIterator!=savedStateIterator);
-	
-	//INPUT_FILENAME_XML=*crtFNIt;
-	updateFetMainFormAfterHistoryRestored(iterationsBackward);
+		//ds<<oldRulesBA;
+		dsr>>*this;
+		
+		//this->modified=true;
+		this->modified = (cntUndoRedoStackIterator!=savedStateIterator);
+		
+		//INPUT_FILENAME_XML=*crtFNIt;
+		updateFetMainFormAfterHistoryRestored(iterationsBackward);
+	}
 }
 #endif
 
@@ -3670,7 +3703,7 @@ bool Rules::computeInternalStructure(QWidget* parent)
 	//with the same activities indexes.
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	
 	//The order is important - firstly the teachers, subjects, activity tags and students.
 	//After that, the buildings.
@@ -4567,7 +4600,7 @@ void Rules::clear() //clears the memory for the rules.
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 Rules::Rules()
@@ -4609,7 +4642,7 @@ void Rules::setMode(int newMode)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 void Rules::setTerms(int numberOfTerms, int numberOfDaysPerTerm)
@@ -4639,7 +4672,7 @@ void Rules::setTerms(int numberOfTerms, int numberOfDaysPerTerm)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 void Rules::setInstitutionName(const QString& newInstitutionName)
@@ -4669,7 +4702,7 @@ bool Rules::addTeacher(Teacher* teacher)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	this->teachersList.append(teacher);
 	return true;
@@ -4682,7 +4715,7 @@ bool Rules::addTeacherFast(Teacher* teacher)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	this->teachersList.append(teacher);
 	return true;
@@ -4722,7 +4755,7 @@ bool Rules::removeTeacher(const QString& teacherName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -5085,7 +5118,7 @@ bool Rules::modifyTeacher(const QString& initialTeacherName, const QString& fina
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -5099,7 +5132,7 @@ void Rules::sortTeachersAlphabetically()
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 bool Rules::addSubject(Subject* subject)
@@ -5115,7 +5148,7 @@ bool Rules::addSubject(Subject* subject)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	this->subjectsList << subject;
 	return true;
@@ -5128,7 +5161,7 @@ bool Rules::addSubjectFast(Subject* subject)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	this->subjectsList << subject;
 	return true;
@@ -5180,7 +5213,7 @@ bool Rules::removeSubject(const QString& subjectName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -5298,7 +5331,7 @@ bool Rules::modifySubject(const QString& initialSubjectName, const QString& fina
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -5312,7 +5345,7 @@ void Rules::sortSubjectsAlphabetically()
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 bool Rules::addActivityTag(ActivityTag* activityTag)
@@ -5329,7 +5362,7 @@ bool Rules::addActivityTag(ActivityTag* activityTag)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	this->activityTagsList << activityTag;
 	return true;
@@ -5342,7 +5375,7 @@ bool Rules::addActivityTagFast(ActivityTag* activityTag)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	this->activityTagsList << activityTag;
 	return true;
@@ -5379,7 +5412,7 @@ bool Rules::removeActivityTag(const QString& activityTagName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -5628,7 +5661,7 @@ bool Rules::modifyActivityTag(const QString& initialActivityTagName, const QStri
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -5642,7 +5675,7 @@ void Rules::sortActivityTagsAlphabetically()
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 bool Rules::setsShareStudents(const QString& studentsSet1, const QString& studentsSet2)
@@ -5866,7 +5899,7 @@ bool Rules::addYear(StudentsYear* year)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -5879,7 +5912,7 @@ bool Rules::addYearFast(StudentsYear* year)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -5962,7 +5995,7 @@ bool Rules::removeYear(const QString& yearName/*, bool removeAlsoThisYear*/)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -6002,7 +6035,7 @@ bool Rules::removeYearPointerAfterSplit(StudentsYear* yearPointer)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -6357,7 +6390,7 @@ bool Rules::modifyStudentsSet(const QString& initialStudentsSetName, const QStri
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	
 	return true;
 }
@@ -6694,7 +6727,7 @@ bool Rules::modifyStudentsSets(const QHash<QString, QString>& oldAndNewStudentsS
 	
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -6709,7 +6742,7 @@ void Rules::sortYearsAlphabetically()
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 bool Rules::addGroup(const QString& yearName, StudentsGroup* group)
@@ -6738,7 +6771,7 @@ bool Rules::addGroup(const QString& yearName, StudentsGroup* group)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -6752,7 +6785,7 @@ bool Rules::addGroupFast(StudentsYear* year, StudentsGroup* group)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -6833,7 +6866,7 @@ bool Rules::removeGroup(const QString& yearName, const QString& groupName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -6894,7 +6927,7 @@ bool Rules::purgeGroup(const QString& groupName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -6945,7 +6978,7 @@ void Rules::sortGroupsAlphabetically(const QString& yearName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 bool Rules::addSubgroup(const QString& yearName, const QString& groupName, StudentsSubgroup* subgroup)
@@ -6971,7 +7004,7 @@ bool Rules::addSubgroup(const QString& yearName, const QString& groupName, Stude
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -6987,7 +7020,7 @@ bool Rules::addSubgroupFast(StudentsYear* year, StudentsGroup* group, StudentsSu
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7056,7 +7089,7 @@ bool Rules::removeSubgroup(const QString& yearName, const QString& groupName, co
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7104,7 +7137,7 @@ bool Rules::purgeSubgroup(const QString& subgroupName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7173,7 +7206,7 @@ void Rules::sortSubgroupsAlphabetically(const QString& yearName, const QString& 
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 bool Rules::addSimpleActivityFast(
@@ -7220,7 +7253,7 @@ bool Rules::addSimpleActivityFast(
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7294,7 +7327,7 @@ bool Rules::addSplitActivityFast(
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7408,7 +7441,7 @@ bool Rules::addSplitActivityFastWithComponents(
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7490,7 +7523,7 @@ void Rules::removeActivities(const QList<int>& _idsList, bool updateConstraints)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 void Rules::modifyActivity(
@@ -7534,7 +7567,7 @@ void Rules::modifyActivity(
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 void Rules::modifySubactivity(
@@ -7586,7 +7619,7 @@ void Rules::modifySubactivity(
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 bool Rules::addRoom(Room* rm)
@@ -7599,7 +7632,7 @@ bool Rules::addRoom(Room* rm)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7612,7 +7645,7 @@ bool Rules::addRoomFast(Room* rm)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7669,7 +7702,7 @@ bool Rules::removeRoom(const QString& roomName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7823,7 +7856,7 @@ bool Rules::modifyRoom(const QString& initialRoomName, const QString& finalRoomN
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7837,7 +7870,7 @@ void Rules::sortRoomsAlphabetically()
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 bool Rules::addBuilding(Building* bu)
@@ -7850,7 +7883,7 @@ bool Rules::addBuilding(Building* bu)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7863,7 +7896,7 @@ bool Rules::addBuildingFast(Building* bu)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7898,7 +7931,7 @@ bool Rules::removeBuilding(const QString& buildingName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7922,7 +7955,7 @@ bool Rules::modifyBuilding(const QString& initialBuildingName, const QString& fi
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 
 	return true;
 }
@@ -7936,7 +7969,7 @@ void Rules::sortBuildingsAlphabetically()
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 }
 
 void Rules::recomputeActivitiesSetForTimeConstraint(TimeConstraint* ctr)
@@ -13942,7 +13975,8 @@ bool Rules::read(QWidget* parent, const QString& fileName, bool commandLine, con
 
 	if(file2.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 tr("Saving of logging gave error message '%1', which means you cannot see the log of reading the file. Please check your disk's free space.")
+		 tr("Saving the logging file gave the error message '%1', which means you cannot see the data file reading log. Please check your disk's free space.",
+		 "It means you cannot see the log of the operation of reading the data file.")
 		 .arg(file2.errorString()));
 	}
 
@@ -13992,7 +14026,7 @@ bool Rules::write(QWidget* parent, const QString& filename)
 	if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
 #endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 tr("Cannot open %1 for writing ... please check write permissions of the selected directory or your disk free space. Saving of file aborted").arg(QFileInfo(filename).fileName()));
+		 tr("Cannot open %1 for writing ... please check the write permissions of the selected directory and your disk free space. Saving of the data file aborted.").arg(QFileInfo(filename).fileName()));
 		
 		return false;
 	}
@@ -14141,7 +14175,7 @@ bool Rules::write(QWidget* parent, const QString& filename)
 	
 	if(file.error()!=QFileDevice::NoError){
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 tr("Saved file gave error message '%1', which means saving is compromised. Please check your disk's free space.")
+		 tr("Saving the data file gave the error message '%1', which means the saving is compromised. Please check your disk's free space.")
 		 .arg(file.errorString()));
 		
 		//file.close();
@@ -14176,7 +14210,7 @@ int Rules::activateTeacher(const QString& teacherName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	
 	return count;
 }
@@ -14224,7 +14258,7 @@ int Rules::activateStudents(const QString& studentsName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	
 	return count;
 }
@@ -14246,7 +14280,7 @@ int Rules::activateSubject(const QString& subjectName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	
 	return count;
 }
@@ -14271,7 +14305,7 @@ int Rules::activateActivityTag(const QString& activityTagName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	
 	return count;
 }
@@ -14293,7 +14327,7 @@ int Rules::deactivateTeacher(const QString& teacherName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	
 	return count;
 }
@@ -14341,7 +14375,7 @@ int Rules::deactivateStudents(const QString& studentsName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	
 	return count;
 }
@@ -14363,7 +14397,7 @@ int Rules::deactivateSubject(const QString& subjectName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	
 	return count;
 }
@@ -14388,7 +14422,7 @@ int Rules::deactivateActivityTag(const QString& activityTagName)
 
 	teachers_schedule_ready=false;
 	students_schedule_ready=false;
-	rooms_schedule_ready=false;
+	rooms_buildings_schedule_ready=false;
 	
 	return count;
 }
@@ -14408,7 +14442,7 @@ bool Rules::makeActivityTagPrintable(const QString& activityTagName)
 
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 		
 		return true;
 	}
@@ -14431,7 +14465,7 @@ bool Rules::makeActivityTagNotPrintable(const QString& activityTagName)
 
 		teachers_schedule_ready=false;
 		students_schedule_ready=false;
-		rooms_schedule_ready=false;
+		rooms_buildings_schedule_ready=false;
 		
 		return true;
 	}
