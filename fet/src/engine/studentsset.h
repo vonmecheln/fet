@@ -26,6 +26,8 @@
 #include <QString>
 #include <QStringList>
 
+//If you change any of these const int-s, you need to update the const QString FET_DATA_FORMAT_VERSION from timetable_defs.cpp to a new value,
+//because of the disk history feature.
 const int STUDENTS_SET=0;
 const int STUDENTS_YEAR=1;
 const int STUDENTS_GROUP=2;

@@ -2765,7 +2765,12 @@ Versions 6.14.0 - 6.14.2
 	- Code cleanup.
 ---------------------------------------------------------------------------------
 Versions 6.15.0 - 6.15.v
+- Version 6.15.0
 	- Added the possibility of saving the history to the hard disk, next to the saved .fet data file (suggested by uni_instructor and ngoctp29121982).
 	This option is by default disabled and must be enabled from the settings.
-	- Minor improvements in the memory consumption (the comments of the history are now stored archived).
+	- Minor improvements in the memory consumption (the details of the history operations are now stored archived).
 	- Code cleanup.
+- Version 6.15.1
+	- Correction for saving/retrieving the history on/from the disk: if the data structure changes, the history will be invalidated, instead of
+	possible bugs/crashes of the program (using an idea of Volker Dirr).
+	- Updated the Brazilian Portuguese translation, by Alexandre R. Soares. It is again complete.

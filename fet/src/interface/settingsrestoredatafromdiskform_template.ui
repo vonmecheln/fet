@@ -6,31 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>738</width>
-    <height>531</height>
+    <width>747</width>
+    <height>563</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string comment="The title of the dialog of settings for recording and restoring data (undo/redo) from disk">Settings for restore data states from disk</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" colspan="2">
-    <widget class="QLabel" name="label">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Warning: enabling saving/restoring the history to/from the disk might slow down saving/opening your data file (depending on both the number of previous states to save/restore and your data size). Also, additional disk space will be used (again, depending on both the number of states and the data size).</string>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="0" colspan="2">
+   <item row="9" column="0" colspan="2">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QLabel" name="fileNameLabel">
@@ -51,7 +35,20 @@
      </item>
     </layout>
    </item>
-   <item row="5" column="0" colspan="2">
+   <item row="10" column="0" colspan="2">
+    <spacer name="verticalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>588</width>
+       <height>12</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="6" column="0" colspan="2">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="maxStatesLabel">
@@ -65,7 +62,85 @@
      </item>
     </layout>
    </item>
-   <item row="6" column="0" colspan="2">
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="label">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Warning: enabling saving/restoring the history to/from the disk might slow down saving/opening your data file (depending on both the number of previous states to save/restore and your data size). Also, additional disk space will be used (again, depending on both the number of states and the data size).</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QLabel" name="label2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string comment="Disk history refers to the history which will be kept on the computer disk">Note/warning: the disk history will be written on file save/save as, and read on file open. On file save/save as, the program will automatically write/overwrite/remove a/the file with the name ending in the suffix below. This history file will be saved in the same directory as the corresponding data file. It should be safe to remove that file manually, if you want. If you enable saving/restoring the history to/from the disk, please make sure you don't have a file with the same name which you use for other purposes, because its contents will be lost or the history will be corrupted.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>37</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QCheckBox" name="enableHistoryOnDiskCheckBox">
+     <property name="text">
+      <string>Enable save and restore history to/from the disk</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="7" column="0" colspan="2">
     <widget class="QLabel" name="maxStatesLabel2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -81,66 +156,7 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0" colspan="2">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>37</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="3" column="0" colspan="2">
-    <widget class="QCheckBox" name="enableHistoryOnDiskCheckBox">
-     <property name="text">
-      <string>Enable save and restore history to/from the disk</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="0" colspan="2">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
-   </item>
-   <item row="9" column="0" colspan="2">
-    <spacer name="verticalSpacer_4">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>588</width>
-       <height>12</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="2" column="0" colspan="2">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="7" column="0" colspan="2">
+   <item row="8" column="0" colspan="2">
     <spacer name="verticalSpacer_3">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -153,16 +169,16 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="0" colspan="2">
+   <item row="2" column="0" colspan="2">
     <widget class="QLabel" name="label3">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+      <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
      <property name="text">
-      <string comment="Disk history refers to the history which will be kept on the computer disk">Note/warning: the disk history will be written on file save/save as, and read on file open. On file save/save as, the program will automatically write/overwrite/remove a/the file with the name ending in the suffix below. This history file will be saved in the same directory as the corresponding data file. It should be safe to remove that file manually, if you want. If you enable saving/restoring the history to/from the disk, please make sure you don't have a file with the same name which you use for other purposes, because its contents will be lost or the history will be corrupted.</string>
+      <string>Note: if you update your FET version and if the data format has changed since you saved your data file+history on the disk, you will not be able to retrieve your old history (but of course your .fet data file will be safely/correctly opened). The new history, saved in the new format, will be correctly loaded after that.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

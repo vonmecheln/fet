@@ -285,7 +285,7 @@ void TimetableGenerateForm::stop()
 
 	s+="\n\n";
 
-	s+=TimetableGenerateForm::tr("Additional information relating the impossible to schedule activities:");
+	s+=TimetableGenerateForm::tr("Additional information relating to the impossible to schedule activities:");
 	s+="\n\n";
 
 	s+=tr("FET managed to schedule correctly the first %1 most difficult activities."
@@ -453,7 +453,7 @@ void TimetableGenerateForm::stopHighest()
 
 	s+="\n\n";
 
-	s+=TimetableGenerateForm::tr("Additional information relating the impossible to schedule activities:");
+	s+=TimetableGenerateForm::tr("Additional information relating to the impossible to schedule activities:");
 	s+="\n\n";
 
 	s+=tr("FET managed to schedule correctly the first %1 most difficult activities."
@@ -597,7 +597,7 @@ void TimetableGenerateForm::impossibleToSolve()
 
 	s+="\n\n";
 
-	s+=TimetableGenerateForm::tr("Additional information relating the impossible to schedule activities:");
+	s+=TimetableGenerateForm::tr("Additional information relating to the impossible to schedule activities:");
 	s+="\n\n";
 	s+=TimetableGenerateForm::tr("Please check the constraints related to the "
 	 "activity below, which might be impossible to schedule:");

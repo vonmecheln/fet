@@ -47,6 +47,8 @@ class QWidget;
 
 typedef QList<TimeConstraint*> TimeConstraintsList;
 
+//If you change any of these const int-s, you need to update the const QString FET_DATA_FORMAT_VERSION from timetable_defs.cpp to a new value,
+//because of the disk history feature.
 const int CONSTRAINT_GENERIC_TIME										=0;
 
 const int CONSTRAINT_BASIC_COMPULSORY_TIME								=1;

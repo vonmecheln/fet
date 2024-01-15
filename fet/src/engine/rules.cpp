@@ -1713,7 +1713,8 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 			stream>>subgroup->comments;
 		}
 		else{
-			assert(0);
+			//commented, so that the program won't crash on wrong history files.
+			//assert(0);
 		}
 	}
 	for(int i=0; i<nss; i++){
@@ -3035,7 +3036,8 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 		}
 
 		else{
-			assert(0);
+			//commented, so that the program won't crash on wrong history files.
+			//assert(0);
 		}
 	}
 
@@ -3359,7 +3361,8 @@ QDataStream& operator>>(QDataStream& stream, Rules& rules)
 			rules.spaceConstraintsList.append(c);
 		}
 		else{
-			assert(0);
+			//commented, so that the program won't crash on wrong history files.
+			//assert(0);
 		}
 	}
 
@@ -3446,9 +3449,10 @@ void Rules::addUndoPoint(const QString& description, bool autosave, bool resetCo
 					 .arg(QDir::toNativeSeparators(das)));
 				}
 				else{
-					this->write((QWidget*)pFetMainForm, das+FILE_SEP+sfn+SUFFIX_FILENAME_AUTOSAVE+".fet");
+					bool t2=this->write((QWidget*)pFetMainForm, das+FILE_SEP+sfn+SUFFIX_FILENAME_AUTOSAVE+".fet");
 					//cout<<"Autosaved in "<<qPrintable(das+FILE_SEP+sfn+SUFFIX_FILENAME_AUTOSAVE+".fet")<<endl;
-					showStatusBarAutosaved();
+					if(t2)
+						showStatusBarAutosaved();
 				}
 				
 				oldtime=newtime;
@@ -3566,10 +3570,10 @@ void Rules::addUndoPoint(const QString& description, bool autosave, bool resetCo
 	}
 
 	cntUndoRedoStackIterator=int(oldRulesArchived.size());
-	crtBAIt=prev(oldRulesArchived.cend());
-	//crtDIt=prev(operationWhichWasDone.cend());
-	//crtDTIt=prev(operationDateTime.cend());
-	//crtFNIt=prev(stateFileName.cend());
+	crtBAIt=std::prev(oldRulesArchived.cend());
+	//crtDIt=std::prev(operationWhichWasDone.cend());
+	//crtDTIt=std::prev(operationDateTime.cend());
+	//crtFNIt=std::prev(stateFileName.cend());
 }
 
 void Rules::restoreState(QWidget* parent, int iterationsBackward)
@@ -3616,6 +3620,8 @@ void Rules::restoreState(QWidget* parent, int iterationsBackward)
 	}
 	QByteArray oldRulesArchivedBA=*crtBAIt;
 	QByteArray oldRulesBA=qUncompress(oldRulesArchivedBA);
+	//qUncompress(...) should have the same behavior with other (older, and also hopefully newer) versions of Qt, see this Qt function's doc.
+	//We need this compatibility for the disk history, where the user might have saved the history on disk from a different Qt version.
 	if(oldRulesBA.isEmpty()){
 		QMessageBox::critical(parent, tr("FET critical"), tr("Corrupted state read from the memory or from the hard disk ... returning to the previous state.")+
 		 QString("\n\n")+tr("If the problem is caused by the history file saved on the disk, you might want to exit FET, remove the corresponding history file"
@@ -14026,7 +14032,7 @@ bool Rules::write(QWidget* parent, const QString& filename)
 	if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
 #endif
 		IrreconcilableCriticalMessage::critical(parent, tr("FET critical"),
-		 tr("Cannot open %1 for writing ... please check the write permissions of the selected directory and your disk free space. Saving of the data file aborted.").arg(QFileInfo(filename).fileName()));
+		 tr("Cannot open %1 for writing ... please check the write permissions of the selected directory and your disk's free space. Saving of the data file aborted.").arg(QFileInfo(filename).fileName()));
 		
 		return false;
 	}

@@ -33,6 +33,8 @@ class Rules;
 
 typedef QList<Teacher*> TeachersList;
 
+//If you change any of these const int-s, you need to update the const QString FET_DATA_FORMAT_VERSION from timetable_defs.cpp to a new value,
+//because of the disk history feature.
 const int TEACHER_MORNINGS_AFTERNOONS_BEHAVIOR_NOT_INITIALIZED=0;
 const int TEACHER_UNRESTRICTED_MORNINGS_AFTERNOONS=1; //normally used in Algeria.
 const int TEACHER_MORNING_OR_EXCLUSIVELY_AFTERNOON=2; //normally used in Morocco.

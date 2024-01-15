@@ -55,12 +55,19 @@ extern QString SUFFIX_FILENAME_AUTOSAVE;
 extern bool CONFIRM_ACTIVATE_DEACTIVATE_ACTIVITIES_CONSTRAINTS;
 
 /**
-The version number
+The FET version
 */
 extern const QString FET_VERSION;
 
 /**
-The language
+The version number of the data format, useful when saving/restoring history from the disk.
+On any minor or major change of the data format, this number must be increased; the older or
+newer data history versions are not compatible.
+*/
+extern const QString FET_DATA_FORMAT_VERSION;
+
+/**
+The FET language
 */
 extern QString FET_LANGUAGE;
 

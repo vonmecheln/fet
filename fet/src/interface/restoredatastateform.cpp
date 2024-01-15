@@ -167,6 +167,8 @@ void RestoreDataStateForm::restoreDataStateListWidgetSelectionChanged()
 	int i=restoreDataStateListWidget->currentRow();
 	if(i>=0 && i<restoreDataStateListWidget->count()){
 		QByteArray descriptionBA=qUncompress(descriptionsArchivedBA.at(i));
+		//qUncompress(...) should have the same behavior with other (older, and also hopefully newer) versions of Qt, see this Qt function's doc.
+		//We need this compatibility for the disk history, where the user might have saved the history on disk from a different Qt version.
 		if(descriptionBA.isEmpty()){
 			restoreDataStatePlainTextEdit->setPlainText(tr("Corrupted operation details read from the memory or from the disk (but your data might be valid).")
 			 +QString("\n\n")+tr("If the problem is caused by the history file saved on the disk, you might want to exit FET, remove the corresponding history file"

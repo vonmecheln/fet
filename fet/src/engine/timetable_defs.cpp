@@ -49,12 +49,19 @@ QString internetVersion;
 int STUDENTS_COMBO_BOXES_STYLE=STUDENTS_COMBO_BOXES_STYLE_SIMPLE;
 
 /**
-FET version
+The FET version
 */
-const QString FET_VERSION="6.15.0";
+const QString FET_VERSION="6.15.1";
 
 /**
-FET language
+The version number of the data format, useful when saving/restoring history from the disk.
+On any minor or major change of the data format, this number must be increased; the older or
+newer data history versions are not compatible.
+*/
+const QString FET_DATA_FORMAT_VERSION="6.15.1"; //started from "6.15.1", since FET-6.15.1.
+
+/**
+The FET language
 */
 QString FET_LANGUAGE="en_US";
 

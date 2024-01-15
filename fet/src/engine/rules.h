@@ -53,6 +53,8 @@ class QXmlStreamReader;
 
 class QWidget;
 
+//If you change any of these const int-s, you need to update the const QString FET_DATA_FORMAT_VERSION from timetable_defs.cpp to a new value,
+//because of the disk history feature.
 const int OFFICIAL=0;
 const int MORNINGS_AFTERNOONS=1;
 const int BLOCK_PLANNING=2;

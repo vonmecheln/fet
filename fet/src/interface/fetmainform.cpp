@@ -705,15 +705,49 @@ bool FetMainForm::openHistory()
 		}
 		
 		QDataStream tos(&file);
+		
+		//tos<<QString("FET history file")<<QString("\n")<<QString("Data format version=")<<FET_DATA_FORMAT_VERSION<<QString("\n");
+		QString s1, s2, s3, s4, s5;
+		tos>>s1>>s2>>s3>>s4>>s5;
+		if(s1!=QString("FET history file") || s2!=QString("\n") || s3!=QString("Data format version=") || s5!=QString("\n")){
+			QMessageBox::information(this, tr("FET information"), tr("Invalid history file header. The history will not be loaded from the disk"
+			 " for this data file. (Starting with FET version %1 the history file header changed.)")
+			 .arg("6.15.1")
+			 +QString("\n\n")
+			 +tr("There should be nothing else to worry about. Your .fet data file will be safely/correctly opened and the disk history will be"
+			 " updated/corrected when you will save your data file."));
+			
+			file.close();
+			
+			return false;
+		}
+		if(s4!=FET_DATA_FORMAT_VERSION){
+			QMessageBox::information(this, tr("FET information"), tr("The history for this file cannot be loaded from the disk, because the data structure"
+			 " has changed (you are using a different FET version, in which the data format was changed).")+QString(" ")
+			 +tr("The history file data format version=%1, your FET data format version=%2.").arg(s4).arg(FET_DATA_FORMAT_VERSION)
+			 +QString("\n\n")
+			 +tr("This was explained in the disk history settings dialog, and there should be nothing else to worry about. Your .fet data file will be"
+			 " safely/correctly opened and the disk history will be updated/corrected when you will save your data file."));
+			
+			file.close();
+			
+			return false;
+		}
 
 		int stepsToRead;
 		tos>>stepsToRead;
 		
-		if(stepsToRead>=1)
-			clearHistory(); //so that the "opened file..." from the function openFile is removed.
-		
 		if(stepsToRead>UNDO_REDO_STEPS)
 			stepsToRead=UNDO_REDO_STEPS;
+
+		if(stepsToRead<=0){
+			file.close();
+			
+			return false;
+		}
+		
+		clearHistory(); //so that the "Opened the file..." undo/redo point from the function openFile(...) is removed.
+		
 		for(int i=0; i<stepsToRead; i++){
 			QByteArray oRAba;
 			QByteArray oWWDAba;
@@ -737,7 +771,10 @@ bool FetMainForm::openHistory()
 
 		cntUndoRedoStackIterator=int(oldRulesArchived.size());
 		savedStateIterator=cntUndoRedoStackIterator;
-		crtBAIt=prev(oldRulesArchived.cend());
+		assert(!oldRulesArchived.empty());
+		crtBAIt=std::prev(oldRulesArchived.cend());
+
+		file.close();
 
 		return true;
 	}
@@ -781,12 +818,14 @@ bool FetMainForm::saveHistory()
 			if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate)){
 #endif
 				QMessageBox::critical(this, tr("FET critical"),
-				 tr("Cannot open %1 for writing of the history ... please check the write permissions of the selected directory and your disk free space. Saving of the file aborted.").arg(QFileInfo(filename).fileName()));
+				 tr("Cannot open %1 for writing of the history ... please check the write permissions of the selected directory and your disk's free space. Saving of the file aborted.").arg(QFileInfo(filename).fileName()));
 
 				return false;
 			}
 
 			QDataStream tos(&file);
+
+			tos<<QString("FET history file")<<QString("\n")<<QString("Data format version=")<<FET_DATA_FORMAT_VERSION<<QString("\n");
 
 			int stepsToSave=std::min(UNDO_REDO_STEPS_SAVE, savedStateIterator);
 			tos<<stepsToSave;
@@ -4284,7 +4323,7 @@ void FetMainForm::on_fileNewAction_triggered()
 		
 		gt.rules.mode=tm;
 		
-		gt.rules.modified=true; //to avoid flicker of the main form modified flag
+		gt.rules.modified=true; //to avoid the flickering of the main form modified flag
 
 		bool tmp=gt.rules.addTimeConstraint(new ConstraintBasicCompulsoryTime(100));
 		assert(tmp);
@@ -4428,10 +4467,10 @@ void FetMainForm::openFile(const QString& fileName)
 			//QCursor orig=this->cursor();
 			//this->setCursor(Qt::WaitCursor);
 			statusBar()->showMessage(tr("Loading...", "This is a message in the status bar, that we are loading the file"), 0);
-			pqapplication->processEvents();
+			//pqapplication->processEvents();
 		
 			//bool before=gt.rules.modified;
-			gt.rules.modified=true; //to avoid flicker of the main form modified flag
+			gt.rules.modified=true; //to avoid the flickering of the main form modified flag
 
 			if(gt.rules.read(this, s)){
 				teachers_schedule_ready=false;

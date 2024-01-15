@@ -48,6 +48,8 @@ class QWidget;
 
 typedef QList<SpaceConstraint*> SpaceConstraintsList;
 
+//If you change any of these const int-s, you need to update the const QString FET_DATA_FORMAT_VERSION from timetable_defs.cpp to a new value,
+//because of the disk history feature.
 const int CONSTRAINT_GENERIC_SPACE										=1000; //time constraints are beginning from 1
 
 const int CONSTRAINT_BASIC_COMPULSORY_SPACE								=1001; //space constraints from 1001
